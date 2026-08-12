@@ -109,8 +109,17 @@ Respected downstream, and enforced in code rather than documented:
   [`C-0002`](C-0002-peg-material-parameters.md): the layer sits at φ/φ# = 1.08–1.23, in the crossover,
   with `m_eff` = 1.66–1.92.
 - **Mechanical only.** No electrostatics, no ion partitioning, no poroelasticity, no tile compliance.
-- **Rigid tile.** Assumed, not shown. `T-5b` is what tests it, and if the tile dishes, the tile
-  no longer samples a single `h` and this whole claim is a spatial average.
+- ~~**Rigid tile.** Assumed, not shown. `T-5b` is what tests it, and if the tile dishes, the tile
+  no longer samples a single `h` and this whole claim is a spatial average.~~
+  **ANSWERED, AND AGAINST THE ASSUMPTION, by [`CH-0005`](../challenges/CH-0005-rigid-tile-assumption.md).**
+  `T-5b` has run. The tile is a plate on an elastic foundation with `ℓ/L = 0.20–0.45`, so it is
+  rigid only for a *uniform* load — where it is rigid **exactly**, whatever its rigidity, and
+  these numbers therefore stand as computed. For every non-uniform case it dishes by 27–369% of
+  the stroke, and at 300 K its shape modes fluctuate by 1.27 nm RMS, 1.70× the piston mode.
+  Two consequences: the `σ_RMS` column above is the piston mode alone and is **4× smaller than
+  the tile's actual point fluctuation** (`T-8` must not consume it as-is), and sampling a convex
+  `Π(h)` at a distribution of heights stiffens the layer by **+3.6%**, opposite in sign to
+  `CH-0001`. See [`C-0006`](C-0006-tile-load-distribution-and-flatness.md).
 - **The SCF excluded volume is height-matched, not measured.** `w = π²a³/4 ≈ 2.47a³` is a calibration
   device that makes the two models comparable. A real PEG excluded volume `w = a³(1 − 2χ)` with `χ ≈ 0.45`
   is roughly 25× smaller. Task `P-3`.
@@ -139,6 +148,18 @@ Everything else in this claim is derived from the §3 parameters.
 The semidilute premise fails; the claim is not withdrawn, its numbers become bounds, and the
 `m = 3` model is excluded by measurement. `T-1c` is queued to re-derive the layer response with a
 crossover-valid free energy, which is what the challenge shows cannot be repaired by changing an exponent.
+
+**[`CH-0003`](../challenges/CH-0003-blob-stack-height.md) — raised 2026-08-12 by [`C-0004`](C-0004-poroelastic-drainage.md).**
+The geometric twin of `CH-0001`: the Alexander-de Gennes layer is `(Σ/π)^(5/6)` blobs tall, i.e. **1.47 at
+the `Σ = 5` convention** and 1.48–1.73 at every surviving design point, so the blob-stack picture that
+underwrites `L₀ = N a^(5/3) σ^(1/3)` is being applied to a stack of one and a half blobs. It also puts
+strong-stretching theory outside its own premise here, at `L₀/R_F = 1.17–1.25`. `T-1c` is where it is settled.
+
+**[`CH-0005`](../challenges/CH-0005-rigid-tile-assumption.md) — UPHELD, 2026-08-12.**
+The `Rigid tile` bullet is answered against the assumption. The numbers are not withdrawn — they
+are exact for the uniform load case they model — but the scope over which they mean anything is
+narrower than stated, and the `σ_RMS` column is a one-degree-of-freedom result for a structure
+with many.
 
 A further result contradicting this claim should likewise be raised in `gpd/challenges/` with
 methodological grounds rather than overwriting it.

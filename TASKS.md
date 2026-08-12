@@ -31,12 +31,14 @@ The `Leaf` column is the NDI `simulation-task-map` ID the work traces to.
 | T-2 | Feasible design window in (grafting density, height, chemistry) | Non-empty region satisfying §4(a)–(d) simultaneously, or a proof of emptiness naming the binding constraint | A2.1 | **BLOCKED by T-1c**. Until then `C-0001`'s band is a *lower bound on width*, not a window. `C-0002` hands T-2 a new candidate binding constraint: the densities that make the brush theory valid (σ ≥ 0.99 nm⁻² at 10 nm) are the ones §4(a) rules out as far too stiff. `C-0004` hands it three more: §4(d) is **discharged** as a non-constraint, tile edge is bounded above at 437 nm by drainage, and the `Σ = 5` lower edge is now challenged twice over. |
 | T-3 | Stroke and blocking force vs bias, incl. ionic screening | Stroke ≥ ~3 nm and force ≥ 100 pN at ≤ 2 V, or a demonstration it is unreachable | A2.2 | UNBLOCKED by T-1 — needs the electrostatic model. Note T-1 says only what the layer does *if* 100 pN is available; T-3 must not inherit it as given. |
 | T-4 | Electrostatic softening and pull-in: does `k_eff = k_brush + k_es` reach zero? | Max usable bias with margin, or a demonstration the osmotic divergence removes the instability | new | BLOCKED by T-1, T-3 |
-| T-5 | Load distribution across the origami | Peak per-load-path force against the 35–60 pN disassembly band; distributed and concentrated attachment treated separately | A1.2 | TODO |
-| T-5b | Deflected shape of the tile under actuation load | Deformation amplitude against the stroke; rigid-plate assumption upheld or rejected | A8.2 | TODO |
+| T-5 | Load distribution across the origami | Peak per-load-path force against the 35–60 pN disassembly band; distributed and concentrated attachment treated separately | A1.2 | **DONE** (iteration 3) — claim `C-0006`. Minimum load paths: **3** to stay under 35 pN, **11** under 10 pN — but **55** for dishing below 10 % of stroke, and the tile holds only 43.7 independent patches. A rigid anchor saturates at 18.3 pN however large the tile. |
+| T-5b | Deflected shape of the tile under actuation load | Deformation amplitude against the stroke; rigid-plate assumption upheld or rejected | A8.2 | **DONE** (iteration 3) — claim `C-0006`, raises `CH-0005`. **Rigid-plate assumption REJECTED.** Dishing is 0 % (uniform load, exactly), 27 % (edge taper), 50 % (4 anchors), 369 % (one lever), 26 % (thermal, 1.27 nm RMS). |
+| T-9 | Crossover hinge constant `k_θ` for a single-layer sheet, from oxDNA | A value with an uncertainty, replacing a fitted model input whose `1/100` is borrowed from CanDo's *nick* softening | new | TODO — **medium**. The single largest open premise under `C-0006`: everything about `D_⊥` inherits it. Cost estimate from the iteration that raised it: 2–5 k nucleotides, µs-scale umbrella sampling on 8 cores, **days not weeks — it fits this box**. Needs `g++`/`cmake` (installed under `P-7`). |
+| T-10 | Discrete-lattice (beam-and-hinge grillage) check of the tile, replacing the continuum plate | The plate reduction upheld or rejected; local force concentration at an anchor resolved | new | TODO — **medium**. Raised because `ℓ_⊥/p = 0.26–0.52 < 1` across the whole sweep, so the continuum reduction is marginal by its own criterion, and because the plate model cannot resolve the one number `T-5` had to decline. |
 | T-6 | Validity boundary of mean-field screening at 2 mM Mg²⁺ | Quantified deviation from mean-field, with the boundary stated | A7.4 | TODO |
 | T-7 | Poroelastic drainage time vs thickness and volume fraction | Bounded, with the conditions under which it would constrain ≥ 1 kHz stated | new | **DONE** (iteration 3) — claim `C-0004`, raises `CH-0003`. **Not binding**: 91 kHz at the nominal design point, 22.6 kHz at the §3 worst case, 5.6 kHz under a composite worst case. §4(d) is discharged. |
 | T-7b | Electro-osmotic drag on the squeeze flow: a streaming potential opposes drainage in a porous layer under a biased electrode | Bounded, or shown to be below the 22× margin `C-0004` leaves | new | TODO — low priority, **BLOCKED by T-6**. It would take a 22× effect to matter, but `C-0004` could not bound it at all, so it is named rather than ignored. |
-| T-8 | Tile positional variance at 300 K | σ_RMS ≤ 3.0 nm for the nominal Gen-1 tile | A1.2 | TODO — **BLOCKED by T-1c** for the stiffness. Preliminary: σ_RMS ≈ 0.28 nm at the working point and ≈ 0.75 nm unbiased, both well inside 3.0 nm, but this is the layer-normal DOF only — tilt, lateral and internal modes are not in it. Two constraints the queue had not recorded: the leaf `A1.2` acceptance string demands a **simulated** σ_RMS with a **95 % CI** from a coarse-grained ensemble, not an analytic equipartition bound; and `C-0004` supplies the noise bandwidth (91 kHz corner) rather than leaving it assumed. |
+| T-8 | Tile positional variance at 300 K | σ_RMS ≤ 3.0 nm for the nominal Gen-1 tile | A1.2 | TODO — **re-scoped and promoted**, **BLOCKED by T-1c** for the stiffness. It must consume `C-0006`, **not** `C-0001`: the 0.28 nm figure is the *piston mode alone*, and the total point fluctuation is **1.37 nm** nominal, **2.24 nm** at the soft end of the sweep — 46–75 % of the 3.0 nm predicate rather than 9 %. Still passing, but the margin is gone. Two further constraints: leaf `A1.2` demands a **simulated** σ_RMS with a **95 % CI** from a coarse-grained ensemble, not an analytic bound; and `C-0004` supplies the noise bandwidth (91 kHz corner) rather than leaving it assumed. |
 
 ## Entry points
 
@@ -45,6 +47,8 @@ The `Leaf` column is the NDI `simulation-task-map` ID the work traces to.
 | `./gradlew study -Pstudy=brush.BrushStiffnessStudyKt` | `T-1` | `gpd/results/T-1-layer-stiffness.json` |
 | `./gradlew study -Pstudy=material.PegMaterialStudyKt` | `P-3` | `gpd/results/P-3-peg-material-parameters.json` |
 | `./gradlew study -Pstudy=poroelastic.PoroelasticDrainageStudyKt` | `T-7` | `gpd/results/T-7-poroelastic-drainage.json` |
+| `./gradlew study -Pstudy=structure.TileLoadDistributionStudyKt` | `T-5` | `gpd/results/T-5-load-distribution.json` |
+| `./gradlew study -Pstudy=structure.TileFlatnessStudyKt` | `T-5b` | `gpd/results/T-5b-tile-flatness.json` |
 
 Add `-PbuildDirectory=<dir>` to any Gradle command when more than one agent is working this checkout (`P-7`).
 
@@ -88,6 +92,17 @@ Hence `T-1c` now sits above `T-2` for the same reason `P-3` sat above it before 
   1 kHz requirement. Drainage is a **footprint** problem, not a thickness problem (`τ ∝ L²`, `h` cancels),
   and a **denser** layer drains faster, so the binding direction is dilution. The design would have to
   leave the poroelastic model's own domain of validity before poroelasticity could bind. (`C-0004`.)
+- **The tile is not a rigid plate.** `ℓ/L = 0.14–0.64`; it is rigid only for a perfectly uniform load,
+  where it is rigid *exactly*, whatever its rigidity. Any concentrated coupling, discrete anchor, load
+  non-uniformity or thermal excitation dishes it by 26–369 % of the stroke. A point-coupled lever and an
+  area-averaging charge sensor therefore **do not measure the same displacement** — they differ by 26 % of
+  the stroke. §4(g)'s own test for abandoning the rigid-plate picture is met. (`C-0006`, `CH-0005`.)
+- **No discrete attachment scheme is flat.** Flatness needs ≳ 55 load paths, more than the 43.7 independent
+  patches the tile contains, so the output coupling has to be effectively continuous. This is a constraint on
+  design *topology*, and `T-2`'s window has no axis for it yet. (`C-0006`.)
+- **The 35–60 pN band is not a per-load-path allowable.** It is a *whole-cross-section* disassembly force for
+  a 6–8-helix tube at 5.5 pN/s, and a DNA rupture force without a loading rate is not a material constant.
+  Per path, use single-duplex shear (~48–65 pN) or unzip (10–15 pN), with 65 pN a hard ceiling. (`C-0006`.)
 - **The layer is ~1.5 blobs tall.** `L₀/s = (Σ/π)^(5/6)` identically, so the conventional `Σ = 5` onset
   buys 1.47 blobs and a ten-blob stack needs `Σ ≈ 50`. This is a *geometric* failure of the same
   convention `CH-0001` failed thermodynamically, and the two are inverse powers of the same `Σ`.

@@ -309,3 +309,84 @@ boundary is reported as *where this model would say it binds*, not as a predicti
 **S-16. Sourcing a prefactor produced a disagreement rather than a number**, and the disagreement is
 structural: at `φ/φ# ≈ 1.1` the correlation blob is two thirds of the coil, so "segment scale" and "blob
 scale" are not separated scales for this layer. The honest deliverable was a bracket, not a value.
+
+### `T-5` + `T-5b` — load distribution and tile flatness (leaves `A1.2`, `A8.2`)
+
+Taken as one iteration because they share one structural model.
+**Done, verified, filed as `C-0006`**, raising `CH-0005` against `C-0001`.
+**The rigid-plate assumption is rejected.**
+
+The reason it is rejected is sharper than the numbers. A uniform load on a uniform Winkler foundation
+produces **no dishing at all, exactly, at any flexural rigidity** — `w = q/k_f` has zero fourth derivative
+and satisfies the free-edge conditions identically. So `C-0001` got the right answer for the wrong reason:
+not because the tile is stiff, but because a uniform load needs no stiffness. Every departure from
+uniformity dishes it: 27 % of the stroke for an electrostatic edge taper, 50 % for four discrete anchors,
+369 % for a single lever attachment — and 26 % for the unavoidable one, thermal excitation at 300 K.
+
+#### Decisions
+
+**D-22. Rayleigh-Ritz on a tensor Legendre basis, not finite differences or FEM.**
+Free edges are *natural* in an energy method and awkward in a differenced biharmonic, and the basis buys
+three things used directly: the rigid-body modes are exactly the first three basis functions, so dishing
+needs no plane-fitting; the basis is area-orthogonal, so the mean deflection is one coefficient; and the
+coefficient covariance under equipartition is `k_BT K⁻¹`, so thermal dishing falls out of the same matrix
+as the loaded solve, exactly, with no sampling.
+
+**D-23. `D_⊥` derived from crossover hinge compliance and then swept over an order of magnitude**, because
+`k_θ` is the single largest open premise and no accessible measurement of it exists. The nominal value
+deliberately excludes the series duplex-twist term so that it is an explicit *upper* bound.
+
+**D-24. Every conclusion is stated as a function of `k_f`**, carrying `C-0001`'s three distinct stiffnesses
+(at rest, secant, at the working point) separately rather than choosing one — because `C-0001`'s own gate 2
+had already established that "the layer stiffness" is not well posed at a single compression.
+
+**D-25. The expensive calculation was declined and costed instead.** An oxDNA run is the only route to
+`k_θ` from first principles; it is queued as `T-9` with an estimate (2–5 k nucleotides, µs-scale umbrella
+sampling, days on 8 cores) rather than started inside the iteration.
+
+#### What was surprising
+
+**S-17. A uniform load produces no dishing at all — exactly, at any rigidity.** This is not a limiting case,
+it is the leading-order answer, and it collapses the whole task to *naming and bounding the departures from
+uniformity*. It also means the rigid-tile assumption is harmless exactly where `C-0001` uses it and wrong
+everywhere else.
+
+**S-18. The cheap analytic bound was wrong by 50×, at a free edge, and the solver caught it.** The interior
+ripple transfer function `1/(1+(2πℓ/λ)⁴)` predicts an edge perturbation is attenuated to 0.010; the
+finite-plate solve gives 0.53. The transfer function is correct and was verified — it simply does not apply
+at a boundary, because a free edge has no material beyond it to bend against. This is the only result in the
+iteration the closed forms could not have produced, and it is the entire cost justification for the solver.
+The project's standing rule is to run the cheap bound first; this is the case where the cheap bound was
+*also* wrong, and the discipline of running both is what exposed it.
+
+**S-19. The tile's thermal *shape* fluctuation exceeds its rigid-body *position* fluctuation** — 1.27 nm
+against 0.75 nm, a ratio that *grows* as the foundation stiffens, because dishing modes gain `D q⁴` and the
+piston mode gains nothing. Leaf `A8.2` asks for "no floppy modes in the workspace"; the floppy modes are the
+shape modes.
+
+**S-20. A rigid anchor cannot collect more than `8 q ℓ_∥ ℓ_⊥` = 18.3 pN, however large the tile.**
+The compliance that makes the tile dish is the same compliance that protects its anchors. Strength and
+flatness pull in opposite directions, and flatness turns out 5–18× the stricter requirement: three load
+paths suffice for strength, eleven for a 10 pN margin, but **fifty-five** for flatness — against 43.7
+independent patches. **No discrete attachment scheme is flat.**
+
+**S-21. The 35–60 pN band the problem definition hands us is not a per-load-path number.** Traced to its
+source, it is a *whole-cross-section* disassembly force for a 6–8-helix tube at 5.5 pN/s, and the authors'
+own thesis is that it scales with parallel Holliday-junction density. Using it per path overstates capacity
+by roughly the parallel-junction count. More generally: a DNA rupture force quoted without a loading rate is
+not a material constant — the same origami class moves from ~42 pN at 5.5 pN/s to ~75 pN at 1.8e5 pN/s.
+
+**S-22. Three separate crossover-spacing figures are all correct, for different things** — 16 bp per helix,
+32 bp per interface (crossovers alternate between neighbours), 21 bp per interface for honeycomb. Quoting
+the per-helix number where the per-interface one belongs would have doubled `D_⊥`. This is the same class of
+error `C-0002` caught with the three quantities called `a`.
+
+**S-23. `Double` results are not reproducible across runs of the same JVM.** Two study re-runs produced
+different JSON: the JIT compiles a hot reduction part-way through a run, changing summation order and moving
+the last one or two units in the last place. `gpd/README.md`'s determinism rule — *"a re-run that changes
+nothing produces no diff"* — is not satisfied by a bare `Double`, and is now enforced by rounding the whole
+JSON tree at the serialisation boundary.
+
+**S-24. The continuum plate reduction is marginal by its own criterion.** `ℓ_⊥ < p`: the across-helix
+bending length is shorter than the crossover spacing, so at the relevant wavelength the "plate" is really
+~15 quasi-independent duplex beams. Recorded as a validity breach and queued as `T-10`, not papered over.

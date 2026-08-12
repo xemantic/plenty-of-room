@@ -49,6 +49,14 @@ which is one of the reasons this project is a plain Kotlin/JVM application rathe
 - Mapping the de Gennes two-brush pressure onto a brush against a rigid wall is `D -> 2h`, and the factor of two then **cancels out of both ratios**. Keeping it while reinterpreting `D` as the wall distance understates the pressure by `2^(9/4)` — this is the prefactor confusion the NDI problem definition warns about.
 - **The blob-stack height is `L0/s = (Sigma/pi)^(5/6)`, identically** — 1.47 blobs at the conventional `Sigma = 5` onset, for every polymer, chain length and thickness; a ten-blob stack needs `Sigma ~ 50`. So `Sigma >= 5` no more delivers a stack of blobs than it delivers semidilute thermodynamics, and the two failures (`CH-0003`, `CH-0001`) are inverse powers of the same `Sigma`.
 
+### DNA-origami structural parameters
+
+- **The crossover spacing is 32 bp, not 16 bp, for a single-layer Rothemund sheet.** Crossovers recur every 1.5 turns (16 bp) along a helix but *alternate between its two neighbours*, so a given adjacent pair is linked every 32 bp; honeycomb is 21 bp per interface. Using the per-helix number where the per-interface one belongs doubles the across-helix flexural rigidity.
+- `10.67 bp/turn` is the **square** lattice and `10.5 bp/turn` the **honeycomb**, not the other way round.
+- **Interhelical distance is measured, not designed** — 2.69 nm single-layer, 2.73 square, 2.54 honeycomb (SAXS, Fischer et al. 2016). The ~3.0 nm that circulates is Rothemund's *inferred* 1 nm gap; CanDo's 2.25 nm is an assumed helix diameter. Do not substitute one for another.
+- **CanDo treats crossovers as rigid, and says so.** Fine for a multilayer bundle, where that degree of freedom is geometrically frustrated; wrong for a single-layer sheet, where it is the *only* across-helix compliance. Its `EI = 230 pN·nm²` is a model input, not a measurement — it implies `L_p = 55.5 nm` against ~40–47 nm measured.
+- **A DNA rupture force without a loading rate is not a material constant** — the same origami class moves from ~42 pN at 5.5 pN/s to ~75 pN at 1.8e5 pN/s. The problem definition's 35–60 pN band is a *whole-cross-section* number, not a per-load-path allowable; per path use duplex shear (~48–65 pN) or unzip (10–15 pN), with 65 pN a hard ceiling because every origami helix is nicked.
+
 ### Poroelastic transport
 
 - **The layer's hydrodynamic screening length is not known to better than a factor of 6.** Segment-scale models give `sqrt(k) ~ 0.9 nm`, the measurement-anchored `k = xi^2` gives 5.6 nm, and at `phi/phi# ~ 1` the blob is two thirds of the coil — so these describe the same object. Bracket it and quote from the slow end; never a single number.
@@ -67,6 +75,10 @@ which is one of the reasons this project is a plain Kotlin/JVM application rathe
 
 - viktor rejects empty arrays already on construction — `DoubleArray(0).asF64Array()` throws `IllegalArgumentException: empty arrays not supported` — so an empty `F64Array` cannot exist, and guarding a function against one is dead code.
 - `L0 = N a^(5/3) sigma^(1/3)` evaluated in floating point does not land on a round number even when the inputs are chosen so it should — `0.125.pow(1.0/3.0)` is `0.5000000000000001`. Do not assert an exact equilibrium height, and do not embed one in a `require` message that a test then matches literally; interpolate the computed value instead.
+- **A uniform load on a uniform Winkler foundation produces no dishing at all** — a free plate translates exactly, whatever its flexural rigidity, because `w = q/k_f` has zero fourth derivative and satisfies the free-edge conditions identically. If a plate-on-foundation solve reports dishing under a uniform load, the solver is wrong, not the physics. It makes an excellent falsifier; wire it in as a test.
+- **The plate-on-foundation ripple transfer function `1/(1+(2 pi l/lambda)^4)` does not apply at a free edge** — it attenuated a rim perturbation 50× more than the finite-plate solve, because a free edge has no material beyond it to bend against. Interior non-uniformity only.
+- **`Double` results are not reproducible across runs of the same JVM.** The JIT compiles a hot reduction part-way through a run, changing summation order and moving the last one or two ulp, so `gpd/results/*.json` differs on a re-run that changed nothing. Round the whole tree at the *serialisation boundary*, not at each construction site, so nothing can be emitted unrounded by omission.
+- Comparing two quantities that are both meant to be zero **relatively** compares their noise — compare absolutely. (An odd Gauss-Legendre rule has a node at the origin, which is where this bites.)
 - `1 - tanh(x)/x` loses every significant digit to cancellation below `x ~ 1e-2`, which is exactly the free-film limit of the Brinkman transmissivity — use the series `x^2/3 - 2x^4/15 + 17x^6/315` there.
 - After upgrading the Gradle wrapper, `test` may fail with `NoSuchFileException: build/test-results/test/binary/in-progress-results-generic.bin`, because the results of the previous Gradle version are stale — delete `build/test-results` (or run `clean`) and retry.
 

@@ -1,0 +1,734 @@
+{
+    "task": "T-5b",
+    "leaf": "A8.2",
+    "title": "Deflected shape of the Gen-1 tile under the actuation load",
+    "verificationType": "in-silico",
+    "acceptance": "Deformation amplitude reported against the stroke; rigid-plate assumption upheld or rejected, with consequences for force transfer to the lever and for what an adjacent charge sensor would see",
+    "maturity": "TRL 1-3 — model-consistent and traceable, NOT empirically demonstrated",
+    "units": {
+        "length": "nm",
+        "force": "pN",
+        "pressure": "pN/nm^2 (= MPa)",
+        "foundationStiffness": "pN/nm^3",
+        "flexuralRigidity": "pN*nm",
+        "temperature": "K"
+    },
+    "conventions": [
+        "x along the helices, y across them, origin at the centre of the footprint",
+        "w positive DOWNWARD, compressing the polymer layer",
+        "w = w_rigid + w_dish, with w_rigid the area-averaged least-squares best-fit plane, which is exactly the first three Legendre coefficients",
+        "'dishing amplitude' is reported as both an area RMS and a peak over the footprint",
+        "the stroke it is compared against is the area-averaged deflection"
+    ],
+    "validity": [
+        "Kirchhoff plate on a linear Winkler foundation; the real layer is strongly nonlinear",
+        "the continuum plate reduction across the helices requires the Winkler length to exceed the crossover spacing; where continuumPlateReductionValid is false the tile is better described as quasi-independent duplex beams and the reported dishing is an underestimate of the true shape freedom",
+        "the electrostatic load is NOT solved: it enters as a 100 pN total and a bounded edge taper (T-3 owns the load model)",
+        "static only; whether the tile can dish fast enough to matter at 1 kHz is T-7",
+        "k_f from C-0001 are LOWER BOUNDS per CH-0001 and are being re-derived under T-1c",
+        "in-plane membrane stiffening of the sheet is neglected, which is conservative"
+    ],
+    "parameters": {
+        "temperature": 300.0,
+        "medium": "aqueous buffer, 2/5/10 mM MgCl2",
+        "thermalEnergy": 4.141947,
+        "tileFootprint": "40 x 40 nm",
+        "tileArea": 1600.0,
+        "targetForce": 100.0,
+        "targetPressure": 0.0625,
+        "acceptableStroke": 3.0,
+        "desiredStroke": 10.0,
+        "debyeLength": 4.0,
+        "layerHeight": 10.0,
+        "basisDegree": 12,
+        "edgeTaperWidth": 4.0,
+        "edgeTaperDepth": 0.5,
+        "anchorCount": 4,
+        "anchorStiffnessFraction": 1.0,
+        "leverAttachmentCount": 1,
+        "osmoticExponent": 1.672,
+        "foundationReference": "C-0001, 10 nm layer at sigma = 0.024 nm^-2. Loaded cases use the secant 20.201 pN/nm; the thermal case uses the tangent at first contact, 7.402 pN/nm, because that is the stiffness an unbiased tile fluctuates against.",
+        "foundationSweep": [
+            0.25,
+            0.5,
+            1.0,
+            2.0,
+            4.0
+        ],
+        "rigidPlateCriterion": "dishing amplitude below 0.1 of the stroke"
+    },
+    "sheets": [
+        {
+            "name": "single-layer-2d-sheet",
+            "note": "Rothemund single-layer sheet: d = 2.69 nm (SAXS), 32 bp per interface. The nominal reading of the §3 'single-layer' tile.",
+            "interhelicalDistance": 2.69,
+            "crossoverSpacingBasePairs": 32.0,
+            "layers": 1,
+            "crossoverAlpha": 1.0,
+            "includeInterfaceTwist": false,
+            "interlayerCoupling": "NONE",
+            "thickness": 2.0,
+            "alongHelixRigidity": 85.5018587,
+            "acrossHelixRigidity": 3.34504758,
+            "twistingRigidity": 42.7509294,
+            "anisotropy": 25.5607302,
+            "duplexesAcrossTile": 14.8698885,
+            "crossoversAlongInterface": 3.67647059
+        },
+        {
+            "name": "single-layer-honeycomb",
+            "note": "honeycomb crossover rule at one layer: d = 2.536 nm (SAXS), 21 bp per interface. The literal reading of §3's 'single-layer honeycomb', which is a contradiction in terms since a honeycomb lattice is three-dimensional.",
+            "interhelicalDistance": 2.536,
+            "crossoverSpacingBasePairs": 21.0,
+            "layers": 1,
+            "crossoverAlpha": 1.0,
+            "includeInterfaceTwist": false,
+            "interlayerCoupling": "NONE",
+            "thickness": 2.0,
+            "alongHelixRigidity": 90.6940063,
+            "acrossHelixRigidity": 4.80540451,
+            "twistingRigidity": 45.3470032,
+            "anisotropy": 18.8733344,
+            "duplexesAcrossTile": 15.7728707,
+            "crossoversAlongInterface": 5.6022409
+        },
+        {
+            "name": "single-layer-2d-sheet-with-interface-twist",
+            "note": "as the nominal, but with Chen et al.'s inter-crossover duplex twist in series, which lowers D_perp by ~16%. The nominal is therefore an upper bound.",
+            "interhelicalDistance": 2.69,
+            "crossoverSpacingBasePairs": 32.0,
+            "layers": 1,
+            "crossoverAlpha": 1.0,
+            "includeInterfaceTwist": true,
+            "interlayerCoupling": "NONE",
+            "thickness": 2.0,
+            "alongHelixRigidity": 85.5018587,
+            "acrossHelixRigidity": 2.8214489,
+            "twistingRigidity": 42.7509294,
+            "anisotropy": 30.304238,
+            "duplexesAcrossTile": 14.8698885,
+            "crossoversAlongInterface": 3.67647059
+        },
+        {
+            "name": "four-layer-honeycomb-rigid",
+            "note": "the ~10 nm thickness §3 also states, read as four honeycomb layers with rigidly coupled bending. D_par gains the parallel-axis term; D_perp does not, because the across-helix axial stiffness of a crossover is not determined here, so D_perp is a lower bound for this variant.",
+            "interhelicalDistance": 2.536,
+            "crossoverSpacingBasePairs": 21.0,
+            "layers": 4,
+            "crossoverAlpha": 1.0,
+            "includeInterfaceTwist": false,
+            "interlayerCoupling": "RIGID",
+            "thickness": 9.608,
+            "alongHelixRigidity": 14310.776,
+            "acrossHelixRigidity": 19.2216181,
+            "twistingRigidity": 181.388013,
+            "anisotropy": 744.514639,
+            "duplexesAcrossTile": 63.0914826,
+            "crossoversAlongInterface": 22.4089636
+        },
+        {
+            "name": "single-layer-2d-sheet-alpha-max",
+            "note": "the stiff edge of Chen et al.'s admissible crossover range, alpha = 1.2.",
+            "interhelicalDistance": 2.69,
+            "crossoverSpacingBasePairs": 32.0,
+            "layers": 1,
+            "crossoverAlpha": 1.2,
+            "includeInterfaceTwist": false,
+            "interlayerCoupling": "NONE",
+            "thickness": 2.0,
+            "alongHelixRigidity": 85.5018587,
+            "acrossHelixRigidity": 4.01405709,
+            "twistingRigidity": 42.7509294,
+            "anisotropy": 21.3006085,
+            "duplexesAcrossTile": 14.8698885,
+            "crossoversAlongInterface": 3.67647059
+        },
+        {
+            "name": "single-layer-2d-sheet-alpha-min",
+            "note": "the soft edge of Chen et al.'s admissible crossover range, alpha = 0.6.",
+            "interhelicalDistance": 2.69,
+            "crossoverSpacingBasePairs": 32.0,
+            "layers": 1,
+            "crossoverAlpha": 0.6,
+            "includeInterfaceTwist": false,
+            "interlayerCoupling": "NONE",
+            "thickness": 2.0,
+            "alongHelixRigidity": 85.5018587,
+            "acrossHelixRigidity": 2.00702855,
+            "twistingRigidity": 42.7509294,
+            "anisotropy": 42.601217,
+            "duplexesAcrossTile": 14.8698885,
+            "crossoversAlongInterface": 3.67647059
+        }
+    ],
+    "cases": [
+        {
+            "label": "C-0001 secant x 0.25",
+            "multiplier": 0.25,
+            "foundationStiffness": 0.00315640625,
+            "stroke": 19.801,
+            "winklerLengthAlongHelix": 12.8290845,
+            "winklerLengthAcrossHelix": 5.70561353,
+            "ratioAlongHelixToHalfWidth": 0.641454225,
+            "ratioAcrossHelixToHalfWidth": 0.285280676,
+            "winklerLengthOverCrossoverSpacing": 0.524413008,
+            "continuumPlateReductionValid": false,
+            "sources": [
+                {
+                    "source": "uniform-load",
+                    "mechanism": "the leading-order load case: uniform pressure, uniform foundation, free edges",
+                    "peakDishing": 0.0,
+                    "rmsDishing": 0.0,
+                    "stroke": 19.801,
+                    "dishingOverStroke": 0.0,
+                    "rigidPlateUpheld": true
+                },
+                {
+                    "source": "electrostatic-edge-taper",
+                    "mechanism": "pressure falling by 50% over one Debye length at the rim — the finite-tile field effect, as a bounded perturbation",
+                    "peakDishing": 3.36226568,
+                    "rmsDishing": 1.2814828,
+                    "stroke": 19.801,
+                    "dishingOverStroke": 0.169802822,
+                    "rigidPlateUpheld": false
+                },
+                {
+                    "source": "electrostatic-edge-taper-shallow",
+                    "mechanism": "the same taper at 10% depth. The problem is linear, so this exists to DEMONSTRATE that the dishing is proportional to the taper depth rather than to assert it: the ratio to the deep case must be exactly 5.0.",
+                    "peakDishing": 0.672453136,
+                    "rmsDishing": 0.25629656,
+                    "stroke": 19.801,
+                    "dishingOverStroke": 0.0339605645,
+                    "rigidPlateUpheld": true
+                },
+                {
+                    "source": "discrete-anchors",
+                    "mechanism": "4 tethers of total stiffness equal to the layer's own, reacting a uniform load at points — the §4(g) geometry",
+                    "peakDishing": 6.12311297,
+                    "rmsDishing": 2.10415567,
+                    "stroke": 19.801,
+                    "dishingOverStroke": 0.309232513,
+                    "rigidPlateUpheld": false
+                },
+                {
+                    "source": "concentrated-lever-attachment",
+                    "mechanism": "the whole 100 pN leaving the tile through 1 attachment(s) while entering distributed",
+                    "peakDishing": 38.9545254,
+                    "rmsDishing": 20.7250639,
+                    "stroke": 19.801,
+                    "dishingOverStroke": 1.96730092,
+                    "rigidPlateUpheld": false
+                }
+            ],
+            "rippleTransmission": [
+                {
+                    "wavelength": 80.0,
+                    "alongHelix": 0.492435326,
+                    "acrossHelix": 0.961238542
+                },
+                {
+                    "wavelength": 40.0,
+                    "alongHelix": 0.0571703762,
+                    "acrossHelix": 0.607831825
+                },
+                {
+                    "wavelength": 20.0,
+                    "alongHelix": 0.00377550512,
+                    "acrossHelix": 0.0883152671
+                },
+                {
+                    "wavelength": 8.0,
+                    "alongHelix": 9.70098159E-5,
+                    "acrossHelix": 0.0024737477
+                },
+                {
+                    "wavelength": 4.0,
+                    "alongHelix": 6.06366496E-6,
+                    "acrossHelix": 1.54968625E-4
+                }
+            ],
+            "thermal": {
+                "label": 0.25,
+                "foundationStiffness": 0.0011565625,
+                "pistonRms": 1.49609001,
+                "tiltRms": 2.11579079,
+                "dishingRms": 1.69033176,
+                "centreRms": 2.23769445,
+                "dishingOverPiston": 1.12983293,
+                "dishingOverStroke": 0.0853659796,
+                "rigidPlateUpheld": true,
+                "dishingRmsByBasisDegree": {
+                    "8": 1.67195785,
+                    "12": 1.69033176,
+                    "16": 1.69547368
+                }
+            },
+            "sensing": {
+                "dishingRms": 1.69033176,
+                "debyeLength": 4.0,
+                "chargeSensorApparentOffset": 0.357152682,
+                "chargeSensorOffsetOverStroke": 0.0180371033,
+                "leverPointRms": 2.25732292,
+                "leverMinusMeanRms": 1.69033176,
+                "osmoticMeanForceCorrection": 0.0638243842,
+                "osmoticExponent": 1.672
+            }
+        },
+        {
+            "label": "C-0001 secant x 0.5",
+            "multiplier": 0.5,
+            "foundationStiffness": 0.0063128125,
+            "stroke": 9.90049998,
+            "winklerLengthAlongHelix": 10.7879312,
+            "winklerLengthAcrossHelix": 4.79782996,
+            "ratioAlongHelixToHalfWidth": 0.539396558,
+            "ratioAcrossHelixToHalfWidth": 0.239891498,
+            "winklerLengthOverCrossoverSpacing": 0.440977019,
+            "continuumPlateReductionValid": false,
+            "sources": [
+                {
+                    "source": "uniform-load",
+                    "mechanism": "the leading-order load case: uniform pressure, uniform foundation, free edges",
+                    "peakDishing": 0.0,
+                    "rmsDishing": 0.0,
+                    "stroke": 9.90049998,
+                    "dishingOverStroke": 0.0,
+                    "rigidPlateUpheld": true
+                },
+                {
+                    "source": "electrostatic-edge-taper",
+                    "mechanism": "pressure falling by 50% over one Debye length at the rim — the finite-tile field effect, as a bounded perturbation",
+                    "peakDishing": 2.12359175,
+                    "rmsDishing": 0.728287622,
+                    "stroke": 9.90049998,
+                    "dishingOverStroke": 0.214493385,
+                    "rigidPlateUpheld": false
+                },
+                {
+                    "source": "electrostatic-edge-taper-shallow",
+                    "mechanism": "the same taper at 10% depth. The problem is linear, so this exists to DEMONSTRATE that the dishing is proportional to the taper depth rather than to assert it: the ratio to the deep case must be exactly 5.0.",
+                    "peakDishing": 0.42471835,
+                    "rmsDishing": 0.145657524,
+                    "stroke": 9.90049998,
+                    "dishingOverStroke": 0.042898677,
+                    "rigidPlateUpheld": true
+                },
+                {
+                    "source": "discrete-anchors",
+                    "mechanism": "4 tethers of total stiffness equal to the layer's own, reacting a uniform load at points — the §4(g) geometry",
+                    "peakDishing": 4.02816082,
+                    "rmsDishing": 1.43782247,
+                    "stroke": 9.90049998,
+                    "dishingOverStroke": 0.406864384,
+                    "rigidPlateUpheld": false
+                },
+                {
+                    "source": "concentrated-lever-attachment",
+                    "mechanism": "the whole 100 pN leaving the tile through 1 attachment(s) while entering distributed",
+                    "peakDishing": 26.5616832,
+                    "rmsDishing": 11.9741735,
+                    "stroke": 9.90049998,
+                    "dishingOverStroke": 2.68286281,
+                    "rigidPlateUpheld": false
+                }
+            ],
+            "rippleTransmission": [
+                {
+                    "wavelength": 80.0,
+                    "alongHelix": 0.65990843,
+                    "acrossHelix": 0.980236235
+                },
+                {
+                    "wavelength": 40.0,
+                    "alongHelix": 0.108157356,
+                    "acrossHelix": 0.756088809
+                },
+                {
+                    "wavelength": 20.0,
+                    "alongHelix": 0.0075226086,
+                    "acrossHelix": 0.162297213
+                },
+                {
+                    "wavelength": 8.0,
+                    "alongHelix": 1.94000812E-4,
+                    "acrossHelix": 0.00493528675
+                },
+                {
+                    "wavelength": 4.0,
+                    "alongHelix": 1.21272564E-5,
+                    "acrossHelix": 3.09889227E-4
+                }
+            ],
+            "thermal": {
+                "label": 0.5,
+                "foundationStiffness": 0.002313125,
+                "pistonRms": 1.05789539,
+                "tiltRms": 1.49609001,
+                "dishingRms": 1.47484709,
+                "centreRms": 1.74256246,
+                "dishingOverPiston": 1.3941332,
+                "dishingOverStroke": 0.148966931,
+                "rigidPlateUpheld": false,
+                "dishingRmsByBasisDegree": {
+                    "8": 1.45399481,
+                    "12": 1.47484709,
+                    "16": 1.48072899
+                }
+            },
+            "sensing": {
+                "dishingRms": 1.47484709,
+                "debyeLength": 4.0,
+                "chargeSensorApparentOffset": 0.271896744,
+                "chargeSensorOffsetOverStroke": 0.0274629306,
+                "leverPointRms": 1.81502524,
+                "leverMinusMeanRms": 1.47484709,
+                "osmoticMeanForceCorrection": 0.0485888617,
+                "osmoticExponent": 1.672
+            }
+        },
+        {
+            "label": "C-0001 secant, 10 nm layer at sigma = 0.024 nm^-2",
+            "multiplier": 1.0,
+            "foundationStiffness": 0.012625625,
+            "stroke": 4.95024999,
+            "winklerLengthAlongHelix": 9.07153264,
+            "winklerLengthAcrossHelix": 4.03447802,
+            "ratioAlongHelixToHalfWidth": 0.453576632,
+            "ratioAcrossHelixToHalfWidth": 0.201723901,
+            "winklerLengthOverCrossoverSpacing": 0.370815994,
+            "continuumPlateReductionValid": false,
+            "sources": [
+                {
+                    "source": "uniform-load",
+                    "mechanism": "the leading-order load case: uniform pressure, uniform foundation, free edges",
+                    "peakDishing": 0.0,
+                    "rmsDishing": 0.0,
+                    "stroke": 4.95024999,
+                    "dishingOverStroke": 0.0,
+                    "rigidPlateUpheld": true
+                },
+                {
+                    "source": "electrostatic-edge-taper",
+                    "mechanism": "pressure falling by 50% over one Debye length at the rim — the finite-tile field effect, as a bounded perturbation",
+                    "peakDishing": 1.32559043,
+                    "rmsDishing": 0.410913743,
+                    "stroke": 4.95024999,
+                    "dishingOverStroke": 0.267782522,
+                    "rigidPlateUpheld": false
+                },
+                {
+                    "source": "electrostatic-edge-taper-shallow",
+                    "mechanism": "the same taper at 10% depth. The problem is linear, so this exists to DEMONSTRATE that the dishing is proportional to the taper depth rather than to assert it: the ratio to the deep case must be exactly 5.0.",
+                    "peakDishing": 0.265118085,
+                    "rmsDishing": 0.0821827486,
+                    "stroke": 4.95024999,
+                    "dishingOverStroke": 0.0535565044,
+                    "rigidPlateUpheld": true
+                },
+                {
+                    "source": "discrete-anchors",
+                    "mechanism": "4 tethers of total stiffness equal to the layer's own, reacting a uniform load at points — the §4(g) geometry",
+                    "peakDishing": 2.48012818,
+                    "rmsDishing": 0.953473401,
+                    "stroke": 4.95024999,
+                    "dishingOverStroke": 0.501010693,
+                    "rigidPlateUpheld": false
+                },
+                {
+                    "source": "concentrated-lever-attachment",
+                    "mechanism": "the whole 100 pN leaving the tile through 1 attachment(s) while entering distributed",
+                    "peakDishing": 18.277931,
+                    "rmsDishing": 6.96508419,
+                    "stroke": 4.95024999,
+                    "dishingOverStroke": 3.69232485,
+                    "rigidPlateUpheld": false
+                }
+            ],
+            "rippleTransmission": [
+                {
+                    "wavelength": 80.0,
+                    "alongHelix": 0.795114258,
+                    "acrossHelix": 0.990019491
+                },
+                {
+                    "wavelength": 40.0,
+                    "alongHelix": 0.195202162,
+                    "acrossHelix": 0.861105435
+                },
+                {
+                    "wavelength": 20.0,
+                    "alongHelix": 0.014932883,
+                    "acrossHelix": 0.279269727
+                },
+                {
+                    "wavelength": 8.0,
+                    "alongHelix": 3.87926366E-4,
+                    "acrossHelix": 0.00982209863
+                },
+                {
+                    "wavelength": 4.0,
+                    "alongHelix": 2.42542186E-5,
+                    "acrossHelix": 6.19586451E-4
+                }
+            ],
+            "thermal": {
+                "label": 1.0,
+                "foundationStiffness": 0.00462625,
+                "pistonRms": 0.748045007,
+                "tiltRms": 1.05789539,
+                "dishingRms": 1.27194934,
+                "centreRms": 1.36543356,
+                "dishingOverPiston": 1.70036472,
+                "dishingOverStroke": 0.256946486,
+                "rigidPlateUpheld": false,
+                "dishingRmsByBasisDegree": {
+                    "8": 1.24821892,
+                    "12": 1.27194934,
+                    "16": 1.27874545
+                }
+            },
+            "sensing": {
+                "dishingRms": 1.27194934,
+                "debyeLength": 4.0,
+                "chargeSensorApparentOffset": 0.202231891,
+                "chargeSensorOffsetOverStroke": 0.0408528642,
+                "leverPointRms": 1.47561054,
+                "leverMinusMeanRms": 1.27194934,
+                "osmoticMeanForceCorrection": 0.0361395183,
+                "osmoticExponent": 1.672
+            }
+        },
+        {
+            "label": "C-0001 secant x 2.0",
+            "multiplier": 2.0,
+            "foundationStiffness": 0.02525125,
+            "stroke": 2.47512499,
+            "winklerLengthAlongHelix": 7.62821928,
+            "winklerLengthAcrossHelix": 3.3925781,
+            "ratioAlongHelixToHalfWidth": 0.381410964,
+            "ratioAcrossHelixToHalfWidth": 0.169628905,
+            "winklerLengthOverCrossoverSpacing": 0.31181784,
+            "continuumPlateReductionValid": false,
+            "sources": [
+                {
+                    "source": "uniform-load",
+                    "mechanism": "the leading-order load case: uniform pressure, uniform foundation, free edges",
+                    "peakDishing": 0.0,
+                    "rmsDishing": 0.0,
+                    "stroke": 2.47512499,
+                    "dishingOverStroke": 0.0,
+                    "rigidPlateUpheld": true
+                },
+                {
+                    "source": "electrostatic-edge-taper",
+                    "mechanism": "pressure falling by 50% over one Debye length at the rim — the finite-tile field effect, as a bounded perturbation",
+                    "peakDishing": 0.808692595,
+                    "rmsDishing": 0.232601378,
+                    "stroke": 2.47512499,
+                    "dishingOverStroke": 0.326727982,
+                    "rigidPlateUpheld": false
+                },
+                {
+                    "source": "electrostatic-edge-taper-shallow",
+                    "mechanism": "the same taper at 10% depth. The problem is linear, so this exists to DEMONSTRATE that the dishing is proportional to the taper depth rather than to assert it: the ratio to the deep case must be exactly 5.0.",
+                    "peakDishing": 0.161738519,
+                    "rmsDishing": 0.0465202756,
+                    "stroke": 2.47512499,
+                    "dishingOverStroke": 0.0653455965,
+                    "rigidPlateUpheld": true
+                },
+                {
+                    "source": "discrete-anchors",
+                    "mechanism": "4 tethers of total stiffness equal to the layer's own, reacting a uniform load at points — the §4(g) geometry",
+                    "peakDishing": 1.38886829,
+                    "rmsDishing": 0.582295439,
+                    "stroke": 2.47512499,
+                    "dishingOverStroke": 0.561130568,
+                    "rigidPlateUpheld": false
+                },
+                {
+                    "source": "concentrated-lever-attachment",
+                    "mechanism": "the whole 100 pN leaving the tile through 1 attachment(s) while entering distributed",
+                    "peakDishing": 12.5782206,
+                    "rmsDishing": 4.11623356,
+                    "stroke": 2.47512499,
+                    "dishingOverStroke": 5.0818527,
+                    "rigidPlateUpheld": false
+                }
+            ],
+            "rippleTransmission": [
+                {
+                    "wavelength": 80.0,
+                    "alongHelix": 0.88586479,
+                    "acrossHelix": 0.994984718
+                },
+                {
+                    "wavelength": 40.0,
+                    "alongHelix": 0.32664292,
+                    "acrossHelix": 0.925369857
+                },
+                {
+                    "wavelength": 20.0,
+                    "alongHelix": 0.0294263457,
+                    "acrossHelix": 0.436608044
+                },
+                {
+                    "wavelength": 8.0,
+                    "alongHelix": 7.75551874E-4,
+                    "acrossHelix": 0.0194531267
+                },
+                {
+                    "wavelength": 4.0,
+                    "alongHelix": 4.85072608E-5,
+                    "acrossHelix": 0.0012384056
+                }
+            ],
+            "thermal": {
+                "label": 2.0,
+                "foundationStiffness": 0.0092525,
+                "pistonRms": 0.528947697,
+                "tiltRms": 0.748045007,
+                "dishingRms": 1.08655346,
+                "centreRms": 1.08365292,
+                "dishingOverPiston": 2.0541794,
+                "dishingOverStroke": 0.438989329,
+                "rigidPlateUpheld": false,
+                "dishingRmsByBasisDegree": {
+                    "8": 1.05970049,
+                    "12": 1.08655346,
+                    "16": 1.09445714
+                }
+            },
+            "sensing": {
+                "dishingRms": 1.08655346,
+                "debyeLength": 4.0,
+                "chargeSensorApparentOffset": 0.147574803,
+                "chargeSensorOffsetOverStroke": 0.0596231719,
+                "leverPointRms": 1.20846352,
+                "leverMinusMeanRms": 1.08655346,
+                "osmoticMeanForceCorrection": 0.0263721131,
+                "osmoticExponent": 1.672
+            }
+        },
+        {
+            "label": "C-0001 secant x 4.0",
+            "multiplier": 4.0,
+            "foundationStiffness": 0.0505025,
+            "stroke": 1.2375625,
+            "winklerLengthAlongHelix": 6.41454225,
+            "winklerLengthAcrossHelix": 2.85280676,
+            "ratioAlongHelixToHalfWidth": 0.320727112,
+            "ratioAcrossHelixToHalfWidth": 0.142640338,
+            "winklerLengthOverCrossoverSpacing": 0.262206504,
+            "continuumPlateReductionValid": false,
+            "sources": [
+                {
+                    "source": "uniform-load",
+                    "mechanism": "the leading-order load case: uniform pressure, uniform foundation, free edges",
+                    "peakDishing": 0.0,
+                    "rmsDishing": 0.0,
+                    "stroke": 1.2375625,
+                    "dishingOverStroke": 0.0,
+                    "rigidPlateUpheld": true
+                },
+                {
+                    "source": "electrostatic-edge-taper",
+                    "mechanism": "pressure falling by 50% over one Debye length at the rim — the finite-tile field effect, as a bounded perturbation",
+                    "peakDishing": 0.475903942,
+                    "rmsDishing": 0.129967332,
+                    "stroke": 1.2375625,
+                    "dishingOverStroke": 0.384549421,
+                    "rigidPlateUpheld": false
+                },
+                {
+                    "source": "electrostatic-edge-taper-shallow",
+                    "mechanism": "the same taper at 10% depth. The problem is linear, so this exists to DEMONSTRATE that the dishing is proportional to the taper depth rather than to assert it: the ratio to the deep case must be exactly 5.0.",
+                    "peakDishing": 0.0951807884,
+                    "rmsDishing": 0.0259934663,
+                    "stroke": 1.2375625,
+                    "dishingOverStroke": 0.0769098842,
+                    "rigidPlateUpheld": true
+                },
+                {
+                    "source": "discrete-anchors",
+                    "mechanism": "4 tethers of total stiffness equal to the layer's own, reacting a uniform load at points — the §4(g) geometry",
+                    "peakDishing": 0.696786433,
+                    "rmsDishing": 0.323386036,
+                    "stroke": 1.2375625,
+                    "dishingOverStroke": 0.563031309,
+                    "rigidPlateUpheld": false
+                },
+                {
+                    "source": "concentrated-lever-attachment",
+                    "mechanism": "the whole 100 pN leaving the tile through 1 attachment(s) while entering distributed",
+                    "peakDishing": 8.58857701,
+                    "rmsDishing": 2.43142989,
+                    "stroke": 1.2375625,
+                    "dishingOverStroke": 6.93991377,
+                    "rigidPlateUpheld": false
+                }
+            ],
+            "rippleTransmission": [
+                {
+                    "wavelength": 80.0,
+                    "alongHelix": 0.939478583,
+                    "acrossHelix": 0.997486055
+                },
+                {
+                    "wavelength": 40.0,
+                    "alongHelix": 0.492435326,
+                    "acrossHelix": 0.961238542
+                },
+                {
+                    "wavelength": 20.0,
+                    "alongHelix": 0.0571703762,
+                    "acrossHelix": 0.607831825
+                },
+                {
+                    "wavelength": 8.0,
+                    "alongHelix": 0.00154990172,
+                    "acrossHelix": 0.0381638473
+                },
+                {
+                    "wavelength": 4.0,
+                    "alongHelix": 9.70098159E-5,
+                    "acrossHelix": 0.0024737477
+                }
+            ],
+            "thermal": {
+                "label": 4.0,
+                "foundationStiffness": 0.018505,
+                "pistonRms": 0.374022503,
+                "tiltRms": 0.528947697,
+                "dishingRms": 0.91856234,
+                "centreRms": 0.869707337,
+                "dishingOverPiston": 2.45590127,
+                "dishingOverStroke": 0.742235113,
+                "rigidPlateUpheld": false,
+                "dishingRmsByBasisDegree": {
+                    "8": 0.888572026,
+                    "12": 0.91856234,
+                    "16": 0.927798368
+                }
+            },
+            "sensing": {
+                "dishingRms": 0.91856234,
+                "debyeLength": 4.0,
+                "chargeSensorApparentOffset": 0.105469597,
+                "chargeSensorOffsetOverStroke": 0.0852236528,
+                "leverPointRms": 0.99179111,
+                "leverMinusMeanRms": 0.91856234,
+                "osmoticMeanForceCorrection": 0.0188477713,
+                "osmoticExponent": 1.672
+            }
+        }
+    ],
+    "verdict": {
+        "uniform-load": "UPHELD exactly — a uniform load on a uniform foundation makes a free plate translate, whatever its rigidity. Dishing is zero to machine precision at every k_f in the sweep.",
+        "edge-tapered-load": "REJECTED — peak dishing 1.326 nm, 27% of the 4.95 nm stroke",
+        "discrete-anchors": "REJECTED — peak dishing 2.480 nm, 50% of the 4.95 nm stroke",
+        "concentrated-lever": "REJECTED — peak dishing 18.278 nm, 369% of the 4.95 nm stroke",
+        "thermal": "REJECTED — the tile's own bending modes carry 1.27 nm RMS at 300 K, 26% of the stroke, and 1.70 times the rigid piston mode. A rigid tile cannot represent this.",
+        "continuum-plate-reduction": "ell_perp/p = 0.37 at the nominal foundation, and below 1 across the whole sweep: the across-helix bending length is SHORTER than the crossover spacing, so the continuum plate is itself marginal and the tile is closer to 15 quasi-independent duplex beams than to a plate."
+    }
+}
