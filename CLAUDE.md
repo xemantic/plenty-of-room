@@ -25,6 +25,17 @@ never reflow or hard-wrap a paragraph to fit some character count.
 Modern editors soft-wrap Markdown visually,
 see the [README](README.md#markdown-soft-wrapping-in-the-ide) for how to enable it.
 
+### Vector arithmetics
+
+Use [viktor](https://github.com/JetBrains-Research/viktor) for vector arithmetics —
+its `F64Array` is SIMD-accelerated and avoids the hand-rolled `DoubleArray` loops an AI agent tends to produce.
+For small fixed-size geometry — `Vector2`/`Vector3`/`Vector4`, matrices, quaternions —
+[openrndr-math](https://github.com/openrndr/openrndr/tree/master/openrndr-math) can be used instead.
+
+viktor ships JNI natives and is JVM-only,
+which is why it sits in `commonMain` of a single-target project —
+adding any other Kotlin target would break that dependency.
+
 ## Known gotchas
 
 - After upgrading the Gradle wrapper, `jvmTest` may fail with `NoSuchFileException: build/test-results/jvmTest/binary/in-progress-results-generic.bin`, because the results of the previous Gradle version are stale — delete `build/test-results` (or run `clean`) and retry.

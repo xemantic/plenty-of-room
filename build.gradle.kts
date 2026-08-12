@@ -58,6 +58,13 @@ kotlin {
 
     sourceSets {
 
+        commonMain {
+            dependencies {
+                implementation(libs.viktor)
+                implementation(libs.openrndr.math)
+            }
+        }
+
         commonTest {
             dependencies {
                 implementation(libs.kotlin.test)
@@ -75,6 +82,7 @@ repositories {
 
 powerAssert {
     functions = listOf(
+        "kotlin.assert",
         "com.xemantic.kotlin.test.assert",
         "com.xemantic.kotlin.test.have"
     )

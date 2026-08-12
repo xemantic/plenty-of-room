@@ -3,6 +3,8 @@
 kotlinTarget = "2.4"
 javaTarget = "17"
 kotlin = "2.4.10"
+viktor = "1.2.0"
+openrndr = "0.4.4"
 xemanticKotlinTest = "1.17.5"
 # plugins
 versionCatalogUpdatePlugin = "1.1.1"
@@ -12,6 +14,8 @@ jreleaserPlugin = "1.25.0"
 xemanticConventionsPlugin = "0.7.0"
 
 [libraries]
+viktor = { module = "org.jetbrains.bio:viktor", version.ref = "viktor" }
+openrndr-math = { module = "org.openrndr:openrndr-math", version.ref = "openrndr" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 xemantic-kotlin-test = { module = "com.xemantic.kotlin:xemantic-kotlin-test", version.ref = "xemanticKotlinTest" }
 
