@@ -48,6 +48,12 @@ which is one of the reasons this project is a plain Kotlin/JVM application rathe
 - `k/A = 3 k_BT sigma^(3/2) / L0` is **not** a 3/2 law in the grafting density — `L0` carries `sigma^(1/3)` too, so the equilibrium stiffness goes as `sigma^(7/6)`.
 - Mapping the de Gennes two-brush pressure onto a brush against a rigid wall is `D -> 2h`, and the factor of two then **cancels out of both ratios**. Keeping it while reinterpreting `D` as the wall distance understates the pressure by `2^(9/4)` — this is the prefactor confusion the NDI problem definition warns about.
 
+## Environment
+
+- The agent does **not** run as root, but as the `claude` user with passwordless sudo.
+  Missing tooling is therefore installable — `sudo apt-get install -y poppler-utils` for the `pdftotext` the research practice above relies on, for instance —
+  so do not report a tool as unavailable without trying to install it first.
+
 ## Known gotchas
 
 - viktor rejects empty arrays already on construction — `DoubleArray(0).asF64Array()` throws `IllegalArgumentException: empty arrays not supported` — so an empty `F64Array` cannot exist, and guarding a function against one is dead code.
