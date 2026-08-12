@@ -603,3 +603,80 @@ The construction that would have been used instead is 1.89× off.
 Newton solvers exited on `|residual| ≤ 1e-15 × scale`, below the noise floor of a 10³-term quadrature, so every
 solve ran its full iteration cap — turning a 3-minute sweep into one that never finished. Exit on the
 *bracket*, and memoise the pure function a `require` calls.
+
+### `T-3a` — the nonlinear Poisson-Boltzmann profile (leaf `A7.4`)
+
+**Done, verified, filed as `C-0008`**, raising `CH-0007` and **resolving `CH-0004`**.
+Raised by `C-0005`, which had to quote a charge-saturation ceiling from a *symmetric* `z:z` closed form while
+knowing MgCl₂ is 2:1 and asymmetric, and flagged it as an order of magnitude rather than a number.
+
+The 2:1 first integral was **derived rather than adapted** — `(y'/κ)² = (e^{−2y} + 2e^{y} − 3)/3`, which is not
+even in `y`, so no `sinh` form exists and no symmetric closed form applies. `C-0005`'s ceiling is confirmed as
+a ceiling and is **24 % high, by exactly `6 − 3√3`** — the "order of tens of per cent" it predicted of itself,
+so this is a fulfilled self-assessment rather than a contradiction.
+
+**On the electrostatics alone, 100 pN at ≤ 2 V is reachable with room**: 0.067 V at 5 nm, 0.113 V at 7 nm and
+0.679 V at 10 nm in 2 mM buffer, all comfortably inside the point-ion validity boundary.
+
+#### The correction that matters
+
+**`CH-0007` corrects a standing finding of this project's own making.** `C-0005` reported that point-ion PB
+dies above ~0.197 V and the queue recorded that as *"10× below the §3 ≤ 2 V target"*. That comparison is
+wrong: 0.197 V is a **diffuse-layer drop**, and an applied bias is that plus the compact-layer drop. Because
+the electrode charge is exponential in `ψ_d` while the compact term is linear in it, the compact layer takes
+66 % of 0.1 V and 88 % of 2 V. The boundary is therefore at **≈ 1.0 V of applied bias**, and §3's 2 V ceiling
+exceeds it by **1.2×, not 10×**. The error was ours, not `C-0005`'s — the claim stated a diffuse-layer
+potential correctly and the queue compared it against the wrong quantity.
+
+#### Decisions
+
+**D-41. The mixed boundary-value problem is the one solved** — constant charge at the tile (phosphate
+pKa ≈ 1, so no charge regulation), constant potential at the electrode *in series with a compact layer*.
+Neither of the two canonical cases, and at `V = 0` the difference is qualitative rather than numerical.
+
+**D-42. The pressure is read at the node minimising `|Π_osm| + |Maxwell|`**, not at the tile contact and not
+at the midplane, with gate 3 asserting the three agree. This took the 30 nm error from 3.9e-2 to 2.7e-5 at the
+same mesh.
+
+**D-43. `T-6b`'s size-modified step was folded in rather than deferred** — the point-ion model is exactly the
+`n_max → ∞` limit of Bikerman, so it cost one function and became an executable limiting case instead of a
+queued task.
+
+**D-44. `F_es` is referenced to the *local* medium**, so the polymer layer's salt-depletion term — which
+belongs to the layer's own free energy, hence `T-1c` — is excluded rather than double-counted.
+
+#### What was surprising
+
+**S-44. A 2:1 electrolyte does not screen the two signs of surface charge equally, and the factor is exactly
+`2 + √3`.** The positive electrode's saturated effective charge is 3.73× the negative tile's, at every
+concentration, and no symmetric closed form can produce it. A second consequence absent from any symmetric
+theory: **at a positive wall `σ_eff` can *exceed* the bare charge**, by up to 1.238×, because the divalent
+*coion* is expelled harder than a monovalent one would be.
+
+**S-45. The tile is charge-saturated, so the ambiguity `C-0005` could not resolve does not matter.** Three
+readings of the gap-facing charge spanning a factor of 2.96 give `σ_eff` within 7.2 %, and even the bare
+charge — 25× larger — is within 7 % of the saturated value. An iteration of work on the charge model would
+have bought nothing, and checking saturation first is what revealed that.
+
+**S-46. Finite ion size *increases* the electrostatic force, by up to 56 %.** Counterions that cannot pack at
+the wall screen from further out, so the double layer is thicker and the interaction stronger — the opposite
+of what "steric exclusion" suggests. **Point-ion PB is a lower bound on `|F_es|`, not an upper one.**
+
+**S-47. The actuator is voltage-saturated above ~0.5 V.** Two saturations compound — the compact layer takes
+88 % of 2 V, and the diffuse far field saturates — so a factor of **8 in bias buys 1.9× in force**. §3's 2 V
+ceiling is almost irrelevant to what this device can do, which also makes `T-11` (the aqueous electrochemical
+window) far less threatening than it looks. That is luck, not an argument, and it is recorded as such.
+
+**S-48. The zero-bias force is a near-cancellation that changes sign.** Induced-countercharge attraction on a
+grounded conductor is very nearly cancelled by the compact layer's back-potential; the net is under 4 pN and
+flips sign between 4 and 5 nm. A constant-charge electrode model gives exactly zero and misses the physics.
+
+**S-49. The contact-value theorem is the *worst*-conditioned way to get the pressure at a large gap.** At
+30 nm the disjoining pressure is four orders of magnitude below the two terms it is the difference of, so a
+1e-6 profile error became a 4 % force error — precisely where the decay-length measurement lives.
+
+**S-50. `CH-0004` is resolved, and the answer is a fourth number none of the three was.** The force's decay
+length is 1.8–2.8 nm at the working gap, rising to the bulk `λ_D` in the far field, and it is **bias-dependent**
+— `λ_D/2` at zero bias (an image interaction, `e^{−2κh}`) against `λ_D` under bias. The bulk length is 1.4–2.2×
+too long at the working gap and exactly right at 30 nm; the counterion-dominated length is 2.4–3.4× too short
+and never approached.
