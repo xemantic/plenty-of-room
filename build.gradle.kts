@@ -9,7 +9,6 @@ import org.jreleaser.model.Active
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.kotlin.plugin.power.assert)
-    alias(libs.plugins.kotlinx.binary.compatibility.validator)
     alias(libs.plugins.dokka)
     alias(libs.plugins.version.catalog.update)
     alias(libs.plugins.maven.publish)
@@ -17,13 +16,11 @@ plugins {
     alias(libs.plugins.xemantic.conventions)
 }
 
-// TODO change the group
-group = "com.xemantic.template"
+group = "com.xemantic.nano"
 
-// TODO fill up the details
 xemantic {
-    description = "A template repository for Xemantic's Kotlin multiplatform projects"
-    inceptionYear = "2025"
+    description = "Evidence corpus from agentic-loop runs against the NDI Gen-1 DNA-origami actuator simulation programme"
+    inceptionYear = "2026"
     applyAllConventions()
 }
 
@@ -39,9 +36,6 @@ val javaTarget = libs.versions.javaTarget.get()
 val kotlinTarget = KotlinVersion.fromVersion(libs.versions.kotlinTarget.get())
 
 kotlin {
-
-    // TODO remove for a non-library project
-    explicitApi()
 
     compilerOptions {
         apiVersion = kotlinTarget
@@ -66,22 +60,16 @@ kotlin {
     js {
         browser()
         nodejs()
-        // TODO remove for a non-library project
-        binaries.library()
     }
 
     wasmJs {
         browser()
         nodejs()
         d8()
-        // TODO remove for a non-library project
-        binaries.library()
     }
 
     wasmWasi {
         nodejs()
-        // TODO remove for a non-library project
-        binaries.library()
     }
 
     // native, see https://kotlinlang.org/docs/native-target-support.html
@@ -127,32 +115,11 @@ repositories {
     mavenCentral()
 }
 
-configurations.all {
-    resolutionStrategy.eachDependency {
-        if (requested.group == "org.ow2.asm") {
-            useVersion(libs.versions.asm.get())
-        }
-    }
-}
-
 // skip tests which require XCode components to be installed
 tasks {
     named("tvosSimulatorArm64Test") { enabled = false }
     named("watchosSimulatorArm64Test") { enabled = false }
 }
-
-// TODO only relevant for private projects, public project snapshots are released to maven central
-//publishing {
-//    if (isPublishingToGitHub) {
-//        repositories {
-//            maven {
-//                name = "GitHubPackages"
-//                url = uri("https://maven.pkg.github.com/xemantic/xemantic-kotlin-core")
-//                credentials(PasswordCredentials::class)
-//            }
-//        }
-//    }
-//}
 
 powerAssert {
     functions = listOf(
@@ -173,7 +140,7 @@ versionCatalogUpdate {
     sortByKey = false
     keep {
         // kotlinTarget / javaTarget are plain version constants with no version.ref
-        versions = setOf("kotlinTarget", "javaTarget", "asm")
+        versions = setOf("kotlinTarget", "javaTarget")
         keepUnusedVersions = false
     }
 }

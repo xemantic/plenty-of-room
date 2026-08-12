@@ -38,5 +38,5 @@ then apply the staged changes with:
 > [!NOTE]
 > The plugin is configured in [build.gradle.kts](build.gradle.kts)
 > to preserve the manual ordering of `libs.versions.toml` (`sortByKey = false`),
-> and to keep the `kotlinTarget`, `javaTarget`, and `asm` version constants,
+> and to keep the `kotlinTarget` and `javaTarget` version constants,
 > which have no `version.ref` and would otherwise be removed as unused.
