@@ -17,7 +17,8 @@ The `Leaf` column is the NDI `simulation-task-map` ID the work traces to.
 | P-2 | Locked units and constants module, plus the machine-readable result envelope every task writes through | DONE | Iteration 1 — `src/main/kotlin/Physics.kt`, and the `StudyResult` envelope that carries units, conventions, validity and every run parameter alongside the numbers |
 | P-3 | PEG material parameter sheet: monomer size, Kuhn length, χ(T, salt), excluded volume, mass density, with provenance per number and a `derived`/`cited` flag | **DONE** (iteration 2) | Claim `C-0002`. `a = 0.35 nm` closed (derived + fitted); the measured osmotic EOS adopted; χ named as *not determined* and split off as `P-6`. Raised `CH-0001`. |
 | P-4 | Volume-fraction bookkeeping: locate the crossover for *this* layer rather than quoting φ ≈ 0.2–0.3 | **DONE** (iteration 2) | Answered, and the answer inverted the question: the binding crossover is the **dilute→semidilute** one at φ# ≈ 0.026, approached from *below*, not the semidilute→concentrated one. The layer sits at φ/φ# = 1.08–1.23. `C-0002`. |
-| P-5 | Decide and defend the brush-regime criterion (`Σ ≥ 5` vs `Σ > 1`) | **RESOLVED in substance** (iteration 2) | `Σ = 5` ⇔ `φ = 1.085 φ#` **exactly**, independent of layer height and chain length. So the convention is a real material statement — it just places the layer at the crossover, not in the semidilute regime. The criterion should be stated on `φ/φ#`, where it is falsifiable. Formal adoption belongs to `T-1c`. |
+| P-5 | Decide and defend the brush-regime criterion (`Σ ≥ 5` vs `Σ > 1`) | **RESOLVED in substance, REOPENED in scope** (iterations 2–3) | `Σ = 5` ⇔ `φ = 1.085 φ#` **exactly**, independent of layer height and chain length. So the convention is a real material statement — it just places the layer at the crossover, not in the semidilute regime. `CH-0003` adds a second, independent failure of the same convention: the blob-stack height is `L₀/s = (Σ/π)^(5/6)` identically, i.e. **1.47 blobs at `Σ = 5`**. The criterion should therefore carry *both* `φ/φ#` and the blob count, where each is falsifiable. Formal adoption belongs to `T-1c`. |
+| P-7 | Build isolation for concurrent agents: `-PbuildDirectory=<dir>` so parallel runs of one checkout stop racing on `build/test-results` | **DONE** (iteration 3) | Raised as a process blocker mid-iteration: four agents sharing one working tree could not get an authoritative `./gradlew test`, and the failure (`EOFException`, `NoSuchFileException` on the in-progress results binary) looks like a broken test rather than a broken harness. `build-*/` is git-ignored. |
 | P-6 | `χ(T, salt)` and the Mg²⁺ salting-out coefficient for PEG/water at 2–10 mM | TODO — low priority | Split out of `P-3`, which could not determine it: the adopted EOS is non-virial so yields neither `A₂` nor `χ`, and no source for the Mg²⁺ coefficient was found. Bounded by argument at ≤ 0.7% of `τ`, below the fit uncertainty on `α` — so it does not block anything yet. It will bind if `T-3`/`T-6` need solvent quality as a function of ionic strength. |
 
 ## Science tasks
@@ -25,16 +26,17 @@ The `Leaf` column is the NDI `simulation-task-map` ID the work traces to.
 | ID | Task | Acceptance (abridged — full text in `gpd/tasks/`) | Leaf | Status |
 |---|---|---|---|---|
 | T-1 | Stiffness of the polymer layer under the tile | Number with stated model, parameters, validity range; sensitivity to grafting density reported | A2.1 | **DONE** (iteration 1) — claim `C-0001`, **challenged by `CH-0001`**: numbers stand as *lower bounds*, validity range corrected, `m = 3` excluded |
-| T-1c | Layer response from a **crossover-valid** free energy, not a fixed osmotic exponent | Stiffness and stroke re-derived with `m_eff(φ)` from `C-0002`; the Alexander-de Gennes height relation either justified at φ/φ# ≈ 1 or replaced; `N(L₀)` no longer resting on the failed premise | A2.1 | TODO — **top of the science queue**, raised by `CH-0001`. Cannot be done by swapping an exponent: `L₀ = N a^(5/3)σ^(1/3)` is itself a semidilute result and `T-1` *inverts* it to get `N`. |
+| T-1c | Layer response from a **crossover-valid** free energy, not a fixed osmotic exponent | Stiffness and stroke re-derived with `m_eff(φ)` from `C-0002`; the Alexander-de Gennes height relation either justified at φ/φ# ≈ 1 or replaced; `N(L₀)` no longer resting on the failed premise | A2.1 | IN PROGRESS (iteration 3) — **top of the science queue**, raised by `CH-0001` and now also by `CH-0003`. Cannot be done by swapping an exponent: `L₀ = N a^(5/3)σ^(1/3)` is itself a semidilute result and `T-1` *inverts* it to get `N`. The free energy must also be valid at **low blob count** (1.48–1.73), and MWC strong stretching is outside its own premise (`L₀/R_F` = 1.17–1.25). |
 | T-1b | Free-energy functional of the compressed layer, and the `(48/35)N/g` blob-count identity | Closed form implemented and the identity verified as a test, not as an argument | A2.1 | TODO — merge into `T-1c`, which needs a free energy anyway |
-| T-2 | Feasible design window in (grafting density, height, chemistry) | Non-empty region satisfying §4(a)–(d) simultaneously, or a proof of emptiness naming the binding constraint | A2.1 | **BLOCKED by T-1c**. Until then `C-0001`'s band is a *lower bound on width*, not a window. `C-0002` hands T-2 a new candidate binding constraint: the densities that make the brush theory valid (σ ≥ 0.99 nm⁻² at 10 nm) are the ones §4(a) rules out as far too stiff. |
+| T-2 | Feasible design window in (grafting density, height, chemistry) | Non-empty region satisfying §4(a)–(d) simultaneously, or a proof of emptiness naming the binding constraint | A2.1 | **BLOCKED by T-1c**. Until then `C-0001`'s band is a *lower bound on width*, not a window. `C-0002` hands T-2 a new candidate binding constraint: the densities that make the brush theory valid (σ ≥ 0.99 nm⁻² at 10 nm) are the ones §4(a) rules out as far too stiff. `C-0004` hands it three more: §4(d) is **discharged** as a non-constraint, tile edge is bounded above at 437 nm by drainage, and the `Σ = 5` lower edge is now challenged twice over. |
 | T-3 | Stroke and blocking force vs bias, incl. ionic screening | Stroke ≥ ~3 nm and force ≥ 100 pN at ≤ 2 V, or a demonstration it is unreachable | A2.2 | UNBLOCKED by T-1 — needs the electrostatic model. Note T-1 says only what the layer does *if* 100 pN is available; T-3 must not inherit it as given. |
 | T-4 | Electrostatic softening and pull-in: does `k_eff = k_brush + k_es` reach zero? | Max usable bias with margin, or a demonstration the osmotic divergence removes the instability | new | BLOCKED by T-1, T-3 |
 | T-5 | Load distribution across the origami | Peak per-load-path force against the 35–60 pN disassembly band; distributed and concentrated attachment treated separately | A1.2 | TODO |
 | T-5b | Deflected shape of the tile under actuation load | Deformation amplitude against the stroke; rigid-plate assumption upheld or rejected | A8.2 | TODO |
 | T-6 | Validity boundary of mean-field screening at 2 mM Mg²⁺ | Quantified deviation from mean-field, with the boundary stated | A7.4 | TODO |
-| T-7 | Poroelastic drainage time vs thickness and volume fraction | Bounded, with the conditions under which it would constrain ≥ 1 kHz stated | new | TODO |
-| T-8 | Tile positional variance at 300 K | σ_RMS ≤ 3.0 nm for the nominal Gen-1 tile | A1.2 | TODO — nearly free given T-1. Preliminary: σ_RMS ≈ 0.28 nm at the working point and ≈ 0.75 nm unbiased, both well inside 3.0 nm, but this is the layer-normal DOF only — tilt, lateral and internal modes are not in it. |
+| T-7 | Poroelastic drainage time vs thickness and volume fraction | Bounded, with the conditions under which it would constrain ≥ 1 kHz stated | new | **DONE** (iteration 3) — claim `C-0004`, raises `CH-0003`. **Not binding**: 91 kHz at the nominal design point, 22.6 kHz at the §3 worst case, 5.6 kHz under a composite worst case. §4(d) is discharged. |
+| T-7b | Electro-osmotic drag on the squeeze flow: a streaming potential opposes drainage in a porous layer under a biased electrode | Bounded, or shown to be below the 22× margin `C-0004` leaves | new | TODO — low priority, **BLOCKED by T-6**. It would take a 22× effect to matter, but `C-0004` could not bound it at all, so it is named rather than ignored. |
+| T-8 | Tile positional variance at 300 K | σ_RMS ≤ 3.0 nm for the nominal Gen-1 tile | A1.2 | TODO — **BLOCKED by T-1c** for the stiffness. Preliminary: σ_RMS ≈ 0.28 nm at the working point and ≈ 0.75 nm unbiased, both well inside 3.0 nm, but this is the layer-normal DOF only — tilt, lateral and internal modes are not in it. Two constraints the queue had not recorded: the leaf `A1.2` acceptance string demands a **simulated** σ_RMS with a **95 % CI** from a coarse-grained ensemble, not an analytic equipartition bound; and `C-0004` supplies the noise bandwidth (91 kHz corner) rather than leaving it assumed. |
 
 ## Entry points
 
@@ -42,6 +44,9 @@ The `Leaf` column is the NDI `simulation-task-map` ID the work traces to.
 |---|---|---|
 | `./gradlew study -Pstudy=brush.BrushStiffnessStudyKt` | `T-1` | `gpd/results/T-1-layer-stiffness.json` |
 | `./gradlew study -Pstudy=material.PegMaterialStudyKt` | `P-3` | `gpd/results/P-3-peg-material-parameters.json` |
+| `./gradlew study -Pstudy=poroelastic.PoroelasticDrainageStudyKt` | `T-7` | `gpd/results/T-7-poroelastic-drainage.json` |
+
+Add `-PbuildDirectory=<dir>` to any Gradle command when more than one agent is working this checkout (`P-7`).
 
 ## Ordering rationale
 
@@ -78,6 +83,15 @@ Hence `T-1c` now sits above `T-2` for the same reason `P-3` sat above it before 
   Kuhn diameter, so unrealisable; the former melt-like and ruled out by §4(a) for stiffness. (`C-0002`.)
 - **The §2 chain-tension caveat is discharged.** 4.2 pN per chain at the design point against a ~30 pN
   threshold, and structurally incapable of reaching it by grafting density alone. (`C-0002`.)
+- **§4(d) poroelasticity is discharged as a non-constraint, with its boundary named.** 91 kHz at the
+  nominal design point, 22.6 kHz at the §3 worst case, 5.6 kHz under a composite worst case — against a
+  1 kHz requirement. Drainage is a **footprint** problem, not a thickness problem (`τ ∝ L²`, `h` cancels),
+  and a **denser** layer drains faster, so the binding direction is dilution. The design would have to
+  leave the poroelastic model's own domain of validity before poroelasticity could bind. (`C-0004`.)
+- **The layer is ~1.5 blobs tall.** `L₀/s = (Σ/π)^(5/6)` identically, so the conventional `Σ = 5` onset
+  buys 1.47 blobs and a ten-blob stack needs `Σ ≈ 50`. This is a *geometric* failure of the same
+  convention `CH-0001` failed thermodynamically, and the two are inverse powers of the same `Σ`.
+  Strong-stretching theory is also outside its own premise here: `L₀/R_F = 1.17–1.25`. (`CH-0003`.)
 
 ## Open questions for Kazik
 

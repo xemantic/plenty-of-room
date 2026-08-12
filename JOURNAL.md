@@ -210,3 +210,102 @@ theory valid are the ones §4(a) rules out for being far too stiff. This is a `T
 repaired by swapping an exponent: the Alexander-de Gennes *height* relation is itself a consequence of
 semidilute blob structure, and `T-1` inverts it to get the chain length, so `N` rests on the same premise.
 `T-2` must not run on `C-0001`'s window until then, except as a stated lower bound.
+
+---
+
+## 2026-08-12 — Iteration 3
+
+The first iteration run **in parallel**: four GPD loops against one working tree, coordinated from a single
+context window, each owning a disjoint Kotlin package and a disjoint block of claim and challenge IDs.
+`TASKS.md`, `JOURNAL.md`, `CLAUDE.md`, `README.md`, `build.gradle.kts` and every `git` write stayed with the
+coordinator, so the loop keeps one coherent history rather than four interleaved ones.
+This section is written per task as each closes, newest last.
+
+### Interaction with Kazik
+
+One instruction, at the start of the session: run the loop from the main context window, spawn subagents
+for queued items, extend and maintain the queue, and run independent tasks in parallel if they fit the box.
+No questions were put back; nothing was blocking. Nothing has yet needed more compute than this box provides.
+
+### `P-7` — build isolation, taken as a process blocker mid-iteration
+
+**D-15. A harness failure that looks like a test failure is a process blocker, and outranks the science.**
+Four agents sharing one checkout could not get an authoritative `./gradlew test`: Gradle's results writer
+races between concurrent runs and fails with `EOFException` or
+`NoSuchFileException: build/test-results/test/binary/in-progress-results-generic.bin`, which reads as a
+broken test rather than a broken harness. `build.gradle.kts` now takes `-PbuildDirectory=<dir>` and each
+concurrent run gets its own build directory. The alternative — the workaround one agent found for itself,
+copying the tree into a scratch directory to get a clean run — would have left every *other* agent
+mis-diagnosing its own red build.
+
+**D-16. The toolchain gap was filled before it was needed, not after.**
+The box had no `g++`, `make` or `cmake` at all, and no numpy/scipy. Leaf `A1.2` names an oxDNA/Martini
+ensemble for `T-8`, which would have required a from-source build; discovering that at the point of need
+would have stalled a science task behind an install.
+
+### `T-7` — poroelastic drainage (leaf: none; the question is §4(d))
+
+**Done, verified, filed as `C-0004`**, raising `CH-0003`. §4(d) is discharged as a non-constraint:
+91 kHz corner frequency at the nominal design point, 22.6 kHz at the §3 worst case (70 × 100 nm tile on a
+10 nm layer), and **5.6 kHz under a composite worst case** that stacks the largest tile, the thickest layer,
+the least permeable of three models and a stiffness four times below `C-0001`'s — against a 1 kHz requirement.
+
+NDI asked for this one to be *"done properly rather than waved away"*, with the conditions that would make
+it binding. Those are now numbers: it binds at a 437 nm tile edge (10.9× Gen-1, 4.4× the longest §3 test
+tile), or at φ ≤ 0.0022 (a mushroom carpet that fails §4(a) first), or at 116× less permeability. The
+honest form of the answer is that **the design would have to leave the poroelastic model's own domain of
+validity before poroelasticity could become the binding constraint.**
+
+#### Decisions
+
+**D-17. The bound is quoted from the least permeable of three models rather than from a chosen one.**
+Three published constructions of the same layer disagree by 40× in permeability. Choosing one would have
+made the verdict rest on the choice; quoting the slow end makes only the *margin* rest on it.
+
+**D-18. Brinkman transmissivity everywhere, never plain Darcy.**
+`T = kh[1 − (2√k/h)tanh(h/2√k)]` contains the free-film Reynolds squeeze-film limit the layer degrades to
+when `√k ~ h` — which is exactly what the measurement-anchored permeability gives. Plain Darcy would have
+overstated drainage by 5× there. Poroelastic drainage and lubrication squeeze film are the same expression
+at two ends; they are not additive channels.
+
+**D-19. A paywalled primary source demotes the number rather than licensing the secondary quotation.**
+Jackson & James (1986) could not be obtained, so its permeability correlation is flagged unverified *in the
+code*, not merely in prose, and used only as a cross-check against an independently derived free-draining
+bound. The two agree to 1.3×, and nothing in the claim changes if the cited constant is wrong.
+
+**D-20. The result is parameterised by the layer stiffness, not by `C-0001`'s number**, because `T-1c` is
+re-deriving it concurrently. Every time is exactly `∝ 1/k_layer`, so the claim survives its own input moving.
+
+**D-21. FE Biot and explicit-solvent MD were declined on the `P-3` precedent** — they would compute a
+precise consequence of an imprecise premise, and the margin is 22×.
+
+#### What was surprising
+
+**S-11. The layer thickness cancels out of the drainage time.** Squeeze-out under a tile is a *footprint*
+problem: `τ = ηG/(kMf)`, and `h` survives only inside the Brinkman wall correction. The sign inverts, too —
+the **thin** layer is the slow one, because a thin channel screens its own flow against its walls. A
+vertically drained layer would have been four times faster at 5 nm than at 10 nm.
+
+**S-12. A denser layer drains faster.** `k` falls as `φ^(−1)` but the modulus rises as `φ^(9/4)`, and the
+modulus wins. "Poroelasticity gets worse as you compress" is backwards for this system, which is why the
+binding direction is dilution.
+
+**S-13. Lateral and vertical drainage are nearly tied at the Gen-1 tile** — 7.50 nm against 6.37 nm, with a
+closed-form crossover at `L = 3.396 h` and the tile sitting 18 % past it. "The water goes sideways" was 18 %
+from being wrong. Consequence: a hydraulically open origami tile would buy ≤ 1.4×, so tile permeability is
+not a design lever.
+
+**S-14. The `Σ = 5` brush convention has an exact geometric twin of `CH-0001`'s thermodynamic finding.**
+`L₀/s = (Σ/π)^(5/6)` identically, so `Σ = 5` buys **1.473 blobs** — for every polymer, chain length and
+thickness — and a ten-blob stack needs `Σ ≈ 50`. Found by asking a hydrodynamics question, not a mechanics
+one. Filed as `CH-0003`, and it lands directly on `T-1c`: strong-stretching theory is outside its own
+premise here too, at `L₀/R_F = 1.17–1.25`.
+
+**S-15. The declared falsifier fired, and it fired where it did not change the answer.** The Darcy premise
+fails on the measurement-anchored permeability (`√k/h = 0.56–0.58`; the layer is under two screening lengths
+thick). The 1 kHz contour lies *entirely* inside the region where the premise has already failed — so the
+boundary is reported as *where this model would say it binds*, not as a prediction that it does.
+
+**S-16. Sourcing a prefactor produced a disagreement rather than a number**, and the disagreement is
+structural: at `φ/φ# ≈ 1.1` the correlation blob is two thirds of the coil, so "segment scale" and "blob
+scale" are not separated scales for this layer. The honest deliverable was a bracket, not a value.

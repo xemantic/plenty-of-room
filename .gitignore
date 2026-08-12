@@ -1,5 +1,7 @@
 .gradle
 build/
+# per-agent build directories, see the buildDirectory property in build.gradle.kts
+build-*/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/

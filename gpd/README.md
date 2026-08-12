@@ -25,4 +25,13 @@ Three things in every claim are load-bearing and easy to skip:
 
 | ID | Claim | Task | Leaf | Verdict |
 |---|---|---|---|---|
-| `C-0001` | [Stiffness of the grafted polymer layer under the Gen-1 tile](claims/C-0001-layer-stiffness.md) | [`T-1`](tasks/T-1-layer-stiffness.md) | `A2.1` | PASS |
+| `C-0001` | [Stiffness of the grafted polymer layer under the Gen-1 tile](claims/C-0001-layer-stiffness.md) | [`T-1`](tasks/T-1-layer-stiffness.md) | `A2.1` | PASS — challenged by `CH-0001`, `CH-0003` |
+| `C-0002` | [PEG/water material parameters, and the osmotic law the layer actually obeys](claims/C-0002-peg-material-parameters.md) | [`P-3`](tasks/P-3-peg-material-parameters.md) | premise under `A2.1` | PASS |
+| `C-0004` | [Poroelastic drainage does not limit the Gen-1 actuator, and what would make it](claims/C-0004-poroelastic-drainage.md) | [`T-7`](tasks/T-7-poroelastic-drainage.md) | none (§4(d)) | PASS |
+
+### Standing challenges
+
+| Challenge | Against | Status |
+|---|---|---|
+| [`CH-0001`](challenges/CH-0001-semidilute-premise.md) — the layer is not in the semidilute regime | `C-0001` | UPHELD in part |
+| [`CH-0003`](challenges/CH-0003-blob-stack-height.md) — the layer is ~1.5 blobs tall | `C-0001` | see the challenge |

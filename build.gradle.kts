@@ -16,6 +16,22 @@ plugins {
 
 group = "com.xemantic.nano"
 
+/**
+ * Redirects the build directory, so that concurrent builds of *this same working tree*
+ * do not share one:
+ *
+ * ./gradlew test -PbuildDirectory=build-t1c
+ *
+ * Several agents run the loop against one checkout at a time. Gradle serialises the builds
+ * themselves, but the test-results writer races between them and fails the run with
+ * `EOFException` or `NoSuchFileException: build/test-results/test/binary/...` — a failure of
+ * the harness, not of the tests. Giving each concurrent run its own build directory removes
+ * the shared file entirely. Unset, the directory is `build` and nothing changes.
+ */
+providers.gradleProperty("buildDirectory").orNull?.let { directory ->
+    layout.buildDirectory = layout.projectDirectory.dir(directory)
+}
+
 xemantic {
     description = "Evidence corpus from agentic-loop runs against the NDI Gen-1 DNA-origami actuator simulation programme"
     inceptionYear = "2026"

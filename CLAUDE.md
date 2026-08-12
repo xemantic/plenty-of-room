@@ -47,22 +47,33 @@ which is one of the reasons this project is a plain Kotlin/JVM application rathe
 - The layer stiffness is **not a well-posed single number at the resting height**: the de Gennes scaling form has finite stiffness at first contact, the Milner-Witten-Cates SCF form has exactly zero (its pressure vanishes quadratically at `L0`, because the brush's outer edge is diffuse). Always quote a stiffness at a stated compression.
 - `k/A = 3 k_BT sigma^(3/2) / L0` is **not** a 3/2 law in the grafting density — `L0` carries `sigma^(1/3)` too, so the equilibrium stiffness goes as `sigma^(7/6)`.
 - Mapping the de Gennes two-brush pressure onto a brush against a rigid wall is `D -> 2h`, and the factor of two then **cancels out of both ratios**. Keeping it while reinterpreting `D` as the wall distance understates the pressure by `2^(9/4)` — this is the prefactor confusion the NDI problem definition warns about.
+- **The blob-stack height is `L0/s = (Sigma/pi)^(5/6)`, identically** — 1.47 blobs at the conventional `Sigma = 5` onset, for every polymer, chain length and thickness; a ten-blob stack needs `Sigma ~ 50`. So `Sigma >= 5` no more delivers a stack of blobs than it delivers semidilute thermodynamics, and the two failures (`CH-0003`, `CH-0001`) are inverse powers of the same `Sigma`.
+
+### Poroelastic transport
+
+- **The layer's hydrodynamic screening length is not known to better than a factor of 6.** Segment-scale models give `sqrt(k) ~ 0.9 nm`, the measurement-anchored `k = xi^2` gives 5.6 nm, and at `phi/phi# ~ 1` the blob is two thirds of the coil — so these describe the same object. Bracket it and quote from the slow end; never a single number.
+- **Squeeze-out under a tile is a footprint problem, not a thickness problem.** `tau = eta G / (k M f)`: the thickness cancels except through the Brinkman wall correction, and `tau ~ L^2` in the tile edge. Lateral and vertical drainage cross over at `L = 3.4 h`, so at 40 x 40 nm on a 10 nm layer neither path is obviously dominant.
+- **Use the Brinkman transmissivity `T = k h [1 - (2 sqrt(k)/h) tanh(h/2 sqrt(k))]`, never plain Darcy `k h`.** It contains the free-film Reynolds squeeze-film limit a layer with `sqrt(k) ~ h` degrades to; plain Darcy overstates drainage by 5x there. Poroelastic drainage and lubrication squeeze film are the same expression at two ends — they are **not** additive channels.
 
 ## Environment
 
 - The agent does **not** run as root, but as the `claude` user with passwordless sudo.
   Missing tooling is therefore installable — `sudo apt-get install -y poppler-utils` for the `pdftotext` the research practice above relies on, for instance —
   so do not report a tool as unavailable without trying to install it first.
+- The box ships **no compiler toolchain at all** — `g++`, `make`, `cmake`, numpy and scipy were all absent and had to be installed. Anything that builds from source (oxDNA, for leaf `A1.2`) needs them first.
+- **When more than one agent works this checkout, pass `-PbuildDirectory=<dir>` to every Gradle command.** Concurrent runs otherwise race on `build/test-results` and fail with `EOFException` or `NoSuchFileException` on the in-progress results binary — a harness failure that reads exactly like a broken test. `build-*/` is git-ignored. Under heavy load a run can still die with `Test process encountered an unexpected problem`; that is contention, so retry rather than "fixing" a test.
 
 ## Known gotchas
 
 - viktor rejects empty arrays already on construction — `DoubleArray(0).asF64Array()` throws `IllegalArgumentException: empty arrays not supported` — so an empty `F64Array` cannot exist, and guarding a function against one is dead code.
 - `L0 = N a^(5/3) sigma^(1/3)` evaluated in floating point does not land on a round number even when the inputs are chosen so it should — `0.125.pow(1.0/3.0)` is `0.5000000000000001`. Do not assert an exact equilibrium height, and do not embed one in a `require` message that a test then matches literally; interpolate the computed value instead.
+- `1 - tanh(x)/x` loses every significant digit to cancellation below `x ~ 1e-2`, which is exactly the free-film limit of the Brinkman transmissivity — use the series `x^2/3 - 2x^4/15 + 17x^6/315` there.
 - After upgrading the Gradle wrapper, `test` may fail with `NoSuchFileException: build/test-results/test/binary/in-progress-results-generic.bin`, because the results of the previous Gradle version are stale — delete `build/test-results` (or run `clean`) and retry.
 
 ## Research practice
 
 - **Do not take a numeric result from a search-engine summary or from memory.** Download the paper and read the passage. A summary of Hansen et al. (2003) reported the des Cloizeaux onset as `φ# ≈ 0.04 / 0.025`; the paper says `0.15` and `0.07–0.09` — the summary had picked up the *overlap* concentrations instead. Acting on the summary would have inverted the conclusion of a whole iteration. `pdftotext -layout` on the arXiv PDF is the cheap, reliable route.
+- **A paywalled primary source is a reason to demote the number, not to quote the secondary.** Flag it unverified *in the code*, use it only as a cross-check against an independently derived bound, and make sure nothing changes if it is wrong. Where a publisher blocks the fetch with a reCAPTCHA, EuropePMC's REST full text often serves the same article: `https://www.ebi.ac.uk/europepmc/webservices/rest/PMC<id>/fullTextXML`.
 - Prefer **published measurement on the actual material** over simulating it. For `P-3` the "serious" method (MD/SCF for PEG's excluded volume) would have been *less* trustworthy than existing osmometry over the same concentration range, not merely more expensive. Say so explicitly in the Plan section — that is the cost justification NDI asks for.
 
 ## Anti-patterns to avoid
