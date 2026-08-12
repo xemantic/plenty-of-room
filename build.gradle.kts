@@ -1,7 +1,6 @@
-@file:OptIn(ExperimentalWasmDsl::class, ExperimentalKotlinGradlePluginApi::class)
+@file:OptIn(ExperimentalKotlinGradlePluginApi::class)
 
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
-import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 import org.jreleaser.model.Active
@@ -57,47 +56,6 @@ kotlin {
         }
     }
 
-    js {
-        browser()
-        nodejs()
-    }
-
-    wasmJs {
-        browser()
-        nodejs()
-        d8()
-    }
-
-    wasmWasi {
-        nodejs()
-    }
-
-    // native, see https://kotlinlang.org/docs/native-target-support.html
-    // tier 1
-    macosArm64()
-    iosSimulatorArm64()
-    iosX64()
-    iosArm64()
-
-    // tier 2
-    linuxX64()
-    linuxArm64()
-    watchosSimulatorArm64()
-    watchosArm32()
-    watchosArm64()
-    tvosSimulatorArm64()
-    tvosArm64()
-
-    // tier 3
-    androidNativeArm32()
-    androidNativeArm64()
-    androidNativeX86()
-    androidNativeX64()
-    mingwX64()
-    watchosDeviceArm64()
-
-    swiftExport {}
-
     sourceSets {
 
         commonTest {
@@ -113,12 +71,6 @@ kotlin {
 
 repositories {
     mavenCentral()
-}
-
-// skip tests which require XCode components to be installed
-tasks {
-    named("tvosSimulatorArm64Test") { enabled = false }
-    named("watchosSimulatorArm64Test") { enabled = false }
 }
 
 powerAssert {
