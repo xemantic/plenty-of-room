@@ -525,3 +525,81 @@ It is also 29× smaller than the width of "the theta temperature of PEG in water
 toward poor-solvent conditions"* holds for sulfates, carbonates and phosphates, and is **not established** for
 MgCl₂ — which the aqueous-two-phase literature places on the salting-**in** side, via cation binding to the
 ether oxygens. That mechanism is the same one `C-0005` needed and could not quantify (`P-8`).
+
+### `T-1c` — the layer response from a crossover-valid free energy (leaf `A2.1`)
+
+**Done, verified, filed as `C-0003`**, raising `CH-0002`, **resolving `CH-0003`** and **closing `P-5`**.
+This was the critical path: the task `CH-0001` raised when it showed that the semidilute premise failed under
+`C-0001`'s *height* relation and not merely under its exponent.
+
+`CH-0001` is now **partly dissolved, partly upheld, and in one part reversed** — and the reversal is the
+finding of the iteration.
+
+- **Dissolved, on the exponent.** `m_eff = 1.66–1.92` is a **bulk** quantity. Integrating the measured
+  equation of state gives `f(φ) = (k_BT/v₀)[φ lnφ/N + (4α/5)φ^(9/4)]`, and the first term — the only thing
+  bending the exponent below 9/4 — is the translational entropy of whole chains, which grafting removes.
+  **The grafted layer's own exponent is 2.00–2.56.** So `m < 2` is what is excluded, not `m = 9/4`.
+  `CH-0001` named this as its own most likely failure mode in its closing paragraph, and it was right.
+- **Upheld, on the height.** `N(L₀)` was 5–88 % too short. `σ^(1/3)` is correct only for a two-body
+  interaction; des Cloizeaux gives `σ^(5/13)`.
+- **Reversed, on the direction.** *"Every correction runs the same way — softer"* is **false**. Stiffness at
+  first contact is 33–87 % **higher**, not 19 % lower, and the stroke bracket **straddles** `C-0001` at every
+  height. `C-0001`'s strokes are **not** lower bounds and its window is **not** a lower bound on its own width.
+  That standing finding is withdrawn.
+
+#### Decisions
+
+**D-36. The interaction free energy is bracketed, not chosen** — two-body (measured `A₂`), virial (`A₂`+`A₃`)
+and des Cloizeaux (measured `α`) carried across the whole sweep. They disagree by 1.45× in `Π_int` at the
+layer's own φ, and that factor — not an exponent — is the reported uncertainty on every headline number.
+
+**D-37. `B` comes from a measurement, not from matching at `φ#`.** The matching construction has no
+independent content and costs 1.89×.
+
+**D-38. Gaussian elasticity on the measured Kuhn parameters, not blob elasticity** — justified by the
+thermal-blob count, which this project computes rather than prefers. This is what removes the semidilute
+premise from under the height relation.
+
+**D-39. `Σ ≥ 5` is dropped and replaced by `L₀/R₀ ≥ 1`**, reported at every design point, with windows emitted
+both with and without it so the two contributions stay separable. This closes `P-5` formally, as `P-5` said
+it should be closed.
+
+**D-40. The contact-value theorem is verified thermodynamically, not assumed** — `P(h) = Π_int(φ(h))` checked
+against `−∂F/∂h` with `F` assembled independently from the profile.
+
+#### What was surprising
+
+**S-37. The bulk crossover that the whole of `CH-0001` turns on is, for a grafted layer, an artefact of a term
+the layer does not have.** Tether the chains and the `φ lnφ/N` term is gone, and with it the entire
+dilute→semidilute crossover in the *pressure*. Three iterations of work on where the crossover sits turn out
+to have been characterising a property of the bulk solution that the brush does not inherit.
+
+**S-38. Three height relations, one disagreement, and it was never about the interaction.** `σ^(1/3)`
+mean-field, `σ^(5/13)` des Cloizeaux, `σ^(1/3)` blob — the third is the second minimised against *blob*
+elasticity instead of Gaussian. So "which height law" reduces to "which elasticity", which is a checkable
+material question rather than a modelling choice.
+
+**S-39. PEG in water is a *marginal* solvent and the Gen-1 chains are not swollen at all.** The measured `A₂`
+gives an excluded volume of 12.25 Å³ against a 60.4 Å³ monomer, so the thermal blob is 1222 Kuhn segments —
+3799 monomers, **167 kDa** — while the entire design space is 60–375 monomers, i.e. **0.02–0.10 of one blob**.
+Every blob-based statement made about this layer, across three iterations, was about a structure it does not
+have. `CH-0003` asked how many blobs tall the layer is; the better answer is that there are no blobs.
+
+**S-40. The Alexander-de Gennes unity prefactor is not neutral — it is worth 6.6× in excluded volume.**
+`L₀ = N a^(5/3)σ^(1/3)` is reproduced *exactly* by a two-body box layer at `v = 81.0 Å³`, against a measured
+12.25 Å³. A convention with a factor of 6.6 hiding inside it.
+
+**S-41. The correction that mattered ran opposite to the two that were available.** `CH-0001` had the exponent
+and the prefactor, both softening, and concluded a direction. The height relation — which it had itself
+identified as unrepairable and outstanding — is the larger effect and runs stiffer. **Concluding a direction
+from the corrections you happen to have is a distinct failure mode from getting a correction wrong**, and this
+project has now committed it once and caught it once.
+
+**S-42. Searching for one number cost more than the entire calculation, and changed the answer more.**
+Finding a published `A₂` for PEG/water took most of the iteration; the calculation itself runs in seconds.
+The construction that would have been used instead is 1.89× off.
+
+**S-43. An unreachable convergence tolerance is an infinite loop that returns the right answer.** Two nested
+Newton solvers exited on `|residual| ≤ 1e-15 × scale`, below the noise floor of a 10³-term quadrature, so every
+solve ran its full iteration cap — turning a 3-minute sweep into one that never finished. Exit on the
+*bracket*, and memoise the pure function a `require` calls.

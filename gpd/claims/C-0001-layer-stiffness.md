@@ -9,15 +9,31 @@
 | **Maturity** | **TRL 1–3. Model-consistent and traceable. NOT empirically demonstrated.** |
 | **Provenance** | `gpd/results/T-1-layer-stiffness.json`, produced by `brush.BrushStiffnessStudyKt`, 75 tests green |
 | **Conditions** | T = 300 K, aqueous buffer, `k_BT = 4.142 pN·nm`; 40 × 40 nm tile (A = 1600 nm²); PEG, `a = 0.35 nm` |
-| **Challenged** | **[`CH-0001`](../challenges/CH-0001-semidilute-premise.md) — UPHELD in part.** See the banner below. |
+| **Challenged** | **[`CH-0001`](../challenges/CH-0001-semidilute-premise.md) — UPHELD in part**, **[`CH-0002`](../challenges/CH-0002-corrections-do-not-all-soften.md) — UPHELD**, **[`CH-0003`](../challenges/CH-0003-blob-stack-height.md) — resolved by [`C-0003`](C-0003-crossover-valid-layer-response.md)**. See the banners below. |
 
 > ⚠️ **This claim's validity range is corrected by [`CH-0001`](../challenges/CH-0001-semidilute-premise.md) (2026-08-12).**
 > The numbers below are unchanged and reproducible, but the layer is **not** in the semidilute regime
 > the `Semidilute` bullet claims: on the measured PEG/water equation of state it sits *inside* the
-> dilute→semidilute crossover, with a local osmotic exponent of 1.66–1.92 rather than 9/4.
+> dilute→semidilute crossover, ~~with a local osmotic exponent of 1.66–1.92 rather than 9/4.
 > Every correction runs the same way — softer — so **the strokes below are lower bounds and the design
-> window is a lower bound on its own width**. The `m = 3` model is excluded by measurement.
+> window is a lower bound on its own width**. The `m = 3` model is excluded by measurement.~~
 > Do not consume this claim without reading `CH-0001`.
+
+> ⚠️ **The struck-through direction above is withdrawn by [`CH-0002`](../challenges/CH-0002-corrections-do-not-all-soften.md) (2026-08-12).**
+> `1.66–1.92` is the local exponent of the **bulk** equation of state, and the term that drags it below 9/4
+> is the translational entropy of whole chains, which a **grafted** layer does not have. The exponent of
+> *this* layer's restoring pressure is **2.00–2.56**; what is excluded is `m < 2`, not `m = 9/4` or `m = 3`.
+> Correcting the height relation as well raises `N(L₀)` by 5–88 % and runs **stiffer**, so the
+> crossover-valid bracket **straddles** the numbers below rather than lying above them:
+> at `L₀ = 10 nm`, `σ = 0.024 nm⁻²` the stroke is **3.83–6.01 nm** against the 4.95 nm tabulated here.
+> **The strokes below are neither upper nor lower bounds. Carry the bracket in [`C-0003`](C-0003-crossover-valid-layer-response.md), not these numbers.**
+> The one headline that survives every model is *"the ~10 nm desired stroke is unreachable at 100 pN"*.
+
+> ⚠️ **The height relation itself is replaced by [`C-0003`](C-0003-crossover-valid-layer-response.md) (2026-08-12),**
+> which closes [`CH-0003`](../challenges/CH-0003-blob-stack-height.md). `L₀ = N a^(5/3) σ^(1/3)` is a blob-stack
+> result and the Gen-1 layer is not a blob stack: 1.47 blobs tall (`CH-0003`), 0.06 thermal blobs per chain,
+> and `L₀/R₀ = 0.83–1.07` at the design points below. The convention's unity prefactor is worth an excluded
+> volume of 81 Å³ against a **measured** 12.25 Å³ — a factor of 6.6.
 
 ---
 
@@ -145,9 +161,17 @@ Everything else in this claim is derived from the §3 parameters.
 ## Challenges
 
 **[`CH-0001`](../challenges/CH-0001-semidilute-premise.md) — UPHELD in part, 2026-08-12.**
-The semidilute premise fails; the claim is not withdrawn, its numbers become bounds, and the
-`m = 3` model is excluded by measurement. `T-1c` is queued to re-derive the layer response with a
-crossover-valid free energy, which is what the challenge shows cannot be repaired by changing an exponent.
+The semidilute premise fails; the claim is not withdrawn, ~~its numbers become bounds, and the
+`m = 3` model is excluded by measurement~~ (**both withdrawn by `CH-0002`** — see below). `T-1c` is queued to
+re-derive the layer response with a crossover-valid free energy, which is what the challenge shows cannot be
+repaired by changing an exponent.
+
+**[`CH-0002`](../challenges/CH-0002-corrections-do-not-all-soften.md) — UPHELD, 2026-08-12, raised by [`C-0003`](C-0003-crossover-valid-layer-response.md).**
+The corrections do **not** all run the same way. `CH-0001` carried the *bulk* local exponent into the brush
+pressure law; a grafted layer has no chain translational entropy, so its own exponent is 2.00–2.56 and `m < 2`
+is what is excluded. Correcting the height relation raises `N(L₀)` by 5–88 % and runs stiffer, so the
+crossover-valid bracket straddles the table above. **The strokes here are not lower bounds and the window is
+not a lower bound on its own width.** Superseded by `C-0003` for every consumer.
 
 **[`CH-0003`](../challenges/CH-0003-blob-stack-height.md) — raised 2026-08-12 by [`C-0004`](C-0004-poroelastic-drainage.md).**
 The geometric twin of `CH-0001`: the Alexander-de Gennes layer is `(Σ/π)^(5/6)` blobs tall, i.e. **1.47 at
