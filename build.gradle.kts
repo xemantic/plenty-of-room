@@ -6,6 +6,7 @@ plugins {
     application
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlin.plugin.power.assert)
+    alias(libs.plugins.kotlin.plugin.serialization)
     alias(libs.plugins.dokka)
     alias(libs.plugins.version.catalog.update)
     alias(libs.plugins.maven.publish)
@@ -65,8 +66,25 @@ repositories {
     mavenCentral()
 }
 
+/**
+ * Runs one study entry point, for example:
+ *
+ * ./gradlew study -Pstudy=brush.BrushStiffnessStudyKt
+ *
+ * Each GPD task adds its own `main` under `com.xemantic.nano.plentyofroom`
+ * rather than competing for the single `application` main class.
+ */
+tasks.register<JavaExec>("study") {
+    group = "application"
+    description = "Runs a single study entry point, selected with -Pstudy=<relative main class>"
+    classpath = sourceSets["main"].runtimeClasspath
+    mainClass = "com.xemantic.nano.plentyofroom." +
+            (providers.gradleProperty("study").orNull ?: "brush.BrushStiffnessStudyKt")
+}
+
 dependencies {
     implementation(libs.viktor)
+    implementation(libs.kotlinx.serialization.json)
     implementation(libs.openrndr.math)
     testImplementation(libs.kotlin.test)
     testImplementation(libs.xemantic.kotlin.test)

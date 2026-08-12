@@ -1,0 +1,36 @@
+/*
+ * Copyright 2026 Kazimierz Pogoda / Xemantic
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.xemantic.nano.plentyofroom
+
+import kotlin.math.abs
+
+/**
+ * Returns `true` if this value agrees with [expected] to within [relativeTolerance].
+ *
+ * Physics results in this project are compared relatively, never exactly:
+ * the quantities span many orders of magnitude,
+ * and an absolute epsilon that is right for a pressure in pN/nm²
+ * is meaningless for a stiffness in pN/nm.
+ *
+ * The comparison degrades to absolute when [expected] is zero,
+ * which is the case for the several "this vanishes exactly at equilibrium" assertions.
+ */
+fun Double.isCloseTo(
+    expected: Double,
+    relativeTolerance: Double = 1e-9
+): Boolean = if (expected == 0.0) abs(this) <= relativeTolerance
+else abs(this - expected) / abs(expected) <= relativeTolerance

@@ -29,6 +29,33 @@ so that claims about what the loops actually did can be checked against the reco
 The name is a nod to Feynman's
 [There's Plenty of Room at the Bottom](https://en.wikipedia.org/wiki/There%27s_Plenty_of_Room_at_the_Bottom).
 
+## What is in here
+
+The project fulfils [the NDI Gen-1 actuator simulation problem](third-party/2026-08-ndi-gen1-problem-definition.md) —
+Nano Dynamics Institute's electrically addressable DNA-origami nanomechanics, posed as eight tasks with acceptance predicates and no prescribed method.
+
+NDI runs a **Formulate → Plan → Execute → Verify** loop and is explicit that the loop, not just the answers, is what is being evaluated.
+So the loop is the structure of this repository:
+
+| Path | What it is |
+|---|---|
+| [SESSION-PROMPT.md](SESSION-PROMPT.md) | The standing instruction for one iteration. Start a run with `/loop read @SESSION-PROMPT.md and follow the instructions in it`. |
+| [TASKS.md](TASKS.md) | The live queue. Process blockers outrank cheap wins. |
+| [JOURNAL.md](JOURNAL.md) | Every interaction, decision, and surprise, in order. |
+| [gpd/](gpd/README.md) | The record: tasks with their four stages, machine-readable results, verified claims with provenance, and challenges. |
+| `src/` | The numeric models and their entry points, in Kotlin/JVM. Tests are written first. |
+
+Status is **TRL 1–3** throughout. A claim marked `PASS` is model-consistent and traceable; nothing here is measured.
+
+### Running a study
+
+Each task adds its own entry point rather than competing for the single `application` main class:
+
+```shell
+./gradlew test
+./gradlew study -Pstudy=brush.BrushStiffnessStudyKt
+```
+
 ## Development
 
 See [DEVELOPMENT.md](DEVELOPMENT.md) for maintenance notes —

@@ -3,6 +3,7 @@
 kotlinTarget = "2.4"
 javaTarget = "17"
 kotlin = "2.4.10"
+kotlinxSerialization = "1.9.0"
 viktor = "1.2.0"
 openrndr = "0.4.4"
 xemanticKotlinTest = "1.17.5"
@@ -15,6 +16,7 @@ xemanticConventionsPlugin = "0.7.0"
 
 [libraries]
 viktor = { module = "org.jetbrains.bio:viktor", version.ref = "viktor" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 openrndr-math = { module = "org.openrndr:openrndr-math", version.ref = "openrndr" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 xemantic-kotlin-test = { module = "com.xemantic.kotlin:xemantic-kotlin-test", version.ref = "xemanticKotlinTest" }
@@ -22,6 +24,7 @@ xemantic-kotlin-test = { module = "com.xemantic.kotlin:xemantic-kotlin-test", ve
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-plugin-power-assert = { id = "org.jetbrains.kotlin.plugin.power-assert", version.ref = "kotlin" }
+kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaPlugin" }
 version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "versionCatalogUpdatePlugin" }
 maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublishPlugin" }
