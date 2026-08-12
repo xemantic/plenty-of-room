@@ -58,7 +58,7 @@ tasks.withType<JavaCompile>().configureEach {
 }
 
 application {
-    mainClass = "com.xemantic.nano.plentyofroom.HelloWorldKt"
+    mainClass = "com.xemantic.nano.plentyofroom.HelloWorldAppKt"
 }
 
 repositories {

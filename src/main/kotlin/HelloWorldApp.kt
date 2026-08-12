@@ -16,10 +16,25 @@
 
 package com.xemantic.nano.plentyofroom
 
-object Foo {
-    const val BAR: String = "buzz"
-}
+import org.openrndr.math.Vector3
+
+private val relaxed = listOf(
+    Vector3(0.0, 0.0, 0.0),
+    Vector3(4.0, 0.0, 0.0),
+    Vector3(0.0, 4.0, 0.0)
+)
+
+private val actuated = listOf(
+    Vector3(0.0, 0.0, 0.0),
+    Vector3(4.0, 0.0, 0.0),
+    Vector3(0.0, 0.0, 4.0)
+)
 
 fun main() {
-    print("Hello World!")
+    println("Hello World!")
+    println("centroid, relaxed: ${centroid(relaxed)}")
+    println("centroid, actuated: ${centroid(actuated)}")
+    println("hinge angle, relaxed: ${angleBetween(relaxed[1], relaxed[2])}")
+    println("hinge angle, actuated: ${angleBetween(actuated[1], actuated[2])}")
+    println("displacement RMS: ${rootMeanSquare(displacements(relaxed, actuated))}")
 }

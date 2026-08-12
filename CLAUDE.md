@@ -37,6 +37,7 @@ which is one of the reasons this project is a plain Kotlin/JVM application rathe
 
 ## Known gotchas
 
+- viktor rejects empty arrays already on construction — `DoubleArray(0).asF64Array()` throws `IllegalArgumentException: empty arrays not supported` — so an empty `F64Array` cannot exist, and guarding a function against one is dead code.
 - After upgrading the Gradle wrapper, `test` may fail with `NoSuchFileException: build/test-results/test/binary/in-progress-results-generic.bin`, because the results of the previous Gradle version are stale — delete `build/test-results` (or run `clean`) and retry.
 
 ## Anti-patterns to avoid
