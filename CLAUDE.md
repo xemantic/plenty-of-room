@@ -35,6 +35,13 @@ For small fixed-size geometry — `Vector2`/`Vector3`/`Vector4`, matrices, quate
 viktor ships JNI natives and is JVM-only,
 which is one of the reasons this project is a plain Kotlin/JVM application rather than a multiplatform one.
 
+### PEG material parameters
+
+- **`a` is three different quantities in the brush literature and they are not interchangeable.** The Alexander-de Gennes *effective monomer length* (0.35 nm, a **contour** length), the *volumetric* monomer size `v₀^(1/3)` (0.392 nm), and the *Kuhn length* `b` (1.1 nm). Their cubes differ by a factor of 39. Use `PegWater`'s three named properties; never write `a` for a volume.
+- A **volume fraction** in this project always means the physical one, `N σ v₀ / h`. Sources that write `φ = n a³` are quoting a *reduced density*, 1.408× smaller for PEG — and a fitted prefactor always travels with the `φ` convention it was fitted under.
+- **The binding crossover for a grafted PEG layer is the dilute→semidilute one, approached from below**, at `φ# = (αN)^(−4/5) ≈ 0.026` — not the semidilute→concentrated one at `φ ≈ 0.2–0.3`. Checking distance from the upper boundary says nothing about the lower one; `C-0001` made exactly this mistake.
+- **Coil overlap (`Σ ≥ 5`, or `φ > φ* = N^(−4/5)`) is not a sufficient criterion for semidilute behaviour**, and this is documented in print for PEG specifically. For PEG in water `Σ = 5` is exactly equivalent to `φ = 1.085 φ#`, independent of layer height — i.e. the middle of the crossover, not the semidilute regime.
+
 ### Brush mechanics
 
 - The layer stiffness is **not a well-posed single number at the resting height**: the de Gennes scaling form has finite stiffness at first contact, the Milner-Witten-Cates SCF form has exactly zero (its pressure vanishes quadratically at `L0`, because the brush's outer edge is diffuse). Always quote a stiffness at a stated compression.
@@ -46,6 +53,11 @@ which is one of the reasons this project is a plain Kotlin/JVM application rathe
 - viktor rejects empty arrays already on construction — `DoubleArray(0).asF64Array()` throws `IllegalArgumentException: empty arrays not supported` — so an empty `F64Array` cannot exist, and guarding a function against one is dead code.
 - `L0 = N a^(5/3) sigma^(1/3)` evaluated in floating point does not land on a round number even when the inputs are chosen so it should — `0.125.pow(1.0/3.0)` is `0.5000000000000001`. Do not assert an exact equilibrium height, and do not embed one in a `require` message that a test then matches literally; interpolate the computed value instead.
 - After upgrading the Gradle wrapper, `test` may fail with `NoSuchFileException: build/test-results/test/binary/in-progress-results-generic.bin`, because the results of the previous Gradle version are stale — delete `build/test-results` (or run `clean`) and retry.
+
+## Research practice
+
+- **Do not take a numeric result from a search-engine summary or from memory.** Download the paper and read the passage. A summary of Hansen et al. (2003) reported the des Cloizeaux onset as `φ# ≈ 0.04 / 0.025`; the paper says `0.15` and `0.07–0.09` — the summary had picked up the *overlap* concentrations instead. Acting on the summary would have inverted the conclusion of a whole iteration. `pdftotext -layout` on the arXiv PDF is the cheap, reliable route.
+- Prefer **published measurement on the actual material** over simulating it. For `P-3` the "serious" method (MD/SCF for PEG's excluded volume) would have been *less* trustworthy than existing osmometry over the same concentration range, not merely more expensive. Say so explicitly in the Plan section — that is the cost justification NDI asks for.
 
 ## Anti-patterns to avoid
 

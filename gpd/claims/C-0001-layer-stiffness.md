@@ -9,6 +9,15 @@
 | **Maturity** | **TRL 1–3. Model-consistent and traceable. NOT empirically demonstrated.** |
 | **Provenance** | `gpd/results/T-1-layer-stiffness.json`, produced by `brush.BrushStiffnessStudyKt`, 75 tests green |
 | **Conditions** | T = 300 K, aqueous buffer, `k_BT = 4.142 pN·nm`; 40 × 40 nm tile (A = 1600 nm²); PEG, `a = 0.35 nm` |
+| **Challenged** | **[`CH-0001`](../challenges/CH-0001-semidilute-premise.md) — UPHELD in part.** See the banner below. |
+
+> ⚠️ **This claim's validity range is corrected by [`CH-0001`](../challenges/CH-0001-semidilute-premise.md) (2026-08-12).**
+> The numbers below are unchanged and reproducible, but the layer is **not** in the semidilute regime
+> the `Semidilute` bullet claims: on the measured PEG/water equation of state it sits *inside* the
+> dilute→semidilute crossover, with a local osmotic exponent of 1.66–1.92 rather than 9/4.
+> Every correction runs the same way — softer — so **the strokes below are lower bounds and the design
+> window is a lower bound on its own width**. The `m = 3` model is excluded by measurement.
+> Do not consume this claim without reading `CH-0001`.
 
 ---
 
@@ -90,9 +99,15 @@ Respected downstream, and enforced in code rather than documented:
   not a derivation: it sets the window's lower edge, so the window's *width* is convention-dependent
   in a way its upper edge is not. On the weaker `Σ > 1` criterion the 7 nm window would open and the
   10 nm window would roughly double. Anyone using this result must state which criterion they are using.
-- **Semidilute.** Working volume fraction is φ ≈ 0.03–0.044, comfortably below the ~0.2–0.3 crossover,
+- ~~**Semidilute.** Working volume fraction is φ ≈ 0.03–0.044, comfortably below the ~0.2–0.3 crossover,
   so the `m = 9/4` exponent is justified **for this layer at this operating point** — checked, not inherited.
-  Correcting `a` to match PEG's true monomer volume raises φ by ~1.5×; the conclusion survives.
+  Correcting `a` to match PEG's true monomer volume raises φ by ~1.5×; the conclusion survives.~~
+  **WITHDRAWN by [`CH-0001`](../challenges/CH-0001-semidilute-premise.md).** Three faults: it checked the
+  *upper* (semidilute→concentrated) crossover when the binding one is the *lower* (dilute→semidilute) one
+  at φ# ≈ 0.026; the φ quoted is a reduced density `n a³`, 1.408× smaller than the physical volume fraction;
+  and coil overlap is not a sufficient criterion for semidilute behaviour in this material. Replaced by
+  [`C-0002`](C-0002-peg-material-parameters.md): the layer sits at φ/φ# = 1.08–1.23, in the crossover,
+  with `m_eff` = 1.66–1.92.
 - **Mechanical only.** No electrostatics, no ion partitioning, no poroelasticity, no tile compliance.
 - **Rigid tile.** Assumed, not shown. `T-5b` is what tests it, and if the tile dishes, the tile
   no longer samples a single `h` and this whole claim is a spatial average.
@@ -104,14 +119,26 @@ Respected downstream, and enforced in code rather than documented:
 
 Flagged, per §7 of the problem definition:
 
-- `a = 0.35 nm` (PEG monomer size) — **cited**. Implies a monomer volume ~35% below PEG's bulk-density value. Task `P-3`.
-- The 10–16 nm height range for dense PEG 5 kDa brushes — **cited, and not yet traced to a specific source**. Task `P-3`.
-- `Σ = 5` as the brush onset — **convention**.
-- `χ ≈ 0.45` for PEG/water, used only in the sizing remark above — **cited**. Task `P-3`.
+- ~~`a = 0.35 nm` (PEG monomer size) — **cited**.~~ **CLOSED by [`C-0002`](C-0002-peg-material-parameters.md):**
+  derived as the all-trans contour length (0.3639 nm, 4% away) and independently fitted (0.330–0.356 nm).
+  It is a *contour* length, not a volumetric one — the monomer volume is `v₀ = 0.0604 nm³`, not `a³`.
+- The 10–16 nm height range for dense PEG 5 kDa brushes — **cited, and not yet traced to a specific source**.
+  Still untraced. `C-0002` recommends deleting it: nothing depends on it.
+- ~~`Σ = 5` as the brush onset — **convention**.~~ **RESOLVED in substance by `C-0002`:** for PEG in water
+  `Σ = 5` is exactly equivalent to `φ = 1.085 φ#`, independent of layer height — a real material statement,
+  but one that places the layer at the crossover rather than in the semidilute regime.
+- ~~`χ ≈ 0.45` for PEG/water, used only in the sizing remark above — **cited**.~~ **Superseded:** the sizing
+  remark it supported ("roughly 25× smaller") is wrong by 5.7×; the measurement-consistent excluded volume
+  is 0.0244 nm³, 4.3× below the height-matched one (`C-0002`). `χ` itself remains undetermined — task `P-6`.
 
 Everything else in this claim is derived from the §3 parameters.
 
 ## Challenges
 
-None standing. A result contradicting this claim should be raised in `gpd/challenges/` with methodological
-grounds rather than overwriting it.
+**[`CH-0001`](../challenges/CH-0001-semidilute-premise.md) — UPHELD in part, 2026-08-12.**
+The semidilute premise fails; the claim is not withdrawn, its numbers become bounds, and the
+`m = 3` model is excluded by measurement. `T-1c` is queued to re-derive the layer response with a
+crossover-valid free energy, which is what the challenge shows cannot be repaired by changing an exponent.
+
+A further result contradicting this claim should likewise be raised in `gpd/challenges/` with
+methodological grounds rather than overwriting it.

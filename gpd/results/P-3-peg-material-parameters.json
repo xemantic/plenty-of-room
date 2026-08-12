@@ -1,0 +1,320 @@
+{
+    "task": "P-3",
+    "leaf": "none — premise task under A2.1",
+    "title": "PEG/water material parameter sheet, and the placement of the T-1 window against the measured osmotic equation of state",
+    "verificationType": "logical + in-silico, closed against published measurement",
+    "acceptance": "every number provenance-flagged; a = 0.35 nm derived and corroborated; a measured equation of state reproducing an independent fit to <= 10%; the crossover located for our chain length and the T-1 window placed against it",
+    "maturity": "TRL 1-3 — model-consistent and traceable, NOT empirically demonstrated. The equation of state is fitted to measurement, but nothing about THIS layer is measured.",
+    "units": {
+        "length": "nm",
+        "force": "pN",
+        "energy": "pN*nm",
+        "pressure": "pN/nm^2 (= MPa)",
+        "volume": "nm^3",
+        "molarMass": "g/mol",
+        "specificVolume": "mL/g",
+        "massDensity": "g/cm^3",
+        "graftingDensity": "chains/nm^2",
+        "temperature": "K"
+    },
+    "conventions": [
+        "phi ALWAYS means the physical polymer volume fraction, computed with v0",
+        "the Alexander-de Gennes effective monomer length a is used ONLY inside Alexander-de Gennes expressions, never as a volume",
+        "a fitted prefactor travels with the volume-fraction convention it was fitted under",
+        "N is the number of ethylene oxide monomers per chain, continuous"
+    ],
+    "validity": [
+        "the equation of state was fitted at 20 C (293 K); we evaluate at 300 K, a <= 2.4% shift in the k_BT prefactor, smaller than the fit uncertainty",
+        "the equation of state was fitted to PEG in PURE WATER, not in 2-10 mM MgCl2 — see openQuestions",
+        "it is a BULK SOLUTION equation of state; a grafted layer has no chain translational entropy, so the van't Hoff limb is not the brush's restoring pressure — it locates the density at which semidilute structure exists",
+        "the fitted range is 0-50 wt %, which contains every volume fraction reported here",
+        "finite-chain-length corrections (Biophys. J. 101:2790, 2011) are NOT incorporated"
+    ],
+    "temperature": 300.0,
+    "medium": "aqueous, pure water for the fit; Gen-1 buffer is 2/5/10 mM MgCl2",
+    "thermalEnergy": 4.141947,
+    "thermalEnergyElectronVolts": 0.025851999786435535,
+    "parameters": [
+        {
+            "symbol": "M0",
+            "quantity": "ethylene oxide monomer molar mass",
+            "value": 44.053,
+            "unit": "g/mol",
+            "provenance": "DERIVED",
+            "source": "C2H4O from standard atomic weights",
+            "note": "matches the 44 Da the equation-of-state fit assumes"
+        },
+        {
+            "symbol": "Vbar",
+            "quantity": "partial specific volume in water",
+            "value": 0.825,
+            "unit": "mL/g",
+            "provenance": "CITED",
+            "source": "Cohen et al., J. Phys. Chem. B 113:3709 (2009), ref 31",
+            "note": "load-bearing: the fitted alpha travels with it"
+        },
+        {
+            "symbol": "v0",
+            "quantity": "monomer volume",
+            "value": 0.06035017520912281,
+            "unit": "nm^3",
+            "provenance": "DERIVED",
+            "source": "M0 * Vbar / N_A"
+        },
+        {
+            "symbol": "v0^(1/3)",
+            "quantity": "volumetric monomer size",
+            "value": 0.39224689259222195,
+            "unit": "nm",
+            "provenance": "DERIVED",
+            "source": "cube root of v0",
+            "note": "this, not a, is what a volume fraction means by 'monomer size'"
+        },
+        {
+            "symbol": "rho",
+            "quantity": "hydrated mass density",
+            "value": 1.2121212121212122,
+            "unit": "g/cm^3",
+            "provenance": "DERIVED",
+            "source": "1/Vbar",
+            "note": "above bulk amorphous PEO (1.12-1.13): PEG contracts on hydration"
+        },
+        {
+            "symbol": "l_c",
+            "quantity": "all-trans contour length per monomer",
+            "value": 0.3639474943516633,
+            "unit": "nm",
+            "provenance": "DERIVED",
+            "source": "sum of backbone bonds times sin(theta/2)",
+            "note": "identifies a as a CONTOUR length; 4% from the cited 0.35 nm"
+        },
+        {
+            "symbol": "a",
+            "quantity": "Alexander-de Gennes effective monomer length",
+            "value": 0.35,
+            "unit": "nm",
+            "provenance": "CITED + CORROBORATED",
+            "source": "Kenworthy et al. (1995); fits of 0.356+/-0.07 and 0.330+/-0.15 nm in Hansen et al., Biophys. J. 84:350 (2003)",
+            "note": "no longer an inherited number: derived structurally and fitted independently"
+        },
+        {
+            "symbol": "v0/a^3",
+            "quantity": "reduced-to-physical volume fraction correction",
+            "value": 1.4075842614372671,
+            "unit": "1",
+            "provenance": "DERIVED",
+            "source": "v0 / a^3",
+            "note": "C-0001's volume fractions are reduced units and must be multiplied by this"
+        },
+        {
+            "symbol": "b",
+            "quantity": "Kuhn length",
+            "value": 1.1,
+            "unit": "nm",
+            "provenance": "CITED",
+            "source": "Rubinstein & Colby, Table 2.1 (PEO)"
+        },
+        {
+            "symbol": "M_K",
+            "quantity": "Kuhn segment molar mass",
+            "value": 137.0,
+            "unit": "g/mol",
+            "provenance": "CITED",
+            "source": "Rubinstein & Colby, Table 2.1 (PEO)"
+        },
+        {
+            "symbol": "n_K",
+            "quantity": "monomers per Kuhn segment",
+            "value": 3.1098903593398863,
+            "unit": "1",
+            "provenance": "DERIVED",
+            "source": "M_K / M0"
+        },
+        {
+            "symbol": "v_K",
+            "quantity": "Kuhn segment volume",
+            "value": 0.18768242806732402,
+            "unit": "nm^3",
+            "provenance": "DERIVED",
+            "source": "n_K * v0"
+        },
+        {
+            "symbol": "b^3/v_K",
+            "quantity": "Kuhn segment aspect ratio",
+            "value": 7.091766734403895,
+            "unit": "1",
+            "provenance": "DERIVED",
+            "source": "b^3 / v_K",
+            "note": "7.1 — the segment is a thin rod, so no one-parameter scaling picture can be right about its length and its volume at once"
+        },
+        {
+            "symbol": "d_K",
+            "quantity": "Kuhn segment effective diameter",
+            "value": 0.46609079223534583,
+            "unit": "nm",
+            "provenance": "DERIVED",
+            "source": "cylinder of length b and volume v_K"
+        },
+        {
+            "symbol": "alpha",
+            "quantity": "crossover index of the osmotic equation of state",
+            "value": 0.49,
+            "unit": "1",
+            "provenance": "MEASURED",
+            "source": "Cohen et al. (2009), fitted to Rand's osmometry on 12 PEG molecular weights, 0-50 wt %, r^2 = 0.9926",
+            "note": "+/- 0.01; strongly material-specific (0.162 for PAMS/toluene)"
+        },
+        {
+            "symbol": "k_BT/v0",
+            "quantity": "osmotic pressure scale",
+            "value": 68.63189685278469,
+            "unit": "pN/nm^2",
+            "provenance": "DERIVED",
+            "source": "k_BT at 300 K over v0",
+            "note": "68.6 MPa"
+        },
+        {
+            "symbol": "theta",
+            "quantity": "theta temperature of PEO/water",
+            "value": 375.0,
+            "unit": "K",
+            "provenance": "CITED",
+            "source": "PEO/water phase separation near 102 C"
+        },
+        {
+            "symbol": "tau",
+            "quantity": "reduced temperature at 300 K",
+            "value": 0.19999999999999996,
+            "unit": "1",
+            "provenance": "DERIVED",
+            "source": "1 - T/theta",
+            "note": "good solvent, but only by 20% — which is why the crossover reaches our volume fraction"
+        }
+    ],
+    "layerPlacements": [
+        {
+            "label": "L0 = 5 nm, brush onset",
+            "layerHeight": 5.0,
+            "graftingDensity": 0.092,
+            "graftingSpacing": 3.2969023669789346,
+            "monomersPerChain": 63.717782722831295,
+            "chainMolarMass": 2806.9594822888866,
+            "volumeFraction": 0.07075498006317824,
+            "volumeFractionReducedUnits": 0.05026695879004159,
+            "crossoverVolumeFraction": 0.06374331013605443,
+            "crossoverUnits": 1.1099985223885929,
+            "regime": "CROSSOVER",
+            "localExponent": 1.6657074016390514,
+            "workingHeight": 4.2669331184082075,
+            "workingVolumeFraction": 0.08291081451210279,
+            "workingCrossoverUnits": 1.300698290301163,
+            "workingRegime": "CROSSOVER",
+            "workingLocalExponent": 1.7267814574084515,
+            "appliedTensionPerChain": 0.6793478260869565,
+            "stretchingTensionPerChain": 2.5060795323185205
+        },
+        {
+            "label": "L0 = 7 nm, brush onset",
+            "layerHeight": 7.0,
+            "graftingDensity": 0.045,
+            "graftingSpacing": 4.714045207910317,
+            "monomersPerChain": 113.21756100501202,
+            "chainMolarMass": 4987.573214953794,
+            "volumeFraction": 0.04392449770758445,
+            "volumeFractionReducedUnits": 0.031205590252006428,
+            "crossoverVolumeFraction": 0.040245015603235255,
+            "crossoverUnits": 1.0914270264080455,
+            "regime": "CROSSOVER",
+            "localExponent": 1.6591402167996687,
+            "workingHeight": 4.8023379149540375,
+            "workingVolumeFraction": 0.06402537459841243,
+            "workingCrossoverUnits": 1.590889545915979,
+            "workingRegime": "CROSSOVER",
+            "workingLocalExponent": 1.8014397111093017,
+            "appliedTensionPerChain": 1.3888888888888888,
+            "stretchingTensionPerChain": 1.9745573177209859
+        },
+        {
+            "label": "L0 = 10 nm, brush onset (window lower edge)",
+            "layerHeight": 10.0,
+            "graftingDensity": 0.024,
+            "graftingSpacing": 6.454972243679028,
+            "monomersPerChain": 199.44179712629088,
+            "chainMolarMass": 8786.009488804491,
+            "volumeFraction": 0.028887233761425553,
+            "volumeFractionReducedUnits": 0.020522560924295326,
+            "crossoverVolumeFraction": 0.025585281103882838,
+            "crossoverUnits": 1.1290567277387313,
+            "regime": "CROSSOVER",
+            "localExponent": 1.6723242961268743,
+            "workingHeight": 5.047236585476821,
+            "workingVolumeFraction": 0.05723376202444556,
+            "workingCrossoverUnits": 2.2369799961181482,
+            "workingRegime": "CROSSOVER",
+            "workingLocalExponent": 1.9153958553680255,
+            "appliedTensionPerChain": 2.604166666666667,
+            "stretchingTensionPerChain": 1.6012875277622183
+        },
+        {
+            "label": "L0 = 10 nm, window upper edge (model-robust)",
+            "layerHeight": 10.0,
+            "graftingDensity": 0.03,
+            "graftingSpacing": 5.773502691896257,
+            "monomersPerChain": 185.14536369941135,
+            "chainMolarMass": 8156.2087070501675,
+            "volumeFraction": 0.033520665415248715,
+            "volumeFractionReducedUnits": 0.023814322405836773,
+            "crossoverVolumeFraction": 0.027153940562508375,
+            "crossoverUnits": 1.2344678054400295,
+            "regime": "CROSSOVER",
+            "localExponent": 1.7068091449289242,
+            "workingHeight": 5.688106268250918,
+            "workingVolumeFraction": 0.05893115183580468,
+            "workingCrossoverUnits": 2.170261502198738,
+            "workingRegime": "CROSSOVER",
+            "workingLocalExponent": 1.906040374377541,
+            "appliedTensionPerChain": 2.0833333333333335,
+            "stretchingTensionPerChain": 1.7249346992631587
+        }
+    ],
+    "desCloizeauxReach": [
+        {
+            "layerHeight": 5.0,
+            "graftingDensity": 3.961930350716494,
+            "graftingSpacing": 0.5023964728777405,
+            "monomersPerChain": 18.17834402741074,
+            "volumeFraction": 0.869300012199445,
+            "timesDesignWindowDensity": 165.0804312798539
+        },
+        {
+            "layerHeight": 7.0,
+            "graftingDensity": 2.0213930360798438,
+            "graftingSpacing": 0.7033550620288367,
+            "monomersPerChain": 31.849384537075913,
+            "volumeFraction": 0.555050252831838,
+            "timesDesignWindowDensity": 84.22470983666015
+        },
+        {
+            "layerHeight": 10.0,
+            "graftingDensity": 0.9904825876791228,
+            "graftingSpacing": 1.0047929457554812,
+            "monomersPerChain": 57.71264486430331,
+            "volumeFraction": 0.34498193846034175,
+            "timesDesignWindowDensity": 41.27010781996345
+        }
+    ],
+    "prefactorCrossCheck": {
+        "deGennesPressureScale": 0.015400024081798825,
+        "measuredDesCloizeauxPressure": 0.011569390574119463,
+        "measuredTotalBulkPressure": 0.021510063374119464,
+        "desCloizeauxToDeGennesRatio": 0.7512579534075691,
+        "heightMatchedExcludedVolume": 0.10578982217417653,
+        "measurementConsistentExcludedVolume": 0.024382660964529148,
+        "excludedVolumeRatio": 0.23048210558842397
+    },
+    "openQuestions": [
+        "chi(T, salt) for PEG/water in 2-10 mM MgCl2 is NOT determined by this task. The adopted equation of state is non-virial by construction, so it yields neither A2 nor chi; and no source for the Mg2+ salting-out coefficient was found this iteration. What IS bounded: 10 mM of a divalent chloride shifts the theta temperature by O(0.1-1 K) out of 375 K, i.e. <= 0.7% of the reduced temperature, which is far below the +/- 2% uncertainty on alpha. The bound is an argument, not a citation. Raised as task P-6.",
+        "the crossover index alpha was fitted to LINEAR PEG. A PS->PEG reinitiation block copolymer (§3) is not the material it was fitted to.",
+        "the 10-16 nm height range for dense PEG 5 kDa brushes, cited by C-0001, remains untraced. It is not used by anything and should be dropped rather than sourced."
+    ]
+}

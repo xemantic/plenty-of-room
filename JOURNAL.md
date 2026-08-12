@@ -118,3 +118,95 @@ which is a checked premise rather than an inherited one, and it is the first of 
 `T-2` — the feasible design window. T-1 hands it a sharp starting point rather than a blank sweep:
 a single narrow band at `L₀ = 10 nm`, already bounded by two constraints, before §4(c) and §4(d) touch it.
 `P-3` runs before or alongside, because it is now the binding premise under both.
+
+---
+
+## 2026-08-12 — Iteration 2
+
+Task `P-3` — the PEG material parameter sheet. Taken because `TASKS.md` had it at the top of the queue
+as the binding premise under `C-0001`, and because process blockers outrank cheap wins.
+
+### Interaction with Kazik
+
+One instruction, at the start of the session: *"you are no longer running as root, but as a user with
+sudoers and no password, so that you can install any software this way."* No change to the work followed
+from it beyond installing `poppler-utils` to read a downloaded preprint. No questions were put back;
+nothing was blocking.
+
+### Decisions
+
+**D-10. The expensive method was rejected on the merits, not on cost.**
+`P-3` needs PEG's excluded volume and osmotic law. The obvious "serious" route is MD or SCF. It was
+rejected because osmometry on the actual polymer in the actual solvent over the actual concentration
+range **already exists**, and a simulation would be *less* trustworthy, not merely more expensive.
+§5 asks that method choice be justified against cost; here the cheap method is also the better one,
+and saying so is the justification.
+
+**D-11. The literature was read, not recalled.**
+The two load-bearing papers were downloaded and read in full rather than cited from memory. This
+immediately paid: a summary of the first one reported the des Cloizeaux onset as `φ# ≈ 0.04` and `0.025`,
+and the actual text says **0.15** and **0.07–0.09** — the summary had picked up the *overlap*
+concentrations instead. Had the number been taken second-hand, this iteration would have concluded the
+exact opposite of what it concluded.
+
+**D-12. The three quantities the literature writes as `a` are now three named properties, and none of
+them is called `a`.** `effectiveMonomerLength` (0.35 nm, a contour length), `volumetricMonomerSize`
+(0.392 nm), `kuhnLength` (1.1 nm). Their cubes differ by a factor of 39. This is enforced by the type,
+not by a comment, because `C-0001` had already made the substitution error once without noticing.
+
+**D-13. The equation of state is carried whole rather than reduced to an exponent.**
+`ScalingEquationOfState` implements both limbs and exposes `localExponent(φ)`. The alternative — picking
+the exponent that best matches our operating point — would have thrown away exactly the information
+that the operating point is *inside* the crossover, where no exponent is correct.
+
+**D-14. `CH-0001` was filed rather than editing `C-0001`.**
+The result contradicts a standing claim, so §5 says challenge, not overwrite. `C-0001` keeps its numbers
+and its PASS verdict; what changed is its validity range, and the challenge says exactly which bullet
+fails and why. The claim file carries a banner and struck-through text pointing at the challenge.
+
+### Progress
+
+- `P-3` — **done, verified, filed as `C-0002`**, raising `CH-0001`.
+- `P-4` (volume-fraction bookkeeping) — **done as a consequence**: the crossover is located, measured,
+  for our chain length. It is not where it was assumed to be.
+- `P-5` (brush-regime criterion) — **resolved in substance**: `Σ = 5` ⇔ `φ = 1.085 φ#` exactly, for any
+  PEG layer of any thickness. The convention is a real material statement; it is just not a sufficient one.
+- 119 tests, all green, written before their implementations (75 → 119).
+- New entry point `material.PegMaterialStudyKt`.
+
+### What was surprising
+
+**S-6. The layer is not in the semidilute regime, and the criterion that said it was is known — in print,
+for this exact material — to be insufficient.** Hansen et al. measure the des Cloizeaux onset for PEG in
+water at `φ# ≈ 0.15` (PEG-2000) and `0.07–0.09` (PEG-5000), against overlap concentrations of 0.05 and
+0.02, and write that coil overlap "does not provide a sufficient criterion". Our layer sits at
+`φ/φ# = 1.08–1.23`. The premise `C-0001` recorded as the *first of §2's caveats to actually close* is
+the one that turned out to be open.
+
+**S-7. At fixed reduced grafting density, `φ/φ#` is independent of layer height and chain length.**
+Not noticed until the four design points came back at 1.09, 1.11, 1.13, 1.23 — which looked like a bug.
+It is an identity: `Σ = π L₀^(6/5) σ^(3/5)` with the monomer length cancelling, `φ ∝ σ^(2/3)`,
+`φ# ∝ σ^(4/15)`. So `Σ = 5` always means `φ = 1.085 φ#` for PEG in water. A convention we had flagged as
+arbitrary turned out to be a precise material statement — of something other than what it was being used to say.
+
+**S-8. Every correction found this iteration makes the layer softer, and they compound.**
+Exponent 9/4 → 1.67; prefactor 1 → 0.751; excluded volume 4.3× down. `C-0001`'s window is therefore a
+*lower* bound on its own width, and its "empty at 5 and 7 nm" headline may not survive. That was not the
+expected direction — a premise check that finds the premise violated usually shrinks the answer.
+
+**S-9. The 30 pN chain-tension premise cannot be violated by grafting density at all.**
+The intrinsic brush tension is `3k_BT n_K a^(5/3) σ^(1/3)/b²` — independent of chain length, cube root in
+grafting density. Melt-like `σ = 1 nm⁻²` gives 5.55 pN. §2 suggested this was "within a factor of two"
+of binding; it is a factor of seven away and structurally cannot get closer.
+
+**S-10. A compliant PEG brush and a semidilute PEG brush may be mutually exclusive.**
+Reaching `φ = 5φ#` needs `σ = 0.99 nm⁻²` at 10 nm and `3.96 nm⁻²` at 5 nm — the latter puts chains closer
+together than one Kuhn diameter, so it is not realisable at all. The densities that would make the brush
+theory valid are the ones §4(a) rules out for being far too stiff. This is a `T-2` input.
+
+### Next
+
+`T-1c` — re-derive the layer response with a crossover-valid free energy. `CH-0001` shows this cannot be
+repaired by swapping an exponent: the Alexander-de Gennes *height* relation is itself a consequence of
+semidilute blob structure, and `T-1` inverts it to get the chain length, so `N` rests on the same premise.
+`T-2` must not run on `C-0001`'s window until then, except as a stated lower bound.

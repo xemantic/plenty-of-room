@@ -53,8 +53,12 @@ Each task adds its own entry point rather than competing for the single `applica
 
 ```shell
 ./gradlew test
-./gradlew study -Pstudy=brush.BrushStiffnessStudyKt
+./gradlew study -Pstudy=brush.BrushStiffnessStudyKt   # T-1, layer stiffness
+./gradlew study -Pstudy=material.PegMaterialStudyKt   # P-3, PEG/water parameter sheet
 ```
+
+Results land in [gpd/results/](gpd/results/) as JSON, with every parameter of the run alongside the numbers.
+The files carry no timestamp, so a re-run that changes nothing produces no diff.
 
 ## Development
 
