@@ -390,3 +390,64 @@ JSON tree at the serialisation boundary.
 **S-24. The continuum plate reduction is marginal by its own criterion.** `ℓ_⊥ < p`: the across-helix
 bending length is shorter than the crossover spacing, so at the relevant wavelength the "plate" is really
 ~15 quasi-independent duplex beams. Recorded as a validity breach and queued as `T-10`, not papered over.
+
+### `T-6` — validity boundary of mean-field screening (leaf `A7.4`)
+
+**Done, verified, filed as `C-0005`**, raising `CH-0004`.
+The answer to *"is Poisson-Boltzmann adequate here"* is **yes and no, and the two halves have different reasons**.
+Mean field is **uncontrolled** across the whole 5–10 nm working range — the loop parameter of the expansion
+whose saddle point *is* PB runs at 123–214 % for Mg²⁺, so PB is not merely inaccurate there but outside the
+control of its own expansion. It is nevertheless **qualitatively safe** across that same range, because
+correlation attraction needs a gap under `a_⊥ = 1.46 nm` and the polymer layer holds the tile 3.4–6.8× outside
+it. Controlled PB begins only above 12.9 nm — confirmed twice, from the full ratio and from a published
+closed form, 4.7 % apart.
+
+§3's "~4 nm at 2 mM Mg²⁺" is **confirmed to 1.8 %** by re-derivation (`I = 3c` for a 2:1 salt), which is one
+more inherited number closed.
+
+#### Decisions
+
+**D-26. `Ξ` is read from the duplex cylinder charge density, not the projected one.** Not a preference: the
+projected density gives a PB contact density **89× past close packing**, whereas the high projected values
+describe the far field — which is exactly where PB works.
+
+**D-27. The published attraction thresholds are reported but explicitly *not* transferred** to the
+oppositely-charged tile–electrode pair, because no criterion exists in the literature for that case. They are
+the right frame for tile–tile and helix–helix, and are handed to `T-5` in that form.
+
+**D-28. Explicit-ion Monte Carlo was not run, and the decision was made reviewable rather than silent.**
+Primitive-model MC with Ewald is costed at days per state point, 1–3 weeks for a 9-point sweep on this box.
+Size-modified (Bikerman) PB — minutes — is queued as the cheaper step that must come first.
+
+**D-29. §4(c) is declared *not closed* rather than answered**, because the partitioning bound counts only
+exclusion mechanisms and is therefore one-sided.
+
+#### What was surprising
+
+**S-25. Four arXiv identifiers recalled from memory all resolved to unrelated papers** — one of them to a
+paper on electricity-price risk management. CLAUDE.md's research rule fired before a single number was
+computed, which is the earliest it has ever fired.
+
+**S-26. The "2 mM buffer" does not set the ion concentration under the tile.** The gap is counterion-dominated
+by 3.3:1 to 33:1 across the whole §3 box, so local Mg²⁺ is 33–66 mM, not 2 mM, and the local screening length
+is ~1 nm rather than 3.93 nm. This *licensed* the salt-free coupling criteria rather than undermining them:
+the approximation they make is the one this geometry actually is.
+
+**S-27. §4(c) has the sign backwards — the polymer layer protects the field rather than screening it away.**
+The layer admits only 52–77 % of the bulk salt, so the local Debye length is 1.14–1.39× **longer** inside it,
+and lengthens further under compression. The dielectric-decrement mechanism §4(c) names is a 3.9 % effect at
+φ ≈ 0.03, because the layer is 97 % water. NDI asked how much ion inclusion the layer gives; the useful answer
+is that it gives *less* than bulk, and that this is good news.
+
+**S-28. Point-ion PB is already past physical possibility at zero bias.** The exact contact-value theorem puts
+Mg²⁺ at 6.53 M at the duplex surface against a close-packed hydrated limit of 3.74 M — 1.75× over, with no
+field applied. And under bias the point-ion description dies at **0.197 V**, 10× below the §3 target of 2 V.
+
+**S-29. A published "geometrical prefactor of order one" turned out to be pinnable.** Requiring the source's
+own quoted critical values forces the Wigner-Seitz convention and `Γ = sqrt(Ξ/2)` exactly. The paper leaves it
+as `∼`; the cross-check determines it.
+
+**S-30. The hydrated-radius choice straddles a published threshold.** One standard radius gives `Ξ = 16.8`,
+just below the first-order unbinding at 17; another gives 17.8, just above. Reported as a straddle rather than
+resolved — the intermediate-coupling regime `1 < Ξ < 100` has no systematic theory at all, which the sources
+say themselves, and our `Ξ = 17–24` sits inside it.

@@ -49,6 +49,14 @@ which is one of the reasons this project is a plain Kotlin/JVM application rathe
 - Mapping the de Gennes two-brush pressure onto a brush against a rigid wall is `D -> 2h`, and the factor of two then **cancels out of both ratios**. Keeping it while reinterpreting `D` as the wall distance understates the pressure by `2^(9/4)` — this is the prefactor confusion the NDI problem definition warns about.
 - **The blob-stack height is `L0/s = (Sigma/pi)^(5/6)`, identically** — 1.47 blobs at the conventional `Sigma = 5` onset, for every polymer, chain length and thickness; a ten-blob stack needs `Sigma ~ 50`. So `Sigma >= 5` no more delivers a stack of blobs than it delivers semidilute thermodynamics, and the two failures (`CH-0003`, `CH-0001`) are inverse powers of the same `Sigma`.
 
+### Electrostatics conventions
+
+- **"The Debye length" is three different numbers in this project, and all three are correct in their own place** — 3.93 nm in the bulk buffer at 2 mM MgCl₂; 0.84–1.18 nm in the tile-electrode gap, which is counterion-dominated 3–33× so its ion content is set by the tile's charge and not by the buffer; and 4.5–5.5 nm inside the PEG layer, which excludes 23–48 % of the salt. Substituting one for another is `CH-0004`.
+- **MgCl₂ is a 2:1 electrolyte: `I = ½ Σ c_i z_i² = 3c`, not `c`.** A monovalent intuition understates the screening threefold and the Debye length by `√3`.
+- **The Manning parameter has two conventions in circulation** — Manning's own `ξ_M = l_B/b` is valency-free with condensation at `q ξ_M > 1`, while Naji et al. fold the valency in as `ξ = q l_B τ`. That is why the same DNA is quoted as both 4.1 and 8.2. State which you mean. The lateral counterion spacing has the same problem: `a_⊥ = sqrt(q/σ_s)` against the Wigner-Seitz `sqrt(q/(π σ_s))`, a factor of `√π` apart, and only the latter makes `Γ = sqrt(Ξ/2)` exact.
+- **`Ξ ∝ q³` and `μ_GC ∝ 1/q`.** Divalent Mg²⁺ at a DNA surface is a *different problem* from monovalent Na⁺ at the same surface, not a rescaling of it — `Ξ` goes from 3.0 to 24.0, and the mean-field error at a 7 nm gap from 36 % to 163 %.
+- **Read `Ξ` from the duplex cylinder charge density, not the projected one.** The projected density gives a PB contact density 89× past close packing; the high projected values describe the far field, which is where PB works anyway.
+
 ### DNA-origami structural parameters
 
 - **The crossover spacing is 32 bp, not 16 bp, for a single-layer Rothemund sheet.** Crossovers recur every 1.5 turns (16 bp) along a helix but *alternate between its two neighbours*, so a given adjacent pair is linked every 32 bp; honeycomb is 21 bp per interface. Using the per-helix number where the per-interface one belongs doubles the across-helix flexural rigidity.
@@ -85,6 +93,7 @@ which is one of the reasons this project is a plain Kotlin/JVM application rathe
 ## Research practice
 
 - **Do not take a numeric result from a search-engine summary or from memory.** Download the paper and read the passage. A summary of Hansen et al. (2003) reported the des Cloizeaux onset as `φ# ≈ 0.04 / 0.025`; the paper says `0.15` and `0.07–0.09` — the summary had picked up the *overlap* concentrations instead. Acting on the summary would have inverted the conclusion of a whole iteration. `pdftotext -layout` on the arXiv PDF is the cheap, reliable route.
+- **arXiv identifiers recalled from memory are unreliable — search for them, never guess.** All four recalled for the strong-coupling electrostatics literature resolved to unrelated articles; one was a paper on electricity-price risk management. Query `https://export.arxiv.org/api/query?...` with `curl -sL` (the `http` endpoint 301-redirects and returns an empty body without `-L`), then read the PDF with `pdftotext -layout`.
 - **A paywalled primary source is a reason to demote the number, not to quote the secondary.** Flag it unverified *in the code*, use it only as a cross-check against an independently derived bound, and make sure nothing changes if it is wrong. Where a publisher blocks the fetch with a reCAPTCHA, EuropePMC's REST full text often serves the same article: `https://www.ebi.ac.uk/europepmc/webservices/rest/PMC<id>/fullTextXML`.
 - Prefer **published measurement on the actual material** over simulating it. For `P-3` the "serious" method (MD/SCF for PEG's excluded volume) would have been *less* trustworthy than existing osmometry over the same concentration range, not merely more expensive. Say so explicitly in the Plan section — that is the cost justification NDI asks for.
 
