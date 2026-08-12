@@ -1,0 +1,274 @@
+{
+    "task": "P-6",
+    "leaf": "none — premise task under A2.1, feeding T-3",
+    "title": "chi(T, salt) for PEG in water, and the coupling between the Gen-1 buffer and the polymer layer's mechanics",
+    "verificationType": "logical + in-silico, closed against published measurement",
+    "acceptance": "the change in PEG/water solvent quality between 2 mM and 10 mM MgCl2 at 300 K is bounded as d(chi), d(v)/v and as the consequent fractional change in the layer's osmotic modulus; OR it is shown the available methods cannot determine it, with the reason and the missing measurement named",
+    "verdict": "PASS on BOTH branches: the coefficient itself cannot be determined (no k_s for MgCl2 exists, and Boucher & Hines report theta(c) is NON-MONOTONIC for Group II chlorides so a linear k_s is not even well posed), but the effect is nonetheless BOUNDED from above by the strongest salting-out salt in the PEO literature, and the bound is small",
+    "maturity": "TRL 1-3 — model-consistent and traceable, NOT empirically demonstrated. chi(T) is fitted to measurement; the salt bound is a ceiling constructed from a published survey, not a measurement of MgCl2.",
+    "units": {
+        "length": "nm",
+        "volume": "nm^3",
+        "pressure": "pN/nm^2 (= MPa)",
+        "temperature": "K",
+        "molarity": "mol/L",
+        "numberDensity": "nm^-3",
+        "cloudPointSlope": "K per mol/L",
+        "fractionalShift": "1 (dimensionless fraction, negative = poorer solvent)"
+    },
+    "conventions": [
+        "chi is quoted on the lattice site it was FITTED on; the measured PEG/water chi uses a WATER-MOLECULE site, so v = v0 (v0/v_water)(1 - 2 chi), which is 2.01x the familiar v0 (1 - 2 chi)",
+        "a positive cloud-point slope k_s means salting OUT (the cloud point falls)",
+        "a negative fractional shift means a POORER solvent",
+        "phi is the physical polymer volume fraction, per C-0002",
+        "the layer stiffness follows the osmotic modulus exactly, k/A = K/h at fixed N and sigma"
+    ],
+    "validity": [
+        "chi(T) is fitted to PEG 4600 in D2O, not H2O; D2O is the poorer solvent, so this is a lower bound on the solvent quality of PEG in H2O",
+        "the salt ceiling is constructed from a survey whose concentrations are MOLAR; the Gen-1 buffer is 1.0-1.7 decades below it, and Boucher & Hines report theta(c) is NON-MONOTONIC for Group II chlorides, so linear extrapolation down to 2-10 mM is an assumption, stated here and not hidden",
+        "the transfer d(chi_salt) = -(d chi/dT)|_cp * dT_cp assumes the salt's contribution to chi is itself temperature independent between 300 K and the cloud point",
+        "the counterion cloud of C-0005 is treated as if it were neutral salt; it is not, and since PEG salting-out is anion-driven while cations bind, this is conservative in magnitude and probably wrong in sign",
+        "this is a BULK chi; Lee et al. (2012) measure an EFFECTIVE chi ~ 0.6 for densely grafted PEO, i.e. poor solvent, which is a far larger effect than any salt considered here and is NOT incorporated"
+    ],
+    "temperature": 300.0,
+    "medium": "aqueous; Gen-1 buffer 2/5/10 mM MgCl2; layer-local Mg2+ 1-66 mM per C-0005",
+    "thermalEnergy": 4.141947,
+    "determinations": [
+        {
+            "quantity": "chi of PEG/water at 300 K, reciprocal-T fit",
+            "value": 0.3716666666666666,
+            "unit": "1",
+            "provenance": "MEASURED",
+            "source": "Pedersen & Sommer, Progr. Colloid Polym. Sci. 130:70 (2005), chi = 1.156 - 235.3/T",
+            "note": "SAXS, PEG 4600 in D2O, 10-100 C, 1-20 wt %"
+        },
+        {
+            "quantity": "chi of PEG/water at 300 K, theta-expansion fit",
+            "value": 0.3783364524999999,
+            "unit": "1",
+            "provenance": "MEASURED",
+            "source": "same paper, Eq. (8)",
+            "note": "the two fits of one dataset agree to 1.8% in chi and 5.5% in (1 - 2 chi)"
+        },
+        {
+            "quantity": "d chi / dT at 300 K",
+            "value": 0.0026144444444444444,
+            "unit": "1/K",
+            "provenance": "DERIVED",
+            "source": "-b/T^2 from the fit above",
+            "note": "positive: heating makes water a WORSE solvent for PEG"
+        },
+        {
+            "quantity": "d chi / dT at the 369 K cloud point",
+            "value": 0.001728101291853027,
+            "unit": "1/K",
+            "provenance": "DERIVED",
+            "source": "same",
+            "note": "51% below the 300 K value; the salt shift is read HERE, not at 300 K"
+        },
+        {
+            "quantity": "monomer excluded volume from chi",
+            "value": 0.031142009179802053,
+            "unit": "nm^3",
+            "provenance": "DERIVED",
+            "source": "v = v0 (v0/v_water)(1 - 2 chi)",
+            "note": "water-molecule lattice convention"
+        },
+        {
+            "quantity": "monomer excluded volume from B2",
+            "value": 0.02685383939863893,
+            "unit": "nm^3",
+            "provenance": "DERIVED",
+            "source": "B2 = 2.00 nm^3/K (373.2 - T), Chudoba et al. (2017) Eq. 9, v = 2 B2 / N^2",
+            "note": "agrees with the chi route to 16% — the load-bearing cross-check"
+        },
+        {
+            "quantity": "water molecule volume",
+            "value": 0.030017872777491423,
+            "unit": "nm^3",
+            "provenance": "DERIVED",
+            "source": "M(H2O) / (rho N_A) at 300 K",
+            "note": "the Flory-Huggins lattice site of the measured chi"
+        },
+        {
+            "quantity": "v0 / v_water",
+            "value": 2.010474748043297,
+            "unit": "1",
+            "provenance": "DERIVED",
+            "source": "",
+            "note": "the factor dropped when a water-lattice chi is fed into v0 (1 - 2 chi)"
+        },
+        {
+            "quantity": "thermal blob volume fraction phi** = v/v0",
+            "value": 0.5160218519977798,
+            "unit": "1",
+            "provenance": "DERIVED",
+            "source": "",
+            "note": "the layer sits at 0.029-0.071, i.e. 0.06-0.14 of it — good-solvent premise holds"
+        },
+        {
+            "quantity": "blob prefactor C implied by the measured alpha",
+            "value": 0.40133224883633734,
+            "unit": "1",
+            "provenance": "DERIVED",
+            "source": "",
+            "note": "order unity, from the chi route; 0.45 from the independent B2 route"
+        },
+        {
+            "quantity": "cited chi = 0.45 of C-0001",
+            "value": 0.45,
+            "unit": "1",
+            "provenance": "CITED — NOW FALSIFIED",
+            "source": "C-0001, untraced",
+            "note": "no primary source found; the 0.44 in circulation is POLYSTYRENE IN TOLUENE, quoted for contrast in the very paper that measures PEG at 0.372"
+        }
+    ],
+    "thetaTemperatureBand": {
+        "Flory-Huggins analysis (Pedersen & Sommer)": 358.68902439024396,
+        "cloud points (Boucher & Hines 1978)": 369.0,
+        "virial analysis (Chudoba et al. / Pedersen & Sommer)": 373.2,
+        "cited by C-0002": 375.0,
+        "band width": 16.310975609756042,
+        "tau at 300 K, lowest theta": 0.16362090947726315,
+        "tau at 300 K, C-0002 theta": 0.19999999999999996
+    },
+    "ionChannel": {
+        "ion number density at 10 mM MgCl2 [nm^-3]": 0.018066422279999998,
+        "ion van't Hoff pressure [pN/nm^2]": 0.07483016356337915,
+        "layer osmotic pressure at the 10 nm design point [pN/nm^2]": 0.021528048328501234,
+        "ratio, ion pressure to layer pressure": 3.475938107418248,
+        "osmotic pressure exerted by ideal excluded salt [pN/nm^2]": 0.0,
+        "gap-averaged counterion molarity at 10 nm [mol/L]": 0.03310699765177857,
+        "gap-averaged counterion molarity at 5 nm [mol/L]": 0.06621399530355714
+    },
+    "transferFunctions": {
+        "d(v)/v per kelvin of cloud-point depression": -0.013465724352101503,
+        "d(chi) per kelvin of cloud-point depression": 0.001728101291853027,
+        "d ln alpha / d ln v (des Cloizeaux blob)": 0.75,
+        "d ln alpha / d ln v (mean field, the bound)": 1.0,
+        "d ln L0 / d ln v": 0.3333333333333333,
+        "d(v)/v per (K per molar) over the 2-10 mM step": -1.0772579481665989E-4
+    },
+    "scenarios": [
+        {
+            "label": "Gen-1 buffer step, 2 -> 10 mM, at the strongest-PEO-salt ceiling",
+            "cloudPointSlope": 69.0,
+            "lowMolarity": 0.002,
+            "highMolarity": 0.01,
+            "extrapolationDecadesLow": 1.6989700043360187,
+            "extrapolationDecadesHigh": 1.0,
+            "cloudPointShift": -0.5520000000000209,
+            "chiShift": 9.539119131029071E-4,
+            "excludedVolumeFractionalShift": -0.007433079842360302,
+            "crossoverIndexFractionalShift": -0.005580005742332639,
+            "equilibriumHeightFractionalShift": -0.0024838577218752045
+        },
+        {
+            "label": "layer-local ionic span, 1 -> 66 mM (C-0005), at the same ceiling",
+            "cloudPointSlope": 69.0,
+            "lowMolarity": 0.001,
+            "highMolarity": 0.066,
+            "extrapolationDecadesLow": 2.0,
+            "extrapolationDecadesHigh": 0.1804560644581313,
+            "cloudPointShift": -4.484999999999957,
+            "chiShift": 0.007750534293960752,
+            "excludedVolumeFractionalShift": -0.06039377371917476,
+            "crossoverIndexFractionalShift": -0.04564618380073304,
+            "equilibriumHeightFractionalShift": -0.02055069594414649
+        },
+        {
+            "label": "Gen-1 buffer step at a plausible chloride slope of 20 K/M",
+            "cloudPointSlope": 20.0,
+            "lowMolarity": 0.002,
+            "highMolarity": 0.01,
+            "extrapolationDecadesLow": 1.6989700043360187,
+            "extrapolationDecadesHigh": 1.0,
+            "cloudPointShift": -0.15999999999996817,
+            "chiShift": 2.7649620669642933E-4,
+            "excludedVolumeFractionalShift": -0.0021545158963359734,
+            "crossoverIndexFractionalShift": -0.0016163224951528665,
+            "equilibriumHeightFractionalShift": -7.186883546591583E-4
+        },
+        {
+            "label": "Gen-1 buffer step if MgCl2 salts PEG IN at -20 K/M",
+            "cloudPointSlope": -20.0,
+            "lowMolarity": 0.002,
+            "highMolarity": 0.01,
+            "extrapolationDecadesLow": 1.6989700043360187,
+            "extrapolationDecadesHigh": 1.0,
+            "cloudPointShift": 0.15999999999996817,
+            "chiShift": -2.7649620669642933E-4,
+            "excludedVolumeFractionalShift": 0.0021545158963360844,
+            "crossoverIndexFractionalShift": 0.0016154521306908087,
+            "equilibriumHeightFractionalShift": 7.176568109419357E-4
+        }
+    ],
+    "layerResponses": [
+        {
+            "label": "L0 = 5 nm, brush onset",
+            "layerHeight": 5.0,
+            "monomersPerChain": 63.7,
+            "volumeFraction": 0.0708,
+            "osmoticPressure": 0.16323707694689418,
+            "osmoticModulus": 0.27193141572907636,
+            "desCloizeauxModulusFraction": 0.7194821873867366,
+            "modulusResponseBufferStep": -0.004014714737124038,
+            "modulusResponseBufferStepMeanField": -0.005347968544001649,
+            "modulusResponseLocalSpan": -0.03284161616680843,
+            "modulusResponseLocalSpanMeanField": -0.043452244420011464
+        },
+        {
+            "label": "L0 = 7 nm, brush onset",
+            "layerHeight": 7.0,
+            "monomersPerChain": 113.2,
+            "volumeFraction": 0.0439,
+            "osmoticPressure": 0.056282644393862304,
+            "osmoticModulus": 0.09336584971130892,
+            "desCloizeauxModulusFraction": 0.7149270292917267,
+            "modulusResponseBufferStep": -0.00398929692879665,
+            "modulusResponseBufferStepMeanField": -0.005314109690186867,
+            "modulusResponseLocalSpan": -0.03263369058316221,
+            "modulusResponseLocalSpanMeanField": -0.043177141232766364
+        },
+        {
+            "label": "L0 = 10 nm, window lower edge",
+            "layerHeight": 10.0,
+            "monomersPerChain": 199.4,
+            "volumeFraction": 0.0289,
+            "osmoticPressure": 0.021528048328501234,
+            "osmoticModulus": 0.03600417055554279,
+            "desCloizeauxModulusFraction": 0.7237222690209525,
+            "modulusResponseBufferStep": -0.004038374416990922,
+            "modulusResponseBufferStepMeanField": -0.005379485409326901,
+            "modulusResponseLocalSpan": -0.03303515971241396,
+            "modulusResponseLocalSpanMeanField": -0.043708318950779125
+        },
+        {
+            "label": "L0 = 10 nm, window upper edge",
+            "layerHeight": 10.0,
+            "monomersPerChain": 185.1,
+            "volumeFraction": 0.0335,
+            "osmoticPressure": 0.028567519461462115,
+            "osmoticModulus": 0.04875038890870921,
+            "desCloizeauxModulusFraction": 0.7452076961493656,
+            "modulusResponseBufferStep": -0.004158263223743936,
+            "modulusResponseBufferStepMeanField": -0.0055391883046196095,
+            "modulusResponseLocalSpan": -0.03401588746815476,
+            "modulusResponseLocalSpanMeanField": -0.045005904975032325
+        }
+    ],
+    "thresholds": {
+        "k_s [K/M] needed to move v by 1% over the 2-10 mM step": 92.82827773068787,
+        "k_s [K/M] needed to move v by 5% over the 2-10 mM step": 464.1413886534394,
+        "ceiling on k_s from the strongest PEO salting-out salts": 69.0,
+        "ratio, threshold to ceiling": 1.3453373584157662,
+        "grafting-density shift in chi (Lee et al. 2012) over the buffer-step shift": 239.36521831518527,
+        "theta-temperature band over the buffer-step cloud-point shift": 29.54886885825258
+    },
+    "openQuestions": [
+        "No cloud-point slope k_s for PEG + MgCl2 exists in accessible form. Boucher & Hines (1976) is the one study that measured Group II chlorides and it is paywalled; its abstract says theta(c) shows MINIMA for those salts, so a single linear k_s is probably not well posed. The missing measurement is named: theta or cloud point of PEG/PEO against MgCl2 concentration BELOW 50 mM.",
+        "The SIGN is not established. Sadeghi & Jahani (2012) find PEG400 forms no aqueous two-phase system with MgCl2 at all (only with Na2CO3, Na2SO4, Na3Cit) and attribute salting-IN to direct binding of cations to the ether oxygens. Section 2 of the problem definition asserts kosmotropic salting-out; for MgCl2 specifically that direction is not supported.",
+        "No binding constant for Mg2+ to PEG ether oxygens IN WATER was located — the same gap C-0005 hit from the electrostatic side. The NMR work that measures multivalent cation binding to PEO (Furo group) is in METHANOL.",
+        "The effective chi of a densely GRAFTED PEO layer is reported at ~1.2x the theta value, i.e. poor solvent, from an SCF fit to neutron reflectivity (Lee et al., J. Phys. Chem. B 116:7367, 2012). That is a 0.23 shift in chi against under 0.001 for the whole buffer range. It is not incorporated anywhere in this project and it is the larger question by two orders of magnitude."
+    ]
+}

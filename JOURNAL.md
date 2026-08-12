@@ -451,3 +451,77 @@ as `∼`; the cross-check determines it.
 just below the first-order unbinding at 17; another gives 17.8, just above. Reported as a straddle rather than
 resolved — the intermediate-coupling regime `1 < Ξ < 100` has no systematic theory at all, which the sources
 say themselves, and our `Ξ = 17–24` sits inside it.
+
+### `P-6` — solvent quality versus salt (no leaf; premise under `A2.1`)
+
+**Done, verified, filed as `C-0007`**, raising `CH-0006` against `C-0002`.
+Promoted from low priority because `T-3` was about to sweep the 2 / 5 / 10 mM buffers, and if solvent quality
+moved with ionic strength then screening and mechanics would be coupled — which nothing downstream assumes.
+
+**They are not coupled.** `T-3` may treat the layer's mechanics as buffer-independent across 2–10 mM MgCl₂,
+with an error of ≤ 0.4 % on the stiffness — about 50× below the model spread `T-1c` is currently resolving.
+
+The interesting part is *why*, and it is not "the salt is dilute".
+
+#### Decisions
+
+**D-30. Enumerate the coupling channels analytically before touching the literature.**
+A neutral polymer can couple to a buffer in exactly two ways — through mobile ions, or through `χ`. The ion
+channel was closed by argument first, because had it not vanished the `χ` question would have been a
+second-order detail and the search effort would have been misallocated.
+
+**D-31. The missing coefficient was converted into a threshold rather than guessed.**
+*"MgCl₂ would need `k_s ≥ 92.8 K/M` to matter, which is 1.35× above the ceiling any PEO salt reaches"* is
+falsifiable, needs no MgCl₂ measurement, and decides the question. A plausible number with no provenance was
+explicitly refused — which is the same discipline `P-3` applied to the excluded volume.
+
+**D-32. The ceiling is a construction from a verbatim abstract, and is labelled as such** — an upper bound on a
+magnitude, not an interpolation of a curve, which is precisely why it survives the non-monotonicity that would
+invalidate a fitted slope.
+
+**D-33. No MD or SCF was run, and the refusal was costed.** An MD estimate of PEG's excluded volume in MgCl₂
+would cost days *and* would have to reproduce a Hofmeister effect that force fields are notoriously bad at.
+As in `P-3`, the expensive method here is not merely unnecessary — it is **worse** than the measurement.
+
+**D-34. `dχ/dT` is read at the cloud point, not at the operating temperature.** They differ by 51 % for
+PEG/water, and the phase boundary is where a salt's `Δχ` is defined. Pinned by a test so the two cannot be
+conflated later.
+
+**D-35. The layer-local concentration span is reported alongside the buffer span**, per `C-0005`, rather than
+answering only the question as `TASKS.md` posed it.
+
+#### What was surprising
+
+**S-31. The salt term that had to cancel was 3.5× larger than the signal, and it cancels exactly.**
+At 10 mM, MgCl₂ carries an osmotic pressure of 0.0748 pN/nm² against the layer's own 0.0215. It contributes
+*nothing* — not negligibly, identically — because ideal excluded-salt free energy is strictly linear in φ and
+`Π = φf′ − f` annihilates a linear term; equivalently, a grafted layer's polymer volume per unit area is
+conserved under compression, so the ion term is height-independent. The expected result was "small
+correction"; the actual result is "exactly zero, and everything that is not zero is a `χ`".
+
+**S-32. `χ ≈ 0.45` for PEG/water has no source, and the number it descends from is a different polymer in a
+different solvent.** The 0.44 in circulation is *polystyrene in toluene*, quoted for contrast in the very paper
+that measures PEG at 0.32–0.37 — in the sentence immediately after the measurement. The measured value at
+300 K is **0.372**, and 0.45 implies an excluded volume 2.6× too small. This is CLAUDE.md's research-practice
+rule firing for the second time, in the same way, on a different number.
+
+**S-33. `χ` has a lattice-site convention that hides a factor of 2.010** — the measured PEG/water `χ` sits on a
+*water-molecule* site, so `v = v₀(v₀/v_water)(1 − 2χ)`. Invisible by inspection, and caught only by
+cross-check: the correct convention agrees with an independent `B₂` route to 16 %, the naive one misses by 42 %.
+This is the exact analogue of `C-0002`'s three quantities called `a`, in a different currency.
+
+**S-34. The missing measurement turned out not to be a number.** `θ(c)` shows *minima* for Group II chlorides,
+so `k_s(MgCl₂)` is not merely unpublished — it is **not a well-posed quantity**. And PEG forms no binodal with
+MgCl₂ at all, which is *why* no aqueous-two-phase coefficient can exist. The absence is structural, not
+accidental, and that is a better answer than a number would have been.
+
+**S-35. The answer to the question asked is 239× smaller than a question nobody asked.** The whole 2–10 mM
+buffer range moves `χ` by 9.5e-4. A published SCF fit to neutron reflectivity puts the *grafted* PEO `χ` at
+≈ 0.60 — above θ, formally poor solvent — against 0.372 in bulk: `Δχ = 0.23`. Every osmotic number in this
+project is a **bulk** solution property applied to a brush. Queued as `P-9`, a process blocker.
+It is also 29× smaller than the width of "the theta temperature of PEG in water", which is a 16.3 K band.
+
+**S-36. §2's asserted direction fails for the one salt actually in the buffer.** *"Kosmotropic salts drive it
+toward poor-solvent conditions"* holds for sulfates, carbonates and phosphates, and is **not established** for
+MgCl₂ — which the aqueous-two-phase literature places on the salting-**in** side, via cation binding to the
+ether oxygens. That mechanism is the same one `C-0005` needed and could not quantify (`P-8`).

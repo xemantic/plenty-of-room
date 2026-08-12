@@ -30,6 +30,7 @@ Three things in every claim are load-bearing and easy to skip:
 | `C-0004` | [Poroelastic drainage does not limit the Gen-1 actuator, and what would make it](claims/C-0004-poroelastic-drainage.md) | [`T-7`](tasks/T-7-poroelastic-drainage.md) | none (§4(d)) | PASS |
 | `C-0005` | [Validity boundary of mean-field screening at 2–10 mM Mg²⁺](claims/C-0005-mean-field-screening-validity.md) | [`T-6`](tasks/T-6-mean-field-screening-validity.md) | `A7.4` | PASS |
 | `C-0006` | [Load distribution across the tile, and the rejection of the rigid-plate assumption](claims/C-0006-tile-load-distribution-and-flatness.md) | [`T-5`](tasks/T-5-load-distribution.md), [`T-5b`](tasks/T-5b-tile-flatness.md) | `A1.2`, `A8.2` | PASS (verdict: rigid plate **rejected**) |
+| `C-0007` | [Solvent quality versus salt: the buffer does not reach the layer's mechanics](claims/C-0007-solvent-quality-vs-salt.md) | [`P-6`](tasks/P-6-solvent-quality-vs-salt.md) | premise under `A2.1` | PASS (on both branches of its predicate) |
 
 ### Standing challenges
 
@@ -39,3 +40,4 @@ Three things in every claim are load-bearing and easy to skip:
 | [`CH-0003`](challenges/CH-0003-blob-stack-height.md) — the layer is ~1.5 blobs tall | `C-0001` | see the challenge |
 | [`CH-0004`](challenges/CH-0004-screening-decay-length.md) — "the Debye length" is three different numbers | §1/§3 as read downstream | raised by `C-0005` |
 | [`CH-0005`](challenges/CH-0005-rigid-tile-assumption.md) — the tile is not a rigid plate | `C-0001` | UPHELD |
+| [`CH-0006`](challenges/CH-0006-solvent-quality-bound.md) — the ≤ 0.7 % solvent-quality bound is right by accident | `C-0002` | upheld in conclusion, overturned in construction |

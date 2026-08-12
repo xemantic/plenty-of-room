@@ -19,8 +19,9 @@ The `Leaf` column is the NDI `simulation-task-map` ID the work traces to.
 | P-4 | Volume-fraction bookkeeping: locate the crossover for *this* layer rather than quoting φ ≈ 0.2–0.3 | **DONE** (iteration 2) | Answered, and the answer inverted the question: the binding crossover is the **dilute→semidilute** one at φ# ≈ 0.026, approached from *below*, not the semidilute→concentrated one. The layer sits at φ/φ# = 1.08–1.23. `C-0002`. |
 | P-5 | Decide and defend the brush-regime criterion (`Σ ≥ 5` vs `Σ > 1`) | **RESOLVED in substance, REOPENED in scope** (iterations 2–3) | `Σ = 5` ⇔ `φ = 1.085 φ#` **exactly**, independent of layer height and chain length. So the convention is a real material statement — it just places the layer at the crossover, not in the semidilute regime. `CH-0003` adds a second, independent failure of the same convention: the blob-stack height is `L₀/s = (Σ/π)^(5/6)` identically, i.e. **1.47 blobs at `Σ = 5`**. The criterion should therefore carry *both* `φ/φ#` and the blob count, where each is falsifiable. Formal adoption belongs to `T-1c`. |
 | P-7 | Build isolation for concurrent agents: `-PbuildDirectory=<dir>` so parallel runs of one checkout stop racing on `build/test-results` | **DONE** (iteration 3) | Raised as a process blocker mid-iteration: four agents sharing one working tree could not get an authoritative `./gradlew test`, and the failure (`EOFException`, `NoSuchFileException` on the in-progress results binary) looks like a broken test rather than a broken harness. `build-*/` is git-ignored. |
-| P-8 | Mg²⁺/PEG coordination constant in water | TODO — **medium**, raised by `C-0005`. PEG's ether oxygens coordinate cations — the mechanism behind PEO polymer electrolytes — and this is the **only** mechanism that could flip the sign of the §4(c) answer. `T-6`'s partitioning bound counts exclusion only, so it is one-sided; no binding constant was located. |
-| P-6 | `χ(T, salt)` and the Mg²⁺ salting-out coefficient for PEG/water at 2–10 mM | IN PROGRESS (iteration 3) — promoted from low priority | Split out of `P-3`, which could not determine it: the adopted EOS is non-virial so yields neither `A₂` nor `χ`, and no source for the Mg²⁺ coefficient was found. Bounded by argument at ≤ 0.7% of `τ`, below the fit uncertainty on `α` — so it does not block anything yet. It will bind if `T-3`/`T-6` need solvent quality as a function of ionic strength. |
+| P-8 | Mg²⁺/PEG coordination constant in water | TODO — **medium**, raised by `C-0005`. PEG's ether oxygens coordinate cations — the mechanism behind PEO polymer electrolytes — and this is the **only** mechanism that could flip the sign of the §4(c) answer. `T-6`'s partitioning bound counts exclusion only, so it is one-sided. **`P-6` searched independently and confirms the number does not exist in accessible literature**: it found the mechanism stated for the right system in water (cation binding to ether oxygens, with MgCl₂ in the salt list) but no constant, and the quantitative multivalent-cation/PEO NMR work is in **methanol**. This needs a paywalled pull or an experiment. |
+| P-9 | **The effective `χ` of a *grafted* PEG layer is not the bulk one** — bound it, or declare `C-0002`'s bulk equation of state inapplicable to a brush | TODO — **HIGH, a process blocker beside `T-1c` and above `T-2`**. Raised by `C-0007`. An SCF fit to neutron reflectivity puts a dense PEO brush at `χ ≈ 0.60` (above θ, formally poor solvent) against **0.372** in bulk — `Δχ = 0.23`, **239× the entire salt effect `P-6` was chartered to bound**. Every osmotic number in `C-0001`, `C-0002` and `T-1c` derives from a **bulk-solution** property applied to a brush. The same source reports the brush still exerts *positive* surface pressure, so this is not a collapse — but it is the largest un-discharged premise in the material sheet. |
+| P-6 | `χ(T, salt)` and the Mg²⁺ salting-out coefficient for PEG/water at 2–10 mM | **DONE** (iteration 3) | Claim `C-0007`, challenge `CH-0006`. **The buffer does not reach the layer's mechanics**: ≤ 0.4 % of the modulus over 2–10 mM. The Mg²⁺ coefficient is **not determinable and probably not well posed** — `θ(c)` shows *minima* for Group II chlorides, and PEG forms no binodal with MgCl₂ at all, so no ATPS-derived coefficient can exist. Bounded by a threshold instead: MgCl₂ would need `k_s ≥ 92.8 K/M`, 1.35× above the ceiling any PEO salt reaches. | Split out of `P-3`, which could not determine it: the adopted EOS is non-virial so yields neither `A₂` nor `χ`, and no source for the Mg²⁺ coefficient was found. Bounded by argument at ≤ 0.7% of `τ`, below the fit uncertainty on `α` — so it does not block anything yet. It will bind if `T-3`/`T-6` need solvent quality as a function of ionic strength. |
 
 ## Science tasks
 
@@ -53,6 +54,7 @@ The `Leaf` column is the NDI `simulation-task-map` ID the work traces to.
 | `./gradlew study -Pstudy=structure.TileLoadDistributionStudyKt` | `T-5` | `gpd/results/T-5-load-distribution.json` |
 | `./gradlew study -Pstudy=structure.TileFlatnessStudyKt` | `T-5b` | `gpd/results/T-5b-tile-flatness.json` |
 | `./gradlew study -Pstudy=electrostatics.MeanFieldValidityStudyKt` | `T-6` | `gpd/results/T-6-mean-field-screening-validity.json` |
+| `./gradlew study -Pstudy=material.SolventQualitySaltStudyKt` | `P-6` | `gpd/results/P-6-solvent-quality-vs-salt.json` |
 
 Add `-PbuildDirectory=<dir>` to any Gradle command when more than one agent is working this checkout (`P-7`).
 
@@ -96,6 +98,18 @@ Hence `T-1c` now sits above `T-2` for the same reason `P-3` sat above it before 
   1 kHz requirement. Drainage is a **footprint** problem, not a thickness problem (`τ ∝ L²`, `h` cancels),
   and a **denser** layer drains faster, so the binding direction is dilution. The design would have to
   leave the poroelastic model's own domain of validity before poroelasticity could bind. (`C-0004`.)
+- **The buffer does not reach the layer's mechanics.** The mobile-ion channel is **exactly zero** by a
+  conservation argument — ideal excluded salt gives a free energy strictly linear in φ, which `Π = φf′ − f`
+  annihilates — despite carrying **3.5× the layer's own osmotic pressure** at 10 mM. The solvent-quality
+  channel is ≤ 0.4 % of the modulus over 2–10 mM; it would take a salt 1.35× stronger than any in the PEO
+  literature to reach 1 %. **But the layer-local Mg²⁺ is 33–66 mM, not 2–10 mM, and goes as `1/h`** — a
+  ≤ 1.7 % stroke-dependent stiffness term, and the only positive-feedback term anywhere downstream. (`C-0007`.)
+- **`χ` for PEG/water is 0.372 at 300 K, measured — not the 0.45 that was cited, which has no primary source
+  at all** (the 0.44 in circulation is *polystyrene in toluene*). And `χ` carries a lattice-site convention
+  worth a factor of **2.010**, the exact analogue of `C-0002`'s three meanings of `a`. (`C-0007`.)
+- **A bulk `χ` is not a brush `χ`, and that gap is 239× everything else in this section.** A dense grafted PEO
+  layer is reported at `χ ≈ 0.60` — formally poor solvent — against 0.372 in bulk. Every osmotic number in the
+  programme is a bulk-solution property applied to a brush. (`C-0007`, `P-9`.)
 - **Mean-field screening is uncontrolled across the whole working range, and qualitatively safe across it.**
   The deviation is 123–214 % for Mg²⁺ at 5–10 nm gaps, so PB is not merely inaccurate there but outside the
   control of its own expansion; yet correlation attraction needs a gap under 1.46 nm, which the layer never
@@ -129,5 +143,22 @@ Hence `T-1c` now sits above `T-2` for the same reason `P-3` sat above it before 
 
 ## Open questions for Kazik
 
-None outstanding. Nothing so far has needed more compute than this box provides —
-`P-3` is closed-form arithmetic against published measurement, and `T-1c` is expected to be the same.
+**1. Two paywalled PDFs would close the only genuinely missing measurements in `P-6` and `P-8`.**
+This is an **access** limit, not a compute limit — ACS, Elsevier, Springer and IOP all refuse an automated fetch,
+and Crossref/EuropePMC serve only the abstracts (which is how the bound in `C-0007` was built at all).
+
+- **Boucher & Hines, *J. Polym. Sci. Polym. Phys. Ed.* 14:2241 (1976)** — the one study that measured Group II
+  chlorides against PEO, and so the only source for the θ-versus-[MgCl₂] curve *including the minima* that make
+  a linear salting-out coefficient ill-posed in the first place. Paywalled and pre-digital; only the abstract
+  is reachable, via Crossref.
+- Any PEG/PEO salt study **below 50 mM**. `C-0007` found none at all — every cloud-point and aqueous-two-phase
+  paper works at 0.1–3 M, which is two orders of magnitude above the Gen-1 buffer and exactly where a
+  non-monotonic `θ(c)` would have its structure. This may simply not exist rather than be paywalled.
+
+Neither is blocking: `C-0007` bounds the effect they would pin at ≤ 0.4 % of the layer modulus, and states the
+bound as a falsifiable threshold rather than a guess. They would convert a bound into a number.
+
+**2. Nothing has yet needed more compute than this box provides.** `T-9` (crossover hinge constant from oxDNA)
+is the first queued item that would run for *days* rather than minutes — costed at 2–5 k nucleotides and
+µs-scale umbrella sampling on 8 cores. It fits the machine; it does not fit inside one session.
+Flagged so the decision to start it is yours rather than made by accident.

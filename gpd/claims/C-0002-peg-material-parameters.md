@@ -197,16 +197,35 @@ and only a cube root in grafting density, so even a melt-like `σ = 1 nm⁻²` l
 
 Per §7: *"where a question can't be answered with the available methods, that is stated plainly."*
 
-1. **`χ(T, salt)` in 2–10 mM MgCl₂ is not determined.** The adopted equation of state is non-virial by
+1. ~~**`χ(T, salt)` in 2–10 mM MgCl₂ is not determined.** The adopted equation of state is non-virial by
    construction, so it yields neither `A₂` nor `χ`; and no source for the Mg²⁺ salting-out coefficient
    was found this iteration. What *is* bounded: 10 mM of a divalent chloride shifts `θ` by O(0.1–1 K)
    out of 375 K, ≤ 0.7% of `τ`, far below the fit uncertainty on `α`. **That bound is an argument, not
    a citation**, and it is queued as `P-6`. `χ ≈ 0.45`, cited by `C-0001`, is neither confirmed nor
-   used by anything in this claim.
+   used by anything in this claim.~~
+   **CLOSED by [`C-0007`](C-0007-solvent-quality-vs-salt.md) (`P-6`), and the bound above is corrected by
+   [`CH-0006`](../challenges/CH-0006-solvent-quality-bound.md).** The conclusion stands — the buffer does not
+   reach the layer's mechanics — but this construction of it had three defects, all compensating: the
+   arithmetic is 1.5× out (`(1/τ)dτ/dθ = T/(θ²τ) = 1.07 %/K`, so the stated upper bracket gives 1.07 %, not
+   ≤ 0.7 %); it was evaluated at the *buffer* concentration when the layer-local Mg²⁺ is 1–66 mM and
+   stroke-dependent; and the *sign* was asserted rather than established — for MgCl₂ specifically the evidence
+   points to salting-**in**. The defensible bound is **0.40 % of the modulus** across the buffer and **3.3 %**
+   across the layer-local span. `χ ≈ 0.45` is now known to have **no primary source at all**; the measured
+   value is **`χ(300 K) = 0.372`**, from `χ(T) = 1.156 − 235.3/T`.
+   Note also that `τ = 0.200` in the sheet above is the **optimistic end of a 0.164–0.200 band**, because
+   "the theta temperature of PEG in water" is a 16.3 K band rather than the single 375 K cited.
+   **A larger premise is now open in its place:** the effective `χ` of a *grafted* layer is reported at
+   ≈ 0.60 against 0.372 in bulk, and this claim's equation of state is a **bulk** one. Queued as `P-9`.
 2. **Block-copolymer chemistry.** §3 offers PEG, PEO, or a PS→PEG block copolymer. `α` covers the first two.
 3. **The 10–16 nm dense-PEG-brush height range** cited by `C-0001` remains untraced. Nothing depends on
    it; the recommendation is to delete it rather than source it.
 
 ## Challenges
 
-`CH-0001` is raised **by** this claim against `C-0001`. None stands against this one.
+`CH-0001` is raised **by** this claim against `C-0001`.
+
+**[`CH-0006`](../challenges/CH-0006-solvent-quality-bound.md) — raised against this claim, 2026-08-12, by
+[`C-0007`](C-0007-solvent-quality-vs-salt.md).** It challenges the *construction* of the ≤ 0.7 % `τ` bound in
+"Still open" item 1, not its conclusion: the arithmetic is 1.5× out, it was evaluated at the wrong
+concentration, and its sign was asserted rather than established. No number in the parameter sheet moves.
+See the annotation on that item.
