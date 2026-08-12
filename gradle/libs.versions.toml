@@ -20,7 +20,7 @@ kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotl
 xemantic-kotlin-test = { module = "com.xemantic.kotlin:xemantic-kotlin-test", version.ref = "xemanticKotlinTest" }
 
 [plugins]
-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-plugin-power-assert = { id = "org.jetbrains.kotlin.plugin.power-assert", version.ref = "kotlin" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaPlugin" }
 version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "versionCatalogUpdatePlugin" }

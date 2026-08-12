@@ -33,12 +33,11 @@ For small fixed-size geometry — `Vector2`/`Vector3`/`Vector4`, matrices, quate
 [openrndr-math](https://github.com/openrndr/openrndr/tree/master/openrndr-math) can be used instead.
 
 viktor ships JNI natives and is JVM-only,
-which is why it sits in `commonMain` of a single-target project —
-adding any other Kotlin target would break that dependency.
+which is one of the reasons this project is a plain Kotlin/JVM application rather than a multiplatform one.
 
 ## Known gotchas
 
-- After upgrading the Gradle wrapper, `jvmTest` may fail with `NoSuchFileException: build/test-results/jvmTest/binary/in-progress-results-generic.bin`, because the results of the previous Gradle version are stale — delete `build/test-results` (or run `clean`) and retry.
+- After upgrading the Gradle wrapper, `test` may fail with `NoSuchFileException: build/test-results/test/binary/in-progress-results-generic.bin`, because the results of the previous Gradle version are stale — delete `build/test-results` (or run `clean`) and retry.
 
 ## Anti-patterns to avoid
 

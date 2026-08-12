@@ -1,12 +1,10 @@
-@file:OptIn(ExperimentalKotlinGradlePluginApi::class)
-
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 import org.jreleaser.model.Active
 
 plugins {
-    alias(libs.plugins.kotlin.multiplatform)
+    application
+    alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlin.plugin.power.assert)
     alias(libs.plugins.dokka)
     alias(libs.plugins.version.catalog.update)
@@ -36,48 +34,42 @@ val kotlinTarget = KotlinVersion.fromVersion(libs.versions.kotlinTarget.get())
 
 kotlin {
 
+    // set up according to https://jakewharton.com/gradle-toolchains-are-rarely-a-good-idea/
     compilerOptions {
         apiVersion = kotlinTarget
         languageVersion = kotlinTarget
+        jvmTarget = JvmTarget.fromTarget(javaTarget)
+        freeCompilerArgs.add("-Xjdk-release=$javaTarget")
         extraWarnings = true
         progressiveMode = true
         //optIn.addAll("add opt ins here")
         //freeCompilerArgs.addAll()
     }
 
-    jvm {
-        // set up according to https://jakewharton.com/gradle-toolchains-are-rarely-a-good-idea/
-        compilerOptions {
-            apiVersion = kotlinTarget
-            languageVersion = kotlinTarget
-            jvmTarget = JvmTarget.fromTarget(javaTarget)
-            freeCompilerArgs.add("-Xjdk-release=$javaTarget")
-            progressiveMode = true
-        }
-    }
+}
 
-    sourceSets {
+java {
+    sourceCompatibility = JavaVersion.toVersion(javaTarget)
+    targetCompatibility = JavaVersion.toVersion(javaTarget)
+}
 
-        commonMain {
-            dependencies {
-                implementation(libs.viktor)
-                implementation(libs.openrndr.math)
-            }
-        }
+tasks.withType<JavaCompile>().configureEach {
+    options.release = javaTarget.toInt()
+}
 
-        commonTest {
-            dependencies {
-                implementation(libs.kotlin.test)
-                implementation(libs.xemantic.kotlin.test)
-            }
-        }
-
-    }
-
+application {
+    mainClass = "com.xemantic.nano.plentyofroom.HelloWorldKt"
 }
 
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    implementation(libs.viktor)
+    implementation(libs.openrndr.math)
+    testImplementation(libs.kotlin.test)
+    testImplementation(libs.xemantic.kotlin.test)
 }
 
 powerAssert {
