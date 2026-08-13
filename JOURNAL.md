@@ -965,3 +965,64 @@ zero-force end, which is not the end anybody quotes.
 **S-61. `cosh(u)/sinh(u)` returns `NaN` above `u ≈ 20`** — both overflow and the quotient does not fall back
 to the 1.0 it tends to. **The third occurrence of this trap in this codebase**, and this time it did not throw:
 it silently collapsed a bisection onto its bracket floor.
+
+### `T-3` — stroke and blocking force versus bias (leaf `A2.2`)
+
+**Done, verified, filed as `C-0012`**, raising `CH-0011`.
+The task the whole electrostatic branch was feeding, and the answer is **reachable, but the operating point it
+is reachable at is not one the device can be held at.**
+
+100 pN of blocking force needs 0.065–0.699 V; 100 pN *at* a 3 nm stroke needs 0.082–0.368 V — every threshold
+inside `CH-0007`'s ~1 V point-ion boundary with 5–12× of margin, and the verdict never touches the 2 V column.
+`C-0008`'s force table is reproduced **to the digit** by re-running its solver rather than copying it.
+
+Two things break the naive "PASS with room" reading, and both are the iteration's real content:
+
+- **The free operating point leaves three upstream validity ranges at once, at ~0.1 V.** Above that the
+  unloaded tile snaps to ~1 nm at φ ≈ 0.33 — inside `C-0005`'s correlation band *and* above `C-0002`'s
+  concentrated crossover. Only **272 of 810** free operating points are inside both boundaries. The usable
+  bias window is **0.02–0.1 V, not 0–2 V**: the *validity* ceiling binds five times earlier than the
+  saturation knee `C-0008` identified.
+- **At the loaded operating point `k_eff < 0` at 7 and 10 nm** — 428 of 810 state points. So the §6 target
+  requires an **output coupling supplying 5–72 pN/nm of its own stiffness**, comparable to the whole layer at
+  first contact. Queued as `T-16`; `T-2`'s window has no axis for it.
+
+#### Decisions
+
+**D-45. The predicate was decomposed into three clauses before any number was computed**, so that a PASS on
+blocking force and free stroke with a FAIL on *stability at the loaded point* is visible rather than hidden
+inside an aggregate verdict.
+
+**D-47. Bisection on a bracket, not on the interval.** The characteristic is non-monotone — `dW/dh = k_eff`
+exactly, and `k_eff` can be negative — so `C-0001`'s monotonicity argument does **not** transfer. The first
+sign change below `L₀` is scanned for, and that root is provably the stable one.
+
+**D-48. A negative `k_eff` is reported as "no corner", not as a negative frequency.**
+
+#### What was surprising
+
+**S-51. The stroke was trivially reached and landed where nothing can be computed.** The task planned for the
+stroke to be hard; instead it is easy, and the operating point leaves three validity ranges simultaneously.
+The saturation behaviour that follows *is* the finding.
+
+**S-52. The blocking force is not the peak output force — it understates it by up to 20×.** `dW/dh = k_eff`
+exactly, so wherever the field softens the layer the characteristic **rises** with stroke: `max W/W(0)` runs
+1.05–2.56× at 5 nm and **6.12–20.16× at 10 nm**. "Blocking force" is the standard figure of merit and here it
+is the wrong one.
+
+**S-53. `k_es` changes sign, and that is what stops the collapse.** It reverses at 0.55–1.58 nm, so past the
+peak the electrostatics *stiffens* the layer. §6 task 4 asks whether the osmotic divergence removes the
+instability; the honest answer is that the instability **is** arrested, but electrostatically. `C-0008`'s
+"`k_es < 0` everywhere" was drawn from a sweep that started at 3 nm. `CH-0011`.
+
+**S-54. The two halves of §6 task 3 run in opposite directions with layer height.** Blocking force gets 10×
+*harder* from 5 to 10 nm; stroke gets 10× *easier*. A single "bias needed" figure hides both — and static
+stability then opposes them both, since 5 nm is stable and 10 nm is not.
+
+**S-55. Adding electrostatics *raises* the drainage corner**, because `k_brush` under compression beats the
+electrostatic softening by one to two orders of magnitude. Bandwidth remains a non-issue: 98 kHz–2.3 MHz.
+
+**S-56. The agent scratchpad is shared between concurrently running agents.** Another agent's generic
+`first.json` overwrote this one mid-verification and produced a **false** "not deterministic" verdict. A
+harness collision that presents as a physics failure — the third distinct instance of that pattern this
+session, after the Gradle results race and the OOM that masquerades as `NoClassDefFoundError`.

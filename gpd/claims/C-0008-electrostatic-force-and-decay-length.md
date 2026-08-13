@@ -11,6 +11,19 @@
 | **Conditions** | T = 300 K, `k_BT = 4.142 pN·nm`, `k_BT/e = 25.852 mV`, `l_B = 0.7141 nm`, `ε_r = 78`; aqueous `MgCl₂` at 2 / 5 / 10 mM; 40 × 40 × 10 nm honeycomb tile, Manning-renormalised |
 | **Raises** | [`CH-0007`](../challenges/CH-0007-point-ion-boundary-in-applied-bias.md) |
 | **Resolves** | [`CH-0004`](../challenges/CH-0004-screening-decay-length.md) |
+| **Challenged** | **[`CH-0011`](../challenges/CH-0011-electrostatic-stiffness-changes-sign.md) — OPEN**, against the *universal quantifier* in "`k_es < 0` everywhere", not against any number here. See the banner below. |
+
+> ⚠️ **The scope of "`k_es < 0` everywhere" is challenged by [`CH-0011`](../challenges/CH-0011-electrostatic-stiffness-changes-sign.md) (2026-08-13).**
+> Every number in this claim is reproduced to the digit by `T-3` through the same solver and stands.
+> What does not stand is the word *everywhere*: this claim's gap sweep starts at **3 nm**, and its validity
+> range names no minimum gap. `|F_es(h)|` is **not monotone** below that — it rises to a maximum and then falls
+> toward the sign change this claim already reports at zero bias between 4 and 5 nm. **Past that maximum
+> `k_es > 0` and the electrostatics stiffens the layer instead of softening it**, at 0.55–1.58 nm depending on
+> buffer and bias. `C-0012` finds **386 of 810** coupled free operating points on that reversed branch.
+> The consequence is for the `T-4` hand-off below: the softening is **not** unbounded as the gap closes, so
+> §1's open question — whether the osmotic divergence removes the instability or merely bounds it — has a
+> second arresting mechanism in it that neither §1 nor this claim contains.
+> Read `k_es < 0` as holding **above the force maximum**, which is the whole of the sampled range.
 
 ---
 
@@ -88,7 +101,8 @@ Computed from the osmotic + Maxwell first integral of the converged profile. Nom
 | 5 mM | 5 nm | −160 pN/nm | −344 pN/nm | low by 1.56× |
 | 10 mM | 5 nm | −108 pN/nm | −226 pN/nm | low by 1.27× |
 
-**`k_es < 0` everywhere**, as §1 requires. The §1 form `|k_es| ≈ F_es/λ_D` is **wrong in the direction that matters** — it *understates* the softening — over the whole §3 box, by a factor between **1.00 and 2.64** (1.01–2.16 at the 5 / 7 / 10 nm working gaps). The error is largest exactly where it is most dangerous: the smallest gap, the lowest ionic strength, the highest bias.
+**`k_es < 0` everywhere in this claim's 3–30 nm sweep**, as §1 requires — but *not* below the force maximum
+at 0.55–1.58 nm, where it reverses ([`CH-0011`](../challenges/CH-0011-electrostatic-stiffness-changes-sign.md)). The §1 form `|k_es| ≈ F_es/λ_D` is **wrong in the direction that matters** — it *understates* the softening — over the whole §3 box, by a factor between **1.00 and 2.64** (1.01–2.16 at the 5 / 7 / 10 nm working gaps). The error is largest exactly where it is most dangerous: the smallest gap, the lowest ionic strength, the highest bias.
 
 ### The numbers — the decay length, and the settlement of `CH-0004`
 
@@ -221,4 +235,6 @@ Per §7: *"where a question can't be answered with the available methods, that i
 
 [`CH-0007`](../challenges/CH-0007-point-ion-boundary-in-applied-bias.md) is raised **by** this claim, against `C-0005`'s comparison of a diffuse-layer potential with an applied bias.
 [`CH-0004`](../challenges/CH-0004-screening-decay-length.md) is **resolved** by this claim — upheld in consequence, refuted in magnitude.
-None stands against this claim.
+
+**Standing against this claim:** [`CH-0011`](../challenges/CH-0011-electrostatic-stiffness-changes-sign.md), raised by
+[`C-0012`](C-0012-coupled-stroke-and-blocking-force.md), against the scope of "`k_es < 0` everywhere". No number here is disputed.

@@ -30,6 +30,7 @@ Three things in every claim are load-bearing and easy to skip:
 | `C-0003` | [The layer response from a crossover-valid free energy](claims/C-0003-crossover-valid-layer-response.md) | [`T-1c`](tasks/T-1c-crossover-valid-layer-response.md) | `A2.1` | PASS |
 | `C-0004` | [Poroelastic drainage does not limit the Gen-1 actuator, and what would make it](claims/C-0004-poroelastic-drainage.md) | [`T-7`](tasks/T-7-poroelastic-drainage.md) | none (§4(d)) | PASS |
 | `C-0005` | [Validity boundary of mean-field screening at 2–10 mM Mg²⁺](claims/C-0005-mean-field-screening-validity.md) | [`T-6`](tasks/T-6-mean-field-screening-validity.md) | `A7.4` | PASS |
+| `C-0012` | [Coupled stroke and blocking force: reachable, but not holdable](claims/C-0012-coupled-stroke-and-blocking-force.md) | [`T-3`](tasks/T-3-stroke-and-blocking-force.md) | `A2.2` | PASS, with two clauses failing and reported |
 | `C-0014` | [Lateral confinement: anchor orientation decides it, and it costs footprint](claims/C-0014-lateral-confinement.md) | [`T-12`](tasks/T-12-lateral-confinement.md) | `A1.2` | PASS |
 | `C-0013` | [The grafted-`χ` premise is inapplicable, and the bulk equation of state stands](claims/C-0013-grafted-chi-inapplicable.md) | [`P-9`](tasks/P-9-grafted-chi.md) | premise under `A2.1` | PASS |
 | `C-0009` | [The discrete-lattice tile: where the continuum plate is upheld and where it is not](claims/C-0009-discrete-lattice-tile.md) | [`T-10`](tasks/T-10-discrete-lattice-tile.md) | `A8.2`, `A1.2` | PASS |
@@ -46,6 +47,7 @@ Three things in every claim are load-bearing and easy to skip:
 | [`CH-0002`](challenges/CH-0002-corrections-do-not-all-soften.md) — the corrections do not all soften the layer | `CH-0001`'s direction | **UPHELD** — the direction is withdrawn |
 | [`CH-0003`](challenges/CH-0003-blob-stack-height.md) — the layer is ~1.5 blobs tall | `C-0001` | **RESOLVED** by `C-0003`: the height relation is replaced, and the layer is not a blob stack at all |
 | [`CH-0004`](challenges/CH-0004-screening-decay-length.md) — "the Debye length" is three different numbers | §1/§3 as read downstream | **RESOLVED** by `C-0008`: the force's own decay length is a fourth number, and the only bias-dependent one |
+| [`CH-0011`](challenges/CH-0011-electrostatic-stiffness-changes-sign.md) — `k_es` is not negative everywhere | `C-0008` | raised by `C-0012`; the collapse is arrested electrostatically |
 | [`CH-0013`](challenges/CH-0013-entropic-tether-is-not-zero.md) — an entropic tether is not "essentially nothing" | `C-0010` | raised by `C-0014` |
 | [`CH-0012`](challenges/CH-0012-grafted-chi-number.md) — the grafted `χ ≈ 0.60` was a units error | `C-0007`'s reading of it | **UPHELD** — the premise is dissolved |
 | [`CH-0008`](challenges/CH-0008-plate-conservative-about-flatness.md) — the plate is not universally conservative about flatness | `C-0006` | raised by `C-0009`; no `C-0006` verdict moves |
