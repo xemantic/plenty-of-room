@@ -890,3 +890,78 @@ length enters *only* the amplitude once the separation is eliminated, so a 2 % f
 positive power of a positive excluded volume, so `χ ≥ ½` is not a large correction to that family but outside
 it — the code throws rather than returning a number. Yet good unconstrained fits of exactly that form to
 exactly that geometry exist, which is itself evidence against the claim.
+
+### `T-12` — lateral confinement of the tile (leaf `A1.2`)
+
+**Done, verified, filed as `C-0014`**, raising `CH-0013` against `C-0010`.
+**PASS** — two schemes clear `k_lat ≥ 0.4602 pN/nm`, and the result worth having is *why the obvious one fails*.
+
+The whole question is decided by one dimensionless number, the anchor's **anisotropy ratio** `k_lat/k_norm`,
+and it is set by the anchor's **orientation**, not its material. The cheap bound was a one-line convexity
+theorem, run before any number: for any flexible link crossing the layer, `k_lat` is the *secant* of its
+force-extension law and `k_norm` the *tangent*, so `f(0) = 0` plus convexity gives **`k_lat/k_norm ≤ 1`**,
+with equality only for a linear spring. **A through-layer path costs at least as much normal stiffness as it
+buys laterally.**
+
+A rigid vertical strut is not covered by that bound and does 40–160× *worse*: `cEI/(SL²) = 0.006–0.025`.
+Four of them cost **96.4 % of the stroke**, a 4-helix bundle 99.1 %, and — the part that kills it — the strut
+carries the actuation load in **compression**, buckling at 5.7–22.7 pN against a 25–100 pN duty, and **a column
+at its Euler load has exactly zero lateral stiffness**. The element is destroyed by the job it exists to do.
+
+What works is a load path lying *in* the surface, which never has to accommodate the stroke axially: four
+40 nm tangential tethers to a coplanar frame give 120× the lateral requirement and 239× the yaw requirement
+for **0.26–1.03 %** of the stroke. Or the ssDNA tether — see `CH-0013`.
+
+**And it puts a new constraint on `T-2`, on footprint rather than physics.** An in-plane tether must stretch
+`δ²/2L` to let the tile descend, so `L_min = δ√(Sn/2A)`: **28 nm of tether for §3's acceptable 3 nm stroke and
+93 nm for the desired 10 nm** — a ~100 nm assembly around a 40 nm tile, rising to ~230 nm.
+
+#### Decisions
+
+**D-50. Yaw is budgeted at the corner, in nm**, so that it is commensurable with translation — `CH-0009`'s
+lesson (the worst material point, not a convenient one) applied in-plane.
+
+**D-51. A 10 % stroke budget for anchors was declared in advance**, before any scheme was evaluated.
+
+**D-52. `C-0009`'s out-of-plane concentration factor is applied to an in-plane load as a conservative bound,
+and the missing calculation is named rather than guessed** — queued as `T-15`.
+
+**D-53. Both anchorless branches are closed as ceilings-with-thresholds** on the `P-6` precedent, rather than
+pretended solved.
+
+#### What was surprising
+
+**S-52. A vertical strut has exactly the wrong anisotropy: stiff where it costs, soft where it pays.**
+Against a theoretical floor of 1, it delivers 0.006–0.025.
+
+**S-53. The actuation load destroys the strut's lateral stiffness.** `k(P) = k₀(1 − P/P_c)`, exactly zero at
+the Euler load. An element destabilised by its own duty is not a design margin problem, it is a wrong element.
+
+**S-54. The ssDNA tether `C-0010` dismissed as "essentially nothing at zero tension" is the *cheapest* scheme
+available** — it is the theorem's equality case. The geometry stretches it to the layer height whether or not
+it is taut, and there `F/L` *equals* the chain's own entropic constant: **0.124 pN/nm at a 10 nm gap, 27 % of
+the entire `A1.1` bound from one tether.** The design rule is a contour *ceiling*, `L_c b ≤ 3N k_BT/k_req`
+(81 nt for four tethers), not "short and stiff" — the opposite of the intuition `C-0010` recorded. `CH-0013`.
+
+**S-55. For anchors on the budget radius, yaw and translation are *identically* the same condition** — the
+radius cancels exactly, and margins stand in the ratio `(r_anchor/r_budget)²`. So a single central anchor pins
+translation and leaves yaw entirely free.
+
+**S-56. Rotating four in-plane tethers from radial to tangential multiplies yaw stiffness by 638–2551×, at
+zero cost.** The same four elements, the same material, the same attachment points.
+
+**S-57. Over-stiffening is not free.** The per-anchor thermal force is `√(k_BT k)/N`, so the 120×-margin scheme
+puts 29 pN on one load path where the minimum design puts 2.6 pN — past the 10–15 pN unzip allowable. Margin
+in the wrong place is a structural liability.
+
+**S-58. The cable nonlinearity bites long before the stiffness does.** Three nanometres of stroke on a 10 nm
+in-plane tether is already 48 pN of tension — at the shear allowable — and 10 nm on a 20 nm tether is 130 pN,
+past the 65 pN nicked ceiling. The linearised stiffness was never the binding cost.
+
+**S-60. The ssDNA Kuhn length is a 2× *method-systematic* bracket, not a number** — 1.34–1.41 nm from
+force spectroscopy at 10–40 pN against 2.10–2.84 nm from zero-force scattering. A ~1 pN tether needs the
+zero-force end, which is not the end anybody quotes.
+
+**S-61. `cosh(u)/sinh(u)` returns `NaN` above `u ≈ 20`** — both overflow and the quotient does not fall back
+to the 1.0 it tends to. **The third occurrence of this trap in this codebase**, and this time it did not throw:
+it silently collapsed a bisection onto its bracket floor.

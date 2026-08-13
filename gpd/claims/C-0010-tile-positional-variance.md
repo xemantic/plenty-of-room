@@ -11,6 +11,20 @@
 | **Conditions** | T = 300 K, aqueous buffer 2/5/10 mM MgCl₂, `k_BT = 4.142 pN·nm`; 40 × 40 nm tile; 10 nm layer at `σ = 0.024 nm⁻²`; §3 target force 100 pN |
 | **Consumes** | [`C-0006`](C-0006-tile-load-distribution-and-flatness.md) (structure), [`C-0003`](C-0003-crossover-valid-layer-response.md) (stiffness bracket), [`C-0004`](C-0004-poroelastic-drainage.md) (bandwidth), [`C-0002`](C-0002-peg-material-parameters.md) (material), [`C-0009`](C-0009-discrete-lattice-tile.md) (the plate-to-lattice correction, as a cited factor) |
 | **Raises** | [`CH-0009`](../challenges/CH-0009-worst-point-is-not-the-centre.md) against `C-0006` |
+| **Challenged** | **[`CH-0013`](../challenges/CH-0013-entropic-tether-is-not-zero.md)** — see the banner below |
+
+> ⚠️ **One sentence of the reachability bracket below is challenged by [`CH-0013`](../challenges/CH-0013-entropic-tether-is-not-zero.md) (2026-08-13), raised by [`C-0014`](C-0014-lateral-confinement.md) (`T-12`).**
+>
+> **No verdict, table or number in this claim moves**, and the challenge runs in the *favourable* direction.
+> What is challenged is the line *"a flexible single-stranded tether gives essentially nothing at zero tension"*
+> and the instruction *"short and stiff, or not at all"* in [the lateral section](#the-lateral-mode-not-bounded-by-the-layer-and-not-given-a-number-it-has-not-earned).
+> `F/L` was evaluated at zero tension, but the §3 geometry **stretches the tether to the layer height whether or not it is taut**,
+> and at that extension `F/L` equals the chain's own entropic spring constant `3k_BT/(L_c b)` — the two are the same number.
+> At the 10 nm layer one tether supplies **0.124 pN/nm, 27 % of the whole `A1.1` requirement**, and the design rule is a
+> **contour-length ceiling** (`L_c ≤ 81 nt` for four tethers, 159 nt for eight), not a demand for a short stiff element.
+> The duplex-strut endpoints (0.69 and 0.08625 pN/nm) are **reproduced exactly** by `T-12` and are not in dispute —
+> but `C-0014` finds the strut unusable for a reason this claim did not compute: its *axial* stiffness is 110 pN/nm,
+> it takes 87 % of the stroke, and it buckles under the actuation load, at which point its lateral stiffness is zero.
 
 ---
 
@@ -318,7 +332,12 @@ Everything else is derived from these in code.
 ## Challenges
 
 **Raises [`CH-0009`](../challenges/CH-0009-worst-point-is-not-the-centre.md) against `C-0006`.**
-None stands against this claim.
+
+**Standing against this claim: [`CH-0013`](../challenges/CH-0013-entropic-tether-is-not-zero.md)**, raised 2026-08-13 by
+[`C-0014`](C-0014-lateral-confinement.md) — the reachability bracket's ssDNA endpoint belongs at a quarter of the
+requirement, not at zero, and the "short and stiff" instruction points at the one element that cannot work.
+A correction to one bracket endpoint; **no verdict here moves**, and the requirement this claim stated is now **met**
+by two schemes, at 0.26–8.5 % of the stroke.
 
 **Consumed as a correction:** [`C-0009`](C-0009-discrete-lattice-tile.md) / [`CH-0008`](../challenges/CH-0008-plate-conservative-about-flatness.md),
 which landed concurrently and measures the plate-to-lattice thermal ratio at **1.113–1.199**.
