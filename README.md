@@ -57,8 +57,25 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=material.PegMaterialStudyKt   # P-3, PEG/water parameter sheet
 ```
 
+[TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.
+
 Results land in [gpd/results/](gpd/results/) as JSON, with every parameter of the run alongside the numbers.
 The files carry no timestamp, so a re-run that changes nothing produces no diff.
+
+### Running with other agents on the same checkout
+
+Several GPD loops are run against one working tree at a time, and Gradle does not isolate them by itself:
+
+```shell
+./gradlew test -PbuildDirectory=build-t4      # a private build directory (P-7)
+tools/verify.sh                                # authoritative full suite, on an isolated copy (P-10)
+tools/verify.sh --committed                    # the same, against HEAD rather than the working tree
+tools/study.sh structure.InPlaneLoadPathStudyKt  # one study on an isolated copy (P-12)
+```
+
+Both scripts take `--drop <pkg>` to remove a package another agent has left mid-TDD, which is one of the four
+causes of a `NoClassDefFoundError` that reads exactly like a broken test. See [CLAUDE.md](CLAUDE.md) for the
+other three.
 
 ## Development
 
