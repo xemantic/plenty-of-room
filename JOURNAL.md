@@ -2621,3 +2621,60 @@ across Chen's `α ∈ [0.6, 1.2]` and `C-0028` found the same; here the base cei
 **S-195. The one published attempt at this motif is a negative result, and Rothemund names the cause.**
 *"The duplex markers, because they are attached to the origami by only one covalent bond, appear to be
 flexible."* That is this task's single-link routing, observed in 2006 and buried in a supplement.
+
+### Iteration 4 — what closed, and what it cost
+
+**Fifteen tasks closed**: `P-12`, `T-15`, `T-4`, `T-13`, `T-19`, `T-23`, `T-3b`, `T-30`, `T-17`, `T-1f`,
+`T-25`, `T-40`, `T-65`, `T-67`, and `T-41` as superseded.
+Twelve new claims (`C-0018`–`C-0030`), thirteen new challenges (`CH-0017`–`CH-0042`), twenty commits, every
+one verified green at `HEAD` by `tools/verify.sh --committed` **before** it was pushed.
+
+**Everything NDI asked is now answered.** `T-4` closed the last of the eight §6 tasks and `T-3b` closed
+§4(g), the last of the seven §4 questions. What remains in the queue is entirely of this programme's own
+making.
+
+**The iteration's characteristic result is a *kind* error rather than a numerical one.** Six tasks closed by
+finding that a quantity was the wrong kind of quantity:
+
+- a hold-down that was a **force** only because the coupling was one-sided — it is a stiffness, and §3's own
+  mandate already exceeds it 72× (`C-0023`);
+- a bias ceiling that belongs to a **load line**, not to a device (`C-0018`);
+- an allowable that is a function of **bonded length**, not a material constant (`CH-0029`);
+- a flatness count that is set by its **load case**, and saturates (`CH-0034`);
+- a concentration factor applied to the wrong **cut** (`CH-0033`);
+- and an off-diagonal that is not a compliance at all but a kinematic **supply** (`CH-0041`).
+
+**Three results reversed a sign the programme had been carrying.** The tile edge *gains* load rather than
+losing it (`C-0022`); the polymer and electrostatic mean-field corrections run in **opposite** directions and
+very nearly cancel (`C-0027`); and the standoff joint's coupling *helps* the predicate `C-0028` feared for.
+None of the three was found by refining a number. Each was found by asking what a term was doing.
+
+**And the branch that decides the device came back with a buildability answer rather than a mechanical one.**
+`C-0028` found the standoff motif absent from the literature; `C-0029` found that its base fails on a **count**
+— a duplex end has two strand termini, so its lever arm is bounded by the duplex's own radius — and that the
+surviving design is a crossover-hinge flexure with **no 90° junction anywhere in it**.
+
+**What the iteration cost.** Two defects shipped in `P-12`'s own harness fix, both found by use rather than by
+review: `drop_packages` deleted a live package from the working tree, and `study.sh`'s copy-back reverted a
+sibling's freshly emitted result file — the second of which then happened *again*, in an agent's private
+runner, after the fix. One result file was recovered by re-running its study; the loss was two prose strings.
+**Both incidents were reported by the agents that caused them, unprompted, which is the only reason either was
+caught.**
+
+### Next
+
+The queue is longer than it was, which is the loop working rather than failing.
+Ranked by what they block:
+
+1. **`T-63` and `P-13` are questions for Kazik, not tasks** — the buffer (0.5 mM as nominal, recommended by
+   five independent routes and the only margin in the repository that clears its own error) and the electrode
+   material. Both are specification gaps; no calculation closes either.
+2. **`T-70`** — what holds `E5g16`'s guided arm. `c` enters the arm cap as a cube root, and if the anchorage
+   is nearer pinned than guided the cap falls below §3's desired stroke and **no element in the programme
+   reaches it**.
+3. **`T-76`** — whether a strain-softening coupling still satisfies the stability clause. `CH-0042` is the one
+   challenge this iteration left **open**.
+4. **`T-50`** (1–3 weeks) and **`T-9`** (days) both exceed one session, and `T-9` now blocks two claims
+   because `k_s` and `α` each move a verdict.
+5. `T-72`/`T-66` (the triangulated standoff, now a stability remedy rather than a rigidity one), `T-21`
+   (the `φ = 0.2` crossover, on which 121 of 162 bias ceilings rest), `T-60`, `T-35`, `T-36`.
