@@ -2447,3 +2447,95 @@ condition rather than assumed.
 from `anchoring`, so dropping `anchoring` to work around one half-written file turns one broken file into
 eighty broken references. The workaround was a snapshot with the two in-progress **files** removed. The tool
 needs file granularity — that is `P-16`.
+
+### `T-65` — the standoff's coupled joint (leaf `A8.2`)
+
+**Done, verified, filed as `C-0030`**, raising `CH-0041` against `C-0025` and `C-0028` and `CH-0042` against
+`C-0017`'s theorem. It also closes `T-41`, which asked the same question one level up.
+
+`C-0028` bounded the off-diagonal of the standoff's tip compliance — correlation exactly `√3/2` at a clamped
+base, the other-DOF-fixed reading larger by exactly 4 — and then **argued** its sign: the coupled joint is
+softer, so `P3` is conservative and `P6` is not. Its recommended design's buckling margin was 1.41×, so a 1.4×
+softening in sway closes the window with nothing else moving. **Bounding a term and arguing its consequence
+are not the same operation, and this iteration is why.**
+
+**The bound is right and the consequence is backwards. The dropped term is not a compliance, it is a kinematic
+SUPPLY.** At a flexure end the joint carries the beam's end moment and its inward tension together, and both
+tilt the head inward — so the head's translation under the beam's own end moment is draw-in the standoff
+supplies for free. And because that moment is **first order** in the midspan deflection where the arc-length
+demand is **second order**, the supply is `Φδ` against a demand `e(δ) ≈ δ²/L`: at `C-0028`'s own design point,
+**0.886 nm against 0.287 nm, a ratio of 3.09**. The term two claims dropped is three times the term they kept.
+**So the coupled beam is in axial COMPRESSION over `0 < s < 9.9 nm`** — `C-0023`'s membrane term, the one that
+turns the beam into a cable, changes sign inside §3's stroke — the standoff's duty at the desired stroke falls
+from 5.113 to 3.313 pN, and the buckling margin rises **1.41 → 2.18×** on CanDo's rigidity and **1.06 → 1.64×**
+on the measured one. The window widens from `ℓ = 7–9 nm` to **5–10 nm**, on both rigidities.
+
+**And then the sign turns out not to be a property of the joint at all.** `Φδ` is odd where `e(δ)` is even, so
+the coupled law is not odd, and mounted the other way up the same joint has tangent 44.82 pN/nm — past
+`C-0023`'s ceiling at every one of the eight lengths — and margin 0.99×. **Which body carries the standoffs is
+worth the difference between a 5–10 nm window and no window**, it is free to a builder, and no upstream claim
+asks the question.
+
+#### Decisions
+
+**D-190. Solve the joint as a 2 × 2 flexibility and prove the decoupled limit before quoting anything.**
+`C12 = 0` must return `c(ρ)` and `S_eff` identically, and it does — `C-0025`'s `J5-8` to **`0.0`** and
+`C-0028`'s `B2` row to its published rounding. Declared as falsifier 1: without it no comparison means
+anything.
+
+**D-191. Verify Maxwell-Betti by two different QUADRATURES, not by construction.** `C12` is the tip
+translation under a unit tip moment — a double cumulative-Simpson integration of a constant curvature; `C21`
+is the tip rotation under a unit tip force — a single integration of a linear one. Nothing forces them to
+agree. Nine `(ℓ, k_θb)` pairs, departure `0.0`. **A symmetric matrix written symmetric is not a test.**
+
+**D-192. Predict the sign structure in the task file before the code runs.** The supply is odd and the demand
+even, so a single "softer" cannot be right — one mounting must gain what the other loses. Written down as the
+declared prediction, and it held.
+
+**D-193. Report both mountings and adopt neither.** §3 does not say which body carries the standoffs.
+Asserting one would manufacture a window; asserting the other would close a branch. Both tables are filed and
+the gap is named as a **specification** gap, the fourth in this programme after the electrode material, its
+potential of zero charge, and the loading rate.
+
+**D-194. Declare `P7` — the FLEXURE's own buckling — in the task file, before the run.** The coupled model
+puts the beam in compression, which the decoupled one never does, so the element acquires a stability
+condition it did not have. Quoted against the exact braced eigenvalue rather than the chord model's own
+`12EI/L²`, which is 22 % optimistic.
+
+**D-195. Report the favourable mounting's CLEARANCE beside the predicates rather than adopting it.** It was
+found while fixing the sign convention, after the predicates were declared — the same discipline `C-0025` used
+for buckling.
+
+#### What was surprising
+
+**S-200. The term two claims dropped is three times the term they kept, and it is one order lower in the
+deflection.** `C-0025` and `C-0028` both charge the joint a second-order draw-in demand and both omit a
+first-order supply. Nothing in either claim's structure could have shown this, because both had already
+reduced the joint to two scalars before the beam was solved.
+
+**S-201. `C-0028`'s "the coupled joint is softer" is wrong in BOTH halves at once.** Against a net demand the
+coupled axial compliance is *smaller* than the decoupled one — the joint is **2.06× stiffer** — and the effect
+that actually moves the answer is not a compliance at all. The predicate `C-0028` feared for, `P6`, is the one
+that improves.
+
+**S-202. `c₀ ≡ c(ρ)` exactly, coupled or not — the off-diagonal does not touch the bending coefficient.** What
+it adds is a term proportional to the axial force, so the *effective* end condition becomes a function of the
+**stroke**: 124.4 at 3 nm and 92.2 at 10 nm on a nominal 92.5. `C-0025`'s discipline — "`c` is not a constant
+of the joint, it carries the span" — has to be extended: it carries the stroke too. The sixth instance of a
+quantity that is not well posed without the state it is read at.
+
+**S-203. The element becomes strain-SOFTENING, so `C-0017`'s free stability margin inverts into a debt.**
+`t/s` falls 1.095 → 0.757, and the assembled tangent has an interior minimum of **22.88 pN/nm at a 4.55 nm
+stroke** — between §3's acceptable and desired strokes. `C-0018`'s fold margins put `|k_eff|` at
+23.5–28.0 pN/nm, so the number stability is written on now sits *inside* the requirement. `CH-0042`, and it is
+not resolved here.
+
+**S-204. A sagging beam pulls its supports together, so the favourable mounting costs a CLEARANCE.** The sense
+that supplies the draw-in is the one in which the midspan sags *toward* the body its bases stand on — so the
+standoff length is also a travel limit: 5.31 nm at `ℓ = 8` and 7.31 nm at `ℓ = 10`. §3's **acceptable** 3 nm is
+delivered at `ℓ ≥ 6 nm`; its **desired** 10 nm at no length inside `C-0017`'s envelope. Neither mounting
+delivers the desired stroke, for two entirely different reasons.
+
+**S-205. The constraint at the window's lower edge changes for the THIRD time.** `C-0025` closed it with the
+compliance ceiling, `C-0028` with buckling, and `C-0030` with the 10 pN unzip allowable on the beam's own
+tension at `ℓ = 4 nm`. Three claims, three constraints, one edge.

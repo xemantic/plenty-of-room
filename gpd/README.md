@@ -53,6 +53,7 @@ Three things in every claim are load-bearing and easy to skip:
 | `C-0026` | [One attachment row per duplex: the exact zero, costed against the solved load](claims/C-0026-one-row-per-duplex.md) | [`T-17`](tasks/T-17-one-row-per-duplex.md) | `A8.2` | PASS — raises `CH-0033`, `CH-0034` |
 | `C-0027` | [Iteration 4 moves one window edge, and it moves outward](claims/C-0027-window-resynthesis.md) | [`T-25`](tasks/T-25-window-resynthesis.md) | `A2.1` | PASS — raises `CH-0035`, `CH-0036` |
 | `C-0028` | [What the standoff stands on: the base is not a clamp, and the motif is not in the literature](claims/C-0028-standoff-base-joint.md) | [`T-40`](tasks/T-40-standoff-base-joint.md) | `A8.2` | PASS with the design amended — raises `CH-0037`, `CH-0038` |
+| `C-0030` | [The standoff supplies the draw-in it was charged for](claims/C-0030-coupled-standoff-joint.md) | [`T-65`](tasks/T-65-coupled-standoff-joint.md) | `A8.2` | PASS — raises `CH-0041`, `CH-0042`; closes `T-41` |
 
 ### Standing challenges
 
@@ -89,5 +90,7 @@ Three things in every claim are load-bearing and easy to skip:
 | [`CH-0034`](challenges/CH-0034-flatness-count-saturates-under-the-solved-load.md) — the flatness count saturates: 225 attachments are no flatter than 45 | `C-0006`, `C-0009`, `C-0015` | raised by `C-0026`; no count moves, the sentence does |
 | [`CH-0035`](challenges/CH-0035-the-edge-correction-cannot-reach-the-window-edge.md) — the edge correction cannot reach the window edge, and helps stability rather than hurting it | `CH-0026` | raised by `C-0027`; favourable, twice |
 | [`CH-0036`](challenges/CH-0036-a-correction-and-the-part-that-caused-it.md) — the shortfall is a property of a part that left the design the same day | `CH-0024` | raised by `C-0027`; 2–13 % becomes 0.6–0.9 % |
+| [`CH-0041`](challenges/CH-0041-the-standoff-supplies-the-draw-in-it-was-charged-for.md) — the standoff supplies the draw-in it was charged for | `C-0025`, `C-0028` | raised by `C-0030`; the bound upheld, its sign consequence overturned in both halves |
+| [`CH-0042`](challenges/CH-0042-a-strain-softening-coupling-has-no-free-stability-margin.md) — a strain-softening coupling has no free stability margin | `C-0017` | raised by `C-0030`; **OPEN**, handed to `T-76` |
 | [`CH-0037`](challenges/CH-0037-the-buckling-duty-is-the-mandate-not-the-element.md) — the buckling duty is the mandate secant, not the element's own reaction | `C-0025` | raised by `C-0028`; unfavourable, 1.27–1.70×, no verdict moves |
 | [`CH-0038`](challenges/CH-0038-a-standoff-grounded-at-infinity.md) — a standoff grounded at infinity | `C-0025` | raised by `C-0028`; the omitted qualifier turned a reserve into the binding constraint |

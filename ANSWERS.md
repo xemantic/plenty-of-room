@@ -82,9 +82,16 @@ A flexure or a crossover hinge at exactly the stiffness §3 already mandates tur
 The element is settled; the **joint** was not, and it is `C-0025`: no covalent origami joint reaches the
 free-to-draw-in reading, and the single-stranded hinge that would cannot *support* the beam, because a
 flexible link has no direction and pays its axial slack back as transverse dead band.
-The flexure is buildable on **normal duplex standoffs** — span **31.06 nm = 91 bp on 8 nm standoffs with a
-two-crossover, favourable-orientation base**, tangent 36.51 pN/nm, window `ℓ = 7–9 nm` — and `T-13` still
-closes, because the joint changes the element's geometry and not its sidedness.
+The flexure is buildable on **normal duplex standoffs** — span **31.82 nm = 94 bp on 8 nm standoffs with a
+two-crossover, favourable-orientation base**, tangent **25.23 pN/nm**, window **`ℓ = 5–10 nm`** — and `T-13`
+still closes, because the joint changes the element's geometry and not its sidedness.
+The **joint** is now solved rather than bracketed: the two standoff springs are the diagonal of one 2 × 2 read
+with the other load zero, and the off-diagonal they dropped is not a compliance but a **draw-in the standoff
+supplies** — 3.09× the demand it was set against, so the flexure runs in **compression** rather than tension
+and the buckling margin rises **1.41 → 2.18×** (1.64× on the measured rigidity).
+**But that supply is odd where the demand is even, so the coupling's law is no longer odd and its sign is
+decided by which body carries the standoffs** — worth the difference between a window and none, free to a
+builder, and §3 does not say which.
 The base is now specified rather than assumed: a **single** crossover buckles at every length, and the base's
 **orientation** is worth 9.65×, because two crossovers react a moment as a couple and a couple has an axis.
 (`C-0023`, `C-0025`, `C-0028`, `CH-0027`, `CH-0031`, `CH-0037`, `CH-0038`.)
@@ -355,7 +362,7 @@ So the crossover path never becomes binding for a distributed coupling, out of p
 | Premises checked against the material | The semidilute premise **failed** (`CH-0001`); the Darcy premise **failed** where it did not change the verdict (`C-0004`); strong stretching is outside its own premise (`CH-0003`); `χ ≈ 0.45` turned out to have **no primary source at all** (`C-0007`). |
 | Method justified against cost, cheap bound first | SCF numerics deferred twice on the stated ground that it would be *"calibrating to a guess"*, and bought only once the interaction was anchored in measurement (`T-1d`). MD declined for the Hofmeister effect because it would be *worse* than the existing measurement, not merely dearer (`C-0007`). Explicit-ion MC costed at 1–3 weeks and not run (`C-0005`). `T-15` built an in-plane *sibling* lattice rather than adding degrees of freedom to the out-of-plane one, on the ground that the two decouple exactly for a flat sheet and merging them would have forced re-verification of four published claims for a change that cannot move them. `T-19` bounded all four entry topologies by a cut-equilibrium pigeonhole before assembling a matrix, which settled two of them outright and redirected the footprint question from the lattice to the literature — where its answer was. |
 | Validity ranges travel and are respected | `C-0008` is handed to `T-3` with an explicit may/may-not list; `C-0004` is parameterised by a stiffness that was being re-derived concurrently. |
-| Disagreement raised as a challenge, not an overwrite | Twenty-five challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
+| Disagreement raised as a challenge, not an overwrite | Twenty-seven challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
 | Model-consistent vs measured maintained | Every claim header carries it; no `PASS` in this repository asserts measurement. |
 | A feared effect chased down and *dissolved* rather than carried | The "grafted `χ` ≈ 0.60", once thought 239× the salt effect, turned out to be `1.2 × ½` assembled from an abstract, against a model whose own theta is 0.696, for the wrong geometry and the wrong observable (`C-0013`, `CH-0012`). |
 | Unanswerable questions stated plainly | The Mg²⁺/PEG binding constant does not exist in accessible literature (`P-8`); the crossover hinge constant is a fitted model input (`T-9`); leaf `A1.2`'s CI is **not discharged** rather than approximated; the intermediate-coupling regime has no systematic theory and the sources say so themselves. |
@@ -399,9 +406,13 @@ So the crossover path never becomes binding for a distributed coupling, out of p
   motifs are excluded, because a nicked continuation preserves the helix axis and the antiparallel crossover
   requires parallel helices. The base condition every published out-of-plane element actually uses is a
   **pin**, which is a mechanism here. A buildability question, not a modelling one. (`C-0028`, `T-66`, `T-67`.)
-- **The cantilever joint's off-diagonal compliance**, which couples the beam end's rotation to its axial
-  motion. It *softens* the joint, so the verdict is conservative — but the window's lower edge is exactly
-  where a softening correction moves. (`T-41`.)
+- **Which body carries the standoffs, and what sits under the flexure's midspan.**
+  The coupled joint's law is not odd, so one mounting gives a 5–10 nm window and the other none — and the
+  favourable one costs a clearance that makes §3's *desired* 10 nm stroke unreachable at any standoff length
+  inside the coupling's own envelope. A specification gap, not a modelling one. (`C-0030`, `T-75`, `T-78`.)
+- **Whether a strain-softening coupling still satisfies the stability clause.**
+  The assembled tangent's minimum, 22.88 pN/nm at a 4.55 nm stroke, sits inside `C-0018`'s own `|k_eff|`
+  band. (`CH-0042`, `T-76`.)
 - **Whether a flexure array on a shared superstructure stays as compliant as independent leaf springs.**
   `C-0023` models 45 of them as independent, which is the *compliant* reading — and the compliance ceiling is
   the binding side, so the assumption is not conservative. (`T-31`.)
