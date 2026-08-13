@@ -8,6 +8,17 @@
 | **Grounds** | methodological — a displacement quoted from an origin the device does not occupy, in the one state (zero bias) that the origin was supposed to describe |
 | **Direction** | **unfavourable, and small.** 2–13 % of §3's acceptable stroke with the committed coupling present; up to 79 % without one |
 | **Status** | raised. **No verdict in `C-0012`, `C-0016` or `C-0017` moves** — the shortfall is inside every model bracket those claims already carry. What moves is the *statement* that §3's 3 nm is delivered, which becomes "2.62–2.93 nm is delivered" |
+| **Challenged by** | [`CH-0036`](CH-0036-a-correction-and-the-part-that-caused-it.md), from [`C-0027`](../claims/C-0027-window-resynthesis.md) (`T-25`), on the **bracket** only |
+
+> ⚠️ **The 2.62–2.93 nm bracket below is quoted for a stack that left the design on the same day** —
+> [`CH-0036`](CH-0036-a-correction-and-the-part-that-caused-it.md) (2026-08-13).
+>
+> **The coordinate argument is upheld in full and nothing else moves.** But the row *"the layer **and**
+> `C-0017`'s `K2` at 33 pN/nm"* carries `C-0014`'s **eight substrate tethers**, which contribute 9.4 pN of the
+> 10.24 pN hold-down at 10 nm — and [`C-0023`](../claims/C-0023-two-sided-coupling.md)/[`CH-0027`](CH-0027-hold-down-requirement-is-a-force-only-for-a-one-sided-stack.md)
+> remove them. On the committed tetherless device `d` = **0.018–0.027 nm** at 10 nm and the delivered stroke
+> is **2.973–2.982 nm — a 0.6–0.9 % shortfall, not 2–13 %**. The difference is worth **four grid steps** of
+> `C-0016`'s 10 nm design window and three of its 7 nm one.
 
 ---
 

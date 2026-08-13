@@ -6,6 +6,18 @@
 | **Against** | [`C-0008`](../claims/C-0008-electrostatic-force-and-decay-length.md) (`T-3a`) and [`C-0012`](../claims/C-0012-coupled-stroke-and-blocking-force.md) (`T-3`), and through them [`C-0016`](../claims/C-0016-design-window.md), [`C-0017`](../claims/C-0017-output-coupling-stiffness.md) and [`C-0018`](../claims/C-0018-maximum-usable-bias.md) |
 | **Grounds** | methodological — a stated one-dimensional limitation, now quantified and found to be non-negligible and **one-signed** |
 | **Scope** | a **multiplier on every force**, not a change to any mechanism. No mechanism, decay length, stiffness sign or stability verdict is disputed. |
+| **Challenged by** | [`CH-0035`](CH-0035-the-edge-correction-cannot-reach-the-window-edge.md), from [`C-0027`](../claims/C-0027-window-resynthesis.md) (`T-25`), on the two **directional** statements only |
+
+> ⚠️ **The measurement stands and is reproduced; the two consequence lines do not** —
+> [`CH-0035`](CH-0035-the-edge-correction-cannot-reach-the-window-edge.md) (2026-08-13).
+>
+> **(1)** `C-0016`'s upper window edge is the stroke under a **100 pN dead load** — a specified force, with no
+> field in it — so this correction is not an argument of it and it **does not move**. Asserted as a test.
+> **(2)** At a **force-pinned** operating point `|F_es| = 100 pN + P(g)A` and `k_es = −|F_es|/ℓ` identically,
+> so the multiplier is absorbed entirely into the bias and reaches `k_es` **not at all**; only `d ln μ/dh`
+> survives, and it **lengthens** the decay. `C-0017`'s 10 nm / 2 mM margin goes from 1.19–1.42× to
+> **1.34–1.67×**, not down. The original direction is right for a **fixed-bias** operating point — the free
+> tile — and that scope is now stated.
 
 ---
 

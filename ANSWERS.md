@@ -51,10 +51,22 @@ duplex** — each a duplex standoff in series
    **The design window is not empty.**
    The margin at §3's own 2 mM is 1.19–1.42×, inside its own mean-field error, so the verdict is
    *not excluded*, never established — and dropping to 0.5 mM buys six times more.
-   **And that error is the *electrostatic* one, which nothing in this programme has narrowed**: `T-1f` has
-   since bounded the *polymer* fluctuation correction at ≤ 9.4 % of the layer stiffness and shown it is a
-   different expansion acting on the other term of `k_eff`, so 0.5 mM is now the only route (`CH-0019`).
+   Carrying **both** iteration-4 corrections it is **1.23–1.53×** — the polymer fluctuation bound *degrades*
+   it to 1.11–1.25× and the finite-tile enhancement *restores* it to 1.34–1.67×, and the two are of the same
+   size and opposite sign, so `C-0019`'s ≥ 1.07× was one half of a two-sided correction (`C-0027`).
+   The verdict is unchanged in kind — *not excluded*, never established, because the **electrostatic**
+   one-loop error is 123–214 % and nothing in this programme narrows it (`CH-0019`).
+   **0.5 mM remains the only route, and there the corrected margin is 2.16–9.87× — the only margin in the
+   programme that clears its own uncertainty.**
    (`C-0012`, `C-0016`, `C-0017`, `CH-0016`.)
+
+4. **The design window survived nine claims and ten challenges by moving one edge, outward.**
+   Of the four iteration-4 results aimed at it, three live on axes an intersection cannot see and the fourth
+   is nearly cancelled by the part of the design that produced it.
+   **Seven of eleven discovered axes do not resolve in grafting density, and one of them — the
+   lateral-confinement footprint — left the window entirely** when the in-plane tethers left the design.
+   A `(σ, L₀)` window is the wrong object for the Gen-1 decision, and now for a second reason: constraints
+   are being *discharged* off it as fast as they are discovered. (`C-0027`.)
 
 And the shape of the whole problem, which no single number shows: **static stability wants the thin layer,
 whose window is empty by 13.3×; the window, the stroke and the force-versus-height trade all want the thick
@@ -136,7 +148,7 @@ Quote it at a stated compression. At the working point, 47.7–64.1 pN/nm over t
 ### Task 2 — the design window
 
 **Answered, and the answer changes shape halfway through.**
-In the axes §4(a)–(d) names the window is **not empty**: `σ ∈ [0.0116, 0.2601] nm⁻²` at 10 nm — 22.4× wide —
+In the axes §4(a)–(d) names the window is **not empty**: `σ ∈ [0.0116, 0.2885] nm⁻²` at 10 nm — 24.8× wide —
 and `[0.0296, 0.0496]` at 7 nm.
 **5 nm is empty**, and the proof names two constraints: the layer must be at least `σ = 0.0751 nm⁻²` for its
 coils to overlap at all and at most `σ = 0.00563 nm⁻²` to deliver 3 nm of stroke, **missing each other by
@@ -151,7 +163,7 @@ In the first-moment convention the same layer is ~8–9 kDa.
 yet separated the definitional part from the physical.
 
 Then the shape changes.
-**Three of the five axes this programme discovered are not functions of grafting density at all** — flatness
+**Seven of the eleven axes this programme discovered are not functions of grafting density at all** — flatness
 (45 attachments as 3 × 15, against 56 crossovers), the usable bias window, and the output-coupling stiffness.
 They cannot narrow a window; they can only close a height.
 So a `(σ, L₀)` window is the wrong object for the Gen-1 decision, and the two axes that *do* resolve in `σ`
@@ -252,17 +264,23 @@ Passing the point where a force stops growing is not being stopped by it.
 (`C-0018`, `CH-0017`, correcting `C-0012` and `CH-0011`.)
 
 **And every stroke in this programme is measured from `L₀`, which is a height the tile never occupies.**
-With the committed coupling fitted the device delivers **2.62–2.93 nm** against §3's acceptable 3 nm — a
-2–13 % shortfall — and without a coupling the shortfall reaches 79 %, because three of six layer models have
-exactly zero stiffness at `L₀` and a soft layer is cheap to compress.
-No verdict moves; the *statement* does. (`C-0021`, `CH-0024`.)
+On the device the programme actually committed to — two-sided, tetherless — the delivered stroke is
+**2.973–2.982 nm** at the 10 nm design point, a **0.6–0.9 %** shortfall.
+The 2–13 % that `CH-0024` reported is a property of `C-0014`'s eight substrate tethers, which supply 92 % of
+that stack's hold-down and which `CH-0027` removed the same day (`CH-0036`) — and those tethers are worth
+**four grid steps** of the 10 nm window and three of the 7 nm one, where the tethered reading leaves it
+1.230× wide, one grid step from empty.
+No verdict moves; the *statement* does. (`C-0021`, `C-0023`, `C-0027`, `CH-0024`, `CH-0036`.)
 
 **Every electrostatic force in this programme is a one-dimensional pressure multiplied by 1600 nm², and that
 understates the force on the finite tile by 5–19 %** (`C-0022`, `CH-0026`) — 14.7 % at the design point,
 25.8 % on a 20 nm tile, and equivalent to a sub-Debye 1.65 nm collar on every side.
-The correction is favourable to every force clause and unfavourable to every stability clause, which is the
-combination in which an error survives longest, and it is an order of magnitude inside the standing
-123–214 % mean-field uncertainty.
+It is favourable to every force clause and — at the **force-pinned** operating point the device is actually
+held at — favourable to the stability clauses too: the level term is absorbed entirely into the bias and only
+the collar's *gradient* survives, which lengthens the decay and takes the 10 nm / 2 mM margin from
+1.19–1.42× to 1.34–1.67×.
+The unfavourable direction `CH-0026` asserted holds only at fixed **bias**, i.e. for the free tile (`CH-0035`).
+Either way it is an order of magnitude inside the standing 123–214 % mean-field uncertainty.
 
 ### Task 6 — mean-field screening
 
@@ -337,7 +355,7 @@ So the crossover path never becomes binding for a distributed coupling, out of p
 | Premises checked against the material | The semidilute premise **failed** (`CH-0001`); the Darcy premise **failed** where it did not change the verdict (`C-0004`); strong stretching is outside its own premise (`CH-0003`); `χ ≈ 0.45` turned out to have **no primary source at all** (`C-0007`). |
 | Method justified against cost, cheap bound first | SCF numerics deferred twice on the stated ground that it would be *"calibrating to a guess"*, and bought only once the interaction was anchored in measurement (`T-1d`). MD declined for the Hofmeister effect because it would be *worse* than the existing measurement, not merely dearer (`C-0007`). Explicit-ion MC costed at 1–3 weeks and not run (`C-0005`). `T-15` built an in-plane *sibling* lattice rather than adding degrees of freedom to the out-of-plane one, on the ground that the two decouple exactly for a flat sheet and merging them would have forced re-verification of four published claims for a change that cannot move them. `T-19` bounded all four entry topologies by a cut-equilibrium pigeonhole before assembling a matrix, which settled two of them outright and redirected the footprint question from the lattice to the literature — where its answer was. |
 | Validity ranges travel and are respected | `C-0008` is handed to `T-3` with an explicit may/may-not list; `C-0004` is parameterised by a stiffness that was being re-derived concurrently. |
-| Disagreement raised as a challenge, not an overwrite | Twenty-three challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
+| Disagreement raised as a challenge, not an overwrite | Twenty-five challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
 | Model-consistent vs measured maintained | Every claim header carries it; no `PASS` in this repository asserts measurement. |
 | A feared effect chased down and *dissolved* rather than carried | The "grafted `χ` ≈ 0.60", once thought 239× the salt effect, turned out to be `1.2 × ½` assembled from an abstract, against a model whose own theta is 0.696, for the wrong geometry and the wrong observable (`C-0013`, `CH-0012`). |
 | Unanswerable questions stated plainly | The Mg²⁺/PEG binding constant does not exist in accessible literature (`P-8`); the crossover hinge constant is a fitted model input (`T-9`); leaf `A1.2`'s CI is **not discharged** rather than approximated; the intermediate-coupling regime has no systematic theory and the sources say so themselves. |
@@ -367,6 +385,11 @@ So the crossover path never becomes binding for a distributed coupling, out of p
   would settle it is a field-theoretic (complex-Langevin) simulation, costed at weeks; the nearest published
   substitute is paywalled with no repository copy. **The bracket is ≤ 9.4 % on stiffness, so nothing turns on
   it.** (`C-0019`.)
+- **Whether `C-0018`'s pull-in bias itself moves.**
+  The polymer softening and the finite-tile enhancement cancel at the fold to within the collar gradient's own
+  difference-scheme spread — the coupled tangent runs −2.5 to +4.0 pN/nm. This is not a missing measurement:
+  `T-3b`'s own solver, run on the equilibrium path rather than at six sampled gaps, would settle it (`T-60`).
+  It is the only unresolved margin left that a cheap calculation can close. (`C-0027`.)
 - **The thermal force in a crossover.**
   It is `√(k_BT k_v)` with `k_v` the crossover's vertical stiffness, which nothing measures (`T-9`); the
   programme's lattice models it as a rigid penalty, in which the *static* force converges and the

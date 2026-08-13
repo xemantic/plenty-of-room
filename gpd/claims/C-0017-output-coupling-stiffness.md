@@ -12,6 +12,16 @@
 | **Consumes** | [`C-0012`](C-0012-coupled-stroke-and-blocking-force.md) (the characteristic, **re-run not tabulated**), [`C-0014`](C-0014-lateral-confinement.md) (the element mechanics, the convexity theorem, the lateral and yaw bounds), [`C-0015`](C-0015-crossover-phase-and-registration.md) (45 attachments as 3 × 15, the exact-zero load path), [`C-0009`](C-0009-discrete-lattice-tile.md) (the concentration factor, the 56 crossovers), [`C-0006`](C-0006-tile-load-distribution-and-flatness.md) (the per-path allowables), [`C-0003`](C-0003-crossover-valid-layer-response.md)/[`C-0008`](C-0008-electrostatic-force-and-decay-length.md) (the layer and the field, as libraries) |
 | **Raises** | [`CH-0016`](../challenges/CH-0016-coupling-requirement-is-quoted-off-operating-point.md) against `C-0012` |
 | **Challenged by** | [`CH-0033`](../challenges/CH-0033-thermal-excitation-is-not-a-load-non-uniformity.md), from [`C-0026`](C-0026-one-row-per-duplex.md), on failure route 2 only. **No number or verdict moves** — see the banner below |
+| **Re-run by** | [`C-0027`](C-0027-window-resynthesis.md) (`T-25`) — **the margin improves** |
+
+> ⚠️ **Re-run against iteration 4 by [`C-0027`](C-0027-window-resynthesis.md) (2026-08-13). The verdict stands
+> and the margin is BETTER than published.**
+>
+> `C-0019` alone degrades the 10 nm / 2 mM margin to **1.11–1.25×** and `C-0022`/`CH-0026` alone restores it to
+> **1.34–1.67×**; carried together the margin is **1.231–1.528×** against the 1.194–1.424× below. **The two
+> corrections are the same size and opposite sign**, so `C-0019`'s "≥ 1.07×" was one half of a two-sided
+> correction. `0` of the 54 states fails the mandate, before or after. **`P4` and every scheme verdict are
+> untouched**; open questions 3, 4 and 5 are discharged by `C-0026`, `CH-0033` and `C-0023` respectively.
 
 > ⚠️ **Failure route 2 of this claim is withdrawn by [`CH-0033`](../challenges/CH-0033-thermal-excitation-is-not-a-load-non-uniformity.md) (2026-08-13), from [`C-0026`](C-0026-one-row-per-duplex.md) (`T-17`).**
 >

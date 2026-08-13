@@ -11,6 +11,16 @@
 | **Conditions** | T = 300 K, aqueous MgCl₂ at 0.5 / 1 / 2 / 5 / 10 mM, `k_BT = 4.142 pN·nm`; 40 × 40 nm tile; linear PEG; layer heights 5 / 7 / 10 nm |
 | **Consumes** | [`C-0011`](C-0011-scf-density-profile.md) (the layer and its grid), [`C-0012`](C-0012-coupled-stroke-and-blocking-force.md) (the coupled thresholds and the stability clause), [`C-0015`](C-0015-crossover-phase-and-registration.md) (the layout sweep and the flatness count), [`C-0014`](C-0014-lateral-confinement.md) (the cable relation), [`C-0005`](C-0005-mean-field-screening-validity.md) (the partitioning model), [`C-0004`](C-0004-poroelastic-drainage.md) (the drainage model), [`C-0002`](C-0002-peg-material-parameters.md)/[`C-0003`](C-0003-crossover-valid-layer-response.md) (the material), and the challenges `CH-0001` … `CH-0014` in their final form |
 | **Raises** | [`CH-0015`](../challenges/CH-0015-usable-bias-window-is-unloaded.md) against `C-0012` |
+| **Re-run by** | [`C-0027`](C-0027-window-resynthesis.md) (`T-25`) against all of iteration 4 |
+
+> ⚠️ **Re-run against iteration 4 by [`C-0027`](C-0027-window-resynthesis.md) (2026-08-13). `P1` stands;
+> exactly one edge moves, and it moves outward.**
+>
+> The 10 nm upper edge goes `0.26015 → 0.28854 nm⁻²` (**one grid step**, window 22.36× → **24.80×**), driven by
+> `C-0019`'s fluctuation widening against `CH-0024`'s delivered-stroke tightening. **The 7 nm window is
+> unchanged to the last digit** — those two corrections cancel there to exactly the grid. **No edge changes
+> owner** and 5 nm is still empty. Axis **(i)**, the lateral-confinement footprint, **leaves the window
+> entirely** (`CH-0021` + `CH-0027`), and four new axes were added, none of which resolves in `σ`.
 
 ---
 

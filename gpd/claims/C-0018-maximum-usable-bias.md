@@ -11,6 +11,16 @@
 | **Conditions** | T = 300 K, `k_BT = 4.142 pN·nm`, `l_B = 0.7141 nm`, `ε_r = 78`; aqueous `MgCl₂` at **0.5 / 2 / 10 mM**; 40 × 40 nm Manning-renormalised tile; PEG layer 5 / 7 / 10 nm at `σ` = 0.092 / 0.045 / 0.024 nm⁻²; all six `C-0003` models; three load lines |
 | **Consumes** | [`C-0012`](C-0012-coupled-stroke-and-blocking-force.md) (the characteristic, **re-run not tabulated**), [`C-0017`](C-0017-output-coupling-stiffness.md) (the coupling the device carries), [`C-0008`](C-0008-electrostatic-force-and-decay-length.md) (the field and its solver), [`C-0003`](C-0003-crossover-valid-layer-response.md) (the six layer models), [`C-0005`](C-0005-mean-field-screening-validity.md), [`C-0002`](C-0002-peg-material-parameters.md) |
 | **Raises** | [`CH-0017`](../challenges/CH-0017-collapse-is-arrested-osmotically.md) against `CH-0011` |
+| **Re-run by** | [`C-0027`](C-0027-window-resynthesis.md) (`T-25`) — **the margin stands, its movement unresolved** |
+
+> ⚠️ **Re-run against iteration 4 by [`C-0027`](C-0027-window-resynthesis.md) (2026-08-13). Read the
+> 1.007–1.032 as standing.**
+>
+> The **operating** bias falls 8–9 % once `C-0022`/`CH-0026`'s finite-tile enhancement is carried, which alone
+> would raise the margin to **≥ 1.108–1.134**. But at the fold itself `C-0019`'s softening of `k_brush` and
+> that same enhancement **cancel to within the collar gradient's own difference-scheme spread** — the coupled
+> tangent there runs −2.5 to +4.0 pN/nm — so the pull-in bias's own movement is **not resolved**. What would
+> resolve it is `T-3b`'s existing solver run **on the equilibrium path** rather than at six sampled gaps.
 
 ---
 

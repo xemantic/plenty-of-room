@@ -51,7 +51,7 @@ Three things in every claim are load-bearing and easy to skip:
 | `C-0024` | [The attachment's entry topology: the sheet's answer is arithmetic, the joint's is not](claims/C-0024-attachment-entry-topology.md) | [`T-19`](tasks/T-19-attachment-entry-topology.md) | `A8.2` | PASS — raises `CH-0029` |
 | `C-0025` | [The flexure's end joint: a joint has three stiffnesses, and only bending has a direction](claims/C-0025-flexure-end-joint.md) | [`T-30`](tasks/T-30-flexure-end-joint.md) | `A8.2` | PASS — raises `CH-0031` against `C-0023` |
 | `C-0026` | [One attachment row per duplex: the exact zero, costed against the solved load](claims/C-0026-one-row-per-duplex.md) | [`T-17`](tasks/T-17-one-row-per-duplex.md) | `A8.2` | PASS — raises `CH-0033`, `CH-0034` |
-| `C-0027` | *(reserved — `T-25`, the window re-synthesis)* | `T-25` | `A2.1` | in progress |
+| `C-0027` | [Iteration 4 moves one window edge, and it moves outward](claims/C-0027-window-resynthesis.md) | [`T-25`](tasks/T-25-window-resynthesis.md) | `A2.1` | PASS — raises `CH-0035`, `CH-0036` |
 | `C-0028` | [What the standoff stands on: the base is not a clamp, and the motif is not in the literature](claims/C-0028-standoff-base-joint.md) | [`T-40`](tasks/T-40-standoff-base-joint.md) | `A8.2` | PASS with the design amended — raises `CH-0037`, `CH-0038` |
 
 ### Standing challenges
@@ -87,5 +87,7 @@ Three things in every claim are load-bearing and easy to skip:
 | [`CH-0031`](challenges/CH-0031-a-flexible-hinge-cannot-be-anisotropic.md) — a flexible hinge cannot be anisotropic, so it is not a support | `C-0023` | raised by `C-0025`; removes an escape rather than a number |
 | [`CH-0033`](challenges/CH-0033-thermal-excitation-is-not-a-load-non-uniformity.md) — thermal excitation is not a load non-uniformity, and a concentration factor does not multiply a share | `C-0015`, `C-0017` | raised by `C-0026`; favourable, no verdict moves |
 | [`CH-0034`](challenges/CH-0034-flatness-count-saturates-under-the-solved-load.md) — the flatness count saturates: 225 attachments are no flatter than 45 | `C-0006`, `C-0009`, `C-0015` | raised by `C-0026`; no count moves, the sentence does |
+| [`CH-0035`](challenges/CH-0035-the-edge-correction-cannot-reach-the-window-edge.md) — the edge correction cannot reach the window edge, and helps stability rather than hurting it | `CH-0026` | raised by `C-0027`; favourable, twice |
+| [`CH-0036`](challenges/CH-0036-a-correction-and-the-part-that-caused-it.md) — the shortfall is a property of a part that left the design the same day | `CH-0024` | raised by `C-0027`; 2–13 % becomes 0.6–0.9 % |
 | [`CH-0037`](challenges/CH-0037-the-buckling-duty-is-the-mandate-not-the-element.md) — the buckling duty is the mandate secant, not the element's own reaction | `C-0025` | raised by `C-0028`; unfavourable, 1.27–1.70×, no verdict moves |
 | [`CH-0038`](challenges/CH-0038-a-standoff-grounded-at-infinity.md) — a standoff grounded at infinity | `C-0025` | raised by `C-0028`; the omitted qualifier turned a reserve into the binding constraint |

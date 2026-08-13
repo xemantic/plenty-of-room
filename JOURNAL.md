@@ -2351,3 +2351,99 @@ construction has become the constant that decides the design — which sharpens 
 Two findings printed raw `%.1f` placeholders; the third consumed the wrong arguments and reported a margin
 *"falls from 4.70 to 6.28"* — an increase, stated as a fall. Caught only by reading the emitted prose, exactly
 as the existing `CLAUDE.md` entry says to.
+
+### `T-25` — the design window re-synthesised, and the correction that cancelled itself (leaf `A2.1`)
+
+**Done, verified, filed as `C-0027`**, raising `CH-0035` against `CH-0026` and `CH-0036` against `CH-0024`.
+
+Nine claims and ten challenges landed in one iteration and four of them were aimed at the design window.
+**Three of the four live on axes an intersection cannot see, and the fourth is very nearly cancelled by the
+part of the design that produced it.** The net movement over 183 grid points at three heights is **one edge,
+at 10 nm, by one grid step, outward**: `σ ∈ [0.011634, 0.288540] nm⁻²`, 22.36× → **24.80×** wide. The 7 nm
+window is unchanged **to the last digit** — `C-0019` widens it by one grid step and `CH-0024` narrows it by
+one. No edge changes owner; coil overlap still owns every lower edge and §3's 3 nm stroke every upper one.
+
+**On the coupling axis the two corrections that were supposed to decide the verdict run in opposite
+directions and are of the same size.** `C-0019` takes the 10 nm / 2 mM stability margin from 1.194–1.424× to
+1.110–1.245×; `C-0022`/`CH-0026`, carried at the operating point, takes it to 1.335–1.668×; together they
+give **1.231–1.528×** — *better* than `C-0017` published. **0 of 54** states fails the mandate. And on the
+bias axis the same two cancel at the fold to within the collar gradient's own difference-scheme spread, so
+`C-0018`'s 1.007–1.032 is left standing rather than moved in either direction.
+
+**The Gen-1 verdict as it now stands**: non-empty at 10 and 7 nm with both edges attributed, empty at 5 nm
+with the crossing widened to 24.80×, conditional on an electrostatic model error nothing in this programme
+narrows — and **0.5 mM removes the condition**, which is a specification question for NDI and not a
+calculation.
+
+#### Decisions
+
+**D-150. Run the cheap bound first, and let it settle three of the four movers.** `C-0016`'s upper edge is the
+stroke under a 100 pN **dead load** — a specified force with no field in it — so `CH-0026`'s electrostatic
+enhancement cannot be an argument of it whatever its size. That one observation decided three of four
+candidate movers, and it was asserted as a test rather than argued: switching the edge correction on moves no
+index at any height.
+
+**D-151. Carry `CH-0026` as a DECOMPOSITION rather than as a multiplier, because at the operating point its
+level term is exactly zero.** `k_es = −|F_es|/ℓ` identically and `|F_es|` is pinned by the force balance at
+`100 pN + P(g)A`, so the level cancels and only `d ln μ/dh` survives. That is cheaper than a re-run *and* more
+accurate than a multiplication, and it is what turns `CH-0026` from an unfavourable correction into a
+favourable one.
+
+**D-152. Key every upstream accessor on every dimension its sweep varied, and `require` exactly one match.**
+`C-0026` was caught taking the wrong record for keying on too few dimensions. Here it is not hypothetical:
+`CH-0026`'s headline +14.7 % is the *resting height* of a 10 nm layer, while the operating point is its
+*held gap* of 7 nm, where the same file says +10.3 %.
+
+**D-153. Classify each new constraint by AXIS before intersecting it, and compute the classification where a
+σ-resolved quantity exists.** Applied to itself, `C-0016`'s lesson also says a constraint which has been
+*discharged* is invisible — and axis (i), the lateral-confinement footprint, is exactly that.
+
+**D-154. Report the pull-in movement as UNRESOLVED rather than quoting the half that is computable.** The
+operating-bias half is unambiguous and favourable; the fold half straddles zero across three difference
+schemes. Quoting only the first would have produced "≥ 1.11×" — a number that reads like a result and is half
+a cancellation.
+
+**D-155. Report the residual as sub-grid, never as zero.** Three of the four non-empty edges do not move at
+1.109× resolution, and the honest report is *"does not move at this resolution"*.
+
+#### What was surprising
+
+**S-160. `CH-0026`'s direction is backwards for every clause it was written for, and for two different
+reasons.** The window's upper edge is a **dead-load** stroke and the multiplier is not an argument of it at
+all; and at a **force-pinned** operating point the multiplier is absorbed into the bias, leaving only the
+collar's gradient, which runs the other way. `CH-0026` reasons at fixed bias where the device is held at fixed
+force. **The fourth instance in this programme of a quantity quoted at a state the device does not occupy** —
+after `CH-0015`, `CH-0016` and `C-0018`. `CH-0035`.
+
+**S-161. `C-0019` and `C-0022` are the same size and opposite sign, and each was published alone.** `C-0019`
+degrades the 10 nm margin by 7 % and `C-0022` improves it by 12 %; neither claim could carry the other,
+because `C-0019` predates `C-0022` by hours and says so in its own validity range. The combined answer is
+better than the number either correction started from, and **no reader of either claim alone could have known
+that.** This is what a synthesis task is for, and it is the second time two claims coupled in a way neither
+could see alone.
+
+**S-162. `C-0023` saved the 7 nm design window, and was filed as a `T-13` result.** `CH-0024`'s 2–13 %
+shortfall is measured against a stack containing `C-0014`'s eight substrate tethers, which supply 9.4 pN of
+its 10.24 pN hold-down — and `CH-0027` removed them the same day. The tethers are worth **four grid steps** of
+the 10 nm window and three of the 7 nm one, where the tethered device leaves it **1.230× wide, one grid step
+from empty**. A claim's consequences are not confined to the task it was written for. `CH-0036`.
+
+**S-163. Removing a part is invisible to an intersection in exactly the way a topological constraint is.**
+`C-0016` reported the lateral-confinement footprint as a cost axis. It is now not even a cost: `CH-0021` makes
+the in-plane factor exactly 1 and `CH-0027` removes the in-plane tethers entirely. **A window gains an axis
+when a constraint is discovered and loses one when a constraint is discharged, and an intersection records
+neither.**
+
+**S-164. The 5 nm crossing got WIDER, and that is the delivered-stroke axis working.** `C-0016`'s 13.32×
+becomes **24.80×** once the compliance clause has to deliver `3.0 + d` rather than 3.0. The one iteration-4
+result that can narrow anything narrows the height that was already empty by the most.
+
+**S-165. `μ` is a function of the gap and not of the bias, which is what made the finite difference possible at
+all.** At the one gap `T-3b` sampled at three biases the collar multiplier spans **0.14 %**. That accident of
+the sweep is the only reason `d ln μ/dh` could be extracted from it, and it is reported as a validity
+condition rather than assumed.
+
+**S-166. `--drop <pkg>` cannot drop a package another package depends on.** `coupling` imports six symbols
+from `anchoring`, so dropping `anchoring` to work around one half-written file turns one broken file into
+eighty broken references. The workaround was a snapshot with the two in-progress **files** removed. The tool
+needs file granularity — that is `P-16`.
