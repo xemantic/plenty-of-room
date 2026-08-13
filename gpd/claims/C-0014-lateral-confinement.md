@@ -11,6 +11,25 @@
 | **Conditions** | T = 300 K, aqueous buffer 2/5/10 mM MgCl₂, `k_BT = 4.142 pN·nm`; 40 × 40 nm tile; 5/7/10 nm layer; §3 target force 100 pN, stroke ≥ 3 nm |
 | **Consumes** | [`C-0010`](C-0010-tile-positional-variance.md) (the requirement and the zero), [`C-0006`](C-0006-tile-load-distribution-and-flatness.md) (the elements and the allowables), [`C-0009`](C-0009-discrete-lattice-tile.md) (the concentration factor, the 64 attachments), [`C-0003`](C-0003-crossover-valid-layer-response.md) (the layer), [`C-0008`](C-0008-electrostatic-force-and-decay-length.md) (the field), [`C-0004`](C-0004-poroelastic-drainage.md) (the drag, for the no-scheme baseline) |
 | **Raises** | [`CH-0013`](../challenges/CH-0013-entropic-tether-is-not-zero.md) against `C-0010` |
+| **Challenged by** | [`CH-0021`](../challenges/CH-0021-in-plane-factor-is-not-out-of-plane.md), on the **7.6× concentration factor** this claim itself flagged as a stand-in. See the banner below |
+
+> ⚠️ **The `7.6×` this claim applies throughout is corrected by [`CH-0021`](../challenges/CH-0021-in-plane-factor-is-not-out-of-plane.md) (2026-08-13), from the in-plane shear-lag solve [`C-0020`](C-0020-in-plane-shear-lag.md) (`T-15`) — the task this claim's own validity range queued.**
+>
+> **No verdict here moves**, and the anisotropy theorem, the cable term, the `r²` yaw cancellation, the
+> over-stiffening result and the `S6`/`S7` ceilings are all untouched. What moves is `n` in
+> **`L_min = δ√(Sn/(2A))`**, and it moves **in both directions**:
+> `C-0009`'s factor is a peak over an **equal share** of a reaction the tile collected from its foundation,
+> applied here as a peak over the **applied** force — two quantities differing by the ~9.3 paths on an
+> `ℓ`-contour — and laterally the tile collects nothing at all, because the layer's lateral stiffness is
+> exactly zero.
+> Solved: **`n = 1.00` for a tether aligned with the helices** (`L_min` = 10.0 nm at 3 nm and **33.5 nm at
+> 10 nm**, 2.79× shorter, so the ~227 nm assembly is withdrawn), **`n = 3.82` across them**, and
+> **`n = 11.75` at the worst of 7200 placements** — where `L_min` is **115.9 nm, worse than the 93.3 nm this
+> stand-in produced**. The stand-in was *not* conservative for a misaligned tether.
+> And the footprint constraint below **changes currency rather than disappearing**: at the minimum tether
+> length the normal preload is `n_t A √(2A/S)`, **independent of the stroke**, i.e. **54.9 pN — 55 % of the §3
+> target force** — which this claim's `L_min` formula does not contain.
+> Do not consume the `× C-0009's 7.6` column, or the `L_min` table, without reading `CH-0021`.
 
 ---
 

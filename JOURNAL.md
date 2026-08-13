@@ -1357,3 +1357,100 @@ Verified by use rather than by assertion: `tools/study.sh --drop nosuchpkg windo
 reproduced `gpd/results/T-2-design-window.json` byte-identically ("no result file changed", which is also a
 free determinism check on `T-2`), and `tools/verify.sh --drop nosuchpkg` ran the full suite green on the
 working tree in 1 m 16 s.
+
+**S-83. A sibling agent found a real bug in `P-12`'s own fix, within the hour.**
+`drop_packages` assumed the Maven-style `src/main/kotlin/com/xemantic/nano/plentyofroom/<pkg>` layout; this
+project uses the **flat** one, with the qualification carried by the `package` declaration alone. `--drop`
+therefore matched nothing, warned to stderr, and `compileKotlin` failed exactly as if the flag had not been
+passed. Fixed in place by `T-1f`, which hit it: both layouts are now tried. A tool written to remove a
+silent failure mode had one of its own, and only running it against the real tree exposed it.
+
+### `T-15` — the in-plane load path, by shear lag (leaf `A8.2`)
+
+**Done, verified, filed as `C-0020`**, raising `CH-0021` against `C-0014` — the task `C-0014`'s own validity
+range queued, naming its own weakest step.
+
+**The in-plane concentration factor is 1, and it is bought by a design rule, not by the physics being kinder.**
+A surface-parallel tether collects **nothing** from the layer — `C-0010`'s lateral stiffness is exactly zero by
+symmetry, so unlike an out-of-plane anchor there is no gathered reaction to concentrate — and the in-plane
+**sharing length is 65.1 nm against a 40 nm tile**, so a point load never becomes an equal share anywhere on
+the footprint. A tether **aligned with the helices** therefore puts exactly its own tension into the one duplex
+it attaches to: **`η = 1.0000`, at all 480 (phase, duplex) placements and at all eight crossover stiffnesses
+across four decades.** `A_eff` is the full 48 pN single-duplex shear allowable against `C-0014`'s 48/7.6 = 6.3,
+and **`L_min` at §3's desired 10 nm stroke falls from 93.3 nm to 33.5 nm** — the ~227 nm assembly around a
+40 nm tile becomes ~107 nm, which is what the *acceptable* 3 nm stroke already cost.
+
+**Misaligned, the stand-in was not conservative.** Over the complete 15 × 15 × 32-phase sweep — 7200 designs —
+the worst placement gives `A_eff = 4.09 pN` and **`L_min = 115.9 nm`, worse than the 93.3 nm figure it
+replaces.** One duplex of misalignment (3.85°, the finest step the lattice allows) already costs 2.2×.
+
+**And the incompatibility changes currency rather than disappearing.** At the minimum tether length the tension
+*is* the allowable, so the geometry fixes `δ/L` and the normal preload `n_t A √(2A/S)` is **independent of the
+stroke**: 54.9 pN for four tethers, **55 % of the §3 100 pN target force**, at 3 nm and at 10 nm alike.
+`C-0014`'s `L_min` formula does not contain it, and it lands on `T-13`.
+
+#### Decisions
+
+**D-72. Build the in-plane problem as a sibling class of `OrigamiGrillage`, not as five more degrees of freedom
+on it.** For a flat sheet the membrane and bending problems decouple exactly at linear order, so extending the
+existing lattice would have doubled a matrix in order to solve two independent problems at once and forced
+every `C-0009`/`C-0015` result to be re-verified for a change that cannot move them. `OrigamiMembrane` shares
+`OrigamiSheet`, `CrossoverLayout`, `Cholesky`, `Gen1Tile` and `ResultRounding` unchanged, and carries the same
+three degrees of freedom per node (`u`, `v`, `dv/dx`) — asserted crossover-for-crossover identical to the
+out-of-plane lattice, because otherwise no comparison of the two factors would mean anything.
+
+**D-73. Replace the continuous angle sweep by the complete edge-to-edge duplex-pair sweep.** A tether attaches
+to a duplex and there are fifteen of them, so several nominal angles snap to the same physical design and the
+intermediate ones are unreachable. 15 × 15 pairs × 32 phases is **complete**, and it found placements 1.7×
+worse than the coarse angle scan had. `C-0015`'s lesson — do not search a diagonal of a discrete anisotropic
+space — in a new place.
+
+**D-74. Leave the falsified cheap bound standing in the task file, under a banner.** `T-15`'s Plan argued
+`η ≤ 1` from equilibrium and wired it in as the primary falsifier. It fired. Editing the Plan would have hidden
+the most informative thing the task produced.
+
+**D-75. Replace the runtime `check` with the correct invariant rather than deleting it.** What equilibrium
+actually bounds is the **sum** of the duplex axial forces on a cut; that is now asserted to `1e−4` for both the
+aligned and the worst oblique case, alongside `η = 1.0000` exactly for every aligned placement and a saturation
+ceiling for the oblique ones.
+
+**D-76. Derive `k_s` from Chen et al.'s own softened-bond construction and sweep four decades, rather than
+assert it.** No crossover in-plane stiffness exists in the accessible literature in any form; `k_θ`, the only
+crossover elastic constant ever fitted, describes rotation. Substituting the stretch modulus for the bending
+rigidity in `k = 2αX/(100a)` is the same construction applied to the one duplex constant that describes
+displacement. The aligned answer is invariant across the sweep, which is what lets the deliverable be a number.
+
+#### What was surprising
+
+**S-84. The declared falsifier fired, and the mechanism is worth more than the bound was.** A tether that does
+not pull along a duplex applies a **moment** to it, and the crossovers react that moment as an axial **couple**,
+because they act on the interface line and not on the duplex axis — levered further by the short free overhang
+between the last crossover column and the tile edge. So a single duplex carries up to **2.33×** the tether
+tension and a single crossover **2.45×**. Equilibrium bounds the cut *total*, never the per-member peak, and
+the Plan's argument had quietly assumed a monotone tension chain.
+
+**S-85. Layout is worth exactly nothing here — ×1.0000 — against `C-0015`'s ×1.43–1.60 out of plane.** That one
+number is the whole structural difference between the two problems: out of plane the load must travel through
+the lattice to reach a crossover, so *where* the crossovers are decides how much each takes; in plane the
+attachment itself is the most loaded member and no arrangement of crossovers can relieve it. The lever
+`C-0015` found does not exist here — and neither does its uncertainty.
+
+**S-86. Classical shear lag is not frame-indifferent, and the term it drops is worth 4×.** Dropping `∂v/∂x`
+from the shear strain charges energy to a **rigid rotation of the whole sheet**. Keeping it requires the
+connector to act at the interface line, and **frame indifference then fixes the arm at exactly `d/2`** — swept,
+and the rigid-rotation energy is `2e−14 pN·nm` there and finite at 0, 0.5, 1.0 and 2.0 nm. The dropped term
+changes the loaded duplex's retained share by up to **×4.03**. The arm is not a fitted parameter.
+
+**S-87. A minimum-length tether's normal preload is independent of the stroke.** At `T = A` the geometry fixes
+`δ/L = √((1+A/S)²−1)`, so `F_z = n_t A (δ/L)/√(1+(δ/L)²) ≈ n_t A √(2A/S)` — **54.9 pN at both strokes**, 55 %
+of the §3 target force. The shorter tether is not free; it is paid for in a currency `C-0014`'s formula does
+not contain.
+
+**S-88. The in-plane shear rigidity carries the *identical* `56/55.147` discretisation excess `C-0009` found
+for `D_⊥`.** Same integer crossover count over the same continuum areal density, in a different plane and a
+different physical quantity. Asserted to `1e−9` rather than accepted as a coincidence.
+
+**S-89. Sampling the continuum field on the duplex axes broke a sum rule by 130 %.** Every non-uniform cosine
+mode integrates to zero over the *tributary strip*, so the strip integral makes the fifteen duplex forces sum
+to the applied force **identically**; sampling `∂u/∂x` on the axes instead aliases, and for a soft crossover the
+"total" came out at 2.28 pN from a 1 pN load. A conservation law silently destroyed by a quadrature.

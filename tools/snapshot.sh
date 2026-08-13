@@ -49,24 +49,33 @@ snapshot_tree() {
 }
 
 # Removes the named Kotlin packages from a snapshot, main sources and tests together.
-# A package name is the path under src/{main,test}/kotlin/com/xemantic/nano/plentyofroom,
-# for example `coupling` or `brush`.
+# A package name is the last component of the Kotlin package, for example `coupling`
+# or `brush`.
+#
+# Both source layouts are tried, because this project uses the FLAT one — the directory
+# is `src/main/kotlin/<pkg>` and the `package com.xemantic.nano.plentyofroom.<pkg>`
+# declaration carries the qualification. `T-1f` found `--drop` silently matching nothing
+# because it assumed the Maven-style `src/main/kotlin/com/xemantic/nano/plentyofroom/<pkg>`;
+# a warning went to stderr and `compileKotlin` then failed exactly as if the flag had not
+# been passed. Trying both keeps the helper correct if the layout is ever changed.
 drop_packages() {
     local target="$1"; shift
     local base="com/xemantic/nano/plentyofroom"
-    local pkg source_set dir
+    local pkg source_set dir relative
     for pkg in "$@"; do
         local found=0
         for source_set in main test; do
-            dir="$target/src/$source_set/kotlin/$base/$pkg"
-            if [ -d "$dir" ]; then
-                rm -rf "$dir"
-                echo "dropped src/$source_set/kotlin/$base/$pkg"
-                found=1
-            fi
+            for relative in "$base/$pkg" "$pkg"; do
+                dir="$target/src/$source_set/kotlin/$relative"
+                if [ -d "$dir" ]; then
+                    rm -rf "$dir"
+                    echo "dropped src/$source_set/kotlin/$relative"
+                    found=1
+                fi
+            done
         done
         if [ "$found" = 0 ]; then
-            echo "warning: --drop $pkg matched nothing under src/{main,test}/kotlin/$base" >&2
+            echo "warning: --drop $pkg matched nothing under src/{main,test}/kotlin" >&2
         fi
     done
 }

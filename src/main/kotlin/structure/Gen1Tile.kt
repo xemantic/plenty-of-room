@@ -142,6 +142,38 @@ object Gen1Tile {
     fun crossoverHingeStiffness(alpha: Double = 1.0): Double =
         2.0 * alpha * DUPLEX_BENDING_RIGIDITY / (100.0 * RISE_PER_BASE_PAIR)
 
+    /**
+     * The **in-plane** spring constant of one antiparallel crossover, in `pN/nm` —
+     * **DERIVED** from Chen et al.'s own softened-bond construction, and **not measured**.
+     *
+     * `T-15` needs the stiffness with which a crossover resists the *relative sliding* of the
+     * two duplexes it joins, in the plane of the sheet. Nothing in the accessible literature
+     * gives it in any form: [crossoverHingeStiffness] is the only crossover elastic constant
+     * that has ever been fitted, and it describes relative **rotation**, not relative
+     * displacement.
+     *
+     * What is done here is to apply Chen et al.'s construction unchanged to the one duplex
+     * elastic constant that describes displacement rather than rotation. Their bond carries a
+     * rigidity softened by CanDo's nick factor `1/100` over the rise `a`, and an antiparallel
+     * crossover has two such bonds in parallel; substituting the **stretch** modulus `S` for
+     * the bending rigidity `B` in `k_θ = 2αB/(100a)` gives
+     *
+     * &nbsp;&nbsp;&nbsp;&nbsp;`k_s = 2αS/(100a) = 64.7 pN/nm` at `α = 1`.
+     *
+     * **This is a construction, not a measurement, and every result that uses it is reported
+     * as a function of it** over [CROSSOVER_IN_PLANE_SWEEP], four decades wide and including
+     * the rigid-constraint limit. `T-9` could settle it at the same cost as `k_θ`.
+     */
+    fun crossoverInPlaneStiffness(alpha: Double = 1.0): Double =
+        2.0 * alpha * DUPLEX_STRETCH_MODULUS / (100.0 * RISE_PER_BASE_PAIR)
+
+    /**
+     * The multipliers [crossoverInPlaneStiffness] is swept by, spanning from a crossover
+     * softer than the hinge's own equivalent `k_θ/d²` to one stiffer than a covalent bond.
+     */
+    val CROSSOVER_IN_PLANE_SWEEP: List<Double> =
+        listOf(0.03125, 0.125, 0.5, 1.0, 2.0, 8.0, 32.0, 128.0)
+
     /** The lower bound of Chen et al.'s experimentally admissible `α`. */
     const val CROSSOVER_ALPHA_MIN: Double = 0.6
 

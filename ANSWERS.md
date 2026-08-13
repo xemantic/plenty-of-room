@@ -48,6 +48,11 @@ whose window is empty by 13.3×; the window, the stroke and the force-versus-hei
 one, whose operating point is unstable everywhere.** All three pull the same way and stability pulls against
 all three.
 
+**Orientation decides the anchoring problem twice over.**
+`C-0014` found that an anchor's orientation *relative to the layer* decides everything and its material almost
+nothing; `C-0020` finds the same for its orientation *within the plane of the sheet, relative to the helices* —
+worth 11.75× in the effective allowable, at no cost in material, count or stroke.
+
 Methodologically, the finding worth most is that **this project repeatedly caught itself** — concluding a
 direction from the corrections it happened to have (`CH-0002`), quoting a `χ` that was a units error assembled
 from an abstract (`CH-0012`), sampling a layout space it believed it had swept (`CH-0014`), and trusting two
@@ -107,8 +112,16 @@ They cannot narrow a window; they can only close a height.
 So a `(σ, L₀)` window is the wrong object for the Gen-1 decision, and the two axes that *do* resolve in `σ`
 both survive: the peak per-load-path force is 3.9–8.9 pN against a 10 pN unzip allowable everywhere inside the
 window — **the exceedance `C-0015` found is unreachable, because the solved layer is never as soft as the soft
-end of its sweep** — and lateral confinement is a footprint cost (a 97–152 nm assembly around a 40 nm tile)
-with **no threshold in §3 to test it against**, which is stated rather than invented.
+end of its sweep** — and **lateral confinement is no longer a footprint cost**.
+With the in-plane load path solved rather than stood in for, a tether **aligned with the helices** carries a
+concentration factor of exactly **1**, so it needs 33.5 nm at §3's *desired* 10 nm stroke — a ~107 nm assembly,
+which is what the *acceptable* 3 nm stroke already cost.
+The 93–227 nm figures rested on `C-0009`'s out-of-plane factor applied to an in-plane load (`CH-0021`).
+**The cost moves into the normal direction instead**: at the minimum tether length the tension *is* the
+allowable, so the preload is `n_t A √(2A/S)` = **54.9 pN for four tethers, independent of the stroke** and 55 %
+of §3's own 100 pN target — a `T-13` problem that did not exist before.
+And the whole gain is conditional on alignment: misaligned, `L_min` is 115.9 nm, *worse* than the figure it
+replaces. (`C-0020`.)
 
 **What decides the programme is the output coupling, and `T-16` has now evaluated it.**
 At 10 nm the §6 operating point is statically unstable at §3's own 2 mM buffer, so it exists only against a
@@ -196,7 +209,7 @@ A CI on an exact analytic result is a category error, and the model bracket is n
 | (c) | Porosity and ion partitioning | **The sign in the question is backwards.** The layer *excludes* 23–48 % of the salt, so it **lengthens** the local Debye length by 1.14–1.39× and **protects** the field rather than screening it away. It also *amplifies* `F_es` by 1.15–1.60×. The dielectric-decrement mechanism named in §4(c) is a 3.9 % effect — the layer is 97 % water. **The bound is one-sided** (exclusion only); cation coordination by PEG's ether oxygens could flip it, and no binding constant exists in accessible literature. |
 | (d) | Poroelasticity | **Not binding**, with the boundary named. See Task 7. |
 | (e) | Screening | See Task 6. The force's own decay length is **1.8–2.8 nm** at the working gap — not the 4 nm bulk Debye length, and it is bias-dependent. Leaf `A2.2`'s low-screening operating point is **vindicated twice**: at 10 mM the 100 pN target is unreachable at 7 and 10 nm, at 0.5 mM it is reached even at 10 nm. |
-| (f) | Structural survival | The **35–60 pN band is not a per-load-path allowable** — it is a whole-cross-section disassembly force at a stated loading rate, and a DNA rupture force without a loading rate is not a material constant. Per path use duplex shear (~48–65 pN) or unzip (10–15 pN), 65 pN a hard ceiling. **Three load paths clear 35 pN, eleven clear 10 pN — and 45 (as 3 × 15, not 64 as 8 × 8) are needed for flatness, against 56 crossovers.** A rigid anchor is carried by its **two nearest crossovers and essentially nothing else**, so an equal-share figure understates the peak by 2.3–7.6× — but inside the actual design window the peak is 3.9–8.9 pN against a 10 pN unzip allowable, so **the exceedance is unreachable there**. |
+| (f) | Structural survival | The **35–60 pN band is not a per-load-path allowable** — it is a whole-cross-section disassembly force at a stated loading rate, and a DNA rupture force without a loading rate is not a material constant. Per path use duplex shear (~48–65 pN) or unzip (10–15 pN), 65 pN a hard ceiling. **Three load paths clear 35 pN, eleven clear 10 pN — and 45 (as 3 × 15, not 64 as 8 × 8) are needed for flatness, against 56 crossovers.** A rigid anchor is carried by its **two nearest crossovers and essentially nothing else**, so an equal-share figure understates the peak by 2.3–7.6× **out of plane** — but inside the actual design window the peak is 3.9–8.9 pN against a 10 pN unzip allowable, so **the exceedance is unreachable there**. **In plane the factor is different in kind**: a lateral tether collects nothing from the layer, so the peak is a *fraction* of its own tension — `η = 1.0000` aligned with the helices, up to 2.33 misaligned, and the staple layout is worth **exactly nothing** on the binding path (`C-0020`). |
 | (g) | Does the tile stay flat? | **No.** Rigid *exactly* under a uniform load at any rigidity, and dishing 26–369 % of the stroke under every departure. The lever and the sensor see displacements differing by 26 % of the stroke. §4(g)'s own criterion for abandoning the rigid-plate picture is met. |
 
 ---
@@ -207,9 +220,9 @@ A CI on an exact analytic result is a category error, and the model bracket is n
 |---|---|
 | Inherited numbers get re-derived | `a = 0.35 nm` closed two ways (`C-0002`); `λ_D ≈ 4 nm` re-derived to 1.8 % (`C-0005`); the de Gennes wall mapping derived, not looked up (`C-0001`); the MWC form rebuilt rather than cited. |
 | Premises checked against the material | The semidilute premise **failed** (`CH-0001`); the Darcy premise **failed** where it did not change the verdict (`C-0004`); strong stretching is outside its own premise (`CH-0003`); `χ ≈ 0.45` turned out to have **no primary source at all** (`C-0007`). |
-| Method justified against cost, cheap bound first | SCF numerics deferred twice on the stated ground that it would be *"calibrating to a guess"*, and bought only once the interaction was anchored in measurement (`T-1d`). MD declined for the Hofmeister effect because it would be *worse* than the existing measurement, not merely dearer (`C-0007`). Explicit-ion MC costed at 1–3 weeks and not run (`C-0005`). |
+| Method justified against cost, cheap bound first | SCF numerics deferred twice on the stated ground that it would be *"calibrating to a guess"*, and bought only once the interaction was anchored in measurement (`T-1d`). MD declined for the Hofmeister effect because it would be *worse* than the existing measurement, not merely dearer (`C-0007`). Explicit-ion MC costed at 1–3 weeks and not run (`C-0005`). `T-15` built an in-plane *sibling* lattice rather than adding degrees of freedom to the out-of-plane one, on the ground that the two decouple exactly for a flat sheet and merging them would have forced re-verification of four published claims for a change that cannot move them. |
 | Validity ranges travel and are respected | `C-0008` is handed to `T-3` with an explicit may/may-not list; `C-0004` is parameterised by a stiffness that was being re-derived concurrently. |
-| Disagreement raised as a challenge, not an overwrite | Nine challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's. |
+| Disagreement raised as a challenge, not an overwrite | Ten challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
 | Model-consistent vs measured maintained | Every claim header carries it; no `PASS` in this repository asserts measurement. |
 | A feared effect chased down and *dissolved* rather than carried | The "grafted `χ` ≈ 0.60", once thought 239× the salt effect, turned out to be `1.2 × ½` assembled from an abstract, against a model whose own theta is 0.696, for the wrong geometry and the wrong observable (`C-0013`, `CH-0012`). |
 | Unanswerable questions stated plainly | The Mg²⁺/PEG binding constant does not exist in accessible literature (`P-8`); the crossover hinge constant is a fitted model input (`T-9`); leaf `A1.2`'s CI is **not discharged** rather than approximated; the intermediate-coupling regime has no systematic theory and the sources say so themselves. |
