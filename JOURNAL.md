@@ -1026,3 +1026,69 @@ electrostatic softening by one to two orders of magnitude. Bandwidth remains a n
 `first.json` overwrote this one mid-verification and produced a **false** "not deterministic" verdict. A
 harness collision that presents as a physics failure — the third distinct instance of that pattern this
 session, after the Gradle results race and the OOM that masquerades as `NoClassDefFoundError`.
+
+### `T-1d` — the SCF density profile (leaf `A2.1`)
+
+**Done, verified, filed as `C-0011`**, raising `CH-0010`.
+This is the calculation the project deferred twice and bought only once its interaction was anchored in
+measurement — exactly on the terms `T-1`'s own cost table set in advance — and it changed the answer.
+
+**The 10 nm design window exists**: `σ ∈ [0.0116, 0.2601] nm⁻²`, **22.4× wide**, against strong stretching's
+3.5× and the box models' *empty*, and robust across all three interaction laws and two decades of the load
+that has to define `L₀`. **7 nm is not empty either.** *"Empty at 5 nm and 7 nm"* — carried from `C-0001`
+through three iterations and repeated in `ANSWERS.md` — **is withdrawn**. 5 nm remains empty, and the ~10 nm
+desired stroke remains unreachable everywhere, which is `C-0001`'s one headline to survive a third model.
+
+**`C-0003` was right about which of its models to trust, and wrong about how far to trust it.** Its stated
+reasoning — the box is a restricted trial function and therefore a variational upper bound — is upheld;
+strong stretching is the better of the two. But both are wrong *together*: they agree with each other to 1 %
+on the resting height and differ from the solved profile by 4.6×. **They agree because they share a defect.**
+Neither contains the chain's entropic resistance to confinement — the box has elasticity only as a pull-back,
+strong stretching has none at the wall because free ends carry no tension — and against an absorbing wall
+`φ(h) = 0`, so that term is not a correction but the **whole** disjoining pressure.
+
+#### Decisions
+
+**D-41. A continuous-chain propagator, not a Scheutjens-Fleer lattice.** A lattice would have had to re-express
+the measured interaction free energy as a Flory `χ` on a site convention worth 2.010× (`C-0007`), discarding
+the osmometry anchoring that made the calculation worth buying in the first place. The propagator consumes
+`InteractionFreeEnergy` unchanged, so this profile and `T-1c`'s differ in **the profile and nothing else**.
+
+**D-42. Absorbing wall as primary, reflecting priced as a sensitivity.** Reflecting is the two-brush mid-plane
+and the only condition under which `T-1c`'s contact theorem is literally true; it needs 2.1× the chain to
+reach the same height and then delivers the same stroke to 2 %.
+
+**D-43. `L₀` defined at 1 pN over the tile, with a decade either side reported** — stated as a convention in
+Formulate, *before* the run, and carried on every derived number.
+
+#### What was surprising
+
+**S-44. Rannacher start-up silently breaks SCF density normalisation.** Backward-Euler damping of the first
+contour steps is the textbook cure for Crank-Nicolson ringing on a delta initial condition — and it destroys
+the identity `∫q(n)q†(N−n)dz = Q`, which holds only if *every* step applies the same operator. The symptom is
+not a crash: the grafted coverage quietly stops being conserved. The cure is to bound the diffusion number
+instead, so one operator serves throughout.
+
+**S-45. Both `T-1c` profile models predict the tile floats free where the real layer holds 78 pN.**
+Two models agreeing to 1 % and wrong together by 4.6× is a sharper warning than either being wrong alone.
+
+**S-46. The Gen-1 layer's height is a coil height, not a brush height.** `L₀ ∝ N^(0.49–0.64)`, not `N¹`, and
+`L₀ ≈ 1.6–2.9 R₀` everywhere. Every scaling height relation the programme has used assumed the opposite —
+including the one `T-1c` derived to *replace* Alexander-de Gennes.
+
+**S-47. `L₀/R₀ ≥ 1` cannot exclude anything once `L₀` is an onset height.** `P-5` adopted it one iteration ago,
+after `Σ ≥ 5` had failed twice. It passes a layer at `Σ = 0.10` — a carpet of isolated mushrooms. Three brush
+criteria have now failed in this project, and the pattern is that each was a *convention* asked to do the work
+of a measurement.
+
+**S-48. An SCF layer has no resting height.** `P = 0` is asymptotic, so `L₀` is a **definition**. A hundred-fold
+change in the defining load moves `N` by 2.5× and the stroke by 32 % — and the window's existence not at all,
+which is the only reason the answer is quotable.
+
+**S-49. `-PbuildDirectory` does not isolate `build-*/classes`.** A 22-minute study died with
+`ClassNotFoundException` on its *own* classes because a concurrent agent's Gradle invocation removed
+`build-t1d/classes/kotlin/main` mid-run. `P-7` fixed the test-results race; this is a different one, and the
+fix is to run a long study from a snapshotted classpath.
+
+**S-50. Kotlin's `+` binds tighter than `.format()`.** `"a %s" + "b %f".format(x, y)` formats only the second
+literal. It cost 22 minutes of CPU — the JSON was written, the console report was not.

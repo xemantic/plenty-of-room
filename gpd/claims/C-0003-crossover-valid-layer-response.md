@@ -11,7 +11,20 @@
 | **Conditions** | T = 300 K, aqueous, `k_BT = 4.142 pN·nm`; 40 × 40 nm tile (A = 1600 nm²); linear PEG |
 | **Consumes** | [`C-0002`](C-0002-peg-material-parameters.md) (`v₀`, `b`, `n_K`, `α`), and published `A₂`, `A₃` for PEG/water |
 | **Raises** | [`CH-0002`](../challenges/CH-0002-corrections-do-not-all-soften.md) against `C-0001` |
+| **Challenged** | **[`CH-0010`](../challenges/CH-0010-brush-height-is-coil-height.md) — upheld in substance, 2026-08-13.** The response numbers stand; the height relation, `N(L₀)` and the `φ/φ#` placement do not. See the banner below. |
 | **Resolves** | [`CH-0001`](../challenges/CH-0001-semidilute-premise.md) — see the verdict below. Corroborates [`CH-0003`](../challenges/CH-0003-blob-stack-height.md) from a third direction. |
+
+> ⚠️ **The height relation, the chain length and the volume fraction below are challenged by
+> [`CH-0010`](../challenges/CH-0010-brush-height-is-coil-height.md) (2026-08-13), raised by
+> [`C-0011`](C-0011-scf-density-profile.md).** A numerical SCF density profile against *this claim's own*
+> interaction free energies finds that **both profile models here omit the chain's entropic resistance
+> to confinement**, which at Gen-1 densities is not a correction to the disjoining pressure but the whole
+> of it: at one and the same chain (`N = 62.1`, `σ = 0.024 nm⁻²`) both models put the resting height at
+> ~2.16 nm and predict the tile floats free at 10 nm, while the solved profile has it carrying **78 pN**
+> there. `L₀` is **not** linear in `N` — the solved exponent is **0.49–0.64** — and `N(10 nm, 0.024)` is
+> **62.1** against the 224.8–374.3 below, of which most but not all is the differing definition of
+> "layer height". **The stroke and the secant stiffness below are NOT challenged and land inside their
+> own brackets.** Do not consume the `N`, `φ` or `φ/φ#` columns without reading `CH-0010`.
 
 ---
 
@@ -82,8 +95,12 @@ not observed — so `N(L₀)` is an exact inversion.
 The bracket runs from the strong-stretching/des Cloizeaux model (softest interaction demand, shortest chain)
 to the box/two-body model. **Every model needs a longer chain than `C-0001` did to reach the same height.**
 
-Consequently the layer sits **further** into the crossover than `C-0002` reported: `φ/φ# = 1.40 – 3.51` at the
-10 nm point against `C-0002`'s 1.13, and `φ = 0.0326 – 0.0543` against 0.0289.
+~~Consequently the layer sits **further** into the crossover than `C-0002` reported: `φ/φ# = 1.40 – 3.51` at the
+10 nm point against `C-0002`'s 1.13, and `φ = 0.0326 – 0.0543` against 0.0289.~~
+**WITHDRAWN by [`CH-0010`](../challenges/CH-0010-brush-height-is-coil-height.md).** On a solved density
+profile the layer sits at `φ = 0.00900` and `φ/φ# = 0.138` — a factor of seven *below* the crossover, with
+even the peak of the profile reaching only `0.378 φ#`. The direction of this correction is reversed, and
+no part of the layer is semidilute.
 
 ### Stiffness, at stated compressions
 
@@ -209,6 +226,9 @@ Enforced in code where it can be, and stated with a number where it cannot.
 
 - **`N σ v₀ < h ≤ L₀`.** Below the dry thickness the volume fraction would exceed 1; above `L₀` a
   non-adsorbing layer loses contact and the pressure is zero. Evaluating outside throws.
+- **`CH-0010`: the brush criterion adopted here is vacuous against a solved profile.** `L₀/R₀ ≥ 1` is
+  satisfied at *every* grafting density in the `T-1d` sweep, including `Σ = πR₀²σ = 0.10`, where the
+  coils are ten footprints apart. It must be carried alongside coil overlap `Σ ≥ 1`, not instead of it.
 - **The strong-stretching premise is NOT met.** `L₀/R₀` spans **0.387 – 2.27** over the whole
   5–10 nm × 0.002–1.0 nm⁻² box, and **0.83 – 1.07** at `C-0001`'s own 10 nm design point, where the theory
   wants ≫ 1. Both profile models are used outside their premise. The spread between them is a **lower bound**
@@ -273,6 +293,11 @@ Everything else in this claim is derived from those and from the §3 parameters.
 
 **Raised by this claim:** [`CH-0002`](../challenges/CH-0002-corrections-do-not-all-soften.md) against `C-0001`.
 
-**Standing against this claim:** none. The largest exposure is the bulk-vs-brush interaction parameter,
+**Standing against this claim:** [`CH-0010`](../challenges/CH-0010-brush-height-is-coil-height.md),
+raised 2026-08-13 by [`C-0011`](C-0011-scf-density-profile.md) — **upheld in substance and split**:
+the stroke and the secant stiffness survive inside their brackets, the height relation, `N(L₀)`,
+`φ` and `φ/φ#` do not, and the `L₀/R₀ ≥ 1` criterion needs `Σ ≥ 1` alongside it.
+
+The other exposure is the bulk-vs-brush interaction parameter,
 queued as `P-9`; a result there that reverses the sign of the excluded volume would contradict this claim and
 should be raised as a challenge rather than an overwrite.
