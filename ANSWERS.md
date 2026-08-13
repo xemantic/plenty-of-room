@@ -96,7 +96,18 @@ The base is now specified rather than assumed: a **single** crossover buckles at
 **orientation** is worth 9.65×, because two crossovers react a moment as a couple and a couple has an axis.
 (`C-0023`, `C-0025`, `C-0028`, `CH-0027`, `CH-0031`, `CH-0037`, `CH-0038`.)
 
-**But the one motif this design depends on is not established in the published literature.**
+**And the branch it depends on has since closed at §3's *desired* stroke.**
+`T-67` found that the 90° routing **does** exist — both links close covalently with zero unpaired
+nucleotides, and the optimum is a scaffold excursion — but that a duplex **end** has only **two strand
+termini**, so its base is a hinge with a lever arm bounded by the duplex's own radius, 1.0 nm, against the
+1.345 nm the design needs. A couple goes as the square, so the base is **3.34× short of a hard ceiling**, and
+the two links lie on a chord, leaving one axis free — **which is the axis the column buckles about**.
+**What survives is a crossover-hinge flexure instead: `E5g16`, a 12.24 nm = 36 bp guided arm on 16
+antiparallel crossovers**, tangent 33.68 pN/nm at §3's acceptable stroke and 38.68 at its desired one, 2.04 pN
+per crossover against a 10 pN allowable, **with no member in axial compression and no 90° junction anywhere in
+the design**. (`C-0029`, `CH-0039`, `CH-0040`.)
+
+**The literature finding that started it stands.**
 No publication was found in which a duplex stands normal to a single-layer origami sheet as a stand-off:
 out-of-plane duplexes there are hairpin or staple-extension *overhangs*, perpendicular helices in origami are
 perpendicular *within* the plane, and **every body standing on an origami plate that has actually been built
@@ -362,7 +373,7 @@ So the crossover path never becomes binding for a distributed coupling, out of p
 | Premises checked against the material | The semidilute premise **failed** (`CH-0001`); the Darcy premise **failed** where it did not change the verdict (`C-0004`); strong stretching is outside its own premise (`CH-0003`); `χ ≈ 0.45` turned out to have **no primary source at all** (`C-0007`). |
 | Method justified against cost, cheap bound first | SCF numerics deferred twice on the stated ground that it would be *"calibrating to a guess"*, and bought only once the interaction was anchored in measurement (`T-1d`). MD declined for the Hofmeister effect because it would be *worse* than the existing measurement, not merely dearer (`C-0007`). Explicit-ion MC costed at 1–3 weeks and not run (`C-0005`). `T-15` built an in-plane *sibling* lattice rather than adding degrees of freedom to the out-of-plane one, on the ground that the two decouple exactly for a flat sheet and merging them would have forced re-verification of four published claims for a change that cannot move them. `T-19` bounded all four entry topologies by a cut-equilibrium pigeonhole before assembling a matrix, which settled two of them outright and redirected the footprint question from the lattice to the literature — where its answer was. |
 | Validity ranges travel and are respected | `C-0008` is handed to `T-3` with an explicit may/may-not list; `C-0004` is parameterised by a stiffness that was being re-derived concurrently. |
-| Disagreement raised as a challenge, not an overwrite | Twenty-seven challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
+| Disagreement raised as a challenge, not an overwrite | Twenty-nine challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
 | Model-consistent vs measured maintained | Every claim header carries it; no `PASS` in this repository asserts measurement. |
 | A feared effect chased down and *dissolved* rather than carried | The "grafted `χ` ≈ 0.60", once thought 239× the salt effect, turned out to be `1.2 × ½` assembled from an abstract, against a model whose own theta is 0.696, for the wrong geometry and the wrong observable (`C-0013`, `CH-0012`). |
 | Unanswerable questions stated plainly | The Mg²⁺/PEG binding constant does not exist in accessible literature (`P-8`); the crossover hinge constant is a fitted model input (`T-9`); leaf `A1.2`'s CI is **not discharged** rather than approximated; the intermediate-coupling regime has no systematic theory and the sources say so themselves. |

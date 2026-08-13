@@ -2539,3 +2539,85 @@ delivers the desired stroke, for two entirely different reasons.
 **S-205. The constraint at the window's lower edge changes for the THIRD time.** `C-0025` closed it with the
 compliance ceiling, `C-0028` with buckling, and `C-0030` with the 10 pN unzip allowable on the beam's own
 tension at `ℓ = 4 nm`. Three claims, three constraints, one edge.
+
+### `T-67` — the 90° routing exists, and it is the base's arithmetic that fails (leaf `A8.2`)
+
+**Done, verified, filed as `C-0029`**, raising `CH-0039` against `C-0028` and `CH-0040` against `C-0023`.
+
+`C-0028` had found that the motif the whole coupling rests on is not in the literature, and named the routing
+as its own open question — *upstream of every number in that claim*. **A routing exists.** Both links close
+covalently at **0.600 nm**, inside the measured `[0.60, 0.70] nm` phosphodiester step, with **zero unpaired
+nucleotides**, and the optimum is a **scaffold excursion**: out at strand 1 bp 9, back at bp 10, chord at
+−87.8° across the sheet helix.
+
+**What a perpendicular junction cannot do is not *form* but *resist*, and the reason is a count.** A B-form
+duplex has two backbones, so a duplex **end** has **two strand termini**, so a base joint has **at most two
+links**, on a chord of at most `2 r_P` — lever arm ≤ **1.0 nm**. `C-0028`'s recommended base needs 1.345 nm,
+and a couple goes as the square: its 261.2 pN·nm/rad is **3.34× over a hard ceiling of 78.24**. And two links
+on a chord restrain **one** axis; about the chord the base keeps only 13.53 pN·nm/rad — which *is* `C-0028`'s
+own `B1`, recovered to the last digit from a different construction. **A column buckles about its softest
+axis**, so `P6` fails at every length and **the standoff branch closes at §3's desired stroke** (it stands at
+the acceptable 3 nm, `ℓ = 5–10 nm`).
+
+**The `E5` fallback fails too, twice, on geometry needing no constitutive law** — a `δ = r sin θ` law
+evaluated at **46.9°** (exact re-solve: `t/s` = 1.549, past its own 40 pN/nm ceiling) and an arm capped by the
+placement condition itself at `(c n EI/k)^(1/3)` = **9.77 nm < 10 nm**, at any hinge count. **The remedy is one
+letter in that cube root.** What survives is **`E5g16`: a 12.24 nm = 36 bp guided arm on 16 antiparallel
+crossovers**, tangent 33.68 pN/nm at 3 nm and 38.68 at 10 nm, 2.04 pN per crossover against a 10 pN allowable,
+**no member in axial compression at all** — so the buckling predicate is vacuous — **and no 90° junction
+anywhere in the design**.
+
+#### Decisions
+
+**D-180. The method is a COUNTING THEOREM, not a simulation.** A duplex has two backbones, so a duplex end has
+two strand termini, so a base joint has at most two links and a lever arm bounded by the duplex's own radius.
+No force field can add a third backbone, so an atomistic or oxDNA study could only find the junction
+*additionally* frustrated — it can make the answer worse, never better. Spending days to lower an upper bound
+that already fails is the wrong order, and that is the Plan section's cost justification.
+
+**D-181. A link is a WINDOW, not a distance.** The measured intrastrand step is a pair — C3′-endo 0.6 nm,
+C2′-endo 0.7 nm — so the closure objective is the residual outside `[0.60, 0.70]`, not a minimised distance.
+Minimising the bare distance parked the search on the van der Waals floor at 0.350 nm, where no backbone
+exists; the first run reported a "closure" that was a clash avoided by a hair.
+
+**D-182. The adopted `P6` is the WEAK-axis reading.** Two links lie on a chord, so the couple has one axis; a
+column buckles about its softest. The restrained-axis reading is reported beside it and is available only if a
+*second* element restrains the free axis — which is `T-66`'s truss and costs the sway the standoff exists for.
+
+**D-183. The phosphate radius is taken at the sourced 10 Å, not the 9 Å fibre value.** It coincides with the
+duplex's own steric radius, which is not a coincidence: B-form DNA's 2 nm diameter *is* the phosphate
+backbone. The 0.90 nm reading is carried as a bracket, and the 180° row as a bound no convention can move.
+
+**D-184. `E5` is re-solved under exact rotation and REDESIGNED rather than reported as failed.** The cap
+contains its own remedy: `c` = 3 → 12 lifts it from 9.77 to 15.50 nm. A *stiffer* arm does not work — a
+6-helix bundle lifts the cap to 26.5 nm and puts the tangent at 105.9 pN/nm — because the bundle buys arm
+*stiffness* and the stroke needs arm *length*.
+
+**D-185. The delegated literature search was treated as a summary.** Five load-bearing quotes were re-fetched
+and re-verified by hand before any of them was used — `C-0021`'s lesson, applied.
+
+#### What was surprising
+
+**S-190. The question was the wrong one, and the answer is better for it.** `T-67` was sent to find out whether
+a 90° routing exists. It does. What a perpendicular junction cannot do is *resist*: `C-0028`'s 1.345 nm lever
+arm is not a motif nobody has built, **it is a length that does not exist on the part.**
+
+**S-191. The best INDEPENDENT-staple routing IS the scaffold excursion.** The search was given two
+unconstrained sheet targets and its free optimum landed on **consecutive phosphates of one strand** — exactly
+the excursion's own constraint. Nothing told it to.
+
+**S-192. `C-0028`'s `B1` fell out of a completely different construction.** Two softened bonds on a chord, read
+*about* the chord, are 13.53 pN·nm/rad and 64.71 pN/nm — an antiparallel crossover's own constants, to the
+last digit. **Two bonds with no lever arm *are* a crossover.**
+
+**S-193. `E5`'s arm is capped BELOW §3's desired stroke by the mandate itself, at any hinge count.** 9.77 nm
+against a 10 nm stroke — a 2.4 % miss, and it took the whole task to notice that `C-0023`'s "most compact"
+element had been evaluated at a 47° rotation on a small-rotation law.
+
+**S-194. `α` moves a verdict for the first time in this programme.** `C-0025` records that no verdict moves
+across Chen's `α ∈ [0.6, 1.2]` and `C-0028` found the same; here the base ceiling is linear in `α`, and at
+`α = 0.6` the longest stabilisable standoff falls from 7.5 to 5.5 nm.
+
+**S-195. The one published attempt at this motif is a negative result, and Rothemund names the cause.**
+*"The duplex markers, because they are attached to the origami by only one covalent bond, appear to be
+flexible."* That is this task's single-link routing, observed in 2006 and buried in a supplement.
