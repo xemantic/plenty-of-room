@@ -2244,3 +2244,110 @@ study runner copied back *every* changed result JSON from its snapshot rather th
 recovered it, and the loss was two prose findings strings where a margin had been refined from 16× to 20.2×.
 No number moved. The general lesson is the one `P-12` already carries: **a snapshot is a view of the past of
 every other file in the tree**, so a copy-back must be scoped to the file the run produced.
+
+### `T-40` — what the standoff stands on (leaf `A8.2`)
+
+**Done, verified, filed as `C-0028`**, raising `CH-0037` and `CH-0038` against `C-0025`.
+
+`C-0025` closed `T-30` with exactly one passing joint — a duplex standing **normal** to the sheet — and named
+its base as an open question in the same breath. Naming an assumption is not carrying it: all three of its
+standoff constants, its anisotropy, its support margin and both its buckling loads are quoted at the
+rigid-base value with no bracket on any of them, and the whole coupling design rests on them.
+
+**The base is not a clamp, the buckling bracket runs to zero rather than to a quarter, and the base moves the
+design in opposite directions.** At `C-0009`'s crossover constant `ρ_b = 0.18–0.59` over 3–10 nm, leaving
+**32.0 %** of the assumed rotational restraint, **13.6 %** of the sway stiffness and **32.0 %** of the
+support. A softer base releases more draw-in, so the membrane term collapses and the tangent **falls inside
+the 40 pN/nm ceiling at every length** — while the Euler load collapses faster than the duty, so **a
+single-crossover base buckles at all eight of `C-0025`'s lengths.** What rescues it is not a material or a
+length but an **orientation**: two crossovers laid *across* the flexure give 261.2 pN·nm/rad against 27.06
+laid *along* it. **The design: 45 flexures, span 31.06 nm = 91 bp, on 8 nm standoffs with a two-crossover
+favourable base**, tangent 36.51 pN/nm, buckling margin 1.41× free-head; window `ℓ = 7–9 nm`.
+
+And the finding that outranks all of them: **the motif is not in the literature.**
+
+#### Decisions
+
+**D-160. Apply `C-0025`'s own machinery one level down rather than model the base.** Every candidate base
+traces to Chen et al.'s softened bond, so a finite-element model of the base would be a finite-element model
+*of that construction*. Each new constant is `C-0025`'s at `ρ_b → ∞`, asserted as such, so every number stays
+comparable with the filed one.
+
+**D-161. Solve the buckling load as an eigenvalue, not as an effective-length factor.**
+`sin u(u² − ρ_bρ_h) − cos u(ρ_b + ρ_h)u = 0` has all four textbook `K` factors as corners and both one-spring
+textbook equations as limits. It also has a corner `C-0025`'s bracket does not: `ρ_b = ρ_h = 0` gives `u = 0`.
+
+**D-162. Adopt the FREE head as the predicate and report the realised one beside it.** The beam's own end
+rotational stiffness puts the realised reading at `ρ_h = 0.515`, worth 1.41× → 1.99×. The conservative one is
+adopted because the head condition is not resolved and this task is a stability check.
+
+**D-163. Declare buckling as a sixth PREDICATE rather than reporting it beside five.** `C-0025` declared five
+before its run and reported buckling alongside; `T-40` exists to ask the buckling question, so `P6` is
+declared in the task file before the code runs.
+
+**D-164. Bound the off-diagonal and argue its sign; do not solve it.** The correlation is exactly `√3/2` at a
+clamped base and the other-DOF-fixed reading exceeds the other-load-zero one by exactly 4. The sign argument
+says the coupled joint is *softer*, which makes `P3` conservative and `P6` not. Queued as `T-65` rather than
+folded in, because it would confound the base answer.
+
+**D-165. Report the nicked base in the catalogue as structurally unavailable rather than omitting it.** A nick
+preserves the helix axis, so `C-0025`'s stiffest joint cannot exist at 90°. §7 rewards saying which were
+checked.
+
+#### What was surprising
+
+**S-170. The base moves the compliance ceiling and the buckling load in OPPOSITE directions, and the
+constraint that closed `C-0025`'s window from below stops binding entirely.** At a single-crossover base the
+tangent is 33.80–38.48 pN/nm over the *whole* 3–10 nm range, inside the ceiling everywhere — where the clamped
+base fails it below 7 nm. And `P6` fails everywhere. **The window is not narrowed or widened: it is re-cut by
+a different pair of constraints.** Written into the task file as a prediction before the code ran.
+
+**S-171. A pinned base with a free head is a MECHANISM, not a weaker strut.** `P_c = 0` exactly. `C-0025`
+quotes its buckling at both end conditions, *"a factor of exactly 4"*, and reads the binding margin at the
+conservative one — but both are **clamped-base** corners, and the honest bracket has no lower bound above
+zero.
+
+**S-172. The standoff's sway IS the flexure's draw-in, so the design cannot buy one without the other.** The
+head's translation in the flexure's plane has two names in this programme and is one coordinate. Holding it
+against sway is `C-0023`'s *ends held axially* reading, whose 91.13 pN/nm tangent is what the whole of `T-30`
+was spent escaping. **The held-head buckling reading is not available to this design at all**, and the two
+requirements the standoff exists to meet are in direct opposition on a single degree of freedom.
+
+**S-173. The base's ORIENTATION is worth 9.65× and it is the difference between a design and a mechanism.**
+Two crossovers to adjacent duplexes react a base moment as a **couple**, and a couple has an **axis**: laid
+across the flexure it delivers 261.2 pN·nm/rad and passes at four lengths; laid along it, 27.06 and passes
+nowhere. Same two staples, same axial support. `C-0014`'s *"an anchor's orientation decides everything and its
+material almost nothing"* in a new place, and free.
+
+**S-174. The motif is not in the literature at all.** A primary-source search — every statement flagged `read
+directly` / `abstract only` / `not found` — found no publication in which a duplex stands normal to a
+single-layer sheet as a stand-off. Out-of-plane duplexes there are hairpin or staple-extension **overhangs**;
+perpendicular helices in origami are perpendicular *within* the plane, the gridiron paper saying outright that
+the crossover motif *"has been restricted … to form parallel helices"*; and every body standing on an origami
+plate is held by a **pin** — *"2 nt in all cases"*, *"the hinge axes are not ideally constrained"*, *"flanked
+by two ssDNA bases … for rotational flexibility"*. **The pinned base this task shows to be a mechanism is the
+only base condition anyone has built.** And the one rigid out-of-plane mounting in print is **triangulated**:
+Pumm et al.'s plates *"were held rigidly at this angle with a **set** of double-helical spacers"* — a truss,
+not a stiffer joint.
+
+**S-175. `C-0025`'s buckling duty is the mandate secant, and it is identical for every design in its table.**
+The flexure strain-stiffens, so its own reaction at 10 nm is 1.27–1.70× larger over the window and 4.88×
+larger at 3 nm. At the acceptable stroke the two coincide **exactly**, because the placement condition defines
+the secant there, which is why twenty-six tests did not catch it. `CH-0037`.
+
+**S-176. A direct measurement of exactly this problem exists, and it says the model is optimistic.** Fields,
+Meyer & Cohen measured a naked duplex losing its resistance to 9 pN at 40–41 bp. Inverting Euler on their own
+number gives a persistence length of **41.7 nm** — inside the 40–47 nm measured band and **25 % below CanDo's
+55.5 nm model input**, exactly the direction `CLAUDE.md` records. Every buckling load here is on CanDo's `EI`
+and is therefore the optimistic end. **A short duplex in axial compression is one of the few things in this
+programme that has actually been measured, and nobody had looked.**
+
+**S-177. `k_s` moves a verdict for the first time in this programme.** `C-0025` records that no verdict moves
+across `k_s`'s four decades. Here the two-crossover base's whole restraint **is** `k_s d²/2`, so at `k_s/8` and
+`k_s/32` the buckling margin falls to 0.92 and 0.70 and `P6` fails. `C-0020`'s derived, unmeasured
+construction has become the constant that decides the design — which sharpens `T-9` considerably.
+
+**S-178. The `+`/`.format()` trap fired three times in one file, and once it produced grammatical prose.**
+Two findings printed raw `%.1f` placeholders; the third consumed the wrong arguments and reported a margin
+*"falls from 4.70 to 6.28"* — an increase, stated as a fall. Caught only by reading the emitted prose, exactly
+as the existing `CLAUDE.md` entry says to.

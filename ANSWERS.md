@@ -70,9 +70,21 @@ A flexure or a crossover hinge at exactly the stiffness §3 already mandates tur
 The element is settled; the **joint** was not, and it is `C-0025`: no covalent origami joint reaches the
 free-to-draw-in reading, and the single-stranded hinge that would cannot *support* the beam, because a
 flexible link has no direction and pays its axial slack back as transverse dead band.
-The flexure is buildable on **normal duplex standoffs** — span 31.64 nm = 93 bp on 8 nm = 24 bp standoffs,
-tangent 37.39 pN/nm — and `T-13` still closes, because the joint changes the element's geometry and not its
-sidedness. (`C-0023`, `C-0025`, `CH-0027`, `CH-0031`.)
+The flexure is buildable on **normal duplex standoffs** — span **31.06 nm = 91 bp on 8 nm standoffs with a
+two-crossover, favourable-orientation base**, tangent 36.51 pN/nm, window `ℓ = 7–9 nm` — and `T-13` still
+closes, because the joint changes the element's geometry and not its sidedness.
+The base is now specified rather than assumed: a **single** crossover buckles at every length, and the base's
+**orientation** is worth 9.65×, because two crossovers react a moment as a couple and a couple has an axis.
+(`C-0023`, `C-0025`, `C-0028`, `CH-0027`, `CH-0031`, `CH-0037`, `CH-0038`.)
+
+**But the one motif this design depends on is not established in the published literature.**
+No publication was found in which a duplex stands normal to a single-layer origami sheet as a stand-off:
+out-of-plane duplexes there are hairpin or staple-extension *overhangs*, perpendicular helices in origami are
+perpendicular *within* the plane, and **every body standing on an origami plate that has actually been built
+is held by a pin** — which this programme has just shown to be a *mechanism*, `P_c = 0` exactly.
+The only rigid out-of-plane mounting in print is **triangulated**, not clamped.
+**This is the largest single buildability risk in the coupling branch**, it is stated rather than assumed
+away, and it is `T-66` and `T-67`. (`C-0028`.)
 
 **Two of this programme's structural results are the same theorem at two scales**: an anchor's orientation
 decides everything and its material almost nothing (`C-0014`), and a **joint** cannot be stiff in one
@@ -325,7 +337,7 @@ So the crossover path never becomes binding for a distributed coupling, out of p
 | Premises checked against the material | The semidilute premise **failed** (`CH-0001`); the Darcy premise **failed** where it did not change the verdict (`C-0004`); strong stretching is outside its own premise (`CH-0003`); `χ ≈ 0.45` turned out to have **no primary source at all** (`C-0007`). |
 | Method justified against cost, cheap bound first | SCF numerics deferred twice on the stated ground that it would be *"calibrating to a guess"*, and bought only once the interaction was anchored in measurement (`T-1d`). MD declined for the Hofmeister effect because it would be *worse* than the existing measurement, not merely dearer (`C-0007`). Explicit-ion MC costed at 1–3 weeks and not run (`C-0005`). `T-15` built an in-plane *sibling* lattice rather than adding degrees of freedom to the out-of-plane one, on the ground that the two decouple exactly for a flat sheet and merging them would have forced re-verification of four published claims for a change that cannot move them. `T-19` bounded all four entry topologies by a cut-equilibrium pigeonhole before assembling a matrix, which settled two of them outright and redirected the footprint question from the lattice to the literature — where its answer was. |
 | Validity ranges travel and are respected | `C-0008` is handed to `T-3` with an explicit may/may-not list; `C-0004` is parameterised by a stiffness that was being re-derived concurrently. |
-| Disagreement raised as a challenge, not an overwrite | Twenty-one challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
+| Disagreement raised as a challenge, not an overwrite | Twenty-three challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
 | Model-consistent vs measured maintained | Every claim header carries it; no `PASS` in this repository asserts measurement. |
 | A feared effect chased down and *dissolved* rather than carried | The "grafted `χ` ≈ 0.60", once thought 239× the salt effect, turned out to be `1.2 × ½` assembled from an abstract, against a model whose own theta is 0.696, for the wrong geometry and the wrong observable (`C-0013`, `CH-0012`). |
 | Unanswerable questions stated plainly | The Mg²⁺/PEG binding constant does not exist in accessible literature (`P-8`); the crossover hinge constant is a fitted model input (`T-9`); leaf `A1.2`'s CI is **not discharged** rather than approximated; the intermediate-coupling regime has no systematic theory and the sources say so themselves. |
@@ -359,10 +371,11 @@ So the crossover path never becomes binding for a distributed coupling, out of p
   It is `√(k_BT k_v)` with `k_v` the crossover's vertical stiffness, which nothing measures (`T-9`); the
   programme's lattice models it as a rigid penalty, in which the *static* force converges and the
   *fluctuating* one provably does not. Bracketed at 2.78–115.8 pN and reported as a bracket. (`C-0026`.)
-- **Whether a duplex can stand normal to a single-layer sheet, and what clamps its base.**
-  `C-0025` settles the flexure's end joint and the answer is an *anisotropic* one — the only motif that is
-  both a support and a release — but its own base is unexamined, and no origami literature on out-of-plane
-  duplexes was consulted. It is now the single assumption the coupling design rests on. (`C-0025`, `T-40`.)
+- **Whether a duplex can be routed at 90° out of a single-layer sheet at all.**
+  `T-40` consulted the literature `C-0025` had not, and found **no published instance** — and the two obvious
+  motifs are excluded, because a nicked continuation preserves the helix axis and the antiparallel crossover
+  requires parallel helices. The base condition every published out-of-plane element actually uses is a
+  **pin**, which is a mechanism here. A buildability question, not a modelling one. (`C-0028`, `T-66`, `T-67`.)
 - **The cantilever joint's off-diagonal compliance**, which couples the beam end's rotation to its axial
   motion. It *softens* the joint, so the verdict is conservative — but the window's lower edge is exactly
   where a softening correction moves. (`T-41`.)
