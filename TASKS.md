@@ -372,7 +372,26 @@ would call zero, supplies the **entire** thermal-scale hold-down by itself.
 A better calculation of the wrong material is not an improvement, so the answer is bracketed and handed back
 rather than chosen.
 
-**3. Nothing has yet needed more compute than this box provides.** `T-9` (crossover hinge constant from oxDNA)
+**3. Two queued tasks now exceed what one session can run, and one of them is on the critical path.**
+
+- **`T-50` — the beyond-mean-field treatment of the actuated gap — is the last unbounded exposure on the
+  Gen-1 critical path**, and `CH-0019` has just established that nothing else in the queue can reach it.
+  `C-0017`'s 10 nm coupling margin is 1.19–1.42× and sits inside `C-0005`'s 123–214 % **electrostatic**
+  one-loop correction; `T-1f` bounded the **polymer** correction at ≤ 9.4 % and showed it is a different
+  expansion acting on the other term of `k_eff`, so it does not help. `C-0005` costs primitive-model Monte
+  Carlo at **1–3 weeks of wall clock** and records that `Ξ = 17–24` has no systematic theory at all.
+  **There is a free alternative and it is already in the programme**: adopt leaf `A2.2`'s 0.5 mM operating
+  point, where the same margin is 2.09–8.65× and clears its own uncertainty. The decision is whether Gen-1
+  is specified at 0.5 mM — a design choice, not a calculation.
+- **`T-9`** (the crossover hinge constant from oxDNA) is unchanged: 2–5 k nucleotides, µs-scale umbrella
+  sampling on 8 cores, **days not weeks**. It fits the machine; it does not fit inside one session.
+  Its urgency rose again this iteration — `C-0026` shows the crossover's *thermal* force is `√(k_BT k_v)`
+  and **diverges** in the programme's own lattice, so it is bracketed at 2.78–115.8 pN and only `T-9`
+  turns that into a number.
+
+Both are flagged so the decision to start them is yours rather than made by accident.
+
+**4. Nothing else has needed more compute than this box provides.** `T-9` (crossover hinge constant from oxDNA)
 is the first queued item that would run for *days* rather than minutes — costed at 2–5 k nucleotides and
 µs-scale umbrella sampling on 8 cores. It fits the machine; it does not fit inside one session.
 Flagged so the decision to start it is yours rather than made by accident.
