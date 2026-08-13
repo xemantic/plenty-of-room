@@ -1306,3 +1306,54 @@ floor is 3.9–15.9 pN/nm at 0.5 mM against 23.4–27.9 at 2 mM — 6× of margi
 **S-82. `C-0012`'s simultaneous-target bias is a grid interpolation across the very interval its own open
 questions name as unsampled**, and bisecting for it moves the answer up to 6.1 % — which moves the 7 nm
 coupling requirement from 11.2–276.6 pN/nm to exactly zero.
+
+---
+
+## 2026-08-13 — Iteration 4
+
+The second parallel iteration, run the same way as iteration 3: several GPD loops against one working tree,
+coordinated from a single context window, each owning a disjoint Kotlin package and a disjoint block of
+claim and challenge IDs.
+`TASKS.md`, `JOURNAL.md`, `ANSWERS.md`, `CLAUDE.md`, `README.md`, `build.gradle.kts` and every `git` write
+stay with the coordinator.
+This section is written per task as each closes, newest last.
+
+### Interaction with Kazik
+
+One instruction, at the start of the session, identical in substance to iteration 3's:
+run the loop from the main context window, spawn subagents for queued items, extend and maintain the queue,
+run independent tasks in parallel if they fit the box, and keep going until the queue is empty
+or the context window nears its limit.
+No questions were put back; nothing was blocking.
+
+### `P-12` — the harness workarounds folded into `tools/`, taken first
+
+**D-70. The process blocker went first, before any science, because this iteration is parallel by design.**
+`P-12` was queued *low* on ROI grounds, and the priority rule in `SESSION-PROMPT.md` — process blockers
+outrank cheap wins — is what overrode that: the iteration was about to start three concurrent agents against
+one checkout, and `C-0015` had already lost a study run to the failure mode `P-12` exists to remove.
+Fixing it first cost minutes; discovering it three times over would have cost a study run each time.
+
+Two scripts, sharing one snapshot helper:
+
+- [`tools/study.sh`](tools/study.sh) runs a single study entry point on an **isolated copy** of the working
+  tree and copies back only the files under `gpd/results/` that changed. This closes the exposure named in
+  `CLAUDE.md`: `-PbuildDirectory` isolates `build-*/test-results` but **not** `build-*/classes`, so a
+  concurrent agent's Gradle invocation can delete another's compiled classes mid-run and a multi-minute
+  study dies with `ClassNotFoundException` on its own types. `T-1d`'s profile sweep is 33 minutes of that
+  exposure and `T-1c`'s is 3.5.
+- [`tools/verify.sh`](tools/verify.sh) gains `--drop <pkg>`, which removes a Kotlin package — main sources
+  and tests together — from the copy before testing it. That covers the **third** cause of
+  `NoClassDefFoundError` recorded in `CLAUDE.md`: a sibling package another agent has left mid-TDD, whose
+  failed `compileKotlin` fails the whole project for everybody. Dropping it from the *copy* leaves the other
+  agent's work untouched.
+
+**D-71. `study.sh` copies back result files only, never the tree.**
+A study writes nothing outside `gpd/results/`, and copying a whole snapshot back over a working tree three
+other agents are writing into would silently revert their work — the exact failure the isolation exists to
+prevent, moved one step later.
+
+Verified by use rather than by assertion: `tools/study.sh --drop nosuchpkg window.DesignWindowStudyKt`
+reproduced `gpd/results/T-2-design-window.json` byte-identically ("no result file changed", which is also a
+free determinism check on `T-2`), and `tools/verify.sh --drop nosuchpkg` ran the full suite green on the
+working tree in 1 m 16 s.

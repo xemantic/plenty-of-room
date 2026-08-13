@@ -16,8 +16,11 @@
 #
 # Runs an authoritative `./gradlew test` on an isolated copy of the working tree.
 #
-#     tools/verify.sh              # test the working tree, including uncommitted work
-#     tools/verify.sh --committed  # test HEAD instead, ignoring uncommitted work
+#     tools/verify.sh                    # test the working tree, including uncommitted work
+#     tools/verify.sh --committed        # test HEAD instead, ignoring uncommitted work
+#     tools/verify.sh --drop coupling    # test without a sibling package left mid-TDD
+#
+# Options may be combined and repeated; everything after them is passed to Gradle.
 #
 # Why this exists (task P-10). Several agents run the GPD loop against one checkout at a
 # time. `-PbuildDirectory=<dir>` (task P-7) stops them sharing `build/test-results`, but it
@@ -25,37 +28,47 @@
 # shared Kotlin daemon still serialise and race, and the run dies with `NoClassDefFoundError`
 # on classes nobody touched, `EOFException`, or `NoSuchFileException` on the in-progress
 # results binary. Those are harness failures that read exactly like broken tests, and one
-# agent was observed losing six consecutive full-suite attempts to them.
+# agent was observed losing fourteen consecutive full-suite attempts to them.
 #
 # A copy of the tree in its own directory has its own project lock, so it runs clean the
 # first time. `--committed` additionally answers the question the coordinator actually needs
 # before pushing: does *the commit* pass, independently of whatever four agents have
 # half-written into the working tree.
+#
+# `--drop <pkg>` (task P-12) covers the third cause of `NoClassDefFoundError`: a sibling
+# package another agent has left mid-TDD, which fails `compileKotlin` for the whole project.
+# Dropping it from the copy tests everything else; it is a *diagnosis* of somebody else's
+# unfinished work, so name the dropped package whenever you report such a run.
 set -euo pipefail
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+source "$root/tools/snapshot.sh"
+
 target="${TMPDIR:-/tmp}/plenty-of-room-verify.$$"
-mode="${1:-working-tree}"
+mode="working-tree"
+drops=()
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --committed) mode="--committed"; shift ;;
+        --drop) drops+=("$2"); shift 2 ;;
+        *) break ;;
+    esac
+done
 
 cleanup() { rm -rf "$target"; }
 trap cleanup EXIT
 
-mkdir -p "$target"
-
 if [ "$mode" = "--committed" ]; then
     echo "verifying HEAD ($(git -C "$root" rev-parse --short HEAD)) in $target"
-    git -C "$root" archive HEAD | tar -x -C "$target"
 else
     echo "verifying the working tree in $target"
-    # note: --exclude='build*' would also drop build.gradle.kts
-    tar -c -C "$root" \
-        --exclude='./build' \
-        --exclude='./build-*' \
-        --exclude='./.git' \
-        --exclude='./.gradle' \
-        --exclude='./.kotlin' \
-        . | tar -x -C "$target"
+fi
+
+snapshot_tree "$root" "$target" "$mode"
+if [ ${#drops[@]} -gt 0 ]; then
+    drop_packages "$target" "${drops[@]}"
 fi
 
 cd "$target"
-./gradlew test "${@:2}"
+./gradlew test "$@"
