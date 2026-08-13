@@ -1849,3 +1849,88 @@ anyway, and no verdict moves across it.
 **S-118. At eight load paths every element fails on the static share alone.** 100 pN over 8 paths is 12.5 pN
 against a 10 pN unzip allowable, before any concentration factor. And `L ∝ n^(1/3)`, so more paths make each
 flexure *longer* rather than shorter. `C-0015`'s 45 is now reached by a third independent route.
+
+### `T-3b` — the 2-D tile edge, and the sign nobody had checked (leaf `A7.4`)
+
+**Done, verified, filed as `C-0022`**, raising `CH-0025` and `CH-0026`.
+The last open route to **§4(g)**, which now closes.
+
+`C-0008` had said plainly that a 1-D treatment cannot supply the lateral load profile, and `C-0006` had made
+the dishing exactly linear in it, so the whole of §4(g) was waiting on one number nobody had computed.
+Three things were built: a closed-form cheap bound, a 2-D graded finite-volume Newton solve of the asymmetric
+2:1 problem around the tile as a charged obstacle (conjugate gradients preconditioned by symmetric line
+Gauss-Seidel on the `z`-columns), and the study that pairs them.
+
+**The answer: the rim gains load, it does not lose it.** `(depth, width) = (−0.303, 8.94 nm)` at the design
+point against `C-0006`'s assumed `(+0.50, 4.00 nm)`, a total force **14.7 % above** the 1-D value, and a
+dishing of **32.1 % of the stroke** — which closes §4(g) and resolves the lever/sensor split `C-0012` could
+only bracket at 11 %–369 %. The finite tile behaves as one **1.65 nm larger on every side**.
+
+#### Decisions
+
+**D-100. The traction is read off the stress tensor at an interior plane and carried to the wall by the shear,
+not read at the wall.** The contact-value theorem is the worst-conditioned route at a working gap — at 10 nm
+the answer is 1/127 of the two terms it is the difference of — and `T-3a` had already learnt that in one
+dimension. The 2-D version costs one extra term, because the first integral is *not* constant when
+`∂T_zx/∂x ≠ 0`. Measured: the contact route is **248 % wrong** at the coarsest mesh and still 1–10 % wrong at
+the sweep mesh, where the two-plane interior route agrees with `T-3a` to 0.03 %.
+
+**D-101. The lateral mesh is graded far more mildly than the vertical one, on purpose.** The `z` grading has
+to resolve a 0.09 nm Gouy-Chapman layer and costs nothing, because the preconditioner solves each `z`-line
+exactly; the `x` grading is not preconditioned away and its spacing ratio lands directly in the condition
+number. At `β = 6` that ratio is 3.6e4 and the conjugate gradients do not converge in any useful number of
+iterations.
+
+**D-102. The far-field boundary datum is the isolated electrode's own 2:1 profile, not zero.** Setting `y = 0`
+there is wrong in a way that is invisible in the load: it fabricates a boundary layer whose induced charge is
+an order of magnitude larger than the tile's own. The charge balance went from 0.80 to 9.3e−4 on that one
+change.
+
+**D-103. The taper is fitted by matching the first two moments of the load deficit, outside a 1 nm standoff.**
+Two moments because the total edge load and its lever arm are what a plate on a foundation responds to; a
+standoff because the corner traction is not resolvable (see `S-121`). The fit round-trips exactly on the
+raised cosine `edgeTaperedPressure` itself generates.
+
+**D-104. The total is pinned by a global momentum-flux route through one horizontal plane**, which owes the
+corner nothing: the fluid above that plane takes no vertical momentum through the symmetry plane, the far
+field or the bulk cap, so the whole force on the tile is that one flux integral.
+
+**D-105. The biases are `C-0012`'s located operating bracket, not grid points.** The project has quoted an
+electrostatic result at the wrong bias twice (`CH-0007`, `CH-0016`). The sweep then shows the taper moves
+under 8 % across each bracket, so the choice was not load-bearing — but that is only known because it was
+made correctly.
+
+#### What was surprising
+
+**S-119. The edge effect has the opposite sign to the one three claims were carrying.** `C-0006` reasoned that
+a finite tile "loses field lines off its rim, so the downward pressure is lower there". It does lose them —
+and a finite capacitor's fringing field *increases* its capacitance and its force anyway. The load is enhanced
+to **1.88×** about a nanometre inside the rim. The two errors — sign and width — very nearly cancel in the
+dishing (26.8 % against 32.1 %), which is why this is `CH-0025` and not an overwrite.
+
+**S-120. The cheap bound got the width right and the sign wrong.** The Plan predicted "about a factor of two,
+one-sided in neither direction" for the depth half. It was out by a sign. The width half — a rigorous ceiling
+`1/√(κ² + (π/2h)²)` — held at every one of 21 state points, and it already contradicted `C-0006`'s 4 nm rim
+before any 2-D solve ran. The counter-intuitive half is that the taper **narrows as the gap closes**, because
+a thinner slit supports a faster-decaying lateral mode.
+
+**S-121. A re-entrant corner's traction is mesh-*divergent*, not merely mesh-dependent.** Refining 1 → 2 → 4
+takes the rim-node load through 10.8, 32.5, 90.8 pN/nm² while every other quantity converges at second order.
+That is the `r^(−2/3)` traction of a 90° wedge with one more lateral derivative through it. A real origami rim
+is a row of 2 nm duplex ends, so the singularity belongs to the idealisation.
+
+**S-122. The rim charge, which no source supplies, moves the depth by 1.85×** — the declared falsifier fired.
+It is *exactly* irrelevant to the rim's own vertical force (that traction is `ε E_z E_x`, and `E_x` is fixed
+by the rim's Neumann condition, so an uncharged rim contributes zero identically). "This boundary exerts no
+force" and "this boundary's charge does not matter" are not the same statement.
+
+**S-123. The sign is not universal and the crossing is inside §3.** At 10 mM and a 10 nm gap the depth is
+genuinely positive — a real taper — and at the 2 nm held gap the total force is 3.9 % *below* the 1-D value.
+Strong screening and a wide gap let the rim lose more than the fringing adds. The Gen-1 box at 0.5 and 2 mM is
+on the other side of that crossing.
+
+**S-124. A sign error in a Newton right-hand side does not diverge, it converges to the reflection of the
+answer.** The assembled matrix is `−J` so that it is SPD and conjugate gradients applies, which makes Newton's
+`J δ = −F` read `A δ = +F`; putting the negation in both places left a solver that ran its full iteration cap
+every time with the correction pinned at the damping ceiling. The symptom looked like a conditioning problem,
+not a sign problem, and two hours went into the wrong hypothesis.

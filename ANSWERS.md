@@ -22,8 +22,10 @@ Three findings dominate, and none of them is a stiffness number.
 1. **The tile is not a rigid plate, and the picture has to go.** It is rigid *exactly* under a uniform load —
    at any flexural rigidity — and dishes under every departure from uniformity, including the unavoidable one
    at 300 K. A point-coupled lever and an area-averaging charge sensor **do not measure the same displacement**;
-   they differ by 26 % of the stroke. §4(g)'s own test for abandoning the rigid-plate assumption is met.
-   (`C-0006`, `C-0009`, `CH-0005`.)
+   they differ by **32 %** of the stroke, and that part is **irreducible** — it is forced by the tile's own
+   electrostatic edge, which no coupling choice can remove. §4(g)'s own test for abandoning the rigid-plate
+   assumption is met, and met by a load nobody chose.
+   (`C-0006`, `C-0009`, `C-0022`, `CH-0005`, `CH-0025`.)
 2. **The polymer layer confines the tile in one direction only.** Its lateral restoring stiffness is *exactly*
    zero by symmetry — not small — so an untethered tile diffuses 63 nm in one 1 kHz period, 21× the positional
    predicate. It also exerts no upward force above `L₀`, so at zero bias the tile is unconfined in **both**
@@ -219,6 +221,13 @@ With the committed coupling fitted the device delivers **2.62–2.93 nm** agains
 exactly zero stiffness at `L₀` and a soft layer is cheap to compress.
 No verdict moves; the *statement* does. (`C-0021`, `CH-0024`.)
 
+**Every electrostatic force in this programme is a one-dimensional pressure multiplied by 1600 nm², and that
+understates the force on the finite tile by 5–19 %** (`C-0022`, `CH-0026`) — 14.7 % at the design point,
+25.8 % on a 20 nm tile, and equivalent to a sub-Debye 1.65 nm collar on every side.
+The correction is favourable to every force clause and unfavourable to every stability clause, which is the
+combination in which an error survives longest, and it is an order of magnitude inside the standing
+123–214 % mean-field uncertainty.
+
 ### Task 6 — mean-field screening
 
 The answer is **yes and no, and the two halves have different reasons.**
@@ -275,7 +284,7 @@ Three DNA elements deliver it, and the eight substrate tethers `C-0021` needed l
 | (d) | Poroelasticity | **Not binding**, with the boundary named. See Task 7. |
 | (e) | Screening | See Task 6. The force's own decay length is **1.8–2.8 nm** at the working gap — not the 4 nm bulk Debye length, and it is bias-dependent. Leaf `A2.2`'s low-screening operating point is **vindicated twice**: at 10 mM the 100 pN target is unreachable at 7 and 10 nm, at 0.5 mM it is reached even at 10 nm. |
 | (f) | Structural survival | The **35–60 pN band is not a per-load-path allowable** — it is a whole-cross-section disassembly force at a stated loading rate, and a DNA rupture force without a loading rate is not a material constant. Per path use duplex shear (~48–65 pN) or unzip (10–15 pN), 65 pN a hard ceiling. **Three load paths clear 35 pN, eleven clear 10 pN — and 45 (as 3 × 15, not 64 as 8 × 8) are needed for flatness, against 56 crossovers.** A rigid anchor is carried by its **two nearest crossovers and essentially nothing else**, so an equal-share figure understates the peak by 2.3–7.6× **out of plane** — but inside the actual design window the peak is 3.9–8.9 pN against a 10 pN unzip allowable, so **the exceedance is unreachable there**. **In plane the factor is different in kind**: a lateral tether collects nothing from the layer, so the peak is a *fraction* of its own tension — `η = 1.0000` aligned with the helices, up to 2.33 misaligned, and the staple layout is worth **exactly nothing** on the binding path (`C-0020`). **And the per-path allowable is itself a function of the bonded length** (`C-0024`, `CH-0029`): 48 pN is Strunz's **30 bp** number, while a realistic 16 bp staple extension gives 34.8 pN and an 8 bp one 18.8. **What a tether bonds to is a sequence-design choice, and it is worth more than the sheet is** — the sheet's answer is pure arithmetic (a bond spanning `m` duplexes enters at exactly `1/m`, floor `1/D`, ceiling 720 pN), while the joint moves ×2.5 over the realistic 8–20 bp range, and **splitting a bond across two duplexes wins above a 14.3 bp total bonded length and loses below it**. |
-| (g) | Does the tile stay flat? | **No.** Rigid *exactly* under a uniform load at any rigidity, and dishing 26–369 % of the stroke under every departure. The lever and the sensor see displacements differing by 26 % of the stroke. §4(g)'s own criterion for abandoning the rigid-plate picture is met. |
+| (g) | Does the tile stay flat? | **No, and the irreducible part is now a number.** Rigid *exactly* under a uniform load at any rigidity, and dishing 26–369 % of the stroke under every departure. The part that **cannot be designed away** is the electrostatic edge effect, now solved in 2-D (`C-0022`): the rim *gains* load rather than losing it, and the dishing it forces is **32 % of the stroke** (21–44 % over the foundation sweep, 30–32 % on the discrete lattice). So the lever and the area-averaging sensor differ by **32 % of the stroke whatever the coupling does** — `C-0012`'s 11 %–369 % band was a statement about the number of attachments, which is a design choice; this is not. §4(g)'s own criterion for abandoning the rigid-plate picture is met, and met by a load nobody chose. |
 
 ---
 
@@ -287,7 +296,7 @@ Three DNA elements deliver it, and the eight substrate tethers `C-0021` needed l
 | Premises checked against the material | The semidilute premise **failed** (`CH-0001`); the Darcy premise **failed** where it did not change the verdict (`C-0004`); strong stretching is outside its own premise (`CH-0003`); `χ ≈ 0.45` turned out to have **no primary source at all** (`C-0007`). |
 | Method justified against cost, cheap bound first | SCF numerics deferred twice on the stated ground that it would be *"calibrating to a guess"*, and bought only once the interaction was anchored in measurement (`T-1d`). MD declined for the Hofmeister effect because it would be *worse* than the existing measurement, not merely dearer (`C-0007`). Explicit-ion MC costed at 1–3 weeks and not run (`C-0005`). `T-15` built an in-plane *sibling* lattice rather than adding degrees of freedom to the out-of-plane one, on the ground that the two decouple exactly for a flat sheet and merging them would have forced re-verification of four published claims for a change that cannot move them. `T-19` bounded all four entry topologies by a cut-equilibrium pigeonhole before assembling a matrix, which settled two of them outright and redirected the footprint question from the lattice to the literature — where its answer was. |
 | Validity ranges travel and are respected | `C-0008` is handed to `T-3` with an explicit may/may-not list; `C-0004` is parameterised by a stiffness that was being re-derived concurrently. |
-| Disagreement raised as a challenge, not an overwrite | Fourteen challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
+| Disagreement raised as a challenge, not an overwrite | Sixteen challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
 | Model-consistent vs measured maintained | Every claim header carries it; no `PASS` in this repository asserts measurement. |
 | A feared effect chased down and *dissolved* rather than carried | The "grafted `χ` ≈ 0.60", once thought 239× the salt effect, turned out to be `1.2 × ½` assembled from an abstract, against a model whose own theta is 0.696, for the wrong geometry and the wrong observable (`C-0013`, `CH-0012`). |
 | Unanswerable questions stated plainly | The Mg²⁺/PEG binding constant does not exist in accessible literature (`P-8`); the crossover hinge constant is a fitted model input (`T-9`); leaf `A1.2`'s CI is **not discharged** rather than approximated; the intermediate-coupling regime has no systematic theory and the sources say so themselves. |
