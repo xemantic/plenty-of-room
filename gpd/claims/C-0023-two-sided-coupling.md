@@ -11,6 +11,22 @@
 | **Conditions** | T = 300 K, `k_BT = 4.141947 pN·nm`; aqueous **2 mM MgCl₂**, `λ_D = 3.93 nm`; 40 × 40 nm tile; PEG layer 5 / 7 / 10 nm at `σ` = 0.092 / 0.045 / 0.024 nm⁻²; all six `C-0003` layer models; 45 load paths on `C-0015`'s 3 × 15 grid |
 | **Consumes** | [`C-0021`](C-0021-zero-bias-resting-position.md) (the balance, the van der Waals assembly, the quadrature, the preload relation — **re-run, not tabulated**), [`C-0017`](C-0017-output-coupling-stiffness.md) (the mandate, `K2`, the stability floor, the secant/tangent split), [`C-0014`](C-0014-lateral-confinement.md) (the elements, the cable term, `√(k_BT k)/N`), [`C-0015`](C-0015-crossover-phase-and-registration.md) (45 as 3 × 15), [`C-0009`](C-0009-discrete-lattice-tile.md)/`Gen1Tile` (the fitted crossover hinge constant), [`C-0006`](C-0006-tile-load-distribution-and-flatness.md) (the allowables), [`C-0018`](C-0018-maximum-usable-bias.md) (the pull-in margin), [`C-0003`](C-0003-crossover-valid-layer-response.md)/[`C-0008`](C-0008-electrostatic-force-and-decay-length.md) (the layer and the field) |
 | **Raises** | [`CH-0027`](../challenges/CH-0027-hold-down-requirement-is-a-force-only-for-a-one-sided-stack.md) against `C-0021` |
+| **Challenged by** | [`CH-0031`](../challenges/CH-0031-a-flexible-hinge-cannot-be-anisotropic.md), on the **joint** that was proposed to close `E3`'s axial-restraint bracket. See the banner below |
+
+> ⚠️ **The sentence below — *"a two-nucleotide single-stranded hinge at each end absorbs it"* — is challenged by
+> [`CH-0031`](../challenges/CH-0031-a-flexible-hinge-cannot-be-anisotropic.md) (2026-08-13), raised by
+> [`C-0025`](C-0025-flexure-end-joint.md) (`T-30`), on the ground that a flexible link has no direction: it
+> supplies its axial slack isotropically, so it releases the beam along its axis and drops it across.**
+>
+> **No number, table or verdict here moves.** All four spans (24.61, 39.07, 49.41, 54.91 nm), both tangents
+> (33.333, 91.13 pN/nm), the 8.08 and 86.7 pN tensions and the 0.88 nm draw-in demand are reproduced in
+> `C-0025` to ≤ 5.9e−4, **as the two limits of one partial-restraint joint model**. What moves is that `E3a`'s
+> *ends free to draw in* column is an **idealisation** rather than a buildable joint: no covalent origami motif
+> reaches it, and the joint that does — a **duplex standing normal to the sheet**, `S/ℓ` across and `3EI/ℓ³`
+> along — lands **inside** this claim's own bracket at a 31.64 nm span and a **37.39 pN/nm** tangent.
+> `C-0025` also confirms this claim's *Still open* item 1 as the binding one it says it is, and sharpens
+> falsifier 5: the restrained beam's 86.7 pN at the desired stroke is past the **68.1 pN** loading-rate-free
+> saturation of the shear allowable, so **no bonded length of any size carries it** (`CH-0029`).
 
 ---
 

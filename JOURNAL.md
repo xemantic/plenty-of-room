@@ -1934,3 +1934,88 @@ answer.** The assembled matrix is `−J` so that it is SPD and conjugate gradien
 `J δ = −F` read `A δ = +F`; putting the negation in both places left a solver that ran its full iteration cap
 every time with the correction pinned at the damping ceiling. The symptom looked like a conditioning problem,
 not a sign problem, and two hours went into the wrong hypothesis.
+
+### `T-30` — the flexure's end joint, and the third stiffness nobody wrote down (leaf `A8.2`)
+
+**Done, verified, filed as `C-0025`**, raising `CH-0031` against `C-0023`.
+
+`C-0023` closed `T-23` with two brackets it deliberately did not collapse — the flexure's end condition (48
+against 192, exactly 4×) and its axial restraint (free to draw in against held) — worth 2.2× in span and 2.7×
+in tangent stiffness, and it named collapsing them as the first thing it would hand to a designer. This task
+collapsed them, and the answer is not the one either bracket describes.
+
+**Both brackets survive as *limits*, `C-0023`'s restrained reading is the one realised, its ssDNA remedy is
+falsified, and the joint that works is its own escape one level down.** Bending has a direction, so a duplex
+standing **normal** to the sheet carries the end shear along its axis (`S/ℓ`) and releases the draw-in by
+bending (`3EI/ℓ³`) — anisotropy `Sℓ²/(3EI)` = **102× at 8 nm**. The design is **45 flexures, span
+31.64 nm = 93 bp, on 8.0 nm = 24 bp normal standoffs**, tangent **37.39 pN/nm**, tension 0.37 pN at §3's
+acceptable stroke and 3.83 pN at the desired one. `T-13` still closes: the joint changes the element's
+geometry, not its sidedness.
+
+#### Decisions
+
+**D-106. Model the two brackets as the two limits of ONE two-parameter joint, and assert the limits as a
+test.** A beam with equal elastic rotational end springs gives `c(ρ) = 192(ρ+2)/(ρ+8)`, `ρ = k_θL/EI` —
+exactly 48 at zero restraint and exactly 192 at infinite — and the beam's own `S/L` in series with two axial
+end springs gives `S_eff = S/(1 + 2S/(k_aL))`, exactly `S` when held and exactly 0 when free. `C-0023`'s `E3`
+law is then re-used unchanged with `S_eff` for `S`, and the partial model reproduces the filed element
+identically at all four of its corners, at three spans × four displacements, in reaction, tangent and axial
+tension, to `1e−9`. Everything after that is a comparison rather than an assertion.
+
+**D-107. Run three divisions before any root find, and let them decide whether one is worth running.** `ρ` at
+`C-0009`'s fitted crossover constant is 1.4–2.9, i.e. `c ≈ 70–87` — neither end. `2S/(k_aL)` at `C-0020`'s
+in-plane construction is 0.85–1.36 — the joint is as compliant as the beam. And a third, which is logical and
+free: a joint must be stiff across the beam and soft along it, and for any flexible link those are the same
+number. Had the first two landed at 0.01 or 100 the bracket would have collapsed onto one of its own ends and
+the task would have closed on a division — which was declared as falsifier 2 before the run.
+
+**D-108. Judge every joint on THREE stiffnesses and a dead band, not on the two the bracket names.** A beam
+end transmits a transverse shear — in both directions, because the coupling is two-sided — as well as an
+axial force and a moment. `C-0023`'s remedy, *"a two-nucleotide single-stranded hinge at each end absorbs
+it"*, sizes the axial component correctly and the transverse one not at all. Adding the third stiffness is
+what turns "the hinge is soft" into "the hinge is not a support", and it is the whole of `CH-0031`.
+
+**D-109. Keep the buckling margin OUT of the acceptance predicate.** The five predicates were declared in the
+task file before the run. The standoff's Euler margin at the desired stroke falls from 3.1× to 1.5× across the
+window and it would have narrowed the window from four lengths to one — so it is reported beside the
+predicates, at both end conditions, and named as the reason the design point sits at the short end. Adding a
+sixth predicate after seeing the numbers is how a window gets tuned rather than found.
+
+#### What was surprising
+
+**S-125. The end-condition bracket is real, and nothing that can support a beam lives in its lower quarter.**
+`c` ranges over 48.7–191.7 across the catalogue — so the bracket is not vacuous — but every joint that passes
+the support test sits at **83.2–191.7**, the upper 76 % of it, and the near-pinned entries are *exactly* the
+ssDNA hinges, which fail on support. `C-0023`'s pinned column is not conservative; it is unreachable.
+
+**S-126. A double nick IS a crossover, to the last digit.** A nicked continuation keeps one *intact*
+backbone, which is not a softened bond — it carries the duplex's own `B/a` and `S/a` — so it is effectively
+clamped *and* effectively held, the worst corner of both brackets. Cut the second backbone at the same base
+pair and nothing continuous is left: two Chen-softened bonds in parallel, which is the definition of a
+crossover. The two motifs return 44.03 nm and 79.18 pN/nm identically. It fell out of the construction.
+
+**S-127. The draw-in factor's 2.4 is a coincidence at the endpoints, and the interior minimum is exact.**
+`C-0023` records `Δ = 2.4 δ²/L` for both end conditions and flags it as "not obvious". Integrating the
+arc-length excess over the *partially* restrained shape gives `g(β) = (2.4 − 1.25β + β²/6)/(1 − β/4)²`, which
+is 2.4 at both ends and has an interior minimum of exactly **9/4 at β = 2.4, i.e. ρ = 8, c = 120**. So 2.4 is
+a **ceiling** over the whole continuum, up to 6.25 % high in between — and the coincidence at the two
+endpoints is precisely what made the interior look uninteresting.
+
+**S-128. The unmeasured constant does not decide it, which is the one thing that had to be checked.** `k_s` is
+`C-0020`'s derived construction, not a measurement, and it is swept over four decades there. The crossover
+joint fails `C-0023`'s compliance ceiling at **every one of the eight multipliers** — the closest approach is
+40.24 pN/nm at `k_s/32`, still above 40 — and at all three of Chen's `α`. Wired in as a gate-5 test, because a
+verdict that depended on `k_s` would have had to wait for `T-9`.
+
+**S-129. The desired stroke puts a floor under the path count, and it is the tightest route to 45 yet.**
+`C-0023` read the per-path static share at §3's *acceptable* 3 nm point, where 45 paths give 2.22 pN. At the
+*desired* 10 nm stroke the same coupling delivers 333.33 pN, so the 10 pN unzip allowable needs **at least 34
+load paths** — independently of the joint, the element and the layer. `C-0015`'s flatness grid of 45 clears it
+by only 1.35×. That is a fourth independent route to the same count and the tightest of them, and nobody had
+computed it.
+
+**S-130. `CLAUDE.md`'s `+`-binds-tighter-than-`.format()` trap, caught in the study's own findings.** Four of
+ten findings printed raw `%.1f` for their leading placeholders and consumed the wrong arguments for their
+trailing ones, because `.format` bound to the last string literal of a concatenation only. The gotcha is
+already in `CLAUDE.md`; the lesson this time is that it fails **silently and plausibly** — one finding read
+*"No candidate joint lands below 83 or above 44"*, which is a sentence, not an obvious error.
