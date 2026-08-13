@@ -28,14 +28,22 @@ Three findings dominate, and none of them is a stiffness number.
    zero by symmetry — not small — so an untethered tile diffuses 63 nm in one 1 kHz period, 21× the positional
    predicate. It also exerts no upward force above `L₀`, so at zero bias the tile is unconfined in **both**
    directions. Nothing in the §3 stack holds it. (`C-0010`.)
-3. **Pull-in, not force and not bandwidth, is the likely binding constraint.** 100 pN at ≤ 2 V is reachable on
-   the electrostatics alone with room to spare, and poroelastic drainage clears 1 kHz by 22×. But `|k_es|`
-   reaches `k_brush` at 0.077–0.158 V, and against the bias needed for 100 pN the margin **inverts** across the
-   height range — 2.4× at 5 nm, 0.87× at 7 nm, 0.11× at 10 nm. The one thickness where the mechanical window
-   was open is the one most exposed to electrostatic collapse. (`C-0008`; `T-4` is running.)
+3. **The output coupling, not force and not bandwidth, is what decides the programme.** 100 pN at ≤ 2 V is
+   reachable with room to spare and drainage clears 1 kHz by 22× — but at 7 and 10 nm the §6 operating point is
+   **statically unstable under every layer model at §3's own 2 mM buffer**. It exists only against a lever
+   supplying **5–277 pN/nm of its own stiffness**, comparable to the whole layer at first contact, and **no
+   claim in this programme says what a DNA-origami lever can deliver.** That single number (`T-16`) decides
+   whether Gen-1 has a design window at all. (`C-0012`, `C-0016`.)
 
-And one methodological finding worth more than any of them: **this project has twice caught itself concluding a
-direction from the corrections it happened to have.** `CH-0002` documents the instance.
+And the shape of the whole problem, which no single number shows: **static stability wants the thin layer,
+whose window is empty by 13.3×; the window, the stroke and the force-versus-height trade all want the thick
+one, whose operating point is unstable everywhere.** All three pull the same way and stability pulls against
+all three.
+
+Methodologically, the finding worth most is that **this project repeatedly caught itself** — concluding a
+direction from the corrections it happened to have (`CH-0002`), quoting a `χ` that was a units error assembled
+from an abstract (`CH-0012`), sampling a layout space it believed it had swept (`CH-0014`), and trusting two
+models that agreed with each other because they shared a defect (`C-0011`).
 
 ---
 
@@ -43,10 +51,10 @@ direction from the corrections it happened to have.** `CH-0002` documents the in
 
 | # | Task | Leaf | Verdict | Claim |
 |---|---|---|---|---|
-| 1 | Stiffness of the polymer layer | `A2.1` | **PASS**, then **superseded** | `C-0001` → `C-0003` |
-| 2 | Feasible design window | `A2.1` | **in progress** — see below | — |
-| 3 | Stroke and blocking force vs bias | `A2.2` | **in progress**; the force half is **PASS** | `C-0008` |
-| 4 | Electrostatic softening and pull-in | new | **in progress**, and now the likely binding constraint | — |
+| 1 | Stiffness of the polymer layer | `A2.1` | **PASS**, then **superseded twice** | `C-0001` → `C-0003` → `C-0011` |
+| 2 | Feasible design window | `A2.1` | **PASS on §4(a)–(d); NOT CLOSED with the discovered axes** | `C-0016` |
+| 3 | Stroke and blocking force vs bias | `A2.2` | **PASS** — reachable, but the operating point is not holdable | `C-0008`, `C-0012` |
+| 4 | Electrostatic softening and pull-in | new | **partly answered by `C-0012`/`CH-0011`**; re-formulated, still open | `C-0012` |
 | 5 | Load distribution across the origami | `A1.2` | **PASS** | `C-0006`, `C-0009` |
 | 5b | Deflected shape of the tile | `A8.2` | **PASS**, verdict *rigid plate rejected* | `C-0006`, `C-0009` |
 | 6 | Validity boundary of mean-field screening | `A7.4` | **PASS** | `C-0005`, `C-0008` |
@@ -69,25 +77,79 @@ Quote it at a stated compression. At the working point, 47.7–64.1 pN/nm over t
 
 ### Task 2 — the design window
 
-**Robust across all six layer models:** the window is **empty at 5 nm and 7 nm**, and the **~10 nm desired
-stroke is unreachable everywhere**. That answers §4(b): the reason to leave the 5–10 nm range is *upward*.
+**Answered, and the answer changes shape halfway through.**
+In the axes §4(a)–(d) names the window is **not empty**: `σ ∈ [0.0116, 0.2601] nm⁻²` at 10 nm — 22.4× wide —
+and `[0.0296, 0.0496]` at 7 nm.
+**5 nm is empty**, and the proof names two constraints: the layer must be at least `σ = 0.0751 nm⁻²` for its
+coils to overlap at all and at most `σ = 0.00563 nm⁻²` to deliver 3 nm of stroke, **missing each other by
+13.3×**.
+At both surviving heights the lower edge is coil overlap and the upper edge is the 3 nm stroke — §4(a)'s own
+tension, quantified. **§4(c) and §4(d) bind nothing anywhere**, at any of 183 grid points.
 
-At 10 nm **neither branch of the predicate is currently available** — the window's existence is decided by the
-*density profile*, not by the interaction law, and neither profile model's premise is met.
-This is `T-1c`'s declared falsifier firing, and it is why the SCF profile calculation (`T-1d`) is running.
-Two further constraints have no axis in the window as posed:
-the output coupling must be **effectively continuous** (flatness needs **64 attachment points against the
-tile's 56 crossovers** — more attachments than it has across-helix load paths), and the tile needs **lateral
-anchoring** the §3 stack does not provide.
+**The window must be read in the FORCE-ONSET convention** (`L₀` is where the layer carries 1 pN over the tile).
+It says: order **PEG of 1.6–3.3 kDa at 10 nm**, or 1.1–1.2 kDa at 7 nm, at a grafting spacing of 2–9 nm.
+In the first-moment convention the same layer is ~8–9 kDa.
+**That factor of four is the single most likely way this window gets misread at a bench**, and `T-1e` has not
+yet separated the definitional part from the physical.
+
+Then the shape changes.
+**Three of the five axes this programme discovered are not functions of grafting density at all** — flatness
+(45 attachments as 3 × 15, against 56 crossovers), the usable bias window, and the output-coupling stiffness.
+They cannot narrow a window; they can only close a height.
+So a `(σ, L₀)` window is the wrong object for the Gen-1 decision, and the two axes that *do* resolve in `σ`
+both survive: the peak per-load-path force is 3.9–8.9 pN against a 10 pN unzip allowable everywhere inside the
+window — **the exceedance `C-0015` found is unreachable, because the solved layer is never as soft as the soft
+end of its sweep** — and lateral confinement is a footprint cost (a 97–152 nm assembly around a 40 nm tile)
+with **no threshold in §3 to test it against**, which is stated rather than invented.
+
+**What decides the programme is the output coupling.**
+At 7 and 10 nm the §6 operating point is statically unstable under every layer model at §3's own 2 mM buffer,
+so it exists only against a lever supplying **5–277 pN/nm of its own stiffness** — comparable to the whole
+layer at first contact.
+**No claim in this programme supplies what a DNA-origami lever can deliver.**
+`T-2` therefore reports the honest answer:
+*non-empty in the axes §4(a)–(d) names, and **undecided — not empty** — once the discovered axes are added,
+because the axis that decides it is one no task has yet evaluated.*
+`T-16` is now the highest-value open item in the programme, and it is cheap.
+If it comes back short, P2 closes empty at 7 and 10 nm and P1 has already emptied 5 nm: **no window anywhere**,
+which is exactly what NDI asked to know now rather than after a year.
+
+Two further findings travel with it.
+**The bias ceiling has to be quoted with the load it was evaluated at**: `C-0012`'s 0.02–0.1 V is a property of
+the *unloaded* actuator, which snaps to near-contact, while the tile held at the §6 target sits at a 2–7 nm gap
+and `φ ≤ 0.09`, inside every upstream validity range (`CH-0015`).
+And **static stability wants the thin layer, whose window is empty, while the window, the stroke and the
+force-versus-height trade all want the thick one** — all three pull the same way and stability pulls against
+all three.
+That inversion, not any single number, is the Gen-1 design problem.
+
+**§3's *desired* ~10 nm stroke remains unreachable** at every height and every grafting density — `C-0001`'s
+one surviving headline, now confirmed against a third layer model and a fourth constraint set. (`C-0016`.)
 
 ### Task 3 — stroke and blocking force
 
-On the electrostatics alone, **100 pN is reachable at 0.067 V (5 nm), 0.113 V (7 nm), 0.679 V (10 nm)** in
-2 mM buffer — all inside the point-ion validity boundary.
-But the actuator is **voltage-saturated above ~0.5 V**: a factor of 8 in bias buys 1.9× in force, because the
-compact layer takes 88 % of 2 V and the diffuse far field saturates.
-§3's 2 V ceiling is nearly irrelevant to what the device can do.
-The coupled stroke — the force balance against the layer — is `T-3`, running.
+**Reachable, and the operating point it is reachable at is not one the device can be held at.**
+100 pN of blocking force needs 0.065–0.699 V and 100 pN *at* a 3 nm stroke needs 0.082–0.368 V, all inside the
+~1 V point-ion boundary with 5–12× of margin.
+The actuator is **voltage-saturated above ~0.5 V** — a factor of 8 in bias buys 1.9× in force — so §3's 2 V
+ceiling is nearly irrelevant to what the device can do.
+
+But **`k_eff < 0` at the loaded operating point at 7 and 10 nm**, and the *free* operating point leaves three
+upstream validity ranges at once above ~0.1 V.
+Two consequences that a single "bias needed" figure hides: **the blocking force understates the peak output
+force by up to 20×**, because `dW/dh = k_eff` exactly and the characteristic *rises* with stroke wherever the
+field softens the layer; and **the two halves of this task run in opposite directions with layer height** —
+blocking force 10× harder from 5 to 10 nm, stroke 10× easier. (`C-0012`.)
+
+### Task 4 — electrostatic softening and pull-in
+
+**Partly answered, and NDI's own second branch is nearly right for the wrong reason.**
+`k_eff` does reach zero, at the predicate's own operating point — crossing between 0.05 and 0.10 V at 10 nm and
+between 0.10 and 0.25 V at 7 nm, **an order of magnitude below** a resting-height estimate.
+And the collapse **is** arrested — but by **`k_es` reversing sign at 0.55–1.58 nm**, not by the osmotic
+divergence §6 proposes: past the force peak the electrostatics *stiffens* the layer.
+What remains open is the maximum usable bias, which upstream validity already caps far below any pull-in
+estimate. (`C-0012`, `CH-0011`.)
 
 ### Task 6 — mean-field screening
 
@@ -122,12 +184,12 @@ A CI on an exact analytic result is a category error, and the model bracket is n
 
 | | Question | Answer |
 |---|---|---|
-| (a) | Grafting density and regime | The `Σ ≥ 5` brush convention is **dropped** — it fails thermodynamically *and* geometrically. The adopted criterion is `L₀/R₀ ≥ 1`. Window: see Task 2. |
-| (b) | Layer height | **Empty at 5 and 7 nm; the reason to go outside 5–10 nm is upward.** But 10 nm is also where pull-in is most threatening. |
+| (a) | Grafting density and regime | **Four brush criteria have failed here**, each a convention asked to do a measurement's work: `Σ ≥ 5` failed thermodynamically *and* geometrically; `L₀/R₀ ≥ 1`, adopted to replace it, turned out **exactly vacuous** — it admits all 183 points of the sweep. **Coil overlap `Σ = πR₀²σ ≥ 1` is the only criterion that bounds anything**, and it owns the lower edge of every surviving window. Window: see Task 2. |
+| (b) | Layer height | **Empty at 5 nm only** — the earlier "empty at 7 nm too" was withdrawn when a solved density profile replaced two trial functions. There is a genuine **trade**, not an ordering: the window, the stroke and the force all want the thick layer, and static stability wants the thin one. |
 | (c) | Porosity and ion partitioning | **The sign in the question is backwards.** The layer *excludes* 23–48 % of the salt, so it **lengthens** the local Debye length by 1.14–1.39× and **protects** the field rather than screening it away. It also *amplifies* `F_es` by 1.15–1.60×. The dielectric-decrement mechanism named in §4(c) is a 3.9 % effect — the layer is 97 % water. **The bound is one-sided** (exclusion only); cation coordination by PEG's ether oxygens could flip it, and no binding constant exists in accessible literature. |
 | (d) | Poroelasticity | **Not binding**, with the boundary named. See Task 7. |
-| (e) | Screening | See Task 6. The force's own decay length is **1.8–2.8 nm** at the working gap — not the 4 nm bulk Debye length, and it is bias-dependent. |
-| (f) | Structural survival | The **35–60 pN band is not a per-load-path allowable** — it is a whole-cross-section disassembly force at a stated loading rate, and a DNA rupture force without a loading rate is not a material constant. Per path use duplex shear (~48–65 pN) or unzip (10–15 pN), 65 pN a hard ceiling. **Three load paths clear 35 pN, eleven clear 10 pN — but 64 are needed for flatness, against 56 crossovers.** And a rigid anchor is carried by its **two nearest crossovers and essentially nothing else**, so the equal-share figure understates the peak by 2.3–7.6×: **11.54 pN worst-case, which reaches the 10–15 pN unzip allowable**. |
+| (e) | Screening | See Task 6. The force's own decay length is **1.8–2.8 nm** at the working gap — not the 4 nm bulk Debye length, and it is bias-dependent. Leaf `A2.2`'s low-screening operating point is **vindicated twice**: at 10 mM the 100 pN target is unreachable at 7 and 10 nm, at 0.5 mM it is reached even at 10 nm. |
+| (f) | Structural survival | The **35–60 pN band is not a per-load-path allowable** — it is a whole-cross-section disassembly force at a stated loading rate, and a DNA rupture force without a loading rate is not a material constant. Per path use duplex shear (~48–65 pN) or unzip (10–15 pN), 65 pN a hard ceiling. **Three load paths clear 35 pN, eleven clear 10 pN — and 45 (as 3 × 15, not 64 as 8 × 8) are needed for flatness, against 56 crossovers.** A rigid anchor is carried by its **two nearest crossovers and essentially nothing else**, so an equal-share figure understates the peak by 2.3–7.6× — but inside the actual design window the peak is 3.9–8.9 pN against a 10 pN unzip allowable, so **the exceedance is unreachable there**. |
 | (g) | Does the tile stay flat? | **No.** Rigid *exactly* under a uniform load at any rigidity, and dishing 26–369 % of the stroke under every departure. The lever and the sensor see displacements differing by 26 % of the stroke. §4(g)'s own criterion for abandoning the rigid-plate picture is met. |
 
 ---

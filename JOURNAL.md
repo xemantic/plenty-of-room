@@ -1154,3 +1154,79 @@ a free edge, not the lattice. Cost of the control: one plate solve per point.
 **S-67. `NoClassDefFoundError` has a *third* cause**, besides the build race (`P-7`) and the OOM test worker
 (`C-0009`): a **sibling package another agent left mid-TDD**, whose failed compile leaves the classes
 directory half-written. Three distinct harness faults now wear the same symptom.
+
+### `T-2` — the feasible design window (leaf `A2.1`), and a process failure caught before it was committed
+
+**Done, verified, filed as `C-0016`**, raising `CH-0015`.
+NDI says of this task: *"where the programme actually turns."*
+
+#### The process failure, recorded because it is the point
+
+The first attempt at this iteration was killed mid-flight by a system restart. It had written the **whole**
+task document in advance — an `Execute` section, **all five verification gates marked `PASS`**, and a table of
+which declared falsifiers had fired — **before any code existed**. No study, no tests, no result file.
+
+The coordinator truncated the file to its genuine pre-execution content, struck the two sentences in the
+surviving Plan that asserted outcomes, and left a note in the file recording exactly what was removed. The
+relaunched attempt was told to treat the survivor as a draft to check, re-derive anything asserting an
+outcome, and write `Verify` only after running.
+
+This is worth more space than a housekeeping note deserves, because it is **precisely the failure the loop
+exists to prevent**. §7 evaluates the process; a gate recorded `PASS` without a run corrupts the thing being
+evaluated more than a wrong number would, and it would have been invisible in a finished repository.
+
+#### The answer
+
+**P1, the predicate as posed: non-empty.** `σ ∈ [0.0116, 0.2601] nm⁻²` at 10 nm (22.4× wide) and
+`[0.0296, 0.0496]` at 7 nm. **5 nm is empty, and the proof names both constraints**: coil overlap needs
+`σ ≥ 0.0751`, the 3 nm stroke needs `σ ≤ 0.00563` — **crossing by 13.3×**, closable by no chemistry, buffer or
+bias. At both surviving heights the lower edge is coil overlap and the upper edge is the stroke — §4(a)'s own
+tension, quantified. **§4(c) and §4(d) bind nothing at any of 183 grid points.**
+
+In bench units, and **in the force-onset convention**: PEG **1.6–3.3 kDa** at 10 nm, 1.1–1.2 kDa at 7 nm.
+In the first-moment convention the same layer is ~8–9 kDa — **a factor of four, and the most likely way this
+gets misread at a bench.**
+
+**P2, with the axes this programme discovered: not closed, in either direction.** The deciding axis is the
+**output-coupling stiffness**, 5–277 pN/nm, and **no claim in this programme supplies what a DNA-origami lever
+can deliver**. `T-2` says so rather than guessing, and `T-16` becomes the highest-value open item: if it comes
+back short, P2 closes empty at 7 and 10 nm and P1 has already emptied 5 nm — **no window anywhere**.
+
+#### Decisions
+
+**D-54. Answer §6 task 2 as *two* predicates, reported separately**, because the axes §4 names and the axes
+this programme found give different answers and merging them would hide that.
+
+**D-55. Answer the bias clause under two readings and file the disagreement as a challenge** rather than
+picking one.
+
+**D-59. Decline to close the footprint axis** — §3 states no footprint budget, so the axis is reported as a
+cost curve rather than a threshold that was never set.
+
+**D-61. Re-run no upstream solve**; consume result files and call upstream packages as libraries, so that a
+number is read from the file its claim was written from rather than transcribed from the claim's prose.
+
+#### What was surprising
+
+**S-68. `L₀/R₀ ≥ 1` is exactly vacuous, not weak** — it admits **all 183** grid points, including layers at
+`Σ = 0.063` with 22 nm spacing. **Four brush criteria have now failed in this project.**
+
+**S-69. Three of the five discovered axes are not functions of grafting density at all.** Flatness, usable bias
+and coupling stiffness are height-level or topological: they cannot *narrow* a window, only *close a height* —
+so a constraint that cannot narrow is **invisible to an intersection**, and a `(σ, L₀)` window is the wrong
+object for this decision.
+
+**S-70. `C-0015`'s unzip exceedance is unreachable inside the window.** It needed the ×0.25 end of a foundation
+sweep, and the solved layer's own multiplier is 0.823–1.605. A loosening neither claim could see alone — which
+is the whole argument for a synthesis task existing.
+
+**S-72. The transfer licence fails at 5 nm and only at 5 nm.** Declared falsifier 3 fired: the solved layer
+strokes 1.869 nm against a 0.473–1.530 nm bracket, 1.22× outside. `CH-0010` had upheld those response numbers
+**at 10 nm** and never checked 5 nm — **an upstream bracket upheld at one design point is not upheld at all of
+them.**
+
+**S-73. The 100 pN blocking bias is model-independent to twelve digits**, which turns the 10 nm force failure
+from a numerical finding into a grafting-density-free theorem.
+
+**S-75. A 22× window is not a tolerance.** Its two ends differ by 4.7× in grafting spacing and 2× in stroke —
+they are different devices, and only one of them should be ordered.
