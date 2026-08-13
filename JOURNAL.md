@@ -1454,3 +1454,92 @@ different physical quantity. Asserted to `1e−9` rather than accepted as a coin
 mode integrates to zero over the *tributary strip*, so the strip integral makes the fifteen duplex forces sum
 to the applied force **identically**; sampling `∂u/∂x` on the axes instead aliases, and for a soft crossover the
 "total" came out at 2.28 pN from a 1 pN load. A conservation law silently destroyed by a quadrature.
+
+### `T-4` — the maximum usable bias, and the three ceilings it is made of
+
+**Done, verified, filed as `C-0018`**, raising `CH-0017` against `CH-0011`.
+With this, **all eight tasks of §6 are closed**.
+
+§6 task 4's *first* branch is delivered as a number at 162 states; its *second* branch turns out to be true of
+the **unloaded tile and nothing else**, and `CH-0011`'s mechanism for it is refuted.
+**A ceiling belongs to a `(bias, load line)` pair**, which is `CH-0015` made executable: for `C-0017`'s
+coupled device the usable bias is **0.097–0.425 V**, set by `C-0002`'s `φ = 0.2` crossover at 43 of 54 states
+and by pull-in at only **11** — all of them 10 nm in 2 mM, where the ceiling is **0.130–0.184 V against an
+operating bias of 0.128–0.180 V**, a margin of **1.007–1.032**, the thinnest in the programme.
+0.5 mM removes the fold entirely (1.29–2.36×), which is leaf `A2.2`'s low-screening condition arriving a
+fourth time.
+
+#### Decisions
+
+**D-77. The equilibrium path is parametrised by the STROKE, not by the bias.**
+Pull-in is a discontinuity in the bias — the equilibrium jumps from the shallow branch to near-contact — and a
+bisection cannot find a discontinuity, which is why `C-0012` could only report it as *"between 0.05 and
+0.10 V"*. Parametrised by the stroke the same object is smooth: at each stroke exactly one bias puts an
+equilibrium there, and the fold is `max_s V_eq(s)`. Differentiating the balance at `V′(s) = 0` gives
+`k_c + k_eff = 0` exactly, so the argmax **is** the tangency point and the two routes to it are numerically
+independent. The study takes the first and grades it against the second: worst residual `9.40e−6` over 16
+interior folds.
+
+**D-78. The path is parametrised by the DIFFUSE-layer drop, not by the applied bias.**
+`C-0008`'s applied bias is the diffuse drop plus the compact drop, and inverting it costs 34
+Poisson-Boltzmann solves per force evaluation. Run the other way it is free: one solve gives the force **and**
+the bias that produced it. Since the path wants a bias per stroke rather than a force per bias, the inversion
+is not needed — a factor of ~35, and the reason a 162-fold sweep runs in 7 minutes instead of hours.
+
+**D-79. Three load lines, not one — free, dead-load and coupled.**
+`CH-0015` says a ceiling belongs to a `(bias, load)` pair; this is that made executable. The coupled and
+dead-load lines pass through the *same* operating point — 100 pN at 3 nm — and differ only in slope, which
+isolates what the coupling buys exactly. It buys a great deal: the dead-load line has no stable compressed
+equilibrium at all wherever it folds, and the coupled one folds at 11 of 54 states.
+
+**D-80. 10 mM was kept although `C-0012` shows §3's force target unreachable there.**
+A pull-in ceiling exists whether or not the force target is met, and leaving the strongest buffer out would
+have hidden the direction the ceiling moves in.
+
+#### What was surprising
+
+**S-90. A stiffness margin is not a bias margin, and the gap is a factor of 10 to 40.**
+`C-0017`'s 1.19–1.42× reserve at 10 nm / 2 mM is **1.007–1.032** on the bias axis, because `V(s)` is flat near
+its own maximum: a 19–42 % stiffness reserve buys 0.7–3.2 % of bias. The comfortable-sounding number was the
+one already in circulation.
+
+**S-91. The binding ceiling is a POLYMER boundary, not an electrostatic one.**
+`C-0002`'s `φ = 0.2` binds at **121 of 162** states; `C-0005`'s 1.46 nm correlation band and `CH-0007`'s 1 V
+point-ion boundary bind at **none**, because the layer reaches `φ = 0.2` at 1.63–3.32 nm, always further out.
+`C-0012`'s *"three validity ranges at once"* is one range and two that are never reached — and the number the
+whole ceiling rests on is a **cited** 0.2 read off a 0.2–0.3 band. That is now `T-21`.
+
+**S-92. Where a dead-load branch folds, it folds at ZERO stroke — 25 of 25 — and the ceiling is then exactly
+`C-0008`'s blocking bias** (0.0668 / 0.1128 / 0.6795 V against its published 0.067 / 0.113 / 0.679). Two
+independent constructions landing on the same three numbers, and it converts `C-0012`'s *"`k_eff < 0` at 428
+of 810 held points"* into a statement with no bias in it: under a constant-force load there is **no stable
+compressed equilibrium at any bias** at those states.
+
+**S-93. The unloaded actuator has no pull-in at 49 of 54 states.**
+§6 task 4's second branch — *"the osmotic divergence removes the instability"* — is true, of the free tile and
+of nothing else, and `CH-0011` had taken it away from the mechanism §1 proposed. `CH-0017` gives it back: the
+osmotic stopper is at a larger gap than the electrostatic one at **324 of 324** states, by 1.9–5×. The tile
+*does* pass the force maximum before stopping, so `k_es > 0` at the arrest and `CH-0011`'s feature is real —
+but passing the point where a force stops growing is not being stopped by it.
+
+**S-94. `drop_packages` has no dry-run mode and deletes from whatever directory it is given.**
+Invoked with the *checkout root* as its target — to probe whether `P-12`'s `--drop` matched this project's
+flat Kotlin layout — it removed `src/{main,test}/kotlin/brush` from the working tree while `T-1f` was writing
+into it. Restored within two minutes from two snapshots, newest-file-wins, and verified by compiling; every
+tracked file matches `HEAD` and `T-1f`'s three untracked files survived, and `T-1f` was told to re-read them
+rather than trust their existence. The layout bug the probe was checking for had been fixed by `T-1f` twenty
+minutes earlier, so the probe was unnecessary as well as destructive. **The function now refuses any target
+containing `.git`** — a tool written to remove a silent failure mode had a louder one of its own, and this is
+the second defect `P-12` shipped in one iteration.
+
+**S-95. `tools/study.sh` copied back every changed result file, not only the study's own.**
+A run reverted `gpd/results/T-13-zero-bias-resting-position.json` to the version in its own snapshot, because
+that file had changed in the checkout meanwhile. `D-71` reasoned that copying back only `gpd/results/` is
+safe; it is safe only for files the study itself wrote. **Now baselined against the snapshot's own results**,
+so a concurrent agent's emission can no longer be reverted — and the determinism check ("no result file
+changed") is unaffected, because a deterministic re-run still differs from nothing.
+
+**S-96. Dropping one mid-TDD package cascades.** `--drop anchoring` breaks `coupling`, which imports it, so a
+study needed `--drop anchoring --drop coupling`. Two attempts were also lost to Kotlin-daemon
+`OutOfMemoryError` under a load average of 12; `-Dkotlin.daemon.jvmargs=-Xmx3g` fixes that, and it is
+contention rather than a broken build.

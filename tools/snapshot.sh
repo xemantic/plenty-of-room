@@ -58,8 +58,18 @@ snapshot_tree() {
 # because it assumed the Maven-style `src/main/kotlin/com/xemantic/nano/plentyofroom/<pkg>`;
 # a warning went to stderr and `compileKotlin` then failed exactly as if the flag had not
 # been passed. Trying both keeps the helper correct if the layout is ever changed.
+#
+# **This function deletes.** It refuses to run against anything that looks like a real
+# checkout — a directory containing `.git` — because it has no dry-run mode and its
+# argument is just a path. An agent probing whether `--drop` matched this project's layout
+# called it with the checkout root and removed `src/{main,test}/kotlin/brush` from the
+# working tree while another agent was writing into it (`S-94`). The guard costs one `[ -e ]`.
 drop_packages() {
     local target="$1"; shift
+    if [ -e "$target/.git" ]; then
+        echo "refusing to drop packages from $target: it is a checkout, not a snapshot" >&2
+        return 1
+    fi
     local base="com/xemantic/nano/plentyofroom"
     local pkg source_set dir relative
     for pkg in "$@"; do

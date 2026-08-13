@@ -28,8 +28,12 @@
 # profile sweep is 33 minutes of exposure. A copy of the tree has its own project lock and
 # its own classes directory, so a long study cannot be shot down by a sibling agent.
 #
-# Only files under gpd/results/ are copied back — a study writes nothing else, and copying
-# the whole tree back would overwrite whatever the other agents have written meanwhile.
+# Only files under gpd/results/ are copied back, and only the ones **this study wrote** —
+# established by checksumming the snapshot's own `gpd/results/` before the run and copying
+# back exactly the files the run changed. Comparing the snapshot against the *checkout*
+# instead is not the same thing and is not safe: a concurrent agent that emitted its own
+# result while this study ran would have it reverted to the version in this snapshot, which
+# is what happened to `gpd/results/T-13-...json` the first time this script was used (`S-95`).
 set -euo pipefail
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -69,15 +73,21 @@ if [ ${#drops[@]} -gt 0 ]; then
     drop_packages "$target" "${drops[@]}"
 fi
 
+# Baseline the snapshot's own results, so that what the study wrote can be told apart from
+# what the rest of the checkout has been doing meanwhile.
+baseline="$target/.results-baseline"
+mkdir -p "$baseline"
+cp -a "$target"/gpd/results/. "$baseline"/ 2>/dev/null || true
+
 cd "$target"
 ./gradlew study -Pstudy="$study" "$@"
 
-# Copy back only what the study emitted, and say which files moved.
+# Copy back only the files this run changed, and say which they were.
 copied=0
 for file in "$target"/gpd/results/*; do
     [ -f "$file" ] || continue
     name="$(basename "$file")"
-    if ! cmp -s "$file" "$root/gpd/results/$name"; then
+    if ! cmp -s "$file" "$baseline/$name"; then
         cp "$file" "$root/gpd/results/$name"
         echo "emitted gpd/results/$name"
         copied=$((copied + 1))

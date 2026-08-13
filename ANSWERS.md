@@ -67,7 +67,7 @@ models that agreed with each other because they shared a defect (`C-0011`).
 | 1 | Stiffness of the polymer layer | `A2.1` | **PASS**, then **superseded twice** | `C-0001` → `C-0003` → `C-0011` |
 | 2 | Feasible design window | `A2.1` | **PASS** — non-empty at 7 and 10 nm, empty at 5 nm; P2 closed by `C-0017` | `C-0016`, `C-0017` |
 | 3 | Stroke and blocking force vs bias | `A2.2` | **PASS** — reachable, but the operating point is not holdable | `C-0008`, `C-0012` |
-| 4 | Electrostatic softening and pull-in | new | **partly answered by `C-0012`/`CH-0011`**; re-formulated, still open | `C-0012` |
+| 4 | Electrostatic softening and pull-in | new | **PASS** — both branches answered, each for a different load line | `C-0018`, `CH-0017` |
 | 5 | Load distribution across the origami | `A1.2` | **PASS** | `C-0006`, `C-0009` |
 | 5b | Deflected shape of the tile | `A8.2` | **PASS**, verdict *rigid plate rejected* | `C-0006`, `C-0009` |
 | 6 | Validity boundary of mean-field screening | `A7.4` | **PASS** | `C-0005`, `C-0008` |
@@ -137,7 +137,9 @@ established**, and `T-1f` — bounding that error — is now the binding uncerta
 Two further findings travel with it.
 **The bias ceiling has to be quoted with the load it was evaluated at**: `C-0012`'s 0.02–0.1 V is a property of
 the *unloaded* actuator, which snaps to near-contact, while the tile held at the §6 target sits at a 2–7 nm gap
-and `φ ≤ 0.09`, inside every upstream validity range (`CH-0015`).
+and `φ ≤ 0.09`, inside every upstream validity range (`CH-0015`) —
+and solved on its own load line rather than read off a grid, the *unloaded* ceiling is itself **0.085–0.595 V**
+(`C-0018`).
 And **static stability wants the thin layer, whose window is empty, while the window, the stroke and the
 force-versus-height trade all want the thick one** — all three pull the same way and stability pulls against
 all three.
@@ -154,8 +156,10 @@ one surviving headline, now confirmed against a third layer model and a fourth c
 The actuator is **voltage-saturated above ~0.5 V** — a factor of 8 in bias buys 1.9× in force — so §3's 2 V
 ceiling is nearly irrelevant to what the device can do.
 
-But **`k_eff < 0` at the loaded operating point at 7 and 10 nm**, and the *free* operating point leaves three
-upstream validity ranges at once above ~0.1 V.
+But **`k_eff < 0` at the loaded operating point at 7 and 10 nm**, and the *free* operating point leaves an
+upstream validity range above ~0.1 V — **one** range, `C-0002`'s `φ = 0.2`, and not the three reported here
+until `C-0018` checked them: `C-0005`'s 1.46 nm correlation band and `CH-0007`'s 1 V point-ion boundary are
+never reached at all.
 Two consequences that a single "bias needed" figure hides: **the blocking force understates the peak output
 force by up to 20×**, because `dW/dh = k_eff` exactly and the characteristic *rises* with stroke wherever the
 field softens the layer; and **the two halves of this task run in opposite directions with layer height** —
@@ -163,13 +167,29 @@ blocking force 10× harder from 5 to 10 nm, stroke 10× easier. (`C-0012`.)
 
 ### Task 4 — electrostatic softening and pull-in
 
-**Partly answered, and NDI's own second branch is nearly right for the wrong reason.**
-`k_eff` does reach zero, at the predicate's own operating point — crossing between 0.05 and 0.10 V at 10 nm and
-between 0.10 and 0.25 V at 7 nm, **an order of magnitude below** a resting-height estimate.
-And the collapse **is** arrested — but by **`k_es` reversing sign at 0.55–1.58 nm**, not by the osmotic
-divergence §6 proposes: past the force peak the electrostatics *stiffens* the layer.
-What remains open is the maximum usable bias, which upstream validity already caps far below any pull-in
-estimate. (`C-0012`, `CH-0011`.)
+**Both branches answered, each for a different load line — because a ceiling belongs to a `(bias, load line)`
+pair and not to a device.**
+
+For the **coupled** device the usable bias is **0.097–0.425 V**, and the ceiling is `C-0002`'s `φ = 0.2`
+crossover at 43 of 54 states.
+**Pull-in binds at only 11 of 54**, all of them 10 nm in 2 mM, where it is **0.130–0.184 V against an operating
+bias of 0.128–0.180 V** — a margin of **1.007–1.032**, the thinnest anywhere in the programme.
+`C-0017`'s comfortable-sounding 1.19–1.42× is a *stiffness* margin, and a stiffness margin is not a bias
+margin: `V(s)` is flat at a fold, so 19–42 % of stiffness buys 0.7–3.2 % of bias.
+**0.5 mM removes the fold entirely** (1.29–2.36×), which is leaf `A2.2`'s low-screening condition arriving a
+fourth time.
+
+The **unloaded** tile has **no pull-in at 49 of 54 states** — so §6's own second branch, *"the osmotic
+divergence removes the instability"*, is true, of the free tile and of nothing else — and its ceiling is
+**0.085–0.595 V, not the 0.02–0.1 V** carried until now.
+A **dead load** has no stable compressed equilibrium at any bias wherever it folds, its ceiling degenerating
+to `C-0008`'s blocking bias, reproduced to 2.3e−3 by an independent construction.
+
+**And the arrest is osmotic after all.** `CH-0011`'s feature is real and is now four executable tests —
+`|F_es|` is non-monotone, its peak lies below 3 nm, `k_es` changes sign there — but two counterfactuals at 324
+states put the osmotic stopper at the larger gap **everywhere**, by 1.9–5×.
+Passing the point where a force stops growing is not being stopped by it.
+(`C-0018`, `CH-0017`, correcting `C-0012` and `CH-0011`.)
 
 ### Task 6 — mean-field screening
 
