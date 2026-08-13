@@ -65,19 +65,48 @@ class CholeskyDecomposition(matrix: F64Array) {
     }
 
     /**
+     * Returns column [column] of the lower factor `L`, zero-padded above the diagonal.
+     *
+     * `A = L Lᵀ` makes the columns of `L` the natural square root of `A`, which is what a
+     * trace `tr(A B⁻¹)` is written over.
+     *
+     * @throws IllegalArgumentException if [column] is outside `0 until size`.
+     */
+    fun lowerColumn(column: Int): F64Array {
+        require(column in 0 until size) { "column must be within 0 until $size, was: $column" }
+        return F64Array(size) { if (it < column) 0.0 else lower[it, column] }
+    }
+
+    /**
+     * Returns the solution `y` of `L y = b` — the forward half of [solve].
+     *
+     * Exposed on its own because `yᵀy = bᵀA⁻¹b`, so a trace `tr(B A⁻¹)` over a matrix `B`
+     * that has itself been factorised as `B = C Cᵀ` costs one forward substitution per
+     * column of `C` rather than a full solve. That is what the equipartition dishing
+     * amplitude of a lattice with several hundred degrees of freedom needs, and it halves
+     * the cost of the only `O(n³)` step in the thermal calculation.
+     *
+     * @throws IllegalArgumentException if [b] is not a vector of length [size].
+     */
+    fun forwardSolve(b: F64Array): F64Array {
+        require(b.nDim == 1 && b.length == size) {
+            "b must be a vector of length $size, was: ${b.shape.toList()}"
+        }
+        val y = b.copy()
+        for (i in 0 until size) {
+            val product = if (i == 0) 0.0 else lower.V[i].slice(0, i).dot(y.slice(0, i))
+            y[i] = (y[i] - product) / lower[i, i]
+        }
+        return y
+    }
+
+    /**
      * Returns the solution `x` of `A x = b` for the right-hand side [b].
      *
      * @throws IllegalArgumentException if [b] is not a vector of length [size].
      */
     fun solve(b: F64Array): F64Array {
-        require(b.nDim == 1 && b.length == size) {
-            "b must be a vector of length $size, was: ${b.shape.toList()}"
-        }
-        val x = b.copy()
-        for (i in 0 until size) {
-            val product = if (i == 0) 0.0 else lower.V[i].slice(0, i).dot(x.slice(0, i))
-            x[i] = (x[i] - product) / lower[i, i]
-        }
+        val x = forwardSolve(b)
         for (i in size - 1 downTo 0) {
             var product = 0.0
             for (k in i + 1 until size) product += lower[k, i] * x[k]

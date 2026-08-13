@@ -763,3 +763,64 @@ path at all, and was downgraded on the strength of a number rather than a guess.
 **S-51. The variance of an Ornstein-Uhlenbeck coordinate relaxes at `2/τ`, not `1/τ`.** Dropping the factor
 gives `√(Dt)` instead of `√(2Dt)` — a `√2` that **no dimensional check catches**. Found by the gate-3 bridge
 test, which is exactly the kind of thing an independent gate is for.
+
+### `T-10` — the discrete-lattice check of the tile (leaves `A8.2`, `A1.2`)
+
+**Done, verified, filed as `C-0009`**, raising `CH-0008` against `C-0006`.
+Raised because `C-0006` reported two facts that undercut its own continuum plate — the across-helix bending
+length is shorter than the crossover spacing, and a plate cannot resolve local force concentration at an
+anchor, which was the one number `T-5` had to decline.
+
+**The verdict is split, and `C-0006` was right about only half of its own error.** The plate is **upheld for
+smooth loads and rejected for point-coupled ones**, and its error *changes sign* with how the load meets the
+sheet: it understates concentrated dishing by 12–38 % and thermal dishing by 11–20 %, and **overstates**
+anchored and edge-taper dishing by 1–16 %. No `C-0006` verdict moves — the largest discrepancy is 38 % and
+the smallest rejection margin was 2.7×.
+
+#### Decisions
+
+**D-36. The lattice is built from `C-0006`'s ingredients unchanged**, so the comparison is of functional form
+rather than parameterisation — the same discipline `C-0001` used to calibrate MWC against de Gennes on a
+shared `L₀`. That made gate 2 an exact *identity* test rather than a tolerance, run before any result was
+computed: the lattice reproduces `D_∥` to 1.000000 and `D_⊥` to exactly `56/55.147`, the integer crossover
+count over the continuum areal density.
+
+**D-39. The flatness attachment count is solved on both models rather than taken from the continuum patch
+heuristic**, and the whole curve is emitted rather than a threshold — because the lattice's curve turns out to
+be **non-monotone**, so a single threshold could have been a grid-phase accident.
+
+**D-40. The crossover count is reported as a physical uncertainty, not converged away.** Mesh subdivision and
+the link penalty converge to 0.1 % and 0.01 %; the number of crossover columns is a *design property*.
+
+#### What was surprising
+
+**S-52. A discretisation is not automatically a relaxation.** `C-0006` predicted that a lattice must have more
+shape freedom than the plate approximating it. It has more along the helices and **less** across them — a 2 nm
+duplex does not bend across its own diameter, and the continuum lets it. So the plate's error changes sign
+with the load, which is a possibility neither claim had entertained.
+
+**S-53. `C-0006`'s own validity criterion compared two different directions.** `ℓ_⊥/p` pairs an *across*-helix
+bending length with an *along*-helix hinge spacing. Matched, the criteria are `ℓ_∥/p = 0.59–1.18` and
+`ℓ_⊥/d = 1.06–2.12` — the breach is real but milder, and it lives in the other direction. The convention-free
+statement needs no `ℓ` at all: **an anchor's influence patch contains 2.0–7.9 crossovers**, 3.9 at the design
+point.
+
+**S-54. The anchor is carried by two crossovers, not by a contour.** `C-0006`'s equal-sharing figure
+understates the peak by **2.3–7.6×**, and the worst case in the same sweep — **11.54 pN on one crossover** —
+**reaches the 10–15 pN single-duplex unzip allowable**. The `ℓ`-contour has 9.3 load paths on it and the load
+uses about two: 5.63 pN at 3.0 nm, 1.12 pN at 8.3 nm. This is the number `T-5` declined to give, and it is
+worse than the equal-share figure implied.
+
+**S-55. The crossover *phase* is worth as much as the whole foundation-stiffness uncertainty, and it is free.**
+Seven crossover columns instead of eight moves the peak per-path force by 19 %; where the anchor sits inside a
+unit cell moves it by another 30 %. Both are staple-layout choices at no cost, and **nothing in the programme
+owns either** — queued as `T-14`.
+
+**S-56. A Rothemund sheet is centro-symmetric and not mirror-symmetric.** Because crossovers alternate between
+a helix's two neighbours, a mirror in `x` maps one interface's columns onto its neighbour's and a mirror in
+`y` swaps parities; only the point inversion survives. A continuum plate has the full rectangular group and
+*cannot* lose this. Found by a symmetry test failing that had been written assuming the plate's group.
+
+**S-57. `C-0006`'s "55 attachments for flatness" was a heuristic, and both models actually need 64** — which
+is **more than the 56 crossovers the tile contains**. The conclusion survives, on a count that is pure lattice
+geometry and therefore immune to the layer stiffness being re-derived.
