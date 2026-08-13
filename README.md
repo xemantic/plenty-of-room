@@ -39,6 +39,7 @@ So the loop is the structure of this repository:
 
 | Path | What it is |
 |---|---|
+| [ANSWERS.md](ANSWERS.md) | **Start here.** The eight tasks of §6 and the open questions of §4, answered in NDI's own terms, with the claim behind each number. |
 | [SESSION-PROMPT.md](SESSION-PROMPT.md) | The standing instruction for one iteration. Start a run with `/loop read @SESSION-PROMPT.md and follow the instructions in it`. |
 | [TASKS.md](TASKS.md) | The live queue. Process blockers outrank cheap wins. |
 | [JOURNAL.md](JOURNAL.md) | Every interaction, decision, and surprise, in order. |
