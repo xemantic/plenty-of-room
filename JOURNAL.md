@@ -2135,3 +2135,112 @@ under a *uniform* load, in which a free tile dishes exactly zero and the objecti
 large count — so the crossing is set by the tolerance and nothing else. Under `C-0022`'s collar the same
 criterion **saturates at 0.149 of the stroke** between 45 and 225 attachments and never reaches 10 %.
 `CH-0034`.
+
+### `T-1f` — the mean-field fluctuation corrections at `φ ≈ 0.01` (leaf `A2.1`)
+
+**Done, verified, filed as `C-0019`**, raising `CH-0019` against the queue's own promotion rationale and
+`CH-0020` against `C-0003`'s thermal-blob count.
+
+**The answer has two halves and neither is usable without the other.** The loop expansion whose saddle point
+*is* the self-consistent field is **broken** at the Gen-1 layer: `Gi = |ΔΠ|/Π_MF = 1.302` at the 10 nm design
+point's mean volume fraction, `0.788` at its peak, and **0.304–1.714 across the whole window**. Adding the
+one-loop term would drive `Π_int` negative below `φ** = 0.015255`. That is not a correction, it is the
+signature of a broken series, and the task committed in advance not to quote a one-loop number after finding
+the loop parameter above one — `C-0005`'s own discipline, applied to the other field.
+
+**And the layer response is bounded anyway, to under ten per cent**, because `C-0011`'s central finding does
+the work: at an absorbing wall `Π_int(φ(h)) ≡ 0` and the disjoining pressure is *entirely conformational*, so
+`K → 0` is a computable floor rather than a singularity. Sweeping the interaction strength through the solved
+layer over **four decades** moves `k_brush` at the held gap by **−9.4 %** at 10 nm and **−5.1 %** at 7 nm, and
+the stroke by **+2.0 %** and **+1.4 %**. The entire three-law interaction bracket the programme carries is
+worth **3.6 %** of `k_brush`.
+
+Both `C-0016` windows **widen** — 13.4 % at 10 nm, 1.8 % at 7 nm — and `C-0017`'s 10 nm margin degrades from
+≥ 1.19× to **≥ 1.07×** and stays above one. **No verdict moves.**
+
+#### Decisions
+
+**D-115. Answer the scoping question before any number, and file the answer as a challenge.** `TASKS.md`
+promoted this task on the ground that `C-0017`'s margin "sits inside `C-0005`'s 123–214 % one-loop correction,
+so … until **this** is bounded". Those are two different expansions of two different fields, acting on the two
+different terms of `k_eff = k_brush + k_es`. Establishing which one the margin sits inside was made a
+deliverable rather than a footnote, and the conflation was raised as `CH-0019` rather than corrected silently
+in the queue.
+
+**D-116. Do not run the one-loop-corrected SCF, and say so in the Plan before running anything.** The cheap
+bound was allowed to decide it: if `Gi ≥ 1`, adding `Δf` to `f_int` produces a negative osmotic pressure and
+the result is an artefact of a failed series. Running it anyway and reporting the profile would be the exact
+error `C-0005` refuses to make.
+
+**D-117. Bound non-perturbatively instead, using `K → 0` as a computable floor.** The one-loop term is
+negative, so the licensed range of the interaction is `K/K₀ ∈ [0, 1]` and the worst case is its total
+destruction. That converts an unbounded perturbative question into a bounded computational one.
+
+**D-118. Keep `PegWater.thermalBlobKuhnSegments` and add a corrected companion beside it.**
+`SESSION-PROMPT.md`'s rule: a contradiction raises a challenge, not an overwrite. Nothing downstream consumes
+the number, so nothing changes silently.
+
+**D-119. Use the layer's own `heightAtPressure` rather than `heightUnderLoad` or a hand-rolled root.** Two
+other routes were tried and both are traps — see `S-142` and `S-143`.
+
+**D-120. Discard a completed run rather than ship an edge with a 23.4 % grid sensitivity.** Gate 4 measured the
+10 nm stroke edge at 0.34265 on `Δz = 0.4 nm` and 0.27770 on 0.2 nm. The whole run was re-done on the finer
+grid and the coarse value kept only as the convergence rung.
+
+**D-121. Report both `Gz` and `Gi`.** The bare Ginzburg parameter of the literature and the pressure ratio it
+produces differ by `2√3/π = 1.1027`; quoting one under the other's name is worth 10 %.
+
+#### What was surprising
+
+**S-138. `Gi` straddles unity inside a single density profile.** At the 10 nm design point the mean volume
+fraction gives 1.302 and the peak 0.788. The layer is below `φ**` at its mean and above it at its peak — and
+it is *also* below `φ#`. **No regime label applies to this layer at all.** The geometric form of the same
+statement: the correlation length is 4.215 nm against a coil of 4.916 nm, with 1.34 chains per correlation
+area.
+
+**S-139. The solved layer is nearly insensitive to the interaction, and `C-0003`'s exact exponent does not
+transfer.** Measured `d ln k/d ln K` = **0.0647** against `C-0003`'s `1/(m+1) = 0.3077` — a factor of
+**4.75**, converged across three node spacings. `C-0003` proved `k ∝ K^{1/(m+1)}` *exactly* for its two ansatz
+profiles; the relation is a property of those profiles, not of the layer, for the same reason `CH-0010` gives.
+
+**S-140. The thermal blob's two errors nearly cancel, and that is why it survived three iterations.** `C-0003`
+coarse-grained a *pair* excluded volume linearly (`n_K` where `n_K²` is required, worth **9.671**), and used
+the scaling normalisation rather than Yamakawa's exact one (worth `1/0.32992² = 9.187` the other way). The
+product is **1.053**. A number that is right because two conventions cancel is not a number that is right —
+the corrected blob is 126.3 Kuhn segments in one convention and 1160 in the other, and the quantity that
+carries no convention at all is the swelling: **the Gen-1 chains are 6–20 % larger than the calculation
+assumes.**
+
+**S-141. The window edge that the identity predicts should move is the one that does not.** At fixed chain
+length coil overlap scales exactly as `α²` — asserted as a test — so the swollen layer's lower window edge
+"should" move by `1/α² = 0.87`. It moves **0.9 %**. The chain length moves against it: a swollen chain reaches
+the same height with 14 % fewer monomers, and a shorter chain has a smaller coil. The widening is at the
+**stroke** edge instead. **Third near-cancellation of this family in the project**, and all three have one
+cause — `L₀` is specified and `N` follows, so a perturbation is absorbed by the chain length rather than by
+the response.
+
+**S-142. The cheapest place to evaluate an SCF layer is never its own floor, and this cost ninety minutes.** A
+guard that checked the disjoining pressure at the layer's **saturation height** — where the layer is a melt,
+the node spacing collapses to `h/24` and the contour step count goes as `1/Δz²` — ran the solver's
+8000-iteration cap over a 10⁵-step contour on a single record. It did not throw and it did not converge; it
+just ran. Diagnosed by `jcmd Thread.print` on the live JVM, which is the only reason it was found rather than
+guessed at.
+
+**S-143. `bracketedRoot` can leave its bracket.** The Illinois halving tests the sign of a **product**,
+`atLeft * atEstimate < 0.0`. When both factors are tiny that product underflows to `−0.0`, the test reads
+false, the stagnant endpoint is replaced by one of the *same* sign, and the next secant step steps outside —
+observed as an evaluation a fifth of the way *below* the dry thickness. Not repaired here: three standing
+claims consume it, and their result files must be re-run and diffed as part of the fix. That is `P-15`.
+
+**S-144. `--drop <pkg>` matched nothing in this project.** The helper assumed the Maven-style
+`src/main/kotlin/com/xemantic/nano/plentyofroom/<pkg>`; this repository uses the flat `src/main/kotlin/<pkg>`.
+The warning went to stderr and `compileKotlin` then failed exactly as if the flag had not been passed. Fixed
+in place, within the hour, by the agent that hit it.
+
+**S-145. This task repeated, against a sibling, the very defect the coordinator had just fixed.** Its private
+study runner copied back *every* changed result JSON from its snapshot rather than its own, reverting
+`T-17`'s result file by up to thirteen minutes — and that stale copy is what the `T-17` commit captured.
+**Reported unprompted rather than hidden**, which is the only reason it was caught; re-running the study
+recovered it, and the loss was two prose findings strings where a margin had been refined from 16× to 20.2×.
+No number moved. The general lesson is the one `P-12` already carries: **a snapshot is a view of the past of
+every other file in the tree**, so a copy-back must be scoped to the file the run produced.

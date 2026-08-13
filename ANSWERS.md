@@ -51,6 +51,9 @@ duplex** — each a duplex standoff in series
    **The design window is not empty.**
    The margin at §3's own 2 mM is 1.19–1.42×, inside its own mean-field error, so the verdict is
    *not excluded*, never established — and dropping to 0.5 mM buys six times more.
+   **And that error is the *electrostatic* one, which nothing in this programme has narrowed**: `T-1f` has
+   since bounded the *polymer* fluctuation correction at ≤ 9.4 % of the layer stiffness and shown it is a
+   different expansion acting on the other term of `k_eff`, so 0.5 mM is now the only route (`CH-0019`).
    (`C-0012`, `C-0016`, `C-0017`, `CH-0016`.)
 
 And the shape of the whole problem, which no single number shows: **static stability wants the thin layer,
@@ -83,8 +86,10 @@ worth 11.75× in the effective allowable, at no cost in material, count or strok
 
 Methodologically, the finding worth most is that **this project repeatedly caught itself** — concluding a
 direction from the corrections it happened to have (`CH-0002`), quoting a `χ` that was a units error assembled
-from an abstract (`CH-0012`), sampling a layout space it believed it had swept (`CH-0014`), and trusting two
-models that agreed with each other because they shared a defect (`C-0011`).
+from an abstract (`CH-0012`), sampling a layout space it believed it had swept (`CH-0014`), trusting two
+models that agreed with each other because they shared a defect (`C-0011`), quoting a loop expansion of one
+field as the uncertainty on another (`CH-0019`), and carrying a number that was right only because two
+convention errors cancelled (`CH-0020`).
 
 ---
 
@@ -183,6 +188,13 @@ That inversion, not any single number, is the Gen-1 design problem.
 
 **§3's *desired* ~10 nm stroke remains unreachable** at every height and every grafting density — `C-0001`'s
 one surviving headline, now confirmed against a third layer model and a fourth constraint set. (`C-0016`.)
+
+**And the mean field the window is computed in is itself broken there.**
+The polymer Ginzburg parameter is 0.30–1.71 across the window and 1.30 at the design point, so the one-loop
+correction exceeds the term it corrects and the expansion supplies no bound at all.
+The window survives anyway, because the disjoining pressure is *conformational*: destroying the interaction
+entirely costs 9.4 % of the layer stiffness, and both windows in fact **widen**, by 13.4 % at 10 nm and 1.8 %
+at 7 nm. (`C-0019`.)
 
 ### Task 3 — stroke and blocking force
 
@@ -313,7 +325,7 @@ So the crossover path never becomes binding for a distributed coupling, out of p
 | Premises checked against the material | The semidilute premise **failed** (`CH-0001`); the Darcy premise **failed** where it did not change the verdict (`C-0004`); strong stretching is outside its own premise (`CH-0003`); `χ ≈ 0.45` turned out to have **no primary source at all** (`C-0007`). |
 | Method justified against cost, cheap bound first | SCF numerics deferred twice on the stated ground that it would be *"calibrating to a guess"*, and bought only once the interaction was anchored in measurement (`T-1d`). MD declined for the Hofmeister effect because it would be *worse* than the existing measurement, not merely dearer (`C-0007`). Explicit-ion MC costed at 1–3 weeks and not run (`C-0005`). `T-15` built an in-plane *sibling* lattice rather than adding degrees of freedom to the out-of-plane one, on the ground that the two decouple exactly for a flat sheet and merging them would have forced re-verification of four published claims for a change that cannot move them. `T-19` bounded all four entry topologies by a cut-equilibrium pigeonhole before assembling a matrix, which settled two of them outright and redirected the footprint question from the lattice to the literature — where its answer was. |
 | Validity ranges travel and are respected | `C-0008` is handed to `T-3` with an explicit may/may-not list; `C-0004` is parameterised by a stiffness that was being re-derived concurrently. |
-| Disagreement raised as a challenge, not an overwrite | Nineteen challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
+| Disagreement raised as a challenge, not an overwrite | Twenty-one challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
 | Model-consistent vs measured maintained | Every claim header carries it; no `PASS` in this repository asserts measurement. |
 | A feared effect chased down and *dissolved* rather than carried | The "grafted `χ` ≈ 0.60", once thought 239× the salt effect, turned out to be `1.2 × ½` assembled from an abstract, against a model whose own theta is 0.696, for the wrong geometry and the wrong observable (`C-0013`, `CH-0012`). |
 | Unanswerable questions stated plainly | The Mg²⁺/PEG binding constant does not exist in accessible literature (`P-8`); the crossover hinge constant is a fitted model input (`T-9`); leaf `A1.2`'s CI is **not discharged** rather than approximated; the intermediate-coupling regime has no systematic theory and the sources say so themselves. |
@@ -337,6 +349,12 @@ So the crossover path never becomes binding for a distributed coupling, out of p
 
 ---
 
+- **A fluctuation-corrected density profile for the layer.**
+  The expansion whose saddle point is the SCF is broken at `φ ≈ 0.01`, so the correction cannot be *computed*
+  — only bracketed by re-running the mean field over the range the broken series licenses. The method that
+  would settle it is a field-theoretic (complex-Langevin) simulation, costed at weeks; the nearest published
+  substitute is paywalled with no repository copy. **The bracket is ≤ 9.4 % on stiffness, so nothing turns on
+  it.** (`C-0019`.)
 - **The thermal force in a crossover.**
   It is `√(k_BT k_v)` with `k_v` the crossover's vertical stiffness, which nothing measures (`T-9`); the
   programme's lattice models it as a rigid penalty, in which the *static* force converges and the
