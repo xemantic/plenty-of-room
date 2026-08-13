@@ -11,6 +11,17 @@
 | **Conditions** | T = 300 K, `k_BT = 4.142 pN·nm`, `l_B = 0.7141 nm`, `ε_r = 78`; aqueous `MgCl₂` at 0.5 / 1 / 2 mM; 40 × 40 nm Manning-renormalised tile; PEG layer 5 / 7 / 10 nm at `σ` = 0.092 / 0.045 / 0.024 nm⁻²; all six `C-0003` models |
 | **Consumes** | [`C-0012`](C-0012-coupled-stroke-and-blocking-force.md) (the characteristic, **re-run not tabulated**), [`C-0014`](C-0014-lateral-confinement.md) (the element mechanics, the convexity theorem, the lateral and yaw bounds), [`C-0015`](C-0015-crossover-phase-and-registration.md) (45 attachments as 3 × 15, the exact-zero load path), [`C-0009`](C-0009-discrete-lattice-tile.md) (the concentration factor, the 56 crossovers), [`C-0006`](C-0006-tile-load-distribution-and-flatness.md) (the per-path allowables), [`C-0003`](C-0003-crossover-valid-layer-response.md)/[`C-0008`](C-0008-electrostatic-force-and-decay-length.md) (the layer and the field, as libraries) |
 | **Raises** | [`CH-0016`](../challenges/CH-0016-coupling-requirement-is-quoted-off-operating-point.md) against `C-0012` |
+| **Challenged by** | [`CH-0033`](../challenges/CH-0033-thermal-excitation-is-not-a-load-non-uniformity.md), from [`C-0026`](C-0026-one-row-per-duplex.md), on failure route 2 only. **No number or verdict moves** — see the banner below |
+
+> ⚠️ **Failure route 2 of this claim is withdrawn by [`CH-0033`](../challenges/CH-0033-thermal-excitation-is-not-a-load-non-uniformity.md) (2026-08-13), from [`C-0026`](C-0026-one-row-per-duplex.md) (`T-17`).**
+>
+> **No number, table or verdict below changes, and `P4` stands as written with a stronger warrant than it had.**
+> The route *"`T-17` finding that a real, non-uniform load restores a per-path crossover force large enough to matter,
+> which would put `K2` back inside `C-0009`'s 2.3–7.6× concentration and take its 2.22 pN to 5.1–16.9 pN"* **cannot
+> occur**: a concentration factor multiplies the force that *crosses an interface*, not the 2.22 pN share that *enters
+> at an attachment*. Solved, the restored interface force is **0.239 pN**, concentrated **2.52–3.49×** onto four
+> crossovers, i.e. **0.150 pN** — and `K2`'s per-path peak stays at its per-path static, 2.222 pN.
+> Open questions 3 and 4 are discharged; `T-9` remains a bracket on the *thermal* channel only.
 
 ---
 

@@ -10,7 +10,20 @@
 | **Provenance** | `gpd/results/T-14-crossover-phase-and-registration.json`, produced by `structure.CrossoverRegistrationStudyKt`; model in `src/main/kotlin/structure/CrossoverLayout.kt` and the additions to `OrigamiGrillage.kt`; 21 gate-named tests in `src/test/kotlin/structure/CrossoverLayoutTest.kt` |
 | **Conditions** | T = 300 K, aqueous buffer with Mg²⁺, `k_BT = 4.142 pN·nm`; 40 × 40.35 nm tile, 15 duplexes; 100 pN total force (§3) |
 | **Raises** | [`CH-0014`](../challenges/CH-0014-layout-sampled-not-swept.md) against [`C-0009`](C-0009-discrete-lattice-tile.md) |
+| **Challenged by** | [`CH-0033`](../challenges/CH-0033-thermal-excitation-is-not-a-load-non-uniformity.md) and [`CH-0034`](../challenges/CH-0034-flatness-count-saturates-under-the-solved-load.md), from [`C-0026`](C-0026-one-row-per-duplex.md). **No number or verdict moves** — see the banner below |
 | **Consumes** | [`C-0009`](C-0009-discrete-lattice-tile.md) (the lattice, every physical ingredient, the per-path allowables), [`C-0006`](C-0006-tile-load-distribution-and-flatness.md) (the plate it is compared against), [`C-0001`](C-0001-layer-stiffness.md) (three foundation stiffnesses, swept), [`C-0004`](C-0004-poroelastic-drainage.md) (the foundation is drained) |
+
+> ⚠️ **Two clauses of this claim are corrected by [`CH-0033`](../challenges/CH-0033-thermal-excitation-is-not-a-load-non-uniformity.md) and [`CH-0034`](../challenges/CH-0034-flatness-count-saturates-under-the-solved-load.md) (2026-08-13), from [`C-0026`](C-0026-one-row-per-duplex.md) (`T-17`).**
+>
+> **No number, table or verdict below changes**, and the exact zero is reproduced at `7.8e−11 pN`.
+> What changes is (i) the validity clause *"any load non-uniformity, **thermal excitation** or attachment-stiffness
+> scatter restores a finite crossover force in proportion to the non-uniformity"* — the thermal term is not a member
+> of that family, it is `√(k_BT k_v)` set by the crossover's own vertical stiffness, it is present under a perfectly
+> uniform load, and in the model as built it **diverges as `√k_link`**; and (ii) the standing of **45 as 3 × 15** as
+> a flatness answer, which holds under the uniform load it was minimised on and **saturates above the 10 % tolerance**
+> under the load `C-0022` has since solved.
+> Costed: the solved edge profile restores **0.150 pN** (0.332 pN worst of 21 states) against a 2.222 pN static share,
+> and attachment scatter **0.883 pN per unit relative amplitude**. The exact zero is a **20.2×** margin against the worst equal-count shape under the same load, not a knife-edge.
 
 ---
 

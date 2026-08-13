@@ -10,7 +10,7 @@
 | **Provenance** | `gpd/results/T-5-load-distribution.json` and `gpd/results/T-5b-tile-flatness.json`, produced by `structure.TileLoadDistributionStudyKt` and `structure.TileFlatnessStudyKt` |
 | **Conditions** | T = 300 K, aqueous buffer with Mg²⁺, `k_BT = 4.142 pN·nm`; 40 × 40 nm tile; 100 pN target force (§3) |
 | **Raises** | [`CH-0005`](../challenges/CH-0005-rigid-tile-assumption.md) against [`C-0001`](C-0001-layer-stiffness.md) |
-| **Challenged** | **[`CH-0008`](../challenges/CH-0008-plate-conservative-about-flatness.md) — UPHELD in part**, **[`CH-0009`](../challenges/CH-0009-worst-point-is-not-the-centre.md)**. See the banners below. |
+| **Challenged** | **[`CH-0008`](../challenges/CH-0008-plate-conservative-about-flatness.md) — UPHELD in part**, **[`CH-0009`](../challenges/CH-0009-worst-point-is-not-the-centre.md)**, **[`CH-0034`](../challenges/CH-0034-flatness-count-saturates-under-the-solved-load.md)**. See the banners below. |
 
 > ⚠️ **Two statements in this claim are corrected by [`CH-0008`](../challenges/CH-0008-plate-conservative-about-flatness.md) (2026-08-12), from the discrete-lattice check [`C-0009`](C-0009-discrete-lattice-tile.md).**
 >
@@ -37,6 +37,14 @@
 > **failed at 114 %** by the corner, at this same stiffness.
 > This claim's headline finding — the shape modes beat the piston mode, and the ratio grows with `k_f` —
 > is **confirmed and strengthened** by `C-0010`: 2.76–2.96 at the working point against 1.70 here.
+
+> ⚠️ **Scope note from [`CH-0034`](../challenges/CH-0034-flatness-count-saturates-under-the-solved-load.md) (2026-08-13), raised by [`C-0026`](C-0026-one-row-per-duplex.md) (`T-17`).**
+>
+> **No count and no verdict below changes.** The minimum-load-path table's flatness row is minimised under a
+> **uniform** load, in which a free tile dishes exactly zero and the objective therefore tends to zero at large count.
+> Under the load [`C-0022`](C-0022-tile-edge-load-profile.md) has since solved the same criterion **saturates at
+> 0.149 of the stroke** on the lattice — 45 and 225 attachments differ by 6.9 percentage points and neither is flat.
+> Read the count as *"where attachments stop buying flatness"*.
 
 ---
 

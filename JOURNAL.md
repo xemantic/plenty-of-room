@@ -2019,3 +2019,119 @@ ten findings printed raw `%.1f` for their leading placeholders and consumed the 
 trailing ones, because `.format` bound to the last string literal of a concatenation only. The gotcha is
 already in `CLAUDE.md`; the lesson this time is that it fails **silently and plausibly** — one finding read
 *"No candidate joint lands below 83 or above 44"*, which is a sentence, not an obvious error.
+
+### `T-17` — the exact zero, costed (leaf `A8.2`)
+
+**Done, verified, filed as `C-0026`**, raising `CH-0033` and `CH-0034`.
+
+`C-0015` found that one attachment row per duplex makes the peak per-load-path **crossover** force *exactly*
+zero under a uniform load, and said in the same breath that the zero is as fragile as "a uniform load dishes
+nothing". `C-0017` committed the programme's output coupling to that grid and filed the exposure as its own
+open question. This task prices it against the load `T-3b` has since solved.
+
+**The first thing the code returned was that there was nothing to compare.** `C-0015`'s flatness answer is
+**45 as 3 × 15** — three columns × fifteen rows — so it **is** one attachment row per duplex, and its fifteen
+rows land on the fifteen duplex axes to `3.6e−15 nm`. The task was queued as a choice between two schemes and
+there is one scheme. What the comparison had to be run against instead is the set of grids at the **same
+count** that are not commensurate: 5 × 9, 9 × 5, 15 × 3.
+
+**The cheap bound did most of the work.** On a rigid tile the force crossing the interface between duplex `j`
+and `j+1` is exactly `Σ_{i>j}(Q_i − Q̄)` over the tributary strip loads. Three things fall straight out for one
+quadrature: a load varying only **along** the helices restores **exactly nothing**, the restored force is
+exactly linear in the collar depth, and it vanishes identically for a uniform load — `C-0015`'s zero, without
+a matrix. The identity then turned out to **overstate the solved answer by 8.9×**, which is itself the
+result: a rim duplex under extra load sinks further into its own foundation and its own attachments instead
+of handing the excess inboard.
+
+**What the solved edge profile restores is 0.15 pN.** At `C-0022`'s design point the 3 × 15 scheme goes from
+exactly zero to **0.1504 pN**, 6.8 % of its own 2.222 pN per-path static share and **67× below** the 10 pN
+unzip allowable; over all 21 of `C-0022`'s solved states the worst is 0.3315 pN, and over the foundation
+sweep 0.105–0.166 pN. Attachment-stiffness scatter is linear at **0.883 pN per unit relative amplitude** and
+overtakes the edge effect at ε = 17 %. Even at ε = 0.99 — every second path at one per cent of nominal — the
+answer is 0.860 pN, and the worst grid in the whole sweep (15 × 3, uniform load) is 2.42 pN. **For a coupling
+distributed over 45 paths the crossover path never becomes binding under any non-uniformity this programme
+can name**, which is `C-0024`'s in-plane conclusion reached out of plane.
+
+**The binding constraint is, and remains, the static share.** Against `CH-0029`'s length-dependent allowable
+the scheme needs 11 paths to clear the 10 pN unzip band on `100/n` alone and 11 once the worst restored force
+is added — **the restored force costs zero extra paths**. At 45 paths the margins are 3.90× against unzip and
+13.58× against a realistic 16 bp shear joint.
+
+**One scheme discharges all three duties**, and the two axes of the grid are set by different ones: the rows
+by the load path (15 = one per duplex), the columns by flatness (3 × 15 is the smallest one-row grid under
+10 % of the stroke, at 4.9 %, against 13.5 % for 2 × 15). Yaw does not set the columns — a single column of
+fifteen already clears it 10.1×.
+
+**Verdict: the 3 × 15 grid remains the design and the branch is not killed. What is retired is the status of
+the exact zero** — from an exact structural property to a **20.2×** design margin that a few per cent of
+assembly scatter spends, and that costs nothing to keep.
+
+#### Decisions
+
+**D-110. The load is `C-0022`'s solved `(depth, width, rim)` triples, READ FROM ITS RESULT FILE at run time,
+never transcribed.** `C-0022` publishes **two** profiles per `(concentration, gap)` — one at the operating
+bias of the softest layer model and one at the stiffest — and selecting by `(concentration, gap)` alone takes
+whichever the file lists first. The first draft of the study did not do this and silently ran the 2 mM /
+10 nm case at 0.134 V instead of `C-0022`'s own 0.192 V.
+
+**D-111. A collar field admitting a NEGATIVE depth, and one above unity, had to be written.**
+`structure.edgeTaperedPressure` requires `depth ∈ [0, 1]`; the solved edge effect is an *enhancement*
+(negative) and `C-0022`'s rim residual runs `−3.52` to `+1.60`, i.e. the load genuinely **reverses sign**
+within half a nanometre of the rim. The new field is asserted **equal to `edgeTaperedPressure` at all 1681
+sample points** wherever both are defined, so it is an extension and not a second opinion.
+
+**D-112. The coupling is modelled as `n` discrete SPRINGS, not as `n` prescribed equal point loads.**
+`C-0015`'s own load case is the latter, and it is reproduced as gate 5 — but only the spring model can be
+asked about attachment *stiffness* scatter, which turned out to be the non-uniformity a builder actually
+controls.
+
+**D-113. Conservation gates are written on a SMOOTH across-helix load, not on the collar.** The collar is a
+raised cosine with a kink where it meets the interior, so it is only `C⁰` and no Gauss rule integrates it
+exactly at any order; a cut-equilibrium test written on it measures the quadrature. The kink is refined
+separately, in gate 4.
+
+**D-114. The thermal crossover force is reported as a DIVERGENCE and a bracket, not as a number.** The
+alternative — quoting it at `C-0009`'s `10⁴ pN/nm` penalty, which gives 203 pN — would have been a number
+manufactured by the model's own regularisation. `T-9` is what turns 2.78–115.8 pN into a value.
+
+#### What was surprising
+
+**S-131. The task's own framing was wrong, and one line of code settled it.** "15 rows versus 3 × 15 = 45
+attachments is a different grid" was queued as the question; `3 × 15` is three columns by fifteen rows, so it
+*is* one attachment row per duplex. Every downstream claim that consumes the 45-attachment grid — `C-0017`'s
+`K2`, `C-0023`'s `E3` and `E5` — has been using the one-row scheme all along.
+
+**S-132. The equipartition force in a rigid internal constraint does not exist.** `C-0009` chose the crossover
+link as a penalty "whose value the answer must not depend on", and for the **static** force that is
+demonstrated. The **thermal** force in the same link grows as `√k_link` — exactly, and `√10` per decade over
+four decades — because a spring in equilibrium stores `½k_BT`. The rigid limit of a *static* constraint force
+exists; the rigid limit of a *fluctuating* one does not. The same model, the same penalty, two quantities of
+opposite character.
+
+**S-133. A concentration factor and a per-path share live on different cuts.** `C-0017` wrote its own failure
+mode as "the restored force would put `K2` back inside `C-0009`'s 2.3–7.6× concentration and take its 2.22 pN
+to 5.1–16.9 pN". The 2.22 pN is the tension *entering* one attachment and never crosses a crossover; what
+does is the *imbalance* between neighbouring duplexes, and applying the factor there gives 0.150 pN. The
+route to failure the claim named for itself cannot occur.
+
+**S-134. The rigid limit is a stiff SHEET, not a stiff foundation.** The first version of the gate-3 test
+swept the Winkler stiffness upward expecting the rigid-tile identity to be recovered, and the departure got
+*worse* monotonically: a stiff foundation makes the tile **conform** to the load, which is the opposite of
+rigid. Taken on `EI`, `GJ` and `k_θ` it converges to under 1 % over six decades. A green test would have
+hidden it; a red one named it.
+
+**S-135. WHICH WAY a tolerance is correlated matters more than how big it is.** A ±10 % scatter in the
+attachment stiffnesses alternating **duplex by duplex** restores 0.088 pN; the same amplitude alternating
+**station by station along the helices** restores `3e−11 pN` — exactly zero, at any amplitude, because it
+does not break the across-helix symmetry. A build rule follows for free.
+
+**S-136. The restored interface force is a property of the load and not of the grid.** Over the seven one-row
+shapes from 1 × 15 to 15 × 15 — fifteen-fold in attachment count — it spans 0.2384 to 0.2401 pN, 0.72 %.
+Adding attachment columns cannot relieve the crossovers, because the cut equilibrium does not contain the
+column count. It changes only how the same force is shared.
+
+**S-137. No attachment count is flat under the load `T-3b` solved.** The flatness criterion was minimised
+under a *uniform* load, in which a free tile dishes exactly zero and the objective therefore tends to zero at
+large count — so the crossing is set by the tolerance and nothing else. Under `C-0022`'s collar the same
+criterion **saturates at 0.149 of the stroke** between 45 and 225 attachments and never reaches 10 %.
+`CH-0034`.

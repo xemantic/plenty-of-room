@@ -10,8 +10,18 @@
 | **Provenance** | `gpd/results/T-10-discrete-lattice-tile.json`, produced by `structure.DiscreteLatticeTileStudyKt`; model in `src/main/kotlin/structure/OrigamiGrillage.kt`; 21 gate-named tests in `src/test/kotlin/structure/OrigamiGrillageTest.kt` |
 | **Conditions** | T = 300 K, aqueous buffer with Mg²⁺, `k_BT = 4.142 pN·nm`; 40 × 40.35 nm tile (15 duplexes); 100 pN target force (§3) |
 | **Raises** | [`CH-0008`](../challenges/CH-0008-plate-conservative-about-flatness.md) against [`C-0006`](C-0006-tile-load-distribution-and-flatness.md) |
-| **Challenged by** | [`CH-0014`](../challenges/CH-0014-layout-sampled-not-swept.md), on four numbers that are maxima or class properties over a **sample** of the staple layout. No verdict below is overturned; the annotations are inline and marked **`CH-0014`** |
+| **Challenged by** | [`CH-0033`](../challenges/CH-0033-thermal-excitation-is-not-a-load-non-uniformity.md) and [`CH-0034`](../challenges/CH-0034-flatness-count-saturates-under-the-solved-load.md) (see the banner below); [`CH-0014`](../challenges/CH-0014-layout-sampled-not-swept.md), on four numbers that are maxima or class properties over a **sample** of the staple layout. No verdict below is overturned; the annotations are inline and marked **`CH-0014`** |
 | **Consumes** | [`C-0006`](C-0006-tile-load-distribution-and-flatness.md) (the plate, the sheet parameters, the per-path allowables), [`C-0001`](C-0001-layer-stiffness.md) (three foundation stiffnesses, swept), [`C-0004`](C-0004-poroelastic-drainage.md) (the foundation is drained, so quasi-static elasticity is licensed) |
+
+> ⚠️ **Scope note from [`CH-0034`](../challenges/CH-0034-flatness-count-saturates-under-the-solved-load.md) (2026-08-13), raised by [`C-0026`](C-0026-one-row-per-duplex.md) (`T-17`).**
+>
+> **No count and no verdict below changes.** The 64-attachment flatness answer is correct under the **uniform** load
+> its criterion is written on. Under `C-0022`'s **solved** edge profile the dishing saturates at **0.149 of the stroke**
+> between 45 and 225 attachments and never reaches the 10 % tolerance, so an attachment count is *"the point at which
+> further attachments stop buying flatness"*, not *"the point at which the tile becomes flat"*.
+> [`CH-0033`](../challenges/CH-0033-thermal-excitation-is-not-a-load-non-uniformity.md) separately records that this
+> claim's 2.3–7.6× concentration factor is defined on the force **crossing an interface** and must not be applied to a
+> per-attachment share; measured at a distributed coupling it is **2.52–3.49×**.
 
 ---
 

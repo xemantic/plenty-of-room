@@ -48,6 +48,8 @@ Three things in every claim are load-bearing and easy to skip:
 | `C-0022` | [The tile edge gains load, and §4(g) closes at 32 % of the stroke](claims/C-0022-tile-edge-load-profile.md) | [`T-3b`](tasks/T-3b-tile-edge-load-profile.md) | `A7.4` | PASS — raises `CH-0025`, `CH-0026` |
 | `C-0023` | [A two-sided compliant DNA coupling, and the hold-down requirement that dissolves](claims/C-0023-two-sided-coupling.md) | [`T-23`](tasks/T-23-two-sided-coupling.md) | `A8.2` | PASS — raises `CH-0027` against `C-0021` |
 | `C-0024` | [The attachment's entry topology: the sheet's answer is arithmetic, the joint's is not](claims/C-0024-attachment-entry-topology.md) | [`T-19`](tasks/T-19-attachment-entry-topology.md) | `A8.2` | PASS — raises `CH-0029` |
+| `C-0025` | [The flexure's end joint: a joint has three stiffnesses, and only bending has a direction](claims/C-0025-flexure-end-joint.md) | [`T-30`](tasks/T-30-flexure-end-joint.md) | `A8.2` | PASS — raises `CH-0031` against `C-0023` |
+| `C-0026` | [One attachment row per duplex: the exact zero, costed against the solved load](claims/C-0026-one-row-per-duplex.md) | [`T-17`](tasks/T-17-one-row-per-duplex.md) | `A8.2` | PASS — raises `CH-0033`, `CH-0034` |
 
 ### Standing challenges
 
@@ -77,3 +79,6 @@ Three things in every claim are load-bearing and easy to skip:
 | [`CH-0026`](challenges/CH-0026-forces-are-footprint-integrated-one-dimensional-pressures.md) — every electrostatic force is a 1-D pressure times the footprint | `C-0008`, `C-0012` | raised by `C-0022`; understates by 5–19 %, one-signed |
 | [`CH-0027`](challenges/CH-0027-hold-down-requirement-is-a-force-only-for-a-one-sided-stack.md) — the hold-down requirement is a force only for a *one-sided* stack | `C-0021` | raised by `C-0023`; no number moves, and the direction is favourable |
 | [`CH-0029`](challenges/CH-0029-the-48-pn-allowable-is-a-30-bp-number.md) — the 48 pN per-path allowable is a *30 base-pair* number | `C-0009`, `C-0014`, `C-0020` | raised by `C-0024`; optimistic by up to 2.6×, and not monotone |
+| [`CH-0031`](challenges/CH-0031-a-flexible-hinge-cannot-be-anisotropic.md) — a flexible hinge cannot be anisotropic, so it is not a support | `C-0023` | raised by `C-0025`; removes an escape rather than a number |
+| [`CH-0033`](challenges/CH-0033-thermal-excitation-is-not-a-load-non-uniformity.md) — thermal excitation is not a load non-uniformity, and a concentration factor does not multiply a share | `C-0015`, `C-0017` | raised by `C-0026`; favourable, no verdict moves |
+| [`CH-0034`](challenges/CH-0034-flatness-count-saturates-under-the-solved-load.md) — the flatness count saturates: 225 attachments are no flatter than 45 | `C-0006`, `C-0009`, `C-0015` | raised by `C-0026`; no count moves, the sentence does |
