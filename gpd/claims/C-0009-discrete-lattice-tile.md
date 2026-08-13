@@ -10,6 +10,7 @@
 | **Provenance** | `gpd/results/T-10-discrete-lattice-tile.json`, produced by `structure.DiscreteLatticeTileStudyKt`; model in `src/main/kotlin/structure/OrigamiGrillage.kt`; 21 gate-named tests in `src/test/kotlin/structure/OrigamiGrillageTest.kt` |
 | **Conditions** | T = 300 K, aqueous buffer with Mg²⁺, `k_BT = 4.142 pN·nm`; 40 × 40.35 nm tile (15 duplexes); 100 pN target force (§3) |
 | **Raises** | [`CH-0008`](../challenges/CH-0008-plate-conservative-about-flatness.md) against [`C-0006`](C-0006-tile-load-distribution-and-flatness.md) |
+| **Challenged by** | [`CH-0014`](../challenges/CH-0014-layout-sampled-not-swept.md), on four numbers that are maxima or class properties over a **sample** of the staple layout. No verdict below is overturned; the annotations are inline and marked **`CH-0014`** |
 | **Consumes** | [`C-0006`](C-0006-tile-load-distribution-and-flatness.md) (the plate, the sheet parameters, the per-path allowables), [`C-0001`](C-0001-layer-stiffness.md) (three foundation stiffnesses, swept), [`C-0004`](C-0004-poroelastic-drainage.md) (the foundation is drained, so quasi-static elasticity is licensed) |
 
 ---
@@ -118,6 +119,8 @@ Across the whole `k_f` sweep:
 
 ### The worst case anywhere in the sweep
 
+> **`CH-0014`.** This is the worst over the anchor placements **sampled** here — the anchor is at the tile centre in every case. Swept over the whole unit cell at every column phase, the worst over the same `k_f` range and Chen et al.'s `α` range is **14.65 pN**, i.e. the figure below is **27 % low**. The same correction takes the single-attachment case from 37.14 pN to **50.13 pN**, which is **above** the 48 pN quasi-static duplex-shear allowable. See [`C-0015`](C-0015-crossover-phase-and-registration.md).
+
 **`k_f` × 0.25, one anchor at ten times the layer stiffness: 30.07 pN on the anchor, `11.54 pN` on a single crossover**, against a 2.28 pN equal-sharing estimate — a **concentration factor of 5.06**.
 
 &nbsp;&nbsp;&nbsp;&nbsp;**The concentration factor is 2.3–7.6 across every anchored case, every anchor count and every `k_f` in the sweep.**
@@ -157,6 +160,8 @@ The ten most loaded crossovers under a single central anchor, by distance:
 
 ### The crossover *phase* is worth 19 %
 
+> **`CH-0014`.** The two lattices below are compared with the load held at the same *absolute* point, which is a **different registration** in each — at eight columns it is 2.72 nm from the nearest column and at seven it is on one. Registration is the larger lever, so the 19 % is mostly registration attributed to the count. Controlled, the column-count effect is **0.3–3.4 %** for a concentrated attachment and **4.5–9.0 %** for an anchor, and **seven columns is the better layout in both** — the opposite sign. The registration lever, swept over the whole `p × d` cell instead of four points, is **×1.43–1.60**, not 30 %. See [`C-0015`](C-0015-crossover-phase-and-registration.md).
+
 Where the crossover columns sit relative to the tile edge is a staple-layout choice, not a physical constant.
 Seven columns instead of eight moves the peak crossover force from **37.1 pN to 44.1 pN** under a concentrated lever, and the thermal dishing from 1.467 nm to 1.628 nm.
 Where the *anchor* sits within the unit cell is worth another 30 %: 5.11 pN on a crossover, 5.56 pN between duplexes, 5.76 pN mid-span on a duplex axis, **6.66 pN on a duplex axis at a crossover column**.
@@ -178,6 +183,8 @@ Where the *anchor* sits within the unit cell is worth another 30 %: 5.11 pN on a
 
 **Both models need 64.** `C-0006`'s heuristic 55 was 14 % optimistic, in the unsafe direction.
 
+> **`CH-0014`.** 64 is the smallest **square** grid. The square diagonal is a one-parameter slice of the `(columns × rows)` design space, and the sheet is 25.6× stiffer along the helices than across them, so it is not the slice a designer would choose. Searched over shapes at the same criterion and the same footprint, the lattice needs **45 (a 3 × 15 grid, 0.80 attachments per crossover)** and the plate 40. At fifteen rows every duplex carries its own attachment, the crossovers stop being load paths, and the peak per-load-path force is **exactly zero**. The statement below therefore **inverts**. See [`C-0015`](C-0015-crossover-phase-and-registration.md).
+
 | count | value | what it is |
 |---|---|---|
 | `A/(ℓ_∥ℓ_⊥)` | 44.1 | the continuum patch count |
@@ -186,7 +193,7 @@ Where the *anchor* sits within the unit cell is worth another 30 %: 5.11 pN on a
 | **attachments flatness needs** | **64** | solved, on both models |
 | **attachments per crossover** | **1.14** | |
 
-&nbsp;&nbsp;&nbsp;&nbsp;**Flatness needs more attachment points than the tile has crossovers.**
+&nbsp;&nbsp;&nbsp;&nbsp;**Flatness needs more attachment points than the tile has crossovers.** *(`CH-0014`: on square grids only — 45 against 56 once the grid shape is free.)*
 
 That is a stronger statement than `C-0006`'s and a more physical one, because a crossover is *both* the only across-helix load path and the only across-helix compliance. Below one attachment per crossover the load has to travel through the lattice to reach an attachment, and the travel is the dishing. It also does not move when `k_f` is re-derived under `T-1c`: both counts are lattice geometry, not foundation stiffness.
 
@@ -218,7 +225,7 @@ Executed as tests: `src/test/kotlin/structure/OrigamiGrillageTest.kt`, 21 tests,
 
 - **Gate 1** — a rigid translation stores exactly `½ k_f A` and nothing structural; the area Gram form returns 1, `L_x²/12`, `L_y²/12` and zero cross terms; the crossover count follows from the stated topology.
 - **Gate 2** — the three rigidity identities above; a uniform load dishes the lattice by nothing at hinge stiffnesses spanning 10³; a rigid lattice translates under a point load; quadrupling `k_f` quarters the deflection; a softer hinge softens `D_⊥` proportionally and leaves `D_∥` untouched.
-- **Gate 3** — force balance to `1e−8`; **the crossovers on one interface carry exactly the shear crossing it**, computed independently from cut equilibrium, to `1e−6`; equipartition exact for a rigid lattice; and the symmetry group **corrected**: the lattice is centro-symmetric and **not** mirror-symmetric, both asserted.
+- **Gate 3** — force balance to `1e−8`; **the crossovers on one interface carry exactly the shear crossing it**, computed independently from cut equilibrium, to `1e−6`; equipartition exact for a rigid lattice; and the symmetry group **corrected**: the lattice is centro-symmetric and **not** mirror-symmetric, both asserted. *(`CH-0014`: true of **this** eight-column lattice. Centro-symmetry holds exactly when the column count plus the duplex count is odd, so 10 of the 32 base-pair phases of a 40 nm tile are centro-symmetric and **22 have no symmetry at all** — including the seven-column lattice used in gate 4 below.)*
 - **Gate 4** — mesh 0.1 %, link penalty 0.01 %; the crossover *count* is not a convergence parameter and is reported as a 19 % physical uncertainty instead. Monotone refinement holds only on nested meshes.
 - **Gate 5** — where the plate's own criterion is satisfied (`k_f/200`, `ℓ_∥/p > 3`) the two models agree to better than 10 %, which is what licenses attributing the working-stiffness disagreement to discreteness; and the model class is cross-checked against Li et al., *Chem. Sci.* **14**:8018 (2023).
 

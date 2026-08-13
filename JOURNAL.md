@@ -1092,3 +1092,65 @@ fix is to run a long study from a snapshotted classpath.
 
 **S-50. Kotlin's `+` binds tighter than `.format()`.** `"a %s" + "b %f".format(x, y)` formats only the second
 literal. It cost 22 minutes of CPU — the JSON was written, the console report was not.
+
+### `T-14` — crossover phase and anchor registration (leaf `A8.2`)
+
+**Done, verified, filed as `C-0015`**, raising `CH-0014` against `C-0009`.
+Raised because `C-0009` found, while answering a different question, that two *free* staple-layout choices move
+the peak per-load-path force more than most of the physics this project has pinned down. **Both of its sizes
+were wrong, and one of its signs.**
+
+- **The lever is registration, not crossover count.** `C-0009`'s 19 % count effect is **0.3–3.4 %** once
+  registration is controlled, **and its sign flips** — seven columns is the *better* layout, not the worse.
+  The governing variable is the attachment's **distance to the nearest crossover**, worth ×1.43–1.60, and it
+  is monotone rather than the on-axis/between buckets a four-point sample suggested. **The duplex shear runs
+  the opposite way along the same axis**, so the two optima sit at opposite corners of one cell; the crossover
+  wins the trade only because it is judged against 10–15 pN unzip and the duplex against a 65 pN ceiling.
+- **Flatness needs 45 attachments, as 3 × 15 — not 64 as 8 × 8.** `C-0009` searched the **square diagonal** of
+  a two-parameter space on a sheet 25.6× stiffer along the helices than across them. That is 0.80 attachments
+  per crossover, so the *"more attachments than the tile has load paths"* reading **inverts**, and `T-2`'s
+  topological constraint loosens by 30 %. Forwarded to `T-2` while it was still running.
+
+#### Decisions
+
+**D-49. Parameterise the lattice by column *phase*, not count**, keeping `T-10`'s count constructor verbatim as
+a secondary constructor so that nothing already published moves.
+
+**D-50. Apply the anchor as a rank-one Sherman-Morrison update**, asserted equal to the assembled lattice at
+1e-12 — which is what made a 288-point cell sweep cost what one `T-10` anchored case cost.
+
+**D-51. Run the continuum plate as the *control* for every commensurability statement.** This is the decision
+that mattered: it **refuted two candidate design rules** that had survived the lattice.
+
+**D-53. Report the sensitivity and the rule; do not invent a Gen-1 staple layout.**
+
+#### What was surprising
+
+**S-58. The phase's period is 32 bp, not 16 bp.** A half-period shift leaves every column position inside the
+footprint unchanged and hands every interface **the other parity's** columns — a physically different sheet.
+Sweeping `[0, 16 bp)` covers half the design space *while looking complete*.
+
+**S-59. Centro-symmetry is a property of the phase, not of the sheet** — it holds exactly when
+(columns + duplexes) is odd, and **22 of the 32 phases of a 40 nm tile have no symmetry at all**, including
+the seven-column lattice `C-0009` used in its own convergence sweep. `S-56` last iteration generalised a
+symmetry from one lattice; this is the correction.
+
+**S-62. One attachment row per duplex sets the peak per-load-path force to exactly zero** — every beam carries
+the identical load, so no interface transmits anything. It is the same symmetry that makes a uniform load dish
+nothing, and just as fragile.
+
+**S-63. Flatness needs 45 attachments, not 64** — the anisotropy means the square diagonal is the wrong slice
+of the search space entirely.
+
+**S-64. Rounding at the serialisation boundary does not make a file reproducible when it contains an
+*argmin*.** An index is not a rounded double: where a sweep is flat, two entries tie in the last unit in the
+last place and the minimum returned depends on summation order, so a re-run diffs in one integer while every
+number is identical. `S-23`'s fix was necessary and not sufficient.
+
+**S-66. The plate control refuted my first two candidate rules.** *"Put attachments on the duplex axes, not on
+the interfaces"* costs ×1.84–2.09 on the lattice — and ×1.70–2.10 on the plate. It was the grid moving toward
+a free edge, not the lattice. Cost of the control: one plate solve per point.
+
+**S-67. `NoClassDefFoundError` has a *third* cause**, besides the build race (`P-7`) and the OOM test worker
+(`C-0009`): a **sibling package another agent left mid-TDD**, whose failed compile leaves the classes
+directory half-written. Three distinct harness faults now wear the same symptom.

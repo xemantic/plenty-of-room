@@ -66,7 +66,14 @@ class GrillageDeflection internal constructor(
     private val lattice: OrigamiGrillage,
     val coefficients: F64Array,
     private val pressure: PressureField,
-    private val pointLoads: List<PointLoad>
+    private val pointLoads: List<PointLoad>,
+    /**
+     * Anchors that are **not** part of the lattice's own stiffness matrix, because they were
+     * applied as a rank-one update by [OrigamiGrillage.solveWithAnchor] rather than
+     * assembled. They react exactly as an assembled [PointSupport] does, and every
+     * equilibrium statement below has to count them.
+     */
+    private val updatedSupports: List<PointSupport> = emptyList()
 ) {
 
     /** The deflection in nm at ([x], [y]). */
@@ -125,7 +132,9 @@ class GrillageDeflection internal constructor(
 
     /** The force in pN carried by each anchor, in the order the lattice holds them. */
     val supportForces: List<Double>
-        get() = lattice.supports.map { it.stiffness * deflection(it.x, it.y) }
+        get() = (lattice.supports + updatedSupports).map {
+            it.stiffness * deflection(it.x, it.y)
+        }
 
     /** The total force in pN carried by the polymer foundation. */
     val foundationForce: Double
@@ -185,7 +194,7 @@ class GrillageDeflection internal constructor(
             -lattice.lengthX / 2.0, lattice.lengthX / 2.0, cut, top
         ) { x, y -> pressure.at(x, y) - lattice.foundationStiffness * deflection(x, y) }
         val point = pointLoads.filter { it.y > cut }.sumOf { it.force }
-        val reactions = lattice.supports.filter { it.y > cut }
+        val reactions = (lattice.supports + updatedSupports).filter { it.y > cut }
             .sumOf { it.stiffness * deflection(it.x, it.y) }
         return load + point - reactions
     }
@@ -237,8 +246,10 @@ class GrillageDeflection internal constructor(
  *          `beamCount × d`, because a lattice can only be an integer number of duplexes wide.
  * @param beamCount the number of duplexes.
  * @param foundationStiffness `k_f` in `pN/nm³`.
- * @param crossoverColumns the number of crossover columns across the footprint, counting both
- *          parities; one interface uses every other one.
+ * @param columns where the crossover columns sit along the helices and which parity of
+ *          interface each serves; one interface uses the columns of one parity only.
+ *          `T-14` makes this the design variable it physically is — a **phase**, chosen by
+ *          the staple layout — where `T-10` could only vary its count.
  * @param subdivisions the number of beam elements per interval between node columns.
  * @param linkStiffness the penalty stiffness in `pN/nm` of the vertical crossover link.
  * @param supports discrete anchors tying the lattice to ground.
@@ -248,11 +259,35 @@ class OrigamiGrillage(
     val lengthX: Double,
     val beamCount: Int,
     val foundationStiffness: Double,
-    val crossoverColumns: Int,
+    val columns: CrossoverLayout,
     val subdivisions: Int = DEFAULT_SUBDIVISIONS,
     val linkStiffness: Double = RIGID_LINK_STIFFNESS,
     val supports: List<PointSupport> = emptyList()
 ) {
+
+    /**
+     * The `T-10` construction: [crossoverColumns] columns at pitch `p/2`, symmetrically
+     * centred on the footprint. Retained unchanged so that nothing already published moves.
+     */
+    constructor(
+        sheet: OrigamiSheet,
+        lengthX: Double,
+        beamCount: Int,
+        foundationStiffness: Double,
+        crossoverColumns: Int,
+        subdivisions: Int = DEFAULT_SUBDIVISIONS,
+        linkStiffness: Double = RIGID_LINK_STIFFNESS,
+        supports: List<PointSupport> = emptyList()
+    ) : this(
+        sheet = sheet,
+        lengthX = lengthX,
+        beamCount = beamCount,
+        foundationStiffness = foundationStiffness,
+        columns = CrossoverLayout.centred(crossoverColumns, sheet.crossoverSpacing / 2.0),
+        subdivisions = subdivisions,
+        linkStiffness = linkStiffness,
+        supports = supports
+    )
 
     /** One crossover of the lattice, as geometry. */
     data class Crossover(
@@ -269,12 +304,12 @@ class OrigamiGrillage(
         require(foundationStiffness > 0.0) {
             "foundationStiffness must be positive, was: $foundationStiffness"
         }
-        require(crossoverColumns >= 2) {
-            "crossoverColumns must be at least 2, was: $crossoverColumns"
-        }
         require(subdivisions >= 1) { "subdivisions must be at least 1, was: $subdivisions" }
         require(linkStiffness > 0.0) { "linkStiffness must be positive, was: $linkStiffness" }
     }
+
+    /** The number of crossover columns across the footprint, counting both parities. */
+    val crossoverColumns: Int get() = columns.size
 
     /** The interhelical distance `d` in nm. */
     val interhelicalDistance: Double get() = sheet.interhelicalDistance
@@ -293,15 +328,14 @@ class OrigamiGrillage(
         (0 until beamCount).map { (it - (beamCount - 1) / 2.0) * sheet.interhelicalDistance }
 
     /** The `x` of each crossover column, in nm, centred on the footprint. */
-    val columnX: List<Double> = (0 until crossoverColumns).map {
-        (it - (crossoverColumns - 1) / 2.0) * sheet.crossoverSpacing / 2.0
-    }
+    val columnX: List<Double> get() = columns.positions
 
     init {
-        require(columnX.last() < lengthX / 2.0) {
+        require(columnX.last() < lengthX / 2.0 && columnX.first() > -lengthX / 2.0) {
             "the crossover columns must fit strictly inside the footprint: " +
-                    "$crossoverColumns columns at ${sheet.crossoverSpacing / 2.0} nm span " +
-                    "${2.0 * columnX.last()} nm against a footprint of $lengthX nm"
+                    "$crossoverColumns columns spanning " +
+                    "${columnX.first()} .. ${columnX.last()} nm " +
+                    "against a footprint of $lengthX nm"
         }
     }
 
@@ -335,7 +369,7 @@ class OrigamiGrillage(
     val crossovers: List<Crossover> = buildList {
         for (beam in 0 until beamCount - 1) {
             for (column in 0 until crossoverColumns) {
-                if ((column + beam) % 2 != 0) continue
+                if ((columns.parities[column] + beam) % 2 != 0) continue
                 add(
                     Crossover(
                         lowerBeam = beam,
@@ -774,6 +808,64 @@ class OrigamiGrillage(
     ): GrillageDeflection = GrillageDeflection(
         this, factorisation.solve(assembleLoad(pressure, pointLoads)), pressure, pointLoads
     )
+
+    /**
+     * Solves one load case with **one additional discrete [anchor]** that is not part of this
+     * lattice's assembled stiffness, by a rank-one (Sherman-Morrison) update of the existing
+     * factorisation rather than by re-factorising.
+     *
+     * An anchor enters the stiffness as `k_a b bᵀ` with `b` the [basisAt] vector of its
+     * attachment point — exactly a rank-one term — so
+     * `(K + k_a b bᵀ)⁻¹ f = K⁻¹f − k_a (bᵀK⁻¹f)(K⁻¹b)/(1 + k_a bᵀK⁻¹b)`, which is
+     * algebraically identical to assembling the anchor and refactorising, and is asserted
+     * against it as a test.
+     *
+     * This is what makes `T-14`'s question askable at all. Where the anchor sits inside the
+     * crossover unit cell is a **two-dimensional sweep**, and re-factorising an 855-degree-
+     * of-freedom lattice at every registration point costs `O(n³)` each; the update costs two
+     * triangular solves, `O(n²)`, so a complete registration map costs roughly what one
+     * assembled anchored case costs. Sampling the cell at four points was `C-0009`'s only
+     * affordable option and it is what this task exists to replace.
+     */
+    fun solveWithAnchor(
+        anchor: PointSupport,
+        pressure: PressureField = uniformPressure(0.0),
+        pointLoads: List<PointLoad> = emptyList()
+    ): GrillageDeflection {
+        val free = factorisation.solve(assembleLoad(pressure, pointLoads))
+        val basis = basisAt(anchor.x, anchor.y)
+        val response = factorisation.solve(basis)
+        val scale = anchor.stiffness * basis.dot(free) /
+                (1.0 + anchor.stiffness * basis.dot(response))
+        val coefficients = free.copy()
+        coefficients -= response * scale
+        return GrillageDeflection(this, coefficients, pressure, pointLoads, listOf(anchor))
+    }
+
+    /**
+     * [solveWithAnchor] for each of [anchors] in turn, sharing the one free solution
+     * `K⁻¹f` that all of them update.
+     *
+     * A registration map moves the anchor and holds the load fixed, so assembling and
+     * solving the load vector once instead of once per point is not an optimisation of the
+     * inner loop but of the outer one. Asserted equal to mapping [solveWithAnchor].
+     */
+    fun solveWithEachAnchor(
+        anchors: List<PointSupport>,
+        pressure: PressureField = uniformPressure(0.0),
+        pointLoads: List<PointLoad> = emptyList()
+    ): List<GrillageDeflection> {
+        val free = factorisation.solve(assembleLoad(pressure, pointLoads))
+        return anchors.map { anchor ->
+            val basis = basisAt(anchor.x, anchor.y)
+            val response = factorisation.solve(basis)
+            val scale = anchor.stiffness * basis.dot(free) /
+                    (1.0 + anchor.stiffness * basis.dot(response))
+            val coefficients = free.copy()
+            coefficients -= response * scale
+            GrillageDeflection(this, coefficients, pressure, pointLoads, listOf(anchor))
+        }
+    }
 
     /**
      * The equilibrium thermal fluctuation of the unloaded lattice at [temperature],

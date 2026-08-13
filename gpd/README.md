@@ -30,6 +30,7 @@ Three things in every claim are load-bearing and easy to skip:
 | `C-0003` | [The layer response from a crossover-valid free energy](claims/C-0003-crossover-valid-layer-response.md) | [`T-1c`](tasks/T-1c-crossover-valid-layer-response.md) | `A2.1` | PASS |
 | `C-0004` | [Poroelastic drainage does not limit the Gen-1 actuator, and what would make it](claims/C-0004-poroelastic-drainage.md) | [`T-7`](tasks/T-7-poroelastic-drainage.md) | none (§4(d)) | PASS |
 | `C-0005` | [Validity boundary of mean-field screening at 2–10 mM Mg²⁺](claims/C-0005-mean-field-screening-validity.md) | [`T-6`](tasks/T-6-mean-field-screening-validity.md) | `A7.4` | PASS |
+| `C-0015` | [Crossover phase and anchor registration: the lever is registration, and flatness needs 45](claims/C-0015-crossover-phase-and-registration.md) | [`T-14`](tasks/T-14-crossover-phase-and-registration.md) | `A8.2` | PASS |
 | `C-0011` | [The SCF density profile: the 10 nm window exists, and the layer is a coil layer](claims/C-0011-scf-density-profile.md) | [`T-1d`](tasks/T-1d-scf-density-profile.md) | `A2.1` | PASS |
 | `C-0012` | [Coupled stroke and blocking force: reachable, but not holdable](claims/C-0012-coupled-stroke-and-blocking-force.md) | [`T-3`](tasks/T-3-stroke-and-blocking-force.md) | `A2.2` | PASS, with two clauses failing and reported |
 | `C-0014` | [Lateral confinement: anchor orientation decides it, and it costs footprint](claims/C-0014-lateral-confinement.md) | [`T-12`](tasks/T-12-lateral-confinement.md) | `A1.2` | PASS |
@@ -48,6 +49,7 @@ Three things in every claim are load-bearing and easy to skip:
 | [`CH-0002`](challenges/CH-0002-corrections-do-not-all-soften.md) — the corrections do not all soften the layer | `CH-0001`'s direction | **UPHELD** — the direction is withdrawn |
 | [`CH-0003`](challenges/CH-0003-blob-stack-height.md) — the layer is ~1.5 blobs tall | `C-0001` | **RESOLVED** by `C-0003`: the height relation is replaced, and the layer is not a blob stack at all |
 | [`CH-0004`](challenges/CH-0004-screening-decay-length.md) — "the Debye length" is three different numbers | §1/§3 as read downstream | **RESOLVED** by `C-0008`: the force's own decay length is a fourth number, and the only bias-dependent one |
+| [`CH-0014`](challenges/CH-0014-layout-sampled-not-swept.md) — the layout space was sampled, not swept | `C-0009` | raised by `C-0015`; two sizes and one sign corrected |
 | [`CH-0010`](challenges/CH-0010-brush-height-is-coil-height.md) — the brush height is a coil height | `C-0003` | **UPHELD in substance and split** |
 | [`CH-0011`](challenges/CH-0011-electrostatic-stiffness-changes-sign.md) — `k_es` is not negative everywhere | `C-0008` | raised by `C-0012`; the collapse is arrested electrostatically |
 | [`CH-0013`](challenges/CH-0013-entropic-tether-is-not-zero.md) — an entropic tether is not "essentially nothing" | `C-0010` | raised by `C-0014` |
