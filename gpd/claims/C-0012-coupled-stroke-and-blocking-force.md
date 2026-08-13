@@ -11,6 +11,28 @@
 | **Conditions** | T = 300 K, `k_BT = 4.142 pN·nm`, `l_B = 0.7141 nm`, `ε_r = 78`; aqueous `MgCl₂` at 0.5 / 1 / 2 / 5 / 10 mM; 40 × 40 × 10 nm Manning-renormalised tile; PEG layer 5 / 7 / 10 nm at `σ` = 0.092 / 0.045 / 0.024 nm⁻²; all six `C-0003` models |
 | **Consumes** | [`C-0008`](C-0008-electrostatic-force-and-decay-length.md), [`C-0003`](C-0003-crossover-valid-layer-response.md), [`C-0004`](C-0004-poroelastic-drainage.md), [`C-0005`](C-0005-mean-field-screening-validity.md), [`C-0006`](C-0006-tile-load-distribution-and-flatness.md), [`C-0007`](C-0007-solvent-quality-vs-salt.md) |
 | **Raises** | [`CH-0011`](../challenges/CH-0011-electrostatic-stiffness-changes-sign.md) against `C-0008` |
+| **Challenged** | **[`CH-0016`](../challenges/CH-0016-coupling-requirement-is-quoted-off-operating-point.md)** — see the banner below |
+
+> ⚠️ **The SCOPE of the section [*"The number an output coupling has to supply"*](#the-number-an-output-coupling-has-to-supply) is challenged by [`CH-0016`](../challenges/CH-0016-coupling-requirement-is-quoted-off-operating-point.md) (2026-08-13), raised by [`C-0017`](C-0017-output-coupling-stiffness.md) (`T-16`).**
+>
+> **No number in this claim moves.** `T-16` re-ran this claim's own solver and reproduced its blocking force,
+> `W(3 nm)` and `k_eff(3 nm)` at both grid biases at 2 mM to a **worst relative departure of 3.82e−9** over 36
+> comparisons, and its coupling table to the digit. What is challenged is what that table is a requirement *for*:
+>
+> 1. **It is the stability condition, and the binding one is placement.** The force delivered to a load over a
+>    stroke is `k_c·Δs`, so §3's own 100 pN and 3 nm fix the coupling stiffness at **`100/3 = 33.333 pN/nm`** by
+>    arithmetic. A coupling of 16 pN/nm has an equilibrium and it is *not* at the target stroke.
+> 2. **Neither 0.10 V nor 0.25 V is an operating bias.** This claim's own `biasForSimultaneousTarget` is
+>    0.082–0.155 V at 7 nm and 0.134–0.192 V at 10 nm — *between* the two grid points the table is quoted at,
+>    in the interval its own open question 5 names as unsampled. Read at the located bias, the floor is
+>    **0 at 7 nm under all six models** (so the 11.2 and the 85.6–276.6 both describe biases the device does not
+>    use) and **23.41–27.91 pN/nm at 10 nm** — 1.5–4.4× *higher* than the 0.10 V column quoted here.
+>
+> Consequently the **`(c′)` row of [the verdict table](#the-verdict-stated-carefully) reads
+> ~~*PASS at 5 nm; FAIL at 7 and 10 nm*~~ → PASS at 5 **and 7** nm, FAIL at 10 nm**, once read at the bias the
+> device operates at. §3's own mandated 33.333 pN/nm clears the floor at every height, buffer and model in the
+> box, so the requirement this claim opened is closed and closed favourably — with a margin of only 1.19× at
+> 10 nm and 2 mM, against `C-0005`'s 123–214 % mean-field error.
 
 ---
 
@@ -131,7 +153,7 @@ at 10 nm it sits between them, at 0.13–0.19 V.
 | **(b)** free stroke `≥ 3 nm`, `V ≤ 2 V` | **PASS** at every height | 0.024 – 0.405 V | yes |
 | **(b′)** free stroke `≥ 3 nm` **inside model validity** | **FAIL at 5 nm; straddles at 7 nm; PASS at 10 nm** | ≤ 0.10 V | yes |
 | **(c)** 100 pN **at** a 3 nm stroke, `V ≤ 2 V` | **PASS** at every height | 0.082 – 0.368 V | yes |
-| **(c′)** …and that operating point is stable against a dead load | **PASS at 5 nm; FAIL at 7 and 10 nm** | — | — |
+| **(c′)** …and that operating point is stable against a dead load | ~~**PASS at 5 nm; FAIL at 7 and 10 nm**~~ → **PASS at 5 and 7 nm; FAIL at 10 nm** (`CH-0016`, read at the operating bias) | — | — |
 | **(d)** bandwidth ≥ 1 kHz at the operating point | **PASS at 5 nm (1.1–2.3 MHz); vacuous at 7 and 10 nm** | — | — |
 | ~10 nm *desired* stroke inside validity | **unreachable everywhere** | — | — |
 
@@ -221,6 +243,12 @@ hold.**
 
 ### The number an output coupling has to supply
 
+> ⚠️ **Scope challenged — [`CH-0016`](../challenges/CH-0016-coupling-requirement-is-quoted-off-operating-point.md).**
+> Read this table as *"the stiffness below which the held point **at this bias** is unstable"* — a map of the
+> stability boundary, not a design requirement. The requirement is the **placement** condition,
+> `k_c* = 100 pN / 3 nm = 33.333 pN/nm`, plus this table read **at the operating bias**, which lies between the
+> two columns below. See [`C-0017`](C-0017-output-coupling-stiffness.md).
+
 The loaded operating point is stable if the coupling supplies at least `|k_eff|` of its own stiffness where
 `k_eff < 0`. At 2 mM, six-model bracket:
 
@@ -229,9 +257,15 @@ The loaded operating point is stable if the coupling supplies at least `|k_eff|`
 | 0.10 V | **0 — stable** (`k_eff` = +520 to +3977) | 11.2 pN/nm (one model of six) | **5.3 – 16.0 pN/nm** |
 | 0.25 V | 55.3 pN/nm (one model of six) | **85.6 – 276.6 pN/nm** | **47.6 – 71.5 pN/nm** |
 
-This is a design requirement `T-3` can state and no upstream task could: **an output lever for the 10 nm design
+This is a design requirement `T-3` can state and no upstream task could: ~~**an output lever for the 10 nm design
 point must be stiffer than ~16 pN/nm at the tile, or the actuator does not have an equilibrium at its own target
-stroke.** For scale, that is comparable to the whole layer's own stiffness at first contact (9.8–13.8 pN/nm).
+stroke.**~~ For scale, that is comparable to the whole layer's own stiffness at first contact (9.8–13.8 pN/nm).
+
+**Struck by [`CH-0016`](../challenges/CH-0016-coupling-requirement-is-quoted-off-operating-point.md):** the
+struck sentence conflates the two conditions. A lever *stiffer than 16 pN/nm* has an equilibrium and it is not
+at the target stroke; the one that **is** at the target stroke is 33.333 pN/nm, fixed by §3 alone, and the
+stability floor it has to clear — read at the bias the device operates at rather than at 0.10 V — is
+**0 at 5 and 7 nm and 23.41–27.91 pN/nm at 10 nm** ([`C-0017`](C-0017-output-coupling-stiffness.md)).
 
 ### Leaf `A2.2`'s low-screening condition, quantified
 
@@ -409,4 +443,9 @@ Per §7: *"where a question can't be answered with the available methods, that i
 
 [`CH-0011`](../challenges/CH-0011-electrostatic-stiffness-changes-sign.md) is raised **by** this claim, against
 `C-0008`'s statement that `k_es < 0` everywhere.
-None stands against this claim.
+
+**Standing against this claim:**
+[`CH-0016`](../challenges/CH-0016-coupling-requirement-is-quoted-off-operating-point.md), raised 2026-08-13 by
+[`C-0017`](C-0017-output-coupling-stiffness.md) (`T-16`), against the **scope** of the coupling table and of the
+`(c′)` verdict — not against any number here, all of which it reproduces to 3.82e−9 by re-running this claim's
+own solver. See the banner at the top.

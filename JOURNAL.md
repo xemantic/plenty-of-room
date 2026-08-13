@@ -1230,3 +1230,79 @@ from a numerical finding into a grafting-density-free theorem.
 
 **S-75. A 22× window is not a tolerance.** Its two ends differ by 4.7× in grafting spacing and 2× in stroke —
 they are different devices, and only one of them should be ordered.
+
+### `T-16` — the output-coupling stiffness (leaf `A8.2`), and the window closes non-empty
+
+**Done, verified, filed as `C-0017`**, raising `CH-0016` against `C-0012`.
+The task `C-0016` named as the single number deciding whether Gen-1 has a design window at all.
+
+**It does. `C-0016`'s `P2` closes NON-EMPTY at 7 and 10 nm.**
+
+**The requirement had two conditions and the programme had recorded only one.** Stability fixes a *lower
+bound*, `k_c > |k_eff|`; **placement** fixes the *value*, because the force delivered to a load over a stroke
+is `k_c·Δs` — so §3's own 100 pN and 3 nm give **33.333 pN/nm by arithmetic**, preload-free, with no physics
+in it at all. Checked as a root rather than asserted: the load line crosses at 3.000000 nm at all 54 solved
+states. Read at the bias the device actually operates at, the stability floor is **0 at 5 and 7 nm** and
+**23.4–27.9 pN/nm at 10 nm** (2 mM) — and §3's own mandated stiffness clears it at **0 of 54 states failing**.
+
+Scheme **K2**: 45 attachments on `C-0015`'s own 3 × 15 flatness grid — **the same 45** — each a 5 nm duplex
+standoff in series with a **13 nt tuned ssDNA spacer**, at **2.22 pN per load path** against a 10 pN unzip
+allowable. Five other candidates fail at all 54 states: three too stiff, two too soft.
+
+**The stiffness was never the constraint.** Forty-five duplexes in tension are 4950 pN/nm — **148× too
+stiff**. The design problem is spending stiffness as *compliance*, and leaf `A8.2`'s question — name the
+dominant compliance term — answers itself: the ssDNA spacer, at **99.6 %** of the load path.
+
+#### The interruption, and the audit that followed
+
+This iteration was interrupted once, having written a Verify section before running its study. Unlike `T-2`'s
+interruption, its unit tests genuinely existed and passed, so most rows were backed. The resumed run audited
+every row and found **six that were not**:
+
+- a convergence row claiming force-curve samples 36 → 72 → 144 moved the answer by < 1e-5 was simply **false**
+  at its coarsest rung (4.0e-4); corrected, and 36 samples declared not converged;
+- a mesh-convergence row was unbacked, and fixing it exposed a **real defect** — both axes referred to the
+  144-sample reference, understating the 4000-node departure fivefold;
+- a determinism row was unbacked because the study had never run; now run twice and `diff`-identical;
+- a closed-form gate reported as numerical agreement to 1e-6 turned out to be an **algebraic identity**,
+  departure exactly zero because it is a tautology — downgraded rather than kept;
+- a residual assertion that does not exist in the code — **struck**;
+- three rows describing checks other than the ones actually asserted — corrected to what the tests do.
+
+#### Decisions
+
+**D-62. Re-run `C-0012`'s pipeline and bisect for the operating bias rather than read its file.** That is what
+exposed the grid interpolation.
+
+**D-65. Downgrade an inherited `PASS` to an identity rather than keep it.**
+
+**D-66. Strike the two wrong statements in the draft challenge in place, listed rather than deleted.**
+
+**D-69. Judge per-path force on `C-0006`'s 10/48/65 pN allowables, not §4(f)'s 35–60 pN band** — which
+`C-0006` established is a whole-cross-section number.
+
+#### What was surprising
+
+**S-76. At the operating bias the 7 nm point is stable under all six models and all three buffers** — one of
+the two surviving heights loses its coupling requirement entirely.
+
+**S-77. The correction is not uniformly favourable, and the draft challenge's own framing was the error it
+warned against.** At 10 nm the located floor is **1.5–4.4× higher** than the column it replaces. The draft had
+claimed the correction "lowers the binding requirement"; half of that is wrong, and `CH-0011`'s lesson — that
+a favourable error survives longest — applied to the challenge itself.
+
+**S-78. A strain-stiffening coupling discharges the two conditions on two different slopes** — placement on
+the **secant**, stability on the **tangent** — so convexity is free stability margin at zero placement cost.
+It is why an ssDNA spacer, and not the duplex, closes the task. The third appearance of the secant/tangent
+split in this project.
+
+**S-79. Normal stabilisation and lateral confinement want the *same* anchors, not opposite ones**, because the
+two requirements differ by **72.4×**. An anchor sized on the normal condition delivers lateral confinement
+with 70× to spare; the reverse delivers 0.4 % of what is needed.
+
+**S-80. Leaf `A2.2`'s low-screening condition arrives a third time**, now on *static stability*: the 10 nm
+floor is 3.9–15.9 pN/nm at 0.5 mM against 23.4–27.9 at 2 mM — 6× of margin at no stroke cost.
+
+**S-82. `C-0012`'s simultaneous-target bias is a grid interpolation across the very interval its own open
+questions name as unsampled**, and bisecting for it moves the answer up to 6.1 % — which moves the 7 nm
+coupling requirement from 11.2–276.6 pN/nm to exactly zero.

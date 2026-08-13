@@ -28,12 +28,20 @@ Three findings dominate, and none of them is a stiffness number.
    zero by symmetry — not small — so an untethered tile diffuses 63 nm in one 1 kHz period, 21× the positional
    predicate. It also exerts no upward force above `L₀`, so at zero bias the tile is unconfined in **both**
    directions. Nothing in the §3 stack holds it. (`C-0010`.)
-3. **The output coupling, not force and not bandwidth, is what decides the programme.** 100 pN at ≤ 2 V is
-   reachable with room to spare and drainage clears 1 kHz by 22× — but at 7 and 10 nm the §6 operating point is
-   **statically unstable under every layer model at §3's own 2 mM buffer**. It exists only against a lever
-   supplying **5–277 pN/nm of its own stiffness**, comparable to the whole layer at first contact, and **no
-   claim in this programme says what a DNA-origami lever can deliver.** That single number (`T-16`) decides
-   whether Gen-1 has a design window at all. (`C-0012`, `C-0016`.)
+3. **The output coupling decides the programme, and it is fixed by §3 rather than by the layer.**
+   100 pN at ≤ 2 V is reachable with room to spare and drainage clears 1 kHz by 22× — and at 10 nm the
+   operating point the device reaches them at is not one it holds by itself.
+   But the number a lever must bring is **not** the 5–277 pN/nm the stability table suggested: the force
+   delivered to a load over a stroke is `k_c·Δs`, so §3's own 100 pN and 3 nm fix it at **33.333 pN/nm** by
+   arithmetic, and read at the bias the device actually operates at the stability floor is **0 at 5 and 7 nm
+   and 23.4–27.9 pN/nm at 10 nm**.
+   A coupling of **45 attachments — the same grid flatness already needs** — each a duplex standoff in series
+   with a **13-nucleotide tuned ssDNA spacer**, supplies it: it *places* the operating point on its secant and
+   *stabilises* it on its tangent, at 2.2 pN per load path against a 10 pN allowable.
+   **The design window is not empty.**
+   The margin at §3's own 2 mM is 1.19–1.42×, inside its own mean-field error, so the verdict is
+   *not excluded*, never established — and dropping to 0.5 mM buys six times more.
+   (`C-0012`, `C-0016`, `C-0017`, `CH-0016`.)
 
 And the shape of the whole problem, which no single number shows: **static stability wants the thin layer,
 whose window is empty by 13.3×; the window, the stroke and the force-versus-height trade all want the thick
@@ -52,7 +60,7 @@ models that agreed with each other because they shared a defect (`C-0011`).
 | # | Task | Leaf | Verdict | Claim |
 |---|---|---|---|---|
 | 1 | Stiffness of the polymer layer | `A2.1` | **PASS**, then **superseded twice** | `C-0001` → `C-0003` → `C-0011` |
-| 2 | Feasible design window | `A2.1` | **PASS on §4(a)–(d); NOT CLOSED with the discovered axes** | `C-0016` |
+| 2 | Feasible design window | `A2.1` | **PASS** — non-empty at 7 and 10 nm, empty at 5 nm; P2 closed by `C-0017` | `C-0016`, `C-0017` |
 | 3 | Stroke and blocking force vs bias | `A2.2` | **PASS** — reachable, but the operating point is not holdable | `C-0008`, `C-0012` |
 | 4 | Electrostatic softening and pull-in | new | **partly answered by `C-0012`/`CH-0011`**; re-formulated, still open | `C-0012` |
 | 5 | Load distribution across the origami | `A1.2` | **PASS** | `C-0006`, `C-0009` |
@@ -102,17 +110,16 @@ window — **the exceedance `C-0015` found is unreachable, because the solved la
 end of its sweep** — and lateral confinement is a footprint cost (a 97–152 nm assembly around a 40 nm tile)
 with **no threshold in §3 to test it against**, which is stated rather than invented.
 
-**What decides the programme is the output coupling.**
-At 7 and 10 nm the §6 operating point is statically unstable under every layer model at §3's own 2 mM buffer,
-so it exists only against a lever supplying **5–277 pN/nm of its own stiffness** — comparable to the whole
-layer at first contact.
-**No claim in this programme supplies what a DNA-origami lever can deliver.**
-`T-2` therefore reports the honest answer:
-*non-empty in the axes §4(a)–(d) names, and **undecided — not empty** — once the discovered axes are added,
-because the axis that decides it is one no task has yet evaluated.*
-`T-16` is now the highest-value open item in the programme, and it is cheap.
-If it comes back short, P2 closes empty at 7 and 10 nm and P1 has already emptied 5 nm: **no window anywhere**,
-which is exactly what NDI asked to know now rather than after a year.
+**What decides the programme is the output coupling, and `T-16` has now evaluated it.**
+At 10 nm the §6 operating point is statically unstable at §3's own 2 mM buffer, so it exists only against a
+lever supplying its own stiffness — but that stiffness is **33.333 pN/nm, fixed by §3's 100 pN and 3 nm
+alone**, and it clears the stability floor at every height, buffer and layer model in the box.
+`C-0016`'s `P2` therefore closes **non-empty at 7 and 10 nm**.
+What a DNA lever cannot easily be is *compliant* enough: forty-five duplexes in tension are 4950 pN/nm,
+148× too stiff, and the element that closes the task is a 10–19 nt ssDNA spacer carrying **99.6 %** of each
+path's compliance.
+The margin at 2 mM is 1.19–1.42× against a 123–214 % mean-field error, so this is **not excluded rather than
+established**, and `T-1f` — bounding that error — is now the binding uncertainty in the programme.
 
 Two further findings travel with it.
 **The bias ceiling has to be quoted with the load it was evaluated at**: `C-0012`'s 0.02–0.1 V is a property of

@@ -40,7 +40,8 @@ Three things in every claim are load-bearing and easy to skip:
 | `C-0013` | [The grafted-`χ` premise is inapplicable, and the bulk equation of state stands](claims/C-0013-grafted-chi-inapplicable.md) | [`P-9`](tasks/P-9-grafted-chi.md) | premise under `A2.1` | PASS |
 | `C-0014` | [Lateral confinement: anchor orientation decides it, and it costs footprint](claims/C-0014-lateral-confinement.md) | [`T-12`](tasks/T-12-lateral-confinement.md) | `A1.2` | PASS |
 | `C-0015` | [Crossover phase and anchor registration: the lever is registration, and flatness needs 45](claims/C-0015-crossover-phase-and-registration.md) | [`T-14`](tasks/T-14-crossover-phase-and-registration.md) | `A8.2` | PASS |
-| `C-0016` | [The feasible design window: non-empty as posed, undecided once the discovered axes are added](claims/C-0016-design-window.md) | [`T-2`](tasks/T-2-design-window.md) | `A2.1` | PASS on §4(a)–(d); **not closed** with the discovered axes |
+| `C-0016` | [The feasible design window: non-empty as posed, undecided once the discovered axes are added](claims/C-0016-design-window.md) | [`T-2`](tasks/T-2-design-window.md) | `A2.1` | PASS on §4(a)–(d); its P2 **closed non-empty** by `C-0017` |
+| `C-0017` | [The output-coupling stiffness: fixed by §3, and a 45-attachment scheme supplies it](claims/C-0017-output-coupling-stiffness.md) | [`T-16`](tasks/T-16-output-coupling-stiffness.md) | `A8.2` | PASS — closes `C-0016`'s P2 **non-empty** |
 
 ### Standing challenges
 
@@ -61,3 +62,4 @@ Three things in every claim are load-bearing and easy to skip:
 | [`CH-0013`](challenges/CH-0013-entropic-tether-is-not-zero.md) — an entropic tether is not "essentially nothing" | `C-0010` | raised by `C-0014` |
 | [`CH-0014`](challenges/CH-0014-layout-sampled-not-swept.md) — the layout space was sampled, not swept | `C-0009` | raised by `C-0015`; two sizes and one sign corrected |
 | [`CH-0015`](challenges/CH-0015-usable-bias-window-is-unloaded.md) — the usable bias window is an *unloaded* property | `C-0012` | raised by `C-0016` |
+| [`CH-0016`](challenges/CH-0016-coupling-requirement-is-quoted-off-operating-point.md) — the coupling requirement was quoted off the operating point | `C-0012` | **UPHELD on both grounds**; its own direction claim struck |
