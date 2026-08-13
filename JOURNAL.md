@@ -680,3 +680,86 @@ length is 1.8–2.8 nm at the working gap, rising to the bulk `λ_D` in the far 
 — `λ_D/2` at zero bias (an image interaction, `e^{−2κh}`) against `λ_D` under bias. The bulk length is 1.4–2.2×
 too long at the working gap and exactly right at 30 nm; the counterion-dominated length is 2.4–3.4× too short
 and never approached.
+
+### `T-8` — tile positional variance (leaf `A1.2`), and `P-10`
+
+**Done, verified, filed as `C-0010`**, raising `CH-0009`.
+**PASS** against §6 task 8's `σ_RMS ≤ 3.0 nm`, on the declared acceptance quantity, at the operating point,
+across the whole `C-0003` stiffness bracket — area RMS 0.87–0.96 nm, a 3.1–3.4× margin, and 0.069–0.110 nm
+in band below 1 kHz. **Two qualifications travel with the PASS** and neither is cosmetic: the tile's *worst
+point* exceeds 3.0 nm in every state softer than the working point, and the *lateral* coordinate is not part
+of the PASS at all.
+
+`C-0001`'s 0.28 nm was the piston mode alone and is **7.3× low** against the worst point. `C-0006` projected
+46–75 % of the predicate; the answer is 29–32 % broadband and 2.3–3.7 % in band. Both earlier figures were
+right about their own quantity and wrong about the one that matters.
+
+#### `P-10` — a process blocker the coordinator was causing
+
+`T-8` lost **fourteen** full-suite attempts to build contention before obtaining an authoritative number from
+an isolated copy of the tree. `P-7`'s per-agent build directory is necessary but **not sufficient**: the
+Gradle project lock, `~/.gradle` and the Kotlin daemon are still shared, and the incremental compiler's
+session state races, producing `NoClassDefFoundError` on classes nobody touched. With five agents running,
+that was the coordinator's doing, not the agent's. Fixed by adding `tools/verify.sh`, which runs the suite on
+a copy of the tree — and whose `--committed` mode archives `HEAD`, which is the thing the coordinator actually
+needs before pushing, independently of whatever four agents have half-written into the working tree.
+
+#### Decisions
+
+**D-41. The acceptance quantity was *declared in Formulate*: the area RMS, with the worst point reported
+alongside.** Four readings of "the tile's positional RMS" exist and differ by 7×; choosing one silently was
+this task's failure mode, and naming it in advance is what made the two qualifications visible rather than
+buried.
+
+**D-42. Leaf `A1.2`'s named coarse-grained ensemble was not run, and the CI half is recorded as not
+discharged rather than approximated.** The reason is not cost: **oxDNA models the origami and not the polymer
+layer that sets the answer**, so run as specified it answers a different question. Reporting a model bracket
+as a "95 % CI" would imply a statistical meaning it does not have.
+
+**D-43. The `C-0003` bracket was re-derived in code from the measured virials rather than copied**, and then
+asserted against `C-0003`'s own table as a gate-5 test.
+
+**D-46. The lateral mode is reported as unbounded-by-the-layer with a costed requirement on the anchoring
+scheme, rather than given an invented stiffness.**
+
+**D-48. Gate 3 was made four *independent* checks** — static-compliance FDT, reciprocal point compliance,
+Lorentzian sum rule, and an Ornstein-Uhlenbeck bridge — rather than a restatement of the equipartition the
+construction already assumes.
+
+#### What was surprising
+
+**S-44. The tile's worst point is not its centre, and the difference decides the verdict.** The centre is the
+fixed point of *both* rigid tilts, i.e. the quietest place on the tile; a rigid plate gives exactly `√7`
+between corner and centre. At `C-0001`'s at-rest stiffness that is 1.365 nm at the centre against **3.405 nm
+at a corner** — 46 % of the predicate against 114 %. Filed as `CH-0009`.
+
+**S-45. The unbiased positional variance is not merely large — it is undefined.** Three of six `C-0003` models
+have exactly zero stiffness at `L₀`, and a non-adsorbing layer exerts no upward force above `L₀` either, so an
+unbiased free tile is unconfined in **both** directions. Nothing in the §3 stack holds the tile down at zero
+bias, and no task in the programme owned that question until now (`T-13`).
+
+**S-46. The lateral restoring stiffness is exactly zero by symmetry, not small.** A laterally homogeneous
+grafted layer under a laterally homogeneous non-adsorbing tile has a translation-invariant free energy.
+So the lateral coordinate is a **diffusion** problem rather than a variance problem: 62.8 nm in one 1 kHz
+period, 21× the predicate and 1.6 tile widths (`T-12`).
+
+**S-47. Bandwidth is worth 13× in amplitude — more than the entire model bracket.** Only 0.55–3.07 % of the
+variance lies below 1 kHz. The predicate passes in band even at the compressions where the broadband worst
+point fails.
+
+**S-48. Actuating the tile quiets it.** The piston RMS falls 4.2× from unbiased to the working point, because
+the layer stiffens 4–14× under load: mechanically the actuator is quietest exactly where it works. One-sided,
+though — §1's electrostatic spring is negative and runs the other way, so every amplitude here is a lower
+bound under bias.
+
+**S-49. The stroke and the noise use different stiffnesses, and the gap is a factor of three.** Secant
+16.6–26.1 pN/nm sets the stroke; tangent 47.7–64.1 at the working point sets the fluctuation. Conflating them
+overstates σ_RMS by 1.6×.
+
+**S-50. `k_θ` does not reach `T-8`.** A 2× change in `D_⊥` moves the answer 2.5 %, because the shape modes are
+foundation-dominated at `ℓ/L ≈ 0.2–0.5`. So `T-9` — costed at days of oxDNA — is not on this task's critical
+path at all, and was downgraded on the strength of a number rather than a guess.
+
+**S-51. The variance of an Ornstein-Uhlenbeck coordinate relaxes at `2/τ`, not `1/τ`.** Dropping the factor
+gives `√(Dt)` instead of `√(2Dt)` — a `√2` that **no dimensional check catches**. Found by the gate-3 bridge
+test, which is exactly the kind of thing an independent gate is for.

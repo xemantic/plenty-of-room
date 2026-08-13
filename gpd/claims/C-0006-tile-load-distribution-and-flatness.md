@@ -10,6 +10,33 @@
 | **Provenance** | `gpd/results/T-5-load-distribution.json` and `gpd/results/T-5b-tile-flatness.json`, produced by `structure.TileLoadDistributionStudyKt` and `structure.TileFlatnessStudyKt` |
 | **Conditions** | T = 300 K, aqueous buffer with Mg²⁺, `k_BT = 4.142 pN·nm`; 40 × 40 nm tile; 100 pN target force (§3) |
 | **Raises** | [`CH-0005`](../challenges/CH-0005-rigid-tile-assumption.md) against [`C-0001`](C-0001-layer-stiffness.md) |
+| **Challenged** | **[`CH-0008`](../challenges/CH-0008-plate-conservative-about-flatness.md) — UPHELD in part**, **[`CH-0009`](../challenges/CH-0009-worst-point-is-not-the-centre.md)**. See the banners below. |
+
+> ⚠️ **Two statements in this claim are corrected by [`CH-0008`](../challenges/CH-0008-plate-conservative-about-flatness.md) (2026-08-12), from the discrete-lattice check [`C-0009`](C-0009-discrete-lattice-tile.md).**
+>
+> **No verdict, table or number below changes.** What changes is (i) the stated *direction* of
+> this claim's own error, which is not one-signed, and (ii) the `ℓ_⊥/p` criterion, which compares
+> an across-helix bending length to an along-helix hinge spacing.
+> Against a grillage built from these same ingredients, the plate **overstates** the dishing by
+> 1–16 % under discrete anchors and under a smooth edge taper, and **understates** it by 12–38 %
+> under a concentrated lever and by 11–20 % thermally.
+> The `55 attachments` figure below is a continuum heuristic and is 14 % optimistic: solved on
+> both models the answer is **64**, against the tile's **56 crossovers**.
+> Do not consume the "conservative about flatness" bullet without reading `CH-0008`.
+
+> ⚠️ **Scope correction by [`CH-0009`](../challenges/CH-0009-worst-point-is-not-the-centre.md) (2026-08-12), raised by [`C-0010`](C-0010-tile-positional-variance.md).**
+>
+> **No arithmetic here is disputed** — `C-0010` reproduces all three thermal amplitudes to 0.4 %.
+> What is disputed is the *scope* of one column. The **`at a point [nm]`** column of the
+> thermal-flatness table below is the fluctuation at the **centre** of the footprint, and the centre
+> is the one point where both rigid tilts contribute nothing at all, because it is their fixed point.
+> Over the footprint the point fluctuation varies by exactly `√7` for a rigid plate and by **2.49×**
+> for this one: **1.365 nm at the centre, 2.139 nm at an edge midpoint, 3.405 nm at a corner**.
+> Read the column as the **lower** bound of the point fluctuation, never as "the total point fluctuation".
+> The distinction changes a verdict: `T-8`'s 3.0 nm predicate is met at 46 % by the column and
+> **failed at 114 %** by the corner, at this same stiffness.
+> This claim's headline finding — the shape modes beat the piston mode, and the ratio grows with `k_f` —
+> is **confirmed and strengthened** by `C-0010`: 2.76–2.96 at the working point against 1.70 here.
 
 ---
 
@@ -89,10 +116,17 @@ A single-layer sheet is exactly the case in which that prohibition is lifted.
 foundation in either direction. `ℓ_eff = (√(D_∥D_⊥)/k_f)^(1/4) = 6.05 nm` nominal, so the tile
 contains `A/(ℓ_∥ℓ_⊥) = 43.7` mechanically independent patches.
 
-**And `ℓ_⊥/p < 1` across the whole sweep**, which is a validity failure of the model itself:
+~~**And `ℓ_⊥/p < 1` across the whole sweep**, which is a validity failure of the model itself:
 the across-helix bending length is *shorter than the crossover spacing*, so the continuum plate
 reduction is marginal and the tile is closer to **~15 quasi-independent duplex beams sharing a
-polymer cushion** than to a plate. Recorded as a limitation, not hidden — see Validity.
+polymer cushion** than to a plate.~~ Recorded as a limitation, not hidden — see Validity.
+**CRITERION CORRECTED by [`CH-0008`](../challenges/CH-0008-plate-conservative-about-flatness.md):**
+`ℓ_⊥/p` pairs an *across*-helix bending length with an *along*-helix hinge spacing. Direction-matched
+the criteria are **`ℓ_∥/p = 0.59–1.18`** and **`ℓ_⊥/d = 1.06–2.12`**, so the breach is real but milder,
+and it is the *along*-helix one that fails. Stated without any `ℓ`: **an anchor's influence patch
+contains 2.0–7.9 crossovers**, 3.9 at the design point. The "~15 quasi-independent duplex beams"
+picture overstates the freedom — [`C-0009`](C-0009-discrete-lattice-tile.md) finds the lattice
+*stiffer* than this plate under discrete anchors, not softer.
 
 ---
 
@@ -141,8 +175,14 @@ saturation from below as the anchor stiffens, and passes slightly above it — 2
 
 **No anchor reaches the 35–60 pN disassembly band anywhere in the sweep** — the worst case
 found is 32.6 pN, at `k_f` ×0.25 with anchors ten times stiffer than the whole polymer layer.
-The internal transfer is milder still: the anchor force spread over the 9.3 load paths on an
-`ℓ`-sized contour around it gives **1.9 pN per crossover or duplex**.
+~~The internal transfer is milder still: the anchor force spread over the 9.3 load paths on an
+`ℓ`-sized contour around it gives **1.9 pN per crossover or duplex**.~~
+**SUPERSEDED by [`C-0009`](C-0009-discrete-lattice-tile.md), which resolves the peak this claim
+declined to give:** the anchor is carried by its **two nearest crossovers and essentially nothing
+else**, so the contour average understates the peak by a **concentration factor of 2.3–7.6**.
+The worst case in the same sweep is **11.54 pN on one crossover**, which reaches the 10–15 pN
+single-duplex unzip allowable. The `≥ 11 paths` row below is an equal-sharing number and a
+discretely anchored design has to divide it by that factor.
 
 The binding cost of anchors is not strength. It is **stroke**: anchors stiff enough to hold the
 tile take 18–50% of the actuation away. That is the stiffness budget `A8.2` asks for, and it
@@ -173,12 +213,20 @@ the linear model has left its own domain.
 | below 48 pN (single-duplex shear, quasi-static) | Strunz et al. (1999) | 3 |
 | below 10 pN (single-duplex **unzip**) | Essevaz-Roulet et al. (1997) | 11 |
 | below 65 pN (overstretching ceiling, nicked duplex) | van Mameren et al. (2009) | 2 |
-| **dishing below 10% of the stroke** | this work | **55** (28–110 over the sweep) |
+| **dishing below 10% of the stroke** | this work | ~~**55**~~ **64** (28–110 over the sweep) |
 
 **The flatness requirement is 5–18× stricter than every strength requirement**, and 55 exceeds
 the 43.7 mechanically independent patches the tile contains. There is therefore **no discrete
 attachment scheme that is flat**: the output coupling has to be continuous over the tile, or
 the tile dishes.
+
+> **The conclusion is CONFIRMED and SHARPENED by [`C-0009`](C-0009-discrete-lattice-tile.md); the
+> number is corrected.** ~~55~~ is `ceil(1.25 A/ℓ_eff²)`, a continuum heuristic, and it is 14 %
+> optimistic. Solved for the smallest square attachment array that keeps dishing below 10 % of the
+> stroke, **both the plate and the lattice need 64** — against the **56 crossovers** the tile
+> actually contains, i.e. **1.14 attachments per crossover**. Flatness needs more attachment points
+> than the tile has across-helix load paths, which is the same conclusion on a count that does not
+> move when `T-1c` re-derives `k_f`.
 
 ---
 
@@ -214,11 +262,16 @@ expensive calculation earned its cost against the cheap one.
 Equipartition on the Ritz functional (`k_BT K⁻¹`), unloaded, at `C-0001`'s stiffness at first
 contact. Converged in the basis: 1.248 / 1.272 / 1.279 nm at degrees 8 / 12 / 16.
 
-| `k_f` × | piston [nm] | tilt [nm] | **dishing [nm]** | at a point [nm] | dishing/piston | dishing/stroke |
+| `k_f` × | piston [nm] | tilt [nm] | **dishing [nm]** | at a point, **at the CENTRE** [nm] | dishing/piston | dishing/stroke |
 |---|---|---|---|---|---|---|
 | 0.25 | 1.496 | 2.116 | 1.690 | 2.238 | 1.13 | 0.085 |
 | **1.00** | **0.748** | **1.058** | **1.272** | **1.365** | **1.70** | **0.257** |
 | 4.00 | 0.374 | 0.529 | 0.919 | 0.870 | 2.46 | 0.742 |
+
+> **Scope, per [`CH-0009`](../challenges/CH-0009-worst-point-is-not-the-centre.md):** the fourth
+> column is the **centre** of the footprint, which is the *stiffest* point on it — the fixed point
+> of both rigid tilts. It is a **lower** bound on the point fluctuation, not "the total". At `k_f ×1`
+> the same tile gives 2.139 nm at an edge midpoint and **3.405 nm at a corner** ([`C-0010`](C-0010-tile-positional-variance.md)).
 
 **The tile's internal bending modes carry more thermal amplitude than its rigid-body piston
 mode** — 1.70× at the nominal point, rising as the foundation stiffens, because the dishing
@@ -250,7 +303,8 @@ reason, and the reason does not generalise.**
 - A **single** lever attachment is unusable: 100 pN per path against a 65 pN hard ceiling, and
   18.3 nm of local dishing against a 10 nm layer.
 - Strength alone needs **≥ 3** attachments (35 pN) or **≥ 11** for a 10 pN margin.
-- **Flatness needs ≥ 55**, which exceeds the 43.7 independent patches in the tile. The output
+- **Flatness needs ~~≥ 55~~ ≥ 64** (`C-0009`, solved on both models), which exceeds the 43.7
+  independent patches in the tile **and its 56 crossovers**. The output
   coupling must therefore be **distributed over essentially the whole tile**; there is no
   concentrated design that both survives and stays flat.
 - With fewer than that, the lever samples the tile at *one point* and therefore **over-travels**
@@ -379,11 +433,20 @@ programme will otherwise pick them up:
 
 Enforced in code where possible, not merely documented.
 
-- **`ℓ_⊥ < p` across the entire sweep**, so the continuum plate reduction *across* the helices
+- ~~**`ℓ_⊥ < p` across the entire sweep**, so the continuum plate reduction *across* the helices
   is marginal: the bending length is shorter than the crossover spacing. The tile is better
   described as ~15 quasi-independent duplex beams sharing a cushion. Every conclusion above is
   therefore **conservative about flatness**: a discrete lattice has *more* shape freedom than
-  the plate that approximates it, not less. Emitted as `continuumPlateReductionValid` in the JSON.
+  the plate that approximates it, not less.~~ Emitted as `continuumPlateReductionValid` in the JSON.
+  **TESTED, AND HALF WRONG, by [`CH-0008`](../challenges/CH-0008-plate-conservative-about-flatness.md)**
+  — which is a discharge of a prediction this claim made about itself, not a failure of it.
+  Against a grillage built from these same ingredients the plate is **not** one-signed: it
+  **overstates** the dishing by 1–16 % under discrete anchors and under a smooth edge taper
+  (a duplex is a 2 nm rod and does not bend across its own diameter, which the continuum lets it
+  do), and **understates** it by 12–38 % under a concentrated lever and 11–20 % thermally (a
+  discrete acoustic branch flattens toward the zone boundary, so short-wavelength modes are
+  softer than `D q⁴`). Bounded at ≤ 38 % either way, against a smallest rejection margin of 2.7×
+  here, so **no verdict in this claim moves**. The criterion itself is corrected above.
 - **Kirchhoff theory** is safe for a 2 nm sheet spanning 40 nm and **not** safe for the 10 nm
   four-layer reading, where thickness/span reaches 1/4 and transverse shear is neglected. That
   variant is reported as a bound, not an answer.
@@ -444,7 +507,21 @@ Everything else is derived from these in code.
 ## Challenges
 
 **Raises [`CH-0005`](../challenges/CH-0005-rigid-tile-assumption.md) against `C-0001`.**
-None stands against this claim.
+
+**Standing against this claim:** [`CH-0009`](../challenges/CH-0009-worst-point-is-not-the-centre.md),
+raised 2026-08-12 by [`C-0010`](C-0010-tile-positional-variance.md) — the `at a point` column is the
+**centre**, i.e. the stiffest point of the footprint, and the corner is 2.49× larger. A scope note,
+not a correction: no number here changes.
+
+**[`CH-0008`](../challenges/CH-0008-plate-conservative-about-flatness.md) — UPHELD in part, 2026-08-12.**
+Raised by [`C-0009`](C-0009-discrete-lattice-tile.md) from a beam-and-hinge grillage built out of
+this claim's own ingredients, whose long-wavelength limit reproduces `D_∥` and `D_k` identically and
+`D_⊥` to 1.5 %. Two statements are corrected and **no verdict, table or number moves**: the
+"conservative about flatness" direction is not one-signed (the plate overstates anchored and smooth
+dishing by 1–16 % and understates concentrated and thermal dishing by 12–38 %), and the `ℓ_⊥/p`
+criterion pairs two different directions. The 55-attachment figure becomes 64. This claim
+**predicted the direction of its own error and named the test**; the test returning against half of
+that prediction is a discharge, and the other half is confirmed.
 
 A further result contradicting this claim should be raised in `gpd/challenges/` with
 methodological grounds rather than overwriting it.
