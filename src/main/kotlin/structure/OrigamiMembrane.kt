@@ -78,6 +78,167 @@ data class InPlaneCrossoverForce(
 
 }
 
+/**
+ * One hybridisation bond of a tether attachment: the staple extension is base-paired to
+ * duplex [duplex] at station [x] nm along the helices, and that bond carries the fraction
+ * [share] of the tether's tension.
+ *
+ * `T-19`'s unit of *entry topology*. `C-0020` modelled an attachment as one point on one
+ * duplex, which is one bond with `share = 1`.
+ */
+data class EntryBond(
+    val duplex: Int,
+    val x: Double,
+    val share: Double
+)
+
+/**
+ * How one end of a tether actually enters the sheet — a set of [EntryBond]s whose shares
+ * partition the tether's tension.
+ *
+ * ## Why this exists
+ *
+ * `C-0020`'s headline, that the in-plane transfer ratio is exactly 1 for a tether aligned
+ * with the helices, holds **because** the tether is given one point of one duplex to enter
+ * through, which makes the attachment the most loaded member by construction. That is a
+ * *sequence-design choice* — how many duplexes the staple extension hybridises to, over how
+ * many bases, and whether it lands on a crossover — and not a property of the sheet. This
+ * class is that choice, made explicit and swept.
+ *
+ * ## The bound the shares obey before any lattice runs
+ *
+ * The duplex axial forces on a cut sum to the applied force (`C-0020`, gate 3), so on a tile
+ * of `D` duplexes some duplex carries at least `1/D` — the pigeonhole floor, which no entry
+ * topology can beat. And if the bond spans `m` duplexes at a station short compared with the
+ * neighbour-exchange length, only the bonded duplexes have received anything at the entry
+ * element, so the peak is the **largest share** and reaches `1/m` exactly for an equal split.
+ */
+class EntryTopology(
+    val name: String,
+    val bonds: List<EntryBond>
+) {
+
+    init {
+        require(bonds.isNotEmpty()) { "an entry topology must have at least one bond" }
+        require(bonds.all { it.share > 0.0 }) {
+            "every bond must carry a positive share, was: ${bonds.map { it.share }}"
+        }
+        require(abs(bonds.sumOf { it.share } - 1.0) < SHARE_TOLERANCE) {
+            "the bond shares must partition the tether tension, summed to " +
+                    bonds.sumOf { it.share }
+        }
+    }
+
+    /** The number of duplexes the attachment spans. */
+    val duplexSpan: Int get() = bonds.map { it.duplex }.distinct().size
+
+    /** The distinct base-pair stations the attachment occupies, ascending. */
+    val stations: List<Double> get() = bonds.map { it.x }.distinct().sorted()
+
+    /** The largest fraction of the tension any single bond carries. */
+    val largestShare: Double get() = bonds.maxOf { it.share }
+
+    /** The same topology with [shares] in place of the current ones, in bond order. */
+    fun withShares(shares: List<Double>): EntryTopology {
+        require(shares.size == bonds.size) {
+            "expected ${bonds.size} shares, got ${shares.size}"
+        }
+        return EntryTopology(name, bonds.mapIndexed { i, bond -> bond.copy(share = shares[i]) })
+    }
+
+    override fun toString(): String = "$name(${bonds.size} bonds, span $duplexSpan)"
+
+    companion object {
+
+        /** Shares are required to sum to one to within this. */
+        const val SHARE_TOLERANCE: Double = 1e-9
+
+        /** `C-0020`'s attachment: one point on one duplex. */
+        fun singlePoint(name: String, duplex: Int, x: Double): EntryTopology =
+            EntryTopology(name, listOf(EntryBond(duplex, x, 1.0)))
+
+        /**
+         * A staple extension hybridising to [duplexes] adjacent duplexes at one station,
+         * with the tension split equally — the compliant-staple limit. The rigid-staple
+         * limit is [OrigamiMembrane.compatibleShares].
+         */
+        fun duplexBand(
+            name: String,
+            firstDuplex: Int,
+            duplexes: Int,
+            x: Double
+        ): EntryTopology {
+            require(duplexes >= 1) { "duplexes must be at least one, was: $duplexes" }
+            return EntryTopology(
+                name,
+                (0 until duplexes).map {
+                    EntryBond(firstDuplex + it, x, 1.0 / duplexes)
+                }
+            )
+        }
+
+        /**
+         * A tether bonded **onto a crossover**, where the two duplexes are already tied
+         * together — the two-duplex band at that crossover's own station, which is
+         * necessarily an interior one because the columns sit strictly inside the footprint.
+         */
+        fun onCrossover(name: String, crossover: OrigamiMembrane.Crossover): EntryTopology =
+            duplexBand(name, crossover.lowerBeam, 2, crossover.x)
+
+        /**
+         * A staple extension hybridised over [bases] consecutive base pairs of **one**
+         * duplex, running [inward] from [from], with the tension shared equally among them.
+         *
+         * The realistic case: a hybridised extension has a footprint of 8–20 bp, and the
+         * bonds are placed at exact multiples of the rise so that each lands on a node.
+         */
+        fun baseFootprint(
+            name: String,
+            duplex: Int,
+            from: Double,
+            bases: Int,
+            rise: Double,
+            inward: Boolean
+        ): EntryTopology {
+            require(bases >= 1) { "bases must be at least one, was: $bases" }
+            val direction = if (inward) 1.0 else -1.0
+            return EntryTopology(
+                name,
+                (0 until bases).map {
+                    EntryBond(duplex, from + direction * it * rise, 1.0 / bases)
+                }
+            )
+        }
+
+        /**
+         * The same footprint with the load introduced at its **two ends only** — the
+         * shear-lag limit of the joint itself, in which an overlap transfers its load at the
+         * ends rather than uniformly. Run beside [baseFootprint] to show the peak is
+         * insensitive to how the load is distributed *within* the footprint.
+         */
+        fun endLoadedFootprint(
+            name: String,
+            duplex: Int,
+            from: Double,
+            bases: Int,
+            rise: Double,
+            inward: Boolean
+        ): EntryTopology {
+            require(bases >= 2) { "an end-loaded footprint needs at least two bases" }
+            val direction = if (inward) 1.0 else -1.0
+            return EntryTopology(
+                name,
+                listOf(
+                    EntryBond(duplex, from, 0.5),
+                    EntryBond(duplex, from + direction * (bases - 1) * rise, 0.5)
+                )
+            )
+        }
+
+    }
+
+}
+
 /** The in-plane state of an [OrigamiMembrane] under one load case. */
 class MembraneDeflection internal constructor(
     private val lattice: OrigamiMembrane,
@@ -682,6 +843,115 @@ class OrigamiMembrane(
             }
         }
         return MembraneDeflection(this, factorisation.solve(vector), loads)
+    }
+
+    // ------------------------------------------------------------------ entry topologies
+
+    /** The tension-weighted centroid of [topology] along the helices, in nm. */
+    fun centroidAlong(topology: EntryTopology): Double =
+        topology.bonds.sumOf { it.share * it.x }
+
+    /** The tension-weighted centroid of [topology] across the helices, in nm. */
+    fun centroidAcross(topology: EntryTopology): Double =
+        topology.bonds.sumOf { it.share * duplexY(it.duplex) }
+
+    /**
+     * The load case of one tether pulling with [force] pN, entering the sheet through [near]
+     * and leaving through [far].
+     *
+     * The pull direction is the line joining the two topologies' **centroids**, which keeps
+     * the two resultants collinear and the load case moment-free — the generalisation of
+     * `C-0020`'s single-point chord, and the condition under which the tile does not have to
+     * be given a support it does not have (`C-0010`'s lateral stiffness is exactly zero).
+     */
+    fun tetherLoads(
+        near: EntryTopology,
+        far: EntryTopology,
+        force: Double = 1.0
+    ): List<InPlanePointLoad> {
+        val dx = centroidAlong(far) - centroidAlong(near)
+        val dy = centroidAcross(far) - centroidAcross(near)
+        val span = hypot(dx, dy)
+        require(span > 0.0) {
+            "the two ends of a tether must have distinct centroids, both were " +
+                    "(${centroidAlong(near)}, ${centroidAcross(near)})"
+        }
+        val along = dx / span
+        val across = dy / span
+        return near.bonds.map { bond ->
+            InPlanePointLoad(
+                bond.x, duplexY(bond.duplex),
+                -force * along * bond.share, -force * across * bond.share
+            )
+        } + far.bonds.map { bond ->
+            InPlanePointLoad(
+                bond.x, duplexY(bond.duplex),
+                force * along * bond.share, force * across * bond.share
+            )
+        }
+    }
+
+    /**
+     * How a **rigid** staple splits its tension among its bonds — the other end of the
+     * bracket from the equal split [EntryTopology.duplexBand] assumes.
+     *
+     * A rigid bond forces all its attachment points to move together along the pull, so the
+     * `m` paths are `m` springs in parallel between two rigid ends and the split is
+     * `a = C⁻¹1 / (1ᵀC⁻¹1)` with `C` the tile's own compliance matrix between the bonded
+     * stations. `C` is symmetric by Maxwell-Betti and positive definite, so Cholesky is the
+     * right factorisation and its success is itself a check on the assembly.
+     *
+     * **Aligned pulls only.** Each basis load case is a *collinear opposed pair* on one
+     * duplex, which is self-equilibrated **and** moment-free; an unequal split at one end of
+     * an *oblique* chord carries a couple that nothing in this model reacts, and the
+     * regularising bed would absorb it at a stiffness eight orders below any structural one.
+     * The two topologies must therefore pair bond for bond on the same duplex.
+     *
+     * @return the shares, in bond order, summing to one.
+     */
+    fun compatibleShares(near: EntryTopology, far: EntryTopology): List<Double> {
+        require(near.bonds.size == far.bonds.size) {
+            "the two ends must pair bond for bond, were ${near.bonds.size} and " +
+                    "${far.bonds.size}"
+        }
+        require(near.bonds.indices.all { near.bonds[it].duplex == far.bonds[it].duplex }) {
+            "a compatible split is defined for an ALIGNED pull only, so each bond must pair " +
+                    "with one on the same duplex"
+        }
+        val count = near.bonds.size
+        if (count == 1) return listOf(1.0)
+        val responses = (0 until count).map { i ->
+            val y = duplexY(near.bonds[i].duplex)
+            solve(
+                listOf(
+                    InPlanePointLoad(near.bonds[i].x, y, -1.0, 0.0),
+                    InPlanePointLoad(far.bonds[i].x, y, 1.0, 0.0)
+                )
+            )
+        }
+        val flexibility = F64Array(count, count)
+        for (j in 0 until count) {
+            for (i in 0 until count) {
+                val y = duplexY(near.bonds[i].duplex)
+                flexibility[i, j] = responses[j].displacementAlong(far.bonds[i].x, y) -
+                        responses[j].displacementAlong(near.bonds[i].x, y)
+            }
+        }
+        // Maxwell-Betti makes it symmetric analytically; symmetrise against round-off so
+        // that the Cholesky pivot test measures the physics and not the last bit
+        for (i in 0 until count) {
+            for (j in 0 until i) {
+                val mean = 0.5 * (flexibility[i, j] + flexibility[j, i])
+                flexibility[i, j] = mean
+                flexibility[j, i] = mean
+            }
+        }
+        val ones = F64Array(count)
+        for (i in 0 until count) ones[i] = 1.0
+        val raw = CholeskyDecomposition(flexibility).solve(ones)
+        var total = 0.0
+        for (i in 0 until count) total += raw[i]
+        return (0 until count).map { raw[it] / total }
     }
 
     companion object {

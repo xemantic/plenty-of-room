@@ -1653,3 +1653,113 @@ evidence that anything was read.**
 and 0.016–0.059 would supply `C-0014`'s entire tether preload. That is far below what any measurement calls
 zero. The same missing Mg²⁺/PEG coordination constant that `P-8` could not find is the mechanism that would
 decide it, and it would take `C-0010`'s lateral zero with it.
+
+### `T-19` — the attachment's entry topology (leaf `A8.2`)
+
+**Done, verified, filed as `C-0024`**, raising `CH-0029` — the task `C-0020`'s own validity range queued as
+the single modelling choice its headline rests on.
+
+**`C-0020`'s `η = 1` survives, and it survives as arithmetic.** It does not rest on the one-point model at
+all: it rests on **cut equilibrium**, which `C-0020` had already verified. On a tile of `D` duplexes the axial
+forces on a cut sum to the applied force, so **some duplex carries at least `1/D`** whatever a tether bonds
+to — a pigeonhole floor of 0.0667 and an absolute ceiling of `A_eff ≤ 720 pN` on what entry-topology design
+can ever buy. And because no crossover sits on the rim, a bond spanning `m` duplexes **enters at exactly
+`1/m`**. Over the complete band ladder — every width `m = 1..15`, at every position, at all 32 column phases,
+**3840 designs** — the peak exceeds `1/m` by at most **4.7 %**, saturating at ×1.0416, and is **exactly**
+`1/m` at `m = 1` and `m = D`, the two widths with no interior interface to pick anything up from. So the
+sheet's whole answer to "what does a tether bond to" is a division.
+
+**A two-duplex bond halves the load to 4 %, and it costs nothing in the crossover path — it pays.** Both
+bonded duplexes move together, so the interface between them slides *less*: the peak crossover force falls
+0.1826 → 0.0969 per pN. Across all 3840 designs the crossover path **never becomes binding**; its closest
+approach is ×1.07 the duplex-limited tension, and it recedes as the band widens. Bonding onto a **crossover**
+turns out to be numerically the same thing minus a shortened chord — the crossover is a *place*, not a
+mechanism.
+
+**The footprint is not a sheet variable at all, and the layout sweep is what proved it.** At the nominal
+phase a 20 bp footprint appears to relieve the peak 1.0000 → 0.8622, which looked like a result until the
+control was run: the *same single-point attachment* read at the inboard end of the same footprint carries
+0.7195. The relief is load shed past the **first crossover column**, whose distance from the rim is a layout
+variable — and over the complete 32-phase sweep the worst-case 8 bp footprint is **`η = 1.0000` exactly**.
+Everything a footprint buys, it buys on the **joint**.
+
+**Which is where the iteration turned.** `C-0006` records the shear allowable as *"48 ± 2 pN (30 bp)"* and
+records that it saturates with domain length; downstream, three claims dropped the parenthesis. Rebuilt from
+Strunz et al.'s own published constants — and validated against **both** of that paper's headline numbers,
+47.11 pN against 48 ± 2 at 30 bp and 68.12 against their ≈70 pN asymptote — the allowable is **18.8 pN at
+8 bp and 34.8 at 16**. A realistic staple extension therefore makes `C-0020`'s attachment number
+**optimistic by ×1.35**, not conservative. And because the barrier separation carries an `n`-independent 7 Å
+offset, the allowable is concave only above a **14.3 bp break-even**: splitting a bond across two duplexes
+wins above that total bonded length and **loses** below it.
+
+**Net: alignment first, geometry second, topology third.** Misalignment is worth ×11.75 (`C-0020`), unzip
+geometry ×4.8, the two-duplex bond ×2.0 on the sheet and ×1.44 on the joint, the footprint ×2.10 on the joint
+alone, and layout ×1.004. The two-duplex bond takes `L_min(10 nm)` from 33.5 to **27.7 nm** at a split 32 bp
+staple — not the ~24 nm the queue estimated, because the joint binds before the sheet does.
+
+#### Decisions
+
+**D-95. Bound the entry topology by cut equilibrium first, and let the lattice only measure the distance from
+that bound.** The pigeonhole floor and the short-bond limit cost one paragraph each and settled two of the
+four topologies outright — including redirecting the footprint question from the lattice to the literature,
+which is where its answer was. The lattice was then asked only *how close*, and the answer is "within 4.7 %,
+everywhere".
+
+**D-96. Solve both split limits instead of modelling the staple.** An `m`-duplex bond does not come with a
+50/50 split written on it, and the split depends on the staple's own elasticity, which nothing in the
+literature supplies. The prescribed (compliant) and compatible (rigid, `C a = λ1` with the tile's own
+compliance matrix, symmetric by Maxwell-Betti) limits bracket it to 11.4 % in the share and 7.1 % in the
+peak — enough to cost the design without inventing an element.
+
+**D-97. Rebuild the joint allowable from the primary source rather than carrying 48 pN as a constant — and
+validate it against that paper's own two headline numbers before using it.** Strunz publishes all three
+constants of his single-barrier fit; assembled from them alone the model reproduces his 30 bp measurement to
+2 % and his saturation to 3 %. That, and nothing else, licenses using it at the lengths between the three he
+measured.
+
+**D-98. Add the entry topology to `OrigamiMembrane` as an additive API, with `C-0020`'s model as the `m = 1`
+special case asserted at runtime.** `E1` reproducing `η = 1.0000` and `A_eff = 48.00 pN` is the first runtime
+`check` in the study: without it nothing in `T-19` is a comparison with `C-0020`.
+
+**D-99. Sweep the column phase for the footprint too, not just for the band.** The apparent 14 % relief at
+20 bp was an accident of where the first crossover column falls, and only the complete 32-phase sweep turned
+it into the right statement.
+
+#### What was surprising
+
+**S-110. The 48 pN allowable is a 30 base-pair number, and the programme has been using it as a material
+constant.** `C-0006` wrote the length into its own table and then three downstream claims dropped it. A
+realistic 16 bp staple extension gives 34.8 pN and an 8 bp one 18.8 — the attachment number is optimistic,
+not conservative, by up to 2.6×. `CH-0029`.
+
+**S-111. The footprint's apparent relief was the first crossover column, not the topology.** Two controls
+caught it: the same single-point attachment read at the inboard end of the same footprint carries the same
+0.90, and the complete phase sweep puts the worst-case 8 bp footprint back at exactly 1.0000. A 14 % effect
+that survived a mesh convergence check and was still not physics.
+
+**S-112. Splitting a bond has a break-even length, so the allowable is not concave everywhere.** The barrier
+separation's `n`-independent 7 Å offset makes `A(n)` *convex* at small `n`, so splitting an 8 bp bond in two
+loses ×2.58 while splitting a 32 bp bond in two gains ×1.44. "Saturating" was not the same as "concave", and
+the difference is a design rule.
+
+**S-113. A two-duplex bond relieves the crossovers rather than loading them**, and the crossover path never
+becomes binding at any band width in a 3840-design sweep. The expectation going in was that halving the
+duplex path would hand the crossovers the difference; instead both bonded duplexes move together and the
+interface between them stops sliding.
+
+**S-114. The equal-split peak exceeds `1/m` by up to 4.7 %, and is exactly `1/m` at both ends of the ladder.**
+The excess is `C-0020`'s connector-arm rotation coupling — the term worth ×1.66 there — seen at a hundredth
+of its size, and it vanishes at `m = 1` and `m = D` because neither has an interior interface.
+
+**S-115. Bonding onto a crossover is numerically the two-duplex bond.** The crossover contributes nothing
+mechanically; its only effect is to force an interior station and shorten the chord from 40 to 32.6 nm. It is
+a place, not a mechanism, and it is not worth constraining a layout for.
+
+**S-116. The discreteness excess against the continuum *falls* as the bond spreads** — ×1.101, ×1.059,
+×1.028 at `m` = 1, 2, 4. A load spread over several duplexes is closer to the continuum's own smoothness
+assumption, so the lattice's advantage over the plate is largest exactly where the load is most concentrated.
+
+**S-117. The preload `C-0020` reported as the price of the shorter tether is 25–186× what `T-13` needs.** It
+is a tax, not a benefit — and `L_min` is a corner of the design space rather than a design: the tether length
+that delivers exactly `C-0021`'s 1.381 pN hold-down at the 10 nm stroke is 116.6 nm, longer than every
+`L_min` in the table. What the entry topology buys is a longer admissible stretch of the length axis.

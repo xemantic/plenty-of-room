@@ -66,6 +66,17 @@ which is one of the reasons this project is a plain Kotlin/JVM application rathe
 - **The layer response is only weakly sensitive to the interaction strength: `k ∝ K^(1/(m+1))` and `N ∝ K^(−1/(m+1))`, exactly**, at fixed height, grafting density and compression ratio — because the chain length a specified height demands moves against the interaction. For `m = 9/4` a 16× change in `K` is a 25 % change in stroke. Do not spend effort narrowing `Π_int` before checking this exponent.
 - **The blob-stack height is `L₀/s = (Σ/π)^(5/6)`, identically** — 1.47 blobs at the conventional `Σ = 5` onset, for every polymer, chain length and thickness; a ten-blob stack needs `Σ ≈ 50`. So `Σ ≥ 5` no more delivers a stack of blobs than it delivers semidilute thermodynamics, and the two failures (`CH-0003`, `CH-0001`) are inverse powers of the same `Σ`.
 
+### Load paths and joints
+
+- **A DNA rupture force is a function of the bonded LENGTH as well as the loading rate.** The 48 pN in circulation is Strunz's **30 bp** number; his own published constants give 18.8 pN at 8 bp, 34.8 at 16 and a 68.1 pN asymptote — so quoting "48 pN" for a staple domain of unstated length is optimistic by up to 2.6×.
+- **"Saturating" is not "concave everywhere".** The barrier separation carries an `n`-independent 7 Å offset, so the shear allowable is convex at small `n`: splitting a bond across two duplexes wins above a **14.3 bp** total bonded length (at 100 pN/s) and loses below it. Splitting is not free.
+- **Unzip is length-independent and shear is not**, so splitting a bond `m` ways multiplies capacity by exactly `m` in unzip and by `m·A(n/m)/A(n)` in shear. The topology and the geometry are not independent design choices.
+- **An entry topology is bounded by cut equilibrium before any matrix runs**: on a `D`-duplex tile no attachment can put less than `1/D` into its worst duplex, and a bond spanning `m` duplexes enters at exactly `1/m` (no crossover sits on the rim). The lattice is only needed to say how close — 4.7 %, everywhere.
+- **Spreading a bond along one duplex cannot relieve it** — the duplex still carries the whole tension inboard of the footprint. Relief a lattice shows is load shed past the **first crossover column**, and it vanishes at the phases that put that column beyond the footprint: worst-case, an 8 bp footprint is worth exactly nothing.
+- **Bonding across two duplexes relieves the crossovers, it does not load them** — both bonded duplexes move together so the interface between them stops sliding, and the crossover path never becomes binding at any band width.
+- **A minimum-length tether is a corner of the design space, not a design.** Its stroke-independent preload is 25–186× what the hold-down needs, and the length that delivers the *wanted* preload is longer than every `L_min`.
+- **Evans-Ritchie has no equilibrium plateau**: the rupture force goes negative below ~4 bp at a slow rate. Quote it as a **ratio**, inside the measured loading-rate range, never extrapolated to `r → 0`.
+
 ### In-plane load paths
 
 - **The in-plane and out-of-plane concentration factors are different quantities *and* different problems.** `C-0009`'s 2.3–7.6× is a peak over an *equal share* of a reaction the tile **collected** from its foundation over an `ℓ`-patch; a lateral tether collects nothing (the layer's lateral stiffness is exactly zero), so its own tension is the whole load. Applying one as the other is `CH-0021` — and it is ~20× out in the definition alone.
