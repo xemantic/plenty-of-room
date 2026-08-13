@@ -9,9 +9,6 @@ openrndr = "0.4.4"
 xemanticKotlinTest = "1.17.5"
 # plugins
 versionCatalogUpdatePlugin = "1.1.1"
-dokkaPlugin = "2.2.0"
-mavenPublishPlugin = "0.37.0"
-jreleaserPlugin = "1.25.0"
 xemanticConventionsPlugin = "0.7.0"
 
 [libraries]
@@ -25,8 +22,5 @@ xemantic-kotlin-test = { module = "com.xemantic.kotlin:xemantic-kotlin-test", ve
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-plugin-power-assert = { id = "org.jetbrains.kotlin.plugin.power-assert", version.ref = "kotlin" }
 kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaPlugin" }
 version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "versionCatalogUpdatePlugin" }
-maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublishPlugin" }
-jreleaser = { id = "org.jreleaser", version.ref = "jreleaserPlugin" }
 xemantic-conventions = { id = "com.xemantic.gradle.xemantic-conventions", version.ref = "xemanticConventionsPlugin" }

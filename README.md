@@ -2,7 +2,6 @@
 
 Evidence corpus from agentic-loop runs against the NDI Gen-1 DNA-origami actuator simulation programme
 
-[<img alt="Maven Central Version" src="https://img.shields.io/maven-central/v/com.xemantic.nano/plenty-of-room">](https://central.sonatype.com/artifact/com.xemantic.nano/plenty-of-room)
 [<img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/xemantic/plenty-of-room">](https://github.com/xemantic/plenty-of-room/releases)
 [<img alt="license" src="https://img.shields.io/github/license/xemantic/plenty-of-room?color=blue">](https://github.com/xemantic/plenty-of-room/blob/main/LICENSE)
 
