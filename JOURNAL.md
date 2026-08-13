@@ -1763,3 +1763,89 @@ assumption, so the lattice's advantage over the plate is largest exactly where t
 is a tax, not a benefit — and `L_min` is a corner of the design space rather than a design: the tether length
 that delivers exactly `C-0021`'s 1.381 pN hold-down at the 10 nm stroke is 116.6 nm, longer than every
 `L_min` in the table. What the entry topology buys is a longer admissible stretch of the length axis.
+
+### `T-23` — a two-sided compliant DNA coupling (leaf `A8.2`), and the requirement that dissolves
+
+`C-0021` closed `T-13` with an exact relation and an admission: `F_down = (k_c − 33.333)·3 nm`, and no
+two-sided compliant DNA element had been proposed. This task went looking for one. It found three — and then
+found that the requirement they were wanted for does not survive their existence.
+
+**The cheap bound decided the task before any element was evaluated.** `C-0021` derives the hold-down
+requirement as a **force**, `k_BT/σ = 1.3806 pN`, and its derivation says why: above `L₀` the layer
+contributes nothing, so a constant hold-down confines the tile through a **linear** potential. That is a
+property of a *one-sided stack*, not of the problem. A coupling that carries load in both directions
+contributes above `L₀` as well as below it, the potential is **quadratic** there, and the requirement is a
+**stiffness**, `k_BT/σ² = 0.4602 pN/nm` — which §3's own mandated 33.333 pN/nm exceeds **72.4× with no
+preload at all**. `F_req = k_req·σ` identically: two-sidedness is worth exactly one power of the position
+bound. That is `CH-0027`, and it is `C-0021`'s own `holdDownForceScale(σ)/σ` identity read as a design
+statement.
+
+**Checked rather than argued, on `C-0021`'s own balance** — same layer models, same van der Waals assembly,
+same residual field, same quadrature domain rule, changing only the coupling: the tetherless device goes from
+**1.4–5.4 `k_BT` and 0 of 18 confining** to **959–7582 `k_BT` and 18 of 18**, its RMS from 2.56–12.98 nm to
+0.217–0.352 nm. `C-0014`'s eight substrate tethers leave the design.
+
+Three elements pass placement, the compliance ceiling, the stability floor and the 10 pN unzip allowable
+together: a **transverse duplex flexure** at a 24.61 nm (72 bp) span with axially free ends, a
+**crossover-hinge flexure** on a 4.11 nm (12 bp) arm, and an **antagonistic ssDNA pair**. Claim `C-0023`.
+
+#### Decisions
+
+**D-90. Test sidedness by evaluating the law at negative argument, never by inspecting the geometry.** It is
+one line of code and it turns two assumptions into results: the axial duplex standoff **passes** (DNA's
+stiffest element *is* two-sided, and is excluded on stiffness alone), and `C-0017`'s `K2` path returns
+**exactly zero in both its reaction and its tangent** at every negative displacement.
+
+**D-91. Carry the flexure's end condition *and* its axial restraint as brackets rather than collapsing them
+by simulation.** They are worth 2.2× in span and 2.7× in tangent stiffness — but **how an origami joint is
+built is a design choice, not a measurement**, so a finite-element beam model would be answering a question
+the designer answers with a staple. The same reasoning `C-0014` used for its two strut end conditions.
+
+**D-92. Declare a 40 pN/nm compliance ceiling in advance and let it exclude an element that meets placement.**
+The axially restrained flexure is placed at 33.333 pN/nm exactly and has a tangent of 91.1 — free stability
+margin by `C-0017`'s theorem, and 2.3× past the ceiling. Without a declared ceiling the membrane term reads
+as a bonus rather than as the failure it is.
+
+**D-93. Report the pull-in benefit on both axes and label the two as different quantities.** The stability
+floor is reproduced from the field to 1.5e−4, so the *stiffness* axis is exact; `C-0018`'s bias margin is the
+fold of a **moving** equilibrium and this task's is the bias at which the **held gap** loses stability. They
+are recorded in the result file with `definitional: true` so that a 9 % gap can never be read as a failed
+reproduction.
+
+**D-94. Size the antagonistic pair exactly rather than illustratively.** One 68 nt down-limb across the layer
+delivers `R(0) = −1.380649 pN`, the thermal scale to the last digit, and 45 tuned up-limbs place the pair at
+the mandate. An illustrative pair would have made its verdict a matter of taste.
+
+#### What was surprising
+
+**S-105. The requirement dissolved instead of being paid.** The task was sent to find an element that could
+supply 1.38 pN of preload. The element that can supply it makes the preload unnecessary, because it changes
+the confining potential from linear to quadratic. **Three of this programme's tasks have now been closed by
+noticing that a quantity was the wrong *kind* of quantity** — the stiffness that needed a compression
+(`C-0001`), the bias that needed a load line (`C-0018`), and now a force that needed a topology.
+
+**S-106. DNA's compliance comes in exactly two kinds, and the programme had searched one.** Axial compliance
+is entropic and entropy only pulls; bending compliance is signed. Every coupling element in `C-0014` and
+`C-0017` — strut, tether, spacer, standoff — is loaded **along its own axis**, and on that axis the trade
+between sidedness and compliance is real and unavoidable: 220 pN/nm or nothing. Rotate the same duplex 90°
+and `c EI/L³` is whatever the designer wants it to be.
+
+**S-107. The preload is quantised by the base pair, and the quantum is 9.3× the requirement.** For a
+two-sided element the preload is a *mounting offset*, i.e. a length. The thermal-scale hold-down asks for
+**0.0409 nm**, an eighth of a base-pair rise; the smallest offset a design can actually build delivers
+**12.78 pN** and costs 0.36 nm of stroke. **A design cannot set the preload it would need** — which is a far
+stronger argument for zero preload than any margin.
+
+**S-108. `C-0018`'s fold is steep because the equilibrium moves, not because the field stiffens.** At the held
+gap `|k_eff|` rises only as `V^1.9–2.8`; `C-0018`'s own published pair implies `p = 11–25` on the moving
+equilibrium. Four to thirteen times of the fold's steepness is kinematic. Either way one base pair of coupling
+offset buys 0.5–1.1 % of bias margin against the buffer's 6×.
+
+**S-109. `T-9`'s missing number is an *advantage* here, for the first time.** The crossover hinge constant is
+the only crossover elastic constant anyone has fitted, and `E5` uses it as a **spring** — which is what it was
+fitted as. Because `r ∝ √k_θ`, its whole `α ∈ [0.6, 1.2]` bracket is 1.37× in a length the designer chooses
+anyway, and no verdict moves across it.
+
+**S-118. At eight load paths every element fails on the static share alone.** 100 pN over 8 paths is 12.5 pN
+against a 10 pN unzip allowable, before any concentration factor. And `L ∝ n^(1/3)`, so more paths make each
+flexure *longer* rather than shorter. `C-0015`'s 45 is now reached by a third independent route.

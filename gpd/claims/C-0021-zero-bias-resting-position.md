@@ -11,6 +11,26 @@
 | **Conditions** | T = 300 K, `k_BT = 4.141947 pN·nm`; aqueous **2 mM MgCl₂** (§3's lowest, and `C-0008`'s zero-bias column), `λ_D = 3.93 nm`; 40 × 40 nm tile; PEG layer 5 / 7 / 10 nm at `σ` = 0.092 / 0.045 / 0.024 nm⁻²; all six `C-0003` layer models |
 | **Consumes** | [`C-0010`](C-0010-tile-positional-variance.md) (the zero, the drag, the bandwidth treatment), [`C-0014`](C-0014-lateral-confinement.md) (the tether, the elements, the allowables, the over-stiffening result), [`C-0017`](C-0017-output-coupling-stiffness.md) (`K2`, the mandate, the preload relation), [`C-0003`](C-0003-crossover-valid-layer-response.md) (the layer, as a library), [`C-0011`](C-0011-scf-density-profile.md)/[`CH-0010`](../challenges/CH-0010-brush-height-is-coil-height.md) (that `L₀` is threshold-defined), [`C-0008`](C-0008-electrostatic-force-and-decay-length.md)/[`CH-0007`](../challenges/CH-0007-point-ion-boundary-in-applied-bias.md) (the field and the Stern series), [`C-0004`](C-0004-poroelastic-drainage.md) (the drag), [`C-0005`](C-0005-mean-field-screening-validity.md) (the mean-field ceiling) |
 | **Raises** | [`CH-0023`](../challenges/CH-0023-placement-preload-sign.md) against `C-0017`, [`CH-0024`](../challenges/CH-0024-stroke-is-measured-from-a-height-the-tile-never-occupies.md) against `C-0012`/`C-0017` |
+| **Challenged by** | [`CH-0027`](../challenges/CH-0027-hold-down-requirement-is-a-force-only-for-a-one-sided-stack.md), on the **currency** of its declared acceptance. See the banner below |
+
+> ⚠️ **The declared acceptance below — `F ≥ k_BT/3 nm = 1.3806 pN`, a FORCE — is challenged by
+> [`CH-0027`](../challenges/CH-0027-hold-down-requirement-is-a-force-only-for-a-one-sided-stack.md) (2026-08-13),
+> raised by [`C-0023`](C-0023-two-sided-coupling.md) (`T-23`), as a property of a ONE-SIDED stack rather than of the problem.**
+>
+> **No number, table or verdict here moves** — every one of these 144 states is a one-sided stack, and both
+> device rows are reproduced by `C-0023` on this claim's own quadrature domain (1.391 against 1.40 `k_BT`,
+> 5.371 against 5.37; 18/18 and 0/18 confining). The correction runs the **favourable** way and it removes a part.
+>
+> A **two-sided** coupling contributes above `L₀` as well as below it, so the potential there is quadratic
+> rather than linear and the requirement is a **stiffness**, `k_BT/σ² = 0.4602 pN/nm` — which §3's own mandated
+> 33.333 pN/nm exceeds **72.4×, unpreloaded**. `F_req = k_req·σ` identically, i.e. *two-sidedness is worth
+> exactly one power of the position bound*, which is this claim's own `holdDownForceScale(σ)/σ` identity read
+> as a design statement. `C-0023` finds **three** such elements (a transverse duplex flexure at a 24.61 nm
+> span, a crossover-hinge flexure on a 4.11 nm arm, an antagonistic ssDNA pair), and with one fitted in place
+> of `K2` the *"device with the tether removed"* row below goes from **1.4–5.4 `k_BT`, 0/18 confining** to
+> **959–7582 `k_BT`, 18/18** — so **`C-0014`'s eight substrate tethers are not needed for `T-13`**.
+> Read *"a coupling can decide where the tile sits; it cannot be the thing that holds it there"* as
+> *"a **one-sided** coupling …"*.
 
 ---
 

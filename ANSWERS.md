@@ -55,6 +55,13 @@ whose window is empty by 13.3×; the window, the stroke and the force-versus-hei
 one, whose operating point is unstable everywhere.** All three pull the same way and stability pulls against
 all three.
 
+**Whether the tile is held at zero bias is a question about the coupling's *topology*, not about any force in
+the stack.**
+DNA's compliance is either entropic — which only pulls — or bending, which is signed, and the programme had
+committed to the first.
+A flexure or a crossover hinge at exactly the stiffness §3 already mandates turns a 1.4–5.4 `k_BT` trap into a
+959–7582 `k_BT` confinement, with no preload and no extra part. (`C-0023`, `CH-0027`.)
+
 **Orientation decides the anchoring problem twice over.**
 `C-0014` found that an anchor's orientation *relative to the layer* decides everything and its material almost
 nothing; `C-0020` finds the same for its orientation *within the plane of the sheet, relative to the helices* —
@@ -247,8 +254,16 @@ harmonic below the rest height and **linear** above it — giving **0.360–0.50
 0.019–0.041 nm in band** against the same 3.0 nm predicate, with the tile spending up to **53 % of its time
 above `L₀`**, where the layer holds it with nothing at all.
 The harmonic reading understates that amplitude by up to **2.6×**.
-And the requirement there is a **force**, not a stiffness: `k_BT/3 nm = 1.381 pN`, which is leaf `A1.1`'s own
-0.4602 pN/nm one power of the bound away. (`C-0021`.)
+And the requirement there is a **force** or a **stiffness** depending on the **topology of the coupling**,
+the two being exactly one power of the bound apart (`F_req = k_req·σ`).
+With the *one-sided* coupling the programme had committed to it is a force, `k_BT/3 nm = 1.381 pN`, and
+nothing in the §3 stack supplies it: the tetherless device is a 1.4–5.4 `k_BT` trap and its RMS is
+**2.56–12.98 nm**, failing leaf `A1.1` at 15 of 18 states.
+With a **two-sided** coupling it is a stiffness, `k_BT/σ² = 0.4602 pN/nm`, which §3's own mandated
+33.333 pN/nm exceeds **72.4× unpreloaded** — and the same device becomes **959–7582 `k_BT`, 18/18 confining,
+0.217–0.352 nm broadband and 0.012–0.035 nm in band**.
+Three DNA elements deliver it, and the eight substrate tethers `C-0021` needed leave the design.
+(`C-0021`, `C-0023`, `CH-0027`.)
 
 ## 3. The open questions of §4
 
@@ -296,6 +311,12 @@ And the requirement there is a **force**, not a stiffness: `k_BT/3 nm = 1.381 pN
 
 ---
 
+- **How an origami joint's end condition and axial restraint are actually built.**
+  Worth 2.2× in a flexure's span and 2.7× in its tangent stiffness, and the restrained reading breaks the
+  65 pN nicked ceiling at §3's desired 10 nm stroke. A sequence-design question, not physics. (`C-0023`, `T-30`.)
+- **Whether a flexure array on a shared superstructure stays as compliant as independent leaf springs.**
+  `C-0023` models 45 of them as independent, which is the *compliant* reading — and the compliance ceiling is
+  the binding side, so the assumption is not conservative. (`T-31`.)
 - **What the electrode is made of.** §1 says *"patterned electrode"*.
   Metal against oxide is **2.6×** on the van der Waals hold-down, which is the one term no design can remove.
   A specification gap, not a modelling one. (`C-0021`, `P-13`.)
