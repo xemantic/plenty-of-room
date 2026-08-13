@@ -27,7 +27,14 @@ Three findings dominate, and none of them is a stiffness number.
 2. **The polymer layer confines the tile in one direction only.** Its lateral restoring stiffness is *exactly*
    zero by symmetry — not small — so an untethered tile diffuses 63 nm in one 1 kHz period, 21× the positional
    predicate. It also exerts no upward force above `L₀`, so at zero bias the tile is unconfined in **both**
-   directions. Nothing in the §3 stack holds it. (`C-0010`.)
+   directions. Nothing in the §3 stack holds it — **and `T-13` now says what does, and what does not.**
+   What is unavoidably present, van der Waals across the gap, gives a **stable but not confining**
+   equilibrium: its `1/h³` force has a bounded potential, so the well is only **0.2–5.7 `k_BT`** deep and the
+   tile escapes it. **Stability and confinement are different properties.** The output coupling the programme
+   has committed to supplies **exactly zero** downward preload, because the ssDNA spacer that made it
+   compliant enough carries no compression. What closes it is the element `T-12` already chose for the
+   *lateral* coordinate: eight substrate tethers, giving a **31–73 `k_BT` well at `h₀` = 4.6–9.8 nm** for
+   0.07–0.38 nm of stroke. (`C-0010`, `C-0021`.)
 3. **The output coupling decides the programme, and it is fixed by §3 rather than by the layer.**
    100 pN at ≤ 2 V is reachable with room to spare and drainage clears 1 kHz by 22× — and at 10 nm the
    operating point the device reaches them at is not one it holds by itself.
@@ -191,6 +198,12 @@ states put the osmotic stopper at the larger gap **everywhere**, by 1.9–5×.
 Passing the point where a force stops growing is not being stopped by it.
 (`C-0018`, `CH-0017`, correcting `C-0012` and `CH-0011`.)
 
+**And every stroke in this programme is measured from `L₀`, which is a height the tile never occupies.**
+With the committed coupling fitted the device delivers **2.62–2.93 nm** against §3's acceptable 3 nm — a
+2–13 % shortfall — and without a coupling the shortfall reaches 79 %, because three of six layer models have
+exactly zero stiffness at `L₀` and a soft layer is cheap to compress.
+No verdict moves; the *statement* does. (`C-0021`, `CH-0024`.)
+
 ### Task 6 — mean-field screening
 
 The answer is **yes and no, and the two halves have different reasons.**
@@ -219,6 +232,15 @@ specified it returns a confidence interval on a different quantity.
 A CI on an exact analytic result is a category error, and the model bracket is not one.
 
 ---
+
+**And the unbiased state now has an answer of its own.**
+`C-0021` computes it by exact Boltzmann quadrature rather than equipartition — the zero-bias potential is
+harmonic below the rest height and **linear** above it — giving **0.360–0.501 nm broadband and
+0.019–0.041 nm in band** against the same 3.0 nm predicate, with the tile spending up to **53 % of its time
+above `L₀`**, where the layer holds it with nothing at all.
+The harmonic reading understates that amplitude by up to **2.6×**.
+And the requirement there is a **force**, not a stiffness: `k_BT/3 nm = 1.381 pN`, which is leaf `A1.1`'s own
+0.4602 pN/nm one power of the bound away. (`C-0021`.)
 
 ## 3. The open questions of §4
 
@@ -265,6 +287,13 @@ A CI on an exact analytic result is a category error, and the model bracket is n
   compute limit, and it is the first thing this programme has needed that the machine cannot supply.
 
 ---
+
+- **What the electrode is made of.** §1 says *"patterned electrode"*.
+  Metal against oxide is **2.6×** on the van der Waals hold-down, which is the one term no design can remove.
+  A specification gap, not a modelling one. (`C-0021`, `P-13`.)
+- **Where the electrode's potential of zero charge sits.** A contact potential of **0.9–5.1 mV** — below
+  anything a bench would call zero — supplies the entire zero-bias hold-down, and nothing in §1 or §3 fixes it.
+  A measurement, not a calculation. (`C-0021`.)
 
 ## 6. Reading order
 

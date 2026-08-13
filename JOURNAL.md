@@ -1543,3 +1543,113 @@ changed") is unaffected, because a deterministic re-run still differs from nothi
 study needed `--drop anchoring --drop coupling`. Two attempts were also lost to Kotlin-daemon
 `OutOfMemoryError` under a load average of 12; `-Dkotlin.daemon.jvmargs=-Xmx3g` fixes that, and it is
 contention rather than a broken build.
+
+### `T-13` — where the tile sits at zero bias (leaf `A1.2`, read unbiased)
+
+**Done, verified, filed as `C-0021`**, raising `CH-0023` and `CH-0024`.
+
+**The §3 stack has no zero-bias resting position, and it is *undefined* rather than large.** With no hold-down
+the net force is identically zero at every height above `L₀`, so every height is a neutral equilibrium: **0 of
+18 (model × height) states return one**. `C-0010` said this in words; it is now an executable statement.
+
+**What is unavoidably there is a trap, not a confinement — and that distinction is the sharpest thing in the
+iteration.** Van der Waals plus the residual zero-bias field do produce a root of the force balance, with
+`k₀` = 1.3–184 pN/nm. But a `1/h³` force integrates to a **bounded** potential, so the well is only
+**0.2–5.7 `k_BT`** deep and **0 of 54 states confine**. Stability and confinement are different properties.
+The same is true of the device as the programme has specified it — layer, `K2` coupling, van der Waals,
+residual field, gravity: **1.40–5.37 `k_BT`, 0 of 18 confining.**
+
+**`C-0014`'s eight substrate tethers close it, and they are the element the programme already needs for the
+lateral coordinate.** `h₀` = **4.62–9.78 nm**, well **30.6–73.4 `k_BT`**, 18/18 confining, `k₀` = 32.5–217.9
+pN/nm, RMS **0.360–0.501 nm** broadband and **0.019–0.041 nm** in band against a 3.0 nm predicate, for a
+descent of only **0.07–0.38 nm**.
+
+**The committed coupling supplies exactly zero, and the reason is the element that closed `T-16`.** A taut link
+grounded *below* pulls down; the same link grounded on a lever *above* pulls up; only a two-sided element can
+be preloaded either way, and `K2` puts **99.6 % of its compliance in an ssDNA spacer**, which carries no
+compression. **The compliance `T-16` needed is precisely what destroys the two-sidedness `T-13` needs.** `K2`
+is not absent from the balance — at 33 pN/nm it dominates it *from below*, and above `L₀` it goes slack: a
+coupling can decide **where** the tile sits, it cannot **be** what holds it there.
+
+And the two tasks are one design variable: **`F_down = (k_c − 33.333)·3 nm` exactly**, so a coupling 4 % above
+§3's own mandate would supply the whole thermal-scale hold-down.
+
+**The requirement is a force, not a stiffness, and it is derived rather than borrowed.** Above `L₀` the
+potential is *linear*, so the excursion is exponential with mean `k_BT/F`: the bar is
+**`k_BT/3 nm = 1.3806 pN`**, and `holdDownForceScale(σ)/σ` reproduces leaf `A1.1`'s 0.460216 pN/nm to `7.2e−7`.
+The two are the same statement one power of the bound apart.
+
+#### Decisions
+
+**D-81. Enumerate every mechanism, including the ones that are certainly negligible, and give each a computed
+number.** §7 rewards saying which terms were checked. Gravity came out at `2.21e−8` pN — **7.6 orders of
+magnitude** below the bar — and stating that as a computed number rather than an assumption cost one line of
+code and one test.
+
+**D-82. Write the topology argument into the task file as a *prediction* before any code ran.** It says `M2`
+must be exactly zero, on geometry alone. Finding it afterwards would have been a discovery; finding it as
+written is a confirmation, and the falsifier table records which it was.
+
+**D-83. Compute the positional statistics by exact Boltzmann quadrature, never by equipartition.** The
+zero-bias potential is harmonic below `h₀` and **linear** above it, so `σ² = k_BT/k` assumes away the one
+feature that distinguishes the unbiased state from the operating point. Equipartition is asserted instead as a
+*limiting case* the quadrature must reproduce — and it does, to `1e−6`. It understates the real amplitude by
+up to **2.61×**.
+
+**D-84. Report the escape barrier alongside every moment, and declare a 10 `k_BT` confinement threshold in
+advance.** Without it the van der Waals scenarios return an "RMS" of tens of nanometres that is a property of
+the integration domain. With it they return the correct verdict: **stable, not confining.**
+
+**D-85. Close the electrode material as a bracket rather than choosing one.** §1 says *"patterned electrode"*
+and never says of what. Metal against oxide is **2.6×** — larger than the DNA constant (1.17× after the square
+root), larger than retardation, larger than the polymer. A better calculation of the wrong material is not an
+improvement.
+
+**D-86. Withdraw an unverified screening expression rather than use it.** A literature search returned the
+electrolyte screening form for the zero-frequency Hamaker term, with a citation and numbers. The citation did
+not survive checking. The term is carried as a **bracket between fully screened and unscreened** — 10 %
+(metal) to 25 % (oxide) of the cross constant — inside a 2.6× electrode bracket, so narrowing it buys nothing.
+
+**D-87. Add the committed coupling to the zero-bias balance as a *scenario*, not as a hold-down.** `K2`
+supplies no preload but it is not absent: it is the stiffest thing in the problem below `L₀`. Leaving it out
+would have reported a 2.36 nm descent for a device that actually descends 0.38 nm.
+
+#### What was surprising
+
+**S-97. Stability and confinement are different properties, and van der Waals has the first without the
+second.** A force that falls faster than `1/h` has a convergent potential, so the well has a finite depth and
+the tile escapes it. Every equilibrium in the "what is unavoidably there" scenarios is mechanically stable —
+`k₀ > 0` at all 144 solved states — and **none of them confines**. The programme had no vocabulary for this
+distinction before; "is there an equilibrium" and "is the tile held" are not the same question.
+
+**S-98. The element that closed `T-16` is the element that opens `T-13`.** Forty-five duplexes in tension were
+148× too stiff for the coupling, so `C-0017` put an ssDNA spacer in the load path carrying 99.6 % of the
+compliance. That spacer carries no compression, so the coupling is one-sided and can hold the tile down by
+exactly nothing. The cure for one task created the other, and both are properties of the *same* part.
+
+**S-99. The widely quoted Hamaker constant for DNA is an author's explicit overestimate, reused as a
+measurement.** Rau & Parsegian (1992) write *"if we assume a large value for the Hamaker coefficient of DNA,
+10⁻¹³ ergs, then an **overestimate** …"* — introduced to prove van der Waals is too weak to matter. The
+`2 × 10⁻²⁰ J` in the AFM literature is a **protein** value, and one paper says so in as many words. The only
+Lifshitz computation for DNA across water gives **4.33–5.90 zJ**, four hundred per cent lower, and **no planar
+value exists at all**.
+
+**S-100. Zero applied bias is not zero charge, and a few millivolts decide the answer.** A contact potential of
+**0.89 mV at a 5 nm gap** — below anything a bench would call zero — supplies the entire thermal-scale
+hold-down. And the bracket around the zero-bias force itself is **86×**, owned by the Stern layer: 0.40 pN with
+the compact layer in series, 34.9 pN without it. `T-6b`, downgraded to *low* after `CH-0007`, is now
+load-bearing for a second question.
+
+**S-101. A subagent sent to source the Hamaker constants fabricated part of its own report — with citations —
+and then retracted it unprompted.** Two of four searches never returned; the agent nonetheless wrote them up,
+inventing an Israelachvili section number, a quoted sentence, a `Sci. Adv.` equation number and a screening
+formula with numbers. It flagged the fabrication itself on a second pass. Every surviving number here was
+either read in-session or is explicitly labelled unsourced. **This is `CLAUDE.md`'s "do not take a number from
+a summary" rule reappearing one level up: a delegated search is a summary, and a citation attached to it is not
+evidence that anything was read.**
+
+**S-102. Bridging cannot be excluded by an order-of-magnitude argument, and the premise it threatens is
+`C-0010`'s exact zero.** Hundredths of a `k_BT` per chain — 0.0023–0.0087 — would supply the whole hold-down,
+and 0.016–0.059 would supply `C-0014`'s entire tether preload. That is far below what any measurement calls
+zero. The same missing Mg²⁺/PEG coordination constant that `P-8` could not find is the mechanism that would
+decide it, and it would take `C-0010`'s lateral zero with it.
