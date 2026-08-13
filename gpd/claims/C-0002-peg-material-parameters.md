@@ -214,8 +214,16 @@ Per §7: *"where a question can't be answered with the available methods, that i
    value is **`χ(300 K) = 0.372`**, from `χ(T) = 1.156 − 235.3/T`.
    Note also that `τ = 0.200` in the sheet above is the **optimistic end of a 0.164–0.200 band**, because
    "the theta temperature of PEG in water" is a 16.3 K band rather than the single 375 K cited.
-   **A larger premise is now open in its place:** the effective `χ` of a *grafted* layer is reported at
-   ≈ 0.60 against 0.372 in bulk, and this claim's equation of state is a **bulk** one. Queued as `P-9`.
+   ~~**A larger premise is now open in its place:** the effective `χ` of a *grafted* layer is reported at
+   ≈ 0.60 against 0.372 in bulk, and this claim's equation of state is a **bulk** one. Queued as `P-9`.~~
+   **CLOSED by [`C-0013`](C-0013-grafted-chi-inapplicable.md) (`P-9`); the `≈ 0.60` is overturned by
+   [`CH-0012`](../challenges/CH-0012-grafted-chi-number.md).** It is not a value the source reports and it
+   describes an air/water Langmuir monolayer under lateral compression. **This claim's equation of state is
+   still a bulk one, and it now has a right-geometry warrant for being applied to a brush**: Hansen et al.
+   (2003) — already cited above for `a` — fitted the des Cloizeaux amplitude to *bulk* osmometry and then
+   reproduced *grafted-layer* compression isotherms with it, at 1.5–2.5× the Gen-1 grafting density, with
+   the effective monomer length landing within 2 % and 6 % of the bulk value. The residual brush-versus-bulk
+   shift is `|Δχ| ≤ 0.053`, worth −11.4 % to +4.3 % of the layer stiffness.
 2. **Block-copolymer chemistry.** §3 offers PEG, PEO, or a PS→PEG block copolymer. `α` covers the first two.
 3. **The 10–16 nm dense-PEG-brush height range** cited by `C-0001` remains untraced. Nothing depends on
    it; the recommendation is to delete it rather than source it.

@@ -20,8 +20,9 @@ The `Leaf` column is the NDI `simulation-task-map` ID the work traces to.
 | P-5 | Decide and defend the brush-regime criterion (`Σ ≥ 5` vs `Σ > 1`) | **DONE** (iteration 3) | Formal adoption made by `T-1c`: the criterion is **`L₀/R₀ ≥ 1`**, reported as a number at every design point, with windows emitted both with and without it so the two contributions stay separable. `Σ ≥ 5` is dropped — it failed thermodynamically (`CH-0001`) and geometrically (`CH-0003`). |
 | P-7 | Build isolation for concurrent agents: `-PbuildDirectory=<dir>` so parallel runs of one checkout stop racing on `build/test-results` | **DONE** (iteration 3) | Raised as a process blocker mid-iteration: four agents sharing one working tree could not get an authoritative `./gradlew test`, and the failure (`EOFException`, `NoSuchFileException` on the in-progress results binary) looks like a broken test rather than a broken harness. `build-*/` is git-ignored. |
 | P-10 | Verification isolation at high agent concurrency: `-PbuildDirectory` alone is not sufficient | **DONE** (iteration 3) | Raised by `T-8`, which lost **fourteen** full-suite attempts to it. `P-7`'s per-agent build directory is necessary but not sufficient — the Gradle **project lock**, `~/.gradle` and the Kotlin daemon are still shared, and the incremental compiler's session state races, producing `NoClassDefFoundError` on classes nobody touched. Fixed by [`tools/verify.sh`](tools/verify.sh), which runs the suite on an isolated copy of the tree (`--committed` archives `HEAD` instead, which is what the coordinator needs before pushing). |
+| P-11 | Collapse the two `χ` transfer conventions into one derived map | The source's SCF free energy read, replacing the 0.089 gap between the ratio and offset transfers with a derived relation | TODO — **low, non-blocking**. Raised by `C-0013`. The Supporting Information (SCF equations) is paywalled at ACS and absent from the free NIST copy of the body. |
 | P-8 | Mg²⁺/PEG coordination constant in water | TODO — medium | Raised by `C-0005`. PEG's ether oxygens coordinate cations — the mechanism behind PEO polymer electrolytes — and this is the **only** mechanism that could flip the sign of the §4(c) answer, since `T-6`'s partitioning bound counts exclusion only. **`P-6` searched independently and confirms the number does not exist in accessible literature**: the mechanism is stated for the right system in water, with MgCl₂ in the salt list, but no constant, and the quantitative multivalent-cation/PEO NMR work is in **methanol**. Needs a paywalled pull or an experiment. |
-| P-9 | **The effective `χ` of a *grafted* PEG layer is not the bulk one** — bound it, or declare `C-0002`'s bulk equation of state inapplicable to a brush | TODO — **HIGH**, a process blocker above `T-2` | Raised by `C-0007`. An SCF fit to neutron reflectivity puts a dense PEO brush at `χ ≈ 0.60` (above θ, formally poor solvent) against **0.372** in bulk — `Δχ = 0.23`, **239× the entire salt effect `P-6` was chartered to bound**. Every osmotic number in the programme derives from a **bulk-solution** property applied to a brush. Not a collapse: the same source reports the brush still exerts *positive* surface pressure, and `C-0003` bounds the exposure at `k ∝ K^(1/(m+1))`, so a 16× change in interaction strength is a 25 % change in stroke. **Cheap first step:** the source is used **from its abstract only** and may concern an *air-water-interface* brush — read the body and check its grafting densities against the Gen-1 window. It may be inapplicable, closing the task outright. |
+| P-9 | **The effective `χ` of a *grafted* PEG layer is not the bulk one** — bound it, or declare `C-0002`'s bulk equation of state inapplicable to a brush | **DONE** (iteration 3) — **(a) inapplicable**; `C-0002`'s bulk equation of state **stands** | Claim `C-0013`, challenge `CH-0012`. **`χ ≈ 0.60` is not in the source.** Its fits are 0.789/0.852 on a scale whose *own* theta is **0.696** — the 0.60 was `1.2 × ½`, the ratio transferred onto the wrong axis, and the paper's disclaimer forbidding exactly that step is on the same page as the number. The system is an **air/D₂O Langmuir monolayer under *lateral* compression**, not a solid-grafted layer under normal compression. Its grafting densities **do** overlap the Gen-1 window, so the task closed on the *parameter*, not on system mismatch. Bounded independently at **`\|Δχ\| ≤ 0.053`** from normal-compression fits on grafted PEG at 1.5–2.5× the Gen-1 density: −11.4 % to +4.3 % in stiffness, inside `C-0003`'s own ±22 % bracket. |
 | P-6 | `χ(T, salt)` and the Mg²⁺ salting-out coefficient for PEG/water at 2–10 mM | **DONE** (iteration 3) | Claim `C-0007`, challenge `CH-0006`. **The buffer does not reach the layer's mechanics**: the mobile-ion channel is exactly zero, and the solvent-quality channel is ≤ 0.4 % of the modulus over 2–10 mM. The Mg²⁺ coefficient is **not determinable and probably not well posed** — `θ(c)` shows *minima* for Group II chlorides, and PEG forms no binodal with MgCl₂ at all, so no ATPS-derived coefficient can exist. Bounded by a threshold instead: MgCl₂ would need `k_s ≥ 92.8 K/M`, 1.35× above the ceiling any PEO salt reaches. |
 
 ## Science tasks
@@ -66,6 +67,7 @@ The `Leaf` column is the NDI `simulation-task-map` ID the work traces to.
 | `./gradlew study -Pstudy=electrostatics.NonlinearPbProfileStudyKt` | `T-3a` | `gpd/results/T-3a-nonlinear-pb-profile.json` |
 | `./gradlew study -Pstudy=structure.TilePositionalVarianceStudyKt` | `T-8` | `gpd/results/T-8-tile-positional-variance.json` |
 | `./gradlew study -Pstudy=structure.DiscreteLatticeTileStudyKt` | `T-10` | `gpd/results/T-10-discrete-lattice-tile.json` |
+| `./gradlew study -Pstudy=material.GraftedChiStudyKt` | `P-9` | `gpd/results/P-9-grafted-chi.json` |
 
 Add `-PbuildDirectory=<dir>` to any Gradle command when more than one agent is working this checkout (`P-7`),
 and use [`tools/verify.sh`](tools/verify.sh) for an authoritative full-suite run — at four or more concurrent
@@ -135,9 +137,15 @@ Hence `T-1c` now sits above `T-2` for the same reason `P-3` sat above it before 
 - **`χ` for PEG/water is 0.372 at 300 K, measured — not the 0.45 that was cited, which has no primary source
   at all** (the 0.44 in circulation is *polystyrene in toluene*). And `χ` carries a lattice-site convention
   worth a factor of **2.010**, the exact analogue of `C-0002`'s three meanings of `a`. (`C-0007`.)
-- **A bulk `χ` is not a brush `χ`, and that gap is 239× everything else in this section.** A dense grafted PEO
-  layer is reported at `χ ≈ 0.60` — formally poor solvent — against 0.372 in bulk. Every osmotic number in the
-  programme is a bulk-solution property applied to a brush. (`C-0007`, `P-9`.)
+- ~~**A bulk `χ` is not a brush `χ`, and that gap is 239× everything else in this section.**~~
+  **CORRECTED by `C-0013`/`CH-0012`. A bulk `χ` and a brush `χ` differ by at most 0.053, and the 0.23 that was
+  feared was a units error.** `χ ≈ 0.60` for a grafted PEO layer was `1.2 × ½` assembled from an abstract —
+  the source's own fits are 0.789/0.852 on a scale whose theta is **0.696**, for an air/water Langmuir
+  monolayer under *lateral* compression, and the paper forbids that transfer explicitly. Normal-compression
+  osmotic stress on grafted PEG **denser** than the Gen-1 window gives `χ_eff = 0.346–0.424` against a bulk
+  0.372 — worth −11.4 % to +4.3 % of the stiffness, a fifth of the model bracket already carried.
+  **What remains open** is that no compression measurement exists *inside* the Gen-1 window, so the bound
+  comes from above and assumes monotonicity in grafting density. (`C-0013`, `CH-0012`.)
 - **Mean-field screening is uncontrolled across the whole working range, and qualitatively safe across it.**
   The deviation is 123–214 % for Mg²⁺ at 5–10 nm gaps, so PB is not merely inaccurate there but outside the
   control of its own expansion; yet correlation attraction needs a gap under 1.46 nm, which the layer never
@@ -217,10 +225,10 @@ and Crossref/EuropePMC serve only the abstracts (which is how the bound in `C-00
   chlorides against PEO, and so the only source for the θ-versus-[MgCl₂] curve *including the minima* that make
   a linear salting-out coefficient ill-posed in the first place. Paywalled and pre-digital; only the abstract
   is reachable, via Crossref.
-- **Lee et al., *J. Phys. Chem. B* 116:7367 (2012)** — the grafted-`χ ≈ 0.60` result that `P-9` now rests on.
-  It is currently used **from its abstract alone**, and `P-9` cannot be settled either way without the body:
-  its grafting densities and whether its brush is solid-grafted or at an air-water interface decide whether
-  the result applies to the Gen-1 layer at all.
+- ~~**Lee et al., *J. Phys. Chem. B* 116:7367 (2012)**~~ — **STRUCK. The body was obtained free**, from NIST's
+  public repository, because two coauthors are NIST staff. Worth recording as a general lesson: **Unpaywall
+  and OpenAlex both report this paper `closed` and both are wrong.** Check the authors' institutions for
+  federal or institutional repositories before declaring a body unreachable.
 - Any PEG/PEO salt study **below 50 mM**. `C-0007` found none at all — every cloud-point and aqueous-two-phase
   paper works at 0.1–3 M, which is two orders of magnitude above the Gen-1 buffer and exactly where a
   non-monotonic `θ(c)` would have its structure. This may simply not exist rather than be paywalled.

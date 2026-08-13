@@ -30,6 +30,7 @@ Three things in every claim are load-bearing and easy to skip:
 | `C-0003` | [The layer response from a crossover-valid free energy](claims/C-0003-crossover-valid-layer-response.md) | [`T-1c`](tasks/T-1c-crossover-valid-layer-response.md) | `A2.1` | PASS |
 | `C-0004` | [Poroelastic drainage does not limit the Gen-1 actuator, and what would make it](claims/C-0004-poroelastic-drainage.md) | [`T-7`](tasks/T-7-poroelastic-drainage.md) | none (§4(d)) | PASS |
 | `C-0005` | [Validity boundary of mean-field screening at 2–10 mM Mg²⁺](claims/C-0005-mean-field-screening-validity.md) | [`T-6`](tasks/T-6-mean-field-screening-validity.md) | `A7.4` | PASS |
+| `C-0013` | [The grafted-`χ` premise is inapplicable, and the bulk equation of state stands](claims/C-0013-grafted-chi-inapplicable.md) | [`P-9`](tasks/P-9-grafted-chi.md) | premise under `A2.1` | PASS |
 | `C-0009` | [The discrete-lattice tile: where the continuum plate is upheld and where it is not](claims/C-0009-discrete-lattice-tile.md) | [`T-10`](tasks/T-10-discrete-lattice-tile.md) | `A8.2`, `A1.2` | PASS |
 | `C-0010` | [Tile positional variance at 300 K, by mode and in band](claims/C-0010-tile-positional-variance.md) | [`T-8`](tasks/T-8-tile-positional-variance.md) | `A1.2` | PASS (partial against the leaf: no ensemble, no CI) |
 | `C-0008` | [The electrostatic force on the tile, and the decay length it actually has](claims/C-0008-electrostatic-force-and-decay-length.md) | [`T-3a`](tasks/T-3a-nonlinear-pb-profile.md) | `A7.4` | PASS |
@@ -44,6 +45,7 @@ Three things in every claim are load-bearing and easy to skip:
 | [`CH-0002`](challenges/CH-0002-corrections-do-not-all-soften.md) — the corrections do not all soften the layer | `CH-0001`'s direction | **UPHELD** — the direction is withdrawn |
 | [`CH-0003`](challenges/CH-0003-blob-stack-height.md) — the layer is ~1.5 blobs tall | `C-0001` | **RESOLVED** by `C-0003`: the height relation is replaced, and the layer is not a blob stack at all |
 | [`CH-0004`](challenges/CH-0004-screening-decay-length.md) — "the Debye length" is three different numbers | §1/§3 as read downstream | **RESOLVED** by `C-0008`: the force's own decay length is a fourth number, and the only bias-dependent one |
+| [`CH-0012`](challenges/CH-0012-grafted-chi-number.md) — the grafted `χ ≈ 0.60` was a units error | `C-0007`'s reading of it | **UPHELD** — the premise is dissolved |
 | [`CH-0008`](challenges/CH-0008-plate-conservative-about-flatness.md) — the plate is not universally conservative about flatness | `C-0006` | raised by `C-0009`; no `C-0006` verdict moves |
 | [`CH-0009`](challenges/CH-0009-worst-point-is-not-the-centre.md) — the tile's worst point is not its centre | `C-0006`'s thermal table | raised by `C-0010` |
 | [`CH-0007`](challenges/CH-0007-point-ion-boundary-in-applied-bias.md) — the point-ion boundary was compared against the wrong quantity | this queue's reading of `C-0005` | **UPHELD** — ≈ 1.0 V applied, not 0.197 V |

@@ -229,6 +229,18 @@ Enforced in code where it can be, and stated with a number where it cannot.
   family of free energies used here entirely. `C-0007`'s own source reports the brush still exerts positive
   surface pressure, so the sign does not flip; `P-9` is where it gets settled, and until it does this claim
   states the exposure rather than absorbing it.
+  > **ANNOTATION, 2026-08-13 — the exposure is DISCHARGED by
+  > [`C-0013`](C-0013-grafted-chi-inapplicable.md) (`P-9`), and the `χ(brush) ≈ 0.60` quoted above is
+  > overturned by [`CH-0012`](../challenges/CH-0012-grafted-chi-number.md).** That number is not in the
+  > source; it is a ratio taken against a Flory-Huggins `½` when the SCF model that produced it puts its own
+  > theta at `0.696`, for an air/water Langmuir monolayer under *lateral* compression. Measured independently
+  > by **normal** osmotic-stress compression of grafted PEG at **1.5–2.5× the Gen-1 grafting density**
+  > (Hansen et al. 2003, the same fits this project already cites for `a`), the brush-versus-bulk interaction
+  > ratio is **0.674 – 1.147**, i.e. `χ_eff = 0.346 – 0.424` against a bulk `0.372`. Through this claim's own
+  > `k ∝ K^(4/13)` that is **−11.4 % to +4.3 %** in stiffness and **−1.4 % to +4.1 %** in stroke — a fifth of
+  > the ±22 % six-model bracket already carried here. **No number in this claim moves, and the sign does not
+  > flip.** `C-0013` also reproduces this claim's 16× sensitivity study from the other direction:
+  > `16^(4/13) = 2.3469` against the `17.79/7.58 = 2.3470` reported above.
 - **`χ` has a lattice-site convention worth ~2×** (`C-0007`). This claim does not depend on it: `B` is obtained
   from `A₂` directly, and `χ` appears only as a cross-check. On the monomer-site convention the measured `A₂`
   implies `χ = 0.399`; on the water-site convention, `0.450`. Both are marginal-solvent values and both are

@@ -76,8 +76,9 @@ At 10 nm **neither branch of the predicate is currently available** — the wind
 *density profile*, not by the interaction law, and neither profile model's premise is met.
 This is `T-1c`'s declared falsifier firing, and it is why the SCF profile calculation (`T-1d`) is running.
 Two further constraints have no axis in the window as posed:
-the output coupling must be **effectively continuous** (flatness needs ≳ 55 load paths against 43.7
-independent patches), and the tile needs **lateral anchoring** the §3 stack does not provide.
+the output coupling must be **effectively continuous** (flatness needs **64 attachment points against the
+tile's 56 crossovers** — more attachments than it has across-helix load paths), and the tile needs **lateral
+anchoring** the §3 stack does not provide.
 
 ### Task 3 — stroke and blocking force
 
@@ -126,7 +127,7 @@ A CI on an exact analytic result is a category error, and the model bracket is n
 | (c) | Porosity and ion partitioning | **The sign in the question is backwards.** The layer *excludes* 23–48 % of the salt, so it **lengthens** the local Debye length by 1.14–1.39× and **protects** the field rather than screening it away. It also *amplifies* `F_es` by 1.15–1.60×. The dielectric-decrement mechanism named in §4(c) is a 3.9 % effect — the layer is 97 % water. **The bound is one-sided** (exclusion only); cation coordination by PEG's ether oxygens could flip it, and no binding constant exists in accessible literature. |
 | (d) | Poroelasticity | **Not binding**, with the boundary named. See Task 7. |
 | (e) | Screening | See Task 6. The force's own decay length is **1.8–2.8 nm** at the working gap — not the 4 nm bulk Debye length, and it is bias-dependent. |
-| (f) | Structural survival | The **35–60 pN band is not a per-load-path allowable** — it is a whole-cross-section disassembly force at a stated loading rate, and a DNA rupture force without a loading rate is not a material constant. Per path use duplex shear (~48–65 pN) or unzip (10–15 pN), 65 pN a hard ceiling. **Three load paths clear 35 pN, eleven clear 10 pN — but fifty-five are needed for flatness.** |
+| (f) | Structural survival | The **35–60 pN band is not a per-load-path allowable** — it is a whole-cross-section disassembly force at a stated loading rate, and a DNA rupture force without a loading rate is not a material constant. Per path use duplex shear (~48–65 pN) or unzip (10–15 pN), 65 pN a hard ceiling. **Three load paths clear 35 pN, eleven clear 10 pN — but 64 are needed for flatness, against 56 crossovers.** And a rigid anchor is carried by its **two nearest crossovers and essentially nothing else**, so the equal-share figure understates the peak by 2.3–7.6×: **11.54 pN worst-case, which reaches the 10–15 pN unzip allowable**. |
 | (g) | Does the tile stay flat? | **No.** Rigid *exactly* under a uniform load at any rigidity, and dishing 26–369 % of the stroke under every departure. The lever and the sensor see displacements differing by 26 % of the stroke. §4(g)'s own criterion for abandoning the rigid-plate picture is met. |
 
 ---
@@ -141,6 +142,7 @@ A CI on an exact analytic result is a category error, and the model bracket is n
 | Validity ranges travel and are respected | `C-0008` is handed to `T-3` with an explicit may/may-not list; `C-0004` is parameterised by a stiffness that was being re-derived concurrently. |
 | Disagreement raised as a challenge, not an overwrite | Nine challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's. |
 | Model-consistent vs measured maintained | Every claim header carries it; no `PASS` in this repository asserts measurement. |
+| A feared effect chased down and *dissolved* rather than carried | The "grafted `χ` ≈ 0.60", once thought 239× the salt effect, turned out to be `1.2 × ½` assembled from an abstract, against a model whose own theta is 0.696, for the wrong geometry and the wrong observable (`C-0013`, `CH-0012`). |
 | Unanswerable questions stated plainly | The Mg²⁺/PEG binding constant does not exist in accessible literature (`P-8`); the crossover hinge constant is a fitted model input (`T-9`); leaf `A1.2`'s CI is **not discharged** rather than approximated; the intermediate-coupling regime has no systematic theory and the sources say so themselves. |
 
 ---
@@ -154,8 +156,9 @@ A CI on an exact analytic result is a category error, and the model bracket is n
   rigidity exists in any direction. Costed as `T-9` — days of oxDNA on 8 cores.
 - **The direction of the correlation correction for *oppositely* charged walls.** Every published coupling
   criterion is a like-charge result. This is the largest uncertainty on every electrostatic force here.
-- **Whether the effective `χ` of a grafted layer is the bulk one.** Open as `P-9`; the exposure is bounded
-  (`k ∝ K^(1/(m+1))`, so 16× in interaction strength is 25 % in stroke), the question is not.
+- **A compression measurement of a PEG brush *inside* the Gen-1 grafting window.** None exists. `P-9` bounds
+  the bulk-versus-brush `χ` difference at `|Δχ| ≤ 0.053` from *denser* layers, so the bound comes from above
+  and assumes monotonicity in grafting density.
 - **Two paywalled papers** would close the only genuinely missing measurements. This is an access limit, not a
   compute limit, and it is the first thing this programme has needed that the machine cannot supply.
 

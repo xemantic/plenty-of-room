@@ -824,3 +824,69 @@ a helix's two neighbours, a mirror in `x` maps one interface's columns onto its 
 **S-57. `C-0006`'s "55 attachments for flatness" was a heuristic, and both models actually need 64** — which
 is **more than the 56 crossovers the tile contains**. The conclusion survives, on a count that is pure lattice
 geometry and therefore immune to the layer stiffness being re-derived.
+
+### `P-9` — the grafted `χ`, and a number that was never in the literature
+
+**Done, verified, filed as `C-0013`**, raising `CH-0012`.
+Verdict **(a) inapplicable, established from the body**. `C-0002`'s bulk equation of state **stands**, and the
+largest un-discharged premise in the material sheet is discharged rather than deferred.
+
+The feared number — a grafted PEO layer at `χ ≈ 0.60`, formally poor solvent, 239× the entire salt effect —
+**does not appear in the source**. Its fits are **0.789 and 0.852**, on a scale whose *own* theta point is
+**0.696**, located by the authors by finding which `χ` reproduces Gaussian statistics for a free chain.
+The 0.60 was `1.2 × ½`: the ratio-to-theta transferred onto the Flory-Huggins axis. The paper's own sentence
+forbidding exactly that step is **on the same page as the number**.
+
+The system is also wrong twice over: an **air/D₂O Langmuir monolayer** with no solid substrate anywhere, and
+the observable is a **lateral** surface pressure rather than the normal disjoining pressure the Gen-1 layer
+supplies.
+
+But the easy dismissal was **not** available, and that is what made the iteration worth running: the source's
+grafting densities (`σ = 0.0455` and `0.0741 nm⁻²`, `N = 113`) sit *inside* the Gen-1 window. The task had to
+close on the parameter, not on system mismatch.
+
+An independent bound, from measurement this project had already read: normal-compression osmotic-stress fits
+on grafted PEG at **1.5–2.5× the Gen-1 density** give `χ_eff = 0.346–0.424` against a bulk 0.372, i.e.
+**`|Δχ| ≤ 0.053`, straddling zero** — 4.6× tighter than the 0.240 feared, and worth −11.4 % to +4.3 % of the
+stiffness against `C-0003`'s own ±22 % six-model bracket. Nothing standing moves.
+
+#### Decisions
+
+**D-49. The distinction was made structural rather than documentary** — the fit type requires the model's own
+theta as a constructor argument, so no caller can compare its `χ` against `½` by accident.
+
+**D-50. Only ratios are load-bearing.** An absolute `χ` inverted from an Alexander-de Gennes fit inherits that
+form's 6.6× prefactor convention (`C-0003`); a brush/bulk *ratio* fitted in one convention in one paper does not.
+
+**D-51. Both transfer conventions are carried rather than one chosen** — their 0.089 gap *is* the finding.
+
+**D-53. No simulation.** Answering an SCF fit with another SCF fit compares two models and never touches a
+measurement.
+
+#### What was surprising
+
+**S-58. The number was never in the literature.** Four downstream documents in this repository quoted
+`χ ≈ 0.60` as though it were a measurement. It was assembled from an abstract, against a model whose own theta
+is 0.696, and the disclaimer forbidding the step is on the same page.
+
+**S-59. One abstract sentence used two different `χ` conventions**, and it is simultaneously the origin of the
+folkloric `χ ≈ 0.45` **and** of the 0.60. `C-0007` caught the first and was caught by the second.
+
+**S-60. Unpaywall and OpenAlex both declare a paper closed that is freely downloadable.** The copy is at NIST
+because two coauthors are federal staff, and neither open-access index knows. *"Not open access"* from those
+APIs is not evidence — and this strikes one of the two items that had been raised as an access limit for Kazik.
+
+**S-61. An empty `fullTextXML` is not an absence of full text.** EuropePMC returns a zero-byte body for an
+article whose PMC page serves the complete text.
+
+**S-62. The grafting-density check came back the wrong way, and that made the task harder and better.** Had the
+source's `σ` been outside the Gen-1 window, `P-9` would have closed on a triviality and learned nothing.
+
+**S-63. The interaction-strength probe is `a^(15/4)`.** In an Alexander-de Gennes fit the effective monomer
+length enters *only* the amplitude once the separation is eliminated, so a 2 % fit uncertainty in `a` is just
+8 % in the interaction — which is why a decades-old two-parameter fit can bound solvent quality at all.
+
+**S-64. A des Cloizeaux free energy cannot represent a poor solvent at any monomer length.** Its amplitude is a
+positive power of a positive excluded volume, so `χ ≥ ½` is not a large correction to that family but outside
+it — the code throws rather than returning a number. Yet good unconstrained fits of exactly that form to
+exactly that geometry exist, which is itself evidence against the claim.

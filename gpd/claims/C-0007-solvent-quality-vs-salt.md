@@ -194,7 +194,7 @@ The salt shift has to be compared against something. Two comparisons dwarf it.
 
 | comparison | ratio to the whole 2 → 10 mM buffer step |
 |---|---|
-| **`Δχ` between a bulk chain and a densely *grafted* one** — Lee et al. report `χ(brush)/χ(θ) ≈ 1.2` against `≈ 0.92` for free chains, i.e. `χ ≈ 0.60` vs `0.46`, from an SCF fit to neutron reflectivity | **239×** |
+| ~~**`Δχ` between a bulk chain and a densely *grafted* one** — Lee et al. report `χ(brush)/χ(θ) ≈ 1.2` against `≈ 0.92` for free chains, i.e. `χ ≈ 0.60` vs `0.46`, from an SCF fit to neutron reflectivity~~ **`χ ≈ 0.60` and the `239×` are OVERTURNED by [`CH-0012`](../challenges/CH-0012-grafted-chi-number.md)** — see the annotation below the quotation | ~~**239×**~~ **≤ ~55×**, and a bound rather than a value |
 | **The width of the "theta temperature of PEG in water"** — 358.7 K (Flory-Huggins), 369 ± 3 K (cloud points), 373.2 K (virial), 375 K (cited by `C-0002`): a **16.3 K** band | **29×** |
 
 The second means `C-0002`'s `τ = 0.200` is the **optimistic end** of a `τ = 0.164–0.200` band.
@@ -208,12 +208,28 @@ The first is the serious one, and it is quoted from the verbatim abstract
 > exist as polymer brush chains, because of the many body interactions that are forced to be effective in the
 > brush situation."*
 
-**`χ ≈ 0.60` is on the far side of θ: negative excluded volume, poor solvent, for the one configuration this
-whole project is about.** The same abstract notes the brush still exerts positive surface pressure, because
+~~**`χ ≈ 0.60` is on the far side of θ: negative excluded volume, poor solvent, for the one configuration this
+whole project is about.**~~ The same abstract notes the brush still exerts positive surface pressure, because
 conformational entropy dominates — so this is not a collapse of the design, but it is a direct challenge to
 using *any* bulk solution property for a grafted layer, which is what `C-0002` does and what `T-1c` is doing
 now. It is **not incorporated anywhere** and it is queued as `P-9`. Note also that the `0.92` in that same
 sentence, giving `χ ≈ 0.46` for free chains, is the most likely origin of the folkloric "χ ≈ 0.45".
+
+> **ANNOTATION, 2026-08-13 — [`CH-0012`](../challenges/CH-0012-grafted-chi-number.md), raised by
+> [`C-0013`](C-0013-grafted-chi-inapplicable.md) (`P-9`).**
+> **The warning was right and raising it was right; the number is wrong.** `P-9` read the body.
+> `0.60` appears nowhere in Lee et al.: the fitted values are **`0.789 ± 0.066`** and
+> **`0.852 ± 0.051`**, and that model's **own theta point is `0.696`, not `½`** — located by the
+> authors and accompanied by an explicit instruction not to read its `χ` against `½`. `0.60` is
+> `1.2 × ½`, which is exactly the step the source forbids, and it is **this claim's own lattice
+> trap** — confirmed by the fact that Lee et al.'s `v_PEO/v_water = 1.980` against the `2.010` this
+> claim derives independently. The abstract's two ratios are computed in **two different
+> conventions in one sentence** (`0.92` against `½`, `1.2` against `0.696`), which is also why the
+> `χ ≈ 0.46` inference above is right. The geometry is an **air/D₂O Langmuir monolayer** under
+> **lateral** compression, not a solid-grafted layer under normal compression. Measured
+> independently in the right geometry and at 1.5–2.5× the Gen-1 grafting density, the
+> brush-versus-bulk shift is **`|Δχ| ≤ 0.053`, straddling zero** — 4.6× smaller than claimed, worth
+> **−11.4 % to +4.3 %** of the layer stiffness. **Nothing in this claim's own result moves.**
 
 ---
 
@@ -294,8 +310,16 @@ in water = 369 ± 3 K, and a `δθ/δI` correlation that exists **only for 1:1 N
    **cloud point or `θ` of PEG/PEO against MgCl₂ concentration below 50 mM.** Bounded here, not answered.
 2. **The sign.** Unresolved, and the two available indications point in opposite directions
    (Hofmeister anion ordering vs. cation binding). The bound is symmetric, so no conclusion depends on it.
-3. **The grafted `χ`.** `χ(brush) ≈ 0.60` against `χ(bulk) = 0.372` — 239× the entire buffer effect and
-   not incorporated. Queued as `P-9`. **This is the largest open premise in the material sheet.**
+3. ~~**The grafted `χ`.** `χ(brush) ≈ 0.60` against `χ(bulk) = 0.372` — 239× the entire buffer effect and
+   not incorporated. Queued as `P-9`. **This is the largest open premise in the material sheet.**~~
+   **CLOSED by [`C-0013`](C-0013-grafted-chi-inapplicable.md) (`P-9`), and the number is overturned by
+   [`CH-0012`](../challenges/CH-0012-grafted-chi-number.md).** The premise was worth raising and is now
+   discharged: the `0.60` is a construction the source forbids, and the effect it stood for is bounded by
+   normal-compression measurement at **`|Δχ| ≤ 0.053`**, i.e. **−11.4 % to +4.3 %** in stiffness and
+   **−1.4 % to +4.1 %** in stroke — inside `C-0003`'s existing six-model bracket. **`C-0002`'s bulk equation
+   of state stands.** What remains open is narrower and is named in `C-0013`: no compression measurement of a
+   PEG brush exists *inside* the Gen-1 grafting window, so the bound comes from above and assumes
+   monotonicity in grafting density.
 4. **Mg²⁺/PEG ether-oxygen binding constant in water.** Still missing; `P-8`.
 
 ## Challenges
