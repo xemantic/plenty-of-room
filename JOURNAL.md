@@ -5539,7 +5539,7 @@ It passed on a three-link sample and is **false**: the refinement is a *local* z
 5 of the 44 published trios disagree, in both directions.
 The test now **measures** the disagreement instead of assuming it away, and the claim quotes 39 of 44 rather than 44 of 44.
 
-**Process notes.** The study runs in **24 min** on six threads through `tools/study.sh`; `tools/verify.sh` was **BUILD SUCCESSFUL on the whole suite in 12 m 28 s with no `--drop-file` needed**.
+**Process notes.** The study runs in **24 min** on six threads through `tools/study.sh`; `tools/verify.sh` was **BUILD SUCCESSFUL on the whole suite in 11–12 min with no `--drop-file` needed**, twice.
 Sizing the search needed a calibration run before any code was written — one junction solve is 0.77 s at `C-0059`'s grid, and without the per-assignment pruning the sweep would have been a 30-hour job that nobody would have attempted.
 **Measure the cost of the inner loop before choosing the budget of the outer one**; the whole difference between this iteration and `C-0059` is that arithmetic.
 
@@ -5549,15 +5549,27 @@ Three loops, and two of them overturned an upstream result by asking what its nu
 
 **`C-0062` reversed the truss verdict, and it did so on this project's own discipline.** `C-0059` had
 labelled its trio result a *"not found within the budget"* rather than a refusal — 24 of 750 lattices, two
-azimuths per junction — and said so in its own claim. The deepened search enumerates **all 5 940**
-reach-feasible crossbar lattices at 30 azimuths per junction, **534 600 candidate junctions, 22 275× the
-budget**, and finds **93 lattices carrying a fully closing trio**, the best at a **3.00°** chord
-misalignment — *better* than the 6.0° `C-0059` accepted for the pair. `C-0059`'s 0-of-24 reproduces
-**exactly** as a limiting case, so the two are consistent and the entire difference is budget.
-The reason the probe was blind is the transferable part: **the closing set is not concentrated near the
-ideal azimuths** — the median closing candidate sits **17.0°** off — so two azimuths per junction sample
-0.44 % of a space whose survivors are spread. And the mechanics barely moves: 0.5 %, because a couple goes
-as `cos²ψ` and `cos²3°` is 0.9973. **The truss branch does not close at the cap.**
+azimuths per junction — and said so in its own claim.
+**The cheap bound settled it before any deep sweep**, which is the part worth keeping: the three junctions
+are conditionally independent given the crossbar lattice and close on **21.1 % / 20.0 % / 27.8 %** of
+lattices individually, so `C-0059`'s 24 solved lattices were worth **0.28 trios** under its own marginals —
+**a null result was the expected one.**
+Deepened to **49 857 lattices solved and 149 789 junction solves** (1 039× and 557× `C-0059`'s), the
+crossbar carries **609 closing trios**, at **every one of the 21 admissible `(crossbar, row)`
+configurations**. Restricted back to `C-0059`'s own budget this task also finds nothing, and `C-0059`'s
+class reproduces at departure 0 — so the two are consistent and the entire difference is budget.
+The budget was only affordable because `C-0057`'s reach bound is a **per-assignment proof of exclusion**:
+12 % of the 32 assignments survive, a **17.2×** speedup with **0 disagreements**.
+The mechanics does not move: the best representable design is the **10 bp row at both ends** at
+**2.45 / 1.84**, against `C-0059`'s own best of 2.45 / 1.84. **The truss branch stays open at the cap.**
+
+*(Corrected. The paragraph originally here — "all 5 940 lattices … 534 600 candidates … 22 275× the budget
+… 93 closing trios … median survivor 17.0° … mechanics moves 0.5 %" — described the agent's **first**
+report, not its filed claim, and none of those numbers appears in `C-0062` or its result file. The
+coordinator quoted the report without re-reading the artifact, which is the **fourth** report/artifact
+divergence this session and the first the coordinator failed to catch — having written the rule against it
+two iterations earlier. The committed files were always the agent's; only the description was wrong. The
+agent reported the divergence unprompted, which is the only reason it was caught.)*
 
 **`C-0063` made the tile flat with equal springs, and corrected the observation that sent it looking.**
 The best of **1 144 858** evaluated 34-root placements dishes **0.0706** of the free-tile stroke under
