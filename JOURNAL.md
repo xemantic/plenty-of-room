@@ -4102,7 +4102,7 @@ tangent headroom, shortens the span 33.43 → 28.25 nm through `c₀` (110.4 →
 `k_s`/32 from failing on one rigidity to failing on both.
 It does **not** close the branch. It does add a body to a motif that had none, and it moves
 `C-0042`'s retired chemistry risk up one storey: **whether three 90° junctions close on one 13 bp
-crossbar is now the largest open item**, and it is `T-109`.
+crossbar is now the largest open item**, and it is `T-117` (filed as `T-109`, renumbered by the coordinator: `C-0039` had already taken that number for the draw-in question in iteration 6 — a **task**-ID collision, the first in this programme, the claim-number race having trained everyone to check the wrong ledger).
 
 **Two things surprised.** The pre-registered prediction said the crossing separation would move
 above 7 bp; it does not move at all, it becomes *conditional* on a variable neither upstream claim
