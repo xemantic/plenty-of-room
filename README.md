@@ -57,6 +57,9 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=material.PegMaterialStudyKt   # P-3, PEG/water parameter sheet
 ./gradlew study -Pstudy=anchoring.FlexureMountingSenseStudyKt  # T-75/T-78, the flexure's mounting sense
 ./gradlew study -Pstudy=crossover.ConcentratedCrossoverStudyKt # T-21, the upper crossover of the semidilute regime
+./gradlew study -Pstudy=anchoring.HingeLineCensusStudyKt      # T-81, how many crossovers a hinge line carries
+./gradlew study -Pstudy=anchoring.FlexureArrayPackingStudyKt  # T-96, the flexure array in plan view
+./gradlew study -Pstudy=anchoring.PairedPerpendicularJunctionStudyKt # T-97, two 90 degree junctions on one duplex
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.

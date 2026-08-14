@@ -1,0 +1,1433 @@
+{
+    "task": "T-81",
+    "leaf": "A8.2",
+    "question": "Does a 16-crossover hinge line exist on a 40 nm tile?",
+    "parameters": {
+        "temperature": 300.0,
+        "medium": "aqueous buffer, 2 mM MgCl2",
+        "footprintAlong": 40.0,
+        "footprintAcross": 40.0,
+        "duplexes": 15,
+        "interhelicalDistance": 2.69,
+        "risePerBasePair": 0.34,
+        "crossoverSpacingBasePairs": 32.0,
+        "perInterfacePitch": 10.88,
+        "basePairsPerTurn": 10.67,
+        "crossoverHingeStiffness": 13.5294118,
+        "duplexBendingRigidity": 230.0,
+        "loadPaths": 45,
+        "mandateStiffness": 33.3333333,
+        "acceptableStroke": 3.0,
+        "desiredStroke": 10.0,
+        "complianceCeiling": 40.0,
+        "farAnchorageStiffness": 78.2352941,
+        "assertedHingeCount": 16,
+        "provenance": {
+            "crossover spacing 32 bp per interface": "CITED, Rothemund, Nature 440:297 (2006), via C-0015",
+            "rise per base pair 0.34 nm": "CITED, Douglas et al., Nature 459:414 (2009)",
+            "interhelical distance 2.69 nm": "CITED, MEASURED by SAXS, Fischer et al., Nano Lett. 16:4282 (2016)",
+            "base pairs per turn 10.67": "CITED, square lattice",
+            "crossover hinge stiffness": "CITED, FITTED, Chen et al., JACS 136:6995 (2014) SI, via C-0009",
+            "duplex bending rigidity 230 pN nm2": "CITED, a CanDo MODEL INPUT (Kim et al., NAR 40:2862, 2012), not a measurement",
+            "far anchorage 78.235 pN nm/rad": "C-0034's A2, from C-0029's counting theorem at the phosphate radius",
+            "45 load paths on a 3 x 15 grid": "C-0015",
+            "100 pN, 3 nm, 10 nm, 40 x 40 nm, 2 mM": "sec 3 of the problem definition",
+            "40 pN/nm compliance ceiling": "C-0023"
+        }
+    },
+    "bounds": [
+        {
+            "name": "collinear interface a 16-crossover hinge line demands",
+            "value": 163.2,
+            "statement": "(16 - 1) x 32 bp = 163.2 nm, against a 40 nm tile: 4.08 tiles, and the pitch is a measured lattice constant no model can move"
+        },
+        {
+            "name": "that length as a multiple of the tile",
+            "value": 4.08,
+            "statement": "the first of the three bounds, and on its own it settles the longitudinal reading"
+        },
+        {
+            "name": "duplexes a 16-crossover TRANSVERSE line demands",
+            "value": 33.0,
+            "statement": "a transverse line serves one parity only, so it needs 2n+1 = 33 duplexes = 88.77 nm, 2.22 tiles - and its crossovers restrain the wrong axis anyway"
+        },
+        {
+            "name": "that width as a multiple of the tile",
+            "value": 2.21925,
+            "statement": "the answer is bounded in BOTH directions of the sheet before any code runs"
+        },
+        {
+            "name": "crossovers 45 paths at 16 demand",
+            "value": 720.0,
+            "statement": "against C-0015's whole-tile inventory of 49-56"
+        },
+        {
+            "name": "that demand over the richest tile inventory",
+            "value": 12.8571429,
+            "statement": "12.86x every crossover the tile has; even ONE flexure at 16 takes 28.6 % of them"
+        }
+    ],
+    "census": [
+        {
+            "phaseBasePairs": 0,
+            "columns": 7,
+            "evenInterfaces": 3,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 1,
+            "columns": 7,
+            "evenInterfaces": 3,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 2,
+            "columns": 7,
+            "evenInterfaces": 3,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 3,
+            "columns": 7,
+            "evenInterfaces": 3,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 4,
+            "columns": 7,
+            "evenInterfaces": 3,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 5,
+            "columns": 7,
+            "evenInterfaces": 3,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 6,
+            "columns": 8,
+            "evenInterfaces": 4,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 4,
+            "tileInventory": 56,
+            "centroSymmetric": true
+        },
+        {
+            "phaseBasePairs": 7,
+            "columns": 8,
+            "evenInterfaces": 4,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 4,
+            "tileInventory": 56,
+            "centroSymmetric": true
+        },
+        {
+            "phaseBasePairs": 8,
+            "columns": 8,
+            "evenInterfaces": 4,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 4,
+            "tileInventory": 56,
+            "centroSymmetric": true
+        },
+        {
+            "phaseBasePairs": 9,
+            "columns": 8,
+            "evenInterfaces": 4,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 4,
+            "tileInventory": 56,
+            "centroSymmetric": true
+        },
+        {
+            "phaseBasePairs": 10,
+            "columns": 8,
+            "evenInterfaces": 4,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 4,
+            "tileInventory": 56,
+            "centroSymmetric": true
+        },
+        {
+            "phaseBasePairs": 11,
+            "columns": 7,
+            "evenInterfaces": 4,
+            "oddInterfaces": 3,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 12,
+            "columns": 7,
+            "evenInterfaces": 4,
+            "oddInterfaces": 3,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 13,
+            "columns": 7,
+            "evenInterfaces": 4,
+            "oddInterfaces": 3,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 14,
+            "columns": 7,
+            "evenInterfaces": 4,
+            "oddInterfaces": 3,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 15,
+            "columns": 7,
+            "evenInterfaces": 4,
+            "oddInterfaces": 3,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 16,
+            "columns": 7,
+            "evenInterfaces": 4,
+            "oddInterfaces": 3,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 17,
+            "columns": 7,
+            "evenInterfaces": 4,
+            "oddInterfaces": 3,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 18,
+            "columns": 7,
+            "evenInterfaces": 4,
+            "oddInterfaces": 3,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 19,
+            "columns": 7,
+            "evenInterfaces": 4,
+            "oddInterfaces": 3,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 20,
+            "columns": 7,
+            "evenInterfaces": 4,
+            "oddInterfaces": 3,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 21,
+            "columns": 7,
+            "evenInterfaces": 4,
+            "oddInterfaces": 3,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 22,
+            "columns": 8,
+            "evenInterfaces": 4,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 4,
+            "tileInventory": 56,
+            "centroSymmetric": true
+        },
+        {
+            "phaseBasePairs": 23,
+            "columns": 8,
+            "evenInterfaces": 4,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 4,
+            "tileInventory": 56,
+            "centroSymmetric": true
+        },
+        {
+            "phaseBasePairs": 24,
+            "columns": 8,
+            "evenInterfaces": 4,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 4,
+            "tileInventory": 56,
+            "centroSymmetric": true
+        },
+        {
+            "phaseBasePairs": 25,
+            "columns": 8,
+            "evenInterfaces": 4,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 4,
+            "tileInventory": 56,
+            "centroSymmetric": true
+        },
+        {
+            "phaseBasePairs": 26,
+            "columns": 8,
+            "evenInterfaces": 4,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 4,
+            "tileInventory": 56,
+            "centroSymmetric": true
+        },
+        {
+            "phaseBasePairs": 27,
+            "columns": 7,
+            "evenInterfaces": 3,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 28,
+            "columns": 7,
+            "evenInterfaces": 3,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 29,
+            "columns": 7,
+            "evenInterfaces": 3,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 30,
+            "columns": 7,
+            "evenInterfaces": 3,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        },
+        {
+            "phaseBasePairs": 31,
+            "columns": 7,
+            "evenInterfaces": 3,
+            "oddInterfaces": 4,
+            "largest": 4,
+            "smallest": 3,
+            "tileInventory": 49,
+            "centroSymmetric": false
+        }
+    ],
+    "topologies": [
+        {
+            "id": "L1",
+            "name": "the flexure's own plan share at 45 paths (3 columns along x)",
+            "axis": "along the helices - the only axis a crossover's k_theta restrains",
+            "lineLength": 13.3333333,
+            "largestCount": 2,
+            "smallestCount": 1,
+            "reachesSixteen": false,
+            "statement": "what 45 independent flexures can each own, and it is one or two"
+        },
+        {
+            "id": "L2",
+            "name": "the adopted arm's own length, C-0034's E5a16",
+            "axis": "along the helices - the only axis a crossover's k_theta restrains",
+            "lineLength": 11.0284856,
+            "largestCount": 2,
+            "smallestCount": 1,
+            "reachesSixteen": false,
+            "statement": "the arm is barely longer than one pitch, so its own interface holds one"
+        },
+        {
+            "id": "L3",
+            "name": "one full-length interface of the tile",
+            "axis": "along the helices - the only axis a crossover's k_theta restrains",
+            "lineLength": 40.0,
+            "largestCount": 4,
+            "smallestCount": 3,
+            "reachesSixteen": false,
+            "statement": "one flexure owning a whole tile edge - the most the TILE can give a hinge"
+        },
+        {
+            "id": "L4",
+            "name": "the tile dilated by the arm - the longest line any flexure attached to it can reach",
+            "axis": "along the helices - the only axis a crossover's k_theta restrains",
+            "lineLength": 62.0569712,
+            "largestCount": 6,
+            "smallestCount": 5,
+            "reachesSixteen": false,
+            "statement": "the geometric ceiling on this footprint, and it is six"
+        },
+        {
+            "id": "L5",
+            "name": "an unbounded superstructure: whatever 16 demands",
+            "axis": "along the helices - the only axis a crossover's k_theta restrains",
+            "lineLength": 163.3,
+            "largestCount": 16,
+            "smallestCount": 15,
+            "reachesSixteen": true,
+            "statement": "priced and refused: 45 lines of 163.2 nm at a 2.69 nm pitch is 19755 nm2, 12.3x the tile footprint - T-96"
+        },
+        {
+            "id": "L6",
+            "name": "a transverse fold line across the tile - TASKS.md's own guess",
+            "axis": "across the helices - and a crossover does NOT restrain this axis",
+            "lineLength": 40.35,
+            "largestCount": 7,
+            "smallestCount": 7,
+            "reachesSixteen": false,
+            "statement": "15 duplexes give 14 interfaces and a transverse line serves 7 of them; and each of those 7 is a dihedral spring about a line running the OTHER way, so this topology does not supply n k_theta at all"
+        }
+    ],
+    "fans": [
+        {
+            "interfaces": 1,
+            "perInterface": 3,
+            "totalCrossovers": 3,
+            "lever": 1.345,
+            "effectiveHingeCount": 3.0,
+            "effectiveOverTotal": 1.0,
+            "flexureStiffness": 22.4365254,
+            "assembledStiffness": 1009.64364,
+            "fractionOfMandate": 30.2893092,
+            "latticeOverContinuum": 6.0,
+            "lineLengthDemanded": 21.76
+        },
+        {
+            "interfaces": 2,
+            "perInterface": 3,
+            "totalCrossovers": 6,
+            "lever": 4.035,
+            "effectiveHingeCount": 2.7,
+            "effectiveOverTotal": 0.45,
+            "flexureStiffness": 2.24365254,
+            "assembledStiffness": 100.964364,
+            "fractionOfMandate": 3.02893092,
+            "latticeOverContinuum": 2.22222222,
+            "lineLengthDemanded": 21.76
+        },
+        {
+            "interfaces": 3,
+            "perInterface": 3,
+            "totalCrossovers": 9,
+            "lever": 6.725,
+            "effectiveHingeCount": 2.14285714,
+            "effectiveOverTotal": 0.238095238,
+            "flexureStiffness": 0.641043582,
+            "assembledStiffness": 28.8469612,
+            "fractionOfMandate": 0.865408835,
+            "latticeOverContinuum": 1.68,
+            "lineLengthDemanded": 21.76
+        },
+        {
+            "interfaces": 4,
+            "perInterface": 3,
+            "totalCrossovers": 12,
+            "lever": 9.415,
+            "effectiveHingeCount": 1.75,
+            "effectiveOverTotal": 0.145833333,
+            "flexureStiffness": 0.267101492,
+            "assembledStiffness": 12.0195672,
+            "fractionOfMandate": 0.360587015,
+            "latticeOverContinuum": 1.46938776,
+            "lineLengthDemanded": 21.76
+        },
+        {
+            "interfaces": 5,
+            "perInterface": 3,
+            "totalCrossovers": 15,
+            "lever": 12.105,
+            "effectiveHingeCount": 1.47272727,
+            "effectiveOverTotal": 0.0981818182,
+            "flexureStiffness": 0.135978942,
+            "assembledStiffness": 6.11905237,
+            "fractionOfMandate": 0.183571571,
+            "latticeOverContinuum": 1.35802469,
+            "lineLengthDemanded": 21.76
+        },
+        {
+            "interfaces": 6,
+            "perInterface": 3,
+            "totalCrossovers": 18,
+            "lever": 14.795,
+            "effectiveHingeCount": 1.26923077,
+            "effectiveOverTotal": 0.0705128205,
+            "flexureStiffness": 0.0784493894,
+            "assembledStiffness": 3.53022252,
+            "fractionOfMandate": 0.105906676,
+            "latticeOverContinuum": 1.2892562,
+            "lineLengthDemanded": 21.76
+        },
+        {
+            "interfaces": 7,
+            "perInterface": 3,
+            "totalCrossovers": 21,
+            "lever": 17.485,
+            "effectiveHingeCount": 1.11428571,
+            "effectiveOverTotal": 0.0530612245,
+            "flexureStiffness": 0.0493110448,
+            "assembledStiffness": 2.21899701,
+            "fractionOfMandate": 0.0665699104,
+            "latticeOverContinuum": 1.24260355,
+            "lineLengthDemanded": 21.76
+        },
+        {
+            "interfaces": 8,
+            "perInterface": 3,
+            "totalCrossovers": 24,
+            "lever": 20.175,
+            "effectiveHingeCount": 0.992647059,
+            "effectiveOverTotal": 0.0413602941,
+            "flexureStiffness": 0.0329948902,
+            "assembledStiffness": 1.48477006,
+            "fractionOfMandate": 0.0445431018,
+            "latticeOverContinuum": 1.20888889,
+            "lineLengthDemanded": 21.76
+        },
+        {
+            "interfaces": 1,
+            "perInterface": 4,
+            "totalCrossovers": 4,
+            "lever": 1.345,
+            "effectiveHingeCount": 4.0,
+            "effectiveOverTotal": 1.0,
+            "flexureStiffness": 29.9153672,
+            "assembledStiffness": 1346.19152,
+            "fractionOfMandate": 40.3857457,
+            "latticeOverContinuum": 6.0,
+            "lineLengthDemanded": 32.64
+        },
+        {
+            "interfaces": 2,
+            "perInterface": 4,
+            "totalCrossovers": 8,
+            "lever": 4.035,
+            "effectiveHingeCount": 3.6,
+            "effectiveOverTotal": 0.45,
+            "flexureStiffness": 2.99153672,
+            "assembledStiffness": 134.619152,
+            "fractionOfMandate": 4.03857457,
+            "latticeOverContinuum": 2.22222222,
+            "lineLengthDemanded": 32.64
+        },
+        {
+            "interfaces": 3,
+            "perInterface": 4,
+            "totalCrossovers": 12,
+            "lever": 6.725,
+            "effectiveHingeCount": 2.85714286,
+            "effectiveOverTotal": 0.238095238,
+            "flexureStiffness": 0.854724776,
+            "assembledStiffness": 38.4626149,
+            "fractionOfMandate": 1.15387845,
+            "latticeOverContinuum": 1.68,
+            "lineLengthDemanded": 32.64
+        },
+        {
+            "interfaces": 4,
+            "perInterface": 4,
+            "totalCrossovers": 16,
+            "lever": 9.415,
+            "effectiveHingeCount": 2.33333333,
+            "effectiveOverTotal": 0.145833333,
+            "flexureStiffness": 0.356135323,
+            "assembledStiffness": 16.0260895,
+            "fractionOfMandate": 0.480782686,
+            "latticeOverContinuum": 1.46938776,
+            "lineLengthDemanded": 32.64
+        },
+        {
+            "interfaces": 5,
+            "perInterface": 4,
+            "totalCrossovers": 20,
+            "lever": 12.105,
+            "effectiveHingeCount": 1.96363636,
+            "effectiveOverTotal": 0.0981818182,
+            "flexureStiffness": 0.181305255,
+            "assembledStiffness": 8.1587365,
+            "fractionOfMandate": 0.244762095,
+            "latticeOverContinuum": 1.35802469,
+            "lineLengthDemanded": 32.64
+        },
+        {
+            "interfaces": 6,
+            "perInterface": 4,
+            "totalCrossovers": 24,
+            "lever": 14.795,
+            "effectiveHingeCount": 1.69230769,
+            "effectiveOverTotal": 0.0705128205,
+            "flexureStiffness": 0.104599186,
+            "assembledStiffness": 4.70696336,
+            "fractionOfMandate": 0.141208901,
+            "latticeOverContinuum": 1.2892562,
+            "lineLengthDemanded": 32.64
+        },
+        {
+            "interfaces": 7,
+            "perInterface": 4,
+            "totalCrossovers": 28,
+            "lever": 17.485,
+            "effectiveHingeCount": 1.48571429,
+            "effectiveOverTotal": 0.0530612245,
+            "flexureStiffness": 0.0657480597,
+            "assembledStiffness": 2.95866269,
+            "fractionOfMandate": 0.0887598806,
+            "latticeOverContinuum": 1.24260355,
+            "lineLengthDemanded": 32.64
+        },
+        {
+            "interfaces": 8,
+            "perInterface": 4,
+            "totalCrossovers": 32,
+            "lever": 20.175,
+            "effectiveHingeCount": 1.32352941,
+            "effectiveOverTotal": 0.0413602941,
+            "flexureStiffness": 0.043993187,
+            "assembledStiffness": 1.97969341,
+            "fractionOfMandate": 0.0593908024,
+            "latticeOverContinuum": 1.20888889,
+            "lineLengthDemanded": 32.64
+        },
+        {
+            "interfaces": 1,
+            "perInterface": 8,
+            "totalCrossovers": 8,
+            "lever": 1.345,
+            "effectiveHingeCount": 8.0,
+            "effectiveOverTotal": 1.0,
+            "flexureStiffness": 59.8307343,
+            "assembledStiffness": 2692.38304,
+            "fractionOfMandate": 80.7714913,
+            "latticeOverContinuum": 6.0,
+            "lineLengthDemanded": 76.16
+        },
+        {
+            "interfaces": 2,
+            "perInterface": 8,
+            "totalCrossovers": 16,
+            "lever": 4.035,
+            "effectiveHingeCount": 7.2,
+            "effectiveOverTotal": 0.45,
+            "flexureStiffness": 5.98307343,
+            "assembledStiffness": 269.238304,
+            "fractionOfMandate": 8.07714913,
+            "latticeOverContinuum": 2.22222222,
+            "lineLengthDemanded": 76.16
+        },
+        {
+            "interfaces": 3,
+            "perInterface": 8,
+            "totalCrossovers": 24,
+            "lever": 6.725,
+            "effectiveHingeCount": 5.71428571,
+            "effectiveOverTotal": 0.238095238,
+            "flexureStiffness": 1.70944955,
+            "assembledStiffness": 76.9252298,
+            "fractionOfMandate": 2.30775689,
+            "latticeOverContinuum": 1.68,
+            "lineLengthDemanded": 76.16
+        },
+        {
+            "interfaces": 4,
+            "perInterface": 8,
+            "totalCrossovers": 32,
+            "lever": 9.415,
+            "effectiveHingeCount": 4.66666667,
+            "effectiveOverTotal": 0.145833333,
+            "flexureStiffness": 0.712270646,
+            "assembledStiffness": 32.0521791,
+            "fractionOfMandate": 0.961565373,
+            "latticeOverContinuum": 1.46938776,
+            "lineLengthDemanded": 76.16
+        },
+        {
+            "interfaces": 5,
+            "perInterface": 8,
+            "totalCrossovers": 40,
+            "lever": 12.105,
+            "effectiveHingeCount": 3.92727273,
+            "effectiveOverTotal": 0.0981818182,
+            "flexureStiffness": 0.362610511,
+            "assembledStiffness": 16.317473,
+            "fractionOfMandate": 0.48952419,
+            "latticeOverContinuum": 1.35802469,
+            "lineLengthDemanded": 76.16
+        },
+        {
+            "interfaces": 6,
+            "perInterface": 8,
+            "totalCrossovers": 48,
+            "lever": 14.795,
+            "effectiveHingeCount": 3.38461538,
+            "effectiveOverTotal": 0.0705128205,
+            "flexureStiffness": 0.209198372,
+            "assembledStiffness": 9.41392673,
+            "fractionOfMandate": 0.282417802,
+            "latticeOverContinuum": 1.2892562,
+            "lineLengthDemanded": 76.16
+        },
+        {
+            "interfaces": 7,
+            "perInterface": 8,
+            "totalCrossovers": 56,
+            "lever": 17.485,
+            "effectiveHingeCount": 2.97142857,
+            "effectiveOverTotal": 0.0530612245,
+            "flexureStiffness": 0.131496119,
+            "assembledStiffness": 5.91732537,
+            "fractionOfMandate": 0.177519761,
+            "latticeOverContinuum": 1.24260355,
+            "lineLengthDemanded": 76.16
+        },
+        {
+            "interfaces": 8,
+            "perInterface": 8,
+            "totalCrossovers": 64,
+            "lever": 20.175,
+            "effectiveHingeCount": 2.64705882,
+            "effectiveOverTotal": 0.0413602941,
+            "flexureStiffness": 0.087986374,
+            "assembledStiffness": 3.95938683,
+            "fractionOfMandate": 0.118781605,
+            "latticeOverContinuum": 1.20888889,
+            "lineLengthDemanded": 76.16
+        },
+        {
+            "interfaces": 1,
+            "perInterface": 9,
+            "totalCrossovers": 9,
+            "lever": 1.345,
+            "effectiveHingeCount": 9.0,
+            "effectiveOverTotal": 1.0,
+            "flexureStiffness": 67.3095761,
+            "assembledStiffness": 3028.93092,
+            "fractionOfMandate": 90.8679277,
+            "latticeOverContinuum": 6.0,
+            "lineLengthDemanded": 87.04
+        },
+        {
+            "interfaces": 2,
+            "perInterface": 9,
+            "totalCrossovers": 18,
+            "lever": 4.035,
+            "effectiveHingeCount": 8.1,
+            "effectiveOverTotal": 0.45,
+            "flexureStiffness": 6.73095761,
+            "assembledStiffness": 302.893092,
+            "fractionOfMandate": 9.08679277,
+            "latticeOverContinuum": 2.22222222,
+            "lineLengthDemanded": 87.04
+        },
+        {
+            "interfaces": 3,
+            "perInterface": 9,
+            "totalCrossovers": 27,
+            "lever": 6.725,
+            "effectiveHingeCount": 6.42857143,
+            "effectiveOverTotal": 0.238095238,
+            "flexureStiffness": 1.92313075,
+            "assembledStiffness": 86.5408835,
+            "fractionOfMandate": 2.59622651,
+            "latticeOverContinuum": 1.68,
+            "lineLengthDemanded": 87.04
+        },
+        {
+            "interfaces": 4,
+            "perInterface": 9,
+            "totalCrossovers": 36,
+            "lever": 9.415,
+            "effectiveHingeCount": 5.25,
+            "effectiveOverTotal": 0.145833333,
+            "flexureStiffness": 0.801304477,
+            "assembledStiffness": 36.0587015,
+            "fractionOfMandate": 1.08176104,
+            "latticeOverContinuum": 1.46938776,
+            "lineLengthDemanded": 87.04
+        },
+        {
+            "interfaces": 5,
+            "perInterface": 9,
+            "totalCrossovers": 45,
+            "lever": 12.105,
+            "effectiveHingeCount": 4.41818182,
+            "effectiveOverTotal": 0.0981818182,
+            "flexureStiffness": 0.407936825,
+            "assembledStiffness": 18.3571571,
+            "fractionOfMandate": 0.550714713,
+            "latticeOverContinuum": 1.35802469,
+            "lineLengthDemanded": 87.04
+        },
+        {
+            "interfaces": 6,
+            "perInterface": 9,
+            "totalCrossovers": 54,
+            "lever": 14.795,
+            "effectiveHingeCount": 3.80769231,
+            "effectiveOverTotal": 0.0705128205,
+            "flexureStiffness": 0.235348168,
+            "assembledStiffness": 10.5906676,
+            "fractionOfMandate": 0.317720027,
+            "latticeOverContinuum": 1.2892562,
+            "lineLengthDemanded": 87.04
+        },
+        {
+            "interfaces": 7,
+            "perInterface": 9,
+            "totalCrossovers": 63,
+            "lever": 17.485,
+            "effectiveHingeCount": 3.34285714,
+            "effectiveOverTotal": 0.0530612245,
+            "flexureStiffness": 0.147933134,
+            "assembledStiffness": 6.65699104,
+            "fractionOfMandate": 0.199709731,
+            "latticeOverContinuum": 1.24260355,
+            "lineLengthDemanded": 87.04
+        },
+        {
+            "interfaces": 8,
+            "perInterface": 9,
+            "totalCrossovers": 72,
+            "lever": 20.175,
+            "effectiveHingeCount": 2.97794118,
+            "effectiveOverTotal": 0.0413602941,
+            "flexureStiffness": 0.0989846707,
+            "assembledStiffness": 4.45431018,
+            "fractionOfMandate": 0.133629305,
+            "latticeOverContinuum": 1.20888889,
+            "lineLengthDemanded": 87.04
+        }
+    ],
+    "designs": [
+        {
+            "hingeCount": 1,
+            "arm": 4.76458087,
+            "armBasePairs": 14.0134731,
+            "restraint": 1.62068863,
+            "endConditionFactor": 5.59509086,
+            "tangentAtAcceptable": 54.1134674,
+            "tangentAtDesired": 533.22555,
+            "rotationAtAcceptable": 36.1885732,
+            "hingeShareOfCompliance": 0.952297485,
+            "bondForceAtAcceptable": 4.27265422,
+            "reachesDesiredByRotation": false,
+            "insideCeilingAtAcceptable": false,
+            "insideCeilingAtDesired": false,
+            "verdict": "FAILS C-0023's compliance ceiling at the ACCEPTABLE stroke"
+        },
+        {
+            "hingeCount": 2,
+            "arm": 6.07917412,
+            "armBasePairs": 17.8799239,
+            "restraint": 2.06785207,
+            "endConditionFactor": 6.06709333,
+            "tangentAtAcceptable": 42.0068993,
+            "tangentAtDesired": 261.006243,
+            "rotationAtAcceptable": 25.7620801,
+            "hingeShareOfCompliance": 0.894549345,
+            "bondForceAtAcceptable": 3.04163581,
+            "reachesDesiredByRotation": false,
+            "insideCeilingAtAcceptable": false,
+            "insideCeilingAtDesired": false,
+            "verdict": "FAILS C-0023's compliance ceiling at the ACCEPTABLE stroke"
+        },
+        {
+            "hingeCount": 3,
+            "arm": 7.02414951,
+            "armBasePairs": 20.6592633,
+            "restraint": 2.38928871,
+            "endConditionFactor": 6.36557,
+            "tangentAtAcceptable": 38.3147866,
+            "tangentAtDesired": 149.445693,
+            "rotationAtAcceptable": 20.6225717,
+            "hingeShareOfCompliance": 0.837010481,
+            "bondForceAtAcceptable": 2.4348326,
+            "reachesDesiredByRotation": false,
+            "insideCeilingAtAcceptable": true,
+            "insideCeilingAtDesired": false,
+            "verdict": "clears the acceptable stroke; CANNOT reach the desired one by rotation"
+        },
+        {
+            "hingeCount": 4,
+            "arm": 7.74815107,
+            "armBasePairs": 22.7886796,
+            "restraint": 2.63556034,
+            "endConditionFactor": 6.57468576,
+            "tangentAtAcceptable": 36.5844211,
+            "tangentAtDesired": 98.1560645,
+            "rotationAtAcceptable": 17.3955304,
+            "hingeShareOfCompliance": 0.782907585,
+            "bondForceAtAcceptable": 2.05382749,
+            "reachesDesiredByRotation": false,
+            "insideCeilingAtAcceptable": true,
+            "insideCeilingAtDesired": false,
+            "verdict": "clears the acceptable stroke; CANNOT reach the desired one by rotation"
+        },
+        {
+            "hingeCount": 5,
+            "arm": 8.3241634,
+            "armBasePairs": 24.4828335,
+            "restraint": 2.83149292,
+            "endConditionFactor": 6.73028803,
+            "tangentAtAcceptable": 35.6120229,
+            "tangentAtDesired": 73.9193607,
+            "rotationAtAcceptable": 15.1248441,
+            "hingeShareOfCompliance": 0.733260956,
+            "bondForceAtAcceptable": 1.78573576,
+            "reachesDesiredByRotation": false,
+            "insideCeilingAtAcceptable": true,
+            "insideCeilingAtDesired": false,
+            "verdict": "clears the acceptable stroke; CANNOT reach the desired one by rotation"
+        },
+        {
+            "hingeCount": 6,
+            "arm": 8.79449129,
+            "armBasePairs": 25.8661509,
+            "restraint": 2.99147658,
+            "endConditionFactor": 6.85087312,
+            "tangentAtAcceptable": 35.0070623,
+            "tangentAtDesired": 61.0684693,
+            "rotationAtAcceptable": 13.4175071,
+            "hingeShareOfCompliance": 0.688197191,
+            "bondForceAtAcceptable": 1.58415664,
+            "reachesDesiredByRotation": false,
+            "insideCeilingAtAcceptable": true,
+            "insideCeilingAtDesired": false,
+            "verdict": "clears the acceptable stroke; CANNOT reach the desired one by rotation"
+        },
+        {
+            "hingeCount": 7,
+            "arm": 9.18612875,
+            "armBasePairs": 27.0180257,
+            "restraint": 3.12469341,
+            "endConditionFactor": 6.947151,
+            "tangentAtAcceptable": 34.6050358,
+            "tangentAtDesired": 53.4735045,
+            "rotationAtAcceptable": 12.0766422,
+            "hingeShareOfCompliance": 0.6474708,
+            "bondForceAtAcceptable": 1.42584555,
+            "reachesDesiredByRotation": false,
+            "insideCeilingAtAcceptable": true,
+            "insideCeilingAtDesired": false,
+            "verdict": "clears the acceptable stroke; CANNOT reach the desired one by rotation"
+        },
+        {
+            "hingeCount": 8,
+            "arm": 9.51738514,
+            "armBasePairs": 27.9923092,
+            "restraint": 3.23737142,
+            "endConditionFactor": 7.02581836,
+            "tangentAtAcceptable": 34.3250452,
+            "tangentAtDesired": 48.6006579,
+            "rotationAtAcceptable": 10.9905483,
+            "hingeShareOfCompliance": 0.610697094,
+            "bondForceAtAcceptable": 1.29761436,
+            "reachesDesiredByRotation": false,
+            "insideCeilingAtAcceptable": true,
+            "insideCeilingAtDesired": false,
+            "verdict": "clears the acceptable stroke; CANNOT reach the desired one by rotation"
+        },
+        {
+            "hingeCount": 9,
+            "arm": 9.80121998,
+            "armBasePairs": 28.8271176,
+            "restraint": 3.33391882,
+            "endConditionFactor": 7.09130099,
+            "tangentAtAcceptable": 34.1230037,
+            "tangentAtDesired": 45.2789039,
+            "rotationAtAcceptable": 10.0901866,
+            "hingeShareOfCompliance": 0.577458942,
+            "bondForceAtAcceptable": 1.19131191,
+            "reachesDesiredByRotation": false,
+            "insideCeilingAtAcceptable": true,
+            "insideCeilingAtDesired": false,
+            "verdict": "clears the acceptable stroke; CANNOT reach the desired one by rotation"
+        },
+        {
+            "hingeCount": 10,
+            "arm": 10.0471038,
+            "armBasePairs": 29.5503053,
+            "restraint": 3.41755705,
+            "endConditionFactor": 7.14665007,
+            "tangentAtAcceptable": 33.9730589,
+            "tangentAtDesired": 42.9089854,
+            "rotationAtAcceptable": 9.33014254,
+            "hingeShareOfCompliance": 0.547354536,
+            "bondForceAtAcceptable": 1.10157625,
+            "reachesDesiredByRotation": true,
+            "insideCeilingAtAcceptable": true,
+            "insideCeilingAtDesired": false,
+            "verdict": "reaches the desired stroke, past the ceiling there"
+        },
+        {
+            "hingeCount": 12,
+            "arm": 10.4517422,
+            "armBasePairs": 30.7404182,
+            "restraint": 3.5551962,
+            "endConditionFactor": 7.23506749,
+            "tangentAtAcceptable": 33.7710442,
+            "tangentAtDesired": 39.8271038,
+            "rotationAtAcceptable": 8.11462452,
+            "hingeShareOfCompliance": 0.49511958,
+            "bondForceAtAcceptable": 0.958064428,
+            "reachesDesiredByRotation": true,
+            "insideCeilingAtAcceptable": true,
+            "insideCeilingAtDesired": true,
+            "verdict": "PASS - reaches the desired stroke inside the ceiling"
+        },
+        {
+            "hingeCount": 16,
+            "arm": 11.0284856,
+            "armBasePairs": 32.4367224,
+            "restraint": 3.75137746,
+            "endConditionFactor": 7.35566418,
+            "tangentAtAcceptable": 33.5649337,
+            "tangentAtDesired": 36.7795408,
+            "rotationAtAcceptable": 6.44574385,
+            "hingeShareOfCompliance": 0.414744399,
+            "bondForceAtAcceptable": 0.761025711,
+            "reachesDesiredByRotation": true,
+            "insideCeilingAtAcceptable": true,
+            "insideCeilingAtDesired": true,
+            "verdict": "PASS - reaches the desired stroke inside the ceiling"
+        },
+        {
+            "hingeCount": 32,
+            "arm": 12.0802611,
+            "armBasePairs": 35.5301797,
+            "restraint": 4.10914252,
+            "endConditionFactor": 7.56056637,
+            "tangentAtAcceptable": 33.3756622,
+            "tangentAtDesired": 33.9874626,
+            "rotationAtAcceptable": 3.54589057,
+            "hingeShareOfCompliance": 0.24952462,
+            "bondForceAtAcceptable": 0.418650501,
+            "reachesDesiredByRotation": true,
+            "insideCeilingAtAcceptable": true,
+            "insideCeilingAtDesired": true,
+            "verdict": "PASS - reaches the desired stroke inside the ceiling"
+        }
+    ],
+    "demands": [
+        {
+            "hingeCount": 1,
+            "paths": 45,
+            "crossoverDemand": 45,
+            "tileInventory": 56,
+            "demandOverInventory": 0.803571429,
+            "lineLengthPerFlexure": 0.0,
+            "lineLengthDemand": 0.0,
+            "lineLengthAvailable": 640.0,
+            "demandOverAvailable": 0.0
+        },
+        {
+            "hingeCount": 2,
+            "paths": 45,
+            "crossoverDemand": 90,
+            "tileInventory": 56,
+            "demandOverInventory": 1.60714286,
+            "lineLengthPerFlexure": 10.88,
+            "lineLengthDemand": 489.6,
+            "lineLengthAvailable": 640.0,
+            "demandOverAvailable": 0.765
+        },
+        {
+            "hingeCount": 4,
+            "paths": 45,
+            "crossoverDemand": 180,
+            "tileInventory": 56,
+            "demandOverInventory": 3.21428571,
+            "lineLengthPerFlexure": 32.64,
+            "lineLengthDemand": 1468.8,
+            "lineLengthAvailable": 640.0,
+            "demandOverAvailable": 2.295
+        },
+        {
+            "hingeCount": 6,
+            "paths": 45,
+            "crossoverDemand": 270,
+            "tileInventory": 56,
+            "demandOverInventory": 4.82142857,
+            "lineLengthPerFlexure": 54.4,
+            "lineLengthDemand": 2448.0,
+            "lineLengthAvailable": 640.0,
+            "demandOverAvailable": 3.825
+        },
+        {
+            "hingeCount": 8,
+            "paths": 45,
+            "crossoverDemand": 360,
+            "tileInventory": 56,
+            "demandOverInventory": 6.42857143,
+            "lineLengthPerFlexure": 76.16,
+            "lineLengthDemand": 3427.2,
+            "lineLengthAvailable": 640.0,
+            "demandOverAvailable": 5.355
+        },
+        {
+            "hingeCount": 16,
+            "paths": 45,
+            "crossoverDemand": 720,
+            "tileInventory": 56,
+            "demandOverInventory": 12.8571429,
+            "lineLengthPerFlexure": 163.2,
+            "lineLengthDemand": 7344.0,
+            "lineLengthAvailable": 640.0,
+            "demandOverAvailable": 11.475
+        }
+    ],
+    "sensitivities": [
+        {
+            "name": "the per-helix mis-reading: 16 bp per interface",
+            "pitch": 5.44,
+            "largestCount": 8,
+            "reachesSixteen": false,
+            "statement": "CLAUDE.md's own trap, taken deliberately: even doubling the crossover density reaches 8, half of what is asserted"
+        },
+        {
+            "name": "honeycomb lattice, 21 bp per interface",
+            "pitch": 7.14,
+            "largestCount": 6,
+            "reachesSixteen": false,
+            "statement": "not the Gen-1 sheet, and it does not help either: 6"
+        },
+        {
+            "name": "both together - honeycomb at the per-helix mis-reading",
+            "pitch": 3.57,
+            "largestCount": 12,
+            "reachesSixteen": false,
+            "statement": "the most optimistic lattice reading in circulation, and it still misses"
+        },
+        {
+            "name": "the footprint a 16-crossover line would need",
+            "pitch": 10.88,
+            "largestCount": 16,
+            "reachesSixteen": true,
+            "statement": "163.2 nm along the helices, or 88.8 nm across: the tile would have to be 4.08x longer or 2.22x wider than sec 3 specifies"
+        }
+    ],
+    "reproductions": [
+        {
+            "name": "C-0015: tile inventory at the eight-column phases",
+            "source": "C-0015",
+            "expected": 56.0,
+            "obtained": 56.0,
+            "departure": 0.0
+        },
+        {
+            "name": "C-0015: tile inventory at the seven-column phases",
+            "source": "C-0015",
+            "expected": 49.0,
+            "obtained": 49.0,
+            "departure": 0.0
+        },
+        {
+            "name": "C-0015: phases giving eight columns",
+            "source": "C-0015",
+            "expected": 10.0,
+            "obtained": 10.0,
+            "departure": 0.0
+        },
+        {
+            "name": "C-0015: centro-symmetric phases",
+            "source": "C-0015",
+            "expected": 10.0,
+            "obtained": 10.0,
+            "departure": 0.0
+        },
+        {
+            "name": "C-0015: this census against CrossoverLayout itself, worst departure over 32 phases",
+            "source": "C-0015",
+            "expected": 0.0,
+            "obtained": 0.0,
+            "departure": 0.0
+        },
+        {
+            "name": "C-0009: across-helix rigidity per unit width",
+            "source": "C-0009",
+            "expected": 3.34504758,
+            "obtained": 3.34504758,
+            "departure": 0.0
+        },
+        {
+            "name": "C-0029: E5g8 arm",
+            "source": "C-0029",
+            "expected": 10.305607,
+            "obtained": 10.305607,
+            "departure": 3.76913032E-9
+        },
+        {
+            "name": "C-0029: E5g16 arm",
+            "source": "C-0029",
+            "expected": 12.2423721,
+            "obtained": 12.2423721,
+            "departure": 1.43101479E-9
+        },
+        {
+            "name": "C-0029: the cantilever hinge-arm ceiling",
+            "source": "C-0029",
+            "expected": 9.76624511,
+            "obtained": 9.76624511,
+            "departure": 0.0
+        },
+        {
+            "name": "C-0034: E5a16 arm",
+            "source": "C-0034",
+            "expected": 11.028,
+            "obtained": 11.0284856,
+            "departure": 4.40356085E-5
+        },
+        {
+            "name": "C-0034: E5a16 tangent at 3 nm",
+            "source": "C-0034",
+            "expected": 33.56,
+            "obtained": 33.5649337,
+            "departure": 1.47011488E-4
+        },
+        {
+            "name": "C-0034: E5a16 tangent at 10 nm",
+            "source": "C-0034",
+            "expected": 36.78,
+            "obtained": 36.7795408,
+            "departure": 1.2485606E-5
+        },
+        {
+            "name": "C-0034: the 8-crossover arm that fails P4",
+            "source": "C-0034",
+            "expected": 9.52,
+            "obtained": 9.51738514,
+            "departure": 2.7467026E-4
+        },
+        {
+            "name": "C-0034: E5a16 realised end-condition factor",
+            "source": "C-0034",
+            "expected": 7.356,
+            "obtained": 7.35566418,
+            "departure": 4.56524173E-5
+        },
+        {
+            "name": "literature: 32 bp is three turns of the square lattice",
+            "source": "Rothemund 2006 / Douglas 2009",
+            "expected": 3.0,
+            "obtained": 2.99906279,
+            "departure": 3.12402374E-4
+        },
+        {
+            "name": "literature: the per-interface pitch in nm",
+            "source": "Rothemund 2006",
+            "expected": 10.88,
+            "obtained": 10.88,
+            "departure": 0.0
+        }
+    ],
+    "convergence": [
+        {
+            "parameter": "phase grid refinement",
+            "value": 1.0,
+            "quantity": 4.0,
+            "statement": "the base-pair sweep is COMPLETE: refining the phase 1x adds no count the 32 base-pair phases do not already contain ([3, 4] against [3, 4])"
+        },
+        {
+            "parameter": "phase grid refinement",
+            "value": 10.0,
+            "quantity": 4.0,
+            "statement": "the base-pair sweep is COMPLETE: refining the phase 10x adds no count the 32 base-pair phases do not already contain ([3, 4] against [3, 4])"
+        },
+        {
+            "parameter": "phase grid refinement",
+            "value": 100.0,
+            "quantity": 4.0,
+            "statement": "the base-pair sweep is COMPLETE: refining the phase 100x adds no count the 32 base-pair phases do not already contain ([3, 4] against [3, 4])"
+        },
+        {
+            "parameter": "fan interfaces",
+            "value": 1.0,
+            "quantity": 6.0,
+            "statement": "the lattice fan over the continuum strip it approximates, converging to 1 from above as 1 + 3/(2m)"
+        },
+        {
+            "parameter": "fan interfaces",
+            "value": 4.0,
+            "quantity": 1.46938776,
+            "statement": "the lattice fan over the continuum strip it approximates, converging to 1 from above as 1 + 3/(2m)"
+        },
+        {
+            "parameter": "fan interfaces",
+            "value": 16.0,
+            "quantity": 1.09885536,
+            "statement": "the lattice fan over the continuum strip it approximates, converging to 1 from above as 1 + 3/(2m)"
+        },
+        {
+            "parameter": "fan interfaces",
+            "value": 64.0,
+            "quantity": 1.02374605,
+            "statement": "the lattice fan over the continuum strip it approximates, converging to 1 from above as 1 + 3/(2m)"
+        },
+        {
+            "parameter": "fan interfaces",
+            "value": 256.0,
+            "quantity": 1.0058785,
+            "statement": "the lattice fan over the continuum strip it approximates, converging to 1 from above as 1 + 3/(2m)"
+        },
+        {
+            "parameter": "placed secant over the mandate",
+            "value": 1.0,
+            "quantity": 1.0,
+            "statement": "the re-priced arm reproduces its own target secant at every hinge count"
+        },
+        {
+            "parameter": "placed secant over the mandate",
+            "value": 2.0,
+            "quantity": 1.0,
+            "statement": "the re-priced arm reproduces its own target secant at every hinge count"
+        },
+        {
+            "parameter": "placed secant over the mandate",
+            "value": 3.0,
+            "quantity": 1.0,
+            "statement": "the re-priced arm reproduces its own target secant at every hinge count"
+        },
+        {
+            "parameter": "placed secant over the mandate",
+            "value": 4.0,
+            "quantity": 1.0,
+            "statement": "the re-priced arm reproduces its own target secant at every hinge count"
+        },
+        {
+            "parameter": "placed secant over the mandate",
+            "value": 5.0,
+            "quantity": 1.0,
+            "statement": "the re-priced arm reproduces its own target secant at every hinge count"
+        },
+        {
+            "parameter": "placed secant over the mandate",
+            "value": 6.0,
+            "quantity": 1.0,
+            "statement": "the re-priced arm reproduces its own target secant at every hinge count"
+        },
+        {
+            "parameter": "placed secant over the mandate",
+            "value": 7.0,
+            "quantity": 1.0,
+            "statement": "the re-priced arm reproduces its own target secant at every hinge count"
+        },
+        {
+            "parameter": "placed secant over the mandate",
+            "value": 8.0,
+            "quantity": 1.0,
+            "statement": "the re-priced arm reproduces its own target secant at every hinge count"
+        },
+        {
+            "parameter": "placed secant over the mandate",
+            "value": 9.0,
+            "quantity": 1.0,
+            "statement": "the re-priced arm reproduces its own target secant at every hinge count"
+        },
+        {
+            "parameter": "placed secant over the mandate",
+            "value": 10.0,
+            "quantity": 1.0,
+            "statement": "the re-priced arm reproduces its own target secant at every hinge count"
+        },
+        {
+            "parameter": "placed secant over the mandate",
+            "value": 12.0,
+            "quantity": 1.0,
+            "statement": "the re-priced arm reproduces its own target secant at every hinge count"
+        },
+        {
+            "parameter": "placed secant over the mandate",
+            "value": 16.0,
+            "quantity": 1.0,
+            "statement": "the re-priced arm reproduces its own target secant at every hinge count"
+        },
+        {
+            "parameter": "placed secant over the mandate",
+            "value": 32.0,
+            "quantity": 1.0,
+            "statement": "the re-priced arm reproduces its own target secant at every hinge count"
+        }
+    ],
+    "verdict": {
+        "P1 the pitch and the demand": "PASS. Crossovers serve one INTERFACE every 32 bp = 10.88 nm, so a hinge line of n crossovers demands (n-1) x 10.88 nm of collinear interface. Sixteen demands 163.2 nm.",
+        "P2 does a 16-crossover hinge line exist": "FAIL, at every one of the 32 phases and in BOTH directions of the sheet. The largest hinge line a 40 nm tile carries is FOUR, at every phase; the other parity carries three at the 22 seven-column phases and four at the 10 eight-column ones. Sixteen needs 163.2 nm of collinear interface (4.08 tiles) longitudinally, or 33 duplexes = 88.8 nm (2.22 tiles) transversally - and the transverse line restrains the wrong axis in any case. The absolute geometric ceiling, a line spanning the tile dilated by its own arm, is SIX.",
+        "the best and worst phases": "The 10 centro-symmetric eight-column phases - [6, 7, 8, 9, 10, 22, 23, 24, 25, 26] bp - carry FOUR on BOTH parities. The other 22 carry four on one parity and three on the other, so a hinge line placed on the wrong parity there loses 25 %. The phases that maximise the hinge line are exactly C-0015's centro-symmetric ones, and nothing in either construction forced that.",
+        "P3 upstream": "PASS. The census reproduces C-0015 exactly: 56 crossovers at 10 phases, 49 at 22, 10 centro-symmetric phases, and it agrees with CrossoverLayout itself at every phase with departure 0.0.",
+        "P4 what the design does at the count that exists": "FAIL. C-0034's pipeline needs 10 crossovers to place an arm long enough to lift 10 nm by rotation, 12 for a design that also holds C-0023's ceiling at that stroke, and 3 to hold the 40 pN/nm ceiling at the acceptable stroke. The lattice supplies 4 on a full-length tile interface, 6 at the absolute geometric ceiling, and 2 per flexure at 45 paths. At four crossovers the arm places at 7.748 nm - sec 3's acceptable 3 nm stroke clears with a tangent of 36.58 pN/nm inside the ceiling, and the desired 10 nm stroke is out of geometric reach. At the one or two crossovers 45 independent flexures can each own, the tangent is 42.01-54.11 pN/nm, past C-0023's own ceiling, so even the ACCEPTABLE stroke fails.",
+        "P5 the conflict with C-0015's 45 attachments": "FAIL, and it is arithmetic. The whole tile carries 49-56 crossovers; 45 paths at 16 demand 720, which is 12.86x every crossover the sheet has. Even at ONE crossover per flexure the demand is 45 against 49-56 - 80-92 % of the inventory - and every one of those crossovers is already a structural load path in C-0009's and C-0015's grillage. The 3 x 15 grid and a 16-crossover hinge cannot be built on the same sheet.",
+        "P6 the continuum control": "PASS, and it settles what kind of fact this is. A continuum hinge line of the same length carries 3.676 crossovers of density, so the lattice quantisation is worth -18 % to +9 % - while the assertion is out by 4.35x. The verdict is a CONTINUUM fact about crossover density, not a quantisation artefact. The fan's own discreteness is likewise bounded: 6.0x at one interface, 1.47x at four, 1 + 3/(2m) asymptotically.",
+        "where sixteen crossovers CAN be found, and what they are worth": "Sixteen crossovers can be ASSEMBLED into one flexure - four interfaces of four is exactly sixteen - but interfaces compose in SERIES, not in parallel, because each carries only the moment of what is outboard of it and turns through its own angle. n_eff = n_i x 3(2m-1)/(m(2m+1)), so sixteen crossovers in that arrangement are worth 2.333 of hinge - 14.6 % of their own count - on a lever of 9.415 nm, and 45 of them assemble to 16.03 pN/nm, 2.08x too soft for the mandate.",
+        "maturity": "TRL 1-3. A COUNT on a lattice whose pitch is cited and measured. Nothing here is measured, no sheet has been built, and no routing here is a sequence design. The rigid-raft census is an UPPER bound on participation: C-0009's own result is that a point load is carried by its two nearest crossovers and essentially nothing else, so the realised count runs lower, never higher."
+    }
+}
