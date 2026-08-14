@@ -80,6 +80,8 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=anchoring.CrossbarTrioExistenceStudyKt        # T-127, does a torsion-feasible trio exist on the cap crossbar at all
 ./gradlew study -Pstudy=anchoring.ArmSlabClearanceStudyKt             # T-126, does the arm slab clear C-0035's tie-down path
 ./gradlew study -Pstudy=anchoring.CrossbarArrayPlacementStudyKt       # T-130, do C-0062's closing trio lattices place 34 times
+./gradlew study -Pstudy=anchoring.PinnedLegBudgetStudyKt              # T-132, does the leg budget survive the pinned base at one shared length
+./gradlew study -Pstudy=anchoring.OutputElementPlacementStudyKt       # T-133, is there an output element that does not lie in the plan
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.

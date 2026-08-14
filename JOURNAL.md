@@ -5917,3 +5917,248 @@ found to be wrong. That null was not the expected outcome and the claim reports 
 coordinator's retracted `C-0062` figures as a **gate-5 reproduction** and confirmed the filed numbers, and
 `T-127` had reported the divergence unprompted in the first place. The fix is now a step of the loop rather
 than a lesson in a file.
+
+## Iteration 13 — `T-129`: the flat placement travels the whole stroke, and stops at the layer it was designed against
+
+`C-0063` made the Gen-1 tile flat at **0.0706** of the free-tile stroke with **34 equal springs**,
+on a placement `C-0055`'s upward lattice actually supplies,
+and reported it at **one** of `C-0022`'s solved states.
+`C-0064` had just established that a one-state flatness verdict need not travel —
+the obstruction between states is a **sign**, not a magnitude —
+and named this the largest open item it left.
+`C-0065` and `C-0066` both carried the same exposure.
+
+**The answer is yes for the device the programme places, and only for a 10 nm layer.**
+Over the whole range `C-0018`'s placed 2 mM device traverses — gaps 10 → 7 nm at its own 0.192 V,
+**both ends solved by `C-0022`** — the same 34 equal springs dish **0.0789**;
+at `C-0032`'s 0.5 mM **0.0853**, at 10 mM **0.0896**.
+All three are inside `T-5b`'s 0.10, so the single-state verdict travels.
+**What the range costs is the margin**: 1.42× at the design state becomes **1.12×** at the tightest range,
+and it is the *compressed* end of the stroke that spends it —
+which is the sixth instance of this programme's standing discipline that a flatness number needs the state it is read at,
+now read as *the range it is read over*.
+
+**The exception is the 5 nm device, and it is the finding.**
+Against §3's 5 nm layer the same 34 roots dish **0.2000** over that device's range —
+and are **worse than no coupling at all at both** of its states
+(0.1104 against a free 0.0638 at the rest state; 0.2000 against 0.1648 at the 2 nm held state),
+which is the class `C-0063` itself convicted `C-0055`'s greedy placement for.
+The mechanism is the one `C-0063` names and does not apply to itself:
+**a placement is tuned to a load field**, and a 5 nm layer's free-tile dishing is 4.8× smaller,
+so there is far less for the coupling to correct and its own sag at 34 discrete points dominates.
+A 34-parameter distribution recovers it to **0.0565** at a peak ratio of **2.32** —
+far inside what `C-0060` prices — so this is a **scope correction, not an infeasibility**, and it is `CH-0080`.
+
+**The exclusion the task was warned to be suspicious of turned out not to matter.**
+`C-0022`'s 2 nm state is not a state of any 10 nm device —
+it demands **8 nm** of stroke against the **7.4235 nm** largest dead-load stroke `C-0050` finds anywhere at a 10 nm layer
+(6.0135 nm at §3's own grafting density), and `C-0017`'s theorem says a coupling only reduces it.
+But the device that *does* own that state was evaluated in its own right and is the one that fails,
+so removing the state does not remove the problem —
+which is the test a reader should apply to any convenient exclusion.
+One honest caveat came out of the same arithmetic and is recorded rather than smoothed:
+the dead-load test does not clear the **5 nm** device's own 3 nm either (1.5299 nm),
+so `C-0022`'s 2 nm state is held by its solved 0.368 V bias and not by a 100 pN dead load.
+
+**Three things were not expected.**
+The placement is the **argmin of the range objective as well as of the single-state one**:
+re-enumerating the centro-symmetric family exhaustively under a range objective —
+361 584 placements at the two phases the congruence admits, each priced under two objectives —
+found **0 of 198 288** at phase 24 better than `C-0063`'s own.
+The single-state search cost nothing in range performance, which the single-state claim could not have known.
+**And the phase is what the LAYER selects.**
+Under the 5 nm device's range instead, *nothing* at phase 24 clears the convention (best 0.1169),
+while a **phase-8** placement does with equal springs (**0.0895**) —
+and that one reads 0.2416 at the 10 nm design state.
+`C-0063` established that the eight-column phases are the flat ones under a 10 nm layer's load;
+**which of `C-0015`'s ten a design should take is decided by the layer**, and that is a design variable no claim had carried.
+And `C-0064`'s subset dichotomy transfers **in direction and not in exactness**:
+12 of the 14 subsets mixing the 2 nm state with a 10 nm state fail here against 14 of 14 on the 3 × 15 grid,
+because on these stations the antagonist is the **5 nm layer** rather than the 2 nm gap —
+the two states of that one device are anti-parallel **to each other**, cosine −0.9427,
+where every 10 nm device's own pair runs +0.9969 to +0.9998.
+**A device whose own operating range is anti-parallel to itself is a new object in this programme**,
+and it is not something a portfolio argument can dismiss.
+
+## Iteration 13 — `T-132`: the array's leg length was free all along, and what pinning the base costs is an *overspend* nobody had a name for
+
+`C-0065` left the leg-length composition as its open item 1 and said it *"can only tighten the verdict"*.
+It does not tighten it at all — **17 of 44 before, 17 of 44 after** — and the reason turned out to be worth more than the tightening would have been.
+
+**The array clause is free, and the cheap bound is the whole method.**
+`C-0065`'s bound 3 found that every one of `C-0063`'s 34 stations is the same helical phase class of its **own** host duplex.
+A leg base is a station displaced by the register's centre offset and then by ∓ half the row pitch **along that same duplex**,
+so the same congruence carries: the **68 leg bases** fall into exactly **2 classes of 34**, presenting **1** distinct `(low leg, high leg)` pair at every one of the seven row pitches.
+*"One leg length for 34 instances"* therefore collapses to *"one leg length for the two legs of one truss"*, before any junction is solved.
+The falsifier — more than two classes, or unequal populations, either of which would have killed the shared-length design on arithmetic alone — did not fire.
+
+**What pinning the base actually does is make it OVERSPEND the budget, not spend it.**
+`C-0052`'s conservation is that a leg's rotation trades the two misalignments one for one, so `ψ_base + ψ_cap` *equals* the quantised budget `|m τ − 90°|` for every rotation in the reducing sense.
+A pinned base has no rotation to choose and its sign need not be the reducing one, so the correct statement is an **inequality**:
+
+    ψ_base + ψ_cap ≥ |m τ − 90°|,   with equality only when the pinned deviation opposes the budget's sense.
+
+At the recommended design the two ends spend **81.13°** of a **45.13°** budget — **1.80×** — and the budget is honoured exactly at seven of the fifteen lengths and overspent at the other eight.
+That is a genuinely new statement about `C-0052`'s identity and it is asserted as a gate-3 test at every length and 61 pinned deviations.
+
+**And it changes nothing, because the leg's length was never the binding variable once the base is pinned.**
+At the 9 bp row **all 15** lengths of `C-0052`'s 12–26 envelope are representable *and* pass all nine predicates,
+at margins 1.815–2.443 on CanDo's rigidity and 1.364–1.836 on Fields et al.'s — a spread of only **1.35×**.
+The base misalignment, which is what `C-0037`'s frame couple reads as `cos²ψ`, is **18.0° at every one of them**: the register fixes it and no length can move it.
+The single best shared length is **12 steps, 4.08 nm**, at *every* surviving row — the same leg `C-0062` chose for the 10 bp design it recommended and the array cannot build.
+
+**Three things were not expected.**
+The pinned design is **better** than the free one at every representable row (2.443 against 2.410 at 9 bp, 2.380 against 2.354 at 11, 2.215 against 2.172 at 12),
+which is `C-0052`'s balance finding in a new place: a worse cap chord moves couple out of the plane that does not govern and into the one that does, and the margin is the minimum of the two.
+**The row the array can build carries 2.443 against the 2.446 of the row it cannot — 0.13 %.** `CH-0078` moved the recommendation and cost essentially nothing.
+And **a truss has two legs, which no upstream design table can express**: the register pins them at two *different* azimuths (−9.0° and −18.0° at the 9 bp row, 0.0° and +57.0° at the 10 bp),
+and because one length rotates both cap chords by the same `m τ`, their cap chords differ by that same folded angle at **every** length —
+a floor `|fold(δ_A − δ_B)|/2` that no leg length can beat.
+It is 4.5° where the design lives and **28.5°** at the 6 and 10 bp rows, above the 9.0° and 27.0° `C-0062` composes them at — [`CH-0082`](gpd/challenges/CH-0082-a-truss-has-two-legs-and-the-design-table-gives-it-one-base.md), not verdict-moving because both rows already fail another clause.
+
+**One sensitivity moves the verdict and is reported as such.**
+At a **0.5 nm lateral seat** the 9 bp row's register offers one admissible pair and its pinned base is past the half right angle, so *no* leg length is representable.
+`C-0065` swept the same axis and found it moved the register without moving its *placement* verdict; the pinned *design* verdict is the more fragile one.
+The seat is a free variable upstream (`C-0059` sweeps it), so this says which seat a registered array must choose — it does not say the design fails.
+Also recorded: `C-0062`'s cap floor turns out not to bind at all — removing it entirely changes nothing, because the pinned geometry already demands 63.1° where the chemistry asks 24.0°.
+
+**Process.** Two `CLAUDE.md` gotchas fired exactly as written: a private study record class collided across files in the same package (`PublishedTrio`), and a boolean read off a floating-point tie (`twoLegFloor > capFloor` at the 8 bp row, where the two are the same number) had to be given an absolute tolerance before it stopped reporting a tie as a finding.
+A sibling's mid-TDD `anchoring/OutputElementPlacementTest.kt` needed `--drop-file` for every run.
+`tools/verify.sh` **BUILD SUCCESSFUL in 12 m 10 s** on the whole suite with that one file dropped; the result file re-emitted through `tools/study.sh` and diffed **byte-for-byte identical**.
+
+**And a determinism reading worth keeping.**
+Two runs of the finished code differ in **28 lines of 1 423** — all of them inside the 31 subset minimaxes,
+where a 34-parameter descent lands in a neighbouring basin of an equally optimal *manifold*, exactly as `C-0064` reported —
+while the four **operating ranges**, all four exhaustive placement enumerations over 723 168 evaluations,
+and every other section of the file are **byte-identical**, with no verdict flipped.
+A placement sweep compares *distinct designs* at a rounded objective and is reproducible;
+a continuous descent on a flat set is not, however carefully its decisions are rounded.
+`tools/verify.sh`: **BUILD SUCCESSFUL in 12 m 19 s**, the whole suite, nothing dropped.
+
+## Iteration 13 — `T-133`: the search for an element *out of* the plan returned an element *in* it, because the plan was never what refused the flexure
+
+`C-0065` left the truss branch hanging on one sentence:
+the trio array places 34 times as a standoff, and *"the element it caps does not"* —
+`C-0030`'s flexure at 34 paths is 27.41 nm of span, 7 levels, **12 of 34**.
+Every coupling element this programme has priced lies in the plan,
+so the task was formulated to go looking out of it:
+along the surface normal, folded, or nested.
+
+**There is nothing out there, and nothing needed to be.**
+The whole element space is closed form.
+`C-0023` established that DNA's compliance comes in exactly two kinds,
+so there are only five ways to obtain a normal-direction compliance at all,
+and each has a length at a stated stiffness that costs one line:
+`S/k` axial (**1122 nm**), `3k_BT/(kb)` entropic (6.04 nm, and **one-sided**),
+`√(k_θ/k)` at a hinge (3.72 nm), `(c EI/k)^(1/3)` in bending, `GJ/(kr²)` in torsion (64.8 nm).
+The only genuinely out-of-plane mechanism is the axial one —
+a body along `z` loaded along `z` is loaded along its **own axis**, which is `C-0023`'s refused corner —
+and it asks for **112×** `C-0017`'s entire 10 nm envelope.
+To bend such a member instead, the load has to be transverse to it, which is the plan again.
+
+**What refuses the flexure is its END CONDITION, and it is one cube root.**
+A beam supported twice and loaded at its midspan has `c ∈ [48, 192]`;
+one supported once and loaded at its far end has `c ∈ (0, 12]`;
+the span is `c^(1/3)`.
+So the same duplex, at the same rigidity and the same stiffness,
+is 22.41–35.58 nm in the first topology and at most 14.12 nm in the second.
+Against a plan budget of **8.19 nm** the first family is refused
+**at every span, at every end joint and on every placement** — 2.74× at its own floor —
+which is strictly stronger than a count of 12 on one placement.
+
+**The budget itself is exact and it is not `C-0063`'s.**
+`3a + 2(15 − a) = 34` forces four rows of three (`C-0063`'s own bound 1),
+and three roots on a 10.88 nm lattice cap a rooted element at `pitch − d`, because
+at most one of the two adjacent pairs can be made to diverge and every other pair is same-sense or converging.
+So **8.19 nm holds for every 34-root placement on the upward lattice**, not just the one that was swept;
+the bisected ceiling over `C-0063`'s own rows agrees to under `1e−9` nm.
+
+**Two elements place 34 times at one level, and both lie in the plan.**
+`C-0055`/`C-0063`'s own hinge-rooted arm at **8.16439 nm** —
+34 of 34, one level, 0 overlaps, 0.463 of the footprint,
+tangent minimum 30.03 pN/nm over `[0, 3]` clearing **6 of `C-0017`'s six** 2 mM floors, 2.941 pN per path, two-sided —
+and a **standoff-headed crank** at **5.331 nm**, 1.53× shorter,
+which pays for it with a second undemonstrated motif, a compression member (2.45× of Euler margin)
+and two of the six stability floors.
+
+**The finding that was not expected is that the whole budget is one inequality on `c`, and the design sits inside it by 2–3 %.**
+`L ≤ 8.19 nm` is `c(ρ_n, ρ_f) ≤ 2.3416`.
+Bisecting `C-0039`'s exact elastica on each end in turn:
+at a one-crossover root the **tip** may be no stiffer than **79.68 pN·nm/rad**, and `C-0034`'s `A2` is **78.24**;
+at an `A2` tip the **root** may be no stiffer than **13.93**, and one antiparallel crossover is **13.53**.
+`C-0055` chose the root because it is the unused upward azimuth
+and `C-0034` chose the tip because a duplex end has exactly two strand termini —
+neither knew about this bound, and both land inside it with no margin.
+
+**A second unexpected thing: the window has a FLOOR.**
+A pinned tip on a one-crossover root asks for **3.591 nm**, and `C-0039`'s exact solver refuses any arm below 1.5× the stroke,
+where the tip turns past 42° and the chord draw-in is a large fraction of the arm.
+It is **short enough to place and too short to work** —
+a refusal this branch had not met before, and the reason the rooted window is 4.50–8.19 nm rather than 0–8.19.
+
+**The truss is the wrong root, and that is `CH-0081`.**
+A rigid root with a free tip is `c = 3` in the small-rotation limit and 3.37 solved: **9.247 nm**, 12.9 % past the budget, 24 of 34.
+The truss's whole virtue — a base that does not rotate — is what pushes `c` up,
+and `c^(1/3)` takes the plan length with it.
+So the array that places 34 times as a standoff cannot carry an output element at all:
+what it would cap is either a two-support flexure (refused by 2.74×) or an arm on a rigid root (refused by 12.9 %).
+
+**Three sensitivities close the 0.0256 nm margin, and none of them is exotic**:
+the 2.73 nm square-lattice interhelical distance (18 of 34) — `C-0066`'s own flip in a new place —
+the **top** of Chen et al.'s fitted `α` bracket, which is an experimental range and not a modelling choice (30 of 34),
+and §3's own 45 paths (24 of 34).
+That last one is worth stating plainly: **34 is the count the plan budget prefers**, not a rounding of 45,
+because more paths make each element *longer* (`C-0023`'s `L ∝ n^(1/3)`).
+It also means the branch now has two claims whose headline sits inside 0.03 nm on a model with no scatter in it at all,
+which is `T-134`.
+
+### Iteration 13 — the plan was never what refused the flexure
+
+Three loops. Every number below was grepped out of its claim first, and the full suite was run to completion
+before this was written — the two steps the coordinator skipped earlier in the session.
+
+**`C-0069` answered its task by refuting the task's premise.** `T-133` asked for an output element that does
+not lie in the plan, on the reasoning that in-plane spans are what fail to pack. **No such element exists,
+and none is needed, because the plan was never what refused the flexure — its END CONDITION was.**
+A bending element's plan length is `(c EI/k)^(1/3)` and `c` is fixed by *topology*: 48–192 supported twice
+and loaded at midspan, ≤ 12 supported once and loaded at the end. Three closed-form bounds then settle the
+space before any packer runs. The plan budget on **every** 34-root placement is `pitch − d = 8.19 nm`
+exactly, because four rows of three are forced by `3a + 2(15−a) = 34`. The two-support family's **shortest
+possible** member is **22.41 nm — 2.74× over** — so it is refused at every span, every end joint and every
+placement, which is strictly stronger than `C-0065`'s 12 of 34. And the normal direction supplies only
+**axial** stiffness, `S/k = 1122 nm`, 112× the whole envelope: **the only out-of-plane compliance DNA has is
+axial.** Folding *shrinks* the budget rather than growing it.
+Of an 11-row catalogue **3 place all 34 at one level and 2 survive every clause**, and the survivor is
+`C-0055`/`C-0063`'s **own hinge-rooted arm** — 8.16439 nm, 34 of 34, one level, tangent minimum
+**30.03 pN/nm** clearing **6 of `C-0017`'s six** 2 mM floors at 2.941 pN per path.
+The budget reduces to `c ≤ 2.3416`, and **both of the arm's joints sit inside it by 1.8 % and 2.9 %** —
+neither chosen for that reason, so the design has no margin on either. Its `CH-0081` is the sting for the
+other branch: a truss standoff is a **root**, and a rigid root demands a *longer* arm than the plan admits,
+so the array that places 34 times as a standoff cannot carry an output element at all.
+
+**`C-0068` found that the layer selects the phase.** `C-0063`'s placement is flat over the range its own
+device traverses **with equal springs** — 0.0789 / 0.0853 / 0.0896 at 2 mM, 0.5 mM and 10 mM, all inside
+`T-5b`'s 0.10 against 0.0706 at the single state — so the one-state verdict travels and what the range costs
+is the margin, 1.42× → 1.12×. But the **5 nm device fails**: equal springs dish 0.2000 and are worse than no
+coupling at all at *both* its states, while a **phase-8** placement clears it at 0.0895 and reads 0.2416 at
+the 10 nm design state. Re-enumerating the centro-symmetric family exhaustively under a *range* objective
+found **0 of 198 288** better than `C-0063`'s own at phase 24 — it **is** the range argmin, not merely the
+single-state one.
+
+**`C-0070` found the shared-length clause costs nothing, by counting.** `C-0065`'s phase-class congruence
+carries from the station to the **68 leg bases**, which fall into exactly **2 classes of 34** presenting
+**one** distinct leg pair — so *"one leg length for 34 instances"* collapses to *"one leg length for the two
+legs of one truss"*, and the declared falsifier did not fire. What pinning does is make the base
+**overspend** `C-0052`'s budget rather than spend it exactly (81.13° of a 45.13° budget) while changing
+nothing: at the 9 bp row all fifteen leg lengths are representable and pass all nine predicates.
+
+**Two coordinator failures this iteration, both caught by agents rather than by me.**
+`git add -A` swept a sibling's mid-TDD test into `HEAD` **without its implementation**, so the pushed commit
+did not compile. The mistake is structural: this project mandates TDD, so a window in which a test exists
+and its main source does not is *guaranteed* during a parallel iteration, and `git add -A` commits that
+window by construction. `tools/verify.sh --committed` exists (`P-10`) precisely to catch it and I did not
+run it. `T-132` reported it unprompted. Fixed, and recorded in `CLAUDE.md`.
+And `C-0064`'s figures were revised after I read them, so the journal briefly carried two different numbers
+for one quantity — mine and the agent's. Corrected against the filed claim, and the revision turned out to
+contain the more important half: over the range each device actually traverses the minimax is
+0.0373 / 0.0435 / 0.0620 / 0.0504, **all four inside the tolerance**.

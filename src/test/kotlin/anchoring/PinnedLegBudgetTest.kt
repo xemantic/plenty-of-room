@@ -318,6 +318,39 @@ class PinnedLegBudgetTest {
         }
     }
 
+    @Test
+    fun `gate 3 - the pinned 9 bp row reproduces this task's own headline design`() {
+        val pair = requireNotNull(register.nearestPair(9))
+        // C-0062's own cap and flexure floors at the 9 bp row, consumed as numbers here and
+        // from its result file in the study
+        val outcome = bestPinnedDesign(pair, 24.0 / degrees, 24.0 / degrees, 12..26)
+        val best = requireNotNull(outcome.best)
+        assert(outcome.bestLegSteps == 12) { "expected 12 steps, got ${outcome.bestLegSteps}" }
+        assert(best.baseDegrees.isCloseTo(18.0, 1e-6))
+        assert(best.marginCanDo.isCloseTo(2.44282872, 1e-6))
+        assert(best.marginFields.isCloseTo(1.83643612, 1e-6))
+        // and the budget is OVERSPENT, which is the whole point of pinning the base
+        assert(best.budgetDegrees.isCloseTo(45.126523, 1e-5))
+        assert(best.overspendDegrees.isCloseTo(36.0, 1e-6))
+        // every leg length in C-0052's envelope is representable and passes
+        assert(outcome.representableLengths == 15)
+        assert(outcome.passingLengths == 15)
+    }
+
+    @Test
+    fun `gate 3 - CHEAP BOUND 2 holds at the register's own pinned pair`() {
+        val pair = requireNotNull(register.nearestPair(9))
+        val a = pair.legA.first().signedDeviation
+        val b = pair.legB.first().signedDeviation
+        val floor = sharedCapFloor(a, b) * degrees
+        assert(floor.isCloseTo(4.5, 1e-6)) { "the 9 bp row's two-leg floor is $floor" }
+        val bestWorst = (12..26).minOf {
+            pinnedTrussDesign(it, a, b, 0.0, 0.0, 9).capGeometricDegrees
+        }
+        assert(bestWorst >= floor - 1e-9)
+        assert(bestWorst <= floor + 0.5 * chordSampleSpacing(12..26) * degrees + 1e-9)
+    }
+
     // ------------------------------------------------------------------ gate 4 — convergence
 
     @Test

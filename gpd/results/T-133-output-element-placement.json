@@ -1,0 +1,894 @@
+{
+  "task": "T-133",
+  "leaf": "A8.2",
+  "conditions": {
+    "temperature": "300 K",
+    "medium": "aqueous 2 mM MgCl2",
+    "k_BT": "4.141947 pN nm",
+    "sheet": "single-layer square-lattice Rothemund, 15 duplexes at the SAXS 2.69 nm, 40.0 x 40.35 nm, rise 0.34 nm, crossover phase 24",
+    "placement": "C-0063's 34 upward roots at phase 24, read from its result file",
+    "plan convention": "a duplex is a rectangle of width 2.69 nm; two at exactly that are tangent and admissible (C-0041, C-0053); a rooted element occupies [root, root +- L] and the next along its row may start at high + d",
+    "coupling": "C-0017's 33.3333 pN/nm as a SUM over 34 paths, placed on the SECANT at Sec.3's acceptable 3 nm stroke",
+    "allowables": "the 10 pN per-path unzip allowable (C-0006/CH-0029) and C-0049's n a/s secant ceiling; C-0017's six 2 mM stability floors, CITED",
+    "units": "nm, pN, pN/nm, pN nm/rad"
+  },
+  "decision": "YES — 3 of 11 catalogue rows place 34 times at one level and 2 of those survive every clause (Q5, Q7), the shortest being Q7 at 5.331 nm; and EVERY ONE OF THEM LIES IN THE PLAN",
+  "bounds": [
+    {
+      "name": "rows of three forced by the count",
+      "value": 4.0,
+      "unit": "rows",
+      "against": 4.0,
+      "ratio": 1.0,
+      "fired": false,
+      "settles": "C-0063's bound 1 in a new place: 3a + 2(15 - a) = 34 forces FOUR rows of three, so every 34-root placement on the upward lattice carries a row of three"
+    },
+    {
+      "name": "the row-of-three length ceiling, pitch - d",
+      "value": 8.19,
+      "unit": "nm",
+      "against": 10.88,
+      "ratio": 0.752757353,
+      "fired": true,
+      "settles": "THE PLAN BUDGET OF ANY ROOTED ELEMENT, over every placement on the lattice and not only C-0063's — and the solved ceiling over C-0063's own rows agrees to 8.92e-10 nm"
+    },
+    {
+      "name": "the two-support flexure's own floor, (48 EI/k)^(1/3)",
+      "value": 22.4141917,
+      "unit": "nm",
+      "against": 8.19,
+      "ratio": 2.73677554,
+      "fired": true,
+      "settles": "THE ANSWER FOR THE WHOLE E3/C-0030 FAMILY: its softest possible end condition is still 2.76x the plan budget, so it is refused at every span, at every end joint and on every placement — strictly stronger than C-0065's 12 of 34"
+    },
+    {
+      "name": "the normal direction, S/k",
+      "value": 1122.0,
+      "unit": "nm",
+      "against": 10.0,
+      "ratio": 112.2,
+      "fired": true,
+      "settles": "a member standing along z and loaded along z is loaded AXIALLY, so 'out of the plan along the surface normal' asks for 112x C-0017's whole 10 nm envelope"
+    },
+    {
+      "name": "the rooted element's own kinematic floor, 1.5 x the stroke",
+      "value": 4.5,
+      "unit": "nm",
+      "against": 8.19,
+      "ratio": 0.549450549,
+      "fired": true,
+      "settles": "the window has a FLOOR as well as a ceiling: a lever shorter than this turns more than 42 degrees to deliver a 3 nm stroke and C-0039's chord draw-in becomes a large fraction of the arm, so the rooted-element window is 4.50-8.19 nm, 1.82x wide"
+    },
+    {
+      "name": "the across-row slack a fold would need",
+      "value": 0.0,
+      "unit": "nm",
+      "against": 2.69,
+      "ratio": 0.0,
+      "fired": true,
+      "settles": "a fold trades length along a row for width across the rows, and the across-row pitch IS one duplex (C-0041's Fact A) — it spends the only slack the placement has to buy a direction that has none"
+    }
+  ],
+  "mechanisms": [
+    {
+      "mechanism": "axial stretch of a duplex",
+      "law": "l = S/k",
+      "lengthDemanded": 1122.0,
+      "overCeiling": 136.996337,
+      "twoSided": true,
+      "liesInPlan": false,
+      "admitted": false,
+      "verdict": "REFUSED — 137x the plan budget and 112x the 10 nm envelope"
+    },
+    {
+      "mechanism": "an entropic single strand",
+      "law": "L_c = 3k_BT/(k b)",
+      "lengthDemanded": 6.03540849,
+      "overCeiling": 0.736924113,
+      "twoSided": false,
+      "liesInPlan": false,
+      "admitted": false,
+      "verdict": "REFUSED — compact, but ONE-SIDED: C-0023's E2 returns exactly zero reaction and exactly zero tangent at negative argument, and C-0023's own hold-down verdict rests on a two-sided coupling"
+    },
+    {
+      "mechanism": "rotation at a hinge on a lever",
+      "law": "r = sqrt(k_theta/k)",
+      "lengthDemanded": 3.71483512,
+      "overCeiling": 0.453581822,
+      "twoSided": true,
+      "liesInPlan": true,
+      "admitted": true,
+      "verdict": "ADMITTED — 0.45 of the plan budget, and the most compact mechanism DNA offers"
+    },
+    {
+      "mechanism": "bending, supported once and loaded at the far end",
+      "law": "L = (c EI/k)^(1/3), c in (0, 12]",
+      "lengthDemanded": 14.120056,
+      "overCeiling": 1.72406056,
+      "twoSided": true,
+      "liesInPlan": true,
+      "admitted": true,
+      "verdict": "ADMITTED CONDITIONALLY — the family spans 0.62-14.12 nm and the plan budget cuts it at c <= 2.3417"
+    },
+    {
+      "mechanism": "bending, supported twice and loaded at midspan",
+      "law": "L = (c EI/k)^(1/3), c in [48, 192]",
+      "lengthDemanded": 22.4141917,
+      "overCeiling": 2.73677554,
+      "twoSided": true,
+      "liesInPlan": true,
+      "admitted": false,
+      "verdict": "REFUSED — at every end condition. Its SHORTEST member is 2.74x the plan budget"
+    },
+    {
+      "mechanism": "torsion of a duplex on a lever",
+      "law": "L = GJ/(k r^2)",
+      "lengthDemanded": 64.8415583,
+      "overCeiling": 7.91716219,
+      "twoSided": true,
+      "liesInPlan": true,
+      "admitted": false,
+      "verdict": "REFUSED at a one-duplex lever — 7.9x the plan budget, and the lever it would need to fit is itself in plan"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "Q1",
+      "name": "C-0030's coupled-standoff flexure, across the rows",
+      "family": "bending, supported twice and loaded at midspan",
+      "nearRestraint": 27.5624074,
+      "farRestraint": 27.5624074,
+      "length": 27.4119472,
+      "lengthBasePairs": 80.6233741,
+      "endFactor": 87.7994209,
+      "marginToCeiling": -19.2219472,
+      "demanded": 34,
+      "placed": 12,
+      "levelsRequired": 6,
+      "singleLevel": false,
+      "overlappingPairs": 76,
+      "planAreaFraction": 1.55334367,
+      "assembledSecant": 33.3333333,
+      "assembledTangentAtStroke": 33.2846248,
+      "assembledTangentMinimum": 30.8905542,
+      "floorsCleared": 6,
+      "perPathForce": 2.94117647,
+      "insideUnzipAllowable": true,
+      "perPathSecantCeiling": 113.333333,
+      "insideSecantCeiling": true,
+      "twoSided": true,
+      "placesInFull": false,
+      "verdict": "DOES NOT PLACE — 12 of 34"
+    },
+    {
+      "id": "Q2",
+      "name": "C-0030's coupled-standoff flexure, along the rows",
+      "family": "bending, supported twice and loaded at midspan",
+      "nearRestraint": 27.5624074,
+      "farRestraint": 27.5624074,
+      "length": 27.4119472,
+      "lengthBasePairs": 80.6233741,
+      "endFactor": 87.7994209,
+      "marginToCeiling": -19.2219472,
+      "demanded": 34,
+      "placed": 23,
+      "levelsRequired": 2,
+      "singleLevel": false,
+      "overlappingPairs": 15,
+      "planAreaFraction": 1.55334367,
+      "assembledSecant": 33.3333333,
+      "assembledTangentAtStroke": 33.2846248,
+      "assembledTangentMinimum": 30.8905542,
+      "floorsCleared": 6,
+      "perPathForce": 2.94117647,
+      "insideUnzipAllowable": true,
+      "perPathSecantCeiling": 113.333333,
+      "insideSecantCeiling": true,
+      "twoSided": true,
+      "placesInFull": false,
+      "verdict": "DOES NOT PLACE — 23 of 34"
+    },
+    {
+      "id": "Q3",
+      "name": "C-0023's E3a, simply supported at both ends, load at midspan",
+      "family": "bending, supported twice and loaded at midspan",
+      "nearRestraint": 0.0,
+      "farRestraint": 0.0,
+      "length": 22.4141917,
+      "lengthBasePairs": 65.9240932,
+      "endFactor": 48.0,
+      "marginToCeiling": -14.2241917,
+      "demanded": 34,
+      "placed": 23,
+      "levelsRequired": 2,
+      "singleLevel": false,
+      "overlappingPairs": 15,
+      "planAreaFraction": 1.27013753,
+      "assembledSecant": 33.3333333,
+      "assembledTangentAtStroke": 33.3333333,
+      "assembledTangentMinimum": 33.3333333,
+      "floorsCleared": 6,
+      "perPathForce": 2.94117647,
+      "insideUnzipAllowable": true,
+      "perPathSecantCeiling": 113.333333,
+      "insideSecantCeiling": true,
+      "twoSided": true,
+      "placesInFull": false,
+      "verdict": "DOES NOT PLACE — 23 of 34"
+    },
+    {
+      "id": "Q4",
+      "name": "C-0023's E3a, built in at both ends, load at midspan",
+      "family": "bending, supported twice and loaded at midspan",
+      "nearRestraint": 1000000.0,
+      "farRestraint": 1000000.0,
+      "length": 35.5803115,
+      "lengthBasePairs": 104.647975,
+      "endFactor": 192.0,
+      "marginToCeiling": -27.3903115,
+      "demanded": 34,
+      "placed": 15,
+      "levelsRequired": 3,
+      "singleLevel": false,
+      "overlappingPairs": 23,
+      "planAreaFraction": 2.01621765,
+      "assembledSecant": 33.3333333,
+      "assembledTangentAtStroke": 33.3333333,
+      "assembledTangentMinimum": 33.3333333,
+      "floorsCleared": 6,
+      "perPathForce": 2.94117647,
+      "insideUnzipAllowable": true,
+      "perPathSecantCeiling": 113.333333,
+      "insideSecantCeiling": true,
+      "twoSided": true,
+      "placesInFull": false,
+      "verdict": "DOES NOT PLACE — 15 of 34"
+    },
+    {
+      "id": "Q5",
+      "name": "C-0039's E5a1 — one crossover root, C-0034's A2 tip",
+      "family": "bending, supported once and loaded at the far end",
+      "nearRestraint": 13.5294118,
+      "farRestraint": 78.2352941,
+      "length": 8.16439083,
+      "lengthBasePairs": 24.0129142,
+      "endFactor": 2.31976158,
+      "marginToCeiling": 0.0256091734,
+      "demanded": 34,
+      "placed": 34,
+      "levelsRequired": 1,
+      "singleLevel": true,
+      "overlappingPairs": 0,
+      "planAreaFraction": 0.462648814,
+      "assembledSecant": 33.3333333,
+      "assembledTangentAtStroke": 40.8120233,
+      "assembledTangentMinimum": 30.028762,
+      "floorsCleared": 6,
+      "perPathForce": 2.94117647,
+      "insideUnzipAllowable": true,
+      "perPathSecantCeiling": 113.333333,
+      "insideSecantCeiling": true,
+      "twoSided": true,
+      "placesInFull": true,
+      "verdict": "PLACES — 34 of 34, one level"
+    },
+    {
+      "id": "Q6",
+      "name": "the same arm with a PINNED tip (C-0029's one-link pin)",
+      "family": "bending, supported once and loaded at the far end",
+      "nearRestraint": 13.5294118,
+      "farRestraint": 0.0,
+      "length": 3.59058936,
+      "lengthBasePairs": 10.5605569,
+      "endFactor": 0.197319139,
+      "marginToCeiling": 4.59941064,
+      "demanded": 34,
+      "placed": 0,
+      "levelsRequired": -1,
+      "singleLevel": false,
+      "overlappingPairs": 0,
+      "planAreaFraction": 0.20346673,
+      "assembledSecant": 33.3333333,
+      "assembledTangentAtStroke": 0.0,
+      "assembledTangentMinimum": 0.0,
+      "floorsCleared": 0,
+      "perPathForce": 2.94117647,
+      "insideUnzipAllowable": true,
+      "perPathSecantCeiling": 113.333333,
+      "insideSecantCeiling": true,
+      "twoSided": true,
+      "placesInFull": false,
+      "verdict": "REFUSED BY ITS OWN KINEMATICS — the small-rotation arm the stiffness demands is 3.591 nm, below the 4.50 nm floor at which a 3 nm stroke is a 42 degree rotation and C-0039's chord draw-in is a large fraction of the arm. It is short enough to place and too short to work"
+    },
+    {
+      "id": "Q7",
+      "name": "the standoff-headed crank — C-0028's B2 base at 8 nm, pinned tip",
+      "family": "bending, supported once and loaded at the far end",
+      "nearRestraint": 25.8989778,
+      "farRestraint": 0.0,
+      "length": 5.33074719,
+      "lengthBasePairs": 15.6786682,
+      "endFactor": 0.645708127,
+      "marginToCeiling": 2.85925281,
+      "demanded": 34,
+      "placed": 34,
+      "levelsRequired": 1,
+      "singleLevel": true,
+      "overlappingPairs": 0,
+      "planAreaFraction": 0.302075674,
+      "assembledSecant": 33.3333333,
+      "assembledTangentAtStroke": 53.8427299,
+      "assembledTangentMinimum": 25.8209476,
+      "floorsCleared": 4,
+      "perPathForce": 2.94117647,
+      "insideUnzipAllowable": true,
+      "perPathSecantCeiling": 113.333333,
+      "insideSecantCeiling": true,
+      "twoSided": true,
+      "placesInFull": true,
+      "verdict": "PLACES — 34 of 34, one level"
+    },
+    {
+      "id": "Q8",
+      "name": "a RIGID root with a pinned tip — c = 3 exactly",
+      "family": "bending, supported once and loaded at the far end",
+      "nearRestraint": 1000000.0,
+      "farRestraint": 0.0,
+      "length": 9.24698738,
+      "lengthBasePairs": 27.1970217,
+      "endFactor": 3.3703328,
+      "marginToCeiling": -1.05698738,
+      "demanded": 34,
+      "placed": 24,
+      "levelsRequired": 2,
+      "singleLevel": false,
+      "overlappingPairs": 5,
+      "planAreaFraction": 0.523995952,
+      "assembledSecant": 33.3333333,
+      "assembledTangentAtStroke": 41.6910053,
+      "assembledTangentMinimum": 29.6706604,
+      "floorsCleared": 6,
+      "perPathForce": 2.94117647,
+      "insideUnzipAllowable": true,
+      "perPathSecantCeiling": 113.333333,
+      "insideSecantCeiling": true,
+      "twoSided": true,
+      "placesInFull": false,
+      "verdict": "DOES NOT PLACE — 24 of 34"
+    },
+    {
+      "id": "Q9",
+      "name": "one crossover root with a GUIDED tip — c -> 12",
+      "family": "bending, supported once and loaded at the far end",
+      "nearRestraint": 13.5294118,
+      "farRestraint": 1000000.0,
+      "length": 10.2244611,
+      "lengthBasePairs": 30.0719445,
+      "endFactor": 4.55610029,
+      "marginToCeiling": -2.03446112,
+      "demanded": 34,
+      "placed": 23,
+      "levelsRequired": 2,
+      "singleLevel": false,
+      "overlappingPairs": 5,
+      "planAreaFraction": 0.57938613,
+      "assembledSecant": 33.3333333,
+      "assembledTangentAtStroke": 39.4741748,
+      "assembledTangentMinimum": 30.5531866,
+      "floorsCleared": 6,
+      "perPathForce": 2.94117647,
+      "insideUnzipAllowable": true,
+      "perPathSecantCeiling": 113.333333,
+      "insideSecantCeiling": true,
+      "twoSided": true,
+      "placesInFull": false,
+      "verdict": "DOES NOT PLACE — 23 of 34"
+    },
+    {
+      "id": "Q10",
+      "name": "C-0023's E1 — a duplex standing along z, loaded along z",
+      "family": "axial stretch",
+      "nearRestraint": 0.0,
+      "farRestraint": 0.0,
+      "length": 1122.0,
+      "lengthBasePairs": 3300.0,
+      "endFactor": 6020749.57,
+      "marginToCeiling": -1113.81,
+      "demanded": 34,
+      "placed": 0,
+      "levelsRequired": 3,
+      "singleLevel": false,
+      "overlappingPairs": 23,
+      "planAreaFraction": 63.58,
+      "assembledSecant": 33.3333333,
+      "assembledTangentAtStroke": 33.3333333,
+      "assembledTangentMinimum": 33.3333333,
+      "floorsCleared": 6,
+      "perPathForce": 2.94117647,
+      "insideUnzipAllowable": true,
+      "perPathSecantCeiling": 113.333333,
+      "insideSecantCeiling": true,
+      "twoSided": true,
+      "placesInFull": false,
+      "verdict": "DOES NOT PLACE — 0 of 34"
+    },
+    {
+      "id": "Q11",
+      "name": "C-0023's E2 — a single strand",
+      "family": "entropic",
+      "nearRestraint": 0.0,
+      "farRestraint": 0.0,
+      "length": 6.03540849,
+      "lengthBasePairs": 17.7512014,
+      "endFactor": 0.93711308,
+      "marginToCeiling": 2.15459151,
+      "demanded": 34,
+      "placed": 34,
+      "levelsRequired": 1,
+      "singleLevel": true,
+      "overlappingPairs": 0,
+      "planAreaFraction": 0.342006481,
+      "assembledSecant": 39.8258769,
+      "assembledTangentAtStroke": 56.9975112,
+      "assembledTangentMinimum": 33.3333333,
+      "floorsCleared": 6,
+      "perPathForce": 3.51404796,
+      "insideUnzipAllowable": true,
+      "perPathSecantCeiling": 113.333333,
+      "insideSecantCeiling": true,
+      "twoSided": false,
+      "placesInFull": true,
+      "verdict": "PLACES — 34 of 34, one level"
+    }
+  ],
+  "window": [
+    {
+      "axis": "far restraint at a one-crossover root",
+      "heldRestraint": 13.5294118,
+      "heldName": "one crossover, 13.53 pN nm/rad",
+      "ceilingRestraint": 79.6781387,
+      "ceilingIsSearchCap": false,
+      "armAtCeiling": 8.18999945,
+      "note": "the tip joint may be no stiffer than 79.68 pN nm/rad"
+    },
+    {
+      "axis": "far restraint at a two-crossover root",
+      "heldRestraint": 27.0588235,
+      "heldName": "two crossovers",
+      "ceilingRestraint": 47.6235873,
+      "ceilingIsSearchCap": false,
+      "armAtCeiling": 8.1899999,
+      "note": "the tip joint may be no stiffer than 47.62 pN nm/rad"
+    },
+    {
+      "axis": "far restraint at C-0028's B2 standoff head",
+      "heldRestraint": 25.8989778,
+      "heldName": "a standoff head on C-0028's B2 base at 8 nm",
+      "ceilingRestraint": 49.4595151,
+      "ceilingIsSearchCap": false,
+      "armAtCeiling": 8.1899993,
+      "note": "the tip joint may be no stiffer than 49.46 pN nm/rad"
+    },
+    {
+      "axis": "near restraint at C-0034's A2 tip",
+      "heldRestraint": 78.2352941,
+      "heldName": "C-0034's A2, a duplex end with two strand termini",
+      "ceilingRestraint": 13.9303697,
+      "ceilingIsSearchCap": false,
+      "armAtCeiling": 8.19,
+      "note": "the ROOT may be no stiffer than this, which is what refuses a truss standoff as a root: a rigid root demands a longer arm, not a shorter one"
+    }
+  ],
+  "orientations": [
+    {
+      "element": "C-0039's E5a1 arm",
+      "length": 8.16439083,
+      "samples": 720,
+      "feasibleOrientations": 720,
+      "singleLevelOrientations": 62,
+      "minimumOverlappingPairs": 0,
+      "minimumMemberClashPairs": 0,
+      "bestAngleDegrees": 0.0
+    },
+    {
+      "element": "C-0030's coupled flexure",
+      "length": 27.4119472,
+      "samples": 720,
+      "feasibleOrientations": 720,
+      "singleLevelOrientations": 0,
+      "minimumOverlappingPairs": 14,
+      "minimumMemberClashPairs": 0,
+      "bestAngleDegrees": 123.5
+    }
+  ],
+  "sensitivities": [
+    {
+      "axis": "reference",
+      "reading": "2.69 nm SAXS, EI 230, one crossover, 34 paths",
+      "lengthCeiling": 8.19,
+      "armLength": 8.16439083,
+      "placed": 34,
+      "verdictMoves": false,
+      "note": "C-0055's arm on C-0063's placement"
+    },
+    {
+      "axis": "exclusion width",
+      "reading": "2.73 nm, the square-lattice SAXS value",
+      "lengthCeiling": 8.15,
+      "armLength": 8.16439083,
+      "placed": 18,
+      "verdictMoves": true,
+      "note": "C-0066's own flip, in a new place: the arm no longer clears the row of three"
+    },
+    {
+      "axis": "exclusion width",
+      "reading": "2.0 nm, the steric diameter",
+      "lengthCeiling": 8.88,
+      "armLength": 8.16439083,
+      "placed": 34,
+      "verdictMoves": false,
+      "note": "the loosest reading — the budget widens to 8.88 nm and nothing moves"
+    },
+    {
+      "axis": "duplex EI",
+      "reading": "Fields et al.'s implied 172.906 pN nm^2",
+      "lengthCeiling": 8.19,
+      "armLength": 7.88253376,
+      "placed": 34,
+      "verdictMoves": false,
+      "note": "the measured rigidity shortens the arm and the verdict is unchanged"
+    },
+    {
+      "axis": "crossover alpha",
+      "reading": "0.6, the bottom of Chen et al.'s fitted bracket",
+      "lengthCeiling": 8.19,
+      "armLength": 7.79311472,
+      "placed": 34,
+      "verdictMoves": false,
+      "note": "a softer root gives a SHORTER arm — the bracket runs the favourable way"
+    },
+    {
+      "axis": "crossover alpha",
+      "reading": "1.2, the top of the same bracket",
+      "lengthCeiling": 8.19,
+      "armLength": 8.33244377,
+      "placed": 30,
+      "verdictMoves": true,
+      "note": "a stiffer root gives a LONGER arm, and this is the axis that can close the 0.026 nm margin"
+    },
+    {
+      "axis": "path count",
+      "reading": "45 paths, C-0015's own",
+      "lengthCeiling": 8.19,
+      "armLength": 9.1311565,
+      "placed": 24,
+      "verdictMoves": true,
+      "note": "more paths make each element LONGER (C-0023), so 34 is the count the plan budget prefers — and 45 stations do not exist on this lattice anyway"
+    },
+    {
+      "axis": "path count",
+      "reading": "15 paths, C-0041's buildable count",
+      "lengthCeiling": 8.19,
+      "armLength": 5.96297903,
+      "placed": 34,
+      "verdictMoves": false,
+      "note": "fewer paths shorten the arm; the placement is unchanged because the count is what sets the stations"
+    },
+    {
+      "axis": "the fold, at equal CONTOUR",
+      "reading": "limbs 1.000 nm, contour 2.000 nm",
+      "lengthCeiling": 8.19,
+      "armLength": 2.0,
+      "placed": 34,
+      "verdictMoves": false,
+      "note": "the straight element of the same contour places 34, so folding is worth 0 instances here"
+    },
+    {
+      "axis": "the fold, at equal CONTOUR",
+      "reading": "limbs 2.000 nm, contour 4.000 nm",
+      "lengthCeiling": 8.19,
+      "armLength": 4.0,
+      "placed": 34,
+      "verdictMoves": false,
+      "note": "the straight element of the same contour places 34, so folding is worth 0 instances here"
+    },
+    {
+      "axis": "the fold, at equal CONTOUR",
+      "reading": "limbs 3.000 nm, contour 6.000 nm",
+      "lengthCeiling": 8.19,
+      "armLength": 6.0,
+      "placed": 34,
+      "verdictMoves": false,
+      "note": "the straight element of the same contour places 34, so folding is worth 0 instances here"
+    },
+    {
+      "axis": "the fold, at equal CONTOUR",
+      "reading": "limbs 3.250 nm, contour 6.500 nm",
+      "lengthCeiling": 8.19,
+      "armLength": 6.5,
+      "placed": 34,
+      "verdictMoves": false,
+      "note": "the straight element of the same contour places 34, so folding is worth 0 instances here"
+    },
+    {
+      "axis": "the fold, at equal CONTOUR",
+      "reading": "limbs 3.500 nm, contour 7.000 nm",
+      "lengthCeiling": 8.19,
+      "armLength": 7.0,
+      "placed": 34,
+      "verdictMoves": false,
+      "note": "the straight element of the same contour places 34, so folding is worth 0 instances here"
+    },
+    {
+      "axis": "the fold, at equal CONTOUR",
+      "reading": "limbs 4.095 nm, contour 8.190 nm",
+      "lengthCeiling": 8.19,
+      "armLength": 8.19,
+      "placed": 28,
+      "verdictMoves": true,
+      "note": "the straight element of the same contour places 34, so folding is worth -6 instances here"
+    },
+    {
+      "axis": "the fold, at equal CONTOUR",
+      "reading": "limbs 5.000 nm, contour 10.000 nm",
+      "lengthCeiling": 8.19,
+      "armLength": 10.0,
+      "placed": 28,
+      "verdictMoves": false,
+      "note": "the straight element of the same contour places 23, so folding is worth 5 instances here"
+    }
+  ],
+  "convergence": [
+    {
+      "quantity": "the rooted length ceiling",
+      "parameter": "bisection resolution [nm]",
+      "levels": [
+        "1e-6",
+        "1e-9",
+        "1e-12"
+      ],
+      "results": [
+        8.18999966,
+        8.19,
+        8.19
+      ],
+      "departure": 0.0,
+      "note": "exits on the bracket width, never on a residual (CLAUDE.md)"
+    },
+    {
+      "quantity": "the placed elastica arm",
+      "parameter": "RK4 steps",
+      "levels": [
+        "200",
+        "400",
+        "800"
+      ],
+      "results": [
+        8.16439083,
+        8.16439083,
+        8.16439083
+      ],
+      "departure": 0.0,
+      "note": "C-0039's own integrator, at its own default 400"
+    },
+    {
+      "quantity": "the feasible orientation fraction",
+      "parameter": "sweep samples",
+      "levels": [
+        "180",
+        "720",
+        "2880"
+      ],
+      "results": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "departure": 0.0,
+      "note": "C-0041's discipline: a sweep must be sample-count independent"
+    },
+    {
+      "quantity": "the assembled tangent minimum over [0, 3 nm]",
+      "parameter": "stroke samples",
+      "levels": [
+        "150",
+        "300",
+        "600",
+        "1200"
+      ],
+      "results": [
+        30.028762,
+        30.028762,
+        30.028762,
+        30.028762
+      ],
+      "departure": 0.0,
+      "note": "C-0049's traversed-range reading; the element strain-stiffens, so the minimum is at the zero-stroke endpoint and the sampling is not what decides it"
+    }
+  ],
+  "reproductions": [
+    {
+      "source": "C-0065",
+      "quantity": "the 34-path coupled flexure span [nm]",
+      "published": 27.4119472,
+      "here": 27.4119472,
+      "departure": 0.0,
+      "note": "read from gpd/results/T-130-*.json and re-derived through coupledFlexureSpan"
+    },
+    {
+      "source": "C-0065",
+      "quantity": "instances the flexure places, of 34",
+      "published": 12.0,
+      "here": 12.0,
+      "departure": 0.0,
+      "note": "THE FREE LIMITING CASE — the same 12, on the bare flexure array without the trusses"
+    },
+    {
+      "source": "C-0065",
+      "quantity": "levels the flexure array requires",
+      "published": 7.0,
+      "here": 6.0,
+      "departure": 0.142857143,
+      "note": "SEVEN with the truss blocks in the same conflict graph (asserted as a gate-2 test through placeTrussArray) and SIX for the bare flexure array evaluated here — two different bodies, and the PLACED count, which is what the verdict rests on, is the same 12"
+    },
+    {
+      "source": "C-0055 / C-0063",
+      "quantity": "the upward root pitch [nm]",
+      "published": 10.88,
+      "here": 10.88,
+      "departure": 0.0,
+      "note": "32 bp at the 0.34 nm rise"
+    },
+    {
+      "source": "C-0055 / C-0063",
+      "quantity": "the 34-path arm [nm]",
+      "published": 8.16439,
+      "here": 8.16439083,
+      "departure": 1.01248385E-7,
+      "note": "C-0039's exact elastica at one crossover and C-0034's A2"
+    },
+    {
+      "source": "C-0066",
+      "quantity": "the root pitch minus the arm [nm]",
+      "published": 2.71561,
+      "here": 2.71560917,
+      "departure": 3.04399859E-7,
+      "note": "C-0066's bound 4, re-derived"
+    },
+    {
+      "source": "C-0017",
+      "quantity": "the mandate [pN/nm]",
+      "published": 33.3333333,
+      "here": 33.3333333,
+      "departure": 1.00000008E-9,
+      "note": "100 pN over 3 nm"
+    },
+    {
+      "source": "C-0049",
+      "quantity": "the per-path secant ceiling at 34 paths and 3 nm [pN/nm]",
+      "published": 113.333333,
+      "here": 113.333333,
+      "departure": 2.94117647E-9,
+      "note": "n a/s, which tightens as 1/s"
+    },
+    {
+      "source": "C-0034",
+      "quantity": "the A2 anchorage couple [pN nm/rad]",
+      "published": 78.2352941,
+      "here": 78.2352941,
+      "departure": 0.0,
+      "note": "two strand termini at the phosphate radius"
+    },
+    {
+      "source": "C-0009",
+      "quantity": "the crossover hinge constant [pN nm/rad]",
+      "published": 13.5294118,
+      "here": 13.5294118,
+      "departure": 2.60869566E-9,
+      "note": "CITED, FITTED — Chen et al. 2014 via C-0009"
+    },
+    {
+      "source": "C-0063",
+      "quantity": "the stations",
+      "published": 34.0,
+      "here": 34.0,
+      "departure": 0.0,
+      "note": "read from its own result file"
+    },
+    {
+      "source": "C-0063",
+      "quantity": "rows carrying three arms",
+      "published": 4.0,
+      "here": 4.0,
+      "departure": 0.0,
+      "note": "its bound 1, re-derived from the count arithmetic"
+    },
+    {
+      "source": "Fischer et al. 2016 (SAXS)",
+      "quantity": "the single-layer interhelical distance [nm]",
+      "published": 2.69,
+      "here": 2.69,
+      "departure": 0.0,
+      "note": "CITED, MEASURED"
+    },
+    {
+      "source": "C-0025",
+      "quantity": "the midspan-loaded end-condition floor",
+      "published": 48.0,
+      "here": 48.0,
+      "departure": 0.0,
+      "note": "c(0) = 48 exactly"
+    }
+  ],
+  "predicates": [
+    {
+      "name": "P1 — an element places",
+      "statement": "some catalogue row places all 34 instances at one level on C-0063's stations",
+      "verdict": "PASS — Q5, Q7, Q11"
+    },
+    {
+      "name": "P2 — a placing element discharges C-0017's placement equality",
+      "statement": "its assembled secant at 3 nm is 33.3333 pN/nm, exactly",
+      "verdict": "PASS — Q5, Q7; the one placing row that does not is Q11, whose entropic law is not linear, so its 3 nm secant is not its own Gaussian constant"
+    },
+    {
+      "name": "P3 — every placing element is inside the per-path unzip allowable",
+      "statement": "its per-path force at 3 nm is at most 10 pN",
+      "verdict": "PASS"
+    },
+    {
+      "name": "P4 — a placing element is two-sided",
+      "statement": "its reaction at negative argument is negative (C-0023's operational test)",
+      "verdict": "PASS — 2 of 3; the exception is Q11, the single strand, which C-0023 already refuses on sidedness and which is measured here rather than assumed"
+    },
+    {
+      "name": "P5 — no element out of the plan exists",
+      "statement": "every mechanism whose compliant member leaves the sheet plane is refused by its own closed-form length",
+      "verdict": "PASS — none exists"
+    },
+    {
+      "name": "P6 — a fold buys nothing",
+      "statement": "at EQUAL CONTOUR a two-limb fold places no better than the straight element, because it spends along-row slack on a direction whose pitch is exactly one duplex",
+      "verdict": "PASS — 28 of 34 against the straight element's 34 at the same contour"
+    }
+  ],
+  "findings": {
+    "the answer": "YES — 3 of 11 catalogue rows place 34 times at one level and 2 of those survive every clause (Q5, Q7), the shortest being Q7 at 5.331 nm; and EVERY ONE OF THEM LIES IN THE PLAN",
+    "the clause funnel": "11 catalogue rows -> 3 place 34 at one level -> 2 survive every clause. The row lost between the last two is the single strand, which is compact (6.04 nm) and ONE-SIDED",
+    "what refuses the flexure": "NOT the plan and NOT C-0063's placement, but its END CONDITION. A midspan-loaded beam's c is 48-192 and an end-loaded one's is at most 12, and the span is c^(1/3) — so the same duplex at the same rigidity and the same stiffness is 1.59x longer for being supported twice. The plan budget is 8.19 nm and the midspan family's floor is 22.41 nm",
+    "the out-of-plane escape": "does not exist. A member standing along z and loaded along z is loaded AXIALLY (S/k = 1122 nm), a fold spends along-row slack to buy across-row room that the lattice does not have, and a second LEVEL is reached only by a vertical member, whose clash is level-independent (C-0041). The escape that works is not out of the plan, it is SHORT in it",
+    "the margin": "the element that places does so by 0.0256 nm — 0.075 of a base-pair rise — and at the 2.73 nm square-lattice interhelical distance it does not place at all",
+    "the shorter element and what it costs": "Q7, the standoff-headed crank, is 1.532x shorter than the hinge-rooted arm and clears the plan budget by 2.86 nm rather than 0.026 — but it stands on an UNDEMONSTRATED normal duplex (C-0028/C-0029), its standoff carries 2.941 pN in compression against a 7.21 pN free-head Euler load (2.45x, CH-0037's reading), and its assembled tangent minimum over [0, 3] clears only 4 of C-0017's six 2 mM stability floors against the arm's 6",
+    "the recommendation": "the truss branch's output stage is the HINGE-ROOTED ARM, not a flexure the truss caps — and the truss is the wrong root for it, because a rigid root demands a LONGER arm (c = 3 exactly, 9.247 nm) than a single crossover does",
+    "maturity": "TRL 1-3. Nothing here is measured; the motif — a free lever held to a single-layer sheet by one crossover — is this programme's own construct (C-0055, 62 recorded queries) and is undemonstrated"
+  },
+  "parameters": {
+    "armCount": 34.0,
+    "phase": 24.0,
+    "mandate": 33.3333333,
+    "perPathStiffness": 0.980392157,
+    "rootPitch": 10.88,
+    "lengthCeiling": 8.19,
+    "solvedLengthCeiling": 8.19,
+    "endFactorCeiling": 2.34165925,
+    "midspanFamilyFloor": 22.4141917,
+    "axialLength": 1122.0,
+    "entropicContour": 6.03540849,
+    "hingeLever": 3.71483512,
+    "torsionalLength": 64.8415583,
+    "coupledFlexureSpan": 27.4119472,
+    "armLength": 8.16439083,
+    "marginToCeiling": 0.0256091734,
+    "edgeX": 40.0,
+    "lengthY": 40.35,
+    "footprint": 1614.0,
+    "candidatesPlacing": 3.0,
+    "candidatesEvaluated": 11.0,
+    "foldPlaced": 28.0,
+    "crankStandoffDuty": 2.94117647,
+    "crankStandoffCriticalLoad": 7.20717719,
+    "crankBucklingMargin": 2.45044024,
+    "foldStraightPlaced": 34.0,
+    "candidatesSurviving": 2.0
+  }
+}

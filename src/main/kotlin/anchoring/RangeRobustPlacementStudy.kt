@@ -66,6 +66,10 @@ private val MANDATE = Gen1Tile.TARGET_FORCE / Gen1Tile.ACCEPTABLE_STROKE
 private const val RANGE_STARTS = 24
 private const val SUBSET_STARTS = 12
 
+/** §3's own grafting densities at the two layer heights `C-0022` solved (`C-0050`'s table). */
+private const val S3_SIGMA_AT_TEN = 0.024
+private const val S3_SIGMA_AT_FIVE = 0.092
+
 // ---------------------------------------------------------------------------------------------
 // the records — prefixed with the task, because study records are package scoped (CLAUDE.md)
 // ---------------------------------------------------------------------------------------------
@@ -89,6 +93,7 @@ private data class T129StateRecord(
     val equalSpringDishingOverStroke: Double,
     val reachableFloorOverStroke: Double,
     val flatAtTenPercent: Boolean,
+    val beatsNoCouplingAtAll: Boolean,
     val occupiedByTenNanometreDevice: Boolean,
     val strokeDemandedOfTenNanometreDevice: Double
 )
@@ -146,6 +151,7 @@ private data class T129PlacementRecord(
     val medianOverStroke: Double,
     val worstOverStroke: Double,
     val bestKey: String,
+    val bestFlatAtTenPercent: Boolean,
     val bestAtDesignStateOverStroke: Double,
     val c0063OverStroke: Double,
     val placementsBetterThanC0063: Int,
@@ -352,10 +358,17 @@ private fun c0063Placement(file: File): UpwardArmPlacement {
 
 /**
  * `C-0050`'s dead-load stroke at §3's own 100 pN for a layer resting at [restingHeight], taken as
- * the **largest** of its six layer models — the most permissive reading, so that an exclusion
- * drawn from it is an exclusion at every model.
+ * the **largest** over its six layer models — and, when [graftingDensity] is `null`, over every
+ * grafting density it solved at that height as well.
+ *
+ * The largest is the **most permissive** reading, so an exclusion drawn from it is an exclusion at
+ * every model and every density in `C-0027`'s window, not only at §3's nominal one.
  */
-private fun c0050DeadLoadStroke(file: File, restingHeight: Double): Double {
+private fun c0050DeadLoadStroke(
+    file: File,
+    restingHeight: Double,
+    graftingDensity: Double? = null
+): Double {
     require(file.exists()) {
         "C-0050's result file is missing: ${file.path}. T-129 needs its dead-load stroke to say " +
                 "which gaps a device can occupy AT ALL, and will not assume one."
@@ -363,6 +376,13 @@ private fun c0050DeadLoadStroke(file: File, restingHeight: Double): Double {
     val strokes = Json.parseToJsonElement(file.readText())
         .jsonObject.getValue("reach").jsonArray.map { it.jsonObject }
         .filter { it.getValue("nominalHeight").jsonPrimitive.content.toDouble() == restingHeight }
+        .filter { record ->
+            graftingDensity == null ||
+                    abs(
+                        record.getValue("graftingDensity").jsonPrimitive.content.toDouble() -
+                                graftingDensity
+                    ) < 1e-12
+        }
         .map { it.getValue("deadLoadStroke").jsonPrimitive.content.toDouble() }
     require(strokes.isNotEmpty()) { "C-0050 solved no layer resting at $restingHeight nm" }
     return strokes.max()
@@ -443,12 +463,13 @@ fun main() {
     require(placement.isCentroSymmetric(DUPLEXES)) {
         "C-0063's placement is reported centro-symmetric and this one is not"
     }
-    val deadLoadStrokeAtTen = c0050DeadLoadStroke(
-        File("gpd/results/T-108-desired-stroke-reach.json"), 10.0
-    )
-    val deadLoadStrokeAtFive = c0050DeadLoadStroke(
-        File("gpd/results/T-108-desired-stroke-reach.json"), 5.0
-    )
+    val reachFile = File("gpd/results/T-108-desired-stroke-reach.json")
+    // The permissive reading — the largest anywhere at a 10 nm layer, over every model and every
+    // grafting density C-0027's window contains.
+    val deadLoadStrokeAtTen = c0050DeadLoadStroke(reachFile, 10.0)
+    // And at §3's own grafting density for that height, which is what C-0050 quotes.
+    val deadLoadStrokeAtTenDesign = c0050DeadLoadStroke(reachFile, 10.0, S3_SIGMA_AT_TEN)
+    val deadLoadStrokeAtFive = c0050DeadLoadStroke(reachFile, 5.0)
 
     // ------------------------------------------------------------------ the states
     val headline = T129_HEADLINE_KEYS.map { profileAt(it) }
@@ -545,12 +566,24 @@ fun main() {
             falsifierFired = gapOccupiable(10.0, 2.0, deadLoadStrokeAtTen)
         ),
         T129BoundRecord(
-            name = "C-0050's dead-load stroke at the 10 nm design point, best of six models",
+            name = "C-0050's dead-load stroke at a 10 nm layer, the largest anywhere it solved",
             value = deadLoadStrokeAtTen, unit = "nm",
-            settles = "the ceiling the 8 nm demand above is read against; C-0017's own theorem " +
-                    "is that a coupling can only REDUCE the delivered stroke, so this is a " +
-                    "supremum over every coupling that could ever be designed",
+            settles = "the ceiling the 8 nm demand above is read against, taken over all six " +
+                    "layer models AND every grafting density of C-0027's 10 nm window (at S3's " +
+                    "own sigma = %.3f nm^-2 it is %.4f nm); C-0017's own theorem is that a " +
+                    "coupling can only REDUCE the delivered stroke, so this is a supremum over " +
+                    "every coupling that could ever be designed"
+                        .format(S3_SIGMA_AT_TEN, deadLoadStrokeAtTenDesign),
             falsifierFired = false
+        ),
+        T129BoundRecord(
+            name = "C-0050's dead-load stroke at S3's own 5 nm layer, the largest of six models",
+            value = deadLoadStrokeAtFive, unit = "nm",
+            settles = "reported because it does NOT clear the 3 nm its own device needs to reach " +
+                    "C-0022's 2 nm state: that state is held by its own solved 0.368 V bias and " +
+                    "not by a 100 pN dead load, which is a fact about C-0022's state set and is " +
+                    "recorded rather than smoothed",
+            falsifierFired = gapOccupiable(5.0, 2.0, deadLoadStrokeAtFive)
         ),
         T129BoundRecord(
             name = "34 equal springs on C-0063's placement, worst over the design device's range",
@@ -579,6 +612,7 @@ fun main() {
             equalSpringDishingOverStroke = equalPeaks[index] / freeStroke,
             reachableFloorOverStroke = floors.getValue(index),
             flatAtTenPercent = equalPeaks[index] / freeStroke < FLATNESS_TOLERANCE,
+            beatsNoCouplingAtAll = equalPeaks[index] < bank24.freePeakDishing(index),
             occupiedByTenNanometreDevice = profile.gapHeight > 0.0 &&
                     gapOccupiable(10.0, profile.gapHeight, deadLoadStrokeAtTen),
             strokeDemandedOfTenNanometreDevice = demanded
@@ -717,48 +751,70 @@ fun main() {
             )
     }
 
-    val placements = symmetricPhases.map { phase ->
+    // Two objectives, in ONE enumeration: the design device's range, and the 5 nm device's — the
+    // one C-0022's 2 nm state belongs to, and the only range equal springs do not clear.
+    class SweepObjective(val name: String, val states: List<Int>) {
+        val reference: Double = c0063Surrogate.worstDishing(equal, states) / freeStroke
+    }
+
+    val sweepObjectives = listOf(
+        SweepObjective(
+            "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range", designStates
+        ),
+        SweepObjective(
+            "the worst over the 2 mM / 5 nm / 0.368 V device's traversed range",
+            rangeIndices(T129_RANGES[2])
+        )
+    )
+
+    val placements = symmetricPhases.flatMap { phase ->
         val sweep = PhaseSweep(phase)
-        val values = ArrayList<Double>()
-        var best: Pair<UpwardArmPlacement, Double>? = null
-        var better = 0
+        val values = sweepObjectives.map { ArrayList<Double>() }
+        val best = arrayOfNulls<Pair<UpwardArmPlacement, Double>>(sweepObjectives.size)
+        val better = IntArray(sweepObjectives.size)
         centroSymmetricPlacements(
             phase, edgeX, DUPLEXES, arm, count, minimumPerRow = 2, maximumPerRow = 3
         ).forEach { candidate ->
             val surrogate = sweep.surrogate(candidate)
-            // The decision is rounded and the placement's own canonical key is the tie-break
-            // (`CLAUDE.md`: an argmin is not reproducible unless the COMPARISON is rounded too).
-            val value = roundForResult(surrogate.worstDishing(equal, designStates) / freeStroke)
-            values += value
-            if (value < roundForResult(c0063RangeValue)) better++
-            val current = best
-            if (current == null || value < current.second ||
-                (value == current.second && candidate.key < current.first.key)
-            ) best = candidate to value
+            sweepObjectives.forEachIndexed { index, objective ->
+                // The decision is rounded and the placement's own canonical key is the tie-break
+                // (`CLAUDE.md`: an argmin is not reproducible unless the COMPARISON is too).
+                val value =
+                    roundForResult(surrogate.worstDishing(equal, objective.states) / freeStroke)
+                values[index] += value
+                if (value < roundForResult(objective.reference)) better[index]++
+                val current = best[index]
+                if (current == null || value < current.second ||
+                    (value == current.second && candidate.key < current.first.key)
+                ) best[index] = candidate to value
+            }
         }
-        val winner = best ?: error("the symmetric family at phase $phase is empty")
-        values.sort()
-        val atDesign =
-            sweep.surrogate(winner.first).worstDishing(equal, listOf(designState)) / freeStroke
-        println(
-            "  phase %2d  enumerated %6d  best %6.4f  median %6.4f".format(
-                phase, values.size, values.first(), values[values.size / 2]
+        sweepObjectives.mapIndexed { index, objective ->
+            val winner = best[index] ?: error("the symmetric family at phase $phase is empty")
+            val sorted = values[index].sorted()
+            val atDesign =
+                sweep.surrogate(winner.first).worstDishing(equal, listOf(designState)) / freeStroke
+            println(
+                "  phase %2d  %-64s enumerated %6d  best %6.4f  median %6.4f".format(
+                    phase, objective.name, sorted.size, sorted.first(), sorted[sorted.size / 2]
+                )
             )
-        )
-        T129PlacementRecord(
-            family = "centro-symmetric, 2 or 3 arms per row, exhaustive",
-            phaseBasePairs = phase,
-            objective = "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
-            enumerated = values.size,
-            bestOverStroke = winner.second,
-            medianOverStroke = values[values.size / 2],
-            worstOverStroke = values.last(),
-            bestKey = winner.first.key,
-            bestAtDesignStateOverStroke = atDesign,
-            c0063OverStroke = c0063RangeValue,
-            placementsBetterThanC0063 = better,
-            beatsC0063 = winner.second < roundForResult(c0063RangeValue)
-        )
+            T129PlacementRecord(
+                family = "centro-symmetric, 2 or 3 arms per row, exhaustive",
+                phaseBasePairs = phase,
+                objective = objective.name,
+                enumerated = sorted.size,
+                bestOverStroke = winner.second,
+                medianOverStroke = sorted[sorted.size / 2],
+                worstOverStroke = sorted.last(),
+                bestKey = winner.first.key,
+                bestFlatAtTenPercent = winner.second < FLATNESS_TOLERANCE,
+                bestAtDesignStateOverStroke = atDesign,
+                c0063OverStroke = objective.reference,
+                placementsBetterThanC0063 = better[index],
+                beatsC0063 = winner.second < roundForResult(objective.reference)
+            )
+        }
     }
 
     // ------------------------------------------------------------------ the distributions
@@ -796,19 +852,25 @@ fun main() {
     println("T-129 — convergence: subdivisions, sampling grid and the range's discretisation ...")
     val c0063Stations = placement.stations(DUPLEXES)
     val rangeStates = designStates.map { loadStates[it] }
-    fun rangeReading(subdivisions: Int, samples: Int): Double {
+    fun rangeReading(subdivisions: Int, samples: Int, states: List<LoadState>): Double {
         val bank = MultiStateRootBank(
             t129Lattice(
                 sheet, CrossoverLayout.atBasePairPhase(C0063_PHASE, sheet, edgeX), subdivisions
             ),
-            c0063Stations, rangeStates, samples
+            c0063Stations, states, samples
         )
         return bank.surrogateFor(c0063Stations.indices.toList())
-            .worstDishing(equal, listOf(0, 1)) / freeStroke
+            .worstDishing(equal, states.indices.toList()) / freeStroke
     }
 
-    val subdivisionResults = listOf(1, 2, 4).map { rangeReading(it, 81) }
-    val samplingResults = listOf(41, 81, 161).map { rangeReading(2, it) }
+    val subdivisionResults = listOf(1, 2, 4).map { rangeReading(it, 81, rangeStates) }
+    val samplingResults = listOf(41, 81, 161).map { rangeReading(2, it, rangeStates) }
+    // And the same sampling sweep on the TIGHTEST range that equal springs do clear — the one
+    // whose margin against T-5b's 0.10 a 2.7 % grid sensitivity could actually consume.
+    val tightest = ranges.filter { it.flatWithEqualSprings }.maxBy { it.equalSpringWorstOverStroke }
+    val tightestStates = T129_RANGES.first { it.device == tightest.device }
+        .let { range -> rangeIndices(range).map { loadStates[it] } }
+    val tightestSampling = listOf(41, 81, 161).map { rangeReading(2, it, tightestStates) }
     val interpolatedStates = designStates + interpolated.map { indexOfState.getValue(it.name) }
     val discretisation = listOf(
         c0063Surrogate.worstDishing(equal, designStates) / freeStroke,
@@ -830,6 +892,16 @@ fun main() {
             results = samplingResults,
             departure = abs(samplingResults[2] - samplingResults[1]) / samplingResults[2],
             note = "the same 2.7 % scale C-0063 reports at one state; both ends inside 0.10"
+        ),
+        T129ConvergenceRecord(
+            quantity = "equal-spring worst dishing/stroke over the TIGHTEST flat range (" +
+                    tightest.device + ")",
+            parameter = "dishing sample grid 41 / 81 / 161",
+            values = listOf(41.0, 81.0, 161.0),
+            results = tightestSampling,
+            departure = abs(tightestSampling[2] - tightestSampling[1]) / tightestSampling[2],
+            note = "the margin this range has against T-5b's 0.10 is what a grid sensitivity " +
+                    "could consume, so it is measured there and not only at the design device"
         ),
         T129ConvergenceRecord(
             quantity = "equal-spring worst dishing/stroke over the design device's range",
@@ -855,6 +927,9 @@ fun main() {
     val gridUniformDesign =
         gridSurrogate.worstDishing(gridEqual, listOf(designState)) / freeStroke
     val gridRim5Range = gridSurrogate.worstDishing(gridRim5, designStates) / freeStroke
+    // C-0064's "uniform" column at the 5 nm device — the comparison that reverses here.
+    val gridUniformFiveRange =
+        gridSurrogate.worstDishing(gridEqual, rangeIndices(T129_RANGES[2])) / freeStroke
     val gridStarts = listOf(gridEqual, gridRim5) +
             t129RandomStarts(gridStations.size, RANGE_STARTS - 2, 0.35)
                 .map { normalisedStiffnesses(it, MANDATE) }
@@ -897,6 +972,10 @@ fun main() {
             0.0373, gridRangeMinimax, false
         ),
         reproduction(
+            "C-0064", "dishing/stroke, 3 x 15, UNIFORM, over the 5 nm device's range",
+            0.0796, gridUniformFiveRange, false
+        ),
+        reproduction(
             "C-0055", "upward root pitch [nm]", 10.88,
             UPWARD_ROOT_PITCH_BASE_PAIRS * Gen1Tile.RISE_PER_BASE_PAIR, true
         ),
@@ -908,13 +987,20 @@ fun main() {
         ),
         reproduction(
             "C-0050", "dead-load stroke at the 10 nm design point, best of six models [nm]",
-            6.01348358, deadLoadStrokeAtTen, false
+            6.01348358, deadLoadStrokeAtTenDesign, false
+        ),
+        reproduction(
+            "C-0050", "dead-load stroke, best over the whole sweep [nm]",
+            7.42353439, deadLoadStrokeAtTen, false
         )
     )
 
     // ------------------------------------------------------------------ the predicates
     val designRangeRecord = ranges[0]
     val allFlatEqual = ranges.all { it.flatWithEqualSprings }
+    val flatEqualDevices = ranges.filter { it.flatWithEqualSprings }
+    val notFlatEqual = ranges.filterNot { it.flatWithEqualSprings }
+    val allFlatMinimax = ranges.all { it.flatWithADistribution }
     val fiveStateEqual = c0063Surrogate.worstDishing(equal, headlineIndices) / freeStroke
     val fiveStateMinimax = subsets.first { it.size == 5 }.minimaxWorstOverStroke
     val predicates = listOf(
@@ -922,24 +1008,30 @@ fun main() {
             "P1 — equal springs over a traversed range",
             "the worst peak dishing of 34 EQUAL springs on C-0063's placement over each device's " +
                     "own range, against T-5b's 0.10 of the free-tile stroke",
-            ("%.4f / %.4f / %.4f / %.4f over the four devices — %s inside T-5b's 0.10")
-                .format(
-                    ranges[0].equalSpringWorstOverStroke, ranges[1].equalSpringWorstOverStroke,
-                    ranges[2].equalSpringWorstOverStroke, ranges[3].equalSpringWorstOverStroke,
-                    if (allFlatEqual) "ALL FOUR" else "NOT all"
-                )
+            ("%.4f / %.4f / %.4f / %.4f over the four devices — %d of 4 inside T-5b's 0.10 with " +
+                    "EQUAL springs%s").format(
+                ranges[0].equalSpringWorstOverStroke, ranges[1].equalSpringWorstOverStroke,
+                ranges[2].equalSpringWorstOverStroke, ranges[3].equalSpringWorstOverStroke,
+                flatEqualDevices.size,
+                if (allFlatEqual) "" else
+                    ", the exception being " + notFlatEqual.joinToString("; ") { it.device }
+            )
         ),
         T129PredicateRecord(
             "P2 — does the range need a distribution?",
             "the 34-parameter multi-state minimax against the equal-spring reading over the same " +
                     "range, at C-0017's unchanged total",
-            ("%.4f against %.4f at the design device — the distribution is worth %.1f %% and " +
-                    "asks a peak ratio of %.2f").format(
-                designRangeRecord.minimaxWorstOverStroke,
-                designRangeRecord.equalSpringWorstOverStroke,
+            ("%.4f / %.4f / %.4f / %.4f over the four devices, %s inside T-5b's 0.10; at the " +
+                    "design device the distribution is worth %.1f %% over equal springs and asks " +
+                    "a peak ratio of only %.2f, and the one range equal springs miss is " +
+                    "recovered at a peak ratio of %.2f").format(
+                ranges[0].minimaxWorstOverStroke, ranges[1].minimaxWorstOverStroke,
+                ranges[2].minimaxWorstOverStroke, ranges[3].minimaxWorstOverStroke,
+                if (allFlatMinimax) "ALL FOUR" else "NOT all",
                 100.0 * (1.0 - designRangeRecord.minimaxWorstOverStroke /
                         designRangeRecord.equalSpringWorstOverStroke),
-                designRangeRecord.minimaxPeakRatio
+                designRangeRecord.minimaxPeakRatio,
+                ranges[2].minimaxPeakRatio
             )
         ),
         T129PredicateRecord(
@@ -983,21 +1075,49 @@ fun main() {
         it.containsTwoNanometreState && it.containsTenNanometreState
     }
     val findings = listOf(
-        ("C-0063's placement IS flat over the range every device traverses, with EQUAL springs " +
-                "and no distribution at all: %.4f, %.4f, %.4f and %.4f of the free-tile stroke " +
-                "over the four devices C-0022's box contains, every one inside T-5b's 0.10, " +
-                "against %.4f at the single state C-0063 reported. The single-state verdict " +
-                "travels here, and C-0064's finding that a one-state verdict need not travel is " +
-                "what made that worth checking.").format(
+        ("C-0063's placement is flat with EQUAL springs over the traversed range of every 10 nm " +
+                "device C-0022 solved, and over no other: %.4f (2 mM, C-0018's placed device), " +
+                "%.4f (0.5 mM, C-0032's recommendation) and %.4f (10 mM), against %.4f at the " +
+                "single state C-0063 reported. So the single-state verdict TRAVELS for the " +
+                "device it was read on — but the margin against T-5b's 0.10 falls from 1.42x to " +
+                "%.2fx, and it is the compressed end of the stroke that spends it.").format(
             ranges[0].equalSpringWorstOverStroke, ranges[1].equalSpringWorstOverStroke,
-            ranges[2].equalSpringWorstOverStroke, ranges[3].equalSpringWorstOverStroke,
-            c0063Single
+            ranges[3].equalSpringWorstOverStroke, c0063Single,
+            FLATNESS_TOLERANCE / ranges.filter { it.flatWithEqualSprings }
+                .maxOf { it.equalSpringWorstOverStroke }
         ),
-        ("The distribution is not needed and barely helps: the 34-parameter minimax over the " +
-                "design device's range reaches %.4f against %.4f for equal springs (%.1f %%), at " +
-                "a peak ratio of %.2f, while C-0058's rim rule makes it WORSE at every ratio — " +
-                "%.4f at x2 and %.4f at its own x5, the sign reversal C-0063 found at one state, " +
-                "reproduced over a range.").format(
+        ("The exception is the FIVE nanometre device, and it is the one whose range contains " +
+                "C-0022's 2 nm state: equal springs dish %.4f there, %.1fx outside the " +
+                "convention, where the same equal springs on C-0058's 3 x 15 grid dish %.4f " +
+                "(re-derived here) and are inside it. On this station set the 5 nm device NEEDS " +
+                "a distribution — " +
+                "the 34-parameter minimax recovers it to %.4f at a peak ratio of %.2f — so " +
+                "C-0063's equal-spring advantage is a property of the 10 nm devices, not of the " +
+                "placement.").format(
+            ranges[2].equalSpringWorstOverStroke,
+            ranges[2].equalSpringWorstOverStroke / FLATNESS_TOLERANCE,
+            gridUniformFiveRange, ranges[2].minimaxWorstOverStroke, ranges[2].minimaxPeakRatio
+        ),
+        ("And at the 5 nm layer's states the equal-spring coupling is a net dishing SOURCE, " +
+                "which is C-0047's own bar and C-0061's failure mode at a different placement: " +
+                "the free tile dishes %.4f at the 5 nm rest state and %.4f at the 2 nm held " +
+                "state, against %.4f and %.4f coupled — %.2fx and %.2fx WORSE than no coupling " +
+                "at all. The 34 roots are placed where a 10 nm layer's edge collar puts the " +
+                "load, and a 5 nm layer's is a different field: its free-tile dishing is %.1fx " +
+                "smaller at the rest state, so there is far less for a coupling to correct and " +
+                "the coupling's own sag dominates.").format(
+            stateRecords[3].freeDishingOverStroke, stateRecords[4].freeDishingOverStroke,
+            stateRecords[3].equalSpringDishingOverStroke,
+            stateRecords[4].equalSpringDishingOverStroke,
+            stateRecords[3].equalSpringDishingOverStroke / stateRecords[3].freeDishingOverStroke,
+            stateRecords[4].equalSpringDishingOverStroke / stateRecords[4].freeDishingOverStroke,
+            stateRecords[0].freeDishingOverStroke / stateRecords[3].freeDishingOverStroke
+        ),
+        ("Where equal springs do clear, the distribution is worth little and C-0058's rim rule " +
+                "still runs the wrong way: the minimax over the design device's range reaches " +
+                "%.4f against %.4f (%.1f %%) at a peak ratio of %.2f, while the rim rule gives " +
+                "%.4f at x2 and %.4f at its own x5 — the sign reversal C-0063 found at one " +
+                "state, reproduced over a range.").format(
             designRangeRecord.minimaxWorstOverStroke,
             designRangeRecord.equalSpringWorstOverStroke,
             100.0 * (1.0 - designRangeRecord.minimaxWorstOverStroke /
@@ -1005,32 +1125,51 @@ fun main() {
             designRangeRecord.minimaxPeakRatio,
             distributions[1].rangeWorstOverStroke, distributions[3].rangeWorstOverStroke
         ),
-        ("The exclusion of C-0022's 2 nm state from a 10 nm device's range is PHYSICAL, and it " +
-                "excludes nothing from this answer: it demands %.1f nm of stroke against " +
-                "C-0050's %.3f nm dead-load ceiling at the 10 nm design point (the largest of its " +
-                "six layer models, and C-0017's theorem says a coupling can only reduce it), " +
-                "while the 5 nm device that DOES occupy it reaches it at S3's acceptable 3 nm — " +
-                "and that device's own range reads %.4f, inside the convention.").format(
-            strokeToOccupy(10.0, 2.0), deadLoadStrokeAtTen, ranges[2].equalSpringWorstOverStroke
-        ),
-        ("C-0064's sign dichotomy TRANSFERS to this station set: of the 31 non-empty subsets of " +
-                "C-0022's five headline states, the %d that put the 2 nm state with a 10 nm state " +
-                "run %.4f-%.4f and the other %d run %.4f-%.4f. The five-state portfolio duty " +
-                "reaches %.4f here against C-0064's 0.1254 on the 3 x 15 grid — so the placement " +
-                "does not repeal the incompatibility, it is simply not asked to face it.").format(
+        ("The exclusion of C-0022's 2 nm state from a 10 nm device's range is PHYSICAL and it " +
+                "changes no verdict here, because the device that does occupy that state is " +
+                "evaluated on its own: reaching a 2 nm gap from a 10 nm layer demands %.1f nm of " +
+                "stroke against C-0050's %.4f nm, the largest dead-load stroke it finds anywhere " +
+                "at a 10 nm layer under S3's own 100 pN (%.4f nm at S3's own grafting density), " +
+                "and C-0017's theorem says a coupling can only reduce it. The honest caveat: the " +
+                "same test does not clear the 5 nm device's own 3 nm either (%.4f nm), so " +
+                "C-0022's 2 nm state is held by its solved 0.368 V bias rather than by a 100 pN " +
+                "dead load — a fact about C-0022's state set, recorded rather than smoothed.")
+            .format(
+                strokeToOccupy(10.0, 2.0), deadLoadStrokeAtTen, deadLoadStrokeAtTenDesign,
+                deadLoadStrokeAtFive
+            ),
+        ("C-0064's sign dichotomy transfers in DIRECTION and not in exactness: of the 31 " +
+                "non-empty subsets of C-0022's five headline states, the %d that put the 2 nm " +
+                "state with a 10 nm state run %.4f-%.4f and %d of them are inside 0.10, while " +
+                "the other %d run %.4f-%.4f and %d of %d are — against 0 of 14 and 17 of 17 on " +
+                "C-0058's 3 x 15 grid. The five-state portfolio duty reaches %.4f here against " +
+                "C-0064's 0.1254 on that grid, so the placement does not repeal the " +
+                "incompatibility either; on this station set the ANTAGONIST IS THE 5 nm LAYER " +
+                "rather than the 2 nm gap alone — the two states of the 5 nm device are " +
+                "themselves anti-parallel, cosine %.4f, where the 10 nm devices' own pairs run " +
+                "+0.9969 to +0.9998.").format(
             twoNanometreSubsets.size,
             twoNanometreSubsets.minOf { it.minimaxWorstOverStroke },
             twoNanometreSubsets.maxOf { it.minimaxWorstOverStroke },
+            twoNanometreSubsets.count { it.flatWithADistribution },
             otherSubsets.size,
             otherSubsets.minOf { it.minimaxWorstOverStroke },
             otherSubsets.maxOf { it.minimaxWorstOverStroke },
-            fiveStateMinimax
+            otherSubsets.count { it.flatWithADistribution }, otherSubsets.size,
+            fiveStateMinimax,
+            c0063Surrogate.freeFieldCosine(
+                indexOfState.getValue(headline[3].name), twoNanometreState
+            )
         ),
-        ("Re-sweeping the placement under the RANGE objective is worth little and confirms the " +
-                "single-state winner is a good member: %s.").format(
+        ("The placement was re-swept under the RANGE objective itself, exhaustively over the " +
+                "centro-symmetric family at both phases the congruence admits and under two " +
+                "objectives: %s.").format(
             placements.joinToString("; ") {
-                ("phase %d, %d placements enumerated, best %.4f against C-0063's %.4f")
-                    .format(it.phaseBasePairs, it.enumerated, it.bestOverStroke, it.c0063OverStroke)
+                ("phase %d, %s, %d enumerated, best %.4f (flat: %s) against C-0063's %.4f, %d " +
+                        "better").format(
+                    it.phaseBasePairs, it.objective, it.enumerated, it.bestOverStroke,
+                    it.bestFlatAtTenPercent, it.c0063OverStroke, it.placementsBetterThanC0063
+                )
             }
         )
     )
@@ -1046,9 +1185,13 @@ fun main() {
                 "foundation secant; free-tile stroke %.5f nm").format(
             lengthY, DUPLEXES, C0063_PHASE, count, MANDATE, freeStroke
         ),
-        decision = ("C-0063's placement dishes %.4f of the stroke over the design device's own " +
-                "traversed range with EQUAL springs, against T-5b's 0.10").format(
-            designRangeRecord.equalSpringWorstOverStroke
+        decision = ("with EQUAL springs C-0063's placement dishes %.4f / %.4f / %.4f of the " +
+                "stroke over the three 10 nm devices' own traversed ranges — all inside T-5b's " +
+                "0.10 — and %.4f over the 5 nm device's, which is outside it and is recovered by " +
+                "a distribution at %.4f").format(
+            ranges[0].equalSpringWorstOverStroke, ranges[1].equalSpringWorstOverStroke,
+            ranges[3].equalSpringWorstOverStroke, ranges[2].equalSpringWorstOverStroke,
+            ranges[2].minimaxWorstOverStroke
         ),
         bounds = bounds,
         states = stateRecords,
@@ -1076,7 +1219,10 @@ fun main() {
             "perPathStiffnessCeiling" to ceiling,
             "admissibleRatio" to admissible,
             "deadLoadStrokeAtTenNanometres" to deadLoadStrokeAtTen,
+            "deadLoadStrokeAtTenNanometresAtS3Sigma" to deadLoadStrokeAtTenDesign,
             "deadLoadStrokeAtFiveNanometres" to deadLoadStrokeAtFive,
+            "s3GraftingDensityAtTen" to S3_SIGMA_AT_TEN,
+            "s3GraftingDensityAtFive" to S3_SIGMA_AT_FIVE,
             "singleStateDishingOverStroke" to c0063Single,
             "designRangeEqualSpringOverStroke" to designRangeRecord.equalSpringWorstOverStroke,
             "designRangeMinimaxOverStroke" to designRangeRecord.minimaxWorstOverStroke,

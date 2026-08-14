@@ -1,0 +1,1424 @@
+{
+    "task": "T-129 — is C-0063's flat 34-root placement flat over a RANGE?",
+    "leaf": "A8.2",
+    "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous MgCl2 at 0.5 / 2 / 10 mM; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at 2.69 nm, phase 24 carrying its OWN eight crossover columns; C-0055's 34 upward roots at C-0063's swept placement; C-0017's 33.3333 pN/nm mandate as a SUM; C-0022's SOLVED edge profiles keyed on (concentration, gap, bias); C-0001's foundation secant; free-tile stroke 4.90731 nm",
+    "decision": "with EQUAL springs C-0063's placement dishes 0.0789 / 0.0853 / 0.0896 of the stroke over the three 10 nm devices' own traversed ranges — all inside T-5b's 0.10 — and 0.2000 over the 5 nm device's, which is outside it and is recovered by a distribution at 0.0565",
+    "bounds": [
+        {
+            "name": "the per-state least-squares floor, worst over the four device ranges",
+            "value": 0.00563070202,
+            "unit": "of the free-tile stroke",
+            "settles": "no distribution whatever on C-0063's 34 stations can beat this at that state, so a floor above 0.10 would prove the placement is a single-state result; dishing is affine in the attachment forces and every distribution produces some force vector",
+            "falsifierFired": false
+        },
+        {
+            "name": "the worst free-field cosine of the design state against another state",
+            "value": -0.984198658,
+            "unit": "dimensionless",
+            "settles": "C-0064's instrument: a negative cosine means the two loads dish the free tile in opposite senses and no one correction serves both — it costs one pass over two precomputed fields and needs no optimiser",
+            "falsifierFired": false
+        },
+        {
+            "name": "the stroke C-0022's 2 nm state demands of a 10 nm device",
+            "value": 8.0,
+            "unit": "nm",
+            "settles": "against C-0050's dead-load stroke at S3's own 100 pN — the largest of its six layer models at the 10 nm design point — which is what makes the exclusion of that state PHYSICAL rather than convenient",
+            "falsifierFired": false
+        },
+        {
+            "name": "C-0050's dead-load stroke at a 10 nm layer, the largest anywhere it solved",
+            "value": 7.42353439,
+            "unit": "nm",
+            "settles": "the ceiling the 8 nm demand above is read against, taken over all six layer models AND every grafting density of C-0027's 10 nm window (at S3's own sigma = %.3f nm^-2 it is %.4f nm); C-0017's own theorem is that a coupling can only REDUCE the delivered stroke, so this is a supremum over every coupling that could ever be designed",
+            "falsifierFired": false
+        },
+        {
+            "name": "C-0050's dead-load stroke at S3's own 5 nm layer, the largest of six models",
+            "value": 1.52994334,
+            "unit": "nm",
+            "settles": "reported because it does NOT clear the 3 nm its own device needs to reach C-0022's 2 nm state: that state is held by its own solved 0.368 V bias and not by a 100 pN dead load, which is a fact about C-0022's state set and is recorded rather than smoothed",
+            "falsifierFired": false
+        },
+        {
+            "name": "34 equal springs on C-0063's placement, worst over the design device's range",
+            "value": 0.0788500163,
+            "unit": "of the free-tile stroke",
+            "settles": "the headline, and it costs one Cholesky per state: whether C-0063's equal-spring advantage survives the range its own device traverses",
+            "falsifierFired": false
+        }
+    ],
+    "states": [
+        {
+            "state": "2.0 mM, 10 nm, 0.192 V",
+            "concentration": 2.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "freeDishingOverStroke": 0.307902368,
+            "equalSpringDishingOverStroke": 0.0706145537,
+            "reachableFloorOverStroke": 0.0031213253,
+            "flatAtTenPercent": true,
+            "beatsNoCouplingAtAll": true,
+            "occupiedByTenNanometreDevice": true,
+            "strokeDemandedOfTenNanometreDevice": 0.0
+        },
+        {
+            "state": "0.5 mM, 10 nm, 0.134 V",
+            "concentration": 0.5,
+            "gapHeight": 10.0,
+            "appliedBias": 0.134,
+            "freeDishingOverStroke": 0.306781594,
+            "equalSpringDishingOverStroke": 0.0685940743,
+            "reachableFloorOverStroke": 0.00238709071,
+            "flatAtTenPercent": true,
+            "beatsNoCouplingAtAll": true,
+            "occupiedByTenNanometreDevice": true,
+            "strokeDemandedOfTenNanometreDevice": 0.0
+        },
+        {
+            "state": "10.0 mM, 10 nm, 0.192 V",
+            "concentration": 10.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "freeDishingOverStroke": 0.339871476,
+            "equalSpringDishingOverStroke": 0.079771469,
+            "reachableFloorOverStroke": 0.00563070202,
+            "flatAtTenPercent": true,
+            "beatsNoCouplingAtAll": true,
+            "occupiedByTenNanometreDevice": true,
+            "strokeDemandedOfTenNanometreDevice": 0.0
+        },
+        {
+            "state": "2.0 mM, 5 nm, 0.368 V",
+            "concentration": 2.0,
+            "gapHeight": 5.0,
+            "appliedBias": 0.368,
+            "freeDishingOverStroke": 0.0637590476,
+            "equalSpringDishingOverStroke": 0.11043016,
+            "reachableFloorOverStroke": 8.11624639E-4,
+            "flatAtTenPercent": false,
+            "beatsNoCouplingAtAll": false,
+            "occupiedByTenNanometreDevice": true,
+            "strokeDemandedOfTenNanometreDevice": 5.0
+        },
+        {
+            "state": "2.0 mM, 2 nm, 0.368 V",
+            "concentration": 2.0,
+            "gapHeight": 2.0,
+            "appliedBias": 0.368,
+            "freeDishingOverStroke": 0.164798246,
+            "equalSpringDishingOverStroke": 0.199989871,
+            "reachableFloorOverStroke": 0.00284883081,
+            "flatAtTenPercent": false,
+            "beatsNoCouplingAtAll": false,
+            "occupiedByTenNanometreDevice": false,
+            "strokeDemandedOfTenNanometreDevice": 8.0
+        },
+        {
+            "state": "2.0 mM, 7 nm, 0.192 V",
+            "concentration": 2.0,
+            "gapHeight": 7.0,
+            "appliedBias": 0.192,
+            "freeDishingOverStroke": 0.200545032,
+            "equalSpringDishingOverStroke": 0.0788500163,
+            "reachableFloorOverStroke": 0.00178853277,
+            "flatAtTenPercent": true,
+            "beatsNoCouplingAtAll": true,
+            "occupiedByTenNanometreDevice": true,
+            "strokeDemandedOfTenNanometreDevice": 3.0
+        },
+        {
+            "state": "0.5 mM, 7 nm, 0.082 V",
+            "concentration": 0.5,
+            "gapHeight": 7.0,
+            "appliedBias": 0.082,
+            "freeDishingOverStroke": 0.195316997,
+            "equalSpringDishingOverStroke": 0.0787105024,
+            "reachableFloorOverStroke": 0.00170804276,
+            "flatAtTenPercent": true,
+            "beatsNoCouplingAtAll": true,
+            "occupiedByTenNanometreDevice": true,
+            "strokeDemandedOfTenNanometreDevice": 3.0
+        },
+        {
+            "state": "0.5 mM, 7 nm, 0.155 V",
+            "concentration": 0.5,
+            "gapHeight": 7.0,
+            "appliedBias": 0.155,
+            "freeDishingOverStroke": 0.150578322,
+            "equalSpringDishingOverStroke": 0.0853478866,
+            "reachableFloorOverStroke": 0.00154274228,
+            "flatAtTenPercent": true,
+            "beatsNoCouplingAtAll": true,
+            "occupiedByTenNanometreDevice": true,
+            "strokeDemandedOfTenNanometreDevice": 3.0
+        },
+        {
+            "state": "10.0 mM, 7 nm, 0.082 V",
+            "concentration": 10.0,
+            "gapHeight": 7.0,
+            "appliedBias": 0.082,
+            "freeDishingOverStroke": 0.222873414,
+            "equalSpringDishingOverStroke": 0.0884359572,
+            "reachableFloorOverStroke": 0.00317009259,
+            "flatAtTenPercent": true,
+            "beatsNoCouplingAtAll": true,
+            "occupiedByTenNanometreDevice": true,
+            "strokeDemandedOfTenNanometreDevice": 3.0
+        },
+        {
+            "state": "10.0 mM, 7 nm, 0.155 V",
+            "concentration": 10.0,
+            "gapHeight": 7.0,
+            "appliedBias": 0.155,
+            "freeDishingOverStroke": 0.201423784,
+            "equalSpringDishingOverStroke": 0.0896176107,
+            "reachableFloorOverStroke": 0.0026736128,
+            "flatAtTenPercent": true,
+            "beatsNoCouplingAtAll": true,
+            "occupiedByTenNanometreDevice": true,
+            "strokeDemandedOfTenNanometreDevice": 3.0
+        },
+        {
+            "state": "INTERPOLATED 2.0 mM, 9.00 nm, 0.192 V",
+            "concentration": 2.0,
+            "gapHeight": 9.0,
+            "appliedBias": 0.192,
+            "freeDishingOverStroke": 0.27269633,
+            "equalSpringDishingOverStroke": 0.0719737992,
+            "reachableFloorOverStroke": 0.00266275003,
+            "flatAtTenPercent": true,
+            "beatsNoCouplingAtAll": true,
+            "occupiedByTenNanometreDevice": true,
+            "strokeDemandedOfTenNanometreDevice": 1.0
+        },
+        {
+            "state": "INTERPOLATED 2.0 mM, 8.00 nm, 0.192 V",
+            "concentration": 2.0,
+            "gapHeight": 8.0,
+            "appliedBias": 0.192,
+            "freeDishingOverStroke": 0.236931028,
+            "equalSpringDishingOverStroke": 0.0752664094,
+            "reachableFloorOverStroke": 0.00221648593,
+            "flatAtTenPercent": true,
+            "beatsNoCouplingAtAll": true,
+            "occupiedByTenNanometreDevice": true,
+            "strokeDemandedOfTenNanometreDevice": 2.0
+        },
+        {
+            "state": "uniform load (the falsifier case)",
+            "concentration": 0.0,
+            "gapHeight": 0.0,
+            "appliedBias": 0.0,
+            "freeDishingOverStroke": 0.0,
+            "equalSpringDishingOverStroke": 0.12667717,
+            "reachableFloorOverStroke": 0.0,
+            "flatAtTenPercent": false,
+            "beatsNoCouplingAtAll": false,
+            "occupiedByTenNanometreDevice": false,
+            "strokeDemandedOfTenNanometreDevice": 0.0
+        }
+    ],
+    "cosines": [
+        {
+            "first": "2.0 mM, 10 nm, 0.192 V",
+            "second": "0.5 mM, 10 nm, 0.134 V",
+            "cosine": 0.996526826,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0706145537
+        },
+        {
+            "first": "2.0 mM, 10 nm, 0.192 V",
+            "second": "10.0 mM, 10 nm, 0.192 V",
+            "cosine": 0.987345425,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.079771469
+        },
+        {
+            "first": "2.0 mM, 10 nm, 0.192 V",
+            "second": "2.0 mM, 5 nm, 0.368 V",
+            "cosine": 0.986837945,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.11043016
+        },
+        {
+            "first": "2.0 mM, 10 nm, 0.192 V",
+            "second": "2.0 mM, 2 nm, 0.368 V",
+            "cosine": -0.984198658,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.199989871
+        },
+        {
+            "first": "2.0 mM, 10 nm, 0.192 V",
+            "second": "2.0 mM, 7 nm, 0.192 V",
+            "cosine": 0.999589169,
+            "sameDevice": true,
+            "equalSpringWorstOverStroke": 0.0788500163
+        },
+        {
+            "first": "2.0 mM, 10 nm, 0.192 V",
+            "second": "0.5 mM, 7 nm, 0.082 V",
+            "cosine": 0.999198425,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0787105024
+        },
+        {
+            "first": "2.0 mM, 10 nm, 0.192 V",
+            "second": "0.5 mM, 7 nm, 0.155 V",
+            "cosine": 0.989419274,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0853478866
+        },
+        {
+            "first": "2.0 mM, 10 nm, 0.192 V",
+            "second": "10.0 mM, 7 nm, 0.082 V",
+            "cosine": 0.99483513,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0884359572
+        },
+        {
+            "first": "2.0 mM, 10 nm, 0.192 V",
+            "second": "10.0 mM, 7 nm, 0.155 V",
+            "cosine": 0.99671655,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0896176107
+        },
+        {
+            "first": "0.5 mM, 10 nm, 0.134 V",
+            "second": "10.0 mM, 10 nm, 0.192 V",
+            "cosine": 0.970716449,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.079771469
+        },
+        {
+            "first": "0.5 mM, 10 nm, 0.134 V",
+            "second": "2.0 mM, 5 nm, 0.368 V",
+            "cosine": 0.996781277,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.11043016
+        },
+        {
+            "first": "0.5 mM, 10 nm, 0.134 V",
+            "second": "2.0 mM, 2 nm, 0.368 V",
+            "cosine": -0.966041286,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.199989871
+        },
+        {
+            "first": "0.5 mM, 10 nm, 0.134 V",
+            "second": "2.0 mM, 7 nm, 0.192 V",
+            "cosine": 0.998444901,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0788500163
+        },
+        {
+            "first": "0.5 mM, 10 nm, 0.134 V",
+            "second": "0.5 mM, 7 nm, 0.082 V",
+            "cosine": 0.99891033,
+            "sameDevice": true,
+            "equalSpringWorstOverStroke": 0.0787105024
+        },
+        {
+            "first": "0.5 mM, 10 nm, 0.134 V",
+            "second": "0.5 mM, 7 nm, 0.155 V",
+            "cosine": 0.998022581,
+            "sameDevice": true,
+            "equalSpringWorstOverStroke": 0.0853478866
+        },
+        {
+            "first": "0.5 mM, 10 nm, 0.134 V",
+            "second": "10.0 mM, 7 nm, 0.082 V",
+            "cosine": 0.982928108,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0884359572
+        },
+        {
+            "first": "0.5 mM, 10 nm, 0.134 V",
+            "second": "10.0 mM, 7 nm, 0.155 V",
+            "cosine": 0.986512747,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0896176107
+        },
+        {
+            "first": "10.0 mM, 10 nm, 0.192 V",
+            "second": "2.0 mM, 5 nm, 0.368 V",
+            "cosine": 0.948808235,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.11043016
+        },
+        {
+            "first": "10.0 mM, 10 nm, 0.192 V",
+            "second": "2.0 mM, 2 nm, 0.368 V",
+            "cosine": -0.999823593,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.199989871
+        },
+        {
+            "first": "10.0 mM, 10 nm, 0.192 V",
+            "second": "2.0 mM, 7 nm, 0.192 V",
+            "cosine": 0.982479843,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.079771469
+        },
+        {
+            "first": "10.0 mM, 10 nm, 0.192 V",
+            "second": "0.5 mM, 7 nm, 0.082 V",
+            "cosine": 0.980440483,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.079771469
+        },
+        {
+            "first": "10.0 mM, 10 nm, 0.192 V",
+            "second": "0.5 mM, 7 nm, 0.155 V",
+            "cosine": 0.95392446,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0853478866
+        },
+        {
+            "first": "10.0 mM, 10 nm, 0.192 V",
+            "second": "10.0 mM, 7 nm, 0.082 V",
+            "cosine": 0.998340227,
+            "sameDevice": true,
+            "equalSpringWorstOverStroke": 0.0884359572
+        },
+        {
+            "first": "10.0 mM, 10 nm, 0.192 V",
+            "second": "10.0 mM, 7 nm, 0.155 V",
+            "cosine": 0.996932614,
+            "sameDevice": true,
+            "equalSpringWorstOverStroke": 0.0896176107
+        },
+        {
+            "first": "2.0 mM, 5 nm, 0.368 V",
+            "second": "2.0 mM, 2 nm, 0.368 V",
+            "cosine": -0.942729434,
+            "sameDevice": true,
+            "equalSpringWorstOverStroke": 0.199989871
+        },
+        {
+            "first": "2.0 mM, 5 nm, 0.368 V",
+            "second": "2.0 mM, 7 nm, 0.192 V",
+            "cosine": 0.991042208,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.11043016
+        },
+        {
+            "first": "2.0 mM, 5 nm, 0.368 V",
+            "second": "0.5 mM, 7 nm, 0.082 V",
+            "cosine": 0.992411958,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.11043016
+        },
+        {
+            "first": "2.0 mM, 5 nm, 0.368 V",
+            "second": "0.5 mM, 7 nm, 0.155 V",
+            "cosine": 0.999842945,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.11043016
+        },
+        {
+            "first": "2.0 mM, 5 nm, 0.368 V",
+            "second": "10.0 mM, 7 nm, 0.082 V",
+            "cosine": 0.965419494,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.11043016
+        },
+        {
+            "first": "2.0 mM, 5 nm, 0.368 V",
+            "second": "10.0 mM, 7 nm, 0.155 V",
+            "cosine": 0.970616816,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.11043016
+        },
+        {
+            "first": "2.0 mM, 2 nm, 0.368 V",
+            "second": "2.0 mM, 7 nm, 0.192 V",
+            "cosine": -0.978815736,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.199989871
+        },
+        {
+            "first": "2.0 mM, 2 nm, 0.368 V",
+            "second": "0.5 mM, 7 nm, 0.082 V",
+            "cosine": -0.976586834,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.199989871
+        },
+        {
+            "first": "2.0 mM, 2 nm, 0.368 V",
+            "second": "0.5 mM, 7 nm, 0.155 V",
+            "cosine": -0.948134492,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.199989871
+        },
+        {
+            "first": "2.0 mM, 2 nm, 0.368 V",
+            "second": "10.0 mM, 7 nm, 0.082 V",
+            "cosine": -0.997086394,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.199989871
+        },
+        {
+            "first": "2.0 mM, 2 nm, 0.368 V",
+            "second": "10.0 mM, 7 nm, 0.155 V",
+            "cosine": -0.995292616,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.199989871
+        },
+        {
+            "first": "2.0 mM, 7 nm, 0.192 V",
+            "second": "0.5 mM, 7 nm, 0.082 V",
+            "cosine": 0.999931479,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0788500163
+        },
+        {
+            "first": "2.0 mM, 7 nm, 0.192 V",
+            "second": "0.5 mM, 7 nm, 0.155 V",
+            "cosine": 0.993130419,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0853478866
+        },
+        {
+            "first": "2.0 mM, 7 nm, 0.192 V",
+            "second": "10.0 mM, 7 nm, 0.082 V",
+            "cosine": 0.991581393,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0884359572
+        },
+        {
+            "first": "2.0 mM, 7 nm, 0.192 V",
+            "second": "10.0 mM, 7 nm, 0.155 V",
+            "cosine": 0.994050426,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0896176107
+        },
+        {
+            "first": "0.5 mM, 7 nm, 0.082 V",
+            "second": "0.5 mM, 7 nm, 0.155 V",
+            "cosine": 0.994294628,
+            "sameDevice": true,
+            "equalSpringWorstOverStroke": 0.0853478866
+        },
+        {
+            "first": "0.5 mM, 7 nm, 0.082 V",
+            "second": "10.0 mM, 7 nm, 0.082 V",
+            "cosine": 0.990143737,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0884359572
+        },
+        {
+            "first": "0.5 mM, 7 nm, 0.082 V",
+            "second": "10.0 mM, 7 nm, 0.155 V",
+            "cosine": 0.992835477,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0896176107
+        },
+        {
+            "first": "0.5 mM, 7 nm, 0.155 V",
+            "second": "10.0 mM, 7 nm, 0.082 V",
+            "cosine": 0.969618939,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0884359572
+        },
+        {
+            "first": "0.5 mM, 7 nm, 0.155 V",
+            "second": "10.0 mM, 7 nm, 0.155 V",
+            "cosine": 0.974476595,
+            "sameDevice": false,
+            "equalSpringWorstOverStroke": 0.0896176107
+        },
+        {
+            "first": "10.0 mM, 7 nm, 0.082 V",
+            "second": "10.0 mM, 7 nm, 0.155 V",
+            "cosine": 0.999784833,
+            "sameDevice": true,
+            "equalSpringWorstOverStroke": 0.0896176107
+        }
+    ],
+    "ranges": [
+        {
+            "device": "2 mM, L0 = 10 nm, 0.192 V (C-0018's placed device)",
+            "rationale": "C-0018 places this device with 1-3 % of pull-in margin; S3's acceptable stroke is 3 nm, so it traverses gaps 10 -> 7 nm at its OWN operating bias, and C-0022 solved both ends of that at 0.192 V",
+            "restingHeight": 10.0,
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 7 nm, 0.192 V"
+            ],
+            "floorOverStroke": 0.0031213253,
+            "equalSpringWorstOverStroke": 0.0788500163,
+            "minimaxWorstOverStroke": 0.0291419663,
+            "bindingStates": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 7 nm, 0.192 V"
+            ],
+            "flatWithEqualSprings": true,
+            "flatWithADistribution": true,
+            "minimaxPeakRatio": 1.82918118,
+            "peakPathStiffness": 1.79331488,
+            "peakPathForceAtAcceptableStroke": 5.37994464,
+            "peakSolvedPathForce": 3.64377588,
+            "peakThermalForce": 0.63214899,
+            "withinUnzipAllowable": true,
+            "startsUsed": 24,
+            "startsWithinOnePartInAMillion": 1
+        },
+        {
+            "device": "0.5 mM, L0 = 10 nm, 0.134 V (C-0032's recommendation)",
+            "rationale": "C-0032 finds every predicate clears at 0.5 mM where the 2 mM design sits ON its own fold; C-0022 did not solve the compressed end at 0.134 V, so the range BRACKETS it with the 0.082 V and 0.155 V profiles it did solve at 7 nm",
+            "restingHeight": 10.0,
+            "states": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "0.5 mM, 7 nm, 0.082 V",
+                "0.5 mM, 7 nm, 0.155 V"
+            ],
+            "floorOverStroke": 0.00238709071,
+            "equalSpringWorstOverStroke": 0.0853478866,
+            "minimaxWorstOverStroke": 0.0364754519,
+            "bindingStates": [
+                "0.5 mM, 7 nm, 0.155 V"
+            ],
+            "flatWithEqualSprings": true,
+            "flatWithADistribution": true,
+            "minimaxPeakRatio": 1.72260028,
+            "peakPathStiffness": 1.6888238,
+            "peakPathForceAtAcceptableStroke": 5.06647141,
+            "peakSolvedPathForce": 3.54209932,
+            "peakThermalForce": 0.595315564,
+            "withinUnzipAllowable": true,
+            "startsUsed": 24,
+            "startsWithinOnePartInAMillion": 1
+        },
+        {
+            "device": "2 mM, L0 = 5 nm, 0.368 V",
+            "rationale": "the rest and held states of the FIVE nanometre layer — C-0022's 2 nm state is this device held at S3's 3 nm stroke, and it is the ONLY device that occupies a 2 nm gap at all",
+            "restingHeight": 5.0,
+            "states": [
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "floorOverStroke": 0.00284883081,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.0564789529,
+            "bindingStates": [
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": true,
+            "minimaxPeakRatio": 2.32277583,
+            "peakPathStiffness": 2.2772312,
+            "peakPathForceAtAcceptableStroke": 6.83169361,
+            "peakSolvedPathForce": 3.95208362,
+            "peakThermalForce": 0.802730976,
+            "withinUnzipAllowable": true,
+            "startsUsed": 24,
+            "startsWithinOnePartInAMillion": 1
+        },
+        {
+            "device": "10 mM, L0 = 10 nm, 0.192 V",
+            "rationale": "the third buffer of C-0022's headline five, with its compressed end bracketed by the 0.082 V and 0.155 V profiles solved at 7 nm",
+            "restingHeight": 10.0,
+            "states": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "10.0 mM, 7 nm, 0.082 V",
+                "10.0 mM, 7 nm, 0.155 V"
+            ],
+            "floorOverStroke": 0.00563070202,
+            "equalSpringWorstOverStroke": 0.0896176107,
+            "minimaxWorstOverStroke": 0.0381941264,
+            "bindingStates": [
+                "10.0 mM, 7 nm, 0.155 V"
+            ],
+            "flatWithEqualSprings": true,
+            "flatWithADistribution": true,
+            "minimaxPeakRatio": 2.20681084,
+            "peakPathStiffness": 2.16354004,
+            "peakPathForceAtAcceptableStroke": 6.49062012,
+            "peakSolvedPathForce": 4.17590831,
+            "peakThermalForce": 0.762654493,
+            "withinUnzipAllowable": true,
+            "startsUsed": 24,
+            "startsWithinOnePartInAMillion": 1
+        }
+    ],
+    "subsets": [
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V"
+            ],
+            "size": 1,
+            "containsTwoNanometreState": false,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.0706145537,
+            "minimaxWorstOverStroke": 0.0202078712,
+            "flatWithEqualSprings": true,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "0.5 mM, 10 nm, 0.134 V"
+            ],
+            "size": 1,
+            "containsTwoNanometreState": false,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.0685940743,
+            "minimaxWorstOverStroke": 0.0202476947,
+            "flatWithEqualSprings": true,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V"
+            ],
+            "size": 2,
+            "containsTwoNanometreState": false,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.0706145537,
+            "minimaxWorstOverStroke": 0.0243351595,
+            "flatWithEqualSprings": true,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "10.0 mM, 10 nm, 0.192 V"
+            ],
+            "size": 1,
+            "containsTwoNanometreState": false,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.079771469,
+            "minimaxWorstOverStroke": 0.0242718332,
+            "flatWithEqualSprings": true,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "10.0 mM, 10 nm, 0.192 V"
+            ],
+            "size": 2,
+            "containsTwoNanometreState": false,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.079771469,
+            "minimaxWorstOverStroke": 0.0301370211,
+            "flatWithEqualSprings": true,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V"
+            ],
+            "size": 2,
+            "containsTwoNanometreState": false,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.079771469,
+            "minimaxWorstOverStroke": 0.0338134917,
+            "flatWithEqualSprings": true,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V"
+            ],
+            "size": 3,
+            "containsTwoNanometreState": false,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.079771469,
+            "minimaxWorstOverStroke": 0.0335476381,
+            "flatWithEqualSprings": true,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 1,
+            "containsTwoNanometreState": false,
+            "containsTenNanometreState": false,
+            "equalSpringWorstOverStroke": 0.11043016,
+            "minimaxWorstOverStroke": 0.0191022374,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 2,
+            "containsTwoNanometreState": false,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.11043016,
+            "minimaxWorstOverStroke": 0.0545189178,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 2,
+            "containsTwoNanometreState": false,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.11043016,
+            "minimaxWorstOverStroke": 0.0501892845,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 3,
+            "containsTwoNanometreState": false,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.11043016,
+            "minimaxWorstOverStroke": 0.0552302795,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 2,
+            "containsTwoNanometreState": false,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.11043016,
+            "minimaxWorstOverStroke": 0.0659482006,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 3,
+            "containsTwoNanometreState": false,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.11043016,
+            "minimaxWorstOverStroke": 0.0666827446,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 3,
+            "containsTwoNanometreState": false,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.11043016,
+            "minimaxWorstOverStroke": 0.0670975863,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 4,
+            "containsTwoNanometreState": false,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.11043016,
+            "minimaxWorstOverStroke": 0.0672366714,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 1,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": false,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.0225036648,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 2,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.100969303,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": false
+        },
+        {
+            "states": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 2,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.0985065818,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 3,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.102137875,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": false
+        },
+        {
+            "states": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 2,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.110663478,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": false
+        },
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 3,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.111501703,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": false
+        },
+        {
+            "states": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 3,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.112790903,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": false
+        },
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 4,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.112707792,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": false
+        },
+        {
+            "states": [
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 2,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": false,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.056553331,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 3,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.100890147,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": false
+        },
+        {
+            "states": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 3,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.0986153311,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": true
+        },
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V",
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 4,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.102090711,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": false
+        },
+        {
+            "states": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 3,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.110449871,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": false
+        },
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 4,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.111691401,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": false
+        },
+        {
+            "states": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 4,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.112402073,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": false
+        },
+        {
+            "states": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 5,
+            "containsTwoNanometreState": true,
+            "containsTenNanometreState": true,
+            "equalSpringWorstOverStroke": 0.199989871,
+            "minimaxWorstOverStroke": 0.11243522,
+            "flatWithEqualSprings": false,
+            "flatWithADistribution": false
+        }
+    ],
+    "placements": [
+        {
+            "family": "centro-symmetric, 2 or 3 arms per row, exhaustive",
+            "phaseBasePairs": 8,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "enumerated": 163296,
+            "bestOverStroke": 0.0909836451,
+            "medianOverStroke": 0.416852847,
+            "worstOverStroke": 0.937868364,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-16320000,16320000;6:-10880000,10880000;7:-5440000,5440000;8:-10880000,10880000;9:-16320000,16320000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestFlatAtTenPercent": true,
+            "bestAtDesignStateOverStroke": 0.0909836451,
+            "c0063OverStroke": 0.0788500163,
+            "placementsBetterThanC0063": 0,
+            "beatsC0063": false
+        },
+        {
+            "family": "centro-symmetric, 2 or 3 arms per row, exhaustive",
+            "phaseBasePairs": 8,
+            "objective": "the worst over the 2 mM / 5 nm / 0.368 V device's traversed range",
+            "enumerated": 163296,
+            "bestOverStroke": 0.0895471651,
+            "medianOverStroke": 0.275505263,
+            "worstOverStroke": 0.695814897,
+            "bestKey": "0:0,10880000;1:-16320000,-5440000,16320000;2:-10880000,0;3:-16320000,16320000;4:0,10880000;5:-16320000,-5440000,16320000;6:0,10880000;7:-16320000,16320000;8:-10880000,0;9:-16320000,5440000,16320000;10:-10880000,0;11:-16320000,16320000;12:0,10880000;13:-16320000,5440000,16320000;14:-10880000,0",
+            "bestFlatAtTenPercent": true,
+            "bestAtDesignStateOverStroke": 0.241551322,
+            "c0063OverStroke": 0.199989871,
+            "placementsBetterThanC0063": 30465,
+            "beatsC0063": true
+        },
+        {
+            "family": "centro-symmetric, 2 or 3 arms per row, exhaustive",
+            "phaseBasePairs": 24,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "enumerated": 198288,
+            "bestOverStroke": 0.0788500163,
+            "medianOverStroke": 0.430915555,
+            "worstOverStroke": 0.981249474,
+            "bestKey": "0:-16320000,-5440000,16320000;1:0,10880000;2:-16320000,5440000,16320000;3:0,10880000;4:-16320000,16320000;5:-10880000,0;6:-16320000,16320000;7:-10880000,10880000;8:-16320000,16320000;9:0,10880000;10:-16320000,16320000;11:-10880000,0;12:-16320000,-5440000,16320000;13:-10880000,0;14:-16320000,5440000,16320000",
+            "bestFlatAtTenPercent": true,
+            "bestAtDesignStateOverStroke": 0.0706145537,
+            "c0063OverStroke": 0.0788500163,
+            "placementsBetterThanC0063": 0,
+            "beatsC0063": false
+        },
+        {
+            "family": "centro-symmetric, 2 or 3 arms per row, exhaustive",
+            "phaseBasePairs": 24,
+            "objective": "the worst over the 2 mM / 5 nm / 0.368 V device's traversed range",
+            "enumerated": 198288,
+            "bestOverStroke": 0.116856045,
+            "medianOverStroke": 0.277051966,
+            "worstOverStroke": 0.727569646,
+            "bestKey": "0:-5440000,16320000;1:-10880000,10880000;2:-16320000,-5440000;3:-10880000,10880000;4:-16320000,16320000;5:-10880000,0,10880000;6:-16320000,-5440000,5440000;7:-10880000,10880000;8:-5440000,5440000,16320000;9:-10880000,0,10880000;10:-16320000,16320000;11:-10880000,10880000;12:5440000,16320000;13:-10880000,10880000;14:-16320000,5440000",
+            "bestFlatAtTenPercent": false,
+            "bestAtDesignStateOverStroke": 0.298572894,
+            "c0063OverStroke": 0.199989871,
+            "placementsBetterThanC0063": 27355,
+            "beatsC0063": true
+        }
+    ],
+    "distributions": [
+        {
+            "placement": "C-0063's swept placement, 34 upward roots at phase 24",
+            "rule": "uniform — 34 EQUAL springs",
+            "ratio": 1.0,
+            "designStateOverStroke": 0.0706145537,
+            "rangeWorstOverStroke": 0.0788500163,
+            "flatOverRange": true,
+            "peakPathForceAtAcceptableStroke": 2.94117647,
+            "peakThermalForce": 0.345591239
+        },
+        {
+            "placement": "C-0063's swept placement, 34 upward roots at phase 24",
+            "rule": "C-0058's rim rule over a 6.70 nm collar",
+            "ratio": 2.0,
+            "designStateOverStroke": 0.141018864,
+            "rangeWorstOverStroke": 0.159887724,
+            "flatOverRange": false,
+            "peakPathForceAtAcceptableStroke": 3.57142857,
+            "peakThermalForce": 0.419646505
+        },
+        {
+            "placement": "C-0063's swept placement, 34 upward roots at phase 24",
+            "rule": "C-0058's rim rule over a 6.70 nm collar",
+            "ratio": 3.0,
+            "designStateOverStroke": 0.180181828,
+            "rangeWorstOverStroke": 0.208558613,
+            "flatOverRange": false,
+            "peakPathForceAtAcceptableStroke": 3.84615385,
+            "peakThermalForce": 0.451927005
+        },
+        {
+            "placement": "C-0063's swept placement, 34 upward roots at phase 24",
+            "rule": "C-0058's rim rule over a 6.70 nm collar",
+            "ratio": 5.0,
+            "designStateOverStroke": 0.221379348,
+            "rangeWorstOverStroke": 0.256611768,
+            "flatOverRange": false,
+            "peakPathForceAtAcceptableStroke": 4.09836066,
+            "peakThermalForce": 0.481561563
+        },
+        {
+            "placement": "C-0063's swept placement, 34 upward roots at phase 24",
+            "rule": "the 34-parameter minimax over the design device's own range",
+            "ratio": 1.82918118,
+            "designStateOverStroke": 0.0291419663,
+            "rangeWorstOverStroke": 0.0291419663,
+            "flatOverRange": true,
+            "peakPathForceAtAcceptableStroke": 5.37994464,
+            "peakThermalForce": 0.63214899
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "equal-spring worst dishing/stroke over the design device's range",
+            "parameter": "NESTED subdivisions 1 c 2 c 4",
+            "values": [
+                1.0,
+                2.0,
+                4.0
+            ],
+            "results": [
+                0.0787471017,
+                0.0788500163,
+                0.0788475684
+            ],
+            "departure": 3.10461308E-5,
+            "note": "nested only, per CLAUDE.md — a subdivision of 3 moves a station off a node"
+        },
+        {
+            "quantity": "equal-spring worst dishing/stroke over the design device's range",
+            "parameter": "dishing sample grid 41 / 81 / 161",
+            "values": [
+                41.0,
+                81.0,
+                161.0
+            ],
+            "results": [
+                0.0788184101,
+                0.0788500163,
+                0.0797279193
+            ],
+            "departure": 0.0110112375,
+            "note": "the same 2.7 % scale C-0063 reports at one state; both ends inside 0.10"
+        },
+        {
+            "quantity": "equal-spring worst dishing/stroke over the TIGHTEST flat range (10 mM, L0 = 10 nm, 0.192 V)",
+            "parameter": "dishing sample grid 41 / 81 / 161",
+            "values": [
+                41.0,
+                81.0,
+                161.0
+            ],
+            "results": [
+                0.0895949336,
+                0.0896176107,
+                0.089691084
+            ],
+            "departure": 8.19181121E-4,
+            "note": "the margin this range has against T-5b's 0.10 is what a grid sensitivity could consume, so it is measured there and not only at the design device"
+        },
+        {
+            "quantity": "equal-spring worst dishing/stroke over the design device's range",
+            "parameter": "the range's own discretisation: 2 solved ends against 2 ends + 2 interpolated intermediate gaps",
+            "values": [
+                2.0,
+                4.0
+            ],
+            "results": [
+                0.0788500163,
+                0.0788500163
+            ],
+            "departure": 0.0,
+            "note": "the collar family is smooth in the gap, so two solved endpoints ARE the range"
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0063",
+            "quantity": "dishing/stroke, its 34 roots, equal springs, at its own state",
+            "published": 0.0706145537,
+            "reproduced": 0.0706145537,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0022",
+            "quantity": "dishing/stroke, free uncoupled tile at the design state",
+            "published": 0.3079,
+            "reproduced": 0.307902368,
+            "departure": 7.6898974E-6,
+            "strict": false
+        },
+        {
+            "source": "C-0026",
+            "quantity": "free-tile stroke [nm]",
+            "published": 4.90731102,
+            "reproduced": 4.90731102,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0058",
+            "quantity": "dishing/stroke, 3 x 15, uniform, at the design state",
+            "published": 0.2182,
+            "reproduced": 0.21821335,
+            "departure": 6.11831158E-5,
+            "strict": false
+        },
+        {
+            "source": "C-0064",
+            "quantity": "dishing/stroke, 3 x 15, rim x 5, over the 2 mM device's range",
+            "published": 0.0753,
+            "reproduced": 0.0753432869,
+            "departure": 5.74859406E-4,
+            "strict": false
+        },
+        {
+            "source": "C-0064",
+            "quantity": "the 45-path minimax over the 2 mM device's range",
+            "published": 0.0373,
+            "reproduced": 0.0373645106,
+            "departure": 0.00172950695,
+            "strict": false
+        },
+        {
+            "source": "C-0064",
+            "quantity": "dishing/stroke, 3 x 15, UNIFORM, over the 5 nm device's range",
+            "published": 0.0796,
+            "reproduced": 0.0795565596,
+            "departure": 5.45733528E-4,
+            "strict": false
+        },
+        {
+            "source": "C-0055",
+            "quantity": "upward root pitch [nm]",
+            "published": 10.88,
+            "reproduced": 10.88,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0055",
+            "quantity": "arms placed",
+            "published": 34.0,
+            "reproduced": 34.0,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0055",
+            "quantity": "arm length [nm]",
+            "published": 8.164,
+            "reproduced": 8.16439083,
+            "departure": 4.78723665E-5,
+            "strict": false
+        },
+        {
+            "source": "C-0049",
+            "quantity": "the per-path stiffness ceiling [pN/nm]",
+            "published": 3.33333333,
+            "reproduced": 3.33333333,
+            "departure": 1.00000008E-9,
+            "strict": false
+        },
+        {
+            "source": "C-0063",
+            "quantity": "the admissible per-path ratio at 34 paths",
+            "published": 3.4,
+            "reproduced": 3.4,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0050",
+            "quantity": "dead-load stroke at the 10 nm design point, best of six models [nm]",
+            "published": 6.01348358,
+            "reproduced": 6.01348358,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0050",
+            "quantity": "dead-load stroke, best over the whole sweep [nm]",
+            "published": 7.42353439,
+            "reproduced": 7.42353439,
+            "departure": 0.0,
+            "strict": false
+        }
+    ],
+    "predicates": [
+        {
+            "name": "P1 — equal springs over a traversed range",
+            "statement": "the worst peak dishing of 34 EQUAL springs on C-0063's placement over each device's own range, against T-5b's 0.10 of the free-tile stroke",
+            "verdict": "0.0789 / 0.0853 / 0.2000 / 0.0896 over the four devices — 3 of 4 inside T-5b's 0.10 with EQUAL springs, the exception being 2 mM, L0 = 5 nm, 0.368 V"
+        },
+        {
+            "name": "P2 — does the range need a distribution?",
+            "statement": "the 34-parameter multi-state minimax against the equal-spring reading over the same range, at C-0017's unchanged total",
+            "verdict": "0.0291 / 0.0365 / 0.0565 / 0.0382 over the four devices, ALL FOUR inside T-5b's 0.10; at the design device the distribution is worth 63.0 % over equal springs and asks a peak ratio of only 1.83, and the one range equal springs miss is recovered at a peak ratio of 2.32"
+        },
+        {
+            "name": "P3 — which states one device co-occupies",
+            "statement": "the 2 nm state demands 8.0 nm of stroke of a 10 nm device against C-0050's 7.424 nm dead-load ceiling, and 3.0 nm of the 5 nm device that owns it",
+            "verdict": "the 2 nm state is NOT occupied by any 10 nm device and IS the compressed end of the 5 nm device, whose own range reads 0.2000 — the exclusion is physical, and it excludes nothing, because that device is evaluated too"
+        },
+        {
+            "name": "P4 — is the single-state placement the right placement for a range?",
+            "statement": "the centro-symmetric family re-enumerated exhaustively under the range objective",
+            "verdict": "phase 8: best 0.0910 against C-0063's 0.0789, 0 of 163296 placements better; phase 8: best 0.0895 against C-0063's 0.2000, 30465 of 163296 placements better; phase 24: best 0.0789 against C-0063's 0.0789, 0 of 198288 placements better; phase 24: best 0.1169 against C-0063's 0.2000, 27355 of 198288 placements better"
+        },
+        {
+            "name": "the portfolio duty, for contrast",
+            "statement": "the same placement asked to be flat at all five of C-0022's headline states at once",
+            "verdict": "0.2000 with equal springs and 0.1124 with the best distribution found — OUTSIDE T-5b's 0.10"
+        }
+    ],
+    "findings": [
+        "C-0063's placement is flat with EQUAL springs over the traversed range of every 10 nm device C-0022 solved, and over no other: 0.0789 (2 mM, C-0018's placed device), 0.0853 (0.5 mM, C-0032's recommendation) and 0.0896 (10 mM), against 0.0706 at the single state C-0063 reported. So the single-state verdict TRAVELS for the device it was read on — but the margin against T-5b's 0.10 falls from 1.42x to 1.12x, and it is the compressed end of the stroke that spends it.",
+        "The exception is the FIVE nanometre device, and it is the one whose range contains C-0022's 2 nm state: equal springs dish 0.2000 there, 2.0x outside the convention, where the same equal springs on C-0058's 3 x 15 grid dish 0.0796 (re-derived here) and are inside it. On this station set the 5 nm device NEEDS a distribution — the 34-parameter minimax recovers it to 0.0565 at a peak ratio of 2.32 — so C-0063's equal-spring advantage is a property of the 10 nm devices, not of the placement.",
+        "And at the 5 nm layer's states the equal-spring coupling is a net dishing SOURCE, which is C-0047's own bar and C-0061's failure mode at a different placement: the free tile dishes 0.0638 at the 5 nm rest state and 0.1648 at the 2 nm held state, against 0.1104 and 0.2000 coupled — 1.73x and 1.21x WORSE than no coupling at all. The 34 roots are placed where a 10 nm layer's edge collar puts the load, and a 5 nm layer's is a different field: its free-tile dishing is 4.8x smaller at the rest state, so there is far less for a coupling to correct and the coupling's own sag dominates.",
+        "Where equal springs do clear, the distribution is worth little and C-0058's rim rule still runs the wrong way: the minimax over the design device's range reaches 0.0291 against 0.0789 (63.0 %) at a peak ratio of 1.83, while the rim rule gives 0.1599 at x2 and 0.2566 at its own x5 — the sign reversal C-0063 found at one state, reproduced over a range.",
+        "The exclusion of C-0022's 2 nm state from a 10 nm device's range is PHYSICAL and it changes no verdict here, because the device that does occupy that state is evaluated on its own: reaching a 2 nm gap from a 10 nm layer demands 8.0 nm of stroke against C-0050's 7.4235 nm, the largest dead-load stroke it finds anywhere at a 10 nm layer under S3's own 100 pN (6.0135 nm at S3's own grafting density), and C-0017's theorem says a coupling can only reduce it. The honest caveat: the same test does not clear the 5 nm device's own 3 nm either (1.5299 nm), so C-0022's 2 nm state is held by its solved 0.368 V bias rather than by a 100 pN dead load — a fact about C-0022's state set, recorded rather than smoothed.",
+        "C-0064's sign dichotomy transfers in DIRECTION and not in exactness: of the 31 non-empty subsets of C-0022's five headline states, the 14 that put the 2 nm state with a 10 nm state run 0.0985-0.1128 and 2 of them are inside 0.10, while the other 17 run 0.0191-0.0672 and 17 of 17 are — against 0 of 14 and 17 of 17 on C-0058's 3 x 15 grid. The five-state portfolio duty reaches 0.1124 here against C-0064's 0.1254 on that grid, so the placement does not repeal the incompatibility either; on this station set the ANTAGONIST IS THE 5 nm LAYER rather than the 2 nm gap alone — the two states of the 5 nm device are themselves anti-parallel, cosine -0.9427, where the 10 nm devices' own pairs run +0.9969 to +0.9998.",
+        "The placement was re-swept under the RANGE objective itself, exhaustively over the centro-symmetric family at both phases the congruence admits and under two objectives: phase 8, the worst over the 2 mM / 10 nm / 0.192 V device's traversed range, 163296 enumerated, best 0.0910 (flat: true) against C-0063's 0.0789, 0 better; phase 8, the worst over the 2 mM / 5 nm / 0.368 V device's traversed range, 163296 enumerated, best 0.0895 (flat: true) against C-0063's 0.2000, 30465 better; phase 24, the worst over the 2 mM / 10 nm / 0.192 V device's traversed range, 198288 enumerated, best 0.0789 (flat: true) against C-0063's 0.0789, 0 better; phase 24, the worst over the 2 mM / 5 nm / 0.368 V device's traversed range, 198288 enumerated, best 0.1169 (flat: false) against C-0063's 0.2000, 27355 better."
+    ],
+    "parameters": {
+        "armCount": 34.0,
+        "armLength": 8.16439083,
+        "phase": 24.0,
+        "edgeX": 40.0,
+        "lengthY": 40.35,
+        "duplexes": 15.0,
+        "mandate": 33.3333333,
+        "freeStroke": 4.90731102,
+        "flatnessTolerance": 0.1,
+        "collarWidth": 6.7,
+        "unzipAllowable": 10.0,
+        "perPathStiffnessCeiling": 3.33333333,
+        "admissibleRatio": 3.4,
+        "deadLoadStrokeAtTenNanometres": 7.42353439,
+        "deadLoadStrokeAtTenNanometresAtS3Sigma": 6.01348358,
+        "deadLoadStrokeAtFiveNanometres": 1.52994334,
+        "s3GraftingDensityAtTen": 0.024,
+        "s3GraftingDensityAtFive": 0.092,
+        "singleStateDishingOverStroke": 0.0706145537,
+        "designRangeEqualSpringOverStroke": 0.0788500163,
+        "designRangeMinimaxOverStroke": 0.0291419663,
+        "designRangeFloorOverStroke": 0.0031213253,
+        "fiveStateEqualSpringOverStroke": 0.199989871,
+        "fiveStateMinimaxOverStroke": 0.11243522,
+        "placementsEnumerated": 723168.0,
+        "rangeStarts": 24.0,
+        "subsetStarts": 12.0
+    }
+}

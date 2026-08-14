@@ -55,7 +55,7 @@ The obvious escape is `C-0015`'s crossover phase, which is quantised to base pai
 ## What would settle it
 
 1. **A joint search over the crossbar lattice AND the base's axial position**, which `C-0062` names as an open item and nobody has run: if a trio exists whose base registers *at* the station, the design table's 10 bp row is restored and this challenge dissolves.
-2. **A re-composition of `C-0052`'s leg budget `chordPairMisalignment(m)` against the PINNED base misalignment** rather than the free floor. It is arithmetic, it applies to all 34 instances at one leg length, and it can only tighten the verdict.
+2. **A re-composition of `C-0052`'s leg budget `chordPairMisalignment(m)` against the PINNED base misalignment** rather than the free floor. It is arithmetic, it applies to all 34 instances at one leg length, and it can only tighten the verdict. — **DONE, by [`C-0070`](../claims/C-0070-pinned-leg-budget.md) (`T-132`), and it upholds this challenge**: the 10 bp row is not representable at **any** shared leg length, the 9 bp row at 18.0° is confirmed and now carries one — **12 steps, 4.08 nm, margin 2.443 / 1.836** — and the tightening is **zero**, 17 of 44 trios surviving before and after. What the pinning does to the budget is make the base **overspend** it (81.13° of a 45.13° budget, 1.80×) rather than spend it exactly, and all 15 leg lengths in `C-0052`'s envelope still pass.
 3. **A finer register grid.** The closing set is a measure on a continuum whose count doubles under refinement; the nearest centre and its misalignment do not move between 0.17 and 0.085 nm steps, but a much finer grid has not been run.
 
 ## Status

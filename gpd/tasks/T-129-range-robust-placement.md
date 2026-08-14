@@ -122,3 +122,32 @@ asserted against the assembled solve as a gate rather than trusted.
 rounded objective with the placement's own canonical key as the tie-break (`C-0063`'s discipline), and
 every comparison inside the distribution search is `C-0064`'s `searchDecision`. Scratch files are
 prefixed `T-129-` and study records `T129…`, per `CLAUDE.md`.
+
+---
+
+## Execute
+
+`src/main/kotlin/anchoring/RangeRobustPlacement.kt` — `MultiStateRootBank` (one free solve per state and
+one unit-point-load solve per candidate root, sliced into `C-0064`'s `MultiStateSurrogate` for any subset)
+and the two-line reachability arithmetic `strokeToOccupy` / `gapOccupiable`.
+Tests first, in `src/test/kotlin/anchoring/RangeRobustPlacementTest.kt` (13, gate-named).
+Study: `anchoring.RangeRobustPlacementStudyKt` → `gpd/results/T-129-range-robust-placement.json`,
+**~11 min**, run through `tools/study.sh`.
+
+## Verify — the five gates
+
+All five are executable tests; the study adds the convergence sweeps.
+See [`C-0068`](../claims/C-0068-range-robust-placement.md) for the table and the departures:
+the free strong falsifiers are **a uniform load dishing exactly zero on the free tile**,
+**the sliced bank against a surrogate built over the same subset alone and against an assembled solve**,
+and **`C-0063`'s 0.0706145537 reproducing to the last emitted digit**.
+
+## File
+
+**[`C-0068`](../claims/C-0068-range-robust-placement.md)** — the four predicates answered:
+**P1** 0.0789 / 0.0853 / 0.0896 flat with equal springs at 10 nm, **0.2000 not flat** at 5 nm;
+**P2** all four flat with a distribution (0.0291 / 0.0365 / 0.0565 / 0.0382) at peak ratios 1.72–2.32;
+**P3** the 2 nm state demands 8 nm of stroke of a 10 nm device against `C-0050`'s 7.4235 nm, and the
+device that owns it is evaluated separately and is the one that fails;
+**P4** `C-0063`'s placement is the range argmin (0 of 198 288 better), and the **layer selects the phase**.
+Raises **[`CH-0080`](../challenges/CH-0080-the-equal-spring-advantage-belongs-to-the-ten-nanometre-layer.md)**.
