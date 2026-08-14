@@ -8,6 +8,7 @@
 | **Grounds** | methodological — an **optimisation run against the one load case in which the objective is identically zero at infinite count**, then quoted against a load case in which it saturates at a non-zero floor |
 | **Direction** | **neutral on the counts, unfavourable on what they buy.** 45 remains the smallest flat one-row grid under the load its criterion is written on; under `C-0022`'s solved load **no count is flat**, and going from 45 to 225 attachments buys 6.9 percentage points of stroke and then stops |
 | **Status** | raised. **No count and no verdict of `C-0006`, `C-0009` or `C-0015` moves.** What moves is the sentence *"45 attachments make the tile flat"*, which becomes *"45 attachments exhaust what attachments can do"* |
+| **Challenged by** | [`CH-0071`](CH-0071-the-saturation-floor-is-a-property-of-the-equal-spring-family.md), from [`C-0058`](../claims/C-0058-non-uniform-coupling.md) (`T-113`), on **Ground 2's word *floor*** only — every table here is reproduced there to `1e−3`, and the saturation stands as a property of the **equal-spring family**: freeing the *distribution* of the same mandated total takes the same 45 attachments under the same solved load to **0.0753** of the stroke, inside `T-5b`'s convention |
 
 ---
 

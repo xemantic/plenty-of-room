@@ -4677,3 +4677,384 @@ its own package depended on transitively — and rather than dropping the packag
 is the natural successor to `P-16`.
 And `C-0053` states its own strongest check plainly: **a construction meeting an independent upper bound is
 what makes a packing verdict a proof** rather than a search that stopped.
+
+## Iteration 9 — `T-119`: the sheet is standing on an inventory three times its own, and the two azimuths it leaves empty point exactly out of its plane
+
+`C-0054` closed iteration 8 by proving that a crossover cannot be a hinge and an interface at once, and it
+was careful enough to name the one thing that would overturn it: *"a junction site the single-layer sheet
+does not use"*. It filed that as `T-119` rather than guessing. **The falsifier fires**, and the way it fires
+is more interesting than either outcome the task file anticipated.
+
+**The literature settled it in one paragraph, read directly.** Ke, Douglas, Liedl and Shih (*JACS*
+**131**:15903, 2009, `PMC2821935`, full text via `pmc.ncbi.nlm.nih.gov` — EuropePMC's `fullTextXML` returns
+zero bytes for it, exactly the trap `CLAUDE.md` records): *"each double helix has up to four nearest
+neighbors … Every 8 bp, that staple strand is positioned to cross over to one of its four neighbors …
+adjacent helices share crossovers every 32 bp, and the positions of the crossovers are restricted to
+periodic intersection or 'crossover' planes, labeled from i to iv, spaced at 8 bp intervals."* And, decisively:
+*"the crossovers in i and iii sectional slices are parallel to the xz-plane, while the crossovers in ii and
+iv sectional slices are parallel to the yz-plane."* **The four planes fall into two orthogonal families, and a
+single-layer sheet is one row of the lattice, so it can build on one family only.** `8 bp × 33.75°/bp =
+270.0°` exactly: the empty family points **out of the sheet plane**.
+
+**The second cheap bound is the one I did not expect.** Because the register departure at B-DNA's preferred
+10.5 bp/turn is *linear in the base-pair offset*, the unoccupied site 8 bp away is off by **4.286°** while the
+sheet's own next in-plane crossover, 16 bp away, is off by **8.571°**. **The site the sheet does not use is
+less strained than the site it does**, by exactly a factor of two, and that is an identity rather than a
+measurement.
+
+**The census, complete over all 32 phases: 161–176 junction sites, of which the sheet builds 49–56.** It
+occupies **27.8–33.1 %** of its own lattice, under a third at every phase — and the bound is not an accident:
+four azimuths per helix per 32 bp, the two in-plane ones shared with a neighbour and so counted once each,
+the two out-of-plane ones its own, so **three site equivalents per duplex and the sheet builds one**. The
+in-plane half of that census reproduces `C-0015`'s 56/49 as a **set equality at every one of the 32 phases**,
+from a construction that knows nothing about columns or parities — which is what makes the unused half
+quotable at all.
+
+**So `C-0054`'s two premises separate.** Exclusivity *at a site* is upheld and is used: an upward hinge's
+two partners are the sheet duplex and the arm, which is exactly why it is not an interface crossover. What
+is false is the **inventory** premise. The ceiling is not `56 − 14 = 42` with a severed tile but **52 upward
+hinges at `C-0054`'s own phase and 60 at the best one, with all 56 interface crossovers retained and the
+sheet in one piece at every count** — `CH-0068`.
+
+**And then the result that makes this an honest half-victory: the design count only moves 25 → 34.** The
+escape and its price are the *same sentence*. An upward line belongs to **one** duplex, so nothing empties —
+and so its roots sit at the bare 32 bp = 10.88 nm, where an interior row sees its two bounding interfaces at
+5.44 nm. Against an arm demanding `arm + d = 11.82 nm` that is three arms per row falling to two, and the
+cliff is at `arm ≤ 8.19 nm`, i.e. `n ≤ 34`, with no free parameter in it. **§3's 45 still does not place on a
+40 nm tile — 30 do — but the reason has changed from severance to a pitch**, and `CH-0066`'s conclusion
+survives its own mechanism being removed.
+
+Two smaller findings worth keeping. **The crossover phase has acquired a trade it did not have**: the ten
+phases that maximise the upward inventory (0–2, 14–18, 30, 31) are *disjoint* from `C-0015`'s ten that
+maximise the interface inventory, because the upward lattice is the in-plane one shifted by 8 bp. And
+**`C-0053`'s two named escapes behave oppositely**: sixteen duplexes buy exactly zero, because the constraint
+is a pitch along `x` and a row is a row however many there are, while a **49.25 nm** edge delivers §3's own 45
+with the host intact — the first configuration in this programme at which that happens, and a specification
+question rather than a physics one.
+
+**The motif is half-published, and the honest statement is the split.** The site, and a crossover on it, are
+the elementary step of square-lattice multilayer origami. A **free lever** held to a single-layer sheet by one
+crossover at that azimuth was **NOT FOUND** in 62 recorded EuropePMC queries across fifteen families — with
+`"crossover azimuth"`, `"free azimuth"`, `"interlayer crossover"`, `"cantilevered helix"` and
+`"hinge joint" AND "crossover"` all returning zero — and the 2023 mechanics review, read directly, says every
+published origami hinge is *"realized using ssDNA connections"*. A crossover-rooted flexure hinge, in plane or
+out of it, is this programme's own construct; `T-119` does not make the element more speculative than it
+already was, and it does not make it less.
+
+**The closest thing to a refutation is a yield cost, and it is in the same paper.** Ke et al.: *"some staple
+breaks must be implemented between crossovers 8 bp apart … We observed significantly lower yield for these
+structures. Introducing these breaks may be destabilizing"*, and they raised the yield of their 8 × 8 block by
+**omitting** crossovers. An upward hinge splits a 16 nt staple domain into two of 8 — 68 of them at 34 arms.
+`CLAUDE.md`'s *"the closest published precedent to a novel motif is often a failure named in one clause"*,
+landing in the body of the paper this time rather than in a supplement.
+
+The largest open item is new and is `T-121`: **34 duplexes stacked above the tile are mass and rigidity in a
+direction no model in this programme contains.** `C-0054`'s tables are all computed on *consumed* interfaces
+and simply do not apply to a host that loses nothing — so nothing currently replaces them.
+
+## Iteration 9 — `T-113`: the mandate was an equality on a SUM, everyone read it as an equality on each path, and freeing the distribution makes the tile flat
+
+`C-0047` closed with five open items and named the second *"the last unexplored axis, and the only one that
+could attack `CH-0034`'s floor"*: every attachment in this corpus is an **equal** spring, and `C-0017`'s
+mandate fixes the **total** 33.3333 pN/nm. It is a placement condition — `100 pN / 3 nm`, written on the
+secant of the whole coupling — and nothing anywhere requires the paths to share it equally. Nobody had asked.
+
+**The answer is yes at three columns and no at one, and it is the first time anything in this programme has
+made the Gen-1 tile flat.** At `C-0015`'s 45 attachments, under `C-0022`'s solved load, redistributing the
+same total — no extra stiffness, no extra paths, no new motif — takes the peak dishing from **0.2182** of the
+free-tile stroke to **0.0753** under a one-parameter rule and **0.0544** under a 45-parameter optimisation,
+both inside `T-5b`'s 0.10. `CH-0034`'s count axis saturates at **0.149** and never reaches it: **225 uniform
+attachments cannot do what 45 unequal ones can.**
+
+So `CH-0034`'s Ground 2 needs one word changed, and that is `CH-0071`. It calls the 0.149 a **floor** and
+attributes it to *"a rim collar 8.9 nm wide"* that *"no interior attachment can reach"*. The attachments that
+reach it are the ones **already there**: on a 3 × 15 grid the outer columns stand 6.67 nm from the edge,
+inside the collar, and `C-0047`'s own along-helix bending length (12.83 nm against a 13.33 nm pitch) says
+their influence patches cover it. The equal-spring assumption spends the same stiffness on eleven
+middle-column stations whose patches are entirely interior. **The repair is not to reach further, it is to
+stop paying for reach that is not needed** — and the design is one sentence: *the 34 stations within 6.7 nm
+of an edge carry five times the other eleven.*
+
+**The design is a rule, not an optimiser's table.** The full 45-parameter search is worth a further 27.8 % on
+top of the rim rule and needs one near-empty path to get it. And the rim family is **not monotone in either
+parameter**: the flat window is `5 ≤ R ≤ 20` at a 6.7 nm collar and a single ratio (10) at `C-0022`'s own
+8.94 nm one, because at a large ratio the interior springs carry nothing and what is left is an attachment
+scheme placed *only* on the collar, dishing between its own supports again. **The family converges on a
+placement.** What non-uniformity buys is `C-0015`'s *"shapes, not counts"* with the shape chosen continuously
+instead of by an integer — which is also why matching the stiffness to the **load** (the local argument, and
+the one the task's own cheap bound suggested) is worth only 25 % against the rim rule's 65 %: a plate is not
+a local response, and the length that matters is the structure's influence patch, not the load's collar.
+
+**The cost is a force, and it is affordable at 45 paths and not at 15.** A path carrying `k_i` delivers
+`k_i·s`, so the 10 pN unzip allowable caps it at `a/s` and, against the uniform share, at a ratio
+`n·a/(s·K)` — 4.5 at 45 paths and **1.5 at 15**, at §3's acceptable stroke, and 0.45 at 15 paths at the
+desired one, where not even the uniform coupling is admissible (`C-0049` from the other side). At 45 the
+ceiling **costs nothing**: the capped and uncapped optimisations return the same distribution to the last
+digit. The flat design sits at 2.762 pN per path (3.62× clear), 0.784 pN in the worst crossover (12.8×) and
+1.13 pN of duplex shear against a 48–65 band, and pays 24 % more thermal force — `C-0014`'s penalty, which
+is **linear** in a path's share and not its square root, because the tile's rigid-body coordinate has
+variance `k_BT/K` against the whole coupling and every path sees the same amplitude.
+
+**At `C-0041`'s buildable 1 × 15 the axis fails, exactly as the task predicted.** 13.0 % admissible
+improvement, still 6.0× the tolerance, still **1.96× worse than having no coupling at all**. Fifteen springs
+on the single line `x = 0` can only reshape the across-helix profile and the dishing there is the along-helix
+bow. **A distribution can reweight a placement; it cannot move it.**
+
+**And then the finding nobody had gone looking for: the uniform coupling is already flat at the compressed
+states.** All five of `C-0022`'s solved states, 3 × 15 uniform: 0.209–0.255 at the three 10 nm gaps, and
+**0.0796 and 0.0710 at the 5 nm and 2 nm ones**. The flat rim design is flat at three of five and dishes
+0.187 at the 2 nm gap — 2.6× *worse* than the uniform coupling there. A minimax over all five reaches a worst
+case of only **0.1587**, so **no distribution found is flat everywhere**, and that is a "not found" rather
+than a "does not exist" (`T-123`). Flatness bought by tuning is flatness owed at one state: the sixth
+instance in this project of a quantity that is not well posed without the state it is read at, and a
+flatness count now needs a load case **and** an operating state.
+
+Two smaller results. **The break-even moves from three columns to two** — a redistributed 2 × 15 dishes
+0.2512 against the free tile's 0.3079, where `C-0047`'s uniform 2 × 15 was a net dishing source at 0.3504.
+And **the lattice/plate excess is a function of the distribution, not only of the count**: −8.1 % at the
+uniform coupling (`C-0047`'s number, reproduced) and **+23.9 %** at the flat rim design, so the plate alone
+would report 0.0608 where the lattice reports 0.0753. `CLAUDE.md`'s *"a discretisation is not automatically a
+relaxation"* confirmed a second way, and the flat verdict survives on both models.
+
+**What made this affordable is one identity.** A support enters the lattice stiffness as `k_j b_j b_jᵀ` —
+`C-0009`'s own rank-one anchor update, generalised to rank `n` by Woodbury — so one factorisation of the
+**unsupported** model plus `n + 1` load cases prices every stiffness distribution at the cost of an `n × n`
+solve, and the dishing projector and the grid sampling being linear makes a candidate's dishing field a
+combination of `n + 1` precomputed grids. 45-parameter optimisation, four starts, twenty-five sweeps: 73 000
+evaluations in about a minute, against a 855-degree-of-freedom Cholesky each. It reproduces the assembled
+solve to `1.5e−12`, and Maxwell-Betti reciprocity of the influence matrix — measured between two different
+quadratures, not imposed — holds to `1.2e−15`.
+
+**A prediction that failed in code, on the first run:** the *uncapped* optimisation returned a worse point
+than the *capped* one it strictly contains. A descent over a superset that starts elsewhere can do that, and
+the fix is structural rather than numerical — the capped problem now runs first and its answer joins the
+uncapped problem's start set. That they then coincide to the last digit is itself the finding that the
+per-path ceiling costs nothing at 45 paths.
+
+**The cheap bound did not fire, and running it was still right.** Dishing is affine in the attachment
+*forces*, so the least-squares minimum over the whole of `ℝⁿ` — no mandate, no positivity — is a rigorous
+lower bound on the peak dishing of every distribution: 0.0027 of the stroke at 3 × 15. Had it exceeded 0.10
+the whole optimisation would have been unnecessary. It did not, and the best found sits 20× above it, which
+measures how loose the bound is (it ignores the mandate, and the mandate is what binds) rather than how much
+room the search left.
+
+The largest open item is new and is `T-122`: **nothing here says a per-path stiffness can be BUILT to a
+prescribed value.** `C-0030`'s flexure goes as `span^−3`, so 5:1 is a 1.71× span ratio — plausible on its
+face, unchecked, and the thing on which `CH-0071` turns. If a coupling can only be built with equal paths,
+`CH-0034`'s floor returns with that qualifier attached.
+
+## Iteration 9 — `T-120`: the sheet stops being a *material* five crossovers before it stops being a *body*, and three of `C-0009`'s four criteria cannot see it
+
+`C-0054` and `C-0053` both closed last iteration on the same object: a single-layer sheet whose crossovers a
+flexure array has spent, held together at the ceiling by **one crossover per interface**. Both computed
+everything on the **lattice**, so nothing either reported is wrong. `T-120` asks the question neither did —
+whether the *continuum* statements the rest of the programme rests on still describe that body — and
+`C-0054`'s own *"Still open"* item 5 names the check and does not run it.
+
+**The whole answer is a cheap bound, and it took four operations on `C-0009`'s own number.** The depleted
+lattice turns out to be parametrised by **one** quantity, the retained crossover count, through
+`p_eff = p N/N_ret` and `D_⊥ = k_θ d/p_eff` — the only pair that reduces to `C-0009`'s published constants
+*exactly* at `N_ret = N`. Every criterion is then that claim's number times an exact power of `N_ret`:
+`ℓ_⊥/d ∝ N_ret^(1/4)`, `ℓ_∥/p_eff ∝ N_ret`, and the anchor-patch count `∝ N_ret^(5/4)`. **So each of them
+inverts**, and `CLAUDE.md`'s *"invert a length-dependent allowable, do not just evaluate it"* is what turned
+a table into a verdict: the patch holds **0.694** crossovers at the ceiling, and it reaches **one** at
+**37.26 spent** — five crossovers *below* `C-0054`'s connectivity ceiling of 42, and below the whole of its
+`39 ≤ n ≤ 42` window. That is `CH-0069`.
+
+**The surprise is that the two matched criteria are useless here, for opposite reasons.** `ℓ_⊥/d` reads
+**1.061** at the ceiling — above one, so it never fires — and the reason is an identity worth stating:
+`ℓ_⊥/d` depends only on `D_⊥/k_f`, so **consuming to a quarter of the crossovers is exactly a fourfold
+stiffer foundation for it**. The ceiling's 1.061 *is* `C-0009`'s own `k_f × 4` corner, to the last digit,
+where the other two criteria separate the same pair of states by exactly `2√2`. An across-helix criterion
+cannot tell a depleted sheet from a stiffer polymer layer. And `ℓ_∥/p_eff`, the one `C-0009` singled out as
+*the* criterion that fails, is **degenerate**: inverted, it demands **67.2** crossovers on a sheet that has
+56, so it reads "invalid" at zero consumption and at every consumption, and carries no information about
+depletion at all. The criterion that discriminates is the one `CLAUDE.md` recommends for carrying no
+convention — the count of crossovers inside an anchor's influence patch.
+
+**A criterion is not a model, and that distinction is most of the work.** A third model was run beside the
+plate and the lattice: fifteen uncoupled Euler-Bernoulli duplexes on one shared Winkler foundation, which is
+`C-0009`'s own grillage with *every* crossover consumed. The four thresholds a design might read as "where
+the plate fails" then come out in a strict order — **28** (the beam array becomes the nearer model on the
+point compliance) **< 37.3** (the criterion) **< 42** (connectivity, `C-0054`'s) **< 45** (a smooth load
+finally notices, and that is severance) — **1.61× apart in the crossover count**. `C-0054` reads the third
+and reports the fourth; neither is where the reduction stops applying.
+
+**`C-0009`'s smooth/point split survives the ceiling and becomes a change of model class rather than a sign
+of error.** The same body at the same consumption is a perfectly good plate for `C-0022`'s distributed load
+(**14.9 %** at the ceiling, and the plate is still the nearer model) and not a plate at all for a
+point-coupled one (**33–79 %** under a concentrated lever; the point compliance a coupling element feels
+varies **2.53×** over one crossover cell where the plate says 1.14×). A plate cannot be inhomogeneous, so
+that spread is not an error in the plate's number — it is a quantity the plate does not have.
+
+**Three standing verdicts were checked and all three survive, one of them by strengthening.** `C-0006`'s load
+distribution stands because the hinges carry `9.0e−4` of the strain energy on the **intact** sheet, so
+removing three quarters of them takes it to `5.4e−4` and nothing moves — the load path was never through the
+hinges under a distributed load, which is the mechanism behind `C-0054`'s "the peak crossover force falls to
+zero". `C-0010`'s *"a 2× change in `D_⊥` moves the answer by 2.5 %"* not only survives but gets **stronger**:
+3.07 % intact, **0.99 %** at the ceiling, while the amplitude rises 1.71×. So it is insensitivity to the
+**rigidity**, and the amplitude moves with the **connectivity** — `C-0054`'s warning confirmed on its own
+lever. `C-0047`'s 0.218 and 0.695 reproduce, and nothing reaches `T-5b`'s tolerance at any consumption, which
+is `CH-0034`'s saturation and not a new failure.
+
+**A placement artefact found in an upstream claim, and bracketed rather than inherited.** `C-0054`'s `SPREAD`
+pattern is round robin over the *interfaces* — which is what makes its pigeonhole tight — and its column
+tie-break takes the lowest available one, so at the ceiling all fourteen survivors sit in the two lowest
+columns and two thirds of the tile has no across-helix path. A `staggeredRetention` is the other extreme, and
+the two bracket a real design: identical count, identical density, **1.68×** in the mean distance from an
+anchor to the nearest surviving crossover, and 28 of 45 attachment stations with no crossover in their patch
+against 30. **Which crossovers survive is a design variable and no claim owns it.**
+
+**What the census taught, and it is the reason the criterion is the right one.** Below one crossover per
+patch, a density and a count stop being the same statement: 0.694 is 0 or 1 depending on where the anchor
+lands. That is discreteness in its purest form, and it is invisible to any smeared rigidity.
+
+`tools/verify.sh` **BUILD SUCCESSFUL**, with three concurrent agents' mid-TDD files dropped by `--drop-file`
+— including, for the first time in this project, a **main** source (`coupling/NonUniformCouplingStudy.kt`),
+which a study main is safe to drop because nothing imports it.
+
+**One process finding from the same iteration, recorded in `CLAUDE.md`.** The first two runs of this study
+produced result files differing in **one integer** — the optimiser's evaluation count — with every physical
+number identical. Rounding at the serialisation boundary does not save that field, because it is not a number
+the model computes: it counts the **steps the search took**, and a last-ulp difference in the objective (the
+JIT recompiling a hot reduction mid-run) flips a strict comparison so that the descent reaches the *same*
+optimum by another route. Removing it exposed two more of the same kind — the sweep count and the label of
+the winning start. All three are gone; the last-sweep improvement stays at **two** significant digits, which
+is what survives, and two independent runs then diff byte for byte. It is `CLAUDE.md`'s argmin trap one level
+further out: an index is not a rounded double, and neither is a step count.
+
+---
+
+## Iteration 9 — `T-71`: the dihedrals of the 90° junction, and an objective that could not see them
+
+Claim [`C-0057`](gpd/claims/C-0057-backbone-torsion-closure.md), challenge
+[`CH-0070`](gpd/challenges/CH-0070-the-reported-optima-are-in-the-torsion-infeasible-set.md).
+
+**What was asked.** `C-0029` filed `T-71` against itself: its closure search tests one **necessary**
+condition — a phosphate pair inside the measured `[0.60, 0.70]` nm phosphodiester step with no van der Waals
+overlap — and *"no backbone torsion angle is checked"*.
+`C-0042` then closed a pair at a binding link of **0.6969 nm** and flagged it as the place *"where the torsion
+check is least comfortable"*; `C-0052` closed a trio and recorded that it inherits the same ceiling.
+So `T-71` had become the standing ceiling on the whole surviving truss branch, and it could only make the
+answer worse.
+
+**What was done.** Nothing was taken from memory. `tools/T-71-bdna-backbone-survey.py` queries the RCSB for
+X-ray, DNA-only entries at ≤ 2.3 Å, downloads **876** of them, and measures the six backbone torsions, the
+glycosidic χ, the pseudorotation phase and the covalent geometry of **13 084** phosphodiester linkages;
+`tools/T-71-emit-kotlin-constants.py` **generates** the Kotlin constants, so no number is transcribed by
+hand. Both residues of a link are then placed by the junction's own solved geometry and the phosphodiester
+between them closed by exact inverse kinematics.
+
+**The answer has two halves and neither alone is honest.**
+The dihedrals **do not close** at any of the three reported optima — 0 of 4 links, 1 of 8, 2 of 6.
+Four of the eighteen are excluded by a **closed-form reach bound** and close at *no* torsion whatever:
+`C-0042`'s two 7 bp legs would need an `O3′–P` bond of **0.2517 and 0.2460 nm** against a covalent
+**0.16022 ± 0.00191**. The rest fail on population — `C-0029`'s binding link needs **ε = −22.9°**, carried by
+**0.015 %** of the measured linkages, and its second needs **β = 27.4°**, carried by **zero of 15 457**
+residues.
+But a **torsion-feasible placement exists in `C-0029`'s own search space**: of **69 120** placements, 3 546
+close on distance, **1 855** survive the reach bound, and **18 of the 100 solved** close at torsion level.
+
+**What surprised us, and it is the finding.** The objective is not merely incomplete, it is
+**anti-correlated** with the missing condition. Minimising a *window residual* is satisfied anywhere inside
+`[0.60, 0.70]`, so the shortest-gap tie-break drives every optimum to **0.600 nm**, the very edge — and the
+edge is exactly where a backbone cannot go. The feasible placements sit near **0.690 nm**, in the interior,
+which a residual-minimising search has no reason to visit. The same fact shows up disguised as a
+"sensitivity": moving the phosphate radius from 1.00 to 0.90 nm, *inside `C-0029`'s own declared bracket*,
+takes the single junction from 4.55 σ to 2.99 and to 21.64 at 0.8901 — a **7× swing across a 0.01 nm change
+in a convention**, because it is selecting a different argmin on a coordinate orthogonal to the answer.
+`C-0042` was right to worry about its 0.6969 nm link; it is not uncomfortable, it is the one the bound
+excludes.
+
+**Two method failures, both caught by their own gates.**
+The first calibration reapplied a single measured nucleotide at its own fitted helical screw and called it an
+ideal duplex. It is out by **0.0145 nm** in the reconstructed `O3′···P` — **7.6 bond-length standard
+deviations** — because a local helical axis fitted from coordinates is an approximation and at a covalent
+bond's tolerance that approximation is not small. The free limiting case was rebuilt on the medoid's **actual
+successor residue**, and a real dinucleotide then closes at 0.31–2.74 σ under *both* readings.
+The second judged a torsion septet by its distance to the nearest of twelve k-means conformer classes; the
+diffuse classes have 99th-percentile radii above **150°**, so the test admitted almost anything and the
+baseline landed 133° from its own class and was called populated. It was replaced by a **marginal
+ten-degree occupancy histogram** with a floor 28× more permissive than uniform — which is what lets the claim
+say *"β = 27.4° lies in a bin holding zero of 15 457 observed residues."*
+
+**A number this programme has been citing without a primary source now has a measurement.** Bosco et al.'s
+*"C3-endo 0.6 nm to C2-endo 0.7 nm"* is verified verbatim, but its own references are two **textbooks**,
+neither reachable. Measured here on 13 084 linkages the pair is **0.607 and 0.664 nm** — the ordering and the
+pucker coupling confirmed, the C2′-endo end **5.1 % shorter** than the number every search in this repository
+has been using. The window is wider at the top than the backbone actually is.
+
+**A negative that is falsifiable by one paper.** No torsion-level or atomistic check of a ~90° out-of-plane
+origami junction exists — 33 EuropePMC and 6 arXiv queries with their strings recorded. And the atomistic
+origami literature stops at the *helix* level: Maffeo, Yoo & Aksimentiev (2016) characterises a crossover by
+three helix angles and contains *"torsion"* 0 times and *"dihedral"* 0 times.
+
+`tools/verify.sh` **BUILD SUCCESSFUL**, 25 gate-named tests in `BackboneTorsionTest`, with a concurrent
+agent's mid-TDD `coupling/NonUniformCouplingStudy.kt` dropped by `--drop-file`.
+
+**One process failure of ours, recorded in `CLAUDE.md`.** `pkill -f "plenty-of-room-study"` was used to stop
+our own run and it killed a **sibling agent's** study as well — the snapshot directories share the prefix.
+`CLAUDE.md` already warned that `pkill -f` kills your own shell; it now also warns that on a shared checkout
+it kills your neighbours. The sibling's `coupling.NonUniformCouplingStudyKt` run was lost and had to be
+re-run by its own agent.
+
+### Iteration 9 — a premise falsified, a check that was never run, and a mandate misread for six iterations
+
+Four loops, each aimed at a premise the programme had been standing on rather than at a new number.
+
+**`C-0055` falsified the premise `C-0054` had itself named as its own falsifier — and `C-0054` had named it
+correctly.** A square-lattice helix has **four** nearest neighbours and crosses to one of them every 8 bp,
+sharing crossovers with a *given* neighbour every 32 bp; a single-layer sheet is one row of that lattice, so
+it builds on one of the two orthogonal plane families and **leaves the other empty**. And `8 bp × 33.75°/bp`
+is **270.0° exactly**, so the empty pair points **out of the sheet plane**. The unused site is in *better*
+register than the used one — 4.286° against 8.571°, exactly 2:1 — and the sheet occupies **27.8–33.1 %** of
+the available sites at every phase. So `C-0054`'s **exclusivity at a site is upheld and its inventory premise
+is false**: the hinge budget goes 42-with-a-severed-tile to **52–60 with the sheet in one piece**, and
+`C-0053`'s 25 to **34**.
+**But §3's 45 still does not place**, now for the **root pitch** rather than severance — an upward line
+belongs to one duplex, so its roots sit at 10.88 nm against an arm demanding 11.82. `CH-0066`'s conclusion
+survives its own mechanism being removed, which is the strongest form a conclusion can take.
+The motif is **half-published**: the site and a crossover on it are the elementary step of square-lattice
+multilayer origami, but a *free lever* held by one crossover there was **not found** in 62 recorded queries
+across fifteen families, and every published origami hinge is an **ssDNA** connection.
+
+**`C-0057` ran the check every closure result in this programme had deferred, and it does not pass.**
+The dihedrals **do not close at any of the three reported optima** — `C-0029`'s single junction 0 of 4 links,
+`C-0042`'s pair 1 of 8, `C-0052`'s trio 2 of 6 — and four of the eighteen are excluded by a **closed-form
+reach bound**, i.e. they close at no torsion whatever (`C-0042`'s 7 bp legs would need an `O3′–P` bond of
+0.25 nm against a covalent 0.16). The rest fail on **population**: `C-0029`'s binding link needs `ε = −22.9°`,
+carried by 0.015 % of 13 084 measured linkages, and its second needs `β = 27.4°`, carried by **zero of
+15 457**.
+**And the finding is the second half: a torsion-feasible placement exists in `C-0029`'s own search space —
+3 546 of 69 120 — and none of the three claims found one because none of them was looking.** The routing
+was optimised on distance, and distance is a necessary condition that the three claims had each said, in
+their own words, was not sufficient. This is what a deferred check is *for*, and it is why `C-0029` filed it
+as a task rather than guessing.
+
+**`C-0058` found that a mandate had been misread for six iterations.** `C-0017`'s 33.3333 pN/nm is an
+equality on a **sum**, and every claim in the corpus had read it as one on each path. Freeing the
+distribution — same stiffness, same 45 attachments, same solved load — takes the dishing from **0.2182 of
+the free-tile stroke to 0.0753** under a one-parameter rule (the 34 stations within 6.7 nm of an edge carry
+5× the other 11) and **0.0544** under a full optimisation, **both inside `T-5b`'s 0.10**, where
+`CH-0034`'s *count* axis saturates at 0.149 and never arrives. **225 uniform attachments cannot do what 45
+unequal ones can**, and the 0.149 is a property of the equal-spring family rather than of the rim.
+Three qualifications travel with it, all in the claim: it is flat at three of five solved states, it needs
+three attachment columns that `C-0041`'s packing forbids, and **nothing yet says a 5:1 per-path stiffness
+can be built**.
+
+**`C-0056` did the same thing to a criterion.** The depleted lattice turns out to be parametrised by one
+number, so every one of `C-0009`'s criteria is its published constant times an exact power of the retained
+count — and **inverted rather than evaluated**, the influence-patch criterion reaches one crossover at 37.3
+of 56 spent, *five before the sheet disconnects* and inside `C-0054`'s own window. The other two criteria are
+useless for opposite reasons, one never firing and one degenerate at zero consumption. Four thresholds fall
+in a strict order 1.61× apart, and `C-0009`'s smooth/point split survives as a **change of model class**.
+
+**The coordination worked, twice.** `C-0056` recognised that its own challenge is **conditional on `C-0055`**,
+which was running concurrently, and said so in a banner and in the challenge rather than filing a verdict a
+sibling had already undermined. And `C-0058` recorded a prediction of its own that failed in code — it had
+expected the rim to *stiffen* — keeping the refutation in the claim rather than quietly reversing.
+
+**One coordinator note.** `C-0058`'s intermediate chat report and its filed claim disagreed (0.0999 against
+0.0753, a *soft* rim against a *stiff* one); the claim and the final report agree, and `ANSWERS.md` was
+written from the claim. That is the second time this session a report has diverged from its own artifact, and
+the rule stands: **read the filed claim, never the report.**

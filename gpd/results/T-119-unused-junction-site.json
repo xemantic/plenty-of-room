@@ -1,0 +1,1418 @@
+{
+    "task": "T-119",
+    "leaf": "A8.2",
+    "conditions": {
+        "temperature": "300 K",
+        "medium": "aqueous 2 mM MgCl2",
+        "sheet": "single-layer square-lattice Rothemund, 15 duplexes at 2.69 nm",
+        "edgeX": "40.0 nm",
+        "risePerBasePair": "0.34 nm",
+        "designedTwist": "10.666666666666666 bp/turn (33.75 deg/bp)",
+        "preferredTwist": "10.5 bp/turn",
+        "crossoverPlaneSpacing": "8 bp",
+        "arm": "C-0039's E5a1, placed at the mandate 33.333333333333336 pN/nm at 3.0 nm"
+    },
+    "cheapBounds": [
+        {
+            "name": "the azimuth advance over one crossover plane, 8 bp x 33.75 deg/bp",
+            "value": 270.0,
+            "against": 270.0,
+            "ratio": 1.0,
+            "settles": "EXACTLY a quarter turn: the unoccupied azimuths point out of the sheet plane. Falsifier 1 did not fire"
+        },
+        {
+            "name": "the register departure of the UNUSED site at the preferred 10.5 bp/turn",
+            "value": 4.28571429,
+            "against": 8.57142857,
+            "ratio": 0.5,
+            "settles": "HALF that of the in-plane site the sheet does use, because the departure is linear in the offset. Falsifier 2 did not fire"
+        },
+        {
+            "name": "the upward inventory against the interfaces it would have to spare",
+            "value": 60.0,
+            "against": 14.0,
+            "ratio": 4.28571429,
+            "settles": "the escape is larger than the constraint it removes. Falsifier 4 did not fire"
+        },
+        {
+            "name": "the upward site pitch against the in-plane root pitch of an interior row",
+            "value": 10.88,
+            "against": 5.44,
+            "ratio": 2.0,
+            "settles": "an upward line belongs to ONE duplex, so its roots are TWICE as sparse as an interior row's — the price of the same fact that removes the connectivity cost"
+        }
+    ],
+    "azimuths": [
+        {
+            "azimuth": "NORTH",
+            "basePairOffset": 0,
+            "designAzimuthDegrees": 0.0,
+            "outOfPlane": false,
+            "occupiedBySingleLayerSheet": true,
+            "registerDepartureDegrees": 0.0,
+            "departureFromNearestOccupiedDegrees": 0.0
+        },
+        {
+            "azimuth": "WEST",
+            "basePairOffset": 8,
+            "designAzimuthDegrees": 270.0,
+            "outOfPlane": true,
+            "occupiedBySingleLayerSheet": false,
+            "registerDepartureDegrees": 4.28571429,
+            "departureFromNearestOccupiedDegrees": 4.28571429
+        },
+        {
+            "azimuth": "SOUTH",
+            "basePairOffset": 16,
+            "designAzimuthDegrees": 180.0,
+            "outOfPlane": false,
+            "occupiedBySingleLayerSheet": true,
+            "registerDepartureDegrees": 8.57142857,
+            "departureFromNearestOccupiedDegrees": 0.0
+        },
+        {
+            "azimuth": "EAST",
+            "basePairOffset": 24,
+            "designAzimuthDegrees": 90.0,
+            "outOfPlane": true,
+            "occupiedBySingleLayerSheet": false,
+            "registerDepartureDegrees": 12.8571429,
+            "departureFromNearestOccupiedDegrees": 4.28571429
+        }
+    ],
+    "phases": [
+        {
+            "phaseBasePairs": 0,
+            "planes": 15,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 60,
+            "downwardSites": 60,
+            "totalSites": 176,
+            "unusedSites": 127,
+            "usedFraction": 0.278409091,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 60,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 1,
+            "planes": 15,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 60,
+            "downwardSites": 60,
+            "totalSites": 176,
+            "unusedSites": 127,
+            "usedFraction": 0.278409091,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 60,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 2,
+            "planes": 15,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 60,
+            "downwardSites": 60,
+            "totalSites": 176,
+            "unusedSites": 127,
+            "usedFraction": 0.278409091,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 60,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 3,
+            "planes": 14,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 52,
+            "downwardSites": 53,
+            "totalSites": 161,
+            "unusedSites": 112,
+            "usedFraction": 0.304347826,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 52,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 4,
+            "planes": 14,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 52,
+            "downwardSites": 53,
+            "totalSites": 161,
+            "unusedSites": 112,
+            "usedFraction": 0.304347826,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 52,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 5,
+            "planes": 14,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 52,
+            "downwardSites": 53,
+            "totalSites": 161,
+            "unusedSites": 112,
+            "usedFraction": 0.304347826,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 52,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 6,
+            "planes": 15,
+            "interfaceSites": 56,
+            "outwardFacingSites": 8,
+            "upwardSites": 52,
+            "downwardSites": 53,
+            "totalSites": 169,
+            "unusedSites": 113,
+            "usedFraction": 0.331360947,
+            "inPlaneHingeCeiling": 42,
+            "outOfPlaneHingeCeiling": 52,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 7,
+            "planes": 15,
+            "interfaceSites": 56,
+            "outwardFacingSites": 8,
+            "upwardSites": 52,
+            "downwardSites": 53,
+            "totalSites": 169,
+            "unusedSites": 113,
+            "usedFraction": 0.331360947,
+            "inPlaneHingeCeiling": 42,
+            "outOfPlaneHingeCeiling": 52,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 8,
+            "planes": 15,
+            "interfaceSites": 56,
+            "outwardFacingSites": 8,
+            "upwardSites": 52,
+            "downwardSites": 53,
+            "totalSites": 169,
+            "unusedSites": 113,
+            "usedFraction": 0.331360947,
+            "inPlaneHingeCeiling": 42,
+            "outOfPlaneHingeCeiling": 52,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 9,
+            "planes": 15,
+            "interfaceSites": 56,
+            "outwardFacingSites": 8,
+            "upwardSites": 52,
+            "downwardSites": 53,
+            "totalSites": 169,
+            "unusedSites": 113,
+            "usedFraction": 0.331360947,
+            "inPlaneHingeCeiling": 42,
+            "outOfPlaneHingeCeiling": 52,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 10,
+            "planes": 15,
+            "interfaceSites": 56,
+            "outwardFacingSites": 8,
+            "upwardSites": 52,
+            "downwardSites": 53,
+            "totalSites": 169,
+            "unusedSites": 113,
+            "usedFraction": 0.331360947,
+            "inPlaneHingeCeiling": 42,
+            "outOfPlaneHingeCeiling": 52,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 11,
+            "planes": 14,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 52,
+            "downwardSites": 53,
+            "totalSites": 161,
+            "unusedSites": 112,
+            "usedFraction": 0.304347826,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 52,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 12,
+            "planes": 14,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 52,
+            "downwardSites": 53,
+            "totalSites": 161,
+            "unusedSites": 112,
+            "usedFraction": 0.304347826,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 52,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 13,
+            "planes": 14,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 52,
+            "downwardSites": 53,
+            "totalSites": 161,
+            "unusedSites": 112,
+            "usedFraction": 0.304347826,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 52,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 14,
+            "planes": 15,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 60,
+            "downwardSites": 60,
+            "totalSites": 176,
+            "unusedSites": 127,
+            "usedFraction": 0.278409091,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 60,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 15,
+            "planes": 15,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 60,
+            "downwardSites": 60,
+            "totalSites": 176,
+            "unusedSites": 127,
+            "usedFraction": 0.278409091,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 60,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 16,
+            "planes": 15,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 60,
+            "downwardSites": 60,
+            "totalSites": 176,
+            "unusedSites": 127,
+            "usedFraction": 0.278409091,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 60,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 17,
+            "planes": 15,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 60,
+            "downwardSites": 60,
+            "totalSites": 176,
+            "unusedSites": 127,
+            "usedFraction": 0.278409091,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 60,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 18,
+            "planes": 15,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 60,
+            "downwardSites": 60,
+            "totalSites": 176,
+            "unusedSites": 127,
+            "usedFraction": 0.278409091,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 60,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 19,
+            "planes": 14,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 53,
+            "downwardSites": 52,
+            "totalSites": 161,
+            "unusedSites": 112,
+            "usedFraction": 0.304347826,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 53,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 20,
+            "planes": 14,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 53,
+            "downwardSites": 52,
+            "totalSites": 161,
+            "unusedSites": 112,
+            "usedFraction": 0.304347826,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 53,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 21,
+            "planes": 14,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 53,
+            "downwardSites": 52,
+            "totalSites": 161,
+            "unusedSites": 112,
+            "usedFraction": 0.304347826,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 53,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 22,
+            "planes": 15,
+            "interfaceSites": 56,
+            "outwardFacingSites": 8,
+            "upwardSites": 53,
+            "downwardSites": 52,
+            "totalSites": 169,
+            "unusedSites": 113,
+            "usedFraction": 0.331360947,
+            "inPlaneHingeCeiling": 42,
+            "outOfPlaneHingeCeiling": 53,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 23,
+            "planes": 15,
+            "interfaceSites": 56,
+            "outwardFacingSites": 8,
+            "upwardSites": 53,
+            "downwardSites": 52,
+            "totalSites": 169,
+            "unusedSites": 113,
+            "usedFraction": 0.331360947,
+            "inPlaneHingeCeiling": 42,
+            "outOfPlaneHingeCeiling": 53,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 24,
+            "planes": 15,
+            "interfaceSites": 56,
+            "outwardFacingSites": 8,
+            "upwardSites": 53,
+            "downwardSites": 52,
+            "totalSites": 169,
+            "unusedSites": 113,
+            "usedFraction": 0.331360947,
+            "inPlaneHingeCeiling": 42,
+            "outOfPlaneHingeCeiling": 53,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 25,
+            "planes": 15,
+            "interfaceSites": 56,
+            "outwardFacingSites": 8,
+            "upwardSites": 53,
+            "downwardSites": 52,
+            "totalSites": 169,
+            "unusedSites": 113,
+            "usedFraction": 0.331360947,
+            "inPlaneHingeCeiling": 42,
+            "outOfPlaneHingeCeiling": 53,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 26,
+            "planes": 15,
+            "interfaceSites": 56,
+            "outwardFacingSites": 8,
+            "upwardSites": 53,
+            "downwardSites": 52,
+            "totalSites": 169,
+            "unusedSites": 113,
+            "usedFraction": 0.331360947,
+            "inPlaneHingeCeiling": 42,
+            "outOfPlaneHingeCeiling": 53,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 27,
+            "planes": 14,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 53,
+            "downwardSites": 52,
+            "totalSites": 161,
+            "unusedSites": 112,
+            "usedFraction": 0.304347826,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 53,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 28,
+            "planes": 14,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 53,
+            "downwardSites": 52,
+            "totalSites": 161,
+            "unusedSites": 112,
+            "usedFraction": 0.304347826,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 53,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 29,
+            "planes": 14,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 53,
+            "downwardSites": 52,
+            "totalSites": 161,
+            "unusedSites": 112,
+            "usedFraction": 0.304347826,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 53,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 30,
+            "planes": 15,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 60,
+            "downwardSites": 60,
+            "totalSites": 176,
+            "unusedSites": 127,
+            "usedFraction": 0.278409091,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 60,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        },
+        {
+            "phaseBasePairs": 31,
+            "planes": 15,
+            "interfaceSites": 49,
+            "outwardFacingSites": 7,
+            "upwardSites": 60,
+            "downwardSites": 60,
+            "totalSites": 176,
+            "unusedSites": 127,
+            "usedFraction": 0.278409091,
+            "inPlaneHingeCeiling": 35,
+            "outOfPlaneHingeCeiling": 60,
+            "armsPlaced": 30,
+            "independentRowBound": 30
+        }
+    ],
+    "rows": [
+        {
+            "row": 0,
+            "upwardSites": 4,
+            "sitePitch": 10.88,
+            "inPlaneSites": 3,
+            "inPlaneSitePitch": 10.88,
+            "armsPlaced": 2
+        },
+        {
+            "row": 1,
+            "upwardSites": 4,
+            "sitePitch": 10.88,
+            "inPlaneSites": 7,
+            "inPlaneSitePitch": 5.44,
+            "armsPlaced": 2
+        },
+        {
+            "row": 2,
+            "upwardSites": 4,
+            "sitePitch": 10.88,
+            "inPlaneSites": 7,
+            "inPlaneSitePitch": 5.44,
+            "armsPlaced": 2
+        },
+        {
+            "row": 3,
+            "upwardSites": 4,
+            "sitePitch": 10.88,
+            "inPlaneSites": 7,
+            "inPlaneSitePitch": 5.44,
+            "armsPlaced": 2
+        },
+        {
+            "row": 4,
+            "upwardSites": 4,
+            "sitePitch": 10.88,
+            "inPlaneSites": 7,
+            "inPlaneSitePitch": 5.44,
+            "armsPlaced": 2
+        },
+        {
+            "row": 5,
+            "upwardSites": 4,
+            "sitePitch": 10.88,
+            "inPlaneSites": 7,
+            "inPlaneSitePitch": 5.44,
+            "armsPlaced": 2
+        },
+        {
+            "row": 6,
+            "upwardSites": 4,
+            "sitePitch": 10.88,
+            "inPlaneSites": 7,
+            "inPlaneSitePitch": 5.44,
+            "armsPlaced": 2
+        },
+        {
+            "row": 7,
+            "upwardSites": 4,
+            "sitePitch": 10.88,
+            "inPlaneSites": 7,
+            "inPlaneSitePitch": 5.44,
+            "armsPlaced": 2
+        },
+        {
+            "row": 8,
+            "upwardSites": 4,
+            "sitePitch": 10.88,
+            "inPlaneSites": 7,
+            "inPlaneSitePitch": 5.44,
+            "armsPlaced": 2
+        },
+        {
+            "row": 9,
+            "upwardSites": 4,
+            "sitePitch": 10.88,
+            "inPlaneSites": 7,
+            "inPlaneSitePitch": 5.44,
+            "armsPlaced": 2
+        },
+        {
+            "row": 10,
+            "upwardSites": 4,
+            "sitePitch": 10.88,
+            "inPlaneSites": 7,
+            "inPlaneSitePitch": 5.44,
+            "armsPlaced": 2
+        },
+        {
+            "row": 11,
+            "upwardSites": 4,
+            "sitePitch": 10.88,
+            "inPlaneSites": 7,
+            "inPlaneSitePitch": 5.44,
+            "armsPlaced": 2
+        },
+        {
+            "row": 12,
+            "upwardSites": 4,
+            "sitePitch": 10.88,
+            "inPlaneSites": 7,
+            "inPlaneSitePitch": 5.44,
+            "armsPlaced": 2
+        },
+        {
+            "row": 13,
+            "upwardSites": 4,
+            "sitePitch": 10.88,
+            "inPlaneSites": 7,
+            "inPlaneSitePitch": 5.44,
+            "armsPlaced": 2
+        },
+        {
+            "row": 14,
+            "upwardSites": 4,
+            "sitePitch": 10.88,
+            "inPlaneSites": 4,
+            "inPlaneSitePitch": 10.88,
+            "armsPlaced": 2
+        }
+    ],
+    "counts": [
+        {
+            "pathCount": 10,
+            "arm": 5.16337906,
+            "armBasePairs": 15.186409,
+            "demand": 7.85337906,
+            "armsPlacedUpward": 60,
+            "armsPlacedInPlane": 56,
+            "selfConsistentUpward": true,
+            "selfConsistentInPlane": true,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 15,
+            "eightBasePairDomains": 20
+        },
+        {
+            "pathCount": 15,
+            "arm": 5.96297903,
+            "armBasePairs": 17.5381736,
+            "demand": 8.65297903,
+            "armsPlacedUpward": 60,
+            "armsPlacedInPlane": 56,
+            "selfConsistentUpward": true,
+            "selfConsistentInPlane": true,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 15,
+            "eightBasePairDomains": 30
+        },
+        {
+            "pathCount": 20,
+            "arm": 6.64066418,
+            "armBasePairs": 19.5313652,
+            "demand": 9.33066418,
+            "armsPlacedUpward": 53,
+            "armsPlacedInPlane": 52,
+            "selfConsistentUpward": true,
+            "selfConsistentInPlane": true,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 15,
+            "eightBasePairDomains": 40
+        },
+        {
+            "pathCount": 25,
+            "arm": 7.23574104,
+            "armBasePairs": 21.2815913,
+            "demand": 9.92574104,
+            "armsPlacedUpward": 45,
+            "armsPlacedInPlane": 43,
+            "selfConsistentUpward": true,
+            "selfConsistentInPlane": true,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 15,
+            "eightBasePairDomains": 50
+        },
+        {
+            "pathCount": 28,
+            "arm": 7.56280664,
+            "armBasePairs": 22.2435489,
+            "demand": 10.2528066,
+            "armsPlacedUpward": 45,
+            "armsPlacedInPlane": 43,
+            "selfConsistentUpward": true,
+            "selfConsistentInPlane": true,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 15,
+            "eightBasePairDomains": 56
+        },
+        {
+            "pathCount": 30,
+            "arm": 7.77048867,
+            "armBasePairs": 22.8543785,
+            "demand": 10.4604887,
+            "armsPlacedUpward": 45,
+            "armsPlacedInPlane": 43,
+            "selfConsistentUpward": true,
+            "selfConsistentInPlane": true,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 14,
+            "eightBasePairDomains": 60
+        },
+        {
+            "pathCount": 31,
+            "arm": 7.87152136,
+            "armBasePairs": 23.1515334,
+            "demand": 10.5615214,
+            "armsPlacedUpward": 45,
+            "armsPlacedInPlane": 43,
+            "selfConsistentUpward": true,
+            "selfConsistentInPlane": true,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 14,
+            "eightBasePairDomains": 62
+        },
+        {
+            "pathCount": 32,
+            "arm": 7.9707976,
+            "armBasePairs": 23.4435224,
+            "demand": 10.6607976,
+            "armsPlacedUpward": 45,
+            "armsPlacedInPlane": 43,
+            "selfConsistentUpward": true,
+            "selfConsistentInPlane": true,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 12,
+            "eightBasePairDomains": 64
+        },
+        {
+            "pathCount": 33,
+            "arm": 8.06839632,
+            "armBasePairs": 23.7305774,
+            "demand": 10.7583963,
+            "armsPlacedUpward": 45,
+            "armsPlacedInPlane": 43,
+            "selfConsistentUpward": true,
+            "selfConsistentInPlane": true,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 12,
+            "eightBasePairDomains": 66
+        },
+        {
+            "pathCount": 34,
+            "arm": 8.16439083,
+            "armBasePairs": 24.0129142,
+            "demand": 10.8543908,
+            "armsPlacedUpward": 45,
+            "armsPlacedInPlane": 43,
+            "selfConsistentUpward": true,
+            "selfConsistentInPlane": true,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 10,
+            "eightBasePairDomains": 68
+        },
+        {
+            "pathCount": 35,
+            "arm": 8.25884939,
+            "armBasePairs": 24.2907335,
+            "demand": 10.9488494,
+            "armsPlacedUpward": 30,
+            "armsPlacedInPlane": 43,
+            "selfConsistentUpward": false,
+            "selfConsistentInPlane": true,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 8,
+            "eightBasePairDomains": 70
+        },
+        {
+            "pathCount": 40,
+            "arm": 8.71019268,
+            "armBasePairs": 25.6182138,
+            "demand": 11.4001927,
+            "armsPlacedUpward": 30,
+            "armsPlacedInPlane": 43,
+            "selfConsistentUpward": false,
+            "selfConsistentInPlane": true,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 3,
+            "eightBasePairDomains": 80
+        },
+        {
+            "pathCount": 42,
+            "arm": 8.88191804,
+            "armBasePairs": 26.1232884,
+            "demand": 11.571918,
+            "armsPlacedUpward": 30,
+            "armsPlacedInPlane": 43,
+            "selfConsistentUpward": false,
+            "selfConsistentInPlane": true,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 0,
+            "eightBasePairDomains": 84
+        },
+        {
+            "pathCount": 43,
+            "arm": 8.96607212,
+            "armBasePairs": 26.3708004,
+            "demand": 11.6560721,
+            "armsPlacedUpward": 30,
+            "armsPlacedInPlane": 43,
+            "selfConsistentUpward": false,
+            "selfConsistentInPlane": true,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 0,
+            "eightBasePairDomains": 86
+        },
+        {
+            "pathCount": 45,
+            "arm": 9.1311565,
+            "armBasePairs": 26.8563427,
+            "demand": 11.8211565,
+            "armsPlacedUpward": 30,
+            "armsPlacedInPlane": 43,
+            "selfConsistentUpward": false,
+            "selfConsistentInPlane": false,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 0,
+            "eightBasePairDomains": 90
+        },
+        {
+            "pathCount": 50,
+            "arm": 9.52663803,
+            "armBasePairs": 28.0195236,
+            "demand": 12.216638,
+            "armsPlacedUpward": 30,
+            "armsPlacedInPlane": 43,
+            "selfConsistentUpward": false,
+            "selfConsistentInPlane": false,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 0,
+            "eightBasePairDomains": 100
+        },
+        {
+            "pathCount": 56,
+            "arm": 9.9727716,
+            "armBasePairs": 29.3316812,
+            "demand": 12.6627716,
+            "armsPlacedUpward": 30,
+            "armsPlacedInPlane": 30,
+            "selfConsistentUpward": false,
+            "selfConsistentInPlane": false,
+            "interfaceCrossoversRetained": 49,
+            "componentsUpward": 1,
+            "duplexesBondedInPlane": 14,
+            "eightBasePairDomains": 112
+        }
+    ],
+    "budgets": [
+        {
+            "reading": "C-0054 — hinges drawn from the sheet's own in-plane crossovers",
+            "hingeCeiling": 42,
+            "interfacesIntact": false,
+            "components": 1,
+            "clearsFortyFive": false,
+            "note": "56 - 14 = 42; every interface is left with exactly one crossover, and 45 severs the tile into at least four pieces"
+        },
+        {
+            "reading": "T-119 — hinges rooted on the UNOCCUPIED upward azimuth, nominal phase",
+            "hingeCeiling": 52,
+            "interfacesIntact": true,
+            "components": 1,
+            "clearsFortyFive": true,
+            "note": "no interface crossover is consumed at all, so the sheet keeps its whole inventory"
+        },
+        {
+            "reading": "T-119 — the same at the phase that maximises the upward inventory",
+            "hingeCeiling": 60,
+            "interfacesIntact": true,
+            "components": 1,
+            "clearsFortyFive": true,
+            "note": "the phase that maximises the upward inventory carries 49 interface crossovers, not 56 — the two inventories are maximised at different phases"
+        },
+        {
+            "reading": "T-119 — both unoccupied azimuths, if a downward arm were admissible",
+            "hingeCeiling": 120,
+            "interfacesIntact": true,
+            "components": 1,
+            "clearsFortyFive": true,
+            "note": "NOT adopted: the downward azimuth points into the grafted layer"
+        },
+        {
+            "reading": "the placement, which is what actually binds",
+            "hingeCeiling": 34,
+            "interfacesIntact": true,
+            "components": 1,
+            "clearsFortyFive": false,
+            "note": "the self-consistent count on the upward root lattice, against C-0053's 25 in plane"
+        }
+    ],
+    "bestPhasePlacement": [
+        {
+            "row": 0,
+            "rootX": -13.6,
+            "towardPositiveX": true,
+            "low": -13.6,
+            "high": -5.43560917
+        },
+        {
+            "row": 0,
+            "rootX": -2.72,
+            "towardPositiveX": true,
+            "low": -2.72,
+            "high": 5.44439083
+        },
+        {
+            "row": 0,
+            "rootX": 8.16,
+            "towardPositiveX": true,
+            "low": 8.16,
+            "high": 16.3243908
+        },
+        {
+            "row": 1,
+            "rootX": -19.04,
+            "towardPositiveX": true,
+            "low": -19.04,
+            "high": -10.8756092
+        },
+        {
+            "row": 1,
+            "rootX": -8.16,
+            "towardPositiveX": true,
+            "low": -8.16,
+            "high": 0.00439082663
+        },
+        {
+            "row": 1,
+            "rootX": 2.72,
+            "towardPositiveX": true,
+            "low": 2.72,
+            "high": 10.8843908
+        },
+        {
+            "row": 2,
+            "rootX": -13.6,
+            "towardPositiveX": true,
+            "low": -13.6,
+            "high": -5.43560917
+        },
+        {
+            "row": 2,
+            "rootX": -2.72,
+            "towardPositiveX": true,
+            "low": -2.72,
+            "high": 5.44439083
+        },
+        {
+            "row": 2,
+            "rootX": 8.16,
+            "towardPositiveX": true,
+            "low": 8.16,
+            "high": 16.3243908
+        },
+        {
+            "row": 3,
+            "rootX": -19.04,
+            "towardPositiveX": true,
+            "low": -19.04,
+            "high": -10.8756092
+        },
+        {
+            "row": 3,
+            "rootX": -8.16,
+            "towardPositiveX": true,
+            "low": -8.16,
+            "high": 0.00439082663
+        },
+        {
+            "row": 3,
+            "rootX": 2.72,
+            "towardPositiveX": true,
+            "low": 2.72,
+            "high": 10.8843908
+        },
+        {
+            "row": 4,
+            "rootX": -13.6,
+            "towardPositiveX": true,
+            "low": -13.6,
+            "high": -5.43560917
+        },
+        {
+            "row": 4,
+            "rootX": -2.72,
+            "towardPositiveX": true,
+            "low": -2.72,
+            "high": 5.44439083
+        },
+        {
+            "row": 5,
+            "rootX": -19.04,
+            "towardPositiveX": true,
+            "low": -19.04,
+            "high": -10.8756092
+        },
+        {
+            "row": 5,
+            "rootX": -8.16,
+            "towardPositiveX": true,
+            "low": -8.16,
+            "high": 0.00439082663
+        },
+        {
+            "row": 6,
+            "rootX": -13.6,
+            "towardPositiveX": true,
+            "low": -13.6,
+            "high": -5.43560917
+        },
+        {
+            "row": 6,
+            "rootX": -2.72,
+            "towardPositiveX": true,
+            "low": -2.72,
+            "high": 5.44439083
+        },
+        {
+            "row": 7,
+            "rootX": -19.04,
+            "towardPositiveX": true,
+            "low": -19.04,
+            "high": -10.8756092
+        },
+        {
+            "row": 7,
+            "rootX": -8.16,
+            "towardPositiveX": true,
+            "low": -8.16,
+            "high": 0.00439082663
+        },
+        {
+            "row": 8,
+            "rootX": -13.6,
+            "towardPositiveX": true,
+            "low": -13.6,
+            "high": -5.43560917
+        },
+        {
+            "row": 8,
+            "rootX": -2.72,
+            "towardPositiveX": true,
+            "low": -2.72,
+            "high": 5.44439083
+        },
+        {
+            "row": 9,
+            "rootX": -19.04,
+            "towardPositiveX": true,
+            "low": -19.04,
+            "high": -10.8756092
+        },
+        {
+            "row": 9,
+            "rootX": -8.16,
+            "towardPositiveX": true,
+            "low": -8.16,
+            "high": 0.00439082663
+        },
+        {
+            "row": 10,
+            "rootX": -13.6,
+            "towardPositiveX": true,
+            "low": -13.6,
+            "high": -5.43560917
+        },
+        {
+            "row": 10,
+            "rootX": -2.72,
+            "towardPositiveX": true,
+            "low": -2.72,
+            "high": 5.44439083
+        },
+        {
+            "row": 11,
+            "rootX": -19.04,
+            "towardPositiveX": true,
+            "low": -19.04,
+            "high": -10.8756092
+        },
+        {
+            "row": 11,
+            "rootX": -8.16,
+            "towardPositiveX": true,
+            "low": -8.16,
+            "high": 0.00439082663
+        },
+        {
+            "row": 12,
+            "rootX": -13.6,
+            "towardPositiveX": true,
+            "low": -13.6,
+            "high": -5.43560917
+        },
+        {
+            "row": 12,
+            "rootX": -2.72,
+            "towardPositiveX": true,
+            "low": -2.72,
+            "high": 5.44439083
+        },
+        {
+            "row": 13,
+            "rootX": -19.04,
+            "towardPositiveX": true,
+            "low": -19.04,
+            "high": -10.8756092
+        },
+        {
+            "row": 13,
+            "rootX": -8.16,
+            "towardPositiveX": true,
+            "low": -8.16,
+            "high": 0.00439082663
+        },
+        {
+            "row": 14,
+            "rootX": -13.6,
+            "towardPositiveX": true,
+            "low": -13.6,
+            "high": -5.43560917
+        },
+        {
+            "row": 14,
+            "rootX": -2.72,
+            "towardPositiveX": true,
+            "low": -2.72,
+            "high": 5.44439083
+        }
+    ],
+    "sensitivities": [
+        {
+            "axis": "interhelical distance",
+            "reading": "the 2.0 nm steric diameter rather than 2.69 nm SAXS",
+            "value": 2.0,
+            "upwardSitesBest": 60,
+            "armsPlacedBest": 30,
+            "selfConsistentCount": 41
+        },
+        {
+            "axis": "interhelical distance",
+            "reading": "the SAXS single-layer 2.69 nm, as adopted",
+            "value": 2.69,
+            "upwardSitesBest": 60,
+            "armsPlacedBest": 30,
+            "selfConsistentCount": 34
+        },
+        {
+            "axis": "interhelical distance",
+            "reading": "the 2.73 nm square-lattice SAXS value",
+            "value": 2.73,
+            "upwardSitesBest": 60,
+            "armsPlacedBest": 30,
+            "selfConsistentCount": 33
+        },
+        {
+            "axis": "duplex count",
+            "reading": "a 16-duplex host, C-0053's own named escape",
+            "value": 16.0,
+            "upwardSitesBest": 64,
+            "armsPlacedBest": 32,
+            "selfConsistentCount": 34
+        },
+        {
+            "axis": "tile edge",
+            "reading": "a 49.25 nm edge, C-0053's own named escape",
+            "value": 49.25,
+            "upwardSitesBest": 75,
+            "armsPlacedBest": 45,
+            "selfConsistentCount": 45
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "the upward inventory over a ten-fold refined phase grid",
+            "coarse": 3.0,
+            "fine": 3.0,
+            "departure": 0.0
+        },
+        {
+            "quantity": "the closest a crossover plane comes to the footprint truncation [nm]",
+            "coarse": 0.23,
+            "fine": 0.05,
+            "departure": 4.6
+        },
+        {
+            "quantity": "the self-consistent count under a 1e-6 nm nudge of the tile edge",
+            "coarse": 34.0,
+            "fine": 34.0,
+            "departure": 0.0
+        }
+    ],
+    "reproductions": [
+        {
+            "quantity": "Ke et al.'s square-lattice twist [deg per bp]",
+            "published": 33.75,
+            "derived": 33.75,
+            "relativeDeparture": 0.0,
+            "source": "Ke et al. 2009, read directly"
+        },
+        {
+            "quantity": "Ke et al.'s preferred B-DNA twist [deg per bp]",
+            "published": 34.3,
+            "derived": 34.2857143,
+            "relativeDeparture": 4.16493128E-4,
+            "source": "Ke et al. 2009, read directly (quoted to three digits)"
+        },
+        {
+            "quantity": "Ke et al.'s 0.75 turns per 8 bp",
+            "published": 0.75,
+            "derived": 0.75,
+            "relativeDeparture": 0.0,
+            "source": "Ke et al. 2009, read directly"
+        },
+        {
+            "quantity": "Ke et al.'s 3.0 turns per 32 bp",
+            "published": 3.0,
+            "derived": 3.0,
+            "relativeDeparture": 0.0,
+            "source": "Ke et al. 2009, read directly"
+        },
+        {
+            "quantity": "caDNAno's honeycomb two-thirds turn per 7 bp",
+            "published": 240.0,
+            "derived": 240.0,
+            "relativeDeparture": 0.0,
+            "source": "Douglas et al. 2009 NAR, read directly"
+        },
+        {
+            "quantity": "C-0015's inventory at the ten eight-column phases",
+            "published": 56.0,
+            "derived": 56.0,
+            "relativeDeparture": 0.0,
+            "source": "C-0015, re-derived from the azimuth"
+        },
+        {
+            "quantity": "C-0015's inventory at the other twenty-two phases",
+            "published": 49.0,
+            "derived": 49.0,
+            "relativeDeparture": 0.0,
+            "source": "C-0015, re-derived from the azimuth"
+        },
+        {
+            "quantity": "C-0040's crossovers on one interface",
+            "published": 4.0,
+            "derived": 4.0,
+            "relativeDeparture": 0.0,
+            "source": "C-0040, re-derived"
+        },
+        {
+            "quantity": "C-0054's in-plane hinge ceiling",
+            "published": 42.0,
+            "derived": 42.0,
+            "relativeDeparture": 0.0,
+            "source": "C-0054, re-derived"
+        },
+        {
+            "quantity": "C-0039's E5a1 arm at 45 paths [nm]",
+            "published": 9.131,
+            "derived": 9.1311565,
+            "relativeDeparture": 1.71397538E-5,
+            "source": "C-0039, re-run as a library"
+        },
+        {
+            "quantity": "C-0053's arm demand at 45 paths [nm]",
+            "published": 11.821,
+            "derived": 11.8211565,
+            "relativeDeparture": 1.32394122E-5,
+            "source": "C-0053"
+        },
+        {
+            "quantity": "C-0053's in-plane placement at 45 paths",
+            "published": 43.0,
+            "derived": 43.0,
+            "relativeDeparture": 0.0,
+            "source": "C-0053, re-run as a library"
+        },
+        {
+            "quantity": "the per-interface pitch [nm]",
+            "published": 10.88,
+            "derived": 10.88,
+            "relativeDeparture": 0.0,
+            "source": "C-0040/C-0015"
+        }
+    ],
+    "literature": [
+        {
+            "quantity": "four nearest neighbours, crossover planes at 8 bp, same pair every 32 bp",
+            "value": "\"every 8 bp, that staple strand is positioned to cross over to one of its four neighbors … adjacent helices share crossovers every 32 bp\"",
+            "source": "Ke, Douglas, Liedl, Shih, JACS 131:15903 (2009), PMC2821935",
+            "access": "READ DIRECTLY"
+        },
+        {
+            "quantity": "the two crossover-plane families are orthogonal",
+            "value": "\"crossovers in i and iii sectional slices are parallel to the xz-plane, while the crossovers in ii and iv sectional slices are parallel to the yz-plane\"",
+            "source": "Ke et al. 2009, PMC2821935",
+            "access": "READ DIRECTLY"
+        },
+        {
+            "quantity": "the designed and preferred twist",
+            "value": "33.75 deg/bp (32 bp per 3 turns); 34.3 deg/bp",
+            "source": "Ke et al. 2009, PMC2821935",
+            "access": "READ DIRECTLY"
+        },
+        {
+            "quantity": "the published COST of a crossover 8 bp from another",
+            "value": "\"some staple breaks must be implemented between crossovers 8 bp apart … Introducing these breaks may be destabilizing for the structure\", and omitting them gave \"a high yield of well-folded structures\"",
+            "source": "Ke et al. 2009, PMC2821935",
+            "access": "READ DIRECTLY"
+        },
+        {
+            "quantity": "caDNAno's honeycomb analogue of the same rule",
+            "value": "\"potential staple-crossover positions occur every seven base pairs, or two-thirds of a turn\" and repeat \"every 21 base pairs\" at 10.5 bp/turn",
+            "source": "Douglas et al., NAR 37:5001 (2009), PMC2731887",
+            "access": "READ DIRECTLY"
+        },
+        {
+            "quantity": "a FREE lever held to a single-layer sheet by one crossover at an unoccupied azimuth",
+            "value": "no instance found in 37 + 25 recorded EuropePMC queries across fifteen families",
+            "source": "see gpd/results/T-119-unused-junction-site.json and the claim's query table",
+            "access": "NOT FOUND"
+        }
+    ],
+    "scaffold": {
+        "sheetBasePairs": 1770.0,
+        "armBasePairs": 816.0,
+        "totalBasePairs": 2586.0,
+        "m13Nucleotides": 7249.0,
+        "fractionOfM13": 0.356738861
+    },
+    "predicates": {
+        "P1 does an unoccupied junction site exist?": "YES. Two of the square lattice's four azimuths are unoccupied by a single-layer sheet, and they lie at EXACTLY 270.0 deg and 90.0 deg from the occupied pair — out of the sheet plane. Ke et al. (2009), read directly.",
+        "P2 is it in register?": "YES, and it is in BETTER register than the site the sheet does use: at the preferred 10.5 bp/turn the 8 bp out-of-plane site departs by 4.286 deg against 8.571 deg for the sheet's own next in-plane crossover, because the departure is linear in the offset.",
+        "P3 what is the unused inventory?": "112-127 sites against the 49-56 the sheet builds: the sheet occupies 27.8-33.1 % of its own lattice, under a third at every phase.",
+        "P4 what does C-0054's budget become?": "its 42 of 56 becomes 52 upward hinges at the same phase and 60 at the best one, with EVERY interface crossover retained and the sheet in ONE piece at every count. The pigeonhole does not bind.",
+        "P5 what does C-0053's count become?": "25 becomes 34 — the host is untouched, so what binds is the upward root pitch of 10.88 nm against a demand of 11.82 nm.",
+        "P6 does §3's 45 place?": "NO. 34 places; 45 does not, for a NEW reason — the root pitch, not the host's survival.",
+        "P7 is the motif demonstrated?": "NO. The SITE and the crossover at it are published square-lattice geometry; a FREE LEVER held by one crossover at that site is not, and Ke et al. report the 8 bp staple break it forces as a yield cost."
+    }
+}

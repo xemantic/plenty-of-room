@@ -1,0 +1,1419 @@
+{
+ "task": "T-119",
+ "leaf": "A8.2",
+ "purpose": "the recorded EuropePMC search behind C-0055's NOT FOUND verdict on the motif; per CLAUDE.md a negative existence claim needs its query strings, not just its conclusion",
+ "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+ "pauseSecondsBetweenQueries": 8,
+ "retries": 3,
+ "queryCount": 62,
+ "familyCount": 15,
+ "readDirectly": [
+  {
+   "source": "Ke, Douglas, Liedl, Shih, JACS 131:15903 (2009), PMC2821935",
+   "route": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2821935/ (EuropePMC fullTextXML returns 0 bytes)",
+   "used": [
+    "four nearest neighbours; crossover planes at 8 bp; same pair every 32 bp",
+    "planes i/iii parallel to xz, ii/iv to yz",
+    "33.75 deg/bp = 32 bp per 3 turns; preferred 34.3 deg/bp = 10.5 bp/turn",
+    "staple breaks between crossovers 8 bp apart: significantly lower yield"
+   ]
+  },
+  {
+   "source": "Douglas et al., NAR 37:5001 (2009), PMC2731887",
+   "route": "EuropePMC fullTextXML",
+   "used": [
+    "honeycomb: staple-crossover positions every seven base pairs, two-thirds of a turn, repeating every 21 base pairs at 10.5 bp/turn"
+   ]
+  },
+  {
+   "source": "Mechanics of dynamic and deformable DNA nanostructures, PMC10395309 (2023)",
+   "route": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10395309/",
+   "used": [
+    "a nanoscale hinge realized using ssDNA connections"
+   ]
+  }
+ ],
+ "notFound": "a FREE lever held to a single-layer sheet by ONE crossover at an unoccupied azimuth",
+ "queries": [
+  {
+   "family": "F1 square-lattice crossover register",
+   "query": "\"square lattice\" AND \"DNA origami\" AND \"crossover\" AND \"10.67\"",
+   "hitCount": 11,
+   "top": [
+    {
+     "pmcid": "PMC13255533",
+     "year": "2026",
+     "title": "Tools For Building Artificial Biological Nanostructures."
+    },
+    {
+     "pmcid": "PMC10395309",
+     "year": "2023",
+     "title": "Mechanics of dynamic and deformable DNA nanostructures."
+    },
+    {
+     "pmcid": "PMC7718922",
+     "year": "2020",
+     "title": "Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution."
+    },
+    {
+     "pmcid": "PMC8373134",
+     "year": "2021",
+     "title": "Stabilization and structural changes of 2D DNA origami by enzymatic ligation."
+    },
+    {
+     "pmcid": "PMC8000633",
+     "year": "2021",
+     "title": "Constructing Large 2D Lattices Out of DNA-Tiles."
+    },
+    {
+     "pmcid": "PMC6976304",
+     "year": "2020",
+     "title": "Building machines with DNA molecules."
+    }
+   ]
+  },
+  {
+   "family": "F1 square-lattice crossover register",
+   "query": "\"DNA origami\" AND \"33.75\" AND twist",
+   "hitCount": 1,
+   "top": [
+    {
+     "pmcid": "PMC2821935",
+     "year": "2009",
+     "title": "Multilayer DNA origami packed on a square lattice."
+    }
+   ]
+  },
+  {
+   "family": "F1 square-lattice crossover register",
+   "query": "\"crossover planes\" AND \"DNA origami\"",
+   "hitCount": 4,
+   "top": [
+    {
+     "pmcid": "PMC11291742",
+     "year": "2024",
+     "title": "Predicting the effect of binding molecules on the shape and mechanical properties of structured DNA assemblies."
+    },
+    {
+     "pmcid": "PMC3864285",
+     "year": "2013",
+     "title": "In situ structure and dynamics of DNA origami determined through molecular dynamics simulations."
+    },
+    {
+     "pmcid": "PMC2737683",
+     "year": "2009",
+     "title": "Folding DNA into twisted and curved nanoscale shapes."
+    },
+    {
+     "pmcid": "PMC2821935",
+     "year": "2009",
+     "title": "Multilayer DNA origami packed on a square lattice."
+    }
+   ]
+  },
+  {
+   "family": "F1 square-lattice crossover register",
+   "query": "\"8 bp\" AND \"crossover\" AND \"square lattice\" AND DNA",
+   "hitCount": 9,
+   "top": [
+    {
+     "pmcid": "PMC12143421",
+     "year": "2025",
+     "title": "Isothermal assembly of DNA nanostructures."
+    },
+    {
+     "pmcid": "PMC11419732",
+     "year": "2021",
+     "title": "DNA Origami Design: A How-To Tutorial."
+    },
+    {
+     "pmcid": "PMC8373134",
+     "year": "2021",
+     "title": "Stabilization and structural changes of 2D DNA origami by enzymatic ligation."
+    },
+    {
+     "pmcid": "PMC6976304",
+     "year": "2020",
+     "title": "Building machines with DNA molecules."
+    },
+    {
+     "pmcid": "PMC6214983",
+     "year": "2018",
+     "title": "Programming molecular topologies from single-stranded nucleic acids."
+    },
+    {
+     "pmcid": "PMC2821935",
+     "year": "2009",
+     "title": "Multilayer DNA origami packed on a square lattice."
+    }
+   ]
+  },
+  {
+   "family": "F1 square-lattice crossover register",
+   "query": "\"nearest neighbors\" AND \"antiparallel strand crossovers\" AND origami",
+   "hitCount": 1,
+   "top": [
+    {
+     "pmcid": "PMC2821935",
+     "year": "2009",
+     "title": "Multilayer DNA origami packed on a square lattice."
+    }
+   ]
+  },
+  {
+   "family": "F2 out-of-plane duplex on a single-layer sheet",
+   "query": "\"single-layer\" AND \"DNA origami\" AND \"out-of-plane\" AND helix",
+   "hitCount": 11,
+   "top": [
+    {
+     "pmcid": "PMC9122324",
+     "year": "2022",
+     "title": "Planar 2D wireframe DNA origami."
+    },
+    {
+     "pmcid": "PMC10395309",
+     "year": "2023",
+     "title": "Mechanics of dynamic and deformable DNA nanostructures."
+    },
+    {
+     "pmcid": "PMC10103138",
+     "year": "2023",
+     "title": "Recent Advances in DNA Origami-Engineered Nanomaterials and Applications."
+    },
+    {
+     "pmcid": "PMC9674029",
+     "year": "2022",
+     "title": "A bistable and reconfigurable molecular system with encodable bonds."
+    },
+    {
+     "pmcid": "PMC7603033",
+     "year": "2020",
+     "title": "Bottom-Up Self-Assembly Based on DNA Nanotechnology."
+    },
+    {
+     "pmcid": "PMC6882874",
+     "year": "2019",
+     "title": "Automated sequence design of 2D wireframe DNA origami with honeycomb edges."
+    }
+   ]
+  },
+  {
+   "family": "F2 out-of-plane duplex on a single-layer sheet",
+   "query": "\"DNA origami\" AND \"perpendicular helix\" AND sheet",
+   "hitCount": 1,
+   "top": [
+    {
+     "pmcid": "PMC9808541",
+     "year": "2022",
+     "title": "Energy landscapes of rotary DNA origami devices determined by fluorescence particle tracking."
+    }
+   ]
+  },
+  {
+   "family": "F2 out-of-plane duplex on a single-layer sheet",
+   "query": "\"DNA origami\" AND \"protruding\" AND duplex AND single-layer",
+   "hitCount": 69,
+   "top": [
+    {
+     "pmcid": "PMC12444974",
+     "year": "2025",
+     "title": "Effects of Oligolysine-Polyethylene Glycol Coating on the Biodistribution of Wireframe DNA Origami Nanosheets in Zebrafish Embryos."
+    },
+    {
+     "pmcid": "PMC11643833",
+     "year": "2024",
+     "title": "Recent Advances in DNA Origami-Enabled Optical Biosensors for Multi-Scenario Application."
+    },
+    {
+     "pmcid": "PMC13026815",
+     "year": "2026",
+     "title": "Recent Advances in Aptamer-Based Applications in Cardiology."
+    },
+    {
+     "pmcid": "PMC12118239",
+     "year": "2024",
+     "title": "Precise construction of DNA origami-based materials for functional regulation on biological interface."
+    },
+    {
+     "pmcid": "PMC11100016",
+     "year": "2024",
+     "title": "Minimizing Structural Heterogeneity in DNA Self-Assembled Dye Templating via DNA Origami-Tuned Conformations."
+    },
+    {
+     "pmcid": "PMC10973203",
+     "year": "2024",
+     "title": "The motive forces in DNA-enabled nanomachinery."
+    }
+   ]
+  },
+  {
+   "family": "F2 out-of-plane duplex on a single-layer sheet",
+   "query": "\"second layer\" AND \"DNA origami\" AND \"single-layer\" AND crossover",
+   "hitCount": 3,
+   "top": [
+    {
+     "pmcid": "PMC9788767",
+     "year": "2022",
+     "title": "Automated design of 3D DNA origami with non-rasterized 2D curvature."
+    },
+    {
+     "pmcid": "PMC7221932",
+     "year": "2020",
+     "title": "Increasing Complexity in Wireframe DNA Nanostructures."
+    },
+    {
+     "pmcid": "PMC10643713",
+     "year": "2023",
+     "title": "The 7th Congress of Biophysicists of Russia - conference proceedings : Abstracts"
+    }
+   ]
+  },
+  {
+   "family": "F2 out-of-plane duplex on a single-layer sheet",
+   "query": "\"DNA origami\" AND \"vertical helix\" AND plate",
+   "hitCount": 0,
+   "top": []
+  },
+  {
+   "family": "F2 out-of-plane duplex on a single-layer sheet",
+   "query": "\"DNA origami\" AND \"helix normal to\" AND plane",
+   "hitCount": 0,
+   "top": []
+  },
+  {
+   "family": "F3 crossover as a hinge or pivot",
+   "query": "\"DNA origami\" AND hinge AND crossover AND \"degrees of freedom\"",
+   "hitCount": 12,
+   "top": [
+    {
+     "pmcid": "PMC10395309",
+     "year": "2023",
+     "title": "Mechanics of dynamic and deformable DNA nanostructures."
+    },
+    {
+     "pmcid": "PMC7718922",
+     "year": "2020",
+     "title": "Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution."
+    },
+    {
+     "pmcid": "PMC6976304",
+     "year": "2020",
+     "title": "Building machines with DNA molecules."
+    },
+    {
+     "pmcid": "PMC6895690",
+     "year": "2019",
+     "title": "Quantitative Modeling of Nucleosome Unwrapping from Both Ends."
+    },
+    {
+     "pmcid": "PMC6379721",
+     "year": "2019",
+     "title": "Coarse-grained modelling of the structural properties of DNA origami."
+    },
+    {
+     "pmcid": "PMC5401866",
+     "year": "2017",
+     "title": "Biomolecular engineering for nanobio/bionanotechnology."
+    }
+   ]
+  },
+  {
+   "family": "F3 crossover as a hinge or pivot",
+   "query": "\"DNA origami\" AND \"hinge\" AND \"single crossover\"",
+   "hitCount": 0,
+   "top": []
+  },
+  {
+   "family": "F3 crossover as a hinge or pivot",
+   "query": "\"Holliday junction\" AND hinge AND \"DNA origami\" AND flexure",
+   "hitCount": 2,
+   "top": [
+    {
+     "pmcid": "PMC10395309",
+     "year": "2023",
+     "title": "Mechanics of dynamic and deformable DNA nanostructures."
+    },
+    {
+     "pmcid": "PMC7375253",
+     "year": "2020",
+     "title": "Dynamic DNA Assemblies in Biomedical Applications."
+    }
+   ]
+  },
+  {
+   "family": "F3 crossover as a hinge or pivot",
+   "query": "\"DNA origami\" AND \"pivot\" AND crossover AND rotation",
+   "hitCount": 8,
+   "top": [
+    {
+     "pmcid": "PMC10973203",
+     "year": "2024",
+     "title": "The motive forces in DNA-enabled nanomachinery."
+    },
+    {
+     "pmcid": "PMC9709946",
+     "year": "2022",
+     "title": "DNA-Based Molecular Machines."
+    },
+    {
+     "pmcid": "PMC9300469",
+     "year": "2022",
+     "title": "A DNA origami rotary ratchet motor."
+    },
+    {
+     "pmcid": "PMC6976304",
+     "year": "2020",
+     "title": "Building machines with DNA molecules."
+    },
+    {
+     "pmcid": "PMC6073283",
+     "year": "2018",
+     "title": "Dynamic DNA Origami Devices: from Strand-Displacement Reactions to External-Stimuli Responsive Systems."
+    },
+    {
+     "pmcid": "PMC7254321",
+     "year": "2020",
+     "title": "DNA Origami as Emerging Technology for the Engineering of Fluorescent and Plasmonic-Based Biosensors."
+    }
+   ]
+  },
+  {
+   "family": "F3 crossover as a hinge or pivot",
+   "query": "\"DNA origami mechanisms\" AND hinge",
+   "hitCount": 3,
+   "top": [
+    {
+     "pmcid": null,
+     "year": "2019",
+     "title": "Reciprocal Control of Hierarchical DNA Origami-Nanoparticle Assemblies."
+    },
+    {
+     "pmcid": "PMC4311804",
+     "year": "2015",
+     "title": "Programmable motion of DNA origami mechanisms."
+    },
+    {
+     "pmcid": "PMC8296148",
+     "year": "2020",
+     "title": "Extending the Capabilities of Molecular Force Sensors via DNA Nanotechnology."
+    }
+   ]
+  },
+  {
+   "family": "F3 crossover as a hinge or pivot",
+   "query": "\"compliant\" AND \"DNA origami\" AND joint AND stiffness",
+   "hitCount": 26,
+   "top": [
+    {
+     "pmcid": "PMC13151263",
+     "year": "2026",
+     "title": "Nanocomposite hydrogels: benefits and attributes for osteoarthritis therapy."
+    },
+    {
+     "pmcid": "PMC12379156",
+     "year": "2025",
+     "title": "Microswimmers That Flex: Advancing Microswimmers with Templated Assembly and Responsive DNA Nanostructures."
+    },
+    {
+     "pmcid": "PMC13210103",
+     "year": "2026",
+     "title": "The Application of Micro/Nanorobots in Cancer Therapy."
+    },
+    {
+     "pmcid": "PMC12813157",
+     "year": "2026",
+     "title": "Programmable ROS modulation by nanomedicine for rheumatoid arthritis treatment."
+    },
+    {
+     "pmcid": "PMC13158703",
+     "year": "2026",
+     "title": "Aptamer-Functionalized Nanocarriers for Bone and Joint Diseases: Engineering Design Rules and Translational Roadmap."
+    },
+    {
+     "pmcid": "PMC10371015",
+     "year": "2023",
+     "title": "Versatile computer-aided design of free-form DNA nanostructures and assemblies."
+    }
+   ]
+  },
+  {
+   "family": "F4 unused or omitted crossover positions",
+   "query": "\"omitting crossovers\" AND \"DNA origami\"",
+   "hitCount": 1,
+   "top": [
+    {
+     "pmcid": "PMC2821935",
+     "year": "2009",
+     "title": "Multilayer DNA origami packed on a square lattice."
+    }
+   ]
+  },
+  {
+   "family": "F4 unused or omitted crossover positions",
+   "query": "\"crossover density\" AND \"DNA origami\" AND design AND omitted",
+   "hitCount": 3,
+   "top": [
+    {
+     "pmcid": "PMC10785819",
+     "year": "2024",
+     "title": "Enzyme-Free Exponential Amplification via Growth and Scission of Crisscross Ribbons from Single-Stranded DNA Components."
+    },
+    {
+     "pmcid": "PMC7718922",
+     "year": "2020",
+     "title": "Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution."
+    },
+    {
+     "pmcid": "PMC3326316",
+     "year": "2012",
+     "title": "Quantitative prediction of 3D solution shape and flexibility of nucleic acid nanostructures."
+    }
+   ]
+  },
+  {
+   "family": "F4 unused or omitted crossover positions",
+   "query": "\"unused\" AND \"crossover\" AND \"DNA origami\" AND lattice",
+   "hitCount": 5,
+   "top": [
+    {
+     "pmcid": "PMC12907558",
+     "year": "2026",
+     "title": "Complex cooperativity in DNA origami revealed via design-dependent defectivity."
+    },
+    {
+     "pmcid": "PMC7725538",
+     "year": "2020",
+     "title": "Emerging applications at the interface of DNA nanotechnology and cellular membranes: Perspectives from biology, engineering, and physics."
+    },
+    {
+     "pmcid": "PMC3319874",
+     "year": "2011",
+     "title": "Organizing DNA origami tiles into larger structures using preformed scaffold frames."
+    },
+    {
+     "pmcid": "PMC2660060",
+     "year": "2009",
+     "title": "An information-bearing seed for nucleating algorithmic self-assembly."
+    },
+    {
+     "pmcid": "PMC10643713",
+     "year": "2023",
+     "title": "The 7th Congress of Biophysicists of Russia - conference proceedings : Abstracts"
+    }
+   ]
+  },
+  {
+   "family": "F4 unused or omitted crossover positions",
+   "query": "\"additional crossover\" AND \"DNA origami\" AND \"same helices\"",
+   "hitCount": 0,
+   "top": []
+  },
+  {
+   "family": "F4 unused or omitted crossover positions",
+   "query": "\"crossover spacing\" AND \"DNA origami\" AND \"16 bp\"",
+   "hitCount": 2,
+   "top": [
+    {
+     "pmcid": "PMC10395309",
+     "year": "2023",
+     "title": "Mechanics of dynamic and deformable DNA nanostructures."
+    },
+    {
+     "pmcid": "PMC11419732",
+     "year": "2021",
+     "title": "DNA Origami Design: A How-To Tutorial."
+    }
+   ]
+  },
+  {
+   "family": "F5 mixed single- and multi-layer origami",
+   "query": "\"DNA origami\" AND \"two-layer\" AND \"single-layer\" AND hybrid",
+   "hitCount": 7,
+   "top": [
+    {
+     "pmcid": "PMC12632444",
+     "year": "2025",
+     "title": "Biomimetic Carbon-Based Nanomaterials: From Design Strategies to Next-Generation Biosensing and Theranostic Applications."
+    },
+    {
+     "pmcid": "PMC10952089",
+     "year": "2024",
+     "title": "Bioorthogonal chemistry of polyoxometalates - challenges and prospects."
+    },
+    {
+     "pmcid": "PMC10103138",
+     "year": "2023",
+     "title": "Recent Advances in DNA Origami-Engineered Nanomaterials and Applications."
+    },
+    {
+     "pmcid": "PMC12188181",
+     "year": "2025",
+     "title": "Chirality in Transition Metal Dichalcogenide Nanostructures."
+    },
+    {
+     "pmcid": "PMC7084717",
+     "year": "2020",
+     "title": "Self-assembly of Organic Nanomaterials and Biomaterials: The Bottom-Up Approach for Functional Nanostructures Formation and Advanced Applications."
+    },
+    {
+     "pmcid": "PMC7153467",
+     "year": "2020",
+     "title": "Gold Nanoparticle Self-Aggregation on Surface with 1,6-Hexanedithiol Functionalization."
+    }
+   ]
+  },
+  {
+   "family": "F5 mixed single- and multi-layer origami",
+   "query": "\"DNA origami\" AND \"raised\" AND feature AND helix AND layer",
+   "hitCount": 57,
+   "top": [
+    {
+     "pmcid": "PMC13195575",
+     "year": "2026",
+     "title": "DNA Nanostructures for siRNA Delivery."
+    },
+    {
+     "pmcid": "PMC13119169",
+     "year": "2026",
+     "title": "Framework Nucleic Acids as a Nanocontainer for Delivering Heterogeneous Molecular Drugs."
+    },
+    {
+     "pmcid": "PMC13026815",
+     "year": "2026",
+     "title": "Recent Advances in Aptamer-Based Applications in Cardiology."
+    },
+    {
+     "pmcid": "PMC11060068",
+     "year": "2024",
+     "title": "Improving DNA nanostructure stability: A review of the biomedical applications and approaches."
+    },
+    {
+     "pmcid": "PMC11835166",
+     "year": "2024",
+     "title": "DNA-Based Nanostructured Platforms as Drug Delivery Systems."
+    },
+    {
+     "pmcid": "PMC12202687",
+     "year": "2025",
+     "title": "Future perspectives of GMO detection in agriculture: strategies for electrochemical nucleic acid detection."
+    }
+   ]
+  },
+  {
+   "family": "F5 mixed single- and multi-layer origami",
+   "query": "\"bilayer\" AND \"DNA origami\" AND sheet AND crossover",
+   "hitCount": 37,
+   "top": [
+    {
+     "pmcid": "PMC13204131",
+     "year": "2026",
+     "title": "DNA Origami and Their Application in Biosensors."
+    },
+    {
+     "pmcid": "PMC12915191",
+     "year": "2026",
+     "title": "Bacteriophage-Mimetic DNA Origami Needle for Targeted Membrane Penetration and Cytosolic Cargo Delivery."
+    },
+    {
+     "pmcid": "PMC12691925",
+     "year": "2025",
+     "title": "DNA\u2011Directed Assembly of Photonic Nanomaterials for Diagnostic and Therapeutic Applications."
+    },
+    {
+     "pmcid": "PMC11407293",
+     "year": "2024",
+     "title": "NucleoCraft: The Art of Stimuli-Responsive Precision in DNA and RNA Bioengineering."
+    },
+    {
+     "pmcid": "PMC11733725",
+     "year": "2025",
+     "title": "In Vivo Interactions of Nucleic Acid Nanostructures With Cells."
+    },
+    {
+     "pmcid": "PMC9709946",
+     "year": "2022",
+     "title": "DNA-Based Molecular Machines."
+    }
+   ]
+  },
+  {
+   "family": "F6 cantilever / lever arm on an origami plate",
+   "query": "\"DNA origami\" AND \"cantilever\" AND arm AND lever",
+   "hitCount": 11,
+   "top": [
+    {
+     "pmcid": "PMC11852755",
+     "year": "2025",
+     "title": "Nano-Scale Video Imaging of Motility Machinery by High-Speed Atomic Force Microscopy."
+    },
+    {
+     "pmcid": "PMC10973203",
+     "year": "2024",
+     "title": "The motive forces in DNA-enabled nanomachinery."
+    },
+    {
+     "pmcid": "PMC6881340",
+     "year": "2019",
+     "title": "Direct visualization of human myosin II force generation using DNA origami-based thick filaments."
+    },
+    {
+     "pmcid": "PMC9048690",
+     "year": "2022",
+     "title": "High-Force Application by a Nanoscale DNA Force Spectrometer."
+    },
+    {
+     "pmcid": "PMC7664901",
+     "year": "2020",
+     "title": "Hypothesis: Single Actomyosin Properties Account for Ensemble Behavior in Active Muscle Shortening and Isometric Contraction."
+    },
+    {
+     "pmcid": "PMC3723498",
+     "year": "2013",
+     "title": "Investigating bioconjugation by atomic force microscopy."
+    }
+   ]
+  },
+  {
+   "family": "F6 cantilever / lever arm on an origami plate",
+   "query": "\"DNA origami\" AND \"lever arm\" AND rotation AND nanoscale",
+   "hitCount": 13,
+   "top": [
+    {
+     "pmcid": "PMC11771422",
+     "year": "2024",
+     "title": "Single-molecule orientation-localization microscopy: Applications and approaches."
+    },
+    {
+     "pmcid": "PMC10950783",
+     "year": "2024",
+     "title": "A DNA turbine powered by a transmembrane potential across a nanopore."
+    },
+    {
+     "pmcid": "PMC10973203",
+     "year": "2024",
+     "title": "The motive forces in DNA-enabled nanomachinery."
+    },
+    {
+     "pmcid": "PMC8654862",
+     "year": "2021",
+     "title": "A nanoscale reciprocating rotary mechanism with coordinated mobility control."
+    },
+    {
+     "pmcid": "PMC5899095",
+     "year": "2018",
+     "title": "Real-time magnetic actuation of DNA nanodevices via modular integration with stiff micro-levers."
+    },
+    {
+     "pmcid": "PMC8166185",
+     "year": "2021",
+     "title": "Microchemomechanical devices using DNA hybridization."
+    }
+   ]
+  },
+  {
+   "family": "F6 cantilever / lever arm on an origami plate",
+   "query": "\"DNA origami\" AND \"flexure\" AND hinge",
+   "hitCount": 6,
+   "top": [
+    {
+     "pmcid": "PMC10873200",
+     "year": "2024",
+     "title": "A rhythmically pulsing leaf-spring DNA-origami nanoengine that drives a passive follower."
+    },
+    {
+     "pmcid": "PMC10395309",
+     "year": "2023",
+     "title": "Mechanics of dynamic and deformable DNA nanostructures."
+    },
+    {
+     "pmcid": "PMC7375253",
+     "year": "2020",
+     "title": "Dynamic DNA Assemblies in Biomedical Applications."
+    },
+    {
+     "pmcid": "PMC12292994",
+     "year": "2025",
+     "title": "Bioinspired Morphing in Aerodynamics and Hydrodynamics: Engineering Innovations for Aerospace and Renewable Energy."
+    },
+    {
+     "pmcid": "PMC7702192",
+     "year": "2020",
+     "title": "Micro/nanoscale magnetic robots for biomedical applications."
+    },
+    {
+     "pmcid": "PMC12155586",
+     "year": "2025",
+     "title": "EACR 2025 Congress: Innovative Cancer Science, 16-19 June 2025."
+    }
+   ]
+  },
+  {
+   "family": "F7 attachment by a single covalent link",
+   "query": "\"DNA origami\" AND \"single covalent\" AND attach AND helix",
+   "hitCount": 1,
+   "top": [
+    {
+     "pmcid": "PMC12315992",
+     "year": "2025",
+     "title": "Tunable and robust optical and structural properties of a cooperative squaraine-dye aggregate-DNA DX-DAE tile system."
+    }
+   ]
+  },
+  {
+   "family": "F7 attachment by a single covalent link",
+   "query": "\"one covalent bond\" AND \"DNA origami\"",
+   "hitCount": 1,
+   "top": [
+    {
+     "pmcid": "PMC6476321",
+     "year": "2018",
+     "title": "Switchable Fluorophores for Single-Molecule Localization Microscopy."
+    }
+   ]
+  },
+  {
+   "family": "F7 attachment by a single covalent link",
+   "query": "\"DNA origami\" AND \"pin\" AND \"unpaired\" AND attachment AND rigid",
+   "hitCount": 7,
+   "top": [
+    {
+     "pmcid": "PMC10395309",
+     "year": "2023",
+     "title": "Mechanics of dynamic and deformable DNA nanostructures."
+    },
+    {
+     "pmcid": "PMC11469289",
+     "year": "2021",
+     "title": "Complex Metal Nanostructures with Programmable Shapes from Simple DNA Building Blocks."
+    },
+    {
+     "pmcid": "PMC9206424",
+     "year": "2022",
+     "title": "Recent advances in RNA structurome."
+    },
+    {
+     "pmcid": "PMC7080123",
+     "year": "2017",
+     "title": "Abstracts"
+    },
+    {
+     "pmcid": "PMC12155586",
+     "year": "2025",
+     "title": "EACR 2025 Congress: Innovative Cancer Science, 16-19 June 2025."
+    },
+    {
+     "pmcid": "PMC7086518",
+     "year": "2015",
+     "title": "Commentary: an eye on PET quantification."
+    }
+   ]
+  },
+  {
+   "family": "F8 twist from lattice underwinding",
+   "query": "\"global twist\" AND \"DNA origami\" AND underwinding",
+   "hitCount": 9,
+   "top": [
+    {
+     "pmcid": "PMC7718922",
+     "year": "2020",
+     "title": "Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution."
+    },
+    {
+     "pmcid": "PMC6976304",
+     "year": "2020",
+     "title": "Building machines with DNA molecules."
+    },
+    {
+     "pmcid": "PMC4821297",
+     "year": "2016",
+     "title": "Design and construction of a DNA origami drug delivery system based on MPT64 antibody aptamer for tuberculosis treatment."
+    },
+    {
+     "pmcid": "PMC4945425",
+     "year": "2016",
+     "title": "DNA Origami: Folded DNA-Nanodevices That Can Direct and Interpret Cell Behavior."
+    },
+    {
+     "pmcid": null,
+     "year": "2011",
+     "title": "DNA origami-based nanoribbons: assembly, length distribution, and twist."
+    },
+    {
+     "pmcid": "PMC3326316",
+     "year": "2012",
+     "title": "Quantitative prediction of 3D solution shape and flexibility of nucleic acid nanostructures."
+    }
+   ]
+  },
+  {
+   "family": "F8 twist from lattice underwinding",
+   "query": "\"DNA origami\" AND \"base pair deletions\" AND twist correction",
+   "hitCount": 3,
+   "top": [
+    {
+     "pmcid": "PMC7718922",
+     "year": "2020",
+     "title": "Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution."
+    },
+    {
+     "pmcid": "PMC7611957",
+     "year": "2021",
+     "title": "Double- to Single-Strand Transition Induces Forces and Motion in DNA Origami Nanostructures."
+    },
+    {
+     "pmcid": "PMC6992424",
+     "year": "2019",
+     "title": "Custom-Size, Functional, and Durable DNA Origami with Design-Specific Scaffolds."
+    }
+   ]
+  },
+  {
+   "family": "F8 twist from lattice underwinding",
+   "query": "\"Folding DNA into twisted and curved nanoscale shapes\"",
+   "hitCount": 3,
+   "top": [
+    {
+     "pmcid": "PMC12182891",
+     "year": "2025",
+     "title": "How We Simulate DNA Origami."
+    },
+    {
+     "pmcid": "PMC2737683",
+     "year": "2009",
+     "title": "Folding DNA into twisted and curved nanoscale shapes."
+    },
+    {
+     "pmcid": "PMC6800557",
+     "year": "2019",
+     "title": "Static DNA Nanostructures For Cancer Theranostics: Recent Progress In Design And Applications."
+    }
+   ]
+  },
+  {
+   "family": "F9 staple break length and yield",
+   "query": "\"staple\" AND \"8-nt\" AND \"DNA origami\" AND yield AND domain",
+   "hitCount": 27,
+   "top": [
+    {
+     "pmcid": "PMC13218039",
+     "year": "2026",
+     "title": "Site-Specific &lt;i&gt;In Situ&lt;/i&gt; Metallization of Wireframe DNA Origami for Reversible Fluorescence Switching."
+    },
+    {
+     "pmcid": "PMC13098309",
+     "year": "2026",
+     "title": "Visualizing and Quantifying microRNA-Induced DNA Origami Separation at the Nanoscale."
+    },
+    {
+     "pmcid": "PMC12534185",
+     "year": "2025",
+     "title": "DNA moir\u00e9 superlattices."
+    },
+    {
+     "pmcid": "PMC12510279",
+     "year": "2025",
+     "title": "Bringing Attomolar Detection to the Point-of-Care with Nanopatterned DNA Origami Nanoantennas."
+    },
+    {
+     "pmcid": "PMC12134127",
+     "year": "2025",
+     "title": "Realizing mechanical frustration at the nanoscale using DNA origami."
+    },
+    {
+     "pmcid": "PMC12899278",
+     "year": "2026",
+     "title": "Omega Nucleic Acids (\u03a9NA), Ultimate Nucleic Acids for Future Technology."
+    }
+   ]
+  },
+  {
+   "family": "F9 staple break length and yield",
+   "query": "\"binding domain\" AND length AND \"DNA origami\" AND \"folding yield\"",
+   "hitCount": 5,
+   "top": [
+    {
+     "pmcid": "PMC12696799",
+     "year": "2025",
+     "title": "Unraveling the Folding Dynamics of DNA Origami Structures."
+    },
+    {
+     "pmcid": "PMC10103138",
+     "year": "2023",
+     "title": "Recent Advances in DNA Origami-Engineered Nanomaterials and Applications."
+    },
+    {
+     "pmcid": null,
+     "year": "2022",
+     "title": "DNA Origami Presenting the Receptor Binding Domain of SARS-CoV-2 Elicit Robust Protective Immune Response"
+    },
+    {
+     "pmcid": "PMC10034259",
+     "year": "2023",
+     "title": "DNA origami presenting the receptor binding domain of SARS-CoV-2 elicit robust protective immune response."
+    },
+    {
+     "pmcid": "PMC6767941",
+     "year": "2019",
+     "title": "Award Winners and Abstracts of the 33rd Annual Symposium of The Protein Society; Seattle, Washington, June 30-July 3, 2019."
+    }
+   ]
+  },
+  {
+   "family": "F9 staple break length and yield",
+   "query": "\"DNA origami\" AND \"staple breaks\" AND destabilizing",
+   "hitCount": 1,
+   "top": [
+    {
+     "pmcid": "PMC2821935",
+     "year": "2009",
+     "title": "Multilayer DNA origami packed on a square lattice."
+    }
+   ]
+  },
+  {
+   "family": "F10 unoccupied azimuth on a single-layer sheet",
+   "query": "\"DNA origami\" AND \"unoccupied\" AND crossover AND position",
+   "hitCount": 9,
+   "top": [
+    {
+     "pmcid": "PMC11103695",
+     "year": "2024",
+     "title": "Electronic Properties of DNA Origami Nanostructures Revealed by <i>In Silico</i> Calculations."
+    },
+    {
+     "pmcid": "PMC10051322",
+     "year": "2023",
+     "title": "Programmable Nanostructures Based on Framework-DNA for Applications in Biosensing."
+    },
+    {
+     "pmcid": "PMC10642627",
+     "year": "2023",
+     "title": "Pursuing excitonic energy transfer with programmable DNA-based optical breadboards."
+    },
+    {
+     "pmcid": "PMC6976304",
+     "year": "2020",
+     "title": "Building machines with DNA molecules."
+    },
+    {
+     "pmcid": "PMC3587989",
+     "year": "2013",
+     "title": "Molecular motions in functional self-assembled nanostructures."
+    },
+    {
+     "pmcid": "PMC4585175",
+     "year": "2015",
+     "title": "Artificial Molecular Machines."
+    }
+   ]
+  },
+  {
+   "family": "F10 unoccupied azimuth on a single-layer sheet",
+   "query": "\"DNA origami\" AND \"free azimuth\"",
+   "hitCount": 0,
+   "top": []
+  },
+  {
+   "family": "F10 unoccupied azimuth on a single-layer sheet",
+   "query": "\"DNA origami\" AND \"crossover azimuth\"",
+   "hitCount": 0,
+   "top": []
+  },
+  {
+   "family": "F10 unoccupied azimuth on a single-layer sheet",
+   "query": "\"DNA origami\" AND \"backbone azimuth\" AND crossover",
+   "hitCount": 0,
+   "top": []
+  },
+  {
+   "family": "F10 unoccupied azimuth on a single-layer sheet",
+   "query": "\"single-layer DNA origami\" AND protrusion",
+   "hitCount": 3,
+   "top": [
+    {
+     "pmcid": "PMC11057029",
+     "year": "2024",
+     "title": "Designing Rigid DNA Origami Templates for Molecular Visualization Using Cryo-EM."
+    },
+    {
+     "pmcid": "PMC8613912",
+     "year": "2021",
+     "title": "Quantification of Strand Accessibility in Biostable DNA Origami with Single-Staple Resolution."
+    },
+    {
+     "pmcid": "PMC6976304",
+     "year": "2020",
+     "title": "Building machines with DNA molecules."
+    }
+   ]
+  },
+  {
+   "family": "F10 unoccupied azimuth on a single-layer sheet",
+   "query": "\"single layer\" AND \"DNA origami\" AND pillar AND helix",
+   "hitCount": 8,
+   "top": [
+    {
+     "pmcid": "PMC12118239",
+     "year": "2024",
+     "title": "Precise construction of DNA origami-based materials for functional regulation on biological interface."
+    },
+    {
+     "pmcid": "PMC10103138",
+     "year": "2023",
+     "title": "Recent Advances in DNA Origami-Engineered Nanomaterials and Applications."
+    },
+    {
+     "pmcid": "PMC11115426",
+     "year": "2024",
+     "title": "Interplay of graphene-DNA interactions: Unveiling sensing potential of graphene materials."
+    },
+    {
+     "pmcid": "PMC7435255",
+     "year": "2020",
+     "title": "Hydrophobic Interaction: A Promising Driving Force for the Biomedical Applications of Nucleic Acids."
+    },
+    {
+     "pmcid": "PMC9523718",
+     "year": "2022",
+     "title": "Protein Design: From the Aspect of Water Solubility and Stability."
+    },
+    {
+     "pmcid": "PMC7345464",
+     "year": "2020",
+     "title": "Biomimetic Nanomembranes: An Overview."
+    }
+   ]
+  },
+  {
+   "family": "F11 interlayer crossover to an added helix",
+   "query": "\"interlayer crossover\" AND DNA",
+   "hitCount": 0,
+   "top": []
+  },
+  {
+   "family": "F11 interlayer crossover to an added helix",
+   "query": "\"layer-to-layer\" AND crossover AND \"DNA origami\"",
+   "hitCount": 24,
+   "top": [
+    {
+     "pmcid": "PMC12691925",
+     "year": "2025",
+     "title": "DNA\u2011Directed Assembly of Photonic Nanomaterials for Diagnostic and Therapeutic Applications."
+    },
+    {
+     "pmcid": "PMC10460852",
+     "year": "2023",
+     "title": "Exploring the Potential of Three-Dimensional DNA Crystals in Nanotechnology: Design, Optimization, and Applications."
+    },
+    {
+     "pmcid": "PMC10642627",
+     "year": "2023",
+     "title": "Pursuing excitonic energy transfer with programmable DNA-based optical breadboards."
+    },
+    {
+     "pmcid": "PMC8628606",
+     "year": "2021",
+     "title": "Chemically modified nucleic acids and DNA intercalators as tools for nanoparticle assembly."
+    },
+    {
+     "pmcid": "PMC6499592",
+     "year": "2019",
+     "title": "The sequence of events during folding of a DNA origami."
+    },
+    {
+     "pmcid": "PMC6964666",
+     "year": "2020",
+     "title": "Molecular architectonics of DNA for functional nanoarchitectures."
+    }
+   ]
+  },
+  {
+   "family": "F11 interlayer crossover to an added helix",
+   "query": "\"DNA origami\" AND \"additional helix\" AND crossover AND attach",
+   "hitCount": 0,
+   "top": []
+  },
+  {
+   "family": "F11 interlayer crossover to an added helix",
+   "query": "\"DNA origami\" AND \"stacked helix\" AND crossover",
+   "hitCount": 0,
+   "top": []
+  },
+  {
+   "family": "F11 interlayer crossover to an added helix",
+   "query": "\"DNA origami\" AND \"helix added\" AND \"second layer\"",
+   "hitCount": 0,
+   "top": []
+  },
+  {
+   "family": "F12 a crossover used as a pivot",
+   "query": "\"crossover\" AND \"pivot\" AND \"DNA nanostructure\" AND hinge",
+   "hitCount": 4,
+   "top": [
+    {
+     "pmcid": "PMC9709946",
+     "year": "2022",
+     "title": "DNA-Based Molecular Machines."
+    },
+    {
+     "pmcid": "PMC6976304",
+     "year": "2020",
+     "title": "Building machines with DNA molecules."
+    },
+    {
+     "pmcid": "PMC10973203",
+     "year": "2024",
+     "title": "The motive forces in DNA-enabled nanomachinery."
+    },
+    {
+     "pmcid": "PMC6073283",
+     "year": "2018",
+     "title": "Dynamic DNA Origami Devices: from Strand-Displacement Reactions to External-Stimuli Responsive Systems."
+    }
+   ]
+  },
+  {
+   "family": "F12 a crossover used as a pivot",
+   "query": "\"junction hinge\" AND DNA AND origami",
+   "hitCount": 1,
+   "top": [
+    {
+     "pmcid": "PMC12170342",
+     "year": "2025",
+     "title": "Local structural flexibility drives oligomorphism in computationally designed protein assemblies."
+    }
+   ]
+  },
+  {
+   "family": "F12 a crossover used as a pivot",
+   "query": "\"DNA origami\" AND \"hinge joint\" AND \"crossover\"",
+   "hitCount": null,
+   "top": []
+  },
+  {
+   "family": "F12 a crossover used as a pivot",
+   "query": "\"DNA origami\" AND \"torsional spring\" AND crossover",
+   "hitCount": 7,
+   "top": [
+    {
+     "pmcid": "PMC10876929",
+     "year": "2024",
+     "title": "Cooperative control of a DNA origami force sensor."
+    },
+    {
+     "pmcid": "PMC10395309",
+     "year": "2023",
+     "title": "Mechanics of dynamic and deformable DNA nanostructures."
+    },
+    {
+     "pmcid": "PMC9300469",
+     "year": "2022",
+     "title": "A DNA origami rotary ratchet motor."
+    },
+    {
+     "pmcid": "PMC7764255",
+     "year": "2020",
+     "title": "Mechanical Flexibility of DNA: A Quintessential Tool for DNA Nanotechnology."
+    },
+    {
+     "pmcid": "PMC6895690",
+     "year": "2019",
+     "title": "Quantitative Modeling of Nucleosome Unwrapping from Both Ends."
+    },
+    {
+     "pmcid": "PMC5727162",
+     "year": "2017",
+     "title": "Polymorphic design of DNA origami structures through mechanical control of modular components."
+    }
+   ]
+  },
+  {
+   "family": "F12 a crossover used as a pivot",
+   "query": "\"DNA origami\" AND \"dihedral\" AND crossover AND stiffness",
+   "hitCount": 11,
+   "top": [
+    {
+     "pmcid": "PMC9788767",
+     "year": "2022",
+     "title": "Automated design of 3D DNA origami with non-rasterized 2D curvature."
+    },
+    {
+     "pmcid": "PMC7145641",
+     "year": "2019",
+     "title": "Design and synthesis of pleated DNA origami nanotubes with adjustable diameters."
+    },
+    {
+     "pmcid": "PMC7603033",
+     "year": "2020",
+     "title": "Bottom-Up Self-Assembly Based on DNA Nanotechnology."
+    },
+    {
+     "pmcid": "PMC9853505",
+     "year": "2023",
+     "title": "Design, Mechanical Properties, and Dynamics of Synthetic DNA Filaments."
+    },
+    {
+     "pmcid": "PMC7727707",
+     "year": "2020",
+     "title": "Insights into the Structure and Energy of DNA Nanoassemblies."
+    },
+    {
+     "pmcid": "PMC6976304",
+     "year": "2020",
+     "title": "Building machines with DNA molecules."
+    }
+   ]
+  },
+  {
+   "family": "F13 free lever on an origami plate",
+   "query": "\"DNA origami\" AND \"free lever\" ",
+   "hitCount": 1,
+   "top": [
+    {
+     "pmcid": "PMC5899095",
+     "year": "2018",
+     "title": "Real-time magnetic actuation of DNA nanodevices via modular integration with stiff micro-levers."
+    }
+   ]
+  },
+  {
+   "family": "F13 free lever on an origami plate",
+   "query": "\"DNA origami\" AND \"cantilevered helix\"",
+   "hitCount": 0,
+   "top": []
+  },
+  {
+   "family": "F13 free lever on an origami plate",
+   "query": "\"DNA origami\" AND \"protruding helix\" AND crossover",
+   "hitCount": 0,
+   "top": []
+  },
+  {
+   "family": "F13 free lever on an origami plate",
+   "query": "\"DNA origami\" AND \"single crossover\" AND attachment AND rigid",
+   "hitCount": 1,
+   "top": [
+    {
+     "pmcid": "PMC10642627",
+     "year": "2023",
+     "title": "Pursuing excitonic energy transfer with programmable DNA-based optical breadboards."
+    }
+   ]
+  },
+  {
+   "family": "F14 the Rothemund protruding-marker precedent",
+   "query": "\"Folding DNA to create nanoscale shapes and patterns\"",
+   "hitCount": 8,
+   "top": [
+    {
+     "pmcid": "PMC8960677",
+     "year": "2022",
+     "title": "Nanoschalen aus DNA fangen und neutralisieren Viren."
+    },
+    {
+     "pmcid": "PMC9808538",
+     "year": "2022",
+     "title": "DNA and the origins of life in micaceous clay."
+    },
+    {
+     "pmcid": null,
+     "year": "2006",
+     "title": "Folding DNA to create nanoscale shapes and patterns."
+    },
+    {
+     "pmcid": "PMC9430014",
+     "year": "2023",
+     "title": "Preparation, applications, and challenges of functional DNA nanomaterials."
+    },
+    {
+     "pmcid": "PMC8983328",
+     "year": "2022",
+     "title": "Engineering DNA quadruplexes in DNA nanostructures for biosensor construction."
+    },
+    {
+     "pmcid": "PMC6800557",
+     "year": "2019",
+     "title": "Static DNA Nanostructures For Cancer Theranostics: Recent Progress In Design And Applications."
+    }
+   ]
+  },
+  {
+   "family": "F14 the Rothemund protruding-marker precedent",
+   "query": "\"DNA origami\" AND \"hairpin\" AND marker AND protruding AND rectangle",
+   "hitCount": 6,
+   "top": [
+    {
+     "pmcid": "PMC10218337",
+     "year": "2023",
+     "title": "Light-Up Split Broccoli Aptamer as a Versatile Tool for RNA Assembly Monitoring in Cell-Free TX-TL Systems, Hybrid RNA/DNA Origami Tagging and DNA Biosensing."
+    },
+    {
+     "pmcid": "PMC7883235",
+     "year": "2021",
+     "title": "DNA Transformations for Diagnosis and Therapy."
+    },
+    {
+     "pmcid": "PMC6271098",
+     "year": "2014",
+     "title": "Molecular processes studied at a single-molecule level using DNA origami nanostructures and atomic force microscopy."
+    },
+    {
+     "pmcid": "PMC6957268",
+     "year": "2020",
+     "title": "Engineering Lipid Membranes with Programmable DNA Nanostructures."
+    },
+    {
+     "pmcid": "PMC5522603",
+     "year": "2016",
+     "title": "Nucleic Acid-Based Nanodevices in Biological Imaging."
+    },
+    {
+     "pmcid": "PMC3454654",
+     "year": "2010",
+     "title": "Blunt-ended DNA stacking interactions in a 3-helix motif."
+    }
+   ]
+  },
+  {
+   "family": "F15 mechanical frustration / nanoengine leads",
+   "query": "\"Realizing mechanical frustration at the nanoscale using DNA origami\"",
+   "hitCount": 2,
+   "top": [
+    {
+     "pmcid": null,
+     "year": "2024",
+     "title": "Realizing Mechanical Frustration at the Nanoscale Using DNA Origami"
+    },
+    {
+     "pmcid": "PMC12134127",
+     "year": "2025",
+     "title": "Realizing mechanical frustration at the nanoscale using DNA origami."
+    }
+   ]
+  },
+  {
+   "family": "F15 mechanical frustration / nanoengine leads",
+   "query": "\"Mechanics of dynamic and deformable DNA nanostructures\"",
+   "hitCount": 1,
+   "top": [
+    {
+     "pmcid": "PMC10395309",
+     "year": "2023",
+     "title": "Mechanics of dynamic and deformable DNA nanostructures."
+    }
+   ]
+  },
+  {
+   "family": "F15 mechanical frustration / nanoengine leads",
+   "query": "\"leaf-spring DNA-origami nanoengine\"",
+   "hitCount": 1,
+   "top": [
+    {
+     "pmcid": "PMC10873200",
+     "year": "2024",
+     "title": "A rhythmically pulsing leaf-spring DNA-origami nanoengine that drives a passive follower."
+    }
+   ]
+  }
+ ]
+}
