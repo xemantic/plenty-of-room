@@ -45063,7 +45063,7 @@
             "strokeWithLayer": 5.98039147,
             "strokeAmplification": 1.03917771,
             "effectiveStiffnessInFreeBuffer": 10844.815,
-            "effectiveStiffnessWithLayer": 17663.7816
+            "effectiveStiffnessWithLayer": 17663.7815
         },
         {
             "model": "strong-stretching(virial)",
@@ -45207,7 +45207,7 @@
             "strokeWithLayer": 8.71645398,
             "strokeAmplification": 1.03294897,
             "effectiveStiffnessInFreeBuffer": 8543.6876,
-            "effectiveStiffnessWithLayer": 14006.6156
+            "effectiveStiffnessWithLayer": 14006.6157
         },
         {
             "model": "alexander-box(virial)",
@@ -45351,7 +45351,7 @@
             "strokeWithLayer": 9.00215347,
             "strokeAmplification": 1.02526287,
             "effectiveStiffnessInFreeBuffer": 11038.1008,
-            "effectiveStiffnessWithLayer": 18003.1432
+            "effectiveStiffnessWithLayer": 18003.1431
         },
         {
             "model": "strong-stretching(virial)",
@@ -45367,7 +45367,7 @@
             "strokeWithLayer": 9.00103244,
             "strokeAmplification": 1.02585937,
             "effectiveStiffnessInFreeBuffer": 11087.4917,
-            "effectiveStiffnessWithLayer": 17982.6545
+            "effectiveStiffnessWithLayer": 17982.6544
         },
         {
             "model": "strong-stretching(des-Cloizeaux)",

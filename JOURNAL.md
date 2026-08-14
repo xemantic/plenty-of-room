@@ -2678,3 +2678,494 @@ Ranked by what they block:
    because `k_s` and `α` each move a verdict.
 5. `T-72`/`T-66` (the triangulated standoff, now a stability remedy rather than a rigidity one), `T-21`
    (the `φ = 0.2` crossover, on which 121 of 162 bias ceilings rest), `T-60`, `T-35`, `T-36`.
+
+## 2026-08-14 — Iteration 5
+
+The third parallel iteration, run like iterations 3 and 4:
+several GPD loops against one working tree, coordinated from a single context window,
+each owning a disjoint Kotlin package and a disjoint block of claim and challenge IDs.
+`TASKS.md`, `JOURNAL.md`, `ANSWERS.md`, `CLAUDE.md`, `README.md`, `build.gradle.kts` and every `git` write
+stay with the coordinator.
+This section is written per task as each closes, newest last.
+
+### Interaction with Kazik
+
+One instruction, at the start of the session, identical in substance to iterations 3 and 4:
+run the loop from the main context window, spawn subagents for queued items, extend and maintain the queue,
+run independent tasks in parallel if they fit the box,
+and keep going until the queue is empty or the context window nears its limit.
+No questions were put back; nothing was blocking.
+
+The three open questions carried into this iteration are unchanged and still unanswered —
+the buffer (`T-63`, 0.5 mM as nominal), the electrode material (`P-13`),
+and the two paywalled PDFs behind `P-6` and `P-8`.
+None of them blocks; all three are specification or access gaps rather than calculations.
+
+### `P-16` and the harness, taken first
+
+Taken **before any science task**, and before the first agent was started,
+because `SESSION-PROMPT.md` puts process blockers above cheap wins
+and four concurrent agents were about to be pointed at one checkout.
+
+`--drop <pkg>` removes a package's **main** sources as well as its tests,
+so it cannot be used when your own package imports the broken one —
+`coupling` imports six symbols from `anchoring`, and `C-0027` lost time to exactly that,
+turning one half-written file into eighty broken references.
+The fix is granularity: `drop_files` in [`tools/snapshot.sh`](tools/snapshot.sh),
+wired into both [`tools/verify.sh`](tools/verify.sh) and [`tools/study.sh`](tools/study.sh) as `--drop-file`,
+with `--drop <pkg>` demoted in both headers to the fallback it should always have been.
+
+Two things travelled with it that were not asked for and are worth recording.
+
+**The deleting helpers now have tests.** [`tools/test-snapshot.sh`](tools/test-snapshot.sh), 19 checks,
+written first and failing first.
+`drop_packages` has already deleted from a live working tree once (`S-94`),
+and the argument that guards it is just a path;
+the Kotlin side of this project does not accept an untested number,
+and there was no reason the harness that protects it should be held to a lower standard.
+`drop_files` additionally refuses an absolute path, a `..` escape and a directory argument —
+three failure modes a *package name* cannot express, which is why the package form never needed them.
+
+**`kotlin.daemon.jvmargs=-Xmx3g` moved into the checkout's own `gradle.properties`.**
+`CLAUDE.md` has recorded the daemon OOM and its cure for two iterations,
+and the cure was being applied by each agent patching its own snapshot.
+Putting it in the checkout means every snapshot inherits it.
+
+It paid for itself the same afternoon: the full suite was run three times during `P-15`,
+and on two of those runs the only failures in the tree were a *sibling agent's* mid-TDD test file —
+a different sibling each time.
+`--drop-file` isolated each in one flag, and the authoritative answer came back first time.
+
+### `P-15` — the root finder, and the defect nobody reported
+
+`C-0019` raised this as a correctness fix and described it precisely (`S-143`):
+`bracketedRoot`'s Illinois step test is written on a **product**, `atLeft * atEstimate < 0.0`,
+which underflows to `−0.0` when both factors are tiny,
+so the test reads false, the bracket is lost, and the next secant step leaves `[low, high]`.
+It declined to repair it because three standing claims consume the routine
+and their result files must be re-run and diffed as part of the fix.
+
+Both halves of that turned out to be right, and both turned out to be incomplete.
+
+**There were two defects, and the reported one is not the one that was costing anything.**
+
+The product test is real, and the repair is the obvious one —
+compare signs, never products, and carry the endpoint's sign as a flag *separate* from its residual,
+because the Illinois halving mutates the magnitude of a value whose endpoint has not moved.
+The *entry* test `require(atLeft * atRight <= 0.0)` fails the same way in the opposite direction,
+accepting a bracket with no sign change in it, and `C-0019` did not name that half.
+But a product underflows only once **both** factors are below `≈1.5e-154`,
+and a direct probe of the unrepaired routine on residuals shaped like this project's —
+pressures in pN/nm², lengths in nm, brackets spanning up to 30 decades —
+escapes **zero** times in every case tried.
+The escape reproduces at `1e-170`, and which physical inversion drove `C-0019`'s residual that small
+was not re-identified and is not claimed to be.
+
+What *was* always active, on every call and at every scale, is that **the Illinois halving was unconditional.**
+Dowell & Jarratt (*BIT* **11** (1971) 168–174, read directly from the PDF rather than from a summary)
+halve only in their case (ii), when the **older** endpoint is retained.
+Halving on every step deflates *both* residuals once the estimate starts alternating sides,
+and two deflated residuals of nearly equal magnitude and opposite sign interpolate to the **midpoint**:
+the method silently becomes bisection while still paying for a secant.
+Measured, on `x² − 2`: **52 evaluations against bisection's ~52, where correct Illinois takes 11.**
+The doc comment's "roughly an eightfold saving in evaluations" is the entire justification
+for using Illinois over the bisection `T-1` used, and it was delivering a *loss*.
+
+**The two defects are coupled, and each hid the other.**
+The unconditional halving deflates `atLeft` by `2^−n`,
+which is precisely what drives a residual toward the underflow floor the sign test needs —
+so the performance defect is the *amplifier* of the correctness defect.
+Repairing either alone leaves the routine wrong in the other way.
+
+**And the diagnosis closes as a theorem rather than a reproduction.**
+A secant through two opposite-signed ordinates is a **convex combination** of its endpoints,
+so while the bracket holds an escape is arithmetically impossible.
+An evaluation outside `[low, high]` therefore *proves* the sign test misfired.
+That is what turns `S-143`'s observation — "an evaluation a fifth of the way below the dry thickness" —
+into a cause without needing the run that produced it.
+It is asserted as a test, over five residual scales and a lopsided `1e−6 : 1` bracket.
+
+**The re-run is the half that decides, and it produced a third answer.**
+
+`P-15`'s acceptance predicate offered two branches: every result file byte-identical, or a number moves
+and the consuming claim is challenged. The truth is the second in letter and the first in substance,
+and the gap between them is the finding.
+
+`T-1f` moved: **589 numeric fields**, relative change `8.4e−9` to `4.2e−3`, **median `9.0e−7`**.
+`SelfConsistentFieldLayer.heightAtPressure` carries `HEIGHT_TOLERANCE = 1e-6`.
+The file moved by **exactly its own declared tolerance**, which is the signature of a quantity
+relocating inside its noise floor rather than a quantity changing.
+No verdict moved, no window edge moved by more than `0.0085 %`,
+and the single prose change is a percentage rounding at its second decimal (`0.34 % → 0.33 %`).
+`T-16` moved in **six** fields, every one of them an `upstreamReproduction/…Departure` residual
+whose *value* is `~1e−9` — numbers meant to be zero,
+where this project's own rule is that comparing them relatively compares their noise.
+
+So the tree rounds to **nine** significant digits and the solve determines about **six**.
+That makes `C-0019`'s certificate — *"re-run on an independent snapshot and diffed byte-for-byte identical"* —
+true, checked, and a statement about the **path** rather than the **answer**:
+it certifies that nothing perturbed the iteration.
+Repairing a solver perturbs the iteration, so any solver improvement is indistinguishable
+from a physics change and has to be re-adjudicated by hand — which is `CH-0043`.
+
+Filed as `C-0031`, with `CH-0043` against `C-0019`'s provenance line and nothing else of `C-0019`'s.
+Three sibling product tests were found and deliberately **not** fixed:
+all three have an `O(1)` fixed factor, so none can underflow,
+and changing code that produces published results costs a re-run and a diff of everything downstream.
+They are queued as `P-17` with the reachability analysis attached,
+so the next agent inherits the ranking rather than the alarm.
+
+### `T-70` — what holds `E5g16`'s guided arm, and does `c = 12` survive its own anchorage?
+
+`C-0029` closed iteration 4 by handing the programme's only surviving output coupling to `E5g16` —
+*"a 12.24 nm = 36 bp **guided** arm on 16 crossovers"* —
+and named its own weakest point in its validity range:
+*"a guided arm (`c = 12`) is **asserted, not designed**."*
+The stake was a pass/fail: at `c = 3` the arm cap is 9.77 nm, below §3's desired 10 nm stroke,
+and the programme would have had **no** element reaching it.
+
+**The answer is that `c = 12` is never realised and never needed to be, and the reason is one that a formula evaluated at an asserted `c` cannot show.**
+
+The arm's own boundary-value problem — near end clamped in bending, far end on a rotational spring `k_far` —
+gives `c(ρ) = 12(1 + ρ)/(4 + ρ)` with `ρ = k_far r/EI`:
+exactly 3 at a free far end, exactly 12 at a guided one, exactly **6 at `ρ = 2`**,
+the two textbook values a factor of four apart just as `C-0025`'s 48 and 192 are.
+The realised factor at the design point is **6.28–7.36**.
+
+**But `ρ` carries the ARM.**
+That is `C-0025`'s own lesson — *"the same joint is nearer a pin on a short beam and nearer a clamp on a long one"* —
+and here it decides the answer, because it makes the cap a **fixed point**,
+`r = (c(k_far r/EI)·n·EI/k)^(1/3)`, rather than a formula.
+**A longer arm buys its own guidance.**
+So the question collapses to a **count**:
+
+- **two** links at the far end put the cap above §3's desired stroke everywhere —
+  13.43 nm at the arm's own duplex-end couple, 15.18 at a singly nicked continuation,
+  15.44 at a two-crossover clamp, and **10.97 nm even about the CHORD**, the axis `C-0029`'s counting theorem leaves free;
+- **one** link is exactly the cantilever, 9.77 nm, and fails —
+  and that is not hypothetical, it is `C-0029`'s `R3` and Rothemund's own observed failure,
+  *"attached to the origami by only one covalent bond."*
+
+**`C-0029`'s counting theorem transferred to the other end of the element, and the free axis changed sign.**
+The arm's far end is a duplex end, so the theorem applies verbatim:
+two termini, lever arm ≤ 1.0 nm, one restrained axis.
+On the standoff that free axis was fatal, because *a column buckles about its softest axis*.
+On `E5` it is harmless — `C-0029` says so itself, *"`P6` is vacuous, the arm is loaded transverse to its own axis"* —
+so the same theorem closes one branch and leaves the other open,
+and the difference is the load path rather than the joint.
+Better still, the chord is a **diameter of the arm's own cross-section**,
+so the designer *chooses* the axis with the helical phase:
+worst case half a base-pair quantum, 7.0 % of the couple.
+
+**And the surprise: the composition and the boundary condition are not independent.**
+`C-0023`'s `1/k = r²/(n k_θ) + r³/(c EI)` charges the hinge the *whole* tip moment `F r`.
+A guide carries part of it, `M_far = F r ρ/(2(1+ρ))` — **so a guide relieves the hinge**.
+Solving the two-spring beam exactly,
+`c(ρ_n, ρ_f) = 12(ρ_nρ_f + ρ_n + ρ_f)/(ρ_nρ_f + 4ρ_n + 4ρ_f + 12)`,
+whose four corners are the four textbook cases including `(0,0) = 0` — a mechanism, not a weaker beam —
+shows the series composition is **exact at exactly one corner, `ρ_f = 0`, and it is `C-0023`'s own corner**.
+`C-0029` changed `c` without changing the composition `c` belongs to.
+Read on the boundary-value problem its own `c = 12` describes,
+`E5g16` assembles to **54.61 pN/nm against the 33.3333 mandate** —
+**1.64× over-placed and past its own 40 pN/nm compliance ceiling at the secant**.
+That is `CH-0044`.
+
+**Two errors run opposite ways and very nearly cancel, which is why the verdict survives an assertion that does not.**
+The realised end condition is *softer* than asserted (6.28 against 12)
+while the composition it was solved with is the *soft* reading (retaining 0.607).
+`C-0029`'s 12.24 nm lands inside the corrected bracket **11.03–12.50 nm (32–37 bp)**,
+every reading clears the 10 nm stroke, every reading sits below the ideal guide's 15.50 nm cap,
+and the realised design's tangent (33.56 / 36.78 pN/nm) is *better* than the asserted one's.
+
+**A result that was not anticipated: the dominant compliance term has changed sides.**
+Leaf `A8.2` asks for it by name, and `C-0023` answered *"92.5 % is the hinge"* for its one-crossover `E5`.
+At 16 crossovers with a realised anchorage the **arm** carries **58.5 %**.
+The element is named after the term that no longer dominates it.
+
+Filed as `C-0034`, raising `CH-0044` against `C-0029`'s `E5g` composition and nothing else of `C-0029`'s —
+its arm, both tangents, its rotation, both ceilings, its two-terminus ceiling and its chord reading
+all reproduce here to ≤ 2.8e−9.
+Three tasks queued from it: `T-79` (the large-rotation two-spring elastica, which is the 13 % the bracket is wide),
+`T-80` (whether the arm can end as a singly nicked continuation, worth 13.43 → 15.18 nm of cap),
+and `T-81` — **whether a 16-crossover hinge line exists on a 40 nm tile at all**,
+which `C-0023`, `C-0029` and `C-0034` have all taken as given
+and which this task shows is load-bearing, because **8 crossovers do not close**.
+
+Two smaller things worth recording.
+`C-0029`'s gate-5 prose quotes the guided ceiling as *"15.5005"* where its own result file says **15.5029478**;
+a transcription slip, and no design table used it.
+And two sibling agents were mid-TDD in the same checkout throughout —
+`FlexureMountingSense` for most of the iteration, `crossover/ConcentratedCrossover` by the end —
+so every run here went through `tools/verify.sh --drop-file` on their sources.
+`P-16`'s new flag did exactly the job it was added for, on its first day, twice.
+
+A third concurrency lesson arrived unasked: **three agents took `C-0032` within 91 seconds**,
+each having re-listed `gpd/claims/` and found the slot empty.
+Re-listing does not prevent the race, and with three colliding the agent that notices
+has to move **past** the next free number or collide again — this claim is filed as `C-0034`.
+
+---
+
+## Iteration 5 — `T-75` and `T-78`: which body carries the standoffs, and what sits under the midspan
+
+Taken together, because they are two halves of one question.
+`C-0030` had closed with an unusual admission: the coupled flexure's law is **signed but not odd**
+(`Φδ` is odd where the arc-length demand `e(δ)` is even),
+so one sense of the midspan deflection relieves the beam and the other loads it —
+`ℓ = 5–10 nm` with a 2.18× buckling margin against 42–61 pN/nm and no admissible length at all.
+It named the deciding variable *"which body carries the standoffs"*,
+declared it free to a builder, and filed it as **a specification gap, the fourth in this programme**.
+
+The session prompt asked the right question about that: a specification gap is only a gap if the choice is
+genuinely not decidable from what is specified plus what is buildable.
+**It is decidable, and the variable was misnamed.**
+
+### The cheap bound settled it, and it is one line of kinematics
+
+The flexure's midspan is tied to one body and its ends stand on standoffs rooted in the other.
+So the midspan's deflection *relative to its own ends* **is** the change in the two bodies' separation, and
+
+&nbsp;&nbsp;&nbsp;&nbsp;`dδ/ds = (v_base − v_driven)/n`, with `v_TILE = −1` (§1: the bias pulls the tile down),
+`v_SUPERSTRUCTURE = 0`, `n = ±1`.
+
+Exactly `±1`, and it contains **no length** — asserted over 4 mountings × 4 standoff lengths × 3 tie lengths.
+And it is a **product of two binaries**: the base body *and* the direction the standoffs point out of it.
+Of the four mountings exactly two are favourable, **one with each body and one with each normal**,
+so naming the body alone predicts the sign no better than a coin.
+`C-0030` named half the variable.
+
+The same statement three more ways, each asserted rather than assumed:
+favourable ⟺ the midspan's tie **crosses the standoff base plane**
+(checked by a second construction, comparing three `z` coordinates of the built stack)
+⟺ the flexure is **outboard** of its own ground rather than **inboard** between the two bodies
+⟺ **the standoff is in compression**.
+
+That last equivalence is not bookkeeping, and it is `CH-0046`:
+the beam's end shear acts along the standoff's own axis, so **a standoff in tension does not buckle**.
+`C-0030`'s adverse buckling margins — 2.53 … 0.99 … 0.75 — are charged against a member
+its own kinematics puts in tension at every one of those eight lengths.
+No verdict moves (the adverse mounting fails on `P3`, which owns that column),
+but the number is quoted where it will be read, and it makes one failure look like two.
+
+### Then the expensive part went where the cheap bound pointed: buildability, not sign
+
+Four mountings, three filters.
+
+**§3 turns out to say something.** Its parameter table gives an effort point *"~20–25 nm above the electrode"*
+and a ~10 nm tile on 5 / 7 / 10 nm layers — and the band is exactly as wide as the layer-height range,
+which **forces** a constant attachment height and fixes it at 5 nm (`C-0012`'s reading, reproduced here at both ends).
+The inboard topologies stack the standoff and the tie in series between the two bodies,
+so their effort point **cannot come closer to the tile than `ℓ`**; the outboard ones fold the tie back past
+their own base plane and have no floor at all.
+Read loosely instead — the effort point merely lying in `[20, 25]` — the inboard ceiling is `ℓ ≤ 10 / 8 / 5 nm`
+at the three layer heights.
+**The two readings agree at the 10 nm layer, which is where `C-0016` and `C-0027` put the whole design window.**
+
+**The polymer layer kills the other favourable mounting.** `Td` — standoffs pointing down off the tile — puts the
+flexure inside the actuation gap: the 45-beam, 90-standoff array occupies **37–85 % of the layer's own volume**,
+and at §3's 5 and 7 nm layers the beam sits **at or below the electrode surface**. 0 of 9 admissible,
+and the tie would have to perforate the tile 45 times besides.
+
+**So the survivor is unique**: `Su` — standoff bases on the **output superstructure**, standoffs pointing away
+from the tile, flexure outboard above it, each midspan tied back **down through it** to the tile.
+A consequence worth stating on its own: **the tile then carries no out-of-plane element at all**,
+only `C-0015`'s 45 tie attachments — the scheme `C-0026` already validated.
+The whole standoff-and-base problem (`C-0028`, `C-0029`, `T-66`, `T-68`, `T-72`) moves onto a body that
+need not be a single layer. `C-0029`'s two-covalent-link ceiling is **not** relieved by that —
+it is a property of the standoff duplex's own end — but `T-68`'s compliant-sheet worry is.
+
+### `T-78` fell out of the same geometry, and its answer is sharper than "a design choice"
+
+The body under the midspan is the standoff-carrying body **by construction** — the favourable sense is *defined*
+by the driven body lying on its far side. So `C-0030`'s *"real if the body is the tile, a design choice if it is
+the superstructure"* is superseded in both halves: the ceiling is real whichever body it is.
+And the body cannot be imperforate either, because the tie must cross it at exactly the place the midspan
+descends toward: **the aperture the tie needs and the clearance the midspan needs are one feature.**
+So the question is not *"is there a ceiling"* but *"how big is the hole"*.
+
+Answered by integrating `C-0025`'s beam once more —
+`w(u)/δ = (24u + 12ρu² − 16(2+ρ)u³)/(8+ρ)`, which reduces to the pinned and clamped textbook shapes,
+has end slope `24/(8+ρ)` (the beam's own `Lθ₀/δ`), and returns `c(ρ)` at midspan:
+
+- at §3's **acceptable 3 nm** stroke and `ℓ ≥ 6 nm` the cost is **exactly zero** — no penetration, no slot;
+- at §3's **desired 10 nm** and `ℓ = 8 nm` the midspan goes 4.69 nm past the contact plane and the beam demands
+  a slot **18.37 nm long — 57.7 % of its own span, 54 bp** — which over 45 paths is **2223 nm², 1.39× the whole
+  tile footprint**.
+
+**The escape from the ceiling is a hole bigger than the device.**
+And a floor remains at every stroke: `C-0023`'s two-sidedness makes the tie a *duplex*, so 45 duplex-omission
+holes = 326 nm², 20.4 % of the footprint.
+
+### The pre-bow escape, priced and rejected — 12 of 12
+
+Building the flexure already sagging toward its base plane puts the first `δ₀` of stroke on the favourable limb
+*inside an adverse mounting*, with the span re-placed on the incremental secant. It genuinely recovers the compliance.
+It costs a rise of **4.08–16.66 nm (12–49 bp)** — larger than the stroke it protects, 1.4–5.6× —
+for a preload of **150–225 pN**, i.e. **1.5–2.25× §3's entire target force** pressed onto the layer before any bias.
+And at the desired stroke **no rise up to 30 nm** closes it.
+`C-0023`'s discipline upheld in a new place: a preload is a mounting offset, i.e. a *length*,
+and here the length wanted is entirely buildable and entirely unaffordable.
+
+### What surprised us
+
+**That §3 answers a question nobody had asked it.** Three claims had read the effort-point band as a consistency
+check on the stack's heights (`C-0012` did exactly that). Read as a *constraint on the coupling's own height budget*
+it excludes an entire topology — and it does so at the design height on both of its readings.
+The number was in `ActuatorGeometry` since iteration 3.
+
+**That `C-0030`'s "no window at any length" was a statement about an interval.** The adverse tangent falls
+monotonically with the standoff and meets `C-0023`'s ceiling at **13.16 nm** against 3.48 nm favourable.
+It is still a fail — 13.16 nm is outside `C-0017`'s envelope — but the falsifiable form is a length, not an absence.
+That is the second half of `CH-0045`.
+
+**And `CLAUDE.md`'s `*/`-in-KDoc trap fired again**, on `x*/L` this time, one iteration after it was written down
+for `h*/L₀`. Twenty-odd syntax errors pointing at a line 8 lines below the comment. Entry extended.
+
+Filed as `C-0035` — after two number collisions in one session: `C-0032` was taken by the `T-76` agent and
+`C-0034` by the `T-70` agent while this claim was being written, both between one `ls gpd/claims/` and the next.
+Raising `CH-0045` (the mounting sense is not a free binary) and `CH-0046` (a standoff in tension does not buckle),
+both against `C-0030`, whose every number reproduces here to ≤ 1.1e−4.
+Two tasks queued: `T-95` — **may the superstructure be perforated?**, carried to the open questions as item 6,
+because it is worth §3's desired stroke and no calculation closes it — and `T-96`, `T-31` with a plan-view
+constraint attached, since 45 flexures of ~32 nm span do not lie side by side in 40 × 40 nm and every aperture
+area here is quoted against the tile footprint as a *scale*.
+
+### `T-76` — does a strain-softening coupling still satisfy `C-0017`'s stability condition? (`CH-0042`, the one challenge iteration 4 left open)
+
+**Answer: NO at 2 mM, YES at 0.5 mM, and that is a design decision rather than a fix.**
+Claim [`C-0032`](gpd/claims/C-0032-softening-coupling-stability.md).
+`CH-0042` is **UPHELD** on both of its horns, and a new challenge — `CH-0047` — is raised against the
+challenge's own prescription for reading the number.
+
+**The method was to substitute, not to re-implement.** `C-0018`'s `EquilibriumPath` already takes its load
+as an arbitrary function of the stroke, so `C-0030`'s nonlinear reaction law drops into `C-0018`'s solver
+untouched and the comparison is state by state: 216 fold searches over the same
+`(3 heights × 6 layer models × 3 buffers)` grid, on four load lines all **placed** at 100 pN over §3's 3 nm.
+
+**S-196. The placement clause is discharged exactly, so every difference lives in the ceiling.**
+The assembled secant matches 33.3333 pN/nm to `1.998e−15`, and the located operating bias `V*` is
+**identical across all four load lines at 144 of 144 comparisons, to a departure of exactly `0.0`**.
+That identity is what makes the rest a comparison of one device rather than of four —
+and it is the reason a coupling can satisfy §3's force-and-stroke clause and fail its stability clause.
+
+**S-197. The fold moves in its STROKE, not in its bias, and a reader watching the bias would report a
+rounding error.** At 10 nm / 2 mM the softening line drops the pull-in bias 0.7–1.8 % (0.1300–0.1836 →
+0.1285–0.1804 V). Meanwhile the fold's own stroke walks back from **3.41–4.13 nm to 2.80–3.17 nm**,
+**through §3's 3 nm target at two of six models**, and the bias margin collapses from `C-0018`'s
+1.007–1.032 to **1.0000–1.0019**: at `alexander-box(des-Cloizeaux)` the pull-in bias and the operating
+bias agree to four decimals. **The device is placed on its own fold.** `C-0018` warned that a bias below
+the pull-in bias is not sufficient and that the target stroke must also lie on the stable side; this is the
+first design point where both tests fail together, and the softening coupling is what did it.
+
+**S-198. `C-0017`'s theorem is confirmed exactly where its premise holds.** The strain-*stiffening*
+decoupled reading of the same design (`t/s` = 1.095) loses **0 of 54** states against the affine mandate,
+folds at fewer of them (8 against 11), and *raises* the 10 nm / 2 mM margin to 1.020–1.774 — three of its
+six models lose the fold entirely. **The theorem is right; `C-0030` moved outside its premise, which is
+what `CH-0042` said.** The softening reading loses **7**.
+
+**S-199. The escape `CH-0042` named does not exist inside the design space.** The adverse mounting's
+assembled tangent is **42.38–61.04 pN/nm** across `C-0017`'s whole `ℓ = 3–10 nm` envelope, against
+`C-0023`'s 40 pN/nm ceiling — **1.06–1.53× past it at 0 of 8 lengths**, and the best it reaches is still
+6 % over.
+
+**S-200. A third route nobody had named lands 2.2 % short, and what shuts it is an allowable two claims
+upstream.** The favourable mounting's tangent minimum is **non-monotone in the standoff length**:
+22.87 pN/nm at the recommended 8 nm, **27.30 at `ℓ = 5 nm`** — the bottom of `C-0030`'s own window — which
+clears five of the six 2 mM stability floors and misses the sixth (27.91) by 2.2 %. `ℓ = 4 nm` reaches
+28.71 and clears all six, and is excluded by `C-0030`'s `P4` alone: the beam's tension at the desired
+stroke against `C-0006`'s 10 pN unzip allowable. Queued as `T-76a`.
+
+**S-201. `CH-0042`'s own prescription is not well posed, and the run found it by accident.**
+Minimising the tangent over `[0, 10 nm]` ranks the *adverse* mounting — 44.82 pN/nm over the range the
+device actually uses — at **23.51**, within 2.8 % of the softening element it is meant to remedy. The
+reason is physical and complete: at zero stroke the reaction, the layer load and the bias are all zero, so
+`k_eff = 0` and the stability requirement is **identically zero** there, while a stiffening flexure's
+membrane term has not switched on. **An extremum silently imports the endpoints of its interval.**
+`CH-0047`, `T-76b`; no verdict in `C-0030` or `C-0032` moves, because the softening element's minimum is
+**interior** (4.555 nm) and is the same number on both ranges.
+
+**What it cost.** Gate 5 reproduces `C-0030`'s design table to ≤ 1e−3, `C-0028`'s to ≤ 1e−3, `C-0018`'s
+pull-in band at 10 nm / 2 mM to its own published rounding, and `C-0017`'s stability floors and `V*` to
+2.417e−3. The tangency identity `k_c(s) + k_eff(s) = 0` holds at **1.167e−5** over 38 interior folds with
+`k_c` the element's analytic tangent at that stroke and `k_es` a central difference of a full field
+re-solve — 0 of 216 folds are boundary maxima. Nineteen new gate-named tests in a new `stability` package;
+suite green on `tools/verify.sh` with a sibling's mid-TDD `GuidedArmAnchorageTest.kt` dropped from the
+snapshot. One full-suite run reported a single failure that did not reproduce on an immediate re-run and
+was not named in the output — recorded here rather than explained away.
+
+## Iteration 5 — `T-21`: the crossover is a family, and the exponent it guards was never the layer's
+
+**Task.** `T-21`, the semidilute→concentrated crossover for *this* layer, replacing `C-0002`'s cited
+`0.2–0.3` band. `C-0018` had made that band load-bearing at **121 of 162** states, so the usable bias
+of the whole device rested on a number nobody here had derived.
+Filed as [`C-0036`](gpd/claims/C-0036-concentrated-crossover.md);
+raises [`CH-0048`](gpd/challenges/CH-0048-the-good-solvent-premise-was-checked-on-monomers.md) against `C-0007`
+and [`CH-0049`](gpd/challenges/CH-0049-the-cited-band-is-a-reduced-density-and-the-fit-range-is-wrong.md) against `C-0002`.
+
+**What was done.** A closed-form crossover family derived from `C-0002`'s own measured parameters,
+`φ_c(n) = (v_K/b³)·n^(−1/2)`, `n` being the Kuhn segments the correlation blob must keep; the des
+Cloizeaux window `(φ*, φ**)` evaluated at all 18 Gen-1 chains and across the `2 × 2` of thermal-blob
+normalisation × excluded-volume route; and `C-0018`'s 162 bias ceilings re-read at ten candidate
+crossovers on `C-0018`'s own `EquilibriumPath` + `PoissonBoltzmannGap` pipeline. The **pull-in** bias
+cannot depend on the crossover, so it was read from `C-0018`'s result file and the rebuild graded by
+reproducing `C-0018`'s own `φ = 0.2` ceiling — **4.5e−9** over all 162 states.
+
+**S-202. The crossover the whole band was guarding does not exist for this material, and the proof is
+one line of arithmetic.** The des Cloizeaux exponent needs a chain longer than a thermal blob. The Gen-1
+chains are `N_K = 21.6–120.4` Kuhn segments; the measured excluded volume puts `g_T` at 126 (scaling) to
+1160 (Yamakawa). **`φ**/φ* = √(N_K/g_T)` exactly** — the material prefactor cancels between the two edges
+because both are `φ_c(n)` at a different `n` — so the window is non-empty *if and only if* the chain
+exceeds a thermal blob, and it is empty at **18 of 18** chains. The answer to "at which `φ` does the
+exponent stop" is that it never starts.
+
+**S-203. The cited `0.2–0.3` band is the right expression read on the wrong segment, twice.** The derived
+family runs `0.0041` to `0.63` and **nothing in it lands in 0.2–0.3**. Two constructions do:
+`v_m/v₀ = 0.203`, which is the floor of the band to three digits and is what `C-0007`'s parameter sheet
+reports as *"the thermal-blob volume fraction"*; and `1 − 2χ = 0.257`, which is Rubinstein & Colby's
+eq (5.36) combined with their eq (5.1), i.e. the Flory-Huggins lattice site taken to *be* the monomer.
+Both identify the Kuhn length's cube (1.331 nm³) with the monomer volume (0.0604 nm³). This is `C-0002`'s
+`a`-trap for the third time, and `C-0001` introduced the band in the same sentence as its first
+appearance.
+
+**S-204. The derived number is LOWER than the incumbent, and the device is worse for it.** Read as a
+regime ceiling at `φ_c(1) = 0.141` the coupled margin falls from 0.563–2.464 to **0.168–1.660**, twenty
+coupled states drop below unity instead of fifteen, and **7 nm loses its clearance** — two of its twelve
+0.5/2 mM states go under 1.0 where the worst was 1.18. Read at the *derived* `φ** = 0.0125` it is not a
+ceiling at all: the criterion is violated at the **resting height at 162 of 162 states**, so no bias
+whatever would be usable. That reductio is the finding: **the regime reading is not a role this number
+can play, and it never was — 0.2 was only a worse estimate of the same quantity.**
+
+**S-205. The number `C-0018` actually consumes is on a different axis, and there it saturates.** The
+layer's constitutive law is a *fit*, and a fit needs data, not a blob; its validity ceiling is the range
+over which it was measured. At `φ = 0.49` (PEG-8000) or `0.63` (all twelve) the crossover binds at
+**0 of 162** states, `C-0005`'s 1.46 nm correlation band takes over at 99, and **the two values give
+identical censuses** — above `φ ≈ 0.4` the crossover gap has already fallen below 1.46 nm everywhere.
+**Resolving this number further buys nothing.** `C-0018`'s 1.007–1.032 pull-in margin at 10 nm / 2 mM,
+`C-0016`/`C-0027`'s window edges and `C-0017`'s coupling do not move under any candidate.
+
+**S-206. The falsifier nearly fired, and the honest answer is 3 of 4 corners.** This project has **two**
+routes to the excluded volume differing by 2.5× — `C-0003`'s `A₂` osmometry and `C-0007`'s Flory-Huggins
+`χ` — and two thermal-blob normalisations differing by 9.19. In three corners the window is empty at every
+chain. In the fourth (`χ` route, scaling `g_T`) `g_T` falls to **19.5**, below every Gen-1 chain, and the
+window **exists**, up to 2.48× wide. It is defeated by a different argument: the layer sits at 1.0–4.2× its
+upper edge at rest and 1.5–10.4× at the 3 nm stroke, so it is never entered. Reported as a corner rather
+than averaged away — *a claim that a window is empty must say where it is not.*
+
+**S-207. Delegated literature moved three numbers, and two of them were in a standing claim.**
+The fit range of the adopted equation of state is **1.5–67.5 wt %**, not `C-0002`'s "0–50 wt %" — the paper
+states no range, and the source data it names (recovered from the Wayback Machine, twelve files for the
+twelve molecular weights of its own Fig. 1) run to 67.5 wt % on PEG-600 and 54 wt % on PEG-8000. Confirmed
+by measuring the paper's own Fig. 1 against its axis and by Marsh's independent fit of the same data.
+The **DOI in `C-0002` does not resolve** (`10.1021/jp8072429`; the correct one is `10.1021/jp806893a`), and
+the paper's full title carries *"in Good Solvents"* — a premise `C-0003` establishes this material does not
+meet. Separately, Hansen et al. (2003)'s *measured* des Cloizeaux onset for PEG-5000, read directly, is
+`φ = 0.07–0.09` in **their** reduced convention, i.e. **0.10–0.13 physical** — above the Gen-1 layer for
+most of the design space, so the measurement and the blob argument agree from opposite sides.
+
+**What it cost.** Twenty-one gate-named tests in a new `crossover` package, written first; a 70-second
+study emitting `gpd/results/T-21-concentrated-crossover.json` with 1620 ceiling cells. Gate 5 reproduces
+**two printed textbook statements exactly** — R&C eq (5.36) `φ** = v/b³` in the reduced convention, and
+their athermal `φ** ≈ 1` — plus `C-0018`'s ceiling to 4.5e−9, `CH-0020`'s corrected thermal blob to 1e−12
+and the window identity to 1.5e−16. Full suite green on `tools/verify.sh` with five siblings' mid-TDD test
+files dropped from the snapshot: `SofteningCouplingStabilityTest.kt`, `GuidedArmAnchorageTest.kt`,
+`CollarCorrectedFieldTest.kt`, `CollarMultiplierTest.kt`, `TriangulatedStandoffTest.kt`.

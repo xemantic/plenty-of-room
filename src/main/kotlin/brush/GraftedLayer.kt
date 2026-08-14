@@ -614,6 +614,47 @@ fun GraftedLayerModel.chainLengthForHeight(
  * in evaluations. The halving of the stagnant endpoint's value is what prevents the one-sided
  * stalling that plain regula falsi suffers on convex functions.
  *
+ * ## The halving is conditional, and that is the whole of the saving (`P-15`)
+ *
+ * An endpoint's residual is halved only when the **same** endpoint has been retained twice in a
+ * row, which is what "the stagnant endpoint" means. Halving unconditionally — as this routine did
+ * — deflates *both* residuals once the estimate starts alternating sides, and two deflated
+ * residuals of nearly equal magnitude interpolate to the midpoint. The method silently degenerates
+ * into bisection while still paying for a secant, and it is then **worse** than bisection, not
+ * eight times better: 52 evaluations against bisection's ~52 for `x² − 2`, and 73 against 55 for
+ * `x⁵ − 10⁻⁸`. With the halving made conditional the same two roots cost **11** and **35**.
+ *
+ * The defect is invisible in every answer — the bracket is retained throughout and the root is
+ * correct to the last ulp either way. It shows up only in the evaluation count, which is precisely
+ * the quantity this routine was chosen for.
+ *
+ * ## Sign tests are written on signs, never on products (`P-15`)
+ *
+ * Both tests here compare *signs*. Writing either as a product — the obvious and idiomatic
+ * `atLeft * atEstimate < 0.0` — is a defect, and it was one: `C-0019` (`S-143`) observed this
+ * routine evaluating `f` **outside its own bracket**. A product of two doubles underflows long
+ * before either factor does, so when both residuals are tiny and of opposite sign the product
+ * becomes `−0.0`, the test reads `false`, the *left* endpoint is replaced instead of the right,
+ * and it is replaced by a value of the **same sign as the right**. The bracket is then gone, the
+ * interpolation is an extrapolation, and the next step leaves `[low, high]`. The entry test
+ * `require(atLeft * atRight <= 0.0)` fails the same way in the opposite direction: two tiny
+ * residuals of the *same* sign multiply to `+0.0`, so a bracket containing no root is accepted.
+ *
+ * The trigger is a residual spanning decades, which is the ordinary shape of a disjoining
+ * pressure — at a 30 nm gap it is four orders of magnitude below the two terms it is the
+ * difference of. It is not a tolerance question and no iteration budget repairs it.
+ *
+ * The secant step is additionally required to land strictly inside the live bracket, falling back
+ * to bisection when it does not. That covers the residual cases the sign test alone cannot: a
+ * `NaN` step from an endpoint pair whose values have both been halved into zero, and a step
+ * pushed onto an endpoint by rounding.
+ *
+ * ## Termination
+ *
+ * On the **bracket width**, not on the residual. A residual test cannot be satisfied below the
+ * noise floor of a quadrature of ~10³ terms, and an unreachable tolerance is silent: the loop
+ * returns the right answer having run its full iteration cap every time.
+ *
  * @throws IllegalArgumentException if [low] and [high] do not bracket a sign change.
  */
 internal inline fun bracketedRoot(
@@ -627,24 +668,37 @@ internal inline fun bracketedRoot(
     var right = high
     var atLeft = f(left)
     var atRight = f(right)
-    require(atLeft * atRight <= 0.0) {
-        "f must change sign over [$low, $high], was: $atLeft .. $atRight"
-    }
     if (atLeft == 0.0) return left
     if (atRight == 0.0) return right
+    // The sign of the left endpoint's residual. It is carried separately because the Illinois
+    // halving mutates `atLeft`'s magnitude — and can eventually flush it to zero — while the
+    // endpoint it describes has not moved. Where the endpoint *does* move, it moves to a point
+    // of this same sign, so this flag is an invariant of the whole iteration.
+    val leftIsNegative = atLeft < 0.0
+    require(leftIsNegative != (atRight < 0.0)) {
+        "f must change sign over [$low, $high], was: $atLeft .. $atRight"
+    }
     var estimate = left
+    // Which endpoint the previous step replaced: −1 the right, +1 the left, 0 not yet.
+    var replaced = 0
     repeat(iterations) {
-        estimate = (left * atRight - right * atLeft) / (atRight - atLeft)
+        val secant = (left * atRight - right * atLeft) / (atRight - atLeft)
+        // Also rejects NaN, which is what the secant becomes if both residuals underflow to zero.
+        estimate = if (secant > left && secant < right) secant else 0.5 * (left + right)
+        // The bracket is two adjacent doubles: no interior point exists and this is the answer.
+        if (estimate <= left || estimate >= right) return estimate
         val atEstimate = f(estimate)
         if (atEstimate == 0.0) return estimate
-        if (atLeft * atEstimate < 0.0) {
+        if ((atEstimate < 0.0) != leftIsNegative) {
             right = estimate
             atRight = atEstimate
-            atLeft *= 0.5
+            if (replaced == -1) atLeft *= 0.5
+            replaced = -1
         } else {
             left = estimate
             atLeft = atEstimate
-            atRight *= 0.5
+            if (replaced == 1) atRight *= 0.5
+            replaced = 1
         }
         if (right - left <= tolerance * (if (estimate == 0.0) 1.0 else abs(estimate))) {
             return estimate

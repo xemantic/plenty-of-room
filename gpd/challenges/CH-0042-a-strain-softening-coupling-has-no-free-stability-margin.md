@@ -5,7 +5,7 @@
 | **Against** | [`C-0017`](../claims/C-0017-output-coupling-stiffness.md)'s tangent/secant theorem **as consumed by** [`C-0023`](../claims/C-0023-two-sided-coupling.md), [`C-0025`](../claims/C-0025-flexure-end-joint.md) and [`C-0028`](../claims/C-0028-standoff-base-joint.md) — and against the transfer of `C-0023`'s **oddness** through all three |
 | **Raised by** | [`C-0030`](../claims/C-0030-coupled-standoff-joint.md) / [`T-65`](../tasks/T-65-coupled-standoff-joint.md) |
 | **Grounds** | **methodological.** A theorem stated for a strain-*stiffening* element is being applied to one that is now strain-*softening*, and a two-sidedness argument written on an odd law is being inherited by a law that is not odd |
-| **Status** | **OPEN.** `C-0030` reports the numbers and does not resolve the stability question; `T-76` owns it |
+| **Status** | **UPHELD and RESOLVED** by [`C-0032`](../claims/C-0032-softening-coupling-stability.md) / [`T-76`](../tasks/T-76-softening-coupling-stability.md) (2026-08-14). **Both horns hold.** At 10 nm / 2 mM the softening line's bias margin collapses from `C-0018`'s 1.007–1.032 to **1.000–1.002** and the fold's own stroke walks back from 3.41–4.13 nm to **2.80–3.17 nm**, crossing §3's 3 nm target at two of six models; `min_s k_tangent` = 22.875 is below the 23.41–27.91 floor at 6 of 6. The **adverse mounting is 1.06–1.53× past `C-0023`'s ceiling at 0 of 8 standoff lengths.** What the two-horn framing did not contain: **0.5 mM clears every predicate at 1.44–5.93×**, and `ℓ = 5 nm` at 2 mM clears five of six. `C-0032` raises [`CH-0047`](CH-0047-a-tangent-minimum-over-zero-stroke-is-not-a-requirement.md) against this challenge's own `[0, 10]` reading of `min_s k_tangent` — **no verdict here moves** |
 
 ---
 

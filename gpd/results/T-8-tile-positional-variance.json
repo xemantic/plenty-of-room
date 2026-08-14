@@ -771,7 +771,7 @@
             "profile": "strong-stretching",
             "interaction": "two-body",
             "layerStiffness": 0.0,
-            "unconstrainedPistonRms": 1172864.7,
+            "unconstrainedPistonRms": null,
             "reason": "stiffness at or below k_BT/L0^2 = 0.0414 pN/nm, so the harmonic fluctuation would exceed the layer height and the linearisation has left its own domain. For the strong-stretching profile at first contact this is EXACT and not marginal: the disjoining pressure vanishes quadratically at L0 (C-0003), so the stiffness there is zero."
         },
         {
@@ -787,7 +787,7 @@
             "profile": "strong-stretching",
             "interaction": "des-Cloizeaux",
             "layerStiffness": 8.16535904E-9,
-            "unconstrainedPistonRms": 22522.3978,
+            "unconstrainedPistonRms": null,
             "reason": "stiffness at or below k_BT/L0^2 = 0.0414 pN/nm, so the harmonic fluctuation would exceed the layer height and the linearisation has left its own domain. For the strong-stretching profile at first contact this is EXACT and not marginal: the disjoining pressure vanishes quadratically at L0 (C-0003), so the stiffness there is zero."
         }
     ],

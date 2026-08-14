@@ -55,6 +55,8 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew test
 ./gradlew study -Pstudy=brush.BrushStiffnessStudyKt   # T-1, layer stiffness
 ./gradlew study -Pstudy=material.PegMaterialStudyKt   # P-3, PEG/water parameter sheet
+./gradlew study -Pstudy=anchoring.FlexureMountingSenseStudyKt  # T-75/T-78, the flexure's mounting sense
+./gradlew study -Pstudy=crossover.ConcentratedCrossoverStudyKt # T-21, the upper crossover of the semidilute regime
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.
@@ -71,11 +73,26 @@ Several GPD loops are run against one working tree at a time, and Gradle does no
 tools/verify.sh                                # authoritative full suite, on an isolated copy (P-10)
 tools/verify.sh --committed                    # the same, against HEAD rather than the working tree
 tools/study.sh structure.InPlaneLoadPathStudyKt  # one study on an isolated copy (P-12)
+tools/test-snapshot.sh                         # the snapshot helpers' own tests (P-16)
 ```
 
-Both scripts take `--drop <pkg>` to remove a package another agent has left mid-TDD, which is one of the four
-causes of a `NoClassDefFoundError` that reads exactly like a broken test. See [CLAUDE.md](CLAUDE.md) for the
-other three.
+Both scripts remove work another agent has left mid-TDD from the isolated copy —
+one of the four causes of a `NoClassDefFoundError` that reads exactly like a broken test.
+See [CLAUDE.md](CLAUDE.md) for the other three.
+
+```shell
+tools/verify.sh --drop-file src/test/kotlin/coupling/PlacementTest.kt   # one file  (P-16)
+tools/verify.sh --drop coupling                                          # a whole package (P-12)
+```
+
+**Reach for `--drop-file` first.**
+`--drop <pkg>` removes the package's **main** sources as well as its tests,
+so it cannot be used when your own package imports the broken one —
+`coupling` imports six symbols from `anchoring`,
+and dropping `anchoring` turns one half-written file into eighty broken references.
+
+Both helpers delete, and one of them has already deleted from a live working tree once,
+so they carry executable tests of their own in `tools/test-snapshot.sh`.
 
 ## Development
 

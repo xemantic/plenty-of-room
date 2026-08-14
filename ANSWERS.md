@@ -32,11 +32,16 @@ Three findings dominate, and none of them is a stiffness number.
    directions. Nothing in the §3 stack holds it — **and `T-13` now says what does, and what does not.**
    What is unavoidably present, van der Waals across the gap, gives a **stable but not confining**
    equilibrium: its `1/h³` force has a bounded potential, so the well is only **0.2–5.7 `k_BT`** deep and the
-   tile escapes it. **Stability and confinement are different properties.** The output coupling the programme
-   has committed to supplies **exactly zero** downward preload, because the ssDNA spacer that made it
-   compliant enough carries no compression. What closes it is the element `T-12` already chose for the
-   *lateral* coordinate: eight substrate tethers, giving a **31–73 `k_BT` well at `h₀` = 4.6–9.8 nm** for
-   0.07–0.38 nm of stroke. (`C-0010`, `C-0021`.)
+   tile escapes it. **Stability and confinement are different properties.** A **one-sided** coupling — the
+   ssDNA spacer that made `C-0017`'s lever compliant enough — supplies **exactly zero** downward preload,
+   because a single strand carries no compression, and closing the hold-down then costs eight substrate
+   tethers for 0.07–0.38 nm of stroke.
+   **The requirement dissolves once the coupling is two-sided.** The potential above `L₀` turns from linear
+   to quadratic, so the requirement stops being a *force* (`k_BT/σ` = 1.38 pN) and becomes a *stiffness*
+   (`k_BT/σ²` = 0.4602 pN/nm) — one power of the position bound apart — and §3's own mandated 33.333 pN/nm
+   exceeds it **72×** unpreloaded. The tetherless device goes from 1.4–5.4 `k_BT` and 0 of 18 confining to
+   **959–7582 `k_BT` and 18 of 18**, and `C-0014`'s eight substrate tethers **leave the design**.
+   (`C-0010`, `C-0021`, `C-0023`, `CH-0027`.)
 3. **The output coupling decides the programme, and it is fixed by §3 rather than by the layer.**
    100 pN at ≤ 2 V is reachable with room to spare and drainage clears 1 kHz by 22× — and at 10 nm the
    operating point the device reaches them at is not one it holds by itself.
@@ -56,9 +61,21 @@ duplex** — each a duplex standoff in series
    size and opposite sign, so `C-0019`'s ≥ 1.07× was one half of a two-sided correction (`C-0027`).
    The verdict is unchanged in kind — *not excluded*, never established, because the **electrostatic**
    one-loop error is 123–214 % and nothing in this programme narrows it (`CH-0019`).
-   **0.5 mM remains the only route, and there the corrected margin is 2.16–9.87× — the only margin in the
-   programme that clears its own uncertainty.**
-   (`C-0012`, `C-0016`, `C-0017`, `CH-0016`.)
+   **And that reserve has since been spent.** Every margin above was banked on the coupling being
+   strain-**stiffening**, which makes its tangent exceed its secant and hands stability a free reserve at zero
+   placement cost. The coupling the programme actually arrived at, once its joint was solved rather than
+   bracketed, strain-**softens**: `t/s` falls 1.095 → 0.757, and the assembled tangent has an *interior*
+   minimum of 22.88 pN/nm at a 4.55 nm stroke, inside the operating range. Re-running the pull-in analysis on
+   that law over 216 states, the 10 nm / 2 mM bias margin collapses to **1.0000–1.0019** — the device is
+   placed *on* its own fold — and the fold's stroke walks back from 3.41–4.13 nm to **2.80–3.17 nm, through
+   §3's own 3 nm target at two of six layer models**. Both escapes are priced and both fail: the adverse
+   mounting is 42.4–61.0 pN/nm, past the 40 pN/nm compliance ceiling at **0 of 8** lengths, and a shorter
+   standoff lands 2.2 % short. At **0.5 mM every predicate clears** (1.44–5.93× on stiffness, 1.038–2.327× on
+   bias).
+   **So 0.5 mM is no longer the comfortable choice with 2 mM still defensible — it is a requirement of the
+   only coupling that survives.** That is a *specification* decision for NDI, and it is handed back as one
+   rather than adopted here.
+   (`C-0012`, `C-0016`, `C-0017`, `C-0030`, `C-0032`, `CH-0016`, `CH-0042`.)
 
 4. **The design window survived nine claims and ten challenges by moving one edge, outward.**
    Of the four iteration-4 results aimed at it, three live on axes an intersection cannot see and the fourth

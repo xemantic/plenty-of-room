@@ -87,6 +87,30 @@ tasks.register<JavaExec>("study") {
             (providers.gradleProperty("study").orNull ?: "brush.BrushStiffnessStudyKt")
 }
 
+/*
+ * Runs the shell harness's own tests (task P-16).
+ *
+ * `tools/snapshot.sh`'s `drop_packages` and `drop_files` DELETE, and one of them has already
+ * removed a package from a live working tree (`S-94`). Their guards are the only thing between a
+ * mistyped argument and another agent's unfinished work, so they are held to the same standard as
+ * the Kotlin side — and wired into `test` so that standard cannot quietly lapse.
+ *
+ * It hangs off `test` rather than off `check` on purpose: `tools/verify.sh` — the authoritative
+ * run when several agents share this checkout — invokes `test`, so anything attached only to
+ * `check` would never be exercised by the workflow that matters. It touches nothing under
+ * `src/`, so it is unaffected by a `--drop`/`--drop-file` on the snapshot it runs in, and it
+ * stays runnable on its own as `tools/test-snapshot.sh`.
+ */
+tasks.register<Exec>("testHarness") {
+    group = "verification"
+    description = "Runs tools/test-snapshot.sh, the tests for the snapshot/drop helpers"
+    commandLine("$projectDir/tools/test-snapshot.sh")
+}
+
+tasks.named("test") {
+    dependsOn("testHarness")
+}
+
 dependencies {
     implementation(libs.viktor)
     implementation(libs.kotlinx.serialization.json)

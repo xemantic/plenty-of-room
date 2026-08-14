@@ -465,4 +465,49 @@ class TilePositionalVarianceTest {
         }
     }
 
+    /**
+     * `P-15` / `C-0031` exposed this, and it is `CLAUDE.md`'s own rule bitten from a new side:
+     * **a quantity that is meant to be zero must not be compared to zero.**
+     *
+     * The undefined-case record reports `unconstrainedPistonRms` as a diagnostic, guarded — in the
+     * original — by `layerStiffness > 0.0`. But the case this record exists for is the
+     * strong-stretching profile *at* `L₀`, where the disjoining pressure vanishes **quadratically**
+     * and the stiffness is therefore **exactly zero** (`C-0003`); the block's own comment says so,
+     * in the words "numerically a rounding-level positive, physically nothing".
+     *
+     * A sign test on a rounding-level zero is decided by the noise. Repairing `bracketedRoot` moved
+     * the solved height by `~1e-6` — its declared `HEIGHT_TOLERANCE` — which flipped that zero from
+     * a rounding-level negative to a rounding-level positive `2.2e-14 pN/nm`, and the emitted file
+     * turned from `null` into a piston RMS of **13 637 236 nm**: 13.6 mm, against a 10 nm layer,
+     * in a field whose own comment says *"null, not Infinity … writing one would be a number where
+     * the honest answer is 'not well posed'"*.
+     *
+     * The guard is therefore written on the **physics** rather than on the sign: the amplitude is
+     * reportable only while the linearised fluctuation stays inside the layer it is fluctuating
+     * against. That is noise-immune, it is the criterion the surrounding block already applies to
+     * decide the case is undefined at all, and it needs no tolerance.
+     */
+    @Test
+    fun `an unconstrained piston amplitude should be null unless it fits inside the layer`() {
+        // A stiffness at rounding level — the strong-stretching profile at L0, either sign.
+        assert(unconstrainedPistonRms(2.2e-14, LAYER_HEIGHT) == null)
+        assert(unconstrainedPistonRms(-2.2e-14, LAYER_HEIGHT) == null)
+        assert(unconstrainedPistonRms(0.0, LAYER_HEIGHT) == null)
+        // The sign of a rounding-level zero must not change the answer. This is the property the
+        // original guard lacked, and it is what the P-15 repair falsified.
+        listOf(1e-30, 1e-20, 1e-14, 1e-9).forEach { magnitude ->
+            assert(unconstrainedPistonRms(magnitude, LAYER_HEIGHT) ==
+                    unconstrainedPistonRms(-magnitude, LAYER_HEIGHT)) {
+                "the reported amplitude depends on the SIGN of a zero, at $magnitude"
+            }
+        }
+        // Softer than k_BT/L0² but still inside the layer: a real, reportable amplitude.
+        val marginal = thermalEnergy() / (0.9 * LAYER_HEIGHT * 0.9 * LAYER_HEIGHT)
+        val rms = unconstrainedPistonRms(marginal, LAYER_HEIGHT)
+        assert(rms != null)
+        assert(rms!!.isCloseTo(0.9 * LAYER_HEIGHT, 1e-12))
+        // and it is exactly the equipartition amplitude wherever it is defined at all
+        assert(rms.isCloseTo(equipartitionRms(marginal), 1e-12))
+    }
+
 }

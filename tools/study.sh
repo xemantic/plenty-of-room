@@ -19,7 +19,12 @@
 #
 #     tools/study.sh brush.CrossoverLayerStudyKt
 #     tools/study.sh --drop coupling window.DesignWindowStudyKt
+#     tools/study.sh --drop-file src/test/kotlin/coupling/PlacementTest.kt window.DesignWindowStudyKt
 #     tools/study.sh --keep brush.ScfDensityProfileStudyKt   # leave the copy for inspection
+#
+# `--drop-file` (task P-16) is the granularity to reach for first: `--drop <pkg>` removes the
+# package's main sources too, so it cannot be used when your own package imports the broken
+# one. See tools/snapshot.sh.
 #
 # Why this exists (task P-12). `-PbuildDirectory=<dir>` isolates `build-*/test-results` but
 # **not** `build-*/classes`: a concurrent agent's Gradle invocation can delete another's
@@ -41,18 +46,20 @@ source "$root/tools/snapshot.sh"
 
 target="${TMPDIR:-/tmp}/plenty-of-room-study.$$"
 drops=()
+dropped_files=()
 keep=0
 
 while [ $# -gt 0 ]; do
     case "$1" in
         --drop) drops+=("$2"); shift 2 ;;
+        --drop-file) dropped_files+=("$2"); shift 2 ;;
         --keep) keep=1; shift ;;
         *) break ;;
     esac
 done
 
 if [ $# -lt 1 ]; then
-    echo "usage: tools/study.sh [--drop <pkg>]... [--keep] <study main class> [gradle args...]" >&2
+    echo "usage: tools/study.sh [--drop <pkg>]... [--drop-file <path>]... [--keep] <study main class> [gradle args...]" >&2
     exit 2
 fi
 
@@ -71,6 +78,9 @@ echo "running study $study in $target"
 snapshot_tree "$root" "$target" "working-tree"
 if [ ${#drops[@]} -gt 0 ]; then
     drop_packages "$target" "${drops[@]}"
+fi
+if [ ${#dropped_files[@]} -gt 0 ]; then
+    drop_files "$target" "${dropped_files[@]}"
 fi
 
 # Baseline the snapshot's own results, so that what the study wrote can be told apart from

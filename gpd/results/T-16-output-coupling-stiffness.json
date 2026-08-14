@@ -2032,13 +2032,13 @@
             "appliedBias": 0.1,
             "blockingForceHere": 167.169948,
             "blockingForceInC0012": 167.169948,
-            "blockingForceDeparture": 1.69236869E-9,
+            "blockingForceDeparture": 1.69236958E-9,
             "outputForceAtThreeNanometresHere": -989.368295,
             "outputForceAtThreeNanometresInC0012": -989.368295,
             "outputForceDeparture": 0.0,
             "effectiveStiffnessHere": 2016.59039,
             "effectiveStiffnessInC0012": 2016.59039,
-            "effectiveStiffnessDeparture": 1.21789712E-9
+            "effectiveStiffnessDeparture": 1.21789878E-9
         },
         {
             "model": "strong-stretching(virial)",
@@ -2053,7 +2053,7 @@
             "outputForceDeparture": 0.0,
             "effectiveStiffnessHere": 1441.04123,
             "effectiveStiffnessInC0012": 1441.04123,
-            "effectiveStiffnessDeparture": 1.80094695E-9
+            "effectiveStiffnessDeparture": 1.80094561E-9
         },
         {
             "model": "strong-stretching(des-Cloizeaux)",
@@ -2227,7 +2227,7 @@
             "appliedBias": 0.25,
             "blockingForceHere": 214.686265,
             "blockingForceInC0012": 214.686265,
-            "blockingForceDeparture": 2.21262453E-9,
+            "blockingForceDeparture": 2.21262542E-9,
             "outputForceAtThreeNanometresHere": 613.645961,
             "outputForceAtThreeNanometresInC0012": 613.645961,
             "outputForceDeparture": 0.0,
@@ -2320,7 +2320,7 @@
             "blockingForceDeparture": 0.0,
             "outputForceAtThreeNanometresHere": 150.948112,
             "outputForceAtThreeNanometresInC0012": 150.948112,
-            "outputForceDeparture": 3.27826255E-9,
+            "outputForceDeparture": 3.27825944E-9,
             "effectiveStiffnessHere": -47.6285858,
             "effectiveStiffnessInC0012": -47.6285858,
             "effectiveStiffnessDeparture": 0.0
@@ -2410,7 +2410,7 @@
             "blockingForceDeparture": 0.0,
             "outputForceAtThreeNanometresHere": 190.237854,
             "outputForceAtThreeNanometresInC0012": 190.237854,
-            "outputForceDeparture": 1.55561586E-9,
+            "outputForceDeparture": 1.55561553E-9,
             "effectiveStiffnessHere": -64.9016307,
             "effectiveStiffnessInC0012": -64.9016307,
             "effectiveStiffnessDeparture": 0.0

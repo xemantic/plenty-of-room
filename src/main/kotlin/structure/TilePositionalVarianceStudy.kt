@@ -66,6 +66,33 @@ import kotlin.math.sqrt
 internal const val LAYER_HEIGHT = 10.0
 internal const val GRAFTING_DENSITY = 0.024
 
+/**
+ * The piston amplitude to report for a case the study has already declared **undefined** — or
+ * `null`, which is most of the time and is the honest answer.
+ *
+ * `null`, never `Infinity`: an unconfined coordinate has no RMS amplitude at all, and writing one
+ * would be a number where the honest answer is "not well posed". (`kotlinx.serialization` also
+ * refuses `Infinity`, but that is the smaller reason.)
+ *
+ * **The guard is on the physics, not on the sign** (`P-15`, `C-0031`). The case this record exists
+ * for is the strong-stretching profile at `L₀`, where the disjoining pressure vanishes
+ * *quadratically* and the stiffness is **exactly zero** (`C-0003`) — numerically a rounding-level
+ * value of either sign. Guarding on `stiffness > 0.0`, as this did, is a sign test on a quantity
+ * that is meant to be zero, so the noise decides the answer: repairing `bracketedRoot` moved the
+ * solved height by its own `1e-6` tolerance, flipped that zero positive at `2.2e-14 pN/nm`, and
+ * turned an emitted `null` into a piston RMS of 13 637 236 nm against a 10 nm layer.
+ *
+ * The criterion used instead is the one the surrounding block already applies to call the case
+ * undefined: **a linearised fluctuation is only meaningful while it stays inside the layer it is
+ * fluctuating against.** It is noise-immune, it needs no tolerance, and it is scale-free.
+ */
+internal fun unconstrainedPistonRms(layerStiffness: Double, layerHeight: Double): Double? {
+    require(layerHeight > 0.0) { "layerHeight must be positive, was: $layerHeight" }
+    if (layerStiffness <= 0.0) return null
+    val rms = sqrt(thermalEnergy() / layerStiffness)
+    return if (rms <= layerHeight) rms else null
+}
+
 /** §3, via `C-0002`/`C-0003`: the measured PEG/water osmotic virials. */
 private const val OSMOTIC_SECOND_VIRIAL = 1.9e-3
 private const val OSMOTIC_THIRD_VIRIAL = 2.0e-2
@@ -632,11 +659,7 @@ private fun varianceCase(
             profile = reading.profile,
             interaction = reading.interaction,
             layerStiffness = layerStiffness,
-            // null, not Infinity: an unconfined coordinate has no RMS amplitude at all,
-            // and writing one would be a number where the honest answer is "not well posed"
-            unconstrainedPistonRms = if (layerStiffness > 0.0) {
-                sqrt(thermalEnergy() / layerStiffness)
-            } else null,
+            unconstrainedPistonRms = unconstrainedPistonRms(layerStiffness, LAYER_HEIGHT),
             reason = "stiffness at or below k_BT/L0^2 = %.4f pN/nm, so the harmonic ".format(floor) +
                     "fluctuation would exceed the layer height and the linearisation has " +
                     "left its own domain. For the strong-stretching profile at first " +

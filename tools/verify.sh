@@ -19,6 +19,7 @@
 #     tools/verify.sh                    # test the working tree, including uncommitted work
 #     tools/verify.sh --committed        # test HEAD instead, ignoring uncommitted work
 #     tools/verify.sh --drop coupling    # test without a sibling package left mid-TDD
+#     tools/verify.sh --drop-file src/test/kotlin/coupling/PlacementTest.kt   # one file only
 #
 # Options may be combined and repeated; everything after them is passed to Gradle.
 #
@@ -39,6 +40,12 @@
 # package another agent has left mid-TDD, which fails `compileKotlin` for the whole project.
 # Dropping it from the copy tests everything else; it is a *diagnosis* of somebody else's
 # unfinished work, so name the dropped package whenever you report such a run.
+#
+# **Prefer `--drop-file` (task P-16).** A package drop removes the package's *main* sources
+# too, so it is unusable whenever your own package imports the broken one — `coupling` imports
+# `anchoring`, and `--drop anchoring` turns one half-written file into eighty broken
+# references. Name the single file that fails to compile instead; it is smaller, safer, and
+# it is what the common case (a sibling's unfinished *test*) actually needs.
 set -euo pipefail
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -47,11 +54,13 @@ source "$root/tools/snapshot.sh"
 target="${TMPDIR:-/tmp}/plenty-of-room-verify.$$"
 mode="working-tree"
 drops=()
+dropped_files=()
 
 while [ $# -gt 0 ]; do
     case "$1" in
         --committed) mode="--committed"; shift ;;
         --drop) drops+=("$2"); shift 2 ;;
+        --drop-file) dropped_files+=("$2"); shift 2 ;;
         *) break ;;
     esac
 done
@@ -68,6 +77,9 @@ fi
 snapshot_tree "$root" "$target" "$mode"
 if [ ${#drops[@]} -gt 0 ]; then
     drop_packages "$target" "${drops[@]}"
+fi
+if [ ${#dropped_files[@]} -gt 0 ]; then
+    drop_files "$target" "${dropped_files[@]}"
 fi
 
 cd "$target"
