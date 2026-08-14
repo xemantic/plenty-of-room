@@ -5588,14 +5588,27 @@ on the upward lattice at all** — at φ = 0 reflection maps a row's `EAST` site
 so 16 of its 34 arms would hang into the grafted layer, the azimuth `C-0055` had counted and refused.
 
 **`C-0064` found the obstruction to a robust flat tile is a *sign*, not a search.** A smoothed minimax with
-analytic gradients and 42 starts reaches a worst case of **0.1247** over `C-0022`'s five states, 21.4 %
-better than `C-0058`'s and still 1.25× the tolerance — but **16 starts to 42 moves the answer by `1.1e−9`**,
-so the search is not what limits it. Of the 31 non-empty subsets, **every one of the 14 containing both the
-2 nm state and a 10 nm state fails, and every one of the other 17 is flat** — including everything-but-the-
-2-nm-state at 0.0797, and the 2 nm state paired with its *own* device's 5 nm rest state at 0.0619. The 2 nm
-state's dishing field has a cosine of **−0.943 to −1.000** against every other state, exactly −1.000 against
-one. Filed as `CH-0077`: **five solved states are four devices**, and asking one distribution to be flat
-across them is asking it to be flat under a load and its own negative.
+analytic gradients and 42 starts reaches a worst case of **0.1254** over `C-0022`'s five states, 21.0 %
+better than `C-0058`'s and still 1.25× the tolerance — but more starts do not move it, and two states are
+*active* at the optimum, the signature of an equalised minimax, so the search is not what limits it. Of the
+31 non-empty subsets, **every one of the 14 containing both the 2 nm state and a 10 nm state fails
+(0.1086–0.1254), and every one of the other 17 is flat (0.0090–0.0799)** — including everything-but-the-
+2-nm-state at 0.0799, and the 2 nm state paired with its *own* device's rest state at 0.0620. The 2 nm
+state's dishing field is **anti-parallel** to every other's (cosine −0.943 to −1.000, exactly −1.000 against
+the 10 mM one, where all six other pairs run +0.949 to +0.997), because `C-0022`'s own table records it as
+the **only** one of its 21 solved states whose finite tile carries *less* force than a 1-D pressure over its
+footprint — an edge **deficit** where every other state has an enhancement.
+Filed as `CH-0077`: **five solved states are four devices**, and asking one distribution to be flat across
+them is asking it to be flat under a load and its own negative.
+**And over the range each device actually traverses the minimax is 0.0373 / 0.0435 / 0.0620 / 0.0504 — all
+four inside `T-5b`'s 0.10**, both endpoints active and the interpolated intermediate gaps worth exactly
+zero. So the five-state negative is a *"not found at a large budget"* rather than a theorem, and the claim
+says so; the declared cheap-bound falsifier did not fire.
+
+*(This paragraph originally read `0.1247` / 21.4 % / 0.0797 / 0.0619 and omitted the traversed-range result.
+Those were the figures in `C-0064`'s Verdict line when the coordinator read it; the agent revised the claim
+afterwards. Corrected against the filed claim per `SESSION-PROMPT.md` step 9. No verdict changes — the
+five-state answer is still outside the tolerance and the sign argument is unaffected.)*
 
 **The session's recurring hazards both recurred and both were caught.** A second **task**-ID collision
 (`T-127`, after `T-109`) was fixed before the agents were spawned. And every agent this iteration was asked
