@@ -3816,13 +3816,31 @@ every separation from the 6 bp steric floor to 12 bp, with **zero** azimuth cost
 `C-0037`'s "between 6 and 8 bp" to **7**. Its `CH-0056` is the conceptual half: the 33.74°/bp
 quantum belongs to the **sheet's** phosphate positions — where a link may *land* — not to the
 standoff's own chord, which is a separate duplex free to rotate about its axis continuously.
-`C-0043` solved the arm on a composition exact in **both** the rotation and the end condition, and
-found `C-0034`'s bracket upheld with the answer at 0.43 of its width — **not** at either end.
-Both of the compositions in use are wrong and **they very nearly cancel**: `C-0029`'s series form is
-1.72× stiff and `C-0034`'s small-rotation BVP 1.41× soft.
-The arm that actually *places* is 12.36 nm, and its tangent at the desired stroke is **1.03× past**
-`C-0023`'s ceiling — so the flexure misses §3's desired stroke by 3 %, on the **compliance ceiling**
-rather than on geometry.
+`C-0039` solved the arm on a composition exact in **both** the rotation and the end condition, and
+**falsified the bracket's premise rather than confirming its width**.
+`C-0034` had reasoned that its two readings bracket the arm because *"two errors run opposite ways
+and very nearly cancel"*; they do not. Both are corrections to the **same** linear two-spring
+boundary-value problem and both **stiffen** it — a restrained far end relieves the hinge, and the arc
+shortens the span while the lever falls as `cos θ` — so the exact composition lands **outside** their
+span on the long side, at **12.7198 nm, 1.79 % beyond** the 11.028–12.496 nm bracket.
+`CH-0044`'s 1.64× over-placement survives intact, reproduced twice and independently.
+The method is pinned rather than asserted: the elastica's vanishing-load limit reproduces `C-0034`'s
+closed-form `c(ρ_n, ρ_f)` at all four textbook corners and across a 25-point interior grid to
+**1.7e−14**, which fixes the field equation, both boundary conditions and every sign at once.
+
+But the 1.8 % is the least of it. **The placement clause is discharged exactly and the compliance
+clause is not**: the tangent is 36.44 pN/nm at §3's *acceptable* stroke, inside `C-0023`'s ceiling
+with 8.9 % to spare, and **264.2 pN/nm at the desired stroke — 6.6× past it**, with the secant there
+already 2.10× the mandate and the assembled force 699 pN against §3's own 100.
+The usable stroke inside the ceiling is **3.877 nm**, and "clears 10 nm inside the ceiling" is false
+at **0 of 34 placements and 0 of 25 sensitivity points** — every anchorage including `C-0029`'s
+asserted ideal guide, every hinge count 1–64 including `C-0040`'s buildable 1–6, and every path count
+including `C-0041`'s 15, where the stroke is out of *geometric* reach.
+The cause is geometric: the arm is capped at 13.65 nm, so 10 nm is ≥ 73 % of its own contour
+everywhere, and the exact draw-in is **5.34 nm = 15.7 bp**, 42 % of the arm, against the 0.095 nm
+`C-0029` quoted.
+So **`E5` is an element for §3's acceptable 3 nm stroke and not for its desired 10 nm**, and that is a
+third independent route to the same conclusion, alongside `C-0040`'s hinge line and `C-0041`'s packing.
 
 **Taken together the iteration is a reversal.** `C-0029` closed the standoff branch at the desired
 stroke and left the guided-arm flexure standing; iteration 6 closes the *flexure* at the desired
@@ -3830,8 +3848,19 @@ stroke on two independent counts — a hinge line that does not exist and an arr
 while `C-0037`'s truss loses its largest open risk. `T-98`'s "standoff-and-truss against `E5a16`" is
 therefore **no longer a comparison of two live options**, and the queue says so.
 
-**What it cost.** The claim-numbering race repeated: **three of the four agents renumbered**, two of
-them twice, each having re-listed an empty slot. `C-0038`, `C-0039`, `CH-0052` and `CH-0053` are
-vacant as a result, and the gaps are left rather than compacted — cheaper than a collision, and the
-rule is already in `CLAUDE.md`. Every agent used `P-16`'s `--drop-file` on a sibling's mid-TDD file,
+**What it cost, and one of the costs was the coordinator's.** The claim-numbering race repeated:
+three of the four agents renumbered, some of them twice, each having re-listed an empty slot.
+`C-0038`, `C-0043`, `CH-0052` and `CH-0057` are vacant as a result, and the gaps are left rather than
+compacted — cheaper than a collision, and the rule is already in `CLAUDE.md`.
+
+**And the coordinator committed a wrong summary of `T-79` before its final answer had landed.**
+A subagent notification is not a commit boundary: `T-79` reported once with a preliminary verdict
+(*"the bracket is upheld, the answer sits at 0.43 of its width, the two errors nearly cancel"*) and
+then kept working and reported again with the opposite one, under a different claim number.
+The iteration-6 commit message describes the **first**, which was never on disk — the filed claim has
+always been `C-0039`, and it says the bracket **fails** and the errors run the **same** way.
+The commit contents were right; the message and this journal's summary were wrong, and they are
+corrected here rather than quietly rewritten.
+**The rule this yields: read the filed claim, never the report, before writing anything down.**
+The report is a summary by an agent that may still be working; the claim is the artifact. Every agent used `P-16`'s `--drop-file` on a sibling's mid-TDD file,
 two of them on three files at once; the final run of each needed no drops at all.
