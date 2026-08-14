@@ -72,10 +72,46 @@ import kotlin.math.sqrt
  * result file reproducible if it contains an **argmin**, and `C-0058` met a new instance of it:
  * its optimiser's evaluation count, sweep count and winning start all differed between runs while
  * every objective agreed to nine significant digits. Here every comparison the search makes — the
- * Armijo acceptance test, the "is this iterate better" test, the choice between starts — is taken
- * on **[roundCouplingResult]-rounded** values with the first index winning any tie. The decision is
- * rounded, not only the number.
+ * Armijo acceptance test, the "is this iterate better" test, the choice between starts, and the
+ * objective handed to `C-0058`'s optimiser as a polish — is taken on **[searchDecision]-rounded**
+ * values with the earlier candidate winning any tie. The decision is rounded, not only the number,
+ * and it is rounded **coarser** than the number: see [SEARCH_DECISION_DIGITS], which is the half of
+ * this discipline that nine digits at the serialisation boundary does not supply.
  */
+
+// ------------------------------------------------------------------ the search's own precision
+
+/**
+ * The number of significant digits every comparison **inside** a search is taken at.
+ *
+ * `roundCouplingResult`'s nine digits are the right precision to *emit* a number at and the wrong
+ * one to *decide* at. A last-ulp difference is `1e-15` relative, so the chance that one value of a
+ * pair straddles a nine-digit boundary is about `1e-6` per comparison — and this study takes of order
+ * `1e6` of them, so a nine-digit decision rule flips somewhere in **every** run. It did: two runs of
+ * this study differing only in an unused local agreed on every objective to five digits and disagreed
+ * in the sixth, because one Armijo acceptance had gone the other way and the descent finished in a
+ * neighbouring basin.
+ *
+ * At **six** digits the same estimate is `1e-9` per comparison, i.e. `1e-3` over the whole study,
+ * while the finest quantity reported is four digits and the search's own convergence tolerances are
+ * `1e-5`. So the precision thrown away is precision the answer never had.
+ */
+internal const val SEARCH_DECISION_DIGITS: Int = 6
+
+/**
+ * [value] rounded to [SEARCH_DECISION_DIGITS] significant digits — the quantisation at which the
+ * line search accepts, the descent keeps and the starts are ranked.
+ *
+ * Ties are then genuinely equal and every tie-break in this file keeps the **earlier** candidate, so
+ * the search path is a function of the inputs and not of the JIT's compilation schedule.
+ */
+internal fun searchDecision(value: Double): Double {
+    if (!value.isFinite() || value == 0.0) return value
+    val scale = Math.pow(
+        10.0, (SEARCH_DECISION_DIGITS - 1 - Math.floor(Math.log10(abs(value))))
+    )
+    return Math.round(value * scale) / scale
+}
 
 // ------------------------------------------------------------------ the states
 
@@ -594,8 +630,8 @@ fun minimaxStiffnessDistribution(
                     val candidateValue = evaluate(candidate).first
                     // The acceptance test is taken on ROUNDED values: an ulp of jitter in a hot
                     // reduction must not be able to flip a search decision (CLAUDE.md).
-                    if (roundCouplingResult(candidateValue) <=
-                        roundCouplingResult(value + 1e-4 * trial * slope)
+                    if (searchDecision(candidateValue) <=
+                        searchDecision(value + 1e-4 * trial * slope)
                     ) {
                         trialPoint = candidate
                         break
@@ -619,7 +655,7 @@ fun minimaxStiffnessDistribution(
                 step = max(trial * 2.0, 1e-6)
                 val weights = DoubleArray(paths) { exp(theta[it]) }
                 val here = truth(weights)
-                if (roundCouplingResult(here) < roundCouplingResult(bestTruth)) {
+                if (searchDecision(here) < searchDecision(bestTruth)) {
                     bestTruth = here
                     bestWeights = weights
                 }
@@ -633,7 +669,7 @@ fun minimaxStiffnessDistribution(
     // `sweeps · n · (scan + refinements)` evaluations — two orders more than one conjugate-
     // gradient homotopy — so polishing every start would spend the whole budget on the losers.
     val bestStart = results.minWithOrNull(
-        compareBy({ roundCouplingResult(it.third) }, { it.first })
+        compareBy({ searchDecision(it.third) }, { it.first })
     )!!
     val polished = optimiseStiffnessDistribution(
         totalStiffness = totalStiffness,
@@ -644,9 +680,9 @@ fun minimaxStiffnessDistribution(
         searchHalfWidth = 1.0,
         scanPoints = 7,
         refinements = 8
-    ) { surrogate.worstDishing(it, states) }
+    ) { searchDecision(surrogate.worstDishing(it, states)) }
     val stiffnesses =
-        if (roundCouplingResult(polished.objective) < roundCouplingResult(bestStart.third)) {
+        if (searchDecision(polished.objective) < searchDecision(bestStart.third)) {
             polished.stiffnesses
         } else {
             cappedStiffnesses(bestStart.second, totalStiffness, ceiling)
@@ -660,7 +696,7 @@ fun minimaxStiffnessDistribution(
         bindingStates = states.filter { perState[it] >= worst * (1.0 - 1e-4) }
             .map { surrogate.stateNames[it] },
         startsWithinOnePartInAMillion =
-            results.count { it.third <= bestStart.third * (1.0 + 1e-6) },
+            results.count { searchDecision(it.third) <= searchDecision(bestStart.third * (1.0 + 1e-6)) },
         startsUsed = starts.size
     )
 }

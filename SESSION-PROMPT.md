@@ -55,6 +55,12 @@ Run **Formulate → Plan → Execute → Verify → File** (GPD, per §5 of the 
 7. **Journal.** Append to [JOURNAL.md](JOURNAL.md): what was done, what was decided and why, what surprised us.
 8. **Queue.** Update [TASKS.md](TASKS.md) — tick off, add what the iteration revealed, re-prioritise.
 9. **Commit and push immediately.** One iteration, one (or few) commits, pushed. Never leave an iteration uncommitted.
+   **Before a commit message or a journal entry quotes a number, grep it out of the claim file.**
+   A subagent's chat report is a summary written by an agent that may still be working; the claim, the challenge
+   and the result JSON are the artifacts.
+   Four times in one session a report and its own claim disagreed materially, and once the coordinator committed
+   a summary the repository contradicted — after the rule was already in [CLAUDE.md](CLAUDE.md) and simply was
+   not applied. The check is one `grep` per headline number and it is not optional.
 
 ## Working rules
 
