@@ -116,9 +116,9 @@ tile:
    > ⚠️ **Mis-specified, per [`CH-0077`](CH-0077-five-solved-states-are-four-devices.md)
    > ([`C-0064`](../claims/C-0064-robust-distribution.md), `T-123`).** Those five states are **four
    > devices** — three buffers' rest states plus one 5 nm device's two ends — not one operating range.
-   > Over the range a single device traverses a robust distribution **does** exist (0.0372–0.0619 of
+   > Over the range a single device traverses a robust distribution **does** exist (0.0373–0.0620 of
    > the stroke, all four devices), and `C-0058`'s own rim × 5 rule is one of them for both 10 nm
-   > devices. The five-state minimax improves to **0.1247** with a real optimiser and is obstructed by
+   > devices. The five-state minimax improves to **0.1254** with a real optimiser and is obstructed by
    > a **sign**: the 2 nm state is the only one of `C-0022`'s 21 whose edge effect is a net *loss*.
    > **This condition therefore reads as weaker against this challenge than it should**, and the
    > correct form of it is *"a requirement that one distribution be flat across BUFFERS"*, which

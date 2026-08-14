@@ -78,6 +78,8 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=anchoring.UpwardRootPlacementStudyKt          # T-125, the row phases of the upward arm array, swept
 ./gradlew study -Pstudy=coupling.RobustDistributionStudyKt            # T-123, is any distribution flat at every one of C-0022's solved states
 ./gradlew study -Pstudy=anchoring.CrossbarTrioExistenceStudyKt        # T-127, does a torsion-feasible trio exist on the cap crossbar at all
+./gradlew study -Pstudy=anchoring.ArmSlabClearanceStudyKt             # T-126, does the arm slab clear C-0035's tie-down path
+./gradlew study -Pstudy=anchoring.CrossbarArrayPlacementStudyKt       # T-130, do C-0062's closing trio lattices place 34 times
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.

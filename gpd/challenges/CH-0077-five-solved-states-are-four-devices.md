@@ -1,4 +1,4 @@
-# CH-0077 — `C-0022`'s five headline states are **four devices**, not one operating range, so *"flat at every operating state"* is not a requirement any Gen-1 device expresses: over the range each device actually traverses a robust distribution exists at 0.0372–0.0619 of the stroke, and the five-state minimax that fails is a portfolio duty nothing upstream asks for
+# CH-0077 — `C-0022`'s five headline states are **four devices**, not one operating range, so *"flat at every operating state"* is not a requirement any Gen-1 device expresses: over the range each device actually traverses a robust distribution exists at 0.0373–0.0620 of the stroke, and the five-state minimax that fails is a portfolio duty nothing upstream asks for
 
 | | |
 |---|---|
@@ -55,14 +55,14 @@ recommends **one** buffer; neither asks for a tile that works in all three.
 
 | device | **minimax / stroke** | flat under `T-5b`'s 10 %? | uniform | `C-0058`'s rim × 5 |
 |---|---|---|---|---|
-| 2 mM, `L₀` = 10 nm, 0.192 V (`C-0018`'s placed device) | **0.0372** | **YES** | 0.2182 | **0.0753 — also flat** |
-| 0.5 mM, `L₀` = 10 nm, 0.134 V (`C-0032`'s recommendation) | **0.0436** | **YES** | 0.2086 | **0.0683 — also flat** |
-| 2 mM, `L₀` = 5 nm, 0.368 V | **0.0619** | **YES** | 0.0796 | 0.1867 |
-| 10 mM, `L₀` = 10 nm, 0.192 V | **0.0500** | **YES** | 0.2551 | 0.1179 |
+| 2 mM, `L₀` = 10 nm, 0.192 V (`C-0018`'s placed device) | **0.0373** | **YES** | 0.2182 | **0.0753 — also flat** |
+| 0.5 mM, `L₀` = 10 nm, 0.134 V (`C-0032`'s recommendation) | **0.0435** | **YES** | 0.2086 | **0.0683 — also flat** |
+| 2 mM, `L₀` = 5 nm, 0.368 V | **0.0620** | **YES** | 0.0796 | 0.1867 |
+| 10 mM, `L₀` = 10 nm, 0.192 V | **0.0504** | **YES** | 0.2551 | 0.1179 |
 
 Both endpoints are **active** at each optimum, so these are equalised minima and not one state carrying
 the other; and adding two interpolated intermediate gaps to the first range moves its worst case by
-`2.4e−15`, so two solved endpoints *are* the range.
+exactly zero at nine significant digits, so two solved endpoints *are* the range.
 
 **`C-0058`'s own design is stronger than its Deliverable 4 says.** Its rim × 5 rule is flat not only at
 the design point but over the entire stroke of both 10 nm devices — which is the statement a designer
@@ -72,13 +72,13 @@ needs and which the five-state table does not contain.
 
 The challenge does not soften `C-0058`'s negative; it sharpens it. A genuine minimax — log-sum-exp
 smoothing with continuation, analytic gradients through the Woodbury solve, conjugate gradients on the
-log-weights, 42 starts, `C-0058`'s own optimiser as a polish — reaches **0.1247**, 21.4 % better than
+log-weights, 42 starts, `C-0058`'s own optimiser as a polish — reaches **0.1254**, 21.0 % better than
 0.1587 and still 1.25× the tolerance, with **two states active**. Of all 31 non-empty subsets:
 
 - every one of the **14** that puts the 2 nm state together with a 10 nm state is **not flat**
-  (0.1085–0.1252);
-- every one of the other **17 is flat** (0.0090–0.0797), including everything-but-the-2-nm-state at
-  0.0797 and the 2 nm state paired with its **own device's** rest state at 0.0619.
+  (0.1086–0.1254);
+- every one of the other **17 is flat** (0.0090–0.0799), including everything-but-the-2-nm-state at
+  0.0799 and the 2 nm state paired with its **own device's** rest state at 0.0620.
 
 The reason is in `C-0022`'s own table and no downstream claim had used it: **the 2 nm state is the only
 one of its 21 solved states whose finite tile carries *less* total force than a 1-D pressure over the
@@ -115,9 +115,9 @@ Annotate `C-0058`'s Deliverable 4 and `CH-0071`'s overturning condition 2 in pla
 
 > **A requirement that one distribution be flat across `C-0022`'s five headline states** — which are
 > the rest states of three buffers plus one 5 nm device's two ends, i.e. a **portfolio** duty rather
-> than an operating range. No distribution is: the best worst case is **0.1247** and the obstruction is
+> than an operating range. No distribution is: the best worst case is **0.1254** and the obstruction is
 > the sign of the 2 nm state's edge effect. **Over the range a single device traverses, a robust
-> distribution exists** (0.0372–0.0619 of the stroke), and `C-0058`'s own rim × 5 rule is one of them
+> distribution exists** (0.0373–0.0620 of the stroke), and `C-0058`'s own rim × 5 rule is one of them
 > for both 10 nm devices.
 
 ## What would overturn this challenge

@@ -270,6 +270,12 @@ private const val T123_NOMINAL_COLUMNS = 8
 
 private const val T123_SAMPLES = 81
 
+/** The smoothing homotopy the minimax runs, coarse to fine. Gate 4 sweeps shorter versions of it. */
+private val T123_SMOOTHING_LEVELS = listOf(0.3, 0.1, 0.03, 0.01, 3e-3, 1e-3)
+
+/** Conjugate-gradient iterations per smoothing level. */
+private const val T123_ITERATIONS_PER_LEVEL = 20
+
 private const val T123_TOLERANCE = 0.10
 
 private const val T123_RIM_STANDOFF = 1.0
@@ -520,8 +526,8 @@ fun main() {
     fun minimax(
         states: List<Int>,
         starts: List<List<Double>>,
-        levels: List<Double> = listOf(0.3, 0.1, 0.03, 0.01, 3e-3, 1e-3),
-        iterations: Int = 20
+        levels: List<Double> = T123_SMOOTHING_LEVELS,
+        iterations: Int = T123_ITERATIONS_PER_LEVEL
     ) = minimaxStiffnessDistribution(
         surrogate = surrogate,
         states = states,
@@ -902,7 +908,7 @@ fun main() {
         listOf(
             listOf(0.1) to "one level, mu = 0.1",
             listOf(0.3, 0.03) to "two levels",
-            listOf(0.3, 0.1, 0.03, 0.01, 3e-3, 1e-3) to "six levels (the setting used)"
+            T123_SMOOTHING_LEVELS to "six levels (the setting used)"
         ).forEach { (levels, label) ->
             val value = minimax(headlineIndices, leanStarts, levels).worstDishing / stroke
             add(
@@ -1314,9 +1320,12 @@ fun main() {
             "loadStates" to "${allProfiles.size} (5 headline + the traversed ranges + " +
                     "interpolated intermediates + the uniform-load falsifier)",
             "optimiser" to "smoothed minimax (log-sum-exp) with analytic gradients through the " +
-                    "Woodbury solve, nonlinear conjugate gradients on the log-weights, six " +
-                    "smoothing levels x 25 iterations, ${richStarts.size} starts, then " +
-                    "C-0058's own coordinate descent as a polish stage",
+                    "Woodbury solve, nonlinear conjugate gradients on the log-weights with a " +
+                    "restart every 10 iterations and on a cancelling gradient difference, " +
+                    "${T123_SMOOTHING_LEVELS.size} smoothing levels x $T123_ITERATIONS_PER_LEVEL " +
+                    "iterations, ${richStarts.size} starts, then C-0058's own coordinate descent " +
+                    "as a polish stage; every search decision taken at " +
+                    "$SEARCH_DECISION_DIGITS significant digits",
             "perPathCeiling" to "$ceiling pN/nm — the 10 pN unzip allowable at the 3 nm stroke"
         ),
         citedInputs = mapOf(

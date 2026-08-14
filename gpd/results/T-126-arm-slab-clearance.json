@@ -1,0 +1,1260 @@
+{
+    "task": "T-126 — does the arm slab clear C-0035's tie-down path?",
+    "leaf": "A8.2",
+    "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS-measured 2.69 nm; C-0063's phase-24 placement of C-0055's 34 arms at C-0039's 8.164 nm; C-0035's Su mounting at a standoff of 8.0 nm; SS3's acceptable 3 nm stroke; C-0022's solved profile at 2 mM, a 10 nm gap and 0.192 V",
+    "decision": "a regular tie grid and the arm slab cannot share one face at any column count; the room is there and the registration is not",
+    "bounds": [
+        {
+            "name": "the plan area of 34 arms and 45 ties against the footprint",
+            "value": 1072.33969,
+            "against": 1614.0,
+            "ratio": 0.664398814,
+            "unit": "nm2",
+            "fired": false,
+            "settles": "an area budget does NOT decide it — 0.66 of the footprint. C-0041 established that an area bound is exactly what invites 'stack it in three levels', and this one is run in order to be refuted"
+        },
+        {
+            "name": "the arm slab's band inside the tie's own clear column",
+            "value": 5.0,
+            "against": 8.38,
+            "ratio": 0.596658711,
+            "unit": "nm",
+            "fired": true,
+            "settles": "a plan overlap is LEVEL-INDEPENDENT: the tie must reach the tile, so its column starts at the tile's top face and strictly contains the slab. This is the bound that makes the whole question a plan one"
+        },
+        {
+            "name": "the swept plan envelope against the rest footprint",
+            "value": 0.0,
+            "against": 8.16439083,
+            "ratio": 0.0,
+            "unit": "nm",
+            "fired": false,
+            "settles": "the sweep is FAVOURABLE: an arm rotates, so its plan projection is a cosine and shortens. The swept envelope is the rest footprint identically, and a static plan view is therefore conservative at every stroke"
+        },
+        {
+            "name": "the upward root pitch minus the arm, against a tie's own width",
+            "value": 2.71560917,
+            "against": 2.69,
+            "ratio": 1.00952014,
+            "unit": "nm",
+            "fired": false,
+            "settles": "the only gap the lattice offers between two consecutive same-sense arms clears a duplex by 0.0256 nm at the SAXS 2.69 nm — and does NOT clear the 2.73 nm square-lattice value"
+        },
+        {
+            "name": "34 arms plus 45 ties against the EAST inventory at phase 24",
+            "value": 79.0,
+            "against": 53.0,
+            "ratio": 1.49056604,
+            "unit": "sites",
+            "fired": true,
+            "settles": "CONDITIONAL, and reported as a ceiling with its threshold: IF a tie had to root on the upward crossover azimuth it could not be placed at all. It does not — C-0029's two-link 90 degree junction sits at a duplex END, quantised at the 0.34 nm rise and on no crossover lattice — so the bound is recorded and not used"
+        }
+    ],
+    "section": [
+        {
+            "body": "C-0055's arm slab",
+            "stroke": 0.0,
+            "low": 1.69,
+            "high": 3.69,
+            "thickness": 2.0,
+            "insideTieColumn": true,
+            "mayPassOver": false
+        },
+        {
+            "body": "C-0055's arm slab",
+            "stroke": 1.0,
+            "low": 1.69,
+            "high": 4.69,
+            "thickness": 3.0,
+            "insideTieColumn": true,
+            "mayPassOver": false
+        },
+        {
+            "body": "C-0055's arm slab",
+            "stroke": 3.0,
+            "low": 1.69,
+            "high": 6.69,
+            "thickness": 5.0,
+            "insideTieColumn": true,
+            "mayPassOver": false
+        },
+        {
+            "body": "the host sheet",
+            "stroke": 0.0,
+            "low": -1.0,
+            "high": 1.0,
+            "thickness": 2.0,
+            "insideTieColumn": false,
+            "mayPassOver": false
+        },
+        {
+            "body": "C-0035's tie clear column",
+            "stroke": 3.0,
+            "low": 1.0,
+            "high": 9.38,
+            "thickness": 8.38,
+            "insideTieColumn": true,
+            "mayPassOver": false
+        }
+    ],
+    "rows": [
+        {
+            "row": 0,
+            "y": -18.83,
+            "roots": [
+                -16.32,
+                -5.44,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                true,
+                false
+            ],
+            "armLow": [
+                -16.32,
+                -5.44,
+                8.15560917
+            ],
+            "armHigh": [
+                -8.15560917,
+                2.72439083,
+                16.32
+            ],
+            "freeLow": [
+                -20.0,
+                -8.15560917,
+                2.72439083,
+                16.32
+            ],
+            "freeHigh": [
+                -16.32,
+                -5.44,
+                8.15560917,
+                20.0
+            ],
+            "freeLength": 15.5068275,
+            "maximumTies": 5,
+            "gridClashesAsPlaced": 3,
+            "gridClashesBestDirections": 3,
+            "directionsForced": true
+        },
+        {
+            "row": 1,
+            "y": -16.14,
+            "roots": [
+                0.0,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ],
+            "armLow": [
+                0.0,
+                10.88
+            ],
+            "armHigh": [
+                8.16439083,
+                19.0443908
+            ],
+            "freeLow": [
+                -20.0,
+                8.16439083,
+                19.0443908
+            ],
+            "freeHigh": [
+                0.0,
+                10.88,
+                20.0
+            ],
+            "freeLength": 23.6712183,
+            "maximumTies": 8,
+            "gridClashesAsPlaced": 2,
+            "gridClashesBestDirections": 1,
+            "directionsForced": false
+        },
+        {
+            "row": 2,
+            "y": -13.45,
+            "roots": [
+                -16.32,
+                5.44,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false,
+                false
+            ],
+            "armLow": [
+                -16.32,
+                -2.72439083,
+                8.15560917
+            ],
+            "armHigh": [
+                -8.15560917,
+                5.44,
+                16.32
+            ],
+            "freeLow": [
+                -20.0,
+                -8.15560917,
+                5.44,
+                16.32
+            ],
+            "freeHigh": [
+                -16.32,
+                -2.72439083,
+                8.15560917,
+                20.0
+            ],
+            "freeLength": 15.5068275,
+            "maximumTies": 5,
+            "gridClashesAsPlaced": 3,
+            "gridClashesBestDirections": 3,
+            "directionsForced": true
+        },
+        {
+            "row": 3,
+            "y": -10.76,
+            "roots": [
+                0.0,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ],
+            "armLow": [
+                0.0,
+                10.88
+            ],
+            "armHigh": [
+                8.16439083,
+                19.0443908
+            ],
+            "freeLow": [
+                -20.0,
+                8.16439083,
+                19.0443908
+            ],
+            "freeHigh": [
+                0.0,
+                10.88,
+                20.0
+            ],
+            "freeLength": 23.6712183,
+            "maximumTies": 8,
+            "gridClashesAsPlaced": 2,
+            "gridClashesBestDirections": 1,
+            "directionsForced": false
+        },
+        {
+            "row": 4,
+            "y": -8.07,
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ],
+            "armLow": [
+                -16.32,
+                8.15560917
+            ],
+            "armHigh": [
+                -8.15560917,
+                16.32
+            ],
+            "freeLow": [
+                -20.0,
+                -8.15560917,
+                16.32
+            ],
+            "freeHigh": [
+                -16.32,
+                8.15560917,
+                20.0
+            ],
+            "freeLength": 23.6712183,
+            "maximumTies": 8,
+            "gridClashesAsPlaced": 2,
+            "gridClashesBestDirections": 2,
+            "directionsForced": true
+        },
+        {
+            "row": 5,
+            "y": -5.38,
+            "roots": [
+                -10.88,
+                0.0
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ],
+            "armLow": [
+                -10.88,
+                0.0
+            ],
+            "armHigh": [
+                -2.71560917,
+                8.16439083
+            ],
+            "freeLow": [
+                -20.0,
+                -2.71560917,
+                8.16439083
+            ],
+            "freeHigh": [
+                -10.88,
+                0.0,
+                20.0
+            ],
+            "freeLength": 23.6712183,
+            "maximumTies": 8,
+            "gridClashesAsPlaced": 1,
+            "gridClashesBestDirections": 1,
+            "directionsForced": false
+        },
+        {
+            "row": 6,
+            "y": -2.69,
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ],
+            "armLow": [
+                -16.32,
+                8.15560917
+            ],
+            "armHigh": [
+                -8.15560917,
+                16.32
+            ],
+            "freeLow": [
+                -20.0,
+                -8.15560917,
+                16.32
+            ],
+            "freeHigh": [
+                -16.32,
+                8.15560917,
+                20.0
+            ],
+            "freeLength": 23.6712183,
+            "maximumTies": 8,
+            "gridClashesAsPlaced": 2,
+            "gridClashesBestDirections": 2,
+            "directionsForced": true
+        },
+        {
+            "row": 7,
+            "y": 0.0,
+            "roots": [
+                -10.88,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ],
+            "armLow": [
+                -10.88,
+                10.88
+            ],
+            "armHigh": [
+                -2.71560917,
+                19.0443908
+            ],
+            "freeLow": [
+                -20.0,
+                -2.71560917,
+                19.0443908
+            ],
+            "freeHigh": [
+                -10.88,
+                10.88,
+                20.0
+            ],
+            "freeLength": 23.6712183,
+            "maximumTies": 8,
+            "gridClashesAsPlaced": 1,
+            "gridClashesBestDirections": 0,
+            "directionsForced": false
+        },
+        {
+            "row": 8,
+            "y": 2.69,
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ],
+            "armLow": [
+                -16.32,
+                8.15560917
+            ],
+            "armHigh": [
+                -8.15560917,
+                16.32
+            ],
+            "freeLow": [
+                -20.0,
+                -8.15560917,
+                16.32
+            ],
+            "freeHigh": [
+                -16.32,
+                8.15560917,
+                20.0
+            ],
+            "freeLength": 23.6712183,
+            "maximumTies": 8,
+            "gridClashesAsPlaced": 2,
+            "gridClashesBestDirections": 2,
+            "directionsForced": true
+        },
+        {
+            "row": 9,
+            "y": 5.38,
+            "roots": [
+                0.0,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ],
+            "armLow": [
+                0.0,
+                10.88
+            ],
+            "armHigh": [
+                8.16439083,
+                19.0443908
+            ],
+            "freeLow": [
+                -20.0,
+                8.16439083,
+                19.0443908
+            ],
+            "freeHigh": [
+                0.0,
+                10.88,
+                20.0
+            ],
+            "freeLength": 23.6712183,
+            "maximumTies": 8,
+            "gridClashesAsPlaced": 2,
+            "gridClashesBestDirections": 1,
+            "directionsForced": false
+        },
+        {
+            "row": 10,
+            "y": 8.07,
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ],
+            "armLow": [
+                -16.32,
+                8.15560917
+            ],
+            "armHigh": [
+                -8.15560917,
+                16.32
+            ],
+            "freeLow": [
+                -20.0,
+                -8.15560917,
+                16.32
+            ],
+            "freeHigh": [
+                -16.32,
+                8.15560917,
+                20.0
+            ],
+            "freeLength": 23.6712183,
+            "maximumTies": 8,
+            "gridClashesAsPlaced": 2,
+            "gridClashesBestDirections": 2,
+            "directionsForced": true
+        },
+        {
+            "row": 11,
+            "y": 10.76,
+            "roots": [
+                -10.88,
+                0.0
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ],
+            "armLow": [
+                -10.88,
+                0.0
+            ],
+            "armHigh": [
+                -2.71560917,
+                8.16439083
+            ],
+            "freeLow": [
+                -20.0,
+                -2.71560917,
+                8.16439083
+            ],
+            "freeHigh": [
+                -10.88,
+                0.0,
+                20.0
+            ],
+            "freeLength": 23.6712183,
+            "maximumTies": 8,
+            "gridClashesAsPlaced": 1,
+            "gridClashesBestDirections": 1,
+            "directionsForced": false
+        },
+        {
+            "row": 12,
+            "y": 13.45,
+            "roots": [
+                -16.32,
+                -5.44,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                true,
+                false
+            ],
+            "armLow": [
+                -16.32,
+                -5.44,
+                8.15560917
+            ],
+            "armHigh": [
+                -8.15560917,
+                2.72439083,
+                16.32
+            ],
+            "freeLow": [
+                -20.0,
+                -8.15560917,
+                2.72439083,
+                16.32
+            ],
+            "freeHigh": [
+                -16.32,
+                -5.44,
+                8.15560917,
+                20.0
+            ],
+            "freeLength": 15.5068275,
+            "maximumTies": 5,
+            "gridClashesAsPlaced": 3,
+            "gridClashesBestDirections": 3,
+            "directionsForced": true
+        },
+        {
+            "row": 13,
+            "y": 16.14,
+            "roots": [
+                -10.88,
+                0.0
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ],
+            "armLow": [
+                -10.88,
+                0.0
+            ],
+            "armHigh": [
+                -2.71560917,
+                8.16439083
+            ],
+            "freeLow": [
+                -20.0,
+                -2.71560917,
+                8.16439083
+            ],
+            "freeHigh": [
+                -10.88,
+                0.0,
+                20.0
+            ],
+            "freeLength": 23.6712183,
+            "maximumTies": 8,
+            "gridClashesAsPlaced": 1,
+            "gridClashesBestDirections": 1,
+            "directionsForced": false
+        },
+        {
+            "row": 14,
+            "y": 18.83,
+            "roots": [
+                -16.32,
+                5.44,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false,
+                false
+            ],
+            "armLow": [
+                -16.32,
+                -2.72439083,
+                8.15560917
+            ],
+            "armHigh": [
+                -8.15560917,
+                5.44,
+                16.32
+            ],
+            "freeLow": [
+                -20.0,
+                -8.15560917,
+                5.44,
+                16.32
+            ],
+            "freeHigh": [
+                -16.32,
+                -2.72439083,
+                8.15560917,
+                20.0
+            ],
+            "freeLength": 15.5068275,
+            "maximumTies": 5,
+            "gridClashesAsPlaced": 3,
+            "gridClashesBestDirections": 3,
+            "directionsForced": true
+        }
+    ],
+    "grids": [
+        {
+            "columns": 1,
+            "ties": 15,
+            "columnPositions": [
+                0.0
+            ],
+            "clashesAsPlaced": 10,
+            "clashesBestDirections": 10,
+            "rowsFullyClear": 5,
+            "clearingOffsets": 4,
+            "clearingMeasure": 2.0312,
+            "nearestClearingOffset": 6.785,
+            "widestClearingWindow": 0.99,
+            "verdict": "clears only when translated off the tile centre-line"
+        },
+        {
+            "columns": 2,
+            "ties": 30,
+            "columnPositions": [
+                -10.0,
+                10.0
+            ],
+            "clashesAsPlaced": 24,
+            "clashesBestDirections": 24,
+            "rowsFullyClear": 0,
+            "clearingOffsets": 0,
+            "clearingMeasure": 0.0,
+            "nearestClearingOffset": -1.0,
+            "widestClearingWindow": 0.0,
+            "verdict": "NO rigid translation of this grid clears every row"
+        },
+        {
+            "columns": 3,
+            "ties": 45,
+            "columnPositions": [
+                -13.3333333,
+                0.0,
+                13.3333333
+            ],
+            "clashesAsPlaced": 30,
+            "clashesBestDirections": 26,
+            "rowsFullyClear": 1,
+            "clearingOffsets": 0,
+            "clearingMeasure": 0.0,
+            "nearestClearingOffset": -1.0,
+            "widestClearingWindow": 0.0,
+            "verdict": "NO rigid translation of this grid clears every row"
+        }
+    ],
+    "stations": [
+        {
+            "scheme": "C-0015's 3 x 15 grid, as every flatness claim draws it",
+            "stations": 45,
+            "x": [
+                -13.3333333,
+                0.0,
+                13.3333333,
+                -13.3333333,
+                0.0,
+                13.3333333,
+                -13.3333333,
+                0.0,
+                13.3333333,
+                -13.3333333,
+                0.0,
+                13.3333333,
+                -13.3333333,
+                0.0,
+                13.3333333,
+                -13.3333333,
+                0.0,
+                13.3333333,
+                -13.3333333,
+                0.0,
+                13.3333333,
+                -13.3333333,
+                0.0,
+                13.3333333,
+                -13.3333333,
+                0.0,
+                13.3333333,
+                -13.3333333,
+                0.0,
+                13.3333333,
+                -13.3333333,
+                0.0,
+                13.3333333,
+                -13.3333333,
+                0.0,
+                13.3333333,
+                -13.3333333,
+                0.0,
+                13.3333333,
+                -13.3333333,
+                0.0,
+                13.3333333,
+                -13.3333333,
+                0.0,
+                13.3333333
+            ],
+            "y": [
+                -18.83,
+                -18.83,
+                -18.83,
+                -16.14,
+                -16.14,
+                -16.14,
+                -13.45,
+                -13.45,
+                -13.45,
+                -10.76,
+                -10.76,
+                -10.76,
+                -8.07,
+                -8.07,
+                -8.07,
+                -5.38,
+                -5.38,
+                -5.38,
+                -2.69,
+                -2.69,
+                -2.69,
+                0.0,
+                0.0,
+                0.0,
+                2.69,
+                2.69,
+                2.69,
+                5.38,
+                5.38,
+                5.38,
+                8.07,
+                8.07,
+                8.07,
+                10.76,
+                10.76,
+                10.76,
+                13.45,
+                13.45,
+                13.45,
+                16.14,
+                16.14,
+                16.14,
+                18.83,
+                18.83,
+                18.83
+            ],
+            "maximumDisplacement": 0.0,
+            "meanDisplacement": 0.0
+        },
+        {
+            "scheme": "the same 45, SNAPPED into the room the arms leave",
+            "stations": 45,
+            "x": [
+                -17.665,
+                4.06939083,
+                17.665,
+                -13.3333333,
+                1.345,
+                13.3333333,
+                -17.665,
+                -4.06939083,
+                17.665,
+                -13.3333333,
+                1.345,
+                13.3333333,
+                -17.665,
+                0.0,
+                17.665,
+                -13.3333333,
+                -1.345,
+                13.3333333,
+                -17.665,
+                0.0,
+                17.665,
+                -13.3333333,
+                0.0,
+                13.3333333,
+                -17.665,
+                0.0,
+                17.665,
+                -13.3333333,
+                1.345,
+                13.3333333,
+                -17.665,
+                0.0,
+                17.665,
+                -13.3333333,
+                -1.345,
+                13.3333333,
+                -17.665,
+                4.06939083,
+                17.665,
+                -13.3333333,
+                -1.345,
+                13.3333333,
+                -17.665,
+                -4.06939083,
+                17.665
+            ],
+            "y": [
+                -18.83,
+                -18.83,
+                -18.83,
+                -16.14,
+                -16.14,
+                -16.14,
+                -13.45,
+                -13.45,
+                -13.45,
+                -10.76,
+                -10.76,
+                -10.76,
+                -8.07,
+                -8.07,
+                -8.07,
+                -5.38,
+                -5.38,
+                -5.38,
+                -2.69,
+                -2.69,
+                -2.69,
+                0.0,
+                0.0,
+                0.0,
+                2.69,
+                2.69,
+                2.69,
+                5.38,
+                5.38,
+                5.38,
+                8.07,
+                8.07,
+                8.07,
+                10.76,
+                10.76,
+                10.76,
+                13.45,
+                13.45,
+                13.45,
+                16.14,
+                16.14,
+                16.14,
+                18.83,
+                18.83,
+                18.83
+            ],
+            "maximumDisplacement": 4.33166667,
+            "meanDisplacement": 2.08120511
+        },
+        {
+            "scheme": "the 34 arm TIPS — the only registration the slab supplies",
+            "stations": 34,
+            "x": [
+                -8.15560917,
+                2.72439083,
+                8.15560917,
+                8.16439083,
+                19.0443908,
+                -8.15560917,
+                -2.72439083,
+                8.15560917,
+                8.16439083,
+                19.0443908,
+                -8.15560917,
+                8.15560917,
+                -2.71560917,
+                8.16439083,
+                -8.15560917,
+                8.15560917,
+                -2.71560917,
+                19.0443908,
+                -8.15560917,
+                8.15560917,
+                8.16439083,
+                19.0443908,
+                -8.15560917,
+                8.15560917,
+                -2.71560917,
+                8.16439083,
+                -8.15560917,
+                2.72439083,
+                8.15560917,
+                -2.71560917,
+                8.16439083,
+                -8.15560917,
+                -2.72439083,
+                8.15560917
+            ],
+            "y": [
+                -18.83,
+                -18.83,
+                -18.83,
+                -16.14,
+                -16.14,
+                -13.45,
+                -13.45,
+                -13.45,
+                -10.76,
+                -10.76,
+                -8.07,
+                -8.07,
+                -5.38,
+                -5.38,
+                -2.69,
+                -2.69,
+                0.0,
+                0.0,
+                2.69,
+                2.69,
+                5.38,
+                5.38,
+                8.07,
+                8.07,
+                10.76,
+                10.76,
+                13.45,
+                13.45,
+                13.45,
+                16.14,
+                16.14,
+                18.83,
+                18.83,
+                18.83
+            ],
+            "maximumDisplacement": 2.71560917,
+            "meanDisplacement": 0.0
+        }
+    ],
+    "flatness": [
+        {
+            "placement": "NONE — free tile",
+            "host": "phase 24, eight columns",
+            "stations": 0,
+            "dishingOverStroke": 0.307902368,
+            "flatAtTenPercent": false,
+            "beatsNoCoupling": false,
+            "peakPathForce": 0.0,
+            "peakCrossoverForce": 0.243979305,
+            "peakDuplexShear": 0.17289577
+        },
+        {
+            "placement": "ROOTS — C-0063's own 34, the coupling entering at the hinges",
+            "host": "phase 24, eight columns",
+            "stations": 34,
+            "dishingOverStroke": 0.0706145537,
+            "flatAtTenPercent": true,
+            "beatsNoCoupling": true,
+            "peakPathForce": 2.29825425,
+            "peakCrossoverForce": 1.24568444,
+            "peakDuplexShear": 1.40922674
+        },
+        {
+            "placement": "GRID — C-0015's 3 x 15, as C-0035's ledger draws it",
+            "host": "nominal 8 columns",
+            "stations": 45,
+            "dishingOverStroke": 0.21821335,
+            "flatAtTenPercent": false,
+            "beatsNoCoupling": true,
+            "peakPathForce": 1.94331833,
+            "peakCrossoverForce": 0.150350269,
+            "peakDuplexShear": 0.792514546
+        },
+        {
+            "placement": "GRID — C-0015's 3 x 15 on the arm array's own host",
+            "host": "phase 24, eight columns",
+            "stations": 45,
+            "dishingOverStroke": 0.21821335,
+            "flatAtTenPercent": false,
+            "beatsNoCoupling": true,
+            "peakPathForce": 1.94331833,
+            "peakCrossoverForce": 0.150350269,
+            "peakDuplexShear": 0.792514546
+        },
+        {
+            "placement": "SNAPPED — the same 45 ties, displaced into the room the arms leave",
+            "host": "phase 24, eight columns",
+            "stations": 45,
+            "dishingOverStroke": 0.221863407,
+            "flatAtTenPercent": false,
+            "beatsNoCoupling": true,
+            "peakPathForce": 2.04674761,
+            "peakCrossoverForce": 0.790814397,
+            "peakDuplexShear": 0.911290235
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "the swept arm envelope",
+            "axis": "sample count",
+            "values": [
+                8.0,
+                64.0,
+                4096.0
+            ],
+            "results": [
+                8.16439083,
+                8.16439083,
+                8.16439083
+            ],
+            "departure": 0.0,
+            "note": "exactly sample independent, because the reach is monotone in the stroke"
+        },
+        {
+            "quantity": "the clearing measure of a one-column grid",
+            "axis": "offset samples",
+            "values": [
+                4001.0,
+                40001.0,
+                400001.0
+            ],
+            "results": [
+                2.0,
+                2.03,
+                2.0312
+            ],
+            "departure": 5.91133005E-4,
+            "note": "two of the four windows are 0.0256 nm wide — the pitch-minus-arm gap itself — so the measure is resolved only once the step is well under it"
+        },
+        {
+            "quantity": "dishing/stroke of the snapped 45",
+            "axis": "nested subdivisions 1 c 2 c 4",
+            "values": [
+                1.0,
+                2.0,
+                4.0
+            ],
+            "results": [
+                0.22165454,
+                0.221863407,
+                0.221908297
+            ],
+            "departure": 2.0233107E-4,
+            "note": "nested only, per CLAUDE.md"
+        },
+        {
+            "quantity": "dishing/stroke of the snapped 45",
+            "axis": "dishing sample grid",
+            "values": [
+                41.0,
+                81.0,
+                161.0
+            ],
+            "results": [
+                0.221863407,
+                0.221863407,
+                0.221863407
+            ],
+            "departure": 0.0,
+            "note": "81 is the grid every published dishing in this programme is read on"
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0055",
+            "quantity": "the arm at 34 paths [nm]",
+            "published": 8.164,
+            "here": 8.16439083,
+            "departure": 4.78723665E-5
+        },
+        {
+            "source": "C-0055",
+            "quantity": "the upward root pitch [nm]",
+            "published": 10.88,
+            "here": 10.88,
+            "departure": 0.0
+        },
+        {
+            "source": "C-0055",
+            "quantity": "the EAST inventory at phase 24 [sites]",
+            "published": 53.0,
+            "here": 53.0,
+            "departure": 0.0
+        },
+        {
+            "source": "C-0061",
+            "quantity": "the arm slab floor [nm]",
+            "published": 1.69,
+            "here": 1.69,
+            "departure": 0.0
+        },
+        {
+            "source": "C-0061",
+            "quantity": "the arm slab ceiling [nm]",
+            "published": 3.69,
+            "here": 3.69,
+            "departure": 0.0
+        },
+        {
+            "source": "C-0061",
+            "quantity": "the plan fraction of the array",
+            "published": 0.4626,
+            "here": 0.462648814,
+            "departure": 1.0552032E-4
+        },
+        {
+            "source": "C-0063",
+            "quantity": "the arm count",
+            "published": 34.0,
+            "here": 34.0,
+            "departure": 0.0
+        },
+        {
+            "source": "C-0063",
+            "quantity": "dishing/stroke at the 34 roots",
+            "published": 0.0706,
+            "here": 0.0706145537,
+            "departure": 2.06142774E-4
+        },
+        {
+            "source": "C-0022",
+            "quantity": "dishing/stroke of the free tile",
+            "published": 0.3079,
+            "here": 0.307902368,
+            "departure": 7.6898974E-6
+        },
+        {
+            "source": "C-0058",
+            "quantity": "dishing/stroke at C-0015's 3 x 15",
+            "published": 0.2182,
+            "here": 0.21821335,
+            "departure": 6.11830792E-5
+        },
+        {
+            "source": "C-0035",
+            "quantity": "the tie aperture floor [nm2]",
+            "published": 325.6,
+            "here": 325.6245,
+            "departure": 7.52457002E-5
+        },
+        {
+            "source": "C-0035",
+            "quantity": "the midspan clearance at l = 8 nm",
+            "published": 5.31,
+            "here": 5.31,
+            "departure": 0.0
+        },
+        {
+            "source": "C-0035",
+            "quantity": "the midspan penetration at the desired 10 nm",
+            "published": 4.69,
+            "here": 4.69,
+            "departure": 0.0
+        },
+        {
+            "source": "C-0015",
+            "quantity": "the middle grid column [nm]",
+            "published": 0.0,
+            "here": 0.0,
+            "departure": 0.0
+        }
+    ],
+    "predicates": [
+        {
+            "predicate": "does a REGULAR tie grid share the face with the arm slab?",
+            "value": "clashes at 1 / 2 / 3 columns, best directions: 10 / 24 / 26",
+            "verdict": "NO at every column count"
+        },
+        {
+            "predicate": "can a rigid translation rescue it?",
+            "value": "clearing windows at 1 / 2 / 3 columns: 4 / 0 / 0",
+            "verdict": "ONLY at one column, and only 6.785 nm off the tile centre-line"
+        },
+        {
+            "predicate": "is it the ROOM that refuses them?",
+            "value": "free tie capacity 108 against the 45 demanded",
+            "verdict": "NO — the room is there; it is the registration that refuses them"
+        },
+        {
+            "predicate": "do the arms' OWN tip links clear?",
+            "value": "worst clearance 2.7156091699999996 nm against 1.345 nm demanded",
+            "verdict": "YES, at all 34"
+        },
+        {
+            "predicate": "does SS3's desired 10 nm stroke change the answer?",
+            "value": "an arm of 8.16439083 nm delivers a 3.0 nm stroke: true; a 10 nm one: false",
+            "verdict": "it removes the element rather than moving the clearance — C-0050's kinematic ceiling, from a plan view"
+        }
+    ],
+    "findings": [
+        "The arm slab and a REGULAR tie-down grid cannot share one face. On C-0015's own 3 x 15 grid 30 of 45 ties land on an arm at C-0063's own arm senses and 26 at the best of them; the section makes every one of those level-independent.",
+        "No rigid translation of a two- or three-column grid clears every row. A ONE-column grid does, in 4 windows, the nearest 6.785 nm off the tile centre-line and the widest 0.990000000000002 nm wide.",
+        "The room is not what is missing: the array's free tie capacity is 108 against the 45 demanded, and every one of the fifteen rows carries at least three.",
+        "What refuses them is REGISTRATION. The escape is to displace the ties into the room the arms leave — 45 stations, worst displacement 4.331666666666667 nm — and its price is that the coupling no longer enters on a grid.",
+        "The only registration the slab supplies for free is the arms' OWN tips: 34 ties landing on the arms clear every neighbour by 2.7156091699999996 nm, which is the root pitch minus the arm and is a lattice quantity, not a fitted one.",
+        "The sweep runs the FAVOURABLE way: an arm's plan projection is a cosine, so the swept envelope is the rest footprint identically and a static plan view is conservative at every stroke.",
+        "SS3's desired 10 nm stroke does not change the clearance — it removes the element, because 10 nm exceeds the 8.164 nm arm and a lever is a rotation."
+    ],
+    "parameters": {
+        "armLength": 8.16439083,
+        "armCount": 34.0,
+        "rootPitch": 10.88,
+        "tipGap": 2.71560917,
+        "duplexWidth": 2.69,
+        "edgeX": 40.0,
+        "lengthY": 40.35,
+        "duplexes": 15.0,
+        "phaseBasePairs": 24.0,
+        "standoffLength": 8.0,
+        "acceptableStroke": 3.0,
+        "desiredStroke": 10.0,
+        "mandate": 33.3333333,
+        "freeStroke": 4.90731102,
+        "flatnessTolerance": 0.1,
+        "eastInventory": 53.0,
+        "freeTieCapacity": 108.0,
+        "maximumDisplacement": 4.33166667
+    }
+}

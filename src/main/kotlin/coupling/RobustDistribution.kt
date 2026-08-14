@@ -644,15 +644,32 @@ fun minimaxStiffnessDistribution(
                 for (j in 0 until paths) theta[j] = accepted[j]
                 value = evaluated.first
                 gradient = evaluated.second
+                // Polak-Ribière's numerator is `g·(g − g_prev)`, a difference of nearly equal
+                // vectors once the iteration has settled — so it cancels catastrophically and
+                // `beta` becomes the amplifier that turns an ulp of arithmetic jitter into an
+                // O(1) change of direction and a visibly different terminal point on an optimal
+                // manifold. Two guards, both standard, both needed for a reproducible path: a
+                // periodic restart, and a restart whenever the gradient difference is small
+                // against the gradient itself, which is exactly the cancelling case.
                 var numerator = 0.0
                 var denominator = 0.0
+                var difference = 0.0
                 for (j in 0 until paths) {
-                    numerator += gradient[j] * (gradient[j] - previousGradient[j])
+                    val delta = gradient[j] - previousGradient[j]
+                    numerator += gradient[j] * delta
                     denominator += previousGradient[j] * previousGradient[j]
+                    difference += delta * delta
                 }
-                val beta = if (denominator > 0.0) max(0.0, numerator / denominator) else 0.0
+                val restart = iteration % 10 == 0 ||
+                        difference <= 1e-16 * denominator ||
+                        denominator <= 0.0
+                val beta = if (restart) 0.0 else max(0.0, numerator / denominator)
                 direction = DoubleArray(paths) { -gradient[it] + beta * direction[it] }
                 step = max(trial * 2.0, 1e-6)
+                // The iterate itself is snapped to a lattice, so an ulp of jitter in a step can
+                // only move it where it would otherwise cross a cell — the same discipline as
+                // rounding a decision, applied to the state the decisions accumulate into.
+                for (j in 0 until paths) theta[j] = Math.round(theta[j] * 1e6) / 1e6
                 val weights = DoubleArray(paths) { exp(theta[it]) }
                 val here = truth(weights)
                 if (searchDecision(here) < searchDecision(bestTruth)) {

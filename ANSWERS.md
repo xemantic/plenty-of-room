@@ -22,10 +22,17 @@ Three findings dominate, and none of them is a stiffness number.
 1. **The tile is not a rigid plate, and the picture has to go.** It is rigid *exactly* under a uniform load —
    at any flexural rigidity — and dishes under every departure from uniformity, including the unavoidable one
    at 300 K. A point-coupled lever and an area-averaging charge sensor **do not measure the same displacement**;
-   they differ by **32 %** of the stroke, and that part is **irreducible** — it is forced by the tile's own
-   electrostatic edge, which no coupling choice can remove. §4(g)'s own test for abandoning the rigid-plate
-   assumption is met, and met by a load nobody chose.
-   (`C-0006`, `C-0009`, `C-0022`, `CH-0005`, `CH-0025`.)
+   the *free* tile dishes **32 %** of the stroke under the solved electrostatic load, and a *uniform* coupling
+   does not remove it. §4(g)'s own test for abandoning the rigid-plate assumption is met, and met by a load
+   nobody chose.
+   **CORRECTED, iteration 12** — this passage read *"that part is **irreducible** — it is forced by the tile's
+   own electrostatic edge, which no coupling choice can remove"*, and that is no longer true. `C-0022`'s 32 %
+   is what survives a **perfectly distributed** coupling, and a perfectly distributed coupling is not the best
+   one: at the *same* 33.3333 pN/nm total, **distributing** it across `C-0015`'s 45 stations reaches **0.0753**
+   of the stroke (`C-0058`) and **placing** 34 **equal** springs on `C-0055`'s upward lattice reaches
+   **0.0706** (`C-0063`) — both inside `T-5b`'s 0.10, against **0.3079** for the same tile carrying no
+   coupling at all. What is irreducible is the **load**: the rim gains force, and no coupling changes that.
+   (`C-0006`, `C-0009`, `C-0022`, `CH-0005`, `CH-0025`; corrected by `C-0058`, `CH-0071`, `C-0063`.)
 2. **The polymer layer confines the tile in one direction only.** Its lateral restoring stiffness is *exactly*
    zero by symmetry — not small — so an untethered tile diffuses 63 nm in one 1 kHz period, 21× the positional
    predicate. It also exerts no upward force above `L₀`, so at zero bias the tile is unconfined in **both**
@@ -53,6 +60,9 @@ Three findings dominate, and none of them is a stiffness number.
 duplex** — each a duplex standoff in series
    with a **13-nucleotide tuned ssDNA spacer**, supplies it: it *places* the operating point on its secant and
    *stabilises* it on its tangent, at 2.2 pN per load path against a 10 pN allowable.
+   That element is `C-0017`'s `K2` and it is **not the committed design** — it is one-sided, which is exactly
+   what `C-0023` had to replace (a single strand carries no compression), and `C-0041`'s plan view admits
+   only **15** of its 45 members. The committed element is the two-sided coupled-standoff flexure below.
    **The design window is not empty.**
    The margin at §3's own 2 mM is 1.19–1.42×, inside its own mean-field error, so the verdict is
    *not excluded*, never established — and dropping to 0.5 mM buys six times more.
@@ -70,9 +80,20 @@ duplex** — each a duplex standoff in series
    that law over 216 states, the 10 nm / 2 mM bias margin collapses to **1.0000–1.0019** — the device is
    placed *on* its own fold — and the fold's stroke walks back from 3.41–4.13 nm to **2.80–3.17 nm, through
    §3's own 3 nm target at two of six layer models**. Both escapes are priced and both fail: the adverse
-   mounting is 42.4–61.0 pN/nm, past the 40 pN/nm compliance ceiling at **0 of 8** lengths, and a shorter
-   standoff lands 2.2 % short. At **0.5 mM every predicate clears** (1.44–5.93× on stiffness, 1.038–2.327× on
-   bias).
+   mounting is **42.38–61.04 pN/nm** (**CORRECTED, iteration 12** — read *"42.4–61.0"*, which is `C-0032`'s
+   figure rounded and was the one number in this file that appeared in no claim at all), past the 40 pN/nm
+   compliance ceiling at **0 of 8** lengths, and a shorter standoff lands 2.2 % short. At **0.5 mM every
+   predicate clears** (1.44–5.93× on stiffness, 1.038–2.327× on bias).
+   Two qualifications on that paragraph, both from later claims and neither moving the verdict.
+   The **40 pN/nm ceiling has since been withdrawn** — `C-0049` shows it is exactly `1.2 ×` a *placement*
+   mandate and carries the placement stroke inside it — so the adverse mounting no longer fails on *that*
+   ground; it fails on `C-0035`'s, which is that both adverse mountings **cannot place §3's own effort point**
+   at all. And the **22.88 pN/nm minimum is read at a 4.55 nm stroke the placed device never occupies**: read
+   over `[0, s*]`, the range the convention `C-0049` settles asks for, the same flexure is **25.227 pN/nm**
+   and clears **4 of `C-0017`'s 6** model floors at §3's own 2 mM, where the prescribed-range minimum clears
+   none. `C-0032`'s **1.0000–1.0019** is nevertheless the standing statement — `C-0051` composed `C-0033`'s
+   collar beside it at `C-0018`'s own fold and got **−8.40 to −11.06 pN/nm**, the collar recovering only
+   **27–49 %** of what the element costs (`CH-0063`).
    **So 0.5 mM is no longer the comfortable choice with 2 mM still defensible — it is a requirement of the
    only coupling that survives.** That is a *specification* decision for NDI, and it is handed back as one
    rather than adopted here.
@@ -93,7 +114,13 @@ duplex** — each a duplex standoff in series
    since iteration 4 (a kinematic ceiling and a validity ceiling), and at all 61 grid points **neither
    binds**, by 1.71–3.11×.
    **So a `(σ, L₀)` window is the wrong object for the Gen-1 decision, and the deliverable is now a height
-   plus five specification questions** — of which only a taller layer can buy the desired stroke.
+   plus five specification questions** — `T-63` (the buffer), `T-95` (the superstructure), `T-102` (the tile
+   area), `T-112` (which device §3's desired clause names) and `T-115` (a 17–26 nm layer), of which only
+   `T-115`, a taller layer, can buy the desired stroke. They are stated as questions in §5 below.
+   **Coverage, stated so it is not mistaken for a verdict:** `C-0051` re-synthesises against `C-0031`–`C-0050`
+   and `CH-0043`–`CH-0062`. **Iterations 8–11 — `C-0052`–`C-0064` and `CH-0065`–`CH-0077` — have not been
+   re-synthesised into the window.** Nothing in them is a function of `σ` on inspection, which is why no edge
+   is expected to move; but that is an expectation and not a re-run.
    (`C-0027`, `C-0051`.)
 
 And the shape of the whole problem, which no single number shows: **static stability wants the thin layer,
@@ -117,9 +144,18 @@ The **joint** is now solved rather than bracketed: the two standoff springs are 
 with the other load zero, and the off-diagonal they dropped is not a compliance but a **draw-in the standoff
 supplies** — 3.09× the demand it was set against, so the flexure runs in **compression** rather than tension
 and the buckling margin rises **1.41 → 2.18×** (1.64× on the measured rigidity).
-**But that supply is odd where the demand is even, so the coupling's law is no longer odd and its sign is
-decided by which body carries the standoffs** — worth the difference between a window and none, free to a
-builder, and §3 does not say which.
+**But that supply is odd where the demand is even, so the coupling's law is no longer odd and its sign is a
+mounting choice** — worth the difference between a window and none, and free to a builder.
+**CORRECTED, iteration 12** — this read *"its sign is decided by which body carries the standoffs … and §3
+does not say which"*, and `C-0035` (`T-75`) has settled both halves. The sign is a **product of two
+binaries**, base body **and** standoff normal, so *"which body"* decides nothing on its own: of the four
+mountings exactly two are favourable, **one with each body**. And it is a **determination**, not a
+specification gap — of the two favourable mountings one puts the flexure inside the actuation gap, where the
+array alone occupies **37–85 %** of the layer's own volume and sits at or below the electrode at §3's 5 and
+7 nm layers, so **the survivor is unique**: standoff bases on the **output superstructure**, standoffs
+pointing **away** from the tile, flexure **outboard**, each midspan tied back **down** through its own ground
+to the tile. What `T-75` handed on is a *different* question, and it is a real one — whether that
+superstructure may be **perforated** (`T-95`, open question 6 below).
 The base is now specified rather than assumed: a **single** crossover buckles at every length, and the base's
 **orientation** is worth 9.65×, because two crossovers react a moment as a couple and a couple has an axis.
 (`C-0023`, `C-0025`, `C-0028`, `CH-0027`, `CH-0031`, `CH-0037`, `CH-0038`.)
@@ -130,6 +166,15 @@ nucleotides, and the optimum is a scaffold excursion — but that a duplex **end
 termini**, so its base is a hinge with a lever arm bounded by the duplex's own radius, 1.0 nm, against the
 1.345 nm the design needs. A couple goes as the square, so the base is **3.34× short of a hard ceiling**, and
 the two links lie on a chord, leaving one axis free — **which is the axis the column buckles about**.
+**QUALIFIED, iteration 12.** `C-0057` (`T-71`) has since checked the *dihedrals* rather than the phosphate
+distances, and they **do not close at any of the three reported optima** — `C-0029`'s single junction 0 of 4
+links, `C-0042`'s pair 1 of 8, `C-0052`'s trio 2 of 6, four of the eighteen excluded by a closed-form reach
+bound at **no torsion whatever**. *"A 90° routing exists"* survives and **the reported routing does not**
+(`CH-0070`): a census of all **69 120** placements on `C-0029`'s own grid finds **3 546** closing on distance
+and **18 of the 100 solved** closing at torsion level, at gaps around **0.690 nm** in the *interior* of the
+measured window — where a distance-minimising objective never looks. `C-0059` then re-derived the junctions
+on the feasible set and `C-0062` found the truss cap's trio does close, at every one of 21 configurations,
+so **the truss branch is open rather than closed** and the routing question is a live one.
 **What survived at the time was a crossover-hinge flexure instead: `E5g16`, a 12.24 nm = 36 bp guided arm on
 16 antiparallel crossovers**, 2.04 pN per crossover against a 10 pN allowable, **with no member in axial
 compression and no 90° junction anywhere in the design**. (`C-0029`, `CH-0039`, `CH-0040`.)
@@ -197,7 +242,7 @@ convention errors cancelled (`CH-0020`).
 | # | Task | Leaf | Verdict | Claim |
 |---|---|---|---|---|
 | 1 | Stiffness of the polymer layer | `A2.1` | **PASS**, then **superseded twice** | `C-0001` → `C-0003` → `C-0011` |
-| 2 | Feasible design window | `A2.1` | **PASS** — non-empty at 7 and 10 nm, empty at 5 nm; P2 closed by `C-0017` | `C-0016`, `C-0017` |
+| 2 | Feasible design window | `A2.1` | **PASS** — non-empty at 7 and 10 nm, empty at 5 nm; `P2` closed by `C-0017` **for the affine mandate, and it FAILS for the coupling the programme actually has** (`C-0032`'s 1.0000–1.0019 at 2 mM; every predicate clears at 0.5 mM) | `C-0016`, `C-0017`, `C-0032`, `C-0051` |
 | 3 | Stroke and blocking force vs bias | `A2.2` | **PASS** — reachable, but the operating point is not holdable | `C-0008`, `C-0012` |
 | 4 | Electrostatic softening and pull-in | new | **PASS** — both branches answered, each for a different load line | `C-0018`, `CH-0017` |
 | 5 | Load distribution across the origami | `A1.2` | **PASS** | `C-0006`, `C-0009` |
@@ -218,7 +263,8 @@ three iterations was about a structure it does not have.
 
 Stiffness is **not a single number at the resting height** and never was: the strong-stretching pressure
 vanishes quadratically at `L₀`, so three of six models give exactly zero there.
-Quote it at a stated compression. At the working point, 47.7–64.1 pN/nm over the 40 × 40 nm tile.
+Quote it at a stated compression. At the working point, 47.7–64.1 pN/nm over the 40 × 40 nm tile —
+a number owned by `C-0010` (its tangent at 100 pN), not by any of the three claims in the row above.
 
 ### Task 2 — the design window
 
@@ -238,11 +284,16 @@ In the first-moment convention the same layer is ~8–9 kDa.
 yet separated the definitional part from the physical.
 
 Then the shape changes.
-**Seven of the eleven axes this programme discovered are not functions of grafting density at all** — flatness
+**Ten of the twelve axes this programme discovered are not functions of grafting density at all** — flatness
 (45 attachments as 3 × 15, against 56 crossovers), the usable bias window, and the output-coupling stiffness.
 They cannot narrow a window; they can only close a height.
+(**CORRECTED, iteration 12** — this read *"Seven of the eleven"*, which is `C-0027`'s iteration-4 census.
+`C-0051` re-ran it after three more iterations and the count is **ten of twelve**: three axes were added as
+counts and plan layouts, one **left** the stack entirely, and one is a specification question.)
 So a `(σ, L₀)` window is the wrong object for the Gen-1 decision, and the two axes that *do* resolve in `σ`
-both survive: the peak per-load-path force is 3.9–8.9 pN against a 10 pN unzip allowable everywhere inside the
+both survive: the peak per-load-path force is 3.9–8.9 pN — the min and max of `C-0016`'s own two-window,
+two-registration table (7 nm 3.90–6.90, 10 nm 4.04–8.90 pN), a range no claim states as such —
+against a 10 pN unzip allowable everywhere inside the
 window — **the exceedance `C-0015` found is unreachable, because the solved layer is never as soft as the soft
 end of its sweep** — and **lateral confinement is no longer a footprint cost**.
 With the in-plane load path solved rather than stood in for, a tether **aligned with the helices** carries a
@@ -272,7 +323,10 @@ What a DNA lever cannot easily be is *compliant* enough: forty-five duplexes in 
 148× too stiff, and the element that closes the task is a 10–19 nt ssDNA spacer carrying **99.6 %** of each
 path's compliance.
 The margin at 2 mM is 1.19–1.42× against a 123–214 % mean-field error, so this is **not excluded rather than
-established**, and `T-1f` — bounding that error — is now the binding uncertainty in the programme.
+established**, and `T-50` — bounding that error — is the binding uncertainty in the programme.
+(**CORRECTED, iteration 12** — this named `T-1f`. `T-1f` is done (`C-0019`) and `CH-0019` is the reason it
+does not help: it bounds the **polymer** one-loop correction, which acts on the other term of `k_eff`, at
+≤ 9.4 %. The 123–214 % is the **electrostatic** expansion, and only `T-50` reaches it.)
 
 Two further findings travel with it.
 **The bias ceiling has to be quoted with the load it was evaluated at**: `C-0012`'s 0.02–0.1 V is a property of
@@ -388,6 +442,10 @@ and the layer never allows it. Controlled PB begins only above 12.9 nm.
 Drainage is a *footprint* problem, not a thickness problem — the thickness cancels and `τ ∝ L²` in the tile
 edge — and a **denser** layer drains *faster*, so the binding direction is dilution.
 The design would have to leave the poroelastic model's own domain of validity before poroelasticity could bind.
+One later charge against it, and it does not bind either: `C-0055`'s 34 upward arms add **9.1 %** of the
+total drag, taking the nominal corner 91.2 → **82.9 kHz** and the worst §4(d) margin **22.81× → 20.73×**
+(`C-0061`). The arms are on the tile's dry `+z` face, so `C-0004`'s squeeze film is untouched by
+construction.
 
 ### Task 8 — positional variance
 
@@ -429,13 +487,8 @@ Three DNA elements deliver it, and the eight substrate tethers `C-0021` needed l
 | (c) | Porosity and ion partitioning | **The sign in the question is backwards.** The layer *excludes* 23–48 % of the salt, so it **lengthens** the local Debye length by 1.14–1.39× and **protects** the field rather than screening it away. It also *amplifies* `F_es` by 1.15–1.60×. The dielectric-decrement mechanism named in §4(c) is a 3.9 % effect — the layer is 97 % water. **The bound is one-sided** (exclusion only); cation coordination by PEG's ether oxygens could flip it, and no binding constant exists in accessible literature. |
 | (d) | Poroelasticity | **Not binding**, with the boundary named. See Task 7. |
 | (e) | Screening | See Task 6. The force's own decay length is **1.8–2.8 nm** at the working gap — not the 4 nm bulk Debye length, and it is bias-dependent. Leaf `A2.2`'s low-screening operating point is **vindicated twice**: at 10 mM the 100 pN target is unreachable at 7 and 10 nm, at 0.5 mM it is reached even at 10 nm. |
-| (f) | Structural survival | The **35–60 pN band is not a per-load-path allowable** — it is a whole-cross-section disassembly force at a stated loading rate, and a DNA rupture force without a loading rate is not a material constant. Per path use duplex shear (~48–65 pN) or unzip (10–15 pN), 65 pN a hard ceiling. **Three load paths clear 35 pN, eleven clear 10 pN — and 45 (as 3 × 15, not 64 as 8 × 8) are needed for flatness, against 56 crossovers.** A rigid anchor is carried by its **two nearest crossovers and essentially nothing else**, so an equal-share figure understates the peak by 2.3–7.6× **out of plane** — but inside the actual design window the peak is 3.9–8.9 pN against a 10 pN unzip allowable, so **the exceedance is unreachable there**. **The exact-zero load path of a one-row-per-duplex grid survives a realistic load with 20× to spare**
-(`C-0026`): under the edge profile `T-3b` actually solved it restores 0.150 pN (0.332 worst case) against a
-2.222 pN static share, and what breaks it is attachment-stiffness scatter at 0.883 pN per unit relative
-amplitude — even a coupling with every second path at 1 % of nominal stays 12× clear of unzip.
-So the crossover path never becomes binding for a distributed coupling, out of plane as well as in.
-**In plane the factor is different in kind**: a lateral tether collects nothing from the layer, so the peak is a *fraction* of its own tension — `η = 1.0000` aligned with the helices, up to 2.33 misaligned, and the staple layout is worth **exactly nothing** on the binding path (`C-0020`). ~~**And the desired stroke puts a floor under the path count**: at 10 nm the mandated coupling delivers 333 pN, so the 10 pN unzip allowable alone needs **≥ 34 load paths**, a fourth and tightest route to 45 (`C-0025`).~~ **WITHDRAWN by `CH-0059`/`C-0049`.** The 34 is not a material property but a property of the **placement convention**: it is `33.333 × 10/10`, i.e. §3's *desired* stroke read on a coupling placed for its *acceptable* one, and the same allowable gives **10** under the other reading. The per-path ceiling it derives from is `n·allowable/s`, a bound on a **force**, so it *tightens* as `1/s` — 150 → 45 pN/nm at 45 paths, and 50 → **15** at the 15 paths `C-0041` shows the tile actually carries. **And the per-path allowable is itself a function of the bonded length** (`C-0024`, `CH-0029`): 48 pN is Strunz's **30 bp** number, while a realistic 16 bp staple extension gives 34.8 pN and an 8 bp one 18.8. **What a tether bonds to is a sequence-design choice, and it is worth more than the sheet is** — the sheet's answer is pure arithmetic (a bond spanning `m` duplexes enters at exactly `1/m`, floor `1/D`, ceiling 720 pN), while the joint moves ×2.5 over the realistic 8–20 bp range, and **splitting a bond across two duplexes wins above a 14.3 bp total bonded length and loses below it**. |
-| (g) | Does the tile stay flat? | **No, and the irreducible part is now a number.** Rigid *exactly* under a uniform load at any rigidity, and dishing 26–369 % of the stroke under every departure. The part that **cannot be designed away** is the electrostatic edge effect, now solved in 2-D (`C-0022`): the rim *gains* load rather than losing it, and the dishing it forces is **32 % of the stroke**, and **45 attachments is the count at which further attachments stop buying flatness, not the count at which the tile becomes flat** — under the solved load the dishing saturates at 0.149 of the stroke between 45 and 225 attachments (`CH-0034`) (21–44 % over the foundation sweep, 30–32 % on the discrete lattice). So the lever and the area-averaging sensor differ by **32 % of the stroke whatever the coupling does** — `C-0012`'s 11 %–369 % band was a statement about the number of attachments, which is a design choice; this is not. §4(g)'s own criterion for abandoning the rigid-plate picture is met, and met by a load nobody chose. **REVISED, iteration 9 (`C-0058`): it CAN be made flat, and the axis is the coupling's *distribution* rather than its size.** `C-0017`'s mandate is an equality on a **sum**, and every claim above shares it equally between the paths. Freeing that — same 33.3333 pN/nm, same 45 attachments, same solved load — gives **0.0753** of the stroke under a one-parameter rule (*the 34 stations within 6.7 nm of an edge carry 5× the other 11*) and **0.0544** under a full optimisation, both inside `T-5b`'s 10 %, at 2.762 pN per path against a 10 pN allowable. **So 0.149 is where the equal-spring family saturates, not a floor** (`CH-0071`). Three qualifications travel with it: it is owed at **one operating state** (the same design dishes 0.187 at the 2 nm gap, where the uniform coupling gives 0.071, and no distribution found is flat at all five); it needs **three attachment columns**, which `C-0041`'s packing forbids (at the buildable 1 × 15 the axis buys 13 % and the coupling is still 1.96× worse than none); and the 5:1 per-path ratio **can** be built but the array **cannot** be placed. **`C-0060` (`T-122`, iteration 10)**: all seven settings of the five catalogue elements reach both levels — one base pair is 1.0–19.1 % of a level's own stiffness against a flat ratio window measured at `3.5 ≤ R ≤ 20`, i.e. 25× finer than the requirement, where `C-0023`'s *preload* quantum was 8.3× coarser than its own, because a preload is a length and a stiffness is a **power** of a length — and all fourteen built designs are flat (0.0715–0.0815). The mandate survives only because it is a **sum**: rounding the two levels independently misses `C-0017`'s equality by up to 5.44 %, recovered to `1.3e−4` by moving individual paths one base pair, at the price of 3–4 distinct staple lengths. The tolerance is a **threshold**, 34.6 % relative scatter (`T-45` is still unmeasured), 2.04× `C-0026`'s break-even. **What fails is the placement**: `k ∝ span^(−3)` makes the soft level 1.71× the longer member, so `C-0030`'s interior span is 52.36 nm on a 40 nm tile and six of seven elements place 0–30 of the 45 stations — `C-0041`'s obstruction unchanged and made worse (`T-127`). One free improvement: the best one-parameter ratio at the same collar is **7, not 5** (0.0653 against 0.0753). |
+| (f) | Structural survival | The **35–60 pN band is not a per-load-path allowable** — it is a whole-cross-section disassembly force at a stated loading rate, and a DNA rupture force without a loading rate is not a material constant. Per path use duplex shear (~48–65 pN) or unzip (10–15 pN), 65 pN a hard ceiling. **Three load paths clear 35 pN, eleven clear 10 pN — and 45 (as 3 × 15, not 64 as 8 × 8) are the flatness count, against 56 crossovers** (read *"are needed for flatness"* until iteration 12; `CH-0034` is the correction — 45 is where further attachments **stop buying** flatness, not where the tile becomes flat, and row (g) below carries what does). A rigid anchor is carried by its **two nearest crossovers and essentially nothing else**, so an equal-share figure understates the peak by 2.3–7.6× **out of plane** — but inside the actual design window the peak is 3.9–8.9 pN against a 10 pN unzip allowable, so **the exceedance is unreachable there**. **The exact-zero load path of a one-row-per-duplex grid survives a realistic load with 20× to spare** (`C-0026`): under the edge profile `T-3b` actually solved it restores 0.150 pN (0.332 worst case) against a 2.222 pN static share, and what breaks it is attachment-stiffness scatter at 0.883 pN per unit relative amplitude — even a coupling with every second path at 1 % of nominal stays 12× clear of unzip. So the crossover path never becomes binding for a distributed coupling, out of plane as well as in. **In plane the factor is different in kind**: a lateral tether collects nothing from the layer, so the peak is a *fraction* of its own tension — `η = 1.0000` aligned with the helices, up to 2.33 misaligned, and the staple layout is worth **exactly nothing** on the binding path (`C-0020`). ~~**And the desired stroke puts a floor under the path count**: at 10 nm the mandated coupling delivers 333 pN, so the 10 pN unzip allowable alone needs **≥ 34 load paths**, a fourth and tightest route to 45 (`C-0025`).~~ **WITHDRAWN by `CH-0059`/`C-0049`.** The 34 is not a material property but a property of the **placement convention**: it is `33.333 × 10/10`, i.e. §3's *desired* stroke read on a coupling placed for its *acceptable* one, and the same allowable gives **10** under the other reading. The per-path ceiling it derives from is `n·allowable/s`, a bound on a **force**, so it *tightens* as `1/s` — 150 → 45 pN/nm at 45 paths, and 50 → **15** at the 15 paths `C-0041` shows the tile actually carries. **And the per-path allowable is itself a function of the bonded length** (`C-0024`, `CH-0029`): 48 pN is Strunz's **30 bp** number, while a realistic 16 bp staple extension gives 34.8 pN and an 8 bp one 18.8. **What a tether bonds to is a sequence-design choice, and it is worth more than the sheet is** — the sheet's answer is pure arithmetic (a bond spanning `m` duplexes enters at exactly `1/m`, floor `1/D`, ceiling 720 pN), while the joint moves ×2.5 over the realistic 8–20 bp range, and **splitting a bond across two duplexes wins above a 14.3 bp total bonded length and loses below it**. |
+| (g) | Does the tile stay flat? | **No, and the irreducible part is now a number.** Rigid *exactly* under a uniform load at any rigidity, and dishing 26–369 % of the stroke under every departure. The part that **cannot be designed away** is the electrostatic edge effect, now solved in 2-D (`C-0022`): the rim *gains* load rather than losing it, and the dishing it forces is **32 % of the stroke**, and **45 attachments is the count at which further attachments stop buying flatness, not the count at which the tile becomes flat** — under the solved load the dishing saturates at 0.149 of the stroke between 45 and 225 attachments (`CH-0034`) (21–44 % over the foundation sweep, 30–32 % on the discrete lattice). So the lever and the area-averaging sensor differ by **32 % of the stroke whatever the coupling does** — `C-0012`'s 11 %–369 % band was a statement about the number of attachments, which is a design choice; this is not. §4(g)'s own criterion for abandoning the rigid-plate picture is met, and met by a load nobody chose. **REVISED, iteration 9 (`C-0058`): it CAN be made flat, and the axis is the coupling's *distribution* rather than its size.** `C-0017`'s mandate is an equality on a **sum**, and every claim above shares it equally between the paths. Freeing that — same 33.3333 pN/nm, same 45 attachments, same solved load — gives **0.0753** of the stroke under a one-parameter rule (*the 34 stations within 6.7 nm of an edge carry 5× the other 11*) and **0.0544** under a full optimisation, both inside `T-5b`'s 10 %, at 2.762 pN per path against a 10 pN allowable. **So 0.149 is where the equal-spring family saturates, not a floor** (`CH-0071`). Three qualifications travel with it: it is owed at **one operating state** (the same design dishes 0.187 at the 2 nm gap, where the uniform coupling gives 0.071, and no distribution found is flat at all five); it needs **three attachment columns**, which `C-0041`'s packing forbids (at the buildable 1 × 15 the axis buys 13 % and the coupling is still 1.96× worse than none); and the 5:1 per-path ratio **can** be built but the array **cannot** be placed. **`C-0060` (`T-122`, iteration 10)**: all seven settings of the five catalogue elements reach both levels — one base pair is 1.0–19.1 % of a level's own stiffness against a flat ratio window measured at `3.5 ≤ R ≤ 20`, i.e. 25× finer than the requirement, where `C-0023`'s *preload* quantum was 8.3× coarser than its own, because a preload is a length and a stiffness is a **power** of a length — and all fourteen built designs are flat (0.0715–0.0815). The mandate survives only because it is a **sum**: rounding the two levels independently misses `C-0017`'s equality by up to 5.44 %, recovered to `1.3e−4` by moving individual paths one base pair, at the price of 3–4 distinct staple lengths. The tolerance is a **threshold**, 34.6 % relative scatter (`T-45` is still unmeasured), 2.04× `C-0026`'s break-even. **What fails is the placement**: `k ∝ span^(−3)` makes the soft level 1.71× the longer member, so `C-0030`'s interior span is 52.36 nm on a 40 nm tile and six of seven elements place 0–30 of the 45 stations — `C-0041`'s obstruction unchanged and made worse (`T-127`). One free improvement: the best one-parameter ratio at the same collar is **7, not 5** (0.0653 against 0.0753). **REVISED AGAIN, iteration 11, and this is where the row now stands (`C-0063`, `T-125`): the tile is made flat by the PLACEMENT, with EQUAL springs, and the distribution is not needed at all.** Sweeping the row phases of `C-0055`'s own 34 upward roots — **1 144 858** placements evaluated, the winner found by an *exhaustive* enumeration of the **361 584** centro-symmetric ones — reaches **0.0706** of the stroke under the same solved load, against **0.3079** for no coupling at all (**4.36×** better), **0.4156** for `C-0055`'s own greedy placement, and `C-0058`'s **0.0753** on a 3 × 15 grid `C-0041`'s packing does not supply. Two cheap bounds did it: `3a + 2(15 − a) = 34` forces **exactly four rows of three**, and `2c ≡ 0 (mod 10.88 nm)` admits a symmetric placement at **exactly 2 of the 32 phases, 8 and 24** — the winner is at 24. **On those stations `C-0058`'s rim rule REVERSES SIGN** (0.0706 uniform against 0.1410 at ×2 and 0.2214 at ×5) and the 34-parameter optimum wants a peak ratio of only **1.30**. Cost 2.298 pN in the worst path (3.4× clear of unzip), 1.246 pN in the worst crossover — **8.3×** the 3 × 15 grid's, still 8× clear. **And a flatness verdict must be quoted with the operating state it is read at** (`C-0064`, `CH-0077`): no distribution is flat at all five of `C-0022`'s solved states — a real minimax reaches **0.1247**, still 1.25× outside — because the 2 nm state's dishing field is **anti-parallel** to every other's (cosine −0.943 to −1.000), it being the only one of 21 whose finite tile carries *less* force than a 1-D pressure. **But the five states are four devices**, and over the range each device actually traverses the minimax is **0.0372 / 0.0436 / 0.0619 / 0.0500 — all four inside `T-5b`'s 0.10.** `C-0063`'s placement is reported at **one** state, and whether it is flat over a range is `T-129`, open. |
 
 ---
 
@@ -447,7 +500,7 @@ So the crossover path never becomes binding for a distributed coupling, out of p
 | Premises checked against the material | The semidilute premise **failed** (`CH-0001`); the Darcy premise **failed** where it did not change the verdict (`C-0004`); strong stretching is outside its own premise (`CH-0003`); `χ ≈ 0.45` turned out to have **no primary source at all** (`C-0007`). |
 | Method justified against cost, cheap bound first | SCF numerics deferred twice on the stated ground that it would be *"calibrating to a guess"*, and bought only once the interaction was anchored in measurement (`T-1d`). MD declined for the Hofmeister effect because it would be *worse* than the existing measurement, not merely dearer (`C-0007`). Explicit-ion MC costed at 1–3 weeks and not run (`C-0005`). `T-15` built an in-plane *sibling* lattice rather than adding degrees of freedom to the out-of-plane one, on the ground that the two decouple exactly for a flat sheet and merging them would have forced re-verification of four published claims for a change that cannot move them. `T-19` bounded all four entry topologies by a cut-equilibrium pigeonhole before assembling a matrix, which settled two of them outright and redirected the footprint question from the lattice to the literature — where its answer was. |
 | Validity ranges travel and are respected | `C-0008` is handed to `T-3` with an explicit may/may-not list; `C-0004` is parameterised by a stiffness that was being re-derived concurrently. |
-| Disagreement raised as a challenge, not an overwrite | Twenty-nine challenges in [`gpd/challenges/`](gpd/challenges/). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
+| Disagreement raised as a challenge, not an overwrite | **Sixty-nine** challenges in [`gpd/challenges/`](gpd/challenges/), against **sixty** claims (**CORRECTED, iteration 12** — this row read *"Twenty-nine"*, which was the count at iteration 4). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
 | Model-consistent vs measured maintained | Every claim header carries it; no `PASS` in this repository asserts measurement. |
 | A feared effect chased down and *dissolved* rather than carried | The "grafted `χ` ≈ 0.60", once thought 239× the salt effect, turned out to be `1.2 × ½` assembled from an abstract, against a model whose own theta is 0.696, for the wrong geometry and the wrong observable (`C-0013`, `CH-0012`). |
 | Unanswerable questions stated plainly | The Mg²⁺/PEG binding constant does not exist in accessible literature (`P-8`); the crossover hinge constant is a fitted model input (`T-9`); leaf `A1.2`'s CI is **not discharged** rather than approximated; the intermediate-coupling regime has no systematic theory and the sources say so themselves. |
@@ -466,8 +519,14 @@ So the crossover path never becomes binding for a distributed coupling, out of p
 - **A compression measurement of a PEG brush *inside* the Gen-1 grafting window.** None exists. `P-9` bounds
   the bulk-versus-brush `χ` difference at `|Δχ| ≤ 0.053` from *denser* layers, so the bound comes from above
   and assumes monotonicity in grafting density.
-- **Two paywalled papers** would close the only genuinely missing measurements. This is an access limit, not a
-  compute limit, and it is the first thing this programme has needed that the machine cannot supply.
+- **One paywalled paper** would close the last genuinely missing measurement of `P-6` — Boucher & Hines,
+  *J. Polym. Sci. Polym. Phys. Ed.* **14**:2241 (1976), the only study that measured Group II chlorides
+  against PEO. This is an access limit, not a compute limit, and it is the first thing this programme has
+  needed that the machine cannot supply.
+  (**CORRECTED, iteration 12** — this read *"Two paywalled papers"*. The second, Lee et al.,
+  *J. Phys. Chem. B* **116**:7367 (2012), **was obtained free** from NIST's public repository, because two of
+  its coauthors are federal staff; Unpaywall and OpenAlex both reported it `closed` and both were wrong.
+  `P-8`'s Mg²⁺/PEG constant is the bullet above, and it may not exist at all rather than be paywalled.)
 
 ---
 
@@ -477,11 +536,17 @@ So the crossover path never becomes binding for a distributed coupling, out of p
   would settle it is a field-theoretic (complex-Langevin) simulation, costed at weeks; the nearest published
   substitute is paywalled with no repository copy. **The bracket is ≤ 9.4 % on stiffness, so nothing turns on
   it.** (`C-0019`.)
-- **Whether `C-0018`'s pull-in bias itself moves.**
-  The polymer softening and the finite-tile enhancement cancel at the fold to within the collar gradient's own
-  difference-scheme spread — the coupled tangent runs −2.5 to +4.0 pN/nm. This is not a missing measurement:
-  `T-3b`'s own solver, run on the equilibrium path rather than at six sampled gaps, would settle it (`T-60`).
-  It is the only unresolved margin left that a cheap calculation can close. (`C-0027`.)
+- ~~**Whether `C-0018`'s pull-in bias itself moves.**~~ **ANSWERED — `C-0033` (`T-60`), iteration 5, and this
+  bullet should have left the list then.**
+  `T-3b`'s own solver was run on the equilibrium path, so `d ln μ/dh` is a derivative rather than a
+  three-scheme band: **0.01763–0.02011 nm⁻¹** at the 10 nm folds, converged to 0.11 % in the mesh. The
+  collar-only tangent at `C-0018`'s own fold is **+2.60 to +4.99 pN/nm, strictly positive**, and at 10 nm /
+  2 mM the margin **rises** to 1.021–1.028 where pull-in still binds — but the direction is not universal,
+  and at 7 nm / 10 mM it **falls** 0.9–3.5 %, because the margin is a ratio of two biases at two gaps and
+  moves with the sign of `3 nm − s_fold`. `C-0051` then composed it with the coupling the programme actually
+  has: **−8.40 to −11.06 pN/nm** at 6 of 6 models, the collar recovering **27–49 %** of what `C-0032`'s
+  element costs, so `C-0032`'s **1.0000–1.0019** stands (`CH-0063`). (`C-0033`, `C-0051`, `CH-0051`,
+  `CH-0063`.)
 - **The thermal force in a crossover.**
   It is `√(k_BT k_v)` with `k_v` the crossover's vertical stiffness, which nothing measures (`T-9`); the
   programme's lattice models it as a rigid penalty, in which the *static* force converges and the
@@ -491,13 +556,24 @@ So the crossover path never becomes binding for a distributed coupling, out of p
   motifs are excluded, because a nicked continuation preserves the helix axis and the antiparallel crossover
   requires parallel helices. The base condition every published out-of-plane element actually uses is a
   **pin**, which is a mechanism here. A buildability question, not a modelling one. (`C-0028`, `T-66`, `T-67`.)
-- **Which body carries the standoffs, and what sits under the flexure's midspan.**
-  The coupled joint's law is not odd, so one mounting gives a 5–10 nm window and the other none — and the
-  favourable one costs a clearance that makes §3's *desired* 10 nm stroke unreachable at any standoff length
-  inside the coupling's own envelope. A specification gap, not a modelling one. (`C-0030`, `T-75`, `T-78`.)
-- **Whether a strain-softening coupling still satisfies the stability clause.**
-  The assembled tangent's minimum, 22.88 pN/nm at a 4.55 nm stroke, sits inside `C-0018`'s own `|k_eff|`
-  band. (`CH-0042`, `T-76`.)
+  **Narrowed since, and still open**: `C-0029` found a covalent routing, `C-0057` found that its **dihedrals
+  do not close** while feasible placements exist elsewhere in the same search space, and `C-0055` found the
+  *site* — the unoccupied out-of-plane crossover azimuth — to be **published geometry** while a free lever
+  held on it is **not published**, in 62 recorded queries. The literature answer has not changed.
+- ~~**Which body carries the standoffs, and what sits under the flexure's midspan.**~~ **ANSWERED —
+  `C-0035` (`T-75`, `T-78`), iteration 5, and this bullet should have left the list then.**
+  It was never a free binary: the sign is a product of **two** binaries and exactly one of the four mountings
+  is buildable (bases on the output superstructure, standoffs pointing away from the tile, flexure outboard,
+  midspan tied back down through its own ground). What sits under the midspan is that same ground **by
+  construction**. The specification gap it hands on is a *different* one — whether the superstructure may be
+  **perforated**, which is open question 6 below and `T-95`. (`C-0035`.)
+- ~~**Whether a strain-softening coupling still satisfies the stability clause.**~~ **ANSWERED — `C-0032`
+  (`T-76`) and `C-0049` (`T-107`), iterations 5 and 7.**
+  `CH-0042` is **UPHELD and RESOLVED**: **NO at 2 mM, YES at 0.5 mM**, and that is a design decision rather
+  than a calculation (open question 3). `CH-0047` is answered too — the range a stability tangent is
+  minimised over is `[0, s*]`, so the 22.88 pN/nm minimum at a 4.55 nm stroke is read at a state the placed
+  device never occupies; at the placement stroke the same flexure is **25.227 pN/nm** and clears **4 of 6**
+  of `C-0017`'s 2 mM floors. (`C-0032`, `C-0049`, `CH-0042`, `CH-0047`.)
 - **Whether a flexure array on a shared superstructure stays as compliant as independent leaf springs.**
   `C-0023` models 45 of them as independent, which is the *compliant* reading — and the compliance ceiling is
   the binding side, so the assumption is not conservative. (`T-31`.)
@@ -507,6 +583,23 @@ So the crossover path never becomes binding for a distributed coupling, out of p
 - **Where the electrode's potential of zero charge sits.** A contact potential of **0.9–5.1 mV** — below
   anything a bench would call zero — supplies the entire zero-bias hold-down, and nothing in §1 or §3 fixes it.
   A measurement, not a calculation. (`C-0021`.)
+
+### The six questions for NDI — specification gaps, not modelling ones
+
+These are the items no calculation closes, because they are choices about the device rather than facts about
+it. They are stated as **questions with thresholds**: each names what the answer is worth, so a single
+sentence from NDI settles it. The live versions are in [`TASKS.md`](TASKS.md)'s *Open questions for Kazik*.
+
+| | Question | The threshold it turns on | Where |
+|---|---|---|---|
+| 1 | **Should Gen-1 be specified at 0.5 mM MgCl₂ rather than §3's 2 mM?** | Six independent routes recommend it, and `C-0032` makes it a **requirement** rather than a preference: at 2 mM the realised strain-softening coupling sits *on* its own fold (bias margin **1.0000–1.0019**) and the fold's stroke walks back through §3's own 3 nm target at two of six layer models; at 0.5 mM every predicate clears (**1.44–5.93×** on stiffness, **1.038–2.327×** on bias) and the fold does not exist. It costs **nothing** — the layer is buffer-independent to ≤ 0.4 % (`C-0007`). | `T-63` |
+| 2 | **What is the electrode made of, and where is its potential of zero charge?** | Metal against oxide is **2.6×** on the van der Waals hold-down, the one term no design can remove — larger than the DNA Hamaker constant, than retardation, and than the polymer in the gap. And zero *applied* bias is not zero *charge*: a contact potential of **0.9–5.1 mV** supplies the entire thermal-scale hold-down by itself. | `P-13` |
+| 3 | **May the output superstructure be perforated under each flexure midspan?** | The only buildable mounting needs the midspan tie to cross the plane its own standoffs stand on, so **45 duplex-omission holes = 326 nm², 20.4 % of the tile footprint**, at every stroke — that is the floor and it is not optional. An **imperforate** superstructure caps the stroke at `ℓ − 2.69 nm`, i.e. **5.31 nm** at the recommended 8 nm standoff: §3's acceptable clause and nothing more. §3's *desired* 10 nm stroke needs each hole widened into an **18.37 × 2.69 nm slot — 2223 nm², 1.39× the whole tile footprint**. | `T-95` |
+| 4 | **May §3's tile grow by 1.44× in area, to 2330 nm²?** | On the specified 40 × 40 nm tile the flexure path count is bounded **below at 29** by the unzip allowable at the desired stroke and **above at 15** by the plan-view packing, so the window is **empty**. The threshold is **≥ 2330 nm², 1.20× in edge**. The price runs the favourable way: `C-0022` finds a larger tile costs **+6.3 %** at the rim instead of +14.7 %, the collar being a fixed 1.65 nm. | `T-102` |
+| 5 | **Which device does §3's *desired* clause ask for — a 33.3 pN/nm coupling travelling 10 nm, or a 10 pN/nm one?** | Every claim in the corpus reads the desired stroke on the coupling placed for the *acceptable* one, which at full stroke must deliver **333 pN**. The desired clause's own coupling is `100 pN / 10 nm = 10 pN/nm`, a **different device** — which `C-0046` can build (arms 11.4–18.1 nm, **12 of 29** points clearing every element clause) and `C-0017`'s stability floor **refuses at 2.34–2.79×**. Composing the two clauses caps the stroke at **3.58–4.27 nm at §3's 100 pN**, whatever the coupling is made of. | `T-112` |
+| 6 | **May the polymer layer be taller than §3's 10 nm — 17 to 26 nm?** | The stroke *is* the layer's compression, `s = L₀ − h`, so a 10 nm stroke on a 10 nm layer is the statement `h = 0`, refused **1.02×** kinematically, **1.12×** on `C-0002`'s validity range and **1.35×** under §3's own 100 pN, all **before any coupling exists**. The layer height at which the 100 pN dead-load stroke reaches 10 nm is **16.63–26.12 nm**. §3's own tile row already allows the effort point at *"~20–25 nm above the electrode"*, so the geometry is not absurd — but such a layer is a **different device** and nothing here has evaluated one. **Of the six, this is the only one that can buy §3's desired stroke.** | `T-115` |
+
+---
 
 ## 6. Reading order
 

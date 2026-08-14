@@ -5426,7 +5426,7 @@ solve** (`∂F/∂k_j = (F_j/k_j²) A⁻¹ e_j`, one extra triangular solve per 
 objective already built), nonlinear conjugate gradients on the log-weights — where `C-0017`'s mandate is
 exact by a softmax and positivity does not exist — and `C-0058`'s own optimiser as a polish stage, from
 42 starts.
-It reaches **0.1247**, 21.4 % better, and stops. At a *single* state it is **2.54× better** than
+It reaches **0.1254**, 21.0 % better, and stops. At a *single* state it is **2.54× better** than
 `C-0058` (0.0214 against 0.0544), so the optimiser was leaving a factor of two and a half on the table
 even where `C-0058`'s verdict was safe.
 And the search is measurably not the limit: 16 starts to 42 is worth `3.2e−5`, the whole homotopy 6.4 %,
@@ -5434,7 +5434,7 @@ and **two states are active at the optimum**, which is what an equalised minimax
 
 **What decided the question was one row of `C-0022`'s own table that no downstream claim had used.**
 Of the 31 non-empty subsets of the five, every one of the **14** that puts the 2 nm state together with a
-10 nm state fails (0.1081–0.1248) and every one of the other **17 is flat** (0.0090–0.0797).
+10 nm state fails (0.1086–0.1254) and every one of the other **17 is flat** (0.0090–0.0799).
 The free-tile dishing field of the 2 nm state has a cosine of **−0.943 to −1.000** against every other
 state — exactly **−1.000** against the 10 mM one — while all six pairs among the other four run **+0.949
 to +0.997**.
@@ -5450,11 +5450,11 @@ the rest and *held* states of a **5 nm** layer — `C-0022`'s own row label for 
 3 nm stroke"*, so it belongs to the 5 nm device and is **no state of the 10 nm device at all**.
 A device traverses one buffer, one layer and one bias, from `L₀` down to `L₀ − s`, and `C-0022` solved
 **both ends** of the design device's stroke at its own 0.192 V.
-Over the range each device actually traverses the minimax is **0.0372 / 0.0436 / 0.0619 / 0.0500** —
+Over the range each device actually traverses the minimax is **0.0373 / 0.0435 / 0.0620 / 0.0504** —
 **all four inside `T-5b`'s 0.10**, both endpoints active at each optimum, and two interpolated
-intermediate gaps move the first by `1.1e−15`.
+intermediate gaps move the first by exactly zero at nine significant digits.
 The subset sweep had already found the same partition from the other side: the 2 nm state is compatible
-with the 5 nm rest state, *its own device*, at 0.0619, and with nothing else.
+with the 5 nm rest state, *its own device*, at 0.0620, and with nothing else.
 This is [`CH-0077`](gpd/challenges/CH-0077-five-solved-states-are-four-devices.md), and its direction is
 **favourable** — `C-0058`'s own two-level rim × 5 rule turns out to be flat over the whole stroke of
 both 10 nm devices (0.0753 and 0.0683), which is more than its Deliverable 4 claims for it.
@@ -5601,3 +5601,306 @@ across them is asking it to be flat under a load and its own negative.
 (`T-127`, after `T-109`) was fixed before the agents were spawned. And every agent this iteration was asked
 to report only what its filed claim says, after three report/artifact divergences earlier in the session;
 none diverged.
+
+## Iteration 12 — `T-131`: the primary deliverable had almost no bad numbers and three answered questions it still called unanswerable
+
+**What was done.** `ANSWERS.md` — the file NDI reads first, and the one whose own header says *"a synthesis,
+not a source. Every number here belongs to a claim"* — was reconciled against the claim corpus statement by
+statement for the first time. Seven iterations had run since anything checked it end to end, and it had been
+edited piecemeal by several agents and by the coordinator. Claim `C-0067`; **no challenge raised**.
+
+**The method was two halves and the cheap one ran first.** A number that appears in **no** claim cannot be
+traced by any amount of reading, so finding those bounds the problem before adjudication starts:
+[`tools/trace-answers.py`](tools/trace-answers.py) strips claim, task, leaf, section and date identifiers,
+folds the typography (`ANSWERS.md` uses en dashes and U+2212 where the claims sometimes use hyphens),
+tokenises, and tests each token against all 60 claims and 69 challenges with a substring guard so `45` does
+not match inside `1.45`. It has **22 executable checks** of its own, covering both failure directions — a
+false ABSENT would send an agent to "correct" a sound number and a false CITED would let a drifted one
+through, and both are silent.
+
+**The arithmetic was almost perfect and that was the surprise.** Of **415** numeric tokens, **414** appear
+somewhere in the corpus. The single exception is `42.4`, a rounding of `C-0032`'s `42.38`. A 517-line
+synthesis assembled by many hands over eleven iterations had propagated essentially no bad numbers.
+
+**What had drifted was the STATUS of answers.** Of 84 hand-adjudicated statements, 63 trace, **16 had
+drifted**, 2 cannot be traced as stated, and 4 completeness gaps were closed. The worst kind has three
+instances, and it is the one no reviewer looks for: entries in *"What we cannot answer, and why"* that the
+programme had **answered** —
+
+- *"Whether `C-0018`'s pull-in bias itself moves"* — answered by `C-0033` (`T-60`) in **iteration 5**;
+- *"Which body carries the standoffs, and what sits under the flexure's midspan … a specification gap"* —
+  answered by `C-0035` (`T-75`, `T-78`) in **iteration 5**, which found it was never a free binary;
+- *"Whether a strain-softening coupling still satisfies the stability clause"* — answered by `C-0032`
+  (`T-76`) and `C-0049` (`T-107`).
+
+Each had stood for five to seven iterations. **A deliverable that under-claims is as wrong as one that
+over-claims, and it is harder to catch, because the instinct is to check the assertions and not the
+disclaimers.**
+
+**The most consequential single correction runs the other way.** §1's *"a point-coupled lever and an
+area-averaging charge sensor differ by 32 % of the stroke, and that part is **irreducible** — forced by the
+tile's own electrostatic edge, which no coupling choice can remove"* is **false**. `C-0022`'s 32 % is what
+survives a *perfectly distributed* coupling, and a perfectly distributed coupling is not the best one:
+`C-0058` reaches **0.0753** of the stroke by *distributing* the same 33.3333 pN/nm, and `C-0063` reaches
+**0.0706** with **equal** springs by *placing* 34 of them — both inside `T-5b`'s 0.10, against **0.3079**
+with no coupling at all. What is irreducible is the **load**, not the dishing.
+
+**Nine more corrections, each with its prior wording kept in the file.** *"Seven of eleven axes"* → `C-0051`'s
+**ten of twelve**; *"`P2` closed by `C-0017`"* → closed for the affine mandate and **failing** for the
+coupling the programme actually has; *"45 attachments are needed for flatness"* → `CH-0034`'s saturation
+reading; *"`T-1f` is now the binding uncertainty"* → **`T-50`**, since `CH-0019` shows `T-1f` bounds the
+*polymer* expansion and the 123–214 % is the *electrostatic* one; *"twenty-nine challenges"* → **69**;
+*"two paywalled papers"* → **one**, Lee et al. having been obtained free from NIST; `C-0029`'s 90° routing
+qualified by `C-0057`'s torsion census (the existence survives, **the routing does not**); the 40 pN/nm
+ceiling marked withdrawn by `C-0049` with the verdict surviving on `C-0035`'s ground instead; and `C-0017`'s
+`K2` marked as **not** the committed coupling, being one-sided and placing only 15 of its 45.
+
+**Two statements could not be traced to any claim and are kept rather than deleted.** The `42.4` above, and
+— more interesting — *"the peak per-load-path force is **3.9–8.9 pN**"*, which is a min/max over four cells
+of `C-0016`'s own table that no claim states as a range. That is the shape of number a synthesis
+manufactures without noticing: true, and unconfirmable by any `grep` of a claim file. Both now carry their
+construction in the text.
+
+**Five of the six specification questions the programme is waiting on were not asked in the deliverable at
+all.** `C-0051` says the deliverable is *"a height plus five specification questions"* and named none of
+them in `ANSWERS.md`; only the electrode (`P-13`) appeared. A table of six — `T-63`, `P-13`, `T-95`,
+`T-102`, `T-112`, `T-115` — each stated as a **question with its threshold**, is now in §5, so a single
+sentence from NDI settles any of them.
+
+**The null is worth recording: no claim was found to be wrong.** Every one of the sixteen disagreements was
+`ANSWERS.md` misreporting a claim or failing to carry a later one. That was not the expected outcome. One
+near-miss is noted rather than challenged — `C-0027` states the 5 nm crossing as both *"widens to 24.80×"*
+and *"`C-0016`'s 13.3× stands"*, in its body and its verdict row respectively; it moves no verdict, 5 nm
+being empty on either reading.
+
+**Left undone, and stated in the file rather than assumed away:** the window is still unsynthesised against
+iterations 8–11 (`C-0052`–`C-0064`, `CH-0065`–`CH-0077`). Nothing in them is a function of `σ` on
+inspection, which is why no edge is *expected* to move — but that is an expectation and not a re-run, and
+`ANSWERS.md` now says so in its own §1.
+
+**Two smaller things the pass turned up.** §3's row **(f)** — the longest answer in the deliverable — had
+been written across six physical lines, and a Markdown table row must be one line, so it **was not
+rendering as a table cell at all**. Joined; it is the one place this project's semantic-line-break
+convention does not apply. And `tools/verify.sh` cannot supply a suite test **count**: its `trap cleanup
+EXIT` deletes the snapshot and takes `build/test-results` with it, so the run is reported here as
+`BUILD SUCCESSFUL in 11m, 0 failures` with one concurrent agent's mid-TDD test file dropped by
+`--drop-file`, and the count is omitted rather than guessed from a previous claim's.
+
+## Iteration 12 — `T-126`: the arms and the tie-downs do not compete for room, they compete for a registration
+
+`T-126` asked whether `C-0055`'s arm slab clears `C-0035`'s tie-down path.
+The task offered two acceptable outcomes — a plan-and-section answer,
+or the statement that the only buildable mounting and the only workable arm array cannot share one face.
+The answer is the first, and it is a **conditional** yes whose condition is not a size and not a count.
+
+**The section is what decides, and it decides that the plan is decisive.**
+`C-0035`'s tie has to reach the **tile**,
+so its clear column runs from the tile's own top face at `z = +1.0 nm` up to whatever plane its standoffs stand on,
+and the arm slab — 1.69 to 3.69 nm at rest, and 1.69 to **6.69** nm swept over §3's acceptable 3 nm stroke — lies strictly inside it.
+A plan overlap is therefore level-independent:
+no stacking, no re-ordering and no larger body can relieve it.
+That is `C-0041`'s Fact A arriving in a new place,
+and it is exactly why the plan **area** — 0.664 of the footprint — settles nothing.
+The cheap bound was run in order to be refuted, and it was.
+
+**On the plan every regular tie grid fails, and the failure is not marginal.**
+At `C-0063`'s phase-24 placement, `C-0015`'s own 3 × 15 grid puts **30 of its 45 ties inside an arm**
+at the arm senses `C-0063` published, and **26** at the best of every feasible assignment.
+Two columns give 24 of 30 and one column 10 of 15.
+Sweeping the whole grid rigidly through a column pitch at 400 001 offsets,
+the two- and three-column grids have **zero** clearing windows;
+the one-column grid has four, the nearest **6.785 nm off the tile centre-line** and the widest 0.99 nm wide.
+
+**And yet the room is there.** The array leaves **108** places a 2.69 nm tie could stand against the 45 demanded,
+and the poorest of the fifteen rows holds five.
+So this is not a `T-102` result and the tile is not too small:
+what refuses the ties is a **registration**, because the arms sit on a 10.88 nm crossover lattice
+and every coupling grid in this programme is drawn regular.
+
+**The surprise was that the escape is nearly free and still not worth taking.**
+Displacing each tie to the feasible `x` nearest its own column — worst displacement 4.332 nm, mean 2.081 —
+costs **1.7 %** of the dishing, 0.2182 → 0.2219.
+The task was formulated expecting that to be the expensive part.
+It is cheap because the displacement is entirely **along** the helices
+where `C-0026`'s one-row-per-duplex registration is **across** them.
+What kills the composition instead is that neither set is flat at all (`T-5b` asks 0.10),
+while the design that *is* flat needs no tie grid whatever:
+`C-0063`'s 34 roots dish 0.0706 with the coupling entering at the hinges.
+
+**The one registration the slab supplies for free is the arms' own tips** —
+34 ties landing on the arm ends clear every neighbouring arm by **2.7156 nm** against the 1.345 demanded,
+and that number is the **root pitch minus the arm**, a lattice quantity with no fitted parameter in it.
+The same 2.7156 nm gap, asked to hold a *free-standing* tie between two consecutive arms,
+clears a 2.69 nm duplex by **0.0256 nm** and fails outright at the 2.73 nm square-lattice interhelical distance.
+It is the one number in the claim a tolerance model could reverse, and no tolerance model exists.
+
+**A second surprise: `C-0063`'s free variable is not free.**
+Its own open item 4 offers the 34 arm senses as a free variable that does not enter the flatness.
+They are **forced on 8 of the 15 rows** — a row rooted at `±16.32 nm` cannot point its arm off the tile —
+and the whole exhaustive freedom over the remaining seven is worth 30 → 26 clashes of 45.
+
+**And the sweep runs the favourable way.**
+An arm rotates about its root, so its plan projection is `√(L² − s²)` and *shortens*;
+the swept envelope is the rest footprint identically, at 8, 64 and 4096 samples,
+so a static plan view is conservative at every stroke and the clearance is worst at zero.
+The same arithmetic refuses §3's desired 10 nm outright — 10 nm exceeds the 8.164 nm arm —
+which is `C-0050`'s kinematic ceiling reached from a plan view rather than a force balance.
+
+Filed as [`C-0066`](gpd/claims/C-0066-arm-slab-tie-clearance.md),
+raising [`CH-0079`](gpd/challenges/CH-0079-a-tie-grid-is-a-registration-and-an-armed-tile-has-none.md)
+against `C-0035`'s nominal-design row *"what the tile carries: only the 45 tie attachments of `C-0015`'s 3 × 15 grid"* —
+a **conditions** challenge and not an arithmetic one:
+every number in `C-0035` reproduces here, including its 325.62 nm² aperture floor,
+its 5.31 nm midspan clearance and its 4.69 nm penetration at the desired stroke,
+recomputed through its own library as the strong free limiting case
+(**zero arms must reproduce `C-0035`'s clearance ledger exactly**, and it does).
+
+**Left undone, and named rather than assumed away.**
+Nothing in §1 or §3 chooses between the two couplings this claim had to evaluate both readings of —
+`C-0050`'s catalogue keeps `E5a1` and the linear `E5` alive together —
+so *"what the composed device actually is"* is the first open item.
+The four dishing numbers are at one of `C-0022`'s five states, the same exposure `T-129` owns.
+And every clearance is at nominal positions: the 0.0256 nm margin is 0.075 of a base-pair rise.
+
+**Suite status for this iteration.** `tools/verify.sh` **BUILD SUCCESSFUL in 11 m 5 s, 0 failures**,
+the whole suite on its own isolated tree,
+with one concurrent agent's mid-TDD file dropped by `--drop-file` — `src/test/kotlin/anchoring/CrossbarArrayPlacementTest.kt` (`T-130`),
+which fails `compileTestKotlin` on unresolved `shouldBe`/`plusOrMinus` references and is somebody else's unfinished work.
+`gpd/results/T-126-arm-slab-clearance.json` was re-run through `tools/study.sh` and diffed byte-for-byte identical on two independent runs —
+after a `runtimeSeconds` field was removed from its parameters, which was the only thing that differed
+and is the same trap `CLAUDE.md` records for `Double` reproducibility, in a form no rounding can fix.
+
+## Iteration 12 — `T-130`: the trio repeats 34 times without touching anything, and what the array charges for is a *register*
+
+`C-0062` reopened the truss branch by finding that three 90° junctions **can** close together on one crossbar —
+609 closing trios, at every one of the 21 admissible `(crossbar, row)` configurations —
+and named its own left-undone in one sentence:
+*"a trio that closes in isolation may not place 34 times."*
+It searched **one crossbar at a time**; a Gen-1 device needs **34**, at the upward roots `C-0055` counts and `C-0063` places.
+
+**The answer is yes, and the plan view is not what the composition costs.**
+All 44 of `C-0062`'s recorded trios place 34 times: 0 overlaps, 0 leg clashes, one level.
+Three cheap bounds settled that before anything was solved —
+34 truss blocks cover **0.385** of the footprint,
+the widest crossbar in the band demands **9.49 nm** against the **10.88 nm** station pitch
+(where `C-0053`'s 45-path arm demands 11.82 and does *not* clear it),
+and — the one that decided the **shape** of the answer —
+**every one of `C-0063`'s 34 stations is the same helical phase of its OWN host duplex**, 24 bp from that duplex's `NORTH` plane,
+because adjacent rows' duplexes are phase-shifted by exactly the 16 bp their upward sites are offset by (`C-0055`'s `(k − 2b) mod 4`).
+**So the register is one question, not thirty-four, and the placed count is quantised at 0 or 34.**
+A cheap bound that fixes the *shape* of an answer rather than bracketing its value is the most useful kind this programme has found,
+and it is the third time a lattice congruence has done that here after `C-0063`'s count vector and its centro-symmetry rule.
+
+**What the composition actually finds is a register, and it moves a design point.**
+A leg's *base* can only sit where the host's own backbone offers one:
+**17 of 89** axial positions do, and **not one row pitch closes at the station itself**.
+The array therefore translates **0.17 nm (9 bp) to 3.91 nm (6 bp)** —
+and **no choice of the sheet's crossover phase can absorb it**, because the phase moves the station *and* the host's backbone together,
+which is asserted as a gate test over six phases rather than argued.
+Pinning that coordinate re-reads the base misalignment floor `C-0059` measured and `C-0062` composed its design table on.
+**A floor is a minimum over a coordinate, and this is a coordinate an array does not get to choose:**
+at the centre nearest the station the **10 bp** row — `C-0062`'s own recommended design — reads **57.0°** against its published **6.0°**,
+**9.5×**, and past the **45°** at which `C-0037`'s `TwoLinkBase` invariant cannot represent a base at all.
+The 6.0° exists, 2.55 nm away, at the price of the rim and of the flatness.
+**The row an array can build is 9 bp at 18.0°**, and it keeps the tile flat:
+**0.0780** of the free-tile stroke against `C-0063`'s **0.0706** at 34 nominal stations, inside `T-5b`'s 0.10.
+Splitting one station into **two leg bases** costs 6.1 % of the dishing and the register a further 4.2 %; both were unknown, because `C-0063` placed points and a truss is not a point.
+**17 of the 44 trios survive every clause at once** — place 34, close on `C-0057`'s own verdict grid, carry a representable base, leave the tile flat — at the 9, 11 and 12 bp rows.
+
+**And the flexure is the other half, reported apart and never folded in.**
+With `C-0030`'s 27.41 nm span at 34 paths the same array covers **1.84×** the footprint, needs **7 levels**, and places **12 of 34**.
+That is `C-0041`'s standing negative re-measured at 34 paths on a real placement, it is independent of every trio,
+and it is why the branch's remaining question is no longer the junction or the array but the **output stage** (`T-133`).
+
+Filed as [`C-0065`](gpd/claims/C-0065-crossbar-array-placement.md),
+raising [`CH-0078`](gpd/challenges/CH-0078-the-base-floor-is-a-minimum-over-a-coordinate-the-array-pins.md)
+against `C-0062`'s and `C-0059`'s design tables — a **conditions** challenge, not an arithmetic one:
+every upstream number reproduces, worst departure `2.1e−4` against a value its own claim quotes to four digits,
+and `C-0063`'s 34 stations are re-derived from `upwardRootLattice` at departure **0**.
+Opens `T-132` (the leg's own length budget against the *pinned* base misalignment, at one global leg length for all 34 caps) and `T-133`.
+
+**Two process notes.**
+The first attempt at the *"which strand defines the station"* sensitivity moved the register field's **grid** to the shifted datum and reported *"no registered centre at all"* —
+a statement about the grid, not about the convention, because the closing set lives on a continuum and a shifted grid resamples it.
+Applied to the **offsets** instead, the same convention leaves all three centres and moves the nearest to −1.341 nm, and the verdict does not move.
+And the prompt for this task described `C-0062` as finding *"93 of 5 940 reach-feasible lattices … best at a 3.00° chord"* —
+numbers that appear **nowhere** in `C-0062`, its result file or `C-0059`, and that `JOURNAL.md` already records as retracted first-report text from iteration 11.
+The filed claim says **196 of 17 388** in the band sweep and 21.0° / 9.0°.
+It is re-checked here as a gate-5 reproduction so the record cannot drift a third time.
+
+**Suite status for this iteration.** `tools/verify.sh` **BUILD SUCCESSFUL in 10 m 51 s, 0 failures** — the whole suite on its own isolated tree with **nothing dropped**.
+A sibling's mid-TDD `src/test/kotlin/anchoring/ArmSlabClearanceTest.kt` (`T-126`) had to be dropped by `--drop-file` during development and compiles by the final run;
+`T-126`'s own agent had to drop this task's test file in the same way, in the other direction, which is the concurrency working as intended.
+`gpd/results/T-130-crossbar-array-placement.json` was re-run through `tools/study.sh` twice and diffed **byte-for-byte identical** both times.
+
+**And the iteration's largest single cost was reproducibility, which is now a bounded, reported
+limitation rather than a claim.**
+Two runs of the first build, differing only in an *unused local variable*, disagreed in the sixth
+significant digit of every searched quantity — 1 599 lines of the result file — with every input
+identical to the last bit.
+The arithmetic explains it: a search takes of order `1e6` comparisons, a last-ulp difference is `1e-15`
+relative, so the chance one comparison straddles a **nine**-digit rounding boundary is ~`1e-6` each and
+about one decision flips per run. **Nine significant digits is the right precision to emit at and the
+wrong one to decide at**; deciding at **six** took the objectives from `1e-3` to `1e-6`.
+It did **not** fix the 45-component distributions, which still moved by `8e-4` — because Polak-Ribière's
+`beta` numerator `g·(g − g_prev)` cancels catastrophically once the iteration settles, turning an ulp
+into an `O(1)` change of direction. Two standard restarts and a lattice snap on the iterate took the
+diff from 1 599 lines to **28**: every verdict, every headline number, all four operating ranges, the
+whole subset dichotomy and **all 90 emitted path stiffnesses** now agree, and what remains is two of
+about forty optimisation runs differing in the sixth digit and two `%.1e` noise floors printed inside
+prose.
+**The file is not byte-for-byte identical and `C-0064` says so**, because the residual is structural:
+a descent on an optimal **manifold** has no isolated answer to be reproducible about. That fact is not
+a nuisance — it is Deliverable 4's evidence, and the reason a 45-parameter optimum's *quantisability*
+turned out not to be a well-posed quantity at all.
+
+### Iteration 12 — the composition holds, the deliverable had drifted, and the drift was in the disclaimers
+
+Three loops. Every number below was grepped out of its claim before being written here, which is the step
+`SESSION-PROMPT.md` gained this iteration after the coordinator failed to apply the rule `CLAUDE.md`
+already carried.
+
+**`C-0065` composed `C-0062`'s trios with `C-0063`'s placement, and the plan view is not what it costs.**
+All **44 of 44** recorded closing trios place **34** times at phase 24 — 0 overlaps, 0 leg clashes, one
+level. Three cheap bounds settled the plan before anything was solved, and the third fixed the *shape* of
+the answer: **every one of `C-0063`'s 34 stations is the same helical phase of its own host duplex**,
+because adjacent rows are phase-shifted by exactly the 16 bp their sites are offset by — so the register is
+**one** question, not thirty-four, and the placed count is quantised at 0 or 34.
+What the composition charges for is a **register**: a leg's base sits only where the host's backbone offers
+one, **no row pitch closes at the station itself**, and no crossover phase can absorb the offset because the
+phase moves the station and the backbone together. Pinning that coordinate re-reads the base floor
+`C-0062`'s design table rests on — its own recommended **10 bp** row reads **57.0°** against a published
+6.0°, past the 45° at which the two-link base cannot be represented at all. **The row an array can build is
+9 bp at 18.0°**, and it keeps the tile flat at **0.0780** against `C-0063`'s 0.0706. **17 of the 44 trios
+survive every clause at once.** The flexure is reported apart and remains the obstruction: 12 of 34.
+
+**`C-0066` found the *section* decides the headroom, not the plan.** `C-0035`'s tie must reach the *tile*,
+so its clear column strictly contains the arm slab — which makes every plan overlap **level-independent**
+and the plan-area fraction irrelevant. That is `C-0041`'s lesson in a new place, and the area bound was run
+in order to be refuted. The arms and the ties **can** share one face, but only if the ties land **on** the
+arms; at `C-0063`'s placement `C-0015`'s 3 × 15 grid puts 30 of 45 ties inside an arm, and **8 of the 15
+rows have no choice at all**, forced by the tile edge — `C-0063`'s "free variable" is not free. What gives
+is the **registration**, not the tile size, the arm count or the mounting. And a knife edge worth keeping:
+the free registration clears a **2.69 nm** duplex by **0.0256 nm** and *fails* at the 2.73 nm square-lattice
+value, so which measured interhelical distance is used decides it.
+
+**`C-0067` reconciled `ANSWERS.md` line by line, and the finding is the shape of the drift rather than its
+size.** Of **415** numeric tokens, **414** trace to the claim corpus — the arithmetic was nearly perfect.
+Of **84** statements adjudicated, **63** traced, **16** had drifted and **2** were untraceable (kept and
+annotated, not deleted). What had drifted was the **status of answers**: three entries of *"What we cannot
+answer, and why"* had been **answered** five to seven iterations earlier and left standing.
+**A deliverable that under-claims is as wrong as one that over-claims, and is harder to catch, because a
+reviewer checks the assertions and not the disclaimers.**
+The most consequential correction is one this coordinator had propagated: §1's *"they differ by 32 % of the
+stroke, and that part is irreducible — no coupling choice can remove it"* is **false**. That 32 % is what
+survives a *uniform* coupling; `C-0063` reaches 0.0706 with **equal** springs by placement alone.
+**Five of the six specification questions were not asked in the deliverable at all** and are now a table
+with thresholds. And §3's row (f) — the longest answer in the file — was written across six physical lines
+and **was not rendering as a table cell at all**.
+No challenge was raised: every disagreement was `ANSWERS.md` misreporting the corpus, and no claim was
+found to be wrong. That null was not the expected outcome and the claim reports it as such.
+
+**The session's own failure mode was caught twice more, both times by agents.** `T-130` re-checked the
+coordinator's retracted `C-0062` figures as a **gate-5 reproduction** and confirmed the filed numbers, and
+`T-127` had reported the divergence unprompted in the first place. The fix is now a step of the loop rather
+than a lesson in a file.
