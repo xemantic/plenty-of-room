@@ -5058,3 +5058,292 @@ expected the rim to *stiffen* — keeping the refutation in the claim rather tha
 0.0753, a *soft* rim against a *stiff* one); the claim and the final report agree, and `ANSWERS.md` was
 written from the claim. That is the second time this session a report has diverged from its own artifact, and
 the rule stands: **read the filed claim, never the report.**
+
+## Iteration 10 — `T-121`: a lever held at one crossover is a mechanism, and a mechanism stores no energy
+
+**Task.** `C-0055`'s largest open item, in its own words: *"34 duplexes stacked above the tile are mass
+and rigidity added out of plane, which no model in this programme contains."*
+`C-0009`'s grillage, `C-0006`/`C-0047`'s flatness and `C-0010`'s variance, re-run on a sheet **carrying**
+the array, plus the drainage consequence `C-0004` owns.
+Filed as [`C-0061`](gpd/claims/C-0061-stacked-arm-sheet.md), raising
+[`CH-0074`](gpd/challenges/CH-0074-the-flat-distribution-lives-on-stations-no-placement-supplies.md).
+
+**The cheap bound closed the headline question before any lattice ran, and it is an identity.**
+A body attached to a structure at **one** point and otherwise free has a **zero Schur complement** there:
+its rigid-body motions span everything a single crossover can impose — the deflection through the vertical
+link and the roll through `k_θ` — so the minimised arm energy is identically zero.
+That is the same class of statement as *"a uniform load on a uniform Winkler foundation dishes exactly
+zero"*, and it was wired in as a runtime falsifier the same way.
+34 arms covering **46.3 %** of the tile's plan move `C-0009`'s peak dishing, peak crossover force and peak
+duplex shear by `5e−9` relative, and that residual is the arm regularisation and vanishes **linearly** with
+it over four decades — which is the numerical signature of an exact zero rather than a small one.
+
+**The surprise is that the escape, its price and its harmlessness are the SAME sentence, three times.**
+An upward site costs the sheet nothing *because* it belongs to one duplex; its roots are twice as sparse
+*because* it belongs to one duplex; and the arm it roots can never be tied **twice** *because* the pitch
+that makes them sparse — the bare 32 bp = **10.88 nm** — is longer than the arm, which is 8.164 nm at
+`C-0055`'s self-consistent 34 paths and **9.131 nm even at §3's own 45**.
+The single-point attachment is therefore forced by the lattice, and the exact zero is a property of the
+design rather than an idealisation of it.
+
+**A second surprise: the bracket has three steps, not two, and the middle one is a torsion bar.**
+The task was formulated expecting one tie to give zero and two to give something like a composite beam.
+Two ties give **zero bending stiffness at any arm rigidity** — because two points determine a line and a
+rigid arm meets both — and what they add is 5.832 pN·nm/rad of torsion, the two hinges in series with the
+arm's own `GJ/L`, worth **0.112 %** of the dishing.
+The arm's own `EI` is engaged only at **three** ties, i.e. 21.76 nm of arm, 2.67× outside the design range;
+and the 19.3× axially coupled second layer needs the crossover's in-plane constant, which `Gen1Tile` flags
+as a construction rather than a measurement.
+
+**Mass and drag, in the order the bound put them.**
+46.3 % more duplex is `√1.463 = 1.21×` on a quality factor `C-0004` puts at `5.3e−4`; the arms' inertial
+force at 1 kHz and §3's 3 nm stroke is `1e−10 pN` against §3's 100 pN.
+**Drag is the only channel that moves anything, and it is an upper bound.**
+The arms stand on the `+z` face while the layer and the electrode are on `−z`, so `C-0004`'s squeeze film —
+a **footprint** problem — is untouched *by construction*; what they add is bulk dissipation in parallel with
+the tile's own Stokes term, **9.1 %** of the total, taking the nominal corner 91.2 → **82.9 kHz** and the
+**worst** 40 × 40 nm §4(d) margin **22.81× → 20.73×**. Still discharged.
+`C-0010`'s `σ_RMS ≤ 3.0 nm` — the most exposed standing verdict — is **identically** unchanged broadband,
+because equipartition is `k_BT K⁻¹` and the arms change no entry of `K`; only the **in-band** amplitude
+moves, by 4.9 %.
+
+**What the array really changes is where the coupling ENTERS, and that is where a verdict moves.**
+On `C-0055`'s own 34 roots a uniform coupling dishes **0.4156** of the stroke against **0.2182** on
+`C-0015`'s 3 × 15 and **0.3079** for the free tile — **1.35× worse than no coupling at all**, the pathology
+`C-0058` reports at `C-0041`'s 1 × 15 and could not report here because it did not have these stations.
+`C-0058`'s flat rim rule reaches **0.1649** there against its published 0.0753, above even `CH-0034`'s
+0.149 saturation floor for equal springs on a grid. Hence `CH-0074`: **the flat design lives on a station
+set no placement claim supplies**, and `C-0058`'s own sentence — *a distribution cannot repair a placement* —
+applies to its positive result as well as to its negative one.
+
+**And a placement variable nobody had noticed.** `C-0055`'s scheduler fills every row greedily from the
+low-`x` end and points every arm the same way, so its 34 roots are **not centro-symmetric**: the coupling
+centroid sits at `x = −8.80 nm` on a tile running −20 to +20.
+Reflecting the odd rows is one line, free, lands on the same column lattice and is inside `C-0055`'s own
+per-row independence — and it is worth 0.4156 → 0.3558 uniform and 0.3419 → 0.2250 at rim × 5, i.e. **more
+than the whole rim rule buys on the unreflected set**. That is `T-125`.
+
+**Two more things recorded rather than solved.** The peak crossover force is **8.3×** larger at the arm
+roots than on `C-0015`'s inset grid (1.255 against 0.150 pN, still 8× clear of the unzip band) — a coupling
+that enters on the crossover column lattice loads that lattice. And the arm slab sits 1.69–3.69 nm above
+the sheet over 46.3 % of the plan, which is the same `+z` half-space `C-0035`'s only buildable mounting ties
+down through; `C-0035`'s note that *"the tile now carries no out-of-plane element at all"* stops being true
+of any design that adopts the escape. That is `T-126`.
+
+**Process notes.** The augmented assembly reconstructs `OrigamiGrillage`'s private degree-of-freedom layout
+from its **public** API rather than modifying a main source three agents share, and asserts the
+reconstruction against that lattice's own `basisAt` as a gate-3 test — a shared file untouched and the
+reconstruction still falsifiable. The applied load is recovered exactly as `f = K_host q_host` from the bare
+lattice's own solution, which needs no access to its private assembly at all.
+`tools/verify.sh` was run three times: the working tree as it stood gave **1704 tests, 5 failed**, and
+**all five failures were in two concurrent agents' mid-TDD test classes** (`TorsionFeasibleRoutingTest`,
+`BuildableStiffnessRatioTest`) — none in `structure`. Dropping those and the sibling **main** source that
+failed `compileKotlin` (`coupling/BuildableStiffnessRatioStudy.kt`) by `--drop-file` gives a clean run.
+
+---
+
+## Iteration 10 — `T-122`: can a 5:1 per-path coupling stiffness ratio be BUILT?
+
+**Claim [`C-0060`](gpd/claims/C-0060-buildable-stiffness-ratio.md), raising
+[`CH-0073`](gpd/challenges/CH-0073-the-along-helix-scatter-rule-reverses-on-a-non-uniform-coupling.md)
+against `C-0026`'s build rule. Study `coupling.BuildableStiffnessRatioStudyKt`, model
+`src/main/kotlin/coupling/BuildableStiffnessRatio.kt`, 28 gate-named tests.**
+
+`C-0058` made the Gen-1 tile flat for the first time by giving 34 rim stations 0.921 pN/nm and 11 interior
+ones 0.184, and said in its own maturity line that **nothing in it says a per-path stiffness can be built to
+a prescribed value**. This iteration priced that.
+
+**The answer is YES on the stiffness and NO on the placement, and the interesting half is why the first one
+is easy.** This project has met a quantisation trap before and lost: `C-0023` found that a two-sided preload
+is a *mounting offset*, i.e. a **length**, that DNA quantises it at 0.34 nm, and that the requirement asked
+for 0.041 nm — the quantum was **8.3× coarser than the requirement** and the branch died. The instinct was
+that a prescribed stiffness would go the same way. It does not, and the reason is one line:
+
+> **a preload is a length and a stiffness is a POWER of a length**, so the same 0.34 nm quantum enters
+> divided by the member in units of itself — 87 base pairs, not one.
+
+So one base pair is **1.0–19.1 %** of a level's own stiffness across the whole catalogue, against a flat
+ratio window this task **measured rather than cited** at `3.5 ≤ R ≤ 20` — 471 % wide. Quantisation is 25×
+finer than the requirement. The declared falsifier (*one quantum taking the ratio out of the window*) did
+not fire at any of fourteen element/level pairs; all seven settings reach both levels, realised ratios run
+4.667–5.144, and **all fourteen built designs are still flat** (0.0715–0.0815 against `T-5b`'s 0.10).
+
+**The second cheap bound turned out to be load-bearing rather than decorative.** Rounding the two *levels*
+independently misses `C-0017`'s 33.3333 pN/nm by **0.40–5.44 %** — and that is a *placement* error, 5 % of
+the force the actuator delivers, not a rounding nuisance. It is recoverable only because the mandate is an
+equality on a **sum**: moving individual paths by **one** base pair takes the worst miss to `1.3e−4` in at
+most 18 moves. The price is that the design is **3–4 distinct staple lengths, not two**. The task had
+expected the level rounding to be the whole story.
+
+**`T-45` is answered as a threshold, which is what `CLAUDE.md` asks for when the measurement does not
+exist.** The built design loses the flatness verdict at **34.6 %** relative scatter (31.6 % with the total
+held fixed), which is 2.04× `C-0026`'s 17 % break-even and 6.9× a 5 % staple tolerance. Two things were
+worth the run: the two stiffness *populations* do not even overlap until `(R−1)/(R+1) = 66.7 %`, so
+**flatness binds at half the amplitude the ordering does** — the ordering criterion the task was framed on
+is not the one that matters; and **small scatter helps**, lowering the dishing 0.0767 → 0.0571 at 10 %, so a
+linearised tolerance budget would have got the sign wrong.
+
+**`CH-0073`, which was not anticipated.** `C-0026`'s build rule is *"if they must differ, let the error be
+along the helix"*, because a scatter alternating along the helices restores exactly zero crossover force.
+On `C-0058`'s **three-column** non-uniform design the along-helix index **is** the rim/interior index, so
+that direction is no longer a symmetry — it is the design variable — and it is the pattern the flatness
+verdict tolerates **least**: 31.6 % against 69.8 % across the helices, a factor of 2.21, with `C-0017`'s
+total held. The crossover channel still prefers it (−0.113 pN against −0.051 pN at 10 %), so the two
+channels now **rank the same two build rules oppositely**. `C-0026` could not see this because on its own
+equal-spring coupling the dishing is 0.2182 at zero scatter — already outside the tolerance, with nothing
+for a scatter to lose. **A build rule derived on a design that fails a requirement cannot be tested against
+that requirement.**
+
+**What actually fails is the array, and the non-uniform design makes it worse.** `k ∝ span^(−3)` means the
+5× softer path is a `5^(1/3) = 1.71×` longer one, and a mixed array is priced at the **longer** member:
+`C-0030`'s coupled flexure needs a **52.36 nm** interior span on a 40 nm tile and places **0** of 45 stations,
+`C-0023`'s `E3` places 15, the hinge arms 30 and 15 — bounded by plan area rather than by `C-0053`/`C-0055`'s
+root pitch, which is worth recording because the arm branch reports the root pitch as its obstruction. Only
+`C-0023`'s `E4` places 45, and it needs the second ground under the tile that `C-0023` excluded it for.
+**So the qualifier `C-0058`'s verdict needs is about the ARRAY and not about the ratio** — and that is
+`C-0041`'s standing obstruction, not a new one. Opens `T-127`: does a genuinely *mixed*-span array pack,
+long members where the tile is emptiest, where a uniform sweep of one length says it cannot?
+
+**A small free result.** The best one-parameter ratio at `C-0058`'s own 6.70 nm collar is **7, not 5** —
+0.0653 of the stroke against 0.0753, a further 13.4 % and 70 % below the uniform coupling. `C-0058`'s
+six-point sweep did not visit it, it costs nothing to build, and it sits further from both edges of the
+window, so it is the more scatter-tolerant choice as well.
+
+**Process notes.** The scatter threshold is bisected on the **bracket width** and takes the **first**
+crossing rather than assuming monotonicity — asserted on a metric that crosses, falls back and crosses again
+— and a threshold never reached is reported as a flag with the scan ceiling, never as `Infinity`. One
+`NaN` did escape into `kotlinx.serialization`: a convergence record dividing a bracket width by a threshold
+of exactly zero, which is what the *uniform* coupling gives because it is already outside the tolerance at
+zero scatter. Guarded absolutely, per `CLAUDE.md`'s own rule. The scatter sweep is reported in **two**
+readings — as built, and renormalised to the mandate — because a pattern collinear with the rim/interior
+split moves the total by 21 % at its own threshold and the two effects had to be separated; the conclusion
+survives both, and the renormalised one is the stronger. Three concurrent agents shared the checkout:
+`tools/verify.sh` and `tools/study.sh` were run with `--drop-file` on `T-124`'s
+`src/test/kotlin/anchoring/TorsionFeasibleRoutingTest.kt` and `T-121`'s
+`src/test/kotlin/structure/StackedArmSheetTest.kt` and `src/main/kotlin/structure/StackedArmSheetStudy.kt`;
+the full suite is **BUILD SUCCESSFUL, 0 failures** (8 m 14 s, whole suite on the finished tree) and the result file diffs byte-for-byte identical on two
+independent runs.
+
+## Iteration 10 — `T-124`: the alignment is free at one junction, expensive at two, and not found at three
+
+`C-0057` left one question and named it the direct successor to its own task:
+*"whether a placement can be simultaneously torsion-feasible and correctly ALIGNED."*
+It had proved the three reported routings infeasible and the search space non-empty,
+and it had reported the chords of its two best feasible placements at 159.0° and −51.0°
+against the 90.0° the design wants — but those were ranked by **reach margin**, so they said nothing either way.
+
+**The method is one sentence.** `C-0057` ranked its census by reach margin and solved the best 100.
+Rank the **same** feasible set by **misalignment** and solve in that order,
+and the first placement that closes *is* the best-aligned closing placement on the grid.
+Nothing about the chemistry is re-derived; what is re-derived is which placement.
+`C-0057`'s census re-derives from its own libraries at **departure 0** —
+3 546 covalent and 1 855 reach-feasible of 69 120 for independent staples, 280 and 137 for the scaffold excursion.
+
+**The cheap bound written to bind did not, and the falsifier was declared in advance.**
+`C-0029`'s ±16.87° allowance is the azimuth interval `ψ₀ ∈ 120° ± 16.87°`, 18.74 % of the circle.
+If no reach-feasible placement had its azimuth in it, the aligned design died before any torsion solve.
+The reach-feasible set turns out to occupy **118 of the 120** azimuth values with **414** placements in the band
+and a best attainable **0.0°** — so the bound excludes nothing, and the whole answer had to come from the expensive solve.
+That was written into the Plan section as the thing that would make bound 2 useless, and it happened.
+
+**The answer degrades monotonically in the number of junctions that must share a seat.**
+One junction closes at a chord of **90.0° exactly** — `cos²ψ = 1.0000`, binding link **0.643 nm**,
+in the *interior* of the measured window where `C-0057` said the feasible placements live,
+on the seat duplex's own axis, 7 of the 120 best-aligned.
+Two junctions close at **every** separation from the 6 bp steric floor to 12 bp — a stronger existence result than `C-0042` could give —
+but only **18 of 90** axial positions carry a closing placement at all, so the pair takes whatever chords those positions offer:
+**33° / 69° / 57° / 6° / 6° / 33° / 33°** against `C-0042`'s 0.00° everywhere.
+Three junctions on one crossbar close at **none** of the 24 best-aligned of 750 reach-feasible lattices, 134 junction solves, 0 closing.
+
+**`CH-0056` is upheld and its consequence is not, and that is the finding.**
+A free duplex's chord inherits no lattice phase — the chord azimuth is `ψ₀ + Δ/2 + π/2` and `ψ₀` is continuous —
+which is why *one* junction reaches 0.0°.
+But **torsion feasibility is a relation between two bodies**, so it depends on `ψ₀` relative to the seat's phosphate lattice,
+and a pair must find two feasible placements at a **fixed separation**.
+The continuum is free; the feasible subset of it is not, and a pair samples the subset twice.
+
+**Two recommendations move.** `C-0042`'s **7 bp** row — the number it resolved `C-0037`'s *"between 6 and 8"* to — is the **worst** of the seven,
+at 69.0°, worth 12.8 % of the base couple; and 69° is past the half right angle at which `C-0037`'s `TwoLinkBase` invariant
+stops being able to represent the base at all, so the pipeline **refuses** it rather than reporting a number.
+Nine and ten base pairs deliver 6.0°, inside `C-0029`'s own allowance, worth 98.9 %.
+And `C-0029`'s recommended **scaffold excursion cannot be aligned**: 1 of 120 closing, at 39.0°, against independent staples' 7 at 0.0°.
+Hence `CH-0072`.
+
+**What did not move is the mechanics, and saying so is the point.**
+Carried through with the pair's own 6.0° base floor, the crossbar's 6.0° cap floor and `C-0052`'s leg-is-one-body budget on their sum,
+all fifteen quantised leg lengths still pass all nine predicates at **1.81–2.45 / 1.36–1.84**
+against `C-0052`'s aligned **1.81–2.43 / 1.36–1.83** — the same band, best point marginally better.
+The reason is that the binding misalignment was never the chemistry: `C-0052`'s twist budget runs 0.3°–89.8° over the envelope,
+and a 6.0° floor is inside it almost everywhere.
+**A chemistry result that costs the statics 1 % is worth reporting as costing 1 %.**
+
+**And one sensitivity stopped existing.** `C-0057`'s falsifier 4 fired on the argmin: moving the phosphate radius
+from 1.00 to 0.90 nm swung the single junction's strain by **7×**, because a distance argmin is unstable under a convention.
+Ranked on alignment the verdict is stable — an aligned placement closes at exactly 0.0° at 1.00, 0.90 **and** `C-0057`'s measured 0.8901 nm.
+Optimising on the right quantity removed a sensitivity that optimising on the wrong one had manufactured.
+The one axis that still moves it is the **wide 154° groove**, which `C-0029` already names as the parameter the base couple is most sensitive to.
+
+**What is left, and it is one thing.** The trio is a *"not found within the budget"* and the budget is thin —
+24 of 750 lattices, two candidate azimuths per junction, two crossbar lengths, one row pitch.
+That is `T-127`, and it decides the branch: if the cap has no routing at a real budget, the truss closes,
+which §7 wants early rather than late.
+
+**Process notes.** The study runs in **14 min** and its expensive half is ~2 000 inverse-kinematic link closures;
+the census enumerations that dominate the *apparent* cost are seconds.
+The first run was written with the **single junction's** misalignment floor carried into the truss mechanics;
+that is wrong — a truss stands on two legs and the pair is strictly harder — so it was re-run with the pair's floor,
+and that is what turned `C-0042`'s 7 bp row from a degraded design point into a `NOT REPRESENTABLE`.
+`tools/verify.sh` needed `--drop-file src/test/kotlin/structure/StackedArmSheetTest.kt` while a sibling agent's `T-121` was mid-TDD;
+that file is green now and the final run needed no drop.
+
+### Iteration 10 — the branch re-derived on the feasible set, and a quantum that was not a trap
+
+Three loops, each closing an assumption a recent result had left exposed.
+
+**`C-0059` re-derived the truss branch on `C-0057`'s feasible set, and two of three junctions survive.**
+The census reproduces `C-0057`'s libraries at **departure 0**. The **single** junction closes at a chord of
+**90.0° — exactly the flexure axis** — with a binding link of 0.643 nm in the *interior* of the measured
+window, which is precisely where a residual-minimising search with a shortest-gap tie-break never looked.
+The **pair** closes at every separation from the 6 bp floor to 12 bp — a stronger existence result than
+`C-0042` could give — but the alignment stops being free: 33°/69°/57°/6°/6°/33°/33°, and **`C-0042`'s own
+recommended 7 bp is the worst of the seven** at 69.0°, past the half right angle where `C-0037`'s two-axis
+base is not representable at all. 9–10 bp delivers 6.0°, inside `C-0029`'s own allowance.
+The **trio does not close**: 750 of 1 800 crossbar lattices are reach-feasible for all three junctions and
+none of the 24 best-aligned survives.
+**And the mechanics barely moves** — all fifteen quantised leg lengths still pass all nine predicates at
+1.81–2.45 against `C-0052`'s aligned 1.81–2.43 — because the binding misalignment was never the chemistry
+but the leg's **own quantised twist**. The agent's declared falsifier did not fire, and it said so.
+
+**`C-0060` found the quantum was not the trap it had been twice before, and gave the reason in one line.**
+A 5:1 per-path ratio **can** be built: one base pair is 1.0–19.1 % of a level's own stiffness against a flat
+window measured here at `3.5 ≤ R ≤ 20`, so quantisation is **25× finer** than the requirement, where
+`C-0023`'s mounting-offset quantum was **8.3× coarser** than its own. The structural reason is that
+**a preload is a length and a stiffness is a *power* of a length**, so 0.34 nm enters divided by ~87 base
+pairs rather than by one.
+Two findings came free. Rounding the two *levels* independently misses `C-0017`'s mandate by 5.44 % — a
+placement error, recoverable only because the mandate is an equality on a **sum**, at the price of three or
+four distinct staple lengths rather than two. And **small scatter helps** (0.0767 → 0.0571 at 10 %), so a
+linearised tolerance budget gets the sign wrong.
+**What fails is the array, not the ratio**: `k ∝ span⁻³` makes the soft level the *longer* member, so six of
+seven elements do not place. `C-0058`'s qualifier is about the array, and `C-0041`'s obstruction is made
+worse.
+
+**`C-0061` settled the price of `C-0055`'s escape, and it is essentially zero in the channels that matter.**
+A body attached at **one** point and otherwise free has a **zero Schur complement** there — its rigid-body
+motions span everything a single crossover can impose — so 34 arms covering 46.3 % of the tile's plan move
+the peak dishing, crossover force and duplex shear by `5e−9`, a residual that is the regularisation and
+vanishes linearly with it. **And the single tie is forced rather than chosen**: an upward site belongs to
+one duplex, so its pitch is the bare 32 bp = 10.88 nm against an arm of 8.164 nm at 34 paths and 9.131 nm
+even at §3's 45. Drag is the only channel that moves — 9.1 %, taking the §4(d) margin 22.81× → 20.73×, still
+discharged — and `C-0010`'s predicate is identically unchanged broadband.
+Its `CH-0074` is the sting: on `C-0055`'s own 34 roots a uniform coupling dishes **0.4156** against 0.3079
+free, i.e. 1.35× worse than no coupling, and `C-0058`'s flat rim rule reaches only 0.1649 there against its
+published 0.0753. **`C-0058`'s flat distribution lives on stations no placement supplies.**
+
+**A coordination hazard recurred a third time and is now in `CLAUDE.md` rather than only here.**
+`T-121` sent two whole reports under the same claim and challenge IDs with different physics in each; the
+filed artifacts matched the second. With `T-79`'s and `T-113`'s divergences that is three in one session,
+and the rule is now recorded where the next agent will meet it: **the claim, the challenge and the result
+JSON are the artifacts; the report is a courtesy.** A second entry records that `pkill -f
+"plenty-of-room-study"` matches *siblings'* snapshots, which killed another agent's nine-minute run — the
+same trap `CLAUDE.md` already carried for killing your own shell, in a new form.

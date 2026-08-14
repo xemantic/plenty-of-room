@@ -239,6 +239,10 @@ Everything else — the Woodbury surrogate and its reciprocity, the force-space 
 ## Still open — named, not answered
 
 1. **Whether a 5:1 per-path stiffness ratio can be built**, and at what quantisation. `C-0030`'s flexure stiffness goes as `span^−3`, so a 5× ratio is a `5^(1/3) = 1.71×` span ratio — plausible on its face and not checked here.
+   **ANSWERED by [`C-0060`](C-0060-buildable-stiffness-ratio.md) (`T-122`, iteration 10): YES on the stiffness, NO on the placement.**
+   All seven settings of the five catalogue elements reach both levels — the coarsest quantum is 19.1 % of a level's own stiffness against a flat ratio window measured at `3.5 ≤ R ≤ 20`, so quantisation is 25× finer than the requirement — and all fourteen built designs are flat (0.0715–0.0815).
+   Two qualifications this claim's own text does not carry: **rounding the two levels independently misses `C-0017`'s mandate by up to 5.44 %**, recoverable only by trimming individual paths one base pair (3–4 distinct settings, not two); and the `1.71×` span ratio above is exactly what breaks the **array** — the interior span is 52.36 nm on a 40 nm tile and six of seven elements place 0–30 of the 45 stations, `C-0041`'s obstruction unchanged and made worse.
+   `C-0060` also finds the best one-parameter ratio at this claim's own 6.70 nm collar is **7, not 5** — 0.0653 of the stroke against 0.0753, a further 13.4 %, and no harder to build.
 2. **Whether a distribution flat at every operating state exists.** The minimax found 0.1587 from three starts; a better search, more paths, or the placement freedom below might reach the tolerance.
 3. **The placement itself.** Every station here sits on `C-0026`'s grid. `C-0047`'s stagger sweep found 45 % on an axis nobody had swept, and this claim's own finding — that the family converges on a *placement* — says that is where the remaining room is.
 4. **The foundation multiplier**, held at `C-0001`'s secant throughout.

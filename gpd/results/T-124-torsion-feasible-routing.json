@@ -1,0 +1,2130 @@
+{
+    "task": "T-124",
+    "leaf": "A8.2",
+    "conditions": {
+        "temperature": "300 K",
+        "medium": "aqueous 2 mM MgCl2",
+        "lattice": "single-layer square-lattice Rothemund sheet, 2.69 nm interhelical",
+        "backbone model": "B-form phosphate helix, 10.67 bp/turn, 0.34 nm rise, r_P = 1.00 nm, groove 120° for the closure — C-0029's own; the MECHANICS on the hard, convention-free 180° chord, as C-0037/C-0042/C-0048 adopt",
+        "torsion convention": "IUPAC, degrees, folded to (-180, 180]",
+        "chord convention": "chord azimuth = standoff azimuth + groove/2 + pi/2; the flexure axis is pi/2; misalignment folded into [0, pi/2] because a chord is a line",
+        "search grid": "60 torsion steps, 4 refinements",
+        "verdict grid": "180 torsion steps, 6 refinements — C-0057's own",
+        "rigidities": "CanDo EI = 230.0 pN nm^2 and Fields et al.'s implied 172.9062311567061 pN nm^2",
+        "units": "nm, pN, pN nm, pN/nm, k_BT = 4.141947 pN nm"
+    },
+    "bounds": [
+        {
+            "quantity": "the alignment band",
+            "value": 16.8697282,
+            "units": "deg",
+            "note": "half the sheet's azimuthal quantum — C-0029's own ±16.87°, whose cos² is its 8.4 % allowance on the base couple"
+        },
+        {
+            "quantity": "the alignment band as a share of the azimuth circle",
+            "value": 0.187441425,
+            "units": "1",
+            "note": "two intervals of 2×16.87°, because a chord is a line"
+        },
+        {
+            "quantity": "reach interval, tolerant lower",
+            "value": 0.222769491,
+            "units": "nm",
+            "note": "C-0057's bound 2, at three measured sigma on every bond and angle"
+        },
+        {
+            "quantity": "reach interval, tolerant upper",
+            "value": 0.409460075,
+            "units": "nm",
+            "note": "a link outside the interval closes at NO torsion whatever"
+        },
+        {
+            "quantity": "azimuth values carrying a reach-feasible placement",
+            "value": 118.0,
+            "units": "count",
+            "note": "of 120 on the grid — the falsifier declared in the Plan section"
+        }
+    ],
+    "census": [
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "placements": 69120,
+            "covalent": 3546,
+            "reachFeasible": 1855,
+            "inAlignmentBand": 414,
+            "bestFeasibleMisalignmentDegrees": 0.0,
+            "upstreamCovalent": 3546,
+            "upstreamReachFeasible": 1855,
+            "departure": 0,
+            "note": "C-0057's census re-derived from its own libraries, not read off its result file"
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "placements": 69120,
+            "covalent": 280,
+            "reachFeasible": 137,
+            "inAlignmentBand": 59,
+            "bestFeasibleMisalignmentDegrees": 0.0,
+            "upstreamCovalent": 280,
+            "upstreamReachFeasible": 137,
+            "departure": 0,
+            "note": "C-0057's census re-derived from its own libraries, not read off its result file"
+        }
+    ],
+    "azimuths": [
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 0.0,
+            "chordAzimuthDegrees": 150.0,
+            "misalignmentDegrees": 60.0,
+            "feasiblePlacements": 6
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 3.0,
+            "chordAzimuthDegrees": 153.0,
+            "misalignmentDegrees": 63.0,
+            "feasiblePlacements": 5
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 6.0,
+            "chordAzimuthDegrees": 156.0,
+            "misalignmentDegrees": 66.0,
+            "feasiblePlacements": 7
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 9.0,
+            "chordAzimuthDegrees": 159.0,
+            "misalignmentDegrees": 69.0,
+            "feasiblePlacements": 14
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 12.0,
+            "chordAzimuthDegrees": 162.0,
+            "misalignmentDegrees": 72.0,
+            "feasiblePlacements": 10
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 15.0,
+            "chordAzimuthDegrees": 165.0,
+            "misalignmentDegrees": 75.0,
+            "feasiblePlacements": 6
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 18.0,
+            "chordAzimuthDegrees": 168.0,
+            "misalignmentDegrees": 78.0,
+            "feasiblePlacements": 11
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 21.0,
+            "chordAzimuthDegrees": 171.0,
+            "misalignmentDegrees": 81.0,
+            "feasiblePlacements": 12
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 24.0,
+            "chordAzimuthDegrees": 174.0,
+            "misalignmentDegrees": 84.0,
+            "feasiblePlacements": 18
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 27.0,
+            "chordAzimuthDegrees": 177.0,
+            "misalignmentDegrees": 87.0,
+            "feasiblePlacements": 13
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 30.0,
+            "chordAzimuthDegrees": 180.0,
+            "misalignmentDegrees": 90.0,
+            "feasiblePlacements": 12
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 33.0,
+            "chordAzimuthDegrees": 183.0,
+            "misalignmentDegrees": 87.0,
+            "feasiblePlacements": 8
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 36.0,
+            "chordAzimuthDegrees": 186.0,
+            "misalignmentDegrees": 84.0,
+            "feasiblePlacements": 4
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 39.0,
+            "chordAzimuthDegrees": 189.0,
+            "misalignmentDegrees": 81.0,
+            "feasiblePlacements": 11
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 42.0,
+            "chordAzimuthDegrees": 192.0,
+            "misalignmentDegrees": 78.0,
+            "feasiblePlacements": 9
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 45.0,
+            "chordAzimuthDegrees": 195.0,
+            "misalignmentDegrees": 75.0,
+            "feasiblePlacements": 8
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 48.0,
+            "chordAzimuthDegrees": 198.0,
+            "misalignmentDegrees": 72.0,
+            "feasiblePlacements": 14
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 51.0,
+            "chordAzimuthDegrees": 201.0,
+            "misalignmentDegrees": 69.0,
+            "feasiblePlacements": 19
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 54.0,
+            "chordAzimuthDegrees": 204.0,
+            "misalignmentDegrees": 66.0,
+            "feasiblePlacements": 24
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 57.0,
+            "chordAzimuthDegrees": 207.0,
+            "misalignmentDegrees": 63.0,
+            "feasiblePlacements": 26
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 60.0,
+            "chordAzimuthDegrees": 210.0,
+            "misalignmentDegrees": 60.0,
+            "feasiblePlacements": 17
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 63.0,
+            "chordAzimuthDegrees": 213.0,
+            "misalignmentDegrees": 57.0,
+            "feasiblePlacements": 17
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 66.0,
+            "chordAzimuthDegrees": 216.0,
+            "misalignmentDegrees": 54.0,
+            "feasiblePlacements": 15
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 69.0,
+            "chordAzimuthDegrees": 219.0,
+            "misalignmentDegrees": 51.0,
+            "feasiblePlacements": 13
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 72.0,
+            "chordAzimuthDegrees": 222.0,
+            "misalignmentDegrees": 48.0,
+            "feasiblePlacements": 7
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 75.0,
+            "chordAzimuthDegrees": 225.0,
+            "misalignmentDegrees": 45.0,
+            "feasiblePlacements": 10
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 78.0,
+            "chordAzimuthDegrees": 228.0,
+            "misalignmentDegrees": 42.0,
+            "feasiblePlacements": 11
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 81.0,
+            "chordAzimuthDegrees": 231.0,
+            "misalignmentDegrees": 39.0,
+            "feasiblePlacements": 8
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 84.0,
+            "chordAzimuthDegrees": 234.0,
+            "misalignmentDegrees": 36.0,
+            "feasiblePlacements": 5
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 87.0,
+            "chordAzimuthDegrees": 237.0,
+            "misalignmentDegrees": 33.0,
+            "feasiblePlacements": 7
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 90.0,
+            "chordAzimuthDegrees": 240.0,
+            "misalignmentDegrees": 30.0,
+            "feasiblePlacements": 9
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 93.0,
+            "chordAzimuthDegrees": 243.0,
+            "misalignmentDegrees": 27.0,
+            "feasiblePlacements": 25
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 96.0,
+            "chordAzimuthDegrees": 246.0,
+            "misalignmentDegrees": 24.0,
+            "feasiblePlacements": 24
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 99.0,
+            "chordAzimuthDegrees": 249.0,
+            "misalignmentDegrees": 21.0,
+            "feasiblePlacements": 30
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 102.0,
+            "chordAzimuthDegrees": 252.0,
+            "misalignmentDegrees": 18.0,
+            "feasiblePlacements": 26
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 105.0,
+            "chordAzimuthDegrees": 255.0,
+            "misalignmentDegrees": 15.0,
+            "feasiblePlacements": 23
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 108.0,
+            "chordAzimuthDegrees": 258.0,
+            "misalignmentDegrees": 12.0,
+            "feasiblePlacements": 22
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 111.0,
+            "chordAzimuthDegrees": 261.0,
+            "misalignmentDegrees": 9.0,
+            "feasiblePlacements": 15
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 114.0,
+            "chordAzimuthDegrees": 264.0,
+            "misalignmentDegrees": 6.0,
+            "feasiblePlacements": 16
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 117.0,
+            "chordAzimuthDegrees": 267.0,
+            "misalignmentDegrees": 3.0,
+            "feasiblePlacements": 13
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 120.0,
+            "chordAzimuthDegrees": 270.0,
+            "misalignmentDegrees": 0.0,
+            "feasiblePlacements": 12
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 123.0,
+            "chordAzimuthDegrees": 273.0,
+            "misalignmentDegrees": 3.0,
+            "feasiblePlacements": 14
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 126.0,
+            "chordAzimuthDegrees": 276.0,
+            "misalignmentDegrees": 6.0,
+            "feasiblePlacements": 23
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 129.0,
+            "chordAzimuthDegrees": 279.0,
+            "misalignmentDegrees": 9.0,
+            "feasiblePlacements": 20
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 132.0,
+            "chordAzimuthDegrees": 282.0,
+            "misalignmentDegrees": 12.0,
+            "feasiblePlacements": 23
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 135.0,
+            "chordAzimuthDegrees": 285.0,
+            "misalignmentDegrees": 15.0,
+            "feasiblePlacements": 33
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 138.0,
+            "chordAzimuthDegrees": 288.0,
+            "misalignmentDegrees": 18.0,
+            "feasiblePlacements": 34
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 141.0,
+            "chordAzimuthDegrees": 291.0,
+            "misalignmentDegrees": 21.0,
+            "feasiblePlacements": 27
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 144.0,
+            "chordAzimuthDegrees": 294.0,
+            "misalignmentDegrees": 24.0,
+            "feasiblePlacements": 26
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 147.0,
+            "chordAzimuthDegrees": 297.0,
+            "misalignmentDegrees": 27.0,
+            "feasiblePlacements": 21
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 150.0,
+            "chordAzimuthDegrees": 300.0,
+            "misalignmentDegrees": 30.0,
+            "feasiblePlacements": 18
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 153.0,
+            "chordAzimuthDegrees": 303.0,
+            "misalignmentDegrees": 33.0,
+            "feasiblePlacements": 20
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 156.0,
+            "chordAzimuthDegrees": 306.0,
+            "misalignmentDegrees": 36.0,
+            "feasiblePlacements": 25
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 159.0,
+            "chordAzimuthDegrees": 309.0,
+            "misalignmentDegrees": 39.0,
+            "feasiblePlacements": 29
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 162.0,
+            "chordAzimuthDegrees": 312.0,
+            "misalignmentDegrees": 42.0,
+            "feasiblePlacements": 23
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 165.0,
+            "chordAzimuthDegrees": 315.0,
+            "misalignmentDegrees": 45.0,
+            "feasiblePlacements": 23
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 168.0,
+            "chordAzimuthDegrees": 318.0,
+            "misalignmentDegrees": 48.0,
+            "feasiblePlacements": 20
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 171.0,
+            "chordAzimuthDegrees": 321.0,
+            "misalignmentDegrees": 51.0,
+            "feasiblePlacements": 16
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 174.0,
+            "chordAzimuthDegrees": 324.0,
+            "misalignmentDegrees": 54.0,
+            "feasiblePlacements": 16
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 177.0,
+            "chordAzimuthDegrees": 327.0,
+            "misalignmentDegrees": 57.0,
+            "feasiblePlacements": 23
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 180.0,
+            "chordAzimuthDegrees": 330.0,
+            "misalignmentDegrees": 60.0,
+            "feasiblePlacements": 16
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 183.0,
+            "chordAzimuthDegrees": 333.0,
+            "misalignmentDegrees": 63.0,
+            "feasiblePlacements": 14
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 186.0,
+            "chordAzimuthDegrees": 336.0,
+            "misalignmentDegrees": 66.0,
+            "feasiblePlacements": 26
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 189.0,
+            "chordAzimuthDegrees": 339.0,
+            "misalignmentDegrees": 69.0,
+            "feasiblePlacements": 25
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 192.0,
+            "chordAzimuthDegrees": 342.0,
+            "misalignmentDegrees": 72.0,
+            "feasiblePlacements": 23
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 195.0,
+            "chordAzimuthDegrees": 345.0,
+            "misalignmentDegrees": 75.0,
+            "feasiblePlacements": 5
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 198.0,
+            "chordAzimuthDegrees": 348.0,
+            "misalignmentDegrees": 78.0,
+            "feasiblePlacements": 10
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 201.0,
+            "chordAzimuthDegrees": 351.0,
+            "misalignmentDegrees": 81.0,
+            "feasiblePlacements": 6
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 204.0,
+            "chordAzimuthDegrees": 354.0,
+            "misalignmentDegrees": 84.0,
+            "feasiblePlacements": 4
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 207.0,
+            "chordAzimuthDegrees": 357.0,
+            "misalignmentDegrees": 87.0,
+            "feasiblePlacements": 1
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 216.0,
+            "chordAzimuthDegrees": 366.0,
+            "misalignmentDegrees": 84.0,
+            "feasiblePlacements": 1
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 219.0,
+            "chordAzimuthDegrees": 369.0,
+            "misalignmentDegrees": 81.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 222.0,
+            "chordAzimuthDegrees": 372.0,
+            "misalignmentDegrees": 78.0,
+            "feasiblePlacements": 3
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 225.0,
+            "chordAzimuthDegrees": 375.0,
+            "misalignmentDegrees": 75.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 228.0,
+            "chordAzimuthDegrees": 378.0,
+            "misalignmentDegrees": 72.0,
+            "feasiblePlacements": 5
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 231.0,
+            "chordAzimuthDegrees": 381.0,
+            "misalignmentDegrees": 69.0,
+            "feasiblePlacements": 7
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 234.0,
+            "chordAzimuthDegrees": 384.0,
+            "misalignmentDegrees": 66.0,
+            "feasiblePlacements": 13
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 237.0,
+            "chordAzimuthDegrees": 387.0,
+            "misalignmentDegrees": 63.0,
+            "feasiblePlacements": 13
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 240.0,
+            "chordAzimuthDegrees": 390.0,
+            "misalignmentDegrees": 60.0,
+            "feasiblePlacements": 16
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 243.0,
+            "chordAzimuthDegrees": 393.0,
+            "misalignmentDegrees": 57.0,
+            "feasiblePlacements": 21
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 246.0,
+            "chordAzimuthDegrees": 396.0,
+            "misalignmentDegrees": 54.0,
+            "feasiblePlacements": 19
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 249.0,
+            "chordAzimuthDegrees": 399.0,
+            "misalignmentDegrees": 51.0,
+            "feasiblePlacements": 16
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 252.0,
+            "chordAzimuthDegrees": 402.0,
+            "misalignmentDegrees": 48.0,
+            "feasiblePlacements": 15
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 255.0,
+            "chordAzimuthDegrees": 405.0,
+            "misalignmentDegrees": 45.0,
+            "feasiblePlacements": 20
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 258.0,
+            "chordAzimuthDegrees": 408.0,
+            "misalignmentDegrees": 42.0,
+            "feasiblePlacements": 17
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 261.0,
+            "chordAzimuthDegrees": 411.0,
+            "misalignmentDegrees": 39.0,
+            "feasiblePlacements": 21
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 264.0,
+            "chordAzimuthDegrees": 414.0,
+            "misalignmentDegrees": 36.0,
+            "feasiblePlacements": 16
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 267.0,
+            "chordAzimuthDegrees": 417.0,
+            "misalignmentDegrees": 33.0,
+            "feasiblePlacements": 11
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 270.0,
+            "chordAzimuthDegrees": 420.0,
+            "misalignmentDegrees": 30.0,
+            "feasiblePlacements": 13
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 273.0,
+            "chordAzimuthDegrees": 423.0,
+            "misalignmentDegrees": 27.0,
+            "feasiblePlacements": 14
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 276.0,
+            "chordAzimuthDegrees": 426.0,
+            "misalignmentDegrees": 24.0,
+            "feasiblePlacements": 21
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 279.0,
+            "chordAzimuthDegrees": 429.0,
+            "misalignmentDegrees": 21.0,
+            "feasiblePlacements": 21
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 282.0,
+            "chordAzimuthDegrees": 432.0,
+            "misalignmentDegrees": 18.0,
+            "feasiblePlacements": 17
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 285.0,
+            "chordAzimuthDegrees": 435.0,
+            "misalignmentDegrees": 15.0,
+            "feasiblePlacements": 22
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 288.0,
+            "chordAzimuthDegrees": 438.0,
+            "misalignmentDegrees": 12.0,
+            "feasiblePlacements": 21
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 291.0,
+            "chordAzimuthDegrees": 441.0,
+            "misalignmentDegrees": 9.0,
+            "feasiblePlacements": 21
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 294.0,
+            "chordAzimuthDegrees": 444.0,
+            "misalignmentDegrees": 6.0,
+            "feasiblePlacements": 16
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 297.0,
+            "chordAzimuthDegrees": 447.0,
+            "misalignmentDegrees": 3.0,
+            "feasiblePlacements": 17
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 300.0,
+            "chordAzimuthDegrees": 450.0,
+            "misalignmentDegrees": 0.0,
+            "feasiblePlacements": 16
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 303.0,
+            "chordAzimuthDegrees": 453.0,
+            "misalignmentDegrees": 3.0,
+            "feasiblePlacements": 14
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 306.0,
+            "chordAzimuthDegrees": 456.0,
+            "misalignmentDegrees": 6.0,
+            "feasiblePlacements": 16
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 309.0,
+            "chordAzimuthDegrees": 459.0,
+            "misalignmentDegrees": 9.0,
+            "feasiblePlacements": 19
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 312.0,
+            "chordAzimuthDegrees": 462.0,
+            "misalignmentDegrees": 12.0,
+            "feasiblePlacements": 15
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 315.0,
+            "chordAzimuthDegrees": 465.0,
+            "misalignmentDegrees": 15.0,
+            "feasiblePlacements": 23
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 318.0,
+            "chordAzimuthDegrees": 468.0,
+            "misalignmentDegrees": 18.0,
+            "feasiblePlacements": 29
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 321.0,
+            "chordAzimuthDegrees": 471.0,
+            "misalignmentDegrees": 21.0,
+            "feasiblePlacements": 33
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 324.0,
+            "chordAzimuthDegrees": 474.0,
+            "misalignmentDegrees": 24.0,
+            "feasiblePlacements": 34
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 327.0,
+            "chordAzimuthDegrees": 477.0,
+            "misalignmentDegrees": 27.0,
+            "feasiblePlacements": 26
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 330.0,
+            "chordAzimuthDegrees": 480.0,
+            "misalignmentDegrees": 30.0,
+            "feasiblePlacements": 10
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 333.0,
+            "chordAzimuthDegrees": 483.0,
+            "misalignmentDegrees": 33.0,
+            "feasiblePlacements": 8
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 336.0,
+            "chordAzimuthDegrees": 486.0,
+            "misalignmentDegrees": 36.0,
+            "feasiblePlacements": 6
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 339.0,
+            "chordAzimuthDegrees": 489.0,
+            "misalignmentDegrees": 39.0,
+            "feasiblePlacements": 9
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 342.0,
+            "chordAzimuthDegrees": 492.0,
+            "misalignmentDegrees": 42.0,
+            "feasiblePlacements": 12
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 345.0,
+            "chordAzimuthDegrees": 495.0,
+            "misalignmentDegrees": 45.0,
+            "feasiblePlacements": 11
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 348.0,
+            "chordAzimuthDegrees": 498.0,
+            "misalignmentDegrees": 48.0,
+            "feasiblePlacements": 13
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 351.0,
+            "chordAzimuthDegrees": 501.0,
+            "misalignmentDegrees": 51.0,
+            "feasiblePlacements": 15
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 354.0,
+            "chordAzimuthDegrees": 504.0,
+            "misalignmentDegrees": 54.0,
+            "feasiblePlacements": 12
+        },
+        {
+            "topology": "INDEPENDENT_STAPLES",
+            "azimuthDegrees": 357.0,
+            "chordAzimuthDegrees": 507.0,
+            "misalignmentDegrees": 57.0,
+            "feasiblePlacements": 7
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 0.0,
+            "chordAzimuthDegrees": 150.0,
+            "misalignmentDegrees": 60.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 105.0,
+            "chordAzimuthDegrees": 255.0,
+            "misalignmentDegrees": 15.0,
+            "feasiblePlacements": 1
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 108.0,
+            "chordAzimuthDegrees": 258.0,
+            "misalignmentDegrees": 12.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 111.0,
+            "chordAzimuthDegrees": 261.0,
+            "misalignmentDegrees": 9.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 114.0,
+            "chordAzimuthDegrees": 264.0,
+            "misalignmentDegrees": 6.0,
+            "feasiblePlacements": 5
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 117.0,
+            "chordAzimuthDegrees": 267.0,
+            "misalignmentDegrees": 3.0,
+            "feasiblePlacements": 3
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 120.0,
+            "chordAzimuthDegrees": 270.0,
+            "misalignmentDegrees": 0.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 123.0,
+            "chordAzimuthDegrees": 273.0,
+            "misalignmentDegrees": 3.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 126.0,
+            "chordAzimuthDegrees": 276.0,
+            "misalignmentDegrees": 6.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 129.0,
+            "chordAzimuthDegrees": 279.0,
+            "misalignmentDegrees": 9.0,
+            "feasiblePlacements": 1
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 132.0,
+            "chordAzimuthDegrees": 282.0,
+            "misalignmentDegrees": 12.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 135.0,
+            "chordAzimuthDegrees": 285.0,
+            "misalignmentDegrees": 15.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 138.0,
+            "chordAzimuthDegrees": 288.0,
+            "misalignmentDegrees": 18.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 141.0,
+            "chordAzimuthDegrees": 291.0,
+            "misalignmentDegrees": 21.0,
+            "feasiblePlacements": 1
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 144.0,
+            "chordAzimuthDegrees": 294.0,
+            "misalignmentDegrees": 24.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 147.0,
+            "chordAzimuthDegrees": 297.0,
+            "misalignmentDegrees": 27.0,
+            "feasiblePlacements": 4
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 150.0,
+            "chordAzimuthDegrees": 300.0,
+            "misalignmentDegrees": 30.0,
+            "feasiblePlacements": 5
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 153.0,
+            "chordAzimuthDegrees": 303.0,
+            "misalignmentDegrees": 33.0,
+            "feasiblePlacements": 3
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 156.0,
+            "chordAzimuthDegrees": 306.0,
+            "misalignmentDegrees": 36.0,
+            "feasiblePlacements": 5
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 159.0,
+            "chordAzimuthDegrees": 309.0,
+            "misalignmentDegrees": 39.0,
+            "feasiblePlacements": 9
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 165.0,
+            "chordAzimuthDegrees": 315.0,
+            "misalignmentDegrees": 45.0,
+            "feasiblePlacements": 3
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 168.0,
+            "chordAzimuthDegrees": 318.0,
+            "misalignmentDegrees": 48.0,
+            "feasiblePlacements": 4
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 171.0,
+            "chordAzimuthDegrees": 321.0,
+            "misalignmentDegrees": 51.0,
+            "feasiblePlacements": 1
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 177.0,
+            "chordAzimuthDegrees": 327.0,
+            "misalignmentDegrees": 57.0,
+            "feasiblePlacements": 6
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 180.0,
+            "chordAzimuthDegrees": 330.0,
+            "misalignmentDegrees": 60.0,
+            "feasiblePlacements": 6
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 186.0,
+            "chordAzimuthDegrees": 336.0,
+            "misalignmentDegrees": 66.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 189.0,
+            "chordAzimuthDegrees": 339.0,
+            "misalignmentDegrees": 69.0,
+            "feasiblePlacements": 5
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 192.0,
+            "chordAzimuthDegrees": 342.0,
+            "misalignmentDegrees": 72.0,
+            "feasiblePlacements": 4
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 288.0,
+            "chordAzimuthDegrees": 438.0,
+            "misalignmentDegrees": 12.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 291.0,
+            "chordAzimuthDegrees": 441.0,
+            "misalignmentDegrees": 9.0,
+            "feasiblePlacements": 5
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 294.0,
+            "chordAzimuthDegrees": 444.0,
+            "misalignmentDegrees": 6.0,
+            "feasiblePlacements": 5
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 297.0,
+            "chordAzimuthDegrees": 447.0,
+            "misalignmentDegrees": 3.0,
+            "feasiblePlacements": 5
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 300.0,
+            "chordAzimuthDegrees": 450.0,
+            "misalignmentDegrees": 0.0,
+            "feasiblePlacements": 5
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 303.0,
+            "chordAzimuthDegrees": 453.0,
+            "misalignmentDegrees": 3.0,
+            "feasiblePlacements": 3
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 306.0,
+            "chordAzimuthDegrees": 456.0,
+            "misalignmentDegrees": 6.0,
+            "feasiblePlacements": 1
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 309.0,
+            "chordAzimuthDegrees": 459.0,
+            "misalignmentDegrees": 9.0,
+            "feasiblePlacements": 1
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 312.0,
+            "chordAzimuthDegrees": 462.0,
+            "misalignmentDegrees": 12.0,
+            "feasiblePlacements": 5
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 315.0,
+            "chordAzimuthDegrees": 465.0,
+            "misalignmentDegrees": 15.0,
+            "feasiblePlacements": 3
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 321.0,
+            "chordAzimuthDegrees": 471.0,
+            "misalignmentDegrees": 21.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 324.0,
+            "chordAzimuthDegrees": 474.0,
+            "misalignmentDegrees": 24.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 327.0,
+            "chordAzimuthDegrees": 477.0,
+            "misalignmentDegrees": 27.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 330.0,
+            "chordAzimuthDegrees": 480.0,
+            "misalignmentDegrees": 30.0,
+            "feasiblePlacements": 2
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 333.0,
+            "chordAzimuthDegrees": 483.0,
+            "misalignmentDegrees": 33.0,
+            "feasiblePlacements": 1
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 336.0,
+            "chordAzimuthDegrees": 486.0,
+            "misalignmentDegrees": 36.0,
+            "feasiblePlacements": 1
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 339.0,
+            "chordAzimuthDegrees": 489.0,
+            "misalignmentDegrees": 39.0,
+            "feasiblePlacements": 1
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 342.0,
+            "chordAzimuthDegrees": 492.0,
+            "misalignmentDegrees": 42.0,
+            "feasiblePlacements": 1
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 351.0,
+            "chordAzimuthDegrees": 501.0,
+            "misalignmentDegrees": 51.0,
+            "feasiblePlacements": 1
+        },
+        {
+            "topology": "SCAFFOLD_EXCURSION",
+            "azimuthDegrees": 354.0,
+            "chordAzimuthDegrees": 504.0,
+            "misalignmentDegrees": 54.0,
+            "feasiblePlacements": 1
+        }
+    ],
+    "aligned": [
+        {
+            "scale": "C-0029 single junction",
+            "topology": "INDEPENDENT_STAPLES",
+            "placements": 69120,
+            "covalent": 3546,
+            "reachFeasible": 1855,
+            "inAlignmentBand": 414,
+            "solved": 120,
+            "closing": 7,
+            "bestFeasibleMisalignmentDegrees": 0.0,
+            "deepestSolvedMisalignmentDegrees": 6.0,
+            "closes": true,
+            "bestMisalignmentDegrees": 0.0,
+            "bestChordAzimuthDegrees": 90.0,
+            "bestAzimuthDegrees": 300.0,
+            "bestCentreX": 6.97217813,
+            "bestCentreY": 0.0,
+            "bestWorstGap": 0.643121028,
+            "bestWorstCovalentZ": 2.6298764,
+            "bestMinimumOccupancy": 0.00168144298,
+            "bestLoadedCoupleFraction": 1.0,
+            "verdict": "AN ALIGNED TORSION-FEASIBLE PLACEMENT EXISTS — chord at 0.0° from the loaded axis, 7 of 120 solved close"
+        },
+        {
+            "scale": "C-0029 single junction, scaffold excursion",
+            "topology": "SCAFFOLD_EXCURSION",
+            "placements": 69120,
+            "covalent": 280,
+            "reachFeasible": 137,
+            "inAlignmentBand": 59,
+            "solved": 120,
+            "closing": 1,
+            "bestFeasibleMisalignmentDegrees": 0.0,
+            "deepestSolvedMisalignmentDegrees": 60.0,
+            "closes": true,
+            "bestMisalignmentDegrees": 39.0,
+            "bestChordAzimuthDegrees": -51.0,
+            "bestAzimuthDegrees": 159.0,
+            "bestCentreX": 7.65239063,
+            "bestCentreY": 0.504375,
+            "bestWorstGap": 0.690952879,
+            "bestWorstCovalentZ": 2.07243572,
+            "bestMinimumOccupancy": 0.0011464384,
+            "bestLoadedCoupleFraction": 0.603955845,
+            "verdict": "AN ALIGNED TORSION-FEASIBLE PLACEMENT EXISTS — chord at 39.0° from the loaded axis, 1 of 120 solved close"
+        }
+    ],
+    "pairs": [
+        {
+            "separationBasePairs": 6,
+            "axialPositions": 90,
+            "closingPositions": 18,
+            "solves": 244,
+            "closes": true,
+            "worstMisalignmentDegrees": 33.0,
+            "firstChordDegrees": 57.0,
+            "secondChordDegrees": 114.0,
+            "worstGap": 0.6606217,
+            "worstCovalentZ": 2.56168979,
+            "minimumOccupancy": 0.0011464384,
+            "worstLoadedCoupleFraction": 0.703368322,
+            "firstCentreX": 11.05,
+            "secondCentreX": 13.09,
+            "lateralSeat": 0.0,
+            "verdict": "AN ALIGNED TORSION-CLOSING PAIR EXISTS at 6 bp — worst chord 33.0° off the loaded axis"
+        },
+        {
+            "separationBasePairs": 7,
+            "axialPositions": 90,
+            "closingPositions": 18,
+            "solves": 244,
+            "closes": true,
+            "worstMisalignmentDegrees": 69.0,
+            "firstChordDegrees": 147.0,
+            "secondChordDegrees": 159.0,
+            "worstGap": 0.688325478,
+            "worstCovalentZ": 2.18912527,
+            "minimumOccupancy": 0.0011464384,
+            "worstLoadedCoupleFraction": 0.128427587,
+            "firstCentreX": 10.37,
+            "secondCentreX": 12.75,
+            "lateralSeat": 0.0,
+            "verdict": "AN ALIGNED TORSION-CLOSING PAIR EXISTS at 7 bp — worst chord 69.0° off the loaded axis"
+        },
+        {
+            "separationBasePairs": 8,
+            "axialPositions": 90,
+            "closingPositions": 18,
+            "solves": 244,
+            "closes": true,
+            "worstMisalignmentDegrees": 57.0,
+            "firstChordDegrees": 147.0,
+            "secondChordDegrees": 114.0,
+            "worstGap": 0.688325478,
+            "worstCovalentZ": 2.56168979,
+            "minimumOccupancy": 0.0011464384,
+            "worstLoadedCoupleFraction": 0.296631678,
+            "firstCentreX": 10.37,
+            "secondCentreX": 13.09,
+            "lateralSeat": 0.0,
+            "verdict": "AN ALIGNED TORSION-CLOSING PAIR EXISTS at 8 bp — worst chord 57.0° off the loaded axis"
+        },
+        {
+            "separationBasePairs": 9,
+            "axialPositions": 90,
+            "closingPositions": 18,
+            "solves": 244,
+            "closes": true,
+            "worstMisalignmentDegrees": 6.0,
+            "firstChordDegrees": -96.0,
+            "secondChordDegrees": 90.0,
+            "worstGap": 0.684798412,
+            "worstCovalentZ": 2.43785229,
+            "minimumOccupancy": 0.00142330336,
+            "worstLoadedCoupleFraction": 0.9890738,
+            "firstCentreX": 3.91,
+            "secondCentreX": 6.97,
+            "lateralSeat": 0.0,
+            "verdict": "AN ALIGNED TORSION-CLOSING PAIR EXISTS at 9 bp — worst chord 6.0° off the loaded axis"
+        },
+        {
+            "separationBasePairs": 10,
+            "axialPositions": 90,
+            "closingPositions": 18,
+            "solves": 244,
+            "closes": true,
+            "worstMisalignmentDegrees": 6.0,
+            "firstChordDegrees": -96.0,
+            "secondChordDegrees": 96.0,
+            "worstGap": 0.684798412,
+            "worstCovalentZ": 2.819451,
+            "minimumOccupancy": 0.0011464384,
+            "worstLoadedCoupleFraction": 0.9890738,
+            "firstCentreX": 3.91,
+            "secondCentreX": 7.31,
+            "lateralSeat": 0.0,
+            "verdict": "AN ALIGNED TORSION-CLOSING PAIR EXISTS at 10 bp — worst chord 6.0° off the loaded axis"
+        },
+        {
+            "separationBasePairs": 11,
+            "axialPositions": 90,
+            "closingPositions": 18,
+            "solves": 244,
+            "closes": true,
+            "worstMisalignmentDegrees": 33.0,
+            "firstChordDegrees": 57.0,
+            "secondChordDegrees": -96.0,
+            "worstGap": 0.684798412,
+            "worstCovalentZ": 2.29809657,
+            "minimumOccupancy": 0.0011464384,
+            "worstLoadedCoupleFraction": 0.703368322,
+            "firstCentreX": 0.17,
+            "secondCentreX": 3.91,
+            "lateralSeat": 0.0,
+            "verdict": "AN ALIGNED TORSION-CLOSING PAIR EXISTS at 11 bp — worst chord 33.0° off the loaded axis"
+        },
+        {
+            "separationBasePairs": 12,
+            "axialPositions": 90,
+            "closingPositions": 18,
+            "solves": 244,
+            "closes": true,
+            "worstMisalignmentDegrees": 33.0,
+            "firstChordDegrees": 90.0,
+            "secondChordDegrees": 57.0,
+            "worstGap": 0.644317478,
+            "worstCovalentZ": 2.43785229,
+            "minimumOccupancy": 0.0011464384,
+            "worstLoadedCoupleFraction": 0.703368322,
+            "firstCentreX": 6.97,
+            "secondCentreX": 11.05,
+            "lateralSeat": 0.0,
+            "verdict": "AN ALIGNED TORSION-CLOSING PAIR EXISTS at 12 bp — worst chord 33.0° off the loaded axis"
+        }
+    ],
+    "trios": [
+        {
+            "crossbarBasePairs": 13,
+            "separationBasePairs": 7,
+            "lattices": 1800,
+            "feasibleLattices": 750,
+            "solvedLattices": 24,
+            "bestFeasibleMisalignmentDegrees": 6.0,
+            "solves": 134,
+            "closes": false,
+            "worstMisalignmentDegrees": 0.0,
+            "legMisalignmentDegrees": 0.0,
+            "flexureMisalignmentDegrees": 0.0,
+            "worstGap": 0.0,
+            "worstCovalentZ": 0.0,
+            "minimumOccupancy": 0.0,
+            "helicalPhaseDegrees": 0.0,
+            "axialPhase": 0.0,
+            "lateralSeat": 0.0,
+            "verdict": "NO torsion-closing trio in the 24 best-aligned of 750 reach-feasible lattices"
+        },
+        {
+            "crossbarBasePairs": 15,
+            "separationBasePairs": 7,
+            "lattices": 1800,
+            "feasibleLattices": 882,
+            "solvedLattices": 24,
+            "bestFeasibleMisalignmentDegrees": 6.0,
+            "solves": 135,
+            "closes": false,
+            "worstMisalignmentDegrees": 0.0,
+            "legMisalignmentDegrees": 0.0,
+            "flexureMisalignmentDegrees": 0.0,
+            "worstGap": 0.0,
+            "worstCovalentZ": 0.0,
+            "minimumOccupancy": 0.0,
+            "helicalPhaseDegrees": 0.0,
+            "axialPhase": 0.0,
+            "lateralSeat": 0.0,
+            "verdict": "NO torsion-closing trio in the 24 best-aligned of 882 reach-feasible lattices"
+        }
+    ],
+    "designs": [
+        {
+            "label": "C-0048's recommended design, aligned — the reference",
+            "legSteps": 21,
+            "legLength": 7.14,
+            "separationBasePairs": 7,
+            "baseFloorDegrees": 0.0,
+            "capFloorDegrees": 0.0,
+            "budgetDegrees": 78.5285848,
+            "baseMisalignmentDegrees": 26.25,
+            "capMisalignmentDegrees": 75.2214152,
+            "loadedCoupleFraction": 0.804380715,
+            "frameCouple": 71.085326,
+            "capBending": 1159.66387,
+            "capTorsion": 773.109244,
+            "duty": 3.98520518,
+            "criticalLoadCanDo": 8.63622351,
+            "criticalLoadFields": 6.49242112,
+            "marginCanDo": 2.16707123,
+            "marginFields": 1.62913095,
+            "governingPlane": "loaded",
+            "span": 30.2471888,
+            "tangent": 29.1318725,
+            "representable": true,
+            "verdict": "PASS"
+        },
+        {
+            "label": "C-0042's own 7 bp row, on the feasible set",
+            "legSteps": 21,
+            "legLength": 7.14,
+            "separationBasePairs": 7,
+            "baseFloorDegrees": 69.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 78.5285848,
+            "baseMisalignmentDegrees": 69.0,
+            "capMisalignmentDegrees": 6.0,
+            "loadedCoupleFraction": 0.128427587,
+            "frameCouple": 0.0,
+            "capBending": 0.0,
+            "capTorsion": 0.0,
+            "duty": 0.0,
+            "criticalLoadCanDo": 0.0,
+            "criticalLoadFields": 0.0,
+            "marginCanDo": 0.0,
+            "marginFields": 0.0,
+            "governingPlane": "none",
+            "span": 0.0,
+            "tangent": 0.0,
+            "representable": false,
+            "verdict": "NOT REPRESENTABLE — the feasible base misalignment exceeds a half right angle, past which C-0037's TwoLinkBase invariant cannot represent the base"
+        },
+        {
+            "label": "on the feasible set, 9 bp row",
+            "legSteps": 12,
+            "legLength": 4.08,
+            "separationBasePairs": 9,
+            "baseFloorDegrees": 6.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 45.126523,
+            "baseMisalignmentDegrees": 6.0,
+            "capMisalignmentDegrees": 41.376523,
+            "loadedCoupleFraction": 0.9890738,
+            "frameCouple": 117.606946,
+            "capBending": 901.960784,
+            "capTorsion": 601.30719,
+            "duty": 7.25998716,
+            "criticalLoadCanDo": 17.6899685,
+            "criticalLoadFields": 13.2987208,
+            "marginCanDo": 2.43663909,
+            "marginFields": 1.83178296,
+            "governingPlane": "loaded",
+            "span": 29.928765,
+            "tangent": 33.9874607,
+            "representable": true,
+            "verdict": "PASS"
+        },
+        {
+            "label": "on the feasible set, 9 bp row",
+            "legSteps": 13,
+            "legLength": 4.42,
+            "separationBasePairs": 9,
+            "baseFloorDegrees": 6.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 11.3870665,
+            "baseMisalignmentDegrees": 6.0,
+            "capMisalignmentDegrees": 11.3870665,
+            "loadedCoupleFraction": 0.9890738,
+            "frameCouple": 116.700837,
+            "capBending": 901.960784,
+            "capTorsion": 601.30719,
+            "duty": 7.00867713,
+            "criticalLoadCanDo": 14.3254201,
+            "criticalLoadFields": 10.769367,
+            "marginCanDo": 2.04395492,
+            "marginFields": 1.53657627,
+            "governingPlane": "loaded",
+            "span": 28.5828406,
+            "tangent": 33.8048192,
+            "representable": true,
+            "verdict": "PASS"
+        },
+        {
+            "label": "on the feasible set, 9 bp row",
+            "legSteps": 14,
+            "legLength": 4.76,
+            "separationBasePairs": 9,
+            "baseFloorDegrees": 6.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 22.3523899,
+            "baseMisalignmentDegrees": 11.25,
+            "capMisalignmentDegrees": 33.6023899,
+            "loadedCoupleFraction": 0.961939766,
+            "frameCouple": 115.808584,
+            "capBending": 901.960784,
+            "capTorsion": 601.30719,
+            "duty": 6.16127464,
+            "criticalLoadCanDo": 14.6510196,
+            "criticalLoadFields": 11.0141417,
+            "marginCanDo": 2.37792024,
+            "marginFields": 1.78764011,
+            "governingPlane": "loaded",
+            "span": 29.5514394,
+            "tangent": 32.2452352,
+            "representable": true,
+            "verdict": "PASS"
+        },
+        {
+            "label": "on the feasible set, 9 bp row",
+            "legSteps": 15,
+            "legLength": 5.1,
+            "separationBasePairs": 9,
+            "baseFloorDegrees": 6.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 56.0918463,
+            "baseMisalignmentDegrees": 26.25,
+            "capMisalignmentDegrees": 82.3418463,
+            "loadedCoupleFraction": 0.804380715,
+            "frameCouple": 114.929871,
+            "capBending": 901.960784,
+            "capTorsion": 601.30719,
+            "duty": 5.30943126,
+            "criticalLoadCanDo": 12.9848627,
+            "criticalLoadFields": 9.76158117,
+            "marginCanDo": 2.44562215,
+            "marginFields": 1.83853612,
+            "governingPlane": "loaded",
+            "span": 30.2096632,
+            "tangent": 30.6309281,
+            "representable": true,
+            "verdict": "PASS"
+        },
+        {
+            "label": "on the feasible set, 9 bp row",
+            "legSteps": 16,
+            "legLength": 5.44,
+            "separationBasePairs": 9,
+            "baseFloorDegrees": 6.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 89.8313027,
+            "baseMisalignmentDegrees": 22.5,
+            "capMisalignmentDegrees": 67.6686973,
+            "loadedCoupleFraction": 0.853553391,
+            "frameCouple": 114.064393,
+            "capBending": 901.960784,
+            "capTorsion": 601.30719,
+            "duty": 5.07338643,
+            "criticalLoadCanDo": 12.3497154,
+            "criticalLoadFields": 9.2840989,
+            "marginCanDo": 2.4342154,
+            "marginFields": 1.82996092,
+            "governingPlane": "loaded",
+            "span": 30.1421496,
+            "tangent": 30.383503,
+            "representable": true,
+            "verdict": "PASS"
+        },
+        {
+            "label": "on the feasible set, 9 bp row",
+            "legSteps": 17,
+            "legLength": 5.78,
+            "separationBasePairs": 9,
+            "baseFloorDegrees": 6.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 56.4292409,
+            "baseMisalignmentDegrees": 11.25,
+            "capMisalignmentDegrees": 45.1792409,
+            "loadedCoupleFraction": 0.961939766,
+            "frameCouple": 113.211851,
+            "capBending": 901.960784,
+            "capTorsion": 601.30719,
+            "duty": 4.99148174,
+            "criticalLoadCanDo": 11.9664751,
+            "criticalLoadFields": 8.9959918,
+            "marginCanDo": 2.39737933,
+            "marginFields": 1.8022688,
+            "governingPlane": "loaded",
+            "span": 29.8346825,
+            "tangent": 30.4893526,
+            "representable": true,
+            "verdict": "PASS"
+        },
+        {
+            "label": "on the feasible set, 9 bp row",
+            "legSteps": 18,
+            "legLength": 6.12,
+            "separationBasePairs": 9,
+            "baseFloorDegrees": 6.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 22.6897844,
+            "baseMisalignmentDegrees": 6.0,
+            "capMisalignmentDegrees": 22.6897844,
+            "loadedCoupleFraction": 0.9890738,
+            "frameCouple": 112.37196,
+            "capBending": 901.960784,
+            "capTorsion": 601.30719,
+            "duty": 4.93801951,
+            "criticalLoadCanDo": 10.9224146,
+            "criticalLoadFields": 8.21110233,
+            "marginCanDo": 2.21190187,
+            "marginFields": 1.66283311,
+            "governingPlane": "loaded",
+            "span": 29.0364521,
+            "tangent": 30.8081771,
+            "representable": true,
+            "verdict": "PASS"
+        },
+        {
+            "label": "on the feasible set, 9 bp row",
+            "legSteps": 19,
+            "legLength": 6.46,
+            "separationBasePairs": 9,
+            "baseFloorDegrees": 6.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 11.049672,
+            "baseMisalignmentDegrees": 11.25,
+            "capMisalignmentDegrees": 22.299672,
+            "loadedCoupleFraction": 0.961939766,
+            "frameCouple": 111.544438,
+            "capBending": 901.960784,
+            "capTorsion": 601.30719,
+            "duty": 4.69108634,
+            "criticalLoadCanDo": 10.1364823,
+            "criticalLoadFields": 7.62026504,
+            "marginCanDo": 2.16079637,
+            "marginFields": 1.62441372,
+            "governingPlane": "loaded",
+            "span": 29.0151555,
+            "tangent": 30.5337962,
+            "representable": true,
+            "verdict": "PASS"
+        },
+        {
+            "label": "on the feasible set, 9 bp row",
+            "legSteps": 20,
+            "legLength": 6.8,
+            "separationBasePairs": 9,
+            "baseFloorDegrees": 6.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 44.7891284,
+            "baseMisalignmentDegrees": 6.0,
+            "capMisalignmentDegrees": 44.7891284,
+            "loadedCoupleFraction": 0.9890738,
+            "frameCouple": 110.729016,
+            "capBending": 901.960784,
+            "capTorsion": 601.30719,
+            "duty": 4.35611221,
+            "criticalLoadCanDo": 9.89540699,
+            "criticalLoadFields": 7.43903273,
+            "marginCanDo": 2.27161435,
+            "marginFields": 1.70772294,
+            "governingPlane": "loaded",
+            "span": 29.8317546,
+            "tangent": 29.7838099,
+            "representable": true,
+            "verdict": "PASS"
+        },
+        {
+            "label": "on the feasible set, 9 bp row",
+            "legSteps": 21,
+            "legLength": 7.14,
+            "separationBasePairs": 9,
+            "baseFloorDegrees": 6.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 78.5285848,
+            "baseMisalignmentDegrees": 22.5,
+            "capMisalignmentDegrees": 78.9714152,
+            "loadedCoupleFraction": 0.853553391,
+            "frameCouple": 109.925429,
+            "capBending": 901.960784,
+            "capTorsion": 601.30719,
+            "duty": 4.02614852,
+            "criticalLoadCanDo": 8.81819535,
+            "criticalLoadFields": 6.62922141,
+            "marginCanDo": 2.19023102,
+            "marginFields": 1.6465417,
+            "governingPlane": "free",
+            "span": 30.2319087,
+            "tangent": 29.2074914,
+            "representable": true,
+            "verdict": "PASS"
+        },
+        {
+            "label": "on the feasible set, 9 bp row",
+            "legSteps": 22,
+            "legLength": 7.48,
+            "separationBasePairs": 9,
+            "baseFloorDegrees": 6.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 67.7319588,
+            "baseMisalignmentDegrees": 11.25,
+            "capMisalignmentDegrees": 56.4819588,
+            "loadedCoupleFraction": 0.961939766,
+            "frameCouple": 109.133421,
+            "capBending": 901.960784,
+            "capTorsion": 601.30719,
+            "duty": 4.00376025,
+            "criticalLoadCanDo": 8.69067111,
+            "criticalLoadFields": 6.53335299,
+            "marginCanDo": 2.17062725,
+            "marginFields": 1.63180425,
+            "governingPlane": "loaded",
+            "span": 30.0625352,
+            "tangent": 29.354956,
+            "representable": true,
+            "verdict": "PASS"
+        },
+        {
+            "label": "on the feasible set, 9 bp row",
+            "legSteps": 23,
+            "legLength": 7.82,
+            "separationBasePairs": 9,
+            "baseFloorDegrees": 6.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 33.9925023,
+            "baseMisalignmentDegrees": 6.0,
+            "capMisalignmentDegrees": 33.9925023,
+            "loadedCoupleFraction": 0.9890738,
+            "frameCouple": 108.352745,
+            "capBending": 901.960784,
+            "capTorsion": 601.30719,
+            "duty": 3.99815078,
+            "criticalLoadCanDo": 8.18712108,
+            "criticalLoadFields": 6.15480108,
+            "marginCanDo": 2.04772694,
+            "marginFields": 1.53941195,
+            "governingPlane": "loaded",
+            "span": 29.5378708,
+            "tangent": 29.6641632,
+            "representable": true,
+            "verdict": "PASS"
+        },
+        {
+            "label": "on the feasible set, 9 bp row",
+            "legSteps": 24,
+            "legLength": 8.16,
+            "separationBasePairs": 9,
+            "baseFloorDegrees": 6.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 0.253045923,
+            "baseMisalignmentDegrees": 6.0,
+            "capMisalignmentDegrees": 6.0,
+            "loadedCoupleFraction": 0.9890738,
+            "frameCouple": 107.583158,
+            "capBending": 901.960784,
+            "capTorsion": 601.30719,
+            "duty": 4.12236571,
+            "criticalLoadCanDo": 7.45589675,
+            "criticalLoadFields": 5.60509133,
+            "marginCanDo": 1.80864515,
+            "marginFields": 1.35967833,
+            "governingPlane": "loaded",
+            "span": 28.3361705,
+            "tangent": 30.5228406,
+            "representable": true,
+            "verdict": "PASS"
+        },
+        {
+            "label": "on the feasible set, 9 bp row",
+            "legSteps": 25,
+            "legLength": 8.5,
+            "separationBasePairs": 9,
+            "baseFloorDegrees": 6.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 33.4864105,
+            "baseMisalignmentDegrees": 6.0,
+            "capMisalignmentDegrees": 37.2364105,
+            "loadedCoupleFraction": 0.9890738,
+            "frameCouple": 106.824426,
+            "capBending": 901.960784,
+            "capTorsion": 601.30719,
+            "duty": 3.788686,
+            "criticalLoadCanDo": 7.33351479,
+            "criticalLoadFields": 5.51308871,
+            "marginCanDo": 1.93563541,
+            "marginFields": 1.45514532,
+            "governingPlane": "loaded",
+            "span": 29.6660017,
+            "tangent": 29.4966326,
+            "representable": true,
+            "verdict": "PASS"
+        },
+        {
+            "label": "on the feasible set, 9 bp row",
+            "legSteps": 26,
+            "legLength": 8.84,
+            "separationBasePairs": 9,
+            "baseFloorDegrees": 6.0,
+            "capFloorDegrees": 6.0,
+            "budgetDegrees": 67.2258669,
+            "baseMisalignmentDegrees": 22.5,
+            "capMisalignmentDegrees": 89.7258669,
+            "loadedCoupleFraction": 0.853553391,
+            "frameCouple": 106.076322,
+            "capBending": 901.960784,
+            "capTorsion": 601.30719,
+            "duty": 3.56090958,
+            "criticalLoadCanDo": 6.63724684,
+            "criticalLoadFields": 4.98965798,
+            "marginCanDo": 1.86391895,
+            "marginFields": 1.40123131,
+            "governingPlane": "free",
+            "span": 30.3136106,
+            "tangent": 29.0102114,
+            "representable": true,
+            "verdict": "PASS"
+        }
+    ],
+    "sensitivities": [
+        {
+            "axis": "reference",
+            "label": "C-0029's geometry, 120° groove, r_P = 1.00 nm",
+            "covalent": 3546,
+            "reachFeasible": 1855,
+            "inAlignmentBand": 414,
+            "bestFeasibleMisalignmentDegrees": 0.0,
+            "closes": true,
+            "bestMisalignmentDegrees": 0.0,
+            "verdictMoves": false
+        },
+        {
+            "axis": "phosphate radius",
+            "label": "r_P = 0.9000 nm, groove 120°",
+            "covalent": 3665,
+            "reachFeasible": 1781,
+            "inAlignmentBand": 385,
+            "bestFeasibleMisalignmentDegrees": 0.0,
+            "closes": true,
+            "bestMisalignmentDegrees": 0.0,
+            "verdictMoves": false
+        },
+        {
+            "axis": "phosphate radius",
+            "label": "r_P = 0.8901 nm, groove 120°",
+            "covalent": 3718,
+            "reachFeasible": 1785,
+            "inAlignmentBand": 384,
+            "bestFeasibleMisalignmentDegrees": 0.0,
+            "closes": true,
+            "bestMisalignmentDegrees": 0.0,
+            "verdictMoves": false
+        },
+        {
+            "axis": "groove convention",
+            "label": "r_P = 1.0000 nm, groove 154°",
+            "covalent": 4429,
+            "reachFeasible": 2231,
+            "inAlignmentBand": 456,
+            "bestFeasibleMisalignmentDegrees": 1.0,
+            "closes": false,
+            "bestMisalignmentDegrees": 0.0,
+            "verdictMoves": true
+        },
+        {
+            "axis": "groove convention",
+            "label": "r_P = 1.0000 nm, groove 180°",
+            "covalent": 4554,
+            "reachFeasible": 2500,
+            "inAlignmentBand": 506,
+            "bestFeasibleMisalignmentDegrees": 0.0,
+            "closes": true,
+            "bestMisalignmentDegrees": 0.0,
+            "verdictMoves": false
+        },
+        {
+            "axis": "wanted axis",
+            "label": "chord along the seat duplex rather than across it",
+            "covalent": 3546,
+            "reachFeasible": 1855,
+            "inAlignmentBand": 146,
+            "bestFeasibleMisalignmentDegrees": 0.0,
+            "closes": true,
+            "bestMisalignmentDegrees": 0.0,
+            "verdictMoves": false
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "best feasible misalignment [deg]",
+            "control": "azimuth steps",
+            "level": 60,
+            "value": 0.0,
+            "departureFromFinest": 0.0
+        },
+        {
+            "quantity": "best feasible misalignment [deg]",
+            "control": "azimuth steps",
+            "level": 120,
+            "value": 0.0,
+            "departureFromFinest": 0.0
+        },
+        {
+            "quantity": "best feasible misalignment [deg]",
+            "control": "azimuth steps",
+            "level": 240,
+            "value": 0.0,
+            "departureFromFinest": 0.0
+        },
+        {
+            "quantity": "best feasible misalignment [deg]",
+            "control": "axial steps",
+            "level": 32,
+            "value": 0.0,
+            "departureFromFinest": 0.0
+        },
+        {
+            "quantity": "best feasible misalignment [deg]",
+            "control": "axial steps",
+            "level": 64,
+            "value": 0.0,
+            "departureFromFinest": 0.0
+        },
+        {
+            "quantity": "best feasible misalignment [deg]",
+            "control": "axial steps",
+            "level": 128,
+            "value": 0.0,
+            "departureFromFinest": 0.0
+        },
+        {
+            "quantity": "worst covalent z at the best-aligned feasible placement",
+            "control": "torsion grid steps",
+            "level": 30,
+            "value": 2.65543661,
+            "departureFromFinest": 0.0940125119
+        },
+        {
+            "quantity": "worst covalent z at the best-aligned feasible placement",
+            "control": "torsion grid steps",
+            "level": 60,
+            "value": 2.65557262,
+            "departureFromFinest": 0.0941485253
+        },
+        {
+            "quantity": "worst covalent z at the best-aligned feasible placement",
+            "control": "torsion grid steps",
+            "level": 120,
+            "value": 2.56191077,
+            "departureFromFinest": 4.86677314E-4
+        },
+        {
+            "quantity": "worst covalent z at the best-aligned feasible placement",
+            "control": "torsion grid steps",
+            "level": 180,
+            "value": 2.5614241,
+            "departureFromFinest": 0.0
+        }
+    ],
+    "reproductions": [
+        {
+            "quantity": "C-0057 census, covalent placements (independent staples)",
+            "published": 3546.0,
+            "derived": 3546.0,
+            "relativeDeparture": 0.0
+        },
+        {
+            "quantity": "C-0057 census, reach-feasible placements (independent staples)",
+            "published": 1855.0,
+            "derived": 1855.0,
+            "relativeDeparture": 0.0
+        },
+        {
+            "quantity": "C-0057 census, covalent placements (scaffold excursion)",
+            "published": 280.0,
+            "derived": 280.0,
+            "relativeDeparture": 0.0
+        },
+        {
+            "quantity": "C-0057 census, reach-feasible placements (scaffold excursion)",
+            "published": 137.0,
+            "derived": 137.0,
+            "relativeDeparture": 0.0
+        },
+        {
+            "quantity": "C-0029 binding link gap [nm]",
+            "published": 0.600047126,
+            "derived": 0.600047126,
+            "relativeDeparture": 0.0
+        },
+        {
+            "quantity": "C-0057 worst covalent z at C-0029's optimum",
+            "published": 4.55315176,
+            "derived": 4.55315176,
+            "relativeDeparture": 0.0
+        },
+        {
+            "quantity": "C-0057 closing links at C-0029's optimum",
+            "published": 0.0,
+            "derived": 0.0,
+            "relativeDeparture": 0.0
+        },
+        {
+            "quantity": "C-0048 recommended frame couple [pN nm/rad]",
+            "published": 71.31,
+            "derived": 71.3131298,
+            "relativeDeparture": 4.38896887E-5
+        },
+        {
+            "quantity": "C-0048 recommended critical load, CanDo [pN]",
+            "published": 8.95,
+            "derived": 8.94739526,
+            "relativeDeparture": 2.91032264E-4
+        },
+        {
+            "quantity": "C-0048 recommended margin, CanDo",
+            "published": 1.95,
+            "derived": 1.94667695,
+            "relativeDeparture": 0.00170412945
+        },
+        {
+            "quantity": "C-0048 recommended margin, Fields",
+            "published": 1.46,
+            "derived": 1.46344598,
+            "relativeDeparture": 0.00236025695
+        },
+        {
+            "quantity": "C-0048 recommended span [nm]",
+            "published": 28.25,
+            "derived": 28.2512884,
+            "relativeDeparture": 4.56069093E-5
+        },
+        {
+            "quantity": "C-0052 chord budget at 21 steps [deg]",
+            "published": 78.53,
+            "derived": 78.5285848,
+            "relativeDeparture": 1.80209188E-5
+        },
+        {
+            "quantity": "C-0029 alignment allowance [deg]",
+            "published": 16.87,
+            "derived": 16.8697282,
+            "relativeDeparture": 1.61108515E-5
+        },
+        {
+            "quantity": "C-0029 allowance as a couple fraction",
+            "published": 0.9158,
+            "derived": 0.915785917,
+            "relativeDeparture": 1.53776138E-5
+        },
+        {
+            "quantity": "C-0042 conserved chord budget [pN nm/rad]",
+            "published": 91.76,
+            "derived": 91.7647059,
+            "relativeDeparture": 5.12846813E-5
+        }
+    ],
+    "findings": {
+        "the cheap bound": "the reach-feasible set occupies 118 of 120 azimuth values, and the best alignment ANY reach-feasible placement offers is 0.0° — so the band bound admits the design before any torsion solve",
+        "single junction": "AN ALIGNED TORSION-FEASIBLE PLACEMENT EXISTS — chord at 0.0° from the loaded axis, 7 of 120 solved close",
+        "scaffold excursion": "AN ALIGNED TORSION-FEASIBLE PLACEMENT EXISTS — chord at 39.0° from the loaded axis, 1 of 120 solved close",
+        "pair": "6 bp: AN ALIGNED TORSION-CLOSING PAIR EXISTS at 6 bp — worst chord 33.0° off the loaded axis; 7 bp: AN ALIGNED TORSION-CLOSING PAIR EXISTS at 7 bp — worst chord 69.0° off the loaded axis; 8 bp: AN ALIGNED TORSION-CLOSING PAIR EXISTS at 8 bp — worst chord 57.0° off the loaded axis; 9 bp: AN ALIGNED TORSION-CLOSING PAIR EXISTS at 9 bp — worst chord 6.0° off the loaded axis; 10 bp: AN ALIGNED TORSION-CLOSING PAIR EXISTS at 10 bp — worst chord 6.0° off the loaded axis; 11 bp: AN ALIGNED TORSION-CLOSING PAIR EXISTS at 11 bp — worst chord 33.0° off the loaded axis; 12 bp: AN ALIGNED TORSION-CLOSING PAIR EXISTS at 12 bp — worst chord 33.0° off the loaded axis",
+        "trio": "13 bp: NO torsion-closing trio in the 24 best-aligned of 750 reach-feasible lattices; 15 bp: NO torsion-closing trio in the 24 best-aligned of 882 reach-feasible lattices",
+        "what the mechanics become": "at the alignment the feasible set delivers the base couple keeps 0.989 of itself in the loaded plane, and the best design over the 12–26 step envelope carries a buckling margin of 2.45 on CanDo's rigidity and 1.84 on Fields et al.'s, against C-0048's aligned 1.95 / 1.46",
+        "what this cannot establish": "A torsion check is a NECESSARY condition and never a sufficient one, exactly as C-0029 and C-0057 both said. And every negative here is bounded by its solve cap: it is a 'not found within the budget', never a 'does not exist'."
+    }
+}

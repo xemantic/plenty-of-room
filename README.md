@@ -71,7 +71,10 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=anchoring.UnusedJunctionSiteStudyKt           # T-119, the junction sites the single-layer sheet leaves empty
 ./gradlew study -Pstudy=coupling.NonUniformCouplingStudyKt            # T-113, a non-uniform coupling stiffness against the edge dishing
 ./gradlew study -Pstudy=structure.ConnectivityCeilingPlateStudyKt     # T-120, is a sheet with one crossover per interface still a plate
+./gradlew study -Pstudy=structure.StackedArmSheetStudyKt              # T-121, what 34 duplexes stacked above the tile do to it
 ./gradlew study -Pstudy=anchoring.BackboneTorsionStudyKt              # T-71, do the dihedrals of the 90 degree junction close
+./gradlew study -Pstudy=anchoring.TorsionFeasibleRoutingStudyKt       # T-124, the truss branch's junctions on the torsion-feasible set
+./gradlew study -Pstudy=coupling.BuildableStiffnessRatioStudyKt       # T-122, can a 5:1 per-path coupling stiffness ratio be built
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.

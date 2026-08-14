@@ -1,0 +1,1090 @@
+{
+    "task": "T-121 — what do 34 duplexes stacked ABOVE the tile do to it?",
+    "leaf": "A8.2 (structural rigidity and joint stiffness), with A1.2 for the anchoring scheme and the variance predicate",
+    "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS-measured 2.69 nm, 8 symmetrically centred crossover columns; C-0055's own 34-arm upward placement at C-0039's 8.164 nm arm; C-0022's SOLVED edge profile at 2 mM, a 10 nm gap and 0.192 V; C-0017's 33.3333 pN/nm mandate; C-0004's drag budget at 40 x 40 nm",
+    "decision": "The three channels are settled in the order the cheap bound put them. RIGIDITY is exactly zero, by a condensation identity rather than by a solve, and the single tie that makes it exact is forced by C-0055's own root pitch. MASS enters only the quality factor, twelve orders below the actuation load. DRAG is the one channel that moves anything, it is an upper bound, and it moves a bandwidth rather than an amplitude.",
+    "bounds": [
+        {
+            "name": "the added stiffness a body attached at ONE point contributes at its root",
+            "value": 0.0,
+            "unit": "pN/nm",
+            "settles": "EXACTLY ZERO. A free body's rigid-body motions span everything one crossover can impose on it, so the Schur complement vanishes term by term — the same class of statement as 'a uniform load on a uniform foundation dishes exactly zero', and it is why the OTHER two channels had to be computed and this one did not"
+        },
+        {
+            "name": "the arm length against the upward root pitch",
+            "value": 0.750403569,
+            "unit": "-",
+            "settles": "0.75, and 0.84 even at §3's own 45 paths: an arm CANNOT reach a second upward root anywhere in the design range, so the single-point attachment is forced by C-0055's own binding constraint rather than chosen here"
+        },
+        {
+            "name": "what a TIED second layer would add, as a ratio to one duplex's own EI",
+            "value": 19.3037174,
+            "unit": "-",
+            "settles": "19.3x — the far end of the bracket, and the reason the exact zero is load-bearing rather than a technicality. Which end applies is decided by an inequality between two lengths, 8.164 nm against 10.88 nm"
+        },
+        {
+            "name": "the arm array's plan footprint as a fraction of the tile",
+            "value": 0.462648814,
+            "unit": "-",
+            "settles": "C-0055's 0.46: nearly half the tile is covered, and it still adds nothing"
+        },
+        {
+            "name": "the arm array's contour length as a fraction of the sheet's own",
+            "value": 0.462648814,
+            "unit": "-",
+            "settles": "278 nm of duplex against 600 — and it is IDENTICALLY the plan fraction above, because an arm's plan footprint is its host duplex's own strip, so the two bounds are one bound and are reported as such"
+        },
+        {
+            "name": "the quality factor with the arm mass added, as a ratio to C-0004's",
+            "value": 1.20940019,
+            "unit": "-",
+            "settles": "1.21x on a quality factor C-0004 puts at 5.3e-4, so the tile stays overdamped by three orders. The arms' inertial force at 1 kHz and §3's 3 nm stroke is 1e-10 pN against §3's 100 pN — the MASS channel priced directly, and it is the smallest of the three by nine orders"
+        },
+        {
+            "name": "the arm length at which the arm's OWN BENDING is engaged at all",
+            "value": 21.76,
+            "unit": "nm",
+            "settles": "THREE ties, i.e. 21.76 nm — 2.67x C-0055's arm. Two points determine a line, so a lever tied at two roots on one straight host duplex still bends not at all; what two ties add is a torsion bar and nothing else"
+        },
+        {
+            "name": "the arms' drag as a fraction of C-0004's total at the nominal design point",
+            "value": 0.0911001875,
+            "unit": "-",
+            "settles": "the ONE channel that moves anything, and it is an UPPER bound: an arm one duplex diameter above a translating plate sits in fluid already moving with it, and the lower bound is exactly zero"
+        }
+    ],
+    "condensation": [
+        {
+            "ties": 1,
+            "regularisation": 1.0E-4,
+            "addedDeflectionStiffness": 1.02913016E-4,
+            "addedRollStiffness": 1.99996866E-4,
+            "addedStiffnessNorm": 1.99996866E-4,
+            "note": "C-0055's motif: one upward crossover, an 8.164 nm arm. The added stiffness vanishes LINEARLY in the regularisation, which is the numerical signature of an exact zero rather than a small one"
+        },
+        {
+            "ties": 2,
+            "regularisation": 1.0E-4,
+            "addedDeflectionStiffness": 1.01689549E-4,
+            "addedRollStiffness": 5.83169395,
+            "addedStiffnessNorm": 5.83169395,
+            "note": "the counterfactual: an arm long enough to reach the NEXT upward root (10.88 nm) and tied at both. It is not a design — C-0055's own placement collapses from 34 arms to 30 at 8.19 nm — and it is carried only to show what the exact zero is a zero OF"
+        },
+        {
+            "ties": 1,
+            "regularisation": 1.0E-6,
+            "addedDeflectionStiffness": 1.02912963E-6,
+            "addedRollStiffness": 1.99999968E-6,
+            "addedStiffnessNorm": 1.99999968E-6,
+            "note": "C-0055's motif: one upward crossover, an 8.164 nm arm. The added stiffness vanishes LINEARLY in the regularisation, which is the numerical signature of an exact zero rather than a small one"
+        },
+        {
+            "ties": 2,
+            "regularisation": 1.0E-6,
+            "addedDeflectionStiffness": 1.01689693E-6,
+            "addedRollStiffness": 5.83164351,
+            "addedStiffnessNorm": 5.83164351,
+            "note": "the counterfactual: an arm long enough to reach the NEXT upward root (10.88 nm) and tied at both. It is not a design — C-0055's own placement collapses from 34 arms to 30 at 8.19 nm — and it is carried only to show what the exact zero is a zero OF"
+        },
+        {
+            "ties": 1,
+            "regularisation": 1.0E-8,
+            "addedDeflectionStiffness": 1.0291842E-8,
+            "addedRollStiffness": 1.99999981E-8,
+            "addedStiffnessNorm": 1.99999981E-8,
+            "note": "C-0055's motif: one upward crossover, an 8.164 nm arm. The added stiffness vanishes LINEARLY in the regularisation, which is the numerical signature of an exact zero rather than a small one"
+        },
+        {
+            "ties": 2,
+            "regularisation": 1.0E-8,
+            "addedDeflectionStiffness": 1.01699698E-8,
+            "addedRollStiffness": 5.83164301,
+            "addedStiffnessNorm": 5.83164301,
+            "note": "the counterfactual: an arm long enough to reach the NEXT upward root (10.88 nm) and tied at both. It is not a design — C-0055's own placement collapses from 34 arms to 30 at 8.19 nm — and it is carried only to show what the exact zero is a zero OF"
+        },
+        {
+            "ties": 1,
+            "regularisation": 0.0,
+            "addedDeflectionStiffness": 0.0,
+            "addedRollStiffness": 0.0,
+            "addedStiffnessNorm": 0.0,
+            "note": "C-0055's motif: one upward crossover, an 8.164 nm arm. The added stiffness vanishes LINEARLY in the regularisation, which is the numerical signature of an exact zero rather than a small one"
+        },
+        {
+            "ties": 2,
+            "regularisation": 0.0,
+            "addedDeflectionStiffness": 0.0,
+            "addedRollStiffness": 5.831643,
+            "addedStiffnessNorm": 5.831643,
+            "note": "the counterfactual: an arm long enough to reach the NEXT upward root (10.88 nm) and tied at both. It is not a design — C-0055's own placement collapses from 34 arms to 30 at 8.19 nm — and it is carried only to show what the exact zero is a zero OF"
+        }
+    ],
+    "responses": [
+        {
+            "configuration": "BARE — C-0009's sheet, no arms",
+            "placement": "NONE — free tile",
+            "profile": "uniform (the load case the exact zero is written on)",
+            "meanDeflection": 4.90731102,
+            "peakDishing": 0.0,
+            "dishingOverStroke": 0.0,
+            "peakCrossoverForce": 0.0,
+            "peakDuplexShear": 0.0,
+            "armStrainEnergy": 0.0,
+            "peakRootLinkForce": 0.0,
+            "departureFromBareHost": 0.0
+        },
+        {
+            "configuration": "ARMED — 34 arms, ONE crossover each (C-0055's motif)",
+            "placement": "NONE — free tile",
+            "profile": "uniform (the load case the exact zero is written on)",
+            "meanDeflection": 4.90731101,
+            "peakDishing": 2.58552243E-9,
+            "dishingOverStroke": 0.0,
+            "peakCrossoverForce": 2.89818376E-9,
+            "peakDuplexShear": 3.45909604E-9,
+            "armStrainEnergy": 0.0,
+            "peakRootLinkForce": 5.08038056E-9,
+            "departureFromBareHost": 2.07412647E-8
+        },
+        {
+            "configuration": "TIED — 34 arms at TWO crossovers each (the counterfactual)",
+            "placement": "NONE — free tile",
+            "profile": "uniform (the load case the exact zero is written on)",
+            "meanDeflection": 4.907311,
+            "peakDishing": 7.77718743E-9,
+            "dishingOverStroke": 1.58481649E-9,
+            "peakCrossoverForce": 6.24458221E-9,
+            "peakDuplexShear": 7.05174075E-9,
+            "armStrainEnergy": 0.0,
+            "peakRootLinkForce": 4.9471538E-9,
+            "departureFromBareHost": 2.48898075E-8
+        },
+        {
+            "configuration": "BARE — C-0009's sheet, no arms",
+            "placement": "NONE — free tile",
+            "profile": "C-0022 solved, 2 mM, 10 nm, 0.192 V",
+            "meanDeflection": 5.62450348,
+            "peakDishing": 1.51097268,
+            "dishingOverStroke": 0.307902368,
+            "peakCrossoverForce": 0.243979305,
+            "peakDuplexShear": 0.17289577,
+            "armStrainEnergy": 0.0,
+            "peakRootLinkForce": 0.0,
+            "departureFromBareHost": 0.0
+        },
+        {
+            "configuration": "ARMED — 34 arms, ONE crossover each (C-0055's motif)",
+            "placement": "NONE — free tile",
+            "profile": "C-0022 solved, 2 mM, 10 nm, 0.192 V",
+            "meanDeflection": 5.62450347,
+            "peakDishing": 1.51097268,
+            "dishingOverStroke": 0.307902367,
+            "peakCrossoverForce": 0.243979305,
+            "peakDuplexShear": 0.172895771,
+            "armStrainEnergy": 0.0,
+            "peakRootLinkForce": 6.84785562E-9,
+            "departureFromBareHost": 2.66186717E-8
+        },
+        {
+            "configuration": "TIED — 34 arms at TWO crossovers each (the counterfactual)",
+            "placement": "NONE — free tile",
+            "profile": "C-0022 solved, 2 mM, 10 nm, 0.192 V",
+            "meanDeflection": 5.62450346,
+            "peakDishing": 1.51273595,
+            "dishingOverStroke": 0.308261683,
+            "peakCrossoverForce": 0.246368914,
+            "peakDuplexShear": 0.1734351,
+            "armStrainEnergy": 1.19412578E-4,
+            "peakRootLinkForce": 6.83009205E-9,
+            "departureFromBareHost": 0.00232923806
+        },
+        {
+            "configuration": "BARE — C-0009's sheet, no arms",
+            "placement": "ROOTS — C-0055's 34 upward arm roots",
+            "profile": "uniform (the load case the exact zero is written on)",
+            "meanDeflection": 2.57139767,
+            "peakDishing": 1.19197225,
+            "dishingOverStroke": 0.242897229,
+            "peakCrossoverForce": 1.17656032,
+            "peakDuplexShear": 1.29212584,
+            "armStrainEnergy": 0.0,
+            "peakRootLinkForce": 0.0,
+            "departureFromBareHost": 0.0
+        },
+        {
+            "configuration": "ARMED — 34 arms, ONE crossover each (C-0055's motif)",
+            "placement": "ROOTS — C-0055's 34 upward arm roots",
+            "profile": "uniform (the load case the exact zero is written on)",
+            "meanDeflection": 2.57139767,
+            "peakDishing": 1.19197225,
+            "dishingOverStroke": 0.242897229,
+            "peakCrossoverForce": 1.17656032,
+            "peakDuplexShear": 1.29212584,
+            "armStrainEnergy": 0.0,
+            "peakRootLinkForce": 2.49134047E-9,
+            "departureFromBareHost": 1.19996146E-9
+        },
+        {
+            "configuration": "TIED — 34 arms at TWO crossovers each (the counterfactual)",
+            "placement": "ROOTS — C-0055's 34 upward arm roots",
+            "profile": "uniform (the load case the exact zero is written on)",
+            "meanDeflection": 2.57032613,
+            "peakDishing": 1.17215988,
+            "dishingOverStroke": 0.238859913,
+            "peakCrossoverForce": 1.21754172,
+            "peakDuplexShear": 1.31271211,
+            "armStrainEnergy": 0.00692516934,
+            "peakRootLinkForce": 4.57411886E-9,
+            "departureFromBareHost": 0.0268064955
+        },
+        {
+            "configuration": "BARE — C-0009's sheet, no arms",
+            "placement": "ROOTS — C-0055's 34 upward arm roots",
+            "profile": "C-0022 solved, 2 mM, 10 nm, 0.192 V",
+            "meanDeflection": 2.95463964,
+            "peakDishing": 2.03942566,
+            "dishingOverStroke": 0.41558924,
+            "peakCrossoverForce": 1.2548731,
+            "peakDuplexShear": 1.33421457,
+            "armStrainEnergy": 0.0,
+            "peakRootLinkForce": 0.0,
+            "departureFromBareHost": 0.0
+        },
+        {
+            "configuration": "ARMED — 34 arms, ONE crossover each (C-0055's motif)",
+            "placement": "ROOTS — C-0055's 34 upward arm roots",
+            "profile": "C-0022 solved, 2 mM, 10 nm, 0.192 V",
+            "meanDeflection": 2.95463964,
+            "peakDishing": 2.03942566,
+            "dishingOverStroke": 0.41558924,
+            "peakCrossoverForce": 1.2548731,
+            "peakDuplexShear": 1.33421457,
+            "armStrainEnergy": 0.0,
+            "peakRootLinkForce": 2.83328916E-9,
+            "departureFromBareHost": 1.57753188E-9
+        },
+        {
+            "configuration": "TIED — 34 arms at TWO crossovers each (the counterfactual)",
+            "placement": "ROOTS — C-0055's 34 upward arm roots",
+            "profile": "C-0022 solved, 2 mM, 10 nm, 0.192 V",
+            "meanDeflection": 2.95352565,
+            "peakDishing": 2.0188298,
+            "dishingOverStroke": 0.411392266,
+            "peakCrossoverForce": 1.29654306,
+            "peakDuplexShear": 1.35508351,
+            "armStrainEnergy": 0.0079428452,
+            "peakRootLinkForce": 5.79980508E-9,
+            "departureFromBareHost": 0.0261642471
+        },
+        {
+            "configuration": "BARE — C-0009's sheet, no arms",
+            "placement": "GRID — C-0015's 3 x 15",
+            "profile": "uniform (the load case the exact zero is written on)",
+            "meanDeflection": 1.88334488,
+            "peakDishing": 0.238592668,
+            "dishingOverStroke": 0.0486198383,
+            "peakCrossoverForce": 0.0,
+            "peakDuplexShear": 0.583630356,
+            "armStrainEnergy": 0.0,
+            "peakRootLinkForce": 0.0,
+            "departureFromBareHost": 0.0
+        },
+        {
+            "configuration": "ARMED — 34 arms, ONE crossover each (C-0055's motif)",
+            "placement": "GRID — C-0015's 3 x 15",
+            "profile": "uniform (the load case the exact zero is written on)",
+            "meanDeflection": 1.88334488,
+            "peakDishing": 0.238592668,
+            "dishingOverStroke": 0.0486198383,
+            "peakCrossoverForce": 0.0,
+            "peakDuplexShear": 0.583630356,
+            "armStrainEnergy": 0.0,
+            "peakRootLinkForce": 2.14939178E-9,
+            "departureFromBareHost": 3.83684728E-9
+        },
+        {
+            "configuration": "TIED — 34 arms at TWO crossovers each (the counterfactual)",
+            "placement": "GRID — C-0015's 3 x 15",
+            "profile": "uniform (the load case the exact zero is written on)",
+            "meanDeflection": 1.88334488,
+            "peakDishing": 0.23859267,
+            "dishingOverStroke": 0.0486198386,
+            "peakCrossoverForce": 1.94054182E-9,
+            "peakDuplexShear": 0.583630357,
+            "armStrainEnergy": 0.0,
+            "peakRootLinkForce": 2.09610107E-9,
+            "departureFromBareHost": 3.81745702E-9
+        },
+        {
+            "configuration": "BARE — C-0009's sheet, no arms",
+            "placement": "GRID — C-0015's 3 x 15",
+            "profile": "C-0022 solved, 2 mM, 10 nm, 0.192 V",
+            "meanDeflection": 2.16870806,
+            "peakDishing": 1.07084078,
+            "dishingOverStroke": 0.21821335,
+            "peakCrossoverForce": 0.150350269,
+            "peakDuplexShear": 0.792514546,
+            "armStrainEnergy": 0.0,
+            "peakRootLinkForce": 0.0,
+            "departureFromBareHost": 0.0
+        },
+        {
+            "configuration": "ARMED — 34 arms, ONE crossover each (C-0055's motif)",
+            "placement": "GRID — C-0015's 3 x 15",
+            "profile": "C-0022 solved, 2 mM, 10 nm, 0.192 V",
+            "meanDeflection": 2.16870806,
+            "peakDishing": 1.07084078,
+            "dishingOverStroke": 0.21821335,
+            "peakCrossoverForce": 0.150350268,
+            "peakDuplexShear": 0.792514547,
+            "armStrainEnergy": 0.0,
+            "peakRootLinkForce": 2.88657986E-9,
+            "departureFromBareHost": 4.85750595E-9
+        },
+        {
+            "configuration": "TIED — 34 arms at TWO crossovers each (the counterfactual)",
+            "placement": "GRID — C-0015's 3 x 15",
+            "profile": "C-0022 solved, 2 mM, 10 nm, 0.192 V",
+            "meanDeflection": 2.16870806,
+            "peakDishing": 1.07204092,
+            "dishingOverStroke": 0.218457912,
+            "peakCrossoverForce": 0.1522338,
+            "peakDuplexShear": 0.792078664,
+            "armStrainEnergy": 5.79253711E-5,
+            "peakRootLinkForce": 3.04645198E-9,
+            "departureFromBareHost": 0.00140844204
+        }
+    ],
+    "flatness": [
+        {
+            "placement": "NONE — free tile",
+            "stations": 0,
+            "profile": "uniform (the load case the exact zero is written on)",
+            "peakDishing": 0.0,
+            "dishingOverStroke": 0.0,
+            "flatAtTenPercent": true,
+            "peakCrossoverForce": 0.0,
+            "peakDuplexShear": 0.0,
+            "perPathForce": 0.0
+        },
+        {
+            "placement": "NONE — free tile",
+            "stations": 0,
+            "profile": "C-0022 solved, 2 mM, 10 nm, 0.192 V",
+            "peakDishing": 1.51097268,
+            "dishingOverStroke": 0.307902368,
+            "flatAtTenPercent": false,
+            "peakCrossoverForce": 0.243979305,
+            "peakDuplexShear": 0.17289577,
+            "perPathForce": 0.0
+        },
+        {
+            "placement": "ROOTS — C-0055's 34 upward arm roots",
+            "stations": 34,
+            "profile": "uniform (the load case the exact zero is written on)",
+            "peakDishing": 1.19197225,
+            "dishingOverStroke": 0.242897229,
+            "flatAtTenPercent": false,
+            "peakCrossoverForce": 1.17656032,
+            "peakDuplexShear": 1.29212584,
+            "perPathForce": 2.37636456
+        },
+        {
+            "placement": "ROOTS — C-0055's 34 upward arm roots",
+            "stations": 34,
+            "profile": "C-0022 solved, 2 mM, 10 nm, 0.192 V",
+            "peakDishing": 2.03942566,
+            "dishingOverStroke": 0.41558924,
+            "flatAtTenPercent": false,
+            "peakCrossoverForce": 1.2548731,
+            "peakDuplexShear": 1.33421457,
+            "perPathForce": 2.70028277
+        },
+        {
+            "placement": "ROOTS-MIRRORED — the same 34 roots, alternate rows reflected",
+            "stations": 34,
+            "profile": "uniform (the load case the exact zero is written on)",
+            "peakDishing": 0.772471539,
+            "dishingOverStroke": 0.157412387,
+            "flatAtTenPercent": false,
+            "peakCrossoverForce": 0.867637816,
+            "peakDuplexShear": 1.06007976,
+            "perPathForce": 2.24034232
+        },
+        {
+            "placement": "ROOTS-MIRRORED — the same 34 roots, alternate rows reflected",
+            "stations": 34,
+            "profile": "C-0022 solved, 2 mM, 10 nm, 0.192 V",
+            "peakDishing": 1.74608183,
+            "dishingOverStroke": 0.355812343,
+            "flatAtTenPercent": false,
+            "peakCrossoverForce": 1.19837461,
+            "peakDuplexShear": 1.36417758,
+            "perPathForce": 2.77099976
+        },
+        {
+            "placement": "GRID — C-0015's 3 x 15",
+            "stations": 45,
+            "profile": "uniform (the load case the exact zero is written on)",
+            "peakDishing": 0.238592668,
+            "dishingOverStroke": 0.0486198383,
+            "flatAtTenPercent": true,
+            "peakCrossoverForce": 0.0,
+            "peakDuplexShear": 0.583630356,
+            "perPathForce": 1.39413752
+        },
+        {
+            "placement": "GRID — C-0015's 3 x 15",
+            "stations": 45,
+            "profile": "C-0022 solved, 2 mM, 10 nm, 0.192 V",
+            "peakDishing": 1.07084078,
+            "dishingOverStroke": 0.21821335,
+            "flatAtTenPercent": false,
+            "peakCrossoverForce": 0.150350269,
+            "peakDuplexShear": 0.792514546,
+            "perPathForce": 1.94331833
+        },
+        {
+            "placement": "COLUMN — C-0041's 1 x 15",
+            "stations": 15,
+            "profile": "uniform (the load case the exact zero is written on)",
+            "peakDishing": 2.08895156,
+            "dishingOverStroke": 0.425681509,
+            "flatAtTenPercent": false,
+            "peakCrossoverForce": 0.0,
+            "peakDuplexShear": 1.2765364,
+            "perPathForce": 2.88462966
+        },
+        {
+            "placement": "COLUMN — C-0041's 1 x 15",
+            "stations": 15,
+            "profile": "C-0022 solved, 2 mM, 10 nm, 0.192 V",
+            "peakDishing": 3.41157036,
+            "dishingOverStroke": 0.695201577,
+            "flatAtTenPercent": false,
+            "peakCrossoverForce": 0.209277129,
+            "peakDuplexShear": 1.83397642,
+            "perPathForce": 4.00815093
+        }
+    ],
+    "distributions": [
+        {
+            "placement": "ROOTS — C-0055's own greedy placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 1.0,
+            "dishingOverStroke": 0.41558924,
+            "flatAtTenPercent": false,
+            "peakPathForce": 2.94117647,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS — C-0055's own greedy placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 2.0,
+            "dishingOverStroke": 0.301533421,
+            "flatAtTenPercent": false,
+            "peakPathForce": 3.63636364,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS — C-0055's own greedy placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 3.0,
+            "dishingOverStroke": 0.290195445,
+            "flatAtTenPercent": false,
+            "peakPathForce": 3.94736842,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS — C-0055's own greedy placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 5.0,
+            "dishingOverStroke": 0.341911519,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.23728814,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS — C-0055's own greedy placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 8.0,
+            "dishingOverStroke": 0.37809925,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.4198895,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS — C-0055's own greedy placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 12.0,
+            "dishingOverStroke": 0.401181307,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.52830189,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS — C-0055's own greedy placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 20.0,
+            "dishingOverStroke": 0.421566364,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.61893764,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS-MIRRORED — alternate rows reflected",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 1.0,
+            "dishingOverStroke": 0.355812343,
+            "flatAtTenPercent": false,
+            "peakPathForce": 2.94117647,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS-MIRRORED — alternate rows reflected",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 2.0,
+            "dishingOverStroke": 0.229556103,
+            "flatAtTenPercent": false,
+            "peakPathForce": 3.63636364,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS-MIRRORED — alternate rows reflected",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 3.0,
+            "dishingOverStroke": 0.164934817,
+            "flatAtTenPercent": false,
+            "peakPathForce": 3.94736842,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS-MIRRORED — alternate rows reflected",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 5.0,
+            "dishingOverStroke": 0.224979678,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.23728814,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS-MIRRORED — alternate rows reflected",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 8.0,
+            "dishingOverStroke": 0.267397945,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.4198895,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS-MIRRORED — alternate rows reflected",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 12.0,
+            "dishingOverStroke": 0.294707801,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.52830189,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS-MIRRORED — alternate rows reflected",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 20.0,
+            "dishingOverStroke": 0.318965684,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.61893764,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "GRID — C-0015's 3 x 15",
+            "stations": 45,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 1.0,
+            "dishingOverStroke": 0.21821335,
+            "flatAtTenPercent": false,
+            "peakPathForce": 2.22222222,
+            "admissibleRatio": 4.5,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "GRID — C-0015's 3 x 15",
+            "stations": 45,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 2.0,
+            "dishingOverStroke": 0.141487671,
+            "flatAtTenPercent": false,
+            "peakPathForce": 2.53164557,
+            "admissibleRatio": 4.5,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "GRID — C-0015's 3 x 15",
+            "stations": 45,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 3.0,
+            "dishingOverStroke": 0.107587779,
+            "flatAtTenPercent": false,
+            "peakPathForce": 2.65486726,
+            "admissibleRatio": 4.5,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "GRID — C-0015's 3 x 15",
+            "stations": 45,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 5.0,
+            "dishingOverStroke": 0.0753432869,
+            "flatAtTenPercent": true,
+            "peakPathForce": 2.76243094,
+            "admissibleRatio": 4.5,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "GRID — C-0015's 3 x 15",
+            "stations": 45,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 8.0,
+            "dishingOverStroke": 0.0709193503,
+            "flatAtTenPercent": true,
+            "peakPathForce": 2.82685512,
+            "admissibleRatio": 4.5,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "GRID — C-0015's 3 x 15",
+            "stations": 45,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 12.0,
+            "dishingOverStroke": 0.0849096031,
+            "flatAtTenPercent": true,
+            "peakPathForce": 2.86396181,
+            "admissibleRatio": 4.5,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "GRID — C-0015's 3 x 15",
+            "stations": 45,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 20.0,
+            "dishingOverStroke": 0.0969591238,
+            "flatAtTenPercent": true,
+            "peakPathForce": 2.89435601,
+            "admissibleRatio": 4.5,
+            "withinPerPathAllowable": true
+        }
+    ],
+    "variance": [
+        {
+            "placement": "NONE — free tile",
+            "armsAttached": 0,
+            "pistonRms": 0.27745733,
+            "tiltRms": 0.392383919,
+            "dishingRms": 0.966385688,
+            "areaRms": 1.07928171,
+            "centreRms": 0.821490367,
+            "cornerFrequency": 91231.5386,
+            "inBandFraction": 0.00697778737,
+            "inBandRms": 0.0901558023,
+            "marginAgainstThreeNanometresBroadband": 2.77962646,
+            "marginAgainstThreeNanometresInBand": 33.2757285
+        },
+        {
+            "placement": "NONE — free tile",
+            "armsAttached": 34,
+            "pistonRms": 0.27745733,
+            "tiltRms": 0.392383919,
+            "dishingRms": 0.966385688,
+            "areaRms": 1.07928171,
+            "centreRms": 0.821490367,
+            "cornerFrequency": 82920.3284,
+            "inBandFraction": 0.00767711519,
+            "inBandRms": 0.0945657443,
+            "marginAgainstThreeNanometresBroadband": 2.77962646,
+            "marginAgainstThreeNanometresInBand": 31.7239612
+        },
+        {
+            "placement": "ROOTS — C-0055's 34 upward arm roots",
+            "armsAttached": 0,
+            "pistonRms": 0.230152537,
+            "tiltRms": 0.324016188,
+            "dishingRms": 0.877684501,
+            "areaRms": 0.963476395,
+            "centreRms": 0.747582462,
+            "cornerFrequency": 91231.5386,
+            "inBandFraction": 0.00697778737,
+            "inBandRms": 0.0804822195,
+            "marginAgainstThreeNanometresBroadband": 3.11372444,
+            "marginAgainstThreeNanometresInBand": 37.275314
+        },
+        {
+            "placement": "ROOTS — C-0055's 34 upward arm roots",
+            "armsAttached": 34,
+            "pistonRms": 0.230152537,
+            "tiltRms": 0.324016188,
+            "dishingRms": 0.877684501,
+            "areaRms": 0.963476395,
+            "centreRms": 0.747582462,
+            "cornerFrequency": 82920.3284,
+            "inBandFraction": 0.00767711519,
+            "inBandRms": 0.0844189813,
+            "marginAgainstThreeNanometresBroadband": 3.11372444,
+            "marginAgainstThreeNanometresInBand": 35.5370315
+        },
+        {
+            "placement": "GRID — C-0015's 3 x 15",
+            "armsAttached": 0,
+            "pistonRms": 0.2187284,
+            "tiltRms": 0.313356705,
+            "dishingRms": 0.886249223,
+            "areaRms": 0.965128087,
+            "centreRms": 0.717857036,
+            "cornerFrequency": 91231.5386,
+            "inBandFraction": 0.00697778737,
+            "inBandRms": 0.0806201905,
+            "marginAgainstThreeNanometresBroadband": 3.10839571,
+            "marginAgainstThreeNanometresInBand": 37.2115221
+        },
+        {
+            "placement": "GRID — C-0015's 3 x 15",
+            "armsAttached": 34,
+            "pistonRms": 0.2187284,
+            "tiltRms": 0.313356705,
+            "dishingRms": 0.886249223,
+            "areaRms": 0.965128087,
+            "centreRms": 0.717857036,
+            "cornerFrequency": 82920.3284,
+            "inBandFraction": 0.00767711519,
+            "inBandRms": 0.0845637012,
+            "marginAgainstThreeNanometresBroadband": 3.10839571,
+            "marginAgainstThreeNanometresInBand": 35.4762145
+        }
+    ],
+    "drainage": [
+        {
+            "point": "L0 = 10 nm, window lower edge, stiffness x1.0",
+            "permeabilityModel": "jackson-james-fibre-array",
+            "armRadius": 1.0,
+            "squeezeDrag": 1.25871033E-5,
+            "stokesDrag": 3.08384331E-7,
+            "armDrag": 1.29253117E-6,
+            "totalDragBare": 1.28954876E-5,
+            "totalDragWithArms": 1.41880188E-5,
+            "armDragFraction": 0.0911001875,
+            "cornerFrequencyBare": 91231.5386,
+            "cornerFrequencyWithArms": 82920.3284,
+            "marginBare": 91.2315386,
+            "marginWithArms": 82.9203284,
+            "stillDischarged": true
+        },
+        {
+            "point": "L0 = 10 nm, window lower edge, stiffness x1.0",
+            "permeabilityModel": "jackson-james-fibre-array",
+            "armRadius": 0.89,
+            "squeezeDrag": 1.25871033E-5,
+            "stokesDrag": 3.08384331E-7,
+            "armDrag": 1.23435072E-6,
+            "totalDragBare": 1.28954876E-5,
+            "totalDragWithArms": 1.41298384E-5,
+            "armDragFraction": 0.087357738,
+            "cornerFrequencyBare": 91231.5386,
+            "cornerFrequencyWithArms": 83261.7578,
+            "marginBare": 91.2315386,
+            "marginWithArms": 83.2617578,
+            "stillDischarged": true
+        },
+        {
+            "point": "L0 = 10 nm, window lower edge, stiffness x0.25",
+            "permeabilityModel": "jackson-james-fibre-array",
+            "armRadius": 1.0,
+            "squeezeDrag": 1.25871033E-5,
+            "stokesDrag": 3.08384331E-7,
+            "armDrag": 1.29253117E-6,
+            "totalDragBare": 1.28954876E-5,
+            "totalDragWithArms": 1.41880188E-5,
+            "armDragFraction": 0.0911001875,
+            "cornerFrequencyBare": 22807.8847,
+            "cornerFrequencyWithArms": 20730.0821,
+            "marginBare": 22.8078847,
+            "marginWithArms": 20.7300821,
+            "stillDischarged": true
+        },
+        {
+            "point": "L0 = 10 nm, window lower edge, stiffness x0.25",
+            "permeabilityModel": "jackson-james-fibre-array",
+            "armRadius": 0.89,
+            "squeezeDrag": 1.25871033E-5,
+            "stokesDrag": 3.08384331E-7,
+            "armDrag": 1.23435072E-6,
+            "totalDragBare": 1.28954876E-5,
+            "totalDragWithArms": 1.41298384E-5,
+            "armDragFraction": 0.087357738,
+            "cornerFrequencyBare": 22807.8847,
+            "cornerFrequencyWithArms": 20815.4394,
+            "marginBare": 22.8078847,
+            "marginWithArms": 20.8154394,
+            "stillDischarged": true
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "the armed host's departure from the bare host, C-0022's solved load",
+            "parameter": "arm regularisation [pN/nm]",
+            "values": [
+                1.0E-5,
+                1.0E-7,
+                1.0E-9
+            ],
+            "results": [
+                4.84221296E-5,
+                4.84247319E-7,
+                4.85750595E-9
+            ],
+            "departure": 1.00315826E-4,
+            "note": "LINEAR in the regularisation over four decades, which is the numerical signature of an exact zero: a genuine added stiffness would converge to a non-zero limit instead"
+        },
+        {
+            "quantity": "the armed lattice's peak dishing under C-0022's solved load",
+            "parameter": "beam elements per interval (NESTED 1 c 2 c 4)",
+            "values": [
+                1.0,
+                2.0,
+                4.0
+            ],
+            "results": [
+                1.07255285,
+                1.07084078,
+                1.07078559
+            ],
+            "departure": 5.15414872E-5,
+            "note": "nested refinement only — a subdivision of 3 moves a load from a node to mid-element and is not a refinement of 2 (`CLAUDE.md`)"
+        },
+        {
+            "quantity": "the armed lattice's peak dishing under C-0022's solved load",
+            "parameter": "crossover link penalty [pN/nm]",
+            "values": [
+                1000.0,
+                10000.0,
+                100000.0
+            ],
+            "results": [
+                1.07066391,
+                1.07084078,
+                1.07085852
+            ],
+            "departure": 1.6569466E-5,
+            "note": "the vertical link is a CONSTRAINT and the answer must not depend on its penalty"
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0055",
+            "quantity": "arm length at 34 paths [nm]",
+            "published": 8.164,
+            "reproduced": 8.16439083,
+            "departure": 4.78723665E-5,
+            "strict": false
+        },
+        {
+            "source": "C-0055",
+            "quantity": "arm count on a 40 nm tile",
+            "published": 34.0,
+            "reproduced": 34.0,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0055",
+            "quantity": "upward root pitch [nm]",
+            "published": 10.88,
+            "reproduced": 10.88,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0055",
+            "quantity": "arm array plan footprint fraction",
+            "published": 0.46,
+            "reproduced": 0.462648814,
+            "departure": 0.00575829065,
+            "strict": false
+        },
+        {
+            "source": "C-0047",
+            "quantity": "dishing/stroke, 3 x 15, C-0022's solved load",
+            "published": 0.218,
+            "reproduced": 0.21821335,
+            "departure": 9.78670403E-4,
+            "strict": false
+        },
+        {
+            "source": "C-0047",
+            "quantity": "dishing/stroke, 1 x 15, C-0022's solved load",
+            "published": 0.695,
+            "reproduced": 0.695201577,
+            "departure": 2.90038499E-4,
+            "strict": false
+        },
+        {
+            "source": "C-0022",
+            "quantity": "dishing/stroke, free uncoupled tile",
+            "published": 0.308,
+            "reproduced": 0.307902368,
+            "departure": 3.16987857E-4,
+            "strict": false
+        },
+        {
+            "source": "C-0004",
+            "quantity": "corner frequency, nominal 40 x 40 nm point [Hz]",
+            "published": 91231.5,
+            "reproduced": 91231.5386,
+            "departure": 4.23559269E-7,
+            "strict": false
+        },
+        {
+            "source": "C-0004",
+            "quantity": "in-band variance fraction below 1 kHz at 91 kHz",
+            "published": 0.007,
+            "reproduced": 0.00697778737,
+            "departure": 0.00317323237,
+            "strict": false
+        },
+        {
+            "source": "C-0058",
+            "quantity": "dishing/stroke, 3 x 15, rim x 5 over a 6.70 nm collar",
+            "published": 0.0753,
+            "reproduced": 0.0753432869,
+            "departure": 5.74859419E-4,
+            "strict": false
+        },
+        {
+            "source": "C-0058",
+            "quantity": "admissible per-path stiffness ratio at 45 paths",
+            "published": 4.5,
+            "reproduced": 4.5,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0009",
+            "quantity": "duplex EI [pN nm^2]",
+            "published": 230.0,
+            "reproduced": 230.0,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0009",
+            "quantity": "crossover hinge k_theta [pN nm/rad]",
+            "published": 13.5294,
+            "reproduced": 13.5294118,
+            "departure": 8.69565973E-7,
+            "strict": false
+        },
+        {
+            "source": "C-0009",
+            "quantity": "interhelical distance [nm]",
+            "published": 2.69,
+            "reproduced": 2.69,
+            "departure": 0.0,
+            "strict": true
+        }
+    ],
+    "predicates": [
+        {
+            "name": "rigidity",
+            "statement": "34 arms attached at one upward crossover each change no response of C-0009's grillage",
+            "verdict": "PASS — the peak dishing under C-0022's solved load moves from 1.070841 nm to 1.070841 nm, a departure of 7.8e-10, which is the arm regularisation and vanishes with it"
+        },
+        {
+            "name": "the counterfactual",
+            "statement": "a body tied at TWO upward crossovers is not the same statement",
+            "verdict": "CONFIRMED — the same 34 bodies tied twice move the peak dishing to 1.072041 nm, 1.001x the bare sheet's, and the lattice cannot build them: the arm is 8.164 nm against a 10.88 nm root pitch"
+        },
+        {
+            "name": "flatness",
+            "statement": "C-0006/C-0047's flatness, with the coupling entering at the 34 arm roots",
+            "verdict": "0.4156 of the stroke against 0.2182 on C-0015's 3 x 15 and 0.6952 on C-0041's 1 x 15; T-5b's tolerance is 0.10 and NONE of them reaches it — CH-0034's saturation, not a new failure"
+        },
+        {
+            "name": "variance",
+            "statement": "C-0010's sigma_RMS <= 3.0 nm predicate, leaf A1.2",
+            "verdict": "PASS and UNCHANGED broadband — equipartition does not see a drag or a mass — and the IN-BAND amplitude rises 4.9 % because the arms lower the drainage corner from 91232 Hz to 82920 Hz"
+        },
+        {
+            "name": "drainage",
+            "statement": "C-0004's §4(d) discharge",
+            "verdict": "HOLDS — the arms stand on the side of the tile AWAY from the layer, so the squeeze film is untouched and what they add is 9.1 % of the total drag as an UPPER bound; the worst 40 x 40 nm margin falls from 22.81x to 20.73x"
+        }
+    ],
+    "findings": [
+        "A body attached to a structure at ONE point and otherwise free adds EXACTLY ZERO static stiffness there. Its rigid-body motions span everything a single crossover can impose — the deflection through the vertical link and the roll through k_theta — so the minimised arm energy is identically zero and the Schur complement vanishes term by term. 34 arms covering 46 % of the tile's plan change nothing in C-0009's grillage, and that is a symmetry statement rather than a small number.",
+        "The single tie is NOT a modelling choice. An upward site's lattice pitch is the bare 32 bp = 10.88 nm because it belongs to one duplex, and C-0039's elastica gives 8.164 nm at C-0055's self-consistent 34 paths and 9.131 nm even at §3's 45 — so no arm in the design range can reach a second root. The escape, its price and now its structural harmlessness are all the SAME sentence.",
+        "What the exact zero is a zero OF, in three steps rather than two. ONE tie adds nothing at all. TWO ties add a TORSION BAR and nothing else — 5.832 pN nm/rad, the two hinges in series with the arm's own GJ/L — and no bending stiffness whatever, because two points determine a line and a rigid arm can meet both: the peak dishing moves 0.112 %. The arm's own EI is engaged only at THREE ties, i.e. 21.76 nm of arm, and a genuinely axially coupled second layer would carry 19.3x one duplex's own EI. The whole bracket is decided by inequalities between lengths.",
+        "The cheap bound decided the order of work and it was right: rigidity EXACTLY zero, inertia 1.0e-12 of the actuation load at 1 kHz, drag 9.1 % of C-0004's budget. Only the third channel moves a number, and it moves the one quantity in this programme that is quoted with a bandwidth.",
+        "The arms do not enter the actuation gap at all — they stand on the +z face, the PEG layer and the electrode are on the -z face — so no electrostatic, osmotic or squeeze-film quantity in this programme has an arm term in it. What they enter is the space ABOVE, which is C-0035's output superstructure, and that is a clearance question this claim states rather than solves.",
+        "The coupling entering at the 34 arm roots rather than on C-0015's 3 x 15 grid is a real change and it is the only one: 0.4156 of the stroke against 0.2182, both past T-5b's 0.10, and 1.35x the FREE tile's own 0.3079. The arm roots are a 10.88 nm pitch along x on alternating rows, so the array is a coarser and less regular grid than the one C-0047 and C-0058 optimise over — and on it a uniform coupling is a net dishing SOURCE, which is the pathology C-0058 found at C-0041's 1 x 15.",
+        "C-0055's placement is not centro-symmetric and nothing upstream noticed: its scheduler fills every row from the low-x end and points every arm the same way, so the coupling centroid sits at x = -8.80 nm on a tile that runs -20 to +20. Reflecting the odd rows — free, on the same column lattice, and inside C-0055's own per-row independence — moves the centroid to 2.08 nm and the dishing from 0.4156 to 0.3558 of the stroke.",
+        "C-0058's non-uniform axis was written on C-0015's 3 x 15 grid and it does NOT transfer to the stations the buildable array supplies. Its rim x 5 rule reaches 0.0753 there (reproducing its published 0.0753) and only 0.3419 on C-0055's own roots and 0.2250 on the mirrored ones; the best ratio swept reaches 0.1649. A distribution cannot repair a placement — C-0058's own sentence, at a placement it did not test."
+    ],
+    "parameters": {
+        "duplexes": 15.0,
+        "crossoverColumns": 8.0,
+        "arms": 34.0,
+        "armLength": 8.16439083,
+        "armTotalContour": 277.589288,
+        "upwardRootPitch": 10.88,
+        "interhelicalDistance": 2.69,
+        "planFootprintFraction": 0.462648814,
+        "contourFraction": 0.462648814,
+        "compositeBendingRigidity": 4439.855,
+        "duplexBendingRigidity": 230.0,
+        "duplexMassPerLength": 0.0,
+        "armArrayMass": 0.0,
+        "sheetMass": 0.0,
+        "armDragUpperBound": 1.29253117E-6,
+        "bareDragNominal": 1.28954876E-5,
+        "cornerFrequencyBare": 91231.5386,
+        "cornerFrequencyWithArms": 82920.3284,
+        "edgeX": 40.0,
+        "edgeY": 40.35,
+        "interiorPressure": 0.0619578686,
+        "foundationSecant": 0.012625625,
+        "foundationAtWorkingPoint": 0.033335625,
+        "mandate": 33.3333333,
+        "freeTileStroke": 4.90731102,
+        "armRootCentroidX": -8.8,
+        "mirroredRootCentroidX": 2.08,
+        "collarWidth": 6.7,
+        "viscosity": 0.0,
+        "solvedTaperDepth": -0.302887367,
+        "solvedTaperWidth": 8.93928311,
+        "solvedRimDepth": -0.593889278
+    }
+}
