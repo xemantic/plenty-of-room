@@ -75,6 +75,9 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=anchoring.BackboneTorsionStudyKt              # T-71, do the dihedrals of the 90 degree junction close
 ./gradlew study -Pstudy=anchoring.TorsionFeasibleRoutingStudyKt       # T-124, the truss branch's junctions on the torsion-feasible set
 ./gradlew study -Pstudy=coupling.BuildableStiffnessRatioStudyKt       # T-122, can a 5:1 per-path coupling stiffness ratio be built
+./gradlew study -Pstudy=anchoring.UpwardRootPlacementStudyKt          # T-125, the row phases of the upward arm array, swept
+./gradlew study -Pstudy=coupling.RobustDistributionStudyKt            # T-123, is any distribution flat at every one of C-0022's solved states
+./gradlew study -Pstudy=anchoring.CrossbarTrioExistenceStudyKt        # T-127, does a torsion-feasible trio exist on the cap crossbar at all
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.

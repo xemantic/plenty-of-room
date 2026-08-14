@@ -143,6 +143,21 @@ At the two flat 3 × 15 designs, against `C-0006`/`CH-0029`'s **10 pN** unzip al
 
 ## Deliverable 4 — the state dependence, which is the real price
 
+> ⚠️ **Annotated by [`CH-0077`](../challenges/CH-0077-five-solved-states-are-four-devices.md)
+> ([`C-0064`](C-0064-robust-distribution.md), `T-123`, 2026-08-14). Every number in this section
+> reproduces to `≤ 5.8e−4` and none of it moves; what moves is the word *"every"*.** `C-0022`'s five
+> headline states are **four devices** — the rest states of three different buffers at a 10 nm layer,
+> plus the rest and *held* states of a **5 nm** layer, of which the 2 nm one is that device at §3's
+> 3 nm stroke and no state of the 10 nm device at all. Over the range a **single** device traverses, a
+> robust distribution **exists**: 0.0372 (2 mM, 10 nm), 0.0436 (0.5 mM), 0.0619 (the 5 nm device) and
+> 0.0500 (10 mM), all inside `T-5b`'s 0.10 — **and this claim's own rim × 5 rule is flat over the whole
+> stroke of both 10 nm devices** (0.0753 and 0.0683), which is more than this section claims for it.
+> The five-state minimax improves to **0.1247** under a real optimiser and stops there for a reason
+> this claim could not have seen: the 2 nm state is the **only one of `C-0022`'s 21** whose finite tile
+> carries *less* total force than a 1-D pressure over its footprint (−3.91 %), so its free-tile dishing
+> field is **anti-parallel** to every other state's (cosine −0.943 to −1.000) and no force vector
+> flattens both.
+
 A distribution is tuned to a **load**, and the load is an operating state. All five of `C-0022`'s solved states, 3 × 15, dishing / stroke:
 
 | state | uniform | rim × 5 / 6.70 | optimum | minimax |

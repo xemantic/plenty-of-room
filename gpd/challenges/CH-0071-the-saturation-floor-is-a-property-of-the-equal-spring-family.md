@@ -113,5 +113,15 @@ tile:
 2. **A requirement that one distribution be flat at every operating state.** No distribution found here is:
    the minimax over `C-0022`'s five solved states reaches a worst case of 0.1587, marginally *above*
    `CH-0034`'s number. That is a *"not found"* rather than a *"does not exist"*, and it is reported as such.
+   > ⚠️ **Mis-specified, per [`CH-0077`](CH-0077-five-solved-states-are-four-devices.md)
+   > ([`C-0064`](../claims/C-0064-robust-distribution.md), `T-123`).** Those five states are **four
+   > devices** — three buffers' rest states plus one 5 nm device's two ends — not one operating range.
+   > Over the range a single device traverses a robust distribution **does** exist (0.0372–0.0619 of
+   > the stroke, all four devices), and `C-0058`'s own rim × 5 rule is one of them for both 10 nm
+   > devices. The five-state minimax improves to **0.1247** with a real optimiser and is obstructed by
+   > a **sign**: the 2 nm state is the only one of `C-0022`'s 21 whose edge effect is a net *loss*.
+   > **This condition therefore reads as weaker against this challenge than it should**, and the
+   > correct form of it is *"a requirement that one distribution be flat across BUFFERS"*, which
+   > nothing in §3 states either way.
 3. **A tolerance below 5 %**, at which only the 45-parameter optimum survives and the one-parameter rule does
    not.

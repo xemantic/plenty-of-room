@@ -1,0 +1,2760 @@
+{
+    "task": "T-123",
+    "leaf": "A8.2",
+    "title": "Is ANY distribution flat at every one of C-0022's solved states?",
+    "verificationType": "in-silico (C-0009's grillage and C-0006's plate under C-0022's SOLVED load, on an exact multi-state Woodbury surrogate with analytic gradients) + logical (a per-state least-squares bound in the space of attachment forces, which bounds every distribution whatever)",
+    "acceptance": "C-0058's minimax re-run with a real optimiser, more starts and the worst-case dishing as the objective, over all five of C-0022's solved states; which states bind and why; the operating range the requirement is owed over; the cost and the buildability consumed from C-0060",
+    "maturity": "TRL 1-3. Model-consistent and traceable. NOTHING HERE IS MEASURED.",
+    "units": {
+        "length": "nm",
+        "force": "pN",
+        "stiffness": "pN/nm",
+        "pressure": "pN/nm^2 = 1 MPa exactly",
+        "energy": "pN*nm"
+    },
+    "conventions": [
+        "x runs ALONG the helices, y ACROSS them; the origin is the tile centre",
+        "w is positive DOWNWARD, compressing the polymer layer (T-5)",
+        "dishing is the peak absolute departure from the area-weighted least-squares best-fit PLANE, sampled on the same 81 x 81 grid as C-0026, CH-0034, C-0047, C-0058 and C-0060",
+        "the free-tile stroke is the mean deflection of the UNSUPPORTED plate under the UNIFORM load at the same foundation stiffness",
+        "flat means peak dishing below 10% of that stroke — T-5b's CONVENTION, not a physical threshold",
+        "a collar depth is NEGATIVE for an enhancement, which is the sign C-0022 solved; its rim residual may exceed one in magnitude, which means the load REVERSES SIGN inside the collar",
+        "the coupling is n springs whose stiffnesses SUM to C-0017's mandate; the distribution is the design variable and the sum is not",
+        "a STATE is a (concentration, gap, bias) triple of C-0022's solved profiles, and every lookup here is keyed on all three",
+        "an operating RANGE is the set of states one device traverses: one buffer, one layer height, one bias, from gap L0 down to L0 - s"
+    ],
+    "runParameters": {
+        "duplexes": "15",
+        "attachments": "45 as 3 x 15 (C-0015's grid)",
+        "interhelicalDistance": "2.69 nm (SAXS, Fischer 2016)",
+        "crossoverColumns": "8, symmetrically centred (T-10)",
+        "subdivisions": "2 per interval, nested 1/2/4 in gate 4",
+        "plateBasisDegree": "12",
+        "dishingSamples": "81 x 81",
+        "foundationStiffness": "0.012625625 pN/nm^3 (C-0001's secant)",
+        "loadStates": "13 (5 headline + the traversed ranges + interpolated intermediates + the uniform-load falsifier)",
+        "optimiser": "smoothed minimax (log-sum-exp) with analytic gradients through the Woodbury solve, nonlinear conjugate gradients on the log-weights, six smoothing levels x 25 iterations, 42 starts, then C-0058's own coordinate descent as a polish stage",
+        "perPathCeiling": "3.3333333333333335 pN/nm — the 10 pN unzip allowable at the 3 nm stroke"
+    },
+    "citedInputs": {
+        "C-0017 mandate": "33.333333333333336 pN/nm = 100 pN / 3 nm",
+        "C-0006/CH-0029 unzip allowable": "10.0 pN per path",
+        "C-0006 duplex shear allowable": "48.0 pN, 65.0 pN nicked ceiling",
+        "C-0022 solved collars": "read at run time from gpd/results/T-3b-tile-edge-load-profile.json, keyed on (concentration, gap, bias)",
+        "T-5b tolerance": "0.1 — a CONVENTION",
+        "duplex EI": "230.0 pN*nm^2 — a CanDo MODEL INPUT",
+        "C-0060 flat ratio window": "3.5 to 20.0, MEASURED there",
+        "C-0060 coarsest quantum": "19.1 % of a level's own stiffness (an 11 bp hinge arm)",
+        "C-0060 scatter tolerance": "34.6 % relative, at which flatness is lost",
+        "C-0018/C-0032 operating point": "10 nm layer, 2 mM with 1-3 % pull-in margin, 0.5 mM clearing every predicate",
+        "S3 parameters": "100.0 pN, 3.0 nm acceptable, 10.0 nm desired, 40 x 40 nm"
+    },
+    "temperature": 300.0,
+    "thermalEnergy": 4.141947,
+    "rigidPlateTolerance": 0.1,
+    "mandatedTotalStiffness": 33.3333333,
+    "freeTileStroke": 4.90731102,
+    "states": [
+        {
+            "name": "2.0 mM, 10 nm, 0.192 V",
+            "concentration": 2.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "collarDepth": -0.302887367,
+            "collarWidth": 8.93928311,
+            "rimResidualDepth": -0.593889278,
+            "collarSense": "ENHANCEMENT",
+            "rimSense": "ENHANCEMENT",
+            "freeTileDishingOverStroke": 0.307902368,
+            "uniformDishingOverStroke": 0.21821335,
+            "uniformIsFlat": false,
+            "rimTimesFiveDishingOverStroke": 0.0753432869,
+            "rimTimesFiveIsFlat": true,
+            "singleStateOptimumOverStroke": 0.0213937028,
+            "reachableFloorOverStroke": 0.00268020812
+        },
+        {
+            "name": "0.5 mM, 10 nm, 0.134 V",
+            "concentration": 0.5,
+            "gapHeight": 10.0,
+            "appliedBias": 0.134,
+            "collarDepth": -0.508184782,
+            "collarWidth": 9.16338974,
+            "rimResidualDepth": 0.175508276,
+            "collarSense": "ENHANCEMENT",
+            "rimSense": "taper",
+            "freeTileDishingOverStroke": 0.306781594,
+            "uniformDishingOverStroke": 0.208607926,
+            "uniformIsFlat": false,
+            "rimTimesFiveDishingOverStroke": 0.0573878376,
+            "rimTimesFiveIsFlat": true,
+            "singleStateOptimumOverStroke": 0.0218537803,
+            "reachableFloorOverStroke": 0.00321192998
+        },
+        {
+            "name": "10.0 mM, 10 nm, 0.192 V",
+            "concentration": 10.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "collarDepth": 0.419998636,
+            "collarWidth": 2.39768412,
+            "rimResidualDepth": -2.73316696,
+            "collarSense": "taper",
+            "rimSense": "ENHANCEMENT",
+            "freeTileDishingOverStroke": 0.339871476,
+            "uniformDishingOverStroke": 0.255137797,
+            "uniformIsFlat": false,
+            "rimTimesFiveDishingOverStroke": 0.117907803,
+            "rimTimesFiveIsFlat": false,
+            "singleStateOptimumOverStroke": 0.0281249087,
+            "reachableFloorOverStroke": 0.00289317896
+        },
+        {
+            "name": "2.0 mM, 5 nm, 0.368 V",
+            "concentration": 2.0,
+            "gapHeight": 5.0,
+            "appliedBias": 0.368,
+            "collarDepth": -0.249725427,
+            "collarWidth": 6.8559919,
+            "rimResidualDepth": 0.550742869,
+            "collarSense": "ENHANCEMENT",
+            "rimSense": "taper",
+            "freeTileDishingOverStroke": 0.0637590476,
+            "uniformDishingOverStroke": 0.0795565596,
+            "uniformIsFlat": true,
+            "rimTimesFiveDishingOverStroke": 0.0944268804,
+            "rimTimesFiveIsFlat": true,
+            "singleStateOptimumOverStroke": 0.0144182054,
+            "reachableFloorOverStroke": 0.00106028538
+        },
+        {
+            "name": "2.0 mM, 2 nm, 0.368 V",
+            "concentration": 2.0,
+            "gapHeight": 2.0,
+            "appliedBias": 0.368,
+            "collarDepth": -0.0514981261,
+            "collarWidth": 6.56393103,
+            "rimResidualDepth": 1.08681801,
+            "collarSense": "ENHANCEMENT",
+            "rimSense": "taper",
+            "freeTileDishingOverStroke": 0.164798246,
+            "uniformDishingOverStroke": 0.0709650644,
+            "uniformIsFlat": true,
+            "rimTimesFiveDishingOverStroke": 0.186670741,
+            "rimTimesFiveIsFlat": false,
+            "singleStateOptimumOverStroke": 0.0090222531,
+            "reachableFloorOverStroke": 0.00142649729
+        }
+    ],
+    "cheapBound": [
+        {
+            "set": "C-0058's five headline states",
+            "states": 5.0,
+            "worstReachableFloor": 0.0157619394,
+            "worstReachableFloorOverStroke": 0.00321192998,
+            "toleranceExceeded": false,
+            "falsifierFired": false,
+            "verdict": "the bound does not forbid a flat distribution; the search decides"
+        },
+        {
+            "set": "single state: 2.0 mM, 10 nm, 0.192 V",
+            "states": 1.0,
+            "worstReachableFloor": 0.0131526148,
+            "worstReachableFloorOverStroke": 0.00268020812,
+            "toleranceExceeded": false,
+            "falsifierFired": false,
+            "verdict": "the bound does not forbid a flat distribution; the search decides"
+        },
+        {
+            "set": "single state: 0.5 mM, 10 nm, 0.134 V",
+            "states": 1.0,
+            "worstReachableFloor": 0.0157619394,
+            "worstReachableFloorOverStroke": 0.00321192998,
+            "toleranceExceeded": false,
+            "falsifierFired": false,
+            "verdict": "the bound does not forbid a flat distribution; the search decides"
+        },
+        {
+            "set": "single state: 10.0 mM, 10 nm, 0.192 V",
+            "states": 1.0,
+            "worstReachableFloor": 0.014197729,
+            "worstReachableFloorOverStroke": 0.00289317896,
+            "toleranceExceeded": false,
+            "falsifierFired": false,
+            "verdict": "the bound does not forbid a flat distribution; the search decides"
+        },
+        {
+            "set": "single state: 2.0 mM, 5 nm, 0.368 V",
+            "states": 1.0,
+            "worstReachableFloor": 0.00520315015,
+            "worstReachableFloorOverStroke": 0.00106028538,
+            "toleranceExceeded": false,
+            "falsifierFired": false,
+            "verdict": "the bound does not forbid a flat distribution; the search decides"
+        },
+        {
+            "set": "single state: 2.0 mM, 2 nm, 0.368 V",
+            "states": 1.0,
+            "worstReachableFloor": 0.00700026586,
+            "worstReachableFloorOverStroke": 0.00142649729,
+            "toleranceExceeded": false,
+            "falsifierFired": false,
+            "verdict": "the bound does not forbid a flat distribution; the search decides"
+        },
+        {
+            "set": "operating range: 2 mM, L0 = 10 nm, 0.192 V (C-0018's placed device)",
+            "states": 2.0,
+            "worstReachableFloor": 0.0131526148,
+            "worstReachableFloorOverStroke": 0.00268020812,
+            "toleranceExceeded": false,
+            "falsifierFired": false,
+            "verdict": "the bound does not forbid a flat distribution; the search decides"
+        },
+        {
+            "set": "operating range: 0.5 mM, L0 = 10 nm, 0.134 V (C-0032's recommendation)",
+            "states": 3.0,
+            "worstReachableFloor": 0.0157619394,
+            "worstReachableFloorOverStroke": 0.00321192998,
+            "toleranceExceeded": false,
+            "falsifierFired": false,
+            "verdict": "the bound does not forbid a flat distribution; the search decides"
+        },
+        {
+            "set": "operating range: 2 mM, L0 = 5 nm, 0.368 V",
+            "states": 2.0,
+            "worstReachableFloor": 0.00700026586,
+            "worstReachableFloorOverStroke": 0.00142649729,
+            "toleranceExceeded": false,
+            "falsifierFired": false,
+            "verdict": "the bound does not forbid a flat distribution; the search decides"
+        },
+        {
+            "set": "operating range: 10 mM, L0 = 10 nm, 0.192 V",
+            "states": 3.0,
+            "worstReachableFloor": 0.014197729,
+            "worstReachableFloorOverStroke": 0.00289317896,
+            "toleranceExceeded": false,
+            "falsifierFired": false,
+            "verdict": "the bound does not forbid a flat distribution; the search decides"
+        }
+    ],
+    "tension": [
+        {
+            "optimisedAt": "2.0 mM, 10 nm, 0.192 V",
+            "readAt": "0.5 mM, 10 nm, 0.134 V",
+            "dishingOverStroke": 0.0335506839,
+            "ownOptimumOverStroke": 0.0218537803,
+            "penalty": 1.5352348,
+            "flatThere": true,
+            "freeFieldCosine": 0.996526826,
+            "pairMinimaxOverStroke": 0.0254120313,
+            "pairIsFlat": true
+        },
+        {
+            "optimisedAt": "2.0 mM, 10 nm, 0.192 V",
+            "readAt": "10.0 mM, 10 nm, 0.192 V",
+            "dishingOverStroke": 0.0640126739,
+            "ownOptimumOverStroke": 0.0281249087,
+            "penalty": 2.27601357,
+            "flatThere": true,
+            "freeFieldCosine": 0.987345425,
+            "pairMinimaxOverStroke": 0.0368102075,
+            "pairIsFlat": true
+        },
+        {
+            "optimisedAt": "2.0 mM, 10 nm, 0.192 V",
+            "readAt": "2.0 mM, 5 nm, 0.368 V",
+            "dishingOverStroke": 0.104095115,
+            "ownOptimumOverStroke": 0.0144182054,
+            "penalty": 7.21969981,
+            "flatThere": false,
+            "freeFieldCosine": 0.986837945,
+            "pairMinimaxOverStroke": 0.0627691231,
+            "pairIsFlat": true
+        },
+        {
+            "optimisedAt": "2.0 mM, 10 nm, 0.192 V",
+            "readAt": "2.0 mM, 2 nm, 0.368 V",
+            "dishingOverStroke": 0.204081018,
+            "ownOptimumOverStroke": 0.0090222531,
+            "penalty": 22.6197399,
+            "flatThere": false,
+            "freeFieldCosine": -0.984198658,
+            "pairMinimaxOverStroke": 0.112353074,
+            "pairIsFlat": false
+        },
+        {
+            "optimisedAt": "0.5 mM, 10 nm, 0.134 V",
+            "readAt": "2.0 mM, 10 nm, 0.192 V",
+            "dishingOverStroke": 0.0365539281,
+            "ownOptimumOverStroke": 0.0213937028,
+            "penalty": 1.70863027,
+            "flatThere": true,
+            "freeFieldCosine": 0.996526826,
+            "pairMinimaxOverStroke": 0.0254120313,
+            "pairIsFlat": true
+        },
+        {
+            "optimisedAt": "0.5 mM, 10 nm, 0.134 V",
+            "readAt": "10.0 mM, 10 nm, 0.192 V",
+            "dishingOverStroke": 0.0759904987,
+            "ownOptimumOverStroke": 0.0281249087,
+            "penalty": 2.70189316,
+            "flatThere": true,
+            "freeFieldCosine": 0.970716449,
+            "pairMinimaxOverStroke": 0.0427638033,
+            "pairIsFlat": true
+        },
+        {
+            "optimisedAt": "0.5 mM, 10 nm, 0.134 V",
+            "readAt": "2.0 mM, 5 nm, 0.368 V",
+            "dishingOverStroke": 0.0986111148,
+            "ownOptimumOverStroke": 0.0144182054,
+            "penalty": 6.83934733,
+            "flatThere": true,
+            "freeFieldCosine": 0.996781277,
+            "pairMinimaxOverStroke": 0.0572938185,
+            "pairIsFlat": true
+        },
+        {
+            "optimisedAt": "0.5 mM, 10 nm, 0.134 V",
+            "readAt": "2.0 mM, 2 nm, 0.368 V",
+            "dishingOverStroke": 0.203957667,
+            "ownOptimumOverStroke": 0.0090222531,
+            "penalty": 22.606068,
+            "flatThere": false,
+            "freeFieldCosine": -0.966041286,
+            "pairMinimaxOverStroke": 0.108511029,
+            "pairIsFlat": false
+        },
+        {
+            "optimisedAt": "10.0 mM, 10 nm, 0.192 V",
+            "readAt": "2.0 mM, 10 nm, 0.192 V",
+            "dishingOverStroke": 0.0531792798,
+            "ownOptimumOverStroke": 0.0213937028,
+            "penalty": 2.48574453,
+            "flatThere": true,
+            "freeFieldCosine": 0.987345425,
+            "pairMinimaxOverStroke": 0.0368102075,
+            "pairIsFlat": true
+        },
+        {
+            "optimisedAt": "10.0 mM, 10 nm, 0.192 V",
+            "readAt": "0.5 mM, 10 nm, 0.134 V",
+            "dishingOverStroke": 0.0657720115,
+            "ownOptimumOverStroke": 0.0218537803,
+            "penalty": 3.00964001,
+            "flatThere": true,
+            "freeFieldCosine": 0.970716449,
+            "pairMinimaxOverStroke": 0.0427638033,
+            "pairIsFlat": true
+        },
+        {
+            "optimisedAt": "10.0 mM, 10 nm, 0.192 V",
+            "readAt": "2.0 mM, 5 nm, 0.368 V",
+            "dishingOverStroke": 0.130143424,
+            "ownOptimumOverStroke": 0.0144182054,
+            "penalty": 9.02632612,
+            "flatThere": false,
+            "freeFieldCosine": 0.948808235,
+            "pairMinimaxOverStroke": 0.0784693233,
+            "pairIsFlat": true
+        },
+        {
+            "optimisedAt": "10.0 mM, 10 nm, 0.192 V",
+            "readAt": "2.0 mM, 2 nm, 0.368 V",
+            "dishingOverStroke": 0.223383404,
+            "ownOptimumOverStroke": 0.0090222531,
+            "penalty": 24.7591596,
+            "flatThere": false,
+            "freeFieldCosine": -0.999823593,
+            "pairMinimaxOverStroke": 0.123062281,
+            "pairIsFlat": false
+        },
+        {
+            "optimisedAt": "2.0 mM, 5 nm, 0.368 V",
+            "readAt": "2.0 mM, 10 nm, 0.192 V",
+            "dishingOverStroke": 0.144003385,
+            "ownOptimumOverStroke": 0.0213937028,
+            "penalty": 6.73111086,
+            "flatThere": false,
+            "freeFieldCosine": 0.986837945,
+            "pairMinimaxOverStroke": 0.0627691231,
+            "pairIsFlat": true
+        },
+        {
+            "optimisedAt": "2.0 mM, 5 nm, 0.368 V",
+            "readAt": "0.5 mM, 10 nm, 0.134 V",
+            "dishingOverStroke": 0.13000886,
+            "ownOptimumOverStroke": 0.0218537803,
+            "penalty": 5.94903301,
+            "flatThere": false,
+            "freeFieldCosine": 0.996781277,
+            "pairMinimaxOverStroke": 0.0572938185,
+            "pairIsFlat": true
+        },
+        {
+            "optimisedAt": "2.0 mM, 5 nm, 0.368 V",
+            "readAt": "10.0 mM, 10 nm, 0.192 V",
+            "dishingOverStroke": 0.184878244,
+            "ownOptimumOverStroke": 0.0281249087,
+            "penalty": 6.57347,
+            "flatThere": false,
+            "freeFieldCosine": 0.948808235,
+            "pairMinimaxOverStroke": 0.0784693233,
+            "pairIsFlat": true
+        },
+        {
+            "optimisedAt": "2.0 mM, 5 nm, 0.368 V",
+            "readAt": "2.0 mM, 2 nm, 0.368 V",
+            "dishingOverStroke": 0.114810409,
+            "ownOptimumOverStroke": 0.0090222531,
+            "penalty": 12.7252481,
+            "flatThere": false,
+            "freeFieldCosine": -0.942729434,
+            "pairMinimaxOverStroke": 0.0619386728,
+            "pairIsFlat": true
+        },
+        {
+            "optimisedAt": "2.0 mM, 2 nm, 0.368 V",
+            "readAt": "2.0 mM, 10 nm, 0.192 V",
+            "dishingOverStroke": 0.310278318,
+            "ownOptimumOverStroke": 0.0213937028,
+            "penalty": 14.5032546,
+            "flatThere": false,
+            "freeFieldCosine": -0.984198658,
+            "pairMinimaxOverStroke": 0.112353074,
+            "pairIsFlat": false
+        },
+        {
+            "optimisedAt": "2.0 mM, 2 nm, 0.368 V",
+            "readAt": "0.5 mM, 10 nm, 0.134 V",
+            "dishingOverStroke": 0.299051799,
+            "ownOptimumOverStroke": 0.0218537803,
+            "penalty": 13.6842137,
+            "flatThere": false,
+            "freeFieldCosine": -0.966041286,
+            "pairMinimaxOverStroke": 0.108511029,
+            "pairIsFlat": false
+        },
+        {
+            "optimisedAt": "2.0 mM, 2 nm, 0.368 V",
+            "readAt": "10.0 mM, 10 nm, 0.192 V",
+            "dishingOverStroke": 0.345482244,
+            "ownOptimumOverStroke": 0.0281249087,
+            "penalty": 12.283853,
+            "flatThere": false,
+            "freeFieldCosine": -0.999823593,
+            "pairMinimaxOverStroke": 0.123062281,
+            "pairIsFlat": false
+        },
+        {
+            "optimisedAt": "2.0 mM, 2 nm, 0.368 V",
+            "readAt": "2.0 mM, 5 nm, 0.368 V",
+            "dishingOverStroke": 0.146520059,
+            "ownOptimumOverStroke": 0.0144182054,
+            "penalty": 10.1621564,
+            "flatThere": false,
+            "freeFieldCosine": -0.942729434,
+            "pairMinimaxOverStroke": 0.0619386728,
+            "pairIsFlat": true
+        }
+    ],
+    "subsets": [
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V"
+            ],
+            "size": 1.0,
+            "worstDishing": 0.104985553,
+            "worstDishingOverStroke": 0.0213937028,
+            "flat": true,
+            "bindingStates": [
+                "2.0 mM, 10 nm, 0.192 V"
+            ],
+            "uniformWorstOverStroke": 0.21821335,
+            "improvementOverUniform": 0.901959698,
+            "peakPathStiffness": 1.28076235,
+            "peakPathForceAtAcceptableStroke": 3.84228704,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        },
+        {
+            "members": [
+                "0.5 mM, 10 nm, 0.134 V"
+            ],
+            "size": 1.0,
+            "worstDishing": 0.107243297,
+            "worstDishingOverStroke": 0.0218537803,
+            "flat": true,
+            "bindingStates": [
+                "0.5 mM, 10 nm, 0.134 V"
+            ],
+            "uniformWorstOverStroke": 0.208607926,
+            "improvementOverUniform": 0.895239933,
+            "peakPathStiffness": 1.10273015,
+            "peakPathForceAtAcceptableStroke": 3.30819044,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        },
+        {
+            "members": [
+                "10.0 mM, 10 nm, 0.192 V"
+            ],
+            "size": 1.0,
+            "worstDishing": 0.138017675,
+            "worstDishingOverStroke": 0.0281249087,
+            "flat": true,
+            "bindingStates": [
+                "10.0 mM, 10 nm, 0.192 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.889765809,
+            "peakPathStiffness": 1.71386329,
+            "peakPathForceAtAcceptableStroke": 5.14158987,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        },
+        {
+            "members": [
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 1.0,
+            "worstDishing": 0.0707546183,
+            "worstDishingOverStroke": 0.0144182054,
+            "flat": true,
+            "bindingStates": [
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.0795565596,
+            "improvementOverUniform": 0.818767862,
+            "peakPathStiffness": 0.955397656,
+            "peakPathForceAtAcceptableStroke": 2.86619297,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        },
+        {
+            "members": [
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 1.0,
+            "worstDishing": 0.044275002,
+            "worstDishingOverStroke": 0.0090222531,
+            "flat": true,
+            "bindingStates": [
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.0709650644,
+            "improvementOverUniform": 0.872863455,
+            "peakPathStiffness": 0.977721013,
+            "peakPathForceAtAcceptableStroke": 2.93316304,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        },
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V"
+            ],
+            "size": 2.0,
+            "worstDishing": 0.124704741,
+            "worstDishingOverStroke": 0.0254120313,
+            "flat": true,
+            "bindingStates": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V"
+            ],
+            "uniformWorstOverStroke": 0.21821335,
+            "improvementOverUniform": 0.88354502,
+            "peakPathStiffness": 1.23694892,
+            "peakPathForceAtAcceptableStroke": 3.71084676,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        },
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "10.0 mM, 10 nm, 0.192 V"
+            ],
+            "size": 2.0,
+            "worstDishing": 0.180639137,
+            "worstDishingOverStroke": 0.0368102075,
+            "flat": true,
+            "bindingStates": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "10.0 mM, 10 nm, 0.192 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.855724209,
+            "peakPathStiffness": 1.50834404,
+            "peakPathForceAtAcceptableStroke": 4.52503211,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        },
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 2.0,
+            "worstDishing": 0.30802761,
+            "worstDishingOverStroke": 0.0627691231,
+            "flat": true,
+            "bindingStates": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.21821335,
+            "improvementOverUniform": 0.712349757,
+            "peakPathStiffness": 1.36170249,
+            "peakPathForceAtAcceptableStroke": 4.08510747,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        },
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 2.0,
+            "worstDishing": 0.551351477,
+            "worstDishingOverStroke": 0.112353074,
+            "flat": false,
+            "bindingStates": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.21821335,
+            "improvementOverUniform": 0.485122822,
+            "peakPathStiffness": 1.32674685,
+            "peakPathForceAtAcceptableStroke": 3.98024054,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        },
+        {
+            "members": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V"
+            ],
+            "size": 2.0,
+            "worstDishing": 0.209855283,
+            "worstDishingOverStroke": 0.0427638033,
+            "flat": true,
+            "bindingStates": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.832389384,
+            "peakPathStiffness": 2.21428078,
+            "peakPathForceAtAcceptableStroke": 6.64284235,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        },
+        {
+            "members": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 2.0,
+            "worstDishing": 0.281158587,
+            "worstDishingOverStroke": 0.0572938185,
+            "flat": true,
+            "bindingStates": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.208607926,
+            "improvementOverUniform": 0.72535167,
+            "peakPathStiffness": 1.49390854,
+            "peakPathForceAtAcceptableStroke": 4.48172562,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        },
+        {
+            "members": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 2.0,
+            "worstDishing": 0.532497368,
+            "worstDishingOverStroke": 0.108511029,
+            "flat": false,
+            "bindingStates": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.208607926,
+            "improvementOverUniform": 0.479832665,
+            "peakPathStiffness": 1.23859525,
+            "peakPathForceAtAcceptableStroke": 3.71578574,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        },
+        {
+            "members": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 2.0,
+            "worstDishing": 0.385073375,
+            "worstDishingOverStroke": 0.0784693233,
+            "flat": true,
+            "bindingStates": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.692443361,
+            "peakPathStiffness": 1.67875658,
+            "peakPathForceAtAcceptableStroke": 5.03626974,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        },
+        {
+            "members": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 2.0,
+            "worstDishing": 0.603904888,
+            "worstDishingOverStroke": 0.123062281,
+            "flat": false,
+            "bindingStates": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.517663465,
+            "peakPathStiffness": 1.88415529,
+            "peakPathForceAtAcceptableStroke": 5.65246587,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        },
+        {
+            "members": [
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 2.0,
+            "worstDishing": 0.303952331,
+            "worstDishingOverStroke": 0.0619386728,
+            "flat": true,
+            "bindingStates": [
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.0795565596,
+            "improvementOverUniform": 0.22145109,
+            "peakPathStiffness": 0.992744327,
+            "peakPathForceAtAcceptableStroke": 2.97823298,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        },
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V"
+            ],
+            "size": 3.0,
+            "worstDishing": 0.213510749,
+            "worstDishingOverStroke": 0.0435087052,
+            "flat": true,
+            "bindingStates": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.829469778,
+            "peakPathStiffness": 1.46336791,
+            "peakPathForceAtAcceptableStroke": 4.39010374,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 23.0
+        },
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 3.0,
+            "worstDishing": 0.310950095,
+            "worstDishingOverStroke": 0.0633646603,
+            "flat": true,
+            "bindingStates": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.21821335,
+            "improvementOverUniform": 0.709620606,
+            "peakPathStiffness": 1.26615707,
+            "peakPathForceAtAcceptableStroke": 3.79847122,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 23.0
+        },
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 3.0,
+            "worstDishing": 0.55359323,
+            "worstDishingOverStroke": 0.112809893,
+            "flat": false,
+            "bindingStates": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.21821335,
+            "improvementOverUniform": 0.483029371,
+            "peakPathStiffness": 1.34824766,
+            "peakPathForceAtAcceptableStroke": 4.04474299,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 23.0
+        },
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 3.0,
+            "worstDishing": 0.384847391,
+            "worstDishingOverStroke": 0.0784232728,
+            "flat": true,
+            "bindingStates": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.692623854,
+            "peakPathStiffness": 1.59932077,
+            "peakPathForceAtAcceptableStroke": 4.79796232,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 23.0
+        },
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 3.0,
+            "worstDishing": 0.609438041,
+            "worstDishingOverStroke": 0.124189814,
+            "flat": false,
+            "bindingStates": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.513244156,
+            "peakPathStiffness": 1.85285355,
+            "peakPathForceAtAcceptableStroke": 5.55856066,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 23.0
+        },
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 3.0,
+            "worstDishing": 0.547879015,
+            "worstDishingOverStroke": 0.111645464,
+            "flat": false,
+            "bindingStates": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.21821335,
+            "improvementOverUniform": 0.488365565,
+            "peakPathStiffness": 1.392934,
+            "peakPathForceAtAcceptableStroke": 4.178802,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 23.0
+        },
+        {
+            "members": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 3.0,
+            "worstDishing": 0.390414208,
+            "worstDishingOverStroke": 0.0795576655,
+            "flat": true,
+            "bindingStates": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.688177658,
+            "peakPathStiffness": 1.49260938,
+            "peakPathForceAtAcceptableStroke": 4.47782813,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 23.0
+        },
+        {
+            "members": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 3.0,
+            "worstDishing": 0.610287712,
+            "worstDishingOverStroke": 0.124362958,
+            "flat": false,
+            "bindingStates": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.512565527,
+            "peakPathStiffness": 1.65330966,
+            "peakPathForceAtAcceptableStroke": 4.95992897,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 23.0
+        },
+        {
+            "members": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 3.0,
+            "worstDishing": 0.532203196,
+            "worstDishingOverStroke": 0.108451083,
+            "flat": false,
+            "bindingStates": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.208607926,
+            "improvementOverUniform": 0.480120025,
+            "peakPathStiffness": 1.20992043,
+            "peakPathForceAtAcceptableStroke": 3.62976129,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 23.0
+        },
+        {
+            "members": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 3.0,
+            "worstDishing": 0.607787237,
+            "worstDishingOverStroke": 0.123853417,
+            "flat": false,
+            "bindingStates": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.514562647,
+            "peakPathStiffness": 1.61124561,
+            "peakPathForceAtAcceptableStroke": 4.83373683,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 23.0
+        },
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "size": 4.0,
+            "worstDishing": 0.39128374,
+            "worstDishingOverStroke": 0.0797348566,
+            "flat": true,
+            "bindingStates": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.687483166,
+            "peakPathStiffness": 1.46180552,
+            "peakPathForceAtAcceptableStroke": 4.38541655,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 23.0
+        },
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 4.0,
+            "worstDishing": 0.610134758,
+            "worstDishingOverStroke": 0.124331789,
+            "flat": false,
+            "bindingStates": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.512687691,
+            "peakPathStiffness": 1.5814305,
+            "peakPathForceAtAcceptableStroke": 4.7442915,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 23.0
+        },
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V",
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 4.0,
+            "worstDishing": 0.55355534,
+            "worstDishingOverStroke": 0.112802172,
+            "flat": false,
+            "bindingStates": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.21821335,
+            "improvementOverUniform": 0.483064754,
+            "peakPathStiffness": 1.34614145,
+            "peakPathForceAtAcceptableStroke": 4.03842435,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 23.0
+        },
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 4.0,
+            "worstDishing": 0.614348219,
+            "worstDishingOverStroke": 0.125190398,
+            "flat": false,
+            "bindingStates": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.509322416,
+            "peakPathStiffness": 1.55206799,
+            "peakPathForceAtAcceptableStroke": 4.65620396,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 23.0
+        },
+        {
+            "members": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 4.0,
+            "worstDishing": 0.606981293,
+            "worstDishingOverStroke": 0.123689184,
+            "flat": false,
+            "bindingStates": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.515206351,
+            "peakPathStiffness": 1.6470731,
+            "peakPathForceAtAcceptableStroke": 4.94121929,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 23.0
+        },
+        {
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "0.5 mM, 10 nm, 0.134 V",
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "size": 5.0,
+            "worstDishing": 0.611988407,
+            "worstDishingOverStroke": 0.124709521,
+            "flat": false,
+            "bindingStates": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "improvementOverUniform": 0.511207189,
+            "peakPathStiffness": 1.58555678,
+            "peakPathForceAtAcceptableStroke": 4.75667034,
+            "admissibleUnderTheUnzipAllowable": true,
+            "startsWithinOnePartInAMillion": 1.0,
+            "startsUsed": 42.0
+        }
+    ],
+    "ranges": [
+        {
+            "device": "2 mM, L0 = 10 nm, 0.192 V (C-0018's placed device)",
+            "rationale": "C-0018 places this device with 1-3 % of pull-in margin; S3's acceptable stroke is 3 nm, so it traverses gaps 10 -> 7 nm at its OWN operating bias, and C-0022 solved both ends of that at 0.192 V",
+            "members": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 7 nm, 0.192 V"
+            ],
+            "interpolatedMembers": 2.0,
+            "worstDishing": 0.182493878,
+            "worstDishingOverStroke": 0.0371881623,
+            "flat": true,
+            "bindingStates": [
+                "2.0 mM, 10 nm, 0.192 V",
+                "2.0 mM, 7 nm, 0.192 V"
+            ],
+            "uniformWorstOverStroke": 0.21821335,
+            "rimTimesFiveWorstOverStroke": 0.0753432869,
+            "improvementOverUniform": 0.829578886,
+            "peakPathStiffness": 1.3578331,
+            "peakPathForceAtAcceptableStroke": 4.07349929,
+            "unzipMargin": 2.4548918,
+            "admissibleUnderTheUnzipAllowable": true,
+            "peakThermalForce": 0.478640326,
+            "maximumOverMinimumStiffness": 7.94645505
+        },
+        {
+            "device": "0.5 mM, L0 = 10 nm, 0.134 V (C-0032's recommendation)",
+            "rationale": "C-0032 finds every predicate clears at 0.5 mM where the 2 mM design sits ON its own fold; C-0022 did not solve the compressed end at 0.134 V, so the range BRACKETS it with the 0.082 V and 0.155 V profiles it did solve at 7 nm",
+            "members": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "0.5 mM, 7 nm, 0.082 V",
+                "0.5 mM, 7 nm, 0.155 V"
+            ],
+            "interpolatedMembers": 0.0,
+            "worstDishing": 0.213855026,
+            "worstDishingOverStroke": 0.0435788613,
+            "flat": true,
+            "bindingStates": [
+                "0.5 mM, 10 nm, 0.134 V",
+                "0.5 mM, 7 nm, 0.155 V"
+            ],
+            "uniformWorstOverStroke": 0.208607926,
+            "rimTimesFiveWorstOverStroke": 0.0682970311,
+            "improvementOverUniform": 0.79109681,
+            "peakPathStiffness": 1.46125391,
+            "peakPathForceAtAcceptableStroke": 4.38376173,
+            "unzipMargin": 2.28114588,
+            "admissibleUnderTheUnzipAllowable": true,
+            "peakThermalForce": 0.51509648,
+            "maximumOverMinimumStiffness": 25.5788277
+        },
+        {
+            "device": "2 mM, L0 = 5 nm, 0.368 V",
+            "rationale": "the rest and held states of the FIVE nanometre layer — C-0022's 2 nm state is this device held at S3's 3 nm stroke, not a state of the 10 nm device at all",
+            "members": [
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "interpolatedMembers": 0.0,
+            "worstDishing": 0.303952331,
+            "worstDishingOverStroke": 0.0619386728,
+            "flat": true,
+            "bindingStates": [
+                "2.0 mM, 5 nm, 0.368 V",
+                "2.0 mM, 2 nm, 0.368 V"
+            ],
+            "uniformWorstOverStroke": 0.0795565596,
+            "rimTimesFiveWorstOverStroke": 0.186670741,
+            "improvementOverUniform": 0.22145109,
+            "peakPathStiffness": 0.992744327,
+            "peakPathForceAtAcceptableStroke": 2.97823298,
+            "unzipMargin": 3.35769568,
+            "admissibleUnderTheUnzipAllowable": true,
+            "peakThermalForce": 0.349945417,
+            "maximumOverMinimumStiffness": 2.44652317
+        },
+        {
+            "device": "10 mM, L0 = 10 nm, 0.192 V",
+            "rationale": "the third buffer of C-0022's headline five, with its compressed end bracketed by the 0.082 V and 0.155 V profiles solved at 7 nm",
+            "members": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "10.0 mM, 7 nm, 0.082 V",
+                "10.0 mM, 7 nm, 0.155 V"
+            ],
+            "interpolatedMembers": 0.0,
+            "worstDishing": 0.245350525,
+            "worstDishingOverStroke": 0.0499969381,
+            "flat": true,
+            "bindingStates": [
+                "10.0 mM, 10 nm, 0.192 V",
+                "10.0 mM, 7 nm, 0.155 V"
+            ],
+            "uniformWorstOverStroke": 0.255137797,
+            "rimTimesFiveWorstOverStroke": 0.117907803,
+            "improvementOverUniform": 0.804039469,
+            "peakPathStiffness": 1.54825482,
+            "peakPathForceAtAcceptableStroke": 4.64476446,
+            "unzipMargin": 2.1529617,
+            "admissibleUnderTheUnzipAllowable": true,
+            "peakThermalForce": 0.545764568,
+            "maximumOverMinimumStiffness": 5.51352115
+        }
+    ],
+    "distributions": [
+        {
+            "label": "uniform (C-0058's limiting case)",
+            "profile": "2.0 mM, 10 nm, 0.192 V",
+            "latticePeakDishing": 1.07084078,
+            "platePeakDishing": 1.1649069,
+            "latticeOverPlate": 0.919250093,
+            "latticeExcessPercent": -8.07499072,
+            "dishingOverStroke": 0.21821335,
+            "flat": false,
+            "peakSupportForce": 1.94331833,
+            "peakCrossoverForce": 0.150350269,
+            "peakDuplexShear": 0.792514546,
+            "peakThermalForce": 0.261113381,
+            "peakPathStiffness": 0.740740741,
+            "peakPathForceAtAcceptableStroke": 2.22222222,
+            "unzipMargin": 4.5
+        },
+        {
+            "label": "C-0058's rim x 5 over 6.70 nm",
+            "profile": "2.0 mM, 10 nm, 0.192 V",
+            "latticePeakDishing": 0.369732942,
+            "platePeakDishing": 0.298307025,
+            "latticeOverPlate": 1.2394376,
+            "latticeExcessPercent": 23.9437596,
+            "dishingOverStroke": 0.0753432869,
+            "flat": true,
+            "peakSupportForce": 2.03443073,
+            "peakCrossoverForce": 0.783832424,
+            "peakDuplexShear": 1.13230021,
+            "peakThermalForce": 0.324588457,
+            "peakPathStiffness": 0.920810313,
+            "peakPathForceAtAcceptableStroke": 2.76243094,
+            "unzipMargin": 3.62
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "profile": "2.0 mM, 10 nm, 0.192 V",
+            "latticePeakDishing": 0.182492611,
+            "platePeakDishing": 0.279194908,
+            "latticeOverPlate": 0.653638751,
+            "latticeExcessPercent": -34.6361249,
+            "dishingOverStroke": 0.037187904,
+            "flat": true,
+            "peakSupportForce": 2.93245427,
+            "peakCrossoverForce": 0.780763264,
+            "peakDuplexShear": 1.08784383,
+            "peakThermalForce": 0.478640326,
+            "peakPathStiffness": 1.3578331,
+            "peakPathForceAtAcceptableStroke": 4.07349929,
+            "unzipMargin": 2.4548918
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "profile": "2.0 mM, 10 nm, 0.192 V",
+            "latticePeakDishing": 0.568627243,
+            "platePeakDishing": 0.610895266,
+            "latticeOverPlate": 0.930809705,
+            "latticeExcessPercent": -6.91902945,
+            "dishingOverStroke": 0.115873488,
+            "flat": false,
+            "peakSupportForce": 3.7330772,
+            "peakCrossoverForce": 1.52108572,
+            "peakDuplexShear": 1.43042145,
+            "peakThermalForce": 0.558913623,
+            "peakPathStiffness": 1.58555678,
+            "peakPathForceAtAcceptableStroke": 4.75667034,
+            "unzipMargin": 2.10231092
+        },
+        {
+            "label": "uniform (C-0058's limiting case)",
+            "profile": "2.0 mM, 7 nm, 0.192 V",
+            "latticePeakDishing": 0.766487313,
+            "platePeakDishing": 0.852882641,
+            "latticeOverPlate": 0.898701975,
+            "latticeExcessPercent": -10.1298025,
+            "dishingOverStroke": 0.156192936,
+            "flat": false,
+            "peakSupportForce": 1.76462747,
+            "peakCrossoverForce": 0.161561375,
+            "peakDuplexShear": 0.718326434,
+            "peakThermalForce": 0.261113381,
+            "peakPathStiffness": 0.740740741,
+            "peakPathForceAtAcceptableStroke": 2.22222222,
+            "unzipMargin": 4.5
+        },
+        {
+            "label": "C-0058's rim x 5 over 6.70 nm",
+            "profile": "2.0 mM, 7 nm, 0.192 V",
+            "latticePeakDishing": 0.335914908,
+            "platePeakDishing": 0.284732025,
+            "latticeOverPlate": 1.17975808,
+            "latticeExcessPercent": 17.9758084,
+            "dishingOverStroke": 0.0684519296,
+            "flat": true,
+            "peakSupportForce": 1.91403541,
+            "peakCrossoverForce": 0.769431801,
+            "peakDuplexShear": 1.10755337,
+            "peakThermalForce": 0.324588457,
+            "peakPathStiffness": 0.920810313,
+            "peakPathForceAtAcceptableStroke": 2.76243094,
+            "unzipMargin": 3.62
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "profile": "2.0 mM, 7 nm, 0.192 V",
+            "latticePeakDishing": 0.182493878,
+            "platePeakDishing": 0.158442053,
+            "latticeOverPlate": 1.15180203,
+            "latticeExcessPercent": 15.180203,
+            "dishingOverStroke": 0.0371881623,
+            "flat": true,
+            "peakSupportForce": 2.84675752,
+            "peakCrossoverForce": 0.803116792,
+            "peakDuplexShear": 0.997928051,
+            "peakThermalForce": 0.478640326,
+            "peakPathStiffness": 1.3578331,
+            "peakPathForceAtAcceptableStroke": 4.07349929,
+            "unzipMargin": 2.4548918
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "profile": "2.0 mM, 7 nm, 0.192 V",
+            "latticePeakDishing": 0.481435421,
+            "platePeakDishing": 0.412942249,
+            "latticeOverPlate": 1.16586622,
+            "latticeExcessPercent": 16.5866225,
+            "dishingOverStroke": 0.0981057486,
+            "flat": true,
+            "peakSupportForce": 3.41264284,
+            "peakCrossoverForce": 1.42367993,
+            "peakDuplexShear": 1.31234659,
+            "peakThermalForce": 0.558913623,
+            "peakPathStiffness": 1.58555678,
+            "peakPathForceAtAcceptableStroke": 4.75667034,
+            "unzipMargin": 2.10231092
+        }
+    ],
+    "paths": [
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 0.0,
+            "x": -13.3333333,
+            "y": -18.83,
+            "stiffness": 1.13233639,
+            "shareOfTheUniformPath": 1.52865413,
+            "forceAtAcceptableStroke": 3.39700918,
+            "thermalForce": 0.399152048
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 1.0,
+            "x": 0.0,
+            "y": -18.83,
+            "stiffness": 0.956076782,
+            "shareOfTheUniformPath": 1.29070366,
+            "forceAtAcceptableStroke": 2.86823035,
+            "thermalForce": 0.337019995
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 2.0,
+            "x": 13.3333333,
+            "y": -18.83,
+            "stiffness": 1.18823267,
+            "shareOfTheUniformPath": 1.6041141,
+            "forceAtAcceptableStroke": 3.564698,
+            "thermalForce": 0.418855656
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 3.0,
+            "x": -13.3333333,
+            "y": -16.14,
+            "stiffness": 1.11372946,
+            "shareOfTheUniformPath": 1.50353477,
+            "forceAtAcceptableStroke": 3.34118838,
+            "thermalForce": 0.392593047
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 4.0,
+            "x": 0.0,
+            "y": -16.14,
+            "stiffness": 0.372676613,
+            "shareOfTheUniformPath": 0.503113428,
+            "forceAtAcceptableStroke": 1.11802984,
+            "thermalForce": 0.131369648
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 5.0,
+            "x": 13.3333333,
+            "y": -16.14,
+            "stiffness": 1.2250085,
+            "shareOfTheUniformPath": 1.65376148,
+            "forceAtAcceptableStroke": 3.67502551,
+            "thermalForce": 0.43181925
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 6.0,
+            "x": -13.3333333,
+            "y": -13.45,
+            "stiffness": 0.931163913,
+            "shareOfTheUniformPath": 1.25707128,
+            "forceAtAcceptableStroke": 2.79349174,
+            "thermalForce": 0.328238132
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 7.0,
+            "x": 0.0,
+            "y": -13.45,
+            "stiffness": 0.342515494,
+            "shareOfTheUniformPath": 0.462395917,
+            "forceAtAcceptableStroke": 1.02754648,
+            "thermalForce": 0.120737761
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 8.0,
+            "x": 13.3333333,
+            "y": -13.45,
+            "stiffness": 0.572839322,
+            "shareOfTheUniformPath": 0.773333085,
+            "forceAtAcceptableStroke": 1.71851797,
+            "thermalForce": 0.201927616
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 9.0,
+            "x": -13.3333333,
+            "y": -10.76,
+            "stiffness": 1.1260889,
+            "shareOfTheUniformPath": 1.52022001,
+            "forceAtAcceptableStroke": 3.37826669,
+            "thermalForce": 0.396949787
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 10.0,
+            "x": 0.0,
+            "y": -10.76,
+            "stiffness": 0.247765856,
+            "shareOfTheUniformPath": 0.334483906,
+            "forceAtAcceptableStroke": 0.743297568,
+            "thermalForce": 0.0873382234
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 11.0,
+            "x": 13.3333333,
+            "y": -10.76,
+            "stiffness": 1.20114595,
+            "shareOfTheUniformPath": 1.62154703,
+            "forceAtAcceptableStroke": 3.60343785,
+            "thermalForce": 0.423407628
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 12.0,
+            "x": -13.3333333,
+            "y": -8.07,
+            "stiffness": 0.5792627,
+            "shareOfTheUniformPath": 0.782004645,
+            "forceAtAcceptableStroke": 1.7377881,
+            "thermalForce": 0.204191876
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 13.0,
+            "x": 0.0,
+            "y": -8.07,
+            "stiffness": 0.477201665,
+            "shareOfTheUniformPath": 0.644222248,
+            "forceAtAcceptableStroke": 1.43160499,
+            "thermalForce": 0.168215049
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 14.0,
+            "x": 13.3333333,
+            "y": -8.07,
+            "stiffness": 1.13067458,
+            "shareOfTheUniformPath": 1.52641068,
+            "forceAtAcceptableStroke": 3.39202373,
+            "thermalForce": 0.398566253
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 15.0,
+            "x": -13.3333333,
+            "y": -5.38,
+            "stiffness": 0.986253377,
+            "shareOfTheUniformPath": 1.33144206,
+            "forceAtAcceptableStroke": 2.95876013,
+            "thermalForce": 0.347657337
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 16.0,
+            "x": 0.0,
+            "y": -5.38,
+            "stiffness": 0.257574147,
+            "shareOfTheUniformPath": 0.347725099,
+            "forceAtAcceptableStroke": 0.772722441,
+            "thermalForce": 0.090795676
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 17.0,
+            "x": 13.3333333,
+            "y": -5.38,
+            "stiffness": 0.559551462,
+            "shareOfTheUniformPath": 0.755394473,
+            "forceAtAcceptableStroke": 1.67865438,
+            "thermalForce": 0.197243605
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 18.0,
+            "x": -13.3333333,
+            "y": -2.69,
+            "stiffness": 0.736424349,
+            "shareOfTheUniformPath": 0.994172871,
+            "forceAtAcceptableStroke": 2.20927305,
+            "thermalForce": 0.259591839
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 19.0,
+            "x": 0.0,
+            "y": -2.69,
+            "stiffness": 0.367763484,
+            "shareOfTheUniformPath": 0.496480704,
+            "forceAtAcceptableStroke": 1.10329045,
+            "thermalForce": 0.129637755
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 20.0,
+            "x": 13.3333333,
+            "y": -2.69,
+            "stiffness": 0.999016701,
+            "shareOfTheUniformPath": 1.34867255,
+            "forceAtAcceptableStroke": 2.9970501,
+            "thermalForce": 0.352156448
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 21.0,
+            "x": -13.3333333,
+            "y": 0.0,
+            "stiffness": 1.01534126,
+            "shareOfTheUniformPath": 1.3707107,
+            "forceAtAcceptableStroke": 3.04602377,
+            "thermalForce": 0.357910904
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 22.0,
+            "x": 0.0,
+            "y": 0.0,
+            "stiffness": 0.512995191,
+            "shareOfTheUniformPath": 0.692543507,
+            "forceAtAcceptableStroke": 1.53898557,
+            "thermalForce": 0.180832376
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 23.0,
+            "x": 13.3333333,
+            "y": 0.0,
+            "stiffness": 0.927233108,
+            "shareOfTheUniformPath": 1.2517647,
+            "forceAtAcceptableStroke": 2.78169932,
+            "thermalForce": 0.326852511
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 24.0,
+            "x": -13.3333333,
+            "y": 2.69,
+            "stiffness": 0.561993888,
+            "shareOfTheUniformPath": 0.758691748,
+            "forceAtAcceptableStroke": 1.68598166,
+            "thermalForce": 0.198104567
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 25.0,
+            "x": 0.0,
+            "y": 2.69,
+            "stiffness": 0.173232726,
+            "shareOfTheUniformPath": 0.233864181,
+            "forceAtAcceptableStroke": 0.519698179,
+            "thermalForce": 0.0610650668
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 26.0,
+            "x": 13.3333333,
+            "y": 2.69,
+            "stiffness": 0.801398087,
+            "shareOfTheUniformPath": 1.08188742,
+            "forceAtAcceptableStroke": 2.40419426,
+            "thermalForce": 0.282495281
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 27.0,
+            "x": -13.3333333,
+            "y": 5.38,
+            "stiffness": 1.32676073,
+            "shareOfTheUniformPath": 1.79112699,
+            "forceAtAcceptableStroke": 3.9802822,
+            "thermalForce": 0.467687224
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 28.0,
+            "x": 0.0,
+            "y": 5.38,
+            "stiffness": 0.170872809,
+            "shareOfTheUniformPath": 0.230678292,
+            "forceAtAcceptableStroke": 0.512618427,
+            "thermalForce": 0.0602331887
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 29.0,
+            "x": 13.3333333,
+            "y": 5.38,
+            "stiffness": 0.809907931,
+            "shareOfTheUniformPath": 1.09337571,
+            "forceAtAcceptableStroke": 2.42972379,
+            "thermalForce": 0.285495027
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 30.0,
+            "x": -13.3333333,
+            "y": 8.07,
+            "stiffness": 0.282350641,
+            "shareOfTheUniformPath": 0.381173365,
+            "forceAtAcceptableStroke": 0.847051922,
+            "thermalForce": 0.0995294659
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 31.0,
+            "x": 0.0,
+            "y": 8.07,
+            "stiffness": 0.504261698,
+            "shareOfTheUniformPath": 0.680753293,
+            "forceAtAcceptableStroke": 1.51278509,
+            "thermalForce": 0.177753794
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 32.0,
+            "x": 13.3333333,
+            "y": 8.07,
+            "stiffness": 0.903900377,
+            "shareOfTheUniformPath": 1.22026551,
+            "forceAtAcceptableStroke": 2.71170113,
+            "thermalForce": 0.318627652
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 33.0,
+            "x": -13.3333333,
+            "y": 10.76,
+            "stiffness": 1.3578331,
+            "shareOfTheUniformPath": 1.83307468,
+            "forceAtAcceptableStroke": 4.07349929,
+            "thermalForce": 0.478640326
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 34.0,
+            "x": 0.0,
+            "y": 10.76,
+            "stiffness": 0.312238671,
+            "shareOfTheUniformPath": 0.421522206,
+            "forceAtAcceptableStroke": 0.936716013,
+            "thermalForce": 0.110065088
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 35.0,
+            "x": 13.3333333,
+            "y": 10.76,
+            "stiffness": 0.767030387,
+            "shareOfTheUniformPath": 1.03549102,
+            "forceAtAcceptableStroke": 2.30109116,
+            "thermalForce": 0.270380562
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 36.0,
+            "x": -13.3333333,
+            "y": 13.45,
+            "stiffness": 0.291112693,
+            "shareOfTheUniformPath": 0.393002135,
+            "forceAtAcceptableStroke": 0.873338078,
+            "thermalForce": 0.102618116
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 37.0,
+            "x": 0.0,
+            "y": 13.45,
+            "stiffness": 0.311088131,
+            "shareOfTheUniformPath": 0.419968977,
+            "forceAtAcceptableStroke": 0.933264394,
+            "thermalForce": 0.109659519
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 38.0,
+            "x": 13.3333333,
+            "y": 13.45,
+            "stiffness": 0.692613084,
+            "shareOfTheUniformPath": 0.935027663,
+            "forceAtAcceptableStroke": 2.07783925,
+            "thermalForce": 0.244148234
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 39.0,
+            "x": -13.3333333,
+            "y": 16.14,
+            "stiffness": 0.915401354,
+            "shareOfTheUniformPath": 1.23579183,
+            "forceAtAcceptableStroke": 2.74620406,
+            "thermalForce": 0.322681782
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 40.0,
+            "x": 0.0,
+            "y": 16.14,
+            "stiffness": 0.424028264,
+            "shareOfTheUniformPath": 0.572438157,
+            "forceAtAcceptableStroke": 1.27208479,
+            "thermalForce": 0.149471262
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 41.0,
+            "x": 13.3333333,
+            "y": 16.14,
+            "stiffness": 1.12094242,
+            "shareOfTheUniformPath": 1.51327227,
+            "forceAtAcceptableStroke": 3.36282726,
+            "thermalForce": 0.395135637
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 42.0,
+            "x": -13.3333333,
+            "y": 18.83,
+            "stiffness": 1.01840583,
+            "shareOfTheUniformPath": 1.37484787,
+            "forceAtAcceptableStroke": 3.0552175,
+            "thermalForce": 0.358991176
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 43.0,
+            "x": 0.0,
+            "y": 18.83,
+            "stiffness": 0.692372443,
+            "shareOfTheUniformPath": 0.934702798,
+            "forceAtAcceptableStroke": 2.07711733,
+            "thermalForce": 0.244063407
+        },
+        {
+            "label": "T-123 ROBUST over the design device's traversed range",
+            "index": 44.0,
+            "x": 13.3333333,
+            "y": 18.83,
+            "stiffness": 0.936716202,
+            "shareOfTheUniformPath": 1.26456687,
+            "forceAtAcceptableStroke": 2.8101486,
+            "thermalForce": 0.330195331
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 0.0,
+            "x": -13.3333333,
+            "y": -18.83,
+            "stiffness": 1.36466397,
+            "shareOfTheUniformPath": 1.84229636,
+            "forceAtAcceptableStroke": 4.09399192,
+            "thermalForce": 0.481048231
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 1.0,
+            "x": 0.0,
+            "y": -18.83,
+            "stiffness": 0.194508069,
+            "shareOfTheUniformPath": 0.262585893,
+            "forceAtAcceptableStroke": 0.583524207,
+            "thermalForce": 0.0685646902
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 2.0,
+            "x": 13.3333333,
+            "y": -18.83,
+            "stiffness": 1.58555678,
+            "shareOfTheUniformPath": 2.14050165,
+            "forceAtAcceptableStroke": 4.75667034,
+            "thermalForce": 0.558913623
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 3.0,
+            "x": -13.3333333,
+            "y": -16.14,
+            "stiffness": 0.407708437,
+            "shareOfTheUniformPath": 0.55040639,
+            "forceAtAcceptableStroke": 1.22312531,
+            "thermalForce": 0.143718473
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 4.0,
+            "x": 0.0,
+            "y": -16.14,
+            "stiffness": 0.443950126,
+            "shareOfTheUniformPath": 0.59933267,
+            "forceAtAcceptableStroke": 1.33185038,
+            "thermalForce": 0.15649378
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 5.0,
+            "x": 13.3333333,
+            "y": -16.14,
+            "stiffness": 0.253448316,
+            "shareOfTheUniformPath": 0.342155227,
+            "forceAtAcceptableStroke": 0.760344949,
+            "thermalForce": 0.0893413081
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 6.0,
+            "x": -13.3333333,
+            "y": -13.45,
+            "stiffness": 0.797701225,
+            "shareOfTheUniformPath": 1.07689665,
+            "forceAtAcceptableStroke": 2.39310368,
+            "thermalForce": 0.281192126
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 7.0,
+            "x": 0.0,
+            "y": -13.45,
+            "stiffness": 0.479489573,
+            "shareOfTheUniformPath": 0.647310924,
+            "forceAtAcceptableStroke": 1.43846872,
+            "thermalForce": 0.169021544
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 8.0,
+            "x": 13.3333333,
+            "y": -13.45,
+            "stiffness": 0.534086039,
+            "shareOfTheUniformPath": 0.721016153,
+            "forceAtAcceptableStroke": 1.60225812,
+            "thermalForce": 0.188266965
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 9.0,
+            "x": -13.3333333,
+            "y": -10.76,
+            "stiffness": 1.04959144,
+            "shareOfTheUniformPath": 1.41694844,
+            "forceAtAcceptableStroke": 3.14877431,
+            "thermalForce": 0.369984197
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 10.0,
+            "x": 0.0,
+            "y": -10.76,
+            "stiffness": 1.21031096,
+            "shareOfTheUniformPath": 1.63391979,
+            "forceAtAcceptableStroke": 3.63093287,
+            "thermalForce": 0.426638321
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 11.0,
+            "x": 13.3333333,
+            "y": -10.76,
+            "stiffness": 1.03033967,
+            "shareOfTheUniformPath": 1.39095855,
+            "forceAtAcceptableStroke": 3.091019,
+            "thermalForce": 0.363197889
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 12.0,
+            "x": -13.3333333,
+            "y": -8.07,
+            "stiffness": 0.851253539,
+            "shareOfTheUniformPath": 1.14919228,
+            "forceAtAcceptableStroke": 2.55376062,
+            "thermalForce": 0.300069481
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 13.0,
+            "x": 0.0,
+            "y": -8.07,
+            "stiffness": 0.946545247,
+            "shareOfTheUniformPath": 1.27783608,
+            "forceAtAcceptableStroke": 2.83963574,
+            "thermalForce": 0.3336601
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 14.0,
+            "x": 13.3333333,
+            "y": -8.07,
+            "stiffness": 0.810139774,
+            "shareOfTheUniformPath": 1.0936887,
+            "forceAtAcceptableStroke": 2.43041932,
+            "thermalForce": 0.285576753
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 15.0,
+            "x": -13.3333333,
+            "y": -5.38,
+            "stiffness": 0.688072964,
+            "shareOfTheUniformPath": 0.928898502,
+            "forceAtAcceptableStroke": 2.06421889,
+            "thermalForce": 0.242547828
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 16.0,
+            "x": 0.0,
+            "y": -5.38,
+            "stiffness": 0.616592034,
+            "shareOfTheUniformPath": 0.832399245,
+            "forceAtAcceptableStroke": 1.8497761,
+            "thermalForce": 0.217350581
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 17.0,
+            "x": 13.3333333,
+            "y": -5.38,
+            "stiffness": 0.638178939,
+            "shareOfTheUniformPath": 0.861541567,
+            "forceAtAcceptableStroke": 1.91453682,
+            "thermalForce": 0.224960031
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 18.0,
+            "x": -13.3333333,
+            "y": -2.69,
+            "stiffness": 0.647110645,
+            "shareOfTheUniformPath": 0.873599371,
+            "forceAtAcceptableStroke": 1.94133194,
+            "thermalForce": 0.228108485
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 19.0,
+            "x": 0.0,
+            "y": -2.69,
+            "stiffness": 0.479585616,
+            "shareOfTheUniformPath": 0.647440581,
+            "forceAtAcceptableStroke": 1.43875685,
+            "thermalForce": 0.169055399
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 20.0,
+            "x": 13.3333333,
+            "y": -2.69,
+            "stiffness": 0.706986763,
+            "shareOfTheUniformPath": 0.954432131,
+            "forceAtAcceptableStroke": 2.12096029,
+            "thermalForce": 0.249215
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 21.0,
+            "x": -13.3333333,
+            "y": 0.0,
+            "stiffness": 0.707060105,
+            "shareOfTheUniformPath": 0.954531142,
+            "forceAtAcceptableStroke": 2.12118032,
+            "thermalForce": 0.249240853
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 22.0,
+            "x": 0.0,
+            "y": 0.0,
+            "stiffness": 0.448879299,
+            "shareOfTheUniformPath": 0.605987054,
+            "forceAtAcceptableStroke": 1.3466379,
+            "thermalForce": 0.158231328
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 23.0,
+            "x": 13.3333333,
+            "y": 0.0,
+            "stiffness": 0.707060105,
+            "shareOfTheUniformPath": 0.954531142,
+            "forceAtAcceptableStroke": 2.12118032,
+            "thermalForce": 0.249240853
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 24.0,
+            "x": -13.3333333,
+            "y": 2.69,
+            "stiffness": 0.70771902,
+            "shareOfTheUniformPath": 0.955420677,
+            "forceAtAcceptableStroke": 2.12315706,
+            "thermalForce": 0.249473123
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 25.0,
+            "x": 0.0,
+            "y": 2.69,
+            "stiffness": 0.480082343,
+            "shareOfTheUniformPath": 0.648111163,
+            "forceAtAcceptableStroke": 1.44024703,
+            "thermalForce": 0.169230497
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 26.0,
+            "x": 13.3333333,
+            "y": 2.69,
+            "stiffness": 0.647110645,
+            "shareOfTheUniformPath": 0.873599371,
+            "forceAtAcceptableStroke": 1.94133193,
+            "thermalForce": 0.228108485
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 27.0,
+            "x": -13.3333333,
+            "y": 5.38,
+            "stiffness": 0.638178939,
+            "shareOfTheUniformPath": 0.861541567,
+            "forceAtAcceptableStroke": 1.91453682,
+            "thermalForce": 0.224960031
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 28.0,
+            "x": 0.0,
+            "y": 5.38,
+            "stiffness": 0.617230664,
+            "shareOfTheUniformPath": 0.833261397,
+            "forceAtAcceptableStroke": 1.85169199,
+            "thermalForce": 0.2175757
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 29.0,
+            "x": 13.3333333,
+            "y": 5.38,
+            "stiffness": 0.688072964,
+            "shareOfTheUniformPath": 0.928898502,
+            "forceAtAcceptableStroke": 2.06421889,
+            "thermalForce": 0.242547828
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 30.0,
+            "x": -13.3333333,
+            "y": 8.07,
+            "stiffness": 0.810139774,
+            "shareOfTheUniformPath": 1.0936887,
+            "forceAtAcceptableStroke": 2.43041932,
+            "thermalForce": 0.285576753
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 31.0,
+            "x": 0.0,
+            "y": 8.07,
+            "stiffness": 0.946545247,
+            "shareOfTheUniformPath": 1.27783608,
+            "forceAtAcceptableStroke": 2.83963574,
+            "thermalForce": 0.3336601
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 32.0,
+            "x": 13.3333333,
+            "y": 8.07,
+            "stiffness": 0.850372772,
+            "shareOfTheUniformPath": 1.14800324,
+            "forceAtAcceptableStroke": 2.55111832,
+            "thermalForce": 0.299759008
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 33.0,
+            "x": -13.3333333,
+            "y": 10.76,
+            "stiffness": 1.03033967,
+            "shareOfTheUniformPath": 1.39095855,
+            "forceAtAcceptableStroke": 3.091019,
+            "thermalForce": 0.363197889
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 34.0,
+            "x": 0.0,
+            "y": 10.76,
+            "stiffness": 1.21031096,
+            "shareOfTheUniformPath": 1.63391979,
+            "forceAtAcceptableStroke": 3.63093287,
+            "thermalForce": 0.426638321
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 35.0,
+            "x": 13.3333333,
+            "y": 10.76,
+            "stiffness": 1.04959144,
+            "shareOfTheUniformPath": 1.41694844,
+            "forceAtAcceptableStroke": 3.14877431,
+            "thermalForce": 0.369984197
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 36.0,
+            "x": -13.3333333,
+            "y": 13.45,
+            "stiffness": 0.534639215,
+            "shareOfTheUniformPath": 0.72176294,
+            "forceAtAcceptableStroke": 1.60391764,
+            "thermalForce": 0.188461961
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 37.0,
+            "x": 0.0,
+            "y": 13.45,
+            "stiffness": 0.479489573,
+            "shareOfTheUniformPath": 0.647310924,
+            "forceAtAcceptableStroke": 1.43846872,
+            "thermalForce": 0.169021544
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 38.0,
+            "x": 13.3333333,
+            "y": 13.45,
+            "stiffness": 0.797701225,
+            "shareOfTheUniformPath": 1.07689665,
+            "forceAtAcceptableStroke": 2.39310368,
+            "thermalForce": 0.281192126
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 39.0,
+            "x": -13.3333333,
+            "y": 16.14,
+            "stiffness": 0.253448316,
+            "shareOfTheUniformPath": 0.342155227,
+            "forceAtAcceptableStroke": 0.760344949,
+            "thermalForce": 0.0893413081
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 40.0,
+            "x": 0.0,
+            "y": 16.14,
+            "stiffness": 0.443490784,
+            "shareOfTheUniformPath": 0.598712558,
+            "forceAtAcceptableStroke": 1.33047235,
+            "thermalForce": 0.15633186
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 41.0,
+            "x": 13.3333333,
+            "y": 16.14,
+            "stiffness": 0.405924466,
+            "shareOfTheUniformPath": 0.547998029,
+            "forceAtAcceptableStroke": 1.2177734,
+            "thermalForce": 0.143089618
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 42.0,
+            "x": -13.3333333,
+            "y": 18.83,
+            "stiffness": 1.58555678,
+            "shareOfTheUniformPath": 2.14050165,
+            "forceAtAcceptableStroke": 4.75667034,
+            "thermalForce": 0.558913623
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 43.0,
+            "x": 0.0,
+            "y": 18.83,
+            "stiffness": 0.193904938,
+            "shareOfTheUniformPath": 0.261771666,
+            "forceAtAcceptableStroke": 0.581714814,
+            "thermalForce": 0.0683520847
+        },
+        {
+            "label": "T-123 MINIMAX over the five headline states",
+            "index": 44.0,
+            "x": 13.3333333,
+            "y": 18.83,
+            "stiffness": 1.36466397,
+            "shareOfTheUniformPath": 1.84229636,
+            "forceAtAcceptableStroke": 4.09399192,
+            "thermalForce": 0.481048231
+        }
+    ],
+    "buildability": [
+        {
+            "label": "ROBUST over the design device's traversed range",
+            "levels": 2.0,
+            "distinctLevels": 2.0,
+            "stiffnessValues": [
+                0.414586237,
+                1.02612593
+            ],
+            "levelRatio": 2.47506029,
+            "insideTheMeasuredFlatWindow": false,
+            "coarsestQuantumOfTheStiffestLevel": 0.191,
+            "worstDishingOverStroke": 0.100169602,
+            "quantisationPenalty": 1.6935884,
+            "flat": false,
+            "verdict": "NOT flat once quantised to 2 levels"
+        },
+        {
+            "label": "ROBUST over the design device's traversed range",
+            "levels": 3.0,
+            "distinctLevels": 3.0,
+            "stiffnessValues": [
+                0.296101628,
+                0.635988631,
+                1.07561308
+            ],
+            "levelRatio": 3.63258078,
+            "insideTheMeasuredFlatWindow": true,
+            "coarsestQuantumOfTheStiffestLevel": 0.191,
+            "worstDishingOverStroke": 0.0740886824,
+            "quantisationPenalty": 0.992265224,
+            "flat": true,
+            "verdict": "flat, but needs 3 distinct levels where C-0060 prices two"
+        },
+        {
+            "label": "ROBUST over the design device's traversed range",
+            "levels": 4.0,
+            "distinctLevels": 4.0,
+            "stiffnessValues": [
+                0.296101628,
+                0.58895158,
+                0.920603485,
+                1.19227527
+            ],
+            "levelRatio": 4.02657452,
+            "insideTheMeasuredFlatWindow": true,
+            "coarsestQuantumOfTheStiffestLevel": 0.191,
+            "worstDishingOverStroke": 0.0681752961,
+            "quantisationPenalty": 0.833252625,
+            "flat": true,
+            "verdict": "flat, but needs 4 distinct levels where C-0060 prices two"
+        },
+        {
+            "label": "ROBUST over the design device's traversed range",
+            "levels": 45.0,
+            "distinctLevels": 45.0,
+            "stiffnessValues": [
+                0.170872809,
+                0.173232726,
+                0.247765856,
+                0.257574147,
+                0.282350641,
+                0.291112693,
+                0.311088131,
+                0.312238671,
+                0.342515494,
+                0.367763484,
+                0.372676613,
+                0.424028264,
+                0.477201665,
+                0.504261698,
+                0.512995191,
+                0.559551462,
+                0.561993888,
+                0.572839322,
+                0.5792627,
+                0.692372443,
+                0.692613084,
+                0.736424349,
+                0.767030387,
+                0.801398087,
+                0.809907931,
+                0.903900377,
+                0.915401354,
+                0.927233108,
+                0.931163913,
+                0.936716202,
+                0.956076782,
+                0.986253377,
+                0.999016701,
+                1.01534126,
+                1.01840583,
+                1.11372946,
+                1.12094242,
+                1.1260889,
+                1.13067458,
+                1.13233639,
+                1.18823267,
+                1.20114595,
+                1.2250085,
+                1.32676073,
+                1.3578331
+            ],
+            "levelRatio": 7.94645505,
+            "insideTheMeasuredFlatWindow": true,
+            "coarsestQuantumOfTheStiffestLevel": 0.191,
+            "worstDishingOverStroke": 0.0371881623,
+            "quantisationPenalty": 0.0,
+            "flat": true,
+            "verdict": "flat, but needs 45 distinct levels where C-0060 prices two"
+        },
+        {
+            "label": "MINIMAX over the five headline states",
+            "levels": 2.0,
+            "distinctLevels": 2.0,
+            "stiffnessValues": [
+                0.574524764,
+                1.19783468
+            ],
+            "levelRatio": 2.08491392,
+            "insideTheMeasuredFlatWindow": false,
+            "coarsestQuantumOfTheStiffestLevel": 0.191,
+            "worstDishingOverStroke": 0.18824007,
+            "quantisationPenalty": 0.509428214,
+            "flat": false,
+            "verdict": "NOT flat once quantised to 2 levels"
+        },
+        {
+            "label": "MINIMAX over the five headline states",
+            "levels": 3.0,
+            "distinctLevels": 3.0,
+            "stiffnessValues": [
+                0.402175674,
+                0.74098863,
+                1.24809256
+            ],
+            "levelRatio": 3.1033517,
+            "insideTheMeasuredFlatWindow": false,
+            "coarsestQuantumOfTheStiffestLevel": 0.191,
+            "worstDishingOverStroke": 0.173059756,
+            "quantisationPenalty": 0.387702837,
+            "flat": false,
+            "verdict": "NOT flat once quantised to 3 levels"
+        },
+        {
+            "label": "MINIMAX over the five headline states",
+            "levels": 4.0,
+            "distinctLevels": 4.0,
+            "stiffnessValues": [
+                0.402175674,
+                0.718149005,
+                1.05919683,
+                1.47511038
+            ],
+            "levelRatio": 3.66782596,
+            "insideTheMeasuredFlatWindow": true,
+            "coarsestQuantumOfTheStiffestLevel": 0.191,
+            "worstDishingOverStroke": 0.144095013,
+            "quantisationPenalty": 0.155445165,
+            "flat": false,
+            "verdict": "NOT flat once quantised to 4 levels"
+        },
+        {
+            "label": "MINIMAX over the five headline states",
+            "levels": 45.0,
+            "distinctLevels": 45.0,
+            "stiffnessValues": [
+                0.193904938,
+                0.194508069,
+                0.253448316,
+                0.253448316,
+                0.405924466,
+                0.407708437,
+                0.443490784,
+                0.443950126,
+                0.448879299,
+                0.479489573,
+                0.479489573,
+                0.479585616,
+                0.480082343,
+                0.534086039,
+                0.534639215,
+                0.616592034,
+                0.617230664,
+                0.638178939,
+                0.638178939,
+                0.647110645,
+                0.647110645,
+                0.688072964,
+                0.688072964,
+                0.706986763,
+                0.707060105,
+                0.707060105,
+                0.70771902,
+                0.797701225,
+                0.797701225,
+                0.810139774,
+                0.810139774,
+                0.850372772,
+                0.851253539,
+                0.946545247,
+                0.946545247,
+                1.03033967,
+                1.03033967,
+                1.04959144,
+                1.04959144,
+                1.21031096,
+                1.21031096,
+                1.36466397,
+                1.36466397,
+                1.58555678,
+                1.58555678
+            ],
+            "levelRatio": 8.17697991,
+            "insideTheMeasuredFlatWindow": true,
+            "coarsestQuantumOfTheStiffestLevel": 0.191,
+            "worstDishingOverStroke": 0.124709521,
+            "quantisationPenalty": 0.0,
+            "flat": false,
+            "verdict": "NOT flat once quantised to 45 levels"
+        }
+    ],
+    "convergence": [
+        {
+            "axis": "the peak-dishing sampling grid, at the ROBUST distribution",
+            "setting": "41 x 41",
+            "worstDishingOverStroke": 0.0371881623,
+            "departureFromFinest": 1.40918378E-4
+        },
+        {
+            "axis": "the peak-dishing sampling grid, at the ROBUST distribution",
+            "setting": "81 x 81",
+            "worstDishingOverStroke": 0.0371881623,
+            "departureFromFinest": 1.40918378E-4
+        },
+        {
+            "axis": "the peak-dishing sampling grid, at the ROBUST distribution",
+            "setting": "161 x 161",
+            "worstDishingOverStroke": 0.0371934035,
+            "departureFromFinest": 0.0
+        },
+        {
+            "axis": "the peak-dishing sampling grid, at the five-state MINIMAX",
+            "setting": "41 x 41",
+            "worstDishingOverStroke": 0.12470917,
+            "departureFromFinest": 1.89241747E-4
+        },
+        {
+            "axis": "the peak-dishing sampling grid, at the five-state MINIMAX",
+            "setting": "81 x 81",
+            "worstDishingOverStroke": 0.124709521,
+            "departureFromFinest": 1.8642404E-4
+        },
+        {
+            "axis": "the peak-dishing sampling grid, at the five-state MINIMAX",
+            "setting": "161 x 161",
+            "worstDishingOverStroke": 0.124732774,
+            "departureFromFinest": 0.0
+        },
+        {
+            "axis": "NESTED beam subdivisions 1 in 2 in 4 (never 1/2/3/4)",
+            "setting": "1 per interval",
+            "worstDishingOverStroke": 0.125214412,
+            "departureFromFinest": 0.00392399339
+        },
+        {
+            "axis": "NESTED beam subdivisions 1 in 2 in 4 (never 1/2/3/4)",
+            "setting": "2 per interval",
+            "worstDishingOverStroke": 0.124709521,
+            "departureFromFinest": 1.24038202E-4
+        },
+        {
+            "axis": "NESTED beam subdivisions 1 in 2 in 4 (never 1/2/3/4)",
+            "setting": "4 per interval",
+            "worstDishingOverStroke": 0.124724992,
+            "departureFromFinest": 0.0
+        },
+        {
+            "axis": "the number of starts, on the five-state minimax",
+            "setting": "1 starts",
+            "worstDishingOverStroke": 0.124793578,
+            "departureFromFinest": 6.7421793E-4
+        },
+        {
+            "axis": "the number of starts, on the five-state minimax",
+            "setting": "6 starts",
+            "worstDishingOverStroke": 0.12488645,
+            "departureFromFinest": 0.00141892649
+        },
+        {
+            "axis": "the number of starts, on the five-state minimax",
+            "setting": "16 starts",
+            "worstDishingOverStroke": 0.124709496,
+            "departureFromFinest": 1.11439669E-9
+        },
+        {
+            "axis": "the number of starts, on the five-state minimax",
+            "setting": "42 starts",
+            "worstDishingOverStroke": 0.124709496,
+            "departureFromFinest": 0.0
+        },
+        {
+            "axis": "the smoothing homotopy, on the five-state minimax at lean starts",
+            "setting": "one level, mu = 0.1",
+            "worstDishingOverStroke": 0.132674448,
+            "departureFromFinest": 0.0
+        },
+        {
+            "axis": "the smoothing homotopy, on the five-state minimax at lean starts",
+            "setting": "two levels",
+            "worstDishingOverStroke": 0.128448045,
+            "departureFromFinest": 0.0
+        },
+        {
+            "axis": "the smoothing homotopy, on the five-state minimax at lean starts",
+            "setting": "six levels (the setting used)",
+            "worstDishingOverStroke": 0.124709604,
+            "departureFromFinest": 0.0
+        },
+        {
+            "axis": "the operating range's discretisation, at the ROBUST distribution",
+            "setting": "the two SOLVED endpoints",
+            "worstDishingOverStroke": 0.0371881623,
+            "departureFromFinest": 0.0
+        },
+        {
+            "axis": "the operating range's discretisation, at the ROBUST distribution",
+            "setting": "the endpoints plus 2 INTERPOLATED gaps",
+            "worstDishingOverStroke": 0.0371881623,
+            "departureFromFinest": 0.0
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0026",
+            "quantity": "free-tile stroke [nm]",
+            "published": 4.90731,
+            "reproduced": 4.90731102,
+            "relativeDeparture": 2.07085419E-7
+        },
+        {
+            "source": "C-0047/C-0058",
+            "quantity": "3 x 15 uniform dishing / stroke at the design point",
+            "published": 0.2182,
+            "reproduced": 0.21821335,
+            "relativeDeparture": 6.11831158E-5
+        },
+        {
+            "source": "C-0058",
+            "quantity": "rim x 5 over 6.70 nm, dishing / stroke at the design point",
+            "published": 0.0753,
+            "reproduced": 0.0753432869,
+            "relativeDeparture": 5.74859406E-4
+        },
+        {
+            "source": "C-0058",
+            "quantity": "rim x 5 at the 2 nm state, dishing / stroke",
+            "published": 0.1867,
+            "reproduced": 0.186670741,
+            "relativeDeparture": 1.5671618E-4
+        },
+        {
+            "source": "C-0058",
+            "quantity": "uniform at the 2 nm state, dishing / stroke",
+            "published": 0.071,
+            "reproduced": 0.0709650644,
+            "relativeDeparture": 4.92051136E-4
+        },
+        {
+            "source": "C-0058",
+            "quantity": "uniform at the 10 mM state, dishing / stroke",
+            "published": 0.2551,
+            "reproduced": 0.255137797,
+            "relativeDeparture": 1.48165787E-4
+        },
+        {
+            "source": "C-0058",
+            "quantity": "the five-state minimax worst case / stroke (a NOT FOUND, to be beaten)",
+            "published": 0.1587,
+            "reproduced": 0.124709521,
+            "relativeDeparture": 0.214180712
+        },
+        {
+            "source": "C-0017",
+            "quantity": "the mandated total coupling stiffness [pN/nm]",
+            "published": 33.3333333,
+            "reproduced": 33.3333333,
+            "relativeDeparture": 1.00000008E-9
+        },
+        {
+            "source": "C-0049",
+            "quantity": "the admissible stiffness ratio at 45 paths and the 3 nm stroke",
+            "published": 4.5,
+            "reproduced": 4.5,
+            "relativeDeparture": 0.0
+        },
+        {
+            "source": "C-0049",
+            "quantity": "the same at S3's DESIRED 10 nm stroke — it tightens as 1/s",
+            "published": 1.35,
+            "reproduced": 1.35,
+            "relativeDeparture": 0.0
+        },
+        {
+            "source": "C-0014",
+            "quantity": "per-path thermal force at 45 equal paths [pN]",
+            "published": 0.261113381,
+            "reproduced": 0.261113381,
+            "relativeDeparture": 0.0
+        },
+        {
+            "source": "C-0060",
+            "quantity": "the stiff level of C-0058's rim x 5 rule [pN/nm]",
+            "published": 0.9208,
+            "reproduced": 0.920810313,
+            "relativeDeparture": 1.12001254E-5
+        },
+        {
+            "source": "C-0060",
+            "quantity": "the soft level of the same [pN/nm]",
+            "published": 0.1842,
+            "reproduced": 0.184162063,
+            "relativeDeparture": 2.05957573E-4
+        },
+        {
+            "source": "T-123 falsifier",
+            "quantity": "free tile, UNIFORM load, peak dishing [nm]",
+            "published": 0.0,
+            "reproduced": 0.0,
+            "relativeDeparture": 0.0
+        },
+        {
+            "source": "T-123 falsifier",
+            "quantity": "free PLATE, UNIFORM load, peak dishing [nm]",
+            "published": 0.0,
+            "reproduced": 0.0,
+            "relativeDeparture": 0.0
+        },
+        {
+            "source": "T-123 gate 5",
+            "quantity": "C-0058's InfluenceSurrogate vs this multi-state one, at the rim design [nm]",
+            "published": 0.369732942,
+            "reproduced": 0.369732942,
+            "relativeDeparture": 0.0
+        },
+        {
+            "source": "T-123 gate 5",
+            "quantity": "assembled vs surrogate peak dishing at the ROBUST distribution [nm]",
+            "published": 0.182492611,
+            "reproduced": 0.182492611,
+            "relativeDeparture": 0.0
+        },
+        {
+            "source": "T-123 diagnostic",
+            "quantity": "the free tile's own dishing under the UNIFORM load state [nm]",
+            "published": 0.0,
+            "reproduced": 0.0,
+            "relativeDeparture": 0.0
+        }
+    ],
+    "findings": [
+        "NO DISTRIBUTION IS FLAT AT ALL FIVE OF C-0022'S SOLVED STATES, AND IT IS NOW A MEASURED TENSION RATHER THAN A NOT-FOUND. A smoothed minimax with analytic gradients and 42 starts — against C-0058's cyclic coordinate descent from three — reaches a worst case of 0.1247 of the free-tile stroke against C-0058's 0.1587, an improvement of 21.4% that leaves it still 1.25x T-5b's 0.10. THE SEARCH IS NOT WHAT IS LIMITING: going from 16 starts to 42 moves the answer by 1.1e-09, and the six-level smoothing homotopy — the thing a coordinate descent does not have — is worth 6.4% on its own, about a third of the improvement over C-0058 with the gradient supplying the rest. Only 1 of the 42 starts land within one part in a million of the best, and that is the expected shape of a NONSMOOTH objective rather than evidence of a stall: many basins, one value. The binding set at the optimum is 10.0 mM, 10 nm, 0.192 V and 2.0 mM, 2 nm, 0.368 V — TWO states active at once, which is what a minimax that has equalised looks like.",
+        "THE ANTAGONIST IS ONE STATE, IT IS ANTAGONISTIC TO ALL FOUR OTHERS, AND THE SUBSET STRUCTURE IS A CLEAN DICHOTOMY THAT RECOVERS THE DEVICES. Of the 31 non-empty subsets of C-0022's five, every one of the 14 that puts the 2 nm state TOGETHER WITH A 10 nm ONE is NOT flat (0.1085 to 0.1252) and every one of the other 17 IS flat (0.0090 to 0.0797) — including the four-state set of everything but the 2 nm state at 0.0797, and including the 2 nm state paired with the 5 nm rest state, which is its OWN device, at 0.0619. So *which states bind* is not a ranking and not a pair: it is one state, incompatible with one group. The mechanism is visible before any optimiser runs. The free-tile dishing field of the 2 nm state has a cosine of -0.943 to -1.000 against every other state — NEGATIVE, and exactly -1.000 against the 10 mM one — while all six pairs among the other four run +0.949 to +0.997. C-0022 says why in one row of its own table: the 2 nm state is the ONLY one of its 21 solved states whose finite tile carries LESS total force than a 1-D pressure over the footprint (-3.91 %), i.e. the only one whose edge effect is a net LOSS. Its rim residual is +1.087, above one in magnitude so the load REVERSES SIGN inside the rim standoff, against -0.594 at the design point. A distribution that flattens an edge ENHANCEMENT deepens an edge DEFICIT: the tension is a SIGN, not a magnitude, and no search can remove it. The worst pair in the matrix is 10.0 mM, 10 nm, 0.192 V with 2.0 mM, 2 nm, 0.368 V at 0.1231, outside the tolerance with the other three states absent.",
+        "BUT THE FIVE STATES ARE NOT AN OPERATING RANGE — THEY ARE FOUR DIFFERENT DEVICES. Three of C-0022's five are the REST states of three different buffers at a 10 nm layer, and the other two are the rest and held states of a FIVE nanometre layer: the 2 nm state is the 5 nm device at S3's 3 nm stroke and no state of the 10 nm device at all. What a device traverses is one buffer, one layer and one bias, from gap L0 down to L0 - s. Over C-0018's placed device — 2 mM, 10 nm, 0.192 V, gaps 10 -> 7 nm, BOTH ends solved by C-0022 at that bias — the minimax reaches 0.0372 of the stroke, INSIDE T-5b's 0.10, against 0.2182 for the uniform coupling and 0.0753 for C-0058's rim rule. Adding 2 interpolated intermediate gaps moves it by 2.4e-15. A ROBUST DISTRIBUTION EXISTS OVER THE RANGE THE DEVICE ACTUALLY OCCUPIES; what does not exist is one flat across three buffers and two layer heights, and no claim upstream ever asked for that.",
+        "THE CHEAP BOUND DID NOT FIRE, AND SAYING SO IS WHAT MAKES THE NEGATIVE HONEST. Dishing is affine in the attachment FORCES, so the least-squares minimum over the whole of R^n bounds every distribution at every state from below, and the states DECOUPLE under that relaxation — so the largest per-state floor is a rigorous lower bound on the minimax. It is 0.0032 of the stroke over the five, far below the 0.10 that would have PROVEN no flat distribution exists. So the five-state answer is a not-found at a large budget and not an impossibility theorem, and the reason the bound is loose is that it lets each state choose its own forces, which is exactly the freedom the question forbids. Maxwell-Betti reciprocity of the influence matrix, measured between two quadratures rather than imposed, holds to 1.2e-15.",
+        "THE BUILDABLE ROBUST DESIGN IS NOT THIS OPTIMUM QUANTISED — IT IS C-0058'S OWN TWO-LEVEL RULE, AND PROJECTION IS NOT OPTIMISATION. The 45-parameter robust optimum spans 7.95x in per-path stiffness and does NOT survive C-0060's two levels: quantised optimally onto two it measures 0.1002 of the stroke — outside T-5b's 0.10, though only by 0.2% — at a level ratio of 2.48, BELOW C-0060's measured flat window of 3.5 to 20. It needs THREE levels (0.0741 of the stroke, ratio 3.63, inside the window) to be flat, where C-0060 prices two, and that is reported as the real failure it is. But a two-level family does not have to be reached by projection: C-0058's OWN published rim x 5 rule over a 6.70 nm collar — two levels, ratio exactly 5, the design C-0060 shows all seven catalogue elements can build — is flat over the whole traversed range at 0.0753, 24.8% BETTER than the projected optimum. SEARCHING INSIDE THE BUILDABLE FAMILY BEATS QUANTISING OUTSIDE IT, and the buildability question therefore does not reopen the range verdict.",
+        "AND NOTHING IN THE ALLOWABLE STACK IS THREATENED BY EITHER. The robust optimum's stiffest path carries 1.358 pN/nm, i.e. 4.073 pN at S3's acceptable 3 nm against C-0006/CH-0029's 10 pN unzip allowable — 2.45x clear — and inside C-0049's admissible ratio of 4.50, which tightens as 1/s to 1.35 at S3's DESIRED 10 nm stroke, where not even the ROBUST design is admissible. On the assembled lattice the worst crossover carries 0.781 pN (12.8x clear of unzip) and the worst duplex shear 1.088 pN against the 48-65 pN band. C-0014's per-path THERMAL force, which is LINEAR in a path's share and not the square root of it, peaks at 0.479 pN against the uniform coupling's 0.261 — a 83 % premium, the price of the non-uniformity and the largest cost item here."
+    ],
+    "validity": [
+        "TRL 1-3. Model-consistent and traceable. NOTHING HERE IS MEASURED, and the flexure motif this coupling belongs to is NOT DEMONSTRATED (C-0028, C-0029).",
+        "EVERY STATION HERE IS C-0026's 3 x 15 GRID, which CH-0074/C-0061 show no placement claim supplies. C-0063 (T-125, the same iteration) RESOLVES CH-0074 the other way — a 34-root placement on C-0055's upward lattice is flat at 0.0706 with EQUAL springs — but it is a DIFFERENT station set, and C-0058's rim rule REVERSES SIGN on it (0.0706 uniform against 0.2214 at x5). So no distribution in this study transfers to it, and the state-robustness question is OPEN on C-0063's placement, where C-0063 itself reports one state only.",
+        "The load profiles are C-0022's and inherit its whole validity range: mean field, point ions, a two-dimensional solve with the corner bracketed rather than solved, an unsourced rim charge worth 1.85x on the collar depth, and a gap filled with free buffer.",
+        "The INTERPOLATED intermediate gaps are linear interpolations of C-0022's solved (depth, width, rim) triples between two solved endpoints. They are a discretisation check on the range, NOT new solves, and no verdict rests on them.",
+        "Where C-0022 did not solve a device's compressed end at its own bias, the range BRACKETS it with the two neighbouring solved biases — a wider requirement, not a narrower one.",
+        "Linear Winkler foundation at C-0001's secant, one multiplier only.",
+        "The coupling is n INDEPENDENT LINEAR springs. C-0030's flexure strain-softens (CH-0042), so a real coupling is not exactly this one.",
+        "The optimiser is a DESCENT reporting the best point it found, never a global optimum. The per-state bound it is quoted against is rigorous; the optimum is not, so a five-state NEGATIVE is a not-found at a large budget.",
+        "One crossover layout — T-10's eight symmetrically centred columns; C-0015's 32 bp phase is not swept.",
+        "T-5b's 10 % is a CONVENTION and every verdict here is quoted with it named.",
+        "Single layer, static, 300 K, aqueous buffer with Mg2+."
+    ],
+    "openQuestions": [
+        "Whether the two-state incompatibility is a THEOREM. The bound used here decouples the states and is therefore loose; the tight relaxation is a semidefinite programme over the common compliance operator T = (M + diag(1/k))^-1, which was not implemented.",
+        "WHETHER C-0063's FLAT PLACEMENT IS FLAT OVER A RANGE. C-0063 reports its 0.0706 at ONE state, the same design point C-0058 was tuned at — and this study's whole finding is that a flatness verdict at one state does not travel. The multi-state surrogate and the minimax here are exactly the instrument, and the 34 upward roots are exactly the station set to run them on.",
+        "Whether the device is required to be flat across BUFFERS at all: if a Gen-1 tile is to run in more than one salt without re-tuning, the five-state answer is the one that governs and it is negative.",
+        "The foundation multiplier, held at C-0001's secant throughout."
+    ]
+}

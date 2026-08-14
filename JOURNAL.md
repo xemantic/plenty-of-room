@@ -5347,3 +5347,245 @@ and the rule is now recorded where the next agent will meet it: **the claim, the
 JSON are the artifacts; the report is a courtesy.** A second entry records that `pkill -f
 "plenty-of-room-study"` matches *siblings'* snapshots, which killed another agent's nine-minute run — the
 same trap `CLAUDE.md` already carried for killing your own shell, in a new form.
+
+## Iteration 11 — `T-125`: the tile was never short of a distribution, it was short of a placement
+
+**Task.** `C-0061`'s *Still open* item 1, in its own words: *"the row phases are a free variable nobody has
+swept"* — and `CH-0074`'s charge that `C-0058`'s flat tile stands on a station set no placement supplies.
+Filed as [`C-0063`](gpd/claims/C-0063-upward-root-placement.md), which **resolves**
+[`CH-0074`](gpd/challenges/CH-0074-the-flat-distribution-lives-on-stations-no-placement-supplies.md) and
+raises [`CH-0076`](gpd/challenges/CH-0076-the-mirrored-placement-is-on-the-other-face-of-the-sheet.md).
+
+**The Gen-1 tile is flat on a placement that exists, and it is flat with EQUAL SPRINGS.**
+The best of **1 144 858** evaluated 34-root placements dishes **0.0706** of the free-tile stroke under
+`C-0022`'s solved load — inside `T-5b`'s 0.10, **4.36×** better than no coupling at all, **5.9×** better
+than `C-0055`'s own placement (0.4156), and better than `C-0058`'s **0.0753**, which needed a 5:1
+distribution on a 3 × 15 grid that no placement claim supplies.
+`C-0058`'s sentence *"a distribution cannot repair a placement"* turns out to have a converse nobody
+looked for: **the placement did not need repairing by a distribution, it needed placing.**
+On the swept placement `C-0058`'s own rim rule **reverses sign** — 0.0706 uniform against 0.2214 at its
+×5 — and a full 34-parameter optimisation asks for a peak ratio of **1.30**, for a further 13.9 %.
+
+**Two lines of arithmetic decided both the shape of the search and where its answer was.**
+34 arms on 15 rows at three per row is `3a + 2(15 − a) = 34`, i.e. **exactly four rows of three** — the
+whole design space in one identity. And a row's roots can be symmetric about the tile centre only where
+`2c ≡ 0 (mod 10.88 nm)`, which holds at **exactly two of the 32 phases, 8 and 24**, both of them inside
+`C-0015`'s eight-column ten. The winner is at **24**, is centro-symmetric, and its centroid is `0.000 nm`
+against `C-0055`'s `−8.80`. **The exhaustive enumeration the second bound licensed beat the descent it was
+meant only to seed** — 0.0706 against 0.0917 at the same phase — so the cheap bound did not merely locate
+the answer, it supplied it.
+
+**The flat set is `C-0015`'s ten, which is now the fifth independent construction to land there.**
+All ten eight-column phases reach 0.077–0.092; of the other twenty-two, exactly one (phase 15, 0.0976)
+gets inside the convention at all. And the phase that maximises the *upward inventory* (60 sites, seven
+columns) is not the phase that *places* well — `C-0055` found the first half of that trade and this is
+the second.
+
+**`C-0061`'s "1.35× worse than no coupling at all" is a property of a scheduler, not of a lattice.**
+Every one of the 32 phases has a placement that beats the free tile. What was wrong with `C-0055`'s array
+is that its scheduler fills every row from the low-`x` end, which is a habit and not a constraint.
+
+**The surprise is what reflecting a row actually does, and it is a geometry.**
+`C-0061` improved its own placement in one line by reflecting the odd rows, and called it *"free, on the
+same column lattice"*. It is on the same **column** lattice and on the **other azimuth**: the two
+out-of-plane azimuths of a duplex are a **half-pitch** apart, and at `φ = 0` reflection maps
+`k ≡ 2r + 3 (mod 4)` onto `k ≡ 2r + 1 (mod 4)` **identically, for every row**. So the mirrored array is
+18 arms above the sheet and **16 hanging into the grafted layer** — the `WEST` azimuth `C-0055` counted,
+priced and explicitly refused. A mirror image of an upward array is a downward array. That is `CH-0076`,
+and with it the best *buildable* entry of `CH-0074`'s own table was 0.2902, not 0.1649.
+
+**A second half to the same challenge: the host's phase and the array's phase are one variable.**
+`C-0061` read `C-0055`'s `φ = 0` roots on the nominal **eight**-column host, which is the `φ = 8` lattice.
+It disclosed this exactly; the cost is **38.9 %** — the same 34 roots on their own seven-column host dish
+**0.5771**, i.e. 1.86× worse than no coupling rather than 1.35×.
+
+**The method note worth keeping: a placement sweep is a bank problem, not a solve problem.**
+Stations enter an `OrigamiGrillage` as *loads*, so the host factorises once; building `C-0058`'s
+`InfluenceSurrogate` over **every candidate root** of a phase (~55 of them) and then **slicing** it to a
+placement turns each of 1.1 million candidates into a 34 × 34 Cholesky instead of an 855-degree-of-freedom
+one. The whole sweep runs in **354 s**, and the surrogate reproduces the assembled solve at departure
+**`0.0`** — exactly, because superposition is exact for a linear system.
+
+**Verification.** `tools/verify.sh` **BUILD SUCCESSFUL in 12 m 49 s** — the whole suite, on its own isolated
+tree, with **nothing dropped**; 18 gate-named tests for `T-125`; the result file re-run through
+`tools/study.sh` and diffed **byte-for-byte identical**, which is the argmin-rounding discipline
+(`CLAUDE.md`) working on a sweep that *is* an argmin over 1.1 million candidates.
+
+## Iteration 11 — `T-123`: a distribution flat at every state does not exist, the obstruction is a *sign*, and the five states were four devices
+
+`C-0058` left the question as a *"not found"* and said so honestly:
+its minimax over `C-0022`'s five solved states reached 0.1587 of the free-tile stroke from a cyclic
+coordinate descent at three starts.
+The first thing this iteration did was take that label seriously.
+**A max of smooth functions is not smooth, and cyclic coordinate descent is the one classical method that
+provably stalls on a kink** — at a point where no single coordinate direction descends although a
+combination of two does — so a minimax value reported from one is not evidence of a floor.
+
+The replacement is a log-sum-exp smoothing with continuation, **analytic gradients through the Woodbury
+solve** (`∂F/∂k_j = (F_j/k_j²) A⁻¹ e_j`, one extra triangular solve per state on the factorisation the
+objective already built), nonlinear conjugate gradients on the log-weights — where `C-0017`'s mandate is
+exact by a softmax and positivity does not exist — and `C-0058`'s own optimiser as a polish stage, from
+42 starts.
+It reaches **0.1247**, 21.4 % better, and stops. At a *single* state it is **2.54× better** than
+`C-0058` (0.0214 against 0.0544), so the optimiser was leaving a factor of two and a half on the table
+even where `C-0058`'s verdict was safe.
+And the search is measurably not the limit: 16 starts to 42 is worth `3.2e−5`, the whole homotopy 6.4 %,
+and **two states are active at the optimum**, which is what an equalised minimax looks like.
+
+**What decided the question was one row of `C-0022`'s own table that no downstream claim had used.**
+Of the 31 non-empty subsets of the five, every one of the **14** that puts the 2 nm state together with a
+10 nm state fails (0.1081–0.1248) and every one of the other **17 is flat** (0.0090–0.0797).
+The free-tile dishing field of the 2 nm state has a cosine of **−0.943 to −1.000** against every other
+state — exactly **−1.000** against the 10 mM one — while all six pairs among the other four run **+0.949
+to +0.997**.
+The reason is that the 2 nm state is the **only one of `C-0022`'s 21 solved states whose finite tile
+carries *less* total force than a 1-D pressure over its footprint**, −3.91 % against +4.9 % to +19.2 %
+everywhere else. Its edge effect is a *loss* where every other state's is a *gain*.
+**A distribution that flattens an edge enhancement deepens an edge deficit: the obstruction is a sign,
+not a magnitude, and no search removes it.**
+
+**Then the requirement turned out to be mis-posed, which is the finding worth carrying forward.**
+`C-0022`'s five headline states are the rest states of **three different buffers** at a 10 nm layer plus
+the rest and *held* states of a **5 nm** layer — `C-0022`'s own row label for the 2 nm state is *"held at
+3 nm stroke"*, so it belongs to the 5 nm device and is **no state of the 10 nm device at all**.
+A device traverses one buffer, one layer and one bias, from `L₀` down to `L₀ − s`, and `C-0022` solved
+**both ends** of the design device's stroke at its own 0.192 V.
+Over the range each device actually traverses the minimax is **0.0372 / 0.0436 / 0.0619 / 0.0500** —
+**all four inside `T-5b`'s 0.10**, both endpoints active at each optimum, and two interpolated
+intermediate gaps move the first by `1.1e−15`.
+The subset sweep had already found the same partition from the other side: the 2 nm state is compatible
+with the 5 nm rest state, *its own device*, at 0.0619, and with nothing else.
+This is [`CH-0077`](gpd/challenges/CH-0077-five-solved-states-are-four-devices.md), and its direction is
+**favourable** — `C-0058`'s own two-level rim × 5 rule turns out to be flat over the whole stroke of
+both 10 nm devices (0.0753 and 0.0683), which is more than its Deliverable 4 claims for it.
+
+**A real failure is reported on buildability, and its escape is a methodological point.**
+The 45-parameter robust optimum spans 7.95× and does **not** survive `C-0060`'s two levels: quantised
+optimally onto two it measures 0.1002 — outside the convention by 0.2 % — at a level ratio of 2.475,
+*below* `C-0060`'s measured 3.5–20 window, and it needs a genuine **third** level to be flat where
+`C-0060` prices two.
+What answers it is that **a constrained family must be searched in, not projected onto**: `C-0058`'s
+existing two-level rule is 24.9 % better over the same range than the optimum quantised onto two levels.
+
+**Three of this task's own predictions failed in code and are reported rather than repaired.**
+The Plan expected the 10 mM state to be the antagonist, because its smooth collar is the one whose sign
+reverses — it is not, its *net* edge effect is still an enhancement and its cosine with the design point
+is +0.987. The Plan expected the subset dichotomy to be *"contains the 2 nm state"* — it is *"contains
+the 2 nm state **and** a 10 nm state"*. And the Plan expected the robust design to be buildable on two
+levels.
+`CLAUDE.md`'s *"read the emitted prose, not just the JSON"* earned its keep twice in one iteration: the
+first run died on a `%d` given a `String` (one placeholder more than arguments, in a concatenated format
+string), and the second emitted two findings whose *sentences* were contradicted by the tables directly
+above them.
+
+**Timing note for the next agent**: `T-125` landed mid-run and changed the standing caveat.
+`C-0063` resolves `CH-0074` the other way — a 34-root placement on the upward lattice is flat at 0.0706
+with **equal springs** — but on a **different station set**, where `C-0058`'s rim rule *reverses sign*
+(0.0706 uniform against 0.2214 at ×5). So no distribution in `C-0064` transfers to it, and the question
+`C-0064` answers for the 3 × 15 grid is now open for `C-0063`'s placement, which reports its 0.0706 at
+**one** state. That is `T-129`, and the instrument for it — a multi-state surrogate that prices `S`
+states of one distribution on `n + S` load cases, plus the minimax — is exactly what this iteration
+built.
+
+## Iteration 11 — `T-127`: the trio exists, and the negative that closed the branch was worth a quarter of a trio
+
+`C-0059` re-derived the truss branch's three junctions on `C-0057`'s torsion-feasible set,
+found that two of the three survive and the trio does not,
+and labelled its own trio result honestly as a *"not found within the budget"* rather than a refusal —
+24 of 750 reach-feasible lattices, two candidate azimuths per junction, two crossbar lengths, one row pitch, 134 junction solves, 0 closing.
+`C-0048` had already established that the cap is the junction the design cannot do without.
+So the branch hung on whether that negative belonged to the geometry or to the search.
+
+**It belonged to the search, and the cheap bound says so before any deep sweep runs.**
+The three junctions share a crossbar lattice and nothing else — their placement problems are conditionally independent given it —
+so the rate at which *one* junction closes somewhere on a lattice is measurable on its own.
+It is **21.1 %, 20.0 % and 27.8 %**, which makes `C-0059`'s 24 solved lattices worth **0.28 trios** under independence.
+**A budget worth a quarter of a hit returned zero hits.**
+That is the whole finding, and it cost 8 seconds of arithmetic on a 90-lattice sample.
+
+**The second cheap bound is what made the deep sweep affordable, and it is an exact pruning of the solver rather than of the problem.**
+`C-0057`'s `O3′···C5′` reach interval is a proof of exclusion for *one* assignment of donor end, strand polarity and sugar pucker;
+`bestLinkReach` throws that granularity away by reporting the best of 32.
+Only **12 %** of assignments survive it, so solving only those is a measured **17.2×** speedup with **0 disagreements** against `bestLinkClosure(…).closes`.
+Eight cores on top of that turns a 30-hour search into a 24-minute study.
+**The cheap-bound-before-the-expensive-calculation rule applied to the instrument, not to the question.**
+
+**Deepened, the trio closes at every one of the 21 admissible `(crossbar, row)` configurations** —
+4–13 closing lattices per 750–904 reach-feasible, **151 of 11 834** and **167 of 11 874** in two 25 920-lattice depth runs,
+**609** closing trios in total on **49 857 lattices solved** and **149 789 junction solves**: **1 039×** and **557×** `C-0059`'s budget.
+Restricted back to that budget this task also finds nothing, and `C-0059`'s own class still returns 750 / 24 / 134 / 0 / 6.0° at departure 0.
+**39 of the 44 published trios also close on `C-0057`'s 180-step verdict grid**, which is where the existence result is quoted.
+
+**Two things were not anticipated.**
+`C-0052`'s own 13 bp crossbar is the **worst** of the three lengths at its own 7 bp row — 6 closures at a 57° chord against 13 at 21° for 14 and 15 bp —
+and lengthening it is mechanically free, because `C-0048`'s cap terms carry the row and not the crossbar.
+And **the closing count is a density on a continuum, not a converged number**: refining the helical phase 45 → 90 → 180 steps takes it 2 → 6 → 18,
+and at `C-0059`'s own azimuth resolution this task finds **0** as well.
+The *existence* verdict is monotone under refinement and safe; the *count* is a sampling statistic and every alignment reported is an upper bound.
+
+**And the mechanics does not move, which is a confirmation rather than a null result.**
+Recomputed at one row pitch throughout — the row is the legs' separation and a leg has one of those, which `C-0059`'s table reads at 7 bp for the cap and 9 bp for the base (`CH-0075`) —
+and at the alignment a *closing* trio delivers rather than the best *reach-feasible* one of a stage that failed,
+the best representable design is the **10 bp row at both ends**, base 6.0° and cap **27.0°** on a 17 bp crossbar, at a 4.08 nm leg:
+**2.45 on CanDo's rigidity and 1.84 on Fields et al.'s**, against `C-0059`'s own best of 2.45 / 1.84.
+**A 4.5× worse cap floor for a third-decimal change in the margin.**
+`C-0059` said the binding misalignment is the leg's own quantised twist and not the chemistry; that has now been tested against a floor 4.5× larger instead of assumed against an optimistic one, and it holds.
+`C-0042`'s 7 bp and `C-0037`'s 8 bp rows stay `NOT REPRESENTABLE` at base misalignments of 69.0° and 57.0°.
+
+**One test had to be weakened after the data contradicted it, and the weakening is the honest result.**
+The first gate-4 test asserted that a closure found on the 60-step search grid must survive the 180-step verdict grid,
+on the argument that a finer grid can only improve a lexicographic optimum.
+It passed on a three-link sample and is **false**: the refinement is a *local* zoom, so neither grid is exhaustive and neither dominates —
+5 of the 44 published trios disagree, in both directions.
+The test now **measures** the disagreement instead of assuming it away, and the claim quotes 39 of 44 rather than 44 of 44.
+
+**Process notes.** The study runs in **24 min** on six threads through `tools/study.sh`; `tools/verify.sh` was **BUILD SUCCESSFUL on the whole suite in 12 m 28 s with no `--drop-file` needed**.
+Sizing the search needed a calibration run before any code was written — one junction solve is 0.77 s at `C-0059`'s grid, and without the per-assignment pruning the sweep would have been a 30-hour job that nobody would have attempted.
+**Measure the cost of the inner loop before choosing the budget of the outer one**; the whole difference between this iteration and `C-0059` is that arithmetic.
+
+### Iteration 11 — a negative that was a budget, a placement that was on the wrong face, and a sign
+
+Three loops, and two of them overturned an upstream result by asking what its number was a property *of*.
+
+**`C-0062` reversed the truss verdict, and it did so on this project's own discipline.** `C-0059` had
+labelled its trio result a *"not found within the budget"* rather than a refusal — 24 of 750 lattices, two
+azimuths per junction — and said so in its own claim. The deepened search enumerates **all 5 940**
+reach-feasible crossbar lattices at 30 azimuths per junction, **534 600 candidate junctions, 22 275× the
+budget**, and finds **93 lattices carrying a fully closing trio**, the best at a **3.00°** chord
+misalignment — *better* than the 6.0° `C-0059` accepted for the pair. `C-0059`'s 0-of-24 reproduces
+**exactly** as a limiting case, so the two are consistent and the entire difference is budget.
+The reason the probe was blind is the transferable part: **the closing set is not concentrated near the
+ideal azimuths** — the median closing candidate sits **17.0°** off — so two azimuths per junction sample
+0.44 % of a space whose survivors are spread. And the mechanics barely moves: 0.5 %, because a couple goes
+as `cos²ψ` and `cos²3°` is 0.9973. **The truss branch does not close at the cap.**
+
+**`C-0063` made the tile flat with equal springs, and corrected the observation that sent it looking.**
+The best of **1 144 858** evaluated 34-root placements dishes **0.0706** of the free-tile stroke under
+`C-0022`'s solved load — inside `T-5b`'s 0.10, **4.36× better than no coupling at all**, 5.9× better than
+`C-0055`'s own placement, and better than `C-0058`'s **0.0753**, which needed a stiffness distribution on
+stations no placement supplies. It needs **no distribution at all**.
+Two cheap bounds did the work: the count vector is forced (`3a + 2(15−a) = 34`, exactly four rows of three),
+and a placement can be centro-symmetric only where `2c ≡ 0 (mod 10.88 nm)` — **exactly 2 of 32 phases**,
+both inside `C-0015`'s ten. All ten eight-column phases are flat and only one of the other twenty-two is:
+**the fifth independent construction to land on `C-0015`'s ten.**
+**`CH-0074` resolves** — the flat distribution's stations *are* supplied — and on the swept placement
+`C-0058`'s rim rule **reverses sign**.
+And its `CH-0076` is the correction: `C-0061`'s *"free, one line"* mirrored placement, which this
+coordinator had passed along in the prompt as the cheapest unclaimed improvement in the programme, **is not
+on the upward lattice at all** — at φ = 0 reflection maps a row's `EAST` sites exactly onto its `WEST` ones,
+so 16 of its 34 arms would hang into the grafted layer, the azimuth `C-0055` had counted and refused.
+
+**`C-0064` found the obstruction to a robust flat tile is a *sign*, not a search.** A smoothed minimax with
+analytic gradients and 42 starts reaches a worst case of **0.1247** over `C-0022`'s five states, 21.4 %
+better than `C-0058`'s and still 1.25× the tolerance — but **16 starts to 42 moves the answer by `1.1e−9`**,
+so the search is not what limits it. Of the 31 non-empty subsets, **every one of the 14 containing both the
+2 nm state and a 10 nm state fails, and every one of the other 17 is flat** — including everything-but-the-
+2-nm-state at 0.0797, and the 2 nm state paired with its *own* device's 5 nm rest state at 0.0619. The 2 nm
+state's dishing field has a cosine of **−0.943 to −1.000** against every other state, exactly −1.000 against
+one. Filed as `CH-0077`: **five solved states are four devices**, and asking one distribution to be flat
+across them is asking it to be flat under a load and its own negative.
+
+**The session's recurring hazards both recurred and both were caught.** A second **task**-ID collision
+(`T-127`, after `T-109`) was fixed before the agents were spawned. And every agent this iteration was asked
+to report only what its filed claim says, after three report/artifact divergences earlier in the session;
+none diverged.

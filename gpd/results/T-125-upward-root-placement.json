@@ -1,0 +1,1349 @@
+{
+    "task": "T-125 — sweep the row phases of C-0055's upward arm array",
+    "leaf": "A8.2",
+    "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at 2.69 nm; C-0039's 8.164 nm arm at C-0055's self-consistent 34 roots; C-0017's 33.3333 pN/nm mandate; C-0022's solved profile at 2 mM, a 10 nm gap and 0.192 V; C-0001's foundation secant",
+    "decision": "the best 34-root placement dishes 0.0706 of the stroke; T-5b's convention is 0.10 and the free tile is 0.3079",
+    "bounds": [
+        {
+            "name": "rows that must carry three arms, from 3a + 2(15 - a) = 34",
+            "value": 4.0,
+            "unit": "rows",
+            "settles": "the shape of the whole design space in one line: exactly four rows of three and eleven of two, so a placement is a choice of WHICH four and of where each row sits in its own 10.88 nm pitch"
+        },
+        {
+            "name": "phases admitting a centro-symmetric placement, of 32",
+            "value": 2.0,
+            "unit": "phases",
+            "settles": "the congruence 2c = 0 (mod p) holds at phases 8, 24 — and at C-0055's own phase 0 it does not, so no placement there is centro-symmetric at all"
+        },
+        {
+            "name": "C-0061's mirrored roots that are NOT upward sites",
+            "value": 16.0,
+            "unit": "roots",
+            "settles": "of 16 reflected odd-row roots; 16 of them land on the WEST (downward) azimuth, which points INTO the grafted layer and is the half of the out-of-plane inventory C-0055 counted and refused"
+        },
+        {
+            "name": "the uniform per-path force at 34 roots and the acceptable stroke",
+            "value": 2.94117647,
+            "unit": "pN",
+            "settles": "against the 10 pN unzip allowable, i.e. an admissible non-uniformity ratio of 3.400 — the force is not what binds at this count"
+        },
+        {
+            "name": "the arm against its own root pitch",
+            "value": 0.750403569,
+            "unit": "-",
+            "settles": "C-0055's 8.164 nm against 10.88 nm: three arms per row and no fourth, which is why the count vector has the shape the first bound gives it"
+        }
+    ],
+    "phases": [
+        {
+            "phaseBasePairs": 0,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.310281561,
+            "greedyDishingOverStroke": 0.577085758,
+            "bestDishingOverStroke": 0.156507458,
+            "bestCentroidX": 0.32,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 31620,
+            "key": "0:-13600000,8160000,19040000;1:-19040000,-8160000,2720000;2:-2720000,8160000,19040000;3:-19040000,13600000;4:-13600000,-2720000;5:-8160000,2720000,13600000;6:-13600000,-2720000,19040000;7:-19040000,-8160000;8:8160000,19040000;9:-8160000,2720000,13600000;10:-13600000;11:2720000;12:-13600000,19040000;13:13600000;14:-13600000,-2720000,8160000"
+        },
+        {
+            "phaseBasePairs": 1,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.310313088,
+            "greedyDishingOverStroke": 0.603598242,
+            "bestDishingOverStroke": 0.141783139,
+            "bestCentroidX": 2.42,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 31386,
+            "key": "0:-13260000,8500000,19380000;1:-18700000,3060000,13940000;2:-2380000;3:-18700000,3060000,13940000;4:-2380000,19380000;5:3060000,13940000;6:-13260000,19380000;7:-7820000,3060000,13940000;8:-13260000,8500000;9:-7820000,13940000;10:-13260000,8500000,19380000;11:-7820000,3060000;12:-13260000,19380000;13:-7820000;14:-13260000,8500000,19380000"
+        },
+        {
+            "phaseBasePairs": 2,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.310388482,
+            "greedyDishingOverStroke": 0.630149718,
+            "bestDishingOverStroke": 0.14380466,
+            "bestCentroidX": 2.44,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 33908,
+            "key": "0:-12920000,-2040000,19720000;1:-18360000,3400000,14280000;2:-2040000,19720000;3:-18360000,3400000;4:-2040000,8840000,19720000;5:-7480000,14280000;6:-12920000,8840000;7:-7480000,3400000,14280000;8:-12920000,19720000;9:14280000;10:-12920000,-2040000;11:-7480000,14280000;12:-12920000,8840000,19720000;13:-7480000;14:-12920000,8840000,19720000"
+        },
+        {
+            "phaseBasePairs": 3,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.310642581,
+            "greedyDishingOverStroke": 0.656772861,
+            "bestDishingOverStroke": 0.125095135,
+            "bestCentroidX": -3.3,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 19504,
+            "key": "0:-12580000,9180000;1:-18020000,-7140000,14620000;2:-12580000,9180000;3:-18020000,14620000;4:9180000;5:-18020000,-7140000,14620000;6:-12580000;7:-18020000,-7140000,14620000;8:-12580000;9:-18020000,-7140000,14620000;10:-12580000,-1700000;11:-18020000,-7140000,14620000;12:-12580000,9180000;13:-18020000,-7140000,14620000;14:-12580000,-1700000,9180000"
+        },
+        {
+            "phaseBasePairs": 4,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.311024732,
+            "greedyDishingOverStroke": 0.683225303,
+            "bestDishingOverStroke": 0.131627527,
+            "bestCentroidX": -2.16,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 20654,
+            "key": "0:-12240000,9520000;1:-17680000,-6800000,14960000;2:9520000;3:-17680000,14960000;4:-12240000,9520000;5:-17680000,4080000;6:-12240000,9520000;7:-17680000,4080000,14960000;8:-12240000,-1360000;9:-17680000,-6800000,14960000;10:-12240000;11:-17680000,-6800000,14960000;12:-12240000,9520000;13:-17680000,4080000,14960000;14:-12240000,-1360000,9520000"
+        },
+        {
+            "phaseBasePairs": 5,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.312235717,
+            "greedyDishingOverStroke": 0.709411028,
+            "bestDishingOverStroke": 0.130488762,
+            "bestCentroidX": -1.34,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 20336,
+            "key": "0:-11900000,9860000;1:-17340000,-6460000,15300000;2:9860000;3:-17340000,15300000;4:-1020000;5:-17340000,-6460000,15300000;6:-11900000,-1020000;7:-17340000,-6460000,15300000;8:-1020000,9860000;9:-17340000,15300000;10:-11900000,9860000;11:-17340000,15300000;12:-11900000,-1020000,9860000;13:-17340000,-6460000,15300000;14:-11900000,-1020000,9860000"
+        },
+        {
+            "phaseBasePairs": 6,
+            "hostColumns": 8,
+            "interfaceCrossovers": 56,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.309806547,
+            "greedyDishingOverStroke": 0.488535424,
+            "bestDishingOverStroke": 0.0788823829,
+            "bestCentroidX": -2.12,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 15919,
+            "key": "0:-11560000,-680000,10200000;1:-17000000,4760000,15640000;2:-11560000,10200000;3:-17000000,15640000;4:-11560000;5:-17000000,-6120000,15640000;6:-11560000,-680000;7:-6120000,15640000;8:-11560000,10200000;9:-17000000,-6120000,15640000;10:-11560000;11:-17000000,-6120000,15640000;12:-11560000;13:-17000000,-6120000,15640000;14:-11560000,-680000,10200000"
+        },
+        {
+            "phaseBasePairs": 7,
+            "hostColumns": 8,
+            "interfaceCrossovers": 56,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.308858549,
+            "greedyDishingOverStroke": 0.501562636,
+            "bestDishingOverStroke": 0.0874562062,
+            "bestCentroidX": -0.82,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 14489,
+            "key": "0:-11220000,-340000,10540000;1:-16660000,-5780000,15980000;2:10540000;3:-16660000,15980000;4:-340000,10540000;5:-16660000,15980000;6:-11220000,10540000;7:-16660000,-5780000;8:-11220000,-340000,10540000;9:-16660000,5100000,15980000;10:-11220000,10540000;11:-16660000,15980000;12:-11220000;13:-16660000,-5780000,15980000;14:-11220000,-340000,10540000"
+        },
+        {
+            "phaseBasePairs": 8,
+            "hostColumns": 8,
+            "interfaceCrossovers": 56,
+            "centroSymmetricCapable": true,
+            "freeDishingOverStroke": 0.307902368,
+            "greedyDishingOverStroke": 0.514468362,
+            "bestDishingOverStroke": 0.0852481983,
+            "bestCentroidX": 0.48,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 19309,
+            "key": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:10880000;3:-16320000,5440000,16320000;4:10880000;5:-16320000,-5440000,16320000;6:-10880000;7:-16320000,5440000,16320000;8:-10880000,0,10880000;9:-16320000,16320000;10:0;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000"
+        },
+        {
+            "phaseBasePairs": 9,
+            "hostColumns": 8,
+            "interfaceCrossovers": 56,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.308858549,
+            "greedyDishingOverStroke": 0.5272932,
+            "bestDishingOverStroke": 0.0801278228,
+            "bestCentroidX": 1.3,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 24657,
+            "key": "0:-10540000,340000,11220000;1:-15980000,5780000,16660000;2:11220000;3:-15980000,5780000,16660000;4:11220000;5:-15980000,-5100000,16660000;6:340000;7:-15980000,5780000,16660000;8:340000,11220000;9:-15980000,5780000,16660000;10:-10540000;11:-15980000,16660000;12:-10540000,11220000;13:-15980000,-5100000,16660000;14:-10540000,340000,11220000"
+        },
+        {
+            "phaseBasePairs": 10,
+            "hostColumns": 8,
+            "interfaceCrossovers": 56,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.309806547,
+            "greedyDishingOverStroke": 0.539816986,
+            "bestDishingOverStroke": 0.0922390535,
+            "bestCentroidX": 0.52,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 18974,
+            "key": "0:-10200000,680000,11560000;1:-15640000,6120000,17000000;2:-10200000,680000,11560000;3:-15640000,17000000;4:11560000;5:-15640000,6120000,17000000;6:-10200000,11560000;7:-15640000,17000000;8:680000;9:-15640000,6120000,17000000;10:-10200000;11:-15640000,-4760000,17000000;12:-10200000;13:-15640000,-4760000,17000000;14:-10200000,680000,11560000"
+        },
+        {
+            "phaseBasePairs": 11,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.312235717,
+            "greedyDishingOverStroke": 0.558920565,
+            "bestDishingOverStroke": 0.165183553,
+            "bestCentroidX": -0.42,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 18327,
+            "key": "0:-9860000,1020000,11900000;1:-15300000,-4420000,17340000;2:-9860000,1020000,11900000;3:-15300000,17340000;4:1020000;5:-15300000,-4420000,17340000;6:-9860000;7:-15300000,6460000,17340000;8:-9860000,1020000;9:-15300000,-4420000,17340000;10:-9860000;11:-15300000,17340000;12:-9860000;13:-15300000,6460000,17340000;14:-9860000,1020000,11900000"
+        },
+        {
+            "phaseBasePairs": 12,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.311024732,
+            "greedyDishingOverStroke": 0.570649581,
+            "bestDishingOverStroke": 0.169246626,
+            "bestCentroidX": 1.68,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 17557,
+            "key": "0:-9520000,1360000,12240000;1:-14960000,6800000,17680000;2:-9520000,12240000;3:-14960000,6800000,17680000;4:1360000,12240000;5:-14960000,17680000;6:-9520000,1360000,12240000;7:-14960000,-4080000,17680000;8:-9520000,1360000;9:-14960000,-4080000,17680000;10:12240000;11:-14960000,17680000;12:-9520000;13:-14960000,17680000;14:1360000,12240000"
+        },
+        {
+            "phaseBasePairs": 13,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.310642581,
+            "greedyDishingOverStroke": 0.582087624,
+            "bestDishingOverStroke": 0.117216555,
+            "bestCentroidX": 3.3,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 14656,
+            "key": "0:-9180000,1700000,12580000;1:-14620000,7140000,18020000;2:12580000;3:-14620000,7140000,18020000;4:-9180000,1700000,12580000;5:-14620000,7140000,18020000;6:-9180000,12580000;7:7140000,18020000;8:-9180000,12580000;9:-14620000,-3740000,18020000;10:-9180000,12580000;11:18020000;12:-9180000;13:-14620000,7140000,18020000;14:-9180000,12580000"
+        },
+        {
+            "phaseBasePairs": 14,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.310388482,
+            "greedyDishingOverStroke": 0.374529769,
+            "bestDishingOverStroke": 0.144658365,
+            "bestCentroidX": -1.32,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 48744,
+            "key": "0:-19720000,-8840000,2040000;1:-3400000,18360000;2:-19720000,12920000;3:7480000;4:-19720000,-8840000,12920000;5:-14280000,-3400000;6:2040000;7:-14280000,7480000,18360000;8:-8840000,12920000;9:-14280000,7480000;10:-19720000,2040000;11:7480000,18360000;12:-19720000,-8840000,2040000;13:-3400000,7480000,18360000;14:-19720000,-8840000,12920000"
+        },
+        {
+            "phaseBasePairs": 15,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.310313088,
+            "greedyDishingOverStroke": 0.381139734,
+            "bestDishingOverStroke": 0.0976006611,
+            "bestCentroidX": -4.34,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 44986,
+            "key": "0:-19380000,2380000,13260000;1:-13940000,-3060000,7820000;2:-19380000,13260000;3:-13940000;4:-19380000,-8500000,13260000;5:-13940000,-3060000;6:-19380000,-8500000,13260000;7:-3060000;8:-19380000,-8500000,13260000;9:-3060000;10:-19380000,-8500000,13260000;11:-13940000,-3060000;12:-19380000,13260000;13:-3060000,7820000;14:-19380000,-8500000,13260000"
+        },
+        {
+            "phaseBasePairs": 16,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.310281561,
+            "greedyDishingOverStroke": 0.38781783,
+            "bestDishingOverStroke": 0.102790455,
+            "bestCentroidX": -4.32,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 36644,
+            "key": "0:-19040000,-8160000,13600000;1:-13600000,-2720000,8160000;2:-19040000,13600000;3:-13600000,-2720000;4:-19040000,2720000,13600000;5:-13600000;6:-19040000,-8160000,13600000;7:-13600000,-2720000;8:-19040000,13600000;9:-13600000,-2720000;10:-19040000,-8160000,13600000;11:-2720000;12:-19040000,2720000,13600000;13:-2720000;14:-19040000,-8160000,13600000"
+        },
+        {
+            "phaseBasePairs": 17,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.310313088,
+            "greedyDishingOverStroke": 0.403902147,
+            "bestDishingOverStroke": 0.114939915,
+            "bestCentroidX": -4.62,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 36118,
+            "key": "0:-18700000,-7820000,13940000;1:-13260000,-2380000;2:-18700000,-7820000,13940000;3:-13260000,-2380000;4:-18700000,-7820000,13940000;5:-13260000,-2380000;6:-18700000,13940000;7:-13260000;8:-18700000,13940000;9:-13260000,8500000;10:-18700000,-7820000,13940000;11:-13260000,8500000;12:-18700000;13:-13260000,-2380000,8500000;14:-18700000,3060000,13940000"
+        },
+        {
+            "phaseBasePairs": 18,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.310388482,
+            "greedyDishingOverStroke": 0.421017876,
+            "bestDishingOverStroke": 0.103583588,
+            "bestCentroidX": -4.92,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 33916,
+            "key": "0:-18360000,-7480000,14280000;1:-12920000,-2040000;2:-18360000,-7480000,14280000;3:-12920000,-2040000;4:-18360000,-7480000,14280000;5:-12920000;6:-18360000,14280000;7:-12920000,-2040000;8:-18360000,14280000;9:-12920000,-2040000;10:-18360000,-7480000,14280000;11:-12920000;12:-18360000,-7480000,14280000;13:-12920000,-2040000;14:-18360000,3400000,14280000"
+        },
+        {
+            "phaseBasePairs": 19,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.310642581,
+            "greedyDishingOverStroke": 0.438636609,
+            "bestDishingOverStroke": 0.112466396,
+            "bestCentroidX": -4.74,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 17702,
+            "key": "0:-18020000,-7140000,14620000;1:-12580000,-1700000;2:-18020000,-7140000,14620000;3:-12580000,9180000;4:-18020000,-7140000;5:-12580000;6:-18020000,-7140000,14620000;7:-12580000,9180000;8:-18020000,14620000;9:-12580000,9180000;10:-18020000,-7140000;11:-12580000,-1700000;12:-18020000,-7140000,14620000;13:-12580000,-1700000;14:-18020000,3740000,14620000"
+        },
+        {
+            "phaseBasePairs": 20,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.311024732,
+            "greedyDishingOverStroke": 0.456622449,
+            "bestDishingOverStroke": 0.110408611,
+            "bestCentroidX": -4.08,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 15528,
+            "key": "0:-17680000,-6800000,14960000;1:-12240000,-1360000;2:-17680000,-6800000,14960000;3:-12240000,9520000;4:-17680000,-6800000;5:-12240000,9520000;6:-17680000,-6800000,14960000;7:-12240000;8:-17680000,4080000,14960000;9:-12240000,9520000;10:-17680000,-6800000;11:-12240000,-1360000;12:-17680000,14960000;13:-12240000,-1360000;14:-17680000,4080000,14960000"
+        },
+        {
+            "phaseBasePairs": 21,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.312235717,
+            "greedyDishingOverStroke": 0.474904017,
+            "bestDishingOverStroke": 0.109733675,
+            "bestCentroidX": -3.58,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 19409,
+            "key": "0:-17340000,-6460000,15300000;1:-11900000,-1020000;2:-17340000,-6460000,15300000;3:-11900000,9860000;4:-17340000,-6460000;5:-11900000,9860000;6:-17340000,-6460000,15300000;7:-11900000;8:-17340000,4420000,15300000;9:-11900000,9860000;10:-17340000,-6460000;11:-11900000;12:-17340000,4420000,15300000;13:-11900000,-1020000;14:-17340000,4420000,15300000"
+        },
+        {
+            "phaseBasePairs": 22,
+            "hostColumns": 8,
+            "interfaceCrossovers": 56,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.309806547,
+            "greedyDishingOverStroke": 0.403431753,
+            "bestDishingOverStroke": 0.0772532809,
+            "bestCentroidX": -0.04,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 18992,
+            "key": "0:-17000000,-6120000,15640000;1:-11560000,-680000,10200000;2:4760000,15640000;3:-11560000,10200000;4:-17000000,4760000,15640000;5:-11560000;6:-17000000,4760000,15640000;7:10200000;8:-17000000,15640000;9:-11560000,-680000,10200000;10:-17000000,15640000;11:-11560000,-680000;12:-6120000,15640000;13:-11560000,-680000;14:-17000000,4760000,15640000"
+        },
+        {
+            "phaseBasePairs": 23,
+            "hostColumns": 8,
+            "interfaceCrossovers": 56,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.308858549,
+            "greedyDishingOverStroke": 0.410696157,
+            "bestDishingOverStroke": 0.0769101654,
+            "bestCentroidX": 1.1,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 20823,
+            "key": "0:-16660000,-5780000,15980000;1:-11220000,-340000,10540000;2:5100000,15980000;3:-11220000,10540000;4:-16660000,5100000,15980000;5:-11220000,10540000;6:15980000;7:-11220000,10540000;8:-16660000,-5780000,15980000;9:-11220000,10540000;10:15980000;11:-11220000,-340000;12:-16660000,5100000,15980000;13:-340000,10540000;14:-16660000,-5780000,15980000"
+        },
+        {
+            "phaseBasePairs": 24,
+            "hostColumns": 8,
+            "interfaceCrossovers": 56,
+            "centroSymmetricCapable": true,
+            "freeDishingOverStroke": 0.307902368,
+            "greedyDishingOverStroke": 0.42390834,
+            "bestDishingOverStroke": 0.0916842521,
+            "bestCentroidX": 1.28,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 19221,
+            "key": "0:-16320000,-5440000,16320000;1:-10880000,0,10880000;2:-5440000,5440000,16320000;3:-10880000,10880000;4:-16320000,5440000,16320000;5:-10880000;6:-16320000,16320000;7:10880000;8:-16320000,5440000,16320000;9:-10880000,10880000;10:-5440000,5440000,16320000;11:-10880000;12:-16320000,16320000;13:0,10880000;14:-16320000,5440000,16320000"
+        },
+        {
+            "phaseBasePairs": 25,
+            "hostColumns": 8,
+            "interfaceCrossovers": 56,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.308858549,
+            "greedyDishingOverStroke": 0.43836747,
+            "bestDishingOverStroke": 0.0823132749,
+            "bestCentroidX": -1.9,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 21060,
+            "key": "0:-15980000,-5100000,16660000;1:-10540000,340000,11220000;2:-15980000,-5100000,5780000;3:-10540000,11220000;4:-15980000,16660000;5:-10540000;6:-15980000,5780000,16660000;7:-10540000,340000,11220000;8:-15980000,-5100000;9:-10540000;10:-15980000,16660000;11:-10540000,11220000;12:-15980000,16660000;13:-10540000,11220000;14:-15980000,-5100000,5780000"
+        },
+        {
+            "phaseBasePairs": 26,
+            "hostColumns": 8,
+            "interfaceCrossovers": 56,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.309806547,
+            "greedyDishingOverStroke": 0.452913608,
+            "bestDishingOverStroke": 0.088100241,
+            "bestCentroidX": -0.92,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 21379,
+            "key": "0:-15640000,-4760000,17000000;1:-10200000,680000,11560000;2:-15640000,-4760000,17000000;3:-10200000,11560000;4:-15640000;5:-10200000,680000,11560000;6:-15640000,-4760000,17000000;7:-10200000;8:-15640000,-4760000,17000000;9:680000;10:-15640000,17000000;11:11560000;12:-15640000,17000000;13:-10200000,680000,11560000;14:-15640000,-4760000,6120000"
+        },
+        {
+            "phaseBasePairs": 27,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.312235717,
+            "greedyDishingOverStroke": 0.473469816,
+            "bestDishingOverStroke": 0.100658374,
+            "bestCentroidX": 4.06,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 13785,
+            "key": "0:-15300000,-4420000,17340000;1:1020000,11900000;2:6460000,17340000;3:-9860000,11900000;4:-15300000,6460000,17340000;5:11900000;6:-15300000,6460000,17340000;7:11900000;8:-15300000,6460000,17340000;9:-9860000,1020000,11900000;10:17340000;11:-9860000,11900000;12:-15300000,6460000,17340000;13:1020000,11900000;14:-15300000,6460000,17340000"
+        },
+        {
+            "phaseBasePairs": 28,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.311024732,
+            "greedyDishingOverStroke": 0.487948753,
+            "bestDishingOverStroke": 0.10189143,
+            "bestCentroidX": 4.24,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 16612,
+            "key": "0:-14960000,-4080000,17680000;1:1360000,12240000;2:-14960000,6800000,17680000;3:12240000;4:-14960000,6800000,17680000;5:12240000;6:-14960000,6800000,17680000;7:1360000,12240000;8:-14960000,6800000,17680000;9:-9520000,12240000;10:6800000,17680000;11:-9520000,12240000;12:-14960000,17680000;13:1360000,12240000;14:-14960000,6800000,17680000"
+        },
+        {
+            "phaseBasePairs": 29,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.310642581,
+            "greedyDishingOverStroke": 0.502441408,
+            "bestDishingOverStroke": 0.107488319,
+            "bestCentroidX": 3.14,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 17093,
+            "key": "0:-14620000,7140000,18020000;1:-9180000,1700000,12580000;2:-14620000,7140000,18020000;3:1700000;4:-14620000,7140000,18020000;5:1700000;6:-14620000,7140000,18020000;7:1700000,12580000;8:-14620000,7140000,18020000;9:1700000;10:-14620000,18020000;11:1700000;12:-14620000,7140000,18020000;13:-9180000,12580000;14:-14620000,7140000,18020000"
+        },
+        {
+            "phaseBasePairs": 30,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.310388482,
+            "greedyDishingOverStroke": 0.524612786,
+            "bestDishingOverStroke": 0.108424976,
+            "bestCentroidX": 4.92,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 40602,
+            "key": "0:-14280000,-3400000,18360000;1:-8840000,2040000,12920000;2:7480000,18360000;3:-8840000,12920000;4:-14280000,7480000,18360000;5:12920000;6:-14280000,7480000,18360000;7:12920000;8:-14280000,7480000,18360000;9:12920000;10:-14280000,7480000,18360000;11:-8840000,12920000;12:7480000,18360000;13:-8840000,12920000;14:-14280000,7480000,18360000"
+        },
+        {
+            "phaseBasePairs": 31,
+            "hostColumns": 7,
+            "interfaceCrossovers": 49,
+            "centroSymmetricCapable": false,
+            "freeDishingOverStroke": 0.310313088,
+            "greedyDishingOverStroke": 0.550662259,
+            "bestDishingOverStroke": 0.138478365,
+            "bestCentroidX": 4.14,
+            "bestCentroSymmetric": false,
+            "bestBeatsNoCoupling": true,
+            "evaluations": 39364,
+            "key": "0:-13940000,-3060000,18700000;1:-8500000,2380000,13260000;2:7820000,18700000;3:-8500000,13260000;4:-13940000,18700000;5:-8500000,13260000;6:-13940000,18700000;7:-8500000,13260000;8:7820000,18700000;9:-8500000,13260000;10:-13940000,7820000,18700000;11:-8500000,13260000;12:7820000,18700000;13:-8500000,13260000;14:-13940000,-3060000,18700000"
+        }
+    ],
+    "symmetricFamily": [
+        {
+            "phaseBasePairs": 8,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0873905056,
+            "worstDishingOverStroke": 0.937868364,
+            "medianDishingOverStroke": 0.416852847,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-16320000,16320000;6:0,10880000;7:-16320000,16320000;8:-10880000,0;9:-16320000,16320000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "exhaustive": true
+        },
+        {
+            "phaseBasePairs": 24,
+            "enumerated": 198288,
+            "bestDishingOverStroke": 0.0706145537,
+            "worstDishingOverStroke": 0.981249474,
+            "medianDishingOverStroke": 0.430915555,
+            "bestKey": "0:-16320000,-5440000,16320000;1:0,10880000;2:-16320000,5440000,16320000;3:0,10880000;4:-16320000,16320000;5:-10880000,0;6:-16320000,16320000;7:-10880000,10880000;8:-16320000,16320000;9:0,10880000;10:-16320000,16320000;11:-10880000,0;12:-16320000,-5440000,16320000;13:-10880000,0;14:-16320000,5440000,16320000",
+            "exhaustive": true
+        }
+    ],
+    "bestPlacement": [
+        {
+            "phaseBasePairs": 24,
+            "row": 0,
+            "y": -18.83,
+            "sites": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "roots": [
+                -16.32,
+                -5.44,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                true,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 1,
+            "y": -16.14,
+            "sites": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "roots": [
+                0.0,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 2,
+            "y": -13.45,
+            "sites": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "roots": [
+                -16.32,
+                5.44,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 3,
+            "y": -10.76,
+            "sites": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "roots": [
+                0.0,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 4,
+            "y": -8.07,
+            "sites": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 5,
+            "y": -5.38,
+            "sites": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "roots": [
+                -10.88,
+                0.0
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 6,
+            "y": -2.69,
+            "sites": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 7,
+            "y": 0.0,
+            "sites": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "roots": [
+                -10.88,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 8,
+            "y": 2.69,
+            "sites": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 9,
+            "y": 5.38,
+            "sites": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "roots": [
+                0.0,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 10,
+            "y": 8.07,
+            "sites": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 11,
+            "y": 10.76,
+            "sites": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "roots": [
+                -10.88,
+                0.0
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 12,
+            "y": 13.45,
+            "sites": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "roots": [
+                -16.32,
+                -5.44,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                true,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 13,
+            "y": 16.14,
+            "sites": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "roots": [
+                -10.88,
+                0.0
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 14,
+            "y": 18.83,
+            "sites": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "roots": [
+                -16.32,
+                5.44,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false,
+                false
+            ]
+        }
+    ],
+    "flatness": [
+        {
+            "placement": "NONE — free tile, C-0009's nominal eight-column host",
+            "phaseBasePairs": -1,
+            "host": "nominal 8 columns",
+            "stations": 0,
+            "dishingOverStroke": 0.307902368,
+            "flatAtTenPercent": false,
+            "beatsNoCoupling": true,
+            "peakPathForce": 0.0,
+            "peakCrossoverForce": 0.243979305,
+            "peakDuplexShear": 0.17289577
+        },
+        {
+            "placement": "ROOTS — C-0055's own 34, on C-0061's nominal host",
+            "phaseBasePairs": 0,
+            "host": "nominal 8 columns",
+            "stations": 34,
+            "dishingOverStroke": 0.41558924,
+            "flatAtTenPercent": false,
+            "beatsNoCoupling": false,
+            "peakPathForce": 2.70028277,
+            "peakCrossoverForce": 1.2548731,
+            "peakDuplexShear": 1.33421457
+        },
+        {
+            "placement": "ROOTS — C-0055's own 34, on ITS OWN phase-0 host",
+            "phaseBasePairs": 0,
+            "host": "phase 0, seven columns",
+            "stations": 34,
+            "dishingOverStroke": 0.577085758,
+            "flatAtTenPercent": false,
+            "beatsNoCoupling": false,
+            "peakPathForce": 2.68882353,
+            "peakCrossoverForce": 1.38075949,
+            "peakDuplexShear": 1.56245676
+        },
+        {
+            "placement": "NONE — free tile, C-0055's own phase-0 host",
+            "phaseBasePairs": 0,
+            "host": "phase 0, seven columns",
+            "stations": 0,
+            "dishingOverStroke": 0.310281561,
+            "flatAtTenPercent": false,
+            "beatsNoCoupling": true,
+            "peakPathForce": 0.0,
+            "peakCrossoverForce": 0.252803611,
+            "peakDuplexShear": 0.177192187
+        },
+        {
+            "placement": "ROOTS-MIRRORED — C-0061's reflection, which is NOT on the upward lattice",
+            "phaseBasePairs": 0,
+            "host": "nominal 8 columns",
+            "stations": 34,
+            "dishingOverStroke": 0.355812343,
+            "flatAtTenPercent": false,
+            "beatsNoCoupling": false,
+            "peakPathForce": 2.77099976,
+            "peakCrossoverForce": 1.19837461,
+            "peakDuplexShear": 1.36417758
+        },
+        {
+            "placement": "BEST — T-125's swept placement, on its own host",
+            "phaseBasePairs": 24,
+            "host": "phase 24",
+            "stations": 34,
+            "dishingOverStroke": 0.0706145537,
+            "flatAtTenPercent": true,
+            "beatsNoCoupling": true,
+            "peakPathForce": 2.29825425,
+            "peakCrossoverForce": 1.24568444,
+            "peakDuplexShear": 1.40922674
+        },
+        {
+            "placement": "NONE — free tile, on the best placement's own host",
+            "phaseBasePairs": 24,
+            "host": "phase 24",
+            "stations": 0,
+            "dishingOverStroke": 0.307902368,
+            "flatAtTenPercent": false,
+            "beatsNoCoupling": true,
+            "peakPathForce": 0.0,
+            "peakCrossoverForce": 0.243979305,
+            "peakDuplexShear": 0.17289577
+        },
+        {
+            "placement": "GRID — C-0015's 3 x 15, which no placement supplies",
+            "phaseBasePairs": -1,
+            "host": "nominal 8 columns",
+            "stations": 45,
+            "dishingOverStroke": 0.21821335,
+            "flatAtTenPercent": false,
+            "beatsNoCoupling": true,
+            "peakPathForce": 1.94331833,
+            "peakCrossoverForce": 0.150350269,
+            "peakDuplexShear": 0.792514546
+        },
+        {
+            "placement": "COLUMN — C-0041's 1 x 15",
+            "phaseBasePairs": -1,
+            "host": "nominal 8 columns",
+            "stations": 15,
+            "dishingOverStroke": 0.695201577,
+            "flatAtTenPercent": false,
+            "beatsNoCoupling": false,
+            "peakPathForce": 4.00815093,
+            "peakCrossoverForce": 0.209277129,
+            "peakDuplexShear": 1.83397642
+        }
+    ],
+    "distributions": [
+        {
+            "placement": "BEST — T-125's swept placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 1.0,
+            "dishingOverStroke": 0.0706145537,
+            "flatAtTenPercent": true,
+            "peakPathForce": 2.94117647,
+            "peakSolvedPathForce": 2.29825425,
+            "peakThermalForce": 0.345591239,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "BEST — T-125's swept placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 2.0,
+            "dishingOverStroke": 0.141018864,
+            "flatAtTenPercent": false,
+            "peakPathForce": 3.57142857,
+            "peakSolvedPathForce": 2.56368358,
+            "peakThermalForce": 0.419646505,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "BEST — T-125's swept placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 3.0,
+            "dishingOverStroke": 0.180181828,
+            "flatAtTenPercent": false,
+            "peakPathForce": 3.84615385,
+            "peakSolvedPathForce": 2.78774967,
+            "peakThermalForce": 0.451927005,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "BEST — T-125's swept placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 5.0,
+            "dishingOverStroke": 0.221379348,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.09836066,
+            "peakSolvedPathForce": 3.01637672,
+            "peakThermalForce": 0.481561563,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "BEST — T-125's swept placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 8.0,
+            "dishingOverStroke": 0.254518505,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.25531915,
+            "peakSolvedPathForce": 3.17272922,
+            "peakThermalForce": 0.500004346,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "BEST — T-125's swept placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 12.0,
+            "dishingOverStroke": 0.275054997,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.34782609,
+            "peakSolvedPathForce": 3.27092358,
+            "peakThermalForce": 0.510874006,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "BEST — T-125's swept placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 20.0,
+            "dishingOverStroke": 0.29279655,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.42477876,
+            "peakSolvedPathForce": 3.35645926,
+            "peakThermalForce": 0.519916023,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS — C-0055's own greedy placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 1.0,
+            "dishingOverStroke": 0.577085758,
+            "flatAtTenPercent": false,
+            "peakPathForce": 2.94117647,
+            "peakSolvedPathForce": 2.68882353,
+            "peakThermalForce": 0.345591239,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS — C-0055's own greedy placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 2.0,
+            "dishingOverStroke": 0.4830111,
+            "flatAtTenPercent": false,
+            "peakPathForce": 3.63636364,
+            "peakSolvedPathForce": 3.05049661,
+            "peakThermalForce": 0.427276441,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS — C-0055's own greedy placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 3.0,
+            "dishingOverStroke": 0.450823291,
+            "flatAtTenPercent": false,
+            "peakPathForce": 3.94736842,
+            "peakSolvedPathForce": 3.20228597,
+            "peakThermalForce": 0.463819821,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS — C-0055's own greedy placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 5.0,
+            "dishingOverStroke": 0.421109007,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.23728814,
+            "peakSolvedPathForce": 3.34069041,
+            "peakThermalForce": 0.497885683,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS — C-0055's own greedy placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 8.0,
+            "dishingOverStroke": 0.407458927,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.4198895,
+            "peakSolvedPathForce": 3.42711717,
+            "peakThermalForce": 0.51934153,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS — C-0055's own greedy placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 12.0,
+            "dishingOverStroke": 0.432003691,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.52830189,
+            "peakSolvedPathForce": 3.47839264,
+            "peakThermalForce": 0.532080096,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "ROOTS — C-0055's own greedy placement",
+            "stations": 34,
+            "rule": "rim x ratio over a 6.70 nm collar (C-0058's one-parameter family)",
+            "ratio": 20.0,
+            "dishingOverStroke": 0.453704939,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.61893764,
+            "peakSolvedPathForce": 3.52133749,
+            "peakThermalForce": 0.54272989,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        },
+        {
+            "placement": "BEST — T-125's swept placement",
+            "stations": 34,
+            "rule": "C-0058's 34-parameter coordinate descent under C-0049's ceiling",
+            "ratio": 1.2984543,
+            "dishingOverStroke": 0.0607918452,
+            "flatAtTenPercent": true,
+            "peakPathForce": 3.81898324,
+            "peakSolvedPathForce": 2.60844311,
+            "peakThermalForce": 0.448734431,
+            "admissibleRatio": 3.4,
+            "withinPerPathAllowable": true
+        }
+    ],
+    "loadCases": [
+        {
+            "loadCase": "uniform (the load case a free plate cannot dish under)",
+            "freeDishing": 0.0,
+            "bestDishingOverStroke": 0.0718158029,
+            "bestKey": "0:-16320000,-5440000,16320000;1:0,10880000;2:-16320000,-5440000,5440000;3:0,10880000;4:-16320000,16320000;5:0,10880000;6:-16320000,5440000,16320000;7:-10880000,0,10880000;8:-16320000,-5440000;9:-10880000;10:-16320000,-5440000,16320000;11:-10880000,10880000;12:5440000,16320000;13:-10880000,10880000;14:-16320000,-5440000",
+            "note": "the free tile dishes EXACTLY zero here, so the whole of this number is the coupling's own sag; the argmin it selects is NOT the same as the one C-0022's solved load selects, which is why a flatness result is quoted with its load case"
+        },
+        {
+            "loadCase": "C-0022 solved, 2 mM, 10 nm gap, 0.192 V",
+            "freeDishing": 1.51097268,
+            "bestDishingOverStroke": 0.0706145537,
+            "bestKey": "0:-16320000,-5440000,16320000;1:0,10880000;2:-16320000,5440000,16320000;3:0,10880000;4:-16320000,16320000;5:-10880000,0;6:-16320000,16320000;7:-10880000,10880000;8:-16320000,16320000;9:0,10880000;10:-16320000,16320000;11:-10880000,0;12:-16320000,-5440000,16320000;13:-10880000,0;14:-16320000,5440000,16320000",
+            "note": "the load case every number in this claim is quoted at"
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "dishing/stroke of the best placement",
+            "parameter": "nested subdivisions 1 c 2 c 4",
+            "values": [
+                1.0,
+                2.0,
+                4.0
+            ],
+            "results": [
+                0.0697475669,
+                0.0706145537,
+                0.0706150738
+            ],
+            "departure": 7.36609619E-6,
+            "note": "nested, per CLAUDE.md — a subdivision of 3 moves a station off a node and is not a refinement of 2"
+        },
+        {
+            "quantity": "dishing/stroke of the best placement",
+            "parameter": "dishing sample grid",
+            "values": [
+                41.0,
+                81.0,
+                161.0
+            ],
+            "results": [
+                0.0687611666,
+                0.0706145537,
+                0.0725266717
+            ],
+            "departure": 0.0270782432,
+            "note": "81 is the grid every published dishing in this programme is read on"
+        },
+        {
+            "quantity": "dishing/stroke of the best placement",
+            "parameter": "Woodbury surrogate against the assembly",
+            "values": [
+                0.0,
+                1.0
+            ],
+            "results": [
+                0.0706145537,
+                0.0706145537
+            ],
+            "departure": 0.0,
+            "note": "FALSIFIER 1: superposition is exact for a linear system, so any departure above round-off means the whole sweep was run on the wrong object"
+        },
+        {
+            "quantity": "dishing/stroke of the best placement",
+            "parameter": "34 arms ATTACHED (C-0061's exact zero)",
+            "values": [
+                0.0,
+                1.0
+            ],
+            "results": [
+                0.0706145537,
+                0.0706145537
+            ],
+            "departure": 0.0,
+            "note": "the arms add exactly nothing at one tie, so the sweep may be run on the host with the coupling at the roots — asserted here rather than assumed"
+        },
+        {
+            "quantity": "the descent's own argmin",
+            "parameter": "repeat runs",
+            "values": [
+                1.0,
+                2.0
+            ],
+            "results": [
+                0.126036838,
+                0.126036838
+            ],
+            "departure": 0.0,
+            "note": "identical placement key — the argmin is rounded at the decision point and tie-broken on a canonical key, per CLAUDE.md"
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0055",
+            "quantity": "arm length at 34 paths [nm]",
+            "published": 8.164,
+            "reproduced": 8.16439083,
+            "departure": 4.78723665E-5,
+            "strict": false
+        },
+        {
+            "source": "C-0055",
+            "quantity": "upward root pitch [nm]",
+            "published": 10.88,
+            "reproduced": 10.88,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0055",
+            "quantity": "arms placed",
+            "published": 34.0,
+            "reproduced": 34.0,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0061",
+            "quantity": "coupling centroid of C-0055's placement [nm]",
+            "published": -8.8,
+            "reproduced": -8.8,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0061",
+            "quantity": "dishing/stroke, C-0055's roots, uniform coupling",
+            "published": 0.4156,
+            "reproduced": 0.41558924,
+            "departure": 2.58900676E-5,
+            "strict": false
+        },
+        {
+            "source": "C-0022",
+            "quantity": "dishing/stroke, free uncoupled tile",
+            "published": 0.3079,
+            "reproduced": 0.307902368,
+            "departure": 7.68996445E-6,
+            "strict": false
+        },
+        {
+            "source": "C-0058",
+            "quantity": "dishing/stroke, 3 x 15, uniform",
+            "published": 0.2182,
+            "reproduced": 0.21821335,
+            "departure": 6.11830792E-5,
+            "strict": false
+        },
+        {
+            "source": "C-0058",
+            "quantity": "dishing/stroke, 3 x 15, rim x 5",
+            "published": 0.0753,
+            "reproduced": 0.0753432869,
+            "departure": 5.74859419E-4,
+            "strict": false
+        },
+        {
+            "source": "C-0058",
+            "quantity": "the admissible per-path ratio at 45 paths",
+            "published": 4.5,
+            "reproduced": 4.5,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0047",
+            "quantity": "dishing/stroke, 1 x 15",
+            "published": 0.695,
+            "reproduced": 0.695201577,
+            "departure": 2.90038499E-4,
+            "strict": false
+        },
+        {
+            "source": "C-0015",
+            "quantity": "interface crossovers at an eight-column phase",
+            "published": 56.0,
+            "reproduced": 56.0,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0015",
+            "quantity": "interface crossovers at a seven-column phase",
+            "published": 49.0,
+            "reproduced": 49.0,
+            "departure": 0.0,
+            "strict": true
+        }
+    ],
+    "predicates": [
+        {
+            "name": "T-125 acceptance",
+            "statement": "the flatness of the best 34-root placement under C-0022's solved load, against T-5b's 10 % convention",
+            "verdict": "0.0706 of the stroke, INSIDE T-5b's 0.10"
+        },
+        {
+            "name": "the bar C-0047 sets",
+            "statement": "a coupling must beat no coupling at all",
+            "verdict": "0.0706 against the free tile's 0.3079 — CLEARED"
+        },
+        {
+            "name": "CH-0074",
+            "statement": "C-0058's flat distribution lives on stations no placement supplies",
+            "verdict": "RESOLVED — a placement the upward lattice supplies reaches 0.0608 under a distribution, inside T-5b's 0.10"
+        },
+        {
+            "name": "the per-path force",
+            "statement": "the peak per-path force against the 10 pN unzip allowable",
+            "verdict": "2.941 pN uniform at 34 roots, 3.819 pN at the optimised distribution, against 10 pN — admissible ratio 3.400"
+        },
+        {
+            "name": "C-0014's thermal force",
+            "statement": "over-stiffening is not free",
+            "verdict": "0.346 pN per path uniform, 0.449 pN at the optimised distribution"
+        }
+    ],
+    "findings": [
+        "The best 34-root placement the upward lattice can supply dishes 0.0706 of the stroke under C-0022's solved load, against the free tile's 0.3079 on the same host, C-0055's own placement at 0.4156 and C-0058's 3 x 15 at 0.0753. It is INSIDE T-5b's 0.10 and it beats no coupling at all.",
+        "The placement is at phase 24 of 32, is centro-symmetric, and its coupling centroid is 0.000 nm against C-0055's -8.80. Exactly 2 of the 32 phases can supply a centro-symmetric placement at all, and they are 8 and 24 — which is a congruence, 2c = 0 (mod p), and not a search.",
+        "C-0061's mirrored placement is NOT on the upward lattice: 16 of its 16 reflected odd-row roots are not upward sites at all, and 16 of them are WEST sites — the DOWNWARD azimuth, which points into the grafted layer and which C-0055 counted and refused. Its 0.3558 and 0.1649 are quoted on a station set the array cannot supply.",
+        "The distribution question, settled on a placement that exists: C-0058's one-parameter rim family reaches 0.0706 on the best placement, its 34-parameter descent 0.0608, and the least-squares floor over ALL force vectors — a rigorous lower bound on every distribution whatever — is 0.0031. On C-0055's own placement the same floor is 0.0116.",
+        "The host's phase and the array's phase are ONE variable. C-0061 read C-0055's phase-0 roots on the nominal eight-column host, which is the phase-8 lattice; on its own seven-column host the same 34 roots dish 0.5771 against 0.4156, a departure of 38.9 %."
+    ],
+    "parameters": {
+        "armLength": 8.16439083,
+        "armCount": 34.0,
+        "rootPitch": 10.88,
+        "edgeX": 40.0,
+        "lengthY": 40.35,
+        "duplexes": 15.0,
+        "mandate": 33.3333333,
+        "freeStroke": 4.90731102,
+        "flatnessTolerance": 0.1,
+        "collarWidth": 6.7,
+        "unzipAllowable": 10.0,
+        "perPathStiffnessCeiling": 3.33333333,
+        "admissibleRatio": 3.4,
+        "bestPhase": 24.0,
+        "bestDishingOverStroke": 0.0706145537,
+        "bestReachableFloor": 0.0031213253,
+        "greedyReachableFloor": 0.0116362728,
+        "optimisedDishingOverStroke": 0.0607918452,
+        "placementEvaluations": 783274.0,
+        "symmetricEnumerated": 361584.0
+    }
+}
