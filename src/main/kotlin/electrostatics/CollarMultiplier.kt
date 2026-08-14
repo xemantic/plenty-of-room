@@ -98,6 +98,28 @@ fun minimumMarginCollarMultiplier(
 }
 
 /**
+ * The central-difference estimate of `d ln μ/dh` in `nm⁻¹` between two solved gaps.
+ *
+ * The denominator is the **separation of the two gaps**, `h₊ − h₋`, which is `2δ` for a
+ * symmetric difference of half-step `δ`. Writing it as `2·step` is correct only when `step` is
+ * the half-step, and one instance of reading `step` off the wrong axis here produced a gradient
+ * exactly half the right one — a factor of two that no dimensional check catches, because the
+ * quantity has the right units either way. This function exists so the separation is named once.
+ */
+fun centralLogGradient(
+    lowerMultiplier: Double,
+    upperMultiplier: Double,
+    lowerGap: Double,
+    upperGap: Double
+): Double {
+    require(upperGap > lowerGap) { "gaps must be ordered and distinct, were: $lowerGap, $upperGap" }
+    require(lowerMultiplier > 0.0 && upperMultiplier > 0.0) {
+        "multipliers must be positive, were: $lowerMultiplier, $upperMultiplier"
+    }
+    return ln(upperMultiplier / lowerMultiplier) / (upperGap - lowerGap)
+}
+
+/**
  * The **cheap estimate** of `d ln μ/dh` in `nm⁻¹`, from the transverse eigenvalue alone —
  * run before any 2-D solve, per §5.
  *

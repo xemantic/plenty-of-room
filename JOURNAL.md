@@ -2808,6 +2808,41 @@ it certifies that nothing perturbed the iteration.
 Repairing a solver perturbs the iteration, so any solver improvement is indistinguishable
 from a physics change and has to be re-adjudicated by hand — which is `CH-0043`.
 
+**One file did not fit that pattern, and it was checked rather than folded in.**
+`T-1d` carries the largest movement in the whole re-run — `1.48e−2`, a per-cent-scale change in a
+*stiffness*, which is not a residual, not a zero and not one ulp.
+Checked against what the consuming claims actually quote, it holds:
+**`strokeWindows` is byte-identical**, so `C-0016`'s window edges do not move at all —
+confirmed independently by `T-2` and `T-25` both re-emitting byte-identical files —
+and `C-0011`'s quoted `N(L₀)`, stroke and secant stiffness move by ≤ `4.6e−6`.
+Only **122 of 10 796** fields exceed `1e−3`, and every one is `stiffnessAtSevenTenths` or
+`stiffnessAtNineTenths`: the per-design-point stiffness at *deep* compression, where `k` is a
+**derivative** of a rapidly varying pressure and amplifies the height tolerance by about `10⁴`.
+That is the sensitivity `CLAUDE.md` already records from the other side —
+*"an SCF window edge is not grid-converged where a stiffness is"* —
+with the ordering reversed: here the edge is pinned and the deep-compression stiffness is not.
+
+**And the re-run exposed a real defect that pre-dates the repair.**
+`T-8`'s undefined-case record guarded a reported amplitude on `layerStiffness > 0.0` —
+a sign test on a quantity `C-0003` establishes is **exactly zero** at `L₀`,
+the block's own comment calling it *"a rounding-level positive, physically nothing"*.
+The repair flipped one case and turned a `null` into a piston RMS of 13 637 236 nm.
+But going back to `HEAD` showed **two of its three undefined cases were already wrong** —
+1 172 864.7 nm and 22 522.4 nm, against a 10 nm layer.
+
+What hid it is worth naming, because it is a new shape.
+`roundForResult` applies an **absolute floor** at `1e-9`, so a rounding-level `layerStiffness`
+is emitted as exactly `0.0` — which is honest —
+while the quantity *derived* from it, `√(k_BT/k)`, **escapes the floor because it is large**.
+The committed file therefore asserted, on adjacent lines of one record,
+`"layerStiffness": 0.0` and `"unconstrainedPistonRms": 1172864.7`:
+not merely implausible but **arithmetically impossible**.
+**A zero-floor is not inherited by what is computed from the floored value,
+and a reciprocal derivation amplifies exactly what the floor was hiding.**
+Re-guarded on the physics — an amplitude is reportable only while the linearised fluctuation stays
+inside the layer it is fluctuating against — which is the criterion the surrounding block already
+applies to call the case undefined at all, and which needs no tolerance.
+
 Filed as `C-0031`, with `CH-0043` against `C-0019`'s provenance line and nothing else of `C-0019`'s.
 Three sibling product tests were found and deliberately **not** fixed:
 all three have an `O(1)` fixed factor, so none can underflow,
@@ -3169,3 +3204,243 @@ their athermal `φ** ≈ 1` — plus `C-0018`'s ceiling to 4.5e−9, `CH-0020`'s
 and the window identity to 1.5e−16. Full suite green on `tools/verify.sh` with five siblings' mid-TDD test
 files dropped from the snapshot: `SofteningCouplingStabilityTest.kt`, `GuidedArmAnchorageTest.kt`,
 `CollarCorrectedFieldTest.kt`, `CollarMultiplierTest.kt`, `TriangulatedStandoffTest.kt`.
+
+## Iteration 6 — `T-72` (covering `T-66`): the truss's cost was priced on the wrong axis
+
+**The task, as inherited.** `C-0028` raised `T-66` as a *rigidity* question and `C-0029` re-scoped it into
+`T-72` as a *stability* one: a duplex end has exactly two strand termini, so a base restrains one axis and
+leaves the orthogonal one with `2 k_bond,θ` = 13.53 pN·nm/rad, **a column buckles about its softest axis**,
+and the standoff branch closes at §3's desired 10 nm stroke. Both claims priced the remedy in one sentence:
+*"a triangulated head cannot sway, and sway is the draw-in"* — `C-0028`'s own identity, and `C-0030`'s
+finding that the draw-in is a first-order **supply** `Φδ` rather than a compliance. Two requirements in
+direct opposition on one degree of freedom, and a whole design window riding on it.
+
+**S-208. The opposition is an identity about one coordinate applied to a failure on another.** The draw-in
+lives on `(u_x, φ_y)` — `x` being the flexure's own axis. The buckling that closed the branch lives on
+`(u_y, φ_x)`, because the design lays the base chord so that the *strong* axis is the loaded one. They are
+orthogonal. A frame couple `k_a Σd_i²` is a **rank-one tensor on the leg offsets**, so for a two-leg row of
+separation `w` at azimuth `θ`,
+
+&nbsp;&nbsp;&nbsp;&nbsp;`Σx_i² = (w²/2)cos²θ`, &nbsp; `Σy_i² = (w²/2)sin²θ`, &nbsp; **`Σx_i² + Σy_i² = w²/2`, residual `0.0`.**
+
+**The truss has one budget of frame couple and the azimuth spends it.** At `θ = 90°` the loaded plane
+inherits **exactly zero** — asserted as `k_frame,loaded == 0.0`, not as a small number. That was written
+into the task file as a pre-registered prediction, with the falsifier *"a leg azimuth at which both hold
+nowhere, or one at which the loaded-plane frame term is not zero for a collinear cross row."* Neither fired.
+
+**S-209. Two legs across the flexure axis buy 6.71× for 23 % of a supply that had 3.75× of margin.** At
+`ℓ = 8 nm` on `C-0029`'s realisable hard-chord base and `C-0030`'s coupled beam: the adopted critical load
+goes **1.46 → 9.77 pN**, the governing plane moves from *free* to *loaded* — i.e. **`C-0029`'s
+restrained-axis reading is restored, which is precisely the condition `C-0029` named** — the draw-in supply
+falls from 3.75× to **2.90×** the demand (still compression at the placement point), and the tangent moves
+25.20 → **26.09 pN/nm** against a 40 pN/nm ceiling. **The window is `ℓ = 5–10 nm`, all nine predicates, on
+CanDo's rigidity and on Fields et al.'s measured one**, where the single standoff fails `P6` at every length
+(margin 0.40–0.57) and buckles at a **3.05–7.02 nm** stroke. Laid **along** the axis the same two legs cost
+63 % of the supply, add 31 % to the tangent **and still fail `P6`** — worse on every axis at once, because
+they spend the budget on the plane that was already strong.
+
+**S-210. The cost is the leg COUNT, not the leg SPACING, and this was not obvious.** `L2a6`, `L2a8` and
+`L2a12` — cross rows at 2.04, 2.72 and 4.08 nm — have **bit-identical** span, tangent, `Φ` and
+supply-to-demand ratio, because `Σx_i² = 0` at every separation. The whole draw-in cost of the truss is two
+flexibilities in parallel; the triangulation itself is free in the loaded plane. So the separation is spent
+entirely on the free plane, up to the point (between 6 and 8 bp) where the loaded plane becomes the minimum
+and further spending buys nothing at all.
+
+**S-211. `P9` was not anticipated, and it is what makes 90° *uniquely* optimal rather than merely best.** A
+row with `Σx_i² > 0` reacts part of the head **moment** as an axial **couple**, so its outermost leg carries
+more than its share — and the per-leg check fails at **12 of the 12 azimuths below 90°**, including ones
+with ample *total* margin. `C-0020`'s lesson one level up: equilibrium bounds the sum on a cut, never the
+per-member peak. Only the exact cross row escapes both costs, and it escapes the second one identically.
+
+**S-212. The literature's *"set of double-helical spacers"* is exactly two, and each is held by ONE covalent
+bond per end.** `C-0028` and `C-0029` both lean on Pumm et al.'s inclined plates as the one rigid
+out-of-plane mounting in print. Re-fetched and re-read here: the Methods say *"a set of **two** spacer
+oligonucleotide strands was added … to mount the obstacles on the triangular platform"*, and the SI strand
+table has `spacer1_01/02`, `spacer2_01/02`, `spacer3_01/02` — three obstacles, six strands — plus two
+universal complements of **exactly 39 nt**, i.e. exactly the duplex region, carrying **no flank**. So each
+39 bp spacer's complement terminates at both ends and the spacer strand's own backbone is the single
+continuation into the plate and into the platform: **one covalent link per end — `C-0029`'s `R3` ball
+joint, and Rothemund's own observed failure.** The rigidity the paper reports therefore belongs to the
+**pair**, not to either joint. **That is a frame couple, and it is this iteration's mechanism, already
+built.** The paper says nothing whatever about how the two are arranged — the word *"spacer"* occurs
+exactly twice in the whole article and there is no caDNAno figure of the obstacle — so the azimuth finding
+has no published precedent to agree or disagree with.
+
+**What it cost.** A new `anchoring/TriangulatedStandoff.kt` — a layout algebra, a two-link base carried on
+**both** its axes at once, an assembled 2 × 2 and a two-plane critical load — plus a study emitting
+`gpd/results/T-72-triangulated-standoff.json`. **26 gate-named tests, written first and watched fail**;
+310 in `anchoring`, **1208 in the suite, 0 failures**. Gate 2 is the strongest part: one leg with no offset
+reproduces `C-0030`'s single standoff **entry by entry**, `n` legs with no offsets are `C/n` **exactly**, a
+rigid fully triangulated head sends `C12 → 0` and `C11` to the rotation-fixed sway **exactly 4×** — so
+`C-0028`'s intuition is recovered as the limit it *is* correct in. Gate 3 asserts Maxwell-Betti on the
+**assembled** object between two independently integrated off-diagonals (departure < 1e−12 over 27 cases)
+and the conservation identity at every azimuth. Full suite green on `tools/verify.sh` with a sibling's
+half-written **main** source `actuator/CollarEquilibriumPathStudy.kt` removed by `--drop-file` — a package
+drop was unusable, since everything imports `actuator`.
+
+**Filed as `C-0037`, raising `CH-0050`** against `C-0028` and `C-0029`: the truss's cost was priced on the
+sway coordinate when the failure was on the orthogonal one. **No number in either claim fails to
+reproduce** — `C-0029`'s ceiling and weak-axis critical loads and `C-0030`'s whole `B2` design to ≤ 2.6e−3,
+which is their own published rounding. `C-0036` and `CH-0049` had been taken by concurrent agents between
+the assignment and the writing, so the numbers moved up by one.
+
+**What is left, and it is not small.** The recommended design needs **two** 90° junctions 6–8 bp apart on
+one sheet duplex where `C-0029` searched for one (`T-97`); a cap nobody has designed; and 180 standoffs
+whose plan view is `T-96`. **This claim reopens a branch; it does not argue the branch should be taken** —
+`C-0034`'s `E5a16` clears the same stroke with no 90° junction anywhere, and choosing between them is
+`T-98`.
+
+### `T-60` — the collar on the equilibrium path, and the sign rule nobody had looked for (leaf `A7.4`)
+
+**Done, verified, filed as `C-0033`**, raising `CH-0051` against `C-0027`. It also closes `T-62`.
+
+`C-0027` closed iteration 4 with one open item and named the calculation that would shut it: `C-0018`'s
+1.007–1.032 pull-in margin stands, *its movement unresolved*, because `d ln μ/dh` existed only as a finite
+difference between gaps that `T-3b`'s sweep had visited **at five different biases** — 0.0133–0.0226 nm⁻¹
+over three schemes, a 1.7× spread that left the coupled tangent at the fold running −2.5 to +4.0 pN/nm.
+
+**The answer: `d ln μ/dh = 0.01763–0.02011 nm⁻¹` at the 10 nm fold gaps, positive at every gap of both
+sweeps, converged to 0.11 % in the mesh and 1.6 % across a 6× range of difference step.** Carried onto the
+path it moves every fold to a deeper stroke; at 10 nm / 2 mM the margin rises at all six layer models, and
+at four of the six **pull-in stops being the binding ceiling at all**.
+
+#### Decisions
+
+**D-196. Solve `μ` at FIXED APPLIED BIAS, and take the denominator from the solve's own centre-line.**
+`k_es` is a derivative at fixed applied bias, so the Stern series is inverted per gap and the *bias* is what
+is held. The denominator is the 2-D solve's own centre-line load rather than a separate 1-D solve: the two
+agree to 0.03–0.1 %, and 0.1 % of noise in a ratio differenced over 0.5 nm is 15 % of the gradient. The
+independent 1-D solve is kept as a **gate** instead, and agrees to 2.9e−6 – 1.0e−3.
+
+**D-197. Carry a multiplier, not a re-run — but run THREE variants so the decomposition is measured.**
+`μ ≡ 1` (which must reproduce `C-0018`), `μ ≡ const` (level only) and the solved `μ(h)`. `CH-0035` *argues*
+that the level cancels at a force-pinned point; the constant-`μ` variant **measures** it: the level is worth
+0.26–0.28 % of the margin and the gradient 1.06–1.22 %, so the gradient is 3.8–4.8× the level, and the
+level's residue is exactly the second-order `ℓ(V)` shift `C-0027` modelled as `decayLengthShift`.
+
+**D-198. Interpolate `ln μ` with a cubic Hermite on parabolic node slopes, not a spline.** `ln μ` changes
+sign inside the sampled range and an oscillating interpolant would put structure into the one quantity the
+task exists to measure. Parabolic slopes make the interpolant's node derivative **exactly** the tightest
+central difference, so the number reported and the number used are one object.
+
+**D-199. Clamp outside the solved gap range and COUNT every clamped evaluation.** A fold search necessarily
+probes the whole admissible stroke, so throwing would kill it; extrapolating a collar is not a physical
+statement. 2–142 clamped evaluations per search out of ~40 located biases, and **all 12 located folds are
+interior**. A clamp that is never reported is an extrapolation with extra steps.
+
+#### What was surprising
+
+**S-213. At a force-pinned fold the collar's whole effect is `|F_es| d ln μ/dh`, so its sign is free.** The
+baseline coupled tangent vanishes at the fold by construction, and a multiplier on a pinned force moves only
+the decay rate, `1/ℓ → 1/ℓ − d ln μ/dh`. So carrying the collar adds exactly `|F|·g` — **+2.60 to +4.99 pN/nm
+here, strictly positive** — and the fold moves deeper at every model and every load line, with no re-solve
+needed to know it. `C-0027`'s straddle across three difference schemes is gone; what still straddles zero is
+`C-0019`'s half, at −0.813 to +1.156 pN/nm, and that is a **model** spread over `C-0003`'s six free energies,
+3.3× narrower and not something mesh refinement addresses.
+
+**S-214. A one-signed correction to a force is NOT a one-signed correction to a bias margin.** The margin is
+a ratio of two biases read at two *different* gaps — the fold gap and the operating gap — and `μ(h)` lowers
+each by about `1/√μ` at its own gap. So the margin moves with the sign of `μ(h_fold) − μ(h_operating)`, i.e.
+with the sign of `3 nm − s_fold`. At 10 nm / 2 mM the fold is at 3.4–4.1 nm, deeper than §3's stroke, and the
+margin **rises** 1.4 %; at 7 nm / 10 mM it is at 1.9–2.7 nm, shallower, and the same correction with the same
+positive gradient makes the margin **worse** by 0.9–3.5 %. Nobody had asked which way it would go at the
+states `T-62` names.
+
+**S-215. `C-0027`'s `≥ 1.108–1.134` is not a lower bound, and that is `CH-0051`.** It was computed by
+lowering `V*` at an **unchanged** pull-in bias. The same multiplier lowers the pull-in bias too — 7.1–8.0 %
+against `V*`'s 8.5–9.9 % — so almost the whole 10 % improvement cancels and the solved margin is
+**1.021–1.028**. Correct a ratio in both of its arguments, or it is not corrected at all. `C-0027`'s
+*measurement* of the operating-bias fall is right: 8–9 % through `T-16`'s `dV/dF` against 8.5–9.9 %
+re-solved, two independent routes on the same number.
+
+**S-216. The correction changes the OWNER of the ceiling at four of six models.** The fold moves deep enough
+that the path meets `C-0002`'s `φ = 0.2` crossover first; past it the branch rises monotonically until the
+field can no longer hold the tile, ending **on the field** at strokes of 7.9–8.7 nm. That is `C-0018`'s own
+free-tile mechanism — the layer's osmotic divergence removing the instability — arriving at the *coupled*
+line. So `C-0018`'s "pull-in binds at 11 of 54 coupled states" becomes **6 of 12** at the two states where it
+bound, and a margin propagated as if the ceiling were still pull-in is not comparable with the one that binds.
+
+**S-217. A central difference divided by `2·step` instead of by the SEPARATION of its two samples is exactly
+half, and no dimensional check catches it.** It fired here, in the mesh-convergence block, where `step` was
+the separation rather than the half-step; the quantity has the right units either way. The fix is
+`centralLogGradient`, which names the separation once and is used at all three call sites, with its own gate-1
+test. Cost: one wasted 10-minute run.
+
+**S-218. A gradient converges 6.2× worse than the quantity it differences.** Refining the 2-D mesh 2 → 3 → 4
+moved `μ(6.5 nm)` by 6.4e−4 and `d ln μ/dh` by 5.1e−3, from the same solves. `CLAUDE.md`'s "convergence is a
+property of the quantity" applies to *derived* quantities too, and a derivative is the one most likely to be
+quietly under-resolved. It still converges to 0.11 % — 15× inside the difference-step spread it is asked to
+collapse.
+
+**S-219. The cheap bound was right, and its declared error was the error it had.** The Plan predicted "about
+a factor of two, one-sided in neither direction" for the closed-form estimate from `C-0022`'s transverse
+eigenvalue ceiling. Measured: 1.01× at 5 nm / 2 mM, 1.16× at 7 nm / 2 mM, 1.58× and 2.06× at 10 mM — and it
+is genuinely not one-sided. It is the first cheap bound in this programme whose predicted error matched, and
+it got the **sign** right, which `C-0022`'s own depth half did not.
+
+**What it cost.** A new `electrostatics/CollarMultiplier.kt` (the two mappings, the closed-form estimate, the
+central difference, and a `C¹` clamped interpolant), a four-line `actuator/CollarCorrectedField.kt`, and
+`actuator/CollarEquilibriumPathStudy.kt` emitting
+`gpd/results/T-60-collar-on-the-equilibrium-path.json` — 48 two-dimensional solves and 108 fold searches in
+~10 minutes. **24 gate-named tests, written first and watched fail** (five did, including the Hermite
+derivative's own sign). `C-0022`'s solver and `C-0018`'s fold search are **consumed read-only and re-run**,
+not tabulated: `T-3b`'s published `μ` comes back at its own three `(gap, bias)` points to **2e−7**, and
+`C-0018`'s twelve coupled margins to **every published digit**.
+
+### Iteration 5 — what closed, and what it cost
+
+**Six science loops and two process blockers, run in parallel against one checkout.**
+`P-16` and `P-15` were taken **first**, ahead of every science task, because `SESSION-PROMPT.md` ranks
+process blockers above cheap wins and four agents were about to be pointed at one working tree.
+Both earned the position: `--drop-file` was used by **every** agent in the iteration — one had to drop
+five sibling files in a single run, and another hit a half-written **main** source that `--drop <pkg>`
+could not have removed without taking eighty references with it.
+
+**The iteration's largest single finding is that a reserve the programme had been banking was already spent.**
+`C-0017`'s free stability margin rests on the coupling being strain-**stiffening**, so that its tangent
+exceeds its secant and stability comes free at zero placement cost.
+`C-0030` solved the joint rather than bracketing it, and the realised flexure strain-**softens**.
+`C-0032` re-ran `C-0018`'s fold analysis on that law over 216 states: at 10 nm / 2 mM the bias margin
+collapses to **1.0000–1.0019** — the device is placed *on* its own fold — and the fold's stroke walks back
+through §3's own 3 nm target at two of six layer models.
+Both escapes are priced and both fail.
+So **0.5 mM MgCl₂ stops being the comfortable choice and becomes a requirement of the only coupling that
+survives** — the sixth independent route to the same recommendation, and it is handed back to NDI as a
+specification decision rather than adopted in the loop.
+
+**Three results dissolved a question rather than answering it, which is the loop working.**
+`T-72` was sent to price a trade — a truss removes the buckling but cannot sway, and sway *is* the draw-in —
+and found **the trade does not exist**: the draw-in lives on `(u_x, φ_y)` and the buckling on `(u_y, φ_x)`,
+so a two-leg row laid *across* the flexure adds **exactly zero** to the loaded plane.
+`T-21` found the upper volume-fraction crossover is not a number but a **one-parameter family**, and that
+the cited 0.2–0.3 band is the same textbook expression read on a *monomer* instead of a Kuhn segment.
+`T-75` found that `C-0030` had named the wrong variable: `dδ/ds = ±1` exactly, containing no length, so the
+mounting sign is a product of **two** binaries and "which body carries the standoffs" predicts it no better
+than a coin.
+
+**And one margin finally moved in a direction, having straddled zero for an iteration.**
+`C-0033` solved the collar multiplier at **fixed bias** over sixteen gaps instead of differencing across
+gaps visited at five different biases, and `d ln μ/dh` came back **positive everywhere**, converged to
+0.11 %, against `C-0027`'s inherited 70 %-wide bracket. `C-0018`'s margin rises to 1.021–1.028 at
+10 nm / 2 mM and never goes below one. But the direction is **not universal** — the margin is a ratio of
+two biases read at two different gaps, so it moves with the sign of `3 nm − s_fold`, and at 7 nm / 10 mM the
+same positive gradient makes it 0.9–3.5 % *worse*. Nobody had looked for that.
+
+**What the iteration cost.**
+Three agents took the **same claim number within 91 seconds**, each having re-listed the directory and found
+the slot empty; one then renumbered onto a second collision. It self-resolved, and the lesson is now in
+`CLAUDE.md`: re-listing does not prevent a collision, a gap is cheaper than a collision, and the register
+other agents actually read is `TASKS.md`.
+One agent clobbered a sibling's `TASKS.md` row with a global `sed`, **noticed, repaired it, and reported it
+unprompted** — which is the only reason it was checked.
+One full-suite run reported a single unnamed failure that did not reproduce; it is recorded rather than
+explained away.
+A factor-of-two trap in a central difference — dividing by `2·step` rather than by the *separation* of the
+two samples — cost a ten-minute run and passes every dimensional check.
+
+**The three findings this iteration added to the standing set are all about the difference between a number
+and the confidence attached to it**: a reproducibility certificate that certifies the *path* rather than the
+answer (`CH-0043`); an absolute zero-floor that is not inherited by the quantity derived from it, so a
+committed file asserted `"layerStiffness": 0.0` beside a 1.17 mm amplitude; and a solver that returned roots
+correct to the last ulp while doing three to five times the work it was selected for.
+**A defect that is invisible in the answer is invisible to every check written on the answer.**

@@ -376,6 +376,20 @@ class TriangulatedStandoffTest {
     }
 
     @Test
+    fun `gate 5 literature - Pumm et al's set of spacers is TWO, and its geometry is out of this envelope`() {
+        // "a set of two spacer oligonucleotide strands was added ... to mount the obstacles on
+        // the triangular platform" — read directly and re-verified verbatim from the Methods and
+        // the SI strand table. The recommended layout has exactly that leg count
+        val pummSpacerCount = 2
+        assert(TrussLayout.row(2, d, PI / 2.0, "recommended").legCount == pummSpacerCount)
+        // and each spacer is 39 bp, which is 13.26 nm — PAST C-0017's 10 nm envelope, so the
+        // precedent is for the MECHANISM and not for the geometry
+        val pummSpacerLength = 39 * Gen1Tile.RISE_PER_BASE_PAIR
+        assert(pummSpacerLength.isCloseTo(13.26, 1e-3))
+        assert(pummSpacerLength > 10.0)
+    }
+
+    @Test
     fun `gate 5 upstream - the SAXS interhelical distance and Fields' rigidity are what they are cited as`() {
         assert(d.isCloseTo(2.69, 1e-12))
         assert(FIELDS_BENDING_RIGIDITY.isCloseTo(172.906, 1e-4))

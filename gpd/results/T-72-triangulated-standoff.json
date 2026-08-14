@@ -1386,6 +1386,171 @@
             "verdict": "PASS"
         },
         {
+            "layoutId": "L2a6",
+            "headTieId": "Hr",
+            "standoffLength": 8.0,
+            "standoffBasePairs": 23.5294118,
+            "baseReading": "hard 180 chord",
+            "orientation": "favourable",
+            "legCount": 2,
+            "legAxialStiffness": 44.0,
+            "loadedFrameCouple": 0.0,
+            "freeFrameCouple": 91.5552,
+            "span": 33.4341948,
+            "spanBasePairs": 98.3358669,
+            "bendingFactor": 110.369477,
+            "couplingFactor": 0.258136352,
+            "suppliedDrawInAcceptable": 0.774409055,
+            "demandedDrawInAcceptable": 0.267052431,
+            "supplyToDemandAcceptable": 2.899839,
+            "supplyToDemandDesired": 0.934372667,
+            "secantAcceptable": 33.3333333,
+            "tangentAcceptable": 26.0851422,
+            "tangentToSecant": 0.782554266,
+            "minimumTangent": 24.4043436,
+            "axialForceAcceptable": -1.13244849,
+            "axialForceDesired": 0.404686691,
+            "axialSignAcceptable": "compression",
+            "dutyDesiredElement": 3.49933398,
+            "headRotationDesired": 0.529806557,
+            "loadedCriticalLoad": 9.77154246,
+            "freeCriticalLoad": 11.3977521,
+            "criticalLoad": 9.77154246,
+            "criticalLoadFields": 7.34591556,
+            "governingPlane": "loaded",
+            "bucklingMargin": 2.79240064,
+            "bucklingMarginFields": 2.09923248,
+            "peakLegCompression": 1.74966699,
+            "perLegCriticalLoad": 4.88577123,
+            "perLegMargin": 2.79240064,
+            "bucklingStroke": 18.2712352,
+            "transverseStiffness": 88.0,
+            "supportMargin": 118.8,
+            "strokeClearance": 5.31,
+            "p1Supports": true,
+            "p2Placed": true,
+            "p3Compliant": true,
+            "p4Safe": true,
+            "p5Buildable": true,
+            "p6Stable": true,
+            "p7FlexureStable": true,
+            "p8DrawInSurvives": true,
+            "p9NoLegOverloaded": true,
+            "allPredicatesPass": true,
+            "passesOnFieldsRigidity": true,
+            "verdict": "PASS"
+        },
+        {
+            "layoutId": "L2a6",
+            "headTieId": "H2",
+            "standoffLength": 8.0,
+            "standoffBasePairs": 23.5294118,
+            "baseReading": "hard 180 chord",
+            "orientation": "favourable",
+            "legCount": 2,
+            "legAxialStiffness": 44.0,
+            "loadedFrameCouple": 0.0,
+            "freeFrameCouple": 54.4971429,
+            "span": 33.4341948,
+            "spanBasePairs": 98.3358669,
+            "bendingFactor": 110.369477,
+            "couplingFactor": 0.258136352,
+            "suppliedDrawInAcceptable": 0.774409055,
+            "demandedDrawInAcceptable": 0.267052431,
+            "supplyToDemandAcceptable": 2.899839,
+            "supplyToDemandDesired": 0.934372667,
+            "secantAcceptable": 33.3333333,
+            "tangentAcceptable": 26.0851422,
+            "tangentToSecant": 0.782554266,
+            "minimumTangent": 24.4043436,
+            "axialForceAcceptable": -1.13244849,
+            "axialForceDesired": 0.404686691,
+            "axialSignAcceptable": "compression",
+            "dutyDesiredElement": 3.49933398,
+            "headRotationDesired": 0.529806557,
+            "loadedCriticalLoad": 9.77154246,
+            "freeCriticalLoad": 8.8350805,
+            "criticalLoad": 8.8350805,
+            "criticalLoadFields": 6.64191509,
+            "governingPlane": "free",
+            "bucklingMargin": 2.52478916,
+            "bucklingMarginFields": 1.89805121,
+            "peakLegCompression": 1.74966699,
+            "perLegCriticalLoad": 4.41754025,
+            "perLegMargin": 2.52478916,
+            "bucklingStroke": 17.3024835,
+            "transverseStiffness": 88.0,
+            "supportMargin": 118.8,
+            "strokeClearance": 5.31,
+            "p1Supports": true,
+            "p2Placed": true,
+            "p3Compliant": true,
+            "p4Safe": true,
+            "p5Buildable": true,
+            "p6Stable": true,
+            "p7FlexureStable": true,
+            "p8DrawInSurvives": true,
+            "p9NoLegOverloaded": true,
+            "allPredicatesPass": true,
+            "passesOnFieldsRigidity": true,
+            "verdict": "PASS"
+        },
+        {
+            "layoutId": "L2a6",
+            "headTieId": "H1",
+            "standoffLength": 8.0,
+            "standoffBasePairs": 23.5294118,
+            "baseReading": "hard 180 chord",
+            "orientation": "favourable",
+            "legCount": 2,
+            "legAxialStiffness": 44.0,
+            "loadedFrameCouple": 0.0,
+            "freeFrameCouple": 38.7945763,
+            "span": 33.4341948,
+            "spanBasePairs": 98.3358669,
+            "bendingFactor": 110.369477,
+            "couplingFactor": 0.258136352,
+            "suppliedDrawInAcceptable": 0.774409055,
+            "demandedDrawInAcceptable": 0.267052431,
+            "supplyToDemandAcceptable": 2.899839,
+            "supplyToDemandDesired": 0.934372667,
+            "secantAcceptable": 33.3333333,
+            "tangentAcceptable": 26.0851422,
+            "tangentToSecant": 0.782554266,
+            "minimumTangent": 24.4043436,
+            "axialForceAcceptable": -1.13244849,
+            "axialForceDesired": 0.404686691,
+            "axialSignAcceptable": "compression",
+            "dutyDesiredElement": 3.49933398,
+            "headRotationDesired": 0.529806557,
+            "loadedCriticalLoad": 9.77154246,
+            "freeCriticalLoad": 7.45098837,
+            "criticalLoad": 7.45098837,
+            "criticalLoadFields": 5.60140138,
+            "governingPlane": "free",
+            "bucklingMargin": 2.129259,
+            "bucklingMarginFields": 1.600705,
+            "peakLegCompression": 1.74966699,
+            "perLegCriticalLoad": 3.72549419,
+            "perLegMargin": 2.129259,
+            "bucklingStroke": 15.7693206,
+            "transverseStiffness": 88.0,
+            "supportMargin": 118.8,
+            "strokeClearance": 5.31,
+            "p1Supports": true,
+            "p2Placed": true,
+            "p3Compliant": true,
+            "p4Safe": true,
+            "p5Buildable": true,
+            "p6Stable": true,
+            "p7FlexureStable": true,
+            "p8DrawInSurvives": true,
+            "p9NoLegOverloaded": true,
+            "allPredicatesPass": true,
+            "passesOnFieldsRigidity": true,
+            "verdict": "PASS"
+        },
+        {
             "layoutId": "L2a8",
             "headTieId": "H2",
             "standoffLength": 8.0,
@@ -1459,7 +1624,10 @@
             "governingPlane": "free",
             "dutyDesiredElement": 5.4418281,
             "bucklingMargin": 0.53523011,
-            "allPredicatesPass": false
+            "peakLegCompression": 14.9991094,
+            "perLegCriticalLoad": 1.45631513,
+            "allPredicatesPass": false,
+            "verdict": "FAIL P6 — the truss buckles before the desired stroke"
         },
         {
             "azimuthDegrees": 7.5,
@@ -1478,7 +1646,10 @@
             "governingPlane": "free",
             "dutyDesiredElement": 5.42955166,
             "bucklingMargin": 0.607462432,
-            "allPredicatesPass": false
+            "peakLegCompression": 15.0164445,
+            "perLegCriticalLoad": 1.64912433,
+            "allPredicatesPass": false,
+            "verdict": "FAIL P6 — the truss buckles before the desired stroke"
         },
         {
             "azimuthDegrees": 15.0,
@@ -1497,7 +1668,10 @@
             "governingPlane": "free",
             "dutyDesiredElement": 5.39196206,
             "bucklingMargin": 0.801279685,
-            "allPredicatesPass": false
+            "peakLegCompression": 15.0638191,
+            "perLegCriticalLoad": 2.16023483,
+            "allPredicatesPass": false,
+            "verdict": "FAIL P6 — the truss buckles before the desired stroke"
         },
         {
             "azimuthDegrees": 22.5,
@@ -1516,7 +1690,10 @@
             "governingPlane": "free",
             "dutyDesiredElement": 5.32675642,
             "bucklingMargin": 1.0650286,
-            "allPredicatesPass": false
+            "peakLegCompression": 15.1260455,
+            "perLegCriticalLoad": 2.83657396,
+            "allPredicatesPass": false,
+            "verdict": "FAIL P9 — the head moment overloads one leg"
         },
         {
             "azimuthDegrees": 30.0,
@@ -1535,7 +1712,10 @@
             "governingPlane": "free",
             "dutyDesiredElement": 5.23006189,
             "bucklingMargin": 1.35012224,
-            "allPredicatesPass": false
+            "peakLegCompression": 15.1732429,
+            "perLegCriticalLoad": 3.53061144,
+            "allPredicatesPass": false,
+            "verdict": "FAIL P9 — the head moment overloads one leg"
         },
         {
             "azimuthDegrees": 37.5,
@@ -1554,7 +1734,10 @@
             "governingPlane": "free",
             "dutyDesiredElement": 5.09655082,
             "bucklingMargin": 1.62922219,
-            "allPredicatesPass": false
+            "peakLegCompression": 15.1532034,
+            "perLegCriticalLoad": 4.15170683,
+            "allPredicatesPass": false,
+            "verdict": "FAIL P9 — the head moment overloads one leg"
         },
         {
             "azimuthDegrees": 45.0,
@@ -1573,7 +1756,10 @@
             "governingPlane": "free",
             "dutyDesiredElement": 4.92006006,
             "bucklingMargin": 1.8961698,
-            "allPredicatesPass": false
+            "peakLegCompression": 14.9796898,
+            "perLegCriticalLoad": 4.66463465,
+            "allPredicatesPass": false,
+            "verdict": "FAIL P9 — the head moment overloads one leg"
         },
         {
             "azimuthDegrees": 52.5,
@@ -1592,7 +1778,10 @@
             "governingPlane": "free",
             "dutyDesiredElement": 4.69547359,
             "bucklingMargin": 2.15835439,
-            "allPredicatesPass": false
+            "peakLegCompression": 14.5178534,
+            "perLegCriticalLoad": 5.06724801,
+            "allPredicatesPass": false,
+            "verdict": "FAIL P9 — the head moment overloads one leg"
         },
         {
             "azimuthDegrees": 60.0,
@@ -1611,7 +1800,10 @@
             "governingPlane": "free",
             "dutyDesiredElement": 4.42316826,
             "bucklingMargin": 2.42862463,
-            "allPredicatesPass": false
+            "peakLegCompression": 13.574084,
+            "perLegCriticalLoad": 5.37110769,
+            "allPredicatesPass": false,
+            "verdict": "FAIL P9 — the head moment overloads one leg"
         },
         {
             "azimuthDegrees": 67.5,
@@ -1630,7 +1822,10 @@
             "governingPlane": "free",
             "dutyDesiredElement": 4.11731889,
             "bucklingMargin": 2.71565776,
-            "allPredicatesPass": false
+            "peakLegCompression": 11.9114669,
+            "perLegCriticalLoad": 5.5906145,
+            "allPredicatesPass": false,
+            "verdict": "FAIL P9 — the head moment overloads one leg"
         },
         {
             "azimuthDegrees": 75.0,
@@ -1649,7 +1844,10 @@
             "governingPlane": "free",
             "dutyDesiredElement": 3.81651603,
             "bucklingMargin": 3.00709275,
-            "allPredicatesPass": false
+            "peakLegCompression": 9.32867952,
+            "perLegCriticalLoad": 5.73830885,
+            "allPredicatesPass": false,
+            "verdict": "FAIL P9 — the head moment overloads one leg"
         },
         {
             "azimuthDegrees": 82.5,
@@ -1668,7 +1866,10 @@
             "governingPlane": "loaded",
             "dutyDesiredElement": 3.58669977,
             "bucklingMargin": 2.86839493,
-            "allPredicatesPass": false
+            "peakLegCompression": 5.82309467,
+            "perLegCriticalLoad": 5.14403572,
+            "allPredicatesPass": false,
+            "verdict": "FAIL P9 — the head moment overloads one leg"
         },
         {
             "azimuthDegrees": 90.0,
@@ -1687,7 +1888,10 @@
             "governingPlane": "loaded",
             "dutyDesiredElement": 3.49933398,
             "bucklingMargin": 2.79240064,
-            "allPredicatesPass": true
+            "peakLegCompression": 1.74966699,
+            "perLegCriticalLoad": 4.88577123,
+            "allPredicatesPass": true,
+            "verdict": "PASS"
         }
     ],
     "sensitivities": [
@@ -2253,9 +2457,45 @@
     "literature": [
         {
             "question": "Is a rigid out-of-plane mounting in the literature triangulated?",
-            "answer": "YES, and it is the only rigid one: Pumm et al.'s inclined plates \"were held rigidly at this angle with a set of double-helical spacers\" — a SET, never one duplex on a stiff base.",
-            "flag": "read directly (C-0028, re-verified in this task)",
-            "source": "Pumm et al., Nature 607:492 (2022)"
+            "answer": "YES, and it is the only rigid one: \"The obstacles consist of 18-nm-long rectangular plates that protrude with an inclination of about 50 degrees from the surface of the triangular platform. The plates were held rigidly at this angle with a set of double-helical spacers.\"",
+            "flag": "read directly, RE-VERIFIED VERBATIM in this task",
+            "source": "Pumm et al., Nature 607:492 (2022), EuropePMC PMC9300469 fullTextXML"
+        },
+        {
+            "question": "How many spacers is 'a set'?",
+            "answer": "EXACTLY TWO per plate. Methods: \"a set of two spacer oligonucleotide strands was added in an approximately 100x excess to the sample to mount the obstacles on the triangular platform.\" The SI strand table lists spacer1_01/02, spacer2_01/02, spacer3_01/02 for the three obstacles, plus two universal complements. **The literature's only rigid out-of-plane mounting has the leg count this task recommends.**",
+            "flag": "read directly, RE-VERIFIED VERBATIM in this task (Methods and SI p. 22-23)",
+            "source": "Pumm et al., Nature 607:492 (2022), Methods; SI 41586_2022_4910_MOESM1_ESM.pdf"
+        },
+        {
+            "question": "How is each spacer attached, and how long is it?",
+            "answer": "Each universal complement is EXACTLY 39 nt (spacer_complement_01 = ATAGTCAGGTGGCATTCTAGTTTCAGGCAAGTGGATTCG), i.e. exactly the duplex region, so it carries no flank and TERMINATES at both ends of the spacer duplex; the spacer strand's own backbone is the single continuation into the plate at one end and into the platform at the other. **So each 39 bp = 13.3 nm spacer is attached by ONE covalent link per end — C-0029's R3 ball joint, and Rothemund's observed failure — and the rigidity Pumm et al. report belongs to the PAIR, not to either joint. That is a frame couple, and it is this task's mechanism, in print.** The sequence reading is DERIVED HERE from the published strand table and is not stated in the paper.",
+            "flag": "read directly (sequences); the one-link-per-end reading is DERIVED HERE and flagged",
+            "source": "Pumm et al. SI, 41586_2022_4910_MOESM1_ESM.pdf, spacer strand table"
+        },
+        {
+            "question": "Does Pumm et al. say how the two spacers are ARRANGED?",
+            "answer": "NO. Across the whole article the word 'spacer' occurs exactly twice — the two sentences quoted above — and there is no caDNAno figure of the obstacle. Spacing, splay and parallelism are all unstated, so this task's azimuth finding has no published precedent to agree or disagree with.",
+            "flag": "not found (72 queries; the article and its SI read directly)",
+            "source": "Pumm et al., Nature 607:492 (2022) and its SI"
+        },
+        {
+            "question": "Is there a published statement that triangulation rigidifies a DNA structure?",
+            "answer": "YES, qualitatively and with NO number: \"When triangulation was applied to any non-triangular faces, the corresponding structures ... showcased significant rigidification\" and \"We have shown that triangulation is an effective approach to rigidify the corresponding structures.\" It is a WIREFRAME result — triangulation of polyhedral faces — not an out-of-plane mounting, and it carries no stiffness in pN nm/rad, so it is used here only as a direction check.",
+            "flag": "read directly, RE-VERIFIED VERBATIM in this task",
+            "source": "Wang et al., Nat. Commun. 10:1067 (2019), EuropePMC PMC6403373 fullTextXML"
+        },
+        {
+            "question": "Is there a measured stiffness for a multi-duplex bundle standing off a plate?",
+            "answer": "NOT FOUND, and the nearest source is PAYWALLED: Kauert, Kurth, Liedl & Seidel, Nano Lett. 11:5558 (2011) measure FREE-STANDING four- and six-helix bundles by magnetic tweezers and report only qualitatively in the abstract (\"we find the bending rigidities to be greatly increased\"). NO NUMBER FROM IT IS USED HERE.",
+            "flag": "abstract only",
+            "source": "doi 10.1021/nl203503s, via EuropePMC search; Unpaywall reports it closed"
+        },
+        {
+            "question": "Is there a published spacing rule for two duplexes protruding from one face?",
+            "answer": "NOT FOUND. The SAXS interhelical distance is a measurement of IN-LATTICE packing — \"for the one layer sheet, we obtain an inter-helical distance of 26.9 +/- 0.2 A\" — and the same paper's 10 % expansion tolerance is a statement about a packed lattice, not about two free-standing legs. This task's 2.04-4.08 nm leg separations are therefore a MODELLING choice bounded only by sterics.",
+            "flag": "not found for the protruding case; the SAXS number read directly",
+            "source": "Fischer et al., Nano Lett. 16:4282 (2016), PMC6544510"
         },
         {
             "question": "Is a TWO-legged normal standoff on a single-layer sheet an established motif?",
@@ -2280,8 +2520,10 @@
         "the answer": "A two-leg row laid ACROSS the flexure axis takes the adopted critical load from 1.46 pN to 9.77 pN (6.71x) and moves the governing plane from 'free' to 'loaded'. The draw-in that survives is 0.774 nm supplied against 0.267 nm demanded at the placement stroke — a ratio of 2.90, against 3.75 for the single standoff — so the beam is still in compression and C-0030's favourable mounting is intact. The tangent moves 25.20 -> 26.09 pN/nm against a 40 pN/nm ceiling, and the margin is 2.79x on CanDo's rigidity and 2.10x on Fields'.",
         "the azimuth is the whole design": "The same two legs laid ALONG the flexure axis leave the free plane at 2.91 pN — still governing — while destroying the draw-in supply (1.39 against 2.90) and taking the tangent to 33.02 pN/nm. Verdict: FAIL P6 — the truss buckles before the desired stroke. The frame couple is a rank-one tensor on the leg offsets, so the truss has ONE budget of it and the azimuth decides which plane spends it.",
         "full triangulation": "The FULLY triangulated head — two legs across and one along — reaches 16.39 pN of critical load but supplies only 0.95 of the draw-in it is charged for and holds a tangent of 36.20 pN/nm. Verdict: FAIL P8 — the joint no longer supplies the draw-in it is charged for.",
-        "the cap is not free": "The head tie is the assumption a truss adds, and it is not negligible: a rigid cap gives 9.77 pN, the NOMINAL two-link cap (a leg head is a duplex end too, so C-0029's counting theorem applies at BOTH ends of every leg) gives 9.77 pN, and a one-link cap gives 9.77 pN with the governing plane back at 'loaded'. Verdicts: PASS / PASS / PASS.",
-        "the window": "On CanDo's rigidity the recommended truss passes all nine predicates at 8.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 8.0 nm; on Fields et al.'s measured rigidity at 8.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 8.0 nm. The single standoff passes at no length nm.",
+        "the cap is real but the loaded plane caps it": "The head tie moves the FREE plane a long way — 14.57 / 11.70 / 9.94 pN at the recommended 8 bp separation for a rigid, a two-link and a one-link cap — but the adopted critical load is the MINIMUM over the two planes, and at that separation the loaded plane is the lower one at 9.77 pN, so the cap's compliance is absorbed entirely and the verdict does not move. It stops being absorbed as soon as the row is tightened: at the 6 bp steric floor the free plane governs at 9.77 / 8.84 / 7.45 pN, i.e. the cap is worth 1.31x there. The NOMINAL cap is not a modelling choice — C-0029's counting theorem applies at BOTH ends of every leg, so a leg head is a duplex end with two termini and 2 k_bond,s of axial stiffness.",
+        "the separation is free in the loaded plane": "L2a6, L2a8 and L2a12 have IDENTICAL span (33.43 nm), tangent (26.09 pN/nm), Phi and supply-to-demand ratio, because a cross row has Sigma x^2 = 0 exactly at every separation. **The draw-in cost of a cross row is the leg COUNT, not the leg SPACING** — so the separation is free to spend on the free plane, up to the point where the loaded plane becomes the minimum.",
+        "the window": "On CanDo's rigidity the recommended truss passes all nine predicates at 5.0, 6.0, 7.0, 8.0, 9.0, 10.0 nm; on Fields et al.'s measured rigidity at 5.0, 6.0, 7.0, 8.0, 9.0, 10.0 nm. The single standoff passes at no length at all.",
+        "an off-square row is eccentrically loaded": "P9 — no leg overloaded by the head moment — fails at 12 of the 12 azimuths below 90 degrees, because a row with Sigma x^2 > 0 reacts part of the head moment as an axial COUPLE and its outermost leg then carries more than its share. The cost of an off-square row is therefore not only the draw-in it spends but an eccentricity in the very load P6 is written on, and **only the exact cross row escapes both**.",
         "the cost, in plan": "Two legs per flexure end is 180 standoffs over 45 load paths and two ends — 720 nm² of duplex cross-section against the 40 x 40 nm tile's 1600 nm², i.e. 45 % of a tile footprint. This is a SCALE, not a layout: T-96 owns the plan view."
     },
     "validity": [

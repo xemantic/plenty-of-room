@@ -39,6 +39,7 @@ import com.xemantic.nano.plentyofroom.electrostatics.PoissonBoltzmannEdge
 import com.xemantic.nano.plentyofroom.electrostatics.PoissonBoltzmannGap
 import com.xemantic.nano.plentyofroom.electrostatics.additiveCollarMultiplier
 import com.xemantic.nano.plentyofroom.electrostatics.bjerrumLength
+import com.xemantic.nano.plentyofroom.electrostatics.centralLogGradient
 import com.xemantic.nano.plentyofroom.electrostatics.collarLogGradientEstimate
 import com.xemantic.nano.plentyofroom.electrostatics.diffusePotentialOfAppliedBias
 import com.xemantic.nano.plentyofroom.electrostatics.minimumMarginCollarMultiplier
@@ -181,6 +182,20 @@ data class T60FoldRecord(
     val pullInStroke: Double?,
     val pullInGap: Double?,
     val foldAtBranchStart: Boolean,
+    /** The deepest stroke the branch reaches at all, in nm. */
+    val branchEndStroke: Double?,
+    /** The bias there, in V. */
+    val branchEndBias: Double?,
+    /**
+     * True when the branch ended because the **field** ran out rather than because the scan did.
+     *
+     * This is what tells a genuinely monotone path — `C-0018`'s "the layer's osmotic divergence
+     * removes the instability" — apart from a search that simply could not reach far enough. A
+     * `null` pull-in bias means nothing without it.
+     */
+    val branchEndedOnTheField: Boolean,
+    /** `C-0018`'s own predicate: below every ceiling AND on the stable side of the fold. */
+    val operatingPointIsUsable: Boolean?,
     val brushStiffnessAtFold: Double?,
     val electrostaticStiffnessAtFold: Double?,
     val effectiveStiffnessAtFold: Double?,
@@ -211,7 +226,15 @@ data class T60DecompositionRecord(
     val pullInBiasShift: Double?,
     val operatingBiasShift: Double?,
     val marginResolutionFloor: Double,
-    val marginMovementIsResolved: Boolean
+    val marginMovementIsResolved: Boolean,
+    /** `d ln μ/dh` at `C-0018`'s **own** fold gap, which is what `C-0027` had to bracket. */
+    val collarLogGradientAtBaselineFold: Double?,
+    /** `k_c + k_brush + k_es` at `C-0018`'s own fold with the collar carried and nothing else. */
+    val foldTangentCollarOnly: Double?,
+    /** The same with `C-0019`'s `k_brush` degradation carried too — `C-0027`'s own quantity. */
+    val foldTangentCollarAndFluctuation: Double?,
+    /** `C-0019`'s licensed `k_brush` multiplier at this height — **CITED FROM `C-0027`**. */
+    val fluctuationBrushMultiplier: Double
 )
 
 @Serializable
@@ -303,7 +326,15 @@ private data class T60CollarState(
     val fixedBias: Double,
     val gaps: List<Double>,
     val probeGap: Double,
-    val probeBiases: List<Double>
+    val probeBiases: List<Double>,
+    /**
+     * `C-0019`'s licensed `k_brush` multiplier at this layer height — **CITED FROM `C-0027`**
+     * (`gpd/results/T-25-window-resynthesis.json`, `brushStiffnessCorrected` over
+     * `brushStiffnessBaseline`), and buffer-independent there because it is a polymer
+     * correction. Carried only so that `C-0027`'s *own* straddling tangent can be recomputed
+     * with a resolved gradient; nothing in this task re-runs `C-0019`.
+     */
+    val fluctuationBrushMultiplier: Double
 )
 
 private val STATES = listOf(
@@ -317,7 +348,8 @@ private val STATES = listOf(
             2.0, 3.0, 4.0, 4.5, 5.0, 5.5, 6.0, 6.25, 6.5, 6.75, 7.0, 7.5, 8.0, 9.0, 10.0, 11.0
         ),
         probeGap = 6.5,
-        probeBiases = listOf(0.128, 0.155, 0.184)
+        probeBiases = listOf(0.128, 0.155, 0.184),
+        fluctuationBrushMultiplier = 0.90584
     ),
     T60CollarState(
         label = "7 nm / 10 mM",
@@ -329,7 +361,8 @@ private val STATES = listOf(
             2.0, 3.0, 3.5, 4.0, 4.25, 4.5, 4.75, 5.0, 5.25, 5.5, 6.0, 6.5, 7.0, 8.0
         ),
         probeGap = 4.75,
-        probeBiases = listOf(0.148, 0.22, 0.396)
+        probeBiases = listOf(0.148, 0.22, 0.396),
+        fluctuationBrushMultiplier = 0.94885
     )
 )
 
@@ -586,6 +619,17 @@ private fun foldRecord(
         pullInStroke = fold?.stroke,
         pullInGap = fold?.gap,
         foldAtBranchStart = search.foldAtBranchStart,
+        branchEndStroke = search.branchEnd?.stroke,
+        branchEndBias = search.branchEnd?.appliedBias,
+        branchEndedOnTheField = search.reachedDiffuseCeiling,
+        // A bias below the pull-in bias is NOT sufficient: the target stroke must also lie on
+        // the stable side of the fold, and those are two different tests (C-0018).
+        operatingPointIsUsable = operating?.let { point ->
+            binding?.bias?.let { ceiling ->
+                point.appliedBias <= ceiling &&
+                        (fold == null || TARGET_STROKE <= fold.stroke + 1e-9)
+            }
+        },
         brushStiffnessAtFold = brush,
         electrostaticStiffnessAtFold = electrostatic,
         effectiveStiffnessAtFold = effective,
@@ -731,9 +775,10 @@ fun main() {
                         gapHeight = gap,
                         scheme = "central difference",
                         step = step,
-                        logGradient = ln(
-                            byGap.getValue(gap + step) / byGap.getValue(gap - step)
-                        ) / (2.0 * step)
+                        logGradient = centralLogGradient(
+                            byGap.getValue(gap - step), byGap.getValue(gap + step),
+                            gap - step, gap + step
+                        )
                     )
                 }
         }
@@ -749,7 +794,13 @@ fun main() {
                 "10 nm / 2 mM", 2.0, gap, 0.155, refinement, "mesh convergence"
             ).also { collar += it }.multiplierMinimumMargin
         }
-        val gradient = ln(values[2] / values[0]) / 2.0
+        // The central difference divides by the SEPARATION of the two outer gaps, which is
+        // `2d` for a symmetric difference of half-step `d`. Written by hand as `/(2 * step)`
+        // with `step` read off the wrong axis it comes out exactly half, and no dimensional
+        // check catches that — hence `centralLogGradient`, which names the separation once.
+        val gradient = centralLogGradient(
+            values[0], values[2], convergenceGaps[0], convergenceGaps[2]
+        )
         finest[refinement] = values[1] to gradient
         println("  refinement $refinement: mu(6.5) = ${"%.6f".format(values[1])}, " +
                 "d ln mu/dh = ${"%.6f".format(gradient)} /nm " +
@@ -775,7 +826,7 @@ fun main() {
         val schemes = listOf(0.25, 0.5, 1.0, 1.5).mapNotNull { step ->
             val low = byGap[6.5 - step] ?: return@mapNotNull null
             val high = byGap[6.5 + step] ?: return@mapNotNull null
-            step to ln(high / low) / (2.0 * step)
+            step to centralLogGradient(low, high, 6.5 - step, 6.5 + step)
         }
         val tightest = schemes.first().second
         schemes.forEach { (step, value) ->
@@ -836,6 +887,7 @@ fun main() {
 
     println("T-60 — the decomposition ...")
     val decomposition = STATES.flatMap { state ->
+        val curve = curves.getValue(state.label)
         models.flatMap { (name, _) ->
             LOAD_LINES.map { line ->
                 val at = { variant: String ->
@@ -855,6 +907,29 @@ fun main() {
                 val floor = resolutionFloor(DEFAULT_DIFFUSE_TOLERANCE)
                 val movement = if (baseline.margin != null && full.margin != null)
                     abs(full.margin / baseline.margin - 1.0) else 0.0
+                // C-0027's own quantity, recomputed with a RESOLVED gradient: the coupled
+                // tangent at C-0018's OWN fold. There |F_es| is pinned, so with the collar
+                // carried k_es goes from -|F|/l to -|F|(1/l - g), i.e. it gains exactly |F|g;
+                // and since the baseline tangent vanishes at the fold by construction, the
+                // collar-only tangent IS |F|g and is positive whenever g is.
+                val gradientAtFold = baseline.pullInGap?.let { curve.logGradientAt(it) }
+                val pinnedForce =
+                    if (baseline.electrostaticStiffnessAtFold != null &&
+                        baseline.forceDecayLengthAtFold != null
+                    ) -baseline.electrostaticStiffnessAtFold * baseline.forceDecayLengthAtFold
+                    else null
+                val collarOnlyTangent =
+                    if (gradientAtFold != null && pinnedForce != null &&
+                        baseline.brushStiffnessAtFold != null &&
+                        baseline.electrostaticStiffnessAtFold != null
+                    ) line.stiffness + baseline.brushStiffnessAtFold +
+                            baseline.electrostaticStiffnessAtFold + pinnedForce * gradientAtFold
+                    else null
+                val bothTangent =
+                    if (collarOnlyTangent != null && baseline.brushStiffnessAtFold != null)
+                        collarOnlyTangent - (1.0 - state.fluctuationBrushMultiplier) *
+                                baseline.brushStiffnessAtFold
+                    else null
                 T60DecompositionRecord(
                     state = state.label,
                     model = name,
@@ -877,7 +952,11 @@ fun main() {
                         if (baseline.operatingBias != null && full.operatingBias != null)
                             full.operatingBias - baseline.operatingBias else null,
                     marginResolutionFloor = floor,
-                    marginMovementIsResolved = movement > floor
+                    marginMovementIsResolved = movement > floor,
+                    collarLogGradientAtBaselineFold = gradientAtFold,
+                    foldTangentCollarOnly = collarOnlyTangent,
+                    foldTangentCollarAndFluctuation = bothTangent,
+                    fluctuationBrushMultiplier = state.fluctuationBrushMultiplier
                 )
             }
         }
@@ -1017,6 +1096,7 @@ private fun findings(
         it.state == ten && it.loadLine == "coupled" &&
                 it.baselineMargin != null && it.fullMargin != null
     }
+    val tangentsTen = result.decomposition.filter { it.state == ten && it.loadLine == "coupled" }
     val spread = result.biasIndependence.map { it.relativeSpread }.max()
     return mapOf(
         "the_gradient_is_a_derivative_now" to
@@ -1060,6 +1140,30 @@ private fun findings(
                             if (it.isEmpty()) "no binding pull-in"
                             else "%.3f-%.3f".format(it.min(), it.max())
                         }
+                ),
+        "C-0027s_straddle_at_the_fold_is_resolved" to
+                ("C-0027 reports a coupled tangent of -2.5 to +4.0 pN/nm at C-0018's own fold, " +
+                        "straddling zero over the collar gradient's THREE difference schemes. " +
+                        "With the gradient resolved as a derivative, the collar-only tangent " +
+                        "there is %.3f to %.3f pN/nm — STRICTLY POSITIVE, because at a pinned " +
+                        "force it is exactly |F_es| d ln mu/dh and the baseline tangent " +
+                        "vanishes at the fold by construction. Carrying C-0019's k_brush " +
+                        "degradation as well gives %.3f to %.3f pN/nm, a band %.1fx narrower " +
+                        "than C-0027's; what remains straddling zero is a MODEL spread, not a " +
+                        "difference-scheme one.").format(
+                    tangentsTen.mapNotNull { it.foldTangentCollarOnly }.minOrNull() ?: 0.0,
+                    tangentsTen.mapNotNull { it.foldTangentCollarOnly }.maxOrNull() ?: 0.0,
+                    tangentsTen.mapNotNull { it.foldTangentCollarAndFluctuation }
+                        .minOrNull() ?: 0.0,
+                    tangentsTen.mapNotNull { it.foldTangentCollarAndFluctuation }
+                        .maxOrNull() ?: 0.0,
+                    6.5 / max(
+                        (tangentsTen.mapNotNull { it.foldTangentCollarAndFluctuation }
+                            .maxOrNull() ?: 0.0) -
+                                (tangentsTen.mapNotNull {
+                                    it.foldTangentCollarAndFluctuation
+                                }.minOrNull() ?: 0.0), 1e-9
+                    )
                 ),
         "the_cheap_estimate_held" to
                 ("The closed-form estimate from the transverse eigenvalue ceiling gives " +

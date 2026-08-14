@@ -97,6 +97,33 @@ class CollarMultiplierTest {
         assert(halved.logGradientAt(3.5).isCloseTo(0.04, 1e-9))
     }
 
+    @Test
+    fun `gate 1 should divide a central difference by the SEPARATION of its two gaps`() {
+        // The factor-of-two trap that actually fired here: a symmetric difference of
+        // half-step d has denominator 2d, which IS the separation of the two gaps — and a
+        // hand-written `/(2*step)` is half the right answer whenever `step` is the
+        // separation rather than the half-step. Neither reading fails a dimensional check.
+        val rate = 0.0181
+        assert(
+            centralLogGradient(exp(rate * 6.0), exp(rate * 7.0), 6.0, 7.0)
+                .isCloseTo(rate, 1e-12)
+        )
+        assert(
+            centralLogGradient(exp(rate * 6.0), exp(rate * 7.0), 6.0, 7.0)
+                .isCloseTo(ln(exp(rate * 7.0) / exp(rate * 6.0)) / 1.0, 1e-12)
+        )
+        // and it agrees with the interpolant's own node slope on a uniform mesh
+        val gaps = doubleArrayOf(6.0, 6.5, 7.0)
+        val curve = CollarMultiplierCurve(gaps, doubleArrayOf(1.0866, 1.0969, 1.1063))
+        assert(
+            curve.logGradientAt(6.5)
+                .isCloseTo(centralLogGradient(1.0866, 1.1063, 6.0, 7.0), 1e-12)
+        )
+        assertFailsWith<IllegalArgumentException> {
+            centralLogGradient(1.0, 1.1, 7.0, 6.0)
+        }
+    }
+
     // gate 2 — limiting cases
 
     @Test

@@ -232,7 +232,10 @@ data class T72AzimuthRecord(
     val governingPlane: String,
     val dutyDesiredElement: Double,
     val bucklingMargin: Double,
-    val allPredicatesPass: Boolean
+    val peakLegCompression: Double,
+    val perLegCriticalLoad: Double,
+    val allPredicatesPass: Boolean,
+    val verdict: String
 )
 
 @Serializable
@@ -504,9 +507,14 @@ fun main() {
     STANDOFF_LENGTHS.forEach {
         designs += design("L1", TrussLayout.single(), nominalTie, it)
     }
-    // the head tie, which is the assumption a truss adds and the one that binds
+    // the head tie, which is the assumption a truss adds — swept on the recommended layout AND on
+    // the tightest one, where the free plane still governs and the cap therefore still binds
     HEAD_TIES.forEach {
         designs += design(recommendedLayout.id, recommendedLayout.layout, it, DESIGN_LENGTH)
+    }
+    val tightestLayout = LAYOUTS.first { it.id == "L2a6" }
+    HEAD_TIES.forEach {
+        designs += design(tightestLayout.id, tightestLayout.layout, it, DESIGN_LENGTH)
     }
     // the adverse mounting, on the recommended layout
     designs += design(
@@ -536,7 +544,10 @@ fun main() {
             governingPlane = record.governingPlane,
             dutyDesiredElement = record.dutyDesiredElement,
             bucklingMargin = record.bucklingMargin,
-            allPredicatesPass = record.allPredicatesPass
+            peakLegCompression = record.peakLegCompression,
+            perLegCriticalLoad = record.perLegCriticalLoad,
+            allPredicatesPass = record.allPredicatesPass,
+            verdict = record.verdict
         )
     }
 
@@ -749,32 +760,62 @@ fun main() {
         )
     val rigidCap = designs.first { it.layoutId == "L2a8" && it.headTieId == "Hr" }
     val oneLink = designs.first { it.layoutId == "L2a8" && it.headTieId == "H1" }
-    findings["the cap is not free"] = (
-            "The head tie is the assumption a truss adds, and it is not negligible: a rigid cap " +
-                    "gives %.2f pN, the NOMINAL two-link cap (a leg head is a duplex end too, so " +
-                    "C-0029's counting theorem applies at BOTH ends of every leg) gives %.2f pN, " +
-                    "and a one-link cap gives %.2f pN with the governing plane back at '%s'. " +
-                    "Verdicts: %s / %s / %s."
+    val tightRigid = designs.first { it.layoutId == "L2a6" && it.headTieId == "Hr" }
+    val tightNominal = designs.first { it.layoutId == "L2a6" && it.headTieId == "H2" }
+    val tightOneLink = designs.first { it.layoutId == "L2a6" && it.headTieId == "H1" }
+    findings["the cap is real but the loaded plane caps it"] = (
+            "The head tie moves the FREE plane a long way — %.2f / %.2f / %.2f pN at the " +
+                    "recommended 8 bp separation for a rigid, a two-link and a one-link cap — " +
+                    "but the adopted critical load is the MINIMUM over the two planes, and at " +
+                    "that separation the loaded plane is the lower one at %.2f pN, so the cap's " +
+                    "compliance is absorbed entirely and the verdict does not move. It stops " +
+                    "being absorbed as soon as the row is tightened: at the 6 bp steric floor " +
+                    "the free plane governs at %.2f / %.2f / %.2f pN, i.e. the cap is worth " +
+                    "%.2fx there. The NOMINAL cap is not a modelling choice — C-0029's counting " +
+                    "theorem applies at BOTH ends of every leg, so a leg head is a duplex end " +
+                    "with two termini and 2 k_bond,s of axial stiffness."
             ).format(
-            rigidCap.criticalLoad, recommended.criticalLoad, oneLink.criticalLoad,
-            oneLink.governingPlane, rigidCap.verdict, recommended.verdict, oneLink.verdict
+            rigidCap.freeCriticalLoad, recommended.freeCriticalLoad, oneLink.freeCriticalLoad,
+            recommended.loadedCriticalLoad,
+            tightRigid.criticalLoad, tightNominal.criticalLoad, tightOneLink.criticalLoad,
+            tightRigid.criticalLoad / tightOneLink.criticalLoad
         )
-    val windowLengths = designs.filter {
-        it.layoutId == "L2a8" && it.headTieId == "H2" && it.orientation == "favourable" &&
-                it.standoffLength in STANDOFF_LENGTHS
-    }
+    findings["the separation is free in the loaded plane"] = (
+            "L2a6, L2a8 and L2a12 have IDENTICAL span (%.2f nm), tangent (%.2f pN/nm), Phi and " +
+                    "supply-to-demand ratio, because a cross row has Sigma x^2 = 0 exactly at " +
+                    "every separation. **The draw-in cost of a cross row is the leg COUNT, not " +
+                    "the leg SPACING** — so the separation is free to spend on the free plane, " +
+                    "up to the point where the loaded plane becomes the minimum."
+            ).format(recommended.span, recommended.tangentAcceptable)
+    fun window(layoutId: String) = designs
+        .filter {
+            it.layoutId == layoutId && it.headTieId == "H2" && it.orientation == "favourable" &&
+                    it.standoffLength in STANDOFF_LENGTHS
+        }
+        .distinctBy { it.standoffLength }
+        .sortedBy { it.standoffLength }
+    val windowLengths = window("L2a8")
     val passing = windowLengths.filter { it.allPredicatesPass }.map { it.standoffLength }
     val passingFields = windowLengths.filter { it.passesOnFieldsRigidity }.map { it.standoffLength }
     findings["the window"] = (
             "On CanDo's rigidity the recommended truss passes all nine predicates at %s nm; on " +
-                    "Fields et al.'s measured rigidity at %s nm. The single standoff passes at %s nm."
+                    "Fields et al.'s measured rigidity at %s nm. The single standoff passes at %s."
             ).format(
             if (passing.isEmpty()) "no length" else passing.joinToString(", "),
             if (passingFields.isEmpty()) "no length" else passingFields.joinToString(", "),
-            designs.filter {
-                it.layoutId == "L1" && it.headTieId == "H2" && it.standoffLength in STANDOFF_LENGTHS
-            }.filter { it.allPredicatesPass }.map { it.standoffLength }
-                .let { if (it.isEmpty()) "no length" else it.joinToString(", ") }
+            window("L1").filter { it.allPredicatesPass }.map { it.standoffLength }
+                .let { if (it.isEmpty()) "no length at all" else it.joinToString(", ") + " nm" }
+        )
+    val offSquare = azimuthSweep.filter { it.azimuthDegrees < 89.9 }
+    findings["an off-square row is eccentrically loaded"] = (
+            "P9 — no leg overloaded by the head moment — fails at %d of the %d azimuths below " +
+                    "90 degrees, because a row with Sigma x^2 > 0 reacts part of the head moment " +
+                    "as an axial COUPLE and its outermost leg then carries more than its share. " +
+                    "The cost of an off-square row is therefore not only the draw-in it spends " +
+                    "but an eccentricity in the very load P6 is written on, and **only the exact " +
+                    "cross row escapes both**."
+            ).format(
+            offSquare.count { it.peakLegCompression > it.perLegCriticalLoad }, offSquare.size
         )
     findings["the cost, in plan"] = (
             "Two legs per flexure end is %d standoffs over 45 load paths and two ends — %.0f nm² " +
@@ -828,11 +869,77 @@ fun main() {
 private val LITERATURE = listOf(
     T72LiteratureRecord(
         question = "Is a rigid out-of-plane mounting in the literature triangulated?",
-        answer = "YES, and it is the only rigid one: Pumm et al.'s inclined plates \"were held " +
-                "rigidly at this angle with a set of double-helical spacers\" — a SET, never one " +
-                "duplex on a stiff base.",
-        flag = "read directly (C-0028, re-verified in this task)",
-        source = "Pumm et al., Nature 607:492 (2022)"
+        answer = "YES, and it is the only rigid one: \"The obstacles consist of 18-nm-long " +
+                "rectangular plates that protrude with an inclination of about 50 degrees from " +
+                "the surface of the triangular platform. The plates were held rigidly at this " +
+                "angle with a set of double-helical spacers.\"",
+        flag = "read directly, RE-VERIFIED VERBATIM in this task",
+        source = "Pumm et al., Nature 607:492 (2022), EuropePMC PMC9300469 fullTextXML"
+    ),
+    T72LiteratureRecord(
+        question = "How many spacers is 'a set'?",
+        answer = "EXACTLY TWO per plate. Methods: \"a set of two spacer oligonucleotide strands " +
+                "was added in an approximately 100x excess to the sample to mount the obstacles " +
+                "on the triangular platform.\" The SI strand table lists spacer1_01/02, " +
+                "spacer2_01/02, spacer3_01/02 for the three obstacles, plus two universal " +
+                "complements. **The literature's only rigid out-of-plane mounting has the leg " +
+                "count this task recommends.**",
+        flag = "read directly, RE-VERIFIED VERBATIM in this task (Methods and SI p. 22-23)",
+        source = "Pumm et al., Nature 607:492 (2022), Methods; SI 41586_2022_4910_MOESM1_ESM.pdf"
+    ),
+    T72LiteratureRecord(
+        question = "How is each spacer attached, and how long is it?",
+        answer = "Each universal complement is EXACTLY 39 nt (spacer_complement_01 = " +
+                "ATAGTCAGGTGGCATTCTAGTTTCAGGCAAGTGGATTCG), i.e. exactly the duplex region, so it " +
+                "carries no flank and TERMINATES at both ends of the spacer duplex; the spacer " +
+                "strand's own backbone is the single continuation into the plate at one end and " +
+                "into the platform at the other. **So each 39 bp = 13.3 nm spacer is attached by " +
+                "ONE covalent link per end — C-0029's R3 ball joint, and Rothemund's observed " +
+                "failure — and the rigidity Pumm et al. report belongs to the PAIR, not to " +
+                "either joint. That is a frame couple, and it is this task's mechanism, in " +
+                "print.** The sequence reading is DERIVED HERE from the published strand table " +
+                "and is not stated in the paper.",
+        flag = "read directly (sequences); the one-link-per-end reading is DERIVED HERE and flagged",
+        source = "Pumm et al. SI, 41586_2022_4910_MOESM1_ESM.pdf, spacer strand table"
+    ),
+    T72LiteratureRecord(
+        question = "Does Pumm et al. say how the two spacers are ARRANGED?",
+        answer = "NO. Across the whole article the word 'spacer' occurs exactly twice — the two " +
+                "sentences quoted above — and there is no caDNAno figure of the obstacle. " +
+                "Spacing, splay and parallelism are all unstated, so this task's azimuth finding " +
+                "has no published precedent to agree or disagree with.",
+        flag = "not found (72 queries; the article and its SI read directly)",
+        source = "Pumm et al., Nature 607:492 (2022) and its SI"
+    ),
+    T72LiteratureRecord(
+        question = "Is there a published statement that triangulation rigidifies a DNA structure?",
+        answer = "YES, qualitatively and with NO number: \"When triangulation was applied to any " +
+                "non-triangular faces, the corresponding structures ... showcased significant " +
+                "rigidification\" and \"We have shown that triangulation is an effective " +
+                "approach to rigidify the corresponding structures.\" It is a WIREFRAME result " +
+                "— triangulation of polyhedral faces — not an out-of-plane mounting, and it " +
+                "carries no stiffness in pN nm/rad, so it is used here only as a direction check.",
+        flag = "read directly, RE-VERIFIED VERBATIM in this task",
+        source = "Wang et al., Nat. Commun. 10:1067 (2019), EuropePMC PMC6403373 fullTextXML"
+    ),
+    T72LiteratureRecord(
+        question = "Is there a measured stiffness for a multi-duplex bundle standing off a plate?",
+        answer = "NOT FOUND, and the nearest source is PAYWALLED: Kauert, Kurth, Liedl & Seidel, " +
+                "Nano Lett. 11:5558 (2011) measure FREE-STANDING four- and six-helix bundles by " +
+                "magnetic tweezers and report only qualitatively in the abstract (\"we find the " +
+                "bending rigidities to be greatly increased\"). NO NUMBER FROM IT IS USED HERE.",
+        flag = "abstract only",
+        source = "doi 10.1021/nl203503s, via EuropePMC search; Unpaywall reports it closed"
+    ),
+    T72LiteratureRecord(
+        question = "Is there a published spacing rule for two duplexes protruding from one face?",
+        answer = "NOT FOUND. The SAXS interhelical distance is a measurement of IN-LATTICE " +
+                "packing — \"for the one layer sheet, we obtain an inter-helical distance of " +
+                "26.9 +/- 0.2 A\" — and the same paper's 10 % expansion tolerance is a statement " +
+                "about a packed lattice, not about two free-standing legs. This task's 2.04-4.08 " +
+                "nm leg separations are therefore a MODELLING choice bounded only by sterics.",
+        flag = "not found for the protruding case; the SAXS number read directly",
+        source = "Fischer et al., Nano Lett. 16:4282 (2016), PMC6544510"
     ),
     T72LiteratureRecord(
         question = "Is a TWO-legged normal standoff on a single-layer sheet an established motif?",
@@ -959,14 +1066,14 @@ private fun report(result: TriangulatedStandoffResult, file: File) {
         )
     }
     println()
-    println("azimuth sweep (deg, Sigma x^2, Sigma y^2, Phi, tangent, supply/demand, Pc loaded, Pc free, plane, margin, pass)")
+    println("azimuth sweep (deg, Sigma x^2, Sigma y^2, Phi, tangent, supply/demand, Pc loaded, Pc free, plane, margin, peak leg, per-leg Pc, verdict)")
     result.azimuthSweep.forEach {
         println(
-            "  %6.1f %8.4f %8.4f %7.4f %6.2f %6.2f %7.2f %7.2f %-7s %5.2f %s".format(
+            "  %6.1f %8.4f %8.4f %7.4f %6.2f %6.2f %7.2f %7.2f %-7s %5.2f %6.2f %6.2f  %s".format(
                 it.azimuthDegrees, it.alongSecondMoment, it.acrossSecondMoment,
                 it.couplingFactor, it.tangentAcceptable, it.supplyToDemandAcceptable,
                 it.loadedCriticalLoad, it.freeCriticalLoad, it.governingPlane,
-                it.bucklingMargin, it.allPredicatesPass
+                it.bucklingMargin, it.peakLegCompression, it.perLegCriticalLoad, it.verdict
             )
         )
     }
