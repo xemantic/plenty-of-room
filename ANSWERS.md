@@ -119,10 +119,25 @@ nucleotides, and the optimum is a scaffold excursion — but that a duplex **end
 termini**, so its base is a hinge with a lever arm bounded by the duplex's own radius, 1.0 nm, against the
 1.345 nm the design needs. A couple goes as the square, so the base is **3.34× short of a hard ceiling**, and
 the two links lie on a chord, leaving one axis free — **which is the axis the column buckles about**.
-**What survives is a crossover-hinge flexure instead: `E5g16`, a 12.24 nm = 36 bp guided arm on 16
-antiparallel crossovers**, tangent 33.68 pN/nm at §3's acceptable stroke and 38.68 at its desired one, 2.04 pN
-per crossover against a 10 pN allowable, **with no member in axial compression and no 90° junction anywhere in
-the design**. (`C-0029`, `CH-0039`, `CH-0040`.)
+**What survived at the time was a crossover-hinge flexure instead: `E5g16`, a 12.24 nm = 36 bp guided arm on
+16 antiparallel crossovers**, 2.04 pN per crossover against a 10 pN allowable, **with no member in axial
+compression and no 90° junction anywhere in the design**. (`C-0029`, `CH-0039`, `CH-0040`.)
+
+**Its `16` has since been withdrawn, and with it the `g16`/`a16` designs.**
+A crossover serves one *interface* every 32 bp = 10.88 nm, so a hinge line of `n` needs `(n−1)×10.88 nm` of
+collinear interface — **sixteen needs 163.2 nm, i.e. 4.08 tiles** — and the complete 32-phase census of a
+40 nm tile gives **four**, at every phase. Sixteen can be assembled from four interfaces of four, but
+interfaces compose in **series** and are worth 14.6 % of their count. The surviving hinge design is
+**`E5a1`, one crossover per flexure** (`C-0040`).
+Its arm was then solved as the elastica it is rather than composed: `C-0034`'s bracket premise — *"two errors
+run opposite ways and very nearly cancel"* — is **false**, both readings correct the same linear
+boundary-value problem and both stiffen it, so the exact composition lands **outside** their span
+(`C-0039`, `CH-0053`).
+And the tangent figures above were read against a ceiling owed at the **placement** stroke: `C-0023`'s
+40 pN/nm is exactly `1.2 × (100 pN / 3 nm)`, a declared linearity tolerance carrying the placement stroke
+inside it, so the same construction at §3's desired clause is **12 pN/nm, not 40** (`C-0049`). There is no
+upper bound on a coupling tangent anywhere in the acceptance stack; what binds beyond the working point is the
+per-path unzip allowable, `n·allowable/s`, which tightens as `1/s`.
 
 **The literature finding that started it stands.**
 No publication was found in which a duplex stands normal to a single-layer origami sheet as a stand-off:
@@ -247,6 +262,23 @@ That inversion, not any single number, is the Gen-1 design problem.
 
 **§3's *desired* ~10 nm stroke remains unreachable** at every height and every grafting density — `C-0001`'s
 one surviving headline, now confirmed against a third layer model and a fourth constraint set. (`C-0016`.)
+
+**And it is now settled, with a mechanism, by a bound that contains no coupling at all.**
+The stroke *is* the layer's compression — `s = L₀ − h`, so `s < L₀` identically — and §3 names no layer
+taller than 10 nm, which makes a 10 nm stroke on a 10 nm layer the statement `h = 0`.
+Over 66 states the best any device can do is a **kinematic ceiling of 9.790 nm** (1.02× short), a
+`C-0002` **validity ceiling of 8.959 nm** (1.12× — and it is `C-0018`'s own binding bias ceiling at
+10 nm), and a **dead-load stroke at 100 pN of 7.424 nm** (1.35×).
+A coupling can only *reduce* the last of these, so the free stroke is the supremum over **every**
+coupling — which is why this is a claim rather than a search.
+Across the catalogue **0 of 14 elements clear the desired stroke and 3 of 14 clear the acceptable one**,
+and the telling row is `C-0023`'s `E5`, which clears every coupling-side predicate at 10 nm and fails
+only on the **reach**.
+The established statement is therefore **unreachable on §3's own stack** — stronger than "with this
+catalogue", weaker than "in physics" — and the only escape is a **taller layer, 16.63–26.12 nm**, which
+is a specification question (`T-115`). Tile size, superstructure perforation and buffer cannot
+substitute, because none of them is a layer height. (`C-0050`; `C-0046`, `C-0039`, `C-0040`, `C-0041`
+agree from four independent directions.)
 
 **And the mean field the window is computed in is itself broken there.**
 The polymer Ginzburg parameter is 0.30–1.71 across the window and 1.30 at the design point, so the one-loop
@@ -377,7 +409,7 @@ Three DNA elements deliver it, and the eight substrate tethers `C-0021` needed l
 2.222 pN static share, and what breaks it is attachment-stiffness scatter at 0.883 pN per unit relative
 amplitude — even a coupling with every second path at 1 % of nominal stays 12× clear of unzip.
 So the crossover path never becomes binding for a distributed coupling, out of plane as well as in.
-**In plane the factor is different in kind**: a lateral tether collects nothing from the layer, so the peak is a *fraction* of its own tension — `η = 1.0000` aligned with the helices, up to 2.33 misaligned, and the staple layout is worth **exactly nothing** on the binding path (`C-0020`). **And the desired stroke puts a floor under the path count**: at 10 nm the mandated coupling delivers 333 pN, so the 10 pN unzip allowable alone needs **≥ 34 load paths**, a fourth and tightest route to 45 (`C-0025`). **And the per-path allowable is itself a function of the bonded length** (`C-0024`, `CH-0029`): 48 pN is Strunz's **30 bp** number, while a realistic 16 bp staple extension gives 34.8 pN and an 8 bp one 18.8. **What a tether bonds to is a sequence-design choice, and it is worth more than the sheet is** — the sheet's answer is pure arithmetic (a bond spanning `m` duplexes enters at exactly `1/m`, floor `1/D`, ceiling 720 pN), while the joint moves ×2.5 over the realistic 8–20 bp range, and **splitting a bond across two duplexes wins above a 14.3 bp total bonded length and loses below it**. |
+**In plane the factor is different in kind**: a lateral tether collects nothing from the layer, so the peak is a *fraction* of its own tension — `η = 1.0000` aligned with the helices, up to 2.33 misaligned, and the staple layout is worth **exactly nothing** on the binding path (`C-0020`). ~~**And the desired stroke puts a floor under the path count**: at 10 nm the mandated coupling delivers 333 pN, so the 10 pN unzip allowable alone needs **≥ 34 load paths**, a fourth and tightest route to 45 (`C-0025`).~~ **WITHDRAWN by `CH-0059`/`C-0049`.** The 34 is not a material property but a property of the **placement convention**: it is `33.333 × 10/10`, i.e. §3's *desired* stroke read on a coupling placed for its *acceptable* one, and the same allowable gives **10** under the other reading. The per-path ceiling it derives from is `n·allowable/s`, a bound on a **force**, so it *tightens* as `1/s` — 150 → 45 pN/nm at 45 paths, and 50 → **15** at the 15 paths `C-0041` shows the tile actually carries. **And the per-path allowable is itself a function of the bonded length** (`C-0024`, `CH-0029`): 48 pN is Strunz's **30 bp** number, while a realistic 16 bp staple extension gives 34.8 pN and an 8 bp one 18.8. **What a tether bonds to is a sequence-design choice, and it is worth more than the sheet is** — the sheet's answer is pure arithmetic (a bond spanning `m` duplexes enters at exactly `1/m`, floor `1/D`, ceiling 720 pN), while the joint moves ×2.5 over the realistic 8–20 bp range, and **splitting a bond across two duplexes wins above a 14.3 bp total bonded length and loses below it**. |
 | (g) | Does the tile stay flat? | **No, and the irreducible part is now a number.** Rigid *exactly* under a uniform load at any rigidity, and dishing 26–369 % of the stroke under every departure. The part that **cannot be designed away** is the electrostatic edge effect, now solved in 2-D (`C-0022`): the rim *gains* load rather than losing it, and the dishing it forces is **32 % of the stroke**, and **45 attachments is the count at which further attachments stop buying flatness, not the count at which the tile becomes flat** — under the solved load the dishing saturates at 0.149 of the stroke between 45 and 225 attachments (`CH-0034`) (21–44 % over the foundation sweep, 30–32 % on the discrete lattice). So the lever and the area-averaging sensor differ by **32 % of the stroke whatever the coupling does** — `C-0012`'s 11 %–369 % band was a statement about the number of attachments, which is a design choice; this is not. §4(g)'s own criterion for abandoning the rigid-plate picture is met, and met by a load nobody chose. |
 
 ---

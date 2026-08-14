@@ -1,0 +1,2976 @@
+{
+    "task": "T-99",
+    "leaf": "A8.2",
+    "conditions": {
+        "temperature": "300 K, k_BT = 4.141947 pN nm",
+        "medium": "aqueous 2 mM MgCl2",
+        "tile": "40 x 40 nm single-layer square-lattice Rothemund sheet, 15 duplexes",
+        "element": "C-0034's E5a on C-0039's inextensible two-spring elastica, free to draw in (H = 0), far anchorage A2 = the arm's own duplex end",
+        "maturity": "TRL 1-3; nothing here is measured and the motif is not demonstrated"
+    },
+    "parameters": {
+        "targetForce": 100.0,
+        "acceptableStroke": 3.0,
+        "desiredStroke": 10.0,
+        "mandate": 33.3333333,
+        "desiredPlacement": 10.0,
+        "complianceCeiling": 40.0,
+        "unzipAllowable": 10.0,
+        "hingeStiffness": 13.5294118,
+        "farStiffness": 78.2352941,
+        "bendingRigidity": 230.0,
+        "perInterfacePitch": 10.88,
+        "interfaceLineSupply": 640.0,
+        "crossoverInventoryBest": 56.0,
+        "crossoverInventoryWorst": 49.0,
+        "censusCeiling": 4.0,
+        "pathCountFloorAtDesiredStroke": 34.0,
+        "pathCountFloorAtAcceptableStroke": 10.0,
+        "stabilityFloorLow": 23.41,
+        "stabilityFloorHigh": 27.91
+    },
+    "bounds": [
+        {
+            "name": "hinge count admitted at CH-0029's path-count floor",
+            "value": 1.0,
+            "statement": "n h <= 56 intersected with n >= 34 at the desired stroke leaves h = 1. Fewer paths are forbidden by the allowable and longer hinge lines by the inventory, so the trade has ONE admissible hinge count at the desired stroke, before any elastica runs"
+        },
+        {
+            "name": "hinge-supplied arm ceiling, exact rotation [nm]",
+            "value": 5.38730419,
+            "statement": "the arm the WHOLE crossover inventory can place if the far anchorage carries nothing. A function of the PRODUCT n h and of nothing else, so it is CONSTANT along the whole trade curve — the degeneracy this task exists to test — and it is below §3's desired 10 nm stroke"
+        },
+        {
+            "name": "the same at small rotation [nm]",
+            "value": 4.76753729,
+            "statement": "sqrt(N k_theta/k_target), the delta -> 0 limit, which the exact reading bounds from above"
+        },
+        {
+            "name": "combined rigid-arm ceiling at 45 paths [nm]",
+            "value": 11.5932054,
+            "statement": "the same bound with C-0034's A2 anchorage restored: the restraint is N k_theta + n k_far, which grows with the PATH count. It is NOT degenerate, and it is what says which way the trade runs"
+        },
+        {
+            "name": "combined rigid-arm ceiling at 56 paths [nm]",
+            "value": 12.6574441,
+            "statement": "and at the largest path count the inventory admits at h = 1"
+        },
+        {
+            "name": "collinear interface supply [nm]",
+            "value": 640.0,
+            "statement": "14 interior interfaces of a 15-duplex sheet plus its 2 free edges, at 40 nm each"
+        },
+        {
+            "name": "the stroke C-0017's stability floor alone permits at 100 pN [nm]",
+            "value": 4.27167877,
+            "statement": "placement is k_c = F/delta and stability is k_c > |k_eff| = 23.41-27.91 pN/nm at the 10 nm layer in 2 mM, so the two together cap the stroke at 3.583-4.272 nm with no reference to what the coupling is made of"
+        }
+    ],
+    "ledger": [
+        {
+            "pathCount": 8,
+            "hingeCount": 1,
+            "crossoverDemand": 8,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 0.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 8,
+            "hingeCount": 2,
+            "crossoverDemand": 16,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 87.04,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 8,
+            "hingeCount": 3,
+            "crossoverDemand": 24,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 174.08,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 8,
+            "hingeCount": 4,
+            "crossoverDemand": 32,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 261.12,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 8,
+            "hingeCount": 6,
+            "crossoverDemand": 48,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 435.2,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": false
+        },
+        {
+            "pathCount": 10,
+            "hingeCount": 1,
+            "crossoverDemand": 10,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 0.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 10,
+            "hingeCount": 2,
+            "crossoverDemand": 20,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 108.8,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 10,
+            "hingeCount": 3,
+            "crossoverDemand": 30,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 217.6,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 10,
+            "hingeCount": 4,
+            "crossoverDemand": 40,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 326.4,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 10,
+            "hingeCount": 6,
+            "crossoverDemand": 60,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 544.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": false
+        },
+        {
+            "pathCount": 12,
+            "hingeCount": 1,
+            "crossoverDemand": 12,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 0.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 12,
+            "hingeCount": 2,
+            "crossoverDemand": 24,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 130.56,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 12,
+            "hingeCount": 3,
+            "crossoverDemand": 36,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 261.12,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 12,
+            "hingeCount": 4,
+            "crossoverDemand": 48,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 391.68,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 12,
+            "hingeCount": 6,
+            "crossoverDemand": 72,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 652.8,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": false
+        },
+        {
+            "pathCount": 14,
+            "hingeCount": 1,
+            "crossoverDemand": 14,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 0.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 14,
+            "hingeCount": 2,
+            "crossoverDemand": 28,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 152.32,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 14,
+            "hingeCount": 3,
+            "crossoverDemand": 42,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 304.64,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 14,
+            "hingeCount": 4,
+            "crossoverDemand": 56,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 456.96,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 14,
+            "hingeCount": 6,
+            "crossoverDemand": 84,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 761.6,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": false
+        },
+        {
+            "pathCount": 15,
+            "hingeCount": 1,
+            "crossoverDemand": 15,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 0.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 15,
+            "hingeCount": 2,
+            "crossoverDemand": 30,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 163.2,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 15,
+            "hingeCount": 3,
+            "crossoverDemand": 45,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 326.4,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 15,
+            "hingeCount": 4,
+            "crossoverDemand": 60,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 489.6,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 15,
+            "hingeCount": 6,
+            "crossoverDemand": 90,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 816.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": false
+        },
+        {
+            "pathCount": 19,
+            "hingeCount": 1,
+            "crossoverDemand": 19,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 0.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 19,
+            "hingeCount": 2,
+            "crossoverDemand": 38,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 206.72,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 19,
+            "hingeCount": 3,
+            "crossoverDemand": 57,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 413.44,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 19,
+            "hingeCount": 4,
+            "crossoverDemand": 76,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 620.16,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 19,
+            "hingeCount": 6,
+            "crossoverDemand": 114,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 1033.6,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": false
+        },
+        {
+            "pathCount": 25,
+            "hingeCount": 1,
+            "crossoverDemand": 25,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 0.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 25,
+            "hingeCount": 2,
+            "crossoverDemand": 50,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 272.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 25,
+            "hingeCount": 3,
+            "crossoverDemand": 75,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 544.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 25,
+            "hingeCount": 4,
+            "crossoverDemand": 100,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 816.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 25,
+            "hingeCount": 6,
+            "crossoverDemand": 150,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 1360.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": false
+        },
+        {
+            "pathCount": 28,
+            "hingeCount": 1,
+            "crossoverDemand": 28,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 0.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 28,
+            "hingeCount": 2,
+            "crossoverDemand": 56,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 304.64,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 28,
+            "hingeCount": 3,
+            "crossoverDemand": 84,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 609.28,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 28,
+            "hingeCount": 4,
+            "crossoverDemand": 112,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 913.92,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 28,
+            "hingeCount": 6,
+            "crossoverDemand": 168,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 1523.2,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": false
+        },
+        {
+            "pathCount": 34,
+            "hingeCount": 1,
+            "crossoverDemand": 34,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 0.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 34,
+            "hingeCount": 2,
+            "crossoverDemand": 68,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 369.92,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 34,
+            "hingeCount": 3,
+            "crossoverDemand": 102,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 739.84,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 34,
+            "hingeCount": 4,
+            "crossoverDemand": 136,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 1109.76,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 34,
+            "hingeCount": 6,
+            "crossoverDemand": 204,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 1849.6,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": false
+        },
+        {
+            "pathCount": 45,
+            "hingeCount": 1,
+            "crossoverDemand": 45,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 0.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 45,
+            "hingeCount": 2,
+            "crossoverDemand": 90,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 489.6,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 45,
+            "hingeCount": 3,
+            "crossoverDemand": 135,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 979.2,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 45,
+            "hingeCount": 4,
+            "crossoverDemand": 180,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 1468.8,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 45,
+            "hingeCount": 6,
+            "crossoverDemand": 270,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 2448.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": false
+        },
+        {
+            "pathCount": 50,
+            "hingeCount": 1,
+            "crossoverDemand": 50,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 0.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 50,
+            "hingeCount": 2,
+            "crossoverDemand": 100,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 544.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 50,
+            "hingeCount": 3,
+            "crossoverDemand": 150,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 1088.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 50,
+            "hingeCount": 4,
+            "crossoverDemand": 200,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 1632.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 50,
+            "hingeCount": 6,
+            "crossoverDemand": 300,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 2720.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": false
+        },
+        {
+            "pathCount": 56,
+            "hingeCount": 1,
+            "crossoverDemand": 56,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 0.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": true,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 56,
+            "hingeCount": 2,
+            "crossoverDemand": 112,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 609.28,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 56,
+            "hingeCount": 3,
+            "crossoverDemand": 168,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 1218.56,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 56,
+            "hingeCount": 4,
+            "crossoverDemand": 224,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 1827.84,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 56,
+            "hingeCount": 6,
+            "crossoverDemand": 336,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 3046.4,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": false
+        },
+        {
+            "pathCount": 60,
+            "hingeCount": 1,
+            "crossoverDemand": 60,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 0.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 60,
+            "hingeCount": 2,
+            "crossoverDemand": 120,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 652.8,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 60,
+            "hingeCount": 3,
+            "crossoverDemand": 180,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 1305.6,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 60,
+            "hingeCount": 4,
+            "crossoverDemand": 240,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 1958.4,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": true
+        },
+        {
+            "pathCount": 60,
+            "hingeCount": 6,
+            "crossoverDemand": 360,
+            "crossoverSupplyBest": 56,
+            "crossoverSupplyWorst": 49,
+            "lineDemand": 3264.0,
+            "lineSupply": 640.0,
+            "admittedByInventory": false,
+            "admittedByCensus": false
+        }
+    ],
+    "trade": [
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 8,
+            "hingeCount": 1,
+            "crossoverDemand": 8,
+            "hingeLineLength": 0.0,
+            "armLength": 4.79405378,
+            "armLengthBasePairs": 14.1001582,
+            "rigidHingeCap": 7.48986586,
+            "rigidArmBound": 5.3222025,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 62.7469091,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 12.5,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 3.67217985,
+            "usableStroke": 2.29695173,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 8,
+            "hingeCount": 2,
+            "crossoverDemand": 16,
+            "hingeLineLength": 10.88,
+            "armLength": 5.11203,
+            "armLengthBasePairs": 15.0353823,
+            "rigidHingeCap": 7.48986586,
+            "rigidArmBound": 5.6157563,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 57.0571512,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 12.5,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 3.15135265,
+            "usableStroke": 2.34137721,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 8,
+            "hingeCount": 3,
+            "crossoverDemand": 24,
+            "hingeLineLength": 21.76,
+            "armLength": 5.37234602,
+            "armLengthBasePairs": 15.8010177,
+            "rigidHingeCap": 7.48986586,
+            "rigidArmBound": 5.89536403,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 53.7131674,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 12.5,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.75464897,
+            "usableStroke": 2.38224922,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 8,
+            "hingeCount": 4,
+            "crossoverDemand": 32,
+            "hingeLineLength": 32.64,
+            "armLength": 5.58673877,
+            "armLengthBasePairs": 16.4315846,
+            "rigidHingeCap": 7.48986586,
+            "rigidArmBound": 6.16274334,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 51.5802225,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 12.5,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.44327086,
+            "usableStroke": 2.41730159,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 10,
+            "hingeCount": 1,
+            "crossoverDemand": 10,
+            "hingeLineLength": 0.0,
+            "armLength": 5.16337906,
+            "armLengthBasePairs": 15.186409,
+            "rigidHingeCap": 8.06899706,
+            "rigidArmBound": 5.81163307,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 56.8007445,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 10.0,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 3.37401435,
+            "usableStroke": 2.34344607,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 10,
+            "hingeCount": 2,
+            "crossoverDemand": 20,
+            "hingeLineLength": 10.88,
+            "armLength": 5.5311198,
+            "armLengthBasePairs": 16.2679994,
+            "rigidHingeCap": 8.06899706,
+            "rigidArmBound": 6.14850134,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 52.2882279,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 10.0,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.87030095,
+            "usableStroke": 2.40432382,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 10,
+            "hingeCount": 3,
+            "crossoverDemand": 30,
+            "hingeLineLength": 21.76,
+            "armLength": 5.82714346,
+            "armLengthBasePairs": 17.1386572,
+            "rigidHingeCap": 8.06899706,
+            "rigidArmBound": 6.46834688,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 49.6630529,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 10.0,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.49165768,
+            "usableStroke": 2.4572038,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 10,
+            "hingeCount": 4,
+            "crossoverDemand": 40,
+            "hingeLineLength": 32.64,
+            "armLength": 6.06740594,
+            "armLengthBasePairs": 17.8453116,
+            "rigidHingeCap": 8.06899706,
+            "rigidArmBound": 6.77344222,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 48.0051366,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 10.0,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.19777442,
+            "usableStroke": 2.50083815,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 12,
+            "hingeCount": 1,
+            "crossoverDemand": 12,
+            "hingeLineLength": 0.0,
+            "armLength": 5.50157386,
+            "armLengthBasePairs": 16.1810996,
+            "rigidHingeCap": 8.58355474,
+            "rigidArmBound": 6.26435696,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 52.9403889,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 8.33333333,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 3.14329822,
+            "usableStroke": 2.39310455,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 12,
+            "hingeCount": 2,
+            "crossoverDemand": 24,
+            "hingeLineLength": 10.88,
+            "armLength": 5.91358397,
+            "armLengthBasePairs": 17.392894,
+            "rigidHingeCap": 8.58355474,
+            "rigidArmBound": 6.63983356,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 49.1799022,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 8.33333333,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.65442528,
+            "usableStroke": 2.46865744,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 12,
+            "hingeCount": 3,
+            "crossoverDemand": 36,
+            "hingeLineLength": 21.76,
+            "armLength": 6.24066,
+            "armLengthBasePairs": 18.3548823,
+            "rigidHingeCap": 8.58355474,
+            "rigidArmBound": 6.99558057,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 47.0143867,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 8.33333333,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.29101523,
+            "usableStroke": 2.53194958,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 12,
+            "hingeCount": 4,
+            "crossoverDemand": 48,
+            "hingeLineLength": 32.64,
+            "armLength": 6.50296231,
+            "armLengthBasePairs": 19.1263597,
+            "rigidHingeCap": 8.58355474,
+            "rigidArmBound": 7.3343581,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 45.6595366,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 8.33333333,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.01159933,
+            "usableStroke": 2.58279987,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 14,
+            "hingeCount": 1,
+            "crossoverDemand": 14,
+            "hingeLineLength": 0.0,
+            "armLength": 5.81454434,
+            "armLengthBasePairs": 17.101601,
+            "rigidHingeCap": 9.04932082,
+            "rigidArmBound": 6.68728839,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 50.2272366,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 7.14285714,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.95764488,
+            "usableStroke": 2.44366263,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 14,
+            "hingeCount": 2,
+            "crossoverDemand": 28,
+            "hingeLineLength": 10.88,
+            "armLength": 6.26671189,
+            "armLengthBasePairs": 18.4315056,
+            "rigidHingeCap": 9.04932082,
+            "rigidArmBound": 7.09789565,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 46.9896372,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 7.14285714,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.48171355,
+            "usableStroke": 2.53256268,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 14,
+            "hingeCount": 3,
+            "crossoverDemand": 42,
+            "hingeLineLength": 21.76,
+            "armLength": 6.62140025,
+            "armLengthBasePairs": 19.4747066,
+            "rigidHingeCap": 9.04932082,
+            "rigidArmBound": 7.48633847,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 45.1436004,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 7.14285714,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.1313629,
+            "usableStroke": 2.6050814,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 14,
+            "hingeCount": 4,
+            "crossoverDemand": 56,
+            "hingeLineLength": 32.64,
+            "armLength": 6.9029577,
+            "armLengthBasePairs": 20.3028168,
+            "rigidHingeCap": 9.04932082,
+            "rigidArmBound": 7.85581388,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 43.99873,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 7.14285714,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 1.86417691,
+            "usableStroke": 2.66215029,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 15,
+            "hingeCount": 1,
+            "crossoverDemand": 15,
+            "hingeLineLength": 0.0,
+            "armLength": 5.96297903,
+            "armLengthBasePairs": 17.5381736,
+            "rigidHingeCap": 9.26728174,
+            "rigidArmBound": 6.88922027,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 49.150867,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 6.66666667,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.87737854,
+            "usableStroke": 2.46892342,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 15,
+            "hingeCount": 2,
+            "crossoverDemand": 30,
+            "hingeLineLength": 10.88,
+            "armLength": 6.43397376,
+            "armLengthBasePairs": 18.9234522,
+            "rigidHingeCap": 9.26728174,
+            "rigidArmBound": 7.31634386,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 46.1194888,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 6.66666667,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.40732069,
+            "usableStroke": 2.56409227,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 15,
+            "hingeCount": 3,
+            "crossoverDemand": 45,
+            "hingeLineLength": 21.76,
+            "armLength": 6.80143148,
+            "armLengthBasePairs": 20.0042102,
+            "rigidHingeCap": 9.26728174,
+            "rigidArmBound": 7.72016695,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 44.3993319,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 6.66666667,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.06284134,
+            "usableStroke": 2.64086493,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 19,
+            "hingeCount": 1,
+            "crossoverDemand": 19,
+            "hingeLineLength": 0.0,
+            "armLength": 6.5126656,
+            "armLengthBasePairs": 19.1548988,
+            "rigidHingeCap": 10.0607658,
+            "rigidArmBound": 7.64454573,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 46.0014051,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 5.26315789,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.61558781,
+            "usableStroke": 2.56832138,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 19,
+            "hingeCount": 2,
+            "crossoverDemand": 38,
+            "hingeLineLength": 10.88,
+            "armLength": 7.05241314,
+            "armLengthBasePairs": 20.7423916,
+            "rigidHingeCap": 10.0607658,
+            "rigidArmBound": 8.13229502,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 43.5699331,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 5.26315789,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.1658862,
+            "usableStroke": 2.68643483,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 25,
+            "hingeCount": 1,
+            "crossoverDemand": 25,
+            "hingeLineLength": 0.0,
+            "armLength": 7.23574104,
+            "armLengthBasePairs": 21.2815913,
+            "rigidHingeCap": 11.0782401,
+            "rigidArmBound": 8.65595537,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 43.1828198,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 4.0,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.33686206,
+            "usableStroke": 2.71000621,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 25,
+            "hingeCount": 2,
+            "crossoverDemand": 50,
+            "hingeLineLength": 10.88,
+            "armLength": 7.86414839,
+            "armLengthBasePairs": 23.1298482,
+            "rigidHingeCap": 11.0782401,
+            "rigidArmBound": 9.2227869,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 41.2850069,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 4.0,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 1.91097411,
+            "usableStroke": 2.85778613,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 28,
+            "hingeCount": 1,
+            "crossoverDemand": 28,
+            "hingeLineLength": 0.0,
+            "armLength": 7.56280664,
+            "armLengthBasePairs": 22.2435489,
+            "rigidHingeCap": 11.5305911,
+            "rigidArmBound": 9.11996159,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 42.2255827,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 3.57142857,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.22940386,
+            "usableStroke": 2.77724288,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 28,
+            "hingeCount": 2,
+            "crossoverDemand": 56,
+            "hingeLineLength": 10.88,
+            "armLength": 8.23079633,
+            "armLengthBasePairs": 24.2082245,
+            "rigidHingeCap": 11.5305911,
+            "rigidArmBound": 9.72249438,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 40.5087419,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 3.57142857,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 1.81333969,
+            "usableStroke": 2.9382755,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 34,
+            "hingeCount": 1,
+            "crossoverDemand": 34,
+            "hingeLineLength": 0.0,
+            "armLength": 8.16439083,
+            "armLengthBasePairs": 24.0129142,
+            "rigidHingeCap": 12.3520102,
+            "rigidArmBound": 9.98376301,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 40.8120233,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 2.94117647,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 2.05525926,
+            "usableStroke": 2.90496363,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 45,
+            "hingeCount": 1,
+            "crossoverDemand": 45,
+            "hingeLineLength": 0.0,
+            "armLength": 9.1311565,
+            "armLengthBasePairs": 26.8563427,
+            "rigidHingeCap": 13.6479418,
+            "rigidArmBound": 11.3991084,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 39.1816372,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 2.22222222,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 1.82492525,
+            "usableStroke": 3.11892034,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 50,
+            "hingeCount": 1,
+            "crossoverDemand": 50,
+            "hingeLineLength": 0.0,
+            "armLength": 9.52663803,
+            "armLengthBasePairs": 28.0195236,
+            "rigidHingeCap": 14.1707892,
+            "rigidArmBound": 11.98744,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 38.6711401,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 2.0,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 1.74443955,
+            "usableStroke": 3.20891087,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 56,
+            "hingeCount": 1,
+            "crossoverDemand": 56,
+            "hingeLineLength": 0.0,
+            "armLength": 9.9727716,
+            "armLengthBasePairs": 29.3316812,
+            "rigidHingeCap": 14.7561419,
+            "rigidArmBound": 12.6574441,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 38.1745885,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 1.78571429,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 1.66139736,
+            "usableStroke": 3.3118432,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "geometric reach (the tip cannot rise past its own arm)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 45,
+            "hingeCount": 16,
+            "crossoverDemand": 720,
+            "hingeLineLength": 163.2,
+            "armLength": 12.7198339,
+            "armLengthBasePairs": 37.4112763,
+            "rigidHingeCap": 13.6479418,
+            "rigidArmBound": 20.096541,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 36.4400043,
+            "secantAtTarget": 69.9399916,
+            "tangentAtTarget": 264.239839,
+            "forcePerPathAtWorking": 2.22222222,
+            "forcePerPathAtTarget": 15.5422204,
+            "hingeBondForceAtWorking": 0.354887844,
+            "usableStroke": 3.8767876,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "crossover inventory (n h = 720 > 56)",
+                "hinge-line census (h = 16 > 4 on a 40 nm line)",
+                "collinear interface line",
+                "unzip allowable at the target stroke"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "crossover inventory (n h = 720 > 56)",
+                "hinge-line census (h = 16 > 4 on a 40 nm line)",
+                "collinear interface line",
+                "unzip allowable at the target stroke",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P3 — secant 33.3333 pN/nm at 3 nm (the standing convention)",
+            "pathCount": 15,
+            "hingeCount": 16,
+            "crossoverDemand": 240,
+            "hingeLineLength": 163.2,
+            "armLength": 8.39500393,
+            "armLengthBasePairs": 24.691188,
+            "rigidHingeCap": 9.26728174,
+            "rigidArmBound": 11.7758753,
+            "secantAtWorking": 33.3333333,
+            "tangentAtWorking": 40.7524256,
+            "secantAtTarget": -1.0,
+            "tangentAtTarget": -1.0,
+            "forcePerPathAtWorking": 6.66666667,
+            "forcePerPathAtTarget": -1.0,
+            "hingeBondForceAtWorking": 0.699661229,
+            "usableStroke": 2.91119893,
+            "reachesTargetGeometrically": false,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "crossover inventory (n h = 240 > 56)",
+                "hinge-line census (h = 16 > 4 on a 40 nm line)",
+                "collinear interface line",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling at the working point"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "crossover inventory (n h = 240 > 56)",
+                "hinge-line census (h = 16 > 4 on a 40 nm line)",
+                "collinear interface line",
+                "geometric reach (the tip cannot rise past its own arm)",
+                "compliance ceiling over the stroke"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 8,
+            "hingeCount": 1,
+            "crossoverDemand": 8,
+            "hingeLineLength": 0.0,
+            "armLength": 11.3502355,
+            "armLengthBasePairs": 33.3830456,
+            "rigidHingeCap": -1.0,
+            "rigidArmBound": 12.2250515,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 63.0839274,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 63.0839274,
+            "forcePerPathAtWorking": 12.5,
+            "forcePerPathAtTarget": 12.5,
+            "hingeBondForceAtWorking": 5.73650364,
+            "usableStroke": 9.60173792,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "compliance ceiling at the working point",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "compliance ceiling over the stroke",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 8,
+            "hingeCount": 2,
+            "crossoverDemand": 16,
+            "hingeLineLength": 10.88,
+            "armLength": 11.6713038,
+            "armLengthBasePairs": 34.3273642,
+            "rigidHingeCap": -1.0,
+            "rigidArmBound": 12.6227338,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 50.106441,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 50.106441,
+            "forcePerPathAtWorking": 12.5,
+            "forcePerPathAtTarget": 12.5,
+            "hingeBondForceAtWorking": 4.77906271,
+            "usableStroke": 9.76269521,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "compliance ceiling at the working point",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "compliance ceiling over the stroke",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 8,
+            "hingeCount": 3,
+            "crossoverDemand": 24,
+            "hingeLineLength": 21.76,
+            "armLength": 11.9432154,
+            "armLengthBasePairs": 35.1271042,
+            "rigidHingeCap": -1.0,
+            "rigidArmBound": 13.0147749,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 43.7660143,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 43.7660143,
+            "forcePerPathAtWorking": 12.5,
+            "forcePerPathAtTarget": 12.5,
+            "hingeBondForceAtWorking": 4.08744658,
+            "usableStroke": 9.8930742,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "compliance ceiling at the working point",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "compliance ceiling over the stroke",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 8,
+            "hingeCount": 4,
+            "crossoverDemand": 32,
+            "hingeLineLength": 32.64,
+            "armLength": 12.1694913,
+            "armLengthBasePairs": 35.7926214,
+            "rigidHingeCap": -1.0,
+            "rigidArmBound": 13.4001248,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 40.1621869,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 40.1621869,
+            "forcePerPathAtWorking": 12.5,
+            "forcePerPathAtTarget": 12.5,
+            "hingeBondForceAtWorking": 3.56543943,
+            "usableStroke": 9.99477714,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "compliance ceiling at the working point",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "compliance ceiling over the stroke",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 10,
+            "hingeCount": 1,
+            "crossoverDemand": 10,
+            "hingeLineLength": 0.0,
+            "armLength": 11.7248791,
+            "armLengthBasePairs": 34.4849384,
+            "rigidHingeCap": -1.0,
+            "rigidArmBound": 12.8961316,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 50.5700025,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 50.5700025,
+            "forcePerPathAtWorking": 10.0,
+            "forcePerPathAtTarget": 10.0,
+            "hingeBondForceAtWorking": 5.44282333,
+            "usableStroke": 9.75200879,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "compliance ceiling at the working point",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "compliance ceiling over the stroke",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 10,
+            "hingeCount": 2,
+            "crossoverDemand": 20,
+            "hingeLineLength": 10.88,
+            "armLength": 12.1333345,
+            "armLengthBasePairs": 35.6862781,
+            "rigidHingeCap": -1.0,
+            "rigidArmBound": 13.3793638,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 40.720464,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 40.720464,
+            "forcePerPathAtWorking": 10.0,
+            "forcePerPathAtTarget": 10.0,
+            "hingeBondForceAtWorking": 4.47229852,
+            "usableStroke": 9.97722114,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "compliance ceiling at the working point",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "compliance ceiling over the stroke",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 10,
+            "hingeCount": 3,
+            "crossoverDemand": 30,
+            "hingeLineLength": 21.76,
+            "armLength": 12.4648136,
+            "armLengthBasePairs": 36.6612164,
+            "rigidHingeCap": -1.0,
+            "rigidArmBound": 13.8514206,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 36.0259113,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 36.0259113,
+            "forcePerPathAtWorking": 10.0,
+            "forcePerPathAtTarget": 10.0,
+            "hingeBondForceAtWorking": 3.78692822,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 10,
+            "hingeCount": 4,
+            "crossoverDemand": 40,
+            "hingeLineLength": 32.64,
+            "armLength": 12.7323976,
+            "armLengthBasePairs": 37.4482282,
+            "rigidHingeCap": -1.0,
+            "rigidArmBound": 14.3119968,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 33.3991922,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 33.3991922,
+            "forcePerPathAtWorking": 10.0,
+            "forcePerPathAtTarget": 10.0,
+            "hingeBondForceAtWorking": 3.27845695,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 12,
+            "hingeCount": 1,
+            "crossoverDemand": 12,
+            "hingeLineLength": 0.0,
+            "armLength": 12.0925678,
+            "armLengthBasePairs": 35.5663758,
+            "rigidHingeCap": 15.4884328,
+            "rigidArmBound": 13.5489729,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 42.7725261,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 42.7725261,
+            "forcePerPathAtWorking": 8.33333333,
+            "forcePerPathAtTarget": 8.33333333,
+            "hingeBondForceAtWorking": 5.18983158,
+            "usableStroke": 9.9174351,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": false,
+            "insideCeilingOverStroke": false,
+            "bindingAtWorkingPointReading": [
+                "compliance ceiling at the working point",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "compliance ceiling over the stroke",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 12,
+            "hingeCount": 2,
+            "crossoverDemand": 24,
+            "hingeLineLength": 10.88,
+            "armLength": 12.5814856,
+            "armLengthBasePairs": 37.0043695,
+            "rigidHingeCap": 15.4884328,
+            "rigidArmBound": 14.1091564,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 34.8969974,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 34.8969974,
+            "forcePerPathAtWorking": 8.33333333,
+            "forcePerPathAtTarget": 8.33333333,
+            "hingeBondForceAtWorking": 4.21618033,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 12,
+            "hingeCount": 3,
+            "crossoverDemand": 36,
+            "hingeLineLength": 21.76,
+            "armLength": 12.9655405,
+            "armLengthBasePairs": 38.1339426,
+            "rigidHingeCap": 15.4884328,
+            "rigidArmBound": 14.6528772,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 31.2080962,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 31.2080962,
+            "forcePerPathAtWorking": 8.33333333,
+            "forcePerPathAtTarget": 8.33333333,
+            "hingeBondForceAtWorking": 3.54117592,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 12,
+            "hingeCount": 4,
+            "crossoverDemand": 48,
+            "hingeLineLength": 32.64,
+            "armLength": 13.2684296,
+            "armLengthBasePairs": 39.0247929,
+            "rigidHingeCap": 15.4884328,
+            "rigidArmBound": 15.1806387,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 29.1686769,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 29.1686769,
+            "forcePerPathAtWorking": 8.33333333,
+            "forcePerPathAtTarget": 8.33333333,
+            "hingeBondForceAtWorking": 3.04729286,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 14,
+            "hingeCount": 1,
+            "crossoverDemand": 14,
+            "hingeLineLength": 0.0,
+            "armLength": 12.4508958,
+            "armLengthBasePairs": 36.6202818,
+            "rigidHingeCap": 16.0895177,
+            "rigidArmBound": 14.1810037,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 37.4886825,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 37.4886825,
+            "forcePerPathAtWorking": 7.14285714,
+            "forcePerPathAtTarget": 7.14285714,
+            "hingeBondForceAtWorking": 4.96953794,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 14,
+            "hingeCount": 2,
+            "crossoverDemand": 28,
+            "hingeLineLength": 10.88,
+            "armLength": 13.0138451,
+            "armLengthBasePairs": 38.2760149,
+            "rigidHingeCap": 16.0895177,
+            "rigidArmBound": 14.8113103,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 30.9542066,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 30.9542066,
+            "forcePerPathAtWorking": 7.14285714,
+            "forcePerPathAtTarget": 7.14285714,
+            "hingeBondForceAtWorking": 3.99837664,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 14,
+            "hingeCount": 3,
+            "crossoverDemand": 42,
+            "hingeLineLength": 21.76,
+            "armLength": 13.4446652,
+            "armLengthBasePairs": 39.543133,
+            "rigidHingeCap": 16.0895177,
+            "rigidArmBound": 15.4201936,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 27.93468,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 27.93468,
+            "forcePerPathAtWorking": 7.14285714,
+            "forcePerPathAtTarget": 7.14285714,
+            "hingeBondForceAtWorking": 3.33548003,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 14,
+            "hingeCount": 4,
+            "crossoverDemand": 56,
+            "hingeLineLength": 32.64,
+            "armLength": 13.7781587,
+            "armLengthBasePairs": 40.5239963,
+            "rigidHingeCap": 16.0895177,
+            "rigidArmBound": 16.0089675,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 26.2817679,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 26.2817679,
+            "forcePerPathAtWorking": 7.14285714,
+            "forcePerPathAtTarget": 7.14285714,
+            "hingeBondForceAtWorking": 2.85603629,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 15,
+            "hingeCount": 1,
+            "crossoverDemand": 15,
+            "hingeLineLength": 0.0,
+            "armLength": 12.6262189,
+            "armLengthBasePairs": 37.135938,
+            "rigidHingeCap": 16.3749527,
+            "rigidArmBound": 14.4891173,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 35.4440848,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 35.4440848,
+            "forcePerPathAtWorking": 6.66666667,
+            "forcePerPathAtTarget": 6.66666667,
+            "hingeBondForceAtWorking": 4.86965205,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 15,
+            "hingeCount": 2,
+            "crossoverDemand": 30,
+            "hingeLineLength": 10.88,
+            "armLength": 13.2240022,
+            "armLengthBasePairs": 38.8941241,
+            "rigidHingeCap": 16.3749527,
+            "rigidArmBound": 15.1523538,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 29.4278328,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 29.4278328,
+            "forcePerPathAtWorking": 6.66666667,
+            "forcePerPathAtTarget": 6.66666667,
+            "hingeBondForceAtWorking": 3.90105434,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 15,
+            "hingeCount": 3,
+            "crossoverDemand": 45,
+            "hingeLineLength": 21.76,
+            "armLength": 13.6763508,
+            "armLengthBasePairs": 40.2245612,
+            "rigidHingeCap": 16.3749527,
+            "rigidArmBound": 15.7918099,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 26.6640646,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 26.6640646,
+            "forcePerPathAtWorking": 6.66666667,
+            "forcePerPathAtTarget": 6.66666667,
+            "hingeBondForceAtWorking": 3.2444767,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 19,
+            "hingeCount": 1,
+            "crossoverDemand": 19,
+            "hingeLineLength": 0.0,
+            "armLength": 13.3013368,
+            "armLengthBasePairs": 39.1215789,
+            "rigidHingeCap": 17.4327249,
+            "rigidArmBound": 15.6712399,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 29.6515198,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 29.6515198,
+            "forcePerPathAtWorking": 5.26315789,
+            "forcePerPathAtTarget": 5.26315789,
+            "hingeBondForceAtWorking": 4.52450039,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 19,
+            "hingeCount": 2,
+            "crossoverDemand": 38,
+            "hingeLineLength": 10.88,
+            "armLength": 14.0260323,
+            "armLengthBasePairs": 41.2530363,
+            "rigidHingeCap": 17.4327249,
+            "rigidArmBound": 16.4548791,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 25.096072,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 25.096072,
+            "forcePerPathAtWorking": 5.26315789,
+            "forcePerPathAtTarget": 5.26315789,
+            "hingeBondForceAtWorking": 3.57094253,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 25,
+            "hingeCount": 1,
+            "crossoverDemand": 25,
+            "hingeLineLength": 0.0,
+            "armLength": 14.2396709,
+            "armLengthBasePairs": 41.8813849,
+            "rigidHingeCap": 18.8229401,
+            "rigidArmBound": 17.3101912,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 24.736614,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 24.736614,
+            "forcePerPathAtWorking": 4.0,
+            "forcePerPathAtTarget": 4.0,
+            "hingeBondForceAtWorking": 4.12513936,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 25,
+            "hingeCount": 2,
+            "crossoverDemand": 50,
+            "hingeLineLength": 10.88,
+            "armLength": 15.1255251,
+            "armLengthBasePairs": 44.4868384,
+            "rigidHingeCap": 18.8229401,
+            "rigidArmBound": 18.2494322,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 21.4040298,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 21.4040298,
+            "forcePerPathAtWorking": 4.0,
+            "forcePerPathAtTarget": 4.0,
+            "hingeBondForceAtWorking": 3.19964815,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 28,
+            "hingeCount": 1,
+            "crossoverDemand": 28,
+            "hingeLineLength": 0.0,
+            "armLength": 14.6788855,
+            "armLengthBasePairs": 43.1731926,
+            "rigidHingeCap": 19.4504322,
+            "rigidArmBound": 18.0781316,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 23.1315266,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 23.1315266,
+            "forcePerPathAtWorking": 3.57142857,
+            "forcePerPathAtTarget": 3.57142857,
+            "hingeBondForceAtWorking": 3.96272138,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 28,
+            "hingeCount": 2,
+            "crossoverDemand": 56,
+            "hingeLineLength": 10.88,
+            "armLength": 15.6353813,
+            "armLengthBasePairs": 45.9864156,
+            "rigidHingeCap": 19.4504322,
+            "rigidArmBound": 19.0870523,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 20.1930057,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 20.1930057,
+            "forcePerPathAtWorking": 3.57142857,
+            "forcePerPathAtTarget": 3.57142857,
+            "hingeBondForceAtWorking": 3.05159764,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 34,
+            "hingeCount": 1,
+            "crossoverDemand": 34,
+            "hingeLineLength": 0.0,
+            "armLength": 15.5057451,
+            "armLengthBasePairs": 45.6051327,
+            "rigidHingeCap": 20.6014874,
+            "rigidArmBound": 19.5280842,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 20.8250533,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 20.8250533,
+            "forcePerPathAtWorking": 2.94117647,
+            "forcePerPathAtTarget": 2.94117647,
+            "hingeBondForceAtWorking": 3.69000463,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 45,
+            "hingeCount": 1,
+            "crossoverDemand": 45,
+            "hingeLineLength": 0.0,
+            "armLength": 16.8747009,
+            "armLengthBasePairs": 49.6314733,
+            "rigidHingeCap": 22.4411444,
+            "rigidArmBound": 21.9468208,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 18.2639965,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 18.2639965,
+            "forcePerPathAtWorking": 2.22222222,
+            "forcePerPathAtTarget": 2.22222222,
+            "hingeBondForceAtWorking": 3.31229768,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 50,
+            "hingeCount": 1,
+            "crossoverDemand": 50,
+            "hingeLineLength": 0.0,
+            "armLength": 17.4457894,
+            "armLengthBasePairs": 51.3111454,
+            "rigidHingeCap": 23.1897457,
+            "rigidArmBound": 22.9640676,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 17.4848251,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 17.4848251,
+            "forcePerPathAtWorking": 2.0,
+            "forcePerPathAtTarget": 2.0,
+            "hingeBondForceAtWorking": 3.17606467,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        },
+        {
+            "placement": "P10 — secant 10 pN/nm at 10 nm (C-0017's arithmetic on §3's desired clause)",
+            "pathCount": 56,
+            "hingeCount": 1,
+            "crossoverDemand": 56,
+            "hingeLineLength": 0.0,
+            "armLength": 18.0961969,
+            "armLengthBasePairs": 53.2241087,
+            "rigidHingeCap": 24.0313483,
+            "rigidArmBound": 24.1291437,
+            "secantAtWorking": 10.0,
+            "tangentAtWorking": 16.7376174,
+            "secantAtTarget": 10.0,
+            "tangentAtTarget": 16.7376174,
+            "forcePerPathAtWorking": 1.78571429,
+            "forcePerPathAtTarget": 1.78571429,
+            "hingeBondForceAtWorking": 3.03335309,
+            "usableStroke": 10.0,
+            "reachesTargetGeometrically": true,
+            "insideCeilingAtWorking": true,
+            "insideCeilingOverStroke": true,
+            "bindingAtWorkingPointReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "bindingAtWholeStrokeReading": [
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "feasibleAtWorkingPointReading": false,
+            "feasibleAtWholeStrokeReading": false
+        }
+    ],
+    "regions": [
+        {
+            "placement": "P3",
+            "ceilingReading": "WORKING_POINT",
+            "candidatePoints": 31,
+            "feasiblePoints": 0,
+            "bestUsableStroke": 3.8767876,
+            "bestPathCount": 45,
+            "bestHingeCount": 16,
+            "bindingConstraintAtTheBest": [
+                "crossover inventory (n h = 720 > 56)",
+                "hinge-line census (h = 16 > 4 on a 40 nm line)",
+                "collinear interface line",
+                "unzip allowable at the target stroke"
+            ],
+            "statement": "EMPTY at §3's desired 10 nm stroke; the best point reaches 3.877 nm inside the ceiling at 45 paths and 16 crossovers"
+        },
+        {
+            "placement": "P3",
+            "ceilingReading": "WHOLE_STROKE",
+            "candidatePoints": 31,
+            "feasiblePoints": 0,
+            "bestUsableStroke": 3.8767876,
+            "bestPathCount": 45,
+            "bestHingeCount": 16,
+            "bindingConstraintAtTheBest": [
+                "crossover inventory (n h = 720 > 56)",
+                "hinge-line census (h = 16 > 4 on a 40 nm line)",
+                "collinear interface line",
+                "unzip allowable at the target stroke",
+                "compliance ceiling over the stroke"
+            ],
+            "statement": "EMPTY at §3's desired 10 nm stroke; the best point reaches 3.877 nm inside the ceiling at 45 paths and 16 crossovers"
+        },
+        {
+            "placement": "P10",
+            "ceilingReading": "WORKING_POINT",
+            "candidatePoints": 29,
+            "feasiblePoints": 0,
+            "bestUsableStroke": 10.0,
+            "bestPathCount": 10,
+            "bestHingeCount": 3,
+            "bindingConstraintAtTheBest": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "statement": "EMPTY at §3's desired 10 nm stroke; the best point reaches 10.000 nm inside the ceiling at 10 paths and 3 crossovers"
+        },
+        {
+            "placement": "P10",
+            "ceilingReading": "WHOLE_STROKE",
+            "candidatePoints": 29,
+            "feasiblePoints": 0,
+            "bestUsableStroke": 10.0,
+            "bestPathCount": 10,
+            "bestHingeCount": 3,
+            "bindingConstraintAtTheBest": [
+                "unzip allowable at the working point",
+                "unzip allowable at the target stroke",
+                "C-0017 stability floor (the placement itself is below |k_eff|)"
+            ],
+            "statement": "EMPTY at §3's desired 10 nm stroke; the best point reaches 10.000 nm inside the ceiling at 10 paths and 3 crossovers"
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "the placed arm at 45 paths on one crossover",
+            "parameter": "RK4 steps",
+            "value": 200.0,
+            "result": 9.1311565,
+            "departure": 0.0145729448
+        },
+        {
+            "quantity": "the usable stroke there",
+            "parameter": "RK4 steps",
+            "value": 200.0,
+            "result": 3.11892034,
+            "departure": 0.0
+        },
+        {
+            "quantity": "the placed arm at 45 paths on one crossover",
+            "parameter": "RK4 steps",
+            "value": 400.0,
+            "result": 9.1311565,
+            "departure": 0.0145729448
+        },
+        {
+            "quantity": "the usable stroke there",
+            "parameter": "RK4 steps",
+            "value": 400.0,
+            "result": 3.11892034,
+            "departure": 0.0
+        },
+        {
+            "quantity": "the placed arm at 45 paths on one crossover",
+            "parameter": "RK4 steps",
+            "value": 800.0,
+            "result": 9.1311565,
+            "departure": 0.0145729448
+        },
+        {
+            "quantity": "the usable stroke there",
+            "parameter": "RK4 steps",
+            "value": 800.0,
+            "result": 3.11892034,
+            "departure": 0.0
+        },
+        {
+            "quantity": "the usable stroke of a 9.5 nm arm",
+            "parameter": "scan samples",
+            "value": 30.0,
+            "result": 3.73222918,
+            "departure": 0.0
+        },
+        {
+            "quantity": "the usable stroke of a 9.5 nm arm",
+            "parameter": "scan samples",
+            "value": 60.0,
+            "result": 3.73222918,
+            "departure": 0.0
+        },
+        {
+            "quantity": "the usable stroke of a 9.5 nm arm",
+            "parameter": "scan samples",
+            "value": 90.0,
+            "result": 3.73222918,
+            "departure": 0.0
+        },
+        {
+            "quantity": "the usable stroke of a 9.5 nm arm",
+            "parameter": "scan samples",
+            "value": 120.0,
+            "result": 3.73222918,
+            "departure": 0.0
+        },
+        {
+            "quantity": "the usable stroke of a 9.5 nm arm",
+            "parameter": "scan samples",
+            "value": 240.0,
+            "result": 3.73222918,
+            "departure": 0.0
+        },
+        {
+            "quantity": "the rigid-arm ceiling reproduces the mandate",
+            "parameter": "restraint [pN nm/rad]",
+            "value": 757.6,
+            "result": 33.3333333,
+            "departure": 0.0
+        },
+        {
+            "quantity": "the rigid-arm ceiling reproduces the mandate",
+            "parameter": "restraint [pN nm/rad]",
+            "value": 4278.2,
+            "result": 33.3333333,
+            "departure": 0.0
+        },
+        {
+            "quantity": "the rigid-arm ceiling reproduces the mandate",
+            "parameter": "restraint [pN nm/rad]",
+            "value": 20000.0,
+            "result": 33.3333333,
+            "departure": 0.0
+        }
+    ],
+    "reproductions": [
+        {
+            "name": "C-0039's E5a16 arm [nm]",
+            "expected": 12.7198,
+            "obtained": 12.7198339,
+            "departure": 2.66791412E-6
+        },
+        {
+            "name": "C-0039's tangent at the acceptable stroke",
+            "expected": 36.44,
+            "obtained": 36.4400043,
+            "departure": 1.18991103E-7
+        },
+        {
+            "name": "C-0039's secant at the desired stroke",
+            "expected": 69.94,
+            "obtained": 69.9399916,
+            "departure": 1.20083758E-7
+        },
+        {
+            "name": "C-0039's tangent at the desired stroke",
+            "expected": 264.24,
+            "obtained": 264.239839,
+            "departure": 6.08722713E-7
+        },
+        {
+            "name": "C-0039's usable stroke [nm]",
+            "expected": 3.877,
+            "obtained": 3.8767876,
+            "departure": 5.47839439E-5
+        },
+        {
+            "name": "C-0039's 15-path arm [nm]",
+            "expected": 8.4,
+            "obtained": 8.39500393,
+            "departure": 5.94770639E-4
+        },
+        {
+            "name": "C-0039's arm cap at 45 paths [nm]",
+            "expected": 13.648,
+            "obtained": 13.6479418,
+            "departure": 4.26445196E-6
+        },
+        {
+            "name": "C-0040's hinge-line census on a 40 nm line",
+            "expected": 4.0,
+            "obtained": 4.0,
+            "departure": 0.0
+        },
+        {
+            "name": "C-0040's line demand for sixteen crossovers [nm]",
+            "expected": 163.2,
+            "obtained": 163.2,
+            "departure": 0.0
+        },
+        {
+            "name": "C-0041's / CH-0029's path-count floor at the desired stroke",
+            "expected": 34.0,
+            "obtained": 34.0,
+            "departure": 0.0
+        },
+        {
+            "name": "C-0009's crossover hinge constant [pN nm/rad]",
+            "expected": 13.5294118,
+            "obtained": 13.5294118,
+            "departure": 2.60869566E-9
+        },
+        {
+            "name": "C-0029's two-terminus couple [pN nm/rad]",
+            "expected": 78.2352941,
+            "obtained": 78.2352941,
+            "departure": 0.0
+        },
+        {
+            "name": "C-0017's mandate [pN/nm]",
+            "expected": 33.3333333,
+            "obtained": 33.3333333,
+            "departure": 0.0
+        },
+        {
+            "name": "C-0015's inventory at the ten eight-column phases",
+            "expected": 56.0,
+            "obtained": 56.0,
+            "departure": 0.0
+        }
+    ],
+    "verdict": {
+        "the trade is degenerate on its own axis": "The hinge-supplied arm ceiling depends on the PRODUCT n h and on nothing else, so it is 5.387 nm at EVERY point of the n h = 56 trade curve — a flexure array cannot buy arm length by moving crossovers from one hinge to another. What is NOT degenerate is C-0034's far anchorage, whose couple is per-FLEXURE: the array's restraint is N k_theta + n k_far, so the placed arm GROWS with the path count and the trade runs OPPOSITE to the premise of the task. Fewer, longer flexures are strictly worse than more, shorter ones.",
+        "the desired stroke, at both readings of C-0023's ceiling": "P3 (the standing placement): 0 of 31 points at the WORKING-POINT reading and 0 of 31 at the WHOLE-STROKE reading. P10 (§3's own arithmetic for the desired clause): 0 and 0. The best point anywhere reaches 3.877 nm inside the ceiling. T-107's question does not move this verdict: the desired stroke fails at BOTH readings, and it fails on the geometry and the allowable before the ceiling is consulted.",
+        "why P10 is not an escape": "Placing for §3's desired clause at its own force gives k_c = 10.000 pN/nm, which is 2.34-2.79x BELOW C-0017's stability floor at the 10 nm layer in 2 mM. Stability and placement together cap the stroke at 3.583-4.272 nm at 100 pN, with no reference to the coupling's construction at all.",
+        "points at which the placement cannot be discharged at all": "none",
+        "what the branch DOES deliver": "§3's ACCEPTABLE 3 nm stroke is met with margin: 3 points of the ledger-admitted sweep clear it, the best at 56 paths and 1 crossovers with a usable stroke of 3.312 nm, an arm of 9.973 nm = 29.3 bp and 1.786 pN per path against the 10 pN unzip allowable."
+    }
+}

@@ -60,6 +60,10 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=anchoring.HingeLineCensusStudyKt      # T-81, how many crossovers a hinge line carries
 ./gradlew study -Pstudy=anchoring.FlexureArrayPackingStudyKt  # T-96, the flexure array in plan view
 ./gradlew study -Pstudy=anchoring.PairedPerpendicularJunctionStudyKt # T-97, two 90 degree junctions on one duplex
+./gradlew study -Pstudy=anchoring.FlexureCountHingeTradeStudyKt      # T-99, path count against hinge count
+./gradlew study -Pstudy=anchoring.TrussCapStudyKt                     # T-106, the truss cap as a solved body
+./gradlew study -Pstudy=coupling.SingleColumnFlatnessStudyKt          # T-101, flatness at fifteen attachments
+./gradlew study -Pstudy=synthesis.DesiredStrokeReachStudyKt           # T-107/T-108, the ceiling's stroke and the reach of the desired stroke
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.

@@ -3864,3 +3864,398 @@ corrected here rather than quietly rewritten.
 **The rule this yields: read the filed claim, never the report, before writing anything down.**
 The report is a summary by an agent that may still be working; the claim is the artifact. Every agent used `P-16`'s `--drop-file` on a sibling's mid-TDD file,
 two of them on three files at once; the final run of each needed no drops at all.
+
+## Iteration 7 — `T-99`: the trade is not a trade, and it runs the wrong way
+
+**The question `C-0040` left open was the flexure branch's last escape to §3's desired stroke.**
+Iteration 6 closed the 45-path crossover-hinge flexure three ways — a 16-crossover hinge line that
+does not exist (`C-0040`), an array that does not pack (`C-0041`), and a usable stroke of 3.877 nm
+under exact rotation (`C-0039`) — and every one of those is a *count* or a *length*.
+So the natural move, and `C-0040`'s own open item 2, was to trade path count against hinge count:
+fewer flexures, each owning a longer stretch of the tile's 640 nm of interface line.
+
+**The cheap bound closed the premise in one division, and the second one explained why.**
+A hinge line lies on **one** interface, so `n·h` crossovers come out of `C-0015`'s counted 49–56.
+Intersected with the 34-path floor at the desired stroke that leaves **`h = 1`**: fewer paths are
+forbidden by the allowable and longer lines by the inventory, so at the desired stroke the trade has
+exactly one admissible hinge count and there is nothing to trade.
+The second bound says why in general.
+A rigid-armed array of total restraint `Σk` places at `θ tan θ = k_target δ²/Σk`, `r = δ/sin θ`, and
+on the hinge budget alone `Σk = N k_θ` — **a function of the PRODUCT `n·h` and of nothing else**.
+So the arm is **5.387 nm at all eight splits of `n·h = 56`**: a flexure array cannot convert
+crossovers into arm length by moving them between hinges. **The trade is degenerate on its own axis.**
+
+**What breaks the degeneracy runs the other way, and that was the surprise.**
+`C-0034`'s far anchorage is a **per-flexure** couple — the arm's own duplex end, 78.24 pN·nm/rad,
+which is 5.78 crossovers' worth — so the array's restraint is `N k_θ + n k_far` and the **placed arm
+grows with the path count**: 6.903 nm at `(14, 4)`, 8.231 at `(28, 2)`, **9.973 at `(56, 1)`**.
+*Fewer, longer* is strictly worse than *more, shorter*, at every step, by 1.45× in arm and 1.36× in
+stroke across the curve.
+At the best point the anchorage carries **85 %** of the restraint: the element the branch is named
+after contributes the minority of its own stiffness.
+
+**The verdict, at both readings of a ceiling that turned out not to matter.**
+`C-0023`'s 40 pN/nm is declared at no stroke, which is the concurrent `T-107`'s subject, so both
+readings were carried. **0 of 31 points reach §3's desired stroke, at both.** `T-107` cannot move it:
+under the standing placement the binding constraint at every ledger-admitted point is **geometric
+reach** — a tip cannot rise past its own arm — and the ceiling is never consulted.
+The best point of the whole space, `(56, 1)`, has an arm of 9.973 nm and misses the desired stroke by
+0.027 nm geometrically and by 3.02× on the usable stroke. Only **3** of 31 points clear even §3's
+*acceptable* stroke, all at `h = 1`, and they spend **80–100 %** of the tile's crossovers to do it.
+
+**And running the placement §3's own arithmetic actually asks for produced the iteration's real
+finding.** Every claim in the corpus reads the desired stroke on a coupling *placed for the
+acceptable one* — 33.3333 pN/nm, which at full stroke must deliver 333 pN, and which `C-0039` finds
+really needs 699. `C-0017`'s arithmetic says the desired clause's coupling is `100/10 = 10 pN/nm`, a
+**different device**. Built, it passes everything the flexure branch owns: arms of 11.4–18.1 nm,
+12 of 29 points reaching 10 nm inside the ceiling and inside the unzip allowable.
+**And `C-0017`'s stability floor refuses all of them** — `|k_eff| = 23.41–27.91 pN/nm` at the 10 nm
+layer in 2 mM, against a 10 pN/nm placement.
+Composing the two clauses of `C-0017` gives a bound that names no element at all:
+
+&nbsp;&nbsp;&nbsp;&nbsp;`δ ≤ F/|k_eff|` → **3.58–4.27 nm at §3's 100 pN**.
+
+That is `CH-0059`, and it relocates the failure from the coupling to the actuator.
+It also demotes the **34-path floor**, quoted in three claims as though it were a property of the
+material: it is `33.333 × 10/10`, a property of a placement convention, and the same allowable gives
+**10** under the other one. `T-112` carries the specification question to NDI as open item 8.
+
+**What it cost.** One numbering check (`C-0046` and `CH-0059` were free; `C-0047` had already been
+taken by `T-101` between the prompt being written and the run), one `--drop-file` on `T-108`'s
+mid-TDD `synthesis/DesiredStrokeReachTest.kt`, and one solver repair: `C-0039`'s placement search
+floors at `1.5 δ`, which is 15 nm when the working stroke is 10, so the desired-clause placement had
+to be re-bracketed. Walking **down** from the long end rather than up from a floor is the fix — the
+assembled secant is monotone in the arm but a short arm at a large stroke *folds*, and an evaluation
+there throws rather than returning a number. The widened solver reproduces `C-0039`'s own to `1e−9`
+wherever both are defined, which is asserted as a gate-5 test.
+
+## Iteration 7 — `T-101`: fifteen attachments do not flatten the tile, and below three columns a coupling stops buying flatness and starts selling it
+
+`C-0041` closed `T-96` by showing that the Gen-1 tile carries **exactly fifteen** flexures — one
+column, one per duplex, at the single orientation the lattice supplies — and named the flatness of
+that scheme *"the largest open item this claim leaves"*.
+It is below the range anything had examined:
+`C-0015` searched grid *shapes* from 45 upward,
+and `CH-0034` swept 45 → 225 and found the criterion **saturates** at 0.149 of the stroke.
+Nobody had asked what happens on the other side of that range.
+
+**The answer is that it is not a saturation, it is a loss, and the loss reverses the sign of what a
+coupling does.**
+Under `C-0022`'s solved load the 1 × 15 grid dishes **0.695 of the free-tile stroke** — **7.0×**
+`T-5b`'s 10 % convention, against 0.218 at `C-0015`'s 3 × 15 and 0.223 at `C-0009`'s 8 × 8, and
+**4.7× above** `CH-0034`'s floor.
+And the finding nobody was looking for: the **free, uncoupled** tile dishes **0.308** under the same
+load, so **the fifteen-path coupling is 2.26× worse than having no coupling at all**.
+Two columns is still worse than none (0.350).
+Three is better (0.218).
+**The break-even is at exactly the three columns `C-0041` shows cannot be built**, and the whole
+useful range of the attachment-count axis turns out to be one grid step wide:
+`CH-0034` found where attachments *stop* buying flatness, and this iteration found where they
+*start*.
+
+**The cheap bound saw all of it, in four arithmetic operations, and then predicted the repair.**
+A duplex on the polymer layer is a beam on a Winkler foundation, and its bending length
+`ℓ = (4EI/k)^(1/4)` is the reach of one attachment's influence patch:
+**12.83 nm along** the helices against a 40 nm single-column pitch (3.12 patches short),
+and **5.71 nm across** them against a 2.69 nm row pitch (0.47, dense).
+The rows were never the problem and the columns always were.
+That 2.2× between the two lengths is the sheet's 25.6× rigidity anisotropy seen **through a fourth
+root**, and it makes `C-0015`'s *"shapes, not counts"* a closed form:
+three columns is the **last** count whose pitch still falls inside one bending length (1.04),
+which is why `C-0015`'s answer is three and not eight.
+
+**The orientation is worth 1.08× in dishing and 16× in the load path**, which is where the
+anisotropy actually shows up: fifteen attachments on one duplex is the exact opposite of `C-0026`'s
+one-row-per-duplex scheme, and the other fourteen duplexes must then be carried across the hinges
+(3.28 pN against 0.209).
+The dishing barely notices, because at fifteen attachments neither orientation can flatten a 40 nm
+tile.
+`C-0041` found the array feasible at exactly 1 of 720 orientations; that one also happens to be the
+one that lays the attachments across the helices, so the packing constraint and the load-path
+constraint want the **same** angle — a measure-zero window two independent requirements agree on.
+
+**`C-0022`'s 32.1 % lever/sensor split is untouched, and that is the point.**
+It is a rim property, written on the free tile, and this task's own plate reproduces it to 0.2 %.
+What moves is the *other* term: the coupling's own sag is 32 % of the dishing at 3 × 15 and **79 %**
+at 1 × 15.
+A 15-path design does not sit at `C-0022`'s split — it sits well above it, and four fifths of what
+it sits above is its own doing.
+
+### What surprised us
+
+**A coupling can be a net dishing source.**
+Every upstream claim treats the attachment count as an axis along which flatness is *bought*;
+`CH-0034` established that the buying stops at 45.
+That the axis **reverses** below three columns was not anticipated by anything, and it is only
+visible because this task ran the uncoupled tile as a reference — which `CH-0034`'s table never
+does, because it starts at 45.
+
+**A prediction of this task's own failed in code at the first run.**
+Gate 3 was written asserting the staggered column's restored crossover force is **second order** in
+the stagger: the tile's bow is even about `x = 0`, so `w'(0) = 0` and the reaction changes at
+`O(s²)`.
+The measured exponent is **0.9**.
+The reasoning had conflated the *reaction* with the *shape* — a crossover measures the **relative
+deflection of two adjacent duplexes**, and two duplexes propped at `+s/2` and `−s/2` have
+mirror-image shapes whose difference is `O(s)`.
+The test now asserts first order and says why.
+That is also `CH-0060`: `C-0041`'s 8 bp connectivity stagger **breaks `C-0015`'s exact zero**,
+restoring 0.389 pN under a *uniform* load — **1.9× `C-0022`'s entire solved edge effect** — and it
+is the same across-helix symmetry break `C-0026` identified as the worst pattern in its set,
+reached from a geometry rather than from an assembly tolerance.
+It stays 26× inside the unzip allowable, so no verdict moves; what moves is `C-0041`'s sentence
+*"moves nothing else"*.
+
+**And the declared falsifier fired, mildly.**
+`T-101`'s Plan set a one-per-cent falsifier on the stagger's flatness cost; the measured cost is
+**+2.19 %**.
+Immaterial — the quantity it perturbs is already 7× the tolerance — but it fired, and the Plan had
+said in advance that if it did it *"needs a challenge"*.
+
+**The stagger turned out to be a design variable, and then its own claim's span took half of it
+back.**
+`C-0041` introduced the stagger to keep the superstructure connected and valued it at zero.
+Swept to the geometric limit it buys **45 %** of the dishing back at ±13.60 nm — because a large
+alternating stagger makes **adjacent duplexes prop each other through the crossovers** — and the
+cheap bound predicts *where*: that half-stagger is the along-helix bending length to **6 %** and
+`C-0015`'s three-column pitch to **2 %**, a single column doing the best imitation of a multi-column
+grid that alternation allows.
+Then the constraint that had been missed: a staggered **attachment** only has to stay on the tile,
+but a staggered **flexure** has to stay on the **body**, and a flexure is a 21.44 nm beam *centred on
+its own tie*.
+So the half-stagger is capped at `edgeX/2 − span/2 = 9.28 nm`, the 80 bp optimum **overhangs by
+4.32 nm**, and the best buildable stagger (54 bp) returns **22 %**, to 0.541 of the stroke.
+Still 5.4× the convention.
+**The same span that forbids three columns also caps the repair for having only one.**
+
+### What it cost
+
+Three `--drop-file`s on concurrent agents' mid-TDD work —
+`anchoring/FlexureCountHingeTradeTest.kt`, `synthesis/DesiredStrokeReachTest.kt` and, mid-iteration,
+the **main** source `anchoring/TrussCapStudy.kt`, which is the second time a sibling's *main* file
+rather than a test has broken `compileKotlin` for the whole project.
+No numbering collision: `C-0047` and `CH-0060` were free and `T-99`'s agent had already recorded in
+this journal that `C-0047` was taken by this task.
+Nothing upstream needed repairing: `C-0026`'s pipeline was re-run as a library and reproduced its
+1 × 15, 3 × 15 and 8 × 8 dishing to `1e−9`, `CH-0034`'s 0.149 floor to `1.7e−4`, `C-0022`'s free-tile
+0.321 to `2.0e−3` and the 25.6× anisotropy from the sheet's own rigidities.
+
+## Iteration 7 — `T-106`: the truss cap is a body, and the counting theorem was applied to one of its two load paths
+
+**What was asked.** `C-0037`'s recommended standoff — two duplexes standing normal to the sheet
+under a shared cap — models that cap as **one series spring**, `k_tie = k_link Σd_i²` with
+`k_link = 2 k_bond,s` *"forced by `C-0029`'s counting theorem applied at the other end of each leg"*,
+and says in its own validity range that the cap's **geometry** is *"asserted, not designed"*.
+`C-0042` narrowed the leg row to 7 bp and left it there: *"this claim places two bases, not a cap."*
+With the paired-junction risk retired, the cap was the largest open item under the design.
+
+**The geometry fell out of two functions `C-0042` had already written, before any solve.**
+Its **steric floor** puts two legs at least `2R = 2.00 nm` apart; its **seat contact**
+`2√(R² − y_c²)` says a leg's flat end face touches a duplex only within one radius of its axis.
+Read together they are the same length twice, and they exclude each other:
+**a duplex laid ACROSS the leg row seats neither leg** — line contact `0.000 nm` at every separation
+from 6 to 16 bp, against `2.000 nm` for one laid **along** the row.
+So **the flexure cannot be the cap**, and the counting theorem says the same thing independently —
+the flexure's own end has two termini and there are two legs, so such a cap is *one* link per leg,
+`C-0037`'s own `H1`.
+**The cap is a separate crossbar duplex**, 13 bp = 4.38 nm at the recommended pitch, laid along the
+row, hosting **three** 90° junctions and six covalent links, its axis one duplex radius above the
+leg heads.
+
+**A body has four things a spring does not, and three of them are small.**
+Its **bending** is `12 EI/w` exactly — the frame-couple path is statically determinate, so the leg
+forces are `±M/w` whatever the stiffnesses and the compliances simply add — which is **8.93×** the
+couple it carries at 7 bp, so the frame couple falls only 74.18 → **71.31** pN·nm/rad.
+That term goes as `1/w` where the couple goes as `w²`, so it is the **wide** rows the crossbar
+cannot carry: 1.6 % at the steric floor and **42.5 %** at 16 bp, which is why it cannot be folded
+into an effective link stiffness the way `C-0037`'s `k_tie` is.
+Its **torsion** `4C/w` is worth 0.1 % on either reading of the duplex torsional constant — 103 ± 4 nm
+measured, salt-independent including 10 mM Mg²⁺, fetched and read for this task.
+Its **height**, exactly one duplex radius, is a unit-determinant congruence: it raises `C12`, the
+entry `C-0030` shows *supplies* the draw-in, and costs one nanometre of leg at a given flexure
+height.
+
+**The fourth is the finding, and it is a load path rather than a number.**
+`C-0037` invokes the counting theorem at the leg's head for the **axial** link and then takes the
+head's **rotation** as rigid. The same two links on the same chord carry that rotation, at
+**78.24 pN·nm/rad** on one axis and **13.53** on the other, whose sum is `C-0042`'s conserved
+**91.76** — so the cap junction is a **third** instance of one rank-one budget, after the leg row's
+`Σx² + Σy² = w²/2` and the base chord's.
+It is not a series correction: it is a **ceiling** on the head restraint any frame couple can
+deliver, which is why the omission does not read as a small factor.
+And unlike the leg row's azimuth, this one has **no free corner** — the loaded plane wants the strong
+axis for the draw-in supply and the tangent, the free plane wants it for stability, and 91.76 is all
+there is.
+
+**What that does to `C-0042`'s seven base pairs is the part worth recording.**
+Its 7 bp is *upheld*, and its reason is not. With the cap chord laid **along** the flexure axis the
+free plane is capped at **6.20 pN** by the junction's own 13.53 and **no** row width up to 16 bp
+hands the governing plane back to the loaded one; laid **across** it the free plane reaches 9.24 pN
+and **7 bp** is again the smallest separation that crosses.
+**The crossing is bought at the cap, not at the row** — which says the row pitch is not the variable
+to spend on, and names one that is. `CH-0061`.
+
+**The verdict.** All nine predicates PASS over the whole `h = 5–10 nm` envelope on both rigidities,
+at a buckling margin of **1.95 / 1.46** against `C-0037`'s 2.79 / 2.10.
+The solved cap costs **30 %** of the margin, **38 %** of the draw-in supply and **35 %** of the
+tangent headroom, shortens the span 33.43 → 28.25 nm through `c₀` (110.4 → 73.1), and takes
+`k_s`/32 from failing on one rigidity to failing on both.
+It does **not** close the branch. It does add a body to a motif that had none, and it moves
+`C-0042`'s retired chemistry risk up one storey: **whether three 90° junctions close on one 13 bp
+crossbar is now the largest open item**, and it is `T-109`.
+
+**Two things surprised.** The pre-registered prediction said the crossing separation would move
+above 7 bp; it does not move at all, it becomes *conditional* on a variable neither upstream claim
+has — which is a different and more useful answer.
+And the nearest published relative of the cap junction turned out to be the **T junction**, used in
+print exactly as this claim needs it: *"these tiles carry over the orthogonal binding directions from
+T junction and retain the rigidity from antiparallel crossover tiles."* The orthogonal joint supplies
+**direction**; something else supplies **rigidity**. That is this task's finding, one level up, and
+it was found by the only one of ten negative-existence queries that returned a hit.
+
+---
+
+## Iteration 7 — `T-107` and `T-108`: which stroke a ceiling is owed at, and the stroke that is the layer's own thickness
+
+**Two tasks, one study, and the second one turned out not to be about couplings at all.**
+
+`T-107` was queued as *"the cheapest thing that could move `C-0039`'s verdict"*, and it is cheaper
+than that: **40 pN/nm is exactly `1.2 × (100 pN / 3 nm)`.** Divide the ceiling by the thing it was
+declared against and the answer falls out with no code — it is a *construction on the placement
+mandate*, so it carries the placement stroke inside it, and the **same construction** at §3's
+desired clause is **12 pN/nm, not 40**. Reading 40 at a 10 nm stroke is not the conservative
+choice; it is the wrong clause's number, and it is 3.33× too generous.
+
+Then the audit. `C-0017` has an **equality** on the secant and a **floor** on the tangent; `C-0018`
+gets *better* as the tangent stiffens (`C-0032` measured it: the strain-stiffening line raises the
+10 nm / 2 mM bias margin from 1.007–1.032 to 1.020–1.774). **There is no tangent ceiling anywhere in
+the acceptance stack.** The only genuine ceiling is `C-0006`'s per-path unzip allowable — and
+because it is a bound on a **force**, converting it to a stiffness divides by the stroke, so it
+*tightens* as `1/s` where the declared ceiling stays put: 150 → 45 pN/nm at 45 paths, 50 → **15** at
+`C-0041`'s buildable 15. `C-0039`'s `E5a16` secant at 10 nm, 69.94, is past both. **The verdict does
+not move; its owner does** — from a declared tolerance missed by 6.6× to a cited allowable missed by
+1.55×, which is a weaker-looking rejection with a stronger warrant.
+
+**The part that was not expected is that the same answer settles `CH-0047`.** A device placed at
+3 nm traverses `[0, 3]` and *never occupies* the 4.556 nm stroke `CH-0042`'s tangent minimum is
+taken at. Read where the device actually sits, `C-0030`'s favourable flexure is **25.227 pN/nm**,
+which clears **4 of `C-0017`'s 6** model floors at §3's own 2 mM — where the prescribed-range
+minimum 22.875 clears **none**. `C-0032`'s `Q2` goes from *"no model admits it"* to *"the
+admissibility is model-dependent"*. It does not recover 2 mM — `Q3` and the 1.0000 bias margin are
+untouched — but `T-63` is decided on exactly that distinction. The ceiling and the floor were the
+same question; `T-107` and `CH-0047`/`T-76b` are one task.
+
+**`T-108` was queued as a synthesis over the catalogue. It should have been a look at the
+coordinate.**
+
+The stroke is `s = L₀ − h`. So `s < L₀`, identically, and §3 names three layer heights of which the
+tallest is 10 nm. **A ~10 nm stroke on a 10 nm layer IS the statement `h = 0`** — the polymer
+crushed to a melt of zero thickness. Three ceilings follow and **none of them contains a coupling**:
+the kinematic one `L₀ − Nσv₀` reaches at most **9.790 nm** over 66 states, `C-0002`'s validity
+ceiling `L₀ − Nσv₀/0.2` — which is `C-0018`'s *own* binding bias ceiling at the 10 nm layer, at 6 of
+6 models and every buffer — **8.959 nm**, and the dead-load stroke at §3's 100 pN **7.424 nm**. And
+a coupling can only make it worse: `C-0017`'s own gate-2 theorem says the delivered stroke is
+monotone *decreasing* in the coupling stiffness, so the free stroke is the supremum over **every**
+coupling anybody could design. **That is why `T-108` is not a search**, and why one bound covers a
+catalogue.
+
+Five claims — `CH-0040`, `C-0039`, `C-0040`, `C-0041`, `C-0046` — spent four iterations establishing
+that the coupling cannot deliver 10 nm. The coupling is not what cannot deliver it. **The cleanest
+row in the whole 28-row table is a pass**: `C-0023`'s `E5`, read at 10 nm, places, sits inside the
+ceiling, keeps 7.41 pN per path against a 10 pN allowable, spends 45 of the tile's 56 crossovers and
+is stable at both buffers — and fails **only** on the reach.
+
+**What is established is "unreachable on §3's own stack"**, which is stronger than *"unreachable
+with this catalogue"* and weaker than *"unreachable in physics"*. The escape is priced and it is a
+**layer height**: 16.63–26.12 nm across `C-0003`'s six models for a 10 nm stroke at 100 pN, 1.7–2.6×
+§3's tallest. §3's own tile row already allows the effort point to sit *"~20–25 nm above the
+electrode"*, so it is not absurd — but four upstream validity ranges move with it and nothing here
+has evaluated one. That is `T-115`, and it is the fourth specification question this programme has
+had to raise (after `T-95`, `T-102` and `T-63`/`T-112`). **The other three cannot substitute for
+it**: a bigger tile, a perforated superstructure and a softer placement each unblock something the
+*coupling* needs, and none of them is a layer height.
+
+**A sibling landed the same iteration from the other side and the two agree without having met.**
+`C-0046`/`CH-0059` (`T-99`) placed §3's desired clause on its own arithmetic — `k_c = 10 pN/nm` —
+and found `C-0017`'s stability floor refusing it by 2.34–2.79×. The hypothetical row in this
+study's own catalogue reproduces that independently, and **closes `CH-0059`'s open item 3**: at 5
+and 7 nm, where `C-0017` reports the floor as *zero* and the 10 pN/nm placement would not be
+refused, the kinematic ceiling is 4.33–4.62 and 6.42–6.66 nm. The desired stroke is out of reach
+there for a reason that owes nothing to stability.
+
+**One contradiction had to be filed.** `C-0040` reports the buildable hinge counts at 42.0–54.1
+pN/nm and concludes *"even the acceptable stroke fails `C-0023`'s own ceiling"*. Those numbers are
+`C-0034`'s **series composition**, which `CH-0053` superseded in the same iteration; on `C-0039`'s
+own exact elastica the same design places at a **9.131 nm arm and 39.18 pN/nm — inside the
+ceiling**, and `C-0039`'s own published table already contains that number. Two claims filed hours
+apart, same anchorage, same constants, disagreeing about whether the branch survives §3's
+acceptable clause, and neither noticed. `CH-0062`. It moves a verdict the **favourable** way, and it
+is largest exactly where the verdict was taken, because at one crossover the hinge is 92.5 % of the
+compliance and the composition is nearly everything.
+
+**Numbering.** `C-0044`/`C-0045` and `CH-0058` were reserved by the coordinator's brief; by the time
+this iteration wrote, siblings had taken through `C-0048` and `CH-0061`. Filed as **`C-0049`**,
+**`C-0050`** and **`CH-0062`**, per the instruction to take the next above the highest visible.
+
+**What surprised.** That a whole iteration's worth of *"is 10 nm reachable"* is answered by reading
+the definition of the coordinate; that a ceiling and a floor which had been argued separately for
+three iterations are the same question; and that the strongest evidence in a negative result turned
+out to be an element that **passes**.
+
+### Iteration 7 — the desired stroke, settled by a bound with no coupling in it
+
+Four loops, aimed at the question iteration 6 had made unavoidable: is §3's *desired* 10 nm stroke
+reachable at all, and if not, by what?
+
+**`C-0050` settles it, and the settling argument is one line of kinematics.**
+The stroke *is* the layer's compression — `s = L₀ − h`, so `s < L₀` identically — and §3 names no layer
+taller than 10 nm, which makes a 10 nm stroke on a 10 nm layer the statement `h = 0`.
+Over 66 states the ceilings are **9.790 nm** kinematic (1.02× short), **8.959 nm** from `C-0002`'s
+validity — which is also `C-0018`'s own binding bias ceiling at 10 nm — and **7.424 nm** as a dead-load
+stroke at 100 pN. A coupling can only *reduce* the last, so the free stroke is the supremum over **every**
+coupling, and that is why this is a claim rather than a search.
+Across the catalogue **0 of 14 elements clear the desired stroke and 3 of 14 clear the acceptable one**.
+The telling row is `C-0023`'s `E5`, which clears every coupling-side predicate at 10 nm and fails only on
+the **reach**.
+The statement filed is **unreachable on §3's own stack** — deliberately stronger than "with this
+catalogue" and weaker than "in physics" — and the only escape is a **taller layer, 16.63–26.12 nm**, a
+fourth specification question. Tile size, perforation and buffer cannot substitute: none is a layer height.
+
+**`C-0049` removed a ceiling the programme had been enforcing in the wrong place.**
+`C-0023`'s 40 pN/nm is exactly `1.2 × (100 pN / 3 nm)` — a declared *linearity tolerance on the placement
+discharge*, carrying the placement stroke inside it — so it is owed at 3 nm and nowhere else, and the same
+construction at the desired clause is **12 pN/nm, not 40**. Reading 40 at 10 nm is the wrong clause's
+number, and **3.33× too generous rather than conservative**.
+Auditing the acceptance stack found **no upper bound on a coupling tangent anywhere in it**: one equality
+on the secant, one floor on the tangent, and `C-0032` measuring a *stiffer* tangent that *raises*
+`C-0018`'s margin. What does bind past the working point is the per-path unzip allowable — a bound on a
+**force**, so `n·allowable/s`, which tightens as `1/s`. The same answer closed `CH-0047`/`T-76b`, which
+turned out to be the same question: a device placed at 3 nm traverses `[0, 3]` and never occupies the
+4.556 nm stroke `CH-0042`'s minimum was taken at.
+
+**The other two loops closed the branch's last escape and priced its last unknown.**
+`C-0046` swept `(path count, hinge count, hinge-line length)` jointly and found the trade **degenerate on
+its own axis**: placement depends on the crossover *product* `n·h`, so the arm is 5.387 nm at **all eight**
+splits of `n·h = 56`, and crossovers cannot be converted into arm length by moving them between hinges.
+What breaks the tie is the *per-flexure* far anchorage, so the placed arm **grows with the path count** —
+fewer-longer is the wrong direction at every step, and the best point of the whole space reaches 3.312 nm
+while spending 100 % of the tile's crossover inventory.
+`C-0048` solved the truss cap and found `C-0037` had been carrying **one of its two load paths**: the same
+two links' rotation was taken as infinite where `C-0042`'s conserved budget makes it a **ceiling**. The cap
+survives — it is a separate 13 bp crossbar with three junctions and six links — at a cost of 30 % of the
+buckling margin, and it does not close the branch.
+
+**And one loop found something nobody had asked for.**
+`C-0047` evaluated flatness at the fifteen attachments `C-0041` says the tile actually carries, under
+`C-0022`'s *solved* load, and the fifteen-path coupling dishes **0.695 of the stroke against the free
+tile's 0.308** — **2.26× worse than having no coupling at all**. Below 45 attachments `CH-0034`'s
+criterion does not saturate; two columns is still worse than none and the break-even is at exactly the
+three columns `C-0041` shows cannot be built. Its `CH-0060` also withdraws `C-0041`'s "the stagger is free":
+it breaks `C-0015`'s exact zero at **first** order, and the stagger's unconstrained optimum turns out not
+to be buildable at all.
+
+**What it cost, and the honesty is the point.** `C-0047`'s agent had a gate-3 test fail on its first run —
+it had asserted the stagger's restored force was second order and measured 0.9 — and reported the
+correction in the open rather than adjusting the test. `C-0046`'s agent found and repaired a floor in
+`C-0039`'s own solver that made the desired-clause placement unreachable, leaving `C-0039`'s code untouched
+and asserting agreement to `1e−9` as a gate. Three of the four renumbered their claims again.

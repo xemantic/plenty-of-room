@@ -11,6 +11,24 @@
 | **Conditions** | T = 300 K, `k_BT = 4.141947 pN·nm`; aqueous **2 mM MgCl₂**; 40.0 × 40.35 nm tile (15 duplexes at the SAXS-measured 2.69 nm), footprint **1614 nm²**; §3's 100 pN at the **acceptable** 3 nm and the **desired** 10 nm; `C-0017`'s 33.3333 pN/nm mandate and 10 nm envelope; `EI = 230 pN·nm²` with every buckling margin also on Fields et al.'s implied **172.906**; `C-0028`'s `B2` base at 261.2 pN·nm/rad; `ℓ = 8 nm` |
 | **Consumes** | [`C-0035`](C-0035-flexure-mounting-sense.md) (the `Su` mounting, `restrainedBeamShape`, `apertureLength`, `midspanClearance`, `tieApertureArea`, `OrigamiDuplex` — **re-run as a library**, its 18.37 nm slot, its 2223 nm² and 326 nm² areas and its 1.39× fraction all reproduced), [`C-0030`](C-0030-coupled-standoff-joint.md) (`CoupledJointFlexure`, `coupledFlexureSpan`, `FlexureOrientation` — the whole placement pipeline re-run at ten path counts; its 31.82 nm span, 25.23 pN/nm tangent and 5.31 nm clearance reproduced), [`C-0028`](C-0028-standoff-base-joint.md) (`StandoffBase.crossovers(2, favourable)`, `standoffBucklingLoad` — its 7.21 pN reproduced), [`C-0026`](C-0026-one-row-per-duplex.md)/[`C-0015`](C-0015-crossover-phase-and-registration.md) (`attachmentGrid`, one row per duplex, the 32 bp interface spacing and the phase as a design variable), [`C-0023`](C-0023-two-sided-coupling.md) (the 40 pN/nm ceiling, the two-sided tie as a **duplex**, the path count set by the allowable), [`C-0017`](C-0017-output-coupling-stiffness.md) (the mandate, the 10 nm envelope, the superstructure), [`C-0006`](C-0006-tile-load-distribution-and-flatness.md)/[`CH-0029`](../challenges/CH-0029-the-48-pn-allowable-is-a-30-bp-number.md) (the 10 pN unzip allowable), [`C-0022`](C-0022-tile-edge-load-profile.md) (a larger tile costs **less** at the rim), [`C-0009`](C-0009-discrete-lattice-tile.md)/`Gen1Tile` (`EI`, `S`, the rise, the SAXS interhelical distance) |
 | **Raises** | [`CH-0055`](../challenges/CH-0055-the-forty-five-path-array-is-not-a-placement.md), against `C-0023`, `C-0030` and `C-0035` |
+| **Challenged** | **[`CH-0060`](../challenges/CH-0060-the-stagger-is-not-free.md)** — the 8 bp stagger is not free. See the banner below. |
+
+---
+
+> ⚠️ **Scope note from [`CH-0060`](../challenges/CH-0060-the-stagger-is-not-free.md) (2026-08-14), raised by [`C-0047`](C-0047-single-column-flatness.md) (`T-101`), which is this claim's own open item 1.**
+>
+> **No count, span, orientation, packing verdict, area, severance result or allowable below changes.** What changes is
+> Deliverable 4's *"free of every upstream claim"* and *"moves nothing else"*: the 8 bp stagger **breaks `C-0015`'s
+> exact zero at FIRST order**, restoring **0.389 pN** of crossover force under a *uniform* load — 1.9× `C-0022`'s
+> entire solved edge effect, and 26× inside the 10 pN unzip allowable — and costs **+2.19 %** of the peak dishing.
+> It is admissible, necessary and cheap; it is not free.
+>
+> This claim's open item 1 is now answered by `C-0047`: the 1 × 15 scheme dishes **0.695 of the stroke** under
+> `C-0022`'s solved load, **7.0×** `T-5b`'s convention and **2.26× worse than no coupling at all**. The stagger,
+> swept past 8 bp as a *design variable*, buys **45 %** of that back at ±13.60 nm — but **this claim's own span
+> caps it**: a flexure is a 21.44 nm beam centred on its own tie, so the half-stagger cannot exceed
+> `edgeX/2 − span/2 = 9.28 nm` (**18.56 nm peak to peak, 54 bp**) without the beam overhanging the body. The best
+> buildable stagger returns **22 %**, to 0.541 of the stroke, and still does not reach the tolerance.
 
 ---
 
@@ -242,7 +260,7 @@ Everything else — the plan geometry, the blocking and clash relations, the lev
 
 ## Still open — named, not answered
 
-1. **The flatness of a 15-attachment scheme under the solved load.** `C-0015`'s answer is 45 as 3 × 15 and `CH-0034` already saturates it; 15 is below the range either examined. `T-5b`.
+1. ~~**The flatness of a 15-attachment scheme under the solved load.**~~ **ANSWERED by [`C-0047`](C-0047-single-column-flatness.md) (`T-101`): 0.695 of the stroke, 7.0× `T-5b`'s convention, 3.2× `C-0015`'s 3 × 15 and 2.26× worse than no coupling at all — the criterion does not saturate below 45, it reverses below three columns.**
 2. **The stiffness of a perforated superstructure.** Connectivity is restored by an 8 bp stagger; the sheet still loses `n` duplex-omission holes, and `T-68` asks what a compliant host does to `C-0028`'s base couple.
 3. **The yaw and lateral by-products of a single attachment column.** `C-0014`/`C-0017`.
 4. **Whether §3's tile may grow.** The desired stroke needs 1.44× the footprint, and `C-0022` says the rim is cheaper there. **A specification question, and the second one this branch has raised** — `T-95` is the first.
