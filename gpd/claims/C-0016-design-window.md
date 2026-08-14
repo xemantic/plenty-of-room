@@ -11,7 +11,16 @@
 | **Conditions** | T = 300 K, aqueous MgCl₂ at 0.5 / 1 / 2 / 5 / 10 mM, `k_BT = 4.142 pN·nm`; 40 × 40 nm tile; linear PEG; layer heights 5 / 7 / 10 nm |
 | **Consumes** | [`C-0011`](C-0011-scf-density-profile.md) (the layer and its grid), [`C-0012`](C-0012-coupled-stroke-and-blocking-force.md) (the coupled thresholds and the stability clause), [`C-0015`](C-0015-crossover-phase-and-registration.md) (the layout sweep and the flatness count), [`C-0014`](C-0014-lateral-confinement.md) (the cable relation), [`C-0005`](C-0005-mean-field-screening-validity.md) (the partitioning model), [`C-0004`](C-0004-poroelastic-drainage.md) (the drainage model), [`C-0002`](C-0002-peg-material-parameters.md)/[`C-0003`](C-0003-crossover-valid-layer-response.md) (the material), and the challenges `CH-0001` … `CH-0014` in their final form |
 | **Raises** | [`CH-0015`](../challenges/CH-0015-usable-bias-window-is-unloaded.md) against `C-0012` |
-| **Re-run by** | [`C-0027`](C-0027-window-resynthesis.md) (`T-25`) against all of iteration 4 |
+| **Re-run by** | [`C-0027`](C-0027-window-resynthesis.md) (`T-25`) against all of iteration 4, and [`C-0051`](C-0051-second-window-resynthesis.md) (`T-118`) against iterations 5–7 |
+
+> ⚠️ **Re-run again against `C-0031`–`C-0050` by [`C-0051`](C-0051-second-window-resynthesis.md)
+> (2026-08-14). `P1` stands with `C-0027`'s edges unmoved — 0 of 6, 0 grid steps, no owner change.**
+>
+> The reason is this claim's own `P2` lesson turned on itself: **of the twenty claims of iterations 5–7
+> exactly one is `σ`-resolved**, and it says itself it cannot reach a window edge. Two NEW `σ`-resolved
+> constraints appear (`C-0050`'s kinematic and validity stroke ceilings) and neither binds, by 1.71–3.11×.
+> **§3's *desired* stroke is now settled kinematically**, `s = L₀ − h < L₀ ≤ 10 nm` (`C-0050`), and the
+> deliverable is a **height plus five specification questions** rather than a window.
 
 > ⚠️ **Re-run against iteration 4 by [`C-0027`](C-0027-window-resynthesis.md) (2026-08-13). `P1` stands;
 > exactly one edge moves, and it moves outward.**

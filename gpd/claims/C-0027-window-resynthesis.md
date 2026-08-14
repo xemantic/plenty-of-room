@@ -11,6 +11,17 @@
 | **Conditions** | T = 300 K, `k_BT = 4.142 pN·nm`; aqueous MgCl₂ (`T-16` swept 0.5 / 1 / 2 mM, `T-4` swept 0.5 / 2 / 10); 40 × 40 nm tile; linear PEG; layer heights 5 / 7 / 10 nm |
 | **Consumes** | [`C-0011`](C-0011-scf-density-profile.md) (the layer grid), [`C-0015`](C-0015-crossover-phase-and-registration.md) (the layout sweep), [`C-0019`](C-0019-mean-field-fluctuation-corrections.md), [`C-0022`](C-0022-tile-edge-load-profile.md), [`C-0021`](C-0021-zero-bias-resting-position.md), [`C-0017`](C-0017-output-coupling-stiffness.md), [`C-0018`](C-0018-maximum-usable-bias.md), [`C-0026`](C-0026-one-row-per-duplex.md), and the challenges `CH-0019`, `CH-0021`, `CH-0024`, `CH-0025`, `CH-0026`, `CH-0027`, `CH-0029`, `CH-0031`, `CH-0033`, `CH-0034` |
 | **Raises** | [`CH-0035`](../challenges/CH-0035-the-edge-correction-cannot-reach-the-window-edge.md) against `CH-0026`, and [`CH-0036`](../challenges/CH-0036-a-correction-and-the-part-that-caused-it.md) against `CH-0024` |
+| **Re-run by** | [`C-0051`](C-0051-second-window-resynthesis.md) (`T-118`) against iterations 5–7 |
+
+> ⚠️ **Re-run against `C-0031`–`C-0050` and `CH-0043`–`CH-0062` by [`C-0051`](C-0051-second-window-resynthesis.md)
+> (2026-08-14). `P1` stands, with **zero of six edges moving and no owner changing**.**
+>
+> Two things below do **not** stand as written. **`P2`'s coupling verdict is the AFFINE MANDATE's**: the
+> coupling the programme has (`C-0030`'s flexure) strain-*softens*, and `C-0032`'s **1.0000–1.0019** is the
+> standing 10 nm / 2 mM statement. **The pull-in bound `≥ 1.108–1.134` is withdrawn** — `CH-0051` shows the
+> pull-in bias falls too, and `C-0051` shows the composed fold tangent is **−8.40 to −11.06 pN/nm**.
+> Axis **(p)**, `C-0023`'s 40 pN/nm compliance ceiling, **leaves the acceptance stack** (`C-0049`) and a
+> path count replaces it. §3's *desired* stroke now has a **mechanism**, `s = L₀ − h` (`C-0050`).
 
 ---
 

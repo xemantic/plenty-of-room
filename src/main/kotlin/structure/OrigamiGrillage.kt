@@ -253,6 +253,10 @@ class GrillageDeflection internal constructor(
  * @param subdivisions the number of beam elements per interval between node columns.
  * @param linkStiffness the penalty stiffness in `pN/nm` of the vertical crossover link.
  * @param supports discrete anchors tying the lattice to ground.
+ * @param consumedCrossovers the crossover sites that have been **spent as flexure hinges** and
+ *          therefore no longer join their two sheet duplexes at all — neither by the dihedral
+ *          spring `k_θ` nor by the vertical link. `T-110`'s design variable; empty by default,
+ *          in which case this class is `T-10`'s lattice to the last bit.
  */
 class OrigamiGrillage(
     val sheet: OrigamiSheet,
@@ -262,7 +266,8 @@ class OrigamiGrillage(
     val columns: CrossoverLayout,
     val subdivisions: Int = DEFAULT_SUBDIVISIONS,
     val linkStiffness: Double = RIGID_LINK_STIFFNESS,
-    val supports: List<PointSupport> = emptyList()
+    val supports: List<PointSupport> = emptyList(),
+    val consumedCrossovers: Set<CrossoverSite> = emptySet()
 ) {
 
     /**
@@ -370,6 +375,7 @@ class OrigamiGrillage(
         for (beam in 0 until beamCount - 1) {
             for (column in 0 until crossoverColumns) {
                 if ((columns.parities[column] + beam) % 2 != 0) continue
+                if (CrossoverSite(beam, column) in consumedCrossovers) continue
                 add(
                     Crossover(
                         lowerBeam = beam,
@@ -382,6 +388,13 @@ class OrigamiGrillage(
             }
         }
     }
+
+    /**
+     * The sites of the crossovers this lattice actually has — its inventory when nothing has
+     * been consumed, and what is left of it when something has.
+     */
+    val crossoverSites: List<CrossoverSite>
+        get() = crossovers.map { CrossoverSite(it.lowerBeam, it.column) }
 
     private fun dof(beam: Int, node: Int, component: Int): Int =
         (beam * nodeX.size + node) * DOF_PER_NODE + component

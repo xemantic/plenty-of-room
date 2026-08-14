@@ -56,7 +56,8 @@ duplex** — each a duplex standoff in series
    **The design window is not empty.**
    The margin at §3's own 2 mM is 1.19–1.42×, inside its own mean-field error, so the verdict is
    *not excluded*, never established — and dropping to 0.5 mM buys six times more.
-   Carrying **both** iteration-4 corrections it is **1.23–1.53×** — the polymer fluctuation bound *degrades*
+   Carrying **both** iteration-4 corrections it is **1.23–1.53×** — that figure being the **affine
+   mandate's**, not the coupling the programme actually has — the polymer fluctuation bound *degrades*
    it to 1.11–1.25× and the finite-tile enhancement *restores* it to 1.34–1.67×, and the two are of the same
    size and opposite sign, so `C-0019`'s ≥ 1.07× was one half of a two-sided correction (`C-0027`).
    The verdict is unchanged in kind — *not excluded*, never established, because the **electrostatic**
@@ -80,10 +81,20 @@ duplex** — each a duplex standoff in series
 4. **The design window survived nine claims and ten challenges by moving one edge, outward.**
    Of the four iteration-4 results aimed at it, three live on axes an intersection cannot see and the fourth
    is nearly cancelled by the part of the design that produced it.
-   **Seven of eleven discovered axes do not resolve in grafting density, and one of them — the
-   lateral-confinement footprint — left the window entirely** when the in-plane tethers left the design.
-   A `(σ, L₀)` window is the wrong object for the Gen-1 decision, and now for a second reason: constraints
-   are being *discharged* off it as fast as they are discovered. (`C-0027`.)
+   **Ten of twelve discovered axes do not resolve in grafting density**, and axes now *leave* the stack as
+   well as arriving: the lateral-confinement footprint left when the in-plane tethers left the design, and
+   `C-0049` withdrew `C-0023`'s 40 pN/nm tangent ceiling — it is exactly `1.2 ×` a **placement** mandate and
+   carries that stroke inside it — replaced by a path count, `n·a/s`.
+   **A second re-synthesis against three further iterations moves nothing at all**: `C-0031`–`C-0050` and
+   `CH-0043`–`CH-0062` leave **0 of 6 window edges** moved, 0 grid steps, worst departure exactly `0.0`, no
+   owner changed. That null is the finding, and its cause is `C-0016`'s own lesson turned on itself — of
+   those twenty claims **exactly one** carries a quantity that is a function of `σ` at all. The window was
+   not *survived*; it was never addressed. `C-0050` did produce the first genuinely `σ`-resolved constraints
+   since iteration 4 (a kinematic ceiling and a validity ceiling), and at all 61 grid points **neither
+   binds**, by 1.71–3.11×.
+   **So a `(σ, L₀)` window is the wrong object for the Gen-1 decision, and the deliverable is now a height
+   plus five specification questions** — of which only a taller layer can buy the desired stroke.
+   (`C-0027`, `C-0051`.)
 
 And the shape of the whole problem, which no single number shows: **static stability wants the thin layer,
 whose window is empty by 13.3×; the window, the stroke and the force-versus-height trade all want the thick
