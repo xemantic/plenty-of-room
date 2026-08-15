@@ -45,7 +45,11 @@ class UpstreamTransferTest {
     @Test
     fun `gate 1 - the grafting spacing is the inverse square root of the grafting density`() {
         scf.designPoints.forEach { point ->
-            assert(point.graftingSpacing.isCloseTo(point.graftingDensity.pow(-0.5), 1e-7))
+            assert(
+                point.graftingSpacing.isCloseTo(
+                    point.graftingDensity.pow(-0.5), EMITTED_FIELD_SLACK
+                )
+            )
         }
     }
 
@@ -58,7 +62,7 @@ class UpstreamTransferTest {
             point.solved.forEach { response ->
                 val overlap = PI * response.idealEndToEnd * response.idealEndToEnd *
                         point.graftingDensity
-                assert(response.coilOverlap.isCloseTo(overlap, 1e-7))
+                assert(response.coilOverlap.isCloseTo(overlap, EMITTED_FIELD_SLACK))
             }
         }
     }
@@ -248,8 +252,8 @@ class UpstreamTransferTest {
         expected.forEach { (height, edges) ->
             val window = windowOnGrid(height)!!
             val grid = gridAt(height)
-            assert(window.lowest(grid).isCloseTo(edges.first, 1e-6))
-            assert(window.highest(grid).isCloseTo(edges.second, 1e-6))
+            assert(window.lowest(grid).isCloseTo(edges.first, EMITTED_FIELD_SLACK))
+            assert(window.highest(grid).isCloseTo(edges.second, EMITTED_FIELD_SLACK))
         }
         assert(windowOnGrid(5.0) == null)
     }
@@ -375,7 +379,7 @@ class UpstreamTransferTest {
         val grid = gridAt(10.0)
         assert(grid.size == 61)
         val ratios = grid.zipWithNext { low, high -> high / low }
-        ratios.forEach { assert(it.isCloseTo(ratios.first(), 1e-6)) }
+        ratios.forEach { assert(it.isCloseTo(ratios.first(), EMITTED_FIELD_SLACK)) }
         assert(ratios.first().isCloseTo(1.1091, 1e-3))
     }
 
@@ -398,3 +402,19 @@ class UpstreamTransferTest {
     }
 
 }
+
+/**
+ * The relative slack an identity checked on an **emitted** field of `T-1d` or `T-2` must be allowed.
+ *
+ * `P-18`. These gates recompute an identity from numbers *read out of a result file*, so their
+ * residual is bounded by the file's **emission precision**, not by the solver's. `T-1d` now emits
+ * at `SOLVED_HEIGHT_SIGNIFICANT_DIGITS = 6` — the precision its own height solve determines — so a
+ * single field carries up to `5e-6` relative, and an identity combining a grafting density, a
+ * squared end-to-end distance and the emitted overlap carries up to `2e-5`. Five is the same
+ * bound reached the other way, through the grid ratios.
+ *
+ * **Asserting tighter than this is not a stronger test, it is a test of the printed digits.**
+ * It was `1e-7` before, and it passed only because the file printed three digits past what it
+ * determined — which is exactly what `CH-0043` raised and `C-0073` removed.
+ */
+private const val EMITTED_FIELD_SLACK = 5e-5

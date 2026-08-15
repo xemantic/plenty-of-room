@@ -186,7 +186,9 @@ class ResynthesisTransferTest {
     fun `gate 4 - every window edge is a grid point, located to one grid ratio and no better`() {
         val grid = inputs.graftingDensityGrid
         val ratios = grid.zipWithNext { low, high -> high / low }
-        assert(ratios.max() / ratios.min() < 1.0 + 1e-6)
+        // `P-18`: the grid is read out of `T-2`'s file, which inherits `T-1d`'s six-digit
+        // emission, so two adjacent ratios can differ by four half-units in the sixth figure.
+        assert(ratios.max() / ratios.min() < 1.0 + 5e-5)
         resynthesisedWindows(inputs, CorrectionSet.FULL).filter { !it.empty }.forEach { window ->
             assert(grid[window.lowestIndex!!].isCloseTo(window.lowestGraftingDensity!!, 1e-12))
             assert(grid[window.highestIndex!!].isCloseTo(window.highestGraftingDensity!!, 1e-12))
