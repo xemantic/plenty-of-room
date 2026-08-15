@@ -6469,3 +6469,83 @@ both claims also quote the edge at five and six figures, `0.26015` and `0.260150
 One more hole found on the way: `T-2`'s `graftingDensityGridRatio` is a `Double.toString()` in a
 **string** field, which `roundedForResult` passes through untouched — ten significant digits in a file that declares nine.
 A serialisation-boundary rounding is only as complete as the type it dispatches on.
+
+**And the suite found the same mistake one level out.**
+Five gates failed on the first full run after the change, and every one of them
+**recomputes an identity from numbers read out of a result file** —
+`Σ = π R₀² σ` from the file's own `R₀` and `σ`, `s = σ^(-1/2)`, the grid ratios, the published edges.
+They were asserted at `1e-7`–`1e-6`, and they passed **only because the file printed three digits past what it determined**.
+A six-digit field carries `5e-6` relative and an identity over three of them `2e-5`.
+**An assertion tighter than a file's emission precision is not a stronger test; it is a test of the printed digits** —
+`CH-0043`'s finding applied to the gates that read the file rather than to the file.
+Relaxed to one documented `EMITTED_FIELD_SLACK = 5e-5` derived from `SOLVED_HEIGHT_SIGNIFICANT_DIGITS`.
+
+**A coordinator note, and it is urgent.**
+`P-18`'s work was swept into commits `1177073` and `ae3837e` by a `git add -A` while the iteration was still running —
+the failure mode `CLAUDE.md` already records from iteration 13, in a new place.
+`HEAD` therefore carries the six-digit `T-1d`, `T-1f` and `T-2` files **without** the two test-file
+tolerance relaxations they require, so `tools/verify.sh --committed` fails five tests on `HEAD`.
+The fix is in the working tree (`src/test/kotlin/window/UpstreamTransferTest.kt`,
+`src/test/kotlin/window/ResynthesisTransferTest.kt`) and the working tree passes the whole suite,
+1956 tests, `BUILD SUCCESSFUL` in 13 m 15 s.
+
+## 2026-08-15 — Iteration 14
+
+Three loops: the programme's first stated output-element recommendation, the tolerance model that qualifies
+it, and the last process blocker. Every number below was grepped out of its claim, and `HEAD` was verified
+with `tools/verify.sh --committed` before this was written.
+
+**`C-0071` recommends, and the decision needed no new calculation.** Eleven catalogued elements → **3 place**
+all 34 at one level → **2 survive every clause**, and the three tie-break axes — undemonstrated motifs,
+`C-0017`'s 2 mM floors cleared, compression members — are each an integer count a standing claim already
+carried, and all three agree (1 v 2, 6 v 4, 0 v 1). The declared falsifier, that they would disagree, did
+not fire. The recommendation is `C-0069`'s `Q5`: a **hinge-rooted arm of 8.16439 nm = 24.0 bp**, one
+antiparallel crossover at the unused out-of-plane azimuth, **34 instances at one level**, 2.941 pN per path,
+flat at 0.0706 and across its device's whole range **with equal springs and no tie grid at all**, at §3's
+**acceptable** clause.
+Its price is stated with it: **20 premises of which 3 are UNDEMONSTRATED** — the free lever on one crossover,
+the normal-standing duplex, and that an **in-plane-fitted** `k_θ` transfers to the **out-of-plane** azimuth,
+which no measurement covers — **no margin at all on 3 of 14 graded quantities**, 4 specification questions
+still binding, and **9 failure routes of which 5 remove the element**.
+Two findings no single claim held: the three unmargined quantities are **one arithmetic**, `pitch − d − L`;
+and **two of the six questions carried to NDI had stopped applying and nobody noticed** — `T-95` and `T-102`
+were raised by the branch `CH-0081` removed from the output role. *A discharge is invisible to a list that
+only ever grows*, which is the same failure `C-0067` found in the "cannot answer" section one iteration
+earlier.
+
+**`C-0072` then declined to clear it, and the reason is not a fabrication tolerance.** The branch's two knife
+edges are **one lattice quantity**: `C-0069` groups it `(p − d) − L` and `C-0066` groups it `(p − L) − d`,
+both reproduce at 0.02560917 nm and agree to `1e−12`, and neither claim had noticed — so `T-134` had one
+target rather than two, exactly as `C-0071` predicted.
+**Four floors exceed it and none needs a fabrication measurement**: the base-pair **rise** (13.28×, so *the
+margin is below the finest length any DNA design can specify*), the disagreement between the two measured
+SAXS interhelical distances of the same material (1.56×), **thermal axial** breathing (10.46×), and the arm
+tip's own bending **at a perfectly rigid root** (70.6×, so no joint stiffening escapes). The declared
+falsifier fired on exactly one channel — a *constructed* in-plane spring at the top of its own sweep — which
+is why the floors were required to rest on measured constants.
+**The literature was expected to be a negative and returned four measurements**, three of them in
+supplementary material their own main texts never discuss: the single-layer sheet's lattice-constant width
+at **9.1 %, 9.76× the margin**; an interhelical distance that is a deterministic **sawtooth**, so 2.69 nm is
+a *Bragg lattice constant* rather than a spacing; and staple incorporation at 48–95 %.
+**`T-45`, open since iteration 3, is answered from published measurement — and the answer is a failure.**
+The escape is a reduced path count (53× of margin) and it **loses the flatness**, 0.0706 → 0.2603:
+*margin and flatness are bought from the same four arms.*
+
+**`C-0073` closed the last process blocker and refuted the framing it was given.** `CH-0043` had ranked
+carrying `HEIGHT_TOLERANCE` **up** as the honest-but-expensive direction; measured, it costs **1.02×** the
+solves (282 → 288, Illinois being superlinear), so "costs compute" was simply wrong. It was rejected on a
+better ground: `ScfDiscretisation` rounds the node count, so the residual is **discontinuous** and the ninth
+digit sits two decades below the fourth the grid already destroys.
+Its cheap bound found the structural thing: **there is no tree-wide nine — there are six independent
+rounding implementations**, two disagreeing on the absolute floor, and `window/` already decides flags at six
+while printing nine. And its falsifier fired usefully: **a result file is an INPUT** — `DesignWindowStudy`
+builds its grid out of `T-1d`'s file, so **4 864** fields of `T-2` moved through an emitter nobody touched.
+No verdict changed anywhere; the one visible consequence is a four-figure tie, `0.2601` against `0.2602`.
+
+**And the coordinator repeated iteration 13's failure exactly.** `git add -A` swept `P-18`'s in-flight work
+into two commits, so `HEAD` carried re-emitted six-digit result files **without** the test tolerances they
+require and five gates failed on the commit. **Recording the lesson in `CLAUDE.md` after the first
+occurrence did not prevent the second.** The practice is now changed rather than documented: explicit paths
+while any agent is in flight, and `verify.sh --committed` before the iteration is called closed — which is
+what `P-10` built that flag for. Both occurrences were reported by the agent whose work was captured,
+unprompted, and neither was caught by the coordinator.
