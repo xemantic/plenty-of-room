@@ -1,0 +1,1002 @@
+{
+    "task": "T-135",
+    "leaf": "A8.2",
+    "question": "Which output element does the Gen-1 programme recommend, and on what premises?",
+    "units": {
+        "length": "nm",
+        "force": "pN",
+        "stiffness": "pN/nm",
+        "rotational stiffness": "pN·nm/rad",
+        "energy": "pN·nm (k_BT = 4.141947 at 300 K)",
+        "dishing": "fraction of the free-tile stroke",
+        "margin": "dimensionless ratio"
+    },
+    "conventions": [
+        "x along the host sheet's helices, y across them, z normal and positive UPWARD",
+        "a margin carries a SENSE: limit/value against a ceiling, value/limit against a floor",
+        "a margin below 1.05 is NONE — the threshold is a DECLARED convention, chosen at the coarsest quantum this programme can build (one base-pair rise on the 8.16 nm member, 4.2 %)",
+        "a premise is flagged by HOW IT WAS OBTAINED, never by how confident anyone is",
+        "a failure route is a SINGLE standing result, reversed",
+        "every number below is read at §3's ACCEPTABLE clause, because C-0050 shows the desired clause is unreachable on §3's own stack",
+        "C-0017's mandate is a SUM, so the per-path secant is 33.3333/34 = 0.980392 pN/nm",
+        "PASS means model-consistent and traceable. NOTHING HERE IS MEASURED and the MOTIF IS NOT DEMONSTRATED"
+    ],
+    "parameters": {
+        "pathCount": "34",
+        "targetForce": "100.0",
+        "acceptableStroke": "3.0",
+        "desiredStroke": "10.0",
+        "rootPitchBasePairs": "32",
+        "interhelicalDistance": "2.69",
+        "risePerBasePair": "0.34",
+        "duplexBendingRigidity": "230.0",
+        "duplexStretchModulus": "1100.0",
+        "crossoverHingeStiffness": "13.529411764705882",
+        "duplexEndCouple": "78.23529411764706",
+        "standoffLength": "8.0",
+        "unzipAllowable": "10.0",
+        "worstStabilityFloorTwoMillimolar": "27.9133262",
+        "assembledTangentMinimum": "30.028762",
+        "flatnessConvention": "0.1",
+        "noMarginThreshold": "1.05",
+        "thinMarginThreshold": "1.5"
+    },
+    "decidability": {
+        "catalogueSize": 11,
+        "placeAtOneLevel": 3,
+        "survivors": 2,
+        "rejected": 9,
+        "axes": [
+            {
+                "axis": "undemonstrated motifs required (C-0055, C-0028)",
+                "betterIsLower": true,
+                "values": {
+                    "Q5": 1,
+                    "Q7": 2
+                },
+                "winner": "Q5"
+            },
+            {
+                "axis": "C-0017's six 2 mM stability floors cleared (C-0069)",
+                "betterIsLower": false,
+                "values": {
+                    "Q5": 6,
+                    "Q7": 4
+                },
+                "winner": "Q5"
+            },
+            {
+                "axis": "compression members (C-0023, C-0028)",
+                "betterIsLower": true,
+                "values": {
+                    "Q5": 0,
+                    "Q7": 1
+                },
+                "winner": "Q5"
+            }
+        ],
+        "unanimous": true,
+        "winner": "Q5",
+        "falsifierFired": false,
+        "note": "all three axes agree, and none of them is a new result"
+    },
+    "candidates": [
+        {
+            "id": "Q5",
+            "name": "C-0055/C-0063's hinge-rooted arm — one crossover root, C-0034's A2 tip",
+            "undemonstratedMotifs": 1,
+            "stabilityFloorsCleared": 6,
+            "compressionMembers": 0,
+            "placesInFull": true,
+            "singleLevel": true,
+            "twoSided": true
+        },
+        {
+            "id": "Q7",
+            "name": "the standoff-headed crank — C-0028's B2 base at 8 nm, pinned tip",
+            "undemonstratedMotifs": 2,
+            "stabilityFloorsCleared": 4,
+            "compressionMembers": 1,
+            "placesInFull": true,
+            "singleLevel": true,
+            "twoSided": true
+        },
+        {
+            "id": "Q11",
+            "name": "C-0023's E2 — a single strand",
+            "undemonstratedMotifs": 0,
+            "stabilityFloorsCleared": 6,
+            "compressionMembers": 0,
+            "placesInFull": true,
+            "singleLevel": true,
+            "twoSided": false
+        },
+        {
+            "id": "Q1",
+            "name": "C-0030's coupled flexure, across the rows",
+            "undemonstratedMotifs": 2,
+            "stabilityFloorsCleared": 6,
+            "compressionMembers": 1,
+            "placesInFull": false,
+            "singleLevel": false,
+            "twoSided": true
+        },
+        {
+            "id": "Q2",
+            "name": "C-0030's coupled flexure, along the rows",
+            "undemonstratedMotifs": 2,
+            "stabilityFloorsCleared": 6,
+            "compressionMembers": 1,
+            "placesInFull": false,
+            "singleLevel": false,
+            "twoSided": true
+        },
+        {
+            "id": "Q3",
+            "name": "C-0023's E3a, pinned ends",
+            "undemonstratedMotifs": 1,
+            "stabilityFloorsCleared": 6,
+            "compressionMembers": 0,
+            "placesInFull": false,
+            "singleLevel": false,
+            "twoSided": true
+        },
+        {
+            "id": "Q4",
+            "name": "C-0023's E3a, clamped ends",
+            "undemonstratedMotifs": 1,
+            "stabilityFloorsCleared": 6,
+            "compressionMembers": 0,
+            "placesInFull": false,
+            "singleLevel": false,
+            "twoSided": true
+        },
+        {
+            "id": "Q6",
+            "name": "the same arm with a pinned tip — refused by its own kinematics",
+            "undemonstratedMotifs": 1,
+            "stabilityFloorsCleared": 0,
+            "compressionMembers": 0,
+            "placesInFull": false,
+            "singleLevel": false,
+            "twoSided": true
+        },
+        {
+            "id": "Q8",
+            "name": "a RIGID root with a pinned tip — the truss reading (CH-0081)",
+            "undemonstratedMotifs": 2,
+            "stabilityFloorsCleared": 6,
+            "compressionMembers": 1,
+            "placesInFull": false,
+            "singleLevel": false,
+            "twoSided": true
+        },
+        {
+            "id": "Q9",
+            "name": "one crossover root with a GUIDED tip",
+            "undemonstratedMotifs": 1,
+            "stabilityFloorsCleared": 6,
+            "compressionMembers": 0,
+            "placesInFull": false,
+            "singleLevel": false,
+            "twoSided": true
+        },
+        {
+            "id": "Q10",
+            "name": "C-0023's E1 — a duplex along z, loaded along z",
+            "undemonstratedMotifs": 1,
+            "stabilityFloorsCleared": 6,
+            "compressionMembers": 1,
+            "placesInFull": false,
+            "singleLevel": false,
+            "twoSided": true
+        }
+    ],
+    "recommended": {
+        "id": "Q5",
+        "name": "C-0055/C-0063's hinge-rooted arm (C-0039's E5a1)",
+        "owner": "C-0069, on C-0055's site, C-0063's placement and C-0034's tip",
+        "clause": "§3 ACCEPTABLE — 100 pN over 3 nm, per C-0050",
+        "pathCount": 34,
+        "perPathSecant": 0.980392157,
+        "length": 8.16439083,
+        "lengthBasePairs": 24.0129142,
+        "endConditionFactor": 2.31976158,
+        "planBudget": 8.19,
+        "planMargin": 0.0256091734,
+        "rootJoint": "one antiparallel crossover at C-0055's unused EAST azimuth",
+        "rootStiffness": 13.5294118,
+        "rootCeiling": 13.9303697,
+        "tipJoint": "C-0034's A2 — a duplex end, two strand termini on a 1.0 nm phosphate radius",
+        "tipStiffness": 78.2352941,
+        "tipCeiling": 79.6781387,
+        "kinematicFloor": 4.5,
+        "perPathForce": 2.94117647,
+        "compressionMembers": 0,
+        "twoSided": true,
+        "note": "34 instances at one level, 0 overlaps, 0 clashes, 0.463 of the plan; the coupling enters at the hinges, so the design needs no tie grid at all"
+    },
+    "rejected": [
+        {
+            "id": "Q7",
+            "name": "the standoff-headed crank — C-0028's B2 base at 8 nm, pinned tip",
+            "length": 5.33074719,
+            "againstBudget": 0.650884883,
+            "placed": 34,
+            "removedBy": "places, and loses all three tie-break axes: a second undemonstrated motif, 4 of 6 stability floors, and a compression member",
+            "owner": "C-0069, C-0028"
+        },
+        {
+            "id": "Q8",
+            "name": "an end-loaded arm on a RIGID (truss) root",
+            "length": 9.24698738,
+            "againstBudget": 1.12905829,
+            "placed": 24,
+            "removedBy": "12.9 % past the plan budget — a stiffer root demands a LONGER arm (CH-0081)",
+            "owner": "CH-0081, C-0069"
+        },
+        {
+            "id": "E3a",
+            "name": "the two-support flexure family at its SOFTEST end condition",
+            "length": 22.4141917,
+            "againstBudget": 2.73677554,
+            "placed": 23,
+            "removedBy": "refused at every span, every end joint and every placement — c >= 48 forces (48 EI/k)^(1/3), 2.74x the budget",
+            "owner": "C-0069, C-0025, C-0030, C-0065"
+        },
+        {
+            "id": "Q10",
+            "name": "C-0023's E1 — a duplex along z, loaded along z",
+            "length": 1122.0,
+            "againstBudget": 136.996337,
+            "placed": 0,
+            "removedBy": "the only genuinely out-of-plane mechanism DNA has, and it is AXIAL: 112x C-0017's whole 10 nm envelope",
+            "owner": "C-0069, C-0023"
+        },
+        {
+            "id": "Q11",
+            "name": "C-0023's E2 — a single strand",
+            "length": 6.03540849,
+            "againstBudget": 0.736924113,
+            "placed": 34,
+            "removedBy": "places 34 at one level and is ONE-SIDED — it carries no compression, measured at negative argument rather than assumed",
+            "owner": "C-0069, C-0023"
+        }
+    ],
+    "premises": [
+        {
+            "id": "M1",
+            "statement": "a FREE LEVER may be held to a single-layer sheet by ONE crossover at the unused out-of-plane azimuth. The site and a crossover on it are published (Ke et al., JACS 131:15903, 2009, read directly); a free lever held there was NOT FOUND in 62 recorded queries",
+            "owner": "C-0055",
+            "status": "UNDEMONSTRATED",
+            "worth": "the element itself — without it there is no recommendation at all"
+        },
+        {
+            "id": "M2",
+            "statement": "a duplex may stand NORMAL to a single-layer sheet on a clamped base. Every published out-of-plane base on an origami body is a PIN, and the only rigid out-of-plane mounting in print is triangulated",
+            "owner": "C-0028, C-0029",
+            "status": "UNDEMONSTRATED",
+            "worth": "not the recommended element — the runner-up Q7 and the whole truss branch. It is a premise of the DECISION (tie-break axis 1), not of the design"
+        },
+        {
+            "id": "M3",
+            "statement": "C-0009's crossover hinge constant, FITTED to IN-PLANE sheet crossovers, transfers to the UNUSED OUT-OF-PLANE azimuth. C-0055 shows that site is in BETTER helical register (4.286 deg against 8.571 deg) but no measurement covers its stiffness",
+            "owner": "C-0009, C-0055, T-9",
+            "status": "UNDEMONSTRATED",
+            "worth": "the arm's length, through c^(1/3): at the top of Chen et al.'s own fitted bracket the arm is 8.332 nm and places 30 of 34 instead of 34"
+        },
+        {
+            "id": "M4",
+            "statement": "a duplex END has exactly two strand termini on a 1.0 nm phosphate radius, so its anchorage couple is 2 k_s a^2 = 78.2353 pN nm/rad and no force field can add a third",
+            "owner": "C-0034, C-0029",
+            "status": "DERIVED",
+            "worth": "the tip joint, and the whole end-condition factor c = 2.32"
+        },
+        {
+            "id": "M5",
+            "statement": "the crossover hinge constant is 13.5294 pN nm/rad at alpha = 1, from a fitted bracket alpha in [0.6, 1.2]",
+            "owner": "C-0009, Chen et al., JACS 136:6995 (2014)",
+            "status": "CITED_FITTED",
+            "worth": "the root joint; the top of the bracket MOVES THE VERDICT (failure route R2)"
+        },
+        {
+            "id": "M6",
+            "statement": "the duplex bending rigidity is EI = 230 pN nm^2",
+            "owner": "CanDo (Kim et al., NAR 40:2862, 2012), via C-0009",
+            "status": "CITED_MODEL_INPUT",
+            "worth": "the arm's length as EI^(1/3); Fields et al.'s implied 172.906 gives 7.883 nm and does NOT move the verdict"
+        },
+        {
+            "id": "M7",
+            "statement": "the interhelical distance of a single-layer sheet is 2.69 nm",
+            "owner": "SAXS, Fischer et al. 2016, via C-0009",
+            "status": "CITED_MEASURED",
+            "worth": "the plan budget pitch - d, hence the whole 0.0256 nm margin. The SAME paper's square-lattice 2.73 nm takes the placement to 18 of 34 (failure route R1)"
+        },
+        {
+            "id": "M8",
+            "statement": "the rise is 0.34 nm/bp and a given interface is crossed every 32 bp, so the upward root pitch is 10.88 nm",
+            "owner": "Rothemund 2006, Ke et al. 2009, via C-0015 and C-0055",
+            "status": "CITED_MEASURED",
+            "worth": "the root lattice and therefore the plan budget"
+        },
+        {
+            "id": "L1",
+            "statement": "34 upward roots at crossover phase 24, four rows of three and eleven of two — the self-consistent count, not a rounding of §3's 45",
+            "owner": "C-0055, C-0063",
+            "status": "DERIVED",
+            "worth": "the path count, and through it the per-path secant and the arm's length"
+        },
+        {
+            "id": "L2",
+            "statement": "C-0053's footprint convention: a rooted element occupies [root, root +/- L] and the next along the same row may start at high + d, i.e. consecutive collinear elements need a full duplex of clearance",
+            "owner": "C-0053",
+            "status": "DERIVED",
+            "worth": "the ENTIRE 0.0256 nm margin. At a zero-gap convention the budget is the bare 10.88 nm and the margin 2.72 nm — the single largest lever on this recommendation"
+        },
+        {
+            "id": "L3",
+            "statement": "the plan budget of any rooted element on any 34-root placement is pitch - d = 8.19 nm, exactly, because 3a + 2(15 - a) = 34 forces four rows of three",
+            "owner": "C-0069, on C-0063's bound 1",
+            "status": "DERIVED",
+            "worth": "the ceiling every candidate is graded against; it survives any placement on this lattice"
+        },
+        {
+            "id": "K1",
+            "statement": "C-0017's 33.3333 pN/nm is §3's own 100 pN over 3 nm and is a SUM over the load paths",
+            "owner": "C-0017, §3",
+            "status": "SPECIFICATION",
+            "worth": "the per-path secant, and hence every mechanism length in the census"
+        },
+        {
+            "id": "K2",
+            "statement": "C-0039's exact elastica, including its refusal below 1.5 x the stroke, where the tip turns past 42 deg and the chord draw-in is a large fraction of the arm",
+            "owner": "C-0039",
+            "status": "DERIVED",
+            "worth": "the arm's length, and the window's FLOOR at 4.50 nm — which is what refuses a pinned tip"
+        },
+        {
+            "id": "K3",
+            "statement": "C-0017's six 2 mM stability floors at the 10 nm layer, 23.414 to 27.913 pN/nm",
+            "owner": "C-0017",
+            "status": "CITED_MODEL_INPUT",
+            "worth": "tie-break axis 2, and the recommendation's thinnest mechanical margin (1.0758). Each floor is a mean-field solve inheriting C-0005's 123-214 % one-loop correction, which is TWO ORDERS larger than that margin"
+        },
+        {
+            "id": "K4",
+            "statement": "the per-path allowable is 10 pN unzip, with 65 pN a hard ceiling because every origami helix is nicked",
+            "owner": "C-0006, CH-0029",
+            "status": "CITED_MEASURED",
+            "worth": "the force clause, which the recommendation clears by 3.4x on the mandate secant and 4.35x on C-0063's solved load. A rupture force is loading-rate dependent and the 10 pN is quoted without one"
+        },
+        {
+            "id": "K5",
+            "statement": "the layer is 10 nm of PEG at sigma = 0.024 nm^-2 in 2 mM MgCl2, and C-0022's solved edge load is the load the flatness is read under",
+            "owner": "C-0001, C-0003, C-0022, §3",
+            "status": "SPECIFICATION",
+            "worth": "the flatness verdict entirely. C-0068 shows the equal-spring advantage belongs to the 10 nm layer: the SAME 34 roots dish 0.2000 at the 5 nm layer's own two states"
+        },
+        {
+            "id": "K6",
+            "statement": "T-5b's flatness convention: dishing below 0.10 of the free-tile stroke",
+            "owner": "C-0006, T-5b",
+            "status": "DERIVED",
+            "worth": "the flatness verdict's threshold; it is a convention this programme declared"
+        },
+        {
+            "id": "S1",
+            "statement": "the design is written at §3's ACCEPTABLE clause because the desired ~10 nm stroke is unreachable on §3's own stack — the stroke is L0 - h and §3 names no layer taller than 10 nm",
+            "owner": "C-0050",
+            "status": "DERIVED",
+            "worth": "which clause the whole recommendation discharges. At the desired clause NO rooted element exists on this lattice at all, because a lever cannot stroke past its own length and the budget is 8.19 nm"
+        },
+        {
+            "id": "S2",
+            "statement": "the operating buffer is §3's 2 mM MgCl2",
+            "owner": "§3, C-0017, C-0032",
+            "status": "SPECIFICATION",
+            "worth": "where the six stability floors are read. Unlike C-0030's element the recommendation clears 6 of 6 THERE — but its own pull-in FOLD has never been computed"
+        },
+        {
+            "id": "S3",
+            "statement": "the sheet is a 40 x 40 nm single-layer square-lattice Rothemund sheet of 15 duplexes",
+            "owner": "§3, C-0009, C-0015",
+            "status": "SPECIFICATION",
+            "worth": "the 15 rows the 3a + 2(15 - a) = 34 arithmetic runs on, and the footprint the array packs into"
+        }
+    ],
+    "premiseCounts": {
+        "DERIVED": 7,
+        "CITED_MEASURED": 3,
+        "CITED_MODEL_INPUT": 2,
+        "CITED_FITTED": 1,
+        "SPECIFICATION": 4,
+        "UNDEMONSTRATED": 3
+    },
+    "margins": [
+        {
+            "quantity": "the arm's plan length against the row-of-three budget",
+            "owner": "C-0069",
+            "axis": "plan",
+            "value": 8.16439083,
+            "limit": 8.19,
+            "sense": "CEILING",
+            "margin": 1.00313669,
+            "classification": "NONE",
+            "note": "0.0256 nm, which is 0.075 of a base-pair rise. THE binding knife edge"
+        },
+        {
+            "quantity": "the tip joint against the end-condition ceiling",
+            "owner": "C-0069",
+            "axis": "joint",
+            "value": 78.2352941,
+            "limit": 79.6781387,
+            "sense": "CEILING",
+            "margin": 1.01844237,
+            "classification": "NONE",
+            "note": "C-0034's A2 was chosen because a duplex end has two strand termini, not for this"
+        },
+        {
+            "quantity": "the root joint against the end-condition ceiling",
+            "owner": "C-0069",
+            "axis": "joint",
+            "value": 13.5294118,
+            "limit": 13.9303697,
+            "sense": "CEILING",
+            "margin": 1.02963602,
+            "classification": "NONE",
+            "note": "C-0055 chose the root because it is the unused upward azimuth, not for this"
+        },
+        {
+            "quantity": "the arm against C-0039's 1.5 x stroke kinematic floor",
+            "owner": "C-0069, C-0039",
+            "axis": "kinematics",
+            "value": 8.16439083,
+            "limit": 4.5,
+            "sense": "FLOOR",
+            "margin": 1.81430907,
+            "classification": "COMFORTABLE",
+            "note": "the window is 4.50 ... 8.19 nm, 1.82x wide, and the arm sits near its ceiling"
+        },
+        {
+            "quantity": "the assembled tangent minimum against C-0017's worst 2 mM floor",
+            "owner": "C-0069, C-0017",
+            "axis": "stability",
+            "value": 30.028762,
+            "limit": 27.9133262,
+            "sense": "FLOOR",
+            "margin": 1.07578587,
+            "classification": "THIN",
+            "note": "6 of 6 floors cleared, but the worst by 7.6 % against a floor carrying C-0005's 123-214 % one-loop correction"
+        },
+        {
+            "quantity": "the per-path force at 3 nm against the unzip allowable",
+            "owner": "C-0069, C-0006",
+            "axis": "force",
+            "value": 2.94117647,
+            "limit": 10.0,
+            "sense": "CEILING",
+            "margin": 3.4,
+            "classification": "COMFORTABLE",
+            "note": "on the mandate secant; the allowable is CITED and carries no loading rate"
+        },
+        {
+            "quantity": "C-0063's worst SOLVED per-path force against the unzip allowable",
+            "owner": "C-0063",
+            "axis": "force",
+            "value": 2.298,
+            "limit": 10.0,
+            "sense": "CEILING",
+            "margin": 4.3516101,
+            "classification": "COMFORTABLE",
+            "note": "under C-0022's solved edge load rather than on the mandate secant"
+        },
+        {
+            "quantity": "C-0063's worst crossover force against the unzip allowable",
+            "owner": "C-0063",
+            "axis": "force",
+            "value": 1.246,
+            "limit": 10.0,
+            "sense": "CEILING",
+            "margin": 8.02568218,
+            "classification": "COMFORTABLE",
+            "note": "8.3x the 3 x 15 grid's, exactly as C-0061 warned, and still 8x clear"
+        },
+        {
+            "quantity": "the per-path secant against C-0049's n a/s ceiling",
+            "owner": "C-0049",
+            "axis": "compliance",
+            "value": 33.3333333,
+            "limit": 113.333333,
+            "sense": "CEILING",
+            "margin": 3.39999999,
+            "classification": "COMFORTABLE",
+            "note": "the same 3.4x as the force clause, because both are the unzip allowable"
+        },
+        {
+            "quantity": "the dishing at C-0063's design state against T-5b's convention",
+            "owner": "C-0063",
+            "axis": "flatness",
+            "value": 0.0706,
+            "limit": 0.1,
+            "sense": "CEILING",
+            "margin": 1.41643059,
+            "classification": "THIN",
+            "note": "34 EQUAL springs; no distribution at all"
+        },
+        {
+            "quantity": "the dishing over the device's own RANGE against T-5b's convention",
+            "owner": "C-0068",
+            "axis": "flatness",
+            "value": 0.0896,
+            "limit": 0.1,
+            "sense": "CEILING",
+            "margin": 1.11607143,
+            "classification": "THIN",
+            "note": "worst of the three buffers (10 mM); 0.0789 at 2 mM and 0.0853 at 0.5 mM. The range spends the margin: 1.42x at the design state becomes 1.12x"
+        },
+        {
+            "quantity": "the tie registration the design USES — a tie on the arm's own tip",
+            "owner": "C-0066",
+            "axis": "registration",
+            "value": 1.345,
+            "limit": 2.71560917,
+            "sense": "CEILING",
+            "margin": 2.01904028,
+            "classification": "COMFORTABLE",
+            "note": "the tie lands on the arm's A2 end, so it needs half a duplex against the 2.71561 nm the lattice leaves. NOT a knife edge"
+        },
+        {
+            "quantity": "the tie registration the design does NOT use — a FREE-STANDING tie between two arms",
+            "owner": "C-0066",
+            "axis": "registration",
+            "value": 2.69,
+            "limit": 2.71560917,
+            "sense": "CEILING",
+            "margin": 1.00952014,
+            "classification": "NONE",
+            "note": "the same 0.0256 nm as the plan margin, and the SAME lattice quantity. Discharged by the tip registration, and recorded so that it is not double-counted"
+        },
+        {
+            "quantity": "§3's DESIRED 10 nm stroke against the arm's own length",
+            "owner": "C-0050, C-0066",
+            "axis": "kinematics",
+            "value": 10.0,
+            "limit": 8.16439083,
+            "sense": "CEILING",
+            "margin": 0.816439083,
+            "classification": "VIOLATED",
+            "note": "VIOLATED, and deliberately: a lever cannot deliver a stroke longer than itself, which is C-0050's kinematic ceiling arriving from a plan view"
+        }
+    ],
+    "marginCounts": {
+        "VIOLATED": 1,
+        "NONE": 4,
+        "THIN": 3,
+        "COMFORTABLE": 6
+    },
+    "conditionals": [
+        {
+            "id": "T-63",
+            "question": "Is 0.5 mM MgCl2 acceptable as the Gen-1 nominal buffer?",
+            "owner": "C-0012 ... C-0032",
+            "status": "BINDING",
+            "why": "the requirement C-0032 raised does NOT transfer: it was measured on C-0030's strain-SOFTENING flexure (22.88 pN/nm against a 23.41-27.91 floor), and the recommended array's own tangent minimum is 30.03 and clears 6 of 6 at 2 mM. What has NOT been computed is this element's own pull-in FOLD, and CLAUDE.md forbids transferring a fold margin between load lines",
+            "ifAnsweredOtherwise": "at 0.5 mM every floor falls to 3.86-15.94 and the fold disappears entirely, so the answer can only help; the question binds because the 2 mM fold is unknown, not because 2 mM is known to fail"
+        },
+        {
+            "id": "P-13",
+            "question": "What is the electrode made of, and what is its potential of zero charge?",
+            "owner": "C-0021",
+            "status": "BINDING",
+            "why": "metal against oxide is 2.6x on the one hold-down that cannot be designed away, and a contact potential of 0.9-5.1 mV supplies the whole thermal-scale hold-down. No §3 row fixes it and no element choice can",
+            "ifAnsweredOtherwise": "it moves the zero-bias resting position, which is where the stroke is measured FROM (C-0031): 0.07-0.38 nm against a 33 pN/nm coupling"
+        },
+        {
+            "id": "T-115",
+            "question": "May the polymer layer be taller than 10 nm — 17-26 nm?",
+            "owner": "C-0050, C-0068",
+            "status": "BINDING",
+            "why": "the recommendation's flatness belongs to the 10 nm layer, and C-0068 shows THE LAYER SELECTS THE PHASE — 24 for 10 nm, 8 for 5 nm — with the two argmins mutually poor. A 5 nm layer makes the same 34 roots dish 0.2000, 2.0x outside T-5b",
+            "ifAnsweredOtherwise": "a 17-26 nm layer is the only thing that buys §3's DESIRED stroke, and it re-opens C-0002's crossover, C-0005's screening validity, C-0007's drainage and C-0012's bias — none of which has been evaluated there"
+        },
+        {
+            "id": "T-112",
+            "question": "Which device does §3's DESIRED clause ask for?",
+            "owner": "CH-0059, C-0046, C-0050",
+            "status": "BINDING",
+            "why": "the recommendation discharges the ACCEPTABLE clause and nothing more. §3's desired clause asks for a different coupling (100/10 = 10 pN/nm) which C-0017's own stability floor refuses at 2.34-2.79x",
+            "ifAnsweredOtherwise": "if the desired clause is a requirement rather than an aspiration, no element in this programme discharges it and the recommendation must be withdrawn as a whole"
+        },
+        {
+            "id": "T-95",
+            "question": "May the output superstructure be perforated under each flexure midspan?",
+            "owner": "C-0035, C-0066",
+            "status": "DISCHARGED_BY_THIS_ELEMENT",
+            "why": "the question was raised for C-0035's mounting, whose tie must cross a STANDOFF BASE PLANE at a FLEXURE MIDSPAN. The recommendation has neither: C-0066's registration puts the tie on the arm's own A2 end, so no tie has to reach the tile and the section theorem lapses",
+            "ifAnsweredOtherwise": "it re-binds immediately if the two-support flexure branch is revived — which CH-0081 and C-0069's 2.74x say it should not be"
+        },
+        {
+            "id": "T-102",
+            "question": "May §3's tile grow by 1.44x in area?",
+            "owner": "C-0041, C-0022",
+            "status": "DISCHARGED_BY_THIS_ELEMENT",
+            "why": "the growth was priced for C-0041's FLEXURE array at the DESIRED stroke, where the path-count window on a 40 x 40 nm tile is empty. The recommended arm places 34 instances at one level on the Gen-1 footprint at the acceptable clause",
+            "ifAnsweredOtherwise": "it re-binds at §3's own 45 paths, where the arm is 9.131 nm and places 24 of 34 (failure route R4)"
+        }
+    ],
+    "conditionalCounts": {
+        "BINDING": 4,
+        "DISCHARGED_BY_THIS_ELEMENT": 2
+    },
+    "failureRoutes": [
+        {
+            "id": "R1",
+            "statement": "the interhelical distance for THIS sheet being the square lattice's 2.73 nm rather than the single-layer 2.69 nm",
+            "owner": "C-0069's sensitivity table; Fischer et al. 2016 (SAXS) supplies both numbers",
+            "effect": "REMOVES_THE_ELEMENT",
+            "decidedBy": "MEASUREMENT",
+            "insidePublishedBracket": true,
+            "consequence": "the budget falls to 8.15 nm and the arm places 18 of 34"
+        },
+        {
+            "id": "R2",
+            "statement": "the crossover hinge constant sitting at the TOP of Chen et al.'s own fitted bracket, alpha = 1.2",
+            "owner": "C-0069's sensitivity table; C-0009, Chen et al. 2014",
+            "effect": "REMOVES_THE_ELEMENT",
+            "decidedBy": "MEASUREMENT",
+            "insidePublishedBracket": true,
+            "consequence": "the arm is 8.332 nm and places 30 of 34 — the positive verdict becomes negative"
+        },
+        {
+            "id": "R3",
+            "statement": "any tolerance or scatter model on the plan positions",
+            "owner": "C-0069's and C-0066's own Still-open items; T-134",
+            "effect": "REMOVES_THE_ELEMENT",
+            "decidedBy": "CALCULATION",
+            "insidePublishedBracket": false,
+            "consequence": "0.0256 nm is 0.075 of a base-pair rise and any real scatter erases it. Nothing in this programme has ever modelled scatter"
+        },
+        {
+            "id": "R4",
+            "statement": "§3's 45 load paths being mandated rather than C-0055's self-consistent 34",
+            "owner": "C-0069's sensitivity table; C-0015",
+            "effect": "REMOVES_THE_ELEMENT",
+            "decidedBy": "SPECIFICATION",
+            "insidePublishedBracket": false,
+            "consequence": "more paths make each element LONGER (L ~ n^(1/3)): 9.131 nm, 24 of 34"
+        },
+        {
+            "id": "R5",
+            "statement": "the motif being unbuildable — a free lever held to a single-layer sheet by ONE crossover",
+            "owner": "C-0055, 62 recorded queries",
+            "effect": "REMOVES_THE_ELEMENT",
+            "decidedBy": "EXPERIMENT",
+            "insidePublishedBracket": false,
+            "consequence": "there is no element, and no calculation in this repository can close it. It is the only route of the five that a simulation cannot settle"
+        },
+        {
+            "id": "R6",
+            "statement": "the layer being 5 nm rather than 10 nm",
+            "owner": "C-0068, CH-0080",
+            "effect": "REMOVES_A_PREMISE",
+            "decidedBy": "SPECIFICATION",
+            "insidePublishedBracket": false,
+            "consequence": "the same 34 roots dish 0.2000 against T-5b's 0.10 and are worse than no coupling at all at both of that device's states; the phase would have to move from 24 to 8, and phase 8's best dishes 0.2416 at the 10 nm design state"
+        },
+        {
+            "id": "R7",
+            "statement": "this element's own pull-in fold collapsing at 2 mM as C-0030's did",
+            "owner": "C-0032, C-0018 — NOT computed for this element",
+            "effect": "REMOVES_A_PREMISE",
+            "decidedBy": "CALCULATION",
+            "insidePublishedBracket": false,
+            "consequence": "the 2 mM operating point goes and 0.5 mM becomes a requirement again. The element is strain-STIFFENING at the placement stroke, which is the favourable side of C-0032's own test — but that is a direction, not a bound"
+        },
+        {
+            "id": "R8",
+            "statement": "C-0053's footprint convention being relaxed to zero clearance between collinear elements",
+            "owner": "C-0053, inherited by C-0055, C-0063, C-0065, C-0066 and C-0069 alike",
+            "effect": "CHANGES_UNIQUENESS",
+            "decidedBy": "CALCULATION",
+            "insidePublishedBracket": false,
+            "consequence": "the budget rises from 8.19 to the bare 10.88 nm, the margin from 0.026 to 2.72 nm, and the RIGID-root arm at 9.247 nm then places — so CH-0081 lapses and the truss branch re-enters the output role. It would move all six claims, not just this one"
+        },
+        {
+            "id": "R9",
+            "statement": "a compliance mechanism in DNA that is neither entropic nor bending",
+            "owner": "C-0023's two-mechanism statement, re-measured in C-0069's six-row census",
+            "effect": "CHANGES_UNIQUENESS",
+            "decidedBy": "CALCULATION",
+            "insidePublishedBracket": false,
+            "consequence": "the census would be incomplete and the element space would have to be re-enumerated; it would not by itself remove the recommended element"
+        }
+    ],
+    "failureRouteCounts": {
+        "REMOVES_THE_ELEMENT": 5,
+        "REMOVES_A_PREMISE": 2,
+        "CHANGES_UNIQUENESS": 2,
+        "decidedBy CALCULATION": 4,
+        "decidedBy MEASUREMENT": 2,
+        "decidedBy SPECIFICATION": 2,
+        "decidedBy EXPERIMENT": 1,
+        "insideAPublishedBracket": 2,
+        "removeTheElement AND insideAPublishedBracket": 2
+    },
+    "sectionSix": [
+        {
+            "task": "1 — stiffness of the polymer layer",
+            "acceptance": "number with stated model, parameters and validity range; sensitivity to grafting density",
+            "verdict": "PASS, then superseded twice",
+            "claims": "C-0001 -> C-0003 -> C-0011",
+            "whatTheRecommendationChanges": "nothing — the recommendation consumes the layer, it does not change it"
+        },
+        {
+            "task": "2 — feasible design window",
+            "acceptance": "non-empty region satisfying §4(a)-(d) simultaneously, or a proof of emptiness naming the binding constraint",
+            "verdict": "PASS — non-empty at 7 and 10 nm, empty at 5 nm",
+            "claims": "C-0016, C-0017, C-0032, C-0051",
+            "whatTheRecommendationChanges": "the window's output-coupling axis stops being hypothetical: it now has a NAMED element with a placement, 34 paths at 0.980392 pN/nm each. It does not move an edge — the upper edge is a DEAD-LOAD stroke and no coupling choice reaches it"
+        },
+        {
+            "task": "3 — stroke and blocking force vs bias, including ionic screening",
+            "acceptance": "stroke >= ~3 nm and force >= 100 pN at <= 2 V, or a demonstration that it is unreachable",
+            "verdict": "PASS on the acceptable clause, and the DESIRED ~10 nm clause is demonstrated UNREACHABLE on §3's own stack — which is the predicate's own second branch, stated plainly as §7 asks",
+            "claims": "C-0008, C-0012, C-0050, C-0069",
+            "whatTheRecommendationChanges": "supplies the element that discharges the placement clause, and corroborates the negative half from a third direction: the plan budget is 8.19 nm and a lever cannot deliver a stroke longer than its own length, so at the desired clause NO rooted element exists on this lattice at all"
+        },
+        {
+            "task": "4 — electrostatic softening and pull-in",
+            "acceptance": "either a maximum usable bias with margin to the operating point, or a demonstration that the osmotic divergence removes the instability",
+            "verdict": "PASS, both branches answered, each for a different load line",
+            "claims": "C-0018, CH-0017, C-0032",
+            "whatTheRecommendationChanges": "NOT re-run for this element. C-0032's fold was computed on C-0030's flexure, and a fold margin does not transfer between load lines. THIS IS OPEN ITEM 1 and it is the largest thing this recommendation does not know"
+        },
+        {
+            "task": "5 — load distribution across the origami",
+            "acceptance": "peak per-load-path force reported against the 35-60 pN disassembly band, distributed and concentrated attachment treated separately",
+            "verdict": "PASS",
+            "claims": "C-0006, C-0009, C-0063",
+            "whatTheRecommendationChanges": "the recommended array's own worst path is 2.298 pN under C-0022's SOLVED load (2.941 on the mandate secant) and its worst crossover 1.246 pN — 8x clear of the 10 pN unzip allowable and an order below the 35-60 pN band"
+        },
+        {
+            "task": "5b — deflected shape of the tile",
+            "acceptance": "deformation amplitude reported against the stroke; rigid-plate assumption upheld or rejected, with consequences for force transfer and sensing",
+            "verdict": "PASS, verdict RIGID PLATE REJECTED",
+            "claims": "C-0006, C-0009, C-0063, C-0068",
+            "whatTheRecommendationChanges": "this is where the recommendation contributes most: it is the first Gen-1 design in the programme whose flatness stands on a placement a claim actually supplies — 0.0706 at the design state and 0.0789-0.0896 over the range, all inside T-5b's 0.10, with 34 EQUAL springs and no distribution"
+        },
+        {
+            "task": "6 — validity boundary of mean-field screening at 2 mM Mg2+",
+            "acceptance": "quantified deviation from mean-field, with the boundary stated",
+            "verdict": "PASS",
+            "claims": "C-0005, C-0008",
+            "whatTheRecommendationChanges": "nothing — but it is what makes the recommendation's stability margin unquotable as an establishment: C-0005's 123-214 % one-loop correction is two orders larger than the 7.6 % by which the array clears its worst floor"
+        },
+        {
+            "task": "7 — poroelastic drainage time vs thickness and volume fraction",
+            "acceptance": "bounded, with the conditions under which it would constrain >= 1 kHz operation stated",
+            "verdict": "PASS — not binding, boundary named",
+            "claims": "C-0004",
+            "whatTheRecommendationChanges": "nothing"
+        },
+        {
+            "task": "8 — tile positional variance at 300 K",
+            "acceptance": "sigma_RMS <= 3.0 nm for the nominal Gen-1 tile",
+            "verdict": "PASS at the operating point, PARTIAL against leaf A1.2",
+            "claims": "C-0010",
+            "whatTheRecommendationChanges": "the array adds 0.346 pN of C-0014 thermal force per path (C-0063), which is inside every allowable; the variance verdict itself is untouched"
+        }
+    ],
+    "openItems": [
+        "1. THE PULL-IN FOLD HAS NEVER BEEN COMPUTED FOR THIS ELEMENT. C-0032 computed one for C-0030's flexure and found the 10 nm / 2 mM bias margin collapse to 1.0000-1.0019. The recommended array is strain-STIFFENING at the placement stroke, which is the favourable side of that test, but CLAUDE.md's own rule forbids transferring a fold margin between load lines. This is the largest single thing the recommendation does not know, and it is a calculation, not a measurement",
+        "2. The 0.0256 nm plan margin against a tolerance model — T-134, running concurrently. This synthesis hands it one finding: the two 0.0256 nm quantities in circulation are ONE lattice number, pitch - d - L, and only the PLAN one binds. C-0066's free-standing-tie reading is discharged by the tip registration, which has 2.02x",
+        "3. Neither of the recommendation's two joints has a margin, and neither was chosen for the bound it sits inside. T-9's k_theta and k_s are unmeasured, and the top of the fitted bracket moves the verdict",
+        "4. The flatness of the array has been solved at C-0063's phase-24 placement and over its own device's range (C-0068), but NOT with the arms' own mass and stiffness in the grillage as a solved body at every state — C-0061/T-121 did that at one state",
+        "5. Whether a different 34-root placement admits a longer element. The row-of-three bound says no on this lattice; a different COUNT would re-open it, and a different count re-solves C-0055's self-consistency",
+        "6. The recommendation has no sequence design and no yield estimate. Ke et al. report the 8 bp staple break the site forces as a YIELD cost, and nothing here prices it"
+    ],
+    "reproductions": [
+        {
+            "owner": "C-0017",
+            "quantity": "the mandate as a sum [pN/nm]",
+            "published": 33.3333333,
+            "reproduced": 33.3333333,
+            "departure": 1.00000008E-9
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the per-path secant at 34 paths [pN/nm]",
+            "published": 0.980392157,
+            "reproduced": 0.980392157,
+            "departure": 0.0
+        },
+        {
+            "owner": "C-0055",
+            "quantity": "the upward root pitch [nm]",
+            "published": 10.88,
+            "reproduced": 10.88,
+            "departure": 0.0
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the plan budget, pitch - d [nm]",
+            "published": 8.19,
+            "reproduced": 8.19,
+            "departure": 0.0
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the hinge-rooted arm [nm]",
+            "published": 8.16439083,
+            "reproduced": 8.16439083,
+            "departure": 0.0
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the arm's plan margin [nm]",
+            "published": 0.0256091734,
+            "reproduced": 0.0256091734,
+            "departure": 1.22228551E-9
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the end-condition budget c",
+            "published": 2.3416,
+            "reproduced": 2.34165925,
+            "departure": 2.53013001E-5
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the tip-restraint ceiling [pN nm/rad]",
+            "published": 79.678,
+            "reproduced": 79.6781387,
+            "departure": 1.74098257E-6
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the root-restraint ceiling [pN nm/rad]",
+            "published": 13.93,
+            "reproduced": 13.9303697,
+            "departure": 2.65419277E-5
+        },
+        {
+            "owner": "C-0034",
+            "quantity": "the A2 couple [pN nm/rad]",
+            "published": 78.2352941,
+            "reproduced": 78.2352941,
+            "departure": 0.0
+        },
+        {
+            "owner": "C-0009",
+            "quantity": "the crossover hinge [pN nm/rad]",
+            "published": 13.5294118,
+            "reproduced": 13.5294118,
+            "departure": 2.60869566E-9
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the two-support family's floor [nm]",
+            "published": 22.414,
+            "reproduced": 22.4141917,
+            "departure": 8.55211582E-6
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the axial length S/k [nm]",
+            "published": 1122.0,
+            "reproduced": 1122.0,
+            "departure": 0.0
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the entropic contour [nm]",
+            "published": 6.035,
+            "reproduced": 6.03540849,
+            "departure": 6.76861167E-5
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the hinge lever sqrt(k_theta/k) [nm]",
+            "published": 3.715,
+            "reproduced": 3.71483512,
+            "departure": 4.43811033E-5
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the standoff-headed crank [nm]",
+            "published": 5.331,
+            "reproduced": 5.33074719,
+            "departure": 4.74223583E-5
+        },
+        {
+            "owner": "CH-0081",
+            "quantity": "the rigid-root arm [nm]",
+            "published": 9.247,
+            "reproduced": 9.24698738,
+            "departure": 1.36467388E-6
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the rooted element's kinematic floor [nm]",
+            "published": 4.5,
+            "reproduced": 4.5,
+            "departure": 0.0
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the per-path force at 3 nm [pN]",
+            "published": 2.94117647,
+            "reproduced": 2.94117647,
+            "departure": 0.0
+        },
+        {
+            "owner": "C-0049",
+            "quantity": "the per-path secant ceiling n a/s [pN/nm]",
+            "published": 113.333333,
+            "reproduced": 113.333333,
+            "departure": 2.94117647E-9
+        },
+        {
+            "owner": "C-0066",
+            "quantity": "the tip-to-neighbour clearance [nm]",
+            "published": 2.71561,
+            "reproduced": 2.71560917,
+            "departure": 3.04399859E-7
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the two-support family against the budget",
+            "published": 2.737,
+            "reproduced": 2.73677554,
+            "departure": 8.20088515E-5
+        },
+        {
+            "owner": "CH-0081",
+            "quantity": "the rigid-root arm against the budget",
+            "published": 1.129,
+            "reproduced": 1.12905829,
+            "departure": 5.16282209E-5
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "the hinge-rooted arm [nm]",
+            "axis": "elastica RK4 steps 200 -> 800",
+            "coarse": 8.16439083,
+            "fine": 8.16439083,
+            "departure": 0.0
+        },
+        {
+            "quantity": "the root-restraint ceiling [pN nm/rad]",
+            "axis": "bisection resolution 1e-4 -> 1e-7",
+            "coarse": 13.9298604,
+            "fine": 13.9303725,
+            "departure": 3.67574893E-5
+        },
+        {
+            "quantity": "the tip-restraint ceiling [pN nm/rad]",
+            "axis": "bisection resolution 1e-4 -> 1e-7",
+            "coarse": 79.6765089,
+            "fine": 79.6781678,
+            "departure": 2.0820237E-5
+        },
+        {
+            "quantity": "the plan budget [nm]",
+            "axis": "a closed form — no resolution at all",
+            "coarse": 8.19,
+            "fine": 8.19,
+            "departure": 0.0
+        }
+    ],
+    "verdict": {
+        "T-135 — the recommendation": "YES, the programme can recommend, and it recommends Q5 — C-0055/C-0063's hinge-rooted arm (C-0039's E5a1), 8.16439 nm = 24.0 bp, rooted on one antiparallel crossover at C-0055's unused out-of-plane azimuth and tipped on C-0034's A2 duplex end, 34 instances at one level, at §3's ACCEPTABLE clause",
+        "T-135 — why it is decidable NOW": "the cheap bound: 11 catalogued elements, 3 place all 34 at one level, 2 survive every clause, and the three tie-break axes — each an integer count owned by a standing claim, none of them a new result — are UNANIMOUS. The declared falsifier did not fire",
+        "T-135 — the premises": "20 premises, of which 3 are UNDEMONSTRATED: M1; M2; M3. M1 is upstream of the element itself, M3 of its length, and M2 of the DECISION rather than of the design",
+        "T-135 — where there is no margin": "4 of 14 graded quantities have NO margin at all (< 1.05x): the arm's plan length against the row-of-three budget at 1.00314x; the tip joint against the end-condition ceiling at 1.01844x; the root joint against the end-condition ceiling at 1.02964x; the tie registration the design does NOT use — a FREE-STANDING tie between two arms at 1.00952x. Three of them are ONE arithmetic — pitch - d - L — and the fourth, the free-standing tie, is discharged by the registration the design uses",
+        "T-135 — the specification conditionals": "4 still bind (T-63, P-13, T-115, T-112) and 2 are DISCHARGED BY THIS ELEMENT (T-95, T-102) — both of them raised by the flexure-and-tie branch that CH-0081 and C-0069 remove from the output role. A window loses an axis when a constraint is discharged, and an intersection records neither",
+        "T-135 — the failure routes": "9 routes: 5 REMOVE THE ELEMENT, 2 remove a PREMISE, 2 change its UNIQUENESS. Of the 5 removers, 2 are ALREADY INSIDE A PUBLISHED BRACKET (R1, R2) — not hypotheses at all — and 1 can be settled only at a bench",
+        "T-135 — what the recommendation is NOT": "it is not a demonstration. TRL 1-3: nothing here is measured, the motif is not in the literature, and the design has no margin on either of its two joints. It is the element that survives every clause this programme has written, and it is offered as that and nothing more",
+        "§6 verdict": "no §6 verdict moves. The recommendation contributes to task 5b (the first flat Gen-1 design standing on a placement a claim supplies), to task 3 (a named element for the acceptable clause, and a third corroboration of the desired clause's negative) and to task 5 (2.298 pN worst solved path). Task 4 is the one it does NOT discharge for itself"
+    }
+}

@@ -20,6 +20,7 @@ import com.xemantic.nano.plentyofroom.ELECTRON_VOLT
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.equipartitionRms
 import com.xemantic.nano.plentyofroom.material.PegWater
+import com.xemantic.nano.plentyofroom.structure.SOLVED_HEIGHT_SIGNIFICANT_DIGITS
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -837,7 +838,16 @@ private fun standingClaimCheck(designPoints: List<ScfDesignPoint>): List<Standin
         StandingClaimCheck("stiffnessAtFourFifths", 7.0, 24.0, scf.stiffnessAtFourFifths, false),
         StandingClaimCheck("secantStiffness", 16.6, 26.1, scf.secantStiffness, false),
         StandingClaimCheck("meanVolumeFraction", 0.0326, 0.0543, scf.meanVolumeFraction, false)
-    ).map { it.copy(insideStandingBracket = it.selfConsistentField in it.standingLow..it.standingHigh) }
+    ).map {
+        // `P-18`: round at the DECISION point too. A flag decided on the raw solved number and
+        // emitted beside a rounded one is not reproducible from the file it is emitted in, and
+        // a value sitting within `1e-6` of a bracket edge would flip it between two runs of the
+        // same model. The comparison is taken at the file's own emission precision.
+        it.copy(
+            insideStandingBracket = roundForResult(it.selfConsistentField) in
+                    roundForResult(it.standingLow)..roundForResult(it.standingHigh)
+        )
+    }
 }
 
 /**
@@ -1019,27 +1029,75 @@ private fun report(result: ScfDensityProfileResult, output: File, elapsed: Doubl
  * there: the sweep is executed on several threads, so the summation order of a reduction is not
  * even fixed within one run, and a bare `Double` would make the file a function of the thread
  * schedule rather than of the model.
+ *
+ * **`P-18` changed the count from nine to six, and the number now has one source of truth.**
+ * Every number in this file is downstream of a solved height and
+ * [SelfConsistentFieldLayer.heightAtPressure] closes its bracket at a relative `1e-6`; nine digits
+ * made a re-run diff a certificate about the code **path** rather than about the answer
+ * (`CH-0043`). The floor is unchanged, so this change is attributable to one cause.
  */
-private const val RESULT_SIGNIFICANT_DIGITS = 9
+private const val RESULT_SIGNIFICANT_DIGITS = SOLVED_HEIGHT_SIGNIFICANT_DIGITS
 
 /** The magnitude below which a result is reported as exactly zero. */
 private const val RESULT_ABSOLUTE_FLOOR = 1e-9
 
-private fun roundForResult(value: Double): Double {
+/**
+ * The keys whose determined precision is **below** the file's own, and what it is.
+ *
+ * `C-0031` re-ran this study across a solver repair that changed no answer, and measured the
+ * distribution: 10 796 fields moved, median `8.6e−7` — six digits, the file's own count — and
+ * **122 of them moved by more than `1e−3`, every single one of them
+ * [ScfResponse.stiffnessAtSevenTenths] (43) or [ScfResponse.stiffnessAtNineTenths] (79)**, to a
+ * maximum of `1.5e−2`.
+ *
+ * The cause is structural. Both are `∂²F/∂h²` — a **second difference** of free energies over a
+ * node spacing `h/M` that is itself a function of the **solved** height, evaluated at a fraction
+ * of that same solved height. A `1e−6` movement in `L₀` therefore reaches them twice, and at deep
+ * compression the amplification is large: `P-18` measures it at **27.6×** at the 10 nm design
+ * point and `C-0031` measured `10⁴` at the sweep's stiff end.
+ *
+ * **Three digits, and the limitation is stated rather than hidden.** Three absorbs the movement
+ * of 98.9 % of this file's fields and the median movement of these two keys; it does **not**
+ * absorb the `1.5e−2` tail. No per-key constant can, because the amplification varies by four
+ * orders of magnitude *across the sweep* while a key is one number — which is `P-18`'s own
+ * finding: a per-key rule is the right granularity for **provenance** and the wrong granularity
+ * for **amplification**.
+ */
+private val DEEP_COMPRESSION_DIGITS = mapOf(
+    "stiffnessAtSevenTenths" to 3,
+    "stiffnessAtNineTenths" to 3
+)
+
+private fun roundForResult(
+    value: Double,
+    digits: Int = RESULT_SIGNIFICANT_DIGITS
+): Double {
     if (!value.isFinite()) return value
     if (abs(value) < RESULT_ABSOLUTE_FLOOR) return 0.0
-    val scale = 10.0.pow(RESULT_SIGNIFICANT_DIGITS - 1 - floor(log10(abs(value))))
+    val scale = 10.0.pow(digits - 1 - floor(log10(abs(value))))
     return (value * scale).roundToLong() / scale
 }
 
-/** Returns this element with every non-integral number rounded by [roundForResult]. */
-private fun JsonElement.roundedForResult(): JsonElement = when (this) {
-    is JsonObject -> JsonObject(mapValues { (_, value) -> value.roundedForResult() })
-    is JsonArray -> JsonArray(map { it.roundedForResult() })
+/**
+ * Returns this element with every non-integral number rounded by [roundForResult], at
+ * [digits] significant digits or at the [DEEP_COMPRESSION_DIGITS] override for its key.
+ *
+ * The override applies to the whole subtree under the key, so an array of stiffnesses under one
+ * of those names is covered.
+ */
+private fun JsonElement.roundedForResult(
+    digits: Int = RESULT_SIGNIFICANT_DIGITS
+): JsonElement = when (this) {
+    is JsonObject -> JsonObject(
+        mapValues { (key, value) ->
+            value.roundedForResult(DEEP_COMPRESSION_DIGITS[key] ?: digits)
+        }
+    )
+    is JsonArray -> JsonArray(map { it.roundedForResult(digits) })
     is JsonPrimitive -> when {
         isString -> this
         content.none { it == '.' || it == 'e' || it == 'E' } -> this
-        else -> doubleOrNull?.let { JsonPrimitive(roundForResult(it)) } ?: this
+        else -> doubleOrNull?.let { JsonPrimitive(roundForResult(it, digits)) } ?: this
     }
     else -> this
 }

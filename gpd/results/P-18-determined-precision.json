@@ -1,0 +1,1066 @@
+{
+    "task": "P-18",
+    "leaf": "none - numerics infrastructure under A2.1, consumed by every leaf",
+    "units": {
+        "length": "nm",
+        "force": "pN",
+        "pressure": "pN/nm^2 (= 1 MPa exactly)",
+        "stiffness": "pN/nm",
+        "digits": "dimensionless",
+        "relative movement": "dimensionless"
+    },
+    "conventions": [
+        "The DETERMINED PRECISION of a quantity is the number of significant digits invariant under any change that respects the solvers' own declared tolerances: floor(-log10 m) of the largest relative movement m observed under such a change, clamped to 1..9.",
+        "A relative movement is |Q - Q_ref|/|Q_ref|, compared ABSOLUTELY where the reference is meant to be zero.",
+        "PROVENANCE of an emitted number is the loosest solver tolerance on any path from a model input to it. Nine digits is defensible only where that is <= 1e-9.",
+        "Cost is counted in SCF SOLVES, not seconds: seconds on a shared box measure the other agents, and C-0066 had to delete a runtimeSeconds field to get a byte-identical re-emission."
+    ],
+    "parameters": {
+        "designHeight": 10.0,
+        "graftingDensity": 0.024,
+        "tileArea": 1600.0,
+        "targetForce": 100.0,
+        "nodeSpacing": 0.2,
+        "contourStepsPerMonomer": 2.0,
+        "scfFieldTolerance": 1.0E-11,
+        "standingHeightTolerance": 1.0E-6,
+        "printedHeightTolerance": 1.0E-9,
+        "solveCountAtStandingTolerance": 282.0,
+        "solveCountAtPrintedTolerance": 288.0,
+        "solveCountRatio": 1.02
+    },
+    "ladder": [
+        {
+            "heightTolerance": 1.0E-4,
+            "quantity": "monomersPerChain",
+            "unit": "monomers",
+            "value": 62.1076,
+            "solveCount": 206
+        },
+        {
+            "heightTolerance": 1.0E-4,
+            "quantity": "restingHeight",
+            "unit": "nm",
+            "value": 10.0,
+            "solveCount": 206
+        },
+        {
+            "heightTolerance": 1.0E-4,
+            "quantity": "pressureAtNineTenths",
+            "unit": "pN/nm^2",
+            "value": 0.00180084,
+            "solveCount": 206
+        },
+        {
+            "heightTolerance": 1.0E-4,
+            "quantity": "stiffnessAtNineTenths",
+            "unit": "pN/nm",
+            "value": 2.86833,
+            "solveCount": 206
+        },
+        {
+            "heightTolerance": 1.0E-4,
+            "quantity": "stiffnessAtFourFifths",
+            "unit": "pN/nm",
+            "value": 6.53816,
+            "solveCount": 206
+        },
+        {
+            "heightTolerance": 1.0E-4,
+            "quantity": "stiffnessAtSevenTenths",
+            "unit": "pN/nm",
+            "value": 13.6778,
+            "solveCount": 206
+        },
+        {
+            "heightTolerance": 1.0E-4,
+            "quantity": "stiffnessAtHeldGap",
+            "unit": "pN/nm",
+            "value": 13.6778,
+            "solveCount": 206
+        },
+        {
+            "heightTolerance": 1.0E-4,
+            "quantity": "heightAtTargetForce",
+            "unit": "nm",
+            "value": 4.69105,
+            "solveCount": 206
+        },
+        {
+            "heightTolerance": 1.0E-4,
+            "quantity": "strokeUnderTargetForce",
+            "unit": "nm",
+            "value": 5.30895,
+            "solveCount": 206
+        },
+        {
+            "heightTolerance": 1.0E-4,
+            "quantity": "secantStiffness",
+            "unit": "pN/nm",
+            "value": 18.8361,
+            "solveCount": 206
+        },
+        {
+            "heightTolerance": 1.0E-5,
+            "quantity": "monomersPerChain",
+            "unit": "monomers",
+            "value": 62.1076,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-5,
+            "quantity": "restingHeight",
+            "unit": "nm",
+            "value": 10.0,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-5,
+            "quantity": "pressureAtNineTenths",
+            "unit": "pN/nm^2",
+            "value": 0.00180084,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-5,
+            "quantity": "stiffnessAtNineTenths",
+            "unit": "pN/nm",
+            "value": 2.86833,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-5,
+            "quantity": "stiffnessAtFourFifths",
+            "unit": "pN/nm",
+            "value": 6.53816,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-5,
+            "quantity": "stiffnessAtSevenTenths",
+            "unit": "pN/nm",
+            "value": 13.6778,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-5,
+            "quantity": "stiffnessAtHeldGap",
+            "unit": "pN/nm",
+            "value": 13.6778,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-5,
+            "quantity": "heightAtTargetForce",
+            "unit": "nm",
+            "value": 4.69105,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-5,
+            "quantity": "strokeUnderTargetForce",
+            "unit": "nm",
+            "value": 5.30895,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-5,
+            "quantity": "secantStiffness",
+            "unit": "pN/nm",
+            "value": 18.8361,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-6,
+            "quantity": "monomersPerChain",
+            "unit": "monomers",
+            "value": 62.1076,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-6,
+            "quantity": "restingHeight",
+            "unit": "nm",
+            "value": 10.0,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-6,
+            "quantity": "pressureAtNineTenths",
+            "unit": "pN/nm^2",
+            "value": 0.00180084,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-6,
+            "quantity": "stiffnessAtNineTenths",
+            "unit": "pN/nm",
+            "value": 2.86833,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-6,
+            "quantity": "stiffnessAtFourFifths",
+            "unit": "pN/nm",
+            "value": 6.53816,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-6,
+            "quantity": "stiffnessAtSevenTenths",
+            "unit": "pN/nm",
+            "value": 13.6778,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-6,
+            "quantity": "stiffnessAtHeldGap",
+            "unit": "pN/nm",
+            "value": 13.6778,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-6,
+            "quantity": "heightAtTargetForce",
+            "unit": "nm",
+            "value": 4.69105,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-6,
+            "quantity": "strokeUnderTargetForce",
+            "unit": "nm",
+            "value": 5.30895,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-6,
+            "quantity": "secantStiffness",
+            "unit": "pN/nm",
+            "value": 18.8361,
+            "solveCount": 282
+        },
+        {
+            "heightTolerance": 1.0E-7,
+            "quantity": "monomersPerChain",
+            "unit": "monomers",
+            "value": 62.1076,
+            "solveCount": 284
+        },
+        {
+            "heightTolerance": 1.0E-7,
+            "quantity": "restingHeight",
+            "unit": "nm",
+            "value": 10.0,
+            "solveCount": 284
+        },
+        {
+            "heightTolerance": 1.0E-7,
+            "quantity": "pressureAtNineTenths",
+            "unit": "pN/nm^2",
+            "value": 0.00180084,
+            "solveCount": 284
+        },
+        {
+            "heightTolerance": 1.0E-7,
+            "quantity": "stiffnessAtNineTenths",
+            "unit": "pN/nm",
+            "value": 2.86833,
+            "solveCount": 284
+        },
+        {
+            "heightTolerance": 1.0E-7,
+            "quantity": "stiffnessAtFourFifths",
+            "unit": "pN/nm",
+            "value": 6.53816,
+            "solveCount": 284
+        },
+        {
+            "heightTolerance": 1.0E-7,
+            "quantity": "stiffnessAtSevenTenths",
+            "unit": "pN/nm",
+            "value": 13.6778,
+            "solveCount": 284
+        },
+        {
+            "heightTolerance": 1.0E-7,
+            "quantity": "stiffnessAtHeldGap",
+            "unit": "pN/nm",
+            "value": 13.6778,
+            "solveCount": 284
+        },
+        {
+            "heightTolerance": 1.0E-7,
+            "quantity": "heightAtTargetForce",
+            "unit": "nm",
+            "value": 4.69105,
+            "solveCount": 284
+        },
+        {
+            "heightTolerance": 1.0E-7,
+            "quantity": "strokeUnderTargetForce",
+            "unit": "nm",
+            "value": 5.30895,
+            "solveCount": 284
+        },
+        {
+            "heightTolerance": 1.0E-7,
+            "quantity": "secantStiffness",
+            "unit": "pN/nm",
+            "value": 18.8361,
+            "solveCount": 284
+        },
+        {
+            "heightTolerance": 1.0E-8,
+            "quantity": "monomersPerChain",
+            "unit": "monomers",
+            "value": 62.1076,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-8,
+            "quantity": "restingHeight",
+            "unit": "nm",
+            "value": 10.0,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-8,
+            "quantity": "pressureAtNineTenths",
+            "unit": "pN/nm^2",
+            "value": 0.00180084,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-8,
+            "quantity": "stiffnessAtNineTenths",
+            "unit": "pN/nm",
+            "value": 2.86833,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-8,
+            "quantity": "stiffnessAtFourFifths",
+            "unit": "pN/nm",
+            "value": 6.53816,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-8,
+            "quantity": "stiffnessAtSevenTenths",
+            "unit": "pN/nm",
+            "value": 13.6778,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-8,
+            "quantity": "stiffnessAtHeldGap",
+            "unit": "pN/nm",
+            "value": 13.6778,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-8,
+            "quantity": "heightAtTargetForce",
+            "unit": "nm",
+            "value": 4.69105,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-8,
+            "quantity": "strokeUnderTargetForce",
+            "unit": "nm",
+            "value": 5.30895,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-8,
+            "quantity": "secantStiffness",
+            "unit": "pN/nm",
+            "value": 18.8361,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-9,
+            "quantity": "monomersPerChain",
+            "unit": "monomers",
+            "value": 62.1076,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-9,
+            "quantity": "restingHeight",
+            "unit": "nm",
+            "value": 10.0,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-9,
+            "quantity": "pressureAtNineTenths",
+            "unit": "pN/nm^2",
+            "value": 0.00180084,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-9,
+            "quantity": "stiffnessAtNineTenths",
+            "unit": "pN/nm",
+            "value": 2.86833,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-9,
+            "quantity": "stiffnessAtFourFifths",
+            "unit": "pN/nm",
+            "value": 6.53816,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-9,
+            "quantity": "stiffnessAtSevenTenths",
+            "unit": "pN/nm",
+            "value": 13.6778,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-9,
+            "quantity": "stiffnessAtHeldGap",
+            "unit": "pN/nm",
+            "value": 13.6778,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-9,
+            "quantity": "heightAtTargetForce",
+            "unit": "nm",
+            "value": 4.69105,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-9,
+            "quantity": "strokeUnderTargetForce",
+            "unit": "nm",
+            "value": 5.30895,
+            "solveCount": 288
+        },
+        {
+            "heightTolerance": 1.0E-9,
+            "quantity": "secantStiffness",
+            "unit": "pN/nm",
+            "value": 18.8361,
+            "solveCount": 288
+        }
+    ],
+    "movements": [
+        {
+            "probe": "height tolerance 1e-04 against 1e-09",
+            "quantity": "monomersPerChain",
+            "referenceValue": 62.1076,
+            "movedValue": 62.1076,
+            "relativeMovement": 6.29E-9,
+            "determinedDigits": 8
+        },
+        {
+            "probe": "height tolerance 1e-04 against 1e-09",
+            "quantity": "restingHeight",
+            "referenceValue": 10.0,
+            "movedValue": 10.0,
+            "relativeMovement": 3.03E-9,
+            "determinedDigits": 8
+        },
+        {
+            "probe": "height tolerance 1e-04 against 1e-09",
+            "quantity": "pressureAtNineTenths",
+            "referenceValue": 0.00180084,
+            "movedValue": 0.00180084,
+            "relativeMovement": 3.94E-10,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-04 against 1e-09",
+            "quantity": "stiffnessAtNineTenths",
+            "referenceValue": 2.86833,
+            "movedValue": 2.86833,
+            "relativeMovement": 3.81E-9,
+            "determinedDigits": 8
+        },
+        {
+            "probe": "height tolerance 1e-04 against 1e-09",
+            "quantity": "stiffnessAtFourFifths",
+            "referenceValue": 6.53816,
+            "movedValue": 6.53816,
+            "relativeMovement": 4.16E-9,
+            "determinedDigits": 8
+        },
+        {
+            "probe": "height tolerance 1e-04 against 1e-09",
+            "quantity": "stiffnessAtSevenTenths",
+            "referenceValue": 13.6778,
+            "movedValue": 13.6778,
+            "relativeMovement": 4.43E-9,
+            "determinedDigits": 8
+        },
+        {
+            "probe": "height tolerance 1e-04 against 1e-09",
+            "quantity": "stiffnessAtHeldGap",
+            "referenceValue": 13.6778,
+            "movedValue": 13.6778,
+            "relativeMovement": 1.09E-8,
+            "determinedDigits": 7
+        },
+        {
+            "probe": "height tolerance 1e-04 against 1e-09",
+            "quantity": "heightAtTargetForce",
+            "referenceValue": 4.69105,
+            "movedValue": 4.69105,
+            "relativeMovement": 1.16E-7,
+            "determinedDigits": 6
+        },
+        {
+            "probe": "height tolerance 1e-04 against 1e-09",
+            "quantity": "strokeUnderTargetForce",
+            "referenceValue": 5.30895,
+            "movedValue": 5.30895,
+            "relativeMovement": 1.09E-7,
+            "determinedDigits": 6
+        },
+        {
+            "probe": "height tolerance 1e-04 against 1e-09",
+            "quantity": "secantStiffness",
+            "referenceValue": 18.8361,
+            "movedValue": 18.8361,
+            "relativeMovement": 1.09E-7,
+            "determinedDigits": 6
+        },
+        {
+            "probe": "height tolerance 1e-05 against 1e-09",
+            "quantity": "monomersPerChain",
+            "referenceValue": 62.1076,
+            "movedValue": 62.1076,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-05 against 1e-09",
+            "quantity": "restingHeight",
+            "referenceValue": 10.0,
+            "movedValue": 10.0,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-05 against 1e-09",
+            "quantity": "pressureAtNineTenths",
+            "referenceValue": 0.00180084,
+            "movedValue": 0.00180084,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-05 against 1e-09",
+            "quantity": "stiffnessAtNineTenths",
+            "referenceValue": 2.86833,
+            "movedValue": 2.86833,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-05 against 1e-09",
+            "quantity": "stiffnessAtFourFifths",
+            "referenceValue": 6.53816,
+            "movedValue": 6.53816,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-05 against 1e-09",
+            "quantity": "stiffnessAtSevenTenths",
+            "referenceValue": 13.6778,
+            "movedValue": 13.6778,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-05 against 1e-09",
+            "quantity": "stiffnessAtHeldGap",
+            "referenceValue": 13.6778,
+            "movedValue": 13.6778,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-05 against 1e-09",
+            "quantity": "heightAtTargetForce",
+            "referenceValue": 4.69105,
+            "movedValue": 4.69105,
+            "relativeMovement": 1.2E-7,
+            "determinedDigits": 6
+        },
+        {
+            "probe": "height tolerance 1e-05 against 1e-09",
+            "quantity": "strokeUnderTargetForce",
+            "referenceValue": 5.30895,
+            "movedValue": 5.30895,
+            "relativeMovement": 1.06E-7,
+            "determinedDigits": 6
+        },
+        {
+            "probe": "height tolerance 1e-05 against 1e-09",
+            "quantity": "secantStiffness",
+            "referenceValue": 18.8361,
+            "movedValue": 18.8361,
+            "relativeMovement": 1.06E-7,
+            "determinedDigits": 6
+        },
+        {
+            "probe": "height tolerance 1e-06 against 1e-09",
+            "quantity": "monomersPerChain",
+            "referenceValue": 62.1076,
+            "movedValue": 62.1076,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-06 against 1e-09",
+            "quantity": "restingHeight",
+            "referenceValue": 10.0,
+            "movedValue": 10.0,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-06 against 1e-09",
+            "quantity": "pressureAtNineTenths",
+            "referenceValue": 0.00180084,
+            "movedValue": 0.00180084,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-06 against 1e-09",
+            "quantity": "stiffnessAtNineTenths",
+            "referenceValue": 2.86833,
+            "movedValue": 2.86833,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-06 against 1e-09",
+            "quantity": "stiffnessAtFourFifths",
+            "referenceValue": 6.53816,
+            "movedValue": 6.53816,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-06 against 1e-09",
+            "quantity": "stiffnessAtSevenTenths",
+            "referenceValue": 13.6778,
+            "movedValue": 13.6778,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-06 against 1e-09",
+            "quantity": "stiffnessAtHeldGap",
+            "referenceValue": 13.6778,
+            "movedValue": 13.6778,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-06 against 1e-09",
+            "quantity": "heightAtTargetForce",
+            "referenceValue": 4.69105,
+            "movedValue": 4.69105,
+            "relativeMovement": 1.2E-7,
+            "determinedDigits": 6
+        },
+        {
+            "probe": "height tolerance 1e-06 against 1e-09",
+            "quantity": "strokeUnderTargetForce",
+            "referenceValue": 5.30895,
+            "movedValue": 5.30895,
+            "relativeMovement": 1.06E-7,
+            "determinedDigits": 6
+        },
+        {
+            "probe": "height tolerance 1e-06 against 1e-09",
+            "quantity": "secantStiffness",
+            "referenceValue": 18.8361,
+            "movedValue": 18.8361,
+            "relativeMovement": 1.06E-7,
+            "determinedDigits": 6
+        },
+        {
+            "probe": "height tolerance 1e-07 against 1e-09",
+            "quantity": "monomersPerChain",
+            "referenceValue": 62.1076,
+            "movedValue": 62.1076,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-07 against 1e-09",
+            "quantity": "restingHeight",
+            "referenceValue": 10.0,
+            "movedValue": 10.0,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-07 against 1e-09",
+            "quantity": "pressureAtNineTenths",
+            "referenceValue": 0.00180084,
+            "movedValue": 0.00180084,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-07 against 1e-09",
+            "quantity": "stiffnessAtNineTenths",
+            "referenceValue": 2.86833,
+            "movedValue": 2.86833,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-07 against 1e-09",
+            "quantity": "stiffnessAtFourFifths",
+            "referenceValue": 6.53816,
+            "movedValue": 6.53816,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-07 against 1e-09",
+            "quantity": "stiffnessAtSevenTenths",
+            "referenceValue": 13.6778,
+            "movedValue": 13.6778,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-07 against 1e-09",
+            "quantity": "stiffnessAtHeldGap",
+            "referenceValue": 13.6778,
+            "movedValue": 13.6778,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-07 against 1e-09",
+            "quantity": "heightAtTargetForce",
+            "referenceValue": 4.69105,
+            "movedValue": 4.69105,
+            "relativeMovement": 9.47E-15,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-07 against 1e-09",
+            "quantity": "strokeUnderTargetForce",
+            "referenceValue": 5.30895,
+            "movedValue": 5.30895,
+            "relativeMovement": 8.36E-15,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-07 against 1e-09",
+            "quantity": "secantStiffness",
+            "referenceValue": 18.8361,
+            "movedValue": 18.8361,
+            "relativeMovement": 8.3E-15,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-08 against 1e-09",
+            "quantity": "monomersPerChain",
+            "referenceValue": 62.1076,
+            "movedValue": 62.1076,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-08 against 1e-09",
+            "quantity": "restingHeight",
+            "referenceValue": 10.0,
+            "movedValue": 10.0,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-08 against 1e-09",
+            "quantity": "pressureAtNineTenths",
+            "referenceValue": 0.00180084,
+            "movedValue": 0.00180084,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-08 against 1e-09",
+            "quantity": "stiffnessAtNineTenths",
+            "referenceValue": 2.86833,
+            "movedValue": 2.86833,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-08 against 1e-09",
+            "quantity": "stiffnessAtFourFifths",
+            "referenceValue": 6.53816,
+            "movedValue": 6.53816,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-08 against 1e-09",
+            "quantity": "stiffnessAtSevenTenths",
+            "referenceValue": 13.6778,
+            "movedValue": 13.6778,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-08 against 1e-09",
+            "quantity": "stiffnessAtHeldGap",
+            "referenceValue": 13.6778,
+            "movedValue": 13.6778,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-08 against 1e-09",
+            "quantity": "heightAtTargetForce",
+            "referenceValue": 4.69105,
+            "movedValue": 4.69105,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-08 against 1e-09",
+            "quantity": "strokeUnderTargetForce",
+            "referenceValue": 5.30895,
+            "movedValue": 5.30895,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "height tolerance 1e-08 against 1e-09",
+            "quantity": "secantStiffness",
+            "referenceValue": 18.8361,
+            "movedValue": 18.8361,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "solve history at the standing tolerance",
+            "quantity": "monomersPerChain",
+            "referenceValue": 62.1076,
+            "movedValue": 62.1076,
+            "relativeMovement": 0.0,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "solve history at the standing tolerance",
+            "quantity": "restingHeight",
+            "referenceValue": 10.0,
+            "movedValue": 10.0,
+            "relativeMovement": 3.32E-13,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "solve history at the standing tolerance",
+            "quantity": "pressureAtNineTenths",
+            "referenceValue": 0.00180084,
+            "movedValue": 0.00180084,
+            "relativeMovement": 3.18E-12,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "solve history at the standing tolerance",
+            "quantity": "stiffnessAtNineTenths",
+            "referenceValue": 2.86833,
+            "movedValue": 2.86833,
+            "relativeMovement": 9.18E-12,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "solve history at the standing tolerance",
+            "quantity": "stiffnessAtFourFifths",
+            "referenceValue": 6.53816,
+            "movedValue": 6.53816,
+            "relativeMovement": 5.25E-12,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "solve history at the standing tolerance",
+            "quantity": "stiffnessAtSevenTenths",
+            "referenceValue": 13.6778,
+            "movedValue": 13.6778,
+            "relativeMovement": 2.61E-12,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "solve history at the standing tolerance",
+            "quantity": "stiffnessAtHeldGap",
+            "referenceValue": 13.6778,
+            "movedValue": 13.6778,
+            "relativeMovement": 1.27E-12,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "solve history at the standing tolerance",
+            "quantity": "heightAtTargetForce",
+            "referenceValue": 4.69105,
+            "movedValue": 4.69105,
+            "relativeMovement": 2.2E-14,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "solve history at the standing tolerance",
+            "quantity": "strokeUnderTargetForce",
+            "referenceValue": 5.30895,
+            "movedValue": 5.30895,
+            "relativeMovement": 6.45E-13,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "solve history at the standing tolerance",
+            "quantity": "secantStiffness",
+            "referenceValue": 18.8361,
+            "movedValue": 18.8361,
+            "relativeMovement": 6.45E-13,
+            "determinedDigits": 9
+        },
+        {
+            "probe": "bracket seed at the standing tolerance",
+            "quantity": "heightAtTargetForce (seed 2 of 4)",
+            "referenceValue": 4.69105,
+            "movedValue": 4.69105,
+            "relativeMovement": 5.64E-7,
+            "determinedDigits": 6
+        },
+        {
+            "probe": "bracket seed at the standing tolerance",
+            "quantity": "heightAtTargetForce (seed 3 of 4)",
+            "referenceValue": 4.69105,
+            "movedValue": 4.69105,
+            "relativeMovement": 1.36E-7,
+            "determinedDigits": 6
+        },
+        {
+            "probe": "bracket seed at the standing tolerance",
+            "quantity": "heightAtTargetForce (seed 4 of 4)",
+            "referenceValue": 4.69105,
+            "movedValue": 4.69105,
+            "relativeMovement": 1.01E-7,
+            "determinedDigits": 6
+        }
+    ],
+    "gridJumps": [
+        {
+            "height": 7.5,
+            "nodesBelow": 37,
+            "nodesAbove": 38,
+            "pressureBelow": 0.00710546,
+            "pressureAbove": 0.00710197,
+            "relativeJump": 4.91E-4,
+            "logarithmicSlope": -6.21,
+            "impliedHeightIndeterminacy": 7.91E-5,
+            "determinedDigits": 4
+        },
+        {
+            "height": 8.5,
+            "nodesBelow": 42,
+            "nodesAbove": 43,
+            "pressureBelow": 0.00292394,
+            "pressureAbove": 0.00292191,
+            "relativeJump": 6.95E-4,
+            "logarithmicSlope": -7.87,
+            "impliedHeightIndeterminacy": 8.83E-5,
+            "determinedDigits": 4
+        },
+        {
+            "height": 9.5,
+            "nodesBelow": 47,
+            "nodesAbove": 48,
+            "pressureBelow": 0.00107782,
+            "pressureAbove": 0.00107677,
+            "relativeJump": 9.79E-4,
+            "logarithmicSlope": -9.89,
+            "impliedHeightIndeterminacy": 9.89E-5,
+            "determinedDigits": 4
+        }
+    ],
+    "roundingSites": [
+        {
+            "site": "structure/ResultRounding.kt (shared, 43 studies)",
+            "printedDigits": 9,
+            "absoluteFloor": 1.0E-9,
+            "provenance": "analytic models and closed-form geometry",
+            "looseTolerance": 1.0E-15,
+            "determinedDigits": 9,
+            "overPrintedBy": 0
+        },
+        {
+            "site": "brush/FluctuationCorrectionStudy.kt (private copy, T-1f)",
+            "printedDigits": 9,
+            "absoluteFloor": 1.0E-12,
+            "provenance": "SelfConsistentFieldLayer.heightAtPressure",
+            "looseTolerance": 1.0E-6,
+            "determinedDigits": 6,
+            "overPrintedBy": 3
+        },
+        {
+            "site": "brush/ScfDensityProfileStudy.kt (private copy, T-1d)",
+            "printedDigits": 9,
+            "absoluteFloor": 1.0E-9,
+            "provenance": "SelfConsistentFieldLayer.heightAtPressure",
+            "looseTolerance": 1.0E-6,
+            "determinedDigits": 6,
+            "overPrintedBy": 3
+        },
+        {
+            "site": "window/WindowResultRounding.kt (T-2, T-25)",
+            "printedDigits": 9,
+            "absoluteFloor": 1.0E-9,
+            "provenance": "grafting-density grid index; decisions already taken at six",
+            "looseTolerance": 1.0E-6,
+            "determinedDigits": 6,
+            "overPrintedBy": 3
+        },
+        {
+            "site": "actuator/ActuatorResultRounding.kt (T-3, T-4)",
+            "printedDigits": 9,
+            "absoluteFloor": 1.0E-9,
+            "provenance": "forceMaximumGap / repulsionOnsetGap scans",
+            "looseTolerance": 1.0E-4,
+            "determinedDigits": 4,
+            "overPrintedBy": 5
+        },
+        {
+            "site": "coupling/CouplingResultRounding.kt (T-113, T-123, T-129 …)",
+            "printedDigits": 9,
+            "absoluteFloor": 1.0E-9,
+            "provenance": "placement and minimax searches at tolerance 1e-5",
+            "looseTolerance": 1.0E-5,
+            "determinedDigits": 5,
+            "overPrintedBy": 4
+        }
+    ],
+    "findings": {
+        "DETERMINED PRECISION at the standing tolerance": "The worst-moving quantity of the T-1f pipeline is heightAtTargetForce at 1.195e-07 relative, so the SCF-derived part of the tree is determined to 6 significant digits and is printed to 9.",
+        "COST of the honest direction": "Tightening the height tolerance from 1e-06 to 1e-09 costs 1.02x the SCF solves (288 against 282) at one design point.",
+        "REACHABILITY of the honest direction": "The residual the height bracket works on is DISCONTINUOUS at every node-count boundary, M = round(h/dz). The largest jump measured is 9.787e-04 relative in the pressure over a logarithmic slope of -9.89, i.e. the root is indeterminate over 9.893e-05 in h - 4 determined digits - WHATEVER tolerance is asked for.",
+        "BRACKET SEED - the movement P-15 produced": "The same residual and the same tolerance, reached from four different starting brackets, spread by 5.642e-07 relative in the solved height - 6 determined digits, against nine printed. This is the quantity CH-0043 is about, and it is the largest of the four probes.",
+        "PATH NOISE": "Changing only the solve HISTORY - the warm field and the cache, same tolerance, same grid, same chain - moves stiffnessAtNineTenths by 9.180e-12 relative, i.e. 9 determined digits. The SCF field converges to 1e-11 in w, so the warm start is NOT what limits determinacy.",
+        "THE CENSUS": "Six independent rounding implementations, not one: structure/ResultRounding.kt prints 9, determined 9; brush/FluctuationCorrectionStudy.kt prints 9, determined 6; brush/ScfDensityProfileStudy.kt prints 9, determined 6; window/WindowResultRounding.kt prints 9, determined 6; actuator/ActuatorResultRounding.kt prints 9, determined 4; coupling/CouplingResultRounding.kt prints 9, determined 5. Two carry different absolute floors (1e-9 and 1e-12).",
+        "LADDER CHECK": "63 movements recorded over 6 tolerance rungs and one path-noise probe."
+    },
+    "validity": [
+        "TRL 1-3. Nothing here is measured against an experiment. This is a statement about THIS repository's solvers, checked against their own DECLARED tolerances.",
+        "ONE design point (10 nm, sigma = 0.0240 nm^-2, des Cloizeaux, dz = 0.2 nm). The determined precision is a property of a quantity and of a state; a sparser or more compressed layer may be pinned differently. The claim quotes the measured digits as an upper bound on what may be printed, not as the precision of every state.",
+        "The tightest rung of the ladder is the reference, so every movement is a movement TOWARDS it and none is an error bar on it. The path-noise and grid-count probes are what bound the reference itself.",
+        "No fluctuation, no grid convergence and no physics is re-derived here. The DISCRETISATION error of the SCF layer is far larger than any tolerance discussed - CLAUDE.md records the 10 nm stroke edge moving 23.4 % between dz = 0.4 and 0.2 nm - and that is a separate quantity from the determinacy of the emitted digits."
+    ]
+}

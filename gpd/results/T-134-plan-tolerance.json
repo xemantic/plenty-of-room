@@ -1,0 +1,981 @@
+{
+    "task": "T-134",
+    "leaf": "A8.2",
+    "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm, 0.34 nm rise, 32 bp crossover interface spacing, crossover phase 24; C-0063's 34 upward roots read from gpd/results/T-125-*.json; C-0017's 33.333333333333336 pN/nm mandate as a SUM at the acceptable 3 nm stroke",
+    "decision": "PASS — a tolerance model CAN be built, it settles both knife edges at once because they are ONE quantity, and the answer is that neither margin is quotable: four independent floors, none of which needs a fabrication measurement, exceed the 0.0256 nm both claims publish, the smallest of them by 1.56x and the largest by 70.6x. The design that recovers a margin is a REDUCED PATH COUNT, not a different element — and it costs T-5b's flatness verdict, so the margin and the flatness are bought from the same four arms.",
+    "identity": [
+        {
+            "reading": "C-0069's Q5 arm margin",
+            "grouping": "(pitch - width) - length",
+            "published": 0.0256,
+            "throughIdentity": 0.02560917,
+            "departure": 9.17E-6
+        },
+        {
+            "reading": "C-0066's bound 4 tie clearance",
+            "grouping": "(pitch - length) - width",
+            "published": 0.0256,
+            "throughIdentity": 0.02560917,
+            "departure": 9.17E-6
+        },
+        {
+            "reading": "C-0069's plan budget",
+            "grouping": "pitch - width",
+            "published": 8.19,
+            "throughIdentity": 8.19,
+            "departure": 0.0
+        },
+        {
+            "reading": "C-0066's tip gap",
+            "grouping": "pitch - length",
+            "published": 2.71561,
+            "throughIdentity": 2.71560917,
+            "departure": 8.29999999E-7
+        },
+        {
+            "reading": "the BUILT arm, 24 bp",
+            "grouping": "pitch - width - 24 x rise",
+            "published": 0.0256,
+            "throughIdentity": 0.03,
+            "departure": 0.0044
+        }
+    ],
+    "bounds": [
+        {
+            "id": "1",
+            "bound": "the DESIGN QUANTUM — the base-pair rise",
+            "value": 0.34,
+            "against": 0.02560917,
+            "ratio": 13.2764943,
+            "unit": "nm",
+            "fired": true,
+            "settled": "the margin is 0.075 of the finest length DNA can specify, so no design can be DRAWN to hold it and no correction can be applied to recover it"
+        },
+        {
+            "id": "2",
+            "bound": "the disagreement between two MEASURED interhelical distances",
+            "value": 0.04,
+            "against": 0.02560917,
+            "ratio": 1.56194051,
+            "unit": "nm",
+            "fired": true,
+            "settled": "2.73 minus 2.69, both SAXS, same paper — the spread between two readings of the constant already exceeds the margin, which is C-0066's own flip made into a tolerance statement"
+        },
+        {
+            "id": "3",
+            "bound": "the THERMAL axial fluctuation of the two segments the margin differences",
+            "value": 0.267786987,
+            "against": 0.02560917,
+            "ratio": 10.4566836,
+            "unit": "nm",
+            "fired": true,
+            "settled": "equipartition on the MEASURED stretch modulus; needs no fabrication measurement"
+        },
+        {
+            "id": "4",
+            "bound": "the arm tip's own TRANSVERSE fluctuation at a rigid root",
+            "value": 1.80743797,
+            "against": 0.02560917,
+            "ratio": 70.5777647,
+            "unit": "nm",
+            "fired": true,
+            "settled": "the arm's own cantilever bending, which survives a perfectly rigid root — so no joint stiffening can rescue the margin"
+        },
+        {
+            "id": "5",
+            "bound": "the TWIST coefficient over the band this project disputes",
+            "value": 0.0,
+            "against": 0.02560917,
+            "ratio": 0.0,
+            "unit": "nm per unit relative",
+            "fired": false,
+            "settled": "10.5 and 10.67 bp/turn both round to a 32 bp interface spacing, so the twist does not enter the margin at all — a quantity that does NOT propagate"
+        }
+    ],
+    "channels": [
+        {
+            "channel": "interhelical distance d",
+            "correlation": null,
+            "coefficientPerUnitRelative": 2.69,
+            "marginReading": "solved, 8.16439 nm",
+            "margin": 0.02560917,
+            "relativeThreshold": 0.00952013755,
+            "absoluteThreshold": 0.02560917,
+            "note": "coefficient exactly 1 x d — the margin IS a duplex width short of the tip gap"
+        },
+        {
+            "channel": "base-pair rise r",
+            "correlation": "FIXED_ELEMENT",
+            "coefficientPerUnitRelative": 10.88,
+            "marginReading": "solved, 8.16439 nm",
+            "margin": 0.02560917,
+            "relativeThreshold": 0.00235378401,
+            "absoluteThreshold": 0.02560917,
+            "note": "the SOLVED reading: an element length in nm does not track the rise, which is what C-0069 and C-0066 implicitly assume"
+        },
+        {
+            "channel": "interhelical distance d",
+            "correlation": null,
+            "coefficientPerUnitRelative": 2.69,
+            "marginReading": "built, 24 bp",
+            "margin": 0.03,
+            "relativeThreshold": 0.0111524164,
+            "absoluteThreshold": 0.03,
+            "note": "coefficient exactly 1 x d — the margin IS a duplex width short of the tip gap"
+        },
+        {
+            "channel": "base-pair rise r",
+            "correlation": "COMMON",
+            "coefficientPerUnitRelative": 2.72,
+            "marginReading": "built, 24 bp",
+            "margin": 0.03,
+            "relativeThreshold": 0.0110294118,
+            "absoluteThreshold": 0.03,
+            "note": "the host's 32 bp and the element's 24 bp see the SAME strain, so the coefficient is the DIFFERENCE, 8 bp"
+        },
+        {
+            "channel": "base-pair rise r",
+            "correlation": "INDEPENDENT",
+            "coefficientPerUnitRelative": 13.6,
+            "marginReading": "built, 24 bp",
+            "margin": 0.03,
+            "relativeThreshold": 0.00220588235,
+            "absoluteThreshold": 0.03,
+            "note": "uncorrelated, quoted as an RMS over the two counts"
+        },
+        {
+            "channel": "base-pair rise r",
+            "correlation": "OPPOSED",
+            "coefficientPerUnitRelative": 19.04,
+            "marginReading": "built, 24 bp",
+            "margin": 0.03,
+            "relativeThreshold": 0.00157563025,
+            "absoluteThreshold": 0.03,
+            "note": "equal and opposite — the coefficient is the SUM, 56 bp, and it is 7x the common-mode one at the same amplitude"
+        }
+    ],
+    "thermal": [
+        {
+            "channel": "the host's 32 bp pitch, axially",
+            "sigma": 0.202404598,
+            "overMargin": 7.90359851,
+            "stiffnessSupplied": 101.102941,
+            "stiffnessDemanded": 6315.58422,
+            "stiffnessShortfall": 62.4668694,
+            "unit": "pN/nm",
+            "note": "S/pitch against k_BT/M^2"
+        },
+        {
+            "channel": "the arm, axially",
+            "sigma": 0.175334678,
+            "overMargin": 6.84655839,
+            "stiffnessSupplied": 134.731424,
+            "stiffnessDemanded": 6315.58422,
+            "stiffnessShortfall": 46.8753617,
+            "unit": "pN/nm",
+            "note": "S/arm against k_BT/M^2"
+        },
+        {
+            "channel": "the two in quadrature",
+            "sigma": 0.267786987,
+            "overMargin": 10.4566836,
+            "stiffnessSupplied": 0.0,
+            "stiffnessDemanded": 6315.58422,
+            "stiffnessShortfall": 0.0,
+            "unit": "pN/nm",
+            "note": "the margin is a DIFFERENCE of these two lengths, so they add in quadrature"
+        },
+        {
+            "channel": "the interhelical distance at one crossover",
+            "sigma": 0.253005747,
+            "overMargin": 9.87949814,
+            "stiffnessSupplied": 64.7058824,
+            "stiffnessDemanded": 6315.58422,
+            "stiffnessShortfall": 97.6044835,
+            "unit": "pN/nm",
+            "note": "C-0009's crossover in-plane spring, 2 alpha S/(100 a) — a CONSTRUCTION and not a measurement, so this channel is reported with its own four-decade sweep and is NOT counted among the floors"
+        },
+        {
+            "channel": "the interhelical distance at the TOP of C-0009's own sweep",
+            "sigma": 0.02236276,
+            "overMargin": 0.873232516,
+            "stiffnessSupplied": 8282.35294,
+            "stiffnessDemanded": 6315.58422,
+            "stiffnessShortfall": 0.762535027,
+            "unit": "pN/nm",
+            "note": "THE ONE CHANNEL THAT CAN FALL INSIDE THE MARGIN, and only at the stiffest end of a constructed constant — which is why the four floors are built on measured quantities instead"
+        },
+        {
+            "channel": "the arm tip, at ONE crossover root",
+            "sigma": 4.8655474,
+            "overMargin": 189.99239,
+            "stiffnessSupplied": 13.5294118,
+            "stiffnessDemanded": 420979.651,
+            "stiffnessShortfall": 31115.8872,
+            "unit": "pN nm/rad",
+            "note": "hinge rotation and the arm's own bending, in quadrature"
+        },
+        {
+            "channel": "the arm tip, at the STIFFEST joint in the catalogue",
+            "sigma": 2.07941612,
+            "overMargin": 81.1981067,
+            "stiffnessSupplied": 261.167941,
+            "stiffnessDemanded": 420979.651,
+            "stiffnessShortfall": 1611.91167,
+            "unit": "pN nm/rad",
+            "note": "C-0028's B2 — two crossovers across; the excursion falls by only 2.3x"
+        },
+        {
+            "channel": "the arm tip, at a PERFECTLY RIGID root",
+            "sigma": 1.80743797,
+            "overMargin": 70.5777647,
+            "stiffnessSupplied": 1.79769313E308,
+            "stiffnessDemanded": 420979.651,
+            "stiffnessShortfall": 0.0,
+            "unit": "pN nm/rad",
+            "note": "the floor of the transverse channel — the arm's OWN bending, 3EI/L^3"
+        }
+    ],
+    "stiffnessScatter": [
+        {
+            "driver": "a relative RISE scatter of 1 %, through L = n x r and k ~ L^-3",
+            "relativeAmplitude": 0.01,
+            "relativeStiffnessScatter": 0.03,
+            "againstC0026BreakEven": 0.176470588,
+            "againstC0060Flatness": 0.0867052023,
+            "equivalentDropoutRate": 8.99190728E-4,
+            "note": "the ONLY geometric driver, and the exponent is exactly 3"
+        },
+        {
+            "driver": "a relative rise scatter at the plan margin's own common-mode threshold",
+            "relativeAmplitude": 0.0110294118,
+            "relativeStiffnessScatter": 0.0330882353,
+            "againstC0026BreakEven": 0.194636678,
+            "againstC0060Flatness": 0.0956307378,
+            "equivalentDropoutRate": 0.00109363397,
+            "note": "the amplitude that kills the PLAN margin leaves the STIFFNESS channel untouched — the two knife edges and T-45 do not live on the same axis"
+        },
+        {
+            "driver": "ONE base pair of length error on every path, in random sign",
+            "relativeAmplitude": 0.0416442582,
+            "relativeStiffnessScatter": 0.124932775,
+            "againstC0026BreakEven": 0.734898675,
+            "againstC0060Flatness": 0.361077383,
+            "equivalentDropoutRate": 0.0153683263,
+            "note": "a length error a design does not make: a staple length is ordered, not measured"
+        },
+        {
+            "driver": "C-0026's break-even, expressed as the dropout it corresponds to",
+            "relativeAmplitude": 0.17,
+            "relativeStiffnessScatter": 0.17,
+            "againstC0026BreakEven": 1.0,
+            "againstC0060Flatness": 0.49132948,
+            "equivalentDropoutRate": 0.0280882496,
+            "note": "the crossover-force channel; the equivalent Bernoulli staple dropout rate"
+        },
+        {
+            "driver": "C-0060's flatness threshold, expressed as the dropout it corresponds to",
+            "relativeAmplitude": 0.346,
+            "relativeStiffnessScatter": 0.346,
+            "againstC0026BreakEven": 2.03529412,
+            "againstC0060Flatness": 1.0,
+            "equivalentDropoutRate": 0.106916397,
+            "note": "the flatness channel, which C-0060 measures at 2.04x C-0026's break-even"
+        }
+    ],
+    "counts": [
+        {
+            "paths": 34,
+            "arm": 8.16439083,
+            "armBasePairs": 24,
+            "ceiling": 8.19,
+            "margin": 0.0256091743,
+            "marginOverRise": 0.0753211008,
+            "placed": 34,
+            "perPathForce": 2.94117647,
+            "perPathSecant": 0.980392157,
+            "clearsUnzip": true,
+            "clearsRiseQuantum": false,
+            "clearsAxialFluctuation": false,
+            "clearsTipFluctuation": false
+        },
+        {
+            "paths": 33,
+            "arm": 8.06839632,
+            "armBasePairs": 24,
+            "ceiling": 8.19,
+            "margin": 0.121603682,
+            "marginOverRise": 0.357657889,
+            "placed": 33,
+            "perPathForce": 3.03030303,
+            "perPathSecant": 1.01010101,
+            "clearsUnzip": true,
+            "clearsRiseQuantum": false,
+            "clearsAxialFluctuation": false,
+            "clearsTipFluctuation": false
+        },
+        {
+            "paths": 32,
+            "arm": 7.9707976,
+            "armBasePairs": 23,
+            "ceiling": 8.19,
+            "margin": 0.219202398,
+            "marginOverRise": 0.644712936,
+            "placed": 32,
+            "perPathForce": 3.125,
+            "perPathSecant": 1.04166667,
+            "clearsUnzip": true,
+            "clearsRiseQuantum": false,
+            "clearsAxialFluctuation": false,
+            "clearsTipFluctuation": false
+        },
+        {
+            "paths": 31,
+            "arm": 7.87152136,
+            "armBasePairs": 23,
+            "ceiling": 8.19,
+            "margin": 0.318478642,
+            "marginOverRise": 0.936701888,
+            "placed": 31,
+            "perPathForce": 3.22580645,
+            "perPathSecant": 1.07526882,
+            "clearsUnzip": true,
+            "clearsRiseQuantum": false,
+            "clearsAxialFluctuation": true,
+            "clearsTipFluctuation": false
+        },
+        {
+            "paths": 30,
+            "arm": 7.77048867,
+            "armBasePairs": 23,
+            "ceiling": 9.12,
+            "margin": 1.34951133,
+            "marginOverRise": 3.96915096,
+            "placed": 30,
+            "perPathForce": 3.33333333,
+            "perPathSecant": 1.11111111,
+            "clearsUnzip": true,
+            "clearsRiseQuantum": true,
+            "clearsAxialFluctuation": true,
+            "clearsTipFluctuation": false
+        },
+        {
+            "paths": 28,
+            "arm": 7.56280664,
+            "armBasePairs": 22,
+            "ceiling": 9.12,
+            "margin": 1.55719336,
+            "marginOverRise": 4.57998048,
+            "placed": 28,
+            "perPathForce": 3.57142857,
+            "perPathSecant": 1.19047619,
+            "clearsUnzip": true,
+            "clearsRiseQuantum": true,
+            "clearsAxialFluctuation": true,
+            "clearsTipFluctuation": false
+        },
+        {
+            "paths": 25,
+            "arm": 7.23574104,
+            "armBasePairs": 21,
+            "ceiling": 9.12,
+            "margin": 1.88425896,
+            "marginOverRise": 5.54193813,
+            "placed": 25,
+            "perPathForce": 4.0,
+            "perPathSecant": 1.33333333,
+            "clearsUnzip": true,
+            "clearsRiseQuantum": true,
+            "clearsAxialFluctuation": true,
+            "clearsTipFluctuation": true
+        },
+        {
+            "paths": 22,
+            "arm": 6.88710728,
+            "armBasePairs": 20,
+            "ceiling": 9.12,
+            "margin": 2.23289272,
+            "marginOverRise": 6.56733153,
+            "placed": 22,
+            "perPathForce": 4.54545455,
+            "perPathSecant": 1.51515152,
+            "clearsUnzip": true,
+            "clearsRiseQuantum": true,
+            "clearsAxialFluctuation": true,
+            "clearsTipFluctuation": true
+        },
+        {
+            "paths": 20,
+            "arm": 6.64066418,
+            "armBasePairs": 20,
+            "ceiling": 9.12,
+            "margin": 2.47933582,
+            "marginOverRise": 7.29216417,
+            "placed": 20,
+            "perPathForce": 5.0,
+            "perPathSecant": 1.66666667,
+            "clearsUnzip": true,
+            "clearsRiseQuantum": true,
+            "clearsAxialFluctuation": true,
+            "clearsTipFluctuation": true
+        },
+        {
+            "paths": 15,
+            "arm": 5.96297903,
+            "armBasePairs": 18,
+            "ceiling": 20.0,
+            "margin": 14.037021,
+            "marginOverRise": 41.2853558,
+            "placed": 15,
+            "perPathForce": 6.66666667,
+            "perPathSecant": 2.22222222,
+            "clearsUnzip": true,
+            "clearsRiseQuantum": true,
+            "clearsAxialFluctuation": true,
+            "clearsTipFluctuation": true
+        }
+    ],
+    "flatness": [
+        {
+            "placement": "NONE — free tile on this phase",
+            "stations": 0,
+            "dishingOverStroke": 0.307902368,
+            "flatAtTenPercent": false,
+            "peakPathForce": 0.0,
+            "peakCrossoverForce": 0.243979305
+        },
+        {
+            "placement": "C-0063's 34 roots — the knife-edge design",
+            "stations": 34,
+            "dishingOverStroke": 0.0706145537,
+            "flatAtTenPercent": true,
+            "peakPathForce": 2.29825425,
+            "peakCrossoverForce": 1.24568444
+        },
+        {
+            "placement": "30 roots — the four rows of three dissolved",
+            "stations": 30,
+            "dishingOverStroke": 0.260281397,
+            "flatAtTenPercent": false,
+            "peakPathForce": 3.0557154,
+            "peakCrossoverForce": 1.71309347
+        },
+        {
+            "placement": "22 roots — margin above the tip fluctuation",
+            "stations": 22,
+            "dishingOverStroke": 0.476489968,
+            "flatAtTenPercent": false,
+            "peakPathForce": 4.33057609,
+            "peakCrossoverForce": 1.93920521
+        },
+        {
+            "placement": "15 roots — one per duplex",
+            "stations": 15,
+            "dishingOverStroke": 0.311790096,
+            "flatAtTenPercent": false,
+            "peakPathForce": 5.74036917,
+            "peakCrossoverForce": 2.59321391
+        }
+    ],
+    "seats": [
+        {
+            "grid": "0.05 nm over [0, 0.5]",
+            "lateralSeat": 0.0,
+            "pairExists": true,
+            "admissiblePairs": 6,
+            "representableLengths": 15,
+            "passingLengths": 15,
+            "passes": true,
+            "verdict": "A SHARED LEG LENGTH SURVIVES — 12 steps (4.08 nm), base 18.0°, cap 63.1°, margin 2.44 on CanDo and 1.84 on Fields"
+        },
+        {
+            "grid": "0.05 nm over [0, 0.5]",
+            "lateralSeat": 0.05,
+            "pairExists": false,
+            "admissiblePairs": 0,
+            "representableLengths": 0,
+            "passingLengths": 0,
+            "passes": false,
+            "verdict": "NO closing pair centre at this seat"
+        },
+        {
+            "grid": "0.05 nm over [0, 0.5]",
+            "lateralSeat": 0.1,
+            "pairExists": true,
+            "admissiblePairs": 2,
+            "representableLengths": 0,
+            "passingLengths": 0,
+            "passes": false,
+            "verdict": "NOT REPRESENTABLE at any leg length — the pinned base is past the half right angle"
+        },
+        {
+            "grid": "0.05 nm over [0, 0.5]",
+            "lateralSeat": 0.15,
+            "pairExists": true,
+            "admissiblePairs": 2,
+            "representableLengths": 15,
+            "passingLengths": 15,
+            "passes": true,
+            "verdict": "A SHARED LEG LENGTH SURVIVES — 12 steps (4.08 nm), base 18.0°, cap 63.1°, margin 2.44 on CanDo and 1.84 on Fields"
+        },
+        {
+            "grid": "0.05 nm over [0, 0.5]",
+            "lateralSeat": 0.2,
+            "pairExists": true,
+            "admissiblePairs": 1,
+            "representableLengths": 0,
+            "passingLengths": 0,
+            "passes": false,
+            "verdict": "NOT REPRESENTABLE at any leg length — the pinned base is past the half right angle"
+        },
+        {
+            "grid": "0.05 nm over [0, 0.5]",
+            "lateralSeat": 0.25,
+            "pairExists": false,
+            "admissiblePairs": 0,
+            "representableLengths": 0,
+            "passingLengths": 0,
+            "passes": false,
+            "verdict": "NO closing pair centre at this seat"
+        },
+        {
+            "grid": "0.05 nm over [0, 0.5]",
+            "lateralSeat": 0.3,
+            "pairExists": true,
+            "admissiblePairs": 1,
+            "representableLengths": 15,
+            "passingLengths": 15,
+            "passes": true,
+            "verdict": "A SHARED LEG LENGTH SURVIVES — 12 steps (4.08 nm), base 27.0°, cap 72.1°, margin 2.42 on CanDo and 1.82 on Fields"
+        },
+        {
+            "grid": "0.05 nm over [0, 0.5]",
+            "lateralSeat": 0.35,
+            "pairExists": false,
+            "admissiblePairs": 0,
+            "representableLengths": 0,
+            "passingLengths": 0,
+            "passes": false,
+            "verdict": "NO closing pair centre at this seat"
+        },
+        {
+            "grid": "0.05 nm over [0, 0.5]",
+            "lateralSeat": 0.4,
+            "pairExists": true,
+            "admissiblePairs": 1,
+            "representableLengths": 15,
+            "passingLengths": 15,
+            "passes": true,
+            "verdict": "A SHARED LEG LENGTH SURVIVES — 12 steps (4.08 nm), base 27.0°, cap 72.1°, margin 2.42 on CanDo and 1.82 on Fields"
+        },
+        {
+            "grid": "0.05 nm over [0, 0.5]",
+            "lateralSeat": 0.45,
+            "pairExists": false,
+            "admissiblePairs": 0,
+            "representableLengths": 0,
+            "passingLengths": 0,
+            "passes": false,
+            "verdict": "NO closing pair centre at this seat"
+        },
+        {
+            "grid": "0.05 nm over [0, 0.5]",
+            "lateralSeat": 0.5,
+            "pairExists": true,
+            "admissiblePairs": 1,
+            "representableLengths": 0,
+            "passingLengths": 0,
+            "passes": false,
+            "verdict": "NOT REPRESENTABLE at any leg length — the pinned base is past the half right angle"
+        },
+        {
+            "grid": "0.025 nm over [0, 0.2]",
+            "lateralSeat": 0.0,
+            "pairExists": true,
+            "admissiblePairs": 6,
+            "representableLengths": 15,
+            "passingLengths": 15,
+            "passes": true,
+            "verdict": "A SHARED LEG LENGTH SURVIVES — 12 steps (4.08 nm), base 18.0°, cap 63.1°, margin 2.44 on CanDo and 1.84 on Fields"
+        },
+        {
+            "grid": "0.025 nm over [0, 0.2]",
+            "lateralSeat": 0.025,
+            "pairExists": true,
+            "admissiblePairs": 4,
+            "representableLengths": 15,
+            "passingLengths": 15,
+            "passes": true,
+            "verdict": "A SHARED LEG LENGTH SURVIVES — 12 steps (4.08 nm), base 24.0°, cap 69.1°, margin 2.44 on CanDo and 1.84 on Fields"
+        },
+        {
+            "grid": "0.025 nm over [0, 0.2]",
+            "lateralSeat": 0.05,
+            "pairExists": false,
+            "admissiblePairs": 0,
+            "representableLengths": 0,
+            "passingLengths": 0,
+            "passes": false,
+            "verdict": "NO closing pair centre at this seat"
+        },
+        {
+            "grid": "0.025 nm over [0, 0.2]",
+            "lateralSeat": 0.075,
+            "pairExists": true,
+            "admissiblePairs": 1,
+            "representableLengths": 0,
+            "passingLengths": 0,
+            "passes": false,
+            "verdict": "NOT REPRESENTABLE at any leg length — the pinned base is past the half right angle"
+        },
+        {
+            "grid": "0.025 nm over [0, 0.2]",
+            "lateralSeat": 0.1,
+            "pairExists": true,
+            "admissiblePairs": 2,
+            "representableLengths": 0,
+            "passingLengths": 0,
+            "passes": false,
+            "verdict": "NOT REPRESENTABLE at any leg length — the pinned base is past the half right angle"
+        },
+        {
+            "grid": "0.025 nm over [0, 0.2]",
+            "lateralSeat": 0.125,
+            "pairExists": true,
+            "admissiblePairs": 1,
+            "representableLengths": 15,
+            "passingLengths": 15,
+            "passes": true,
+            "verdict": "A SHARED LEG LENGTH SURVIVES — 12 steps (4.08 nm), base 21.0°, cap 66.1°, margin 2.46 on CanDo and 1.85 on Fields"
+        },
+        {
+            "grid": "0.025 nm over [0, 0.2]",
+            "lateralSeat": 0.15,
+            "pairExists": true,
+            "admissiblePairs": 2,
+            "representableLengths": 15,
+            "passingLengths": 15,
+            "passes": true,
+            "verdict": "A SHARED LEG LENGTH SURVIVES — 12 steps (4.08 nm), base 18.0°, cap 63.1°, margin 2.44 on CanDo and 1.84 on Fields"
+        },
+        {
+            "grid": "0.025 nm over [0, 0.2]",
+            "lateralSeat": 0.175,
+            "pairExists": false,
+            "admissiblePairs": 0,
+            "representableLengths": 0,
+            "passingLengths": 0,
+            "passes": false,
+            "verdict": "NO closing pair centre at this seat"
+        },
+        {
+            "grid": "0.025 nm over [0, 0.2]",
+            "lateralSeat": 0.2,
+            "pairExists": true,
+            "admissiblePairs": 1,
+            "representableLengths": 0,
+            "passingLengths": 0,
+            "passes": false,
+            "verdict": "NOT REPRESENTABLE at any leg length — the pinned base is past the half right angle"
+        }
+    ],
+    "jointWindow": [
+        {
+            "marginDemanded": 0.0,
+            "demandedBy": "nothing — C-0069's own reference",
+            "lengthCeiling": 8.19,
+            "tipCeiling": 79.6781387,
+            "tipUsed": 78.2352941,
+            "tipInsideByPercent": 1.81084125,
+            "rootCeiling": 13.9303697,
+            "rootUsed": 13.5294118,
+            "rootInsideByPercent": 2.87830095,
+            "tipAdmissible": true,
+            "rootAdmissible": true,
+            "note": "the tip and root ceilings that buy this margin at 34 paths, on C-0039's exact elastica"
+        },
+        {
+            "marginDemanded": 0.34,
+            "demandedBy": "one base-pair rise, the design quantum",
+            "lengthCeiling": 7.85,
+            "tipCeiling": 62.9882561,
+            "tipUsed": 78.2352941,
+            "tipInsideByPercent": -24.2061599,
+            "rootCeiling": 8.9021155,
+            "rootUsed": 13.5294118,
+            "rootInsideByPercent": -51.9797375,
+            "tipAdmissible": false,
+            "rootAdmissible": false,
+            "note": "the tip and root ceilings that buy this margin at 34 paths, on C-0039's exact elastica"
+        },
+        {
+            "marginDemanded": 0.267786987,
+            "demandedBy": "the thermal axial fluctuation of the two segments",
+            "lengthCeiling": 7.92221301,
+            "tipCeiling": 66.1338563,
+            "tipUsed": 78.2352941,
+            "tipInsideByPercent": -18.2984004,
+            "rootCeiling": 9.9198619,
+            "rootUsed": 13.5294118,
+            "rootInsideByPercent": -36.387098,
+            "tipAdmissible": false,
+            "rootAdmissible": false,
+            "note": "the tip and root ceilings that buy this margin at 34 paths, on C-0039's exact elastica"
+        },
+        {
+            "marginDemanded": 1.80743797,
+            "demandedBy": "the arm tip's own bending at a rigid root",
+            "lengthCeiling": 6.38256203,
+            "tipCeiling": 23.7389613,
+            "tipUsed": 78.2352941,
+            "tipInsideByPercent": -229.564942,
+            "rootCeiling": 0.0,
+            "rootUsed": 13.5294118,
+            "rootInsideByPercent": -100.0,
+            "tipAdmissible": false,
+            "rootAdmissible": false,
+            "note": "no end restraint places an arm inside this ceiling — the elastica's own 1.5 x stroke floor is reached first"
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "the row-of-three length ceiling",
+            "axis": "bisection resolution 1e-6/1e-9/1e-12",
+            "coarse": 8.18999966,
+            "medium": 8.19,
+            "fine": 8.19,
+            "departure": 0.0,
+            "note": "a closed form is reproduced by the bisection at every resolution"
+        },
+        {
+            "quantity": "the 34-path elastica arm",
+            "axis": "RK4 steps 200/400/800",
+            "coarse": 8.16439083,
+            "medium": 8.16439083,
+            "fine": 8.16439083,
+            "departure": 0.0,
+            "note": "C-0039's own convergence axis, re-run at this claim's design point"
+        },
+        {
+            "quantity": "the 30-root dishing over the free stroke",
+            "axis": "dishing sample grid 41/81/161",
+            "coarse": 0.260076792,
+            "medium": 0.260281397,
+            "fine": 0.260281397,
+            "departure": 0.0,
+            "note": "81 is the grid every published dishing in this programme is read on"
+        },
+        {
+            "quantity": "the lateral seat's passing fraction",
+            "axis": "seat grid 0.05 nm then 0.025 nm",
+            "coarse": 0.363636364,
+            "medium": 0.444444444,
+            "fine": 0.444444444,
+            "departure": 0.0808080808,
+            "note": "NOT a convergence: refining the grid finds more alternation, because the verdict is not monotone in the seat. Reported so that the non-monotonicity is a measured property of the sweep and not an artefact of an 0.05 nm step"
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0069",
+            "quantity": "the Q5 arm margin",
+            "published": 0.0256,
+            "reproduced": 0.02560917,
+            "departure": 9.17E-6,
+            "flag": "DERIVED here"
+        },
+        {
+            "source": "C-0069",
+            "quantity": "the plan budget pitch - d",
+            "published": 8.19,
+            "reproduced": 8.19,
+            "departure": 0.0,
+            "flag": "DERIVED here"
+        },
+        {
+            "source": "C-0066",
+            "quantity": "the tip gap, root pitch minus the arm",
+            "published": 2.71561,
+            "reproduced": 2.71560917,
+            "departure": 8.29999999E-7,
+            "flag": "DERIVED here"
+        },
+        {
+            "source": "C-0055/C-0039",
+            "quantity": "the arm length",
+            "published": 8.16439,
+            "reproduced": 8.16439083,
+            "departure": 8.26631304E-7,
+            "flag": "RE-RUN through C-0039's own solver"
+        },
+        {
+            "source": "C-0055",
+            "quantity": "the root pitch",
+            "published": 10.88,
+            "reproduced": 10.88,
+            "departure": 0.0,
+            "flag": "DERIVED here"
+        },
+        {
+            "source": "C-0009",
+            "quantity": "the crossover hinge stiffness",
+            "published": 13.5294,
+            "reproduced": 13.5294118,
+            "departure": 1.17647059E-5,
+            "flag": "CITED, FITTED (Chen et al. 2014) via C-0009; re-evaluated from its own law"
+        },
+        {
+            "source": "C-0009",
+            "quantity": "the crossover axial stiffness",
+            "published": 64.7,
+            "reproduced": 64.7058824,
+            "departure": 0.00588235294,
+            "flag": "DERIVED from C-0009's own law"
+        },
+        {
+            "source": "C-0034",
+            "quantity": "the A2 two-terminus couple",
+            "published": 78.2353,
+            "reproduced": 78.2352941,
+            "departure": 5.88235294E-6,
+            "flag": "RE-RUN through C-0034's own library"
+        },
+        {
+            "source": "C-0028",
+            "quantity": "the B2 two-crossover couple",
+            "published": 261.2,
+            "reproduced": 261.167941,
+            "departure": 0.0320588235,
+            "flag": "RE-RUN through C-0028's own library"
+        },
+        {
+            "source": "C-0063",
+            "quantity": "the dishing at its own 34 roots",
+            "published": 0.0706,
+            "reproduced": 0.0706145537,
+            "departure": 1.45536799E-5,
+            "flag": "RE-SOLVED on C-0009's grillage under C-0022's solved load"
+        },
+        {
+            "source": "C-0022",
+            "quantity": "the free-tile dishing on this phase",
+            "published": 0.3079,
+            "reproduced": 0.307902368,
+            "departure": 2.36771941E-6,
+            "flag": "RE-SOLVED"
+        },
+        {
+            "source": "C-0070",
+            "quantity": "the 0.5 nm seat admits no representable leg length",
+            "published": 0.0,
+            "reproduced": 0.0,
+            "departure": 0.0,
+            "flag": "RE-RUN through C-0070's own register"
+        },
+        {
+            "source": "SAXS (Fischer et al. 2016)",
+            "quantity": "the single-layer interhelical distance",
+            "published": 2.69,
+            "reproduced": 2.69,
+            "departure": 0.0,
+            "flag": "CITED, MEASURED"
+        },
+        {
+            "source": "SAXS (Fischer et al. 2016)",
+            "quantity": "the square-lattice interhelical distance",
+            "published": 2.73,
+            "reproduced": 2.73,
+            "departure": 0.0,
+            "flag": "CITED, MEASURED"
+        }
+    ],
+    "predicates": [
+        {
+            "id": "P1",
+            "statement": "C-0069's arm margin and C-0066's tie clearance are the SAME quantity, and both reproduce to better than 1e-6 nm",
+            "met": true,
+            "evidence": "both group pitch - width - length; the two groupings agree to 4.440892098500626E-16 nm"
+        },
+        {
+            "id": "P2",
+            "statement": "every channel reports a THRESHOLD in relative amplitude and no channel reports a fabricated distribution",
+            "met": true,
+            "evidence": "6 channel records, each carrying its own relative threshold"
+        },
+        {
+            "id": "P3",
+            "statement": "the propagation is reported for at least three correlation structures and their coefficients differ by a factor this task measures",
+            "met": true,
+            "evidence": "common-mode 0.0110294117647063 against opposed 0.0015756302521008998 — a factor of 7.000000000000001"
+        },
+        {
+            "id": "P4",
+            "statement": "at least one quantity is shown NOT to propagate, with its coefficient exactly zero",
+            "met": true,
+            "evidence": "the twist: 10.5 and 10.67 bp/turn both round to a 32 bp interface spacing"
+        },
+        {
+            "id": "P5",
+            "statement": "a design with margin is delivered, or the statement that none exists",
+            "met": true,
+            "evidence": "30 paths leave 1.3495113272740813 nm — 3.969150962570827 base-pair rises — but it is NOT flat: 0.260281397239997 of the free stroke against T-5b's 0.1, so the margin and the flatness are bought from the same four arms"
+        },
+        {
+            "id": "P6",
+            "statement": "the literature is searched for a measured origami fabrication-tolerance distribution and the query strings are recorded whether or not one is found",
+            "met": true,
+            "evidence": "recorded in gpd/claims/C-0072 and gpd/data/T-134-tolerance-literature.md; this study emits no literature number of its own"
+        }
+    ],
+    "findings": [
+        "THE TWO KNIFE EDGES ARE ONE QUANTITY. C-0069's arm margin and C-0066's tie clearance are both pitch - width - length = 0.025609170000000958 nm; C-0069 groups it as a budget minus an arm and C-0066 as a gap minus a duplex, and the grouping is all that separates them. One scatter model settles both, which is what the task supposed and what nothing upstream had asserted.",
+        "NO DISTRIBUTION IS NEEDED, BECAUSE FOUR FLOORS ALREADY EXCEED THE MARGIN. The base-pair rise is 13.276494318245664x it, the disagreement between two SAXS readings of the same lattice constant 1.5619405080289028x, the thermal axial breathing of the two segments the margin differences 10.456683564147742x, and the arm tip's own bending at a PERFECTLY RIGID root 70.57776471675056x. The declared falsifier — a channel landing inside 0.0256 nm — did not fire on any of them.",
+        "THE MARGIN IS BELOW THE DESIGN QUANTUM, WHICH IS A STRONGER STATEMENT THAN 'SMALL'. 0.0256 nm is 0.07532108823529693 of a base-pair rise: not merely inside the scatter, but below the finest length increment any DNA design can specify, so no correction can be applied to recover it even if the scatter were known.",
+        "CORRELATION IS WORTH 7x AND THE SIGN IS NOT OBVIOUS. The rise enters twice — the host's 32 bp pitch and the element's 24 bp length — so a COMMON-mode strain carries the DIFFERENCE (8 bp, threshold 0.0110294117647063 relative) and an OPPOSED one the SUM (56 bp, 0.0015756302521008998). The sensitivity has an exact null at a 4:3 differential strain and no build can reach it, because an arm and its host are the same molecule in the same buffer.",
+        "THE TWIST DOES NOT PROPAGATE AT ALL. A crossover interface spacing is an integer base-pair count, and 10.5 and 10.67 bp/turn both round to 32 — so the axis C-0070 and C-0052 sweep as a sensitivity has coefficient exactly zero on the plan margin. A quantity that cannot move the answer is worth reporting.",
+        "T-45's SCATTER LIVES ON A DIFFERENT AXIS AND HAS REAL MARGIN. A relative rise scatter enters the per-path stiffness with exponent exactly 3, so the amplitude that destroys the PLAN margin (0.0110294117647063 common mode) moves the stiffness by 0.033088235294118896 — 0.19463667820069938x C-0026's break-even. The knife edges and T-45 cannot be traded against each other.",
+        "C-0026's AND C-0060's THRESHOLDS BECOME BUILD NUMBERS UNDER A DROPOUT MODEL. A staple is incorporated or it is not, so the honest population is two-valued: 17 % relative scatter is a 0.028088249586937515 dropout rate and 34.6 % a 0.10691639665772391 one. That is a translation onto a build-controllable variable, NOT an equivalence — C-0060 shows the pattern is worth 2.21x.",
+        "THE KNIFE EDGE IS BOUGHT BY FOUR ARMS. C-0063's bound 1 forces four rows of three at 34 paths, and a row of three is the only configuration in which two same-sense arms sit at the bare root pitch. Dissolving them — 34 paths to 30 — takes the ceiling from 8.190000000892397 to 9.120000000860266 nm and the margin from 0.025609170000000958 to 1.3495113272740813 nm, because the shorter path count also demands a shorter arm.",
+        "C-0070's SEAT HAS NO THRESHOLD AT ALL, BECAUSE THE VERDICT IS NOT MONOTONE IN IT. Over an 0.05 nm sweep of [0, 0.5] the 9 bp row passes at 4 of 11 seats and the failures ALTERNATE — it fails at 0.05 nm and passes again at 0.4 nm — and refining to 0.025 nm finds 4 of 9. The seat is a REGISTER, not a tolerance, so a scatter model on it is meaningless: a design must CHOOSE a seat, and C-0070's 0.5 nm reading is one unlucky choice among several lucky ones.",
+        "THE MARGIN AND THE FLATNESS ARE BOUGHT FROM THE SAME FOUR ARMS, AND THAT IS THE REAL TRADE. Dissolving the rows of three takes the plan margin from 0.025609170000000958 to 1.3495113272740813 nm and the dishing from 0.07061455367987748 to 0.260281397239997 of the free stroke — through T-5b's 0.10 and out the other side. The reduction rule here is a PLAN rule and not a flatness optimisation, so that dishing is an UPPER bound on what a re-optimised 30-root placement would give; re-running C-0063's own search under a two-per-row constraint is the follow-on this claim names.",
+        "AND THERE IS A SECOND ESCAPE THAT COSTS NO FLATNESS: SOFTEN A JOINT. The arm length is (c EI/k)^(1/3), so at 34 paths a margin of one base-pair rise is bought by a tip no stiffer than 62.988256104290485 pN nm/rad against C-0034's A2 at 78.23529411764706, or a root no stiffer than 8.902115497986323 against one crossover's 13.529411764705882. Both ceilings are BELOW what the design uses, so the escape asks for a joint softer than the two the design already chose — which is a joint search this task does not run."
+    ],
+    "parameters": {
+        "thermalEnergy": 4.141947,
+        "rise": 0.34,
+        "interhelicalDistance": 2.69,
+        "squareLatticeInterhelical": 2.73,
+        "rootPitch": 10.88,
+        "hostBasePairs": 32.0,
+        "arm": 8.16439083,
+        "armBasePairs": 24.0,
+        "builtArm": 8.16,
+        "solvedMargin": 0.02560917,
+        "builtMargin": 0.03,
+        "marginOverRise": 0.0753210882,
+        "commonModeThreshold": 0.0110294118,
+        "opposedThreshold": 0.00157563025,
+        "perStepRiseSigmaThreshold": 0.00400891863,
+        "perStepRelativeThreshold": 0.0117909371,
+        "interhelicalThreshold": 0.0111524164,
+        "axialFluctuation": 0.267786987,
+        "tipFluctuationRigidRoot": 1.80743797,
+        "tipFluctuationOneCrossover": 4.8655474,
+        "stiffnessDemanded": 6315.58422,
+        "rotationalStiffnessDemanded": 420979.651,
+        "largestPassingSeat": 0.4,
+        "firstFailingSeat": 0.05,
+        "seatsPassingCoarse": 4.0,
+        "seatsSampledCoarse": 11.0,
+        "seatsPassingFine": 4.0,
+        "seatsSampledFine": 9.0,
+        "seatVerdictMonotone": 0.0,
+        "tipCeilingForOneRiseMargin": 62.9882561,
+        "rootCeilingForOneRiseMargin": 8.9021155,
+        "mandate": 33.3333333,
+        "freeStroke": 4.90731102,
+        "flatnessTolerance": 0.1,
+        "pathsForRiseQuantumMargin": 30.0,
+        "pathsForTipFluctuationMargin": 25.0
+    }
+}

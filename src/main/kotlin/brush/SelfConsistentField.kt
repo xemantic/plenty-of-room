@@ -270,12 +270,16 @@ class SelfConsistentFieldLayer(
     override val interaction: InteractionFreeEnergy,
     val discretisation: ScfDiscretisation = ScfDiscretisation(),
     val restingPressure: Double = 1.0 / 1600.0,
-    val wallCondition: ScfWallCondition = ScfWallCondition.ABSORBING
+    val wallCondition: ScfWallCondition = ScfWallCondition.ABSORBING,
+    val heightTolerance: Double = HEIGHT_TOLERANCE
 ) : GraftedLayerModel {
 
     init {
         require(restingPressure > 0.0) {
             "restingPressure must be positive, was: $restingPressure"
+        }
+        require(heightTolerance > 0.0) {
+            "heightTolerance must be positive, was: $heightTolerance"
         }
     }
 
@@ -289,6 +293,17 @@ class SelfConsistentFieldLayer(
     private var restingHeightChain: GraftedChain? = null
 
     private var restingHeight: Double = 0.0
+
+    /**
+     * How many self-consistent solves this layer has run — cache hits excluded.
+     *
+     * The unit of cost of everything above: one `pressureAt` is two solves, one `stiffnessPerAreaAt`
+     * three, and one bracketed height is a whole ladder of them. `P-18` prices the alternative to
+     * rounding down — tightening [heightTolerance] — on this counter rather than on wall clock
+     * alone, because wall clock on a shared box is a measurement of the other agents.
+     */
+    var solveCount: Int = 0
+        private set
 
     /** The converged profile of [chain] against a wall at [height] nm. */
     fun profile(chain: GraftedChain, height: Double): ScfProfile {
@@ -372,7 +387,7 @@ class SelfConsistentFieldLayer(
         // working on the raw values spends most of its evaluations in the flat tail
         return exp(
             bracketedRoot(
-                ln(floor), ln(ceiling), tolerance = HEIGHT_TOLERANCE, iterations = 60
+                ln(floor), ln(ceiling), tolerance = heightTolerance, iterations = 60
             ) { logHeight -> ln(resolvedPressure(chain, exp(logHeight)) / pressure) }
         )
     }
@@ -430,7 +445,7 @@ class SelfConsistentFieldLayer(
         if (high == low) return low
         return exp(
             bracketedRoot(
-                ln(low), ln(high), tolerance = HEIGHT_TOLERANCE, iterations = 60
+                ln(low), ln(high), tolerance = heightTolerance, iterations = 60
             ) { logLength -> ln(restingHeight(exp(logLength)) / height) }
         )
     }
@@ -484,6 +499,7 @@ class SelfConsistentFieldLayer(
     private fun solve(chain: GraftedChain, layers: Int, spacing: Double): ScfProfile {
         val key = ScfKey(chain, layers, spacing)
         cache[key]?.let { return it }
+        solveCount++
         val solution = solveScf(
             chain, interaction, layers, spacing, wallCondition, discretisation, warmField
         )

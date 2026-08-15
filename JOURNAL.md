@@ -6162,3 +6162,86 @@ And `C-0064`'s figures were revised after I read them, so the journal briefly ca
 for one quantity — mine and the agent's. Corrected against the filed claim, and the revision turned out to
 contain the more important half: over the range each device actually traverses the minimax is
 0.0373 / 0.0435 / 0.0620 / 0.0504, **all four inside the tolerance**.
+
+## Iteration 14 — `T-135`: the programme can recommend, and what a recommendation costs is three thin margins that turn out to be one number
+
+**Task.** `T-135` — *"which output element does the Gen-1 programme recommend, and on what premises?"*
+Acceptance: a stated recommendation with its premises, its open items and its failure routes counted —
+**or** the plain statement that the programme cannot yet recommend one, with what would decide it.
+Filed as [`C-0071`](gpd/claims/C-0071-output-element-recommendation.md);
+raises [`CH-0083`](gpd/challenges/CH-0083-the-pull-in-verdict-is-quoted-for-a-load-line-the-recommendation-does-not-use.md).
+
+**The answer is YES, and the recommendation is the element the branch already had.**
+`C-0069`'s `Q5` — `C-0055`/`C-0063`'s **hinge-rooted arm**, **8.16439 nm = 24.0 bp**,
+rooted on one antiparallel crossover at the unused out-of-plane azimuth and tipped on `C-0034`'s `A2`
+duplex end, **34 instances at one level**, at §3's **acceptable** clause.
+
+**What made it decidable was a cheap bound with an integer in it, not a calculation.**
+`C-0069` funnels an 11-row catalogue to **3 that place all 34 at one level** and **2 that survive every
+clause**, and two survivors is not a recommendation. The survivors were ranked on three axes —
+undemonstrated motifs required, `C-0017`'s six 2 mM stability floors cleared, compression members —
+each of which is an **integer count a standing claim already carries**, so none of them is a new result.
+**All three name `Q5`**: 1 against 2, 6 against 4, 0 against 1.
+The declared falsifier was that they disagree, in which case `T-135`'s honest answer is *"cannot yet
+recommend"*; **it did not fire**.
+
+**The whole content of the claim is the price, and two parts of it were not visible from any single claim.**
+
+**The three thin margins are one number.** The recommendation has **no margin at all** on three of fourteen
+graded quantities — the plan length (**1.00314×**), the tip joint (**1.01844×**) and the root joint
+(**1.02964×**) — in three different units, owned by three different claims. They are **one arithmetic**:
+`pitch − d − L = 0.0256 nm`, and the two joint ceilings are the two coordinates of the *same*
+`c ≤ 2.3417` inequality, so moving either joint moves the arm's length into or out of the same gap.
+A **fourth** `NONE` — `C-0066`'s free-standing tie between two arms — is the **same** number again, and it
+is **discharged**, because the registration `C-0066` itself recommends puts the tie on the arm's own `A2`
+tip where the demand is half a duplex and the margin is **2.019×**.
+So the design is *less* diversified in its exposure than the raw counts suggest, and **`T-134` has one
+target and not two** — which is smaller than `T-134`'s own row says.
+
+**Two of the six questions this programme carries to NDI stopped applying, and nobody noticed.**
+`T-95` (may the superstructure be perforated under each flexure midspan?) and `T-102` (may the tile grow by
+1.44×?) were both raised by the **flexure-and-tie** branch that `CH-0081` and `C-0069` removed from the
+output role. The recommended element has no flexure, no midspan, no standoff base plane and needs no tie
+grid; it places 34 instances at one level on the Gen-1 40 × 40 nm footprint. Both are therefore
+**discharged for this element** — and both re-bind the moment the flexure branch or §3's 45 paths return.
+`CLAUDE.md` already records that *"a window gains an axis when a constraint is discovered and loses one
+when a constraint is DISCHARGED, and an intersection records neither"*; what this iteration adds is that
+**a discharge is invisible to whoever files the removal**, because the claim that removes a branch is not
+looking at the questions that branch raised.
+
+**Three premises are UNDEMONSTRATED and the first is upstream of the element itself.**
+`M1` — a **free lever** held to a single-layer sheet by **one** crossover: the site and a crossover on it
+are published (Ke et al. 2009, read directly), the free lever was **not found in 62 recorded queries**.
+`M2` — a duplex standing **normal** to a single-layer sheet: every published out-of-plane base is a **pin**.
+It is a premise of the **decision** (it is the runner-up's motif) and not of the design.
+`M3` — that `C-0009`'s **in-plane-fitted** crossover hinge constant transfers to the **out-of-plane**
+azimuth. `C-0055` shows that site is in *better* helical register (4.286° against 8.571°) but **no
+measurement covers its stiffness**, and at the top of Chen et al.'s own fitted bracket the arm is 8.332 nm
+and places 30 of 34.
+
+**Nine failure routes, and the classification is the finding.** Five remove the element, two remove a
+premise, two change its uniqueness. Of the five removers, **two are already inside a published bracket** —
+the square lattice's 2.73 nm (18 of 34) and `α = 1.2` (30 of 34) — and **one, the motif, can be settled
+only at a bench**. A sensitivity whose alternative value is already in print is not a sensitivity; it is an
+**unresolved reading**, and `C-0069` reports both as sensitivities without saying so.
+
+**`CH-0083`: §6 task 4 is answered for two devices and the recommended one is not among them.**
+`C-0018` computed the pull-in fold for the **affine** mandate and `C-0032` for `C-0030`'s **strain-softening**
+flexure; the recommended arm is **strain-stiffening**, at 34 paths, with a tangent minimum of 30.03 pN/nm
+where `C-0030`'s is 22.88. `C-0032` is itself the proof that a fold does not transfer — it lost **7 of 54**
+states on one substitution of the law. The direction is favourable and the magnitude is unknown, and the
+neighbouring case's bias margin is **1.0000–1.0019**. It is a calculation, not a measurement, and it is the
+largest single thing the recommendation does not know.
+
+**And `C-0032`'s escalation of 0.5 mM does not transfer either.** It was measured on `C-0030`'s softening
+element (22.88 against a 23.41–27.91 floor); the recommended array clears **6 of 6** at §3's own 2 mM.
+`T-63` still binds — but because the 2 mM **fold** is unknown, not because 2 mM is known to fail. That is a
+change in the standing of the programme's highest-priority open question and the coordinator should carry it
+into `ANSWERS.md`.
+
+**Verification.** 26 gate-named tests; 23 upstream reproductions with a worst departure of **8.2e−5**, every
+one of the largest being the published value's own quoted precision (`C-0069`'s 2.737 against 2.73678);
+the elastica arm RK4-step independent at departure **0.0**; the result file re-run through `tools/study.sh`,
+reported *"no result file changed"*, and diffed **byte-for-byte identical**.
+Nothing is read from another study's result file — every number the recommendation writes is recomputed
+from the library that owns it, which is what stops a synthesis being a transcription.

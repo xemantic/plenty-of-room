@@ -17,6 +17,7 @@
 package com.xemantic.nano.plentyofroom.brush
 
 import com.xemantic.nano.plentyofroom.material.PegWater
+import com.xemantic.nano.plentyofroom.structure.SOLVED_HEIGHT_SIGNIFICANT_DIGITS
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -857,8 +858,15 @@ private val OPEN = listOf(
  *
  * This study contains **no argmin**, so the trap `CLAUDE.md` records for `T-14` does not apply;
  * the `maxBy`/`minBy` in [findings] run over quantities that differ in the first two digits.
+ *
+ * **`P-18` changed the count from nine to six, and only the count.** Every number in this file is
+ * downstream of a solved height, and `SelfConsistentFieldLayer.heightAtPressure` closes its
+ * bracket at a relative `1e-6`; `CH-0043` measured this very file relocating inside exactly that
+ * when `P-15` shortened the solver's path without changing its answer. Nine digits made the
+ * re-run diff a certificate about the code **path**. The absolute floor stays at `1e-12` rather
+ * than moving to the shared `1e-9`, so that this change is attributable to one cause.
  */
-private const val SIGNIFICANT_DIGITS: Int = 9
+private const val SIGNIFICANT_DIGITS: Int = SOLVED_HEIGHT_SIGNIFICANT_DIGITS
 
 private const val ABSOLUTE_FLOOR: Double = 1e-12
 
