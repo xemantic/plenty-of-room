@@ -6245,3 +6245,227 @@ the elastica arm RK4-step independent at departure **0.0**; the result file re-r
 reported *"no result file changed"*, and diffed **byte-for-byte identical**.
 Nothing is read from another study's result file — every number the recommendation writes is recomputed
 from the library that owns it, which is what stops a synthesis being a transcription.
+
+---
+
+## Iteration 14 — `T-134`: the two knife edges were one number, and the measurement nobody could find was in a supplementary table all along
+
+**Task.** [`T-134`](gpd/tasks/T-134.md), raised jointly by `C-0069`'s *Still open* item 3 and `C-0066`'s item 5,
+with `T-45` standing behind both since iteration 3.
+Filed as [`C-0072`](gpd/claims/C-0072-plan-tolerance-model.md), raising
+[`CH-0084`](gpd/challenges/CH-0084-the-measured-staple-incorporation-is-past-the-flatness-threshold.md).
+Study `anchoring.PlanToleranceStudyKt` → `gpd/results/T-134-plan-tolerance.json`;
+model `src/main/kotlin/anchoring/PlanTolerance.kt`; 31 gate-named tests;
+literature survey and its 77 query strings in `gpd/data/T-134-tolerance-literature.md`.
+
+**The first thing the task found, it found before writing any physics: the two knife edges are one quantity.**
+`C-0069` reports a 0.0256 nm plan margin as *"the budget minus the arm"*, `(p − d) − L`.
+`C-0066` reports a 0.0256 nm tie clearance as *"the tip gap minus a duplex"*, `(p − L) − d`.
+They are the same subtraction, grouped differently, and the two claims were written by different tasks
+against different questions without either noticing.
+Asserted here at `4.4e−16` nm over four interhelical distances, two crossover spacings and three lengths.
+**One scatter model settles both — which is what the task supposed and what nothing upstream had established.**
+
+**And then the model was not needed, because four floors already exceed the margin.**
+The base-pair **rise**, 13.28× — so the margin is below the finest length any DNA design can *specify*,
+which is a stronger statement than "small": no correction can be applied to recover it even if the scatter
+were known. The disagreement between the two published SAXS interhelical **means**, 1.56×. The **thermal
+axial** breathing of the two segments the margin is a difference of, from the *measured* stretch modulus,
+10.46×. And the arm tip's own bending at a **perfectly rigid** root, **70.6×** — the floor of the transverse
+channel is the arm's own compliance, so no joint stiffening escapes it.
+The declared falsifier — a channel landing *inside* 0.0256 nm, which would have made the margin quotable and
+turned the task into a distribution fit — fired on exactly one channel, and it is the one that rests on
+`C-0009`'s **constructed** in-plane crossover spring at the top of its own four-decade sweep.
+**That is why the floors were required to rest on measured constants**: a floor a modelling choice can slide
+under is not a floor.
+
+**Correlation is worth exactly 7×, and the arithmetic is two integers.**
+The rise enters the margin twice — the host's 32 bp crossover pitch and the element's own 24 bp length —
+so a **common-mode** strain carries the *difference* (8 bp, threshold 1.10 %) and an **opposed** one the
+*sum* (56 bp, 0.158 %), with the independent RMS between at 0.221 %.
+`(N_p + N_a)/(N_p − N_a) = 56/8` exactly, and the study asserts it at 7.000000000000001.
+The favourable structure is also the physical one — an arm and its host are the same molecule in the same
+buffer — and **that is luck, not design**: nothing upstream knew the choice existed.
+The sensitivity has an exact null at a 4:3 differential strain, and it is the *unusable* kind of null:
+`C-0026`'s exact zero is delivered by a symmetry, this one by a strain nothing supplies.
+
+**A quantity that does not propagate at all.** A crossover interface spacing is an *integer* base-pair count,
+and 10.5 and 10.67 bp/turn both round to 32 — so the twist's coefficient on the plan margin is exactly zero
+over the whole band this project disputes, asserted at 101 sampled twists to `1e−15`.
+Second structurally zero coefficient in the programme after `C-0026`'s along-helix scatter, and zero for
+the same *kind* of reason: an integer rather than a symmetry.
+
+**The literature was formulated as a negative-existence exercise and returned four measurements.**
+This is the part that changed the iteration.
+- **Fischer et al. (2016)** — the paper this programme's 2.69 / 2.73 / 2.54 nm come from — **measures the
+  width as well as the mean, and reports it only in the SI.** The single-layer sheet's fitted
+  lattice-constant width is `w_a` = **2.5 Å on `a_mean` = 27.41 Å — 9.1 %**, which is **9.76×** the margin in
+  absolute nm and **8.27×** this claim's *loosest* relative threshold, with a rigorously defined Lorentzian
+  `B/q₀` = **15.2 %** beside it as an upper bound. The multilayer brick is **3.1× better ordered**.
+  `w_a` is never defined in words anywhere in the SI — flagged **read directly, meaning inferred**, and
+  carried beside the parameter whose definition *is* verbatim.
+  **The main text quotes only the peak position with its fit uncertainty**, which is the standard error on
+  the *mean*, ~20× smaller, and reading that as a tolerance would have been exactly the mistake to avoid.
+- **Bai et al. (2012)** derive a **2–3 Å** atom-position rmsd at the core of a square-lattice origami from
+  the cryo-EM B-factor after subtracting orientational and translational assignment error — the only
+  Debye-Waller-type disorder measurement on an origami, and it is one paragraph of SI Text.
+- **Dietz et al. (2009)** supply the only measured **thermal-versus-fabrication split** in the field:
+  observed bend-angle s.d. 5.2–9.0° over N = 74–212 against a 2.5° thermal prediction, the excess attributed
+  by the authors to defects. **2.1–3.6× in amplitude**, and nobody has repeated it in seventeen years.
+- **Strauss et al. (2018)** map staple incorporation at single-staple resolution over all 168 staples of a
+  Rothemund rectangle: **48–95 %, mean 84 %, worst at the edges.** That answers `T-45`.
+
+**And the framing changes.** Bai et al. measure the interhelical distance as a *deterministic sawtooth* —
+**18.5 Å at a crossover to 36 Å midway** — confirmed by all-atom MD (Yoo 2013) and by oxDNA **on a 2D tile**
+(Snodin 2019), which also finds the *fluctuation* about the weave smaller than the weave itself.
+So **2.69 nm is a Bragg lattice constant, not a local centre-to-centre distance**, and the plan model uses it
+as a *steric* width. Read through the identity, the sawtooth's two ends give **+0.866 nm** and **−0.884 nm** of
+plan margin: comfortable and impossible, and the plan model samples neither.
+Its minimum is also **inside the 2.0 nm steric diameter `CLAUDE.md` records as the duplex's own surface**.
+That is `T-137`.
+
+**`CH-0084`, and it is the sharpest thing here: `T-45`'s tolerance had been measured and the flat design is on
+the wrong side of it.** `C-0060` computed the threshold *"precisely so a measured or specified tolerance can
+be substituted"* and reasoned about *"the 5 % a staple design might plausibly hold"* — an assumption with no
+source. A missing staple does not perturb a load path, it **removes** it, so the population is Bernoulli and
+`σ_rel = √(f/(1−f))`: the measured mean gives **43.6 %**, which is **1.26×** `C-0060`'s 34.6 % flatness
+threshold and **2.57×** `C-0026`'s break-even; the edge sites give **104 %**.
+And the mean alone, needing no pattern assumption at all, is a **16 % shortfall on `C-0017`'s mandate** —
+2.9× the worst rounding placement error `C-0060` spends a one-base-pair trim to remove, and a trim cannot
+recover it because the missing paths are not there to trim.
+**The position dependence runs the wrong way for `C-0058`**, which puts 34 of its 45 stations on the rim and
+gives them the *stiff* level — the sites the measurement says are least likely to form.
+`C-0060`'s stiffness and buildability results are untouched and reproduce; what falls is *"the tolerance is
+generous"*.
+
+**Two results that were not anticipated.**
+First, **the design that recovers the margin loses the flatness.** The whole 8.19 nm ceiling is bought by
+**four arms**: `C-0063`'s bound 1 forces four rows of three, and a row of three is the only configuration in
+which two same-sense arms sit at the bare root pitch. Dissolving them — 34 paths to 30 — takes the ceiling to
+9.12 nm and the margin from 0.0256 to **1.3495 nm, 53×**, at 12 % of the path count and with every per-path
+force still under the unzip allowable. And it dishes **0.2603** against `T-5b`'s 0.10.
+The reduction used is a *plan* rule and not a flatness optimisation, so that is an **upper** bound — `T-136`.
+Second, **`C-0070`'s lateral seat is not a tolerance axis at all.** The sweep was run expecting a threshold
+and returned an alternating pattern: 4 of 11 coarse seats pass, the failures alternate, and refining to
+0.025 nm finds *more* alternation. The seat is a **register**, so a scatter model on it is meaningless and
+`C-0070`'s 0.5 nm reading is one unlucky choice among several lucky ones.
+
+**One thing recorded rather than challenged.** `C-0017`'s mandate is a stiffness on a **sum**, so a path count
+sizes the element *and* counts the instances; `C-0069`'s path-count sensitivity changes the first and holds
+the second at 34, so its 15-path row places 34 instances of a 15-path arm and presents **2.27×** the mandate.
+No `C-0069` headline moves — all are read at the self-consistent `n = 34` — but its note
+*"the placement is unchanged because the count is what sets the stations"* is what pins the ceiling at
+8.19 nm in every row of that table, and it is why `T-136`'s escape was invisible. Filed as `T-138`.
+
+**Verification.** 31 gate-named tests. The strong free limiting case the task declared — zero scatter
+reproducing both published clearances, *and reproducing them as the same number* — is a gate-2 test.
+Gate 3 carries five things the construction does not impose: the identity at every lattice constant, the
+exact null direction, the annihilation of the common-mode coefficient at equal counts, the superposition of
+the channels, and the **nested** monotonicity of the station reduction.
+Gate 4 reports the seat sweep as **not converging**, and that is the finding.
+`tools/verify.sh` **BUILD SUCCESSFUL in 13 m 17 s — the whole suite, on its own isolated tree, with nothing
+dropped**; the result file re-run through `tools/study.sh`, reported *"no result file changed"*, and diffed
+**byte-for-byte identical**.
+
+### Iteration 14 — the tree never rounded to nine digits; it rounded to nine digits six times
+
+`P-18`, the process blocker `CH-0043` raised, taken ahead of every science task because it governs
+what a result-file diff *means* — and therefore what every re-run certificate in this repository
+certifies. Claim `C-0073`.
+
+**The cheap bound fired before any solver ran, and it re-shaped the task.**
+"The tree rounds to nine significant digits" is a description, not a design:
+there are **six independent rounding implementations**,
+and two of them do not even agree on the absolute floor (`1e-9` against `1e-12`).
+So a per-provenance rule needs no new mechanism — the mechanism was already there, uncalibrated —
+and a change to one site silently leaves the other five.
+Worse, `window/` already writes the answer down and then does not use it:
+it carries `WINDOW_DECISION_SIGNIFICANT_DIGITS = 6` because *"a constraint flag that flipped because a drainage corner moved in its twelfth digit would put a `true` in one run and a `false` in the next"*,
+and then emits the numbers those flags were decided from at nine.
+**A decision precision and an emission precision that differ mean a file's flags cannot be reproduced from the file's own numbers.**
+
+**`CH-0043` ranked the two directions on cost, and the cost is not what separates them.**
+Tightening `HEIGHT_TOLERANCE` from `1e-6` to `1e-9` costs **1.02×** the SCF solves — 282 against 288 at one design point —
+because Illinois is superlinear and three decades are six extra solves.
+The honest direction is essentially **free**, and every argument that rejected it on cost is void.
+It is refused anyway, and the reason is **reachability**: the residual the height bracket works on is *discontinuous*.
+`ScfDiscretisation` sets `M = round(h/Δz)`, and `round` is a step function of `h`,
+so at every half-integer multiple of `Δz` the node count changes, the spacing changes with it,
+and the computed pressure jumps — a measured `4.9e-4` to `9.8e-4`,
+which over a logarithmic slope of −6.2 to −9.9 is **`7.9e-5` to `9.9e-5` of indeterminacy in the root**.
+Tightening to `1e-9` would buy digits seven, eight and nine of a number whose **fourth** digit is already a discretisation artefact,
+and would do it by moving every SCF-derived number in the repository —
+exactly the hand re-adjudication `CH-0043` was raised to stop paying for.
+
+**The general statement is the claim, and it inverts the intuition.**
+Set a result file's rounding by the largest movement a change of **path** can produce,
+never by the largest error the **model** carries.
+Here those are `5.6e-7` and `9.9e-5`, two decades apart and in the counter-intuitive order:
+the model is *less accurate* than the solver is *reproducible*.
+Rounding to the model's accuracy would blind the diff to a real change of the model;
+rounding to the solver's reproducibility makes the diff sensitive to exactly that and to nothing else.
+The accuracy figure is not discarded — it belongs in a validity range,
+beside `CLAUDE.md`'s bigger brother, the 23.4 % the 10 nm stroke edge moves between two meshes.
+
+**Four probes, and the one that mattered is not the one the challenge implied.**
+`P-15` did not change a tolerance; it changed the *path* to a root at a **fixed** tolerance.
+Reproduced directly — one residual, one tolerance, four starting brackets — the roots spread by `5.64e-7`,
+six determined digits, consistent with `C-0031`'s measured median of `9.0e-7`.
+Changing the *warm field and cache* instead moves the resting height by `3.3e-13`:
+the SCF field solver converges to `1e-11` in `w` and is **not** what limits determinacy.
+And the amplification from a height into a second difference of free energies is real but state-dependent —
+**27.6×** at the 10 nm design point against `C-0031`'s `10⁴` at the sweep's stiff end.
+
+**The study's first run emitted its own measurement as `0.0`.**
+`RESULT_ABSOLUTE_FLOOR` is documented as a magnitude **in the locked units** —
+*"the smallest force of any interest here is `1e-3 pN`"* — and a *relative movement* is not in locked units at all.
+A measured `3.3e-13`, and the declared SCF field tolerance `1e-11` sitting in the study's own parameter block,
+were both flattened to zero by a floor written for forces.
+The same shape as `C-0031`'s floored `layerStiffness` beside an unfloored `√(k_BT/k)`:
+**a floor stated in one dimension silently reaches quantities of another.**
+
+**The re-emission: no verdict, no flag, no string and no structural change.**
+`T-1f` moves 714 numeric fields at a median `6.4e-7` and a maximum `4.7e-6` —
+which *is* the arithmetic maximum of a six-digit rounding, so the file is exactly digits removed and nothing else.
+`T-1d` moves 18 007 at a median `8.2e-7`; the 1 817 that exceed `1e-5` are **every one** of them
+`stiffnessAtNineTenths` (911) or `stiffnessAtSevenTenths` (906), the two keys the per-key three-digit override applies to.
+`C-0016`'s window edges move in the seventh figure against edges quoted to four.
+Nine of 18 007 fields differ from a naive re-rounding by exactly one unit in the last place:
+the study rounds the **raw double** and the check rounds its **nine-digit print**, and at a tie those disagree —
+**rounding a rounded number is not rounding the original.**
+The falsifier for the by-construction argument — that a study whose emission call was not edited cannot emit a different byte —
+was four untouched studies re-emitted across three rounding sites, and it did not fire.
+
+**What a per-key rule can and cannot do.**
+`T-1d`'s two deep-compression stiffnesses are the only keys in the file determined to fewer than six digits —
+`C-0031` measured 122 of 10 796 fields moving by more than `1e-3` and every one of them was one of those two.
+Three digits absorbs 98.9 % of the file and does **not** absorb the `1.5e-2` tail, and no per-key constant can,
+because the amplification varies by four orders of magnitude *across the sweep* while a key is one number.
+**A per-key rule is the right granularity for provenance and the wrong granularity for amplification**;
+closing the second needs a precision carried per record, which is a larger change than `P-18`.
+
+`window/`, `actuator/` and `coupling/` remain over-printed by 3, 5 and 4 digits against their own declared tolerances,
+and are queued as `P-19` with the measurement attached —
+the same discipline `C-0031` used for `P-17`: rank rather than fix,
+because changing code that produces published results costs a re-run of everything downstream,
+and several of those files were filed hours earlier by other agents.
+
+**And the declared falsifier fired, usefully.**
+The by-construction argument was that a study whose emission call was not edited cannot emit a different byte.
+It is **false for any study that consumes another study's result file**:
+`window/DesignWindowStudy.kt` reads `gpd/results/T-1d-scf-density-profile.json`
+and builds its 61-point grafting-density grid out of it,
+so rounding the producer down moved **4 864 fields of `T-2`** through an emitter nobody touched.
+The propagation was then checked to **close** — `T-1d` has exactly one reader, `T-1f` and `T-2` have none —
+so the affected set is exactly `{T-1d, T-1f, T-2}`.
+`T-2` moves by a median `8.4e-7` and a maximum `8.7e-6`, **0 flags, 0 structural changes**,
+its window edges the same grid *indices* with only the grid values re-quantised.
+The one visible consequence is a **tie**: the 10 nm upper edge is `0.260150`,
+which is exactly a knife edge at four significant figures,
+so a `1.5e-6` movement flips the file's own findings string from *"0.2601"* to *"0.2602"* —
+`CH-0085`, upheld, with **no number of `C-0011` or `C-0016` failing**:
+both claims also quote the edge at five and six figures, `0.26015` and `0.260150`, which is exactly what the file now carries.
+**A tie is not a rounding artefact; it is a statement that the quoted precision is the wrong one.**
+One more hole found on the way: `T-2`'s `graftingDensityGridRatio` is a `Double.toString()` in a
+**string** field, which `roundedForResult` passes through untouched — ten significant digits in a file that declares nine.
+A serialisation-boundary rounding is only as complete as the type it dispatches on.

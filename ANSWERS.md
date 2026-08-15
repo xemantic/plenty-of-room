@@ -34,6 +34,27 @@ three tie-break axes were unanimous.
 **one arithmetic**, `pitch − d − L = 0.0256 nm`; **4 specification questions still binding**; and
 **9 failure routes, 5 of which remove the element**, two of those already inside a published bracket.
 
+**And the tolerance model, run one iteration later, does not clear it** (`C-0072`).
+The three unmargined quantities and `C-0066`'s tie clearance are **one lattice quantity**,
+`M = p − d − L` — the two claims differ only in how they group the subtraction and agree to `1e−12` nm,
+which neither had noticed. **Four floors exceed that 0.0256 nm and none of them needs a fabrication
+measurement**: the base-pair **rise** (13.28×, so *the margin is below the finest length any DNA design can
+specify*, and no correction recovers it), the disagreement between the two measured SAXS interhelical
+distances of the same material (1.56×), the **thermal axial** breathing of the two segments the margin
+differences (10.46×), and the arm tip's own bending **at a perfectly rigid root** (70.6×, so no joint
+stiffening escapes it).
+**The literature was expected to return a negative and returned four measurements**, three of them in
+supplementary material their own main texts never discuss. Fischer et al. (2016) fit the **single-layer
+sheet's** lattice-constant width at **9.1 %**, which is **9.76× the margin**; Bai et al. (2012) measure the
+interhelical distance as a deterministic 18.5 → 36 Å **sawtooth**, so 2.69 nm is a *Bragg lattice constant*
+rather than a spacing; Strauss et al. (2018) map staple incorporation at **48–95 %**.
+So **`T-45`, open since iteration 3, is answered from published measurement — and the answer is a failure.**
+The escape is a **reduced path count** (30 paths dissolve the four forced rows of three and buy 53× of
+margin) and it **loses the flatness**, 0.0706 → 0.2603: *margin and flatness are bought from the same four
+arms.*
+**`C-0071`'s recommendation therefore stands as the best element the catalogue contains and NOT as a
+buildable design**, which is what TRL 1–3 means here and is the honest reading.
+
 1. **The tile is not a rigid plate, and the picture has to go.** It is rigid *exactly* under a uniform load —
    at any flexural rigidity — and dishes under every departure from uniformity, including the unavoidable one
    at 300 K. A point-coupled lever and an area-averaging charge sensor **do not measure the same displacement**;

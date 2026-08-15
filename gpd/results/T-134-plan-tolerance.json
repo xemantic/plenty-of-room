@@ -2,7 +2,7 @@
     "task": "T-134",
     "leaf": "A8.2",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm, 0.34 nm rise, 32 bp crossover interface spacing, crossover phase 24; C-0063's 34 upward roots read from gpd/results/T-125-*.json; C-0017's 33.333333333333336 pN/nm mandate as a SUM at the acceptable 3 nm stroke",
-    "decision": "PASS — a tolerance model CAN be built, it settles both knife edges at once because they are ONE quantity, and the answer is that neither margin is quotable: four independent floors, none of which needs a fabrication measurement, exceed the 0.0256 nm both claims publish, the smallest of them by 1.56x and the largest by 70.6x. The design that recovers a margin is a REDUCED PATH COUNT, not a different element — and it costs T-5b's flatness verdict, so the margin and the flatness are bought from the same four arms.",
+    "decision": "PASS — a tolerance model CAN be built, it settles both knife edges at once because they are ONE quantity, and the answer is that neither margin is quotable. Four floors, none of which needs a fabrication measurement, exceed the 0.0256 nm both claims publish, the smallest by 1.56x and the largest by 70.6x. AND THE MEASUREMENT EXISTS after all, in a supplementary table its own paper never quotes: the single-layer sheet's fitted lattice-constant width is 9.1 % relative, 9.8x the margin in absolute nm and 8.3x this claim's loosest relative threshold — so falsifier F5 fired in the reinforcing direction. The design that recovers a margin is a REDUCED PATH COUNT, not a different element, and it costs T-5b's flatness verdict: the margin and the flatness are bought from the same four arms.",
     "identity": [
         {
             "reading": "C-0069's Q5 arm margin",
@@ -229,11 +229,11 @@
             "channel": "the arm tip, at a PERFECTLY RIGID root",
             "sigma": 1.80743797,
             "overMargin": 70.5777647,
-            "stiffnessSupplied": 1.79769313E308,
+            "stiffnessSupplied": 0.0,
             "stiffnessDemanded": 420979.651,
             "stiffnessShortfall": 0.0,
             "unit": "pN nm/rad",
-            "note": "the floor of the transverse channel — the arm's OWN bending, 3EI/L^3"
+            "note": "the floor of the transverse channel — the arm's OWN bending, 3EI/L^3. The supplied stiffness is reported as 0.0 because there is no finite value: a rigid root is a limit, and a sentinel would be the anti-pattern CLAUDE.md names"
         }
     ],
     "stiffnessScatter": [
@@ -737,6 +737,195 @@
             "note": "no end restraint places an arm inside this ceiling — the elastica's own 1.5 x stroke floor is reached first"
         }
     ],
+    "literature": [
+        {
+            "source": "Fischer et al., Nano Lett. 16:4282 (2016), SI Table S5",
+            "quantity": "single-layer SHEET lattice-constant width w_a / a_mean",
+            "value": 0.0912075885,
+            "unit": "relative",
+            "readFlag": "READ DIRECTLY (meaning INFERRED)",
+            "comparedWith": "this claim's loosest relative threshold (common mode, built arm)",
+            "against": 0.0110294118,
+            "ratio": 8.26948802,
+            "note": "the measurement T-134 went looking for, and it is in a supplementary table the main text never quotes. w_a is never DEFINED in words in the SI, so the meaning is inferred from the fit model — which is why the Lorentzian row below is carried beside it as a rigorously defined upper bound"
+        },
+        {
+            "source": "Fischer et al. (2016), SI Table S6",
+            "quantity": "single-layer SHEET Bragg peak Lorentzian HWHM B / q0",
+            "value": 0.151651459,
+            "unit": "relative",
+            "readFlag": "READ DIRECTLY",
+            "comparedWith": "the same threshold",
+            "against": 0.0110294118,
+            "ratio": 13.7497323,
+            "note": "B is defined verbatim in the SI as the half-width half-maximum, so this is an UPPER bound on the lattice-constant width: it contains finite-size broadening as well as disorder, and no paracrystalline decomposition exists"
+        },
+        {
+            "source": "Fischer et al. (2016), SI Tables S5/S7",
+            "quantity": "square-lattice BRICK lattice-constant width w_a / a_mean",
+            "value": 0.029336267,
+            "unit": "relative",
+            "readFlag": "READ DIRECTLY (meaning INFERRED)",
+            "comparedWith": "the sheet's own width",
+            "against": 0.0912075885,
+            "ratio": 0.321642831,
+            "note": "the SINGLE-LAYER sheet is the worst-ordered object measured — 3.1x the multilayer brick's relative width, on the same beamline and the same fit model"
+        },
+        {
+            "source": "Fischer et al. (2016), SI Table S5",
+            "quantity": "the sheet's lattice width in ABSOLUTE nm",
+            "value": 0.25,
+            "unit": "nm",
+            "readFlag": "READ DIRECTLY",
+            "comparedWith": "the margin both C-0069 and C-0066 publish",
+            "against": 0.02560917,
+            "ratio": 9.76212818,
+            "note": "the measured width of the constant the margin is a difference of, against the margin itself — 6.3x floor 2, which was the difference between two MEANS"
+        },
+        {
+            "source": "Bai et al., PNAS 109:20012 (2012), SI Text",
+            "quantity": "atom-position rmsd at the CORE of a square-lattice origami, from the cryo-EM B-factor after subtracting orientational and translational assignment error",
+            "value": 0.2,
+            "unit": "nm",
+            "readFlag": "READ DIRECTLY",
+            "comparedWith": "the margin",
+            "against": 0.02560917,
+            "ratio": 7.80970254,
+            "note": "B_structural = 1000 - 400 - 250 = 350 A^2, quoted verbatim in the SI; the main text carries up to 3 A and says the periphery is worse. The only Debye-Waller-type disorder measurement on a DNA origami"
+        },
+        {
+            "source": "Bai et al. (2012), main text Fig. 3",
+            "quantity": "the WEAVE: measured minimum interhelical distance at a crossover",
+            "value": 1.85,
+            "unit": "nm",
+            "readFlag": "READ DIRECTLY",
+            "comparedWith": "the 2.0 nm steric diameter this project asserts",
+            "against": 2.0,
+            "ratio": 0.925,
+            "note": "adjacent duplexes in a real origami approach to 1.85 nm centre to centre — INSIDE the hard-cylinder diameter the plan model assumes"
+        },
+        {
+            "source": "Bai et al. (2012), main text Fig. 3",
+            "quantity": "the WEAVE: peak-to-peak variation of the interhelical distance along the helix",
+            "value": 1.75,
+            "unit": "nm",
+            "readFlag": "READ DIRECTLY",
+            "comparedWith": "the margin",
+            "against": 0.02560917,
+            "ratio": 68.3348972,
+            "note": "THE FRAMING RESULT: the interhelical distance in a lattice origami is a DETERMINISTIC sawtooth, 18.5 A at a crossover to 36 A midway, so 2.69 nm is a BRAGG LATTICE CONSTANT and not a local centre-to-centre distance. Confirmed by Yoo & Aksimentiev PNAS 110:20099 (2013) all-atom MD and by Snodin et al. NAR 47:1585 (2019) oxDNA on a 2D tile, which also finds the FLUCTUATION about the weave smaller than the weave itself"
+        },
+        {
+            "source": "Bai et al. (2012) read through the plan model",
+            "quantity": "the plan margin evaluated at the weave MAXIMUM instead of the lattice constant",
+            "value": -0.88439083,
+            "unit": "nm",
+            "readFlag": "DERIVED here from a read value",
+            "comparedWith": "zero",
+            "against": 0.0,
+            "ratio": 0.0,
+            "note": "at the weave maximum the margin is NEGATIVE and the element does not place at all; at the weave minimum it is 0.8656091700000008 nm. The measured weave brackets the verdict from comfortable to impossible, and the plan model samples neither end"
+        },
+        {
+            "source": "Dietz, Douglas & Shih, Science 325:725 (2009), Fig. 3K and Note S2",
+            "quantity": "measured population bend-angle s.d. over thermal prediction, in AMPLITUDE",
+            "value": 2.08,
+            "unit": "ratio",
+            "readFlag": "READ DIRECTLY",
+            "comparedWith": "the same ratio at the top of the measured band",
+            "against": 3.6,
+            "ratio": 0.577777778,
+            "note": "THE ONLY MEASURED THERMAL/FABRICATION SPLIT in the accessible origami literature: observed 5.2-9.0 deg s.d. against a 2.5 deg thermal prediction, with the excess attributed to defects verbatim. Used here as the multiplier from a thermal floor to an AS-BUILT estimate"
+        },
+        {
+            "source": "Dietz (2009) applied to this claim's thermal floors",
+            "quantity": "the as-built axial excursion, thermal x the measured defect multiplier",
+            "value": 0.964033153,
+            "unit": "nm",
+            "readFlag": "DERIVED here from read values",
+            "comparedWith": "the margin",
+            "against": 0.02560917,
+            "ratio": 37.6440608,
+            "note": "the thermal floor is a LOWER bound on the as-built scatter, and the only measured correction to it runs 2.1-3.6x in amplitude"
+        },
+        {
+            "source": "Strauss et al., Nat. Commun. 9:1600 (2018)",
+            "quantity": "MEAN staple incorporation efficiency over all 168 staples of a Rothemund rectangle",
+            "value": 0.84,
+            "unit": "fraction",
+            "readFlag": "READ DIRECTLY",
+            "comparedWith": "the incorporation at which C-0060 loses T-5b's flatness",
+            "against": 0.893083603,
+            "ratio": 0.94056144,
+            "note": "48 % at the edges to 95 % in the centre, verbatim; DNA-PAINT with single-staple resolution, corroborated by next-generation sequencing"
+        },
+        {
+            "source": "Strauss et al. (2018) read through C-0060's threshold",
+            "quantity": "the relative per-path stiffness scatter a MEAN 84 % incorporation implies",
+            "value": 0.43643578,
+            "unit": "relative",
+            "readFlag": "DERIVED here from a read value",
+            "comparedWith": "C-0060's 34.6 % flatness threshold",
+            "against": 0.346,
+            "ratio": 1.26137509,
+            "note": "T-45 ANSWERED FROM MEASUREMENT: a Bernoulli dropout at the measured mean rate is past C-0060's threshold and past C-0026's break-even. It is a TRANSLATION and not an equivalence — the pattern differs, and C-0060 measures the pattern at 2.21x"
+        },
+        {
+            "source": "Strauss et al. (2018) read through C-0017's mandate",
+            "quantity": "the mandate shortfall a mean 84 % incorporation implies",
+            "value": 0.16,
+            "unit": "relative",
+            "readFlag": "DERIVED here from a read value",
+            "comparedWith": "the worst rounding placement error C-0060 reports",
+            "against": 0.0544,
+            "ratio": 2.94117647,
+            "note": "a dropout removes a path's stiffness entirely, so it is a PLACEMENT error on C-0017's sum — and the measured mean is 2.9x the worst rounding error C-0060 treats as significant"
+        },
+        {
+            "source": "Strauss et al. (2018), edge sites",
+            "quantity": "the WORST measured per-site incorporation, at the structure's edge",
+            "value": 0.48,
+            "unit": "fraction",
+            "readFlag": "READ DIRECTLY",
+            "comparedWith": "C-0058's rim stations, which carry the stiff level",
+            "against": 34.0,
+            "ratio": 0.0,
+            "note": "the position dependence runs the WRONG WAY for C-0058: it puts 34 of its 45 stations on the rim, which is where incorporation is measured worst"
+        },
+        {
+            "source": "Kube et al., Nat. Commun. 11:6229 (2020)",
+            "quantity": "cryo-EM structures of single-layer square-lattice Rothemund rectangles solved",
+            "value": 0.0,
+            "unit": "count",
+            "readFlag": "READ DIRECTLY",
+            "comparedWith": "attempted",
+            "against": 1.0,
+            "ratio": 0.0,
+            "note": "verbatim: 'were unsuccessful due to excessive conformational heterogeneity'. The strongest statement in print about how loose an uncorrected single-layer sheet is, and it is a NEGATIVE result nobody set out to publish"
+        },
+        {
+            "source": "Olson et al., PNAS 95:11163 (1998), Table 1",
+            "quantity": "B-DNA per-base-pair-step RISE dispersion, relative",
+            "value": 0.0572289157,
+            "unit": "relative",
+            "readFlag": "READ DIRECTLY",
+            "comparedWith": "this claim's per-step rise threshold, relative",
+            "against": 0.0117909371,
+            "ratio": 4.85363589,
+            "note": "3.32 (0.19) A over 724 B-DNA steps in crystal complexes; the dispersion includes sequence and packing and is NOT pure thermal fluctuation, so it is an upper bound on the per-step width"
+        },
+        {
+            "source": "Rothemund, Nature 440:297 (2006)",
+            "quantity": "the founding paper's own pixel-dimension scatter, relative",
+            "value": 0.0782608696,
+            "unit": "relative",
+            "readFlag": "READ DIRECTLY",
+            "comparedWith": "the interhelical relative threshold of this claim",
+            "against": 0.0111524164,
+            "ratio": 7.0173913,
+            "note": "11.5 +/- 0.9 nm over n = 26 AFM measurements; an upper bound, since it carries AFM drift and tip convolution, and the mean is itself 6 % above design"
+        }
+    ],
     "convergence": [
         {
             "quantity": "the row-of-three length ceiling",
@@ -924,10 +1113,13 @@
             "id": "P6",
             "statement": "the literature is searched for a measured origami fabrication-tolerance distribution and the query strings are recorded whether or not one is found",
             "met": true,
-            "evidence": "recorded in gpd/claims/C-0072 and gpd/data/T-134-tolerance-literature.md; this study emits no literature number of its own"
+            "evidence": "17 literature records, each with its own read flag; 77 query strings and the verbatim passages in gpd/data/T-134-tolerance-literature.md"
         }
     ],
     "findings": [
+        "THE MEASUREMENT EXISTS, IT IS IN A SUPPLEMENTARY TABLE NOBODY QUOTES, AND IT IS FAR WIDER THAN THE MARGIN. Fischer et al. (2016) fit a lattice-constant width of 0.25 nm on a 2.741 nm mean for the SINGLE-LAYER sheet — 9.12075884713608 % relative, 9.762128175180635x the margin in absolute terms and 8.269488021403069x this claim's LOOSEST relative threshold — while the main text quotes only the peak POSITION with its fit uncertainty, which is the error on the mean and is 20x smaller. The same paper's multilayer brick is 3.1x better ordered. Falsifier F5 fired in the direction that reinforces the verdict rather than the one that would have overturned it.",
+        "THE 2.69 nm IS A BRAGG LATTICE CONSTANT AND NOT A LOCAL DISTANCE. Bai et al. (2012) measure the midpoints of neighbouring duplexes moving from 1.85 nm at a crossover to 3.6 nm midway — a DETERMINISTIC sawtooth, confirmed by all-atom MD and by oxDNA on a 2D tile, whose amplitude is 68.33489722626445x the margin. Read through the plan model the two ends give 0.8656091700000008 nm and -0.8843908299999992 nm, so the measured weave brackets the verdict from comfortable to impossible and the plan model samples neither end. The minimum is also INSIDE the 2.0 nm steric diameter this project asserts.",
+        "T-45 IS ANSWERABLE FROM PUBLISHED MEASUREMENT, AND THE ANSWER IS THAT THE FLAT DESIGN FAILS ON IT. Strauss et al. (2018) map staple incorporation across all 168 staples of a Rothemund rectangle at 0.48 on the edges to 0.95 in the centre, mean 0.84. A missing staple removes a load path entirely, so the population is two-valued and the implied relative per-path stiffness scatter is 0.43643578047198484 — 1.2613750880693204x C-0060's 34.6 % flatness threshold and 2.567269296894028x C-0026's break-even — and the same dropout is a 0.16000000000000003 shortfall on C-0017's mandate, 2.9x the worst rounding placement error C-0060 treats as significant. The position dependence runs the wrong way for C-0058, which puts 34 of its 45 stations on the rim.",
         "THE TWO KNIFE EDGES ARE ONE QUANTITY. C-0069's arm margin and C-0066's tie clearance are both pitch - width - length = 0.025609170000000958 nm; C-0069 groups it as a budget minus an arm and C-0066 as a gap minus a duplex, and the grouping is all that separates them. One scatter model settles both, which is what the task supposed and what nothing upstream had asserted.",
         "NO DISTRIBUTION IS NEEDED, BECAUSE FOUR FLOORS ALREADY EXCEED THE MARGIN. The base-pair rise is 13.276494318245664x it, the disagreement between two SAXS readings of the same lattice constant 1.5619405080289028x, the thermal axial breathing of the two segments the margin differences 10.456683564147742x, and the arm tip's own bending at a PERFECTLY RIGID root 70.57776471675056x. The declared falsifier — a channel landing inside 0.0256 nm — did not fire on any of them.",
         "THE MARGIN IS BELOW THE DESIGN QUANTUM, WHICH IS A STRONGER STATEMENT THAN 'SMALL'. 0.0256 nm is 0.07532108823529693 of a base-pair rise: not merely inside the scatter, but below the finest length increment any DNA design can specify, so no correction can be applied to recover it even if the scatter were known.",

@@ -4,14 +4,14 @@
 |---|---|
 | **Task** | [`P-18`](../tasks/P-18.md) |
 | **Leaf** | none — numerics infrastructure under `A2.1`, consumed by every leaf |
-| **Verification type** | **in-silico** (four probes on the `T-1f` pipeline at one Gen-1 design point, plus a full re-emission and diff of the two files `CH-0043` named) **+ logical** (which files can move under this change, established by construction) |
+| **Verification type** | **in-silico** (four probes on the `T-1f` pipeline at one Gen-1 design point, plus a re-emission and field-by-field diff of every file that can move, and four more re-emitted as the falsifier) **+ logical** (which files can move under this change, established by construction — and **falsified**, see Part 4) |
 | **Verdict** | **PASS — direction (a), the rounding carried DOWN, and the reason is not the one either direction was ranked on.** Tightening `HEIGHT_TOLERANCE` from `1e−6` to `1e−9` costs **1.02×** the SCF solves, so `CH-0043`'s "costs compute" is refuted; it is rejected anyway because the residual the height bracket works on is **discontinuous** — `M = round(h/Δz)` — with a measured jump worth **`7.9e−5`–`9.9e−5`** in the root, so the ninth digit it would buy sits **two decades below the fourth digit the discretisation already destroys**, and buying it would move every SCF-derived number and force exactly the hand re-adjudication `CH-0043` exists to describe. |
 | **Maturity** | **TRL 1–3.** A property of this repository's own solvers, measured against their own **declared** tolerances. Nothing here is measured against an experiment, and no physics is re-derived. |
 | **Provenance** | `gpd/results/P-18-determined-precision.json`, produced by `brush.DeterminedPrecisionStudyKt`; model changes in `src/main/kotlin/structure/ResultRounding.kt`, `src/main/kotlin/brush/SelfConsistentField.kt`, `src/main/kotlin/brush/FluctuationCorrectionStudy.kt`, `src/main/kotlin/brush/ScfDensityProfileStudy.kt`; **21 gate-named tests** in `src/test/kotlin/structure/DeterminedPrecisionRoundingTest.kt` (11) and `src/test/kotlin/brush/DeterminedPrecisionTest.kt` (10); re-emission through `tools/study.sh` on isolated trees |
 | **Conditions** | IEEE 754 binary64. One Gen-1 design point: `L₀ = 10 nm`, `σ = 0.0240 nm⁻²`, des Cloizeaux interaction, production grid `Δz = 0.2 nm`, `Δn = 1/2`, SCF field tolerance `1e−11` in `w`, `k_BT = 4.141947 pN·nm` at **300 K**, aqueous buffer with Mg²⁺, 40 × 40 nm tile, §3's 100 pN. |
 | **Consumes** | [`CH-0043`](../challenges/CH-0043-a-reproducibility-certificate-that-certifies-the-path.md) (the question), [`C-0031`](C-0031-bracketed-root-repair.md) (the measured `T-1d`/`T-1f` movement distribution, consumed as data and **not** re-measured) |
-| **Constrains** | [`C-0011`](C-0011-scf-density-profile.md), [`C-0019`](C-0019-mean-field-fluctuation-corrections.md) — the two files re-emitted. **No number of either moves.** |
-| **Raises** | nothing. Four rounding sites remain over-printed and are queued as `P-19` with their measured determined precision attached, in the same spirit as `C-0031`'s `P-17`: changing code that produces published results costs a re-run of everything downstream, and that price is worth paying only where the over-print can change an adjudication. |
+| **Constrains** | [`C-0011`](C-0011-scf-density-profile.md), [`C-0019`](C-0019-mean-field-fluctuation-corrections.md) and — through `T-1d`'s file, which `T-2` **reads** — [`C-0016`](C-0016-design-window.md). Three files re-emitted. **No verdict, no flag and no quoted figure of any of them moves.** |
+| **Raises** | [`CH-0085`](../challenges/CH-0085-a-window-edge-quoted-at-a-tie.md), against `C-0011`'s and `C-0016`'s **four-figure rendering** of the 10 nm upper edge — `0.260150` is exactly a tie at four significant figures, so *"0.2601"* was the side of it the pre-`P-18` file happened to land on. No number of either claim fails. Four rounding sites remain over-printed and are queued as `P-19` with their measured determined precision attached, in the same spirit as `C-0031`'s `P-17`: changing code that produces published results costs a re-run of everything downstream, and that price is worth paying only where the over-print can change an adjudication. |
 
 ---
 
@@ -57,7 +57,8 @@ Three consequences, and none of them was visible from `CH-0043`:
 The second cheap fact bounds the work: `roundedForResult` is called at **exactly one place per
 study**, so a study whose call is untouched cannot emit a different byte. That turns "re-emit 65
 files" into "re-emit the files whose emitter changed, and re-emit a sample of the others as the
-falsifier". **The declared falsifier did not fire** — see Part 4.
+falsifier". **The declared falsifier FIRED**, and the construction argument is wrong for a reason
+worth having found: a result file is also an **input**. See Part 4.
 
 ---
 
@@ -202,7 +203,128 @@ than hidden:
 
 ## Part 4 — the re-emission and diff
 
-TO BE FILLED
+The two edited studies re-run through `tools/study.sh` on isolated trees, against `HEAD`'s committed
+`gpd/results/`. The comparison is **not** byte-for-byte, because a byte-for-byte diff is exactly
+the certificate `CH-0043` showed to be the wrong instrument. It is field-by-field, and the test is
+the strong one: **the change removes digits, so every moved field must equal the old value
+re-rounded.** Anything else is a finding.
+
+| | `T-1f` (`C-0019`) | `T-1d` (`C-0011`) |
+|---|---|---|
+| numeric fields changed | **714** | **18 007** |
+| relative movement min / median / max | `4.8e−9` / `6.4e−7` / `4.7e−6` | `1.0e−9` / `8.2e−7` / **`4.7e−3`** |
+| **string (findings prose) changes** | **0** | **0** |
+| **boolean flags changed** | **0** | **0** |
+| **structural changes** | **0** | **0** |
+| **not explained by re-rounding** | **0** | **9 of 18 007** — see below |
+
+**No verdict moves, nowhere.** `T-1d`'s `insideStandingBracket` flags are unchanged at every entry
+even though the comparison now runs at the emission precision, and `T-1f` carries no flags. The
+findings prose of both is byte-identical — it is computed before the serialisation boundary, so a
+change of emission precision cannot reach it.
+
+**`T-1f`'s maximum of `4.7e−6` is the arithmetic maximum of a six-digit rounding** — `5×10⁻⁶` at a
+leading mantissa of 1 — so the whole file is *exactly* digits removed and nothing else.
+
+**`T-1d`'s `4.7e−3` is the per-key three-digit rounding and only that.** 1 817 of its 18 007 moved
+fields exceed `1e−5`, and **every single one of them is `stiffnessAtNineTenths` (911) or
+`stiffnessAtSevenTenths` (906)** — the two keys the per-key override applies to, out of 915
+responses. Every other key's largest movement is `≤ 4.99e−6`, again the six-digit maximum. The
+largest movements are `1054.96208 → 1050.0` and `102.476178 → 102.0`.
+
+**`T-1d`'s own `strokeWindows` block** — the one `C-0016` was built from — moves only in the seventh
+figure (`0.00563453823 → 0.00563454`).
+
+### The nine fields that are not a plain re-rounding — double rounding at a tie
+
+Nine of 18 007 differ from a naive "re-round the nine-digit file" by **exactly one unit in the last
+printed place**, and every one of them is a tie:
+
+```
+workingVolumeFraction   0.06166695 → 0.0616669   (naive re-rounding says 0.061667)
+tangentStiffness        159.6655   → 159.665      (naive says 159.666)
+firstMomentHeight       2.250075   → 2.25008      (naive says 2.25007)
+```
+
+The study rounds the **raw double**; the check rounds the **nine-digit print of it**. When the
+sixth significant digit falls on an exact half, those two disagree, because the tie is decided by
+the binary representation of a different number. **Rounding a rounded number is not rounding the
+original.** It fires at a rate of `5e−4` here, it is bounded by one unit in the last place by
+construction, and it is a property of the *check*, not of the file — which is why the check is
+reported with its failure rate rather than used as a pass/fail gate.
+
+### Every other result file, by construction and by falsifier
+
+`roundedForResult` is called at **exactly one place per study**, and the shared
+`structure/ResultRounding.kt` gained only *defaulted* parameters — `roundedForResult()` with no
+arguments is the identical function it was. So a study whose emission call was not edited **cannot**
+emit a different byte, and only `T-1d` and `T-1f` were edited.
+
+**The declared falsifier for that argument:** re-emit a sample of studies whose emitter was *not*
+touched, one from each of the affected rounding sites and one that consumes the SCF through a
+different package. If any moves, the construction argument is wrong and the full re-emission of all
+65 files is owed.
+
+| study | file | rounding site | result |
+|---|---|---|---|
+| `material.PegMaterialStudyKt` | `P-3-peg-material-parameters` | shared | byte-identical |
+| `structure.TileLoadDistributionStudyKt` | `T-5-load-distribution` | shared | byte-identical |
+| `structure.TilePositionalVarianceStudyKt` | `T-8-tile-positional-variance` | shared | byte-identical |
+| `window.DesignWindowStudyKt` | `T-2-design-window` | `window/` | **MOVED — 4 864 fields** |
+
+**The falsifier fired, and the construction argument is wrong in a way worth having found.**
+
+**A result file is an INPUT.** `window/DesignWindowStudy.kt:292` reads
+`gpd/results/T-1d-scf-density-profile.json` and builds its 61-point grafting-density grid out of it,
+so rounding the *producer* down moved every value in the *consumer* — an emitter that was never
+touched. The by-construction argument holds only for studies whose inputs are all *models*; for a
+study whose input is another study's **file**, the rounding propagates.
+
+The propagation is bounded and closed, and that was checked rather than assumed: `T-1d` is read by
+exactly one study, `T-1f` by none, and `T-2`'s own file by none. **The affected set is exactly
+`{T-1d, T-1f, T-2}` and it is complete.**
+
+`T-2`'s movement is 4 864 numeric fields at a median `8.4e−7` and a maximum `8.7e−6`, **0 boolean
+flags, 0 structural changes** — the six-digit rounding of its inputs, arriving one level down. Every
+window edge moves by `≤ 5.3e−6`; the edges are the same **grid indices** and only the grid values
+were re-quantised.
+
+### The one visible consequence, and it is a tie at the fourth figure
+
+`T-2`'s 10 nm upper edge goes `0.260149602 → 0.26015 nm⁻²`, a movement of `1.5e−6` — and its
+findings string, which prints edges at **four** significant figures, therefore flips:
+
+> *"…a non-empty sigma window at 10 nm (0.01163-**0.2601** nm⁻², 22.36x wide)"* →
+> *"…(0.01163-**0.2602** nm⁻², 22.36x wide)"*
+
+**`0.260150` is exactly a tie at four significant figures.** `0.2601496` renders as `0.2601` and
+`0.26015` renders as `0.2602`, and the two differ by `1.5e−6`. So *"0.2601"* was never a determined
+four-figure number: it was the side of a tie the pre-`P-18` file happened to land on.
+
+**No claim's number fails.** `C-0016`, `C-0027`, `C-0051` and `C-0019` all quote the edge at five or
+six figures — `0.26015`, `0.260150` — which is exactly what the file now carries; the width stays
+`22.36×`, the constraint attribution stays *coil overlap `Σ ≥ 1`* / *3 nm stroke at 100 pN*, and
+`5 nm` stays empty. What flips is a **four-figure rendering** in `C-0011`'s and `C-0016`'s prose,
+and that is `CH-0085`.
+
+**`T-2` is kept as re-emitted**, on `C-0031`'s precedent: the tree should record what the current
+code emits, and leaving the old file would guarantee a diff on the next re-run carrying no
+information.
+
+### A number emitted as a STRING is not rounded, by construction
+
+`T-2`'s `parameters/graftingDensityGridRatio` is `(grid[1]/grid[0]).toString()`, and
+`roundedForResult` passes strings through untouched — correctly, it cannot know which strings are
+numbers. It moved `1.109130975 → 1.10913`, i.e. it was carrying **ten** significant digits in a file
+that declares nine, straight from a `Double.toString()`. A rounding applied at the serialisation
+boundary is only as complete as the type it dispatches on.
+
+### And this study's own file
+
+`P-18-determined-precision.json` is emitted at six digits with the movement keys at three and a
+`1e−18` floor, and re-run through `tools/study.sh`: **byte-identical**. It contains no argmin, and
+it emits **no wall clock** — `C-0066` had to delete a `runtimeSeconds` field to get a byte-identical
+re-emission, so the deterministic unit of cost here is the SCF **solve count**.
 
 ---
 

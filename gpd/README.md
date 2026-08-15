@@ -12,6 +12,7 @@ and it is run as described in [`../SESSION-PROMPT.md`](../SESSION-PROMPT.md).
 | `results/` | Machine-readable run output. Every parameter of the run is in the file, so the result is reproducible from it alone. Deterministic filenames — a re-run that changes nothing produces no diff. |
 | `claims/` | A verified result, with provenance, validity range, acceptance verdict, and an explicit list of the numbers that are *cited* rather than derived. |
 | `challenges/` | A result that contradicts a standing claim is raised here, with methodological grounds. Claims are never silently overwritten. |
+| `data/` | Survey material a claim rests on but does not compute — a literature survey with its query strings, read flags and verbatim passages, or a structural database extraction. A negative existence claim is only falsifiable if its queries are written down. |
 
 ## Reading a claim
 
