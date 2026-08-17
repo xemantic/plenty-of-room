@@ -166,6 +166,138 @@ check(
 _absent = trace_answers.trace("a paragraph citing `C-0001` with 42.42 in it", _sources)
 check("a number in no claim at all is ABSENT", _absent[0][2], "ABSENT")
 
+# --- status drift --------------------------------------------------------------------------
+#
+# `C-0067` found the worst drift is not in the VALUE of a number but in the STATUS of an
+# answer: three entries of "what we cannot answer" that the programme had answered, one of
+# them seven iterations earlier.  The numeric tracer above cannot see that class at all — a
+# stale "`T-129`, open" contains no number — so it is checked separately, against `TASKS.md`,
+# which is the register that knows whether a task is open.
+
+_queue = "\n".join(
+    [
+        "| T-45 | a question | acceptance | A1.2 | **ANSWERED as far as published measurement allows** |",
+        "| T-95 | another | acceptance | A8.2 | TODO — it is a question, not a task |",
+        "| T-129 | a third | acceptance | A8.2 | **DONE** (iteration 13) — claim `C-0068` |",
+        "| T-136 | a fourth | acceptance | A8.2 | TODO — high |",
+        "| T-137 | a fifth | acceptance | A8.2 | **IN PROGRESS** (iteration 15) |",
+    ]
+)
+
+check(
+    "an open task reads open",
+    trace_answers.queue_status(_queue)["T-95"],
+    "OPEN",
+)
+check(
+    "a DONE task reads closed",
+    trace_answers.queue_status(_queue)["T-129"],
+    "CLOSED",
+)
+check(
+    "an ANSWERED task reads closed",
+    trace_answers.queue_status(_queue)["T-45"],
+    "CLOSED",
+)
+check(
+    "IN PROGRESS is not open — it is being answered right now",
+    trace_answers.queue_status(_queue)["T-137"],
+    "IN PROGRESS",
+)
+check(
+    "a task the queue does not carry is UNKNOWN",
+    trace_answers.queue_status(_queue).get("T-999", "UNKNOWN"),
+    "UNKNOWN",
+)
+
+# The queue's real rows are long prose.  Two substring traps are live in it:
+# "left undone" contains DONE, and a row can discuss having "answered" something in passing.
+# The queue writes its own verdicts in BOLD UPPERCASE and its prose in lower case, so the
+# closing words are matched case-sensitively and on whole words.
+check(
+    "'left undone' in prose does not close a row",
+    trace_answers.queue_status(
+        "| T-200 | t | a | A2.1 | TODO — high. Left undone: the window is unsynthesised. |"
+    )["T-200"],
+    "OPEN",
+)
+check(
+    "lower-case 'answered' in prose does not close a row",
+    trace_answers.queue_status(
+        "| T-201 | t | a | A2.1 | TODO — this cannot be answered without a measurement. |"
+    )["T-201"],
+    "OPEN",
+)
+check(
+    "'DONE' inside a word does not close a row",
+    trace_answers.queue_status("| T-202 | t | a | A2.1 | TODO — see ABANDONED branch |")["T-202"],
+    "OPEN",
+)
+
+# The deliverable's own phrasings.  Each of these is a claim that a task is still open.
+check(
+    "`T-129`, open is detected",
+    [line for line, _, _ in trace_answers.open_assertions("and whether it is flat is `T-129`, open.")],
+    [1],
+)
+check(
+    "the task is reported with it",
+    [task for _, task, _ in trace_answers.open_assertions("and whether it is flat is `T-129`, open.")],
+    ["T-129"],
+)
+check(
+    "'`T-50` remains open' is detected",
+    [task for _, task, _ in trace_answers.open_assertions("`T-50` remains open at this time")],
+    ["T-50"],
+)
+check(
+    "'still open (`T-9`)' is detected",
+    [task for _, task, _ in trace_answers.open_assertions("this is still open (`T-9`)")],
+    ["T-9"],
+)
+check(
+    "a task merely mentioned is NOT an open assertion",
+    trace_answers.open_assertions("this was settled by `T-129` in iteration 13"),
+    [],
+)
+check(
+    "the word open far from the task is NOT an assertion",
+    trace_answers.open_assertions("`T-129` did this, and separately the electrode question is open"),
+    [],
+)
+
+# Two false positives the real deliverable produced on the first run.  Both cost an agent a
+# trip to "correct" a passage that is already right, which is the failure mode a drift checker
+# can least afford: the tool exists to be believed.
+check(
+    "'open since iteration 3, is answered' is history, not an assertion",
+    trace_answers.open_assertions(
+        "So **`T-45`, open since iteration 3, is answered from published measurement.**"
+    ),
+    [],
+)
+check(
+    "an answering word in the same window cancels the assertion",
+    trace_answers.open_assertions("the open question `T-60` was resolved by a later claim"),
+    [],
+)
+check(
+    "but a bare open assertion still fires beside them",
+    [task for _, task, _ in trace_answers.open_assertions("whether it is flat is `T-129`, open.")],
+    ["T-129"],
+)
+
+_stale = trace_answers.stale_statuses(
+    "line one is fine\nand whether it is flat is `T-129`, open.\nand `T-95`, open.", _queue
+)
+check("a stale open marker is reported", [task for _, task, _ in _stale], ["T-129"])
+check("a genuinely open one is not", [task for _, task, _ in _stale if task == "T-95"], [])
+check(
+    "the queue's own status travels with the finding",
+    [status for _, _, status in _stale],
+    ["CLOSED"],
+)
+
 # --- summary -------------------------------------------------------------------------------
 if _failures:
     print("\n{} check(s) FAILED".format(len(_failures)))

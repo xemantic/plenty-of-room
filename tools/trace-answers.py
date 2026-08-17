@@ -176,6 +176,107 @@ def blocks(answers_text):
     return result
 
 
+# --- status drift ----------------------------------------------------------------------------
+#
+# The numeric tracer above cannot see the drift class `C-0067` found to be the worst: an entry
+# of "what we cannot answer" that the programme HAS answered.  A stale "`T-129`, open" contains
+# no number, so no numeric check can reach it, and a reviewer's instinct is to check assertions
+# rather than disclaimers — which is why three of them stood for up to seven iterations.
+#
+# The check below is mechanical and one-directional: it finds every place the deliverable
+# ASSERTS a task is open, and asks `TASKS.md` — the register that knows — whether it is.  It
+# deliberately does not try the converse (a task closed in the deliverable and open in the
+# queue), because a synthesis is entitled to summarise a partial answer.
+
+# A queue row is `| T-129 | task | acceptance | leaf | status |`; the status is the last cell.
+_QUEUE_ROW = re.compile(r"^\|\s*(T-\d{1,4}[a-z]?|P-\d{1,4})\s*\|(.*)\|\s*$")
+
+# Words in a status cell that mean the task is no longer open.  `ANSWERED` is included because
+# `T-45` uses it: the queue's status vocabulary is DONE/KILLED, and iteration 14 wrote a third.
+#
+# Matched CASE-SENSITIVELY and on WHOLE WORDS, because the queue writes its verdicts in bold
+# upper case and its prose in lower case, and two substring traps are live in the real file:
+# "Left undone" contains DONE, and several rows discuss having "answered" something in passing.
+# Upper-casing the row before matching — the obvious implementation — closes both of them.
+_CLOSED = re.compile(r"\b(DONE|KILLED|CLOSED|ANSWERED|RESOLVED)\b")
+_IN_PROGRESS = re.compile(r"\bIN PROGRESS\b")
+
+
+def queue_status(queue_text):
+    """{task ID: OPEN | CLOSED | IN PROGRESS} read out of TASKS.md's own rows.
+
+    The status is taken from the whole row after the ID rather than from the last cell alone,
+    because the queue writes its verdict in several columns depending on the table — but a
+    closing word appears in bold near the front of whichever cell carries it, and a row that
+    closes never omits one.  `TODO` is not consulted: absence of a closing word IS open.
+    """
+    statuses = {}
+    for line in queue_text.splitlines():
+        match = _QUEUE_ROW.match(line.strip())
+        if not match:
+            continue
+        identifier, rest = match.group(1), match.group(2)
+        if _IN_PROGRESS.search(rest):
+            statuses[identifier] = "IN PROGRESS"
+        elif _CLOSED.search(rest):
+            statuses[identifier] = "CLOSED"
+        else:
+            statuses[identifier] = "OPEN"
+    return statuses
+
+
+# The phrasings the deliverable uses to assert a task is still open.  The task ID and the word
+# must be within a short window of each other, so that "settled by `T-129`" three clauses away
+# from an unrelated "open" is not a hit.
+_OPEN_WINDOW = 24
+_OPEN_WORD = re.compile(r"\b(open|unanswered|still to do|not yet answered)\b", re.IGNORECASE)
+_TASK_REFERENCE = re.compile(r"`(T-\d{1,4}[a-z]?|P-\d{1,4})`")
+
+# Two cancellations, both found by running this against the real deliverable.  "open SINCE
+# iteration 3" is a duration — a statement about how long a task WAS open, which the very same
+# sentence then closes — and an answering word anywhere in the window means the passage is
+# reporting the closure rather than asserting the gap.  A false positive here sends an agent to
+# "correct" a passage that is already right, which is the failure a drift checker can least
+# afford: the tool exists in order to be believed.
+_HISTORICAL = re.compile(r"\bopen\s+(since|for|from)\b", re.IGNORECASE)
+_ANSWERING = re.compile(
+    r"\b(answered|answers|resolved|resolves|closed|closes|settled|settles|discharged)\b",
+    re.IGNORECASE,
+)
+
+
+def open_assertions(answers_text):
+    """[(line, task, phrase)] for every place the text asserts a task is open."""
+    found = []
+    for number, line in enumerate(answers_text.splitlines(), start=1):
+        for reference in _TASK_REFERENCE.finditer(line):
+            task = reference.group(1)
+            start = max(0, reference.start() - _OPEN_WINDOW)
+            end = min(len(line), reference.end() + _OPEN_WINDOW)
+            window = line[start:end]
+            word = _OPEN_WORD.search(window)
+            if not word:
+                continue
+            if _HISTORICAL.search(window) or _ANSWERING.search(window):
+                continue
+            # The word must FOLLOW the reference or sit immediately before it; "settled by
+            # `T-129` … and the electrode question is open" is excluded by the window, and
+            # "open questions: `T-95`" by neither, which is the intent.
+            found.append((number, task, window.strip()))
+    return found
+
+
+def stale_statuses(answers_text, queue_text):
+    """[(line, task, queue status)] for every open assertion the queue contradicts."""
+    statuses = queue_status(queue_text)
+    stale = []
+    for line, task, _phrase in open_assertions(answers_text):
+        status = statuses.get(task, "UNKNOWN")
+        if status in ("CLOSED", "IN PROGRESS"):
+            stale.append((line, task, status))
+    return stale
+
+
 def trace(answers_text, sources, min_digits=2):
     """One record per (block, token): (line, token, status, cited, owners)."""
     records = []
@@ -198,6 +299,7 @@ def main(argv=None):
     parser.add_argument("--answers", default="ANSWERS.md")
     parser.add_argument("--claims", default="gpd/claims")
     parser.add_argument("--challenges", default="gpd/challenges")
+    parser.add_argument("--queue", default="TASKS.md")
     parser.add_argument("--min-digits", type=int, default=2)
     parser.add_argument("--status", default="", help="only report this status")
     arguments = parser.parse_args(argv)
@@ -223,6 +325,23 @@ def main(argv=None):
         ),
         file=sys.stderr,
     )
+
+    # The status check runs unconditionally and reports to stderr beside the token summary,
+    # because `C-0067` found this class of drift outlives the numeric class by iterations and
+    # a check nobody remembers to ask for is not a check.
+    if os.path.isfile(arguments.queue):
+        with open(arguments.queue, encoding="utf-8") as handle:
+            queue_text = handle.read()
+        assertions = open_assertions(answers_text)
+        stale = stale_statuses(answers_text, queue_text)
+        for line, task, status in stale:
+            print("{}\tSTALE-OPEN\t{}\t{}".format(line, task, status))
+        print(
+            "# {} open assertion(s), {} contradicted by {}".format(
+                len(assertions), len(stale), arguments.queue
+            ),
+            file=sys.stderr,
+        )
     return 0
 
 
