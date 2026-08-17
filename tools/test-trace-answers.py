@@ -228,6 +228,18 @@ check(
     )["T-201"],
     "OPEN",
 )
+# The queue's status vocabulary GROWS.  `SESSION-PROMPT.md` declares DONE and KILLED; iteration 14
+# wrote ANSWERED for `T-45` and iteration 17 wrote DISCHARGED for `T-95`/`T-102` — a status that is
+# neither "answered" nor "abandoned" but "stopped applying", which is a distinction `C-0071` had to
+# invent and which this project needs.  Every new word is silently read as OPEN until it is added
+# here, so a closed task keeps reading open, which is the exact drift this checker exists to catch.
+check(
+    "DISCHARGED closes a row — a question that stopped applying is not open",
+    trace_answers.queue_status(
+        "| T-95 | q | a | A8.2 | **DISCHARGED** (iteration 14) — by `C-0071` |"
+    )["T-95"],
+    "CLOSED",
+)
 check(
     "'DONE' inside a word does not close a row",
     trace_answers.queue_status("| T-202 | t | a | A2.1 | TODO — see ABANDONED branch |")["T-202"],

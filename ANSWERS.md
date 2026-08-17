@@ -242,7 +242,9 @@ array alone occupies **37–85 %** of the layer's own volume and sits at or belo
 7 nm layers, so **the survivor is unique**: standoff bases on the **output superstructure**, standoffs
 pointing **away** from the tile, flexure **outboard**, each midspan tied back **down** through its own ground
 to the tile. What `T-75` handed on is a *different* question, and it is a real one — whether that
-superstructure may be **perforated** (`T-95`, open question 6 below).
+superstructure may be **perforated** — which was open question 6 and is **`T-95`, DISCHARGED**:
+`C-0071` found it had stopped applying, because the recommended element has no tie grid and nothing
+crosses the standoff base plane.
 The base is now specified rather than assumed: a **single** crossover buckles at every length, and the base's
 **orientation** is worth 9.65×, because two crossovers react a moment as a couple and a couple has an axis.
 (`C-0023`, `C-0025`, `C-0028`, `CH-0027`, `CH-0031`, `CH-0037`, `CH-0038`.)

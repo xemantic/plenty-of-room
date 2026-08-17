@@ -191,14 +191,21 @@ def blocks(answers_text):
 # A queue row is `| T-129 | task | acceptance | leaf | status |`; the status is the last cell.
 _QUEUE_ROW = re.compile(r"^\|\s*(T-\d{1,4}[a-z]?|P-\d{1,4})\s*\|(.*)\|\s*$")
 
-# Words in a status cell that mean the task is no longer open.  `ANSWERED` is included because
-# `T-45` uses it: the queue's status vocabulary is DONE/KILLED, and iteration 14 wrote a third.
+# Words in a status cell that mean the task is no longer open.
+#
+# THE VOCABULARY GROWS, and every word missing from this tuple is silently read as OPEN — so a
+# closed task keeps reading open, which is the exact drift this checker exists to catch.
+# `SESSION-PROMPT.md` declares DONE and KILLED; iteration 14 wrote ANSWERED for `T-45`; iteration
+# 17 wrote DISCHARGED for `T-95`/`T-102`, a status that is neither "answered" nor "abandoned" but
+# **stopped applying** — a distinction `C-0071` had to invent and that this project needs, because
+# a question raised by a branch that was later removed is not a question anybody owes an answer to.
+# Add the word here, with a test, whenever the queue coins one.
 #
 # Matched CASE-SENSITIVELY and on WHOLE WORDS, because the queue writes its verdicts in bold
 # upper case and its prose in lower case, and two substring traps are live in the real file:
 # "Left undone" contains DONE, and several rows discuss having "answered" something in passing.
 # Upper-casing the row before matching — the obvious implementation — closes both of them.
-_CLOSED = re.compile(r"\b(DONE|KILLED|CLOSED|ANSWERED|RESOLVED)\b")
+_CLOSED = re.compile(r"\b(DONE|KILLED|CLOSED|ANSWERED|RESOLVED|DISCHARGED)\b")
 _IN_PROGRESS = re.compile(r"\bIN PROGRESS\b")
 
 
