@@ -310,6 +310,102 @@ check(
     ["CLOSED"],
 )
 
+# --- self-consistency: does the deliverable agree with ITSELF? -------------------------------
+#
+# `C-0080` found the third drift class and the blind spot that makes it invisible.  The tracer
+# above checks the deliverable against the CORPUS, in two directions — is a number owned, is an
+# open assertion still true.  Neither can see a document that contradicts ITSELF: `ANSWERS.md`
+# called `T-45` "answered from published measurement" in one section and "still unmeasured" in
+# another, and BOTH halves passed, because the first sentence has an owner and the second
+# parenthesis carries no number at all.
+#
+# The check is per task ID: collect every claim the deliverable makes about a task's status, and
+# report a task called both settled and unsettled.  It is deliberately one-sided in what counts
+# as evidence — only explicit status words do, so a task merely mentioned stays silent.
+
+check(
+    "a task called answered in one place and unmeasured in another is inconsistent",
+    [c.task for c in trace_answers.self_contradictions(
+        "`T-45` is answered from published measurement.\n\nand later: (`T-45` is still unmeasured)"
+    )],
+    ["T-45"],
+)
+check(
+    "both verdicts are reported, so a reader can see which to keep",
+    sorted(trace_answers.self_contradictions(
+        "`T-45` is answered from published measurement.\n\nand later: (`T-45` is still unmeasured)"
+    )[0].verdicts),
+    ["OPEN", "SETTLED"],
+)
+check(
+    "consistent mentions are silent",
+    trace_answers.self_contradictions(
+        "`T-45` is answered.\n\nand `T-45` was answered in iteration 14."
+    ),
+    [],
+)
+check(
+    "a task merely mentioned carries no verdict",
+    trace_answers.self_contradictions("see `T-45` and `T-45` again"),
+    [],
+)
+check(
+    "one open mention alone is not a contradiction",
+    trace_answers.self_contradictions("`T-63` is still open"),
+    [],
+)
+check(
+    "the classifier reads a settled word",
+    trace_answers.status_words("this is answered from published measurement"),
+    {"SETTLED"},
+)
+check(
+    "and an unsettled one",
+    trace_answers.status_words("still unmeasured, and nothing accessible gives it"),
+    {"OPEN"},
+)
+check(
+    "and both when a sentence carries both",
+    trace_answers.status_words("answered, but the flatness half is still unmeasured"),
+    {"SETTLED", "OPEN"},
+)
+check(
+    "a sentence with neither is silent",
+    trace_answers.status_words("the margin is 1.42x at the design point"),
+    set(),
+)
+# "not answered" must not read as SETTLED — the negation is the whole meaning, and it is the
+# phrasing `C-0071` used for a DISCHARGED question ("it is not answered; it stopped applying").
+check(
+    "a negated settled word is not settled",
+    trace_answers.status_words("it is not answered"),
+    {"OPEN"},
+)
+check(
+    "nor is 'cannot be answered'",
+    trace_answers.status_words("this cannot be answered without a measurement"),
+    {"OPEN"},
+)
+# A DISCHARGED question is neither settled nor open and must not collide with either.
+# "open SINCE iteration 3, is answered" is a duration followed by its own closure — the same
+# history the open-assertion check already excludes.  Without the guard the sentence asserts both
+# verdicts by itself, and every genuine contradiction it takes part in is unreadable.
+check(
+    "'open since ... is answered' is settled, not both",
+    trace_answers.status_words("`T-45`, open since iteration 3, is answered from measurement"),
+    {"SETTLED"},
+)
+check(
+    "but a bare 'still open' beside nothing else is open",
+    trace_answers.status_words("`T-63` is still open"),
+    {"OPEN"},
+)
+check(
+    "discharged is its own verdict",
+    trace_answers.status_words("it is DISCHARGED, not open"),
+    {"DISCHARGED"},
+)
+
 # --- summary -------------------------------------------------------------------------------
 if _failures:
     print("\n{} check(s) FAILED".format(len(_failures)))

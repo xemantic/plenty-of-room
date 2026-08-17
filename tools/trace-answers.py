@@ -40,6 +40,7 @@ import argparse
 import os
 import re
 import sys
+from collections import namedtuple
 
 # ANSWERS.md is typographically rich: en dashes for ranges, U+2212 for minus, thin spaces.
 # Every comparison below runs on the normalised form, on both sides.
@@ -284,6 +285,95 @@ def stale_statuses(answers_text, queue_text):
     return stale
 
 
+# --- self-consistency: does the deliverable agree with ITSELF? ---------------------------------
+#
+# `C-0080` found a THIRD drift class and, with it, the blind spot both checks above share.  They
+# compare the deliverable against the CORPUS — is this number owned, is this open assertion still
+# true.  Neither can see a document that contradicts ITSELF.  The live instance: `ANSWERS.md`
+# called `T-45` *"answered from published measurement — and the answer is a failure"* in §1 and
+# *"(`T-45` is still unmeasured)"* in §3, and BOTH halves passed, because §1's sentence has an
+# owner and reads CITED while §3's parenthesis carries no number at all and no "open" either.
+#
+# So this third check compares the document with itself, per task ID.  It is deliberately
+# one-sided in what counts as evidence: only an explicit status word does, so a task that is
+# merely cited stays silent.  A false positive here would send an agent to "reconcile" two
+# sentences that are both correct, which is the failure a drift checker can least afford.
+
+_SelfContradiction = namedtuple("SelfContradiction", "task verdicts mentions")
+
+# `not answered`, `cannot be answered`, `no answer` — the negation carries the whole meaning, and
+# it is exactly the phrasing `C-0071` used for a discharged question.  Matched BEFORE the positive
+# words, and the positive matcher then refuses any hit that a negation already consumed.
+_NEGATED_SETTLED = re.compile(
+    r"\b(not|cannot|can\s?not|never|no|without|un)\s*(be\s+)?(answered|answer|resolved|settled|measured)\b",
+    re.IGNORECASE,
+)
+_SETTLED_WORD = re.compile(
+    r"\b(answered|answers|resolved|settled|closed|measured|established|demonstrated)\b",
+    re.IGNORECASE,
+)
+_OPEN_WORD = re.compile(
+    r"\b(open|unmeasured|unanswered|unresolved|undetermined|still\s+missing|not\s+determined)\b",
+    re.IGNORECASE,
+)
+_DISCHARGED_WORD = re.compile(r"\bdischarged\b", re.IGNORECASE)
+
+
+def status_words(text):
+    """The status verdicts a passage asserts: any of SETTLED, OPEN, DISCHARGED."""
+    verdicts = set()
+    if _DISCHARGED_WORD.search(text):
+        # Discharged is its own verdict and must not collide with either of the others: a
+        # question that stopped applying is neither answered nor owed an answer.
+        return {"DISCHARGED"}
+    negated = list(_NEGATED_SETTLED.finditer(text))
+    if negated:
+        verdicts.add("OPEN")
+    for match in _SETTLED_WORD.finditer(text):
+        # Skip a settled word that a negation already accounted for.
+        if any(n.start() <= match.start() < n.end() for n in negated):
+            continue
+        verdicts.add("SETTLED")
+        break
+    for match in _OPEN_WORD.finditer(text):
+        # `_HISTORICAL` ("open since/for/from") is a statement about how long a task WAS open,
+        # and the same sentence usually closes it — the guard the open-assertion check already
+        # carries, applied here too, because without it such a sentence contradicts itself and
+        # every genuine contradiction it takes part in becomes unreadable.
+        window = text[max(0, match.start() - 8):match.end() + 24]
+        if _HISTORICAL.search(window):
+            continue
+        verdicts.add("OPEN")
+        break
+    return verdicts
+
+
+def self_contradictions(answers_text):
+    """[SelfContradiction] for every task the document calls both settled and unsettled.
+
+    The unit is the sentence, not the block: a block long enough to hold both verdicts about
+    DIFFERENT tasks is common in this deliverable and is not a contradiction.
+    """
+    by_task = {}
+    for number, line in enumerate(answers_text.splitlines(), start=1):
+        for sentence in re.split(r"(?<=[.!?])\s+|\n", line):
+            tasks = {m.group(1) for m in _TASK_REFERENCE.finditer(sentence)}
+            if not tasks:
+                continue
+            verdicts = status_words(sentence)
+            if not verdicts:
+                continue
+            for task in tasks:
+                entry = by_task.setdefault(task, {"verdicts": set(), "mentions": []})
+                entry["verdicts"].update(verdicts)
+                entry["mentions"].append((number, sentence.strip()[:120]))
+    found = []
+    for task, entry in sorted(by_task.items()):
+        if len(entry["verdicts"]) > 1:
+            found.append(_SelfContradiction(task, entry["verdicts"], entry["mentions"]))
+    return found
+
+
 def trace(answers_text, sources, min_digits=2):
     """One record per (block, token): (line, token, status, cited, owners)."""
     records = []
@@ -355,6 +445,26 @@ def main(argv=None):
             ),
             file=sys.stderr,
         )
+
+    # The third check, and the only one that needs no corpus at all: does the deliverable agree
+    # with itself?  Unconditional for the same reason as the second — `C-0080` found the live
+    # instance by hand and neither of the other two halves can ever reach it.
+    contradictions = self_contradictions(answers_text)
+    for contradiction in contradictions:
+        print(
+            "{}\tSELF-CONTRADICTION\t{}\t{}".format(
+                contradiction.mentions[0][0],
+                contradiction.task,
+                "/".join(sorted(contradiction.verdicts)),
+            )
+        )
+        for line, sentence in contradiction.mentions:
+            print("\t\tline {}: {}".format(line, sentence))
+    sys.stdout.flush()
+    print(
+        "# {} task(s) the deliverable contradicts itself about".format(len(contradictions)),
+        file=sys.stderr,
+    )
     return 0
 
 
