@@ -155,7 +155,7 @@ Measured at the six 10 nm / 2 mM folds: `+2.604` to `+4.994 pN/nm`, against `|F_
 
 | quantity | pinned? | what the LEVEL of `μ` does to it |
 |---|---|---|
-| `|F_es|` anywhere on an equilibrium path | **pinned** by `|F_es| = R(s) + P(h)A` | nothing — it is fixed by mechanics |
+| `\|F_es\|` anywhere on an equilibrium path | **pinned** by `\|F_es\| = R(s) + P(h)A` | nothing — it is fixed by mechanics |
 | the bias at any point of the path (`V*`, the pull-in bias) | **not** pinned | moves it, and by a lot: `V*` falls **8.5–9.9 %** at 10 nm / 2 mM |
 | the **dead-load** ceiling, `C-0008`'s blocking bias at zero stroke | not pinned | **0.6795 → 0.3683 V, −46 %**, for a 15 % force gain — because the force saturates in bias |
 | `k_es` at a pinned force | pinned in level | **exactly nothing** to first order; only `d ln μ/dh` and the second-order `ℓ(V)` shift survive |

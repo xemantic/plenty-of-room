@@ -73,7 +73,7 @@ and `μ` **rises with the gap** — `T-3b`'s own numbers at 2 mM give 0.961 at 2
 schemes. A more slowly decaying attraction has a **smaller** `|k_es|`. The finite-tile correction therefore
 **stiffens** the actuator at its operating point:
 
-| 10 nm, 2 mM, six models | stability margin `33.333/|k_eff|` |
+| 10 nm, 2 mM, six models | stability margin `33.333/\|k_eff\|` |
 |---|---|
 | `C-0017` as published | 1.194 – 1.424× |
 | **with `CH-0026` carried at the operating point** | **1.335 – 1.668×** |

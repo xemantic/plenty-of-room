@@ -319,6 +319,11 @@ def main(argv=None):
                 line, token, status, ",".join(cited) or "-", ",".join(owners[:6]) or "-"
             )
         )
+    # The records go to stdout and the summary to stderr.  When both are piped to one place
+    # stdout is block-buffered and stderr is not, so without this flush the summary overtakes the
+    # records it summarises and lands in the middle of them — reported as a "missing newline" by
+    # `C-0080`, which is what it looks like.  Flush wherever the two streams are interleaved.
+    sys.stdout.flush()
     print(
         "# {} tokens: {} CITED, {} ELSEWHERE, {} ABSENT".format(
             len(records), counts["CITED"], counts["ELSEWHERE"], counts["ABSENT"]
@@ -336,6 +341,7 @@ def main(argv=None):
         stale = stale_statuses(answers_text, queue_text)
         for line, task, status in stale:
             print("{}\tSTALE-OPEN\t{}\t{}".format(line, task, status))
+        sys.stdout.flush()
         print(
             "# {} open assertion(s), {} contradicted by {}".format(
                 len(assertions), len(stale), arguments.queue

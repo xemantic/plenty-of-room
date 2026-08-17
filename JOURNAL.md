@@ -6708,3 +6708,117 @@ performed it, and a path built from a directory and a name is invisible to a sea
 `P-22` asks for a test that a study's declared sources equal the files it opens. `P-19` is now
 explicitly ranked **behind** `P-22`, because its ranking of the four remaining rounding sites was
 written on the census `CH-0092` corrects.
+
+## 2026-08-17 — Iteration 16
+
+Three science loops plus two process tasks taken in the coordinator's own context. Every number
+below was grepped out of its claim file; one that was not there under the name the report gave it is
+noted at the end.
+
+**`C-0079` (`T-139`) resolved the programme's highest-value open item by finding the question had no
+answer.** `C-0076` had left the plan model's exclusion width as a convention never measured in the
+role it is used in, with a verdict that is a **step function at 2.715609 nm**. The answer is that
+**two unbonded duplexes in 2 mM MgCl₂ hold no separation at all** — the interaction is repulsive at
+every separation on **four independent methods, every one read directly**: osmotic stress with XRD
+(*"the force-spacing curve extends to infinity because zero force can only be achieved at infinite
+DNA-DNA spacing"*), two all-atom two-duplex PMFs, and the second virial coefficient of **free**
+duplexes at **3 mM Mg²⁺**, the nearest measured point to this buffer, *"indicating repulsion"*. So
+`d` is not a separation but a **threshold on an energy no plan claim states**, running 8.78601 nm at
+1 `k_BT` to ≤ 2.1 nm at 8 `k_BT` and straddling the placement threshold (`CH-0094`).
+**What decides it is not the electrostatics the task budgeted for**, nor the short-range hydration law
+it went and fetched, but **the energy the host sheet already pays**: holding two of its own duplexes
+at the SAXS 2.69 nm costs **7.99970 `k_BT` per crossover column** against **4.94674 `k_BT`** for a
+body in `C-0066`'s gap at the threshold — **1.62× cheaper than what the sheet is already paying**, so
+**34 of 34 place at every physically calibrated reading** and `CH-0089` is upheld. That number came
+from a SAXS constant this repository has quoted for fifteen iterations.
+**The cheap bound was right for a reason it did not anticipate.** `λ_D = 3.92688 nm` exceeds the whole
+1.78272 nm disputed bracket, so a two-cylinder nonlinear PB solve **provably cannot place an edge**
+at 2.7 nm — the expensive solve would have resolved the wrong term. And the second surprise is a
+geometry nobody had noticed: **`C-0069`'s `Q5` and `C-0066`'s bound 4 are not the same problem** —
+two collinear arms are **coaxial**, 15.1103× cheaper and *finite* at zero gap, so what the collinear
+slot must prevent is a blunt-end **stacking bond** (−4.4114 `k_BT` per helix, read directly from a
+supplementary table), not a clash. `Q5`'s margin becomes **+1.41561 nm, 55.28×** the published
+0.02561 (`CH-0093`). `C-0072`'s conclusion then survives on a wholly new ground: 0.0256 nm at 2.7 nm
+is **1.2373 %** of the pair energy, so the knife edge is unresolvable **by physics** as well as by
+fabrication. Mean field is *not* controlled here and the claim says so; the bound is empirical.
+
+**`C-0080` (`T-147`) found a THIRD drift class, and both retained tools are blind to it by
+construction.** `C-0067` mechanised *"a number in no claim"*; `C-0078` mechanised *"a task asserted
+open that the queue closed"*; both now read zero. The class neither can see is **a number still in
+the corpus, under a verdict its owning claim still states, that a LATER claim superseded** — it reads
+`CITED` **precisely because it has an owner**. Five instances, all in headline material, including
+`53×` where the lattice affords 68.9×, and NDI question 1's word *requirement*, earned on a load line
+the recommendation does not use. Coverage: **23 of 55 already reflected, 17 carried in, 15
+deliberately not carried**, each with its reason recorded so the next pass inherits the judgement.
+**The sharpest instance is a fourth thing again**: the deliverable called `T-45` *"answered … and the
+answer is a failure"* in §1 and *"still unmeasured"* in §3 of the same file, and **both halves of the
+tracer pass it** — §1's sentence has an owner, §3's parenthesis carries no number at all, and
+*"unmeasured"* is not a phrasing the status half looks for. **A tool that checks a document against a
+corpus cannot see a document that disagrees with itself** (`T-150`). And `C-0078`'s ground rule bit in
+the *favourable* direction for once: `CH-0089` makes three of the four floors under the recommendation
+stop firing, so *"best element, not a buildable design"* survives on a **weaker** ground than it was
+published on — which a synthesis reading only verdicts records as unchanged.
+
+**`C-0082` (`P-22`) built the instrument `CH-0092` said could not be hand-held, and the miss was
+larger than the challenge claimed.** A grep for the basename finds **43 of the 63** read edges over
+`gpd/results/`; the **20** it cannot see all run through the two directory-joined readers — so
+`C-0073`'s instrument was missing **a third of the graph**, not one edge. **The cheap form the task
+was queued with barely exists**: **3 of 74** studies declare a `sources` parameter, so *"declared
+equals read"* is a real hard gate covering **4 %**, and the other 96 % needs the derivation. Its own
+falsifier fired and reshaped the instrument: at **file** granularity `DesignWindowStudy`, which reads
+three result files, comes out reading **thirteen**, because package `window` declares `ledger`,
+`array`, `reader` and `scalar` privately in several files at once — so a file-level call graph is not
+a conservative approximation, it is **noise**. **`P-19`'s ranking inverts** on the derived closure:
+`window/` is the *cheapest* of the three rounding sites to re-emit, not the most exposed, because the
+cost of re-emitting a site is about its **outputs**; its hazard is an **order** (`T-118` reads
+`T-25`). And `C-0073`'s rounding-site table names the wrong studies as well — `CH-0097`, the same
+defect on a second table of the same claim. Two things nobody had asked for fell out: `T-3b` is the
+most-read file at **16** studies, and **13** result files are read by **tests**.
+
+**`C-0081` (`T-140`) — a seam does not perturb the weave, it DELETES AN EXTREMUM.** At any even plane
+every duplex participates in exactly one interface crossover, so removing the junctions at a seam
+removes **exactly one pull event from every duplex**. The 40 nm tile is **3.68 weave periods** wide
+and admits **8** seam planes; every one puts 6–12 of `C-0063`'s 34 stations inside its straight
+window, so **22–28 of 34** survive on a node against 34 seamless — the acceptance's second branch is
+answered **NO**, there is nowhere for a seam to hide. **`C-0076`'s verdict stands on its other
+argument** — `M = p − d − L` is an along-helix identity between unbonded bodies and carries no weave
+coordinate, so the plan margin is **0.898333453 nm at all 8 positions, one distinct value**. What the
+seam costs is `C-0076`'s *headline*: the departure at an affected station is exactly `Δ/2` at unit
+slope, so **the annihilated 1.2–1.75 nm amplitude bracket is restored at full strength**. **And the
+sign is the opposite of the source's wording** — *"opens up"* is the favourable half; the other parity
+closes by the same amount, taking the worst across-row clearance to **0.122724 nm** and, at the
+measured phosphate girth, to **−0.002276 nm**, a clash. The whole seam paragraph was re-fetched and
+read directly; `C-0076` had quoted one clause and the rest changes what it means.
+
+**`C-0083` (`P-23`, coordinator) — `C-0067`'s lesson was recorded and the defect kept happening, in
+the claims.** `C-0080` reported one malformed `TASKS.md` row; a sweep found **38 defects in 22 of 245
+files** in three kinds, none of them visible to a writer reading their own source. The worst is a bare
+`|` in a **header**, which widens the whole table so every *correct* body row becomes the odd one out
+— live in **`C-0017`**, the claim that owns the 33.3333 pN/nm coupling mandate, and in five
+consecutive evidence rows of `CH-0070`. All fixed with every word preserved; 26 test-first checks;
+**0 defects in 243 files**. It caught two rows the coordinator had written earlier the same session.
+`third-party/` is excluded because the problem definition as received must keep its defect — **an
+invariant that forbids fixing something must be taught to the checker, or the checker decays into a
+warning.**
+
+**And the harness's own tests are finally invoked** (`P-21`, folded into `C-0082`). Its premise was
+half wrong — `tools/test-snapshot.sh` has hung off `./gradlew test` since `P-16` itself, settled in
+one `git log -S` — so only the tracer was orphaned. All three self-test scripts are now Gradle tasks,
+and `tools/verify.sh` gained the census gate and a `--no-checks` flag.
+
+**One cross-agent correction, and it is the good kind.** `P-22`'s agent wired `P-23`'s markdown gate
+into `tools/verify.sh`, watched it fail, **removed it and documented why**: a verification snapshot
+has no `.git`, so the checker's `git ls-files` falls back to a tree walk that emits `./`-prefixed
+paths, and the prefix defeated its own `third-party/` exclusion — a gate that can never come clean is
+not a gate. That judgement was right and the defect was in the checker. Fixed here with two tests
+(`is_excluded` normalises, and the fallback no longer emits the prefix), proved in a real `.git`-less
+copy, and the gate restored with the reasoning corrected in place rather than deleted. The same run
+also found a genuine table defect in `C-0079`, filed minutes earlier — `A_DNA|w|DNA` unescaped.
+
+**Process notes.** Three agents again took colliding task numbers (`T-148`–`T-150` between one `ls`
+and the next), which is now the second consecutive iteration: **reserving claim numbers does not
+reserve task numbers**, and iteration 16 reserved both and still collided, because the collision is
+between numbers agents *raise*, not numbers they are *given*. `T-151` and `T-152` were renumbered by
+their own authors, unprompted. And one report figure again did not survive the grep — a claim
+filename given as `C-0081-seam-weave.md` for `C-0081-seam-weave-congruence.md`, harmless, and the
+fifth session in which a report and its artifact disagreed on something.

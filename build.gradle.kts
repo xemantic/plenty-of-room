@@ -107,8 +107,38 @@ tasks.register<Exec>("testHarness") {
     commandLine("$projectDir/tools/test-snapshot.sh")
 }
 
+/*
+ * `tools/trace-answers.py` decides which numbers and which *statuses* in `ANSWERS.md` are
+ * unsupported (`C-0067`, `C-0078`). Its 42 self-tests were invoked by nothing until `P-22`
+ * looked: `P-21` was queued believing the same of `tools/test-snapshot.sh`, which has in fact
+ * hung off `test` since `P-16`. Only this one was orphaned, and `C-0078`'s own sentence — *a
+ * check nobody remembers to ask for is not a check* — applies to it verbatim.
+ *
+ * Same rationale as `testHarness`, and the same precondition: the tracer's self-test reads
+ * only in-memory fixtures, so a `--drop`/`--drop-file` on a verification snapshot cannot make
+ * it fail. The reader census (`P-22`) does read `src/`, and for exactly that reason it is
+ * wired in `tools/verify.sh` rather than here.
+ */
+tasks.register<Exec>("testDeliverableTracer") {
+    group = "verification"
+    description = "Runs tools/test-trace-answers.py, the tests for the ANSWERS.md tracer"
+    commandLine("$projectDir/tools/test-trace-answers.py")
+}
+
+/*
+ * `tools/check-markdown-tables.py` (`P-23`, the coordinator's) is the third script in the same
+ * position, and its 26 self-tests read only fixtures, so they belong here too. The *gate* it
+ * provides over the repository's own Markdown reads the tree and is wired in `tools/verify.sh`
+ * beside the reader census, for the reason stated above.
+ */
+tasks.register<Exec>("testMarkdownTables") {
+    group = "verification"
+    description = "Runs tools/test-check-markdown-tables.py, the tests for the table checker"
+    commandLine("$projectDir/tools/test-check-markdown-tables.py")
+}
+
 tasks.named("test") {
-    dependsOn("testHarness")
+    dependsOn("testHarness", "testDeliverableTracer", "testMarkdownTables")
 }
 
 dependencies {

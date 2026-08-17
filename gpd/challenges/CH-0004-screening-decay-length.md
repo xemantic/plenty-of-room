@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Challenges** | §1 of [the problem definition](../../third-party/2026-08-ndi-gen1-problem-definition.md) — the stiffness estimate `|k_es| ≈ F_es/λ_D` "for exponential screening" — and §3's `λ_D ≈ 4 nm` **as used downstream**, which `TASKS.md` carries into `T-3` and `T-4` |
+| **Challenges** | §1 of [the problem definition](../../third-party/2026-08-ndi-gen1-problem-definition.md) — the stiffness estimate `\|k_es\| ≈ F_es/λ_D` "for exponential screening" — and §3's `λ_D ≈ 4 nm` **as used downstream**, which `TASKS.md` carries into `T-3` and `T-4` |
 | **Raised by** | [`C-0005`](../claims/C-0005-mean-field-screening-validity.md), task [`T-6`](../tasks/T-6-mean-field-screening-validity.md) |
 | **Raised** | 2026-08-12, iteration 3 |
 | **Status** | **OPEN** — filed against an *inherited premise*, not against a derived claim. `T-4` is the task that decides it. |

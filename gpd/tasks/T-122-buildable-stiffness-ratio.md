@@ -113,7 +113,7 @@ which is closed form, and `C-0039`'s elastica at two arms, which is a shooting s
 
 | gate | what will be checked |
 |---|---|
-| **1 — dimensional** | a bending stiffness is `EI` over a cubed length and doubling the span divides it by exactly 8; a hinge stiffness quarters at double arm; the granularity is dimensionless and equals `|e|q/p` in the small-quantum limit; a base-pair count is an integer and a length is its multiple of 0.34 nm; unphysical arguments throw |
+| **1 — dimensional** | a bending stiffness is `EI` over a cubed length and doubling the span divides it by exactly 8; a hinge stiffness quarters at double arm; the granularity is dimensionless and equals `\|e\|q/p` in the small-quantum limit; a base-pair count is an integer and a length is its multiple of 0.34 nm; unphysical arguments throw |
 | **2 — limiting cases** | **`R = 1` reproduces `C-0017`'s 45-path design exactly** (0.740741 pN/nm per path, `C-0030`'s 31.82 nm span); an infinitely fine quantum returns the target exactly; zero scatter returns `C-0058`'s own dishing; a ladder of one setting has no granularity and says so |
 | **3 — symmetry and conservation** | the quantised total conserves the mandate to within the total's own granularity; `C-0026`'s **alternating-columns** scatter (along the helices) restores **exactly zero** crossover force where alternating rows does not — the symmetry statement, re-asserted on an *unequal* nominal; a point-reflected quantised design dishes identically on the centro-symmetric lattice |
 | **4 — numerical convergence** | the dishing sampling grid 41/81/161 at the quantised design; the scatter-threshold bisection exits on the **bracket width**, and its own bracket is reported; the elastica arm's shooting tolerance |

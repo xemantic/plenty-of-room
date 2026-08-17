@@ -87,6 +87,8 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=anchoring.WeaveExclusionWidthStudyKt          # T-137, is a single plan exclusion width defensible against the measured weave
 ./gradlew study -Pstudy=anchoring.TwoPerRowPlacementStudyKt           # T-136, is there a flat 30-root placement, and does it keep the plan margin
 ./gradlew study -Pstudy=anchoring.PathCountConsistencyStudyKt         # T-138, C-0069's path-count sensitivity re-read with the array tied to the count
+./gradlew study -Pstudy=anchoring.SeamWeaveStudyKt                     # T-140, does a Rothemund scaffold seam break C-0076's weave node congruence
+./gradlew study -Pstudy=electrostatics.DuplexPairSeparationStudyKt    # T-139, what separation two UNBONDED duplexes hold in 2 mM MgCl2 (none) and what the plan width therefore is
 ./gradlew study -Pstudy=brush.FirstMomentConventionStudyKt            # T-1e, N inverted on the first-moment thickness as well as the force-onset height
 ```
 
@@ -105,7 +107,26 @@ tools/verify.sh                                # authoritative full suite, on an
 tools/verify.sh --committed                    # the same, against HEAD rather than the working tree
 tools/study.sh structure.InPlaneLoadPathStudyKt  # one study on an isolated copy (P-12)
 tools/test-snapshot.sh                         # the snapshot helpers' own tests (P-16)
+tools/test-check-markdown-tables.py            # the Markdown table checker's own tests (P-23)
+python3 tools/check-markdown-tables.py         # every tracked table renders; exit 1 if not (P-23)
+tools/verify.sh --no-checks                    # Gradle only, without the census check (P-22)
 ```
+
+### Who reads a result file
+
+A result file is an **input**, so re-emitting one moves everything downstream of it.
+[`tools/result-reader-census.py`](tools/result-reader-census.py) derives that graph from the Kotlin sources —
+never by grepping for a filename, which is how `C-0073` came to report one reader of `T-1d` where there are three (`CH-0092`).
+
+```shell
+tools/result-reader-census.py                  # the whole census
+tools/result-reader-census.py --file T-1d      # who reads and writes one file
+tools/result-reader-census.py --emit           # refresh gpd/results/P-22-result-reader-census.json
+tools/result-reader-census.py --check          # run by tools/verify.sh
+```
+
+Run `--emit` and commit the result whenever a study is added or its inputs change;
+`--check` says so when it is stale.
 
 Both scripts remove work another agent has left mid-TDD from the isolated copy —
 one of the four causes of a `NoClassDefFoundError` that reads exactly like a broken test.

@@ -186,7 +186,7 @@ Results are carried in [`C-0013`](../claims/C-0013-grafted-chi-inapplicable.md).
 | Hansen et al.'s grafting densities | **0.140 and 0.229 nm⁻²**, `φ = 0.091` and `0.143`, `N = 113`, `L₀ = 10.5`–`10.9 nm` |
 | **their brush/bulk interaction ratio** | **0.674 – 1.147** over both coverages and both 1σ bands |
 | **their effective `χ`** | **0.346 – 0.424** against a bulk **0.372** |
-| **`|Δχ|` bounded by measurement in the right geometry** | **≤ 0.053**, against the **0.240** claimed |
+| **`\|Δχ\|` bounded by measurement in the right geometry** | **≤ 0.053**, against the **0.240** claimed |
 | exposure in stiffness | **−11.4 % to +4.3 %** |
 | exposure in stroke | **−1.4 % to +4.1 %** |
 

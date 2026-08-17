@@ -239,7 +239,7 @@ biases of **0.128 – 0.180 V** against its published 0.128 – 0.180. So the *s
 
 On the **bias** axis it buys almost nothing, and why is itself a result:
 
-| axis | elasticity `d ln|k_eff|/d ln V` | margin at the mandate | margin at 1 bp of offset | gain |
+| axis | elasticity `d ln\|k_eff\|/d ln V` | margin at the mandate | margin at 1 bp of offset | gain |
 |---|---|---|---|---|
 | **held gap** (derived here) | **1.88 – 2.79** | 1.099 | 1.172 | +6.6 % |
 | **`C-0018`'s fold** (moving equilibrium, implied by its own pair) | **11.2 – 25.5** | **1.007 – 1.032** | **1.012 – 1.043** | **+0.5 – 1.1 %** |

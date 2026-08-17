@@ -221,7 +221,7 @@ so collapsing its bracket by simulation would be answering a question the design
 | `C-0015` | 45 attachments as 3 × 15 | **cited** as the path count |
 | `C-0009`/`Gen1Tile` | `k_θ = 2αB/(100a)` with `α ∈ [0.6, 1.2]` | **cited, fitted**, and swept |
 | `C-0006` | 10 / 48 / 65 pN | **cited** |
-| `C-0018` | the 1.007–1.032 bias margin and the 1.19–1.42 stiffness margin | **cited**, and used to grade this task's own derived elasticity `d ln|k_eff|/d ln V` |
+| `C-0018` | the 1.007–1.032 bias margin and the 1.19–1.42 stiffness margin | **cited**, and used to grade this task's own derived elasticity `d ln\|k_eff\|/d ln V` |
 | `C-0003`, `C-0008` | the layer and the field | **re-run as libraries** |
 
 ---

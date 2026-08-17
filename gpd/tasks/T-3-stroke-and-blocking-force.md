@@ -222,7 +222,7 @@ Code, all of it in `actuator/`, which this task owns.
 | file | what it is |
 |---|---|
 | `src/main/kotlin/actuator/ActuatorGeometry.kt` | the gap-height identity, the tile faces, the effort point |
-| `src/main/kotlin/actuator/ElectrostaticForceCurve.kt` | shape-preserving `ln|F_es|` interpolant, `k_es` and `ℓ` from its derivative |
+| `src/main/kotlin/actuator/ElectrostaticForceCurve.kt` | shape-preserving `ln\|F_es\|` interpolant, `k_es` and `ℓ` from its derivative |
 | `src/main/kotlin/actuator/ActuatorForceBalance.kt` | the coupled solve, the characteristic, the stability count |
 | `src/main/kotlin/actuator/ActuatorAcceptance.kt` | threshold crossing, and `C-0004`'s drainage corner scaled by `k_eff` |
 | `src/main/kotlin/actuator/ActuatorResultRounding.kt` | deterministic serialisation — a copy of `structure/ResultRounding.kt`'s pattern, not an import |

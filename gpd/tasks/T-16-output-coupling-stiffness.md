@@ -170,7 +170,7 @@ of which 39 are this task's.
 |---|---|
 | `F/δ` is a stiffness: 100 pN / 3 nm = 33.333… pN/nm, asserted to `1e−12` | **PASS** |
 | a load line `R = k_c s` has the units of `W(s)`, and `R − W` vanishes at the root | **PASS** |
-| ~~`dW/ds = −k_eff` exactly, by finite difference against the solver's own `k_brush + k_es`, to `1e−4` relative~~ | **CORRECTED — this row overclaimed.** No finite-difference test of the *solver's* characteristic exists. `dW/ds = −k_eff` is an **identity of the construction** (`W(s) = |F_es(L₀−s)| − P(L₀−s)A`, differentiated), and what *is* asserted is `k_eff = k_brush + k_es` at every record in `C-0012`'s own file, to `1e−6`. The identity is stated as such rather than measured |
+| ~~`dW/ds = −k_eff` exactly, by finite difference against the solver's own `k_brush + k_es`, to `1e−4` relative~~ | **CORRECTED — this row overclaimed.** No finite-difference test of the *solver's* characteristic exists. `dW/ds = −k_eff` is an **identity of the construction** (`W(s) = \|F_es(L₀−s)\| − P(L₀−s)A`, differentiated), and what *is* asserted is `k_eff = k_brush + k_es` at every record in `C-0012`'s own file, to `1e−6`. The identity is stated as such rather than measured |
 | series compliance adds and parallel stiffness adds; a single element reduces to itself | **PASS** |
 | a compliance **share** is dimensionless and the shares sum to 1 | **PASS** |
 | `k_yaw = Σ k_i r²` is a stiffness times a squared length | **PASS** |
@@ -188,7 +188,7 @@ of which 39 are this task's.
 | a series chain is softer than its softest element, and never softer than half of it when the other is equal | **PASS** |
 | the FJC spacer reduces to `3k_BT/(L_c b)` at vanishing tension and stiffens without bound toward the contour | **PASS** |
 | a coupling designed for §3's force target delivers it to `1e−7`, its **secant** equals the mandate and its **tangent exceeds** it | **PASS** — and this is the mechanism `C-0017` turns on |
-| ~~the closed-form margin `k_c* + k_brush(g) − |F_es(g)|/ℓ(g)` reproduces the solved margin to `1e−6`~~ | **DOWNGRADED — it is an algebraic identity, not a numerical check.** `ElectrostaticForceCurve` defines `k_es = |F| d ln|F|/dh` and `ℓ = −1/(d ln|F|/dh)`, so `|F|/ℓ ≡ −k_es` in floating point. The study reports a departure of **exactly 0.0** at all 54 states, which is what an identity does. It verifies that the two accessors are sign-consistent and **nothing else**, and reporting it as agreement would have been an unearned `PASS` |
+| ~~the closed-form margin `k_c* + k_brush(g) − \|F_es(g)\|/ℓ(g)` reproduces the solved margin to `1e−6`~~ | **DOWNGRADED — it is an algebraic identity, not a numerical check.** `ElectrostaticForceCurve` defines `k_es = \|F\| d ln\|F\|/dh` and `ℓ = −1/(d ln\|F\|/dh)`, so `\|F\|/ℓ ≡ −k_es` in floating point. The study reports a departure of **exactly 0.0** at all 54 states, which is what an identity does. It verifies that the two accessors are sign-consistent and **nothing else**, and reporting it as agreement would have been an unearned `PASS` |
 
 ### Gate 3 — symmetry and conservation
 
@@ -217,7 +217,7 @@ of which 39 are this task's.
 |---|---|
 | `C-0012`'s blocking forces at 2 mM reproduced from the re-run solver: 167.2 / 86.7 / 34.5 pN at 0.10 V and 490.4 / 214.7 / 73.6 pN at 0.25 V | **PASS** |
 | `C-0012`'s `W(3 nm)` and `k_eff(3 nm)` reproduced at both grid biases | **PASS — worst relative departure `3.82e−9` over all 36 comparisons**, because the same solver was re-run rather than a table copied |
-| `C-0012`'s coupling table (5.31–15.99 at 10 nm / 0.10 V; 47.63–71.54 at 0.25 V; 85.57–276.58 at 7 nm / 0.25 V) reproduced as `|k_eff|`, confirming that what is challenged is its **scope**, not its arithmetic | **PASS** |
+| `C-0012`'s coupling table (5.31–15.99 at 10 nm / 0.10 V; 47.63–71.54 at 0.25 V; 85.57–276.58 at 7 nm / 0.25 V) reproduced as `\|k_eff\|`, confirming that what is challenged is its **scope**, not its arithmetic | **PASS** |
 | **new:** `C-0012`'s `biasForSimultaneousTarget` is a `firstCrossing` **interpolation**, and at 10 nm all six models carry its own bracket string `[0.1, 0.25]` | **PASS** — and the located root departs from it by up to **6.1 %** |
 | **new:** at 7 nm exactly **one** of the six models puts that crossing below 0.10 V | **PASS** — the first draft of `CH-0016` said *two*, and that is struck there |
 | ~~`C-0014`'s `rodAxialStiffness` at 10 nm = 110 pN/nm and its ssDNA design rule reproduced from `anchoring/`~~ | **HALF CORRECT.** The ssDNA rule **is** reproduced: `gaussianContourCeiling` gives 103.4 nm to 0.6 % and on the correct side (below, because `C-0014` solved the full chain and it strain-stiffens). `rodAxialStiffness(1100, 10) = 110 pN/nm` is **used**, not separately asserted here — it is `C-0014`'s own tested function, consumed unchanged |

@@ -78,8 +78,8 @@ sits at a textbook limit.
 
 Three of them, all arithmetic, all before any root is found.
 
-| | bound | what it would settle |
-|---|---|---|
+| | the bound, and what it would settle |
+|---|---|
 | **1** | **`ρ_far` carries the arm length.** `ρ = k_far r/EI`, and the cap is a *fixed point* — a longer arm makes the **same** joint relatively stiffer. `EI/r` at `r ≈ 12 nm` is **19.2 pN·nm/rad**, and `C-0029`'s own two-terminus ceiling is **78.2** — so `ρ_far ≈ 4`, i.e. `c` lands near the middle of `(3, 12)` and **neither** textbook value applies. If `ρ_far` had come out at 0.01 or 100 the continuum would have collapsed onto an end and the task would close in a paragraph. |
 | **2** | **the cap at the two worst readings.** Even at `k_far = 13.53 pN·nm/rad` (the chord axis, `C-0029`'s `B1`) the cap is a fixed point above 10 nm; at `k_far = 0` (a single covalent link, `C-0029`'s `R3` ball joint) it is exactly the cantilever's 9.767. So the verdict is decided by **link count at the far end**, not by the motif's material. |
 | **3** | **the series identity.** `C-0023`'s composition `1/k = r²/(nk_θ) + r³/(cEI)` is *exact* when the far end carries no moment and *wrong* when it does — because a guide carries part of the moment and **relieves the hinge**. One line of algebra says whether `c = 12` and that composition can both be true. |

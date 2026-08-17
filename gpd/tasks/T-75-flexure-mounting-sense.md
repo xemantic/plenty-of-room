@@ -177,7 +177,7 @@ Spending a solve here would be `P-3`'s lesson in a new place: the serious method
 
 | | predicate | outcome |
 |---|---|---|
-| **`Q1`** | the sign is a kinematic identity | **PASS** — `|dδ/ds| = 1` at all four mountings, and identical over 48 combinations of standoff and tie length |
+| **`Q1`** | the sign is a kinematic identity | **PASS** — `\|dδ/ds\| = 1` at all four mountings, and identical over 48 combinations of standoff and tie length |
 | **`Q2`** | neither variable alone decides the sign | **PASS** — 1 of 2 favourable mountings has each base body, and 1 of 2 has each standoff normal |
 | **`Q3`** | exactly one mounting survives the buildability filter | **PASS** — `Su`: bases on the superstructure, standoffs pointing away from the tile, flexure outboard |
 | **`Q4`** | the pre-bow escape is priced to a threshold | **PASS** — 0 of 12 admissible; 4.08–16.66 nm of rise for a 150–225 pN preload, closed outright at the desired stroke |

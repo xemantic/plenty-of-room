@@ -20,6 +20,7 @@
 #     tools/verify.sh --committed        # test HEAD instead, ignoring uncommitted work
 #     tools/verify.sh --drop coupling    # test without a sibling package left mid-TDD
 #     tools/verify.sh --drop-file src/test/kotlin/coupling/PlacementTest.kt   # one file only
+#     tools/verify.sh --no-checks        # Gradle only, without the harness's own tests
 #
 # Options may be combined and repeated; everything after them is passed to Gradle.
 #
@@ -46,6 +47,27 @@
 # `anchoring`, and `--drop anchoring` turns one half-written file into eighty broken
 # references. Name the single file that fails to compile instead; it is smaller, safer, and
 # it is what the common case (a sibling's unfinished *test*) actually needs.
+#
+# The result-reader census (task P-22) runs after Gradle. It is here rather than in
+# `build.gradle.kts` for the reason that file already states about `testHarness`: a task hung
+# off `test` must touch nothing under `src/`, so that a `--drop`/`--drop-file` on the snapshot
+# cannot make it fail. The census *reads* `src/`, by construction — so it hangs off the script
+# that knows whether a drop was requested, and it is skipped when one was. `--no-checks` skips
+# it by hand. It runs *after* the suite so a failure never hides a Gradle result, and it is
+# under a second.
+#
+# `tools/check-markdown-tables.py` (`P-23`) is here too, and it was not at first: **a snapshot
+# has no `.git`**, so the checker's `git ls-files` fails, its fallback walked the tree with a
+# `./` prefix, and that prefix defeated its own `third-party/` exclusion — the one directory
+# whose table defect must be preserved. Run inside a snapshot it reported a defect it could
+# never be rid of, and a gate that can never come clean is not a gate, so `P-22` removed it and
+# said why. The defect was in the checker, not in this script: `is_excluded` now normalises the
+# path and the fallback no longer emits the prefix, both asserted as tests, and the gate is
+# clean in a real `.git`-less snapshot. Restored here by `P-23` on that evidence.
+#
+# The three SELF-tests are wired in `build.gradle.kts` instead, because they read only
+# fixtures: `tools/test-snapshot.sh` since `P-16`, and `tools/test-trace-answers.py` and
+# `tools/test-check-markdown-tables.py` since `P-22`.
 set -euo pipefail
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -55,12 +77,14 @@ target="${TMPDIR:-/tmp}/plenty-of-room-verify.$$"
 mode="working-tree"
 drops=()
 dropped_files=()
+checks="yes"
 
 while [ $# -gt 0 ]; do
     case "$1" in
         --committed) mode="--committed"; shift ;;
         --drop) drops+=("$2"); shift 2 ;;
         --drop-file) dropped_files+=("$2"); shift 2 ;;
+        --no-checks) checks="no"; shift ;;
         *) break ;;
     esac
 done
@@ -81,6 +105,20 @@ fi
 if [ ${#dropped_files[@]} -gt 0 ]; then
     drop_files "$target" "${dropped_files[@]}"
 fi
+if [ ${#drops[@]} -gt 0 ] || [ ${#dropped_files[@]} -gt 0 ]; then
+    checks="no"
+fi
 
 cd "$target"
 ./gradlew test "$@"
+
+if [ "$checks" = "yes" ]; then
+    echo
+    echo "--- the result-reader census over gpd/results/ (P-22) ---"
+    echo "    skip with: tools/verify.sh --no-checks"
+    tools/test-result-reader-census.py
+    tools/result-reader-census.py --check
+    echo
+    echo "--- every Markdown table renders (P-23) ---"
+    tools/check-markdown-tables.py
+fi

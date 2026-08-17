@@ -128,8 +128,8 @@ Grouping them is what shows the mechanism.
 
 ### Kind D — the statement is simply stale (3 statements)
 
-| | | |
-|---|---|---|
+| | |
+|---|---|
 | **D1** | *"**Twenty-nine** challenges"* → **69**, against 60 claims |
 | **D2** | *"**Two** paywalled papers"* → **one**. Lee et al. was obtained free from NIST's public repository, both Unpaywall and OpenAlex having reported it `closed` |
 | **D3** | `C-0017`'s `K2` described as the coupling that *"supplies it"* → it is **one-sided**, which `C-0023` had to replace, and `C-0041` places only **15** of its 45 |

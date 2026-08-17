@@ -17,8 +17,8 @@ Minimising a window residual is satisfied by *any* gap inside `[0.60, 0.70]`, so
 
 The evidence, all from `C-0057`'s solved closures on the three claims' own searches re-run as libraries:
 
-| claim | link | gap [nm] | what the backbone would need | how often that is observed |
-|---|---|---|---|---|
+| claim and link | gap [nm] | what the backbone would need | how often that is observed |
+|---|---|---|---|
 | **`C-0029`** `R1`/`R2` link 1 | 0.6000 | **ε = −22.9°** | **0.015 %** of 13 084 measured linkages |
 | **`C-0029`** `R1`/`R2` link 2 | 0.6000 | **β = 27.4°** | **0 of 15 457** measured residues |
 | **`C-0042`** 7 bp leg 1 link 1 | **0.6969** | an `O3′–P` bond of **0.2517 nm** | a covalent bond is **0.1602 ± 0.0019 nm** |

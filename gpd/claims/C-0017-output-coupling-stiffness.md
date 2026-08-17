@@ -88,7 +88,7 @@ It is checked, not assumed: the study solves `W(s) = 33.333 s` as a **root** at 
 The floor at 10 nm is a strong function of the buffer, because the bias needed to reach 100 pN rises with salt
 and the force's decay length shortens with it:
 
-| 10 nm | `V*` | `ℓ = |F_es|/|k_es|` | stability floor | margin `k_c*/floor` |
+| 10 nm | `V*` | `ℓ = \|F_es\|/\|k_es\|` | stability floor | margin `k_c*/floor` |
 |---|---|---|---|---|
 | **0.5 mM** | 0.087 – 0.115 V | 4.15 – 4.20 nm | **3.86 – 15.94 pN/nm** | **2.09 – 8.65×** |
 | 1 mM | 0.101 – 0.134 V | 3.55 – 3.73 nm | 10.42 – 19.36 | 1.72 – 3.20× |

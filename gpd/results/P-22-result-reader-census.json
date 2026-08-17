@@ -1,0 +1,3018 @@
+{
+  "task": "P-22",
+  "claim": "C-0082",
+  "what": "The reader graph over gpd/results/, derived from the Kotlin sources rather than grepped. A read is a result-file string literal in the argument list of a File(...) construction, propagated along top-level references; comments and prose strings are not reads. See tools/result-reader-census.py and CH-0092.",
+  "studyCount": 74,
+  "helperCount": 2,
+  "resultFileCount": 76,
+  "declaringStudyCount": 3,
+  "transitiveEdgeCount": 20,
+  "directEdgeCount": 43,
+  "studies": {
+    "HelloWorldApp.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": null,
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": []
+    },
+    "actuator/CollarEquilibriumPathStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-60-collar-on-the-equilibrium-path.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "actuator/ActuatorForceBalance.kt",
+        "actuator/ActuatorGeometry.kt",
+        "actuator/ActuatorResultRounding.kt",
+        "actuator/CollarCorrectedField.kt",
+        "actuator/ElectrostaticForceCurve.kt",
+        "actuator/PullInStability.kt",
+        "brush/BrushCompression.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "electrostatics/AsymmetricGouyChapman.kt",
+        "electrostatics/CollarMultiplier.kt",
+        "electrostatics/ConfinedGap.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PoissonBoltzmannEdge.kt",
+        "electrostatics/PoissonBoltzmannGap.kt",
+        "electrostatics/TileEdgeFringing.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt"
+      ]
+    },
+    "actuator/MaximumUsableBiasStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-4-maximum-usable-bias.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "actuator/ActuatorForceBalance.kt",
+        "actuator/ActuatorGeometry.kt",
+        "actuator/ActuatorResultRounding.kt",
+        "actuator/ElectrostaticForceCurve.kt",
+        "actuator/PullInStability.kt",
+        "brush/BrushCompression.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "electrostatics/ConfinedGap.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PoissonBoltzmannGap.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt"
+      ]
+    },
+    "actuator/StrokeAndBlockingForceStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-3-stroke-and-blocking-force.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "actuator/ActuatorAcceptance.kt",
+        "actuator/ActuatorForceBalance.kt",
+        "actuator/ActuatorGeometry.kt",
+        "actuator/ActuatorResultRounding.kt",
+        "actuator/ElectrostaticForceCurve.kt",
+        "brush/BrushCompression.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "electrostatics/ConfinedGap.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PoissonBoltzmannGap.kt",
+        "electrostatics/PolymerLayerPartitioning.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt"
+      ]
+    },
+    "anchoring/ArmSlabClearanceStudy.kt": {
+      "reads": [
+        "T-125-upward-root-placement.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-125-upward-root-placement.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-126-arm-slab-clearance.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/ArmSlabClearance.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/LateralConfinementBudget.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/StackedArmSheet.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/BackboneTorsionStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-71-backbone-torsion-closure.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "anchoring/AnchorElement.kt",
+        "anchoring/BackboneTorsion.kt",
+        "anchoring/CrossbarJunctionTrio.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "anchoring/PairedPerpendicularJunction.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/CoupledStandoffJointStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-65-coupled-standoff-joint.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/AnchorScheme.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/CrossbarArrayPlacementStudy.kt": {
+      "reads": [
+        "T-124-torsion-feasible-routing.json",
+        "T-125-upward-root-placement.json",
+        "T-127-crossbar-trio-existence.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-124-torsion-feasible-routing.json",
+        "T-125-upward-root-placement.json",
+        "T-127-crossbar-trio-existence.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-130-crossbar-array-placement.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/AnchorScheme.kt",
+        "anchoring/BackboneTorsion.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/CrossbarArrayPlacement.kt",
+        "anchoring/CrossbarJunctionTrio.kt",
+        "anchoring/CrossbarTrioExistence.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/LateralConfinementBudget.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "anchoring/PairedPerpendicularJunction.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TorsionFeasibleRouting.kt",
+        "anchoring/TriangulatedStandoff.kt",
+        "anchoring/TrussCap.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/CrossbarJunctionTrioStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-117-crossbar-junction-trio.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/AnchorScheme.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/CrossbarJunctionTrio.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/PairedPerpendicularJunction.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TriangulatedStandoff.kt",
+        "anchoring/TrussCap.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/CrossbarTrioExistenceStudy.kt": {
+      "reads": [
+        "T-124-torsion-feasible-routing.json"
+      ],
+      "directReads": [
+        "T-124-torsion-feasible-routing.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-127-crossbar-trio-existence.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/AnchorScheme.kt",
+        "anchoring/BackboneTorsion.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/CrossbarJunctionTrio.kt",
+        "anchoring/CrossbarTrioExistence.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "anchoring/PairedPerpendicularJunction.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TorsionFeasibleRouting.kt",
+        "anchoring/TriangulatedStandoff.kt",
+        "anchoring/TrussCap.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/FlexureArrayPackingStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-96-flexure-array-packing.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "coupling/CouplingElement.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/FlexureCountHingeTradeStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-99-flexure-count-hinge-trade.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/FlexureCountHingeTrade.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/HingeLineCensus.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/TwoSpringElastica.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/FlexureEndJointStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-30-flexure-end-joint.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/OutputElementPlacement.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "structure/Gen1Tile.kt",
+        "structure/JointAllowable.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/FlexureMountingSenseStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-75-flexure-mounting-sense.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "actuator/ActuatorGeometry.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/GuidedArmAnchorageStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-70-guided-arm-anchorage.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/AnchorScheme.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "structure/Gen1Tile.kt",
+        "structure/JointAllowable.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/HingeArmArrayPackingStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-116-hinge-arm-array-packing.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/PlanTolerance.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/TwoSpringElastica.kt",
+        "coupling/CouplingElement.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/HingeLineCensusStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-81-hinge-line-census.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/HingeLineCensus.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/PlanTolerance.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/LateralConfinementStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-12-lateral-confinement.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/AnchorScheme.kt",
+        "anchoring/LateralConfinementBudget.kt",
+        "anchoring/LayerCorrugation.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "structure/ResultRounding.kt"
+      ]
+    },
+    "anchoring/OutputElementPlacementStudy.kt": {
+      "reads": [
+        "T-125-upward-root-placement.json",
+        "T-130-crossbar-array-placement.json"
+      ],
+      "directReads": [
+        "T-125-upward-root-placement.json",
+        "T-130-crossbar-array-placement.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-133-output-element-placement.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/AnchorScheme.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/CrossbarArrayPlacement.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/OutputElementPlacement.kt",
+        "anchoring/PairedPerpendicularJunction.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TriangulatedStandoff.kt",
+        "anchoring/TrussCap.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/TwoSpringElastica.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "coupling/CouplingRequirement.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/PairedPerpendicularJunctionStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-97-paired-perpendicular-junction.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/AnchorScheme.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/PairedPerpendicularJunction.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TriangulatedStandoff.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/PathCountConsistencyStudy.kt": {
+      "reads": [
+        "T-125-upward-root-placement.json",
+        "T-136-two-per-row-placement.json"
+      ],
+      "directReads": [
+        "T-125-upward-root-placement.json",
+        "T-136-two-per-row-placement.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-138-path-count-consistency.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "anchoring/CrossbarArrayPlacement.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/OutputElementPlacement.kt",
+        "anchoring/PathCountConsistency.kt",
+        "anchoring/PlanTolerance.kt",
+        "anchoring/TwoPerRowPlacement.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/TwoSpringElastica.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/StackedArmSheet.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/PerpendicularJunctionStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-67-perpendicular-junction-routing.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/AnchorScheme.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/PinnedLegBudgetStudy.kt": {
+      "reads": [
+        "T-124-torsion-feasible-routing.json",
+        "T-125-upward-root-placement.json",
+        "T-127-crossbar-trio-existence.json",
+        "T-130-crossbar-array-placement.json"
+      ],
+      "directReads": [
+        "T-124-torsion-feasible-routing.json",
+        "T-125-upward-root-placement.json",
+        "T-127-crossbar-trio-existence.json",
+        "T-130-crossbar-array-placement.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-132-pinned-leg-budget.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/AnchorScheme.kt",
+        "anchoring/BackboneTorsion.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/CrossbarArrayPlacement.kt",
+        "anchoring/CrossbarJunctionTrio.kt",
+        "anchoring/CrossbarTrioExistence.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "anchoring/PairedPerpendicularJunction.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/PinnedLegBudget.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TorsionFeasibleRouting.kt",
+        "anchoring/TriangulatedStandoff.kt",
+        "anchoring/TrussCap.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/PlanToleranceStudy.kt": {
+      "reads": [
+        "T-125-upward-root-placement.json",
+        "T-127-crossbar-trio-existence.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-125-upward-root-placement.json",
+        "T-127-crossbar-trio-existence.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-134-plan-tolerance.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/AnchorScheme.kt",
+        "anchoring/BackboneTorsion.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/CrossbarArrayPlacement.kt",
+        "anchoring/CrossbarJunctionTrio.kt",
+        "anchoring/CrossbarTrioExistence.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/LateralConfinementBudget.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "anchoring/OutputElementPlacement.kt",
+        "anchoring/PairedPerpendicularJunction.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/PinnedLegBudget.kt",
+        "anchoring/PlanTolerance.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TorsionFeasibleRouting.kt",
+        "anchoring/TriangulatedStandoff.kt",
+        "anchoring/TrussCap.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/TwoSpringElastica.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/StackedArmSheet.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/RangeRobustPlacementStudy.kt": {
+      "reads": [
+        "T-108-desired-stroke-reach.json",
+        "T-125-upward-root-placement.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-108-desired-stroke-reach.json",
+        "T-125-upward-root-placement.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-129-range-robust-placement.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/HingeLineCensus.kt",
+        "anchoring/RangeRobustPlacement.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/RobustDistribution.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/StackedArmSheet.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/SeamWeaveStudy.kt": {
+      "reads": [
+        "T-125-upward-root-placement.json"
+      ],
+      "directReads": [
+        "T-125-upward-root-placement.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-140-seam-weave-congruence.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/SeamWeave.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/WeaveExclusionWidth.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/StackedArmSheet.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/StandoffBaseJointStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-40-standoff-base-joint.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "structure/Gen1Tile.kt",
+        "structure/JointAllowable.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/TorsionFeasibleRoutingStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-124-torsion-feasible-routing.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/AnchorScheme.kt",
+        "anchoring/BackboneTorsion.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/CrossbarJunctionTrio.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "anchoring/PairedPerpendicularJunction.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TorsionFeasibleRouting.kt",
+        "anchoring/TriangulatedStandoff.kt",
+        "anchoring/TrussCap.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/TriangulatedStandoffStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-72-triangulated-standoff.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/AnchorScheme.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/PlanTolerance.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TriangulatedStandoff.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/TrussCapStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-106-truss-cap.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/AnchorScheme.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/PairedPerpendicularJunction.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TriangulatedStandoff.kt",
+        "anchoring/TrussCap.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/TwoPerRowPlacementStudy.kt": {
+      "reads": [
+        "T-125-upward-root-placement.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-125-upward-root-placement.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-136-two-per-row-placement.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/HingeLineCensus.kt",
+        "anchoring/OutputElementPlacement.kt",
+        "anchoring/PlanTolerance.kt",
+        "anchoring/RangeRobustPlacement.kt",
+        "anchoring/TwoPerRowPlacement.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/TwoSpringElastica.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/RobustDistribution.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/StackedArmSheet.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/TwoSidedCouplingStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-23-two-sided-coupling.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/OutputElementPlacement.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/ZeroBiasHoldDown.kt",
+        "brush/BrushCompression.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/CouplingScheme.kt",
+        "electrostatics/ConfinedGap.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PoissonBoltzmannGap.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "poroelastic/DrainageGeometry.kt",
+        "poroelastic/DrainageResponse.kt",
+        "poroelastic/LayerPermeability.kt",
+        "poroelastic/Water.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/TwoSpringElasticaStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-79-two-spring-elastica.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/AnchorScheme.kt",
+        "anchoring/FlexureCountHingeTrade.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/TwoSpringElastica.kt",
+        "structure/Gen1Tile.kt",
+        "structure/JointAllowable.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/UnusedJunctionSiteStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-119-unused-junction-site.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/PlanTolerance.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/TwoSpringElastica.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/UpwardRootPlacementStudy.kt": {
+      "reads": [
+        "T-119-unused-junction-site.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-119-unused-junction-site.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-125-upward-root-placement.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/HingeLineCensus.kt",
+        "anchoring/LateralConfinementBudget.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/StackedArmSheet.kt",
+        "structure/TilePositionalVariance.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/WeaveExclusionWidthStudy.kt": {
+      "reads": [
+        "T-125-upward-root-placement.json"
+      ],
+      "directReads": [
+        "T-125-upward-root-placement.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-137-weave-exclusion-width.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "anchoring/CrossbarArrayPlacement.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "anchoring/OutputElementPlacement.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/PlanTolerance.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "anchoring/WeaveExclusionWidth.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/StackedArmSheet.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/ZeroBiasRestingPositionStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-13-zero-bias-resting-position.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "actuator/ActuatorGeometry.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/ZeroBiasHoldDown.kt",
+        "brush/BrushCompression.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "electrostatics/ConfinedGap.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PoissonBoltzmannGap.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "poroelastic/DrainageGeometry.kt",
+        "poroelastic/DrainageResponse.kt",
+        "poroelastic/LayerPermeability.kt",
+        "poroelastic/Water.kt",
+        "structure/ResultRounding.kt"
+      ]
+    },
+    "brush/BrushStiffnessStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-1-layer-stiffness.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "brush/BrushCompression.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/LayerDesignPoint.kt",
+        "brush/PolymerBrush.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt"
+      ]
+    },
+    "brush/CrossoverLayerStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-1c-crossover-valid-layer-response.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "brush/BrushCompression.kt",
+        "brush/BrushStiffnessStudy.kt",
+        "brush/FluctuationCorrection.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt"
+      ]
+    },
+    "brush/DeterminedPrecisionStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "P-18-determined-precision.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "brush/BrushCompression.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "brush/SelfConsistentField.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "structure/ResultRounding.kt"
+      ]
+    },
+    "brush/FirstMomentConventionStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-1e-first-moment-convention.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "brush/BrushCompression.kt",
+        "brush/BrushStiffnessStudy.kt",
+        "brush/FirstMomentThickness.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "brush/SelfConsistentField.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "structure/ResultRounding.kt"
+      ]
+    },
+    "brush/FluctuationCorrectionStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-1f-mean-field-fluctuation-corrections.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "brush/BrushCompression.kt",
+        "brush/FirstMomentThickness.kt",
+        "brush/FluctuationCorrection.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "brush/SelfConsistentField.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "structure/ResultRounding.kt"
+      ]
+    },
+    "brush/ScfDensityProfileStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-1d-scf-density-profile.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "brush/BrushCompression.kt",
+        "brush/BrushStiffnessStudy.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "brush/SelfConsistentField.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "structure/ResultRounding.kt"
+      ]
+    },
+    "coupling/BuildableStiffnessRatioStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-122-buildable-stiffness-ratio.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/PlanTolerance.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/TwoSpringElastica.kt",
+        "coupling/BuildableStiffnessRatio.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/CouplingResultRounding.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "synthesis/CouplingCeiling.kt"
+      ]
+    },
+    "coupling/NonUniformCouplingStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-113-non-uniform-coupling.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/CouplingResultRounding.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "coupling/OneRowPerDuplexStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-17-one-row-per-duplex.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingResultRounding.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/JointAllowable.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "coupling/OutputCouplingStudy.kt": {
+      "reads": [
+        "T-3-stroke-and-blocking-force.json"
+      ],
+      "directReads": [
+        "T-3-stroke-and-blocking-force.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-16-output-coupling-stiffness.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "actuator/ActuatorForceBalance.kt",
+        "actuator/ActuatorGeometry.kt",
+        "actuator/ElectrostaticForceCurve.kt",
+        "anchoring/AnchorElement.kt",
+        "brush/BrushCompression.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "coupling/CoupledOperatingPoint.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/CouplingResultRounding.kt",
+        "coupling/CouplingScheme.kt",
+        "electrostatics/ConfinedGap.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PoissonBoltzmannGap.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt"
+      ]
+    },
+    "coupling/RobustDistributionStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-123-robust-distribution.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/CouplingResultRounding.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/RobustDistribution.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "coupling/SingleColumnFlatnessStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-101-single-column-flatness.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingResultRounding.kt",
+        "coupling/SingleColumnFlatness.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "crossover/ConcentratedCrossoverStudy.kt": {
+      "reads": [
+        "T-4-maximum-usable-bias.json"
+      ],
+      "directReads": [
+        "T-4-maximum-usable-bias.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-21-concentrated-crossover.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "actuator/ActuatorForceBalance.kt",
+        "actuator/ActuatorGeometry.kt",
+        "actuator/ActuatorResultRounding.kt",
+        "actuator/ElectrostaticForceCurve.kt",
+        "actuator/PullInStability.kt",
+        "brush/BrushCompression.kt",
+        "brush/FluctuationCorrection.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "crossover/ConcentratedCrossover.kt",
+        "electrostatics/ConfinedGap.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PoissonBoltzmannGap.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "material/SolventQuality.kt"
+      ]
+    },
+    "electrostatics/DuplexPairSeparationStudy.kt": {
+      "reads": [
+        "T-125-upward-root-placement.json"
+      ],
+      "directReads": [
+        "T-125-upward-root-placement.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-139-duplex-pair-separation.json",
+      "declaredSources": [
+        "T-125"
+      ],
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "anchoring/WeaveExclusionWidth.kt",
+        "brush/GraftedLayer.kt",
+        "electrostatics/DuplexPairSeparation.kt",
+        "electrostatics/Electrolyte.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/StackedArmSheet.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "electrostatics/MeanFieldValidityStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-6-mean-field-screening-validity.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "electrostatics/ChargedSurface.kt",
+        "electrostatics/ConfinedGap.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PolymerLayerPartitioning.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt"
+      ]
+    },
+    "electrostatics/NonlinearPbProfileStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-3a-nonlinear-pb-profile.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "electrostatics/AsymmetricGouyChapman.kt",
+        "electrostatics/ConfinedGap.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PoissonBoltzmannGap.kt",
+        "electrostatics/PolymerLayerPartitioning.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "structure/ResultRounding.kt"
+      ]
+    },
+    "electrostatics/TileEdgeLoadProfileStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-3b-tile-edge-load-profile.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "electrostatics/AsymmetricGouyChapman.kt",
+        "electrostatics/ConfinedGap.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PoissonBoltzmannEdge.kt",
+        "electrostatics/PoissonBoltzmannGap.kt",
+        "electrostatics/TileEdgeFringing.kt",
+        "structure/Cholesky.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "material/GraftedChiStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "P-9-grafted-chi.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "material/GraftedChi.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "material/SolventQuality.kt"
+      ]
+    },
+    "material/PegMaterialStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "P-3-peg-material-parameters.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "brush/BrushCompression.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt"
+      ]
+    },
+    "material/SolventQualitySaltStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "P-6-solvent-quality-vs-salt.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "material/SolventQuality.kt"
+      ]
+    },
+    "poroelastic/PoroelasticDrainageStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-7-poroelastic-drainage.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "brush/BrushCompression.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "poroelastic/DrainageGeometry.kt",
+        "poroelastic/DrainageResponse.kt",
+        "poroelastic/LayerPermeability.kt",
+        "poroelastic/Water.kt"
+      ]
+    },
+    "stability/SofteningCouplingStabilityStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-76-softening-coupling-stability.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "actuator/ActuatorForceBalance.kt",
+        "actuator/ActuatorGeometry.kt",
+        "actuator/ActuatorResultRounding.kt",
+        "actuator/ElectrostaticForceCurve.kt",
+        "actuator/PullInStability.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "brush/BrushCompression.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "electrostatics/ConfinedGap.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PoissonBoltzmannGap.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "stability/SofteningCouplingStability.kt",
+        "structure/Gen1Tile.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "structure/ConnectivityCeilingPlateStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-120-connectivity-ceiling-plate.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConnectivityCeilingPlate.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVariance.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "structure/ConsumedCrossoverSheetStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-110-consumed-crossover-sheet.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/FlexureCountHingeTrade.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/HingeLineCensus.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/TwoSpringElastica.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVariance.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "structure/CrossoverRegistrationStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-14-crossover-phase-and-registration.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "structure/DiscreteLatticeTileStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-10-discrete-lattice-tile.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/LoadPaths.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TileLoadDistributionStudy.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "structure/EntryTopologyStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-19-attachment-entry-topology.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "structure/Cholesky.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/JointAllowable.kt",
+        "structure/OrigamiMembrane.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/ShearLag.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "structure/InPlaneLoadPathStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-15-in-plane-shear-lag.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "structure/Cholesky.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/OrigamiMembrane.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/ShearLag.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "structure/StackedArmSheetStudy.kt": {
+      "reads": [
+        "T-119-unused-junction-site.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-7-poroelastic-drainage.json"
+      ],
+      "directReads": [
+        "T-119-unused-junction-site.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-7-poroelastic-drainage.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-121-stacked-arm-sheet.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/StackedArmSheet.kt",
+        "structure/TilePositionalVariance.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "structure/TileFlatnessStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-5b-tile-flatness.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "structure/Cholesky.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TileLoadDistributionStudy.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "structure/TileLoadDistributionStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-5-load-distribution.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "structure/Cholesky.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/LoadPaths.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "structure/TilePositionalVarianceStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-8-tile-positional-variance.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "brush/BrushCompression.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "poroelastic/DrainageGeometry.kt",
+        "poroelastic/DrainageResponse.kt",
+        "poroelastic/LayerPermeability.kt",
+        "poroelastic/Water.kt",
+        "structure/Cholesky.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TileLoadDistributionStudy.kt",
+        "structure/TilePositionalVariance.kt"
+      ]
+    },
+    "synthesis/DesiredStrokeReachStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-108-desired-stroke-reach.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/HingeLineCensus.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/TwoSpringElastica.kt",
+        "brush/BrushCompression.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "synthesis/CouplingCeiling.kt",
+        "synthesis/StrokeReach.kt"
+      ]
+    },
+    "synthesis/OutputElementRecommendationStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-135-output-element-recommendation.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/OutputElementPlacement.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/TwoSpringElastica.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "coupling/CouplingRequirement.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/StackedArmSheet.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "synthesis/OutputElementRecommendation.kt"
+      ]
+    },
+    "window/DesignWindowStudy.kt": {
+      "reads": [
+        "T-14-crossover-phase-and-registration.json",
+        "T-1d-scf-density-profile.json",
+        "T-3-stroke-and-blocking-force.json"
+      ],
+      "directReads": [
+        "T-14-crossover-phase-and-registration.json",
+        "T-1d-scf-density-profile.json",
+        "T-3-stroke-and-blocking-force.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-2-design-window.json",
+      "declaredSources": [
+        "T-14",
+        "T-1d",
+        "T-3"
+      ],
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PolymerLayerPartitioning.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "poroelastic/DrainageGeometry.kt",
+        "poroelastic/DrainageResponse.kt",
+        "poroelastic/LayerPermeability.kt",
+        "poroelastic/Water.kt",
+        "window/ConstraintInterval.kt",
+        "window/UpstreamResults.kt",
+        "window/WindowPhysics.kt",
+        "window/WindowResultRounding.kt"
+      ]
+    },
+    "window/SecondResynthesisStudy.kt": {
+      "reads": [
+        "T-108-desired-stroke-reach.json",
+        "T-13-zero-bias-resting-position.json",
+        "T-14-crossover-phase-and-registration.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-17-one-row-per-duplex.json",
+        "T-1d-scf-density-profile.json",
+        "T-1f-mean-field-fluctuation-corrections.json",
+        "T-25-window-resynthesis.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-4-maximum-usable-bias.json",
+        "T-60-collar-on-the-equilibrium-path.json",
+        "T-96-flexure-array-packing.json"
+      ],
+      "directReads": [],
+      "transitiveReads": [
+        "T-108-desired-stroke-reach.json",
+        "T-13-zero-bias-resting-position.json",
+        "T-14-crossover-phase-and-registration.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-17-one-row-per-duplex.json",
+        "T-1d-scf-density-profile.json",
+        "T-1f-mean-field-fluctuation-corrections.json",
+        "T-25-window-resynthesis.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-4-maximum-usable-bias.json",
+        "T-60-collar-on-the-equilibrium-path.json",
+        "T-96-flexure-array-packing.json"
+      ],
+      "writes": "T-118-window-resynthesis-two.json",
+      "declaredSources": null,
+      "reaches": [
+        "window/ResynthesisInputs.kt",
+        "window/SecondResynthesis.kt"
+      ],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "structure/Gen1Tile.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "window/ConstraintInterval.kt",
+        "window/ResynthesisInputs.kt",
+        "window/ResynthesisPhysics.kt",
+        "window/SecondResynthesis.kt",
+        "window/UpstreamResults.kt",
+        "window/WindowPhysics.kt",
+        "window/WindowResultRounding.kt",
+        "window/WindowResynthesisStudy.kt"
+      ]
+    },
+    "window/WindowResynthesisStudy.kt": {
+      "reads": [
+        "T-13-zero-bias-resting-position.json",
+        "T-14-crossover-phase-and-registration.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-17-one-row-per-duplex.json",
+        "T-1d-scf-density-profile.json",
+        "T-1f-mean-field-fluctuation-corrections.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-4-maximum-usable-bias.json"
+      ],
+      "directReads": [],
+      "transitiveReads": [
+        "T-13-zero-bias-resting-position.json",
+        "T-14-crossover-phase-and-registration.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-17-one-row-per-duplex.json",
+        "T-1d-scf-density-profile.json",
+        "T-1f-mean-field-fluctuation-corrections.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-4-maximum-usable-bias.json"
+      ],
+      "writes": "T-25-window-resynthesis.json",
+      "declaredSources": [
+        "T-13",
+        "T-14",
+        "T-16",
+        "T-17",
+        "T-1d",
+        "T-1f",
+        "T-3b",
+        "T-4"
+      ],
+      "reaches": [
+        "window/ResynthesisInputs.kt"
+      ],
+      "reachesFiles": [
+        "Physics.kt",
+        "window/ConstraintInterval.kt",
+        "window/DesignWindowStudy.kt",
+        "window/ResynthesisInputs.kt",
+        "window/ResynthesisPhysics.kt",
+        "window/UpstreamResults.kt",
+        "window/WindowPhysics.kt",
+        "window/WindowResultRounding.kt"
+      ]
+    }
+  },
+  "helpers": {
+    "window/ResynthesisInputs.kt": {
+      "reads": [
+        "T-13-zero-bias-resting-position.json",
+        "T-14-crossover-phase-and-registration.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-17-one-row-per-duplex.json",
+        "T-1d-scf-density-profile.json",
+        "T-1f-mean-field-fluctuation-corrections.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-4-maximum-usable-bias.json"
+      ],
+      "directReads": [
+        "T-13-zero-bias-resting-position.json",
+        "T-14-crossover-phase-and-registration.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-17-one-row-per-duplex.json",
+        "T-1d-scf-density-profile.json",
+        "T-1f-mean-field-fluctuation-corrections.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-4-maximum-usable-bias.json"
+      ],
+      "transitiveReads": [],
+      "writes": null,
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "window/UpstreamResults.kt",
+        "window/WindowPhysics.kt",
+        "window/WindowResultRounding.kt"
+      ]
+    },
+    "window/SecondResynthesis.kt": {
+      "reads": [
+        "T-108-desired-stroke-reach.json",
+        "T-13-zero-bias-resting-position.json",
+        "T-14-crossover-phase-and-registration.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-17-one-row-per-duplex.json",
+        "T-1d-scf-density-profile.json",
+        "T-1f-mean-field-fluctuation-corrections.json",
+        "T-25-window-resynthesis.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-4-maximum-usable-bias.json",
+        "T-60-collar-on-the-equilibrium-path.json",
+        "T-96-flexure-array-packing.json"
+      ],
+      "directReads": [
+        "T-108-desired-stroke-reach.json",
+        "T-25-window-resynthesis.json",
+        "T-60-collar-on-the-equilibrium-path.json",
+        "T-96-flexure-array-packing.json"
+      ],
+      "transitiveReads": [
+        "T-13-zero-bias-resting-position.json",
+        "T-14-crossover-phase-and-registration.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-17-one-row-per-duplex.json",
+        "T-1d-scf-density-profile.json",
+        "T-1f-mean-field-fluctuation-corrections.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-4-maximum-usable-bias.json"
+      ],
+      "writes": null,
+      "declaredSources": null,
+      "reaches": [
+        "window/ResynthesisInputs.kt"
+      ],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "structure/Gen1Tile.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "window/ConstraintInterval.kt",
+        "window/ResynthesisInputs.kt",
+        "window/ResynthesisPhysics.kt",
+        "window/UpstreamResults.kt",
+        "window/WindowPhysics.kt",
+        "window/WindowResultRounding.kt"
+      ]
+    }
+  },
+  "tests": {
+    "brush/FirstMomentThicknessTest.kt": {
+      "reads": [
+        "T-1d-scf-density-profile.json"
+      ],
+      "directReads": [
+        "T-1d-scf-density-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": null,
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "brush/BrushStiffnessStudy.kt",
+        "brush/FirstMomentThickness.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/SelfConsistentField.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt"
+      ]
+    },
+    "coupling/CoupledCharacteristicTest.kt": {
+      "reads": [
+        "T-3-stroke-and-blocking-force.json"
+      ],
+      "directReads": [
+        "T-3-stroke-and-blocking-force.json"
+      ],
+      "transitiveReads": [],
+      "writes": null,
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "coupling/CoupledOperatingPoint.kt",
+        "coupling/CouplingRequirement.kt"
+      ]
+    },
+    "window/ResynthesisTransferTest.kt": {
+      "reads": [
+        "T-13-zero-bias-resting-position.json",
+        "T-14-crossover-phase-and-registration.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-17-one-row-per-duplex.json",
+        "T-1d-scf-density-profile.json",
+        "T-1f-mean-field-fluctuation-corrections.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-4-maximum-usable-bias.json"
+      ],
+      "directReads": [],
+      "transitiveReads": [
+        "T-13-zero-bias-resting-position.json",
+        "T-14-crossover-phase-and-registration.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-17-one-row-per-duplex.json",
+        "T-1d-scf-density-profile.json",
+        "T-1f-mean-field-fluctuation-corrections.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-4-maximum-usable-bias.json"
+      ],
+      "writes": null,
+      "declaredSources": null,
+      "reaches": [
+        "window/ResynthesisInputs.kt"
+      ],
+      "reachesFiles": [
+        "window/ConstraintInterval.kt",
+        "window/ResynthesisInputs.kt",
+        "window/ResynthesisPhysics.kt",
+        "window/UpstreamResults.kt",
+        "window/WindowPhysics.kt",
+        "window/WindowResultRounding.kt"
+      ]
+    },
+    "window/SecondResynthesisTest.kt": {
+      "reads": [
+        "T-108-desired-stroke-reach.json",
+        "T-13-zero-bias-resting-position.json",
+        "T-14-crossover-phase-and-registration.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-17-one-row-per-duplex.json",
+        "T-1d-scf-density-profile.json",
+        "T-1f-mean-field-fluctuation-corrections.json",
+        "T-25-window-resynthesis.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-4-maximum-usable-bias.json",
+        "T-60-collar-on-the-equilibrium-path.json",
+        "T-96-flexure-array-packing.json"
+      ],
+      "directReads": [],
+      "transitiveReads": [
+        "T-108-desired-stroke-reach.json",
+        "T-13-zero-bias-resting-position.json",
+        "T-14-crossover-phase-and-registration.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-17-one-row-per-duplex.json",
+        "T-1d-scf-density-profile.json",
+        "T-1f-mean-field-fluctuation-corrections.json",
+        "T-25-window-resynthesis.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-4-maximum-usable-bias.json",
+        "T-60-collar-on-the-equilibrium-path.json",
+        "T-96-flexure-array-packing.json"
+      ],
+      "writes": null,
+      "declaredSources": null,
+      "reaches": [
+        "window/ResynthesisInputs.kt",
+        "window/SecondResynthesis.kt"
+      ],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/CoupledStandoffJoint.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "structure/Gen1Tile.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "window/ConstraintInterval.kt",
+        "window/ResynthesisInputs.kt",
+        "window/ResynthesisPhysics.kt",
+        "window/SecondResynthesis.kt",
+        "window/UpstreamResults.kt",
+        "window/WindowPhysics.kt",
+        "window/WindowResultRounding.kt"
+      ]
+    },
+    "window/UpstreamTransferTest.kt": {
+      "reads": [
+        "T-14-crossover-phase-and-registration.json",
+        "T-1d-scf-density-profile.json",
+        "T-3-stroke-and-blocking-force.json"
+      ],
+      "directReads": [
+        "T-14-crossover-phase-and-registration.json",
+        "T-1d-scf-density-profile.json",
+        "T-3-stroke-and-blocking-force.json"
+      ],
+      "transitiveReads": [],
+      "writes": null,
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PolymerLayerPartitioning.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "poroelastic/DrainageGeometry.kt",
+        "poroelastic/DrainageResponse.kt",
+        "poroelastic/LayerPermeability.kt",
+        "poroelastic/Water.kt",
+        "window/ConstraintInterval.kt",
+        "window/UpstreamResults.kt",
+        "window/WindowPhysics.kt"
+      ]
+    }
+  },
+  "readersOf": {
+    "T-108-desired-stroke-reach.json": [
+      "anchoring/RangeRobustPlacementStudy.kt",
+      "window/SecondResynthesisStudy.kt"
+    ],
+    "T-119-unused-junction-site.json": [
+      "anchoring/UpwardRootPlacementStudy.kt",
+      "structure/StackedArmSheetStudy.kt"
+    ],
+    "T-124-torsion-feasible-routing.json": [
+      "anchoring/CrossbarArrayPlacementStudy.kt",
+      "anchoring/CrossbarTrioExistenceStudy.kt",
+      "anchoring/PinnedLegBudgetStudy.kt"
+    ],
+    "T-125-upward-root-placement.json": [
+      "anchoring/ArmSlabClearanceStudy.kt",
+      "anchoring/CrossbarArrayPlacementStudy.kt",
+      "anchoring/OutputElementPlacementStudy.kt",
+      "anchoring/PathCountConsistencyStudy.kt",
+      "anchoring/PinnedLegBudgetStudy.kt",
+      "anchoring/PlanToleranceStudy.kt",
+      "anchoring/RangeRobustPlacementStudy.kt",
+      "anchoring/SeamWeaveStudy.kt",
+      "anchoring/TwoPerRowPlacementStudy.kt",
+      "anchoring/WeaveExclusionWidthStudy.kt",
+      "electrostatics/DuplexPairSeparationStudy.kt"
+    ],
+    "T-127-crossbar-trio-existence.json": [
+      "anchoring/CrossbarArrayPlacementStudy.kt",
+      "anchoring/PinnedLegBudgetStudy.kt",
+      "anchoring/PlanToleranceStudy.kt"
+    ],
+    "T-13-zero-bias-resting-position.json": [
+      "window/SecondResynthesisStudy.kt",
+      "window/WindowResynthesisStudy.kt"
+    ],
+    "T-130-crossbar-array-placement.json": [
+      "anchoring/OutputElementPlacementStudy.kt",
+      "anchoring/PinnedLegBudgetStudy.kt"
+    ],
+    "T-136-two-per-row-placement.json": [
+      "anchoring/PathCountConsistencyStudy.kt"
+    ],
+    "T-14-crossover-phase-and-registration.json": [
+      "window/DesignWindowStudy.kt",
+      "window/SecondResynthesisStudy.kt",
+      "window/WindowResynthesisStudy.kt"
+    ],
+    "T-16-output-coupling-stiffness.json": [
+      "window/SecondResynthesisStudy.kt",
+      "window/WindowResynthesisStudy.kt"
+    ],
+    "T-17-one-row-per-duplex.json": [
+      "window/SecondResynthesisStudy.kt",
+      "window/WindowResynthesisStudy.kt"
+    ],
+    "T-1d-scf-density-profile.json": [
+      "window/DesignWindowStudy.kt",
+      "window/SecondResynthesisStudy.kt",
+      "window/WindowResynthesisStudy.kt"
+    ],
+    "T-1f-mean-field-fluctuation-corrections.json": [
+      "window/SecondResynthesisStudy.kt",
+      "window/WindowResynthesisStudy.kt"
+    ],
+    "T-25-window-resynthesis.json": [
+      "window/SecondResynthesisStudy.kt"
+    ],
+    "T-3-stroke-and-blocking-force.json": [
+      "coupling/OutputCouplingStudy.kt",
+      "window/DesignWindowStudy.kt"
+    ],
+    "T-3b-tile-edge-load-profile.json": [
+      "anchoring/ArmSlabClearanceStudy.kt",
+      "anchoring/CrossbarArrayPlacementStudy.kt",
+      "anchoring/PlanToleranceStudy.kt",
+      "anchoring/RangeRobustPlacementStudy.kt",
+      "anchoring/TwoPerRowPlacementStudy.kt",
+      "anchoring/UpwardRootPlacementStudy.kt",
+      "coupling/BuildableStiffnessRatioStudy.kt",
+      "coupling/NonUniformCouplingStudy.kt",
+      "coupling/OneRowPerDuplexStudy.kt",
+      "coupling/RobustDistributionStudy.kt",
+      "coupling/SingleColumnFlatnessStudy.kt",
+      "structure/ConnectivityCeilingPlateStudy.kt",
+      "structure/ConsumedCrossoverSheetStudy.kt",
+      "structure/StackedArmSheetStudy.kt",
+      "window/SecondResynthesisStudy.kt",
+      "window/WindowResynthesisStudy.kt"
+    ],
+    "T-4-maximum-usable-bias.json": [
+      "crossover/ConcentratedCrossoverStudy.kt",
+      "window/SecondResynthesisStudy.kt",
+      "window/WindowResynthesisStudy.kt"
+    ],
+    "T-60-collar-on-the-equilibrium-path.json": [
+      "window/SecondResynthesisStudy.kt"
+    ],
+    "T-7-poroelastic-drainage.json": [
+      "structure/StackedArmSheetStudy.kt"
+    ],
+    "T-96-flexure-array-packing.json": [
+      "window/SecondResynthesisStudy.kt"
+    ]
+  },
+  "testReadersOf": {
+    "T-108-desired-stroke-reach.json": [
+      "window/SecondResynthesisTest.kt"
+    ],
+    "T-13-zero-bias-resting-position.json": [
+      "window/ResynthesisTransferTest.kt",
+      "window/SecondResynthesisTest.kt"
+    ],
+    "T-14-crossover-phase-and-registration.json": [
+      "window/ResynthesisTransferTest.kt",
+      "window/SecondResynthesisTest.kt",
+      "window/UpstreamTransferTest.kt"
+    ],
+    "T-16-output-coupling-stiffness.json": [
+      "window/ResynthesisTransferTest.kt",
+      "window/SecondResynthesisTest.kt"
+    ],
+    "T-17-one-row-per-duplex.json": [
+      "window/ResynthesisTransferTest.kt",
+      "window/SecondResynthesisTest.kt"
+    ],
+    "T-1d-scf-density-profile.json": [
+      "brush/FirstMomentThicknessTest.kt",
+      "window/ResynthesisTransferTest.kt",
+      "window/SecondResynthesisTest.kt",
+      "window/UpstreamTransferTest.kt"
+    ],
+    "T-1f-mean-field-fluctuation-corrections.json": [
+      "window/ResynthesisTransferTest.kt",
+      "window/SecondResynthesisTest.kt"
+    ],
+    "T-25-window-resynthesis.json": [
+      "window/SecondResynthesisTest.kt"
+    ],
+    "T-3-stroke-and-blocking-force.json": [
+      "coupling/CoupledCharacteristicTest.kt",
+      "window/UpstreamTransferTest.kt"
+    ],
+    "T-3b-tile-edge-load-profile.json": [
+      "window/ResynthesisTransferTest.kt",
+      "window/SecondResynthesisTest.kt"
+    ],
+    "T-4-maximum-usable-bias.json": [
+      "window/ResynthesisTransferTest.kt",
+      "window/SecondResynthesisTest.kt"
+    ],
+    "T-60-collar-on-the-equilibrium-path.json": [
+      "window/SecondResynthesisTest.kt"
+    ],
+    "T-96-flexure-array-packing.json": [
+      "window/SecondResynthesisTest.kt"
+    ]
+  },
+  "writtenBy": {
+    "P-18-determined-precision.json": [
+      "brush/DeterminedPrecisionStudy.kt"
+    ],
+    "P-3-peg-material-parameters.json": [
+      "material/PegMaterialStudy.kt"
+    ],
+    "P-6-solvent-quality-vs-salt.json": [
+      "material/SolventQualitySaltStudy.kt"
+    ],
+    "P-9-grafted-chi.json": [
+      "material/GraftedChiStudy.kt"
+    ],
+    "T-1-layer-stiffness.json": [
+      "brush/BrushStiffnessStudy.kt"
+    ],
+    "T-10-discrete-lattice-tile.json": [
+      "structure/DiscreteLatticeTileStudy.kt"
+    ],
+    "T-101-single-column-flatness.json": [
+      "coupling/SingleColumnFlatnessStudy.kt"
+    ],
+    "T-106-truss-cap.json": [
+      "anchoring/TrussCapStudy.kt"
+    ],
+    "T-108-desired-stroke-reach.json": [
+      "synthesis/DesiredStrokeReachStudy.kt"
+    ],
+    "T-110-consumed-crossover-sheet.json": [
+      "structure/ConsumedCrossoverSheetStudy.kt"
+    ],
+    "T-113-non-uniform-coupling.json": [
+      "coupling/NonUniformCouplingStudy.kt"
+    ],
+    "T-116-hinge-arm-array-packing.json": [
+      "anchoring/HingeArmArrayPackingStudy.kt"
+    ],
+    "T-117-crossbar-junction-trio.json": [
+      "anchoring/CrossbarJunctionTrioStudy.kt"
+    ],
+    "T-118-window-resynthesis-two.json": [
+      "window/SecondResynthesisStudy.kt"
+    ],
+    "T-119-unused-junction-site.json": [
+      "anchoring/UnusedJunctionSiteStudy.kt"
+    ],
+    "T-12-lateral-confinement.json": [
+      "anchoring/LateralConfinementStudy.kt"
+    ],
+    "T-120-connectivity-ceiling-plate.json": [
+      "structure/ConnectivityCeilingPlateStudy.kt"
+    ],
+    "T-121-stacked-arm-sheet.json": [
+      "structure/StackedArmSheetStudy.kt"
+    ],
+    "T-122-buildable-stiffness-ratio.json": [
+      "coupling/BuildableStiffnessRatioStudy.kt"
+    ],
+    "T-123-robust-distribution.json": [
+      "coupling/RobustDistributionStudy.kt"
+    ],
+    "T-124-torsion-feasible-routing.json": [
+      "anchoring/TorsionFeasibleRoutingStudy.kt"
+    ],
+    "T-125-upward-root-placement.json": [
+      "anchoring/UpwardRootPlacementStudy.kt"
+    ],
+    "T-126-arm-slab-clearance.json": [
+      "anchoring/ArmSlabClearanceStudy.kt"
+    ],
+    "T-127-crossbar-trio-existence.json": [
+      "anchoring/CrossbarTrioExistenceStudy.kt"
+    ],
+    "T-129-range-robust-placement.json": [
+      "anchoring/RangeRobustPlacementStudy.kt"
+    ],
+    "T-13-zero-bias-resting-position.json": [
+      "anchoring/ZeroBiasRestingPositionStudy.kt"
+    ],
+    "T-130-crossbar-array-placement.json": [
+      "anchoring/CrossbarArrayPlacementStudy.kt"
+    ],
+    "T-132-pinned-leg-budget.json": [
+      "anchoring/PinnedLegBudgetStudy.kt"
+    ],
+    "T-133-output-element-placement.json": [
+      "anchoring/OutputElementPlacementStudy.kt"
+    ],
+    "T-134-plan-tolerance.json": [
+      "anchoring/PlanToleranceStudy.kt"
+    ],
+    "T-135-output-element-recommendation.json": [
+      "synthesis/OutputElementRecommendationStudy.kt"
+    ],
+    "T-136-two-per-row-placement.json": [
+      "anchoring/TwoPerRowPlacementStudy.kt"
+    ],
+    "T-137-weave-exclusion-width.json": [
+      "anchoring/WeaveExclusionWidthStudy.kt"
+    ],
+    "T-138-path-count-consistency.json": [
+      "anchoring/PathCountConsistencyStudy.kt"
+    ],
+    "T-139-duplex-pair-separation.json": [
+      "electrostatics/DuplexPairSeparationStudy.kt"
+    ],
+    "T-14-crossover-phase-and-registration.json": [
+      "structure/CrossoverRegistrationStudy.kt"
+    ],
+    "T-140-seam-weave-congruence.json": [
+      "anchoring/SeamWeaveStudy.kt"
+    ],
+    "T-15-in-plane-shear-lag.json": [
+      "structure/InPlaneLoadPathStudy.kt"
+    ],
+    "T-16-output-coupling-stiffness.json": [
+      "coupling/OutputCouplingStudy.kt"
+    ],
+    "T-17-one-row-per-duplex.json": [
+      "coupling/OneRowPerDuplexStudy.kt"
+    ],
+    "T-19-attachment-entry-topology.json": [
+      "structure/EntryTopologyStudy.kt"
+    ],
+    "T-1c-crossover-valid-layer-response.json": [
+      "brush/CrossoverLayerStudy.kt"
+    ],
+    "T-1d-scf-density-profile.json": [
+      "brush/ScfDensityProfileStudy.kt"
+    ],
+    "T-1e-first-moment-convention.json": [
+      "brush/FirstMomentConventionStudy.kt"
+    ],
+    "T-1f-mean-field-fluctuation-corrections.json": [
+      "brush/FluctuationCorrectionStudy.kt"
+    ],
+    "T-2-design-window.json": [
+      "window/DesignWindowStudy.kt"
+    ],
+    "T-21-concentrated-crossover.json": [
+      "crossover/ConcentratedCrossoverStudy.kt"
+    ],
+    "T-23-two-sided-coupling.json": [
+      "anchoring/TwoSidedCouplingStudy.kt"
+    ],
+    "T-25-window-resynthesis.json": [
+      "window/WindowResynthesisStudy.kt"
+    ],
+    "T-3-stroke-and-blocking-force.json": [
+      "actuator/StrokeAndBlockingForceStudy.kt"
+    ],
+    "T-30-flexure-end-joint.json": [
+      "anchoring/FlexureEndJointStudy.kt"
+    ],
+    "T-3a-nonlinear-pb-profile.json": [
+      "electrostatics/NonlinearPbProfileStudy.kt"
+    ],
+    "T-3b-tile-edge-load-profile.json": [
+      "electrostatics/TileEdgeLoadProfileStudy.kt"
+    ],
+    "T-4-maximum-usable-bias.json": [
+      "actuator/MaximumUsableBiasStudy.kt"
+    ],
+    "T-40-standoff-base-joint.json": [
+      "anchoring/StandoffBaseJointStudy.kt"
+    ],
+    "T-5-load-distribution.json": [
+      "structure/TileLoadDistributionStudy.kt"
+    ],
+    "T-5b-tile-flatness.json": [
+      "structure/TileFlatnessStudy.kt"
+    ],
+    "T-6-mean-field-screening-validity.json": [
+      "electrostatics/MeanFieldValidityStudy.kt"
+    ],
+    "T-60-collar-on-the-equilibrium-path.json": [
+      "actuator/CollarEquilibriumPathStudy.kt"
+    ],
+    "T-65-coupled-standoff-joint.json": [
+      "anchoring/CoupledStandoffJointStudy.kt"
+    ],
+    "T-67-perpendicular-junction-routing.json": [
+      "anchoring/PerpendicularJunctionStudy.kt"
+    ],
+    "T-7-poroelastic-drainage.json": [
+      "poroelastic/PoroelasticDrainageStudy.kt"
+    ],
+    "T-70-guided-arm-anchorage.json": [
+      "anchoring/GuidedArmAnchorageStudy.kt"
+    ],
+    "T-71-backbone-torsion-closure.json": [
+      "anchoring/BackboneTorsionStudy.kt"
+    ],
+    "T-72-triangulated-standoff.json": [
+      "anchoring/TriangulatedStandoffStudy.kt"
+    ],
+    "T-75-flexure-mounting-sense.json": [
+      "anchoring/FlexureMountingSenseStudy.kt"
+    ],
+    "T-76-softening-coupling-stability.json": [
+      "stability/SofteningCouplingStabilityStudy.kt"
+    ],
+    "T-79-two-spring-elastica.json": [
+      "anchoring/TwoSpringElasticaStudy.kt"
+    ],
+    "T-8-tile-positional-variance.json": [
+      "structure/TilePositionalVarianceStudy.kt"
+    ],
+    "T-81-hinge-line-census.json": [
+      "anchoring/HingeLineCensusStudy.kt"
+    ],
+    "T-96-flexure-array-packing.json": [
+      "anchoring/FlexureArrayPackingStudy.kt"
+    ],
+    "T-97-paired-perpendicular-junction.json": [
+      "anchoring/PairedPerpendicularJunctionStudy.kt"
+    ],
+    "T-99-flexure-count-hinge-trade.json": [
+      "anchoring/FlexureCountHingeTradeStudy.kt"
+    ]
+  },
+  "resultFiles": [
+    "P-18-determined-precision.json",
+    "P-22-result-reader-census.json",
+    "P-3-peg-material-parameters.json",
+    "P-6-solvent-quality-vs-salt.json",
+    "P-9-grafted-chi.json",
+    "T-1-layer-stiffness.json",
+    "T-10-discrete-lattice-tile.json",
+    "T-101-single-column-flatness.json",
+    "T-106-truss-cap.json",
+    "T-108-desired-stroke-reach.json",
+    "T-110-consumed-crossover-sheet.json",
+    "T-113-non-uniform-coupling.json",
+    "T-116-hinge-arm-array-packing.json",
+    "T-117-crossbar-junction-trio.json",
+    "T-118-window-resynthesis-two.json",
+    "T-119-literature-queries.json",
+    "T-119-unused-junction-site.json",
+    "T-12-lateral-confinement.json",
+    "T-120-connectivity-ceiling-plate.json",
+    "T-121-stacked-arm-sheet.json",
+    "T-122-buildable-stiffness-ratio.json",
+    "T-123-robust-distribution.json",
+    "T-124-torsion-feasible-routing.json",
+    "T-125-upward-root-placement.json",
+    "T-126-arm-slab-clearance.json",
+    "T-127-crossbar-trio-existence.json",
+    "T-129-range-robust-placement.json",
+    "T-13-zero-bias-resting-position.json",
+    "T-130-crossbar-array-placement.json",
+    "T-132-pinned-leg-budget.json",
+    "T-133-output-element-placement.json",
+    "T-134-plan-tolerance.json",
+    "T-135-output-element-recommendation.json",
+    "T-136-two-per-row-placement.json",
+    "T-137-weave-exclusion-width.json",
+    "T-138-path-count-consistency.json",
+    "T-139-duplex-pair-separation.json",
+    "T-14-crossover-phase-and-registration.json",
+    "T-140-seam-weave-congruence.json",
+    "T-147-third-answers-synthesis.json",
+    "T-15-in-plane-shear-lag.json",
+    "T-16-output-coupling-stiffness.json",
+    "T-17-one-row-per-duplex.json",
+    "T-19-attachment-entry-topology.json",
+    "T-1c-crossover-valid-layer-response.json",
+    "T-1d-scf-density-profile.json",
+    "T-1e-first-moment-convention.json",
+    "T-1f-mean-field-fluctuation-corrections.json",
+    "T-2-design-window.json",
+    "T-21-concentrated-crossover.json",
+    "T-23-two-sided-coupling.json",
+    "T-25-window-resynthesis.json",
+    "T-3-stroke-and-blocking-force.json",
+    "T-30-flexure-end-joint.json",
+    "T-3a-nonlinear-pb-profile.json",
+    "T-3b-tile-edge-load-profile.json",
+    "T-4-maximum-usable-bias.json",
+    "T-40-standoff-base-joint.json",
+    "T-5-load-distribution.json",
+    "T-5b-tile-flatness.json",
+    "T-6-mean-field-screening-validity.json",
+    "T-60-collar-on-the-equilibrium-path.json",
+    "T-65-coupled-standoff-joint.json",
+    "T-67-perpendicular-junction-routing.json",
+    "T-7-poroelastic-drainage.json",
+    "T-70-guided-arm-anchorage.json",
+    "T-71-backbone-torsion-closure.json",
+    "T-72-triangulated-standoff.json",
+    "T-75-flexure-mounting-sense.json",
+    "T-76-softening-coupling-stability.json",
+    "T-79-two-spring-elastica.json",
+    "T-8-tile-positional-variance.json",
+    "T-81-hinge-line-census.json",
+    "T-96-flexure-array-packing.json",
+    "T-97-paired-perpendicular-junction.json",
+    "T-99-flexure-count-hinge-trade.json"
+  ],
+  "unwrittenResultFiles": [
+    "P-22-result-reader-census.json",
+    "T-119-literature-queries.json",
+    "T-147-third-answers-synthesis.json"
+  ],
+  "missingResultFiles": [],
+  "roundingSites": [
+    {
+      "site": "actuator/ActuatorResultRounding.kt",
+      "studies": [
+        "actuator/CollarEquilibriumPathStudy.kt",
+        "actuator/MaximumUsableBiasStudy.kt",
+        "actuator/StrokeAndBlockingForceStudy.kt",
+        "crossover/ConcentratedCrossoverStudy.kt",
+        "stability/SofteningCouplingStabilityStudy.kt"
+      ],
+      "emits": [
+        "T-21-concentrated-crossover.json",
+        "T-3-stroke-and-blocking-force.json",
+        "T-4-maximum-usable-bias.json",
+        "T-60-collar-on-the-equilibrium-path.json",
+        "T-76-softening-coupling-stability.json"
+      ],
+      "downstreamResultFiles": [
+        "T-118-window-resynthesis-two.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-2-design-window.json",
+        "T-25-window-resynthesis.json"
+      ],
+      "testsReadingThem": [
+        "coupling/CoupledCharacteristicTest.kt",
+        "window/ResynthesisTransferTest.kt",
+        "window/SecondResynthesisTest.kt",
+        "window/UpstreamTransferTest.kt"
+      ]
+    },
+    {
+      "site": "coupling/CouplingResultRounding.kt",
+      "studies": [
+        "coupling/BuildableStiffnessRatioStudy.kt",
+        "coupling/NonUniformCouplingStudy.kt",
+        "coupling/OneRowPerDuplexStudy.kt",
+        "coupling/OutputCouplingStudy.kt",
+        "coupling/RobustDistributionStudy.kt",
+        "coupling/SingleColumnFlatnessStudy.kt"
+      ],
+      "emits": [
+        "T-101-single-column-flatness.json",
+        "T-113-non-uniform-coupling.json",
+        "T-122-buildable-stiffness-ratio.json",
+        "T-123-robust-distribution.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-17-one-row-per-duplex.json"
+      ],
+      "downstreamResultFiles": [
+        "T-118-window-resynthesis-two.json",
+        "T-25-window-resynthesis.json"
+      ],
+      "testsReadingThem": [
+        "window/ResynthesisTransferTest.kt",
+        "window/SecondResynthesisTest.kt"
+      ]
+    },
+    {
+      "site": "structure/ResultRounding.kt",
+      "studies": [
+        "anchoring/ArmSlabClearanceStudy.kt",
+        "anchoring/BackboneTorsionStudy.kt",
+        "anchoring/CoupledStandoffJointStudy.kt",
+        "anchoring/CrossbarArrayPlacementStudy.kt",
+        "anchoring/CrossbarJunctionTrioStudy.kt",
+        "anchoring/CrossbarTrioExistenceStudy.kt",
+        "anchoring/FlexureArrayPackingStudy.kt",
+        "anchoring/FlexureCountHingeTradeStudy.kt",
+        "anchoring/FlexureEndJointStudy.kt",
+        "anchoring/FlexureMountingSenseStudy.kt",
+        "anchoring/GuidedArmAnchorageStudy.kt",
+        "anchoring/HingeArmArrayPackingStudy.kt",
+        "anchoring/HingeLineCensusStudy.kt",
+        "anchoring/LateralConfinementStudy.kt",
+        "anchoring/OutputElementPlacementStudy.kt",
+        "anchoring/PairedPerpendicularJunctionStudy.kt",
+        "anchoring/PathCountConsistencyStudy.kt",
+        "anchoring/PerpendicularJunctionStudy.kt",
+        "anchoring/PinnedLegBudgetStudy.kt",
+        "anchoring/PlanToleranceStudy.kt",
+        "anchoring/RangeRobustPlacementStudy.kt",
+        "anchoring/SeamWeaveStudy.kt",
+        "anchoring/StandoffBaseJointStudy.kt",
+        "anchoring/TorsionFeasibleRoutingStudy.kt",
+        "anchoring/TriangulatedStandoffStudy.kt",
+        "anchoring/TrussCapStudy.kt",
+        "anchoring/TwoPerRowPlacementStudy.kt",
+        "anchoring/TwoSidedCouplingStudy.kt",
+        "anchoring/TwoSpringElasticaStudy.kt",
+        "anchoring/UnusedJunctionSiteStudy.kt",
+        "anchoring/UpwardRootPlacementStudy.kt",
+        "anchoring/WeaveExclusionWidthStudy.kt",
+        "anchoring/ZeroBiasRestingPositionStudy.kt",
+        "brush/DeterminedPrecisionStudy.kt",
+        "brush/FirstMomentConventionStudy.kt",
+        "brush/FluctuationCorrectionStudy.kt",
+        "brush/ScfDensityProfileStudy.kt",
+        "electrostatics/DuplexPairSeparationStudy.kt",
+        "electrostatics/NonlinearPbProfileStudy.kt",
+        "electrostatics/TileEdgeLoadProfileStudy.kt",
+        "structure/ConnectivityCeilingPlateStudy.kt",
+        "structure/ConsumedCrossoverSheetStudy.kt",
+        "structure/CrossoverRegistrationStudy.kt",
+        "structure/DiscreteLatticeTileStudy.kt",
+        "structure/EntryTopologyStudy.kt",
+        "structure/InPlaneLoadPathStudy.kt",
+        "structure/StackedArmSheetStudy.kt",
+        "structure/TileFlatnessStudy.kt",
+        "structure/TileLoadDistributionStudy.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "synthesis/DesiredStrokeReachStudy.kt",
+        "synthesis/OutputElementRecommendationStudy.kt"
+      ],
+      "emits": [
+        "P-18-determined-precision.json",
+        "T-10-discrete-lattice-tile.json",
+        "T-106-truss-cap.json",
+        "T-108-desired-stroke-reach.json",
+        "T-110-consumed-crossover-sheet.json",
+        "T-116-hinge-arm-array-packing.json",
+        "T-117-crossbar-junction-trio.json",
+        "T-119-unused-junction-site.json",
+        "T-12-lateral-confinement.json",
+        "T-120-connectivity-ceiling-plate.json",
+        "T-121-stacked-arm-sheet.json",
+        "T-124-torsion-feasible-routing.json",
+        "T-125-upward-root-placement.json",
+        "T-126-arm-slab-clearance.json",
+        "T-127-crossbar-trio-existence.json",
+        "T-129-range-robust-placement.json",
+        "T-13-zero-bias-resting-position.json",
+        "T-130-crossbar-array-placement.json",
+        "T-132-pinned-leg-budget.json",
+        "T-133-output-element-placement.json",
+        "T-134-plan-tolerance.json",
+        "T-135-output-element-recommendation.json",
+        "T-136-two-per-row-placement.json",
+        "T-137-weave-exclusion-width.json",
+        "T-138-path-count-consistency.json",
+        "T-139-duplex-pair-separation.json",
+        "T-14-crossover-phase-and-registration.json",
+        "T-140-seam-weave-congruence.json",
+        "T-15-in-plane-shear-lag.json",
+        "T-19-attachment-entry-topology.json",
+        "T-1d-scf-density-profile.json",
+        "T-1e-first-moment-convention.json",
+        "T-1f-mean-field-fluctuation-corrections.json",
+        "T-23-two-sided-coupling.json",
+        "T-30-flexure-end-joint.json",
+        "T-3a-nonlinear-pb-profile.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-40-standoff-base-joint.json",
+        "T-5-load-distribution.json",
+        "T-5b-tile-flatness.json",
+        "T-65-coupled-standoff-joint.json",
+        "T-67-perpendicular-junction-routing.json",
+        "T-70-guided-arm-anchorage.json",
+        "T-71-backbone-torsion-closure.json",
+        "T-72-triangulated-standoff.json",
+        "T-75-flexure-mounting-sense.json",
+        "T-79-two-spring-elastica.json",
+        "T-8-tile-positional-variance.json",
+        "T-81-hinge-line-census.json",
+        "T-96-flexure-array-packing.json",
+        "T-97-paired-perpendicular-junction.json",
+        "T-99-flexure-count-hinge-trade.json"
+      ],
+      "downstreamResultFiles": [
+        "T-101-single-column-flatness.json",
+        "T-113-non-uniform-coupling.json",
+        "T-118-window-resynthesis-two.json",
+        "T-122-buildable-stiffness-ratio.json",
+        "T-123-robust-distribution.json",
+        "T-17-one-row-per-duplex.json",
+        "T-2-design-window.json",
+        "T-25-window-resynthesis.json"
+      ],
+      "testsReadingThem": [
+        "brush/FirstMomentThicknessTest.kt",
+        "window/ResynthesisTransferTest.kt",
+        "window/SecondResynthesisTest.kt",
+        "window/UpstreamTransferTest.kt"
+      ]
+    },
+    {
+      "site": "window/WindowResultRounding.kt",
+      "studies": [
+        "window/DesignWindowStudy.kt",
+        "window/SecondResynthesisStudy.kt",
+        "window/WindowResynthesisStudy.kt"
+      ],
+      "emits": [
+        "T-118-window-resynthesis-two.json",
+        "T-2-design-window.json",
+        "T-25-window-resynthesis.json"
+      ],
+      "downstreamResultFiles": [],
+      "testsReadingThem": [
+        "window/SecondResynthesisTest.kt"
+      ]
+    }
+  ]
+}

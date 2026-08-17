@@ -1,0 +1,215 @@
+{
+  "task": "T-147",
+  "claim": "C-0080",
+  "title": "Third synthesis of ANSWERS.md against iterations 8-16",
+  "iteration": 16,
+  "verificationType": "logical",
+  "maturity": "TRL 1-3. Nothing here is physics. No number is re-derived and no verdict of any claim is examined - only whether the synthesis reports it.",
+  "corpusAtAudit": {
+    "claimFiles": 74,
+    "challengeFiles": 84,
+    "highestClaim": "C-0078",
+    "highestChallenge": "CH-0092",
+    "unusedClaimNumbers": ["C-0038", "C-0043", "C-0044", "C-0045"]
+  },
+  "range": {
+    "claims": "C-0052..C-0078",
+    "challenges": "CH-0065..CH-0092",
+    "claimsInRange": 27,
+    "challengesInRange": 28,
+    "totalInRange": 55
+  },
+  "mechanicalBaseline": {
+    "tool": "tools/trace-answers.py",
+    "selfTests": 42,
+    "before": {"tokens": 613, "cited": 503, "elsewhere": 110, "absent": 0, "openAssertions": 1, "stale": 0},
+    "after":  {"tokens": 727, "cited": 620, "elsewhere": 107, "absent": 0, "openAssertions": 1, "stale": 0},
+    "note": "Both machine-checkable classes were already clean before this pass. Everything found here is a class neither half can see."
+  },
+  "coverageBefore": {
+    "claimsCitedByIdInAnswers": 16,
+    "claimsNotCited": 11,
+    "challengesCitedByIdInAnswers": 7,
+    "challengesNotCited": 21
+  },
+  "coverageAfter": {
+    "reflectedAlready": 23,
+    "carriedInByThisPass": 17,
+    "deliberatelyNotCarried": 15,
+    "sigmaResolvedItemsInRange": 0
+  },
+  "falsifier": {
+    "declared": "That C-0067's taxonomy is complete - that the only drift classes in this deliverable are (i) a number in no claim and (ii) a task asserted open that the queue says is closed, both reported at zero by tools/trace-answers.py. It fires if a THIRD class exists: a passage carrying a number that is still in the corpus (so reads CITED) and a verdict still literally what its owning claim says, which a LATER claim in the range has superseded.",
+    "fired": true,
+    "instancesFound": 5,
+    "instances": [
+      {
+        "passage": "SECTION 1: 'The escape is a reduced path count (30 paths ... buy 53x of margin)'",
+        "tracerReads": "CITED - 53 is in C-0072",
+        "supersededBy": "C-0074 / CH-0086",
+        "correctedTo": "68.9x, on a plan ceiling of 9.5350 nm and a margin of 1.76451 nm; a plan ceiling is a property of a placement, not of a count"
+      },
+      {
+        "passage": "SECTION 1: 'and it loses the flatness, 0.0706 -> 0.2603'",
+        "tracerReads": "CITED - 0.2603 is in C-0072",
+        "supersededBy": "C-0074",
+        "correctedTo": "0.2603 is a plan-rule upper bound; searched, equal springs reach 0.166653 (phase 24) / 0.172575 (phase 8) / 0.1670 (non-symmetric, every phase), and a distribution at C-0017's unchanged total reaches 0.06822 at phase 8. The escape costs the EQUAL SPRINGS, not the flatness."
+      },
+      {
+        "passage": "SECTION 1: 'pitch - d - L = 0.0256 nm' and the four floors beside it",
+        "tracerReads": "CITED - every figure is in C-0072",
+        "supersededBy": "CH-0089 / C-0076",
+        "correctedTo": "d is the girth of one free duplex and 2.69 nm is the packing distance of a crossover-bonded pair; at the measured phosphate contact 1.817276 nm the same clearance is +0.898333 nm, 35x the published margin, and three of the four floors stop firing. The exclusion width in this role is UNMEASURED; T-139 decides it."
+      },
+      {
+        "passage": "SECTION 3 row (g): 'The tolerance is a threshold, 34.6 % relative scatter (T-45 is still unmeasured)'",
+        "tracerReads": "CITED - 34.6 is in C-0060; the parenthesis carries no number at all",
+        "supersededBy": "C-0072 / CH-0084",
+        "correctedTo": "T-45 is answered from published measurement (Strauss et al. 2018, 48-95 %, mean 84 %); 43.6 % Bernoulli per-path scatter, 1.26x the threshold. The file's own SECTION 1 already said so, so the deliverable contradicted itself."
+      },
+      {
+        "passage": "SECTION 5 question 1: 'C-0032 makes it a requirement rather than a preference'",
+        "tracerReads": "CITED - every figure is in C-0032",
+        "supersededBy": "CH-0083",
+        "correctedTo": "The word 'requirement' was earned on a strain-SOFTENING load line; the recommended element strain-STIFFENS, clears the 2 mM static floors at 6 of 6, and its pull-in fold has never been searched. The 0.5 mM recommendation stands; the exclusion of 2 mM for the recommended device does not."
+      }
+    ],
+    "secondFinding": "One of the five - the T-45 parenthesis - is a SELF-contradiction: SECTION 1 and SECTION 3 of the same file disagreed. A tracer that checks the file against the corpus cannot see a file that disagrees with itself."
+  },
+  "groundRecheck": {
+    "rule": "C-0078: a verdict that survives can survive on a different reason; re-check the GROUND of every verdict whose premise was withdrawn.",
+    "checked": [
+      {
+        "verdict": "C-0071's recommendation stands as the best element the catalogue contains and NOT as a buildable design",
+        "originalGround": "a 0.0256 nm plan margin exceeded by four independent floors",
+        "groundNow": "WEAKER, not stronger. Three of the four floors stop firing at the measured girth (CH-0089); the surviving verdict rests on the exclusion width being UNMEASURED in the role it is used in, which no tolerance model repairs and T-139 can settle either way. The undemonstrated motif is unchanged and is the larger exposure.",
+        "action": "stated in place"
+      },
+      {
+        "verdict": "Task 4 PASS - both branches answered, each for a different load line",
+        "originalGround": "C-0018 (affine mandate) and C-0032 (strain-softening flexure)",
+        "groundNow": "Neither load line is the recommended element's. Q5 is a third law and its fold has never been searched (CH-0083, open). Every number of C-0018 and C-0032 stands; the sentence 'answered for the Gen-1 device' does not.",
+        "action": "qualified in the SECTION 2 table row and in the Task 4 prose"
+      },
+      {
+        "verdict": "0.5 mM should be specified rather than 2 mM",
+        "originalGround": "C-0032: at 2 mM the realised coupling sits ON its own fold, so 0.5 mM is a REQUIREMENT",
+        "groundNow": "The recommendation survives; the escalation to 'requirement' does not transfer to the recommended element, which clears the 2 mM static floors at 6 of 6. It survives on the other five routes and on the fold not existing at 0.5 mM.",
+        "action": "qualified in NDI question 1"
+      },
+      {
+        "verdict": "45 attachments as a 3 x 15 grid",
+        "originalGround": "C-0015 flatness shape argument, read by four downstream claims as a buildable station set",
+        "groundNow": "CH-0079 (open): on an armed tile 26 of the 45 stations do not exist and no rigid translation of a two- or three-column grid clears every row at any of 400 001 offsets. Latent behind the flexure-and-tie branch CH-0081/C-0069 removed from the output role; re-binds with it.",
+        "action": "carried into SECTION 3 row (f)"
+      },
+      {
+        "verdict": "T-31 - whether a flexure array on a shared superstructure stays as compliant as independent leaf springs",
+        "originalGround": "C-0023 models 45 flexures as independent",
+        "groundNow": "Moot at 45, because C-0041 shows the 45-path array has no plan view, and the recommended element has no flexure at all. Returns at 15 paths as a design choice.",
+        "action": "re-scoped in place in SECTION 5"
+      },
+      {
+        "verdict": "42 of 56 crossovers is the connected sheet's hinge budget (C-0054, C-0056, CH-0066, CH-0069)",
+        "originalGround": "a pigeonhole on the sheet's own built in-plane crossovers",
+        "groundNow": "Superseded by CH-0068/C-0055 - an upward hinge consumes NO interface crossover - which the deliverable already carries as 52-60. The 42 appears in the file only as the superseded foil.",
+        "action": "no edit; recorded as deliberately not carried"
+      }
+    ]
+  },
+  "audit": [
+    {"id": "C-0052", "disposition": "REFLECTED", "reason": "cited in SECTION 1's 90-degree routing narrative (the trio at 2 of 6 links)"},
+    {"id": "C-0053", "disposition": "NOT CARRIED", "reason": "hinge-arm array packing; its load-bearing premise (a hinge consumes an in-plane interface crossover) was falsified by C-0055's unused out-of-plane azimuth, which moved its 25 to 34. C-0067 already classified it branch interior and this pass agrees."},
+    {"id": "C-0054", "disposition": "NOT CARRIED", "reason": "consumed-crossover sheet; its 42-of-56 ceiling is exactly what CH-0068/C-0055 supersede, and the deliverable carries the successor (52-60, sheet in one piece at every count)"},
+    {"id": "C-0055", "disposition": "REFLECTED", "reason": "cited six times; the unused out-of-plane azimuth paragraph is its own"},
+    {"id": "C-0056", "disposition": "NOT CARRIED", "reason": "connectivity-ceiling plate validity; CH-0069 records itself as CONDITIONAL on CH-0068 and moot if it holds, and it does. Its transferable content is modelling discipline, already in CLAUDE.md."},
+    {"id": "C-0057", "disposition": "REFLECTED", "reason": "cited; the dihedral-closure QUALIFIED passage in SECTION 1"},
+    {"id": "C-0058", "disposition": "REFLECTED", "reason": "cited five times, SECTION 1 and SECTION 3 row (g)"},
+    {"id": "C-0059", "disposition": "REFLECTED", "reason": "cited in SECTION 1's routing paragraph"},
+    {"id": "C-0060", "disposition": "REFLECTED", "reason": "cited in row (g); its 34.6 % threshold is the one CH-0084 now tests"},
+    {"id": "C-0061", "disposition": "REFLECTED", "reason": "cited in Task 7 (the arms' 9.1 % drag)"},
+    {"id": "C-0062", "disposition": "REFLECTED", "reason": "cited in SECTION 1's routing paragraph, and its design table is now qualified in SECTION 5 by CH-0078"},
+    {"id": "C-0063", "disposition": "REFLECTED", "reason": "cited five times; the placement that carries the flatness answer"},
+    {"id": "C-0064", "disposition": "REFLECTED", "reason": "cited in row (g) (five states are four devices)"},
+    {"id": "C-0065", "disposition": "CARRIED IN", "reason": "its register finding - an array pins the axial coordinate a base misalignment floor is minimised over - now narrows the 90-degree routing bullet in SECTION 5"},
+    {"id": "C-0066", "disposition": "REFLECTED", "reason": "cited; its tie clearance is one of the two groupings of the same margin"},
+    {"id": "C-0067", "disposition": "NOT CARRIED", "reason": "process claim - the first reconciliation. The deliverable is its artifact rather than its subject; a reader answering NDI's questions needs none of it."},
+    {"id": "C-0068", "disposition": "REFLECTED", "reason": "cited in row (g) (flat over a range, 0.0789 / 0.0853 / 0.0896)"},
+    {"id": "C-0069", "disposition": "REFLECTED", "reason": "cited three times; Q5 and the plan budget"},
+    {"id": "C-0070", "disposition": "CARRIED IN", "reason": "confirms CH-0078 by composition (the 10 bp row is representable at no shared leg length); cited in the SECTION 5 routing bullet"},
+    {"id": "C-0071", "disposition": "REFLECTED", "reason": "the recommendation paragraph is its own; four citations"},
+    {"id": "C-0072", "disposition": "REFLECTED", "reason": "the tolerance paragraph is its own - and this pass supersedes two of its numbers and withdraws one of its four measurements from the plan-margin axis"},
+    {"id": "C-0073", "disposition": "NOT CARRIED", "reason": "repository numerics (a result file's determined precision). Explicitly leaf-less; no verdict, flag or quoted figure of any claim moved. Its only reader-facing consequence is a rendering rule discharged by CH-0085."},
+    {"id": "C-0074", "disposition": "CARRIED IN", "reason": "MATERIAL - supersedes both halves of the deliverable's stated escape from C-0071's knife edge"},
+    {"id": "C-0075", "disposition": "CARRIED IN", "reason": "MATERIAL - the plan ceiling is a step function of the path count with its step at 31 (8.19 / 9.535 / 14.975 / 30.88)"},
+    {"id": "C-0076", "disposition": "CARRIED IN", "reason": "MATERIAL - the weave's coefficient on the plan margin is exactly zero, and the exclusion width has never been measured in the role it is used in"},
+    {"id": "C-0077", "disposition": "REFLECTED", "reason": "cited in Task 2's convention passage (2.82x definitional, 1.64x physical)"},
+    {"id": "C-0078", "disposition": "NOT CARRIED", "reason": "process claim - the status-drift half of the tracer. Its corrections are already in the file; the claim itself is about the file, not about the device."},
+    {"id": "CH-0065", "disposition": "REFLECTED", "reason": "cited"},
+    {"id": "CH-0066", "disposition": "NOT CARRIED", "reason": "in-plane hinge-budget branch; its 42 is the number CH-0068 displaced and the deliverable carries the successor"},
+    {"id": "CH-0067", "disposition": "NOT CARRIED", "reason": "truss-leg kinematics; the design survives everywhere and all nine predicates pass at every integer leg length"},
+    {"id": "CH-0068", "disposition": "REFLECTED", "reason": "cited; the hinge-inventory paragraph"},
+    {"id": "CH-0069", "disposition": "NOT CARRIED", "reason": "OPEN and CONDITIONAL on CH-0068 by its own words, and mooted by it"},
+    {"id": "CH-0070", "disposition": "REFLECTED", "reason": "cited in the QUALIFIED routing passage"},
+    {"id": "CH-0071", "disposition": "REFLECTED", "reason": "cited twice in row (g)"},
+    {"id": "CH-0072", "disposition": "CARRIED IN", "reason": "moves two branch recommendations - row pitch 7 -> 9-10 bp and topology scaffold-excursion -> two independent staples; the deliverable's routing bullet named neither"},
+    {"id": "CH-0073", "disposition": "CARRIED IN", "reason": "its 31.6 % across-column threshold is what makes CH-0084's edge-correlated dropout the unfavourable direction; carried inside the row (g) correction"},
+    {"id": "CH-0074", "disposition": "CARRIED IN", "reason": "its RESOLUTION is the flatness answer the row already gave; the ID is now named so the provenance is right"},
+    {"id": "CH-0075", "disposition": "NOT CARRIED", "reason": "bookkeeping inside the truss branch; no margin and no verdict moves, and the best design is unchanged to three digits"},
+    {"id": "CH-0076", "disposition": "NOT CARRIED", "reason": "retires a mirrored placement set the top-level flatness answer no longer rests on"},
+    {"id": "CH-0077", "disposition": "REFLECTED", "reason": "cited twice in row (g)"},
+    {"id": "CH-0078", "disposition": "CARRIED IN", "reason": "withdraws C-0062's design table as a statement about an ARRAY; a lattice fact that narrows an open question the deliverable states"},
+    {"id": "CH-0079", "disposition": "CARRIED IN", "reason": "MATERIAL and latent - 26 of the 45 3x15 tie stations do not exist on an armed tile. The premise appears in row (f), row (g) and NDI questions 3 and 4."},
+    {"id": "CH-0080", "disposition": "REFLECTED", "reason": "cited in row (g) (the 5 nm device scope correction)"},
+    {"id": "CH-0081", "disposition": "REFLECTED", "reason": "cited twice in NDI questions 3 and 4"},
+    {"id": "CH-0082", "disposition": "NOT CARRIED", "reason": "corrects two truss design-table entries that already fail another clause; no surviving design changes"},
+    {"id": "CH-0083", "disposition": "CARRIED IN", "reason": "MATERIAL and the most consequential of the range for verdict WORDING - Task 4's coverage and NDI question 1's word 'requirement'"},
+    {"id": "CH-0084", "disposition": "CARRIED IN", "reason": "MATERIAL - T-45 answered and on the wrong side of C-0060's threshold; the file contradicted itself between SECTION 1 and row (g)"},
+    {"id": "CH-0085", "disposition": "NOT CARRIED", "reason": "a rendering rule (never quote the 10 nm upper edge as 0.2601, a four-figure tie). The deliverable quotes C-0027/C-0051's resynthesised 0.2885 / 24.8x and never the tie, so there is nothing to fix - recorded so the next pass does not re-derive the check."},
+    {"id": "CH-0086", "disposition": "CARRIED IN", "reason": "corrects a number the deliverable quotes - 53x becomes 68.9x"},
+    {"id": "CH-0087", "disposition": "NOT CARRIED", "reason": "a missing column in one sensitivity table; no C-0069 headline moves and it is verified rather than asserted. Its outward-facing by-product (the step function) is carried via C-0075."},
+    {"id": "CH-0088", "disposition": "CARRIED IN", "reason": "withdraws one of the four measurements the deliverable lists against the plan margin, on an axis argument"},
+    {"id": "CH-0089", "disposition": "CARRIED IN", "reason": "MATERIAL - reclassifies the headline knife edge as 1 % of a number nobody has measured in the role it is used in"},
+    {"id": "CH-0090", "disposition": "CARRIED IN", "reason": "cited beside the convention banner it underlies; the withdrawn N = 190-210 is in C-0011/CH-0010, not in the deliverable"},
+    {"id": "CH-0091", "disposition": "CARRIED IN", "reason": "the corrected banner was already in the file from iteration 15; the ID is now named"},
+    {"id": "CH-0092", "disposition": "NOT CARRIED", "reason": "repository hygiene. One favourable side effect recorded here rather than in the file: it verifies that NDI question 1's deciding margins survive the P-18 re-emission at the precision they are quoted at."}
+  ],
+  "windowCensus": {
+    "rule": "C-0051: report the census beside a null, or a stationary window reads as a defended one.",
+    "itemsInRange": 55,
+    "itemsCarryingAQuantityThatIsAFunctionOfSigma": 0,
+    "windowEdgesMoved": 0,
+    "conclusion": "The window is unchanged, and this time that is a reading rather than an expectation. It is still not a re-intersection: a re-run would cost a study and return the same null for the same reason it did in iteration 12."
+  },
+  "editsMade": [
+    {"section": "1", "what": "SUPERSEDED IN BOTH HALVES paragraph - 53x -> 68.9x, 0.2603 -> the searched equal-spring family and the 0.06822 distribution at phase 8", "owners": ["C-0074", "C-0075", "CH-0086"]},
+    {"section": "1", "what": "the 0.0256 nm reclassified as a margin against an unmeasured convention; the weave bracket withdrawn; T-139 named as in flight with its step function at 2.715609 nm", "owners": ["C-0076", "CH-0088", "CH-0089"]},
+    {"section": "1", "what": "the ground of 'best element, not a buildable design' restated as weaker rather than stronger", "owners": ["CH-0089"]},
+    {"section": "1", "what": "the coverage statement replaced by this pass's census", "owners": ["C-0080"]},
+    {"section": "2", "what": "task table row 4 qualified - neither searched load line is the recommended element's", "owners": ["CH-0083"]},
+    {"section": "2", "what": "Task 4 prose - the coverage gap stated with both directions", "owners": ["CH-0083"]},
+    {"section": "2", "what": "Task 2 convention banner - CH-0091 and CH-0090 named", "owners": ["CH-0090", "CH-0091"]},
+    {"section": "3", "what": "row (f) - the 3x15 grid is a registration, not a count", "owners": ["CH-0079"]},
+    {"section": "3", "what": "row (g) - T-45 answered and past the threshold, with the three statements graded by strength", "owners": ["C-0072", "CH-0084", "CH-0073"]},
+    {"section": "3", "what": "row (g) - the path count selects the phase too, and it costs the equal springs", "owners": ["C-0074"]},
+    {"section": "3", "what": "row (g) - CH-0074 named as the challenge C-0063 resolves", "owners": ["CH-0074"]},
+    {"section": "4", "what": "the challenge/claim count corrected from 69/60 to 84/74", "owners": ["-"]},
+    {"section": "5", "what": "T-31 re-scoped - moot at 45 paths, returns at 15", "owners": ["C-0041"]},
+    {"section": "5", "what": "a new bullet - what separation two unbonded duplexes hold, in flight as T-139", "owners": ["C-0076"]},
+    {"section": "5", "what": "the 90-degree routing bullet narrowed by the array's pinned register", "owners": ["CH-0078", "C-0065", "C-0070", "CH-0072"]},
+    {"section": "5", "what": "NDI question 1 - 'requirement' qualified, recommendation unchanged", "owners": ["CH-0083"]}
+  ],
+  "predicates": [
+    {"id": "P1", "statement": "every item in the range classified with a reason, emitted as JSON", "verdict": "PASS", "evidence": "55 rows in this file's audit array"},
+    {"id": "P2", "statement": "every material-and-missing item carried in place, prior wording preserved", "verdict": "PASS", "evidence": "16 edits; every superseded figure retained with its supersession marked"},
+    {"id": "P3", "statement": "every uncarried item listed with its reason", "verdict": "PASS", "evidence": "17 NOT CARRIED rows, each with a reason"},
+    {"id": "P4", "statement": "the ground of every verdict whose premise was withdrawn is re-checked", "verdict": "PASS", "evidence": "6 rows in groundRecheck; two grounds found weaker than stated and one found to survive on a different reason"},
+    {"id": "P5", "statement": "0 ABSENT and 0 stale after the edits", "verdict": "PASS", "evidence": "727 tokens, 620 CITED, 107 ELSEWHERE, 0 ABSENT; 1 open assertion, 0 contradicted"},
+    {"id": "P6", "statement": "T-139 named as open with what it would move", "verdict": "PASS", "evidence": "SECTION 1 and a new SECTION 5 bullet"}
+  ],
+  "toolObservationsReported": [
+    "tools/trace-answers.py prints its summary comment with no preceding newline, so '# 727 tokens: ...' is concatenated onto the last record line. Cosmetic; reported rather than fixed because a sibling agent is in tools/ this iteration.",
+    "queue_status treats IN PROGRESS as contradicting an assertion that a task is open. That is the right rule - a task being worked this iteration will be stale by the time a reader reads - and it fired correctly here on a first draft that wrote 'T-139 is open'; the fix was the wording, which is also the more accurate one ('in flight').",
+    "Neither half of the tracer can see a file that contradicts ITSELF. The T-45 instance was SECTION 1 and SECTION 3 of ANSWERS.md disagreeing, with both halves individually traceable to the corpus."
+  ]
+}
