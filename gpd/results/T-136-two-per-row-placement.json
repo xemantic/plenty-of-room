@@ -1,0 +1,2279 @@
+{
+    "task": "T-136 — is there a FLAT 30-root placement?",
+    "leaf": "A8.2",
+    "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at 2.69 nm, 0.34 nm rise; C-0022's SOLVED edge profiles at 10 nm and 7 nm, both at 0.192 V; C-0017's 33.3333 pN/nm mandate as a SUM over 30 equal paths; C-0039's exact elastica arm 7.77049 nm on a one-crossover root and C-0034's A2 tip; C-0053's footprint convention at d = 2.69 nm; free-tile stroke 4.90731 nm",
+    "decision": "the best two-per-row 30-root placement dishes 0.1667 of the free-tile stroke over the design device's whole range and 0.1667 at the design state, with a plan margin of 0.4195 nm — against T-5b's 0.10 and C-0072's 0.2603 / 1.3495 nm",
+    "bounds": [
+        {
+            "name": "the per-row count 30 roots on 15 rows FORCE at a cap of two",
+            "value": 2.0,
+            "unit": "roots per row",
+            "settles": "C-0063's bound 1 read at the other cap: 2 x 15 = 30 exactly, so every row carries two and the two-per-row CONSTRAINT is an IDENTITY — the design space is a product of per-row 2-subsets and nothing else, before any solve",
+            "falsifierFired": false
+        },
+        {
+            "name": "the largest element ANY 30-root placement can keep, phase 24",
+            "value": 9.535,
+            "unit": "nm",
+            "settles": "a placement's plan ceiling is a MIN over its rows and the rows are independent, so the maximum over placements is a bisection on a monotone capacity — a proof, not a search; C-0072's own reduction reaches 9.1200 nm",
+            "falsifierFired": false
+        },
+        {
+            "name": "the reachable dishing floor over EVERY phase-24 upward root, design state",
+            "value": 7.11649591E-4,
+            "unit": "of the free-tile stroke",
+            "settles": "dishing is affine in the attachment forces, so the least-squares residual over the FULL site set is a rigorous lower bound on every 30-root subset of it under every distribution; a floor above 0.10 fires the falsifier before a single placement is enumerated",
+            "falsifierFired": false
+        },
+        {
+            "name": "the same floor at the compressed end of the design device's range",
+            "value": 4.93293309E-4,
+            "unit": "of the free-tile stroke",
+            "settles": "C-0068's range objective takes the worst of the two ends, so the floor of the range is the larger of the two floors",
+            "falsifierFired": false
+        },
+        {
+            "name": "C-0072's standing upper bound on a 30-root placement's dishing",
+            "value": 0.26028,
+            "unit": "of the free-tile stroke",
+            "settles": "its own plan-rule reduction (drop the interior root of every row of three) is a member of the family this task searches, so the search cannot come out worse; the free tile on this phase dishes 0.3079",
+            "falsifierFired": false
+        }
+    ],
+    "ceilings": [
+        {
+            "count": 15,
+            "maximumPerRow": 1,
+            "phaseBasePairs": 8,
+            "latticeCeiling": 30.88,
+            "armAtThisCount": 5.96297865,
+            "marginAtBestPlacement": 24.9170214,
+            "c0072Ceiling": 20.0,
+            "c0072Margin": 14.0370214,
+            "ceilingIsPlacementDependent": true,
+            "note": "the largest element ANY placement of 15 roots at <= 1 per row can keep, against the ceiling C-0072's own plan-rule reduction reaches"
+        },
+        {
+            "count": 15,
+            "maximumPerRow": 1,
+            "phaseBasePairs": 24,
+            "latticeCeiling": 30.88,
+            "armAtThisCount": 5.96297865,
+            "marginAtBestPlacement": 24.9170214,
+            "c0072Ceiling": 20.0,
+            "c0072Margin": 14.0370214,
+            "ceilingIsPlacementDependent": true,
+            "note": "the largest element ANY placement of 15 roots at <= 1 per row can keep, against the ceiling C-0072's own plan-rule reduction reaches"
+        },
+        {
+            "count": 22,
+            "maximumPerRow": 2,
+            "phaseBasePairs": 8,
+            "latticeCeiling": 14.975,
+            "armAtThisCount": 6.88710679,
+            "marginAtBestPlacement": 8.08789321,
+            "c0072Ceiling": 9.12,
+            "c0072Margin": 2.23289321,
+            "ceilingIsPlacementDependent": true,
+            "note": "the largest element ANY placement of 22 roots at <= 2 per row can keep, against the ceiling C-0072's own plan-rule reduction reaches"
+        },
+        {
+            "count": 22,
+            "maximumPerRow": 2,
+            "phaseBasePairs": 24,
+            "latticeCeiling": 14.975,
+            "armAtThisCount": 6.88710679,
+            "marginAtBestPlacement": 8.08789321,
+            "c0072Ceiling": 9.12,
+            "c0072Margin": 2.23289321,
+            "ceilingIsPlacementDependent": true,
+            "note": "the largest element ANY placement of 22 roots at <= 2 per row can keep, against the ceiling C-0072's own plan-rule reduction reaches"
+        },
+        {
+            "count": 30,
+            "maximumPerRow": 2,
+            "phaseBasePairs": 8,
+            "latticeCeiling": 9.535,
+            "armAtThisCount": 7.77048807,
+            "marginAtBestPlacement": 1.76451193,
+            "c0072Ceiling": 9.12,
+            "c0072Margin": 1.34951193,
+            "ceilingIsPlacementDependent": true,
+            "note": "the largest element ANY placement of 30 roots at <= 2 per row can keep, against the ceiling C-0072's own plan-rule reduction reaches"
+        },
+        {
+            "count": 30,
+            "maximumPerRow": 2,
+            "phaseBasePairs": 24,
+            "latticeCeiling": 9.535,
+            "armAtThisCount": 7.77048807,
+            "marginAtBestPlacement": 1.76451193,
+            "c0072Ceiling": 9.12,
+            "c0072Margin": 1.34951193,
+            "ceilingIsPlacementDependent": true,
+            "note": "the largest element ANY placement of 30 roots at <= 2 per row can keep, against the ceiling C-0072's own plan-rule reduction reaches"
+        },
+        {
+            "count": 30,
+            "maximumPerRow": 3,
+            "phaseBasePairs": 8,
+            "latticeCeiling": 9.535,
+            "armAtThisCount": 7.77048807,
+            "marginAtBestPlacement": 1.76451193,
+            "c0072Ceiling": 9.12,
+            "c0072Margin": 1.34951193,
+            "ceilingIsPlacementDependent": true,
+            "note": "the largest element ANY placement of 30 roots at <= 3 per row can keep, against the ceiling C-0072's own plan-rule reduction reaches"
+        },
+        {
+            "count": 30,
+            "maximumPerRow": 3,
+            "phaseBasePairs": 24,
+            "latticeCeiling": 9.535,
+            "armAtThisCount": 7.77048807,
+            "marginAtBestPlacement": 1.76451193,
+            "c0072Ceiling": 9.12,
+            "c0072Margin": 1.34951193,
+            "ceilingIsPlacementDependent": true,
+            "note": "the largest element ANY placement of 30 roots at <= 3 per row can keep, against the ceiling C-0072's own plan-rule reduction reaches"
+        },
+        {
+            "count": 31,
+            "maximumPerRow": 3,
+            "phaseBasePairs": 8,
+            "latticeCeiling": 8.19,
+            "armAtThisCount": 7.87152075,
+            "marginAtBestPlacement": 0.318479255,
+            "c0072Ceiling": 8.19,
+            "c0072Margin": 0.318479255,
+            "ceilingIsPlacementDependent": false,
+            "note": "the largest element ANY placement of 31 roots at <= 3 per row can keep, against the ceiling C-0072's own plan-rule reduction reaches"
+        },
+        {
+            "count": 31,
+            "maximumPerRow": 3,
+            "phaseBasePairs": 24,
+            "latticeCeiling": 8.19,
+            "armAtThisCount": 7.87152075,
+            "marginAtBestPlacement": 0.318479255,
+            "c0072Ceiling": 8.19,
+            "c0072Margin": 0.318479255,
+            "ceilingIsPlacementDependent": false,
+            "note": "the largest element ANY placement of 31 roots at <= 3 per row can keep, against the ceiling C-0072's own plan-rule reduction reaches"
+        },
+        {
+            "count": 34,
+            "maximumPerRow": 3,
+            "phaseBasePairs": 8,
+            "latticeCeiling": 8.19,
+            "armAtThisCount": 8.16439018,
+            "marginAtBestPlacement": 0.0256098233,
+            "c0072Ceiling": 8.19,
+            "c0072Margin": 0.0256098237,
+            "ceilingIsPlacementDependent": false,
+            "note": "the largest element ANY placement of 34 roots at <= 3 per row can keep, against the ceiling C-0072's own plan-rule reduction reaches"
+        },
+        {
+            "count": 34,
+            "maximumPerRow": 3,
+            "phaseBasePairs": 24,
+            "latticeCeiling": 8.19,
+            "armAtThisCount": 8.16439018,
+            "marginAtBestPlacement": 0.0256098233,
+            "c0072Ceiling": 8.19,
+            "c0072Margin": 0.0256098237,
+            "ceilingIsPlacementDependent": false,
+            "note": "the largest element ANY placement of 34 roots at <= 3 per row can keep, against the ceiling C-0072's own plan-rule reduction reaches"
+        },
+        {
+            "count": 45,
+            "maximumPerRow": 3,
+            "phaseBasePairs": 8,
+            "latticeCeiling": 8.19,
+            "armAtThisCount": 9.13115573,
+            "marginAtBestPlacement": -0.941155731,
+            "c0072Ceiling": 0.0,
+            "c0072Margin": 0.0,
+            "ceilingIsPlacementDependent": false,
+            "note": "the largest element ANY placement of 45 roots at <= 3 per row can keep, against the ceiling C-0072's own plan-rule reduction reaches"
+        },
+        {
+            "count": 45,
+            "maximumPerRow": 3,
+            "phaseBasePairs": 24,
+            "latticeCeiling": 8.19,
+            "armAtThisCount": 9.13115573,
+            "marginAtBestPlacement": -0.941155731,
+            "c0072Ceiling": 0.0,
+            "c0072Margin": 0.0,
+            "ceilingIsPlacementDependent": false,
+            "note": "the largest element ANY placement of 45 roots at <= 3 per row can keep, against the ceiling C-0072's own plan-rule reduction reaches"
+        }
+    ],
+    "families": [
+        {
+            "phaseBasePairs": 8,
+            "crossoverColumns": 8,
+            "family": "centro-symmetric, EXACTLY two arms per row, exhaustive",
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "enumerated": 34992,
+            "bestOverStroke": 0.172575,
+            "medianOverStroke": 0.438433,
+            "worstOverStroke": 0.929285,
+            "bestKey": "0:-10880000,10880000;1:-16320000,16320000;2:0,10880000;3:-16320000,5440000;4:0,10880000;5:5440000,16320000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-16320000,-5440000;10:-10880000,0;11:-5440000,16320000;12:-10880000,0;13:-16320000,16320000;14:-10880000,10880000",
+            "bestFlatAtTenPercent": false,
+            "bestAtDesignStateOverStroke": 0.172574789,
+            "bestPlanCeiling": 8.19,
+            "bestPlanMargin": 0.419511928,
+            "freeTileOverStroke": 0.307902368,
+            "beatsNoCouplingAtAll": true
+        },
+        {
+            "phaseBasePairs": 8,
+            "crossoverColumns": 8,
+            "family": "centro-symmetric, EXACTLY two arms per row, exhaustive",
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "enumerated": 34992,
+            "bestOverStroke": 0.172575,
+            "medianOverStroke": 0.438433,
+            "worstOverStroke": 0.929285,
+            "bestKey": "0:-10880000,10880000;1:-16320000,16320000;2:0,10880000;3:-16320000,5440000;4:0,10880000;5:5440000,16320000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-16320000,-5440000;10:-10880000,0;11:-5440000,16320000;12:-10880000,0;13:-16320000,16320000;14:-10880000,10880000",
+            "bestFlatAtTenPercent": false,
+            "bestAtDesignStateOverStroke": 0.172574789,
+            "bestPlanCeiling": 8.19,
+            "bestPlanMargin": 0.419511928,
+            "freeTileOverStroke": 0.307902368,
+            "beatsNoCouplingAtAll": true
+        },
+        {
+            "phaseBasePairs": 24,
+            "crossoverColumns": 8,
+            "family": "centro-symmetric, EXACTLY two arms per row, exhaustive",
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "enumerated": 34992,
+            "bestOverStroke": 0.166653,
+            "medianOverStroke": 0.479175,
+            "worstOverStroke": 0.971955,
+            "bestKey": "0:-16320000,16320000;1:0,10880000;2:-16320000,-5440000;3:-10880000,0;4:-5440000,16320000;5:0,10880000;6:-16320000,-5440000;7:-10880000,10880000;8:5440000,16320000;9:-10880000,0;10:-16320000,5440000;11:0,10880000;12:5440000,16320000;13:-10880000,0;14:-16320000,16320000",
+            "bestFlatAtTenPercent": false,
+            "bestAtDesignStateOverStroke": 0.166652742,
+            "bestPlanCeiling": 8.19,
+            "bestPlanMargin": 0.419511928,
+            "freeTileOverStroke": 0.307902368,
+            "beatsNoCouplingAtAll": true
+        },
+        {
+            "phaseBasePairs": 24,
+            "crossoverColumns": 8,
+            "family": "centro-symmetric, EXACTLY two arms per row, exhaustive",
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "enumerated": 34992,
+            "bestOverStroke": 0.166653,
+            "medianOverStroke": 0.479175,
+            "worstOverStroke": 0.971955,
+            "bestKey": "0:-16320000,16320000;1:0,10880000;2:-16320000,-5440000;3:-10880000,0;4:-5440000,16320000;5:0,10880000;6:-16320000,-5440000;7:-10880000,10880000;8:5440000,16320000;9:-10880000,0;10:-16320000,5440000;11:0,10880000;12:5440000,16320000;13:-10880000,0;14:-16320000,16320000",
+            "bestFlatAtTenPercent": false,
+            "bestAtDesignStateOverStroke": 0.166652742,
+            "bestPlanCeiling": 8.19,
+            "bestPlanMargin": 0.419511928,
+            "freeTileOverStroke": 0.307902368,
+            "beatsNoCouplingAtAll": true
+        }
+    ],
+    "pareto": [
+        {
+            "phaseBasePairs": 8,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "selection": "the FLATTEST placement, plan margin unconstrained",
+            "dishingOverStroke": 0.172574789,
+            "planCeiling": 8.19,
+            "planMargin": 0.419511928,
+            "marginOverRise": 1.23385861,
+            "flatAtTenPercent": false,
+            "key": "0:-10880000,10880000;1:-16320000,16320000;2:0,10880000;3:-16320000,5440000;4:0,10880000;5:5440000,16320000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-16320000,-5440000;10:-10880000,0;11:-5440000,16320000;12:-10880000,0;13:-16320000,16320000;14:-10880000,10880000"
+        },
+        {
+            "phaseBasePairs": 8,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "selection": "the LARGEST plan ceiling, flatness unconstrained",
+            "dishingOverStroke": 0.242359741,
+            "planCeiling": 9.535,
+            "planMargin": 1.76451193,
+            "marginOverRise": 5.18974096,
+            "flatAtTenPercent": false,
+            "key": "0:-10880000,10880000;1:-16320000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-16320000,16320000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-16320000,16320000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,16320000;14:-10880000,10880000"
+        },
+        {
+            "phaseBasePairs": 8,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "selection": "the flattest placement whose margin clears one base-pair rise",
+            "dishingOverStroke": 0.172574789,
+            "planCeiling": 8.19,
+            "planMargin": 0.419511928,
+            "marginOverRise": 1.23385861,
+            "flatAtTenPercent": false,
+            "key": "0:-10880000,10880000;1:-16320000,16320000;2:0,10880000;3:-16320000,5440000;4:0,10880000;5:5440000,16320000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-16320000,-5440000;10:-10880000,0;11:-5440000,16320000;12:-10880000,0;13:-16320000,16320000;14:-10880000,10880000"
+        },
+        {
+            "phaseBasePairs": 8,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "selection": "the FLATTEST placement AT the largest plan ceiling the lattice affords",
+            "dishingOverStroke": 0.187757353,
+            "planCeiling": 9.535,
+            "planMargin": 1.76451193,
+            "marginOverRise": 5.18974096,
+            "flatAtTenPercent": false,
+            "key": "0:-10880000,10880000;1:-16320000,16320000;2:-10880000,10880000;3:-5440000,5440000;4:-10880000,10880000;5:-16320000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,16320000;10:-10880000,10880000;11:-5440000,5440000;12:-10880000,10880000;13:-16320000,16320000;14:-10880000,10880000"
+        },
+        {
+            "phaseBasePairs": 8,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "selection": "the FLATTEST placement, plan margin unconstrained",
+            "dishingOverStroke": 0.172574789,
+            "planCeiling": 8.19,
+            "planMargin": 0.419511928,
+            "marginOverRise": 1.23385861,
+            "flatAtTenPercent": false,
+            "key": "0:-10880000,10880000;1:-16320000,16320000;2:0,10880000;3:-16320000,5440000;4:0,10880000;5:5440000,16320000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-16320000,-5440000;10:-10880000,0;11:-5440000,16320000;12:-10880000,0;13:-16320000,16320000;14:-10880000,10880000"
+        },
+        {
+            "phaseBasePairs": 8,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "selection": "the LARGEST plan ceiling, flatness unconstrained",
+            "dishingOverStroke": 0.242359741,
+            "planCeiling": 9.535,
+            "planMargin": 1.76451193,
+            "marginOverRise": 5.18974096,
+            "flatAtTenPercent": false,
+            "key": "0:-10880000,10880000;1:-16320000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-16320000,16320000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-16320000,16320000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,16320000;14:-10880000,10880000"
+        },
+        {
+            "phaseBasePairs": 8,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "selection": "the flattest placement whose margin clears one base-pair rise",
+            "dishingOverStroke": 0.172574789,
+            "planCeiling": 8.19,
+            "planMargin": 0.419511928,
+            "marginOverRise": 1.23385861,
+            "flatAtTenPercent": false,
+            "key": "0:-10880000,10880000;1:-16320000,16320000;2:0,10880000;3:-16320000,5440000;4:0,10880000;5:5440000,16320000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-16320000,-5440000;10:-10880000,0;11:-5440000,16320000;12:-10880000,0;13:-16320000,16320000;14:-10880000,10880000"
+        },
+        {
+            "phaseBasePairs": 8,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "selection": "the FLATTEST placement AT the largest plan ceiling the lattice affords",
+            "dishingOverStroke": 0.187757353,
+            "planCeiling": 9.535,
+            "planMargin": 1.76451193,
+            "marginOverRise": 5.18974096,
+            "flatAtTenPercent": false,
+            "key": "0:-10880000,10880000;1:-16320000,16320000;2:-10880000,10880000;3:-5440000,5440000;4:-10880000,10880000;5:-16320000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,16320000;10:-10880000,10880000;11:-5440000,5440000;12:-10880000,10880000;13:-16320000,16320000;14:-10880000,10880000"
+        },
+        {
+            "phaseBasePairs": 24,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "selection": "the FLATTEST placement, plan margin unconstrained",
+            "dishingOverStroke": 0.166652742,
+            "planCeiling": 8.19,
+            "planMargin": 0.419511928,
+            "marginOverRise": 1.23385861,
+            "flatAtTenPercent": false,
+            "key": "0:-16320000,16320000;1:0,10880000;2:-16320000,-5440000;3:-10880000,0;4:-5440000,16320000;5:0,10880000;6:-16320000,-5440000;7:-10880000,10880000;8:5440000,16320000;9:-10880000,0;10:-16320000,5440000;11:0,10880000;12:5440000,16320000;13:-10880000,0;14:-16320000,16320000"
+        },
+        {
+            "phaseBasePairs": 24,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "selection": "the LARGEST plan ceiling, flatness unconstrained",
+            "dishingOverStroke": 0.355431403,
+            "planCeiling": 9.535,
+            "planMargin": 1.76451193,
+            "marginOverRise": 5.18974096,
+            "flatAtTenPercent": false,
+            "key": "0:-16320000,16320000;1:-10880000,10880000;2:-16320000,16320000;3:-10880000,10880000;4:-16320000,16320000;5:-10880000,10880000;6:-16320000,16320000;7:-10880000,10880000;8:-16320000,16320000;9:-10880000,10880000;10:-16320000,16320000;11:-10880000,10880000;12:-16320000,16320000;13:-10880000,10880000;14:-16320000,16320000"
+        },
+        {
+            "phaseBasePairs": 24,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "selection": "the flattest placement whose margin clears one base-pair rise",
+            "dishingOverStroke": 0.166652742,
+            "planCeiling": 8.19,
+            "planMargin": 0.419511928,
+            "marginOverRise": 1.23385861,
+            "flatAtTenPercent": false,
+            "key": "0:-16320000,16320000;1:0,10880000;2:-16320000,-5440000;3:-10880000,0;4:-5440000,16320000;5:0,10880000;6:-16320000,-5440000;7:-10880000,10880000;8:5440000,16320000;9:-10880000,0;10:-16320000,5440000;11:0,10880000;12:5440000,16320000;13:-10880000,0;14:-16320000,16320000"
+        },
+        {
+            "phaseBasePairs": 24,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "selection": "the FLATTEST placement AT the largest plan ceiling the lattice affords",
+            "dishingOverStroke": 0.201665704,
+            "planCeiling": 9.535,
+            "planMargin": 1.76451193,
+            "marginOverRise": 5.18974096,
+            "flatAtTenPercent": false,
+            "key": "0:-16320000,16320000;1:-10880000,10880000;2:-5440000,5440000;3:-10880000,10880000;4:-5440000,5440000;5:-10880000,10880000;6:-16320000,16320000;7:-10880000,10880000;8:-16320000,16320000;9:-10880000,10880000;10:-5440000,5440000;11:-10880000,10880000;12:-5440000,5440000;13:-10880000,10880000;14:-16320000,16320000"
+        },
+        {
+            "phaseBasePairs": 24,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "selection": "the FLATTEST placement, plan margin unconstrained",
+            "dishingOverStroke": 0.166652742,
+            "planCeiling": 8.19,
+            "planMargin": 0.419511928,
+            "marginOverRise": 1.23385861,
+            "flatAtTenPercent": false,
+            "key": "0:-16320000,16320000;1:0,10880000;2:-16320000,-5440000;3:-10880000,0;4:-5440000,16320000;5:0,10880000;6:-16320000,-5440000;7:-10880000,10880000;8:5440000,16320000;9:-10880000,0;10:-16320000,5440000;11:0,10880000;12:5440000,16320000;13:-10880000,0;14:-16320000,16320000"
+        },
+        {
+            "phaseBasePairs": 24,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "selection": "the LARGEST plan ceiling, flatness unconstrained",
+            "dishingOverStroke": 0.355431403,
+            "planCeiling": 9.535,
+            "planMargin": 1.76451193,
+            "marginOverRise": 5.18974096,
+            "flatAtTenPercent": false,
+            "key": "0:-16320000,16320000;1:-10880000,10880000;2:-16320000,16320000;3:-10880000,10880000;4:-16320000,16320000;5:-10880000,10880000;6:-16320000,16320000;7:-10880000,10880000;8:-16320000,16320000;9:-10880000,10880000;10:-16320000,16320000;11:-10880000,10880000;12:-16320000,16320000;13:-10880000,10880000;14:-16320000,16320000"
+        },
+        {
+            "phaseBasePairs": 24,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "selection": "the flattest placement whose margin clears one base-pair rise",
+            "dishingOverStroke": 0.166652742,
+            "planCeiling": 8.19,
+            "planMargin": 0.419511928,
+            "marginOverRise": 1.23385861,
+            "flatAtTenPercent": false,
+            "key": "0:-16320000,16320000;1:0,10880000;2:-16320000,-5440000;3:-10880000,0;4:-5440000,16320000;5:0,10880000;6:-16320000,-5440000;7:-10880000,10880000;8:5440000,16320000;9:-10880000,0;10:-16320000,5440000;11:0,10880000;12:5440000,16320000;13:-10880000,0;14:-16320000,16320000"
+        },
+        {
+            "phaseBasePairs": 24,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "selection": "the FLATTEST placement AT the largest plan ceiling the lattice affords",
+            "dishingOverStroke": 0.201665704,
+            "planCeiling": 9.535,
+            "planMargin": 1.76451193,
+            "marginOverRise": 5.18974096,
+            "flatAtTenPercent": false,
+            "key": "0:-16320000,16320000;1:-10880000,10880000;2:-5440000,5440000;3:-10880000,10880000;4:-5440000,5440000;5:-10880000,10880000;6:-16320000,16320000;7:-10880000,10880000;8:-16320000,16320000;9:-10880000,10880000;10:-5440000,5440000;11:-10880000,10880000;12:-5440000,5440000;13:-10880000,10880000;14:-16320000,16320000"
+        }
+    ],
+    "distributions": [
+        {
+            "placement": "C-0063's 34 roots at phase 24 — the knife-edge design",
+            "phaseBasePairs": 24,
+            "stations": 34,
+            "rule": "uniform — 34 EQUAL springs",
+            "peakRatio": 1.0,
+            "designStateOverStroke": 0.0706145537,
+            "rangeWorstOverStroke": 0.0788500163,
+            "reachableFloorOverStroke": 0.0031213253,
+            "flatAtTenPercent": true,
+            "planMargin": 0.0256098237,
+            "peakPathStiffness": 0.980392157,
+            "peakPathForceAtAcceptableStroke": 2.94117647,
+            "peakThermalForce": 0.345591239,
+            "withinPerPathCeiling": true,
+            "startsUsed": 0,
+            "startsWithinOnePartInAMillion": 0
+        },
+        {
+            "placement": "C-0063's 34 roots at phase 24 — the knife-edge design",
+            "phaseBasePairs": 24,
+            "stations": 34,
+            "rule": "the 34-parameter minimax over the design device's range",
+            "peakRatio": 1.74343683,
+            "designStateOverStroke": 0.0291079054,
+            "rangeWorstOverStroke": 0.0291079054,
+            "reachableFloorOverStroke": 0.0031213253,
+            "flatAtTenPercent": true,
+            "planMargin": 0.0256098237,
+            "peakPathStiffness": 1.70925179,
+            "peakPathForceAtAcceptableStroke": 5.12775538,
+            "peakThermalForce": 0.602516494,
+            "withinPerPathCeiling": true,
+            "startsUsed": 12,
+            "startsWithinOnePartInAMillion": 1
+        },
+        {
+            "placement": "C-0072's plan-rule 30-root reduction",
+            "phaseBasePairs": 24,
+            "stations": 30,
+            "rule": "uniform — 30 EQUAL springs",
+            "peakRatio": 1.0,
+            "designStateOverStroke": 0.260281397,
+            "rangeWorstOverStroke": 0.260281397,
+            "reachableFloorOverStroke": 0.00569910397,
+            "flatAtTenPercent": false,
+            "planMargin": 1.34951193,
+            "peakPathStiffness": 1.11111111,
+            "peakPathForceAtAcceptableStroke": 3.33333333,
+            "peakThermalForce": 0.391670071,
+            "withinPerPathCeiling": true,
+            "startsUsed": 0,
+            "startsWithinOnePartInAMillion": 0
+        },
+        {
+            "placement": "C-0072's plan-rule 30-root reduction",
+            "phaseBasePairs": 24,
+            "stations": 30,
+            "rule": "the 30-parameter minimax over the design device's range",
+            "peakRatio": 3.0,
+            "designStateOverStroke": 0.0732112254,
+            "rangeWorstOverStroke": 0.0732112254,
+            "reachableFloorOverStroke": 0.00569910397,
+            "flatAtTenPercent": true,
+            "planMargin": 1.34951193,
+            "peakPathStiffness": 3.33333333,
+            "peakPathForceAtAcceptableStroke": 10.0,
+            "peakThermalForce": 1.17501021,
+            "withinPerPathCeiling": true,
+            "startsUsed": 12,
+            "startsWithinOnePartInAMillion": 1
+        },
+        {
+            "placement": "phase 8 — the FLATTEST placement, plan margin unconstrained",
+            "phaseBasePairs": 8,
+            "stations": 30,
+            "rule": "uniform — 30 EQUAL springs",
+            "peakRatio": 1.0,
+            "designStateOverStroke": 0.172574789,
+            "rangeWorstOverStroke": 0.172574789,
+            "reachableFloorOverStroke": 0.00701065034,
+            "flatAtTenPercent": false,
+            "planMargin": 0.419511928,
+            "peakPathStiffness": 1.11111111,
+            "peakPathForceAtAcceptableStroke": 3.33333333,
+            "peakThermalForce": 0.391670071,
+            "withinPerPathCeiling": true,
+            "startsUsed": 0,
+            "startsWithinOnePartInAMillion": 0
+        },
+        {
+            "placement": "phase 8 — the FLATTEST placement, plan margin unconstrained",
+            "phaseBasePairs": 8,
+            "stations": 30,
+            "rule": "the 30-parameter minimax over the design device's range",
+            "peakRatio": 2.34546742,
+            "designStateOverStroke": 0.0648391168,
+            "rangeWorstOverStroke": 0.0648395859,
+            "reachableFloorOverStroke": 0.00701065034,
+            "flatAtTenPercent": true,
+            "planMargin": 0.419511928,
+            "peakPathStiffness": 2.60607491,
+            "peakPathForceAtAcceptableStroke": 7.81822472,
+            "peakThermalForce": 0.918649389,
+            "withinPerPathCeiling": true,
+            "startsUsed": 12,
+            "startsWithinOnePartInAMillion": 1
+        },
+        {
+            "placement": "phase 8 — the LARGEST plan ceiling, flatness unconstrained",
+            "phaseBasePairs": 8,
+            "stations": 30,
+            "rule": "uniform — 30 EQUAL springs",
+            "peakRatio": 1.0,
+            "designStateOverStroke": 0.242359741,
+            "rangeWorstOverStroke": 0.242359741,
+            "reachableFloorOverStroke": 0.00547594795,
+            "flatAtTenPercent": false,
+            "planMargin": 1.76451193,
+            "peakPathStiffness": 1.11111111,
+            "peakPathForceAtAcceptableStroke": 3.33333333,
+            "peakThermalForce": 0.391670071,
+            "withinPerPathCeiling": true,
+            "startsUsed": 0,
+            "startsWithinOnePartInAMillion": 0
+        },
+        {
+            "placement": "phase 8 — the LARGEST plan ceiling, flatness unconstrained",
+            "phaseBasePairs": 8,
+            "stations": 30,
+            "rule": "the 30-parameter minimax over the design device's range",
+            "peakRatio": 2.05713243,
+            "designStateOverStroke": 0.0682185723,
+            "rangeWorstOverStroke": 0.0682200897,
+            "reachableFloorOverStroke": 0.00547594795,
+            "flatAtTenPercent": true,
+            "planMargin": 1.76451193,
+            "peakPathStiffness": 2.2857027,
+            "peakPathForceAtAcceptableStroke": 6.85710809,
+            "peakThermalForce": 0.805717204,
+            "withinPerPathCeiling": true,
+            "startsUsed": 12,
+            "startsWithinOnePartInAMillion": 1
+        },
+        {
+            "placement": "phase 8 — the flattest placement whose margin clears one base-pair rise",
+            "phaseBasePairs": 8,
+            "stations": 30,
+            "rule": "uniform — 30 EQUAL springs",
+            "peakRatio": 1.0,
+            "designStateOverStroke": 0.172574789,
+            "rangeWorstOverStroke": 0.172574789,
+            "reachableFloorOverStroke": 0.00701065034,
+            "flatAtTenPercent": false,
+            "planMargin": 0.419511928,
+            "peakPathStiffness": 1.11111111,
+            "peakPathForceAtAcceptableStroke": 3.33333333,
+            "peakThermalForce": 0.391670071,
+            "withinPerPathCeiling": true,
+            "startsUsed": 0,
+            "startsWithinOnePartInAMillion": 0
+        },
+        {
+            "placement": "phase 8 — the flattest placement whose margin clears one base-pair rise",
+            "phaseBasePairs": 8,
+            "stations": 30,
+            "rule": "the 30-parameter minimax over the design device's range",
+            "peakRatio": 2.34546742,
+            "designStateOverStroke": 0.0648391168,
+            "rangeWorstOverStroke": 0.0648395859,
+            "reachableFloorOverStroke": 0.00701065034,
+            "flatAtTenPercent": true,
+            "planMargin": 0.419511928,
+            "peakPathStiffness": 2.60607491,
+            "peakPathForceAtAcceptableStroke": 7.81822472,
+            "peakThermalForce": 0.918649389,
+            "withinPerPathCeiling": true,
+            "startsUsed": 12,
+            "startsWithinOnePartInAMillion": 1
+        },
+        {
+            "placement": "phase 8 — the FLATTEST placement AT the largest plan ceiling the lattice affords",
+            "phaseBasePairs": 8,
+            "stations": 30,
+            "rule": "uniform — 30 EQUAL springs",
+            "peakRatio": 1.0,
+            "designStateOverStroke": 0.187757353,
+            "rangeWorstOverStroke": 0.187757353,
+            "reachableFloorOverStroke": 0.00484376909,
+            "flatAtTenPercent": false,
+            "planMargin": 1.76451193,
+            "peakPathStiffness": 1.11111111,
+            "peakPathForceAtAcceptableStroke": 3.33333333,
+            "peakThermalForce": 0.391670071,
+            "withinPerPathCeiling": true,
+            "startsUsed": 0,
+            "startsWithinOnePartInAMillion": 0
+        },
+        {
+            "placement": "phase 8 — the FLATTEST placement AT the largest plan ceiling the lattice affords",
+            "phaseBasePairs": 8,
+            "stations": 30,
+            "rule": "the 30-parameter minimax over the design device's range",
+            "peakRatio": 2.45258143,
+            "designStateOverStroke": 0.0714562894,
+            "rangeWorstOverStroke": 0.0714562894,
+            "reachableFloorOverStroke": 0.00484376909,
+            "flatAtTenPercent": true,
+            "planMargin": 1.76451193,
+            "peakPathStiffness": 2.72509047,
+            "peakPathForceAtAcceptableStroke": 8.17527142,
+            "peakThermalForce": 0.960602741,
+            "withinPerPathCeiling": true,
+            "startsUsed": 12,
+            "startsWithinOnePartInAMillion": 1
+        },
+        {
+            "placement": "phase 24 — the FLATTEST placement, plan margin unconstrained",
+            "phaseBasePairs": 24,
+            "stations": 30,
+            "rule": "uniform — 30 EQUAL springs",
+            "peakRatio": 1.0,
+            "designStateOverStroke": 0.166652742,
+            "rangeWorstOverStroke": 0.166652742,
+            "reachableFloorOverStroke": 0.00584504968,
+            "flatAtTenPercent": false,
+            "planMargin": 0.419511928,
+            "peakPathStiffness": 1.11111111,
+            "peakPathForceAtAcceptableStroke": 3.33333333,
+            "peakThermalForce": 0.391670071,
+            "withinPerPathCeiling": true,
+            "startsUsed": 0,
+            "startsWithinOnePartInAMillion": 0
+        },
+        {
+            "placement": "phase 24 — the FLATTEST placement, plan margin unconstrained",
+            "phaseBasePairs": 24,
+            "stations": 30,
+            "rule": "the 30-parameter minimax over the design device's range",
+            "peakRatio": 2.4356383,
+            "designStateOverStroke": 0.0893577005,
+            "rangeWorstOverStroke": 0.089357755,
+            "reachableFloorOverStroke": 0.00584504968,
+            "flatAtTenPercent": true,
+            "planMargin": 0.419511928,
+            "peakPathStiffness": 2.70626478,
+            "peakPathForceAtAcceptableStroke": 8.11879434,
+            "peakThermalForce": 0.953966626,
+            "withinPerPathCeiling": true,
+            "startsUsed": 12,
+            "startsWithinOnePartInAMillion": 1
+        },
+        {
+            "placement": "phase 24 — the LARGEST plan ceiling, flatness unconstrained",
+            "phaseBasePairs": 24,
+            "stations": 30,
+            "rule": "uniform — 30 EQUAL springs",
+            "peakRatio": 1.0,
+            "designStateOverStroke": 0.355431403,
+            "rangeWorstOverStroke": 0.355431403,
+            "reachableFloorOverStroke": 0.00776440079,
+            "flatAtTenPercent": false,
+            "planMargin": 1.76451193,
+            "peakPathStiffness": 1.11111111,
+            "peakPathForceAtAcceptableStroke": 3.33333333,
+            "peakThermalForce": 0.391670071,
+            "withinPerPathCeiling": true,
+            "startsUsed": 0,
+            "startsWithinOnePartInAMillion": 0
+        },
+        {
+            "placement": "phase 24 — the LARGEST plan ceiling, flatness unconstrained",
+            "phaseBasePairs": 24,
+            "stations": 30,
+            "rule": "the 30-parameter minimax over the design device's range",
+            "peakRatio": 3.0,
+            "designStateOverStroke": 0.131881154,
+            "rangeWorstOverStroke": 0.131883298,
+            "reachableFloorOverStroke": 0.00776440079,
+            "flatAtTenPercent": false,
+            "planMargin": 1.76451193,
+            "peakPathStiffness": 3.33333333,
+            "peakPathForceAtAcceptableStroke": 10.0,
+            "peakThermalForce": 1.17501021,
+            "withinPerPathCeiling": true,
+            "startsUsed": 12,
+            "startsWithinOnePartInAMillion": 1
+        },
+        {
+            "placement": "phase 24 — the flattest placement whose margin clears one base-pair rise",
+            "phaseBasePairs": 24,
+            "stations": 30,
+            "rule": "uniform — 30 EQUAL springs",
+            "peakRatio": 1.0,
+            "designStateOverStroke": 0.166652742,
+            "rangeWorstOverStroke": 0.166652742,
+            "reachableFloorOverStroke": 0.00584504968,
+            "flatAtTenPercent": false,
+            "planMargin": 0.419511928,
+            "peakPathStiffness": 1.11111111,
+            "peakPathForceAtAcceptableStroke": 3.33333333,
+            "peakThermalForce": 0.391670071,
+            "withinPerPathCeiling": true,
+            "startsUsed": 0,
+            "startsWithinOnePartInAMillion": 0
+        },
+        {
+            "placement": "phase 24 — the flattest placement whose margin clears one base-pair rise",
+            "phaseBasePairs": 24,
+            "stations": 30,
+            "rule": "the 30-parameter minimax over the design device's range",
+            "peakRatio": 2.4356383,
+            "designStateOverStroke": 0.0893577005,
+            "rangeWorstOverStroke": 0.089357755,
+            "reachableFloorOverStroke": 0.00584504968,
+            "flatAtTenPercent": true,
+            "planMargin": 0.419511928,
+            "peakPathStiffness": 2.70626478,
+            "peakPathForceAtAcceptableStroke": 8.11879434,
+            "peakThermalForce": 0.953966626,
+            "withinPerPathCeiling": true,
+            "startsUsed": 12,
+            "startsWithinOnePartInAMillion": 1
+        },
+        {
+            "placement": "phase 24 — the FLATTEST placement AT the largest plan ceiling the lattice affords",
+            "phaseBasePairs": 24,
+            "stations": 30,
+            "rule": "uniform — 30 EQUAL springs",
+            "peakRatio": 1.0,
+            "designStateOverStroke": 0.201665704,
+            "rangeWorstOverStroke": 0.201665704,
+            "reachableFloorOverStroke": 0.00645422471,
+            "flatAtTenPercent": false,
+            "planMargin": 1.76451193,
+            "peakPathStiffness": 1.11111111,
+            "peakPathForceAtAcceptableStroke": 3.33333333,
+            "peakThermalForce": 0.391670071,
+            "withinPerPathCeiling": true,
+            "startsUsed": 0,
+            "startsWithinOnePartInAMillion": 0
+        },
+        {
+            "placement": "phase 24 — the FLATTEST placement AT the largest plan ceiling the lattice affords",
+            "phaseBasePairs": 24,
+            "stations": 30,
+            "rule": "the 30-parameter minimax over the design device's range",
+            "peakRatio": 3.0,
+            "designStateOverStroke": 0.112388459,
+            "rangeWorstOverStroke": 0.112388459,
+            "reachableFloorOverStroke": 0.00645422471,
+            "flatAtTenPercent": false,
+            "planMargin": 1.76451193,
+            "peakPathStiffness": 3.33333333,
+            "peakPathForceAtAcceptableStroke": 10.0,
+            "peakThermalForce": 1.17501021,
+            "withinPerPathCeiling": true,
+            "startsUsed": 12,
+            "startsWithinOnePartInAMillion": 1
+        }
+    ],
+    "floors": [
+        {
+            "floor": "the base-pair rise — the design quantum",
+            "sigma": 0.34,
+            "unit": "nm",
+            "againstTheKnifeEdge": 13.2761556,
+            "againstTheRecommendedMargin": 0.192687845,
+            "clearedAtThirtyRoots": true,
+            "note": "C-0072's sharpest floor: below it a margin cannot be specified in the design language"
+        },
+        {
+            "floor": "the two measured SAXS interhelical means, 2.73 - 2.69 nm",
+            "sigma": 0.04,
+            "unit": "nm",
+            "againstTheKnifeEdge": 1.56190066,
+            "againstTheRecommendedMargin": 0.0226691582,
+            "clearedAtThirtyRoots": true,
+            "note": "the disagreement between two measurements of the same material"
+        },
+        {
+            "floor": "the thermal axial breathing of the two segments the margin differences",
+            "sigma": 0.265354666,
+            "unit": "nm",
+            "againstTheKnifeEdge": 10.3614407,
+            "againstTheRecommendedMargin": 0.150384173,
+            "clearedAtThirtyRoots": true,
+            "note": "the host's 32 bp pitch and the element's %d bp length in quadrature, from the measured stretch modulus — re-read at the 30-path arm"
+        },
+        {
+            "floor": "the arm tip's own bending at a PERFECTLY RIGID root",
+            "sigma": 1.67822494,
+            "unit": "nm",
+            "againstTheKnifeEdge": 65.5305161,
+            "againstTheRecommendedMargin": 0.951098666,
+            "clearedAtThirtyRoots": true,
+            "note": "the floor of the transverse channel: no joint stiffening removes it. It SCALES with the arm as L^(3/2), so it is the one floor a shorter arm moves"
+        },
+        {
+            "floor": "Fischer et al.'s fitted single-layer lattice-constant width, w_a = 2.5 A",
+            "sigma": 0.25,
+            "unit": "nm",
+            "againstTheKnifeEdge": 9.76187915,
+            "againstTheRecommendedMargin": 0.141682239,
+            "clearedAtThirtyRoots": true,
+            "note": "the measurement C-0072's survey found in a supplementary table nobody quotes — the only fabrication number in the list, and 9.1 % of a 27.41 A lattice constant"
+        }
+    ],
+    "descents": [
+        {
+            "phaseBasePairs": 0,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.373935,
+            "bestOverStroke": 0.223663,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3702,
+            "freeTileOverStroke": 0.310281561
+        },
+        {
+            "phaseBasePairs": 0,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.373935,
+            "bestOverStroke": 0.223663,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3702,
+            "freeTileOverStroke": 0.310281561
+        },
+        {
+            "phaseBasePairs": 1,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.401792,
+            "bestOverStroke": 0.212781,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3882,
+            "freeTileOverStroke": 0.310313088
+        },
+        {
+            "phaseBasePairs": 1,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.401792,
+            "bestOverStroke": 0.212781,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3972,
+            "freeTileOverStroke": 0.310313088
+        },
+        {
+            "phaseBasePairs": 2,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.430122,
+            "bestOverStroke": 0.215806,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 4062,
+            "freeTileOverStroke": 0.310388482
+        },
+        {
+            "phaseBasePairs": 2,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.430122,
+            "bestOverStroke": 0.215806,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 4062,
+            "freeTileOverStroke": 0.310388482
+        },
+        {
+            "phaseBasePairs": 3,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.458937,
+            "bestOverStroke": 0.175995,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2784,
+            "freeTileOverStroke": 0.310642581
+        },
+        {
+            "phaseBasePairs": 3,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.458937,
+            "bestOverStroke": 0.175995,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2784,
+            "freeTileOverStroke": 0.310642581
+        },
+        {
+            "phaseBasePairs": 4,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.488007,
+            "bestOverStroke": 0.172924,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2388,
+            "freeTileOverStroke": 0.311024732
+        },
+        {
+            "phaseBasePairs": 4,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.488007,
+            "bestOverStroke": 0.172924,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2652,
+            "freeTileOverStroke": 0.311024732
+        },
+        {
+            "phaseBasePairs": 5,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.517229,
+            "bestOverStroke": 0.194023,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3246,
+            "freeTileOverStroke": 0.312235717
+        },
+        {
+            "phaseBasePairs": 5,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.517229,
+            "bestOverStroke": 0.194023,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3246,
+            "freeTileOverStroke": 0.312235717
+        },
+        {
+            "phaseBasePairs": 6,
+            "crossoverColumns": 8,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.441648,
+            "bestOverStroke": 0.169548,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2982,
+            "freeTileOverStroke": 0.309806547
+        },
+        {
+            "phaseBasePairs": 6,
+            "crossoverColumns": 8,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.441648,
+            "bestOverStroke": 0.169548,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2982,
+            "freeTileOverStroke": 0.309806547
+        },
+        {
+            "phaseBasePairs": 7,
+            "crossoverColumns": 8,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.463492,
+            "bestOverStroke": 0.167022,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2982,
+            "freeTileOverStroke": 0.308858549
+        },
+        {
+            "phaseBasePairs": 7,
+            "crossoverColumns": 8,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.463492,
+            "bestOverStroke": 0.167022,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3114,
+            "freeTileOverStroke": 0.308858549
+        },
+        {
+            "phaseBasePairs": 8,
+            "crossoverColumns": 8,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.485453,
+            "bestOverStroke": 0.17682,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2652,
+            "freeTileOverStroke": 0.307902368
+        },
+        {
+            "phaseBasePairs": 8,
+            "crossoverColumns": 8,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.485453,
+            "bestOverStroke": 0.179134,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2652,
+            "freeTileOverStroke": 0.307902368
+        },
+        {
+            "phaseBasePairs": 9,
+            "crossoverColumns": 8,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.507493,
+            "bestOverStroke": 0.183392,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2652,
+            "freeTileOverStroke": 0.308858549
+        },
+        {
+            "phaseBasePairs": 9,
+            "crossoverColumns": 8,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.507493,
+            "bestOverStroke": 0.183392,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2652,
+            "freeTileOverStroke": 0.308858549
+        },
+        {
+            "phaseBasePairs": 10,
+            "crossoverColumns": 8,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.529351,
+            "bestOverStroke": 0.173075,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2916,
+            "freeTileOverStroke": 0.309806547
+        },
+        {
+            "phaseBasePairs": 10,
+            "crossoverColumns": 8,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.529351,
+            "bestOverStroke": 0.171816,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3048,
+            "freeTileOverStroke": 0.309806547
+        },
+        {
+            "phaseBasePairs": 11,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.552071,
+            "bestOverStroke": 0.191734,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2982,
+            "freeTileOverStroke": 0.312235717
+        },
+        {
+            "phaseBasePairs": 11,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.552071,
+            "bestOverStroke": 0.186031,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2982,
+            "freeTileOverStroke": 0.312235717
+        },
+        {
+            "phaseBasePairs": 12,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.573202,
+            "bestOverStroke": 0.172924,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3048,
+            "freeTileOverStroke": 0.311024732
+        },
+        {
+            "phaseBasePairs": 12,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.573202,
+            "bestOverStroke": 0.172924,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3048,
+            "freeTileOverStroke": 0.311024732
+        },
+        {
+            "phaseBasePairs": 13,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.594011,
+            "bestOverStroke": 0.18284,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3378,
+            "freeTileOverStroke": 0.310642581
+        },
+        {
+            "phaseBasePairs": 13,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.594011,
+            "bestOverStroke": 0.18284,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3246,
+            "freeTileOverStroke": 0.310642581
+        },
+        {
+            "phaseBasePairs": 14,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.306168,
+            "bestOverStroke": 0.190313,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 4062,
+            "freeTileOverStroke": 0.310388482
+        },
+        {
+            "phaseBasePairs": 14,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.306168,
+            "bestOverStroke": 0.220022,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3702,
+            "freeTileOverStroke": 0.310388482
+        },
+        {
+            "phaseBasePairs": 15,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.315367,
+            "bestOverStroke": 0.23551,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3612,
+            "freeTileOverStroke": 0.310313088
+        },
+        {
+            "phaseBasePairs": 15,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.315367,
+            "bestOverStroke": 0.23551,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3612,
+            "freeTileOverStroke": 0.310313088
+        },
+        {
+            "phaseBasePairs": 16,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.324952,
+            "bestOverStroke": 0.224633,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3702,
+            "freeTileOverStroke": 0.310281561
+        },
+        {
+            "phaseBasePairs": 16,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.324952,
+            "bestOverStroke": 0.198231,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3882,
+            "freeTileOverStroke": 0.310281561
+        },
+        {
+            "phaseBasePairs": 17,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.334822,
+            "bestOverStroke": 0.229434,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3792,
+            "freeTileOverStroke": 0.310313088
+        },
+        {
+            "phaseBasePairs": 17,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.334822,
+            "bestOverStroke": 0.206924,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 4152,
+            "freeTileOverStroke": 0.310313088
+        },
+        {
+            "phaseBasePairs": 18,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.345061,
+            "bestOverStroke": 0.223931,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 4332,
+            "freeTileOverStroke": 0.310388482
+        },
+        {
+            "phaseBasePairs": 18,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.345061,
+            "bestOverStroke": 0.223931,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 4422,
+            "freeTileOverStroke": 0.310388482
+        },
+        {
+            "phaseBasePairs": 19,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.355756,
+            "bestOverStroke": 0.232822,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2979,
+            "freeTileOverStroke": 0.310642581
+        },
+        {
+            "phaseBasePairs": 19,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.355756,
+            "bestOverStroke": 0.232822,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2979,
+            "freeTileOverStroke": 0.310642581
+        },
+        {
+            "phaseBasePairs": 20,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.366915,
+            "bestOverStroke": 0.225538,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2565,
+            "freeTileOverStroke": 0.311024732
+        },
+        {
+            "phaseBasePairs": 20,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.366915,
+            "bestOverStroke": 0.24724,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2427,
+            "freeTileOverStroke": 0.311024732
+        },
+        {
+            "phaseBasePairs": 21,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.378591,
+            "bestOverStroke": 0.228096,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2841,
+            "freeTileOverStroke": 0.312235717
+        },
+        {
+            "phaseBasePairs": 21,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.378591,
+            "bestOverStroke": 0.228096,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2841,
+            "freeTileOverStroke": 0.312235717
+        },
+        {
+            "phaseBasePairs": 22,
+            "crossoverColumns": 8,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.367954,
+            "bestOverStroke": 0.183459,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2427,
+            "freeTileOverStroke": 0.309806547
+        },
+        {
+            "phaseBasePairs": 22,
+            "crossoverColumns": 8,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.367954,
+            "bestOverStroke": 0.183459,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2427,
+            "freeTileOverStroke": 0.309806547
+        },
+        {
+            "phaseBasePairs": 23,
+            "crossoverColumns": 8,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.378753,
+            "bestOverStroke": 0.179838,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2772,
+            "freeTileOverStroke": 0.308858549
+        },
+        {
+            "phaseBasePairs": 23,
+            "crossoverColumns": 8,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.378753,
+            "bestOverStroke": 0.179838,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2772,
+            "freeTileOverStroke": 0.308858549
+        },
+        {
+            "phaseBasePairs": 24,
+            "crossoverColumns": 8,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.389816,
+            "bestOverStroke": 0.181567,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2634,
+            "freeTileOverStroke": 0.307902368
+        },
+        {
+            "phaseBasePairs": 24,
+            "crossoverColumns": 8,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.389816,
+            "bestOverStroke": 0.181567,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2772,
+            "freeTileOverStroke": 0.307902368
+        },
+        {
+            "phaseBasePairs": 25,
+            "crossoverColumns": 8,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.401191,
+            "bestOverStroke": 0.178347,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2496,
+            "freeTileOverStroke": 0.308858549
+        },
+        {
+            "phaseBasePairs": 25,
+            "crossoverColumns": 8,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.401191,
+            "bestOverStroke": 0.178347,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2496,
+            "freeTileOverStroke": 0.308858549
+        },
+        {
+            "phaseBasePairs": 26,
+            "crossoverColumns": 8,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.412803,
+            "bestOverStroke": 0.185572,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2496,
+            "freeTileOverStroke": 0.309806547
+        },
+        {
+            "phaseBasePairs": 26,
+            "crossoverColumns": 8,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.412803,
+            "bestOverStroke": 0.18645,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2289,
+            "freeTileOverStroke": 0.309806547
+        },
+        {
+            "phaseBasePairs": 27,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.430812,
+            "bestOverStroke": 0.195618,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2634,
+            "freeTileOverStroke": 0.312235717
+        },
+        {
+            "phaseBasePairs": 27,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.430812,
+            "bestOverStroke": 0.195618,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2634,
+            "freeTileOverStroke": 0.312235717
+        },
+        {
+            "phaseBasePairs": 28,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.442326,
+            "bestOverStroke": 0.196378,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3186,
+            "freeTileOverStroke": 0.311024732
+        },
+        {
+            "phaseBasePairs": 28,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.442326,
+            "bestOverStroke": 0.196378,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3186,
+            "freeTileOverStroke": 0.311024732
+        },
+        {
+            "phaseBasePairs": 29,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.453969,
+            "bestOverStroke": 0.218568,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 2979,
+            "freeTileOverStroke": 0.310642581
+        },
+        {
+            "phaseBasePairs": 29,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.453969,
+            "bestOverStroke": 0.218468,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3048,
+            "freeTileOverStroke": 0.310642581
+        },
+        {
+            "phaseBasePairs": 30,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.32007,
+            "bestOverStroke": 0.222396,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3882,
+            "freeTileOverStroke": 0.310388482
+        },
+        {
+            "phaseBasePairs": 30,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.32007,
+            "bestOverStroke": 0.222396,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3972,
+            "freeTileOverStroke": 0.310388482
+        },
+        {
+            "phaseBasePairs": 31,
+            "crossoverColumns": 7,
+            "objective": "the design state alone — 2 mM, 10 nm, 0.192 V",
+            "feasible": true,
+            "greedyOverStroke": 0.346605,
+            "bestOverStroke": 0.232604,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3612,
+            "freeTileOverStroke": 0.310313088
+        },
+        {
+            "phaseBasePairs": 31,
+            "crossoverColumns": 7,
+            "objective": "the worst over the 2 mM / 10 nm / 0.192 V device's traversed range",
+            "feasible": true,
+            "greedyOverStroke": 0.346605,
+            "bestOverStroke": 0.232604,
+            "bestFlatAtTenPercent": false,
+            "bestPlanMargin": 0.419511928,
+            "evaluations": 3612,
+            "freeTileOverStroke": 0.310313088
+        }
+    ],
+    "costs": [
+        {
+            "placement": "C-0063's 34 roots at phase 24 — the knife-edge design",
+            "stations": 34,
+            "perPathSecant": 0.980392157,
+            "perPathForceAtAcceptableStroke": 2.94117647,
+            "peakSolvedPathForce": 2.29825425,
+            "peakThermalForce": 0.345591239,
+            "withinUnzipAllowable": true
+        },
+        {
+            "placement": "C-0072's plan-rule 30-root reduction",
+            "stations": 30,
+            "perPathSecant": 1.11111111,
+            "perPathForceAtAcceptableStroke": 3.33333333,
+            "peakSolvedPathForce": 3.0557154,
+            "peakThermalForce": 0.391670071,
+            "withinUnzipAllowable": true
+        },
+        {
+            "placement": "T-136's swept 30-root placement at phase 24",
+            "stations": 30,
+            "perPathSecant": 1.11111111,
+            "perPathForceAtAcceptableStroke": 3.33333333,
+            "peakSolvedPathForce": 2.79719582,
+            "peakThermalForce": 0.391670071,
+            "withinUnzipAllowable": true
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "the winner's range dishing over the free stroke",
+            "parameter": "NESTED subdivisions 1 c 2 c 4",
+            "values": [
+                1.0,
+                2.0,
+                4.0
+            ],
+            "results": [
+                0.166231056,
+                0.166652742,
+                0.166655146
+            ],
+            "departure": 1.44251477E-5,
+            "note": "nested only, per CLAUDE.md — a subdivision of 3 moves a station off a node"
+        },
+        {
+            "quantity": "the winner's range dishing over the free stroke",
+            "parameter": "dishing sample grid 41 / 81 / 161",
+            "values": [
+                41.0,
+                81.0,
+                161.0
+            ],
+            "results": [
+                0.166652742,
+                0.166652742,
+                0.166652742
+            ],
+            "departure": 0.0,
+            "note": "81 is the grid every published dishing in this programme is read on"
+        },
+        {
+            "quantity": "the maximum plan ceiling at 30 roots",
+            "parameter": "bisection resolution 1e-6 / 1e-9 / 1e-12",
+            "values": [
+                1.0E-6,
+                1.0E-9,
+                0.0
+            ],
+            "results": [
+                9.53499976,
+                9.535,
+                9.535
+            ],
+            "departure": 0.0,
+            "note": "an ABSOLUTE departure in nm, because the quantity is a length and the bisection exits on its own bracket width"
+        },
+        {
+            "quantity": "the 30-path arm",
+            "parameter": "RK4 steps 200 / 400 / 800",
+            "values": [
+                200.0,
+                400.0,
+                800.0
+            ],
+            "results": [
+                7.77048807,
+                7.77048807,
+                7.77048807
+            ],
+            "departure": 0.0,
+            "note": "C-0039's exact elastica, re-run rather than tabulated"
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0063",
+            "quantity": "dishing/stroke, 34 roots, equal springs, design state",
+            "published": 0.0706145537,
+            "reproduced": 0.0706145537,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0068",
+            "quantity": "dishing/stroke, 34 roots, over the 2 mM device's range",
+            "published": 0.0789,
+            "reproduced": 0.0788500163,
+            "departure": 6.33507287E-4,
+            "strict": false
+        },
+        {
+            "source": "C-0072",
+            "quantity": "dishing/stroke, its plan-rule 30 roots, design state",
+            "published": 0.26028,
+            "reproduced": 0.260281397,
+            "departure": 5.36821841E-6,
+            "strict": false
+        },
+        {
+            "source": "C-0072",
+            "quantity": "the ceiling of its own 30-root reduction [nm]",
+            "published": 9.12,
+            "reproduced": 9.12,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0072",
+            "quantity": "the margin of its own 30-root reduction [nm]",
+            "published": 1.3495,
+            "reproduced": 1.34951193,
+            "departure": 8.83856163E-6,
+            "strict": false
+        },
+        {
+            "source": "C-0072",
+            "quantity": "the 30-path arm [nm]",
+            "published": 7.77049,
+            "reproduced": 7.77048807,
+            "departure": 2.47961023E-7,
+            "strict": false
+        },
+        {
+            "source": "C-0069",
+            "quantity": "the 34-path arm [nm]",
+            "published": 8.16439083,
+            "reproduced": 8.16439018,
+            "departure": 7.99544664E-8,
+            "strict": false
+        },
+        {
+            "source": "C-0069",
+            "quantity": "the row-of-three length ceiling [nm]",
+            "published": 8.19,
+            "reproduced": 8.19,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0055",
+            "quantity": "the upward root pitch [nm]",
+            "published": 10.88,
+            "reproduced": 10.88,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0055",
+            "quantity": "roots in C-0063's placement",
+            "published": 34.0,
+            "reproduced": 34.0,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0026",
+            "quantity": "the free-tile stroke [nm]",
+            "published": 4.90731102,
+            "reproduced": 4.90731102,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0022",
+            "quantity": "dishing/stroke, free uncoupled tile, design state, phase 24",
+            "published": 0.3079,
+            "reproduced": 0.307902368,
+            "departure": 7.6898974E-6,
+            "strict": false
+        },
+        {
+            "source": "C-0063",
+            "quantity": "centro-symmetric phases",
+            "published": 2.0,
+            "reproduced": 2.0,
+            "departure": 0.0,
+            "strict": true
+        }
+    ],
+    "predicates": [
+        {
+            "name": "P1 — is there a FLAT 30-root placement?",
+            "statement": "the peak dishing of 30 EQUAL springs on the best two-per-row placement, at the design state and over the whole range the placed 2 mM device traverses, against T-5b's 0.10 of the free-tile stroke",
+            "verdict": "the best of the exhaustive centro-symmetric family reaches 0.1667 at the design state and 0.1667 over the range; the best of the 32-phase descent reaches 0.1670 over the range — OUTSIDE T-5b's 0.10, against C-0072's plan-rule 0.2603 and C-0063's 34-root 0.0789"
+        },
+        {
+            "name": "P2 — does it keep the plan margin?",
+            "statement": "the re-sized 30-path arm's margin `ceiling − arm` on the placement P1 returns, against C-0072's 1.3495 nm and against the 0.34 nm base-pair rise",
+            "verdict": "the winner's own ceiling is 8.1900 nm and its margin 0.4195 nm (1.23 rises); the largest any 30-root placement can keep is 9.5350 nm, i.e. a margin of 1.7645 nm — C-0072's reduction reaches 9.1200 nm and 1.3495 nm"
+        },
+        {
+            "name": "P3 — are the two satisfiable TOGETHER?",
+            "statement": "the Pareto front of the exhaustive family: the flattest placement, the largest-ceiling placement, and the flattest placement whose margin clears one base-pair rise",
+            "verdict": "phase 8, the FLATTEST placement, plan margin unconstrained: equal springs 0.1726, margin 0.4195 nm; phase 8, the LARGEST plan ceiling, flatness unconstrained: equal springs 0.2424, margin 1.7645 nm; phase 8, the flattest placement whose margin clears one base-pair rise: equal springs 0.1726, margin 0.4195 nm; phase 8, the FLATTEST placement AT the largest plan ceiling the lattice affords: equal springs 0.1878, margin 1.7645 nm; phase 24, the FLATTEST placement, plan margin unconstrained: equal springs 0.1667, margin 0.4195 nm; phase 24, the LARGEST plan ceiling, flatness unconstrained: equal springs 0.3554, margin 1.7645 nm; phase 24, the flattest placement whose margin clears one base-pair rise: equal springs 0.1667, margin 0.4195 nm; phase 24, the FLATTEST placement AT the largest plan ceiling the lattice affords: equal springs 0.2017, margin 1.7645 nm — and under a distribution: C-0072's plan-rule 30-root reduction: 0.0732 at margin 1.3495 nm; phase 8 — the FLATTEST placement, plan margin unconstrained: 0.0648 at margin 0.4195 nm; phase 8 — the LARGEST plan ceiling, flatness unconstrained: 0.0682 at margin 1.7645 nm; phase 8 — the flattest placement whose margin clears one base-pair rise: 0.0648 at margin 0.4195 nm; phase 8 — the FLATTEST placement AT the largest plan ceiling the lattice affords: 0.0715 at margin 1.7645 nm; phase 24 — the FLATTEST placement, plan margin unconstrained: 0.0894 at margin 0.4195 nm; phase 24 — the LARGEST plan ceiling, flatness unconstrained: 0.1319 at margin 1.7645 nm; phase 24 — the flattest placement whose margin clears one base-pair rise: 0.0894 at margin 0.4195 nm; phase 24 — the FLATTEST placement AT the largest plan ceiling the lattice affords: 0.1124 at margin 1.7645 nm"
+        },
+        {
+            "name": "P4 — does a DISTRIBUTION recover what equal springs lose?",
+            "statement": "the 30-parameter minimax over the same range at C-0017's unchanged total and under C-0049's per-path ceiling, against the least-squares floor of the same station set",
+            "verdict": "C-0063's 34 roots at phase 24 — the knife-edge design: 0.0291 (floor 0.0031, peak ratio 1.74, FLAT); C-0072's plan-rule 30-root reduction: 0.0732 (floor 0.0057, peak ratio 3.00, FLAT); phase 8 — the FLATTEST placement, plan margin unconstrained: 0.0648 (floor 0.0070, peak ratio 2.35, FLAT); phase 8 — the LARGEST plan ceiling, flatness unconstrained: 0.0682 (floor 0.0055, peak ratio 2.06, FLAT); phase 8 — the flattest placement whose margin clears one base-pair rise: 0.0648 (floor 0.0070, peak ratio 2.35, FLAT); phase 8 — the FLATTEST placement AT the largest plan ceiling the lattice affords: 0.0715 (floor 0.0048, peak ratio 2.45, FLAT); phase 24 — the FLATTEST placement, plan margin unconstrained: 0.0894 (floor 0.0058, peak ratio 2.44, FLAT); phase 24 — the LARGEST plan ceiling, flatness unconstrained: 0.1319 (floor 0.0078, peak ratio 3.00, not flat); phase 24 — the flattest placement whose margin clears one base-pair rise: 0.0894 (floor 0.0058, peak ratio 2.44, FLAT); phase 24 — the FLATTEST placement AT the largest plan ceiling the lattice affords: 0.1124 (floor 0.0065, peak ratio 3.00, not flat)"
+        },
+        {
+            "name": "the recommendation",
+            "statement": "the 30-root placement that keeps every nanometre of plan margin the lattice affords AND is flattest under C-0017's unchanged total",
+            "verdict": "phase 8 — the LARGEST plan ceiling, flatness unconstrained — plan margin 1.7645 nm (5.19 base-pair rises, 68.9x C-0069's 0.02561 nm knife edge and 1.31x C-0072's 1.3495 nm), dishing 0.0682 over the design device's whole range at a peak stiffness ratio of 2.06 and a peak path force of 6.857 pN against the 10 pN unzip allowable; with EQUAL springs the same placement dishes 0.2424 and is NOT flat"
+        },
+        {
+            "name": "the declared falsifier",
+            "statement": "no two-per-row placement clears 0.10, at either objective and at any phase, with EQUAL springs",
+            "verdict": "FIRED for equal springs — no two-per-row placement of any phase clears 0.10 with them, the best being 0.1667; a DISTRIBUTION recovers it, so the trade is between an equal-spring design and a quotable margin, not between flatness and margin"
+        }
+    ],
+    "bestPlacement": [
+        {
+            "phaseBasePairs": 24,
+            "row": 0,
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 1,
+            "roots": [
+                0.0,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 2,
+            "roots": [
+                -16.32,
+                -5.44
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 3,
+            "roots": [
+                -10.88,
+                0.0
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 4,
+            "roots": [
+                -5.44,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 5,
+            "roots": [
+                0.0,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 6,
+            "roots": [
+                -16.32,
+                -5.44
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 7,
+            "roots": [
+                -10.88,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 8,
+            "roots": [
+                5.44,
+                16.32
+            ],
+            "towardPositiveX": [
+                false,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 9,
+            "roots": [
+                -10.88,
+                0.0
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 10,
+            "roots": [
+                -16.32,
+                5.44
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 11,
+            "roots": [
+                0.0,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 12,
+            "roots": [
+                5.44,
+                16.32
+            ],
+            "towardPositiveX": [
+                false,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 13,
+            "roots": [
+                -10.88,
+                0.0
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 14,
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ]
+        }
+    ],
+    "recommendedPlacement": [
+        {
+            "phaseBasePairs": 8,
+            "row": 0,
+            "roots": [
+                -10.88,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 1,
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 2,
+            "roots": [
+                -10.88,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 3,
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 4,
+            "roots": [
+                -10.88,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 5,
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 6,
+            "roots": [
+                -10.88,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 7,
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 8,
+            "roots": [
+                -10.88,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 9,
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 10,
+            "roots": [
+                -10.88,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 11,
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 12,
+            "roots": [
+                -10.88,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 13,
+            "roots": [
+                -16.32,
+                16.32
+            ],
+            "towardPositiveX": [
+                true,
+                false
+            ]
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 14,
+            "roots": [
+                -10.88,
+                10.88
+            ],
+            "towardPositiveX": [
+                true,
+                true
+            ]
+        }
+    ],
+    "findings": [
+        "The two-per-row constraint at 30 roots on 15 duplexes is an IDENTITY and not a constraint: 2 x 15 = 30 exactly, so every row carries two and the whole design space is a product of per-row 2-subsets. That is C-0063's bound 1 read at the other cap, it costs one line of arithmetic, and it shrinks the centro-symmetric family from C-0063's 361 584 at 34 roots to 69984 at 30 — small enough to enumerate EXHAUSTIVELY at both phases the congruence admits.",
+        "A plan ceiling is a property of a PLACEMENT, not of a count. C-0072 reports 9.12 nm at 30 roots and 20.00 nm at 15; the largest any placement of those counts can keep on the same lattice is 9.5350 nm and 30.8800 nm. The difference is a bisection on a monotone capacity — rows are independent and a placement's ceiling is a MIN over them — so it is a proof and not a search, and it costs no solve at all.",
+        "The flatness answer for EQUAL springs: NO 30-root placement is flat with equal springs, at any of the 32 phases. Over the range the placed 2 mM / 10 nm / 0.192 V device traverses, the best two-per-row placement dishes 0.1667 (exhaustive centro-symmetric) and 0.1670 (32-phase descent) against T-5b's 0.10, C-0072's plan-rule 0.2603, C-0063's 34-root 0.0789 and a free tile at 0.3079.",
+        "The winner sits at phase 24, dishes 0.1667 at the design state and 0.1667 over the range, and carries a plan margin of 0.4195 nm — 1.23 base-pair rises against C-0072's 3.97. Per path it carries 3.333 pN of the 100 pN duty against the 10 pN unzip allowable, 2.797 pN solved and 0.392 pN of C-0014 thermal force.",
+        "The cheap bound did not decide it: the least-squares floor over EVERY phase-24 upward root is 0.0007 at the design state and 0.0005 at the compressed end, 140.5x below T-5b's convention, so the falsifier could not fire before the enumeration and the enumeration was necessary.",
+        "And the negative belongs to the EQUAL SPRINGS, not to the station set: the 30-parameter minimax at C-0017's unchanged total takes the same placements to 0.0732, 0.0648, 0.0682, 0.0648, 0.0715, 0.0894, 0.1319, 0.0894, 0.1124. So a flat 30-root design EXISTS, and it needs a distribution. C-0063's own advantage was that 34 roots need no distribution at all; at 30 that advantage is what is spent, which is CH-0080's finding on a new axis — the equal-spring advantage belongs to a COUNT as well as to a layer.",
+        "And the margin becomes QUOTABLE: all five of C-0072's floors — four of them needing no fabrication measurement and the fifth being the only one there is — are cleared at the recommended placement, the base-pair rise — the design qu at 0.3400 nm, the two measured SAXS interhelical at 0.0400 nm, the thermal axial breathing of the at 0.2654 nm, the arm tip's own bending at a PER at 1.6782 nm, Fischer et al.'s fitted single-lay at 0.2500 nm, the weakest by 1.05x. Two of them scale with the arm and are re-evaluated here rather than carried across: the arm tip's own bending at a rigid root falls from 1.8074 to 1.6782 nm as the arm shortens from 8.164 to 7.7705 nm, which is the whole of that clearance."
+    ],
+    "parameters": {
+        "targetCount": 30.0,
+        "duplexes": 15.0,
+        "edgeX": 40.0,
+        "lengthY": 40.35,
+        "mandate": 33.3333333,
+        "armAt30": 7.77048807,
+        "armAt34": 8.16439018,
+        "exclusionWidth": 2.69,
+        "risePerBasePair": 0.34,
+        "freeStroke": 4.90731102,
+        "flatnessTolerance": 0.1,
+        "maximumPlanCeilingAt30": 9.535,
+        "c0072Ceiling": 9.12,
+        "c0072Margin": 1.34951193,
+        "winnerPhase": 24.0,
+        "winnerCeiling": 8.19,
+        "winnerMargin": 0.419511928,
+        "winnerRangeOverStroke": 0.166653,
+        "winnerDesignOverStroke": 0.166652742,
+        "reachableFloorDesign": 7.11649591E-4,
+        "reachableFloorHeld": 4.93293309E-4,
+        "freeTileDesignOverStroke": 0.307902368,
+        "descentStarts": 12.0,
+        "decisionDigits": 6.0,
+        "recommendedPhase": 8.0,
+        "recommendedCeiling": 9.535,
+        "recommendedMargin": 1.76451193,
+        "recommendedEqualSpringOverStroke": 0.242359741,
+        "recommendedMinimaxOverStroke": 0.0682200897,
+        "recommendedPeakRatio": 2.05713243,
+        "recommendedPeakPathForce": 6.85710809
+    }
+}

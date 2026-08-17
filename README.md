@@ -84,6 +84,10 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=anchoring.OutputElementPlacementStudyKt       # T-133, is there an output element that does not lie in the plan
 ./gradlew study -Pstudy=anchoring.PlanToleranceStudyKt                # T-134, a tolerance model for the branch's two knife edges
 ./gradlew study -Pstudy=synthesis.OutputElementRecommendationStudyKt  # T-135, which output element does the programme recommend, and on what premises
+./gradlew study -Pstudy=anchoring.WeaveExclusionWidthStudyKt          # T-137, is a single plan exclusion width defensible against the measured weave
+./gradlew study -Pstudy=anchoring.TwoPerRowPlacementStudyKt           # T-136, is there a flat 30-root placement, and does it keep the plan margin
+./gradlew study -Pstudy=anchoring.PathCountConsistencyStudyKt         # T-138, C-0069's path-count sensitivity re-read with the array tied to the count
+./gradlew study -Pstudy=brush.FirstMomentConventionStudyKt            # T-1e, N inverted on the first-moment thickness as well as the force-onset height
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.

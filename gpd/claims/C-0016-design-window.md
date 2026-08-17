@@ -45,6 +45,24 @@ separate the definitional part of that gap from the physical part exactly — **
 
 **A bench reading this window in the wrong convention would order 8–9 kDa PEG where it needs 1.1–3.3 kDa.**
 
+> ⚠️ **`T-1e` HAS NOW RUN** — [`C-0077`](C-0077-first-moment-chain-length.md), raising
+> [`CH-0091`](../challenges/CH-0091-a-first-moment-ten-nanometre-layer-is-not-a-ten-nanometre-layer.md)
+> against this banner. **No edge, owner or verdict of this claim moves.** Three corrections to the
+> banner itself:
+> 1. **The two conventions are two DEVICES, not two readings of one.** A layer specified at
+>    `2⟨z⟩ = 10 nm` puts its tile at **13.20–18.05 nm** — inside §3's stated 5–10 nm band at
+>    **0 of 61** grid points. §3 specifies a distance between two bodies, so **this window is in the
+>    right convention.**
+> 2. **The molar mass is 7.71 kDa at the design point and 4.17–8.73 kDa across the window**, not
+>    "8–9 kDa" — that figure came from `C-0011`'s scaling estimate, which `CH-0090` shows is 12–19 % high.
+> 3. **The factor is 2.59–2.84×, not "about four"** — four was the top of one range over the bottom
+>    of the other. The *"1.71–2.16× smaller"* thickness ratio is correct (measured 1.710–2.065 here).
+>
+> The banner's **point** — that this is the likeliest way the window gets misread at a bench — is
+> upheld intact, and both rows should travel in a bench order: a bench cannot measure a force onset
+> and cannot buy a thickness. The gap `CH-0010` opened splits as **2.819× convention × 1.636–1.648×
+> physics**, i.e. 62–68 % definitional.
+
 ---
 
 ## The claim, in one line
@@ -318,7 +336,11 @@ where they fail.** That is a `T-2` finding about a challenge, not about a claim.
 
 - **TRL 1–3. Nothing here is measured.** `PASS` means model-consistent and traceable. A design window is the
   artifact most likely to be read as a recommendation, and it is not one.
-- **THE HEIGHT CONVENTION IS FORCE-ONSET**, at a defining load of 1 pN over the tile. `T-1e` has not run.
+- **THE HEIGHT CONVENTION IS FORCE-ONSET**, at a defining load of 1 pN over the tile — and
+  [`C-0077`](C-0077-first-moment-chain-length.md) (`T-1e`) establishes that this is the **right**
+  convention for a window §3 specifies: a first-moment 10 nm layer puts its tile at 13.20–18.05 nm,
+  outside §3's 5–10 nm band at 0 of 61 grid points. The conversion to the first-moment convention is
+  **2.585–2.843×** in `N` over this window (`CH-0091`).
 - **Every window edge is a grid point** on `T-1d`'s 61-point logarithmic sweep, located to **1.109×** and no
   better. The narrowest window is five grid steps wide and the one crossing is 13.3×, so no verdict sits on
   the resolution — but no edge should be quoted to more digits than that.

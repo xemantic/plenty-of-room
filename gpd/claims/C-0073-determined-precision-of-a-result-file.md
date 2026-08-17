@@ -286,6 +286,21 @@ The propagation is bounded and closed, and that was checked rather than assumed:
 exactly one study, `T-1f` by none, and `T-2`'s own file by none. **The affected set is exactly
 `{T-1d, T-1f, T-2}` and it is complete.**
 
+> **CORRECTED, iteration 15 — [`CH-0092`](../challenges/CH-0092-the-propagation-did-not-close.md),
+> UPHELD.** The paragraph above is wrong and the recipe it recommends is why. `T-1d` has **three**
+> readers and `T-1f` has **two**: `window/ResynthesisInputs.kt` opens both by
+> `File(directory, "<name>")`, and its two callers — `WindowResynthesisStudy` (`T-25`, `C-0027`) and
+> `SecondResynthesisStudy` (`T-118`, `C-0051`) — pass the results **directory**, so a grep for
+> `File("gpd/results/` cannot see either edge. The affected set is
+> `{T-1d, T-1f, T-2, T-25, T-118}`. Both stale files are re-emitted in iteration 15: **325 of
+> `T-25`'s and 2 751 of `T-118`'s numeric fields move**, at a median `2.2e−6` and `3.7e−7` and a
+> genuine maximum of `4.6e−5`, with **0 boolean and 0 structural changes**, one precision-carrying
+> string, and **no verdict, flag or quoted figure of `C-0027`, `C-0051` or `T-63` moving** — the
+> 0.5 mM stability margin reads 2.16–9.87× either way. **`T-118`'s largest apparent movement is a
+> reproduction residual collapsing `8.79e−07 → 0.0`: that residual WAS the staleness, and it sat in
+> the repository unread for an iteration.** The verdict of this claim is unaffected; its audit is
+> not, and `P-19`'s ranking rests on the census this paragraph got wrong.
+
 `T-2`'s movement is 4 864 numeric fields at a median `8.4e−7` and a maximum `8.7e−6`, **0 boolean
 flags, 0 structural changes** — the six-digit rounding of its inputs, arriving one level down. Every
 window edge moves by `≤ 5.3e−6`; the edges are the same **grid indices** and only the grid values

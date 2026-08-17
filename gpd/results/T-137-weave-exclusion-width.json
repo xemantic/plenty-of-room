@@ -1,0 +1,1269 @@
+{
+    "task": "T-137",
+    "leaf": "A8.2",
+    "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm, 0.34 nm rise, 32 bp crossover interface spacing, crossover phase 24; C-0063's 34 upward roots read from gpd/results/T-125-*.json; the weave measured at [Na+] = 0.5 M (oxDNA) and in vitrified buffer (cryo-EM), NOT at 2 mM MgCl2",
+    "decision": "A SINGLE EXCLUSION WIDTH IS DEFENSIBLE — the weave's coefficient on the plan margin is exactly zero, categorically (wrong axis, wrong bonding) and numerically (every station is a weave node, at every phase and every amplitude) — and the question the measurement actually reopens is the width's VALUE, which straddles the placement threshold pitch - arm = 2.71561 nm.",
+    "roles": [
+        {
+            "role": "ROW_PITCH",
+            "axis": "across the helices",
+            "betweenBondedBodies": true,
+            "weaveApplies": true,
+            "standingValue": 2.69,
+            "defensibleValue": 2.69,
+            "defensibleSource": "SAXS lattice constant, Fischer et al. 2016 — and the weave's own mean",
+            "note": "the one role the weave measures; its value at every station is the mean exactly"
+        },
+        {
+            "role": "BODY_WIDTH",
+            "axis": "across the helices",
+            "betweenBondedBodies": false,
+            "weaveApplies": false,
+            "standingValue": 2.69,
+            "defensibleValue": 1.81727572,
+            "defensibleSource": "T-71's measured phosphate radius, 13 084 crystallographic linkages",
+            "note": "the plan girth of ONE free body; a lattice constant is not a girth"
+        },
+        {
+            "role": "COLLINEAR_CLEARANCE",
+            "axis": "along the helices",
+            "betweenBondedBodies": false,
+            "weaveApplies": false,
+            "standingValue": 2.69,
+            "defensibleValue": 1.81727572,
+            "defensibleSource": "T-71's measured phosphate radius — the girth of whatever stands in the gap",
+            "note": "the d in C-0072's M = p - d - L; the weave has no component on this axis"
+        }
+    ],
+    "widths": [
+        {
+            "label": "T-71 measured phosphate contact",
+            "width": 1.81727572,
+            "source": "T-71 measured phosphate contact",
+            "readFlag": "MEASURED (this repository)",
+            "planMargin": 0.898333453,
+            "marginOverRise": 2.64215721,
+            "placedOfThirtyFour": 34,
+            "placesAll": true,
+            "overThreshold": 0.66919634
+        },
+        {
+            "label": "fibre narrow phosphate",
+            "width": 1.8,
+            "source": "fibre narrow phosphate",
+            "readFlag": "CITED",
+            "planMargin": 0.91560917,
+            "marginOverRise": 2.69296815,
+            "placedOfThirtyFour": 34,
+            "placesAll": true,
+            "overThreshold": 0.662834704
+        },
+        {
+            "label": "this project's asserted steric diameter",
+            "width": 2.0,
+            "source": "this project's asserted steric diameter",
+            "readFlag": "CITED",
+            "planMargin": 0.71560917,
+            "marginOverRise": 2.10473285,
+            "placedOfThirtyFour": 34,
+            "placesAll": true,
+            "overThreshold": 0.736483004
+        },
+        {
+            "label": "SAXS single-layer lattice constant",
+            "width": 2.69,
+            "source": "SAXS single-layer lattice constant",
+            "readFlag": "CITED, MEASURED",
+            "planMargin": 0.02560917,
+            "marginOverRise": 0.0753210882,
+            "placedOfThirtyFour": 34,
+            "placesAll": true,
+            "overThreshold": 0.990569641
+        },
+        {
+            "label": "the placement threshold, pitch - arm",
+            "width": 2.71560917,
+            "source": "the placement threshold, pitch - arm",
+            "readFlag": "DERIVED",
+            "planMargin": 0.0,
+            "marginOverRise": 0.0,
+            "placedOfThirtyFour": 34,
+            "placesAll": true,
+            "overThreshold": 1.0
+        },
+        {
+            "label": "Bai's sawtooth midpoint",
+            "width": 2.725,
+            "source": "Bai's sawtooth midpoint",
+            "readFlag": "DERIVED from a MEASUREMENT",
+            "planMargin": -0.00939083,
+            "marginOverRise": -0.0276200882,
+            "placedOfThirtyFour": 22,
+            "placesAll": false,
+            "overThreshold": 1.00345809
+        },
+        {
+            "label": "SAXS square-lattice constant",
+            "width": 2.73,
+            "source": "SAXS square-lattice constant",
+            "readFlag": "CITED, MEASURED",
+            "planMargin": -0.01439083,
+            "marginOverRise": -0.0423259706,
+            "placedOfThirtyFour": 22,
+            "placesAll": false,
+            "overThreshold": 1.0052993
+        },
+        {
+            "label": "Snodin's oxDNA 2D-tile mean",
+            "width": 3.25,
+            "source": "Snodin's oxDNA 2D-tile mean",
+            "readFlag": "CITED, SIMULATED",
+            "planMargin": -0.53439083,
+            "marginOverRise": -1.57173774,
+            "placedOfThirtyFour": 22,
+            "placesAll": false,
+            "overThreshold": 1.19678488
+        },
+        {
+            "label": "Bai's weave minimum",
+            "width": 1.85,
+            "source": "Bai's weave minimum",
+            "readFlag": "CITED, MEASURED",
+            "planMargin": 0.86560917,
+            "marginOverRise": 2.54590932,
+            "placedOfThirtyFour": 34,
+            "placesAll": true,
+            "overThreshold": 0.681246779
+        },
+        {
+            "label": "Bai's weave maximum",
+            "width": 3.6,
+            "source": "Bai's weave maximum",
+            "readFlag": "CITED, MEASURED",
+            "planMargin": -0.88439083,
+            "marginOverRise": -2.6011495,
+            "placedOfThirtyFour": 22,
+            "placesAll": false,
+            "overThreshold": 1.32566941
+        }
+    ],
+    "stations": [
+        {
+            "row": 0,
+            "x": -16.32,
+            "planeIndex": -9,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 0,
+            "x": -5.44,
+            "planeIndex": -5,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 0,
+            "x": 16.32,
+            "planeIndex": 3,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 1,
+            "x": 0.0,
+            "planeIndex": -3,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 1,
+            "x": 10.88,
+            "planeIndex": 1,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 2,
+            "x": -16.32,
+            "planeIndex": -9,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 2,
+            "x": 5.44,
+            "planeIndex": -1,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 2,
+            "x": 16.32,
+            "planeIndex": 3,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 3,
+            "x": 0.0,
+            "planeIndex": -3,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 3,
+            "x": 10.88,
+            "planeIndex": 1,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 4,
+            "x": -16.32,
+            "planeIndex": -9,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 4,
+            "x": 16.32,
+            "planeIndex": 3,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 5,
+            "x": -10.88,
+            "planeIndex": -7,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 5,
+            "x": 0.0,
+            "planeIndex": -3,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 6,
+            "x": -16.32,
+            "planeIndex": -9,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 6,
+            "x": 16.32,
+            "planeIndex": 3,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 7,
+            "x": -10.88,
+            "planeIndex": -7,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 7,
+            "x": 10.88,
+            "planeIndex": 1,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 8,
+            "x": -16.32,
+            "planeIndex": -9,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 8,
+            "x": 16.32,
+            "planeIndex": 3,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 9,
+            "x": 0.0,
+            "planeIndex": -3,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 9,
+            "x": 10.88,
+            "planeIndex": 1,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 10,
+            "x": -16.32,
+            "planeIndex": -9,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 10,
+            "x": 16.32,
+            "planeIndex": 3,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 11,
+            "x": -10.88,
+            "planeIndex": -7,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 11,
+            "x": 0.0,
+            "planeIndex": -3,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 12,
+            "x": -16.32,
+            "planeIndex": -9,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 12,
+            "x": -5.44,
+            "planeIndex": -5,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 12,
+            "x": 16.32,
+            "planeIndex": 3,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 13,
+            "x": -10.88,
+            "planeIndex": -7,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 13,
+            "x": 0.0,
+            "planeIndex": -3,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 14,
+            "x": -16.32,
+            "planeIndex": -9,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 14,
+            "x": 5.44,
+            "planeIndex": -1,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        },
+        {
+            "row": 14,
+            "x": 16.32,
+            "planeIndex": 3,
+            "onWeaveNode": true,
+            "distanceBelow": 2.69,
+            "distanceAbove": 2.69,
+            "axisOffset": 0.0,
+            "acrossRowClearanceMeasuredBody": 0.872724283,
+            "acrossRowClearanceAssertedBody": 0.69
+        }
+    ],
+    "phases": [
+        {
+            "phaseBasePairs": 0,
+            "upwardSites": 60,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 1,
+            "upwardSites": 60,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 2,
+            "upwardSites": 60,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 3,
+            "upwardSites": 52,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 4,
+            "upwardSites": 52,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 5,
+            "upwardSites": 52,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 6,
+            "upwardSites": 52,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 7,
+            "upwardSites": 52,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 8,
+            "upwardSites": 52,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 9,
+            "upwardSites": 52,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 10,
+            "upwardSites": 52,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 11,
+            "upwardSites": 52,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 12,
+            "upwardSites": 52,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 13,
+            "upwardSites": 52,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 14,
+            "upwardSites": 60,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 15,
+            "upwardSites": 60,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 16,
+            "upwardSites": 60,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 17,
+            "upwardSites": 60,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 18,
+            "upwardSites": 60,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 19,
+            "upwardSites": 53,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 20,
+            "upwardSites": 53,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 21,
+            "upwardSites": 53,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 22,
+            "upwardSites": 53,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 23,
+            "upwardSites": 53,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "upwardSites": 53,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 25,
+            "upwardSites": 53,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 26,
+            "upwardSites": 53,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 27,
+            "upwardSites": 53,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 28,
+            "upwardSites": 53,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 29,
+            "upwardSites": 53,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 30,
+            "upwardSites": 60,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        },
+        {
+            "phaseBasePairs": 31,
+            "upwardSites": 60,
+            "everySiteOnANode": true,
+            "worstAxisOffset": 0.0,
+            "worstDistanceDeparture": 0.0
+        }
+    ],
+    "packing": [
+        {
+            "pipeline": "C-0063 / C-0069 — 34 upward roots, arm 8.16439 nm",
+            "widthLabel": "T-71 measured",
+            "width": 1.81727572,
+            "demanded": 34,
+            "placed": 34,
+            "positionDependent": false,
+            "note": "armDirections at a constant clearance"
+        },
+        {
+            "pipeline": "C-0053 — 45 E5a1 arms on the in-plane hinge lattice",
+            "widthLabel": "T-71 measured",
+            "width": 1.81727572,
+            "demanded": 45,
+            "placed": 43,
+            "positionDependent": false,
+            "note": "placeHingeArms, best of 32 phases"
+        },
+        {
+            "pipeline": "C-0063 / C-0069 — 34 upward roots, arm 8.16439 nm",
+            "widthLabel": "asserted steric",
+            "width": 2.0,
+            "demanded": 34,
+            "placed": 34,
+            "positionDependent": false,
+            "note": "armDirections at a constant clearance"
+        },
+        {
+            "pipeline": "C-0053 — 45 E5a1 arms on the in-plane hinge lattice",
+            "widthLabel": "asserted steric",
+            "width": 2.0,
+            "demanded": 45,
+            "placed": 43,
+            "positionDependent": false,
+            "note": "placeHingeArms, best of 32 phases"
+        },
+        {
+            "pipeline": "C-0063 / C-0069 — 34 upward roots, arm 8.16439 nm",
+            "widthLabel": "SAXS lattice",
+            "width": 2.69,
+            "demanded": 34,
+            "placed": 34,
+            "positionDependent": false,
+            "note": "armDirections at a constant clearance"
+        },
+        {
+            "pipeline": "C-0053 — 45 E5a1 arms on the in-plane hinge lattice",
+            "widthLabel": "SAXS lattice",
+            "width": 2.69,
+            "demanded": 45,
+            "placed": 43,
+            "positionDependent": false,
+            "note": "placeHingeArms, best of 32 phases"
+        },
+        {
+            "pipeline": "C-0063 / C-0069 — 34 upward roots, arm 8.16439 nm",
+            "widthLabel": "Bai midpoint",
+            "width": 2.725,
+            "demanded": 34,
+            "placed": 22,
+            "positionDependent": false,
+            "note": "armDirections at a constant clearance"
+        },
+        {
+            "pipeline": "C-0053 — 45 E5a1 arms on the in-plane hinge lattice",
+            "widthLabel": "Bai midpoint",
+            "width": 2.725,
+            "demanded": 45,
+            "placed": 43,
+            "positionDependent": false,
+            "note": "placeHingeArms, best of 32 phases"
+        },
+        {
+            "pipeline": "C-0063 / C-0069 — 34 upward roots, arm 8.16439 nm",
+            "widthLabel": "square lattice",
+            "width": 2.73,
+            "demanded": 34,
+            "placed": 22,
+            "positionDependent": false,
+            "note": "armDirections at a constant clearance"
+        },
+        {
+            "pipeline": "C-0053 — 45 E5a1 arms on the in-plane hinge lattice",
+            "widthLabel": "square lattice",
+            "width": 2.73,
+            "demanded": 45,
+            "placed": 43,
+            "positionDependent": false,
+            "note": "placeHingeArms, best of 32 phases"
+        },
+        {
+            "pipeline": "C-0063 / C-0069 — 34 upward roots, arm 8.16439 nm",
+            "widthLabel": "the weave SUBSTITUTED into the collinear slot (the category error, priced)",
+            "width": 2.69,
+            "demanded": 34,
+            "placed": 28,
+            "positionDependent": true,
+            "note": "armDirectionsWithClearance with d(x) taken from the row's own interface"
+        },
+        {
+            "pipeline": "C-0063 / C-0069 — 34 upward roots, arm 8.16439 nm",
+            "widthLabel": "the weave at Bai's amplitude, SUBSTITUTED into the collinear slot",
+            "width": 2.725,
+            "demanded": 34,
+            "placed": 22,
+            "positionDependent": true,
+            "note": "the same substitution at the cryo-EM amplitude and mean"
+        },
+        {
+            "pipeline": "C-0063 / C-0069 — 34 upward roots, arm 8.16439 nm",
+            "widthLabel": "the weave in its OWN role, as the across-row separation",
+            "width": 2.69,
+            "demanded": 34,
+            "placed": 34,
+            "positionDependent": true,
+            "note": "every station is a node, so the across-row separation is the lattice constant exactly"
+        },
+        {
+            "pipeline": "C-0069 — placeRootedOutputElement on the same 34 stations",
+            "widthLabel": "all three roles at the SAXS 2.69 nm — the standing design",
+            "width": 2.69,
+            "demanded": 34,
+            "placed": 34,
+            "positionDependent": false,
+            "note": "row pitch 2.6900 nm; rows independent = true"
+        },
+        {
+            "pipeline": "C-0069 — placeRootedOutputElement on the same 34 stations",
+            "widthLabel": "the COLLINEAR clearance alone raised to 2.73, rows left at 2.69 and all-or-nothing per row",
+            "width": 2.73,
+            "demanded": 34,
+            "placed": 22,
+            "positionDependent": false,
+            "note": "row pitch 2.6900 nm; rows independent = false"
+        },
+        {
+            "pipeline": "C-0069 — placeRootedOutputElement on the same 34 stations",
+            "widthLabel": "C-0069's OWN reading — width 2.73 against a 2.69 row pitch, so the bodies also overlap ACROSS the rows",
+            "width": 2.73,
+            "demanded": 34,
+            "placed": 18,
+            "positionDependent": false,
+            "note": "row pitch 2.6900 nm; rows independent = false"
+        },
+        {
+            "pipeline": "C-0069 — placeRootedOutputElement on the same 34 stations",
+            "widthLabel": "2.73 read CONSISTENTLY — the row pitch is the interhelical distance too",
+            "width": 2.73,
+            "demanded": 34,
+            "placed": 30,
+            "positionDependent": false,
+            "note": "row pitch 2.7300 nm; rows independent = true"
+        },
+        {
+            "pipeline": "C-0069 — placeRootedOutputElement on the same 34 stations",
+            "widthLabel": "the measured girth against the SAXS row pitch — the defensible reading",
+            "width": 1.81727572,
+            "demanded": 34,
+            "placed": 34,
+            "positionDependent": false,
+            "note": "row pitch 2.6900 nm; rows independent = true"
+        }
+    ],
+    "steric": [
+        {
+            "reading": "this project's asserted steric diameter",
+            "diameter": 2.0,
+            "source": "CLAUDE.md, from Hedley et al. 2024's a_DNA = 10 Angstrom",
+            "readFlag": "CITED",
+            "admitsWeaveMinimum": false,
+            "sigmaAboveContact": 0.347966211
+        },
+        {
+            "reading": "the narrow fibre reading",
+            "diameter": 1.8,
+            "source": "CLAUDE.md's other end of the bracket",
+            "readFlag": "CITED",
+            "admitsWeaveMinimum": true,
+            "sigmaAboveContact": 0.347966211
+        },
+        {
+            "reading": "T-71's MEASURED phosphate contact",
+            "diameter": 1.81727572,
+            "source": "13 084 crystallographic linkages, this repository",
+            "readFlag": "MEASURED",
+            "admitsWeaveMinimum": true,
+            "sigmaAboveContact": 0.347966211
+        },
+        {
+            "reading": "T-71's measured contact, against Yoo's all-atom minimum",
+            "diameter": 1.81727572,
+            "source": "13 084 crystallographic linkages, this repository",
+            "readFlag": "MEASURED",
+            "admitsWeaveMinimum": false,
+            "sigmaAboveContact": -0.183697401
+        }
+    ],
+    "literature": [
+        {
+            "source": "Snodin et al., NAR 47:1585 (2019), PMC6379721 — oxDNA, 2D TILE",
+            "quantity": "weave peak-to-peak",
+            "value": 1.5,
+            "unit": "nm",
+            "readFlag": "READ DIRECTLY",
+            "note": "verbatim: \"1.5 nm as a typical value of the difference in the interhelix distance between the maxima and minima of the weave pattern\"; 300 K, [Na+] = 0.5 M, NOT this project's 2 mM MgCl2"
+        },
+        {
+            "source": "Snodin et al. (2019)",
+            "quantity": "weave mean",
+            "value": 3.25,
+            "unit": "nm",
+            "readFlag": "READ DIRECTLY",
+            "note": "verbatim: \"Taking the average between the maxima and minima of the triangular wave form gives an interhelix distance of about 3.25 [nm]\" — the paper prints Angstrom for nm at that sentence; 15 % above the SAXS constant"
+        },
+        {
+            "source": "Snodin et al. (2019)",
+            "quantity": "weave period",
+            "value": 32.0,
+            "unit": "base pairs",
+            "readFlag": "READ DIRECTLY",
+            "note": "verbatim: \"minima at the crossovers ... maxima away from the crossovers, normally at a position which is both midway between the junctions and where the adjacent pair of helices have a crossover. This pattern has a periodicity of about 32 base-pair steps\" — the phase rule, not assumed"
+        },
+        {
+            "source": "Bai et al., PNAS 109:20012 (2012), PMC3523823 — cryo-EM, MULTILAYER",
+            "quantity": "weave minimum",
+            "value": 1.85,
+            "unit": "nm",
+            "readFlag": "READ DIRECTLY",
+            "note": "verbatim Fig. 3 E/F caption: \"the coordinates of base pair midpoints ... a minimum distance <d min> = 18.5 Angstrom at the cross-over\""
+        },
+        {
+            "source": "Bai et al. (2012)",
+            "quantity": "weave maximum",
+            "value": 3.6,
+            "unit": "nm",
+            "readFlag": "READ DIRECTLY",
+            "note": "verbatim: \"a maximum distance of <d max> = 36 Angstrom away from each other\""
+        },
+        {
+            "source": "Bai et al. (2012)",
+            "quantity": "the object's own effective helix diameter",
+            "value": 2.6,
+            "unit": "nm",
+            "readFlag": "READ DIRECTLY",
+            "note": "verbatim: \"when using 2.6-nm effective helix diameter and 10.44 bp/turn\" — a sixth reading of the lattice constant, in the same paper"
+        },
+        {
+            "source": "Bai et al. (2012)",
+            "quantity": "measured base-pair rise",
+            "value": 0.335,
+            "unit": "nm",
+            "readFlag": "READ DIRECTLY",
+            "note": "verbatim: \"the average distance from base pair to base pair midpoints is 3.35 Angstrom\" — 1.5 % below this project's 0.34 nm"
+        },
+        {
+            "source": "Yoo & Aksimentiev, PNAS 110:20099 (2013)",
+            "quantity": "all-atom weave window lower end",
+            "value": 1.8,
+            "unit": "nm",
+            "readFlag": "CITED via gpd/data/T-134-tolerance-literature.md",
+            "note": "verbatim there: \"the DNA-DNA distance was found to range between 18 and 30 Angstrom\"; NOT re-fetched by this task and flagged as such"
+        },
+        {
+            "source": "Fischer et al., Nano Lett. 16:4282 (2016)",
+            "quantity": "square-lattice Bragg constant",
+            "value": 2.73,
+            "unit": "nm",
+            "readFlag": "CITED, MEASURED",
+            "note": "the cross-check target for Bai's sawtooth midpoint"
+        },
+        {
+            "source": "T-71, this repository",
+            "quantity": "measured B-form phosphate radius",
+            "value": 0.908637858,
+            "unit": "nm",
+            "readFlag": "MEASURED",
+            "note": "population medoid over 13 084 crystallographic linkages, SD 0.0665 nm"
+        }
+    ],
+    "inherited": [
+        {
+            "claim": "C-0041",
+            "roleItUses": "COLLINEAR_CLEARANCE and ROW_PITCH",
+            "standingVerdict": "0 of 720 orientations; the tile carries exactly 15",
+            "underTheWeave": "unchanged — Fact B is 2.59x and no width in the bracket moves it",
+            "verdictMoves": false,
+            "why": "Fact A weakens (adjacent-row bodies bury each other only past 47.5 degrees at the measured girth) but Fact B alone refuses the array"
+        },
+        {
+            "claim": "C-0053",
+            "roleItUses": "COLLINEAR_CLEARANCE",
+            "standingVerdict": "43 of 45 arms, and 0 surviving crossovers",
+            "underTheWeave": "unchanged at every width read here",
+            "verdictMoves": false,
+            "why": "the binding constraint is the hinge lattice's root pitch, not the exclusion width"
+        },
+        {
+            "claim": "C-0065",
+            "roleItUses": "ROW_PITCH and BODY_WIDTH",
+            "standingVerdict": "all 44 trios place 34 times; the register is what costs",
+            "underTheWeave": "unchanged, and the register argument is REINFORCED",
+            "verdictMoves": false,
+            "why": "the stations are one helical phase class, which is also one weave phase class"
+        },
+        {
+            "claim": "C-0066",
+            "roleItUses": "COLLINEAR_CLEARANCE — bound 4, the tie in the gap",
+            "standingVerdict": "the gap clears a duplex by 0.0256 nm",
+            "underTheWeave": "the gap clears the MEASURED girth of a tie by 0.8983 nm",
+            "verdictMoves": true,
+            "why": "the body in the gap is a free duplex, whose plan girth is its steric diameter and not the lattice constant"
+        },
+        {
+            "claim": "C-0069",
+            "roleItUses": "COLLINEAR_CLEARANCE — Q5, the row-of-three ceiling",
+            "standingVerdict": "the plan budget is pitch - d = 8.19 nm and Q5's margin 0.0256 nm",
+            "underTheWeave": "the budget is pitch - girth = 9.0627 nm and the margin 0.8983 nm",
+            "verdictMoves": true,
+            "why": "same substitution; the count is unchanged at 34, only the margin moves"
+        },
+        {
+            "claim": "C-0072",
+            "roleItUses": "COLLINEAR_CLEARANCE — the weave read through M = p - d - L",
+            "standingVerdict": "the weave brackets the verdict from +0.866 nm to -0.884 nm",
+            "underTheWeave": "the weave's coefficient on M is exactly zero; the bracket is a category error",
+            "verdictMoves": true,
+            "why": "an across-helix separation of two crossover-BONDED duplexes substituted into an along-helix clearance between two UNBONDED bodies"
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "the station weave value, coarse against exact lattice evaluation",
+            "coarse": 2.69,
+            "fine": 2.69,
+            "departure": 0.0,
+            "note": "a station's plane coordinate is an integer, so no grid is involved"
+        },
+        {
+            "quantity": "the weave-substituted placed count, x snapped at 0.1 nm against 0.0001 nm",
+            "coarse": 28.0,
+            "fine": 28.0,
+            "departure": 0.0,
+            "note": "resolution independent — asserted over four decades as a gate-4 test"
+        },
+        {
+            "quantity": "the weave mean over its own period, 1024 samples per plane",
+            "coarse": 2.69,
+            "fine": 2.69,
+            "departure": 0.0,
+            "note": "a triangular wave sampled commensurately integrates exactly"
+        },
+        {
+            "quantity": "the placement threshold, BISECTED in the width against the closed form pitch - arm",
+            "coarse": 2.71560917,
+            "fine": 2.71560917,
+            "departure": 0.0,
+            "note": "bisection on the bracket width to 1e-12 nm over [1.0, 4.0]; the closed form is not a fit and the bisection is its falsifier"
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0069",
+            "quantity": "the plan budget pitch - d [nm]",
+            "published": 8.19,
+            "reproduced": 8.19,
+            "departure": 0.0
+        },
+        {
+            "source": "C-0069 / C-0066 / C-0072",
+            "quantity": "the plan margin at the lattice constant [nm]",
+            "published": 0.0256,
+            "reproduced": 0.02560917,
+            "departure": 9.17E-6
+        },
+        {
+            "source": "C-0066",
+            "quantity": "the tip gap pitch - arm [nm]",
+            "published": 2.71561,
+            "reproduced": 2.71560917,
+            "departure": 8.29999999E-7
+        },
+        {
+            "source": "C-0072",
+            "quantity": "the margin at the weave minimum [nm]",
+            "published": 0.866,
+            "reproduced": 0.86560917,
+            "departure": 3.9083E-4
+        },
+        {
+            "source": "C-0072",
+            "quantity": "the margin at the weave maximum [nm]",
+            "published": -0.884,
+            "reproduced": -0.88439083,
+            "departure": 3.9083E-4
+        },
+        {
+            "source": "C-0063",
+            "quantity": "the placed count at the SAXS lattice constant",
+            "published": 34.0,
+            "reproduced": 34.0,
+            "departure": 0.0
+        },
+        {
+            "source": "C-0053",
+            "quantity": "the E5a1 placed count at the SAXS lattice constant",
+            "published": 43.0,
+            "reproduced": 43.0,
+            "departure": 0.0
+        },
+        {
+            "source": "C-0069",
+            "quantity": "the placed count at the square-lattice 2.73 nm, its own pipeline",
+            "published": 18.0,
+            "reproduced": 18.0,
+            "departure": 0.0
+        },
+        {
+            "source": "C-0069",
+            "quantity": "the placed count at the SAXS 2.69 nm, its own pipeline",
+            "published": 34.0,
+            "reproduced": 34.0,
+            "departure": 0.0
+        },
+        {
+            "source": "Bai et al. against Fischer et al.",
+            "quantity": "the sawtooth midpoint against the square-lattice Bragg constant [nm]",
+            "published": 2.73,
+            "reproduced": 2.725,
+            "departure": 0.005
+        }
+    ],
+    "predicates": [
+        {
+            "id": "P1",
+            "predicate": "every one of C-0063's 34 stations sits on a weave NODE",
+            "value": 34.0,
+            "threshold": 34.0,
+            "verdict": "PASS"
+        },
+        {
+            "id": "P2",
+            "predicate": "the weave departure at a station, over all 32 phases [nm]",
+            "value": 0.0,
+            "threshold": 0.0,
+            "verdict": "PASS"
+        },
+        {
+            "id": "P3",
+            "predicate": "the measured phosphate contact admits the measured weave minimum [nm]",
+            "value": 1.81727572,
+            "threshold": 1.85,
+            "verdict": "PASS"
+        },
+        {
+            "id": "P4",
+            "predicate": "the placed count is unchanged by making the exclusion width position dependent IN ITS OWN ROLE",
+            "value": 34.0,
+            "threshold": 34.0,
+            "verdict": "PASS"
+        },
+        {
+            "id": "P5",
+            "predicate": "substituting the weave into the collinear slot DOES move the count, which is what makes the substitution a challenge rather than a refinement",
+            "value": 28.0,
+            "threshold": 34.0,
+            "verdict": "PASS"
+        },
+        {
+            "id": "P6",
+            "predicate": "the placement threshold in the exclusion width, pitch - arm [nm], is straddled by the defensible readings",
+            "value": 2.71560917,
+            "threshold": 2.69,
+            "verdict": "PASS"
+        }
+    ],
+    "findings": [
+        "THE WEAVE'S COEFFICIENT ON THE PLAN MARGIN IS EXACTLY ZERO, and it is zero twice over. First categorically: `M = p - d - L` charges `d` ALONG the helices between two UNBONDED bodies, and the weave is a separation ACROSS them between two duplexes COVALENTLY LINKED at its own minimum. Second numerically: on the axis where the weave does live, every one of C-0063's 34 stations sits at a NODE.",
+        "THE CONGRUENCE. C-0055's upward roots are the planes `k = 2b+3 (mod 4)`, which is ODD for every duplex `b`; the weave's extrema are the crossover planes `k = 2b` and `k = 2b+2 (mod 4)`, which are EVEN. A triangular wave is at its mean midway between its extrema, so every upward root sits at the weave's node on BOTH of its bounding interfaces, at every one of the 32 phases, and the duplex's own axis is at its ideal lattice position there. The across-row separation at a station is therefore the lattice constant EXACTLY, independently of the weave amplitude — which annihilates the whole 1.2-1.75 nm amplitude bracket the literature disagrees over.",
+        "THE ADJUDICATION. 1.85 nm and 2.0 nm are not in contradiction: this repository's own T-71 measured the B-form phosphate radius on 13 084 crystallographic linkages at 0.9086 nm, so the measured phosphate-backbone contact is 1.8173 nm and Bai's weave minimum clears it by 0.0327 nm — 0.35 standard deviations. No interdigitation is needed. What the coincidence says instead is that THE WEAVE MINIMUM IS THE STERIC FLOOR: a crossover pulls its two duplexes together until their backbones touch, which is why d_min is 18.5 Angstrom and not less.",
+        "A SINGLE WIDTH IS DEFENSIBLE AND THAT IS THE WRONG QUESTION. Position dependence buys nothing — the stations are nodes — but the VALUE is unsettled and the verdict turns on it at the third digit: the placement threshold is exactly `pitch - arm` = 2.71561 nm, and the defensible readings straddle it (measured contact 1.8173, asserted steric 2.0, SAXS sheet 2.69 | 2.725 Bai midpoint, 2.73 square lattice, 3.25 oxDNA mean). 34 of 34 place below the threshold and 18 of 34 above it.",
+        "THE 2.69 IN THE COLLINEAR SLOT HAS NO MEASUREMENT BEHIND IT IN EITHER DIRECTION. It is a lattice constant of CROSSOVER-BONDED duplexes; the same measurement says those duplexes splay to 3.60 nm when unpinned, so the weave argues the free-body separation UP as readily as the steric floor argues it DOWN. What is measured is the floor, 1.8173 nm.",
+        "AN ARM OF AN ODD NUMBER OF CROSSOVER PLANES PUTS ITS TIP AT AN ANTINODE. The 24 bp arm is three planes, so its root is a node and its tip is at the weave's extremum — its host duplex is displaced 0.3750 nm there. A 16 bp or 32 bp element puts both ends on nodes. That is a design rule the weave supplies and it costs nothing.",
+        "C-0072'S BRACKET IS REPRODUCED AS ARITHMETIC AND REFUSED AS PHYSICS (CH-0088), and it would not have been a bracket even if the axis were right: substituting the weave into the collinear slot places 28 of 34, not 'places comfortably' or 'does not place at all', because the count is a step function of the margin and C-0072 propagated onto the margin only.",
+        "ONE NUMBER, THREE ANSWERS — C-0069's PUBLISHED 18 OF 34 DECOMPOSES. Moving 2.69 to 2.73 gives 22 of 34 if only the COLLINEAR clearance moves, 18 if the BODY WIDTH moves too and so overruns the 2.69 nm row pitch (which is C-0069's own reading, reproduced here exactly), and 30 if the ROW PITCH is moved with it — which is the only physically consistent reading, because the rows ARE the sheet's duplexes at whatever the interhelical distance is. A 0.04 nm change in one constant is worth 12 arms or 4, depending on which of the three roles it is applied to.",
+        "C-0041's FACT A WEAKENS AND ITS VERDICT DOES NOT. At the measured girth two adjacent-row bodies bury each other only past 47.5 degrees of tilt, where at the lattice width they do so at any tilt at all; Fact B (2.59x the column pitch) refuses the array on its own. CLAUDE.md's 'a verdict that survives can survive on a different reason', in a new place."
+    ],
+    "parameters": {
+        "edgeX": 40.0,
+        "duplexes": 15.0,
+        "phaseBasePairs": 24.0,
+        "risePerBasePair": 0.34,
+        "latticeConstant": 2.69,
+        "rootPitch": 10.88,
+        "arm": 8.16439083,
+        "e5a1Arm": 9.131,
+        "placementThreshold": 2.71560917,
+        "measuredPhosphateRadius": 0.908637858,
+        "measuredPhosphateRadiusSd": 0.0664994524,
+        "measuredContactDiameter": 1.81727572,
+        "assertedStericDiameter": 2.0,
+        "weavePeakToPeakSnodin": 1.5,
+        "weavePeakToPeakBai": 1.75,
+        "weaveMeanBai": 2.725,
+        "planeSpacing": 2.72,
+        "weavePeriod": 10.88,
+        "marginAtLatticeConstant": 0.02560917,
+        "marginAtMeasuredContact": 0.898333453,
+        "worstStationAxisOffset": 0.0,
+        "worstStationWeaveDeparture": 0.0,
+        "factATiltMeasuredDegrees": 47.5017894,
+        "factATiltAssertedDegrees": 41.9700562,
+        "weaveSubstitutedCount": 28.0,
+        "squareLatticeCollinearOnly": 22.0,
+        "squareLatticeC0069Reading": 18.0,
+        "squareLatticeConsistent": 30.0
+    }
+}

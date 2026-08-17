@@ -315,9 +315,14 @@ tension, quantified. **§4(c) and §4(d) bind nothing anywhere**, at any of 183 
 
 **The window must be read in the FORCE-ONSET convention** (`L₀` is where the layer carries 1 pN over the tile).
 It says: order **PEG of 1.6–3.3 kDa at 10 nm**, or 1.1–1.2 kDa at 7 nm, at a grafting spacing of 2–9 nm.
-In the first-moment convention the same layer is ~8–9 kDa.
-**That factor of four is the single most likely way this window gets misread at a bench**, and `T-1e` has not
-yet separated the definitional part from the physical.
+In the first-moment convention the same **layer is 4.2–8.7 kDa** — but that is a *different device*, whose
+tile sits 16.1–18.0 nm above the electrode rather than at 10 nm, outside §3's own 5–10 nm band at every point
+of the grid.
+**A convention mismatch is the single most likely way this window gets misread at a bench**, and `T-1e` has now
+separated the two parts exactly (`C-0077`): the height convention is worth **2.82×** in the chain and the
+physics — the conformational stress both trial-function profiles omit — **1.64×**, so 62–68 % of the
+chain-length gap `CH-0010` opened is definitional. A bench cannot measure a force onset and cannot buy a
+thickness, so **both numbers have to travel**.
 
 Then the shape changes.
 **Ten of the twelve axes this programme discovered are not functions of grafting density at all** — flatness

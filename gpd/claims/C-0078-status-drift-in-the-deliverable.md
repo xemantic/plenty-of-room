@@ -184,4 +184,7 @@ and the summary is what NDI reads.*
   applying, and no tool here would have caught that.
 - **`ANSWERS.md` remains unsynthesised against iterations 8–15** (`C-0052`–`C-0078`,
   `CH-0065`–`CH-0085`), which `C-0067` recorded as a coverage statement and which this pass
-  does not discharge. Raised as `T-139`.
+  does not discharge. Raised as `T-147` — filed as `T-139` and **renumbered**, because `C-0076`
+  took `T-139` for its Poisson-Boltzmann pair solve in the same iteration and had already cited
+  it from a claim and a challenge. `CLAUDE.md`'s rule applied: *the agent that notices moves*,
+  and it moves **past** the highest number in use rather than into the next gap.

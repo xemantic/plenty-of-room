@@ -109,6 +109,16 @@ design point** — a layer whose `2⟨z⟩` is 10 nm would need `N ≈ 190–210
 `C-0003`'s bracket rather than sitting a factor of four below it. **So most of the chain-length gap
 is the convention, and what is left over is the conformational pressure.** `CH-0010` carries both.
 
+> ⚠️ **The estimate is superseded by an exact inversion.** [`C-0077`](C-0077-first-moment-chain-length.md)
+> (`T-1e`) inverts `N` on `2⟨z⟩` by a root find over the solved profile and gets **175.08 monomers,
+> 7.713 kDa** — **outside** the `190–210` above. [`CH-0090`](../challenges/CH-0090-the-scaling-estimate-uses-the-exponent-of-a-different-quantity.md):
+> `N^(0.5–0.55)` is the exponent of the **force-onset height** in `N` (measured 0.455–0.468 here),
+> where the extrapolation needs the exponent of the **first moment** (0.501–0.520) — a consistent
+> 10 % — and the band was narrowed from this claim's own 0.49–0.64 with no derivation. The qualitative
+> conclusion is **upheld and quantified**: the convention is worth `2.819×` and the physics
+> `1.636–1.648×`, i.e. 62–68 % of the gap is definitional. **Nothing else in this claim moves** —
+> `N = 62.1` is reproduced at 62.1076 in its own convention.
+
 ### Stiffness and stroke — where `C-0003` survives
 
 At `L₀ = 10 nm`, `σ = 0.024 nm⁻²`, 40 × 40 nm tile:

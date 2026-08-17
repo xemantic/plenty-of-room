@@ -6549,3 +6549,162 @@ occurrence did not prevent the second.** The practice is now changed rather than
 while any agent is in flight, and `verify.sh --committed` before the iteration is called closed — which is
 what `P-10` built that flag for. Both occurrences were reported by the agent whose work was captured,
 unprompted, and neither was caught by the coordinator.
+
+## 2026-08-17 — Iteration 15
+
+Three science loops in parallel plus one process task taken in the coordinator's own context.
+Every number below was grepped out of its claim file, and two of the four figures a subagent
+reported in chat did not survive that grep — see the note at the end.
+
+**`C-0074` (`T-136`) answers `C-0072`'s escape and the answer costs the thing that made `C-0063`
+remarkable.** `C-0072` had found the branch's whole 0.0256 nm plan margin bought by **four arms**,
+and its escape — 30 roots instead of 34 — was a **plan rule** rather than a flatness optimisation,
+so its 0.2603 was an upper bound. Re-run properly: at 30 roots *"two per row"* is an **identity**
+(`2 × 15 = 30`), so the count vector is forced and the centro-symmetric family is exhaustible —
+34 992 candidates at each of the two phases the congruence admits, plus a 12-start descent over
+the non-symmetric family at **all 32 phases**. **With equal springs nothing clears `T-5b`'s 0.10**:
+0.166653 at phase 24, 0.172575 at phase 8, 0.1670 over the descent. Every phase beats `C-0072`'s
+0.2603 and none reaches the convention. **But the negative belongs to the equal springs, not to the
+station set** — the least-squares floor over every phase-24 root is **0.00071**, 140× below the
+convention. The design that answers all three predicates at once is at **phase 8, not `C-0063`'s
+phase 24**: the placement keeping the lattice's maximum plan ceiling, **9.5350 nm**, i.e. a margin
+of **1.76451 nm** — **68.9×** `C-0069`'s knife edge, **5.19 base-pair rises**, and **1.31×**
+`C-0072`'s own reduction — dishes **0.06822** over the whole range the placed 2 mM device traverses,
+at a peak stiffness ratio of only **2.057** and 6.857 pN per path against the 10 pN unzip allowable.
+At phase 24 the same construction reaches only 0.11239 and 0.13188 *even under a distribution*.
+**Two exact bounds did most of the work and neither needs a solve** — the forced count vector, and a
+bisection on a monotone capacity for the largest element any 30-root placement can keep, because a
+placement's ceiling is a `min` over independent rows. That second bound is `CH-0086`: **a plan
+ceiling is a property of a placement, not of a count**, and `C-0072` read its ceiling column on its
+own plan-rule reduction — understating its own escape by 1.31× at 30 roots, **3.62×** at 22 and
+1.78× at 15, all in the favourable direction.
+
+**`C-0075` (`T-138`) confirms the presentation defect and finds it worth more as a missing column
+than as a corrected row.** `C-0017`'s mandate is a stiffness on a **sum**, so a path count sizes the
+element *and* counts the instances; `C-0069`'s Deliverable 5 changed the first and held the second
+at 34. Read as a delivered total its eight rows present 1.000, 0.529, 1.000, 1.000, 1.000, 0.882,
+**0.533** and **2.267** × the mandate. **The part neither claim saw is that the ratio is `placed/n`,
+not `34/n`** — so **three rows `C-0069` reports only as plan failures are stiffness failures by the
+same arithmetic**, the 2.73 nm square-lattice row delivering 0.529× on its 18 of 34 (`CH-0087`).
+**No `C-0069` headline moves, and that is verified rather than assumed**: at `n = 34` the two
+readings return the same arm to nine digits, the same placed count and a ratio of 1.000000000.
+**What the fixed array hid is the CEILING.** Holding 34 instances forces a row of three (`a = n−30`)
+and a row of three caps a rooted element at `pitch − d` = **8.19 nm** — so `C-0069`'s ceiling column
+is 8.19 in *every* row, including the 15-path one where the lattice affords **30.88**.
+Self-consistently the ceiling is a **step function with its step at exactly 31**, and that step is
+what `T-136` walks through. The two tasks were given to one agent because they are one question, and
+that is what the coupling produced.
+
+**`C-0076` (`T-137`) settles a convention five claims inherit, and the coefficient is exactly zero
+for two independent reasons.** The queue expected a position-dependent exclusion width; the answer is
+that **a single width is defensible** and that the question was on the wrong axis. *Categorically*:
+`C-0072`'s `M = p − d − L` charges `d` **along** the helices between two bodies **not bonded to each
+other**, while Bai's and Snodin's weave is a separation **across** them between two duplexes
+**covalently linked at its own minimum**. *Numerically, on the axis where the weave does live*:
+`C-0055`'s upward roots are the planes `k ≡ 2b+3 (mod 4)`, **odd for every duplex**, and the weave's
+extrema are the crossover planes, **even** — so on a triangular wave **all 34 of `C-0063`'s stations
+sit on a NODE**, at all 32 phases, worst departure `4.4e−16 nm`, **independently of amplitude**.
+That annihilates the whole disputed **1.2–1.75 nm** amplitude bracket, and extends `C-0065`'s
+*"one helical phase class, so the count is quantised at 0 or 34"* to the weave. **The 1.85-versus-2.0
+contradiction dissolves on a measurement this repository already owns**: `T-71`'s 13 084
+crystallographic linkages give a phosphate radius of **0.908638 nm**, so backbone contact is
+**1.817276 nm** and Bai's 18.5 Å clears it by **0.0327 nm, 0.35 σ** — no interdigitation, and the
+stronger reading is that **a crossover pulls its two duplexes together until their backbones touch**,
+all-atom MD's 18.0 Å sitting 0.18 σ the other side. **What the measurement reopens is the width's
+VALUE, and that is where the verdict now lives**: the placement threshold is `pitch − arm =
+2.715609 nm` and the defensible readings **straddle it** — 34 of 34 at the measured contact, at 2.0
+and at the SAXS 2.69; **22** at 2.725, 2.73 and oxDNA's 3.25. At the measured girth `Q5`'s margin is
+**0.898333 nm, 35× the published 0.0256** (`CH-0089`), which clears three of `C-0072`'s four floors —
+so the branch's knife edge is a property of an **unmeasured convention**, not of the lattice. Hence
+`T-139`: one Poisson-Boltzmann pair solve for two *unbonded* duplexes, and no plan claim in the
+branch is quotable until it is answered.
+
+**`C-0077` (`T-1e`) discharges the last item of `CH-0010` by a root find rather than a scaling, and
+the gap needed three factors.** The height convention is worth **2.819×** at the design point, the
+physics residue — the conformational normal stress neither trial function contains — **1.636–1.648×**,
+and **the trial function carries a convention factor of its own**, 1 exactly for the box and
+**1.27616** (a Beta constant) for strong stretching. That third factor is why `CH-0010`'s comparison
+looked like one convention: **it compared two models each read in its own.** Its *"most of the gap is
+the convention"* is **upheld and quantified at 67.5 % on a logarithmic scale**. **The declared
+falsifier did not fire and it was the one expected to**: the exact inversion gives `N = 175.08`,
+**7.713 kDa**, *outside* `C-0011`'s 190–210, because that estimate used the exponent of the
+**force-onset height** where it needed the exponent of the **first moment** — a consistent 10 %,
+quoted at ±5 % where its own 0.49–0.64 band supports ±14 % (`CH-0090`). And the convention question
+turns out not to be a modelling question at all: §3 specifies a distance between two *bodies*, and a
+`2⟨z⟩ = 10 nm` layer puts the tile at 13.20–18.05 nm, inside §3's 5–10 nm band at **0 of 61** grid
+points (`CH-0091`) — so `C-0016`'s window is already in the right convention and **no edge, owner,
+stroke, stiffness or coupling verdict moves**. A fifth specification question for NDI was available
+and deliberately **not** raised, because §3's own effort-point row answers it.
+Two by-products worth more than they cost: **the two trial functions agree to 0.76 % on the first
+moment and disagree by 28 % in their own conventions**, so most of what `C-0003` called *"profile
+uncertainty … usable as an error bar"* is a Beta-function constant; and **the first moment does not
+inherit the pressure's convergence order** — 1.59, and the chain inverted on it 1.11, against
+2.08–2.32 for the disjoining pressure on the same solves (`T-146`).
+
+**`C-0078` (`P-20`) — the coordinator's own loop, and it is `C-0067` recurring on `C-0067`'s axis.**
+`C-0067` found that the drift in `ANSWERS.md` is in the **status** of answers rather than the value
+of numbers — three *"cannot answer"* entries the programme had answered, one standing seven
+iterations — and then retained a tracer that checks **numbers**. The half named as *worst* was left
+to memory, and two iterations later it was back: of the three places the deliverable asserts a task
+is open, **`T-129` was closed by `C-0068` in iteration 13**, and closed with a substantive answer the
+deliverable was therefore not carrying (`C-0063`'s placement *is* flat over a range with equal
+springs — 0.0789 / 0.0853 / 0.0896 — the exception being the 5 nm device at 0.2000). Extended with
+`queue_status` / `open_assertions` / `stale_statuses`, which read `TASKS.md`, and which run
+**unconditionally**, because a check nobody remembers to ask for is not a check. **22 self-tests →
+42**, five of them pinning traps the real files produced: *"Left undone"* contains `DONE`, prose
+*"cannot be answered"* uppercases to `ANSWERED`, and *"`T-45`, open since iteration 3, is answered"*
+is history rather than an assertion. **The numeric half found the rest — 5 ABSENT of 590, and three
+were one headline list**: `C-0064`'s four device-range minimaxes printed
+**0.0372 / 0.0436 / 0.0619 / 0.0500** against a claim that says **0.0373 / 0.0435 / 0.0620 / 0.0504**.
+The first is not a transcription error — `C-0064` records its optimum as a **manifold** and 0.0372 as
+the other member — so the synthesis was quoting a *run* rather than the *claim*, and it survived
+because all four are inside 0.10 either way. Now **0 ABSENT of 605 and 0 stale of 2**. **No claim was
+contradicted**, which is the second time in three iterations that a reconciliation of the primary
+deliverable has found no claim wrong and the synthesis wrong anyway: *the corpus is more reliable
+than the document that summarises it, and the summary is what NDI reads.*
+
+**Interaction with Kazik.** The four binding specification questions were put in the session —
+`T-63` (0.5 mM against §3's 2 mM), `T-115` (a layer taller than 10 nm), `P-13` (the electrode
+material) and `T-112` (which device §3's desired clause asks for). **All four were deferred to NDI**,
+so nothing in the corpus changes and all four stay in *Open questions for Kazik*. Recorded because
+the standing instruction is to record the question and the answer whether or not either moves
+anything; the loop continued on the tasks that do not depend on them, which is all of iteration 15.
+
+**Process notes, three of them, and two are repeats of documented failures.**
+*One.* The `T-136`/`T-138` agent was killed by a `529 Overloaded` at its very last step. Its claims,
+challenges, results, model, study and tests had all landed and its queue rows were already updated,
+so **nothing was lost** — but the coordinator learned this by reading the artifacts, not the report,
+because there was no report. That is `SESSION-PROMPT.md`'s own rule arriving as a fact rather than a
+caution: *the claim, the challenge and the result JSON are the artifacts; the report is a courtesy.*
+*Two.* **Two agents took `T-139` in the same iteration** — one for a Poisson-Boltzmann pair solve,
+one for the third `ANSWERS.md` synthesis — despite claim and challenge numbers having been reserved
+in `TASKS.md` up front. **Reserving the claim numbers did not reserve the task numbers**, and task
+numbers are exactly as contended. The synthesis moved to `T-147`, past the highest in use rather than
+into the next gap, because `C-0076` and `CH-0089` had already cited `T-139` from two files.
+*Three.* **Two of the four figures the subagents reported in chat did not survive the grep** — a
+trial-function disagreement reported as 28.4 % where the claim says **28 %**, and a log-scale share
+reported as 62–68 % where the claim's headline is **67.5 %**. Neither changes anything, and that is
+the point: this is the fifth session in which a report and its own claim disagreed, and the check
+that caught it is one `grep` per number.
+
+**And the coordinator's own follow-up found `C-0073`'s falsifier had fired a second time, unseen.**
+`T-1e`'s agent filed a `CLAUDE.md` correction as a **note**: `T-1d` has two readers, not the one
+`P-18` recorded, because `window/ResynthesisInputs.kt` assembles its paths as `File(directory, name)`
+and a grep for `File("gpd/results/` cannot see it. Adjudicated as `CH-0092`, **upheld**, and the
+census is worse than the note said — **`T-1d` has three readers and `T-1f` has two**, so `T-25`
+(`C-0027`) and `T-118` (`C-0051`) had been sitting in the repository built from nine-digit inputs for
+a whole iteration. Re-emitted: **325 of `T-25`'s and 2 751 of `T-118`'s numeric fields move**, median
+`2.2e−6` and `3.7e−7`, **0 boolean and 0 structural changes**, and **no verdict, flag or quoted
+figure moves** — `T-63`'s deciding 0.5 mM stability margin reads **2.16–9.87×** either way and
+`C-0016`'s window edges are untouched, being grid indices rather than grid values.
+**The finding is what the largest apparent movement turned out to be.** `T-118`'s
+`reproductions/22/relativeDeparture` goes `8.79067377e−07 → 0.0` — a 100 % relative change that is a
+residual **collapsing to exact zero**, because *that residual was the staleness itself*, sitting in a
+field designed to carry exactly that information and read by nobody for an iteration. So the cheap
+instrument this failure needed already existed in the file it was hiding in. The other lesson is
+about the instrument that failed: **an audit is only as complete as the shape of the search that
+performed it, and a path built from a directory and a name is invisible to a search for either half**
+— while `WindowResynthesisStudy` states its own inputs verbatim in a `sources` field, which is why
+`P-22` asks for a test that a study's declared sources equal the files it opens. `P-19` is now
+explicitly ranked **behind** `P-22`, because its ranking of the four remaining rounding sites was
+written on the census `CH-0092` corrects.

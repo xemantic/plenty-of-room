@@ -234,6 +234,14 @@ Enforced in code where it can be, and stated with a number where it cannot.
   wants ≫ 1. Both profile models are used outside their premise. The spread between them is a **lower bound**
   on the profile uncertainty, not a full error bar. This is the same finding `CH-0003` reports as
   `L₀/R_F = 1.17–1.25`, and it is the single largest methodological weakness of this claim.
+  **And most of that spread is not profile uncertainty at all** — [`CH-0090`](../challenges/CH-0090-the-scaling-estimate-uses-the-exponent-of-a-different-quantity.md),
+  raised by [`C-0077`](C-0077-first-moment-chain-length.md): read on **one** functional, the
+  first moment `2⟨z⟩`, the box and strong stretching agree on `N` to **0.76 %** where their own
+  height conventions put them **28.4 %** apart. A box's `2⟨z⟩` is its own height identically and
+  the parabola's is `1/[(p+1)B(p)] = 0.7836` of it, and that Beta constant is most of the 28 %.
+  **The bracket below stands as an error bar in its own (edge) convention** — both of its endpoints
+  are reproduced to the last digit, 374.374 against 374.3 and 224.402 against 224.8 — but it is
+  37× too wide as a statement about how much the *profile family* matters.
 - **The free energy is valid at low blob count, and that is why it was chosen.** Nothing in
   `f_int(φ)` refers to a blob: it is a *local* function of the volume fraction, taken from bulk osmometry,
   and the elasticity it is minimised against is Gaussian on the Kuhn scale, which needs no blob either.

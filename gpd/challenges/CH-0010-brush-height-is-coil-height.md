@@ -165,9 +165,14 @@ the one assertion a downstream task could act on and be wrong.
 
 **Outstanding, and queued:**
 
-- **A first-moment-convention inversion.** `C-0011` reports `2⟨z⟩` at every design point but inverts
-  `N` on the force-onset height only. Doing the inversion on `2⟨z⟩` as well would separate the
-  definitional part of this challenge from the physical part exactly rather than by scaling.
+- ~~**A first-moment-convention inversion.**~~ **DISCHARGED by [`C-0077`](../claims/C-0077-first-moment-chain-length.md)
+  (`T-1e`).** The gap is a **product with three factors**: the solved layer's convention factor
+  **2.819×**, the physics residue **1.636–1.648×**, and the trial function's own convention factor
+  (1 exactly for the box, `1.27616` for strong stretching — which is why the comparison in this
+  challenge looked like one convention: it compared two models each read in its own). *"Most of the
+  chain-length gap is the convention"* is **upheld and quantified at 62–68 % of it on a log scale**.
+  The exact first-moment chain is **175.08 monomers, 7.713 kDa**, not the `190–210` estimated above —
+  see [`CH-0090`](CH-0090-the-scaling-estimate-uses-the-exponent-of-a-different-quantity.md).
 - **Fluctuation corrections.** At `φ ≈ 0.01` the mean-field treatment is furthest from safe, and
   `C-0011` states plainly that it does not bound them.
 - **`P-9`** is unchanged in size but changed in place: the layer is now entirely *below* `φ#`, where
