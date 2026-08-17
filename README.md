@@ -116,6 +116,8 @@ tools/study.sh structure.InPlaneLoadPathStudyKt  # one study on an isolated copy
 tools/test-snapshot.sh                         # the snapshot helpers' own tests (P-16)
 tools/test-check-markdown-tables.py            # the Markdown table checker's own tests (P-23)
 python3 tools/check-markdown-tables.py         # every tracked table renders; exit 1 if not (P-23)
+tools/test-result-transfers.py                 # the transfer detector's own tests (T-158)
+python3 tools/result-transfers.py --subsets    # is one claim's number another's? advisory (T-158)
 tools/verify.sh --no-checks                    # Gradle only, without the census check (P-22)
 ```
 
