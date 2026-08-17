@@ -1,0 +1,2754 @@
+{
+    "task": "T-153 — the Gen-1 tile at the buildable raster width, 112 bp = 38.08 nm",
+    "leaf": "A8.2",
+    "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm (40.35 nm across the helices, UNCHANGED), 0.34 nm rise, 32/3 bp per turn, 16 bp crossover spacing; the along-helix width 40.00 nm (§3) against 38.08 nm (C-0086's nearest admissible seamless raster row, 112 bp); C-0039's arm at C-0055's 34 paths, 8.16439083 nm, and its buildable quantisation 8.16 nm (24 rises); C-0017's 33.3333 pN/nm mandate; C-0022's solved profile at 2 mM, a 10 nm gap and 0.192 V, its collar terms CARRIED UNCHANGED to the narrower tile; C-0001's foundation secant",
+    "decision": "the best 34-root placement at the buildable 38.08 nm width dishes 0.062147 of the stroke against T-5b's 0.10 and C-0063's 0.0706145537 at 40.00 nm; the binding arm ceiling switches from C-0069's 8.19 nm to the tile edge's 8.16 nm, which is exactly 24 rises",
+    "admissibleWidths": [
+        {
+            "rowBasePairs": 16,
+            "widthNanometres": 5.44,
+            "admissible": true,
+            "note": "an odd multiple of the 16 bp crossover spacing"
+        },
+        {
+            "rowBasePairs": 48,
+            "widthNanometres": 16.32,
+            "admissible": true,
+            "note": "an odd multiple of the 16 bp crossover spacing"
+        },
+        {
+            "rowBasePairs": 80,
+            "widthNanometres": 27.2,
+            "admissible": true,
+            "note": "an odd multiple of the 16 bp crossover spacing"
+        },
+        {
+            "rowBasePairs": 112,
+            "widthNanometres": 38.08,
+            "admissible": true,
+            "note": "the nearest admissible width to 40.0 nm — this task's subject"
+        },
+        {
+            "rowBasePairs": 118,
+            "widthNanometres": 40.12,
+            "admissible": false,
+            "note": "the nominal 40.0 nm rounds here and is NOT admissible"
+        },
+        {
+            "rowBasePairs": 144,
+            "widthNanometres": 48.96,
+            "admissible": true,
+            "note": "an odd multiple of the 16 bp crossover spacing"
+        }
+    ],
+    "invariants": [
+        {
+            "quantity": "the across-helix span",
+            "owner": "§3 / Fischer et al. (2016)",
+            "atNominalWidth": 40.35,
+            "atBuildableWidth": 40.35,
+            "departure": 0.0,
+            "invariantByConstruction": true,
+            "why": "the raster rule binds the distance between successive SCAFFOLD crossovers, which in a boustrophedon are the two ends of ONE ROW — an along-helix length. The across-helix span is a COUNT of duplexes and the scaffold does not raster along it"
+        },
+        {
+            "quantity": "the duplex count",
+            "owner": "§3",
+            "atNominalWidth": 15.0,
+            "atBuildableWidth": 15.0,
+            "departure": 0.0,
+            "invariantByConstruction": true,
+            "why": "same reason: a count across the helices"
+        },
+        {
+            "quantity": "the upward root pitch",
+            "owner": "C-0055",
+            "atNominalWidth": 10.88,
+            "atBuildableWidth": 10.88,
+            "departure": 0.0,
+            "invariantByConstruction": true,
+            "why": "32 bp x the rise; an along-helix pitch, not a tile dimension"
+        },
+        {
+            "quantity": "C-0069's plan budget, pitch - d",
+            "owner": "C-0069",
+            "atNominalWidth": 8.19,
+            "atBuildableWidth": 8.19,
+            "departure": 0.0,
+            "invariantByConstruction": true,
+            "why": "a difference of two lattice constants; it contains no tile width at all"
+        },
+        {
+            "quantity": "C-0072's identity M = p - d - L",
+            "owner": "C-0072 / C-0066",
+            "atNominalWidth": 0.02560917,
+            "atBuildableWidth": 0.02560917,
+            "departure": 0.0,
+            "invariantByConstruction": true,
+            "why": "the same subtraction regrouped; C-0072 proved the two groupings agree to 4.4e-16"
+        },
+        {
+            "quantity": "C-0063's count vector, rows carrying three arms",
+            "owner": "C-0063",
+            "atNominalWidth": 4.0,
+            "atBuildableWidth": 4.0,
+            "departure": 0.0,
+            "invariantByConstruction": true,
+            "why": "3a + 2(15 - a) = 34 contains the duplex count and nothing else"
+        },
+        {
+            "quantity": "the centro-symmetric phases",
+            "owner": "C-0063",
+            "atNominalWidth": 32.0,
+            "atBuildableWidth": 32.0,
+            "departure": 0.0,
+            "invariantByConstruction": false,
+            "why": "computed, not asserted: {8, 24} against {8, 24}"
+        },
+        {
+            "quantity": "C-0049's per-path stiffness ceiling",
+            "owner": "C-0049",
+            "atNominalWidth": 3.33333333,
+            "atBuildableWidth": 3.33333333,
+            "departure": 0.0,
+            "invariantByConstruction": true,
+            "why": "an allowable over a stroke; no geometry in it"
+        },
+        {
+            "quantity": "C-0017's mandate",
+            "owner": "C-0017",
+            "atNominalWidth": 33.3333333,
+            "atBuildableWidth": 33.3333333,
+            "departure": 0.0,
+            "invariantByConstruction": true,
+            "why": "100 pN over 3 nm; a placement equality, not a pressure"
+        },
+        {
+            "quantity": "the footprint",
+            "owner": "§3",
+            "atNominalWidth": 1614.0,
+            "atBuildableWidth": 1536.528,
+            "departure": 0.048,
+            "invariantByConstruction": false,
+            "why": "-4.8 %, so §3's 100 pN as a pressure is +5.0 % — but the dishing is reported over the free stroke, which carries the same factor, so the RATIO does not move with the level at all"
+        }
+    ],
+    "phaseCensus": [
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 0,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 60,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 1,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 60,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 2,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 60,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 3,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 4,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 5,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 6,
+            "admitRowEnd": false,
+            "columns": 8,
+            "interfaceSites": 56,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 7,
+            "admitRowEnd": false,
+            "columns": 8,
+            "interfaceSites": 56,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 8,
+            "admitRowEnd": false,
+            "columns": 8,
+            "interfaceSites": 56,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": true,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 9,
+            "admitRowEnd": false,
+            "columns": 8,
+            "interfaceSites": 56,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 10,
+            "admitRowEnd": false,
+            "columns": 8,
+            "interfaceSites": 56,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 11,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 12,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 13,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 14,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 60,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 15,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 60,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 16,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 60,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 17,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 60,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 18,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 60,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 19,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 20,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 21,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 22,
+            "admitRowEnd": false,
+            "columns": 8,
+            "interfaceSites": 56,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 23,
+            "admitRowEnd": false,
+            "columns": 8,
+            "interfaceSites": 56,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 24,
+            "admitRowEnd": false,
+            "columns": 8,
+            "interfaceSites": 56,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": true,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 25,
+            "admitRowEnd": false,
+            "columns": 8,
+            "interfaceSites": 56,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 26,
+            "admitRowEnd": false,
+            "columns": 8,
+            "interfaceSites": 56,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 27,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 28,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 29,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 30,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 60,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 31,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 60,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 0,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 45,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 1,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 2,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 3,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 4,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 5,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 6,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 7,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 8,
+            "admitRowEnd": false,
+            "columns": 6,
+            "interfaceSites": 42,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 37,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": true,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 9,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 10,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 11,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 12,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 13,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 14,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 15,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 16,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 45,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 17,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 18,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 19,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 20,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 21,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 22,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 23,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 24,
+            "admitRowEnd": false,
+            "columns": 6,
+            "interfaceSites": 42,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 38,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": true,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 25,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 26,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 27,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 28,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 29,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 30,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 31,
+            "admitRowEnd": false,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 0,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 60,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 1,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 2,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 3,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 4,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 5,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 6,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 7,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 8,
+            "admitRowEnd": true,
+            "columns": 8,
+            "interfaceSites": 56,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 37,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": true,
+            "columnOnRowEnd": true
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 9,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 10,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 11,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 12,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 13,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 14,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 15,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 52,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 16,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 60,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 17,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 18,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 19,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 20,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 21,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 22,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 23,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 24,
+            "admitRowEnd": true,
+            "columns": 8,
+            "interfaceSites": 56,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 38,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": true,
+            "columnOnRowEnd": true
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 25,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 26,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 27,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 28,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 29,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 30,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 31,
+            "admitRowEnd": true,
+            "columns": 7,
+            "interfaceSites": 49,
+            "upwardSites": 53,
+            "armsPlacedElasticaArm": 45,
+            "armsPlacedBuildableArm": 45,
+            "centroSymmetricCapable": false,
+            "columnOnRowEnd": false
+        }
+    ],
+    "stationLattice": [
+        {
+            "phaseBasePairs": 8,
+            "row": 0,
+            "sitesAtNominalWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "sitesAtBuildableWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 1,
+            "sitesAtNominalWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "sitesAtBuildableWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 2,
+            "sitesAtNominalWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "sitesAtBuildableWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 3,
+            "sitesAtNominalWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "sitesAtBuildableWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 4,
+            "sitesAtNominalWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "sitesAtBuildableWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 5,
+            "sitesAtNominalWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "sitesAtBuildableWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 6,
+            "sitesAtNominalWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "sitesAtBuildableWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 7,
+            "sitesAtNominalWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "sitesAtBuildableWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 8,
+            "sitesAtNominalWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "sitesAtBuildableWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 9,
+            "sitesAtNominalWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "sitesAtBuildableWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 10,
+            "sitesAtNominalWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "sitesAtBuildableWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 11,
+            "sitesAtNominalWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "sitesAtBuildableWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 12,
+            "sitesAtNominalWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "sitesAtBuildableWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 13,
+            "sitesAtNominalWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "sitesAtBuildableWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 8,
+            "row": 14,
+            "sitesAtNominalWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "sitesAtBuildableWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 0,
+            "sitesAtNominalWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "sitesAtBuildableWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 1,
+            "sitesAtNominalWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "sitesAtBuildableWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 2,
+            "sitesAtNominalWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "sitesAtBuildableWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 3,
+            "sitesAtNominalWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "sitesAtBuildableWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 4,
+            "sitesAtNominalWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "sitesAtBuildableWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 5,
+            "sitesAtNominalWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "sitesAtBuildableWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 6,
+            "sitesAtNominalWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "sitesAtBuildableWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 7,
+            "sitesAtNominalWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "sitesAtBuildableWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 8,
+            "sitesAtNominalWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "sitesAtBuildableWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 9,
+            "sitesAtNominalWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "sitesAtBuildableWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 10,
+            "sitesAtNominalWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "sitesAtBuildableWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 11,
+            "sitesAtNominalWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "sitesAtBuildableWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 12,
+            "sitesAtNominalWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "sitesAtBuildableWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 13,
+            "sitesAtNominalWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "sitesAtBuildableWidth": [
+                -10.88,
+                0.0,
+                10.88
+            ],
+            "departure": 0.0
+        },
+        {
+            "phaseBasePairs": 24,
+            "row": 14,
+            "sitesAtNominalWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "sitesAtBuildableWidth": [
+                -16.32,
+                -5.44,
+                5.44,
+                16.32
+            ],
+            "departure": 0.0
+        }
+    ],
+    "armCeilings": [
+        {
+            "name": "inboard: the pair of roots one pitch apart",
+            "owner": "C-0069",
+            "atNominalWidth": 8.19,
+            "atBuildableWidth": 8.19,
+            "bindingAtNominal": true,
+            "bindingAtBuildable": false,
+            "note": "pitch - d; carries no tile width"
+        },
+        {
+            "name": "outboard: the arm that must stay over the tile",
+            "owner": "T-153",
+            "atNominalWidth": 9.12,
+            "atBuildableWidth": 8.16,
+            "bindingAtNominal": false,
+            "bindingAtBuildable": true,
+            "note": "edgeX/2 - pitch; carries no interhelical distance. The two cross at edgeX = 2(2p - d) = 38.1400 nm, and the buildable width falls 0.176 base pairs below that"
+        },
+        {
+            "name": "the binding one",
+            "owner": "T-153",
+            "atNominalWidth": 8.19,
+            "atBuildableWidth": 8.16,
+            "bindingAtNominal": true,
+            "bindingAtBuildable": true,
+            "note": "the OWNER of the binding ceiling changes with the width, which is the whole of what 4.8 % does to this branch"
+        }
+    ],
+    "placements": [
+        {
+            "case": "GATE — nominal 40.00 nm, C-0039's elastica arm, interior",
+            "edgeX": 40.0,
+            "armLength": 8.16439083,
+            "admitRowEnd": false,
+            "phaseBasePairs": 8,
+            "columns": 8,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0873905056,
+            "worstDishingOverStroke": 0.937868364,
+            "medianDishingOverStroke": 0.416852847,
+            "freeDishingOverStroke": 0.307902368,
+            "flatAtTenPercent": true,
+            "beatsNoCoupling": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-16320000,16320000;6:0,10880000;7:-16320000,16320000;8:-10880000,0;9:-16320000,16320000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "exhaustive": true
+        },
+        {
+            "case": "GATE — nominal 40.00 nm, C-0039's elastica arm, interior",
+            "edgeX": 40.0,
+            "armLength": 8.16439083,
+            "admitRowEnd": false,
+            "phaseBasePairs": 24,
+            "columns": 8,
+            "enumerated": 198288,
+            "bestDishingOverStroke": 0.0706145537,
+            "worstDishingOverStroke": 0.981249474,
+            "medianDishingOverStroke": 0.430915555,
+            "freeDishingOverStroke": 0.307902368,
+            "flatAtTenPercent": true,
+            "beatsNoCoupling": true,
+            "bestKey": "0:-16320000,-5440000,16320000;1:0,10880000;2:-16320000,5440000,16320000;3:0,10880000;4:-16320000,16320000;5:-10880000,0;6:-16320000,16320000;7:-10880000,10880000;8:-16320000,16320000;9:0,10880000;10:-16320000,16320000;11:-10880000,0;12:-16320000,-5440000,16320000;13:-10880000,0;14:-16320000,5440000,16320000",
+            "exhaustive": true
+        },
+        {
+            "case": "RECOMMENDED — buildable 38.08 nm, 24 bp arm, end-of-row admitted",
+            "edgeX": 38.08,
+            "armLength": 8.16,
+            "admitRowEnd": true,
+            "phaseBasePairs": 8,
+            "columns": 8,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0621469105,
+            "worstDishingOverStroke": 0.913227076,
+            "medianDishingOverStroke": 0.343483622,
+            "freeDishingOverStroke": 0.299034765,
+            "flatAtTenPercent": true,
+            "beatsNoCoupling": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "exhaustive": true
+        },
+        {
+            "case": "RECOMMENDED — buildable 38.08 nm, 24 bp arm, end-of-row admitted",
+            "edgeX": 38.08,
+            "armLength": 8.16,
+            "admitRowEnd": true,
+            "phaseBasePairs": 24,
+            "columns": 8,
+            "enumerated": 198288,
+            "bestDishingOverStroke": 0.070693794,
+            "worstDishingOverStroke": 0.958585295,
+            "medianDishingOverStroke": 0.364983097,
+            "freeDishingOverStroke": 0.299034733,
+            "flatAtTenPercent": true,
+            "beatsNoCoupling": true,
+            "bestKey": "0:-16320000,-5440000,16320000;1:-10880000,0,10880000;2:5440000,16320000;3:-10880000,0;4:-16320000,16320000;5:-10880000,10880000;6:-16320000,-5440000;7:-10880000,10880000;8:5440000,16320000;9:-10880000,10880000;10:-16320000,16320000;11:0,10880000;12:-16320000,-5440000;13:-10880000,0,10880000;14:-16320000,5440000,16320000",
+            "exhaustive": true
+        },
+        {
+            "case": "BRACKET — buildable 38.08 nm, 24 bp arm, interior (row-end column refused)",
+            "edgeX": 38.08,
+            "armLength": 8.16,
+            "admitRowEnd": false,
+            "phaseBasePairs": 8,
+            "columns": 6,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.168371808,
+            "worstDishingOverStroke": 1.01349889,
+            "medianDishingOverStroke": 0.490564926,
+            "freeDishingOverStroke": 0.307355642,
+            "flatAtTenPercent": false,
+            "beatsNoCoupling": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,-5440000,16320000;2:-10880000,0;3:-16320000,16320000;4:-10880000,0;5:-16320000,16320000;6:0,10880000;7:-16320000,16320000;8:-10880000,0;9:-16320000,16320000;10:0,10880000;11:-16320000,16320000;12:0,10880000;13:-16320000,5440000,16320000;14:-10880000,0,10880000",
+            "exhaustive": true
+        },
+        {
+            "case": "BRACKET — buildable 38.08 nm, 24 bp arm, interior (row-end column refused)",
+            "edgeX": 38.08,
+            "armLength": 8.16,
+            "admitRowEnd": false,
+            "phaseBasePairs": 24,
+            "columns": 6,
+            "enumerated": 198288,
+            "bestDishingOverStroke": 0.156510532,
+            "worstDishingOverStroke": 1.02286421,
+            "medianDishingOverStroke": 0.544585508,
+            "freeDishingOverStroke": 0.307355642,
+            "flatAtTenPercent": false,
+            "beatsNoCoupling": true,
+            "bestKey": "0:-16320000,5440000,16320000;1:-10880000,0;2:-16320000,16320000;3:-10880000,0;4:-16320000,16320000;5:0,10880000;6:-16320000,-5440000,16320000;7:-10880000,10880000;8:-16320000,5440000,16320000;9:-10880000,0;10:-16320000,16320000;11:0,10880000;12:-16320000,16320000;13:0,10880000;14:-16320000,-5440000,16320000",
+            "exhaustive": true
+        },
+        {
+            "case": "UNBUILDABLE ARM — buildable 38.08 nm, elastica arm, end-of-row admitted",
+            "edgeX": 38.08,
+            "armLength": 8.16439083,
+            "admitRowEnd": true,
+            "phaseBasePairs": 8,
+            "columns": 8,
+            "enumerated": 46656,
+            "bestDishingOverStroke": 0.142709615,
+            "worstDishingOverStroke": 0.908634956,
+            "medianDishingOverStroke": 0.337648024,
+            "freeDishingOverStroke": 0.299034765,
+            "flatAtTenPercent": false,
+            "beatsNoCoupling": true,
+            "bestKey": "0:0,10880000;1:-16320000,-5440000,16320000;2:-10880000,0;3:-16320000,16320000;4:-10880000,10880000;5:-16320000,5440000,16320000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-16320000,-5440000,16320000;10:-10880000,10880000;11:-16320000,16320000;12:0,10880000;13:-16320000,5440000,16320000;14:-10880000,0",
+            "exhaustive": true
+        },
+        {
+            "case": "UNBUILDABLE ARM — buildable 38.08 nm, elastica arm, end-of-row admitted",
+            "edgeX": 38.08,
+            "armLength": 8.16439083,
+            "admitRowEnd": true,
+            "phaseBasePairs": 24,
+            "columns": 8,
+            "enumerated": 93312,
+            "bestDishingOverStroke": 0.0776435346,
+            "worstDishingOverStroke": 0.958585295,
+            "medianDishingOverStroke": 0.345129709,
+            "freeDishingOverStroke": 0.299034733,
+            "flatAtTenPercent": true,
+            "beatsNoCoupling": true,
+            "bestKey": "0:-16320000,-5440000,16320000;1:0,10880000;2:-16320000,-5440000,5440000;3:0,10880000;4:-16320000,16320000;5:-10880000,10880000;6:5440000,16320000;7:-10880000,10880000;8:-16320000,-5440000;9:-10880000,10880000;10:-16320000,16320000;11:-10880000,0;12:-5440000,5440000,16320000;13:-10880000,0;14:-16320000,5440000,16320000",
+            "exhaustive": true
+        }
+    ],
+    "descent": [
+        {
+            "phaseBasePairs": 0,
+            "columns": 7,
+            "upwardSites": 60,
+            "freeDishingOverStroke": 0.299397543,
+            "bestDishingOverStroke": 0.137716682,
+            "flatAtTenPercent": false,
+            "evaluations": 18694,
+            "key": "0:-13600000,-2720000,8160000;1:-18990000,13600000;2:-13600000,8160000;3:-18990000;4:-13600000,-2720000,8160000;5:-18990000,13600000;6:-13600000;7:-18990000,2720000,13600000;8:-13600000,8160000;9:-18990000,2720000;10:-13600000,-2720000,8160000;11:-18990000,2720000,13600000;12:-13600000,-2720000;13:-18990000,13600000;14:-13600000,-2720000,8160000"
+        },
+        {
+            "phaseBasePairs": 1,
+            "columns": 7,
+            "upwardSites": 52,
+            "freeDishingOverStroke": 0.299565684,
+            "bestDishingOverStroke": 0.0987931007,
+            "flatAtTenPercent": true,
+            "evaluations": 18488,
+            "key": "0:-13260000,-2380000,8500000;1:-18700000,-7820000,13940000;2:-13260000;3:-18700000,-7820000,13940000;4:-13260000,8500000;5:-18700000,-7820000;6:-13260000,-2380000;7:-18700000,-7820000,13940000;8:-13260000;9:-18700000,13940000;10:-13260000,8500000;11:-18700000,-7820000;12:-13260000,8500000;13:-18700000,-7820000,13940000;14:-13260000,-2380000,8500000"
+        },
+        {
+            "phaseBasePairs": 2,
+            "columns": 7,
+            "upwardSites": 52,
+            "freeDishingOverStroke": 0.300414038,
+            "bestDishingOverStroke": 0.098305187,
+            "flatAtTenPercent": true,
+            "evaluations": 20876,
+            "key": "0:-12920000,8840000;1:-18360000,-7480000,14280000;2:-2040000,8840000;3:-18360000;4:-12920000,-2040000;5:-18360000,-7480000,14280000;6:-12920000;7:-18360000,-7480000,14280000;8:-12920000,8840000;9:-18360000,-7480000;10:-12920000,-2040000,8840000;11:-18360000,-7480000,14280000;12:-12920000;13:-18360000,-7480000,14280000;14:-12920000,-2040000,8840000"
+        },
+        {
+            "phaseBasePairs": 3,
+            "columns": 7,
+            "upwardSites": 52,
+            "freeDishingOverStroke": 0.301449131,
+            "bestDishingOverStroke": 0.105826699,
+            "flatAtTenPercent": false,
+            "evaluations": 17042,
+            "key": "0:-12580000,-1700000,9180000;1:-18020000,-7140000,14620000;2:-12580000,-1700000;3:-18020000,14620000;4:-1700000;5:-18020000,-7140000,14620000;6:-12580000;7:-18020000,14620000;8:-12580000,-1700000,9180000;9:-18020000,-7140000;10:-12580000,-1700000;11:-18020000,14620000;12:-12580000,9180000;13:-18020000,3740000,14620000;14:-12580000,-1700000,9180000"
+        },
+        {
+            "phaseBasePairs": 4,
+            "columns": 7,
+            "upwardSites": 52,
+            "freeDishingOverStroke": 0.302407678,
+            "bestDishingOverStroke": 0.100707053,
+            "flatAtTenPercent": false,
+            "evaluations": 20549,
+            "key": "0:-12240000,9520000;1:-17680000,-6800000,14960000;2:-12240000,-1360000,9520000;3:-17680000;4:9520000;5:-17680000,14960000;6:-12240000,-1360000,9520000;7:-17680000,-6800000;8:-12240000;9:-17680000,4080000,14960000;10:-12240000,9520000;11:-17680000,-6800000;12:-12240000,-1360000,9520000;13:-17680000,-6800000,14960000;14:-12240000,-1360000,9520000"
+        },
+        {
+            "phaseBasePairs": 5,
+            "columns": 7,
+            "upwardSites": 52,
+            "freeDishingOverStroke": 0.303382098,
+            "bestDishingOverStroke": 0.103396338,
+            "flatAtTenPercent": false,
+            "evaluations": 18192,
+            "key": "0:-11900000,9860000;1:-17340000,-6460000,15300000;2:9860000;3:-17340000,-6460000;4:-1020000;5:-17340000,15300000;6:-11900000,-1020000,9860000;7:-17340000,-6460000,4420000;8:-11900000,9860000;9:-17340000,4420000,15300000;10:-11900000,-1020000;11:-17340000,15300000;12:-11900000,-1020000;13:-17340000,4420000,15300000;14:-11900000,-1020000,9860000"
+        },
+        {
+            "phaseBasePairs": 6,
+            "columns": 7,
+            "upwardSites": 52,
+            "freeDishingOverStroke": 0.304429535,
+            "bestDishingOverStroke": 0.110849222,
+            "flatAtTenPercent": false,
+            "evaluations": 20749,
+            "key": "0:-11560000,10200000;1:-17000000,-6120000,15640000;2:-680000;3:-17000000,15640000;4:-11560000,-680000;5:-17000000,-6120000,4760000;6:10200000;7:-17000000,-6120000,15640000;8:-11560000,10200000;9:-17000000,15640000;10:-11560000,-680000,10200000;11:-17000000,4760000;12:-11560000,10200000;13:-17000000,-6120000,15640000;14:-11560000,-680000,10200000"
+        },
+        {
+            "phaseBasePairs": 7,
+            "columns": 7,
+            "upwardSites": 52,
+            "freeDishingOverStroke": 0.305393677,
+            "bestDishingOverStroke": 0.109700726,
+            "flatAtTenPercent": false,
+            "evaluations": 22813,
+            "key": "0:-11220000,10540000;1:-16660000,-5780000,15980000;2:10540000;3:-16660000,5100000;4:-340000,10540000;5:-16660000,5100000,15980000;6:-340000;7:-16660000,-5780000,15980000;8:-340000;9:-16660000,-5780000,15980000;10:-340000;11:-16660000,5100000,15980000;12:-11220000,-340000,10540000;13:-16660000,5100000,15980000;14:-11220000,-340000,10540000"
+        },
+        {
+            "phaseBasePairs": 8,
+            "columns": 8,
+            "upwardSites": 52,
+            "freeDishingOverStroke": 0.299034765,
+            "bestDishingOverStroke": 0.0658484805,
+            "flatAtTenPercent": true,
+            "evaluations": 18760,
+            "key": "0:-10880000,0,10880000;1:-16320000,-5440000,16320000;2:10880000;3:-16320000,5440000,16320000;4:-10880000,0;5:-16320000,16320000;6:10880000;7:-16320000,5440000,16320000;8:-10880000,0,10880000;9:-5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000"
+        },
+        {
+            "phaseBasePairs": 9,
+            "columns": 7,
+            "upwardSites": 52,
+            "freeDishingOverStroke": 0.305393676,
+            "bestDishingOverStroke": 0.116201144,
+            "flatAtTenPercent": false,
+            "evaluations": 19519,
+            "key": "0:-10540000,340000,11220000;1:-15980000,-5100000,16660000;2:-10540000,11220000;3:-15980000,16660000;4:-10540000,340000,11220000;5:-5100000,16660000;6:-10540000,340000,11220000;7:-15980000,5780000,16660000;8:340000;9:5780000,16660000;10:-10540000,340000;11:-15980000,16660000;12:340000;13:-15980000,5780000,16660000;14:-10540000,11220000"
+        },
+        {
+            "phaseBasePairs": 10,
+            "columns": 7,
+            "upwardSites": 52,
+            "freeDishingOverStroke": 0.304429535,
+            "bestDishingOverStroke": 0.105698393,
+            "flatAtTenPercent": false,
+            "evaluations": 24269,
+            "key": "0:-10200000,680000,11560000;1:-15640000,6120000,17000000;2:-10200000,11560000;3:-15640000,6120000,17000000;4:680000,11560000;5:-15640000,6120000,17000000;6:-10200000,680000;7:-15640000,6120000,17000000;8:680000;9:6120000,17000000;10:-10200000;11:-15640000,6120000,17000000;12:680000;13:-15640000,6120000,17000000;14:-10200000,11560000"
+        },
+        {
+            "phaseBasePairs": 11,
+            "columns": 7,
+            "upwardSites": 52,
+            "freeDishingOverStroke": 0.303382098,
+            "bestDishingOverStroke": 0.107580022,
+            "flatAtTenPercent": false,
+            "evaluations": 14508,
+            "key": "0:-9860000,1020000,11900000;1:-15300000,17340000;2:1020000,11900000;3:-15300000,6460000,17340000;4:-9860000,1020000,11900000;5:-4420000,6460000,17340000;6:-9860000,11900000;7:-15300000,-4420000,17340000;8:1020000;9:6460000,17340000;10:-9860000;11:-15300000,-4420000,17340000;12:1020000;13:-15300000,6460000,17340000;14:-9860000,11900000"
+        },
+        {
+            "phaseBasePairs": 12,
+            "columns": 7,
+            "upwardSites": 52,
+            "freeDishingOverStroke": 0.302407678,
+            "bestDishingOverStroke": 0.108550707,
+            "flatAtTenPercent": false,
+            "evaluations": 16077,
+            "key": "0:-9520000,1360000,12240000;1:-14960000,-4080000,17680000;2:1360000,12240000;3:-14960000,-4080000,17680000;4:1360000,12240000;5:-14960000,6800000,17680000;6:1360000,12240000;7:-14960000,6800000,17680000;8:-9520000;9:6800000,17680000;10:-9520000;11:-14960000,-4080000,17680000;12:1360000;13:-14960000,6800000,17680000;14:-9520000,12240000"
+        },
+        {
+            "phaseBasePairs": 13,
+            "columns": 7,
+            "upwardSites": 52,
+            "freeDishingOverStroke": 0.301449131,
+            "bestDishingOverStroke": 0.110752233,
+            "flatAtTenPercent": false,
+            "evaluations": 20707,
+            "key": "0:-9180000,1700000,12580000;1:-14620000,7140000,18020000;2:1700000,12580000;3:-14620000,7140000,18020000;4:-9180000,12580000;5:-14620000,7140000,18020000;6:1700000,12580000;7:7140000,18020000;8:-9180000;9:-14620000,7140000,18020000;10:-9180000,1700000,12580000;11:18020000;12:12580000;13:-14620000,-3740000,18020000;14:-9180000,12580000"
+        },
+        {
+            "phaseBasePairs": 14,
+            "columns": 7,
+            "upwardSites": 52,
+            "freeDishingOverStroke": 0.300414038,
+            "bestDishingOverStroke": 0.0922977136,
+            "flatAtTenPercent": true,
+            "evaluations": 18304,
+            "key": "0:-8840000,2040000,12920000;1:-14280000,7480000,18360000;2:-8840000,2040000,12920000;3:-14280000,18360000;4:2040000,12920000;5:-14280000,7480000,18360000;6:2040000,12920000;7:-14280000,7480000,18360000;8:2040000;9:-14280000,7480000,18360000;10:-8840000;11:7480000,18360000;12:-8840000;13:-14280000,7480000,18360000;14:-8840000,12920000"
+        },
+        {
+            "phaseBasePairs": 15,
+            "columns": 7,
+            "upwardSites": 52,
+            "freeDishingOverStroke": 0.299565684,
+            "bestDishingOverStroke": 0.0965174163,
+            "flatAtTenPercent": true,
+            "evaluations": 16373,
+            "key": "0:-8500000,2380000,13260000;1:-13940000,7820000,18700000;2:13260000;3:-13940000,7820000,18700000;4:-8500000,2380000,13260000;5:7820000,18700000;6:-8500000,13260000;7:-13940000,7820000,18700000;8:2380000,13260000;9:-13940000,7820000,18700000;10:13260000;11:7820000,18700000;12:-8500000;13:-13940000,7820000,18700000;14:-8500000,13260000"
+        },
+        {
+            "phaseBasePairs": 16,
+            "columns": 7,
+            "upwardSites": 60,
+            "freeDishingOverStroke": 0.299397543,
+            "bestDishingOverStroke": 0.125068659,
+            "flatAtTenPercent": false,
+            "evaluations": 33852,
+            "key": "0:-18990000,2720000,13600000;1:-13600000,-2720000;2:-18990000,2720000,13600000;3:-13600000,-2720000;4:-18990000,13600000;5:-13600000,-2720000;6:-18990000,13600000;7:-13600000,-2720000;8:-18990000,13600000;9:-13600000,-2720000;10:-18990000,13600000;11:-13600000,-2720000;12:-18990000,2720000,13600000;13:-13600000,-2720000;14:-18990000,2720000,13600000"
+        },
+        {
+            "phaseBasePairs": 17,
+            "columns": 7,
+            "upwardSites": 53,
+            "freeDishingOverStroke": 0.299565684,
+            "bestDishingOverStroke": 0.101595044,
+            "flatAtTenPercent": false,
+            "evaluations": 20239,
+            "key": "0:-18700000,-7820000,13940000;1:-13260000,-2380000,8500000;2:-18700000,-7820000;3:-13260000,-2380000;4:-18700000,-7820000,13940000;5:-13260000,8500000;6:-18700000,-7820000;7:-13260000,-2380000;8:-18700000,-7820000,13940000;9:-13260000,8500000;10:-18700000,-7820000;11:-13260000;12:-18700000,13940000;13:-13260000,8500000;14:-18700000,-7820000,3060000"
+        },
+        {
+            "phaseBasePairs": 18,
+            "columns": 7,
+            "upwardSites": 53,
+            "freeDishingOverStroke": 0.300414038,
+            "bestDishingOverStroke": 0.112018773,
+            "flatAtTenPercent": false,
+            "evaluations": 13822,
+            "key": "0:-18360000,-7480000,14280000;1:-12920000,8840000;2:-18360000,-7480000,3400000;3:-12920000,-2040000;4:-18360000,-7480000,14280000;5:-12920000,8840000;6:-18360000;7:-12920000,8840000;8:-18360000,14280000;9:-12920000,-2040000,8840000;10:-18360000,3400000;11:-2040000;12:-18360000,-7480000,14280000;13:-12920000,-2040000;14:-18360000,3400000,14280000"
+        },
+        {
+            "phaseBasePairs": 19,
+            "columns": 7,
+            "upwardSites": 53,
+            "freeDishingOverStroke": 0.301449131,
+            "bestDishingOverStroke": 0.11699565,
+            "flatAtTenPercent": false,
+            "evaluations": 21594,
+            "key": "0:-18020000,-7140000,14620000;1:-12580000,-1700000;2:-18020000,-7140000,14620000;3:-12580000,-1700000;4:-18020000,-7140000;5:-12580000,9180000;6:-18020000,14620000;7:-12580000,9180000;8:-18020000,14620000;9:9180000;10:-18020000,-7140000;11:-12580000,-1700000,9180000;12:-18020000,-7140000;13:-12580000,-1700000,9180000;14:-18020000,3740000,14620000"
+        },
+        {
+            "phaseBasePairs": 20,
+            "columns": 7,
+            "upwardSites": 53,
+            "freeDishingOverStroke": 0.302407678,
+            "bestDishingOverStroke": 0.107777622,
+            "flatAtTenPercent": false,
+            "evaluations": 21892,
+            "key": "0:-17680000,-6800000,14960000;1:-12240000,-1360000;2:-17680000,-6800000,4080000;3:-12240000;4:-17680000,-6800000,14960000;5:-12240000;6:-17680000,-6800000,4080000;7:-12240000,-1360000;8:-17680000,-6800000,14960000;9:-12240000,-1360000;10:-17680000,-6800000;11:-12240000;12:-17680000,-6800000,14960000;13:-12240000,9520000;14:-17680000,-6800000,4080000"
+        },
+        {
+            "phaseBasePairs": 21,
+            "columns": 7,
+            "upwardSites": 53,
+            "freeDishingOverStroke": 0.303382098,
+            "bestDishingOverStroke": 0.111797056,
+            "flatAtTenPercent": false,
+            "evaluations": 23155,
+            "key": "0:-17340000,-6460000,15300000;1:9860000;2:-17340000,-6460000,4420000;3:-11900000,-1020000;4:-17340000,-6460000,15300000;5:-11900000,9860000;6:-17340000,-6460000;7:9860000;8:-17340000,15300000;9:-11900000,9860000;10:-17340000,-6460000;11:-11900000,-1020000,9860000;12:-17340000,-6460000;13:-11900000,-1020000,9860000;14:-17340000,4420000,15300000"
+        },
+        {
+            "phaseBasePairs": 22,
+            "columns": 7,
+            "upwardSites": 53,
+            "freeDishingOverStroke": 0.304429535,
+            "bestDishingOverStroke": 0.127037094,
+            "flatAtTenPercent": false,
+            "evaluations": 17322,
+            "key": "0:-17000000,-6120000,4760000;1:-11560000,10200000;2:-17000000,-6120000,15640000;3:-11560000,10200000;4:-17000000,-6120000;5:-11560000,10200000;6:-17000000,-6120000;7:-11560000;8:-17000000,-6120000,15640000;9:-11560000,-680000;10:-17000000;11:-11560000,10200000;12:-17000000,-6120000,15640000;13:-11560000,-680000,10200000;14:-17000000,-6120000,4760000"
+        },
+        {
+            "phaseBasePairs": 23,
+            "columns": 7,
+            "upwardSites": 53,
+            "freeDishingOverStroke": 0.305393677,
+            "bestDishingOverStroke": 0.0992533127,
+            "flatAtTenPercent": true,
+            "evaluations": 16697,
+            "key": "0:-16660000,-5780000,15980000;1:-11220000,-340000,10540000;2:-16660000,-5780000;3:-11220000,-340000,10540000;4:-16660000,-5780000;5:-11220000,10540000;6:-16660000,15980000;7:-11220000,10540000;8:-16660000,-5780000;9:-11220000,10540000;10:-16660000,5100000;11:-11220000;12:-16660000,5100000,15980000;13:-11220000,10540000;14:-16660000,-5780000,5100000"
+        },
+        {
+            "phaseBasePairs": 24,
+            "columns": 8,
+            "upwardSites": 53,
+            "freeDishingOverStroke": 0.299034733,
+            "bestDishingOverStroke": 0.0777862581,
+            "flatAtTenPercent": true,
+            "evaluations": 16413,
+            "key": "0:-16320000,-5440000,16320000;1:-10880000,0,10880000;2:-16320000,-5440000,5440000;3:-10880000,10880000;4:-16320000,16320000;5:0;6:-16320000,-5440000,16320000;7:0,10880000;8:-16320000,5440000;9:-10880000,0;10:-16320000,-5440000,16320000;11:10880000;12:-16320000,16320000;13:-10880000,10880000;14:-16320000,-5440000,5440000"
+        },
+        {
+            "phaseBasePairs": 25,
+            "columns": 7,
+            "upwardSites": 53,
+            "freeDishingOverStroke": 0.305393676,
+            "bestDishingOverStroke": 0.11079574,
+            "flatAtTenPercent": false,
+            "evaluations": 16552,
+            "key": "0:-15980000,-5100000,16660000;1:340000,11220000;2:-5100000,5780000,16660000;3:-10540000,340000,11220000;4:16660000;5:-10540000,11220000;6:-15980000,16660000;7:-10540000,11220000;8:-15980000,5780000,16660000;9:340000,11220000;10:5780000,16660000;11:-10540000,340000;12:5780000,16660000;13:-10540000,11220000;14:-15980000,-5100000,16660000"
+        },
+        {
+            "phaseBasePairs": 26,
+            "columns": 7,
+            "upwardSites": 53,
+            "freeDishingOverStroke": 0.304429535,
+            "bestDishingOverStroke": 0.101751979,
+            "flatAtTenPercent": false,
+            "evaluations": 17055,
+            "key": "0:-4760000,6120000,17000000;1:-10200000,680000,11560000;2:-15640000,17000000;3:11560000;4:-15640000,17000000;5:-10200000,11560000;6:6120000,17000000;7:-10200000,680000,11560000;8:-4760000,6120000,17000000;9:-10200000;10:-15640000,17000000;11:680000,11560000;12:6120000,17000000;13:-10200000,680000,11560000;14:-15640000,6120000,17000000"
+        },
+        {
+            "phaseBasePairs": 27,
+            "columns": 7,
+            "upwardSites": 53,
+            "freeDishingOverStroke": 0.303382098,
+            "bestDishingOverStroke": 0.115317173,
+            "flatAtTenPercent": false,
+            "evaluations": 17589,
+            "key": "0:-4420000,6460000,17340000;1:-9860000,11900000;2:-15300000,6460000,17340000;3:11900000;4:-15300000,6460000,17340000;5:11900000;6:6460000,17340000;7:-9860000,1020000,11900000;8:6460000,17340000;9:-9860000,11900000;10:-15300000,-4420000,17340000;11:-9860000,11900000;12:6460000,17340000;13:1020000,11900000;14:-15300000,6460000,17340000"
+        },
+        {
+            "phaseBasePairs": 28,
+            "columns": 7,
+            "upwardSites": 53,
+            "freeDishingOverStroke": 0.302407678,
+            "bestDishingOverStroke": 0.10035128,
+            "flatAtTenPercent": false,
+            "evaluations": 14856,
+            "key": "0:-4080000,6800000,17680000;1:-9520000,12240000;2:-14960000,-4080000,17680000;3:12240000;4:17680000;5:-9520000,12240000;6:-14960000,6800000,17680000;7:-9520000,1360000,12240000;8:6800000,17680000;9:12240000;10:-14960000,6800000,17680000;11:-9520000,12240000;12:6800000,17680000;13:-9520000,1360000,12240000;14:-14960000,6800000,17680000"
+        },
+        {
+            "phaseBasePairs": 29,
+            "columns": 7,
+            "upwardSites": 53,
+            "freeDishingOverStroke": 0.301449131,
+            "bestDishingOverStroke": 0.0997958959,
+            "flatAtTenPercent": true,
+            "evaluations": 19443,
+            "key": "0:-14620000,-3740000,18020000;1:1700000,12580000;2:7140000,18020000;3:-9180000,12580000;4:-14620000,7140000,18020000;5:12580000;6:-14620000,7140000,18020000;7:1700000,12580000;8:-3740000,18020000;9:-9180000,1700000,12580000;10:-14620000,7140000,18020000;11:12580000;12:-3740000,18020000;13:-9180000,12580000;14:-14620000,7140000,18020000"
+        },
+        {
+            "phaseBasePairs": 30,
+            "columns": 7,
+            "upwardSites": 53,
+            "freeDishingOverStroke": 0.300414038,
+            "bestDishingOverStroke": 0.0975078171,
+            "flatAtTenPercent": true,
+            "evaluations": 19606,
+            "key": "0:-14280000,-3400000,18360000;1:2040000,12920000;2:-3400000,7480000,18360000;3:-8840000,12920000;4:-14280000,7480000,18360000;5:12920000;6:7480000,18360000;7:-8840000,12920000;8:-14280000,18360000;9:-8840000,2040000;10:-14280000,7480000,18360000;11:12920000;12:7480000,18360000;13:-8840000,2040000,12920000;14:-14280000,7480000,18360000"
+        },
+        {
+            "phaseBasePairs": 31,
+            "columns": 7,
+            "upwardSites": 53,
+            "freeDishingOverStroke": 0.299565684,
+            "bestDishingOverStroke": 0.102149905,
+            "flatAtTenPercent": false,
+            "evaluations": 20133,
+            "key": "0:-13940000,-3060000,18700000;1:2380000,13260000;2:7820000,18700000;3:-8500000,13260000;4:-13940000,7820000,18700000;5:13260000;6:-13940000,7820000,18700000;7:2380000,13260000;8:7820000,18700000;9:-8500000,13260000;10:-13940000,-3060000,18700000;11:2380000,13260000;12:18700000;13:-8500000,2380000,13260000;14:-13940000,-3060000,18700000"
+        }
+    ],
+    "planMargins": [
+        {
+            "owner": "C-0069",
+            "quantity": "the plan budget, pitch - d",
+            "atNominalWidth": "8.190000 nm",
+            "atBuildableWidth": "8.190000 nm",
+            "moves": false,
+            "note": "INVARIANT BY CONSTRUCTION — a difference of two lattice constants"
+        },
+        {
+            "owner": "C-0069 / C-0072 / C-0066",
+            "quantity": "the margin M = p - d - L at the elastica arm",
+            "atNominalWidth": "0.025609 nm",
+            "atBuildableWidth": "0.025609 nm",
+            "moves": false,
+            "note": "INVARIANT — one subtraction, and C-0072 showed the two groupings are the same one"
+        },
+        {
+            "owner": "C-0085",
+            "quantity": "the margin at the buildable 24 bp arm",
+            "atNominalWidth": "0.030000 nm",
+            "atBuildableWidth": "0.030000 nm",
+            "moves": false,
+            "note": "INVARIANT — C-0085's quantisation is an axial statement and carries no width"
+        },
+        {
+            "owner": "T-153",
+            "quantity": "the OUTBOARD margin, edgeX/2 - (pitch + arm), elastica arm",
+            "atNominalWidth": "0.955609 nm",
+            "atBuildableWidth": "-0.004391 nm",
+            "moves": true,
+            "note": "MOVES, and changes sign: +0.955609 nm at 40.00 and -0.004391 nm at 38.08 — an overhang 0.0129 times the base-pair rise, i.e. below the resolution of the design language (CLAUDE.md: a margin below 0.34 nm cannot be corrected, only removed)"
+        },
+        {
+            "owner": "T-153",
+            "quantity": "the OUTBOARD margin at the buildable 24 bp arm",
+            "atNominalWidth": "0.960000 nm",
+            "atBuildableWidth": "0.000000 nm",
+            "moves": true,
+            "note": "MOVES to EXACTLY ZERO: 32 bp of pitch plus 24 bp of arm is 56 bp, which is exactly half of 112 bp. A lattice can hold a tolerance of zero"
+        },
+        {
+            "owner": "C-0074",
+            "quantity": "the 30-root plan ceiling at phase 24",
+            "atNominalWidth": "9.535000 nm",
+            "atBuildableWidth": "9.535000 nm",
+            "moves": false,
+            "note": "the largest rooted element any 30-root placement keeps"
+        },
+        {
+            "owner": "C-0074 / C-0063",
+            "quantity": "the 34-root plan ceiling at phase 24",
+            "atNominalWidth": "8.190000 nm",
+            "atBuildableWidth": "8.190000 nm",
+            "moves": false,
+            "note": "the same at C-0063's own count"
+        },
+        {
+            "owner": "C-0053",
+            "quantity": "the in-plane hinge-arm packer at 9.13 nm, phase 24",
+            "atNominalWidth": "43 arms",
+            "atBuildableWidth": "29 arms",
+            "moves": true,
+            "note": "C-0053's own count; the in-plane lattice has a 5.44 nm root pitch and is a different problem from the upward one"
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the BISECTED budget on C-0063's OWN 34 rows, C-0069's own library",
+            "atNominalWidth": "8.190000 nm",
+            "atBuildableWidth": "8.190000 nm",
+            "moves": false,
+            "note": "the design as built is untouched, because every one of its four three-arm rows sits on a FOUR-site row whose outermost root is at 16.32 nm and whose outboard arm therefore points inward at either width"
+        },
+        {
+            "owner": "C-0069",
+            "quantity": "the same bisection on a THREE-site row carrying three arms",
+            "atNominalWidth": "8.190000 nm",
+            "atBuildableWidth": "8.160000 nm",
+            "moves": true,
+            "note": "8.1900 -> 8.1600 nm. C-0069's budget is the MINIMUM of an inboard bound (pitch - d, no tile width in it) and an outboard one (edgeX/2 - pitch, no interhelical distance in it). On this row the outboard bound is slack by 0.9300 nm at 40.00 nm and OWNS the budget at 38.08 nm — which is why the headline `pitch - d on EVERY 34-root placement` is width-conditional"
+        },
+        {
+            "owner": "C-0085",
+            "quantity": "the budget widened by the 6-rise collinear clearance, C-0063's own rows",
+            "atNominalWidth": "8.840000 nm",
+            "atBuildableWidth": "8.840000 nm",
+            "moves": false,
+            "note": "C-0085's 8.19 -> 8.84 nm, reproduced on the rows it was read on"
+        },
+        {
+            "owner": "C-0085",
+            "quantity": "the same widening on a THREE-site row carrying three arms",
+            "atNominalWidth": "8.840000 nm",
+            "atBuildableWidth": "8.160000 nm",
+            "moves": true,
+            "note": "8.8400 -> 8.1600 nm: the widening only loosens the INBOARD bound, so at 38.08 nm the tile edge caps it and the whole 1.2575x gain is annihilated"
+        },
+        {
+            "owner": "C-0069 / C-0085",
+            "quantity": "the end-condition razor c = k L^3 / EI",
+            "atNominalWidth": "2.34166 (2.94462 widened)",
+            "atBuildableWidth": "2.34166 (2.94462 widened)",
+            "moves": false,
+            "note": "read on C-0063's own rows; on a three-site row it is 2.34166 -> 2.31602, and the razor is a CUBE of the budget"
+        },
+        {
+            "owner": "C-0085",
+            "quantity": "the collinear clearance sweep on a three-site row, 4 to 8 rises",
+            "atNominalWidth": "4:9.1200; 5:9.1200; 6:8.8400; 7:8.5000; 8:8.1600",
+            "atBuildableWidth": "4:8.1600; 5:8.1600; 6:8.1600; 7:8.1600; 8:8.1600",
+            "moves": true,
+            "note": "at 40.00 nm the budget rises with a looser clearance; at 38.08 nm it SATURATES at the tile edge, 8.1600 nm, so a clearance tighter than 8.00 rises buys nothing at all"
+        }
+    ],
+    "forces": [
+        {
+            "case": "GATE — C-0063's own optimum at 40.00 nm",
+            "stations": 34,
+            "dishingOverStroke": 0.0706145537,
+            "flatAtTenPercent": true,
+            "peakPathForce": 2.94117647,
+            "peakThermalForce": 0.345591239,
+            "peakCrossoverForce": 1.24568444,
+            "peakDuplexShear": 1.40922674,
+            "withinUnzipAllowable": true
+        },
+        {
+            "case": "RECOMMENDED — the optimum at 38.08 nm",
+            "stations": 34,
+            "dishingOverStroke": 0.0621469087,
+            "flatAtTenPercent": true,
+            "peakPathForce": 2.94117647,
+            "peakThermalForce": 0.345591239,
+            "peakCrossoverForce": 1.42774664,
+            "peakDuplexShear": 1.72247432,
+            "withinUnzipAllowable": true
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "dishing/stroke of the recommended placement",
+            "parameter": "nested subdivisions 1 c 2 c 4",
+            "values": [
+                1.0,
+                2.0,
+                4.0
+            ],
+            "results": [
+                0.0617554318,
+                0.0621469087,
+                0.0618197415
+            ],
+            "departure": 0.0052644151,
+            "note": "nested only, per CLAUDE.md — a subdivision of 3 moves a station off a node"
+        },
+        {
+            "quantity": "dishing/stroke of the recommended placement",
+            "parameter": "dishing sample grid",
+            "values": [
+                41.0,
+                81.0,
+                161.0
+            ],
+            "results": [
+                0.0621469087,
+                0.0621469087,
+                0.0624086433
+            ],
+            "departure": 0.00421154705,
+            "note": "81 is the grid every published dishing in this programme is read on"
+        },
+        {
+            "quantity": "dishing/stroke of the recommended placement",
+            "parameter": "Woodbury surrogate vs the assembly",
+            "values": [
+                0.0,
+                1.0
+            ],
+            "results": [
+                0.0621469105,
+                0.0621469087
+            ],
+            "departure": 2.91187973E-8,
+            "note": "FALSIFIER: superposition is exact for a linear system, so any departure above round-off means the sweep was run on the wrong object"
+        },
+        {
+            "quantity": "the descent's own argmin",
+            "parameter": "repeat runs",
+            "values": [
+                1.0,
+                2.0
+            ],
+            "results": [
+                0.0777632998,
+                0.0777632998
+            ],
+            "departure": 0.0,
+            "note": "identical placement key — the argmin is rounded at the decision point"
+        },
+        {
+            "quantity": "dishing/stroke of the recommended placement",
+            "parameter": "the row-end column's inset [nm]",
+            "values": [
+                0.05,
+                0.17,
+                0.34
+            ],
+            "results": [
+                0.0621469087,
+                0.0623464033,
+                0.0622667411
+            ],
+            "departure": 0.00321004918,
+            "note": "the inset is a NUMERICAL GUARD (a column on the tile edge would seed a zero-length beam element), so the answer must not depend on it; swept over 0.05 nm, half a rise and one whole rise"
+        },
+        {
+            "quantity": "the uniform-load falsifier on the recommended host",
+            "parameter": "the row-end column's inset [nm]",
+            "values": [
+                0.05,
+                0.17,
+                0.34
+            ],
+            "results": [
+                2.12606493E-7,
+                3.47987816E-9,
+                0.0
+            ],
+            "departure": 2.12606493E-7,
+            "note": "a uniform load on a uniform Winkler foundation dishes EXACTLY zero on a free tile; the residual here is the conditioning of the short end element the inset creates, and it falls as the inset grows"
+        },
+        {
+            "quantity": "the upward station lattice at phases 8 and 24",
+            "parameter": "40.00 nm against 38.08 nm",
+            "values": [
+                40.0,
+                38.08
+            ],
+            "results": [
+                0.0,
+                0.0
+            ],
+            "departure": 0.0,
+            "note": "the station set is IDENTICAL, so the whole comparison is of HOSTS and LOADS, not of station sets"
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0063",
+            "quantity": "dishing/stroke, exhaustive centro-symmetric optimum at phase 24, 40.00 nm",
+            "published": 0.0706145537,
+            "reproduced": 0.0706145537,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0063",
+            "quantity": "dishing/stroke, exhaustive centro-symmetric optimum at phase 8, 40.00 nm",
+            "published": 0.0873905056,
+            "reproduced": 0.0873905056,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0063",
+            "quantity": "centro-symmetric placements enumerated at phase 24, 40.00 nm",
+            "published": 198288.0,
+            "reproduced": 198288.0,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0063",
+            "quantity": "centro-symmetric placements enumerated at phase 8, 40.00 nm",
+            "published": 163296.0,
+            "reproduced": 163296.0,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0069",
+            "quantity": "the plan budget [nm]",
+            "published": 8.19,
+            "reproduced": 8.19,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0069",
+            "quantity": "the BISECTED budget on its own 34 rows at 40.00 nm [nm]",
+            "published": 8.19,
+            "reproduced": 8.19,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0069",
+            "quantity": "the end-condition razor c at 40.00 nm",
+            "published": 2.3416,
+            "reproduced": 2.34165925,
+            "departure": 2.5301627E-5,
+            "strict": false
+        },
+        {
+            "source": "C-0085",
+            "quantity": "the widened budget at 40.00 nm [nm]",
+            "published": 8.84,
+            "reproduced": 8.84,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0085",
+            "quantity": "the widened end-condition razor c at 40.00 nm",
+            "published": 2.94462,
+            "reproduced": 2.94461681,
+            "departure": 1.08246315E-6,
+            "strict": false
+        },
+        {
+            "source": "C-0072",
+            "quantity": "the margin M = p - d - L [nm]",
+            "published": 0.02561,
+            "reproduced": 0.02560917,
+            "departure": 3.24092151E-5,
+            "strict": false
+        },
+        {
+            "source": "C-0055",
+            "quantity": "the upward root pitch [nm]",
+            "published": 10.88,
+            "reproduced": 10.88,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0055",
+            "quantity": "the self-consistent arm count",
+            "published": 34.0,
+            "reproduced": 34.0,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0015",
+            "quantity": "interface crossovers at an eight-column phase, 40.00 nm",
+            "published": 56.0,
+            "reproduced": 56.0,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0015",
+            "quantity": "interface crossovers at a seven-column phase, 40.00 nm",
+            "published": 49.0,
+            "reproduced": 49.0,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0086",
+            "quantity": "the buildable raster row length [bp]",
+            "published": 112.0,
+            "reproduced": 112.0,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "CH-0101",
+            "quantity": "the buildable width [nm]",
+            "published": 38.08,
+            "reproduced": 38.08,
+            "departure": 0.0,
+            "strict": false
+        }
+    ],
+    "predicates": [
+        {
+            "name": "P1 — flatness at the buildable width",
+            "statement": "the best 34-root placement at 38.08 nm against T-5b's 0.10",
+            "verdict": "0.062147 of the stroke, INSIDE T-5b's 0.10, against the free tile's 0.2990"
+        },
+        {
+            "name": "P2 — the count",
+            "statement": "the upward lattice still carries 34 roots at 38.08 nm",
+            "verdict": "45 placed at phase 24 with the buildable arm, 38 with the elastica arm — 34 places either way"
+        },
+        {
+            "name": "P3 — invariance",
+            "statement": "every quantity declared invariant by construction departs by < 1e-9",
+            "verdict": "8 of 8 checked, worst departure 0.0"
+        },
+        {
+            "name": "P4 — the phase census",
+            "statement": "C-0015's eight-column phases, re-taken at 38.08 nm",
+            "verdict": "ten at 40.00 nm (6, 7, 8, 9, 10, 22, 23, 24, 25, 26); at 38.08 nm NONE with the row-end column refused and 2 with it admitted (8, 24) — and those are exactly C-0063's centro-symmetric pair"
+        },
+        {
+            "name": "P5 — the plan margins",
+            "statement": "every plan margin in the branch re-read",
+            "verdict": "14 margins, 6 of which move; the movers are the OUTBOARD ones and they are new"
+        }
+    ],
+    "falsifiers": [
+        {
+            "name": "F1",
+            "statement": "the best 34-root placement at 38.08 nm is outside T-5b's 0.10",
+            "fired": false,
+            "outcome": "0.062147 against 0.10"
+        },
+        {
+            "name": "F2",
+            "statement": "the upward station lattice at phase 24 differs between the two widths",
+            "fired": false,
+            "outcome": "worst departure 0.000e+00 nm over 15 rows at 2 phases"
+        },
+        {
+            "name": "F3",
+            "statement": "the self-consistent upward arm count is no longer 34",
+            "fired": false,
+            "outcome": "the phase-24 lattice carries 45 with the buildable arm and 38 with the elastica arm, against 34 demanded"
+        },
+        {
+            "name": "F4",
+            "statement": "a quantity declared invariant by construction moves",
+            "fired": false,
+            "outcome": "checked in code; the study aborts if one does"
+        },
+        {
+            "name": "F5",
+            "statement": "no phase at 38.08 nm carries eight crossover columns under either convention",
+            "fired": false,
+            "outcome": "phases 8, 24 do, with the row-end column admitted; none does with it refused"
+        },
+        {
+            "name": "F6",
+            "statement": "the pipeline fails to reproduce C-0063's 0.0706145537 at 40.00 nm",
+            "fired": false,
+            "outcome": "reproduced 0.0706145537 against 0.0706145537, departure 2.88e-10"
+        }
+    ],
+    "findings": [
+        "THE AXIS SETTLES HALF THE BRANCH. Rothemund's odd-half-turn rule binds the distance between successive SCAFFOLD crossovers, which in a boustrophedon are the two ends of ONE ROW — an ALONG-helix length. So the width that moves is Gen1Tile.EDGE_X, 40.0 -> 38.08 nm, and the across-helix geometry is a COUNT of duplexes the scaffold never rasters along: 15 duplexes at 2.69 nm, 40.35 nm, unchanged. The root pitch, the plane lattice, the rise, C-0069's budget, C-0072's identity and C-0063's count vector all live on the along-helix lattice and carry no tile width, so they are invariant BY CONSTRUCTION.",
+        "THE BUILDABLE WIDTH SELECTS C-0063's OWN PHASE. 38.08 nm is 7 column pitches EXACTLY (40.0 nm is 7.35), so a column lands on the row end at the phases b = -56 (mod 16), i.e. 8 and 24 — and in a seamless boustrophedon that column IS the scaffold crossover that turns the raster. Those two phases are exactly C-0063's centro-symmetric pair, and 24 is its winner. C-0015's TEN eight-column phases collapse to these TWO (and to NONE if the row-end column is refused): the routing and the phase have stopped being independent choices.",
+        "THE BINDING ARM CEILING SWITCHES OWNER — on the rows whose outermost root sits at the PITCH, which on this lattice are the three-site rows. A three-arm row is bounded inboard by C-0069's pitch - d = 8.1900 nm and outboard by edgeX/2 - pitch, which is 9.1200 nm at 40.00 and 8.1600 nm at 38.08. The two cross at edgeX = 2(2p - d) = 38.1400 nm, and the buildable width falls 0.176 BASE PAIRS below that. So at 38.08 nm the tile edge binds where the plan budget used to, and C-0039's elastica arm — 8.16439083 nm, 24.0129 rises — overhangs by 0.004391 nm, which is 0.0129 of one rise.",
+        "AND THE LATTICE HOLDS THAT TOLERANCE AT ZERO. C-0085 has already established that a plan length is quantised at the rise; the elastica arm quantised down is 24 rises = 8.16 nm, and 32 bp of pitch plus 24 bp of arm is 56 bp, which is EXACTLY half of 112 bp. The outboard clearance is therefore 3.553e-15 nm — zero to machine precision — the three-arm row is restored, the phase-24 capacity goes 38 -> 45, and the whole centro-symmetric family (198288 placements at phase 24) is the SAME SET as at 40.00 nm. The buildable width does not merely tolerate C-0085's quantisation; it REQUIRES it.",
+        "THE TILE IS STILL FLAT. The best 34-root placement at 38.08 nm dishes 0.062147 of the stroke under C-0022's solved load, against T-5b's 0.10, the free tile's 0.2990 on the same host, and C-0063's 0.070615 at 40.00 nm. The station set is IDENTICAL at phases 8 and 24 (departure 0.0e+00 nm), so the whole difference is the HOST and the LOAD FIELD: what a 4.8 % narrower tile costs the flatness is -12.0 %.",
+        "C-0069's BUDGET IS TWO BOUNDS AND IT ONLY EVER REPORTED ONE. `pitch - d` is the INBOARD bound and carries no tile width; the OUTBOARD bound is `edgeX/2 - outermost root` and carries no interhelical distance. Bisected with C-0069's own library: on C-0063's own 34 rows the budget is 8.1900 -> 8.1900 nm, UNCHANGED, because all four of its three-arm rows sit on four-site rows whose outboard arm points inward anyway; on a three-site row carrying three arms it is 8.1900 -> 8.1600 nm, and there the tile edge owns it. C-0085's six-rise clearance loosens only the inboard bound, so on that row its widening goes 8.8400 -> 8.1600 nm and every clearance tighter than 8.00 rises now buys nothing. The razor follows as a CUBE: 2.34166 -> 2.31602 on the three-site row.",
+        "WHAT §3 HAS TO GIVE UP. Either the tile is 38.08 nm — 4.8 % narrower, 1537 nm2 instead of 1614, and §3's 100 pN over it is a 5.0 % higher pressure — or it carries a seam, which C-0081 prices at 6-12 of C-0063's 34 stations off the weave node and a worst across-row clearance of 0.122724 nm (-0.002276 at the measured girth, a clash). Both are SPECIFICATION consequences and neither is a modelling choice. The third rung, 144 bp = 48.96 nm, is 22 % LARGER and is not evaluated here."
+    ],
+    "parameters": {
+        "nominalEdgeX": 40.0,
+        "buildableEdgeX": 38.08,
+        "buildableRowBasePairs": 112.0,
+        "lengthY": 40.35,
+        "duplexes": 15.0,
+        "rootPitch": 10.88,
+        "elasticaArm": 8.16439083,
+        "buildableArm": 8.16,
+        "armCount": 34.0,
+        "mandate": 33.3333333,
+        "inboardArmCeiling": 8.19,
+        "outboardArmCeilingNominal": 9.12,
+        "outboardArmCeilingBuildable": 8.16,
+        "armCeilingCrossoverWidth": 38.14,
+        "elasticaArmOverhang": 0.00439083,
+        "bisectedBudgetNominal": 8.19,
+        "bisectedBudgetBuildable": 8.19,
+        "widenedBudgetNominal": 8.84,
+        "widenedBudgetBuildable": 8.84,
+        "threeSiteRowBudgetNominal": 8.19,
+        "threeSiteRowBudgetBuildable": 8.16,
+        "threeSiteRowWidenedNominal": 8.84,
+        "threeSiteRowWidenedBuildable": 8.16,
+        "razorNominal": 2.34165925,
+        "razorBuildable": 2.34165925,
+        "razorWidenedNominal": 2.94461681,
+        "razorWidenedBuildable": 2.94461681,
+        "threeArmRowClearanceNominal": 0.95560917,
+        "threeArmRowClearanceBuildableElastica": -1.0,
+        "threeArmRowClearanceBuildableQuantised": 0.0,
+        "recommendedPhase": 8.0,
+        "recommendedDishingOverStroke": 0.0621469105,
+        "recommendedFreeDishingOverStroke": 0.299034765,
+        "publishedDishingAtFortyNanometres": 0.0706145537,
+        "flatnessTolerance": 0.1,
+        "freeStrokeNominal": 4.90731102,
+        "freeStrokeBuildable": 5.15473846,
+        "descentEvaluations": 616140.0,
+        "symmetricEnumerated": 1224720.0,
+        "stationLatticeDeparture": 0.0,
+        "admissibleRatio": 3.4
+    }
+}

@@ -394,10 +394,14 @@ eq(
     ),
     ["SecondResynthesisStudy.kt", "WindowResynthesisStudy.kt"],
 )
+# `CH-0092` recorded T-2 as having no readers, and that stopped being true in iteration 18:
+# `T-156`'s route census reads `T-2`'s bias clauses to prove they are `T-3`'s own numbers
+# (`C-0091`). The assertion is a fact about the tree, not a rule, so it is updated rather than
+# relaxed — and the census is exactly the mechanism that is supposed to notice.
 eq(
-    "CH-0092: T-2 has no readers",
-    readers.get("T-2-design-window.json", []),
-    [],
+    "CH-0092: T-2's only reader is T-156's route census",
+    sorted(os.path.basename(p) for p in readers.get("T-2-design-window.json", [])),
+    ["BufferRouteCensusStudy.kt"],
 )
 check(
     "the real tree passes its own declaration check",

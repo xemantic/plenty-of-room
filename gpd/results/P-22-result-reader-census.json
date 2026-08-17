@@ -2,12 +2,12 @@
   "task": "P-22",
   "claim": "C-0082",
   "what": "The reader graph over gpd/results/, derived from the Kotlin sources rather than grepped. A read is a result-file string literal in the argument list of a File(...) construction, propagated along top-level references; comments and prose strings are not reads. See tools/result-reader-census.py and CH-0092.",
-  "studyCount": 78,
-  "helperCount": 2,
-  "resultFileCount": 79,
+  "studyCount": 82,
+  "helperCount": 3,
+  "resultFileCount": 83,
   "declaringStudyCount": 3,
-  "transitiveEdgeCount": 20,
-  "directEdgeCount": 48,
+  "transitiveEdgeCount": 27,
+  "directEdgeCount": 55,
   "studies": {
     "HelloWorldApp.kt": {
       "reads": [],
@@ -159,6 +159,48 @@
         "anchoring/PerpendicularJunction.kt",
         "structure/Gen1Tile.kt",
         "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/BuildableRasterWidthStudy.kt": {
+      "reads": [
+        "T-125-upward-root-placement.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-125-upward-root-placement.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-153-buildable-raster-width.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/BuildableRasterWidth.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/HingeLineCensus.kt",
+        "anchoring/LateralConfinementBudget.kt",
+        "anchoring/OutputElementPlacement.kt",
+        "anchoring/PlanTolerance.kt",
+        "anchoring/ScaffoldRouting.kt",
+        "anchoring/TwoPerRowPlacement.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
     },
@@ -1338,6 +1380,44 @@
         "synthesis/CouplingCeiling.kt"
       ]
     },
+    "coupling/DropoutRobustPlacementStudy.kt": {
+      "reads": [
+        "T-125-upward-root-placement.json",
+        "T-136-two-per-row-placement.json",
+        "T-138-path-count-consistency.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-125-upward-root-placement.json",
+        "T-136-two-per-row-placement.json",
+        "T-138-path-count-consistency.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-155-dropout-robust-placement.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/DropoutRobustPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/SingleColumnFlatness.kt",
+        "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
     "coupling/NonUniformCouplingStudy.kt": {
       "reads": [
         "T-3b-tile-edge-load-profile.json"
@@ -1724,6 +1804,48 @@
         "poroelastic/Water.kt"
       ]
     },
+    "stability/LargeRotationArmBranchStudy.kt": {
+      "reads": [
+        "T-149-recommended-element-fold.json"
+      ],
+      "directReads": [
+        "T-149-recommended-element-fold.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-157-large-rotation-arm-branch.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "actuator/ActuatorForceBalance.kt",
+        "actuator/ActuatorGeometry.kt",
+        "actuator/ActuatorResultRounding.kt",
+        "actuator/ElectrostaticForceCurve.kt",
+        "actuator/PullInStability.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/TwoSpringElastica.kt",
+        "brush/BrushCompression.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "electrostatics/ConfinedGap.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PoissonBoltzmannGap.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "stability/LargeRotationArmBranch.kt",
+        "stability/RecommendedElementFold.kt",
+        "stability/SofteningCouplingStability.kt",
+        "structure/Gen1Tile.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
     "stability/RecommendedElementFoldStudy.kt": {
       "reads": [],
       "directReads": [],
@@ -2047,6 +2169,40 @@
         "structure/TilePositionalVariance.kt"
       ]
     },
+    "synthesis/BufferRouteCensusStudy.kt": {
+      "reads": [
+        "T-149-recommended-element-fold.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-2-design-window.json",
+        "T-25-window-resynthesis.json",
+        "T-3-stroke-and-blocking-force.json",
+        "T-4-maximum-usable-bias.json",
+        "T-76-softening-coupling-stability.json"
+      ],
+      "directReads": [],
+      "transitiveReads": [
+        "T-149-recommended-element-fold.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-2-design-window.json",
+        "T-25-window-resynthesis.json",
+        "T-3-stroke-and-blocking-force.json",
+        "T-4-maximum-usable-bias.json",
+        "T-76-softening-coupling-stability.json"
+      ],
+      "writes": "T-156-buffer-route-census.json",
+      "declaredSources": null,
+      "reaches": [
+        "synthesis/BufferRouteCensusInputs.kt"
+      ],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingRequirement.kt",
+        "structure/ResultRounding.kt",
+        "synthesis/BufferRouteCensus.kt",
+        "synthesis/BufferRouteCensusInputs.kt",
+        "synthesis/CouplingCeiling.kt"
+      ]
+    },
     "synthesis/DesiredStrokeReachStudy.kt": {
       "reads": [],
       "directReads": [],
@@ -2253,6 +2409,36 @@
     }
   },
   "helpers": {
+    "synthesis/BufferRouteCensusInputs.kt": {
+      "reads": [
+        "T-149-recommended-element-fold.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-2-design-window.json",
+        "T-25-window-resynthesis.json",
+        "T-3-stroke-and-blocking-force.json",
+        "T-4-maximum-usable-bias.json",
+        "T-76-softening-coupling-stability.json"
+      ],
+      "directReads": [
+        "T-149-recommended-element-fold.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-2-design-window.json",
+        "T-25-window-resynthesis.json",
+        "T-3-stroke-and-blocking-force.json",
+        "T-4-maximum-usable-bias.json",
+        "T-76-softening-coupling-stability.json"
+      ],
+      "transitiveReads": [],
+      "writes": null,
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingRequirement.kt",
+        "synthesis/BufferRouteCensus.kt",
+        "synthesis/CouplingCeiling.kt"
+      ]
+    },
     "window/ResynthesisInputs.kt": {
       "reads": [
         "T-13-zero-bias-resting-position.json",
@@ -2376,6 +2562,39 @@
       "reachesFiles": [
         "coupling/CoupledOperatingPoint.kt",
         "coupling/CouplingRequirement.kt"
+      ]
+    },
+    "synthesis/BufferRouteCensusTest.kt": {
+      "reads": [
+        "T-149-recommended-element-fold.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-2-design-window.json",
+        "T-25-window-resynthesis.json",
+        "T-3-stroke-and-blocking-force.json",
+        "T-4-maximum-usable-bias.json",
+        "T-76-softening-coupling-stability.json"
+      ],
+      "directReads": [],
+      "transitiveReads": [
+        "T-149-recommended-element-fold.json",
+        "T-16-output-coupling-stiffness.json",
+        "T-2-design-window.json",
+        "T-25-window-resynthesis.json",
+        "T-3-stroke-and-blocking-force.json",
+        "T-4-maximum-usable-bias.json",
+        "T-76-softening-coupling-stability.json"
+      ],
+      "writes": null,
+      "declaredSources": null,
+      "reaches": [
+        "synthesis/BufferRouteCensusInputs.kt"
+      ],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingRequirement.kt",
+        "synthesis/BufferRouteCensus.kt",
+        "synthesis/BufferRouteCensusInputs.kt",
+        "synthesis/CouplingCeiling.kt"
       ]
     },
     "window/ResynthesisTransferTest.kt": {
@@ -2516,6 +2735,7 @@
     ],
     "T-125-upward-root-placement.json": [
       "anchoring/ArmSlabClearanceStudy.kt",
+      "anchoring/BuildableRasterWidthStudy.kt",
       "anchoring/CollinearClearanceStudy.kt",
       "anchoring/CrossbarArrayPlacementStudy.kt",
       "anchoring/OutputElementPlacementStudy.kt",
@@ -2527,6 +2747,7 @@
       "anchoring/SeamWeaveStudy.kt",
       "anchoring/TwoPerRowPlacementStudy.kt",
       "anchoring/WeaveExclusionWidthStudy.kt",
+      "coupling/DropoutRobustPlacementStudy.kt",
       "coupling/StapleDropoutStudy.kt",
       "electrostatics/DuplexPairSeparationStudy.kt"
     ],
@@ -2545,14 +2766,23 @@
     ],
     "T-136-two-per-row-placement.json": [
       "anchoring/PathCountConsistencyStudy.kt",
+      "coupling/DropoutRobustPlacementStudy.kt",
       "coupling/StapleDropoutStudy.kt"
+    ],
+    "T-138-path-count-consistency.json": [
+      "coupling/DropoutRobustPlacementStudy.kt"
     ],
     "T-14-crossover-phase-and-registration.json": [
       "window/DesignWindowStudy.kt",
       "window/SecondResynthesisStudy.kt",
       "window/WindowResynthesisStudy.kt"
     ],
+    "T-149-recommended-element-fold.json": [
+      "stability/LargeRotationArmBranchStudy.kt",
+      "synthesis/BufferRouteCensusStudy.kt"
+    ],
     "T-16-output-coupling-stiffness.json": [
+      "synthesis/BufferRouteCensusStudy.kt",
       "window/SecondResynthesisStudy.kt",
       "window/WindowResynthesisStudy.kt"
     ],
@@ -2569,21 +2799,28 @@
       "window/SecondResynthesisStudy.kt",
       "window/WindowResynthesisStudy.kt"
     ],
+    "T-2-design-window.json": [
+      "synthesis/BufferRouteCensusStudy.kt"
+    ],
     "T-25-window-resynthesis.json": [
+      "synthesis/BufferRouteCensusStudy.kt",
       "window/SecondResynthesisStudy.kt"
     ],
     "T-3-stroke-and-blocking-force.json": [
       "coupling/OutputCouplingStudy.kt",
+      "synthesis/BufferRouteCensusStudy.kt",
       "window/DesignWindowStudy.kt"
     ],
     "T-3b-tile-edge-load-profile.json": [
       "anchoring/ArmSlabClearanceStudy.kt",
+      "anchoring/BuildableRasterWidthStudy.kt",
       "anchoring/CrossbarArrayPlacementStudy.kt",
       "anchoring/PlanToleranceStudy.kt",
       "anchoring/RangeRobustPlacementStudy.kt",
       "anchoring/TwoPerRowPlacementStudy.kt",
       "anchoring/UpwardRootPlacementStudy.kt",
       "coupling/BuildableStiffnessRatioStudy.kt",
+      "coupling/DropoutRobustPlacementStudy.kt",
       "coupling/NonUniformCouplingStudy.kt",
       "coupling/OneRowPerDuplexStudy.kt",
       "coupling/RobustDistributionStudy.kt",
@@ -2597,6 +2834,7 @@
     ],
     "T-4-maximum-usable-bias.json": [
       "crossover/ConcentratedCrossoverStudy.kt",
+      "synthesis/BufferRouteCensusStudy.kt",
       "window/SecondResynthesisStudy.kt",
       "window/WindowResynthesisStudy.kt"
     ],
@@ -2605,6 +2843,9 @@
     ],
     "T-7-poroelastic-drainage.json": [
       "structure/StackedArmSheetStudy.kt"
+    ],
+    "T-76-softening-coupling-stability.json": [
+      "synthesis/BufferRouteCensusStudy.kt"
     ],
     "T-96-flexure-array-packing.json": [
       "window/SecondResynthesisStudy.kt"
@@ -2623,7 +2864,11 @@
       "window/SecondResynthesisTest.kt",
       "window/UpstreamTransferTest.kt"
     ],
+    "T-149-recommended-element-fold.json": [
+      "synthesis/BufferRouteCensusTest.kt"
+    ],
     "T-16-output-coupling-stiffness.json": [
+      "synthesis/BufferRouteCensusTest.kt",
       "window/ResynthesisTransferTest.kt",
       "window/SecondResynthesisTest.kt"
     ],
@@ -2641,11 +2886,16 @@
       "window/ResynthesisTransferTest.kt",
       "window/SecondResynthesisTest.kt"
     ],
+    "T-2-design-window.json": [
+      "synthesis/BufferRouteCensusTest.kt"
+    ],
     "T-25-window-resynthesis.json": [
+      "synthesis/BufferRouteCensusTest.kt",
       "window/SecondResynthesisTest.kt"
     ],
     "T-3-stroke-and-blocking-force.json": [
       "coupling/CoupledCharacteristicTest.kt",
+      "synthesis/BufferRouteCensusTest.kt",
       "window/UpstreamTransferTest.kt"
     ],
     "T-3b-tile-edge-load-profile.json": [
@@ -2653,11 +2903,15 @@
       "window/SecondResynthesisTest.kt"
     ],
     "T-4-maximum-usable-bias.json": [
+      "synthesis/BufferRouteCensusTest.kt",
       "window/ResynthesisTransferTest.kt",
       "window/SecondResynthesisTest.kt"
     ],
     "T-60-collar-on-the-equilibrium-path.json": [
       "window/SecondResynthesisTest.kt"
+    ],
+    "T-76-softening-coupling-stability.json": [
+      "synthesis/BufferRouteCensusTest.kt"
     ],
     "T-96-flexure-array-packing.json": [
       "window/SecondResynthesisTest.kt"
@@ -2789,6 +3043,18 @@
     ],
     "T-152-collinear-clearance.json": [
       "anchoring/CollinearClearanceStudy.kt"
+    ],
+    "T-153-buildable-raster-width.json": [
+      "anchoring/BuildableRasterWidthStudy.kt"
+    ],
+    "T-155-dropout-robust-placement.json": [
+      "coupling/DropoutRobustPlacementStudy.kt"
+    ],
+    "T-156-buffer-route-census.json": [
+      "synthesis/BufferRouteCensusStudy.kt"
+    ],
+    "T-157-large-rotation-arm-branch.json": [
+      "stability/LargeRotationArmBranchStudy.kt"
     ],
     "T-16-output-coupling-stiffness.json": [
       "coupling/OutputCouplingStudy.kt"
@@ -2937,10 +3203,14 @@
     "T-14-crossover-phase-and-registration.json",
     "T-140-seam-weave-congruence.json",
     "T-147-third-answers-synthesis.json",
+    "T-148-staple-dropout.json",
     "T-149-recommended-element-fold.json",
     "T-15-in-plane-shear-lag.json",
     "T-151-scaffold-routing.json",
     "T-152-collinear-clearance.json",
+    "T-153-buildable-raster-width.json",
+    "T-156-buffer-route-census.json",
+    "T-157-large-rotation-arm-branch.json",
     "T-16-output-coupling-stiffness.json",
     "T-17-one-row-per-duplex.json",
     "T-19-attachment-entry-topology.json",
@@ -2991,11 +3261,13 @@
         "actuator/MaximumUsableBiasStudy.kt",
         "actuator/StrokeAndBlockingForceStudy.kt",
         "crossover/ConcentratedCrossoverStudy.kt",
+        "stability/LargeRotationArmBranchStudy.kt",
         "stability/RecommendedElementFoldStudy.kt",
         "stability/SofteningCouplingStabilityStudy.kt"
       ],
       "emits": [
         "T-149-recommended-element-fold.json",
+        "T-157-large-rotation-arm-branch.json",
         "T-21-concentrated-crossover.json",
         "T-3-stroke-and-blocking-force.json",
         "T-4-maximum-usable-bias.json",
@@ -3004,12 +3276,14 @@
       ],
       "downstreamResultFiles": [
         "T-118-window-resynthesis-two.json",
+        "T-156-buffer-route-census.json",
         "T-16-output-coupling-stiffness.json",
         "T-2-design-window.json",
         "T-25-window-resynthesis.json"
       ],
       "testsReadingThem": [
         "coupling/CoupledCharacteristicTest.kt",
+        "synthesis/BufferRouteCensusTest.kt",
         "window/ResynthesisTransferTest.kt",
         "window/SecondResynthesisTest.kt",
         "window/UpstreamTransferTest.kt"
@@ -3035,9 +3309,11 @@
       ],
       "downstreamResultFiles": [
         "T-118-window-resynthesis-two.json",
+        "T-156-buffer-route-census.json",
         "T-25-window-resynthesis.json"
       ],
       "testsReadingThem": [
+        "synthesis/BufferRouteCensusTest.kt",
         "window/ResynthesisTransferTest.kt",
         "window/SecondResynthesisTest.kt"
       ]
@@ -3047,6 +3323,7 @@
       "studies": [
         "anchoring/ArmSlabClearanceStudy.kt",
         "anchoring/BackboneTorsionStudy.kt",
+        "anchoring/BuildableRasterWidthStudy.kt",
         "anchoring/CollinearClearanceStudy.kt",
         "anchoring/CoupledStandoffJointStudy.kt",
         "anchoring/CrossbarArrayPlacementStudy.kt",
@@ -3084,6 +3361,7 @@
         "brush/FirstMomentConventionStudy.kt",
         "brush/FluctuationCorrectionStudy.kt",
         "brush/ScfDensityProfileStudy.kt",
+        "coupling/DropoutRobustPlacementStudy.kt",
         "coupling/StapleDropoutStudy.kt",
         "electrostatics/DuplexPairSeparationStudy.kt",
         "electrostatics/NonlinearPbProfileStudy.kt",
@@ -3098,6 +3376,7 @@
         "structure/TileFlatnessStudy.kt",
         "structure/TileLoadDistributionStudy.kt",
         "structure/TilePositionalVarianceStudy.kt",
+        "synthesis/BufferRouteCensusStudy.kt",
         "synthesis/DesiredStrokeReachStudy.kt",
         "synthesis/OutputElementRecommendationStudy.kt"
       ],
@@ -3134,6 +3413,9 @@
         "T-15-in-plane-shear-lag.json",
         "T-151-scaffold-routing.json",
         "T-152-collinear-clearance.json",
+        "T-153-buildable-raster-width.json",
+        "T-155-dropout-robust-placement.json",
+        "T-156-buffer-route-census.json",
         "T-19-attachment-entry-topology.json",
         "T-1d-scf-density-profile.json",
         "T-1e-first-moment-convention.json",
@@ -3170,6 +3452,7 @@
       ],
       "testsReadingThem": [
         "brush/FirstMomentThicknessTest.kt",
+        "synthesis/BufferRouteCensusTest.kt",
         "window/ResynthesisTransferTest.kt",
         "window/SecondResynthesisTest.kt",
         "window/UpstreamTransferTest.kt"
@@ -3187,8 +3470,11 @@
         "T-2-design-window.json",
         "T-25-window-resynthesis.json"
       ],
-      "downstreamResultFiles": [],
+      "downstreamResultFiles": [
+        "T-156-buffer-route-census.json"
+      ],
       "testsReadingThem": [
+        "synthesis/BufferRouteCensusTest.kt",
         "window/SecondResynthesisTest.kt"
       ]
     }

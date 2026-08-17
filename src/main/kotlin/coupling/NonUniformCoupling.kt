@@ -464,6 +464,84 @@ class InfluenceSurrogate internal constructor(
         peak
     }
 
+    /**
+     * The Gram matrix of the sampled dishing influence fields, `G[j][k] = Σ_g d_j[g] d_k[g]`,
+     * with the free field's projection `c[j] = Σ_g d_j[g] f[g]` and its own square sum.
+     *
+     * Built **once** so that [reachableDishingFloorAt] costs `O(|S|³)` per subset rather than
+     * `O(|S|² N)`: that is the whole difference between a bound that can be evaluated over a
+     * Monte Carlo ensemble and one that cannot. `T-155`.
+     */
+    private val dishingGram: Triple<Array<DoubleArray>, DoubleArray, Double> by lazy {
+        val gram = Array(pathCount) { DoubleArray(pathCount) }
+        val cross = DoubleArray(pathCount)
+        for (j in 0 until pathCount) {
+            val a = dishingInfluence[j]
+            for (k in j until pathCount) {
+                val b = dishingInfluence[k]
+                var total = 0.0
+                for (g in a.indices) total += a[g] * b[g]
+                gram[j][k] = total
+                gram[k][j] = total
+            }
+            var total = 0.0
+            for (g in a.indices) total += a[g] * dishingFree[g]
+            cross[j] = total
+        }
+        var square = 0.0
+        for (value in dishingFree) square += value * value
+        Triple(gram, cross, square)
+    }
+
+    /**
+     * **`T-155`'s cheap bound.** The smallest root-mean-square dishing any set of forces at the
+     * stations where [present] is `true` can leave — [reachableDishingFloor] restricted to a
+     * dropout realisation's **surviving** support set.
+     *
+     * Because the peak of a sampled field is never below its own root mean square, and because
+     * *every* stiffness distribution produces *some* force vector at those stations, this is a
+     * rigorous lower bound on that realisation's peak dishing **for every distribution
+     * whatever** — indeed for an oracle allowed to choose a different distribution per
+     * realisation. Percentiles are monotone under a pointwise bound, so a 90th percentile of
+     * this quantity above `T-5b`'s tolerance settles a station set with no search at all.
+     *
+     * A realisation in which no path survives returns the free field's own root mean square,
+     * which is the `|S| = 0` case of the same formula and not a special case in the physics.
+     */
+    fun reachableDishingFloorAt(present: List<Boolean>): Double {
+        require(present.size == pathCount) {
+            "expected one presence flag per attachment, was: ${present.size} for $pathCount"
+        }
+        val (gram, cross, freeSquare) = dishingGram
+        val live = (0 until pathCount).filter { present[it] }
+        val samples = dishingFree.size
+        if (live.isEmpty()) return sqrt(freeSquare / samples)
+        val size = live.size
+        val matrix = F64Array(size, size)
+        var trace = 0.0
+        for (j in 0 until size) {
+            for (k in 0 until size) matrix[j, k] = gram[live[j]][live[k]]
+            trace += gram[live[j]][live[j]]
+        }
+        // The same relative ridge `reachableForces` carries, for the same reason: two influence
+        // functions of neighbouring stations are nearly parallel.
+        for (j in 0 until size) matrix[j, j] += 1e-12 * trace / size
+        val right = F64Array(size) { cross[live[it]] }
+        val solution = CholeskyDecomposition(matrix).solve(right)
+        // The residual as a quadratic form rather than as a field, which is what makes this
+        // affordable: `‖f − Σ a_k d_k‖² = ‖f‖² − 2 a·c + aᵀ G a`, exactly.
+        var linear = 0.0
+        var quadratic = 0.0
+        for (j in 0 until size) {
+            linear += solution[j] * cross[live[j]]
+            var row = 0.0
+            for (k in 0 until size) row += gram[live[j]][live[k]] * solution[k]
+            quadratic += solution[j] * row
+        }
+        val residual = freeSquare - 2.0 * linear + quadratic
+        return sqrt(max(0.0, residual) / samples)
+    }
+
 }
 
 private fun GrillageDeflection.asDishingSolution(): DishingSolution = object : DishingSolution {

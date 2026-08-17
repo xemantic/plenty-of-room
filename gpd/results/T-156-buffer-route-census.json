@@ -1,0 +1,747 @@
+{
+    "task": "T-156",
+    "leaf": "A2.2",
+    "title": "How many of the six 0.5 mM routes are read on WITHDRAWN objects? A census over C-0012, C-0016, C-0017, C-0018, C-0027 and C-0032, re-read on the element C-0071 recommends",
+    "verificationType": "logical (a census over six claims, every figure re-derived from the emitting study's own result file) + in-silico (the arithmetic that re-reads two of the six on C-0069's Q5)",
+    "acceptance": "CH-0098 item 3: a count of how many of the six routes recommending 0.5 mM are read on objects the programme has withdrawn, with each survivor's ground stated - or the statement that the recommendation rests on fewer routes than six",
+    "maturity": "TRL 1-3 - model-consistent and traceable, NOTHING HERE IS MEASURED. This is a census over a corpus, so it inherits every validity range in it and narrows none",
+    "units": {
+        "stiffness": "pN/nm",
+        "potential": "V",
+        "concentration": "mM",
+        "advantage": "dimensionless, above one favours 0.5 mM",
+        "temperature": "K"
+    },
+    "conventions": [
+        "T = 300 K, k_BT = 4.141947 pN nm, aqueous MgCl2 at 0.5 and 2.0 mM",
+        "the recommended device is the 10 nm layer at sigma = 0.024 nm^-2, placed at 100 pN over section 3's acceptable 3 nm stroke (C-0071, C-0068); states of other devices are NOT intersected with it (C-0064)",
+        "a ROUTE is a named claim plus the ONE quantity of it compared between the buffers",
+        "two routes are INDEPENDENT only if neither's compared quantity is the other's, transferred - decided by comparing the emitting files, never by reading prose",
+        "a buffer ADVANTAGE is oriented so that above one favours 0.5 mM, and is quoted with the state it is read at",
+        "stability is read on a coupling's TANGENT over the strokes the device traverses (C-0049, CH-0042), so C-0017's margin is rescaled onto Q5's minimum",
+        "the stability FLOOR |k_eff| is a property of the layer, the field and the held gap and contains no coupling element at all"
+    ],
+    "parameters": {
+        "layerHeight": "10.0 nm",
+        "graftingDensity": "0.024 nm^-2",
+        "lowSalt": "0.5 mM MgCl2",
+        "highSalt": "2.0 mM MgCl2",
+        "mandatedSecant": "33.333333333333336 pN/nm",
+        "recommendedTangentMinimum": "30.028762 pN/nm (C-0069's Q5 over [0, 3 nm])",
+        "emittedFieldSlack": "1.0E-6",
+        "inputs": "T-3, T-2, T-16, T-4, T-25, T-76, T-149"
+    },
+    "citedInputs": [
+        "C-0012 / T-3 - the blocking-force thresholds",
+        "C-0016 / T-2 - the bias clauses and the fixed-bias stability clauses",
+        "C-0017 / T-16 - the held operating point, its floor and its margin",
+        "C-0018 / T-4 - the coupled equilibrium path's ceilings and margins",
+        "C-0027 / T-25 - the corrected margins and the buffer comparison",
+        "C-0032 / T-76 - C-0030's strain-softening flexure, folds at four load lines",
+        "C-0084 / T-149 - the recommended arm's law and its devices",
+        "CH-0098 - the challenge that asked for this census",
+        "CH-0081 / C-0069 / C-0071 - what removed C-0030's flexure from the output role"
+    ],
+    "routes": [
+        {
+            "claim": "C-0012",
+            "clause": "the force clause",
+            "comparedQuantity": "the applied bias 100 pN of BLOCKING force needs at 10 nm",
+            "readAt": "zero stroke, h = L0 = 10 nm; at the DEVICE's held gap the same clause is 1.4823-1.5703 x",
+            "obj": "UNLOADED_FIELD_BALANCE",
+            "objectStillInTheDesign": true,
+            "lowSaltReading": 0.140845447,
+            "highSaltReading": 0.699378112,
+            "smallerIsBetter": true,
+            "advantage": 4.96557132,
+            "verdict": "SURVIVES_SAME_GROUND",
+            "ground": "the object contains no coupling element at all - the blocking balance is tile, field and layer - so nothing CH-0081 / C-0069 / C-0071 did can reach it. But the 4.97x is a ZERO-STROKE reading: at the held operating point the device occupies it is 1.48-1.57x, and the two are the same clause",
+            "independence": "INDEPENDENT",
+            "transferOf": [],
+            "provenance": "T-3 thresholds[layerHeight = 10]"
+        },
+        {
+            "claim": "C-0016",
+            "clause": "the bias window",
+            "comparedQuantity": "the same applied bias, re-intersected over a sigma grid",
+            "readAt": "zero stroke, reading A (the FREE operating point)",
+            "obj": "TRANSFERRED_READINGS",
+            "objectStillInTheDesign": true,
+            "lowSaltReading": 0.140845447,
+            "highSaltReading": 0.699378112,
+            "smallerIsBetter": true,
+            "advantage": 4.96557132,
+            "verdict": "SURVIVES_SAME_GROUND",
+            "ground": "not a second derivation: T-2's biasClauses carry T-3's own number at 15 of 15 states, and the binding clause at 10 nm is literally 'force'. C-0016's OTHER half - its (f) stability count at a FIXED applied bias - runs the other way, asking 86.1-110.0 pN/nm of coupling at 0.25 V in 0.5 mM against 47.6-71.5 in 2 mM",
+            "independence": "TRANSFER",
+            "transferOf": [
+                "C-0012"
+            ],
+            "provenance": "T-2 biasClauses[layerHeight = 10] against T-3 thresholds"
+        },
+        {
+            "claim": "C-0017",
+            "clause": "the stability floor",
+            "comparedQuantity": "the worst static stability margin k_c/|k_eff| at the held point",
+            "readAt": "the held operating point, L0 - 3 nm; k_c is the MANDATED SECANT 33.3333",
+            "obj": "HELD_OPERATING_POINT",
+            "objectStillInTheDesign": true,
+            "lowSaltReading": 2.09105359,
+            "highSaltReading": 1.19417694,
+            "smallerIsBetter": false,
+            "advantage": 1.75104168,
+            "verdict": "SURVIVES_SAME_GROUND",
+            "ground": "the FLOOR |k_eff| is a property of the layer, the field and the held gap and contains no coupling element, so it does not move at all. Only the numerator does: C-0049 reads stability on the TANGENT, and Q5's minimum over [0, 3] is 30.028762 pN/nm, so every margin scales by 0.90086286 and the ADVANTAGE is unchanged. Q5 clears the 2 mM floors at 6 of 6",
+            "independence": "INDEPENDENT",
+            "transferOf": [],
+            "provenance": "T-16 requirements[layerHeight = 10]"
+        },
+        {
+            "claim": "C-0018",
+            "clause": "the usable bias",
+            "comparedQuantity": "the worst coupled bias margin (usable bias over operating bias)",
+            "readAt": "the affine mandate's equilibrium path, placed at 100 pN over 3 nm",
+            "obj": "AFFINE_MANDATE_PATH",
+            "objectStillInTheDesign": false,
+            "lowSaltReading": 1.2916653,
+            "highSaltReading": 1.00708008,
+            "smallerIsBetter": false,
+            "advantage": 1.2825845,
+            "verdict": "SURVIVES_DIFFERENT_GROUND",
+            "ground": "C-0018's stated ground is that '0.5 mM removes the fold entirely'. On Q5 there is NO FOLD AT 2 mM EITHER (C-0084, 0 of 6), so there is nothing for 0.5 mM to remove and the ground is void. What survives is a quantified PREFERENCE on the same axis: 1.8706 against 1.3877, a factor of 1.3480",
+            "independence": "INDEPENDENT",
+            "transferOf": [],
+            "provenance": "T-4 ceilings[layerHeight = 10, loadLine = coupled]; re-read on Q5 from T-149 devices"
+        },
+        {
+            "claim": "C-0027",
+            "clause": "the corrected margin",
+            "comparedQuantity": "the worst iteration-4-corrected stability margin",
+            "readAt": "the held operating point, corrected by C-0019 and C-0022",
+            "obj": "TRANSFERRED_READINGS",
+            "objectStillInTheDesign": true,
+            "lowSaltReading": 2.16304201,
+            "highSaltReading": 1.23149232,
+            "smallerIsBetter": false,
+            "advantage": 1.75643971,
+            "verdict": "SURVIVES_SAME_GROUND",
+            "ground": "not a fifth route: T-25's bufferComparison carries C-0017's stabilityMargin extrema and C-0018's coupled margin extrema unchanged, to the emission precision, at every state it reports. It is C-0017 and C-0018 with two corrections applied, and its survival is theirs",
+            "independence": "TRANSFER",
+            "transferOf": [
+                "C-0017",
+                "C-0018"
+            ],
+            "provenance": "T-25 bufferComparison[layerHeight = 10] against T-16 and T-4"
+        },
+        {
+            "claim": "C-0032",
+            "clause": "the realised coupling law",
+            "comparedQuantity": "the worst bias margin on C-0030's favourable mounting",
+            "readAt": "C-0030's strain-SOFTENING coupled-standoff flexure, placed at 100 pN / 3 nm",
+            "obj": "SOFTENING_FLEXURE_PATH",
+            "objectStillInTheDesign": false,
+            "lowSaltReading": 1.03846074,
+            "highSaltReading": 1.00002605,
+            "smallerIsBetter": false,
+            "advantage": 1.03843369,
+            "verdict": "WITHDRAWN",
+            "ground": "CH-0098. The element was removed from the output role by CH-0081 / C-0069 and C-0071 does not recommend it. Every number C-0032 reports still stands for the element it was measured on; none of it transfers to Q5, which strain-STIFFENS and does not fold at 2 mM at any layer model",
+            "independence": "INDEPENDENT",
+            "transferOf": [],
+            "provenance": "T-76 folds[layerHeight = 10, loadLine = L3 coupled favourable]"
+        }
+    ],
+    "blockingBiasTransfers": [
+        {
+            "quantity": "biasForHundredPiconewtonBlocking",
+            "state": "5.0 nm, 0.5 mM MgCl2",
+            "here": 0.0477199944,
+            "there": 0.0477199944,
+            "hereSource": "C-0016 / T-2 biasClauses",
+            "thereSource": "C-0012 / T-3 thresholds",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasForHundredPiconewtonBlocking",
+            "state": "5.0 nm, 1.0 mM MgCl2",
+            "here": 0.0558172627,
+            "there": 0.0558172627,
+            "hereSource": "C-0016 / T-2 biasClauses",
+            "thereSource": "C-0012 / T-3 thresholds",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasForHundredPiconewtonBlocking",
+            "state": "5.0 nm, 2.0 mM MgCl2",
+            "here": 0.0654388431,
+            "there": 0.0654388431,
+            "hereSource": "C-0016 / T-2 biasClauses",
+            "thereSource": "C-0012 / T-3 thresholds",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasForHundredPiconewtonBlocking",
+            "state": "5.0 nm, 5.0 mM MgCl2",
+            "here": 0.0909031016,
+            "there": 0.0909031016,
+            "hereSource": "C-0016 / T-2 biasClauses",
+            "thereSource": "C-0012 / T-3 thresholds",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasForHundredPiconewtonBlocking",
+            "state": "5.0 nm, 10.0 mM MgCl2",
+            "here": 0.15280529,
+            "there": 0.15280529,
+            "hereSource": "C-0016 / T-2 biasClauses",
+            "thereSource": "C-0012 / T-3 thresholds",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasForHundredPiconewtonBlocking",
+            "state": "7.0 nm, 0.5 mM MgCl2",
+            "here": 0.074955997,
+            "there": 0.074955997,
+            "hereSource": "C-0016 / T-2 biasClauses",
+            "thereSource": "C-0012 / T-3 thresholds",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasForHundredPiconewtonBlocking",
+            "state": "7.0 nm, 1.0 mM MgCl2",
+            "here": 0.0886664682,
+            "there": 0.0886664682,
+            "hereSource": "C-0016 / T-2 biasClauses",
+            "thereSource": "C-0012 / T-3 thresholds",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasForHundredPiconewtonBlocking",
+            "state": "7.0 nm, 2.0 mM MgCl2",
+            "here": 0.115589966,
+            "there": 0.115589966,
+            "hereSource": "C-0016 / T-2 biasClauses",
+            "thereSource": "C-0012 / T-3 thresholds",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasForHundredPiconewtonBlocking",
+            "state": "7.0 nm, 5.0 mM MgCl2",
+            "here": 0.236776484,
+            "there": 0.236776484,
+            "hereSource": "C-0016 / T-2 biasClauses",
+            "thereSource": "C-0012 / T-3 thresholds",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasForHundredPiconewtonBlocking",
+            "state": "7.0 nm, 10.0 mM MgCl2",
+            "here": null,
+            "there": null,
+            "hereSource": "C-0016 / T-2 biasClauses",
+            "thereSource": "C-0012 / T-3 thresholds",
+            "departure": null,
+            "transfer": true
+        },
+        {
+            "quantity": "biasForHundredPiconewtonBlocking",
+            "state": "10.0 nm, 0.5 mM MgCl2",
+            "here": 0.140845447,
+            "there": 0.140845447,
+            "hereSource": "C-0016 / T-2 biasClauses",
+            "thereSource": "C-0012 / T-3 thresholds",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasForHundredPiconewtonBlocking",
+            "state": "10.0 nm, 1.0 mM MgCl2",
+            "here": 0.201892464,
+            "there": 0.201892464,
+            "hereSource": "C-0016 / T-2 biasClauses",
+            "thereSource": "C-0012 / T-3 thresholds",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasForHundredPiconewtonBlocking",
+            "state": "10.0 nm, 2.0 mM MgCl2",
+            "here": 0.699378112,
+            "there": 0.699378112,
+            "hereSource": "C-0016 / T-2 biasClauses",
+            "thereSource": "C-0012 / T-3 thresholds",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasForHundredPiconewtonBlocking",
+            "state": "10.0 nm, 5.0 mM MgCl2",
+            "here": null,
+            "there": null,
+            "hereSource": "C-0016 / T-2 biasClauses",
+            "thereSource": "C-0012 / T-3 thresholds",
+            "departure": null,
+            "transfer": true
+        },
+        {
+            "quantity": "biasForHundredPiconewtonBlocking",
+            "state": "10.0 nm, 10.0 mM MgCl2",
+            "here": null,
+            "there": null,
+            "hereSource": "C-0016 / T-2 biasClauses",
+            "thereSource": "C-0012 / T-3 thresholds",
+            "departure": null,
+            "transfer": true
+        }
+    ],
+    "correctedMarginTransfers": [
+        {
+            "quantity": "biasMarginLow",
+            "state": "5.0 nm, 0.5 mM MgCl2",
+            "here": 0.562551609,
+            "there": 0.562551609,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasMarginHigh",
+            "state": "5.0 nm, 0.5 mM MgCl2",
+            "here": 1.08994473,
+            "there": 1.08994473,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasMarginLow",
+            "state": "5.0 nm, 2.0 mM MgCl2",
+            "here": 0.609255375,
+            "there": 0.609255375,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasMarginHigh",
+            "state": "5.0 nm, 2.0 mM MgCl2",
+            "here": 1.08087566,
+            "there": 1.08087566,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasMarginLow",
+            "state": "5.0 nm, 10.0 mM MgCl2",
+            "here": 0.726923148,
+            "there": 0.726923148,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasMarginHigh",
+            "state": "5.0 nm, 10.0 mM MgCl2",
+            "here": 1.06129924,
+            "there": 1.06129924,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasMarginLow",
+            "state": "7.0 nm, 0.5 mM MgCl2",
+            "here": 1.25650213,
+            "there": 1.25650213,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasMarginHigh",
+            "state": "7.0 nm, 0.5 mM MgCl2",
+            "here": 2.46410752,
+            "there": 2.46410752,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasMarginLow",
+            "state": "7.0 nm, 2.0 mM MgCl2",
+            "here": 1.18909702,
+            "there": 1.18909702,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasMarginHigh",
+            "state": "7.0 nm, 2.0 mM MgCl2",
+            "here": 2.16507417,
+            "there": 2.16507417,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasMarginLow",
+            "state": "7.0 nm, 10.0 mM MgCl2",
+            "here": 1.00375848,
+            "there": 1.00375848,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasMarginHigh",
+            "state": "7.0 nm, 10.0 mM MgCl2",
+            "here": 1.44113729,
+            "there": 1.44113729,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasMarginLow",
+            "state": "10.0 nm, 0.5 mM MgCl2",
+            "here": 1.2916653,
+            "there": 1.2916653,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasMarginHigh",
+            "state": "10.0 nm, 0.5 mM MgCl2",
+            "here": 2.36443236,
+            "there": 2.36443236,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "stiffnessMarginBaselineLow",
+            "state": "10.0 nm, 0.5 mM MgCl2",
+            "here": 2.0910536,
+            "there": 2.09105359,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0017 / T-16 requirements",
+            "departure": 4.78227815E-9,
+            "transfer": true
+        },
+        {
+            "quantity": "stiffnessMarginBaselineHigh",
+            "state": "10.0 nm, 0.5 mM MgCl2",
+            "here": 8.6452119,
+            "there": 8.64521213,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0017 / T-16 requirements",
+            "departure": 2.66043213E-8,
+            "transfer": true
+        },
+        {
+            "quantity": "biasMarginLow",
+            "state": "10.0 nm, 2.0 mM MgCl2",
+            "here": 1.00708008,
+            "there": 1.00708008,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "biasMarginHigh",
+            "state": "10.0 nm, 2.0 mM MgCl2",
+            "here": 1.03169792,
+            "there": 1.03169792,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0018 / T-4 ceilings (loadLine = coupled)",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "stiffnessMarginBaselineLow",
+            "state": "10.0 nm, 2.0 mM MgCl2",
+            "here": 1.19417694,
+            "there": 1.19417694,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0017 / T-16 requirements",
+            "departure": 0.0,
+            "transfer": true
+        },
+        {
+            "quantity": "stiffnessMarginBaselineHigh",
+            "state": "10.0 nm, 2.0 mM MgCl2",
+            "here": 1.42361944,
+            "there": 1.42361942,
+            "hereSource": "C-0027 / T-25 bufferComparison",
+            "thereSource": "C-0017 / T-16 requirements",
+            "departure": 1.40486982E-8,
+            "transfer": true
+        }
+    ],
+    "floors": [
+        {
+            "model": "alexander-box(two-body)",
+            "concentration": 0.5,
+            "stabilityFloor": 12.0761492,
+            "marginOnTheMandatedSecant": 2.7602618,
+            "marginOnTheRecommendedTangent": 2.48661734,
+            "clearsOnTheRecommendedTangent": true
+        },
+        {
+            "model": "alexander-box(two-body)",
+            "concentration": 2.0,
+            "stabilityFloor": 27.9132282,
+            "marginOnTheMandatedSecant": 1.19417694,
+            "marginOnTheRecommendedTangent": 1.07578965,
+            "clearsOnTheRecommendedTangent": true
+        },
+        {
+            "model": "alexander-box(virial)",
+            "concentration": 0.5,
+            "stabilityFloor": 3.85569872,
+            "marginOnTheMandatedSecant": 8.64521213,
+            "marginOnTheRecommendedTangent": 7.78815052,
+            "clearsOnTheRecommendedTangent": true
+        },
+        {
+            "model": "alexander-box(virial)",
+            "concentration": 2.0,
+            "stabilityFloor": 23.4144974,
+            "marginOnTheMandatedSecant": 1.42361943,
+            "marginOnTheRecommendedTangent": 1.28248587,
+            "clearsOnTheRecommendedTangent": true
+        },
+        {
+            "model": "alexander-box(des-Cloizeaux)",
+            "concentration": 0.5,
+            "stabilityFloor": 5.0860373,
+            "marginOnTheMandatedSecant": 6.55389085,
+            "marginOnTheRecommendedTangent": 5.90415686,
+            "clearsOnTheRecommendedTangent": true
+        },
+        {
+            "model": "alexander-box(des-Cloizeaux)",
+            "concentration": 2.0,
+            "stabilityFloor": 24.904295,
+            "marginOnTheMandatedSecant": 1.33845722,
+            "marginOnTheRecommendedTangent": 1.20576639,
+            "clearsOnTheRecommendedTangent": true
+        },
+        {
+            "model": "strong-stretching(two-body)",
+            "concentration": 0.5,
+            "stabilityFloor": 15.9409273,
+            "marginOnTheMandatedSecant": 2.09105359,
+            "marginOnTheRecommendedTangent": 1.88375252,
+            "clearsOnTheRecommendedTangent": true
+        },
+        {
+            "model": "strong-stretching(two-body)",
+            "concentration": 2.0,
+            "stabilityFloor": 27.0394827,
+            "marginOnTheMandatedSecant": 1.2327652,
+            "marginOnTheRecommendedTangent": 1.11055238,
+            "clearsOnTheRecommendedTangent": true
+        },
+        {
+            "model": "strong-stretching(virial)",
+            "concentration": 0.5,
+            "stabilityFloor": 11.3386728,
+            "marginOnTheMandatedSecant": 2.93979145,
+            "marginOnTheRecommendedTangent": 2.64834893,
+            "clearsOnTheRecommendedTangent": true
+        },
+        {
+            "model": "strong-stretching(virial)",
+            "concentration": 2.0,
+            "stabilityFloor": 23.8044099,
+            "marginOnTheMandatedSecant": 1.40030076,
+            "marginOnTheRecommendedTangent": 1.26147895,
+            "clearsOnTheRecommendedTangent": true
+        },
+        {
+            "model": "strong-stretching(des-Cloizeaux)",
+            "concentration": 0.5,
+            "stabilityFloor": 11.0611385,
+            "marginOnTheMandatedSecant": 3.01355356,
+            "marginOnTheRecommendedTangent": 2.71479848,
+            "clearsOnTheRecommendedTangent": true
+        },
+        {
+            "model": "strong-stretching(des-Cloizeaux)",
+            "concentration": 2.0,
+            "stabilityFloor": 23.9525697,
+            "marginOnTheMandatedSecant": 1.39163913,
+            "marginOnTheRecommendedTangent": 1.25367601,
+            "clearsOnTheRecommendedTangent": true
+        }
+    ],
+    "heldForceClause": [
+        {
+            "model": "alexander-box(des-Cloizeaux)",
+            "heldBiasLowSalt": 0.114897434,
+            "heldBiasHighSalt": 0.18042815,
+            "heldAdvantage": 1.57034099,
+            "zeroStrokeAdvantage": 4.96557132,
+            "overstatement": 3.1620975
+        },
+        {
+            "model": "alexander-box(two-body)",
+            "heldBiasLowSalt": 0.103042211,
+            "heldBiasHighSalt": 0.156804999,
+            "heldAdvantage": 1.52175499,
+            "zeroStrokeAdvantage": 4.96557132,
+            "overstatement": 3.26305571
+        },
+        {
+            "model": "alexander-box(virial)",
+            "heldBiasLowSalt": 0.114161588,
+            "heldBiasHighSalt": 0.178864036,
+            "heldAdvantage": 1.56676198,
+            "zeroStrokeAdvantage": 4.96557132,
+            "overstatement": 3.16932079
+        },
+        {
+            "model": "strong-stretching(des-Cloizeaux)",
+            "heldBiasLowSalt": 0.0932081779,
+            "heldBiasHighSalt": 0.139309991,
+            "heldAdvantage": 1.49461125,
+            "zeroStrokeAdvantage": 4.96557132,
+            "overstatement": 3.32231631
+        },
+        {
+            "model": "strong-stretching(two-body)",
+            "heldBiasLowSalt": 0.0865617132,
+            "heldBiasHighSalt": 0.128312261,
+            "heldAdvantage": 1.48232118,
+            "zeroStrokeAdvantage": 4.96557132,
+            "overstatement": 3.34986195
+        },
+        {
+            "model": "strong-stretching(virial)",
+            "heldBiasLowSalt": 0.0916831513,
+            "heldBiasHighSalt": 0.13673364,
+            "heldAdvantage": 1.49137151,
+            "zeroStrokeAdvantage": 4.96557132,
+            "overstatement": 3.32953344
+        }
+    ],
+    "fixedBiasCounterReading": [
+        {
+            "appliedBias": 0.05,
+            "modelsUnstableLowSalt": 1,
+            "modelsUnstableHighSalt": 0,
+            "requiredCouplingLowSaltLow": 3.29422248,
+            "requiredCouplingLowSaltHigh": 3.29422248,
+            "requiredCouplingHighSaltLow": null,
+            "requiredCouplingHighSaltHigh": null,
+            "favoursLowSalt": false
+        },
+        {
+            "appliedBias": 0.1,
+            "modelsUnstableLowSalt": 4,
+            "modelsUnstableHighSalt": 4,
+            "requiredCouplingLowSaltLow": 10.7634966,
+            "requiredCouplingLowSaltHigh": 21.4395926,
+            "requiredCouplingHighSaltLow": 5.31115988,
+            "requiredCouplingHighSaltHigh": 15.9872559,
+            "favoursLowSalt": false
+        },
+        {
+            "appliedBias": 0.25,
+            "modelsUnstableLowSalt": 6,
+            "modelsUnstableHighSalt": 6,
+            "requiredCouplingLowSaltLow": 86.0799074,
+            "requiredCouplingLowSaltHigh": 109.993944,
+            "requiredCouplingHighSaltLow": 47.6285858,
+            "requiredCouplingHighSaltHigh": 71.5426226,
+            "favoursLowSalt": false
+        }
+    ],
+    "verdict": {
+        "namedRoutes": 6,
+        "withdrawn": 1,
+        "transfers": 2,
+        "independentSurvivors": 3,
+        "survivorsOnADifferentGround": 1,
+        "distinctMechanisms": 2,
+        "everySurvivorFavoursLowSalt": true,
+        "strongestSurvivingAdvantage": 4.96557132,
+        "weakestSurvivingAdvantage": 1.2825845,
+        "strongestAdvantageAtTheOperatingPoint": 1.75104168,
+        "statement": "SIX NAMED ROUTES ARE THREE. One (C-0032) is WITHDRAWN - its object left the output role. Two (C-0016, C-0027) are TRANSFERS, carrying C-0012's, C-0017's and C-0018's own numbers to the emission precision. Three survive independently, all of them favour 0.5 mM, and one of the three (C-0018) survives on a DIFFERENT ground: its 'removes the fold' is void because the recommended element has no fold at 2 mM to remove. Read at the state the device occupies, the three advantages are 1.5703, 1.7510 and 1.3480 - the headline 4.97x is a ZERO-STROKE reading of the first"
+    },
+    "falsifiers": [
+        {
+            "id": "F1",
+            "statement": "a surviving route, re-read on C-0069's Q5, pointing at 2 mM - which would move the conclusion and not only the count",
+            "fired": false,
+            "outcome": "NO. Every one of the 5 non-withdrawn routes favours 0.5 mM, and so does the force clause read at the DEVICE's own operating point (1.4823-1.5703 x over six layer models). The recommendation is unchanged"
+        },
+        {
+            "id": "F2",
+            "statement": "the six being six - no pair of them sharing a number to the emission precision, which would make the cheap bound worthless",
+            "fired": true,
+            "outcome": "FIRED, and it is the finding. 3 of the six are independent: T-2 carries T-3's blocking bias at 15 of 15 states and T-25 carries T-16's and T-4's extrema at every state it reports. Two of the 'six independent routes' are the other four, read again"
+        },
+        {
+            "id": "F3",
+            "statement": "a route whose object can be classified neither in nor out of the design",
+            "fired": false,
+            "outcome": "NO. Every one of the six is read on a named object: two on the unloaded field balance, one on the held operating point, one on the affine mandate path, one on C-0030's flexure, one on other routes' readings"
+        }
+    ],
+    "findings": {
+        "the count": "six named routes: 1 withdrawn, 2 transfers, 3 independent survivors",
+        "the cheap bound - C-0016 against C-0012": "T-2's biasClauses carry T-3's own biasForHundredPiconewtonBlocking at 15 of 15 states, worst departure 0.0. The binding clause at 10 nm is literally 'force' at every buffer",
+        "the cheap bound - C-0027 against C-0017 and C-0018": "T-25's bufferComparison carries T-16's stabilityMargin extrema and T-4's coupled margin extrema at 20 of 20 comparisons, worst departure 2.660432130619297E-8 - which is T-25 printing eight significant digits where T-16 prints nine",
+        "the stability floor does not move and the margin does": "|k_eff| at the held gap is 3.8557-15.9409 pN/nm at 0.5 mM against 23.4145-27.9132 at 2 mM - element-independent, so Q5 changes nothing about it. The MARGIN moves, because stability is owed on the tangent: 30.028762 rather than 33.333333 pN/nm, so C-0017's 2.0911-8.6452 becomes 1.8838-7.7882 and its 1.1942-1.4236 becomes 1.0758-1.2825. The RATIO between the buffers is invariant under that rescaling",
+        "the force clause is quoted at a stroke the device does not occupy": "C-0012's 4.9656x is the bias ratio for 100 pN of BLOCKING force, i.e. at zero stroke. At the held operating point the device sits at - L0 - 3 nm, 100 pN delivered - the same clause is 1.4823-1.5703 x, an overstatement of 3.1621-3.3499. Same discipline as quoting a stiffness with its compression",
+        "C-0018's ground is void and its conclusion is not": "'0.5 mM removes the fold entirely' cannot be true of an element that has no fold at 2 mM. On Q5 the comparison is a bias margin of 1.8706 against 1.3877, a factor of 1.3480 - a quantified preference, and a stronger one than the affine line's 1.2826, on a different ground",
+        "C-0016's other half runs the other way": "read at a FIXED applied bias rather than at a held operating point, C-0016's own stability table asks for MORE coupling stiffness at 0.5 mM than at 2 mM - 86.08-109.99 pN/nm against 47.63-71.54 at 0.25 V, and 1 model unstable against 0 at 0.05 V. Not a contradiction of C-0017 (a held point is force-pinned and a fixed bias is not) but it is why 'C-0016 recommends 0.5 mM' is a statement about one of its two clauses",
+        "three routes are not three exposures": "all three survivors are downstream of C-0008's single mean-field Poisson-Boltzmann model, and C-0005's one-loop correction is 123-214 % of the leading term - larger than every one of the three advantages. Two distinct MECHANISMS carry them: the LEVEL of |F_es| at a fixed bias (C-0012) and 1/l at a force-pinned point (C-0017, C-0018)",
+        "what does NOT change": "the recommendation. Every surviving route favours 0.5 mM, at every layer model, at the 10 nm device. What changes is the count, the strength of the word, and the size of the strongest number quoted for it"
+    },
+    "validity": [
+        "TRL 1-3. Nothing here is measured. A census inherits every validity range of the claims it counts and narrows none of them",
+        "MEAN FIELD, inherited whole and COMMON MODE. All three surviving routes are downstream of C-0008's single Poisson-Boltzmann model, whose one-loop correction (C-0005) is 123-214 % of the leading term over this gap range - larger than every one of the three advantages. Three routes are not three independent exposures",
+        "The recommended device is the 10 nm layer. The 5 nm and 7 nm rows exist in every input file and are NOT intersected with it (C-0064)",
+        "C-0032's numbers all stand for the element they were measured on. What is withdrawn is their transfer to the element C-0071 recommends",
+        "The re-reading of C-0017's margin onto Q5 is a RESCALING of the numerator, exact because the floor contains no coupling element - it is not a re-solve, and the advantage is invariant under it by construction",
+        "C-0018's route is re-read from C-0084's own solved margins, not rescaled - the fold is a property of the path and no arithmetic substitutes for the solve",
+        "The census counts ROUTES, not evidence. A transfer is still a check on the claim it transfers from; what it is not is a second derivation"
+    ],
+    "openQuestions": [
+        "C-0084's own 'seventh route' is C-0018's route re-read on Q5, not a new one. The count of independent routes is unchanged by C-0084 and is three",
+        "Whether the fixed-applied-bias reading of C-0016's (f) table and the held-point reading of C-0017 can be reconciled into ONE statement about the buffer. They are not in conflict - one is force-pinned and the other is not - but no claim states the pair",
+        "T-50 (a beyond-mean-field treatment of the actuated gap) is the only thing that would make the three routes three exposures rather than one",
+        "Whether any route exists that is NOT downstream of C-0008. None of the six is"
+    ]
+}

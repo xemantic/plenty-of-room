@@ -29,7 +29,7 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 
 | # | Decision | Owner task | Cost of deferring | Programme's recommendation |
 |---|---|---|---|---| 
-| 1 | Is 0.5 mM MgCl₂ acceptable as the Gen-1 nominal buffer, instead of §3's 2 mM? | `T-63` | ~~The device sits **on** its own pull-in fold at 2 mM~~ — **withdrawn, `C-0084`**; the recommended element does not fold at 2 mM at all. The cost of deferring is now a **margin**, 1.39–2.58× against 1.87–3.47×, not a failure | **Adopt 0.5 mM — but as a PREFERENCE, not a requirement** |
+| 1 | Is 0.5 mM MgCl₂ acceptable as the Gen-1 nominal buffer, instead of §3's 2 mM? | `T-63` | ~~The device sits **on** its own pull-in fold at 2 mM~~ — **withdrawn, `C-0084`**; the recommended element does not fold at 2 mM at all, on **any** elastica branch (`C-0092`). The cost of deferring is now a **margin**, 1.39× against 1.87× at worst, not a failure | **Adopt 0.5 mM — but as a PREFERENCE, not a requirement, and on THREE routes rather than six (`C-0091`)** |
 | 2 | May the polymer layer be taller than 10 nm — 17–26 nm? | `T-115` | §3's *desired* ~10 nm stroke stays unreachable on §3's own stack | **A yes/no is enough**; a *no* closes a branch cheaply |
 | 3 | What is the electrode made of, and where is its potential of zero charge? | `P-13` | 2.6× on the one hold-down no design can remove | **Name a material**; the programme will not choose one |
 | 4 | Which device does §3's *desired* clause ask for? | `T-112` | Every desired-stroke number in the corpus has to be quoted twice | **One device, placed at the acceptable clause** |
@@ -46,8 +46,9 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 > `C-0030`'s strain-**softening** coupled-standoff flexure — **an element `CH-0081` has since removed
 > from the output role.** The element the programme actually recommends (`C-0071`'s `Q5`) is
 > strain-**stiffening**, and at 2 mM it has **no pull-in fold at all**, at **0 of 6** layer models
-> where the affine mandate folds at 6 of 6. On the bias axis its margin is **1.3877–2.5764** at 2 mM
-> against **1.8706–3.4699** at 0.5 mM; on the stroke axis the fold moves from 3.4104–4.1248 nm to
+> where the affine mandate folds at 6 of 6. On the bias axis its margin is **1.3877–7.3137** at 2 mM
+> against **1.8706–10.9072** at 0.5 mM (the *tops* widened by `C-0092` in iteration 18, which found
+> `C-0084`'s branch end to be a force-ladder artefact; both **minima** are unchanged); on the stroke axis the fold moves from 3.4104–4.1248 nm to
 > **past 7.9097 nm**, and the binding ceiling changes owner from pull-in to `C-0002`'s `φ = 0.2`.
 >
 > **So 0.5 mM remains the recommendation and stops being a requirement.** It is bought for margin
@@ -56,21 +57,53 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 > Carlo alternative (`T-50`) is correspondingly **less** forced than the text below says.
 >
 > This is `CLAUDE.md`'s own standing warning arriving in the deliverable: *a correction can be
-> quoted against a stack that has already left the design.* **A census of how many of the six
-> routes below are read on withdrawn objects has never been taken** and is queued as `T-156`.
+> quoted against a stack that has already left the design.* ~~**A census of how many of the six
+> routes below are read on withdrawn objects has never been taken** and is queued as `T-156`.~~
+
+> ### CORRECTED AGAIN, iteration 18 — the count. The recommendation still stands
+>
+> **`C-0091` ([`CH-0106`](gpd/challenges/CH-0106-six-routes-are-three.md)) took the census, and
+> the six independent routes are THREE.** One (`C-0032`) is withdrawn, as above. **Two are the
+> other four, read again**: `T-2`'s bias clause carries `T-3`'s own blocking bias at **15 of 15**
+> states at a departure of **0.0**, and `T-25`'s buffer comparison carries `T-16`'s and `T-4`'s
+> extrema at **20 of 20** comparisons at a departure of **2.7e−8** — which is one file printing
+> eight significant digits where the other prints nine. So `C-0016` is `C-0012` on a `σ` grid and
+> `C-0027` is `C-0017` and `C-0018` with two corrections applied.
+>
+> **Two of the three survivors are also weaker than the text below says.**
+> `C-0018`'s stated reason — *"0.5 mM removes the fold"* — is **void** on the recommended element,
+> which has no fold at 2 mM to remove; it survives as a **1.35×** preference on the bias margin.
+> And the *"factor of five"* below is read at **zero stroke**: at the operating point the device
+> actually occupies (`L₀ − 3 nm`, 100 pN delivered) the same clause is **1.48–1.57×**.
+>
+> **Read at the state the device occupies, the three routes are worth 1.35×, 1.57× and 1.75×** —
+> and they are **not three independent exposures**: all three are downstream of `C-0008`'s single
+> mean-field solve, whose one-loop error (`C-0005`, **123–214 %**) is common mode over all of them
+> and larger than each. `T-50` is the only thing in the queue that would change that.
+>
+> **Nothing here argues for 2 mM.** Every surviving route favours 0.5 mM, at every layer model.
+> What is corrected is the count, the word *independent*, and the size of the largest number.
 
 **The question.** §3 specifies 2 mM MgCl₂. Leaf `A2.2` names a low-screening operating point.
-Six independent routes in this programme have converged on **0.5 mM**,
-and as of iteration 5 it stopped being an improvement and became a requirement for the surviving coupling.
+~~Six independent routes in this programme have converged on **0.5 mM**,
+and as of iteration 5 it stopped being an improvement and became a requirement for the surviving coupling.~~
+**Three independent routes converge on 0.5 mM** (`C-0091`), and it is a **preference** rather than a
+requirement (`C-0084`, `CH-0098`).
 
 **Why the programme cannot decide it.** Buffer composition is a specification of the experiment,
 not an output of the model.
 
 **What is established.**
   
-- **Six independent routes recommend it**: `C-0012` on the force clause, `C-0016` on the bias window,
+- ~~**Six independent routes recommend it**: `C-0012` on the force clause, `C-0016` on the bias window,
   `C-0017` on the stability floor, `C-0018` on the usable bias, `C-0027` on the corrected margin,
-  and `C-0032` on the realised coupling law.
+  and `C-0032` on the realised coupling law.~~
+  **THREE independent routes recommend it** (`C-0091`, `CH-0106`): `C-0012` on the force clause
+  (**1.48–1.57×** at the operating point, 4.97× at zero stroke), `C-0017` on the static stability
+  floor (**1.75×**, and the floor itself is element-independent), and `C-0018` on the coupled bias
+  margin (**1.35×**, re-read on the recommended element, and on a *different* ground from the one
+  `C-0018` states). `C-0016` is `C-0012`'s own number on a `σ` grid, `C-0027` is `C-0017` and
+  `C-0018` corrected, and `C-0032` is withdrawn.
 - **At 2 mM the device is placed on its own fold.** `C-0017`'s stability margin was banked on the
   coupling being strain-*stiffening*; `C-0030` established that the realised coupled-standoff flexure
   strain-*softens*. Re-running `C-0018`'s fold analysis on that law over 216 states, the 10 nm / 2 mM

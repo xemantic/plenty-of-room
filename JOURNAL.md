@@ -6956,3 +6956,96 @@ anticipated: a **fifth** decision (the scaffold, `C-0086`/`T-154`, which turned 
 has a seam at all) and a **correction to its first**, whose severity `C-0084` withdrew within hours of it
 being written. Both were made in place and struck rather than rewritten, which is the discipline that file
 sets for itself.
+
+## 2026-08-17 — Iteration 18
+
+Four loops. Three closed here; `T-155` ran long and is recorded separately.
+Every number below was grepped out of its claim file.
+
+**`C-0090` (`T-153`) — the buildable width does not damage the design, it SELECTS it.** `C-0086` had left
+§3's 40.0 nm outside the seamless raster's own quantisation, nearest 38.08 nm. The axis settles half the
+branch in one line: the odd-half-turn rule binds the distance between successive **scaffold** crossovers,
+which in a boustrophedon are the two ends of **one row** — an **along-helix** length — so `EDGE_X` moves
+40.0 → 38.08 nm and the across-helix geometry (15 duplexes at 2.69 nm, 40.35 nm) is **untouched**. Eight
+quantities are invariant *by construction* and are asserted at both widths at departure `0.0`.
+Then the favourable half: **`38.08 = 7 × 5.44` exactly** where 40.0 is 7.35 pitches, so the row-end scaffold
+crossover is a lattice point only at `b ≡ 8 (mod 16)` — **phases 8 and 24, `C-0063`'s own centro-symmetric
+pair** — and `C-0015`'s ten eight-column phases collapse to **two**. On a bit-identical station lattice the
+best 34-root placement dishes **0.0621469105** against `T-5b`'s 0.10, **12.0 % better** than `C-0063`'s
+0.0706145537, the winning phase moving 24 → 8.
+**The price is a quantisation that turns out to be geometrically required**: `C-0039`'s 8.16439083 nm
+elastica root overhangs a whole base pair by 0.00439083 nm, which at 38.08 nm takes the phase-24 capacity
+45 → 38, halves the enumerable family and dishes 0.1427 — outside `T-5b` — while `C-0085`'s **24-rise
+8.16 nm** arm is exactly tangent (`32 + 24 = 56 = 112/2`) and restores every number bit for bit. So
+iteration 17's clearance recommendation was not merely advisable; the buildable width demands it.
+**Three of four substantive results run opposite to the task's framing**, which was written as damage
+assessment. Two things it found that nobody had asked for: **`C-0069`'s plan budget is two bounds and only
+one was ever written down** — the outboard bound `edgeX/2 − outermost root` crosses the inboard `pitch − d`
+at `edgeX = 38.14 nm`, and 38.08 falls **0.176 base pairs** below it, annihilating `C-0085`'s widening on a
+three-site row (`CH-0105`); and **a numerical guard became a physical assertion** — `EDGE_MARGIN = 0.05 nm`
+is inert at 40.0 nm and at 38.08 nm deletes two of eight columns at exactly the two phases the design wants,
+worth 0.0621 against 0.168371808, i.e. the whole verdict. Both readings are carried and the guard is swept.
+`C-0053`'s in-plane packer is the branch's largest mover: **43 → 29** arms for a 4.8 % narrower tile.
+
+**`C-0091` (`T-156`) — the six routes to 0.5 mM are THREE, and the finding is not the withdrawal.**
+`C-0032`'s route was already withdrawn by `C-0084`. What the census adds is that **two of the remaining five
+are the other three, read again**, and the cheap bound proved it before any physics: `T-2`'s
+`biasForHundredPiconewtonBlocking` **is** `T-3`'s own number at **15 of 15** states at worst departure
+**`0.0`**, and `T-25`'s `bufferComparison` carries `T-16`'s and `T-4`'s extrema at **20 of 20** at
+**`2.66e−8`** — one file printing eight significant digits where the other prints nine, *so a `==` would have
+called it not a transfer*. **A synthesis that reads CLAIMS cannot see this**: each of the six states its
+route truthfully, and only the result JSONs show two of them are one number.
+All three survivors still favour 0.5 mM at every layer model, and **two are weaker than they read**:
+`C-0018`'s stated ground — *"0.5 mM removes the fold entirely"* — is **void** on an element with no fold at
+2 mM to remove, surviving as a **1.3480×** bias-margin preference; and `C-0012`'s **4.9656×** is a
+**zero-stroke** blocking-bias ratio worth **1.4823–1.5703×** at the held operating point, an overstatement of
+**3.16–3.35×**. `C-0017` is untouched, its floor being element-independent. **Read at the device's own state
+the three are worth 1.35×, 1.57× and 1.75×, and they are not three exposures** — all downstream of `C-0008`,
+two mechanisms, and `C-0005`'s 123–214 % common mode over all of them. The declared falsifier *that the six
+are six* **fired**, and it is the claim (`CH-0106`).
+
+**`C-0092` (`T-157`) — no fold on any branch, and `C-0084`'s branch end was an artefact of its own solver.**
+The cheap bound settled the unbounded half with no solver at all: `δ = ∫sin φ < L = 8.16439083 nm` **strictly
+on every branch**, because `φ ≡ π/2` contradicts the root boundary condition — so the whole open question was
+**0.2447 nm** wide. Then the surprise: the task was written to enumerate the *large*-rotation branch and the
+answer came from continuing the *small* one. `C-0039`'s doubling force ladder loses the branch at
+**7.9196867 nm**, three decades of force below the right angle its own comment warns about; marched in the
+near-end rotation instead, the same arm answers to **8.1610821 nm** at `max_s|φ| = 1.5707924` rad —
+**0.999997 of π/2 and still below it**. The extended path has **no fold at 12 of 12** states of the
+recommended device over 0.9984 of the contour, leaving **0.0033087 nm**, under 1 % of one base-pair rise.
+The large-rotation branches, up to 39 of them, all reach a *smaller* stroke — they retreat from it.
+So §6 task 4's discharge for the recommended device is now essentially unconditional, and `CH-0099`'s
+candidate ceiling stands while its value does not: the element boundary binds at **0 of 12**.
+
+**Coordinator propagation.** `C-0092` widens the *tops* of `C-0084`'s bias-margin bands (1.3877–2.5764 →
+1.3877–7.3137 at 2 mM, 1.8706–10.9072 at 0.5 mM) and leaves both **minima** unchanged; the agent correctly
+declined to edit `ANSWERS.md` and `DECISIONS-FOR-NDI.md` for it, its permission having been scoped to
+`T-156`, and flagged it instead. Both documents updated here. **`DECISIONS-FOR-NDI.md` decision 1 has now
+been corrected twice in two iterations** — severity withdrawn by `C-0084`, route count by `C-0091` — against
+a recommendation that has not moved once. That is the healthy shape: the answer is stable and its *stated
+strength* was not.
+
+**`C-0089` (`T-155`) — the recovery route from `C-0087` is the right route and it does not arrive; what
+refuses it is a COUNT.** Asked whether any placement is flat under the measured staple dropout, the answer is
+**no**, over 22 graded `placement × distribution` cells — six densities from 15 to 90 paths, `C-0063`'s 34
+upward roots, `C-0074`'s 30, sixteen buildable one-parameter distributions and six per-path descents. The
+lowest 90th-percentile dishing anywhere is **0.284537599** of the free-tile stroke, still **2.85×** `T-5b`'s
+0.10.
+**Everything `C-0087` pointed at is confirmed and none of it is enough.** The percentile falls
+**monotonically 0.8522 → 0.5327** as the path count goes 15 → 90, and moving the objective from the
+zero-defect value to the **percentile** is worth a further **1.30–1.61×** — both real, both in the predicted
+direction. But the density the dropout demands is **13 attachment columns, 195 paths**, against the **34**
+`C-0075`'s plan table admits: **5.7× short, in a division that needs no solve**. That is the whole answer, and
+it was available before any sampler ran.
+**And the reversal `C-0087` read as *regularity* is a count effect**: at matched count the *irregular* upward
+roots **beat** the regular grid, 0.5837 against 0.6690. So the ranking flip was the denser array losing less
+per absent path, exactly as `C-0087` said — but the property doing the work is density, not regularity, and
+reading it as regularity would have pointed the next design at the wrong axis.
+`ANSWERS.md` §1 now states the settled form: **the flat Gen-1 tile is a zero-defect result, and no coupling
+this lattice can carry makes it a fabricated one.**
+
+**A note on the iteration's shape.** Three of the four loops were formulated as damage assessments and two of
+those came back favourable — the buildable width makes the tile *flatter* and *selects* the phase and the arm
+quantisation the programme had already chosen, and the large-rotation branch removes rather than adds a
+qualification. The two that were formulated as recoveries both failed. That is not a pattern to draw a lesson
+from, but it is worth recording that the framing predicted the sign in neither direction.
