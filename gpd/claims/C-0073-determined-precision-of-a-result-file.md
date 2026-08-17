@@ -7,7 +7,7 @@
 | **Verification type** | **in-silico** (four probes on the `T-1f` pipeline at one Gen-1 design point, plus a re-emission and field-by-field diff of every file that can move, and four more re-emitted as the falsifier) **+ logical** (which files can move under this change, established by construction — and **falsified**, see Part 4) |
 | **Verdict** | **PASS — direction (a), the rounding carried DOWN, and the reason is not the one either direction was ranked on.** Tightening `HEIGHT_TOLERANCE` from `1e−6` to `1e−9` costs **1.02×** the SCF solves, so `CH-0043`'s "costs compute" is refuted; it is rejected anyway because the residual the height bracket works on is **discontinuous** — `M = round(h/Δz)` — with a measured jump worth **`7.9e−5`–`9.9e−5`** in the root, so the ninth digit it would buy sits **two decades below the fourth digit the discretisation already destroys**, and buying it would move every SCF-derived number and force exactly the hand re-adjudication `CH-0043` exists to describe. |
 | **Maturity** | **TRL 1–3.** A property of this repository's own solvers, measured against their own **declared** tolerances. Nothing here is measured against an experiment, and no physics is re-derived. |
-| **Provenance** | `gpd/results/P-18-determined-precision.json`, produced by `brush.DeterminedPrecisionStudyKt`; model changes in `src/main/kotlin/structure/ResultRounding.kt`, `src/main/kotlin/brush/SelfConsistentField.kt`, `src/main/kotlin/brush/FluctuationCorrectionStudy.kt`, `src/main/kotlin/brush/ScfDensityProfileStudy.kt`; **21 gate-named tests** in `src/test/kotlin/structure/DeterminedPrecisionRoundingTest.kt` (11) and `src/test/kotlin/brush/DeterminedPrecisionTest.kt` (10); re-emission through `tools/study.sh` on isolated trees |
+| **Provenance** | `gpd/results/P-18-determined-precision.json`, produced by `brush.DeterminedPrecisionStudyKt`; model changes in `src/main/kotlin/structure/ResultRounding.kt`, `src/main/kotlin/brush/SelfConsistentField.kt`, `src/main/kotlin/brush/FluctuationCorrectionStudy.kt`, `src/main/kotlin/brush/ScfDensityProfileStudy.kt`; **21 gate-named tests** in `src/test/kotlin/structure/DeterminedPrecisionRoundingTest.kt` (11) and `src/test/kotlin/brush/DeterminedPrecisionTest.kt` (10); re-emission through `tools/study.sh` on isolated trees; full suite via `tools/verify.sh` on its own isolated tree, **1956 tests, BUILD SUCCESSFUL in 13 m 15 s** — the first run failed 5, every one of them a gate reading digits off a result file, see Part 4 |
 | **Conditions** | IEEE 754 binary64. One Gen-1 design point: `L₀ = 10 nm`, `σ = 0.0240 nm⁻²`, des Cloizeaux interaction, production grid `Δz = 0.2 nm`, `Δn = 1/2`, SCF field tolerance `1e−11` in `w`, `k_BT = 4.141947 pN·nm` at **300 K**, aqueous buffer with Mg²⁺, 40 × 40 nm tile, §3's 100 pN. |
 | **Consumes** | [`CH-0043`](../challenges/CH-0043-a-reproducibility-certificate-that-certifies-the-path.md) (the question), [`C-0031`](C-0031-bracketed-root-repair.md) (the measured `T-1d`/`T-1f` movement distribution, consumed as data and **not** re-measured) |
 | **Constrains** | [`C-0011`](C-0011-scf-density-profile.md), [`C-0019`](C-0019-mean-field-fluctuation-corrections.md) and — through `T-1d`'s file, which `T-2` **reads** — [`C-0016`](C-0016-design-window.md). Three files re-emitted. **No verdict, no flag and no quoted figure of any of them moves.** |
@@ -111,8 +111,10 @@ that is wrong and the ranking survives anyway, for a different reason.**
 
 | height tolerance | SCF solves |
 |---|---|
-| `1e−4` | 276 |
+| `1e−4` | 206 |
+| `1e−5` | 282 |
 | **`1e−6`** (standing) | **282** |
+| `1e−7` | 284 |
 | `1e−8` | 288 |
 | **`1e−9`** (what nine printed digits need) | **288** |
 
@@ -310,6 +312,33 @@ and that is `CH-0085`.
 **`T-2` is kept as re-emitted**, on `C-0031`'s precedent: the tree should record what the current
 code emits, and leaving the old file would guarantee a diff on the next re-run carrying no
 information.
+
+### The emission precision is an input to the TEST SUITE, and five gates were reading digits
+
+The full suite failed on five tests the first time it was run after the change, and every one of
+them is a gate that **recomputes an identity from numbers read out of a result file**:
+
+| test | identity | asserted at | actual residual |
+|---|---|---|---|
+| `UpstreamTransferTest` gate 1 | `Σ = π R₀² σ`, from the file's own `R₀` and `σ` | `1e−7` | `2.5e−6` |
+| `UpstreamTransferTest` gate 1 | `s = σ^(−1/2)` | `1e−7` | ~`7e−6` |
+| `UpstreamTransferTest` gate 4 | the `σ` grid is geometric, ratio by ratio | `1e−6` | ~`2e−5` |
+| `UpstreamTransferTest` gate 5 | `C-0011`'s published edges against the grid | `1e−6` | `3.8e−6` |
+| `ResynthesisTransferTest` gate 4 | every window edge is a grid point | `1e−6` | ~`2e−5` |
+
+**None of them is a physics failure and none is a defect introduced here.** The residual of an
+identity recomputed from emitted fields is bounded by the **emission** precision, not by the
+solver's: a six-digit field carries up to `5e−6` relative, and an identity combining a density, a
+squared end-to-end distance and the emitted overlap carries up to `2e−5`. They were asserted at
+`1e−7`, and they passed **only because the file printed three digits past what it determined.**
+
+> **An assertion tighter than a file's emission precision is not a stronger test — it is a test of
+> the printed digits.** It is `CH-0043`'s finding one level out: the certificate was on the file,
+> and the same mistake was in the gates that read it.
+
+Relaxed to a single documented `EMITTED_FIELD_SLACK = 5e-5` derived from
+`SOLVED_HEIGHT_SIGNIFICANT_DIGITS`, which is 2.5× the worst case and still four orders of magnitude
+tighter than any quantity these gates could plausibly get wrong.
 
 ### A number emitted as a STRING is not rounded, by construction
 
