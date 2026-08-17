@@ -90,6 +90,10 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=anchoring.SeamWeaveStudyKt                     # T-140, does a Rothemund scaffold seam break C-0076's weave node congruence
 ./gradlew study -Pstudy=electrostatics.DuplexPairSeparationStudyKt    # T-139, what separation two UNBONDED duplexes hold in 2 mM MgCl2 (none) and what the plan width therefore is
 ./gradlew study -Pstudy=brush.FirstMomentConventionStudyKt            # T-1e, N inverted on the first-moment thickness as well as the force-onset height
+./gradlew study -Pstudy=anchoring.CollinearClearanceStudyKt            # T-152, what stacking-prevention clearance the collinear slot should carry
+./gradlew study -Pstudy=anchoring.ScaffoldRoutingStudyKt              # T-151, can the tile be raster-folded without a scaffold seam
+./gradlew study -Pstudy=coupling.StapleDropoutStudyKt                 # T-148, the flatness of every standing design under the measured staple dropout
+./gradlew study -Pstudy=stability.RecommendedElementFoldStudyKt       # T-149, the pull-in fold of the output element C-0071 recommends
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.

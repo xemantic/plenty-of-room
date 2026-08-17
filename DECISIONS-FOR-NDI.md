@@ -1,6 +1,6 @@
 # DECISIONS-FOR-NDI
 
-Four decisions this programme cannot make for itself.
+Five decisions this programme cannot make for itself.
 
 Each is a **specification** question rather than a modelling one:
 no amount of calculation closes it,
@@ -9,8 +9,8 @@ not a number about the physics.
 They are collected here so they can be reviewed together and answered in one pass,
 rather than one at a time across iterations.
 
-They are live in [`TASKS.md`](TASKS.md) as `T-63`, `T-115`, `P-13` and `T-112`,
-and this file is the reviewable form of the same four.
+They are live in [`TASKS.md`](TASKS.md) as `T-63`, `T-115`, `P-13`, `T-112` and `T-154`,
+and this file is the reviewable form of the same five.
 
 ## How to read this
 
@@ -19,7 +19,7 @@ what has been established either way, the options with their consequences,
 what the programme would recommend and on what grounds,
 and **what it costs to leave it open** — which is the part that is easy to miss.
 
-**A one-sentence answer is enough for all four.**
+**A one-sentence answer is enough for all five.**
 None needs a document; three of them need a single word.
 
 **Nothing here is measured.** Every number is TRL 1–3:
@@ -29,14 +29,35 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 
 | # | Decision | Owner task | Cost of deferring | Programme's recommendation |
 |---|---|---|---|---| 
-| 1 | Is 0.5 mM MgCl₂ acceptable as the Gen-1 nominal buffer, instead of §3's 2 mM? | `T-63` | The device sits **on** its own pull-in fold at 2 mM; the alternative is 1–3 weeks of Monte Carlo | **Adopt 0.5 mM** |
+| 1 | Is 0.5 mM MgCl₂ acceptable as the Gen-1 nominal buffer, instead of §3's 2 mM? | `T-63` | ~~The device sits **on** its own pull-in fold at 2 mM~~ — **withdrawn, `C-0084`**; the recommended element does not fold at 2 mM at all. The cost of deferring is now a **margin**, 1.39–2.58× against 1.87–3.47×, not a failure | **Adopt 0.5 mM — but as a PREFERENCE, not a requirement** |
 | 2 | May the polymer layer be taller than 10 nm — 17–26 nm? | `T-115` | §3's *desired* ~10 nm stroke stays unreachable on §3's own stack | **A yes/no is enough**; a *no* closes a branch cheaply |
 | 3 | What is the electrode made of, and where is its potential of zero charge? | `P-13` | 2.6× on the one hold-down no design can remove | **Name a material**; the programme will not choose one |
 | 4 | Which device does §3's *desired* clause ask for? | `T-112` | Every desired-stroke number in the corpus has to be quoted twice | **One device, placed at the acceptable clause** |
+| 5 | What is the scaffold — linear or circular, M13 or synthetic, and how long? | `T-154` | A seam costs 6–12 of 34 arm stations, and §3's 40.0 nm is not a buildable seamless width | **A purpose-length scaffold**; the choice is a fabrication decision, not a modelling one |
 
 ---
 
 ## 1. Is 0.5 mM MgCl₂ acceptable as the Gen-1 nominal buffer? (`T-63`)
+
+> ### CORRECTED, iteration 17 — this decision's severity is withdrawn, its recommendation stands
+>
+> **`C-0084` ([`CH-0098`](gpd/challenges/CH-0098-the-0-5-mM-requirement-is-quoted-for-a-withdrawn-coupling.md)) removes the word *requirement* from this decision.**
+> Everything below about *"the device sits on its own fold at 2 mM"* is `C-0032`'s finding about
+> `C-0030`'s strain-**softening** coupled-standoff flexure — **an element `CH-0081` has since removed
+> from the output role.** The element the programme actually recommends (`C-0071`'s `Q5`) is
+> strain-**stiffening**, and at 2 mM it has **no pull-in fold at all**, at **0 of 6** layer models
+> where the affine mandate folds at 6 of 6. On the bias axis its margin is **1.3877–2.5764** at 2 mM
+> against **1.8706–3.4699** at 0.5 mM; on the stroke axis the fold moves from 3.4104–4.1248 nm to
+> **past 7.9097 nm**, and the binding ceiling changes owner from pull-in to `C-0002`'s `φ = 0.2`.
+>
+> **So 0.5 mM remains the recommendation and stops being a requirement.** It is bought for margin
+> — a 1.4–2.6× reserve becomes 1.9–3.5×, and the stability floor falls from 23.41–27.91 to
+> 3.86–15.94 pN/nm — rather than to keep the device off a fold it is not on. The 1–3 week Monte
+> Carlo alternative (`T-50`) is correspondingly **less** forced than the text below says.
+>
+> This is `CLAUDE.md`'s own standing warning arriving in the deliverable: *a correction can be
+> quoted against a stack that has already left the design.* **A census of how many of the six
+> routes below are read on withdrawn objects has never been taken** and is queued as `T-156`.
 
 **The question.** §3 specifies 2 mM MgCl₂. Leaf `A2.2` names a low-screening operating point.
 Six independent routes in this programme have converged on **0.5 mM**,
@@ -147,6 +168,51 @@ Are these two operating points of **one** device, or two devices?
 **What deferring costs.** Every desired-stroke number in the corpus has to be quoted with the clause
 that placed it, and a per-path allowable read at one clause is 3.33× the other. `C-0049` had to
 withdraw a 40 pN/nm ceiling for exactly this reason.
+
+---
+
+## 5. What is the scaffold — linear or circular, M13 or synthetic, and how long? (`T-154`)
+
+**The question.** §1 and §3 specify a 40 × 40 nm single-layer origami tile and never say what scaffold folds it.
+Until iteration 17 that looked like an implementation detail. It is not: it decides whether the tile has a
+**seam**, and a seam costs arm stations.
+
+**Why the programme cannot decide it.** It is a choice of starting material and a fabrication route.
+
+**What is established** (`C-0086`, `C-0081`).
+
+- **A seam is a parity on a tree, not a fabrication convention.** Crossovers join only *adjacent* duplexes, so a
+  single-layer sheet's row-adjacency graph is a **path** — a tree — and a closed walk on a tree traverses every
+  edge an even number of times. A **fully folded circular** scaffold therefore gives every row two segments,
+  i.e. exactly one seam. Brute-forced: the path graph carries **2 Hamiltonian paths and ZERO Hamiltonian cycles**
+  at every width from 3 to 12 duplexes.
+- **So a seam needs two premises — circular *and* fully folded — and the Gen-1 tile fails the second anyway**:
+  the sheet takes **1 680** of M13's **7 249** nt.
+- **A seam is not free.** `C-0081` finds it deletes a weave extremum, putting **6–12 of `C-0063`'s 34** arm
+  stations off the node, and the parity that *closes* takes the worst across-row clearance to **0.122724 nm** —
+  and to **−0.002276 nm** at the measured phosphate girth, which is a clash.
+- **Three specifications, each with a built precedent read directly from Rothemund (2006).**
+
+All three rows are `C-0086`'s Deliverable 2, and every figure in them is quoted from it:
+
+| specification | seams | cost |
+|---|---|---|
+| **linear** (`C-0086`) | **0** | linearisation by BsrBI digestion dropped Rothemund's own yield from **63 %** well-formed to **11 %**, which he attributes to strand breakage during digestion. A **synthetic or PCR** scaffold of the right length avoids the digestion entirely |
+| **circular, fully folded** (`C-0086`, `C-0081`) | **1** | the seam, i.e. 6–12 of 34 stations and `C-0081`'s restored amplitude bracket |
+| **circular, with remainder** (`C-0086`) | **0** | the remainder itself: **5 569 nt**, a **33.3 nm** unpaired coil carrying **1.66×** the sheet's own charge in the actuated gap. A purpose-built 1 680 nt circular scaffold removes it and needs only a **67 nt** return loop |
+
+- **And a seamless raster quantises the tile WIDTH at 32 bp.** Admissible row lengths are odd multiples of
+  16 bp — **16, 48, 80, 112, 144** — and **§3's 40.0 nm = 117.6 bp is not among them**. The nearest is
+  **112 bp = 38.08 nm**, a 4.8 % narrower tile, which every plan margin in the corpus would have to be re-read
+  at (`T-153`).
+
+**What the programme would recommend.** A **purpose-length scaffold** — synthetic, PCR, or a circular 1 680 nt
+construct with a short return loop — because it is the only option that is seamless *and* avoids both the
+digestion yield penalty and the unpaired remainder. But this is a wet-lab cost judgement about scaffold
+sourcing, which the programme cannot price.
+
+**What deferring costs.** `C-0081` and `C-0086` must both be carried in two readings, and `T-153` — a re-read of
+every plan margin at 38.08 nm — cannot be scoped, because whether it is needed at all depends on this answer.
 
 ---
 

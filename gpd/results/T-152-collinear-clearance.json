@@ -1,0 +1,661 @@
+{
+    "task": "T-152",
+    "leaf": "A8.2",
+    "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm, 0.34 nm rise, crossover phase 24; C-0063's 34 upward roots at a 32 bp = 10.88 nm pitch; C-0017's 33.3333 pN/nm as a SUM, so 0.980392 pN/nm per path at 3 nm; EI = 230 pN nm^2, S = 1100 pN, k_theta = 13.5294 pN nm/rad, A2 = 78.2353; the blunt-end stack -2.63 kcal/mol per helix at 1xTAE + 12.5 mM Mg2+, 22 C (Woo & Rothemund), TRANSFERRED to 2 mM and 300 K and NOT re-measured",
+    "decision": "The collinear clearance should be 6 base pairs = 2.04 nm, and the design as built carries 8 — so the Q5 margin is 2 WHOLE RISES (0.6756091733686969 nm, 26.381529916716644x the published 0.02561) and it is an integer rather than a residue. The joint window opens 1.2574915915807825x in c and BOTH of Q5's joints gain real margin (tip 1.70878479537323x, root 1.8987522597874527x, against 1.018x and 1.030x). Nothing in the placement moves adversely.",
+    "bounds": [
+        {
+            "name": "the standing allowance read on the base-pair lattice",
+            "value": 7.91176471,
+            "unit": "rises",
+            "against": 8.0,
+            "ratio": 0.988970588,
+            "fired": true,
+            "settles": "2.69 nm is 7.912 rises: a TRANSVERSE lattice constant charged in an AXIAL slot is not on the design language's own lattice at all, and quantised UP to the 8 rises a design can draw the Q5 margin goes NEGATIVE"
+        },
+        {
+            "name": "the arm read on the same lattice",
+            "value": 24.0129142,
+            "unit": "rises",
+            "against": 24.0,
+            "ratio": 1.00053809,
+            "fired": true,
+            "settles": "8.16439 nm is 24.013 rises, so the buildable arm is 24 bp and the published 0.02561 nm margin is the RESIDUE of two off-lattice numbers, not a clearance"
+        },
+        {
+            "name": "the margin as an integer count at the standing allowance",
+            "value": 0.0,
+            "unit": "rises",
+            "against": 0.0,
+            "ratio": 0.0,
+            "fired": true,
+            "settles": "32 - 8 - 24 = 0 EXACTLY: on the lattice the standing design closes with no clearance left over at all, which is neither the +0.0256 nm C-0069 publishes nor a failure"
+        },
+        {
+            "name": "the design space, integers reaching the measured stacking range",
+            "value": 3.0,
+            "unit": "integers",
+            "against": 8.0,
+            "ratio": 0.375,
+            "fired": true,
+            "settles": "0.51108-1.3 nm is 2-4 rises, so the whole design space is three integers before any energetics and the expensive part is only the joint window"
+        },
+        {
+            "name": "the midspan flexure family's floor against the BARE pitch",
+            "value": 22.4141917,
+            "unit": "nm",
+            "against": 10.88,
+            "ratio": 2.06012791,
+            "fired": true,
+            "settles": "22.41 nm against 10.88: C-0069's central negative survives a clearance of ZERO, so no reading of this task reopens the two-support family"
+        },
+        {
+            "name": "the blunt-end stack against thermal energy",
+            "value": 4.41155791,
+            "unit": "k_BT",
+            "against": 1.0,
+            "ratio": 4.41155791,
+            "fired": true,
+            "settles": "4.411 k_BT per helix: the slot holds a BOND worth four thermal energies, so a range criterion at nominal positions is not sufficient and the criterion has to be an energy"
+        }
+    ],
+    "closurePaths": [
+        {
+            "label": "arm stretch + host stretch",
+            "members": [
+                "arm axial",
+                "host segment axial"
+            ],
+            "memberStiffnesses": [
+                134.731424,
+                101.102941
+            ],
+            "stiffness": 57.7597892,
+            "thermalAmplitude": 0.267786987
+        },
+        {
+            "label": "arm stretch + host stretch + crossover in-plane shear",
+            "members": [
+                "arm axial",
+                "host segment axial",
+                "root crossover in-plane"
+            ],
+            "memberStiffnesses": [
+                134.731424,
+                101.102941,
+                64.7058824
+            ],
+            "stiffness": 30.5179246,
+            "thermalAmplitude": 0.368404368
+        }
+    ],
+    "criteria": [
+        {
+            "label": "oxDNA2's coaxial-stacking hard cutoff",
+            "requiredGap": 0.51108,
+            "requiredBasePairs": 2,
+            "closureStiffness": 0.0,
+            "occupancy": -1.0,
+            "adopted": false,
+            "flag": "CITED, READ DIRECTLY (via C-0079)",
+            "note": "a nominal-position range criterion: beyond it the simulation potential is zero"
+        },
+        {
+            "label": "the stacked separation plus one axial thermal sigma",
+            "requiredGap": 0.608506987,
+            "requiredBasePairs": 2,
+            "closureStiffness": 0.0,
+            "occupancy": -1.0,
+            "adopted": false,
+            "flag": "DERIVED",
+            "note": "C-0072's floor 3 read as a closure amplitude rather than as a tolerance"
+        },
+        {
+            "label": "the all-atom PMF's repulsive onset",
+            "requiredGap": 1.3,
+            "requiredBasePairs": 4,
+            "closureStiffness": 0.0,
+            "occupancy": -1.0,
+            "adopted": false,
+            "flag": "CITED, READ DIRECTLY (via C-0079)",
+            "note": "the generous end of the measured range; still a nominal-position criterion"
+        },
+        {
+            "label": "the elastic price of closing exceeds the bond, stiff closure",
+            "requiredGap": 1.13614724,
+            "requiredBasePairs": 4,
+            "closureStiffness": 57.7597892,
+            "occupancy": 1.0,
+            "adopted": true,
+            "flag": "DERIVED",
+            "note": "the balance with C-0009's constructed crossover spring left out"
+        },
+        {
+            "label": "the elastic price of closing exceeds the bond, soft closure",
+            "requiredGap": 1.43501839,
+            "requiredBasePairs": 5,
+            "closureStiffness": 30.5179246,
+            "occupancy": 1.0,
+            "adopted": true,
+            "flag": "DERIVED",
+            "note": "the same balance on the softest path the design offers"
+        },
+        {
+            "label": "the stacked state held below one per cent, stiff closure",
+            "requiredGap": 1.47789932,
+            "requiredBasePairs": 5,
+            "closureStiffness": 57.7597892,
+            "occupancy": 0.01,
+            "adopted": true,
+            "flag": "DERIVED",
+            "note": "a suppression rather than a parity"
+        },
+        {
+            "label": "the stacked state held below one per cent, soft closure",
+            "requiredGap": 1.90517925,
+            "requiredBasePairs": 6,
+            "closureStiffness": 30.5179246,
+            "occupancy": 0.01,
+            "adopted": true,
+            "flag": "DERIVED",
+            "note": "THE ADOPTED CRITERION — the largest of the physically calibrated set"
+        }
+    ],
+    "candidates": [
+        {
+            "clearanceBasePairs": 1,
+            "clearance": 0.34,
+            "budget": 10.54,
+            "margin": 2.37560917,
+            "marginBasePairs": 7,
+            "marginOverPublished": 92.7639928,
+            "endFactorCeiling": 4.99107188,
+            "endFactorHeadroom": 2.13142535,
+            "tipRestraintCeiling": 1000000.0,
+            "tipHeadroom": 12781.9549,
+            "rootRestraintCeiling": 90.6218296,
+            "rootHeadroom": 6.69813523,
+            "closureWorkInThermalUnits": 0.0,
+            "stackOccupancy": 82.3977318,
+            "suppressesTheStack": false,
+            "placedOf34": 34,
+            "levelsRequired": 1,
+            "rigidRootArmPlaces": true,
+            "midspanFlexurePlaces": false,
+            "thirtyRootCeiling": 10.71,
+            "fortyFiveArmsPlaced": 43
+        },
+        {
+            "clearanceBasePairs": 2,
+            "clearance": 0.68,
+            "budget": 10.2,
+            "margin": 2.03560917,
+            "marginBasePairs": 6,
+            "marginOverPublished": 79.4875002,
+            "endFactorCeiling": 4.52347826,
+            "endFactorHeadroom": 1.93174061,
+            "tipRestraintCeiling": 9284.57081,
+            "tipHeadroom": 118.674965,
+            "rootRestraintCeiling": 69.9195766,
+            "rootHeadroom": 5.1679687,
+            "closureWorkInThermalUnits": 0.424069444,
+            "stackOccupancy": 53.919299,
+            "suppressesTheStack": false,
+            "placedOf34": 34,
+            "levelsRequired": 1,
+            "rigidRootArmPlaces": true,
+            "midspanFlexurePlaces": false,
+            "thirtyRootCeiling": 10.54,
+            "fortyFiveArmsPlaced": 43
+        },
+        {
+            "clearanceBasePairs": 3,
+            "clearance": 1.02,
+            "budget": 9.86,
+            "margin": 1.69560917,
+            "marginBasePairs": 5,
+            "marginOverPublished": 66.2110076,
+            "endFactorCeiling": 4.08604116,
+            "endFactorHeadroom": 1.74493414,
+            "tipRestraintCeiling": 599.68885,
+            "tipHeadroom": 7.66519583,
+            "rootRestraintCeiling": 54.6665501,
+            "rootHeadroom": 4.04057109,
+            "closureWorkInThermalUnits": 1.69987943,
+            "stackOccupancy": 15.0545231,
+            "suppressesTheStack": false,
+            "placedOf34": 34,
+            "levelsRequired": 1,
+            "rigidRootArmPlaces": true,
+            "midspanFlexurePlaces": false,
+            "thirtyRootCeiling": 10.37,
+            "fortyFiveArmsPlaced": 43
+        },
+        {
+            "clearanceBasePairs": 4,
+            "clearance": 1.36,
+            "budget": 9.52,
+            "margin": 1.35560917,
+            "marginBasePairs": 4,
+            "marginOverPublished": 52.9345151,
+            "endFactorCeiling": 3.67775536,
+            "endFactorHeadroom": 1.57057666,
+            "tipRestraintCeiling": 294.931699,
+            "tipHeadroom": 3.76980367,
+            "rootRestraintCeiling": 42.8898015,
+            "rootHeadroom": 3.17011576,
+            "closureWorkInThermalUnits": 3.82743186,
+            "stackOccupancy": 1.79342294,
+            "suppressesTheStack": false,
+            "placedOf34": 34,
+            "levelsRequired": 1,
+            "rigidRootArmPlaces": true,
+            "midspanFlexurePlaces": false,
+            "thirtyRootCeiling": 10.2,
+            "fortyFiveArmsPlaced": 43
+        },
+        {
+            "clearanceBasePairs": 5,
+            "clearance": 1.7,
+            "budget": 9.18,
+            "margin": 1.01560917,
+            "marginBasePairs": 3,
+            "marginOverPublished": 39.6580225,
+            "endFactorCeiling": 3.29761565,
+            "endFactorHeadroom": 1.40823891,
+            "tipRestraintCeiling": 188.23077,
+            "tipHeadroom": 2.40595721,
+            "rootRestraintCeiling": 33.4613537,
+            "rootHeadroom": 2.47323049,
+            "closureWorkInThermalUnits": 6.80672674,
+            "stackOccupancy": 0.0911572878,
+            "suppressesTheStack": false,
+            "placedOf34": 34,
+            "levelsRequired": 1,
+            "rigidRootArmPlaces": false,
+            "midspanFlexurePlaces": false,
+            "thirtyRootCeiling": 10.03,
+            "fortyFiveArmsPlaced": 43
+        },
+        {
+            "clearanceBasePairs": 6,
+            "clearance": 2.04,
+            "budget": 8.84,
+            "margin": 0.675609173,
+            "marginBasePairs": 2,
+            "marginOverPublished": 26.3815299,
+            "endFactorCeiling": 2.94461681,
+            "endFactorHeadroom": 1.25749159,
+            "tipRestraintCeiling": 133.687281,
+            "tipHeadroom": 1.7087848,
+            "rootRestraintCeiling": 25.6890012,
+            "rootHeadroom": 1.89875226,
+            "closureWorkInThermalUnits": 10.6377641,
+            "stackOccupancy": 0.00197693788,
+            "suppressesTheStack": true,
+            "placedOf34": 34,
+            "levelsRequired": 1,
+            "rigidRootArmPlaces": false,
+            "midspanFlexurePlaces": false,
+            "thirtyRootCeiling": 9.86,
+            "fortyFiveArmsPlaced": 43
+        },
+        {
+            "clearanceBasePairs": 7,
+            "clearance": 2.38,
+            "budget": 8.5,
+            "margin": 0.335609173,
+            "marginBasePairs": 1,
+            "marginOverPublished": 13.1050373,
+            "endFactorCeiling": 2.61775362,
+            "endFactorHeadroom": 1.11790545,
+            "tipRestraintCeiling": 100.450707,
+            "tipHeadroom": 1.2839564,
+            "rootRestraintCeiling": 19.12373,
+            "rootHeadroom": 1.41349309,
+            "closureWorkInThermalUnits": 15.3205438,
+            "stackOccupancy": 1.82931126E-5,
+            "suppressesTheStack": true,
+            "placedOf34": 34,
+            "levelsRequired": 1,
+            "rigidRootArmPlaces": false,
+            "midspanFlexurePlaces": false,
+            "thirtyRootCeiling": 9.69,
+            "fortyFiveArmsPlaced": 43
+        },
+        {
+            "clearanceBasePairs": 8,
+            "clearance": 2.72,
+            "budget": 8.16,
+            "margin": -0.00439082663,
+            "marginBasePairs": 0,
+            "marginOverPublished": -0.171455227,
+            "endFactorCeiling": 2.31602087,
+            "endFactorHeadroom": 0.989051193,
+            "tipRestraintCeiling": 77.9913971,
+            "tipHeadroom": 0.99688252,
+            "rootRestraintCeiling": 13.4610559,
+            "rootHeadroom": 0.994947611,
+            "closureWorkInThermalUnits": 20.8550661,
+            "stackOccupancy": 7.22229369E-8,
+            "suppressesTheStack": true,
+            "placedOf34": 30,
+            "levelsRequired": 2,
+            "rigidRootArmPlaces": false,
+            "midspanFlexurePlaces": false,
+            "thirtyRootCeiling": 9.52,
+            "fortyFiveArmsPlaced": 43
+        }
+    ],
+    "lattice": [
+        {
+            "quantity": "the upward root pitch",
+            "nanometres": 10.88,
+            "basePairs": 32.0,
+            "onTheLattice": true,
+            "note": "32 bp by construction (C-0055)"
+        },
+        {
+            "quantity": "C-0053's standing collinear allowance",
+            "nanometres": 2.69,
+            "basePairs": 7.91176471,
+            "onTheLattice": false,
+            "note": "a TRANSVERSE SAXS lattice constant, 7.912 rises — off the axial lattice entirely"
+        },
+        {
+            "quantity": "C-0055/C-0063's arm",
+            "nanometres": 8.16439083,
+            "basePairs": 24.0129142,
+            "onTheLattice": false,
+            "note": "an elastica root, 24.013 rises — buildable at 24 bp, which is 0.16 % STIFFER than the mandate and therefore on the safe side of C-0017's equality"
+        },
+        {
+            "quantity": "the published Q5 margin",
+            "nanometres": 0.0256091734,
+            "basePairs": 0.0753210981,
+            "onTheLattice": false,
+            "note": "0.075 of a rise: the residue of the two off-lattice terms above"
+        },
+        {
+            "quantity": "the recommended clearance",
+            "nanometres": 2.04,
+            "basePairs": 6.0,
+            "onTheLattice": true,
+            "note": "an integer by construction"
+        },
+        {
+            "quantity": "the buildable margin at the recommendation",
+            "nanometres": 0.68,
+            "basePairs": 2.0,
+            "onTheLattice": true,
+            "note": "an integer count of rises, and therefore QUOTABLE where 0.0256 nm was not"
+        }
+    ],
+    "designControls": [
+        {
+            "control": "distance — the collinear clearance itself",
+            "available": true,
+            "flag": "DERIVED here",
+            "evidence": "the only control that does not spend a strand terminus, and the one this task sets"
+        },
+        {
+            "control": "omit the terminal staple, leaving unstructured scaffold",
+            "available": false,
+            "flag": "CITED, READ DIRECTLY (Rothemund 2006 SI Note S5.7, via gpd/data/T-139-*)",
+            "evidence": "\"the staple strands along the edges of a shape may be simply left out\" — unavailable at the arm's TIP, whose terminal base pair IS C-0034's A2 joint"
+        },
+        {
+            "control": "a 4-T hairpin loop on the terminal staple",
+            "available": false,
+            "flag": "CITED, READ DIRECTLY (Rothemund 2006, Nature 440:297, main text)",
+            "evidence": "\"stacked chains of 3-5 rectangles still formed, but 30% of rectangles occurred as monomers\" — PARTIAL even where it is available, and it needs a strand terminus C-0029's counting theorem has already spent"
+        },
+        {
+            "control": "a 4-T tail on the terminal staple",
+            "available": false,
+            "flag": "CITED, READ DIRECTLY (Rothemund 2006 SI Note S5.7)",
+            "evidence": "same terminus conflict; recoverable only by breaking a staple one base pair inboard, which is a nick (C-0025: a single nick is a clamp) and an 8 bp domain hazard (Ke et al., via CLAUDE.md)"
+        },
+        {
+            "control": "helical phase / azimuthal registration of the two faces",
+            "available": false,
+            "flag": "NOT FOUND — no source read quantifies the phase dependence of a blunt-end stack",
+            "evidence": "Woo & Rothemund's own SI: \"it is difficult to predict the exact structure and stacking configurations of the blunt-ends on the edges of origami\""
+        }
+    ],
+    "reproductions": [
+        {
+            "quantity": "C-0069's plan budget",
+            "source": "C-0069",
+            "published": 8.19,
+            "reproduced": 8.19,
+            "departure": 0.0
+        },
+        {
+            "quantity": "C-0069's Q5 margin",
+            "source": "C-0069/C-0066/C-0072",
+            "published": 0.02560917,
+            "reproduced": 0.0256091734,
+            "departure": 1.31542658E-7
+        },
+        {
+            "quantity": "C-0069's end-factor ceiling",
+            "source": "C-0069",
+            "published": 2.34165925,
+            "reproduced": 2.34165925,
+            "departure": 1.91133807E-9
+        },
+        {
+            "quantity": "C-0069's tip ceiling",
+            "source": "C-0069",
+            "published": 79.6781387,
+            "reproduced": 79.6781387,
+            "departure": 0.0
+        },
+        {
+            "quantity": "C-0069's root ceiling",
+            "source": "C-0069",
+            "published": 13.9303697,
+            "reproduced": 13.9303697,
+            "departure": 2.08556687E-9
+        },
+        {
+            "quantity": "C-0055/C-0063's arm",
+            "source": "C-0055/C-0039",
+            "published": 8.16439083,
+            "reproduced": 8.16439083,
+            "departure": 0.0
+        },
+        {
+            "quantity": "C-0053's 45-path arm",
+            "source": "C-0053",
+            "published": 9.131,
+            "reproduced": 9.1311565,
+            "departure": 1.71397538E-5
+        },
+        {
+            "quantity": "C-0053's placed arm count at 45 paths",
+            "source": "C-0053",
+            "published": 43.0,
+            "reproduced": 43.0,
+            "departure": 0.0
+        },
+        {
+            "quantity": "C-0074's 30-root plan ceiling",
+            "source": "C-0074",
+            "published": 9.535,
+            "reproduced": 9.535,
+            "departure": 0.0
+        },
+        {
+            "quantity": "CH-0081's rigid-root arm",
+            "source": "CH-0081/C-0069",
+            "published": 9.247,
+            "reproduced": 9.24698738,
+            "departure": 1.36467388E-6
+        },
+        {
+            "quantity": "C-0069's midspan floor",
+            "source": "C-0069",
+            "published": 22.4141917,
+            "reproduced": 22.4141917,
+            "departure": 0.0
+        },
+        {
+            "quantity": "C-0079's blunt-end stack",
+            "source": "C-0079/Woo & Rothemund",
+            "published": 4.4114,
+            "reproduced": 4.41155791,
+            "departure": 3.57959693E-5
+        },
+        {
+            "quantity": "C-0072's floor 1, the design quantum",
+            "source": "C-0072",
+            "published": 0.34,
+            "reproduced": 0.34,
+            "departure": 0.0
+        },
+        {
+            "quantity": "C-0072's floor 3, the axial thermal breathing",
+            "source": "C-0072",
+            "published": 0.26779,
+            "reproduced": 0.267786987,
+            "departure": 1.12513283E-5
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "the tip restraint ceiling at the recommended budget, resolution 1e-6 -> 1e-9",
+            "coarse": 133.687281,
+            "fine": 133.687364,
+            "departure": 8.27640179E-5
+        },
+        {
+            "quantity": "the arm at RK4 400 -> 800 steps",
+            "coarse": 8.16439083,
+            "fine": 8.16439083,
+            "departure": 0.0
+        },
+        {
+            "quantity": "the 30-root capacity ceiling, resolution 1e-6 -> 1e-9",
+            "coarse": 9.85999945,
+            "fine": 9.86,
+            "departure": 5.51808625E-7
+        }
+    ],
+    "predicates": [
+        {
+            "id": "P1",
+            "statement": "a collinear clearance quantised at the 0.34 nm rise is stated",
+            "met": true,
+            "evidence": "6 bp = 2.04 nm, the largest of four adopted energy criteria"
+        },
+        {
+            "id": "P2",
+            "statement": "the Q5 margin is re-read at it",
+            "met": true,
+            "evidence": "0.6756091733686969 nm against the published 0.02560917336869828 — 26.381529916716644x — and on the lattice it is 2 whole rises"
+        },
+        {
+            "id": "P3",
+            "statement": "the c <= 2.3416 joint window is re-read at it",
+            "met": true,
+            "evidence": "the end factor rises to 2.9446168115942033, the tip ceiling to 133.687281049788 (1.70878479537323x A2) and the root ceiling to 25.68900116183024 (1.8987522597874527x one crossover)"
+        },
+        {
+            "id": "P4",
+            "statement": "C-0053's plan budget and the placed counts are re-read at it",
+            "met": true,
+            "evidence": "34 of 34 at one level; C-0053's 45-arm count 43; C-0074's 30-root ceiling 9.860000000207297 nm"
+        },
+        {
+            "id": "P5",
+            "statement": "the requirement is stated as an energy against k_BT, not as a distance",
+            "met": true,
+            "evidence": "the elastic work to close the recommended gap is 10.637764065414105 k_BT against a 4.411557910339179 k_BT bond"
+        },
+        {
+            "id": "P6",
+            "statement": "what the design must CONTROL is named, not only how far apart to put things",
+            "met": true,
+            "evidence": "5 controls, of which 1 is available: the other four all spend a strand terminus C-0034's A2 has taken"
+        }
+    ],
+    "falsifiers": [
+        {
+            "id": "F1",
+            "falsifier": "the suppression criterion comes out ABOVE the standing 2.69 nm, so CH-0093 buys nothing",
+            "fired": false,
+            "outcome": "the loosest adopted criterion demands 1.9051792511880512 nm against 2.69"
+        },
+        {
+            "id": "F2",
+            "falsifier": "the recommended clearance leaves the margin at or below zero",
+            "fired": false,
+            "outcome": "0.6756091733686969 nm, 2 whole rises"
+        },
+        {
+            "id": "F3",
+            "falsifier": "the margin identity is NOT an integer multiple of the rise — some term cannot be built at a base-pair count",
+            "fired": false,
+            "outcome": "pitch 32 bp, arm 24 bp, clearance 6 bp; the buildable margin is 2 bp exactly, and the residue the 0.02561 nm consists of belongs to two off-lattice INPUTS"
+        },
+        {
+            "id": "F4",
+            "falsifier": "at the recommended budget one of Q5's two joints is still inside its ceiling by under 10 %",
+            "fired": false,
+            "outcome": "tip 1.70878479537323x (C-0069: 1.01844x), root 1.8987522597874527x (C-0069: 1.02964x)"
+        },
+        {
+            "id": "F5",
+            "falsifier": "the array stops placing 34 at one level, or C-0053's 45-arm count or C-0074's 30-root ceiling moves adversely",
+            "fired": false,
+            "outcome": "34 of 34 at one level; 45-arm 43 -> 43; 30-root 9.520000000114223 -> 9.860000000207297 nm"
+        }
+    ],
+    "findings": [
+        "THE MARGIN IS AN INTEGER, NOT A RESIDUE. A collinear gap is an AXIAL length between two duplex end faces, so it is quantised at the rise — and so are the other two terms: M = (32 - N_d - N_L) rises. The published 0.02561 nm is what is left over when a TRANSVERSE SAXS constant (7.912 rises) and an elastica root (24.013 rises) are subtracted from an integer pitch. On the lattice the standing design closes at EXACTLY zero.",
+        "THE CRITERION IS AN ENERGY AND THE GEOMETRY SUPPLIES IT. Both faces are covalently tethered to the same sheet at a fixed pitch, so a stacking bond costs the elastic work of closing the gap. Requiring that work to hold the stacked state below one per cent on the softest closure path gives 1.9051792511880512 nm, i.e. 6 rises.",
+        "THE RECOMMENDATION IS 6 BASE PAIRS = 2.04 nm, and the design as built carries 8 — so the requirement is met with 2 whole rises to spare, and that margin is quotable where 0.0256 nm was not.",
+        "THE JOINT WINDOW OPENS BY 1.2574915915807825x IN c AND THE TWO JOINTS GAIN REAL MARGIN: the tip ceiling goes 79.678 -> 133.687281049788 pN nm/rad (1.70878479537323x A2's 78.235, against C-0069's 1.018x) and the root ceiling 13.930 -> 25.68900116183024 (1.8987522597874527x one crossover's 13.529, against 1.030x). TWO of C-0071's four NONE bands close.",
+        "NOTHING IN THE PLACEMENT MOVES ADVERSELY: 34 of 34 at one level at every clearance from 1 to 7 rises, C-0053's 45-arm count 43 -> 43, C-0074's 30-root ceiling 9.520000000114223 -> 9.860000000207297 nm.",
+        "THE CONSERVATISM IS WHAT KEEPS CH-0081 STANDING. A rigid-rooted arm needs 9.246987380860645 nm and places at a clearance of 4 rises or fewer — so a design that adopted the LOOSEST end of the stacking range would reopen the truss branch that CH-0081 closed.",
+        "AND THE DISTANCE IS THE ONLY CONTROL THE DESIGN STILL OWNS. Rothemund's three measured anti-stacking remedies all need a strand TERMINUS, and C-0034's A2 joint has already spent both of the two a duplex end has (C-0029's counting theorem). The escape is a staple break one base pair inboard, which is a nick and an 8 bp domain — so the clearance is not a backup for the end chemistry here, it is the primary control.",
+        "C-0069's CENTRAL NEGATIVE IS UNTOUCHED. The two-support flexure family's floor is 22.414191687124024 nm against a BARE pitch of 10.88, so it is refused at a clearance of zero and no reading of this task reopens it."
+    ],
+    "parameters": {
+        "edgeX": 40.0,
+        "lengthY": 40.35,
+        "duplexes": 15.0,
+        "phase": 24.0,
+        "pathCount": 34.0,
+        "risePerBasePair": 0.34,
+        "rootPitch": 10.88,
+        "rootPitchBasePairs": 32.0,
+        "bodyWidth": 2.69,
+        "arm": 8.16439083,
+        "armBasePairs": 24.0,
+        "perPathStiffness": 0.980392157,
+        "standingBudget": 8.19,
+        "standingMargin": 0.0256091734,
+        "standingEndFactor": 2.34165925,
+        "recommendedBasePairs": 6.0,
+        "recommendedClearance": 2.04,
+        "recommendedBudget": 8.84,
+        "recommendedMargin": 0.675609173,
+        "recommendedMarginBasePairs": 2.0,
+        "recommendedEndFactor": 2.94461681,
+        "recommendedTipCeiling": 133.687281,
+        "recommendedRootCeiling": 25.6890012,
+        "stackFreeEnergyThermal": 4.41155791,
+        "stackFreeEnergy": 18.2724391,
+        "contactSeparation": 0.34072,
+        "softClosureStiffness": 30.5179246,
+        "stiffClosureStiffness": 57.7597892,
+        "crossoverInPlaneStiffness": 64.7058824,
+        "rigidRootArm": 9.24698738,
+        "midspanFloor": 22.4141917,
+        "armFor45Paths": 9.1311565,
+        "suppressedOccupancy": 0.01
+    }
+}

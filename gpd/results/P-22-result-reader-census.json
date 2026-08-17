@@ -2,12 +2,12 @@
   "task": "P-22",
   "claim": "C-0082",
   "what": "The reader graph over gpd/results/, derived from the Kotlin sources rather than grepped. A read is a result-file string literal in the argument list of a File(...) construction, propagated along top-level references; comments and prose strings are not reads. See tools/result-reader-census.py and CH-0092.",
-  "studyCount": 74,
+  "studyCount": 78,
   "helperCount": 2,
-  "resultFileCount": 76,
+  "resultFileCount": 79,
   "declaringStudyCount": 3,
   "transitiveEdgeCount": 20,
-  "directEdgeCount": 43,
+  "directEdgeCount": 48,
   "studies": {
     "HelloWorldApp.kt": {
       "reads": [],
@@ -162,6 +162,46 @@
         "structure/TilePositionalVarianceStudy.kt"
       ]
     },
+    "anchoring/CollinearClearanceStudy.kt": {
+      "reads": [
+        "T-125-upward-root-placement.json"
+      ],
+      "directReads": [
+        "T-125-upward-root-placement.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-152-collinear-clearance.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/CollinearClearance.kt",
+        "anchoring/CrossbarArrayPlacement.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/OutputElementPlacement.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/PlanTolerance.kt",
+        "anchoring/StandoffBaseJoint.kt",
+        "anchoring/TwoPerRowPlacement.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/TwoSpringElastica.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "electrostatics/DuplexPairSeparation.kt",
+        "electrostatics/Electrolyte.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
     "anchoring/CoupledStandoffJointStudy.kt": {
       "reads": [],
       "directReads": [],
@@ -173,6 +213,7 @@
         "Physics.kt",
         "anchoring/AnchorElement.kt",
         "anchoring/AnchorScheme.kt",
+        "anchoring/CollinearClearance.kt",
         "anchoring/CoupledStandoffJoint.kt",
         "anchoring/FlexureEndJoint.kt",
         "anchoring/StandoffBaseJoint.kt",
@@ -204,6 +245,7 @@
         "anchoring/AnchorElement.kt",
         "anchoring/AnchorScheme.kt",
         "anchoring/BackboneTorsion.kt",
+        "anchoring/CollinearClearance.kt",
         "anchoring/CoupledStandoffJoint.kt",
         "anchoring/CrossbarArrayPlacement.kt",
         "anchoring/CrossbarJunctionTrio.kt",
@@ -247,6 +289,7 @@
         "Physics.kt",
         "anchoring/AnchorElement.kt",
         "anchoring/AnchorScheme.kt",
+        "anchoring/CollinearClearance.kt",
         "anchoring/CoupledStandoffJoint.kt",
         "anchoring/CrossbarJunctionTrio.kt",
         "anchoring/FlexureEndJoint.kt",
@@ -277,6 +320,7 @@
         "anchoring/AnchorElement.kt",
         "anchoring/AnchorScheme.kt",
         "anchoring/BackboneTorsion.kt",
+        "anchoring/CollinearClearance.kt",
         "anchoring/CoupledStandoffJoint.kt",
         "anchoring/CrossbarJunctionTrio.kt",
         "anchoring/CrossbarTrioExistence.kt",
@@ -390,6 +434,7 @@
         "Physics.kt",
         "anchoring/AnchorElement.kt",
         "anchoring/AnchorScheme.kt",
+        "anchoring/CollinearClearance.kt",
         "anchoring/FlexureEndJoint.kt",
         "anchoring/FlexureMountingSense.kt",
         "anchoring/GuidedArmAnchorage.kt",
@@ -465,6 +510,7 @@
         "Physics.kt",
         "anchoring/AnchorElement.kt",
         "anchoring/AnchorScheme.kt",
+        "anchoring/CollinearClearance.kt",
         "anchoring/LateralConfinementBudget.kt",
         "anchoring/LayerCorrugation.kt",
         "anchoring/StandoffBaseJoint.kt",
@@ -488,6 +534,7 @@
         "Physics.kt",
         "anchoring/AnchorElement.kt",
         "anchoring/AnchorScheme.kt",
+        "anchoring/CollinearClearance.kt",
         "anchoring/CoupledStandoffJoint.kt",
         "anchoring/CrossbarArrayPlacement.kt",
         "anchoring/FlexureArrayPacking.kt",
@@ -521,6 +568,7 @@
         "Physics.kt",
         "anchoring/AnchorElement.kt",
         "anchoring/AnchorScheme.kt",
+        "anchoring/CollinearClearance.kt",
         "anchoring/CoupledStandoffJoint.kt",
         "anchoring/FlexureEndJoint.kt",
         "anchoring/PairedPerpendicularJunction.kt",
@@ -581,6 +629,7 @@
         "Physics.kt",
         "anchoring/AnchorElement.kt",
         "anchoring/AnchorScheme.kt",
+        "anchoring/CollinearClearance.kt",
         "anchoring/FlexureEndJoint.kt",
         "anchoring/FlexureMountingSense.kt",
         "anchoring/PerpendicularJunction.kt",
@@ -614,6 +663,7 @@
         "anchoring/AnchorElement.kt",
         "anchoring/AnchorScheme.kt",
         "anchoring/BackboneTorsion.kt",
+        "anchoring/CollinearClearance.kt",
         "anchoring/CoupledStandoffJoint.kt",
         "anchoring/CrossbarArrayPlacement.kt",
         "anchoring/CrossbarJunctionTrio.kt",
@@ -654,6 +704,7 @@
         "anchoring/AnchorElement.kt",
         "anchoring/AnchorScheme.kt",
         "anchoring/BackboneTorsion.kt",
+        "anchoring/CollinearClearance.kt",
         "anchoring/CoupledStandoffJoint.kt",
         "anchoring/CrossbarArrayPlacement.kt",
         "anchoring/CrossbarJunctionTrio.kt",
@@ -732,6 +783,28 @@
         "structure/TilePositionalVarianceStudy.kt"
       ]
     },
+    "anchoring/ScaffoldRoutingStudy.kt": {
+      "reads": [
+        "T-125-upward-root-placement.json"
+      ],
+      "directReads": [
+        "T-125-upward-root-placement.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-151-scaffold-routing.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "anchoring/AnchorElement.kt",
+        "anchoring/ScaffoldRouting.kt",
+        "anchoring/SeamWeave.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/WeaveExclusionWidth.kt",
+        "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
     "anchoring/SeamWeaveStudy.kt": {
       "reads": [
         "T-125-upward-root-placement.json"
@@ -787,6 +860,7 @@
         "anchoring/AnchorElement.kt",
         "anchoring/AnchorScheme.kt",
         "anchoring/BackboneTorsion.kt",
+        "anchoring/CollinearClearance.kt",
         "anchoring/CoupledStandoffJoint.kt",
         "anchoring/CrossbarJunctionTrio.kt",
         "anchoring/FlexureEndJoint.kt",
@@ -815,6 +889,7 @@
         "Physics.kt",
         "anchoring/AnchorElement.kt",
         "anchoring/AnchorScheme.kt",
+        "anchoring/CollinearClearance.kt",
         "anchoring/CoupledStandoffJoint.kt",
         "anchoring/FlexureEndJoint.kt",
         "anchoring/PerpendicularJunction.kt",
@@ -839,6 +914,7 @@
         "Physics.kt",
         "anchoring/AnchorElement.kt",
         "anchoring/AnchorScheme.kt",
+        "anchoring/CollinearClearance.kt",
         "anchoring/CoupledStandoffJoint.kt",
         "anchoring/FlexureEndJoint.kt",
         "anchoring/PairedPerpendicularJunction.kt",
@@ -945,6 +1021,7 @@
         "Physics.kt",
         "anchoring/AnchorElement.kt",
         "anchoring/AnchorScheme.kt",
+        "anchoring/CollinearClearance.kt",
         "anchoring/FlexureCountHingeTrade.kt",
         "anchoring/FlexureEndJoint.kt",
         "anchoring/FlexureMountingSense.kt",
@@ -1411,6 +1488,42 @@
         "structure/TilePositionalVarianceStudy.kt"
       ]
     },
+    "coupling/StapleDropoutStudy.kt": {
+      "reads": [
+        "T-125-upward-root-placement.json",
+        "T-136-two-per-row-placement.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-125-upward-root-placement.json",
+        "T-136-two-per-row-placement.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-148-staple-dropout.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/BuildableStiffnessRatio.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/RobustDistribution.kt",
+        "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
     "crossover/ConcentratedCrossoverStudy.kt": {
       "reads": [
         "T-4-maximum-usable-bias.json"
@@ -1609,6 +1722,43 @@
         "poroelastic/DrainageResponse.kt",
         "poroelastic/LayerPermeability.kt",
         "poroelastic/Water.kt"
+      ]
+    },
+    "stability/RecommendedElementFoldStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-149-recommended-element-fold.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "actuator/ActuatorForceBalance.kt",
+        "actuator/ActuatorGeometry.kt",
+        "actuator/ActuatorResultRounding.kt",
+        "actuator/ElectrostaticForceCurve.kt",
+        "actuator/PullInStability.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/FlexureEndJoint.kt",
+        "anchoring/GuidedArmAnchorage.kt",
+        "anchoring/PerpendicularJunction.kt",
+        "anchoring/TwoSidedCoupling.kt",
+        "anchoring/TwoSpringElastica.kt",
+        "brush/BrushCompression.kt",
+        "brush/GraftedLayer.kt",
+        "brush/InteractionFreeEnergy.kt",
+        "brush/PolymerBrush.kt",
+        "electrostatics/ConfinedGap.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PoissonBoltzmannGap.kt",
+        "material/MolecularGeometry.kt",
+        "material/OsmoticEquationOfState.kt",
+        "material/PegWater.kt",
+        "stability/RecommendedElementFold.kt",
+        "stability/SofteningCouplingStability.kt",
+        "structure/Gen1Tile.kt",
+        "structure/TilePositionalVarianceStudy.kt"
       ]
     },
     "stability/SofteningCouplingStabilityStudy.kt": {
@@ -2366,15 +2516,18 @@
     ],
     "T-125-upward-root-placement.json": [
       "anchoring/ArmSlabClearanceStudy.kt",
+      "anchoring/CollinearClearanceStudy.kt",
       "anchoring/CrossbarArrayPlacementStudy.kt",
       "anchoring/OutputElementPlacementStudy.kt",
       "anchoring/PathCountConsistencyStudy.kt",
       "anchoring/PinnedLegBudgetStudy.kt",
       "anchoring/PlanToleranceStudy.kt",
       "anchoring/RangeRobustPlacementStudy.kt",
+      "anchoring/ScaffoldRoutingStudy.kt",
       "anchoring/SeamWeaveStudy.kt",
       "anchoring/TwoPerRowPlacementStudy.kt",
       "anchoring/WeaveExclusionWidthStudy.kt",
+      "coupling/StapleDropoutStudy.kt",
       "electrostatics/DuplexPairSeparationStudy.kt"
     ],
     "T-127-crossbar-trio-existence.json": [
@@ -2391,7 +2544,8 @@
       "anchoring/PinnedLegBudgetStudy.kt"
     ],
     "T-136-two-per-row-placement.json": [
-      "anchoring/PathCountConsistencyStudy.kt"
+      "anchoring/PathCountConsistencyStudy.kt",
+      "coupling/StapleDropoutStudy.kt"
     ],
     "T-14-crossover-phase-and-registration.json": [
       "window/DesignWindowStudy.kt",
@@ -2434,6 +2588,7 @@
       "coupling/OneRowPerDuplexStudy.kt",
       "coupling/RobustDistributionStudy.kt",
       "coupling/SingleColumnFlatnessStudy.kt",
+      "coupling/StapleDropoutStudy.kt",
       "structure/ConnectivityCeilingPlateStudy.kt",
       "structure/ConsumedCrossoverSheetStudy.kt",
       "structure/StackedArmSheetStudy.kt",
@@ -2620,8 +2775,20 @@
     "T-140-seam-weave-congruence.json": [
       "anchoring/SeamWeaveStudy.kt"
     ],
+    "T-148-staple-dropout.json": [
+      "coupling/StapleDropoutStudy.kt"
+    ],
+    "T-149-recommended-element-fold.json": [
+      "stability/RecommendedElementFoldStudy.kt"
+    ],
     "T-15-in-plane-shear-lag.json": [
       "structure/InPlaneLoadPathStudy.kt"
+    ],
+    "T-151-scaffold-routing.json": [
+      "anchoring/ScaffoldRoutingStudy.kt"
+    ],
+    "T-152-collinear-clearance.json": [
+      "anchoring/CollinearClearanceStudy.kt"
     ],
     "T-16-output-coupling-stiffness.json": [
       "coupling/OutputCouplingStudy.kt"
@@ -2770,7 +2937,10 @@
     "T-14-crossover-phase-and-registration.json",
     "T-140-seam-weave-congruence.json",
     "T-147-third-answers-synthesis.json",
+    "T-149-recommended-element-fold.json",
     "T-15-in-plane-shear-lag.json",
+    "T-151-scaffold-routing.json",
+    "T-152-collinear-clearance.json",
     "T-16-output-coupling-stiffness.json",
     "T-17-one-row-per-duplex.json",
     "T-19-attachment-entry-topology.json",
@@ -2821,9 +2991,11 @@
         "actuator/MaximumUsableBiasStudy.kt",
         "actuator/StrokeAndBlockingForceStudy.kt",
         "crossover/ConcentratedCrossoverStudy.kt",
+        "stability/RecommendedElementFoldStudy.kt",
         "stability/SofteningCouplingStabilityStudy.kt"
       ],
       "emits": [
+        "T-149-recommended-element-fold.json",
         "T-21-concentrated-crossover.json",
         "T-3-stroke-and-blocking-force.json",
         "T-4-maximum-usable-bias.json",
@@ -2875,6 +3047,7 @@
       "studies": [
         "anchoring/ArmSlabClearanceStudy.kt",
         "anchoring/BackboneTorsionStudy.kt",
+        "anchoring/CollinearClearanceStudy.kt",
         "anchoring/CoupledStandoffJointStudy.kt",
         "anchoring/CrossbarArrayPlacementStudy.kt",
         "anchoring/CrossbarJunctionTrioStudy.kt",
@@ -2894,6 +3067,7 @@
         "anchoring/PinnedLegBudgetStudy.kt",
         "anchoring/PlanToleranceStudy.kt",
         "anchoring/RangeRobustPlacementStudy.kt",
+        "anchoring/ScaffoldRoutingStudy.kt",
         "anchoring/SeamWeaveStudy.kt",
         "anchoring/StandoffBaseJointStudy.kt",
         "anchoring/TorsionFeasibleRoutingStudy.kt",
@@ -2910,6 +3084,7 @@
         "brush/FirstMomentConventionStudy.kt",
         "brush/FluctuationCorrectionStudy.kt",
         "brush/ScfDensityProfileStudy.kt",
+        "coupling/StapleDropoutStudy.kt",
         "electrostatics/DuplexPairSeparationStudy.kt",
         "electrostatics/NonlinearPbProfileStudy.kt",
         "electrostatics/TileEdgeLoadProfileStudy.kt",
@@ -2955,7 +3130,10 @@
         "T-139-duplex-pair-separation.json",
         "T-14-crossover-phase-and-registration.json",
         "T-140-seam-weave-congruence.json",
+        "T-148-staple-dropout.json",
         "T-15-in-plane-shear-lag.json",
+        "T-151-scaffold-routing.json",
+        "T-152-collinear-clearance.json",
         "T-19-attachment-entry-topology.json",
         "T-1d-scf-density-profile.json",
         "T-1e-first-moment-convention.json",

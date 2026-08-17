@@ -1,0 +1,700 @@
+
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.4 20241031//EN" "JATS-archivearticle1-4-mathml3.dtd">
+<article id="smtd202401343" xml:lang="en" article-type="research-article" dtd-version="1.4"><?da-xref-anchor-style autodetect?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Small Methods</journal-id><journal-id journal-id-type="iso-abbrev">Small Methods</journal-id><journal-id journal-id-type="pmc-domain-id">379</journal-id><journal-id journal-id-type="pmc-domain">blackwellopen</journal-id><journal-id journal-id-type="nlm-id">101724536</journal-id><journal-id journal-id-type="publisher-id">SMTD</journal-id><journal-title-group><journal-title>Small Methods</journal-title></journal-title-group><issn pub-type="epub">2366-9608</issn><?publisher_abbrev blackwell?><custom-meta-group><custom-meta><meta-name>pmc-is-collection-domain</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-collection-title</meta-name><meta-value>Wiley Open Access Collection</meta-value></custom-meta></custom-meta-group></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC12182888</article-id><article-id pub-id-type="pmcid-ver">PMC12182888.1</article-id><article-id pub-id-type="pmcaid">12182888</article-id><article-id pub-id-type="pmcaiid">12182888</article-id><article-id pub-id-type="pmid">39901641</article-id><article-id pub-id-type="doi">10.1002/smtd.202401343</article-id><article-id pub-id-type="publisher-id">SMTD202401343</article-id><article-version article-version-type="pmc-version">1</article-version><article-categories><subj-group subj-group-type="overline"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Research Article</subject></subj-group></article-categories><title-group><article-title>Folding Competition and Dynamic Transformation in DNA Origami: Parallel Versus Antiparallel Crossovers</article-title></title-group><contrib-group><contrib id="smtd202401343-cr-0001" contrib-type="author"><name name-style="western"><surname>Lee</surname><given-names initials="JY">Jung Yeon</given-names></name><xref rid="smtd202401343-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="smtd202401343-cr-0002" contrib-type="author"><name name-style="western"><surname>Yang</surname><given-names initials="Q">Qi</given-names></name><xref rid="smtd202401343-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="smtd202401343-cr-0003" contrib-type="author"><name name-style="western"><surname>Chang</surname><given-names initials="X">Xu</given-names></name><xref rid="smtd202401343-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="smtd202401343-cr-0004" contrib-type="author"><name name-style="western"><surname>Perumal</surname><given-names initials="D">Devanathan</given-names></name><xref rid="smtd202401343-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="smtd202401343-cr-0005" contrib-type="author" corresp="yes"><name name-style="western"><surname>Zhang</surname><given-names initials="F">Fei</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-3177-7547</contrib-id><xref rid="smtd202401343-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><address><email>fei.zhang@rutgers.edu</email></address></contrib></contrib-group><aff id="smtd202401343-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Department of Chemistry</named-content>
+<institution>Rutgers University</institution>
+<city>Newark</city>
+<named-content content-type="country-part">NJ</named-content>
+<postal-code>07102</postal-code>
+<country country="US">USA</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>E‐mail: <email>fei.zhang@rutgers.edu</email>
+<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>03</day><month>2</month><year>2025</year></pub-date><pub-date pub-type="ppub"><day>20</day><month>6</month><year>2025</year></pub-date><volume>9</volume><issue seq="300">6</issue><issue-id pub-id-type="pmc-issue-id">491178</issue-id><issue-id pub-id-type="doi">10.1002/smtd.v9.6</issue-id><issue-title content-type="special-issue-title">Special Issue: Nucleic Acid Nanotechnology</issue-title><elocation-id>2401343</elocation-id><history>
+<date date-type="rev-recd"><day>05</day><month>1</month><year>2025</year></date>
+<date date-type="received"><day>23</day><month>8</month><year>2024</year></date>
+</history><pub-history><event event-type="pmc-release"><date><day>22</day><month>06</month><year>2025</year></date></event><event event-type="pmc-live"><date><day>23</day><month>06</month><year>2025</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2025-06-23 16:25:26.067"><day>23</day><month>06</month><year>2025</year></date></event></pub-history><permissions><copyright-statement content-type="article-copyright">© 2025 The Author(s). Small Methods published by Wiley‐VCH GmbH</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbyncndlicense">https://creativecommons.org/licenses/by-nc-nd/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by-nc-nd/4.0/">http://creativecommons.org/licenses/by-nc-nd/4.0/</ext-link> License, which permits use and distribution in any medium, provided the original work is properly cited, the use is non‐commercial and no modifications or adaptations are made.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="SMTD-9-2401343.pdf"><?pdf-name SMTD-9-2401343.pdf?><?pdf-size 2535328?><?pdf-md5 f6ccbf727b83797b6ffe2d7fe478e4be?><?pdf-image-server-status NEVER_LOAD?><?pdf-cloudpmc-urn urn:app:7687/12182888/f6ccbf727b83/SMTD-9-2401343.pdf?></self-uri><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pdf" xlink:href="file:SMTD-9-2401343.pdf"/><abstract><title>Abstract</title><p>DNA is a versatile abiomaterial for constructing nanostructures with biomedical and biotechnological applications. Among the methods available, DNA origami is a robust and widely recognized technique. Traditionally, most origami designs adopt antiparallel crossovers in both scaffold and staple strands, with less emphasis on parallel crossovers, which offer advantages like enhanced nuclease resistance and single‐strand routing potential. Here, a DNA origami nanostructure is designed, featuring two rotational panels that can be locked into configurations based on either antiparallel or parallel crossovers. By systematically varying the length and arrangement of these key staples, 36 pairs of antiparallel and parallel designs are studied in competitive folding tests, providing insights into the relative preference for each design. The 12 antiparallel and parallel designs are ranked, their folding pathways are examined, and nuclease resistance is assessed. The results reveal that the arrangement of staples near the central scaffold crossover is crucial for shifting between parallel and antiparallel conformations. Additionally, a two‐way isothermal transformation between antiparallel and parallel origami driven by toehold‐mediated displacement reactions is demonstrated, highlighting the potential of parallel designs as dynamic nanodevices for temperature‐sensitive environments. This study offers valuable insights into ‐ dynamics in antiparallel and parallel DNA origami, opening opportunities for designing  nanodevices based on parallel crossovers.</p></abstract><abstract id="smtd202401343-abs-0001" abstract-type="graphical"><p>This dynamic DNA origami features two rotational panels that can be designed into two major configurations using either antiparallel crossovers (AX) or parallel crossovers (PX). Through competitive folding processes, 36 pairs of designs with different key staples are studied, and a bidirectional isothermal transformation is demonstrated, providing insights for designing temperature‐sensitive dynamic DNA nanodevices leveraging PX configurations.
+<boxed-text position="anchor" content-type="graphic" orientation="portrait"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-1" orientation="portrait" xlink:href="SMTD-9-2401343-g003.jpg"><?image-name SMTD-9-2401343-g003.jpg?><?image-size 13542?><?image-md5 295c9e79fa270f5dd7b27563e52f39f9?><?image-image-server-status NEVER_LOAD?><?image-original-height 179?><?image-original-width 180?><?image-scaled-height 179?><?image-scaled-width 180?><?image-cloudpmc-urn urn:cdn:blobs/7687/12182888/295c9e79fa27/SMTD-9-2401343-g003.jpg?></graphic></boxed-text>
+</p></abstract><kwd-group kwd-group-type="author-generated"><kwd id="smtd202401343-kwd-0001">antiparallel crossovers</kwd><kwd id="smtd202401343-kwd-0002">dynamic origami transformation</kwd><kwd id="smtd202401343-kwd-0003">origami folding competition</kwd><kwd id="smtd202401343-kwd-0004">origami folding pathway</kwd><kwd id="smtd202401343-kwd-0005">parallel crossovers</kwd></kwd-group><funding-group><award-group id="funding-0001"><funding-source><institution-wrap><institution>US National Science Foundation
+</institution><institution-id institution-id-type="doi">10.13039/100000001</institution-id></institution-wrap></funding-source></award-group><award-group id="funding-0002"><funding-source>Faculty Early Career Development Award</funding-source><award-id>DMR‐2046835</award-id></award-group><award-group id="funding-0003"><funding-source><institution-wrap><institution>Division of Materials Research
+</institution><institution-id institution-id-type="doi">10.13039/100000078</institution-id></institution-wrap></funding-source><award-id>2046835</award-id></award-group></funding-group><counts><fig-count count="6"/><table-count count="0"/><page-count count="8"/><word-count count="5083"/></counts><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY-NC-ND</meta-value></custom-meta><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>June 20, 2025</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.5.7 mode:remove_FC converted:22.06.2025</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="smtd202401343-cit-0001">
+<string-name name-style="western">
+<given-names>J. Y.</given-names>
+<surname>Lee</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Yang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Chang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Perumal</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Zhang</surname>
+</string-name>, <article-title>Folding Competition and Dynamic Transformation in DNA Origami: Parallel Versus Antiparallel Crossovers</article-title>. <source>Small Methods</source>
+<year>2025</year>, <volume>9</volume>, <elocation-id>2401343</elocation-id>. <pub-id pub-id-type="doi">10.1002/smtd.202401343</pub-id>
+<pub-id pub-id-type="pmcid">PMC12182888</pub-id><pub-id pub-id-type="pmid">39901641</pub-id></mixed-citation>
+</p></notes></front><body><sec id="smtd202401343-sec-0010"><label>1</label><title>Introduction</title><p>For the past several decades, DNA has proven to be an exceptional biomaterial, characterized by its biocompatible, biodegradable, and highly programmable properties.<sup>[</sup>
+<xref rid="smtd202401343-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref>
+<sup>]</sup> These features enable the creation of nanostructures with user‐defined shapes and sizes, displaying fully addressable surfaces for precise site‐specific conjugation of guest molecules. DNA's versatile properties make it useful for various applications in biomedical and biotechnological fields.<sup>[</sup>
+<xref rid="smtd202401343-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref>, <xref rid="smtd202401343-bib-0003" ref-type="bibr">
+<sup>3</sup>
+</xref>, <xref rid="smtd202401343-bib-0004" ref-type="bibr">
+<sup>4</sup>
+</xref>, <xref rid="smtd202401343-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref>, <xref rid="smtd202401343-bib-0006" ref-type="bibr">
+<sup>6</sup>
+</xref>, <xref rid="smtd202401343-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref>
+<sup>]</sup> One widely used technique for creating DNA nanostructures is DNA origami,<sup>[</sup>
+<xref rid="smtd202401343-bib-0008" ref-type="bibr">
+<sup>8</sup>
+</xref>
+<sup>]</sup> in which a long single‐stranded DNA scaffold is glued together by hundreds of short‐staple strands into a target structure through a thermal annealing process. In most traditional origami nanostructures, all scaffold and staple strands are arranged based on antiparallel crossovers (AX). Its counterpart, parallel crossovers (PX), are underdeveloped in DNA origami systems due to its topological complexity<sup>[</sup>
+<xref rid="smtd202401343-bib-0009" ref-type="bibr">
+<sup>9</sup>
+</xref>, <xref rid="smtd202401343-bib-0010" ref-type="bibr">
+<sup>10</sup>
+</xref>, <xref rid="smtd202401343-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>
+<sup>]</sup> and therefore more challenging to assemble. Only a few studies explored PX‐based origami, including those focusing on paranemic crossover‐based single‐strand routing<sup>[</sup>
+<xref rid="smtd202401343-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>
+<sup>]</sup> and unidirectional scaffold routing with partial parallel crossovers.<sup>[</sup>
+<xref rid="smtd202401343-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>
+<sup>]</sup>
+</p><p>In spite of limited studies of PX, PX‐based DNA nanostructures showed unique features and advantages. For example, previous studies reported the enhanced nuclease resistance of the PX‐based small DNA motifs due to its unique folding pathways,<sup>[</sup>
+<xref rid="smtd202401343-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>, <xref rid="smtd202401343-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>, <xref rid="smtd202401343-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>, <xref rid="smtd202401343-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref>
+<sup>]</sup> providing a potential control of the structural integrity of small DNA nanostructures in biological environments. Another PX‐related feature is their unique topologies that allow single‐stranded routing of DNA.<sup>[</sup>
+<xref rid="smtd202401343-bib-0010" ref-type="bibr">
+<sup>10</sup>
+</xref>, <xref rid="smtd202401343-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>, <xref rid="smtd202401343-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref>, <xref rid="smtd202401343-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>
+<sup>]</sup> These structures were demonstrated with high structural integrity due to their intramolecular folding and allowed the use of a low‐cost, high‐throughput biological technique<sup>[</sup>
+<xref rid="smtd202401343-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>
+<sup>]</sup> to produce the DNA.</p><p>In this study, we developed a DNA origami design capable of adopting both AX and PX topologies by incorporating two rotational panels that can be configured in either a PX or AX arrangement through a 180‐degree rotation. We created a total of 12 origami designs, including six variations of PX‐based origami and six of their AX counterparts, by modifying the number and arrangement of central staples with different hybridization lengths. We systematically conducted 36 (6 × 6) competitive studies to compare the relative yields of PX and AX origami, allowing us to rank the 12 designs. Following this, we analyzed the folding pathway and nuclease resistance of the highest and lowest‐ranked PX and AX origami, as well as conducted a toehold‐mediated, isothermal transformation study between AX and PX designs. Our study expands the usage of PX topologies in origami systems and offers new opportunities for creating innovative origami nanostructures. Additionally, the reconfiguration study demonstrated useful applications for a dynamic nanodevice based on the isothermal transformation between AX and PX configurations.</p></sec><sec id="smtd202401343-sec-0020"><label>2</label><title>Results and Discussion</title><sec id="smtd202401343-sec-0030"><label>2.1</label><title>Competitive Folding of 36 Pairs of PX and AX Origami</title><p>By rotating the top and bottom panels of the assembled origami (<bold>Figure</bold>
+<xref rid="smtd202401343-fig-0001" ref-type="fig">
+<bold>1</bold>a</xref>), we created two distinct conformations of AX and PX nanostructures (Figure <xref rid="smtd202401343-fig-0001" ref-type="fig">1b,c</xref>), with their arms oriented in either the same or opposite directions. This was achieved by incorporating different sets of central staple strands. These central staples, highlighted in black (AX) and red (PX), were further categorized into two types within each color: 1) strands with a long hybridization length, or binding domain, of 1.5 turns (15 or 16 base pairs, bp) for joining the two panels through crossover formation, and 2) strands with a short hybridization length of 8 bp. Depending on how these central staple strands are arranged, the AX conformation can be shifted to the PX conformation, or vice versa, by rotating the top and bottom panels. The AX conformation is adopted when the central staple strands are oriented antiparallel, while the PX topology is formed with parallelly oriented central staple strands. Both the PX and AX origami designs include scaffold loops at the ends of DNA helixes to prevent potential base‐stacking interactions between origami structures, which could lead to unwanted aggregation (Figures <xref rid="smtd202401343-supinfo-0001" ref-type="">S2</xref> and <xref rid="smtd202401343-supinfo-0001" ref-type="">S3</xref>, Supporting Information).</p><fig position="float" fig-type="Figure" id="smtd202401343-fig-0001" orientation="portrait"><label>Figure 1</label><caption><p>Schematic representations, design details, and AFM images of AX and PX origami. a) Origami assembly scheme with a long, circular scaffold and numerous glue‐like small staples, colored in light gray that assemble the top and bottom body domains of the long scaffold, colored with orange and green tones, respectively. The zoom‐in box shows the central scaffold crossover in either AX or PX conformation. b) Two representative AX origami with long and short central AX staples and their corresponding zoom‐in details of the black highlighted central staples. c) Two representative PX origami with long and short central PX staples and their corresponding zoom‐in details of the red highlighted central staples. d) The AFM images of an AX origami design (e.g., A3) with zoom‐in images of the individual AX origami. e) The AFM images of a PX origami design (e.g., P3) with zoom‐in images of the individual PX origami. All scale bars are 600 nm. The zoom‐in images are 123 nm × 123 nm.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-3" orientation="portrait" xlink:href="SMTD-9-2401343-g005.jpg"><?image-name SMTD-9-2401343-g005.jpg?><?image-size 95917?><?image-md5 ea50be5c56378ca38f9f8bb3b9c36f86?><?image-image-server-status NEVER_LOAD?><?image-original-height 371?><?image-original-width 600?><?image-scaled-height 371?><?image-scaled-width 600?><?image-cloudpmc-urn urn:cdn:blobs/7687/12182888/ea50be5c5637/SMTD-9-2401343-g005.jpg?><?thumb-name SMTD-9-2401343-g005.gif?><?thumb-size 8721?><?thumb-md5 068bb0f463d04fd978335f2decf9e676?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 129?><?thumb-cloudpmc-urn urn:cdn:blobs/7687/12182888/068bb0f463d0/SMTD-9-2401343-g005.gif?></graphic></fig><p>These designed structures were assembled by mixing the long scaffold strand (M13mp18), the central staple strands, and the remaining body staples, followed by an annealing process using a short (≈1hr) temperature‐controlled program with a gradient in TAE buffer containing 12.5 mM Mg<sup>2+</sup> (Section <xref rid="smtd202401343-supinfo-0001" ref-type="">SI‐2</xref>, Supporting Information). The formed nanostructures were then confirmed using agarose gel electrophoresis to assess the size and compactness (or purity) of the target band, as well as atomic force microscopy (AFM) technique to visualize the origami structures with nanometer precision (AFM examples shown in Figure <xref rid="smtd202401343-fig-0001" ref-type="fig">1d,e</xref>).</p><p>To investigate the role of the central staples, we created 12 different designs (6 AX and 6 PX origami) by changing the number and the arrangement of central staples with different hybridization lengths (<bold>Figure</bold>
+<xref rid="smtd202401343-fig-0002" ref-type="fig">
+<bold>2</bold>a</xref>). These arrangements are properly designed to be comparable between corresponding AX and PX having the same hybridization lengths of the central staples across the same numbered designs (e.g., AX1, or A1, and PX1, or P1, as a pair), leading to a total of 6 AX/PX comparable pairs. First, we made sure that individual AX and PX origami can form the target structures without any formation issues based on AFM images (Figures <xref rid="smtd202401343-supinfo-0001" ref-type="">S2</xref> and <xref rid="smtd202401343-supinfo-0001" ref-type="">S3</xref>, Supporting Information). We then tested the 36 combinations (6 × 6) of the AX and PX origami in the competing environment, in which a mixture of both AX and PX central staples was added to one assembly pot. The final assemblies were characterized by gel and AFM. AFM results of the tests were used for the yield counting in each combination (Figures <xref rid="smtd202401343-supinfo-0001" ref-type="">S5–S16</xref>, Supporting Information). Using the counting dataset obtained from the AFM results, we summarized overall count ratios in percentages and placed them into a bar graph (Figure <xref rid="smtd202401343-fig-0002" ref-type="fig">2b</xref>; Table <xref rid="smtd202401343-supinfo-0001" ref-type="">S2</xref>, Supporting Information).</p><fig position="float" fig-type="Figure" id="smtd202401343-fig-0002" orientation="portrait"><label>Figure 2</label><caption><p>Competitive study of 12 AX and PX origami. a) Schematics showing 12 versions of AX (A1–6) and PX (P1–6) origami leading to 6 × 6 = 36 competitive combinations. b) A bar graph showing the % yield distribution of AX and PX origami in the 36 competitive combinations with the corresponding ranking of the 12 origami obtained from the statistics, from the highest (left) to the lowest (right) in terms of relative formation yields. The notations of AX and PX are simplified as A and P in the labeling of each origami design.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-5" orientation="portrait" xlink:href="SMTD-9-2401343-g004.jpg"><?image-name SMTD-9-2401343-g004.jpg?><?image-size 73284?><?image-md5 c8816b38e8efb41ec3926d31e109436c?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 574?><?image-original-width 820?><?image-scaled-height 382?><?image-scaled-width 546?><?image-cloudpmc-urn urn:cdn:blobs/7687/12182888/c8816b38e8ef/SMTD-9-2401343-g004.jpg?><?thumb-name SMTD-9-2401343-g004.gif?><?thumb-size 7542?><?thumb-md5 d0fab9306069346d17c2bf2bfb40a8ab?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 114?><?thumb-cloudpmc-urn urn:cdn:blobs/7687/12182888/d0fab9306069/SMTD-9-2401343-g004.gif?></graphic></fig><p>Analyzing the yield statistics from the bar graph in Figure <xref rid="smtd202401343-fig-0002" ref-type="fig">2b</xref>, we ranked these 12 designs based on how preferable to be formed in a competitive assembly process. We first focused on comparing the 6 designs within each AX or PX pool. Our ranking is based on the average of all the relative formation yield (percentage number). For example, in the first group of Figure <xref rid="smtd202401343-fig-0002" ref-type="fig">2b</xref>, P1 formed against all 6 AX designs from A1‐6 at different PX%, as shown in Table <xref rid="smtd202401343-supinfo-0001" ref-type="">S2</xref> (Supporting Information). The average of the PX% is 35.5%. The average PX% of the other five remaining PX designs and the average AX% of all AX designs from A1 to A6 were calculated accordingly and were used to create individual ranking orders of PX and AX rankings: PX rankings based on the average PX% as P3 (38.5%) &gt;P1 (35.5%)&gt;P2 (25.1%)&gt;P6 (20.0%)&gt;P5 (14.5%)&gt;P4 (3.5%) and AX rankings based on AX% as A3 (93.5%)&gt;A2 (81.8%)&gt;A1 (79.0%)&gt;A5 (58.9%)&gt;A6 (51.1%)&gt;A4 (20.5%). After obtaining the individual ranking orders of PX and AX designs, we combined the two ranks together (Figure <xref rid="smtd202401343-fig-0002" ref-type="fig">2b</xref>). To merge the P and A rankings, we then compared each PX or AX design versus its 6 competing designs. The details of how to merge PX and AX ranking are included in Section <xref rid="smtd202401343-supinfo-0001" ref-type="">SI‐6</xref> (Supporting Information). The final merged ranking was found to be A3&gt;A1≈A2&gt;P3&gt;P1≈P2&gt;A5≈A6&gt;P5≈P6&gt;A4&gt;P4.</p><p>As anticipated, the relative formation yields of origami designs, A3 and P3, were the highest within their respective AX and PX design pools. This success is attributed to their enhanced binding of the top and bottom body domains by 16 central staples with long hybridization lengths. When the number of central staples was reduced from 16 to 8, designs with long hybridization lengths, such as A1 and 2 and P1 and 2, outperformed their counterparts with shorter hybridization lengths, specifically A4,5,6 and P4,5,6. Among these, A4 and P4 ranked the lowest in their respective AX and PX pools due to the limited number of central staples with short hybridization lengths. A5 and 6 and P5 and 6 ranked as intermediates since they had a mixture of both long and short hybridization staples. In general, when combining the rankings of both AX and PX origami designs, the AX designs consistently ranked higher than their PX counterparts, suggesting a preferential formation of AX over PX conformation.</p><p>These rankings can be primarily explained by two key factors: (1) for the same crossover type (PX or AX), increasing the number of the central staples and elongating the hybridization lengths of central staples significantly improves the relative formation yield of the origami design. This improvement is due to the increased local thermodynamic stability of the central staple domain, which, with higher melting temperatures, leads to the predominant formation of the designed origami at the early stage of thermal treatment from high to low temperature.<sup>[</sup>
+<xref rid="smtd202401343-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref>, <xref rid="smtd202401343-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref>
+<sup>]</sup> (2) for the designs with the same hybridization lengths, AX conformations are generally preferred over PX conformations due to the reduced topological challenges and lower entropic cost associated with folding. This preference likely arises because the AX conformations of both scaffold and staple crossovers more closely resemble the naturally adopted Holliday junction with a 60° angle, making it more difficult to transition to the PX conformation. Therefore, AX conformation is expected to be more favored as the staples bind more rapidly and at a shorter distance to the scaffold compared to the PX conformation. Interestingly, our results show that this barrier to adopting PX conformations can be overcome with appropriate adjustments in staple thermodynamics. This is evident in the ranking of P3 &gt; A5,6,4, indicating that our PX origami designs are comparable to the AX designs and represent viable and competitive structures.</p><p>To gain deeper insights into this system and improve the interpretation of the origami rankings from the competitive folding experiments, we assessed the thermal stability of the two strongest (A3 and P3) and two weakest (A4 and P4) AX and PX origami designs individually (Figure <xref rid="smtd202401343-supinfo-0001" ref-type="">S17</xref>, Supporting Information). Each design was first incubated at different temperatures for 3 h, ranging from 49 °C to 67 °C, and thermal degradation was analyzed using agarose gel electrophoresis (details in Section <xref rid="smtd202401343-supinfo-0001" ref-type="">SI‐7</xref>, Supporting Information). The gel results revealed similar thermal transition profiles for all four designs, with band shifts observed between 58 °C and 61 °C (Figure <xref rid="smtd202401343-supinfo-0001" ref-type="">S17a</xref>, Supporting Information) and further narrowed down to 59 °C to 60 °C (Figure <xref rid="smtd202401343-supinfo-0001" ref-type="">S17c</xref>, Supporting Information). The AFM images (Figure <xref rid="smtd202401343-supinfo-0001" ref-type="">S17b,d</xref>, Supporting Information) confirm these results, showing disassembled structures at 67 °C and intact structures at 59 °C for the selected P4 and A3 designs, respectively. These thermal stability results reflect the overall “melting” behavior of the origami structures. However, since our designs differ only in the central staples, these overall melting data cannot capture localized stability differences. The data also highlight that competitive study offers a useful approach to examining binding and assembly preferences in specific regions of origami.<sup>[</sup>
+<xref rid="smtd202401343-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>
+<sup>]</sup> Our comparative results not only differentiate staple thermodynamics based on hybridization lengths but also reveal configuration preferences when hybridization lengths are identical (e.g., AX4 vs PX4).</p><p>In addition, we tested the nuclease resistance of these four origami designs (A3, A4, P3, and P4) through DNase I digestion. Overall, the origami exhibited comparable nuclease resistance, lasting up to 45 min for P3 and A3 designs and up to 60 min for P4 and A4, as shown in Figure <xref rid="smtd202401343-supinfo-0001" ref-type="">S18</xref> (Supporting Information). To investigate the effect of increased PX crossovers on the origami nuclease resistance, we also successfully assembled a new PX design, P7, with 50% AX and 50% PX system, featuring 11 scaffold PX crossovers and 88 staple PX crossovers (Figure <xref rid="smtd202401343-supinfo-0001" ref-type="">S18c</xref>, Supporting Information). The nuclease degradation characterized through agarose gel and the AFM images of 45 min of digestion indicated a similar nuclease resistance comparable with A4 and P4 designs. This result can be attributed to two factors. First, the P7 origami design contains only 50% PX crossovers. In previous studies on PX motifs,<sup>[</sup>
+<xref rid="smtd202401343-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>, <xref rid="smtd202401343-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>, <xref rid="smtd202401343-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>, <xref rid="smtd202401343-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref>
+<sup>]</sup> these configurations relied entirely on PX crossovers, leading to inherent topological entanglement, which complicates PX‐based assembly. In contrast, the P7 design incorporates ≈50% AX crossovers to accommodate effective scaffold routing, alternating AX and PX crossovers in different helical rows. Unlike motifs, which do not involve scaffold strands and thus avoid routing challenges, the P7 origami design reduces topological entanglement, making it easier to assemble while demonstrating nuclease resistance comparable to AX‐based designs. Second, the shape dependency of nuclease resistance plays a role. Previous studies have demonstrated that compact 3D configurations,<sup>[</sup>
+<xref rid="smtd202401343-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>
+<sup>]</sup> such as tubular structures, offer superior nuclease resistance, while the 2D topology of the current P7 origami design is more vulnerable to DNase I digestion due to its higher exposed surface area. Unlike earlier studies that primarily investigated the nuclease resistance of PX motifs, our findings reveal the complexity of this mechanism in full origami structures. These results suggest that a fully PX‐based origami design, featuring enhanced topological entanglement in a compact 3D configuration, could potentially achieve greater nuclease resistance, inspiring the development of such advanced systems.</p></sec><sec id="smtd202401343-sec-0040"><label>2.2</label><title>The Effect of Central Staple Arrangement</title><p>To study the folding pathway of AX and PX configurations, we devised a new origami assembly scheme by arranging the long or short staples only near the central scaffold crossover or near the edge of the origami in both AX and PX configurations (<bold>Figure</bold>
+<xref rid="smtd202401343-fig-0003" ref-type="fig">
+<bold>3</bold>a</xref>). These staples were modified from the highest and lowest ranked designs (A3 and P3 and A4 and P4) and therefore we named the new origami according to the location of staples, including four with central staples (A3 in, A4 in, P3 in, and P4 in) and four with edge staples (A3 out, A4 out, and P3 out).</p><fig position="float" fig-type="Figure" id="smtd202401343-fig-0003" orientation="portrait"><label>Figure 3</label><caption><p>Folding pathway study of two strongest and two weakest AX and PX origami (A3 and A4 and P3 and P4). a) Origami assembly scheme showing two possible pathways after mixing two competing sets of either outside or inside (middle) central staple strands of the A4 and P4 origami, respectively. b) AFM images showing the results of four different (2 × 2) competitive combinations with outside central staple strands of A3 and A4 versus inside central staple strands of P3 and P4. c) AFM images showing the results of four different (2 × 2) competitive combinations with inside central staple strands of A3 and A4 versus outside central staple strands of P3 and P4. d) AFM images of the competitive combination from the mixture of outside A4 versus inside P4 central strands and e) the labeling showing how the counting of the various conformations was done. The smaller scale bars in (b) and (c) are 100 nm, and the larger bars in (d) are 600 nm.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-7" orientation="portrait" xlink:href="SMTD-9-2401343-g002.jpg"><?image-name SMTD-9-2401343-g002.jpg?><?image-size 181637?><?image-md5 8ae7d9aac9979586b3c0fe41b3993922?><?image-image-server-status NEVER_LOAD?><?image-original-height 646?><?image-original-width 600?><?image-scaled-height 646?><?image-scaled-width 600?><?image-cloudpmc-urn urn:cdn:blobs/7687/12182888/8ae7d9aac997/SMTD-9-2401343-g002.jpg?><?thumb-name SMTD-9-2401343-g002.gif?><?thumb-size 10547?><?thumb-md5 af9480ddc081d3f26aa8bf83d8de5cb7?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 108?><?thumb-scaled-width 100?><?thumb-cloudpmc-urn urn:cdn:blobs/7687/12182888/af9480ddc081/SMTD-9-2401343-g002.gif?></graphic></fig><p>Similarly, we conducted the competitive assembly tests between 8 AX‐PX pairs (Figure <xref rid="smtd202401343-fig-0003" ref-type="fig">3b,c</xref>). After annealing and characterization, we counted the formation yields of each AX and PX design in the competitive test. Based on the AFM images (Figure <xref rid="smtd202401343-fig-0003" ref-type="fig">3b,c</xref>; Figures <xref rid="smtd202401343-supinfo-0001" ref-type="">S23</xref> and <xref rid="smtd202401343-supinfo-0001" ref-type="">S24</xref>, Supporting Information), we observed several interesting results. First, in the competition between long and short staples, designs incorporating long staples consistently outperformed those with short staples. Almost all origami formations with long staples, regardless of their specific arrangement (P3 in &gt; A4 out, P3 out &gt; A4 in, A3 in &gt; P4 out, A3 out &gt; P4 in). This may be due to the thermodynamic preference from the elongated staples during annealing. Second, for the competing structures with both long staples (A3 out vs P3 in, A3 in vs P3 out), AFM showed mostly misformed structures. This indicates a mixture of staples for both AX and PX configurations bind to the origami scaffold at a high temperature during annealing. Finally, results of the last two combinations of all short staples (P4 in vs A4 out, P4 out vs A4 in) demonstrated the importance of the locations of staples: the final structural configuration (AX or PX) relies on the staples near the central scaffold crossover – the short AX staples near center led to the dominant AX origami formation, and the short PX staples led to dominant PX origami formation. Figure <xref rid="smtd202401343-fig-0003" ref-type="fig">3d,e</xref> shows the AFM images, one of which is labeled for origami counting (PX = 468, AX = 188, misformed = 24) in the “P4 in versus A4 out” example. The impact of central staples in our study aligns with the previous simulation work<sup>[</sup>
+<xref rid="smtd202401343-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref>
+<sup>]</sup> where these staples quickly decide the configuration through the zipping mechanism. In addition, comparing these two combinations (P4 in vs A4 out, P4 out vs A4 in), the higher percentage (87.8%) of AX origami formation than the PX origami formation (68.8%) can be attributed to the ease of AX formation.<sup>[</sup>
+<xref rid="smtd202401343-bib-0009" ref-type="bibr">
+<sup>9</sup>
+</xref>, <xref rid="smtd202401343-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>
+<sup>]</sup> It is important to note that our designs follow the seam scaffold routing, allowing a similar zipping mechanism to the previous simulation study.<sup>[</sup>
+<xref rid="smtd202401343-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref>
+<sup>]</sup> Overall, this folding pathway study highlights the important role of middle staples in determining the final origami structure configuration, bringing insights into guided origami formation mechanisms.</p></sec><sec id="smtd202401343-sec-0050"><label>2.3</label><title>Isothermal Assembly of AX and PX Designs Below Melting Temperatures</title><p>In this study, we explored a new experiment involving isothermal annealing of A3, A4, P3, and P4 with TANa buffer, containing Na<sup>+</sup> instead of Mg<sup>2+</sup> from our standard protocol. A previous study by Rossi‐Gendron et al<sup>[</sup>
+<xref rid="smtd202401343-bib-0022" ref-type="bibr">
+<sup>22</sup>
+</xref>
+<sup>]</sup> demonstrated an example of isothermally annealed origami nanostructures using TANa buffer. Inspired by this study, we tested to find out if our origami design can form isothermally with TANa buffer. The motivations for this isothermal study were from the potential advantages of using isothermal annealing, instead of applying the standard thermal treatment, that is: 1) enabling the study of the spontaneous, evolutive process of nanostructure formation and dynamic transformation to other structures at constant environmental conditions 2) opening up opportunities for potential applications in ambient or living systems 3) allowing the conjugation of nanostructures with temperature‐sensitive structures like proteins, leading to various hybrid nanostructures for biological applications. In the isothermal annealing procedure, the use of TANa buffer is critical since the TANa buffer prevents forming kinetically trapped structures of the origami, which could be enhanced in the use of buffer containing Mg<sup>2+</sup>.<sup>[</sup>
+<xref rid="smtd202401343-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref>
+<sup>]</sup> In <bold>Figure</bold>
+<xref rid="smtd202401343-fig-0004" ref-type="fig">
+<bold>4</bold>b</xref>, the agarose gel result showed compact bands indicating possible formation of P3, A3, P4, and A4 origami annealed at 35 °C for four days in TANa 100 m<sc>m</sc> [NaCl] at 2.5 n<sc>m</sc> origami scaffold with 25 n<sc>m</sc> staples (10x the origami scaffold). As shown in the AFM images of Figure <xref rid="smtd202401343-fig-0004" ref-type="fig">4c</xref>, all four origami at 35 °C were able to form the target‐designed structures. Overall, these results demonstrated that these four AX and PX origami designs can be isothermally annealed at 35 °C, which is below their melting temperatures, with TANa buffer.</p><fig position="float" fig-type="Figure" id="smtd202401343-fig-0004" orientation="portrait"><label>Figure 4</label><caption><p>Isothermal annealing and isothermal transformation study via competitive isothermal annealing with two strongest and two weakest AX and PX origami (A3 and A4 and P3 and P4) using TANa buffer containing NaCl. a) Origami isothermal annealing scheme of individual origami formation. b) An agarose gel result showing the assembled P3, A3, P4, A4 origami that were isothermally annealed with 2.5 n<sc>m</sc> scaffold and 25 n<sc>m</sc> staples (10x the scaffold) at 35 °C for 4 days in TANa buffer of 100 mM [NaCl] and c) their corresponding AFM images. All scale bars are 200 nm.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-9" orientation="portrait" xlink:href="SMTD-9-2401343-g001.jpg"><?image-name SMTD-9-2401343-g001.jpg?><?image-size 35756?><?image-md5 b57619375f46aedf24441437b345bdda?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 300?><?image-original-width 820?><?image-scaled-height 200?><?image-scaled-width 546?><?image-cloudpmc-urn urn:cdn:blobs/7687/12182888/b57619375f46/SMTD-9-2401343-g001.jpg?><?thumb-name SMTD-9-2401343-g001.gif?><?thumb-size 8905?><?thumb-md5 1480393abdc0395a8c1d21e5e5ee1c03?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 73?><?thumb-scaled-width 200?><?thumb-cloudpmc-urn urn:cdn:blobs/7687/12182888/1480393abdc0/SMTD-9-2401343-g001.gif?></graphic></fig></sec><sec id="smtd202401343-sec-0060"><label>2.4</label><title>Dynamic Transformation Between AX and PX Designs</title><p>To demonstrate the dynamic feature of our AX and PX designs, we implemented toehold‐mediated strand displacement reactions<sup>[</sup>
+<xref rid="smtd202401343-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref>
+<sup>]</sup> to facilitate reconfigurations between the strongest and weakest AX and PX pairs, such as from P4 to A3 and A4 to P3. As shown in <bold>Figure</bold>
+<xref rid="smtd202401343-fig-0005" ref-type="fig">
+<bold>5</bold>a,b</xref>, the transformation into PX or AX conformations was achieved within 2 h, supported by 24 toehold regions in the central scaffold of the new origami designs. This was accomplished by modifying the original fully complementary central staples in A4 and P4, shortening them by 3 nucleotides at each end (design details in Figure <xref rid="smtd202401343-supinfo-0001" ref-type="">S29</xref>, Supporting Information). The reactions were designed to convert these intermediate designs into fully complementary strongest designs, A3 or P3. The bar graphs in Figure <xref rid="smtd202401343-fig-0005" ref-type="fig">5a,b</xref> illustrate that increasing the number of toeholds from 0 to 24 significantly enhanced transformation efficiency, achieving ≈80–90% PX conformation and over 90% AX conformation within a few h (statistics in Table <xref rid="smtd202401343-supinfo-0001" ref-type="">S6</xref>, Supporting Information). As expected, systems with 8 toeholds required 1 day to reach comparable transformations, with AX conformations more favored: transformation from P4 to AX reached ≈68% AX, while transformation from A4 to PX reached ≈50% PX. In contrast, non‐toehold systems showed no detectable transformation to the alternate conformation after 1 day. Extended experiments with non‐toehold systems spanning up to 7 days demonstrated a slow transformation process (Figure <xref rid="smtd202401343-supinfo-0001" ref-type="">S26</xref>, Supporting Information), further highlighting the critical role of toeholds in accelerating dynamic transformations. All transformations were performed isothermally at 40 °C, underscoring the potential of these designs as dynamic nanodevices. These features highlight the applicability of our system for biological and biomedical applications, where rapid and efficient conformational changes are essential.</p><fig position="float" fig-type="Figure" id="smtd202401343-fig-0005" orientation="portrait"><label>Figure 5</label><caption><p>Toehold‐mediated dynamic transformation from P4 to A3 and A4 to P3. a) Transformation from P4 to A3 conformation b) Transformation from A4 to P3 conformation. Each AFM image next to its corresponding group, including 24 toeholds, 8 toeholds, or no toehold (control), is from the 4‐h transformation, displayed as a representative image of each group. All scale bars are 200 nm.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-11" orientation="portrait" xlink:href="SMTD-9-2401343-g006.jpg"><?image-name SMTD-9-2401343-g006.jpg?><?image-size 55896?><?image-md5 bbca772c2c41adfe0e87e901c09f4715?><?image-image-server-status NEVER_LOAD?><?image-original-height 300?><?image-original-width 600?><?image-scaled-height 300?><?image-scaled-width 600?><?image-cloudpmc-urn urn:cdn:blobs/7687/12182888/bbca772c2c41/SMTD-9-2401343-g006.jpg?><?thumb-name SMTD-9-2401343-g006.gif?><?thumb-size 7560?><?thumb-md5 765b2b90fcef092c37b0789b75d386e9?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 160?><?thumb-cloudpmc-urn urn:cdn:blobs/7687/12182888/765b2b90fcef/SMTD-9-2401343-g006.gif?></graphic></fig></sec></sec><sec id="smtd202401343-sec-0070"><label>3</label><title>Conclusion</title><p>In summary, we synthesized 12 different AX and PX origami nanostructures by varying the central staple thermodynamics, systematically studied, and ranked them according to their relative yields in the 36 competitive annealing, leading to the four of the strongest and weakest origami (P3,4 and A3,4). These competitive test results demonstrated that through increasing the thermodynamic stability of the origami design via introducing more central staples and elongating the hybridization lengths of central staples, the strongest ranked PX origami (P3) can outcompete A5, 6, and 4. Furthermore, using the strongest and weakest origami, we investigated their folding pathway via middle staple arrangement and demonstrated its impact on the final origami configuration. Finally, we explored the isothermal assembly of P3, A3, P4, and A4 origami below their melting temperatures and their dynamic transformation between AX and PX conformations in two‐way directions (A4 to P3 and P4 to A3). These results promise our PX design's use in future studies that require isothermal or temperature‐sensitive environments in biomedical and bionanotechnological applications and bring about opportunities to explore the evolutive, dynamic changes between AX and PX conformations under the relatively stable temperature environment like in living organisms, which could further branch out to investigate AX and PX related biological events.<sup>[</sup>
+<xref rid="smtd202401343-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>, <xref rid="smtd202401343-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref>, <xref rid="smtd202401343-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref>
+<sup>]</sup> Overall, our study results demonstrated that our PX origami designs are reasonably stable as AX origami designs and serve as a foundation on which new variations of PX origami can easily be created using the traditional AX origami platform to exploit the benefits of using PX origami systems and to make novel PX/AX dynamic nanodevices.</p><p>In future studies, new PX design variations with increasing PX crossovers up to 100% and diverse topologies, including various 2D and 3D patterns with differing degrees of compactness, can be explored. These designs can be evaluated for their competition with AX counterparts and their nuclease resistance, aiming to expand the library of functional PX origami designs. Additionally, these studies will help investigate the factors influencing origami nuclease degradation, providing insights into the underlying mechanisms of nuclease digestion. As demonstrated by the toehold‐mediated, bidirectional transformation between AX and PX origami, our designs showcase their potential as a platform for creating dynamic nanodevices. These devices feature switchable on/off functionality achieved through shapeshifting between AX and PX topologies, making them ideal candidates for sensor‐like applications. The transformation process efficiently achieved dominant target conformations within a short timeframe, highlighting the versatility and effectiveness of this approach. Furthermore, these designs can be combined with external molecules, such as fluorophores, to explore additional dynamic properties and expand the range of applications for AX/PX hybrid materials.</p></sec><sec sec-type="COI-statement" id="smtd202401343-sec-0090"><title>Conflict of Interest</title><p>The authors declare no conflict of interest.</p></sec><sec sec-type="supplementary-material"><title>Supporting information</title><supplementary-material id="smtd202401343-supinfo-0001" position="float" content-type="local-data" orientation="portrait"/><supplementary-material id="smtd202401343-supitem-0001" position="float" content-type="local-data" orientation="portrait"><caption><p>Supporting Information</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="SMTD-9-2401343-s001.pdf" position="float" orientation="portrait"><?suppdata-name SMTD-9-2401343-s001.pdf?><?suppdata-size 12233804?><?suppdata-md5 0ed09eed34cee71586b3712b32acdf16?><?suppdata-image-server-status NEVER_LOAD?><?suppdata-mime-type application?><?suppdata-mime-sub-type pdf?><?suppdata-cloudpmc-urn urn:app:7687/12182888/0ed09eed34ce/SMTD-9-2401343-s001.pdf?></media></supplementary-material></sec></body><back><ack id="smtd202401343-sec-0080"><title>Acknowledgements</title><p>This work was supported by a US National Science Foundation (NSF) Faculty Early Career Development Award (DMR‐2046835) and a faculty Startup Fund from Rutgers University.</p></ack><sec sec-type="data-availability" id="smtd202401343-sec-0110"><title>Data Availability Statement</title><p>The data that support the findings of this study are available in the supplementary material of this article.</p></sec><ref-list id="smtd202401343-bibl-0001"><ref id="smtd202401343-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0001">
+<string-name name-style="western">
+<given-names>M. R.</given-names>
+<surname>Jones</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. C.</given-names>
+<surname>Seeman</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. A.</given-names>
+<surname>Mirkin</surname>
+</string-name>, <source>Nanomaterials.</source>
+<year>2015</year>, <volume>347</volume>, <elocation-id>1260901</elocation-id>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1126/science.1260901</pub-id><pub-id pub-id-type="pmid">25700524</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0002"><label>2</label><mixed-citation publication-type="book" id="smtd202401343-cite-0002">
+<string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Zheng</surname>
+</string-name>, <string-name name-style="western">
+<given-names>V. E.</given-names>
+<surname>Paluzzi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Mao</surname>
+</string-name>, <source>Toward production of nucleic acid nanostructures in life cells and their biomedical applications</source>, <year>2024</year>, Ch. 17, <pub-id pub-id-type="doi">10.1002/9783527840816.ch17</pub-id>.</mixed-citation></ref><ref id="smtd202401343-bib-0003"><label>3</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0003">
+<string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Zhan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Peil</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Jiang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Mousavi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Xiong</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Shen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Shang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Ding</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Lin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Ke</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Liu</surname>
+</string-name>, <source>Chem. Rev.</source>
+<year>2023</year>, <volume>123</volume>, <fpage>3976</fpage>.<pub-id pub-id-type="pmid">36990451</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1021/acs.chemrev.3c00028</pub-id><pub-id pub-id-type="pmcid">PMC10103138</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0004"><label>4</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0004">
+<string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>I.</given-names>
+<surname>Willner</surname>
+</string-name>, <source>Angew. Chem., Int. Ed.</source>
+<year>2023</year>, <volume>62</volume>, <elocation-id>202215332</elocation-id>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1002/anie.202215332</pub-id><pub-id pub-id-type="pmid">36651472</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0005"><label>5</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0005">
+<string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Ouyang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Zhuo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Chai</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Yuan</surname>
+</string-name>, <source>Anal. Chem.</source>
+<year>2023</year>, <volume>95</volume>, <fpage>407</fpage>.<pub-id pub-id-type="pmid">36625113</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1021/acs.analchem.2c04540</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0006"><label>6</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0006">
+<string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Chang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Qi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Lee</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Fei</surname>
+</string-name>, <source>Curr. Top. Med. Chem.</source>
+<year>2022</year>, <volume>22</volume>, <fpage>652</fpage>.<pub-id pub-id-type="pmid">35319373</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.2174/1568026622666220321140729</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0007">
+<string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Yang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Chang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. Y.</given-names>
+<surname>Lee</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T. R.</given-names>
+<surname>Olivera</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Saji</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Wisniewski</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Kim</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Zhang</surname>
+</string-name>, <source>ACS Appl. Bio Mater.</source>
+<year>2022</year>, <volume>5</volume>, <fpage>4652</fpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1021/acsabm.2c00128</pub-id><pub-id pub-id-type="pmid">35559619</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0008"><label>8</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0008">
+<string-name name-style="western">
+<given-names>P. W. K.</given-names>
+<surname>Rothemund</surname>
+</string-name>, <source>Nature.</source>
+<year>2006</year>, <volume>440</volume>, <fpage>297</fpage>.<pub-id pub-id-type="pmid">16541064</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/nature04586</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0009">
+<string-name name-style="western">
+<given-names>T. J.</given-names>
+<surname>Fu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. C.</given-names>
+<surname>Seeman</surname>
+</string-name>, <source>Biochemistry.</source>
+<year>1993</year>, <volume>32</volume>, <fpage>3211</fpage>.<pub-id pub-id-type="pmid">8461289</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1021/bi00064a003</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0010"><label>10</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0010">
+<string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Qi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Su</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Jiang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Han</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Ding</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Chiu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Yin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Yan</surname>
+</string-name>, <source>Nat. Commun.</source>
+<year>2018</year>, <volume>9</volume>, <fpage>4579</fpage>.<pub-id pub-id-type="pmid">30389935</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41467-018-07039-7</pub-id><pub-id pub-id-type="pmcid">PMC6214983</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0011">
+<string-name name-style="western">
+<given-names>J. Y.</given-names>
+<surname>Lee</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Yang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Chang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Jeziorek</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Perumal</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T. R.</given-names>
+<surname>Olivera</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. P.</given-names>
+<surname>Etchegaray</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Zhang</surname>
+</string-name>, <source>Nanoscale.</source>
+<year>2024</year>, <volume>16</volume>, <fpage>1685</fpage>.<pub-id pub-id-type="pmid">38193377</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1039/d3nr05119f</pub-id><pub-id pub-id-type="pmcid">PMC10809758</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0012">
+<string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Han</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Qi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Myhrvold</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Dai</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Jiang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Bates</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>An</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Yan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Yin</surname>
+</string-name>, <source>Science.</source>
+<year>2017</year>, <volume>358</volume>, <elocation-id>eaao2648</elocation-id>.<pub-id pub-id-type="pmid">29242318</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1126/science.aao2648</pub-id><pub-id pub-id-type="pmcid">PMC6384012</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0013">
+<string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Han</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Jiang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Smanta</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Yan</surname>
+</string-name>, <source>Angew. Chem., Int. Ed.</source>
+<year>2013</year>, <volume>52</volume>, <fpage>9031</fpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1002/anie.201302177</pub-id><pub-id pub-id-type="pmid">23852715</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0014">
+<string-name name-style="western">
+<given-names>A. R.</given-names>
+<surname>Chandrasekaran</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Vilcapoma</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Dey</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. W.</given-names>
+<surname>Wong‐Deyrup</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. K.</given-names>
+<surname>Dey</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Halvorsen</surname>
+</string-name>, <source>J. Am. Chem. Soc.</source>
+<year>2020</year>, <volume>142</volume>, <fpage>6814</fpage>.<pub-id pub-id-type="pmid">32208657</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1021/jacs.0c02211</pub-id><pub-id pub-id-type="pmcid">PMC7315441</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0015"><label>15</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0015">
+<string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Qi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Matiski</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. D.</given-names>
+<surname>Villar</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Yip</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Sokalingam</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Jiang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Yan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Chang</surname>
+</string-name>, <source>ACS Nano.</source>
+<year>2020</year>, <volume>14</volume>, <fpage>4727</fpage>.<pub-id pub-id-type="pmid">32275389</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1021/acsnano.0c00602</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0016"><label>16</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0016">
+<string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Jia</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Gu</surname>
+</string-name>, <source>Chem.</source>
+<year>2021</year>, <volume>7</volume>, <fpage>959</fpage>.</mixed-citation></ref><ref id="smtd202401343-bib-0017"><label>17</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0017">
+<string-name name-style="western">
+<given-names>K. E.</given-names>
+<surname>Dunn</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Dannenberg</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T. E.</given-names>
+<surname>Ouldridge</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Kwiatkowska</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. J.</given-names>
+<surname>Turburfield</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Bath</surname>
+</string-name>, <source>Nature.</source>
+<year>2015</year>, <volume>525</volume>, <fpage>82</fpage>.<pub-id pub-id-type="pmid">26287459</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/nature14860</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0018">
+<string-name name-style="western">
+<given-names>A. E.</given-names>
+<surname>Marras</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Zhou</surname>
+</string-name>, <string-name name-style="western">
+<given-names>V.</given-names>
+<surname>Kolliopoulos</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.‐J.</given-names>
+<surname>Su</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. E.</given-names>
+<surname>Castro</surname>
+</string-name>, <source>New J. Phys.</source>
+<year>2016</year>, <volume>18</volume>, <elocation-id>055005</elocation-id>.</mixed-citation></ref><ref id="smtd202401343-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0019">
+<string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Song</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Hu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Yin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Yin</surname>
+</string-name>, <source>Int. J. Mol. Sci.</source>
+<year>2022</year>, <volume>23</volume>, <fpage>9730</fpage>.<pub-id pub-id-type="pmid">36077130</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3390/ijms23179730</pub-id><pub-id pub-id-type="pmcid">PMC9456528</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0020"><label>20</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0020">
+<string-name name-style="western">
+<given-names>J. M.</given-names>
+<surname>Majikes</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. A.</given-names>
+<surname>Nasah</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T. H.</given-names>
+<surname>LaBean</surname>
+</string-name>, <source>New J. Phys.</source>
+<year>2016</year>, <volume>18</volume>, <elocation-id>115001</elocation-id>.</mixed-citation></ref><ref id="smtd202401343-bib-0021"><label>21</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0021">
+<string-name name-style="western">
+<given-names>M.</given-names>
+<surname>DeLuca</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Duke</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Ye</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Poirier</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Ke</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Castro</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Arya</surname>
+</string-name>, <source>Nat. Commun.</source>
+<year>2024</year>, <volume>15</volume>, <fpage>3015</fpage>.<pub-id pub-id-type="pmid">38589344</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41467-024-46998-y</pub-id><pub-id pub-id-type="pmcid">PMC11001925</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0022">
+<string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Rossi‐Gendron</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>El Fakih</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Bourdon</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Nakazawa</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Finkel</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Triophe</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Chocron</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Endo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Sugiyama</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Bellot</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Morel</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Rudiuk</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Baigl</surname>
+</string-name>, <source>Nat. Nanotechnol.</source>
+<year>2023</year>, <volume>18</volume>, <fpage>1311</fpage>.<pub-id pub-id-type="pmid">37524905</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41565-023-01468-2</pub-id><pub-id pub-id-type="pmcid">PMC10656289</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0023">
+<string-name name-style="western">
+<given-names>D. Y.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Winfree</surname>
+</string-name>, <source>JACS.</source>
+<year>2009</year>, <volume>131</volume>, <elocation-id>17303</elocation-id>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1021/ja906987s</pub-id><pub-id pub-id-type="pmid">19894722</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0024">
+<string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Mao</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. C.</given-names>
+<surname>Seeman</surname>
+</string-name>, <source>Proc Natl Acad Sci U S A.</source>
+<year>2010</year>, <volume>107</volume>, <elocation-id>12547</elocation-id>.<pub-id pub-id-type="pmid">20616051</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1073/pnas.1000105107</pub-id><pub-id pub-id-type="pmcid">PMC2906588</pub-id></mixed-citation></ref><ref id="smtd202401343-bib-0025"><label>25</label><mixed-citation publication-type="journal" id="smtd202401343-cite-0025">
+<string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Kizer</surname>
+</string-name>, <string-name name-style="western">
+<given-names>I. D.</given-names>
+<surname>Huntress</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. D.</given-names>
+<surname>Walcott</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Fraser</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Bystroff</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Wang</surname>
+</string-name>, <source>Biochemistry.</source>
+<year>2019</year>, <volume>58</volume>, <fpage>1332</fpage>.<pub-id pub-id-type="pmid">30794750</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1021/acs.biochem.9b00057</pub-id><pub-id pub-id-type="pmcid">PMC7375024</pub-id></mixed-citation></ref></ref-list></back></article>

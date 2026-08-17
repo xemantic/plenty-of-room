@@ -1,0 +1,338 @@
+Vol 440|16 March 2006|doi:10.1038/nature04586
+
+
+
+
+                                                                                                                                 ARTICLES
+Folding DNA to create nanoscale shapes
+and patterns
+Paul W. K. Rothemund1
+
+‘Bottom-up fabrication’, which exploits the intrinsic properties of atoms and molecules to direct their self-organization, is
+widely used to make relatively simple nanostructures. A key goal for this approach is to create nanostructures of high
+complexity, matching that routinely achieved by ‘top-down’ methods. The self-assembly of DNA molecules provides an
+attractive route towards this goal. Here I describe a simple method for folding long, single-stranded DNA molecules into
+arbitrary two-dimensional shapes. The design for a desired shape is made by raster-filling the shape with a 7-kilobase
+single-stranded scaffold and by choosing over 200 short oligonucleotide ‘staple strands’ to hold the scaffold in place.
+Once synthesized and mixed, the staple and scaffold strands self-assemble in a single step. The resulting DNA
+structures are roughly 100 nm in diameter and approximate desired shapes such as squares, disks and five-pointed stars
+with a spatial resolution of 6 nm. Because each oligonucleotide can serve as a 6-nm pixel, the structures can be
+programmed to bear complex patterns such as words and images on their surfaces. Finally, individual DNA structures
+can be programmed to form larger assemblies, including extended periodic lattices and a hexamer of triangles (which
+constitutes a 30-megadalton molecular complex).
+
+In 1959, Richard Feynman put forward the challenge of writing the                         suggested that the folding of long strands could, in principle, proceed
+Encyclopaedia Britannica on the head of a pin1, a task which he                           without many misfoldings and avoid the problems of stoichiometry
+calculated would require the use of dots 8 nm in size. Scanning probe                     and purification associated with methods that use many short DNA
+techniques have essentially answered this challenge: atomic force                         strands.
+microscopy2 (AFM) and scanning tunnelling microscopy3,4 (STM)                                I now present a versatile and simple ‘one-pot’ method for using
+allow us to manipulate individual atoms. But these techniques create                      numerous short single strands of DNA to direct the folding of a long,
+patterns serially (one line or one pixel at a time) and tend to require                   single strand of DNA into desired shapes that are roughly 100 nm in
+ultrahigh vacuum or cryogenic temperatures. As a result, methods                          diameter and have a spatial resolution of about 6 nm. I demonstrate
+based on self-assembly are considered as promising alternatives that                      the generality of this method, which I term ‘scaffolded DNA origami’,
+offer inexpensive, parallel synthesis of nanostructures under mild                        by assembling six different shapes, such as squares, triangles and five-
+conditions5. Indeed, the power of these methods has been demon-                           pointed stars. I show that the method not only provides access to
+strated in systems based on components ranging from porphyrins6 to                        structures that approximate the outline of any desired shape, but also
+whole viral particles7. However, the ability of such systems to yield                     enables the creation of structures with arbitrarily shaped holes or
+structures of high complexity remains to be demonstrated. In                              surface patterns composed of more than 200 individual pixels. The
+particular, the difficulty of engineering diverse yet specific binding                    patterns on the 100-nm-sized DNA shapes thus have a complexity
+interactions means that most self-assembled structures contain just a                     that is tenfold higher than that of any previously self-assembled
+few unique positions that may be addressed as ‘pixels’.                                   arbitrary pattern and comparable to that achieved using AFM and
+   Nucleic acids can help overcome this problem: the exquisite                            STM surface manipulation4.
+specificity of Watson–Crick base pairing allows a combinatorially
+large set of nucleotide sequences to be used when designing binding                       Design of scaffolded DNA origami
+interactions. The field of ‘DNA nanotechnology’8,9 has exploited this                     The design of a DNA origami is performed in five steps, the first two
+property to create a number of more complex nanostructures,                               by hand and the last three aided by computer (details in Supplemen-
+including two-dimensional arrays with 8–16 unique positions and                           tary Note S1). The first step is to build a geometric model of a DNA
+less than 20 nm spacing10,11, as well as three-dimensional shapes such                    structure that will approximate the desired shape. Figure 1a shows an
+as a cube12 and truncated octahedron13. However, because the                              example shape (outlined in red) that is 33 nm wide and 35 nm tall.
+synthesis of such nanostructures involves interactions between a                          The shape is filled from top to bottom by an even number of parallel
+large number of short oligonucleotides, the yield of complete                             double helices, idealized as cylinders. The helices are cut to fit the
+structures is highly sensitive to stoichiometry (the relative ratios of                   shape in sequential pairs and are constrained to be an integer number
+strands). The synthesis of relatively complex structures was thus                         of turns in length. To hold the helices together, a periodic array of
+thought to require multiple reaction steps and purifications, with the                    crossovers (indicated in Fig. 1a as small blue crosses) is incorporated;
+ultimate complexity of DNA nanostructures limited by necessarily                          these crossovers designate positions at which strands running along
+low yields. Recently, the controlled folding of a long single DNA                         one helix switch to an adjacent helix and continue there. The
+strand into an octahedron was reported14, an approach that may be                         resulting model approximates the shape within one turn (3.6 nm)
+thought of as ‘single-stranded DNA origami’. The success of this work                     in the x-direction and roughly two helical widths (4 nm) in the
+
+1
+    Departments of Computer Science and Computation & Neural Systems, California Institute of Technology, Pasadena, California 91125, USA.
+
+                                                                                                                                                              297
+                                                                     © 2006 Nature Publishing Group
+ARTICLES                                                                                                                     NATURE|Vol 440|16 March 2006
+
+
+
+y-direction. As noticed before in DNA lattices15, parallel helices in              tangent point between helices. Thus for the scaffold to raster
+such structures are not close-packed, perhaps owing to electrostatic               progressively from one helix to another and onto a third, the distance
+repulsion. Thus the exact y-resolution depends on the gap between                  between successive scaffold crossovers must be an odd number of half
+helices. The gap, in turn, appears to depend on the spacing of                     turns. Conversely, where the raster reverses direction vertically and
+crossovers. In Fig. 1a crossovers occur every 1.5 turns along alter-               returns to a previously visited helix, the distance between scaffold
+nating sides of a helix, but any odd number of half-turns may be used.             crossovers must be an even number of half-turns. Note that the
+In this study, data are consistent with an inter-helix gap of 1 nm                 folding path shown in Fig. 1b is compatible with a circular scaffold
+for 1.5-turn spacing and 1.5 nm for 2.5-turn spacing, yielding a                   and leaves a ‘seam’ (a contour which the path does not cross).
+y-resolution of 6 or 7 nm, respectively.                                              Once the geometric model and a folding path are designed, they
+   Conceptually, the second step (illustrated in Fig. 1b) proceeds by              are represented as lists of DNA lengths and offsets in units of half-
+folding a single long scaffold strand (900 nucleotides (nt) in Fig. 1b)            turns. These lists, along with the DNA sequence of the actual scaffold
+back and forth in a raster fill pattern so that it comprises one of the            to be used, are input to a computer program. Rather than assuming
+two strands in every helix; progression of the scaffold from one helix             10.5 base pairs (bp) per turn (which corresponds to standard B-DNA
+to another creates an additional set of crossovers, the ‘scaffold                  twist), the program uses an integer number of bases between periodic
+crossovers’ (indicated by small red crosses in Fig. 1b). The funda-                crossovers (for example, 16 bp for 1.5 turns). It then performs the
+mental constraint on a folding path is that the scaffold can form a                third step, the design of a set of ‘staple strands’ (the coloured DNA
+crossover only at those locations where the DNA twist places it at a               strands in Fig. 1c) that provide Watson–Crick complements for the
+
+
+
+
+Figure 1 | Design of DNA origami. a, A shape (red) approximated by parallel        with coloured lines, and major/minor grooves by large/small angles between
+double helices joined by periodic crossovers (blue). b, A scaffold (black) runs    them. Arrows in c point to nicks sealed to create green strands in d. Yellow
+through every helix and forms more crossovers (red). c, As first designed,         diamonds in c and d indicate a position at which staples may be cut and
+most staples bind two helices and are 16-mers. d, Similar to c with strands        resealed to bridge the seam. e, A finished design after merges and
+drawn as helices. Red triangles point to scaffold crossovers, black triangles to   rearrangements along the seam. Most staples are 32-mers spanning three
+periodic crossovers with minor grooves on the top face of the shape, blue          helices. Insets show a dumbbell hairpin (d) and a 4-T loop (e), modifications
+triangles to periodic crossovers with minor grooves on bottom. Cross-              used in Fig. 3.
+sections of crossovers (1, 2, viewed from left) indicate backbone positions
+298
+                                                                  © 2006 Nature Publishing Group
+NATURE|Vol 440|16 March 2006                                                                                                                     ARTICLES
+
+
+scaffold and create the periodic crossovers. Staples reverse direction             Wherever two staples meet there is a nick in the backbone. Nicks
+at these crossovers; thus crossovers are antiparallel, a stable configu-        occur on the top and bottom faces of the helices, as depicted in
+ration well characterized in DNA nanostructures16. Note that the                Fig. 1d. In the final step, to give the staples larger binding domains
+crossovers in Fig. 1c are drawn somewhat misleadingly, in that single-          with the scaffold (in order to achieve higher binding specificity and
+stranded regions appear to span the inter-helix gap even though the             higher binding energy which results in higher melting temperatures),
+design leaves no bases unpaired. In the assembled structures, helices           pairs of adjacent staples are merged across nicks to yield fewer, longer,
+are likely to bend gently to meet at crossovers so that only a single           staples (Fig. 1e). To strengthen a seam, an additional pattern of
+phosphate from each backbone occurs in the gap (as ref. 16 suggests             breaks and merges may be imposed to yield staples that cross the
+for similar structures). Such small-angle bending is not expected to            seam; a seam spanned by staples is termed ‘bridged’. The pattern of
+greatly affect the width of DNA origami (see also Supplementary                 merges is not unique; different choices yield different final patterns of
+Note S2).                                                                       nicks and staples. All merge patterns create the same shape but, as
+   The minimization and balancing of twist strain between crossovers            shown later, the merge pattern dictates the type of grid underlying
+is complicated by the non-integer number of base pairs per half-turn            any pixel pattern later applied to the shape.
+(5.25 in standard B-DNA) and the asymmetric nature of the helix (it
+has major and minor grooves). Therefore, to balance the strain15                Folding M13mp18 genomic DNA into shapes
+caused by representing 1.5 turns with 16 bp, periodic crossovers are            To test the method, circular genomic DNA from the virus M13mp18
+arranged with a glide symmetry, namely that the minor groove faces              was chosen as the scaffold. Its naturally single-stranded 7,249-nt
+alternating directions in alternating columns of periodic crossovers            sequence was examined for secondary structure, and a hairpin with a
+(see Fig. 1d, especially cross-sections 1 and 2). Scaffold crossovers are       20-bp stem was found. Whether staples could bind at this hairpin was
+not balanced in this way. Thus in the fourth step, the twist of scaffold        unknown, so a 73-nt region containing it was avoided. When a linear
+crossovers is calculated and their position is changed (typically by a          scaffold was required, M13mp18 was cut (in the 73-nt region) by
+single bp) to minimize strain; staple sequences are recomputed                  digestion with BsrBI restriction enzyme. While 7,176 nt remained
+accordingly. Along seams and some edges the minor groove angle                  available for folding, most designs did not fold all 7,176 nt; short
+(1508) places scaffold crossovers in tension with adjacent periodic             (#25 nt) ‘remainder strands’ were added to complement unused
+crossovers (Fig. 1d, cross-section 2); such situations are left                 sequence. In general, a 100-fold excess of 200–250 staple and
+unchanged.                                                                      remainder strands were mixed with scaffold and annealed from
+
+
+
+
+Figure 2 | DNA origami shapes. Top row, folding paths. a, square;               is the 1st base, purple the 7,000th. Bottom two rows, AFM images. White
+b, rectangle; c, star; d, disk with three holes; e, triangle with rectangular   lines and arrows indicate blunt-end stacking. White brackets in a mark the
+domains; f, sharp triangle with trapezoidal domains and bridges between         height of an unstretched square and that of a square stretched vertically (by a
+them (red lines in inset). Dangling curves and loops represent unfolded         factor .1.5) into an hourglass. White features in f are hairpins; the triangle
+sequence. Second row from top, diagrams showing the bend of helices at          is labelled as in Fig. 3k but lies face down. All images and panels without scale
+crossovers (where helices touch) and away from crossovers (where helices        bars are the same size, 165 nm £ 165 nm. Scale bars for lower AFM images:
+bend apart). Colour indicates the base-pair index along the folding path; red   b, 1 mm; c–f, 100 nm.
+                                                                                                                                                            299
+                                                             © 2006 Nature Publishing Group
+ARTICLES                                                                                                                   NATURE|Vol 440|16 March 2006
+
+
+
+95 8C to 20 8C in ,2 h. When samples were deposited on mica, only               gap; an aspect ratio of 1.05 (93.9 nm £ 89.5 nm) was expected. By
+folded DNA structures stuck to the surface while excess staples                 AFM, 13% of structures were well-formed squares (out of S ¼ 45
+remained in solution; AFM imaging thus proceeded under buffer                   observed structures) with aspect ratios from 1.00 to 1.07 and bore the
+without prior purification. Six different folds were explored; Fig. 2           expected pattern of crossovers (Fig. 2a, upper AFM image). Of the
+gives their folding paths and their predicted and experimentally                remaining structures, ,25% were rectangular fragments, and ,25%
+observed DNA structures. (Models and staple sequences are given in              had an hourglass shape that showed a continuous deformation of the
+Supplementary Note S3, final designs appear in Supplementary Note               crossover lattice (Fig. 2a, lower AFM image). Sequential imaging
+S12. Experimental methods are given in Supplementary Note S4,                   documented the stretching of a square into an hourglass, suggesting
+results described here but not shown are in Supplementary Note S5.)             that hourglasses were originally squares that stretched upon deposition
+Of the products imaged by AFM, a particular structure was con-                  or interaction with the AFM tip. No subsequent designs exhibited
+sidered qualitatively ‘well-formed’ if it had no defect (hole or                stretching. Other designs had either a tighter 1.5-turn spacing with
+indentation in the expected outline) greater than 15 nm in diameter.            32-mer staples spanning three helical domains (Fig. 2b–d, f) or
+For each fold the fraction of well-formed structures, as a percentage           smaller domains that appeared to slide rather than stretch (Fig. 2e).
+of all distinguishable structures in one or more AFM fields, was                   To test the formation of a bridged seam, a rectangle was designed
+calculated as a rough estimate of yield. I note that while some                 (Fig. 2b) according to the scheme outlined in Fig. 1e using 1.5-turn
+structures classified as well-formed had 15-nm defects, most had                crossover spacing, 32-mer staples and a circular scaffold. As seen in
+no defects greater than 10 nm in diameter.                                      Fig. 2b, the central seam and associated pattern of crossovers was
+   First, a simple 26-helix square was designed (Fig. 2a). The square           easily visualized (upper AFM image). Rectangles stacked along their
+had no vertical reversals in raster direction, required a linear scaffold,      vertical edges, often forming chains up to 5 mm long (lower AFM
+and used 2.5-turn crossover spacing. Most staples were 26-mers that             image). The yield of well-formed rectangles was high (90%, S ¼ 40),
+bound each of two adjacent helices as in Fig. 1c, but via 13 bases              and so rectangles were used to answer basic questions concerning
+rather than 8. The design was made assuming a 1.5-nm inter-helix                inter-helix gaps, base-stacking, defects and stoichiometry. AFM drift
+
+
+
+
+Figure 3 | Patterning and combining DNA origami. a, Model for a pattern         lines in e) greatly decrease stacking (i). j–m, Two labellings of the sharp
+representing DNA, rendered using hairpins on a rectangle (Fig. 2b). b, AFM      triangle show that each edge may be distinguished. In j–u, pixels fall on a
+image. One pixelated DNA turn (,100 nm) is 30£ the size of an actual DNA        rectilinear lattice. n–u, Combination of sharp triangles into hexagons
+turn (,3.6 nm) and the helix appears continuous when rectangles stack           (n, p, q) or lattices (o, r–u). Diagrams (n, o) show positions at which staples
+appropriately. Letters are 30 nm high, only 6£ larger than those written        are extended (coloured protrusions) to match complementary single-
+using STM in ref. 3; 50 billion copies rather than 1 were formed. c, d, Model   stranded regions of the scaffold (coloured holes). Models (p, r) permit
+and AFM image, respectively, for a hexagonal pattern that highlights the        comparison with data (q, s). The largest lattice observed comprises only
+nearly hexagonal pixel lattice used in a–i. e–i, Map of the western             30 triangles (t). u shows close association of triangles (and some breakage).
+hemisphere, scale 1:2 £ 1014, on a rectangle of different aspect ratio.         d and f were stretched and sheared to correct for AFM drift. Scale bars:
+Normally such rectangles aggregate (h) but 4-T loops or tails on edges (white   h, i, 1 mm; q, s–u, 100 nm.
+300
+                                                                © 2006 Nature Publishing Group
+NATURE|Vol 440|16 March 2006                                                                                                         ARTICLES
+
+
+often distorts aspect ratios so that inter-helix gaps cannot be inferred   each original staple, is used to represent binary ‘1’s. Patterns are
+from the aspect ratio of a single rectangle. A range of aspect ratios      created by mixing appropriate subsets of these strands. In this way,
+implied a gap size from 0.9 to 1.2 nm; later designs assume 1 nm.          any desired pattern can be made.
+Whatever the exact value, it is consistent: aspect ratios were invariant      In principle, a variety of DNA modifications—for example, biotin
+along stacked chains with dozens of rectangles. Such stacking was          or fluorophores—could serve as labels. Here, ‘dumbbell hairpins’
+almost completely abolished by omitting staples along vertical edges.      (Fig. 1d inset, Supplementary Note S6), designed to avoid dimeriza-
+On the other hand, stacking across the seam of an unbridged                tion at high concentration, were added to the middle of 32-mer
+rectangle (as in Fig. 1c) kept 65% of structures (S ¼ 40) well-formed;     staples at the position of merges made during design. Depending on
+the rest showed some degree of dislocation at the seam. Other defects,     the merge pattern, the resulting pixel pattern was either rectilinear,
+such as the intentional omission of single staples, could be visualized    with adjacent columns of hairpins on alternate faces of the shape, or
+as 5–10-nm holes. However, sharp tips and high tapping amplitudes          staggered and nearly hexagonally packed, with all hairpins on the
+were required; repeated scanning created holes difficult to dis-           same face. In AFM images labelled staples give greater height contrast
+tinguish from holes due to missing strands. This effect also increased     (3 nm above the mica) than unlabelled staples (,1.5 nm), which
+uncertainty when stoichiometry was varied. When staple excesses of         results in a pattern of light ‘1’ and dark ‘0’ pixels. Several patterns
+approximately 100:1 and 9:1 were used, the frequencies of 5–10-nm          (Fig. 3), each with ,200 pixels, illustrate the generality of this
+holes (a few per rectangle) were indistinguishable. At 2:1, rectangles     technique.
+were similar; perhaps a greater fraction were malformed. At 1.5:1,            Yields of patterned origami were similar to those of unpatterned
+rectangles formed but had holes up to ,10% of their area in size. At a     origami; for the pattern in Fig. 3a, 91% (S ¼ 85) of rectangles were
+1:1 ratio, ,1% of structures were rectangular.                             well-formed. Because rectilinear patterns imaged poorly, only stag-
+   To demonstrate the creation of arbitrary shapes, a five-pointed star    gered patterns were examined quantitatively. Distances measured
+was designed with 1.5-turn spacing, 32-mer staples and a linear            between pairs of ‘1’ pixels in alternating columns (two pixel widths:
+rather than circular scaffold (Fig. 2c). Designed assuming a 1.5-nm        11.5 ^ 0.9 nm, mean ^ s.d., n ¼ 26) and adjacent rows (one pixel
+inter-helix gap (the work was carried out before the gap for 1.5-turn      height: 6.6 ^ 0.5 nm, n ¼ 24) are consistent with the theoretically
+spacing was measured), the stars are somewhat squat (Fig. 2c, upper        expected pixel size of 5.4 nm £ 6 nm. Most defects take the form of
+AFM image). Still, the stars show that the width of a shape may be         ‘missing pixels’; that is, pixels that should image as ‘1’s but image as
+approximated to within one DNA turn. Many of the structures                ‘0’s instead. 94% of ‘1’ pixels (of 1,080 observed) were visualized.
+observed were star fragments (Fig. 2c, lower AFM image), and only          Whether missing pixels represent real defects or artefacts of imaging
+11% (S ¼ 70) were well-formed. The low yield of stars (and squares,        is unknown; sequential AFM images occasionally showed ‘1’ pixels
+see above) may be due to strand breakage occurring during BsrBI            that later converted irreversibly to ‘0’ pixels, suggesting tip-induced
+digestion or subsequent steps to remove the enzyme; when untreated         damage. Stoichiometric errors, synthetic errors, or unwanted sec-
+circular scaffold was folded into stars, 63% (S ¼ 43) were well-           ondary structure are not implicated for any particular strand, as the
+formed. To show that DNA origami need not be topological disks,            position of missing pixels appeared random (Fig. 3b, f and g).
+and that scaffolds can be routed arbitrarily through shapes, a three-         Stacking of shapes along blunt-ended helices provides an uncon-
+hole disk was designed (Fig. 2d). Although the shape approximated is       trolled mechanism for the creation of larger structures (Fig. 3b).
+symmetric, the folding path is highly asymmetric and has five distinct     Instead of removing staples on the edge of a rectangle to avoid
+seams. Unlike the rectangles, which rarely break or fold, three-hole       stacking (as described previously), 4-T hairpin loops (four thymines
+disks exhibit several characteristic deformations (Fig. 2d, lower AFM      in a row, Fig. 1e, inset) or 4-T tails can be added to edge staples
+image); still, 70% (S ¼ 90) were well-formed.                              (Fig. 3e, f); stacked chains of 3–5 rectangles still formed (Fig. 3g),
+   DNA origami is not limited to the approximation of shapes by            but 30% of rectangles (S ¼ 319) occurred as monomers (Fig. 3i).
+raster fill: some shapes can be created more exactly by combining          Without hairpins, all rectangles occurred in aggregates (Fig. 3h).
+distinct raster fill domains in non-parallel arrangements. Figure 2e          Controlled combination of shapes was achieved by designing
+shows a triangle built from three separate, 2.5-turn spacing rec-          ‘extended staples’ that connected shapes along their edges. To create
+tangular domains; only single covalent bonds along the scaffold hold       a binding interaction between two particular edges, extended staples
+the domains together. But the desired equiangular triangles (upper         were designed by merging and breaking normal staples along these
+AFM image) were rarely observed (,1%, S ¼ 199). As seen in the             edges (Supplementary Note S7). Starting with sharp triangles, this
+lower AFM image, stacking caused rectangular domains of separate           approach was used to create finite (hexagons; Fig. 3n, p, q) as well as
+triangles to bind; this effect and the flexibility of the single-bond      periodic structures (triangular lattice; Fig. 3o, r–u). I note that the
+joints at the vertices may account for the ease with which these           successful combination of shapes (unlike the successful formation of
+triangles deform. To solve these problems, ‘sharp triangles’, built        individual shapes) is in principle very sensitive to the concentrations
+from trapezoidal domains with 1.5-turn spacing, were designed              of extended staples (which should ideally be equal to that of the
+(Fig. 2f). The slanted edges of the trapezoids meet at the triangle        scaffold). Poor stoichiometry may play a role in the poor yield of
+vertices and allow the addition of bridging staples along these            hexagons (,2%, S ¼ 70) and lattices (not measured).
+interfaces. Sharp triangles remained separated and equiangular
+(Fig. 2f, lower AFM image); 88% were well-formed (S ¼ 78). Even            Discussion
+when bridging staples at the vertices were not used, a large number of     The scaffolded self-assembly of DNA strands has been used to create
+sharp triangles were well-formed (55%, S ¼ 22). These ‘weakened’           linear structures17,18 and proposed as a method for creating arbitrary
+sharp triangles provided the most stringent test of the estimated          patterns18,19. But the widespread use of scaffolded self-assembly, and
+inter-helix gap, because too high or low an estimate would have            in particular the use of long DNA scaffolds in combination with
+caused gaps or overlaps between trapezoids. Gaps of 10 nm occasion-        hundreds of short strands, has been inhibited by several misconcep-
+ally appeared but overlaps were never observed, suggesting that 1 nm       tions: it was assumed that (1) sequences must be optimized20 to avoid
+may be a slight underestimate of the inter-helix gap.                      secondary structure or undesired binding interactions, (2) strands
+                                                                           must be highly purified, and (3) strand concentrations must be
+Patterning and combining DNA origami                                       precisely equimolar. These three criteria are important for the
+In addition to binding the DNA scaffold and holding it in shape,           formation of many DNA nanostructures and yet all three are ignored
+staple strands provide a means for decorating shapes with arbitrary        in the present method. For example, M13mp18 is essentially a
+patterns of binary pixels. Given a shape, the original set of staples is   natural sequence that has a predicted secondary structure which is
+taken to represent binary ‘0’s; a new set of labelled staples, one for     more stable (lower in energy) than similar random sequences
+                                                                                                                                               301
+                                                         © 2006 Nature Publishing Group
+ARTICLES                                                                                                                           NATURE|Vol 440|16 March 2006
+
+
+
+(Supplementary Note S8). Further, stocks of staples each contained a                 2.  Junno, T., Deppert, K., Montelius, L. & Samuelson, L. Controlled manipulation
+                                                                                         of nanoparticles with an atomic force microscope. Appl. Phys. Lett. 66,
+few per cent truncation products, stock concentrations were                              3627–-3629 (1995).
+measured with at least 10% error, and staples were used successfully                 3. Eigler, D. M. & Schweizer, E. K. Positioning single atoms with a scanning
+at stoichiometries that varied over an order of magnitude.                               tunnelling microscope. Nature 344, 524–-526 (1990).
+   I suggest that several factors contribute to the success of scaffolded            4. Heinrich, A. J., Lutz, C. P., Gupta, J. A. & Eigler, D. M. Molecular cascades.
+DNA origami (even though the method ignores the normal, careful                          Science 298, 1381–-1387 (2002).
+                                                                                     5. Whitesides, G. M., Mathias, J. P. & Seto, C. T. Molecular self-assembly and
+practices of DNA nanotechnology). These are (1) strand invasion, (2)                     nanochemistry: a chemical strategy for the synthesis of nanostructures. Science
+an excess of staples, (3) cooperative effects and (4) design that                        254, 1312–-1319 (1991).
+intentionally does not rely on binding between staples. Briefly                      6. Yokoyama, T., Yokoyama, S., Kamikado, T., Okuno, Y. & Mashiko, S.
+(details are given in Supplementary Note S9), strand invasion may                        Self-assembly on a surface of supramolecular aggregates with controlled size
+                                                                                         and shape. Nature 413, 619–-621 (2001).
+allow correct binding of excess full-length staples to displace                      7. Mao, C. B. et al. Virus-based toolkit for the directed synthesis of magnetic and
+unwanted secondary structure, incorrect staples, or grossly truncated                    semiconducting nanowires. Science 303, 213–-217 (2004).
+staples. Further, each correct addition of a staple organizes the                    8. Seeman, N. C. Nucleic-acid junctions and lattices. J. Theor. Biol. 99, 237–-247
+scaffold for subsequent binding of adjacent staples and precludes a                      (1982).
+                                                                                     9. Seeman, N. C. & Lukeman, P. S. Nucleic acid nanostructures: bottom-up
+large set of undesired secondary structures. Last, because staples are                   control of geometry on the nanoscale. Rep. Prog. Phys. 68, 237–-270 (2005).
+not designed to bind one another, their relative concentrations do                   10. Chworos, A. et al. Building programmable jigsaw puzzles with RNA. Science
+not matter.                                                                              306, 2068–-2072 (2004).
+   The method presented here is easy to implement, high yield and                    11. Park, S. H. et al. Finite-size, fully-addressable DNA tile lattices formed by
+                                                                                         hierarchical assembly procedures. Angew. Chem. 118, 749–-753 (2006).
+relatively inexpensive. Three months of effort went into the design
+                                                                                     12. Chen, J. & Seeman, N. C. The synthesis from DNA of a molecule with the
+program. In addition, each structure required about one week to                          connectivity of a cube. Nature 350, 631–-633 (1991).
+design and one week to synthesize (commercially); the mixing and                     13. Zhang, Y. & Seeman, N. C. The construction of a DNA truncated octahedron.
+annealing of strands required a few hours. The greatest experimental                     J. Am. Chem. Soc. 116, 1661–-1669 (1994).
+difficulty was acquiring high-resolution AFM images, typically                       14. Shih, W. M., Quispe, J. D. & Joyce, G. F. A 1.7-kilobase single-stranded DNA
+                                                                                         that folds into a nanoscale octahedron. Nature 427, 618–-621 (2004).
+taking two days per structure. For rigid designs using circular                      15. Rothemund, P. W. K. et al. Design and characterization of programmable DNA
+scaffolds (rectangles with patterns, three-hole disks, and sharp                         nanotubes. J. Am. Chem. Soc. 26, 16344–-16353 (2004).
+triangles), yields of qualitatively well-formed structures were at                   16. Fu, T.-J. & Seeman, N. C. DNA double-crossover molecules. Biochemistry 32,
+least 70%. A better understanding of folding will depend on less-                        3211–-3220 (1993).
+                                                                                     17. LaBean, T. H., Winfree, E. & Reif, J. H. in DNA Based Computers V (eds Winfree,
+destructive imaging and quantification of small (,15 nm) defects. A                      E. & Gifford, D. K.) 123–-140 ( Vol. 54 of DIMACS, AMS Press, Providence,
+possible objection to the routine use of the method is the potential                     Rhode Island, 1999).
+cost of staples; unlike the scaffold, staples cannot be cloned. However,             18. Yan, H., LaBean, T. H., Feng, L. & Reif, J. H. Directed nucleation assembly of
+unpurified strands are inexpensive so that the scaffold constitutes                      DNA tile complexes for barcode-patterned lattices. Proc. Natl Acad. Sci. USA
+                                                                                         100, 8103–-8108 (2003).
+80% of the cost, even when using a 100-fold excess of staples                        19. Reif, J. H. in Proc. 29th Int. Colloquium on Automata, Languages, and Programming
+(Supplementary Note S10).                                                                (ICALP) (eds Widmayer, P., Ruiz, F. T., Bueno, R. M., Hennessy, M., Eidenbenz,
+   I believe that scaffolded DNA origami can be adapted to create                        S. & Conejo, R.) 1–-21 (Vol. 2380 of Lecture Notes in Computer Science,
+more complex or larger structures. For example, the design of three-                     Springer, New York, 2002).
+dimensional structures should be accessible using a straightforward                  20. Seeman, N. C. De novo design of sequences for nucleic acid structural
+                                                                                         engineering. J. Biomol. Struct. Dyn. 8, 573–-581 (1990).
+adaptation of the raster fill method given here. If non-repetitive                   21. Winfree, E. in DNA Based Computers (eds Lipton, R. J. & Baum, E. B.) 199–-221
+scaffolds of megabase length can be prepared, micrometre-size                            (Vol. 27 of DIMACS, AMS Press, Providence, Rhode Island, 1996).
+origami with 20,000 features may be possible. However, the require-                  22. Rothemund, P. W. K., Papadakis, N. & Winfree, E. Algorithmic self-assembly of
+ment for unique sequence information means that the method                               DNA Sierpinski triangles. PLoS Biol. 2, e424 (2004).
+                                                                                     23. Yan, H., Park, S. H., Finkelstein, G., Reif, J. H. & LaBean, T. H. DNA-templated
+cannot be scaled up arbitrarily; whenever structures above a critical                    self-assembly of protein arrays and highly conductive nanowires. Science 301,
+size or level of complexity are desired, it will therefore be necessary                  1882–-1884 (2003).
+to combine scaffolded DNA origami with hierarchical self-                            24. Le, J. D. et al. DNA-templated self-assembly of metallic nanocomponent arrays
+assembly10,11, algorithmic self-assembly22, or top-down fabrication                      on a surface. Nano Lett. 4, 2343–-2347 (2004).
+techniques.
+                                                                                     Supplementary Information is linked to the online version of the paper at
+   An obvious application of patterned DNA origami would be the                      www.nature.com/nature.
+creation of a ‘nanobreadboard’, to which diverse components could
+be added. The attachment of proteins23, for example, might allow                     Acknowledgements I thank E. Winfree for discussions and providing a
+                                                                                     stimulating laboratory environment; B. Yurke for the term ‘nanobreadboard’;
+novel biological experiments aimed at modelling complex protein                      N. Papadakis, L. Adleman, J. Goto, R. Barish, R. Schulman, R. Hariadi, M. Cook
+assemblies and examining the effects of spatial organization, whereas                and M. Diehl for discussions; B. Shaw for a gift of AFM tips; A. Schmidt for
+molecular electronic or plasmonic circuits might be created by                       coordinating DNA synthesis; and K. Yong, J. Crouch and L. Hein for
+attaching nanowires, carbon nanotubes or gold nanoparticles24.                       administrative support. This work was supported by National Science
+                                                                                     Foundation Career and Nano grants to E. Winfree as well as fellowships from
+These ideas suggest that scaffolded DNA origami could find use in                    the Beckman Foundation and Caltech Center for the Physics of Information.
+fields as diverse as molecular biology and device physics.
+                                                                                     Author Information Reprints and permissions information is available at
+Received 7 September 2005; accepted 12 January 2006.                                 npg.nature.com/reprintsandpermissions. The author declares competing
+                                                                                     financial interests: details accompany the paper on www.nature.com/nature.
+1.    Feynman, R. P. There’s plenty of room at the bottom. Engineering and Science   Correspondence and requests for materials should be addressed to P.W.K.R.
+      23(5), 22–-36 (Caltech, February, 1960).                                       (pwkr@dna.caltech.edu).
+
+
+
+
+302
+                                                                      © 2006 Nature Publishing Group
+

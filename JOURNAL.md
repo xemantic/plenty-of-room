@@ -6822,3 +6822,137 @@ between numbers agents *raise*, not numbers they are *given*. `T-151` and `T-152
 their own authors, unprompted. And one report figure again did not survive the grep — a claim
 filename given as `C-0081-seam-weave.md` for `C-0081-seam-weave-congruence.md`, harmless, and the
 fifth session in which a report and its artifact disagreed on something.
+
+## 2026-08-17 — Iteration 17
+
+Three science loops and two process tasks. Every number below was grepped out of its claim file.
+
+**`C-0085` (`T-152`) — the branch's knife edge was never a residue, it was an integer, and it is 26× wider
+than published.** `C-0079` had just shown the collinear slot must prevent a blunt-end **stacking bond**
+rather than a clash. The cheap bound then reshaped the question before any code ran, and it is the finding:
+**a collinear slot is an AXIAL gap between two duplex end faces, so it is quantised at the rise**, exactly
+like the pitch and the arm it is differenced against — `M = (32 − N_d − N_L)` rises. The famous **0.02561 nm**
+is the residue of subtracting a *transverse* SAXS constant (7.912 rises) and an elastica root (24.013 rises)
+from an **integer** pitch; on the lattice the standing design closes at **exactly zero**, and quantising the
+convention up one rise makes the margin **−0.00439 nm** and drops the array to 30 of 34. The criterion is then
+an energy — both faces are tethered to one sheet, so a stack costs `½k(g−g₀)²` against **4.41156 `k_BT`** —
+giving **6 base pairs = 2.04 nm** and a margin of **0.67561 nm, two whole rises, 26.38×** the published one.
+Both of `C-0069`'s unmargined joints gain real room: `c ≤ 2.34166 → 2.94462`, the tip ceiling **79.678 →
+133.687** (1.7088× `A2`) and the root **13.930 → 25.689** (1.8988× one crossover), against 1.018× and 1.030×.
+34 of 34 still place. **The conservatism turns out to be load-bearing**: a rigid-rooted arm places at four
+rises or fewer, so the loose end of the stacking range would **reopen the truss branch `CH-0081` closed**.
+And **distance is the only control left** — all three of Rothemund's measured anti-stacking remedies append to
+a strand **terminus**, and `C-0034`'s `A2` has already spent both termini a duplex end has: `C-0029`'s
+counting theorem striking twice on the same two links.
+
+**`C-0086` (`T-151`) — a seam is a PARITY ON A TREE, not a fabrication convention.** Crossovers join only
+*adjacent* duplexes, so a single-layer sheet's row-adjacency graph is a **path** — a tree — and a closed walk
+on a tree traverses every edge an even number of times. A **fully folded circular** scaffold therefore gives
+every row two segments, i.e. exactly one seam, necessarily. Brute-forced: the path graph carries **2
+Hamiltonian paths and ZERO Hamiltonian cycles** at every width from 3 to 12. **So a seam needs both premises
+— circular AND fully folded — and the Gen-1 tile fails the second anyway**, taking **1 680** of M13's
+**7 249** nt. Rothemund built the seamless raster twice and states the theorem's own prediction in his own
+clauses: the 26-helix square *"had no vertical reversals in raster direction, **required a linear
+scaffold**"*, and his very first origami experiment was an 8-helix raster on a **circular** M13 with two
+thirds unfolded. Three things the programme had not counted: the **remainder** is a 5 569 nt, **33.3 nm** coil
+carrying **1.66×** the sheet's own charge in the actuated gap (a purpose-built 1 680 nt scaffold removes it
+and needs a **67 nt** return loop); **Rothemund's staggered seam is not the remedy** (best stagger 5 of 34
+against a straight seam's 6–12 — the declared falsifier fired); and a seamless raster **quantises the tile
+width at 32 bp** — admissible row lengths are odd multiples of 16 bp, **16, 48, 80, 112, 144** — so **§3's
+40.0 nm = 117.6 bp is not a buildable seamless width**, the nearest being **112 bp = 38.08 nm** (`CH-0101`).
+That is a fifth specification question for NDI and it is now item 5 of `DECISIONS-FOR-NDI.md` and item 10 of
+the queue's own list.
+
+**`C-0087` (`T-148`) — the programme's flat tile does not survive the only fabrication statistics anybody has
+measured, and the correlation question it was framed around is second order.** `CH-0084` had left the
+flatness half *indicative*, because a Bernoulli dropout and `C-0060`'s alternating scatter share a standard
+deviation and not a spatial structure. Settled, negatively and unanimously: over sixty
+`placement × convention × mandate` cells **not one is inside `T-5b`'s 0.10 even at the median**, and the
+lowest exceedance is **89.6 %** of realisations. **What decides it is a cheap bound added after the Monte
+Carlo made its shape obvious**: removing **exactly one** of `C-0063`'s 34 paths — 34 solves, no sampling —
+takes 0.0706 → **0.5010** of the stroke, and one of `C-0058`'s 45 takes 0.0753 → 0.3060. *An exhaustively
+optimised placement is a **cancellation**, and a cancellation has no tolerance to a missing term.* The
+position dependence is worth **1.2–1.7×** on the 90th percentile — real, adverse, exactly the direction
+`CH-0084` predicted — on a quantity a count of **one** has already taken 4–7× past the tolerance. **And the
+dropout reverses the ranking of the two flat designs**: `C-0063`'s 34 equal springs beat `C-0058`'s two-level
+45 at zero defects and **lose** under fabrication (0.6391 against 0.4893 at p90), because the denser array
+loses less per absent path. Neither holding the mandate nor pre-stiffening by `1/p` repairs it.
+**The per-staple map turned out to be readable**, which nobody had tried: all 168 values of Strauss's
+supplementary figure recovered and validated three ways, including against the `k/186` quantisation the
+imaged-structure count imposes. That corrected `CH-0084`'s edge row in the **favourable** direction — 48 % is
+**one corner of 168** and the perimeter *mean* is **77.5 %** (`CH-0102`) — and changed no verdict:
+`C-0060`'s threshold needs 89.31 % incorporation and **30 of 168** positions reach it, `C-0026`'s needs
+97.19 % and **none** does. A second correction runs the other way: **a 40 nm tile is not a Rothemund
+rectangle**, carrying 1.85× the perimeter per unit area, so the measured 0.84 transfers to **0.759–0.790**
+here and `CH-0084`'s reading was the optimistic one.
+The deliverable is conditioned rather than contradicted: **the tile can be made flat as DESIGNED and has not
+been shown to be flat as BUILT**, which is `T-155`.
+
+**`P-24` and `C-0088` (`T-150`), taken in the coordinator's own context, and the second caught the first.**
+`C-0071` discharged `T-95` and `T-102` in iteration 14 and `DECISIONS-FOR-NDI.md` records them as discharged;
+**`TASKS.md` still carried both as `TODO`, in their rows and in *Open questions for Kazik*, three iterations
+later** — the third instance of `C-0071`'s own *"a discharge is invisible to whoever files the removal"*, and
+the first in the **queue** rather than in the deliverable. Both struck rather than deleted, analysis intact.
+**The checker could not see it either**: `queue_status` knew `DONE`/`KILLED`/`ANSWERED` and read `DISCHARGED`
+as OPEN — a word iteration 17 had to coin for a status that is neither *answered* nor *abandoned* but
+**stopped applying**. The failure direction is the costly one, so the tuple now carries a comment saying the
+vocabulary grows and every missing word reads OPEN.
+`C-0088` then mechanised the self-consistency check `C-0080` asked for, and **found two contradictions, not
+the one reported by hand**. The second was **`T-95`, created ninety minutes earlier by `P-24`'s own fix**,
+which updated one of two mentions. *A hand-audit finds the contradictions that exist when it runs; the very
+next edit can make a new one, and a **status** change is the class likeliest to, being the one most apt to
+appear in more than one place.* **Third consecutive iteration in which a check caught the mistake of the
+person who wrote it** — a headline list (`C-0078`), two `TASKS.md` rows added minutes before (`C-0083`), and
+now a half-finished discharge. On `C-0080`'s **fourth** class the answer is a reasoned **no**: a superseded
+number reads `CITED` *because* it has an owner, so the exact check needs a `superseded-by` edge at statement
+granularity that no claim carries — a corpus convention change, not a tool. The cheap approximation is
+identified and priced (it would catch 3 of 5 known instances) and deliberately **not** shipped, its
+false-positive rate being unmeasured.
+
+**Process.** Two agents reported honestly against their own interest, which is worth recording: one declared
+a **TDD deviation** on `T-151` (model written before test) unprompted, and noted that the test then failed on
+two assertions that were real and changed the claim; the other **checked a `CLAUDE.md` correction it had been
+handed and found the correction wrong** (`σ_rel = √(f/(1−f))` is not inverted; the inverted form gives 229 %
+against 43.6 %) and asserted the right form as a gate test. A third found a `runtimeSeconds` field that made
+its own result file permanently un-diffable — *a wall clock in a result file is a step counter by another
+name* — and removed it.
+
+**`C-0084` (`T-149`) — the element the programme recommends has NO pull-in fold at 2 mM, and that changes an
+answer already sitting in front of NDI.** `C-0071` recommended `Q5` and `CH-0083` was the open objection that
+its pull-in verdict had been quoted for a load line it does not use. Searched: at `C-0071`'s own device the
+34 hinge-rooted arms fold at **0 of 6** `C-0003` layer models, where `C-0018`'s affine mandate folds at
+**6 of 6** and `C-0032`'s strain-softening flexure collapses to 1.0000–1.0019. On the **bias** axis the margin
+goes **1.0071–1.0317 → 1.3877–2.5764** (1.8706–3.4699 at 0.5 mM); on the **stroke** axis — the one `C-0032`
+showed decides it — the fold moves **3.4104–4.1248 nm → past 7.9097 nm**, and the binding ceiling changes
+owner from pull-in to `C-0002`'s `φ = 0.2` at two models and the element's own branch end at four.
+**§6 task 4 is discharged for the recommended device**, `CH-0083` is resolved, and `C-0071`'s failure route
+`R7` does not fire — nine routes become eight.
+**The cheap bound predicted all of it, at 11 of 11 gradable states, from one evaluation of each law**, which
+is `CLAUDE.md`'s *"at a fold the composition of two corrections is EXACT"* paying for itself; at 5 of the 11
+the omitted level term ran the *other* way and the slope term still decided it. The declared falsifier did not
+fire. A second, weaker one **fired in a bounded way and is reported as such**: the arm is inextensible and
+only the small-rotation branch is enumerated, so *"no fold"* means *"no fold below 7.9097 nm"* — 2.64× §3's
+target, and silent about the large-rotation branch. The control holds: at 7 nm / 10 mM the fold is still
+shallower than 3 nm at 4 of 6, so this is not a solver artefact.
+**And the consequence is editorial and immediate** (`CH-0098`). `C-0032`'s escalation of 0.5 mM from a
+preference to a **requirement** was read on `C-0030`'s strain-*softening* flexure — an element `CH-0081` has
+since removed from the output role. So **0.5 mM stays the recommendation and stops being a requirement**: it
+is bought for margin (1.39–2.58× becoming 1.87–3.47×, and a stability floor falling from 23.41–27.91 to
+3.86–15.94 pN/nm) rather than to keep the device off a fold it is not on, and `T-50`'s multi-week Monte Carlo
+is correspondingly less forced. `DECISIONS-FOR-NDI.md` decision 1 is corrected in place, struck rather than
+rewritten, and `ANSWERS.md`'s two passages are moved from *qualified and open* to *settled*. **This is
+`CLAUDE.md`'s own standing warning arriving in the deliverable — *a correction can be quoted against a stack
+that has already left the design* — and nobody has yet asked how many of the SIX routes to 0.5 mM are read on
+withdrawn objects.** That census is `T-156`, and it is one pass over six claims.
+`CH-0099` is the same shape one level out: **a ceiling *taxonomy* belongs to a load line too.** `C-0018`'s
+three candidate ceilings assume a coupling drivable to any stroke the layer admits; a rotating arm is not, and
+inheriting the list unexamined would have quoted `CH-0007`'s 1.0 V at a stroke the element model cannot
+describe — up to **3.74×** inflation, at exactly the headline states.
+
+**A coordinator note on the two documents in front of NDI.** `DECISIONS-FOR-NDI.md` arrived from Kazik
+mid-iteration, as the reviewable form of the four specification questions. It passes both retained checkers
+clean — 0 table defects, every numeric token traced — and iteration 17 gave it two edits it could not have
+anticipated: a **fifth** decision (the scaffold, `C-0086`/`T-154`, which turned out to decide whether the tile
+has a seam at all) and a **correction to its first**, whose severity `C-0084` withdrew within hours of it
+being written. Both were made in place and struck rather than rewritten, which is the discipline that file
+sets for itself.

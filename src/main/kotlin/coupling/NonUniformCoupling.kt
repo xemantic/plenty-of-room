@@ -332,15 +332,51 @@ class InfluenceSurrogate internal constructor(
         require(stiffnesses.all { it > 0.0 && it.isFinite() }) {
             "every path stiffness must be positive and finite"
         }
-        val matrix = F64Array(pathCount, pathCount)
-        for (j in 0 until pathCount) {
-            for (k in 0 until pathCount) matrix[j, k] = symmetric[j][k]
-            matrix[j, j] += 1.0 / stiffnesses[j]
+        return solveWithDropout(stiffnesses, allPresent)
+    }
+
+    /**
+     * The response of the same coupling with only the paths at which [present] is `true`
+     * attached — `T-148`'s **dropout**, solved exactly.
+     *
+     * A missing staple does not perturb a load path's stiffness, it **removes** the path
+     * (`CH-0084`), so an absent station is solved as absent rather than as a small stiffness: the
+     * Woodbury system is assembled over the **surviving** stations alone, which is exact
+     * superposition and not a limit. An absent path reports a support force and a station
+     * deflection of exactly `0.0`, and a realisation in which **no** path survives returns the
+     * free tile's own dishing — both of which are gate 2 of `T-148`.
+     *
+     * [solve] is this method at full presence, so the two agree bit for bit by construction and
+     * nothing published on the surrogate can move.
+     */
+    fun solveWithDropout(
+        stiffnesses: List<Double>,
+        present: List<Boolean>
+    ): NonUniformDeflection {
+        require(stiffnesses.size == pathCount) {
+            "expected $pathCount stiffnesses, one per attachment, was: ${stiffnesses.size}"
         }
-        val right = F64Array(pathCount) { stationFree[it] }
-        val forces = CholeskyDecomposition(matrix).solve(right)
+        require(present.size == pathCount) {
+            "expected one presence flag per attachment, was: ${present.size} for $pathCount"
+        }
+        val live = (0 until pathCount).filter { present[it] }
+        require(live.all { stiffnesses[it] > 0.0 && stiffnesses[it].isFinite() }) {
+            "every surviving path stiffness must be positive and finite"
+        }
+        val forces = DoubleArray(pathCount)
+        if (live.isNotEmpty()) {
+            val size = live.size
+            val matrix = F64Array(size, size)
+            for (j in 0 until size) {
+                for (k in 0 until size) matrix[j, k] = symmetric[live[j]][live[k]]
+                matrix[j, j] += 1.0 / stiffnesses[live[j]]
+            }
+            val right = F64Array(size) { stationFree[live[it]] }
+            val solution = CholeskyDecomposition(matrix).solve(right)
+            for (j in 0 until size) forces[live[j]] = solution[j]
+        }
         val dishing = DoubleArray(dishingFree.size) { dishingFree[it] }
-        for (k in 0 until pathCount) {
+        for (k in live) {
             val force = forces[k]
             if (force == 0.0) continue
             val influence = dishingInfluence[k]
@@ -354,11 +390,16 @@ class InfluenceSurrogate internal constructor(
         }
         return NonUniformDeflection(
             supportForces = (0 until pathCount).map { forces[it] },
-            stationDeflections = (0 until pathCount).map { forces[it] / stiffnesses[it] },
+            stationDeflections = (0 until pathCount).map {
+                if (present[it]) forces[it] / stiffnesses[it] else 0.0
+            },
             peakDishing = peak,
             rmsDishing = sqrt(square / dishing.size)
         )
     }
+
+    /** Every path attached — allocated once, because a Monte Carlo asks for it per realisation. */
+    private val allPresent: List<Boolean> = List(pathCount) { true }
 
     /**
      * The forces that minimise the root-mean-square dishing over the **whole** of `ℝⁿ`, ignoring
