@@ -313,7 +313,7 @@ Full gate table, falsifier outcomes and per-item predicate discharge in
 ## Result
 
 Filed as [`C-0020`](../claims/C-0020-in-plane-shear-lag.md), which raises
-[`CH-0021`](../challenges/CH-0021-in-plane-factor-is-one.md) against `C-0014`.
+[`CH-0021`](../challenges/CH-0021-in-plane-factor-is-not-out-of-plane.md) against `C-0014`.
 
 ## Feedback into Formulate
 

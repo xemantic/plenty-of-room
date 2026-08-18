@@ -137,8 +137,20 @@ tasks.register<Exec>("testMarkdownTables") {
     commandLine("$projectDir/tools/test-check-markdown-tables.py")
 }
 
+/*
+ * `tools/check-corpus-links.py` (`T-203`, `C-0122`) is the fourth. Its self-tests read only
+ * in-memory fixtures, so they wire in beside the others; the CHECK itself lives in
+ * `tools/verify.sh` rather than here, for the same reason the census does — it reads the corpus,
+ * which an agent edits during an iteration.
+ */
+tasks.register<Exec>("testCorpusLinks") {
+    group = "verification"
+    description = "Runs tools/check-corpus-links.py --selftest, the tests for the link checker"
+    commandLine("$projectDir/tools/check-corpus-links.py", "--selftest")
+}
+
 tasks.named("test") {
-    dependsOn("testHarness", "testDeliverableTracer", "testMarkdownTables")
+    dependsOn("testHarness", "testDeliverableTracer", "testMarkdownTables", "testCorpusLinks")
 }
 
 dependencies {

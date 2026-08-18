@@ -121,4 +121,8 @@ if [ "$checks" = "yes" ]; then
     echo
     echo "--- every Markdown table renders (P-23) ---"
     tools/check-markdown-tables.py
+    echo
+    echo "--- every relative link in gpd/ resolves (T-203) ---"
+    tools/check-corpus-links.py --selftest > /dev/null
+    tools/check-corpus-links.py
 fi

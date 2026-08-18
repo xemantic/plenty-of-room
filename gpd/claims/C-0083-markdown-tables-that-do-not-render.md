@@ -30,7 +30,7 @@ no way to know which.
 
 It is entirely machine-checkable, so it should be machined. This is the same argument
 [`C-0078`](C-0078-status-drift-in-the-deliverable.md) made two iterations earlier about status drift
-and [`P-16`](../tasks/P-16.md) made about the snapshot helpers: *a check nobody remembers to perform is
+and `P-16` (a [`TASKS.md`](../../TASKS.md) row; it has no task file) made about the snapshot helpers: *a check nobody remembers to perform is
 not a check.*
 
 ## 2. The three kinds, all invisible in the source

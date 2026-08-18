@@ -9,7 +9,7 @@ the two are one question and are formulated, planned, executed and filed togethe
 | **Leaf** | **`A8.2`** (*"identify the dominant compliance term … and budget stiffness at the joints"*), with `A1.2` for the anchoring scheme the joint belongs to |
 | **Verification type** | **in-silico** (a multi-leg frame assembled at the head and solved into `C-0030`'s coupled beam) **+ logical** (a frame couple is a rank-one tensor on the leg offsets, so the restraint it supplies and the release it costs live on *orthogonal* axes and their sum is conserved) **+ literature** (the triangulated motif the programme has been citing, re-fetched and re-read) |
 | **Units** | nm, pN, pN·nm, pN·nm/rad, pN/nm; `k_BT = 4.141947 pN·nm` at 300 K; aqueous 2 mM MgCl₂ |
-| **Status** | **DONE** — claim [`C-0036`](../claims/C-0036-triangulated-standoff.md) |
+| **Status** | **DONE** — claim [`C-0036`](../claims/C-0036-concentrated-crossover.md) |
 
 ---
 

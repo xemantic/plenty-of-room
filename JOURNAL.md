@@ -8112,3 +8112,39 @@ keeping an instrument whose failure mode no other instrument shares.
 question — its reversals, its withdrawn readings and its four re-openings — in a single table cell. The
 history being visible in one place is deliberate and valuable; the row is nonetheless the passage most in need
 of a **rewrite** rather than another append.
+
+**`T-203` (`C-0122`) — the honeycomb supplies the stations, and a link check turned into a fourth checker.**
+
+`C-0118` produced the first coupled tile flat under measured folding and named its own largest caveat: the
+attachment grid was the **abstract** one, every plan ceiling in this corpus is single-layer square-lattice, and
+nobody had counted what the honeycomb offers — so its path counts were a **request**.
+
+**Discharged.** All eight demands fit: `15 × 4` offers **90** upward stations and `10 × 6` offers **60**,
+against 10 to 75 asked for. And because a count is not a placement, the cells were **re-graded with every
+station snapped to the honeycomb's own 21 bp = 7.140 nm ladder** — **all four `10 × 6` cells stay flat, three
+of them slightly better**. Neither falsifier fired.
+
+**The trap is inside one sentence of the source.** The honeycomb has a crossover position every **7 bp** but
+the same adjacent pair only every **21 bp**, and an attachment roots on **one** azimuth — so its ladder is the
+21 and not the 7, a factor of three, with both numbers in the same sentence. Asserted as a test.
+
+**The census carries a finding nobody was looking for.** At a fixed 60 helices the station count is set by the
+**face**, not the helix count — so `10 × 6`, the cross-section that is 6.6× flatter and threshold-free, offers
+**60** stations where `15 × 4` offers **90**. **A thicker tile buys rigidity and spends attachment lattice.**
+Not binding here, but it is the axis on which a future coupling runs out of room, and nothing before this
+would have shown it. Raised and not answered: half the top-face helices carry only **oblique** free azimuths,
+and this corpus has never priced an oblique root against a perpendicular one.
+
+**And verifying this claim's own links found thirty broken ones.** It started with `C-0022-tile-edge-load.md`
+for what is actually `C-0022-tile-edge-load-profile.md`; a corpus sweep found **30**, across claims,
+challenges, task files, a manifest and `gpd/README.md`, accumulated over many iterations. All repaired, and
+`tools/check-corpus-links.py` now guards the class — 11 self-tests in `./gradlew test`, the check in
+`tools/verify.sh`. The corpus reads **0 broken links in 362 files**.
+
+**Two of the thirty were mine, written earlier in the same session**, and the reason they survived is the
+lesson: the ad-hoc check I had been running matched `../claims/…` and **not** same-directory links, so it
+reported *"none"* on files that had them. **A checker's blind spot is invisible in exactly the cases it
+misses.** And the shipped version's first draft was wrong too — it special-cased `../../` as the repository
+root, which is true two levels up from `gpd/claims/` and false from a manifest one level deeper, giving 15
+false positives on its first real run. One `normpath` resolver against the file's own directory replaced three
+special cases.
