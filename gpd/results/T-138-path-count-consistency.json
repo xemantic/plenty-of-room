@@ -8,14 +8,14 @@
             "name": "C-0069's 15-path row, read as the total stiffness it presents",
             "value": 75.5555556,
             "unit": "pN/nm",
-            "settles": "C-0017's mandate is %.4f pN/nm as a SUM, and 34 instances of a 15-path arm present %.2fx it — the row is not a sensitivity of the design, it is a different design",
+            "settles": "C-0017's mandate is 33.3333 pN/nm as a SUM, and 34 instances of a 15-path arm present 2.27x it — the row is not a sensitivity of the design, it is a different design",
             "falsifierFired": true
         },
         {
             "name": "C-0069's 45-path row, read on its OWN reported placed count",
             "value": 17.7777778,
             "unit": "pN/nm",
-            "settles": "24 of the 34 demanded place, so the array delivers %.2fx the mandate — and a row whose placed count differs from its path count fails C-0017 whichever of the two readings is taken",
+            "settles": "24 of the 34 demanded place, so the array delivers 0.53x the mandate — and a row whose placed count differs from its path count fails C-0017 whichever of the two readings is taken",
             "falsifierFired": true
         },
         {

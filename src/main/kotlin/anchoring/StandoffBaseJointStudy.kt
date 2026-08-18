@@ -474,7 +474,7 @@ private val LITERATURE: List<LiteratureRecord> = listOf(
     ),
     LiteratureRecord(
         question = "Is there a measurement of a SHORT duplex under axial compression?",
-        finding = "YES, and it is at exactly this length scale. Fields, Meyer & Cohen built a " +
+        finding = ("YES, and it is at exactly this length scale. Fields, Meyer & Cohen built a " +
                 "\"molecular vise\" and found that \"short dsDNA strands (<41 base pairs) " +
                 "resisted this force and remained straight; longer strands became bent\", the " +
                 "load being the measured 9 pN A-T unzipping force, with the transition \"in good " +
@@ -484,7 +484,7 @@ private val LITERATURE: List<LiteratureRecord> = listOf(
                 "55.5 nm model input, exactly the direction CLAUDE.md records. Liedl et al.'s " +
                 "tensegrity paper supplies the origami-context form, \"Fc = pi^2 P kBT/L^2\", " +
                 "but for 128 nm six-helix bundles. NOT FOUND: any measurement or simulation of a " +
-                "single duplex under 20 nm in axial compression inside an origami."
+                "single duplex under 20 nm in axial compression inside an origami.")
             .format(
                 FIELDS_IMPLIED_BENDING_RIGIDITY, FIELDS_IMPLIED_PERSISTENCE,
                 100.0 * (1.0 - FIELDS_IMPLIED_PERSISTENCE / 55.5)

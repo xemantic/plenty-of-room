@@ -72,7 +72,7 @@ ROOT_DOCUMENTS = ["ANSWERS.md", "DECISIONS-FOR-NDI.md"]
 
 
 def tracked_markdown(root=ROOT):
-    """The tracked Markdown under `gpd/`, plus the outward-facing root documents.
+    """The Markdown under `gpd/` — tracked AND untracked — plus the outward-facing root documents.
 
     `C-0083` records why the fallback matters: a verification SNAPSHOT has no `.git`, so a checker
     that only knows `git ls-files` silently checks nothing there.
@@ -83,8 +83,19 @@ def tracked_markdown(root=ROOT):
             ["git", "ls-files", "gpd/**/*.md", "gpd/*.md"],
             cwd=root, capture_output=True, text=True, check=True,
         ).stdout.split()
-        if listed:
-            return sorted(set(listed) | set(extra))
+        # `git ls-files` lists TRACKED files only, so a claim an agent has just written and not
+        # yet committed is invisible to it. `C-0127` found exactly that: two broken links in its
+        # own `Consumes` row passed a run reporting *"0 broken link(s) in 376 file(s)"*, and were
+        # caught only by `verify.sh`, which runs in a `.git`-less snapshot where the walk below
+        # sees everything. **The blind instrument was the one an agent uses on its OWN work
+        # mid-iteration** — the moment the check is worth most. Untracked Markdown is added here so
+        # a checkout run and the gate see the same set.
+        untracked = subprocess.run(
+            ["git", "ls-files", "--others", "--exclude-standard", "gpd/**/*.md", "gpd/*.md"],
+            cwd=root, capture_output=True, text=True, check=True,
+        ).stdout.split()
+        if listed or untracked:
+            return sorted(set(listed) | set(untracked) | set(extra))
     except (OSError, subprocess.CalledProcessError):
         pass
     found = list(extra)

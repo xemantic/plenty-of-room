@@ -1063,18 +1063,18 @@ fun main() {
         conditions = mapOf(
             "temperature" to "300 K, k_BT = 4.141947 pN nm",
             "medium" to "aqueous 2 mM MgCl2",
-            "tile" to "40.0 x %.2f nm single-layer square-lattice sheet, %d duplexes at the " +
-                    "SAXS-measured %.2f nm".format(
-                        lengthY, T163_DUPLEXES, sheet.interhelicalDistance
-                    ),
+            "tile" to ("40.0 x %.2f nm single-layer square-lattice sheet, %d duplexes at the " +
+                    "SAXS-measured %.2f nm").format(
+                lengthY, T163_DUPLEXES, sheet.interhelicalDistance
+            ),
             "host" to "crossover phase $T163_PHASE — C-0063's own, centro-symmetric and an " +
                     "eight-column sheet; phase $T163_C0074_PHASE carried only for the two " +
                     "reference cells that reproduce C-0074's recommended design",
             "load" to "C-0022's SOLVED edge profile at ${designProfile.name} (the design state " +
                     "of C-0063, C-0087, C-0089 and C-0098), with ${heldProfile.name} used only " +
                     "by C-0074's own minimax",
-            "mandate" to "C-0017's %.7f pN/nm as a SUM at §3's acceptable 3 nm stroke, shared " +
-                    "EQUALLY at every count".format(T163_MANDATE),
+            "mandate" to ("C-0017's %.7f pN/nm as a SUM at §3's acceptable 3 nm stroke, shared " +
+                    "EQUALLY at every count").format(T163_MANDATE),
             "flatness" to "peak departure from the best-fit plane over the free-tile stroke " +
                     "%.8f nm, on an %d x %d grid; flat means below T-5b's %.2f CONVENTION"
                         .format(freeStroke, T163_SAMPLES, T163_SAMPLES, T163_TOLERANCE),

@@ -4,10 +4,10 @@
     "conditions": {
         "temperature": "300 K, k_BT = 4.141947 pN nm",
         "medium": "aqueous 2 mM MgCl2",
-        "tile": "40.0 x %.2f nm single-layer square-lattice sheet, %d duplexes at the SAXS-measured 40.35 nm",
+        "tile": "40.0 x 40.35 nm single-layer square-lattice sheet, 15 duplexes at the SAXS-measured 2.69 nm",
         "host": "crossover phase 24 — C-0063's own, centro-symmetric and an eight-column sheet; phase 8 carried only for the two reference cells that reproduce C-0074's recommended design",
         "load": "C-0022's SOLVED edge profile at 2.0 mM, 10 nm, 0.192 V (the design state of C-0063, C-0087, C-0089 and C-0098), with 2.0 mM, 7 nm, 0.192 V used only by C-0074's own minimax",
-        "mandate": "C-0017's %.7f pN/nm as a SUM at §3's acceptable 3 nm stroke, shared EQUALLY at every count",
+        "mandate": "C-0017's 33.3333333 pN/nm as a SUM at §3's acceptable 3 nm stroke, shared EQUALLY at every count",
         "flatness": "peak departure from the best-fit plane over the free-tile stroke 4.90731102 nm, on an 81 x 81 grid; flat means below T-5b's 0.10 CONVENTION",
         "dropout": "C-0087's MEASURED_DEPTH incorporation field, Bernoulli and independent across stations; ONE stream over all 53 upward sites at seed 20260817, RESTRICTED per subset (common random numbers)",
         "statistic": "the 90th percentile as a nearest-rank order statistic, C-0087's, C-0089's and C-0098's",

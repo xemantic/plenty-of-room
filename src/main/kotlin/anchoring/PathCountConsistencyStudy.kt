@@ -234,17 +234,17 @@ fun main() {
         T138BoundRecord(
             name = "C-0069's 15-path row, read as the total stiffness it presents",
             value = deliveredTotalStiffness(T138_MANDATE, 15, C0055_ARM_COUNT), unit = "pN/nm",
-            settles = "C-0017's mandate is %.4f pN/nm as a SUM, and 34 instances of a 15-path " +
+            settles = ("C-0017's mandate is %.4f pN/nm as a SUM, and 34 instances of a 15-path " +
                     "arm present %.2fx it — the row is not a sensitivity of the design, it is a " +
-                    "different design".format(T138_MANDATE, publishedFifteen),
+                    "different design").format(T138_MANDATE, publishedFifteen),
             falsifierFired = abs(publishedFifteen - 1.0) > 1e-9
         ),
         T138BoundRecord(
             name = "C-0069's 45-path row, read on its OWN reported placed count",
             value = deliveredTotalStiffness(T138_MANDATE, 45, 24), unit = "pN/nm",
-            settles = "24 of the 34 demanded place, so the array delivers %.2fx the mandate — " +
+            settles = ("24 of the 34 demanded place, so the array delivers %.2fx the mandate — " +
                     "and a row whose placed count differs from its path count fails C-0017 " +
-                    "whichever of the two readings is taken".format(publishedFortyFive),
+                    "whichever of the two readings is taken").format(publishedFortyFive),
             falsifierFired = abs(publishedFortyFive - 1.0) > 1e-9
         ),
         T138BoundRecord(

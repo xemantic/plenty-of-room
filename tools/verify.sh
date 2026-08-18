@@ -125,4 +125,11 @@ if [ "$checks" = "yes" ]; then
     echo "--- every relative link in gpd/ resolves (T-203) ---"
     tools/check-corpus-links.py --selftest > /dev/null
     tools/check-corpus-links.py
+    echo
+    echo "--- every String.format call balances its conversions (T-207) ---"
+    tools/check-kotlin-format-strings.py
+    echo
+    echo "--- every challenge is in its own index (P-26) ---"
+    tools/check-challenge-index.py --selftest > /dev/null
+    tools/check-challenge-index.py
 fi

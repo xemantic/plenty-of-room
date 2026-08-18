@@ -131,6 +131,8 @@ python3 tools/check-markdown-tables.py         # every tracked table renders; ex
 tools/test-result-transfers.py                 # the transfer detector's own tests (T-158)
 python3 tools/result-transfers.py --subsets    # is one claim's number another's? advisory (T-158)
 tools/verify.sh --no-checks                    # Gradle only, without the census check (P-22)
+python3 tools/check-kotlin-format-strings.py   # every String.format balances; exit 1 if not (T-207)
+python3 tools/check-kotlin-format-strings.py --self-test   # its own 19 tests, wired into `test` (T-207)
 ```
 
 ### Who reads a result file

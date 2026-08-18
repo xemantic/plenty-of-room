@@ -846,7 +846,7 @@
             "againstTheKnifeEdge": 10.3614407,
             "againstTheRecommendedMargin": 0.150384173,
             "clearedAtThirtyRoots": true,
-            "note": "the host's 32 bp pitch and the element's %d bp length in quadrature, from the measured stretch modulus — re-read at the 30-path arm"
+            "note": "the host's 32 bp pitch and the element's 23 bp length in quadrature, from the measured stretch modulus — re-read at the 30-path arm"
         },
         {
             "floor": "the arm tip's own bending at a PERFECTLY RIGID root",
@@ -1754,7 +1754,7 @@
             "quantity": "dishing/stroke, its plan-rule 30 roots, design state",
             "published": 0.26028,
             "reproduced": 0.260281397,
-            "departure": 5.36821841E-6,
+            "departure": 5.3682184E-6,
             "strict": false
         },
         {

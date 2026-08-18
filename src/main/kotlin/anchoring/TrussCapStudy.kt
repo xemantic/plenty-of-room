@@ -416,29 +416,29 @@ private fun bounds(): List<T106BoundRecord> {
         T106BoundRecord(
             "bound 3 — the crossbar's own bending against the couple it carries, 7 bp",
             capBend / couple, "ratio",
-            "k_cap,bend = 12EI/w = %.1f against k_a Σd² = %.1f pN·nm/rad. Above the ~5 the " +
+            ("k_cap,bend = 12EI/w = %.1f against k_a Σd² = %.1f pN·nm/rad. Above the ~5 the " +
                     "task's falsifier 2 names, so the cap's BENDING is a correction and not the " +
-                    "answer".format(capBend, couple)
+                    "answer").format(capBend, couple)
         ),
         T106BoundRecord(
             "bound 4 — the crossbar's torsion against the head's own rotational stiffness, 7 bp",
             capTorsionalStiffness(Gen1Tile.DUPLEX_TORSIONAL_RIGIDITY, w7) *
                     assembled.rotationUnderMoment, "ratio",
-            "4C/w = %.1f pN·nm/rad against the assembled head's %.1f. The loaded plane's cap " +
-                    "term is a few per cent".format(
-                        capTorsionalStiffness(Gen1Tile.DUPLEX_TORSIONAL_RIGIDITY, w7),
-                        1.0 / assembled.rotationUnderMoment
-                    )
+            ("4C/w = %.1f pN·nm/rad against the assembled head's %.1f. The loaded plane's cap " +
+                    "term is a few per cent").format(
+                capTorsionalStiffness(Gen1Tile.DUPLEX_TORSIONAL_RIGIDITY, w7),
+                1.0 / assembled.rotationUnderMoment
+            )
         ),
         T106BoundRecord(
             "bound 5 — the head junction's ROTATION against the head's own, 7 bp",
             headAxes.loaded * assembled.rotationUnderMoment, "ratio",
-            "C-0029's two links carry the head's rotation as well as its axial force, at most " +
+            ("C-0029's two links carry the head's rotation as well as its axial force, at most " +
                     "%.2f pN·nm/rad on one axis and %.2f on the other, against the assembled " +
                     "head's %.2f. THIS is the term C-0037 does not carry, and it is the one " +
-                    "below the falsifier's 10x".format(
-                        headAxes.loaded, headAxes.free, 1.0 / assembled.rotationUnderMoment
-                    )
+                    "below the falsifier's 10x").format(
+                headAxes.loaded, headAxes.free, 1.0 / assembled.rotationUnderMoment
+            )
         ),
         T106BoundRecord(
             "bound 5b — the conserved chord budget of a cap junction",

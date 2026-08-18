@@ -568,12 +568,12 @@ fun main() {
         T129BoundRecord(
             name = "C-0050's dead-load stroke at a 10 nm layer, the largest anywhere it solved",
             value = deadLoadStrokeAtTen, unit = "nm",
-            settles = "the ceiling the 8 nm demand above is read against, taken over all six " +
+            settles = ("the ceiling the 8 nm demand above is read against, taken over all six " +
                     "layer models AND every grafting density of C-0027's 10 nm window (at S3's " +
                     "own sigma = %.3f nm^-2 it is %.4f nm); C-0017's own theorem is that a " +
                     "coupling can only REDUCE the delivered stroke, so this is a supremum over " +
-                    "every coupling that could ever be designed"
-                        .format(S3_SIGMA_AT_TEN, deadLoadStrokeAtTenDesign),
+                    "every coupling that could ever be designed")
+                .format(S3_SIGMA_AT_TEN, deadLoadStrokeAtTenDesign),
             falsifierFired = false
         ),
         T129BoundRecord(

@@ -64,7 +64,7 @@
             "name": "the lattice ring's predicted mean on the reference rectangle",
             "value": 0.901041667,
             "unit": "incorporation",
-            "settles": "the mechanism read at ONE lattice cell predicts %.4f against the measured %.4f, so the measured boundary layer is WIDER than one cell",
+            "settles": "the mechanism read at ONE lattice cell predicts 0.9010 against the measured 0.8400, so the measured boundary layer is WIDER than one cell",
             "falsifierFired": true
         }
     ],
@@ -1783,7 +1783,7 @@
                 1.0
             ],
             "departure": 0.0,
-            "note": "the binomial standard error at 10 000 draws is %.4f, which is the resolution the verdict is quoted to"
+            "note": "the binomial standard error at 10 000 draws is 0.0000, which is the resolution the verdict is quoted to"
         },
         {
             "quantity": "one realisation's dishing on the sampling grid",
@@ -1969,7 +1969,7 @@
         },
         {
             "name": "P3 — a distribution, not a point",
-            "statement": "percentiles over %d seeded realisations with a binomial standard error on every exceedance probability",
+            "statement": "percentiles over 10000 seeded realisations with a binomial standard error on every exceedance probability",
             "verdict": "PASS"
         },
         {

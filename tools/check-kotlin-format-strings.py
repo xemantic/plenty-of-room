@@ -51,7 +51,36 @@ import sys
 # No space flag: a bare percent sign in prose ("at the mean 84 %, and ...") would otherwise read
 # as a conversion, and prose percent signs are common in this repository's findings.
 CONVERSION = re.compile(r"%[-#+0,(]*[0-9]*(?:\.[0-9]+)?[a-zA-Z]")
-TEMPLATE = re.compile(r"\$\{[^{}]*\}")
+
+
+def _strip_templates(source):
+    r"""Removes every `${...}` template body, matching braces rather than trusting a regex.
+
+    The naive `\$\{[^{}]*\}` form cannot see a template whose body contains braces of its own,
+    and a **nested** `"%.0f".format(it)` inside a `joinToString { ... }` inside a template is
+    exactly that shape.  That nested conversion is consumed by its own call long before the
+    outer one runs, so counting it against the outer argument list is a false positive — it was
+    one, on `StandoffBaseJointStudy.kt:875`, and it is the pattern `T-207` found by hand.
+    """
+    output = []
+    index = 0
+    length = len(source)
+    while index < length:
+        if source.startswith("${", index):
+            depth = 1
+            index += 2
+            while index < length and depth > 0:
+                character = source[index]
+                if character == "{":
+                    depth += 1
+                elif character == "}":
+                    depth -= 1
+                index += 1
+            output.append("1")
+            continue
+        output.append(source[index])
+        index += 1
+    return "".join(output)
 
 
 def _conversions(source):
@@ -60,7 +89,7 @@ def _conversions(source):
     A Kotlin template inside a format string is common and legal — `"%.${digits}f"` is one
     conversion whose precision is computed — and reading the `${` as ordinary text loses it.
     """
-    return len(CONVERSION.findall(TEMPLATE.sub("1", source).replace("%%", "")))
+    return len(CONVERSION.findall(_strip_templates(source).replace("%%", "")))
 
 
 class FormatDefect:
@@ -299,6 +328,10 @@ SELF_TESTS = [
     ('/* "%s %d".format(x) */\nval a = 1', 0, "a block comment describing the trap"),
     ('println("%s %s".format(a, "${xs.joinToString(\",\")}"))', 0,
      "a comma inside a string template inside a string argument"),
+    ('println(("a ${xs.joinToString { "%.0f".format(it) }} b %d").format(y))', 0,
+     "a nested format inside a template whose body carries braces"),
+    ('println("a ${b { "%d" }} %s %d".format(x))', 1,
+     "a template with braces still leaves the outer conversions countable"),
 ]
 
 

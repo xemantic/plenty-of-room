@@ -1004,8 +1004,8 @@ fun main() {
         ),
         floorRow(
             "the thermal axial breathing of the two segments the margin differences", axialSigma,
-            "the host's 32 bp pitch and the element's %d bp length in quadrature, from the " +
-                    "measured stretch modulus — re-read at the 30-path arm".format(armBasePairs30)
+            ("the host's 32 bp pitch and the element's %d bp length in quadrature, from the " +
+                    "measured stretch modulus — re-read at the 30-path arm").format(armBasePairs30)
         ),
         floorRow(
             "the arm tip's own bending at a PERFECTLY RIGID root", tipSigma,

@@ -647,9 +647,9 @@ fun main() {
         T148BoundRecord(
             "the lattice ring's predicted mean on the reference rectangle",
             latticeRingReferenceMean, "incorporation",
-            "the mechanism read at ONE lattice cell predicts %.4f against the measured %.4f, so " +
-                    "the measured boundary layer is WIDER than one cell"
-                        .format(latticeRingReferenceMean, measuredMean),
+            ("the mechanism read at ONE lattice cell predicts %.4f against the measured %.4f, " +
+                    "so the measured boundary layer is WIDER than one cell")
+                .format(latticeRingReferenceMean, measuredMean),
             abs(latticeRingReferenceMean - measuredMean) > 0.02
         )
     )
@@ -822,10 +822,10 @@ fun main() {
             "the exceedance probability against T-5b's 0.10", "the same counts",
             sampleCounts.map { it.toDouble() }, exceedanceAtCount,
             abs(exceedanceAtCount.last() - exceedanceAtCount[exceedanceAtCount.size - 2]),
-            "the binomial standard error at 10 000 draws is %.4f, which is the resolution the " +
-                    "verdict is quoted to".format(
-                        binomialStandardError(exceedanceAtCount[3], T148_REALISATIONS)
-                    )
+            ("the binomial standard error at 10 000 draws is %.4f, which is the resolution the " +
+                    "verdict is quoted to").format(
+                binomialStandardError(exceedanceAtCount[3], T148_REALISATIONS)
+            )
         ),
         T148ConvergenceRecord(
             "one realisation's dishing on the sampling grid", "samples per edge 41/81/161",
@@ -968,8 +968,8 @@ fun main() {
         ),
         T148PredicateRecord(
             "P3 — a distribution, not a point",
-            "percentiles over %d seeded realisations with a binomial standard error on every " +
-                    "exceedance probability".format(T148_REALISATIONS),
+            ("percentiles over %d seeded realisations with a binomial standard error on every " +
+                    "exceedance probability").format(T148_REALISATIONS),
             "PASS"
         ),
         T148PredicateRecord(

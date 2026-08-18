@@ -29,7 +29,7 @@
             "name": "C-0050's dead-load stroke at a 10 nm layer, the largest anywhere it solved",
             "value": 7.42353439,
             "unit": "nm",
-            "settles": "the ceiling the 8 nm demand above is read against, taken over all six layer models AND every grafting density of C-0027's 10 nm window (at S3's own sigma = %.3f nm^-2 it is %.4f nm); C-0017's own theorem is that a coupling can only REDUCE the delivered stroke, so this is a supremum over every coupling that could ever be designed",
+            "settles": "the ceiling the 8 nm demand above is read against, taken over all six layer models AND every grafting density of C-0027's 10 nm window (at S3's own sigma = 0.024 nm^-2 it is 6.0135 nm); C-0017's own theorem is that a coupling can only REDUCE the delivered stroke, so this is a supremum over every coupling that could ever be designed",
             "falsifierFired": false
         },
         {
@@ -675,7 +675,7 @@
             "containsTwoNanometreState": false,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.0706145537,
-            "minimaxWorstOverStroke": 0.0243351595,
+            "minimaxWorstOverStroke": 0.0243561009,
             "flatWithEqualSprings": true,
             "flatWithADistribution": true
         },
@@ -752,7 +752,7 @@
             "containsTwoNanometreState": false,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.11043016,
-            "minimaxWorstOverStroke": 0.0545189178,
+            "minimaxWorstOverStroke": 0.0545200678,
             "flatWithEqualSprings": false,
             "flatWithADistribution": true
         },
@@ -779,7 +779,7 @@
             "containsTwoNanometreState": false,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.11043016,
-            "minimaxWorstOverStroke": 0.0552302795,
+            "minimaxWorstOverStroke": 0.0552227717,
             "flatWithEqualSprings": false,
             "flatWithADistribution": true
         },
@@ -847,7 +847,7 @@
             "containsTwoNanometreState": true,
             "containsTenNanometreState": false,
             "equalSpringWorstOverStroke": 0.199989871,
-            "minimaxWorstOverStroke": 0.0225036648,
+            "minimaxWorstOverStroke": 0.022503665,
             "flatWithEqualSprings": false,
             "flatWithADistribution": true
         },
@@ -900,7 +900,7 @@
             "containsTwoNanometreState": true,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.199989871,
-            "minimaxWorstOverStroke": 0.110663478,
+            "minimaxWorstOverStroke": 0.110704524,
             "flatWithEqualSprings": false,
             "flatWithADistribution": false
         },
@@ -928,7 +928,7 @@
             "containsTwoNanometreState": true,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.199989871,
-            "minimaxWorstOverStroke": 0.112790903,
+            "minimaxWorstOverStroke": 0.112790742,
             "flatWithEqualSprings": false,
             "flatWithADistribution": false
         },
@@ -1013,7 +1013,7 @@
             "containsTwoNanometreState": true,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.199989871,
-            "minimaxWorstOverStroke": 0.110449871,
+            "minimaxWorstOverStroke": 0.110435598,
             "flatWithEqualSprings": false,
             "flatWithADistribution": false
         },

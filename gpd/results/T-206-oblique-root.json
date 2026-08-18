@@ -1,0 +1,592 @@
+{
+    "task": "T-206",
+    "leaf": "A8.2",
+    "title": "What does an OBLIQUE attachment root cost against a perpendicular one?",
+    "verificationType": "logical (a closed-form decomposition on the corpus's own joint constants) + in-silico (the re-grading of C-0118's cells under the alternation the lattice imposes)",
+    "maturity": "TRL 1-3. Model-consistent and traceable. NOT empirically demonstrated.",
+    "units": {
+        "stiffness": "pN/nm",
+        "rotationalStiffness": "pN nm/rad",
+        "length": "nm",
+        "angle": "degrees in prose, radians in the code",
+        "dishing": "dimensionless, peak dishing over the free stroke"
+    },
+    "conventions": {
+        "azimuth": "the angle between a root's lattice direction and the slab's outward normal, in the cross-sectional plane",
+        "radialAxis": "along the root's own azimuth — the direction a crossover's covalent link acts in",
+        "tangentialAxis": "perpendicular to it in the cross-section — the direction the crossover's dihedral hinge rotates the attached body in",
+        "obliqueAzimuth": "DERIVED as half the lattice's azimuth separation, 60.0 deg, and not asserted",
+        "load": "along the slab normal; the coupling path's own direction",
+        "temperature": "300 K, aqueous 2 mM MgCl2, k_BT = 4.142 pN nm"
+    },
+    "parameters": {
+        "obliqueAzimuthDegrees": "60.0",
+        "interhelicalDistance": "2.536",
+        "crossoverLever": "1.268",
+        "crossoverHingeStiffness": "13.5294118",
+        "crossoverInPlaneStiffness": "64.7058824",
+        "mandatedTotalStiffness": "33.3333333",
+        "realisations": "4000",
+        "seed": "197197",
+        "dishingSamplesPerSide": "81",
+        "tolerance": "0.1",
+        "rowBasePairs": "112",
+        "crossSection": "10 x 6"
+    },
+    "citedInputs": [
+        "C-0122 — the honeycomb station census that raised this, and its perpendicular/oblique split",
+        "C-0119 — the primary honeycomb rules (three azimuths, 7 bp, 21 bp)",
+        "C-0118 — the flat coupled cells this re-grades",
+        "C-0017 — the mandate, an equality on the SUM",
+        "C-0009 / C-0020 — the crossover's dihedral spring and its DERIVED in-plane link",
+        "C-0087 — the measured per-site staple incorporation",
+        "C-0022 — the solved collar"
+    ],
+    "cheapBound": {
+        "statement": "kappa(psi) = k_z(0)/k_z(psi) = cos^2 psi + sin^2 psi * A, A = k_radial/k_tangential",
+        "whatItSettles": "the whole question is ONE anisotropy; the answer is monotone in it; it is >= 1 whenever A >= 1 with equality iff A = 1; and at the honeycomb's own azimuth it is 0.25 + 0.75 A",
+        "costBeforeAnySolve": "nothing — three lines of trigonometry, run before the constants were read",
+        "monotoneInTheAnisotropy": "true"
+    },
+    "cheapBoundLadder": [
+        {
+            "anisotropy": 1.0,
+            "costFactorAtOblique": 1.0,
+            "monotone": true
+        },
+        {
+            "anisotropy": 2.0,
+            "costFactorAtOblique": 1.75,
+            "monotone": true
+        },
+        {
+            "anisotropy": 4.0,
+            "costFactorAtOblique": 3.25,
+            "monotone": true
+        },
+        {
+            "anisotropy": 8.0,
+            "costFactorAtOblique": 6.25,
+            "monotone": true
+        },
+        {
+            "anisotropy": 16.0,
+            "costFactorAtOblique": 12.25,
+            "monotone": true
+        },
+        {
+            "anisotropy": 32.0,
+            "costFactorAtOblique": 24.25,
+            "monotone": true
+        }
+    ],
+    "rootReadings": [
+        {
+            "model": "flexible tie on two softened bonds",
+            "radialStiffness": 64.7058824,
+            "tangentialStiffness": 64.7058824,
+            "anisotropy": 1.0,
+            "perpendicularNormalStiffness": 64.7058824,
+            "obliqueNormalStiffness": 64.7058824,
+            "costFactor": 1.0,
+            "pairedObliqueNormalStiffness": 129.411765,
+            "pairedCostFactor": 0.5,
+            "naiveScalarPairSum": 129.411765,
+            "pairTensorOverScalar": 1.0,
+            "representableAsARatio": true,
+            "provenance": "FlexureEndJoint's isotropy invariant; magnitude from Gen1Tile.crossoverInPlaneStiffness, DERIVED from Chen et al. and NOT measured"
+        },
+        {
+            "model": "crossover-hinged body, d = 2.536 nm",
+            "radialStiffness": 64.7058824,
+            "tangentialStiffness": 8.4147343,
+            "anisotropy": 7.68959304,
+            "perpendicularNormalStiffness": 64.7058824,
+            "obliqueNormalStiffness": 10.7534964,
+            "costFactor": 6.01719478,
+            "pairedObliqueNormalStiffness": 44.9750426,
+            "pairedCostFactor": 1.43870642,
+            "naiveScalarPairSum": 21.5069928,
+            "pairTensorOverScalar": 2.0911823,
+            "representableAsARatio": true,
+            "provenance": "C-0009's k_theta on the frame-indifferent d/2 lever against C-0020's in-plane link, the latter DERIVED and NOT measured"
+        },
+        {
+            "model": "crossover-hinged body, link as a CONSTRAINT",
+            "radialStiffness": null,
+            "tangentialStiffness": 8.4147343,
+            "anisotropy": null,
+            "perpendicularNormalStiffness": null,
+            "obliqueNormalStiffness": 11.2196457,
+            "costFactor": null,
+            "pairedObliqueNormalStiffness": null,
+            "pairedCostFactor": null,
+            "naiveScalarPairSum": 22.4392915,
+            "pairTensorOverScalar": null,
+            "representableAsARatio": false,
+            "provenance": "CLAUDE.md: a crossover's vertical link is a constraint, and a covalent tie is a binary"
+        }
+    ],
+    "linkSensitivity": [
+        {
+            "inPlaneMultiplier": 0.03125,
+            "radialStiffness": 2.02205882,
+            "perpendicularNormalStiffness": 2.02205882,
+            "obliqueNormalStiffness": 4.70000486,
+            "costFactor": 0.430224837
+        },
+        {
+            "inPlaneMultiplier": 0.125,
+            "radialStiffness": 8.08823529,
+            "perpendicularNormalStiffness": 8.08823529,
+            "obliqueNormalStiffness": 8.33066302,
+            "costFactor": 0.970899348
+        },
+        {
+            "inPlaneMultiplier": 0.5,
+            "radialStiffness": 32.3529412,
+            "perpendicularNormalStiffness": 32.3529412,
+            "obliqueNormalStiffness": 10.3245367,
+            "costFactor": 3.13359739
+        },
+        {
+            "inPlaneMultiplier": 1.0,
+            "radialStiffness": 64.7058824,
+            "perpendicularNormalStiffness": 64.7058824,
+            "obliqueNormalStiffness": 10.7534964,
+            "costFactor": 6.01719478
+        },
+        {
+            "inPlaneMultiplier": 2.0,
+            "radialStiffness": 129.411765,
+            "perpendicularNormalStiffness": 129.411765,
+            "obliqueNormalStiffness": 10.9816265,
+            "costFactor": 11.7843896
+        },
+        {
+            "inPlaneMultiplier": 8.0,
+            "radialStiffness": 517.647059,
+            "perpendicularNormalStiffness": 517.647059,
+            "obliqueNormalStiffness": 11.1591788,
+            "costFactor": 46.3875583
+        },
+        {
+            "inPlaneMultiplier": 32.0,
+            "radialStiffness": 2070.58824,
+            "perpendicularNormalStiffness": 2070.58824,
+            "obliqueNormalStiffness": 11.2044677,
+            "costFactor": 184.800233
+        },
+        {
+            "inPlaneMultiplier": 128.0,
+            "radialStiffness": 8282.35294,
+            "perpendicularNormalStiffness": 8282.35294,
+            "obliqueNormalStiffness": 11.2158474,
+            "costFactor": 738.450932
+        },
+        {
+            "inPlaneMultiplier": null,
+            "radialStiffness": null,
+            "perpendicularNormalStiffness": null,
+            "obliqueNormalStiffness": 11.2196457,
+            "costFactor": null
+        }
+    ],
+    "pathReadings": [
+        {
+            "crossSection": "10 x 6",
+            "pathCount": 10,
+            "demandPerPath": 3.33333333,
+            "seriesPartner": 3.514377,
+            "obliquePathFractionSingle": 0.79462102,
+            "obliquePathFractionPaired": 0.977899446,
+            "partnerResizeFactor": 1.37456931,
+            "couplingTotalIfNotResized": 29.9103503,
+            "mandateShortfall": 0.10268949
+        },
+        {
+            "crossSection": "10 x 6",
+            "pathCount": 20,
+            "demandPerPath": 1.66666667,
+            "seriesPartner": 1.71073095,
+            "obliquePathFractionSingle": 0.885558579,
+            "obliquePathFractionPaired": 0.98882625,
+            "partnerResizeFactor": 1.15293372,
+            "couplingTotalIfNotResized": 31.4259763,
+            "mandateShortfall": 0.0572207106
+        },
+        {
+            "crossSection": "10 x 6",
+            "pathCount": 30,
+            "demandPerPath": 1.11111111,
+            "seriesPartner": 1.13052415,
+            "obliquePathFractionSingle": 0.920679884,
+            "obliquePathFractionPaired": 0.992522984,
+            "partnerResizeFactor": 1.09608153,
+            "couplingTotalIfNotResized": 32.0113314,
+            "mandateShortfall": 0.0396600582
+        },
+        {
+            "crossSection": "10 x 6",
+            "pathCount": 50,
+            "demandPerPath": 0.666666667,
+            "seriesPartner": 0.673606859,
+            "obliquePathFractionSingle": 0.950848447,
+            "obliquePathFractionPaired": 0.995500333,
+            "partnerResizeFactor": 1.0551088,
+            "couplingTotalIfNotResized": 32.5141408,
+            "mandateShortfall": 0.0245757763
+        },
+        {
+            "crossSection": "15 x 4",
+            "pathCount": 15,
+            "demandPerPath": 2.22222222,
+            "seriesPartner": 2.30125523,
+            "obliquePathFractionSingle": 0.853018367,
+            "obliquePathFractionPaired": 0.985156951,
+            "partnerResizeFactor": 1.21719033,
+            "couplingTotalIfNotResized": 30.8836395,
+            "mandateShortfall": 0.0734908163
+        },
+        {
+            "crossSection": "15 x 4",
+            "pathCount": 30,
+            "demandPerPath": 1.11111111,
+            "seriesPartner": 1.13052415,
+            "obliquePathFractionSingle": 0.920679884,
+            "obliquePathFractionPaired": 0.992522984,
+            "partnerResizeFactor": 1.09608153,
+            "couplingTotalIfNotResized": 32.0113314,
+            "mandateShortfall": 0.0396600582
+        },
+        {
+            "crossSection": "15 x 4",
+            "pathCount": 45,
+            "demandPerPath": 0.740740741,
+            "seriesPartner": 0.749318801,
+            "obliquePathFractionSingle": 0.9456838,
+            "obliquePathFractionPaired": 0.995002868,
+            "partnerResizeFactor": 1.06168499,
+            "couplingTotalIfNotResized": 32.4280633,
+            "mandateShortfall": 0.0271581
+        },
+        {
+            "crossSection": "15 x 4",
+            "pathCount": 75,
+            "demandPerPath": 0.444444444,
+            "seriesPartner": 0.447518308,
+            "obliquePathFractionSingle": 0.966686495,
+            "obliquePathFractionPaired": 0.996995716,
+            "partnerResizeFactor": 1.03594725,
+            "couplingTotalIfNotResized": 32.7781082,
+            "mandateShortfall": 0.0166567526
+        }
+    ],
+    "censusCorrection": [
+        {
+            "crossSection": "15 x 4",
+            "topFaceHelices": 15,
+            "perpendicularRootHelices": 8,
+            "obliqueRootHelices": 7,
+            "freeAzimuthsOnTheTopFace": 22,
+            "stationsPerLadder": 6,
+            "censusedStations": 90,
+            "correctedStations": 132,
+            "correctionFactor": 1.46666667
+        },
+        {
+            "crossSection": "10 x 6",
+            "topFaceHelices": 10,
+            "perpendicularRootHelices": 5,
+            "obliqueRootHelices": 5,
+            "freeAzimuthsOnTheTopFace": 15,
+            "stationsPerLadder": 6,
+            "censusedStations": 60,
+            "correctedStations": 90,
+            "correctionFactor": 1.5
+        }
+    ],
+    "cells": [
+        {
+            "crossSection": "10 x 6",
+            "columns": 1,
+            "rows": 10,
+            "pathCount": 10,
+            "distribution": "equal springs (perpendicular everywhere)",
+            "obliqueFraction": 1.0,
+            "perpendicularPathStiffness": 3.33333333,
+            "obliquePathStiffness": 3.33333333,
+            "totalStiffness": 33.3333333,
+            "nominalOverStroke": 0.0152264845,
+            "medianOverStroke": 0.0152264845,
+            "p90OverStroke": 0.0278431488,
+            "worstOverStroke": 0.0441159785,
+            "exceedance": 0.0,
+            "flatAtNominal": true,
+            "flatAtP90": true,
+            "pairedMedianRatioToEqual": null,
+            "realisationsWorseThanEqual": null
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 1,
+            "rows": 10,
+            "pathCount": 10,
+            "distribution": "alternating, oblique on a crossover-hinged root",
+            "obliqueFraction": 0.79462102,
+            "perpendicularPathStiffness": 3.71480474,
+            "obliquePathStiffness": 2.95186193,
+            "totalStiffness": 33.3333333,
+            "nominalOverStroke": 0.0153124965,
+            "medianOverStroke": 0.0153124965,
+            "p90OverStroke": 0.0286224717,
+            "worstOverStroke": 0.0442538126,
+            "exceedance": 0.0,
+            "flatAtNominal": true,
+            "flatAtP90": true,
+            "pairedMedianRatioToEqual": 1.00564884,
+            "realisationsWorseThanEqual": 2375
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 2,
+            "rows": 10,
+            "pathCount": 20,
+            "distribution": "equal springs (perpendicular everywhere)",
+            "obliqueFraction": 1.0,
+            "perpendicularPathStiffness": 1.66666667,
+            "obliquePathStiffness": 1.66666667,
+            "totalStiffness": 33.3333333,
+            "nominalOverStroke": 0.00952971553,
+            "medianOverStroke": 0.0288311271,
+            "p90OverStroke": 0.0541089284,
+            "worstOverStroke": 0.10014711,
+            "exceedance": 2.5E-4,
+            "flatAtNominal": true,
+            "flatAtP90": true,
+            "pairedMedianRatioToEqual": null,
+            "realisationsWorseThanEqual": null
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 2,
+            "rows": 10,
+            "pathCount": 20,
+            "distribution": "alternating, oblique on a crossover-hinged root",
+            "obliqueFraction": 0.885558579,
+            "perpendicularPathStiffness": 1.76782274,
+            "obliquePathStiffness": 1.56551059,
+            "totalStiffness": 33.3333333,
+            "nominalOverStroke": 0.00963160413,
+            "medianOverStroke": 0.0293142231,
+            "p90OverStroke": 0.0542526922,
+            "worstOverStroke": 0.100459978,
+            "exceedance": 2.5E-4,
+            "flatAtNominal": true,
+            "flatAtP90": true,
+            "pairedMedianRatioToEqual": 1.00345382,
+            "realisationsWorseThanEqual": 2117
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 3,
+            "rows": 10,
+            "pathCount": 30,
+            "distribution": "equal springs (perpendicular everywhere)",
+            "obliqueFraction": 1.0,
+            "perpendicularPathStiffness": 1.11111111,
+            "obliquePathStiffness": 1.11111111,
+            "totalStiffness": 33.3333333,
+            "nominalOverStroke": 0.00869270018,
+            "medianOverStroke": 0.0258886388,
+            "p90OverStroke": 0.0461988976,
+            "worstOverStroke": 0.0953049339,
+            "exceedance": 0.0,
+            "flatAtNominal": true,
+            "flatAtP90": true,
+            "pairedMedianRatioToEqual": null,
+            "realisationsWorseThanEqual": null
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 3,
+            "rows": 10,
+            "pathCount": 30,
+            "distribution": "alternating, oblique on a crossover-hinged root",
+            "obliqueFraction": 0.920679884,
+            "perpendicularPathStiffness": 1.15699771,
+            "obliquePathStiffness": 1.06522451,
+            "totalStiffness": 33.3333333,
+            "nominalOverStroke": 0.00876645891,
+            "medianOverStroke": 0.0259862805,
+            "p90OverStroke": 0.0463821661,
+            "worstOverStroke": 0.0947273106,
+            "exceedance": 0.0,
+            "flatAtNominal": true,
+            "flatAtP90": true,
+            "pairedMedianRatioToEqual": 1.00121389,
+            "realisationsWorseThanEqual": 2067
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 5,
+            "rows": 10,
+            "pathCount": 50,
+            "distribution": "equal springs (perpendicular everywhere)",
+            "obliqueFraction": 1.0,
+            "perpendicularPathStiffness": 0.666666667,
+            "obliquePathStiffness": 0.666666667,
+            "totalStiffness": 33.3333333,
+            "nominalOverStroke": 0.00829451028,
+            "medianOverStroke": 0.0244163355,
+            "p90OverStroke": 0.0408747025,
+            "worstOverStroke": 0.0740791069,
+            "exceedance": 0.0,
+            "flatAtNominal": true,
+            "flatAtP90": true,
+            "pairedMedianRatioToEqual": null,
+            "realisationsWorseThanEqual": null
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 5,
+            "rows": 10,
+            "pathCount": 50,
+            "distribution": "alternating, oblique on a crossover-hinged root",
+            "obliqueFraction": 0.950848447,
+            "perpendicularPathStiffness": 0.683463308,
+            "obliquePathStiffness": 0.649870025,
+            "totalStiffness": 33.3333333,
+            "nominalOverStroke": 0.00834025669,
+            "medianOverStroke": 0.0244429459,
+            "p90OverStroke": 0.0407968539,
+            "worstOverStroke": 0.074295751,
+            "exceedance": 0.0,
+            "flatAtNominal": true,
+            "flatAtP90": true,
+            "pairedMedianRatioToEqual": 1.00036049,
+            "realisationsWorseThanEqual": 2040
+        }
+    ],
+    "modelBoundaries": {
+        "theFortyFiveDegreeGuardDoesNOTApply": "C-0037's TwoLinkBase refuses a misalignment past 45 deg, and this root sits at 60.0 deg — but the two angles are different quantities. That guard is on the misalignment between a two-link CHORD's perpendicular bisector and the axis a COUPLE is demanded about, where past a half right angle the restrained and free axes exchange and the invariant `restrainedAxis >= freeAxis` is violated. This azimuth is a TRANSLATION direction and its decomposition has no such exchange: k_z(psi) is smooth and monotone over the whole quadrant and reproduces both endpoints exactly. The guard is checked and does not fire; carrying it here would have refused an answer the models do give.",
+        "whatIsNotRepresentable": "the RATIO, under the corpus's own constraint reading of the covalent link. What it would take is T-9 — the crossover elastic constants measured rather than derived — and specifically the LINK, which C-0020 constructs and nobody has fitted.",
+        "whatTheGRILLAGECannotSee": "An oblique root's strand leaves the backbone at 60.0 deg around the helix, so its station is laterally displaced by about R sin psi from the helix axis — under a nanometre, and below half the row pitch of 2.536 nm. The grillage places every attachment on a beam that sits on a helix axis, so a sub-pitch lateral offset is not representable in it at all. It is reported and NOT modelled, and the two oblique azimuths of one helix have opposite offsets, so alternating their sense cancels it by construction."
+    },
+    "verdict": {
+        "obliqueAzimuthDegrees": "60.0",
+        "costFactorFlexibleTie": "1.0",
+        "costFactorCrossoverHinged": "6.01719478",
+        "costFactorConstrainedLink": "NOT REPRESENTABLE — the perpendicular root is a CONSTRAINT",
+        "obliqueNormalStiffnessCrossoverHinged": "10.7534964",
+        "obliqueNormalStiffnessConstrainedLink": "11.2196457",
+        "pairedObliqueNormalStiffness": "44.9750426",
+        "pairedCostFactor": "1.43870642",
+        "obliquePathFractionAtTenPaths": "0.79462102",
+        "mandateShortfallIfNotResized": "0.10268949",
+        "alternatingCellsFlatAtP90": "4 of 4",
+        "bestAlternatingP90": "0.0286224717",
+        "worstAlternatingOverEqual": "1.02798976",
+        "censusedStations10x6": "60",
+        "correctedStations10x6": "90",
+        "censusedStations15x4": "90",
+        "correctedStations15x4": "132",
+        "F1fired": "false",
+        "F2fired": "false"
+    },
+    "convergence": [
+        {
+            "axis": "dropout realisations, the alternating cell's 90th percentile",
+            "values": [
+                1000.0,
+                2000.0,
+                4000.0
+            ],
+            "results": [
+                0.0293168595,
+                0.0281316771,
+                0.0286224717
+            ],
+            "departure": 0.017,
+            "note": "the only sampled quantity in this study; the decomposition upstream of it is closed form and has no discretisation at all"
+        },
+        {
+            "axis": "dishing samples per side, the alternating cell's nominal dishing",
+            "values": [
+                41.0,
+                81.0,
+                161.0
+            ],
+            "results": [
+                0.0153124965,
+                0.0153124965,
+                0.0153124965
+            ],
+            "departure": 0.0,
+            "note": "exactly zero: at this cell the peak lands on a node the 41-, 81- and 161-point grids share, so the sampling is not the limiting axis and the dropout ensemble is"
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0118 / T-197",
+            "quantity": "10 x 6, 1 column(s), equal springs, p90 over stroke",
+            "published": 0.0278431488,
+            "reproduced": 0.0278431488,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0118 / T-197",
+            "quantity": "10 x 6, 2 column(s), equal springs, p90 over stroke",
+            "published": 0.0541089284,
+            "reproduced": 0.0541089284,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0118 / T-197",
+            "quantity": "10 x 6, 3 column(s), equal springs, p90 over stroke",
+            "published": 0.0461988976,
+            "reproduced": 0.0461988976,
+            "departure": 0.0,
+            "strict": false
+        },
+        {
+            "source": "C-0118 / T-197",
+            "quantity": "10 x 6, 5 column(s), equal springs, p90 over stroke",
+            "published": 0.0408747025,
+            "reproduced": 0.0408747025,
+            "departure": 0.0,
+            "strict": false
+        }
+    ],
+    "falsifiers": [
+        "F1 — if the cost factor is NOT monotone in the root's own radial-to-tangential anisotropy, the closed form is the wrong decomposition and a solve is needed.",
+        "F2 — if the oblique root's ABSOLUTE normal stiffness depends strongly on the covalent link's stiffness — which this corpus holds to be a constraint, i.e. a binary — then the branch that matters is unbounded and only a bracket can be quoted."
+    ],
+    "findings": {
+        "theCheapBoundSettledTheShape": "The cost of an oblique root is `kappa = cos^2 psi + sin^2 psi * A` with `A = k_radial/k_tangential`, so the whole question is ONE anisotropy, the answer is monotone in it, and it is >= 1 with equality iff the root is ISOTROPIC. At the honeycomb's own psi = 60.0 deg that is 0.25 + 0.75 A — three quarters of the load path is the tangential axis whatever the radial one is. No solve was needed to establish any of it.",
+        "theAnswerDependsONWhatIsROOTED": "There is no single number, and the split is not a bracket: a FLEXIBLE tie is isotropic by this corpus's own invariant, so it costs EXACTLY nothing at every azimuth (kappa = 1.0, a symmetry and not a small number); a CROSSOVER-HINGED rigid body costs 6.01719 x, because its radial axis is the covalent link and its tangential one is C-0009's dihedral spring on the d/2 lever.",
+        "theRATIOIsNotRepresentableAndTheABSOLUTEIs": "Read as this corpus reads a covalent tie everywhere else — a CONSTRAINT, a binary — the perpendicular root's normal stiffness is not a number and the ratio is NOT REPRESENTABLE. The oblique root's ABSOLUTE stiffness survives that: 11.2196 pN/nm on the constraint reading against 10.7535 pN/nm on the softened-bond one, 1.04335 x apart, because the tangential term carries three quarters of the path. Quote the absolute; the ratio is a property of a model boundary.",
+        "theOneUnmeasuredConstructionBarelyReaches": "Over Gen1Tile's own four-decade sweep of the DERIVED in-plane link constant the PERPENDICULAR root moves 4096.0 x and the OBLIQUE one 2.38716 x; from the derived value upward — the direction the corpus's own doubt runs, since the link is believed to be a constraint — the oblique reading moves 1.04335 x. The oblique root is the one that can be quoted without settling T-9.",
+        "twoRootsOnOneHeadAddAsTENSORS": "A helix with oblique azimuths has TWO of them, at +-60.0 deg, and rooting both on one rigid head gives `2(cos^2 k_r + sin^2 k_t)` = 44.975 pN/nm — a sum of STIFFNESSES. Adding the two roots' own normal stiffnesses instead gives 21.507 pN/nm, 2.09118 x less, because that reading lets each head move laterally on its own and the shared head forbids exactly that motion. The pair recovers the perpendicular root to within 1.43871 x for two stations instead of one.",
+        "thePathCostFallsWithThePathCount": "A coupling path is the root in series with whatever supplies the compliance C-0017's mandate demands, and the mandate is soft: at 10 paths the demand is 3.33333 pN/nm against a crossover-hinged oblique root of 10.7535 pN/nm. So an oblique path with an UNCHANGED series partner delivers 0.794621 of its share at 10 paths and 0.966686 at 75 — the cost FALLS as the coupling gets denser, and C-0118's best cell is the sparsest one, which is the adverse direction.",
+        "c0118sFlatCellsSurvive": "Re-graded with the alternation the lattice imposes — half the top-face helices oblique, at the crossover-hinged fraction, renormalised to the mandate — 4 of 4 `10 x 6` cells stay flat at the 90th percentile under C-0087's measured dropout, best 0.0286224717 against the equal-spring 0.0278431488. The worst cell moves 1.02799 x. C-0118's flatness is not spent by the azimuth.",
+        "c0122sCensusIsUNDERSTATEDByAHalf": "`C-0122` assigns ONE free azimuth to every top-face helix — *the count is unaffected, every top-face helix has exactly one free direction either way* — and that is true of the perpendicular sublattice only. An oblique helix has TWO free azimuths, and their 21 bp ladders are offset by 7 bp so they interleave rather than collide. Counting both raises the top face from 60 to 90 stations on `10 x 6` (1.5 x) and from 90 to 132 on `15 x 4` (1.46667 x). `CH-0151` records it; the correction is FAVOURABLE and `C-0122`'s own finding that a deeper block offers fewer stations survives it (90 against 132).",
+        "theCostIsASPACERLENGTHNotALATTICE": "Where the root does cost something, the remedy is not structural: the oblique path's series partner has to be 1.37457 x stiffer, which is a spacer CONTOUR LENGTH and is quantised at a nucleotide, not at a lattice site. A design that uses one staple length everywhere pays a 10.27 per cent shortfall on C-0017's mandated SUM instead, and that is a specification failure rather than a flatness one."
+    },
+    "validity": [
+        "The tangential axis is C-0009's dihedral spring, which is FITTED (Chen et al.), on the frame-indifferent d/2 lever. The radial axis is C-0020's in-plane link, which is DERIVED from the same construction and NOT measured — which is why it is swept over four decades here rather than quoted.",
+        "The decomposition assumes the root's two axes are the eigenvectors of its translational stiffness tensor. That is asserted as a test (normalStiffnessFromTensor) and is what would fail if the two covalent links' own geometry coupled the axes.",
+        "A flexible tie's isotropy is a SYMMETRY of the element, not a measurement of it: a flexible link has no direction of its own, so it cannot know which azimuth it left the helix on. Its magnitude still comes from the same derived constant.",
+        "The re-grading moves the DISTRIBUTION only. The lateral offset of an oblique root's exit point is below the grillage's across-helix resolution and is reported rather than modelled.",
+        "Only the 10 x 6 cross-section is re-graded, because it is the one C-0118 finds flat. 15 x 4 is not flat under equal springs at any of these counts either way.",
+        "The dropout statistics are measured on a SINGLE-LAYER Rothemund rectangle; only the profile transfers, in nm. C-0109's assumption, inherited and named."
+    ],
+    "openQuestions": [
+        "Whether a design would ACCEPT the corrected census: two roots on one helix are 7 bp apart on the same duplex, which Ke et al. record as a folding-yield cost for the square lattice's 8 bp domains. The count is a lattice fact; the yield is not checked here.",
+        "T-9 would settle the covalent link's own constant and with it whether the RATIO is a number at all. Nothing else in this study needs it.",
+        "Whether a PAIRED oblique root — both free azimuths of one helix on one head — is a buildable motif. It is priced here and its plan packing is not checked, and it spends two stations of C-0122's census for one path.",
+        "Whether an attachment can be rooted on an azimuth at all without the strand's exit geometry costing a torsion feasibility, which is C-0057's question on a lattice this corpus has not run it on."
+    ]
+}

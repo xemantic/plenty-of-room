@@ -102,9 +102,19 @@ Replaced by one `normpath` resolver against the file's own directory, with no de
   compatible with the scaffold raster is not asked. A census without a routing is well posed for the count and
   not for the design.
 - **Half the top-face helices carry only OBLIQUE free azimuths** (7 of 15, 5 of 10), and **this corpus has
-  never priced an oblique attachment against a perpendicular one.** The count is unaffected — every top-face
-  helix has exactly one free direction either way — but the *stiffness* of a root on an oblique azimuth is an
+  never priced an oblique attachment against a perpendicular one.** ~~The count is unaffected — every top-face
+  helix has exactly one free direction either way~~ — but the *stiffness* of a root on an oblique azimuth is an
   open question this claim raises and does not answer.
+
+  > **Annotated, iteration 28 (`C-0128`, [`CH-0151`](../challenges/CH-0151-an-oblique-helix-has-two-free-azimuths-not-one.md)).**
+  > The struck clause is withdrawn: an **oblique** helix has **two** free azimuths and a perpendicular one has
+  > one, and the two 21 bp ladders of an oblique helix are offset by 7 bp so they interleave rather than
+  > collide. Counting both gives **132** stations on `15 × 4` and **90** on `10 × 6`, **1.46666667×** and
+  > **1.5×** the table above. **No verdict here moves and two findings are strengthened** — all 8 demands still
+  > fit, with more margin, and *a deeper block offers fewer stations* survives (90 against 132). The numbers
+  > **90** and **60** remain correct as the count at **one azimuth per helix**, which a design may prefer:
+  > two roots 7 bp apart on one duplex is the domain length Ke et al. report as a folding-yield cost.
+  > The **stiffness** question this bullet raises is answered by `C-0128`.
 - **Equal springs only**, as `C-0118`'s best cells use.
 - **Nothing here re-derives a rigidity, a threshold, a collar or a dishing field**; it re-grades on moved
   stations using machinery those claims established.

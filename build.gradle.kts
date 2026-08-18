@@ -149,8 +149,44 @@ tasks.register<Exec>("testCorpusLinks") {
     commandLine("$projectDir/tools/check-corpus-links.py", "--selftest")
 }
 
+/*
+ * `tools/check-kotlin-format-strings.py` (`C-0125`, repaired and wired by `T-207`/`C-0127`) is
+ * the fifth. `CLAUDE.md` prescribes its arithmetic — count the `%` conversions over the WHOLE
+ * parenthesised concatenation against the top-level commas of the argument list — in five
+ * separate places, and until `T-207` nothing ran it: the sweep found **13 real defects in seven
+ * committed studies**, whose raw conversions had reached **seven committed result files**, and
+ * one of them printed the tile's length where the SAXS interhelical distance belonged.
+ *
+ * Java silently ignores EXTRA arguments, so this family never throws — which is why a test suite
+ * that exercises every number cannot see it, and why the gate has to be static. Its self-tests
+ * read only in-memory fixtures, so they wire in beside the others; the SWEEP over `src/` lives in
+ * `tools/verify.sh`, for the same reason the census does.
+ *
+ * It is wired only now that the tree reports zero defects: a gate that cannot come clean is not a
+ * gate (`C-0083`).
+ */
+tasks.register<Exec>("testFormatStrings") {
+    group = "verification"
+    description = "Runs tools/check-kotlin-format-strings.py --self-test, the tests for the format checker"
+    commandLine("$projectDir/tools/check-kotlin-format-strings.py", "--self-test")
+}
+
+/*
+ * `tools/check-challenge-index.py` (`P-26`) is the fifth retained document checker. Same split as
+ * the others: its self-tests are in-memory and wire in here; the CHECK reads the corpus and lives
+ * in `tools/verify.sh`.
+ */
+tasks.register<Exec>("testChallengeIndex") {
+    group = "verification"
+    description = "Runs tools/check-challenge-index.py --selftest, the tests for the index checker"
+    commandLine("$projectDir/tools/check-challenge-index.py", "--selftest")
+}
+
 tasks.named("test") {
-    dependsOn("testHarness", "testDeliverableTracer", "testMarkdownTables", "testCorpusLinks")
+    dependsOn(
+        "testHarness", "testDeliverableTracer", "testMarkdownTables", "testCorpusLinks",
+        "testFormatStrings", "testChallengeIndex"
+    )
 }
 
 dependencies {

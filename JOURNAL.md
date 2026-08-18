@@ -8390,3 +8390,187 @@ grammatical sentence with the wrong numbers in it. `T-163`'s conditions block re
 40.35 nm"* where the SAXS interhelical distance is **2.69**. Queued as `T-207` with its blast radius named,
 and the checker deliberately **not** wired as a gate until the tree is clean — `C-0083`'s rule that a gate
 which cannot come clean is not a gate.
+
+**Iteration 28, agent M — `T-206`: the cost of an oblique attachment root, and the cheap bound that settled it before a constant was read.**
+
+`C-0122` censused the honeycomb's attachment lattice and could not price it: half a top face's helices carry a
+free azimuth pointing straight out of the slab and half carry two oblique ones, and every station in that
+census is treated as equivalent. `C-0118`'s flat coupled cells — the first in this programme flat at the 90th
+percentile under measured folding — stand on those stations.
+
+**The cheap bound is three lines of trigonometry and it fixed the shape of the whole answer.** A root's
+translational stiffness is a symmetric tensor diagonal in its own radial and tangential axes, so
+`κ(ψ) = cos²ψ + sin²ψ·A` with `A = k_radial/k_tangential`. **The whole question is ONE anisotropy**, the
+answer is monotone in it, `κ ≥ 1` iff `A ≥ 1` with equality **iff the root is isotropic**, and at the
+honeycomb's own azimuth — **60°, derived as half the lattice's azimuth separation rather than asserted** —
+it is `0.25 + 0.75 A`: three quarters of the load path is the tangential axis whatever the radial one is.
+Everything after that was reading constants off models the corpus already had.
+
+**There is no single number, and the split is not a bracket — it is a question about what is rooted.** A
+**flexible tie** is isotropic by `FlexureEndJoint`'s own invariant, so it costs **exactly nothing at every
+azimuth**; that is a symmetry, not a small number, and a flexible link cannot know which azimuth it left the
+helix on. A **crossover-hinged rigid body** costs **6.01719478×**. And read as this corpus reads a covalent
+tie everywhere else — a **constraint**, a binary — the perpendicular root has no stiffness at all and the
+**ratio is NOT REPRESENTABLE**.
+
+**The absolute survives the boundary the ratio dies on, and that is the reason to quote it.** The oblique
+root is **10.7534964 pN/nm** on the softened-bond reading and **11.2196457** on the constraint one, **1.04335×**
+apart, while the *perpendicular* reading moves **4096×** over `Gen1Tile`'s own four-decade sweep of the one
+constant nobody has measured. `CLAUDE.md`'s *"ask what the correction multiplies before concluding it is
+unbounded"*, in a new place: the oblique root can be quoted **without settling `T-9`** and the ratio cannot.
+The sweep's low end is worth keeping rather than hiding — below a link stiffness of 8.415 pN/nm the anisotropy
+inverts and an oblique root becomes **stiffer**; the cheap bound predicts the crossing exactly, at `A = 1`.
+
+**`C-0037`'s 45° guard was checked and does not apply, which was the outcome I did not expect.** The task set
+it up as the likely `NOT REPRESENTABLE`, and it is on a *couple*'s chord misalignment — where the restrained
+and free axes exchange past a half right angle. This is a *translation* azimuth; `k_z(ψ)` is smooth and
+monotone over the whole quadrant. Carrying the guard here would have refused an answer the models do give.
+The refusal that **is** real is a different one, on a different axis.
+
+**`C-0118`'s flat cells survive.** Re-graded with the alternation the lattice imposes, **4 of 4 `10 × 6` cells
+stay flat at p90**, and taking `C-0118`'s own seed made all four equal-spring rows reproduce it at departure
+**exactly 0.0**. Where the root costs something the remedy is a **spacer contour length** — 1.37456931× stiffer,
+quantised at a nucleotide — and a design using one staple length everywhere pays a **10.268949 %** shortfall on
+`C-0017`'s mandated **sum**, which is a specification failure and not a flatness one.
+
+**Two surprises worth the `CLAUDE.md` entries they got.** First: two roots on one rigid head add as **stiffness
+tensors**, **44.9750426 pN/nm** against the scalar sum's **21.5069928** — **2.09×**, because the scalar reading
+lets each head move laterally on its own and the shared head forbids exactly that motion. Second: the
+alternation's cost read as a ratio of two 90th percentiles is **2.80 %** and read on the **paired** stream both
+cells share is **0.04–0.56 %** — a **ratio of two order statistics is not the order statistic of the ratio**,
+and the unpaired number is the same size as the ensemble's own convergence departure.
+
+**`CH-0151` came out of the geometry rather than out of the question.** `C-0122` says *"every top-face helix
+has exactly one free direction either way"* — true of the perpendicular sublattice and false of the other,
+which has **two**, on 21 bp ladders offset by 7 bp so they interleave rather than collide. The census is
+**132** on `15 × 4` and **90** on `10 × 6`, 1.4667× and 1.5× what is published. **A parity says WHICH; it says
+nothing about HOW MANY.** The correction is favourable, every `C-0122` verdict survives, and whether a design
+can spend it is a folding-yield question (two roots 7 bp apart on one duplex is Ke et al.'s yield cost), left
+open. `CH-0152` was reserved and is **not used** — no second contradiction was found, and saying so is cheaper
+than manufacturing one.
+
+**One process observation for the coordinator.** `gpd/challenges/README.md` indexes **65** challenges and stops
+at `CH-0091`; nothing from `CH-0092` to `CH-0150` is registered in it. I followed current practice and did not
+add `CH-0151`, because a half-populated index reads as complete in a way a plainly stale one does not — but the
+drift is real and it is exactly the class `C-0078`/`C-0088` mechanised elsewhere.
+
+## Iteration 28 — Agent L, `T-207`: the format-string repair, and what it says about who reads a result file
+
+**The cheap bound did all the work and it cost one pass.**
+A mis-bound `.format` puts a **wrong number** in front of a reader only if the mis-bound receiver literal
+itself carries at least one conversion — that conversion then eats the **first** argument, which belonged to
+an earlier literal. Where the receiver carries none, every argument is silently dropped and the whole
+concatenation prints its `%` conversions raw. The receiver conversion count is already a column of the
+checker's own output, so the fourteen partitioned before anything ran: **1 wrong number, 12 raw conversions,
+1 checker false positive**. That partition predicted the whole blast radius — a dropped argument cannot move a
+computed quantity — and the re-emission turned the prediction into a measurement: **13 prose fields moved, 0
+verdict or boolean fields moved, 13 raw conversions across the corpus → 0**.
+
+**The one that mattered** is `T-163`'s conditions block, which printed *"the SAXS-measured **40.35** nm"*
+against the SAXS interhelical distance of **2.69** — the tile's own length, eaten by the one surviving `%.2f`.
+**15.0× out, in a grammatical sentence, in a committed result file.**
+
+**One of the fourteen was the checker's, and finding it needed the same discipline as the other thirteen:
+read the emitted string.** `StandoffBaseJointStudy.kt:875` reports *"5 conversions, 4 arguments"* and its
+string is correct; the fifth is a nested `"%.0f".format(it)` inside a `${…}` template whose body carries
+braces, and the stripper was the regex `\$\{[^{}]*\}`, which cannot match past an inner brace. Repaired in the
+**checker**, two self-tests written first (one failing, one already passing as the guard against
+over-stripping), 17 → 19. `CLAUDE.md`: *a drift checker's false positives cost more than its true ones* — a
+1-in-14 rate on a gate that fails a build is the rate at which the gate gets switched off, so the repair had
+to precede the wiring, and it did.
+
+**The finding, and it is the opposite of what the standing diagnosis implies.** *"Java silently ignores extra
+arguments, so this class does not throw"* explains **one** of the fourteen. The other twelve were as loud as a
+defect can be — a literal `%.4f` in a machine-readable artifact, greppable in one regular expression — and
+they sat in seven committed result files across several iterations. What kept them alive is that **a result
+file is read once, while the claim is being written, and never again**; at that moment the author has the
+numbers in front of them and does not need the file to tell them. The proof is from the other side: **not one
+of the seven claims had inherited a defective number.** `C-0103` states the SAXS distance as **2.69 nm** where
+its own result file printed **40.35**. `C-0028` states `EI = 172.9 pN·nm²`, `L_p = 41.7 nm` and *"25 %"* —
+all three of the arguments its own result file dropped. **Amendments owed: zero.** This defect class damages
+the machine-readable artifact and **spares the human one** (`CH-0150`).
+
+**The census `C-0125` published was wrong in all three of its counts** — 7 files, 7 studies and 7 result
+files, not *"6 files from 5 studies … 8 result files"* (`CH-0149`). Nothing `C-0125` concluded depends on any
+of them.
+
+**Eight numeric fields moved and none of them is the repair, and that is measured rather than asserted.**
+`T-129` was re-run a **second** time on identical repaired code: the two runs move the same field by the same
+**0.006** (`ranges[1].minimaxPeakRatio`) as the repair-versus-`HEAD` comparison did, and the second run lands
+back on `HEAD`'s whole `ranges[1]` block and `HEAD`'s own `P2` verdict string where the first did not. Every
+moved field is a minimax optimum — `CLAUDE.md`'s *descent on an optimal manifold* class, with Polak-Ribière as
+the amplifier. The eighth is `T-136`'s `reproductions[2].departure` at **1.9e−9**: a nine-significant-digit
+reproduction departure, the trap `C-0093` cured on its *convergence* axis and did not carry to its
+*reproduction* records. Queued, not smuggled into a printing repair.
+
+**Two things the repair exposed that the raw conversions had hidden.** `T-148`'s binomial standard error at
+10 000 draws is **exactly 0.0000**, because the exceedance probability against `T-5b`'s 0.10 is **1.0 at every
+one of the five sample counts** — a saturated statistic is the resolution of nothing, and the instrument at
+`p̂ = 1` is a one-sided bound. And `T-138`'s 45-path row prints **0.53×** the mandate where the 15-path row
+prints 2.27×: both rows fire their falsifier, but the sentence a reader would have taken away was blank.
+
+**Spawned, and not queued here because each needs its own ID.** A one-line `grep` gate over `gpd/results/`
+for a raw `%` conversion — cheaper than the static checker and catching a strictly different set; `T-136`'s
+nine-digit reproduction departure; and `T-148`'s saturated exceedance statistic, which wants a one-sided bound
+rather than a binomial standard error of exactly zero.
+
+**The gate is wired, and only now.** `tasks.register<Exec>("testFormatStrings")` on `test`'s `dependsOn`, and
+the sweep over `src/` in `tools/verify.sh`'s checks block — **after** it read `0 defect(s) over src`, per
+`C-0083`.
+
+**Incidental, and the same family.** `tools/check-corpus-links.py` lists its corpus with `git ls-files`, so
+run **directly in the checkout** it skips a claim written during the iteration: two broken relative links in
+`C-0127`'s own `Consumes` row passed a run reporting *"0 broken link(s) in 376 file(s)"* and were found by
+hand. The **gate** is sound — `tools/verify.sh` runs it inside a snapshot with no `.git`, where the `os.walk`
+fallback `C-0083` put there for exactly this reason sees everything, and it duly failed on this task's own two
+challenges while the claim they cite was still unwritten. The blind instrument is the one an agent uses to
+check its **own** work mid-iteration, which is the moment the links are actually wrong.
+
+**Iteration 28, coordinator — a registry gap that three claims saw and none could act on.**
+
+`C-0128` closed with a process note: `gpd/challenges/README.md` indexes 65 challenges and stops at `CH-0091`.
+Measured: **66 rows against 124 files**, missing everything from **`CH-0050`** on.
+
+**Three separate claims had already seen it.** `C-0113` measured 65 of 111 while building the challenge-status
+checker; `C-0122` re-measured it while counting stations; `C-0128` reported it as a note. **None of the three
+could act, because each was in the middle of something else** — which is exactly how a registry gap survives
+being observed three times, and is the same shape as `C-0071`'s *a discharge is invisible to whoever files the
+removal*: the person who sees it is never the person whose task it is.
+
+**An index that is half the corpus is worse than no index.** A reader who finds `CH-0100` in it will read
+`CH-0151`'s absence as meaning it does not exist.
+
+**58 rows backfilled, generated rather than written.** Each is built from the challenge's **own header
+fields** — `Against`, `Grounds`/`Raised by`, `Status` — by `tools/check-challenge-index.py`. That was a
+deliberate choice against the more impressive option: the 66 existing rows carry hand-written prose a
+generator cannot reproduce, and **inventing some would be worse than transcribing what each file already
+states about itself**. A backfilled row says where to look and what the file claims; it does not paraphrase
+the argument, and it says so in the section header.
+
+Now 124 of 124, wired into `./gradlew test` and `tools/verify.sh` as the **fifth** retained document checker.
+It escapes a bare `|` in a generated cell, so that fixing this class cannot reintroduce `C-0083`'s.
+
+**Iteration 28, coordinator — and `T-207` found the blind spot in a tool I shipped three iterations ago.**
+
+`C-0127` closed with a process note worth more than an erratum: **`tools/check-corpus-links.py`, run in the
+checkout, uses `git ls-files` and therefore skips an uncommitted file.** Two broken links in `C-0127`'s own
+`Consumes` row passed a run reporting *"0 broken link(s) in 376 file(s)"*, and were caught only by
+`tools/verify.sh` — which runs in a `.git`-less snapshot where the `os.walk` fallback sees everything.
+
+**The gate was sound and the instrument was blind, and the blind one is the one an agent uses on its own work
+mid-iteration** — precisely the moment the check is worth most. Repaired: the checkout run now adds
+`git ls-files --others --exclude-standard`, and sees **383** files where it saw 376, so a checkout run and the
+gate look at the same set. Still 0 broken.
+
+That is the second time this session a checker's blind spot has been invisible in exactly the cases it misses
+— the first was the ad-hoc link check that matched `../claims/…` and not same-directory links, which reported
+*"none"* on two claims written minutes earlier. **The pattern is that a checker written to catch a class you
+have just been burned by is tested against the instances you remember**, and the ones it cannot see are by
+construction the ones you did not have in mind.
+
+Three items `C-0127` spawned are queued with their own IDs rather than folded in: `T-208` (a gate over
+`gpd/results/` for raw conversions — a **strictly different catch set** from the static checker, because it
+reads output where the other reads source), `T-209` (`T-136`'s nine-digit reproduction departure — `C-0093`'s
+two-digit rule was applied per **file** rather than per **record type**, so a sweep is owed) and `T-210`
+(`T-148`'s exceedance statistic, saturated at 1.0 at every sample count, where a symmetric error bar is the
+resolution of nothing and a one-sided bound is the instrument).
