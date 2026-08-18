@@ -139,3 +139,24 @@ fun honeycombStationCensus(
         acrossHelixPitch = interhelicalDistance
     )
 }
+
+/**
+ * `T-204` — how much more (or less) of the total load a tile's **collar** carries, relative to
+ * another tile, from geometry alone.
+ *
+ * `C-0022` solved the edge profile on a 40 × 40.35 nm tile, and every four-layer number is read
+ * under it unchanged. The collar is a **local** rim effect — `CLAUDE.md` records a sub-Debye
+ * **1.65 nm** band whose total contribution scales as `1/L` — so its depth and width are set by
+ * screening and **not** by the tile, while its *share* of the load scales as the tile's
+ * **perimeter over area**. That makes a transfer between two tiles boundable before any field is
+ * solved, which is the cheap bound this task runs first.
+ *
+ * @return the factor by which the collar's share on the tile `(toX, toY)` exceeds its share on
+ *          `(fromX, fromY)`.
+ */
+fun collarShareRatio(fromX: Double, fromY: Double, toX: Double, toY: Double): Double {
+    require(fromX > 0.0 && fromY > 0.0) { "the source tile must be positive: $fromX x $fromY" }
+    require(toX > 0.0 && toY > 0.0) { "the target tile must be positive: $toX x $toY" }
+    fun perimeterOverArea(x: Double, y: Double) = 2.0 * (x + y) / (x * y)
+    return perimeterOverArea(toX, toY) / perimeterOverArea(fromX, fromY)
+}

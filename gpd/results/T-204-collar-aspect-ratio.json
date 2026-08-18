@@ -1,0 +1,242 @@
+{
+    "task": "T-204",
+    "leaf": "A7.4",
+    "title": "Does C-0022's collar transfer to the 10 x 6 aspect ratio?",
+    "verificationType": "logical (a perimeter-over-area bound) + in-silico (the sensitivity)",
+    "maturity": "TRL 1-3. Model-consistent and traceable. NOT empirically demonstrated.",
+    "units": {
+        "length": "nm",
+        "dishing": "dimensionless, fraction of the free stroke"
+    },
+    "conventions": {
+        "solvedTile": "C-0022's 40 x 40.35 nm, at 2 mM / 10 nm / 0.192 V",
+        "collar": "a LOCAL rim effect: depth and width set by screening, share by geometry",
+        "scaling": "both collar terms scaled together; the interior pressure is unchanged",
+        "flat": "peak dishing below T-5b's 0.10"
+    },
+    "parameters": {
+        "solvedEdgeX": "40.0",
+        "solvedEdgeY": "40.35",
+        "rowBasePairs": "112",
+        "realisations": "4000",
+        "seed": "204204"
+    },
+    "citedInputs": [
+        "C-0022 — the solved edge profile, and the tile it was solved on",
+        "C-0118 — the coupled cells re-graded here",
+        "C-0120 / C-0122 — which both name this transfer as owed"
+    ],
+    "cheapBound": {
+        "collarShare15x4OverSolved": "1.05555042",
+        "collarShare10x6OverSolved": "1.31957669",
+        "collarShare10x6Over15x4": "1.25013137",
+        "why": "the collar's depth and width are set by screening and its share by the tile's perimeter over area, so the transfer is geometry and needs no solve"
+    },
+    "cells": [
+        {
+            "crossSection": "15 x 4",
+            "columns": 1,
+            "pathCount": 15,
+            "collarScale": 1.0,
+            "nominalOverStroke": 0.0607282891,
+            "p90OverStroke": 0.124893366,
+            "flatAtP90": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "columns": 1,
+            "pathCount": 15,
+            "collarScale": 1.05555042,
+            "nominalOverStroke": 0.063142977,
+            "p90OverStroke": 0.128056799,
+            "flatAtP90": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "columns": 1,
+            "pathCount": 15,
+            "collarScale": 1.5,
+            "nominalOverStroke": 0.0824624912,
+            "p90OverStroke": 0.153717048,
+            "flatAtP90": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "columns": 1,
+            "pathCount": 15,
+            "collarScale": 2.0,
+            "nominalOverStroke": 0.104196693,
+            "p90OverStroke": 0.182584494,
+            "flatAtP90": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "columns": 1,
+            "pathCount": 15,
+            "collarScale": 3.0,
+            "nominalOverStroke": 0.147665098,
+            "p90OverStroke": 0.240319387,
+            "flatAtP90": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "columns": 5,
+            "pathCount": 75,
+            "collarScale": 1.0,
+            "nominalOverStroke": 0.0403571205,
+            "p90OverStroke": 0.120566424,
+            "flatAtP90": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "columns": 5,
+            "pathCount": 75,
+            "collarScale": 1.05555042,
+            "nominalOverStroke": 0.0425702223,
+            "p90OverStroke": 0.123718403,
+            "flatAtP90": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "columns": 5,
+            "pathCount": 75,
+            "collarScale": 1.5,
+            "nominalOverStroke": 0.0602768793,
+            "p90OverStroke": 0.148321596,
+            "flatAtP90": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "columns": 5,
+            "pathCount": 75,
+            "collarScale": 2.0,
+            "nominalOverStroke": 0.080196638,
+            "p90OverStroke": 0.176299931,
+            "flatAtP90": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "columns": 5,
+            "pathCount": 75,
+            "collarScale": 3.0,
+            "nominalOverStroke": 0.120036156,
+            "p90OverStroke": 0.23235459,
+            "flatAtP90": false
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 1,
+            "pathCount": 10,
+            "collarScale": 1.0,
+            "nominalOverStroke": 0.0152264845,
+            "p90OverStroke": 0.0278431488,
+            "flatAtP90": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 1,
+            "pathCount": 10,
+            "collarScale": 1.31957669,
+            "nominalOverStroke": 0.0181899588,
+            "p90OverStroke": 0.0314919626,
+            "flatAtP90": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 1,
+            "pathCount": 10,
+            "collarScale": 1.5,
+            "nominalOverStroke": 0.0198630466,
+            "p90OverStroke": 0.0335519722,
+            "flatAtP90": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 1,
+            "pathCount": 10,
+            "collarScale": 2.0,
+            "nominalOverStroke": 0.0244996086,
+            "p90OverStroke": 0.0392607957,
+            "flatAtP90": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 1,
+            "pathCount": 10,
+            "collarScale": 3.0,
+            "nominalOverStroke": 0.0337727327,
+            "p90OverStroke": 0.0506784425,
+            "flatAtP90": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 5,
+            "pathCount": 50,
+            "collarScale": 1.0,
+            "nominalOverStroke": 0.00829451028,
+            "p90OverStroke": 0.0395297268,
+            "flatAtP90": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 5,
+            "pathCount": 50,
+            "collarScale": 1.31957669,
+            "nominalOverStroke": 0.0108882201,
+            "p90OverStroke": 0.0438546296,
+            "flatAtP90": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 5,
+            "pathCount": 50,
+            "collarScale": 1.5,
+            "nominalOverStroke": 0.0123525501,
+            "p90OverStroke": 0.0462697939,
+            "flatAtP90": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 5,
+            "pathCount": 50,
+            "collarScale": 2.0,
+            "nominalOverStroke": 0.0164105899,
+            "p90OverStroke": 0.0529966179,
+            "flatAtP90": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "columns": 5,
+            "pathCount": 50,
+            "collarScale": 3.0,
+            "nominalOverStroke": 0.0245266695,
+            "p90OverStroke": 0.0664028863,
+            "flatAtP90": true
+        }
+    ],
+    "verdict": {
+        "tenBySixFlatAtEveryScaleTested": "true",
+        "firstScaleAtWhichTenBySixFails": "none up to 3.0",
+        "geometricFactorItActuallyNeeds": "1.31957669",
+        "fifteenByFourFlatCells": "0",
+        "fifteenByFourCells": "10"
+    },
+    "falsifiers": [
+        "F1 — some 10 x 6 cell stops being flat at or below its own geometric factor, in which case the collar transfer DOES move the verdict and a re-solve is owed.",
+        "F2 — the dishing does not increase monotonically with the collar scale, in which case a single-factor bound is not the right instrument at all."
+    ],
+    "findings": {
+        "theVerdictSurvivesTheBoundWithRoomToSpare": "At its own geometric factor of 1.31958 x, 10 x 6 reads 0.0314919626 at 1 column and stays flat; it is flat at EVERY scale tested up to 3.0 x, and the first scale at which any 10 x 6 cell stops being flat is none tested. So the collar transfer cannot move the verdict, and the margin is the ratio of those two numbers.",
+        "theCheapBoundIsTheAnswer": "The collar is LOCAL, so its share scales as perimeter over area: 15 x 4 carries 1.05555 x the solved tile's and 10 x 6 carries 1.31958 x, a 1.25013 x difference between them. The bound needs no field solve at all."
+    },
+    "validity": [
+        "This scales the SHARE and holds the SHAPE: C-0022's taper width and rim standoff are unchanged, which is the whole premise -- they are set by screening, not by the tile. A genuine re-solve at the new aspect ratio could move the shape too, and that is NOT bounded here.",
+        "A rectangular tile's collar is not uniform along its perimeter: the short and long sides see different fringing, and edgeCollarPressure applies one profile to all four. That is C-0022's own convention, inherited.",
+        "Equal springs only, as C-0118's best cells use.",
+        "The interior pressure is held at TARGET_FORCE over the footprint, so scaling the collar RAISES the total force slightly rather than redistributing it -- the conservative direction for a flatness question."
+    ],
+    "openQuestions": [
+        "A genuine 2-D re-solve at 38.08 x 25.36 nm, which would move the collar's SHAPE and not only its share. This study bounds the share and says so.",
+        "Whether the short and long sides of a 1.5:1 tile need different collar profiles."
+    ]
+}

@@ -8148,3 +8148,25 @@ misses.** And the shipped version's first draft was wrong too — it special-cas
 root, which is true two levels up from `gpd/claims/` and false from a manifest one level deeper, giving 15
 false positives on its first real run. One `normpath` resolver against the file's own directory replaced three
 special cases.
+
+**`T-204` (`C-0123`) — the collar transfer is bounded by arithmetic, and the bound holds with 2.27× to spare.**
+
+Both `C-0120` and `C-0122` left the same question open: `C-0022` solved the edge collar on a 40 × 40.35 nm
+tile and every four-layer number is read under it unchanged, including on a tile two-thirds that size.
+
+**The bound needs no field solve.** The collar is a **local** rim effect — depth and width set by screening,
+not by the tile — so its **share** of the load scales as **perimeter over area**. `15 × 4` carries
+**1.05555×** what the solved tile does; `10 × 6` carries **1.31958×**; the two differ by **1.25013×**.
+
+**And rather than argue that dishing tracks the share, it was measured.** Scaling both collar terms over
+`1.0 … 3.0` — a range that *contains* each factor — `10 × 6` is flat at the 90th percentile at **every** scale
+while needing only 1.32×. The margin is at least **2.27×** and the true break is above the range tested.
+Neither falsifier fired, and the second mattered: the response is **monotone** in the scale, which is what
+makes a single-factor bound the right instrument rather than a convenient one.
+
+**What it does not cover is stated rather than hidden.** It scales the **share** and holds the **shape**; a
+genuine 2-D re-solve at the new aspect ratio would move the shape too, because a rectangular tile's short and
+long sides see different fringing. That re-solve remains the thorough answer — and is now known to be worth
+**less** than it looked, since the share it would correct is already covered more than twice over. That is the
+cheap-bound discipline paying in the direction it usually does not: not by settling a question, but by pricing
+the expensive calculation *down* before anyone spends a study on it.
