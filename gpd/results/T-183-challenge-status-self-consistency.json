@@ -1,0 +1,74 @@
+{
+  "task": "T-183",
+  "claim": "C-0113",
+  "what": "The deliverable's self-consistency check extended from TASK identifiers to CHALLENGE identifiers, with a corpus comparison against each challenge file's own **Status** row. Process task: it computes no physical quantity. Units: none. See tools/trace-answers.py, tools/test-trace-answers.py and C-0106, which raised it.",
+  "verificationType": "logical, with executable self-tests",
+  "parameters": {
+    "verdictWindowCharacters": 80,
+    "openAssertionWindowCharacters": 24,
+    "challengeStatusAuthority": "each gpd/challenges/CH-*.md file's own **Status** table row",
+    "challengeStatusReadCaseSensitively": false,
+    "proseVerdictWordsReadCaseSensitively": true,
+    "openWinsATieInAChallengeStatusCell": true
+  },
+  "corpus": {
+    "challengeFileCount": 111,
+    "withDeclaredStatus": 81,
+    "withoutDeclaredStatus": 30,
+    "indexedInReadme": 65,
+    "absentFromReadme": 46,
+    "declaredOpen": 57,
+    "declaredClosed": 24
+  },
+  "deliverable": {
+    "challengeReferences": 123,
+    "distinctChallengesReferenced": 78,
+    "taskReferences": 134
+  },
+  "verdicts": {
+    "openAssertions": 0,
+    "staleTaskStatuses": 0,
+    "staleChallengeStatuses": 0,
+    "selfContradictions": 0
+  },
+  "windowSweep": {
+    "40": {
+      "subjects": [],
+      "count": 0
+    },
+    "60": {
+      "subjects": [],
+      "count": 0
+    },
+    "80": {
+      "subjects": [],
+      "count": 0
+    },
+    "120": {
+      "subjects": [],
+      "count": 0
+    },
+    "200": {
+      "subjects": [
+        "CH-0083"
+      ],
+      "count": 1
+    },
+    "400": {
+      "subjects": [
+        "CH-0083"
+      ],
+      "count": 1
+    },
+    "100000": {
+      "subjects": [
+        "CH-0083"
+      ],
+      "count": 1
+    }
+  },
+  "selfTests": {
+    "count": 83,
+    "allPass": true
+  }
+}

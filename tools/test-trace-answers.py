@@ -406,6 +406,225 @@ check(
     {"DISCHARGED"},
 )
 
+# --- challenge statuses (T-183) ------------------------------------------------------------
+#
+# `C-0088` scoped the self-consistency check to TASK identifiers explicitly, and `T-175` then found
+# by hand that 2 of its 12 third-class instances are a CHALLENGE with two statuses: `CH-0083` read
+# *open* in `ANSWERS.md`'s SS2 verdict table and `RESOLVED` twelve lines below, and BOTH halves passed
+# every existing check.  The corpus carries 111 challenge files and 123 references to them in the
+# deliverable, so the class is live rather than hypothetical.
+#
+# The design constraint is the false-positive budget, not the coverage.  Every guard the task
+# checker carries has to carry over, and the challenge vocabulary adds two words that are common in
+# ordinary prose -- "stands" and "raised" -- so each is admitted only where it is unambiguous.
+check(
+    "UPHELD is a settled verdict",
+    trace_answers.status_words("`CH-0019` is UPHELD"),
+    {"SETTLED"},
+)
+check(
+    "WITHDRAWN is a settled verdict",
+    trace_answers.status_words("`CH-0098` is WITHDRAWN"),
+    {"SETTLED"},
+)
+check(
+    "RESOLVED already was, and stays, settled",
+    trace_answers.status_words("`CH-0003` is RESOLVED by `C-0003`"),
+    {"SETTLED"},
+)
+# "STANDS" is the challenge vocabulary's word for a challenge that holds against the claim it
+# attacks -- i.e. it has been adjudicated, which is a CLOSED state, not an open one.  It is also
+# the commonest verb in this repository's prose ("the recommendation stands"), so it counts only
+# when it is upper case, which is how the corpus writes a verdict.
+check(
+    "upper-case STANDS is a settled verdict",
+    trace_answers.status_words("`CH-0100` STANDS"),
+    {"SETTLED"},
+)
+check(
+    "lower-case 'stands' in prose is not a verdict",
+    trace_answers.status_words("`CH-0100`'s reading stands behind the recommendation"),
+    set(),
+)
+# "RAISED" is the state a challenge is filed in and nothing has adjudicated yet: open.  Same
+# case-sensitivity guard, because "raised by `C-0107`" is provenance and appears in almost every
+# challenge reference in the deliverable.
+check(
+    "upper-case RAISED is open",
+    trace_answers.status_words("`CH-0124` is RAISED against `C-0006`"),
+    {"OPEN"},
+)
+check(
+    "lower-case 'raised by' is provenance, not a verdict",
+    trace_answers.status_words("`CH-0124`, raised by `C-0109`, moves no number"),
+    set(),
+)
+# The negation guard has to reach the new words too, or "not upheld" reads as settled.
+check(
+    "'not upheld' is open, not settled",
+    trace_answers.status_words("`CH-0044` was not upheld"),
+    {"OPEN"},
+)
+
+# --- the reference pattern reaches challenges -----------------------------------------------
+check(
+    "a challenge given two verdicts is a self-contradiction",
+    [(c.task, sorted(c.verdicts)) for c in trace_answers.self_contradictions(
+        "`CH-0083` is still open at this point.\n"
+        "Twelve lines below, `CH-0083` is RESOLVED.\n"
+    )],
+    [("CH-0083", ["OPEN", "SETTLED"])],
+)
+check(
+    "a challenge merely cited asserts nothing",
+    trace_answers.self_contradictions(
+        "The +14.7 % collar (`CH-0026`) raises the total force.\n"
+        "`CH-0026` gives 1.65 nm of collar.\n"
+    ),
+    [],
+)
+check(
+    "a task and a challenge in one sentence are two separate subjects",
+    sorted(c.task for c in trace_answers.self_contradictions(
+        "`T-45` is answered and `CH-0083` is answered.\n"
+        "`T-45` is unmeasured.\n"
+    )),
+    ["T-45"],
+)
+
+# --- the corpus half: a challenge's own file is the authority --------------------------------
+#
+# The cheap bound ran before this was written: 81 of the 111 challenge files carry a `**Status**`
+# row and 30 do not, and the README index covers 65.  So the vocabulary is NOT controlled, and the
+# honest check is "compare where a status is declared, report the coverage" -- an undeclared status
+# returns UNKNOWN and is silent, never guessed.
+check(
+    "a declared UPHELD status is read out of the file body",
+    trace_answers.challenge_status_of(
+        "# CH-0019 -- something\n"
+        "| | |\n|---|---|\n"
+        "| **Against** | `C-0017` |\n"
+        "| **Status** | **Upheld. The rationale identifies two expansions.** |\n"
+    ),
+    "CLOSED",
+)
+check(
+    "a declared OPEN status is read out of the file body",
+    trace_answers.challenge_status_of(
+        "| **Status** | **OPEN, and it does not overturn a verdict.** |\n"
+    ),
+    "OPEN",
+)
+check(
+    "RAISED is open",
+    trace_answers.challenge_status_of("| **Status** | raised. **No number in `C-0023` moves** |\n"),
+    "OPEN",
+)
+check(
+    "a file with no Status row is UNKNOWN, never guessed",
+    trace_answers.challenge_status_of("# CH-0025 -- something\n\nprose only\n"),
+    "UNKNOWN",
+)
+check(
+    "an UNKNOWN status contradicts nothing",
+    trace_answers.stale_challenge_statuses(
+        "`CH-0025` is still open.\n", {"CH-0025": "UNKNOWN"}
+    ),
+    [],
+)
+check(
+    "an open assertion against a closed challenge is stale",
+    trace_answers.stale_challenge_statuses(
+        "`CH-0019` is still open.\n", {"CH-0019": "CLOSED"}
+    ),
+    [(1, "CH-0019", "CLOSED")],
+)
+check(
+    "an open assertion against an open challenge is fine",
+    trace_answers.stale_challenge_statuses(
+        "`CH-0122` is still open.\n", {"CH-0122": "OPEN"}
+    ),
+    [],
+)
+# `C-0088`'s guard 2, carried over verbatim: a duration is not a status.
+check(
+    "'open since' is a duration, not an assertion, for challenges too",
+    trace_answers.stale_challenge_statuses(
+        "`CH-0019`, open since iteration 4, is upheld.\n", {"CH-0019": "CLOSED"}
+    ),
+    [],
+)
+
+# --- the two guards the real deliverable forced (T-183) ---------------------------------------
+#
+# Both were written after running the extension against the committed `ANSWERS.md`, which fired
+# once -- on `CH-0083`, wrongly.  The task's own falsifier is that a single false positive means
+# the extension is not shipped, so each is fixed here and pinned by a test.
+
+# Guard 1: a verdict attaches to the identifier it is NEAR.  A Markdown table row is one line
+# carrying several independent statements, and whole-sentence attribution read SS6 task 4's
+# DISCHARGED onto the challenge named 180 characters later in the same cell.
+check(
+    "a verdict far from its subject in one table row does not attach",
+    trace_answers.self_contradictions(
+        "| 4 | **PASS**, and now **DISCHARGED FOR THE RECOMMENDED DEVICE** -- `C-0018` searched "
+        "the affine mandate's load line and `C-0032` a strain-softening flexure's, and `CH-0083` "
+        "charged that neither is the recommended one |\n"
+        "`CH-0083` is RESOLVED.\n"
+    ),
+    [],
+)
+check(
+    "but a verdict beside its subject still attaches",
+    [(c.task, sorted(c.verdicts)) for c in trace_answers.self_contradictions(
+        "`CH-0083` is unresolved.\n`CH-0083` is RESOLVED.\n"
+    )],
+    [("CH-0083", ["OPEN", "SETTLED"])],
+)
+
+# Guard 2: `C-0088`'s duration guard, in the phrasing the queue uses only for challenges.
+check(
+    "'raised open in iteration 16 and RESOLVED in 17' is history, not a contradiction",
+    trace_answers.self_contradictions(
+        "(`CH-0083`, raised open in iteration 16 and **RESOLVED in iteration 17**, below).\n"
+    ),
+    [],
+)
+check(
+    "and the original 'open since' phrasing still is",
+    trace_answers.self_contradictions(
+        "`T-45`, open since iteration 3, is answered from measurement.\n"
+    ),
+    [],
+)
+
+# --- the shadowed regex T-183 found (and what it was worth) -----------------------------------
+#
+# `_OPEN_WORD` was declared TWICE at module level, so the second silently shadowed the first and
+# `open_assertions` ran on the self-consistency check's wider verdict list.  Both give 0 on the
+# committed deliverable, so nothing published moved -- but the two are now named apart and the
+# assertion check keeps the wider list DELIBERATELY, because it contains the word of `C-0080`'s
+# own live instance.
+check(
+    "the assertion check sees 'unmeasured', which is C-0080's own live phrasing",
+    [(line, task) for line, task, _ in trace_answers.open_assertions(
+        "(`T-45` is still unmeasured)\n"
+    )],
+    [(1, "T-45")],
+)
+check(
+    "and it still sees the narrow list's own words",
+    [(line, task) for line, task, _ in trace_answers.open_assertions(
+        "`T-63` is still to do\n"
+    )],
+    [(1, "T-63")],
+)
+check(
+    "the two word lists are separate objects, not one shadowing the other",
+    trace_answers._OPEN_WORD_ASSERTION.pattern == trace_answers._OPEN_WORD_VERDICT.pattern,
+    False,
+)
+
 # --- summary -------------------------------------------------------------------------------
 if _failures:
     print("\n{} check(s) FAILED".format(len(_failures)))

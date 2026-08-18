@@ -237,8 +237,32 @@ def queue_status(queue_text):
 # must be within a short window of each other, so that "settled by `T-129`" three clauses away
 # from an unrelated "open" is not a hit.
 _OPEN_WINDOW = 24
-_OPEN_WORD = re.compile(r"\b(open|unanswered|still to do|not yet answered)\b", re.IGNORECASE)
+# `T-183` found this declared TWICE at module level -- here, and again below for the
+# self-consistency check -- so the second silently shadowed the first and `open_assertions` has
+# been running on the WIDER verdict list since `C-0080` wrote it.  Both give 0 on the committed
+# `ANSWERS.md`, so nothing published moves; but the shadow is not inert in principle, and the
+# direction it happens to run is FAVOURABLE -- the wider list contains "unmeasured", which is the
+# exact word of `C-0080`'s own live instance (*"(`T-45` is still unmeasured)"*).  So the two are
+# now named apart and the assertion check keeps the wider list DELIBERATELY, with a test on each.
+# Same family as `CLAUDE.md`'s Kotlin note that a `private` top-level declaration does not scope to
+# its file: a redeclaration is silent in both languages and the compiler is the only difference.
+_OPEN_WORD_ASSERTION = re.compile(
+    r"\b(open|unmeasured|unanswered|unresolved|undetermined|still\s+to\s+do|still\s+missing"
+    r"|not\s+yet\s+answered|not\s+determined)\b",
+    re.IGNORECASE,
+)
 _TASK_REFERENCE = re.compile(r"`(T-\d{1,4}[a-z]?|P-\d{1,4})`")
+
+# `T-183`.  The self-consistency check needs to reach CHALLENGE identifiers too: `C-0088` scoped
+# the whole class to task ids explicitly, and `T-175` then found by hand that 2 of its 12
+# third-class instances are a challenge with two statuses -- `CH-0083` read *open* in the SS2
+# verdict table and `RESOLVED` twelve lines below, and both halves passed every check here.  The
+# corpus carries 111 challenge files and the deliverable makes 123 references to them.
+#
+# It is deliberately a SECOND pattern rather than a widening of the first: `open_assertions`'s
+# corpus authority is `TASKS.md`, which has no challenge rows, so widening `_TASK_REFERENCE` would
+# make every challenge reference an UNKNOWN lookup in a check that cannot adjudicate it.
+_SUBJECT_REFERENCE = re.compile(r"`(T-\d{1,4}[a-z]?|P-\d{1,4}|CH-\d{1,4})`")
 
 # Two cancellations, both found by running this against the real deliverable.  "open SINCE
 # iteration 3" is a duration — a statement about how long a task WAS open, which the very same
@@ -246,7 +270,12 @@ _TASK_REFERENCE = re.compile(r"`(T-\d{1,4}[a-z]?|P-\d{1,4})`")
 # reporting the closure rather than asserting the gap.  A false positive here sends an agent to
 # "correct" a passage that is already right, which is the failure a drift checker can least
 # afford: the tool exists in order to be believed.
-_HISTORICAL = re.compile(r"\bopen\s+(since|for|from)\b", re.IGNORECASE)
+# `T-183` widened this by one alternative.  `ANSWERS.md` writes a challenge's history as
+# *"raised open in iteration 16 and **RESOLVED in iteration 17**"* -- a duration and its own
+# closure in one clause, which is `C-0088`'s guard 2 in a phrasing the queue only uses for
+# challenges.  Without it that sentence asserts both verdicts by itself and every genuine
+# contradiction `CH-0083` takes part in becomes unreadable.
+_HISTORICAL = re.compile(r"\bopen\s+(since|for|from|in\s+iteration)\b", re.IGNORECASE)
 _ANSWERING = re.compile(
     r"\b(answered|answers|resolved|resolves|closed|closes|settled|settles|discharged)\b",
     re.IGNORECASE,
@@ -262,7 +291,7 @@ def open_assertions(answers_text):
             start = max(0, reference.start() - _OPEN_WINDOW)
             end = min(len(line), reference.end() + _OPEN_WINDOW)
             window = line[start:end]
-            word = _OPEN_WORD.search(window)
+            word = _OPEN_WORD_ASSERTION.search(window)
             if not word:
                 continue
             if _HISTORICAL.search(window) or _ANSWERING.search(window):
@@ -299,6 +328,22 @@ def stale_statuses(answers_text, queue_text):
 # merely cited stays silent.  A false positive here would send an agent to "reconcile" two
 # sentences that are both correct, which is the failure a drift checker can least afford.
 
+# `T-183`.  A verdict attaches to the identifier it is NEAR, not to every identifier in the
+# sentence.  The original unit was the whole sentence, and a Markdown TABLE ROW is one line
+# carrying several independent statements -- `ANSWERS.md` line 512 puts *"**DISCHARGED FOR THE
+# RECOMMENDED DEVICE**"* (a verdict on SS6 task 4) and *"`CH-0083` charged that neither..."*
+# (provenance) in one cell of one row, and whole-sentence attribution read the task's verdict onto
+# the challenge.  That is a FALSE POSITIVE, and `C-0080`'s finding is that a drift checker's false
+# positives cost more than its true ones because the tool exists in order to be believed.
+#
+# 80 characters, chosen by measurement rather than taste: every phrasing the deliverable actually
+# uses puts the verdict inside ~30 characters of its subject (*"`T-45` is still unmeasured"*,
+# *"`CH-0083` is RESOLVED"*), and the misattribution that had to be excluded sits 180 away.  The
+# sweep is in `T-183`'s result file: with the history guard beside it the misattribution survives
+# at 200, 400 and unbounded, and dies at 120.  80 is that crossing with margin, and the sweep is
+# emitted at every rung so the choice can be re-audited without re-running anything.
+_VERDICT_WINDOW = 80
+
 _SelfContradiction = namedtuple("SelfContradiction", "task verdicts mentions")
 
 # `not answered`, `cannot be answered`, `no answer` — the negation carries the whole meaning, and
@@ -312,7 +357,29 @@ _SETTLED_WORD = re.compile(
     r"\b(answered|answers|resolved|settled|closed|measured|established|demonstrated)\b",
     re.IGNORECASE,
 )
-_OPEN_WORD = re.compile(
+
+# `T-183`.  The CHALLENGE vocabulary, which is a different word list from a task's and had to be
+# measured rather than assumed: 81 of the 111 challenge files carry a `**Status**` row, 30 do not,
+# and the `README.md` index covers 65 -- so it is not a controlled vocabulary and every word below
+# was read out of the corpus.
+#
+# Two of the words are also the commonest verbs in this repository's prose.  "the recommendation
+# stands" and "raised by `C-0107`" appear in almost every challenge reference in the deliverable
+# and neither is a verdict, so both are matched CASE-SENSITIVELY: the corpus writes an adjudication
+# in upper case and its prose in lower, which is the same discipline `queue_status` already runs
+# under for `DONE` inside "Left undone".
+#
+# STANDS is a SETTLED verdict and that is not obvious.  In this corpus a challenge that "STANDS"
+# has been adjudicated and holds against the claim it attacks -- `CH-0100` is the type case -- so
+# it is a closed state.  A challenge nobody has adjudicated reads RAISED, which is the open one.
+_CHALLENGE_SETTLED_WORD = re.compile(r"\b(UPHELD|WITHDRAWN|STANDS|OVERTURNED)\b")
+_CHALLENGE_OPEN_WORD = re.compile(r"\bRAISED\b")
+# The negation guard has to reach the new words too, or "not upheld" reads as settled.
+_NEGATED_CHALLENGE = re.compile(
+    r"\b(not|never|no|without)\s+(been\s+)?(upheld|withdrawn|stands|overturned|raised)\b",
+    re.IGNORECASE,
+)
+_OPEN_WORD_VERDICT = re.compile(
     r"\b(open|unmeasured|unanswered|unresolved|undetermined|still\s+missing|not\s+determined)\b",
     re.IGNORECASE,
 )
@@ -327,7 +394,15 @@ def status_words(text):
         # question that stopped applying is neither answered nor owed an answer.
         return {"DISCHARGED"}
     negated = list(_NEGATED_SETTLED.finditer(text))
-    if negated:
+    negated_challenge = list(_NEGATED_CHALLENGE.finditer(text))
+    if negated or negated_challenge:
+        verdicts.add("OPEN")
+    for match in _CHALLENGE_SETTLED_WORD.finditer(text):
+        if any(n.start() <= match.start() < n.end() for n in negated_challenge):
+            continue
+        verdicts.add("SETTLED")
+        break
+    if _CHALLENGE_OPEN_WORD.search(text):
         verdicts.add("OPEN")
     for match in _SETTLED_WORD.finditer(text):
         # Skip a settled word that a negation already accounted for.
@@ -335,7 +410,7 @@ def status_words(text):
             continue
         verdicts.add("SETTLED")
         break
-    for match in _OPEN_WORD.finditer(text):
+    for match in _OPEN_WORD_VERDICT.finditer(text):
         # `_HISTORICAL` ("open since/for/from") is a statement about how long a task WAS open,
         # and the same sentence usually closes it — the guard the open-assertion check already
         # carries, applied here too, because without it such a sentence contradicts itself and
@@ -357,21 +432,99 @@ def self_contradictions(answers_text):
     by_task = {}
     for number, line in enumerate(answers_text.splitlines(), start=1):
         for sentence in re.split(r"(?<=[.!?])\s+|\n", line):
-            tasks = {m.group(1) for m in _TASK_REFERENCE.finditer(sentence)}
-            if not tasks:
-                continue
-            verdicts = status_words(sentence)
-            if not verdicts:
-                continue
-            for task in tasks:
+            for reference in _SUBJECT_REFERENCE.finditer(sentence):
+                task = reference.group(1)
+                start = max(0, reference.start() - _VERDICT_WINDOW)
+                end = min(len(sentence), reference.end() + _VERDICT_WINDOW)
+                verdicts = status_words(sentence[start:end])
+                if not verdicts:
+                    continue
                 entry = by_task.setdefault(task, {"verdicts": set(), "mentions": []})
                 entry["verdicts"].update(verdicts)
-                entry["mentions"].append((number, sentence.strip()[:120]))
+                entry["mentions"].append((number, sentence[start:end].strip()[:120]))
     found = []
     for task, entry in sorted(by_task.items()):
         if len(entry["verdicts"]) > 1:
             found.append(_SelfContradiction(task, entry["verdicts"], entry["mentions"]))
     return found
+
+
+# --- the corpus half for challenges: a challenge's own file is the authority ------------------
+#
+# `T-183`.  A task's status is read from a `TASKS.md` row; a challenge has no such register.  The
+# `gpd/challenges/README.md` index looks like one and is NOT: it carries 65 rows against 111 files,
+# so 46 challenges are absent from it altogether, and its status cell is free prose.  The file
+# itself is the authority -- 81 of the 111 carry a `**Status**` row -- and the remaining 30 return
+# UNKNOWN and are SILENT.  Guessing at an undeclared status is the one thing this checker must not
+# do: a false positive here sends an agent to "correct" a passage that is already right.
+_CHALLENGE_STATUS_ROW = re.compile(r"^\|\s*\*\*Status\*\*\s*\|(.*)$", re.MULTILINE)
+# Read case-INSENSITIVELY here, unlike `status_words`.  This is a declaration in a known cell of a
+# known table, not a word found loose in prose, so the ambiguity the case guard exists to resolve
+# does not arise -- and the corpus writes the same verdict as "Upheld", "UPHELD" and "upheld in
+# part" in that cell.
+_CHALLENGE_CLOSED = re.compile(
+    r"\b(upheld|withdrawn|stands|resolved|overturned|discharged|answered|struck)\b", re.IGNORECASE
+)
+_CHALLENGE_OPEN = re.compile(r"\b(open|raised)\b", re.IGNORECASE)
+
+
+def challenge_status_of(text):
+    """OPEN | CLOSED | UNKNOWN for one challenge file's text.
+
+    OPEN wins a tie, because a challenge cell routinely records both -- *"raised.  No number in
+    `C-0023` moves"* is a RAISED status whose sentence also reports what was adjudicated -- and
+    reporting a live challenge as closed is the failure that loses a withdrawn reading.
+    """
+    match = _CHALLENGE_STATUS_ROW.search(text)
+    if not match:
+        return "UNKNOWN"
+    cell = match.group(1)
+    if _CHALLENGE_OPEN.search(cell):
+        return "OPEN"
+    if _CHALLENGE_CLOSED.search(cell):
+        return "CLOSED"
+    return "UNKNOWN"
+
+
+def challenge_statuses(directory):
+    """{challenge ID: OPEN | CLOSED | UNKNOWN} over a directory of challenge files."""
+    statuses = {}
+    if not os.path.isdir(directory):
+        return statuses
+    for name in sorted(os.listdir(directory)):
+        identifier = re.match(r"(CH-\d{1,4})", name)
+        if not identifier or not name.endswith(".md"):
+            continue
+        with open(os.path.join(directory, name), encoding="utf-8") as handle:
+            statuses[identifier.group(1)] = challenge_status_of(handle.read())
+    return statuses
+
+
+_CHALLENGE_REFERENCE = re.compile(r"`(CH-\d{1,4})`")
+
+
+def stale_challenge_statuses(answers_text, statuses):
+    """[(line, challenge, status)] for every open assertion the corpus records as closed.
+
+    The same window, the same `_HISTORICAL` duration guard and the same `_ANSWERING` cancellation
+    as `open_assertions` -- `C-0088`'s guard 2 carried over rather than re-invented, because the
+    two false positives it was written against ("a list of open questions", "reopen") are exactly
+    as live in a challenge reference as in a task one.
+    """
+    stale = []
+    for number, line in enumerate(answers_text.splitlines(), start=1):
+        for reference in _CHALLENGE_REFERENCE.finditer(line):
+            identifier = reference.group(1)
+            start = max(0, reference.start() - _OPEN_WINDOW)
+            end = min(len(line), reference.end() + _OPEN_WINDOW)
+            window = line[start:end]
+            if not _OPEN_WORD_ASSERTION.search(window):
+                continue
+            if _HISTORICAL.search(window) or _ANSWERING.search(window):
+                continue
+            if statuses.get(identifier, "UNKNOWN") == "CLOSED":
+                stale.append((number, identifier, "CLOSED"))
+    return stale
 
 
 def trace(answers_text, sources, min_digits=2):
@@ -445,6 +598,24 @@ def main(argv=None):
             ),
             file=sys.stderr,
         )
+
+    # `T-183`'s corpus half for challenges.  Reported beside the task one and for the same reason:
+    # a challenge's status is as load-bearing as a task's -- an UPHELD challenge has withdrawn
+    # something a claim asserts -- and the deliverable makes 123 references to 78 of them.  The
+    # coverage is printed because it is not 100 %: a challenge with no declared status is UNKNOWN
+    # and silent, and the reader needs to know how many of those there are.
+    statuses = challenge_statuses(arguments.challenges)
+    stale_challenges = stale_challenge_statuses(answers_text, statuses)
+    for line, identifier, status in stale_challenges:
+        print("{}\tSTALE-OPEN\t{}\t{}".format(line, identifier, status))
+    sys.stdout.flush()
+    declared = sum(1 for value in statuses.values() if value != "UNKNOWN")
+    print(
+        "# {} challenge(s), {} with a declared status, {} open assertion(s) contradicted".format(
+            len(statuses), declared, len(stale_challenges)
+        ),
+        file=sys.stderr,
+    )
 
     # The third check, and the only one that needs no corpus at all: does the deliverable agree
     # with itself?  Unconditional for the same reason as the second — `C-0080` found the live
