@@ -126,6 +126,15 @@ An agent needing more takes the next free number **above every block above** and
 | L | `T-207` repair the 14 committed `String.format` defects | `C-0127` | `CH-0149`, `CH-0150` |
 | M | `T-206` what an oblique attachment root costs | `C-0128` | `CH-0151`, `CH-0152` |
 
+## Number reservations — iteration 29 (2026-08-18)
+
+| Agent | Task | Claims | Challenges |
+|---|---|---|---|
+| N | `T-208`, `T-209`, `T-210` — the three result-file hygiene items `C-0127` spawned | `C-0129` | `CH-0152`, `CH-0153` |
+| coordinator | `T-211` the seventh `ANSWERS.md` synthesis | `C-0130` | `CH-0154`, `CH-0155` |
+
+`CH-0152` was reserved by `T-206` and **not used**, so it is free.
+
 ## Process blockers
 
 | ID | Task | Status | Notes |
@@ -344,6 +353,7 @@ An agent needing more takes the next free number **above every block above** and
 | T-208 | **A gate over `gpd/results/` for raw `%` conversions** | A one-line check that no committed result file carries a `%.4f`, `%d` or `%s` in an emitted value, wired beside the static checker — or the statement that the static checker's catch set already covers it | — | TODO — **low cost, and the catch sets are STRICTLY DIFFERENT.** Raised by [`C-0127`](gpd/claims/C-0127-format-string-repair.md). `tools/check-kotlin-format-strings.py` reads **source**; this reads **output**, and a raw conversion can reach a result file by routes the static check does not model (a `settles` string built elsewhere, a hand-written field, a future emitter). `C-0127` found **13 fields carrying 23 raw conversions** across 7 files and reduced them to 0 — a gate would have caught every one at the moment it was committed rather than several iterations later. |
 | T-209 | **`T-136`'s nine-digit reproduction departure** | `reproductions[2].departure` emitted at two significant digits like every other departure in the tree, and a sweep for the same defect in every other **reproduction** record | — | TODO — **low.** Raised by [`C-0127`](gpd/claims/C-0127-format-string-repair.md). `C-0093` established that a convergence **departure** is a difference of two nearly equal dimensionless numbers and must be emitted at **two** significant digits, because `RESULT_ABSOLUTE_FLOOR` is a claim in the locked units and does not reach a ratio — and `C-0101` found the same trap in **reproduction** records and fixed it *there*. `T-136` still carries **1.9e−9** at nine digits, so the rule was applied per-file rather than per-record-type. **Grep every `reproductions[*].departure` in the tree, not just this one.** |
 | T-210 | **`T-148`'s saturated exceedance statistic** | The binomial standard error on an exceedance probability that is **1.0 at every sample count** replaced by a one-sided bound, or the statement that a saturated statistic should be reported as saturated | — | TODO — **low, and it is a REPORTING defect rather than a numerical one.** Raised by [`C-0127`](gpd/claims/C-0127-format-string-repair.md), which found it only because repairing a print made the note legible: *"the binomial standard error at 10 000 draws is 0.0000"*. It is 0.0000 because `p̂ = 1.0` at all five sample counts, and **a saturated statistic is the resolution of nothing** — the instrument at `p̂ = 1` is a one-sided bound (a rule of three gives `p > 1 − 3/n`), not a symmetric error bar. The verdict does not move; what moves is what the number *means*. |
+| T-211 | **The SEVENTH synthesis of `ANSWERS.md`** | `C-0122`–`C-0128` and `CH-0147`–`CH-0151` reflected in the deliverable, or a statement of what is deliberately not carried — and §3 row (g) **rewritten rather than appended to** | — | TODO — **HIGH.** `C-0121` recorded that row (g) *"is now the passage most in need of a rewrite rather than another append"*, and six claims have landed since. The range includes the first coupled tile flat under measured folding (`C-0118`, already carried), the station census that makes its path counts buildable (`C-0122`), the census correction against it (`CH-0151`), the oblique root that costs nothing for a flexible tie (`C-0128`), the scaffold remainder the thicker tile had already paid for (`C-0125`), and two process claims. |
 
 ## Entry points
 
