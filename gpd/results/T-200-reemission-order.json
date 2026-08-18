@@ -1,0 +1,156 @@
+{
+  "task": "T-200",
+  "claim": "C-0117",
+  "what": "C-0092's A5 margin-movement clause amended to what it measures, the second dependency edge among C-0101's eleven re-emissions checked, and the instrument that prevents the class shipped: tools/reemission-order.py, a topological sort of the reader census. Units: none; every number is derived from a committed artifact at run time.",
+  "verificationType": "logical, with 11 self-tests on the retained sorter",
+  "maturity": "TRL 1-3, and below it: nothing here is physics.",
+  "amendment": {
+    "source": "gpd/results/T-157-large-rotation-arm-branch.json, as re-emitted",
+    "foldCount": 12,
+    "marginMovementMin": 0.999999997,
+    "marginMovementMax": 1.0,
+    "worstAbsoluteDepartureFromUnity": 3.000000026176508e-09,
+    "publishedReading": "1.0000-3.3380x",
+    "correctedReading": "1.0000 at every fold",
+    "ceilingBindsAt": [
+      "concentrated crossover (C-0002, phi = 0.2)",
+      "point-ion boundary (CH-0007, 1.0 V)"
+    ],
+    "whatStandsInA5": "The candidate and its 0-of-12 non-binding verdict stand: no fold is owned by the 'element model branch end' ceiling. Only the margin-movement RANGE was measuring a stale input."
+  },
+  "dependencyEdgesAmongTheEleven": [
+    {
+      "producer": "T-136",
+      "consumer": "T-138"
+    },
+    {
+      "producer": "T-149",
+      "consumer": "T-157"
+    }
+  ],
+  "reemissionOrder": [
+    "T-108",
+    "T-116",
+    "T-134",
+    "T-135",
+    "T-136",
+    "T-149",
+    "T-152",
+    "T-79",
+    "T-99",
+    "T-138",
+    "T-157"
+  ],
+  "circularDependencies": [],
+  "secondEdge": {
+    "edge": "T-138 reads T-136",
+    "valuesReadByTheConsumer": 8,
+    "echoedAndMatching": 6,
+    "readButNotEchoed": [
+      "recommendedPeakRatio",
+      "winnerRangeOverStroke"
+    ],
+    "matches": {
+      "winnerPhase": {
+        "producerValue": 24.0,
+        "presentInConsumer": true
+      },
+      "winnerMargin": {
+        "producerValue": 0.419511928,
+        "presentInConsumer": true
+      },
+      "recommendedPhase": {
+        "producerValue": 8.0,
+        "presentInConsumer": true
+      },
+      "recommendedCeiling": {
+        "producerValue": 9.535,
+        "presentInConsumer": true
+      },
+      "recommendedMargin": {
+        "producerValue": 1.76451193,
+        "presentInConsumer": true
+      },
+      "recommendedMinimaxOverStroke": {
+        "producerValue": 0.0682200897,
+        "presentInConsumer": true
+      }
+    },
+    "verdict": "NOT STALE",
+    "note": "Every value T-138 echoes matches T-136's current file exactly, so this edge was re-emitted in the right order. Only one of the two edges among C-0101's eleven was violated, and it is the one CH-0131 found."
+  },
+  "residualCensus": {
+    "resultFiles": 105,
+    "filesCarryingReproductions": 64,
+    "nonzeroDepartures": 499,
+    "largestTen": [
+      {
+        "file": "T-120-connectivity-ceiling-plate.json",
+        "against": "C-0010",
+        "field": "relativeDeparture",
+        "magnitude": 0.481823762
+      },
+      {
+        "file": "T-21-concentrated-crossover.json",
+        "against": "Hansen, Cohen, Podgornik & Parsegian, Biophys. J. 84:350 (20",
+        "field": "relativeDeparture",
+        "magnitude": 0.407584261
+      },
+      {
+        "file": "T-123-robust-distribution.json",
+        "against": "C-0058",
+        "field": "relativeDeparture",
+        "magnitude": 0.20992251
+      },
+      {
+        "file": "T-40-standoff-base-joint.json",
+        "against": "Marras et al., PNAS 112:713 (2015), 25 pN nm/rad over six co",
+        "field": "relativeDeparture",
+        "magnitude": 0.197099505
+      },
+      {
+        "file": "T-40-standoff-base-joint.json",
+        "against": "Fields et al. measured 40-41 bp; CanDo's EI is the STIFF end",
+        "field": "relativeDeparture",
+        "magnitude": 0.153343296
+      },
+      {
+        "file": "T-96-flexure-array-packing.json",
+        "against": "the same floor read on the ELEMENT's own delivered force, se",
+        "field": "relativeDeparture",
+        "magnitude": 0.147058824
+      },
+      {
+        "file": "T-133-output-element-placement.json",
+        "against": "C-0065",
+        "field": "departure",
+        "magnitude": 0.142857143
+      },
+      {
+        "file": "T-23-two-sided-coupling.json",
+        "against": "C-0018",
+        "field": "relativeDeparture",
+        "magnitude": 0.124501365
+      },
+      {
+        "file": "T-23-two-sided-coupling.json",
+        "against": "C-0018",
+        "field": "relativeDeparture",
+        "magnitude": 0.0769132289
+      },
+      {
+        "file": "T-71-backbone-torsion-closure.json",
+        "against": "Bosco C2'-endo P···P [nm]",
+        "field": "relativeDeparture",
+        "magnitude": 0.050742028
+      }
+    ],
+    "whyThisIsNotAGate": "The great majority of these are legitimate: a reproduction against a LITERATURE value is expected to differ (Fields et al. at 15 %, Bosco's C2'-endo step at 5 %), and a reproduction against a different MODEL is expected to differ too. A staleness gate built on residuals would therefore fire constantly on correct files, which is the one failure C-0080 says a checker cannot afford -- 'a drift checker's false positives cost more than its true ones, because the tool exists in order to be believed'. Measured and declined, rather than declined by assertion."
+  },
+  "findings": {
+    "oneOfTwoEdgesWasViolated": "C-0101's eleven re-emissions contain exactly TWO dependency edges: T-157 reads T-149 (violated, CH-0131) and T-138 reads T-136 (clean). So the defect was not systematic -- it was one edge of two -- and the cheap check that establishes that needs no solve at all, only a comparison of the values the consumer echoes.",
+    "theInstrumentAlreadyExisted": "tools/result-reader-census.py (P-22, C-0082) already derives the graph a topological sort needs, including the transitive edges a grep cannot see. Turning it into an order is ~20 lines. The class was preventable with what was already in the tree, which is the sharper version of the lesson.",
+    "aResidualScanIsNotAGate": "499 nonzero reproduction departures across 64 of 104 result files, most of them legitimate literature cross-checks. Priced and declined.",
+    "whatSurvivesInA5": "The candidate and its verdict. Only the RANGE moved, from 1.0000-3.3380x to 1.0000 everywhere, and a verdict that survives can survive on a different reason: A5's ceiling still binds at 0 of 12 states."
+  }
+}

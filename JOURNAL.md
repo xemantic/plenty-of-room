@@ -7879,3 +7879,33 @@ exists to prevent.
 
 **Two passages are owed a re-read the moment `T-196` files**, and that dependency is written into the
 deliverable rather than only into this journal.
+
+**`T-200` (`C-0117`) — the amendment, and the instrument that was already in the tree.**
+
+`C-0092`'s `A5` clause said *"the margins move by 1.0000–3.3380×"*. Verified off the re-emitted `T-157`
+rather than inherited from the challenge: **1.0000 at every one of 12 folds**, worst departure **3.0e−09** —
+the solver's own noise. Everything else in `A5` stands, the *"element model branch end"* ceiling still binding
+at 0 of 12, so the correction is to a **range** and not to a finding.
+
+**The declared falsifier did not fire, and establishing that cost one comparison.** `C-0101`'s eleven
+re-emissions contain exactly **two** dependency edges — `T-157`←`T-149`, violated, and `T-138`←`T-136`. The
+second is **clean**, and it needs *no solve at all*: the consumer reads eight named values out of the
+producer's parameter block, six of them are echoed, and all six match the current file exactly. So the defect
+is one edge of two rather than a systematically wrong sweep.
+
+**The instrument that prevents the class was already in the repository.**
+`tools/result-reader-census.py` (`P-22`) derives the read graph including the **transitive** edges a grep
+cannot see, which is exactly the graph a topological sort needs. Turning it into an order is twenty lines and
+eleven self-tests (`tools/reemission-order.py`), and run against `C-0101`'s own eleven it prints both
+constraints. **A re-emission sweep is a sorted order, not a list** — and the sharper form of the lesson is
+that remembering the rule was never going to be enough, because the claim that *wrote* the discipline is the
+one that broke it, inside its own sweep, in the same commit.
+
+**And the tempting general gate is measured and declined.** A staleness gate on reproduction residuals looks
+attractive — `CLAUDE.md` records that such a residual *is* a staleness detector and that `T-118`'s went unread
+for an iteration. Across the tree there are **499** nonzero departures in **64 of 104** result files, and the
+great majority are legitimate: a reproduction against a *literature* value is expected to differ (Fields
+et al. 15.3 %, Marras et al. 19.7 %, Bosco 5.1 %), and against a different *model* likewise. A gate on that
+signal would fire constantly on correct files, which is the one failure `C-0080` says a checker cannot afford.
+Declined **with the number** rather than by assertion — the same discipline `C-0067` used when it refused to
+ship an approximation whose false-positive rate was unmeasured.

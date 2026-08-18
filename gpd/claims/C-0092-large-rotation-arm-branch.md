@@ -5,7 +5,7 @@
 | **Task** | [`T-157`](../tasks/T-157.md) — *"does the recommended arm fold on the LARGE-rotation branch?"* |
 | **Leaf** | **`A2.2`** (*"electrostatic softening and pull-in: the maximum usable bias with margin"*), with `A8.2` for the element whose branch is enumerated |
 | **Verification type** | **logical** (an inextensibility bound that holds on every branch, at every tip force, with no solver and no convergence parameter) **+ in-silico** (a scan for **every** sign change of `C-0039`'s far-end moment residual; a continuation of the branch connected to the unloaded state, truncated where the **first integral** stops being conserved; `C-0018`'s equilibrium path, solver unchanged, re-run over the extended domain at the recommended device) |
-| **Verdict** | **PASS on `A1`–`A5`, and the bounded negative becomes an essentially unbounded one — in the favourable direction.** **`A1`**: `δ = ∫₀^L sin φ ds < L = 8.16439083 nm` strictly, on every branch, at every force, because `φ ≡ π/2` contradicts `EI φ′(0) = k_n φ(0)`. So **no equilibrium and no fold exists at or above the arm's own contour**, and `C-0084`'s open question is **0.2447 nm** wide before any code runs. **`A2`**: the residual has **one** root to ~50 pN of tip force and **15 at 1000 pN** on a 4000-cell scan; at most one is on the small-rotation branch and wherever the scan resolves it, it is the **deepest** — the curled branches **retreat** from the stroke, because `∫sin φ` cancels. **`A3`**: the continued branch reaches **8.1610821 nm**, with `max_s\|φ\| = 1.5707924 rad` — 0.999997 of a right angle and still below it. **`A4`**: over `[0, 8.1511 nm]`, **0.9984 of the contour and 2.72× §3's acceptable stroke, there is NO FOLD at 12 of 12 states** of the recommended device (10 nm, 0.5 and 2.0 mM, six `C-0003` models). The window still open is **0.0033087 nm**, **0.97 % of one base-pair rise**. **`A5`**: `C-0084`'s **7.9197 nm is not a branch end** — `C-0039`'s doubling force ladder loses the branch there, 0.2414 nm early. `CH-0099`'s **candidate stands and its value does not**: with the domain corrected the *"element model branch end"* ceiling binds at **0 of 12** states, and the margins move by **1.0000–3.3380×**. |
+| **Verdict** | **PASS on `A1`–`A5`, and the bounded negative becomes an essentially unbounded one — in the favourable direction.** **`A1`**: `δ = ∫₀^L sin φ ds < L = 8.16439083 nm` strictly, on every branch, at every force, because `φ ≡ π/2` contradicts `EI φ′(0) = k_n φ(0)`. So **no equilibrium and no fold exists at or above the arm's own contour**, and `C-0084`'s open question is **0.2447 nm** wide before any code runs. **`A2`**: the residual has **one** root to ~50 pN of tip force and **15 at 1000 pN** on a 4000-cell scan; at most one is on the small-rotation branch and wherever the scan resolves it, it is the **deepest** — the curled branches **retreat** from the stroke, because `∫sin φ` cancels. **`A3`**: the continued branch reaches **8.1610821 nm**, with `max_s\|φ\| = 1.5707924 rad` — 0.999997 of a right angle and still below it. **`A4`**: over `[0, 8.1511 nm]`, **0.9984 of the contour and 2.72× §3's acceptable stroke, there is NO FOLD at 12 of 12 states** of the recommended device (10 nm, 0.5 and 2.0 mM, six `C-0003` models). The window still open is **0.0033087 nm**, **0.97 % of one base-pair rise**. **`A5`**: `C-0084`'s **7.9197 nm is not a branch end** — `C-0039`'s doubling force ladder loses the branch there, 0.2414 nm early. `CH-0099`'s **candidate stands and its value does not**: with the domain corrected the *"element model branch end"* ceiling binds at **0 of 12** states, and ~~the margins move by **1.0000–3.3380×**~~ **the margins do not move at all — 1.0000 at every fold, worst departure 3.0e−09 (AMENDED 2026-08-18, `CH-0131`/`C-0117`: the range measured a stale `T-149`, re-emitted after its own consumer)**. |
 | **Maturity** | **TRL 1–3. Model-consistent and traceable. NOTHING HERE IS MEASURED, AND THE MOTIF IS NOT DEMONSTRATED.** `C-0055`'s 62 recorded queries stand and are upstream of the element itself. Every force inherits `C-0008`'s mean field, whose one-loop correction is **123–214 %** of the leading term (`C-0005`) — larger than every margin here. |
 | **Provenance** | `gpd/results/T-157-large-rotation-arm-branch.json`, produced by `stability.LargeRotationArmBranchStudyKt`; model in `src/main/kotlin/stability/LargeRotationArmBranch.kt`; **8 enumeration records, 64 branch records, 12 fold records, 12 convergence records, 3 falsifiers**; **16 gate-named tests in `src/test/kotlin/stability/LargeRotationArmBranchTest.kt`**; the result file re-run through `tools/study.sh` and diffed **identical in every one of its records** — the only field that moved between the two runs is one `findings` string that was edited between them, and the diff was taken on the parsed document rather than on the bytes for exactly that reason ; `tools/verify.sh` **exit 0, `BUILD SUCCESSFUL in 18m`** on the whole working tree with nothing dropped, including its result-reader census (45 self-tests, 82 studies) and Markdown-table gates (0 defects in 286 files) |
 | **Conditions** | T = 300 K, `k_BT = 4.141947 pN·nm`; aqueous **MgCl₂ at 0.5 and 2.0 mM**; 40 × 40 nm Manning-renormalised tile, footprint 1600 nm²; PEG layer **10 nm** at `σ` = 0.024 nm⁻², all six `C-0003` models; Stern capacitance 20 µF/cm²; 2000-node Poisson-Boltzmann mesh; the element is `C-0069`'s `Q5` — `EI` = 230 pN·nm², contour **8.16439083 nm** re-derived through `C-0039`'s own placement solve, root **13.5294118** pN·nm/rad, tip **78.2352941**, **34** in parallel, placed at 100 pN over §3's acceptable 3 nm stroke |
@@ -151,6 +151,37 @@ domain is right: at eight states `C-0002`'s `φ = 0.2` binds and at four `CH-000
 against its published **1.3877–2.5764**; the *worst* model is unchanged to the last digit, and the band's top
 rises 2.84×. `CLAUDE.md`'s discipline applies to the reader too: **the number that governs is the minimum,
 and it did not move.**
+
+---
+
+## AMENDED, 2026-08-18 (iteration 24) — `A5`'s margin-movement RANGE measured a stale input
+
+**What changes:** `A5`'s *"the margins move by **1.0000–3.3380×**"* becomes **1.0000 at every one of the
+12 folds**, worst absolute departure from unity **3.0e−09**.
+**What does not change:** the candidate, the verdict and the arithmetic. The *"element model branch end"*
+ceiling still binds at **0 of 12** states, `A1`–`A4` are untouched, and `C-0084`'s 7.9197 nm is still not a
+branch end.
+
+**Why it was wrong.** `T-157` reads `T-149` at run time, and
+[`C-0101`](C-0101-re-emitting-what-the-repair-moved.md) re-emitted **`T-157` before `T-149`** inside one
+commit. So the `T-157` this clause was read from reproduces the *pre-`C-0101`* `T-149` margins digit for
+digit, and the 3.3380× was the difference `C-0101` had already absorbed — measured twice over rather than
+once.
+
+**How it was found, and it was not by looking.** An unrelated repair to a shared main source
+(`actuator/PullInStability.kt`, an endpoint overshooting its own ceiling by three ulp) prompted a
+coordinator to ask for a **measurement** rather than the author's proof that the change was invisible. Four
+of the five consumers came back byte-identical; `T-157` moved 17 fields, and a controlled A/B with
+`PullInStability.kt` restored to `HEAD` returned a `T-157` **byte-identical to the repaired run** — proving
+the movement belonged to the *input*, not the repair.
+**A proof that a change is invisible is not a substitute for running the consumers, because the run also
+checks everything the proof was not about.**
+
+Filed as [`CH-0131`](../challenges/CH-0131-t-157-was-re-emitted-before-its-own-input.md); amended here by
+[`C-0117`](C-0117-reemission-order.md) (`T-200`), which verifies the corrected reading off the re-emitted
+file, checks the **second** dependency edge among `C-0101`'s eleven (`T-138` reads `T-136` — **clean**, so
+one edge of two was violated rather than the sweep being systematically wrong), and ships
+[`tools/reemission-order.py`](../../tools/reemission-order.py) so the class cannot recur.
 
 ---
 
