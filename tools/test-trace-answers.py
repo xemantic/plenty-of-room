@@ -746,6 +746,41 @@ check(
     [],
 )
 
+# --- the vocabulary gap T-195 found, hours after T-184 shipped ------------------------------
+#
+# `C-0124` corrected `DECISIONS-FOR-NDI.md` to say *"`T-195` ... is the one still `TODO`"*, and
+# `T-195` closed the same iteration. The checker reported **0 contradicted assertions** throughout,
+# because the queue's own status word -- `TODO` -- was not in the DOCUMENT-side vocabulary. The
+# tool knew how to read `TODO` in `TASKS.md` and not how to read a document asserting it.
+#
+# That is the same shape as `CLAUDE.md`'s "a status vocabulary GROWS, and every word your checker
+# does not know is silently read as OPEN" -- inverted: here the unknown word was read as NOTHING,
+# so a stale assertion passed. Both failures are silent and this one is the costlier direction.
+check(
+    "'still TODO' is an open assertion",
+    [(line, task) for line, task, _ in trace_answers.open_assertions(
+        "`T-195` is the one still `TODO`, and this file never named it\n"
+    )],
+    [(1, "T-195")],
+)
+check(
+    "and so is a bare TODO beside the id",
+    [(line, task) for line, task, _ in trace_answers.open_assertions(
+        "`T-50` remains TODO\n"
+    )],
+    [(1, "T-50")],
+)
+check(
+    "but 'was TODO until' is history, not an assertion",
+    trace_answers.open_assertions("`T-195` was TODO until iteration 27, and is answered\n"),
+    [],
+)
+check(
+    "TODO is a status word for the self-consistency check too",
+    trace_answers.status_words("`T-195` is still TODO"),
+    {"OPEN"},
+)
+
 # --- summary -------------------------------------------------------------------------------
 if _failures:
     print("\n{} check(s) FAILED".format(len(_failures)))

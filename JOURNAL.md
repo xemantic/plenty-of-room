@@ -8222,3 +8222,171 @@ only looks for work to cancel is not a sweep.**
 
 **The marking is in the queue, not only in the claim.** That is deliberate: an agent picking up `T-176` — an
 exhaustive enumeration over 163 296 placements — reads the row, not the claim that reclassified it.
+
+---
+
+## Iteration 27 — `T-184`, the decision file, and a checker that punished the project's own repair discipline
+
+**`C-0124`.** `ANSWERS.md` has carried four retained checkers since iteration 20 —
+numbers, task statuses, challenge statuses, self-consistency.
+`DECISIONS-FOR-NDI.md`, **the document NDI actually reads**, had none.
+
+**The cheap bound ran first: 31 lines matching a declared assertion phrasing set, in 725.**
+That said product rather than re-read, and the enumeration that followed is a superset of it — **36**.
+**23 needed an edit**, and the class is uniform: **every one of the 23 under-claims.**
+Not one of the 36 asserts something the programme has not done.
+`C-0067`'s standing finding, arriving in the second deliverable:
+*a document that under-claims is as wrong as one that over-claims and is far harder to catch*,
+because a reviewer checks the assertions and not the disclaimers —
+**and a decision file is made almost entirely of disclaimers.**
+
+**Four a reviewer would have acted on.**
+*"Nothing has been re-derived yet"* — true for about a day; ten claims re-derived that line across iterations 23–26,
+and the work the answers opened is `T-191`–`T-195`, not the `T-191`–`T-194` the banner names.
+*"Nothing in this programme has evaluated a layer that tall"* — `C-0110` evaluated it in iteration 23
+**and is quoted 38 lines above, in the same section**, while the bullet sat unstruck in the part a reviewer reads.
+§4's *"whether it exists is one evaluation of `|k_eff|` in a corner nobody has evaluated … and it is cheap"* —
+it ran, and device B is refused at **96 of 96** tall states.
+*"`T-153` … cannot be scoped"* — scoped **and closed in iteration 18**, five iterations before the sentence was last edited.
+
+**A challenge named this file, by name, and nobody read it.**
+`CH-0125` lists its carriers as *"`ANSWERS.md` §6 and row (g), **`DECISIONS-FOR-NDI.md` (twice)**, …"*
+and `C-0109` says the number *"should not be re-quoted without it"*.
+Both instances were still there, unflagged, four iterations on.
+That is `C-0071`'s *"a discharge is invisible to whoever files the removal"* in its sharpest form yet:
+**the removal was filed WITH THE ADDRESS OF EVERY CARRIER, and the address was not used.**
+
+**The checker question answered itself in one command.**
+`tools/trace-answers.py --answers DECISIONS-FOR-NDI.md` runs **unmodified** and reports
+3 stale task assertions and 1 untraceable number. No new logic was needed — **a default was.**
+
+**And then the audit found a real defect in the tool, which is the more interesting half.**
+`C-0071`'s discipline is **strike, never delete**, so every correct repair here leaves the withdrawn
+sentence inside `~~ ~~`. The tracer read it as live.
+**Repairing a stale *"`T-191` is open"* by striking it therefore left the flag exactly where it was:
+the checker penalised the only repair the project permits.**
+`strip_struck()` now blanks struck spans — length- and newline-preserving, so line numbers survive —
+before all four checks, the numeric one included, because a withdrawn number is precisely the one a repair
+should not have to keep traceable.
+Measured cost on `ANSWERS.md`: 3 tokens dropped, **9 moved `CITED` → `ELSEWHERE`, 0 into `ABSENT`** —
+nothing became untraceable and no verdict moved.
+
+**`tools/check-corpus-links.py` had the same blind spot** and nobody had noticed either: it scanned `gpd/` only,
+so a mistyped claim slug in *either* outward-facing document was invisible to the checker built for exactly that
+defect. `ROOT_DOCUMENTS` added. Both documents are clean, so the gap had not yet cost anything.
+
+**Self-tests 83 → 101 and 11 → 19**, every one written before its implementation.
+Both documents now read 0 on all four checks.
+
+**What is not mechanisable is stated and priced rather than deferred.**
+The corpus class — **13 of 36** — names no task and no number, so no corpus comparison can reach it;
+it is `C-0080`'s superseded-standing-value class and its exact check still needs a `superseded-by` edge at
+**statement** granularity that no claim carries. The nearest approximation has **measured recall 9 of 13**
+and an **unmeasured** false-positive rate, and `C-0067`'s rule is that an unmeasured false-positive rate is
+what makes a checker stop being believed. **Not shipped.**
+
+**And the audit measured a false positive of the existing check, which is the evidence that rule asks for.**
+One of the three status flags fired on *"the last **unmeasured** dependency"* — a statement about a physical
+calibration, not a task status. It was not suppressed: the §7 header genuinely conflated the **analysis** task
+`T-199` (closed in iteration 25) with the **decision** it raised (outstanding), and saying so is better prose.
+**The checker found a real ambiguity by the wrong route.**
+
+**What surprised us.** That the drift was *entirely* one-signed. Six synthesis passes on `ANSWERS.md` found
+numbers in no claim, tasks asserted open that the queue had closed, and superseded standing values — a mix.
+The decision file's 23 defects are all the same shape, and the reason is structural: a *decisions* document is
+a list of things the programme cannot do, so **every sentence in it is a candidate for becoming false in the
+favourable direction, and none of them for becoming false in the adverse one.** A document whose failure mode
+has a sign needs a checker whose default includes it, which it now does.
+
+---
+
+## Iteration 27 — `T-195`: the unpaired scaffold remainder, and the tile that had already paid for it
+
+**What was done.** `T-195` asked what a coil of unpaired M13 scaffold does to `C-0022`'s edge load, which
+`C-0022` solved with nothing there. NDI's answer to decision 5 (*"M13, circular ~7–8 K nucleotides"*) had made
+that body the **default** rather than one of three options. Claim [`C-0125`](gpd/claims/C-0125-scaffold-remainder.md),
+challenges [`CH-0147`](gpd/challenges/CH-0147-the-recommended-tile-is-folded-from-a-different-scaffold.md) and
+[`CH-0148`](gpd/challenges/CH-0148-the-remainder-and-the-sheet-do-not-condense-alike.md),
+result `gpd/results/T-195-scaffold-remainder.json`, 30 tests, new retained tool
+`tools/check-kotlin-format-strings.py`.
+
+**The specification half was four `grep`s of a file already in the repository.** `gpd/data/T-151-sources/PMC2731887-fullTextXML.xml`
+— the caDNAno paper, fetched by `T-151` four iterations ago for a different question — names the scaffold of each
+of its seven cross-sections. Every 60-helix block is folded from **p7560**, every 64-helix one from p8064, and
+design **(ii) is the 10 × 6** cross-section `C-0120` recommends. So the remainder is **840 nt**: not `C-0109`'s
+529 (M13mp18) and not `C-0119`'s 1 344, which belongs to the 15 × 4 cross-section `C-0120` replaced two claims
+later — `CH-0147`, and it is `CLAUDE.md`'s superseded-standing-value class again. All three lengths sit inside
+NDI's *"~7–8 K"*, so **the specification does not choose between them**, and that is an open question rather
+than a calculation. The fifth time checking `gpd/data/` first has paid.
+
+**The cheap bound settled it, and the bound is saturation.** The tile's gap-facing wall sits at 0.966 of the 2:1
+saturated far-field amplitude, so smearing the **entire** remainder onto it — the closest plane any of it can
+reach, an 82.4 % increase in the bare charge — moves `σ_eff` by **0.0350791486**. Against **0.537733246** on
+`C-0086`'s single-layer sheet: **15.3291419×**, or **28.2058889×** like-for-like on M13mp18. The single-layer
+number is *not* bounded away and would have owed the field solve the task's first deliverable describes; the
+four-layer number is inside `C-0008`'s own 7.2 % charge-reading ambiguity. **`C-0109`'s thicker tile had already
+paid for the remainder before the question was asked** — it multiplies the tile's own backbone charge by four
+while dividing the remainder by 10.5.
+
+**The second bound removed the specification gap instead of reporting it.** §3 fixes no attachment point for
+the scaffold's unpaired arc, so *where* the coil sits is not determined — but it does not have to be. Over all
+192 combinations of remainder, gap, Kuhn length and contour, the weaker of the ideal (`π² R_g²/d²`) and swollen
+(`(R_F/d)^{5/3}`) slit penalties is **6.64635939 `k_BT`** at its weakest corner, so at most **0.15045831** of
+the chain threads the gap — 50.8 of 840 nucleotides at the widest gap. Both omitted terms (the chain's own
+electrostatic self-repulsion, the PEG layer it would displace) are positive.
+
+**The re-read ran at all 21 of `C-0022`'s states, whose 1-D loads reproduce at 2.9e−9.** The unconditional
+bound moves the load 0.134892067 and the held bias 0.156750765; the penetration-limited estimate 0.00489872699
+and 0.00634332688. **The 2-D edge solve was deliberately not re-run**, and that is an argument: the collar's
+*width* is `1/q₀` with `q₀² ≥ κ² + (π/2h)²`, whose signature admits no surface charge at all, so a uniform
+charge change moves only the *level* — which a force-pinned operating point absorbs into the bias.
+
+**What surprised us, twice.**
+
+*First:* `C-0086` compared a **single strand** with a **duplex** on **bare** charge. Manning condensation is a
+function of the charge spacing, and ssDNA's phosphates are 0.57–0.70 nm apart along their contour against a
+duplex's 0.17 nm of axis — so 0.399–0.490 of the remainder survives against 0.119 of the sheet, **3.35–4.12×**.
+Its published *"1.66× the sheet's own backbone charge"* is **5.56–6.82×** in the charge this project renormalises
+everywhere else (`CH-0148`). The correction runs *against* the claim's own conclusion, which is the direction
+that matters: had the exposure been priced at 1.66 and found tolerable, the tolerable answer would have been
+wrong by four.
+
+*Second, and it is a process finding.* `CLAUDE.md` records the `+`-binds-tighter-than-`.format()` trap five
+times and prescribes the mechanical check verbatim — and **nothing was running it**. It was written this
+iteration (`tools/check-kotlin-format-strings.py`, 17 self-tests) because it caught a live instance in this
+task's own study *before* the run. Its sweep of `src/` finds **14 defects in 6 files from 5 studies, all
+committed**, and raw `%` conversions have reached **8 result files**. The class survives because Java's
+`String.format` **silently ignores extra arguments**: `T-163`'s emitted conditions block says *"the SAXS-measured
+40.35 nm"* where the SAXS interhelical distance is **2.69 nm** — a wrong number in a committed result file, from
+a call that never threw. Repairing the six sources moves eight result files and the claims that quote them,
+which is a task; `C-0125` names it and does not do it.
+
+**A third thing, smaller.** `7560 = 60 × 126` and `8064 = 64 × 126` exactly, and the paper's acknowledgements
+thank a named person *"for cloning the p7560 and p8064 scaffold vectors"*. **A remainder is an artefact of the
+span, not of M13**: the Gen-1 tile carries one because §3's ~40 nm forces a 112 bp span where those two
+scaffolds were cut for 126.
+
+**Iteration 27, coordinator — two corrections the agents' own work made necessary within hours.**
+
+**`T-195` (`C-0125`) closed the same iteration `T-184` (`C-0124`) wrote that it was open.** `C-0124`'s
+correction to `DECISIONS-FOR-NDI.md` said *"`T-195` … is the one still `TODO`"*, and `T-195` closed hours
+later. The correction went stale faster than the text it corrected, and that is now recorded **in the file**
+rather than quietly fixed — a decision document whose own corrections rot is worth showing a reader once.
+
+**And the checker did not catch it, for a reason worth fixing.** `tools/trace-answers.py` reported **0
+contradicted assertions** throughout, because `TODO` — **the queue's own status word** — was not in the
+*document-side* vocabulary. The tool knew how to read `TODO` in `TASKS.md` and not how to read a document
+asserting it. `CLAUDE.md` already records the inverse — *"a status vocabulary GROWS, and every word your
+checker does not know is silently read as OPEN"* — and **this is the costlier direction**: an unknown word
+read as *nothing* lets a stale assertion pass. Added to both vocabularies, with `was TODO until` guarded as
+history like `open since`. Tests first, watched to fail. 101 → **105** self-tests.
+
+**`C-0125` also found a process defect that had been standing since `CLAUDE.md` first recorded it.** The
+`%`-conversion check is prescribed **five times** in that file and **nothing was running it**. Written now as
+`tools/check-kotlin-format-strings.py` — *because it caught a live instance in `T-195`'s own study before the
+run* — its sweep finds **14 defects in 6 files from 5 studies, all committed**, with raw `%` conversions
+reaching **8 result files**. **Java silently ignores extra arguments**, so the class never throws: it emits a
+grammatical sentence with the wrong numbers in it. `T-163`'s conditions block reads *"the SAXS-measured
+40.35 nm"* where the SAXS interhelical distance is **2.69**. Queued as `T-207` with its blast radius named,
+and the checker deliberately **not** wired as a gate until the tree is clean — `C-0083`'s rule that a gate
+which cannot come clean is not a gate.

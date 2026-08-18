@@ -10,13 +10,21 @@ the seventh is §7, raised in iteration 26, and it is the one question here stil
 > ~~**Nothing has been re-derived yet.** What follows records the answers, names what each one changes,
 > and queues the work they open as `T-191`–`T-194`.~~
 > **CORRECTED, iteration 27** ([`C-0124`](gpd/claims/C-0124-decision-file-drift.md), `T-184`) — **that sentence was true for about a day.**
-> The work the answers opened is `T-191`–**`T-195`**, not `T-191`–`T-194`; **four of the five are `DONE`**,
+> The work the answers opened is `T-191`–**`T-195`**, not `T-191`–`T-194`; ~~**four of the five are `DONE`**~~
+> **ALL FIVE ARE `DONE`** (`T-195` closed hours later the same iteration, `C-0125`),
 > and ten claims re-derived the line they opened across iterations 23–26 —
 > [`C-0109`](gpd/claims/C-0109-four-layer-tile.md), [`C-0110`](gpd/claims/C-0110-device-b-tall-gap.md),
 > [`C-0111`](gpd/claims/C-0111-gold-electrode-pzc.md), [`C-0114`](gpd/claims/C-0114-one-reserve.md),
 > `C-0116`, `C-0118`, `C-0119`, [`C-0120`](gpd/claims/C-0120-cross-section-comparison.md), `C-0122` and `C-0123`.
-> `T-195` — the unpaired scaffold remainder as a body in the actuated gap — is the one still `TODO`,
-> and this file never named it.
+> ~~`T-195` — the unpaired scaffold remainder as a body in the actuated gap — is the one still `TODO`~~ —
+> **and it closed within hours of that sentence being written** ([`C-0125`](gpd/claims/C-0125-scaffold-remainder.md)),
+> which is worth leaving visible: **this correction went stale faster than the text it corrected.**
+> The remainder is **840 nt** (the 10 × 6 cross-section is folded from p7560, not M13mp18's 7 249 or the
+> 15 × 4 design's p8064), and the four-layer tile had **already paid for it before the question was asked** —
+> its gap-facing wall sits at **0.966331968** of the 2:1 saturated amplitude, so smearing the *entire*
+> remainder onto it moves `σ_eff` by **0.0350791486** against **0.537733246** on the single-layer sheet,
+> **15.3291419×** less and inside `C-0008`'s own charge-reading ambiguity.
+> This file never named `T-195`, and the note that said so is now the thing that needed correcting.
 > **So what follows records the answers AND what the programme has measured against them since.**
 > The analysis under each decision is kept as written — struck where an answer or a measurement supersedes it,
 > intact where it does not — because a decision file that only ever grows is not a record.

@@ -257,7 +257,7 @@ _OPEN_WINDOW = 24
 # its file: a redeclaration is silent in both languages and the compiler is the only difference.
 _OPEN_WORD_ASSERTION = re.compile(
     r"\b(open|unmeasured|unanswered|unresolved|undetermined|still\s+to\s+do|still\s+missing"
-    r"|not\s+yet\s+answered|not\s+determined)\b",
+    r"|not\s+yet\s+answered|not\s+determined|TODO)\b",
     re.IGNORECASE,
 )
 _TASK_REFERENCE = re.compile(r"`(T-\d{1,4}[a-z]?|P-\d{1,4})`")
@@ -284,7 +284,10 @@ _SUBJECT_REFERENCE = re.compile(r"`(T-\d{1,4}[a-z]?|P-\d{1,4}|CH-\d{1,4})`")
 # closure in one clause, which is `C-0088`'s guard 2 in a phrasing the queue only uses for
 # challenges.  Without it that sentence asserts both verdicts by itself and every genuine
 # contradiction `CH-0083` takes part in becomes unreadable.
-_HISTORICAL = re.compile(r"\bopen\s+(since|for|from|in\s+iteration)\b", re.IGNORECASE)
+_HISTORICAL = re.compile(
+    r"\b(open\s+(since|for|from|in\s+iteration)|was\s+(open|TODO)\s+(since|until|for))\b",
+    re.IGNORECASE,
+)
 _ANSWERING = re.compile(
     r"\b(answered|answers|resolved|resolves|closed|closes|settled|settles|discharged)\b",
     re.IGNORECASE,
@@ -411,8 +414,16 @@ _NEGATED_CHALLENGE = re.compile(
     r"\b(not|never|no|without)\s+(been\s+)?(upheld|withdrawn|stands|overturned|raised)\b",
     re.IGNORECASE,
 )
+# `TODO` is the QUEUE's own status word, and `T-195` showed the document side did not know it:
+# `C-0124` wrote *"`T-195` ... is the one still `TODO`"*, `T-195` closed hours later, and the
+# checker reported 0 contradicted assertions throughout. `CLAUDE.md` records the inverse failure --
+# *"a status vocabulary GROWS, and every word your checker does not know is silently read as
+# OPEN"* -- and this is the costlier direction: an unknown word read as NOTHING lets a stale
+# assertion pass. Added to BOTH vocabularies, because a document can assert it and contradict
+# itself with it.
 _OPEN_WORD_VERDICT = re.compile(
-    r"\b(open|unmeasured|unanswered|unresolved|undetermined|still\s+missing|not\s+determined)\b",
+    r"\b(open|unmeasured|unanswered|unresolved|undetermined|still\s+missing|not\s+determined"
+    r"|TODO)\b",
     re.IGNORECASE,
 )
 _DISCHARGED_WORD = re.compile(r"\bdischarged\b", re.IGNORECASE)
