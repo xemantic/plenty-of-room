@@ -8039,3 +8039,41 @@ criteria are independent and that this programme needs both.
 **And a correction to `C-0119`, filed the same day.** It asserted that all seven of the paper's designs are 60
 helices. Five are; `8 × 8` and `4 × 16` are **64**. The comparison `C-0120` rests on — `15 × 4` against
 `10 × 6` — is at 60 for both, so nothing downstream moves, but the claim said something false and now does not.
+
+**`T-197` (`C-0118`) — the first coupled tile that is flat under the measured folding statistics, and what
+delivered it was not the coupling.**
+
+The task was queued to test two unspent coupling axes against `C-0109`'s residual 1.16×. What it actually
+needed first was a **framing correction**, and that is the part worth keeping.
+
+`C-0109` reports every coupled four-layer cell as **worse than the uncoupled tile**. True — and it decides
+nothing, because **the uncoupled tile is not a design the device could have**. §3 requires the actuator to
+deliver 100 pN to a load, so `C-0017`'s mandate is an **equality on the SUM** of the coupling stiffnesses:
+the total is fixed and non-zero *by specification*, and what a design chooses is only how to distribute it.
+The uncoupled tile is a **reference, never a candidate**. Asserted as a test rather than as prose —
+`equalShareOfMandate` refuses a zero total and a zero path count, and a graded distribution must spend exactly
+the same budget as an equal one.
+
+**With that in place the answer is yes, and emphatically.** Of 16 graded cells, 9 are flat at the 90th
+percentile under `C-0087`'s measured per-site incorporation. On **`10 × 6` all eight are** — best
+**0.0278431488** — and on `15 × 4` **one of eight**, needing 75 paths *and* the rim grading to reach
+0.0882933461. **The cross-section is worth 3.17× on this statistic and the distribution has no consistent
+sign**, helping at some path counts and hurting at others on both tiles. `F3` was declared against exactly
+that outcome — that the distribution would dominate, making the coupling the thing to design and the tile the
+thing to accept — and it did not fire.
+
+**The best cell is the sparsest one tested**: ten paths in a single column, and more paths are monotonically
+worse on `10 × 6`. That is `CLAUDE.md`'s *"a dropout is an increase in the attachment pitch"* read from the
+other side — a tile stiff enough not to need the support pays only for the paths it has, and each one is
+something to lose.
+
+**What it does not settle, and this is now the largest gap in the four-layer line.** The attachment grid here
+is the **abstract** one. Every plan ceiling, station lattice, crossover phase and placement in this corpus is
+single-layer **square**-lattice, and `C-0119` established that the honeycomb's three azimuths at 7 bp are a
+different inventory nobody has censused. **A path count in this claim is a request, not a demonstration that
+the stations exist.** `C-0089`'s percentile descent and `C-0093`'s shared body were in the task's scope and
+are not run; both could only improve cells that are already flat, so the verdict does not depend on them.
+
+**One Kotlin trap worth recording.** A property named `field` is shadowed inside any property accessor, where
+`field` is the backing-field keyword — the compiler reports it as *"Property must be initialized"* on a line
+that looks perfectly correct, and points at the accessor rather than the declaration.
