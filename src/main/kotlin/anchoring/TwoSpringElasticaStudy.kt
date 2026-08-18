@@ -19,6 +19,10 @@ package com.xemantic.nano.plentyofroom.anchoring
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.ShearJointAllowable
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.synthesis.clauseCeilingReading
+import com.xemantic.nano.plentyofroom.synthesis.declaredComplianceCeiling
+import com.xemantic.nano.plentyofroom.synthesis.pastClauseCeilingNote
+import com.xemantic.nano.plentyofroom.synthesis.perPathSecantCeiling
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
@@ -107,8 +111,11 @@ data class T79PlacementRecord(
     val drawInAtAcceptable: Double,
     val drawInAtDesired: Double,
     val usableStrokeInsideCeiling: Double,
+    val usableStrokeInsideClauseCeiling: Double,
     val insideCeilingAtAcceptable: Boolean,
     val insideCeilingAtDesired: Boolean,
+    val insideDeclaredCeilingAtDesiredClause: Boolean,
+    val insidePerPathSecantCeilingAtDesired: Boolean,
     val verdict: String
 )
 
@@ -206,9 +213,20 @@ private fun usableStroke(
     beam: TwoSpringElastica,
     count: Int = PATH_COUNT,
     ceiling: Double = COMPLIANT_CEILING
+): Double = usableStroke(beam, count) { ceiling }
+
+/**
+ * As [usableStroke], but with the tolerance read at **each stroke's own clause** — `C-0049`'s
+ * `1.2 × (F/s)`, which *falls* as `1/s` where the constant reading stays put. The two coincide
+ * exactly at the placement stroke, which is the only place `C-0023`'s 40 pN/nm is owed.
+ */
+private fun usableStroke(
+    beam: TwoSpringElastica,
+    count: Int = PATH_COUNT,
+    ceilingAt: (Double) -> Double
 ): Double {
     val top = min(0.9 * beam.length, DESIRED_STROKE)
-    fun excess(stroke: Double): Double = count * beam.tangentStiffness(stroke) - ceiling
+    fun excess(stroke: Double): Double = count * beam.tangentStiffness(stroke) - ceilingAt(stroke)
     // Scanned from BELOW, never evaluated at the geometric limit first: past a right angle the
     // elastica's shooting residual stops being monotone, and the ceiling is crossed long before
     // that on every design here. `C-0012`'s "scan for the first sign change, then bisect".
@@ -277,11 +295,27 @@ private fun placementRecord(
         } else null
     val reaches = desired != null
     val usable = usableStroke(beam)
+    val clauseUsable = usableStroke(beam, PATH_COUNT) {
+        declaredComplianceCeiling(TARGET_FORCE, it)
+    }
+    // `C-0049`: 40 pN/nm is 1.2 x (100 pN / 3 nm) and carries the PLACEMENT stroke inside it,
+    // so a row read at the desired stroke answers to 12 pN/nm, not to 40 — `T-169`.
+    val desiredCeilings = clauseCeilingReading(
+        targetForce = TARGET_FORCE,
+        placementStroke = ACCEPTABLE_STROKE,
+        stroke = DESIRED_STROKE,
+        pathCount = PATH_COUNT,
+        unzipAllowable = UNZIP_ALLOWABLE
+    )
+    val insideDeclaredAtDesiredClause =
+        desired != null && desired.tangent <= desiredCeilings.declaredCeilingAtThisClause
+    val insidePerPathAtDesired =
+        desired != null && desired.secant <= desiredCeilings.perPathSecantCeiling
     val verdict = when {
         arm <= DESIRED_STROKE -> "FAILS the desired stroke: the arm is shorter than 10 nm"
         !reaches -> "FAILS the desired stroke: the arm folds before reaching it"
-        desired != null && !desired.insideCompliantCeiling ->
-            "places, but past the 40 pN/nm ceiling at the desired stroke"
+        desired != null ->
+            pastClauseCeilingNote(desired.tangent, desired.secant, desiredCeilings)
         else -> "places and holds the ceiling at both strokes"
     }
     return T79PlacementRecord(
@@ -305,8 +339,11 @@ private fun placementRecord(
         drawInAtAcceptable = acceptable.drawIn,
         drawInAtDesired = desired?.drawIn ?: UNREACHABLE,
         usableStrokeInsideCeiling = usable,
+        usableStrokeInsideClauseCeiling = clauseUsable,
         insideCeilingAtAcceptable = acceptable.insideCompliantCeiling,
         insideCeilingAtDesired = desired?.insideCompliantCeiling ?: false,
+        insideDeclaredCeilingAtDesiredClause = insideDeclaredAtDesiredClause,
+        insidePerPathSecantCeilingAtDesired = insidePerPathAtDesired,
         verdict = verdict
     )
 }
@@ -460,11 +497,13 @@ fun main() {
         val beam = TwoSpringElastica(rigidity, arm, hingeCount * hingeConstant, far, STEPS)
         val usable = usableStroke(beam, paths)
         val reaches = arm > DESIRED_STROKE
+        // `C-0049`/`T-169`: read the tolerance at the clause the stroke belongs to — 12 pN/nm at
+        // §3's desired clause, not `C-0023`'s 40, which carries the 3 nm placement stroke in it.
         val insideAtDesired = reaches && (
                 runCatching {
                     paths * beam.tangentStiffness(DESIRED_STROKE)
                 }.getOrNull() ?: Double.MAX_VALUE
-                ) <= COMPLIANT_CEILING
+                ) <= declaredComplianceCeiling(TARGET_FORCE, DESIRED_STROKE)
         return T79SensitivityRecord(
             axis = axis,
             label = label,
@@ -695,17 +734,42 @@ fun main() {
                         "construction. The compliance clause is not: the tangent is " +
                         "${f(adopted.tangentAtAcceptable)} pN/nm at the acceptable stroke " +
                         "(t/s = ${f(adopted.tangentToSecantAtAcceptable)}) and " +
-                        "${f(desiredRecord.tangent, 1)} pN/nm at the desired one, " +
-                        "${f(desiredRecord.tangent / COMPLIANT_CEILING, 1)}x past C-0023's 40 " +
-                        "pN/nm ceiling. The SECANT at the desired stroke is already " +
-                        "${f(desiredRecord.secant, 1)} pN/nm, " +
-                        "${f(desiredRecord.secant / MANDATE)}x the mandate. C-0034 reported " +
-                        "36.78 pN/nm there, inside the ceiling with 8.1 % to spare."
+                        "${f(desiredRecord.tangent, 1)} pN/nm at the desired one. Read at the " +
+                        "clause that stroke belongs to (C-0049), the declared linearity " +
+                        "tolerance there is " +
+                        "${f(declaredComplianceCeiling(TARGET_FORCE, DESIRED_STROKE), 1)} pN/nm " +
+                        "and the element is " +
+                        "${
+                            f(
+                                desiredRecord.tangent /
+                                        declaredComplianceCeiling(TARGET_FORCE, DESIRED_STROKE), 1
+                            )
+                        }x past it; against C-0023's 40 pN/nm, which is 1.2 x (100 pN / 3 nm) " +
+                        "and is owed at the PLACEMENT stroke, it is " +
+                        "${f(desiredRecord.tangent / COMPLIANT_CEILING, 1)}x past — the two " +
+                        "readings differ by 10/3 and agree on the verdict. The SECANT at the " +
+                        "desired stroke is already ${f(desiredRecord.secant, 1)} pN/nm, " +
+                        "${f(desiredRecord.secant / MANDATE)}x the mandate and " +
+                        "${
+                            f(
+                                desiredRecord.secant /
+                                        perPathSecantCeiling(UNZIP_ALLOWABLE, PATH_COUNT, DESIRED_STROKE),
+                                2
+                            )
+                        }x C-0006's per-path ceiling n x allowable / s = " +
+                        "${f(perPathSecantCeiling(UNZIP_ALLOWABLE, PATH_COUNT, DESIRED_STROKE), 1)}" +
+                        " pN/nm, which is the only ceiling in the stack that is not declared. " +
+                        "C-0034 reported 36.78 pN/nm there, inside the declared ceiling with " +
+                        "8.1 % to spare."
                 ),
         "theUsableStroke" to (
-                "The stroke E5a16 delivers INSIDE its own compliance ceiling is " +
-                        "${f(adopted.usableStrokeInsideCeiling)} nm — it clears §3's acceptable " +
-                        "3 nm and it does not clear §3's desired 10 nm on any anchorage or hinge " +
+                "The stroke E5a16 delivers inside C-0023's declared tolerance held at its " +
+                        "PLACEMENT-clause value of 40 pN/nm is " +
+                        "${f(adopted.usableStrokeInsideCeiling)} nm; read clause by clause, " +
+                        "with the tolerance falling as 1.2 x (100 pN / s), it is " +
+                        "${f(adopted.usableStrokeInsideClauseCeiling)} nm (C-0049, T-169). " +
+                        "Both clear §3's acceptable " +
+                        "3 nm and neither clears §3's desired 10 nm on any anchorage or hinge " +
                         "count in the sweep. The reason is geometric and needs no constitutive " +
                         "law: the arm is capped at ${f(adopted.armCeiling)} nm by its own " +
                         "placement condition, so a 10 nm stroke is at least " +
@@ -756,7 +820,10 @@ fun main() {
                         "clears §3's DESIRED stroke: on the exact composition it clears the " +
                         "acceptable stroke with " +
                         "${f(100.0 * (1.0 - adopted.tangentAtAcceptable / COMPLIANT_CEILING), 1)}" +
-                        " % of ceiling margin and misses the desired one on compliance."
+                        " % of margin against the tolerance read at THAT clause (40 pN/nm, " +
+                        "where it is owed) and misses the desired one on compliance — past the " +
+                        "desired clause's own 12 pN/nm and past C-0006's per-path 45 pN/nm on " +
+                        "the secant, so the miss does not depend on the ceiling C-0049 withdrew."
                 )
     )
 
@@ -771,7 +838,14 @@ fun main() {
             "loadPaths" to "45, on C-0015's 3 x 15 grid",
             "mandate" to "100 pN over the acceptable 3 nm stroke = 33.3333 pN/nm",
             "desiredStroke" to "10 nm",
-            "complianceCeiling" to "40 pN/nm (C-0023's declared ceiling)",
+            "complianceCeilingAtPlacementClause" to
+                    "40 pN/nm = 1.2 x (100 pN / 3 nm), C-0023 DECLARED, owed at the 3 nm " +
+                    "placement stroke and nowhere else (C-0049)",
+            "complianceCeilingAtDesiredClause" to
+                    "12 pN/nm — the same construction at 100 pN / 10 nm",
+            "perPathSecantCeilingAtDesiredClause" to
+                    "45 pN/nm = 45 paths x 10 pN unzip / 10 nm (C-0006, CH-0029); the only " +
+                    "ceiling in C-0017's stack that is not declared",
             "bendingRigidity" to "230 pN nm^2 (CanDo MODEL INPUT, not a measurement)",
             "hingeConstant" to "13.53 pN nm/rad (Chen et al., CITED and FITTED, via C-0009)",
             "anchorage" to "78.235 pN nm/rad, C-0029's two-terminus counting theorem",

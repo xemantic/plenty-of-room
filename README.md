@@ -100,6 +100,10 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=synthesis.BufferRouteCensusStudyKt            # T-156, how many of the six 0.5 mM routes are read on withdrawn objects
 ./gradlew study -Pstudy=stability.LargeRotationArmBranchStudyKt       # T-157, does the recommended arm fold on the large-rotation branch
 ./gradlew study -Pstudy=stability.DoublingLadderRepairStudyKt         # T-159, the repaired force ladder, and C-0084's 108 fold rows re-read
+./gradlew study -Pstudy=anchoring.CrossoverPhaseSelectionStudyKt      # T-171, which crossover phase the three standing demands can share (none)
+./gradlew study -Pstudy=coupling.PathCountFixedGeometryStudyKt        # T-163, the path-count sweep at FIXED station geometry on the upward lattice
+./gradlew study -Pstudy=structure.RowEndPrestrainStudyKt              # T-172, the row-end crossover's PRESTRAIN, which is a load and not a stiffness
+./gradlew study -Pstudy=synthesis.WithdrawnCeilingNoteStudyKt         # T-169, the withdrawn 40 pN/nm ceiling in an emitted note, and the verdict beside it
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.

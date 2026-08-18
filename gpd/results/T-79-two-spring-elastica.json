@@ -9,7 +9,9 @@
         "loadPaths": "45, on C-0015's 3 x 15 grid",
         "mandate": "100 pN over the acceptable 3 nm stroke = 33.3333 pN/nm",
         "desiredStroke": "10 nm",
-        "complianceCeiling": "40 pN/nm (C-0023's declared ceiling)",
+        "complianceCeilingAtPlacementClause": "40 pN/nm = 1.2 x (100 pN / 3 nm), C-0023 DECLARED, owed at the 3 nm placement stroke and nowhere else (C-0049)",
+        "complianceCeilingAtDesiredClause": "12 pN/nm — the same construction at 100 pN / 10 nm",
+        "perPathSecantCeilingAtDesiredClause": "45 pN/nm = 45 paths x 10 pN unzip / 10 nm (C-0006, CH-0029); the only ceiling in C-0017's stack that is not declared",
         "bendingRigidity": "230 pN nm^2 (CanDo MODEL INPUT, not a measurement)",
         "hingeConstant": "13.53 pN nm/rad (Chen et al., CITED and FITTED, via C-0009)",
         "anchorage": "78.235 pN nm/rad, C-0029's two-terminus counting theorem",
@@ -108,9 +110,12 @@
             "drawInAtAcceptable": 0.366358905,
             "drawInAtDesired": 4.93588793,
             "usableStrokeInsideCeiling": 3.99887816,
+            "usableStrokeInsideClauseCeiling": 3.24431889,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 200.9 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 63.18 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A0",
@@ -133,9 +138,12 @@
             "drawInAtAcceptable": 0.354255408,
             "drawInAtDesired": 4.6791735,
             "usableStrokeInsideCeiling": 4.09395623,
+            "usableStrokeInsideClauseCeiling": 3.2591742,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 170.4 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 59.43 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A0",
@@ -158,9 +166,12 @@
             "drawInAtAcceptable": 0.350022577,
             "drawInAtDesired": 4.58981453,
             "usableStrokeInsideCeiling": 4.12635658,
+            "usableStrokeInsideClauseCeiling": 3.26399726,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 161.6 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 58.30 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A0",
@@ -183,9 +194,12 @@
             "drawInAtAcceptable": 0.348758789,
             "drawInAtDesired": 4.56291416,
             "usableStrokeInsideCeiling": 4.13568658,
+            "usableStrokeInsideClauseCeiling": 3.26536284,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 159.2 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 57.98 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A1",
@@ -208,8 +222,11 @@
             "drawInAtAcceptable": 0.593023231,
             "drawInAtDesired": -1.0,
             "usableStrokeInsideCeiling": 2.87565884,
+            "usableStrokeInsideClauseCeiling": 2.95147082,
             "insideCeilingAtAcceptable": false,
             "insideCeilingAtDesired": false,
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
             "verdict": "FAILS the desired stroke: the arm is shorter than 10 nm"
         },
         {
@@ -233,8 +250,11 @@
             "drawInAtAcceptable": 0.565152277,
             "drawInAtDesired": -1.0,
             "usableStrokeInsideCeiling": 2.94509475,
+            "usableStrokeInsideClauseCeiling": 2.97936758,
             "insideCeilingAtAcceptable": false,
             "insideCeilingAtDesired": false,
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
             "verdict": "FAILS the desired stroke: the arm is shorter than 10 nm"
         },
         {
@@ -258,8 +278,11 @@
             "drawInAtAcceptable": 0.556145984,
             "drawInAtDesired": -1.0,
             "usableStrokeInsideCeiling": 2.96773016,
+            "usableStrokeInsideClauseCeiling": 2.98801979,
             "insideCeilingAtAcceptable": false,
             "insideCeilingAtDesired": false,
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
             "verdict": "FAILS the desired stroke: the arm is shorter than 10 nm"
         },
         {
@@ -283,8 +306,11 @@
             "drawInAtAcceptable": 0.553560119,
             "drawInAtDesired": -1.0,
             "usableStrokeInsideCeiling": 2.97409295,
+            "usableStrokeInsideClauseCeiling": 2.99041464,
             "insideCeilingAtAcceptable": false,
             "insideCeilingAtDesired": false,
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
             "verdict": "FAILS the desired stroke: the arm is shorter than 10 nm"
         },
         {
@@ -308,8 +334,11 @@
             "drawInAtAcceptable": 0.52380457,
             "drawInAtDesired": -1.0,
             "usableStrokeInsideCeiling": 3.11892034,
+            "usableStrokeInsideClauseCeiling": 3.041155,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
             "verdict": "FAILS the desired stroke: the arm is shorter than 10 nm"
         },
         {
@@ -333,8 +362,11 @@
             "drawInAtAcceptable": 0.473342839,
             "drawInAtDesired": -1.0,
             "usableStrokeInsideCeiling": 3.342092,
+            "usableStrokeInsideClauseCeiling": 3.10725049,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
             "verdict": "FAILS the desired stroke: the arm is shorter than 10 nm"
         },
         {
@@ -358,9 +390,12 @@
             "drawInAtAcceptable": 0.444335799,
             "drawInAtDesired": 7.45990946,
             "usableStrokeInsideCeiling": 3.49527519,
+            "usableStrokeInsideClauseCeiling": 3.14583772,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 2028 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 153.1 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A2",
@@ -383,9 +418,12 @@
             "drawInAtAcceptable": 0.426418217,
             "drawInAtDesired": 6.67669608,
             "usableStrokeInsideCeiling": 3.59971769,
+            "usableStrokeInsideClauseCeiling": 3.1695279,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 835.6 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 108.0 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A2",
@@ -408,9 +446,12 @@
             "drawInAtAcceptable": 0.406605404,
             "drawInAtDesired": 6.00144147,
             "usableStrokeInsideCeiling": 3.72351814,
+            "usableStrokeInsideClauseCeiling": 3.19519709,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 445.4 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 84.86 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A2",
@@ -433,9 +474,12 @@
             "drawInAtAcceptable": 0.396575904,
             "drawInAtDesired": 5.70354786,
             "usableStrokeInsideCeiling": 3.78887991,
+            "usableStrokeInsideClauseCeiling": 3.20778499,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 348.5 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 77.41 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A2",
@@ -458,9 +502,12 @@
             "drawInAtAcceptable": 0.383238059,
             "drawInAtDesired": 5.33538484,
             "usableStrokeInsideCeiling": 3.8767876,
+            "usableStrokeInsideClauseCeiling": 3.22373592,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 264.2 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 69.94 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A2",
@@ -483,9 +530,12 @@
             "drawInAtAcceptable": 0.378616746,
             "drawInAtDesired": 5.21212734,
             "usableStrokeInsideCeiling": 3.90655028,
+            "usableStrokeInsideClauseCeiling": 3.22888874,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 242.7 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 67.84 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A2",
@@ -508,9 +558,12 @@
             "drawInAtAcceptable": 0.377243687,
             "drawInAtDesired": 5.17546091,
             "usableStrokeInsideCeiling": 3.91509324,
+            "usableStrokeInsideClauseCeiling": 3.23034409,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 236.9 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 67.27 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A2",
@@ -533,8 +586,11 @@
             "drawInAtAcceptable": 0.541455142,
             "drawInAtDesired": -1.0,
             "usableStrokeInsideCeiling": 3.05897602,
+            "usableStrokeInsideClauseCeiling": 3.02101152,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
             "verdict": "FAILS the desired stroke: the arm is shorter than 10 nm"
         },
         {
@@ -558,8 +614,11 @@
             "drawInAtAcceptable": 0.487558853,
             "drawInAtDesired": -1.0,
             "usableStrokeInsideCeiling": 3.27965976,
+            "usableStrokeInsideClauseCeiling": 3.09009264,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
             "verdict": "FAILS the desired stroke: the arm is shorter than 10 nm"
         },
         {
@@ -583,9 +642,12 @@
             "drawInAtAcceptable": 0.456908086,
             "drawInAtDesired": 8.36952853,
             "usableStrokeInsideCeiling": 3.43068012,
+            "usableStrokeInsideClauseCeiling": 3.13020323,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 8147 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 263.7 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A2",
@@ -608,9 +670,12 @@
             "drawInAtAcceptable": 0.438090764,
             "drawInAtDesired": 7.19915255,
             "usableStrokeInsideCeiling": 3.53340264,
+            "usableStrokeInsideClauseCeiling": 3.15474688,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 1481 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 134.3 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A2",
@@ -633,9 +698,12 @@
             "drawInAtAcceptable": 0.417385787,
             "drawInAtDesired": 6.34907227,
             "usableStrokeInsideCeiling": 3.65487049,
+            "usableStrokeInsideClauseCeiling": 3.18126674,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 607.6 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 95.54 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A2",
@@ -658,9 +726,12 @@
             "drawInAtAcceptable": 0.406947371,
             "drawInAtDesired": 5.99706455,
             "usableStrokeInsideCeiling": 3.71885324,
+            "usableStrokeInsideClauseCeiling": 3.19424114,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 444.2 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 84.95 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A2",
@@ -683,9 +754,12 @@
             "drawInAtAcceptable": 0.393115649,
             "drawInAtDesired": 5.57475557,
             "usableStrokeInsideCeiling": 3.80470849,
+            "usableStrokeInsideClauseCeiling": 3.21064767,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 316.6 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 75.02 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A2",
@@ -708,9 +782,12 @@
             "drawInAtAcceptable": 0.388339822,
             "drawInAtDesired": 5.43585781,
             "usableStrokeInsideCeiling": 3.83370909,
+            "usableStrokeInsideClauseCeiling": 3.2159372,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 286.1 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 72.34 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A2",
@@ -733,9 +810,12 @@
             "drawInAtAcceptable": 0.386923406,
             "drawInAtDesired": 5.39473473,
             "usableStrokeInsideCeiling": 3.84202364,
+            "usableStrokeInsideClauseCeiling": 3.21742974,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 278.0 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 71.61 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A4",
@@ -758,9 +838,12 @@
             "drawInAtAcceptable": 0.367131877,
             "drawInAtDesired": 4.95496997,
             "usableStrokeInsideCeiling": 3.9938778,
+            "usableStrokeInsideClauseCeiling": 3.24351759,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 203.3 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 63.44 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A4",
@@ -783,9 +866,12 @@
             "drawInAtAcceptable": 0.355002452,
             "drawInAtDesired": 4.69594936,
             "usableStrokeInsideCeiling": 4.08875847,
+            "usableStrokeInsideClauseCeiling": 3.25839378,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 172.1 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 59.63 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A4",
@@ -808,9 +894,12 @@
             "drawInAtAcceptable": 0.35076142,
             "drawInAtDesired": 4.60587076,
             "usableStrokeInsideCeiling": 4.12108675,
+            "usableStrokeInsideClauseCeiling": 3.26322313,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 163.1 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 58.48 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A4",
@@ -833,9 +922,12 @@
             "drawInAtAcceptable": 0.349495321,
             "drawInAtDesired": 4.57876236,
             "usableStrokeInsideCeiling": 4.13039532,
+            "usableStrokeInsideClauseCeiling": 3.26459042,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 160.6 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 58.16 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A5-2",
@@ -858,9 +950,12 @@
             "drawInAtAcceptable": 0.366385203,
             "drawInAtDesired": 4.93654288,
             "usableStrokeInsideCeiling": 3.99871271,
+            "usableStrokeInsideClauseCeiling": 3.24429245,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 201.0 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 63.19 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A5-2",
@@ -883,9 +978,12 @@
             "drawInAtAcceptable": 0.354280848,
             "drawInAtDesired": 4.67974972,
             "usableStrokeInsideCeiling": 4.09378416,
+            "usableStrokeInsideClauseCeiling": 3.25914844,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 170.5 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 59.43 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A5-2",
@@ -908,9 +1006,12 @@
             "drawInAtAcceptable": 0.350047746,
             "drawInAtDesired": 4.59036622,
             "usableStrokeInsideCeiling": 4.1261821,
+            "usableStrokeInsideClauseCeiling": 3.2639717,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 161.7 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 58.30 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         },
         {
             "anchorageId": "A5-2",
@@ -933,9 +1034,12 @@
             "drawInAtAcceptable": 0.348783881,
             "drawInAtDesired": 4.56345876,
             "usableStrokeInsideCeiling": 4.13551138,
+            "usableStrokeInsideClauseCeiling": 3.26533734,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
+            "insideDeclaredCeilingAtDesiredClause": false,
+            "insidePerPathSecantCeilingAtDesired": false,
+            "verdict": "places, but past its compliance reading at the 10.0 nm stroke: tangent 159.2 pN/nm against C-0023's linearity tolerance read at THAT clause, 12.00 pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke (C-0049); and secant 57.98 pN/nm against C-0006's per-path ceiling n x allowable / s = 45.00 pN/nm"
         }
     ],
     "strokes": [
@@ -1721,11 +1825,11 @@
     ],
     "findings": {
         "theArm": "Placed on the composition that is exact in BOTH the rotation and the end condition, E5a16's arm is 12.720 nm = 37.4 bp — OUTSIDE C-0034's 11.028-12.496 nm bracket, 1.8 % beyond its long end. The bracket fails because its two errors do NOT run opposite ways: both readings are corrections to the same linear boundary-value problem and both STIFFEN it, so applying both moves the arm further out, not back inside. C-0034's own third failure mode.",
-        "theCeiling": "The placement clause is discharged exactly — 33.3333 pN/nm on the secant at 3 nm, by construction. The compliance clause is not: the tangent is 36.440 pN/nm at the acceptable stroke (t/s = 1.093) and 264.2 pN/nm at the desired one, 6.6x past C-0023's 40 pN/nm ceiling. The SECANT at the desired stroke is already 69.9 pN/nm, 2.098x the mandate. C-0034 reported 36.78 pN/nm there, inside the ceiling with 8.1 % to spare.",
-        "theUsableStroke": "The stroke E5a16 delivers INSIDE its own compliance ceiling is 3.877 nm — it clears §3's acceptable 3 nm and it does not clear §3's desired 10 nm on any anchorage or hinge count in the sweep. The reason is geometric and needs no constitutive law: the arm is capped at 13.648 nm by its own placement condition, so a 10 nm stroke is at least 73 % of the arm's own contour at every design point, and a beam driven that far past its own length stiffens whatever it is made of.",
+        "theCeiling": "The placement clause is discharged exactly — 33.3333 pN/nm on the secant at 3 nm, by construction. The compliance clause is not: the tangent is 36.440 pN/nm at the acceptable stroke (t/s = 1.093) and 264.2 pN/nm at the desired one. Read at the clause that stroke belongs to (C-0049), the declared linearity tolerance there is 12.0 pN/nm and the element is 22.0x past it; against C-0023's 40 pN/nm, which is 1.2 x (100 pN / 3 nm) and is owed at the PLACEMENT stroke, it is 6.6x past — the two readings differ by 10/3 and agree on the verdict. The SECANT at the desired stroke is already 69.9 pN/nm, 2.098x the mandate and 1.55x C-0006's per-path ceiling n x allowable / s = 45.0 pN/nm, which is the only ceiling in the stack that is not declared. C-0034 reported 36.78 pN/nm there, inside the declared ceiling with 8.1 % to spare.",
+        "theUsableStroke": "The stroke E5a16 delivers inside C-0023's declared tolerance held at its PLACEMENT-clause value of 40 pN/nm is 3.877 nm; read clause by clause, with the tolerance falling as 1.2 x (100 pN / s), it is 3.224 nm (C-0049, T-169). Both clear §3's acceptable 3 nm and neither clears §3's desired 10 nm on any anchorage or hinge count in the sweep. The reason is geometric and needs no constitutive law: the arm is capped at 13.648 nm by its own placement condition, so a 10 nm stroke is at least 73 % of the arm's own contour at every design point, and a beam driven that far past its own length stiffens whatever it is made of.",
         "theDrawIn": "The exact solve delivers the arc-length demand the linear readings could not see. At the acceptable stroke the two attachment points must approach each other by 0.383 nm = 1.1 bp; at the desired stroke by 5.335 nm = 15.7 bp, 42 % of the arm. C-0029 quotes 0.095 nm at 3 nm because RotatingHingeArm charges only the hinge's own rigid swing and not the arm's bending. And the demand is NOT a design choice: an inextensible arm whose ends hold their axial separation cannot deflect at all, so C-0023's free/held binary does not exist here. Held, the arm must STRETCH — at least 299 pN at the desired stroke, past the 65 pN nicked ceiling.",
         "thePerPathAllowable": "Read at the stroke it is asked at, not at the placement point. At 3 nm the element's own tension is 2.222 pN, its hinge bond force 0.355 pN and its anchorage link force 6.070 pN — all inside C-0006's 10 pN unzip allowable. At 10 nm they are 15.542, 1.537 and 24.311 pN, and the anchorage alone demands 10.1 bp of bonded length on CH-0029's ladder against C-0034's 7.3 bp.",
         "theStability": "C-0017's stability clause is read on the tangent and this element is strain-STIFFENING everywhere: the tangent rises monotonically from 31.976 pN/nm over the whole 0.5-10 nm sweep, so min_s k_tangent is the small-stroke end and CH-0047's question about which range the minimum is taken over does not bind here. What binds is the compliance CEILING, which is the other side of the same curve.",
-        "whatSurvives": "C-0034's counting theorem, its anchorage catalogue, its fixed-point cap and CH-0044's diagnosis all survive and are re-run rather than restated. The cap moves outward, from 13.428 to 13.648 nm, because the exact arm stiffens and a longer one is therefore needed to reach the mandate. What does not survive is the verdict that E5a16 clears §3's DESIRED stroke: on the exact composition it clears the acceptable stroke with 8.9 % of ceiling margin and misses the desired one on compliance."
+        "whatSurvives": "C-0034's counting theorem, its anchorage catalogue, its fixed-point cap and CH-0044's diagnosis all survive and are re-run rather than restated. The cap moves outward, from 13.428 to 13.648 nm, because the exact arm stiffens and a longer one is therefore needed to reach the mandate. What does not survive is the verdict that E5a16 clears §3's DESIRED stroke: on the exact composition it clears the acceptable stroke with 8.9 % of margin against the tolerance read at THAT clause (40 pN/nm, where it is owed) and misses the desired one on compliance — past the desired clause's own 12 pN/nm and past C-0006's per-path 45 pN/nm on the secant, so the miss does not depend on the ceiling C-0049 withdrew."
     }
 }

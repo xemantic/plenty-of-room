@@ -7196,3 +7196,58 @@ are read by tests — which is exactly the fact `C-0101` had in front of it and 
 and was very nearly read as a real failure; it is the concurrent-`test-results` race `CLAUDE.md` documents,
 from running Gradle beside two agents' verify runs. **The cure is in the file and the coordinator did not
 apply it to itself.**
+
+## 2026-08-18 — Iteration 21
+
+Three loops plus two coordinator edits. Every number grepped out of its claim.
+
+**`C-0104` (`T-172`) — IT DOES MATTER, and it is the first row-end unknown that does.** `C-0099` had just
+measured the row-end crossover's *stiffness* and found it worth three percentage points of margin. Prestrain
+is a different question and the answer is the other way. A crossover prestrain is an **initial stress**, so
+`½k_θ(Δφ − θ₀)²` leaves the stiffness matrix untouched and enters the lattice as a **load vector** — which
+collapses the whole `θ₀` axis to one solve, and puts `T-5b`'s 0.10 at **15.45°** of uniform row-end
+prestrain. **The lattice's own register ladder reaches it**: `C-0090`'s recommended placement holds the
+convention at the 8 bp (±4.286°) and 16 bp (±8.571°) rungs and **loses it at 0.1013 at the 32 bp rung in the
+adverse sign**. A re-optimised design absorbs it — 0.0826 and **0.0711** at ±17.14° over a
+163 296-placement re-enumeration — but `C-0090`'s published key is the optimum at only **1 of 3** states, so
+**the recommended design is a function of an unmeasured parameter in a way `C-0099`'s stiffness sweep was
+not**. No accessible source quantifies it, over 10 recorded queries and 68 records, and Rothemund says so
+himself. Added to `ANSWERS.md` §5.
+
+**`C-0102` (`T-171`) — the three demands are irreconcilable at both widths, and `C-0090`'s collapse
+sharpens the question rather than closing it.** A 96-row census with no solve gives **10 / 10 / 2** at
+40.00 nm and **2 / 2 / 2** at the buildable 38.08 nm — richest `{0, 16}`, eight-column `{8, 24}`,
+centro-symmetric `{8, 24}` — **still disjoint**. **Phase 8 is recommended**, at 0.0658484805 against the
+richest phase 16's 0.125068659, and the decision is one division: 52 → 60 ties buys **1.12×** or **1.06×**
+on the two measured slopes, and the phase it demands costs **1.90×**.
+**The sheet-side price nobody had computed is 14 channels, 9 of them closed form.** A seven-column host
+splits 4/3, so the **series** `D_⊥` loses `6/7` where the **smeared** one loses `7/8` — exactly **`48/49`**
+apart, the smeared reading optimistic, and a seven-column sheet is the first *designed* non-uniform lattice
+`C-0054`'s two readings have ever been read on. `C-0054`'s spendable budget falls 42 → 35 (its 75 % is an
+eight-column number), and under `C-0087`'s measured incorporation a seven-column sheet is **3.59×** likelier
+to lose *every* crossover on some interface, which takes the series `D_⊥` to exactly zero.
+Two things worth keeping: **`C-0015`'s *"seven columns is the better layout"* is a POINT-LOAD statement** —
+under `C-0022`'s distributed solved load the sign reverses, +4.981 % — and `CH-0118` finds `C-0090`'s
+*"the row-end crossover can never be an upward site, at any phase"* rests on a quantifier that fails at
+phases 0 and 16: **a plane lands on the row end mod 8 bp but is a column only mod 16 bp**. The entire richest
+set at the buildable width exists only under that convention.
+
+**`C-0103` (`T-163`) — `CH-0103`'s missing column is real, it is +12.86 %, and the recommendation it
+challenges does not pay it.** At fixed station geometry on `C-0063`'s own phase-24 lattice, the 34 → 30
+reduction moves the 90th-percentile dishing **0.638498565 → 0.720607136** under the measured dropout, against
+a plan margin that improves **68.9×**. So the axis `CH-0103` said nobody had priced is real and adverse —
+and the move the programme actually recommends is not the one that pays it.
+
+**`C-0105` (`T-169`) — the note is re-worded and no verdict moves, because the clause-correct reading is
+3.33× STRICTER.** 40 pN/nm is `1.2 × (100/3)`; the same construction at §3's *desired* clause is **12**, and
+the softest of `T-79`'s 26 placing rows is **13.3×** past it. The miss does not rest on a declared number at
+all: **26 of 26** are also past `C-0006`'s cited 45 pN/nm per-path secant. **And the defect was in a file
+neither `C-0101` nor the `T-169` row names** — so the coordinator's own scoping of the task was wrong, and
+the agent found the real site.
+
+**Coordinator.** `ANSWERS.md` §5 had absorbed no addition since iteration 12 while the programme's frontier
+moved — `C-0067`'s worst drift class in the one direction none of the three mechanical checks can see, since
+they verify what is *present* and nothing verifies what is *missing from a disclaimer*. Four items added, of
+which the first is now the most consequential missing measurement in the programme: **a per-site
+incorporation map on a coupling-bearing tile**, because the flat-tile question is closed on every coupling
+axis and what decides it is a fabrication yield. `T-175` queued for the fourth synthesis.

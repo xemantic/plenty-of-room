@@ -158,9 +158,12 @@ class GrillageDeflection internal constructor(
                 verticalForce = -lattice.linkStiffness *
                         lattice.softeningOf(crossover).link *
                         lattice.linkExtension(coefficients, crossover),
+                // `T-172`: what the two phosphate bonds carry is the departure from the angle the
+                // crossover was BUILT at, so a prestrained hinge carries a moment at Δφ = 0
                 hingeMoment = lattice.sheet.crossoverHingeStiffness *
                         lattice.softeningOf(crossover).hinge *
-                        lattice.hingeRotation(coefficients, crossover)
+                        (lattice.hingeRotation(coefficients, crossover) -
+                                lattice.prestrainOf(crossover))
             )
         }
     }
@@ -265,6 +268,12 @@ class GrillageDeflection internal constructor(
  *          continuous, which is neither of `C-0090`'s two end-of-row readings. Empty by default,
  *          in which case every crossover is [CrossoverSoftening.FULL]; a site mapped to
  *          [CrossoverSoftening.ABSENT] is bit-identical to the same site being consumed.
+ * @param crossoverPrestrains the **initial** relative roll in radians a site is built at, so that
+ *          its hinge stores `½ k_θ (Δφ − θ₀)²`. `T-172`'s design variable, carrying Rothemund's
+ *          *"crossovers in tension"*. It changes no entry of the stiffness matrix — see
+ *          [CrossoverPrestrain.kt][hingePrestrainCouple] — only the load vector, so every
+ *          factorisation and every influence bank built on this lattice stays exact. Empty by
+ *          default, and an all-zero map is bit-identical to an empty one.
  */
 class OrigamiGrillage(
     val sheet: OrigamiSheet,
@@ -276,7 +285,8 @@ class OrigamiGrillage(
     val linkStiffness: Double = RIGID_LINK_STIFFNESS,
     val supports: List<PointSupport> = emptyList(),
     val consumedCrossovers: Set<CrossoverSite> = emptySet(),
-    val softenedCrossovers: Map<CrossoverSite, CrossoverSoftening> = emptyMap()
+    val softenedCrossovers: Map<CrossoverSite, CrossoverSoftening> = emptyMap(),
+    val crossoverPrestrains: Map<CrossoverSite, Double> = emptyMap()
 ) {
 
     /**
@@ -320,6 +330,11 @@ class OrigamiGrillage(
         }
         require(subdivisions >= 1) { "subdivisions must be at least 1, was: $subdivisions" }
         require(linkStiffness > 0.0) { "linkStiffness must be positive, was: $linkStiffness" }
+        crossoverPrestrains.forEach { (site, angle) ->
+            require(angle.isFinite()) {
+                "the prestrain at $site must be finite, was: $angle"
+            }
+        }
     }
 
     /** The number of crossover columns across the footprint, counting both parities. */
@@ -404,6 +419,41 @@ class OrigamiGrillage(
      */
     val crossoverSites: List<CrossoverSite>
         get() = crossovers.map { CrossoverSite(it.lowerBeam, it.column) }
+
+    /**
+     * The initial relative roll in radians [crossover] is built at — zero unless named.
+     *
+     * `T-172`. Zero is the whole lattice's default and is what makes the term additive.
+     */
+    fun prestrainOf(crossover: Crossover): Double =
+        crossoverPrestrains[CrossoverSite(crossover.lowerBeam, crossover.column)] ?: 0.0
+
+    /**
+     * The same lattice with no prestrain — **the object every INFLUENCE function must be taken
+     * on**, and the reason this property exists rather than being left to the caller.
+     *
+     * A prestrain is a load, and [solve] adds it to every load case including a unit point load.
+     * So the *"deflection at `j` under a unit load at `k`"* computed from a prestrained lattice is
+     * not an influence function at all: it is that influence **plus** the prestrain's own
+     * response, the resulting matrix is no longer a compliance, and `C-0058`'s Woodbury reduction
+     * fails on it (`T-172` found this as a non-positive Cholesky pivot). Superposition gives the
+     * right construction in one line — the free field from the prestrained lattice, the influence
+     * fields from this one.
+     */
+    val withoutPrestrain: OrigamiGrillage by lazy {
+        if (crossoverPrestrains.isEmpty()) this else OrigamiGrillage(
+            sheet = sheet,
+            lengthX = lengthX,
+            beamCount = beamCount,
+            foundationStiffness = foundationStiffness,
+            columns = columns,
+            subdivisions = subdivisions,
+            linkStiffness = linkStiffness,
+            supports = supports,
+            consumedCrossovers = consumedCrossovers,
+            softenedCrossovers = softenedCrossovers
+        )
+    }
 
     /** What [crossover] retains of an interior crossover's two elements — [CrossoverSoftening.FULL] unless named. */
     fun softeningOf(crossover: Crossover): CrossoverSoftening =
@@ -537,10 +587,13 @@ class OrigamiGrillage(
         return 0.5 * total
     }
 
-    /** The energy in `pN·nm` the crossover hinges store in [field] — `½ k_θ Δφ²` each. */
+    /**
+     * The energy in `pN·nm` the crossover hinges store in [field] — `½ k_θ (Δφ − θ₀)²` each,
+     * with `θ₀` the `T-172` prestrain, zero at every unnamed site.
+     */
     fun hingeEnergy(field: F64Array): Double = 0.5 * sheet.crossoverHingeStiffness *
             crossovers.sumOf {
-                val rotation = hingeRotation(field, it)
+                val rotation = hingeRotation(field, it) - prestrainOf(it)
                 softeningOf(it).hinge * rotation * rotation
             }
 
@@ -799,7 +852,7 @@ class OrigamiGrillage(
      * varies in `y` — the electrostatic edge taper — produces the rolling moment on the
      * outermost duplexes that it physically does, and not merely a vertical force.
      */
-    private fun assembleLoad(pressure: PressureField, pointLoads: List<PointLoad>): F64Array {
+    internal fun assembleLoad(pressure: PressureField, pointLoads: List<PointLoad>): F64Array {
         val load = F64Array(degreesOfFreedom)
         val half = interhelicalDistance / 2.0
         for (beam in 0 until beamCount) {
@@ -832,7 +885,29 @@ class OrigamiGrillage(
             val basis = basisAt(point.x, point.y)
             for (k in 0 until degreesOfFreedom) load[k] += point.force * basis[k]
         }
+        addPrestrainCouples(load)
         return load
+    }
+
+    /**
+     * Adds `T-172`'s initial-stress term, which is a **load** and not a stiffness.
+     *
+     * `½ k_θ (Δφ − θ₀)² = ½ k_θ Δφ² − k_θ θ₀ Δφ + const` with `Δφ = φ_upper − φ_lower`, so the
+     * only new term in `∂U/∂q = 0` is a fixed couple `+k_θθ₀` on the upper duplex's roll and
+     * `−k_θθ₀` on the lower one's. Nothing here touches [factorisation].
+     */
+    private fun addPrestrainCouples(load: F64Array) {
+        if (crossoverPrestrains.isEmpty()) return
+        crossovers.forEach { crossover ->
+            val angle = prestrainOf(crossover)
+            if (angle == 0.0) return@forEach
+            val couple = hingePrestrainCouple(
+                angle, sheet.crossoverHingeStiffness * softeningOf(crossover).hinge
+            )
+            if (couple == 0.0) return@forEach
+            load[dof(crossover.lowerBeam + 1, crossover.node, PHI)] += couple
+            load[dof(crossover.lowerBeam, crossover.node, PHI)] -= couple
+        }
     }
 
     /** Solves one load case: a [pressure] field downward, plus any [pointLoads]. */

@@ -1,0 +1,661 @@
+{
+ "DNA origami AND \"twist strain\" AND crossover": [
+  {
+   "id": "21594298",
+   "title": "DNA origami: a quantum leap for self-assembly of complex structures.",
+   "year": "2011",
+   "oa": "N",
+   "pmcid": "PMC3328352",
+   "abstract": "The spatially controlled positioning of functional materials by self-assembly is one of the fundamental visions of nanotechnology. Major steps towards this goal have been achieved using DNA as a programmable building block. This tutorial review will focus on one of the most promising methods: DNA origami. The basic design principles, organization of a variety of functional materials and recent implementation of DNA robotics are discussed together with future challenges and opportunities."
+  }
+ ],
+ "\"DNA origami\" AND \"residual stress\"": [
+  {
+   "id": "41215724",
+   "title": "Multiscale Design of Dental Restorative Materials: Mechanistic Foundations, Technological Innovations, and Clinical Translation.",
+   "year": "2025",
+   "oa": "Y",
+   "pmcid": "PMC12752673",
+   "abstract": "Dental restorative materials remain constrained by clinical unmet needs in biomechanical durability, bioactivity, and long-term tissue integration, despite incremental advances in conventional ceramics and polymers. Addressing these gaps requires functional innovation. Multiscale design strategies bridge atomic-level material engineering with macroscopic clinical performance. This review highlights transformative approaches, including bioinspired architectures (e.g., decellularized extracellular matrix scaffolds) that replicate native oral tissue mechanics while promoting cell-driven remodeling, and smart interfaces (e.g., pH-responsive polymers) for dynamic biofilm suppression. Functional enhancements are achieved via 3D printing for anatomically precise restorations, nanotechnology for crack-resistant ceramics, and surface functionalization (e.g., graphene oxide coatings) to accelerate osseointegration. Emerging paradigms such as 4D-printed shape-memory composites and artificial intelligence (AI)-driven inverse design further exemplify innovation by enabling self-adapting materials and accelerated discovery of bioactive formulations. Critically, barriers are analyzed to clinical "
+  },
+  {
+   "id": "36035113",
+   "title": "Mathematical model and genomics construction of developmental biology patterns using digital image technology.",
+   "year": "2022",
+   "oa": "Y",
+   "pmcid": "PMC9399364",
+   "abstract": "Biological pattern formation ensures that tissues and organs develop in the correct place and orientation within the body. A great deal has been learned about cell and tissue staining techniques, and today's microscopes can capture digital images. A light microscope is an essential tool in biology and medicine. Analyzing the generated images will involve the creation of unique analytical techniques. Digital images of the material before and after deformation can be compared to assess how much strain and displacement the material responds. Furthermore, this article proposes Development Biology Patterns using Digital Image Technology (DBP-DIT) to cell image data in 2D, 3D, and time sequences. Engineered materials with high stiffness may now be characterized <i>via</i> digital image correlation. The proposed method of analyzing the mechanical characteristics of skin under various situations, such as one direction of stress and temperatures in the hundreds of degrees Celsius, is achievable using digital image correlation. A DBP-DIT approach to biological tissue modeling is based on digital image correlation (DIC) measurements to forecast the displacement field under unknown loading sce"
+  },
+  {
+   "id": "39063687",
+   "title": "Casimir Effect in MEMS: Materials, Geometries, and Metrologies-A Review.",
+   "year": "2024",
+   "oa": "Y",
+   "pmcid": "PMC11278474",
+   "abstract": "Casimir force densities, i.e., force per area, become very large if two solid material surfaces come closer together to each other than 10 nm. In most cases, the forces are attractive. In some cases, they can be repulsive depending on the solid materials and the fluid medium in between. This review provides an overview of experimental and theoretical studies that have been performed and focuses on four main aspects: (i) the combinations of different materials, (ii) the considered geometries, (iii) the applied experimental measurement methodologies and (iv) a novel self-assembly methodology based on Casimir forces. Briefly reviewed is also the influence of additional parameters such as temperature, conductivity, and surface roughness. The Casimir effect opens many application possibilities in microelectromechanical systems (MEMS) and nanoelectromechanical systems (NEMS), where an overview is also provided. The knowledge generation in this fascinating field requires interdisciplinary approaches to generate synergetic effects between technological fabrication metrology, theoretical simulations, the establishment of adequate models, artificial intelligence, and machine learning. Finall"
+  },
+  {
+   "id": "34677943",
+   "title": "Dissecting Biological and Synthetic Soft-Hard Interfaces for Tissue-Like Systems.",
+   "year": "2022",
+   "oa": "N",
+   "pmcid": "PMC8917063",
+   "abstract": "Soft and hard materials at interfaces exhibit mismatched behaviors, such as mismatched chemical or biochemical reactivity, mechanical response, and environmental adaptability. Leveraging or mitigating these differences can yield interfacial processes difficult to achieve, or inapplicable, in pure soft or pure hard phases. Exploration of interfacial mismatches and their associated (bio)chemical, mechanical, or other physical processes may yield numerous opportunities in both fundamental studies and applications, in a manner similar to that of semiconductor heterojunctions and their contribution to solid-state physics and the semiconductor industry over the past few decades. In this review, we explore the fundamental chemical roles and principles involved in designing these interfaces, such as the (bio)chemical evolution of adaptive or buffer zones. We discuss the spectroscopic, microscopic, (bio)chemical, and computational tools required to uncover the chemical processes in these confined or hidden soft-hard interfaces. We propose a soft-hard interaction framework and use it to discuss soft-hard interfacial processes in multiple systems and across several spatiotemporal scales, focu"
+  },
+  {
+   "id": "36873176",
+   "title": "Medical micro- and nanomotors in the body.",
+   "year": "2023",
+   "oa": "Y",
+   "pmcid": "PMC9979267",
+   "abstract": "Attributed to the miniaturized body size and active mobility, micro- and nanomotors (MNMs) have demonstrated tremendous potential for medical applications. However, from bench to bedside, massive efforts are needed to address critical issues, such as cost-effective fabrication, on-demand integration of multiple functions, biocompatibility, biodegradability, controlled propulsion and <i>in\u00a0vivo</i> navigation. Herein, we summarize the advances of biomedical MNMs reported in the past two decades, with particular emphasis on the design, fabrication, propulsion, navigation, and the abilities of biological barriers penetration, biosensing, diagnosis, minimally invasive surgery and targeted cargo delivery. Future perspectives and challenges are discussed as well. This review can lay the foundation for the future direction of medical MNMs, pushing one step forward on the road to achieving practical theranostics using MNMs."
+  },
+  {
+   "id": "38011110",
+   "title": "Structural Color from Cellulose Nanocrystals or Chitin Nanocrystals: Self-Assembly, Optics, and Applications.",
+   "year": "2023",
+   "oa": "Y",
+   "pmcid": "PMC10729353",
+   "abstract": "Widespread concerns over the impact of human activity on the environment have resulted in a desire to replace artificial functional materials with naturally derived alternatives. As such, polysaccharides are drawing increasing attention due to offering a renewable, biodegradable, and biocompatible feedstock for functional nanomaterials. In particular, nanocrystals of cellulose and chitin have emerged as versatile and sustainable building blocks for diverse applications, ranging from mechanical reinforcement to structural coloration. Much of this interest arises from the tendency of these colloidally stable nanoparticles to self-organize in water into a lyotropic cholesteric liquid crystal, which can be readily manipulated in terms of its periodicity, structure, and geometry. Importantly, this helicoidal ordering can be retained into the solid-state, offering an accessible route to complex nanostructured films, coatings, and particles. In this review, the process of forming iridescent, structurally colored films from suspensions of cellulose nanocrystals (CNCs) is summarized and the mechanisms underlying the chemical and physical phenomena at each stage in the process explored. Anal"
+  },
+  {
+   "id": "PMC10643713",
+   "title": "The 7th Congress of Biophysicists of Russia - conference proceedings : Abstracts",
+   "year": "2023",
+   "oa": "N",
+   "pmcid": "PMC10643713",
+   "abstract": ""
+  }
+ ],
+ "\"DNA origami\" AND prestrain": [
+  {
+   "id": "40789005",
+   "title": "Fabrication of Soft Robotics by Additive Manufacturing: From Materials to Applications.",
+   "year": "2025",
+   "oa": "Y",
+   "pmcid": "PMC12395417",
+   "abstract": "Soft robotics is a rapidly evolving field that leverages the unique properties of compliant, flexible materials to create robots that are capable of complex and adaptive behaviors. Unlike traditional rigid robots, soft robots rely on the properties of soft materials, which enable them to safely interact with humans, manipulate delicate objects, and perform various locomotion processes. This review provides a comprehensive overview of the development process of soft robots by additive manufacturing with a particular focus on the chemical aspects of the materials involved. The types of materials used in soft robotics, highlighting their properties, applications, and the role of their chemical composition in performance, are presented. The review then explores fabrication methods, detailing their chemical underpinnings, advantages, and limitations, followed by presenting common design methods used to optimize soft robots. Finally, the review discusses the diverse applications of soft robots across various domains, including medical, locomotion, manipulation, and wearable devices. By covering every stage of the additive manufactured soft robot, from material selection to application, t"
+  }
+ ],
+ "\"DNA nanostructure\" AND \"crossovers in tension\"": [],
+ "\"DNA origami\" AND \"strain energy\" AND crossover": [
+  {
+   "id": "41980962",
+   "title": "KIMMDY: a biomolecular reaction emulator.",
+   "year": "2026",
+   "oa": "Y",
+   "pmcid": "PMC13083967",
+   "abstract": "Molecular simulations have become indispensable in biological research. Their accuracy continues to improve, but directly modelling biochemical reactions - central to all life processes - remains computationally challenging. Here, we present a biomolecular reaction emulator that models reactions across conformational ensembles using kinetic Monte Carlo. Our method, KIMMDY, is capable of handling dynamic, large-scale systems with successive, competing reactions, even on the second timescale or slower. It leverages graph neural networks for large-scale prediction of reaction rates, while also being capable of using simpler physics-based or heuristic models. We validate our approach against experimental data and showcase its power and versatility through a series of applications, including radical reactions, nucleophilic substitutions, and photodimerization. Example systems span proteins and DNA. KIMMDY aids the understanding of biochemical reaction cascades in complex systems, helps to re-interpret experimental data, and can inspire future wet-lab experiments."
+  },
+  {
+   "id": "39085236",
+   "title": "Predicting the effect of binding molecules on the shape and mechanical properties of structured DNA assemblies.",
+   "year": "2024",
+   "oa": "Y",
+   "pmcid": "PMC11291742",
+   "abstract": "Chemo-mechanical deformation of structured DNA assemblies driven by DNA-binding ligands has offered promising avenues for biological and therapeutic applications. However, it remains elusive how to effectively model and predict their effects on the deformation and mechanical properties of DNA structures. Here, we present a computational framework for simulating chemo-mechanical change of structured DNA assemblies. We particularly quantify the effects of ethidium bromide (EtBr) intercalation on the geometry and mechanical properties of DNA base-pairs through molecular dynamics simulations and integrated them into finite-element-based structural analysis to predict the shape and properties of DNA objects. The proposed model captures various structural changes induced by EtBr-binding such as shape variation, flexibility modulation, and supercoiling instability. It enables a rational design of structured DNA assemblies with tunable shapes and mechanical properties by binding molecules."
+  },
+  {
+   "id": "40376451",
+   "title": "Generation of topologically defined linear and cyclic DNA bottle brush polymers &lt;i&gt;via&lt;/i&gt; a graft-to approach.",
+   "year": "2025",
+   "oa": "Y",
+   "pmcid": "PMC12070894",
+   "abstract": "Herein, we report a graft-to approach for synthesizing linear and circular double-stranded DNA (dsDNA) bottlebrush polymers (BBPs). Using a bioreactor, plasmid DNA (pDNA) serves as an inexpensive and abundant source of circular, biodegradable, and unimolecular polymers. pDNA is easily converted to the linear isoform through enzymatic restriction, providing access to polymeric backbones with distinct topological states. DNA is grafted with polyethylene glycol monomethyl ether chloroethylamines (mPEGCEA) to yield DNA BBPs. Importantly this PEGylation occurs rapidly under ambient conditions in aqueous buffer. By varying the molecular weight of mPEGCEA (<i>M</i> <sub>w</sub> = 750, 2000, 5000 Da) and the concentration relative to \u03bcmol of nucleotides, different brush arm densities and lengths were achieved with both linear and macrocyclic DNA backbones. Analysis of the DNA BBPs was achieved through agarose gel electrophoresis, which showed graft densities of up to ~68% and ~74% for linear and ring DNA respectively. The grafting process does not alter base pairing or circularity as determined using atomic force microscopy. Shear rheology was used to compare the mechanical response of 1% "
+  },
+  {
+   "id": "35756857",
+   "title": "Design Approaches and Computational Tools for DNA Nanostructures.",
+   "year": "2021",
+   "oa": "N",
+   "pmcid": "PMC9232119",
+   "abstract": "Designing a structure in nanoscale with desired shape and properties has been enabled by structural DNA nanotechnology. Design strategies in this research field have evolved to interpret various aspects of increasingly more complex nanoscale assembly and to realize molecular-level functionality by exploring static to dynamic characteristics of the target structure. Computational tools have naturally been of significant interest as they are essential to achieve a fine control over both shape and physicochemical properties of the structure. Here, we review the basic design principles of structural DNA nanotechnology together with its computational analysis and design tools."
+  },
+  {
+   "id": "34462430",
+   "title": "Programming ultrasensitive threshold response through chemomechanical instability.",
+   "year": "2021",
+   "oa": "Y",
+   "pmcid": "PMC8405678",
+   "abstract": "The ultrasensitive threshold response is ubiquitous in biochemical systems. In contrast, achieving ultrasensitivity in synthetic molecular structures in a controllable way is challenging. Here, we propose a chemomechanical approach inspired by Michell's instability to realize it. A sudden reconfiguration of topologically constrained rings results when the torsional stress inside reaches a critical value. We use DNA origami to construct molecular rings and then DNA intercalators to induce torsional stress. Michell's instability is achieved successfully when the critical concentration of intercalators is applied. Both the critical point and sensitivity of this ultrasensitive threshold reconfiguration can be controlled by rationally designing the cross-sectional shape and mechanical properties of DNA rings."
+  },
+  {
+   "id": "29233997",
+   "title": "Polymorphic design of DNA origami structures through mechanical control of modular components.",
+   "year": "2017",
+   "oa": "Y",
+   "pmcid": "PMC5727162",
+   "abstract": "Scaffolded DNA origami enables the bottom-up fabrication of diverse DNA nanostructures by designing hundreds of staple strands, comprised of complementary sequences to the specific binding locations of a scaffold strand. Despite its exceptionally high design flexibility, poor reusability of staples has been one of the major hurdles to fabricate assorted DNA constructs in an effective way. Here we provide a rational module-based design approach to create distinct bent shapes with controllable geometries and flexibilities from a single, reference set of staples. By revising the staple connectivity within the desired module, we can control the location, stiffness, and included angle of hinges precisely, enabling the construction of dozens of single- or multiple-hinge structures with the replacement of staple strands up to 12.8% only. Our design approach, combined with computational shape prediction and analysis, can provide a versatile and cost-effective procedure in the design of DNA origami shapes with stiffness-tunable units."
+  },
+  {
+   "id": "31144901",
+   "title": "Force Generated by Two Kinesin Motors Depends on the Load Direction and Intermolecular Coupling.",
+   "year": "2019",
+   "oa": "N",
+   "pmcid": "PMC12175961",
+   "abstract": "Kinesins are molecular motors that carry cellular cargoes. While the mechanics of single kinesins are well characterized experimentally, the behavior of multiple kinesins varies considerably among experiments. The basis for this variability is unknown. Here, we resolve single-motor force measurements into a vertical component, which accelerates kinesin detachment, and a horizontal component, which decelerates the detachment when resisting the motor. This directionality, when the different experimental geometries are considered, can account for much of the variation in multiple motor dynamics."
+  },
+  {
+   "id": "24653832",
+   "title": "Two design strategies for enhancement of multilayer-DNA-origami folding: underwinding for specific intercalator rescue and staple-break positioning.",
+   "year": "2012",
+   "oa": "N",
+   "pmcid": "PMC3957201",
+   "abstract": "Single-layer DNA origami is an efficient method for programmable self-assembly of nanostructures approximating almost any desired two-dimensional shape from ~5 MDa of DNA building material. In this method, a 7 kilobase single \"scaffold\" strand is assembled with hundreds of oligodeoxyribonucleotide \"staple\" strands to form a parallel array of double helices. Multiple layers of such DNA sheets also can be designed to assemble into a stack, enabling construction of solid three-dimensional shapes with considerably greater mechanical rigidity than two-dimensional shapes; however, the folding yield often is much lower and the required folding times are much longer. Here we introduce two strategies for designing multi-layer DNA origami that demonstrate potential for boosting assembly yield: (1) individual base pairs can be inserted between crossovers, allowing for greater bowing of helices at positions away from crossovers and therefore reduced electrostatic repulsion. At the same time, this underwinding of double helices increases a destabilizing torsional strain energy but then also increases affinity for intercalators, and binding of such intercalators can relieve this stress. We also "
+  },
+  {
+   "id": "35221384",
+   "title": "Equilibrium mechanisms of self-limiting assembly.",
+   "year": "2021",
+   "oa": "N",
+   "pmcid": "PMC8880259",
+   "abstract": "Self-assembly is a ubiquitous process in synthetic and biological systems, broadly defined as the spontaneous organization of multiple subunits (e.g. macromolecules, particles) into ordered multi-unit structures. The vast majority of equilibrium assembly processes give rise to two states: one consisting of dispersed disassociated subunits, and the other, a bulk-condensed state of unlimited size. This review focuses on the more specialized class of <i>self-limiting assembly</i>, which describes equilibrium assembly processes resulting in finite-size structures. These systems pose a generic and basic question, how do thermodynamic processes involving non-covalent interactions between identical subunits \"measure\" and select the size of assembled structures? In this review, we begin with an introduction to the basic statistical mechanical framework for assembly thermodynamics, and use this to highlight the key physical ingredients that ensure equilibrium assembly will terminate at finite dimensions. Then, we introduce examples of self-limiting assembly systems, and classify them within this framework based on two broad categories: <i>self-closing assemblies</i> and <i>open-boundary ass"
+  },
+  {
+   "id": "PMC10643713",
+   "title": "The 7th Congress of Biophysicists of Russia - conference proceedings : Abstracts",
+   "year": "2023",
+   "oa": "N",
+   "pmcid": "PMC10643713",
+   "abstract": ""
+  },
+  {
+   "id": "PMC10902613",
+   "title": "Abstracts",
+   "year": "2024",
+   "oa": "N",
+   "pmcid": "PMC10902613",
+   "abstract": ""
+  }
+ ],
+ "\"DNA origami\" AND \"global twist\" AND \"base pairs per turn\"": [
+  {
+   "id": "33277481",
+   "title": "Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution.",
+   "year": "2020",
+   "oa": "Y",
+   "pmcid": "PMC7718922",
+   "abstract": "The methods of DNA nanotechnology enable the rational design of custom shapes that self-assemble in solution from sets of DNA molecules. DNA origami, in which a long template DNA single strand is folded by many short DNA oligonucleotides, can be employed to make objects comprising hundreds of unique DNA strands and thousands of base pairs, thus in principle providing many degrees of freedom for modelling complex objects of defined 3D shapes and sizes. Here, we address the problem of accurate structural validation of DNA objects in solution with cryo-EM based methodologies. By taking into account structural fluctuations, we can determine structures with improved detail compared to previous work. To interpret the experimental cryo-EM maps, we present molecular-dynamics-based methods for building pseudo-atomic models in a semi-automated fashion. Among other features, our data allows discerning details such as helical grooves, single-strand versus double-strand crossovers, backbone phosphate positions, and single-strand breaks. Obtaining this higher level of detail is a step forward that now allows designers to inspect and refine their designs with base-pair level interventions."
+  },
+  {
+   "id": "33081252",
+   "title": "Bottom-Up Self-Assembly Based on DNA Nanotechnology.",
+   "year": "2020",
+   "oa": "Y",
+   "pmcid": "PMC7603033",
+   "abstract": "Manipulating materials at the atomic scale is one of the goals of the development of chemistry and materials science, as it provides the possibility to customize material properties; however, it still remains a huge challenge. Using DNA self-assembly, materials can be controlled at the nano scale to achieve atomic- or nano-scaled fabrication. The programmability and addressability of DNA molecules can be applied to realize the self-assembly of materials from the bottom-up, which is called DNA nanotechnology. DNA nanotechnology does not focus on the biological functions of DNA molecules, but combines them into motifs, and then assembles these motifs to form ordered two-dimensional (2D) or three-dimensional (3D) lattices. These lattices can serve as general templates to regulate the assembly of guest materials. In this review, we introduce three typical DNA self-assembly strategies in this field and highlight the significant progress of each. We also review the application of DNA self-assembly and propose perspectives in this field."
+  },
+  {
+   "id": "33717850",
+   "title": "Chiral Systems Made from DNA.",
+   "year": "2021",
+   "oa": "Y",
+   "pmcid": "PMC7927625",
+   "abstract": "The very chemical structure of DNA that enables biological heredity and evolution has non-trivial implications for the self-organization of DNA molecules into larger assemblies and provides limitless opportunities for building functional nanostructures. This progress report discusses the natural organization of DNA into chiral structures and recent advances in creating synthetic chiral systems using DNA as a building material. How nucleic acid chirality naturally comes into play in a diverse array of situations is considered first, at length scales ranging from an individual nucleotide to entire chromosomes. Thereafter, chiral liquid crystal phases formed by dense DNA mixtures are discussed, including the ongoing efforts to understand their origins. The report then summarizes recent efforts directed toward building chiral structures, and other structures of complex topology, using the principle of DNA self-assembly. Discussed last are existing and proposed functional man-made nanostructures designed to either probe or harness DNA's chirality, from plasmonics and spintronics to\u00a0biosensing."
+  },
+  {
+   "id": "35127373",
+   "title": "Pharmaceutical applications of framework nucleic acids.",
+   "year": "2022",
+   "oa": "Y",
+   "pmcid": "PMC8799870",
+   "abstract": "DNA is a biological polymer that encodes and stores genetic information in all living organism. Particularly, the precise nucleobase pairing inside DNA is exploited for the self-assembling of nanostructures with defined size, shape and functionality. These DNA nanostructures are known as framework nucleic acids (FNAs) for their skeleton-like features. Recently, FNAs have been explored in various fields ranging from physics, chemistry to biology. In this review, we mainly focus on the recent progress of FNAs in a pharmaceutical perspective. We summarize the advantages and applications of FNAs for drug discovery, drug delivery and drug analysis. We further discuss the drawbacks of FNAs and provide an outlook on the pharmaceutical research direction of FNAs in the future."
+  },
+  {
+   "id": "21594298",
+   "title": "DNA origami: a quantum leap for self-assembly of complex structures.",
+   "year": "2011",
+   "oa": "N",
+   "pmcid": "PMC3328352",
+   "abstract": "The spatially controlled positioning of functional materials by self-assembly is one of the fundamental visions of nanotechnology. Major steps towards this goal have been achieved using DNA as a programmable building block. This tutorial review will focus on one of the most promising methods: DNA origami. The basic design principles, organization of a variety of functional materials and recent implementation of DNA robotics are discussed together with future challenges and opportunities."
+  }
+ ],
+ "\"DNA origami\" AND edge AND strain AND seam": [
+  {
+   "id": "34172734",
+   "title": "Proton gradients from light-harvesting E. coli control DNA assemblies for synthetic cells.",
+   "year": "2021",
+   "oa": "Y",
+   "pmcid": "PMC8233306",
+   "abstract": "Bottom-up and top-down approaches to synthetic biology each employ distinct methodologies with the common aim to harness living systems. Here, we realize a strategic merger of both approaches to convert light into proton gradients for the actuation of synthetic cellular systems. We genetically engineer E. coli to overexpress the light-driven inward-directed proton pump xenorhodopsin and encapsulate them in artificial cell-sized compartments. Exposing the compartments to light-dark cycles, we reversibly switch the pH by almost one pH unit and employ these pH gradients to trigger the attachment of DNA structures to the compartment periphery. For this purpose, a DNA triplex motif serves as a nanomechanical switch responding to the pH-trigger of the E. coli. When DNA origami plates are modified with the pH-sensitive triplex motif, the proton-pumping E. coli can trigger their attachment to giant unilamellar lipid vesicles (GUVs) upon illumination. A DNA cortex is formed upon DNA origami polymerization, which sculpts and deforms the GUVs. We foresee that the combination of bottom-up and top down approaches is an efficient way to engineer synthetic cells."
+  },
+  {
+   "id": "39359737",
+   "title": "DNA Origami Design: A How-To Tutorial.",
+   "year": "2021",
+   "oa": "Y",
+   "pmcid": "PMC11419732",
+   "abstract": ""
+  },
+  {
+   "id": "36849548",
+   "title": "Structure, folding and flexibility of co-transcriptional RNA origami.",
+   "year": "2023",
+   "oa": "N",
+   "pmcid": "PMC10566746",
+   "abstract": "RNA origami is a method for designing RNA nanostructures that can self-assemble through co-transcriptional folding with applications in nanomedicine and synthetic biology. However, to advance the method further, an improved understanding of RNA structural properties and folding principles is required. Here we use cryogenic electron microscopy to study RNA origami sheets and bundles at sub-nanometre resolution revealing structural parameters of kissing-loop and crossover motifs, which are used to improve designs. In RNA bundle designs, we discover a kinetic folding trap that forms during folding and is only released after 10\u2009h. Exploration of the conformational landscape of several RNA designs reveal the flexibility of helices and structural motifs. Finally, sheets and bundles are combined to construct a multidomain satellite shape, which is characterized by individual-particle cryo-electron tomography to reveal the domain flexibility. Together, the study provides a structural basis for future improvements to the design cycle of genetically encoded RNA nanodevices."
+  },
+  {
+   "id": "40969391",
+   "title": "Emerging trends in the fabrication and applications of plant virus-gold nanoparticle hybrids: A comprehensive review.",
+   "year": "2025",
+   "oa": "Y",
+   "pmcid": "PMC12441691",
+   "abstract": "Plant viruses exhibit a diverse range of morphologies, including rod-shaped and icosahedral forms. Many of these viruses are detected and treated by the plasmonic nanoparticles of both silver and gold. In recent years, there has been an increasing interest in the use of these viruses as bio-templates for the synthesis of biohybrid materials using plasmonic nanomaterials, particularly gold nanoparticles (AuNPs). This approach aims to explore the unique properties of these Nano-hybrids to focus their applications on biomedicine, catalysis, and biosensing. This review focuses on various synthesis methods of these nanohybrids. Special attention is given to how virus morphology, nanoparticle shape, and surface chemistry affect the synthesis and stability of these nanohybrids. Additionally, the influence of genetic modifications to coat proteins is highlighted as a means to enhance nanoparticle binding and selectivity. Furthermore, the review discusses the prospective benefits and future directions for research on virus-based nanohybrids."
+  },
+  {
+   "id": "33972754",
+   "title": "RNA origami design tools enable cotranscriptional folding of kilobase-sized nanoscaffolds.",
+   "year": "2021",
+   "oa": "Y",
+   "pmcid": "PMC7610888",
+   "abstract": "RNA origami is a framework for the modular design of nanoscaffolds that can be folded from a single strand of RNA and used to organize molecular components with nanoscale precision. The design of genetically expressible RNA origami, which must fold cotranscriptionally, requires modelling and design tools that simultaneously consider thermodynamics, the folding pathway, sequence constraints and pseudoknot optimization. Here, we describe RNA Origami Automated Design software (ROAD), which builds origami models from a library of structural modules, identifies potential folding barriers and designs optimized sequences. Using ROAD, we extend the scale and functional diversity of RNA scaffolds, creating 32 designs of up to 2,360 nucleotides, five that scaffold two proteins, and seven that scaffold two small molecules at precise distances. Micrographic and chromatographic comparisons of optimized and non-optimized structures validate that our principles for strand routing and sequence design substantially improve yield. By providing efficient design of RNA origami, ROAD may simplify the construction of custom RNA scaffolds for nanomedicine and synthetic biology."
+  },
+  {
+   "id": "21594298",
+   "title": "DNA origami: a quantum leap for self-assembly of complex structures.",
+   "year": "2011",
+   "oa": "N",
+   "pmcid": "PMC3328352",
+   "abstract": "The spatially controlled positioning of functional materials by self-assembly is one of the fundamental visions of nanotechnology. Major steps towards this goal have been achieved using DNA as a programmable building block. This tutorial review will focus on one of the most promising methods: DNA origami. The basic design principles, organization of a variety of functional materials and recent implementation of DNA robotics are discussed together with future challenges and opportunities."
+  },
+  {
+   "id": "33893235",
+   "title": "A nanobody toolbox targeting dimeric coiled-coil modules for functionalization of designed protein origami structures.",
+   "year": "2021",
+   "oa": "Y",
+   "pmcid": "PMC8092592",
+   "abstract": "Coiled-coil (CC) dimers are widely used in protein design because of their modularity and well-understood sequence-structure relationship. In CC protein origami design, a polypeptide chain is assembled from a defined sequence of CC building segments that determine the self-assembly of protein cages into polyhedral shapes, such as the tetrahedron, triangular prism, or four-sided pyramid. However, a targeted functionalization of the CC modules could significantly expand the versatility of protein origami scaffolds. Here, we describe a panel of single-chain camelid antibodies (nanobodies) directed against different CC modules of a de novo designed protein origami tetrahedron. We show that these nanobodies are able to recognize the same CC modules in different polyhedral contexts, such as isolated CC dimers, tetrahedra, triangular prisms, or trigonal bipyramids, thereby extending the ability to functionalize polyhedra with nanobodies in a desired stoichiometry. Crystal structures of five nanobody-CC complexes in combination with small-angle X-ray scattering show binding interactions between nanobodies and CC dimers forming the edges of a tetrahedron with the nanobody entering the tetra"
+  },
+  {
+   "id": "PMC7080123",
+   "title": "Abstracts",
+   "year": "2017",
+   "oa": "Y",
+   "pmcid": "PMC7080123",
+   "abstract": ""
+  },
+  {
+   "id": "PMC8251645",
+   "title": "Posters",
+   "year": "2021",
+   "oa": "N",
+   "pmcid": "PMC8251645",
+   "abstract": ""
+  },
+  {
+   "id": "PMC7163937",
+   "title": "Poster Sessions",
+   "year": "2014",
+   "oa": "Y",
+   "pmcid": "PMC7163937",
+   "abstract": ""
+  }
+ ],
+ "oxDNA AND \"DNA origami\" AND strain AND crossover": [
+  {
+   "id": "42207717",
+   "title": "Tools For Building Artificial Biological Nanostructures.",
+   "year": "2026",
+   "oa": "Y",
+   "pmcid": "PMC13255533",
+   "abstract": "Biological nanostructures and nanomachines encompass a wide range of natural assemblies from the smallest prokaryotes to viruses, enzymes, and subcellular compartments. Their capabilities are impressive, including replication, locomotion, and catalysis. To be able to design and produce modified or wholly artificial versions of such systems using biological molecules (proteins, nucleic acids, and lipids) is a long-term goal of engineering biology. However, their complexity makes the design and prediction of their properties challenging, while production, purification, and testing can also be difficult. In recent years, new approaches have been developed to facilitate these processes. Here, we review tools for designing biological molecules, highlighting their capabilities and giving examples of their successful application. Finally, we present possible capabilities of future tools and challenges to their development."
+  },
+  {
+   "id": "41440300",
+   "title": "Comprehensive Review on DNA Hydrogels and DNA Origami-Enabled Wearable and Implantable Biosensors.",
+   "year": "2025",
+   "oa": "Y",
+   "pmcid": "PMC12730752",
+   "abstract": "DNA nanoparticles have emerged as potent platforms for wearable and implantable biosensors owing to their molecular programmability, biocompatibility, and structural precision. This study delineates two principal categories of DNA-based sensing materials, DNA hydrogels and DNA origami, and encapsulates their fabrication methodologies, sensing mechanisms, and applications at the device level. DNA hydrogels serve as pliable, aqueous signal transduction mediums exhibiting stimulus-responsive characteristics, facilitating applications such as sweat-based cytokine detection with limits of detection as low as pg\u00b7mL<sup>-1</sup> and microneedle-integrated hydrogels for femtomolar miRNA sensing. DNA origami offers nanometer-scale spatial precision that improves electrochemical, optical, and plasmonic biosensing, as shown by origami-facilitated luminous nucleic acid detection and ultrasensitive circulating tumor DNA assays with fM-level sensitivity. Emerging integration technologies, such as flexible electronics, microfluidics, and wireless readout, are examined, alongside prospective developments in AI-assisted DNA design and materials produced from synthetic biology. This study offers a t"
+  },
+  {
+   "id": "36563147",
+   "title": "Automated design of 3D DNA origami with non-rasterized 2D curvature.",
+   "year": "2022",
+   "oa": "Y",
+   "pmcid": "PMC9788767",
+   "abstract": "Improving the precision and function of encapsulating three-dimensional (3D) DNA nanostructures via curved geometries could have transformative impacts on areas such as molecular transport, drug delivery, and nanofabrication. However, the addition of non-rasterized curvature escalates design complexity without algorithmic regularity, and these challenges have limited the ad hoc development and usage of previously unknown shapes. In this work, we develop and automate the application of a set of previously unknown design principles that now includes a multilayer design for closed and curved DNA nanostructures to resolve past obstacles in shape selection, yield, mechanical rigidity, and accessibility. We design, analyze, and experimentally demonstrate a set of diverse 3D curved nanoarchitectures, showing planar asymmetry and examining partial multilayer designs. Our automated design tool implements a combined algorithmic and numerical approximation strategy for scaffold routing and crossover placement, which may enable wider applications of general DNA nanostructure design for nonregular or oblique shapes."
+  },
+  {
+   "id": "41668533",
+   "title": "Design and Characterization of DX-Tile DNA Nanostar-Based Hydrogels.",
+   "year": "2026",
+   "oa": "Y",
+   "pmcid": "PMC13042906",
+   "abstract": "Pure deoxyribonucleic acid (DNA) hydrogels synthesized via the hybridization of multi-arm DNA tiles (DNA nanostars) are uniquely programmable and functionalizable biomaterials, suitable for applications ranging from biosensing to cell-free protein production and soft tissue engineering. However, the full potential offered by DNA molecules in terms of design flexibility and functionalization has not yet been leveraged for pure DNA hydrogels, thus reducing their versatility and broader use. In this study, we introduce multi-arm double-crossover (DX)-tile motifs, often used in wireframe DNA nanoparticles assembly, to enable greater control over the hydrogel's mechanical properties and facilitate functionalization. Specifically, we demonstrate that modifying structural design parameters, such as the arm geometry, length, valency, and linker design, allows for fine control of the elastic modulus and viscoelastic properties of the hydrogels. We also show that their functionalization can be performed without compromising the hydrogels' physical properties and exhibit enhanced mechanical strength and tunable properties, compared to simple duplex-based DNA hydrogels. Furthermore, these DNA "
+  },
+  {
+   "id": "37538812",
+   "title": "Mechanics of dynamic and deformable DNA nanostructures.",
+   "year": "2023",
+   "oa": "Y",
+   "pmcid": "PMC10395309",
+   "abstract": "In DNA nanotechnology, DNA molecules are designed, engineered, and assembled into arbitrary-shaped architectures with predesigned functions. Static DNA assemblies often have delicate designs with structural rigidity to overcome thermal fluctuations. Dynamic structures reconfigure in response to external cues, which have been explored to create functional nanodevices for environmental sensing and other applications. However, the precise control of reconfiguration dynamics has been a challenge due partly to flexible single-stranded DNA connections between moving parts. Deformable structures are special dynamic constructs with deformation on double-stranded parts and single-stranded hinges during transformation. These structures often have better control in programmed deformation. However, related deformability and mechanics including transformation mechanisms are not well understood or documented. In this review, we summarize the development of dynamic and deformable DNA nanostructures from a mechanical perspective. We present deformation mechanisms such as single-stranded DNA hinges with lock-and-release pairs, jack edges, helicity modulation, and external loading. Theoretical and c"
+  },
+  {
+   "id": "35756857",
+   "title": "Design Approaches and Computational Tools for DNA Nanostructures.",
+   "year": "2021",
+   "oa": "N",
+   "pmcid": "PMC9232119",
+   "abstract": "Designing a structure in nanoscale with desired shape and properties has been enabled by structural DNA nanotechnology. Design strategies in this research field have evolved to interpret various aspects of increasingly more complex nanoscale assembly and to realize molecular-level functionality by exploring static to dynamic characteristics of the target structure. Computational tools have naturally been of significant interest as they are essential to achieve a fine control over both shape and physicochemical properties of the structure. Here, we review the basic design principles of structural DNA nanotechnology together with its computational analysis and design tools."
+  },
+  {
+   "id": "35580231",
+   "title": "Probing the Mechanical Properties of DNA Nanostructures with Metadynamics.",
+   "year": "2022",
+   "oa": "Y",
+   "pmcid": "PMC9245350",
+   "abstract": "Molecular dynamics simulations are often used to provide feedback in the design workflow of DNA nanostructures. However, even with coarse-grained models, the convergence of distributions from unbiased simulation is slow, limiting applications to equilibrium structural properties. Given the increasing interest in dynamic, reconfigurable, and deformable devices, methods that enable efficient quantification of large ranges of motion, conformational transitions, and mechanical deformation are critically needed. Metadynamics is an automated biasing technique that enables the rapid acquisition of molecular conformational distributions by flattening free energy landscapes. Here we leveraged this approach to sample the free energy landscapes of DNA nanostructures whose unbiased dynamics are nonergodic, including bistable Holliday junctions and part of a bistable DNA origami structure. Taking a DNA origami-compliant joint as a case study, we further demonstrate that metadynamics can predict the mechanical response of a full DNA origami device to an applied force, showing good agreement with experiments. Our results exemplify the efficient computation of free energy landscapes and force resp"
+  },
+  {
+   "id": "38055928",
+   "title": "CytoDirect: A Nucleic Acid Nanodevice for Specific and Efficient Delivery of Functional Payloads to the Cytoplasm.",
+   "year": "2023",
+   "oa": "N",
+   "pmcid": "PMC10789493",
+   "abstract": "Direct and efficient delivery of functional payloads such as chemotherapy drugs, siRNA, or small-molecule inhibitors into the cytoplasm, bypassing the endo/lysosomal trapping, is a challenging task for intracellular medicine. Here, we take advantage of the programmability of DNA nanotechnology to develop a DNA nanodevice called CytoDirect, which incorporates disulfide units and human epidermal growth factor receptor 2 (HER2) affibodies into a DNA origami nanostructure, enabling rapid cytosolic uptake into targeted cancer cells and deep tissue penetration. We further demonstrated that therapeutic oligonucleotides and small-molecule chemotherapy drugs can be easily delivered by CytoDirect and showed notable effects on gene knockdown and cell apoptosis, respectively. This study demonstrates the synergistic effect of disulfide and HER2 affibody modifications on the rapid cytosolic delivery of DNA origami and its payloads to targeted cells and deep tissues, thereby expanding the delivery capabilities of DNA nanostructures in a new direction for disease treatment."
+  },
+  {
+   "id": "36178116",
+   "title": "Algorithmic Design of 3D Wireframe RNA Polyhedra.",
+   "year": "2022",
+   "oa": "Y",
+   "pmcid": "PMC9620399",
+   "abstract": "We address the problem of de novo design and synthesis of nucleic acid nanostructures, a challenge that has been considered in the area of DNA nanotechnology since the 1980s and more recently in the area of RNA nanotechnology. Toward this goal, we introduce a general algorithmic design process and software pipeline for rendering 3D wireframe polyhedral nanostructures in single-stranded RNA. To initiate the pipeline, the user creates a model of the desired polyhedron using standard 3D graphic design software. As its output, the pipeline produces an RNA nucleotide sequence whose corresponding RNA primary structure can be transcribed from a DNA template and folded in the laboratory. As case examples, we design and characterize experimentally three 3D RNA nanostructures: a tetrahedron, a triangular bipyramid, and a triangular prism. The design software is openly available and also provides an export of the targeted 3D structure into the <i>oxDNA</i> molecular dynamics simulator for easy simulation and visualization."
+  },
+  {
+   "id": "31728524",
+   "title": "Design and synthesis of pleated DNA origami nanotubes with adjustable diameters.",
+   "year": "2019",
+   "oa": "Y",
+   "pmcid": "PMC7145641",
+   "abstract": "DNA origami allows for the synthesis of nanoscale structures and machines with nanometre precision and high yields. Tubular DNA origami nanostructures are particularly useful because their geometry facilitates a variety of applications including nanoparticle encapsulation, the construction of artificial membrane pores and as structural scaffolds that can uniquely spatially arrange nanoparticles in circular, linear and helical arrays. Here we report a system of parametrization for the design of radially symmetric DNA origami nanotubes with adjustable diameter, length, crossover density, pleat angle and chirality. The system is implemented into a computational algorithm that provides a practical means to navigate the complex geometry of DNA origami nanotube design. We apply this in the design, synthesis and characterization of novel DNA origami nanotubes. These include structures with pleated walls where the same number of duplexes can form nanotubes with different diameters, and to vary the diameter within the same structure. We also construct nanotubes that can be reconfigured into different chiral shapes. Finally, we explore the effect of strain on the local and global geometry of"
+  },
+  {
+   "id": "36004779",
+   "title": "The wending rhombus: Self-assembling 3D DNA crystals.",
+   "year": "2022",
+   "oa": "N",
+   "pmcid": "PMC9808540",
+   "abstract": "In this perspective, we provide a summary of recent developments in self-assembling three-dimensional (3D) DNA crystals. Starting from the inception of this subfield, we describe the various advancements in structure that have led to an increase in the diversity of macromolecular crystal motifs formed through self-assembly, and we further comment on the future directions of the field, which exploit noncanonical base pairing interactions beyond Watson-Crick. We then survey the current applications of self-assembling 3D DNA crystals in reversibly active nanodevices and materials engineering and provide an outlook on the direction researchers are taking these structures. Finally, we compare 3D DNA crystals with DNA origami and suggest how these distinct subfields might work together to enhance biomolecule structure solution, nanotechnological motifs, and their applications."
+  },
+  {
+   "id": "32528637",
+   "title": "<i>In silico</i> modelling of DNA nanostructures.",
+   "year": "2020",
+   "oa": "Y",
+   "pmcid": "PMC7276390",
+   "abstract": "The rise of material science and nanotechnology created a demand for a next generation of materials and procedures that can transcend the shaping of simple geometrical nano-objects. As a legacy of the technological progress made in the Human Genome Project, DNA was identified as a possible candidate. The low production costs of custom-made DNA molecules and the possibilities concerning the structural manipulation triggered significant advances in the field of DNA nanotechnology in the last decade. To facilitate the development of new DNA nanostructures and provide users an insight in less intuitive complexities and physical properties of the DNA folding, several <i>in silico</i> modelling tools were published. Here, we summarize the main characteristics of these specialised tools, describe the most common design principles and discuss tools and strategies used to predict the properties of DNA nanostructures."
+  },
+  {
+   "id": "33920889",
+   "title": "The Art of Designing DNA Nanostructures with CAD Software.",
+   "year": "2021",
+   "oa": "Y",
+   "pmcid": "PMC8071251",
+   "abstract": "Since the arrival of DNA nanotechnology nearly 40 years ago, the field has progressed from its beginnings of envisioning rather simple DNA structures having a branched, multi-strand architecture into creating beautifully complex structures comprising hundreds or even thousands of unique strands, with the possibility to exactly control the positions down to the molecular level. While the earliest construction methodologies, such as simple Holliday junctions or tiles, could reasonably be designed on pen and paper in a short amount of time, the advent of complex techniques, such as DNA origami or DNA bricks, require software to reduce the time required and propensity for human error within the design process. Where available, readily accessible design software catalyzes our ability to bring techniques to researchers in diverse fields and it has helped to speed the penetration of methods, such as DNA origami, into a wide range of applications from biomedicine to photonics. Here, we review the historical and current state of CAD software to enable a variety of methods that are fundamental to using structural DNA technology. Beginning with the first tools for predicting sequence-based se"
+  },
+  {
+   "id": "36181269",
+   "title": "Mechanical deformation behaviors and structural properties of ligated DNA crystals.",
+   "year": "2022",
+   "oa": "N",
+   "pmcid": "PMC9675025",
+   "abstract": "DNA self-assembly has emerged as a powerful strategy for constructing complex nanostructures. While the mechanics of individual DNA strands have been studied extensively, the deformation behaviors and structural properties of self-assembled architectures are not well understood. This is partly due to the small dimensions and limited experimental methods available. DNA crystals are macroscopic crystalline structures assembled from nanoscale motifs via sticky-end association. The large DNA constructs may thus be an ideal platform to study structural mechanics. Here, we investigate the fundamental mechanical properties and behaviors of ligated DNA crystals made of tensegrity triangular motifs. We perform coarse-grained molecular dynamics simulations and confirm the results with nanoindentation experiments using atomic force microscopy. We observe various deformation modes, including untension, linear elasticity, duplex dissociation, and single-stranded component stretch. We find that the mechanical properties of a DNA architecture are correlated with those of its components. However, the structure shows complex behaviors which may not be predicted by components alone and the architect"
+  },
+  {
+   "id": "37000880",
+   "title": "Prime factorization via localized tile assembly in a DNA origami framework.",
+   "year": "2023",
+   "oa": "Y",
+   "pmcid": "PMC10065441",
+   "abstract": "Modern cybersecurity built on public-key cryptosystems like Rivest-Shamir-Adleman is compromised upon finding solutions to the prime factorization. Nevertheless, solving the prime factorization problem, given a large <i>N</i>, remains computationally challenging. Here, we design DNA origami frameworks (DOFs) to direct localized assembly of double-crossover (DX) tiles for solving prime factorization with a model consisting of the computing, decision-making, and reporting motifs. The model implementation is based on the sequential assembly of different DX tiles in the DOF cavity that carries overhangs encoding the prime and composite integers. The primes are multiplied and then verified with the composite, and the result is visualized under atomic force microscopy via the presence (success) or absence (failure) of biotin-streptavidin labels on the reporting DX tile. The factorization of semiprimes 6 and 15 is realized with this DOF-based demonstration. Given the potential of massively parallel processing ability of DNA, this strategy opens an avenue to solve complex mathematical puzzles like prime factoring with molecular computing."
+  }
+ ],
+ "\"DNA origami\" AND \"internal stress\"": [
+  {
+   "id": "41077896",
+   "title": "Breaking of the Up-Down Symmetry of DNA Origami on a Solid Substrate.",
+   "year": "2025",
+   "oa": "Y",
+   "pmcid": "PMC12643347",
+   "abstract": "Controlling the surface orientation of DNA origami nanostructures (DON) is crucial for applications in nanotechnology and materials science. While previous work utilized various DON modifications, simple methods for controlling their landing orientation remain scarce. Here, we demonstrate a straightforward approach to control the adsorption orientation of chiral double-L (CDL) DON on mica by tuning magnesium ion (Mg<sup>2</sup>\u207a) concentration and exploiting global shape distortions. Using atomic force microscopy (AFM), we analyzed the resulting distribution of the mirror-image orientations, referred to as S and Z orientations, at both buffer/mica and air/mica interfaces and identified conditions resulting in homogenous CDL orientation of 100% S. These results demonstrate how DON conformation and ionic environments influence DON orientation, offering insights for precise nanostructure deposition."
+  },
+  {
+   "id": "41914911",
+   "title": "Advances in Strategies for Colloidal Self-Assembly.",
+   "year": "2026",
+   "oa": "Y",
+   "pmcid": "PMC13107391",
+   "abstract": "The colloidal self-assembly organizes micro/nano-sized building blocks into large objects with periodic, quasi-periodic, or disordered structures. The obtained entities are functionalizable with smart building blocks and matrices, as well as the nanoscale symmetry, orientation, phase, and dimension of the structures. Various functionalizations of colloidal self-assemblies promise their applications in many areas, such as energy, microrobots, biomedicine, and communications. Given the importance, the methodology underlying colloidal self-assembly is highly required to be systematically analyzed. This review aims to comprehensively summarize advances in the techniques of colloidal self-assembly. For each strategy, we discuss the resultant colloidal structures, advantages, and limitations. The benefits of the new assemblies over the existing ones are also highlighted. Diverse driving forces and general characterization approaches are briefly introduced to help readers understand the self-assembly techniques. The review concludes with a summary of the challenges in colloidal self-assembly and a perspective on further advances in this field."
+  },
+  {
+   "id": "34067324",
+   "title": "Conformational Control of DNA Origami by DNA Oligomers, Intercalators and UV Light.",
+   "year": "2021",
+   "oa": "Y",
+   "pmcid": "PMC8163164",
+   "abstract": "DNA origami has garnered great attention due to its excellent programmability and precision. It offers a powerful means to create complex nanostructures which may not be possible by other methods. The macromolecular structures may be used as static templates for arranging proteins and other molecules. They are also capable of undergoing structural transformation in response to external signals, which may be exploited for sensing and actuation at the nanoscale. Such on-demand reconfigurations are executed mostly by DNA oligomers through base-pairing and/or strand displacement, demonstrating drastic shape changes between two different states, for example, open and close. Recent studies have developed new mechanisms to modulate the origami conformation in a controllable, progressive manner. Here we present several methods for conformational control of DNA origami nanostructures including chemical adducts and UV light as well as widely applied DNA oligomers. The detailed methods should be useful for beginners in the field of DNA nanotechnology."
+  },
+  {
+   "id": "34850119",
+   "title": "Modulating the chemo-mechanical response of structured DNA assemblies through binding molecules.",
+   "year": "2021",
+   "oa": "Y",
+   "pmcid": "PMC8643692",
+   "abstract": "Recent advances in DNA nanotechnology led the fabrication and utilization of various DNA assemblies, but the development of a method to control their global shapes and mechanical flexibilities with high efficiency and repeatability is one of the remaining challenges for the realization of the molecular machines with on-demand functionalities. DNA-binding molecules with intercalation and groove binding modes are known to induce the perturbation on the geometrical and mechanical characteristics of DNA at the strand level, which might be effective in structured DNA assemblies as well. Here, we demonstrate that the chemo-mechanical response of DNA strands with binding ligands can change the global shape and stiffness of DNA origami nanostructures, thereby enabling the systematic modulation of them by selecting a proper ligand and its concentration. Multiple DNA-binding drugs and fluorophores were applied to straight and curved DNA origami bundles, which demonstrated a fast, recoverable, and controllable alteration of the bending persistence length and the radius of curvature of DNA nanostructures. This chemo-mechanical modulation of DNA nanostructures would provide a powerful tool for "
+  },
+  {
+   "id": "33920889",
+   "title": "The Art of Designing DNA Nanostructures with CAD Software.",
+   "year": "2021",
+   "oa": "Y",
+   "pmcid": "PMC8071251",
+   "abstract": "Since the arrival of DNA nanotechnology nearly 40 years ago, the field has progressed from its beginnings of envisioning rather simple DNA structures having a branched, multi-strand architecture into creating beautifully complex structures comprising hundreds or even thousands of unique strands, with the possibility to exactly control the positions down to the molecular level. While the earliest construction methodologies, such as simple Holliday junctions or tiles, could reasonably be designed on pen and paper in a short amount of time, the advent of complex techniques, such as DNA origami or DNA bricks, require software to reduce the time required and propensity for human error within the design process. Where available, readily accessible design software catalyzes our ability to bring techniques to researchers in diverse fields and it has helped to speed the penetration of methods, such as DNA origami, into a wide range of applications from biomedicine to photonics. Here, we review the historical and current state of CAD software to enable a variety of methods that are fundamental to using structural DNA technology. Beginning with the first tools for predicting sequence-based se"
+  },
+  {
+   "id": "39359737",
+   "title": "DNA Origami Design: A How-To Tutorial.",
+   "year": "2021",
+   "oa": "Y",
+   "pmcid": "PMC11419732",
+   "abstract": ""
+  },
+  {
+   "id": "39417620",
+   "title": "Dynamic Surface Interactions Enable the Self-Assembly of Perfect Supramolecular Crystals.",
+   "year": "2024",
+   "oa": "Y",
+   "pmcid": "PMC11533158",
+   "abstract": "Supramolecular crystals arise from noncovalent interactions between macromonomers and allow for the engineering of dynamic functional materials. For two-dimensional (2D) crystals, the substrate surface can induce the formation of new polymorphs not available in solution, adding a layer of complexity to the supramolecular self-assembly process. Despite extensive studies on the 2D self-assembly of supramolecular crystals, unknowns remain regarding substrate-monomer interactions and the effects on network self-assembly and defect repair. Here, we used a DNA-mica model system to modulate and understand the impact of substrate-monomer interactions on the crystalline order. We controlled the surface interactions by tuning the Mg<sup>2+</sup> concentration, varying the divalent cation type, and adjusting the relative concentration of divalent and monovalent cations. The competition between monovalent and divalent cations yielded nearly defect-free crystals with minimal polygon defects. These findings highlight the critical role of surface interactions in achieving high crystalline order, which is essential for optimizing the efficiency and performance of supramolecular functional nanomate"
+  },
+  {
+   "id": "36223466",
+   "title": "Actuating tension-loaded DNA clamps drives membrane tubulation.",
+   "year": "2022",
+   "oa": "Y",
+   "pmcid": "PMC9555772",
+   "abstract": "Membrane dynamics in living organisms can arise from proteins adhering to, assembling on, and exerting force on cell membranes. Programmable synthetic materials, such as self-assembled DNA nanostructures, offer the capability to drive membrane-remodeling events that resemble protein-mediated dynamics but with user-defined outcomes. An illustrative example is the tubular deformation of liposomes by DNA nanostructures with purposely designed shapes, surface modifications, and self-assembling properties. However, stimulus-responsive membrane tubulation mediated by DNA reconfiguration remains challenging. Here, we present the triggered formation of membrane tubes in response to specific DNA signals that actuate membrane-bound DNA clamps from an open state to various predefined closed states, releasing prestored energy to activate membrane deformation. We show that the timing and efficiency of vesicle tubulation, as well as the membrane tube widths, are modulated by the conformational change of DNA clamps, marking a solid step toward spatiotemporal control of membrane dynamics in an artificial system."
+  },
+  {
+   "id": "30280371",
+   "title": "Switchable DNA-origami nanostructures that respond to their environment and their applications.",
+   "year": "2018",
+   "oa": "N",
+   "pmcid": "PMC6233340",
+   "abstract": "Structural DNA nanotechnology, in which Watson-Crick base pairing drives the formation of self-assembling nanostructures, has rapidly expanded in complexity and functionality since its inception in 1981. DNA nanostructures can now be made in arbitrary three-dimensional shapes and used to scaffold many other functional molecules such as proteins, metallic nanoparticles, polymers, fluorescent dyes and small molecules. In parallel, the field of dynamic DNA nanotechnology has built DNA circuits, motors and switches. More recently, these two areas have begun to merge-to produce switchable DNA nanostructures, which change state in response to their environment. In this review, we summarise switchable DNA nanostructures into two major classes based on response type: molecular actuation triggered by local chemical changes such as pH or concentration and external actuation driven by light, electric or magnetic fields. While molecular actuation has been well explored, external actuation of DNA nanostructures is a relatively new area that allows for the remote control of nanoscale devices. We discuss recent applications for DNA nanostructures where switching is used to perform specific functi"
+  },
+  {
+   "id": "28094518",
+   "title": "Conformational Effects of UV Light on DNA Origami.",
+   "year": "2017",
+   "oa": "N",
+   "pmcid": null,
+   "abstract": "The responses of DNA origami conformation to UV radiation of different wavelengths and doses are investigated. Short- and medium-wavelength UV light can cause photo-lesions in DNA origami. At moderate doses, the lesions do not cause any visible defects in the origami, nor do they significantly affect the hybridization capability. Instead, they help relieve the internal stress in the origami structure and restore it to the designed conformation. At high doses, staple dissociation increases which causes structural disintegration. Long-wavelength UV does not show any effect on origami conformation by itself. We show that this UV range can be used in conjunction with photoactive molecules for photo-reconfiguration, while avoiding any damage to the DNA structures."
+  },
+  {
+   "id": "30894525",
+   "title": "Waveguide-PAINT offers an open platform for large field-of-view super-resolution imaging.",
+   "year": "2019",
+   "oa": "Y",
+   "pmcid": "PMC6427008",
+   "abstract": "Super-resolution microscopies based on the localization of single molecules have been widely adopted due to their demonstrated performance and their accessibility resulting from open software and simple hardware. The PAINT method for localization microscopy offers improved resolution over photoswitching methods, since it is less prone to sparse sampling of structures and provides higher localization precision. Here, we show that waveguides enable increased throughput and data quality for PAINT, by generating a highly uniform ~100\u2009\u00d7\u20092000\u2009\u00b5m<sup>2</sup> area evanescent field for TIRF illumination. To achieve this, we designed and fabricated waveguides optimized for efficient light coupling and propagation, incorporating a carefully engineered input facet and taper. We also developed a stable, low-cost microscope and 3D-printable waveguide chip holder for easy alignment and imaging. We demonstrate the capabilities of our open platform by using DNA-PAINT to image multiple whole cells or hundreds of origami structures in a single field of view."
+  },
+  {
+   "id": "27057775",
+   "title": "Dynamic and Progressive Control of DNA Origami Conformation by Modulating DNA Helicity with Chemical Adducts.",
+   "year": "2016",
+   "oa": "N",
+   "pmcid": null,
+   "abstract": "DNA origami has received enormous attention for its ability to program complex nanostructures with a few nanometer precision. Dynamic origami structures that change conformation in response to environmental cues or external signals hold great promises in sensing and actuation at the nanoscale. The reconfiguration mechanism of existing dynamic origami structures is mostly limited to single-stranded hinges and relies almost exclusively on DNA hybridization or strand displacement. Here, we show an alternative approach by demonstrating on-demand conformation changes with DNA-binding molecules, which intercalate between base pairs and unwind DNA double helices. The unwinding effect modulates the helicity mismatch in DNA origami, which significantly influences the internal stress and the global conformation of the origami structure. We demonstrate the switching of a polymerized origami nanoribbon between different twisting states and a well-constrained torsional deformation in a monomeric origami shaft. The structural transformation is shown to be reversible, and binding isotherms confirm the reconfiguration mechanism. This approach provides a rapid and reversible means to change DNA ori"
+  },
+  {
+   "id": "34235181",
+   "title": "A Primer on the oxDNA Model of DNA: When to Use it, How to Simulate it and How to Interpret the Results.",
+   "year": "2021",
+   "oa": "Y",
+   "pmcid": "PMC8256390",
+   "abstract": "The oxDNA model of Deoxyribonucleic acid has been applied widely to systems in biology, biophysics and nanotechnology. It is currently available via two independent open source packages. Here we present a set of clearly documented exemplar simulations that simultaneously provide both an introduction to simulating the model, and a review of the model's fundamental properties. We outline how simulation results can be interpreted in terms of-and feed into our understanding of-less detailed models that operate at larger length scales, and provide guidance on whether simulating a system with oxDNA is worthwhile."
+  },
+  {
+   "id": "26840503",
+   "title": "DNA Origami: Folded DNA-Nanodevices That Can Direct and Interpret Cell Behavior.",
+   "year": "2016",
+   "oa": "N",
+   "pmcid": "PMC4945425",
+   "abstract": "DNA origami is a DNA-based nanotechnology that utilizes programmed combinations of short complementary oligonucleotides to fold a large single strand of DNA into precise 2D and 3D shapes. The exquisite nanoscale shape control of this inherently biocompatible material is combined with the potential to spatially address the origami structures with diverse cargoes including drugs, antibodies, nucleic acid sequences, small molecules, and inorganic particles. This programmable flexibility enables the fabrication of precise nanoscale devices that have already shown great potential for biomedical applications such as: drug delivery, biosensing, and synthetic nanopore formation. Here, the advances in the DNA-origami field since its inception several years ago are reviewed with a focus on how these DNA-nanodevices can be designed to interact with cells to direct or probe their behavior."
+  },
+  {
+   "id": "37048731",
+   "title": "Organic Nanodelivery Systems as a New Platform in the Management of Breast Cancer: A Comprehensive Review from Preclinical to Clinical Studies.",
+   "year": "2023",
+   "oa": "Y",
+   "pmcid": "PMC10095028",
+   "abstract": "Breast cancer accounts for approximately 25% of cancer cases and 16.5% of cancer deaths in women, and the World Health Organization predicts that the number of new cases will increase by almost 70% over the next two decades, mainly due to an ageing population. Effective diagnostic and treatment strategies are, therefore, urgently required for improving cure rates among patients since current therapeutic modalities have many limitations and side effects. Nanomedicine is evolving as a promising approach for cancer management, including breast cancer, and various types of organic and inorganic nanomaterials have been investigated for their role in breast cancer diagnosis and treatment. Following an overview on breast cancer characteristics and pathogenesis and challenges of the current treatment strategies, the therapeutic potential of biocompatible organic-based nanoparticles such as liposomes and polymeric micelles that have been tested in breast cancer models are reviewed. The efficacies of different drug delivery and targeting strategies are documented, ranging from synthetic to cell-derived nanoformulations together with a summary of the interaction of nanoparticles with external"
+  }
+ ],
+ "\"molecular dynamics\" AND \"DNA origami\" AND \"twist\" AND \"crossover\" AND \"angle\"": [
+  {
+   "id": "PPR1217220",
+   "title": "Programmable Edge-to-Edge Assembly of RNA Nanostructures",
+   "year": "2026",
+   "oa": "Y",
+   "pmcid": null,
+   "abstract": "Constructing complex three-dimensional RNA nanostructures requires precise molecular connectors for controlled self-assembly. Existing RNA\u2013RNA connectors, such as kissing loops, are restricted to coaxial, end-to-end joining, limiting the range of accessible geometries. Here, we introduce the alpha kissing loop (alphaKL), a compact, sequence-programmable RNA connector that enables edge-to-edge helix association. The alphaKL combines a four-nucleotide kissing loop with minor- and major-groove triplex interactions that pre-organize an  \u03b1 -shaped conformation compatible with co-transcriptional folding. Embedded into RNA origami tiles, alphaKLs drive multivalent assembly into filaments and lattices, visualized at nanoscale resolution by atomic force microscopy. All-atom molecular dynamics simulations reveal that triplex occupancy at each sequence position controls the preferred inter-helical angle. Cooperative backbone contacts progressively rigidify the multi-alphaKL interface beyond what individual motifs achieve alone. By linking helices along their edges rather than their ends, the alphaKL expands the structural design space of programmable RNA nanostructures, unlocking previously i"
+  },
+  {
+   "id": "PPR1221424",
+   "title": "Fluorinated RNA origami enables serum-stable nanodevices for sensing and targeting",
+   "year": "2026",
+   "oa": "Y",
+   "pmcid": null,
+   "abstract": "Chemically modified RNAs with increased stability and reduced immunogenicity have transformed RNA therapeutics. Rational RNA design methods, including RNA origami, seek to further extend RNA medicine and biotechnology by encoding advanced functions such as signalling, targeting, and controlled release within the RNA polymer. However, current design methods lack the ability to integrate chemical modification or predict how it shapes the structure of large RNA assemblies inhibiting its use in RNA therapeutics. Here we demonstrate that 2\u2019-fluoro pyrimidine RNA (FY-RNA) origami structures can be co-transcriptionally folded to generate serum-stable nanodevices. Cryogenic electron microscopy reveals that FY-RNA can alter folding pathways and perturb tertiary motifs, while molecular dynamics simulations show how 2\u2019-fluoro modification affects hydrogen bonding, sugar pucker, and helix-helix interactions. Despite these structural perturbations, fluorogenic aptamers embedded within RNA origami retain partial activity and enable logic-based molecular sensing in human serum. Finally, we use an FY-RNA scaffold to determine the structure of an FY-RNA anti-Spike aptamer bound to the Spike protein"
+  },
+  {
+   "id": "39085236",
+   "title": "Predicting the effect of binding molecules on the shape and mechanical properties of structured DNA assemblies.",
+   "year": "2024",
+   "oa": "Y",
+   "pmcid": "PMC11291742",
+   "abstract": "Chemo-mechanical deformation of structured DNA assemblies driven by DNA-binding ligands has offered promising avenues for biological and therapeutic applications. However, it remains elusive how to effectively model and predict their effects on the deformation and mechanical properties of DNA structures. Here, we present a computational framework for simulating chemo-mechanical change of structured DNA assemblies. We particularly quantify the effects of ethidium bromide (EtBr) intercalation on the geometry and mechanical properties of DNA base-pairs through molecular dynamics simulations and integrated them into finite-element-based structural analysis to predict the shape and properties of DNA objects. The proposed model captures various structural changes induced by EtBr-binding such as shape variation, flexibility modulation, and supercoiling instability. It enables a rational design of structured DNA assemblies with tunable shapes and mechanical properties by binding molecules."
+  },
+  {
+   "id": "37884658",
+   "title": "A DNA turbine powered by a transmembrane potential across a nanopore.",
+   "year": "2024",
+   "oa": "Y",
+   "pmcid": "PMC10950783",
+   "abstract": "Rotary motors play key roles in energy transduction, from macroscale windmills to nanoscale turbines such as ATP synthase in cells. Despite our abilities to construct engines at many scales, developing functional synthetic turbines at the nanoscale has remained challenging. Here, we experimentally demonstrate rationally designed nanoscale DNA origami turbines with three chiral blades. These DNA nanoturbines are 24-27\u2009nm in height and diameter and can utilize transmembrane electrochemical potentials across nanopores to drive DNA bundles into sustained unidirectional rotations of up to 10\u2009revolutions\u2009s<sup>-1</sup>. The rotation direction is set by the designed chirality of the turbine. All-atom molecular dynamics simulations show how hydrodynamic flows drive this turbine. At high salt concentrations, the rotation direction of turbines with the same chirality is reversed, which is explained by a change in the anisotropy of the electrophoretic mobility. Our artificial turbines operate autonomously in physiological conditions, converting energy from naturally abundant electrochemical potentials into mechanical work. The results open new possibilities for engineering active robotics at "
+  },
+  {
+   "id": "38684000",
+   "title": "Engineering tertiary chirality in helical biopolymers.",
+   "year": "2024",
+   "oa": "Y",
+   "pmcid": "PMC11087804",
+   "abstract": "Tertiary chirality describes the handedness of supramolecular assemblies and relies not only on the primary and secondary structures of the building blocks but also on topological driving forces that have been sparsely characterized. Helical biopolymers, especially DNA, have been extensively investigated as they possess intrinsic chirality that determines the optical, mechanical, and physical properties of the ensuing material. Here, we employ the DNA tensegrity triangle as a model system to locate the tipping points in chirality inversion at the tertiary level by X-ray diffraction. We engineer tensegrity triangle crystals with incremental rotational steps between immobile junctions from 3 to 28 base pairs (bp). We construct a mathematical model that accurately predicts and explains the molecular configurations in both this work and previous studies. Our design framework is extendable to other supramolecular assemblies of helical biopolymers and can be used in the design of chiral nanomaterials, optically active molecules, and mesoporous frameworks, all of which are of interest to physical, biological, and chemical nanoscience."
+  },
+  {
+   "id": "40103431",
+   "title": "DNA\u2011Directed Assembly of Photonic Nanomaterials for Diagnostic and Therapeutic Applications.",
+   "year": "2025",
+   "oa": "Y",
+   "pmcid": "PMC12691925",
+   "abstract": "DNA-directed assembly has emerged as a versatile and powerful approach for constructing complex structured materials. By leveraging the programmability of DNA nanotechnology, highly organized photonic systems can be developed to optimize light-matter interactions for improved diagnostics and therapeutic outcomes. These systems enable precise spatial arrangement of photonic components, minimizing material usage, and simplifying fabrication processes. DNA nanostructures, such as DNA origami, provide a robust platform for building multifunctional photonic devices with tailored optical properties. This review highlights recent progress in DNA-directed assembly of photonic nanomaterials, focusing on their applications in diagnostics and therapeutics. It provides an overview of the latest advancements in the field, discussing the principles of DNA-directed assembly, strategies for functionalizing photonic building blocks, innovations in assembly design, and the resulting optical effects that drive these developments. The review also explores how these photonic architectures contribute to diagnostic and therapeutic applications, emphasizing their potential to create efficient and effectiv"
+  },
+  {
+   "id": "36563147",
+   "title": "Automated design of 3D DNA origami with non-rasterized 2D curvature.",
+   "year": "2022",
+   "oa": "Y",
+   "pmcid": "PMC9788767",
+   "abstract": "Improving the precision and function of encapsulating three-dimensional (3D) DNA nanostructures via curved geometries could have transformative impacts on areas such as molecular transport, drug delivery, and nanofabrication. However, the addition of non-rasterized curvature escalates design complexity without algorithmic regularity, and these challenges have limited the ad hoc development and usage of previously unknown shapes. In this work, we develop and automate the application of a set of previously unknown design principles that now includes a multilayer design for closed and curved DNA nanostructures to resolve past obstacles in shape selection, yield, mechanical rigidity, and accessibility. We design, analyze, and experimentally demonstrate a set of diverse 3D curved nanoarchitectures, showing planar asymmetry and examining partial multilayer designs. Our automated design tool implements a combined algorithmic and numerical approximation strategy for scaffold routing and crossover placement, which may enable wider applications of general DNA nanostructure design for nonregular or oblique shapes."
+  },
+  {
+   "id": "38589344",
+   "title": "Mechanism of DNA origami folding elucidated by mesoscopic simulations.",
+   "year": "2024",
+   "oa": "Y",
+   "pmcid": "PMC11001925",
+   "abstract": "Many experimental and computational efforts have sought to understand DNA origami folding, but the time and length scales of this process pose significant challenges. Here, we present a mesoscopic model that uses a switchable force\u00a0field to capture the behavior of single- and double-stranded DNA motifs and transitions between them, allowing us to simulate the folding of DNA origami up to several kilobases in size. Brownian dynamics simulations of small structures reveal a hierarchical folding process involving zipping into a partially folded precursor followed by crystallization into the final structure. We elucidate the effects of various design choices on folding order and kinetics. Larger structures are found to exhibit heterogeneous staple incorporation kinetics and frequent trapping in metastable states, as opposed to more accessible structures which exhibit first-order kinetics and virtually defect-free folding. This model opens an avenue to better understand and design DNA nanostructures for improved yield and folding performance."
+  },
+  {
+   "id": "37538812",
+   "title": "Mechanics of dynamic and deformable DNA nanostructures.",
+   "year": "2023",
+   "oa": "Y",
+   "pmcid": "PMC10395309",
+   "abstract": "In DNA nanotechnology, DNA molecules are designed, engineered, and assembled into arbitrary-shaped architectures with predesigned functions. Static DNA assemblies often have delicate designs with structural rigidity to overcome thermal fluctuations. Dynamic structures reconfigure in response to external cues, which have been explored to create functional nanodevices for environmental sensing and other applications. However, the precise control of reconfiguration dynamics has been a challenge due partly to flexible single-stranded DNA connections between moving parts. Deformable structures are special dynamic constructs with deformation on double-stranded parts and single-stranded hinges during transformation. These structures often have better control in programmed deformation. However, related deformability and mechanics including transformation mechanisms are not well understood or documented. In this review, we summarize the development of dynamic and deformable DNA nanostructures from a mechanical perspective. We present deformation mechanisms such as single-stranded DNA hinges with lock-and-release pairs, jack edges, helicity modulation, and external loading. Theoretical and c"
+  },
+  {
+   "id": "37925463",
+   "title": "A computational model for structural dynamics and reconfiguration of DNA assemblies.",
+   "year": "2023",
+   "oa": "Y",
+   "pmcid": "PMC10625641",
+   "abstract": "Recent advances in constructing a structured DNA assembly whose configuration can be dynamically changed in response to external stimuli have demanded the development of an efficient computational modeling approach to expedite its design process. Here, we present a computational framework capable of analyzing both equilibrium and non-equilibrium dynamics of structured DNA assemblies at the molecular level. The framework employs Langevin dynamics with structural and hydrodynamic finite element models that describe mechanical, electrostatic, base stacking, and hydrodynamic interactions. Equilibrium dynamic analysis for various problems confirms the solution accuracy at a near-atomic resolution, comparable to molecular dynamics simulations and experimental measurements. Furthermore, our model successfully simulates a long-time-scale close-to-open-to-close dynamic reconfiguration of the switch structure in response to changes in ion concentration. We expect that the proposed model will offer a versatile way of designing responsive and reconfigurable DNA machines."
+  },
+  {
+   "id": "PPR538957",
+   "title": "High-resolution structures and conformational dynamics of RNA origami during folding",
+   "year": "2022",
+   "oa": "Y",
+   "pmcid": null,
+   "abstract": "<title>Abstract</title>  <p>Cotranscriptional folding of RNA is a fundamental self-assembly process of nature, important for the biological assembly of complex molecular machines like the ribosome. Inspired by this folding process, we developed the cotranscriptional RNA origami design method to efficiently produce RNA nanostructures by enzymatic synthesis, advantageous for large-scale production in vitro or expression in vivo. However, advancing this technology further will require high-resolution characterization and a better understanding of the cotranscriptional folding process. Here, we use cryogenic electron microscopy to study a panel of RNA origami structures at local resolutions up to 3.4 \u00c5, revealing details of kissing loop and crossover structural modules used to compose RNA origami. The derived structural parameters are used to reduce internal strain and global twist to obtain more ideal shapes. In three-dimensional bundle designs, we discover a novel kinetic folding trap that forms during cotranscriptional folding, and is only released 6-8 hours after transcription. Finally, pushing both scale and complexity, we design the first multi-domain RNA origami and characterize"
+  },
+  {
+   "id": "34850119",
+   "title": "Modulating the chemo-mechanical response of structured DNA assemblies through binding molecules.",
+   "year": "2021",
+   "oa": "Y",
+   "pmcid": "PMC8643692",
+   "abstract": "Recent advances in DNA nanotechnology led the fabrication and utilization of various DNA assemblies, but the development of a method to control their global shapes and mechanical flexibilities with high efficiency and repeatability is one of the remaining challenges for the realization of the molecular machines with on-demand functionalities. DNA-binding molecules with intercalation and groove binding modes are known to induce the perturbation on the geometrical and mechanical characteristics of DNA at the strand level, which might be effective in structured DNA assemblies as well. Here, we demonstrate that the chemo-mechanical response of DNA strands with binding ligands can change the global shape and stiffness of DNA origami nanostructures, thereby enabling the systematic modulation of them by selecting a proper ligand and its concentration. Multiple DNA-binding drugs and fluorophores were applied to straight and curved DNA origami bundles, which demonstrated a fast, recoverable, and controllable alteration of the bending persistence length and the radius of curvature of DNA nanostructures. This chemo-mechanical modulation of DNA nanostructures would provide a powerful tool for "
+  },
+  {
+   "id": "33277481",
+   "title": "Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution.",
+   "year": "2020",
+   "oa": "Y",
+   "pmcid": "PMC7718922",
+   "abstract": "The methods of DNA nanotechnology enable the rational design of custom shapes that self-assemble in solution from sets of DNA molecules. DNA origami, in which a long template DNA single strand is folded by many short DNA oligonucleotides, can be employed to make objects comprising hundreds of unique DNA strands and thousands of base pairs, thus in principle providing many degrees of freedom for modelling complex objects of defined 3D shapes and sizes. Here, we address the problem of accurate structural validation of DNA objects in solution with cryo-EM based methodologies. By taking into account structural fluctuations, we can determine structures with improved detail compared to previous work. To interpret the experimental cryo-EM maps, we present molecular-dynamics-based methods for building pseudo-atomic models in a semi-automated fashion. Among other features, our data allows discerning details such as helical grooves, single-strand versus double-strand crossovers, backbone phosphate positions, and single-strand breaks. Obtaining this higher level of detail is a step forward that now allows designers to inspect and refine their designs with base-pair level interventions."
+  },
+  {
+   "id": "36990451",
+   "title": "Recent Advances in DNA Origami-Engineered Nanomaterials and Applications.",
+   "year": "2023",
+   "oa": "Y",
+   "pmcid": "PMC10103138",
+   "abstract": "DNA nanotechnology is a unique field, where physics, chemistry, biology, mathematics, engineering, and materials science can elegantly converge. Since the original proposal of Nadrian Seeman, significant advances have been achieved in the past four decades. During this glory time, the DNA origami technique developed by Paul Rothemund further pushed the field forward with a vigorous momentum, fostering a plethora of concepts, models, methodologies, and applications that were not thought of before. This review focuses on the recent progress in DNA origami-engineered nanomaterials in the past five years, outlining the exciting achievements as well as the unexplored research avenues. We believe that the spirit and assets that Seeman left for scientists will continue to bring interdisciplinary innovations and useful applications to this field in the next decade."
+  },
+  {
+   "id": "36849548",
+   "title": "Structure, folding and flexibility of co-transcriptional RNA origami.",
+   "year": "2023",
+   "oa": "N",
+   "pmcid": "PMC10566746",
+   "abstract": "RNA origami is a method for designing RNA nanostructures that can self-assemble through co-transcriptional folding with applications in nanomedicine and synthetic biology. However, to advance the method further, an improved understanding of RNA structural properties and folding principles is required. Here we use cryogenic electron microscopy to study RNA origami sheets and bundles at sub-nanometre resolution revealing structural parameters of kissing-loop and crossover motifs, which are used to improve designs. In RNA bundle designs, we discover a kinetic folding trap that forms during folding and is only released after 10\u2009h. Exploration of the conformational landscape of several RNA designs reveal the flexibility of helices and structural motifs. Finally, sheets and bundles are combined to construct a multidomain satellite shape, which is characterized by individual-particle cryo-electron tomography to reveal the domain flexibility. Together, the study provides a structural basis for future improvements to the design cycle of genetically encoded RNA nanodevices."
+  }
+ ]
+}

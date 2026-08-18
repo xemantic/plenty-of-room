@@ -1,0 +1,912 @@
+{
+    "task": "T-172",
+    "leaf": "A8.2",
+    "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm, 0.34 nm rise, 32/3 bp per turn, 16 bp column pitch, 32 bp per-interface spacing; along-helix width 38.08 nm (112 bp, C-0086) at crossover phase 8; C-0090's buildable 24-rise 8.16 nm arm at C-0055's 34 roots; C-0017's 33.3333 pN/nm mandate shared equally; C-0022's solved collar at 2 mM, a 10 nm gap and 0.192 V, AS C-0090 AND C-0099 CARRIED IT; C-0001's foundation secant",
+    "question": "Can a row-end crossover PRESTRAIN — Rothemund's \"crossovers in tension\" — move C-0090's flatness, C-0095's admitted reading, or T-5b's 0.10?",
+    "cheapBounds": [
+        {
+            "name": "the prestrain is a LOAD, not a stiffness",
+            "statement": "1/2 k (dphi - theta_0)^2 = 1/2 k dphi^2 - k theta_0 dphi + const: the quadratic term is untouched, so no entry of the stiffness matrix moves and the deflection field is LINEAR in theta_0",
+            "value": 0.0,
+            "unit": "pN nm/rad moved in K",
+            "owner": "T-172",
+            "derivedHere": true
+        },
+        {
+            "name": "C-0090's placement dishing at zero prestrain",
+            "statement": "the reproduction gate and the baseline every bound is written against",
+            "value": 0.0621469105,
+            "unit": "of the free stroke",
+            "owner": "C-0090",
+            "derivedHere": false
+        },
+        {
+            "name": "dishing per radian of uniform row-end prestrain, at C-0090's placement",
+            "statement": "one solve, exact for every theta_0 by linearity",
+            "value": 0.140379322,
+            "unit": "of the free stroke per rad",
+            "owner": "T-172",
+            "derivedHere": true
+        },
+        {
+            "name": "dishing per radian, UNCOUPLED tile",
+            "statement": "the same slope with no coupling at all, as the reference C-0060 demands",
+            "value": 0.265219996,
+            "unit": "of the free stroke per rad",
+            "owner": "T-172",
+            "derivedHere": true
+        },
+        {
+            "name": "the prestrain at which C-0090's placement reaches T-5b's 0.10",
+            "statement": "(0.10 - dishing at zero) / slope — a triangle-inequality CEILING, since peak dishing is an absolute value and cannot exceed the sum of the two peaks",
+            "value": 15.4497275,
+            "unit": "degrees",
+            "owner": "T-172",
+            "derivedHere": true
+        },
+        {
+            "name": "the assembled couple 14 row-end crossovers carry at that prestrain",
+            "statement": "14 x k_theta x theta_0, against the 100 pN the tile carries over 38.08 nm",
+            "value": 51.0746197,
+            "unit": "pN nm",
+            "owner": "T-172",
+            "derivedHere": true
+        }
+    ],
+    "ladder": [
+        {
+            "name": "8 bp register",
+            "basis": "the out-of-plane site's offset from the design twist, linear in the base-pair offset (C-0015)",
+            "degrees": 4.28571429,
+            "radians": 0.0747998251,
+            "couplePerCrossover": 1.01199763,
+            "assembledCouple": 14.1679669,
+            "sourced": "DERIVED here from 32/3 against 10.5 bp per turn; CLAUDE.md's 4.286 deg"
+        },
+        {
+            "name": "16 bp register",
+            "basis": "the sheet's own next in-plane crossover, one column pitch away",
+            "degrees": 8.57142857,
+            "radians": 0.14959965,
+            "couplePerCrossover": 2.02399527,
+            "assembledCouple": 28.3359337,
+            "sourced": "DERIVED; CLAUDE.md's 8.571 deg"
+        },
+        {
+            "name": "32 bp register",
+            "basis": "the per-interface crossover spacing, which is the distance a row-end crossover sits from the one that balances it",
+            "degrees": 17.1428571,
+            "radians": 0.2991993,
+            "couplePerCrossover": 4.04799053,
+            "assembledCouple": 56.6718675,
+            "sourced": "DERIVED"
+        },
+        {
+            "name": "half the azimuthal quantum",
+            "basis": "the worst registration a 33.75 deg/bp lattice can impose on a chord (CLAUDE.md, C-0029)",
+            "degrees": 16.875,
+            "radians": 0.294524311,
+            "couplePerCrossover": 3.98474068,
+            "assembledCouple": 55.7863695,
+            "sourced": "DERIVED"
+        },
+        {
+            "name": "a quarter turn",
+            "basis": "a geometric ceiling that assumes nothing about the strand route",
+            "degrees": 90.0,
+            "radians": 1.57079633,
+            "couplePerCrossover": 21.2519503,
+            "assembledCouple": 297.527304,
+            "sourced": "DERIVED — assumption-free"
+        },
+        {
+            "name": "a half turn",
+            "basis": "the ABSOLUTE geometric ceiling on a dihedral prestrain: past it the crossover is better described in the opposite register",
+            "degrees": 180.0,
+            "radians": 3.14159265,
+            "couplePerCrossover": 42.5039006,
+            "assembledCouple": 595.054609,
+            "sourced": "DERIVED — assumption-free"
+        }
+    ],
+    "sweep": [
+        {
+            "distribution": "none — zero prestrain",
+            "rung": "zero",
+            "degrees": 0.0,
+            "radians": 0.0,
+            "publishedPlacementDishing": 0.0621469105,
+            "freeDishingOverStroke": 0.299034765,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 0.681427873,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "rung": "8 bp register",
+            "degrees": 4.28571429,
+            "radians": 0.0747998251,
+            "publishedPlacementDishing": 0.0648540256,
+            "freeDishingOverStroke": 0.318873174,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 0.761753778,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "rung": "8 bp register",
+            "degrees": -4.28571429,
+            "radians": -0.0747998251,
+            "publishedPlacementDishing": 0.0655256559,
+            "freeDishingOverStroke": 0.279196355,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 1.03790497,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "rung": "16 bp register",
+            "degrees": 8.57142857,
+            "radians": 0.14959965,
+            "publishedPlacementDishing": 0.0690665493,
+            "freeDishingOverStroke": 0.338711583,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 1.17698189,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "rung": "16 bp register",
+            "degrees": -8.57142857,
+            "radians": -0.14959965,
+            "publishedPlacementDishing": 0.0731721253,
+            "freeDishingOverStroke": 0.261071041,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 1.58965499,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "rung": "32 bp register",
+            "degrees": 17.1428571,
+            "radians": 0.2991993,
+            "publishedPlacementDishing": 0.0864532913,
+            "freeDishingOverStroke": 0.378388402,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 2.38673138,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "rung": "32 bp register",
+            "degrees": -17.1428571,
+            "radians": -0.2991993,
+            "publishedPlacementDishing": 0.101339508,
+            "freeDishingOverStroke": 0.225079649,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 2.69315505,
+            "flatAtTenPercent": false
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "rung": "half the azimuthal quantum",
+            "degrees": 16.875,
+            "radians": 0.294524311,
+            "publishedPlacementDishing": 0.0856789774,
+            "freeDishingOverStroke": 0.377148501,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 2.34892671,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "rung": "half the azimuthal quantum",
+            "degrees": -16.875,
+            "radians": -0.294524311,
+            "publishedPlacementDishing": 0.100459277,
+            "freeDishingOverStroke": 0.22620438,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 2.65867067,
+            "flatAtTenPercent": false
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "rung": "a quarter turn",
+            "degrees": 90.0,
+            "radians": 1.57079633,
+            "publishedPlacementDishing": 0.297066676,
+            "freeDishingOverStroke": 0.715641361,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 12.6696021,
+            "flatAtTenPercent": false
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "rung": "a quarter turn",
+            "degrees": -90.0,
+            "radians": -1.57079633,
+            "publishedPlacementDishing": 0.340762263,
+            "freeDishingOverStroke": 0.236051056,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 12.7441033,
+            "flatAtTenPercent": false
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "rung": "a half turn",
+            "degrees": 180.0,
+            "radians": 3.14159265,
+            "publishedPlacementDishing": 0.55723615,
+            "freeDishingOverStroke": 1.13224796,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 25.3719718,
+            "flatAtTenPercent": false
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "rung": "a half turn",
+            "degrees": -180.0,
+            "radians": -3.14159265,
+            "publishedPlacementDishing": 0.636519783,
+            "freeDishingOverStroke": 0.534178453,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 25.437507,
+            "flatAtTenPercent": false
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "rung": "8 bp register",
+            "degrees": 4.28571429,
+            "radians": 0.0747998251,
+            "publishedPlacementDishing": 0.0660084048,
+            "freeDishingOverStroke": 0.30739354,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 1.05006311,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "rung": "8 bp register",
+            "degrees": -4.28571429,
+            "radians": -0.0747998251,
+            "publishedPlacementDishing": 0.0660084264,
+            "freeDishingOverStroke": 0.307393516,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 1.05006298,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "rung": "16 bp register",
+            "degrees": 8.57142857,
+            "radians": 0.14959965,
+            "publishedPlacementDishing": 0.0704645393,
+            "freeDishingOverStroke": 0.315752316,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 1.61397128,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "rung": "16 bp register",
+            "degrees": -8.57142857,
+            "radians": -0.14959965,
+            "publishedPlacementDishing": 0.07046453,
+            "freeDishingOverStroke": 0.315752292,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 1.61397115,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "rung": "32 bp register",
+            "degrees": 17.1428571,
+            "radians": 0.2991993,
+            "publishedPlacementDishing": 0.0795789732,
+            "freeDishingOverStroke": 0.332469867,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 2.74178762,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "rung": "32 bp register",
+            "degrees": -17.1428571,
+            "radians": -0.2991993,
+            "publishedPlacementDishing": 0.0795789639,
+            "freeDishingOverStroke": 0.332469843,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 2.74178749,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "rung": "half the azimuthal quantum",
+            "degrees": 16.875,
+            "radians": 0.294524311,
+            "publishedPlacementDishing": 0.0792941472,
+            "freeDishingOverStroke": 0.331947443,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 2.70654336,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "rung": "half the azimuthal quantum",
+            "degrees": -16.875,
+            "radians": -0.294524311,
+            "publishedPlacementDishing": 0.0792941379,
+            "freeDishingOverStroke": 0.331947419,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 2.70654323,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "rung": "a quarter turn",
+            "degrees": 90.0,
+            "radians": 1.57079633,
+            "publishedPlacementDishing": 0.212820137,
+            "freeDishingOverStroke": 0.47456905,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 12.3282265,
+            "flatAtTenPercent": false
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "rung": "a quarter turn",
+            "degrees": -90.0,
+            "radians": -1.57079633,
+            "publishedPlacementDishing": 0.212820135,
+            "freeDishingOverStroke": 0.474569025,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 12.3282264,
+            "flatAtTenPercent": false
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "rung": "a half turn",
+            "degrees": 180.0,
+            "radians": 3.14159265,
+            "publishedPlacementDishing": 0.380635532,
+            "freeDishingOverStroke": 0.650103336,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 24.1762725,
+            "flatAtTenPercent": false
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "rung": "a half turn",
+            "degrees": -180.0,
+            "radians": -3.14159265,
+            "publishedPlacementDishing": 0.38063553,
+            "freeDishingOverStroke": 0.65010331,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 24.1762729,
+            "flatAtTenPercent": false
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "rung": "8 bp register",
+            "degrees": 4.28571429,
+            "radians": 0.0747998251,
+            "publishedPlacementDishing": 0.0660084048,
+            "freeDishingOverStroke": 0.30739354,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 1.05006311,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "rung": "8 bp register",
+            "degrees": -4.28571429,
+            "radians": -0.0747998251,
+            "publishedPlacementDishing": 0.0660084264,
+            "freeDishingOverStroke": 0.307393516,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 1.05006298,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "rung": "16 bp register",
+            "degrees": 8.57142857,
+            "radians": 0.14959965,
+            "publishedPlacementDishing": 0.0704645393,
+            "freeDishingOverStroke": 0.315752316,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 1.61397128,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "rung": "16 bp register",
+            "degrees": -8.57142857,
+            "radians": -0.14959965,
+            "publishedPlacementDishing": 0.07046453,
+            "freeDishingOverStroke": 0.315752292,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 1.61397115,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "rung": "32 bp register",
+            "degrees": 17.1428571,
+            "radians": 0.2991993,
+            "publishedPlacementDishing": 0.0795789732,
+            "freeDishingOverStroke": 0.332469867,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 2.74178762,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "rung": "32 bp register",
+            "degrees": -17.1428571,
+            "radians": -0.2991993,
+            "publishedPlacementDishing": 0.0795789639,
+            "freeDishingOverStroke": 0.332469843,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 2.74178749,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "rung": "half the azimuthal quantum",
+            "degrees": 16.875,
+            "radians": 0.294524311,
+            "publishedPlacementDishing": 0.0792941472,
+            "freeDishingOverStroke": 0.331947443,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 2.70654336,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "rung": "half the azimuthal quantum",
+            "degrees": -16.875,
+            "radians": -0.294524311,
+            "publishedPlacementDishing": 0.0792941379,
+            "freeDishingOverStroke": 0.331947419,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 2.70654323,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "rung": "a quarter turn",
+            "degrees": 90.0,
+            "radians": 1.57079633,
+            "publishedPlacementDishing": 0.212820137,
+            "freeDishingOverStroke": 0.47456905,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 12.3282265,
+            "flatAtTenPercent": false
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "rung": "a quarter turn",
+            "degrees": -90.0,
+            "radians": -1.57079633,
+            "publishedPlacementDishing": 0.212820135,
+            "freeDishingOverStroke": 0.474569025,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 12.3282264,
+            "flatAtTenPercent": false
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "rung": "a half turn",
+            "degrees": 180.0,
+            "radians": 3.14159265,
+            "publishedPlacementDishing": 0.380635532,
+            "freeDishingOverStroke": 0.650103336,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 24.1762725,
+            "flatAtTenPercent": false
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "rung": "a half turn",
+            "degrees": -180.0,
+            "radians": -3.14159265,
+            "publishedPlacementDishing": 0.38063553,
+            "freeDishingOverStroke": 0.65010331,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 24.1762729,
+            "flatAtTenPercent": false
+        }
+    ],
+    "enumerations": [
+        {
+            "distribution": "none — zero prestrain",
+            "degrees": 0.0,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0621469105,
+            "worstDishingOverStroke": 0.913227076,
+            "medianDishingOverStroke": 0.343483622,
+            "publishedPlacementDishing": 0.0621469105,
+            "publishedPlacementPenalty": 0.0,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsZeroPrestrainOptimum": true,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "degrees": 17.1428571,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0826363454,
+            "worstDishingOverStroke": 0.974381398,
+            "medianDishingOverStroke": 0.391395534,
+            "publishedPlacementDishing": 0.0864532913,
+            "publishedPlacementPenalty": 0.0038169459,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:0,10880000;5:-16320000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,16320000;10:-10880000,0;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsZeroPrestrainOptimum": false,
+            "flatAtTenPercent": true
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "degrees": -17.1428571,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0711278815,
+            "worstDishingOverStroke": 0.852072753,
+            "medianDishingOverStroke": 0.311182167,
+            "publishedPlacementDishing": 0.101339508,
+            "publishedPlacementPenalty": 0.0302116267,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,16320000;2:0,10880000;3:-16320000,16320000;4:-10880000,0;5:-16320000,5440000,16320000;6:-10880000,10880000;7:-5440000,5440000;8:-10880000,10880000;9:-16320000,-5440000,16320000;10:0,10880000;11:-16320000,16320000;12:-10880000,0;13:-16320000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsZeroPrestrainOptimum": false,
+            "flatAtTenPercent": true
+        }
+    ],
+    "linearity": [
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "radians": 0.0747998251,
+            "measured": 0.0648540256,
+            "predictedFromUnit": 0.0726472592,
+            "relativeDeparture": 0.120165765
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "radians": 0.14959965,
+            "measured": 0.0690665493,
+            "predictedFromUnit": 0.083147608,
+            "relativeDeparture": 0.203876678
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "radians": 0.2991993,
+            "measured": 0.0864532913,
+            "predictedFromUnit": 0.104148305,
+            "relativeDeparture": 0.20467716
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "radians": 0.294524311,
+            "measured": 0.0856789774,
+            "predictedFromUnit": 0.103492034,
+            "relativeDeparture": 0.207904632
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "radians": 1.57079633,
+            "measured": 0.297066676,
+            "predictedFromUnit": 0.282654234,
+            "relativeDeparture": 0.0485158474
+        },
+        {
+            "distribution": "uniform — every row-end crossover built at the same theta_0",
+            "radians": 3.14159265,
+            "measured": 0.55723615,
+            "predictedFromUnit": 0.503161558,
+            "relativeDeparture": 0.0970407117
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "radians": 0.0747998251,
+            "measured": 0.0660084048,
+            "predictedFromUnit": 0.0688558886,
+            "relativeDeparture": 0.0431381994
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "radians": 0.14959965,
+            "measured": 0.0704645393,
+            "predictedFromUnit": 0.0755648667,
+            "relativeDeparture": 0.0723814755
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "radians": 0.2991993,
+            "measured": 0.0795789732,
+            "predictedFromUnit": 0.0889828228,
+            "relativeDeparture": 0.118170029
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "radians": 0.294524311,
+            "measured": 0.0792941472,
+            "predictedFromUnit": 0.0885635117,
+            "relativeDeparture": 0.116898471
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "radians": 1.57079633,
+            "measured": 0.212820137,
+            "predictedFromUnit": 0.20303545,
+            "relativeDeparture": 0.0459763193
+        },
+        {
+            "distribution": "alternating — the sign flips with the interface, Rothemund's glide symmetry surviving",
+            "radians": 3.14159265,
+            "measured": 0.380635532,
+            "predictedFromUnit": 0.34392399,
+            "relativeDeparture": 0.0964480144
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "radians": 0.0747998251,
+            "measured": 0.0660084048,
+            "predictedFromUnit": 0.0688558886,
+            "relativeDeparture": 0.0431381994
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "radians": 0.14959965,
+            "measured": 0.0704645393,
+            "predictedFromUnit": 0.0755648667,
+            "relativeDeparture": 0.0723814755
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "radians": 0.2991993,
+            "measured": 0.0795789732,
+            "predictedFromUnit": 0.0889828228,
+            "relativeDeparture": 0.118170029
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "radians": 0.294524311,
+            "measured": 0.0792941472,
+            "predictedFromUnit": 0.0885635117,
+            "relativeDeparture": 0.116898471
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "radians": 1.57079633,
+            "measured": 0.212820137,
+            "predictedFromUnit": 0.20303545,
+            "relativeDeparture": 0.0459763193
+        },
+        {
+            "distribution": "opposed ends — the two row ends carry opposite signs",
+            "radians": 3.14159265,
+            "measured": 0.380635532,
+            "predictedFromUnit": 0.34392399,
+            "relativeDeparture": 0.0964480144
+        }
+    ],
+    "literature": [
+        {
+            "question": "Is the row-end / seam crossover tension quantified anywhere?",
+            "source": "Rothemund 2006, Nature 440:297, Suppl. Note S2 — gpd/data/T-151-sources/",
+            "readAs": "READ DIRECTLY",
+            "quantified": false,
+            "finding": "The passage states the tension and states that it is unquantified: \"a crossover involving staple strands is in tension with an adjacent crossover involving the scaffold strand … How the strain is actually relieved is unknown, the final base pairs of each helix may be distorted.\""
+        },
+        {
+            "question": "What COORDINATE does the strain live in?",
+            "source": "Rothemund 2006, Suppl. Note S2, design-program section",
+            "readAs": "READ DIRECTLY",
+            "quantified": true,
+            "finding": "An ANGLE, and the paper's own metric is angular: \"the computed strain energy is just the sum of the squared angular deviation from the tangent point for the base before and the base after the crossover\", with the two causes named as \"the non-integral number of bases in a single turn, and the major-minor groove angle\". That is exactly the dihedral coordinate C-0009's crossover hinge already carries."
+        },
+        {
+            "question": "Has anyone since put a number on it?",
+            "source": "EuropePMC, 10 recorded queries, 68 unique records — gpd/data/T-172-sources/europepmc-queries.json",
+            "readAs": "ABSTRACTS READ; three full texts already manifested in gpd/data/T-151-sources",
+            "quantified": false,
+            "finding": "NOT FOUND. The quantified strain in the literature is GLOBAL twist of a whole object (underwinding, helicity mismatch, intercalator relief), never a per-crossover residual angle at an edge, and a 2021 tutorial still says only that \"compensation of residual strain/torque is much easier for the hexagonal lattice\"."
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "C-0090's placement dishing at the 32 bp register prestrain",
+            "control": "beam subdivisions",
+            "level": 1.0,
+            "value": 0.0853935166,
+            "departureFromFinest": 0.0111227053
+        },
+        {
+            "quantity": "C-0090's placement dishing at the 32 bp register prestrain",
+            "control": "beam subdivisions",
+            "level": 2.0,
+            "value": 0.0864532913,
+            "departureFromFinest": 0.0011497381
+        },
+        {
+            "quantity": "C-0090's placement dishing at the 32 bp register prestrain",
+            "control": "beam subdivisions",
+            "level": 4.0,
+            "value": 0.0863540068,
+            "departureFromFinest": 0.0
+        },
+        {
+            "quantity": "C-0090's placement dishing at the 32 bp register prestrain",
+            "control": "dishing sample grid",
+            "level": 41.0,
+            "value": 0.0864532913,
+            "departureFromFinest": 0.0
+        },
+        {
+            "quantity": "C-0090's placement dishing at the 32 bp register prestrain",
+            "control": "dishing sample grid",
+            "level": 81.0,
+            "value": 0.0864532913,
+            "departureFromFinest": 0.0
+        },
+        {
+            "quantity": "C-0090's placement dishing at the 32 bp register prestrain",
+            "control": "dishing sample grid",
+            "level": 161.0,
+            "value": 0.0864532913,
+            "departureFromFinest": 0.0
+        }
+    ],
+    "reproductions": [
+        {
+            "quantity": "C-0090's best 34-root dishing at 38.08 nm / phase 8",
+            "published": 0.0621469105,
+            "reproduced": 0.0621469105,
+            "relativeDeparture": 0.0,
+            "source": "C-0090 / T-153 result file"
+        },
+        {
+            "quantity": "C-0099's admitted reading, at zero prestrain",
+            "published": 0.0621469105,
+            "reproduced": 0.0621469105,
+            "relativeDeparture": 0.0,
+            "source": "C-0099 / T-164"
+        },
+        {
+            "quantity": "Gen1Tile's interior crossover hinge, from the bond count",
+            "published": 13.5294118,
+            "reproduced": 13.5294118,
+            "relativeDeparture": 2.60869566E-9,
+            "source": "C-0009 / Chen et al. 2014"
+        },
+        {
+            "quantity": "the 16 bp register departure in degrees",
+            "published": 8.5714286,
+            "reproduced": 8.57142857,
+            "relativeDeparture": 3.33333532E-9,
+            "source": "CLAUDE.md / C-0015"
+        },
+        {
+            "quantity": "the 8 bp out-of-plane register departure in degrees",
+            "published": 4.2857143,
+            "reproduced": 4.28571429,
+            "relativeDeparture": 3.33333532E-9,
+            "source": "CLAUDE.md / C-0015"
+        },
+        {
+            "quantity": "the row-end crossover count",
+            "published": 14.0,
+            "reproduced": 14.0,
+            "relativeDeparture": 0.0,
+            "source": "C-0095"
+        },
+        {
+            "quantity": "the free stroke in nm",
+            "published": 5.15473846,
+            "reproduced": 5.15473846,
+            "relativeDeparture": 0.0,
+            "source": "C-0099 / T-164"
+        },
+        {
+            "quantity": "C-0063's UpwardRootInfluenceBank at zero prestrain, against the split bank",
+            "published": 0.0621469105,
+            "reproduced": 0.0621469105,
+            "relativeDeparture": 0.0,
+            "source": "C-0063 / C-0058 — an independent code path"
+        }
+    ],
+    "predicates": [
+        {
+            "name": "P1",
+            "statement": "an initial-stress term exists in C-0009's grillage and is additive",
+            "verdict": "OrigamiGrillage.crossoverPrestrains, empty by default, asserted bit-identical to the unmodified load vector at zero",
+            "met": true
+        },
+        {
+            "name": "P2",
+            "statement": "the best 34-root dishing at 38.08 nm / phase 8 is re-read under a prestrain",
+            "verdict": "37 ladder states at C-0090's placement and 3 exhaustive enumerations",
+            "met": true
+        },
+        {
+            "name": "P3",
+            "statement": "either the prestrain is bounded by a source, or the flatness is insensitive to any prestrain inside a STATED bound",
+            "verdict": "no accessible source quantifies it; the flatness holds T-5b's 0.10 for every |theta_0| below 15.45 degrees",
+            "met": true
+        }
+    ],
+    "falsifiers": [
+        {
+            "name": "F1",
+            "statement": "zero prestrain does not reproduce C-0090's 0.0621469105",
+            "fired": false,
+            "outcome": "departure 5.449e-10"
+        },
+        {
+            "name": "F2",
+            "statement": "the coupled response is not linear in theta_0, i.e. the term is not a load",
+            "fired": false,
+            "outcome": "worst departure of the measured peak from the unit-slope prediction 2.079e-01; a peak of |A + theta B| is linear in theta only where the two fields peak at the same place, so a small departure is expected and a large one is a defect"
+        },
+        {
+            "name": "F3",
+            "statement": "a UNIFORM prestrain over every crossover dishes zero, i.e. an eigenstrain behaves like a uniform load",
+            "fired": false,
+            "outcome": "the free tile dishes 0.299035 of the stroke at zero and 0.638118 under a uniform 17.143 degree prestrain on all 56 crossovers: an eigenstrain CURLS the sheet, and CLAUDE.md's uniform-load falsifier does not transfer"
+        },
+        {
+            "name": "F4",
+            "statement": "the exhaustive optimum placement moves under a prestrain",
+            "fired": true,
+            "outcome": "C-0090's key is the optimum at 1 of 3 enumerated states"
+        },
+        {
+            "name": "F5",
+            "statement": "a uniform load on a uniform foundation dishes more than 1e-6 of the stroke",
+            "fired": false,
+            "outcome": "worst over the whole sweep 2.126e-07"
+        },
+        {
+            "name": "F6",
+            "statement": "T-5b's 0.10 is crossed at a prestrain inside the derived ladder",
+            "fired": true,
+            "outcome": "the crossing at 15.45 degrees is reached by the '32 bp register' rung at 17.14 degrees"
+        }
+    ],
+    "findings": [
+        "THE PRESTRAIN IS A LOAD, WHICH IS WHY THE WHOLE AXIS COSTS ONE SOLVE. 1/2 k (dphi - theta_0)^2 leaves the quadratic term untouched, so no entry of the stiffness matrix moves, the host's factorisation is unchanged and C-0058's influence bank stays exact PROVIDED the influences are taken on the prestrain-free lattice (CH-0120). The dishing at C-0090's placement moves 0.140379 of the free stroke per radian of uniform row-end prestrain, so the triangle-inequality ceiling puts T-5b's 0.10 at 15.45 degrees.",
+        "AND THAT CROSSING IS INSIDE THE DERIVED LADDER, WHICH IS WHY THIS IS NOT A NULL RESULT. The ladder runs 4.29 to 180.00 degrees on physical rungs and the crossing sits at 15.45: C-0090's own 34-root placement holds T-5b's 0.10 at the 8 bp (4.29 deg) and 16 bp (8.57 deg) register rungs and LOSES it at the 32 bp rung in the adverse sign (-16.875 deg, dishing 0.100459). 23 of 37 swept states stay flat.",
+        "THE DESIGN ABSORBS IT, AND THE PRICE IS THAT THE ARGMIN MOVES. Re-running the exhaustive centro-symmetric enumeration at the 32 bp register prestrain recovers the verdict in both signs — +17.143 deg gives 0.082636; -17.143 deg gives 0.071128 — against C-0090's own placement, which reads +17.143 deg gives 0.086453; -17.143 deg gives 0.101340 at the same two states. So a prestrain of this size is a PLACEMENT question rather than a feasibility one; but C-0090's published key is the optimum at only 1 of 3 enumerated states, so the recommended DESIGN is a function of an unmeasured parameter in a way C-0099's stiffness sweep was not.",
+        "THE UNIFORM-LOAD FALSIFIER DOES NOT TRANSFER TO AN EIGENSTRAIN. A uniform prestrain on all 56 crossovers takes the free tile from 0.299035 to 0.638118 of the stroke: it CURLS the sheet into a cylinder of curvature theta_0/d, which is the state that relaxes every hinge and every vertical link at once. A uniform LOAD is equilibrated by a rigid translation; an eigenstrain is not, and CLAUDE.md's best falsifier is silent here.",
+        "TWO OF THE THREE DISTRIBUTIONS ARE THE SAME MAP, AND THAT IS A LATTICE FACT. Each of the 14 row-end crossovers is the only one on its interface, and which END it sits at alternates with the interface — so 'alternating by interface' and 'opposed ends' are the same assignment, to the last digit, and both are EVEN in the sign where the uniform distribution is not. The sign asymmetry belongs to C-0022's solved collar, not to the lattice.",
+        "NO ACCESSIBLE SOURCE QUANTIFIES THE ROW-END PRESTRAIN, and Rothemund says so himself: 'How the strain is actually relieved is unknown.' Ten recorded EuropePMC queries returned 68 unique records and none carries a per-crossover residual angle at an edge; what the literature quantifies is the GLOBAL twist of a whole object. The deliverable is therefore P-6's threshold rather than a value — and unlike C-0099's, this threshold is REACHED inside the range the lattice itself makes plausible."
+    ],
+    "parameters": {
+        "edgeX": 38.08,
+        "phaseBasePairs": 8.0,
+        "duplexes": 15.0,
+        "armLength": 8.16,
+        "armCount": 34.0,
+        "mandate": 33.3333333,
+        "flatnessTolerance": 0.1,
+        "interiorHingeStiffness": 13.5294118,
+        "rowEndCrossovers": 14.0,
+        "latticeCrossovers": 56.0,
+        "freeStroke": 5.15473846,
+        "zeroPrestrainDishing": 0.0621469105,
+        "dishingPerRadian": 0.140379322,
+        "dishingPerRadianUncoupled": 0.265219996,
+        "criticalPrestrainDegrees": 15.4497275,
+        "criticalPrestrainRadians": 0.269648613,
+        "largestLadderRungDegrees": 180.0,
+        "worstLadderDishing": 0.636519783,
+        "worstUniformLoadDishing": 2.12606493E-7,
+        "worstLinearityDeparture": 0.207904632,
+        "uniformCurlFreeDishing": 0.638117846,
+        "enumeratedPerState": 163296.0,
+        "elapsedSeconds": 160.176,
+        "firstCrossingDegreesMeasured": -16.875,
+        "firstCrossingDishingMeasured": 0.100459277,
+        "sweptStatesFlat": 23.0,
+        "sweptStates": 37.0,
+        "reoptimisedBestAtPlusThirtyTwoBaseRung": 0.0826363454,
+        "reoptimisedBestAtMinusThirtyTwoBaseRung": 0.0711278815
+    }
+}

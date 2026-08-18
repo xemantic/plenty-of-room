@@ -159,8 +159,17 @@ The undemonstrated motif is unchanged and remains the larger exposure.
    the 1.30–1.61× `C-0089` bought was a property of a **divided** mandate — *the same division that makes a
    shared body flatter is what removes the axis*. And **the real lattice's redundancy slope is 2.08×
    shallower** than the abstract grid's, fixing the columns at **4** against the **13** the dropout demands
-   — 141.44 nm of tile, **3.54×** §3's. So the flat-tile question is closed on every axis this programme
-   can reach, and what remains is a fabrication yield or a specification change, not a design.
+   — 141.44 nm of tile, **3.54×** §3's. So the flat-tile question is closed on every **coupling** axis this
+   programme can reach, and what remains is a fabrication yield or a specification change, not a design.
+   **One structural unknown does remain, and it was found by looking for a negative** (`C-0104`, `T-172`).
+   A crossover **prestrain** is an *initial stress*, so it leaves the stiffness matrix untouched and enters
+   the lattice as a **load vector** — which makes the whole axis one solve, and puts `T-5b`'s 0.10 at
+   **15.45°** of uniform row-end prestrain. **The lattice's own register ladder reaches it**: the
+   recommended placement holds the convention at the 8 bp (±4.286°) and 16 bp (±8.571°) rungs and loses it
+   at **0.1013** at the 32 bp rung in the adverse sign. A re-optimised design absorbs it — 0.0711 at
+   ±17.14° — but the *published* placement is the optimum at only 1 of 3 states, **so the recommended
+   design is a function of an unmeasured parameter in a way the row-end stiffness sweep was not**. No
+   accessible source quantifies the prestrain, and Rothemund says as much himself.
    (`C-0006`, `C-0009`, `C-0022`, `CH-0005`, `CH-0025`; corrected by `C-0058`, `CH-0071`, `C-0063`;
    **conditioned by `C-0087`, `CH-0084`, `CH-0102`**.)
 2. **The polymer layer confines the tile in one direction only.** Its lateral restoring stiffness is *exactly*
@@ -682,6 +691,11 @@ Three DNA elements deliver it, and the eight substrate tethers `C-0021` needed l
   rigidity exists in any direction. Costed as `T-9` — days of oxDNA on 8 cores.
 - **The direction of the correlation correction for *oppositely* charged walls.** Every published coupling
   criterion is a like-charge result. This is the largest uncertainty on every electrostatic force here.
+- **The tension in a row-end crossover.** `C-0104` shows this is the one row-end unknown that can move a
+  verdict — `T-5b`'s 0.10 sits at **15.45°** of uniform prestrain and the lattice's own register ladder
+  reaches it — and that no accessible source quantifies it, over 10 recorded queries and 68 records.
+  Rothemund states the edge strain is unrelieved and that *"how the strain is actually relieved is
+  unknown"*, which is the nearest thing to a source there is.
 - **A per-site staple-incorporation measurement on a COUPLING-BEARING tile.** This is now the single most
   consequential missing measurement in the programme, and it was not on this list before iteration 21.
   `C-0087`/`C-0089`/`C-0093`/`C-0098` between them close the flat-tile question on **every design axis this

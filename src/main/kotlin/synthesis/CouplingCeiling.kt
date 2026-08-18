@@ -262,3 +262,92 @@ fun couplingRequirements(
         )
     )
 }
+
+// ------------------------------------------------- T-169: the reading a study's prose may quote
+
+/**
+ * The three ceilings a coupling row answers to at one [stroke], **each read at the clause that
+ * stroke belongs to** — `C-0049` made a value rather than a sentence.
+ *
+ * `C-0101` §4 found a study writing *"places, but past the 40 pN/nm ceiling at the desired
+ * stroke"* into 26 of its 34 placement rows, and 40 pN/nm at a 10 nm stroke is the wrong clause's
+ * number. The three fields here are what a row is entitled to be compared against:
+ *
+ * @property declaredCeilingAtThisClause [declaredComplianceCeiling] evaluated at [stroke] — 12
+ *   pN/nm at §3's desired clause, and the reading a note about that stroke must quote.
+ * @property declaredCeilingAtPlacementClause the same construction at the stroke the coupling is
+ *   PLACED at — `C-0023`'s 40 pN/nm, owed there and, per `C-0049`, nowhere else. Carried so a
+ *   reader can check that the two readings agree on the verdict rather than being asked to trust
+ *   that they do.
+ * @property perPathSecantCeiling `n·allowable/s`, the only ceiling in `C-0017`'s stack that is not
+ *   declared; a bound on the **secant**, not on the tangent.
+ */
+@Serializable
+data class ClauseCeilingReading(
+    val stroke: Double,
+    val declaredCeilingAtThisClause: Double,
+    val declaredCeilingAtPlacementClause: Double,
+    val perPathSecantCeiling: Double
+)
+
+/** [ClauseCeilingReading] for a coupling of [pathCount] paths placed at [placementStroke]. */
+fun clauseCeilingReading(
+    targetForce: Double,
+    placementStroke: Double,
+    stroke: Double,
+    pathCount: Int,
+    unzipAllowable: Double
+): ClauseCeilingReading {
+    require(stroke > 0.0) { "stroke must be positive, was: $stroke" }
+    return ClauseCeilingReading(
+        stroke = stroke,
+        declaredCeilingAtThisClause = declaredComplianceCeiling(targetForce, stroke),
+        declaredCeilingAtPlacementClause =
+            declaredComplianceCeiling(targetForce, placementStroke),
+        perPathSecantCeiling = perPathSecantCeiling(unzipAllowable, pathCount, stroke)
+    )
+}
+
+/**
+ * How a coupling row that discharges placement and then leaves its compliance reading at a stroke
+ * it was **not** placed at should be described — **without** quoting `C-0023`'s 40 pN/nm at that
+ * stroke, which `C-0049` withdrew.
+ *
+ * The note names the tolerance read at the row's own clause and, separately, the per-path secant
+ * ceiling, so the two independent reasons are not conflated into one number. Where the row is
+ * inside both, it says so; the caller is then free to keep the row.
+ */
+fun pastClauseCeilingNote(
+    tangent: Double,
+    secant: Double,
+    reading: ClauseCeilingReading
+): String {
+    val pastDeclared = tangent > reading.declaredCeilingAtThisClause
+    val pastPerPath = secant > reading.perPathSecantCeiling
+    if (!pastDeclared && !pastPerPath) {
+        return (
+            "places, and stays inside both readings at the %.1f nm stroke: tangent %.4g " +
+                    "pN/nm against C-0023's linearity tolerance read at THAT clause, %.4g " +
+                    "pN/nm (C-0049), and secant %.4g against C-0006's per-path ceiling %.4g"
+            ).format(
+                reading.stroke, tangent, reading.declaredCeilingAtThisClause,
+                secant, reading.perPathSecantCeiling
+            )
+    }
+    val declaredClause = if (pastDeclared) {
+        (
+            "tangent %.4g pN/nm against C-0023's linearity tolerance read at THAT clause, " +
+                    "%.4g pN/nm — the 40 pN/nm in circulation is 1.2 x (100 pN / 3 nm) and is " +
+                    "owed at the PLACEMENT stroke (C-0049)"
+        ).format(tangent, reading.declaredCeilingAtThisClause)
+    } else null
+    val perPathClause = if (pastPerPath) {
+        (
+            "secant %.4g pN/nm against C-0006's per-path ceiling n x allowable / s = %.4g pN/nm"
+        ).format(secant, reading.perPathSecantCeiling)
+    } else null
+    val reasons = listOfNotNull(declaredClause, perPathClause).joinToString("; and ")
+    return "places, but past its compliance reading at the %.1f nm stroke: %s".format(
+        reading.stroke, reasons
+    )
+}
