@@ -9,90 +9,62 @@ Status vocabulary: `TODO` · `IN PROGRESS` · `BLOCKED` · `DONE` · `KILLED` (b
 IDs: `T*` are the eight tasks of the problem definition §6, `P*` are process tasks we raised ourselves.
 The `Leaf` column is the NDI `simulation-task-map` ID the work traces to.
 
-## Start here — the state after iteration 21
+## Start here — the state after iteration 24
 
-Written at the end of a long session, for whoever picks the loop up next. The queue below is the
-authority; this is only the reading order.
+Written for whoever picks the loop up next. The queue below is the authority; this is only the reading order.
+**Superseding the iteration-21 note, which three iterations have overtaken.**
 
-**The programme has a recommended output element** (`C-0071`'s `Q5`) and its §6 answers are in
-[`ANSWERS.md`](ANSWERS.md). ~~**Six specification questions are with NDI**~~ — **ALL SIX ARE ANSWERED
-(2026-08-18, NDI), and that is the first thing to read**: the reply is in
-[`DECISIONS-FOR-NDI.md`](DECISIONS-FOR-NDI.md), the consequences are in [`JOURNAL.md`](JOURNAL.md), and the
-work it opens is `T-191`–`T-195`.
+**Read these four first, because they move things the rest of the file still assumes.**
 
-**Read these three before opening any task, because two of them move things the queue below still assumes:**
+- **THE FLATNESS NEGATIVE IS OVERTURNED, and not by a coupling.** §3's own parameter row says
+  *"Tile thickness ~10 nm (single-layer honeycomb)"*; every structural claim before iteration 23 modelled a
+  **2 nm** tile. On the tile §3 actually specifies — **four** honeycomb layers, which one circular M13 pays
+  for exactly (**6 720** of 7 249 nt) — the free tile dishes **0.0577199433** of the stroke under `C-0022`'s
+  solved collar **with no attachment coupling at all**, inside `T-5b`'s 0.10, against the single layer's
+  **0.307902368** (`C-0109`). `C-0116` then located the threshold the verdict turns on: the crossing is at
+  **`f` = 0.0788618807** and the measured interlayer coupling **0.26–0.33** clears it **monotonically** by
+  **3.29690337×** at its adverse end. **The unspent axis was the BODY, not the coupling** — `C-0098` had
+  genuinely closed the coupling. What survives is a 1.16× statement about a *coupled* four-layer tile under
+  dropout, which is `T-197`.
+- **The tall layer is dead, and it takes NDI's own objection with it.** §3's 100 pN stops arriving across a
+  gap of **13.6989179 nm** at 0.5 mM — *below the bottom* of the 17–26 nm band NDI named — so a tall layer is
+  refused at **96 of 96** states on §3's acceptable clause and admitted at **1 of 96** on the desired one
+  (`C-0110`). It does not trade device A for device B: **it loses both.** It buys the *stroke* (52 of 96
+  uncoupled) and not the *force* (`CH-0127`), and the concession is ours — counterion dominance is about ion
+  **content**, never about the **decay**, and diluting makes NDI's estimate *optimistic*.
+- **So the one reserve has ONE claimant, and the remaining question is a PRICE.** NDI's answers to decisions
+  1 and 2 name the same reserve; the layer half is withdrawn by our own measurement, so what is left is the
+  buffer, worth **1.75104168×** at the operating point on **three** routes that are **common mode** below
+  `C-0005`'s 123–214 % one-loop error. `C-0114`, and `DECISIONS-FOR-NDI.md` now carries a consolidated §1+2.
+  **This programme can rank what two spends BUY and has no column for what they COST.**
+- **The electrode's unresolved quantity was a SIGN, not a magnitude.** `E_pzc(Au(111)) = 0.46–0.51 V vs SHE`,
+  read directly (`C-0111`) — **90–576×** the deciding scale, and an electrode at zero volt on the *rational*
+  scale is negatively charged and **lifts** the tile. What is open is the **cell's** definition of zero, filed
+  as a one-line ask under decision 3.
 
-- **The tile is the wrong thickness.** §3 says *"~10 nm (single-layer honeycomb)"*, a contradiction the code
-  carries **two readings** of, and every structural claim took the 2 nm one. NDI's remedy for M13's 4.31×
-  scaffold excess is *"just make the tile thicker"*, so §3's thickness row, the scaffold and the answer all
-  describe a **four-layer** tile. `C-0006`'s own variant table gives it **167×** in `D_∥` and **5.75×** in
-  `D_⊥`. **The flatness negative is a result about a tile nobody is asking for** — `T-191`, and it is the
-  first unspent design axis since iteration 20.
-- **The buffer and the tall layer are ONE reserve** (`T-194`), and NDI can spend it once. 2 mM stays the
-  nominal, so **`T-50` is not deleted**. The corpus can rank what the two spends **buy** — the layer buys a
-  clause of §3, the buffer buys 1.35–1.75× inside a 123–214 % error bar — and it cannot rank what they
-  **cost**, which is the column NDI answered in and the queue has never had.
-- **Two devices**, so device B is the 10 pN/nm placement and its refusal was quoted at a state it need not
-  occupy. **`T-192` has now run and the corner is empty** (`C-0110`): §3's 100 pN stops arriving across a
-  **13.6989 nm** gap at 0.5 mM, so device B is admitted at 1 of 96 tall states and §3's *acceptable* clause
-  at **0 of 96**. NDI's Debye-length objection is answered and upheld; the reserve is worth 1.35× on the
-  threshold and NDI's band begins 1.24× beyond it. **The tall layer loses both devices**, and what it does
-  buy — a 10 nm stroke on the *uncoupled* tile, 52 of 96 — is displacement without force (`CH-0127`).
+**Suggested order.** `T-197` (is a *coupled* four-layer tile flat under the measured dropout? — the only
+remaining piece of the flatness answer, and `C-0089`'s distribution and `C-0093`'s topology axes are worth
+1.3–2.2× on exactly that statistic, neither searched on the thicker tile) then `T-198` (can four honeycomb
+layers be rastered from one circular M13 at a buildable width? — the count fits, the raster rule does not
+transfer, and every plan result in the corpus is single-layer square-lattice). `T-195` may reduce to a
+statement now that `T-191` spends the scaffold remainder as thickness. `T-50` and `T-9` remain the two
+genuinely expensive items and both are named and costed rather than dodged.
 
-**Three things changed shape in iterations 17–21 and a new reader should know them before opening a task:**
+**What is still true from earlier notes.** The buildable tile is **38.08 nm**, not §3's 40.0 (`C-0086`,
+`C-0095`), and it is 12 % flatter. The row-end crossover prestrain now has a derived value, **17.15–24.98°**
+(`C-0107`), with **no** accessible measurement — the one published study of that coordinate excludes exactly
+those sites in a scope clause — and `C-0112` shows the graded field over all 56 crossovers is **flat**
+(0.0922622269) where the 14-site idealisation is not, the 42 interior sites carrying the *larger* half.
 
-1. **The flat tile is closed on every coupling axis this programme can reach.** Count, distribution,
-   placement, topology and phase are all spent (`C-0087`, `C-0089`, `C-0093`, `C-0098`). §4(g)'s answer is
-   now *"flat as designed, unproven as built"*, and what decides it is a **fabrication yield** — a per-site
-   staple-incorporation map on a coupling-bearing tile, which is a bench measurement, not a solve.
-2. **The buildable tile is 38.08 nm, not §3's 40.0** (`C-0086`, `C-0095`), because a seamless raster
-   quantises the width at 32 bp. It is **12 % flatter**, and it selects the crossover phase and the arm
-   quantisation the programme had already chosen for other reasons.
-3. **One structural unknown reopened, and it now has a derived value**: a row-end crossover's
-   **prestrain** can move a flatness verdict where its stiffness cannot (`C-0104`), and `C-0107`
-   derives **17.15–24.98°** for it — past `C-0104`'s 15.45° threshold, in the adverse sign pattern,
-   and with **no** accessible measurement, because the one published study of the coordinate
-   excludes exactly these sites. **`C-0099`'s recommendation against an oxDNA edge-crossover run is
-   reversed**, and the cheaper alternative is to twist-correct the row length (`T-183`).
-
-**Suggested order — SUPERSEDED for the top of the list, 2026-08-18.** `T-191` (the four-layer tile) now
-outranks everything below it: it is the only open item that can move `ANSWERS.md` §4(g), its cheap bound is
-already in `C-0006`'s variant table, and the machinery exists (`origamiSheet(layers = 4, …)`). ~~`T-192` is next
-and is cheap.~~ **`T-192` is DONE (`C-0110`).** The order that follows was written at the end of iteration 21 and still holds beneath them.
-
-`T-175` (the fourth `ANSWERS.md` synthesis — 21 claims and 24 challenges behind, and
-one changes the *shape* of an answer) is the cheapest high-value item and needs only reading; the three
-mechanical checks are clean, so nothing is owed on provenance. Then `T-182` (what prestrain a row-end
-crossover carries — it reverses `C-0099`'s recommendation against an oxDNA run) and `T-178` (whether
-`C-0103`'s count effect holds at the other 31 phases, on which the standing recommendation's defence rests).
-`T-50` and `T-9` remain the two genuinely expensive items and both are named and costed rather than dodged.
-
-**Harness.** Run `tools/verify.sh` for anything authoritative — it carries four post-Gradle gates. Three
-retained checkers guard the documents (`tools/trace-answers.py`, `tools/check-markdown-tables.py`,
-`tools/result-reader-census.py`) and each has its own self-tests wired into Gradle. **Task numbers have
-collided in six consecutive iterations**: reserving claim numbers does not touch the numbers agents *raise*,
-so take one above the highest in use and say where you moved from.
-
-## Number reservations — iteration 23 (2026-08-18)
-
-Four agents run in parallel this iteration.
-Claim, challenge and task numbers are reserved **here first**, because this is the register the other
-agents read — re-listing `gpd/claims/` immediately before writing does not prevent a collision.
-An agent that needs more than its block takes the next free number **above every block below** and says so.
-
-| Agent | Task | Claims | Challenges |
-|---|---|---|---|
-| A | `T-191` four-layer tile | `C-0109` | `CH-0124`, `CH-0125` |
-| B | `T-192` device B at a tall gap | `C-0110` | `CH-0126`, `CH-0127`, and **`CH-0131`** — taken one above every block below, per the rule, when the re-emission measurement turned up a stale `T-157` |
-| C | `T-193` template-stripped gold and its PZC | `C-0111` | `CH-0128` |
-| D | `T-190` what the 42 interior crossovers carry | `C-0112` | `CH-0129`, `CH-0130` |
-| coordinator | `T-183`, `T-194` | `C-0113`, `C-0114` | — (both are downstream of challenges already raised) |
-
-**Outcome — zero collisions, for the first time in seven iterations.** Every reserved number was used, and
-every number taken *outside* a block was taken above every block and reported: agent A queued `T-196`–`T-198`,
-agent B took `CH-0131` and `T-200` and recorded that `T-195` had been claimed by a sibling mid-write, and the
-coordinator took `T-201`. **Reserving in this file first is what did it** — re-listing `gpd/claims/`
-immediately before writing is what failed the six iterations before.
+**Harness.** Run `tools/verify.sh` for anything authoritative — four post-Gradle gates, ~21 minutes. Four
+retained checkers guard the documents and each has its own self-tests: `tools/trace-answers.py` (now four
+checks, including challenge statuses), `tools/check-markdown-tables.py`, `tools/result-reader-census.py` and
+`tools/reemission-order.py` (ask it before any re-emission sweep — a sweep is a topological **order**, not a
+list). **Reserve claim, challenge AND task numbers in this file before starting parallel agents**; iteration
+23 did and had **zero** collisions after six consecutive iterations of them. **Three concurrent agents, not
+four**: four each running a `verify` and a `study` put this box at load 11.3 with 3 GB free and OOM'd the
+Kotlin daemon despite the documented `-Xmx3g`, because that cure is per **daemon** and the constraint is the
+**product**.
 
 ## Number reservations — iteration 24 (2026-08-18)
 
