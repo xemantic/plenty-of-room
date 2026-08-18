@@ -119,6 +119,13 @@ An agent needing more takes the next free number **above every block above** and
 
 `T-206` (the oblique versus perpendicular root) is queued but not started.
 
+## Number reservations — iteration 28 (2026-08-18)
+
+| Agent | Task | Claims | Challenges |
+|---|---|---|---|
+| L | `T-207` repair the 14 committed `String.format` defects | `C-0127` | `CH-0149`, `CH-0150` |
+| M | `T-206` what an oblique attachment root costs | `C-0128` | `CH-0151`, `CH-0152` |
+
 ## Process blockers
 
 | ID | Task | Status | Notes |
