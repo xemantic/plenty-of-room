@@ -70,6 +70,20 @@ retained checkers guard the documents (`tools/trace-answers.py`, `tools/check-ma
 collided in six consecutive iterations**: reserving claim numbers does not touch the numbers agents *raise*,
 so take one above the highest in use and say where you moved from.
 
+## Number reservations — iteration 23 (2026-08-18)
+
+Four agents run in parallel this iteration.
+Claim, challenge and task numbers are reserved **here first**, because this is the register the other
+agents read — re-listing `gpd/claims/` immediately before writing does not prevent a collision.
+An agent that needs more than its block takes the next free number **above every block below** and says so.
+
+| Agent | Task | Claims | Challenges |
+|---|---|---|---|
+| A | `T-191` four-layer tile | `C-0109` | `CH-0124`, `CH-0125` |
+| B | `T-192` device B at a tall gap | `C-0110` | `CH-0126`, `CH-0127` |
+| C | `T-193` template-stripped gold and its PZC | `C-0111` | `CH-0128` |
+| D | `T-190` what the 42 interior crossovers carry | `C-0112` | `CH-0129`, `CH-0130` |
+
 ## Process blockers
 
 | ID | Task | Status | Notes |
