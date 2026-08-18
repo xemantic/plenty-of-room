@@ -254,7 +254,14 @@ the richest set richest and does not make it flatter.
    carries a phase change with it and is 8.68 % BETTER** (0.639129638 → 0.583664426), the count term being
    +12.86 % and the **phase** term **−19.0 %**. So the recommendation stands and its bookkeeping did not:
    **no claim in the corpus contained both terms of that trade until `C-0103`.**
-   So the flat-tile question is closed on every **coupling** axis this
+   **And the count/phase trade must be read on the TOTAL, not on its split**
+   (`C-0108`, `CH-0123`): the two-way decomposition defending the 34 → 30 reduction is **path-dependent** —
+   count-first gives +12.86 % / −19.27 %, phase-first gives **−11.48 % / +2.93 %**, and on the search-free
+   grid the phase term **changes sign** between orderings — while both totals agree at **0.0**. The
+   recommendation rests on the total, so it stands; the split it was explained by does not. The count effect
+   is also not uniform across the lattice: adverse at **27 of 32** phases and **favourable at 5**, and at the
+   recommended phase 8 it costs only **+2.93 to +4.48 %**, 2.9–4.4× cheaper than the figure the trade was
+   priced at. So the flat-tile question is closed on every **coupling** axis this
    programme can reach, and what remains is a fabrication yield or a specification change, not a design.
    **One structural unknown does remain, and it was found by looking for a negative** (`C-0104`, `T-172`).
    A crossover **prestrain** is an *initial stress*, so it leaves the stiffness matrix untouched and enters

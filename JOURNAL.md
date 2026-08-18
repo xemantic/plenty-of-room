@@ -7302,3 +7302,17 @@ question rather than the answer: what a *yes* now buys is a body 2.05× flatter 
 fabricated flat tile, and the programme has **no unspent design axis left, only a fabrication yield**. That
 is the second outward-facing document to carry a stale statement I wrote, and `T-184` records that it has
 **no checker at all**.
+
+**A postscript to iteration 22, from `T-178`'s own report.** Two things it found are worth keeping beside
+`C-0108`'s verdict. **The cheap ranking instrument DOES transfer across phases** — ρ = 0.883–0.978 over 32
+phases at each of six counts — so `C-0098`'s ρ = 0.468 belongs to a **shared body at mixed tie counts**, not
+to the phase axis, and a phase screen on the array is affordable at `n` solves a cell. That scopes `C-0098`
+in its own favour without a challenge, which is the pleasant direction of `C-0078`'s ground rule.
+And **`C-0098`'s own published cells already said the phase runs the other way** (+6.53 % from 24 to 8 at
+full inventory) — a cheap bound that was sitting in the corpus before the task that needed it ran. That is
+the third time this session a question has been answered by something already filed, after `T-161` finding
+its whole literature answer in `T-151`'s manifested sources and `T-182` finding Snodin already fetched.
+`ANSWERS.md` §4(g) now carries the **total-not-the-split** reading: the decomposition is path-dependent
+(count-first +12.86 / −19.27 %, phase-first **−11.48 / +2.93 %**, the phase term changing sign between
+orderings on the search-free grid) while both totals agree at **0.0**. The recommendation rests on the total
+and stands; the explanation it was given does not.
