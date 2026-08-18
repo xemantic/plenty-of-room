@@ -1,0 +1,648 @@
+{
+    "task": "T-182",
+    "leaf": "A1.2, with A8.2",
+    "question": "What prestrain does a row-end crossover actually carry, against C-0104's 15.4497275 degree threshold?",
+    "conditions": {
+        "temperature": "300 K",
+        "kBT": "4.141947 pN nm",
+        "buffer": "aqueous 2 mM MgCl2",
+        "sheet": "single-layer square-lattice Rothemund, 15 duplexes at 2.69 nm, 0.34 nm rise, 32/3 bp per turn",
+        "width": "38.080000000000005 nm at crossover phase 8 (C-0086, C-0090)",
+        "placement": "C-0090's published 34-root key 0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+        "load": "C-0022's solved collar at 2 mM, a 10 nm gap and 0.192 V",
+        "coupling": "C-0017's 33.333333333333336 pN/nm shared equally over 34 roots, as EXPLICIT elastic supports",
+        "freeStroke": "5.154738462428933 nm"
+    },
+    "ceilings": [
+        {
+            "name": "rupture — unzip allowable, 10 pN",
+            "statement": "k_theta = 2 k_bond a^2 on C-0029's two termini at the measured phosphate radius, so theta_0 = 2 a F / k_theta",
+            "degrees": 84.6981088,
+            "owner": "T-182",
+            "readStatus": "DERIVED (allowable CITED, CLAUDE.md)",
+            "derivedHere": true,
+            "closesTheQuestion": false
+        },
+        {
+            "name": "rupture — unzip allowable, 15 pN",
+            "statement": "k_theta = 2 k_bond a^2 on C-0029's two termini at the measured phosphate radius, so theta_0 = 2 a F / k_theta",
+            "degrees": 127.047163,
+            "owner": "T-182",
+            "readStatus": "DERIVED (allowable CITED, CLAUDE.md)",
+            "derivedHere": true,
+            "closesTheQuestion": false
+        },
+        {
+            "name": "rupture — duplex shear allowable, 48 pN",
+            "statement": "k_theta = 2 k_bond a^2 on C-0029's two termini at the measured phosphate radius, so theta_0 = 2 a F / k_theta",
+            "degrees": 406.550922,
+            "owner": "T-182",
+            "readStatus": "DERIVED (allowable CITED, CLAUDE.md)",
+            "derivedHere": true,
+            "closesTheQuestion": false
+        },
+        {
+            "name": "rupture — the nicked ceiling, 65 pN",
+            "statement": "k_theta = 2 k_bond a^2 on C-0029's two termini at the measured phosphate radius, so theta_0 = 2 a F / k_theta",
+            "degrees": 550.537707,
+            "owner": "T-182",
+            "readStatus": "DERIVED (allowable CITED, CLAUDE.md)",
+            "derivedHere": true,
+            "closesTheQuestion": false
+        },
+        {
+            "name": "register quantum — half a base-pair step",
+            "statement": "the edge domain length is an INTEGER of base pairs and Rothemund minimises the strain over it by hand, so the residual after optimal rounding is at most half a step",
+            "degrees": 17.1428571,
+            "owner": "T-182 / C-0104",
+            "readStatus": "DERIVED",
+            "derivedHere": true,
+            "closesTheQuestion": false
+        },
+        {
+            "name": "Rothemund's own remedy — one unpaired base",
+            "statement": "\"one or two scaffold bases could be left unpaired ... that should relax the crossover\" read as a SCALE: a remedy sized at one base prices the strain at one base of twist",
+            "degrees": 34.2857143,
+            "owner": "Rothemund 2006 Suppl. Note S2",
+            "readStatus": "CITED, READ DIRECTLY",
+            "derivedHere": false,
+            "closesTheQuestion": false
+        },
+        {
+            "name": "Rothemund's own remedy — two unpaired bases",
+            "statement": "the upper end of the same clause",
+            "degrees": 68.5714286,
+            "owner": "Rothemund 2006 Suppl. Note S2",
+            "readStatus": "CITED, READ DIRECTLY",
+            "derivedHere": false,
+            "closesTheQuestion": false
+        },
+        {
+            "name": "the twist boundary layer at a free row end",
+            "statement": "u(L/2) = mismatch x lambda x tanh(L/2 lambda), lambda = sqrt(C p / k_theta) — the only ceiling of the four that is a VALUE, and it is the largest",
+            "degrees": 24.983006,
+            "owner": "T-182",
+            "readStatus": "DERIVED",
+            "derivedHere": true,
+            "closesTheQuestion": false
+        }
+    ],
+    "boundaryLayer": [
+        {
+            "torsionalRigidity": 460.0,
+            "torsionalRigiditySource": "CanDo GJ = 460 pN nm^2",
+            "crossoverAlpha": 0.6,
+            "hingeStiffness": 8.11764706,
+            "crossoverSpacing": 10.2,
+            "crossoverSpacingBasis": "D L / N_c, the mean contour per crossover with the hinge shared",
+            "decayLength": 24.0416306,
+            "decayOverHalfRow": 1.26269068,
+            "endResidualDegrees": 24.983006,
+            "rigidLimitDegrees": 30.0,
+            "reliefFraction": 0.167233134,
+            "aboveThreshold": true
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "torsionalRigiditySource": "CanDo GJ = 460 pN nm^2",
+            "crossoverAlpha": 0.6,
+            "hingeStiffness": 8.11764706,
+            "crossoverSpacing": 5.44,
+            "crossoverSpacingBasis": "the 16 bp column pitch, every crossover unshared",
+            "decayLength": 17.5575245,
+            "decayOverHalfRow": 0.922138892,
+            "endResidualDegrees": 21.9885337,
+            "rigidLimitDegrees": 30.0,
+            "reliefFraction": 0.267048876,
+            "aboveThreshold": true
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "torsionalRigiditySource": "CanDo GJ = 460 pN nm^2",
+            "crossoverAlpha": 1.0,
+            "hingeStiffness": 13.5294118,
+            "crossoverSpacing": 10.2,
+            "crossoverSpacingBasis": "D L / N_c, the mean contour per crossover with the hinge shared",
+            "decayLength": 18.622567,
+            "decayOverHalfRow": 0.978075996,
+            "endResidualDegrees": 22.6184533,
+            "rigidLimitDegrees": 30.0,
+            "reliefFraction": 0.246051556,
+            "aboveThreshold": true
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "torsionalRigiditySource": "CanDo GJ = 460 pN nm^2",
+            "crossoverAlpha": 1.0,
+            "hingeStiffness": 13.5294118,
+            "crossoverSpacing": 5.44,
+            "crossoverSpacingBasis": "the 16 bp column pitch, every crossover unshared",
+            "decayLength": 13.6,
+            "decayOverHalfRow": 0.714285714,
+            "endResidualDegrees": 18.971821,
+            "rigidLimitDegrees": 30.0,
+            "reliefFraction": 0.367605966,
+            "aboveThreshold": true
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "torsionalRigiditySource": "CanDo GJ = 460 pN nm^2",
+            "crossoverAlpha": 1.2,
+            "hingeStiffness": 16.2352941,
+            "crossoverSpacing": 10.2,
+            "crossoverSpacingBasis": "D L / N_c, the mean contour per crossover with the hinge shared",
+            "decayLength": 17.0,
+            "decayOverHalfRow": 0.892857143,
+            "endResidualDegrees": 21.6313103,
+            "rigidLimitDegrees": 30.0,
+            "reliefFraction": 0.278956324,
+            "aboveThreshold": true
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "torsionalRigiditySource": "CanDo GJ = 460 pN nm^2",
+            "crossoverAlpha": 1.2,
+            "hingeStiffness": 16.2352941,
+            "crossoverSpacing": 5.44,
+            "crossoverSpacingBasis": "the 16 bp column pitch, every crossover unshared",
+            "decayLength": 12.4150446,
+            "decayOverHalfRow": 0.652050664,
+            "endResidualDegrees": 17.8213774,
+            "rigidLimitDegrees": 30.0,
+            "reliefFraction": 0.405954085,
+            "aboveThreshold": true
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "torsionalRigiditySource": "torsional persistence 100 nm x k_BT, magnetic tweezers",
+            "crossoverAlpha": 0.6,
+            "hingeStiffness": 8.11764706,
+            "crossoverSpacing": 10.2,
+            "crossoverSpacingBasis": "D L / N_c, the mean contour per crossover with the hinge shared",
+            "decayLength": 22.8132559,
+            "decayOverHalfRow": 1.1981752,
+            "endResidualDegrees": 24.5484384,
+            "rigidLimitDegrees": 30.0,
+            "reliefFraction": 0.181718721,
+            "aboveThreshold": true
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "torsionalRigiditySource": "torsional persistence 100 nm x k_BT, magnetic tweezers",
+            "crossoverAlpha": 0.6,
+            "hingeStiffness": 8.11764706,
+            "crossoverSpacing": 5.44,
+            "crossoverSpacingBasis": "the 16 bp column pitch, every crossover unshared",
+            "decayLength": 16.6604465,
+            "decayOverHalfRow": 0.87502345,
+            "endResidualDegrees": 21.4038701,
+            "rigidLimitDegrees": 30.0,
+            "reliefFraction": 0.286537662,
+            "aboveThreshold": true
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "torsionalRigiditySource": "torsional persistence 100 nm x k_BT, magnetic tweezers",
+            "crossoverAlpha": 1.0,
+            "hingeStiffness": 13.5294118,
+            "crossoverSpacing": 10.2,
+            "crossoverSpacingBasis": "D L / N_c, the mean contour per crossover with the hinge shared",
+            "decayLength": 17.671072,
+            "decayOverHalfRow": 0.928102523,
+            "endResidualDegrees": 22.058898,
+            "rigidLimitDegrees": 30.0,
+            "reliefFraction": 0.264703401,
+            "aboveThreshold": true
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "torsionalRigiditySource": "torsional persistence 100 nm x k_BT, magnetic tweezers",
+            "crossoverAlpha": 1.0,
+            "hingeStiffness": 13.5294118,
+            "crossoverSpacing": 5.44,
+            "crossoverSpacingBasis": "the 16 bp column pitch, every crossover unshared",
+            "decayLength": 12.9051264,
+            "decayOverHalfRow": 0.67779025,
+            "endResidualDegrees": 18.3125227,
+            "rigidLimitDegrees": 30.0,
+            "reliefFraction": 0.389582576,
+            "aboveThreshold": true
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "torsionalRigiditySource": "torsional persistence 100 nm x k_BT, magnetic tweezers",
+            "crossoverAlpha": 1.2,
+            "hingeStiffness": 16.2352941,
+            "crossoverSpacing": 10.2,
+            "crossoverSpacingBasis": "D L / N_c, the mean contour per crossover with the hinge shared",
+            "decayLength": 16.1314079,
+            "decayOverHalfRow": 0.847237812,
+            "endResidualDegrees": 21.0339018,
+            "rigidLimitDegrees": 30.0,
+            "reliefFraction": 0.298869939,
+            "aboveThreshold": true
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "torsionalRigiditySource": "torsional persistence 100 nm x k_BT, magnetic tweezers",
+            "crossoverAlpha": 1.2,
+            "hingeStiffness": 16.2352941,
+            "crossoverSpacing": 5.44,
+            "crossoverSpacingBasis": "the 16 bp column pitch, every crossover unshared",
+            "decayLength": 11.7807147,
+            "decayOverHalfRow": 0.618735015,
+            "endResidualDegrees": 17.1526548,
+            "rigidLimitDegrees": 30.0,
+            "reliefFraction": 0.42824484,
+            "aboveThreshold": true
+        }
+    ],
+    "dishing": [
+        {
+            "state": "zero prestrain — the reproduction gate",
+            "distribution": "none",
+            "degrees": 0.0,
+            "coupledDishingOverStroke": 0.0621469087,
+            "freeDishingOverStroke": 0.299034765,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 0.376871713,
+            "flatAtTenPercent": true
+        },
+        {
+            "state": "derived boundary layer, low end, +theta_0",
+            "distribution": "uniform — what the sign composition selects",
+            "degrees": 21.0339018,
+            "coupledDishingOverStroke": 0.0977014054,
+            "freeDishingOverStroke": 0.396399901,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 3.12094644,
+            "flatAtTenPercent": true
+        },
+        {
+            "state": "derived boundary layer, low end, -theta_0",
+            "distribution": "uniform — what the sign composition selects",
+            "degrees": -21.0339018,
+            "coupledDishingOverStroke": 0.114126245,
+            "freeDishingOverStroke": 0.208741169,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 3.08253845,
+            "flatAtTenPercent": false
+        },
+        {
+            "state": "derived boundary layer, NOMINAL, +theta_0",
+            "distribution": "uniform — what the sign composition selects",
+            "degrees": 22.6184533,
+            "coupledDishingOverStroke": 0.102281982,
+            "freeDishingOverStroke": 0.40373473,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 3.34274481,
+            "flatAtTenPercent": false
+        },
+        {
+            "state": "derived boundary layer, NOMINAL, -theta_0",
+            "distribution": "uniform — what the sign composition selects",
+            "degrees": -22.6184533,
+            "coupledDishingOverStroke": 0.119333389,
+            "freeDishingOverStroke": 0.202087644,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 3.30388086,
+            "flatAtTenPercent": false
+        },
+        {
+            "state": "derived boundary layer, high end, +theta_0",
+            "distribution": "uniform — what the sign composition selects",
+            "degrees": 24.983006,
+            "coupledDishingOverStroke": 0.109117365,
+            "freeDishingOverStroke": 0.414680154,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 3.67372422,
+            "flatAtTenPercent": false
+        },
+        {
+            "state": "derived boundary layer, high end, -theta_0",
+            "distribution": "uniform — what the sign composition selects",
+            "degrees": -24.983006,
+            "coupledDishingOverStroke": 0.127103769,
+            "freeDishingOverStroke": 0.196077263,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 3.63417987,
+            "flatAtTenPercent": false
+        },
+        {
+            "state": "the un-relieved rigid limit, +theta_0",
+            "distribution": "uniform — what the sign composition selects",
+            "degrees": 30.0,
+            "coupledDishingOverStroke": 0.12362035,
+            "freeDishingOverStroke": 0.43790363,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 4.37598041,
+            "flatAtTenPercent": false
+        },
+        {
+            "state": "the un-relieved rigid limit, -theta_0",
+            "distribution": "uniform — what the sign composition selects",
+            "degrees": -30.0,
+            "coupledDishingOverStroke": 0.143590587,
+            "freeDishingOverStroke": 0.194312391,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 4.33499243,
+            "flatAtTenPercent": false
+        },
+        {
+            "state": "NOMINAL on the glide-alternating distribution",
+            "distribution": "alternating — the glide symmetry alone, C-0104's even-in-sign map",
+            "degrees": 22.6184533,
+            "coupledDishingOverStroke": 0.0871794687,
+            "freeDishingOverStroke": 0.343149365,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 3.17220394,
+            "flatAtTenPercent": true
+        },
+        {
+            "state": "the GRADED corrugated field over all 56 crossovers",
+            "distribution": "graded — (-1)^b u(x) at every site, the field the boundary layer actually produces",
+            "degrees": 22.6184533,
+            "coupledDishingOverStroke": 0.0922622269,
+            "freeDishingOverStroke": 0.264731662,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "peakHingeMoment": 2.25289759,
+            "flatAtTenPercent": true
+        }
+    ],
+    "literature": [
+        {
+            "question": "Is the residual angle at a row-end / edge crossover quantified anywhere?",
+            "source": "EuropePMC, 20 queries over 156 unique records, plus 10 targeted title queries",
+            "locator": "gpd/data/T-182-sources/europepmc-queries.json, targeted-queries.json",
+            "readStatus": "abstracts read; five full texts fetched and read",
+            "quantified": false,
+            "degrees": null,
+            "note": "NOT FOUND. Extends C-0104's 10 queries onto oxDNA, all-atom MD, cryo-EM, the global-twist measurement line and the corrugation/tube literature."
+        },
+        {
+            "question": "Has an oxDNA study measured the interduplex roll at origami crossovers?",
+            "source": "Snodin, Schreck, Romano, Louis & Doye, Nucleic Acids Res. 47:1585 (2019)",
+            "locator": "gpd/data/T-151-sources/PMC6379721-fullTextXML.xml (already in the repository) and gpd/data/T-182-sources/PMC6379721-snodin2019.pdf, Figure 5",
+            "readStatus": "READ DIRECTLY (text); figure digitised against its own axis",
+            "quantified": true,
+            "degrees": 9.0,
+            "note": "YES, and it is the same coordinate: \"the angle between the inter-helix vector and the average inter-helix vector at the nearest junction ... projected onto the plane perpendicular to the average helix axis\". Figure 5's thick black AVERAGE peaks at about +8 deg and -9 deg either side of a junction; individual junctions reach about +-16 deg."
+        },
+        {
+            "question": "Does that study cover the ROW-END crossover?",
+            "source": "Snodin et al. (2019), same paragraph",
+            "locator": "gpd/data/T-151-sources/PMC6379721-fullTextXML.xml",
+            "readStatus": "READ DIRECTLY",
+            "quantified": false,
+            "degrees": null,
+            "note": "NO, and it says so: \"we do not include data for all junctions, but only those that have the canonical pattern of neighbouring junctions; thus, we EXCLUDE THE OUTERMOST JUNCTIONS ON THE TILE, and the junctions next to the scaffold seam as well as the seam itself.\" The one published measurement of this quantity excludes exactly the sites T-182 asks about."
+        },
+        {
+            "question": "Is the accumulating-register mechanism this task derives the published one?",
+            "source": "Snodin et al. (2019)",
+            "locator": "gpd/data/T-151-sources/PMC6379721-fullTextXML.xml",
+            "readStatus": "READ DIRECTLY",
+            "quantified": true,
+            "degrees": 17.142857,
+            "note": "YES: \"Rothemund's original 2D origami tiles have been shown to be somewhat (right) twisted, because of a slight mismatch between the pitch of DNA (~10.5 bp) and the separation between the junctions (32 bp for three helical turns)\", and the cure is \"a suitable number of sections with 31 base pairs between equivalent junctions in order to remove this net twist\" — a ONE BASE PAIR correction per 32 bp domain, which is exactly the 17.14 deg per-domain register error C-0104's 32 bp rung carries (31 and 32 bp domains are -17.14 and +17.14 deg, so an even mix cancels)."
+        },
+        {
+            "question": "Do the free junction's own preferred angles bound the out-of-plane prestrain?",
+            "source": "Snodin et al. (2019), Figure 1C and the oxDNA free-junction landscape",
+            "locator": "gpd/data/T-151-sources/PMC6379721-fullTextXML.xml",
+            "readStatus": "READ DIRECTLY",
+            "quantified": true,
+            "degrees": 4.5,
+            "note": "Partly. The free junction's minimum is (phi, theta) = (95.5, 2.5) deg and \"the minimum at theta = 4.5 deg for the subset 160 <= phi <= 180, the region likely to be relevant within origami\". theta is the arm-to-junction-plane bend, not the interduplex roll, so it is a SECOND and additive out-of-plane term of a few degrees, not a bound on the register term."
+        },
+        {
+            "question": "Is the accumulation over a whole row observed experimentally?",
+            "source": "Ni, Fan, Zhou, Guo, Lee, Seeman, Kim & Yao, iScience 25:104373 (2022)",
+            "locator": "gpd/data/T-182-sources/PMC9127610-fullTextXML.xml",
+            "readStatus": "READ DIRECTLY",
+            "quantified": true,
+            "degrees": null,
+            "note": "YES, as a global twist: \"2D origami uses ~10.7 base pairs for every turn ... while natural B-DNA has around 10.5 ... The 0.2 base pair per turn difference leads to a dramatic change in geometry ... owing to the LARGE NUMBER OF BASE PAIRS included in the sample (~288 bps in one helix)\", and the same paper images \"the cross-tile edges, where there is maximum flexibility\"."
+        },
+        {
+            "question": "Is the strain unrelieved at an edge, and does anyone know how it relieves?",
+            "source": "Rothemund, Nature 440:297 (2006), Supplementary Note S2",
+            "locator": "gpd/data/T-151-sources/DNAorigami-supp1.linux.txt",
+            "readStatus": "READ DIRECTLY",
+            "quantified": false,
+            "degrees": null,
+            "note": "\"How the strain is actually relieved is unknown\" — still the state of the art. The same note names the two causes as ANGLES, gives the glide symmetry that balances them in the bulk (\"cause them to be, on average, flat\"), states that the balance fails \"at seams and edges\", and prices the remedy at \"one or two scaffold bases\"."
+        },
+        {
+            "question": "Is the edge domain length a design variable Rothemund tunes by hand?",
+            "source": "Rothemund (2006), Supplementary Note S1 step 4",
+            "locator": "gpd/data/T-151-sources/DNAorigami-supp1.linux.txt",
+            "readStatus": "READ DIRECTLY",
+            "quantified": true,
+            "degrees": 34.285714,
+            "note": "YES: \"Crossovers along the edges of the shape, in particular, must be adjusted to minimize strain ... By hand, helical domain lengths are changed by single bases until the strain energy is minimized\", and the worked example moves an edge crossover from 5 to 6 bases: \"The 6-base distance creates the least strain.\" The design variable is quantised at ONE BASE, 34.29 deg."
+        }
+    ],
+    "convergence": [
+        {
+            "axis": "beam subdivisions 1 -> 2, at the adverse nominal",
+            "coarse": 0.120392297,
+            "fine": 0.119333389,
+            "relativeMovement": 0.0089
+        },
+        {
+            "axis": "beam subdivisions 2 -> 4, at the adverse nominal",
+            "coarse": 0.119333389,
+            "fine": 0.119447914,
+            "relativeMovement": 9.6E-4
+        },
+        {
+            "axis": "dishing sample grid 41 -> 81",
+            "coarse": 0.119333389,
+            "fine": 0.119333389,
+            "relativeMovement": 0.0
+        },
+        {
+            "axis": "dishing sample grid 81 -> 161",
+            "coarse": 0.119333389,
+            "fine": 0.119333389,
+            "relativeMovement": 0.0
+        },
+        {
+            "axis": "boundary layer, discrete chain 64 -> 256 elements",
+            "coarse": 22.61505,
+            "fine": 22.6182406,
+            "relativeMovement": 1.4E-4
+        }
+    ],
+    "reproductions": [
+        {
+            "what": "C-0090's 34-root dishing at 38.08 nm / phase 8, on an EXPLICIT-SUPPORT grillage",
+            "owner": "C-0090",
+            "expected": 0.0621469105,
+            "reproduced": 0.0621469087,
+            "departure": 3.0E-8
+        },
+        {
+            "what": "C-0104's zero-prestrain baseline",
+            "owner": "C-0104",
+            "expected": 0.0621469105,
+            "reproduced": 0.0621469087,
+            "departure": 3.0E-8
+        },
+        {
+            "what": "C-0104's dishing per radian of uniform row-end prestrain, ON ITS OWN DEFINITION (the secant of the peak at 1 rad)",
+            "owner": "C-0104",
+            "expected": 0.140379322,
+            "reproduced": 0.140379315,
+            "departure": 5.1E-8
+        },
+        {
+            "what": "Gen1Tile's crossover hinge stiffness from the two-bond count",
+            "owner": "C-0009",
+            "expected": 13.5294118,
+            "reproduced": 13.5294118,
+            "departure": 2.6E-9
+        },
+        {
+            "what": "CLAUDE.md's 16 bp register departure",
+            "owner": "C-0015",
+            "expected": 8.5714286,
+            "reproduced": 8.57142857,
+            "departure": 3.3E-9
+        },
+        {
+            "what": "C-0095's row-end crossover count",
+            "owner": "C-0095",
+            "expected": 14.0,
+            "reproduced": 14.0,
+            "departure": 0.0
+        },
+        {
+            "what": "C-0015's crossover inventory at eight columns",
+            "owner": "C-0015",
+            "expected": 56.0,
+            "reproduced": 56.0,
+            "departure": 0.0
+        }
+    ],
+    "oxdnaCost": [
+        {
+            "item": "system size",
+            "value": "3360 nucleotides for the whole 38.08 nm x 15-duplex tile",
+            "basis": "2 strands x 15 duplexes x 112 bp"
+        },
+        {
+            "item": "T-9's own cost model",
+            "value": "2-5 k nucleotides, microsecond-scale sampling on 8 cores, \"days not weeks — it fits this box\"",
+            "basis": "TASKS.md T-9, the cost estimate the iteration that raised it recorded"
+        },
+        {
+            "item": "verdict against that model",
+            "value": "the whole tile is 3360 nt, at the TOP of T-9's own range; the row-end crossover alone is a 2-duplex, 2 x 32 bp motif of ~256 nt, an order of magnitude inside it",
+            "basis": "the measurement is per-junction (Snodin's Figure 5 protocol), so the minimal system is one row end plus its two neighbouring junctions, not the tile"
+        },
+        {
+            "item": "what it must resolve to be worth running",
+            "value": "the row-end residual to better than +-3 deg, because the derived bracket is 21.0-25.0 deg against a 15.45 deg threshold",
+            "basis": "T-182's own bracket and C-0104's threshold"
+        },
+        {
+            "item": "the protocol is published",
+            "value": "Snodin et al. (2019) define and apply the exact measurement — the angle between inter-helix vectors near a junction — and EXCLUDE the outermost junctions",
+            "basis": "gpd/data/T-151-sources/PMC6379721-fullTextXML.xml"
+        },
+        {
+            "item": "toolchain",
+            "value": "oxDNA needs g++/cmake, absent by default on this box and installable (CLAUDE.md); no GPU is required at this system size",
+            "basis": "CLAUDE.md Environment"
+        }
+    ],
+    "predicates": [
+        {
+            "id": "P1",
+            "statement": "every accessible ceiling is stated, derived here and compared against C-0104's 15.4497275 deg, with the closes/does-not-close verdict said explicitly",
+            "met": true
+        },
+        {
+            "id": "P2",
+            "statement": "the literature is searched on the modalities C-0104 did not use, with a read status per load-bearing source and every query string recorded",
+            "met": true
+        },
+        {
+            "id": "P3",
+            "statement": "a value, a bound or a threshold is delivered, and the sign is decided as far as symmetry allows",
+            "met": true
+        },
+        {
+            "id": "P4",
+            "statement": "C-0099's recommendation against an oxDNA edge-crossover run is upheld or reversed, and if reversed the run is costed",
+            "met": true
+        }
+    ],
+    "falsifiers": [
+        {
+            "id": "F1",
+            "statement": "the twist-boundary-layer model fails its own limits",
+            "fired": false,
+            "outcome": "NO — asserted as gate 2 in EdgeTwistReliefTest: k_theta -> 0 returns the free-duplex mismatch x L/2 and k_theta -> infinity returns zero, both to 1e-6"
+        },
+        {
+            "id": "F2",
+            "statement": "THE DECLARED ONE — every ceiling lands below 15.4497275 deg, so the question closes on the cheap bound and C-0099's recommendation stands",
+            "fired": true,
+            "outcome": "FIRED IN THE OTHER DIRECTION: 8 of 8 ceilings lie ABOVE the threshold, and the one that is a value rather than a limit — the twist boundary layer at 21.0-25.0 deg — is among them"
+        },
+        {
+            "id": "F3",
+            "statement": "the independent explicit-support path does not reproduce C-0090's 0.0621469105 and C-0104's slope 0.140379322 on C-0104's own definition of it",
+            "fired": false,
+            "outcome": "departures: C-0090 3.000e-08, C-0104 3.000e-08, C-0104 5.100e-08"
+        },
+        {
+            "id": "F4",
+            "statement": "a source QUANTIFIES the residual angle at a row-end crossover, in which case this is a value and not a bound",
+            "fired": false,
+            "outcome": "NO for the row end itself — Snodin et al. quantify the INTERIOR corrugation at about 8-9 deg average and +-16 deg per junction, and exclude the outermost junctions in as many words"
+        },
+        {
+            "id": "F5",
+            "statement": "the sign composition does not select one of C-0104's three distributions",
+            "fired": false,
+            "outcome": "NO — (-1)^b from the glide symmetry composes with the (-1)^b of the alternating raster ends to +1 at every interface, which is C-0104's UNIFORM distribution, its ADVERSE one; asserted as gate 3"
+        },
+        {
+            "id": "F6",
+            "statement": "the standing one: a uniform load on a uniform foundation dishes more than 1e-6 of the free stroke, read on withoutPrestrain",
+            "fired": false,
+            "outcome": "worst over all states 2.126e-07, read on the SUPPORT-FREE prestrain-free lattice; read on the 34-anchor coupled lattice instead it reads 0.170 and fires, correctly, because a sparse coupling is a dishing source (C-0060) and that is not what this falsifier is about"
+        }
+    ],
+    "findings": [
+        "THE QUESTION DOES NOT CLOSE ON THE CHEAP BOUND, AND THE DECLARED FALSIFIER FIRED THE OTHER WAY. Of 8 ceilings, 8 lie ABOVE C-0104's 15.4497 deg threshold. Rupture does not bind at all: the unzip allowable inverts to 84.7 deg and the nicked ceiling to 550.5 deg, because a crossover's own hinge is soft (13.529 pN nm/rad) and the couple at the threshold is only 3.65 pN nm.",
+        "C-0104'S LADDER IS THE WRONG LADDER, AND IT IS TOO SMALL. Its rungs are PER-DOMAIN register offsets, but every domain's error carries the same sign, so it ACCUMULATES along a duplex and what limits it is the duplex's own torsion. The boundary layer u(L/2) = mismatch x lambda x tanh(L/2 lambda) has lambda = 18.62 nm against a 19.04 nm half-row, and leaves 21.03-24.98 deg at a free row end — against an un-relieved 30.00 deg and C-0104's largest rung of 17.14 deg.",
+        "THE SIGN COMPOSES TO THE ADVERSE DISTRIBUTION, AND THAT IS A LATTICE FACT. Rothemund's glide symmetry flips the crossover type with the interface parity and a boustrophedon's raster turns alternate ends, so the row-end crossover of interface b sits where u = (-1)^b u_max and is flipped by (-1)^b: the two cancel and every row-end crossover carries the SAME sign. That is C-0104's UNIFORM distribution, the only one of its three that crosses 0.10.",
+        "READ AS C-0104 READS IT — THE 14 ROW-END SITES ALONE — THE PUBLISHED PLACEMENT LOSES T-5b's 0.10 AT THE DERIVED VALUE IN BOTH SIGNS: 0.1193334 at -22.62 deg and 0.1022820 at +22.62 deg, on C-0090's own 34 roots at 38.08 nm / phase 8. The verdict survives only at the soft end of the bracket and only in the favourable sign (0.0977014 at +21.03 deg).",
+        "AND C-0104'S THRESHOLD IS A SECANT, NOT THE TRIANGLE INEQUALITY IT IS NAMED AS. Its 0.140379322 is |D(1 rad) - D(0)|, reproduced here at 0.140379315; the peak of the prestrain-ONLY field is 0.188285084, and the triangle ceiling it gives is 11.5188 deg rather than 15.4497 deg. C-0104's number is still an upper bound on the crossing — peak dishing is convex in theta_0, so a chord from zero lies above it on [0, 1 rad] — but the bound it claims is tighter than the bound it quotes, which moves the threshold DOWN and away from the derived value. CH-0122.",
+        "BUT THE BOUNDARY LAYER IS A FIELD, NOT A SET OF 14 NUMBERS, AND THE COMPLETE FIELD KEEPS THE VERDICT. Every crossover at x carries (-1)^b u(x), not only the 14 at the row ends; over all 56 sites that reads 0.0922622 (flat=true), because the interior sites partly cancel the row-end ones. So the answer at the derived value is a verdict that survives with 7.7 % of the convention unused where zero prestrain leaves 37.9 % — and the difference between the two readings is the 42 interior crossovers, which nobody has measured either.",
+        "THE ONE PUBLISHED MEASUREMENT OF THIS QUANTITY EXCLUDES EXACTLY THESE SITES. Snodin et al. (2019) define the interduplex corrugation angle, measure it over a 2D origami by oxDNA, report about 8-9 deg in the average and +-16 deg per junction — and write that they \"exclude the outermost junctions on the tile\". The protocol exists, the machinery exists, and the number does not.",
+        "SO C-0099'S RECOMMENDATION IS REVERSED. It refused an oxDNA edge crossover because it would refine a STIFFNESS worth 2.85 % of an interval the verdict does not cross; the prestrain is a LOAD, the verdict crosses at 15.4497 deg, and every route to a value lands in 8-30 deg. The run is warranted, it is one row end and its two neighbours rather than a tile, and it fits this box."
+    ],
+    "parameters": {
+        "designTwistPerBase": "33.75",
+        "naturalTwistPerBase": "34.285714285714285",
+        "twistRateMismatchPerNm": "0.027499935693187913",
+        "crossoverHingeStiffness": "13.529411764705882",
+        "phosphateRadius": "1.0",
+        "derivedCrossoverSpacing": "10.200000000000001",
+        "crossoverCount": "56",
+        "rowEndCrossovers": "14",
+        "c0104Threshold": "15.4497275",
+        "c0104UnitSlope": "0.140379322",
+        "unitPrestrainPeakHere": "0.18828508431310892",
+        "c0104SecantReproducedHere": "0.1403793148925057",
+        "trueTriangleCeilingDegrees": "11.518822021501977",
+        "flatnessTolerance": "0.1",
+        "sources": "gpd/results/T-3b-tile-edge-load-profile.json, gpd/results/T-153-buildable-raster-width.json, gpd/results/T-172-row-end-prestrain.json"
+    }
+}

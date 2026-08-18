@@ -102,6 +102,7 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=stability.DoublingLadderRepairStudyKt         # T-159, the repaired force ladder, and C-0084's 108 fold rows re-read
 ./gradlew study -Pstudy=anchoring.CrossoverPhaseSelectionStudyKt      # T-171, which crossover phase the three standing demands can share (none)
 ./gradlew study -Pstudy=coupling.PathCountFixedGeometryStudyKt        # T-163, the path-count sweep at FIXED station geometry on the upward lattice
+./gradlew study -Pstudy=coupling.CountPhaseInteractionStudyKt         # T-178, the count/phase interaction over all 32 crossover phases
 ./gradlew study -Pstudy=structure.RowEndPrestrainStudyKt              # T-172, the row-end crossover's PRESTRAIN, which is a load and not a stiffness
 ./gradlew study -Pstudy=synthesis.WithdrawnCeilingNoteStudyKt         # T-169, the withdrawn 40 pN/nm ceiling in an emitted note, and the verdict beside it
 ```

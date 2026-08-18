@@ -7261,3 +7261,44 @@ which is exactly the class `C-0088` mechanised for the deliverable, now in the i
 Fixed so the default sweep is tracked **plus** untracked-but-present — the direction that catches more — with
 four tests, and the two environments now agree at 325 files. **That is the second defect an agent has found
 in a checker the coordinator built and the third time a check has caught its own author.**
+
+## 2026-08-18 — Iteration 22
+
+**`C-0106` (`T-175`) — the deliverable's three mechanical checks were clean and the tile it describes was the
+wrong size.** That sentence is the iteration's finding. Of 48 items (`C-0081`–`C-0105`, `CH-0093`–`CH-0120`),
+**14 were reflected, 24 carried in, 10 deliberately not**, and `C-0080`'s third drift class is at **12
+instances in 48** against its own 5 in 55.
+**Both declared falsifiers fired.** The first was written as *"the only drift left is inside passages that
+exist; it fires if a whole structural determination has no passage at all"* — and it fired **twice**. §3's
+40.0 nm tile is **not a buildable raster width**, so the tile is **112 bp = 38.08 nm** and **12.0 % flatter**
+there, and the strings `38.08`, `112 bp`, `seam` and `seamless` appeared **zero times in 830 lines**. And
+§5's *"six questions for NDI"* was the **old** six: two discharged two iterations earlier still in rows 3 and
+4, their two live replacements absent — **while §1 of the same file already named one of them.** Every row
+was individually correct and the **set** was stale. *A count can survive while none of its membership does.*
+The second falsifier — *no claim in the range is wrong* — fired mildly and produced **`CH-0121`**, the first
+challenge an `ANSWERS.md` pass has ever raised against a claim: `C-0102`'s headline says the three
+phase-demand sets *"stay disjoint"* when two of them are **identical** at `{8, 24}`, which its own census
+table prints.
+> **A checker that reports zero can be reporting zero about the wrong object.** All three existing checks
+> compare the file to the corpus, to the queue, or to itself. **None can see a determination with no
+> passage.**
+
+**`C-0107` (`T-182`) — the cheap bound does not close it and the derived value is past the threshold.** All
+**8** ceilings on a row-end crossover's prestrain lie **above** `C-0104`'s 15.4497275°, by 5.5–36×, because
+the couple at the threshold is only **3.65 pN·nm**. And `C-0104`'s register ladder is **the wrong ladder**:
+its rungs are *per-domain* offsets, but every domain's error carries the **same sign**, so it accumulates
+along a duplex and what limits it is the duplex's own torsion. So the prestrain question is not bounded away
+— it is live, and the recommended design depends on it.
+
+**`C-0108` (`T-178`) — the count effect does not hold at all 32 phases and the decomposition is not one.**
+Run search-free and nested at every phase, the 34 → 30 reduction is adverse at **27 of 32** and
+**favourable at 5**, spanning **−4.60 to +12.21 %** against `C-0103`'s +12.86 % at phase 24. So
+`C-0103`'s defence of the recommendation — *count term +12.86 %, phase term −19.0 %* — is not a
+decomposition, and the two axes interact.
+
+**Coordinator.** `DECISIONS-FOR-NDI.md` question 6 said *"`T-165` has not been run"*; it ran two iterations
+ago and `C-0098` closed that axis **negatively**. Corrected in place — and the correction narrows the
+question rather than the answer: what a *yes* now buys is a body 2.05× flatter **at zero defects**, not a
+fabricated flat tile, and the programme has **no unspent design axis left, only a fabrication yield**. That
+is the second outward-facing document to carry a stale statement I wrote, and `T-184` records that it has
+**no checker at all**.

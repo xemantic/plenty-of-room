@@ -273,13 +273,20 @@ that came to mind when the problem was written?
 - **A buildable body is not the rigid one**: a four-layer honeycomb brick reads **0.100166871**, *worse* than
   the array. Body rigidity is first order, so a *yes* opens real work rather than a free win.
 
-**What the programme would recommend.** Nothing yet — `T-165` has not been run, and it is the only unspent
-axis (a distribution *and* placement search on the shared-body topology, needing 2.40× to reach the
-convention). What the programme can say is that **a *no* closes the last open recovery route for a flat
-tile**, and that is worth knowing before more is spent on it.
+**What the programme would recommend.** ~~Nothing yet — `T-165` has not been run~~ — **CORRECTED,
+iteration 22.** `T-165` ran in iteration 20 and `C-0098` **closed that axis negatively**: searched on the
+crossover sites the lattice actually supplies, the best 90th-percentile dishing is **0.375506727** at 100 %
+exceedance — *worse* than the figure it was chasing, because that figure sat on an abstract 90-station grid
+where the lattice offers at most 60. The distribution axis **shuts as `1/t`**, the shared body's stiff limit
+being a kinematic constraint independent of the tie distribution.
+**So this decision is narrower than when it was written**: what a *yes* buys is a body **2.05× flatter than
+the array at ZERO DEFECTS**, not a fabricated flat tile. A *no* still closes the last open recovery route —
+and the honest statement is that the programme now has **no unspent design axis at all**, only a fabrication
+yield.
 
-**What deferring costs.** `T-165` cannot be scoped, and the flatness answer stays *"flat as designed, not
-shown flat as built"* with no route left to test.
+**What deferring costs.** Less than it did, because the axis is spent. The flatness answer stays *"flat as
+designed, not shown flat as built"*, and what would move it is the per-site incorporation measurement in
+[`ANSWERS.md`](ANSWERS.md) §5 — a bench measurement — rather than another coupling design.
 
 ---
 

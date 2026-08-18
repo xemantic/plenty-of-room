@@ -1,0 +1,681 @@
+{
+ "task": "T-175",
+ "claim": "C-0106",
+ "challengeRaised": "CH-0121",
+ "title": "Fourth synthesis of ANSWERS.md against iterations 16-21",
+ "iteration": 22,
+ "verificationType": "logical (a coverage partition of the range against the deliverable, then a statement-by-statement adjudication, each owning claim read) + in-silico (tools/trace-answers.py and tools/check-markdown-tables.py, unmodified, run before and after)",
+ "maturity": "TRL 1-3, and below it: nothing here is physics. No number is re-derived, no solver runs, no verdict of any claim is examined except for whether the deliverable reports it. One claim is challenged and it is challenged on a set-theoretic word, not on a number.",
+ "corpusAtAudit": {
+  "claimFiles": 100,
+  "challengeFiles": 109,
+  "highestClaim": "C-0105",
+  "highestChallenge": "CH-0120",
+  "unusedClaimNumbers": [
+   "C-0038",
+   "C-0043",
+   "C-0044",
+   "C-0045",
+   "C-0094"
+  ],
+  "unusedChallengeNumbers": [
+   "CH-0095",
+   "CH-0096",
+   "CH-0110",
+   "CH-0117"
+  ]
+ },
+ "range": {
+  "claims": "C-0081..C-0105 (C-0094 unused)",
+  "challenges": "CH-0093..CH-0120 (CH-0095, CH-0096, CH-0110, CH-0117 unused)",
+  "claimsInRange": 24,
+  "challengesInRange": 24,
+  "totalInRange": 48
+ },
+ "cheapBound": {
+  "method": "one grep per ID over ANSWERS.md, run before any claim was opened",
+  "claimsCitedBefore": 9,
+  "claimsNotCitedBefore": 15,
+  "challengesCitedBefore": 5,
+  "challengesNotCitedBefore": 19,
+  "note": "the 14 cited by ID are exactly the 14 classified REFLECTED, so on this range citation-by-ID was a perfect predictor of correct carriage - which it was NOT on C-0080's range, where 4 of 5 falsifier instances were in cited material. The bound is still only a bound: 4 of the 14 were reflected in SECTION 1 alone and had to be extended into SECTION 2, SECTION 3 row (g) or SECTION 5"
+ },
+ "mechanicalBaseline": {
+  "before": {
+   "tokens": 855,
+   "cited": 752,
+   "elsewhere": 103,
+   "absent": 0,
+   "openAssertionsContradicted": 0,
+   "selfContradictions": 0
+  },
+  "after": {
+   "tokens": 1016,
+   "cited": 911,
+   "elsewhere": 105,
+   "absent": 0,
+   "openAssertionsContradicted": 0,
+   "selfContradictions": 0
+  },
+  "tables": {
+   "before": "0 defects in 326 files",
+   "after": "0 defects in 326 files"
+  },
+  "note": "the self-consistency check caught TWO contradictions this pass itself introduced - T-95/T-102 beside the phrase 'a list of open questions', and T-5b beside the word 'open' describing a challenge - which is the fourth consecutive iteration in which a check found the mistake of the person using it"
+ },
+ "coverage": {
+  "REFLECTED": 14,
+  "CARRIED IN": 24,
+  "NOT CARRIED": 10,
+  "total": 48
+ },
+ "falsifiers": [
+  {
+   "id": "F1",
+   "declared": "The only drift classes left in this file are the two C-0088 names - a superseded number that still reads CITED, and a task carrying two statuses - both of which are defects INSIDE passages that exist. F1 fires if the deliverable is missing a whole STRUCTURAL DETERMINATION of the corpus: not a number needing correction but a finding with no passage at all, and specifically one that changes an object the file names in its own SECTION 2 (the eight tasks), SECTION 3 (the open questions) or SECTION 5 (the questions handed to NDI).",
+   "fired": true,
+   "instances": [
+    "the buildable raster width. SECTION 3's 40.0 nm tile is not a buildable seamless width (CH-0101, C-0086); the tile is 112 bp = 38.08 nm, 4.8 % narrower, and 12.0 % FLATTER there (C-0090). The strings '38.08', '112 bp', 'seam' and 'seamless' appeared ZERO times in the whole 830-line deliverable, which describes that tile in SECTION 2, SECTION 3 and SECTION 5",
+    "the questions handed to NDI. SECTION 5's table listed the OLD six: two of them discharged in iteration 14 and their two live replacements (T-154, T-166) absent - while SECTION 1 of the same file already named T-166 as 'item 6 of DECISIONS-FOR-NDI.md'. Each row was individually correct; the SET was two iterations stale"
+   ]
+  },
+  {
+   "id": "F2",
+   "declared": "No claim in the range is wrong. Every disagreement found is the synthesis misreporting the corpus, which is what all three prior passes found and is why none of them raised a challenge.",
+   "fired": true,
+   "instances": [
+    "C-0102's headline says the three phase-demand sets 'stay disjoint' at the buildable width; two of them - most columns and centro-symmetric - are IDENTICAL at {8, 24}, and C-0102's own census table says so. The verdict (irreconcilable, drop the inventory) is untouched because the richest set {0, 16} is disjoint from them. Raised as CH-0121, the first challenge an ANSWERS.md synthesis pass has raised against a claim"
+   ]
+  }
+ ],
+ "thirdDriftClass": {
+  "instancesFound": 12,
+  "comparison": "C-0080 found 5 in a 55-item range; this pass finds 12 in a 48-item range",
+  "instances": [
+   {
+    "passage": "SECTION 1: '**`T-139` is in flight in this same iteration and decides it outright**'",
+    "why_invisible": "a status, and 'in flight' is not in the status checker's open-word vocabulary; every number in the sentence is C-0076's and reads CITED",
+    "supersededBy": "C-0079 (T-139, iteration 16)",
+    "correctedTo": "T-139 has landed and removed the question: two unbonded duplexes are repulsive at every separation, so d is a threshold on an ENERGY (CH-0094), 11.45 nm at 0.5 k_BT to <= 2.1 nm at 8 k_BT, straddling 2.715609 nm"
+   },
+   {
+    "passage": "SECTION 5 bullet 'What separation two UNBONDED duplexes hold in this buffer' - 'In flight as **`T-139`**'",
+    "why_invisible": "same; and the deliverable carries C-0079 in a DIFFERENT bullet three above, so the corpus check is satisfied twice over",
+    "supersededBy": "C-0079",
+    "correctedTo": "struck through and answered, with the surviving unknown (the force curve at 2 mM) named as the separate bullet it is"
+   },
+   {
+    "passage": "SECTION 1: 'which `T-139` can settle either way'",
+    "why_invisible": "C-0080 wrote this sentence in iteration 16 as the recommendation's re-checked GROUND; T-139 landed in the same iteration",
+    "supersededBy": "C-0079, C-0085",
+    "correctedTo": "the ground has moved twice more and the second move is favourable: there is no separation to measure, and the collinear term is 2 whole rises, 26.38x"
+   },
+   {
+    "passage": "SECTION 2 verdict table row 4: '**but neither load line is the recommended element's** (`CH-0083`, open)'",
+    "why_invisible": "C-0088's self-consistency check keys on TASK ids; a challenge status is not in its vocabulary. The same file says 'resolving `CH-0083`' 178 lines later",
+    "supersededBy": "C-0084, C-0092",
+    "correctedTo": "PASS and DISCHARGED FOR THE RECOMMENDED DEVICE - no fold at 2 mM at 0 of 6 layer models, the continued branch covering 0.9984 of the arm's contour. CH-0083 RESOLVED"
+   },
+   {
+    "passage": "SECTION Task 4 prose: '**QUALIFIED, iteration 16 ...** (`CH-0083`, open)'",
+    "why_invisible": "same sub-class, and this one contradicts a sentence twelve lines below it in its own paragraph",
+    "supersededBy": "C-0084",
+    "correctedTo": "raised open in iteration 16 and RESOLVED in iteration 17, below"
+   },
+   {
+    "passage": "SECTION 4 (the SECTION 7 criteria table): '**Eighty-four** challenges ... against **seventy-four** claims'",
+    "why_invisible": "written as words, so the numeric tracer sees no token at all",
+    "supersededBy": "the corpus",
+    "correctedTo": "One hundred and nine challenges against one hundred claims; the ratio is the invariant, not either count"
+   },
+   {
+    "passage": "SECTION 1: 'the deliverable is now a height plus five specification questions - T-63, T-95, T-102, T-112, T-115'",
+    "why_invisible": "the COUNT is still five, so nothing looks wrong; two of the five members changed",
+    "supersededBy": "C-0071 (discharging T-95, T-102), C-0086 (raising T-154), C-0093 (raising T-166)",
+    "correctedTo": "the count survived two iterations in which two of its five members changed, and both the discharges and the arrivals are now named"
+   },
+   {
+    "passage": "SECTION 5: 'The six questions for NDI' table - rows 3 and 4 are the two DISCHARGED ones and T-154/T-166 are absent",
+    "why_invisible": "the two discharged rows say DISCHARGED in their own cells, so each row is individually correct; what is wrong is the SET",
+    "supersededBy": "DECISIONS-FOR-NDI.md questions 5 and 6",
+    "correctedTo": "reordered onto DECISIONS-FOR-NDI's numbering, the scaffold (T-154) and the two-layer tile (T-166) added, the discharged pair moved into their own labelled table below"
+   },
+   {
+    "passage": "SECTION 1: 'the disputed 1.2-1.75 nm amplitude bracket has coefficient exactly zero (`CH-0088`)'",
+    "why_invisible": "true, and its owning claim still states it; what a later claim added is a CONDITION",
+    "supersededBy": "C-0081, C-0086",
+    "correctedTo": "conditional on the tile having no seam - a seam puts 6-12 of the same 34 stations off the node - and the condition is met because the Gen-1 sheet takes 1 680 of M13's 7 249 nt"
+   },
+   {
+    "passage": "SECTION 1: the 0.0256 nm knife edge and its four floors",
+    "why_invisible": "already carried one correction (C-0076's girth reading) and therefore looked re-checked",
+    "supersededBy": "C-0085, CH-0100",
+    "correctedTo": "a second and independent correction on the other term: the margin is an integer count of rises, 2 whole rises, 0.67561 nm, 26.38x"
+   },
+   {
+    "passage": "SECTION 1 item 1: 'the real lattice's redundancy slope is 2.08x shallower ... fixing the columns at 4'",
+    "why_invisible": "C-0098 still states it and the deliverable quotes it correctly",
+    "supersededBy": "CH-0119 (open), C-0103",
+    "correctedTo": "challenged: the slope is fitted through placement-SEARCHED optima, and on the same lattice a nested chain fits -0.740086889 where a searched one fits +0.0610348337. C-0098's 3.76x shortfall does not depend on it"
+   },
+   {
+    "passage": "SECTION 1: the plan ceiling read at 8.19 nm",
+    "why_invisible": "correct at 40.0 nm, which is the width the whole file assumes",
+    "supersededBy": "CH-0105, C-0090",
+    "correctedTo": "the budget is a MINIMUM of two bounds; at the buildable 38.08 nm the outboard bound binds at 8.16 nm"
+   }
+  ],
+  "newSubClass": "C-0088's self-consistency check reads TASK statuses. Two of the twelve are a CHALLENGE given two statuses (CH-0083, open in SECTION 2 row 4 and in the SECTION Task 4 header, RESOLVED twelve lines below the second one), which the check cannot see. Extending its vocabulary from task IDs to challenge IDs is the cheap next increment and is queued as T-183."
+ },
+ "groundRecheck": {
+  "rule": "C-0078 - a verdict that survives can survive on a different reason",
+  "count": 7,
+  "grounds": [
+   {
+    "verdict": "C-0071's recommendation stands as the best element the catalogue contains and NOT as a buildable design",
+    "status": "SURVIVES",
+    "ground": "MOVED AGAIN, and this time favourably. C-0080 re-checked it in iteration 16 onto 'the exclusion width in this role is unmeasured'; C-0079 removed the question (there is no separation to measure) and C-0085 turned the collinear term into 2 whole rises, 26.38x. What is left is the undemonstrated motif, which is what C-0071 said was the larger exposure. A verdict whose stated ground has been replaced three times in four iterations is worth reading as such, and the deliverable now says so"
+   },
+   {
+    "verdict": "the annihilated weave bracket has coefficient exactly zero",
+    "status": "SURVIVES",
+    "ground": "now CONDITIONAL on the tile having no seam (C-0081) and the condition is met by C-0086. C-0081 names this in advance as the first instance where the surviving reason was predicted"
+   },
+   {
+    "verdict": "SECTION 6 task 4 PASS",
+    "status": "SURVIVES",
+    "ground": "COMPLETELY CHANGED - from 'answered for two load lines, neither the recommended element's' to 'discharged for the recommended device' (C-0084, C-0092). The SECTION 2 verdict table had not moved and still called CH-0083 open"
+   },
+   {
+    "verdict": "0.5 mM is recommended",
+    "status": "SURVIVES",
+    "ground": "three routes not six, a preference not a requirement, and the largest number 3.16-3.35x smaller (C-0091, CH-0106, C-0084, CH-0098). Already carried by the coordinator; re-checked, nothing owed"
+   },
+   {
+    "verdict": "the flat-tile question is closed on the coupling axes",
+    "status": "SURVIVES",
+    "ground": "the slope that measures one of them is challenged (CH-0119) and the 3.76x shortfall does not depend on it; the 53-site divisor is one phase's (CH-0113) and the repair sharpens rather than rescues"
+   },
+   {
+    "verdict": "the tile can be made flat AS DESIGNED",
+    "status": "SURVIVES",
+    "ground": "on a DIFFERENT NUMBER at a different width - 0.0621469105 at the buildable 38.08 nm, 12.0 % better than the 0.0706145537 the file quoted (C-0090)"
+   },
+   {
+    "verdict": "C-0093's 0.24028028 is the lowest dishing this programme has attained",
+    "status": "SURVIVES",
+    "ground": "qualified twice inside the range: its 90-station grid is not buildable (CH-0113) and its per-tie ceiling is stated at one value and used at another (CH-0114)"
+   }
+  ]
+ },
+ "windowCensus": {
+  "rule": "C-0051 - a window that does not move is evidence of nothing until you count how many of the new constraints are functions of its own axis",
+  "itemsInRange": 48,
+  "itemsThatAreFunctionsOfSigma": 0,
+  "windowEdgesMoved": 0,
+  "reading": "third consecutive null and the third consecutive READING rather than expectation. The 48 are lattice widths, crossover phases, placements, folding statistics, a stacking energy, two pull-in folds at fixed layer heights, a 2-D collar re-solve at a fixed geometry and eight repository-numerics or tooling items. Not one carries a grafting density.",
+  "notARerun": true
+ },
+ "audit": [
+  {
+   "id": "C-0081",
+   "disposition": "CARRIED IN",
+   "reason": "the seam DELETES a weave extremum, putting 6-12 of the same 34 stations off CH-0088's node and restoring the annihilated 1.2-1.75 nm bracket at full strength (-0.0023 nm, a clash). SECTION 1 asserted the coefficient was exactly zero and did not state the condition; the condition is now stated, and C-0086 supplies the reason it is met"
+  },
+  {
+   "id": "C-0082",
+   "disposition": "NOT CARRIED",
+   "reason": "a mechanical reader census over gpd/results/. Repository tooling: no number, verdict, flag or validity range of any claim moves, and the deliverable reports the physics rather than the graph that produced it"
+  },
+  {
+   "id": "C-0083",
+   "disposition": "NOT CARRIED",
+   "reason": "markdown table rendering across the corpus. Document hygiene; the deliverable is one of its artifacts, not its subject. Its rule is enforced on every edit made here (tools/check-markdown-tables.py, 0 defects in 326 files after)"
+  },
+  {
+   "id": "C-0084",
+   "disposition": "REFLECTED",
+   "reason": "the recommended element's pull-in fold, cited three times - SECTION Task 4 prose and NDI question 1. EXTENDED into the SECTION 2 verdict table, row 4, which still said CH-0083 was open"
+  },
+  {
+   "id": "C-0085",
+   "disposition": "CARRIED IN",
+   "reason": "the collinear clearance is 6 base-pair rises set by a stacking ENERGY, and the whole margin is an integer count of rises: 2 whole rises, 0.67561 nm, 26.38x the published 0.02561, with all three of C-0071's live NONE bands becoming real margins (tip 79.678 -> 133.687, root 13.930 -> 25.689)"
+  },
+  {
+   "id": "C-0086",
+   "disposition": "CARRIED IN",
+   "reason": "a seam is a parity on a TREE; the Gen-1 sheet takes 1 680 of M13's 7 249 nt so it is not fully folded and needs no seam; and a seamless raster QUANTISES the tile width at 32 bp. Nothing in the deliverable said any of it"
+  },
+  {
+   "id": "C-0087",
+   "disposition": "REFLECTED",
+   "reason": "the measured per-staple dropout, cited five times in SECTION 1 and row (g)"
+  },
+  {
+   "id": "C-0088",
+   "disposition": "NOT CARRIED",
+   "reason": "the self-consistency check over this deliverable. A process claim whose subject is the file; its check was run before and after this pass and caught two contradictions this pass itself introduced"
+  },
+  {
+   "id": "C-0089",
+   "disposition": "REFLECTED",
+   "reason": "the dropout-robust placement search, cited four times in SECTION 1 and row (g)"
+  },
+  {
+   "id": "C-0090",
+   "disposition": "CARRIED IN",
+   "reason": "the buildable 38.08 nm width SELECTS the phases the programme already used and is 12.0 % FLATTER (0.0621469105 against 0.0706145537). Carried into SECTION 1, the SECTION 2 row 5b verdict and row (g), which had no passage about the tile's width at all"
+  },
+  {
+   "id": "C-0091",
+   "disposition": "REFLECTED",
+   "reason": "six routes to 0.5 mM are three, carried in full in NDI question 1"
+  },
+  {
+   "id": "C-0092",
+   "disposition": "REFLECTED",
+   "reason": "the continued elastica branch, cited in SECTION Task 4. EXTENDED into the SECTION 2 row 4 verdict"
+  },
+  {
+   "id": "C-0093",
+   "disposition": "REFLECTED",
+   "reason": "the shared-body topology, cited three times in SECTION 1. EXTENDED into SECTION 2 row 5b, row (g) and the new NDI question 6, none of which carried the topology axis"
+  },
+  {
+   "id": "C-0095",
+   "disposition": "CARRIED IN",
+   "reason": "the row-end crossover EXISTS and is the definition of a raster turn - Rothemund's 24-helix rectangle is 288 bp = 18 column pitches exactly and folded 90 % well-formed. It is what licenses C-0090's admitted reading, 0.0621469105 against the refused 0.168371808"
+  },
+  {
+   "id": "C-0096",
+   "disposition": "NOT CARRIED",
+   "reason": "the doubling force ladder repaired as a branch continuation. Repository numerics: 90 of 96 outstanding fold rows could never have moved, and the ceiling CH-0099 was raised about binds at 0 of 108. No published verdict moves"
+  },
+  {
+   "id": "C-0097",
+   "disposition": "REFLECTED",
+   "reason": "the transferred-number detector, cited in NDI question 1's Where column"
+  },
+  {
+   "id": "C-0098",
+   "disposition": "REFLECTED",
+   "reason": "the last coupling axis, cited twice in SECTION 1. EXTENDED into SECTION 2 row 5b, row (g) and NDI question 6"
+  },
+  {
+   "id": "C-0099",
+   "disposition": "CARRIED IN",
+   "reason": "the row-end crossover's STIFFNESS does not matter - 0.0621469105 -> 0.0651753854 at exactly zero dihedral spring, 1.0487309x, and the threshold is empty. It is the necessary companion to C-0104, which the file already carried; without it the prestrain bullet reads as though the whole row end were unknown"
+  },
+  {
+   "id": "C-0100",
+   "disposition": "CARRIED IN",
+   "reason": "the collar is width-independent to 0.0400 %, so nothing electrostatic rides on the 4.8 % narrower tile. Needed because SECTION 1 now carries the width change"
+  },
+  {
+   "id": "C-0101",
+   "disposition": "NOT CARRIED",
+   "reason": "re-emission of the eleven result files T-159's repair moved. Repository numerics; git holds the history and no quoted figure moves"
+  },
+  {
+   "id": "C-0102",
+   "disposition": "CARRIED IN",
+   "reason": "three demands on one phase integer, irreconcilable at every width, phase 8 recommended at 0.0658484805 against the richest phase's 0.125068659, and the seven-column host the inventory demand requires costs 1.899x"
+  },
+  {
+   "id": "C-0103",
+   "disposition": "CARRIED IN",
+   "reason": "the count term at FIXED station geometry is +12.86 % and the phase term -19.0 %, so the recommended 34 -> 30 move is 8.68 % BETTER overall. CH-0103's charge is upheld as bookkeeping and the recommendation stands - and no claim contained both terms of that trade until this one"
+  },
+  {
+   "id": "C-0104",
+   "disposition": "REFLECTED",
+   "reason": "the row-end prestrain, carried by the coordinator in iteration 21 into SECTION 1 item 1 and SECTION 5. Named C-0099 beside it so the stiffness and the prestrain are distinguishable"
+  },
+  {
+   "id": "C-0105",
+   "disposition": "NOT CARRIED",
+   "reason": "a withdrawn-ceiling note in one Kotlin study's prose. Its own verdict is that no verdict moves and the clause-correct reading is 3.33x stricter; the deliverable already carries C-0049's withdrawal"
+  },
+  {
+   "id": "CH-0093",
+   "disposition": "CARRIED IN",
+   "reason": "two collinear arms are COAXIAL, so the clearance prevents a blunt-end stacking BOND (-4.4114 k_BT per helix), not a clash. Carried through its resolution C-0085"
+  },
+  {
+   "id": "CH-0094",
+   "disposition": "CARRIED IN",
+   "reason": "a hard-body width is a THRESHOLD ON AN ENERGY: 11.45 nm at 0.5 k_BT to <= 2.1 nm at 8 k_BT, straddling the 2.715609 nm placement threshold. Carried into SECTION 1 and into the SECTION 5 bullet, which had said the question was in flight"
+  },
+  {
+   "id": "CH-0097",
+   "disposition": "NOT CARRIED",
+   "reason": "corrects C-0073's rounding-site table. Repository numerics; the deliverable carries neither the table nor P-19's ranking"
+  },
+  {
+   "id": "CH-0098",
+   "disposition": "REFLECTED",
+   "reason": "the 0.5 mM requirement quoted for a withdrawn coupling, carried in NDI question 1"
+  },
+  {
+   "id": "CH-0099",
+   "disposition": "NOT CARRIED",
+   "reason": "a ceiling taxonomy belongs to a load line. Branch interior, and superseded inside the range: C-0096/CH-0112 find the element-model branch end binds at 0 of 108 states rather than 8"
+  },
+  {
+   "id": "CH-0100",
+   "disposition": "CARRIED IN",
+   "reason": "the collinear margin is an INTEGER COUNT OF RISES, not a 0.0256 nm residue; the published figure is what is left when a transverse SAXS constant (7.912 rises) and an elastica root (24.013 rises) are subtracted from an integer pitch"
+  },
+  {
+   "id": "CH-0101",
+   "disposition": "CARRIED IN",
+   "reason": "SECTION 3's 40.0 nm is not a buildable raster width - 117.6 bp against the admissible 16, 48, 80, 112, 144, and the step is 32 bp rather than the rise. This is the single largest omission the pass found"
+  },
+  {
+   "id": "CH-0102",
+   "disposition": "REFLECTED",
+   "reason": "the 48 % is one corner of 168, cited twice in SECTION 5"
+  },
+  {
+   "id": "CH-0103",
+   "disposition": "CARRIED IN",
+   "reason": "the path-count recommendation runs against fabrication. Carried through C-0103, which upholds it as bookkeeping and prices both terms"
+  },
+  {
+   "id": "CH-0104",
+   "disposition": "REFLECTED",
+   "reason": "a reachable floor is an oracle, cited in SECTION 1. EXTENDED into row (g), where the 0.00071 least-squares floor is still quoted as a licence"
+  },
+  {
+   "id": "CH-0105",
+   "disposition": "CARRIED IN",
+   "reason": "the plan budget is a MINIMUM of two bounds and only the outboard one carries the tile width; the two cross at 38.14 nm and 38.08 falls 0.176 base pairs below"
+  },
+  {
+   "id": "CH-0106",
+   "disposition": "REFLECTED",
+   "reason": "six routes are three, carried in NDI question 1"
+  },
+  {
+   "id": "CH-0107",
+   "disposition": "CARRIED IN",
+   "reason": "C-0084's branch end is a force-ladder artefact. Carried into the SECTION 2 row 4 verdict beside C-0092"
+  },
+  {
+   "id": "CH-0108",
+   "disposition": "CARRIED IN",
+   "reason": "C-0069's refusal of the flexure family is a bound at 34 PATHS, and the path count is a design variable. Carried into the SECTION 5 flexure-array bullet, which is the disclaimer that inherits it"
+  },
+  {
+   "id": "CH-0109",
+   "disposition": "CARRIED IN",
+   "reason": "the cancellation/robustness distinction holds along the distribution axis and fails ACROSS topologies. Carried as a marker on SECTION 1 item 1's cancellation sentence, which is where the deliverable states it"
+  },
+  {
+   "id": "CH-0111",
+   "disposition": "CARRIED IN",
+   "reason": "the 38.08 nm verdict rests on 14 crossovers Rothemund says are unknown; its bracket is 0.0621469105 to 0.168371808, one end inside T-5b's 0.10 and one outside"
+  },
+  {
+   "id": "CH-0112",
+   "disposition": "NOT CARRIED",
+   "reason": "one lost branch recorded three times in three vocabularies. Repository bookkeeping; C-0096 is its repair and no published verdict moves"
+  },
+  {
+   "id": "CH-0113",
+   "disposition": "REFLECTED",
+   "reason": "the 53-site ceiling is one phase's inventory, cited in SECTION 1. EXTENDED into row (g) and NDI question 6"
+  },
+  {
+   "id": "CH-0114",
+   "disposition": "CARRIED IN",
+   "reason": "C-0093 states its per-tie ceiling at 3.33333333 pN/nm and runs every graded cell 3x to 300x past it. Carried into NDI question 6, which is where 0.24028028 is now the headline"
+  },
+  {
+   "id": "CH-0115",
+   "disposition": "CARRIED IN",
+   "reason": "CH-0111's bracket is 2.85 % dihedral spring, 97.40 % vertical link and -0.25 % mesh node, and the link is a constraint C-0095 has settled. Carried beside CH-0111 so the bracket is never quoted without its decomposition"
+  },
+  {
+   "id": "CH-0116",
+   "disposition": "CARRIED IN",
+   "reason": "the collar SPLIT is a property of the lateral mesh, not of the field, while the sum moves a fifty-fourth as much. Carried beside C-0100"
+  },
+  {
+   "id": "CH-0118",
+   "disposition": "CARRIED IN",
+   "reason": "the row-end crossover IS an upward station at phases 0 and 16, worth 15 stations and 0 columns (45 -> 60). Carried as the reason the richest phase set is richest"
+  },
+  {
+   "id": "CH-0119",
+   "disposition": "CARRIED IN",
+   "reason": "C-0098's redundancy slope is fitted through placement-SEARCHED optima; on the same lattice a nested chain fits -0.740086889 and a searched one +0.0610348337. Carried as an open qualification on the 2.08x in SECTION 1 item 1 and in row (g)"
+  },
+  {
+   "id": "CH-0120",
+   "disposition": "NOT CARRIED",
+   "reason": "an influence bank assumes a host with no self-load. A process guard, queued as T-181; every published consumer runs with crossoverPrestrains empty, so nothing published moves"
+  }
+ ],
+ "editsMade": [
+  {
+   "section": "1",
+   "what": "the annihilated weave bracket is conditional on no seam, and the condition is met",
+   "owners": [
+    "C-0081",
+    "C-0086"
+   ]
+  },
+  {
+   "section": "1",
+   "what": "T-139 has LANDED: d is a threshold on an energy, not a separation",
+   "owners": [
+    "C-0079",
+    "CH-0094"
+   ]
+  },
+  {
+   "section": "1",
+   "what": "the collinear term is a stacking energy and an integer count of rises: 2 whole rises, 26.38x, and three NONE bands become real margins",
+   "owners": [
+    "C-0085",
+    "CH-0093",
+    "CH-0100"
+   ]
+  },
+  {
+   "section": "1",
+   "what": "the recommendation's GROUND has moved twice more, and the second move is favourable",
+   "owners": [
+    "C-0079",
+    "C-0085"
+   ]
+  },
+  {
+   "section": "1",
+   "what": "NEW BLOCK: SECTION 3's 40.0 nm is not a buildable raster width; 112 bp = 38.08 nm, 12.0 % flatter, the arm quantised, the plan budget's two bounds",
+   "owners": [
+    "CH-0101",
+    "C-0086",
+    "C-0090",
+    "CH-0105",
+    "C-0085"
+   ]
+  },
+  {
+   "section": "1",
+   "what": "NEW BLOCK: the 14 row-end crossovers - they exist (C-0095), their stiffness bracket is 97 % not a stiffness (CH-0115), and sweeping the elastic element moves 0.0621469105 -> 0.0651753854 (C-0099)",
+   "owners": [
+    "CH-0111",
+    "C-0095",
+    "CH-0115",
+    "C-0099"
+   ]
+  },
+  {
+   "section": "1",
+   "what": "NEW BLOCK: the collar is width-independent to 0.0400 %, and the split that moves is a mesh property",
+   "owners": [
+    "C-0100",
+    "CH-0116"
+   ]
+  },
+  {
+   "section": "1",
+   "what": "NEW BLOCK: the phase is over-subscribed; phase 8 recommended at 0.0658484805; the seven-column host costs 1.899x; CH-0118's 45 -> 60",
+   "owners": [
+    "C-0102",
+    "CH-0118",
+    "CH-0121"
+   ]
+  },
+  {
+   "section": "1 item 1",
+   "what": "CH-0119's open challenge to the 2.08x redundancy slope, and C-0103's count/phase decomposition (+12.86 % against -19.0 %)",
+   "owners": [
+    "CH-0119",
+    "C-0103",
+    "CH-0103"
+   ]
+  },
+  {
+   "section": "1 item 1",
+   "what": "CH-0109's marker on the cancellation sentence, and C-0099 named beside C-0104's prestrain",
+   "owners": [
+    "CH-0109",
+    "C-0099"
+   ]
+  },
+  {
+   "section": "1",
+   "what": "the five specification questions: the count survived and two of its five members changed",
+   "owners": [
+    "C-0071",
+    "C-0086",
+    "C-0093"
+   ]
+  },
+  {
+   "section": "2",
+   "what": "row 4 - PASS and DISCHARGED FOR THE RECOMMENDED DEVICE; CH-0083 RESOLVED",
+   "owners": [
+    "C-0084",
+    "C-0092",
+    "CH-0107"
+   ]
+  },
+  {
+   "section": "2",
+   "what": "row 5b - the successor question is closed on every coupling axis: flat as designed (0.0621469105), not shown flat as built",
+   "owners": [
+    "C-0087",
+    "C-0089",
+    "C-0093",
+    "C-0098",
+    "C-0090",
+    "C-0104"
+   ]
+  },
+  {
+   "section": "Task 4 prose",
+   "what": "CH-0083 raised open in iteration 16 and RESOLVED in iteration 17",
+   "owners": [
+    "C-0084"
+   ]
+  },
+  {
+   "section": "3 row (g)",
+   "what": "the topology and phase axes, the buildable width, the row-end stiffness and prestrain, and the two open qualifications (CH-0119, CH-0104)",
+   "owners": [
+    "C-0093",
+    "C-0098",
+    "C-0102",
+    "C-0090",
+    "C-0099",
+    "C-0104",
+    "CH-0113",
+    "CH-0119",
+    "CH-0104"
+   ]
+  },
+  {
+   "section": "4",
+   "what": "the challenge/claim counts, 109 against 100, with the ratio named as the invariant",
+   "owners": [
+    "the corpus"
+   ]
+  },
+  {
+   "section": "5",
+   "what": "the T-139 bullet struck through and answered, with the surviving force-curve unknown named separately",
+   "owners": [
+    "C-0079",
+    "CH-0094"
+   ]
+  },
+  {
+   "section": "5",
+   "what": "CH-0108 on the flexure-array disclaimer - the bound is at 34 paths, not on the family",
+   "owners": [
+    "CH-0108"
+   ]
+  },
+  {
+   "section": "5",
+   "what": "the NDI table reordered onto DECISIONS-FOR-NDI's numbering, T-154 and T-166 added, T-95 and T-102 moved into a labelled DISCHARGED table",
+   "owners": [
+    "C-0086",
+    "C-0081",
+    "C-0093",
+    "C-0098",
+    "CH-0113",
+    "CH-0114",
+    "C-0071"
+   ]
+  }
+ ],
+ "predicates": [
+  {
+   "id": "P1",
+   "statement": "every item in C-0081..C-0105 / CH-0093..CH-0120 classified with a reason, emitted as JSON",
+   "verdict": "PASS",
+   "evidence": "48 rows in this file's audit array; 24 + 24, and the three dispositions sum to 48"
+  },
+  {
+   "id": "P2",
+   "statement": "every item classified material and missing is in the deliverable after the pass",
+   "verdict": "PASS",
+   "evidence": "24 CARRIED IN, against 19 edits recorded in editsMade"
+  },
+  {
+   "id": "P3",
+   "statement": "a statement of what is deliberately not carried and why, so the next pass inherits the judgement",
+   "verdict": "PASS",
+   "evidence": "10 NOT CARRIED rows, each with its reason; and this claim's Part 5"
+  },
+  {
+   "id": "P4",
+   "statement": "the three mechanical checks report zero after the pass",
+   "verdict": "PASS",
+   "evidence": "0 ABSENT of 1016, 0 stale, 0 self-contradictions; 0 table defects in 326 files"
+  },
+  {
+   "id": "P5",
+   "statement": "a declared falsifier, reported either way",
+   "verdict": "PASS",
+   "evidence": "two declared, both fired; F1 twice and F2 once"
+  },
+  {
+   "id": "P6",
+   "statement": "the window census travels with the null",
+   "verdict": "PASS",
+   "evidence": "0 of 48 items are functions of sigma; 0 of 6 window edges move; and it is stated as not a re-run"
+  }
+ ],
+ "toolObservationsReported": [
+  "tools/trace-answers.py's self-consistency check keys on TASK ids only. A CHALLENGE given two statuses in one document is invisible to it, and two of this pass's twelve third-class instances are exactly that. Queued as T-183; not implemented here because tools/ was in use by a sibling agent.",
+  "The status vocabulary does not contain 'in flight'. Three passages asserted T-139 was in flight while TASKS.md had it DONE since iteration 16, and queue_status reported 0 stale throughout.",
+  "The OPEN word list matches inside ordinary prose: 'a list of open questions', 'can reopen the flat tile' and 'CH-0114, open' each manufactured a false contradiction against a task ID in the same sentence. Each was real drift-checker behaviour working as designed and each cost one rewording; a checker that is one-sided on purpose (C-0088 guard 2) pays for it in author friction, which is the right trade and is worth recording."
+ ]
+}

@@ -1,0 +1,556 @@
+In situ structure and dynamics of DNA origami
+determined through molecular dynamics simulations
+Jejoong Yooa and Aleksei Aksimentieva,b,1
+a
+ Department of Physics and Center for the Physics of Living Cells and bBeckman Institute for Advanced Science and Technology, University of Illinois at
+Urbana-Champaign, Urbana, IL 61801
+
+Edited by Michael L. Klein, Temple University, Philadelphia, PA, and approved November 4, 2013 (received for review September 3, 2013)
+
+The DNA origami method permits folding of long single-stranded                 duplex is a balancing act involving electrostatic, hydrophobic, and
+DNA into complex 3D structures with subnanometer precision.                    solvation forces (17), one can expect all-atom modeling to provide
+Transmission electron microscopy, atomic force microscopy, and                 the most comprehensive description of DNA origami, especially
+recently cryo-EM tomography have been used to characterize the                 under environmental stress.
+properties of such DNA origami objects, however their microscopic                 Until recently, experimental characterization of DNA origami
+structures and dynamics have remained unknown. Here, we report                 was limited to atomic force spectroscopy (8), small-angle X-ray
+the results of all-atom molecular dynamics simulations that charac-
+                                                                               scattering (8), and transmission electron microscopy (4, 5). Re-
+terized the structural and mechanical properties of DNA origami
+objects in unprecedented microscopic detail. When simulated in an              cently, superresolution optical imaging (10), FRET (13), and
+aqueous environment, the structures of DNA origami objects depart              magnetic tweezer (18) have been applied to DNA origami objects
+from their idealized targets as a result of steric, electrostatic, and         to infer information about their in situ structure and dynamics. The
+solvent-mediated forces. Whereas the global structural features of             only atomic-level model of DNA origami in situ has been derived
+such relaxed conformations conform to the target designs, local defor-         from cryo–electron microscopy (cryo-EM) (19), which revealed
+mations are abundant and vary in magnitude along the structures. In            considerable deviations of the in situ structure from the idealized
+contrast to their free-solution conformation, the Holliday junctions in        design. Despite the tremendous insights brought about by the cryo-
+the DNA origami structures adopt a left-handed antiparallel confor-            EM structure, the structural dynamics and local mechanical prop-
+mation. We ﬁnd the DNA origami structures undergo considerable                 erties of DNA origami have remained unknown. Furthermore, the
+temporal ﬂuctuations on both local and global scales. Analysis of
+                                                                               complexity of the cryo-EM reconstruction makes this method un-
+such structural ﬂuctuations reveals the local mechanical properties of
+                                                                               likely to be routinely used to characterize DNA origami objects.
+
+
+
+
+                                                                                                                                                                           COMPUTATIONAL BIOLOGY
+the DNA origami objects. The lattice type of the structures consid-
+                                                                                  Here, we report all-atom molecular dynamics (MD) simu-
+
+
+
+
+                                                                                                                                                                              BIOPHYSICS AND
+erably affects global mechanical properties such as bending rigidity.
+Our study demonstrates the potential of all-atom molecular dynam-              lations of DNA origami structures. By following trajectories of
+ics simulations to play a considerable role in future development of           all of the atoms comprising a DNA origami object and the sur-
+the DNA origami ﬁeld by providing accurate, quantitative assess-               rounding solution, we could characterize their structure and
+ment of local and global structural and mechanical properties of DNA           dynamics in microscopic detail. Below, we describe the in situ
+origami objects.                                                               structures of several DNA origami objects, their temporal ﬂuc-
+                                                                               tuations, the conformations of key structural elements, and local
+nucleic acids   | self-assembly | nanotechnology | nanopore                    mechanical properties. While we ﬁnd the global properties of the
+                                                                               simulated DNA origami objects to be in good agreement with
+
+S   elf-assembly of DNA into complex 3D objects has emerged
+    as a new paradigm for practical nanotechnology (1, 2). Among
+many methods that have been put forward to use self-assembly of
+                                                                               experimental measurements, our simulations reveal the in-
+                                                                               trinsically dynamic nature of DNA origami objects.
+DNA (2), DNA origami (3) stands out through its conceptual
+                                                                                   Signiﬁcance
+simplicity and inﬁnite range of possible applications (1, 2). The
+basic principle of the method is folding of a long (tens of thou-
+sands of nucleotides) DNA strand into custom 2D or 3D shapes                       Folding of DNA strands into complex three-dimensional nano-
+                                                                                   scale objects—DNA origami—has emerged as a new paradigm
+using short oligonucleotides (“staples”) (3). Since its ﬁrst dem-
+                                                                                   for practical nanotechnology. Although computer-aided design
+onstration in 2006, the DNA origami method has been used to
+                                                                                   tools are often used to illustrate the idealized shape of such
+self-assemble complex 3D objects with subnanometer precision (4)
+                                                                                   objects, their structural behavior in solution has been poorly
+that can serve as static structures (1, 2, 5, 6), and also perform
+                                                                                   characterized. Using a large supercomputer system, we created
+active functions (7–10). Recent methodological advances (11)
+                                                                                   trajectories of millions of atoms to obtain the ﬁrst atomically
+have made practical applications (11–14) of DNA origami feasible.                  precise portrait of DNA origami in solution. The DNA origami
+   Due to the intrinsic complexity of DNA origami, computa-                        objects were found to undergo considerable structural ﬂuctua-
+tional tools have been essential for the development of the ﬁeld.                  tions, signiﬁcantly departing from their idealized conformations
+In the seminal work, Rothemund used a custom computer code                         at the nanometer scale. Analysis of the ﬂuctuations provided
+to design sets of staple strands to fold the M13 viral genome into                 a detailed map of local mechanical properties of DNA origami.
+unique 2D patterns (3). Design of 3D origami has been facili-                      Our work demonstrates the potential for atomistic simulations
+tated by the caDNAno program (15), which can semiautomatically                     to facilitate rational engineering of DNA origami objects.
+generate a set of staple strands to realize folding of the M13 ge-
+nome into a user-deﬁned 3D object. The structural stability of                 Author contributions: J.Y. and A.A. designed research; J.Y. performed research; J.Y. ana-
+caDNAno designs can be assessed using the CanDo (16) program,                  lyzed data; and J.Y. and A.A. wrote the paper.
+which provides instant review of the caDNAno outputs based on a                The authors declare no conﬂict of interest.
+continuum mechanics approximation. However, the computational                  This article is a PNAS Direct Submission.
+models of DNA origami objects have not yet taken explicitly into               1
+                                                                                To whom correspondence should be addressed. E-mail: aksiment@illinois.edu.
+account the atomic-scale interactions that govern self-assembly of             This article contains supporting information online at www.pnas.org/lookup/suppl/doi:10.
+DNA. As pairing of complementary DNA strands into a DNA                        1073/pnas.1316521110/-/DCSupplemental.
+
+
+
+www.pnas.org/cgi/doi/10.1073/pnas.1316521110                                                 PNAS | December 10, 2013 | vol. 110 | no. 50 | 20099–20104
+Results and Discussion                                                                                                    to an all-atom representation using a homemade program. The
+To enable direct comparison between simulation and experiments,                                                           all-atom structures were merged with solvent and simulated us-
+we designed three DNA origami structures following standard                                                               ing the MD method as described in Materials and Methods. A
+design principles (5). The ﬁrst two structures were rod-like mon-                                                         detailed description of our caDNAno designs and the conversion
+oliths based on the honeycomb (HC) (5) and square (SQ) (20)                                                               procedures is provided in SI Appendix and SI Appendix, Figs. S1–
+DNA lattices. The third structure had a programmed 90° bend                                                               S3. SI Appendix, Table S1 provides a summary of the simulations
+(HC-90°). Fig. 1 A–C illustrates our target designs.                                                                      performed.
+   We used caDNAno to obtain an approximate spatial model of
+each DNA origami object and to design DNA strands that could                                                              Structural Stability of the All-Atom Models. During our MD simu-
+realize the spatial model. The caDNAno models were converted                                                              lations, the three DNA origami objects maintained their overall
+
+
+
+                                           7 bp = 1 cell                                                                8 bp = 1 cell
+      A                                                   49 56
+                                                                63 70 77
+                                                                         84    B                                                                                   C                                                 7 bp = 1 cell
+                                                  35 42               11 12
+                                            21 28               9 10
+   Base index =                    0   7 14
+                                                4 5
+                                                      6    7 8
+                                       1 2 3
+   Array cell =                    0
+
+     index
+
+
+
+
+                                                                       10 nm                                                   10 nm                               10 nm
+
+      D                                                                                                    E
+
+
+
+                                                                                                           z
+
+                                                                                                  x
+      F                                                                                                                                                                 G 12
+                                                                                                                                                                                                   8
+
+                                                                                                                                                                                                   4
+
+                                                                                                                                                                                                   0
+                                                                                                                                                                                                    0     40        80      120
+                                                                                                                                                                           H                                   Time (ns)
+                                                                                                                                                                           Broken base pairs (%)
+
+
+
+
+                                                                                                                                                                                                   3.0
+
+                                                                                                                                                                                                   2.0
+                                                                                                                                                                   z
+                                                                                                                                                                                                   1.0
+
+
+                                                                                                                                          x                                                        0.0
+                                                                                                                                                                                                      0   40         80      120
+                                                                                                                                                                                                               Time (ns)
+       I                                                                       J                                                                K
+                          11                                                                      15
+                                                                               Array Cell Index
+       Array Cell Index
+
+
+
+
+                                                                                                                                                Array Cell Index
+
+
+
+
+                                                                                                  13                                                               21
+                          9
+                                                                                                  11
+                          7                                                                        9
+                          5                                                                        7                                                               11
+                                                                                                   5
+                          3
+                                                                                                   3
+                          1                                                                        1                                                               1
+                               0           40          80              120                             0   20   40      60     80   100   120
+                                                 Time (ns)                                                           Time (ns)
+
+Fig. 1. All-atom MD simulations of DNA origami structures. (A–C) Schematic representations of the three DNA origami structures considered in this work: (A)
+straight 6-by-3 HC-pleated structure, (B) straight 4-by-4 SQ-pleated structure, and (C) 6-by-3 HC-pleated structure having a 90° programmed bend (HC-90°). Each
+cylinder represents one DNA duplex; all cylinders within the same layer of a 3D structure have the same color. The base index (A) indicates the locations of individual
+base pairs within each cylinder. The cylinders (duplex DNA) are connected to one another through crossovers (HJs) every seven (HC or HC-90°) or eight (SQ) base pairs
+in each cylinder (5). Gray semitransparent planes in A–C indicate where such crossovers occur. The crossover planes naturally divide each origami structure into an
+array of 7 or 8 bp cells; the array cell index speciﬁes the position of an array cell in each cylinder. (D–F) The conformations of the HC (D), SQ (E), and HC-90° (F)
+structures at the end of our production MD runs. Layers of DNA in the origami structures are colored as in A–C. Mg2+ and Cl− ions are shown as pink and green
+spheres, respectively; water is shown as a semitransparent molecular surface. The systems contain 802,149 (HC), 943,837 (SQ), and 2,799,156 (HC-90°) atoms. (G) Root-
+mean-square deviation (rmsd) of the DNA atoms from their initial coordinates during the MD simulations. (H) The fraction of base pairs broken during the MD
+simulations. A base pair is considered broken when the distance between the N1 atom of the purine base and the N3 atom of the pyrimidine base exceeds 4 Å. (I–K)
+The fraction of broken base pairs in the individual array cells of the HC (I), SQ (J), and HC-90° (K) structures versus simulation time.
+
+
+20100 | www.pnas.org/cgi/doi/10.1073/pnas.1316521110                                                                                                                                                                  Yoo and Aksimentiev
+shape. Fig. 1 A–F provides one-to-one comparisons of the target           Conformational Dynamics of the DNA Origami Objects. During our
+designs and the instantaneous microscopic conformations of the            MD simulations, the DNA origami objects underwent structural
+three objects observed at the end of our production runs. Fig. 1G         transformations that could be described as initial relaxation of
+shows the root-mean-square deviation (rmsd) of the DNA atoms              the idealized structural models (ﬁrst ∼40 ns; Fig. 1G) and sub-
+from their initial coordinates. The rmsd values increase initially        sequent ﬂuctuations about relaxed equilibrium conformations.
+but reach a plateau after ∼40 ns for the HC and SQ systems.               To visualize the conformational dynamics in further details, we
+Because of its excessively large size (∼3 million atoms), the HC-         illustrate several instantaneous conﬁgurations of the HC, SQ,
+90° system was simulated for a considerably shorter time interval         and HC-90° systems in Fig. 2 A–C using a custom “chicken-wire”
+(∼35 ns). However, we expect the HC-90° system to have reached            molecular graphics representation. Movies S4–S6 illustrate the
+an equilibrium conformation at the end of the production run as           corresponding MD trajectories.
+the rmsd of the HC and SQ systems reached a plateau after 40 ns.             During the initial relaxation, the DNA origami objects de-
+Fig. 1H shows the fraction of broken base pairs during the MD             veloped unique blue-and-red patterns (Fig. 2 A–C). The blue
+runs. In all three systems, the fraction was observed to slowly           color indicates close DNA–DNA contacts of 20 Å or less pro-
+increase with time, but remained less than 3%.                            duced by the crossovers; the red indicates larger than average
+   During our production runs, the DNA origami objects main-              distance between DNA caused by the electrostatic repulsion.
+tained their straight (HC and SQ) and bent (HC-90°) con-                  Overall, the DNA–DNA distance was found to range between 18
+formations (SI Appendix, Fig. S4 A and B). In the central                 and 30 Å (Fig. 2D), although occasional excursions below and
+portions of the HC and SQ structures, the DNA helices were                beyond this range could occur because of local disruption of the
+found to closely follow their prescribed arrangement of an HC or          base pairing order or axial shift of one duplex DNA relative to
+SQ lattice (SI Appendix, Fig. S4 C and D). Consistent with ex-            the other.
+perimental estimations (5), the average interhelical distance in             After the DNA origami structures had attained their relaxed
+the lattices was about 23–24 Å.                                           conformations, the color patterns remained mostly stable, in-
+   Fig. 1 I–K characterizes the local structural integrity of the         dicating a limited range of thermal ﬂuctuations. To quantita-
+DNA origami objects by showing how the fraction of broken base            tively characterize the extent of thermal ﬂuctuation, we com-
+pairs in the individual array cells of the objects (deﬁned in Fig. 1      puted a root-mean-square ﬂuctuation (rmsf) of the DNA base
+A–C) changes during our MD runs. Peripheral regions of the                pairs’ centers of mass as a function of their array cell index using
+DNA origami objects were found to exhibit a considerably                  the last 60 (HC and SQ) or 10 (HC-90°) ns of the respective
+greater fraction of broken base pairs (>5%) than the internal             trajectories (Fig. 2E). With the exception of the terminal array
+regions, where the fraction remained <2%.                                 cells, the rmsf values were less than 4 Å. Such ﬂuctuations are
+   Overall, the local structure of the internal regions of the straight   expected to play a functional role in many types of DNA nano-
+
+
+
+
+                                                                                                                                                  COMPUTATIONAL BIOLOGY
+DNA origami objects (HC and SQ) remained stable; the fraction             structures, for example, by modulating the effective diameter of
+                                                                          DNA nanochannels (12, 21, 22), affecting localization of dyes
+
+
+
+
+                                                                                                                                                     BIOPHYSICS AND
+of broken base pairs ﬂuctuated around 1% (Fig. 1 I and J).
+                                                                          attached to DNA nanoantennas (13) and for superresolution
+However, our simulations of the HC and SQ systems indicate that
+                                                                          imaging (10), and modulation of permeability of drug-like mol-
+large reversible deformations of the local structure can occur on
+                                                                          ecules through DNA nanoboxes (8).
+the time scale of hundreds of nanoseconds. For example, the
+                                                                             Fig. 2F characterizes the local cross-sectional area computed
+fraction of broken base pairs in array cell 6 of the HC structure
+                                                                          using the last 60 (HC and SQ) or 10 (HC-90°) ns of the re-
+reached 4–5% at ∼100 ns (Fig. 1I). Unlike peripheral regions of
+                                                                          spective trajectories. For all systems, the total area in the central
+the DNA origami structures, the base pairs forming array cell 6
+                                                                          regions of the origami objects ranged from 50 to 60 nm2. For
+were constrained by the surrounding duplex DNA, and therefore,
+                                                                          comparison, the total area of four regular hexagons or nine
+the local structural defect could be repaired within the time scale       regular squares each 24 Å on side are ∼60 and ∼52 nm2, re-
+of our simulation (140 ns). Movies S1–S3 illustrate the dynamics          spectively. Thus, the DNA helices remain rather tightly packed
+of base pairing at the single-nucleotide level for individual lay-        with the average separation of ∼24 Å, consistent with the ex-
+ers of the HC structure. Among the six base pairs from the internal       perimental estimations (5). Total cross-sectional area was found
+regions that remained broken for 10 ns or longer, ﬁve located at the      to signiﬁcantly increase at the ends of the structures. The end
+nicks in duplex DNA.                                                      effects become negligible about ﬁve array cells from the ends.
+   In the case of the HC-90° structure, the fraction of broken
+base pairs within the programmed bend region (array cell index            Structure of the Holliday Junctions. Holliday junctions (HJs)—
+7–20) reached ∼1–8% after ∼15 ns (Fig. 1K). Although the                  cross-like assemblies of four DNA strands—are the linchpins of
+number of insertions and deletions was designed to minimize the           DNA origami structures. HJs are found in DNA origami at each
+structural stress introduced by the 90° bend, some stresses               and every staple crossover, where two staple strands bridge two
+remained in the structure. Because helical turn per array cell            fragments of a scaffold strand (Fig. 3A). Single-molecule FRET
+should be 240° regardless of insertions or deletions, one turn per        experiments have shown that, in solution ([MgCl2] ∼ 10 mM)
+base pair can range from ∼27° (two insertions per cell) to 48°            and under no mechanical stress, HJs are likely to form a stacked
+(two deletions per cell) in the bent region. Thus, the bend region        right-handed conformation characterized by a ∼60° interaxial an-
+could be expected to have a less ordered structure than frag-             gle due to electrostatic repulsions between DNA duplexes (23, 24).
+ments of straight DNA origami. Indeed, Sobczak et al. (11)                However, adopting such a conformation within a DNA origami is
+reported difﬁculties with folding a seven-layer HC design having          not possible because three or four neighboring DNA duplexes
+a sharp programmed bend.                                                  surround each duplex. The action of steric and electrostatic inter-
+   SI Appendix, Fig. S5 characterizes the distributions of Mg2+ in        actions results in local bending of DNA at the HJs (Fig. 2 A–C).
+the HC system during the production simulation. The charges of               To quantitatively characterize the conformations of HJs inside
+Mg2+ ions completely neutralize the charge of DNA inside the              our DNA origami structures, we considered center-of-mass co-
+origami (SI Appendix, Fig. S5A). The ions are located, on aver-           ordinates of eight base pairs near each junction (Fig. 3A). Fig. 3B
+age, 5.4 Å away from the phosphorous atoms of the DNA                     shows the distribution of the intra- and interhelical distances
+backbone (SI Appendix, Fig. S5B). The diffusion coefﬁcients of            between the four base pairs nearest to the junction ðj; k; j′; k′Þ
+Mg2+ inside HC and SQ structures are 0.15 and 0.12 10−5 cm2/s,            averaged over all staple crossovers and the MD trajectory of the
+respectively, which is considerably lower than 0.52 × 10−5 cm2/s          HC structure. The intrahelical distances (j − k and j′ − k′) peak at
+that we measured in 50 mM MgCl2 bulk solution.                            around 4.4 Å, which is 1 Å larger than the mean rise per base
+
+Yoo and Aksimentiev                                                                       PNAS | December 10, 2013 | vol. 110 | no. 50 | 20101
+                                                                                                         100 Å
+    A                           100 Å
+                                                                       B                                                          C                       z      100 Å
+
+                                                                                                                                                    x
+
+                                t = 1 ns                                                                           t = 1 ns                                                    t = 1 ns
+
+
+
+
+                                                                 DNA-DNA distance (Å)
+                                                            30                                                     t = 70 ns
+                                t = 70 ns                   28
+                                                                                                                                                                              t = 15 ns
+                                                            26
+                                                            24
+                                                            22
+                                                            20
+                                                            18
+        y
+                                                                 y                                                t = 120 ns
+                     z         t = 130 ns                                                                                                                                     t = 33 ns
+                                                                                        z
+                                                                                              HC                                SQ
+   D 0.10                                     E 10                                                          10                              10
+                                                            8                                                8                               8
+                                    HC                      6                                                6                               6
+                  0.08              SQ                      4                                                4                               4
+                                                            2                                                2                               2
+    Probability
+
+
+
+
+                  0.06                                      0                                                0                               0
+                                                             0 7 14 21 28 35 42 49 56 63 70 77                0    16 32 48 64 80 96 112 128 0 21 42 63 84 105126147168189
+                  0.04                                                                      Base index                         Base index                        Base index
+                                              F
+                                                           80                                               80                                    80
+                  0.02
+                                              Area (nm )
+                                              2
+
+
+
+
+                                                           70                                               70                                    70
+                  0.00
+                                                           60                                               60                                    60
+                     10   20   30        40
+                                                           50                                  50                                                 50
+                                                             0 7 14 21 28 35 42 49 56 63 70 77   0                 16 32 48 64 80 96 112 128        0 21 42 63 84 105126147168189
+                                                                                            Base index                         Base index                        Base index
+
+Fig. 2. Conformational dynamics of DNA origami. (A–C) Representative conformations of the HC (A), SQ (B), and HC-90° (C) systems during the MD sim-
+ulations. The DNA origami structures are shown using a custom color-coded chicken-wire representation. The wire frame (black lines) connects the centers of
+mass of the DNA base pairs that form continuous double-stranded DNA cylinders or crossovers of the original DNA origami designs. The lines between the
+centers of mass of the same index base pairs connect the wire frame. The length of the lines indicates the local inter-DNA distance, which is color-coded.
+Movies S4–S6 and SI Appendix, Figs. S6 and S7 illustrate these simulation trajectories. (D) The distribution of local inter-DNA distances in the three DNA
+origami structures. (E) Local rmsf of the DNA origami structures. The rmsf values were computed using the coordinates of the base pairs’ centers of mass and
+averaged over last 60 (HC and SQ) or 10 (HC-90°) ns of the corresponding MD trajectory. The error bars indicate the SDs of the rmsf values computed over 18
+(HC) or 16 (SQ) helices of a given base index. (F) The local cross-sectional area of the DNA origami structures. The error bar at each base index indicates the SD
+in the time series data with ∼5 ps time step.
+
+
+
+pair of a canonical B-DNA duplex. Thus, HJs in DNA origami                                                       our DNA origami objects, we expressed their all-atom con-
+appear to be under mechanical stress. The mean interhelical                                                      formations in terms of local deformation tensors. For each DNA
+distance at the junction (j − k′ and k − j′) is 18.6 Å, consistent                                               origami object, we deﬁned a contour s to span the entire structure
+with the recent cryo-EM data (19). At the junction, each double                                                  and a triad of vectors f^ti ðsÞ i = 1; 2; 3g to deﬁne local structural
+helix is bent at ∼149°, whereas the angle between the two double                                                 order (Fig. 4A). The local deformation tensor was computed from
+helices is close to 24° (Fig. 3C). The distribution of the                                                       the relative torsion of two neighboring triads (see SI Appendix for
+i − j − k′ − l′ and i − j − k′ − l′ dihedral angles has a mean of −4°                                            precise deﬁnition).
+(Fig. 3D), which indicates that the helices at the junction form                                                    Having deﬁned the triad vectors as a function of s, we used the
+a slightly left-handed antiparallel conformation. Such a confor-                                                 Frenet description (25, 26) to quantitatively characterize local
+mation is a considerable departure from the conformation of                                                      structural deformations of DNA origami. The change of the triad
+free HJs in solution characterized by a right-handedness and                                                     vectors along the contour, d^ti =ds, was described using general-
+∼60° dihedral angle (23, 24). In an ideal DNA origami structure,                                                 ized torsion ωi ði = 1; 2; 3Þ as d^ti =ds = eijk ωj^tk , where eijk is the
+the two DNA helices of the junctions are nearly antiparallel.                                                    Levi–Civita tensor.
+However, the steric interaction of the two helices (23, 24) causes                                                  Fig. 4 B and C shows the average values of generalized tor-
+signiﬁcant structural distortions of the junction, which manifests                                               sions ω1;2;3 , for our two monolith designs (HC and SQ). The
+itself as an increase of rise per base and bending of the helices.                                               mean torsions ω1 , ω2 , and ω3 of the HC structure are close to
+   SI Appendix, Fig. S8 details our analysis of the HJs’ con-                                                    zero, whereas ω3 of SQ is consistently below zero with the mean
+formations in the SQ lattice structure. The type of the DNA                                                      of −1.3°. Indeed, in our MD simulations, the SQ system de-
+origami lattice was found to have negligible effect on the most                                                  veloped a visible overall twist about the z-axis (Fig. 2B and Movie
+likely conformations of the junctions.                                                                           S5. A similar twist was observed in the cryo-EM structure of a SQ
+                                                                                                                 lattice DNA origami object (19). Experimentally, it is possible to
+Mechanical Properties of DNA Origami Structures. Mechanical prop-                                                correct the twist by introducing a small number of deletions in
+erties of molecular objects can be determined from the analysis of                                               the structure, which would relax the unnatural “three turns per
+their structural ﬂuctuations (25, 26). To perform such analysis on                                               32 base pairs” constraints of the SQ lattice (5).
+
+20102 | www.pnas.org/cgi/doi/10.1073/pnas.1316521110                                                                                                                     Yoo and Aksimentiev
+ A                                        B                                                  is apparent. The local curvature appears to oscillate with a roughly
+                                                                                             21-bp periodicity, which is an intrinsic feature of the HC lattice.
+                                                                                                Using the Frenet analysis, we could quantify the mechanical ri-
+                                                                                             gidity of our straight origami designs. As demonstrated in SI Ap-
+                                                                                             pendix, Fig. S9 A–C, the distributions of ω1;2;3 can be accurately
+                                                                                             described using Gaussians. Thus, we can approximate the general-
+                                                                                             ized torsional energy density, Ei ðsÞ, as Ei ðsÞ = kB Tαi ðωi − ω0i Þ2 =2,
+                                                                                             where α1;2 are the bending moduli and α3 is the twist modulus (25,
+                                                                                             26). The persistence length, lp , is related to the bending moduli as
+                                                                                             1=lp = 0:5ð1=α1 + 1=α2 Þ (26).
+                                                                                                The bending, α1;2 , and twist, α3 , moduli as a function of array
+ C                                          D                                                cell index of all systems are shown in SI Appendix, Fig. S9 D–F,
+                                                                                             whereas the mean torsional moduli of the HC and SQ systems,
+                                                                                             averaged over all array cell indices, are shown Fig. 4E. Overall,
+                                                                                             α1 and α2 of the HC and SQ systems are comparable, indicating
+                                                                                             that they are isotropic for bending. Such isotropy could be
+                                                                                             expected for the SQ structure because of its symmetric four-by-
+                                                                                             four design and is reasonable for the HC structure because of the
+                                                                                             comparable widths of the structure in the directions of ^t1 and ^t2 .
+                                                                                             The twist modulus α3 is an order of magnitude smaller than α1;2
+                                                                                             for both HC and SQ systems: ∼3 μm for both.
+                                                                                                Fig. 4F plots the persistence lengths of the HC and SQ systems.
+Fig. 3. The structure of HJs in DNA origami. (A) A typical conformation of an                Although the cross-section areas of the HC and SQ systems are
+HJ in a straight HC structure. The two crossover staple strands are shown in                 comparable (Fig. 2F), the HC-pleaded design is signiﬁcantly
+green and yellow; the fragments of the scaffold strand are shown in blue.                    more rigid than the SQ pleaded one: lp = 52:8 ± 17:4μm versus
+Points i,i′, j,j′, k,k′,l, and l′ indicate the locations of the centers of mass of the       29:4 ± 9:8μm. Our estimates are in general agreement with ex-
+base pairs at the junction ðj,j′,k,k′Þ and three base pairs away from the junc-
+                                                                                             perimental measurement of the persistence length of a DNA
+tion ði,i′,l,l′Þ. (B) The distributions of distances between base pairs at the
+junction. Blue corresponds to the intrahelical distance j − k (or j′ − k′); red
+                                                                                             origami nanotube, lp ∼ 17μm (27).
+corresponds to the interhelical distances j − k′ (or k − j′). (C) The bending angle
+of the helices at the junction (blue) and the angle between the helices at the
+                                                                                             Conclusions
+
+
+
+
+                                                                                                                                                                                  COMPUTATIONAL BIOLOGY
+junction (red). (D) The distribution of the dihedral angles i − j − k′ − l′ and              We have shown that the all-atom MD method can reproduce
+
+
+
+
+                                                                                                                                                                                     BIOPHYSICS AND
+i′ − j′ − k − l. All distributions were obtained by averaging over the last 60 ns of         experimentally known structural properties of DNA origami
+the HC trajectory and over all junctions in the structure. In B–D, the mean and              objects and also provide information that is currently not ac-
+SD of each distribution are listed. Similar conformations of the HJs were ob-                cessible to experiment. As cluster computing becomes more
+served in our simulations of the SQ lattice origami (SI Appendix, Fig. S8).
+                                                                                             commonplace, we expect MD simulations to play an essential
+                                                                                             role in the development of the DNA origami ﬁeld. At the very
+                                                                                             least, an all-atom MD simulation can be used to assess the
+  The generalized torsion ω1 in Fig. 4D indicates the local                                  overall geometry and stability of a DNA origami object with
+curvature of the HC-90° structure as a function of array index.                              ultimate temporal and spatial resolution. In this regard, the MD
+The local curvature switches from zero to ∼8° over three array                               method is complementary to less accurate but more computa-
+cells (21 base pairs) at the beginning and at the end of the pro-                            tionally efﬁcient methods based on continuum mechanics. For
+grammed bend region. Over the central 14-array-cell programmed                               a proven DNA origami design, an all-atom MD simulation can
+bend region, the curvature is rather evenly distributed. However,                            eliminate the need for cryo-EM reconstruction. Furthermore, the
+subtle variation of the local curvature along the HC-90° structure                           MD method can provide complete structural information about
+
+
+
+     A                                                B                                  C                              D                              E
+
+
+
+
+                                                                                                                                                       F
+
+
+
+
+Fig. 4. Mechanical properties of DNA origami structures. (A) Deﬁnition of the unit vector triads, f^t i ðsÞ i = 1,2,3g. The HC-90° system is shown using spheres
+that represent the center of mass (CoM) of each 7-bp cell connected by cylinders; spheres of the same array cell index have the same color. For each array cell,
+a semitransparent gray plane represents a least-square ﬁt to the CoM of the cells. The contour s is deﬁned to connect the CoM of the array cells (black solid
+line). For each least-square ﬁt plane, ^t 3 is the unit vector tangential to the contour s. The insets illustrate the deﬁnitions of ^t 1,2 for the HC (Left) and SQ (Right)
+lattices. For the HC and SQ lattices, ^t 1 is deﬁned as a unit vector connecting helices 7 and 11 or 5 and 8, respectively, within the least-square plane. ^t 2 = ^t 3 × ^t 1 .
+(B–D) Local generalized torsions ω1,2,3 in the HC (B), SQ (C), and HC-90° (D) objects as a function of array cell index. The error bar for each array cell index
+indicates the SD of 30 block averages of the corresponding time series data. (E and F) Generalized rigidities α1,2,3 (E) and the persistent length (F) of the HC
+and SQ systems. The mean value and the SD were obtained by averaging over the data from individual array cells (SI Appendix, Fig. S9 D–F).
+
+
+Yoo and Aksimentiev                                                                                           PNAS | December 10, 2013 | vol. 110 | no. 50 | 20103
+each and every nucleotide of a DNA origami object, surrounding                                   For the bent object, we used a multistep equilibration strategy described in
+water and ions, local mechanical stresses and their microscopic                                  SI Appendix and illustrated by Movie S7.
+origins. Such capability can be of particular value for designs that                                All MD simulations reported in the main text were performed using the
+                                                                                                 NAMD program (31), periodic boundary conditions, CHARMM36 force ﬁeld
+incorporate active elements at speciﬁc locations of a DNA origami
+                                                                                                 for DNA (32), the modiﬁed TIP3P model of water (33), and custom param-
+object (2, 12, 28). The utility of the MD method can be fully re-                                eters for ions (34). All Mg2+ ions were simulated as Mg2+-hexahydrates (34).
+alized in the development of systems where DNA origami is                                        During the equilibration, the structure of hexahydrate was preserved by
+combined with other structural components, such as lipid bilayer                                                                              2
+                                                                                                 harmonically restraining ðk = 1 kcal=mol=Å Þ the distance between Mg2+
+membranes (12, 21), nanoparticles (13, 14), or solid-state nano-                                 and water oxygen atoms to ∼1.9 Å. These restraints prevented irreversible
+pores (22, 28, 29) and where physical forces are used to actively                                binding of Mg2+ to phosphate oxygens of DNA during initial equilibration
+control the behavior of the assemblies.                                                          (34). In our production runs, the restraints were not applied; nevertheless,
+                                                                                                 the hexahydrate structure remained intact. The van der Waals and short-
+Materials and Methods                                                                            range electrostatic energies were calculated using an 8–10 Å switching
+                                                                                                 scheme. The long-range electrostatic interactions were computed using the
+Using caDNAno, we designed three DNA origami objects and converted the
+                                                                                                 particle-mesh Ewald scheme and the grid size of ∼1.2 Å (35). The integration
+caDNAno designs to all-atom models in vacuum as described in SI Appendix.
+                                                                                                 time step was 2 fs; 2–2–6 fs multiple timestepping was used (31). Tempera-
+Following the conversion, each model was submerged in aqueous solution
+                                                                                                 ture was held constant at 298 K using a Langevin thermostat (31). Pressure
+containing ∼10 mM MgCl2. We used the genbox program of the gromacs
+                                                                                                 was maintained at one bar using the Nosé–Hoover Langevin piston pressure
+package (30) to randomly place Mg2+and Cl− ions and to add water to our
+                                                                                                 control (36).
+models. The size of the water box was chosen such that a water buffer of
+                                                                                                    We have also performed production simulations using the AMBERbsc0
+4 nm or more separated the periodic images of DNA origami objects. The
+                                                                                                 DNA force ﬁeld (37). However, we found the resulting structures of DNA
+ﬁnal size of the HC and SQ systems was approximately 16:5 × 16:5 × 32:5 and
+                                                                                                 origami objects to be in considerable departure from experimental data (5).
+14:0 × 14:0 × 47:0 nm3 , respectively. Before equilibration, the potential en-
+                                                                                                 These simulations are described in SI Appendix and SI Appendix, Fig. S10.
+ergy of each system was minimized using the conjugate gradient method.
+   Two different protocols were used to equilibrate our straight (HC and SQ)
+                                                                                                 ACKNOWLEDGMENTS. This work was supported in part by the grants from
+and bent (HC-90°) DNA origami objects. For the straight objects, 10 ns
+                                                                                                 the National Science Foundation (DMR-0955959, PHY-0822613, and ECC-
+equilibration was performed applying harmonic restraints to all heavy atoms                      1227034) and the National Institutes of Health (R01-HG005115). The authors
+of DNA bases using the spring constant k of 1 kcal/mol/Å2. This equilibration                    gladly acknowledge supercomputer time provided through Extreme Science
+process allowed the DNA backbone to relax and Mg2+ to diffuse into the                           and Engineering Discovery Environment Allocation Grant MCA05S028 and
+DNA origami objects, while preserving the overall integrity of the designs.                      the Taub Cluster (University of Illinois at Urbana-Champaign).
+
+
+ 1. Seeman NC (2010) Nanomaterials based on DNA. Annu Rev Biochem 79:65–87.                      20. Ke Y, et al. (2009) Multilayer DNA origami packed on a square lattice. J Am Chem Soc
+ 2. Pinheiro AV, Han D, Shih WM, Yan H (2011) Challenges and opportunities for struc-                131(43):15903–15908.
+    tural DNA nanotechnology. Nat Nanotechnol 6(12):763–772.                                     21. Burns JR, Stulz E, Howorka S (2013) Self-assembled DNA nanopores that span lipid
+ 3. Rothemund PW (2006) Folding DNA to create nanoscale shapes and patterns. Nature                  bilayers. Nano Lett 13(6):2351–2356.
+    440(7082):297–302.                                                                           22. Hernández-Ainsa S, et al. (2013) DNA origami nanopores for controlling DNA trans-
+ 4. Douglas SM, et al. (2009) Self-assembly of DNA into nanoscale three-dimensional                  location. ACS Nano 7(7):6024–6030.
+    shapes. Nature 459(7245):414–418.                                                            23. McKinney SA, Déclais ACC, Lilley DMJ, Ha T (2003) Structural dynamics of individual
+ 5. Dietz H, Douglas SM, Shih WM (2009) Folding DNA into twisted and curved nanoscale
+                                                                                                     Holliday junctions. Nat Struct Biol 10(2):93–97.
+    shapes. Science 325(5941):725–730.
+                                                                                                 24. Hohng S, et al. (2007) Fluorescence-force spectroscopy maps two-dimensional re-
+ 6. Han D, et al. (2011) DNA origami with complex curvatures in three-dimensional space.
+                                                                                                     action landscape of the holliday junction. Science 318(5848):279–283.
+    Science 332(6027):342–346.
+                                                                                                 25. Panyukov S, Rabin Y (2000) Fluctuating ﬁlaments: Statistical mechanics of helices.
+ 7. Douglas SM, Chou JJ, Shih WM (2007) DNA-nanotube-induced alignment of mem-
+    brane proteins for NMR structure determination. Proc Natl Acad Sci USA 104(16):                  Phys Rev E Stat Phys Plasmas Fluids Relat Interdiscip Topics 62(5 Pt B):7135–7146.
+    6644–6648.                                                                                   26. Choe S, Sun SX (2005) The elasticity of alpha-helices. J Chem Phys 122(24):244912.
+ 8. Andersen ES, et al. (2009) Self-assembly of a nanoscale DNA box with a controllable          27. Schiffels D, Liedl T, Fygenson DK (2013) Nanoscale structure and microscale stiffness
+    lid. Nature 459(7243):73–76.                                                                     of DNA nanotubes. ACS Nano 7(8):6700–6710.
+ 9. Liedl T, Högberg B, Tytell J, Ingber DE, Shih WM (2010) Self-assembly of three-dimensional   28. Wei R, Martin TG, Rant U, Dietz H (2012) DNA origami gatekeepers for solid-state
+    prestressed tensegrity structures from DNA. Nat Nanotechnol 5(7):520–524.                        nanopores. Angew Chem Int Ed Engl 51(20):4864–4867.
+10. Lin C, et al. (2012) Submicrometre geometrically encoded ﬂuorescent barcodes self-           29. Bell NAW, et al. (2012) DNA origami nanopores. Nano Lett 12(1):512–517.
+    assembled from DNA. Nat Chem 4(10):832–839.                                                  30. Hess B, Kutzner C, Van Der Spoel D, Lindahl E (2008) Gromacs 4: Algorithms for highly
+11. Sobczak JPJP, Martin TG, Gerling T, Dietz H (2012) Rapid folding of DNA into nano-               efﬁcient, load-balanced, and scalable molecular simulation. J Chem Theory Comput
+    scale shapes at constant temperature. Science 338(6113):1458–1461.                               4(3):435–447.
+12. Langecker M, et al. (2012) Synthetic lipid membrane channels formed by designed              31. Phillips JC, et al. (2005) Scalable molecular dynamics with NAMD. J Comput Chem
+    DNA nanostructures. Science 338(6109):932–936.                                                   26(16):1781–1802.
+13. Acuna GP, et al. (2012) Fluorescence enhancement at docking sites of DNA-directed            32. Hart K, et al. (2012) Optimization of the CHARMM additive force ﬁeld for DNA: Im-
+    self-assembled nanoantennas. Science 338(6106):506–510.                                          proved treatment of the BI/BII conformational equilibrium. J Chem Theory Comput
+14. Kuzyk A, et al. (2012) DNA-based self-assembly of chiral plasmonic nanostructures                8(1):348–362.
+    with tailored optical response. Nature 483(7389):311–314.                                    33. Jorgensen WL, Chandrasekhar J, Madura JD, Impey RW, Klein ML (1983) Comparison
+15. Douglas SM, et al. (2009) Rapid prototyping of 3D DNA-origami shapes with caDNAno.
+                                                                                                     of simple potential functions for simulating liquid water. J Chem Phys 79(2):926–935.
+    Nucleic Acids Res 37(15):5001–5006.
+                                                                                                 34. Yoo J, Aksimentiev A (2012) Improved parametrization of Li+, Na+, K+, and Mg2+ ions
+16. Kim DN, Kilchherr F, Dietz H, Bathe M (2012) Quantitative prediction of 3D solution
+                                                                                                     for all-atom molecular dynamics simulations of nucleic acid systems. J Phys Chem Lett
+    shape and ﬂexibility of nucleic acid nanostructures. Nucleic Acids Res 40(7):2862–2868.
+17. Strey HH, Podgornik R, Rau DC, Parsegian VA (1998) DNA–DNA interactions. Curr                    3(1):45–50.
+    Opin Struct Biol 8(3):309–313.                                                               35. Darden T, York D, Pedersen L (1993) Particle mesh ewald: An n log(n) method for
+18. Kauert DJ, Kurth T, Liedl T, Seidel R (2011) Direct mechanical measurements reveal               ewald sums in large systems. J Chem Phys 98(12):10089–10092.
+    the material properties of three-dimensional DNA origami. Nano Lett 11(12):                  36. Martyna GJ, Tobias DJ, Klein ML (1994) Constant pressure molecular dynamics algo-
+    5558–5563.                                                                                       rithms. J Chem Phys 101(5):4177–4189.
+19. Bai XCC, Martin TG, Scheres SHW, Dietz H (2012) Cryo-EM structure of a 3D DNA-               37. Pérez A, et al. (2007) Reﬁnement of the AMBER force ﬁeld for nucleic acids: Im-
+    origami object. Proc Natl Acad Sci USA 109(49):20012–20017.                                      proving the description of α/γ conformers. Biophys J 92(11):3817–3829.
+
+
+
+
+20104 | www.pnas.org/cgi/doi/10.1073/pnas.1316521110                                                                                                              Yoo and Aksimentiev
+

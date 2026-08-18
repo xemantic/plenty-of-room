@@ -1,0 +1,80 @@
+[
+ {
+  "file": "PMC6379721-snodin2019.pdf",
+  "url": "https://europepmc.org/articles/PMC6379721?pdf=render",
+  "status": 200,
+  "bytes": 18037080
+ },
+ {
+  "file": "PMC3864285-yoo-aksimentiev2013.pdf",
+  "url": "https://europepmc.org/articles/PMC3864285?pdf=render",
+  "status": 200,
+  "bytes": 2181378
+ },
+ {
+  "file": "PMC2737683-dietz2009.pdf",
+  "url": "https://europepmc.org/articles/PMC2737683?pdf=render",
+  "status": 500,
+  "bytes": 0,
+  "error": "HTTP Error 500: "
+ },
+ {
+  "file": "PMC9127610-floppy2d-cryoem.pdf",
+  "url": "https://europepmc.org/articles/PMC9127610?pdf=render",
+  "status": 200,
+  "bytes": 3178930
+ },
+ {
+  "file": "PMC3523823-bai2012-cryoem.pdf",
+  "url": "https://europepmc.org/articles/PMC3523823?pdf=render",
+  "status": 200,
+  "bytes": 2181765
+ },
+ {
+  "file": "PMC9127610-fullTextXML.xml",
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9127610/fullTextXML",
+  "status": 200,
+  "bytes": 98234
+ },
+ {
+  "file": "PMC3864285-fullTextXML.xml",
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3864285/fullTextXML",
+  "status": 404,
+  "bytes": 0,
+  "error": "HTTP Error 404: Not Found"
+ },
+ {
+  "file": "PMC2737683-fullTextXML.xml",
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2737683/fullTextXML",
+  "status": 404,
+  "bytes": 0,
+  "error": "HTTP Error 404: Not Found"
+ },
+ {
+  "file": "baker2018-acsnano.html",
+  "url": "https://pubs.acs.org/doi/10.1021/acsnano.8b01669",
+  "status": 403,
+  "bytes": 0,
+  "error": "HTTP Error 403: Forbidden"
+ },
+ {
+  "file": "li2012-langmuir.html",
+  "url": "https://pubs.acs.org/doi/10.1021/la204446c",
+  "status": 403,
+  "bytes": 0,
+  "error": "HTTP Error 403: Forbidden"
+ },
+ {
+  "file": "crossref-baker2018.json",
+  "url": "https://api.crossref.org/works/10.1021/acsnano.8b01669",
+  "status": 200,
+  "bytes": 11380
+ },
+ {
+  "file": "crossref-li2012.json",
+  "url": "https://api.crossref.org/works/10.1021/la204446c",
+  "status": 404,
+  "bytes": 0,
+  "error": "HTTP Error 404: Not Found"
+ }
+]

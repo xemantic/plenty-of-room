@@ -1,0 +1,714 @@
+Published online 3 January 2019                                                    Nucleic Acids Research, 2019, Vol. 47, No. 3 1585–1597
+                                                                                                                  doi: 10.1093/nar/gky1304
+
+
+Coarse-grained modelling of the structural properties
+of DNA origami
+Benedict E.K. Snodin1 , John S. Schreck                               2
+                                                                          , Flavio Romano3 , Ard A. Louis4 and Jonathan
+P.K. Doye 1,*
+1
+  Physical, and Theoretical Chemistry Laboratory, Department of Chemistry, South Parks Road, Oxford OX1 3QZ,
+UK, 2 Department of Chemical Engineering, Columbia University, 500 W 120th Street, New York, NY 10027, USA,
+3
+  Dipartimento di Scienze Molecolari e Nanosistemi, Universit Ca’ Foscari, Via Torino 155, 30172 Venezia Mestre,
+Italy and 4 Rudolf Peierls Centre for Theoretical Physics, University of Oxford, 1 Keble Road, Oxford OX1 3NP, UK
+
+Received September 27, 2018; Revised November 17, 2018; Editorial Decision December 19, 2018; Accepted December 20, 2018
+
+
+
+ABSTRACT                                                                        through the introduction of internal mechanical stresses.
+                                                                                The increasing usage of DNA origami was particularly
+We use the oxDNA coarse-grained model to pro-                                   facilitated by the development of computer-aided design
+vide a detailed characterization of the fundamental                             tools, such as caDNAno (7). These original approaches pro-
+structural properties of DNA origami, focussing on                              duced structures involving mainly bundles of locally paral-
+archetypal 2D and 3D origami. The model reproduces                              lel double helices held together by four-way junctions. More
+well the characteristic pattern of helix bending in a                           recently, scaffolded origami approaches have been devel-
+2D origami, showing that it stems from the intrin-                              oped that generate more open ‘wireframe’ structures (8–11),
+sic tendency of anti-parallel four-way junctions to                             aided by the vHelix (8) and DAEDALUS (9) design pro-
+splay apart, a tendency that is enhanced both by less                           grammes. The structural control and the addressability pro-
+screened electrostatic interactions and by increased                            vided by the DNA origami technique naturally have led to
+thermal motion. We also compare to the structure of a                           many types of applications (12), particularly in the areas of
+                                                                                biosensing (13), drug delivery (14,15) and nanofabrication
+3D origami whose structure has been determined by
+                                                                                (16,17).
+cryo-electron microscopy. The oxDNA average struc-                                 In Rothemund’s original paper, the structures of the
+ture has a root-mean-square deviation from the ex-                              origami were characterized by atomic force microscopy
+perimental structure of 8.4 Å, which is of the order                           (AFM). The images were used to confirm that the origami
+of the experimental resolution. These results illus-                            had folded into the designed structures without significant
+trate that the oxDNA model is capable of providing                              defects, and identified structural features of the origami,
+detailed and accurate insights into the structure of                            such as what we here term the ‘weave’ pattern where the he-
+DNA origami, and has the potential to be used to                                lices, rather than being straight, splay out between four-way
+routinely pre-screen putative origami designs and to                            junctions, thus leading to the characteristic pattern where
+investigate the molecular mechanisms that regulate                              the helices weave back and forth between adjacent helices
+the properties of DNA origami.                                                  (3). Such microscopy studies (by AFM and transmission
+                                                                                electron microscopy) are probably the most prevalent way
+                                                                                of characterizing the structures of DNA origami, but are
+INTRODUCTION                                                                    usually limited in terms of the fine-grained detail that can
+                                                                                be obtained. Furthermore, adsorption onto a surface may
+DNA nanotechnology seeks to use the specificity of the                          perturb the structure, especially for 2D origami, which may
+Watson–Crick base pairing and the programmability pos-                          be flattened and made to look more ordered because of the
+sible through the DNA sequence to design self-assembling                        suppression of out-of-plane thermal fluctuations.
+nanoscale DNA structures and devices. The most prevalent                           Solutions-based measurements can be performed by, for
+technique used is probably that of DNA origami in which a                       example, small-angle X-ray scattering (SAXS) and FRET,
+long viral ‘scaffold’ DNA single strand is folded up into vir-                  but SAXS interpretation usually requires a structural model
+tually any arbitrary structure by the addition of many differ-                  (and its computed SAXS pattern) for comparison (18–21).
+ent ‘staple’ strands that bind to multiple specific domains on                  FRET can potentially provide detailed measurements of se-
+the scaffold (1,2). The initial designs were two-dimensional                    lected distances, but has been relatively little used to provide
+(3) but were soon generalized to three-dimensional shapes                       detailed structural analysis of origami objects (22,23).
+(4), and then to bent, twisted (5) and curved (6) structures
+
+* To whom correspondence should be addressed. Tel: +44 1865 275426; Email: jonathan.doye@chem.ox.ac.uk
+
+
+
+C The Author(s) 2019. Published by Oxford University Press on behalf of Nucleic Acids Research.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/), which
+permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.
+1586 Nucleic Acids Research, 2019, Vol. 47, No. 3
+
+
+   Cryo-EM can potentially provide the most detailed struc-         nificant number of DNA nanotechnology systems (38,55–
+tural analysis. For example, Bai et al. were able to obtain a       70).
+high-resolution structure for a three-dimensional origami              What are the features that make the oxDNA model par-
+where an all-atom structure was fitted to the obtained elec-        ticularly appropriate to study DNA origami? Firstly, it is
+tron density maps (24). However, such detailed studies are          able to accurately reproduce DNA’s basic structural proper-
+unlikely to be a routine approach. More commonly, cry-              ties. Properties such as the DNA pitch are particularly im-
+oEM has been used at a somewhat lower level of resolu-              portant, as the large size of DNA origami means that small
+tion, particularly for polyhedral nanostructures (9,25,26).         deviations can lead to internal stresses that lead to global
+Very recently, particle electron tomography has also begun          twisting of the origami––note that in the second version of
+to be applied allowing visualization of the 3D structure of         the oxDNA model the duplex pitch and the twist at nicks
+individual DNA nanostructures (27,28).                              and junctions were fine-tuned to correct just such an issue
+   Given both the difficulty of obtaining high-resolution           (38). Secondly, it is able to capture the mechanical proper-
+structural information and the potential utility of being able      ties of DNA such as the persistence length and torsional
+to predict structural properties prior to experimental real-        modulus (36,38,52,54); these are important for correctly
+ization, computational modelling of the structure of DNA            capturing both the thermal fluctuations of DNA origami
+origami has the potential to play a significant role in the field   and the equilibrium structure when internal stresses are de-
+(29). All-atom simulations have the potential to provide the        liberately designed into the origami to cause overall bend
+most detailed structural insights (30–35). Notably, the Aksi-       and twist (5). For example, oxDNA can capture the global
+mentiev group have simulated a number of origami nanos-             right- and left-handed twisting when insertions or deletions,
+tructures (30,32–34), including even an origami nanopore            respectively, are introduced into an untwisted 3D origami
+inserted into a membrane (33). However, such simulations            design (38). Thirdly, it has a very good representation of
+are extremely computationally intensive and cannot be per-          the thermodynamics of hybridization (36–38) allowing it to
+formed routinely. Furthermore, even for the relatively stiff        capture fraying, the breaking of base pairs due to more ex-
+origami considered in these studies, it is not clear that they      treme internal or external stresses, and secondary structure
+have fully equilibrated on the simulation time scales (34).         formation in single strands. Fourthly, it has a good represen-
+More promising as a general tool is an approach where only          tation of the mechanical properties of single-stranded DNA
+the atoms of the origami (but not the water environment)            (37); this is relevant to that subset of origami that use ss-
+are simulated and an elastic network is used to constrain           DNA to introduce flexibility (71), exert forces (72) or brace
+the origami in its assembled state; these constraints are ap-       tensegrity structures (73).
+plied to the base pairing and base stacking interactions, and          OxDNA is also able to naturally capture the mechanical
+also to the distance between neighboring helices (34).              behaviour of other sites. For example, in unstressed DNA
+   A computationally less expensive approach is to use              it is generally favourable for the DNA to stack across a
+coarse-grained models in which the basic units are no longer        nick and in this state it has very similar elastic properties to
+atoms, but some larger moiety, be it a nucleotide (36–38),          standard duplex DNA. However, for a relatively small free-
+a base pair (39,40) or a section of a double helix (41–46).         energy cost this stacking can be broken and the two halves
+Such approaches of course inevitably lead to a lower level          of the duplex can then rotate relatively freely about the hinge
+of structural detail, and the accuracy of their properties will     point (53). Lower-resolution models are typically unable to
+depend on the quality of the parameterization.                      capture the two-state character associated with the nick and
+   By far the most widely-used approach is CanDo as it al-          instead associate a single set of moduli with the nick.
+lows efficient and reliable structural screening of potential          OxDNA has previously been used to characterize a num-
+origami designs through a simple-to-use web interface (41–          ber of specific DNA origami nanostructures with good suc-
+44). However, its lack of excluded volume interaction means         cess (38,63–65,68,69). Here, our aim is to provide a detailed
+that it may not be appropriate for flexible origami whose           structural analysis of some of the basic features of DNA
+structures are not fully mechanically constrained. Further-         origami and to test the reliability of the oxDNA model by
+more, as with any model whose basic unit is above the level         comparing to the most structurally detailed available exper-
+of a nucleotide, there is no coupling to intra-base-pair de-        imental data. The systems that we will study are an archety-
+grees of freedom; consequently processes such as duplex             pal 2D origami tile that has recently been characterized by
+fraying, junction migration, and breaking of base pairs due         SAXS (21), and the 3D origami of (24). To better under-
+to internal stresses cannot be resolved. Finally, it has a sim-     stand the origins of some of the structural features, we also
+plified representation of single-stranded DNA, and so can-          characterize the free-energy landscape of an unconstrained
+not take into account, for example, secondary structure for-        four-way junction, a key motif in DNA origami.
+mation.
+   All these potential deficiencies can be addressed by a
+                                                                    MATERIALS AND METHODS
+nucleotide-level model, albeit at greater computational ex-
+pense. Although there are a number of such models at this           In this work, we have used the version of the oxDNA model
+level of detail (47–49), here we explore in detail the de-          described in (38) (sometimes called ‘oxDNA2’) for which
+scription of DNA origami nanostructures provided by the             the properties have been fine-tuned to capture origami twist.
+oxDNA model (36–38). This model has been particularly               This version of the model also has an explicit dependence on
+successful at describing a wide variety of biophysical prop-        the ionic strength through a Debye–Hückel-like term in the
+erties of DNA (36,38,50–54), and has been applied to a sig-         potential. Note, such a simple form is, of course, not capa-
+                                                                    ble of capturing ion-specific effects. This electrostatic term
+                                                                            Nucleic Acids Research, 2019, Vol. 47, No. 3 1587
+
+
+was parameterized so that the dependence of duplex melt-           taining significant Mg2+ . For this reason, here we only con-
+ing on [Na+ ] is reproduced. However, oxDNA overestimates          sider the stacked conformation of the junction, this form
+the stability of the stacked form of the Holliday junction as      being favoured by oxDNA for the salt conditions we con-
+a function of [Na+ ]. As it happens, this is an advantage when     sider here (0.5 M).
+modelling DNA origami, as in experiments origami are typ-             In order to quantify the structure of the junction, we de-
+ically assembled in a buffer that contains Mg2+ , which is         fine two angles: ␾ = (␾1 + ␾2 )/2, which measures the aver-
+known to stabilize the stacked form of the Holliday junction       age twist angle between pairs of arms; and ␪ = (␪ 1 + ␪ 2 )/2,
+in an ion-specific manner (74). Thus, [Na+ ] = 0.5 M, the so-      which measures the average angle between the arms and the
+lution conditions at which we chose to model the origami           plane of the junction (Figure 1). ␾ is defined such that ␾ =
+using oxDNA, is a reasonable choice to mimic the experi-           0◦ for a parallel junction and ␾ = 180◦ for an anti-parallel
+mental solution conditions, with only very small changes in        junction, where the (anti-)parallel character refers to the
+the structural properties of the oxDNA origami occurring           relative orientation of the two strands that do not cross in
+as the concentration is further increased. By contrast, ex-        the stacked junction. The junctions in origami are typically
+tremely high values of [Na+ ] have to be used in experiment        anti-parallel. A junction is said to be right-handed if ␾ >
+to induce origami assembly (75) probably because of the rel-       180◦ and left-handed if ␾ < 180◦ . ␪ provides a measure of
+ative instability of the stacked Holliday junction in [Na+ ] so-   how much the DNA helices bend at the junction and will be
+lutions (74). We also note that, we used the oxDNA model           particularly relevant when we consider the ‘weave’ pattern
+with average-strength (rather than sequence-dependent) in-         for DNA origami. Precise definitions of the angles are given
+teractions, as we are interested in generic structural proper-     in the Supplementary Data.
+ties.                                                                 To characterize the free-energy landscape of the junction,
+   To generate initial origami structures, we have developed       we ran molecular dynamics simulations of an isolated Holl-
+a publicly available script to turn a caDNAno file into a          iday junction with arms that are 16 base pairs long. We used
+starting oxDNA configuration. The initial structures gener-        a biasing potential (defined in the Supplementary Data) to
+ated may locally be subject to very large forces due to over-      window the simulations in ␾, with the particular aim of ac-
+laps or somewhat extended backbones. As such large forces          celerating the sampling for ␾ values near 180◦ , as this is the
+are potentially problematic for a simulation, we have a de-        region relevant to the junctions in origami. The sequence
+veloped an approach to first relax configurations prior to         was chosen to prevent branch migration. The junction can
+them being simulated (see Supplementary Data for details).         adopt one of two stacked isomers. In order to simplify the
+   The molecular dynamics simulations use an Andersen-             analysis, we only considered one of the isomers and so con-
+like thermostat, in which the velocities and angular veloc-        figurations that were determined to be in the wrong isomer
+ities are periodically refreshed from a Maxwell-Boltzmann          were discarded. Further details regarding the simulations,
+distribution, to generate diffusive motion of the nucleotides      including the DNA strand sequences and how a configura-
+in the absence of explicit solvent (76). To aid the simulation     tion’s isomeric state is determined, are given in the Supple-
+of large origami, we use a GPU-enabled verion of our sim-          mentary Data.
+ulation code (77).                                                    The resulting free-energy landscape is depicted in Figure
+                                                                   1C. The free-energy minimum for the junction is at (␾, ␪)
+RESULTS AND DISCUSSION                                             = (95.5◦ , 2.5◦ ), while integrating over ␪ gives a preferred
+Holliday junction structure                                        ␾ angle of 90.5◦ , with a mean value of 92.0◦ . Thus, Holli-
+                                                                   day junctions prefer to be left-handed in the oxDNA model.
+Before we directly address origami structure, we first con-        However, the junctions observed in crystal structures are
+sider the properties of a single four-way junction, also           usually right-handed with ␾ ≈ 240◦ (78). The right-handed
+known as a Holliday junction, as they are an essential fea-        character of stacked Holliday junctions in solution is also
+ture of origami designs. These occur wherever two strands,         confirmed by FRET (84). The preferred value of ␾ that we
+usually staple strands, cross from one double helix to an-         see with oxDNA is simply that required to align the back-
+other within the origami. Thus the junctions play the vi-          bone sites of the two double helices at the junction. In this
+tal role of joining adjacent double helices together. Because      way, the distance between the two double helices can be
+each origami contains many such junctions, their structural        maximized, reducing the steric and electrostatic repulsion
+properties can potentially have a major effect on the struc-       between them. At other angles the bonds between the two
+ture of the origami.                                               helices are twisted, bringing the helices closer together at the
+   The structure of a single isolated Holliday junction has        junction.
+been characterised experimentally (74,78) through X-ray               The cause of this difference in the preferred geometry is
+crystallography (79,80), AFM (81) and FRET measure-                probably the model’s simplified representation of the back-
+ments (82–84). Depending on the experimental conditions,           bone and its associated excluded volume. However, we note
+a Holliday junction can exist in an open or stacked con-           that we know of no coarse-grained DNA model for which
+formation, with the open conformation favoured at low              a right-handed junction naturally emerges from the model.
+concentrations of metal ions, and with divalent ions be-           For example, the next most widely-used nucleotide-level
+ing particularly effective at stabilizing the stacked confor-      coarse-grained model also exhibits left-handed junctions
+mation (78). Because the adoption of a stacked geometry            (85). Furthermore, we also note that a crystallized left-
+is important to the structural integrity of standard DNA           handed junction has been reported (86) for an RNA-DNA
+origami, ‘high salt’ conditions are used in origami experi-        complex, and that both chiral forms have been seen as local
+ments, normally, but not necessarily (75), in a solution con-
+1588 Nucleic Acids Research, 2019, Vol. 47, No. 3
+
+
+
+
+Figure 1. (A) and (B) OxDNA configurations for a single Holliday junction at 0.5 M salt that are representative of (A) the left-handed global free-energy
+minimum (␾ = 95.5◦ , ␪ = 2.5◦ ) and (B) an anti-parallel junction (␾ = 180◦ , ␪ = 5◦ ). (i) and (ii) provide perpendicular views of the configurations. In both
+cases the green and purple strands cross from one double helix to another, while the blue and red strands carry straight on along their double helix. (A)(iii)
+and (B)(iii) provide schematics of a left-handed parallel and an anti-parallel junction, respectively. (C) The Holliday-junction free-energy landscape as a
+function of ␾ and ␪. One-dimensional free-energy profiles for ␾ and ␪ are also shown. The full free-energy profile for ␪ is shown as a solid blue line, while
+the dashed red line is for the subregion 160◦ ≤ ␾ ≤ 180◦ , shaded grey in the free-energy landscape. ␾ = (␾1 + ␾2 )/2 is a measure of the chiral twist of the
+junction, where ␾1 and ␾2 are the angles between the arms as indicated in (A)(i). ␪ = (␪ 1 + ␪ 2 )/2 is the average angle between each arm and the plane of
+the junction, as indicated in (B)(ii). The plane of the junction, represented by the dotted line in (B)(ii), is perpendicular to the plane of the paper and passes
+through the midpoints of the exchanging strands. The temperature used was 296.15 K.
+
+
+minima for a junction in solution in all-atom simulations                           handed twist has also been observed in atomistic simula-
+(87).                                                                               tions of 3D origami (30). Although the cause of this left-
+   That oxDNA is unable to reproduce the experimental                               handed twist in the experimental case is not obvious, it must
+junction crystal structures’ preference to be right-handed                          reflect both the details of the real free-energy landscape (as
+is, fortunately, not particularly detrimental to modelling                          a function of ␾) and the constraints placed on the junctions
+origami structure with oxDNA for the following reasons.                             within the origami. For oxDNA, there is a maximum at ␾ ∼
+Firstly, the helices are able to rotate relatively freely about                     180◦ , caused by the larger repulsions when the two helices
+the crossover point and so the isolated junction is rela-                           are aligned, but with a greater slope away from the maxi-
+tively flexible in ␾ (although clearly the junction will very                       mum towards the preferred left-handed configurations.
+rarely adopt a configuration with ␾ ∼ 240◦ ). Secondly, in                             The free-energy profile for ␪ in Figure 1(c) shows a slight
+an origami the junctions are constrained to ␾ values close to                       preference for a positive ␪, with a free-energy minimum at
+180◦ , i.e. 90◦ from the preferred junction angle for oxDNA                         ␪ = 2.5◦ , corresponding to a tendency for the helix arms
+and 60◦ for real DNA, so the junctions in both cases would                          to bend slightly away from the plane of the junction. The
+be expected to have a somewhat similar level of stress, al-                         effect is greater, with the minimum at ␪ = 4.5◦ , for a subset
+beit with a torque in the opposite direction. Indeed, recent                        of the data for which 160◦ ≤ ␾ ≤ 180◦ , the region likely to be
+oxDNA results on a 2D DNA brick system have shown that                              relevant within origami. A simple argument explaining this
+oxDNA can reproduce the melting point of such systems                               behaviour is that negative values of ␪ will cause the arms to
+very well (to within 2◦ C of experiment) without any adjust-                        bump into each other more often, and this becomes more
+ment to the model (66). This would suggest that oxDNA                               likely when the arms are approximately aligned, as for ␾ ≈
+can capture well the thermodynamic cost of the anti-parallel                        180◦ . Furthermore, the twisting of the inter-helix bonds for
+junctions in these DNA brick systems, albeit noting that the                        anti-parallel junctions will lead to increased repulsion local
+junctions are less restricted than those considered here as                         to the junction.
+they involve only one strand crossing.                                                 Intriguingly, however, this argument would lead us to ex-
+   Finally, junctions that have been experimentally resolved                        pect a similar effect as we move towards ␾ ≈ 0◦ , but this
+within a 3D origami have been found to exhibit ␾ angles                             effect is not evident from the free-energy landscape; instead
+slightly below 180◦ (24), a somewhat counter-intuitive re-                          the landscape becomes more symmetric about ␪ = 0 in this
+sult because one would perhaps expect deviations to take                            region. Interestingly, the free-energy cost of forming a par-
+the junction towards (not away from) the preferred geom-                            allel junction is also much more than that of an anti-parallel
+etry. However, this is beneficial for oxDNA modelling of                            junction. This may help to explain why DNA nanostruc-
+origami, because, as we will see, the origami junctions in                          tures with parallel junctions that reliably assemble have gen-
+oxDNA do somewhat twist towards their preferred left-                               erally been more difficult to design (88,89). As ␾ ≈ 0◦ con-
+handed orientation. This tendency to have a slight left-                            figurations are not relevant to junctions within conventional
+                                                                                             Nucleic Acids Research, 2019, Vol. 47, No. 3 1589
+
+
+
+
+Figure 2. (A, B) Different representations and viewpoints of the average structure of the 2D origami. (C) and (D) provide a ‘chickenwire’ representation
+of the tile. In (C) the tile is shown from the front so that the weave pattern can be clearly seen (as highlighted by helix axes in black); and (D) at an angle
+to show the corrugation pattern on the tile’s surface (as highlighted by the inter-helix vectors in black). In (C) lines running horizontally along the origami
+show the axes of the double helices that make up the origami; pairs of red vertical lines represent double crossovers, while blue vertical lines represent the
+inter-helix vectors used for the quantitative analysis of the weave and corrugation. Deviations from the typical structure, such as that seen in the bottom
+left corner of the origami, are caused by staple melting or branch migration.
+
+
+DNA origami we do not investigate the origins of these ef-                        tal structural studies of origami), rather than in solution,
+fects further.                                                                    we would expect the structure to be flattened out and much
+                                                                                  less fluxional.
+                                                                                     The ‘weave pattern’ in 2D origami, where adjacent dou-
+Structural properties of a 2D origami                                             ble helices tend to push apart and open up a significant
+The coupling between many Holliday junctions present in                           gap between the helices away from the junctions, has been
+a DNA origami generates a rich set of structural proper-                          well known since the DNA origami method was originally
+ties. We first consider 2D origami, which consist of a single                     devised, and is clearly visible in experimental microscopy
+‘sheet’ of (anti-)parallel DNA helices joined by crossovers.                      images (3). It is also very apparent in the average struc-
+The particular design on which we focus (21) has a very                           ture depicted in Figure 2. This effect is not limited to DNA
+regular pattern of crossovers and staples (see Supplemen-                         origami, but can also be clearly seen in, for example, arrays
+tary Figure S2 for the caDNAno representation of the                              of DNA double-crossover tiles (91), including when mod-
+structure). Rothemund’s original 2D origami tiles have                            elled by oxDNA (57).
+been shown to be somewhat (right) twisted (90) (a feature                            In Rothemund’s original paper, he suggested two possible
+oxDNA reproduces (65)), because of a slight mismatch be-                          reasons for this behaviour: firstly, electrostatic repulsion be-
+tween the pitch of DNA (∼10.5 bp) and the separation be-                          tween the negatively charged helices; and secondly, that the
+tween the junctions (32 bp for three helical turns). The cur-                     detailed local structure around the junctions favours the he-
+rent design has included a suitable number of sections with                       lical arms to bend slightly away from each other (3). A third
+31 base pairs between equivalent junctions in order to re-                        possible contribution is an entropic effect due to the in-
+move this net twist.                                                              creased conformational space available when adjacent dou-
+   The average structure of the origami is shown in Figure                        ble helices are not perfectly parallel. Here, we will see that
+2 (see Supplementary Data for details of how the average                          all three of these effects play a role in the origin of the weave
+structure was computed). The origami sheet is not notice-                         pattern for 2D origami in our oxDNA simulations.
+ably twisted, but there is some modest curvature (as also                            We quantify the weave pattern of the 2D tile by measuring
+predicted by CanDo (41)). SAXS experiments on this tile by                        the distance between the helix axes (defined as the midpoint
+Baker et al. are consistent with a flat to moderately curved                      between the bases for each base pair) for adjacent double
+shape (21). Although the structure does fluctuate consider-                       helices. The results shown for the tile at a temperature of
+ably, here we focus on the average structure. Note that, when                     300 K and [Na+ ] = 0.5 M are plotted in Figure 3. (Note,
+adsorbed onto a surface (as is the case for most experimen-                       to simplify the appearance of the plot we omit some inter-
+1590 Nucleic Acids Research, 2019, Vol. 47, No. 3
+
+
+                                                                               strand is exchanged), which runs along the middle of the tile.
+                  A                                                            In this region, one group of double-helix pairs has a particu-
+                                                                               larly large section without any junctions and so opens up to
+                                                                               the largest extent here (3,92), as is also very clear from Fig-
+                                                                               ure 2; the modulations in the distance in the middle of this
+                                                                               region reflect the presence of junctions on adjacent pairs of
+                                                                               helices. By contrast, the other group of double-helix pairs
+                                                                               has a shorter distance between junctions due to the extra
+                                                                               scaffold crossovers, and opens up much less.
+                                                                                  It is also interesting to note the ‘triangular wave’ charac-
+                                                                               ter of the weave plots. The bending that creates the weave
+                                                                               pattern is mostly localized at the junctions with the inter-
+                                                                               vening sections basically straight. This is in part because
+                                                                               the junctions are relatively flexible compared to the duplex
+                                                                               sections between the junctions, which being only a small
+                                                                               fraction of the persistence length (typically only 16 bp long
+                                                                               compared to the 125 bp for the duplex persistence length for
+                  B                                                            the model (38)) are very stiff. Furthermore, we can examine
+                                                                               the fluctuations in the weave pattern, quantified in Figure
+                                                                               3(b) by the standard deviation in the inter-helix distances.
+                                                                               The plot shows that the fluctuations, which are smallest at
+                                                                               the junctions and largest at the midpoints between the junc-
+                                                                               tions, are significantly smaller in magnitude than the vari-
+                                                                               ation in the interhelical distance due to the weave pattern
+                                                                               itself. Thus, the junctions in the origami are very unlikely
+                                                                               to adopt a configuration where the helices are straight with
+                                                                               no weave (i.e. a value of ␪ near to zero) and have a static
+                                                                               structural preference to be bent away from each other.
+                                                                                  This is consistent with the picture that we obtained from
+                                                                               the single Holliday junctions free-energy landscape, where
+                                                                               for junctions that were near to anti-parallel, the free energy
+                                                                               as a function of ␪ had a minimum at significantly positive
+                                                                               ␪ (e.g. 4.5◦ for junctions in the range 160◦ < ␪ < 180◦ ). We
+Figure 3. The weave pattern for the 2D tile at 300 K and [Na+ ] = 0.5 M,       can also estimate the preferred value of ␪ at a junction in
+quantified by (A) the inter-helix distance and (B) the standard deviation in   an origami from the weave pattern. Assuming a perfectly
+this distance as a function of base-pair index along the origami. Each line    triangular wave form and taking 1.5 nm as a typical value of
+corresponds to a different pair of adjacent double helices on the origami.     the difference in the interhelix distance between the maxima
+Some pairs have been omitted for clarity (see main text). The symmetry
+of the design is such that the pairs may be split into two groups: here one
+                                                                               and minima of the weave pattern (Figure 3(a)) together with
+group is plotted with solid lines and one with dotted lines.                   their 16 base-pair separation gives ␪ = 7.85◦ .
+                                                                                  In order to investigate the effect of electrostatic repulsion,
+                                                                               we repeated the simulations of the 2D tile with the electro-
+helix distances. Namely, those involving the double helices                    static term in the potential removed. The result is shown in
+at the top and bottom edges of the origami, as these are                       Figure 4A. We found that the weave pattern remained, al-
+only constrained on one side and so exhibit slightly differ-                   beit with a reduction in the magnitude of the oscillations
+ent behaviour; a few affected by branch migration which re-                    by about 20%. This indicates that, although electrostatic
+sulted in spurious results near the affected junction; and one                 repulsion enhances the weave pattern in oxDNA, it is not
+affected by a partially melted staple that caused enhanced                     the sole cause. Experimental evidence for an increase in the
+flexibility.) Because of the regular pattern of junction place-                inter-helical spacing for 3D origami as the ionic strength
+ment in the origami’s design (Supplementary Figure S2),                        is decreased has been recently observed by SAXS of a 24-
+there are two obvious groups into which the pairs of dou-                      helix bundle (19) and by cryoEM of covalently-cross-linked
+ble helices can be divided. Each group exhibits a wave-like                    origami (93).
+pattern with minima at the crossovers, where the double he-                       Finally, we simulated the tile at different temperatures to
+lices are brought closest together, and maxima away from                       obtain further insight into whether the weave pattern has a
+the crossovers, normally at a position which is both midway                    partly entropic, as well as energetic, origin. Figure 4B and C
+between the junctions and where the adjacent pair of helices                   shows the weave pattern at 270 and 330 K. Together with the
+have a crossover. This pattern has a periodicity of about                      weave pattern at 300 K (Figure 3), the plots indicate that the
+32 base-pair steps, corresponding to the periodic junction                     magnitude of the oscillations characterising the weave pat-
+placement in the origami.                                                      tern increases somewhat with increasing temperature. Thus,
+   In the middle of the plot (around base-pair index 150),                     thermal fluctuations play a role in determining the magni-
+a different pattern is evident. This is due to the presence of                 tude of the weave pattern, with this entropic component
+the origami’s seam (a series of junctions where the scaffold                   favouring a more pronounced weave pattern. Again, this
+                                                                                          Nucleic Acids Research, 2019, Vol. 47, No. 3 1591
+
+
+
+                    A                                              B                                       C
+
+
+
+
+Figure 4. The weave pattern for the 2D tile (A) when the electrostatic term in the model is removed, and at [Na+ ] = 0.5 M and a temperature of (B) 270 K
+and (C) 330 K. The data is presented in an analogous way to Figure 3.
+
+
+                                                                                 results were all at [Mg2+ ] = 12.5 mM, which (19) suggests is
+                                                                                 very close to the high ionic strength limit for interhelix sepa-
+                                                                                 ration. Given that the tube geometry and the lack of a seam
+                                                                                 is likely to reduce fluctuations somewhat compared to the
+                                                                                 2D origami, our results are reasonably consistent with these
+                                                                                 values. Rothemund also provided an estimate of 3 Å for the
+                                                                                 interhelix separation based on AFM images of origamis ad-
+                                                                                 sorbed on a surface (again at [Mg2+ ] = 12.5 mM) (3). Note
+                                                                                 surface adsorption is also likely to suppress some of the fluc-
+                                                                                 tuations in the interhelix distance.
+                                                                                    A second structural property that we see in 2D origami
+                                                                                 is what we term ‘corrugation’, where the origami displays
+                                                                                 a systematic, out-of-plane bending of the double helices, so
+                                                                                 that the junctions have a ␾ angle that is not exactly 180◦ , as
+                                                                                 would be the case for an origami with perfectly anti-parallel
+                                                                                 double helices. Due to the regularity of the origami design,
+Figure 5. The corrugation pattern for the 2D tile. The angle between inter-      this results in a wave-like pattern, albeit much smaller in
+helix vectors is is shown on the y-axis (see the main text for details of the    magnitude than the weave pattern, on the surface of the
+definition). The x-axis shows the location of the inter-helix vector, in base-   origami that is visible for average-structure configurations,
+pair steps relative to the midpoint of the junction. Each line corresponds
+to a different junction, with the thick black line being an average over the     as shown in Figure 2D. That the free-energy for a free Holli-
+data. Some junctions have been omitted for clarity (see main text).              day junction is a maximum for a perfectly anti-parallel junc-
+                                                                                 tions provides the driving force for this effect; for oxDNA
+                                                                                 this leads to a left-handed twist to the junctions.
+                                                                                    Our approach to measure the corrugation is to follow
+is consistent with the free-energy landscape in Figure 1C                        how the orientations of the inter-helix vectors vary as one
+where the asymmetry of the minimum in the effective free-                        moves away from a junction. Specifically, for every such
+energy profile as a function of ␪ for anti-parallel junctions                    inter-helix vector we measure the angle between the inter-
+suggests that the average ␪ should increase as thermal fluc-                     helix vector and the average inter-helix vector at the nearest
+tuations increase.                                                               junction between that pair of helices when projected onto
+   Are the interhelix distances predicted by oxDNA consis-                       the plane perpendicular to the average helix axis at that
+tent with experiment? Taking the average between the max-                        junction. The sign of the angle is determined from the sign
+ima and minima of the triangular wave form gives an inter-                       of the scalar triple product of the two projected inter-helix
+helix distance of about 3.25 Å at [Na+ ] = 0.5 M (Figure 3A)                    vectors with the average helix axis, in order to distinguish
+and 3.1 Å at the high ionic strength limit (Figure 4B), both                    clockwise and anticlockwise twisting. Thus, this measure
+at 300 K. Althous SAXS experiments have been performed                           quantifies the amount of twisting, in the plane perpendic-
+on this origami design, the flexibility of the 2D origami                        ular to the helix axis, between adjacent double helices near
+meant that any features were too broad to back out an in-                        to junctions.
+terhelix distance (21). However, these authors were able to                         The corrugation for the 2D tile as measured with this
+provide more quantitative data for a 10-helix bundle tube                        method is plotted in Figure 5. Note, we do not include data
+with a similar pattern and spacing of junctions but with-                        for all junctions, but only those that have the canonical pat-
+out a seam. The best-fit diameter obtained by comparison                         tern of neighbouring junctions; thus, we exclude the out-
+to the predicted pattern for a bundle of perfectly straight                      ermost junctions on the tile, and the junctions next to the
+helices implied an interhelix separation of ∼2.95 Å. These
+1592 Nucleic Acids Research, 2019, Vol. 47, No. 3
+
+
+
+
+Figure 6. Three different views of the 3D origami structure determined by (A) fitting an atomistic model to cryo-EM data (reproduced from (24)) and (B)
+computing the average structure in simulations with the oxDNA model.
+
+
+
+
+Figure 7. The aligned helix axes of the 3D origami that were used for the RMSD calculation (views as in Figure 6). The simulated structure is in blue, the
+experimental one is in red, and the grey lines show the displacement vectors.
+
+
+scaffold seam as well as the seam itself. The plot shows the                   than 180◦ for each junction, which is as expected from the
+tendency for the double helices to come slightly out of the                    properties of the free junction.
+plane of the tile. The interhelix vectors are systematically                     Although each junction shows qualitatively the same be-
+rotated in one direction on one side of the junction (base                     haviour, there is clearly a wide variation in the curves for the
+pair index < 0) and in the opposite direction on the other                     base pairs furthest from the junction. Much of this is due
+(base pair index > 1). This corresponds to a ␾ angle of less                   to the method of twist compensation used in the origami
+                                                                               design. Although overall the origami is roughly untwisted,
+                                                                                    Nucleic Acids Research, 2019, Vol. 47, No. 3 1593
+
+
+
+
+Figure 8. A comparison between experimental and oxDNA images for a typical plane from the 3D origami. (A) The whole plane and (B) a close-up of
+the highlighted region in (A). Images in (A)(i) and (B)(i) are reproduced from (24).
+
+
+this is achieved by having a mixture of interjunction double-             son to the 3D origami of (24) whose structure was charac-
+helical sections that are over- and under-twisted (with 31                terised in detail by cryo-EM. The design uses a square lat-
+and 32 bp between junctions, respectively).                               tice for the double helices, which means that the crossovers
+   The general shape of the curves can be understood by                   are spaced 32 bp steps apart, and we expect a slight global
+considering the pattern of junctions in the origami. In or-               twist in the structure. The average structure computed from
+der that adjacent junctions between a pair of double he-                  oxDNA simulations (see Supplementary Data for details of
+lices have the same twist, the curves must have (at least)                the averaging procedure) is compared to the experimentally-
+one complete waveform every 31/32 bp. Thus, at the mid-                   determined structure in Figure 6. By eye, the two structures
+point between the junctions the chiral twist angle must pass              appear very similar.
+through zero. This position corresponds to the positions of                  To quantify this further we calculate the square root of
+junctions between adjacent helices and allows them also to                the mean squared displacement (RMSD) between the simu-
+have a left-handed chiral twist. Note that, unlike the weave              lated structure and the experimentally determined one. (De-
+pattern, the corrugation requires the maximum bending in                  tails of the RMSD calculation are given in the Supplemen-
+between rather than at junctions, and so will be resisted by              tary Data.) We find that the RMSD is 0.84 nm, an excel-
+the bending stiffness of the duplex.                                      lent agreement with experiment. A graphical comparison is
+   Although, to our knowledge, this corrugation effect                    shown in Figure 7. From this figure, it is clear that the over-
+has not been reported in any experimental studies of 2D                   all size of the cross-sectional lattice predicted by oxDNA is
+origami, this is perhaps not surprising because the effect                very close to the experimentally determined one, indicating
+is small in magnitude and would tend to be reduced or re-                 that the magnitude of the weave pattern and the radius of
+moved when the structure is placed on a surface to be vi-                 the DNA double helix match experiment well. In addition,
+sualized, as is usually the case in experiments. The underly-             the overall twist of the structure is reproduced. The major-
+ing cause of the corrugation is the tendency of the junctions             ity of the contribution to the RMSD is due to the double
+to twist away from the perfectly anti-parallel conformation.              helices towards the outside of the structure, which are more
+Out-of-plane ‘distortions’ have also been noted in a series of            clearly displaced from the experimentally determined struc-
+planar ‘ring’ origami when modelled using CanDo (43), al-                 ture. One potential reason for this disparity is that our av-
+though in this case the junctions have a right-handed twist               erage structure includes the effects of thermal fluctuations
+because the experimental Holliday junction conformation                   at room temperature, and it is not clear to what extent these
+was set as the minimum of the harmonic junction twist po-                 fluctuations will be frozen in during the cryo-EM process.
+tential.                                                                  We also note that the estimated resolution of the cryo-EM
+                                                                          characterization of the origami is reported as 0.97 nm at the
+Structural properties of a 3D origami                                     core and 1.4 nm at the periphery, comparable to the RMSD
+                                                                          we have found. For further comparison, fully-atomistic sim-
+In this section, we further test the ability of oxDNA to accu-            ulations of this origami were able to achieve an RMSD of
+rately model DNA origami by making a detailed compari-
+1594 Nucleic Acids Research, 2019, Vol. 47, No. 3
+
+
+
+
+Figure 9. A comparison between experimental and oxDNA images for a variety of detailed motifs from the 3D origami. (A) Five aligned Holliday junctions
+that are held in place by coaxial stacking. (B) A section where the scaffold adopts a left-handed pseudo-helix associated with a set of five adjacent short
+domains. (C) A comparison of (i) and (ii) a typical Holliday junction in the origami with (iii) and (iv) one that is under twist stress due to there being one
+fewer base pair in an adjacent helix (often called a ‘deletion’). (D) An example of the greater splaying of helices that can occur at the ends of an origami
+due to a lack of constraints from other junctions. Images in (A)(i), (B)(ii) and (iii), (C)(i) and (iii), and (D)(i) are reproduced from (24).
+
+
+1.1 nm, which improved in the elastic-network guided sim-                         as one moves along a double helix, it is drawn closer to each
+ulations to 0.9 nm (34).                                                          of its four neighbouring double helices in turn, as each junc-
+   Further evidence for the reliability of the oxDNA struc-                       tion is encountered. The junctions trace a left-handed heli-
+ture can be obtained by visual comparison of a variety of                         cal path because they are separated by three-quarters of a
+motifs from the origami. The examples, depicted in Fig-                           pitch length along the right-handed double-helical sections.
+ures 8 and 9, are the same as those chosen in (24). The sim-                      This path is also consistent with a left-handed chiral twist to
+ilarity between the experimental and simulation images is                         each individual junction. Finally, that the helices possess a
+very apparent. In particular, Figure 8 depicts a plane from                       very weak toroidal writhe may be relevant when considering
+the origami that, for the most part, has a similar pattern of                     the precise effective pitch needed to generate an untwisted
+junctions to the 2D origami, and therefore shows a very sim-                      origami.
+ilar weave pattern, whereas Figure 9 provides a comparison
+of some more detailed motifs.                                                     CONCLUSION
+   One intriguing feature that we have identified is that the
+3D origami’s double-helix axes trace out a left-handed helix                      In this paper, we have used the oxDNA coarse-grained
+with a period of ∼32 bp steps per turn, which corresponds                         model to characterize in detail some of the fundamental
+to the spacing of junctions between each adjacent double                          structural features of 2D and 3D DNA origami, and made
+helix pair in this design. This can be seen in Figure 10. We                      a detailed comparison to the most detailed experimentally
+note that this weak feature is not clear in the experimental                      determined origami structure. In particular, we have shown
+data perhaps because of the greater noise in the data.                            that the weave pattern associated with the splaying of helices
+   This effect is mainly due to the ‘weave’ distortion, because                   at the junctions has its origin in the basic structural prop-
+unlike in the case of the 2D origami, the junctions do not lie                    erties of anti-parallel Holliday junctions, and is further en-
+in a single plane but in two orthogonal planes. In particular,                    hanced by electrostatic repulsion and thermal fluctuations.
+                                                                                  For a 2D origami, we have also found a weaker out-of-plane
+                                                                                        Nucleic Acids Research, 2019, Vol. 47, No. 3 1595
+
+
+
+
+Figure 10. A representation of the 3D origami, where the red lines show the paths of the centres of the individual double helices from three different
+viewpoints. The pattern of junctions leads to these paths having a weak left-handed helicity, as highlighted by the blue paths in the insets.
+
+
+corrugation associated with the slight left-handed twist of                  SUPPLEMENTARY DATA
+the Holliday junctions in the origami.
+                                                                             Supplementary Data are available at NAR Online.
+   Our comparison to the 3D origami of (24), together with
+other recent studies of DNA origami using oxDNA (38,63–
+65,68,69), confirms the suitability of the oxDNA model                       ACKNOWLEDGEMENTS
+for structural characterization of DNA origami. Structures
+that have been carefully characterised experimentally will                   We acknowledge the use of the University of
+give further opportunities to test and refine the structural                 Oxford Advanced Research Computing facility
+predictions of the model, while for DNA origami that have                    [doi:10.5281/zenodo.22558]. J.S.S. acknowledges com-
+only been visualized using low-resolution methods, oxDNA                     puting resources from Columbia University’s Shared
+has the potential to provide more detailed structural in-                    Research Computing Facility project.
+sights, as has already been done for a number of examples
+(63,64,68,69). The model could also be used to pre-screen
+                                                                             FUNDING
+the properties of putative origami designs prior to experi-
+mental realization to aid the design process.                                Engineering and Physical Sciences Research Council
+   The capabilities of the oxDNA model should be seen                        [EP/I001352/1 and EP/J019445/1]. Funding for open ac-
+as complementary to other computational strategies for                       cess charge: Oxford’s RCUK Open Access Block Grant.
+origami structure prediction at different levels of detail.                  Conflict of interest statement. None declared.
+The particular advantages over more coarse-grained ap-
+proaches potentially include explicit representations of ex-
+cluded volume and base stacking, and realistic descriptions                  REFERENCES
+of single-stranded DNA and the breaking of base pairs, al-                     1. Linko,V. and Dietz,H. (2013) The enabled state of DNA
+beit, of course, at a greater computational cost. Further-                        nanotechnology. Curr. Opin. Biotechnol., 24, 555–561.
+more, oxDNA provides a well-tested model for which a                           2. Hong,F., Zhang,F., Liu,Y. and Yan,H. (2017) DNA origami:
+                                                                                  Scaffolds for creating higher order structures. Chem. Rev., 117,
+wide-range of biophysical properties of DNA are known to                          12584–12640.
+be accurately described. Examples of where these features                      3. Rothemund,P.W.K. (2006) Folding DNA to create nanoscale shapes
+will be particularly useful include origami with flexible com-                    and patterns. Nature, 440, 297–302.
+ponents (64,69), origami under significant internal stresses,                  4. Douglas,S.M., Dietz,H., Liedl,T., Högberg,B., Graf,F. and
+                                                                                  Shih,W.M. (2009) Self-assembly of DNA into nanoscale
+and origami where single-stranded components play a key                           three-dimensional shapes. Nature, 459, 414–418.
+functional role. The model also allows the loss of origami                     5. Dietz,H., Douglas,S.M. and Shih,W.M. (2009) Folding DNA into
+structure under thermal or external stresses (67) to be in-                       twisted and curved nanoscale shapes. Science, 325, 725–730.
+vestigated. However, if a more atomically detailed view of                     6. Han,D., Pal,S., Nangreave,J., Deng,Z., Liu,Y. and Yan,H. (2011)
+an origami than is available through oxDNA is required,                           DNA origami with complex curvatures in three-dimensional space.
+                                                                                  Science, 332, 342–346.
+all-atom approaches are likely to be most appropriate.                         7. Douglas,S.M., Marblestone,A.H., Teerapittayanon,S., Vazquez,A.,
+                                                                                  Church,G.M. and Shih,W.M. (2009) Rapid prototyping of 3D
+                                                                                  DNA-origami shapes with caDNAno. Nucleic Acids Res., 37,
+                                                                                  5001–5006.
+DATA AVAILABILITY                                                              8. Benson,E., Mohammed,A., Gardell,J., Masich,S., Czeizler,E.,
+The simulation code is available online (https://dna.physics.                     Orponen,P. and Högberg,B. (2015) DNA rendering of polyhedral
+                                                                                  meshes at the nanoscale. Nature, 523, 441–444.
+ox.ac.uk.). Data associated with the simulations is avail-                     9. Veneziano,R., Ratanalert,S., Zhang,F., Yan,H., Chiu,W. and
+able at the Oxford University Research Archive (DOI:                              Bathe,M. (2016) Designer nanoscale DNA assemblies programmed
+10.5287/bodleian:8gY5EnYYO).                                                      from the top down. Science, 352, 1534.
+1596 Nucleic Acids Research, 2019, Vol. 47, No. 3
+
+
+10. Matthies,M., Agarwal,N.P. and Schmidt,T.L. (2016) Design and                   deformation and programmable anisotropy of DNA origami in
+    synthesis of triangulated DNA origami trusses. Nano Lett., 16,                 electric field. ACS Nano, 9, 1420–1433.
+    2108–2113.                                                                 33. Göpfrich,K., Li,C.-Y., Ricci,M., Bhamidimarri,S.P., Yoo,J.,
+11. Zhang,F., Jiang,S., Wu,S., Li,Y., Mao,C., Liu,Y. and Yan,H. (2014)             Gyenes,B., Ohmann,A., Winterhalter,M., Aksimentiev,A. and
+    Complex wireframe DNA origami nanostructures with multi-arm                    Keyser,U.F. (2016) Large-conductance transmembrane porin made
+    junction vertices. Nat. Nanotechnol., 10, 779–784.                             from DNA origami. ACS Nano, 10, 8207–8214.
+12. Wang,P., Meyer,T.A., Pan,V., Dutta,P.K. and Ke,Y. (2017) The               34. Maffeo,C., Yoo,J. and Aksimentiev,A. (2016) De novo reconstruction
+    beauty and utility of DNA origami. Chem., 2, 359–382.                          of DNA origami structures through atomistic molecular dynamics
+13. Wang,D., Fu,Y., Yan,J., Zhao,B., Dai,B., Chao,J., Liu,H., He,D.,               simulation. Nucleic Acids Res., 44, 3013–3019.
+    Zhang,Y., Fan,C. et al. (2014) Molecular logic gates on DNA origami        35. Lee,C., Lee,J.Y. and Kim,D.-N. (2017) Polymorphic design of DNA
+    nanostructures for microRNA diagnostics. Anal. Chem., 86,                      origami structures through mechanical control of modular
+    1932–1936.                                                                     components. Nat. Commun., 8, 2067.
+14. Douglas,S.M., Bachelet,I. and Church,G.M. (2012) A logic-gated             36. Ouldridge,T.E., Louis,A.A. and Doye,J.P.K. (2011) Structural,
+    nanorobot for targeted transport of molecular payloads. Science, 335,          mechanical and thermodynamic properties of a coarse-grained DNA
+    831–834.                                                                       model. J. Chem. Phys., 134, 085101.
+15. Li,S., Jiang,Q., Liu,S., Zhang,Y., Tian,Y., Song,C., Wang,J., Zou,Y.,      37. Šulc,P., Romano,F., Ouldridge,T.E., Rovigatti,L., Doye,J.P.K. and
+    Anderson,G.J., Han,J.-Y. et al. (2018) A DNA nanorobot functions               Louis,A.A. (2012) Introducing sequence-dependent interactions into
+    as a cancer therapeutic in response to a molecular trigger in vivo. Nat.       a coarse-grained DNA model. J. Chem. Phys., 137, 135101.
+    Biotechnol., 36, 258–264.                                                  38. Snodin,B.E.K., Randisi,F., Mosayebi,M., Šulc,P., Schreck,J.S.,
+16. Liu,N. and Liedl,T. (2018) DNA-assembled advanced plasmonic                    Romano,F., Ouldridge,T.E., Tsukanov,R., Nir,E., Louis,A.A. et al.
+    architechtures. Chem. Rev., 118, 3032–3053.                                    (2015) Introducing improved structural properties and salt
+17. Sun,W., Boulais,E., Hakobyan,Y., Wang,W.L., Guan,A., Bathe,M.                  dependence into a coarse-grained model of DNA. J. Chem. Phys.,
+    and Yin,P. (2014) Casting inorganic structures with DNA molds.                 142, 234901.
+    Science, 346, 1258361.                                                     39. Mergell,B., Ejtehadi,M.R. and Everaers,R. (2003) Modelling DNA
+18. Andersen,E.S., Dong,M., Nielsen,M.M., Jahn,K., Subramani,R.,                   structure, elasticity and deformations at the base-pair level. Phys. Rev.
+    Mamdouh,W., Golas,M.M., Sander,B., Stark,H., Oliveira,C.L.P.                   E, 68, 021911.
+    et al. (2009) Self-assembly of a nanoscale DNA box with a                  40. Arbona,J.M., Aimé,J.-P. and Elezgaray,J. (2012) Modeling the
+    controllable lid. Nature, 459, 73–76.                                          mechanical properties of DNA nanostructures. Phys. Rev. E, 86,
+19. Fischer,S., Hartl,C., Frank,K., Rädler,J.O., Liedl,T. and Nickel,B.           051912.
+    (2016) Shape and inter-helical spacing of DNA origami                      41. Castro,C.E., Kilchherr,F., Kim,D.-N., Shiao,E.L., Wauer,T.,
+    nanostructures studied by small angle X-ray scattering. Nano Lett.,            Wortmann,P., Bathe,M. and Dietz,H. (2011) A primer to scaffolded
+    16, 4282–4287.                                                                 DNA origami. Nat. Methods, 8, 221–229.
+20. Bruetzel,L.K., Gerling,T., Sedlak,S.M., Walker,P.U., Zheng,W.,             42. Kim,D.-N., Kilchherr,F., Dietz,H. and Bathe,M. (2012) Quantitative
+    Dietz,H. and Lipfert,J. (2016) Conformational changes and flexibility          prediction of 3D solution shape flexibility of nucleic acid
+    of DNA devices observed by small-angle X-ray scattering. Nano                  nanostructures. Nucleic Acids Res., 40, 2862–2868.
+    Lett., 16, 4871–4879.                                                      43. Pan,K., Kim,D.-N., Zhang,F., Adendorff,M.R., Yan,H. and
+21. Baker,M.A.B., Tuckwell,A.J., Berengut,J.F., Bath,J., Benn,F.,                  Bathe,M. (2014) Lattice-free prediction of three-dimensional
+    Duff,A.P., Whitten,A.E., Dunn,K.E., Hynson,R.M., Turberfield,A.J.              structure of programmed DNA assemblies. Nat. Commun., 5, 5578.
+    et al. (2018) Dimensions and global twist of single-layer DNA              44. Sedeh,R.S., Pan,K., Adendorff,M.R., Hallatschek,O., Bathe,K.-J.
+    origami measured by small-angle X-ray scattering. ACS Nano, 12,                and Bathe,M. (2016) Computing nonequilibrium conformational
+    5791–5799.                                                                     dynamics of structured nucleic acid assemblies. J. Chem. Theory
+22. Stein,I.H., Schüller,V., Böhm,P., Tinnefeld,P. and Liedl,T. (2011)           Comput., 12, 261–273.
+    Single-molecule FRET ruler based on rigid DNA origami blocks.              45. Reshetnikov,R.V., Stolyarova,A.V., Zalevsky,A.O., Panteleev,D.Y.,
+    ChemPhysChem., 12, 689–695.                                                    Pavlova,G.V., Klinov,D.V., Golovin,A.V. and Protopopova,A.D.
+23. Funke,J.J. and Dietz,H. (2016) Placing molecules with Bohr radius              (2018) A coarse-grained model for DNA origami. Nucleic Acids Res.,
+    resolution using DNA origami. Nat. Nanotechnol., 11, 47–52.                    46, 1102–1112.
+24. Bai,X.-C., Martin,T.G., Scheres,S. H.W. and Dietz,H. (2012)                46. Hemmig,E.A., Fitzgerald,C., Maffeo,C., Hecker,L., Ochmann,S.E.,
+    Cryo-EM structure of a 3D DNA-origami object. Proc. Natl. Acad.                Aksimentiev,A., Tinnefeld,P. and Keyser,U.F. (2018) Optical voltage
+    Sci. U.S.A., 109, 20012–20017.                                                 sensing using DNA origami. Nano Lett., 18, 1962–1971.
+25. He,Y., Ye,T., Zhang,C., Ribbe,A.E., Jiang,W. and Mao,C. (2008)             47. Morris-Andrews,A., Rottler,J. and Plotkin,S.S. (2010) A
+    Hierarchical self-assembly of DNA into symmetric supramolecular                systematically coarse-grained model for DNA and its predictions for
+    polyhedra. Nature, 452, 198–201.                                               persistence length, stacking, twist, and chirality. J. Chem. Phys., 132,
+26. Kato,T., Goodman,R.P., Erben,C.M., Turberfield,A.J. and                        035105.
+    Namba,K. (2009) High-resolution structural analysis of a DNA               48. Hinckley,D.M., Freeman,G.S., Whitmer,J.K. and de Pablo,J.J. (2013)
+    nanostructure by cryoEM. Nano Lett., 9, 2747–2750.                             An experimentally-informed coarse-grained 3-site-per-nucleotide
+27. Lei,D., Marras,A.E., Liu,J., Huang,C.-M., Zhou,L., Castro,C.E.,                model of DNA: Structure, thermodynamics, and dynamics of
+    Su,H.-J. and Ren,G. (2018) Three-dimensional structural dynamics of            hybridization. J. Chem. Phys., 139, 144903.
+    DNA origami Bennett linkages using individual-particle electron            49. Chakraborty,D., Hori,N. and Thirumalai,D. (2018)
+    tomography. Nat. Commun., 9, 592.                                              Sequence-dependent three interaction site (TIS) model for single and
+28. Wagenbauer,K.F., Sigl,C. and Dietz,H. (2017) Gigadalton-scale                  double-stranded DNA. J. Chem. Theory Comput., 14, 3763–3779.
+    shape-programmable DNA assemblies. Nature, 552, 78–83.                     50. Romano,F., Chakraborty,D., Doye,J.P.K., Ouldridge,T.E. and
+29. Jabbari,H., Aminpour,M. and Montemagno,C. (2015)                               Louis,A.A. (2013) Coarse-grained simulations of DNA
+    Computational approaches to nucleic acid origami. ACS Comb. Sci.,              overstretching. J. Chem. Phys., 138, 085101.
+    17, 535–547.                                                               51. Ouldridge,T.E., Šulc,P., Romano,F., Doye,J.P.K. and Louis,A.A.
+30. Yoo,J. and Aksimentiev,A. (2013) In situ structure and dynamics of             (2013) DNA hybridization kinetics: zippering, internal displacement
+    DNA origami determined through molecular dynamics simulations.                 and sequence dependence. Nucleic Acids Res., 41, 8886–8895.
+    Proc. Natl. Acad. Sci. U.S.A., 110, 20099–20104.                           52. Matek,C., Ouldridge,T.E., Doye,J.P.K. and Louis,A.A. (2015)
+31. Wu,N., Czajkowsky,D.M., Zhang,J., Qu,J., Ye,M., Zeng,D., Zhou,X.,              Plectoneme tip bubbles: coupled denaturation and writhing in
+    Hu,J., Shao,Z., Li,B. et al. (2013) Molecular threading and tunable            supercoiled DNA. Sci. Rep., 5, 7655.
+    molecular recognition on DNA origami nanostructures. J. Am.                53. Harrison,R.M., Romano,F., Ouldridge,T.E., Louis,A.A. and
+    Chem. Soc., 135, 12172–12175.                                                  Doye,J.P.K. (2015) Coarse-grained Modelling of Strong DNA Bending
+32. Li,C.-Y., Hemmig,E.A., Kong,J., Yoo,J., Hernandez-Ainsa,S.,                    I: Thermodynamics and Comparison to an Experimental ‘Molecular
+    Keyser,U.F. and Aksimentiev,A. (2015) Ionic conductivity, structural           Vice’. https://arxiv.org/abs/1506.09005.
+                                                                                        Nucleic Acids Research, 2019, Vol. 47, No. 3 1597
+
+
+54. Skorupppa,E., Laleman,M., Nomidis,S.K. and Carlon,E. (2017)              73. Liedl,T., Högberg,B., Tytell,J., Ingber,D.E. and Shih,W.M. (2010)
+    DNA elasticity from coarse-grained simulations: the effect of groove         Self-assembly of three-dimensional prestressed tensegrity structures
+    asymmetry. J. Chem. Phys., 146, 214902.                                      from DNA. Nat. Nanotechnol., 5, 520–524.
+55. Ouldridge,T.E., Louis,A.A. and Doye,J.P.K. (2010) DNA                    74. Lilley,D.M.J. (2000) Structures of helical junctions in nucleic acids.
+    nanotweezers studied with a coarse-grained model of DNA. Phys.               Quart. Rev. Biophys., 33, 109–159.
+    Rev. Lett, 104, 178101.                                                  75. Martin,T.G. and Dietz,H. (2012) Magnesium-free self-assembly of
+56. Ouldridge,T.E., Hoare,R.L., Louis,A.A., Doye,J.P.K., Bath,J. and             multi-layer DNA objects. Nat. Commun., 3, 1103.
+    Turberfield,A.J. (2013) Optimizing DNA nanotechnology through            76. Russo,J., Tartaglia,P. and Sciortino,F. (2009) Reversible gels of patchy
+    coarse-grained modelling: A two-footed DNA walker. ACS Nano, 7,              particles: role of the valence. J. Chem. Phys., 131, 014504.
+    2479–2490.                                                               77. Rovigatti,L., Šulc,P., Reguly,I.Z. and Romano,F. (2015) A
+57. Doye,J.P.K., Ouldridge,T.E., Louis,A.A., Romano,F., Šulc,P.,                comparison between parallelization approaches in molecular
+    Matek,C., Snodin,B. E.K., Rovigatti,L., Schreck,J.S., Harrison,R.M.          dynamics simulations on GPUs. J. Comput. Chem., 36, 1–8.
+    et al. (2013) Coarse-graining DNA for simulations of DNA                 78. Lilley,D.M.J. (2009) Four-way helical junctions in DNA molecules.
+    nanotechnology. Phys. Chem. Chem. Phys., 15, 20395–20414.                    In: Benham,CJ, Harvey,S, Olson,WK, Sumners,DW and Swigon,D
+58. Šulc,P., Ouldridge,T.E., Romano,F., Doye,J.P.K. and Louis,A.A.              (eds). Mathematics of DNA Structure, Function and Interactions. The
+    (2014) Simulating a burnt-bridges DNA motor with a coarse-grained            IMA Volumes in Mathematics and its Applications. Springer, NY, Vol.
+    DNA model. Nat. Comput., 13, 535–547.                                        150, pp. 213–224.
+59. Machinek,R.R.F., Ouldridge,T.E., Haley,N. E.C., Bath,J. and              79. Ortiz-Lombardia,M., Gonzalez,A., Eritja,R., Aymami,J., Azorin,F.
+    Turberfield,A.J. (2014) Programmable energy landscapes for kinetic           and Coll,M. (1999) Crystal structure of a DNA Holliday junction.
+    control of DNA strand displacement. Nat. Commun., 5, 5324.                   Nat. Struct. Biol., 6, 913–917.
+60. Kočar,V., Schreck,J., Čeru,S., Gradišar,H., Bašić,N., Pisanki,T.,   80. Eichman,B.F., Vargason,J.M., Mooers,B.H.M. and Ho,P.S. (2000)
+    Doye,J.P.K. and Jerala,R. (2016) Design principles for rapid folding         The Holliday junction in an inverted repeat DNA sequence: sequence
+    of knotted DNA nanostructures. Nat. Commun, 7, 10803.                        effects on the structure of four-way junctions. Proc. Natl. Acad. Sci.
+61. Snodin,B.E.K., Romano,F., Rovigatti,L., Ouldridge,T.E., Louis,A.A.           U.S.A., 97, 3971–3976.
+    and Doye,J.P.K. (2016) Direct simulation of the self-assembly of a       81. Mao,C., Sun,W. and Seeman,N.C. (1999) Designed two-dimensional
+    small DNA origami. ACS Nano, 10, 1724–1737.                                  DNA Holliday junction arrays visualized by atomic force
+62. Schreck,J.S., Romano,F., Zimmer,M.H., Louis,A.A. and Doye,J.P.K.             microscopy. J. Am. Chem. Soc., 121, 5437–5443.
+    (2016) Characterizing DNA star-tile-based nanostructures using a         82. Eis,P.S. and Millar,D.P. (1993) Conformational distributions of a
+    coarse-grained model. ACS Nano, 10, 1724–1737.                               four-way DNA junction revealed by time-resolved fluorescence
+63. Shi,Z., Castro,C.E. and Arya,G. (2017) Conformational dynamics of            resonance energy transfer. Biochemistry, 32, 13852–13860.
+    mechanically compliant DNA nanostructures from coarse-grained            83. Hohng,S., Zhou,R., Nahas,M.K., Yu,J., Schulten,K., Lilley,D.M.J.
+    molecular dynamics simulations. ACS Nano, 11, 4617–4630.                     and Ha,T. (2007) Fluorescence-force spectroscopy maps
+64. Sharma,R., Schreck,J.S., Romano,F., Louis,A.A. and Doye,J.P.K.               two-dimensional reaction landscape of the Holliday junction.
+    (2017) Characterizing the motion of jointed DNA nanostructures               Science, 318, 279–283.
+    using a coarse-grained model. ACS Nano, 11, 12426–12435.                 84. Murchie,A.I.H., Clegg,R.M., von Krtzing,E., Duckett,D.R.,
+65. Khara,D.C., Schreck,J.S., Tomov,T.E., Ouldridge,T.E., Doye,J.P.K.            Diekmann,S. and Lilley,D.M.J. (1989) Fluorescence energy transfer
+    and Nir,E. (2018) DNA bipedal motor walking dynamics: an                     shows that the four-way DNA junction is a right-handed cross of
+    experimental and theoretical study of the dependency on step size.           antiparallel molecules. Nature, 341, 763–766.
+    Nucleic Acids Res., 46, 1553–1561.                                       85. Wang,W., Nocka,L.M., Wiemann,B.Z., Hinckley,D.M., Mukerji,I.
+66. Fonseca,P., Romano,F., Schreck,J.S., Ouldridge,T.E., Doye,J.P.K. and         and Starr,F.W. (2016) Holliday junction thermodynamics and
+    Louis,A.A. (2018) Multi-scale coarse-graining for the study of               structure: Coarse-grained simulations and experiments. Sci. Rep., 6,
+    assembly pathways in DNA-brick self assembly. J. Chem. Phys., 148,           22863.
+    134910.                                                                  86. Nowakowski,J., Shim,P.J., Stout,C.D. and Joyce,G.F. (2000)
+67. Engel,M.C., Smith,D.M., Jobst,M.A., Sajfutdinow,M., Liedl,T.,                Alternative conformation of a nucleic acid four-way junction. J. Mol.
+    Romano,F., Rovigatti,L., Louis,A.A. and Doye,J.P.K. (2018)                   Biol., 300, 93–102.
+    Force-induced unravelling of DNA origami. ACS Nano, 12,                  87. Yu,J., Ha,T. and Schulten,K. (2004) Conformational model of the
+    6734–6747.                                                                   Holliday junction transition deduced from molecular dynamics
+68. Benson,E., Mohammed,A., Rayneau-Kirkhope,D., Gøadin,A.,                      simulations. Nucleic Acids Res., 32, 6683–6695.
+    Orponen,P. and Högberg,B. (2018) Effects of design choices on the       88. Kumara,M.T., Nykypanchuk,D. and Sherman,W.B. (2008) Assembly
+    stiffness of wireframe DNA origami structures. ACS Nano, 12,                 pathway analysis of DNA nanostructures and the construction of
+    9291–9299.                                                                   parallel motifs. Nano Lett., 8, 1971–1977.
+69. Zhou,L., Marras,A.E., Huang,C.-M., Castro,C.E. and Su,H.-J.              89. Han,D., Jiang,S., Samanta,A., Lui,Y. and Yan,H. (2013)
+    (2018) Paper origami-inspired design and actuation of DNA                    Unidirectional scaffold-strand arrangement in DNA origami. Angew.
+    nanomachines with complex motions. Small, 14, 1802580.                       Chem. Int. Ed., 339, 9031–9034.
+70. Hong,F., Jiang,S., Lan,X., Narayanan,R.P., Šulc,P., Zhang,F., Liu,Y.    90. Li,Z., Wang,L., Yan,H. and Liu,Y. (2012) Effect of DNA hairpin
+    and Yan,H. (2018) Layered-crossover tiles with precisely tunable             loops on the twist of planar DNA origami tiles. Langmuir, 28,
+    angles for 2D and 3D DNA crystal engineering. J. Am. Chem. Soc.,             1959–1965.
+    140, 14670–14676.                                                        91. Winfree,E., Liu,F., Wenzler,L.A. and Seeman,N.C. (1998) Design
+71. Marras,A.E., Zhou,L., Su,H.-J. and Castro,C.E. (2015)                        and self-assembly of two-dimensional DNA crystals. Nature, 394,
+    Programmable motion of DNA origami mechanisms. Proc. Natl.                   539–544.
+    Acad. Sci. U.S.A., 112, 713–718.                                         92. Ma,Z., Huang,Y., Park,S., Kawai,K., Kim,D.-N., Hirai,Y.,
+72. Nickels,P.C., Wünsch,B., Holzmeister,P., Bae,W., Kneer,L.M.,                Tsuchiva,T., Yamada,H. and Tabata,O. (2018) Rhombic-shaped
+    Grohmann,D., Tinnefeld,P. and Liedl,T. (2016) Molecular force                nanostructures and mechanical properties of 2D DNA origami
+    spectroscopy with a DNA origami-based nanoscopic force clamp.                constructed with different crossover/nick designs. Small, 14, 1702028.
+    Science, 354, 305–307.                                                   93. Gerling,T., Kube,M., Kick,B. and Dietz,H. (2018)
+                                                                                 Sequence-programmable covalent bonding of designed DNA
+                                                                                 assemblies. Sci. Adv., 4, eaau1157.
+
