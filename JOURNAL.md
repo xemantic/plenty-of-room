@@ -8077,3 +8077,38 @@ are not run; both could only improve cells that are already flat, so the verdict
 **One Kotlin trap worth recording.** A property named `field` is shadowed inside any property accessor, where
 `field` is the backing-field keyword — the compiler reports it as *"Property must be initialized"* on a line
 that looks perfectly correct, and points at the accessor rather than the declaration.
+
+---
+
+## Iteration 26 — `T-202`, the first synthesis pass in six that is mostly good news
+
+**`C-0121`.** Four claims landed after the fifth synthesis and they move headline answers rather than adding
+numbers. Partition: **3 carried in, 2 already reflected, 1 deliberately not.** Cheap bound 2 of 6 cited before.
+
+**What is different about this range.** Every previous pass carried corrections, scope failures or withdrawn
+recommendations — `C-0115`'s two largest items were passages that existed, were correct, and were *about the
+wrong object*. This one is mostly **favourable movement**, and that is worth stating because five consecutive
+passes of correction is not the base rate and a reader is entitled to know which kind of pass they are reading.
+
+**`C-0117` is not carried, by decision.** It amends `C-0092`'s `A5` margin-movement range, and this
+deliverable **never quoted that range** — grepped, zero occurrences. Carrying the correction would mean
+introducing the number in order to correct it. Same judgement `C-0115` made about `CH-0131` one pass earlier.
+
+**§5 gains an entry that is neither a measurement nor a solve.** Nobody has counted what the honeycomb's three
+crossover azimuths offer as an attachment lattice — every plan ceiling in this corpus is single-layer
+square-lattice — so every path count in `C-0118`'s flat coupled cells, including the ten-path winner, is a
+**request** rather than a demonstration that the stations exist. It is listed because a reader would otherwise
+take the coupled flatness result as buildable.
+
+**The one defect this pass introduced was visible to exactly one checker.** An append landed *inside* the
+owner cell of §2 row 5b, giving 6 cells against 5 — which would have widened the whole table and made every
+correct row look like the odd one out. The numeric trace was clean, the status check was clean, the
+self-consistency check was clean; `check-markdown-tables.py` fired immediately with the row and the counts.
+Repaired by restoring the row from git and re-appending **by cell** rather than by string. **Three of the four
+retained checkers were clean throughout and the fourth earned its place** — which is the whole argument for
+keeping an instrument whose failure mode no other instrument shares.
+
+**One thing a seventh pass should do differently.** §3 row (g) now carries the entire history of the flatness
+question — its reversals, its withdrawn readings and its four re-openings — in a single table cell. The
+history being visible in one place is deliberate and valuable; the row is nonetheless the passage most in need
+of a **rewrite** rather than another append.
