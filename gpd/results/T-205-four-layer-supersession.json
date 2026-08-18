@@ -1,0 +1,129 @@
+{
+  "task": "T-205",
+  "claim": "C-0126",
+  "what": "What the four-layer line (C-0109 to C-0123) did to the OPEN QUEUE. A classification, not a calculation: the open set is read from TASKS.md by the same queue_status the deliverable's checker uses, so the denominator cannot drift from the register, and the class of each item is a recorded judgement with its reason. Units: none.",
+  "verificationType": "logical",
+  "maturity": "TRL 1-3, and below it: nothing here is physics.",
+  "openItems": 59,
+  "classified": {
+    "T-142": {
+      "class": "CONTINGENT",
+      "reason": "the flat 30-root design at the 5 nm layer -- a single-layer placement verdict",
+      "stillOpen": true
+    },
+    "T-143": {
+      "class": "CONTINGENT",
+      "reason": "whether a 2.057 peak-ratio distribution on 30 single-layer upward roots can be built",
+      "stillOpen": true
+    },
+    "T-174": {
+      "class": "CONTINGENT",
+      "reason": "a different 34-root placement under the re-solved collar -- single-layer",
+      "stillOpen": true
+    },
+    "T-176": {
+      "class": "CONTINGENT",
+      "reason": "an exhaustive 34-root enumeration at phases 0 and 16 -- single-layer",
+      "stillOpen": true
+    },
+    "T-177": {
+      "class": "CONTINGENT",
+      "reason": "whether the recommended phase survives a device's range -- single-layer",
+      "stillOpen": true
+    },
+    "T-179": {
+      "class": "CONTINGENT",
+      "reason": "a count sweep with the distribution freed -- single-layer array",
+      "stillOpen": true
+    },
+    "T-180": {
+      "class": "CONTINGENT",
+      "reason": "a nested count chain on the shared-body topology -- single-layer host",
+      "stillOpen": true
+    },
+    "T-185": {
+      "class": "CONTINGENT",
+      "reason": "re-optimising the placement at the derived row-end prestrain -- single-layer",
+      "stillOpen": true
+    },
+    "T-9": {
+      "class": "STRENGTHENED",
+      "reason": "the crossover hinge constant from oxDNA. A four-layer tile's rigidity is a parallel-axis enhancement over the SAME crossover springs, and C-0116 shows the flatness verdict turns on the interlayer coupling fraction -- so k_theta and the crossover's vertical compliance now carry MORE of the answer than they did on the single-layer sheet, not less.",
+      "stillOpen": true
+    },
+    "T-189": {
+      "class": "STRENGTHENED",
+      "reason": "whether the 112 bp raster row can be twist-corrected. It was queued against the row-end prestrain on a single-layer sheet; the four-layer tile is built from the same rows, and C-0119 establishes the honeycomb's own 21 bp register, so the question survives the tile change and acquires a second lattice.",
+      "stillOpen": true
+    }
+  },
+  "counts": {
+    "CONTINGENT": 8,
+    "STRENGTHENED": 2,
+    "UNAFFECTED": 49
+  },
+  "unaffected": [
+    "P-11",
+    "P-14",
+    "P-17",
+    "P-19",
+    "P-8",
+    "T-100",
+    "T-103",
+    "T-109",
+    "T-11",
+    "T-114",
+    "T-128",
+    "T-146",
+    "T-168",
+    "T-173",
+    "T-18",
+    "T-181",
+    "T-184",
+    "T-186",
+    "T-187",
+    "T-188",
+    "T-195",
+    "T-20",
+    "T-205",
+    "T-206",
+    "T-22",
+    "T-24",
+    "T-31",
+    "T-32",
+    "T-33",
+    "T-35",
+    "T-36",
+    "T-37",
+    "T-3c",
+    "T-3d",
+    "T-42",
+    "T-43",
+    "T-46",
+    "T-47",
+    "T-50",
+    "T-51",
+    "T-52",
+    "T-68",
+    "T-6b",
+    "T-76a",
+    "T-76b",
+    "T-77",
+    "T-7b",
+    "T-80",
+    "T-98"
+  ],
+  "unaffectedNote": "the remaining open items are about the polymer layer, the electrostatic field, a joint or coupling ELEMENT, a material constant, or the harness -- none is a function of the tile's layer count. They are neither contingent nor strengthened and are left exactly as they are.",
+  "theConditionEveryContingentItemHangsOn": "SS3's parameter row says 'Tile thickness ~10 nm (single-layer honeycomb)', which cannot hold both ways; every structural claim before iteration 23 took the 2 nm reading, and NDI's answer to decision 5 resolves it toward the thick one BY IMPLICATION rather than by ruling. Decision 7 (the 10 x 6 cross-section) is with NDI and unanswered. So the tile's layer count is a SPECIFICATION that is currently ambiguous, and eight open tasks are well posed only on one side of it.",
+  "whyMarkedAndNotStruck": "CLAUDE.md: 'strike a discharged item, never delete it -- a list that only ever grows is not a record and a list that silently shrinks is worse'. These are not discharged: they are CONTINGENT, which is a third state, and inventing the word is the same move C-0071 made for DISCHARGED when the queue needed a status it did not have.",
+  "findings": {
+    "aClaimCanSupersedeATask": "CLAUDE.md records 'a discharge is invisible to whoever files the removal' -- a CLAIM that removes a branch does not look at the questions that branch raised. This is the same failure one level up: a claim that changes the BODY does not look at the tasks that optimise a coupling on the old one. Eight of 57 open items are in that position and none of the six claims that put them there noticed.",
+    "theSweepIsCheapAndTheAlternativeIsNot": "It is a read. The alternative is an agent picking up T-176 -- an exhaustive enumeration over 163 296 placements -- for a tile that may not be the one built.",
+    "andTwoTasksGOTMOREIMPORTANT": "T-9 and T-189. A supersession sweep that only looks for work to cancel will miss the items a result makes MORE load-bearing, and T-9 -- the crossover hinge constant from oxDNA -- is now the input the four-layer rigidity and C-0116's threshold both rest on."
+  },
+  "validity": [
+    "The classification is a judgement, not a computation, and it is recorded per item so a reader can disagree with any single row without discarding the sweep.",
+    "CONTINGENT is not KILLED. If SS3's tile stays single-layer -- or if NDI declines the thicker tile -- every one of the eight is live again exactly as written.",
+    "The sweep classifies against the four-layer line ONLY. An item unaffected by the tile may still be superseded by something else, and this does not look."
+  ]
+}

@@ -8193,3 +8193,32 @@ lived in the decision file and **never** in the register, and six answers came b
 addition is invisible to whoever files it in exactly the way `C-0071` found a discharge to be.
 
 **And it is the first question this programme has raised against its own recommendation.**
+
+---
+
+## Iteration 27 — `T-205`, and a claim that supersedes a task
+
+**`C-0126`.** Of **59** open queue items, **8** optimise a coupling placement, phase or distribution on the
+**single-layer** tile — and the four-layer tile is flat with **no coupling at all**. They are marked
+**CONTINGENT** in the queue itself, **2** are marked **STRENGTHENED**, and 49 are unaffected.
+
+**The finding is about the corpus rather than the device.** `CLAUDE.md` records that *a discharge is invisible
+to whoever files the removal* — a claim that kills a branch is not looking at the questions that branch
+raised, and `C-0071` had to invent the status `DISCHARGED` because the queue had no word for *"stopped
+applying"*. **This is the same failure one level up: a claim that changes the BODY is not looking at the tasks
+that optimise a coupling on the old one.** Six claims moved the tile between iterations 23 and 26 and **none
+of the six noticed**.
+
+**CONTINGENT is a third state and the distinction is the whole claim.** These tasks are not dead: §3's
+thickness row cannot hold both ways, NDI's answer resolves it *by implication* rather than by ruling, and
+decision 7 is unanswered. If the tile stays single-layer, all eight are live exactly as written. Nothing is
+struck — *a list that only ever grows is not a record and a list that silently shrinks is worse.*
+
+**And two got MORE important, which a cancellation-only sweep would have missed.** `T-9`, the crossover hinge
+constant from oxDNA, is now the input the four-layer rigidity **and** `C-0116`'s threshold both rest on — a
+multi-layer tile's rigidity is a parallel-axis enhancement over the *same* crossover springs. It was already
+the queue's most expensive named item and it is now among the most load-bearing. **A supersession sweep that
+only looks for work to cancel is not a sweep.**
+
+**The marking is in the queue, not only in the claim.** That is deliberate: an agent picking up `T-176` — an
+exhaustive enumeration over 163 296 placements — reads the row, not the claim that reclassified it.
