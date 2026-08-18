@@ -64,27 +64,35 @@ def broken_links_in(text, directory, root=ROOT):
     return missing
 
 
+# The two OUTWARD-FACING documents. `T-184` found `DECISIONS-FOR-NDI.md` -- the one NDI actually
+# reads -- checked by nothing at all, this checker included: it scanned `gpd/` and stopped there,
+# so a mistyped claim slug in either deliverable was invisible. They carry more claim links than
+# most claims do, and a broken one in them is read by the customer rather than by an agent.
+ROOT_DOCUMENTS = ["ANSWERS.md", "DECISIONS-FOR-NDI.md"]
+
+
 def tracked_markdown(root=ROOT):
-    """The tracked Markdown under `gpd/`. Falls back to a walk outside a git checkout.
+    """The tracked Markdown under `gpd/`, plus the outward-facing root documents.
 
     `C-0083` records why the fallback matters: a verification SNAPSHOT has no `.git`, so a checker
     that only knows `git ls-files` silently checks nothing there.
     """
+    extra = [name for name in ROOT_DOCUMENTS if os.path.isfile(os.path.join(root, name))]
     try:
         listed = subprocess.run(
             ["git", "ls-files", "gpd/**/*.md", "gpd/*.md"],
             cwd=root, capture_output=True, text=True, check=True,
         ).stdout.split()
         if listed:
-            return sorted(listed)
+            return sorted(set(listed) | set(extra))
     except (OSError, subprocess.CalledProcessError):
         pass
-    found = []
+    found = list(extra)
     for base, _dirs, files in os.walk(os.path.join(root, "gpd")):
         for name in files:
             if name.endswith(".md"):
                 found.append(os.path.relpath(os.path.join(base, name), root))
-    return sorted(found)
+    return sorted(set(found))
 
 
 def _selftest():
@@ -128,6 +136,32 @@ def _selftest():
     check("prose naming a claim without linking it is ignored",
           broken_links_in("see C-0006-tile-flatness.md for the detail", "gpd/claims"), [])
     check("the corpus listing finds files", len(tracked_markdown()) > 0, True)
+    # `T-184`: the two outward-facing documents are IN the listing. They were not, and a broken
+    # claim slug in the file NDI reads is worse than one in a claim, not better.
+    check("the outward-facing set is exactly the two deliverables",
+          ROOT_DOCUMENTS, ["ANSWERS.md", "DECISIONS-FOR-NDI.md"])
+    # On a SYNTHETIC root, so the check does not depend on this checkout: `tools/verify.sh` runs
+    # these in a snapshot, and a self-test that reads the real tree is not a fixture test.
+    import tempfile
+    with tempfile.TemporaryDirectory() as fake:
+        os.makedirs(os.path.join(fake, "gpd", "claims"))
+        for name in ROOT_DOCUMENTS + [os.path.join("gpd", "claims", "C-0001-x.md")]:
+            open(os.path.join(fake, name), "w").close()
+        listed = tracked_markdown(root=fake)
+        check("a root document is in the listing", "ANSWERS.md" in listed, True)
+        check("and so is the decision file", "DECISIONS-FOR-NDI.md" in listed, True)
+        check("the corpus is still listed beside them",
+              os.path.join("gpd", "claims", "C-0001-x.md") in listed, True)
+        check("the listing has no duplicates", len(listed), len(set(listed)))
+        check("a root document that does not exist is not listed",
+              tracked_markdown(root=os.path.join(fake, "gpd")), [])
+    # A root document's links resolve against the ROOT, not against `gpd/` -- the same one-resolver
+    # rule the manifest defects taught, at the other end of the tree.
+    check("a root-relative link from a root document resolves",
+          broken_links_in("[`C-0006`](gpd/claims/C-0006-tile-load-distribution-and-flatness.md)", ""), [])
+    check("and a mistyped one from a root document is reported",
+          [l for l, _ in broken_links_in("[`C-0006`](gpd/claims/C-0006-tile-flatness.md)", "")],
+          ["gpd/claims/C-0006-tile-flatness.md"])
 
     if failures:
         print("\n{} check(s) FAILED".format(len(failures)))

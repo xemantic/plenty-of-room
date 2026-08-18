@@ -16,7 +16,9 @@
 #
 # Trace every number in ANSWERS.md back to the claim that owns it (task T-131).
 #
-#     tools/trace-answers.py [--answers ANSWERS.md] [--claims gpd/claims] [--challenges gpd/challenges]
+#     tools/trace-answers.py [--answers DOC [DOC ...]] [--claims gpd/claims] [--challenges gpd/challenges]
+#
+# With no --answers it checks DEFAULT_DOCUMENTS: ANSWERS.md and DECISIONS-FOR-NDI.md (T-184).
 #
 # ANSWERS.md is the repository's primary deliverable and is explicitly "a synthesis, not a
 # source": every number in it is supposed to belong to a claim.  Nothing checked that.  This
@@ -69,6 +71,13 @@ _ID_PATTERNS = [
     re.compile(r"\bhttps?://\S+"),
     re.compile(r"\]\([^)]*\)"),  # markdown link targets
 ]
+
+# The documents this tracer checks by default.  `C-0067` built it for `ANSWERS.md`; `T-184`
+# found that `DECISIONS-FOR-NDI.md` -- the document NDI actually reads -- was checked by nothing
+# at all, and that the tool needed no new logic to reach it, only a default.  Both are outward
+# facing and both are syntheses rather than sources, which is the property every check here
+# assumes.  Pinned by tools/test-trace-answers.py.
+DEFAULT_DOCUMENTS = ["ANSWERS.md", "DECISIONS-FOR-NDI.md"]
 
 _NUMBER = re.compile(r"\d+(?:\.\d+)?(?:e-?\d+)?")
 
@@ -282,10 +291,33 @@ _ANSWERING = re.compile(
 )
 
 
+# `C-0071`'s discipline is *strike, never delete*, so a withdrawn statement stays in the file
+# inside `~~ ~~`.  The three STATUS checks below must therefore not read it: otherwise repairing a
+# stale *"`T-191` is open"* by striking it -- the only repair this project permits -- leaves the
+# flag exactly where it was, and the checker penalises the discipline it exists to support.
+# `T-184` found this while repairing `DECISIONS-FOR-NDI.md`, where every correction is a strike.
+#
+# The blanking preserves length and newlines, so every reported LINE NUMBER is still the file's.
+# The NUMERIC trace uses it too, for the same reason: `~~` means WITHDRAWN, and a withdrawn number
+# is exactly the one a repair should not have to keep traceable.  `T-184` found the live case -- a
+# cheap bound of `9.61 nm` superseded by `C-0109`'s measured 9.608: struck, correct, and ABSENT
+# forever, because the claim owns the successor and not the value it replaced.
+_STRUCK = re.compile(r"~~.+?~~", re.DOTALL)
+
+
+def strip_struck(text):
+    """Blank every `~~struck~~` span, preserving length and line breaks."""
+
+    def blank(match):
+        return "".join("\n" if character == "\n" else " " for character in match.group(0))
+
+    return _STRUCK.sub(blank, text)
+
+
 def open_assertions(answers_text):
     """[(line, task, phrase)] for every place the text asserts a task is open."""
     found = []
-    for number, line in enumerate(answers_text.splitlines(), start=1):
+    for number, line in enumerate(strip_struck(answers_text).splitlines(), start=1):
         for reference in _TASK_REFERENCE.finditer(line):
             task = reference.group(1)
             start = max(0, reference.start() - _OPEN_WINDOW)
@@ -430,7 +462,7 @@ def self_contradictions(answers_text):
     DIFFERENT tasks is common in this deliverable and is not a contradiction.
     """
     by_task = {}
-    for number, line in enumerate(answers_text.splitlines(), start=1):
+    for number, line in enumerate(strip_struck(answers_text).splitlines(), start=1):
         for sentence in re.split(r"(?<=[.!?])\s+|\n", line):
             for reference in _SUBJECT_REFERENCE.finditer(sentence):
                 task = reference.group(1)
@@ -512,7 +544,7 @@ def stale_challenge_statuses(answers_text, statuses):
     as live in a challenge reference as in a task one.
     """
     stale = []
-    for number, line in enumerate(answers_text.splitlines(), start=1):
+    for number, line in enumerate(strip_struck(answers_text).splitlines(), start=1):
         for reference in _CHALLENGE_REFERENCE.finditer(line):
             identifier = reference.group(1)
             start = max(0, reference.start() - _OPEN_WINDOW)
@@ -528,7 +560,11 @@ def stale_challenge_statuses(answers_text, statuses):
 
 
 def trace(answers_text, sources, min_digits=2):
-    """One record per (block, token): (line, token, status, cited, owners)."""
+    """One record per (block, token): (line, token, status, cited, owners).
+
+    Struck text is blanked first: a `~~withdrawn~~` number is not a claim the document makes.
+    """
+    answers_text = strip_struck(answers_text)
     records = []
     for line, text in blocks(answers_text):
         cited = citations(text)
@@ -544,19 +580,32 @@ def trace(answers_text, sources, min_digits=2):
     return records
 
 
-def main(argv=None):
+def parse_arguments(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--answers", default="ANSWERS.md")
+    parser.add_argument("--answers", nargs="+", default=list(DEFAULT_DOCUMENTS))
     parser.add_argument("--claims", default="gpd/claims")
     parser.add_argument("--challenges", default="gpd/challenges")
     parser.add_argument("--queue", default="TASKS.md")
     parser.add_argument("--min-digits", type=int, default=2)
     parser.add_argument("--status", default="", help="only report this status")
-    arguments = parser.parse_args(argv)
+    return parser.parse_args(argv)
 
-    with open(arguments.answers, encoding="utf-8") as handle:
-        answers_text = handle.read()
+
+def main(argv=None):
+    arguments = parse_arguments(argv)
     sources = load_sources(arguments.claims, arguments.challenges)
+    failures = 0
+    for document in arguments.answers:
+        failures += check_document(document, arguments, sources)
+    return 0
+
+
+def check_document(document, arguments, sources):
+    """Run all four checks over one document.  Every line is prefixed with its own name, because
+    the tool now reads more than one and an unlabelled row cannot be acted on."""
+    with open(document, encoding="utf-8") as handle:
+        answers_text = handle.read()
+    tag = os.path.basename(document)
     records = trace(answers_text, sources, min_digits=arguments.min_digits)
 
     counts = {"CITED": 0, "ELSEWHERE": 0, "ABSENT": 0}
@@ -565,8 +614,8 @@ def main(argv=None):
         if arguments.status and status != arguments.status:
             continue
         print(
-            "{}\t{}\t{}\t{}\t{}".format(
-                line, token, status, ",".join(cited) or "-", ",".join(owners[:6]) or "-"
+            "{}\t{}\t{}\t{}\t{}\t{}".format(
+                tag, line, token, status, ",".join(cited) or "-", ",".join(owners[:6]) or "-"
             )
         )
     # The records go to stdout and the summary to stderr.  When both are piped to one place
@@ -575,8 +624,8 @@ def main(argv=None):
     # `C-0080`, which is what it looks like.  Flush wherever the two streams are interleaved.
     sys.stdout.flush()
     print(
-        "# {} tokens: {} CITED, {} ELSEWHERE, {} ABSENT".format(
-            len(records), counts["CITED"], counts["ELSEWHERE"], counts["ABSENT"]
+        "# {}: {} tokens: {} CITED, {} ELSEWHERE, {} ABSENT".format(
+            tag, len(records), counts["CITED"], counts["ELSEWHERE"], counts["ABSENT"]
         ),
         file=sys.stderr,
     )
@@ -590,11 +639,11 @@ def main(argv=None):
         assertions = open_assertions(answers_text)
         stale = stale_statuses(answers_text, queue_text)
         for line, task, status in stale:
-            print("{}\tSTALE-OPEN\t{}\t{}".format(line, task, status))
+            print("{}\t{}\tSTALE-OPEN\t{}\t{}".format(tag, line, task, status))
         sys.stdout.flush()
         print(
-            "# {} open assertion(s), {} contradicted by {}".format(
-                len(assertions), len(stale), arguments.queue
+            "# {}: {} open assertion(s), {} contradicted by {}".format(
+                tag, len(assertions), len(stale), arguments.queue
             ),
             file=sys.stderr,
         )
@@ -607,12 +656,12 @@ def main(argv=None):
     statuses = challenge_statuses(arguments.challenges)
     stale_challenges = stale_challenge_statuses(answers_text, statuses)
     for line, identifier, status in stale_challenges:
-        print("{}\tSTALE-OPEN\t{}\t{}".format(line, identifier, status))
+        print("{}\t{}\tSTALE-OPEN\t{}\t{}".format(tag, line, identifier, status))
     sys.stdout.flush()
     declared = sum(1 for value in statuses.values() if value != "UNKNOWN")
     print(
-        "# {} challenge(s), {} with a declared status, {} open assertion(s) contradicted".format(
-            len(statuses), declared, len(stale_challenges)
+        "# {}: {} challenge(s), {} with a declared status, {} open assertion(s) contradicted".format(
+            tag, len(statuses), declared, len(stale_challenges)
         ),
         file=sys.stderr,
     )
@@ -623,7 +672,8 @@ def main(argv=None):
     contradictions = self_contradictions(answers_text)
     for contradiction in contradictions:
         print(
-            "{}\tSELF-CONTRADICTION\t{}\t{}".format(
+            "{}\t{}\tSELF-CONTRADICTION\t{}\t{}".format(
+                tag,
                 contradiction.mentions[0][0],
                 contradiction.task,
                 "/".join(sorted(contradiction.verdicts)),
@@ -633,10 +683,10 @@ def main(argv=None):
             print("\t\tline {}: {}".format(line, sentence))
     sys.stdout.flush()
     print(
-        "# {} task(s) the deliverable contradicts itself about".format(len(contradictions)),
+        "# {}: {} task(s) the document contradicts itself about".format(tag, len(contradictions)),
         file=sys.stderr,
     )
-    return 0
+    return counts["ABSENT"] + len(stale_challenges) + len(contradictions)
 
 
 if __name__ == "__main__":

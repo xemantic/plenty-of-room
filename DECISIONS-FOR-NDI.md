@@ -1,13 +1,24 @@
 # DECISIONS-FOR-NDI
 
-Six decisions this programme cannot make for itself.
+~~Six~~ **Seven** decisions this programme cannot make for itself.
+Six were sent on 2026-08-18 and all six came back in one pass;
+the seventh is §7, raised in iteration 26, and it is the one question here still outstanding.
 
-> **ALL SIX ARE ANSWERED — 2026-08-18, Jeremy Barton (NDI), by email through Kazik.**
+> **ALL SIX OF THE SIX THAT WERE SENT ARE ANSWERED — 2026-08-18, Jeremy Barton (NDI), by email through Kazik.**
 > The answers are quoted verbatim in the block below and again in each section,
 > and the interaction is recorded in [`JOURNAL.md`](JOURNAL.md).
-> **Nothing has been re-derived yet.** What follows records the answers, names what each one changes,
-> and queues the work they open as `T-191`–`T-194`.
-> The analysis under each decision is kept as written — struck where an answer supersedes it,
+> ~~**Nothing has been re-derived yet.** What follows records the answers, names what each one changes,
+> and queues the work they open as `T-191`–`T-194`.~~
+> **CORRECTED, iteration 27** ([`C-0124`](gpd/claims/C-0124-decision-file-drift.md), `T-184`) — **that sentence was true for about a day.**
+> The work the answers opened is `T-191`–**`T-195`**, not `T-191`–`T-194`; **four of the five are `DONE`**,
+> and ten claims re-derived the line they opened across iterations 23–26 —
+> [`C-0109`](gpd/claims/C-0109-four-layer-tile.md), [`C-0110`](gpd/claims/C-0110-device-b-tall-gap.md),
+> [`C-0111`](gpd/claims/C-0111-gold-electrode-pzc.md), [`C-0114`](gpd/claims/C-0114-one-reserve.md),
+> `C-0116`, `C-0118`, `C-0119`, [`C-0120`](gpd/claims/C-0120-cross-section-comparison.md), `C-0122` and `C-0123`.
+> `T-195` — the unpaired scaffold remainder as a body in the actuated gap — is the one still `TODO`,
+> and this file never named it.
+> **So what follows records the answers AND what the programme has measured against them since.**
+> The analysis under each decision is kept as written — struck where an answer or a measurement supersedes it,
 > intact where it does not — because a decision file that only ever grows is not a record.
 
 Each is a **specification** question rather than a modelling one:
@@ -17,8 +28,11 @@ not a number about the physics.
 They are collected here so they can be reviewed together and answered in one pass,
 rather than one at a time across iterations.
 
-They are live in [`TASKS.md`](TASKS.md) as `T-63`, `T-115`, `P-13`, `T-112`, `T-154` and `T-166`,
-and this file is the reviewable form of the same six.
+~~They are live in [`TASKS.md`](TASKS.md) as `T-63`, `T-115`, `P-13`, `T-112`, `T-154` and `T-166`,
+and this file is the reviewable form of the same six.~~
+**CORRECTED, iteration 27.** All six of those rows now read **ANSWERED** in [`TASKS.md`](TASKS.md); none is live.
+The seventh is carried in the queue as *Open questions for Kazik* item 12 rather than as a task row of its own,
+its analysis task `T-199` being closed.
 
 ## The answers, and the three things that matter more than the answers
 
@@ -26,7 +40,7 @@ and this file is the reviewable form of the same six.
 |---|---|---|---|
 | 1 | 0.5 mM MgCl₂? | *"concerningly below the typical experimental stability window of DNA origami … pushing a parameter hard that I've been reserving for additional operating margin. So… well identified."* | **PRICED, NOT GRANTED.** Reachable, and it spends a reserve NDI is holding for margin |
 | 2 | a 17–26 nm layer? | *"beyond the regime I've bothered to examine … an interesting regime we've been reserving, again, for low MgCl₂ concentrations"* | **NOT EXAMINED — and contingent on the SAME reserve as decision 1** |
-| 3 | which electrode? | *"Defaulting to template stripped gold for initial experiments."* | **ANSWERED** for the material. The potential of zero charge is not given |
+| 3 | which electrode? | *"Defaulting to template stripped gold for initial experiments."* | **ANSWERED** for the material. ~~The potential of zero charge is not given~~ — not by NDI; `C-0111` has since found it in the literature, and the residue is the **cell's** zero, not the electrode's |
 | 4 | one device or two? | *"2 devices."* | **ANSWERED** |
 | 5 | which scaffold? | *"M13, circular ~7-8K nucleotides … To use excess scaffold, just make the tile thicker. The 1700 nucleotide structure the agent is proposing seems… thin and low stiffness"* | **ANSWERED**, and it carries a criticism of the tile this programme has been modelling |
 | 6 | a two-layer tile? | *"just make the tile thicker"* | **ANSWERED BY IMPLICATION — yes, and volunteered rather than granted** |
@@ -70,16 +84,25 @@ NDI's answer resolves it toward the thick reading, from a direction nobody asked
 **3. M13 pays for exactly that tile.**
 `C-0086` measures the sheet at **1 680** of M13's **7 249** nt — **4.31×** — and NDI's remedy for the excess is
 *"just make the tile thicker"*.
-Four layers at the honeycomb rise is **9.61 nm**, and `Gen1Tile.kt`'s own variant is already documented as
+Four layers at the honeycomb rise is ~~**9.61 nm**~~ **9.608 nm**, measured by
+[`C-0109`](gpd/claims/C-0109-four-layer-tile.md), which now owns that number,
+and `Gen1Tile.kt`'s own variant is already documented as
 *"the ~10 nm thickness §3 also states"* — the reading was built, named and then never used.
 So three independent statements — §3's thickness row, M13's 4.31× excess, and NDI's answer — describe one tile,
 and it is not the tile the flatness negative was derived on.
-`C-0006`'s own variant table already carries it: a four-layer honeycomb sheet has `D_∥` = **14 310.78 pN·nm**
-against 85.50 and `D_⊥` ≥ **19.222** against 3.345, i.e. **167×** and **5.75×**.
+~~`C-0006`'s own variant table already carries it: a four-layer honeycomb sheet has `D_∥` = **14 310.78 pN·nm**
+against 85.50 and `D_⊥` ≥ **19.222** against 3.345, i.e. **167×** and **5.75×**.~~
+**That pair is under [`CH-0124`](gpd/challenges/CH-0124-the-four-layer-variant-is-a-mixed-state-not-a-bound.md), raised by `C-0109` and open**:
+it is a **mixed state** — the composite ceiling on one axis and the independent floor on the other — not a bracket end.
+`C-0109` measures the calibrated pair at `D_∥` = **4 547.17603** and `D_⊥` = **240.931249** pN·nm.
 The Winkler reach is a fourth root of those, so `C-0058`'s 12.83 and 5.71 nm become ~46 and ~8.8 nm against a
 38–40 nm tile — the regime in which a tile stops dishing because it is rigid on its own scale.
-**That is a cheap bound and not a result**; it is queued as `T-191`, and it is the first unspent design axis
-since iteration 20.
+~~**That is a cheap bound and not a result**; it is queued as `T-191`, and it is the first unspent design axis
+since iteration 20.~~
+**`T-191` RAN, iteration 23, and the cheap bound became a result** ([`C-0109`](gpd/claims/C-0109-four-layer-tile.md)):
+the four-layer tile dishes **0.0577199433** of the stroke under the same solved collar **with no coupling at all**,
+inside `T-5b`'s 0.10 and against the single layer's **0.307902368**.
+**The axis is spent**, and §7 is where it ended.
 
 
 ## How to read this
@@ -109,11 +132,11 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 |---|---|---|---|---|---|
 | 1 | Is 0.5 mM MgCl₂ acceptable as the Gen-1 nominal buffer, instead of §3's 2 mM? | `T-63` | ~~The device sits **on** its own pull-in fold at 2 mM~~ — **withdrawn, `C-0084`**; the recommended element does not fold at 2 mM at all, on **any** elastica branch (`C-0092`). The cost of deferring is now a **margin**, 1.39× against 1.87× at worst, not a failure | **Adopt 0.5 mM — but as a PREFERENCE, not a requirement, and on THREE routes rather than six (`C-0091`)** | **PRICED, NOT GRANTED** — reachable, at the cost of origami stabilisation work and a reserve held for margin. 2 mM stays the nominal; `T-50` is **not** deleted |
 | 2 | May the polymer layer be taller than 10 nm — 17–26 nm? | `T-115` | §3's *desired* ~10 nm stroke stays unreachable on §3's own stack | ~~**A yes/no is enough**~~ — **the branch is now closed by measurement, and the answer does not depend on the ruling** | **NOT EXAMINED**, and it draws the **same** reserve as decision 1. **We then measured it: a tall layer delivers §3's 100 pN across NO gap in NDI's band** (`C-0110`), so the reserve has one claimant and 1+2 collapse to the buffer alone |
-| 3 | What is the electrode made of, and where is its potential of zero charge? | `P-13` | 2.6× on the one hold-down no design can remove | **Name a material**; the programme will not choose one | **TEMPLATE-STRIPPED GOLD.** The 2.6× bracket collapses onto its adverse end; the **PZC is still not given** |
+| 3 | What is the electrode made of, and where is its potential of zero charge? | `P-13` | 2.6× on the one hold-down no design can remove | **Name a material**; the programme will not choose one | **TEMPLATE-STRIPPED GOLD.** The 2.6× bracket collapses onto its adverse end. ~~The **PZC is still not given**~~ — **corrected, iteration 27**: NDI did not give it and [`C-0111`](gpd/claims/C-0111-gold-electrode-pzc.md) has since read it out of the literature (**0.46–0.51 V vs SHE**, Au(111)). What is still open is not the electrode's PZC but **the cell's definition of zero bias**, which decides the *sign* of the force at rest |
 | 4 | Which device does §3's *desired* clause ask for? | `T-112` | Every desired-stroke number in the corpus has to be quoted twice | **One device, placed at the acceptable clause** | **TWO DEVICES.** Device B is placed at 10 pN/nm and its binding constraint becomes `C-0017`'s stability floor |
 | 5 | What is the scaffold — linear or circular, M13 or synthetic, and how long? | `T-154` | A seam costs 6–12 of 34 arm stations, and §3's 40.0 nm is not a buildable seamless width | **A purpose-length scaffold**; the choice is a fabrication decision, not a modelling one | **CIRCULAR M13, ~7–8 k nt** — so the remainder is the DEFAULT — and the remedy for the excess is *"just make the tile thicker"* |
 | 6 | Does §3 admit a **two-layer** tile, or is single-layer a requirement? | `T-166` | The only coupling topology that narrows the flatness negative is multilayer, and it is the one motif here with a published precedent | **A yes/no is enough**; a *no* closes the last open recovery route | **YES, BY IMPLICATION**, and volunteered rather than granted. Reopens the body axis (`T-191`), not the coupling axis |
-| **7** | **NEW — is a 38 × 25 nm tile acceptable, in exchange for removing the last unmeasured dependency?** | `T-199` | Carrying the interlayer-coupling calibration as a live dependency on the flatness verdict, and the coupled result at 1 of 8 cells rather than 8 of 8 | **`10 × 6` on both flatness and published folding yield — but the footprint is a specification and only NDI holds that column** | *raised iteration 26; awaiting* |
+| **7** | **NEW — is a 38 × 25 nm tile acceptable, in exchange for removing the last unmeasured dependency?** | item 12 of the queue's questions for Kazik — the only row here whose owner column names a decision rather than a task, its analysis having closed in iteration 25 (§7) | Carrying the interlayer-coupling calibration as a live dependency on the flatness verdict, and the coupled result at 1 of 8 cells rather than 8 of 8 | **`10 × 6` on both flatness and published folding yield — but the footprint is a specification and only NDI holds that column** | *raised iteration 26; awaiting* |
 
 ---
 
@@ -248,15 +271,18 @@ margin, and `T-50` stays on the queue as a multi-week item that a one-word answe
 > **What that is.** Not a refusal: an unexamined regime, held behind the same purchase as decision 1.
 > So the answer to *"may the layer be taller"* is *"at 0.5 mM, and that is one decision with the buffer"*.
 >
-> **The reason given is a real objection and this programme has not answered it.**
+> ~~**The reason given is a real objection and this programme has not answered it.**~~
+> **It has, in the block immediately below — struck here in iteration 27 because the sentence sat unstruck for four iterations.**
 > §3's own parameter row gives ~4 nm at 2 mM and `C-0008` derives **3.93 nm**, so a 17–26 nm layer is
-> **4.3–6.6 bulk Debye lengths** of separation, and no claim here has ever evaluated the bias that would
-> deliver §3's 100 pN across one.
+> **4.3–6.6 bulk Debye lengths** of separation, and ~~no claim here has ever evaluated the bias that would
+> deliver §3's 100 pN across one.~~ **`C-0110` has, on `C-0008`'s own solver, over 96 states and 12 (gap, buffer) cells.**
 > What this programme can say is that *"the"* Debye length is the wrong single number for the question —
 > `C-0008` measures **three** in this stack, and the one in the actuated gap is counterion-dominated rather
 > than buffer-set — so the objection has to be answered by a field solve at the tall gap rather than by a
-> comparison of two lengths. That is `T-192`, it runs on `C-0008`'s existing machinery, and it decides
-> whether the reserve is worth spending here at all.
+> comparison of two lengths. ~~That is `T-192`, it runs on `C-0008`'s existing machinery, and it decides
+> whether the reserve is worth spending here at all.~~ **That was `T-192`, and it ran.**
+> **And the rebuttal in the sentence before it is the half that lost: counterion dominance is about ion
+> CONTENT and never about the DECAY, which is what the objection was made of.**
 >
 > **What it changes.** The 16.63–26.12 nm threshold below stands as the *kinematic* requirement for a 10 nm
 > dead-load stroke; what it does not carry is whether such a layer can be actuated at 2 mM. ~~Until `T-192`
@@ -300,16 +326,27 @@ margin, and `T-50` stays on the queue as a multi-week item that a one-word answe
   `C-0003`'s six models at `σ = 0.024 nm⁻²`.
 - **§3's own tile row already allows the effort point to sit ~20–25 nm above the electrode**, so the
   geometry is not absurd on its face.
-- **But nothing in this programme has evaluated a layer that tall.** A 17–26 nm layer moves
-  `C-0002`'s crossover, `C-0005`'s screening validity, `C-0007`'s drainage and `C-0012`'s bias.
+- ~~**But nothing in this programme has evaluated a layer that tall.** A 17–26 nm layer moves
+  `C-0002`'s crossover, `C-0005`'s screening validity, `C-0007`'s drainage and `C-0012`'s bias.~~
+  **STRUCK, iteration 27 (`C-0124`, `T-184`) — this is the sentence this whole task exists for.**
+  [`C-0110`](gpd/claims/C-0110-device-b-tall-gap.md) evaluated exactly that layer in iteration 23,
+  and it sat here unstruck in the part of the section a reviewer actually reads while the answer
+  block above it carried the measurement.
+  **§3's 100 pN stops arriving across a gap of 13.6989179 nm at 0.5 mM**, below the bottom of NDI's band.
 
-**Why a *no* is as useful as a *yes*.** A *no* closes the branch immediately and confirms what is
+~~**Why a *no* is as useful as a *yes*.** A *no* closes the branch immediately and confirms what is
 already this programme's most-repeated finding — that §3's desired stroke is unreachable on §3's own
 stack, and the acceptable clause (3 nm) is what Gen-1 targets. A *yes* opens real work: it is a
-substantial re-run across four claims, not a parameter change.
+substantial re-run across four claims, not a parameter change.~~
+**Neither is needed. The branch is closed by measurement** — `C-0110`, and the direction it closed in
+costs nothing to accept.
 
-**What deferring costs.** This is the only route in the programme that can buy the desired stroke, so
-while it is open the desired-stroke branch cannot be either pursued or closed.
+~~**What deferring costs.** This is the only route in the programme that can buy the desired stroke, so
+while it is open the desired-stroke branch cannot be either pursued or closed.~~
+**What deferring costs, corrected.** Nothing. It is no longer a route to the desired stroke at all:
+it buys the **stroke** at 52 of 96 uncoupled states and **no force** at any of them
+([`CH-0127`](gpd/challenges/CH-0127-the-tall-layer-escape-is-kinematic-not-actuated.md)),
+and §3's own effort-point row cannot be met by a tall layer either (`CH-0126`).
 
 ---
 
@@ -394,8 +431,11 @@ fabrication **yield** wherever it is published and **no column at all** for fabr
 >   right idealisations rather than convenient ones.
 > - **What is still open is the half that carries the zero-bias hold-down.** `C-0021` finds a contact potential
 >   of **0.9–5.1 mV** — below anything a bench would call zero — supplies the *entire* thermal-scale hold-down,
->   and gold narrows where to look without supplying the number. Queued as `T-193`; if the literature does not
->   pin a template-stripped gold PZC in mM MgCl₂, this comes back as a one-line ask.
+>   and gold narrows where to look without supplying the number. ~~Queued as `T-193`; if the literature does not
+>   pin a template-stripped gold PZC in mM MgCl₂, this comes back as a one-line ask.~~
+>   **`T-193` ran in iteration 23 and it does come back as a one-line ask — but not this one.**
+>   The literature *does* pin the number (**0.46–0.51 V vs SHE** for Au(111), read directly), and what is
+>   missing is the **cell's** definition of zero rather than the electrode's. See the residue section below.
 
 **The question.** §1 says *"patterned electrode"* and never says of what.
 
@@ -411,12 +451,14 @@ improvement. The answer is bracketed and handed back rather than chosen.
   a bench would call zero — supplies the **entire** thermal-scale hold-down by itself. No §3 parameter
   fixes it.
 
-**What an answer needs to be.** A material (gold, ITO, SiO₂, …) and, if known, its potential of zero
+~~**What an answer needs to be.** A material (gold, ITO, SiO₂, …) and, if known, its potential of zero
 charge in this buffer. If the material is genuinely not yet chosen, saying so is also an answer — the
-programme will then carry the bracket explicitly rather than implicitly. 
+programme will then carry the bracket explicitly rather than implicitly.~~
+**Answered: template-stripped gold.** The surviving ask is in the residue section below, and it is about
+the **drive** rather than the material.
 
-**What deferring costs.** `C-0021` already states the exposure as a bracket with a threshold rather
-than a guess, so nothing is blocked. The number is simply softer than it needs to be.
+~~**What deferring costs.** `C-0021` already states the exposure as a bracket with a threshold rather
+than a guess, so nothing is blocked. The number is simply softer than it needs to be.~~
 
 ### The residue this answer left, and it is a ONE-LINE ask (`T-193`, [`C-0111`](gpd/claims/C-0111-gold-electrode-pzc.md))
 
@@ -465,7 +507,19 @@ layer, **0.886 mV** at 5 nm.
 > - **And that refusal is quoted at a state, not at a device.** `|k_eff|` is read at the 10 nm layer in 2 mM —
 >   and device B is exactly the device decision 2 says needs a **17–26 nm** layer, which decision 1 says needs
 >   **low salt**. **The three answers converge on one object**: device B is the low-salt tall-layer device, and
->   whether it exists is one evaluation of `|k_eff|` in a corner nobody has evaluated. `T-192`, and it is cheap.
+>   ~~whether it exists is one evaluation of `|k_eff|` in a corner nobody has evaluated. `T-192`, and it is cheap.~~
+>
+> ### `T-192` RAN, AND DEVICE B IS REFUSED — iteration 23, [`C-0110`](gpd/claims/C-0110-device-b-tall-gap.md)
+>
+> **This section was still telling a reader that device B's existence was an open, cheap question, four
+> iterations after it was measured** (struck in iteration 27, `C-0124`/`T-184`).
+> The corner was evaluated: §3's 100 pN stops arriving across a gap of **13.6989179 nm at 0.5 mM**, so
+> 100 pN reaches a resting 17–26 nm gap at **0 of 12** (gap, buffer) cells,
+> §3's *acceptable* clause is refused at **96 of 96** tall states and the *desired* one admitted at **1 of 96**
+> — a bracket disagreement rather than a design.
+> **Device B as decision 2 conceived it does not exist**, and what survives of decision 4 is the part that
+> needs no tall layer: the acceptable and desired clauses are placed at **33.333** and **10 pN/nm** and
+> **every desired-stroke number in the corpus must be quoted with the clause that placed it.**
 
 **The question.** §3 gives an acceptable clause (100 pN at 3 nm) and a desired one (~10 nm stroke).
 Are these two operating points of **one** device, or two devices?
@@ -517,8 +571,12 @@ withdraw a 40 pN/nm ceiling for exactly this reason.
 >   and both carry **two readings** of. Every structural claim took the thin one. **4.31× of scaffold and
 >   ~10 nm of thickness are the same tile**, and it is four layers.
 > - **So the flatness negative is a result about a tile nobody is asking for.** `C-0006`'s own variant table
->   carries the thick one: `D_∥` = **14 310.78 pN·nm** against 85.50, `D_⊥` ≥ **19.222** against 3.345 — 167×
->   and 5.75×, and the Winkler reach is their fourth root. `T-191`.
+>   carries the thick one: ~~`D_∥` = **14 310.78 pN·nm** against 85.50, `D_⊥` ≥ **19.222** against 3.345 — 167×
+>   and 5.75×~~ — **that pair is `CH-0124`, open, and it is a MIXED state, not a bracket end** — and the
+>   Winkler reach is their fourth root. ~~`T-191`.~~
+>   **`T-191` RAN** ([`C-0109`](gpd/claims/C-0109-four-layer-tile.md)): the calibrated pair is
+>   `D_∥` = **4 547.17603** and `D_⊥` = **240.931249** pN·nm, and the four-layer tile dishes
+>   **0.0577199433** of the stroke with no coupling at all.
 
 **The question.** §1 and §3 specify a 40 × 40 nm single-layer origami tile and never say what scaffold folds it.
 Until iteration 17 that looked like an implementation detail. It is not: it decides whether the tile has a
@@ -552,14 +610,26 @@ All three rows are `C-0086`'s Deliverable 2, and every figure in them is quoted 
   16 bp — **16, 48, 80, 112, 144** — and **§3's 40.0 nm = 117.6 bp is not among them**. The nearest is
   **112 bp = 38.08 nm**, a 4.8 % narrower tile, which every plan margin in the corpus would have to be re-read
   at (`T-153`).
+  **DOMAIN CORRECTION, iteration 27** ([`C-0119`](gpd/claims/C-0119-honeycomb-raster-width.md)): **that is the
+  SQUARE lattice**, and the tile NDI's own answer produces is **honeycomb**, where the half turn is **5 bp**
+  rather than 5.25 and the scaffold-crossover lattice is `7k ± 5` — integral. `C-0086`'s odd-half-turn rule
+  admits **no** honeycomb row length at all, which is the rule being **outside its own domain** and not a
+  prohibition. **The 112 bp = 38.08 nm width survives and its ground has moved**, and a seam is still forced —
+  by the same tree parity, for a reason in the primary source rather than in the arithmetic above.
 
-**What the programme would recommend.** A **purpose-length scaffold** — synthetic, PCR, or a circular 1 680 nt
+~~**What the programme would recommend.** A **purpose-length scaffold** — synthetic, PCR, or a circular 1 680 nt
 construct with a short return loop — because it is the only option that is seamless *and* avoids both the
 digestion yield penalty and the unpaired remainder. But this is a wet-lab cost judgement about scaffold
-sourcing, which the programme cannot price.
+sourcing, which the programme cannot price.~~
+**DECLINED, implicitly, by the answer above** — NDI's remedy is to **spend** the scaffold, not to shorten it —
+and this file's own answer block says so while the recommendation stood here unstruck.
 
-**What deferring costs.** `C-0081` and `C-0086` must both be carried in two readings, and `T-153` — a re-read of
-every plan margin at 38.08 nm — cannot be scoped, because whether it is needed at all depends on this answer.
+~~**What deferring costs.** `C-0081` and `C-0086` must both be carried in two readings, and `T-153` — a re-read of
+every plan margin at 38.08 nm — cannot be scoped, because whether it is needed at all depends on this answer.~~
+**CORRECTED, iteration 27.** `T-153` was scoped **and closed in iteration 18** —
+[`C-0090`](gpd/claims/C-0090-buildable-raster-width.md) — five iterations before this file was last edited,
+so *"cannot be scoped"* was already false when it was written. What deferring costs now is only that
+`C-0081` and `C-0086` are carried in two readings.
 
 ---
 
@@ -586,6 +656,9 @@ every plan margin at 38.08 nm — cannot be scoped, because whether it is needed
 > on a *single-layer* Rothemund rectangle (`C-0087`), and `C-0093` already found that a *buildable* four-layer
 > body reads **0.100166871** where the rigid limit reads 0.0344 — so body rigidity is first order and a *yes*
 > opens work rather than delivering a win.
+> **That 0.100166871 is under [`CH-0125`](gpd/challenges/CH-0125-the-four-layer-brick-is-mis-specified-in-three-ways.md), raised by `C-0109` and OPEN**, which names
+> *"`DECISIONS-FOR-NDI.md` (twice)"* as a carrier and says it should not be re-quoted without the challenge.
+> The brick is mis-specified in three ways whose corrections **do not share a sign**, and the re-solve is owed.
 
 **The question.** §1 and §3 name a single-layer origami tile. Is that a requirement, or the simplest thing
 that came to mind when the problem was written?
@@ -607,6 +680,9 @@ that came to mind when the problem was written?
   out-of-plane arm the recommendation currently rests on, which has none in 62 recorded queries.
 - **A buildable body is not the rigid one**: a four-layer honeycomb brick reads **0.100166871**, *worse* than
   the array. Body rigidity is first order, so a *yes* opens real work rather than a free win.
+  **This is `CH-0125`'s second carrier in this file, and the challenge is OPEN** — the brick's `D_⊥` is taken
+  at the *uncoupled* value and its `D_∥` at the *rigid* one, so two of the three corrections run opposite ways
+  and neither `C-0109` nor `CH-0125` claims to know the net.
 
 **What the programme would recommend.** ~~Nothing yet — `T-165` has not been run~~ — **CORRECTED,
 iteration 22.** `T-165` ran in iteration 20 and `C-0098` **closed that axis negatively**: searched on the
@@ -616,16 +692,32 @@ where the lattice offers at most 60. The distribution axis **shuts as `1/t`**, t
 being a kinematic constraint independent of the tie distribution.
 **So this decision is narrower than when it was written**: what a *yes* buys is a body **2.05× flatter than
 the array at ZERO DEFECTS**, not a fabricated flat tile. A *no* still closes the last open recovery route —
-and the honest statement is that the programme now has **no unspent design axis at all**, only a fabrication
-yield.
+~~and the honest statement is that the programme now has **no unspent design axis at all**, only a fabrication
+yield.~~
+**STRUCK, iteration 27 — this file contradicted itself about it.** The head of this file says the four-layer
+body *"is the first unspent design axis since iteration 20"* and this section says there is none;
+both were written in iterations 22–23, and **the axis existed, was spent, and is what §7 is about.**
 
-**What deferring costs.** Less than it did, because the axis is spent. The flatness answer stays *"flat as
+~~**What deferring costs.** Less than it did, because the axis is spent. The flatness answer stays *"flat as
 designed, not shown flat as built"*, and what would move it is the per-site incorporation measurement in
-[`ANSWERS.md`](ANSWERS.md) §5 — a bench measurement — rather than another coupling design.
+[`ANSWERS.md`](ANSWERS.md) §5 — a bench measurement — rather than another coupling design.~~
+**CORRECTED, iteration 27.** What moved it was **neither** a bench measurement **nor** another coupling design:
+it was the **cross-section**. [`C-0118`](gpd/claims/C-0118-coupled-four-layer.md) grades 16 coupled cells under
+`C-0087`'s measured staple dropout and **9 are flat at the 90th percentile** — **all eight** of the `10 × 6`
+ones, best **0.0278431488**, against **one of eight** on `15 × 4` — and
+[`C-0122`](gpd/claims/C-0122-honeycomb-station-lattice.md) shows the flatness survives being placed on the
+honeycomb's own 21 bp station ladder. **The per-site incorporation measurement is still wanted** — this is a
+TRL 1–3 result under somebody else's measured statistics, not a built tile — but it is no longer the only
+thing that could move the answer, and this paragraph said it was.
 
 ---
 
-## 7. NEW — is a 38 × 25 nm tile acceptable, in exchange for removing the last unmeasured dependency? (`T-199`)
+## 7. NEW — is a 38 × 25 nm tile acceptable, in exchange for removing the last unmeasured dependency in the flatness verdict?
+
+**Its analysis is [`T-199`](TASKS.md), closed in iteration 25; the decision it raised is what is outstanding**,
+and the queue carries that half as item 12 of its questions for Kazik rather than as a task row.
+Rows 1–6 of the table above name a **specification** task in their owner column and this one names an
+**analysis** task, which is the only structural difference between the seventh decision and the other six.
 
 > **This decision did not exist when the other six were sent.** It is the consequence of NDI's own answer to
 > decision 5 — *"just make the tile thicker"* — followed four claims further than anyone expected, and it is
@@ -715,7 +807,7 @@ failure this file records elsewhere as *"a one-sentence answer is enough"*: it w
 one of the two on offer.
 
 ---
-Two things worth flagging about the document itself:
+~~Two~~ **Three** things worth flagging about the document itself:
 
 It answers a question you didn't ask. The four decisions were previously scattered across TASKS.md rows written for agents, not for a reviewer — each one buried in a paragraph of provenance. This form
 separates what is being asked from what the programme found, which is what makes it reviewable in one pass rather than four.
@@ -723,3 +815,17 @@ separates what is being asked from what the programme found, which is what makes
 The discharged section is deliberate. C-0071 found two questions had been carried to NDI for iterations after they stopped applying, and C-0067 found the same failure in ANSWERS.md's "cannot answer" list —
 an entry that stood seven iterations after being answered. A questions-for-NDI file is exactly the kind of document that only ever grows, so it needs a place to record removals or it will drift the same
 way.
+
+**This file is now checked, and it was not before.**
+`ANSWERS.md` had four retained checkers on it — numbers, task statuses, challenge statuses and self-consistency
+— and `DECISIONS-FOR-NDI.md`, which is the document NDI actually reads, had none.
+`T-184` ([`C-0124`](gpd/claims/C-0124-decision-file-drift.md)) enumerated **36** of its assertions and found
+**23** needing an edit: fourteen stale outright, four superseded by an answer block in their own section and
+left unstruck below it, three numbers carried by an open challenge that names this file by name, and two
+places where the file contradicted itself.
+Every one of them under-claims — *"nothing has evaluated"*, *"cannot be scoped"*, *"has not been run"* — which
+is `C-0067`'s standing finding that **a deliverable that under-claims is as wrong as one that over-claims and
+is far harder to catch**, because a reviewer checks the assertions and not the disclaimers.
+The repair is that `tools/trace-answers.py` now reads **both** documents by default, and that a `~~struck~~`
+statement is no longer read as a live one — without which the only repair this project permits leaves the flag
+where it was.

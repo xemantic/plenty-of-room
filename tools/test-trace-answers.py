@@ -625,6 +625,127 @@ check(
     False,
 )
 
+# --- T-184: the tracer's document set ------------------------------------------------------
+#
+# `C-0067` built this tool for `ANSWERS.md` and four checks accumulated on it, while
+# `DECISIONS-FOR-NDI.md` -- the document NDI actually reads -- was checked by nothing at all.
+# `T-184` found 23 assertions in it needing an edit, and the tool needed no new logic to find
+# the mechanical ones: it needed a DEFAULT.  These checks pin that default, because a default
+# is exactly the kind of thing a later edit silently narrows back.
+check(
+    "the deliverable is in the tracer's default document set",
+    "ANSWERS.md" in trace_answers.DEFAULT_DOCUMENTS,
+    True,
+)
+check(
+    "and so is the decision file, which is the document NDI reads",
+    "DECISIONS-FOR-NDI.md" in trace_answers.DEFAULT_DOCUMENTS,
+    True,
+)
+check(
+    "the default set is exactly the two outward-facing documents",
+    len(trace_answers.DEFAULT_DOCUMENTS),
+    2,
+)
+check(
+    "an explicit --answers still names one document, so the old invocation is unchanged",
+    trace_answers.parse_arguments(["--answers", "X.md"]).answers,
+    ["X.md"],
+)
+check(
+    "and several may be named at once",
+    trace_answers.parse_arguments(["--answers", "X.md", "Y.md"]).answers,
+    ["X.md", "Y.md"],
+)
+check(
+    "with no --answers the default set is used",
+    trace_answers.parse_arguments([]).answers,
+    trace_answers.DEFAULT_DOCUMENTS,
+)
+
+# --- T-184: struck text is withdrawn, not asserted -----------------------------------------
+#
+# `C-0071`'s standing discipline is *strike, never delete* -- a list that only ever grows is not
+# a record and one that silently shrinks is worse -- so every correct repair in this repository
+# leaves the withdrawn sentence in place inside `~~ ~~`.  The status checks read it as a live
+# assertion, which means the checker PENALISES the discipline the project mandates: repairing a
+# stale *"`T-191` is open"* by striking it leaves the flag exactly where it was.  Found by
+# `T-184` while repairing `DECISIONS-FOR-NDI.md`.  Line numbers must survive the strip, or every
+# reported line is wrong below the first strikethrough.
+check(
+    "struck text is blanked",
+    trace_answers.strip_struck("keep ~~drop~~ keep"),
+    "keep" + " " * 10 + "keep",
+)
+check(
+    "and the line length is preserved, so column offsets do not move",
+    len(trace_answers.strip_struck("keep ~~drop~~ keep")),
+    len("keep ~~drop~~ keep"),
+)
+check(
+    "a multi-line strike is blanked and its newlines survive",
+    trace_answers.strip_struck("a ~~b\nc~~ d").splitlines(),
+    ["a" + " " * 4, " " * 4 + "d"],
+)
+check(
+    "an unclosed ~~ is left alone, because it is not a strike",
+    trace_answers.strip_struck("a ~~b and no end"),
+    "a ~~b and no end",
+)
+check(
+    "text with no strike is returned unchanged",
+    trace_answers.strip_struck("nothing to do here"),
+    "nothing to do here",
+)
+check(
+    "a struck open-assertion is not asserted",
+    trace_answers.open_assertions("~~whether it is flat is `T-129`, open.~~"),
+    [],
+)
+check(
+    "and an unstruck one on the same line still is",
+    [task for _, task, _ in trace_answers.open_assertions(
+        "~~`T-129`, open~~ and separately `T-45` is open\n"
+    )],
+    ["T-45"],
+)
+check(
+    "the line number of an assertion below a multi-line strike is right",
+    [line for line, _, _ in trace_answers.open_assertions(
+        "~~a\nb~~\nwhether it is flat is `T-129`, open.\n"
+    )],
+    [3],
+)
+check(
+    "a struck task status cannot be contradicted by the queue",
+    trace_answers.stale_statuses(
+        "~~and `T-95` is open~~\n",
+        "| T-95 | q | a | A8.2 | **DISCHARGED** by `C-0071` |\n",
+    ),
+    [],
+)
+
+check(
+    "a struck verdict cannot contradict an unstruck one -- struck text is withdrawn",
+    trace_answers.self_contradictions(
+        "~~`T-45` is still unmeasured~~ and `T-45` is answered from published measurement\n"
+    ),
+    [],
+)
+check(
+    "a struck challenge assertion is not asserted either",
+    trace_answers.stale_challenge_statuses(
+        "~~`CH-0019` is still open~~\n", {"CH-0019": "UPHELD"}
+    ),
+    [],
+)
+
+check(
+    "a struck number needs no provenance -- `~~` means withdrawn everywhere in the tool",
+    trace_answers.trace("a paragraph citing `C-0001` with ~~42.42~~ in it", _sources),
+    [],
+)
+
 # --- summary -------------------------------------------------------------------------------
 if _failures:
     print("\n{} check(s) FAILED".format(len(_failures)))

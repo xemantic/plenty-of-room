@@ -1,0 +1,627 @@
+{
+  "task": "T-184",
+  "claim": "C-0124",
+  "title": "DECISIONS-FOR-NDI.md has the same drift class the deliverable had",
+  "maturity": "below TRL 1-3: nothing here is physics; no number is derived",
+  "gitHead": "8cf64cd",
+  "cheapBound": {
+    "pattern": "(has|have|had) (never|not) been|nothing (in this programme|here|else)|this programme (cannot|has not|can not)|(we|programme) cannot|cannot be (scoped|priced|answered|either)|is (still )?not given|has not been (run|taken|answered|evaluated)|no claim (here|in this)|is not one|never been taken|not warranted|is still open|has never|is unmeasured|still unmeasured|no unspent|only unspent|first unspent|no column at all|has no (checker|column)",
+    "matchingLinesBeforeRepair": 31,
+    "matchingLinesNow": 34,
+    "note": "31 is the recorded reading, taken before the file was read, and the enumerated set of 36 is a superset of it. The live recount is higher because every correction is a struck sentence PLUS a replacement, and both carry the phrasings -- which is the cost of 'strike, never delete' and the reason the grep is a cheap bound rather than a metric."
+  },
+  "assertionCounts": {
+    "STALE": 14,
+    "SELF-CONTRADICTION": 2,
+    "PATCHED-ELSEWHERE": 4,
+    "STANDS": 8,
+    "ALREADY-STRUCK": 1,
+    "SUPERSEDED-IN-FILE": 4,
+    "UNDER-CHALLENGE": 3
+  },
+  "assertionsEnumerated": 36,
+  "assertionsNeedingAnEdit": 23,
+  "assertionsMechanisable": 19,
+  "assertionsMechanisableAndStale": 12,
+  "assertions": [
+    {
+      "id": "A01",
+      "line": 3,
+      "section": "head",
+      "shape": "COUNT",
+      "assertion": "Six decisions this programme cannot make for itself.",
+      "verdict": "STALE",
+      "decidedBy": "the file's own §7 and at-a-glance row 7",
+      "mechanisable": true,
+      "correction": "struck; the file carries seven, six answered and one outstanding"
+    },
+    {
+      "id": "A02",
+      "line": 5,
+      "section": "head",
+      "shape": "COUNT",
+      "assertion": "ALL SIX ARE ANSWERED",
+      "verdict": "STALE",
+      "decidedBy": "§7, raised iteration 26 and unanswered",
+      "mechanisable": true,
+      "correction": "qualified to 'all six of the six that were sent'"
+    },
+    {
+      "id": "A03",
+      "line": 8,
+      "section": "head",
+      "shape": "CORPUS",
+      "assertion": "Nothing has been re-derived yet.",
+      "verdict": "STALE",
+      "decidedBy": "C-0109, C-0110, C-0111, C-0114, C-0116, C-0118, C-0119, C-0120, C-0122, C-0123",
+      "mechanisable": false,
+      "correction": "struck; ten claims across iterations 23-26 re-derived the line the answers opened"
+    },
+    {
+      "id": "A04",
+      "line": 9,
+      "section": "head",
+      "shape": "QUEUE",
+      "assertion": "queues the work they open as T-191-T-194",
+      "verdict": "STALE",
+      "decidedBy": "TASKS.md: T-191/192/193/194 all DONE, and the set is T-191-T-195",
+      "mechanisable": true,
+      "correction": "struck; four are DONE and the fifth, T-195, was never named here"
+    },
+    {
+      "id": "A05",
+      "line": 19,
+      "section": "head",
+      "shape": "QUEUE",
+      "assertion": "They are live in TASKS.md as T-63, T-115, P-13, T-112, T-154 and T-166",
+      "verdict": "STALE",
+      "decidedBy": "TASKS.md: all six ANSWERED; and the file now carries seven",
+      "mechanisable": true,
+      "correction": "struck; none is live and the count is seven"
+    },
+    {
+      "id": "A06",
+      "line": 81,
+      "section": "head",
+      "shape": "QUEUE",
+      "assertion": "it is queued as T-191, and it is the first unspent design axis since iteration 20",
+      "verdict": "STALE",
+      "decidedBy": "TASKS.md T-191 DONE (iteration 23), claim C-0109",
+      "mechanisable": true,
+      "correction": "struck; T-191 ran and the axis is spent"
+    },
+    {
+      "id": "A07",
+      "line": 112,
+      "section": "at-a-glance",
+      "shape": "CORPUS",
+      "assertion": "the PZC is still not given",
+      "verdict": "SELF-CONTRADICTION",
+      "decidedBy": "§3's own residue subsection and C-0111",
+      "mechanisable": false,
+      "correction": "qualified: NDI did not give it, the literature does (0.46-0.51 V vs SHE), and the surviving ask is the cell's definition of zero, not the material's PZC"
+    },
+    {
+      "id": "A08",
+      "line": 98,
+      "section": "how to read",
+      "shape": "COUNT",
+      "assertion": "A one-sentence answer is enough for all six.",
+      "verdict": "PATCHED-ELSEWHERE",
+      "decidedBy": "the UPDATED paragraph three lines below",
+      "mechanisable": true,
+      "correction": "left; the patch is adjacent and explicit"
+    },
+    {
+      "id": "A09",
+      "line": 144,
+      "section": "1",
+      "shape": "SPEC-BOUNDARY",
+      "assertion": "this programme cannot argue that its own 1.35-1.75x is the better use of it",
+      "verdict": "STANDS",
+      "decidedBy": "C-0091, C-0114 -- there is no fabrication-cost column",
+      "mechanisable": false,
+      "correction": ""
+    },
+    {
+      "id": "A10",
+      "line": 168,
+      "section": "1",
+      "shape": "QUEUE",
+      "assertion": "a census ... has never been taken and is queued as T-156",
+      "verdict": "ALREADY-STRUCK",
+      "decidedBy": "TASKS.md T-156 DONE (iteration 18), claim C-0091",
+      "mechanisable": true,
+      "correction": ""
+    },
+    {
+      "id": "A11",
+      "line": 189,
+      "section": "1",
+      "shape": "QUEUE",
+      "assertion": "T-50 is the only thing in the queue that would change that",
+      "verdict": "STANDS",
+      "decidedBy": "TASKS.md T-50 TODO HIGH; CH-0019",
+      "mechanisable": true,
+      "correction": ""
+    },
+    {
+      "id": "A12",
+      "line": 251,
+      "section": "2",
+      "shape": "CORPUS",
+      "assertion": "The reason given is a real objection and this programme has not answered it.",
+      "verdict": "SUPERSEDED-IN-FILE",
+      "decidedBy": "the T-192 block 14 lines below; C-0110",
+      "mechanisable": false,
+      "correction": "struck in place"
+    },
+    {
+      "id": "A13",
+      "line": 253,
+      "section": "2",
+      "shape": "CORPUS",
+      "assertion": "no claim here has ever evaluated the bias that would deliver §3's 100 pN across one",
+      "verdict": "SUPERSEDED-IN-FILE",
+      "decidedBy": "C-0110 (T-192)",
+      "mechanisable": false,
+      "correction": "struck in place"
+    },
+    {
+      "id": "A14",
+      "line": 258,
+      "section": "2",
+      "shape": "QUEUE",
+      "assertion": "That is T-192, it runs on C-0008's existing machinery, and it decides whether the reserve is worth spending",
+      "verdict": "SUPERSEDED-IN-FILE",
+      "decidedBy": "TASKS.md T-192 DONE; C-0110",
+      "mechanisable": true,
+      "correction": "struck in place"
+    },
+    {
+      "id": "A15",
+      "line": 303,
+      "section": "2",
+      "shape": "CORPUS",
+      "assertion": "But nothing in this programme has evaluated a layer that tall.",
+      "verdict": "STALE",
+      "decidedBy": "C-0110 -- 96 states, 12 (gap, buffer) cells, on C-0008's own solver",
+      "mechanisable": false,
+      "correction": "struck; this is the headline instance and it sits in the body a reviewer reads, not in an answer block"
+    },
+    {
+      "id": "A16",
+      "line": 311,
+      "section": "2",
+      "shape": "CORPUS",
+      "assertion": "This is the only route in the programme that can buy the desired stroke, so while it is open the desired-stroke branch cannot be either pursued or closed.",
+      "verdict": "STALE",
+      "decidedBy": "C-0110 ('no ruling is needed on this decision'), CH-0127",
+      "mechanisable": false,
+      "correction": "struck; the branch is closed by measurement and buys neither clause"
+    },
+    {
+      "id": "A17",
+      "line": 305,
+      "section": "2",
+      "shape": "CORPUS",
+      "assertion": "Why a no is as useful as a yes",
+      "verdict": "SUPERSEDED-IN-FILE",
+      "decidedBy": "C-0110 -- no ruling is needed at all",
+      "mechanisable": false,
+      "correction": "struck"
+    },
+    {
+      "id": "A18",
+      "line": 397,
+      "section": "3",
+      "shape": "QUEUE",
+      "assertion": "Queued as T-193; if the literature does not pin a template-stripped gold PZC ... comes back as a one-line ask",
+      "verdict": "PATCHED-ELSEWHERE",
+      "decidedBy": "TASKS.md T-193 DONE (iteration 23); C-0111; §3's residue subsection",
+      "mechanisable": true,
+      "correction": "pointer added to the residue subsection"
+    },
+    {
+      "id": "A19",
+      "line": 412,
+      "section": "3",
+      "shape": "SPEC-BOUNDARY",
+      "assertion": "What an answer needs to be. A material ... If the material is genuinely not yet chosen, saying so is also an answer",
+      "verdict": "PATCHED-ELSEWHERE",
+      "decidedBy": "the ANSWERED block above -- template-stripped gold",
+      "mechanisable": false,
+      "correction": "struck"
+    },
+    {
+      "id": "A20",
+      "line": 468,
+      "section": "4",
+      "shape": "CORPUS",
+      "assertion": "whether it exists is one evaluation of |k_eff| in a corner nobody has evaluated. T-192, and it is cheap.",
+      "verdict": "STALE",
+      "decidedBy": "C-0110 -- device B admitted at 1 of 96 states, refused at 96 of 96 on the acceptable clause",
+      "mechanisable": false,
+      "correction": "struck; §4 never recorded T-192's outcome, so decision 4 still reads as if device B were open"
+    },
+    {
+      "id": "A21",
+      "line": 521,
+      "section": "5",
+      "shape": "QUEUE",
+      "assertion": "and the Winkler reach is their fourth root. T-191.",
+      "verdict": "STALE",
+      "decidedBy": "TASKS.md T-191 DONE (iteration 23); C-0109",
+      "mechanisable": true,
+      "correction": "struck and pointed at C-0109"
+    },
+    {
+      "id": "A22",
+      "line": 561,
+      "section": "5",
+      "shape": "QUEUE",
+      "assertion": "T-153 -- a re-read of every plan margin at 38.08 nm -- cannot be scoped, because whether it is needed at all depends on this answer",
+      "verdict": "STALE",
+      "decidedBy": "TASKS.md T-153 DONE (iteration 18), claim C-0090",
+      "mechanisable": true,
+      "correction": "struck; it was scoped and done five iterations before this file was last edited"
+    },
+    {
+      "id": "A23",
+      "line": 552,
+      "section": "5",
+      "shape": "CORPUS",
+      "assertion": "And a seamless raster quantises the tile WIDTH at 32 bp. Admissible row lengths are odd multiples of 16 bp",
+      "verdict": "STALE",
+      "decidedBy": "C-0119 -- that is the SQUARE lattice; the honeycomb quantises its half turn at 5 bp (7k +/- 5)",
+      "mechanisable": false,
+      "correction": "domain qualifier added; the verdict survives on a different ground"
+    },
+    {
+      "id": "A24",
+      "line": 556,
+      "section": "5",
+      "shape": "SPEC-BOUNDARY",
+      "assertion": "What the programme would recommend. A purpose-length scaffold",
+      "verdict": "PATCHED-ELSEWHERE",
+      "decidedBy": "the ANSWERED block above -- declined implicitly",
+      "mechanisable": false,
+      "correction": "struck"
+    },
+    {
+      "id": "A25",
+      "line": 582,
+      "section": "6",
+      "shape": "QUEUE",
+      "assertion": "C-0006's four-layer row moves both bending lengths by a fourth root of 167x and 5.75x. T-191 runs it.",
+      "verdict": "STALE",
+      "decidedBy": "TASKS.md T-191 DONE; C-0109; and the pair is under CH-0124 (OPEN)",
+      "mechanisable": true,
+      "correction": "struck and replaced by C-0109's calibrated reading"
+    },
+    {
+      "id": "A26",
+      "line": 587,
+      "section": "6",
+      "shape": "CORPUS",
+      "assertion": "a buildable four-layer body reads 0.100166871 where the rigid limit reads 0.0344",
+      "verdict": "UNDER-CHALLENGE",
+      "decidedBy": "CH-0125 (OPEN), which names DECISIONS-FOR-NDI.md (twice) as a carrier",
+      "mechanisable": true,
+      "correction": "flagged in place; the re-solve is owed and is not performed here"
+    },
+    {
+      "id": "A27",
+      "line": 608,
+      "section": "6",
+      "shape": "CORPUS",
+      "assertion": "A buildable body is not the rigid one: a four-layer honeycomb brick reads 0.100166871, worse than the array",
+      "verdict": "UNDER-CHALLENGE",
+      "decidedBy": "CH-0125 (OPEN)",
+      "mechanisable": true,
+      "correction": "flagged in place"
+    },
+    {
+      "id": "A28",
+      "line": 619,
+      "section": "6",
+      "shape": "CORPUS",
+      "assertion": "the programme now has no unspent design axis at all, only a fabrication yield",
+      "verdict": "SELF-CONTRADICTION",
+      "decidedBy": "line 81 of the same file ('the first unspent design axis since iteration 20'), and C-0109-C-0123",
+      "mechanisable": false,
+      "correction": "struck; the body axis was unspent when this was written and has since been spent"
+    },
+    {
+      "id": "A29",
+      "line": 622,
+      "section": "6",
+      "shape": "CORPUS",
+      "assertion": "what would move it is the per-site incorporation measurement ... rather than another coupling design",
+      "verdict": "STALE",
+      "decidedBy": "C-0118 -- what moved it was the CROSS-SECTION; C-0122 on the real station lattice",
+      "mechanisable": false,
+      "correction": "struck; 10x6 is flat at 8 of 8 cells at the 90th percentile under the measured dropout"
+    },
+    {
+      "id": "A30",
+      "line": 78,
+      "section": "head",
+      "shape": "CORPUS",
+      "assertion": "a four-layer honeycomb sheet has D_par = 14 310.78 pN.nm against 85.50 and D_perp >= 19.222 against 3.345",
+      "verdict": "UNDER-CHALLENGE",
+      "decidedBy": "CH-0124 (OPEN) -- the pair is a MIXED state, not a bracket end; C-0109 measures 4 547.18 / 240.93",
+      "mechanisable": true,
+      "correction": "flagged and replaced by C-0109's calibrated pair"
+    },
+    {
+      "id": "A31",
+      "line": 363,
+      "section": "1+2",
+      "shape": "SPEC-BOUNDARY",
+      "assertion": "We can rank what the two spends buy ... and no column at all for fabrication cost",
+      "verdict": "STANDS",
+      "decidedBy": "C-0114; the standing CLAUDE.md rule about ranking buys rather than costs",
+      "mechanisable": false,
+      "correction": ""
+    },
+    {
+      "id": "A32",
+      "line": 678,
+      "section": "discharged",
+      "shape": "QUEUE",
+      "assertion": "T-95 and T-102 no longer apply",
+      "verdict": "STANDS",
+      "decidedBy": "TASKS.md: both DISCHARGED",
+      "mechanisable": true,
+      "correction": ""
+    },
+    {
+      "id": "A33",
+      "line": 691,
+      "section": "resources",
+      "shape": "CORPUS",
+      "assertion": "Two sources would convert a bound into a number and neither is reachable by an automated fetch",
+      "verdict": "STANDS",
+      "decidedBy": "TASKS.md open-question 1: Lee et al. was struck, these two were not",
+      "mechanisable": false,
+      "correction": ""
+    },
+    {
+      "id": "A34",
+      "line": 707,
+      "section": "resources",
+      "shape": "QUEUE",
+      "assertion": "T-51 is not warranted; T-50 remains warranted",
+      "verdict": "STANDS",
+      "decidedBy": "TASKS.md: T-51 TODO low, T-50 TODO HIGH",
+      "mechanisable": true,
+      "correction": ""
+    },
+    {
+      "id": "A35",
+      "line": 103,
+      "section": "how to read",
+      "shape": "SPEC-BOUNDARY",
+      "assertion": "Nothing here is measured. Every number is TRL 1-3",
+      "verdict": "STANDS",
+      "decidedBy": "the project invariant in SESSION-PROMPT.md",
+      "mechanisable": false,
+      "correction": ""
+    },
+    {
+      "id": "A36",
+      "line": 116,
+      "section": "at-a-glance",
+      "shape": "QUEUE",
+      "assertion": "decision 7's owner task is T-199",
+      "verdict": "STANDS",
+      "decidedBy": "TASKS.md T-199 DONE; the live specification carrier is open-question item 12",
+      "mechanisable": true,
+      "correction": "note added: the owner column of row 7 names the ANALYSIS task, where rows 1-6 name specification tasks"
+    }
+  ],
+  "referencedTasks": [
+    {
+      "task": "T-191",
+      "queueStatus": "DONE"
+    },
+    {
+      "task": "T-194",
+      "queueStatus": "DONE"
+    },
+    {
+      "task": "T-184",
+      "queueStatus": "DONE"
+    },
+    {
+      "task": "T-195",
+      "queueStatus": "TODO"
+    },
+    {
+      "task": "T-63",
+      "queueStatus": "ANSWERED"
+    },
+    {
+      "task": "T-115",
+      "queueStatus": "ANSWERED"
+    },
+    {
+      "task": "P-13",
+      "queueStatus": "ANSWERED"
+    },
+    {
+      "task": "T-112",
+      "queueStatus": "ANSWERED"
+    },
+    {
+      "task": "T-154",
+      "queueStatus": "ANSWERED"
+    },
+    {
+      "task": "T-166",
+      "queueStatus": "ANSWERED"
+    },
+    {
+      "task": "T-199",
+      "queueStatus": "DONE"
+    },
+    {
+      "task": "T-5b",
+      "queueStatus": "DONE"
+    },
+    {
+      "task": "T-50",
+      "queueStatus": "TODO"
+    },
+    {
+      "task": "T-156",
+      "queueStatus": "DONE"
+    },
+    {
+      "task": "T-2",
+      "queueStatus": "DONE"
+    },
+    {
+      "task": "T-3",
+      "queueStatus": "DONE"
+    },
+    {
+      "task": "T-25",
+      "queueStatus": "DONE"
+    },
+    {
+      "task": "T-16",
+      "queueStatus": "DONE"
+    },
+    {
+      "task": "T-4",
+      "queueStatus": "DONE"
+    },
+    {
+      "task": "T-192",
+      "queueStatus": "DONE"
+    },
+    {
+      "task": "T-193",
+      "queueStatus": "DONE"
+    },
+    {
+      "task": "T-153",
+      "queueStatus": "DONE"
+    },
+    {
+      "task": "T-165",
+      "queueStatus": "DONE"
+    },
+    {
+      "task": "T-95",
+      "queueStatus": "DISCHARGED"
+    },
+    {
+      "task": "T-102",
+      "queueStatus": "DISCHARGED"
+    },
+    {
+      "task": "T-51",
+      "queueStatus": "TODO"
+    }
+  ],
+  "absentNumericTokens": [
+    {
+      "line": 70,
+      "token": "9.61",
+      "cited": "C-0086, C-0006, C-0058",
+      "verdict": "NOW OWNED, AND REPAIRED",
+      "owner": "C-0109",
+      "repair": "the live text now reads 9.608 nm and cites C-0109; the withdrawn 9.61 is struck and, since strip_struck() also runs before the numeric trace, no longer asks for a provenance no claim can supply",
+      "note": "the four-layer honeycomb thickness, 9.608 nm in C-0109's own variant table; it was the file's arithmetic when written and has had an owner since iteration 23"
+    }
+  ],
+  "checkers": {
+    "note": "tools/trace-answers.py runs four checks per document; the other three tools are whole-tree and are reported as their own totals.",
+    "before": {
+      "ANSWERS.md": {
+        "tokens": 1254,
+        "cited": 1132,
+        "elsewhere": 122,
+        "absent": 0,
+        "openAssertionsContradicted": 0,
+        "staleChallengeAssertions": 0,
+        "selfContradictions": 0
+      },
+      "DECISIONS-FOR-NDI.md": {
+        "note": "not checked by anything; this reading was taken by pointing the tracer at it by hand, which is the whole finding",
+        "tokens": 394,
+        "cited": 246,
+        "elsewhere": 147,
+        "absent": 1,
+        "openAssertionsContradicted": 3,
+        "staleChallengeAssertions": 0,
+        "selfContradictions": 0
+      },
+      "checkMarkdownTables": {
+        "defects": 0,
+        "files": 375
+      },
+      "checkCorpusLinks": {
+        "brokenLinks": 0,
+        "files": 366,
+        "note": "it scanned gpd/ only, so NEITHER outward-facing root document's claim links were checked either"
+      },
+      "testTraceAnswers": {
+        "checks": 83,
+        "failures": 0
+      },
+      "checkCorpusLinksSelfTest": {
+        "checks": 11,
+        "failures": 0
+      }
+    },
+    "after": {
+      "ANSWERS.md": {
+        "tokens": 1251,
+        "cited": 1120,
+        "elsewhere": 131,
+        "absent": 0,
+        "openAssertionsContradicted": 0,
+        "staleChallengeAssertions": 0,
+        "selfContradictions": 0,
+        "movement": "3 tokens dropped (they were struck) and 9 moved CITED -> ELSEWHERE (their block's citation sat inside a struck span). 0 moved into ABSENT, so no number became untraceable and no verdict moved."
+      },
+      "DECISIONS-FOR-NDI.md": {
+        "tokens": 436,
+        "cited": 282,
+        "elsewhere": 154,
+        "absent": 0,
+        "openAssertionsContradicted": 0,
+        "staleChallengeAssertions": 0,
+        "selfContradictions": 0
+      },
+      "checkMarkdownTables": {
+        "defects": 0,
+        "files": 379
+      },
+      "checkCorpusLinks": {
+        "brokenLinks": 0,
+        "files": 370,
+        "note": "ROOT_DOCUMENTS added; ANSWERS.md and DECISIONS-FOR-NDI.md are now scanned and both are clean, so the gap cost nothing THIS time"
+      },
+      "testTraceAnswers": {
+        "checks": 101,
+        "failures": 0
+      },
+      "checkCorpusLinksSelfTest": {
+        "checks": 19,
+        "failures": 0
+      }
+    }
+  },
+  "checkerDecision": {
+    "verdict": "NO NEW CHECKER. The existing tracer already reads this file; what was missing was that anybody pointed it at it.",
+    "evidence": "tools/trace-answers.py --answers DECISIONS-FOR-NDI.md runs unmodified and reports 3 open assertions contradicted by TASKS.md and 1 ABSENT numeric token, with zero code changes.",
+    "shipped": "two changes to tools/trace-answers.py, tests first. (1) DEFAULT_DOCUMENTS = [ANSWERS.md, DECISIONS-FOR-NDI.md], --answers now nargs=+, every output row tagged with its document. (2) strip_struck(): a ~~withdrawn~~ span is blanked before all four checks, preserving length and line numbers -- without it the ONLY repair this project permits (strike, never delete) leaves every flag exactly where it was, so the checker penalised the discipline it exists to support. 18 new self-tests, 83 -> 101. AND a third, in tools/check-corpus-links.py: it scanned gpd/ only, so a mistyped claim slug in either outward-facing document was invisible to it. ROOT_DOCUMENTS added, 8 new self-tests, 11 -> 19; both documents are clean, so the gap had not yet cost anything.",
+    "notMechanisable": "the CORPUS class -- 'nothing in this programme has evaluated a layer that tall' names no task and no number, so no corpus comparison can reach it. That is C-0067's superseded-standing-value class verbatim, and its exact check still needs a superseded-by edge at STATEMENT granularity that no claim carries.",
+    "nearestApproximation": "flag any sentence containing a negative-existence phrase whose section also contains a claim filed after the sentence's own date. Measured recall on this audit: 9 of 13 CORPUS-class defects. Its false-positive rate is UNMEASURED, and C-0067's standing rule is that an unmeasured false-positive rate is what makes a checker stop being believed -- so it is deliberately NOT shipped."
+  }
+}
