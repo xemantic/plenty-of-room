@@ -149,6 +149,18 @@ The undemonstrated motif is unchanged and remains the larger exposure.
    body rigidity is first order rather than an idealisation. **The cleanest obstruction is a specification
    gap rather than physics**: a body tied at many out-of-plane sites *is* multilayer origami, and §3 names a
    single-layer tile — which is `T-166`, item 6 of [`DECISIONS-FOR-NDI.md`](DECISIONS-FOR-NDI.md).
+   **And the last unspent axis was then spent, and it runs the wrong way** (`C-0098`, `T-165`). Searching
+   the shared body's *placement and distribution* on the crossover sites the lattice actually supplies —
+   25 graded cells — the best 90th-percentile dishing is **0.375506727**, at 100 % exceedance: **3.76×**
+   the convention and **1.56× WORSE** than `C-0093`'s 0.24028028, **because that figure was never
+   buildable** — it sits on an abstract 90-station grid where the lattice offers at most 60 (`CH-0113`).
+   Two things close the axis rather than merely failing it. **The distribution axis shuts as `1/t`**: the
+   shared body's stiff limit is a *kinematic* constraint independent of how the ties are distributed, so
+   the 1.30–1.61× `C-0089` bought was a property of a **divided** mandate — *the same division that makes a
+   shared body flatter is what removes the axis*. And **the real lattice's redundancy slope is 2.08×
+   shallower** than the abstract grid's, fixing the columns at **4** against the **13** the dropout demands
+   — 141.44 nm of tile, **3.54×** §3's. So the flat-tile question is closed on every axis this programme
+   can reach, and what remains is a fabrication yield or a specification change, not a design.
    (`C-0006`, `C-0009`, `C-0022`, `CH-0005`, `CH-0025`; corrected by `C-0058`, `CH-0071`, `C-0063`;
    **conditioned by `C-0087`, `CH-0084`, `CH-0102`**.)
 2. **The polymer layer confines the tile in one direction only.** Its lateral restoring stiffness is *exactly*

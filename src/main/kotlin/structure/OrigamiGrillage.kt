@@ -156,8 +156,10 @@ class GrillageDeflection internal constructor(
                 // signed so that a positive force is one transmitted from the far side of the
                 // interface toward the near one, matching [shearAcrossInterface]
                 verticalForce = -lattice.linkStiffness *
+                        lattice.softeningOf(crossover).link *
                         lattice.linkExtension(coefficients, crossover),
                 hingeMoment = lattice.sheet.crossoverHingeStiffness *
+                        lattice.softeningOf(crossover).hinge *
                         lattice.hingeRotation(coefficients, crossover)
             )
         }
@@ -257,6 +259,12 @@ class GrillageDeflection internal constructor(
  *          therefore no longer join their two sheet duplexes at all — neither by the dihedral
  *          spring `k_θ` nor by the vertical link. `T-110`'s design variable; empty by default,
  *          in which case this class is `T-10`'s lattice to the last bit.
+ * @param softenedCrossovers per-site multipliers on the **two** elements of a crossover — the
+ *          dihedral spring and the vertical link, separately. `T-164`'s design variable, needed
+ *          because a row-end crossover may lose torsional register while staying covalently
+ *          continuous, which is neither of `C-0090`'s two end-of-row readings. Empty by default,
+ *          in which case every crossover is [CrossoverSoftening.FULL]; a site mapped to
+ *          [CrossoverSoftening.ABSENT] is bit-identical to the same site being consumed.
  */
 class OrigamiGrillage(
     val sheet: OrigamiSheet,
@@ -267,7 +275,8 @@ class OrigamiGrillage(
     val subdivisions: Int = DEFAULT_SUBDIVISIONS,
     val linkStiffness: Double = RIGID_LINK_STIFFNESS,
     val supports: List<PointSupport> = emptyList(),
-    val consumedCrossovers: Set<CrossoverSite> = emptySet()
+    val consumedCrossovers: Set<CrossoverSite> = emptySet(),
+    val softenedCrossovers: Map<CrossoverSite, CrossoverSoftening> = emptyMap()
 ) {
 
     /**
@@ -395,6 +404,11 @@ class OrigamiGrillage(
      */
     val crossoverSites: List<CrossoverSite>
         get() = crossovers.map { CrossoverSite(it.lowerBeam, it.column) }
+
+    /** What [crossover] retains of an interior crossover's two elements — [CrossoverSoftening.FULL] unless named. */
+    fun softeningOf(crossover: Crossover): CrossoverSoftening =
+        softenedCrossovers[CrossoverSite(crossover.lowerBeam, crossover.column)]
+            ?: CrossoverSoftening.FULL
 
     private fun dof(beam: Int, node: Int, component: Int): Int =
         (beam * nodeX.size + node) * DOF_PER_NODE + component
@@ -525,7 +539,10 @@ class OrigamiGrillage(
 
     /** The energy in `pN·nm` the crossover hinges store in [field] — `½ k_θ Δφ²` each. */
     fun hingeEnergy(field: F64Array): Double = 0.5 * sheet.crossoverHingeStiffness *
-            crossovers.sumOf { hingeRotation(field, it).let { rotation -> rotation * rotation } }
+            crossovers.sumOf {
+                val rotation = hingeRotation(field, it)
+                softeningOf(it).hinge * rotation * rotation
+            }
 
     /**
      * The energy in `pN·nm` the crossover vertical links store in [field].
@@ -534,7 +551,10 @@ class OrigamiGrillage(
      * energy: it must be negligible against [hingeEnergy] for any field the model is used on.
      */
     fun linkEnergy(field: F64Array): Double = 0.5 * linkStiffness *
-            crossovers.sumOf { linkExtension(field, it).let { gap -> gap * gap } }
+            crossovers.sumOf {
+                val gap = linkExtension(field, it)
+                softeningOf(it).link * gap * gap
+            }
 
     /** Beams, hinges and links — everything but the foundation and the anchors. */
     fun structuralEnergy(field: F64Array): Double =
@@ -571,8 +591,8 @@ class OrigamiGrillage(
     }
 
     private fun addHinges(matrix: F64Array) {
-        val hinge = sheet.crossoverHingeStiffness
         crossovers.forEach { crossover ->
+            val hinge = sheet.crossoverHingeStiffness * softeningOf(crossover).hinge
             scatter(
                 matrix,
                 intArrayOf(
@@ -587,10 +607,11 @@ class OrigamiGrillage(
     private fun addLinks(matrix: F64Array) {
         val half = interhelicalDistance / 2.0
         val gradient = doubleArrayOf(1.0, half, -1.0, half)
-        val element = Array(4) { i ->
-            DoubleArray(4) { j -> linkStiffness * gradient[i] * gradient[j] }
-        }
         crossovers.forEach { crossover ->
+            val stiffness = linkStiffness * softeningOf(crossover).link
+            val element = Array(4) { i ->
+                DoubleArray(4) { j -> stiffness * gradient[i] * gradient[j] }
+            }
             scatter(
                 matrix,
                 intArrayOf(

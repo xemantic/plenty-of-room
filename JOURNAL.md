@@ -7121,3 +7121,78 @@ and then not worked, the iteration running three agents rather than four; its ro
 whole iteration and is corrected here. **Reserving a number is not scheduling the task**, and the extended
 `queue_status` reads a stale reservation as *not open*, which is the same failure direction `P-24` fixed for
 `DISCHARGED` — a task the queue believes is being worked is a task nobody picks up.
+
+## 2026-08-18 — Iteration 20
+
+Three loops plus one process task, and the flat-tile question closes on every axis this programme can
+reach. Every number below was grepped out of its claim file.
+
+**`C-0098` (`T-165`) — the last unspent axis runs the wrong way, and the reason is the same division that
+made the escape look promising.** `C-0093` had left one thing unsearched: the shared body's *placement and
+distribution*. Searched on the crossover sites the lattice actually supplies, over **25** graded cells, the
+best 90th-percentile dishing is **0.375506727** at **100 %** exceedance — **3.76×** the convention and
+**1.56× WORSE** than `C-0093`'s 0.24028028. **Because that number was never buildable**: it sits on an
+abstract 90-station grid where the lattice offers at most **60** (`CH-0113`).
+Two findings close the axis rather than merely failing it. **The distribution axis shuts as `1/t`** — the
+shared body's stiff limit is a *kinematic* constraint independent of how the ties are distributed, measured
+as a spread collapsing 0.555431809 → 0.00689107707 → 9.72244009e−05 in lock-step with the matrix departure
+from that limit. So **`C-0089`'s 1.30–1.61× was a property of a DIVIDED mandate, and the same division that
+makes a shared body flatter is what removes the axis.** And **the real lattice's redundancy slope is
+−0.376769756, 2.08× shallower** than the abstract grid's, fixing the columns at **4** against the **13** the
+dropout demands — 141.44 nm, **3.54×** §3's tile.
+Two more that will cost the next agent if ignored: **the richest phase is the worst host** (all ten 60-site
+phases are *seven*-column sheets, disjoint from `C-0015`'s eight-column ten and `C-0063`'s two — phase 17 at
+60 ties reads 0.487309625 against phase 24's 53 ties at 0.385192562), and **`C-0089`'s ranking instrument
+does not transfer**: Spearman ρ falls from 0.9729 across designs to **0.468487481** across phases.
+
+**`C-0099` (`T-164`) — it does not matter, and that is measured.** Destroying the dihedral spring of **all
+14** row-end crossovers, `13.5294118 pN·nm/rad` to exactly zero, moves the best 34-root dishing
+**0.0621469105 → 0.0651753854** (ratio **1.0487309**). `T-5b`'s 0.10 is never approached: **34.8 %** of the
+convention is unused at zero row-end stiffness against 37.9 % at full, so the whole unknown is worth **three
+percentage points of margin**.
+**And `CH-0111`'s bracket is not a bracket.** `C-0090`'s two readings differ in *three* things, and the
+2.70925468× decomposes as **2.85 % dihedral spring, 97.40 % vertical link, −0.25 % mesh node**. The link is a
+**constraint** expressing covalent continuity — which `C-0095` had already settled — so the refused reading
+is **outside the reachable set**, and that was the cheap bound at no solve. Channel B is a **step, not a
+ramp**: 0.0651072886 at `s = 0.125` against 0.168640591 at `s = 0` exactly, because a penalty at an eighth
+strength still enforces its constraint. **Monotonicity was measured, not assumed** — 16 of 16 consecutive
+pairs — and no variational argument would have supplied it, a peak dishing not being an energy.
+
+**`C-0100` (`T-160`) — the collar is width-independent, and what is not is the way it is written down.**
+Stated fit-free, as `−totalDeficit/centrelineLoad` from the global momentum flux with no fit and no standoff
+in it, the whole edge effect is **1.6507426 nm** at 40.0 nm against **1.65008284 nm** at 38.08 — **0.0400 %**,
+a factor of eight inside `C-0090`'s declared 0.32 %. `C-0090`'s placement moves **0.0712 %**, so its
+carry-forward is checked and the recommendation is to change nothing.
+**The cheap bound did not settle it, and saying so is the justification for the solve**: a closed-form tail
+model bracketed the movement at **0.131–0.443 %**, straddling 0.32 %. **Four of six falsifiers then fired**,
+and together they are the finding: the three numbers `C-0090` literally carries move 0.38–2.15 %, do **not**
+converge, and are **not monotone** — all because `fitEdgeTaper`'s 1 nm standoff **snaps to a mesh node**, and
+the tile's own half-width therefore chooses where the quadrature starts, at the peak of the enhancement.
+Placed exactly, the worst departure is 0.0973 % and the sweep is monotone. **Re-partitioning the same 40 nm
+field — no physics, only where the limit sits — moves the flatness 0.368 %, which is 5.2× what the tile's
+width is worth and outside the sensitivity the claim declares.**
+
+**`C-0101` (`T-167`, coordinator) — re-emit, and a fold that was a diverged solver.** `T-159` had left eleven
+result files the code no longer reproduces. The judgement's premise is false: **git already holds the
+record**, and keeping an unreproducible file costs the byte-for-byte re-run diff half this repository rests
+on. All eleven re-emitted. **The declared expectation that no verdict moves is FALSE**, and the exception
+justifies the exercise: two of `C-0050`'s notes explained a refusal by *"the arm folds"* citing a near-end
+rotation of **3.03 × 10¹²¹** — a doubling ladder running away, written into a catalogue as physics — and the
+repaired run replaces them with a **kinematic** refusal needing no solver and a **genuine** branch limit at
+99.7 % of the demanded stroke against the ladder's 89 %. `C-0050`'s verdict stands; its ground is corrected.
+
+**Three coordinator errors this iteration, all found by agents.**
+*One.* My `git add gpd/results/` in the `C-0101` commit swept in **two agents' in-flight result files**. Both
+happened to be byte-identical to their final versions, so nothing is stale — but it is the `git add -A`
+window `CLAUDE.md` records, committed by the person who has been quoting the rule at every agent. A
+directory add is the same hazard as `-A`; **stage the files, not the directory.**
+*Two.* Re-emitting `T-149` **broke two gates that read it** — `C-0101` reasoned about amending *claims* that
+quote a moved number and never considered *tests* that assert on the file. They were asserting `CH-0099`'s
+pre-repair census of 8 element-boundary rows; the repaired file has **0**, which is `C-0096`'s own finding,
+so the tests were pinning the stale state and are corrected to the repaired census. **A result file has
+readers in `src/test/` as well as in `src/main/`, and `C-0082`'s census already said so** — 13 result files
+are read by tests — which is exactly the fact `C-0101` had in front of it and did not use.
+*Three.* The first re-run of those gates failed with `NoSuchFileException: in-progress-results-generic.bin`
+and was very nearly read as a real failure; it is the concurrent-`test-results` race `CLAUDE.md` documents,
+from running Gradle beside two agents' verify runs. **The cure is in the file and the coordinator did not
+apply it to itself.**

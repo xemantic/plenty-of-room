@@ -188,9 +188,12 @@ class DoublingLadderRepairTest {
         // substituting a table into ITSELF moves nothing — C-0084's own gate-2 discipline
         assert(repriced.all { it.marginMovement == null || it.marginMovement.isCloseTo(1.0, 1e-12) })
         assert(repriced.all { it.publishedBindingCeiling == it.correctedBindingCeiling })
-        // and the inflation CH-0099 priced is recovered from the file's own paired fields
+        // The inflation `CH-0099` priced was carried by the 8 rows the element boundary bound at.
+        // `C-0096`'s repair removes the boundary and `C-0101` re-emitted the file, so there is no
+        // longer an inflated row to recover — which is the repair's whole point, asserted rather
+        // than dropped. Every row that WAS inflated sat at the 10 nm layer, and none is left.
         val inflated = repriced.filter { (it.publishedInflation ?: 1.0) > 2.0 }
-        assert(inflated.size == 8)
+        assert(inflated.isEmpty())
         assert(inflated.all { it.layerHeight == 10.0 })
     }
 
@@ -291,9 +294,14 @@ class DoublingLadderRepairTest {
     @Test
     fun `gate 5 upstream - C-0084's element-boundary census is reproduced from its own file`() {
         val rows = publishedRows()
-        // CH-0099: at 8 of 108 states the element boundary is the binding ceiling
-        assert(rows.count { it.bindingCeiling.startsWith("element model branch end") } == 8)
-        // C-0084: at 12 of 108 the branch ends on the element model
+        // `CH-0099` priced the element boundary as the binding ceiling at 8 of 108 states — and
+        // that was read on the DOUBLING LADDER's premature refusal. `C-0096`'s repair removes it
+        // entirely, and `C-0101` re-emitted `T-149` so the file agrees with the code that makes
+        // it, so the census reproduced here is now the repaired one: the ceiling binds NOWHERE,
+        // and the 8 states it used to own are back with the layer and the field.
+        assert(rows.count { it.bindingCeiling.startsWith("element model branch end") } == 0)
+        // C-0084: at 18 of 108 the branch still ENDS on the element model — the branch end is a
+        // real property of an inextensible arm; what it stopped being is a binding CEILING.
         assert(rows.count { it.strokeCeilingOwner == "element model" } == 18)
         assert(
             rows.count {
