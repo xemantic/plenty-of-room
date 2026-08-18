@@ -89,6 +89,14 @@ and after two transient API failures, an agent's work moves into the main contex
 |---|---|---|---|
 | H | `T-197` is a COUPLED four-layer tile flat under the measured dropout? | `C-0118` | `CH-0137`, `CH-0138` |
 | I | `T-198` can four honeycomb layers be rastered from one circular M13? | `C-0119` | `CH-0139`, `CH-0140` |
+| coordinator | `T-199` is 10 × 6 a better tile than 15 × 4? | `C-0120` | `CH-0141`, `CH-0142` |
+
+**`T-199` is taken before `T-197`, deliberately, and the reason is worth recording.** `T-198` raised it
+mid-iteration and it changes what `T-197` should be run *on*: `C-0109` already reports every coupled cell as
+worse than the uncoupled tile, so `T-197`'s remaining value is confirming that two unspent axes do not reverse
+a verdict the data already suggests — whereas `T-199` can move the **tile**, and running a coupling study on a
+cross-section its own source recommends against is the more expensive mistake. `T-197` follows it.
+`C-0118` and its challenge block stay reserved for `T-197`.
 
 An agent needing more takes the next free number **above every block above** and says where it moved from.
 
