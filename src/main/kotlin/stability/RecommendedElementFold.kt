@@ -17,6 +17,7 @@
 package com.xemantic.nano.plentyofroom.stability
 
 import com.xemantic.nano.plentyofroom.anchoring.ArmAnchorage
+import com.xemantic.nano.plentyofroom.anchoring.BranchStrategy
 import com.xemantic.nano.plentyofroom.anchoring.TwoSpringElastica
 import com.xemantic.nano.plentyofroom.anchoring.elasticaArmForStiffness
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
@@ -142,7 +143,8 @@ fun recommendedArmLine(
     bendingRigidity: Double = Gen1Tile.DUPLEX_BENDING_RIGIDITY,
     targetStiffness: Double = GEN1_MANDATE_STIFFNESS,
     placementStroke: Double = GEN1_ACCEPTABLE_STROKE,
-    steps: Int = 400
+    steps: Int = 400,
+    strategy: BranchStrategy = BranchStrategy.CONTINUATION
 ): ElasticaArmLoadLine {
     val length = elasticaArmForStiffness(
         hingeStiffness = rootStiffness,
@@ -156,7 +158,9 @@ fun recommendedArmLine(
     )
     return ElasticaArmLoadLine(
         name = name,
-        arm = TwoSpringElastica(bendingRigidity, length, rootStiffness, tipStiffness, steps),
+        arm = TwoSpringElastica(
+            bendingRigidity, length, rootStiffness, tipStiffness, steps, strategy
+        ),
         count = count
     )
 }

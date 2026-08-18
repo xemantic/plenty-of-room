@@ -1,0 +1,537 @@
+{
+    "task": "T-161",
+    "leaf": "A8.2",
+    "question": "can a crossover be drawn at the LAST base pair of a duplex?",
+    "conditions": "T = 300 K, k_BT = 4.141947 pN*nm, aqueous 2 mM MgCl2; single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm, 0.34 nm rise, 32/3 bp per turn, 16 bp column pitch, 32 bp per-interface spacing; along-helix width 38.08 nm (112 bp, C-0086) against §3's nominal 40.0 nm",
+    "decision": "YES. A crossover at the terminal base pair is not merely permitted: in a boustrophedon it is the raster turn, i.e. the object the row length is measured between. The programme carries C-0090's ADMITTED reading.",
+    "heading": {
+        "does the geometry forbid it": "NO — the demand at a row end equals the covalent budget of a duplex end, exactly one crossover, and a terminal base pair is LESS constrained than an interior one because nothing lies outboard of it",
+        "does the software forbid it": "NO — caDNAno permits forcing a crossover between any two bases, its default rule is azimuthal rather than axial, cadnano 2.1 automates the raster turn, and scadnano's API states that a crossover is NECESSARILY at a strand endpoint",
+        "has anybody published one": "YES — every Rothemund rectangle. The 24-helix rectangle of Fig. 2b is 288 bp = 18 column pitches wide, so both vertical edges lie on the crossover lattice, and it folded 90 % well-formed (S = 40)",
+        "is anything left for NDI": "ONE THING, and it is not the permission. Rothemund states that the strain at an edge on the crossover lattice is unrelieved and that its relief mechanism is unknown; his remedy is one or two unpaired scaffold bases, which is a LENGTH and would move the row off 112 bp"
+    },
+    "sources": [
+        {
+            "source": "Rothemund, Nature 440:297 (2006), main text",
+            "locator": "gpd/data/T-151-sources/DNAorigami-nature.txt, p. 298 col. 1",
+            "readStatus": "read directly",
+            "quotation": "for the scaffold to raster progressively from one helix to another and onto a third, the distance between successive scaffold crossovers must be an odd number of half turns",
+            "bearing": "The rule is written ON the scaffold crossovers, and in a boustrophedon they are the two ends of one row. The row length is MEASURED BETWEEN THEM, so the crossover sits at the row end by construction: the question T-161 asks is answered in the definition of the quantity C-0086 quantised."
+        },
+        {
+            "source": "Rothemund 2006, Supplementary Note S2 (Supplementary Notes 1-11)",
+            "locator": "gpd/data/T-151-sources/DNAorigami-supp1.linux.txt, lines 154-158",
+            "readStatus": "read directly",
+            "quotation": "However, at seams and edges this is not necessarily true, even where a seam or edge lines up with the underlying crossover lattice. At seams or edges, because DNA has a major and minor groove, a crossover involving staple strands is in tension with an adjacent crossover involving the scaffold strand. Such a configuration of crossovers in tension has never before been used in DNA nanostructures.",
+            "bearing": "Rothemund contemplates EXACTLY the 38.08 nm case — an edge that lines up with the crossover lattice — and does not forbid it. He prices it: the glide symmetry that balances strain in the bulk does not hold at an edge."
+        },
+        {
+            "source": "Rothemund 2006, Supplementary Note S2",
+            "locator": "gpd/data/T-151-sources/DNAorigami-supp1.linux.txt, lines 161-165",
+            "readStatus": "read directly",
+            "quotation": "How the strain is actually relieved is unknown, the final base pairs of each helix may be distorted. Strain at seams or edges does not appear to cause any gross defects in the origami; bases at the end of the helices are highly available for stacking against other DNA origami which suggests that the last base pair does form and assumes a planar configuration. If, in the future, strain associated defects should be detected at edges, then one or two scaffold bases could be left unpaired and allowed to form a hairpin that should relax the crossover.",
+            "bearing": "The load-bearing sentence. The last base pair DOES form, the edge crossover is built and imaged, the strain relief is unknown, and the remedy is one or two unpaired scaffold bases. This is an answer AND a named residual risk."
+        },
+        {
+            "source": "Rothemund 2006, Supplementary Figure S19 (the rectangle of Fig. 2b)",
+            "locator": "gpd/data/T-151-sources/DNAorigami-supp1.linux.txt, lines 1126-1127",
+            "readStatus": "read directly",
+            "quotation": "27 turns wide at 10.666 bases / turn -> 288 nt / 24 helices tall",
+            "bearing": "288 bp is 18 column pitches EXACTLY, so the vertical edges of the structure Rothemund folded lie ON the crossover lattice and its raster turns ARE crossovers at the last base pair. F5 fired here, favourably."
+        },
+        {
+            "source": "Rothemund 2006, main text (the same rectangle)",
+            "locator": "gpd/data/T-151-sources/DNAorigami-nature.txt, line 164",
+            "readStatus": "read directly",
+            "quotation": "The yield of well-formed rectangles was high (90%, S = 40)",
+            "bearing": "The yield of the structure whose edges lie on the crossover lattice. The pdftotext extraction renders '=' as the ligature '1/4'; the sign is read from the sentence, and the digits 90 and 40 are verbatim."
+        },
+        {
+            "source": "Douglas, Marblestone, Teerapittayanon, Vazquez, Church, Shih, Nucleic Acids Research 37:5001 (2009) — caDNAno",
+            "locator": "gpd/data/T-151-sources/PMC2731887-fullTextXML.xml, Results and Discussion",
+            "readStatus": "read directly",
+            "quotation": "caDNAno permits the user to force crossovers between any two staple bases or between any two scaffold bases. Users should take care when forcing crossovers, as departure from the default rules may lead to folding failure if too much deviation from canonical DNA geometry is implied.",
+            "bearing": "The software's default rule is about the HELICAL PHASE (points of closest proximity), not the axial position, and even that is not a prohibition. 'The software forbids it' is answered NO."
+        },
+        {
+            "source": "scadnano Python package API documentation, Domain.has_crossover_at",
+            "locator": "gpd/data/T-161-sources/scadnano-python-package-readthedocs.html (translated from cadnano2 strand.py hasXoverAt)",
+            "readStatus": "read directly",
+            "quotation": "An xover is necessarily at an enpoint of a strand",
+            "bearing": "The design language does not merely permit a crossover at a strand end, it REQUIRES one — a crossover is where a domain terminates. ('enpoint' is the source's own typo, quoted verbatim.)"
+        },
+        {
+            "source": "cadnano.org documentation, 'New features in version 2.1'",
+            "locator": "gpd/data/T-161-sources/cadnano-org-docs.html",
+            "readStatus": "read directly",
+            "quotation": "Automatic scaffold rasterization: Adjacent strands that are added via a click-and-drag operation in the lattice view will be automatically resized and connected via crossovers.",
+            "bearing": "The tool AUTOMATES the raster turn: connecting the ends of adjacent strands by crossovers is a one-click feature, not a forced edit."
+        },
+        {
+            "source": "Ke, Douglas, Liu, Zhang, Lindsay, Yan, JACS 131:15903 (2009), 'Multilayer DNA origami packed on a square lattice'",
+            "locator": "PMC2821935 — EuropePMC fullTextXML HTTP 404 (0 bytes); the PMC article page returns a browser-challenge stub (2 643 characters of script, no article text)",
+            "readStatus": "not found",
+            "quotation": "",
+            "bearing": "The square-lattice azimuth rule this project cites from Ke et al. is NOT re-read here. It is not load-bearing for T-161: nothing in the verdict depends on it beyond the 8 bp plane lattice C-0055 already carries."
+        },
+        {
+            "source": "EuropePMC, twelve recorded searches",
+            "locator": "gpd/data/T-161-sources/queries.md and the raw JSON beside it",
+            "readStatus": "read directly",
+            "quotation": "",
+            "bearing": "NO source was found that forbids a crossover at a terminal base pair. 'DNA origami AND boustrophedon' returns 0 hits and 'DNA origami AND crossover AND helix terminus' returns 0; the negative existence result is recorded with its queries so one paper can falsify it."
+        }
+    ],
+    "geometry": [
+        {
+            "quantity": "strand termini at a duplex end",
+            "value": 2.0,
+            "unit": "count",
+            "provenance": "C-0029 / CLAUDE.md",
+            "note": "a count, and no force field adds a third"
+        },
+        {
+            "quantity": "crossovers one terminal base pair can carry",
+            "value": 1.0,
+            "unit": "count",
+            "provenance": "derived here",
+            "note": "the azimuth quantum points one base pair at one neighbour"
+        },
+        {
+            "quantity": "raster turns a boustrophedon demands at one row end",
+            "value": 1.0,
+            "unit": "count",
+            "provenance": "derived here",
+            "note": "equal to the budget, so the geometry does not refuse"
+        },
+        {
+            "quantity": "phosphate radius",
+            "value": 0.908638,
+            "unit": "nm",
+            "provenance": "T-71, 13 084 crystallographic linkages",
+            "note": "the same at a terminal base pair as at an interior one; a crossover is an azimuthal condition and the row end is an axial coordinate"
+        },
+        {
+            "quantity": "azimuthal quantum",
+            "value": 33.74,
+            "unit": "degrees per base pair",
+            "provenance": "C-0015 / Ke et al. 2009",
+            "note": "what decides WHICH neighbour a base pair reaches"
+        },
+        {
+            "quantity": "the numerical guard that deletes the row-end column",
+            "value": 0.05,
+            "unit": "nm",
+            "provenance": "CrossoverLayout.EDGE_MARGIN",
+            "note": "0.147 of a base-pair rise — below the resolution of the design language, and documented as a guard against a zero-length beam element"
+        }
+    ],
+    "congruences": [
+        {
+            "rowBasePairs": 16,
+            "widthNm": 5.44,
+            "admissibleSeamless": true,
+            "wholePitchCount": true,
+            "pitches": 1,
+            "rowEndPhases": [
+                8,
+                24
+            ],
+            "rowEndColumnsComplementary": true,
+            "boustrophedonMatches": false
+        },
+        {
+            "rowBasePairs": 48,
+            "widthNm": 16.32,
+            "admissibleSeamless": true,
+            "wholePitchCount": true,
+            "pitches": 3,
+            "rowEndPhases": [
+                8,
+                24
+            ],
+            "rowEndColumnsComplementary": true,
+            "boustrophedonMatches": true
+        },
+        {
+            "rowBasePairs": 80,
+            "widthNm": 27.2,
+            "admissibleSeamless": true,
+            "wholePitchCount": true,
+            "pitches": 5,
+            "rowEndPhases": [
+                8,
+                24
+            ],
+            "rowEndColumnsComplementary": true,
+            "boustrophedonMatches": true
+        },
+        {
+            "rowBasePairs": 112,
+            "widthNm": 38.08,
+            "admissibleSeamless": true,
+            "wholePitchCount": true,
+            "pitches": 7,
+            "rowEndPhases": [
+                8,
+                24
+            ],
+            "rowEndColumnsComplementary": true,
+            "boustrophedonMatches": true
+        },
+        {
+            "rowBasePairs": 118,
+            "widthNm": 40.12,
+            "admissibleSeamless": false,
+            "wholePitchCount": false,
+            "pitches": -1,
+            "rowEndPhases": [],
+            "rowEndColumnsComplementary": false,
+            "boustrophedonMatches": false
+        },
+        {
+            "rowBasePairs": 128,
+            "widthNm": 43.52,
+            "admissibleSeamless": false,
+            "wholePitchCount": true,
+            "pitches": 8,
+            "rowEndPhases": [
+                0,
+                16
+            ],
+            "rowEndColumnsComplementary": false,
+            "boustrophedonMatches": false
+        },
+        {
+            "rowBasePairs": 144,
+            "widthNm": 48.96,
+            "admissibleSeamless": true,
+            "wholePitchCount": true,
+            "pitches": 9,
+            "rowEndPhases": [
+                8,
+                24
+            ],
+            "rowEndColumnsComplementary": true,
+            "boustrophedonMatches": true
+        },
+        {
+            "rowBasePairs": 176,
+            "widthNm": 59.84,
+            "admissibleSeamless": true,
+            "wholePitchCount": true,
+            "pitches": 11,
+            "rowEndPhases": [
+                8,
+                24
+            ],
+            "rowEndColumnsComplementary": true,
+            "boustrophedonMatches": true
+        },
+        {
+            "rowBasePairs": 208,
+            "widthNm": 70.72,
+            "admissibleSeamless": true,
+            "wholePitchCount": true,
+            "pitches": 13,
+            "rowEndPhases": [
+                8,
+                24
+            ],
+            "rowEndColumnsComplementary": true,
+            "boustrophedonMatches": true
+        },
+        {
+            "rowBasePairs": 240,
+            "widthNm": 81.6,
+            "admissibleSeamless": true,
+            "wholePitchCount": true,
+            "pitches": 15,
+            "rowEndPhases": [
+                8,
+                24
+            ],
+            "rowEndColumnsComplementary": true,
+            "boustrophedonMatches": true
+        },
+        {
+            "rowBasePairs": 272,
+            "widthNm": 92.48,
+            "admissibleSeamless": true,
+            "wholePitchCount": true,
+            "pitches": 17,
+            "rowEndPhases": [
+                8,
+                24
+            ],
+            "rowEndColumnsComplementary": true,
+            "boustrophedonMatches": true
+        },
+        {
+            "rowBasePairs": 288,
+            "widthNm": 97.92,
+            "admissibleSeamless": false,
+            "wholePitchCount": true,
+            "pitches": 18,
+            "rowEndPhases": [
+                0,
+                16
+            ],
+            "rowEndColumnsComplementary": false,
+            "boustrophedonMatches": false
+        },
+        {
+            "rowBasePairs": 304,
+            "widthNm": 103.36,
+            "admissibleSeamless": true,
+            "wholePitchCount": true,
+            "pitches": 19,
+            "rowEndPhases": [
+                8,
+                24
+            ],
+            "rowEndColumnsComplementary": true,
+            "boustrophedonMatches": true
+        },
+        {
+            "rowBasePairs": 336,
+            "widthNm": 114.24,
+            "admissibleSeamless": true,
+            "wholePitchCount": true,
+            "pitches": 21,
+            "rowEndPhases": [
+                8,
+                24
+            ],
+            "rowEndColumnsComplementary": true,
+            "boustrophedonMatches": true
+        },
+        {
+            "rowBasePairs": 368,
+            "widthNm": 125.12,
+            "admissibleSeamless": true,
+            "wholePitchCount": true,
+            "pitches": 23,
+            "rowEndPhases": [
+                8,
+                24
+            ],
+            "rowEndColumnsComplementary": true,
+            "boustrophedonMatches": true
+        },
+        {
+            "rowBasePairs": 400,
+            "widthNm": 136.0,
+            "admissibleSeamless": true,
+            "wholePitchCount": true,
+            "pitches": 25,
+            "rowEndPhases": [
+                8,
+                24
+            ],
+            "rowEndColumnsComplementary": true,
+            "boustrophedonMatches": true
+        }
+    ],
+    "turns": [
+        {
+            "duplexes": 15,
+            "entryAtNegativeX": true,
+            "turnsAtNegativeEdge": 7,
+            "turnsAtPositiveEdge": 7,
+            "maximumTurnsPerRowEnd": 1,
+            "crossoverBudgetOfDuplexEnd": 1,
+            "strandTerminiAtDuplexEnd": 2,
+            "freeEndsAtNegativeX": 1,
+            "freeEndsAtPositiveX": 1,
+            "demandExceedsBudget": false
+        },
+        {
+            "duplexes": 15,
+            "entryAtNegativeX": false,
+            "turnsAtNegativeEdge": 7,
+            "turnsAtPositiveEdge": 7,
+            "maximumTurnsPerRowEnd": 1,
+            "crossoverBudgetOfDuplexEnd": 1,
+            "strandTerminiAtDuplexEnd": 2,
+            "freeEndsAtNegativeX": 1,
+            "freeEndsAtPositiveX": 1,
+            "demandExceedsBudget": false
+        }
+    ],
+    "inventory": [
+        {
+            "phaseBasePairs": 8,
+            "columns": 8,
+            "interfaceCrossovers": 56,
+            "scaffoldCrossovers": 14,
+            "stapleCrossovers": 42,
+            "negativeEdgeParity": 0,
+            "positiveEdgeParity": 1,
+            "upwardStationsAdmitted": 52,
+            "upwardStationsRefused": 52
+        },
+        {
+            "phaseBasePairs": 24,
+            "columns": 8,
+            "interfaceCrossovers": 56,
+            "scaffoldCrossovers": 14,
+            "stapleCrossovers": 42,
+            "negativeEdgeParity": 1,
+            "positiveEdgeParity": 0,
+            "upwardStationsAdmitted": 53,
+            "upwardStationsRefused": 53
+        }
+    ],
+    "readings": [
+        {
+            "case": "RECOMMENDED — buildable 38.08 nm, 24 bp arm, end-of-row admitted",
+            "edgeX": 38.08,
+            "armLength": 8.16,
+            "admitRowEnd": true,
+            "phaseBasePairs": 8,
+            "columns": 8,
+            "bestDishingOverStroke": 0.0621469105,
+            "flatAtTenPercent": true
+        },
+        {
+            "case": "RECOMMENDED — buildable 38.08 nm, 24 bp arm, end-of-row admitted",
+            "edgeX": 38.08,
+            "armLength": 8.16,
+            "admitRowEnd": true,
+            "phaseBasePairs": 24,
+            "columns": 8,
+            "bestDishingOverStroke": 0.070693794,
+            "flatAtTenPercent": true
+        },
+        {
+            "case": "BRACKET — buildable 38.08 nm, 24 bp arm, interior (row-end column refused)",
+            "edgeX": 38.08,
+            "armLength": 8.16,
+            "admitRowEnd": false,
+            "phaseBasePairs": 8,
+            "columns": 6,
+            "bestDishingOverStroke": 0.168371808,
+            "flatAtTenPercent": false
+        },
+        {
+            "case": "BRACKET — buildable 38.08 nm, 24 bp arm, interior (row-end column refused)",
+            "edgeX": 38.08,
+            "armLength": 8.16,
+            "admitRowEnd": false,
+            "phaseBasePairs": 24,
+            "columns": 6,
+            "bestDishingOverStroke": 0.156510532,
+            "flatAtTenPercent": false
+        }
+    ],
+    "verdict": {
+        "carried": "the row-end column is ADMITTED",
+        "admitRowEnd": true,
+        "phaseBasePairs": 8,
+        "columns": 8,
+        "dishingOverStroke": 0.0621469105,
+        "rejectedColumns": 6,
+        "rejectedDishingOverStroke": 0.156510532,
+        "ratio": 2.51839602,
+        "rejectedAtSamePhase": 0.168371808,
+        "ratioAtSamePhase": 2.70925468,
+        "insideFlatnessConvention": true,
+        "flatterThanNominalWidth": true,
+        "nominalWidthDishingOverStroke": 0.0706145537
+    },
+    "predicates": [
+        {
+            "id": "P1",
+            "statement": "the three headings are decided separately: the geometry does NOT forbid it (the demand equals the budget), the software does NOT forbid it (caDNAno and scadnano both permit and scadnano requires it), and it IS published (Rothemund's own rectangle, 288 bp = 18 pitches, 90 % well-formed)",
+            "met": true
+        },
+        {
+            "id": "P2",
+            "statement": "every load-bearing source carries a read status and every query string is recorded in gpd/data/T-161-sources/",
+            "met": true
+        },
+        {
+            "id": "P3",
+            "statement": "C-0090's two readings are recomputed from its own result file and the carried one is named",
+            "met": true
+        },
+        {
+            "id": "P4",
+            "statement": "the steric bound is stated from this project's own measured constants before the search, and it is a count rather than a distance",
+            "met": true
+        },
+        {
+            "id": "P5",
+            "statement": "the residual specification question is stated with its threshold: the edge crossover's strain relief is unknown in print and its remedy (one or two unpaired scaffold bases) changes the row length by 1-2 bp",
+            "met": true
+        }
+    ],
+    "falsifiers": [
+        {
+            "id": "F1",
+            "statement": "a primary design-rule source forbids a crossover at the terminal base pair",
+            "fired": false,
+            "outcome": "none found in twelve recorded EuropePMC searches, in Rothemund 2006 and its Supplementary Notes, in the caDNAno paper, or in scadnano's API — which states the opposite: an xover is necessarily at an endpoint of a strand"
+        },
+        {
+            "id": "F2",
+            "statement": "the two row-end columns of a 112 bp row carry the same parity",
+            "fired": false,
+            "outcome": "they are complementary at both phases 8 and 24 — 7 pitches is odd — and C-0086's odd-half-turn rule and this complementarity are the SAME congruence at every row length from 1 to 400 bp: true"
+        },
+        {
+            "id": "F3",
+            "statement": "a boustrophedon demands more than one crossover at some row end",
+            "fired": false,
+            "outcome": "the demand is 1 and the budget is 1, at both raster senses"
+        },
+        {
+            "id": "F4",
+            "statement": "the readings recomputed from C-0090's result file differ from its published 0.0621469105 and 0.168371808",
+            "fired": false,
+            "outcome": "recomputed: 0.0621469105 admitted and 0.156510532 refused, at phase 8"
+        },
+        {
+            "id": "F5",
+            "statement": "Rothemund's own built structures have no row end on the crossover column lattice",
+            "fired": true,
+            "outcome": "FIRED, favourably: the 24-helix rectangle of Fig. 2b is 288 bp wide, exactly 18 column pitches, so BOTH vertical edges lie on the lattice; the falsifier was written to catch 'unprecedented' and found 'built, imaged and counted'"
+        },
+        {
+            "id": "F6",
+            "statement": "admitting the row-end column changes the upward station lattice",
+            "fired": false,
+            "outcome": "the upward station count is identical under both conventions at both phases: phase 8: 52, phase 24: 53"
+        }
+    ],
+    "findings": [
+        "THE ANSWER IS YES, AND IT IS NOT A PERMISSION — IT IS A DEFINITION. Rothemund's odd-half-turn rule binds 'the distance between successive scaffold crossovers', and in a boustrophedon those are the two ends of one row. The row length C-0086 quantised at 112 bp IS the crossover-to-crossover distance, so a crossover at the row end is what makes the row 112 bp long.",
+        "THE GEOMETRY DOES NOT FORBID IT, AND THE COUNT IS EXACT. A duplex end carries 2 strand termini and the azimuthal quantum lets one base pair reach one neighbour, so a terminal base pair offers 1 crossover. A boustrophedon demands exactly 1 at every row end it uses, and leaves two free — the scaffold's own termini, one at each edge on an odd row count. Demand equals budget with nothing to spare and nothing missing.",
+        "C-0086'S ODD-HALF-TURN RULE AND THE ROW-END COLUMN PARITY ARE THE SAME CONGRUENCE. A boustrophedon's turns at one edge join interfaces of one parity and at the other edge the complementary parity; a column serves the interfaces whose index parity matches its own. The two row-end columns are complementary exactly when the row is an ODD number of column pitches — which is exactly when the row is an odd number of half turns. Asserted at every row length from 1 to 400 bp: true. The design language's own rule is the lattice's parity condition, read twice.",
+        "SO THE ROW-END COLUMNS ARE FULLY POPULATED BY THE SCAFFOLD AND NEED NO STAPLE. At phase 8 or 24 the eight columns carry 56 interface crossovers, of which the two end columns are 14 — one per interface, i.e. every raster turn — and the interior six are 42 staple crossovers. C-0086's LINEAR topology independently predicts 14 scaffold crossovers.",
+        "F5 FIRED FAVOURABLY: THE CONFIGURATION IS BUILT AND IMAGED. Rothemund's 24-helix rectangle is 288 bp wide, which is 18 column pitches EXACTLY, so both of its vertical edges lie on the crossover lattice — and it folded 90 % well-formed. Its even pitch count puts the SAME parity on both edges, which is precisely what a seamed DOUBLE raster demands and a boustrophedon cannot use: the model reproduces the topology of a structure it was not told about.",
+        "THE SOFTWARE DOES NOT FORBID IT EITHER, AND SCADNANO REQUIRES IT. caDNAno's default rule is about the helical phase and it 'permits the user to force crossovers between any two staple bases or between any two scaffold bases'; scadnano's API states that 'an xover is necessarily at an enpoint of a strand'; and cadnano 2.1 AUTOMATES the raster turn.",
+        "THE PROGRAMME SHOULD CARRY 0.0621469105, NOT 0.168371808 — a factor of 2.7092546780744637 at C-0090's own phase 8, and 2.518396019058743 against the best refused reading anywhere (0.156510532, at phase 24; the two framings differ and neither may be quoted as the other) — so the 38.08 nm tile is INSIDE T-5b's 0.1 and is FLATTER than §3's nominal 40.0 nm tile at 0.0706145537. CrossoverLayout.EDGE_MARGIN is a numerical guard and must not be read as a physical assertion.",
+        "WHAT ROTHEMUND DOES CHARGE IS A STRAIN NOBODY HAS RESOLVED. At an edge that lines up with the crossover lattice the glide symmetry that balances strain in the bulk fails, 'a crossover involving staple strands is in tension with an adjacent crossover involving the scaffold strand', and 'such a configuration of crossovers in tension has never before been used in DNA nanostructures'. He observed no gross defect and offers a remedy of one or two unpaired scaffold bases. That remedy is a LENGTH: it would move the row off 112 bp, which is the threshold this task hands to NDI."
+    ],
+    "parameters": {
+        "duplexes": 15.0,
+        "rowBasePairs": 112.0,
+        "buildableEdgeX": 38.08,
+        "nominalEdgeX": 40.0,
+        "nominalRowBasePairs": 118.0,
+        "columnPitchBasePairs": 16.0,
+        "pitchesInBuildableRow": 7.0,
+        "pitchesInNominalRow": 7.35294118,
+        "rothemundRectangleRowBasePairs": 288.0,
+        "rothemundRectanglePitches": 18.0,
+        "risePerBasePair": 0.34,
+        "edgeMargin": 0.05,
+        "edgeMarginInRises": 0.147058824,
+        "strandTerminiAtDuplexEnd": 2.0,
+        "crossoverBudgetOfDuplexEnd": 1.0,
+        "flatnessConvention": 0.1,
+        "unpairedBaseRemedyBasePairs": 2.0
+    }
+}

@@ -352,12 +352,49 @@ class InfluenceSurrogate internal constructor(
     fun solveWithDropout(
         stiffnesses: List<Double>,
         present: List<Boolean>
+    ): NonUniformDeflection = solveWithSharedBody(stiffnesses, null, present)
+
+    /**
+     * `T-162` — the response of a coupling whose paths do **not** run to ground independently but
+     * to one **shared [body]**, which is itself grounded.
+     *
+     * The array is the `body = null` corner and this method reduces to it **bit for bit**, which
+     * is why [solveWithDropout] delegates here and nothing `C-0058`, `C-0063`, `C-0087` or
+     * `C-0089` publishes can move.
+     *
+     * The system is the array's with one term added,
+     *
+     * ```
+     * (T⁻¹ + M + Φ H⁻¹ Φᵀ) f = w_free
+     * ```
+     *
+     * but it is solved without ever forming `H⁻¹`, because `H` is **singular** for the two cases
+     * that matter most — a body grounded at one point has free tilts, a free body has `H = 0`.
+     * Eliminating the body's own coordinates instead gives the saddle system
+     *
+     * ```
+     * (T⁻¹ + M) f + Φ a = w_free
+     * Φᵀ f − H a = 0
+     * ```
+     *
+     * whose condensation onto `a` is an `m × m` solve on top of the array's own factorisation.
+     * At a **free** body the same arithmetic returns exactly zero force at `n ≤ 3` surviving ties,
+     * which is `T-162`'s closed form and gate 2.
+     */
+    fun solveWithSharedBody(
+        stiffnesses: List<Double>,
+        body: SharedBody?,
+        present: List<Boolean>
     ): NonUniformDeflection {
         require(stiffnesses.size == pathCount) {
             "expected $pathCount stiffnesses, one per attachment, was: ${stiffnesses.size}"
         }
         require(present.size == pathCount) {
             "expected one presence flag per attachment, was: ${present.size} for $pathCount"
+        }
+        require(body == null || body.stationCount == pathCount) {
+            "the shared body is tied at ${body?.stationCount} stations and the surrogate " +
+                    "carries $pathCount"
         }
         val live = (0 until pathCount).filter { present[it] }
         require(live.all { stiffnesses[it] > 0.0 && stiffnesses[it].isFinite() }) {
@@ -372,8 +409,40 @@ class InfluenceSurrogate internal constructor(
                 matrix[j, j] += 1.0 / stiffnesses[live[j]]
             }
             val right = F64Array(size) { stationFree[live[it]] }
-            val solution = CholeskyDecomposition(matrix).solve(right)
+            val decomposition = CholeskyDecomposition(matrix)
+            val solution = decomposition.solve(right)
             for (j in 0 until size) forces[live[j]] = solution[j]
+            if (body != null) {
+                val modes = body.modeCount
+                // `Y = A⁻¹Φ`, one back-substitution per mode.
+                val influence = Array(modes) { mode ->
+                    decomposition.solve(F64Array(size) { body.shapes[live[it]][mode] })
+                }
+                val hessian = F64Array(modes, modes)
+                var trace = 0.0
+                for (p in 0 until modes) {
+                    for (q in 0 until modes) {
+                        var total = 0.0
+                        for (j in 0 until size) total += body.shapes[live[j]][p] * influence[q][j]
+                        hessian[p, q] = total +
+                                0.5 * (body.modalStiffness[p][q] + body.modalStiffness[q][p])
+                    }
+                    trace += abs(hessian[p, p])
+                }
+                val ridge = if (trace > 0.0) 1e-12 * trace / modes else 1e-12
+                for (p in 0 until modes) hessian[p, p] += ridge
+                val load = F64Array(modes) { p ->
+                    var total = 0.0
+                    for (j in 0 until size) total += body.shapes[live[j]][p] * solution[j]
+                    total
+                }
+                val amplitudes = CholeskyDecomposition(hessian).solve(load)
+                for (j in 0 until size) {
+                    var correction = 0.0
+                    for (p in 0 until modes) correction += influence[p][j] * amplitudes[p]
+                    forces[live[j]] = solution[j] - correction
+                }
+            }
         }
         val dishing = DoubleArray(dishingFree.size) { dishingFree[it] }
         for (k in live) {

@@ -432,6 +432,114 @@ class TwoSpringElasticaTest {
         )
     }
 
+    // ------------------------------------------------- T-159 — the doubling ladder's repair
+
+    /**
+     * `C-0069`'s `Q5`, re-derived through `C-0039`'s own placement solve rather than transcribed —
+     * the arm on which `C-0092` measured the doubling ladder losing the branch.
+     */
+    private val armRoot = Gen1Tile.crossoverHingeStiffness()
+
+    private val armTip = ArmAnchorage.twoTerminus().rotationalStiffness
+
+    private val recommendedArm: TwoSpringElastica by lazy {
+        val length = elasticaArmForStiffness(
+            hingeStiffness = armRoot,
+            hingeCount = 1,
+            farStiffness = armTip,
+            bendingRigidity = ei,
+            count = 34,
+            targetStiffness = mandate,
+            workingDisplacement = 3.0,
+            steps = 400
+        )
+        TwoSpringElastica(ei, length, armRoot, armTip, steps = 400)
+    }
+
+    @Test
+    fun `T-159 defect - the branch continues PAST the stroke the doubling ladder loses it at`() {
+        // C-0092/CH-0107: C-0039's doubling force ladder refuses at 7.9196867 nm, and the branch
+        // it has lost runs to 8.1610821 nm with max|phi| still below a right angle. A repair is a
+        // solve at a stroke the ladder cannot reach, on the SAME arm and the same integrator.
+        val arm = recommendedArm
+        assert(arm.length.isCloseTo(8.16439083, 1e-8))
+        val force = arm.forceForDisplacement(7.95)
+        assert(force.isFinite() && force > 0.0)
+        val state = arm.stateAtDisplacement(7.95)
+        assert(state.displacement.isCloseTo(7.95, 1e-9))
+        assert(state.maximumRotation < PI / 2.0)
+        assert(state.firstIntegralSpread < 1e-9)
+    }
+
+    @Test
+    fun `T-159 gate 3 conservation - the continued branch keeps the moment balance and the first integral`() {
+        val arm = recommendedArm
+        var previousStroke = 0.0
+        var previousForce = 0.0
+        for (stroke in listOf(1.0, 3.0, 5.0, 7.0, 7.5, 7.9, 7.95, 8.0)) {
+            val state = arm.stateAtDisplacement(stroke)
+            assert(state.displacement.isCloseTo(stroke, 1e-9))
+            // the branch is ascending in BOTH coordinates, which is what makes it one branch
+            assert(state.displacement > previousStroke)
+            assert(state.force > previousForce)
+            assert(state.maximumRotation < PI / 2.0)
+            assert(state.firstIntegralSpread < 1e-9)
+            assert(abs(state.momentBalanceResidual) < 1e-6 * (state.force * arm.length))
+            previousStroke = state.displacement
+            previousForce = state.force
+        }
+    }
+
+    @Test
+    fun `T-159 gate 1 dimensional - a stroke past the branch is REFUSED, and the refusal is below the contour`() {
+        val arm = recommendedArm
+        // the contour is a hard bound on every branch (C-0092) and is refused by argument check
+        assertFailsWith<IllegalArgumentException> { arm.forceForDisplacement(arm.length) }
+        // and a stroke inside the contour but past what the continuation resolves is refused too,
+        // rather than answered off another branch
+        val refused = assertFailsWith<IllegalArgumentException> {
+            arm.forceForDisplacement(arm.length - 1e-9)
+        }
+        assert(refused.message!!.contains("branch"))
+    }
+
+    @Test
+    fun `T-159 gate 4 convergence - the repair does not cost more sweeps than the ladder it replaces`() {
+        // C-0031's precedent: a defect invisible in the answer is invisible to every check written
+        // on the answer, so the count the strategy was chosen for is asserted as well as the root.
+        val arm = TwoSpringElastica(ei, 12.5, 16 * hinge, anchorage, steps = 200)
+        arm.resetSweepCount()
+        val force = arm.forceForDisplacement(3.0)
+        val sweeps = arm.sweepCount
+        assert(force > 0.0)
+        // the doubling ladder took 209 sweeps for this call, measured on this arm before the
+        // repair; a continuation that needed materially more would be paying for its safety out
+        // of the study budget, and a continuation that collapsed to bisection would need many
+        // more while returning the same root
+        assert(sweeps in 1..209)
+    }
+
+    @Test
+    fun `T-159 gate 5 upstream - the retained ladder still measures the artefact C-0092 reported`() {
+        // A repair that makes the defect it repairs unmeasurable replaces one unfalsifiable
+        // number with another, so C-0039's blind doubling ladder is retained OPT-IN and
+        // C-0092's measurement of it stays a measurement.
+        val repaired = recommendedArm
+        val ladder = TwoSpringElastica(
+            ei, repaired.length, armRoot, armTip, 400, BranchStrategy.DOUBLING_LADDER
+        )
+        // where the far-end residual has one root the two strategies are the same solve
+        assert(
+            ladder.forceForDisplacement(3.0)
+                .isCloseTo(repaired.forceForDisplacement(3.0), 1e-11)
+        )
+        assert(ladder.forceForDisplacement(7.0).isCloseTo(repaired.forceForDisplacement(7.0), 1e-9))
+        // and they part company exactly where C-0092 said: the ladder loses the branch, the
+        // continuation keeps it
+        assertFailsWith<IllegalArgumentException> { ladder.forceForDisplacement(7.95) }
+        assert(repaired.forceForDisplacement(7.95) > 0.0)
+    }
+
     @Test
     fun `gate 5 upstream - the elastica's own trigonometry is the one CH-0040 wrote down`() {
         // delta = r sin theta and the restoring lever is r cos theta: recovered, not assumed,

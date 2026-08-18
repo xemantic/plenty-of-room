@@ -17,6 +17,7 @@
 package com.xemantic.nano.plentyofroom.anchoring
 
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.cos
 import kotlin.math.max
@@ -31,6 +32,54 @@ import kotlin.math.sqrt
  * primary reading of `T-79` is `H = 0` and needs none of it.
  */
 const val AXIAL_CONDITIONING_LIMIT: Double = 40.0
+
+/**
+ * `max_s|φ|` in radians past which a solved shape is **not** on the branch this class enumerates.
+ *
+ * Past a right angle the tip force's moment arm reverses, the far-end moment residual stops being
+ * monotone in the shooting parameter, and the elastica acquires branches that are not continuously
+ * connected to the unloaded state. `C-0092` measured those branches: there are up to 39 of them at
+ * 5000 pN on the Gen-1 arm, and **every one reaches a smaller stroke** than the primary root at the
+ * same force, because a curled shape's `∫sin φ` cancels against itself. So a solve that lands past
+ * this limit is not a deeper answer — it is a different question, and [TwoSpringElastica] refuses
+ * rather than returning it (`T-159`).
+ */
+const val SMALL_ROTATION_BRANCH_LIMIT: Double = 0.5 * PI
+
+/** Cells the branch's shooting scan may take at one tip force before it gives up. */
+private const val BRANCH_SCAN_CELLS: Int = 400
+
+/** The relative width below which the shooting scan stops halving and refuses. */
+private const val BRANCH_SCAN_FLOOR: Double = 1.0e-14
+
+/** Steps the tip-force continuation may take before it gives up. */
+private const val CONTINUATION_STEPS: Int = 400
+
+/**
+ * How [TwoSpringElastica.forceForDisplacement] finds the branch it reports a force on.
+ *
+ * There are two, and the second one is a **defect kept on purpose**.
+ */
+enum class BranchStrategy {
+
+    /**
+     * `T-159`'s branch continuation — the default, and the only one a design number may use.
+     */
+    CONTINUATION,
+
+    /**
+     * `C-0039`'s original **blind doubling** ladder, which brackets a tip force by doubling from
+     * `0.5 δ k_small` and calls [TwoSpringElastica.stateAtForce] inside whatever that produces.
+     *
+     * It is exact while the far-end residual has one root and it **loses the branch** once it has
+     * two — `C-0092`/`CH-0107` measured that happening at about 100 pN on the Gen-1 arm, 0.2414 nm
+     * of stroke early. It is retained, opt-in and named, for exactly one reason: `C-0092` is a
+     * standing claim whose evidence is a **measurement of this artefact**, and a repair that makes
+     * its own predecessor unmeasurable replaces one unfalsifiable number with another. Never
+     * select it for anything but a reproduction.
+     */
+    DOUBLING_LADDER
+}
 
 /**
  * Task `T-79` — a **large-rotation two-spring elastica** for `E5`'s arm.
@@ -83,7 +132,8 @@ class TwoSpringElastica(
     val length: Double,
     val nearStiffness: Double,
     val farStiffness: Double,
-    val steps: Int = 400
+    val steps: Int = 400,
+    val strategy: BranchStrategy = BranchStrategy.CONTINUATION
 ) : SignedCouplingElement {
 
     init {
@@ -121,6 +171,23 @@ class TwoSpringElastica(
 
     private val farRigid: Boolean = farStiffness.isInfinite()
 
+    /**
+     * RK4 sweeps taken since the last [resetSweepCount] — **diagnostic only**, not thread safe,
+     * and read by no physics.
+     *
+     * It exists because `C-0031` is the precedent for repairing a root finder: *"a defect that is
+     * invisible in the answer is invisible to every check written on the answer"*, and the thing
+     * this class's solve strategy is chosen for is the **cost** of finding the root, not only the
+     * root. A strategy change that silently degenerated into bisection would move no number.
+     */
+    var sweepCount: Long = 0L
+        private set
+
+    /** Zeroes [sweepCount]. */
+    fun resetSweepCount() {
+        sweepCount = 0L
+    }
+
     // ------------------------------------------------------------------ the integrator
 
     private class Trace(
@@ -145,6 +212,7 @@ class TwoSpringElastica(
         force: Double,
         axialForce: Double
     ): Trace {
+        sweepCount++
         val h = length / steps
         var phi = if (nearRigid) 0.0 else parameter
         var psi = if (nearRigid) parameter else nearStiffness * parameter / bendingRigidity
@@ -231,6 +299,15 @@ class TwoSpringElastica(
      * Solved by shooting on the near-end rotation: the residual is the far end's own moment
      * boundary condition, which is strictly increasing in the shooting parameter, so the bracket
      * `[0, ·]` is guaranteed and the root is found by a safeguarded Illinois iteration.
+     *
+     * **That monotonicity is a small-load property and this routine does not check it** (`T-159`).
+     * The seed is a *linear* estimate, `0.25 F L²/EI`, which at 112 pN on the Gen-1 arm is already
+     * **8.14 rad** — five right angles — so the very first cell can contain an even number of roots
+     * and the doubling then brackets a later one. That is why the stroke-driven entry points
+     * ([forceForDisplacement], [stateAtDisplacement]) no longer come through here: they continue
+     * the branch instead, anchoring each root on the previous one. A caller that reaches this
+     * function directly should stay where the residual has one root, and should read
+     * [ElasticaState.maximumRotation] to see which branch it was answered on.
      */
     fun stateAtForce(
         force: Double,
@@ -270,11 +347,7 @@ class TwoSpringElastica(
                 maximumRotation = 0.0
             )
         }
-        val seed = if (nearRigid) {
-            max(1.0e-30, 0.25 * (force * length + tipMoment) / bendingRigidity)
-        } else {
-            max(1.0e-30, 0.25 * (force * length * length + tipMoment * length) / bendingRigidity)
-        }
+        val seed = seedParameter(force, tipMoment)
         // Scan for the FIRST sign change above zero rather than assuming one. At small load the
         // residual is monotone in the shooting parameter and `[0, seed]` already brackets; once
         // the arm curls past a right angle the moment reverses and monotonicity is lost, so an
@@ -300,7 +373,23 @@ class TwoSpringElastica(
         val root = illinoisRoot(low, high, atLow, atHigh) {
             residual(integrate(it, force, axialForce), tipMoment)
         }
-        val trace = integrate(root, force, axialForce)
+        return stateOf(integrate(root, force, axialForce), force, axialForce, tipMoment)
+    }
+
+    /** The linear estimate of the shooting parameter, and this solver's scan scale. */
+    private fun seedParameter(force: Double, tipMoment: Double): Double =
+        if (nearRigid) {
+            max(1.0e-30, 0.25 * (force * length + tipMoment) / bendingRigidity)
+        } else {
+            max(1.0e-30, 0.25 * (force * length * length + tipMoment * length) / bendingRigidity)
+        }
+
+    private fun stateOf(
+        trace: Trace,
+        force: Double,
+        axialForce: Double,
+        tipMoment: Double
+    ): ElasticaState {
         val nearMoment = bendingRigidity * trace.nearCurvature
         val farMoment = bendingRigidity * trace.farCurvature
         val springEnergy = 0.5 * nearMoment * trace.nearRotation +
@@ -324,8 +413,146 @@ class TwoSpringElastica(
         )
     }
 
-    /** The transverse tip force in pN that drives the arm to a stroke of [displacement] nm. */
-    fun forceForDisplacement(displacement: Double, axialForce: Double = 0.0): Double {
+    // --------------------------------------------------- the branch continuation (T-159)
+
+    private class BranchPoint(val parameter: Double, val trace: Trace)
+
+    /**
+     * The shooting root at [force] **immediately above** [parameterFloor], or `null` where the scan
+     * reaches [SMALL_ROTATION_BRANCH_LIMIT] without one.
+     *
+     * The scan grows **geometrically** and takes the **first** sign change (`CLAUDE.md`), and a
+     * trial whose sweep turns past a right angle is not a candidate at all: the step is halved
+     * toward the last accepted parameter instead, so the bracket can only ever close on a root the
+     * small-rotation branch owns. Where it cannot, this **refuses** — a root off the branch is a
+     * different question, not a deeper answer.
+     *
+     * [parameterFloor] is legitimate as a negative endpoint whenever it is a root at a *smaller*
+     * force: at a fixed shooting parameter the far-end moment residual is decreasing in the tip
+     * force. That is **checked** here rather than assumed — a floor whose residual is not negative
+     * returns `null`, and the caller shrinks its force step.
+     */
+    private fun branchPointAt(
+        force: Double,
+        axialForce: Double,
+        parameterFloor: Double
+    ): BranchPoint? {
+        val atFloorTrace = integrate(parameterFloor, force, axialForce)
+        if (atFloorTrace.maximumRotation >= SMALL_ROTATION_BRANCH_LIMIT) return null
+        val atFloor = residual(atFloorTrace, 0.0)
+        if (atFloor == 0.0) return BranchPoint(parameterFloor, atFloorTrace)
+        if (atFloor > 0.0) return null
+        var low = parameterFloor
+        var atLow = atFloor
+        var step = max(1.0e-300, 0.25 * seedParameter(force, 0.0))
+        repeat(BRANCH_SCAN_CELLS) {
+            val high = low + step
+            val trace = integrate(high, force, axialForce)
+            if (trace.maximumRotation >= SMALL_ROTATION_BRANCH_LIMIT) {
+                step *= 0.5
+                if (step <= BRANCH_SCAN_FLOOR * max(abs(low), 1.0e-300)) return null
+                return@repeat
+            }
+            val atHigh = residual(trace, 0.0)
+            if (atHigh >= 0.0) {
+                val root = illinoisRoot(low, high, atLow, atHigh) {
+                    residual(integrate(it, force, axialForce), 0.0)
+                }
+                val rootTrace = integrate(root, force, axialForce)
+                return if (rootTrace.maximumRotation >= SMALL_ROTATION_BRANCH_LIMIT) null
+                else BranchPoint(root, rootTrace)
+            }
+            low = high
+            atLow = atHigh
+            step *= 2.0
+        }
+        return null
+    }
+
+    /**
+     * The arm's state at a stroke of [displacement] nm, reached by **continuing** the branch that
+     * is connected to the unloaded state rather than by doubling a tip force blind.
+     *
+     * `C-0092`/`CH-0107`: a doubling ladder does not report a branch end, it reports having lost
+     * the branch — on the Gen-1 arm the far-end residual acquires a second root at about 100 pN,
+     * three decades of force below the right angle this class's own KDoc warns about, and a
+     * doubling step then brackets the wrong one. Here every force step is solved with the previous
+     * accepted root as its shooting floor, so the search cannot leave the branch; a step that fails
+     * a branch test **shrinks** instead of doubling on; and where no smaller step keeps the branch,
+     * the stroke is **refused** with the deepest stroke the branch did reach.
+     */
+    private fun branchStateAtDisplacement(
+        displacement: Double,
+        axialForce: Double
+    ): ElasticaState {
+        require(displacement > 0.0) { "displacement must be positive, was: $displacement" }
+        require(displacement < length) {
+            "an inextensible arm of $length nm cannot lift its tip $displacement nm"
+        }
+        require(
+            abs(axialForce) * length * length / bendingRigidity <= AXIAL_CONDITIONING_LIMIT
+        ) {
+            "an axial load of $axialForce pN on a $length nm arm of rigidity $bendingRigidity " +
+                    "pN nm^2 is outside the shooting solver's conditioning range " +
+                    "(|H| L^2/EI must not exceed $AXIAL_CONDITIONING_LIMIT)"
+        }
+        var lowForce = 0.0
+        var lowStroke = 0.0
+        var lowParameter = 0.0
+        var trial = max(1.0e-30, 0.5 * displacement * smallRotationStiffness)
+        var reached: BranchPoint? = null
+        var steps = 0
+        while (reached == null) {
+            steps++
+            require(steps < CONTINUATION_STEPS) {
+                "the arm's small-rotation branch does not reach a stroke of $displacement nm: " +
+                        "the continuation reached $lowStroke nm at $lowForce pN on a $length nm " +
+                        "arm and exhausted its $CONTINUATION_STEPS force steps there"
+            }
+            val point = branchPointAt(trial, axialForce, lowParameter)
+            if (point == null || point.trace.displacement <= lowStroke) {
+                val shrunk = lowForce + 0.5 * (trial - lowForce)
+                require(shrunk > lowForce && shrunk < trial) {
+                    "the arm's small-rotation branch does not reach a stroke of $displacement " +
+                            "nm: it reaches $lowStroke nm at $lowForce pN, and no larger tip " +
+                            "force keeps the far-end moment condition on that branch"
+                }
+                trial = shrunk
+                continue
+            }
+            if (point.trace.displacement >= displacement) {
+                reached = point
+            } else {
+                lowForce = trial
+                lowStroke = point.trace.displacement
+                lowParameter = point.parameter
+                trial *= 2.0
+            }
+        }
+        val floor = lowParameter
+        val root = illinoisRoot(
+            lowForce, trial, lowStroke - displacement, reached.trace.displacement - displacement
+        ) { force ->
+            val here = branchPointAt(force, axialForce, floor)
+            checkNotNull(here) {
+                "the branch is undefined at $force pN inside a bracket it was found on"
+            }.trace.displacement - displacement
+        }
+        val point = checkNotNull(branchPointAt(root, axialForce, floor)) {
+            "the branch is undefined at its own root, $root pN"
+        }
+        return stateOf(point.trace, root, axialForce, 0.0)
+    }
+
+    /**
+     * `C-0039`'s original strategy, retained under [BranchStrategy.DOUBLING_LADDER] and used
+     * nowhere else: a blind doubling ladder in the tip force, each rung solved by the unanchored
+     * [stateAtForce]. Kept so that `C-0092`'s measurement of its artefact stays reproducible.
+     */
+    private fun ladderStateAtDisplacement(
+        displacement: Double,
+        axialForce: Double
+    ): ElasticaState {
         require(displacement > 0.0) { "displacement must be positive, was: $displacement" }
         require(displacement < length) {
             "an inextensible arm of $length nm cannot lift its tip $displacement nm"
@@ -345,14 +572,25 @@ class TwoSpringElastica(
                 "no transverse force below $high pN reaches a stroke of $displacement nm"
             }
         }
-        return illinoisRoot(low, high, atLow, atHigh) {
+        val root = illinoisRoot(low, high, atLow, atHigh) {
             stateAtForce(it, axialForce).displacement - displacement
         }
+        return stateAtForce(root, axialForce)
     }
+
+    private fun solveAtDisplacement(displacement: Double, axialForce: Double): ElasticaState =
+        when (strategy) {
+            BranchStrategy.CONTINUATION -> branchStateAtDisplacement(displacement, axialForce)
+            BranchStrategy.DOUBLING_LADDER -> ladderStateAtDisplacement(displacement, axialForce)
+        }
+
+    /** The transverse tip force in pN that drives the arm to a stroke of [displacement] nm. */
+    fun forceForDisplacement(displacement: Double, axialForce: Double = 0.0): Double =
+        solveAtDisplacement(displacement, axialForce).force
 
     /** The arm's state at a stroke of [displacement] nm — signed, and odd in the stroke. */
     fun stateAtDisplacement(displacement: Double, axialForce: Double = 0.0): ElasticaState =
-        stateAtForce(forceForDisplacement(abs(displacement), axialForce), axialForce)
+        solveAtDisplacement(abs(displacement), axialForce)
 
     override fun reaction(displacement: Double): Double {
         if (displacement == 0.0) return 0.0

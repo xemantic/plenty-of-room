@@ -1,6 +1,6 @@
 # DECISIONS-FOR-NDI
 
-Five decisions this programme cannot make for itself.
+Six decisions this programme cannot make for itself.
 
 Each is a **specification** question rather than a modelling one:
 no amount of calculation closes it,
@@ -9,8 +9,8 @@ not a number about the physics.
 They are collected here so they can be reviewed together and answered in one pass,
 rather than one at a time across iterations.
 
-They are live in [`TASKS.md`](TASKS.md) as `T-63`, `T-115`, `P-13`, `T-112` and `T-154`,
-and this file is the reviewable form of the same five.
+They are live in [`TASKS.md`](TASKS.md) as `T-63`, `T-115`, `P-13`, `T-112`, `T-154` and `T-166`,
+and this file is the reviewable form of the same six.
 
 ## How to read this
 
@@ -19,7 +19,7 @@ what has been established either way, the options with their consequences,
 what the programme would recommend and on what grounds,
 and **what it costs to leave it open** — which is the part that is easy to miss.
 
-**A one-sentence answer is enough for all five.**
+**A one-sentence answer is enough for all six.**
 None needs a document; three of them need a single word.
 
 **Nothing here is measured.** Every number is TRL 1–3:
@@ -34,6 +34,7 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 | 3 | What is the electrode made of, and where is its potential of zero charge? | `P-13` | 2.6× on the one hold-down no design can remove | **Name a material**; the programme will not choose one |
 | 4 | Which device does §3's *desired* clause ask for? | `T-112` | Every desired-stroke number in the corpus has to be quoted twice | **One device, placed at the acceptable clause** |
 | 5 | What is the scaffold — linear or circular, M13 or synthetic, and how long? | `T-154` | A seam costs 6–12 of 34 arm stations, and §3's 40.0 nm is not a buildable seamless width | **A purpose-length scaffold**; the choice is a fabrication decision, not a modelling one |
+| 6 | Does §3 admit a **two-layer** tile, or is single-layer a requirement? | `T-166` | The only coupling topology that narrows the flatness negative is multilayer, and it is the one motif here with a published precedent | **A yes/no is enough**; a *no* closes the last open recovery route |
 
 ---
 
@@ -66,7 +67,7 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 > the six independent routes are THREE.** One (`C-0032`) is withdrawn, as above. **Two are the
 > other four, read again**: `T-2`'s bias clause carries `T-3`'s own blocking bias at **15 of 15**
 > states at a departure of **0.0**, and `T-25`'s buffer comparison carries `T-16`'s and `T-4`'s
-> extrema at **20 of 20** comparisons at a departure of **2.7e−8** — which is one file printing
+> extrema at **20 of 20** comparisons at a departure of **2.66e−08** — which is one file printing
 > eight significant digits where the other prints nine. So `C-0016` is `C-0012` on a `σ` grid and
 > `C-0027` is `C-0017` and `C-0018` with two corrections applied.
 >
@@ -246,6 +247,39 @@ sourcing, which the programme cannot price.
 
 **What deferring costs.** `C-0081` and `C-0086` must both be carried in two readings, and `T-153` — a re-read of
 every plan margin at 38.08 nm — cannot be scoped, because whether it is needed at all depends on this answer.
+
+---
+
+## 6. Does §3 admit a two-layer tile, or is single-layer a requirement? (`T-166`)
+
+**The question.** §1 and §3 name a single-layer origami tile. Is that a requirement, or the simplest thing
+that came to mind when the problem was written?
+
+**Why the programme cannot decide it.** It is a statement about what the device is allowed to be.
+
+**What is established** (`C-0087`, `C-0089`, `C-0093`).
+
+- **The flat Gen-1 tile is a zero-defect result.** Under the only per-staple incorporation statistics anybody
+  has measured, **no array coupling is flat**: the best 90th-percentile dishing over 22 designs is **0.2845**
+  against `T-5b`'s 0.10, and what refuses it is a **count** — a dropout *is* an increase in the attachment
+  pitch, so the density demanded is 195 paths against the 34 the plan admits.
+- **The one structural escape is a coupling that is not an array** (`C-0093`): tying the tile to a **stiff
+  shared body** moves the mandate into the body's ground, frees each tie by 3.4×, and is **2.05× flatter**
+  than the array at zero defects on identical stations. Under the dropout it reaches **0.24028028** — the
+  best this programme has achieved — and still misses, needing **252 ties against 53**.
+- **But that body is multilayer origami.** A body tied at many out-of-plane sites is a square-lattice second
+  layer, which is *the one motif in this programme with a published precedent* — against the single-tie
+  out-of-plane arm the recommendation currently rests on, which has none in 62 recorded queries.
+- **A buildable body is not the rigid one**: a four-layer honeycomb brick reads **0.100166871**, *worse* than
+  the array. Body rigidity is first order, so a *yes* opens real work rather than a free win.
+
+**What the programme would recommend.** Nothing yet — `T-165` has not been run, and it is the only unspent
+axis (a distribution *and* placement search on the shared-body topology, needing 2.40× to reach the
+convention). What the programme can say is that **a *no* closes the last open recovery route for a flat
+tile**, and that is worth knowing before more is spent on it.
+
+**What deferring costs.** `T-165` cannot be scoped, and the flatness answer stays *"flat as designed, not
+shown flat as built"* with no route left to test.
 
 ---
 

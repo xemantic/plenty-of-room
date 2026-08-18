@@ -92,11 +92,14 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=brush.FirstMomentConventionStudyKt            # T-1e, N inverted on the first-moment thickness as well as the force-onset height
 ./gradlew study -Pstudy=anchoring.CollinearClearanceStudyKt            # T-152, what stacking-prevention clearance the collinear slot should carry
 ./gradlew study -Pstudy=anchoring.ScaffoldRoutingStudyKt              # T-151, can the tile be raster-folded without a scaffold seam
+./gradlew study -Pstudy=anchoring.RowEndCrossoverStudyKt             # T-161, can a crossover be drawn at the last base pair of a duplex
 ./gradlew study -Pstudy=coupling.StapleDropoutStudyKt                 # T-148, the flatness of every standing design under the measured staple dropout
 ./gradlew study -Pstudy=stability.RecommendedElementFoldStudyKt       # T-149, the pull-in fold of the output element C-0071 recommends
 ./gradlew study -Pstudy=coupling.DropoutRobustPlacementStudyKt        # T-155, is any placement flat UNDER the measured staple dropout
+./gradlew study -Pstudy=coupling.SharedBodyCouplingStudyKt             # T-162, does a coupling that is NOT an array escape the count argument
 ./gradlew study -Pstudy=synthesis.BufferRouteCensusStudyKt            # T-156, how many of the six 0.5 mM routes are read on withdrawn objects
 ./gradlew study -Pstudy=stability.LargeRotationArmBranchStudyKt       # T-157, does the recommended arm fold on the large-rotation branch
+./gradlew study -Pstudy=stability.DoublingLadderRepairStudyKt         # T-159, the repaired force ladder, and C-0084's 108 fold rows re-read
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.

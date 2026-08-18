@@ -7049,3 +7049,75 @@ those came back favourable — the buildable width makes the tile *flatter* and 
 quantisation the programme had already chosen, and the large-rotation branch removes rather than adds a
 qualification. The two that were formulated as recoveries both failed. That is not a pattern to draw a lesson
 from, but it is worth recording that the framing predicted the sign in neither direction.
+
+## 2026-08-17 — Iteration 19
+
+Three loops plus one process task. Every number below was grepped out of its claim file.
+
+**`C-0093` (`T-162`) — the only structural escape from `C-0089`'s count argument is real, is worth 2.2× in
+level and 3.0× in slope, and still does not arrive.** A shared body is **not** a rescaling of an array: it is
+the same Woodbury system with one term added, `(T⁻¹ + M + F_b) f = w_free`, and the array is its `F_b = 0`
+corner. **The declared falsifier did not fire**, and favourably — a rigid shared body on `C-0063`'s own 34
+stations dishes **0.0344013403** at zero defects against the array's 0.0706145537, **2.05× flatter on the
+identical station set**, and is `T-5b`-flat at every rung of the tie ladder.
+The escape is a **division**: under a shared body `C-0017`'s mandate lives in the body's **ground**, which is
+a rigid-body mode of the tile and therefore **invisible to dishing**, so the ties are freed from 0.98 to
+**3.33 pN/nm**. Under the measured dropout the best of **39** graded cells reaches **0.24028028** at the 90th
+percentile — the lowest this programme has reached under fabrication, and still **2.40×** `T-5b`'s 0.10. The
+count it asks for is **252 ties against the 53 the lattice offers**.
+So `C-0089`'s verdict survives on a narrower ground than it was written on, which is the discipline
+`C-0078` named: *re-check the ground of every verdict whose premise is withdrawn, not just the verdict.*
+
+**`C-0095` (`T-161`) — yes, and it is not a permission but the definition of a raster turn.** Rothemund's
+odd-half-turn rule binds *"the distance between successive scaffold crossovers"*, and in a boustrophedon
+those are **the two ends of one row** — so the 112 bp `C-0086` quantised **is** the crossover-to-crossover
+distance, and a crossover at the last base pair is what makes the row 112 bp long. Decided under three
+separate headings, each read directly: **the geometry does not forbid it** (a crossover is an *azimuthal*
+condition and *"the last base pair"* an *axial* coordinate); **the software does not forbid it** (caDNAno
+*"permits the user to force crossovers between any two scaffold bases"*, and cadnano 2.1 **automates** the
+raster turn); **and it is published** — Rothemund's 24-helix rectangle is **288 bp = 18 column pitches
+exactly**, so both vertical edges lie on the crossover lattice, folded **90 % well-formed**, in the paper
+this programme's lattice comes from.
+**The falsifier fired favourably**: written to catch *"unprecedented"*, it found *"built, imaged and
+counted"*. So the programme carries `C-0090`'s **admitted** reading, **0.0621469105** — against 0.168371808
+at the same phase — and the 38.08 nm tile is inside `T-5b`'s 0.10 and **12.0 % flatter** than §3's nominal
+40.0 nm. `C-0090`'s wording that *"no crossover has ever been drawn at the last base pair"* is corrected in
+place; one has, and no sixth NDI question is needed.
+**And the surprise is a theorem**: `C-0086`'s odd-half-turn rule and the row-end column **parity** condition
+are the **same congruence**, asserted identical over every row length 1–400 bp — two claims had used both
+rules side by side without noticing. It turns the identification of the row-end column with the raster turn
+from an argument into a proof, and it splits the eight columns' 56 crossovers as **14 scaffold turns + 42
+staple**, the 14 recovering `C-0086`'s own independent LINEAR count from the lattice.
+The whole literature answer cost a `grep`: `T-151` had fetched and manifested the primary source two
+iterations earlier — hence a new `CLAUDE.md` rule, *check `gpd/data/` before fetching anything*.
+
+**`C-0096` (`T-159`) — the repair lands, and 90 of the 96 outstanding rows could never have moved.** The
+cheap bound is the claim: a ceiling that is `min(layer, element)` is unchanged **identically** when only the
+element argument rises, so only **18** of `C-0084`'s 108 fold rows were ever candidates. They were re-read by
+re-running the whole study rather than by argument, the *"element model branch end"* ceiling `CH-0099` was
+raised about now binds at **0 of 108**, and — the part that matters for a solver swap — the continuation
+costs **190 sweeps against the doubling ladder's 209**, so the repair is *cheaper* than the defect.
+`CH-0112` is the generalisation: **a lost branch is recorded twice, as a fold and as a ceiling**, so a
+solver's domain limit can masquerade as physics in two different tables.
+
+**`C-0097` (`T-158`, coordinator) — `C-0091`'s hand finding mechanised, recall 2 of 2.** Both halves closed.
+*(a)* `C-0016`'s two clauses cannot be one sentence about the buffer: its §(e) window prefers 0.5 mM and its
+§(f) fixed-bias stability count prefers 2 mM, which is not a contradiction but the **force-pinned** and
+**fixed-bias** readings of one layer — and **no claim states the pair**, so a synthesis inherits whichever
+half its author read. `ANSWERS.md` now names which.
+*(b)* The detector recovers **both** instances without being told where to look: `T-16`↔`T-25` at
+`C-0091`'s own **2.66e−08**, and `T-2` ⊂ `T-3` at **12 of 72, departure 0, under the same key name on both
+sides**. Three decisions each forced by the live case — the unit is a **series** and never a single number;
+the comparison is a **tolerance** with the departure reported, because one file printed eight significant
+digits where the other printed nine and `==` would have said *not a transfer*; and series are filtered for
+**distinctiveness**, because conventions recur everywhere.
+**The subset matcher is the important half** — a synthesis *selects* the states it needs, so equal-length
+matching misses the commoner shape entirely — and it costs **271 s against 1.0 s**. Neither is a gate, and
+that is the finding rather than a limitation: **a transfer is not a defect.** It becomes one only where two
+files are **counted** as independent evidence, and no tool can see that.
+
+**A coordinator note.** `T-163` was given a reserved claim number when iteration 19's numbers were allocated
+and then not worked, the iteration running three agents rather than four; its row said `IN PROGRESS` for the
+whole iteration and is corrected here. **Reserving a number is not scheduling the task**, and the extended
+`queue_status` reads a stale reservation as *not open*, which is the same failure direction `P-24` fixed for
+`DISCHARGED` — a task the queue believes is being worked is a task nobody picks up.

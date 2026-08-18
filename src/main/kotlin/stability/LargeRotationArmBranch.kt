@@ -16,6 +16,7 @@
 
 package com.xemantic.nano.plentyofroom.stability
 
+import com.xemantic.nano.plentyofroom.anchoring.BranchStrategy
 import com.xemantic.nano.plentyofroom.anchoring.TwoSpringElastica
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import kotlinx.serialization.Serializable
@@ -445,9 +446,17 @@ private fun buildRecommendedArmBranch(
  * [com.xemantic.nano.plentyofroom.stability.loadLineStrokeCeiling] — so that the difference between
  * this and [LargeRotationArmBranch.strokeSupremum] is a property of the **solver** and not of two
  * different arms.
+ *
+ * `T-159` repaired that ladder, so it is no longer what `forceForDisplacement` does by default.
+ * This function therefore asks for it **explicitly**, through
+ * [com.xemantic.nano.plentyofroom.anchoring.BranchStrategy.DOUBLING_LADDER], which exists so that
+ * this measurement stays a measurement: a repair that makes the artefact it repairs unmeasurable
+ * would leave `C-0092`'s evidence uncheckable.
  */
 fun ladderRefusalStroke(resolution: Double = 1.0e-6): Double {
-    val line = recommendedArmLine("LQ5 recommended hinge-rooted arm (C-0071)")
+    val line = recommendedArmLine(
+        "LQ5 recommended hinge-rooted arm (C-0071)", strategy = BranchStrategy.DOUBLING_LADDER
+    )
     return loadLineStrokeCeiling(
         line = line,
         low = 3.0,

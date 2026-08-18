@@ -136,6 +136,19 @@ The undemonstrated motif is unchanged and remains the larger exposure.
    on the same realisations, **255×** better. Nothing here is refused by geometry. What refuses it is that a
    coupling is **specified before it is folded**, and the oracle/fixed gap *widens* with the path count, so a
    reachable floor can exclude a design and can never license one.
+   **A second topology was then tried and narrows the negative without removing it** (`C-0093`, `T-162`):
+   tying the tile to one **stiff shared body** rather than to an array of independent paths is not a
+   rescaling but the same system with one term added, and it moves `C-0017`'s mandate into the body's
+   **ground** — a rigid-body mode of the tile, invisible to dishing — which frees each tie from 0.98 to
+   **3.33 pN/nm**. At zero defects it is **2.05× flatter** than the array on the identical stations
+   (**0.0344013403** against 0.0706145537), and under the measured dropout it reaches **0.24028028** at the
+   90th percentile, the lowest this programme has attained and **1.18×** better than any array. It still
+   fails: the redundancy slope is **2.96×** steeper but crosses `T-5b`'s 0.10 only at **252 ties** against
+   the **53** the lattice offers — **4.8× short** where the array was 5.7×. And a *buildable* body loses
+   where the rigid limit wins (a four-layer honeycomb brick reads 0.100166871, worse than the array), so
+   body rigidity is first order rather than an idealisation. **The cleanest obstruction is a specification
+   gap rather than physics**: a body tied at many out-of-plane sites *is* multilayer origami, and §3 names a
+   single-layer tile — which is `T-166`, item 6 of [`DECISIONS-FOR-NDI.md`](DECISIONS-FOR-NDI.md).
    (`C-0006`, `C-0009`, `C-0022`, `CH-0005`, `CH-0025`; corrected by `C-0058`, `CH-0071`, `C-0063`;
    **conditioned by `C-0087`, `CH-0084`, `CH-0102`**.)
 2. **The polymer layer confines the tile in one direction only.** Its lateral restoring stiffness is *exactly*
