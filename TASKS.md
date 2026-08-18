@@ -9,6 +9,40 @@ Status vocabulary: `TODO` · `IN PROGRESS` · `BLOCKED` · `DONE` · `KILLED` (b
 IDs: `T*` are the eight tasks of the problem definition §6, `P*` are process tasks we raised ourselves.
 The `Leaf` column is the NDI `simulation-task-map` ID the work traces to.
 
+## Start here — the state after iteration 21
+
+Written at the end of a long session, for whoever picks the loop up next. The queue below is the
+authority; this is only the reading order.
+
+**The programme has a recommended output element** (`C-0071`'s `Q5`) and its §6 answers are in
+[`ANSWERS.md`](ANSWERS.md). **Six specification questions are with NDI** and are collected in
+[`DECISIONS-FOR-NDI.md`](DECISIONS-FOR-NDI.md); three of them now gate real work.
+
+**Three things changed shape in iterations 17–21 and a new reader should know them before opening a task:**
+
+1. **The flat tile is closed on every coupling axis this programme can reach.** Count, distribution,
+   placement, topology and phase are all spent (`C-0087`, `C-0089`, `C-0093`, `C-0098`). §4(g)'s answer is
+   now *"flat as designed, unproven as built"*, and what decides it is a **fabrication yield** — a per-site
+   staple-incorporation map on a coupling-bearing tile, which is a bench measurement, not a solve.
+2. **The buildable tile is 38.08 nm, not §3's 40.0** (`C-0086`, `C-0095`), because a seamless raster
+   quantises the width at 32 bp. It is **12 % flatter**, and it selects the crossover phase and the arm
+   quantisation the programme had already chosen for other reasons.
+3. **One structural unknown reopened**: a row-end crossover's **prestrain** can move a flatness verdict
+   where its stiffness cannot (`C-0104`), and nothing measures it.
+
+**Suggested order.** `T-175` (the fourth `ANSWERS.md` synthesis — 21 claims and 24 challenges behind, and
+one changes the *shape* of an answer) is the cheapest high-value item and needs only reading; the three
+mechanical checks are clean, so nothing is owed on provenance. Then `T-182` (what prestrain a row-end
+crossover carries — it reverses `C-0099`'s recommendation against an oxDNA run) and `T-178` (whether
+`C-0103`'s count effect holds at the other 31 phases, on which the standing recommendation's defence rests).
+`T-50` and `T-9` remain the two genuinely expensive items and both are named and costed rather than dodged.
+
+**Harness.** Run `tools/verify.sh` for anything authoritative — it carries four post-Gradle gates. Three
+retained checkers guard the documents (`tools/trace-answers.py`, `tools/check-markdown-tables.py`,
+`tools/result-reader-census.py`) and each has its own self-tests wired into Gradle. **Task numbers have
+collided in six consecutive iterations**: reserving claim numbers does not touch the numbers agents *raise*,
+so take one above the highest in use and say where you moved from.
+
 ## Process blockers
 
 | ID | Task | Status | Notes |
