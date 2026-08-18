@@ -149,6 +149,31 @@ def is_excluded(path):
     return bool(parts) and parts[0] in _EXCLUDED_ROOTS
 
 
+def merge_paths(tracked, present):
+    """The default sweep: tracked plus untracked-but-present, excluded paths removed, sorted.
+
+    The checker used to list only `git ls-files`, so in the CHECKOUT it skipped untracked files
+    while in a verification SNAPSHOT — which has no `.git` — the fallback walked the tree and
+    checked everything.  A new claim is untracked until it is staged, so a local run reported
+    clean and the snapshot found a defect in that very file: the tool disagreeing with itself
+    about its own remit.  Merging the two makes the environments agree, and it is the direction
+    that catches more rather than less.
+    """
+    return sorted({p for p in list(tracked) + list(present) if not is_excluded(p)})
+
+
+def untracked_markdown():
+    """Markdown git can see but is not tracking — new claims, in-flight drafts."""
+    try:
+        out = subprocess.run(
+            ["git", "ls-files", "--others", "--exclude-standard", "*.md"],
+            capture_output=True, text=True, check=True,
+        ).stdout
+        return [p for p in out.split("\n") if p]
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return []
+
+
 def tracked_markdown():
     """Every tracked `*.md` path, so untracked scratch files are not reported."""
     try:
@@ -177,7 +202,7 @@ def main(argv=None):
 
     # An explicit path is always honoured; the exclusion applies to the default sweep, so that
     # `tools/check-markdown-tables.py third-party/…` can still be used to look.
-    paths = arguments.paths or [p for p in tracked_markdown() if not is_excluded(p)]
+    paths = arguments.paths or merge_paths(tracked_markdown(), untracked_markdown())
     total = 0
     for path in paths:
         with open(path, encoding="utf-8") as handle:

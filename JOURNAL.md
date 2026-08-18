@@ -7251,3 +7251,13 @@ they verify what is *present* and nothing verifies what is *missing from a discl
 which the first is now the most consequential missing measurement in the programme: **a per-site
 incorporation map on a coupling-bearing tile**, because the flat-tile question is closed on every coupling
 axis and what decides it is a fabrication yield. `T-175` queued for the fourth synthesis.
+
+**A post-iteration-21 correction, found by an agent in the coordinator's own tool.** `check-markdown-tables.py`
+had **two behaviours and nobody had noticed**: in the checkout it lists `git ls-files` and therefore skips
+**untracked** files, while in a verification snapshot — which has no `.git` — its fallback walks the tree and
+checks everything. A new claim is untracked until it is staged, so the local run reported clean and the
+snapshot found a defect **in that very file**. The tool was disagreeing with itself about its own remit,
+which is exactly the class `C-0088` mechanised for the deliverable, now in the instrument that checks it.
+Fixed so the default sweep is tracked **plus** untracked-but-present — the direction that catches more — with
+four tests, and the two environments now agree at 325 files. **That is the second defect an agent has found
+in a checker the coordinator built and the third time a check has caught its own author.**

@@ -139,6 +139,33 @@ check("and a redundant ./ elsewhere does not confuse it", tables.is_excluded("./
 check("nor does a doubled separator", tables.is_excluded("third-party//x.md"), True)
 check("an absolute path is matched on its tail, not its root", tables.is_excluded("/etc/x.md"), False)
 
+# --- tracked vs untracked ------------------------------------------------------------------
+#
+# The checker had two behaviours and nobody had noticed: in the CHECKOUT it lists `git ls-files`
+# and therefore **skips untracked files**, while in a verification SNAPSHOT there is no `.git`, so
+# the fallback walks the tree and checks everything.  A new claim is untracked until it is staged,
+# so the local run said clean and the snapshot found a defect in it — the tool disagreeing with
+# itself about its own remit, which is the class `C-0088` mechanised for the deliverable.
+#
+# The fix is that the default sweep covers tracked AND untracked-but-present Markdown, so the two
+# environments agree. `paths_to_check` is that set; ignored files stay out.
+check(
+    "an untracked path is still in the default set",
+    "new.md" in tables.merge_paths(["tracked.md"], ["new.md", "tracked.md"]),
+    True,
+)
+check(
+    "a tracked path is not duplicated",
+    tables.merge_paths(["a.md", "b.md"], ["b.md"]),
+    ["a.md", "b.md"],
+)
+check(
+    "the exclusion still applies to the merged set",
+    tables.merge_paths(["third-party/x.md"], ["third-party/y.md"]),
+    [],
+)
+check("the result is sorted, so runs are comparable", tables.merge_paths(["b.md"], ["a.md"]), ["a.md", "b.md"])
+
 # --- summary ------------------------------------------------------------------------------------
 if _failures:
     print("\n{} check(s) FAILED".format(len(_failures)))
