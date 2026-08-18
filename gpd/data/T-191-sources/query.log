@@ -1,0 +1,203 @@
+QUERY "DNA origami" AND "persistence length" AND "helix bundle"
+  hits=65
+    PMC13095159 42016472 OA=N :: DNA Helix Bundle-Encoded Multi-Bit Information Readout by Sapphire-Supported Nanopores.
+    PMC12648286 41311926 OA=Y :: SNUPI: A Computational Framework for Rapid Mechanical Analysis of Structured DNA Assemblies.
+    PMC12309683 40737411 OA=Y :: Control and synchronization of rapid nanoscale DNA heat engine by local heating.
+    PMC12143421 40358458 OA=N :: Isothermal assembly of DNA nanostructures.
+    PMC11291742 39085236 OA=Y :: Predicting the effect of binding molecules on the shape and mechanical properties of structured DNA assemblies.
+    PMC10100577 36951760 OA=Y :: Computer-Aided Design of A-Trail Routed Wireframe DNA Nanostructures with Square Lattice Edges.
+    PMC11001925 38589344 OA=Y :: Mechanism of DNA origami folding elucidated by mesoscopic simulations.
+    PMC11138899 38827435 OA=N :: Sculpting photoproducts with DNA origami.
+QUERY "six-helix bundle" AND "persistence length"
+  hits=42
+    PMC12309683 40737411 OA=Y :: Control and synchronization of rapid nanoscale DNA heat engine by local heating.
+    PMC9853505 36174970 OA=Y :: Design, Mechanical Properties, and Dynamics of Synthetic DNA Filaments.
+    PMC12143421 40358458 OA=N :: Isothermal assembly of DNA nanostructures.
+    PMC9122324 35594345 OA=Y :: Planar 2D wireframe DNA origami.
+    PMC8643692 34850119 OA=Y :: Modulating the chemo-mechanical response of structured DNA assemblies through binding molecules.
+    PMC11138899 38827435 OA=N :: Sculpting photoproducts with DNA origami.
+    PMC7229838 32232413 OA=Y :: MrDNA: a multi-resolution model for predicting the structure and dynamics of DNA systems.
+    PMC8966688 34499072 OA=N :: DNA origami nano-mechanics.
+QUERY "DNA origami" AND "magnetic tweezers" AND rigidity
+  hits=33
+    PMC11788527 39757199 OA=Y :: Dynamics of nucleosomes and chromatin fibers revealed by single-molecule measurements.
+    PMC12552974 41142362 OA=Y :: Synthetic mechanoreceptor engineering: From genetic encoding to DNA nanotechnology-based reprogramming.
+    PMC9494703 36285315 OA=Y :: Recent Progress of Magnetically Actuated DNA Micro/Nanorobots.
+    PMC11602145 39460618 OA=Y :: Stacking correlation length in single-stranded DNA.
+    PMC10395309 37538812 OA=Y :: Mechanics of dynamic and deformable DNA nanostructures.
+    PMC8466356 34564500 OA=Y :: Obtaining Precise Molecular Information via DNA Nanotechnology.
+    PMC10945522 38289342 OA=Y :: Explicit ion modeling predicts physicochemical interactions for chromatin organization.
+    PMC9007884 35322846 OA=N :: Recent developments in DNA-based mechanical nanodevices.
+QUERY "DNA origami" AND "bending rigidity" AND measured
+  hits=44
+    None None OA=Y :: Mechanical Flexibility Enables DNA Origami to Overcome Steric Confinement in Mucus
+    PMC12452858 40924447 OA=Y :: Measuring multisubunit mechanics of geometrically programmed colloidal assemblies via cryo-EM multi-body refinement.
+    PMC12738586 41381477 OA=Y :: Modular programming of interaction and geometric specificity enables assembly of complex DNA origami nanostructures.
+    PMC12511405 41068158 OA=Y :: Programmable DNA shell scaffolds for directional membrane budding.
+    PMC11221488 38959303 OA=Y :: Economical routes to size-specific assembly of self-closing structures.
+    PMC11291742 39085236 OA=Y :: Predicting the effect of binding molecules on the shape and mechanical properties of structured DNA assemblies.
+    PMC11754578 39841331 OA=Y :: Correlation of precisely fabricated geometric characteristics of DNA-origami nanostructures with their cellular entry in human lens epithelial cells.
+    PMC9618141 36252043 OA=Y :: Geometrically programmed self-limited assembly of tubules using DNA origami colloids.
+QUERY "DNA origami" AND "torsional rigidity"
+  hits=14
+    PMC9494703 36285315 OA=Y :: Recent Progress of Magnetically Actuated DNA Micro/Nanorobots.
+    PMC8405678 34462430 OA=Y :: Programming ultrasensitive threshold response through chemomechanical instability.
+    PMC10395309 37538812 OA=Y :: Mechanics of dynamic and deformable DNA nanostructures.
+    PMC6326809 30476210 OA=Y :: Investigating the sequence-dependent mechanical properties of DNA nicks for applications in twisted DNA nanostructure design.
+    PMC8643692 34850119 OA=Y :: Modulating the chemo-mechanical response of structured DNA assemblies through binding molecules.
+    PMC13048297 41939855 OA=N :: Mechanomedicine.
+    PMC10642627 37872857 OA=Y :: Pursuing excitonic energy transfer with programmable DNA-based optical breadboards.
+    PMC7764255 33302459 OA=Y :: Mechanical Flexibility of DNA: A Quintessential Tool for DNA Nanotechnology.
+QUERY "DNA nanotube" AND "persistence length" AND "helix"
+  hits=20
+    PMC12822630 41564190 OA=Y :: Expanding DNA alphabet adds a previously unknown dimension to nanostructures.
+    PMC12143421 40358458 OA=N :: Isothermal assembly of DNA nanostructures.
+    PMC13095159 42016472 OA=N :: DNA Helix Bundle-Encoded Multi-Bit Information Readout by Sapphire-Supported Nanopores.
+    PMC10415745 37577007 OA=Y :: Engineering DNA-based cytoskeletons for synthetic cells.
+    PMC8879693 35215620 OA=Y :: Constraint Release for Reptating Filaments in Semiflexible Networks Depends on Background Fluctuations.
+    PMC12532283 41033668 OA=Y :: DNA Condensation-Inspired Assembly of DNA Nanotubes into Reversible Superstructures: A Base Pairing-Orthogonal Way to Create Rings, Bundles, or Vast Networks.
+    PMC9853505 36174970 OA=Y :: Design, Mechanical Properties, and Dynamics of Synthetic DNA Filaments.
+    PMC9494703 36285315 OA=Y :: Recent Progress of Magnetically Actuated DNA Micro/Nanorobots.
+QUERY "DNA origami" AND "flexural rigidity"
+  hits=9
+    PMC10643784 37974983 OA=N :: Measuring and modeling forces generated by microtubules.
+    PMC4377546 25738229 OA=Y :: Tuning myosin-driven sorting on cellular actin networks.
+    PMC3964131 24591646 OA=N :: Myosin lever arm directs collective motion on cellular actin network.
+    PMC7345464 32485897 OA=Y :: Biomimetic Nanomembranes: An Overview.
+    PMC6976292 32010782 OA=Y :: Different motilities of microtubules driven by kinesin-1 and kinesin-14 motors patterned on nanopillars.
+    PMC4613745 25546606 OA=N :: Meeting report: SMART timing--principles of single molecule techniques course at the University of Michigan 2014.
+    PMC10240815 37284438 OA=Y :: Construction of intelligent moving micro/nanomotors and their applications in biosensing and disease treatment.
+    PMC6881777 30740918 OA=N :: From isolated structures to continuous networks: A categorization of cytoskeleton-based motile engineered biological microstructures.
+QUERY "DNA origami" AND "Young's modulus"
+  hits=28
+    None 41724186 OA=N :: Unveiling the dynamic biomechanical landscape of DNA origami nanotubes: insights from steered molecular dynamics at Varied temperatures and stretching rates.
+    PMC11893783 40064923 OA=Y :: Soft-matter-induced orderings in a solid-state van der Waals heterostructure.
+    PMC10395309 37538812 OA=Y :: Mechanics of dynamic and deformable DNA nanostructures.
+    PMC13156766 42111759 OA=Y :: Engineered artificial antigen-presenting cells for tumor immunotherapy: Design strategies, clinical applications, and translational challenges.
+    None 30834915 OA=N :: Measurement of nanomechanical properties of DNA molecules by PeakForce atomic force microscopy based on DNA origami.
+    None None OA=Y :: Traction Force Microscopy with DNA FluoroCubes
+    PMC9418901 36132316 OA=Y :: Thermo-responsive plasmonic systems: old materials with new applications.
+    None 31270509 OA=N :: Solidifying framework nucleic acids with silica.
+QUERY "DNA origami" AND "elastic modulus" AND bundle
+  hits=23
+    None None OA=Y :: Mechanical Flexibility Enables DNA Origami to Overcome Steric Confinement in Mucus
+    PMC13255533 42207717 OA=Y :: Tools For Building Artificial Biological Nanostructures.
+    PMC12124716 39869392 OA=Y :: Folding and Functionalizing DNA Origami: A Versatile Approach Using a Reactive Polyamine.
+    PMC12291172 40718684 OA=Y :: Toward Bioactive Hydrogels: A Tunable Approach via Nucleic Acid-Collagen Complexation.
+    PMC10100577 36951760 OA=Y :: Computer-Aided Design of A-Trail Routed Wireframe DNA Nanostructures with Square Lattice Edges.
+    PMC7613750 34096116 OA=Y :: DNA Origami Penetration in Cell Spheroid Tissue Models is Enhanced by Wireframe Design.
+    PMC10254471 37303599 OA=Y :: Bioinspired Additive Manufacturing of Hierarchical Materials: From Biostructures to Functions.
+    PMC10151462 37068256 OA=Y :: Bonded straight and helical flagellar filaments form ultra-low-density glasses.
+QUERY "DNA origami" AND "shear" AND crossover AND stiffness
+  hits=29
+    PMC13151263 41904460 OA=Y :: Nanocomposite hydrogels: benefits and attributes for osteoarthritis therapy.
+    PMC11735872 39576670 OA=Y :: Crystalline Assemblies of DNA Nanostructures and Their Functional Properties.
+    PMC13042906 41668533 OA=Y :: Design and Characterization of DX-Tile DNA Nanostar-Based Hydrogels.
+    PMC10395309 37538812 OA=Y :: Mechanics of dynamic and deformable DNA nanostructures.
+    PMC11965564 40175475 OA=Y :: Topologically-crosslinked hydrogels based on γ-cyclodextrins.
+    PMC12291172 40718684 OA=Y :: Toward Bioactive Hydrogels: A Tunable Approach via Nucleic Acid-Collagen Complexation.
+    PMC9853505 36174970 OA=Y :: Design, Mechanical Properties, and Dynamics of Synthetic DNA Filaments.
+    PMC11707584 39533485 OA=Y :: Capturing Dynamic Assembly of Nanoscale Proteins During Network Formation.
+QUERY "DNA origami" AND "shear modulus"
+  hits=22
+    PMC11526426 39428637 OA=Y :: Integrating Single-Walled Carbon Nanotubes into Supramolecular Assemblies: From Basic Interactions to Emerging Applications.
+    PMC12070894 40376451 OA=Y :: Generation of topologically defined linear and cyclic DNA bottle brush polymers &lt;i&gt;via&lt;/i&gt; a graft-to approach.
+    PMC13151263 41904460 OA=Y :: Nanocomposite hydrogels: benefits and attributes for osteoarthritis therapy.
+    PMC13156766 42111759 OA=Y :: Engineered artificial antigen-presenting cells for tumor immunotherapy: Design strategies, clinical applications, and translational challenges.
+    PMC10395309 37538812 OA=Y :: Mechanics of dynamic and deformable DNA nanostructures.
+    PMC12377050 40860064 OA=Y :: Point-of-care biosensors for infectious disease diagnosis: recent updates and prospects.
+    PMC13048297 41939855 OA=N :: Mechanomedicine.
+    PMC7589387 32681679 OA=Y :: Postsynthetic Functionalization of DNA-Nanocomposites with Proteins Yields Bioinstructive Matrices for Cell Culture Applications.
+QUERY "DNA origami" AND "crossover density" AND flexibility
+  hits=9
+    PMC11057029 38602296 OA=Y :: Designing Rigid DNA Origami Templates for Molecular Visualization Using Cryo-EM.
+    PMC10395309 37538812 OA=Y :: Mechanics of dynamic and deformable DNA nanostructures.
+    PMC13042906 41668533 OA=Y :: Design and Characterization of DX-Tile DNA Nanostar-Based Hydrogels.
+    PMC10950783 37884658 OA=Y :: A DNA turbine powered by a transmembrane potential across a nanopore.
+    PMC7145641 31728524 OA=Y :: Design and synthesis of pleated DNA origami nanotubes with adjustable diameters.
+    PMC7718922 33277481 OA=Y :: Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution.
+    PMC4914096 27036861 OA=Y :: Folding complex DNA nanostructures from limited sets of reusable sequences.
+    PMC3326316 22156372 OA=Y :: Quantitative prediction of 3D solution shape and flexibility of nucleic acid nanostructures.
+QUERY "DNA nanostructure" AND "shear lag"
+  hits=0
+QUERY "helix bundle" AND "crossover" AND "coupling" AND mechanical
+  hits=88
+    PMC12730752 41440300 OA=Y :: Comprehensive Review on DNA Hydrogels and DNA Origami-Enabled Wearable and Implantable Biosensors.
+    PMC12658365 41172239 OA=Y :: From Selective Permeation to Physiology in Potassium Channels.
+    PMC11291742 39085236 OA=Y :: Predicting the effect of binding molecules on the shape and mechanical properties of structured DNA assemblies.
+    PMC12354252 40499749 OA=N :: The Ensemble Basis of Allostery and Function: Insights from Models of Local Unfolding.
+    PMC10371015 37494445 OA=Y :: Versatile computer-aided design of free-form DNA nanostructures and assemblies.
+    PMC13255533 42207717 OA=Y :: Tools For Building Artificial Biological Nanostructures.
+    PMC12587874 37930828 OA=N :: Natural and Engineered Isoforms of the Inflammasome Adaptor ASC Form Noncovalent, pH-Responsive Hydrogels.
+    PMC12691925 40103431 OA=Y :: DNA‑Directed Assembly of Photonic Nanomaterials for Diagnostic and Therapeutic Applications.
+QUERY "DNA origami" AND "plate" AND "bending stiffness"
+  hits=14
+    PMC12639161 41271756 OA=Y :: A high signal-to-noise ratio and high-frequency seesaw cantilever for high-speed atomic force microscopy.
+    None None OA=Y :: The Effects of DMSO on DNA Conformations and Mechanics
+    PMC11067059 38669182 OA=Y :: Limits of economy and fidelity for programmable assembly of size-controlled triply periodic polyhedra.
+    PMC8966688 34499072 OA=N :: DNA origami nano-mechanics.
+    PMC12938189 41744713 OA=Y :: Nucleic Acid-Based Field-Effect Transistor Biosensors.
+    PMC6882874 31780654 OA=Y :: Automated sequence design of 2D wireframe DNA origami with honeycomb edges.
+    PMC11146749 38831923 OA=N :: Scaling behaviour and control of nuclear wrinkling.
+    PMC7476543 32939158 OA=Y :: Molecular swarm robots: recent progress and future challenges.
+QUERY "multilayer DNA origami" AND mechanical
+  hits=20
+    PMC7276390 32528637 OA=Y :: <i>In silico</i> modelling of DNA nanostructures.
+    PMC6097813 30128357 OA=Y :: Sequence-programmable covalent bonding of designed DNA assemblies.
+    PMC11621765 39570311 OA=Y :: Design principles for accurate folding of DNA origami.
+    PMC7718922 33277481 OA=Y :: Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution.
+    PMC8654862 34880226 OA=Y :: A nanoscale reciprocating rotary mechanism with coordinated mobility control.
+    PMC10950783 37884658 OA=Y :: A DNA turbine powered by a transmembrane potential across a nanopore.
+    PMC4253120 25346175 OA=Y :: Facile and scalable preparation of pure and dense DNA origami solutions.
+    PMC3336742 22187940 OA=N :: Multilayer DNA origami packed on hexagonal and hybrid lattices.
+QUERY "DNA origami" AND "layer" AND "flexural"
+  hits=15
+    PMC12752673 41215724 OA=Y :: Multiscale Design of Dental Restorative Materials: Mechanistic Foundations, Technological Innovations, and Clinical Translation.
+    PMC8465297 34577737 OA=Y :: DNA Studies: Latest Spectroscopic and Structural Approaches.
+    PMC5043419 27504755 OA=Y :: Large-Conductance Transmembrane Porin Made from DNA Origami.
+    PMC7345464 32485897 OA=Y :: Biomimetic Nanomembranes: An Overview.
+    PMC6603253 31263975 OA=Y :: Carbon Nanotube Assembly and Integration for Applications.
+    PMC8713997 34970073 OA=N :: Emerging 2D Nanomaterials for Biomedical Applications.
+    PMC10240815 37284438 OA=Y :: Construction of intelligent moving micro/nanomotors and their applications in biosensing and disease treatment.
+    PMC7317235 32613186 OA=Y :: Nature-derived materials for the fabrication of functional biodevices.
+QUERY "DNA origami" AND cantilever AND stiffness
+  hits=67
+    PMC12639161 41271756 OA=Y :: A high signal-to-noise ratio and high-frequency seesaw cantilever for high-speed atomic force microscopy.
+    PMC11111354 38459905 OA=N :: Utilizing multiscale engineered biomaterials to examine TGF-β-mediated myofibroblastic differentiation.
+    PMC11747590 39473163 OA=Y :: Radiation and DNA Origami Nanotechnology: Probing Structural Integrity at the Nanoscale.
+    PMC12057814 40337625 OA=Y :: Analytical methods in studying cell force sensing: principles, current technologies and perspectives.
+    PMC12954613 41651456 OA=N :: Single Molecule Force Spectroscopy to Probe Intermediates and Energetics of Membrane Protein Folding.
+    PMC10100577 36951760 OA=Y :: Computer-Aided Design of A-Trail Routed Wireframe DNA Nanostructures with Square Lattice Edges.
+    PMC12938189 41744713 OA=Y :: Nucleic Acid-Based Field-Effect Transistor Biosensors.
+    PMC11754578 39841331 OA=Y :: Correlation of precisely fabricated geometric characteristics of DNA-origami nanostructures with their cellular entry in human lens epithelial cells.
+QUERY CanDo AND "DNA origami" AND finite element
+  hits=38
+    PMC13255533 42207717 OA=Y :: Tools For Building Artificial Biological Nanostructures.
+    PMC12648286 41311926 OA=Y :: SNUPI: A Computational Framework for Rapid Mechanical Analysis of Structured DNA Assemblies.
+    PMC11998094 40241774 OA=Y :: Constructing virtual DNA-nanomachines.
+    PMC12203123 40585578 OA=Y :: Advances in programmable DNA nanostructures enabling stimuli-responsive drug delivery and multimodal biosensing.
+    PMC12696799 41110142 OA=Y :: Unraveling the Folding Dynamics of DNA Origami Structures.
+    PMC9127610 35620419 OA=Y :: Direct visualization of floppy two-dimensional DNA origami using cryogenic electron microscopy.
+    PMC10395309 37538812 OA=Y :: Mechanics of dynamic and deformable DNA nanostructures.
+    PMC9232119 35756857 OA=N :: Design Approaches and Computational Tools for DNA Nanostructures.
+QUERY "DNA origami" AND "coarse-grained" AND "elastic moduli"
+  hits=10
+    PMC13232356 None OA=Y :: Modeling Reveals How Direct-Acting Antivirals Redirect HBV Capsid Assembly Pathways to Noninfectious Products
+    PMC12814548 41467958 OA=Y :: Ion-Specific Modulation of the Conformation and Compactness of DNA Oligo-Catenanes.
+    PMC7229838 32232413 OA=Y :: MrDNA: a multi-resolution model for predicting the structure and dynamics of DNA systems.
+    PMC11240271 38842266 OA=Y :: Condensed Matter Systems Exposed to Radiation: Multiscale Theory, Simulations, and Experiment.
+    PMC8010795 32787014 OA=Y :: Gelling without Structuring: A SAXS Study of the Interactions among DNA Nanostars.
+    PMC8272448 34245338 OA=Y :: 13<sup>th</sup> EBSA congress, July 24-28, 2021, Vienna, Austria.
+    PMC4112545 24695087 OA=N :: Tensegrity, cellular biophysics, and the  mechanics of living systems.
+    PMC10643713 None OA=N :: The 7th Congress of Biophysicists of Russia - conference proceedings : Abstracts
+QUERY "oxDNA" AND "persistence length" AND origami
+  hits=53
+    PMC12410049 40830075 OA=Y :: Economical and Versatile Subunit Design Principles for Self-Assembled DNA Origami Structures.
+    PMC12095062 40097648 OA=Y :: Genetic encoding and expression of RNA origami cytoskeletons in synthetic cells.
+    PMC12648286 41311926 OA=Y :: SNUPI: A Computational Framework for Rapid Mechanical Analysis of Structured DNA Assemblies.
+    PMC12960257 41315785 OA=Y :: Self-assembled cell-scale containers made from DNA origami membranes.
+    PMC11923261 40108228 OA=Y :: Enhancing the speed of DNA walkers through soft confinement.
+    PMC11001925 38589344 OA=Y :: Mechanism of DNA origami folding elucidated by mesoscopic simulations.
+    PMC11550841 39521857 OA=Y :: DNA origami drives gene expression in a human cell culture system.
+    PMC10100577 36951760 OA=Y :: Computer-Aided Design of A-Trail Routed Wireframe DNA Nanostructures with Square Lattice Edges.
+wrote europepmc-queries.json

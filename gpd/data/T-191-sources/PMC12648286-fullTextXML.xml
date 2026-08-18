@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?><article xml:lang="en" article-type="research-article"><front><journal-meta><journal-id journal-id-type="pmc-domain-id">4063</journal-id><journal-id journal-id-type="pmc-domain">jacsau</journal-id><journal-title-group><journal-title>JACS Au</journal-title><abbrev-journal-title>JACS Au</abbrev-journal-title></journal-title-group><publisher><publisher-name>American Chemical Society</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC12648286</article-id><article-id pub-id-type="pmcaid">12648286</article-id><article-id pub-id-type="pmcaiid">12648286</article-id><article-id pub-id-type="pmid">41311926</article-id><article-id pub-id-type="doi">10.1021/jacsau.5c01110</article-id><title-group><article-title>SNUPI: A Computational
+Framework for Rapid Mechanical
+Analysis of Structured DNA Assemblies</article-title></title-group><contrib-group content-type="author"><contrib><name name-style="western"><surname>Park</surname><given-names initials="JH">Jun Hyeong</given-names></name><xref ref-type="aff" rid="aff1">†</xref></contrib><contrib><name name-style="western"><surname>Kim</surname><given-names initials="DN">Do-Nyun</given-names></name><xref ref-type="aff" rid="aff2">‡</xref><xref ref-type="aff" rid="aff3">§</xref><xref ref-type="aff" rid="aff4">∥</xref><xref ref-type="aff" rid="aff5">⊥</xref><xref rid="cor1" ref-type="author-notes">*</xref></contrib><contrib><name name-style="western"><surname>Lee</surname><given-names initials="JY">Jae Young</given-names></name><xref ref-type="aff" rid="aff6">#</xref><xref rid="cor2" ref-type="author-notes">*</xref></contrib></contrib-group><aff id="aff1">
+<label>†</label>
+Department
+of Biological Science, Ajou University, 206 World cup-ro, Yeongtong-gu, Suwon, Gyeonggi-do
+16499, Korea
+</aff><aff id="aff2">
+<label>‡</label>
+Department
+of Mechanical Engineering, Seoul National
+University, 1 Gwanak-ro,
+Gwanak-gu, Seoul, 08826, Korea
+</aff><aff id="aff3">
+<label>§</label>
+Institute
+of Advanced Machines and Design, Seoul National
+University, 1 Gwanak-ro,
+Gwanak-gu, Seoul, 08826, Korea
+</aff><aff id="aff4">
+<label>∥</label>
+Soft
+Foundry Institute, Seoul National University, 1 Gwanak-ro, Gwanak-gu, Seoul, 08826, Korea
+</aff><aff id="aff5">
+<label>⊥</label>
+Institute
+of Engineering Research, Seoul National
+University, 1 Gwanak-ro,
+Gwanak-gu, Seoul, 08826, Korea
+</aff><aff id="aff6">
+<label>#</label>
+Department
+of Mechanical Engineering, Ajou University, 206 World cup-ro, Yeongtong-gu, Suwon, Gyeonggi-do
+16499, Korea
+</aff><author-notes><fn id="cor1"><label>*</label><p>
+E-mail: <email>dnkim@snu.ac.kr</email>.</p></fn><fn id="cor2"><label>*</label><p>
+E-mail: <email>jaeyounglee@ajou.ac.kr</email>.</p></fn></author-notes><pub-date><day>31</day><month>10</month><year>2025</year></pub-date><volume>5</volume><issue>11</issue><fpage>5813</fpage><page-range>5813–5820</page-range><pub-history><event event-type="pmc-release"><date><day>27</day><month>11</month><year>2025</year></date></event></pub-history><permissions><copyright-statement>© 2025 The Authors. Published by American Chemical Society</copyright-statement><license><license-p>This article is licensed under CC-BY-NC-ND 4.0</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au5c01110.pdf" content-type="pmc-pdf"><?cloudpmc-path 635d/12648286/4562792f7504/au5c01110.pdf?><?cloudpmc-bucket app?><?size 8688087?></self-uri><abstract id="abstract1"><title>Abstract</title><p>Structural DNA nanotechnology enables the programmable
+construction
+of nano- to microscale assemblies with high resolution, yet predicting
+their mechanical behavior prior to synthesis remains challenging.
+In this paper, we introduce SNUPI, a computational framework that
+predicts the shape and mechanical responses of structured DNA assemblies
+using finite element-based analysis. SNUPI uses design files from
+caDNAno and performs static analysis, normal-mode analysis, and Langevin
+dynamics simulations to evaluate equilibrium configurations, dominant
+deformation modes, thermal fluctuations, and intercalator-induced
+effects. We demonstrate that SNUPI can offer an efficient and accessible
+platform for pre- and postsynthetic evaluation, facilitating rational
+design and analysis of complex DNA architectures.</p><sec id="kwd-group1" sec-type="kwd-group" disp-level="2"><p><bold>Keywords:</bold> SNUPI, DNA assemblies, finite element analysis, coarse-grained model</p></sec></abstract><abstract id="abstract2" abstract-type="graphical"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au5c01110_0007.jpg"><?cloudpmc-path blobs/635d/12648286/5bfbe3476672/au5c01110_0007.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 1320?><?original-width 2400?><?scaled-height 435?><?scaled-width 791?></graphic></abstract><abstract id="abstract3" abstract-type="toc-graphic"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="tgr1" xlink:href="au5c01110_0006.jpg"><?cloudpmc-path blobs/635d/12648286/5bfbe3476672/au5c01110_0006.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 1320?><?original-width 2400?><?scaled-height 435?><?scaled-width 791?></graphic></abstract><custom-meta-group><custom-meta><meta-name>status</meta-name><meta-value>released</meta-value></custom-meta><custom-meta><meta-name>display-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>is-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-journal-matter</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-scanned</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-retracted</meta-name><meta-value>no</meta-value></custom-meta></custom-meta-group></article-meta><notes notes-type="article-notes"><sec id="historyarticle-meta1" sec-type="history" disp-level="2"><p>Received 2025 Aug 28; Accepted 2025 Oct 23; Revised 2025 Oct 21; Collection date 2025 Nov 24.</p></sec></notes></front><body><sec id="sec1" disp-level="1"><title>Introduction</title><p>Structural DNA nanotechnology has rapidly
+advanced over the past
+few decades, enabling the precise design and assembly of nanoscale
+architectures by harnessing the sequence-specific base-pairing properties
+of DNA.<italic>
+,
+</italic> Owing to its programmability, high structural
+stability, and biocompatibility, DNA has emerged as a promising nanomaterial
+for constructing a wide variety of two- and three-dimensional nanostructures.<italic>
+−
+
+</italic> Representative strategies to synthesize and design structured DNA
+assemblies were developed, such as DNA origami, which folds a long
+scaffold strand into arbitrary shapes using short staple strands, tile-based assemblies formed by periodic motif
+units, and wireframe architectures based
+on rigid polyhedral geometries. DNA structures
+have been widely applied in diverse fields, including plasmonic sensing,<italic>
+,
+</italic> targeted drug delivery,<italic>
+−
+
+
+</italic> molecular devices,<italic>
+−
+
+</italic> and DNA-based computational
+logic circuits.<italic>
+,
+</italic>
+</p><p>Despite these advances,
+experimental synthesis and mechanical characterization
+of structured DNA assemblies remain time-consuming and costly. It
+is particularly challenging to predict the stability or equilibrium
+geometry of designed structures during the early stages of development.
+Moreover, optimizing structural properties such as length, twist,
+and bending rigidity prior to synthesis remains difficult to achieve
+quantitatively through experiments alone. To address these challenges,
+computational tools have been actively developed to simulate and predict
+the dynamic behavior of DNA assemblies. Notable platforms include
+oxDNA, a coarse-grained molecular dynamics
+(MD) model, mrDNA which incorporates
+a hierarchical multiscale framework, and CanDo and SNUPI, finite element–based
+approaches that integrate structural information for mechanical analysis.</p><p>In this study, we focus on the SNUPI (Structured NUcleic-acids
+Programming Interface) protocol for the static and dynamic analysis
+of structured DNA assemblies. We demonstrate that SNUPI enables accurate
+and efficient prediction of the mechanical behavior and deformation
+potential of designed DNA architectures before experimental implementation.
+Based on caDNAno design files, SNUPI
+constructs the initial structural configuration and performs static
+analysis, normal-mode analysis (NMA), and dynamic analysis to resolve
+global motions of the structure. Furthermore, we show that the mechanical
+effects of ethidium bromide (EtBr) intercalation, including helical
+unwinding and rigidity reduction, can be quantitatively evaluated
+through simulation.<italic>
+,−
+
+
+
+</italic>
+</p></sec><sec id="sec2" disp-level="1"><title>Results</title><sec id="sec2.1" disp-level="2"><title>Overall Flow</title><p>SNUPI provides an integrated and accessible
+computational framework for analyzing the mechanical behavior of structured
+DNA assemblies. Its streamlined workflow from design input to postprocessing
+allows users to efficiently evaluate and optimize DNA nanostructures
+without requiring advanced programming expertise. The platform supports
+all major operating systems (Windows, macOS, and Linux) and offers
+configurable options suitable for both entry-level and expert users.
+Specifically, SNUPI offers structural prediction and design-oriented
+analytics for complex 2D and 3D architectures. NMA yields low-order
+modes and fluctuation maps that reveal structural warping and soft
+spots. Correlation maps can also identify mechanically coupled modules
+versus decoupled, flexible sites. In addition, the chemo-mechanical
+analysis enables rapid studies of binding effects allowing users to
+tune shape and rigidity.</p><p>SNUPI provides a versatile computational
+framework for analyzing the mechanical behavior of structured DNA
+assemblies (<xref rid="fig1" ref-type="fig">Figure 
+</xref>a). Static analysis enables rapid prediction of the equilibrium shape,
+which can be followed by NMA to extract low-order vibrational modes
+and estimate global stiffness. Furthermore, dynamic simulations based
+on Langevin dynamics allow direct observation of time-resolved structural
+fluctuations, from which shape descriptors such as root-mean-square
+deviation (RMSD), root-mean-square fluctuation (RMSF), and Pearson
+and generalized correlation coefficients can be quantitatively evaluated.
+Integrating these static and dynamic analyses, SNUPI also supports
+chemo-mechanical simulations, enabling the prediction of structural
+responses induced by molecular intercalation, such as EtBr-binding.</p><fig id="fig1" position="float"><?disp-level 3?><label>1</label><caption><p>Overall
+procedure. (<bold>a</bold>) SNUPI framework. SNUPI integrates
+static, dynamic, and chemo-mechanical analyses to characterize the
+shape and mechanical properties of structured DNA assemblies. Static
+analysis determines the equilibrium configuration, followed by NMA
+to extract global stiffness and mode shapes. Langevin dynamic simulations
+provide time-resolved trajectories for computing RMSD, RMSF, and correlation
+coefficients. The framework further supports chemo-mechanical modeling
+by incorporating EtBr-binding effects. (<bold>b</bold>) SNUPI workflow.
+SNUPI analyzes structured DNA assemblies using a design file (json),
+sequence file (csv) and lattice type (Honeycomb or Square) extracted
+from caDNAno. User-defined settings can
+be customized via an option file (snp).</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr1" xlink:href="au5c01110_0001.jpg"><?cloudpmc-path blobs/635d/12648286/070a37a388fe/au5c01110_0001.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 758?><?original-width 904?><?scaled-height 3158?><?scaled-width 3767?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="au5c01110_0001.gif"><?cloudpmc-path blobs/635d/12648286/e82e579cbaca/au5c01110_0001.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>To run SNUPI (<xref rid="fig1" ref-type="fig">Figure 
+</xref>b), we begin by designing a DNA assembly
+using caDNAno and obtain its topology
+(json file) and sequence
+(csv file). These design files, along with the lattice type (H: Honeycomb
+or S: Square), should be specified in the input file (Input.txt).
+SNUPI runs on separately compiled versions for different operating
+systems (Windows, macOS, and Linux) (). An option file (snp file) can be added to customize the user-defined
+settings, or SNUPI will run with the default settings (default.snp).
+In the user-defined options file, we can customize the specific methods
+in the analysis and files to be exported for the postprocessing or
+further study ().</p><p>By default,
+SNUPI consists of three stages: initiation, analysis,
+and postprocessing. In the initiation stage, the topology, sequence
+information, and user-defined options are read from the caDNAno files
+to generate the initial configuration of the designed DNA assembly.
+In the analysis stage, all structural and electrostatic connections
+between base-pairs are converted into finite elements, and physical
+properties obtained from molecular dynamics simulations are assigned
+to them. The equilibrium configuration is then predicted by minimizing
+the mechanical and electrostatic energy through an iterative nonlinear
+procedure. Thirty incremental steps are used as the default value,
+but if convergence is difficult to achieve, the incremental step size
+is adaptively adjusted to gradually reach equilibrium. Once analysis
+is complete, SNUPI saves the predicted equilibrium configuration of
+the DNA assembly. By customizing the settings, the equilibrium configuration
+can be converted into atomic coordinates (pdb file), suitable for
+performing MD simulations. Postprocessing or additional analysis can
+then be performed by modifying the option file, including NMA to extract
+principal mode shapes, Langevin dynamics simulations, or chemo-mechanical
+analysis.</p><p>The current version of SNUPI is configured to analyze
+a single
+DNA structure per execution. However, users may run multiple analyses
+in parallel, thereby enabling efficient and simultaneous evaluation
+of numerous DNA designs during iterative workflows.</p><p>To assist
+users, additional details on the computing environment
+and performance evaluation can be found in (Table S1).</p></sec><sec id="sec2.2" disp-level="2"><title>Equilibrium Configuration Analysis</title><p>The DNA assembly
+primarily consists of double-stranded DNA (dsDNA) and single-stranded
+DNA (ssDNA) that form the structural framework, and various connecting
+components (structural motifs such as crossovers and nicks) that locally
+induce mechanical deformations. Each component contributes to global
+geometry and determines the mechanical behavior of DNA assembly. To
+quantitatively analyze these properties, each base-pair is modeled
+as a rigid block with six degrees of freedom (three translational
+and three rotational) and the finite element method is employed to
+represent the connection between two base-pairs and incorporate sequence-dependent
+characteristics extracted from MD simulations. This approach allows accurate and efficient prediction
+of the three-dimensional conformation, equilibrium dynamics, and mechanical
+characteristics of the DNA assembly.</p><p>To perform finite element
+analysis on a given DNA assembly, SNUPI constructs the initial configuration
+(base-pair positions and connectivity) and assigns mechanical properties
+to each base-pair connection exported from caDNAno design. In cases where the initial configuration significantly
+affects the nonlinear analysis such as closed-loop or wireframe designs,
+SNUPI employs a partition and relocation procedure to refine the initial
+configuration. Since caDNAno designs
+represent a two-dimensional blueprint, this procedure can effectively
+generate an initial three-dimensional configuration that reflects
+the intended design physically. To illustrate, we examined an S-shaped
+DNA origami structure as an example design with all default options (<xref rid="fig2" ref-type="fig">Figure 
+</xref>).</p><fig id="fig2" position="float"><?disp-level 3?><label>2</label><caption><p>Shape prediction of a structured DNA assembly. The S-shaped
+DNA
+origami structure was analyzed using
+default SNUPI settings. Finite element models incorporating both structural
+and electrostatic interactions were constructed based on base-pair
+connectivity, and the equilibrium configuration was predicted through
+30 incremental steps from the initial configuration. The magnified
+view of the boxed region shows individual elements and connections.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr2" xlink:href="au5c01110_0002.jpg"><?cloudpmc-path blobs/635d/12648286/2e99ebc50e11/au5c01110_0002.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 820?><?original-width 1885?><?scaled-height 328?><?scaled-width 754?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="au5c01110_0002.gif"><?cloudpmc-path blobs/635d/12648286/aa06c46577f6/au5c01110_0002.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>With the well-defined configuration and sequence-dependent
+properties,
+SNUPI conducts a nonlinear static analysis to determine the equilibrium
+configuration of the entire DNA assembly. Due to the nonlinear nature
+of DNA mechanics and the challenge of directly solving for the final
+configuration, SNUPI adopts an incremental approach, gradually applying
+mechanical properties over multiple steps. By default, 30 incremental
+steps are used, but if convergence is not achieved in each step, the
+step size is adaptively subdivided to reach equilibrium to meet convergence
+criteria. To check whether the solution has converged, default tolerance
+thresholds are set to 10<sup>–3</sup> for force and 10<sup>–6</sup> for energy, with a maximum of 15 iterations per incremental
+step. For the S-shaped structure converging configurations are analyzed
+during 30 incremental steps.</p><p>Once the nonlinear analysis converges,
+SNUPI performs postprocessing
+to generate the final configuration and output files for downstream
+analysis. These include coordinate information (pdb file) for molecular
+visualization using tools such as VMD, and a model trajectory file that records structural deformation
+throughout the incremental steps. In addition, a restart file is generated,
+enabling further simulations to begin from the final configuration
+under new options. The configuration output from SNUPI can also be
+used for further analysis using deep learning model or oxDNA.
+</p></sec><sec id="sec2.3" disp-level="2"><title>Normal Mode Analysis</title><p>Normal mode analysis (NMA) has
+long been employed in classical mechanics and structural engineering
+to study the vibrational behavior of macroscopic systems. It has also
+been applied to molecular and nanoscale systems, including the analysis
+of dynamic modes in proteins.<italic>
+−
+
+</italic> Inspired by these diverse applications,
+we applied NMA to predict the global deformation modes, mechanical
+rigidity, and dynamic behavior of structured DNA assemblies in this
+study. Compared to principal component analysis (PCA), which requires
+time-resolved trajectories such as MD simulations, NMA is computationally
+more efficient and thus particularly useful during the early design
+phase to predict the mechanical response of complex DNA assemblies.</p><p>The resulting eigenvalues correspond to the squared natural frequencies
+of vibration, and the eigenvectors represent the associated mode shapes.
+The lowest eigenvalue corresponds to the dominant global deformation
+mode. In three-dimensional systems, the first six modes typically
+represent rigid body motions (translations and rotations), and meaningful
+deformation modes begin from the seventh mode. For example, in bundle
+structures, the seventh mode could correspond to bending deformation,
+while one of the higher-order modes may represent torsional motions.
+Since structural deformation is usually dominated by the lowest-frequency
+modes, SNUPI is set to compute the 15 lowest normal modes by default.
+Each eigenvalue and its associated eigenvector together describe the
+frequency and spatial pattern of a specific deformation mode. For
+example, we performed NMA for the 16-helix bundle structure on the
+square lattice (<xref rid="fig3" ref-type="fig">Figure 
+</xref>a).</p><fig id="fig3" position="float"><?disp-level 3?><label>3</label><caption><p>Normal mode analysis of a bundle structure. (<bold>a</bold>) Mode
+shapes of the 16-helix bundle structure. The seventh to 15th lowest
+normal modes excluding the first six rigid-body modes, were obtained.
+Due to the slender geometry of the structure, bending modes appeared
+predominantly, followed by torsional modes. (<bold>b</bold>) RMSF
+analysis. RMSF values were computed for each base-pair at equilibrium
+using the eigenvalues of the 200 lowest normal modes. Terminal and
+flexible regions exhibited higher fluctuations than the core regions.
+(<bold>c</bold>) Correlation analysis. Pearson and generalized correlation
+coefficients were computed to quantify the cooperative motion between
+base-pairs. High correlations were observed for structurally connected
+base-pairs, while distant or loosely coupled pairs showed weaker coupling.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr3" xlink:href="au5c01110_0003.jpg"><?cloudpmc-path blobs/635d/12648286/0f7f5b6242a4/au5c01110_0003.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 1633?><?original-width 1959?><?scaled-height 653?><?scaled-width 783?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="au5c01110_0003.gif"><?cloudpmc-path blobs/635d/12648286/59f13167e6a4/au5c01110_0003.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>The NMA results can be used to estimate the global
+mechanical rigidity
+of DNA structures.<italic>
+,
+</italic> For linear bundle structures,
+the commonly used concept of persistence length can be applied, which
+is proportional to structural stiffness. Specifically, if the bundle
+is modeled as a single beam, the bending persistence length (<italic>L</italic>
+<sub>
+<italic>PB</italic>
+</sub>) can be predicted from the
+Euler–Bernoulli beam equation, following the relation</p><disp-formula id="ueq1"><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="d1e489" display="block"><mml:msub><mml:mrow><mml:mi>L</mml:mi></mml:mrow><mml:mrow><mml:mi>P</mml:mi><mml:mi>B</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mi>E</mml:mi><mml:mi>I</mml:mi></mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mrow><mml:mi mathvariant="normal">B</mml:mi></mml:mrow></mml:msub><mml:mi>T</mml:mi></mml:mrow></mml:mfrac><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mi>M</mml:mi><mml:msub><mml:mrow><mml:mi>λ</mml:mi></mml:mrow><mml:mrow><mml:mi>B</mml:mi></mml:mrow></mml:msub><mml:msubsup><mml:mrow><mml:mi>L</mml:mi></mml:mrow><mml:mrow><mml:mi>C</mml:mi></mml:mrow><mml:mrow><mml:mn>3</mml:mn></mml:mrow></mml:msubsup></mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mrow><mml:mi mathvariant="normal">B</mml:mi></mml:mrow></mml:msub><mml:mi>T</mml:mi><mml:msup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>β</mml:mi><mml:msub><mml:mrow><mml:mi>L</mml:mi></mml:mrow><mml:mrow><mml:mi>C</mml:mi></mml:mrow></mml:msub><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mrow><mml:mn>4</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mfrac></mml:math></disp-formula><p>where <italic>EI</italic> is the global bending
+rigidity, <italic>k</italic>
+<sub>
+<italic>B</italic>
+</sub> is the Boltzmann
+constant, <italic>T</italic> is the ambient temperature (300 K), <italic>M</italic> is the total mass, and λ<sub>
+<italic>B</italic>
+</sub> is the eigenvalue associated with the first bending mode, defined
+as the square of the natural frequency (ω<sup>2</sup> = λ). <italic>L</italic>
+<sub>
+<italic>C</italic>
+</sub> denotes the contour length
+of the structure, and <italic>βL</italic>
+<sub>
+<italic>C</italic>
+</sub> is a numerical constant determined as 4.733 for the first
+bending mode. Similarly, the torsional persistence length (<italic>L</italic>
+<sub>
+<italic>PC</italic>
+</sub>) was estimated by modeling
+the structure as a continuum medium, following the relation</p><disp-formula id="ueq2"><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="d1e592" display="block"><mml:msub><mml:mrow><mml:mi>L</mml:mi></mml:mrow><mml:mrow><mml:mi>P</mml:mi><mml:mi>C</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mi>G</mml:mi><mml:mi>J</mml:mi></mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mrow><mml:mi mathvariant="normal">B</mml:mi></mml:mrow></mml:msub><mml:mi>T</mml:mi></mml:mrow></mml:mfrac><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mi>M</mml:mi><mml:msub><mml:mrow><mml:mi>λ</mml:mi></mml:mrow><mml:mrow><mml:mi>T</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mrow><mml:mi>L</mml:mi></mml:mrow><mml:mrow><mml:mi>C</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:msub><mml:mrow><mml:mi>J</mml:mi></mml:mrow><mml:mrow><mml:mi>o</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:mi>A</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mrow><mml:mi mathvariant="normal">B</mml:mi></mml:mrow></mml:msub><mml:mi>T</mml:mi><mml:msup><mml:mrow><mml:mi>π</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mfrac></mml:math></disp-formula><p>where <italic>GJ</italic> is the global torsional
+rigidity, λ<sub>
+<italic>T</italic>
+</sub> is the eigenvalue associated
+with the first torsional mode. The term <italic>J</italic>
+<sub>
+<italic>o</italic>
+</sub>/<italic>A</italic> is a geometric factor determined
+by the cross-sectional shape and is proportional to the square of
+the effective radius of the helices. The effective radius was measured
+to be 1.1 nm based on the interhelical spacing of the structures.
+For the 16-helix bundle structure, estimated bending and torsional
+persistence lengths were 13,063 nm and 2,463 nm, respectively ().</p><p>NMA also enables calculation
+of the RMSF, which quantifies the
+thermal vibrational amplitude of each base-pair in the equilibrium
+state. SNUPI computes RMSF using the eigenvalues of lowest 200 normal
+modes by default (<xref rid="fig3" ref-type="fig">Figure 
+</xref>b). Flexible regions such as terminal ends or loosely connected
+junctions typically exhibit higher RMSF values, while more rigid domains
+show smaller fluctuations.</p><p>In addition, NMA provides correlation
+coefficients that quantify
+cooperative motions between base-pairs. These include Pearson and
+generalized correlations. Pearson correlation
+evaluates the directional similarity of displacements, ranging from
+−1 (perfectly opposite motion) to +1 (perfectly aligned motion).
+Additionally, a value of 0 indicates uncorrelated motion. This metric
+enables the identification of mechanically correlated regions, such
+as deformable junctions or hinge-like domains, that may function as
+modular structural units. For instance, base-pairs connected through
+crossovers exhibit high positive correlations, indicating coordinated
+motion, while distant or weakly connected pairs display weak or negative
+correlations, reflecting independent or opposing fluctuations (<xref rid="fig3" ref-type="fig">Figure 
+</xref>c). Such correlation
+patterns provide valuable insights for structural optimization: regions
+with strong correlation may serve as mechanically coupled modules,
+while low or negative correlation suggests flexible or decoupled domains.
+In addition to the Pearson correlation coefficient, we employed the
+generalized correlation coefficient to evaluate the statistical dependence
+between base-pair motions based on mutual information. While the Pearson
+correlation captures linear, directionally coherent displacements,
+the generalized correlation can identify nonlinear and nondirectional
+coupling between base-pair fluctuations. The coefficient ranges from
+0 (statistically independent) to 1 (fully correlated motion). For
+instance, Pearson correlation highlights directly aligned or opposing
+motions between adjacent base-pairs, whereas generalized correlation
+reveals cooperative dynamics among nonadjacent or structurally distant
+regions that may not exhibit explicit geometric linkage (<xref rid="fig3" ref-type="fig">Figure 
+</xref>c). This metric is
+particularly effective in identifying functionally correlated domains
+that undergo coordinated deformation despite the absence of direct
+structural connectivity. In particular, pairs of regions exhibiting
+low Pearson correlation but high generalized correlation can be interpreted
+as dynamically coupled through nonlinear or indirect interactions.
+Therefore, SNUPI enables a detailed assessment of dynamic coupling
+within the DNA assembly.</p></sec><sec id="sec2.4" disp-level="2"><title>Dynamic Analysis</title><p>Dynamic analysis can be employed to
+simulate the motion of DNA assemblies under solvent conditions. While NMA effectively captures global motions
+by evaluating the lowest-frequency modes, it cannot account for external
+forces. In contrast, dynamic analysis leverages Langevin dynamics
+to simulate time-dependent trajectories of the DNA assembly, incorporating
+both thermal fluctuations and internal mechanical forces, enabling
+prediction of how the assembly evolves over time in a solvent environment.
+In the structural model, each base-pair in the DNA assembly was modeled
+as a rigid block, and these blocks are connected via finite elements,
+providing the internal force vector of the assembly. To solve the
+Langevin dynamics equation, the mass matrix is assembled based on
+the molecular mass of elementary sequences. Solvent-mediated viscous
+drag is also modeled into a friction matrix derived from the generalized
+Rotne-Prager-Yamakawa mobility tensor, contributing to the random force vector by thermal fluctuations
+(<xref rid="fig4" ref-type="fig">Figure 
+</xref>a). The equations
+of motion are integrated over time to generate the time trajectory,
+enabling molecular-scale predictions driven by thermal noise.</p><fig id="fig4" position="float"><?disp-level 3?><label>4</label><caption><p>Dynamic analysis
+of structured DNA assemblies. (<bold>a</bold>)
+Dynamics simulation modeling. The motion of the DNA assembly was simulated
+using Langevin dynamics based on a finite element framework. Solvent-induced
+viscous drag was modeled, and thermal noise was introduced as a random
+force. (<bold>b</bold>) RMSD convergence of the triangular DNA structure.
+A 100 ns dynamic simulation was performed starting from the equilibrium
+shape predicted by static analysis. The RMSD rapidly converged, indicating
+the system reached equilibrium. (<bold>c</bold>) Comparison of RMSF
+profiles. RMSF values computed from dynamic simulations were compared
+with those obtained from NMA, showing similar fluctuation trends across
+the structure. (<bold>d</bold>) Correlation analysis from dynamic
+trajectories. Pearson and generalized correlation coefficients were
+computed from dynamic simulations, which can capture nonlinear effects
+across the DNA assembly.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr4" xlink:href="au5c01110_0004.jpg"><?cloudpmc-path blobs/635d/12648286/ed8300c85cce/au5c01110_0004.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 1277?><?original-width 1981?><?scaled-height 511?><?scaled-width 792?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="au5c01110_0004.gif"><?cloudpmc-path blobs/635d/12648286/588046780c73/au5c01110_0004.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>As a dynamic simulation is finished, the RMSD can
+be computed during
+the simulation to assess the convergence of the dynamic trajectory.
+If the RMSD reaches a stable plateau over time, it indicates that
+the DNA assembly has reached equilibrium, validating the reliability
+of subsequent RMSF and correlation analyses. As with NMA, dynamic
+analysis allows the calculation of RMSF and correlation coefficients,
+with the advantage of capturing realistic dynamic responses driven
+by thermal fluctuations and structural mechanics.</p><p>To illustrate,
+the dynamic simulation of a triangular DNA structure
+for 100 ns was finished in 8 min of real time using a personal computer
+to check convergence of RMSD (<xref rid="fig4" ref-type="fig">Figure 
+</xref>b). In particular, starting the dynamic simulation
+from the final shape obtained by static prediction rather than from
+the initial configuration generated from the caDNAno file can rapidly
+converge the RMSD. It notes that an option on GPU acceleration can
+be adopted to produce a trajectory fast for full-sized DNA origami
+structures.</p><p>While RMSF values obtained from dynamic analysis
+could be similar
+to those derived from NMA (<xref rid="fig4" ref-type="fig">Figure 
+</xref>c), the underlying computational frameworks differ
+fundamentally. NMA computes RMSF based on vibrational modes at thermal
+equilibrium, capturing only stiffness-dominated, harmonic behavior.
+In contrast, dynamic analysis solves the Langevin equation in the
+time domain, accounting for thermal noise, viscous damping, and time-dependent
+dynamics, thus yielding a more realistic description of structural
+dynamics. Moreover, whereas NMA typically captures motion using the
+lowest modes, thereby focusing on low-frequency behavior, dynamic
+analysis is based on time trajectories, effectively incorporating
+motion across the entire frequency spectrum, including high-frequency
+vibrations and fine-scale structural responses.</p><p>Correlation
+coefficients obtained from NMA are inherently limited
+to the resolved eigenmodes and primarily capture low-frequency dynamics.
+In contrast, dynamic analysis tracks the time-resolved positions and
+orientations of base-pairs, enabling a more comprehensive quantification
+of coordinated motions across the assembly (<xref rid="fig4" ref-type="fig">Figure 
+</xref>d). Notably, Pearson correlation from dynamic
+analysis can reveal long-range correlations beyond the resolution
+of NMA, while generalized correlation based on mutual information
+can detect nonlinear dynamic coupling between base-pairs that NMA
+cannot. Nonetheless, the primary difficulty of dynamic analysis lies
+in its computational intensity.</p></sec><sec id="sec2.5" disp-level="2"><title>Chemo-mechanical Analysis</title><p>EtBr is a well-known intercalating
+agent that interacts strongly with the DNA double helix, inducing
+local changes in both geometry and mechanical properties. EtBr intercalates
+between adjacent base-pairs, locally increasing rise and thereby globally
+elongating the DNA assembly. This intercalation also reduces helical
+twist, resulting in a left-handed torsional deformation of the assembly.
+EtBr intercalation between two base-pairs was modeled EtBr elements,
+implemented by incorporating those molecular-level changes into the
+local stiffness matrix of the finite element. These local effects are reflected in the stiffness matrices of the
+finite elements of EtBr-bound base-pairs and are subsequently assembled
+into the global stiffness matrix of the DNA assembly to predict its
+final shape and mechanical behavior.</p><p>The extent of EtBr-induced
+deformation is governed by the number of intercalated EtBr molecules,
+which can be quantitatively determined from experimental concentrations
+using a binding model. Based on this
+model, the number of bound EtBr molecules can be calculated for a
+given experimental concentration, allowing comparison between simulation
+and experiment. For instance, for the previously reported clamped-shape
+structure we also showed that EtBr-induced
+local effects led to a reduction in the end-to-end length of the structure
+(<xref rid="fig5" ref-type="fig">Figure 
+</xref>). The number
+of bound EtBr molecules was estimated to be approximately 650 at an
+experimental concentration of 8 mM ().</p><fig id="fig5" position="float"><?disp-level 3?><label>5</label><caption><p>Prediction of EtBr-induced deformation. A clamped DNA origami structure was analyzed to evaluate the effect of EtBr
+intercalation. The estimated number of intercalated EtBr molecules
+was approximately 650 at the experimental EtBr concentration of 8
+mM. The simulation incorporating EtBr-induced local changes, modeled
+via EtBr elements, predicted a reduced end-to-end length of the structure,
+showing agreement with the experimental observation.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr5" xlink:href="au5c01110_0005.jpg"><?cloudpmc-path blobs/635d/12648286/8bff0af7a2d6/au5c01110_0005.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 592?><?original-width 1979?><?scaled-height 237?><?scaled-width 791?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="au5c01110_0005.gif"><?cloudpmc-path blobs/635d/12648286/964a2b4078b4/au5c01110_0005.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig></sec></sec><sec id="sec3" disp-level="1"><title>Conclusion</title><p>In this paper, we presented the SNUPI protocol
+for predicting the
+shape and mechanical behavior of structured DNA assemblies. By integrating
+static analysis, normal-mode analysis, and Langevin dynamics–based
+simulations, SNUPI enables comprehensive evaluation of equilibrium
+configurations, dominant deformation modes, and thermally induced
+fluctuations. Moreover, the protocol accounts for structural effects
+of EtBr intercalation by incorporating local geometric and stiffness
+alterations at the base-pair step level. Importantly, this chemo-mechanical
+modeling strategy is not limited to EtBr. Because SNUPI supports spatially
+defined stiffness and structural parameters as inputs, it is also
+applicable to other binding agents such as poly lysine (PLL) and polyethylene
+glycol (PEG), which are widely used to enhance structural stability
+or modulate the properties of DNA assemblies.<italic>
+,
+</italic> By incorporating the mechanical effects of such binders at specific
+locations within the structure, SNUPI enables analysis of how various
+binding interactions influence DNA architectures. This generalizability
+opens opportunities to explore chemo-mechanical design principles
+in DNA nanotechnology.</p><p>SNUPI operates directly on structural
+design files, providing an
+intuitive and efficient framework for both pre- and postsynthetic
+evaluation of structured DNA assemblies. While SNUPI, parametrized
+from all-atom molecular dynamics simulations, effectively captures
+the global deformation behavior of DNA assemblies, it inherits certain
+limitations from the underlying model. The approach assumes that base-pair
+interactions can be represented as pairwise effective potentials between
+adjacent nodes, which may not fully describe multibody effects involving
+three or more base-pairs or highly localized deformations. The present
+model is thus accurate for DNA origami or larger-scale assemblies,
+whereas extensions to include nonlocal properties could improve resolution.
+Nevertheless, for DNA assemblies composed of many double helices,
+the present method provides a favorable balance between accuracy and
+speed, allowing rapid prediction of structural behavior, reduction
+of repetitive experimental trials, and efficient screening of multiple
+design variants within iterative workflows.</p></sec><sec id="sec9" disp-level="1"><title>Supplementary Material</title><supplementary-material id="sifile1" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au5c01110_si_001.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path 635d/12648286/8fd647c3e1dc/au5c01110_si_001.pdf?><?cloudpmc-bucket app?><?size 442481?></media></supplementary-material><supplementary-material id="sifile2" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au5c01110_si_002.zip" mimetype="application" mime-subtype="zip"><?cloudpmc-path 635d/12648286/744215e75cfd/au5c01110_si_002.zip?><?cloudpmc-bucket app?><?size 3493024?></media></supplementary-material></sec><sec id="ACK-d14e702-autogenerated" sec-type="ack" disp-level="1"><title>Acknowledgments</title><p>This work
+was supported by the National Research Foundation
+of Korea (NRF) grant funded by the Korea government (MSIT) (RS-2021-NR061787,
+RS-2025-00520641, and RS-2024-00346176). This research was also supported
+by a grant of the Korea-US Collaborative Research Fund (KUCRF), funded
+by the Ministry of Science and ICT and Ministry of Health &amp; Welfare,
+Republic of Korea (RS-2024-00468463).</p></sec><sec id="notes-1" disp-level="1"><p>The Supporting Information
+is available free of charge at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/10.1021/jacsau.5c01110?goto=supporting-info" ext-link-type="uri">https://pubs.acs.org/doi/10.1021/jacsau.5c01110</ext-link>.</p><list list-type="simple" id="silist"><list-item><p>How to run SNUPI; Options of SNUPI; Calculation of EtBr
+number.(<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.5c01110/suppl_file/au5c01110_si_001.pdf" ext-link-type="uri">PDF</ext-link>)</p></list-item><list-item><p>SNUPI_v3 (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.5c01110/suppl_file/au5c01110_si_002.zip" ext-link-type="uri">ZIP</ext-link>)</p></list-item></list></sec><sec id="notes-2" disp-level="1"><p>Jun Hyeong
+Park wrote, reviewed, and edited original manuscripts. Do-Nyun Kim
+reviewed and edited manuscripts. Jae Young Lee wrote, reviewed, and
+edited original manuscripts. CRediT: <bold>Jun Hyeong Park</bold> conceptualization,
+data curation, visualization, writing - original draft, writing -
+review &amp; editing; <bold>Do-Nyun Kim</bold> conceptualization,
+funding acquisition, writing - review &amp; editing; <bold>Jae Young
+Lee</bold> conceptualization, funding acquisition, supervision, visualization,
+writing - review &amp; editing.</p></sec><sec id="notes-3" disp-level="1"><p>The authors
+declare no competing financial interest.</p></sec><sec id="ref-list1" sec-type="ref-list" disp-level="1"><title>References</title><sec id="ref-list1_sec2" disp-level="2"><ref-list><ref id="ref1"><mixed-citation id="cit1"><named-content content-type="citation-string">Seeman N. C.. DNA in
+a material world. Nature. 2003;421:427–431. doi: 10.1038/nature01406.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nature01406"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="12540916"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature&amp;title=DNA in a material world&amp;author=N. C. Seeman&amp;volume=421&amp;publication_year=2003&amp;pages=427-431&amp;pmid=12540916&amp;doi=10.1038/nature01406&amp;"/></mixed-citation></ref><ref id="ref2"><mixed-citation id="cit2"><named-content content-type="citation-string">Jones M. R., Seeman N. C., Mirkin C. A.. Programmable
+materials and the nature
+of the DNA bond. Spherical Nucleic Acids. 2020:167–197. doi: 10.4324/9780429200151-7.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.4324/9780429200151-7"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Spherical Nucleic Acids&amp;title=Programmable materials and the nature of the DNA bond&amp;author=M. R. Jones&amp;author=N. C. Seeman&amp;author=C. A. Mirkin&amp;publication_year=2020&amp;pages=167-197&amp;doi=10.4324/9780429200151-7&amp;"/></mixed-citation></ref><ref id="ref3"><mixed-citation id="cit3"><named-content content-type="citation-string">Hong F., Zhang F., Liu Y., Yan H.. DNA origami: scaffolds
+for creating higher order structures. Chem.
+Rev. 2017;117:12584–12640. doi: 10.1021/acs.chemrev.6b00825.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.chemrev.6b00825"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28605177"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. Rev.&amp;title=DNA origami: scaffolds for creating higher order structures&amp;author=F. Hong&amp;author=F. Zhang&amp;author=Y. Liu&amp;author=H. Yan&amp;volume=117&amp;publication_year=2017&amp;pages=12584-12640&amp;pmid=28605177&amp;doi=10.1021/acs.chemrev.6b00825&amp;"/></mixed-citation></ref><ref id="ref4"><mixed-citation id="cit4"><named-content content-type="citation-string">Douglas S. M., Dietz H., Liedl T., Högberg B., Graf F., Shih W. M.. Self-assembly of DNA into nanoscale
+three-dimensional shapes. Nature. 2009;459:414–418. doi: 10.1038/nature08016.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nature08016"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC2688462"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19458720"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature&amp;title=Self-assembly of DNA into nanoscale three-dimensional shapes&amp;author=S. M. Douglas&amp;author=H. Dietz&amp;author=T. Liedl&amp;author=B. Högberg&amp;author=F. Graf&amp;volume=459&amp;publication_year=2009&amp;pages=414-418&amp;pmid=19458720&amp;doi=10.1038/nature08016&amp;"/></mixed-citation></ref><ref id="ref5"><mixed-citation id="cit5"><named-content content-type="citation-string">Zheng J., Birktoft J. J., Chen Y., Wang T., Sha R., Constantinou P. E., Ginell S. L., Mao C., Seeman N. C.. From molecular
+to macroscopic via the rational design of a self-assembled 3D DNA
+crystal. Nature. 2009;461:74–77. doi: 10.1038/nature08274.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nature08274"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC2764300"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19727196"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature&amp;title=From molecular to macroscopic via the rational design of a self-assembled 3D DNA crystal&amp;author=J. Zheng&amp;author=J. J. Birktoft&amp;author=Y. Chen&amp;author=T. Wang&amp;author=R. Sha&amp;volume=461&amp;publication_year=2009&amp;pages=74-77&amp;pmid=19727196&amp;doi=10.1038/nature08274&amp;"/></mixed-citation></ref><ref id="ref6"><mixed-citation id="cit6"><named-content content-type="citation-string">Rothemund P. W.. Folding
+DNA to create nanoscale shapes and patterns. Nature. 2006;440:297–302. doi: 10.1038/nature04586.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nature04586"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="16541064"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature&amp;title=Folding DNA to create nanoscale shapes and patterns&amp;author=P. W. Rothemund&amp;volume=440&amp;publication_year=2006&amp;pages=297-302&amp;pmid=16541064&amp;doi=10.1038/nature04586&amp;"/></mixed-citation></ref><ref id="ref7"><mixed-citation id="cit7"><named-content content-type="citation-string">Wei B., Dai M., Yin P.. Complex shapes
+self-assembled from single-stranded
+DNA tiles. Nature. 2012;485:623–626. doi: 10.1038/nature11075.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nature11075"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4238960"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="22660323"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature&amp;title=Complex shapes self-assembled from single-stranded DNA tiles&amp;author=B. Wei&amp;author=M. Dai&amp;author=P. Yin&amp;volume=485&amp;publication_year=2012&amp;pages=623-626&amp;pmid=22660323&amp;doi=10.1038/nature11075&amp;"/></mixed-citation></ref><ref id="ref8"><mixed-citation id="cit8"><named-content content-type="citation-string">Benson E., Mohammed A., Gardell J., Masich S., Czeizler E., Orponen P., Högberg B.. DNA rendering
+of polyhedral meshes
+at the nanoscale. Nature. 2015;523:441–444. doi: 10.1038/nature14586.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nature14586"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26201596"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature&amp;title=DNA rendering of polyhedral meshes at the nanoscale&amp;author=E. Benson&amp;author=A. Mohammed&amp;author=J. Gardell&amp;author=S. Masich&amp;author=E. Czeizler&amp;volume=523&amp;publication_year=2015&amp;pages=441-444&amp;pmid=26201596&amp;doi=10.1038/nature14586&amp;"/></mixed-citation></ref><ref id="ref9"><mixed-citation id="cit9"><named-content content-type="citation-string">Dass M., Gür F. N., Kołątaj K., Urban M. J., Liedl T.. DNA origami-enabled
+plasmonic sensing. J. Phys.
+Chem. C. 2021;125:5969–5981. doi: 10.1021/acs.jpcc.0c11238.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jpcc.0c11238"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8016175"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33828635"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. C&amp;title=DNA origami-enabled plasmonic sensing&amp;author=M. Dass&amp;author=F. N. Gür&amp;author=K. Kołątaj&amp;author=M. J. Urban&amp;author=T. Liedl&amp;volume=125&amp;publication_year=2021&amp;pages=5969-5981&amp;pmid=33828635&amp;doi=10.1021/acs.jpcc.0c11238&amp;"/></mixed-citation></ref><ref id="ref10"><mixed-citation id="cit10"><named-content content-type="citation-string">Zhou C., Duan X., Liu N.. DNA-nanotechnology-enabled chiral
+plasmonics: from static to dynamic. Acc. Chem.
+Res. 2017;50:2906–2914. doi: 10.1021/acs.accounts.7b00389.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.accounts.7b00389"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28953361"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Acc. Chem. Res.&amp;title=DNA-nanotechnology-enabled chiral plasmonics: from static to dynamic&amp;author=C. Zhou&amp;author=X. Duan&amp;author=N. Liu&amp;volume=50&amp;publication_year=2017&amp;pages=2906-2914&amp;pmid=28953361&amp;doi=10.1021/acs.accounts.7b00389&amp;"/></mixed-citation></ref><ref id="ref11"><mixed-citation id="cit11"><named-content content-type="citation-string">Hu Q., Li H., Wang L., Gu H., Fan C.. DNA nanotechnology-enabled
+drug delivery systems. Chem. Rev. 2019;119:6459–6506. doi: 10.1021/acs.chemrev.7b00663.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.chemrev.7b00663"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29465222"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. Rev.&amp;title=DNA nanotechnology-enabled drug delivery systems&amp;author=Q. Hu&amp;author=H. Li&amp;author=L. Wang&amp;author=H. Gu&amp;author=C. Fan&amp;volume=119&amp;publication_year=2019&amp;pages=6459-6506&amp;pmid=29465222&amp;doi=10.1021/acs.chemrev.7b00663&amp;"/></mixed-citation></ref><ref id="ref12"><mixed-citation id="cit12"><named-content content-type="citation-string">Zhao Y., Shaw A., Zeng X., Benson E., Nystrom A. M., Hogberg B.. DNA origami delivery
+system for cancer therapy with
+tunable release properties. ACS Nano. 2012;6:8684–8691. doi: 10.1021/nn3022662.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/nn3022662"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="22950811"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ACS Nano&amp;title=DNA origami delivery system for cancer therapy with tunable release properties&amp;author=Y. Zhao&amp;author=A. Shaw&amp;author=X. Zeng&amp;author=E. Benson&amp;author=A. M. Nystrom&amp;volume=6&amp;publication_year=2012&amp;pages=8684-8691&amp;pmid=22950811&amp;doi=10.1021/nn3022662&amp;"/></mixed-citation></ref><ref id="ref13"><mixed-citation id="cit13"><named-content content-type="citation-string">Xiao M., Lai W., Wang F., Li L., Fan C., Pei H.. Programming
+drug delivery kinetics for active burst release with DNA toehold switches. J. Am. Chem. Soc. 2019;141:20354–20364. doi: 10.1021/jacs.9b10765.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/jacs.9b10765"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31790242"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Am. Chem. Soc.&amp;title=Programming drug delivery kinetics for active burst release with DNA toehold switches&amp;author=M. Xiao&amp;author=W. Lai&amp;author=F. Wang&amp;author=L. Li&amp;author=C. Fan&amp;volume=141&amp;publication_year=2019&amp;pages=20354-20364&amp;pmid=31790242&amp;doi=10.1021/jacs.9b10765&amp;"/></mixed-citation></ref><ref id="ref14"><mixed-citation id="cit14"><named-content content-type="citation-string">Jiang Q., Song C., Nangreave J., Liu X., Lin L., Qiu D., Wang Z., Zou G., Liang X., Yan H.. DNA origami
+as a carrier for circumvention of drug resistance. J. Am. Chem. Soc. 2012;134:13396–13403. doi: 10.1021/ja304263n.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/ja304263n"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="22803823"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Am. Chem. Soc.&amp;title=DNA origami as a carrier for circumvention of drug resistance&amp;author=Q. Jiang&amp;author=C. Song&amp;author=J. Nangreave&amp;author=X. Liu&amp;author=L. Lin&amp;volume=134&amp;publication_year=2012&amp;pages=13396-13403&amp;pmid=22803823&amp;doi=10.1021/ja304263n&amp;"/></mixed-citation></ref><ref id="ref15"><mixed-citation id="cit15"><named-content content-type="citation-string">Green L. N., Subramanian H. K., Mardanlou V., Kim J., Hariadi R. F., Franco E.. Autonomous dynamic control of DNA nanostructure self-assembly. Nat. Chem. 2019;11:510–520. doi: 10.1038/s41557-019-0251-8.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41557-019-0251-8"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31011170"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Chem.&amp;title=Autonomous dynamic control of DNA nanostructure self-assembly&amp;author=L. N. Green&amp;author=H. K. Subramanian&amp;author=V. Mardanlou&amp;author=J. Kim&amp;author=R. F. Hariadi&amp;volume=11&amp;publication_year=2019&amp;pages=510-520&amp;pmid=31011170&amp;doi=10.1038/s41557-019-0251-8&amp;"/></mixed-citation></ref><ref id="ref16"><mixed-citation id="cit16"><named-content content-type="citation-string">Mao X., Liu M., Li Q., Fan C., Zuo X.. DNA-based
+molecular
+machines. JACS Au. 2022;2:2381–2399. doi: 10.1021/jacsau.2c00292.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/jacsau.2c00292"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9709946"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36465542"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=JACS Au&amp;title=DNA-based molecular machines&amp;author=X. Mao&amp;author=M. Liu&amp;author=Q. Li&amp;author=C. Fan&amp;author=X. Zuo&amp;volume=2&amp;publication_year=2022&amp;pages=2381-2399&amp;pmid=36465542&amp;doi=10.1021/jacsau.2c00292&amp;"/></mixed-citation></ref><ref id="ref17"><mixed-citation id="cit17"><named-content content-type="citation-string">Krishnan Y., Simmel F. C.. Nucleic acid based
+molecular devices. Angew. Chem., Int. Ed. 2011;50:3124–3156. doi: 10.1002/anie.200907223.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/anie.200907223"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="21432950"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Angew. Chem., Int. Ed.&amp;title=Nucleic acid based molecular devices&amp;author=Y. Krishnan&amp;author=F. C. Simmel&amp;volume=50&amp;publication_year=2011&amp;pages=3124-3156&amp;pmid=21432950&amp;doi=10.1002/anie.200907223&amp;"/></mixed-citation></ref><ref id="ref18"><mixed-citation id="cit18"><named-content content-type="citation-string">Qian L., Winfree E.. Scaling up digital
+circuit computation with DNA strand
+displacement cascades. Science. 2011;332:1196–1201. doi: 10.1126/science.1200520.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1126/science.1200520"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="21636773"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Science&amp;title=Scaling up digital circuit computation with DNA strand displacement cascades&amp;author=L. Qian&amp;author=E. Winfree&amp;volume=332&amp;publication_year=2011&amp;pages=1196-1201&amp;pmid=21636773&amp;doi=10.1126/science.1200520&amp;"/></mixed-citation></ref><ref id="ref19"><mixed-citation id="cit19"><named-content content-type="citation-string">Zhang D. Y., Seelig G.. Dynamic DNA nanotechnology
+using strand-displacement
+reactions. Nat. Chem. 2011;3:103–113. doi: 10.1038/nchem.957.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nchem.957"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="21258382"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Chem.&amp;title=Dynamic DNA nanotechnology using strand-displacement reactions&amp;author=D. Y. Zhang&amp;author=G. Seelig&amp;volume=3&amp;publication_year=2011&amp;pages=103-113&amp;pmid=21258382&amp;doi=10.1038/nchem.957&amp;"/></mixed-citation></ref><ref id="ref20"><mixed-citation id="cit20"><named-content content-type="citation-string">Snodin B. E., Schreck J. S., Romano F., Louis A. A., Doye J. P.. Coarse-grained
+modelling of the structural properties of DNA origami. Nucleic Acids Res. 2019;47:1585–1597. doi: 10.1093/nar/gky1304.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/nar/gky1304"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6379721"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30605514"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nucleic Acids Res.&amp;title=Coarse-grained modelling of the structural properties of DNA origami&amp;author=B. E. Snodin&amp;author=J. S. Schreck&amp;author=F. Romano&amp;author=A. A. Louis&amp;author=J. P. Doye&amp;volume=47&amp;publication_year=2019&amp;pages=1585-1597&amp;pmid=30605514&amp;doi=10.1093/nar/gky1304&amp;"/></mixed-citation></ref><ref id="ref21"><mixed-citation id="cit21"><named-content content-type="citation-string">Maffeo C., Aksimentiev A.. MrDNA: a multi-resolution model for predicting the
+structure and dynamics of DNA systems. Nucleic
+Acids Res. 2020;48:5135–5146. doi: 10.1093/nar/gkaa200.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/nar/gkaa200"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7229838"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32232413"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nucleic Acids Res.&amp;title=MrDNA: a multi-resolution model for predicting the structure and dynamics of DNA systems&amp;author=C. Maffeo&amp;author=A. Aksimentiev&amp;volume=48&amp;publication_year=2020&amp;pages=5135-5146&amp;pmid=32232413&amp;doi=10.1093/nar/gkaa200&amp;"/></mixed-citation></ref><ref id="ref22"><mixed-citation id="cit22"><named-content content-type="citation-string">Kim D. N., Kilchherr F., Dietz H., Bathe M.. Quantitative prediction
+of 3D solution shape and flexibility of nucleic acid nanostructures. Nucleic Acids Res. 2012;40:2862–2868. doi: 10.1093/nar/gkr1173.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/nar/gkr1173"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3326316"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="22156372"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nucleic Acids Res.&amp;title=Quantitative prediction of 3D solution shape and flexibility of nucleic acid nanostructures&amp;author=D. N. Kim&amp;author=F. Kilchherr&amp;author=H. Dietz&amp;author=M. Bathe&amp;volume=40&amp;publication_year=2012&amp;pages=2862-2868&amp;pmid=22156372&amp;doi=10.1093/nar/gkr1173&amp;"/></mixed-citation></ref><ref id="ref23"><mixed-citation id="cit23"><named-content content-type="citation-string">Lee J. Y., Lee J. G., Yun G., Lee C., Kim Y., Kim K. S., Kim T. H., Kim D. N.. Rapid computational
+analysis of DNA origami assemblies at near-atomic resolution. ACS Nano. 2021;15:1002–1015. doi: 10.1021/acsnano.0c07717.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acsnano.0c07717"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33410664"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ACS Nano&amp;title=Rapid computational analysis of DNA origami assemblies at near-atomic resolution&amp;author=J. Y. Lee&amp;author=J. G. Lee&amp;author=G. Yun&amp;author=C. Lee&amp;author=Y. Kim&amp;volume=15&amp;publication_year=2021&amp;pages=1002-1015&amp;pmid=33410664&amp;doi=10.1021/acsnano.0c07717&amp;"/></mixed-citation></ref><ref id="ref24"><mixed-citation id="cit24"><named-content content-type="citation-string">Douglas S. M., Marblestone A. H., Teerapittayanon S., Vazquez A., Church G. M., Shih W. M.. Rapid prototyping of 3D DNA-origami shapes with caDNAno. Nucleic Acids Res. 2009;37:5001–5006. doi: 10.1093/nar/gkp436.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/nar/gkp436"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC2731887"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19531737"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nucleic Acids Res.&amp;title=Rapid prototyping of 3D DNA-origami shapes with caDNAno&amp;author=S. M. Douglas&amp;author=A. H. Marblestone&amp;author=S. Teerapittayanon&amp;author=A. Vazquez&amp;author=G. M. Church&amp;volume=37&amp;publication_year=2009&amp;pages=5001-5006&amp;pmid=19531737&amp;doi=10.1093/nar/gkp436&amp;"/></mixed-citation></ref><ref id="ref25"><mixed-citation id="cit25"><named-content content-type="citation-string">Lee J. Y., Koh H., Kim D. N.. A computational model for structural dynamics and reconfiguration
+of DNA assemblies. Nat. Commun. 2023;14:7079. doi: 10.1038/s41467-023-42873-4.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41467-023-42873-4"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC10625641"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37925463"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Commun.&amp;title=A computational model for structural dynamics and reconfiguration of DNA assemblies&amp;author=J. Y. Lee&amp;author=H. Koh&amp;author=D. N. Kim&amp;volume=14&amp;publication_year=2023&amp;pages=7079&amp;pmid=37925463&amp;doi=10.1038/s41467-023-42873-4&amp;"/></mixed-citation></ref><ref id="ref26"><mixed-citation id="cit26"><named-content content-type="citation-string">Lee J. Y., Kim Y., Kim D. N.. Predicting
+the effect of binding molecules on the shape
+and mechanical properties of structured DNA assemblies. Nat. Commun. 2024;15:6446. doi: 10.1038/s41467-024-50871-3.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41467-024-50871-3"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC11291742"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="39085236"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Commun.&amp;title=Predicting the effect of binding molecules on the shape and mechanical properties of structured DNA assemblies&amp;author=J. Y. Lee&amp;author=Y. Kim&amp;author=D. N. Kim&amp;volume=15&amp;publication_year=2024&amp;pages=6446&amp;pmid=39085236&amp;doi=10.1038/s41467-024-50871-3&amp;"/></mixed-citation></ref><ref id="ref27"><mixed-citation id="cit27"><named-content content-type="citation-string">Lee J. G., Kim K. S., Lee J. Y., Kim D. N.. Predicting the free-form
+shape of structured DNA assemblies from their lattice-based design
+blueprint. ACS Nano. 2022;16:4289–4297. doi: 10.1021/acsnano.1c10347.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acsnano.1c10347"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35188742"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ACS Nano&amp;title=Predicting the free-form shape of structured DNA assemblies from their lattice-based design blueprint&amp;author=J. G. Lee&amp;author=K. S. Kim&amp;author=J. Y. Lee&amp;author=D. N. Kim&amp;volume=16&amp;publication_year=2022&amp;pages=4289-4297&amp;pmid=35188742&amp;doi=10.1021/acsnano.1c10347&amp;"/></mixed-citation></ref><ref id="ref28"><mixed-citation id="cit28"><named-content content-type="citation-string">Lee J. Y., Kim M., Lee C., Kim D. N.. Characterizing and harnessing the
+mechanical properties of short single-stranded DNA in structured assemblies. ACS Nano. 2021;15:20430–20441. doi: 10.1021/acsnano.1c08861.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acsnano.1c08861"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34870958"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ACS Nano&amp;title=Characterizing and harnessing the mechanical properties of short single-stranded DNA in structured assemblies&amp;author=J. Y. Lee&amp;author=M. Kim&amp;author=C. Lee&amp;author=D. N. Kim&amp;volume=15&amp;publication_year=2021&amp;pages=20430-20441&amp;pmid=34870958&amp;doi=10.1021/acsnano.1c08861&amp;"/></mixed-citation></ref><ref id="ref29"><mixed-citation id="cit29"><named-content content-type="citation-string">Truong-Quoc C., Lee J. Y., Kim K. S., Kim D. N.. Prediction of DNA
+origami shape using graph neural network. Nat.
+Mater. 2024;23:984–992. doi: 10.1038/s41563-024-01846-8.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41563-024-01846-8"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="38486095"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Mater.&amp;title=Prediction of DNA origami shape using graph neural network&amp;author=C. Truong-Quoc&amp;author=J. Y. Lee&amp;author=K. S. Kim&amp;author=D. N. Kim&amp;volume=23&amp;publication_year=2024&amp;pages=984-992&amp;pmid=38486095&amp;doi=10.1038/s41563-024-01846-8&amp;"/></mixed-citation></ref><ref id="ref30"><mixed-citation id="cit30"><named-content content-type="citation-string">Humphrey W., Dalke A., Schulten K.. VMD: visual molecular dynamics. J. Mol. Graph. 1996;14:33–38. doi: 10.1016/0263-7855(96)00018-5.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/0263-7855(96)00018-5"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="8744570"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Mol. Graph.&amp;title=VMD: visual molecular dynamics&amp;author=W. Humphrey&amp;author=A. Dalke&amp;author=K. Schulten&amp;volume=14&amp;publication_year=1996&amp;pages=33-38&amp;pmid=8744570&amp;doi=10.1016/0263-7855(96)00018-5&amp;"/></mixed-citation></ref><ref id="ref31"><mixed-citation id="cit31"><named-content content-type="citation-string">Case D. A.. Normal
+mode analysis of protein dynamics. Curr. Opin.
+Struct. Biol. 1994;4:285–290. doi: 10.1016/S0959-440X(94)90321-2.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/S0959-440X(94)90321-2"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Curr. Opin. Struct. Biol.&amp;title=Normal mode analysis of protein dynamics&amp;author=D. A. Case&amp;volume=4&amp;publication_year=1994&amp;pages=285-290&amp;doi=10.1016/S0959-440X(94)90321-2&amp;"/></mixed-citation></ref><ref id="ref32"><mixed-citation id="cit32"><named-content content-type="citation-string">Brooks B. R., Janežič D., Karplus M.. Harmonic analysis of
+large systems. I. Methodology. J. Comput. Chem. 1995;16:1522–1542. doi: 10.1002/jcc.540161209.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/jcc.540161209"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Comput. Chem.&amp;title=Harmonic analysis of large systems. I. Methodology&amp;author=B. R. Brooks&amp;author=D. Janežič&amp;author=M. Karplus&amp;volume=16&amp;publication_year=1995&amp;pages=1522-1542&amp;doi=10.1002/jcc.540161209&amp;"/></mixed-citation></ref><ref id="ref33"><mixed-citation id="cit33"><named-content content-type="citation-string">Atilgan A. R., Durell S. R., Jernigan R. L., Demirel M. C., Keskin O., Bahar I.. Anisotropy of fluctuation
+dynamics of proteins with an elastic network
+model. Biophys. J. 2001;80:505–515. doi: 10.1016/S0006-3495(01)76033-X.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/S0006-3495(01)76033-X"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC1301252"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="11159421"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Biophys. J.&amp;title=Anisotropy of fluctuation dynamics of proteins with an elastic network model&amp;author=A. R. Atilgan&amp;author=S. R. Durell&amp;author=R. L. Jernigan&amp;author=M. C. Demirel&amp;author=O. Keskin&amp;volume=80&amp;publication_year=2001&amp;pages=505-515&amp;pmid=11159421&amp;doi=10.1016/S0006-3495(01)76033-X&amp;"/></mixed-citation></ref><ref id="ref34"><mixed-citation id="cit34"><named-content content-type="citation-string">Lange O. F., Grubmüller H.. Generalized
+correlation for biomolecular dynamics. Proteins. 2006;62:1053–1061. doi: 10.1002/prot.20784.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/prot.20784"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="16355416"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Proteins.&amp;title=Generalized correlation for biomolecular dynamics&amp;author=O. F. Lange&amp;author=H. Grubmüller&amp;volume=62&amp;publication_year=2006&amp;pages=1053-1061&amp;pmid=16355416&amp;doi=10.1002/prot.20784&amp;"/></mixed-citation></ref><ref id="ref35"><mixed-citation id="cit35"><named-content content-type="citation-string">Wajnryb E., Mizerski K. A., Zuk P. J., Szymczak P.. Generalization of the
+Rotne–Prager–Yamakawa mobility and shear disturbance
+tensors. J. Fluid Mech. 2013;731:R3. doi: 10.1017/jfm.2013.402.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1017/jfm.2013.402"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Fluid Mech.&amp;title=Generalization of the Rotne–Prager–Yamakawa mobility and shear disturbance tensors&amp;author=E. Wajnryb&amp;author=K. A. Mizerski&amp;author=P. J. Zuk&amp;author=P. Szymczak&amp;volume=731&amp;publication_year=2013&amp;pages=R3&amp;doi=10.1017/jfm.2013.402&amp;"/></mixed-citation></ref><ref id="ref36"><mixed-citation id="cit36"><named-content content-type="citation-string">Xie C., Chen K., Chen Z., Hu Y., Pan L.. A Chemo-Mechanically
+Coupled DNA Origami Clamp Capable of Generating Robust Compression
+Forces. Small. 2024;20:2401396.  doi: 10.1002/smll.202401396.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/smll.202401396"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="38973093"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Small&amp;title=A Chemo-Mechanically Coupled DNA Origami Clamp Capable of Generating Robust Compression Forces&amp;author=C. Xie&amp;author=K. Chen&amp;author=Z. Chen&amp;author=Y. Hu&amp;author=L. Pan&amp;volume=20&amp;publication_year=2024&amp;pages=2401396&amp;pmid=38973093&amp;doi=10.1002/smll.202401396&amp;"/></mixed-citation></ref><ref id="ref37"><mixed-citation id="cit37"><named-content content-type="citation-string">Ponnuswamy N., Bastings M. M., Nathwani B., Ryu J. H., Chou L. Y., Vinther M., Li W. A., Anastassacos F. M., Mooney D. J., Shih W. M.. Oligolysine-based
+coating protects
+DNA nanostructures from low-salt denaturation and nuclease degradation. Nat. Commun. 2017;8:15654. doi: 10.1038/ncomms15654.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/ncomms15654"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5460023"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28561045"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Commun.&amp;title=Oligolysine-based coating protects DNA nanostructures from low-salt denaturation and nuclease degradation&amp;author=N. Ponnuswamy&amp;author=M. M. Bastings&amp;author=B. Nathwani&amp;author=J. H. Ryu&amp;author=L. Y. Chou&amp;volume=8&amp;publication_year=2017&amp;pages=15654&amp;pmid=28561045&amp;doi=10.1038/ncomms15654&amp;"/></mixed-citation></ref><ref id="ref38"><mixed-citation id="cit38"><named-content content-type="citation-string">Moghadam M. G., Douglas T. R., Alexander S., Fiddes L. K., Tilstra G., Khan O. F., Chou L. Y.. PEG-Grafted
+Oligolysines Stabilize
+DNA Origami While Enhancing Receptor-Specific Cell Binding. J. Am. Chem. Soc. 2025;147:26748–26761. doi: 10.1021/jacs.5c07566.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/jacs.5c07566"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="40689691"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Am. Chem. Soc.&amp;title=PEG-Grafted Oligolysines Stabilize DNA Origami While Enhancing Receptor-Specific Cell Binding&amp;author=M. G. Moghadam&amp;author=T. R. Douglas&amp;author=S. Alexander&amp;author=L. K. Fiddes&amp;author=G. Tilstra&amp;volume=147&amp;publication_year=2025&amp;pages=26748-26761&amp;pmid=40689691&amp;doi=10.1021/jacs.5c07566&amp;"/></mixed-citation></ref></ref-list></sec></sec><sec id="_ad93_" xml:lang="en" sec-type="associated-data" disp-level="1"><title>Associated Data</title><sec id="_adsm93_" xml:lang="en" sec-type="supplementary-materials" disp-level="2"><title>Supplementary Materials</title><supplementary-material id="db_ds_supplementary-material1_reqid_" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au5c01110_si_001.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path 635d/12648286/8fd647c3e1dc/au5c01110_si_001.pdf?><?cloudpmc-bucket app?><?size 442481?></media></supplementary-material><supplementary-material id="db_ds_supplementary-material2_reqid_" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au5c01110_si_002.zip" mimetype="application" mime-subtype="zip"><?cloudpmc-path 635d/12648286/744215e75cfd/au5c01110_si_002.zip?><?cloudpmc-bucket app?><?size 3493024?></media></supplementary-material></sec></sec></body></article>

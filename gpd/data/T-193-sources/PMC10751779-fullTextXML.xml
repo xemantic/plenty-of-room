@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?><article xml:lang="en" article-type="research-article"><front><journal-meta><journal-id journal-id-type="pmc-domain-id">4063</journal-id><journal-id journal-id-type="pmc-domain">jacsau</journal-id><journal-title-group><journal-title>JACS Au</journal-title><abbrev-journal-title>JACS Au</abbrev-journal-title></journal-title-group><publisher><publisher-name>American Chemical Society</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC10751779</article-id><article-id pub-id-type="pmcaid">10751779</article-id><article-id pub-id-type="pmcaiid">10751779</article-id><article-id pub-id-type="pmid">38155648</article-id><article-id pub-id-type="doi">10.1021/jacsau.3c00552</article-id><title-group><article-title>Origin of Solvent
+Dependency of the Potential of Zero
+Charge</article-title></title-group><contrib-group content-type="author"><contrib><name name-style="western"><surname>Tang</surname><given-names initials="W">Weiqiang</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Zhao</surname><given-names initials="S">Shuangliang</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff3">§</xref><xref rid="cor1" ref-type="author-notes">*</xref></contrib><contrib><name name-style="western"><surname>Huang</surname><given-names initials="J">Jun</given-names></name><xref ref-type="aff" rid="aff2">‡</xref><xref ref-type="aff" rid="aff4">∥</xref><xref rid="cor2" ref-type="author-notes">*</xref></contrib></contrib-group><aff id="aff1"><label>†</label>State
+Key Laboratory of Chemical Engineering and School of Chemical Engineering, East China University of Science and Technology, Shanghai 200237, China</aff><aff id="aff2"><label>‡</label>Institute
+of Energy and Climate Research, IEK-13: Theory and Computation of
+Energy Materials, Forschungszentrum Jülich GmbH, Jülich 52425, Germany</aff><aff id="aff3"><label>§</label>Guangxi
+Key Laboratory of Petrochemical Resource Processing and Process Intensification
+Technology and School of Chemistry and Chemical Engineering, Guangxi University, Nanning 530004, China</aff><aff id="aff4"><label>∥</label>Theory
+of Electrocatalytic Interfaces, Faculty of Georesources and Materials
+Engineering, RWTH Aachen University, Aachen 52062, Germany</aff><author-notes><fn id="cor1"><label>*</label><p>Email: <email>szhao@ecust.edu.cn</email>.</p></fn><fn id="cor2"><label>*</label><p>Email: <email>ju.huang@fz-juelich.de</email>.</p></fn></author-notes><pub-date><day>15</day><month>11</month><year>2023</year></pub-date><volume>3</volume><issue>12</issue><fpage>3381</fpage><page-range>3381–3390</page-range><pub-history><event event-type="pmc-release"><date><day>28</day><month>12</month><year>2023</year></date></event></pub-history><permissions><copyright-statement>© 2023 The Authors. Published by American Chemical Society</copyright-statement><license><license-p>Permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://creativecommons.org/licenses/by/4.0/" ext-link-type="uri">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552.pdf" content-type="pmc-pdf"><?cloudpmc-path bcd9/10751779/ab7991548cfd/au3c00552.pdf?><?cloudpmc-bucket app?><?size 4078314?></self-uri><abstract id="abstract1"><title>Abstract</title><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="ab-tgr1" xlink:href="au3c00552_0007.jpg"><?cloudpmc-path blobs/bcd9/10751779/16754556a12c/au3c00552_0007.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 526?><?original-width 996?><?scaled-height 351?><?scaled-width 664?></graphic><p>Fundamental properties of the Au(111)–KPF<sub>6</sub> interface,
+particularly the potential of zero charge (PZC), exhibit pronounced
+variations among solvents, yet the origin remains largely elusive.
+In this study, we aim to link the solvent dependency to the microscopic
+phenomenon of electron spillover occurring at the metal–solution
+interface in heterogeneous dielectric media. Addressing the challenge
+of describing the solvent-modulated electron spillover under constant
+potential conditions, we adopt a semiclassical functional approach
+and parametrize it with first-principles calculations and experimental
+data. We unveil that the key variable governing this phenomenon is
+the local permittivity within the region approximately 2.5 Å
+above the metal edge. A higher local permittivity facilitates the
+electron spillover that tends to increase the PZC on the one hand
+and enhances the screening of the electronic charge that tends to
+decrease the PZC on the other. These dual effect lead to a nonmonotonic
+relationship between the PZC and the local permittivity. Moreover,
+our findings reveal that the electron spillover induces a capacitance
+peak at electrode potentials that are more negative than the PZC in
+concentrated solutions. This observation contrasts classical models
+predicting the peak to occur precisely at the PZC. To elucidate the
+contribution of electron spillover to the total capacitance, we decompose
+the total capacitance into a quantum capacitance of the metal <italic>C</italic><sub>q</sub>, a classical capacitance of electrolyte solution <italic>C</italic><sub>c</sub>, and a capacitance <italic>C</italic><sub>qc</sub> accounting for electron–ion correlations. Our calculations
+reveal that <italic>C</italic><sub>qc</sub> is negative due to the
+promoted electron spillover at more negative potentials. Our work
+not only reveals the importance of local permittivity in tuning the
+electron spillover but also presents a viable theoretical approach
+to study solvent effects on electrochemical interfaces under operating
+conditions.</p><sec id="kwd-group1" sec-type="kwd-group" disp-level="2"><p><bold>Keywords:</bold> solvent effect, electron spillover, density-potential
+functional theory, potential of zero charge, differential
+double layer capacitance</p></sec></abstract><custom-meta-group><custom-meta><meta-name>status</meta-name><meta-value>released</meta-value></custom-meta><custom-meta><meta-name>display-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>is-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-journal-matter</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-scanned</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-retracted</meta-name><meta-value>no</meta-value></custom-meta></custom-meta-group></article-meta><notes notes-type="article-notes"><sec id="historyarticle-meta1" sec-type="history" disp-level="2"><p>Received 2023 Sep 19; Accepted 2023 Oct 30; Revised 2023 Oct 30; Collection date 2023 Dec 25.</p></sec></notes></front><body><sec id="sec1" disp-level="1"><title>Introduction</title><p>In its infancy, Kohn–Sham density
+functional theory (DFT)
+had been employed to describe the charge density, work function, and
+surface energy of metal surfaces. These works revealed the crucial
+importance of electron spillover (or spillout in plasmonics literature<sup><xref rid="ref1" ref-type="bibr">1</xref>,<xref rid="ref2" ref-type="bibr">2</xref></sup>), namely, flow of electrons over the edge of metal surfaces, in
+determining these properties of metal surfaces. For example, the work
+function Φ is calculated as, Φ = <italic>e</italic><sub>0</sub> χ<sub>m</sub> – μ<sub>e</sub>, where χ<sub>m</sub> is the electrostatic potential difference from metal bulk
+(<italic>x</italic> = −∞) to far vacuum (<italic>x</italic> = ∞) and μ<sub>e</sub> is the chemical potential of
+electrons in metal bulk. While the latter is a bulk property independent
+of the electron distribution near the metal surface, the former is
+calculated as, <inline-formula id="d33e201"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m001.gif"><?cloudpmc-path blobs/bcd9/10751779/6d247a390d44/au3c00552_m001.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 22?><?scaled-width 148?></inline-graphic></inline-formula> with the vacuum permittivity <italic>ϵ</italic><sub>0</sub>, electron density <italic>n</italic>(<italic>x</italic>), and charge background density <italic>n</italic><sub>+</sub>(<italic>x</italic>).<sup><xref rid="ref3" ref-type="bibr">3</xref>,<xref rid="ref4" ref-type="bibr">4</xref></sup> It is readily seen that by tuning <italic>n</italic>(<italic>x</italic>) one can change χ<sub>m</sub> and thereby Φ. It has been recently recognized that the same
+electron spillover also influences the surface-plasmon resonance of
+nanoparticles.<sup><xref rid="ref5" ref-type="bibr">5</xref>−<xref rid="ref7" ref-type="bibr">7</xref></sup></p><p>When a metal is brought into contact with an
+electrolyte solution,
+the electron spillover is expected to be different from the preceding
+scenario of a metal–vacuum interface.<sup><xref rid="ref8" ref-type="bibr">8</xref></sup> The changes are caused by direct interactions, such as Pauli repulsion
+between metal electrons and solvent electrons on the one hand, and
+indirect interactions, such as the screened electrostatic field due
+to solvent polarization on the other.<sup><xref rid="ref9" ref-type="bibr">9</xref>,<xref rid="ref10" ref-type="bibr">10</xref></sup> Using <italic>ab initio</italic> molecular dynamics (AIMD) simulations, one can
+“visualize” such changes at the atomistic scale.<sup><xref rid="ref11" ref-type="bibr">11</xref>,<xref rid="ref12" ref-type="bibr">12</xref></sup> For example, recent AIMD simulations<sup><xref rid="ref10" ref-type="bibr">10</xref>,<xref rid="ref11" ref-type="bibr">11</xref>,<xref rid="ref13" ref-type="bibr">13</xref></sup> reveal that electron accumulation on the metal side
+and electron depletion on the water side are responsible for the lower
+potential of zero charge (PZC) at the metal–water interface
+than at the metal–vacuum interface. Specifically, interfacial
+water molecules with the O-down configuration in the first layer push
+the spilled electrons back into the metal skeleton through Pauli repulsion.<sup><xref rid="ref14" ref-type="bibr">14</xref>,<xref rid="ref15" ref-type="bibr">15</xref></sup> Such changes are termed solvent-modulated electron spillover at
+the metal–solution interface. In addition to the PZC, the solvent-modulated
+electron spillover also determines the double-layer capacitance (<italic>C</italic><sub>dl</sub>).<sup><xref rid="ref8" ref-type="bibr">8</xref>,<xref rid="ref16" ref-type="bibr">16</xref>,<xref rid="ref17" ref-type="bibr">17</xref></sup> A relevant concept describing the effect of electron spillover on <italic>C</italic><sub>dl</sub> is the quantum capacitance or electronic
+capacitance.<sup><xref rid="ref18" ref-type="bibr">18</xref>−<xref rid="ref21" ref-type="bibr">21</xref></sup></p><p>Limited by the computational cost, AIMD studies are usually
+conducted
+at the uncharged metal–solution interface with a “simple”
+solvent, viz., water.<sup><xref rid="ref22" ref-type="bibr">22</xref>−<xref rid="ref25" ref-type="bibr">25</xref></sup> Solvent-modulated electron spillover in other types of solvents,
+such as aprotic solvents, is much less understood. One can proceed
+a step further by adding a few nonspecifically adsorbing cations or
+anions into the system, so as to simulate charged metal–solution
+interfaces.<sup><xref rid="ref25" ref-type="bibr">25</xref>−<xref rid="ref27" ref-type="bibr">27</xref></sup> Due to the relatively small simulation size that
+can be afforded practically, the fluctuation in the electrode potential
+could be up to 0.5 V, and addition of one cation or anion into a 6
+× 6 Pt(111) surface supercell is tantamount to a change of the
+electrode potential of more than 0.1 V.<sup><xref rid="ref28" ref-type="bibr">28</xref>,<xref rid="ref29" ref-type="bibr">29</xref></sup> Therefore,
+a computationally efficient constant-potential approach is certainly
+welcome to understand the solvent-modulated electron spillover phenomena
+under constant potential conditions in a wider range of solvents.
+This work is an attempt in this direction.</p><p>Combining Kohn–Sham
+DFT simulations and a recent constant-potential
+method of modeling metal–solution interfaces,<sup><xref rid="ref15" ref-type="bibr">15</xref>,<xref rid="ref30" ref-type="bibr">30</xref>−<xref rid="ref32" ref-type="bibr">32</xref></sup> we investigate how aprotic solvents modulate the
+electron spillover at the metal–solution interface formed between
+Au(111) and KPF<sub>6</sub> aprotic solutions, as shown in <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>a, how the solvent
+modulation varies at different electrode potentials, and the origin
+of the solvent dependency of the PZC observed in an experimental study.<sup><xref rid="ref33" ref-type="bibr">33</xref></sup> To examine the generality of the insights gained
+from our analysis of aprotic solvents, we extend our analysis to the
+case of water. The obtained understanding lays the basis for interpreting
+solvent effects on the activity of electrochemical reactions.</p><fig id="fig1" position="float"><?disp-level 2?><label>Figure 1</label><caption><p>Model schematic
+and parametrization. (a) Schematic of the Au(111)–solution
+interface described by DPFT. The metal side, solution side, and short-range
+interactions between the metal and solution are described by the orbital-free
+DFT, classical DFT, and Morse potential, respectively. The electron
+spillover is influenced by the gradient coefficient in the kinetic
+energy functional <italic>θ</italic><sub>T</sub> and interface
+optical permittivity <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>. In accordance with an experimental
+study,<sup><xref rid="ref33" ref-type="bibr">33</xref></sup> four aprotic solvents, DG, ACN,
+DMSO, and PC, are examined. The white, gray, red, blue, and yellow
+balls represent H, C, O, N, and S atoms, respectively. (b) Parameterization
+of the Morse potential between Au(111) and ACN molecules. The empty
+triangles represent the binding energy calculated from Kohn–Sham
+DFT, while the solid red lines represent the fitting Morse potential.
+Morse potentials for other electrolyte species are provided in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">Table S2</ext-link>. (c) Determination of the <italic>θ</italic><sub>T</sub> and <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> for the case of the ACN molecule.
+The contour plot shows surface free charge density (<italic>σ</italic><sub>free</sub>) at the experimental PZC of this system, <italic>μ̃</italic><sub>e</sub> = −4.98 eV,<sup><xref rid="ref33" ref-type="bibr">33</xref></sup> at varying <italic>θ</italic><sub>T</sub> and <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>. Therefore, permissible values of <italic>θ</italic><sub>T</sub> and <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> are located
+at solid black dots corresponding to zero <italic>σ</italic><sub>free</sub>.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr1" xlink:href="au3c00552_0001.jpg"><?cloudpmc-path blobs/bcd9/10751779/50ae71895dff/au3c00552_0001.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 1108?><?original-width 1250?><?scaled-height 554?><?scaled-width 625?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="au3c00552_0001.gif"><?cloudpmc-path blobs/bcd9/10751779/0dc863b7eaa8/au3c00552_0001.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig></sec><sec id="sec2" disp-level="1"><title>Results</title><sec id="sec2.1" disp-level="2"><title>Density-Potential Functional Approach of Modeling Electrochemical
+Interfaces: Theoretical Framework and First-Principles-Assisted Parametrization</title><p>The constant-potential approach combines an orbital-free DFT (OF-DFT)
+of metal electrons, a classical DFT of the electrolyte solution, and
+parametrized potential energy functions of metal–solution interactions.<sup><xref rid="ref15" ref-type="bibr">15</xref>,<xref rid="ref30" ref-type="bibr">30</xref>−<xref rid="ref32" ref-type="bibr">32</xref></sup> With the detailed derivation in ref (<xref rid="ref32" ref-type="bibr">32</xref>), this method describes
+the metal–solution interface using two controlling equations
+in terms of the electron density <italic>n</italic><sub>e</sub> and
+the electrostatic potential <italic>ϕ</italic></p><disp-formula id="eq1"><label>1</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au3c00552_m002.jpg"><?cloudpmc-path blobs/bcd9/10751779/231b1d2c823c/au3c00552_m002.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 44?><?original-width 459?><?scaled-height 44?><?scaled-width 459?></graphic></disp-formula><disp-formula id="eq2"><label>2</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au3c00552_m003.jpg"><?cloudpmc-path blobs/bcd9/10751779/efd42fe0db1e/au3c00552_m003.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 39?><?original-width 364?><?scaled-height 39?><?scaled-width 364?></graphic></disp-formula><p>where the overbar denotes variables and operators
+in the dimensionless system, ∇̃ = <italic>a</italic><sub>0</sub> ∇ with <italic>a</italic><sub>0</sub> (=Bohr radius)
+as the reference length, <italic>n̅</italic><sub>e</sub> = <italic>n</italic><sub>e</sub>(<italic>a</italic><sub>0</sub>)<sup>3</sup>, <inline-formula id="d33e429"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m004.gif"><?cloudpmc-path blobs/bcd9/10751779/1534225c1622/au3c00552_m004.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 23?><?scaled-width 40?></inline-graphic></inline-formula> with <italic>e</italic><sub>0</sub> as
+the elementary charge, <italic>k</italic><sub>B</sub> is the Boltzmann
+constant, and <italic>T</italic> is the temperature. <inline-formula id="d33e441"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m005.gif"><?cloudpmc-path blobs/bcd9/10751779/0b611bc0444b/au3c00552_m005.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 21?><?scaled-width 45?></inline-graphic></inline-formula> with <italic>ϵ</italic><sub>0</sub> as the permittivity of vacuum, <inline-formula id="d33e448"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m006.gif"><?cloudpmc-path blobs/bcd9/10751779/476b98403aeb/au3c00552_m006.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 53?><?scaled-width 200?></inline-graphic></inline-formula>, and <italic>n̅</italic><sub>cc</sub> are the dimensionless high-frequency (optical) permittivity, dipole
+moment of solvent, charge of electrolyte ions, and charge density
+of metal cationic cores, respectively. In <xref rid="eq1" ref-type="disp-formula">eq <xref rid="eq1" ref-type="disp-formula">1</xref></xref>, <inline-formula id="d33e458"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m007.gif"><?cloudpmc-path blobs/bcd9/10751779/f8c378dc0aa7/au3c00552_m007.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 20?><?scaled-width 101?></inline-graphic></inline-formula>. <italic>t</italic><sub>TF</sub> is the
+kinetic energy functional, <italic>u</italic><sub>X</sub><sup>0</sup> and <italic>u</italic><sub>C</sub><sup>0</sup> are the exchange
+and correlation energy functionals of a homogeneous electron gas,
+respectively. <italic>θ</italic><sub>T</sub> and <italic>θ</italic><sub>XC</sub> are the gradient coefficients tuning the contribution
+of the “semilocal” term in kinetic energy and exchange–correlation
+energy, respectively. <italic>μ̃</italic><sub>e</sub> is
+the electrochemical potential of electrons. <italic>e</italic><sub>au</sub> = 27.2 eV is the energy in atomic units. In <xref rid="eq2" ref-type="disp-formula">eq <xref rid="eq2" ref-type="disp-formula">2</xref></xref>, <inline-formula id="d33e491"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m008.gif"><?cloudpmc-path blobs/bcd9/10751779/ed1c390121c9/au3c00552_m008.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 25?><?scaled-width 51?></inline-graphic></inline-formula> is a scalar number derived from fundamental
+constants, and <inline-formula id="d33e494"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m009.gif"><?cloudpmc-path blobs/bcd9/10751779/cc5deed54b9c/au3c00552_m009.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 17?><?scaled-width 127?></inline-graphic></inline-formula> with <italic>E̅</italic> = |∇<italic>ϕ̅</italic>| being the dimensionless electric field.
+The symbol <italic>δ</italic>(<italic>l</italic> ∈ M)
+is equal to one for monopolar (M) charged particles, e.g., cations
+and anions, and zero otherwise, <italic>δ</italic>(<italic>l</italic> ∈ S) is equal to one for dipolar solvent molecules (S) and
+zero otherwise. Because the electron density and electrostatic potential
+are not dual variables as in the Kohn–Sham DFT but are two
+variables of equal status herein, we call this method a density-potential
+functional “theory” (DPFT).</p><p>The short-range interactions
+between the metal surface and solution particles are described using
+the Morse potential<sup><xref rid="ref34" ref-type="bibr">34</xref></sup></p><disp-formula id="eq3"><label>3</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au3c00552_m010.jpg"><?cloudpmc-path blobs/bcd9/10751779/f4b06ccbbc55/au3c00552_m010.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 17?><?original-width 300?><?scaled-height 17?><?scaled-width 300?></graphic></disp-formula><p>with <italic>D</italic><sub>l</sub> being
+the well depth, <italic>β</italic><sub>l</sub>, a coefficient
+controlling the well width, <italic>d</italic>(<italic>r⃗</italic>) the distance from <italic>r⃗</italic> to the metal surface,
+and <italic>d</italic><sub>0</sub> being the equilibrium distance
+between the molecule and the metal surface. When <italic>r⃗</italic> is within the metal, <italic>d</italic>(<italic>r⃗</italic>) is negative and <italic>w</italic><sub>l</sub>(<italic>r⃗</italic>) becomes very positive, meaning that solution-phase particles have
+a negligible probability there. The parameters in <italic>w</italic><sub>l</sub> are determined from the Kohn–Sham DFT computations
+for the four aprotic solvents on the Au(111) surface, as shown in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">Figure S1</ext-link>. The binding energies are calculated
+in series of the distance between the solvent molecules and Au(111),
+while the <italic>z</italic>-coordinate of the solvent molecules is
+fixed. In <xref rid="fig1" ref-type="fig">Figures <xref rid="fig1" ref-type="fig">1</xref></xref>b and <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">S2</ext-link>, these binding energy relations
+are fitted using Morse potentials with <italic>R</italic><sup>2</sup> values greater than 0.9. Because the Morse potential describes short-range
+electronic interactions and the interference of long-range electrostatic
+interactions should be avoided, we use the Ar atom that is iso-electronic
+to K<sup>+</sup> for the case of K<sup>+</sup> in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">Figure S3</ext-link>.<sup><xref rid="ref34" ref-type="bibr">34</xref></sup> As the PF<sub arrange="stack">6</sub><sup arrange="stack">–</sup> anion is
+a nonspecifically adsorbing species, its Morse potential is less important
+for the results, and we use the Morse potential of K<sup>+</sup> for
+it. All the Morse potential parameters are compiled in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">Table S2</ext-link>, and it can be found that the distance
+between the Au(111) surface and solvent molecules decreases at larger <italic>D</italic><sub>1</sub>’s, namely, stronger interactions.</p><p>The DPFT uses the Perdew–Burke–Ernzerhof (PBE)<sup><xref rid="ref35" ref-type="bibr">35</xref></sup> generalized gradient approximations for the
+exchange–correlation functional, as in the Kohn–Sham
+DFT calculations. Therefore, <italic>θ</italic><sub>T</sub> is
+the only free parameter in describing metal electrons. On the electrolyte
+solution side, the only free parameter is the interface high-frequency
+(optical) permittivity <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>.<sup><xref rid="ref32" ref-type="bibr">32</xref></sup> We note that <italic>θ</italic><sub>T</sub> and <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> codetermine
+the electron spillover at the metal surface, and thus the PZC. The
+experimental PZCs of diglyme (DG), acetonitrile (ACN), dimethyl sulfoxide
+(DMSO), and propylene carbonate (PC) are 0.51, 0.44, 0.25, and 0.13
+V (vs SHE), respectively.<sup><xref rid="ref33" ref-type="bibr">33</xref></sup> Provided these
+PZCs, <italic>θ</italic><sub>T</sub> and <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> cannot
+be varied independently, instead, they are correlated, as shown in <xref rid="fig1" ref-type="fig">Figures <xref rid="fig1" ref-type="fig">1</xref></xref>c and <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">S4</ext-link>. In addition, <italic>θ</italic><sub>T</sub> should be universal for the Au(111) surface, while <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> is solvent specific.</p><p>So far, obtaining the optical
+permittivity <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> at metal–solution
+interfaces remains challenging. As a substitute, the bulk optical
+permittivity <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">bulk</sup>, which is equal to the square of
+the refractive index <italic>n</italic>, is widely used.<sup><xref rid="ref36" ref-type="bibr">36</xref></sup><italic>n</italic> can be calculated using the
+Lorentz–Lorenz equation<sup><xref rid="ref37" ref-type="bibr">37</xref></sup></p><disp-formula id="eq4"><label>4</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au3c00552_m011.jpg"><?cloudpmc-path blobs/bcd9/10751779/d39828753a08/au3c00552_m011.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 33?><?original-width 95?><?scaled-height 33?><?scaled-width 95?></graphic></disp-formula><p>here, <italic>N</italic> and <italic>α</italic><sub>m</sub> are the number density and polarizability of the solvent
+molecules, respectively. <italic>α</italic><sub>m</sub> can
+be determined by Kohn–Sham DFT calculations.<sup><xref rid="ref38" ref-type="bibr">38</xref></sup> The values of <italic>α</italic><sub>m</sub>, <italic>n</italic>, and <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">bulk</sup> are collected in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">Table S3</ext-link>. However, Hou et al.<sup><xref rid="ref39" ref-type="bibr">39</xref></sup> found that dielectric saturation occurs at metal–solution
+interfaces, resulting in an approximately constant <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> for all
+solvents examined in their work. This saturated permittivity determines
+the EDL capacitance. Herein, we use <italic>θ</italic><sub>T</sub> = 3.5 and determine the effective <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> values for
+DG, ACN, DMSO, and PC to be 5.49, 4.69, 4.70, and 5.07, respectively.
+These values closely align with the estimates reported by Hou et al.<sup><xref rid="ref39" ref-type="bibr">39</xref></sup></p><p>The key advantage of our DPFT model is
+its capability of simulating
+the metal–solution interface at constant electrochemical potential,
+tantamount to actually changing the electrochemical potential of electrons <italic>μ̃</italic><sub>e</sub> in <xref rid="eq1" ref-type="disp-formula">eq <xref rid="eq1" ref-type="disp-formula">1</xref></xref></p><disp-formula id="eq5"><label>5</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au3c00552_m012.jpg"><?cloudpmc-path blobs/bcd9/10751779/7a3f72aab6c9/au3c00552_m012.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 16?><?original-width 78?><?scaled-height 16?><?scaled-width 78?></graphic></disp-formula><p>with <inline-formula id="d33e727"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m013.gif"><?cloudpmc-path blobs/bcd9/10751779/764413d72bee/au3c00552_m013.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 25?><?scaled-width 104?></inline-graphic></inline-formula> being the chemical potential of a homogeneous
+electron gas. <italic>ϕ</italic><sub>M</sub> is the electric
+potential of the metal. Combining the ordinary differential equations
+(ODE) in <xref rid="eq1" ref-type="disp-formula">eqs <xref rid="eq1" ref-type="disp-formula">1</xref></xref> and <xref rid="eq2" ref-type="disp-formula">2</xref> result in them being solved with the following boundary
+conditions: ∇̅<italic>n̅</italic><sub>e</sub> =
+0, ∇̅<italic>ϕ̅</italic> = 0 at the bulk
+metal; <italic>n̅</italic><sub>e</sub> = 0, <italic>ϕ̅</italic> = 0 at the bulk solution. Notably, we use the inner potential of
+the bulk electrolyte as the reference. Therefore, it is essential
+to incorporate the solvent’s surface potential into <italic>μ̃</italic><sub>e</sub>. The surface potentials of the
+five solvents are collected in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">Table S4</ext-link>. The technical details of solving the model are provided in the
+section on computational methods.</p></sec><sec id="sec2.2" disp-level="2"><title>Constant-Potential, Spatially Resolved, Microscopic Structure
+of the Interface</title><p>With above parametrization and setup of
+boundary conditions, the DPFT model enables us to solve for distributions
+of electron density <italic>n</italic><sub>e</sub>, electrostatic
+potential ϕ, and ion concentrations at varying electrode potentials,
+as shown in <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>a–d. Such a capability lays the basis for studying how solvent
+modulates, <italic>under constant potential conditions</italic>, the
+electron spillover and changes the electrochemical properties of the
+metal–solution interface.</p><fig id="fig2" position="float"><?disp-level 3?><label>Figure 2</label><caption><p>Constant-potential spatially resolved
+structures of the Au(111)–solution
+interface. The distribution of (a) electron density <italic>n</italic><sub>e</sub> and (b) electrostatic potential <italic>ϕ</italic> at the PZC in DG, ACN, DMSO, and PC. The inset of (a) is a close-up
+in the spillover region just outside the metal–solution interface.
+(c) Distribution of ions and solvent density at PZC (<italic>μ̃</italic><sub>e</sub> = −4.98 eV) in a solution of 5 mM KPF<sub>6</sub> in ACN. (d) Dimensionless densities of PF<sub>6</sub><sup>–</sup> normalized to their bulk values as a series of electrochemical potential
+of electrons <italic>μ̃</italic><sub>e</sub> in solution
+of 5 mM KPF<sub>6</sub> in ACN.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr2" xlink:href="au3c00552_0002.jpg"><?cloudpmc-path blobs/bcd9/10751779/470b2ecb9578/au3c00552_0002.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 788?><?original-width 995?><?scaled-height 525?><?scaled-width 663?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="au3c00552_0002.gif"><?cloudpmc-path blobs/bcd9/10751779/5f59a6eab788/au3c00552_0002.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p><xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>a,b presents
+the distribution of <italic>n</italic><sub>e</sub> and <italic>ϕ</italic> in DG, ACN, DMSO, and PC at their respective PZCs. Interestingly,
+the electron spillover develops to different extents in these solvent
+molecules, thus, changing the potential distribution accordingly.
+Electrons spill out most in DG, and least in ACN, as seen in the inset
+of <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>a. Understanding
+the solvent-specific electron spillover is key to deciphering different
+PZCs of Au(111) in these solvent molecules, which will be analyzed
+in a later section.</p><p><xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>c displays
+the distribution of ions and solvent density at the PZCs in a solution
+of 5 mM KPF<sub>6</sub> in ACN. Because the binding strength of solvent
+molecules on the metal surface is greater than that of solvated ions,
+solvent molecule approach closer to the metal surface than ions at
+the PZC. <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>d
+presents the dimensionless densities of PF<sub>6</sub><sup>–</sup> normalized to their bulk values at a series of <italic>μ̃</italic><sub>e</sub> in solution of 5 mM KPF<sub>6</sub> in ACN. When the
+electrode potential shifts from below (<italic>μ̃</italic><sub>e</sub> &gt; −4.98 eV) to above the PZC (<italic>μ̃</italic><sub>e</sub> &lt; −4.98 eV), the metal surface gets positively
+charged, and the density of KPF<sub>6</sub><sup>–</sup> ions
+increases.</p></sec><sec id="sec2.3" disp-level="2"><title>Confirming the Aptness of the Model in Terms of Experimental
+Double Layer Capacitance Data</title><p>By sweeping the model simulation
+in a range of electrode potentials, we calculate the <italic>C</italic><sub>dl</sub>, an experimental measurable, from <italic>σ</italic><sub>free</sub>.<sup><xref rid="ref32" ref-type="bibr">32</xref></sup> A comparison between
+the DPFT model and experiments in terms of <italic>C</italic><sub>dl</sub> profiles then leads credence to the DPFT model, forming
+the basis for later use of the DPFT model to decipher solvent-mediated
+electron spillover effects. <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>a,b shows the comparison between experimental and modeled <italic>C</italic><sub>dl</sub> at Au(111) electrodes at three concentrations
+(5, 10, and 500 mM) for Au(111) in a KPF<sub>6</sub>-ACN solution.
+To exclude the influence of metal surface roughness, <italic>C</italic><sub>dl</sub> is normalized to the capacitance at PZC at 5 mM KPF<sub>6</sub>. Experimental <italic>C</italic><sub>dl</sub> values calculated
+from both anodic and cathodic scans of cyclic voltammogram are shown
+in <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>a. Overall,
+the model results agree well with the experimental data, reproducing
+the camel-to-bell transition of <italic>C</italic><sub>dl</sub> profiles
+with increasing ion concentrations.<sup><xref rid="ref40" ref-type="bibr">40</xref>,<xref rid="ref41" ref-type="bibr">41</xref></sup> The comparison
+of the other three aprotic solvents (DG, DMSO, and PC) is exhibited
+in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">Figure S5</ext-link>. The raw results of experiments
+and the model are also provided in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">Figure S6</ext-link>.</p><fig id="fig3" position="float"><?disp-level 3?><label>Figure 3</label><caption><p>Differential double layer capacitance <italic>C</italic><sub>dl</sub> curves as a function of the electrochemical potential of electrons <italic>μ̃</italic><sub>e</sub>. (a) Experimental <italic>C</italic><sub>dl</sub> of Au(111) electrode in <italic>x</italic> mM KPF<sub>6</sub> (<italic>x</italic> = 5, 10, and 500) in ACN. Here, <italic>C</italic><sub>dl</sub> values are normalized to the capacitance
+at PZC at 5 mM KPF<sub>6</sub> (17 μF/cm<sup>2</sup>). Experimental
+data were reported by Shatla et al.<sup><xref rid="ref33" ref-type="bibr">33</xref></sup> The
+solid and dashed lines represent cathodic and anodic scans, respectively.
+(b) Calculated <italic>C</italic><sub>dl</sub> of the full and reduced
+DPFT model of the Au(111) electrode in KPF<sub>6</sub>-ACN at different
+ion concentrations. Here, <italic>C</italic><sub>dl</sub> are normalized
+to the capacitance at PZC at the 5 mM KPF<sub>6</sub> (8.99 μF/cm<sup>2</sup>). The reduced model neglects metal electrons and treats the
+metal surface as a boundary. The left and right peaks of the <italic>C</italic><sub>dl</sub> curves at low ion concentrations indicate
+crowding of solvated cations and solvated anions in the EDL, respectively.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr3" xlink:href="au3c00552_0003.jpg"><?cloudpmc-path blobs/bcd9/10751779/c7ca138be55b/au3c00552_0003.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 658?><?original-width 996?><?scaled-height 439?><?scaled-width 664?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="au3c00552_0003.gif"><?cloudpmc-path blobs/bcd9/10751779/3786812c734f/au3c00552_0003.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>To illustrate the influence of metal electrons
+on <italic>C</italic><sub>dl</sub>, we compare the full model and
+a reduced model that
+neglects metal electrons and treats the metal surface as an ideally
+metallic boundary. Two differences between the full model and the
+reduced model are noted. First, the full model gives a <italic>C</italic><sub>dl</sub> peak at 500 mM at a more negative electrode potential
+than the Gouy–Chapman minimums at 5 and 10 mM, while they coincide
+at the same PZC in the reduced model. This negative shift was observed
+experimentally in all types of solvent except PC.<sup><xref rid="ref33" ref-type="bibr">33</xref></sup> Considering the marked difference between experimental <italic>C</italic><sub>dl</sub> curves in anodic and cathodic scans, we shall
+not overinterpret this model-experiment discrepancy for PC. Second, <italic>C</italic><sub>dl</sub> is generally larger in the full model than
+in the reduced model. Both differences are ascribed to metal electronic
+effects.</p><p>Recently, the contribution of metal electronic effects
+to <italic>C</italic><sub>dl</sub> is described by the quantum capacitance
+or
+electronic capacitance <italic>C</italic><sub>q</sub>, and it is connected
+in series with the capacitance of the electrolyte solution <italic>C</italic><sub>c</sub>.<sup><xref rid="ref8" ref-type="bibr">8</xref>,<xref rid="ref18" ref-type="bibr">18</xref>,<xref rid="ref42" ref-type="bibr">42</xref></sup> It is important to note that in these models <italic>C</italic><sub>q</sub> accounts for change in the electronic structure of the bulk
+electrode, while the electron spillover effect is ignored. However,
+it is clear from our model that electron spillover creates an interfacial
+region where quantum mechanical electrons and classical ions are intertwined.
+Therefore, the prevailing serial model is problematic because it completely
+neglects the quantum–classical interaction region.</p><p>As
+an improvement over the conventional dichotomy model, we propose
+a trichotomy model that divides <italic>C</italic><sub>dl</sub> into
+three components: <italic>C</italic><sub>q</sub>, <italic>C</italic><sub>qc</sub>, and <italic>C</italic><sub>c</sub> in series, as portrayed
+in <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>a. <italic>C</italic><sub>qc</sub> accounts for the interactions between metal
+electrons and electrolyte solution components in the proximity of
+the metal surface edge. Specifically, <italic>C</italic><sub>q</sub> corresponds to the metallic region where the densities of ions and
+solvent are extremely low, namely, <inline-formula id="d33e1004"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m014.gif"><?cloudpmc-path blobs/bcd9/10751779/7c457842e1ee/au3c00552_m014.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 22?><?scaled-width 106?></inline-graphic></inline-formula>. <italic>C</italic><sub>c</sub> corresponds
+to the electrolyte solution region where the electron density is exceedingly
+small <inline-formula id="d33e1011"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m015.gif"><?cloudpmc-path blobs/bcd9/10751779/7b8c2ca5961a/au3c00552_m015.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 80?><?scaled-width 174?></inline-graphic></inline-formula>. <italic>C</italic><sub>qc</sub> corresponds
+to the middle region, where both metal electrons and electrolyte species
+have a considerable density. Based on these density constraints, we
+can introduce two dividing planes: the metal surface edge (ms) and
+the plane beyond which <inline-formula id="d33e1017"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m016.gif"><?cloudpmc-path blobs/bcd9/10751779/b3df12f4697d/au3c00552_m016.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 23?><?scaled-width 48?></inline-graphic></inline-formula> is met (es). Consequently, we decompose <italic>C</italic><sub>dl</sub> into</p><disp-formula id="eq6"><label>6</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au3c00552_m017.jpg"><?cloudpmc-path blobs/bcd9/10751779/2f73986d4876/au3c00552_m017.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 38?><?original-width 364?><?scaled-height 38?><?scaled-width 364?></graphic></disp-formula><p>where <italic>ϕ</italic><sub>ms</sub>, <italic>ϕ</italic><sub>es</sub>, and <italic>ϕ</italic><sub>S</sub> denote the electric potential at the ms, es, and bulk
+solution, respectively. According to <xref rid="eq6" ref-type="disp-formula">eq <xref rid="eq6" ref-type="disp-formula">6</xref></xref>, <italic>C</italic><sub>qc</sub> can be derived as <inline-formula id="d33e1046"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m018.gif"><?cloudpmc-path blobs/bcd9/10751779/08d7294a3522/au3c00552_m018.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 32?><?scaled-width 117?></inline-graphic></inline-formula>. Using this trichotomy model, we calculate <italic>C</italic><sub>q</sub>, <italic>C</italic><sub>c</sub>, and <italic>C</italic><sub>qc</sub> at 5 and 500 mM in <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>b. Remarkably, it is observed that the value
+of <italic>C</italic><sub>qc</sub> is negative. This phenomenon stems
+from the fact that the potential drop (<italic>ϕ</italic><sub>ms</sub> – <italic>ϕ</italic><sub>es</sub>) increases
+at more negative electrode potentials, corresponding to more negative <italic>σ</italic><sub>free</sub>. This is because electron spillover
+is promoted at a more positive <italic>μ̃</italic><sub>e</sub>.</p><fig id="fig4" position="float"><?disp-level 3?><label>Figure 4</label><caption><p>Differential capacitances of the metal–solution interface.
+(a) Schematic of the metal–solution interface. In the trichotomy
+model, we divide the total differential double layer capacitance <italic>C</italic><sub>dl</sub> into three constituent components: the quantum
+capacitance of the metal <italic>C</italic><sub>q</sub>, the classical
+capacitance of the electrolyte solution <italic>C</italic><sub>c</sub>, and the capacitance <italic>C</italic><sub>qc</sub> accounting
+for the interactions between metal electrons and electrolyte solution
+in proximity of the metal surface edge. (b) The calculated <italic>C</italic><sub>dl</sub>, <italic>C</italic><sub>q</sub>, <italic>C</italic><sub>qc</sub>, and <italic>C</italic><sub>c</sub> for the
+Au(111) electrode in KPF<sub>6</sub>-ACN solution at 5 and 500 mM
+as a function of the electrochemical potential of electrons μ̃<sub>e</sub>. Here, <italic>C</italic><sub>q</sub> corresponds to the
+metallic region where the densities of ions and solvents is extremely
+low, namely, <inline-formula id="d33e1118"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m030.gif"><?cloudpmc-path blobs/bcd9/10751779/7c457842e1ee/au3c00552_m030.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 22?><?scaled-width 106?></inline-graphic></inline-formula> in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">eq S8</ext-link>. <italic>C</italic><sub>c</sub> corresponds to the electrolyte solution region
+where the electron density is exceedingly small <inline-formula id="d33e1128"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m031.gif"><?cloudpmc-path blobs/bcd9/10751779/7b8c2ca5961a/au3c00552_m031.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 80?><?scaled-width 174?></inline-graphic></inline-formula>. <italic>C</italic><sub>qc</sub> corresponds
+to the middle region where both metal electrons and electrolyte species
+have a considerable density, which is calculated as <inline-formula id="d33e1134"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m032.gif"><?cloudpmc-path blobs/bcd9/10751779/08d7294a3522/au3c00552_m032.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 32?><?scaled-width 117?></inline-graphic></inline-formula>.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr4" xlink:href="au3c00552_0004.jpg"><?cloudpmc-path blobs/bcd9/10751779/be7efee30000/au3c00552_0004.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 596?><?original-width 996?><?scaled-height 397?><?scaled-width 664?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="au3c00552_0004.gif"><?cloudpmc-path blobs/bcd9/10751779/3f002d13ec06/au3c00552_0004.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig></sec><sec id="sec2.4" disp-level="2"><title>Insights into Solvent-Dependent PZC</title><p>Having demonstrated
+the importance of metal electronic effects and the efficacy of the
+DPFT model in describing them, we now address the key question posed
+at the beginning, viz., what is the main origin of solvent-dependent
+PZC?</p><p>First, the influence of three key solvent properties in
+the DPFT model, including the optical permittivity <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>, short-range
+metal–solvent interaction <italic>w</italic><sub>l</sub>, and
+bulk permittivity <italic>ε</italic><sub>r</sub>, on PZCs is
+analyzed. Specifically, we calculate the change in <italic>E</italic><sub>PZC</sub> due to a variation in these parameters using the one-variable-at-one-time
+method. For comparison, a base case, where four solvents maintain
+their original parameters, is included. Because model parameters for
+the base case are determined by fitting experimental PZCs, we find
+a 45° line in <xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>a where the model-based PZCs are plotted against experimental
+PZCs. The parametric analysis is conducted in the following manner.
+Considering the influence of <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>. In a thought
+experiment, we use DG’s <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> for all solvents
+and calculate the PZCs, shown as triangles in <xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>a. We then repeat the same procedure for <italic>w</italic><sub>l</sub>, and <italic>ε</italic><sub>r</sub>.</p><fig id="fig5" position="float"><?disp-level 3?><label>Figure 5</label><caption><p>Solvent
+effects on PZC. (a) Effects of the optical permittivity <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>, short-range
+metal–solvent interaction <italic>w</italic><sub>l</sub>, and
+bulk permittivity ε<sub>r</sub> of solvents
+on PZCs by comparing the calculated and experimental PZCs. The investigated
+solvents include DG, ACN, DMSO, and PC. The experimental PZC values
+were reported by Shatla et al.<sup><xref rid="ref33" ref-type="bibr">33</xref></sup> Here,
+we calculate the change in <italic>E</italic><sub>PZC</sub> due to
+a variation in these parameters using the one-variable-at-one-time
+method. For comparison, a base case, where four solvents maintain
+their original parameters, is included. The parametric analysis is
+conducted in the following manner. Considering the influence of <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>. In a thought experiment, we use DG’s <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> for all
+solvents and calculate the PZCs, shown as triangles in <xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>a. We then repeat the same
+procedure for <italic>w</italic><sub>l</sub> and <italic>ε</italic><sub>r</sub>. The structure and total permittivity of the Au(111)–solution
+interface at the PZC are shown in (b) DG, (c) ACN, (d) DMSO, and (e)
+PC. <italic>ϵ</italic><sub arrange="stack">hf</sub><sup arrange="stack">M</sup> is equal to one because all electrons are
+described explicitly and <italic>ϵ</italic><sub arrange="stack">hf</sub><sup arrange="stack">M</sup> accounts for the polarizability
+of the nuclei. The snapshots of Au(111)–solvent molecular structures
+shown in the background are obtained from ab initio molecular dynamics
+simulations. The technical details of AIMD simulations are provided
+in the section on computational methods.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr5" xlink:href="au3c00552_0005.jpg"><?cloudpmc-path blobs/bcd9/10751779/86e3cb3b84ff/au3c00552_0005.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 888?><?original-width 1668?><?scaled-height 355?><?scaled-width 667?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="au3c00552_0005.gif"><?cloudpmc-path blobs/bcd9/10751779/2715499d6c8a/au3c00552_0005.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>Only a slight difference is observed when DG’s <italic>w</italic><sub>l</sub> is used for all solvents. On the contrary,
+marked differences
+are observed when DG’s <italic>ε</italic><sub>r</sub> and <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> are used invariantly for all solvents. Specifically,
+because DG’s <italic>ε</italic><sub>r</sub> is the smallest,
+see <xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>b–e,
+increased PZCs of the other three solvents imply that the PZC is inversely
+related to <italic>ε</italic><sub>r</sub>. In the same manner,
+because DG’s <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> is the largest, decreased PZCs of
+the other three solvents imply that the PZC is inversely related to <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>. This parametric analysis reveals the importance of interfacial
+permittivity distribution in the electron spillover region on determining
+the PZC. This argument is further substantiated by the absence of
+any discernible relationship between the PZC and bulk solvent properties,
+such as <italic>ε</italic><sub>r</sub> and donor number, as
+shown in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">Figure S7</ext-link>.</p><p>To understand
+the effects of interfacial permittivity on the PZC,
+we shall first understand that on electron spillover. To quantify
+this dependency, we define <italic>M</italic><sub arrange="stack">e</sub><sup arrange="stack">s</sup> as the moment of the electron
+density distribution</p><disp-formula id="eq7"><label>7</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au3c00552_m019.jpg"><?cloudpmc-path blobs/bcd9/10751779/3dff0f4d5e65/au3c00552_m019.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 30?><?original-width 129?><?scaled-height 30?><?scaled-width 129?></graphic></disp-formula><p>with <italic>x̅</italic><sub>m</sub> denoting the metal boundary. A higher <italic>M</italic><sub arrange="stack">e</sub><sup arrange="stack">s</sup> signifies a more
+extended distribution of the electron density. The <italic>M</italic><sub arrange="stack">e</sub><sup arrange="stack">s</sup> values of
+DG, ACN, DMSO, and PC are calculated to be 0.522, 0.477, 0.476, and
+0.508, respectively. DG with the largest <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> while the smallest
+ε<sub>r</sub> has the largest <italic>M</italic><sub arrange="stack">e</sub><sup arrange="stack">s</sup>, namely, the most
+extended electron tail. The second largest <italic>M</italic><sub arrange="stack">e</sub><sup arrange="stack">s</sup> is found at PC
+with the second largest <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> and the largest <italic>ε</italic><sub>r</sub>. ACN (<italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> = 4.69 and <italic>ε</italic><sub>r</sub> = 37.4) and DMSO (<italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> = 4.70 and <italic>ε</italic><sub>r</sub> = 46.7) have similar <italic>M</italic><sub arrange="stack">e</sub><sup arrange="stack">s</sup>. Even though <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> varies within one among the four solvents, it has a decisive
+role in determining <italic>M</italic><sub arrange="stack">e</sub><sup arrange="stack">s</sup> because the electron density decreases
+exponentially away from the metal surface, as seen in <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>a. The strong association between <italic>M</italic><sub arrange="stack">e</sub><sup arrange="stack">s</sup> and <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> can be attributed to the dielectric screening
+effect of the repulsive interaction among electrons.<sup><xref rid="ref43" ref-type="bibr">43</xref>,<xref rid="ref44" ref-type="bibr">44</xref></sup> When <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> is larger, the dielectric screening effect
+at the interface becomes more pronounced, suppressing electron repulsion
+and facilitating electron spillover.</p><p>It is interesting to note
+that DMSO has the narrowest electron
+tail but the second largest <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>, together making its PZC the
+second largest. In addition, though the electron tail is more extended
+in PC than in ACN, the PZC is lower for the former because of the
+higher <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>. In summary, <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> plays double-edged
+roles in determining the PZC. On the one hand, a higher <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> makes
+the electron tail more extended, tending to increase the PZC. On the
+other hand, a higher <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> decreases the surface potential
+of the metal surface, tending to decrease the PZC. Combined, the double-edged
+roles result in a nonmonotonic relationship between the PZC and <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> for the four solvent molecules.</p></sec><sec id="sec2.5" disp-level="2"><title>Applicability of the Obtained Understanding to Other Systems</title><p>One might be curious about whether the understandings obtained
+at four aprotic solvents are applicable to water. To this end, we
+extend our investigation to the Au(111)–KPF<sub>6</sub> aqueous
+interfaces. Following the same procedure of calibrating model parameters
+developed for the aprotic solvents, we determine an effective <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>(=3.77) for the Au(111)–KPF<sub>6</sub> aqueous interface
+at a concentration of 10.87 mM. The relatively low <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> observed
+at the Au(111)–aqueous solution interface could be attributed
+to the presence of hydrogen bonds.<sup><xref rid="ref45" ref-type="bibr">45</xref></sup> A
+comparison of the model-based and experimental <italic>C</italic><sub>dl</sub> profiles is illustrated in <xref rid="fig6" ref-type="fig">Figures <xref rid="fig6" ref-type="fig">6</xref></xref> and <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">S8</ext-link>. The fair
+agreement between the model and experiment supports the transferability
+of the DPFT model to aqueous solution systems. In addition to Au(111)
+studied in this work, Ag(111) has also been modeling using our DPFT
+approach in a previous study.<sup><xref rid="ref32" ref-type="bibr">32</xref></sup></p><fig id="fig6" position="float"><?disp-level 3?><label>Figure 6</label><caption><p>(a) Comparison
+between experimental and DPFT calculated differential
+capacitance of double layer <italic>C</italic><sub>dl</sub> at the
+Au(111) electrode in aqueous solution of KPF<sub>6</sub> at a concentration
+of 10.87 mM. The <italic>C</italic><sub>dl</sub> curve is plotted
+as a function of the electrochemical potential of electrons <italic>μ̃</italic><sub>e</sub>, which can be transformed into
+the electrode potential <italic>ϕ</italic><sub>M</sub> up to
+some constants. Experimental data were reported by Shatla et al.<sup><xref rid="ref33" ref-type="bibr">33</xref></sup><italic>C</italic><sub>dl</sub> are normalized
+to the capacitance at PZC. (b) Variations in the PZC of the Au(111)–aqueous
+solution interface when the short-range metal–solvent interaction <italic>w</italic><sub>l</sub>, the optical permittivity <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>, and
+the bulk permittivity <italic>ε</italic><sub>r</sub> are replaced
+with the counterparts of DG, respectively.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr6" xlink:href="au3c00552_0006.jpg"><?cloudpmc-path blobs/bcd9/10751779/f7d6e18ae6e4/au3c00552_0006.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 382?><?original-width 996?><?scaled-height 255?><?scaled-width 664?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="au3c00552_0006.gif"><?cloudpmc-path blobs/bcd9/10751779/c75d162a5734/au3c00552_0006.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>Because water possesses the highest <italic>ε</italic><sub>r</sub> and the lowest <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>, if we substitute
+water’s <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> with DG’s <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>, we expect
+a negative shift
+in the PZC according to our understanding obtained at aprotic solvents.
+Similarly, if we substitute water’s <italic>ε</italic><sub>r</sub> with DG’s <italic>ε</italic><sub>r</sub>, we expect a positive shift in the PZC. In accord with our analysis, <xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>b shows a negative
+shift of −0.92 V from the substitution with DG’s <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> and a positive shift of 1.27 V from the substitution with
+DG’s <italic>ε</italic><sub>r</sub>. In addition, a small
+positive shift of 0.08 V is obtained from the replacement of the short-range
+interactions. To conclude, the analysis on the Au(111)–aqueous
+solution interface further corroborates the pivotal role of the local
+permittivity in regulating electron spillover and PZC.</p></sec></sec><sec id="sec3" disp-level="1"><title>Conclusions</title><p>In summary, we have studied the solvent
+dependency of the PZC at
+the Au(111)–KPF<sub>6</sub> interfaces. To achieve this, we
+have employed a constant-potential DPFT model that was parametrized
+with first-principles calculations and experimental data. The origin
+of different PZCs of Au(111)–KPF<sub>6</sub> in four different
+aprotic solvents has been analyzed in terms of solvent-modulated electron
+spillover. Double-edged effects of the local permittivity are revealed.
+Specifically, the electron spillover is facilitated through increased
+local permittivity, which arises from enhanced screening of electron–electron
+interactions and tends to increase the PZC. On the contrary, when
+the electron spillover is fixed, the PZC is lower at increased local
+permittivity due to enhanced screening of the space charge density.
+Therefore, the PZC exhibits a nonmonotonic relationship with the local
+permittivity. Our model captures the experimental <italic>C</italic><sub>dl</sub> curves at varying concentrations of KPF<sub>6</sub>. To comprehend why the capacitance peak in concentrated solutions
+is situated at a more negative potential than the Gouy–Chapman
+minimum in dilute solutions, it is crucial to consider the electronic
+effects of the metal. To gain insights into the contribution of electron
+spillover to the overall capacitance, we have decomposed the total
+capacitance into three components: the quantum capacitance of the
+metal <italic>C</italic><sub>q</sub>, the classical capacitance of
+electrolyte solution <italic>C</italic><sub>c</sub>, and the capacitance <italic>C</italic><sub>qc</sub> accounting for the interactions between metal
+electrons and electrolyte solutions in the proximity of the metal
+surface edge. Our findings reveal that <italic>C</italic><sub>qc</sub> assumes negative values, which can be attributed to the potential
+dependence of electron spillover. Shedding light on the origin and
+consequences of solvent-modulated electron spillover, the present
+work is instrumental to understanding solvent effects on the local
+reaction environment and electrocatalytic activities.</p></sec><sec id="sec4" disp-level="1"><title>Computational Methods</title><sec id="sec4.1" disp-level="2"><title>Computational Details of Kohn–Sham DFT</title><p>We employed
+Kohn–Sham DFT calculations to optimize the geometries of the
+solvent molecules on Au(111) and calculated their binding energies.
+All calculations were performed using the Vienna ab initio simulation
+package (VASP).<sup><xref rid="ref46" ref-type="bibr">46</xref>,<xref rid="ref47" ref-type="bibr">47</xref></sup> The PBE exchange–correlation
+functional together with the projected augmented wave potentials was
+used.<sup><xref rid="ref48" ref-type="bibr">48</xref>,<xref rid="ref49" ref-type="bibr">49</xref></sup> The D3 approach within Grimme’s formalism
+was used for nonlocal van der Waals interactions.<sup><xref rid="ref50" ref-type="bibr">50</xref>,<xref rid="ref51" ref-type="bibr">51</xref></sup> A plane-wave basis set with a cutoff energy of 500 eV was used to
+expand the eigenstates of the electron wave functions. The Au(111)
+surface was constructed by using the periodic slabs consisting of
+five atomic layers. A vacuum layer of 20 Å in the vertical direction
+to the model slab was set to avoid the lateral interactions between
+the layer and its images. To maximize computational efficiency while
+not affecting the calculation accuracy, a minimal Gamma 2 × 2
+× 1 <italic>k</italic>-point grid was used to sample the Brillouin
+zones for all slab calculations. The structures were optimized until
+the total energies and atomic forces were converged to within 0.001
+meV and 0.02 eV/Å, respectively.</p></sec><sec id="sec4.2" disp-level="2"><title>Computational Details of DPFT</title><p>All DPFT simulations
+were solved by using COMSOL Multiphysics. The two controlling equations, <xref rid="eq1" ref-type="disp-formula">eqs <xref rid="eq1" ref-type="disp-formula">1</xref></xref> and <xref rid="eq2" ref-type="disp-formula">2</xref>, were implemented as a coefficient-form ODE. All parameters used
+in the DPFT simulations are summarized in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">Tables S1 and S2</ext-link>. In this work, we used the following initial guess
+for the electron density and its gradient</p><disp-formula id="eq8"><label>8</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au3c00552_m020.jpg"><?cloudpmc-path blobs/bcd9/10751779/17f570271e55/au3c00552_m020.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 33?><?original-width 146?><?scaled-height 33?><?scaled-width 146?></graphic></disp-formula><disp-formula id="eq9"><label>9</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au3c00552_m021.jpg"><?cloudpmc-path blobs/bcd9/10751779/2e99ab8b5363/au3c00552_m021.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 34?><?original-width 183?><?scaled-height 34?><?scaled-width 183?></graphic></disp-formula><p>where <inline-formula id="d33e1645"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m022.gif"><?cloudpmc-path blobs/bcd9/10751779/5428009bafc1/au3c00552_m022.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 29?><?scaled-width 124?></inline-graphic></inline-formula> with <italic>N</italic><sub>Au</sub> =
+79 representing the number of electrons of a gold atom, and <italic>a</italic><sub>Au</sub> = 4.08 Å is the lattice constant of
+the cubic closed-packed cell of Au, which contains four gold atoms,
+and <italic>a</italic><sub>0</sub> = 0.529 Å is the Bohr radius.
+Correspondingly, the initial guess for the electric potential was
+obtained from solving the Poisson equation –∇̅<sup>2</sup><italic>ϕ̅</italic> = κ(<italic>n̅</italic><sub>cc</sub> – <italic>n̅</italic><sub>e</sub>)</p><disp-formula id="eq10"><label>10</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au3c00552_m023.jpg"><?cloudpmc-path blobs/bcd9/10751779/8a8604254117/au3c00552_m023.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 62?><?original-width 422?><?scaled-height 62?><?scaled-width 422?></graphic></disp-formula><p>and the corresponding potential gradient reads</p><disp-formula id="eq11"><label>11</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au3c00552_m024.jpg"><?cloudpmc-path blobs/bcd9/10751779/f2e8ebcb9fc3/au3c00552_m024.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 58?><?original-width 358?><?scaled-height 58?><?scaled-width 358?></graphic></disp-formula><p>Here, <italic>θ</italic>(<italic>x̅</italic><sub>M</sub> – <italic>x̅</italic>)
+is a Heaviside function, which is equal to 1 when <italic>x̅</italic> &lt; <italic>x̅</italic><sub>M</sub> and zero elsewise.</p></sec><sec id="sec4.3" disp-level="2"><title>Parameterization of DPFT Model: <italic>θ</italic><sub>T</sub>, <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup></title><p>The high-frequency (optical) permittivity <italic>ϵ</italic><sub>hf</sub> usually varies spatially because the
+electrode and electrolyte have different optical permittivities, denoted
+as <italic>ϵ</italic><sub arrange="stack">hf</sub><sup arrange="stack">M</sup> and <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>, respectively. <italic>ϵ</italic><sub>hf</sub> is interpolated as</p><disp-formula id="eq12"><label>12</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au3c00552_m025.jpg"><?cloudpmc-path blobs/bcd9/10751779/57c43d585043/au3c00552_m025.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 35?><?original-width 261?><?scaled-height 35?><?scaled-width 261?></graphic></disp-formula><p>In this work, the DPFT model considers
+all-electron calculation, so <italic>ϵ</italic><sub arrange="stack">hf</sub><sup arrange="stack">M</sup> = 1 is used.
+Because the orientational polarization of solvent is considered, <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> is determined by the electronic polarization of ions and
+solvent molecules at the interface. <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> is the only
+free parameter for the electrolyte solution. <italic>θ</italic><sub>T</sub> is the only free parameter for describing metal electrons.
+Therefore, we fix the electrochemical potential of electrons according
+to the experimental PZC values and then sweep <italic>θ</italic><sub>T</sub> and <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> simultaneously. The contour plots
+in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">Figure S4</ext-link> show surface charge density <italic>σ</italic><sub>free</sub> at the experimental PZC of these
+systems at varying <italic>θ</italic><sub>T</sub> and <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup>. Therefore, permissible values of <italic>θ</italic><sub>T</sub> and <italic>ϵ</italic><sub arrange="stack">op</sub><sup arrange="stack">int</sup> are located at solid black dots corresponding
+to zero <italic>σ</italic><sub>free</sub>. These black points
+can be fitted with straight lines.</p></sec><sec id="sec4.4" disp-level="2"><title>Computational Details of Differential Double Layer Capacitance <italic>C</italic><sub>dl</sub></title><p>The differential double layer capacitance,
+i.e., potential-dependent capacitance, can be calculated as</p><disp-formula id="eq13"><label>13</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au3c00552_m026.jpg"><?cloudpmc-path blobs/bcd9/10751779/27b7cdd14297/au3c00552_m026.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 35?><?original-width 59?><?scaled-height 35?><?scaled-width 59?></graphic></disp-formula><p>where <italic>σ</italic><sub>free</sub> is the excess free charge density and <italic>ϕ</italic><sub>M</sub> is the electric potential of the bulk metal. The <italic>σ</italic><sub>free</sub> of the EDL is defined as</p><disp-formula id="eq14"><label>14</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au3c00552_m027.jpg"><?cloudpmc-path blobs/bcd9/10751779/7eeab8482363/au3c00552_m027.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 31?><?original-width 247?><?scaled-height 31?><?scaled-width 247?></graphic></disp-formula><p>the second equal here sign is because the
+whole EDL is electroneutral, and the factor <inline-formula id="d33e1817"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_m028.gif"><?cloudpmc-path blobs/bcd9/10751779/cea794a7c7f3/au3c00552_m028.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 21?><?scaled-width 10?></inline-graphic></inline-formula> is the result of dimensional balance. The
+substitution of <xref rid="eq14" ref-type="disp-formula">eqs <xref rid="eq14" ref-type="disp-formula">14</xref></xref> into <xref rid="eq13" ref-type="disp-formula">13</xref> gives the following equation for calculating
+the <italic>C</italic><sub>dl</sub></p><disp-formula id="eq15"><label>15</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="au3c00552_m029.jpg"><?cloudpmc-path blobs/bcd9/10751779/e7b1287b762e/au3c00552_m029.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 38?><?original-width 329?><?scaled-height 38?><?scaled-width 329?></graphic></disp-formula></sec><sec id="sec4.5" disp-level="2"><title>Computational Details of ab initio Molecular Dynamics</title><p>The ab initio molecular dynamics simulations (AIMD) were implemented
+in CP2K/Quickstep.<sup><xref rid="ref52" ref-type="bibr">52</xref></sup> The Goedecker–Teter–Hutter
+(GTH) pseudopotentials were employed to describe all atoms.<sup><xref rid="ref53" ref-type="bibr">53</xref>,<xref rid="ref54" ref-type="bibr">54</xref></sup> The DZVP-MOLOPT-SR-GTH Gaussian basis set was applied to all types
+of atoms.<sup><xref rid="ref55" ref-type="bibr">55</xref></sup> To ensure accuracy, the plane
+wave energy cutoff was set to 350 Ry. The exchange–correlation
+effect was described by the PBE functional.<sup><xref rid="ref35" ref-type="bibr">35</xref></sup> The AIMD simulations were carried out in the canonical ensemble
+(<italic>NVT</italic>), maintaining a target temperature of 300 K
+with a time step of 0.5 fs. To speed up the simulations, the second-generation
+Car–Parrinello MD (SGCP MD)<sup><xref rid="ref56" ref-type="bibr">56</xref></sup> was
+employed. In the corrector step of SGCP MD, the maximum number of
+iterations in the self-consistent field loop was set to 5. The Langevin
+friction coefficient γ<sub>D</sub> was set to 0.0001 fs<sup>–1</sup>, while the intrinsic friction coefficient γ<sub>L</sub> was set to 2.2 × 10<sup>–4</sup> fs<sup>–1</sup> for solvents and 5 × 10<sup>–5</sup> fs<sup>–1</sup> for Au.</p></sec></sec><sec id="ack1" sec-type="ack" disp-level="1"><title>Acknowledgments</title><p>W.T.
+acknowledges the financial support from the
+National Natural Science Foundation of China (no. 22108070), the China
+Postdoctoral Science Foundation (no. 2021M691008), and the Young Elite
+Scientists Sponsorship Program by CAST (no. 2022QNRC001). J.H. is
+supported by the Initiative and Networking Fund of the Helmholtz Association
+(no. VH-NG-1709).</p></sec><sec id="notes4" disp-level="1"><title>Data Availability Statement</title><p>The data that
+support the findings of this study are available from the corresponding
+author upon reasonable request.</p></sec><sec id="notes1" disp-level="1"><title>Supporting Information Available</title><p>The
+Supporting Information is
+available free of charge at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/10.1021/jacsau.3c00552?goto=supporting-info" ext-link-type="uri">https://pubs.acs.org/doi/10.1021/jacsau.3c00552</ext-link>.</p><list list-type="simple" id="silist"><list-item><p>Parameterization of the Morse potential; comparison
+between experimental and DPFT-calculated differential double layer
+capacitance; relationships of the potentials of zero charge for Au(111)–solution
+interface with solvent properties; and DPFT model parameters; surface
+potentials of solvent (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/jacsau.3c00552/suppl_file/au3c00552_si_001.pdf" ext-link-type="uri">PDF</ext-link>)</p></list-item></list></sec><sec id="notes3" disp-level="1"><title>Author Contributions</title><p>CRediT: <bold>Weiqiang Tang</bold> data curation, investigation, methodology, validation,
+visualization, writing-original draft; <bold>Shuangliang Zhao</bold> funding acquisition, resources, supervision, writing-review &amp;
+editing; <bold>Jun Huang</bold> conceptualization, funding acquisition,
+methodology, project administration, supervision, writing-review &amp;
+editing.</p></sec><sec id="notes2" disp-level="1"><p>The authors
+declare no competing financial interest.</p></sec><sec id="sec15" disp-level="1"><title>Supplementary Material</title><supplementary-material id="sifile1" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_si_001.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path bcd9/10751779/018e83662d56/au3c00552_si_001.pdf?><?cloudpmc-bucket app?><?size 1381204?><caption><p>au3c00552_si_001.pdf</p></caption></media></supplementary-material></sec><sec id="ref-list1" sec-type="ref-list" disp-level="1"><title>References</title><sec id="ref-list1_sec2" disp-level="2"><ref-list><ref id="ref1"><mixed-citation id="cit1"><named-content content-type="citation-string">De
+Luca F.; Ortolani M.; Ciracì C.
+Free electron nonlinearities in heavily
+doped semiconductors plasmonics. Phys. Rev.
+B
+2021, 103 (11), 115305. 10.1103/PhysRevB.103.115305.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevB.103.115305"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. B&amp;title=Free electron nonlinearities in heavily doped semiconductors plasmonics&amp;author=F. De Luca&amp;author=M. Ortolani&amp;author=C. Ciracì&amp;volume=103&amp;issue=11&amp;publication_year=2021&amp;pages=115305&amp;doi=10.1103/PhysRevB.103.115305&amp;"/></mixed-citation></ref><ref id="ref2"><mixed-citation id="cit2"><named-content content-type="citation-string">Zhu W.; Esteban R.; Borisov A. G.; Baumberg J. J.; Nordlander P.; Lezec H. J.; Aizpurua J.; Crozier K. B.
+Quantum mechanical
+effects in plasmonic structures with subnanometre gaps. Nat. Commun.
+2016, 7 (1), 11495. 10.1038/ncomms11495.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/ncomms11495"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4895716"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27255556"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Commun.&amp;title=Quantum mechanical effects in plasmonic structures with subnanometre gaps&amp;author=W. Zhu&amp;author=R. Esteban&amp;author=A. G. Borisov&amp;author=J. J. Baumberg&amp;author=P. Nordlander&amp;volume=7&amp;issue=1&amp;publication_year=2016&amp;pages=11495&amp;pmid=27255556&amp;doi=10.1038/ncomms11495&amp;"/></mixed-citation></ref><ref id="ref3"><mixed-citation id="cit3"><named-content content-type="citation-string">Lang N. D.; Kohn W.
+Theory of metal surfaces:
+Charge density and surface energy. Phys. Rev.
+B
+1970, 1 (12), 4555–4568. 10.1103/PhysRevB.1.4555.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevB.1.4555"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. B&amp;title=Theory of metal surfaces: Charge density and surface energy&amp;author=N. D. Lang&amp;author=W. Kohn&amp;volume=1&amp;issue=12&amp;publication_year=1970&amp;pages=4555-4568&amp;doi=10.1103/PhysRevB.1.4555&amp;"/></mixed-citation></ref><ref id="ref4"><mixed-citation id="cit4"><named-content content-type="citation-string">Lang N. D.; Kohn W.
+Theory of metal surfaces:
+Work function. Phys.
+Rev. B
+1971, 3 (4), 1215–1223. 10.1103/PhysRevB.3.1215.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevB.3.1215"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. B&amp;title=Theory of metal surfaces: Work function&amp;author=N. D. Lang&amp;author=W. Kohn&amp;volume=3&amp;issue=4&amp;publication_year=1971&amp;pages=1215-1223&amp;doi=10.1103/PhysRevB.3.1215&amp;"/></mixed-citation></ref><ref id="ref5"><mixed-citation id="cit5"><named-content content-type="citation-string">Ciracì C.; Della Sala F.
+Quantum hydrodynamic theory for plasmonics: Impact
+of the electron density tail. Phys. Rev. B
+2016, 93 (20), 205405. 10.1103/PhysRevB.93.205405.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevB.93.205405"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. B&amp;title=Quantum hydrodynamic theory for plasmonics: Impact of the electron density tail&amp;author=C. Ciracì&amp;author=F. Della Sala&amp;volume=93&amp;issue=20&amp;publication_year=2016&amp;pages=205405&amp;doi=10.1103/PhysRevB.93.205405&amp;"/></mixed-citation></ref><ref id="ref6"><mixed-citation id="cit6"><named-content content-type="citation-string">Baghramyan H. M.; Della Sala F.; Ciracì C.
+Laplacian-level quantum hydrodynamic
+theory for plasmonics. Phys. Rev. X
+2021, 11 (1), 011049. 10.1103/PhysRevX.11.011049.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevX.11.011049"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. X&amp;title=Laplacian-level quantum hydrodynamic theory for plasmonics&amp;author=H. M. Baghramyan&amp;author=F. Della Sala&amp;author=C. Ciracì&amp;volume=11&amp;issue=1&amp;publication_year=2021&amp;pages=011049&amp;doi=10.1103/PhysRevX.11.011049&amp;"/></mixed-citation></ref><ref id="ref7"><mixed-citation id="cit7"><named-content content-type="citation-string">Jin D.; Hu Q.; Neuhauser D.; von Cube F.; Yang Y.; Sachan R.; Luk T. S.; Bell D. C.; Fang N. X.
+Quantum-spillover-enhanced
+surface-plasmonic absorption at the interface of silver and high-index
+dielectrics. Phys. Rev. Lett.
+2015, 115 (19), 193901. 10.1103/PhysRevLett.115.193901.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevLett.115.193901"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26588382"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. Lett.&amp;title=Quantum-spillover-enhanced surface-plasmonic absorption at the interface of silver and high-index dielectrics&amp;author=D. Jin&amp;author=Q. Hu&amp;author=D. Neuhauser&amp;author=F. von Cube&amp;author=Y. Yang&amp;volume=115&amp;issue=19&amp;publication_year=2015&amp;pages=193901&amp;pmid=26588382&amp;doi=10.1103/PhysRevLett.115.193901&amp;"/></mixed-citation></ref><ref id="ref8"><mixed-citation id="cit8"><named-content content-type="citation-string">Schmickler W.
+Electronic
+effects in the electric double layer. Chem.
+Rev.
+1996, 96 (8), 3177–3200. 10.1021/cr940408c.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/cr940408c"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="11848857"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. Rev.&amp;title=Electronic effects in the electric double layer&amp;author=W. Schmickler&amp;volume=96&amp;issue=8&amp;publication_year=1996&amp;pages=3177-3200&amp;pmid=11848857&amp;doi=10.1021/cr940408c&amp;"/></mixed-citation></ref><ref id="ref9"><mixed-citation id="cit9"><named-content content-type="citation-string">Amokrane S.; Badiali J.. Modern Aspects of Electrochemistry; Springer, 1992, pp 1–95.Analysis of the
+capacitance of the metal-solution interface: Role of the metal and
+the metal-solvent coupling </named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Modern Aspects of Electrochemistry&amp;publication_year=1992&amp;"/></mixed-citation></ref><ref id="ref10"><mixed-citation id="cit10"><named-content content-type="citation-string">Li P.; Huang J.; Hu Y.; Chen S.
+Establishment of the
+potential of zero charge of metals in aqueous solutions: Different
+faces of water revealed by ab initio molecular dynamics simulations. J. Phys. Chem. C
+2021, 125 (7), 3972–3979. 10.1021/acs.jpcc.0c11089.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jpcc.0c11089"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. C&amp;title=Establishment of the potential of zero charge of metals in aqueous solutions: Different faces of water revealed by ab initio molecular dynamics simulations&amp;author=P. Li&amp;author=J. Huang&amp;author=Y. Hu&amp;author=S. Chen&amp;volume=125&amp;issue=7&amp;publication_year=2021&amp;pages=3972-3979&amp;doi=10.1021/acs.jpcc.0c11089&amp;"/></mixed-citation></ref><ref id="ref11"><mixed-citation id="cit11"><named-content content-type="citation-string">Groß A.; Sakong S.
+Ab initio simulations of water/metal
+interfaces. Chem. Rev.
+2022, 122 (12), 10746–10776. 10.1021/acs.chemrev.1c00679.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.chemrev.1c00679"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35100505"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. Rev.&amp;title=Ab initio simulations of water/metal interfaces&amp;author=A. Groß&amp;author=S. Sakong&amp;volume=122&amp;issue=12&amp;publication_year=2022&amp;pages=10746-10776&amp;pmid=35100505&amp;doi=10.1021/acs.chemrev.1c00679&amp;"/></mixed-citation></ref><ref id="ref12"><mixed-citation id="cit12"><named-content content-type="citation-string">Shin S.-J.; Kim D. H.; Bae G.; Ringe S.; Choi H.; Lim H.-K.; Choi C. H.; Kim H.
+On the importance of
+the electric double layer structure in aqueous electrocatalysis. Nat. Commun.
+2022, 13 (1), 174–178. 10.1038/s41467-021-27909-x.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41467-021-27909-x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8748683"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35013347"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Commun.&amp;title=On the importance of the electric double layer structure in aqueous electrocatalysis&amp;author=S.-J. Shin&amp;author=D. H. Kim&amp;author=G. Bae&amp;author=S. Ringe&amp;author=H. Choi&amp;volume=13&amp;issue=1&amp;publication_year=2022&amp;pages=174-178&amp;pmid=35013347&amp;doi=10.1038/s41467-021-27909-x&amp;"/></mixed-citation></ref><ref id="ref13"><mixed-citation id="cit13"><named-content content-type="citation-string">Li X.-Y.; Chen A.; Yang X.-H.; Zhu J.-X.; Le J.-B.; Cheng J.
+Linear correlation between water
+adsorption energies and volta potential
+differences for metal/water interfaces. J. Phys.
+Chem. Lett.
+2021, 12 (30), 7299–7304. 10.1021/acs.jpclett.1c02001.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jpclett.1c02001"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34319117"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. Lett.&amp;title=Linear correlation between water adsorption energies and volta potential differences for metal/water interfaces&amp;author=X.-Y. Li&amp;author=A. Chen&amp;author=X.-H. Yang&amp;author=J.-X. Zhu&amp;author=J.-B. Le&amp;volume=12&amp;issue=30&amp;publication_year=2021&amp;pages=7299-7304&amp;pmid=34319117&amp;doi=10.1021/acs.jpclett.1c02001&amp;"/></mixed-citation></ref><ref id="ref14"><mixed-citation id="cit14"><named-content content-type="citation-string">Yoon Y.; Rousseau R.; Weber R. S.; Mei D.; Lercher J. A.
+First-Principles
+Study of Phenol Hydrogenation on Pt and Ni Catalysts in Aqueous Phase. J. Am. Chem. Soc.
+2014, 136 (29), 10287–10298. 10.1021/ja501592y.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/ja501592y"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24987925"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Am. Chem. Soc.&amp;title=First-Principles Study of Phenol Hydrogenation on Pt and Ni Catalysts in Aqueous Phase&amp;author=Y. Yoon&amp;author=R. Rousseau&amp;author=R. S. Weber&amp;author=D. Mei&amp;author=J. A. Lercher&amp;volume=136&amp;issue=29&amp;publication_year=2014&amp;pages=10287-10298&amp;pmid=24987925&amp;doi=10.1021/ja501592y&amp;"/></mixed-citation></ref><ref id="ref15"><mixed-citation id="cit15"><named-content content-type="citation-string">Huang J.; Li P.; Chen S.
+Potential of zero charge and surface charging relation
+of metal-solution interphases from a constant-potential jellium-Poisson-Boltzmann
+model. Phys. Rev. B
+2020, 101 (12), 125422. 10.1103/PhysRevB.101.125422.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevB.101.125422"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. B&amp;title=Potential of zero charge and surface charging relation of metal-solution interphases from a constant-potential jellium-Poisson-Boltzmann model&amp;author=J. Huang&amp;author=P. Li&amp;author=S. Chen&amp;volume=101&amp;issue=12&amp;publication_year=2020&amp;pages=125422&amp;doi=10.1103/PhysRevB.101.125422&amp;"/></mixed-citation></ref><ref id="ref16"><mixed-citation id="cit16"><named-content content-type="citation-string">Patra C. N.; Ghosh S. K.
+Electric double layer at a metal/electrolyte
+interface:
+A density functional approach. J. Chem. Phys.
+1995, 102 (6), 2556–2561. 10.1063/1.468685.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1063/1.468685"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;title=Electric double layer at a metal/electrolyte interface: A density functional approach&amp;author=C. N. Patra&amp;author=S. K. Ghosh&amp;volume=102&amp;issue=6&amp;publication_year=1995&amp;pages=2556-2561&amp;doi=10.1063/1.468685&amp;"/></mixed-citation></ref><ref id="ref17"><mixed-citation id="cit17"><named-content content-type="citation-string">Park S.; McDaniel J. G.
+Helmholtz capacitance
+of aqueous NaCl solutions at
+the au(100) electrode from polarizable and nonpolarizable molecular
+dynamics simulations. J. Phys. Chem. C
+2022, 126 (38), 16461–16476. 10.1021/acs.jpcc.2c04910.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jpcc.2c04910"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. C&amp;title=Helmholtz capacitance of aqueous NaCl solutions at the au(100) electrode from polarizable and nonpolarizable molecular dynamics simulations&amp;author=S. Park&amp;author=J. G. McDaniel&amp;volume=126&amp;issue=38&amp;publication_year=2022&amp;pages=16461-16476&amp;doi=10.1021/acs.jpcc.2c04910&amp;"/></mixed-citation></ref><ref id="ref18"><mixed-citation id="cit18"><named-content content-type="citation-string">Paek E.; Pak A. J.; Hwang G. S.
+A computational
+study of the interfacial
+structure and capacitance of graphene in [BMIM] [PF<sub>6</sub>] ionic
+liquid. J. Electrochem. Soc.
+2013, 160 (1), A1–A10. 10.1149/2.019301jes.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1149/2.019301jes"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electrochem. Soc.&amp;title=A computational study of the interfacial structure and capacitance of graphene in [BMIM] [PF6] ionic liquid&amp;author=E. Paek&amp;author=A. J. Pak&amp;author=G. S. Hwang&amp;volume=160&amp;issue=1&amp;publication_year=2013&amp;pages=A1-A10&amp;doi=10.1149/2.019301jes&amp;"/></mixed-citation></ref><ref id="ref19"><mixed-citation id="cit19"><named-content content-type="citation-string">Heller I.; Kong J.; Williams K. A.; Dekker C.; Lemay S. G.
+Electrochemistry
+at single-walled carbon nanotubes: The role of band structure and
+quantum capacitance. J. Am. Chem. Soc.
+2006, 128 (22), 7353–7359. 10.1021/ja061212k.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/ja061212k"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="16734491"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Am. Chem. Soc.&amp;title=Electrochemistry at single-walled carbon nanotubes: The role of band structure and quantum capacitance&amp;author=I. Heller&amp;author=J. Kong&amp;author=K. A. Williams&amp;author=C. Dekker&amp;author=S. G. Lemay&amp;volume=128&amp;issue=22&amp;publication_year=2006&amp;pages=7353-7359&amp;pmid=16734491&amp;doi=10.1021/ja061212k&amp;"/></mixed-citation></ref><ref id="ref20"><mixed-citation id="cit20"><named-content content-type="citation-string">Verkholyak T.; Kuzmak A.; Kornyshev A. A.; Kondrat S.
+Less is more: Can low
+quantum capacitance boost capacitive energy storage?. J. Phys. Chem. Lett.
+2022, 13 (47), 10976–10980. 10.1021/acs.jpclett.2c02968.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jpclett.2c02968"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9720744"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36399790"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. Lett.&amp;title=Less is more: Can low quantum capacitance boost capacitive energy storage?&amp;author=T. Verkholyak&amp;author=A. Kuzmak&amp;author=A. A. Kornyshev&amp;author=S. Kondrat&amp;volume=13&amp;issue=47&amp;publication_year=2022&amp;pages=10976-10980&amp;pmid=36399790&amp;doi=10.1021/acs.jpclett.2c02968&amp;"/></mixed-citation></ref><ref id="ref21"><mixed-citation id="cit21"><named-content content-type="citation-string">Binninger T.
+First-principles
+theory of electrochemical capacitance. Electrochim.
+Acta
+2023, 444, 142016. 10.1016/j.electacta.2023.142016.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.electacta.2023.142016"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Electrochim. Acta&amp;title=First-principles theory of electrochemical capacitance&amp;author=T. Binninger&amp;volume=444&amp;publication_year=2023&amp;pages=142016&amp;doi=10.1016/j.electacta.2023.142016&amp;"/></mixed-citation></ref><ref id="ref22"><mixed-citation id="cit22"><named-content content-type="citation-string">Rossmeisl J.; Skúlason E.; Björketun M. E.; Tripkovic V.; Nørskov J. K.
+Modeling
+the electrified solid-liquid interface. Chem.
+Phys. Lett.
+2008, 466 (1–3), 68–71. 10.1016/j.cplett.2008.10.024.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cplett.2008.10.024"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. Phys. Lett.&amp;title=Modeling the electrified solid-liquid interface&amp;author=J. Rossmeisl&amp;author=E. Skúlason&amp;author=M. E. Björketun&amp;author=V. Tripkovic&amp;author=J. K. Nørskov&amp;volume=466&amp;issue=1–3&amp;publication_year=2008&amp;pages=68-71&amp;doi=10.1016/j.cplett.2008.10.024&amp;"/></mixed-citation></ref><ref id="ref23"><mixed-citation id="cit23"><named-content content-type="citation-string">Chan K.; Nørskov J. K.
+Electrochemical
+barriers made simple. J. Phys. Chem. Lett.
+2015, 6 (14), 2663–2668. 10.1021/acs.jpclett.5b01043.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jpclett.5b01043"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26266844"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. Lett.&amp;title=Electrochemical barriers made simple&amp;author=K. Chan&amp;author=J. K. Nørskov&amp;volume=6&amp;issue=14&amp;publication_year=2015&amp;pages=2663-2668&amp;pmid=26266844&amp;doi=10.1021/acs.jpclett.5b01043&amp;"/></mixed-citation></ref><ref id="ref24"><mixed-citation id="cit24"><named-content content-type="citation-string">Filhol J.-S.; Neurock M.
+Elucidation of the
+electrochemical activation of water
+over Pd by first principles. Angew. Chem.
+2006, 118 (3), 416–420. 10.1002/ange.200502540.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/ange.200502540"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="16307461"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Angew. Chem.&amp;title=Elucidation of the electrochemical activation of water over Pd by first principles&amp;author=J.-S. Filhol&amp;author=M. Neurock&amp;volume=118&amp;issue=3&amp;publication_year=2006&amp;pages=416-420&amp;pmid=16307461&amp;doi=10.1002/ange.200502540&amp;"/></mixed-citation></ref><ref id="ref25"><mixed-citation id="cit25"><named-content content-type="citation-string">Sheng T.; Sun S.-G.
+Electrochemical
+reduction of CO2 into CO on Cu(100):
+a new insight into the C-O bond breaking mechanism. Chem. Commun.
+2017, 53 (17), 2594–2597. 10.1039/C6CC08583K.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/C6CC08583K"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28191556"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. Commun.&amp;title=Electrochemical reduction of CO2 into CO on Cu(100): a new insight into the C-O bond breaking mechanism&amp;author=T. Sheng&amp;author=S.-G. Sun&amp;volume=53&amp;issue=17&amp;publication_year=2017&amp;pages=2594-2597&amp;pmid=28191556&amp;doi=10.1039/C6CC08583K&amp;"/></mixed-citation></ref><ref id="ref26"><mixed-citation id="cit26"><named-content content-type="citation-string">Cheng T.; Xiao H.; Goddard W. A.
+Full atomistic reaction mechanism
+with kinetics for CO reduction on Cu(100) from ab initio molecular
+dynamics free-energy calculations at 298 K. Proc. Natl. Acad. Sci. U.S.A.
+2017, 114 (8), 1795–1800. 10.1073/pnas.1612106114.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1073/pnas.1612106114"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5338443"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28167767"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Proc. Natl. Acad. Sci. U.S.A.&amp;title=Full atomistic reaction mechanism with kinetics for CO reduction on Cu(100) from ab initio molecular dynamics free-energy calculations at 298 K&amp;author=T. Cheng&amp;author=H. Xiao&amp;author=W. A. Goddard&amp;volume=114&amp;issue=8&amp;publication_year=2017&amp;pages=1795-1800&amp;pmid=28167767&amp;doi=10.1073/pnas.1612106114&amp;"/></mixed-citation></ref><ref id="ref27"><mixed-citation id="cit27"><named-content content-type="citation-string">Darby M. T.; Cucinotta C. S.
+The role of water at electrified metal-water interfaces
+unravelled from first principles. Curr. Opin.
+Electrochem.
+2022, 36, 101118. 10.1016/j.coelec.2022.101118.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.coelec.2022.101118"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Curr. Opin. Electrochem.&amp;title=The role of water at electrified metal-water interfaces unravelled from first principles&amp;author=M. T. Darby&amp;author=C. S. Cucinotta&amp;volume=36&amp;publication_year=2022&amp;pages=101118&amp;doi=10.1016/j.coelec.2022.101118&amp;"/></mixed-citation></ref><ref id="ref28"><mixed-citation id="cit28"><named-content content-type="citation-string">Sakong S.; Groß A.
+The electric
+double layer at metal-water interfaces
+revisited based on a charge polarization scheme. J. Chem. Phys.
+2018, 149 (8), 084705. 10.1063/1.5040056.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1063/1.5040056"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30193475"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;title=The electric double layer at metal-water interfaces revisited based on a charge polarization scheme&amp;author=S. Sakong&amp;author=A. Groß&amp;volume=149&amp;issue=8&amp;publication_year=2018&amp;pages=084705&amp;pmid=30193475&amp;doi=10.1063/1.5040056&amp;"/></mixed-citation></ref><ref id="ref29"><mixed-citation id="cit29"><named-content content-type="citation-string">Groß A.
+Reversible
+vs standard hydrogen electrode scale in interfacial electrochemistry
+from a theoretician’s atomistic point of view. J. Phys. Chem. C
+2022, 126 (28), 11439–11446. 10.1021/acs.jpcc.2c02734.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jpcc.2c02734"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. C&amp;title=Reversible vs standard hydrogen electrode scale in interfacial electrochemistry from a theoretician’s atomistic point of view&amp;author=A. Groß&amp;volume=126&amp;issue=28&amp;publication_year=2022&amp;pages=11439-11446&amp;doi=10.1021/acs.jpcc.2c02734&amp;"/></mixed-citation></ref><ref id="ref30"><mixed-citation id="cit30"><named-content content-type="citation-string">Huang J.; Chen S.; Eikerling M.
+Grand-canonical
+model of electrochemical
+double layers from a hybrid density-potential functional. J. Chem. Theory Comput.
+2021, 17 (4), 2417–2430. 10.1021/acs.jctc.1c00098.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jctc.1c00098"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33787259"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Theory Comput.&amp;title=Grand-canonical model of electrochemical double layers from a hybrid density-potential functional&amp;author=J. Huang&amp;author=S. Chen&amp;author=M. Eikerling&amp;volume=17&amp;issue=4&amp;publication_year=2021&amp;pages=2417-2430&amp;pmid=33787259&amp;doi=10.1021/acs.jctc.1c00098&amp;"/></mixed-citation></ref><ref id="ref31"><mixed-citation id="cit31"><named-content content-type="citation-string">Huang J.
+Hybrid density-potential
+functional theory of electric double layers. Electrochim. Acta
+2021, 389, 138720. 10.1016/j.electacta.2021.138720.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.electacta.2021.138720"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Electrochim. Acta&amp;title=Hybrid density-potential functional theory of electric double layers&amp;author=J. Huang&amp;volume=389&amp;publication_year=2021&amp;pages=138720&amp;doi=10.1016/j.electacta.2021.138720&amp;"/></mixed-citation></ref><ref id="ref32"><mixed-citation id="cit32"><named-content content-type="citation-string">Huang J.
+Density-potential
+functional theory of electrochemical double layers: Calibration on
+the Ag(111)-KPF<sub>6</sub> system and parametric analysis. J. Chem. Theory Comput.
+2023, 19 (3), 1003–1013. 10.1021/acs.jctc.2c00799.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jctc.2c00799"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9933430"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36651849"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Theory Comput.&amp;title=Density-potential functional theory of electrochemical double layers: Calibration on the Ag(111)-KPF6 system and parametric analysis&amp;author=J. Huang&amp;volume=19&amp;issue=3&amp;publication_year=2023&amp;pages=1003-1013&amp;pmid=36651849&amp;doi=10.1021/acs.jctc.2c00799&amp;"/></mixed-citation></ref><ref id="ref33"><mixed-citation id="cit33"><named-content content-type="citation-string">Shatla A. S.; Landstorfer M.; Baltruschat H.
+On the differential
+capacitance and
+potential of zero charge of Au (111) in some aprotic solvents. ChemElectroChem
+2021, 8 (10), 1817–1835. 10.1002/celc.202100316.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/celc.202100316"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ChemElectroChem&amp;title=On the differential capacitance and potential of zero charge of Au (111) in some aprotic solvents&amp;author=A. S. Shatla&amp;author=M. Landstorfer&amp;author=H. Baltruschat&amp;volume=8&amp;issue=10&amp;publication_year=2021&amp;pages=1817-1835&amp;doi=10.1002/celc.202100316&amp;"/></mixed-citation></ref><ref id="ref34"><mixed-citation id="cit34"><named-content content-type="citation-string">Shandilya A.; Schwarz K.; Sundararaman R.
+Interfacial water asymmetry at ideal
+electrochemical interfaces. J. Chem. Phys.
+2022, 156 (1), 014705. 10.1063/5.0076038.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1063/5.0076038"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34998343"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;title=Interfacial water asymmetry at ideal electrochemical interfaces&amp;author=A. Shandilya&amp;author=K. Schwarz&amp;author=R. Sundararaman&amp;volume=156&amp;issue=1&amp;publication_year=2022&amp;pages=014705&amp;pmid=34998343&amp;doi=10.1063/5.0076038&amp;"/></mixed-citation></ref><ref id="ref35"><mixed-citation id="cit35"><named-content content-type="citation-string">Perdew J. P.; Burke K.; Ernzerhof M.
+Generalized gradient approximation
+made simple. Phys. Rev. Lett.
+1996, 77 (18), 3865–3868. 10.1103/PhysRevLett.77.3865.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevLett.77.3865"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="10062328"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. Lett.&amp;title=Generalized gradient approximation made simple&amp;author=J. P. Perdew&amp;author=K. Burke&amp;author=M. Ernzerhof&amp;volume=77&amp;issue=18&amp;publication_year=1996&amp;pages=3865-3868&amp;pmid=10062328&amp;doi=10.1103/PhysRevLett.77.3865&amp;"/></mixed-citation></ref><ref id="ref36"><mixed-citation id="cit36"><named-content content-type="citation-string">Fumagalli L.; Esfandiar A.; Fabregas R.; Hu S.; Ares P.; Janardanan A.; Yang Q.; Radha B.; Taniguchi T.; Watanabe K.; Gomila G.; Novoselov K. S.; Geim A. K.
+Anomalously low dielectric constant of confined water. Science
+2018, 360 (6395), 1339–1342. 10.1126/science.aat4191.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1126/science.aat4191"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29930134"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Science&amp;title=Anomalously low dielectric constant of confined water&amp;author=L. Fumagalli&amp;author=A. Esfandiar&amp;author=R. Fabregas&amp;author=S. Hu&amp;author=P. Ares&amp;volume=360&amp;issue=6395&amp;publication_year=2018&amp;pages=1339-1342&amp;pmid=29930134&amp;doi=10.1126/science.aat4191&amp;"/></mixed-citation></ref><ref id="ref37"><mixed-citation id="cit37"><named-content content-type="citation-string">Atkins P.; Atkins P. W.; de Paula J.. Atkins’ Physical
+Chemistry; Oxford University Press, 2014.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Atkins’ Physical Chemistry&amp;publication_year=2014&amp;"/></mixed-citation></ref><ref id="ref38"><mixed-citation id="cit38"><named-content content-type="citation-string">Frisch M. J.; Trucks G. W.; Schlegel H. B.; Scuseria G. E.; Robb M. A.; Cheeseman J. R.; Scalmani G.; Barone V.; Petersson G. A.; Nakatsuji H.; Li X.; Caricato M.; Marenich A. V.; Bloino J.; Janesko B. G.; Gomperts R.; Mennucci B.; Hratchian H. P.; Ortiz J. V.; Izmaylov A. F.; Sonnenberg J. L.; Williams Ding F.; Lipparini F.; Egidi F.; Goings J.; Peng B.; Petrone A.; Henderson T.; Ranasinghe D.; Zakrzewski V. G.; Gao J.; Rega N.; Zheng G.; Liang W.; Hada M.; Ehara M.; Toyota K.; Fukuda R.; Hasegawa J.; Ishida M.; Nakajima T.; Honda Y.; Kitao O.; Nakai H.; Vreven T.; Throssell K.; Montgomery J.
+A. Jr.; Peralta J. E.; Ogliaro F.; Bearpark M. J.; Heyd J. J.; Brothers E. N.; Kudin K. N.; Staroverov V. N.; Keith T. A.; Kobayashi R.; Normand J.; Raghavachari K.; Rendell A. P.; Burant J. C.; Iyengar S. S.; Tomasi J.; Cossi M.; Millam J. M.; Klene M.; Adamo C.; Cammi R.; Ochterski J. W.; Martin R. L.; Morokuma K.; Farkas O.; Foresman J. B.; Fox D. J.. Gaussian 16 Rev. B.01; Gaussian Inc.: Wallingford, CT, 2016.</named-content></mixed-citation></ref><ref id="ref39"><mixed-citation id="cit39"><named-content content-type="citation-string">Hou Y.; Aoki K. J.; Chen J.; Nishiumi T.
+Solvent Variables Controlling
+Electric Double Layer Capacitance at the Metal-Solution Interface. J. Phys. Chem. C
+2014, 118 (19), 10153–10158. 10.1021/jp5018289.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/jp5018289"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. C&amp;title=Solvent Variables Controlling Electric Double Layer Capacitance at the Metal-Solution Interface&amp;author=Y. Hou&amp;author=K. J. Aoki&amp;author=J. Chen&amp;author=T. Nishiumi&amp;volume=118&amp;issue=19&amp;publication_year=2014&amp;pages=10153-10158&amp;doi=10.1021/jp5018289&amp;"/></mixed-citation></ref><ref id="ref40"><mixed-citation id="cit40"><named-content content-type="citation-string">Kornyshev A. A.Double-layer in Ionic
+Liquids: Paradigm Change?; ACS Publications, 2007; Vol. 111, pp 5545–5557.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/jp067857o"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="17469864"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Double-layer in Ionic Liquids: Paradigm Change?&amp;publication_year=2007&amp;"/></mixed-citation></ref><ref id="ref41"><mixed-citation id="cit41"><named-content content-type="citation-string">Budkov Y. A.; Kolesnikov A. L.
+Electric double layer theory for room temperature ionic
+liquids on charged electrodes: Milestones and prospects. Curr. Opin. Electrochem.
+2022, 33, 100931. 10.1016/j.coelec.2021.100931.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.coelec.2021.100931"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Curr. Opin. Electrochem.&amp;title=Electric double layer theory for room temperature ionic liquids on charged electrodes: Milestones and prospects&amp;author=Y. A. Budkov&amp;author=A. L. Kolesnikov&amp;volume=33&amp;publication_year=2022&amp;pages=100931&amp;doi=10.1016/j.coelec.2021.100931&amp;"/></mixed-citation></ref><ref id="ref42"><mixed-citation id="cit42"><named-content content-type="citation-string">Stoller M. D.; Magnuson C. W.; Zhu Y.; Murali S.; Suk J. W.; Piner R.; Ruoff R. S.
+Interfacial
+capacitance of single
+layer graphene. Energy Environ. Sci.
+2011, 4 (11), 4685–4689. 10.1039/c1ee02322e.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/c1ee02322e"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Energy Environ. Sci.&amp;title=Interfacial capacitance of single layer graphene&amp;author=M. D. Stoller&amp;author=C. W. Magnuson&amp;author=Y. Zhu&amp;author=S. Murali&amp;author=J. W. Suk&amp;volume=4&amp;issue=11&amp;publication_year=2011&amp;pages=4685-4689&amp;doi=10.1039/c1ee02322e&amp;"/></mixed-citation></ref><ref id="ref43"><mixed-citation id="cit43"><named-content content-type="citation-string">Kornyshev A. A.; Kuznetsov A. M.; Makov G.; Vigdorovitch M. V.
+Polaron
+effects on electronic properties of metal/medium interfaces. Part
+1.—Uncharged metal/dielectric and metal/electrolyte interfaces. J. Chem. Soc., Faraday Trans.
+1996, 92 (20), 3997–4004. 10.1039/FT9969203997.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/FT9969203997"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Soc., Faraday Trans.&amp;title=Polaron effects on electronic properties of metal/medium interfaces. Part 1.—Uncharged metal/dielectric and metal/electrolyte interfaces&amp;author=A. A. Kornyshev&amp;author=A. M. Kuznetsov&amp;author=G. Makov&amp;author=M. V. Vigdorovitch&amp;volume=92&amp;issue=20&amp;publication_year=1996&amp;pages=3997-4004&amp;doi=10.1039/FT9969203997&amp;"/></mixed-citation></ref><ref id="ref44"><mixed-citation id="cit44"><named-content content-type="citation-string">Kornyshev A. A.; Kuznetsov A. M.; Makov G.; Vigdorovitch M. V.
+Polaron
+effects on electronic properties of metal/medium interfaces. Part
+2.—Electrified interfaces: in situ second harmonic generation. J. Chem. Soc., Faraday Trans.
+1996, 92 (20), 4005–4014. 10.1039/FT9969204005.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/FT9969204005"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Soc., Faraday Trans.&amp;title=Polaron effects on electronic properties of metal/medium interfaces. Part 2.—Electrified interfaces: in situ second harmonic generation&amp;author=A. A. Kornyshev&amp;author=A. M. Kuznetsov&amp;author=G. Makov&amp;author=M. V. Vigdorovitch&amp;volume=92&amp;issue=20&amp;publication_year=1996&amp;pages=4005-4014&amp;doi=10.1039/FT9969204005&amp;"/></mixed-citation></ref><ref id="ref45"><mixed-citation id="cit45"><named-content content-type="citation-string">Varghese S.; Kannam S. K.; Hansen J. S.; Sathian S. P.
+Effect of Hydrogen
+Bonds on the Dielectric Properties of Interfacial Water. Langmuir
+2019, 35 (24), 8159–8166. 10.1021/acs.langmuir.9b00543.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.langmuir.9b00543"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31121091"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Langmuir&amp;title=Effect of Hydrogen Bonds on the Dielectric Properties of Interfacial Water&amp;author=S. Varghese&amp;author=S. K. Kannam&amp;author=J. S. Hansen&amp;author=S. P. Sathian&amp;volume=35&amp;issue=24&amp;publication_year=2019&amp;pages=8159-8166&amp;pmid=31121091&amp;doi=10.1021/acs.langmuir.9b00543&amp;"/></mixed-citation></ref><ref id="ref46"><mixed-citation id="cit46"><named-content content-type="citation-string">Kresse G.; Hafner J.
+Ab initio molecular dynamics for
+liquid metals. Phys. Rev. B
+1993, 47 (1), 558–561. 10.1103/PhysRevB.47.558.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevB.47.558"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="10004490"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. B&amp;title=Ab initio molecular dynamics for liquid metals&amp;author=G. Kresse&amp;author=J. Hafner&amp;volume=47&amp;issue=1&amp;publication_year=1993&amp;pages=558-561&amp;pmid=10004490&amp;doi=10.1103/PhysRevB.47.558&amp;"/></mixed-citation></ref><ref id="ref47"><mixed-citation id="cit47"><named-content content-type="citation-string">Kresse G.; Furthmüller J.
+Efficient iterative schemes for ab
+initio total-energy
+calculations using a plane-wave basis set. Phys.
+Rev. B
+1996, 54 (16), 11169–11186. 10.1103/PhysRevB.54.11169.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevB.54.11169"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="9984901"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. B&amp;title=Efficient iterative schemes for ab initio total-energy calculations using a plane-wave basis set&amp;author=G. Kresse&amp;author=J. Furthmüller&amp;volume=54&amp;issue=16&amp;publication_year=1996&amp;pages=11169-11186&amp;pmid=9984901&amp;doi=10.1103/PhysRevB.54.11169&amp;"/></mixed-citation></ref><ref id="ref48"><mixed-citation id="cit48"><named-content content-type="citation-string">Blöchl P. E.
+Projector
+augmented-wave method. Phys. Rev. B
+1994, 50 (24), 17953–17979. 10.1103/PhysRevB.50.17953.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevB.50.17953"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="9976227"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. B&amp;title=Projector augmented-wave method&amp;author=P. E. Blöchl&amp;volume=50&amp;issue=24&amp;publication_year=1994&amp;pages=17953-17979&amp;pmid=9976227&amp;doi=10.1103/PhysRevB.50.17953&amp;"/></mixed-citation></ref><ref id="ref49"><mixed-citation id="cit49"><named-content content-type="citation-string">Kresse G.; Joubert D.
+From ultrasoft pseudopotentials
+to the projector augmented-wave
+method. Phys. Rev. B
+1999, 59 (3), 1758–1775. 10.1103/PhysRevB.59.1758.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevB.59.1758"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. B&amp;title=From ultrasoft pseudopotentials to the projector augmented-wave method&amp;author=G. Kresse&amp;author=D. Joubert&amp;volume=59&amp;issue=3&amp;publication_year=1999&amp;pages=1758-1775&amp;doi=10.1103/PhysRevB.59.1758&amp;"/></mixed-citation></ref><ref id="ref50"><mixed-citation id="cit50"><named-content content-type="citation-string">Grimme S.
+Semiempirical
+GGA-type density functional constructed with a long-range dispersion
+correction. J. Comput. Chem.
+2006, 27 (15), 1787–1799. 10.1002/jcc.20495.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/jcc.20495"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="16955487"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Comput. Chem.&amp;title=Semiempirical GGA-type density functional constructed with a long-range dispersion correction&amp;author=S. Grimme&amp;volume=27&amp;issue=15&amp;publication_year=2006&amp;pages=1787-1799&amp;pmid=16955487&amp;doi=10.1002/jcc.20495&amp;"/></mixed-citation></ref><ref id="ref51"><mixed-citation id="cit51"><named-content content-type="citation-string">Grimme S.; Antony J.; Ehrlich S.; Krieg H.
+A consistent and accurate
+ab initio parametrization of density functional dispersion correction
+(DFT-D) for the 94 elements H-Pu. J. Chem. Phys.
+2010, 132 (15), 154104. 10.1063/1.3382344.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1063/1.3382344"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20423165"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;title=A consistent and accurate ab initio parametrization of density functional dispersion correction (DFT-D) for the 94 elements H-Pu&amp;author=S. Grimme&amp;author=J. Antony&amp;author=S. Ehrlich&amp;author=H. Krieg&amp;volume=132&amp;issue=15&amp;publication_year=2010&amp;pages=154104&amp;pmid=20423165&amp;doi=10.1063/1.3382344&amp;"/></mixed-citation></ref><ref id="ref52"><mixed-citation id="cit52"><named-content content-type="citation-string">VandeVondele J.; Krack M.; Mohamed F.; Parrinello M.; Chassaing T.; Hutter J.
+Quickstep: Fast and accurate density
+functional calculations using a mixed Gaussian and plane waves approach. Comput. Phys. Commun.
+2005, 167 (2), 103–128. 10.1016/j.cpc.2004.12.014.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cpc.2004.12.014"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Comput. Phys. Commun.&amp;title=Quickstep: Fast and accurate density functional calculations using a mixed Gaussian and plane waves approach&amp;author=J. VandeVondele&amp;author=M. Krack&amp;author=F. Mohamed&amp;author=M. Parrinello&amp;author=T. Chassaing&amp;volume=167&amp;issue=2&amp;publication_year=2005&amp;pages=103-128&amp;doi=10.1016/j.cpc.2004.12.014&amp;"/></mixed-citation></ref><ref id="ref53"><mixed-citation id="cit53"><named-content content-type="citation-string">Goedecker S.; Teter M.; Hutter J.
+Separable dual-space
+Gaussian pseudopotentials. Phys. Rev. B
+1996, 54 (3), 1703–1710. 10.1103/PhysRevB.54.1703.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevB.54.1703"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="9986014"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. B&amp;title=Separable dual-space Gaussian pseudopotentials&amp;author=S. Goedecker&amp;author=M. Teter&amp;author=J. Hutter&amp;volume=54&amp;issue=3&amp;publication_year=1996&amp;pages=1703-1710&amp;pmid=9986014&amp;doi=10.1103/PhysRevB.54.1703&amp;"/></mixed-citation></ref><ref id="ref54"><mixed-citation id="cit54"><named-content content-type="citation-string">Hartwigsen C.; Goedecker S.; Hutter J.
+Relativistic separable dual-space
+Gaussian pseudopotentials from H to Rn. Phys.
+Rev. B
+1998, 58 (7), 3641–3662. 10.1103/PhysRevB.58.3641.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevB.58.3641"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="9986014"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. B&amp;title=Relativistic separable dual-space Gaussian pseudopotentials from H to Rn&amp;author=C. Hartwigsen&amp;author=S. Goedecker&amp;author=J. Hutter&amp;volume=58&amp;issue=7&amp;publication_year=1998&amp;pages=3641-3662&amp;pmid=9986014&amp;doi=10.1103/PhysRevB.58.3641&amp;"/></mixed-citation></ref><ref id="ref55"><mixed-citation id="cit55"><named-content content-type="citation-string">VandeVondele J.; Hutter J.
+Gaussian basis sets for accurate calculations on molecular
+systems in gas and condensed phases. J. Chem.
+Phys.
+2007, 127 (11), 114105. 10.1063/1.2770708.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1063/1.2770708"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="17887826"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;title=Gaussian basis sets for accurate calculations on molecular systems in gas and condensed phases&amp;author=J. VandeVondele&amp;author=J. Hutter&amp;volume=127&amp;issue=11&amp;publication_year=2007&amp;pages=114105&amp;pmid=17887826&amp;doi=10.1063/1.2770708&amp;"/></mixed-citation></ref><ref id="ref56"><mixed-citation id="cit56"><named-content content-type="citation-string">Kühne T. D.; Krack M.; Mohamed F. R.; Parrinello M.
+Efficient
+and Accurate Car-Parrinello-like Approach to Born-Oppenheimer Molecular
+Dynamics. Phys. Rev. Lett.
+2007, 98 (6), 066401. 10.1103/PhysRevLett.98.066401.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevLett.98.066401"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="17358962"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. Lett.&amp;title=Efficient and Accurate Car-Parrinello-like Approach to Born-Oppenheimer Molecular Dynamics&amp;author=T. D. Kühne&amp;author=M. Krack&amp;author=F. R. Mohamed&amp;author=M. Parrinello&amp;volume=98&amp;issue=6&amp;publication_year=2007&amp;pages=066401&amp;pmid=17358962&amp;doi=10.1103/PhysRevLett.98.066401&amp;"/></mixed-citation></ref></ref-list></sec></sec><sec id="_ad93_" xml:lang="en" sec-type="associated-data" disp-level="1"><title>Associated Data</title><sec id="_adsm93_" xml:lang="en" sec-type="supplementary-materials" disp-level="2"><title>Supplementary Materials</title><supplementary-material id="db_ds_supplementary-material1_reqid_" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="au3c00552_si_001.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path bcd9/10751779/018e83662d56/au3c00552_si_001.pdf?><?cloudpmc-bucket app?><?size 1381204?><caption><p>au3c00552_si_001.pdf</p></caption></media></supplementary-material></sec><sec id="_adda93_" xml:lang="en" sec-type="data-availability-statement" disp-level="2"><title>Data Availability Statement</title><p>The data that
+support the findings of this study are available from the corresponding
+author upon reasonable request.</p></sec></sec></body></article>

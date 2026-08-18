@@ -1,0 +1,83 @@
+[query] "template-stripped" AND gold AND "(111)" AND texture
+    hitCount=2 returned=2
+      - 2017 'Quantifying Gauche Defects and Phase Evolution in Self-Assembled Monolayers through Sessile Drops.' pmcid=PMC6640986
+      - 2014 'Nanoscale lithography mediated by surface self-assembly of 16-[3,5-bis(mercaptomethyl)phenoxy]hexadecanoic acid on Au(111) investigated by scanning probe microscopy.' pmcid=PMC6271246
+[query] "template stripped gold" AND roughness AND "111"
+    hitCount=14 returned=14
+      - 2025 'Template-stripped substrates with solvent-impermeable metal thin films.' pmcid=PMC12371504
+      - 2024 'Structural characterization of amyloid aggregates with spatially resolved infrared spectroscopy.' pmcid=PMC11147165
+      - 2024 'Counterion Loss from Charged Surface-Bound Complexes Drives the Formation of Loosely Packed Monolayers.' pmcid=PMC11421008
+      - 2024 'Dynamically blocking leakage current in molecular tunneling junctions.' pmcid=PMC11322961
+      - 2025 'A Review on AC-Dielectrophoresis of Nanoparticles.' pmcid=PMC12029287
+      - 2017 'Quantifying Gauche Defects and Phase Evolution in Self-Assembled Monolayers through Sessile Drops.' pmcid=PMC6640986
+[query] chloride AND "specific adsorption" AND "Au(111)" AND "potential of zero charge"
+    hitCount=13 returned=13
+      - 2026 'Deriving effective electrode-ion interactions from free-energy profiles at electrochemical interfaces.' pmcid=None
+      - 2026 'Dynamic assembly of interfacial organic cations enables highly stable and selective CO&lt;sub&gt;2&lt;/sub&gt; electroreduction in acid.' pmcid=PMC13127569
+      - 2024 'How to Assess and Predict Electrical Double Layer Properties. Implications for Electrocatalysis.' pmcid=PMC11613321
+      - 2023 'Effect of Anionic Lipids on Mammalian Plasma Cell Membrane Properties.' pmcid=PMC9948536
+      - 2022 'Unconventional interfacial water structure of highly concentrated aqueous electrolytes at negative electrode polarizations.' pmcid=PMC9464189
+      - 2015 'Stick-slip behaviour on Au(111) with adsorption of copper and sulfate.' pmcid=PMC4419595
+[query] "potential of zero charge" AND chloride AND gold AND shift
+    hitCount=40 returned=25
+      - 2026 'Novel Gold-Functionalization of Liposomes and Its Impact on Cellular Uptake and Trafficking.' pmcid=PMC13298881
+      - 2026 'Nonequilibrium Electrical Double Layer Effects on Unilateral Peak Suppression in Cyclic Voltammetry.' pmcid=PMC13158924
+      - 2026 'A Comparative Study of Choline Chloride Deep Eutectic Electrolytes: Towards Sustainable Supercapacitors.' pmcid=PMC13028917
+      - 2026 'Thermodynamic and Kinetic Analysis of Galactose Oxidase Direct Electron Transfer on Carboxyl-Terminated SAM-Modified Gold Electrodes' pmcid=PMC12943723
+      - 2026 'Electrotunable Kapitza Resistance at Electrode-Water Interfaces: The Importance of Electrode Metallicity.' pmcid=PMC13200241
+      - 2026 'The Role of Local pH in Electrocatalysis: Measurement, Impact, and Control Strategies.' pmcid=PMC13158913
+[query] "Au(111)" AND "1 mM" AND capacitance AND "double layer"
+    hitCount=50 returned=25
+      - 2026 'Metal cations promote coupled ion-electron transfer during deposition and corrosion.' pmcid=PMC13280796
+      - 2025 "Structural and Electrochemical Properties of 4-Methyl-4'-(&lt;i&gt;n&lt;/i&gt;-mercaptoalkyl) Biphenyls Self-Assembled on the Au(100)-(1\xa0×\xa01) Surface." pmcid=PMC12356081
+      - 2024 'Tracking the surface structure and the influence of cations and anions on the double-layer region of a Au(111) electrode.' pmcid=PMC11323936
+      - 2025 'Visualizing Molecular-Scale 3D Distributions of Ionic Liquids in Electric Double-Layer Capacitor by 3D Scanning Force Microscopy with Variable Tip/Sample Bias Voltages.' pmcid=PMC12447403
+      - 2026 'Benchmarking Orbital-Free Density-Potential Functional Theory of Electrified Metal-Solution Interfaces.' pmcid=PMC12980745
+      - 2025 'Resolving Nanoslip, Solvation Inertia, and Charge Dynamics at Vibrating Solid-Liquid Interface.' pmcid=PMC12410916
+[query] Koper AND "Au(111)" AND "double layer" AND capacitance
+    hitCount=18 returned=18
+      - 2026 'Modelling the Double Layer of Polycrystalline Electrodes: Capacitance, Potential of Zero Charge, and Parsons-Zobel Plot.' pmcid=PMC13051447
+      - 2024 'Tracking the surface structure and the influence of cations and anions on the double-layer region of a Au(111) electrode.' pmcid=PMC11323936
+      - 2025 'Cation effects on CO<sub>2</sub> reduction catalyzed by single-crystal and polycrystalline gold under well-defined mass transport conditions.' pmcid=PMC11804923
+      - 2025 'Microstructure of Electrical Double Layers at Highly Charged States.' pmcid=PMC12308414
+      - 2023 'Subsurface Hydride Formation Leads to Slow Surface Adsorption Processes on a Pd(111) Single-Crystal Electrode in Acidic Electrolytes.' pmcid=PMC10598829
+      - 2021 'The Interrelated Effect of Cations and Electrolyte pH on the Hydrogen Evolution Reaction on Gold Electrodes in Alkaline Media.' pmcid=PMC8252582
+[query] "potential of zero charge" AND "magnesium" AND gold
+    hitCount=10 returned=10
+      - 2026 'User-Defined Electrostatic Potentials in DFT Supercell Calculations: Implementation and Application to Electrified Interfaces.' pmcid=PMC12980727
+      - 2024 'The Electrocatalytic Activity of Au Electrodes Changes Significantly in Various Na&lt;sup&gt;+&lt;/sup&gt;/K&lt;sup&gt;+&lt;/sup&gt; Supporting Electrolyte Mixtures.' pmcid=PMC11934990
+      - 2025 'Structural Basis of Ultralow Capacitances at Metal-Nonaqueous Solution Interfaces.' pmcid=PMC11803618
+      - 2022 'Potential Application of Alternative Materials for Organic Pollutant Removal.' pmcid=PMC8852954
+      - 2024 'Coatings Based on Refractory Materials for Corrosion and Wear Applications.' pmcid=PMC11643760
+      - 2017 'Collagen Membranes with Ribonuclease Inhibitors for Long-Term Stability of Electrochemical Aptamer-Based Sensors Employing RNA.' pmcid=PMC5653965
+[query] DNA AND origami AND "gold electrode" AND "reference electrode" AND bias
+    hitCount=6 returned=6
+      - 2024 'Variable gain DNA nanostructure charge amplifiers for biosensing.' pmcid=PMC11883816
+      - 2025 'Future perspectives of GMO detection in agriculture: strategies for electrochemical nucleic acid detection.' pmcid=PMC12202687
+      - 2026 'Extraoral Detection of Biomarkers and Pathogens in Saliva: Comprehensive, Panoramic Review.' pmcid=PMC13297210
+      - 2020 'Development of a flexible, sweat-based neuropeptide Y detection platform.' pmcid=PMC9054693
+      - 2024 'Flexible Graphene Field-Effect Transistors and Their Application in Flexible Biomedical Sensing.' pmcid=PMC11458861
+      - 2013 "Abstracts of the 9th EBSA (European Biophysical Societies' Association) European Biophysics Congress. July 13-17, 2013. Lisbon, Portugal." pmcid=PMC7079924
+[query] "nanolever" AND DNA AND electrode AND "electric field"
+    hitCount=6 returned=6
+      - 2018 'Switchable DNA-origami nanostructures that respond to their environment and their applications.' pmcid=PMC6233340
+      - 2015 'Polymerase/DNA interactions and enzymatic activity: multi-parameter analysis with electro-switchable biosurfaces.' pmcid=PMC4502528
+      - 2023 'Abstracts presented at the 37th Annual Meeting of The Protein Society' pmcid=PMC10680341
+      - 2002 '46th Annual Meeting February 23-27, 2002, Moscone Convention Center, San Francisco, California : Tuesday, February 26, 2002, Part 1' pmcid=PMC2721754
+      - 2000 '44th Annual Meeting February 12-16, 2000 New Orleans, Louisiana : February 14, 2000 Monday Posters, Part 2' pmcid=PMC1913992
+      - 2004 '48th Annual Meeting February 14-18, 2004 Baltimore, Maryland : February 18, 2004 Wednesday Posters, Part 1' pmcid=PMC1913817
+[query] "switchable DNA" AND "gold electrode" AND "potential of zero charge"
+    hitCount=2 returned=2
+      - 2021 'Ferrocene-Containing DNA Monolayers: Influence of Electrostatics on the Electron Transfer Dynamics.' pmcid=PMC8819689
+      - 2007 'Switchable DNA interfaces for the highly sensitive detection of label-free DNA targets.' pmcid=PMC2077262
+[query] "open-circuit potential" AND "template-stripped gold"
+    hitCount=1 returned=1
+      - 2020 'Electric field stimulates production of highly conductive microbial OmcZ nanowires.' pmcid=PMC7502555
+[query] "work function" AND "template-stripped gold"
+    hitCount=10 returned=10
+      - 2025 'Unveiling Thermoelectric Properties of SURMOF Nanofilms: A New Frontier in Molecular Thermoelectrics.' pmcid=PMC12667524
+      - 2024 'Thermopower in Underpotential Deposition-Based Molecular Junctions.' pmcid=PMC10870761
+      - 2025 "Broadband measurement of Feibelman's quantum surface response functions." pmcid=PMC12167949
+      - 2025 'Probing Molecular Properties at Atomic Length Scale Using Charge-State Control.' pmcid=PMC12203467
+      - 2022 'Nanocavity-induced trion emission from atomically thin WSe<sub>2</sub>.' pmcid=PMC9508186
+      - 2017 'Interface Engineering for Nanoelectronics.' pmcid=PMC5740487

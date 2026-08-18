@@ -7393,3 +7393,437 @@ learned about — and no checker in the tree can see it, because all three compa
 to the queue, or to itself, and this was a question the queue never had. It is now item 11, and the three
 checks (`trace-answers.py` numbers, status and self-consistency, and `check-markdown-tables.py`) are clean on
 all of it.
+
+## 2026-08-18 — Iteration 23, `T-193`: the answered material moves nothing, and the unanswered PZC is 90–576× the deciding scale and of the wrong sign
+
+Filed [`C-0111`](gpd/claims/C-0111-gold-electrode-pzc.md), raising
+[`CH-0128`](gpd/challenges/CH-0128-inverse-debye-length-called-with-a-bjerrum-length.md).
+Result [`gpd/results/T-193-gold-electrode-pzc.json`](gpd/results/T-193-gold-electrode-pzc.json),
+sources and three retained drivers in [`gpd/data/T-193-sources/`](gpd/data/T-193-sources/),
+ten tests in `src/test/kotlin/anchoring/ElectrodePotentialOfZeroChargeTest.kt`.
+
+**What was done.** NDI's answer to decision 3 — *"Defaulting to template stripped gold for initial
+experiments"* — was carried into `C-0021`'s two zero-bias mechanisms. `M4` was re-read at gold alone rather
+than over four materials; `M3`'s missing quantity, the electrode's potential of zero charge, was searched for
+in the literature and found.
+
+**Half 1 is bookkeeping and it confirms the standing reading rather than repeating it.** Gold is the
+*stiffest* of `C-0021`'s four candidates, so the 2.6× specification bracket collapses onto its **adverse**
+end: 10.356–17.159 pN at 5 nm on a 2 nm tile, 0.737–1.422 at 10 nm, the state's own bracket narrowing by
+exactly **3.25905934×**. The deepest gold well anywhere in the box is **8.742 `k_BT`** — at the most
+favourable corner for confinement, the 5 nm gap on §3's *thick* tile reading — against the 10 `k_BT`
+criterion, so **0 of 6** gold states confine. The verdict is unchanged and the reason is structural: a `1/h³`
+force integrates to a bounded potential, and naming a material changes the amplitude, never the exponent.
+One **ground** moved where the verdict did not: `C-0021`'s retardation factor is *"sourced for gold only and
+applied across the whole electrode bracket"*, and at gold alone that substitution does not exist. Half the
+caveat is discharged; the other half — the DNA constant is already retarded, so the low end retards that half
+twice — stands.
+
+**Half 2 is the load-bearing half, and the cheap step was an identification rather than a bound.**
+`diffusePotentialOfAppliedBias` solves `V = ψ_d + σ_e(ψ_d)/C_S`, and with no tile present `V = 0` makes the
+whole interfacial drop vanish — which is the *definition* of an electrode carrying no free charge. **So the
+model's "applied bias" is the RATIONAL potential `E − E_σ=0`, not a potentiostat setting**, and `C-0021`'s
+0.9–5.1 mV contact-potential table is a table of rational potentials. That is a reading of forty lines of
+existing code, it cost nothing, and it turned an open question into a lookup.
+
+**The number exists and it is adverse.** `E_pzc(Au(111)) = 0.46–0.51 V vs SHE` in Ar-saturated **1 mM
+HClO₄** — Adnan, Behjati, Félez-Guerrero, Ojha & Koper, *Phys. Chem. Chem. Phys.* **26**:21419 (2024), open
+access, **read directly**, three surface preparations printed on **two scales each**, which is a transcription
+check the Nernst relation closes to 1.4–1.6 mV at this project's 300 K. Corroborated by an independent paper
+(Liu, Doblhoff-Dier & Koper, *ACS Electrochem.* **2**:995, 2026: *"around 0.5 V vs. SHE"*), and Au(111) is the
+right proxy because a template-stripped film's crystallites *"are expected to dominate"* in that orientation
+(Avedian, Trang & Inkpen, *ACS Nanosci. Au* **5**:269, 2025). **An electrode held at zero volt on that scale
+therefore sits 90.2–575.7× the deciding threshold away from zero charge, and on the side that charges it
+NEGATIVELY** — repelling the negatively charged tile instead of holding it down. `C-0021`'s `M3` row reads
+*"DOWN but negligible"* and that is a statement about an electrode **at** its PZC, which `C-0021` says in as
+many words and no downstream reader has.
+
+**And the honest answer is a threshold, because the offset is outside the model.** `C-0005`'s point-ion
+boundary is **0.0974 V** of diffuse drop at a *negative* electrode — Mg²⁺ is the counterion there and the
+boundary goes as `1/z` — against 0.1966 V at a positive one, and 9 of 9 exposure states fall outside it. So no
+force is quoted at the PZC offset. What is quoted is **the electrode must be held within 5.10 mV of its own
+potential of zero charge at the 10 nm layer, and 0.886 mV at 5 nm**, which is a control requirement on the
+drive electronics rather than a property of the material.
+
+**What surprised us, in three places.**
+
+**1. The sign.** Everyone in this programme, including this task's own framing, has read *"a contact potential
+of a few millivolts supplies the entire hold-down"* as an unresolved *magnitude*. It is an unresolved
+**sign**. Gold's PZC sits near the positive end of the aqueous window, so almost any nominal zero — a
+potentiostat at 0 V against a common reference, a cell at open circuit — sits **below** it, and the residual
+field then *lifts*. The whole sign structure of that field lives inside **11.2 mV** of rational potential at
+10 nm (thermal-scale lift at −6.087 mV, no net force at −0.314, thermal-scale hold-down at +5.102), which is
+41× narrower than the offset a bench would have to null.
+
+**2. The literature search returned the wrong missing number.** The task expected *"the PZC of template-stripped
+gold in mM MgCl₂"* to be unfindable and to return as an ask. The PZC **is** findable — on a single crystal, in
+perchlorate — and what is missing is not the electrode's number but the **cell's**: how the Gen-1 drive defines
+its zero. That is a specification question of exactly the kind `DECISIONS-FOR-NDI.md` collects, and it is a
+different question from the one that was queued. The gold/MgCl₂ gap is real (32 recorded queries, and the
+divalent leg is not empty — 48 records across three phrasings, none of them a gold PZC) but it is **bounded**:
+the Au(111)/Au(110) facet spread is 0.3 V and 0.46 V would be needed to reach the deciding scale.
+
+**3. A defect was found by a number that was too CONSTANT.** The material-bracket narrowing came out exactly
+`3.25905934` at 5, 7 and 10 nm, which a gap-dependent screening acting on two materials with 10.6 % and 24.6 %
+zero-frequency shares cannot produce. The cause: `C-0021` and `C-0023` both write
+`buffer.inverseDebyeLength(lb)`, and **that method's first parameter is a temperature**. The Bjerrum length
+read as 0.714 K gives `κ = 5.2195 nm⁻¹` against the documented **0.2547**, a factor of 20.5, and `e^(−2κd)`
+saturates to `2e−23`. It is used in exactly one place — the zero-frequency screening of the **low** end of the
+van der Waals bracket — where it annihilates that term and therefore lands the low end exactly on *"fully
+screened"*, **which is what `C-0021`'s own prose declares the low end to be**. So the emitted number is right
+for the stated bracket and the expression that produces it is not; the repair is worth 0.93 % at 5 nm and
+0.073 % at 10 nm and moves no verdict. **Every other `inverseDebyeLength` call site in the tree — twenty-two
+of them — uses the default.** Filed as `CH-0128` rather than patched, because the repair moves two committed
+result files and because it makes the bracket's own *definition* move with it, which is a claim-level choice.
+This is `CLAUDE.md`'s *"a defect that is invisible in the answer is invisible to every check written on the
+answer"* for the fourth time, and the first found by a **consistency observation** rather than by a re-run.
+
+**Method notes.** The field was re-read **parametrised by the diffuse drop** rather than by the bias, per
+`CLAUDE.md`'s own rule that one solve gives the force *and* the bias that produced it. That made `C-0021`'s
+three published thresholds reproducible from the **opposite** direction — `3.6e−7`, `1.7e−8`, `4.0e−9` — which
+is an independent check rather than a restatement, and it made a 37-rung ladder at three gaps affordable
+(111 solved states, 111 numerically resolved). The result file is **byte-identical across two runs**.
+
+**A harness note worth keeping.** With four agents on the box the load ran to 12 on 8 cores and a
+`tools/verify.sh` snapshot spent **more than 25 minutes** in `compileKotlin` before its 30-minute timeout
+killed it — twice. What worked was a **persistent** snapshot (`snapshot_tree` + `drop_files` into a directory
+this agent owns and cleans up itself): one 2-minute cold compile, then **8-second** incremental test runs and
+**4-second** study runs, because `verify.sh` and `study.sh` throw their build directory away on exit and pay
+the cold compile every time. For an iterate-and-rerun loop under contention, snapshot once and keep it; use
+`tools/verify.sh` for the authoritative final run.
+## Iteration 23 — `T-191`: the tile §3 actually specifies
+
+**Agent A.** `T-191`, claim [`C-0109`](gpd/claims/C-0109-four-layer-tile.md),
+challenges [`CH-0124`](gpd/challenges/CH-0124-the-four-layer-variant-is-a-mixed-state-not-a-bound.md)
+and [`CH-0125`](gpd/challenges/CH-0125-the-four-layer-brick-is-mis-specified-in-three-ways.md),
+result `gpd/results/T-191-four-layer-tile.json`,
+model `src/main/kotlin/tile/FourLayerTile.kt`, study `tile.FourLayerTileStudyKt`, 20 tests.
+
+**What was done.** §3's parameter row says *"Tile thickness ~10 nm (single-layer honeycomb)"* and the two clauses
+cannot both hold. This repository resolves it **both ways in different packages** — `ActuatorGeometry.tileThickness`
+and `DnaOrigamiTile.thickness` both default to **10.0**, and every structural study builds a **2 nm** single layer —
+so `C-0022`'s load was computed for a thick tile and the flatness for a thin one. `C-0086` measures the thin sheet at
+1 680 of M13's 7 249 nt, and NDI's answer to decision 5 is *"just make the tile thicker."*
+`Gen1Tile` has built a `four-layer-honeycomb-rigid` variant since iteration 2 and **`TileFlatnessStudy` solves
+`variants.first()`** — the four-layer row has never been carried into any solve at all.
+
+**What was decided, and why.** The cheap bound is a fourth root and ran first: `D_∥` 85.5018587 → 4 547.17603 pN·nm
+and `D_⊥` 3.34504758 → 240.931249 at the measured interlayer coupling, so `C-0058`'s reach goes
+12.8290845 → 34.6447329 nm along the helices and 5.70561353 → 16.6216854 across, and `C-0089`'s run-robustness
+demand falls from **13 columns to 5** — 4 to 9 over the whole coupling bracket, so the direction commits to nothing.
+The solve then said something the bound did not: **the four-layer tile is flat with no coupling at all**,
+0.0577199433 of the stroke against the single layer's 0.307902368 and `T-5b`'s 0.10.
+What survives is a statement about the **coupling**: under `C-0087`'s measured dropout the best coupled four-layer
+90th percentile is 0.116465044, **1.16×** the convention against the single layer's 0.532748246 — a 4.6× narrowing,
+and inside what `C-0089`'s distribution and `C-0093`'s topology axes are already known to buy.
+One circular M13 pays for **exactly four layers and not five**: 6 720 of 7 249 nt, 92.7 %.
+
+**What surprised us.**
+
+1. **The interlayer coupling turned out to be measured, and it closed a 39× bracket to 0.26–0.33.**
+   `INDEPENDENT` and `COMPOSITE` differ by 39.448 for four honeycomb layers and no solve narrows that.
+   Four measured bundles — two lattices, three laboratories, three techniques — put a real crossover-linked body at
+   `f = 0.26–0.33`, and **Wang et al. publish the rigid-composite formula themselves, name it a "naïve model" of
+   "rigidly linked rods", and measure it to over-predict by 2.7×**. `InterlayerCoupling.RIGID` is CanDo's assumption,
+   in the very sentence both of this repository's duplex elastic constants come from.
+2. **`k_s/k_θ = S/B` makes the parallel-axis enhancement the SAME factor along and across the helices, exactly**,
+   so a multi-layer sheet's anisotropy is **invariant** along the whole coupling axis — 18.8735 at both ends.
+   `C-0006`'s standing four-layer variant reads 744.5, which is 39.4× a value the model cannot take at any coupling:
+   it applies the parallel axis in one direction only and is a **mixed state, not a bracket end** (`CH-0124`).
+   And it is not cosmetic: that variant's free-tile dishing is 0.160153834 and would have reported the four-layer
+   tile as **not flat**.
+3. **The grillage never reads `layers`.** `OrigamiGrillage` takes five scalars from its sheet and none of them is the
+   layer count, so building it on the four-layer variant gives a lattice **bit-identical** to the single-layer
+   honeycomb one. The machinery of this repository is single-layer, and its crossover combinatorics are the square
+   lattice's. The four-layer body had to enter as a **smeared equivalent sheet**, and saying so is part of the answer.
+4. **The coupling became the thing that fails.** Every coupled cell of the calibrated four-layer tile reads *worse*
+   under dropout than the uncoupled tile — `CLAUDE.md`'s *"an attachment coupling can be a NET DISHING SOURCE"*
+   read on a tile that no longer needs the correction.
+5. **Eight upstream numbers reproduced at a worst departure of 7.2e−5**, including `C-0089`'s own 0.6142 and
+   0.532748246 and `C-0063`'s 0.3079 — which is what licenses the comparison at all, and the declared falsifier
+   `F5` existed to make that a test rather than an assumption.
+
+**Verification.** `tools/verify.sh --drop-file src/main/kotlin/actuator/TallGapDeviceBStudy.kt
+--drop-file src/test/kotlin/structure/InteriorCrossoverPrestrainTest.kt` — **2 502 tests completed, 4 failed**,
+and all four belong to concurrent agents' unfinished work (`TallGapDeviceBTest`, whose main source had to be
+dropped, and a fresh `ElectrodePotentialOfZeroChargeTest`). No `FourLayerTileTest` failure. Five gates PASS.
+
+**Owed to `ANSWERS.md`, reported rather than edited.** Row (g) — *"Does the tile stay flat?"* — is entirely a
+**2 nm-tile** result and says so nowhere; its closing sentence, *"the question is closed on every coupling axis
+this programme can reach"*, is true of the tile it was derived on and not of the tile §3 specifies, because the
+axis that was never spent is the **body**. §1's own stated open item (ii) is answered. Row 5's *"just make the
+tile thicker"* now has the arithmetic that closes it. `C-0093`'s brick number, carried in row (g), row 6 and
+`DECISIONS-FOR-NDI.md` twice, is under `CH-0125` and should not be re-quoted without it. And it is worth saying
+that **nothing in §2, §5, §6 or the design-window rows moves**, because a reader who learns the tile is five
+times thicker will assume otherwise; the two that would move — `C-0022`'s charge and the stack geometry —
+are named as consequences and are not re-derived.
+
+## Iteration 23 — `T-190`: what the 42 interior crossovers carry, and whether their cancellation holds
+
+`C-0107` closed iteration 22 with a number that decided a verdict and an explanation that had never
+been posed as a question. Its boundary layer is a **field** `u(x)` over the whole row, so every one
+of the sheet's 56 crossovers is built at `(−1)^b u(x)`; read that way `C-0090`'s recommended
+placement is **flat at 0.0922622** of the free stroke, and read as `C-0104` reads it — a prestrain
+on the **14 row-end sites alone** — it **fails** at 0.1022820. `C-0107` attributed the difference to
+the 42 interior sites and said so in as many words: *"The difference between the two readings is the
+42 interior crossovers."* `T-190` asked what those 42 actually carry.
+
+**The answer is that they carry the larger half, and the explanation was wrong in a way that makes
+the claim stronger.** `C-0112`, `gpd/results/T-190-interior-crossover-prestrain.json`.
+
+**1. The field is exactly separable and the verdict is not, and that is the deliverable.** A
+prestrain is a load, so for disjoint site sets the solved field splits as an **identity** — worst
+superposition departure **2.1e−15** in the coefficient vector, at both overall signs. But peak
+dishing is a **seminorm** of that field and does not add: the graded peak is **0.294** of the sum of
+its two parts' peaks. So the cancellation is a **cross term**, and its convention-free measure is
+the cosine of the two dishing fields under the lattice's own area inner product, **−0.579495374**,
+on an interior field carrying **0.688** of the row-end field's area norm. *No part of the flatness
+verdict can be assigned to either site set* — which is a sharper statement than either "separable"
+or "not separable", and it is the one the linearity actually licenses.
+
+**2. The cancellation is structural, and the census sees it before any solve.** On the phase-8
+lattice the 56 sites are 8 columns of 7, and the graded field is `−22.540 / +14.897 / −8.455 /
++2.740` degrees going inward — **even in `x`, alternating with the column**, because `u` is odd and
+`C-0015`'s parity rule ties the glide factor to the column parity. The column next inboard of the
+row end therefore carries **0.661** of the row end's amplitude, on the same seven sites, **at the
+opposite sign**. The ladder confirms it: adding that one column pair recovers **106.2 %** of the
+whole row-end-to-graded move and the two inner pairs walk it back. The 42 interior sites carry
+**53.65 %** of the assembled absolute couple (86.25 pN·nm against 74.51). *"The other 42"* is not a
+remainder.
+
+**3. `C-0107`'s comparison differences three factors, not one.** Its graded field's own row-end
+restriction is uniform — measured, not asserted — at **−22.5397532°**, which is the sign `C-0107`
+itself calls **adverse**, because the lattice's parity rule puts every even interface's row-end
+crossover at the negative end and the glide factor cancels the alternation. So the consistent
+row-end-only counterpart of 0.0922622 is **0.1190748**, not 0.1022820, and the published 0.0100 is
+an interior term **plus a sign flip running the other way**. The `2 × 2 × 2` factorial separates
+them: station **0.0002586**, interior **0.0268125**, sign **0.0170514**. **The interior term is
+2.68× what was credited to it.** `CH-0129`.
+
+The cause is worth recording on its own: `C-0107`'s Deliverable 3 *prose* derives the sign on an
+**assumed** end assignment (`b` even ↔ `+L/2`) and its gate-3 test asserts that assumption, while
+its *study* reads the assignment off the **lattice** and gets the opposite. Both are internally
+consistent; they differ by exactly the global factor that `CH-0130` shows nothing in this repository
+determines. **A gate written on an assumed geometry does not test the geometry the study solves.**
+
+**4. The overall sign was never a settled quantity, and reading the other one costs one solve.**
+`C-0107`'s Deliverable 3 settles a **relative** question — whether the 14 share a sign — and its
+composition argument is right. It does not settle the **absolute** one: relabelling the interfaces
+by one negates the whole field, and no source or claim here fixes which interface parity folds which
+way. `C-0104` sweeps the sign at every rung; `C-0107` sweeps it for the row-end-only states and not
+for the graded one. The missing state reads **0.0910197** — flat. `CH-0130`, raised and discharged
+on the number in the same claim.
+
+**5. So `C-0107`'s 0.0922622 survives, and survives more robustly than it was published.**
+Reproduced here at **1.1e−10** on the same host; flat at **both** overall signs; and flat at **40 of
+40** cells of `C-0107`'s own 12-cell boundary-layer bracket at both signs — including 16 cells where
+the **lattice's** hinge is moved with `α` as well as the field's, which `C-0107` did not run —
+against **14 of 40** for the row-end-only idealisation. The reason is one ratio: **the row-end-only
+idealisation is the `λ → 0` limit of the graded field**, and at `λ = 18.62 nm` against a 19.04 nm
+half-row the Gen-1 tile is nowhere near it. `C-0104`'s three distributions are maps on 14 sites
+because `C-0104` had no field; `C-0107` has one, and it covers the tile.
+
+**What surprised us.** Four things. That the interior sites are the **larger** half of the
+eigenstrain, when the question was posed as *"what do the other 42 carry"*. That **one** column pair
+does the entire cancellation and slightly overshoots it, so the inner 28 sites are a correction to a
+correction. That a claim's prose and its own solve could disagree about a sign that neither is wrong
+about, because the quantity is genuinely undetermined. And that the first emission of this study
+flattened its own load-bearing `2.1e−15` to exactly `0.0` through `RESULT_ABSOLUTE_FLOOR` — the
+**third** recorded instance of *"an absolute floor is a claim about units and it does not travel"*,
+committed by an agent who had read the entry. Lowering the floor to `0.0` then hit the **second**
+half of the same `CLAUDE.md` entry — `roundForResult` throws `Cannot round NaN value` on an exact
+zero when its floor is zero — which is a latent defect in a shared rounding site that no caller had
+reached, because every existing caller passes a positive floor that catches the zero first. Repaired
+with a test — a strict no-op for all forty-odd existing callers, the smallest floor in use elsewhere being
+`1e-18`, which is exactly why it had gone six iterations unfound. **An entry that names a defect is not a repair.**
+
+**What `ANSWERS.md` owes.** It carries `C-0104` and **stops there**: `C-0107` is not mentioned at
+all, so the deliverable does not carry the derived **17.15–24.98°** value, the reversal of `C-0099`'s
+oxDNA recommendation, the Snodin scope clause that excludes exactly these sites, or now `C-0112`'s
+decomposition. The *"still missing measurements"* list still reads *"the tension in a row-end
+crossover … `T-5b`'s 0.10 sits at 15.45°"*, which is `C-0104`'s threshold with no value beside it.
+Two iterations of this branch are un-synthesised. Not edited here, per the iteration's scope.
+
+---
+
+## Iteration 23 — `T-192`: the corner all three NDI answers point at is empty, and NDI's own objection was the right one
+
+**Task.** NDI answered decision 4 with *"2 devices"*, which makes §3's **desired** clause its own device with
+`C-0017`'s arithmetic giving it `k_c = 100 pN / 10 nm = 10 pN/nm`; and decision 2 with *"17-26 nm of polymer
+thickness is beyond the regime I've bothered to examine as the debye length of operation in 2 mM MgCl2 is only
+about 4 nm … an interesting regime we've been reserving, again, for low MgCl2 concentrations"*.
+Together they name one corner — a 10 pN/nm coupling on a 17–26 nm layer at 0.5 mM — and NDI's own reason for
+not having examined it was an objection **no claim in this repository had ever answered**: nothing here had
+evaluated the bias that delivers §3's 100 pN across a gap taller than 15 nm.
+
+**What was done.** `C-0008`'s nonlinear Poisson-Boltzmann gap solve and `C-0018`'s stroke-parametrised
+equilibrium path, re-run as libraries at heights neither has been asked about: 30 reachability cells over
+5–26 nm × 0.5/1/2 mM, six reachability **thresholds**, a layer census under **two** grafting-density rules,
+and **384** solved states — 4 heights × 2 rules × 6 `C-0003` models × 2 buffers × 4 load lines (free,
+device-B at 10 pN/nm, device-A at 33.333, and a 100 pN dead load). `C-0110`.
+
+**The answer, and it upholds the objection.** §3's 100 pN stops arriving across a gap of **13.6989 nm at
+0.5 mM**, 11.8724 at 1 mM and 10.1299 at 2 mM. Every one of them is below the **bottom** of NDI's band: the
+0.5 mM reserve moves the threshold by 1.352×, and NDI's 17 nm *begins* 1.24× beyond where the reserve leaves
+it. So §3's force target is reached across a resting 17–26 nm gap at **0 of 12** cells — 49.967079 pN at the
+best of them (17 nm, 0.5 mM, 1.0 V) and 1.10569504 pN at the worst — and pushing from the point-ion 1.0 V to
+the 1.23 V
+electrochemical bound is worth **0.05 nm**, because the force is already saturated in bias.
+
+**And the corner takes device A down with it.** Device B is ADMITTED at **1 of 96** states, in **1 of 6**
+layer models — 17 nm, held-density, 0.5 mM, `strong-stretching(virial)`, `V* = 0.167607 V`, `|k_eff| =
+1.02367 pN/nm`, margin 9.77×, no fold — which is a **bracket disagreement and not a design**, because at the
+same height and buffer `alexander-box(two-body)` folds at a 5.83 nm stroke. Device A, §3's *acceptable*
+clause, is refused at **96 of 96**, every one for the same reason: a 3 nm stroke from a 17–26 nm layer leaves
+a 14–23 nm gap and the field cannot put 100 pN across it. **A tall layer is not a trade of one device for the
+other. It loses both.**
+
+**What it does buy is exactly what `C-0050` priced and no more.** The **uncoupled** tile reaches a 10 nm
+stroke at **52 of 96** tall states, including three of six models at 26 nm in 0.5 mM. `C-0050`'s escape
+table — reproduced here to ≤ 2.0e−4 at all six models — is a root of `P(L₀−10)·A = 100 pN`, a statement about
+a **compression**; it never asks whether any field can apply the hundred piconewtons at the resulting gap.
+**The escape is real in displacement and empty in force**, and the two had never been separated. `CH-0127`.
+
+**A second challenge, and it needed no solver.** §3's effort-point row — *"~20–25 nm above the electrode"* —
+is reproduced **at both ends** by §3's own three layer heights plus a 10 nm tile and a 5 nm attachment
+(20 / 22 / 25 nm), which is why `CLAUDE.md` records the row as *fixing* the standoff at 5 nm. At 17–26 nm the
+same addition gives **32–41 nm**, and 27–36 nm with the lever bonded straight onto the tile — **1.08× to
+1.64× past the top of the band**. `C-0050`, `ANSWERS.md`, `TASKS.md` and `DECISIONS-FOR-NDI.md` all cite that
+row as evidence the geometry *"is not absurd"*. It is the row that refuses. `CH-0126`.
+
+**What surprised us.** Four things.
+
+**1. The declared falsifier fired, and in the adverse direction.** `T-192` declared that if the measured decay
+length departed from the bulk `λ_D` by more than 10 %, this programme's standing *"the Debye length is three
+numbers here"* answer would apply and NDI's objection would be using the wrong one. It departs by up to 35 %
+— and the *wrong way*. `ℓ/λ_D` is a function of `κh`, not of `h`: at 2 mM, where 17–26 nm is 4.33–6.62 Debye
+lengths, it is **0.910–0.983** and `C-0008`'s far-field limit is essentially reached, so NDI's number is
+exactly right there; at 0.5 mM, where the same gaps are only 2.16–3.31 Debye lengths, it is
+**0.649–0.819** — the field decays *faster* than the bulk Debye length, so **diluting the buffer makes NDI's
+own estimate optimistic rather than conservative**. The counterion-dominance answer is not wrong, it is about
+the wrong quantity: the ratio at these gaps is still 6.37–38.94 (ion **content**), while the length that
+follows from it, 1.54–1.91 nm, is nowhere near the measured 3.6–6.4 nm decay. `CH-0004`'s own escape clause
+fires a second time, a gap decade further out.
+
+**2. The reserve helps and the direction of the trade was predicted backwards.** The task's Plan predicted
+that dropping 2 mM → 0.5 mM would buy the exponent and pay for it in the prefactor, on the argument that the
+saturated far-field amplitude goes as the bulk ion density. Measured, the net is **+4.10× to +9.56×** at
+17–26 nm: the exponential wins outright. The prediction was wrong in sign and irrelevant in consequence — the
+gain is real and the shortfall is still 2.00–9.46×. Recording it because a Plan's prediction is a falsifiable
+artefact and this one was falsified.
+
+**3. `i * (X/n)` at `i == n` need not equal `X`, and a range `require` then kills a nine-minute sweep.**
+`EquilibriumPath.fold`'s coarse scan evaluates `at(i * step)` with `step = strokeCeiling/coarseSteps`. On this
+task's `strokeCeiling = 25.144662445344164` nm the twelfth step landed at `25.144662445344167` — **three
+units in the last place above the ceiling** — and `at`'s own range check threw, three quarters of the way
+through the sweep. Repaired with `minOf(i * step, strokeCeiling)` and the same clamp on the golden-section
+bracket. The repair **moves no emitted number anywhere in the repository, and that is a proof rather than an
+estimate**: `minOf(a, b)` returns `a` bit-identically whenever `a ≤ b`, and the only altered path previously
+threw and therefore produced no result file to move. Six studies consume `EquilibriumPath` and none can move.
+
+**4. A convergence axis was written at a state where the quantity does not exist, by an agent who had read
+the entry warning about it.** The fold axis was first named in advance — 20 nm, held-density, 0.5 mM — and
+that state has **no fold**, so it converged on `null` and reported `0` at all six settings, silently. It is
+`CLAUDE.md`'s own *"pick the axis's state AFTER the sweep, from the states where the quantity survives"*, and
+the cure is one line: the axis now selects the first device-B state that actually folded. 76 of the 96
+device-B states have no fold, so the odds of naming a good one in advance were 1 in 5.
+
+**5. The re-emission measurement the coordinator asked for found a stale file, and it was not this
+repair's.** `C-0110` changed a **shared** main source, so the argument that it moves nothing had to become a
+measurement. All five studies in the repository that call `EquilibriumPath.fold` were re-emitted: **`T-4`,
+`T-60`, `T-76` and `T-149` came back byte-identical, and `T-157` moved by 17 fields.** A controlled A/B —
+an isolated copy with `PullInStability.kt` restored to `HEAD`, same inputs — returns a `T-157` **byte-identical
+to the repaired run**, so all 17 belong to the *input*. `T-157` reads `T-149` at run time, and **`C-0101`
+re-emitted `T-157` BEFORE it re-emitted `T-149`, in the same commit**: the committed `T-157` reproduces the
+**pre-`C-0101`** `T-149` margins digit for digit at all twelve rows. So `C-0092`'s `A5` clause *"the margins
+move by 1.0000–3.3380×"* is measuring a difference `C-0101` had already absorbed upstream, and the correct
+reading is **1.0000 everywhere**. `CH-0131`, `T-200`.
+
+The lesson is one `CLAUDE.md` already carries — *"its hazard is not size but ORDER"* — and it was made by
+**`C-0101`, the claim that established the re-emission discipline**, inside its own eleven-file sweep. A
+re-emission needs a **topological sort** of the reader census, not a list; `tools/result-reader-census.py`
+already computes the edges. And the residual sat unread for six iterations because nothing re-runs a file
+whose producer nobody touched. **A proof that a change is invisible is not a substitute for running the
+consumers, because the run also checks everything the proof was not about.**
+
+**What `ANSWERS.md` owes.** Four things, none edited here per the iteration's scope.
+§6 row 2 (decision 2) still says *"§3's own tile row already allows the effort point at '~20–25 nm above the
+electrode', so the geometry is not absurd"* — withdrawn by `CH-0126` — and still says *"nothing here has
+evaluated one"* and *"nothing has evaluated the bias that delivers 100 pN across such a gap (`T-192`)"*, both
+of which `C-0110` closes. §6 row 4 (decision 4) still says device B is *"refused by `C-0017`'s floor at
+2.34–2.79× at the 10 nm layer in 2 mM, which rows 1 and 2 together say device B need not occupy"* — the
+implied escape is now measured and empty. §1's *"unreachable in physics — NO, and it is false; a taller layer
+delivers it"*, inherited from `C-0050`, needs the displacement/force split of `CH-0127`. And the headline
+number the deliverable does not carry at all is the one a specification conversation needs: **§3's 100 pN
+stops arriving at 13.6989 nm at 0.5 mM.**
+
+---
+
+## Iteration 23 (coordinator) — four agents in parallel, and the largest single result since iteration 20
+
+**Shape of the iteration.** Four subagents on the four highest-priority unblocked items, run concurrently;
+the coordinator took `T-183` and `T-194` in the main context and did the staging, the cross-checking and
+the commit. Numbers were reserved in `TASKS.md` **before** any agent started — and for the first time in
+seven iterations there were **zero collisions**. Every reserved number was used, and every number taken
+outside a block was taken above every block and reported.
+
+**What the iteration found, in order of how much it moves.**
+
+**1. The flatness negative does not survive the tile §3 actually specifies** (`C-0109`, `T-191`). Not
+because a coupling works on the thicker tile — because the thicker tile **does not need one**. At the
+interlayer coupling four measured origami bundles support, a four-layer honeycomb tile at `C-0086`'s
+buildable 38.08 nm dishes **0.0577199433** of the stroke under `C-0022`'s solved collar **with no
+attachment coupling at all**, inside `T-5b`'s 0.10, against the single-layer tile's **0.307902368**. One
+circular M13 pays for **exactly four layers and not five** (6 720 of 7 249 nt, 92.7 %) — which is NDI's
+own arithmetic, arriving from the direction nobody was watching. The cheap bound predicted it before any
+lattice was assembled and needed only a fourth root. **§4(g) of `ANSWERS.md` is a result about a 2 nm tile
+and says so nowhere.**
+
+**2. NDI's own objection to decision 2 is upheld, and it is worse than NDI stated** (`C-0110`, `T-192`).
+§3's 100 pN stops arriving across a gap of **13.6989179 nm at 0.5 mM** — *below the bottom* of NDI's
+17–26 nm band. A tall layer does not trade device A for device B: it **loses both**, refused at 96 of 96
+states on the acceptable clause. And the concession is ours — this programme's standing rebuttal
+(*"the Debye length is three numbers and the gap's is counterion-set"*) is about ion **content** and never
+about the **decay**, and diluting to 0.5 mM makes NDI's own estimate **optimistic**, because the far field
+is reached in `κh` and not in `h`.
+
+**3. That killed `T-194`'s premise between the queue row and the measurement** (`C-0114`). The row said
+*"the tall layer is the only route to a whole clause of §3"*; it is a route to **none**. So the re-issue of
+decisions 1 and 2 is a **correction**, labelled as one, and the reserve NDI can spend once has **one**
+claimant rather than two. What is left is a **price** question, which is NDI's column and not ours —
+the same distinction the answer to decision 1 already taught us.
+
+**4. The unresolved electrode quantity was a SIGN, not a magnitude** (`C-0111`, `T-193`). Gold's PZC is
+**0.46–0.51 V vs SHE**, read directly, and it is 90–576× the deciding scale: an electrode at zero volt on
+the rational scale is negatively charged and **lifts** the tile. The whole sign structure lives inside
+**11.2 mV**. The material half moved no verdict and moved one *ground*. The residue is a one-line ask about
+the **cell's** definition of zero, now filed under decision 3.
+
+**5. `C-0107`'s 0.0922622 survives and its explanation does not** (`C-0112`, `T-190`). The field is exactly
+separable — a prestrain is a load, so the 14 + 42 split is an identity to `2.1e−15` — and the **verdict is
+not**, because peak dishing is a seminorm. The 42 interior sites are the **larger** half (53.65 % of the
+assembled absolute couple), and the published comparison differences two states that differ in **three**
+factors.
+
+**What the coordinator's own two items were.** `T-183` (`C-0113`) taught the deliverable's
+self-consistency check to read challenge statuses — and the thing it fired on was a **false positive**,
+which is the result: whole-sentence attribution read a task's verdict onto a challenge named 180 characters
+later in the same table row. Two measured guards, zero false positives. `T-194` (`C-0114`) is above.
+
+**The one process lesson worth carrying, and it is about coordination rather than physics.** Agent B
+changed a **shared** main source and its comment asserted *"no emitted number moves"*. Asked for the
+measurement rather than the proof, it re-ran all five consumers — and the run found something the proof
+could not: `C-0101` re-emitted `T-157` **before** its own input `T-149` in one commit, so `C-0092`'s
+*"the margins move by 1.0000–3.3380×"* measures a difference that had already been absorbed, and the true
+reading is 1.0000 everywhere (`CH-0131`, `T-200`). **A proof that a change is invisible is not a substitute
+for running the consumers, because the run also checks everything the proof was not about.** One question,
+one defect.
+
+**And a harness lesson.** Four agents each running a `verify` and a `study` is past this box: load 11.3,
+3 GB available, and the documented `-Xmx3g` OOM'd anyway, because that cure is **per daemon** and the
+constraint is the **product**. Nothing broke — Gradle fell back to in-process and every study landed. Four
+agents is the ceiling for *filing* work, not for *compiling* it.
+
+**What is owed.** `ANSWERS.md` now carries the largest debt any synthesis pass has faced, and **three of
+the four agents reported it independently** — which is itself the finding, since none could see the others'.
+Queued as `T-201`.

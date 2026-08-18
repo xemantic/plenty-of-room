@@ -1,0 +1,3722 @@
+{
+ "Rigid DNA beams for high-resolution single-molecule mechanics Pfitzner": {
+  "indexed": {
+   "date-parts": [
+    [
+     2024,
+     5,
+     10
+    ]
+   ],
+   "date-time": "2024-05-10T01:12:18Z",
+   "timestamp": 1715303538004
+  },
+  "reference-count": 45,
+  "publisher": "Wiley",
+  "issue": "30",
+  "license": [
+   {
+    "start": {
+     "date-parts": [
+      [
+       2013,
+       6,
+       21
+      ]
+     ],
+     "date-time": "2013-06-21T00:00:00Z",
+     "timestamp": 1371772800000
+    },
+    "content-version": "vor",
+    "delay-in-days": 0,
+    "URL": "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+   }
+  ],
+  "content-domain": {
+   "domain": [],
+   "crossmark-restriction": false
+  },
+  "short-container-title": [
+   "Angewandte Chemie"
+  ],
+  "published-print": {
+   "date-parts": [
+    [
+     2013,
+     7,
+     22
+    ]
+   ]
+  },
+  "DOI": "10.1002/ange.201302727",
+  "type": "journal-article",
+  "created": {
+   "date-parts": [
+    [
+     2013,
+     6,
+     21
+    ]
+   ],
+   "date-time": "2013-06-21T17:29:09Z",
+   "timestamp": 1371835749000
+  },
+  "page": "7920-7925",
+  "source": "Crossref",
+  "is-referenced-by-count": 16,
+  "title": [
+   "Rigid DNA Beams for High\u2010Resolution Single\u2010Molecule Mechanics"
+  ],
+  "prefix": "10.1002",
+  "volume": "125",
+  "author": [
+   {
+    "given": "Emanuel",
+    "family": "Pfitzner",
+    "sequence": "first",
+    "affiliation": [],
+    "role": [
+     {
+      "role": "author",
+      "vocabulary": "crossref"
+     }
+    ]
+   },
+   {
+    "given": "Christian",
+    "family": "Wachauf",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "role": "author",
+      "vocabulary": "crossref"
+     }
+    ]
+   },
+   {
+    "given": "Fabian",
+    "family": "Kilchherr",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "role": "author",
+      "vocabulary": "crossref"
+     }
+    ]
+   },
+   {
+    "given": "Benjamin",
+    "family": "Pelz",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "role": "author",
+      "vocabulary": "crossref"
+     }
+    ]
+   },
+   {
+    "given": "William M.",
+    "family": "Shih",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "role": "author",
+      "vocabulary": "crossref"
+     }
+    ]
+   },
+   {
+    "given": "Matthias",
+    "family": "Rief",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "role": "author",
+      "vocabulary": "crossref"
+     }
+    ]
+   },
+   {
+    "given": "Hendrik",
+    "family": "Dietz",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "role": "author",
+      "vocabulary": "crossref"
+     }
+    ]
+   }
+  ],
+  "member": "311",
+  "published-online": {
+   "date-parts": [
+    [
+     2013,
+     6,
+     21
+    ]
+   ]
+  },
+  "reference": [
+   {
+    "key": "e_1_2_3_1_2",
+    "unstructured": "\u00a0"
+   },
+   {
+    "key": "e_1_2_3_2_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1126/science.276.5315.1109"
+   },
+   {
+    "key": "e_1_2_3_3_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1126/science.275.5304.1295"
+   },
+   {
+    "key": "e_1_2_3_4_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1038/nature09021"
+   },
+   {
+    "key": "e_1_2_3_5_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1126/science.1225722"
+   },
+   {
+    "key": "e_1_2_3_6_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1126/science.1151298"
+   },
+   {
+    "key": "e_1_2_3_7_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1146/annurev.biophys.36.101106.101451"
+   },
+   {
+    "key": "e_1_2_3_8_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1038/nature04974"
+   },
+   {
+    "key": "e_1_2_3_9_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1038/nature01405"
+   },
+   {
+    "key": "e_1_2_3_10_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1073/pnas.0602995103"
+   },
+   {
+    "key": "e_1_2_3_11_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1126/science.1116702"
+   },
+   {
+    "key": "e_1_2_3_12_2",
+    "unstructured": "\u00a0"
+   },
+   {
+    "key": "e_1_2_3_13_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1038/nature06522"
+   },
+   {
+    "key": "e_1_2_3_14_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1038/nature06410"
+   },
+   {
+    "key": "e_1_2_3_15_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1007/978-1-61779-142-0_18"
+   },
+   {
+    "key": "e_1_2_3_16_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1073/pnas.0603342103"
+   },
+   {
+    "key": "e_1_2_3_17_2",
+    "unstructured": "\u00a0"
+   },
+   {
+    "key": "e_1_2_3_18_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1038/nature04268"
+   },
+   {
+    "key": "e_1_2_3_19_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1038/nature06716"
+   },
+   {
+    "key": "e_1_2_3_20_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1016/j.bpj.2011.01.071"
+   },
+   {
+    "key": "e_1_2_3_21_2",
+    "unstructured": "\u00a0"
+   },
+   {
+    "key": "e_1_2_3_22_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1126/science.1224139"
+   },
+   {
+    "key": "e_1_2_3_23_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1126/science.1158881"
+   },
+   {
+    "key": "e_1_2_3_24_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1016/j.bpj.2009.06.031"
+   },
+   {
+    "key": "e_1_2_3_25_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1529/biophysj.107.112995"
+   },
+   {
+    "key": "e_1_2_3_26_2",
+    "unstructured": "\u00a0"
+   },
+   {
+    "key": "e_1_2_3_27_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1038/nature01406"
+   },
+   {
+    "key": "e_1_2_3_28_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1038/nature04586"
+   },
+   {
+    "key": "e_1_2_3_29_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1038/nature08016"
+   },
+   {
+    "key": "e_1_2_3_30_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1126/science.1174251"
+   },
+   {
+    "key": "e_1_2_3_31_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1103/PhysRevLett.77.2581"
+   },
+   {
+    "key": "e_1_2_3_32_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1021/nl203503s"
+   },
+   {
+    "key": "e_1_2_3_33_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1038/nature01810"
+   },
+   {
+    "key": "e_1_2_3_34_2",
+    "unstructured": "\u00a0"
+   },
+   {
+    "key": "e_1_2_3_35_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1073/pnas.0511048103"
+   },
+   {
+    "key": "e_1_2_3_36_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1126/science.1133601"
+   },
+   {
+    "key": "e_1_2_3_37_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1002/cphc.201100814"
+   },
+   {
+    "key": "e_1_2_3_38_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1093/nar/gkp436"
+   },
+   {
+    "key": "e_1_2_3_39_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1073/pnas.0700930104"
+   },
+   {
+    "key": "e_1_2_3_40_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1063/1.1699114"
+   },
+   {
+    "key": "e_1_2_3_41_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1007/s004380050930"
+   },
+   {
+    "key": "e_1_2_3_42_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1073/pnas.1211274109"
+   },
+   {
+    "key": "e_1_2_3_43_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1063/1.4753917"
+   },
+   {
+    "key": "e_1_2_3_44_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1063/1.2356852"
+   },
+   {
+    "key": "e_1_2_3_45_2",
+    "doi-asserted-by": "publisher",
+    "DOI": "10.1073/pnas.1214051110"
+   }
+  ],
+  "container-title": [
+   "Angewandte Chemie"
+  ],
+  "language": "de",
+  "link": [
+   {
+    "URL": "https://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fange.201302727",
+    "content-type": "unspecified",
+    "content-version": "vor",
+    "intended-application": "text-mining"
+   },
+   {
+    "URL": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/ange.201302727",
+    "content-type": "unspecified",
+    "content-version": "vor",
+    "intended-application": "similarity-checking"
+   }
+  ],
+  "deposited": {
+   "date-parts": [
+    [
+     2023,
+     10,
+     17
+    ]
+   ],
+   "date-time": "2023-10-17T13:55:17Z",
+   "timestamp": 1697550917000
+  },
+  "score": 56.60375,
+  "resource": {
+   "primary": {
+    "URL": "https://onlinelibrary.wiley.com/doi/10.1002/ange.201302727"
+   }
+  },
+  "issued": {
+   "date-parts": [
+    [
+     2013,
+     6,
+     21
+    ]
+   ]
+  },
+  "references-count": 45,
+  "journal-issue": {
+   "issue": "30",
+   "published-print": {
+    "date-parts": [
+     [
+      2013,
+      7,
+      22
+     ]
+    ]
+   }
+  },
+  "alternative-id": [
+   "10.1002/ange.201302727"
+  ],
+  "URL": "https://doi.org/10.1002/ange.201302727",
+  "archive": [
+   "Portico"
+  ],
+  "ISSN": [
+   "0044-8249",
+   "1521-3757"
+  ],
+  "issn-type": [
+   {
+    "value": "0044-8249",
+    "type": "print"
+   },
+   {
+    "value": "1521-3757",
+    "type": "electronic"
+   }
+  ],
+  "published": {
+   "date-parts": [
+    [
+     2013,
+     6,
+     21
+    ]
+   ]
+  }
+ },
+ "Nanoscale structure and microscale stiffness of DNA nanotubes Schiffels Nadrian Fygenson": {
+  "indexed": {
+   "date-parts": [
+    [
+     2026,
+     8,
+     5
+    ]
+   ],
+   "date-time": "2026-08-05T12:21:14Z",
+   "timestamp": 1785932474595,
+   "version": "3.56.0"
+  },
+  "reference-count": 45,
+  "publisher": "American Chemical Society (ACS)",
+  "issue": "8",
+  "content-domain": {
+   "domain": [],
+   "crossmark-restriction": false
+  },
+  "short-container-title": [
+   "ACS Nano"
+  ],
+  "published-print": {
+   "date-parts": [
+    [
+     2013,
+     8,
+     27
+    ]
+   ]
+  },
+  "DOI": "10.1021/nn401362p",
+  "type": "journal-article",
+  "created": {
+   "date-parts": [
+    [
+     2013,
+     7,
+     23
+    ]
+   ],
+   "date-time": "2013-07-23T14:17:13Z",
+   "timestamp": 1374589033000
+  },
+  "page": "6700-6710",
+  "source": "Crossref",
+  "is-referenced-by-count": 103,
+  "title": [
+   "Nanoscale Structure and Microscale Stiffness of DNA Nanotubes"
+  ],
+  "prefix": "10.1021",
+  "volume": "7",
+  "author": [
+   {
+    "given": "Daniel",
+    "family": "Schiffels",
+    "sequence": "first",
+    "affiliation": [
+     {
+      "name": "Physics Department, University of California, Santa Barbara, California, United States"
+     },
+     {
+      "name": "Physik Department and CeNS, Ludwig-Maximilians-Universit\u00e4t, M\u00fcnchen, Germany"
+     }
+    ],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Tim",
+    "family": "Liedl",
+    "sequence": "additional",
+    "affiliation": [
+     {
+      "name": "Physik Department and CeNS, Ludwig-Maximilians-Universit\u00e4t, M\u00fcnchen, Germany"
+     }
+    ],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Deborah K.",
+    "family": "Fygenson",
+    "sequence": "additional",
+    "affiliation": [
+     {
+      "name": "Physics Department, University of California, Santa Barbara, California, United States"
+     }
+    ],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   }
+  ],
+  "member": "316",
+  "published-online": {
+   "date-parts": [
+    [
+     2013,
+     7,
+     31
+    ]
+   ]
+  },
+  "reference": [
+   {
+    "key": "ref1/cit1",
+    "doi-asserted-by": "crossref",
+    "first-page": "65",
+    "DOI": "10.1146/annurev-biochem-060308-102244",
+    "volume": "79",
+    "author": "Seeman N. C.",
+    "year": "2010",
+    "journal-title": "Annu. Rev. Biochem."
+   },
+   {
+    "key": "ref2/cit2",
+    "doi-asserted-by": "crossref",
+    "first-page": "6644",
+    "DOI": "10.1073/pnas.0700930104",
+    "volume": "104",
+    "author": "Douglas S. M.",
+    "year": "2007",
+    "journal-title": "Proc. Natl. Acad. Sci. U.S.A."
+   },
+   {
+    "key": "ref3/cit3",
+    "doi-asserted-by": "crossref",
+    "first-page": "74",
+    "DOI": "10.1038/nature08274",
+    "volume": "461",
+    "author": "Zheng J.",
+    "year": "2009",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "ref4/cit4",
+    "doi-asserted-by": "crossref",
+    "first-page": "109",
+    "DOI": "10.1038/nature10257",
+    "volume": "476",
+    "author": "Berardi M. J.",
+    "year": "2011",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "ref5/cit5",
+    "doi-asserted-by": "crossref",
+    "first-page": "831",
+    "DOI": "10.1126/science.1214081",
+    "volume": "335",
+    "author": "Douglas S. M.",
+    "year": "2012",
+    "journal-title": "Science"
+   },
+   {
+    "key": "ref6/cit6",
+    "doi-asserted-by": "crossref",
+    "first-page": "4254",
+    "DOI": "10.1021/nl301877k",
+    "volume": "12",
+    "author": "Liu X.",
+    "year": "2012",
+    "journal-title": "Nano Lett."
+   },
+   {
+    "key": "ref7/cit7",
+    "doi-asserted-by": "crossref",
+    "first-page": "61",
+    "DOI": "10.1038/nnano.2009.311",
+    "volume": "5",
+    "author": "Maune H. T.",
+    "year": "2010",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "ref8/cit8",
+    "doi-asserted-by": "crossref",
+    "first-page": "268",
+    "DOI": "10.1038/nnano.2011.49",
+    "volume": "6",
+    "author": "Tan S. J.",
+    "year": "2011",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "ref9/cit9",
+    "doi-asserted-by": "crossref",
+    "first-page": "311",
+    "DOI": "10.1038/nature10889",
+    "volume": "483",
+    "author": "Kuzyk A.",
+    "year": "2012",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "ref10/cit10",
+    "doi-asserted-by": "crossref",
+    "first-page": "8870",
+    "DOI": "10.1002/anie.200903308",
+    "volume": "48",
+    "author": "Steinhauer C.",
+    "year": "2009",
+    "journal-title": "Angew. Chem."
+   },
+   {
+    "key": "ref11/cit11",
+    "doi-asserted-by": "crossref",
+    "first-page": "1592",
+    "DOI": "10.1021/ja907649w",
+    "volume": "132",
+    "author": "Endo M.",
+    "year": "2010",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "ref12/cit12",
+    "doi-asserted-by": "crossref",
+    "first-page": "689",
+    "DOI": "10.1002/cphc.201000781",
+    "volume": "12",
+    "author": "Stein I. H.",
+    "year": "2011",
+    "journal-title": "ChemPhysChem"
+   },
+   {
+    "key": "ref13/cit13",
+    "doi-asserted-by": "crossref",
+    "first-page": "512",
+    "DOI": "10.1021/nl204098n",
+    "volume": "12",
+    "author": "Bell N. A.",
+    "year": "2012",
+    "journal-title": "Nano Lett."
+   },
+   {
+    "key": "ref14/cit14",
+    "doi-asserted-by": "crossref",
+    "first-page": "4864",
+    "DOI": "10.1002/anie.201200688",
+    "volume": "51",
+    "author": "Wei R.",
+    "year": "2012",
+    "journal-title": "Angew. Chem."
+   },
+   {
+    "key": "ref15/cit15",
+    "doi-asserted-by": "crossref",
+    "first-page": "16344",
+    "DOI": "10.1021/ja044319l",
+    "volume": "126",
+    "author": "Rothemund P. W. K.",
+    "year": "2004",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "ref16/cit16",
+    "doi-asserted-by": "crossref",
+    "first-page": "16342",
+    "DOI": "10.1021/ja043890h",
+    "volume": "126",
+    "author": "Mitchell J. C.",
+    "year": "2004",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "ref17/cit17",
+    "doi-asserted-by": "crossref",
+    "first-page": "661",
+    "DOI": "10.1021/nl050084f",
+    "volume": "5",
+    "author": "Mathieu F.",
+    "year": "2005",
+    "journal-title": "Nano Lett."
+   },
+   {
+    "key": "ref18/cit18",
+    "doi-asserted-by": "crossref",
+    "first-page": "1379",
+    "DOI": "10.1021/nl0603505",
+    "volume": "6",
+    "author": "O\u2019Neill P.",
+    "year": "2006",
+    "journal-title": "Nano Lett."
+   },
+   {
+    "key": "ref19/cit19",
+    "doi-asserted-by": "crossref",
+    "first-page": "824",
+    "DOI": "10.1126/science.1157312",
+    "volume": "321",
+    "author": "Yin P.",
+    "year": "2008",
+    "journal-title": "Science"
+   },
+   {
+    "key": "ref20/cit20",
+    "doi-asserted-by": "crossref",
+    "first-page": "1606",
+    "DOI": "10.1021/ja207976q",
+    "author": "Wang T.",
+    "year": "2012",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "ref21/cit21",
+    "doi-asserted-by": "crossref",
+    "first-page": "349",
+    "DOI": "10.1038/nnano.2009.72",
+    "volume": "4",
+    "author": "Aldaye F. A.",
+    "year": "2009",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "ref22/cit22",
+    "doi-asserted-by": "crossref",
+    "first-page": "623",
+    "DOI": "10.1038/nature11075",
+    "volume": "485",
+    "author": "Wei B.",
+    "year": "2012",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "ref23/cit23",
+    "doi-asserted-by": "crossref",
+    "first-page": "1177",
+    "DOI": "10.1126/science.1227268",
+    "volume": "338",
+    "author": "Ke Y.",
+    "year": "2012",
+    "journal-title": "Science"
+   },
+   {
+    "key": "ref24/cit24",
+    "doi-asserted-by": "crossref",
+    "first-page": "297",
+    "DOI": "10.1038/nature04586",
+    "volume": "440",
+    "author": "Rothemund P. W. K.",
+    "year": "2006",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "ref25/cit25",
+    "doi-asserted-by": "crossref",
+    "first-page": "414",
+    "DOI": "10.1038/nature08016",
+    "volume": "459",
+    "author": "Douglas S. M.",
+    "year": "2009",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "ref26/cit26",
+    "doi-asserted-by": "crossref",
+    "first-page": "725",
+    "DOI": "10.1126/science.1174251",
+    "volume": "325",
+    "author": "Dietz H.",
+    "year": "2009",
+    "journal-title": "Science"
+   },
+   {
+    "key": "ref27/cit27",
+    "doi-asserted-by": "crossref",
+    "first-page": "15903",
+    "DOI": "10.1021/ja906381y",
+    "volume": "131",
+    "author": "Ke Y.",
+    "year": "2009",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "ref28/cit28",
+    "doi-asserted-by": "crossref",
+    "first-page": "520",
+    "DOI": "10.1038/nnano.2010.107",
+    "volume": "5",
+    "author": "Liedl T.",
+    "year": "2010",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "ref29/cit29",
+    "doi-asserted-by": "crossref",
+    "first-page": "5558",
+    "DOI": "10.1021/nl203503s",
+    "volume": "11",
+    "author": "Kauert D. J.",
+    "year": "2011",
+    "journal-title": "Nano Lett."
+   },
+   {
+    "key": "ref30/cit30",
+    "doi-asserted-by": "crossref",
+    "first-page": "279",
+    "DOI": "10.1016/S0959-440X(00)00085-3",
+    "volume": "10",
+    "author": "Bustamante C.",
+    "year": "2000",
+    "journal-title": "Curr. Opin. Struct. Biol."
+   },
+   {
+    "key": "ref31/cit31",
+    "doi-asserted-by": "crossref",
+    "first-page": "423",
+    "DOI": "10.1038/nature01405",
+    "volume": "421",
+    "author": "Bustamante C.",
+    "year": "2003",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "ref32/cit32",
+    "doi-asserted-by": "crossref",
+    "first-page": "20012",
+    "DOI": "10.1073/pnas.1215713109",
+    "volume": "109",
+    "author": "Bai X.-c.",
+    "year": "2012",
+    "journal-title": "Proc. Natl. Acad. Sci. U.S.A."
+   },
+   {
+    "key": "ref33/cit33",
+    "doi-asserted-by": "crossref",
+    "first-page": "137",
+    "DOI": "10.1038/nnano.2006.63",
+    "volume": "1",
+    "author": "Wiggins P. A.",
+    "year": "2006",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "ref34/cit34",
+    "doi-asserted-by": "crossref",
+    "first-page": "265",
+    "DOI": "10.1146/annurev.bb.17.060188.001405",
+    "volume": "17",
+    "author": "Hagerman P. J.",
+    "year": "1988",
+    "journal-title": "Annu. Rev. Biophys. Biophys. Chem."
+   },
+   {
+    "key": "ref35/cit35",
+    "doi-asserted-by": "crossref",
+    "first-page": "711",
+    "DOI": "10.1006/jmbi.1996.0825",
+    "volume": "266",
+    "author": "Furrer P.",
+    "year": "1997",
+    "journal-title": "J. Mol. Biol."
+   },
+   {
+    "key": "ref36/cit36",
+    "doi-asserted-by": "crossref",
+    "first-page": "6185",
+    "DOI": "10.1073/pnas.94.12.6185",
+    "volume": "94",
+    "author": "Baumann C. G.",
+    "year": "1997",
+    "journal-title": "Proc. Natl. Acad. Sci. U.S.A."
+   },
+   {
+    "key": "ref37/cit37",
+    "doi-asserted-by": "crossref",
+    "first-page": "981",
+    "DOI": "10.1021/ma00082a015",
+    "volume": "27",
+    "author": "Marko J. F.",
+    "year": "1994",
+    "journal-title": "Macromolecules"
+   },
+   {
+    "key": "ref100/cit100",
+    "unstructured": "The choice ofC, slightly below the range of reported values for (un-nicked) dsDNA,(39)was based on comparison of the deformation energy to the energy gained from hybridization upon tube closure, \u0394Ehyb= 4.8kBT/nm, as estimated using the DINAMELT webserver(40)withT= 49 \u00b0C (the tube folding temperature(19)). \u0394G\u2013 \u0394Ehybmust be negative for a sheet to close into a tube. Given that 5HT are stable, and even 4HT have been reported to form,(19)we conclude thatCeff\u2264 107 pN\u00b7nm2."
+   },
+   {
+    "key": "ref38/cit38",
+    "doi-asserted-by": "crossref",
+    "first-page": "338",
+    "DOI": "10.1038/nature01810",
+    "volume": "424",
+    "author": "Bryant Z.",
+    "year": "2003",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "ref39/cit39",
+    "doi-asserted-by": "crossref",
+    "first-page": "W577",
+    "DOI": "10.1093/nar/gki591",
+    "volume": "33",
+    "author": "Markham N. R.",
+    "year": "2005",
+    "journal-title": "Nucleic Acids Res."
+   },
+   {
+    "key": "ref40/cit40",
+    "doi-asserted-by": "crossref",
+    "first-page": "6526",
+    "DOI": "10.1093/nar/gkq434",
+    "volume": "38",
+    "author": "G\u00fcnther K.",
+    "year": "2010",
+    "journal-title": "Nucleic Acids Res."
+   },
+   {
+    "key": "ref41/cit41",
+    "doi-asserted-by": "crossref",
+    "first-page": "6317",
+    "DOI": "10.1021/bi992944a",
+    "volume": "39",
+    "author": "Norman D. G.",
+    "year": "2000",
+    "journal-title": "Biochemistry"
+   },
+   {
+    "key": "ref42/cit42",
+    "doi-asserted-by": "crossref",
+    "first-page": "11176",
+    "DOI": "10.1073/pnas.0801707105",
+    "volume": "105",
+    "author": "Iqbal A.",
+    "year": "2008",
+    "journal-title": "Proc. Natl. Acad. Sci. U.S.A."
+   },
+   {
+    "key": "ref43/cit43",
+    "doi-asserted-by": "crossref",
+    "first-page": "11064",
+    "DOI": "10.1021/jp072912u",
+    "volume": "111",
+    "author": "Sanborn M. E.",
+    "year": "2007",
+    "journal-title": "J. Phys. Chem. B"
+   },
+   {
+    "key": "ref44/cit44",
+    "doi-asserted-by": "crossref",
+    "first-page": "2798",
+    "DOI": "10.1021/ac970041m",
+    "volume": "69",
+    "author": "Srinivasan K.",
+    "year": "1997",
+    "journal-title": "Anal. Chem."
+   }
+  ],
+  "container-title": [
+   "ACS Nano"
+  ],
+  "language": "en",
+  "link": [
+   {
+    "URL": "https://pubs.acs.org/doi/pdf/10.1021/nn401362p",
+    "content-type": "unspecified",
+    "content-version": "vor",
+    "intended-application": "similarity-checking"
+   }
+  ],
+  "deposited": {
+   "date-parts": [
+    [
+     2023,
+     4,
+     3
+    ]
+   ],
+   "date-time": "2023-04-03T03:21:37Z",
+   "timestamp": 1680492097000
+  },
+  "score": 72.43625,
+  "resource": {
+   "primary": {
+    "URL": "https://pubs.acs.org/doi/10.1021/nn401362p"
+   }
+  },
+  "issued": {
+   "date-parts": [
+    [
+     2013,
+     7,
+     31
+    ]
+   ]
+  },
+  "references-count": 45,
+  "journal-issue": {
+   "issue": "8",
+   "published-print": {
+    "date-parts": [
+     [
+      2013,
+      8,
+      27
+     ]
+    ]
+   }
+  },
+  "alternative-id": [
+   "10.1021/nn401362p"
+  ],
+  "URL": "https://doi.org/10.1021/nn401362p",
+  "ISSN": [
+   "1936-0851",
+   "1936-086X"
+  ],
+  "issn-type": [
+   {
+    "value": "1936-0851",
+    "type": "print"
+   },
+   {
+    "value": "1936-086X",
+    "type": "electronic"
+   }
+  ],
+  "published": {
+   "date-parts": [
+    [
+     2013,
+     7,
+     31
+    ]
+   ]
+  }
+ },
+ "A primer to scaffolded DNA origami Castro Kilchherr Kim Shiao Wauer Wortmann Bathe Dietz": {
+  "indexed": {
+   "date-parts": [
+    [
+     2026,
+     8,
+     17
+    ]
+   ],
+   "date-time": "2026-08-17T21:39:29Z",
+   "timestamp": 1787002769894,
+   "version": "3.56.0"
+  },
+  "reference-count": 50,
+  "publisher": "Springer Science and Business Media LLC",
+  "issue": "3",
+  "license": [
+   {
+    "start": {
+     "date-parts": [
+      [
+       2011,
+       2,
+       25
+      ]
+     ],
+     "date-time": "2011-02-25T00:00:00Z",
+     "timestamp": 1298592000000
+    },
+    "content-version": "tdm",
+    "delay-in-days": 0,
+    "URL": "http://www.springer.com/tdm"
+   }
+  ],
+  "content-domain": {
+   "domain": [],
+   "crossmark-restriction": false
+  },
+  "short-container-title": [
+   "Nat Methods"
+  ],
+  "published-print": {
+   "date-parts": [
+    [
+     2011,
+     3
+    ]
+   ]
+  },
+  "DOI": "10.1038/nmeth.1570",
+  "type": "journal-article",
+  "created": {
+   "date-parts": [
+    [
+     2011,
+     2,
+     25
+    ]
+   ],
+   "date-time": "2011-02-25T12:18:29Z",
+   "timestamp": 1298636309000
+  },
+  "page": "221-229",
+  "source": "Crossref",
+  "is-referenced-by-count": 900,
+  "title": [
+   "A primer to scaffolded DNA origami"
+  ],
+  "prefix": "10.1038",
+  "volume": "8",
+  "author": [
+   {
+    "given": "Carlos Ernesto",
+    "family": "Castro",
+    "sequence": "first",
+    "affiliation": [],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Fabian",
+    "family": "Kilchherr",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Do-Nyun",
+    "family": "Kim",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Enrique Lin",
+    "family": "Shiao",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Tobias",
+    "family": "Wauer",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Philipp",
+    "family": "Wortmann",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Mark",
+    "family": "Bathe",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Hendrik",
+    "family": "Dietz",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   }
+  ],
+  "member": "297",
+  "published-online": {
+   "date-parts": [
+    [
+     2011,
+     2,
+     25
+    ]
+   ]
+  },
+  "reference": [
+   {
+    "key": "BFnmeth1570_CR1",
+    "doi-asserted-by": "publisher",
+    "first-page": "297",
+    "DOI": "10.1038/nature04586",
+    "volume": "440",
+    "author": "PWK Rothemund",
+    "year": "2006",
+    "unstructured": "Rothemund, P.W.K. Folding DNA to create nanoscale shapes and patterns. Nature 440, 297\u2013302 (2006).",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "BFnmeth1570_CR2",
+    "doi-asserted-by": "publisher",
+    "first-page": "2973",
+    "DOI": "10.1007/s11434-006-2223-9",
+    "volume": "51",
+    "author": "Q Lulu",
+    "year": "2006",
+    "unstructured": "Lulu, Q. et al. Analogic China map constructed by DNA. Chin. Sci. Bull. 51, 2973\u20132976 (2006).",
+    "journal-title": "Chin. Sci. Bull."
+   },
+   {
+    "key": "BFnmeth1570_CR3",
+    "doi-asserted-by": "publisher",
+    "first-page": "6644",
+    "DOI": "10.1073/pnas.0700930104",
+    "volume": "104",
+    "author": "SM Douglas",
+    "year": "2007",
+    "unstructured": "Douglas, S.M., Chou, J.J. & Shih, W.M. DNA-nanotube-induced alignment of membrane proteins for NMR structure determination. Proc. Natl. Acad. Sci. USA 104, 6644\u20136648 (2007).",
+    "journal-title": "Proc. Natl. Acad. Sci. USA"
+   },
+   {
+    "key": "BFnmeth1570_CR4",
+    "doi-asserted-by": "publisher",
+    "first-page": "1213",
+    "DOI": "10.1021/nn800215j",
+    "volume": "2",
+    "author": "ES Andersen",
+    "year": "2008",
+    "unstructured": "Andersen, E.S. et al. DNA origami design of dolphin-shaped structures with flexible tails. ACS Nano 2, 1213\u20131218 (2008).",
+    "journal-title": "ACS Nano"
+   },
+   {
+    "key": "BFnmeth1570_CR5",
+    "doi-asserted-by": "publisher",
+    "first-page": "2445",
+    "DOI": "10.1021/nl901165f",
+    "volume": "9",
+    "author": "Y Ke",
+    "year": "2009",
+    "unstructured": "Ke, Y. et al. Scaffolded DNA origami of a DNA tetrahedron molecular container. Nano Lett. 9, 2445\u20132447 (2009).",
+    "journal-title": "Nano Lett."
+   },
+   {
+    "key": "BFnmeth1570_CR6",
+    "doi-asserted-by": "publisher",
+    "first-page": "73",
+    "DOI": "10.1038/nature07971",
+    "volume": "459",
+    "author": "ES Andersen",
+    "year": "2009",
+    "unstructured": "Andersen, E.S. et al. Self-assembly of a nanoscale DNA box with a controllable lid. Nature 459, 73\u201376 (2009).",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "BFnmeth1570_CR7",
+    "doi-asserted-by": "publisher",
+    "first-page": "414",
+    "DOI": "10.1038/nature08016",
+    "volume": "459",
+    "author": "SM Douglas",
+    "year": "2009",
+    "unstructured": "Douglas, S.M. et al. Self-assembly of DNA into nanoscale three-dimensional shapes. Nature 459, 414\u2013418 (2009).",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "BFnmeth1570_CR8",
+    "doi-asserted-by": "publisher",
+    "first-page": "725",
+    "DOI": "10.1126/science.1174251",
+    "volume": "325",
+    "author": "H Dietz",
+    "year": "2009",
+    "unstructured": "Dietz, H., Douglas, S.M. & Shih, W.M. Folding DNA into twisted and curved nanoscale shapes. Science 325, 725\u2013730 (2009).",
+    "journal-title": "Science"
+   },
+   {
+    "key": "BFnmeth1570_CR9",
+    "doi-asserted-by": "publisher",
+    "first-page": "5001",
+    "DOI": "10.1093/nar/gkp436",
+    "volume": "37",
+    "author": "SM Douglas",
+    "year": "2009",
+    "unstructured": "Douglas, S.M. et al. Rapid prototyping of 3D DNA-origami shapes with caDNAno. Nucleic Acids Res. 37, 5001\u20135006 (2009).",
+    "journal-title": "Nucleic Acids Res."
+   },
+   {
+    "key": "BFnmeth1570_CR10",
+    "doi-asserted-by": "publisher",
+    "first-page": "15903",
+    "DOI": "10.1021/ja906381y",
+    "volume": "131",
+    "author": "Y Ke",
+    "year": "2009",
+    "unstructured": "Ke, Y. et al. Multi-layer DNA origami packed on a square lattice. J. Am. Chem. Soc. 131, 15903\u201315908 (2009).",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "BFnmeth1570_CR11",
+    "doi-asserted-by": "publisher",
+    "first-page": "4302",
+    "DOI": "10.1021/nl902535q",
+    "volume": "9",
+    "author": "E Pound",
+    "year": "2009",
+    "unstructured": "Pound, E., Ashton, J.R., Becerril, H.A. & Woolley, A.T. Polymerase chain reaction based scaffold preparation for the production of thin, branched DNA origami nanostructures of arbitrary sizes. Nano Lett. 9, 4302\u20134305 (2009).",
+    "journal-title": "Nano Lett."
+   },
+   {
+    "key": "BFnmeth1570_CR12",
+    "doi-asserted-by": "publisher",
+    "first-page": "15570",
+    "DOI": "10.1021/ja904252e",
+    "volume": "131",
+    "author": "M Endo",
+    "year": "2009",
+    "unstructured": "Endo, M., Hidaka, K., Kato, T., Namba, K. & Sugiyama, H. DNA prism structures constructed by folding of multiple rectangular arms. J. Am. Chem. Soc. 131, 15570\u201315571 (2009).",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "BFnmeth1570_CR13",
+    "doi-asserted-by": "publisher",
+    "first-page": "4182",
+    "DOI": "10.1039/b907800b",
+    "volume": "28",
+    "author": "A Kuzuya",
+    "year": "2009",
+    "unstructured": "Kuzuya, A. & Komiyama, M. Design and construction of a box-shaped 3D-DNA origami. Chem. Commun. (Camb.) 28, 4182\u20134184 (2009).",
+    "journal-title": "Chem. Commun. (Camb.)"
+   },
+   {
+    "key": "BFnmeth1570_CR14",
+    "doi-asserted-by": "publisher",
+    "first-page": "1592",
+    "DOI": "10.1021/ja907649w",
+    "volume": "132",
+    "author": "M Endo",
+    "year": "2010",
+    "unstructured": "Endo, M., Katsuda, Y., Hidaka, K. & Sugiyama, H. Regulation of DNA methylation using different tensions of double strands constructed in a defined DNA nanostructure. J. Am. Chem. Soc. 132, 1592\u20131597 (2010).",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "BFnmeth1570_CR15",
+    "doi-asserted-by": "publisher",
+    "first-page": "5362",
+    "DOI": "10.1002/chem.200903057",
+    "volume": "16",
+    "author": "M Endo",
+    "year": "2010",
+    "unstructured": "Endo, M., Sugita, T., Katsuda, Y., Hidaka, K. & Sugiyama, H. Programmed-assembly system using DNA jigsaw pieces. Chem. Eur. J. 16, 5362\u20135368 (2010).",
+    "journal-title": "Chem. Eur. J."
+   },
+   {
+    "key": "BFnmeth1570_CR16",
+    "doi-asserted-by": "publisher",
+    "first-page": "520",
+    "DOI": "10.1038/nnano.2010.107",
+    "volume": "5",
+    "author": "T Liedl",
+    "year": "2010",
+    "unstructured": "Liedl, T., H\u00f6gberg, B., Tytell, J., Ingber, D.E. & Shih, W.M. Self-assembly of three-dimensional prestressed tensegrity structures from DNA. Nat. Nanotechnol. 5, 520\u2013524 (2010).",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "BFnmeth1570_CR17",
+    "doi-asserted-by": "publisher",
+    "first-page": "712",
+    "DOI": "10.1038/nnano.2010.193",
+    "volume": "5",
+    "author": "D Han",
+    "year": "2010",
+    "unstructured": "Han, D., Pal, S., Liu, Y. & Yan, H. Folding and cutting DNA into reconfigurable topological nanostructures. Nat. Nanotechnol. 5, 712\u2013717 (2010).",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "BFnmeth1570_CR18",
+    "doi-asserted-by": "publisher",
+    "first-page": "264",
+    "DOI": "10.1002/anie.201005911",
+    "volume": "50",
+    "author": "W Liu",
+    "year": "2010",
+    "unstructured": "Liu, W., Zhong, H., Wang, R. & Seeman, N.C. Crystalline two-dimensional DNA-origami arrays. Angew. Chem. Int. Edn. Engl. 50, 264\u2013267 (2010).",
+    "journal-title": "Angew. Chem. Int. Edn. Engl."
+   },
+   {
+    "key": "BFnmeth1570_CR19",
+    "doi-asserted-by": "publisher",
+    "first-page": "9378",
+    "DOI": "10.1002/anie.201005931",
+    "volume": "49",
+    "author": "B Sacc\u00e0",
+    "year": "2010",
+    "unstructured": "Sacc\u00e0, B. et al. Orthogonal protein decoration of DNA origami. Angew. Chem. Int. Edn. Engl. 49, 9378\u20139383 (2010).",
+    "journal-title": "Angew. Chem. Int. Edn. Engl."
+   },
+   {
+    "key": "BFnmeth1570_CR20",
+    "doi-asserted-by": "publisher",
+    "first-page": "276",
+    "DOI": "10.1016/j.sbi.2010.03.009",
+    "volume": "20",
+    "author": "WM Shih",
+    "year": "2010",
+    "unstructured": "Shih, W.M. & Lin, C. Knitting complex weaves with DNA origami. Curr. Opin. Struct. Biol. 20, 276\u2013282 (2010).",
+    "journal-title": "Curr. Opin. Struct. Biol."
+   },
+   {
+    "key": "BFnmeth1570_CR21",
+    "doi-asserted-by": "publisher",
+    "first-page": "608",
+    "DOI": "10.1016/j.cbpa.2010.06.182",
+    "volume": "14",
+    "author": "J Nangreave",
+    "year": "2010",
+    "unstructured": "Nangreave, J., Han, D. & Yan, H. DNA origami: a history and current perspective. Curr. Opin. Chem. Biol. 14, 608\u2013615 (2010).",
+    "journal-title": "Curr. Opin. Chem. Biol."
+   },
+   {
+    "key": "BFnmeth1570_CR22",
+    "doi-asserted-by": "publisher",
+    "first-page": "557",
+    "DOI": "10.1038/nnano.2009.220",
+    "volume": "4",
+    "author": "RJ Kershner",
+    "year": "2009",
+    "unstructured": "Kershner, R.J. et al. Placement and orientation of individual DNA shapes on lithographically patterned surfaces. Nat. Nanotechnol. 4, 557\u2013561 (2009).",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "BFnmeth1570_CR23",
+    "doi-asserted-by": "publisher",
+    "first-page": "7820",
+    "DOI": "10.1021/ja802853r",
+    "volume": "130",
+    "author": "J Sharma",
+    "year": "2008",
+    "unstructured": "Sharma, J. et al. Toward reliable gold nanoparticle patterning on self-assembled DNA nanoscaffolds. J. Am. Chem. Soc. 130, 7820\u20137821 (2008).",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "BFnmeth1570_CR24",
+    "doi-asserted-by": "publisher",
+    "first-page": "8494",
+    "DOI": "10.1002/anie.200903319",
+    "volume": "48",
+    "author": "LA Stearns",
+    "year": "2009",
+    "unstructured": "Stearns, L.A. et al. Template-directed nucleation and growth of inorganic nanoparticles on DNA scaffolds. Angew. Chem. Int. Edn. Engl. 48, 8494\u20138496 (2009).",
+    "journal-title": "Angew. Chem. Int. Edn. Engl."
+   },
+   {
+    "key": "BFnmeth1570_CR25",
+    "doi-asserted-by": "publisher",
+    "first-page": "235305",
+    "DOI": "10.1088/0957-4484/20/23/235305",
+    "volume": "20",
+    "author": "A Kuzyk",
+    "year": "2009",
+    "unstructured": "Kuzyk, A., Laitinen, K.T. & T\u00f6rm\u00e4, P. DNA origami as a nanoscale template for protein assembly. Nanotechnology 20, 235305 (2009).",
+    "journal-title": "Nanotechnology"
+   },
+   {
+    "key": "BFnmeth1570_CR26",
+    "doi-asserted-by": "publisher",
+    "first-page": "6660",
+    "DOI": "10.1021/ja901407j",
+    "volume": "131",
+    "author": "W Shen",
+    "year": "2009",
+    "unstructured": "Shen, W., Zhong, H., Neff, D. & Norton, M.L. NTA directed protein nanopatterning on DNA Origami nanoconstructs. J. Am. Chem. Soc. 131, 6660\u20136661 (2009).",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "BFnmeth1570_CR27",
+    "doi-asserted-by": "publisher",
+    "first-page": "1811",
+    "DOI": "10.1002/cbic.200900229",
+    "volume": "10",
+    "author": "A Kuzuya",
+    "year": "2009",
+    "unstructured": "Kuzuya, A. et al. Precisely programmed and robust 2D streptavidin nanoarrays by using periodical nanometer-scale wells embedded in DNA origami assembly. Chembiochem 10, 1811\u20131815 (2009).",
+    "journal-title": "Chembiochem"
+   },
+   {
+    "key": "BFnmeth1570_CR28",
+    "doi-asserted-by": "publisher",
+    "first-page": "3367",
+    "DOI": "10.1021/nl101079u",
+    "volume": "10",
+    "author": "H Bui",
+    "year": "2010",
+    "unstructured": "Bui, H. et al. Programmable periodicity of Quantum Dot arrays with DNA origami nanotubes. Nano Lett. 10, 3367\u20133372 (2010).",
+    "journal-title": "Nano Lett."
+   },
+   {
+    "key": "BFnmeth1570_CR29",
+    "doi-asserted-by": "publisher",
+    "first-page": "2700",
+    "DOI": "10.1002/anie.201000330",
+    "volume": "15",
+    "author": "S Pal",
+    "year": "2010",
+    "unstructured": "Pal, S., Deng, S., Ding, B., Yan, H. & Liu, Y. DNA-origami-directed self-assembly of discrete silver-nanoparticle architectures. Angew. Chem. Int. Edn. Engl. 15, 2700\u20132704 (2010).",
+    "journal-title": "Angew. Chem. Int. Edn. Engl."
+   },
+   {
+    "key": "BFnmeth1570_CR30",
+    "doi-asserted-by": "publisher",
+    "first-page": "121",
+    "DOI": "10.1038/nnano.2009.450",
+    "volume": "5",
+    "author": "AM Hung",
+    "year": "2010",
+    "unstructured": "Hung, A.M. et al. Large-area spatially ordered arrays of gold nanoparticles directed by lithographically confined DNA origami. Nat. Nanotechnol. 5, 121\u2013126 (2010).",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "BFnmeth1570_CR31",
+    "doi-asserted-by": "publisher",
+    "first-page": "8870",
+    "DOI": "10.1002/anie.200903308",
+    "volume": "48",
+    "author": "C Steinhauer",
+    "year": "2009",
+    "unstructured": "Steinhauer, C., Jungmann, R., Sobey, T.L., Simmel, F.C. & Tinnefeld, P. DNA origami as a nanoscopic ruler for super-resolution microscopy. Angew. Chem. Int. Edn. Engl. 48, 8870\u20138873 (2009).",
+    "journal-title": "Angew. Chem. Int. Edn. Engl."
+   },
+   {
+    "key": "BFnmeth1570_CR32",
+    "doi-asserted-by": "publisher",
+    "first-page": "200",
+    "DOI": "10.1038/nnano.2010.5",
+    "volume": "5",
+    "author": "NV Voigt",
+    "year": "2010",
+    "unstructured": "Voigt, N.V. et al. Single-molecule chemical reactions on DNA origami. Nat. Nanotechnol. 5, 200\u2013203 (2010).",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "BFnmeth1570_CR33",
+    "doi-asserted-by": "publisher",
+    "first-page": "61",
+    "DOI": "10.1038/nnano.2009.311",
+    "volume": "5",
+    "author": "HT Maune",
+    "year": "2009",
+    "unstructured": "Maune, H.T. et al. Self-assembly of carbon nanotubes into two-dimensional geometries using DNA origami templates. Nat. Nanotechnol. 5, 61\u201366 (2009).",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "BFnmeth1570_CR34",
+    "doi-asserted-by": "publisher",
+    "first-page": "237",
+    "DOI": "10.1016/0022-5193(82)90002-9",
+    "volume": "99",
+    "author": "NC Seeman",
+    "year": "1982",
+    "unstructured": "Seeman, N.C. Nucleic acid junctions and lattices. J. Theor. Biol. 99, 237\u2013247 (1982).",
+    "journal-title": "J. Theor. Biol."
+   },
+   {
+    "key": "BFnmeth1570_CR35",
+    "doi-asserted-by": "publisher",
+    "first-page": "3211",
+    "DOI": "10.1021/bi00064a003",
+    "volume": "32",
+    "author": "TJ Fu",
+    "year": "1993",
+    "unstructured": "Fu, T.J. & Seeman, N.C. DNA double-crossover molecules. Biochemistry 32, 3211\u20133220 (1993).",
+    "journal-title": "Biochemistry"
+   },
+   {
+    "key": "BFnmeth1570_CR36",
+    "doi-asserted-by": "publisher",
+    "first-page": "65",
+    "DOI": "10.1146/annurev-biochem-060308-102244",
+    "volume": "79",
+    "author": "NC Seeman",
+    "year": "2010",
+    "unstructured": "Seeman, N.C. Nanomaterials based on DNA. Annu. Rev. Biochem. 79, 65\u201387 (2010).",
+    "journal-title": "Annu. Rev. Biochem."
+   },
+   {
+    "key": "BFnmeth1570_CR37",
+    "doi-asserted-by": "publisher",
+    "first-page": "2179",
+    "DOI": "10.1073/pnas.78.4.2179",
+    "volume": "78",
+    "author": "HR Drew",
+    "year": "1981",
+    "unstructured": "Drew, H.R. et al. Structure of a B-DNA dodecamer: conformation and dynamics. Proc. Natl. Acad. Sci. USA 78, 2179\u20132183 (1981).",
+    "journal-title": "Proc. Natl. Acad. Sci. USA"
+   },
+   {
+    "key": "BFnmeth1570_CR38",
+    "doi-asserted-by": "publisher",
+    "first-page": "16344",
+    "DOI": "10.1021/ja044319l",
+    "volume": "126",
+    "author": "PWK Rothemund",
+    "year": "2004",
+    "unstructured": "Rothemund, P.W.K. et al. Design and characterization of programmable DNA nanotubes. J. Am. Chem. Soc. 126, 16344\u201316352 (2004).",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "BFnmeth1570_CR39",
+    "doi-asserted-by": "publisher",
+    "first-page": "836",
+    "DOI": "10.1038/nature04974",
+    "volume": "442",
+    "author": "J Gore",
+    "year": "2006",
+    "unstructured": "Gore, J. et al. DNA overwinds when stretched. Nature 442, 836\u2013839 (2006).",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "BFnmeth1570_CR40",
+    "volume-title": "Finite Element Procedures",
+    "author": "KJ Bathe",
+    "year": "1996",
+    "unstructured": "Bathe, K.J. Finite Element Procedures (Prentice Hall, 1996)."
+   },
+   {
+    "key": "BFnmeth1570_CR41",
+    "doi-asserted-by": "publisher",
+    "first-page": "1605",
+    "DOI": "10.1002/jcc.20084",
+    "volume": "25",
+    "author": "EF Pettersen",
+    "year": "2004",
+    "unstructured": "Pettersen, E.F. et al. UCSF Chimera\u2014a visualization system for exploratory research and analysis. J. Comput. Chem. 25, 1605\u20131612 (2004).",
+    "journal-title": "J. Comput. Chem."
+   },
+   {
+    "key": "BFnmeth1570_CR42",
+    "doi-asserted-by": "publisher",
+    "first-page": "3406",
+    "DOI": "10.1093/nar/gkg595",
+    "volume": "31",
+    "author": "M Zuker",
+    "year": "2003",
+    "unstructured": "Zuker, M. Mfold web server for nucleic acid folding and hybridization prediction. Nucleic Acids Res. 31, 3406\u20133415 (2003).",
+    "journal-title": "Nucleic Acids Res."
+   },
+   {
+    "key": "BFnmeth1570_CR43",
+    "doi-asserted-by": "publisher",
+    "first-page": "349",
+    "DOI": "10.1085/jgp.33.4.349",
+    "volume": "33",
+    "author": "M Kunitz",
+    "year": "1950",
+    "unstructured": "Kunitz, M. Crystalline desoxyribonuclease; isolation and general properties; spectrophotometric method for the measurement of desoxyribonuclease activity. J. Gen. Physiol. 33, 349\u2013362 (1950).",
+    "journal-title": "J. Gen. Physiol."
+   },
+   {
+    "key": "BFnmeth1570_CR44",
+    "doi-asserted-by": "publisher",
+    "first-page": "647",
+    "DOI": "10.1006/jmbi.1997.1097",
+    "volume": "269",
+    "author": "MF White",
+    "year": "1997",
+    "unstructured": "White, M.F., Giraud-Panis, M.J., P\u00f6hler, J.R. & Lilley, D.M. Recognition and manipulation of branched DNA structure by junction-resolving enzymes. J. Mol. Biol. 269, 647\u2013664 (1997).",
+    "journal-title": "J. Mol. Biol."
+   },
+   {
+    "key": "BFnmeth1570_CR45",
+    "doi-asserted-by": "crossref",
+    "first-page": "311",
+    "DOI": "10.1016/S0021-9258(19)45791-8",
+    "volume": "247",
+    "author": "C Kerr",
+    "year": "1972",
+    "unstructured": "Kerr, C. & Sadowski, P.D. Gene 6 exonuclease of bacteriophage T7. II. Mechanism of the reaction. J. Biol. Chem. 247, 311\u2013318 (1972).",
+    "journal-title": "J. Biol. Chem."
+   },
+   {
+    "key": "BFnmeth1570_CR46",
+    "first-page": "135",
+    "volume": "2",
+    "author": "JW Little",
+    "year": "1981",
+    "unstructured": "Little, J.W. Lambda exonuclease. Gene Amplif. Anal. 2, 135\u2013145 (1981).",
+    "journal-title": "Gene Amplif. Anal."
+   },
+   {
+    "key": "BFnmeth1570_CR47",
+    "doi-asserted-by": "crossref",
+    "first-page": "2628",
+    "DOI": "10.1016/S0021-9258(18)93898-6",
+    "volume": "239",
+    "author": "IR Lehman",
+    "year": "1964",
+    "unstructured": "Lehman, I.R. & Nussbaum, A.L. The deoxyribonucleases of Escherischia coli. V. On the the specificity of exonuclease I (phosphodiesterase). J. Biol. Chem. 239, 2628\u20132636 (1964).",
+    "journal-title": "J. Biol. Chem."
+   },
+   {
+    "key": "BFnmeth1570_CR48",
+    "doi-asserted-by": "publisher",
+    "first-page": "3104",
+    "DOI": "10.1093/nar/16.7.3104",
+    "volume": "16",
+    "author": "RD Morgan",
+    "year": "1988",
+    "unstructured": "Morgan, R.D. Mse I, a unique restriction endonuclease from Micrococcus species which recognizes 5\u2032 T decreases TAA 3\u2032. Nucleic Acids Res. 16, 3104 (1988).",
+    "journal-title": "Nucleic Acids Res."
+   },
+   {
+    "key": "BFnmeth1570_CR49",
+    "first-page": "4302",
+    "volume": "9",
+    "author": "B H\u00f6gberg",
+    "year": "2009",
+    "unstructured": "H\u00f6gberg, B., Liedl, T. & Shih, W.M. Folding DNA origami from a double-stranded source of scaffold. J. Am. Chem. Soc. 9, 4302\u20134305 (2009).",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "BFnmeth1570_CR50",
+    "doi-asserted-by": "publisher",
+    "first-page": "10062",
+    "DOI": "10.1021/ja8030196",
+    "volume": "130",
+    "author": "R Jungmann",
+    "year": "2008",
+    "unstructured": "Jungmann, R., Liedl, T., Sobey, T.L., Shih, W.M. & Simmel, F.C. Isothermal assembly of DNA origami structures using denaturing agents. J. Am. Chem. Soc. 130, 10062\u201310063 (2008).",
+    "journal-title": "J. Am. Chem. Soc."
+   }
+  ],
+  "container-title": [
+   "Nature Methods"
+  ],
+  "language": "en",
+  "link": [
+   {
+    "URL": "http://www.nature.com/articles/nmeth.1570.pdf",
+    "content-type": "application/pdf",
+    "content-version": "vor",
+    "intended-application": "text-mining"
+   },
+   {
+    "URL": "http://www.nature.com/articles/nmeth.1570",
+    "content-type": "text/html",
+    "content-version": "vor",
+    "intended-application": "text-mining"
+   },
+   {
+    "URL": "http://www.nature.com/articles/nmeth.1570.pdf",
+    "content-type": "application/pdf",
+    "content-version": "vor",
+    "intended-application": "similarity-checking"
+   }
+  ],
+  "deposited": {
+   "date-parts": [
+    [
+     2023,
+     5,
+     18
+    ]
+   ],
+   "date-time": "2023-05-18T18:43:31Z",
+   "timestamp": 1684435411000
+  },
+  "score": 107.046104,
+  "resource": {
+   "primary": {
+    "URL": "https://www.nature.com/articles/nmeth.1570"
+   }
+  },
+  "issued": {
+   "date-parts": [
+    [
+     2011,
+     2,
+     25
+    ]
+   ]
+  },
+  "references-count": 50,
+  "journal-issue": {
+   "issue": "3",
+   "published-print": {
+    "date-parts": [
+     [
+      2011,
+      3
+     ]
+    ]
+   }
+  },
+  "alternative-id": [
+   "BFnmeth1570"
+  ],
+  "URL": "https://doi.org/10.1038/nmeth.1570",
+  "ISSN": [
+   "1548-7091",
+   "1548-7105"
+  ],
+  "issn-type": [
+   {
+    "value": "1548-7091",
+    "type": "print"
+   },
+   {
+    "value": "1548-7105",
+    "type": "electronic"
+   }
+  ],
+  "published": {
+   "date-parts": [
+    [
+     2011,
+     2,
+     25
+    ]
+   ]
+  }
+ },
+ "Self-assembly of three-dimensional prestressed tensegrity structures from DNA Liedl Hogberg Tytell Ingber Shih": {
+  "indexed": {
+   "date-parts": [
+    [
+     2026,
+     7,
+     31
+    ]
+   ],
+   "date-time": "2026-07-31T02:53:17Z",
+   "timestamp": 1785466397485,
+   "version": "3.56.0"
+  },
+  "reference-count": 25,
+  "publisher": "Springer Science and Business Media LLC",
+  "issue": "7",
+  "license": [
+   {
+    "start": {
+     "date-parts": [
+      [
+       2010,
+       6,
+       20
+      ]
+     ],
+     "date-time": "2010-06-20T00:00:00Z",
+     "timestamp": 1276992000000
+    },
+    "content-version": "tdm",
+    "delay-in-days": 0,
+    "URL": "http://www.springer.com/tdm"
+   }
+  ],
+  "content-domain": {
+   "domain": [],
+   "crossmark-restriction": false
+  },
+  "short-container-title": [
+   "Nature Nanotech"
+  ],
+  "published-print": {
+   "date-parts": [
+    [
+     2010,
+     7
+    ]
+   ]
+  },
+  "DOI": "10.1038/nnano.2010.107",
+  "type": "journal-article",
+  "created": {
+   "date-parts": [
+    [
+     2010,
+     6,
+     21
+    ]
+   ],
+   "date-time": "2010-06-21T01:10:47Z",
+   "timestamp": 1277082647000
+  },
+  "page": "520-524",
+  "source": "Crossref",
+  "is-referenced-by-count": 357,
+  "title": [
+   "Self-assembly of three-dimensional prestressed tensegrity structures from DNA"
+  ],
+  "prefix": "10.1038",
+  "volume": "5",
+  "author": [
+   {
+    "given": "Tim",
+    "family": "Liedl",
+    "sequence": "first",
+    "affiliation": [],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Bj\u00f6rn",
+    "family": "H\u00f6gberg",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Jessica",
+    "family": "Tytell",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Donald E.",
+    "family": "Ingber",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "William M.",
+    "family": "Shih",
+    "sequence": "additional",
+    "affiliation": [],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   }
+  ],
+  "member": "297",
+  "published-online": {
+   "date-parts": [
+    [
+     2010,
+     6,
+     20
+    ]
+   ]
+  },
+  "reference": [
+   {
+    "key": "BFnnano2010107_CR1",
+    "doi-asserted-by": "publisher",
+    "first-page": "43",
+    "DOI": "10.1177/026635119601-207",
+    "volume": "11",
+    "author": "K Snelson",
+    "year": "1996",
+    "unstructured": "Snelson, K. Snelson on the tensegrity invention. Int. J. Space Struct. 11, 43\u201348 (1996).",
+    "journal-title": "Int. J. Space Struct."
+   },
+   {
+    "key": "BFnnano2010107_CR2",
+    "unstructured": "Fuller, B. Synergetics\u2014Explorations in the Geometry of Thinking Vols I and II (Macmillan Publishing, 1975, 1979)."
+   },
+   {
+    "key": "BFnnano2010107_CR3",
+    "first-page": "4254",
+    "volume": "5",
+    "author": "RE Skelton",
+    "year": "2001",
+    "unstructured": "Skelton, R. E., Adhikari, R., Pinaud, J. P. & Chan, W. An introduction to the mechanics of tensegrity structures. Proceedings of the 40th IEEE Conference on Decision and Control 5, 4254\u20134259 (2001).",
+    "journal-title": "Proceedings of the 40th IEEE Conference on Decision and Control"
+   },
+   {
+    "key": "BFnnano2010107_CR4",
+    "doi-asserted-by": "publisher",
+    "first-page": "5223",
+    "DOI": "10.1016/S0020-7683(00)00401-7",
+    "volume": "38",
+    "author": "C Sultan",
+    "year": "2001",
+    "unstructured": "Sultan, C. Corless, M. & Skelton, R. E. The prestressabilty problem of tensegrity structures: some analytical solutions. Int. J. Solids Struct. 38, 5223\u20135252 (2001).",
+    "journal-title": "Int. J. Solids Struct."
+   },
+   {
+    "key": "BFnnano2010107_CR5",
+    "doi-asserted-by": "publisher",
+    "first-page": "184",
+    "DOI": "10.1038/22146",
+    "volume": "400",
+    "author": "K Visscher",
+    "year": "1999",
+    "unstructured": "Visscher, K., Schnitzer, M. J. & Block, S. M. Single kinesin molecules studied with a molecular force clamp. Nature 400, 184\u2013189 (1999).",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "BFnnano2010107_CR6",
+    "doi-asserted-by": "publisher",
+    "first-page": "4402",
+    "DOI": "10.1529/biophysj.104.053504",
+    "volume": "88",
+    "author": "AE Clemen",
+    "year": "2005",
+    "unstructured": "Clemen, A. E. et al. Force-dependent stepping kinetics of myosin-V. Biophys. J. 88, 4402\u20134410 (2005).",
+    "journal-title": "Biophys. J."
+   },
+   {
+    "key": "BFnnano2010107_CR7",
+    "doi-asserted-by": "publisher",
+    "first-page": "48",
+    "DOI": "10.1038/scientificamerican0198-48",
+    "volume": "278",
+    "author": "DE Ingber",
+    "year": "1998",
+    "unstructured": "Ingber, D. E. The architecture of life. Sci. Am. 278, 48\u201357 (1998).",
+    "journal-title": "Sci. Am."
+   },
+   {
+    "key": "BFnnano2010107_CR8",
+    "doi-asserted-by": "publisher",
+    "first-page": "811",
+    "DOI": "10.1096/fj.05-5424rev",
+    "volume": "20",
+    "author": "DE Ingber",
+    "year": "2006",
+    "unstructured": "Ingber, D. E. Cellular mechanotransduction: putting all the pieces together again. FASEB J. 20, 811\u2013827 (2006).",
+    "journal-title": "FASEB J."
+   },
+   {
+    "key": "BFnnano2010107_CR9",
+    "doi-asserted-by": "publisher",
+    "first-page": "618",
+    "DOI": "10.1038/nature02307",
+    "volume": "427",
+    "author": "WM Shih",
+    "year": "2004",
+    "unstructured": "Shih, W. M., Quispe J. D. & Joyce, G. F. A 1.7-kilobase single-stranded DNA that folds into a nanoscale octahedron. Nature 427, 618\u2013621 (2004).",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "BFnnano2010107_CR10",
+    "doi-asserted-by": "publisher",
+    "first-page": "2324",
+    "DOI": "10.1021/ja031754r",
+    "volume": "126",
+    "author": "D Liu",
+    "year": "2004",
+    "unstructured": "Liu, D., Wang, M. S., Deng, Z. X., Walulu, R. & Mao, C. D. Tensegrity: construction of rigid DNA triangles with flexible four-arm DNA junctions. J. Am. Chem. Soc. 126, 2324\u20132325 (2004).",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "BFnnano2010107_CR11",
+    "doi-asserted-by": "publisher",
+    "first-page": "10665",
+    "DOI": "10.1073/pnas.0803841105",
+    "volume": "31",
+    "author": "C Zhang",
+    "year": "2008",
+    "unstructured": "Zhang, C. et al. Conformational flexibility facilitates self-assembly of complex DNA nanostructures. Proc. Natl Acad. Sci. 31, 10665\u201310669 (2008).",
+    "journal-title": "Proc. Natl Acad. Sci."
+   },
+   {
+    "key": "BFnnano2010107_CR12",
+    "doi-asserted-by": "publisher",
+    "first-page": "198",
+    "DOI": "10.1038/nature06597",
+    "volume": "452",
+    "author": "Y He",
+    "year": "2008",
+    "unstructured": "He, Y. et al. Hierarchical self-assembly of DNA into symmetric supramolecular polyhedra. Nature 452, 198\u2013201 (2008).",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "BFnnano2010107_CR13",
+    "doi-asserted-by": "crossref",
+    "first-page": "74",
+    "DOI": "10.1038/nature08274",
+    "volume": "461",
+    "author": "J Zheng",
+    "year": "2009",
+    "unstructured": "Zheng, J. et al. From molecular to macroscopic via the rational design of a self-assembled 3D DNA crystal. Nature 461, 74\u201377 (2009).",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "BFnnano2010107_CR14",
+    "doi-asserted-by": "publisher",
+    "first-page": "287",
+    "DOI": "10.1038/nature04586",
+    "volume": "440",
+    "author": "PWK Rothemund",
+    "year": "2006",
+    "unstructured": "Rothemund, P. W. K. Folding DNA to create nanoscale shapes and patterns. Nature 440, 287\u2013302 (2006).",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "BFnnano2010107_CR15",
+    "doi-asserted-by": "publisher",
+    "first-page": "414",
+    "DOI": "10.1038/nature08016",
+    "volume": "459",
+    "author": "SM Douglas",
+    "year": "2009",
+    "unstructured": "Douglas, S. M. et al. Self-assembly of DNA into nanoscale three-dimensional shapes. Nature 459, 414\u2013418 (2009).",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "BFnnano2010107_CR16",
+    "doi-asserted-by": "publisher",
+    "first-page": "795",
+    "DOI": "10.1126/science.271.5250.795",
+    "volume": "271",
+    "author": "SB Smith",
+    "year": "1996",
+    "unstructured": "Smith, S. B., Cui, Y. J. & Bustamante, C. Overstretching B-DNA: the elastic response of individual double-stranded and single-stranded DNA molecules. Science 271, 795\u2013799 (1996).",
+    "journal-title": "Science"
+   },
+   {
+    "key": "BFnnano2010107_CR17",
+    "doi-asserted-by": "publisher",
+    "first-page": "5001",
+    "DOI": "10.1093/nar/gkp436",
+    "volume": "37",
+    "author": "SM Douglas",
+    "year": "2009",
+    "unstructured": "Douglas, S. M. et al. Rapid prototyping of three-dimensional DNA-origami shapes with caDNAno. Nucleic Acids Res. 37, 5001\u20135006 (2009).",
+    "journal-title": "Nucleic Acids Res."
+   },
+   {
+    "key": "BFnnano2010107_CR18",
+    "doi-asserted-by": "publisher",
+    "first-page": "8759",
+    "DOI": "10.1021/ma00130a008",
+    "volume": "28",
+    "author": "JF Marko",
+    "year": "1995",
+    "unstructured": "Marko, J. F. & Siggia, E. D. Stretching DNA. Macromolecules 28, 8759\u20138770 (1995).",
+    "journal-title": "Macromolecules"
+   },
+   {
+    "key": "BFnnano2010107_CR19",
+    "doi-asserted-by": "publisher",
+    "first-page": "6644",
+    "DOI": "10.1073/pnas.0700930104",
+    "volume": "104",
+    "author": "SM Douglas",
+    "year": "2007",
+    "unstructured": "Douglas, S. M., Chou, J. J. & Shih, W. M. DNA-nanotube-induced alignment of membrane proteins for NMR structure determination. Proc. Natl Acad. Sci. USA 104, 6644\u20136648 (2007).",
+    "journal-title": "Proc. Natl Acad. Sci. USA"
+   },
+   {
+    "key": "BFnnano2010107_CR20",
+    "unstructured": "Howard, J. Mechanics of Motor Proteins and the Cytoskeleton (Sinauer Associates, 2001)."
+   },
+   {
+    "key": "BFnnano2010107_CR21",
+    "doi-asserted-by": "publisher",
+    "first-page": "1661",
+    "DOI": "10.1126/science.1120367",
+    "volume": "310",
+    "author": "RP Goodman",
+    "year": "2005",
+    "unstructured": "Goodman, R. P. et al. Rapid chiral assembly of rigid DNA building blocks for molecular nanofabrication. Science 310, 1661\u20131665 (2005).",
+    "journal-title": "Science"
+   },
+   {
+    "key": "BFnnano2010107_CR22",
+    "doi-asserted-by": "publisher",
+    "first-page": "068301",
+    "DOI": "10.1103/PhysRevLett.102.068301",
+    "volume": "102",
+    "author": "OA Saleh",
+    "year": "2009",
+    "unstructured": "Saleh, O. A., McIntosh, D. B., Pincus, P. & Ribeck, N. Nonlinear low-force elasticity of single-stranded DNA molecules. Phys. Rev. Lett. 102, 068301 (2009).",
+    "journal-title": "Phys. Rev. Lett."
+   },
+   {
+    "key": "BFnnano2010107_CR23",
+    "doi-asserted-by": "publisher",
+    "first-page": "91544",
+    "DOI": "10.1021/ja902569x",
+    "volume": "131",
+    "author": "B H\u00f6gberg",
+    "year": "2009",
+    "unstructured": "H\u00f6gberg, B., Liedl, T. & Shih, W. M. Folding DNA origami from a double-stranded source of scaffold. J. Am. Chem. Soc. 131, 91544\u201394155 (2009).",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "BFnnano2010107_CR24",
+    "doi-asserted-by": "publisher",
+    "first-page": "1160",
+    "DOI": "10.1002/1521-1878(200012)22:12<1160::AID-BIES14>3.0.CO;2-5",
+    "volume": "22",
+    "author": "DE Ingber",
+    "year": "2000",
+    "unstructured": "Ingber, D. E. The origin of cellular life. Bioessays 22, 1160\u20131167 (2000).",
+    "journal-title": "Bioessays"
+   },
+   {
+    "key": "BFnnano2010107_CR25",
+    "doi-asserted-by": "publisher",
+    "first-page": "1509",
+    "DOI": "10.1021/nl050875h",
+    "volume": "5",
+    "author": "H Shroff",
+    "year": "2005",
+    "unstructured": "Shroff, H. et al. Biocompatible force sensor with optical readout and dimensions of 6\u00a0nm3. Nano Lett. 5, 1509\u20131514 (2005).",
+    "journal-title": "Nano Lett."
+   }
+  ],
+  "container-title": [
+   "Nature Nanotechnology"
+  ],
+  "language": "en",
+  "link": [
+   {
+    "URL": "http://www.nature.com/articles/nnano.2010.107.pdf",
+    "content-type": "application/pdf",
+    "content-version": "vor",
+    "intended-application": "text-mining"
+   },
+   {
+    "URL": "http://www.nature.com/articles/nnano.2010.107",
+    "content-type": "text/html",
+    "content-version": "vor",
+    "intended-application": "text-mining"
+   },
+   {
+    "URL": "http://www.nature.com/articles/nnano.2010.107.pdf",
+    "content-type": "application/pdf",
+    "content-version": "vor",
+    "intended-application": "similarity-checking"
+   }
+  ],
+  "deposited": {
+   "date-parts": [
+    [
+     2023,
+     5,
+     19
+    ]
+   ],
+   "date-time": "2023-05-19T00:18:25Z",
+   "timestamp": 1684455505000
+  },
+  "score": 97.64047,
+  "resource": {
+   "primary": {
+    "URL": "https://www.nature.com/articles/nnano.2010.107"
+   }
+  },
+  "issued": {
+   "date-parts": [
+    [
+     2010,
+     6,
+     20
+    ]
+   ]
+  },
+  "references-count": 25,
+  "journal-issue": {
+   "issue": "7",
+   "published-print": {
+    "date-parts": [
+     [
+      2010,
+      7
+     ]
+    ]
+   }
+  },
+  "alternative-id": [
+   "BFnnano2010107"
+  ],
+  "URL": "https://doi.org/10.1038/nnano.2010.107",
+  "ISSN": [
+   "1748-3387",
+   "1748-3395"
+  ],
+  "issn-type": [
+   {
+    "value": "1748-3387",
+    "type": "print"
+   },
+   {
+    "value": "1748-3395",
+    "type": "electronic"
+   }
+  ],
+  "published": {
+   "date-parts": [
+    [
+     2010,
+     6,
+     20
+    ]
+   ]
+  }
+ },
+ "Mechanical design of DNA nanostructures Castro Su Marras Zhou Johnson Nanoscale 2015": {
+  "indexed": {
+   "date-parts": [
+    [
+     2026,
+     7,
+     7
+    ]
+   ],
+   "date-time": "2026-07-07T23:48:10Z",
+   "timestamp": 1783468090830,
+   "version": "3.55.0"
+  },
+  "reference-count": 96,
+  "publisher": "Royal Society of Chemistry (RSC)",
+  "issue": "14",
+  "funder": [
+   {
+    "DOI": "10.13039/100000147",
+    "name": "Division of Civil, Mechanical and Manufacturing Innovation",
+    "doi-asserted-by": "crossref",
+    "award": [
+     "1228104"
+    ],
+    "award-info": [
+     {
+      "award-number": [
+       "1228104"
+      ]
+     }
+    ],
+    "id": [
+     {
+      "id": "10.13039/100000147",
+      "id-type": "DOI",
+      "asserted-by": "crossref"
+     }
+    ]
+   },
+   {
+    "DOI": "10.13039/100000147",
+    "name": "Division of Civil, Mechanical and Manufacturing Innovation",
+    "doi-asserted-by": "crossref",
+    "award": [
+     "1235060"
+    ],
+    "award-info": [
+     {
+      "award-number": [
+       "1235060"
+      ]
+     }
+    ],
+    "id": [
+     {
+      "id": "10.13039/100000147",
+      "id-type": "DOI",
+      "asserted-by": "crossref"
+     }
+    ]
+   }
+  ],
+  "content-domain": {
+   "domain": [
+    "rsc.org"
+   ],
+   "crossmark-restriction": true
+  },
+  "short-container-title": [
+   "Nanoscale"
+  ],
+  "abstract": "<p>Recent and future advances enabling the design of mechanical properties and dynamic behavior of DNA nanostructures will greatly expand the functional scope of DNA-based devices.</p>",
+  "DOI": "10.1039/c4nr07153k",
+  "type": "journal-article",
+  "created": {
+   "date-parts": [
+    [
+     2015,
+     2,
+     6
+    ]
+   ],
+   "date-time": "2015-02-06T05:01:01Z",
+   "timestamp": 1423198861000
+  },
+  "page": "5913-5921",
+  "update-policy": "https://doi.org/10.1039/rsc_crossmark_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 126,
+  "title": [
+   "Mechanical design of DNA nanostructures"
+  ],
+  "prefix": "10.1039",
+  "volume": "7",
+  "author": [
+   {
+    "given": "Carlos E.",
+    "family": "Castro",
+    "sequence": "first",
+    "affiliation": [
+     {
+      "name": "Department of Mechanical and Aerospace Engineering"
+     },
+     {
+      "name": "The Ohio State University"
+     },
+     {
+      "name": "Columbus, USA"
+     },
+     {
+      "name": "Biophysics Graduate Program"
+     },
+     {
+      "name": "The Ohio State University"
+     }
+    ],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Hai-Jun",
+    "family": "Su",
+    "sequence": "additional",
+    "affiliation": [
+     {
+      "name": "Department of Mechanical and Aerospace Engineering"
+     },
+     {
+      "name": "The Ohio State University"
+     },
+     {
+      "name": "Columbus, USA"
+     }
+    ],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Alexander E.",
+    "family": "Marras",
+    "sequence": "additional",
+    "affiliation": [
+     {
+      "name": "Department of Mechanical and Aerospace Engineering"
+     },
+     {
+      "name": "The Ohio State University"
+     },
+     {
+      "name": "Columbus, USA"
+     }
+    ],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Lifeng",
+    "family": "Zhou",
+    "sequence": "additional",
+    "affiliation": [
+     {
+      "name": "Department of Mechanical and Aerospace Engineering"
+     },
+     {
+      "name": "The Ohio State University"
+     },
+     {
+      "name": "Columbus, USA"
+     }
+    ],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   },
+   {
+    "given": "Joshua",
+    "family": "Johnson",
+    "sequence": "additional",
+    "affiliation": [
+     {
+      "name": "Biophysics Graduate Program"
+     },
+     {
+      "name": "The Ohio State University"
+     },
+     {
+      "name": "Columbus, USA"
+     }
+    ],
+    "role": [
+     {
+      "vocabulary": "crossref",
+      "role": "author"
+     }
+    ]
+   }
+  ],
+  "member": "292",
+  "published-online": {
+   "date-parts": [
+    [
+     2015
+    ]
+   ]
+  },
+  "reference": [
+   {
+    "key": "C4NR07153K-(cit1)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "459",
+    "DOI": "10.1098/rstb.2005.1803",
+    "volume": "361",
+    "author": "Baker",
+    "year": "2006",
+    "journal-title": "Philos. Trans. R. Soc., B"
+   },
+   {
+    "key": "C4NR07153K-(cit2)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "813",
+    "DOI": "10.1126/science.1205962",
+    "volume": "335",
+    "author": "Aida",
+    "year": "2012",
+    "journal-title": "Science"
+   },
+   {
+    "key": "C4NR07153K-(cit3)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "737",
+    "DOI": "10.1038/171737a0",
+    "volume": "171",
+    "author": "Watson",
+    "year": "1953",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "C4NR07153K-(cit4)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "237",
+    "DOI": "10.1016/0022-5193(82)90002-9",
+    "volume": "99",
+    "author": "Seeman",
+    "year": "1982",
+    "journal-title": "J. Theor. Biol."
+   },
+   {
+    "key": "C4NR07153K-(cit5)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "201",
+    "DOI": "10.1016/S0006-3495(83)84292-1",
+    "volume": "44",
+    "author": "Seeman",
+    "year": "1983",
+    "journal-title": "Biophys. J."
+   },
+   {
+    "key": "C4NR07153K-(cit6)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "631",
+    "DOI": "10.1038/350631a0",
+    "volume": "350",
+    "author": "Chen",
+    "year": "1991",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "C4NR07153K-(cit7)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "717",
+    "DOI": "10.1073/pnas.0305860101",
+    "volume": "101",
+    "author": "Liu",
+    "year": "2004",
+    "journal-title": "Proc. Natl. Acad. Sci. U. S. A."
+   },
+   {
+    "key": "C4NR07153K-(cit8)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "16342",
+    "DOI": "10.1021/ja043890h",
+    "volume": "126",
+    "author": "Mitchell",
+    "year": "2004",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "C4NR07153K-(cit9)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "16344",
+    "DOI": "10.1021/ja044319l",
+    "volume": "126",
+    "author": "Rothemund",
+    "year": "2004",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "C4NR07153K-(cit10)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "1882",
+    "DOI": "10.1126/science.1089389",
+    "volume": "301",
+    "author": "Yan",
+    "year": "2003",
+    "journal-title": "Science"
+   },
+   {
+    "key": "C4NR07153K-(cit11)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "2324",
+    "DOI": "10.1021/ja031754r",
+    "volume": "126",
+    "author": "Liu",
+    "year": "2004",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "C4NR07153K-(cit12)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "297",
+    "DOI": "10.1038/nature04586",
+    "volume": "440",
+    "author": "Rothemund",
+    "year": "2006",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "C4NR07153K-(cit13)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "1154",
+    "DOI": "10.1038/nature08165",
+    "volume": "459",
+    "author": "Douglas",
+    "year": "2009",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "C4NR07153K-(cit14)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "6644",
+    "DOI": "10.1073/pnas.0700930104",
+    "volume": "104",
+    "author": "Douglas",
+    "year": "2007",
+    "journal-title": "Proc. Natl. Acad. Sci. U. S. A."
+   },
+   {
+    "key": "C4NR07153K-(cit15)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "512",
+    "DOI": "10.1021/nl204098n",
+    "volume": "12",
+    "author": "Bell",
+    "year": "2012",
+    "journal-title": "Nano Lett."
+   },
+   {
+    "key": "C4NR07153K-(cit16)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "932",
+    "DOI": "10.1126/science.1225624",
+    "volume": "338",
+    "author": "Langecker",
+    "year": "2012",
+    "journal-title": "Science"
+   },
+   {
+    "key": "C4NR07153K-(cit17)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "4864",
+    "DOI": "10.1002/anie.201200688",
+    "volume": "51",
+    "author": "Wei",
+    "year": "2012",
+    "journal-title": "Angew. Chem., Int. Ed."
+   },
+   {
+    "key": "C4NR07153K-(cit18)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "313",
+    "DOI": "10.1038/nmeth.2835",
+    "volume": "11",
+    "author": "Jungmann",
+    "year": "2014",
+    "journal-title": "Nat. Methods"
+   },
+   {
+    "key": "C4NR07153K-(cit19)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "4756",
+    "DOI": "10.1021/nl103427w",
+    "volume": "10",
+    "author": "Jungmann",
+    "year": "2010",
+    "journal-title": "Nano Lett."
+   },
+   {
+    "key": "C4NR07153K-(cit20)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "781",
+    "DOI": "10.1021/nl304492y",
+    "volume": "13",
+    "author": "Schmied",
+    "year": "2013",
+    "journal-title": "Nano Lett."
+   },
+   {
+    "key": "C4NR07153K-(cit21)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "61",
+    "DOI": "10.1038/nnano.2009.311",
+    "volume": "5",
+    "author": "Maune",
+    "year": "2010",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "C4NR07153K-(cit22)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "3367",
+    "DOI": "10.1021/nl101079u",
+    "volume": "10",
+    "author": "Bui",
+    "year": "2010",
+    "journal-title": "Nano Lett."
+   },
+   {
+    "key": "C4NR07153K-(cit23)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "311",
+    "DOI": "10.1038/nature10889",
+    "volume": "483",
+    "author": "Kuzyk",
+    "year": "2012",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "C4NR07153K-(cit24)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "74",
+    "DOI": "10.1038/nnano.2013.253",
+    "volume": "9",
+    "author": "Schreiber",
+    "year": "2014",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "C4NR07153K-(cit25)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "1795",
+    "DOI": "10.1002/smll.201100465",
+    "volume": "7",
+    "author": "Schreiber",
+    "year": "2011",
+    "journal-title": "Small"
+   },
+   {
+    "key": "C4NR07153K-(cit26)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "13396",
+    "DOI": "10.1021/ja304263n",
+    "volume": "134",
+    "author": "Jiang",
+    "year": "2012",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "C4NR07153K-(cit27)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "6633",
+    "DOI": "10.1021/nn502058j",
+    "volume": "8",
+    "author": "Zhang",
+    "year": "2014",
+    "journal-title": "ACS Nano"
+   },
+   {
+    "key": "C4NR07153K-(cit28)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "8684",
+    "DOI": "10.1021/nn3022662",
+    "volume": "6",
+    "author": "Zhao",
+    "year": "2012",
+    "journal-title": "ACS Nano"
+   },
+   {
+    "key": "C4NR07153K-(cit29)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "389",
+    "DOI": "10.1038/nnano.2012.73",
+    "volume": "7",
+    "author": "Lee",
+    "year": "2012",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "C4NR07153K-(cit30)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "200",
+    "DOI": "10.1038/nnano.2010.5",
+    "volume": "5",
+    "author": "Voigt",
+    "year": "2010",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "C4NR07153K-(cit31)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "6854",
+    "DOI": "10.1002/anie.201302759",
+    "volume": "52",
+    "author": "Banerjee",
+    "year": "2013",
+    "journal-title": "Angew. Chem., Int. Ed."
+   },
+   {
+    "key": "C4NR07153K-(cit32)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "831",
+    "DOI": "10.1126/science.1214081",
+    "volume": "335",
+    "author": "Douglas",
+    "year": "2012",
+    "journal-title": "Science"
+   },
+   {
+    "key": "C4NR07153K-(cit33)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "7747",
+    "DOI": "10.1002/anie.201301293",
+    "volume": "52",
+    "author": "Tintore",
+    "year": "2013",
+    "journal-title": "Angew. Chem., Int. Ed."
+   },
+   {
+    "key": "C4NR07153K-(cit34)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "537",
+    "DOI": "10.1038/nnano.2014.102",
+    "volume": "9",
+    "author": "Udomprasert",
+    "year": "2014",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "C4NR07153K-(cit35)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "9378",
+    "DOI": "10.1002/anie.201005931",
+    "volume": "49",
+    "author": "Sacca",
+    "year": "2010",
+    "journal-title": "Angew. Chem., Int. Ed."
+   },
+   {
+    "key": "C4NR07153K-(cit36)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "841",
+    "DOI": "10.1038/nmeth.3025",
+    "volume": "11",
+    "author": "Shaw",
+    "year": "2014",
+    "journal-title": "Nat. Methods"
+   },
+   {
+    "key": "C4NR07153K-(cit37)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "5462",
+    "DOI": "10.1039/c3cc41707g",
+    "volume": "49",
+    "author": "Wang",
+    "year": "2013",
+    "journal-title": "Chem. Commun."
+   },
+   {
+    "key": "C4NR07153K-(cit38)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "5641",
+    "DOI": "10.1021/nn500108k",
+    "volume": "8",
+    "author": "Johnson-Buck",
+    "year": "2014",
+    "journal-title": "ACS Nano"
+   },
+   {
+    "key": "C4NR07153K-(cit39)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "662",
+    "DOI": "10.1126/science.1226734",
+    "volume": "338",
+    "author": "Derr",
+    "year": "2012",
+    "journal-title": "Science"
+   },
+   {
+    "key": "C4NR07153K-(cit40)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "279",
+    "DOI": "10.1016/S0959-440X(00)00085-3",
+    "volume": "10",
+    "author": "Bustamante",
+    "year": "2000",
+    "journal-title": "Curr. Opin. Struct. Biol."
+   },
+   {
+    "key": "C4NR07153K-(cit41)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "977",
+    "DOI": "10.1038/nmeth.1520",
+    "volume": "7",
+    "author": "Lipfert",
+    "year": "2010",
+    "journal-title": "Nat. Methods"
+   },
+   {
+    "key": "C4NR07153K-(cit42)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "8759",
+    "DOI": "10.1021/ma00130a008",
+    "volume": "28",
+    "author": "Marko",
+    "year": "1995",
+    "journal-title": "Macromolecules"
+   },
+   {
+    "key": "C4NR07153K-(cit43)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "1335",
+    "DOI": "10.1016/S0006-3495(97)78780-0",
+    "volume": "72",
+    "author": "Wang",
+    "year": "1997",
+    "journal-title": "Biophys. J."
+   },
+   {
+    "key": "C4NR07153K-(cit44)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "93",
+    "DOI": "10.1038/nsb883",
+    "volume": "10",
+    "author": "McKinney",
+    "year": "2003",
+    "journal-title": "Nat. Struct. Biol."
+   },
+   {
+    "key": "C4NR07153K-(cit45)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "4372",
+    "DOI": "10.1529/biophysj.108.135103",
+    "volume": "95",
+    "author": "Karymov",
+    "year": "2008",
+    "journal-title": "Biophys. J."
+   },
+   {
+    "key": "C4NR07153K-(cit46)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "5558",
+    "DOI": "10.1021/nl203503s",
+    "volume": "11",
+    "author": "Kauert",
+    "year": "2011",
+    "journal-title": "Nano Lett."
+   },
+   {
+    "key": "C4NR07153K-(cit47)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "2862",
+    "DOI": "10.1093/nar/gkr1173",
+    "volume": "40",
+    "author": "Kim",
+    "year": "2012",
+    "journal-title": "Nucleic Acids Res."
+   },
+   {
+    "key": "C4NR07153K-(cit48)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "20099",
+    "DOI": "10.1073/pnas.1316521110",
+    "volume": "110",
+    "author": "Yoo",
+    "year": "2013",
+    "journal-title": "Proc. Natl. Acad. Sci. U. S. A."
+   },
+   {
+    "key": "C4NR07153K-(cit49)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "5578",
+    "DOI": "10.1038/ncomms6578",
+    "volume": "5",
+    "author": "Pan",
+    "year": "2014",
+    "journal-title": "Nat. Commun."
+   },
+   {
+    "key": "C4NR07153K-(cit50)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "824",
+    "DOI": "10.1126/science.1157312",
+    "volume": "321",
+    "author": "Yin",
+    "year": "2008",
+    "journal-title": "Science"
+   },
+   {
+    "key": "C4NR07153K-(cit51)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "6700",
+    "DOI": "10.1021/nn401362p",
+    "volume": "7",
+    "author": "Schiffels",
+    "year": "2013",
+    "journal-title": "ACS Nano"
+   },
+   {
+    "key": "C4NR07153K-(cit52)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "520",
+    "DOI": "10.1038/nnano.2010.107",
+    "volume": "5",
+    "author": "Liedl",
+    "year": "2010",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "C4NR07153K-(cit53)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "11437",
+    "DOI": "10.1074/jbc.270.19.11437",
+    "volume": "270",
+    "author": "Isambert",
+    "year": "1995",
+    "journal-title": "J. Biol. Chem."
+   },
+   {
+    "key": "C4NR07153K-(cit54)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "748",
+    "DOI": "10.1038/nmat1718",
+    "volume": "5",
+    "author": "Claessens",
+    "year": "2006",
+    "journal-title": "Nat. Mater."
+   },
+   {
+    "key": "C4NR07153K-(cit55)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "923",
+    "DOI": "10.1083/jcb.120.4.923",
+    "volume": "120",
+    "author": "Gittes",
+    "year": "1993",
+    "journal-title": "J. Cell Biol."
+   },
+   {
+    "key": "C4NR07153K-(cit56)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "10248",
+    "DOI": "10.1073/pnas.0603931103",
+    "volume": "103",
+    "author": "Pampaloni",
+    "year": "2006",
+    "journal-title": "Proc. Natl. Acad. Sci. U. S. A."
+   },
+   {
+    "key": "C4NR07153K-(cit57)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "221",
+    "DOI": "10.1038/nmeth.1570",
+    "volume": "8",
+    "author": "Castro",
+    "year": "2011",
+    "journal-title": "Nat. Methods"
+   },
+   {
+    "key": "C4NR07153K-(cit58)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "35",
+    "DOI": "10.1021/nn405045x",
+    "volume": "8",
+    "author": "Plesa",
+    "year": "2014",
+    "journal-title": "ACS Nano"
+   },
+   {
+    "key": "C4NR07153K-(cit59)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "7766",
+    "DOI": "10.1002/anie.201302727",
+    "volume": "52",
+    "author": "Pfitzner",
+    "year": "2013",
+    "journal-title": "Angew. Chem., Int. Ed."
+   },
+   {
+    "key": "C4NR07153K-(cit60)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "27",
+    "DOI": "10.1021/nn405408g",
+    "volume": "8",
+    "author": "Zhou",
+    "year": "2014",
+    "journal-title": "ACS Nano"
+   },
+   {
+    "key": "C4NR07153K-(cit61)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "10665",
+    "DOI": "10.1073/pnas.0803841105",
+    "volume": "105",
+    "author": "Zhang",
+    "year": "2008",
+    "journal-title": "Proc. Natl. Acad. Sci. U. S. A."
+   },
+   {
+    "key": "C4NR07153K-(cit62)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "725",
+    "DOI": "10.1126/science.1174251",
+    "volume": "325",
+    "author": "Dietz",
+    "year": "2009",
+    "journal-title": "Science"
+   },
+   {
+    "key": "C4NR07153K-(cit63)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "342",
+    "DOI": "10.1126/science.1202998",
+    "volume": "332",
+    "author": "Han",
+    "year": "2011",
+    "journal-title": "Science"
+   },
+   {
+    "key": "C4NR07153K-(cit64)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "1412",
+    "DOI": "10.1126/science.1232252",
+    "volume": "339",
+    "author": "Han",
+    "year": "2013",
+    "journal-title": "Science"
+   },
+   {
+    "key": "C4NR07153K-(cit65)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "133",
+    "DOI": "10.1038/nmeth714",
+    "volume": "1",
+    "author": "Lang",
+    "year": "2004",
+    "journal-title": "Nat. Methods"
+   },
+   {
+    "key": "C4NR07153K-(cit66)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "369",
+    "DOI": "10.1017/S0033583500005886",
+    "volume": "29",
+    "author": "Eriksson",
+    "year": "1996",
+    "journal-title": "Q. R. Biophys."
+   },
+   {
+    "key": "C4NR07153K-(cit67)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "14488",
+    "DOI": "10.1021/ja204546h",
+    "volume": "133",
+    "author": "Rajendran",
+    "year": "2011",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "C4NR07153K-(cit68)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "773",
+    "DOI": "10.1016/0092-8674(94)90060-4",
+    "volume": "77",
+    "author": "Svoboda",
+    "year": "1994",
+    "journal-title": "Cell"
+   },
+   {
+    "key": "C4NR07153K-(cit69)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "3729",
+    "DOI": "10.1529/biophysj.106.099994",
+    "volume": "92",
+    "author": "Shin",
+    "year": "2007",
+    "journal-title": "Biophys. J."
+   },
+   {
+    "key": "C4NR07153K-(cit70)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "712",
+    "DOI": "10.1038/nnano.2010.193",
+    "volume": "5",
+    "author": "Han",
+    "year": "2010",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "C4NR07153K-(cit71)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "605",
+    "DOI": "10.1038/35020524",
+    "volume": "406",
+    "author": "Yurke",
+    "year": "2000",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "C4NR07153K-(cit72)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "4352",
+    "DOI": "10.1021/ja910188p",
+    "volume": "132",
+    "author": "Gu",
+    "year": "2010",
+    "journal-title": "J. Am. Chem. Soc."
+   },
+   {
+    "key": "C4NR07153K-(cit73)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "449",
+    "DOI": "10.1038/ncomms1452",
+    "volume": "2",
+    "author": "Kuzuya",
+    "year": "2011",
+    "journal-title": "Nat. Commun."
+   },
+   {
+    "key": "C4NR07153K-(cit74)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "73",
+    "DOI": "10.1038/nature07971",
+    "volume": "459",
+    "author": "Andersen",
+    "year": "2009",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "C4NR07153K-(cit75)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "10050",
+    "DOI": "10.1021/nn303767b",
+    "volume": "6",
+    "author": "Zadegan",
+    "year": "2012",
+    "journal-title": "ACS Nano"
+   },
+   {
+    "key": "C4NR07153K-(cit76)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "144",
+    "DOI": "10.1038/16437",
+    "volume": "397",
+    "author": "Mao",
+    "year": "1999",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "C4NR07153K-(cit77)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "103",
+    "DOI": "10.1038/nchem.957",
+    "volume": "3",
+    "author": "Zhang",
+    "year": "2011",
+    "journal-title": "Nat. Chem."
+   },
+   {
+    "key": "C4NR07153K-(cit78)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "10641",
+    "DOI": "10.1093/nar/gkt801",
+    "volume": "41",
+    "author": "Srinivas",
+    "year": "2013",
+    "journal-title": "Nucleic Acids Res."
+   },
+   {
+    "key": "C4NR07153K-(cit79)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "62",
+    "DOI": "10.1038/415062a",
+    "volume": "415",
+    "author": "Yan",
+    "year": "2002",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "C4NR07153K-(cit80)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "1121",
+    "DOI": "10.1126/science.1148532",
+    "volume": "318",
+    "author": "Zhang",
+    "year": "2007",
+    "journal-title": "Science"
+   },
+   {
+    "key": "C4NR07153K-(cit81)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "67",
+    "DOI": "10.1126/science.1170336",
+    "volume": "324",
+    "author": "Omabegho",
+    "year": "2009",
+    "journal-title": "Science"
+   },
+   {
+    "key": "C4NR07153K-(cit82)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "4906",
+    "DOI": "10.1002/anie.200460522",
+    "volume": "43",
+    "author": "Yin",
+    "year": "2004",
+    "journal-title": "Angew. Chem., Int. Ed."
+   },
+   {
+    "key": "C4NR07153K-(cit83)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "1583",
+    "DOI": "10.1126/science.1131372",
+    "volume": "314",
+    "author": "Ding",
+    "year": "2006",
+    "journal-title": "Science"
+   },
+   {
+    "key": "C4NR07153K-(cit84)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "206",
+    "DOI": "10.1038/nature09012",
+    "volume": "465",
+    "author": "Lund",
+    "year": "2010",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "C4NR07153K-(cit85)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "39",
+    "DOI": "10.1038/nnano.2013.257",
+    "volume": "9",
+    "author": "Cha",
+    "year": "2014",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "C4NR07153K-(cit86)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "202",
+    "DOI": "10.1038/nature09026",
+    "volume": "465",
+    "author": "Gu",
+    "year": "2010",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "C4NR07153K-(cit87)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "1196",
+    "DOI": "10.1126/science.1200520",
+    "volume": "332",
+    "author": "Qian",
+    "year": "2011",
+    "journal-title": "Science"
+   },
+   {
+    "key": "C4NR07153K-(cit88)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "368",
+    "DOI": "10.1038/nature10262",
+    "volume": "475",
+    "author": "Qian",
+    "year": "2011",
+    "journal-title": "Nature"
+   },
+   {
+    "key": "C4NR07153K-(cit89)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "1965",
+    "DOI": "10.1038/ncomms2965",
+    "volume": "4",
+    "author": "Zhang",
+    "year": "2013",
+    "journal-title": "Nat. Commun."
+   },
+   {
+    "key": "C4NR07153K-(cit90)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "3290",
+    "DOI": "10.1021/nl301399z",
+    "volume": "12",
+    "author": "Zhang",
+    "year": "2012",
+    "journal-title": "Nano Lett."
+   },
+   {
+    "key": "C4NR07153K-(cit91)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "862",
+    "DOI": "10.1038/nmat4031",
+    "volume": "13",
+    "author": "Kuzyk",
+    "year": "2014",
+    "journal-title": "Nat. Mater."
+   },
+   {
+    "key": "C4NR07153K-(cit92)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "4342",
+    "DOI": "10.1002/anie.200351818",
+    "volume": "42",
+    "author": "Feng",
+    "year": "2003",
+    "journal-title": "Angew. Chem., Int. Ed."
+   },
+   {
+    "key": "C4NR07153K-(cit93)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "713",
+    "DOI": "10.1073/pnas.1408869112",
+    "volume": "112",
+    "author": "Marras",
+    "year": "2015",
+    "journal-title": "Proc. Natl. Acad. Sci. U. S. A."
+   },
+   {
+    "key": "C4NR07153K-(cit94)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "4983",
+    "DOI": "10.1021/nl3026136",
+    "volume": "12",
+    "author": "Lavella",
+    "year": "2012",
+    "journal-title": "Nano Lett."
+   },
+   {
+    "key": "C4NR07153K-(cit95)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "531",
+    "DOI": "10.1038/nnano.2014.100",
+    "volume": "9",
+    "author": "Fu",
+    "year": "2014",
+    "journal-title": "Nat. Nanotechnol."
+   },
+   {
+    "key": "C4NR07153K-(cit96)/*[position()=1]",
+    "doi-asserted-by": "crossref",
+    "first-page": "5740",
+    "DOI": "10.1021/nl502626s",
+    "volume": "14",
+    "author": "Marchi",
+    "year": "2014",
+    "journal-title": "Nano Lett."
+   }
+  ],
+  "container-title": [
+   "Nanoscale"
+  ],
+  "language": "en",
+  "link": [
+   {
+    "URL": "http://pubs.rsc.org/en/content/articlepdf/2015/NR/C4NR07153K",
+    "content-type": "unspecified",
+    "content-version": "vor",
+    "intended-application": "similarity-checking"
+   }
+  ],
+  "deposited": {
+   "date-parts": [
+    [
+     2026,
+     7,
+     1
+    ]
+   ],
+   "date-time": "2026-07-01T18:14:55Z",
+   "timestamp": 1782929695000
+  },
+  "score": 72.91875,
+  "resource": {
+   "primary": {
+    "URL": "https://pubs.rsc.org/nr/article/7/14/5913-5921/444334"
+   }
+  },
+  "issued": {
+   "date-parts": [
+    [
+     2015
+    ]
+   ]
+  },
+  "references-count": 96,
+  "journal-issue": {
+   "issue": "14",
+   "published-print": {
+    "date-parts": [
+     [
+      2015
+     ]
+    ]
+   }
+  },
+  "URL": "https://doi.org/10.1039/c4nr07153k",
+  "ISSN": [
+   "2040-3364",
+   "2040-3372"
+  ],
+  "issn-type": [
+   {
+    "value": "2040-3364",
+    "type": "print"
+   },
+   {
+    "value": "2040-3372",
+    "type": "electronic"
+   }
+  ],
+  "published": {
+   "date-parts": [
+    [
+     2015
+    ]
+   ]
+  },
+  "assertion": [
+   {
+    "value": "This document is CrossCheck deposited",
+    "name": "crosscheck",
+    "explanation": {
+     "URL": "http://www.crossref.org/crosscheck/index.html"
+    },
+    "group": {
+     "name": "crosscheck",
+     "label": "CROSSCHECK"
+    }
+   },
+   {
+    "value": "Supplementary Information",
+    "URL": "http://dx.doi.org/10.1039/C4NR07153K",
+    "name": "related_data",
+    "group": {
+     "name": "related_data",
+     "label": "RELATED DATA"
+    }
+   },
+   {
+    "value": "The Royal Society of Chemistry has an exclusive publication licence for this journal",
+    "name": "copyright_licence",
+    "group": {
+     "name": "copyright_licensing",
+     "label": "COPYRIGHT AND LICENSING"
+    }
+   },
+   {
+    "value": "The accepted version of this article will be made freely available after a 12 month embargo period",
+    "name": "copyright_licence",
+    "label": "OPEN ACCESS",
+    "group": {
+     "name": "copyright_licensing",
+     "label": "COPYRIGHT AND LICENSING"
+    }
+   },
+   {
+    "value": "Received 3 December 2014; Accepted 24 January 2015; Advance Article published 6 February 2015; Version of Record published 26 March 2015",
+    "order": 1,
+    "name": "history",
+    "group": {
+     "name": "publication_history",
+     "label": "PUBLICATION HISTORY"
+    }
+   }
+  ]
+ }
+}

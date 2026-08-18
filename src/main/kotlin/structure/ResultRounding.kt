@@ -112,6 +112,12 @@ fun roundForResult(
     }
     require(floor >= 0.0) { "floor must not be negative, was: $floor" }
     if (!value.isFinite()) return value
+    // An exact zero is exactly representable at every precision, and it must be returned before
+    // the logarithm: at `floor = 0.0` the floor test below no longer catches it, `log10(0)` is
+    // `-Infinity`, and `roundToLong` is handed a `NaN` (`CLAUDE.md`; found by `T-190` on a
+    // convergence departure that is exactly zero because two sample grids agree to the last bit).
+    // A no-op for every caller passing a positive floor, which is what caught the zero until now.
+    if (value == 0.0) return 0.0
     if (abs(value) < floor) return 0.0
     val scale = 10.0.pow(digits - 1 - kotlin.math.floor(log10(abs(value))))
     return (value * scale).roundToLong() / scale

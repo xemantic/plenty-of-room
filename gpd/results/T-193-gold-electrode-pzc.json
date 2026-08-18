@@ -1,0 +1,1571 @@
+{
+    "task": "T-193",
+    "leaf": "A1.2 (the 3.0 nm positional bound, read at zero bias), inheriting C-0021",
+    "title": "Template-stripped gold: the hold-down at the answered material, and where its potential of zero charge sits",
+    "verificationType": "logical (the identification of the model's applied bias with the rational potential) + in-silico (C-0021's van der Waals term and C-0008's gap field re-run at gold alone, the field parametrised by the diffuse drop rather than by the bias) + literature (a primary, open-access, directly-read measurement of E_pzc for Au(111) in a mM aqueous electrolyte)",
+    "acceptance": "PASS if (a) the gold-alone re-read reproduces C-0021's gold rows, (b) no verdict of C-0021 moves, (c) a primary E_pzc is obtained with its reference electrode and conditions or a query-recorded absence is filed, and (d) the threshold that would change the answer is stated.",
+    "maturity": "TRL 1-3. Model-consistent and traceable. NOTHING HERE IS MEASURED BY THIS PROJECT. The E_pzc is somebody else's measurement, on Au(111) in 1 mM HClO4, not on template-stripped gold in MgCl2.",
+    "units": [
+        "lengths nm, forces pN, energies k_BT (4.142 pN.nm at 300 K), potentials V",
+        "charge densities e/nm^2, capacitance uF/cm^2"
+    ],
+    "conventions": [
+        "A force is POSITIVE DOWN in the hold-down tables (T-13's convention) and the solved field's forceOnTile is NEGATIVE toward the electrode; both are emitted.",
+        "The RATIONAL POTENTIAL is E - E_pzc, positive when the electrode is positively charged. The model's 'applied bias' IS this quantity, not a potentiostat setting.",
+        "E_pzc is quoted against the SHE, and against the RHE at the source's own pH, because the source prints both and the pair is a transcription check.",
+        "Zero bias means zero RATIONAL potential throughout C-0021; this study is about what a bench would have to do to deliver that."
+    ],
+    "parameters": {
+        "buffer [mM MgCl2]": "2.0",
+        "temperature [K]": "300.0",
+        "footprint [nm^2]": "1600.0",
+        "positional bound [nm]": "3.0",
+        "thermal force scale k_BT/sigma [pN]": "1.380649",
+        "Stern capacitance [uF/cm^2]": "20.0",
+        "Stern charge per volt [e/(V nm^2)]": "1.24830181",
+        "tile charge density [e/nm^2]": "-0.398665238",
+        "inverse Debye length as C-0021 calls it [1/nm]": "5.21953283",
+        "inverse Debye length at the documented 3.93 nm [1/nm]": "0.254655191",
+        "gap mesh nodes, force": "4000",
+        "gap mesh nodes, Stern inversion": "400",
+        "electrolyte of the E_pzc measurement [M HClO4]": "0.001",
+        "pH of that electrolyte": "3.0",
+        "Nernst slope at 300 K [V/decade]": "0.0595264293",
+        "point-ion boundary, Cl- at a positive electrode [V]": "0.196568167",
+        "point-ion boundary, Mg2+ at a negative electrode [V]": "0.0973945485"
+    },
+    "vanDerWaals": [
+        {
+            "gap": 5.0,
+            "tileThickness": 2.0,
+            "goldForceLower": 10.3560219,
+            "goldForceUpper": 17.1586685,
+            "goldWellDepth": 4.81705073,
+            "goldNegativeStiffness": 7.23157074,
+            "goldOverThermalScaleLower": 7.50083613,
+            "goldOverThermalScaleUpper": 12.427973,
+            "fourMaterialForceLower": 3.43577893,
+            "fourMaterialForceUpper": 18.5527419,
+            "fourMaterialBracketRatio": 5.39986486,
+            "goldBracketRatio": 1.65687835,
+            "bracketNarrowing": 3.25905934,
+            "confining": false
+        },
+        {
+            "gap": 5.0,
+            "tileThickness": 10.0,
+            "goldForceLower": 15.6906224,
+            "goldForceUpper": 25.9974525,
+            "goldWellDepth": 8.74205502,
+            "goldNegativeStiffness": 9.65576762,
+            "goldOverThermalScaleLower": 11.3646715,
+            "goldOverThermalScaleUpper": 18.8298782,
+            "fourMaterialForceLower": 5.20561952,
+            "fourMaterialForceUpper": 28.1096419,
+            "fourMaterialBracketRatio": 5.39986486,
+            "goldBracketRatio": 1.65687835,
+            "bracketNarrowing": 3.25905934,
+            "confining": false
+        },
+        {
+            "gap": 7.0,
+            "tileThickness": 2.0,
+            "goldForceLower": 2.96719438,
+            "goldForceUpper": 5.20951003,
+            "goldWellDepth": 1.87074541,
+            "goldNegativeStiffness": 1.52276445,
+            "goldOverThermalScaleLower": 2.14913014,
+            "goldOverThermalScaleUpper": 3.77323275,
+            "fourMaterialForceLower": 0.984415061,
+            "fourMaterialForceUpper": 5.63276196,
+            "fourMaterialBracketRatio": 5.72193802,
+            "goldBracketRatio": 1.75570231,
+            "bracketNarrowing": 3.25905934,
+            "confining": false
+        },
+        {
+            "gap": 7.0,
+            "tileThickness": 10.0,
+            "goldForceLower": 5.2126151,
+            "goldForceUpper": 9.15180037,
+            "goldWellDepth": 3.93244926,
+            "goldNegativeStiffness": 2.33260764,
+            "goldOverThermalScaleLower": 3.77548175,
+            "goldOverThermalScaleUpper": 6.62862202,
+            "fourMaterialForceLower": 1.72936995,
+            "fourMaterialForceUpper": 9.89534768,
+            "fourMaterialBracketRatio": 5.72193802,
+            "goldBracketRatio": 1.75570231,
+            "bracketNarrowing": 3.25905934,
+            "confining": false
+        },
+        {
+            "gap": 10.0,
+            "tileThickness": 2.0,
+            "goldForceLower": 0.737332999,
+            "goldForceUpper": 1.42173568,
+            "goldWellDepth": 0.645552669,
+            "goldNegativeStiffness": 0.271840902,
+            "goldOverThermalScaleLower": 0.534048117,
+            "goldOverThermalScaleUpper": 1.02975896,
+            "fourMaterialForceLower": 0.244622231,
+            "fourMaterialForceUpper": 1.53724604,
+            "fourMaterialBracketRatio": 6.28416328,
+            "goldBracketRatio": 1.92821383,
+            "bracketNarrowing": 3.25905934,
+            "confining": false
+        },
+        {
+            "gap": 10.0,
+            "tileThickness": 10.0,
+            "goldForceLower": 1.53138392,
+            "goldForceUpper": 2.95283565,
+            "goldWellDepth": 1.58453837,
+            "goldNegativeStiffness": 0.492230546,
+            "goldOverThermalScaleLower": 1.10917686,
+            "goldOverThermalScaleUpper": 2.13873015,
+            "fourMaterialForceLower": 0.508061556,
+            "fourMaterialForceUpper": 3.19274178,
+            "fourMaterialBracketRatio": 6.28416328,
+            "goldBracketRatio": 1.92821383,
+            "bracketNarrowing": 3.25905934,
+            "confining": false
+        }
+    ],
+    "screeningAudit": [
+        {
+            "gap": 5.0,
+            "tileThickness": 2.0,
+            "goldForceLowerAsPublished": 10.3560219,
+            "goldForceLowerAtDebyeScreening": 10.4521903,
+            "relativeDifference": "0.0093",
+            "zeroFrequencyShare": 0.105961756,
+            "screeningFactorAsPublished": 0.0,
+            "screeningFactorAtDebye": 0.0783513635
+        },
+        {
+            "gap": 5.0,
+            "tileThickness": 10.0,
+            "goldForceLowerAsPublished": 15.6906224,
+            "goldForceLowerAtDebyeScreening": 15.8363292,
+            "relativeDifference": "0.0093",
+            "zeroFrequencyShare": 0.105961756,
+            "screeningFactorAsPublished": 0.0,
+            "screeningFactorAtDebye": 0.0783513635
+        },
+        {
+            "gap": 7.0,
+            "tileThickness": 2.0,
+            "goldForceLowerAsPublished": 2.96719438,
+            "goldForceLowerAtDebyeScreening": 2.97714395,
+            "relativeDifference": "0.0034",
+            "zeroFrequencyShare": 0.105961756,
+            "screeningFactorAsPublished": 0.0,
+            "screeningFactorAtDebye": 0.0282920999
+        },
+        {
+            "gap": 7.0,
+            "tileThickness": 10.0,
+            "goldForceLowerAsPublished": 5.2126151,
+            "goldForceLowerAtDebyeScreening": 5.23009399,
+            "relativeDifference": "0.0034",
+            "zeroFrequencyShare": 0.105961756,
+            "screeningFactorAsPublished": 0.0,
+            "screeningFactorAtDebye": 0.0282920999
+        },
+        {
+            "gap": 10.0,
+            "tileThickness": 2.0,
+            "goldForceLowerAsPublished": 0.737332999,
+            "goldForceLowerAtDebyeScreening": 0.737869474,
+            "relativeDifference": "0.00073",
+            "zeroFrequencyShare": 0.105961756,
+            "screeningFactorAsPublished": 0.0,
+            "screeningFactorAtDebye": 0.00613893617
+        },
+        {
+            "gap": 10.0,
+            "tileThickness": 10.0,
+            "goldForceLowerAsPublished": 1.53138392,
+            "goldForceLowerAtDebyeScreening": 1.53249814,
+            "relativeDifference": "0.00073",
+            "zeroFrequencyShare": 0.105961756,
+            "screeningFactorAsPublished": 0.0,
+            "screeningFactorAtDebye": 0.00613893617
+        }
+    ],
+    "potentialOfZeroCharge": [
+        {
+            "surface": "Au(111), thermally reconstructed",
+            "versusReversibleHydrogen": 0.69,
+            "versusStandardHydrogen": 0.51,
+            "derivedVersusStandardHydrogen": 0.511420712,
+            "departure": 0.001420712,
+            "readStatus": "READ DIRECTLY — Adnan, Behjati, Felez-Guerrero, Ojha & Koper, Phys. Chem. Chem. Phys. 26:21419 (2024), 10.1039/d4cp02133a, EuropePMC PMC11323936 full text, verbatim from the Results section"
+        },
+        {
+            "surface": "Au(111), potential-induced reconstruction",
+            "versusReversibleHydrogen": 0.674,
+            "versusStandardHydrogen": 0.497,
+            "derivedVersusStandardHydrogen": 0.495420712,
+            "departure": -0.001579288,
+            "readStatus": "READ DIRECTLY — Adnan, Behjati, Felez-Guerrero, Ojha & Koper, Phys. Chem. Chem. Phys. 26:21419 (2024), 10.1039/d4cp02133a, EuropePMC PMC11323936 full text, verbatim from the Results section"
+        },
+        {
+            "surface": "Au(111), unreconstructed, with adatom islands",
+            "versusReversibleHydrogen": 0.64,
+            "versusStandardHydrogen": 0.46,
+            "derivedVersusStandardHydrogen": 0.461420712,
+            "departure": 0.001420712,
+            "readStatus": "READ DIRECTLY — Adnan, Behjati, Felez-Guerrero, Ojha & Koper, Phys. Chem. Chem. Phys. 26:21419 (2024), 10.1039/d4cp02133a, EuropePMC PMC11323936 full text, verbatim from the Results section"
+        }
+    ],
+    "rationalPotentialLadder": [
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.12,
+            "rationalPotential": -1.48064743,
+            "electrodeChargeDensity": -1.69822599,
+            "force": 108.798061,
+            "holdDown": -108.798061,
+            "overThermalScale": -78.8021145,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.115,
+            "rationalPotential": -1.23596507,
+            "electrodeChargeDensity": -1.3990818,
+            "force": 108.143864,
+            "holdDown": -108.143864,
+            "overThermalScale": -78.3282818,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.11,
+            "rationalPotential": -1.03335021,
+            "electrodeChargeDensity": -1.15244126,
+            "force": 107.356743,
+            "holdDown": -107.356743,
+            "overThermalScale": -77.7581722,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.105,
+            "rationalPotential": -0.865389333,
+            "electrodeChargeDensity": -0.949051715,
+            "force": 106.411266,
+            "holdDown": -106.411266,
+            "overThermalScale": -77.0733664,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.1,
+            "rationalPotential": -0.725970005,
+            "electrodeChargeDensity": -0.78128436,
+            "force": 105.277807,
+            "holdDown": -105.277807,
+            "overThermalScale": -76.2524054,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.095,
+            "rationalPotential": -0.61005181,
+            "electrodeChargeDensity": -0.642848338,
+            "force": 103.922122,
+            "holdDown": -103.922122,
+            "overThermalScale": -75.2704866,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.09,
+            "rationalPotential": -0.513477586,
+            "electrodeChargeDensity": -0.528555157,
+            "force": 102.304995,
+            "holdDown": -102.304995,
+            "overThermalScale": -74.0992065,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.085,
+            "rationalPotential": -0.432817917,
+            "electrodeChargeDensity": -0.434124619,
+            "force": 100.382001,
+            "holdDown": -100.382001,
+            "overThermalScale": -72.7063876,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.08,
+            "rationalPotential": -0.365243079,
+            "electrodeChargeDensity": -0.356024984,
+            "force": 98.1034368,
+            "holdDown": -98.1034368,
+            "overThermalScale": -71.05603,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.075,
+            "rationalPotential": -0.308417628,
+            "electrodeChargeDensity": -0.291341419,
+            "force": 95.4144875,
+            "holdDown": -95.4144875,
+            "overThermalScale": -69.1084319,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.07,
+            "rationalPotential": -0.260413697,
+            "electrodeChargeDensity": -0.237667779,
+            "force": 92.2556828,
+            "holdDown": -92.2556828,
+            "overThermalScale": -66.8205191,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.065,
+            "rationalPotential": -0.219639718,
+            "electrodeChargeDensity": -0.193017655,
+            "force": 88.5636819,
+            "holdDown": -88.5636819,
+            "overThermalScale": -64.1464136,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.06,
+            "rationalPotential": -0.184781878,
+            "electrodeChargeDensity": -0.155751296,
+            "force": 84.2724005,
+            "holdDown": -84.2724005,
+            "overThermalScale": -61.0382512,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.055,
+            "rationalPotential": -0.154756039,
+            "electrodeChargeDensity": -0.124515613,
+            "force": 79.3144547,
+            "holdDown": -79.3144547,
+            "overThermalScale": -57.4472257,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.05,
+            "rationalPotential": -0.128668246,
+            "electrodeChargeDensity": -0.0981948827,
+            "force": 73.6228467,
+            "holdDown": -73.6228467,
+            "overThermalScale": -53.3248108,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.045,
+            "rationalPotential": -0.105782238,
+            "electrodeChargeDensity": -0.0758701988,
+            "force": 67.1327787,
+            "holdDown": -67.1327787,
+            "overThermalScale": -48.6240737,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.04,
+            "rationalPotential": -0.0854926434,
+            "electrodeChargeDensity": -0.0567860164,
+            "force": 59.783452,
+            "holdDown": -59.783452,
+            "overThermalScale": -43.300978,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.035,
+            "rationalPotential": -0.0673027642,
+            "electrodeChargeDensity": -0.0403224285,
+            "force": 51.5196999,
+            "holdDown": -51.5196999,
+            "overThermalScale": -37.3155667,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.03,
+            "rationalPotential": -0.050806073,
+            "electrodeChargeDensity": -0.0259720665,
+            "force": 42.2933276,
+            "holdDown": -42.2933276,
+            "overThermalScale": -30.6329325,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.025,
+            "rationalPotential": -0.0356707022,
+            "electrodeChargeDensity": -0.0133207437,
+            "force": 32.0640701,
+            "holdDown": -32.0640701,
+            "overThermalScale": -23.2239115,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.02,
+            "rationalPotential": -0.0216263845,
+            "electrodeChargeDensity": -0.00203115442,
+            "force": 20.8001402,
+            "holdDown": -20.8001402,
+            "overThermalScale": -15.0654802,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.015,
+            "rationalPotential": -0.0084534192,
+            "electrodeChargeDensity": 0.00817089762,
+            "force": 8.4783883,
+            "holdDown": -8.4783883,
+            "overThermalScale": -6.14087165,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.01,
+            "rationalPotential": 0.00402665759,
+            "electrodeChargeDensity": 0.017508143,
+            "force": -4.91585442,
+            "holdDown": 4.91585442,
+            "overThermalScale": 3.56053886,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": -0.005,
+            "rationalPotential": 0.015958949,
+            "electrodeChargeDensity": 0.0261616775,
+            "force": -19.3891656,
+            "holdDown": 19.3891656,
+            "overThermalScale": 14.0435155,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": 0.0,
+            "rationalPotential": 0.0274618257,
+            "electrodeChargeDensity": 0.0342792339,
+            "force": -34.9405434,
+            "holdDown": 34.9405434,
+            "overThermalScale": 25.3073326,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": 0.005,
+            "rationalPotential": 0.0386324784,
+            "electrodeChargeDensity": 0.0419821124,
+            "force": -51.5619525,
+            "holdDown": 51.5619525,
+            "overThermalScale": 37.3461701,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": 0.01,
+            "rationalPotential": 0.0495515514,
+            "electrodeChargeDensity": 0.0493709628,
+            "force": -69.2388291,
+            "holdDown": 69.2388291,
+            "overThermalScale": 50.1494798,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": 0.015,
+            "rationalPotential": 0.0602869951,
+            "electrodeChargeDensity": 0.0565305929,
+            "force": -87.9504949,
+            "holdDown": 87.9504949,
+            "overThermalScale": 63.7022841,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": 0.02,
+            "rationalPotential": 0.070897268,
+            "electrodeChargeDensity": 0.0635339644,
+            "force": -107.670447,
+            "holdDown": 107.670447,
+            "overThermalScale": 77.9853876,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": 0.025,
+            "rationalPotential": 0.0814340036,
+            "electrodeChargeDensity": 0.0704455212,
+            "force": -128.366516,
+            "holdDown": 128.366516,
+            "overThermalScale": 92.975489,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": 0.03,
+            "rationalPotential": 0.0919442459,
+            "electrodeChargeDensity": 0.0773239796,
+            "force": -150.000883,
+            "holdDown": 150.000883,
+            "overThermalScale": 108.645197,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": 0.035,
+            "rationalPotential": 0.102472344,
+            "electrodeChargeDensity": 0.0842246919,
+            "force": -172.529986,
+            "holdDown": 172.529986,
+            "overThermalScale": 124.96296,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": 0.04,
+            "rationalPotential": 0.113061582,
+            "electrodeChargeDensity": 0.0912016815,
+            "force": -195.904318,
+            "holdDown": 195.904318,
+            "overThermalScale": 141.89292,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": 0.045,
+            "rationalPotential": 0.123755609,
+            "electrodeChargeDensity": 0.0983094272,
+            "force": -220.068158,
+            "holdDown": 220.068158,
+            "overThermalScale": 159.394718,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": 0.05,
+            "rationalPotential": 0.13459972,
+            "electrodeChargeDensity": 0.105604462,
+            "force": -244.95927,
+            "holdDown": 244.95927,
+            "overThermalScale": 177.423277,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": 0.055,
+            "rationalPotential": 0.145642031,
+            "electrodeChargeDensity": 0.113146837,
+            "force": -270.508596,
+            "holdDown": 270.508596,
+            "overThermalScale": 195.928579,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 5.0,
+            "diffusePotential": 0.06,
+            "rationalPotential": 0.156934568,
+            "electrodeChargeDensity": 0.121001489,
+            "force": -296.640012,
+            "holdDown": 296.640012,
+            "overThermalScale": 214.855486,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.12,
+            "rationalPotential": -1.48111474,
+            "electrodeChargeDensity": -1.69880271,
+            "force": 50.5503802,
+            "holdDown": -50.5503802,
+            "overThermalScale": -36.6134913,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.115,
+            "rationalPotential": -1.23652684,
+            "electrodeChargeDensity": -1.39977682,
+            "force": 50.3062232,
+            "holdDown": -50.3062232,
+            "overThermalScale": -36.4366492,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.11,
+            "rationalPotential": -1.03402504,
+            "electrodeChargeDensity": -1.15327773,
+            "force": 50.0118572,
+            "holdDown": -50.0118572,
+            "overThermalScale": -36.2234407,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.105,
+            "rationalPotential": -0.866199002,
+            "electrodeChargeDensity": -0.950056801,
+            "force": 49.6574144,
+            "holdDown": -49.6574144,
+            "overThermalScale": -35.9667188,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.1,
+            "rationalPotential": -0.72693992,
+            "electrodeChargeDensity": -0.782489749,
+            "force": 49.2312877,
+            "holdDown": -49.2312877,
+            "overThermalScale": -35.6580765,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.095,
+            "rationalPotential": -0.611211367,
+            "electrodeChargeDensity": -0.644290718,
+            "force": 48.7199075,
+            "holdDown": -48.7199075,
+            "overThermalScale": -35.2876853,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.09,
+            "rationalPotential": -0.5148605,
+            "electrodeChargeDensity": -0.53027662,
+            "force": 48.1075264,
+            "holdDown": -48.1075264,
+            "overThermalScale": -34.8441395,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.085,
+            "rationalPotential": -0.43446246,
+            "electrodeChargeDensity": -0.436172949,
+            "force": 47.3760264,
+            "holdDown": -47.3760264,
+            "overThermalScale": -34.3143162,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.08,
+            "rationalPotential": -0.367192172,
+            "electrodeChargeDensity": -0.358453774,
+            "force": 46.5047726,
+            "holdDown": -46.5047726,
+            "overThermalScale": -33.6832697,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.075,
+            "rationalPotential": -0.310718736,
+            "electrodeChargeDensity": -0.294209933,
+            "force": 45.470539,
+            "holdDown": -45.470539,
+            "overThermalScale": -32.9341774,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.07,
+            "rationalPotential": -0.263118475,
+            "electrodeChargeDensity": -0.241040511,
+            "force": 44.2475389,
+            "holdDown": -44.2475389,
+            "overThermalScale": -32.0483619,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.065,
+            "rationalPotential": -0.222803364,
+            "electrodeChargeDensity": -0.196963518,
+            "force": 42.8075889,
+            "holdDown": -42.8075889,
+            "overThermalScale": -31.0054104,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.06,
+            "rationalPotential": -0.188462182,
+            "electrodeChargeDensity": -0.160342436,
+            "force": 41.1204359,
+            "holdDown": -41.1204359,
+            "overThermalScale": -29.7834105,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.055,
+            "rationalPotential": -0.159012135,
+            "electrodeChargeDensity": -0.129825849,
+            "force": 39.1542609,
+            "holdDown": -39.1542609,
+            "overThermalScale": -28.3593157,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.05,
+            "rationalPotential": -0.133559126,
+            "electrodeChargeDensity": -0.104297849,
+            "force": 36.87636,
+            "holdDown": -36.87636,
+            "overThermalScale": -26.7094388,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.045,
+            "rationalPotential": -0.111365118,
+            "electrodeChargeDensity": -0.0828373079,
+            "force": 34.2539799,
+            "holdDown": -34.2539799,
+            "overThermalScale": -24.8100566,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.04,
+            "rationalPotential": -0.0918213019,
+            "electrodeChargeDensity": -0.064684387,
+            "force": 31.2552615,
+            "holdDown": -31.2552615,
+            "overThermalScale": -22.6380937,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.035,
+            "rationalPotential": -0.0744259965,
+            "electrodeChargeDensity": -0.0492129523,
+            "force": 27.8502261,
+            "holdDown": -27.8502261,
+            "overThermalScale": -20.1718366,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.03,
+            "rationalPotential": -0.0587663683,
+            "electrodeChargeDensity": -0.0359077617,
+            "force": 24.0117274,
+            "holdDown": -24.0117274,
+            "overThermalScale": -17.3916234,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.025,
+            "rationalPotential": -0.0445032426,
+            "electrodeChargeDensity": -0.0243455051,
+            "force": 19.7162965,
+            "holdDown": -19.7162965,
+            "overThermalScale": -14.2804554,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.02,
+            "rationalPotential": -0.0313584013,
+            "electrodeChargeDensity": -0.0141789518,
+            "force": 14.9448195,
+            "holdDown": -14.9448195,
+            "overThermalScale": -10.8244887,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.015,
+            "rationalPotential": -0.0191038998,
+            "electrodeChargeDensity": -0.00512361583,
+            "force": 9.68301513,
+            "holdDown": -9.68301513,
+            "overThermalScale": -7.01337931,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.01,
+            "rationalPotential": -0.00755303674,
+            "electrodeChargeDensity": 0.00305351457,
+            "force": 3.92170808,
+            "holdDown": -3.92170808,
+            "overThermalScale": -2.8404816,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": -0.005,
+            "rationalPotential": 0.00344730038,
+            "electrodeChargeDensity": 0.0105435307,
+            "force": -2.34308117,
+            "holdDown": 2.34308117,
+            "overThermalScale": 1.69708679,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": 0.0,
+            "rationalPotential": 0.0140231287,
+            "electrodeChargeDensity": 0.0175037079,
+            "force": -9.11019259,
+            "holdDown": 9.11019259,
+            "overThermalScale": 6.59848563,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": 0.005,
+            "rationalPotential": 0.0242788712,
+            "electrodeChargeDensity": 0.0240643713,
+            "force": -16.3734812,
+            "holdDown": 16.3734812,
+            "overThermalScale": 11.8592642,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": 0.01,
+            "rationalPotential": 0.0343020048,
+            "electrodeChargeDensity": 0.030334697,
+            "force": -24.1220212,
+            "holdDown": 24.1220212,
+            "overThermalScale": 17.4715088,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": 0.015,
+            "rationalPotential": 0.0441669761,
+            "electrodeChargeDensity": 0.0364075996,
+            "force": -32.340321,
+            "holdDown": 32.340321,
+            "overThermalScale": 23.4239991,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": 0.02,
+            "rationalPotential": 0.0539384938,
+            "electrodeChargeDensity": 0.0423638398,
+            "force": -41.0085268,
+            "holdDown": 41.0085268,
+            "overThermalScale": 29.7023551,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": 0.025,
+            "rationalPotential": 0.0636742922,
+            "electrodeChargeDensity": 0.0482754751,
+            "force": -50.1025975,
+            "holdDown": 50.1025975,
+            "overThermalScale": 36.2891636,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": 0.03,
+            "rationalPotential": 0.0734274575,
+            "electrodeChargeDensity": 0.0542087615,
+            "force": -59.5944514,
+            "holdDown": 59.5944514,
+            "overThermalScale": 43.1640855,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": 0.035,
+            "rationalPotential": 0.0832483917,
+            "electrodeChargeDensity": 0.0602266055,
+            "force": -69.4520944,
+            "holdDown": 69.4520944,
+            "overThermalScale": 50.3039472,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": 0.04,
+            "rationalPotential": 0.0931864829,
+            "electrodeChargeDensity": 0.0663906482,
+            "force": -79.6397442,
+            "holdDown": 79.6397442,
+            "overThermalScale": 57.6828319,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": 0.045,
+            "rationalPotential": 0.103291539,
+            "electrodeChargeDensity": 0.0727630536,
+            "force": -90.1179763,
+            "holdDown": 90.1179763,
+            "overThermalScale": 65.2721845,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": 0.05,
+            "rationalPotential": 0.113615027,
+            "electrodeChargeDensity": 0.0794080596,
+            "force": -100.843914,
+            "holdDown": 100.843914,
+            "overThermalScale": 73.0409493,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": 0.055,
+            "rationalPotential": 0.124211168,
+            "electrodeChargeDensity": 0.0863933357,
+            "force": -111.771487,
+            "holdDown": 111.771487,
+            "overThermalScale": 80.9557588,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 7.0,
+            "diffusePotential": 0.06,
+            "rationalPotential": 0.135137892,
+            "electrodeChargeDensity": 0.0937911862,
+            "force": -122.851794,
+            "holdDown": 122.851794,
+            "overThermalScale": 88.9811919,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.12,
+            "rationalPotential": -1.48136397,
+            "electrodeChargeDensity": -1.69910809,
+            "force": 19.7011864,
+            "holdDown": -19.7011864,
+            "overThermalScale": -14.2695112,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.115,
+            "rationalPotential": -1.23682635,
+            "electrodeChargeDensity": -1.40014544,
+            "force": 19.6212099,
+            "holdDown": -19.6212099,
+            "overThermalScale": -14.2115845,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.11,
+            "rationalPotential": -1.03438503,
+            "electrodeChargeDensity": -1.15372221,
+            "force": 19.5246474,
+            "holdDown": -19.5246474,
+            "overThermalScale": -14.1416445,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.105,
+            "rationalPotential": -0.866631515,
+            "electrodeChargeDensity": -0.950592085,
+            "force": 19.4081772,
+            "holdDown": -19.4081772,
+            "overThermalScale": -14.0572855,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.1,
+            "rationalPotential": -0.727459079,
+            "electrodeChargeDensity": -0.783133425,
+            "force": 19.2678653,
+            "holdDown": -19.2678653,
+            "overThermalScale": -13.9556581,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.095,
+            "rationalPotential": -0.611833678,
+            "electrodeChargeDensity": -0.645063366,
+            "force": 19.099075,
+            "holdDown": -19.099075,
+            "overThermalScale": -13.8334037,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.09,
+            "rationalPotential": -0.515605124,
+            "electrodeChargeDensity": -0.531202147,
+            "force": 18.8963736,
+            "holdDown": -18.8963736,
+            "overThermalScale": -13.6865877,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.085,
+            "rationalPotential": -0.435351457,
+            "electrodeChargeDensity": -0.437278892,
+            "force": 18.6534402,
+            "holdDown": -18.6534402,
+            "overThermalScale": -13.5106317,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.08,
+            "rationalPotential": -0.368250695,
+            "electrodeChargeDensity": -0.359771533,
+            "force": 18.3629814,
+            "holdDown": -18.3629814,
+            "overThermalScale": -13.3002533,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.075,
+            "rationalPotential": -0.311975131,
+            "electrodeChargeDensity": -0.295774901,
+            "force": 18.0166639,
+            "holdDown": -18.0166639,
+            "overThermalScale": -13.0494165,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.07,
+            "rationalPotential": -0.264604258,
+            "electrodeChargeDensity": -0.242892039,
+            "force": 17.6050755,
+            "holdDown": -17.6050755,
+            "overThermalScale": -12.7513043,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.065,
+            "rationalPotential": -0.22455303,
+            "electrodeChargeDensity": -0.199144675,
+            "force": 17.1177286,
+            "holdDown": -17.1177286,
+            "overThermalScale": -12.3983204,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.06,
+            "rationalPotential": -0.190512809,
+            "electrodeChargeDensity": -0.162899517,
+            "force": 16.5431207,
+            "holdDown": -16.5431207,
+            "overThermalScale": -11.9821336,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.055,
+            "rationalPotential": -0.161402763,
+            "electrodeChargeDensity": -0.132807592,
+            "force": 15.8688655,
+            "holdDown": -15.8688655,
+            "overThermalScale": -11.4937725,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.05,
+            "rationalPotential": -0.136329897,
+            "electrodeChargeDensity": -0.107754369,
+            "force": 15.0819064,
+            "holdDown": -15.0819064,
+            "overThermalScale": -10.9237803,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.045,
+            "rationalPotential": -0.114556209,
+            "electrodeChargeDensity": -0.0868187566,
+            "force": 14.1688166,
+            "holdDown": -14.1688166,
+            "overThermalScale": -10.2624321,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.04,
+            "rationalPotential": -0.0954716987,
+            "electrodeChargeDensity": -0.0692394256,
+            "force": 13.1161805,
+            "holdDown": -13.1161805,
+            "overThermalScale": -9.50001088,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.035,
+            "rationalPotential": -0.0785721824,
+            "electrodeChargeDensity": -0.0543871161,
+            "force": 11.9110417,
+            "holdDown": -11.9110417,
+            "overThermalScale": -8.62713238,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.03,
+            "rationalPotential": -0.0634410351,
+            "electrodeChargeDensity": -0.0417418489,
+            "force": 10.5413903,
+            "holdDown": -10.5413903,
+            "overThermalScale": -7.63509794,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.025,
+            "rationalPotential": -0.0497341122,
+            "electrodeChargeDensity": -0.0308741081,
+            "force": 8.99665611,
+            "holdDown": -8.99665611,
+            "overThermalScale": -6.51625149,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.02,
+            "rationalPotential": -0.0371672472,
+            "electrodeChargeDensity": -0.021429236,
+            "force": 7.26816856,
+            "holdDown": -7.26816856,
+            "overThermalScale": -5.26431306,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.015,
+            "rationalPotential": -0.0255058205,
+            "electrodeChargeDensity": -0.0131144139,
+            "force": 5.34955087,
+            "holdDown": -5.34955087,
+            "overThermalScale": -3.87466392,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.01,
+            "rationalPotential": -0.0145560013,
+            "electrodeChargeDensity": -0.00568773054,
+            "force": 3.23702126,
+            "holdDown": -3.23702126,
+            "overThermalScale": -2.34456496,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": -0.005,
+            "rationalPotential": -0.00415734964,
+            "electrodeChargeDensity": 0.00105105081,
+            "force": 0.92958876,
+            "holdDown": -0.92958876,
+            "overThermalScale": -0.673298398,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": 0.0,
+            "rationalPotential": 0.00582346073,
+            "electrodeChargeDensity": 0.0072683276,
+            "force": -1.5708562,
+            "holdDown": 1.5708562,
+            "overThermalScale": 1.13776651,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": 0.005,
+            "rationalPotential": 0.0154979808,
+            "electrodeChargeDensity": 0.0131033208,
+            "force": -4.25954678,
+            "holdDown": 4.25954678,
+            "overThermalScale": 3.08517718,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": 0.01,
+            "rationalPotential": 0.0249605267,
+            "electrodeChargeDensity": 0.0186737418,
+            "force": -7.12892722,
+            "holdDown": 7.12892722,
+            "overThermalScale": 5.16346097,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": 0.015,
+            "rationalPotential": 0.0342920336,
+            "electrodeChargeDensity": 0.0240806019,
+            "force": -10.168801,
+            "holdDown": 10.168801,
+            "overThermalScale": 7.36523258,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": 0.02,
+            "rationalPotential": 0.0435633161,
+            "electrodeChargeDensity": 0.0294122822,
+            "force": -13.3665249,
+            "holdDown": 13.3665249,
+            "overThermalScale": 9.68133458,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": 0.025,
+            "rationalPotential": 0.0528378175,
+            "electrodeChargeDensity": 0.0347479642,
+            "force": -16.7072371,
+            "holdDown": 16.7072371,
+            "overThermalScale": 12.1010026,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": 0.03,
+            "rationalPotential": 0.0621739194,
+            "electrodeChargeDensity": 0.0401605123,
+            "force": -20.1741121,
+            "holdDown": 20.1741121,
+            "overThermalScale": 14.6120499,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": 0.035,
+            "rationalPotential": 0.0716268792,
+            "electrodeChargeDensity": 0.0457188924,
+            "force": -23.7486399,
+            "holdDown": 23.7486399,
+            "overThermalScale": 17.2010699,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": 0.04,
+            "rationalPotential": 0.0812504553,
+            "electrodeChargeDensity": 0.0514901991,
+            "force": -27.410928,
+            "holdDown": 27.410928,
+            "overThermalScale": 19.8536544,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": 0.045,
+            "rationalPotential": 0.0910982728,
+            "electrodeChargeDensity": 0.0575413614,
+            "force": -31.1400276,
+            "holdDown": 31.1400276,
+            "overThermalScale": 22.5546302,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": 0.05,
+            "rationalPotential": 0.101224979,
+            "electrodeChargeDensity": 0.0639405841,
+            "force": -34.9142835,
+            "holdDown": 34.9142835,
+            "overThermalScale": 25.2883126,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": 0.055,
+            "rationalPotential": 0.111687232,
+            "electrodeChargeDensity": 0.070758581,
+            "force": -38.7117026,
+            "holdDown": 38.7117026,
+            "overThermalScale": 28.0387721,
+            "numericallyResolved": true
+        },
+        {
+            "gap": 10.0,
+            "diffusePotential": 0.06,
+            "rationalPotential": 0.122544558,
+            "electrodeChargeDensity": 0.0780696448,
+            "force": -42.5103397,
+            "holdDown": 42.5103397,
+            "overThermalScale": 30.7901137,
+            "numericallyResolved": true
+        }
+    ],
+    "thresholds": [
+        {
+            "gap": 5.0,
+            "what": "the thermal-scale HOLD-DOWN, k_BT/3nm toward the electrode",
+            "targetForce": -1.380649,
+            "rationalPotential": 8.85908482E-4,
+            "diffusePotential": -0.0112813339,
+            "sign": "hold-down"
+        },
+        {
+            "gap": 5.0,
+            "what": "no net electrostatic force on the tile at all",
+            "targetForce": 0.0,
+            "rationalPotential": -3.68496286E-4,
+            "diffusePotential": -0.0117888507,
+            "sign": "neither"
+        },
+        {
+            "gap": 5.0,
+            "what": "the thermal-scale LIFT, k_BT/3nm away from the electrode",
+            "targetForce": 1.380649,
+            "rationalPotential": -0.00163931242,
+            "diffusePotential": -0.0123005012,
+            "sign": "lift"
+        },
+        {
+            "gap": 7.0,
+            "what": "the thermal-scale HOLD-DOWN, k_BT/3nm toward the electrode",
+            "targetForce": -1.380649,
+            "rationalPotential": 0.00184292354,
+            "diffusePotential": -0.00574270755,
+            "sign": "hold-down"
+        },
+        {
+            "gap": 7.0,
+            "what": "no net electrostatic force on the tile at all",
+            "targetForce": 0.0,
+            "rationalPotential": -5.09133667E-4,
+            "diffusePotential": -0.00682346016,
+            "sign": "neither"
+        },
+        {
+            "gap": 7.0,
+            "what": "the thermal-scale LIFT, k_BT/3nm away from the electrode",
+            "targetForce": 1.380649,
+            "rationalPotential": -0.00292469046,
+            "diffusePotential": -0.00792312235,
+            "sign": "lift"
+        },
+        {
+            "gap": 10.0,
+            "what": "the thermal-scale HOLD-DOWN, k_BT/3nm toward the electrode",
+            "targetForce": -1.380649,
+            "rationalPotential": 0.00510177544,
+            "diffusePotential": -3.67384255E-4,
+            "sign": "hold-down"
+        },
+        {
+            "gap": 10.0,
+            "what": "no net electrostatic force on the tile at all",
+            "targetForce": 0.0,
+            "rationalPotential": -3.13962462E-4,
+            "diffusePotential": -0.00309604317,
+            "sign": "neither"
+        },
+        {
+            "gap": 10.0,
+            "what": "the thermal-scale LIFT, k_BT/3nm away from the electrode",
+            "targetForce": 1.380649,
+            "rationalPotential": -0.00608723652,
+            "diffusePotential": -0.00594513923,
+            "sign": "lift"
+        }
+    ],
+    "exposure": [
+        {
+            "gap": 5.0,
+            "surface": "Au(111), thermally reconstructed",
+            "rationalPotentialAtZeroVoltSheScale": -0.51,
+            "thermalScaleThreshold": 8.85908482E-4,
+            "multipleOfThreshold": 575.680231,
+            "sign": "electrode NEGATIVE — it LIFTS the tile",
+            "pointIonBoundary": 0.0973945485,
+            "insidePointIonBoundary": false
+        },
+        {
+            "gap": 5.0,
+            "surface": "Au(111), potential-induced reconstruction",
+            "rationalPotentialAtZeroVoltSheScale": -0.497,
+            "thermalScaleThreshold": 8.85908482E-4,
+            "multipleOfThreshold": 561.006029,
+            "sign": "electrode NEGATIVE — it LIFTS the tile",
+            "pointIonBoundary": 0.0973945485,
+            "insidePointIonBoundary": false
+        },
+        {
+            "gap": 5.0,
+            "surface": "Au(111), unreconstructed, with adatom islands",
+            "rationalPotentialAtZeroVoltSheScale": -0.46,
+            "thermalScaleThreshold": 8.85908482E-4,
+            "multipleOfThreshold": 519.240993,
+            "sign": "electrode NEGATIVE — it LIFTS the tile",
+            "pointIonBoundary": 0.0973945485,
+            "insidePointIonBoundary": false
+        },
+        {
+            "gap": 7.0,
+            "surface": "Au(111), thermally reconstructed",
+            "rationalPotentialAtZeroVoltSheScale": -0.51,
+            "thermalScaleThreshold": 0.00184292354,
+            "multipleOfThreshold": 276.734215,
+            "sign": "electrode NEGATIVE — it LIFTS the tile",
+            "pointIonBoundary": 0.0973945485,
+            "insidePointIonBoundary": false
+        },
+        {
+            "gap": 7.0,
+            "surface": "Au(111), potential-induced reconstruction",
+            "rationalPotentialAtZeroVoltSheScale": -0.497,
+            "thermalScaleThreshold": 0.00184292354,
+            "multipleOfThreshold": 269.680206,
+            "sign": "electrode NEGATIVE — it LIFTS the tile",
+            "pointIonBoundary": 0.0973945485,
+            "insidePointIonBoundary": false
+        },
+        {
+            "gap": 7.0,
+            "surface": "Au(111), unreconstructed, with adatom islands",
+            "rationalPotentialAtZeroVoltSheScale": -0.46,
+            "thermalScaleThreshold": 0.00184292354,
+            "multipleOfThreshold": 249.60341,
+            "sign": "electrode NEGATIVE — it LIFTS the tile",
+            "pointIonBoundary": 0.0973945485,
+            "insidePointIonBoundary": false
+        },
+        {
+            "gap": 10.0,
+            "surface": "Au(111), thermally reconstructed",
+            "rationalPotentialAtZeroVoltSheScale": -0.51,
+            "thermalScaleThreshold": 0.00510177544,
+            "multipleOfThreshold": 99.9651996,
+            "sign": "electrode NEGATIVE — it LIFTS the tile",
+            "pointIonBoundary": 0.0973945485,
+            "insidePointIonBoundary": false
+        },
+        {
+            "gap": 10.0,
+            "surface": "Au(111), potential-induced reconstruction",
+            "rationalPotentialAtZeroVoltSheScale": -0.497,
+            "thermalScaleThreshold": 0.00510177544,
+            "multipleOfThreshold": 97.417067,
+            "sign": "electrode NEGATIVE — it LIFTS the tile",
+            "pointIonBoundary": 0.0973945485,
+            "insidePointIonBoundary": false
+        },
+        {
+            "gap": 10.0,
+            "surface": "Au(111), unreconstructed, with adatom islands",
+            "rationalPotentialAtZeroVoltSheScale": -0.46,
+            "thermalScaleThreshold": 0.00510177544,
+            "multipleOfThreshold": 90.1646898,
+            "sign": "electrode NEGATIVE — it LIFTS the tile",
+            "pointIonBoundary": 0.0973945485,
+            "insidePointIonBoundary": false
+        }
+    ],
+    "reproductions": [
+        {
+            "what": "C-0021 M4 gold force, 2 nm tile at 5 nm, retarded low end [pN]",
+            "published": 10.3560219,
+            "reproduced": 10.3560219,
+            "relativeDeparture": "5.0e-10"
+        },
+        {
+            "what": "C-0021 M4 gold force, 2 nm tile at 10 nm, retarded low end [pN]",
+            "published": 0.737332999,
+            "reproduced": 0.737332999,
+            "relativeDeparture": "1.4e-10"
+        },
+        {
+            "what": "C-0021 M4 gold well depth, 2 nm tile at 5 nm [k_BT]",
+            "published": 4.81705073,
+            "reproduced": 4.81705073,
+            "relativeDeparture": "6.0e-10"
+        },
+        {
+            "what": "C-0021 M3 hold-down threshold at 5 nm [V]",
+            "published": 8.85908166E-4,
+            "reproduced": 8.85908482E-4,
+            "relativeDeparture": "3.6e-07"
+        },
+        {
+            "what": "C-0021 M3 hold-down threshold at 7 nm [V]",
+            "published": 0.00184292351,
+            "reproduced": 0.00184292354,
+            "relativeDeparture": "1.7e-08"
+        },
+        {
+            "what": "C-0021 M3 hold-down threshold at 10 nm [V]",
+            "published": 0.00510177542,
+            "reproduced": 0.00510177544,
+            "relativeDeparture": "4.0e-09"
+        }
+    ],
+    "findings": {
+        "the material bracket collapses onto its adverse end and nothing else moves": "NDI's answer to decision 3 names gold, which is the STIFFEST of C-0021's four candidate electrodes, so the 2.6x specification bracket collapses ONTO ITS ADVERSE END rather than into the middle of it. At 5 nm on a 2 nm tile the four-material span is 3.436-18.553 pN and gold alone is 10.356-17.159; the state's own bracket narrows by exactly 3.2591x at every one of the six states, the material entering as a pure factor. The well is DEEPER at gold than at any oxide and it is still finite: the deepest gold well in the box is 8.742 k_BT against the 10 k_BT confinement criterion, so 0 of 6 gold states confine and C-0021's verdict is unchanged. A 1/h^3 force integrates to a bounded potential and naming the material cannot change the exponent.",
+        "but a GROUND moved: retardation is no longer a substitution": "C-0021 states that its retardation factor is 'sourced for GOLD only and applied across the whole electrode bracket, and that substitution is stated'. At gold alone there is no substitution: the factor is the material's own. The DNA half of the cross constant is still already retarded, so the retarded reading still retards that half twice and the low end is still a LOWER bound - but one of the two caveats on it is discharged, and the gold force at 10 nm on a 2 nm tile stands at 0.7373-1.4217 pN, 0.534-1.030 of the thermal scale.",
+        "the model's applied bias IS the rational potential, and that is what makes the PZC decide": "diffusePotentialOfAppliedBias solves V = psi_d + sigma_e(psi_d)/C_S. With no tile present, V = 0 makes the whole interfacial drop vanish, which is the DEFINITION of an electrode carrying no free charge. So C-0021's 'applied bias' is the RATIONAL potential E - E_pzc and its contact-potential table is a table of rational potentials: 0.886 mV at 5 nm, 1.843 at 7 and 5.102 at 10 for the thermal-scale hold-down, reproduced here from the opposite direction (diffuse drop in, bias out) rather than by bisecting the Stern series. Zero applied bias in this programme has never meant zero volts on an instrument.",
+        "the measured PZC is two orders of magnitude past the deciding scale, and of the LIFTING sign": "Au(111) in 1 mM HClO4 has E_pzc = 0.460-0.510 V vs SHE (Adnan et al. 2024, read directly, and the source's own RHE and SHE printings agree through Nernst at pH 3.0 to 1.6 mV). An electrode held at 0 V on that scale therefore sits at a rational potential of -0.460 to -0.510 V: 90-576x C-0021's own thermal-scale threshold, and NEGATIVE, which charges the electrode negatively and makes it REPEL the negatively charged tile instead of holding it down. C-0021's M3 row reads 'DOWN but negligible' and that is a statement about an electrode AT its PZC.",
+        "the sign structure has three landmarks and they are all inside a few millivolts": "At the PZC the tile's own countercharge already sits on the electrode, so the force at zero rational potential is not zero. The three landmarks at 10 nm are: thermal-scale LIFT at -0.0061 V, no net force at -0.0003 V, thermal-scale HOLD-DOWN at 0.0051 V. The whole sign structure of the residual field lives inside 11.2 mV of rational potential, which is 41x narrower than the PZC offset a bench would have to null. The residual field is not a small correction the design can inherit; it is a control requirement on the potentiostat.",
+        "the offset is outside the model, and that is the answer rather than a gap in it": "The point-ion boundary is 0.097 V of diffuse drop at a NEGATIVE electrode (Mg2+ is the counterion there and the boundary goes as 1/z) against 0.197 V at a positive one, and 9 of 9 exposure states fall outside it. So no force is quoted at the PZC offset: the honest statement is a THRESHOLD, which is that the electrode must be held within 5.1 mV of its own potential of zero charge for the residual field to stay at the thermal scale at the 10 nm layer, and within 0.89 mV at 5 nm. A number for the force there would need a Stern-dominated model this programme has not built.",
+        "and a defect was found in the ground the low end rests on, worth under one per cent": "The narrowing above is EXACTLY constant across gaps, which it should not be: the zero-frequency term is 10.6 % of gold's cross constant, so a gap-dependent screening cannot divide out of a ratio against an oxide whose share is more than twice that. The cause is that C-0021 and C-0023 both write buffer.inverseDebyeLength(lb), and that method's FIRST parameter is a TEMPERATURE: the Bjerrum length evaluated at 0.714 K gives 5.2195 nm^-1 where the buffer's own default is 0.2547 (the documented 3.93 nm at 2 mM), a factor of 20.5, and e^(-2 kappa d) then saturates to 2e-23 at 5 nm — below the result file's 1e-9 absolute floor, so it is EMITTED as exactly 0.0 — against 0.0784. It is used in ONE place, the low end of the van der Waals bracket, and it saturates that end to 'fully screened' — which is exactly what C-0021's own prose declares the low end to be. So the emitted number is right for the stated bracket and the expression that produces it is not: at the Debye kappa the gold low end rises by 0.0093 at 5 nm and 0.00073 at 10 nm. No verdict moves and the code should still be repaired. Filed as CH-0128.",
+        "what would change the answer": "Three things, and all three are measurements somebody else would have to make. (1) A cell whose 'zero bias' is DEFINED as the PZC - two identical gold electrodes shorted, or a potentiostat held at E_pzc - which makes C-0021's M3 table apply verbatim. (2) A chloride shift larger than 0.46 V, which would take the PZC of gold in MgCl2 to within the deciding scale of a common reference zero; nothing in the literature searched suggests a shift that large, and the Au(111)/Au(110) facet spread of 0.3 V is the natural comparison. (3) A Stern-layer capacitance far above 20 uF/cm^2, which would make the diffuse layer carry more of the offset; that runs the WRONG way, because it takes the state further outside the point-ion boundary."
+    },
+    "validity": [
+        "The E_pzc is measured on a Au(111) SINGLE CRYSTAL in 1 mM HClO4, not on a template-stripped film in MgCl2. Two exposures follow and they run opposite ways. (1) A template-stripped film is (111)-DOMINATED but not (111)-only, and Au(110) sits 0.3 V lower, so the film's own facets spread further than any of the numbers here. (2) Chloride adsorbs specifically on gold and shifts a PZC negatively; the size of that shift in MgCl2 is NOT SOURCED and is the one number this task could not find.",
+        "Both exposures move the PZC in the same direction as the finding, not against it: they make the electrode's rational potential at 0 V vs SHE smaller in magnitude but not smaller than 0.2 V, which is still 39-226x the deciding threshold. The verdict is therefore robust to both.",
+        "C-0005's mean-field bracket is inherited whole and the point-ion boundary is 0.097 V of diffuse drop at a NEGATIVE electrode, against 0.197 V at a positive one. The rational potential the PZC implies is outside both, so the force at that offset is NOT computed here and no number is quoted for it.",
+        "The van der Waals half inherits every validity note of C-0021's M4 unchanged, minus the electrode-material bracket, which NDI's answer closes.",
+        "The ladder is C-0021's own field library at C-0021's own node counts. It is a re-read, not a new model, and it reproduces C-0021's published numbers."
+    ],
+    "openQuestions": [
+        "How is 'zero bias' defined electrochemically in the Gen-1 cell? 0 V against a named reference electrode, the cell at open circuit, or two electrodes shorted? The three are hundreds of millivolts apart and the answer decides the SIGN of the residual field. This is the one-line ask to NDI.",
+        "The chloride-induced PZC shift for gold in MgCl2. Not sourced in 32 recorded queries; it is a bounded correction, not an unbounded one, because the PZC cannot go below the Au(110) end of the facet spread without a measurement saying so.",
+        "Whether a template-stripped film's facet distribution has ever been converted into an effective PZC. Liu, Doblhoff-Dier & Koper (2026) build exactly that model and do not apply it to a template-stripped film."
+    ],
+    "citedNumbers": {
+        "E_pzc Au(111), thermally reconstructed": "0.51 V vs SHE (0.69 vs RHE) — CITED, MEASURED, READ DIRECTLY, Adnan et al. PCCP 26:21419 (2024)",
+        "E_pzc Au(111), potential-induced reconstruction": "0.497 V vs SHE (0.674 vs RHE) — CITED, MEASURED, READ DIRECTLY, same source",
+        "E_pzc Au(111), unreconstructed with islands": "0.46 V vs SHE (0.64 vs RHE) — CITED, MEASURED, READ DIRECTLY, same source",
+        "E_pzc Au(111) literature consensus": "~0.5 V vs SHE — CITED, READ DIRECTLY, Liu, Doblhoff-Dier & Koper, ACS Electrochem. 2:995 (2026)",
+        "E_pzc Au(110) literature consensus": "~0.2 V vs SHE — CITED, READ DIRECTLY, same source",
+        "template-stripped gold is (111)-dominated": "qualitative — CITED, READ DIRECTLY, Avedian, Trang & Inkpen, ACS Nanosci. Au 5:269 (2025)",
+        "E_pzc of gold in MgCl2 or any divalent-cation electrolyte": "NOT FOUND — 32 EuropePMC queries recorded in gpd/data/T-193-sources/",
+        "Hamaker constants, retardation, screening": "inherited from C-0021 unchanged; gold across water 238.6-267.9 zJ, Tolias arXiv:2003.00571"
+    }
+}

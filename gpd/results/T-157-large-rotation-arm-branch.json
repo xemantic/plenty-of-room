@@ -964,8 +964,8 @@
             "bindingCeiling": "concentrated crossover (C-0002, phi = 0.2)",
             "usableBias": 0.347032563,
             "biasMargin": 3.02037849,
-            "biasMarginInC0084": 3.01814397,
-            "marginMovement": 1.00074036,
+            "biasMarginInC0084": 3.02037849,
+            "marginMovement": 0.999999999,
             "tangencyResidual": null,
             "verdict": "NO FOLD below 8.151082144198616 nm of stroke, which is 0.9984 of the arm's own contour",
             "searchEvaluations": 15
@@ -989,8 +989,8 @@
             "bindingCeiling": "concentrated crossover (C-0002, phi = 0.2)",
             "usableBias": 0.3898734,
             "biasMargin": 2.1608895,
-            "biasMarginInC0084": 2.15907664,
-            "marginMovement": 1.00083965,
+            "biasMarginInC0084": 2.1608895,
+            "marginMovement": 1.0,
             "tangencyResidual": null,
             "verdict": "NO FOLD below 8.151082144198616 nm of stroke, which is 0.9984 of the arm's own contour",
             "searchEvaluations": 15
@@ -1014,8 +1014,8 @@
             "bindingCeiling": "concentrated crossover (C-0002, phi = 0.2)",
             "usableBias": 0.310095095,
             "biasMargin": 3.58237546,
-            "biasMarginInC0084": 3.08853969,
-            "marginMovement": 1.15989297,
+            "biasMarginInC0084": 3.58237546,
+            "marginMovement": 1.0,
             "tangencyResidual": null,
             "verdict": "NO FOLD below 8.151082144198616 nm of stroke, which is 0.9984 of the arm's own contour",
             "searchEvaluations": 15
@@ -1039,8 +1039,8 @@
             "bindingCeiling": "concentrated crossover (C-0002, phi = 0.2)",
             "usableBias": 0.340461557,
             "biasMargin": 2.65344126,
-            "biasMarginInC0084": 2.28344894,
-            "marginMovement": 1.16203223,
+            "biasMarginInC0084": 2.65344126,
+            "marginMovement": 0.999999999,
             "tangencyResidual": null,
             "verdict": "NO FOLD below 8.151082144198616 nm of stroke, which is 0.9984 of the arm's own contour",
             "searchEvaluations": 15
@@ -1064,8 +1064,8 @@
             "bindingCeiling": "point-ion boundary (CH-0007, 1.0 V)",
             "usableBias": 1.0,
             "biasMargin": 10.9071759,
-            "biasMarginInC0084": 3.46993839,
-            "marginMovement": 3.14333417,
+            "biasMarginInC0084": 10.9071759,
+            "marginMovement": 1.0,
             "tangencyResidual": null,
             "verdict": "NO FOLD below 8.151082144198616 nm of stroke, which is 0.9984 of the arm's own contour",
             "searchEvaluations": 14
@@ -1089,8 +1089,8 @@
             "bindingCeiling": "point-ion boundary (CH-0007, 1.0 V)",
             "usableBias": 1.0,
             "biasMargin": 7.31365779,
-            "biasMarginInC0084": 2.57639057,
-            "marginMovement": 2.83872247,
+            "biasMarginInC0084": 7.31365779,
+            "marginMovement": 1.0,
             "tangencyResidual": null,
             "verdict": "NO FOLD below 8.151082144198616 nm of stroke, which is 0.9984 of the arm's own contour",
             "searchEvaluations": 14
@@ -1114,8 +1114,8 @@
             "bindingCeiling": "point-ion boundary (CH-0007, 1.0 V)",
             "usableBias": 1.0,
             "biasMargin": 10.7287168,
-            "biasMarginInC0084": 3.2140866,
-            "marginMovement": 3.33802979,
+            "biasMarginInC0084": 10.7287168,
+            "marginMovement": 1.0,
             "tangencyResidual": null,
             "verdict": "NO FOLD below 8.151082144198616 nm of stroke, which is 0.9984 of the arm's own contour",
             "searchEvaluations": 14
@@ -1139,8 +1139,8 @@
             "bindingCeiling": "point-ion boundary (CH-0007, 1.0 V)",
             "usableBias": 1.0,
             "biasMargin": 7.17840398,
-            "biasMarginInC0084": 2.3678981,
-            "marginMovement": 3.03155105,
+            "biasMarginInC0084": 7.17840398,
+            "marginMovement": 0.999999999,
             "tangencyResidual": null,
             "verdict": "NO FOLD below 8.151082144198616 nm of stroke, which is 0.9984 of the arm's own contour",
             "searchEvaluations": 14
@@ -1257,7 +1257,7 @@
         "C-0084's branch end is a FORCE-LADDER ARTEFACT": "the continued branch reaches 8.1610821 nm - 0.241395 nm past the 7.9196867 nm at which C-0039's doubling ladder refuses - with max|phi| = 1.5707924 rad, still BELOW a right angle (1.5707963). The branch does not end there; the ladder loses it, because a second root of the shooting residual appears at a tip force well below the right angle and a bracket found by doubling can land on either",
         "the multi-branch structure": "the far-end residual has one root up to about 50.0000 pN of tip force and 15 at 1000 pN on a 4000-cell scan. AT MOST ONE root is on the small-rotation branch at every force enumerated, and wherever the scan finds it it is the DEEPEST: the others are curled shapes whose integral of sin phi cancels, so they reach a SMALLER stroke. The large-rotation branches do not extend the stroke - they RETREAT from it. At 1 of 8 enumerated forces the scan finds no small-rotation root at all, and that is the density caveat in action rather than a branch end: at high force the primary root sits within one scan cell of a curled neighbour, and the CONTINUATION is what resolves it",
         "the answer": "NO FOLD, at 12 of 12 states of the recommended device, over a domain running to 8.1511 nm of stroke - 0.9984 of the arm's contour and 2.72x section 3's acceptable 3 nm. C-0084's bounded negative becomes a bound at the CONTOUR: the only stroke a fold could still hide in is the 0.003309 nm the integrator cannot resolve, 0.0097 of one base-pair rise",
-        "what it does to the margin": "the bias margin at the recommended device moves by a factor of 1.0000-3.3380 against C-0084's, because the element boundary the margin is read against has moved outward by 0.2414 nm of stroke",
+        "what it does to the margin": "the bias margin at the recommended device moves by a factor of 1.0000-1.0000 against C-0084's, because the element boundary the margin is read against has moved outward by 0.2414 nm of stroke",
         "what CH-0099 keeps and what it loses": "the CANDIDATE stands - a coupling element has a domain and C-0018's three-candidate list has no name for it. The VALUE does not: the domain ends at the contour, not at 7.92 nm, and CH-0099's 2.57-3.74x inflation is measured against a boundary 0.241395 nm too shallow"
     },
     "validity": [

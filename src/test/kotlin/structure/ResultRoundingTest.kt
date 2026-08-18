@@ -58,6 +58,20 @@ class ResultRoundingTest {
     }
 
     @Test
+    fun `gate 2 limiting cases - an exact zero survives a zero floor`() {
+        // `CLAUDE.md`: an absolute floor is a claim about UNITS and does not travel, so a study
+        // emitting dimensionless quantities has to lower it — and at `floor = 0.0` the floor test
+        // no longer catches an exact zero, `log10(0)` is `-Infinity`, and `roundToLong` is handed
+        // a `NaN`. `T-190` hit it on a convergence departure that is exactly zero because two
+        // sample grids agree to the last bit. A zero is exactly representable at every precision.
+        assert(roundForResult(0.0, floor = 0.0) == 0.0)
+        assert(roundForResult(-0.0, floor = 0.0) == 0.0)
+        assert(roundForResult(0.0, digits = 2, floor = 0.0) == 0.0)
+        // and the value the zero floor exists to preserve is still preserved
+        assert(roundForResult(2.1e-15, digits = 2, floor = 0.0).isCloseTo(2.1e-15))
+    }
+
+    @Test
     fun `gate 2 limiting cases - integers booleans and strings should pass through a result tree untouched`() {
         val json = Json.parseToJsonElement(
             """{"count":4,"flag":true,"name":"LP-crossover","force":2.132266648617e-14,

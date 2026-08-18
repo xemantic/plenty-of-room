@@ -1,0 +1,3145 @@
+                                                 Computing the elastic mechanical properties
+                                                              of rod-like DNA nanostructures
+arXiv:2006.15029v1 [cond-mat.soft] 26 Jun 2020
+
+
+
+
+                                                    Hemani Chhabra,† Garima Mishra,‡ Yijing Cao,† Domen Prešern,† Enrico
+
+                                                        Skoruppa,¶ Maxime M. C. Tortora,†,§ and Jonathan P. K. Doye∗,†
+
+                                                 †Physical & Theoretical Chemistry Laboratory, Department of Chemistry, University of
+                                                              Oxford, South Parks Road, Oxford OX1 3QZ, United Kingdom
+                                                 ‡Department of Physics, Indian Institute of Technology Kanpur, Kanpur 208016, India
+                                                  ¶Laboratory for Soft Matter and Biophysics, KU Leuven, Celestijnenlaan 200D, 3001
+                                                                                       Leuven, Belgium
+                                                 §Laboratory of Biology and Modeling of the Cell, École Normale Supérieure de Lyon, 46,
+                                                                         allée d’Italie, 69364 Lyon Cedex 07, France
+
+                                                                             E-mail: jonathan.doye@chem.ox.ac.uk
+
+                                                                                           Abstract
+
+                                                        To study the elastic properties of rod-like DNA nanostructures, we perform long
+
+                                                     simulations of these structure using the oxDNA coarse-grained model. By analysing the
+
+                                                     fluctuations in these trajectories we obtain estimates of the bend and twist persistence
+
+                                                     lengths, and the underlying bend and twist elastic moduli and couplings between them.
+
+                                                     Only on length scales beyond those associated with the spacings between the interhelix
+
+                                                     crossovers do the bending fluctuations behave like those of a worm-like chain. The
+
+                                                     obtained bending persistence lengths are much larger than that for double-stranded
+
+                                                     DNA and increase non-linearly with the number of helices, whereas the twist moduli
+
+                                                     increase approximately linearly. To within the numerical error in our data, the twist-
+
+                                                     bend coupling constants are of order zero. That the bending persistence lengths we
+
+                                                                                                1
+      obtain are generally somewhat higher than in experiment probably reflects both that the
+
+      simulated origami have no assembly defects and that the oxDNA extensional modulus
+
+      for double-stranded DNA is too large.
+
+
+
+1    Introduction
+
+DNA nanotechnology exploits the programmability of DNA and its ability to self assemble to
+make nanoscale structures and devices. This is perhaps most famously achieved through the
+DNA origami approach, where a long single-stranded scaffold can be folded up into almost
+any arbitrary shape made up of arrays of double helices by the addition of the appropriate
+short staple strands. 1 Similar scaffold-free approaches where the size of the object is not
+constrained by the scaffold length are also available. 2–4 Although a huge variety of structures
+have been produced by these techniques, 5,6 one of the most common classes of structures
+have been DNA rods or filaments; 7 these are the subject of the current paper.
+    Understandably, much of the characterization of DNA origami and other large DNA
+nano-assemblies initially focused on their structure. Cryo-electron microscopy, for example,
+has revealed the detailed structure of DNA origami in exquisite detail. 8 More recently there
+has been an increasing interest in characterizing their mechanical properties. One reason is
+the advent of “DNA mechanotechnology”, that is the use of DNA nanodevices to generate,
+transmit and sense nanoscale forces. 9 These include examples where DNA nanostructures
+are used as the “hardware for single-molecule investigations”. 10 For example, in force spec-
+troscopy, rod-like origami have been used as stiff handles for force application with molecular
+tweezers, 11,12 and small origami have been used to create multivalent force sensors. 13 Origami
+with inbuilt tension in components have been used to apply forces to unravel protein-DNA
+complexes 14,15 and to study the force-dependent binding of proteins to DNA motifs. 16,17
+Protein-protein interactions have also been measured by the shape changes they induce in
+an origami to which they are attached. 18 Similarly, origami sensors have been designed that
+produce a change in FRET signal when interactions are sufficiently strong to induce a shape
+
+                                                2
+change. 19
+   For the above applications, it is important to have a good understanding of the mechanical
+properties of the DNA origami; for example, knowing the stiffness of the origami handles,
+knowing the compliance of the origamis with respect to the internal forces that they are
+seeking to apply, being able to accurately calibrate the magnitude of the forces that are
+being applied, knowing the limits of the forces that can be applied whilst maintaining the
+structural integrity of the origami.
+   Designing internal stresses into an origami also provides a means to further control its
+structure. For example, twisting and bending of origami can be achieved by changing the
+numbers of base pairs between junctions from their ideal values. 20 Another approach is to use
+the tension in extended single stranded sections; for example, to maintain the global shape in
+origami tensegrity structures, 21 and to induce bending in the main body of an origami. 21–23
+Bistable DNA origami have also been designed where transitions between the two free-energy
+minima require bending of the different origami sections. 24 In the above examples, the elastic
+moduli for bending and twisting of the origami will control the resulting degree of bending
+or twisting, and the size of the free-energy barrier in the bistable system.
+   Understanding the mechanical properties of DNA origami is also of fundamental interest.
+How does the coupling of the DNA double-helical elements lead to the net mechanical be-
+haviour of the origami? How can it be tuned or controlled? The answers to these questions
+build on our fundamental understanding of the mechanics of double-stranded and single-
+stranded DNA, which has been revealed in detail through single-molecule experiments, for
+example using optical and magnetic tweezers to pull and twist DNA, 25 and further analysed
+theoretically 26 and in simulations. 27,28
+   The most basic mechanical properties of DNA nanostructure that we might wish to under-
+stand are their elastic moduli. The quantity that has been most commonly probed in experi-
+ments is the bending persistence length of elongated origami, particularly of DNA nanotubes.
+This has been done for origami that are four-, six-, eight- and ten-helix bundles, 11,21,29–31
+
+
+                                              3
+single-stranded-tile nanotubes with from five to ten helices 32 and nanotubes made from
+double-crossover 33,34 or other 35 larger tiles, as well as more open wireframe origami. 36,37 The
+experimental approaches used include analyses of their molecular contours when adsorbed
+on surfaces (either through their end-to-end distances 11,30,31,34,35 or from an analysis of their
+tangent-tangent correlation function 21,32 ), their cyclization rates 33 and their force response
+in magnetic tweezers. 29 For example, the values of the persistence length obtained are in the
+ranges 740 nm–1 µm, 1–3 µm and 3–8.2 µm for four-, 29,31 six- 11,21,29–32,35 and eight-helix 11,32
+bundles, respectively. These values are much larger than those for double-stranded DNA
+(∼50 nm), and show how the coupling of double-helical elements in a DNA assembly can
+lead to new mechanical behaviours. Persistence lengths have also been measured for origami
+connected by linkers of varying stiffness. 38 The magnetic tweezer study was also able to mea-
+sure the twist modulus of DNA origami, finding values of 390 nm and 530 nm for four- and
+six-helix bundles, respectively. 29 The moduli associated with radial compression of rod-like
+origamis have also been probed by atomic-force microscopy. 39
+   Most explorations of the mechanical limits of DNA origami have focused on the effects
+of tension typically applied by optical tweezers or an atomic-force microscope. 40–43 These
+studies have revealed saw-tooth force-extension profiles, where the origamis yield through
+multiple unravelling events. The buckling of DNA nanotubes under extreme twisting has
+also been briefly studied. 29
+   Modelling has the potential to play an important role in better understanding the me-
+chanics of DNA nanostructures. Firstly, the experimental measurement of mechanical prop-
+erties can be challenging, so if modelling can provide a means to accurately estimate such
+properties, this could be extremely useful—particularly as a means to pre-screen a design
+for the required mechanical properties, and to explore how those properties can be modu-
+lated. Secondly, it can enhance our fundamental understanding, particularly as it allows the
+mechanical and structural responses to stress to be directly related and the relative roles of
+different factors to be identified. Modelling also allows theories that predict the mechanical
+
+
+                                                4
+properties of DNA nanostructures from duplex properties to be consistently tested.
+   Here, the focus is on computing the elastic mechanical properties of DNA nanotubes.
+To do this, one has to decide at what level of description it is most appropriate to model
+the DNA. Of course, all-atom models will provide the most detailed structural description,
+and all-atom calculations of full-size DNA origami have now been performed, 44,45 albeit at
+considerable computational cost, even estimating the elastic moduli for cuboidal blocks. 44,46
+However, the time scales associated with the long length-scale fluctuations of the full-size
+DNA nanotubes studied here are likely to be prohibitive for all-atom studies. Very short
+sections of such DNA nanotubes have been studied by all-atom molecular dynamics with es-
+timates of the stretch moduli being obtained from rapid pulling simulations and persistence
+lengths from bend angle distributions. 47–49 At the other limit are models that consider DNA
+helices as simple mechanical elements. Such models have been very successful at provid-
+ing rapid structural predictions of DNA origami structure, including the effects of internal
+stresses on structure, 50–52 but their application to study mechanical properties has been more
+limited. 53
+   Coarse-grained models at the nucleotide level have a number of attractive features when
+considering origami mechanics. They are simple enough that simulations can access suffi-
+ciently long time scales to characterize the structural fluctuations of origamis, even in the
+case of high shape anisotropy. Also, coupling of the stress response to internal degrees of
+freedom, such as base-pair breaking and unstacking at nick sites, can emerge naturally from
+the model. However, it is important that the model can accurately reproduce the mechanical
+properties of double-stranded (and in some instances, single-stranded) DNA, as well as other
+motifs (e.g. nicks and junctions). Here, we use the oxDNA model as it possesses just such
+features. It provides a good description of the elastic properties of double-stranded DNA
+(dsDNA), including not only the persistence length and torsional modulus, 54 but also non-
+trivial features such as twist-bend coupling. 55,56 It also captures well the yielding of dsDNA
+under tension 27 and twist. 57
+
+
+                                              5
+    OxDNA has also been shown to provide a very good structural description of DNA
+origami 54,58–63 and other large DNA nanostructures. 64–66 It has been used to probe the
+mechanisms of origami failure under tension, 43 and even to explain the origins of phase
+chirality of cholesteric phases of twisted DNA origami rods in terms of the net chirality of
+their thermal fluctuations. 67
+    The systems that we consider here focus on those for which there are experimental mea-
+surements. As such rod-like origamis are often termed helix bundles we label each system
+as nHB, where n is the number of helices. Firstly, we consider the 4HB and 6HB origami of
+Ref. 29 whose mechanical properties were probed by magnetic tweezers (MT). Secondly, we
+consider the set of four 6HB origamis whose liquid-crystalline properties were experimentally
+studied in Ref. 68 and analysed by simulation and theory in Ref. 67. These are labelled by
+their designed global axial twist (2×LH,1×LH,1×RH) or lack thereof (S: straight, i.e. un-
+twisted). The persistence length of 6HB-S was measured in Ref. 11. We also consider a
+10HB that was also studied in Ref. 68. Finally, we consider 6HB and 8HB systems made
+from single-stranded tiles (SST) whose mechanical properties were studied in Ref. 32, plus
+an additional equivalent 4HB example.
+
+
+
+2     Methods
+
+2.1    oxDNA
+
+OxDNA is a nucleotide-level coarse-grained model of DNA, 54,69,70 where each nucleotide is
+a rigid body that has sites representing the backbone and base. The inter-nucleotide in-
+teractions include base stacking, hydrogen-bonding between complementary base pairs, a
+backbone potential, excluded volume, electrostatic interactions between the charged back-
+bones and cross stacking between diagonally opposite bases in dsDNA. These have been
+parameterized to reproduce DNA structure, the thermodynamics of hybridization and the
+mechanical properties of double- and single-stranded DNA. Here, we use the latest version
+
+
+                                             6
+         (d)
+
+
+
+
+Figure 1: (a) An oxDNA nucleotide along with the “base” and “normal” vectors used to define
+its orientation. (b) A nicked double helix illustrating the different interactions in oxDNA.
+(c) An oxDNA base pair illustrating the directions of eb1 and eb2 . (d) Schematics showing eb1
+and eb2 for the different DNA nanostructures considered. In (c) and (d) eb3 is directed out of
+the plane of the paper.
+
+
+of the model that has been fine-tuned to better reproduce the properties of DNA origami. 54
+A nucleotide and duplex as represented by oxDNA are depicted in Fig. 1.
+   The electrostatic potential is of a Debye-Hückel form and has been fitted to reproduce
+the [Na+ ] dependence of hybridization thermodynamics. 54 Here, we have run simulations
+at [Na+ ]=0.5 M, which in oxDNA gives similar behaviour to the high-magnesium condi-
+tions typically used in origami assembly. As we are interested in the generic properties of
+DNA nanotubes, we use the sequence-averaged version of the model, where the interaction
+strengths of the stacking and hydrogen-bond interactions do not depend on the identity of
+the base. For DNA origami, the differences between the sequence-averaged model and using
+the specific M13 sequence are expected to be minimal.
+   In the oxDNA simulation code the positions and orientations of each nucleotide are
+defined by r the notional centre of mass of the nucleotide (this is collinear with the hydrogen-
+
+                                               7
+bonding and stacking sites), b
+                             b the “base” vector (this points from centre of mass towards the
+
+base interaction sites), and n
+                             b the base normal vector that is perpendicular to the notional
+
+plane of the base (Fig. 1(a)). These vectors will be used to define the local bend and twist
+angles for both a DNA duplex and the DNA nanotubes.
+
+
+2.2    DNA nanotubes
+
+We study the mechanical properties of ten different elongated DNA nanostructures that have
+been studied experimentally in three separate papers, 29,32,68 focussing mainly on systems
+where some mechanical properties have been experimentally estimated. Seven of these are
+DNA origami. In a DNA origami, there is a single long “scaffold” strand that runs through
+the entire structure, and is held together by many “staple” strands that bind specifically to
+multiple domains of the scaffold. The scaffold strands in origami typically derive from the
+genome of an M13 virus, which is just over 7000 nucleotides long. The remaining three DNA
+nanostructures are structurally very similar, but are made up of just a small number of short
+DNA strands (or single-stranded tiles 2 ) with a repeating motif along the length of the tube.
+   All the structures are helix bundles, i.e. they are made up of parallel arrays of double
+helices. The points at which strands pass between helices are termed crossovers or junctions.
+In the DNA origamis these are typically “double” crossovers where two strands pass between
+the helices at the junctions, and the ends of the staple strands occur between junctions. By
+contrast, in the SST nanotubes, the junctions are all “single” crossovers as the ends of the
+strands are located at the junctions (Fig. 2(a)).
+   Non-planar DNA origami designs are typically based on either a hexagonal or square
+lattice of DNA helices, where crossovers occur between adjacent helices of the lattice, and
+the spacings between junctions are chosen to best match the pitch of DNA (e.g. the junctions
+are separated by seven base pairs in the hexagonal lattice giving an angle of exactly 4π/3
+between consecutive junction if the pitch of DNA is 10.5 base pairs per turn). The six-helix
+bundles origamis are based on the hexagonal lattice, and the four-helix bundles on the square
+
+
+                                              8
+lattice.
+    For the SST nanotubes, junctions are alternatively spaced 10 and then 11 base pairs
+apart. For a flat sheet with this design, one might expect that they would be flat and
+untwisted, as the average crossover spacing matches the DNA pitch. However, as adjacent
+crossovers involve opposing strands, the groove structure of DNA origami also needs to be
+considered, and it has been suggested that this leads to a natural curvature. 2 Even with this
+curvature, rolling up the sheets into tubes will likely introduce stress into the tubes, as the
+interhelix angles will no longer match their relaxed angles. We choose to study the tube
+isomer consistent with the presumed natural curvature, where the major groove is on the
+outside of the tube at the junctions.
+    The 10HB origami is the only system considered that is not a tube. Instead, it has a
+double hexagon cross-section (Fig. 1(d)). The anisotropy of the cross-section is expected
+to lead to substantial differences in the two bending moduli. The 4HB-MT and 6HB-MT
+origami are also slightly different from the rest in that they have wider blocks at each
+end of the origami (Fig. S1) to facilitate attachment to the beads in the magnetic tweezer
+experiments that were performed on them.
+    Snapshots of example origami and SST nanotubes are given in Fig. 2, with snapshots
+of some of the remaining systems given in Figs. S1–S3. These illustrate the typical scale of
+the bending fluctuations in these systems. The differences in the nature of the junctions for
+these two types of system should also be evident from the close ups.
+
+
+2.3        Simulations
+
+We use molecular dynamics to generate a large ensemble of thermalized configurations of the
+DNA nanotubes that can then be analysed using the methods described in the subsequent
+sections to extract persistence lengths and elastic moduli. Our molecular dynamics approach
+uses an Andersen-like thermostat, 71 both to set the temperature and to generate diffusive
+motion as is appropriate for nucleotides in solution. Simulations were run at a temperature of
+
+
+                                              9
+Figure 2: Snapshots of two of the DNA nanostructures (a) 4HB-SST; (b) 6HB-S, including
+close-ups from the ends and the side.
+
+
+20 or 23◦ C. To generate an equilibrium ensemble that samples the large length-scale bending
+fluctuations well requires very long simulations (the total length of the simulations for each
+system are between 3 and 18 ms (Table S1)). We monitor the sampling by following the
+distance between points near the opposite ends of the nanotubes as a function of time (see Fig.
+S4 for examples). The fastest equilibration occurs for the SST nanotubes. The reason for the
+somewhat slower dynamics for the origamis is not obvious. The main structural difference in
+the origamis is that the junctions involve mainly double rather than single crossovers, and so
+there may be some coupling of bending to different internal geometric states of these junctions
+that leads to the slower dynamics of the bending fluctuations. The slowest dynamics are
+for the 4HB-MT and 6HB-MT origamis where the blocks at the end of the origami perhaps
+slow down the diffusive dynamics of the long length-scale fluctuations. Consequently, these
+two systems have the worst statistics, which in turn impacts the precision of the computed
+elastic properties. Further details of the simulations are given in the Supporting Information
+(Section S2).
+
+
+
+
+                                              10
+2.4    Elastic model
+
+The conformation of a stiff polymer can be described by an orthonormal reference frame
+{eb1 (s), eb2 (s), eb3 (s)} as a function of the arc length s along the molecular contour, where
+eb3 (s) is tangential to the contour. For a DNA duplex or nanotube it is natural to discretize
+a configuration into steps along the contour. For the duplex a natural step is between
+consecutive base pairs. Similarly, the nanotubes considered here can be divided up into well-
+defined “slices” transverse to the contour, where each helix of the bundle has a base pair in
+each slice, and a step corresponds to moving one base pair along each helix. The junctions
+that interconnect the helices maintain the registry between the base pairs in each slice. Note
+that, unlike for the duplex, the slices are not all strictly equivalent because of their different
+positions relative to the junctions.
+   A rotation vector Θ(n) can be defined that represents the rotation of the triad {eb1 (n), eb2 (n), eb3 (n)}
+onto the adjacent triad {eb1 (n + 1), eb2 (n + 1), eb3 (n + 1)}. 56 The components Θ1 and Θ2 rep-
+resent local bending, whereas Θ3 is a twist angle about the system axis. If the system is on
+average straight then one would expect hΘ1 i = hΘ2 i = 0. If we define Ωi = (Θi − hΘi i)/a,
+where a is the average separation of successive steps, then the harmonic form of the energy
+due to angular deformations is
+
+                                            N X  3
+                                         aX
+                                 βE =               Ω(n) Mµν Ω(n)
+                                                              ν .                                 (1)
+                                         2 n=1 µ,ν=1 µ
+
+These are the dominant terms at small angular deviations, but higher order terms may be
+relevant for larger deformations.
+   If there are no couplings between the different angular degrees of freedom, then
+                                                                
+                                        A1             0    0 
+                                                              
+                                                              
+                                     M=
+                                        0              A2     ,
+                                                             0                                   (2)
+                                                              
+                                                              
+                                               0        0    C
+
+
+
+                                                   11
+as would be the case if Ω1 and −Ω1 , and Ω2 and −Ω2 were equivalent by symmetry. However,
+in the general case                                           
+                                     A1          A12 G1 
+                                                             
+                                                             
+                                  M=
+                                     A12             A2      .
+                                                           G2                              (3)
+                                                             
+                                                             
+                                            G1        G2   C
+
+For duplex DNA, if Ω2 describes bending deformations into the grooves of the helix, there
+is a symmetry with respect to the bending deformation Ω1 that implies A12 = G1 = 0, and
+G2 , the twist-bend coupling constant, is the only non-zero off-diagonal element of M. 55,72
+   For all the origamis we consider, the designs are based either on a hexagonal lattice
+(6HB) or square lattice (4HB). For a perfectly regular pattern of junctions and staple ends
+the highest possible Cn axis for these two lattices would be C3 or C2 , respectively. However,
+if the helix bundles were infinite in length, and ignoring strand ends (the scaffold runs
+antiparallel in adjacent helices), the tubes could also possess six-fold and four-fold screw
+axes, respectively. Therefore, the 4HB and 6HB systems have approximate four-fold and
+six-fold symmetry. The presence of 2-fold axial symmetry implies that A12 = G1 = G2 = 0,
+and 3-fold or higher rotational symmetry also implies that A1 = A2 . That the elastic
+constants do not fully obey the above is likely due to the breaking of the symmetry due to
+the irregular placement of junctions and strand ends.
+   By contrast, adjacent helices in the SST nanotubes are not equivalent. The 4HB-, 6HB-
+and 8HB-SST nanotubes thus have 2-fold, 3-fold and 4-fold symmetry, respectively. (Note
+that, unlike the origamis, these systems have a perfectly regular pattern of junctions.) Fur-
+thermore, because the spacing between junctions alternates between 10 and 11 base pairs,
+the inter-helix angles also alternate, 2 and so the cross-sections of the tubes are not expected
+to be on average regular polygons. Therefore, A1 and A2 are expected to be different for the
+4HB system, but identical for the larger tubes, whereas one would expect A12 = G1 = G2 = 0
+for all SST systems.
+
+
+
+
+                                                 12
+2.5    Persistence lengths and elastic moduli
+
+If a system behaves like an ideal worm-like chain, one expects
+
+
+                         heb3 (n) · eb3 (n + m)i = hcos θ(m)i = e−ma/lb ,                   (4)
+
+
+where lb is the bending persistence length and the averaging is performed over both different
+origins n and different configurations. Rearranging allows an m-dependent persistence length
+to be defined:
+                                                       ma
+                                   lb (m) = −                   .                           (5)
+                                                  loghcos θ(m)i
+
+Note that, as the number of possible origins is fewer for larger m, and the longest length scale
+fluctuations will be least well sampled in the simulations, the statistical errors are expected
+to increase with m. Similarly, one can define a twist persistence length in terms of the decay
+of the cumulative twist angle deviation
+
+                                                       ma
+                             lt (m) = −             P
+                                                       n+m−1   (k)
+                                                                         .                 (6)
+                                          loghcos      k=n   aΩ3         i
+
+   To compute the elastic constant matrix M we use the same approach as was used for
+DNA duplexes in Ref. 56. Namely, we first calculate the correlation matrix Ξ which is
+defined below
+                                       *"n+m−1             # "n+m−1          #+
+                                                    Ω(k)              Ω(l)
+                                          X                    X
+                           Ξµν (m) =                 µ                 ν          .         (7)
+                                            k=n               l=n
+
+Inversion of Ξ leads to the elastic constant matrix:
+
+                                                  m
+                                    M(m) =          [Ξ(m)]−1 .                              (8)
+                                                  a
+
+The use of cumulative angular deformations in Eq. 7 is discussed further in Ref. 73.
+   Note that the local form of the elastic energy in Eq. 1 would imply that the persistence
+lengths and elastic moduli are independent of m. In practice, however, there are longer-range
+
+
+                                                  13
+effective couplings that lead to a variation with m, where convergence to a constant value
+only emerges at larger m, as has previously been observed for the DNA duplex. 56 Here,
+we are most interested in this asymptotic behaviour, as it describes the long length-scale
+bending and twisting fluctuations.
+   Another implication of Eq. 1 is that the probability distributions for Ωi would be expected
+to be Gaussian. These distributions are illustrated in Figs. S5(a)-S8(a) for the 4HB-MT,
+6HB-MT and 6HB-SST systems. For the 6HB-SST nanotube, the Ωi distributions show
+some deviations from Gaussianity with large angular deformations being somewhat more
+likely than would be expected. By contrast, the two origami have much more significant
+deviations in the tails of these distributions, with the 6HB-MT origami showing clear sub-
+peaks in the distributions for the bending deformations. It might be that these more extreme
+local fluctuations are related to the slower dynamics of the origamis which were previously
+noted in Section 2.3. Figs. S5-S8 also show the distributions for the cumalative angular
+deformations used in Eq. 7 for different values of m. As expected, 74 these distributions
+converge to a Gaussian form as m increases, with this convergence occuring more rapidly for
+the 6HB-SST nanotube. Thus, although there are deviations from worm-like chain behaviour
+at the level of a single step, on longer renormalised length scales worm-like chain statistics
+apply.
+   When applying the above formulae to a DNA duplex or the DNA nanotubes, we choose
+to not include a certain number of base pairs or tube slices at either end, as the ends will
+typically be somewhat more flexible. In the nanotubes, this general effect is exacerbated by
+the significant structural differences at the ends. The helices splay out much more at the
+ends due to the lack of constraining junctions, as is evident from the snapshots in Fig. 2.
+The number of tube slices at each end that are ignored is given in Table S1 for each system.
+
+
+
+
+                                             14
+2.6    Triad definitions
+
+In Ref. 56 a number of different triads were considered when analysing the elastic properties
+of the DNA duplex. Here, we recap the definitions for their “Triad III”, as this approach will
+be most naturally adapted to the DNA nanotubes. In this triad, the positions of the centres
+of mass of the base pairs are used to define the vector eb3 . Namely,
+
+                                         Rduplex (i + 1) − Rduplex (i − 1)
+                           eb3 (i) =                                                        (9)
+                                       ||Rduplex (i + 1) − Rduplex (i − 1)||
+
+where Rduplex is given by:
+                                                      rnuc1 + rnuc2
+                                       Rduplex =                    .                      (10)
+                                                            2
+
+The vector between the centres of mass of the nucleotides in the base pair is used to define
+y
+b
+                                                   rnuc1 − rnuc2
+                                         y
+                                         b =                                               (11)
+                                                 ||rnuc1 − rnuc2 ||
+
+whose orthonormalization with respect to eb3 leads to eb2 :
+
+                                                   b − (y
+                                                   y    b ·e
+                                                           b3 ) e
+                                                                b3
+                                        eb2 =                                              (12)
+                                                 ||y
+                                                   b − (y
+                                                        b ·e    b 3 ||
+                                                           b3 ) e
+
+
+Finally, eb1 follows from the cross product:
+
+
+                                                eb1 = eb2 × eb3 .                          (13)
+
+
+    The results for lb (m) using this triad show an oscillation on the length scale of the pitch
+length of DNA that dies away at large m (Fig. 3(a)). Also, hΘ2 i was found to have a non-
+zero value (Fig. 3(b)). 56 The reason is that Rduplex does not exactly lie at the centre of the
+DNA double helix, but is slightly displaced towards the minor groove. Thus, the line of
+base-pair centres will be helical, and the correlations in eb3 will be strongest for an integer
+multiple of the pitch length. Similarly, the helicity measure introduced in Ref. 67 when
+
+
+                                                      15
+applied to the contour defined by Rduplex shows a sharp peak at the reciprocal of the pitch
+length (Fig. 3(c)). (Note, the helicity measure has magnitude one for a perfect helix, and
+positive/negative values correspond to right-handed/left-handed helicity, respectively.)
+   Although the above oscillation is not problematic for computing lb for duplex DNA as
+the oscillation dies away and the bulk limit is reached on reasonable length scales, when
+performing a similar analysis for the DNA nanotubes, the issue is much more troublesome.
+If we define, the centre of the DNA nanotube as the average over the centres of mass of the
+duplexes in a given slice:
+                                                      NX
+                                                 1     helix
+
+                                   Rtube =                     Rduplex,j                     (14)
+                                               Nhelix j=1
+
+and eb3 (i) in an analogous manner to the duplex
+
+                                               Rtube (i + 1) − Rtube (i − 1)
+                         eb3 (i) = zb(i) =                                                   (15)
+                                             ||Rtube (i + 1) − Rtube (i − 1)||
+
+the persistence length can be calculated using Eq. 5, as illustrated for one of the origami
+six-helix bundles in Fig. 3(d). The magnitude of the oscillation on the pitch length is much
+stronger and persists over the whole range of m that can be sampled. This is for two reasons.
+Firstly, the helices in the nanotubes are held in registry by the four-way junctions present
+in the origamis, and so the helical paths of the centrelines of the individual helices in the
+nanotubes add up coherently. Secondly, the helix bundles are much stiffer than a DNA
+duplex and so the variations in the tangent-tangent correlation function due to the helicity
+of the centerline both make a much more significant contribution and do not significantly
+die away because the persistence length of the tubes is much longer than the contour length
+of the nanotubes. Unlike for duplex DNA, a similar oscillation is also seen in the bending
+elastic constants calculated using Eq. 8 (Fig. S8). Interestingly, for the SST nanotubes no
+pitch-length oscillation is observed, presumably because the single-crossover junctions place
+fewer constraints on the relative orientations of adjacent helices, leading to a loss of coherence
+between the twist of the individual helices (Fig. S8).
+
+
+                                                     16
+   In Ref. 75, an approach to correct for the helicity of the duplex contour was introduced
+that involved transforming from the helical frame of reference to a non-helical one; this
+transformation led to a small correction to the elastic moduli. Here, we explore an alternative
+approach that will be more convenient for the DNA nanotubes and instead uses a new
+definition of the duplex centre Rduplex that attempts to remove the helicity by adding a
+small offset in the direction of the major groove. Namely,
+
+                                rnuc1 + rnuc2 α  b                               
+                Rduplex (α) =                +   bnuc1 × n
+                                                         b nuc1 + b
+                                                                  b
+                                                                    nuc2 × n
+                                                                           b nuc2           (16)
+                                      2        2
+
+where for α = 0 the original definition of Eq. 10 is recovered.
+   Using this new definition of Rduplex (α) in Eq. 9, the oscillation in lb (m) is reduced as α
+is increased until the oscillation disappears at α = 0.06 (Fig. 3(a)). Similarly, if we examine
+hΘ2 (α)i, it passes through zero at α = 0.06 (Fig. 3(b)). Furthermore, the peak in the
+helicity measure at the reciprocal of the pitch length disappears for α = 0.06 (Fig. 3(c)).
+Although the value of α does not affect the limiting value of the bending persistence length
+for the duplex, it does lead to small changes in the elastic constants, as was also found when
+switching to a non-helical frame of reference. 75 The variation of the duplex elastic constants
+with α is shown in Fig. S9.
+   Applying the new definition of the duplex centre with α = 0.06 to the origami nanotubes
+leads to the removal of the oscillations in lb (m) (Fig. 3(d)). Note that the α = 0.06 line for
+lb (m) is an upper envelope function to the curves for other values of α, because the helicity
+of the centerline leads to a periodic loss in correlations that is not representative of the true
+stiffness of the system. For all further results we will use α = 0.06.
+   Now having a non-helical definition of the tube centre, we consider our definitions of eb1
+and eb2 . Following the recipe of Triad III for the duplex, we could define y
+                                                                            b for a six-helix
+
+bundle as
+                           Rduplex (2) + Rduplex (3) − Rduplex (5) − Rduplex (6)
+                   y
+                   b =                                                                      (17)
+                         ||Rduplex (2) + Rduplex (3) − Rduplex (5) − Rduplex (6)||
+
+
+                                                 17
+         (a) 41                                                                 (b) 3.0
+                                                                                        2.5                                                         2(Deg)
+
+                   38                                                                   2.0
+                                                                                        1.5
+
+
+
+
+                                                                             2 (Deg)
+         lb (nm)   35
+                                                                                        1.0
+                   32                                                                   0.5
+                                                               = 0.00                   0.0
+                   29                                          = 0.03
+                                                               = 0.06                   0.5
+                   26                                                                   1.0
+                        0   10    20             30      40             50                0.00    0.01     0.02   0.03     0.04     0.05   0.06     0.07     0.08
+                                        m (bp)
+         (c) 0.6                                                             (d) 4800
+                                                         ( = 0.00)                                  lb( = 0.00)
+                                                         ( = 0.06)                     4000         lb( = 0.06)
+              0.4
+                                                                                       3200
+
+
+
+
+                                                                             lb (nm)
+              0.2                                                                      2400
+
+                                                                                       1600
+              0.0
+                                                                                        800
+
+              0.20.0        0.2   0.4            0.6     0.8
+                                                                                          0
+                                                                                              0          200       400            600         800          1000
+                                       k (1/nm)                                                                          m (step)
+
+Figure 3: lb (m) for (a) dsDNA and (d) the 6HB-S origami at different values of α, as labelled.
+(b) hΘ2 i for dsDNA as a function of α. (c) Helicity measure for dsDNA as a function of
+inverse wavelength at α = 0 and 0.06.
+
+
+and then use Equations 12 and 13 to obtain eb1 and eb2 . However, when we did so for the
+6HB-SST system we found that A1 > A2 (Fig. S10(a)) in contrast to our expectations based
+on the symmetry of the system. We suspected this may be because of the “inequitable”
+treatment of the three directions in the orthogonalization scheme.
+   As a test we therefore defined
+
+                                                         Rduplex (4) − Rduplex (1)
+                                                 x
+                                                 b =                                 ,                                                                              (18)
+                                                       ||Rduplex (4) − Rduplex (1)||
+
+obtained eb1 by orthogonalization of x
+                                     b to e
+                                          b 3 , and e
+                                                    b 2 by the vector product of e
+                                                                                 b 3 and e
+                                                                                         b1 .
+
+With this scheme the order of the bending moduli was reversed with A2 > A1 (Fig. S10(b)),
+showing this not to be a property of the tube but a reflection of the order in which we
+performed the orthogonalization.
+   Therefore, we instead explored using singular value decomposition to find the orthogonal
+set {eb1 , eb2 , eb3 } that are closest to the set of vectors {x
+                                                               b, y  b}. 76 As one can see from Fig. 4,
+                                                                  b, z
+
+
+
+
+                                                                         18
+                                              6000       A1
+                                                         A2
+                                                         C
+                                              5000
+
+
+
+
+                      Elastic Constant (nm)
+                                              4000
+
+                                              3000
+
+                                              2000
+
+                                              1000
+
+                                                 0
+                                                     0        200   400         600   800
+                                                                     m (step)
+
+   Figure 4: Elastic moduli for 6HB-SST using singular value decomposition. α = 0.06.
+
+
+for the 6HB-SST system, within the statistical errors, there is now essentially no difference
+between A1 and A2 , in line with our expectations based on the symmetry of these nanotubes.
+For the 8HB-SST, this is also true (Fig. S24(c)). Note that for the origamis, the non-regular
+pattern of junctions is one factor that can somewhat break this potential symmetry. For all
+further results we use the singular value decomposition approach.
+   The definitions of x
+                      b and y
+                            b for the other systems are given in the Supporting Information
+
+(Section S3.2) and illustrated on the tube cross-sections in Fig. 1(d). All the definitions
+that we have introduced are designed for DNA that adopts a base-paired double-helical
+configuration. However, for structures as large as DNA origamis, there will always be some
+designed base-pairs that are not intact due to thermal fluctuations. These broken base pairs
+are most likely to be at nicks and junctions. When such “fraying” occurs, it is likely to lead
+to anomalous values for the angular deviations Ωi . However, we do not attempt to treat
+such cases differently or exclude them from our averaging, because both fraying is a natural
+part of the dynamics of the systems and the number of broken base pairs is likely to be a
+very small fraction of the total number of base pairs.
+
+
+2.7    Extracting limiting values
+
+The m-dependent definitions of the persistence lengths (Eqs. 5 and 6) and elastic moduli
+(Eq. 8) both for the duplexes and the nanotubes show a similar behaviour rising up towards
+
+                                                                    19
+                                          (a)0.0
+                                                                                         ln < e3(n). e3(n + m) >
+                                                                                         straight-line fit
+
+
+
+
+                             ln < e3(n). e3(n + m) >
+                                                        0.2
+
+
+                                                        0.4
+
+
+                                                        0.6
+
+
+                                                        0.8
+                                                              0   15         30         45     60       75         90
+                                                                                   m (bp)
+                                (b) 0.00
+                                                                                         ln < e3(n). e3(n + m) >
+                                                       0.01                              straight-line fit
+                       ln < e3(n). e3(n + m) >
+
+
+
+
+                                                       0.02
+
+                                                       0.03
+
+                                                       0.04
+
+                                                       0.05
+
+                                                       0.06
+                                                              0        200        400          600           800
+                                                                                  m (step)
+Figure 5: loghcos θ(m)i versus m for (a) duplex and (b) 6HB-SST along with fit lines to the
+exponential tail.
+
+
+a limiting value at large m (Fig. 3(d) and 4). However, unlike for the duplex, we cannot
+simply obtain the bulk values of the bending persistence length and the bend elastic moduli
+from their values at the largest m value that we sample, because the bending persistence
+lengths of the nanotubes are much larger than their lengths, and so have not yet converged
+to their limiting values.
+   The reason for this strong m-dependence is that the local fluctuations in the angles Θ1
+and Θ2 are greater than would be expected from the bending of the nanotube contour on
+long length scales. This effect can be seen in Fig. 5, which depicts the tangent-tangent
+correlation function. The behaviour is not perfectly exponential, as would be the case for an
+ideal worm-like chain (Eq. 4), but shows an initial more rapid decay, which for the duplex
+is only a few base pairs but for the example nanotube is on the order of twenty-five slices.
+
+
+
+                                                                                  20
+While for the duplex all base pairs are equivalent, all slices of a nanotube are not equivalent
+because of their different positions with respect to the junctions. This provides an additional
+source of heterogeneity that we average over in our analysis. For example, it is well known
+that the adjacent helices in an origami splay apart slightly as one moves away from the
+junctions 1,61,77 (Fig. 2) leading to a local bending of the helices that is not representative of
+their longer-length-scale behaviour.
+   Fig. 5 suggests a simple way to extract the bulk persistence length. As beyond the
+transient behaviour at small m the correlation function shows a near perfectly exponential
+tail, lb can be extracted from the limiting slope of the graph. The same approach is used to
+calculate lt (Fig. S11).
+   Extracting bulk bending elastic moduli is more difficult. That the fluctuations of Θ1
+and Θ2 are not fully representative of the bending behaviour at long length scales implies
+that there are correlations beyond a single step. These can be quantified by the following
+correlation coefficients:
+                                               D           E
+                                       Λ(n)   (i) (i+n)
+                                        µν = Ωµ Ων      .                                    (19)
+
+In Ref. 73, it has been shown that the matrix Ξ(m) can be constructed from these correlation
+coefficients, as follows.
+
+                                               m−1                   
+                            Ξµν (m) = mΛ(0)          (m − n) Λ(n)   (n)
+                                               X
+                                        µν +                  µν + Λνµ .                     (20)
+                                               n=1
+
+
+
+In Fig. S12 we show that the elastic constants obtained from the above formula reproduce
+well the elastic constants obtained from Eq. 7 for 6HB-SST. However, when we use this
+approach to extrapolate to larger m, the behaviour becomes less sensible, and so does not
+provide a method to estimate the bulk elastic constants. The issue is that the weighting of
+the longer-range (i.e. larger n) correlation coefficients in Eq. 20 becomes more significant at
+large m, and although these coefficients might be expected to converge to zero as n increases,
+in practice the statistical noise in their values leads to somewhat random behaviour in the
+
+
+                                                   21
+                                                10000
+
+
+                                                 8000
+
+
+
+
+                        Elastic Constant (nm)
+                                                 6000
+                                                                                              navg = 0
+                                                 4000                                         navg = 1
+                                                                                              navg = 2
+                                                                                              navg = 5
+                                                 2000                                         navg = 10
+                                                                                              navg = 20
+                                                                                              navg = 40
+                                                    0
+                                                        0        200      400           600       800
+                                                                          m (step)
+
+   Figure 6: The effect of averaging on A1 for different navg for the 6HB-SST nanotube.
+
+
+predicted elastic constants when extrapolating beyond the length of the nanotubes.
+   Therefore, we have explored an alternative approach in which we perform averaging
+over longer length scales to reduce the enhanced local fluctuations that are at the root of the
+issue, and hence to expedite convergence of the elastic moduli to their bulk limit. This idea is
+similar to using a renormalized length scale; as we noted in Section 2.5 the cumulative angular
+deformations exhibit behaviour increasingly consistent with worm-like chain statistics as m
+increases. We do this averaging by defining our local axes at each slice to be an average of
+the current slice and navg slices on either side, i.e.
+
+                                                                       Pj=i+navg
+                                                                         j=i−n       x
+                                                                                     b (j)
+                                                            b0
+                                                            x (i) = Pj=i+navg                             (21)
+                                                                          avg
+                                                                         j=i−navg x
+                                                                                  b (j)
+
+
+                     b 0 and z
+and equivalently for y       b0 . As before we then use singular value decomposition to find the
+
+                            b 0, y
+ebi vectors from the triad {x    b 0, z
+                                      b0 }. Fig. 6 illustrates the behaviour of the elastic constant
+
+A1 for the 6HB-SST system for different values of navg . As navg increases, the stiffness at
+small m increases quickly, as intended. For sufficiently large navg the m-dependent elastic
+moduli even become larger than their bulk values and convergence to the limiting value as m
+increases occurs from above. It is also clear from the figure that the curves for different navg
+are converging to the same limiting value. Therefore, we equate the bulk elastic moduli with
+their value at large m (typically at an m value somewhat lower than the largest we sample
+
+
+                                                                         22
+Table 1: Structural and mechanical properties of all the systems studied. All angles are
+given in degrees and elastic moduli and persistence lengths in nanometres. The navg and
+mlimit values used to extract the bulk values of the elastic constants are given in Table S1.
+                                                                                                                       expt
+            Ref.   nhelix   Nslice     a      hΘ1 i    hΘ2 i     hΘ3 i     A1       A2       C      lb     lt /2   l          Cexpt
+                                                                                                                       b
+  4HB-MT     29     4       1354     0.3373   0.006     0.010    0.035     2150     2020     330    1040    330        740     390
+  4HB-SST            4      1029     0.3400   -0.004    0.002     0.136    3120     1750    370     2030    280
+ 6HB-2×LH    68     6       1259     0.3371    0.002   -0.005    -0.884    4480     5300    610     4500    620
+ 6HB-1×LH    68     6       1261     0.3376    0.002   -0.003    -0.419    5520     5980    580     5740    680
+   6HB-S     68      6      1260     0.3383   -0.001   -0.001    0.046     6400     5780    670     5430    660    2400
+ 6HB-1×RH    68     6                0.3457   0.004     0.000    0.492     5590     4860     650   5950     690
+  6HB-MT     29     6       1085     0.3385   -0.013   -0.011     0.071    6960     5560    800     4140    810    1880        530
+  6HB-SST    32      6      1070     0.3389    0.000    0.000     0.115    7560     7630    750     7620    740    3300
+  8HB-SST    32      8      1050     0.3383    0.000    0.001     0.111   16 980   16 880   1290   16620   1270    8200
+   10HB      68     10      705      0.3379   -0.008    0.002     0.012   37 580   13 440   2230   19440   1780
+
+
+
+
+because the latter are most affected by statistical noise; the values used are given in Table
+S1) when using the value of navg for which convergence is most rapid. Figures equivalent
+to Fig. 6 but for A2 and C are given in the Supporting Information (Fig. S13), along with
+the effects of this averaging on the persistence length measurements. For example, for the
+6HB-SST nanotube we use navg = 20 to obtain bulk A1 and A2 values, and navg = 5 to
+obtain C (Table S1).
+
+
+
+3     Results
+
+A range of structural and mechanical properties of the ten systems that we studied are given
+in Table 1. Firstly, hΘ1 i and hΘ2 i for all systems are zero within statistical error; i.e. all
+the tubes are on average straight, as expected. The behaviour of hΘ3 i is more interesting.
+We should first note that the current oxDNA potential has been fine-tuned to reproduce
+the experiments of Ref. 20 which suggested that origami based on the hexagonal lattice
+and without any insertions or deletions should be approximately untwisted. Consistent with
+this, the 6HB-S, 6HB-MT and 10 HB origami are all fairly near to being untwisted, albeit
+with all showing a slight right-handed twist; this twist is lowest for the 10HB reflecting its
+significantly larger twist modulus.
+    The series of twisted six-helix bundles of Ref. 68 show the expected linear variation of the
+twist (Fig. S14) across the series, albeit with the nanotube that is designed to be untwisted
+
+
+
+                                                                23
+being slightly right-handed, as noted above. The designed twist in these structures is based
+on modelling with CanDo. 50,51 Here, we find that the insertions and deletions (i.e. increasing
+or decreasing the number of base pairs between these junctions to induce internal twist
+stress 20 ) in these structures have a larger angular effect with 30 sets of insertions or deletions
+causing a change in twist of just over one and a half turns rather than a single turn.
+   Interestingly, the single-stranded tiles systems all show significant right-handed twist
+(equivalent to about 120◦ degrees per 1000 base pairs). Like for the hexagonal lattice
+origamis, the average junction spacing in the planar sheets on which they are based matches
+the presumed pitch length of DNA (10.5 base pairs). Therefore, they might be expected
+to show a similar twist as those origamis; instead it is over twice as large. This is mostly
+because the twist angle at a junction with a single-crossover is larger than for one with a
+double-crossover for the oxDNA model.
+   Another basic structural property that we considered was the radius of the tubes defined
+as the average distance of the centres of the DNA helices from the tube centre:
+
+                                         NX
+                                     1    helix
+
+                              r=                  |Rduplex (j) − Rtube | .                     (22)
+                                   Nhelix j=1
+
+Note, to get a measure of the limit of the excluded volume of the tube one should add the
+radius of the DNA duplex. The dependence of the radius on position along the tube is shown
+in Fig. 7(a) for 6HB-S; equivalent figures for all the other systems are depicted in Figs. S15–
+S17 of the Supporting Information. Typical of all systems, the tube has a significantly larger
+radius at either end. This is simply a reflection of the significant splaying out of the helices
+of the origami at the ends that is evident from the snapshots in Fig. 2 and is a result of these
+sections being less constrained by junctions. The radius measurements allows us to decide
+how many slices from each end to ignore when performing the persistence length and elastic
+moduli calculations.
+   The radii are also larger than one would expect from close-packing of the helices. This is
+
+
+
+                                                   24
+                                      (a)
+                                                   4.0
+                                                                                                           radius (nm)
+
+                                                   3.5
+
+
+
+
+                                 Radius (nm)
+                                                   3.0
+
+
+                                                   2.5
+
+
+                                                   2.0
+                                                         0     200        400          600         800   1000     1200
+                                                                                  slice index
+                                    (b)4800
+                                                             lb
+                                                  4000       lt/2
+                       Persistence lengths (nm)
+
+
+
+
+                                                  3200
+
+                                                  2400
+
+                                                  1600
+
+                                                   800
+
+                                                     0
+                                                         0          200         400              600     800         1000
+                                                                                      m (step)
+                                        (c)
+                                                  5000       A1
+                                                             A2
+                                                             C
+                       Elastic Constant (nm)
+
+
+
+
+                                                  4000
+
+                                                  3000
+
+                                                  2000
+
+                                                  1000
+
+                                                     0
+                                                         0          200         400              600     800         1000
+                                                                                      m (step)
+
+Figure 7: (a) Radius as a function of position, (b) m-dependent persistence lengths and (c)
+elastic moduli for the 6HB-S origami.
+
+
+a result of the well-documented slight splaying out of helices between junctions 1,61,77 that is
+also visible from the close-ups in Fig. 2. Baker et al. estimated the inter-helix separation in
+a 10-helix bundle nanotube to be 2.75 nm from SAXS measurements. 77 This is fairly similar
+to the 2.4–2.5 nm radius that we find for the six-helix bundles (Figs. 7(a), S15,S17). The
+small variations in this radius along the length of the tube are also due to the variations in
+the interhelix distance caused by this splaying. In the example in Fig. 7(a), the relatively
+irregular placement of these junctions means there is little clear pattern in this variation,
+however for the origamis of Ref. 29 there is a much clearer repeating pattern (Fig. S15).
+
+                                                                                      25
+                                  (a)                         lb
+                                                  12000
+                                                              lt/2
+                                                  10000
+
+
+
+
+                       Persistence lengths (nm)
+                                                   8000
+
+                                                   6000
+
+                                                   4000
+
+                                                   2000
+
+                                                      0
+                                                          0          100   200              300   400   500
+                                                                                 m (step)
+                         (b) 18000
+                                                              A1
+                                                              A2
+                                                  15000       C
+                       Elastic Constant (nm)
+
+
+
+
+                                                  12000
+
+                                                   9000
+
+                                                   6000
+
+                                                   3000
+
+                                                      0
+                                                          0          100   200              300   400   500
+                                                                                 m (step)
+
+Figure 8: (a) m-dependent persistence lengths and (b) elastic moduli for the 10HB origami.
+
+
+   The m-dependent persistence lengths and elastic moduli are shown for 6HB-S, 10HB and
+4HB-SST in Figs. 7, 8 and 9, respectively; those for the other systems are shown in Figs.
+S18–S21. The limiting values of these quantities extrapolated by the approaches outlined
+in Section 2.7 are given in Table 1 for all systems. As noted already, the m-dependent
+bending persistence lengths show a slow convergence to their limiting values due to the
+enhanced flexibility on short length scales. The twist persistence length, partly reflecting its
+smaller value, converges much more rapidly. All the origamis show some degree of repetitive
+fine structure in these curves. For example, there is a small peak every about 190 slices
+for 6HB-S (Fig. 7(b)) and a stronger oscillation every 21 slices for 10HB (Fig. 8(a)). The
+enhanced correlations at the peaks are associated with length scales that match a periodicity
+or approximate periodicity in the pattern of junctions; these periodicities are also evident in
+the repeating patterns seen in the tube radii. By contrast, the virtual absence of any fine
+structure, and consequent smoothness of all the data, for the SST nanotubes (e.g. Fig. 9(a))
+
+
+
+                                                                             26
+                                          (a)
+                                               3000
+                                                             A1
+                                                             A2
+                                                             C
+
+
+
+
+                       Elastic Constant (nm)
+                                               2000
+
+
+
+
+                                               1000
+
+
+
+
+                                                  0
+                                                      0            200            400            600                 800
+                                                                                   m (step)
+                                               (b)
+                                                                                                             (rdup1 + rdup3)/2
+                                                                                                             (rdup2 + rdup4)/2
+
+                                                2.5
+                               Radius (nm)
+
+
+
+
+                                                2.0
+
+
+                                                1.5
+
+
+                                                1.0
+                                                      0           200       400            600         800                 1000
+                                                                                  slice index
+
+Figure 9: (a) m-dependent elastic moduli and (b) radii for equivalent helices as a function
+of position for the 4HB-SST nanotube.
+
+
+is noteworthy, and reflects the much smaller variations in the tube radii due to the lesser
+constraints associated with their single-crossover junctions (Fig. 9(b)).
+   In Fig. 10 we plot the bulk persistence lengths for bending and twisting versus nhelix for
+all systems, including dsDNA. There is a clear non-linear increase in the bending persistence
+length with the number of helices, whereas the twist persistence length increases roughly
+linearly. For example, the bending persistence lengths of the six-helix bundles are 110–190
+times that of dsDNA, whereas the twist persistence length increases only by a factor of 6–9.
+This basic behaviour was previously noted in Refs. 29 and 32. The variation of the bending
+persistence length can be described theoretically if one assumes that dsDNA behaves as a
+uniform elastic cylindrical rod, leading to the expression: 35
+
+                                                                                                       2 !
+                                                                                            R
+                                                                                                 
+                                                          lbtube = nhelix lbduplex      1+2                      .                (23)
+                                                                                            r
+
+                                                                                  27
+                                                 20000
+
+                                                 18000
+
+                                                 16000                                        Eq. 23: reff
+
+
+
+
+                       persistence length (nm)
+                                                 14000
+
+                                                 12000
+                                                                               SST
+                                                 10000
+
+                                                 8000
+
+                                                 6000                                lb
+                                                                                              Eq. 23: r
+                                                 4000
+
+                                                 2000                                SST      lt /2
+                                                    0
+                                                         1   2   3   4    5     6         7   8       9      10
+                                                                     number of helices
+
+Figure 10: The variation of the bend and twist persistence lengths with nhelix for all systems
+including dsDNA. Lines have been added for the SST series of nanotubes. There are also
+two additional lines (with no data points) that represent the predictions of Eq. 23 for the
+SST nanotubes using both the actual radius of dsDNA or an effective radius that is chosen
+to fit the observed data.
+
+
+where r is the radius of dsDNA and R the radius of the nanotube (see Section S4.2). From
+this equation it can be seen that the non-linear variation is due to the additional effect of
+the helices being a distance R from the centreline of the nanotube. One difficulty when
+applying this to experimental systems is that of measuring R. However, all quantities in this
+expression can be measured in simulations, allowing the consistency of this expression to be
+tested. The predicted persistence lengths when applied to the series of three SST nanotubes
+significantly underestimates the nanotube persistence lengths (Fig. 10). A significant factor
+in the over-prediction likely lies in the assumption that dsDNA can be considered as a uniform
+elastic rod. Given the structure of DNA—it has a tightly-packed core of stacked and paired
+bases and, due to the major and minor grooves, a shape more akin to an asymmetric double-
+threaded screw than a cylindrical rod—it is perhaps not surprising this may not be the best
+approximation. If we consider r to be a parameter, we can find the value that best fits
+the SST nanotube data; this fitting gives an effective radius of 0.65 nm, with the resulting
+form capturing well the dependence on nhelix . This compares to 1.15 nm used in the original
+prediction, which is a measure of the limits of the excluded volume of an oxDNA double
+helix.
+
+                                                                         28
+    There is some variation of the persistence lengths for those helix bundles with the same
+numbers of helices. For example, for the six-helix bundles lb varies between 4160 and 7650 nm
+and lt /2 between 620 and 810 nm. Although one in principle expects the persistence lengths
+to also depend somewhat on the types of junction (single or double crossover), the patterns of
+nicks and junctions, tube radius (Eq. 23) and the degree of internal stress, a significant part of
+this variation is probably down to errors due to imperfect sampling; as mentioned earlier, the
+4HB-MT and 6HB-MT examples suffer particularly in this regard with the tangent-tangent
+correlations lacking the clear exponential tail that is expected for a worm-like chain. One
+systematic feature, which seems robust, is that the SST nanotubes have a larger bending
+persistence. This is perhaps surprising, as one might have expected them to be more flexible
+given that they have single rather than double crossovers at the junctions. The most likely
+reason is that the extra freedom associated with the single crossover allows the nucleotides at
+the junctions to better optimize their stacking interactions, causing the junctions to actually
+be stiffer.
+    We can also compare our results to the available experimental data for these systems,
+which are included where available in Table 1. Although the persistence length of the 10HB
+origami design considered here has not been determined experimentally, a value of 5430 nm
+was obtained for a very similar 10HB design. 31 In all cases the oxDNA values for the bending
+persistence length are larger. One clear factor is that the simulations have been performed
+for origamis with the ideal structures, whereas there is likely to be imperfections in the
+experimental origamis due both to assembly errors, be it a result of missing staples or the
+incorrect routing of the strands, and to errors in the synthesis of the staples. Quantitative
+evidence has been obtained for the presence of such assembly errors, 78–80 but estimates of
+their prevalence have varied significantly. For example, Ref. 80 estimated that on average
+only 84% of staples were incorporated into a 2D origami, whereas Ref. 78 obtained fold-
+ing qualities of 96% or greater for 3D origamis. The resulting defects could well lead to
+both local static structural irregularities and enhanced fluctuations, both of which would
+
+
+                                               29
+contribute to lowering the measured persistence lengths. From this viewpoint, the experi-
+mentally measured values should be seen as lower bounds to the persistence lengths of ideal
+structures.
+   The substantial effect of defects on the mechanical properties has been confirmed in ex-
+periments that deliberately introduce defects into origami structures. For example, gaps
+between staple ends reduce bend persistence lengths 31 and gaps and nicks reduce the effects
+of torsional stresses 81,82 (i.e. they reduce the local twist modulus of the origami). Similarly,
+missing staples have been used to achieve designs with higher local mechanical compli-
+ance. 83,84 Radiation damage has also been found to make a 6HB origami more flexible. 85
+   Another factor that we should mention is that in our calculations we choose to ignore
+the ends of the origami due to their enhanced fluctuations, which would otherwise introduce
+some degree of non-worm-like chain behaviour and a lowering of the persistence lengths.
+However, these effects are relatively small. Also, our m-dependent definition of the bending
+persistence length shows a significant length dependence. However, this is due to enhanced
+local fluctuations at the shortest length scales, whereas the experimental measurements are
+unlikely to be sensitive to these effects, both due to the lower resolution of the molecu-
+lar contour and the analysis methods used. Similarly, these length-dependent effects are
+dramatically reduced when we use the averaging approach of Section 2.7 (Fig. S13(c))
+   The most accurate persistence length measurements are probably those of Ref. 32 because
+the lengths of the SST nanotubes can be significantly larger than an origami. By visualizing
+the molecular contours of individual tubes as a function of time they were able to measure the
+tangent-tangent correlation of individual nanotubes over length scales of up to about 10 µm.
+One interesting feature of the results was that the variation of the persistence lengths between
+different examples of the same design was greater than the estimated error in the persistence
+length for an individual tube. So for the 6HB, the persistence lengths varied between 1.6
+and 4.7 µm, and between 5.7 and 10.1 µm for the 8HB. This indicates that the population of
+nanotubes has a heterogeneous set of mechanical properties. In this case, there is a possible
+
+
+                                               30
+isomerism (associated with whether the strands are in registry or offset as one goes around
+the circumference of the tube) that may be partly responsible for this heterogeneity, but it
+is also likely to reflect differences in the assembly quality of individual nanotubes. For this
+reason, the highest values may provide the best estimates of the persistence lengths of the
+ideal nanotubes (the average values are reported in Table 1).
+   The difference between the experimental and oxDNA values could also reflect deficiencies
+in the oxDNA model. One known shortcoming is that although oxDNA reproduces well
+the bend and twist persistence lengths of dsDNA, it considerably overestimates the stretch
+modulus. For the original oxDNA model the extensional modulus is about 2100 pN, 69 but it
+has not previously been calculated for the second version of the model used here (sometimes
+called “oxDNA2”). Fitting the force-extension curve of dsDNA to the extensible worm-like
+chain form (Fig. S22) gives an estimate of about 2700 pN for oxDNA2. This compares to
+experimental estimates of about 1200 pN at high salt conditions. 86 The bending of a helix
+bundle not only involves the bending of the individual helices, but also leads the helices on
+the inside of the bend to be compressed, and those on the outside to be in tension. Thus,
+that the oxDNA extensional modulus is too large is likely to contribute to an overestimation
+of the bending persistence lengths. Note, though, that the tube can also respond to the
+tension and compression by changing its local structure, e.g. by changing the splay angle of
+the helices at junctions and hence the interhelix separation.
+   In Table 1, we report the limiting values of the elastic moduli for all systems. Note that
+we do not give values for the coupling terms A12 , G1 and G2 as there is no strong evidence
+that non-zero values are more than statistical noise. For completeness, we plot their m-
+dependent values in Figs. S23–S26, but it is noteworthy that rather than rising smoothly to
+their limiting values—as is the case for A1 , A2 and C, as well as the twist-bend coupling
+constant for dsDNA 56 —they are generally close to zero for small values of m, where the
+statistics are best, with any significant deviations from zero occurring at larger m. However,
+as we estimate the limiting values of A1 , A2 and C from the large-m behaviour, the non-zero
+
+
+                                              31
+values of the off-diagonal terms are likely to somewhat affect the accuracy of these elastic
+moduli.
+   It was expected based on approximate symmetry that for all systems, except for 4HB-
+SST and the 10HB origami, A1 and A2 would be approximately equal. This is generally the
+case with differences being at most 25%. For the 6HB and 8HB SST nanotubes for which
+there is an exact symmetry due to the regularity of their junctions, A1 and A2 are virtually
+exactly equal.
+   The large difference in A1 and A2 for the 10HB is expected given its very anisotropic
+cross-section. The origin of this difference for the 4HB-SST system is more subtle. As a
+consequence of the alternating pattern of 10 and 11 base-pair spacings between junctions in
+the SST nanotubes, the interhelix angles alternate on going around the nanotube. This leads
+to the diamond, rather than square, tube cross-section apparent in Fig. 2(a). This effect can
+be quantified by measuring the distance of equivalent helices in the SST nanotubes from the
+tube centre. These two distances are shown in Fig. 9(b) for the 4HB-SST and in Fig. S28
+for the other SST tubes. The difference in the two distances is roughly 0.4–0.5 nm for the
+4HB-SST tube.
+   If A12 = G1 = G2 = 0 then the bending persistence length should simply be the harmonic
+mean of the bend elastic constants A1 and A2 . This generally holds to within 10%, the
+exceptions being the MT systems for which the sampling issues affecting the values of lb have
+already been noted. Similarly, if the coupling terms are zero then lt /2 = C; this generally
+holds to within less than 10%, the exceptions being 4HB-SST and 10HB, for which the
+large differences between A1 and A2 make the obtained limiting value of C more sensitive
+to the behaviour of the coupling terms. For the two experimental systems for which the
+twist modulus has been measured, the oxDNA values are in reasonable agreement, being a
+bit smaller for the 4HB-MT origami and somewhat larger for the 6HB-MT origami, which
+happens to have the largest C of the 6HB systems that we have studied.
+
+
+
+
+                                             32
+4     Conclusions
+
+In this paper we have introduced approaches to compute persistence lengths and elastic
+moduli associated with bending and twisting for rod-like DNA nanostructures. One fea-
+ture is that only on length scales beyond those associated with the spacings between the
+junctions do the bending fluctuations behave like those of a worm-like chain. As our dis-
+cretization was performed at the level of single base-pair steps along the molecular contour,
+averaging methods had to be introduced to extract bulk values of the elastic moduli. The
+approaches, although computationally intensive due to the long simulations required to ad-
+equately sample the long length-scale fluctuations, are straightforwardly applicable to other
+DNA nanostructures. Thus, they could be used as part of a rational design process to
+produce DNA nanostructures with tailored mechanical properties.
+    In line with previous experiments, 29,31,32 we found that the persistence lengths and elastic
+moduli associated with bending exhibit a strong non-linear dependence on the number of
+helices, whereas the twist persistence lengths increase approximately linearly. Consequently,
+the DNA nanotubes are in a very different mechanical regime with respect to angular de-
+formations compared to duplex DNA. For example, for the six-helix bundles the persistence
+length is on average about eight times larger than the twist modulus, whereas for dsDNA
+the twist modulus is over twice as large.
+    In all cases, the values for the bending persistence lengths that we obtain are larger
+than those measured experimentally. The main reasons for these differences are firstly that
+our calculations are performed for ideal structures, whereas the structures in experiments
+will inevitably have some degree of defects due to both assembly and strand synthesis.
+Secondly, one of the known deficiencies of the oxDNA model is that it overestimates the
+stretch modulus of dsDNA, which in turn is likely to lead to the cost of nanotube bending
+being overestimated as the individual helices will be somewhat compressed on the inside of a
+bend and stretched on the outside. Note that there are also uncertainties in the accuracy of
+oxDNA’s description of the mechanical properties of junctions and nicks, as there is relatively
+
+                                               33
+little experimental information to which to compare. The relative contributions of these two
+main factors is not fully clear. However, it is interesting to note that oxDNA is able to
+reproduce well the bending and twisting of the example origamis in Ref. 20 that result
+from internal stresses induced by insertions and deletions, and that partly reflect the elastic
+moduli of the origami. 54
+   Here, we have characterized the elastic fluctuations of a set of DNA nanostructures.
+It would also be of interest to go beyond the elastic regime to explore their response to
+external stresses, in particular how they buckle under extreme twist and bending. Their
+generic behaviour could well be quite different from dsDNA, because of the very different
+ratios of the bend to twist moduli. For example, would they form plectonemes in the same
+way that dsDNA does under extreme twists, or would the costs of bending the nanotube
+back on itself at the tip of the plectoneme be prohibitive?
+
+
+
+Acknowledgement
+
+We thank Magdalen College, Oxford for the award of a Perkin Research Scholarship (HC),
+and are grateful for support from the EPSRC Centre for Doctoral Training, Theory and
+Modelling in Chemical Sciences, under grant EP/L015722/1 (HC and DP), from the Depart-
+ment of Science and Technology India under grant DST/INSPIRE/04/2014/002085 (GM),
+from the European Union’s Horizon 2020 research and innovation programme under Marie
+Skłodowska-Curie Grant Agreement No. 641839 (MMCT), and from “Fonds voor Weten-
+schappelijk Onderzoek” under project number 1SB4219N (ES). We acknowledge the use of
+computational facilities provided by the University of Oxford Advanced Research Computing
+[doi:10.5281/zenodo.22558] and Calcul Quebec.
+
+
+
+Supporting Information Available
+
+The following files are available free of charge.
+
+                                               34
+   The Supporting Information is available free of charge on the ACS Publications website
+at DOI: 10.1021/acs.jctc.XXXX
+
+   • Additional details on the simulations and their equilibration; triad vector definitions;
+     further snapshots of the nanostructures; further results both to support the method-
+     ological developments and to provide a fuller characterization of the structure and
+     mechanical properties of all systems.
+
+
+
+References
+
+ (1) Rothemund, P. W. K. Folding DNA to create nanoscale shapes and patterns. Nature
+     2006, 440, 297–302.
+
+ (2) Yin, P.; Hariadi, R. F.; Sahu, S.; Choi, H. M. T.; Park, S. H.; LaBean, T. H.; Reif, J. H.
+     Programming DNA tube circumferences. Science 2008, 321, 824–826.
+
+ (3) Wei, B.; Dai, M.; Yin, P. Complex shapes self-assembled from single-stranded DNA
+     tiles. Nature 2012, 485, 623–626.
+
+ (4) Ke, Y.; Ong, L. L.; Shih, W. M.; Yin, P. Three-dimensional structures self-assembled
+     from DNA bricks. Science 2012, 338, 1177–1183.
+
+ (5) Hong, F.; Zhang, F.; Liu, Y.; Yan, H. DNA origami: Scaffolds for creating higher order
+     structures. Chem. Rev. 2017, 117, 12584–12640.
+
+ (6) Ramezani, H.; Dietz, H. Building machines with DNA molecules. Nat. Rev. Genet.
+     2020, 21, 5–26.
+
+ (7) Pfeifer, W.; Sacca, B. Synthetic DNA filaments: from designs to applications. Biol.
+     Chem. 2018, 399, 773–785.
+
+ (8) Bai, X.-C.; Martin, T. G.; Scheres, S. H. W.; Dietz, H. Cryo-EM structure of a 3D
+     DNA-origami object. Proc. Natl. Acad. Sci. USA 2012, 109, 20012–20017.
+
+                                              35
+ (9) Blanchard, A. T.; Salaita, K. Emerging uses of DNA mechanical devices. Science 2019,
+     365, 1080–1081.
+
+(10) Gosse, C.; Strick, T. R.; Kostrz, D. Molecular scaffolds: when DNA becomes the hard-
+     ware for single-molecule investigations. Curr. Opin. Chem. Biol. 2019, 53, 192–203.
+
+(11) Pfitzner, E.; Wachauf, C.; Kilchherr, F.; Pelz, B.; Shih, W. M.; Rief, M.; Dietz, H.
+     Rigid DNA beams for high-resolution single-molecule mechanics. Angew. Chem. Int.
+     Ed. 2013, 52, 7766–7771.
+
+(12) Kilchherr, F.; Wachauf, C.; Pelz, B.; Rief, M.; Zacharias, H., M. Dietz Single-molecule
+     dissection of stacking forces in DNA. Angew. Chem. Int. Ed. 2016, 353, aaf5508.
+
+(13) Dutta, P. K.; Zhang, Y.; Blanchard, A. T.; Ge, C.; Rushdi, M.; Weiss, K.; Zhu, C.;
+     Ke, Y.; Salaita, K. Programmable multi-valent DNA-origami tension probes for report-
+     ing cellular traction forces. Nano Lett. 2018, 18, 4803–4811.
+
+(14) Funke, J. J.; Ketterer, P.; Lieleg, C.; Korber, P.; Dietz, H. Exploring nucleosome un-
+     wrapping using DNA origami. Nano Lett. 2016, 16, 7891–7898.
+
+(15) Le, J. V.; Luo, Y.; Darcy, M. A.; Lucas, C. R.; Goodwin, M. F.; Poirier, M. G.;
+     Castro, C. E. Probing nucleosome stability with a DNA origami nanocaliper. ACS
+     Nano 2016, 10, 7073–7084.
+
+(16) Nickels, P. C.; Wünsch, B.; Holzmeister, P.; Bae, W.; Kneer, L. M.; Grohmann, D.; Tin-
+     nefeld, P.; Liedl, T. Molecular force spectroscopy with a DNA origami-based nanoscopic
+     force clamp. Science 2016, 354, 305–307.
+
+(17) Kramm, K.; Schröder, T.; Gouge, J.; Vera, A. M.; Heiss, F. B.; Liedl, T.; En-
+     gel, C.; Berger, I.; Vannini, A.; Tinnefeld, P.; Grohmann, D. DNA origami-based
+     single-molecule force spectroscopy elucidates RNA Polymerase III pre-initiation com-
+     plex stability. Nat. Commun. 2020, 11, 2828.
+
+
+                                            36
+(18) Funke, J. J.; Ketterer, P.; Lieleg, C.; Schunter, S.; Korber, P.; Dietz, H. Uncovering the
+     forces between nucleosomes using DNA origami. Sci. Adv. 2016, 2, e1600974.
+
+(19) Ke, Y.; Meyer, T.; Shih, W. M.; Bellot, G. Regulation at a distance of biomolecular
+     interactions using a DNA nanoactuator. Nat. Commun. 2016, 7, 10935.
+
+(20) Dietz, H.; Douglas, S. M.; Shih, W. M. Folding DNA into twisted and curved nanoscale
+     shapes. Science 2009, 325, 725–730.
+
+(21) Liedl, T.; Högberg, B.; Tytell, J.; Ingber, D. E.; Shih, W. M. Self-assembly of three-
+     dimensional prestressed tensegrity structures from DNA. Nat. Nanotechnol. 2010, 5,
+     520–524.
+
+(22) Zhou, L.; Marras, A. E.; Castro, C. E. Origami Compliant Nanostructures with Tunable
+     Mechanical Properties. ACS Nano 2014, 8, 27–34.
+
+(23) Suzuki, Y.; Kawamata, I.; Mizuno, K.; Murata, S. Large deformation of a DNA origami
+     nanoarm through the cumulative actuation of tension-adjustable modules. Angew.
+     Chem. Int. Ed. 2020, 59, 6230–6234.
+
+(24) Zhou, L.; Marras, A. E.; Su, H.-J.; Castro, C. E. Direct design of an energy landscape
+     with bistable DNA origami mechanisms. Nano Lett. 2015, 15, 1815–1821.
+
+(25) Bustamante, C.; Bryant, Z.; Smith, S. B. Ten years of tension: single-molecule DNA
+     mechanics. Nature 2003, 421, 423–427.
+
+(26) Brahmachari, S.; Marko, J. F. In Biomechanics in Oncology; Dong, C., Zahir, N.,
+     Konstantopoulos, K., Eds.; Adv. Exp. Med. Biol.; Springer, 2018; Vol. 1092; pp 11–39.
+
+(27) Romano, F.; Chakraborty, D.; Doye, J. P. K.; Ouldridge, T. E.; Louis, A. A. Coarse-
+     grained simulations of DNA overstretching. J. Chem. Phys. 2013, 138, 085101.
+
+
+
+
+                                              37
+(28) Marin-Gonzalez, A.; Vilhena, J. G.; Perez, R.; Moreno, F. Understanding the mechan-
+     ical response of double-stranded DNA and RNA under constant stretching forces using
+     all-atom molecular dynamics. Proc. Natl. Acad. Sci. USA 2017, 114, 7049–7054.
+
+(29) Kauert, D. J.; Kurth, T.; Liedl, T.; Seidel, R. Direct mechanical measurements reveal
+     the material properties of three-dimensional DNA origami. Nano Lett. 2011, 11, 5558–
+     5563.
+
+(30) Castro, C. E.; Su, H.-J.; Marras, A. E.; Zhou, L.; Johnson, J. Mechanical design of
+     DNA nanostructures. Nanoscale 2015, 7, 5913–5921.
+
+(31) Lee, C.; Kim, K. S.; Kim, Y.-J.; Lee, J. Y.; Kim, D.-N. Tailoring the Mechanical
+     Stiffness of DNA Nanostructures Using Engineered Defects. ACS Nano 2019, 13, 8329–
+     8336.
+
+(32) Schiffels, D.; Liedl, T.; Fygenson, D. K. Nanoscale structure and microscale stiffness of
+     DNA nanotubes. ACS Nano 2013, 7, 6700–6710.
+
+(33) Rothemund, P. W. K.; Ekani-Nkodo, A.; Papadakis, N.; Kumar, A.; Fygenson, D. K.;
+     Winfree, E. Design and characterization of programmable DNA nanotubes. J. Am.
+     Chem. Soc. 2004, 126, 16344–16353.
+
+(34) O’Neill, P.; Rothemund, P. W. K.; Kumar, A.; Fygenson, D. K. Sturdier DNA nan-
+     otubes via ligation. Nano Lett. 2006, 6, 1379–1383.
+
+(35) Wang, T.; Schiffels, D.; Martinez Cuesta, S.; Fygenson, D. K. Design and characteri-
+     zation of 1D nanotubes and 2D periodic arrays self-assembled from DNA multi-helix
+     bundles. J. Am. Chem. Soc. 2012, 134, 1606–1616.
+
+(36) Benson, E.; Mohammed, A.; Rayneau-Kirkhope, D.; Gøadin, A.; Orponen, P.; Hög-
+     berg, B. Effects of design choices on the stiffness of wireframe DNA origami structures.
+     ACS Nano 2018, 12, 9291–9299.
+
+
+                                             38
+(37) Benson, E.; Lolaico, M.; Tarasov, Y.; Gøadin, A.; Högberg, B. Evolutionary refine-
+     ment of DNA nanostructures using coarse-grained molecular dynamics simulations.
+     ACS Nano 2019, 13, 12591–12598.
+
+(38) Pfeifer, W.; Lill, P.; Gatsogiannis, C.; Sacca, B. Hierarchical assembly of DNA filaments
+     with designer elastic properties. ACS Nano 2018, 12, 44–55.
+
+(39) Ma, Z.; Kawai, K.; ; Hirai, Y.; Tsuchiva, T.; Tabata, O. Tuning porosity and radial
+     mechanical properties of DNA origami nanotubes via crossover design. Jpn. J. Appl.
+     Phys. 2017, 56, 06GJ02.
+
+(40) Bae, W.; Kim, K.; Min, D.; Ryu, J.-K.; Hyeon, C.; Yoon, T.-Y. Programmed folding
+     of DNA origami structures through single-molecule force control. Nat. Commun. 2014,
+     5, 5654.
+
+(41) Koirala, D.; Shrestha, P.; Emura, T.; Hidaka, K.; Mandal, S.; Endo, M.; Sugiyama, H.;
+     Mao, H. Single-molecule mechanochemical sensing using DNA origami naostructures.
+     Angew. Chem. Int. Ed. 2014, 53, 8137–8141.
+
+(42) Shrestha, P.; Emura, T.; Koirala, D.; Cui, Y.; Hidaka, K.; Maximuck, W. J.; Endo, M.;
+     Sugiyama, H.; Mao, H. Mechanical properties of DNA origami nanoassemblies are de-
+     termined by Holliday junction mechanophores. Nucleic Acids Res. 2016, 44, 6574–6582.
+
+(43) Engel, M. C.; Smith, D. M.; Jobst, M. A.; Sajfutdinow, M.; Liedl, T.; Romano, F.;
+     Rovigatti, L.; Louis, A. A.; Doye, J. P. K. Force-induced unravelling of DNA origami.
+     ACS Nano 2018, 12, 6734–6747.
+
+(44) Yoo, J.; Aksimentiev, A. In situ structure and dynamics of DNA origami determined
+     through molecular dynamics simulations. Proc. Natl. Acad. Sci. USA 2013, 110, 20099–
+     20104.
+
+
+
+
+                                             39
+(45) Göpfrich, K.; Li, C.-Y.; Ricci, M.; Bhamidimarri, S. P.; Yoo, J.; Gyenes, B.;
+     Ohmann, A.; Winterhalter, M.; Aksimentiev, A.; Keyser, U. F. Large-conductance
+     transmembrane porin made from DNA origami. ACS Nano 2016, 10, 8207–8214.
+
+(46) Sloane, S. M.; Li, C.-Y.; Yoo, J.; Aksimentiev, A. Molecular mechanics of DNA bricks:
+     in situ structure, mechanical properties and ionic conductivity. New J. Phys. 2016, 18,
+     055012.
+
+(47) Joshi, H.; Dwaraknath, A.; Maiti, P. K. Structure, stability and elasticity of DNA
+     nanotubes. Phys. Chem. Chem. Phys. 2015, 17, 1424–1434.
+
+(48) Joshi, H.; Kaushnik, A.; Seeman, N. C.; Maiti, P. K. Nanoscale structure and elasticity
+     of pillared DNA nanotubes. ACS Nano 2016, 10, 7780–7791.
+
+(49) Naskar, S.; Gosika, M.; Joshi, H.; Maiti, P. K. Tuning the stability of DNA nanotubes
+     with salt. J. Phys. Chem. C 2019, 123, 9461–9470.
+
+(50) Castro, C. E.; Kilchherr, F.; Kim, D.-N.; Shiao, E. L.; Wauer, T.; Wortmann, P.;
+     Bathe, M.; Dietz, H. A primer to scaffolded DNA origami. Nat. Methods 2011, 8,
+     221–229.
+
+(51) Kim, D.-N.; Kilchherr, F.; Dietz, H.; Bathe, M. Quantitative prediction of 3D solution
+     shape flexibility of nucleic acid nanostructures. Nucleic Acids Res. 2012, 40, 2862–2868.
+
+(52) Maffeo, C.; Aksimentiev, A. MrDNA: A multi-resolution model for predicting the struc-
+     ture and dynamics of DNA systems. Nucleic Acids Res. 2020, 48, 5135–5146.
+
+(53) Kim, Y.-J.; Kim, D.-N. Sensitivity analysis for the mechanical properties of DNA bun-
+     dles. J. Nanomater. 2016, 11, 6287937.
+
+(54) Snodin, B. E. K.; Randisi, F.; Mosayebi, M.; Šulc, P.; Schreck, J. S.; Romano, F.;
+     Ouldridge, T. E.; Tsukanov, R.; Nir, E.; Louis, A. A.; Doye, J. P. K. Introducing
+
+
+
+                                             40
+     improved structural properties and salt dependence into a coarse-grained model of
+     DNA. J. Chem. Phys. 2015, 142, 234901.
+
+(55) Nomidis, S. K.; Kriegel, F.; Vanderlinden, W.; Lipfert, J.; Carlon, E. Twist-bend cou-
+     pling and the torsional response of double-stranded DNA. Phys. Rev. Lett. 2017, 118,
+     217801.
+
+(56) Skoruppa, E.; Laleman, M.; Nomidis, S. K.; Carlon, E. DNA elasticity from coarse-
+     grained simulations: The effect of groove asymmetry. J. Chem. Phys. 2017, 146,
+     214902.
+
+(57) Matek, C.; Ouldridge, T. E.; Doye, J. P. K.; Louis, A. A. Plectoneme tip bubbles:
+     Coupled denaturation and writhing in supercoiled DNA. Sci. Rep. 2015, 5, 7655.
+
+(58) Sharma, R.; Schreck, J. S.; Romano, F.; Louis, A. A.; Doye, J. P. K. Characterizing
+     the motion of jointed DNA nanostructures using a coarse-grained model. ACS Nano
+     2017, 11, 12426–12435.
+
+(59) Shi, Z.; Castro, C. E.; Arya, G. Conformational dynamics of mechanically compliant
+     DNA nanostructures from coarse-grained molecular dynamics simulations. ACS Nano
+     2017, 11, 4617–4630.
+
+(60) Zhou, L.; Marras, A. E.; Huang, C.-M.; Castro, C. E.; Su, H.-J. Paper origami-inspired
+     design and actuation of DNA nanomachines with complex motions. Small 2018, 14,
+     1802580.
+
+(61) Snodin, B. E. K.; Schreck, J. S.; Romano, F.; Louis, A. A.; Doye, J. P. K. Coarse-grained
+     modelling of the structural properties of DNA origami. Nucleic Acids Res. 2019, 47,
+     1585–1597.
+
+(62) Berengut, J. F.; Berengut, J. C.; Doye, J. P. K.; Prešern, D.; Kawanoto, A.; Ruan, J.;
+
+
+
+
+                                             41
+     Wainwright, M. J.; Lee, L. K. Design and synthesis of pleated DNA origami nanotubes
+     with adjustable diameters. Nucleic Acids Res. 2019, 47, 11963–11975.
+
+(63) Suma, A.; Stopar, A.; Nicholson, A. W.; Castronovo, M.; Carnevale, V. Global and local
+     mechanical properties control endonuclease reactivity of a DNA origami nanostructure.
+     Nucleic Acids Res. 2020, 48, 4672–4689.
+
+(64) Schreck, J. S.; Romano, F.; Zimmer, M. H.; Louis, A. A.; Doye, J. P. K. Characterizing
+     DNA star-tile-based nanostructures using a coarse-grained model. ACS Nano 2016,
+     10, 4236–4247.
+
+(65) Hong, F.; Jiang, S.; Lan, X.; Narayanan, R. P.; Šulc, P.; Zhang, F.; Liu, Y.; Yan, H.
+     Layered-crossover tiles with precisely tunable angles for 2D and 3D DNA crystal engi-
+     neering. J. Am. Chem. Soc. 2018, 140, 14670–14676.
+
+(66) Matthies, M.; Agarwal, N. P.; Poppleton, E.; Joshi, F. M.; Šulc, P.; Schmidt, T. L.
+     Triangulated wireframe structures assembled using single-stranded DNA tiles. ACS
+     Nano 2019, 13 .
+
+(67) Tortora, M. M. C.; Mishra, G.; Prešern, D.; Doye, J. P. K. Chiral shape fluctuations
+     and the origin of chirality in cholesteric phases of DNA origamis. Sci. Adv. 2020, 6,
+     accepted.
+
+(68) Siavashpouri, M.; Wachauf, C. H.; Zakhary, M. J.; Praetorius, F.; Dietz, H.; Dogic, Z.
+     Molecular engineering of chiral colloidal liquid crystals using DNA origami. Nat. Mater.
+     2017, 16, 849–856.
+
+(69) Ouldridge, T. E.; Louis, A. A.; Doye, J. P. K. Structural, mechanical and thermody-
+     namic properties of a coarse-grained DNA model. J. Chem. Phys. 2011, 134, 085101.
+
+(70) Šulc, P.; Romano, F.; Ouldridge, T. E.; Rovigatti, L.; Doye, J. P. K.; Louis, A. A. In-
+
+
+
+
+                                             42
+     troducing sequence-dependent interactions into a coarse-grained DNA model. J. Chem.
+     Phys. 2012, 137, 135101.
+
+(71) Russo, J.; Tartaglia, P.; Sciortino, F. Reversible gels of patchy particles: Role of the
+     valence. J. Chem. Phys. 2009, 131, 014504.
+
+(72) Marko, J. F.; Siggia, E. D. Bending and twisting elasticity of DNA. Macromolecules
+     1994, 27, 981–988.
+
+(73) Skoruppa, E. DNA elasticity from coarse-grained simulations: On the hunt for twist-
+     bend coupling. M.Sc. thesis, KU Leuven, 2017.
+
+(74) Wiggins, P. A.; Nelson, P. C. Generalized theory of semiflexible polymers. Phys. Rev.
+     E 2006, 73, 031906.
+
+(75) Nomidis, S. K.; Skoruppa, E.; Carlon, E.; Marko, J. F. Twist-bend coupling and the
+     statistical mechanics of DNA: Perturbation theory and beyond. Phys. Rev. E 2019,
+     99, 032414.
+
+(76) Strang, G. Linear Algebra and Its Applications; Brooks Cole, 2006.
+
+(77) Baker, M. A. B.; Tuckwell, A. J.; Berengut, J. F.; Bath, J.; Benn, F.; Duff, A. P.;
+     Whitten, A. E.; Dunn, K. E.; Hynson, R. M.; Turberfield, A. J.; Lee, L. K. Dimensions
+     and global twist of single-layer DNA origami measured by small-angle X-ray scattering.
+     ACS Nano 2018, 12, 5791–5799.
+
+(78) Wagenbauer, K. F.; Wachauf, C. H.; Dietz, H. Quantifying quality in DNA self-
+     assembly. Nat. Commun. 2014, 5, 3691.
+
+(79) Muschol, C.; Baym, M.; Hanikel, N.; Ong, L. L.; Gootenberg, J. S.; Yin, P. Barcode
+     extension for analysis and reconstruction of structures. Nat. Commun. 2017, 8, 14698.
+
+
+
+
+                                             43
+(80) Straus, M. T.; Scheuder, F.; Haas, D.; Nickels, P. C.; Jungmann, R. Quantifying abso-
+     lute addressability in DNA origami with molecular resolution. Nat. Commun. 2018, 9,
+     1600.
+
+(81) Kim, Y.-J.; Lee, C.; Lee, J. G.; Kim, D.-N. Comfigurational design of mechanical
+     perturbation for fine control of twisted DNA origami structures. ACS Nano 2019, 13,
+     6348–6355.
+
+(82) Lee, J. Y.; Kim, Y.-J.; Lee, C.; Lee, J. G.; Yagyu, H.; Tabata, O.; Kim, D.-N. Investi-
+     gating the sequence-dependent mechanical properties of DNA nicks for applications in
+     twisted DNA nanostructure design. Nucleic Acids Res. 2019, 47, 93–102.
+
+(83) Lee, C.; Lee, J. Y.; Kim, D.-N. Polymorphic design of DNA origami structures through
+     mechanical control of modular components. Nat. Commun. 2017, 8, 2067.
+
+(84) Turek, V. A.; Chikkaraddy, R.; Cormier, S.; Stockhahm, B.; Ding, T.; Keyser, U. F.
+     Thermo-Responsive Actuation of a DNA Origami Flexor. Adv. Funct. Mater. 2018, 28,
+     1706410.
+
+(85) Fang, W.; Xie, M.; Hou, X.; Liu, X.; Zuo, X.; Chao, J.; Wang, L.; Fan, C.; Liu, H.;
+     Wang, L. DNA origami radiometers for measuring ultraviolet exposure. J. Am. Chem.
+     Soc. 2020,
+
+(86) Wang, M. D.; Yin, H.; Landick, R.; Geiles, J.; Block, S. M. Stretching DNA with optical
+     tweezers. Biophys. J. 1997, 72, 1335–1346.
+
+
+
+
+                                            44
+Supporting Information
+
+S1     Further simulation snapshots
+
+Simulation snapshots of some of the systems not visualized in the main text are given in
+Figures S1, S2 and S3. (Some snapshots of the twisted origami nanotubes can be found
+in Ref. 67.) The snapshots give an impression of the scale of typical bending fluctuations.
+Apparent from the end views of 6HB-SST and 8HB-SST is the departure of their cross-
+sections from a regular hexagonal and octagonal form, respectively, due to the alternating
+inter-helix angles in these systems, an effect noted for 4HB-SST in the main text.
+
+
+
+
+Figure S1: Snapshots of the 4HB-MT and 6HB-MT origami. The second image of the
+4HB-MT origami shows an exceptionally bent configuration. The blocks at each end of the
+origamis are to facilitate attachment to the beads in magnetic tweezer experiments.
+
+
+
+
+S2     Further Equilibration and Simulation details
+
+Figure S4 shows the end-to-end distance in the molecular dynamics trajectories for four
+example systems. The 6HB-SST nanotube shows relatively fast fluctuations over the range
+
+
+                                            45
+Figure S2: Snapshots of the 6HB-SST and 8HB-SST nanotubes. The end views clearly show
+the alternating distances of the helices from the centres of the tubes.
+
+
+
+
+Figure S3: Snapshots of the 10HB origami. The two side views are roughly perpendicular to
+their thick and thin dimensions. Note this is not perfectly maintained because of the slight
+right-handed twist of the origami.
+
+
+
+
+                                            46
+of end-to-end distances it samples. An origami system with the same number of helices (6HB-
+S) exhibits both a wider range of end-to-end distances (reflecting its lower bend persistence
+length) and a slower sampling of those distances. In the main text we have suggested the
+latter may be due to the more constrained nature of the junctions in origamis and a coupling
+of bending to changes in junction geometry. It is noticeable that distributions of Ω1 and Ω2
+for the origamis have a greater degree of non-Gaussianity than for the SST nanotubes (Figs.
+S5-S7). Another possible source of slow dynamics is if there is a coupling of more extreme
+bending with base-pair breaking (note that all the 6HB origamis have some very short 2
+base-pair binding domains).
+(a)                                                                                (b) 425
+                           450
+end-to-end distance (nm)
+
+
+
+
+                                                                                   end-to-end distance (nm)
+                                                                                                              415
+
+                           400
+                                                                                                              405
+
+
+
+                           350                                                                                395
+                                 0   500          1000        1500   2000                                           0         200         400             600     800
+                                             configuration index                                                                    configuration index
+(c) 350                                                                               (d) 201
+end-to-end distance (nm)
+
+
+
+
+                                                                                   end-to-end distance (nm)
+
+
+
+
+                           340                                                                                199
+
+
+
+
+                           330                                                                                197
+                                 0         1000              2000           3000                                    0   100         200         300       400   500
+                                             configuration index                                                                    configuration index
+
+Figure S4: The fluctuation of the “end-to-end” distance during the molecular dynamics
+trajectories for (a) 4HB-MT, (b) 6HB-S, (c) 6HB-SST and (d) 10HB. The different colours
+represent separate trajectories. Each configuration is separated by 6.06 µs. In order for the
+measure to capture the fluctuations of the molecular contour in the bulk of the tube, the
+distance is measured between slices that are 100 slices in from each end.
+
+
+                           The plot for the 4HB-MT shows even slower dynamics and parts of the trajectory show
+fluctuation to anomalously bent configurations. The former may be partly due to the effects
+
+                                                                             47
+Table S1: Details of the simulations and the parameters used when calculating elastic prop-
+erties. tsim is the total simulation time of the trajectories. Nconfig is the number of configu-
+rations in the ensemble used to calculate the elastic properties of each system. Nends is the
+number of slices at each end that are ignored in these calculations. 2nX    avg + 1 is the number
+of slices over which averaging is performed in Eq. (21) for the elastic constant X. mlimit is
+the value of m used when taking the limiting values of the elastic constants.
+
+                             tsim /ms Nconfig    Nends   nA 1
+                                                          avg   nA 2
+                                                                 avg   nC
+                                                                        avg   mlimit
+               4HB-MT         13.48   2225        60      20     20     5      600
+               4HB-SST         6.81   1124        60      15     15     5      600
+              6HB-2×LH         8.52   1406        60      20     20     5      600
+              6HB-1×LH         8.05   1328        60      20     20     5      600
+                6HB-S          5.21    859        60      20     20     5      600
+              6HB-1×RH         8.34   1376        60      20     20     5      600
+               6HB-MT         13.33   2199        60      20     20     5      600
+               6HB-SST        18.38   3034        60      20     20     5      600
+               8HB-SST        13.91   2295        60      40     40     5      600
+                10HB           3.44    567        60      40     20     5      400
+
+
+of the blocks on the ends of these origamis, but the reason for the extremely bent config-
+urations (e.g. the second configuration in Fig. S2) is less clear (one unique feature of the
+4HB-MT design is that it has some junctions where one helix has a nick on the strand not
+involved in the crossover). As a result of this, the statistics for this system are probably the
+worst. Furthermore, the extreme bending leads to a breakdown of worm-like chain behaviour.
+For example, the tangent-tangent correlation function lacks a perfectly exponential tail, and
+that the m-dependent persistence length exhibits a broad maximum (Fig. S18(a)), rather
+than smoothly increasing to its limiting value, is a sign that the fluctuations on the longest
+length scales are greater than one would expect from the (better sampled) shorter length
+scale fluctuations. That the 6HB-MT origami also exhibits a similar broad maximum (Fig.
+S18(a)), in contrast to all the other systems, perhaps suggests that this may not simply be a
+case of insufficient sampling, but that the “MT” origami are behaving somewhat differently.
+The obvious difference from the other origamis is the blocks on the end, but it is hard to see
+why these might facilitate anomalously large bending fluctuations on long length scales.
+
+
+                                                48
+   We also include data for the 10HB origami in Fig. S4. This illustrates that as the origami
+become stiffer the fluctuations become faster and easier to sample.
+   From the above it is clear that the fluctuations of the SST nanotubes are the most well
+sampled, and hence the ensembles of configurations are least correlated. It is also noticeable
+that these systems also have values for the coupling terms that are closest to zero, and in
+the cases where expected (6HB-SST and 8HB-SST) A1 and A2 values that are most similar
+(Fig. S24). The greater regularity of their pattern of junctions also likely plays a role.
+   The total simulation time used to generate the configurations and the consequent size of
+the configurational ensembles used for each system are given in Table S1. It also contains
+details of the parameters used in our calculations of the mechanical properties.
+
+
+
+S3     Further details of mechanical properties calculations
+
+S3.1     Angular deformations distributions
+
+The cumulative angular deformations used in Eq. 7 are defined by
+
+                                                   n+m−1
+                                     (k)            X       (k)
+                                   Ωi,cum (m) =            Ωi                                (S1)
+                                                    k=n
+
+                                             √
+The probability distributions of aΩi,cum (m)/ m for the 4HB-MT and 6HB-MT origamis
+and the 6HB-SST nanotube for are plotted in Figs. S5–S7, respectively. As expected from
+the central-limit theorem, the distributions become more Gaussian-like as navg increases,
+confirming that worm-like chain behaviour holds at longer renormalized length scales. The
+distributions for the bending deformations become narrower as m increase, consistent with
+the increase in the m-dependent bending elastic constants with m.
+
+
+
+
+                                              49
+(a) (i) 0                                                        (ii) 0                                                (iii) 0
+              -2                                                       -2                                                       -2
+              -4                                                       -4                                                       -4
+ ln P/Pmax
+
+
+
+
+                                                          ln P/Pmax
+
+
+
+
+                                                                                                                   ln P/Pmax
+              -6                                                       -6                                                       -6
+              -8                                                       -8                                                       -8
+             -10                                                      -10                                                      -10
+             -12                                                      -12                                                      -12
+                   50     25        0        25    50                       50     25         0       25    50                       20     10        0        10    20
+                                a 1(Deg)                                                  a 2(Deg)                                                a 3(Deg)
+ (b) (i) 0                                                       (ii)0                                                  (iii) 0
+              -2                                                       -2                                                       -2
+              -4                                                       -4                                                       -4
+ ln P/Pmax
+
+
+
+
+                                                          ln P/Pmax
+
+
+
+
+                                                                                                                   ln P/Pmax
+              -6                                                       -6                                                       -6
+              -8                                                       -8                                                       -8
+             -10                                                      -10                                                      -10
+             -12                                                      -12                                                      -12
+                   30     15        0        15    30                       30     15         0       15    30                       15.0   7.5      0.0       7.5   15.0
+                           a 1, cum(m)/ m(Deg)                                      a 2, cum(m)/ m(Deg)                                      a 3, cum(m)/ m(Deg)
+ (c) (i) 0                                                     (ii) 0                                                   (iii) 0
+              -2                                                       -2                                                       -2
+              -4                                                       -4
+                                                                                                                                -4
+ ln P/Pmax
+
+
+
+
+                                                          ln P/Pmax
+
+
+
+
+                                                                                                                   ln P/Pmax
+              -6                                                       -6
+                                                                                                                                -6
+              -8                                                       -8
+             -10                                                      -10                                                       -8
+             -12                                                      -12                                                      -10
+                   15.0   7.5      0.0       7.5   15.0                     15.0   7.5        0.0     7.5   15.0                     15.0   7.5      0.0       7.5   15.0
+                           a 1, cum(m)/ m(Deg)                                      a 2, cum(m)/ m(Deg)                                      a 3, cum(m)/ m(Deg)
+  (d)(i)                                                      (ii) 0                                                      (iii)0
+         0
+              -2                                                       -2                                                       -2
+              -4                                                       -4
+                                                                                                                                -4
+ ln P/Pmax
+
+
+
+
+                                                          ln P/Pmax
+
+
+
+
+                                                                                                                   ln P/Pmax
+
+
+
+
+              -6                                                       -6
+                                                                                                                                -6
+              -8                                                       -8
+             -10                                                      -10                                                       -8
+             -12                                                      -12                                                      -10
+                   10     5         0        5     10                       10     5          0       5     10                       15.0   7.5      0.0       7.5   15.0
+                           a 1, cum(m)/ m(Deg)                                      a 2, cum(m)/ m(Deg)                                      a 3, cum(m)/ m(Deg)
+                                                         √                    √
+Figure S5: Probability
+            √          distributions for (i) aΩ1,cum (m)/ m, (ii) aΩ2,cum (m)/ m, and (iii)
+aΩ3,cum (m)/ m for the 4HB-MT origami at different values of m: (a) m = 1, (b) m = 3,
+(c) m = 11 and (d) m = 41. The solid lines are Gaussian fits to the distributions.
+
+
+
+
+                                                                                         50
+(a) (i) 0                                                 (ii)0                                                   (iii)0
+             -2                                                 -2                                                       -2
+             -4                                                 -4                                                       -4
+ln P/Pmax
+
+
+
+
+                                                   ln P/Pmax
+
+
+
+
+                                                                                                            ln P/Pmax
+             -6                                                 -6                                                       -6
+             -8                                                 -8                                                       -8
+            -10                                                -10                                                      -10
+            -12                                                -12                                                      -12
+                  30   15       0        15   30                     30     15         0       15    30                       10   5        0        5   10
+                            a 1(Deg)                                               a 2(Deg)                                             a 3(Deg)
+ (b) (i)0                                                 (ii)0                                                  (iii) 0
+             -2                                                 -2                                                       -2
+             -4                                                 -4                                                       -4
+ln P/Pmax
+
+
+
+
+                                                   ln P/Pmax
+
+
+
+
+                                                                                                            ln P/Pmax
+             -6                                                 -6                                                       -6
+             -8                                                 -8                                                       -8
+            -10                                                -10                                                      -10
+            -12                                                -12                                                      -12
+                  20   10       0        10   20                     20     10         0       10    20                       10   5        0        5   10
+                       a 1, cum(m)/ m(Deg)                                   a 2, cum(m)/ m(Deg)                                   a 3, cum(m)/ m(Deg)
+ (c)(i) 0                                               (ii) 0                                                    (iii)0
+             -2                                                 -2                                                       -2
+             -4                                                 -4                                                       -4
+ln P/Pmax
+
+
+
+
+                                                   ln P/Pmax
+
+
+
+
+                                                                                                            ln P/Pmax
+             -6                                                 -6                                                       -6
+             -8                                                 -8                                                       -8
+            -10                                                -10                                                      -10
+            -12                                                -12                                                      -12
+                  10   5        0        5    10                     15.0   7.5        0.0     7.5   15.0                     10   5        0        5   10
+                       a 1, cum(m)/ m(Deg)                                   a 2, cum(m)/ m(Deg)                                   a 3, cum(m)/ m(Deg)
+  (d)(i)                                                 (ii) 0                                                   (iii)0
+              0
+             -2                                                 -2                                                       -2
+             -4                                                 -4                                                       -4
+ln P/Pmax
+
+
+
+
+                                                   ln P/Pmax
+
+
+
+
+                                                                                                            ln P/Pmax
+
+
+
+
+             -6                                                 -6                                                       -6
+             -8                                                 -8                                                       -8
+            -10                                                -10                                                      -10
+            -12                                                -12                                                      -12
+                  6    3        0        3    6                       8     4          0       4      8                       8    4        0        4   8
+                       a 1, cum(m)/ m(Deg)                                   a 2, cum(m)/ m(Deg)                                   a 3, cum(m)/ m(Deg)
+                                                         √                    √
+Figure S6: Probability
+            √          distributions for (i) aΩ1,cum (m)/ m, (ii) aΩ2,cum (m)/ m, and (iii)
+aΩ3,cum (m)/ m for the 6HB-MT origami at different values of m: (a) m = 1, (b) m = 3,
+(c) m = 11 and (d) m = 41. The solid lines are Gaussian fits to the distributions.
+
+
+
+
+                                                                                  51
+ (a)(i) 0                                                      (ii) 0                                                   (iii)0
+             -2                                                       -2                                                       -2
+             -4                                                       -4                                                       -4
+ln P/Pmax
+
+
+
+
+                                                         ln P/Pmax
+
+
+
+
+                                                                                                                  ln P/Pmax
+             -6                                                       -6                                                       -6
+             -8                                                       -8                                                       -8
+            -10                                                      -10                                                      -10
+            -12                                                      -12                                                      -12
+                  20     10        0        10    20                       20     10         0       10    20                       8   4        0        4   8
+                               a 1(Deg)                                                  a 2(Deg)                                            a 3(Deg)
+ (b)(i)0                                                        (ii)0                                                 (iii) 0
+             -2                                                       -2                                                       -2
+             -4                                                       -4                                                       -4
+ln P/Pmax
+
+
+
+
+                                                         ln P/Pmax
+
+
+
+
+                                                                                                                  ln P/Pmax
+             -6                                                       -6                                                       -6
+             -8                                                       -8                                                       -8
+            -10                                                      -10                                                      -10
+            -12                                                      -12                                                      -12
+                  15.0   7.5      0.0       7.5   15.0                     15.0   7.5        0.0     7.5   15.0                     6   3        0        3   6
+                          a 1, cum(m)/ m(Deg)                                      a 2, cum(m)/ m(Deg)                                  a 3, cum(m)/ m(Deg)
+(c) (i) 0                                                      (ii) 0                                                   (iii)0
+             -2                                                       -2                                                       -2
+             -4                                                       -4                                                       -4
+ln P/Pmax
+
+
+
+
+                                                         ln P/Pmax
+
+
+
+
+                                                                                                                  ln P/Pmax
+             -6                                                       -6                                                       -6
+             -8                                                       -8                                                       -8
+            -10                                                      -10                                                      -10
+            -12                                                      -12                                                      -12
+                  10     5         0        5     10                       10     5          0       5     10                       8   4        0        4   8
+                          a 1, cum(m)/ m(Deg)                                      a 2, cum(m)/ m(Deg)                                  a 3, cum(m)/ m(Deg)
+  (d)(i)                                                       (ii) 0                                                   (iii)0
+              0
+             -2                                                       -2                                                       -2
+             -4                                                       -4                                                       -4
+ln P/Pmax
+
+
+
+
+                                                         ln P/Pmax
+
+
+
+
+                                                                                                                  ln P/Pmax
+
+
+
+
+             -6                                                       -6                                                       -6
+             -8                                                       -8                                                       -8
+            -10                                                      -10                                                      -10
+            -12                                                      -12                                                      -12
+                   6     3         0        3      6                        6     3          0       3      6                       8   4        0        4   8
+                          a 1, cum(m)/ m(Deg)                                      a 2, cum(m)/ m(Deg)                                  a 3, cum(m)/ m(Deg)
+                                                         √                    √
+Figure S7: Probability
+            √          distributions for (i) aΩ1,cum (m)/ m, (ii) aΩ2,cum (m)/ m, and (iii)
+aΩ3,cum (m)/ m for the 6HB-SST nanotube at different values of m: (a) m = 1, (b) m = 3,
+(c) m = 11 and (d) m = 41. The solid lines are Gaussian fits to the distributions.
+
+
+
+
+                                                                                        52
+S3.2                            Further effects of α
+
+In Fig. S8 we show plots of the m-dependent elastic moduli for example origami and SST
+systems at α = 0, i.e. without the correction to remove the helical component of the centreline
+of double-stranded DNA in oxDNA. Like the plot of the m-dependent persistence length for
+6HB-S in the main text (Fig. 3(d)) the bending elastic moduli for this system show strong
+oscillations on the length scale of the DNA pitch. By contrast, the SST systems show a
+smooth monotonic rise even at α = 0. The reason for this is most likely because the single
+crossovers in these systems place fewer constraints on the relative twist of different helices.
+The strong correlations between the orientations of the individual helices in the origamis give
+an additive effect causing the helix-bundle centerlines to have a significant helical character.
+By contrast, the reduced local orientation correlations in the SST systems cause the helical
+character of the centerlines of the individual DNA helices to cancel out giving a smooth
+nanotube centreline.
+  (a) 5000                                                                                  (b)
+                                 A1                                                         6000       A1
+                                 A2                                                                    A2
+                        4000     C                                                          5000
+                                                                                                       C
+Elastic Constant (nm)
+
+
+
+
+                                                                    Elastic Constant (nm)
+
+
+
+
+                                                                                            4000
+                        3000
+
+                                                                                            3000
+                        2000
+                                                                                            2000
+                        1000
+                                                                                            1000
+
+                           00         200   400        600   800                                  00        200   400        600   800
+                                            m (step)                                                              m (step)
+
+Figure S8: Elastic moduli for (a) 6HB-S and (b) 6HB-SST at α = 0.0. The origami ex-
+hibits an oscillation on the pitch length of double-stranded DNA, whereas the elastic moduli
+increase smoothly for the SST nanotube.
+
+
+                         The dependence of the elastic constants of double-stranded DNA on α using Triad III of
+Ref. 56 are depicted in Fig. S9. The structural and mechanical properties of double-stranded
+DNA at α = 0, i.e. without any correction for the helicity of the centreline, and at α = 0.06
+
+
+                                                                   53
+Table S2: Structural and mechanical properties of double-stranded DNA before and after ap-
+plying the correction to remove the helicity of the centreline. The elastic constants obtained
+from those at α = 0 by applying the transformation from a helical to a straight coordinate
+system outlined in Ref. 75 are also given. The results are for [Na+ ]=0.5 M and a temperature
+of either 23◦ C. a = 0.3462 nm.
+
+                                                hΘ1 i      hΘ2 i hΘ3 i             A1   A2   C     G               lb  lt /2
+           α = 0.00                             0.00       2.81 34.16             97.3 34.8 105.7 31.2            40.1 81.1
+           α = 0.06                             0.00       0.00 34.26             95.7 30.5 114.3 27.7            41.2 93.2
+      helically corrected                                                         97.3 30.2 110.3 25.0
+
+
+(the value that removes the net helicity) are given in Table S2. Also included in the table
+are the predicted elastic constants obtained by applying a transformation from a helical to
+a straight coordinate system, the expressions for which were derived in Ref. 75. Comparing
+the two methods for removing the helicity of the centreline, the changes in A2 , C and G
+are in the same direction, but with some differences in the magnitudes of the changes, and
+although the coordinate transformation approach predicts no change in A1 , we observe a
+small decrease on going from α = 0 to α = 0.06.
+
+                                              120
+                      Elastic constant (nm)
+
+
+
+
+                                              100
+                                                                                                          A1
+                                               80                                                         A2
+                                                                                                          G
+                                               60                                                         C
+
+                                               40
+
+                                               20
+                                                0.00    0.01   0.02   0.03    0.04   0.05   0.06   0.07    0.08
+
+
+   Figure S9: Double-stranded DNA elastic constants A1 , A2 , C, G as a function of α.
+
+
+   The removal of the helicity centreline makes little difference to the bending persistence
+length, but leads to a significant increase in the measured twist persistence length. Note
+also that compensating for the helicity reduces the measured pitch (360/hΘ3 i) from 10.54 to
+10.51 bp.
+
+
+
+                                                                             54
+S3.3    Triad definitions
+
+The definitions of x
+                   b and y
+                         b for the six helix bundles are given in the main text, and schemat-
+
+ically indicated in Fig. 1(d) for the other systems. Here, we give their mathematical defini-
+tions, where the numbering of the helices is as in Fig. 1(d).
+   For the 4HB systems:
+                                         Rduplex (3) − Rduplex (1)
+                                 x
+                                 b =                                                     (S2)
+                                       ||Rduplex (3) − Rduplex (1)||
+
+and
+                                         Rduplex (2) − Rduplex (4)
+                                 y
+                                 b =                                 .                   (S3)
+                                       ||Rduplex (2) − Rduplex (4)||
+
+For the 8HB systems:
+                                         Rduplex (5) − Rduplex (1)
+                                 x
+                                 b =                                                     (S4)
+                                       ||Rduplex (5) − Rduplex (1)||
+
+and
+                                         Rduplex (3) − Rduplex (7)
+                                 y
+                                 b =                                 .                   (S5)
+                                       ||Rduplex (3) − Rduplex (7)||
+
+For the 10HB system
+
+                          Rduplex (5) + Rduplex (7) − Rduplex (2) − Rduplex (10)
+                  x
+                  b =                                                                    (S6)
+                        ||Rduplex (5) + Rduplex (7) − Rduplex (2) − Rduplex (10)||
+
+and
+                          Rduplex (3) + Rduplex (4) − Rduplex (8) − Rduplex (9)
+                  y
+                  b =                                                             .      (S7)
+                        ||Rduplex (3) + Rduplex (4) − Rduplex (8) − Rduplex (9)||
+
+   Figure S10 shows the effect of the orthogonalization scheme on the elastic moduli. If eb2
+is obtained by the orthogonalization of y
+                                        b to e
+                                             b 3 , and e
+                                                       b 1 from the vector product of e
+                                                                                      b 2 and
+
+eb3 (as in Triad III of Ref. 56), then A1 > A2 for the 6HB-SST system. By contrast, if eb1
+is obtained by the orthogonalization of x
+                                        b to e
+                                             b 3 , and e
+                                                       b 2 from the vector product of e
+                                                                                      b 3 and
+
+eb1 , then A2 > A1 . These results shows the biases introduced by these orthogonalization
+schemes. Applying the singular value decomposition technique to find the triad avoids these
+problems, and results in virtually equal values of A1 and A2 (Fig. 4), as is expected from the
+
+
+                                                  55
+    symmetry of this system.
+
+                        (a)        A1                                                         (b)        A1
+                        6000                                                                  6000
+                                   A2                                                                    A2
+                                   C                                                                     C
+                        5000                                                                  5000
+Elastic Constant (nm)
+
+
+
+
+                                                                      Elastic Constant (nm)
+                        4000                                                                  4000
+
+                        3000                                                                  3000
+
+                        2000                                                                  2000
+
+                        1000                                                                  1000
+
+                              00        200   400        600   800                                  00        200   400        600   800
+                                              m (step)                                                              m (step)
+
+    Figure S10: The effect of the orthogonalization scheme to obtain the triad {eb1 , eb2 , eb3 } on the
+    elastic moduli for the 6HB-SST nanotube. In (a) y  b is orthogonalized to e
+                                                                              b 3 , whereas in (b)
+    x
+    b is orthogonalized to e
+                           b3 .
+
+
+
+
+    S3.4                           Limiting values
+
+    Fig. S11 illustrates the behaviour of the correlation function used to obtain the twist per-
+    sistence length (Eq. 6) for the 6HB-SST system. It has a clear exponential tail making it
+    straightforward to extract a limiting value of the twist persistence length. Moreover, unlike
+    for the tangent-tangent correlation function, the deviations from exponential behaviour at
+    small m are barely noticeable. Consequently, the m-dependent twist persistence lengths
+    quickly converge to their limiting values.
+                          The elastic moduli can be calculated from the correlation coefficients describing the
+    correlations between angular deformations separated by n steps (Eq. 19) using the expression
+    in Eq. 20. The resulting values provide a good description of the elastic moduli over the range
+    of m sampled in simulations (Fig. S12). However, when one tries to extrapolate the predicted
+    elastic constants to their limiting values, the results become sensitive to the statistical noise
+    in the values of the correlation coefficients.
+                          In Fig. 5 of the main text, we illustrate the effect of the “averaging” approach we use to
+
+
+                                                                     56
+                                                         0.00                                         n+m 1
+                                                                                             ln < cos k = n k3 >
+                                                         0.05
+
+                                    k>
+                                                                                             straight-line fit
+
+                                    3
+                       n+m 1
+                                    ln < cos k = n       0.10
+
+                                                         0.15
+
+                                                         0.20
+                                                                0          200         400      600       800
+                                                                                       m (step)
+
+Figure S11: The exponential decay of the correlation function used to calculate the twist
+persistence length for the 6HB-SST nanotube.
+
+
+
+
+                                              6000              A1
+                                                                A2
+                                              5000
+                                                                C
+                                                                A1
+                      Elastic Constant (nm)
+
+
+
+
+                                                                A2
+                                              4000              C
+                                              3000
+
+                                              2000
+
+                                              1000
+
+                                                 0
+                                                     0               200         400          600         800
+                                                                                  m (step)
+
+Figure S12: A comparison of elastic constants calculated using Equations 7 (solid lines) and
+20 (dashed lines) for the 6HB-SST nanotube.
+
+
+
+
+                                                                                 57
+obtain the limiting values of the elastic constants for A1 . Equivalent figures for A2 and C
+are given in Fig. S13. The dependence of the behaviour on the parameter navg for A2 is,
+unsurprisingly, very similar to that for A1 , and except for the 10HB origami, which has the
+largest A1 /A2 ratio, we always use the same value of navg when computing the limiting values
+of these two elastic constants (Table S1). Performing this averaging is not so important for
+the twist elastic constant as it converges reasonably rapidly to its limiting value. This can be
+accelerated somewhat by using a small value of navg ; we always use navg = 5. Although we
+do not use this averaging approach to obtain limiting values of the persistence lengths, Fig.
+S13 also illustrates its effects on the m-dependent persistence lengths. Notably, the effect on
+the convergence of the bend persistence length is less pronounced than it is for the bending
+moduli.
+(a)                                                                  (b) 2000
+                         10000
+                                                                                                                             navg = 0
+                                                                                                                             navg = 1
+                          8000                                                                                               navg = 2
+ Elastic Constant (nm)
+
+
+
+
+                                                                     Elastic Constant (nm)
+
+
+
+
+                                                                                                                             navg = 5
+                                                                                             1500                            navg = 10
+                          6000                                                                                               navg = 20
+                                                         navg = 0                                                            navg = 40
+                                                         navg = 1
+                          4000                           navg = 2
+                                                         navg = 5
+                                                                                             1000
+                          2000                           navg = 10
+                                                         navg = 20
+                                                         navg = 40
+                             00   200   400        600       800                              500 0   200   400        600       800
+                                        m (step)                                                            m (step)
+(c) 8000                                                             (d) 1500
+                                                                                                                             navg = 0
+                                                                                                                             navg = 1
+                                                                                                                             navg = 2
+                          6000                                                                                               navg = 5
+                                                                                                                             navg = 10
+                                                                     lt/2 (nm)
+
+
+
+
+                                                                                                                             navg = 20
+     lb (nm)
+
+
+
+
+                          4000                           navg = 0                            1000
+                                                         navg = 1                                                            navg = 40
+                                                         navg = 2
+                                                         navg = 5
+                          2000                           navg = 10
+                                                         navg = 20
+                                                         navg = 40
+                             00   200   400        600       800                              500 0   200   400        600       800
+                                        m (step)                                                            m (step)
+
+Figure S13: The effect of averaging on (a) A2 , (b) C, (c) lb and (d) lt for different navg for
+the 6HB-SST nanotube.
+
+
+
+
+                                                                58
+S4     Further results
+
+Fig. S14 depicts the equilibrium twist of the series of twisted origamis versus their designed
+twist. There is an almost perfect linear relationship, albeit with the origami that is designed
+to be untwisted having a small right-handed twist. Note that the oxDNA model has been
+fitted to reproduce the reported zero twist of an origami in Ref. 20. Interestingly, our slope is
+larger than would be expected from the designed twist, which is derived from the predictions
+of the CanDo model. 50,51
+                                                    0.6
+
+                                                    0.4
+
+                                                    0.2
+                        twist per slice (degrees)
+
+
+
+
+                                                    0.0
+
+                                                    -0.2
+
+                                                    -0.4
+
+                                                    -0.6
+
+                                                    -0.8
+
+                                                    -1.0
+                                                           -2   -1                  0    1
+                                                                designed twist (turns)
+
+Figure S14: Twist per slice as a function of the designed twist in turns (i.e. 2×LH is -2,
+1×RH is +1) for the series of twisted 6HB origamis.
+
+
+
+
+S4.1     Nanotube radii
+
+The radii of the nanotubes are depicted in Figs. S15-S17 as a function of position along
+the tube. Note that we do not provide any results for 10HB due to its non-tubular cross-
+section. The periodicity seen in these plots for the main bodies of the nanotubes reflects
+the periodicity of the pattern of junctions. The SST tubes have a 21-slice repeat and only
+show very small variation in the radius, probably because their single-crossover junctions do
+not constrain the helices to come quite so close together as the double-crossover junctions in
+the origamis. The MT origamis have a clear pattern with a periodicity of 63 slices for 4HB-
+MT and 42 slices for 6HB-MT. The twisted tubes, by contrast, have a much more irregular
+
+                                                                       59
+pattern of junctions and a more noisy variation in the radius, but there is still a rough
+repeating pattern on the order of 190 slices (modulated by the insertions and deletions). In
+the case of the origamis, these periodicities can be related to the small features seen in the
+m-dependent persistence lengths and elastic moduli at multiples of the repeat.
+  (a)3.0                                                                                         (b) 3.5
+
+
+
+
+              2.5                                                                                              3.0
+Radius (nm)
+
+
+
+
+                                                                                                 Radius (nm)
+              2.0                                                                                              2.5
+
+
+
+                      radius (nm)                                                                                          radius(nm)
+              1.5 0   200      400      600         800      1000              1200                            2.0 0         200          400               600         800          1000
+                                        slice index                                                                                                slice index
+
+Figure S15: Radii as a function of position in the nanotube for (a) 4HB-MT and (b) 6HB-MT.
+
+
+  (a) 2.5                                                      (b) 3.0                                                                     (c) 4.0
+                                              radius (nm)                                                                   radius (nm)                                                     radius (nm)
+  Radius (nm)
+
+
+
+
+                                                              Radius (nm)
+
+
+
+
+                                                                                                                                           Radius (nm)
+
+
+               2.0                                                      2.5                                                                          3.5
+
+
+
+
+               1.50   200    400     600      800     1000              2.00          200        400                 600   800     1000              3.00         200   400    600          800    1000
+                              slice index                                                          slice index                                                           slice index
+
+Figure S16: Radiii as a function of position in the nanotube for (a) 4HB-SST, (b) 6HB-SST
+and (c) 8HB-SST.
+
+
+
+
+S4.2                  Persistence lengths
+
+For the SST series of nanotubes, we can compare the persistence lengths to theoretical ex-
+pectations. A common approach is as follows. For a uniform elastic medium, the persistence
+
+
+
+
+                                                                                            60
+ (a) 3.0                                                              (b) 3.0
+                                                  radius (nm)
+Radius (nm)
+
+
+
+
+                                                                     Radius (nm)
+              2.5                                                                  2.5
+
+
+                                                                                          radius (nm)
+              2.00   200     400      600 800    1000    1200                      2.00   200     400      600 800    1000   1200
+                                   slice index                                                          slice index
+ (c) 3.0                                                              (d) 3.0
+Radius (nm)
+
+
+
+
+                                                                     Radius (nm)
+
+
+
+
+              2.5                                                                  2.5
+
+
+                     radius (nm)                                                          radius (nm)
+              2.00   200     400      600 800    1000    1200                      2.00   200     400      600 800    1000   1200
+                                   slice index                                                          slice index
+Figure S17: Radii as a function of position in the nanotube for (a) 6HB-2×LH, (b) 6HB-
+1×LH, (c) 6HB-S and (d) 6HB-1×RH.
+
+
+
+
+                                                                61
+length can be related to the Young’s modulus through
+
+                                                     YI
+                                            lb =                                         (S8)
+                                                    kB T
+
+where I is the moment of inertia of the cross-section. Using the parallel-axis theorem to
+calculate I for a bundle of rods and assuming the Young’s modulus for DNA is the same
+in a duplex and in a helix-bundle, one arrives at the following relationship between the
+persistence length of a helix bundle and that for duplex DNA:
+
+                                                               2 !
+                                                        R
+                                                           
+                               lbtube = nlbduplex   1+2               .                  (S9)
+                                                        r
+
+where R is the radius of the bundle and r the radius of duplex DNA. 35 In the experimental
+papers where this formula has been applied 21,32,33,35 one difficulty is that R cannot be mea-
+sured directly; therefore, one first approximation has been to assume that the helices are in
+direct contact. 21,35 By contrast, for oxDNA we can measure the tube radii (e.g. Fig. S16).
+Thus, together with the oxDNA duplex values of r = 1.15 nm and lb = 41.2 nm (Table S2),
+we can use Eq. S9 to predict the nanotube persistence lengths. In the main text, we use r as
+an effective parameter to fit the bending persistence lengths of the SST nanotubes. Other
+potential causes for discrepancies that have been considered in the experimental studies are
+imperfections in the tubes (not relevant here) and that nicks and junctions reduce the duplex
+persistence length for the helices in the nanotubes.
+   The m-dependent persistence lengths defined through Eqs. 5 and 6 are shown in Figs.
+S18-S21.
+
+
+S4.3       DNA extensional modulus
+
+We performed simulations to compute the force-extension curve of double-stranded DNA.
+The strand was 150-bp long and we considered the central 130-bp section. The simulations
+were at [Na+ ]=0.5 M. Forces up to 40 pN were considered.
+
+                                                62
+         (a) 1500                                                                                                                   (b) 4000
+                                                                                                                       lb                                                   lb
+                                                                                                                       lt/2                                                 lt/2
+
+                                                                                                                                                              3000
+       Persistence lengths (nm)
+
+
+
+
+                                                                                                                                   Persistence lengths (nm)
+                                  1000
+
+                                                                                                                                                              2000
+
+                                   500
+                                                                                                                                                              1000
+
+
+
+                                     00           200           400          600                                 800                                             00                200                               400            600          800
+                                                                 m (step)                                                                                                                                            m (step)
+
+                                        Figure S18: m-dependent persistence lengths for (a) 4HB-MT and (b) 6HB-MT.
+
+
+
+
+        (a)2000                                                                        (b)6000                                                                                                    (c)12000
+                                          lb                                                                       lb                                                                                                      lb
+                                                                                                                                                                                                                           lt/2
+Persistence lengths (nm)
+
+
+
+
+                                                                               Persistence lengths (nm)
+
+
+
+
+                                                                                                                                                                                         Persistence lengths (nm)
+
+
+
+
+                                          lt/2                                                                     lt/2
+                                                                                                          4000                                                                                                      8000
+                           1000
+                                                                                                          2000                                                                                                      4000
+
+
+                                   00       200     400        600     800                                  00         200                           400              600          800                                00          200     400        600   800
+                                                    m (step)                                                                                         m (step)                                                                             m (step)
+
+    Figure S19: m-dependent persistence lengths for (a) 4HB-SST, (b) 6HB-SST and (c) 8HB-
+    SST.
+
+
+
+
+                                                                                                                              63
+(a) 4000                                                                                                 (b) 5000
+                                   lb                                                                                                       lb
+                                   lt/2                                                                                                     lt/2
+Persistence lengths (nm)
+
+
+
+
+                                                                                                         Persistence lengths (nm)
+                                                                                                                                    4000
+                           3000
+                                                                                                                                    3000
+                           2000
+                                                                                                                                    2000
+                           1000
+                                                                                                                                    1000
+
+                              00      200   400                                 600          800   1000                                00      200   400          600   800   1000
+                                                     m (step)                                                                                              m (step)
+(c) 5000                                                                                                 (d) 5000
+                                   lb                                                                                                       lb
+                                   lt/2                                                                                                     lt/2
+Persistence lengths (nm)
+
+
+
+
+                                                                                                         Persistence lengths (nm)
+                           4000                                                                                                     4000
+
+                           3000                                                                                                     3000
+
+                           2000                                                                                                     2000
+
+                           1000                                                                                                     1000
+
+                              00      200   400                                 600          800   1000                                00      200   400          600   800   1000
+                                                     m (step)                                                                                              m (step)
+
+Figure S20: m-dependent persistence lengths for (a) 6HB-2×LH, (b) 6HB-1×LH, (c) 6HB-S
+and (d) 6HB-1×RH.
+
+
+
+
+                                                                        12000
+                                                                                      lb
+                                                                                      lt/2
+                                             Persistence lengths (nm)
+
+
+
+
+                                                                         9000
+
+
+                                                                         6000
+
+
+                                                                         3000
+
+
+                                                                            0
+                                                                                0        100       200                                300     400    500
+                                                                                                     m (step)
+
+                                   Figure S21: m-dependent persistence lengths for the 10HB origami.
+
+
+
+
+                                                                                                    64
+   The resulting data (Fig. S22) was fitted to the extensible worm-like chain expression:
+
+                                                                                              !
+                                                         F   kB T
+                                       x = L0         1+   −      [1 + y coth y] ,                 (S10)
+                                                         K 2F L0
+
+where
+                                                                              !1/2
+                                                                     F L20
+                                                           y=                        ,             (S11)
+                                                                    lb kB T
+
+L0 is the contour length, x is the extension, F the force and K the extensional modulus. An
+unconstrained three-parameter fit gave K = 2708 pN, L0 = 44.66 nm and lb = 49.3 nm.
+
+                                      40        fit: L0=44.66 nm, K=2708.2 pN, Lp=49.29 nm
+                                                simulation results
+
+                                      30
+                       Tension (pN)
+
+
+
+
+                                      20
+
+
+                                      10
+
+
+
+                                           39         40         41           42         43   44
+                                                                   Extension (nm)
+
+Figure S22: Force-extension curve for a 150-bp duplex, neglecting the 10 base pairs at each
+end. The data points are from simulations and the solid line a fit to the curve using the
+extensible worm-like chain formula (Eq. S10).
+
+
+
+
+S4.4     Elastic moduli
+
+The m-dependent elastic moduli defined through Eqs. 7 and 8 are given in Figs. S23–S26.
+Unlike in the main text we also illustrate the off-diagonal terms. These off-diagonal terms
+remain closest to zero for the SST systems, which have both the best statistics and are
+most symmetric. For the origami systems, although these off-diagonal terms start off close
+to zero, there is some tendency to increase with m, particularly for A12 . We think this
+behaviour is a result of the worse statistics at longer length scales. If the off-diagonal elastic
+constants were actually non-zero, we would expect that their dependence on m would be
+
+                                                                      65
+            (a)                                                              (b) 6000
+              2000                                                                                      A1
+                                                                                                        A2
+                                                                                                        C
+                                                                                                        A12
+                                                                                                 4000   G1
+Elastic Constant (nm)
+
+
+
+
+                                                                         Elastic Constant (nm)
+                                                                  A1                                    G2
+                                                                  A2
+                        1000                                      C
+                                                                  A12
+                                                                  G1                             2000
+                                                                  G2
+
+
+                          0
+                                                                                                   0
+                        4000      200     400         600   800                                  6000         200   400         600   800
+                                           m (step)                                                                  m (step)
+
+                                   Figure S23: Elastic moduli for (a) 4HB-MT and (b) 6HB-MT.
+
+
+    much more similar to that for the diagonal terms, e.g. to display a monotonically decreasing
+    slope with increasing m, as is the case for the twist-bend coupling constant for double-
+    stranded DNA. 56 That A12 is typically the largest of the off-diagonal terms is probably due
+    to the greater difficulty of accurately sampling bending compared to twisting, because of the
+    much larger value of the bend persistence lengths. Unfortunately, the non-zero values of the
+    off-diagonal terms at large m are likely to have a consequent effect on the accuracy of the
+    limiting values of the other moduli, and to lead to deviations from the expected relationships
+    between the persistence lengths and elastic moduli that hold when the off-diagonal terms are
+    zero. For example, for most systems the value of C quickly converges to its limiting values
+    and is then approximately constant for larger m. However, for the 10HB origami there is
+    an approximately linear rise in C at large m that seems correlated with the appearance of
+    significant deviations in A12 from zero (Fig. S26).
+
+
+    S4.5                       SST nanotube cross-sections
+
+    In the main text we showed in Fig. 10(b) that equivalent helices in the 4HB-SST nanotube
+    had different radii, providing quantitative evidence that the cross-section was diamond-like
+    (Fig. 2(a)) rather than square. This is due to the inequivalence of adjacent helices in the SST
+    nanotubes and the alternating inter-helix angle as one goes round the tube. Similar plots
+
+                                                                        66
+        (a)3000                                                                            (b)                                                                                  (c)
+                                  A1                                                                       A1                                                                                     12000       A1
+                                  A2                                                         6000          A2                                                                                                 A2
+                                  C                                                                        C                                                                                                  C
+                                  A12                                                                      A12                                                                                                A12
+Elastic Constant (nm)
+
+
+
+
+                                                                            Elastic Constant (nm)
+
+
+
+
+                                                                                                                                                                          Elastic Constant (nm)
+                                  G1                                                                       G1                                                                                      9000       G1
+                        2000      G2                                                                       G2                                                                                                 G2
+                                                                                                    4000
+                                                                                                                                                                                                   6000
+                        1000                                                                        2000
+                                                                                                                                                                                                   3000
+
+
+                          0                                                                           0                                                                                               0
+                        2000            200         400        600    800                           5000         200                           400        600       800                             500
+                                                                                                                                                                                                          0          200   400        600      800
+                                                    m (step)                                                                                   m (step)                                                                    m (step)
+
+                                  Figure S24: Elastic moduli for (a) 4HB-SST, (b) 6HB-SST and (c) 8HB-SST.
+
+
+
+
+          (a)5000                                                                                                              (b)6000
+                                        A1                                                                                                                  A1
+                                        A2                                                                                                                  A2
+                         4000           C                                                                                                                   C
+Elastic Constant (nm)
+
+
+
+
+                                                                                                                       Elastic Constant (nm)
+
+
+
+
+                                        A12                                                                                                                 A12
+                                        G1                                                                                                     4000         G1
+                         3000           G2                                                                                                                  G2
+                         2000
+                                                                                                                                               2000
+                         1000
+                            0                                                                                                                     0
+                          500 0               200          400        600                            800         1000                           500 0             200               400                             600    800          1000
+                                                               m (step)                                                                                                                             m (step)
+          (c)6000                                                                                                              (d)6000
+                                        A1                                                                                                                  A1
+                                        A2                                                                                                                  A2
+                                        C                                                                                                                   C
+Elastic Constant (nm)
+
+
+
+
+                                                                                                                       Elastic Constant (nm)
+
+
+
+
+                                        A12                                                                                                                 A12
+                         4000           G1                                                                                                     4000         G1
+                                        G2                                                                                                                  G2
+
+                         2000                                                                                                                  2000
+
+
+                            0                                                                                                                     0
+                          500 0               200          400        600                            800         1000                           500 0             200               400                             600    800          1000
+                                                               m (step)                                                                                                                             m (step)
+
+    Figure S25: Elastic moduli for (a) 6HB-2×LH, (b) 6HB-1×LH, (c) 6HB-S and (d) 6HB-
+    1×RH.
+
+
+
+
+                                                                                                                       67
+                                                              18000         A1
+                                                                            A2
+                                                              15000         C
+                                                                            A12
+
+
+
+
+                                      Elastic Constant (nm)
+                                                              12000         G1
+                                                                            G2
+                                                               9000
+
+                                                               6000
+
+                                                               3000
+
+                                                                 0
+                                                              2000
+                                                                      0            100           200                      300    400   500
+                                                                                                       m (step)
+
+                            Figure S26: Elastic moduli for the 10HB origami at α = 0.06.
+
+
+are shown in Fig. S27 for 6HB-SST and 8HB-SST. The snapshots in Fig. S2 also confirm the
+deviations of the cross-section away from a regular polygon.
+(a) 3.0                                                                                                    (b) 4.0
+                                                                          (rdup1 + rdup3 + rdup5)/3                                                 (rdup1 + rdup3 + rdup5 + rdup7)/4
+                                                                          (rdup2 + rdup4 + rdup6)/3                                                 (rdup2 + rdup4 + rdup6 + rdup8)/4
+
+
+                                                                                                                         3.5
+Radius (nm)
+
+
+
+
+                                                                                                           Radius (nm)
+
+
+
+
+              2.5
+
+                                                                                                                         3.0
+
+
+
+
+              2.0 0   200       400                              600              800        1000                        2.5 0   200   400           600          800           1000
+                                      slice index                                                                                            slice index
+
+                      Figure S27: Radii for equivalent helices in 6HB-SST and 8HB-SST
+
+
+
+
+                                                                                                      68
+Graphical TOC Entry
+
+
+
+
+                      69
+

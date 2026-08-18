@@ -1,0 +1,2201 @@
+{
+ "\"DNA origami\" AND (plate OR slab OR sheet) AND (\"bending rigidity\" OR \"flexural rigidity\" OR \"persistence length\")": {
+  "version": "6.9",
+  "hitCount": 118,
+  "nextCursorMark": "AoIIQDc9uSg1MzMzOTk2MA==",
+  "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=\"DNA origami\" AND (plate OR slab OR sheet) AND (\"bending rigidity\" OR \"flexural rigidity\" OR \"persistence length\")&cursorMark=AoIIQDc9uSg1MzMzOTk2MA==&resultType=lite&pageSize=20&format=json",
+  "request": {
+   "queryString": "\"DNA origami\" AND (plate OR slab OR sheet) AND (\"bending rigidity\" OR \"flexural rigidity\" OR \"persistence length\")",
+   "resultType": "lite",
+   "cursorMark": "*",
+   "pageSize": 20,
+   "sort": "",
+   "synonym": false
+  },
+  "resultList": {
+   "result": [
+    {
+     "id": "PPR1218509",
+     "source": "PPR",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PPR1218509"
+      ]
+     },
+     "doi": "10.64898/2026.03.21.713045",
+     "title": "Mechanical Flexibility Enables DNA Origami to Overcome Steric Confinement in Mucus",
+     "authorString": "Tollemeto M, Tsang E, Hong Lin MKT, Mannino L, Ribbeck K, Gothelf KV, Boisen A.",
+     "pubYear": "2026",
+     "pubType": "preprint",
+     "bookOrReportDetails": {
+      "publisher": "bioRxiv",
+      "yearOfPublication": 2026
+     },
+     "isOpenAccess": "Y",
+     "inEPMC": "N",
+     "inPMC": "N",
+     "hasPDF": "N",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 0,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "doi"
+      ]
+     },
+     "firstIndexDate": "2026-05-19",
+     "firstPublicationDate": "2026-03-24"
+    },
+    {
+     "id": "40924447",
+     "source": "MED",
+     "pmid": "40924447",
+     "pmcid": "PMC12452858",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC12452858"
+      ]
+     },
+     "doi": "10.1073/pnas.2500716122",
+     "title": "Measuring multisubunit mechanics of geometrically programmed colloidal assemblies via cryo-EM multi-body refinement.",
+     "authorString": "Videb\u00e6k TE, Hayakawa D, Hagan MF, Grason GM, Fraden S, Rogers WB.",
+     "journalTitle": "Proc Natl Acad Sci U S A",
+     "issue": "37",
+     "journalVolume": "122",
+     "pubYear": "2025",
+     "journalIssn": "0027-8424; 1091-6490; ",
+     "pageInfo": "e2500716122",
+     "pubType": "research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 5,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "doi"
+      ]
+     },
+     "firstIndexDate": "2025-09-09",
+     "firstPublicationDate": "2025-09-09"
+    },
+    {
+     "id": "38959303",
+     "source": "MED",
+     "pmid": "38959303",
+     "pmcid": "PMC11221488",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC11221488"
+      ]
+     },
+     "doi": "10.1126/sciadv.ado5979",
+     "title": "Economical routes to size-specific assembly of self-closing structures.",
+     "authorString": "Videb\u00e6k TE, Hayakawa D, Grason GM, Hagan MF, Fraden S, Rogers WB.",
+     "journalTitle": "Sci Adv",
+     "issue": "27",
+     "journalVolume": "10",
+     "pubYear": "2024",
+     "journalIssn": "2375-2548",
+     "pageInfo": "eado5979",
+     "pubType": "research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 16,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "emdb"
+      ]
+     },
+     "firstIndexDate": "2024-07-04",
+     "firstPublicationDate": "2024-07-03"
+    },
+    {
+     "id": "40737411",
+     "source": "MED",
+     "pmid": "40737411",
+     "pmcid": "PMC12309683",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC12309683"
+      ]
+     },
+     "doi": "10.1126/sciadv.adx6316",
+     "title": "Control and synchronization of rapid nanoscale DNA heat engine by local heating.",
+     "authorString": "Wang K, Hardikar A, Chen W, Huang Q, Guo B, Guo B, Zhu G, Ni H, Sha R, Seeman NC, Chaikin PM.",
+     "journalTitle": "Sci Adv",
+     "issue": "31",
+     "journalVolume": "11",
+     "pubYear": "2025",
+     "journalIssn": "2375-2548",
+     "pageInfo": "eadx6316",
+     "pubType": "research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 3,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2025-07-31",
+     "firstPublicationDate": "2025-07-30"
+    },
+    {
+     "id": "41068158",
+     "source": "MED",
+     "pmid": "41068158",
+     "pmcid": "PMC12511405",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC12511405"
+      ]
+     },
+     "doi": "10.1038/s41467-025-64298-x",
+     "title": "Programmable DNA shell scaffolds for directional membrane budding.",
+     "authorString": "Pinner MT, Dietz H.",
+     "journalTitle": "Nat Commun",
+     "issue": "1",
+     "journalVolume": "16",
+     "pubYear": "2025",
+     "journalIssn": "2041-1723",
+     "pageInfo": "8972",
+     "pubType": "research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 6,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2025-10-10",
+     "firstPublicationDate": "2025-10-09"
+    },
+    {
+     "id": "40358458",
+     "source": "MED",
+     "pmid": "40358458",
+     "pmcid": "PMC12143421",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC12143421"
+      ]
+     },
+     "doi": "10.1039/d5cc00760g",
+     "title": "Isothermal assembly of DNA nanostructures.",
+     "authorString": "Chandrasekaran AR.",
+     "journalTitle": "Chem Commun (Camb)",
+     "issue": "44",
+     "journalVolume": "61",
+     "pubYear": "2025",
+     "journalIssn": "1359-7345; 1364-548x; ",
+     "pageInfo": "7983-7994",
+     "pubType": "research-article; review; journal article",
+     "isOpenAccess": "N",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 3,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2025-05-20",
+     "firstPublicationDate": "2025-05-28"
+    },
+    {
+     "id": "41315785",
+     "source": "MED",
+     "pmid": "41315785",
+     "pmcid": "PMC12960257",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC12960257"
+      ]
+     },
+     "doi": "10.1038/s41563-025-02418-0",
+     "title": "Self-assembled cell-scale containers made from DNA origami membranes.",
+     "authorString": "Karfusehr C, Eder M, Yang HY, Beinsteiner B, Jasnin M, Simmel FC.",
+     "journalTitle": "Nat Mater",
+     "issue": "3",
+     "journalVolume": "25",
+     "pubYear": "2026",
+     "journalIssn": "1476-1122; 1476-4660; ",
+     "pageInfo": "502-510",
+     "pubType": "research support, non-u.s. gov't; research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 4,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "pdb",
+       "doi"
+      ]
+     },
+     "firstIndexDate": "2025-11-30",
+     "firstPublicationDate": "2025-11-28"
+    },
+    {
+     "id": "42016472",
+     "source": "MED",
+     "pmid": "42016472",
+     "pmcid": "PMC13095159",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC13095159"
+      ]
+     },
+     "doi": "10.1002/adfm.202523998",
+     "title": "DNA Helix Bundle-Encoded Multi-Bit Information Readout by Sapphire-Supported Nanopores.",
+     "authorString": "Xia P, Satyabola D, Bamrah NK, Rahman Laskar MA, Mamun AA, Zhou X, Wisna GBM, Zhang Y, Ikbal A, Kemeklis A, Krylova AE, Hariadi R, Yan H, Wang C.",
+     "journalTitle": "Adv Funct Mater",
+     "issue": "24",
+     "journalVolume": "36",
+     "pubYear": "2026",
+     "journalIssn": "1616-301x; 1616-3028; ",
+     "pageInfo": "e23998",
+     "pubType": "research-article; journal article",
+     "isOpenAccess": "N",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 6,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2026-04-22",
+     "firstPublicationDate": "2025-11-10"
+    },
+    {
+     "id": "40830075",
+     "source": "MED",
+     "pmid": "40830075",
+     "pmcid": "PMC12410049",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC12410049"
+      ]
+     },
+     "doi": "10.1021/acsnano.5c06681",
+     "title": "Economical and Versatile Subunit Design Principles for Self-Assembled DNA Origami Structures.",
+     "authorString": "Wei WS, Videb\u00e6k TE, Hayakawa D, Saha R, Pombo J, Arya G, Rogers WB, Fraden S.",
+     "journalTitle": "ACS Nano",
+     "issue": "34",
+     "journalVolume": "19",
+     "pubYear": "2025",
+     "journalIssn": "1936-0851; 1936-086x; ",
+     "pageInfo": "30889-30901",
+     "pubType": "research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 3,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2025-08-22",
+     "firstPublicationDate": "2025-08-19"
+    },
+    {
+     "id": "40762261",
+     "source": "MED",
+     "pmid": "40762261",
+     "pmcid": "PMC12365872",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC12365872"
+      ]
+     },
+     "doi": "10.1021/acsabm.5c00907",
+     "title": "Design and Assembly of a Cargo-Agnostic Hollow Two-Lidded DNA Origami Box.",
+     "authorString": "Koep A, Masud N, Van't Hul J, Stanley C, Nilsen-Hamilton M, Sarkar A, Schneider IC.",
+     "journalTitle": "ACS Appl Bio Mater",
+     "issue": "8",
+     "journalVolume": "8",
+     "pubYear": "2025",
+     "journalIssn": "2576-6422",
+     "pageInfo": "7188-7200",
+     "pubType": "research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 0,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2025-08-05",
+     "firstPublicationDate": "2025-08-05"
+    },
+    {
+     "id": "39841331",
+     "source": "MED",
+     "pmid": "39841331",
+     "pmcid": "PMC11754578",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC11754578"
+      ]
+     },
+     "doi": "10.1186/s11671-025-04188-9",
+     "title": "Correlation of precisely fabricated geometric characteristics of DNA-origami nanostructures with their cellular entry in human lens epithelial cells.",
+     "authorString": "Guo Y, Xiong T, Yan H, Zhang RX.",
+     "journalTitle": "Discov Nano",
+     "issue": "1",
+     "journalVolume": "20",
+     "pubYear": "2025",
+     "journalIssn": "2731-9229",
+     "pageInfo": "13",
+     "pubType": "research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 3,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "doi"
+      ]
+     },
+     "firstIndexDate": "2025-01-23",
+     "firstPublicationDate": "2025-01-22"
+    },
+    {
+     "id": "40097648",
+     "source": "MED",
+     "pmid": "40097648",
+     "pmcid": "PMC12095062",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC12095062"
+      ]
+     },
+     "doi": "10.1038/s41565-025-01879-3",
+     "title": "Genetic encoding and expression of RNA origami cytoskeletons in synthetic cells.",
+     "authorString": "Tran MP, Chakraborty T, Poppleton E, Monari L, Illig M, Giessler F, G\u00f6pfrich K.",
+     "journalTitle": "Nat Nanotechnol",
+     "issue": "5",
+     "journalVolume": "20",
+     "pubYear": "2025",
+     "journalIssn": "1748-3387; 1748-3395; ",
+     "pageInfo": "664-671",
+     "pubType": "research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 21,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "N",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2025-03-18",
+     "firstPublicationDate": "2025-03-17"
+    },
+    {
+     "id": "38589344",
+     "source": "MED",
+     "pmid": "38589344",
+     "pmcid": "PMC11001925",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC11001925"
+      ]
+     },
+     "doi": "10.1038/s41467-024-46998-y",
+     "title": "Mechanism of DNA origami folding elucidated by mesoscopic simulations.",
+     "authorString": "DeLuca M, Duke D, Ye T, Poirier M, Ke Y, Castro C, Arya G.",
+     "journalTitle": "Nat Commun",
+     "issue": "1",
+     "journalVolume": "15",
+     "pubYear": "2024",
+     "journalIssn": "2041-1723",
+     "pageInfo": "3015",
+     "pubType": "research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 27,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "N",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2024-04-10",
+     "firstPublicationDate": "2024-04-08"
+    },
+    {
+     "id": "39521857",
+     "source": "MED",
+     "pmid": "39521857",
+     "pmcid": "PMC11550841",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC11550841"
+      ]
+     },
+     "doi": "10.1038/s41598-024-78399-y",
+     "title": "DNA origami drives gene expression in a human cell culture system.",
+     "authorString": "Oh CY, Kaur H, Tuteja G, Henderson ER.",
+     "journalTitle": "Sci Rep",
+     "issue": "1",
+     "journalVolume": "14",
+     "pubYear": "2024",
+     "journalIssn": "2045-2322",
+     "pageInfo": "27364",
+     "pubType": "research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 6,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2024-11-16",
+     "firstPublicationDate": "2024-11-09"
+    },
+    {
+     "id": "36285315",
+     "source": "MED",
+     "pmid": "36285315",
+     "pmcid": "PMC9494703",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC9494703"
+      ]
+     },
+     "doi": "10.34133/2022/9758460",
+     "title": "Recent Progress of Magnetically Actuated DNA Micro/Nanorobots.",
+     "authorString": "Liu F, Liu X, Huang Q, Arai T.",
+     "journalTitle": "Cyborg Bionic Syst",
+     "journalVolume": "2022",
+     "pubYear": "2022",
+     "journalIssn": "2097-1087; 2692-7632; ",
+     "pageInfo": "9758460",
+     "pubType": "review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 19,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "doi"
+      ]
+     },
+     "firstIndexDate": "2022-10-27",
+     "firstPublicationDate": "2022-02-07"
+    },
+    {
+     "id": "36252043",
+     "source": "MED",
+     "pmid": "36252043",
+     "pmcid": "PMC9618141",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC9618141"
+      ]
+     },
+     "doi": "10.1073/pnas.2207902119",
+     "title": "Geometrically programmed self-limited assembly of tubules using DNA origami colloids.",
+     "authorString": "Hayakawa D, Videbaek TE, Hall DM, Fang H, Sigl C, Feigl E, Dietz H, Fraden S, Hagan MF, Grason GM, Rogers WB.",
+     "journalTitle": "Proc Natl Acad Sci U S A",
+     "issue": "43",
+     "journalVolume": "119",
+     "pubYear": "2022",
+     "journalIssn": "0027-8424; 1091-6490; ",
+     "pageInfo": "e2207902119",
+     "pubType": "research support, non-u.s. gov't; research-article; research support, u.s. gov't, non-p.h.s.; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 39,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2022-10-18",
+     "firstPublicationDate": "2022-10-17"
+    },
+    {
+     "id": "41564190",
+     "source": "MED",
+     "pmid": "41564190",
+     "pmcid": "PMC12822630",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC12822630"
+      ]
+     },
+     "doi": "10.1126/sciadv.aeb6713",
+     "title": "Expanding DNA alphabet adds a previously unknown dimension to nanostructures.",
+     "authorString": "Zhou K, Hoshika S, Cheng J, Lin C, Benner S, Ke Y.",
+     "journalTitle": "Sci Adv",
+     "issue": "4",
+     "journalVolume": "12",
+     "pubYear": "2026",
+     "journalIssn": "2375-2548",
+     "pageInfo": "eaeb6713",
+     "pubType": "research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 1,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2026-01-22",
+     "firstPublicationDate": "2026-01-21"
+    },
+    {
+     "id": "41222306",
+     "source": "MED",
+     "pmid": "41222306",
+     "pmcid": "PMC12723353",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC12723353"
+      ]
+     },
+     "doi": "10.1002/smll.202505852",
+     "title": "Design of a Trigger-Responsive Photothermal Vesicle-Based Cargo Delivery Platform.",
+     "authorString": "Schramm A, Conzelmann NF, Gelmroth AK, K\u00f6berle J, Schramm S, Dimova R, Platzman I, Spatz J.",
+     "journalTitle": "Small",
+     "issue": "51",
+     "journalVolume": "21",
+     "pubYear": "2025",
+     "journalIssn": "1613-6810; 1613-6829; ",
+     "pageInfo": "e05852",
+     "pubType": "research support, non-u.s. gov't; research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 2,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2025-11-12",
+     "firstPublicationDate": "2025-11-12"
+    },
+    {
+     "id": "PPR998840",
+     "source": "PPR",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PPR998840"
+      ]
+     },
+     "doi": "10.1101/2025.03.31.646418",
+     "title": "The Effects of DMSO on DNA Conformations and Mechanics",
+     "authorString": "Storm KR, K\u00f6r\u00f6sy C, Skoruppa E, Pritzl SD, Kolbeck PJ, Vanderlinden W, Schiessel H, Lipfert J.",
+     "pubYear": "2025",
+     "pubType": "preprint",
+     "bookOrReportDetails": {
+      "publisher": "bioRxiv",
+      "yearOfPublication": 2025
+     },
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "N",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 0,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "N",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2025-04-07",
+     "firstPublicationDate": "2025-04-05"
+    },
+    {
+     "id": "40632845",
+     "source": "MED",
+     "pmid": "40632845",
+     "pmcid": "PMC12239940",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC12239940"
+      ]
+     },
+     "doi": "10.1126/sciadv.adv6734",
+     "title": "Confinement-induced chirality in phase-separated achiral polymer solutions.",
+     "authorString": "Kou B, Wu JS, Ma Y, Huang Y, He X, Wu T, Yang ZB, van der Schoot P, Smalyukh II, Kumacheva E.",
+     "journalTitle": "Sci Adv",
+     "issue": "28",
+     "journalVolume": "11",
+     "pubYear": "2025",
+     "journalIssn": "2375-2548",
+     "pageInfo": "eadv6734",
+     "pubType": "research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 0,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2025-07-10",
+     "firstPublicationDate": "2025-07-09"
+    }
+   ]
+  }
+ },
+ "\"DNA origami\" AND \"two-layer\" AND (stiffness OR rigidity)": {
+  "version": "6.9",
+  "hitCount": 30,
+  "nextCursorMark": "AoIIP0CJCigyNjQ0MTMyMg==",
+  "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=\"DNA origami\" AND \"two-layer\" AND (stiffness OR rigidity)&cursorMark=AoIIP0CJCigyNjQ0MTMyMg==&resultType=lite&pageSize=20&format=json",
+  "request": {
+   "queryString": "\"DNA origami\" AND \"two-layer\" AND (stiffness OR rigidity)",
+   "resultType": "lite",
+   "cursorMark": "*",
+   "pageSize": 20,
+   "sort": "",
+   "synonym": false
+  },
+  "resultList": {
+   "result": [
+    {
+     "id": "42130031",
+     "source": "MED",
+     "pmid": "42130031",
+     "pmcid": "PMC13220298",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC13220298"
+      ]
+     },
+     "doi": "10.1021/acs.nanolett.6c00402",
+     "title": "Vesicle-Templated Self-Assembly of Programmable Freestanding Multi-\u03bcm DNA Shells.",
+     "authorString": "Yang HY, Karfusehr C, Simmel FC.",
+     "journalTitle": "Nano Lett",
+     "issue": "20",
+     "journalVolume": "26",
+     "pubYear": "2026",
+     "journalIssn": "1530-6984; 1530-6992; ",
+     "pageInfo": "6560-6566",
+     "pubType": "research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 0,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2026-05-15",
+     "firstPublicationDate": "2026-05-13"
+    },
+    {
+     "id": "41440300",
+     "source": "MED",
+     "pmid": "41440300",
+     "pmcid": "PMC12730752",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC12730752"
+      ]
+     },
+     "doi": "10.3390/bios15120819",
+     "title": "Comprehensive Review on DNA Hydrogels and DNA Origami-Enabled Wearable and Implantable Biosensors.",
+     "authorString": "Li M, Bae J.",
+     "journalTitle": "Biosensors (Basel)",
+     "issue": "12",
+     "journalVolume": "15",
+     "pubYear": "2025",
+     "journalIssn": "2079-6374",
+     "pageInfo": "819",
+     "pubType": "review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 2,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "N",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2025-12-24",
+     "firstPublicationDate": "2025-12-18"
+    },
+    {
+     "id": "40103431",
+     "source": "MED",
+     "pmid": "40103431",
+     "pmcid": "PMC12691925",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC12691925"
+      ]
+     },
+     "doi": "10.1002/adma.202500086",
+     "title": "DNA\u2011Directed Assembly of Photonic Nanomaterials for Diagnostic and Therapeutic Applications.",
+     "authorString": "Ding L, Liu B, Peil A, Fan S, Chao J, Liu N.",
+     "journalTitle": "Adv Mater",
+     "issue": "49",
+     "journalVolume": "37",
+     "pubYear": "2025",
+     "journalIssn": "0935-9648; 1521-4095; ",
+     "pageInfo": "e2500086",
+     "pubType": "review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 20,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "N",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2025-03-19",
+     "firstPublicationDate": "2025-03-19"
+    },
+    {
+     "id": "36990451",
+     "source": "MED",
+     "pmid": "36990451",
+     "pmcid": "PMC10103138",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC10103138"
+      ]
+     },
+     "doi": "10.1021/acs.chemrev.3c00028",
+     "title": "Recent Advances in DNA Origami-Engineered Nanomaterials and Applications.",
+     "authorString": "Zhan P, Peil A, Jiang Q, Wang D, Mousavi S, Xiong Q, Shen Q, Shang Y, Ding B, Lin C, Ke Y, Liu N.",
+     "journalTitle": "Chem Rev",
+     "issue": "7",
+     "journalVolume": "123",
+     "pubYear": "2023",
+     "journalIssn": "0009-2665; 1520-6890; ",
+     "pageInfo": "3976-4050",
+     "pubType": "research support, non-u.s. gov't; review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 210,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "doi"
+      ]
+     },
+     "firstIndexDate": "2023-04-05",
+     "firstPublicationDate": "2023-03-29"
+    },
+    {
+     "id": "42016763",
+     "source": "MED",
+     "pmid": "42016763",
+     "pmcid": "PMC13094535",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC13094535"
+      ]
+     },
+     "doi": "10.1002/exp.20240469",
+     "title": "Micro Pattern-Based 3D Cell Culture Platform: An Overview of Technologies and Applications.",
+     "authorString": "Zhu X, Li Y, Long H, Wu Y, Sun N, Li S, Liu Y, Xie H, Bao J.",
+     "journalTitle": "Exploration (Beijing)",
+     "issue": "2",
+     "journalVolume": "6",
+     "pubYear": "2026",
+     "journalIssn": "2766-8509; 2766-2098; ",
+     "pageInfo": "20240469",
+     "pubType": "review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 2,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "N",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "doi"
+      ]
+     },
+     "firstIndexDate": "2026-04-23",
+     "firstPublicationDate": "2026-02-24"
+    },
+    {
+     "id": "35129570",
+     "source": "MED",
+     "pmid": "35129570",
+     "doi": "10.1039/d1nr05716b",
+     "title": "Characterizing the free-energy landscapes of DNA origamis.",
+     "authorString": "Wong CK, Tang C, Schreck JS, Doye JPK.",
+     "journalTitle": "Nanoscale",
+     "issue": "7",
+     "journalVolume": "14",
+     "pubYear": "2022",
+     "journalIssn": "2040-3364; 2040-3372; ",
+     "pageInfo": "2638-2648",
+     "pubType": "journal article",
+     "isOpenAccess": "N",
+     "inEPMC": "N",
+     "inPMC": "N",
+     "hasPDF": "N",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 11,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "N",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2022-02-10",
+     "firstPublicationDate": "2022-02-17"
+    },
+    {
+     "id": "38239102",
+     "source": "MED",
+     "pmid": "38239102",
+     "pmcid": "PMC10898420",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC10898420"
+      ]
+     },
+     "doi": "10.1039/d3lc00860f",
+     "title": "Lipid vesicle-based molecular robots.",
+     "authorString": "Peng Z, Iwabuchi S, Izumi K, Takiguchi S, Yamaji M, Fujita S, Suzuki H, Kambara F, Fukasawa G, Cooney A, Di Michele L, Elani Y, Matsuura T, Kawano R.",
+     "journalTitle": "Lab Chip",
+     "issue": "5",
+     "journalVolume": "24",
+     "pubYear": "2024",
+     "journalIssn": "1473-0197; 1473-0189; ",
+     "pageInfo": "996-1029",
+     "pubType": "research support, non-u.s. gov't; review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "N",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 16,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "pdb"
+      ]
+     },
+     "firstIndexDate": "2024-01-19",
+     "firstPublicationDate": "2024-02-27"
+    },
+    {
+     "id": "34588308",
+     "source": "MED",
+     "pmid": "34588308",
+     "pmcid": "PMC8501782",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC8501782"
+      ]
+     },
+     "doi": "10.1073/pnas.2109057118",
+     "title": "DNA origami patterning of synthetic T cell receptors reveals spatial control of the sensitivity and kinetics of signal activation.",
+     "authorString": "Dong R, Aksel T, Chan W, Germain RN, Vale RD, Douglas SM.",
+     "journalTitle": "Proc Natl Acad Sci U S A",
+     "issue": "40",
+     "journalVolume": "118",
+     "pubYear": "2021",
+     "journalIssn": "0027-8424; 1091-6490; ",
+     "pageInfo": "e2109057118",
+     "pubType": "research support, non-u.s. gov't; research-article; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+     "isOpenAccess": "N",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 67,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "N",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "doi"
+      ]
+     },
+     "firstIndexDate": "2021-10-01",
+     "firstPublicationDate": "2021-10-01"
+    },
+    {
+     "id": "35025394",
+     "source": "MED",
+     "pmid": "35025394",
+     "doi": "10.1021/acsabm.9b01191",
+     "title": "Deformation-Resistant, Double-Layer DNA Self-Assembled Nanoraft with High Positioning Precision.",
+     "authorString": "Zhang Y, Li F, Mao X, Li M, Zuo X.",
+     "journalTitle": "ACS Appl Bio Mater",
+     "issue": "5",
+     "journalVolume": "3",
+     "pubYear": "2020",
+     "journalIssn": "2576-6422",
+     "pageInfo": "2610-2616",
+     "pubType": "journal article",
+     "isOpenAccess": "N",
+     "inEPMC": "N",
+     "inPMC": "N",
+     "hasPDF": "N",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 1,
+     "hasReferences": "N",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "N",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2022-01-14",
+     "firstPublicationDate": "2020-01-27"
+    },
+    {
+     "id": "37996416",
+     "source": "MED",
+     "pmid": "37996416",
+     "pmcid": "PMC10667507",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC10667507"
+      ]
+     },
+     "doi": "10.1038/s41467-023-43558-8",
+     "title": "DNA T-shaped crossover tiles for 2D tessellation and nanoring reconfiguration.",
+     "authorString": "Yang Q, Chang X, Lee JY, Saji M, Zhang F.",
+     "journalTitle": "Nat Commun",
+     "issue": "1",
+     "journalVolume": "14",
+     "pubYear": "2023",
+     "journalIssn": "2041-1723",
+     "pageInfo": "7675",
+     "pubType": "research support, non-u.s. gov't; research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 11,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2023-11-24",
+     "firstPublicationDate": "2023-11-23"
+    },
+    {
+     "id": "35208439",
+     "source": "MED",
+     "pmid": "35208439",
+     "pmcid": "PMC8876680",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC8876680"
+      ]
+     },
+     "doi": "10.3390/mi13020315",
+     "title": "Therapeutic Applications of Programmable DNA Nanostructures.",
+     "authorString": "Aye SL, Sato Y.",
+     "journalTitle": "Micromachines (Basel)",
+     "issue": "2",
+     "journalVolume": "13",
+     "pubYear": "2022",
+     "journalIssn": "2072-666x",
+     "pageInfo": "315",
+     "pubType": "review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 11,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "pdb"
+      ]
+     },
+     "firstIndexDate": "2022-02-25",
+     "firstPublicationDate": "2022-02-17"
+    },
+    {
+     "id": "33287133",
+     "source": "MED",
+     "pmid": "33287133",
+     "pmcid": "PMC7731452",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC7731452"
+      ]
+     },
+     "doi": "10.3390/s20236899",
+     "title": "DNA Origami-Enabled Biosensors.",
+     "authorString": "Wang S, Zhou Z, Ma N, Yang S, Li K, Teng C, Ke Y, Tian Y.",
+     "journalTitle": "Sensors (Basel)",
+     "issue": "23",
+     "journalVolume": "20",
+     "pubYear": "2020",
+     "journalIssn": "1424-8220",
+     "pageInfo": "E6899",
+     "pubType": "review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 44,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "doi"
+      ]
+     },
+     "firstIndexDate": "2020-12-09",
+     "firstPublicationDate": "2020-12-03"
+    },
+    {
+     "id": "37257165",
+     "source": "MED",
+     "pmid": "37257165",
+     "pmcid": "PMC10273234",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC10273234"
+      ]
+     },
+     "doi": "10.1021/jacs.3c02083",
+     "title": "Cascaded, Feedback-Driven, and Spatially Localized Emergence of Constitutional Dynamic Networks Driven by Enzyme-Free Catalytic DNA Circuits.",
+     "authorString": "Zhou Z, Lin N, Ouyang Y, Liu S, Zhang Y, Willner I.",
+     "journalTitle": "J Am Chem Soc",
+     "issue": "23",
+     "journalVolume": "145",
+     "pubYear": "2023",
+     "journalIssn": "0002-7863; 1520-5126; ",
+     "pageInfo": "12617-12629",
+     "pubType": "research support, non-u.s. gov't; research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 40,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2023-06-01",
+     "firstPublicationDate": "2023-05-31"
+    },
+    {
+     "id": "29654315",
+     "source": "MED",
+     "pmid": "29654315",
+     "pmcid": "PMC5899095",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC5899095"
+      ]
+     },
+     "doi": "10.1038/s41467-018-03601-5",
+     "title": "Real-time magnetic actuation of DNA nanodevices via modular integration with stiff micro-levers.",
+     "authorString": "Lauback S, Mattioli KR, Marras AE, Armstrong M, Rudibaugh TP, Sooryakumar R, Castro CE.",
+     "journalTitle": "Nat Commun",
+     "issue": "1",
+     "journalVolume": "9",
+     "pubYear": "2018",
+     "journalIssn": "2041-1723",
+     "pageInfo": "1446",
+     "pubType": "research-article; research support, u.s. gov't, non-p.h.s.; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 72,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2018-04-15",
+     "firstPublicationDate": "2018-04-13"
+    },
+    {
+     "id": "38076646",
+     "source": "MED",
+     "pmid": "38076646",
+     "pmcid": "PMC10701289",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC10701289"
+      ]
+     },
+     "doi": "10.1016/j.bioactmat.2023.10.025",
+     "title": "DNA tetrahedral nanostructures for the biomedical application and spatial orientation of biomolecules.",
+     "authorString": "Wang W, Lin M, Wang W, Shen Z, Wu ZS.",
+     "journalTitle": "Bioact Mater",
+     "journalVolume": "33",
+     "pubYear": "2024",
+     "journalIssn": "2452-199x",
+     "pageInfo": "279-310",
+     "pubType": "review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 44,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2023-12-22",
+     "firstPublicationDate": "2023-11-24"
+    },
+    {
+     "id": "38282076",
+     "source": "MED",
+     "pmid": "38282076",
+     "pmcid": "PMC11005737",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC11005737"
+      ]
+     },
+     "doi": "10.1002/advs.202308659",
+     "title": "Bridging Smart Nanosystems with Clinically Relevant Models and Advanced Imaging for Precision Drug Delivery.",
+     "authorString": "Zhou Q, Liu Q, Wang Y, Chen J, Schmid O, Rehberg M, Yang L.",
+     "journalTitle": "Adv Sci (Weinh)",
+     "issue": "14",
+     "journalVolume": "11",
+     "pubYear": "2024",
+     "journalIssn": "2198-3844",
+     "pageInfo": "e2308659",
+     "pubType": "research support, non-u.s. gov't; review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 29,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2024-01-30",
+     "firstPublicationDate": "2024-01-28"
+    },
+    {
+     "id": "25470497",
+     "source": "MED",
+     "pmid": "25470497",
+     "pmcid": "PMC4268701",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC4268701"
+      ]
+     },
+     "doi": "10.1038/ncomms6578",
+     "title": "Lattice-free prediction of three-dimensional structure of programmed DNA assemblies.",
+     "authorString": "Pan K, Kim DN, Zhang F, Adendorff MR, Yan H, Bathe M.",
+     "journalTitle": "Nat Commun",
+     "journalVolume": "5",
+     "pubYear": "2014",
+     "journalIssn": "2041-1723",
+     "pageInfo": "5578",
+     "pubType": "research support, non-u.s. gov't; research-article; research support, u.s. gov't, non-p.h.s.; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 71,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "pdb"
+      ]
+     },
+     "firstIndexDate": "2014-12-04",
+     "firstPublicationDate": "2014-12-03"
+    },
+    {
+     "id": "25301973",
+     "source": "MED",
+     "pmid": "25301973",
+     "pmcid": "PMC4260265",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC4260265"
+      ]
+     },
+     "doi": "10.1126/science.1258361",
+     "title": "Casting inorganic structures with DNA molds.",
+     "authorString": "Sun W, Boulais E, Hakobyan Y, Wang WL, Guan A, Bathe M, Yin P.",
+     "journalTitle": "Science",
+     "issue": "6210",
+     "journalVolume": "346",
+     "pubYear": "2014",
+     "journalIssn": "0036-8075; 1095-9203; ",
+     "pageInfo": "1258361",
+     "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+     "isOpenAccess": "N",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 196,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2014-10-12",
+     "firstPublicationDate": "2014-10-09"
+    },
+    {
+     "id": "21594298",
+     "source": "MED",
+     "pmid": "21594298",
+     "pmcid": "PMC3328352",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC3328352"
+      ]
+     },
+     "doi": "10.1039/c1cs15057j",
+     "title": "DNA origami: a quantum leap for self-assembly of complex structures.",
+     "authorString": "T\u00f8rring T, Voigt NV, Nangreave J, Yan H, Gothelf KV.",
+     "journalTitle": "Chem Soc Rev",
+     "issue": "12",
+     "journalVolume": "40",
+     "pubYear": "2011",
+     "journalIssn": "0306-0012; 1460-4744; ",
+     "pageInfo": "5636-5646",
+     "pubType": "research support, non-u.s. gov't; research-article; review; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+     "isOpenAccess": "N",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 296,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2011-05-20",
+     "firstPublicationDate": "2011-05-19"
+    },
+    {
+     "id": "20825190",
+     "source": "MED",
+     "pmid": "20825190",
+     "pmcid": "PMC3071357",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC3071357"
+      ]
+     },
+     "doi": "10.1021/ja106292x",
+     "title": "Molecular behavior of DNA origami in higher-order self-assembly.",
+     "authorString": "Li Z, Liu M, Wang L, Nangreave J, Yan H, Liu Y.",
+     "journalTitle": "J Am Chem Soc",
+     "issue": "38",
+     "journalVolume": "132",
+     "pubYear": "2010",
+     "journalIssn": "0002-7863; 1520-5126; ",
+     "pageInfo": "13545-13552",
+     "pubType": "research support, non-u.s. gov't; research-article; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+     "isOpenAccess": "N",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 80,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2010-09-29",
+     "firstPublicationDate": "2010-09-01"
+    }
+   ]
+  }
+ },
+ "\"DNA origami\" AND \"engineered defects\" AND stiffness": {
+  "version": "6.9",
+  "hitCount": 3,
+  "request": {
+   "queryString": "\"DNA origami\" AND \"engineered defects\" AND stiffness",
+   "resultType": "lite",
+   "cursorMark": "*",
+   "pageSize": 20,
+   "sort": "",
+   "synonym": false
+  },
+  "resultList": {
+   "result": [
+    {
+     "id": "42300112",
+     "source": "MED",
+     "pmid": "42300112",
+     "pmcid": "PMC13231426",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC13231426"
+      ]
+     },
+     "doi": "10.1039/d6sm00383d",
+     "title": "Crowding-induced collapse and adsorption of polymers with nonuniform bending stiffness.",
+     "authorString": "Cantrall GR, Chauhan G, Abel SM.",
+     "journalTitle": "Soft Matter",
+     "issue": "24",
+     "journalVolume": "22",
+     "pubYear": "2026",
+     "journalIssn": "1744-683x; 1744-6848; ",
+     "pageInfo": "4173-4183",
+     "pubType": "research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "N",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 0,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "N",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2026-06-18",
+     "firstPublicationDate": "2026-06-23"
+    },
+    {
+     "id": "34850119",
+     "source": "MED",
+     "pmid": "34850119",
+     "pmcid": "PMC8643692",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC8643692"
+      ]
+     },
+     "doi": "10.1093/nar/gkab1119",
+     "title": "Modulating the chemo-mechanical response of structured DNA assemblies through binding molecules.",
+     "authorString": "Lee C, Kim YJ, Kim KS, Lee JY, Kim DN.",
+     "journalTitle": "Nucleic Acids Res",
+     "issue": "21",
+     "journalVolume": "49",
+     "pubYear": "2021",
+     "journalIssn": "0305-1048; 1362-4962; ",
+     "pageInfo": "12591-12599",
+     "pubType": "research support, non-u.s. gov't; research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 14,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "gen"
+      ]
+     },
+     "firstIndexDate": "2021-12-02",
+     "firstPublicationDate": "2021-12-01"
+    },
+    {
+     "id": "31291091",
+     "source": "MED",
+     "pmid": "31291091",
+     "doi": "10.1021/acsnano.9b03770",
+     "title": "Tailoring the Mechanical Stiffness of DNA Nanostructures Using Engineered Defects.",
+     "authorString": "Lee C, Kim KS, Kim YJ, Lee JY, Kim DN.",
+     "journalTitle": "ACS Nano",
+     "issue": "7",
+     "journalVolume": "13",
+     "pubYear": "2019",
+     "journalIssn": "1936-0851; 1936-086x; ",
+     "pageInfo": "8329-8336",
+     "pubType": "research support, non-u.s. gov't; journal article",
+     "isOpenAccess": "N",
+     "inEPMC": "N",
+     "inPMC": "N",
+     "hasPDF": "N",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 26,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2019-07-11",
+     "firstPublicationDate": "2019-07-10"
+    }
+   ]
+  }
+ },
+ "TITLE:\"Tailoring the Mechanical Stiffness of DNA Nanostructures Using Engineered Defects\"": {
+  "version": "6.9",
+  "hitCount": 1,
+  "request": {
+   "queryString": "TITLE:\"Tailoring the Mechanical Stiffness of DNA Nanostructures Using Engineered Defects\"",
+   "resultType": "lite",
+   "cursorMark": "*",
+   "pageSize": 20,
+   "sort": "",
+   "synonym": false
+  },
+  "resultList": {
+   "result": [
+    {
+     "id": "31291091",
+     "source": "MED",
+     "pmid": "31291091",
+     "doi": "10.1021/acsnano.9b03770",
+     "title": "Tailoring the Mechanical Stiffness of DNA Nanostructures Using Engineered Defects.",
+     "authorString": "Lee C, Kim KS, Kim YJ, Lee JY, Kim DN.",
+     "journalTitle": "ACS Nano",
+     "issue": "7",
+     "journalVolume": "13",
+     "pubYear": "2019",
+     "journalIssn": "1936-0851; 1936-086x; ",
+     "pageInfo": "8329-8336",
+     "pubType": "research support, non-u.s. gov't; journal article",
+     "isOpenAccess": "N",
+     "inEPMC": "N",
+     "inPMC": "N",
+     "hasPDF": "N",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 26,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2019-07-11",
+     "firstPublicationDate": "2019-07-10"
+    }
+   ]
+  }
+ },
+ "\"DNA origami\" AND \"interhelical\" AND \"shear\"": {
+  "version": "6.9",
+  "hitCount": 6,
+  "request": {
+   "queryString": "\"DNA origami\" AND \"interhelical\" AND \"shear\"",
+   "resultType": "lite",
+   "cursorMark": "*",
+   "pageSize": 20,
+   "sort": "",
+   "synonym": false
+  },
+  "resultList": {
+   "result": [
+    {
+     "id": "33872513",
+     "source": "MED",
+     "pmid": "33872513",
+     "pmcid": "PMC8155336",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC8155336"
+      ]
+     },
+     "doi": "10.1021/acsnano.1c00188",
+     "title": "A Versatile DNA Origami-Based Plasmonic Nanoantenna for Label-Free Single-Molecule Surface-Enhanced Raman Spectroscopy.",
+     "authorString": "Tapio K, Mostafa A, Kanehira Y, Suma A, Dutta A, Bald I.",
+     "journalTitle": "ACS Nano",
+     "issue": "4",
+     "journalVolume": "15",
+     "pubYear": "2021",
+     "journalIssn": "1936-0851; 1936-086x; ",
+     "pageInfo": "7065-7077",
+     "pubType": "research support, non-u.s. gov't; research-article; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 73,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "doi"
+      ]
+     },
+     "firstIndexDate": "2021-04-21",
+     "firstPublicationDate": "2021-04-19"
+    },
+    {
+     "id": "35921495",
+     "source": "MED",
+     "pmid": "35921495",
+     "pmcid": "PMC9523718",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC9523718"
+      ]
+     },
+     "doi": "10.1021/acs.chemrev.1c00757",
+     "title": "Protein Design: From the Aspect of Water Solubility and Stability.",
+     "authorString": "Qing R, Hao S, Smorodina E, Jin D, Zalevsky A, Zhang S.",
+     "journalTitle": "Chem Rev",
+     "issue": "18",
+     "journalVolume": "122",
+     "pubYear": "2022",
+     "journalIssn": "0009-2665; 1520-6890; ",
+     "pageInfo": "14085-14179",
+     "pubType": "research support, non-u.s. gov't; review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 159,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "pdb"
+      ]
+     },
+     "firstIndexDate": "2022-08-05",
+     "firstPublicationDate": "2022-08-03"
+    },
+    {
+     "id": "PMC7080123",
+     "source": "PMC",
+     "pmcid": "PMC7080123",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC7080123"
+      ]
+     },
+     "title": "Abstracts",
+     "journalTitle": "Eur Biophys J",
+     "issue": "suppl 1",
+     "journalVolume": "46",
+     "pubYear": "2017",
+     "journalIssn": "0175-7571; 1432-1017; ",
+     "pageInfo": "43-402",
+     "pubType": "calendar",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 0,
+     "hasReferences": "N",
+     "hasTextMinedTerms": "N",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2020-03-26",
+     "firstPublicationDate": "2017-01-01"
+    },
+    {
+     "id": "39636142",
+     "source": "MED",
+     "pmid": "39636142",
+     "pmcid": "PMC11618884",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC11618884"
+      ]
+     },
+     "doi": "10.1002/pro.5207",
+     "title": "Special issue title: The Protein Society 38th Annual Symposium, July 2024, Vancouver, Canada.",
+     "journalTitle": "Protein Sci",
+     "journalVolume": "33 Suppl 1",
+     "pubYear": "2024",
+     "journalIssn": "0961-8368; 1469-896x; ",
+     "pageInfo": "e5207",
+     "pubType": "abstract; journal article",
+     "isOpenAccess": "N",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 0,
+     "hasReferences": "N",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "N",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "pdb"
+      ]
+     },
+     "firstIndexDate": "2024-12-06",
+     "firstPublicationDate": "2024-12-01"
+    },
+    {
+     "id": "31566831",
+     "source": "MED",
+     "pmid": "31566831",
+     "pmcid": "PMC6767941",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC6767941"
+      ]
+     },
+     "doi": "10.1002/pro.3710",
+     "title": "Award Winners and Abstracts of the 33rd Annual Symposium of The Protein Society; Seattle, Washington, June 30-July 3, 2019.",
+     "journalTitle": "Protein Sci",
+     "issue": "s1",
+     "journalVolume": "28",
+     "pubYear": "2019",
+     "journalIssn": "0961-8368; 1469-896x; ",
+     "pageInfo": "12-211",
+     "pubType": "abstract; journal article",
+     "isOpenAccess": "N",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 0,
+     "hasReferences": "N",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "gen",
+       "uniprot",
+       "nct",
+       "pdb"
+      ]
+     },
+     "firstIndexDate": "2019-10-05",
+     "firstPublicationDate": "2019-09-01"
+    },
+    {
+     "id": "PMC7167625",
+     "source": "PMC",
+     "pmcid": "PMC7167625",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC7167625"
+      ]
+     },
+     "title": "Abstracts",
+     "journalTitle": "J Pept Sci",
+     "issue": "suppl 2",
+     "journalVolume": "22",
+     "pubYear": "2016",
+     "journalIssn": "1075-2617; 1099-1387; ",
+     "pageInfo": "S6-S251",
+     "pubType": "abstract",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 0,
+     "hasReferences": "N",
+     "hasTextMinedTerms": "N",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "N",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2020-04-24",
+     "firstPublicationDate": "2016-09-01"
+    }
+   ]
+  }
+ },
+ "\"DNA nanostructure\" AND crossover AND \"sliding\" AND mechanical": {
+  "version": "6.9",
+  "hitCount": 8,
+  "request": {
+   "queryString": "\"DNA nanostructure\" AND crossover AND \"sliding\" AND mechanical",
+   "resultType": "lite",
+   "cursorMark": "*",
+   "pageSize": 20,
+   "sort": "",
+   "synonym": false
+  },
+  "resultList": {
+   "result": [
+    {
+     "id": "41683500",
+     "source": "MED",
+     "pmid": "41683500",
+     "pmcid": "PMC12899278",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC12899278"
+      ]
+     },
+     "doi": "10.3390/molecules31030523",
+     "title": "Omega Nucleic Acids (\u03a9NA), Ultimate Nucleic Acids for Future Technology.",
+     "authorString": "Hamada S, Murayama K, Takezawa Y, Toyoda R, Kuzuya A.",
+     "journalTitle": "Molecules",
+     "issue": "3",
+     "journalVolume": "31",
+     "pubYear": "2026",
+     "journalIssn": "1420-3049",
+     "pageInfo": "523",
+     "pubType": "other; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 0,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "doi"
+      ]
+     },
+     "firstIndexDate": "2026-02-14",
+     "firstPublicationDate": "2026-02-02"
+    },
+    {
+     "id": "38005617",
+     "source": "MED",
+     "pmid": "38005617",
+     "pmcid": "PMC10675487",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC10675487"
+      ]
+     },
+     "doi": "10.3390/s23229229",
+     "title": "DNA-Based Gold Nanoparticle Assemblies: From Structure Constructions to Sensing Applications.",
+     "authorString": "Xie M, Jiang J, Chao J.",
+     "journalTitle": "Sensors (Basel)",
+     "issue": "22",
+     "journalVolume": "23",
+     "pubYear": "2023",
+     "journalIssn": "1424-8220",
+     "pageInfo": "9229",
+     "pubType": "review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 10,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "N",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "doi"
+      ]
+     },
+     "firstIndexDate": "2023-11-26",
+     "firstPublicationDate": "2023-11-16"
+    },
+    {
+     "id": "32589832",
+     "source": "MED",
+     "pmid": "32589832",
+     "pmcid": "PMC7467825",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC7467825"
+      ]
+     },
+     "doi": "10.1021/acssynbio.0c00235",
+     "title": "Robotic DNA Nanostructures.",
+     "authorString": "Nummelin S, Shen B, Piskunen P, Liu Q, Kostiainen MA, Linko V.",
+     "journalTitle": "ACS Synth Biol",
+     "issue": "8",
+     "journalVolume": "9",
+     "pubYear": "2020",
+     "journalIssn": "2161-5063",
+     "pageInfo": "1923-1940",
+     "pubType": "research support, non-u.s. gov't; review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 98,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2020-06-27",
+     "firstPublicationDate": "2020-07-12"
+    },
+    {
+     "id": "36990451",
+     "source": "MED",
+     "pmid": "36990451",
+     "pmcid": "PMC10103138",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC10103138"
+      ]
+     },
+     "doi": "10.1021/acs.chemrev.3c00028",
+     "title": "Recent Advances in DNA Origami-Engineered Nanomaterials and Applications.",
+     "authorString": "Zhan P, Peil A, Jiang Q, Wang D, Mousavi S, Xiong Q, Shen Q, Shang Y, Ding B, Lin C, Ke Y, Liu N.",
+     "journalTitle": "Chem Rev",
+     "issue": "7",
+     "journalVolume": "123",
+     "pubYear": "2023",
+     "journalIssn": "0009-2665; 1520-6890; ",
+     "pageInfo": "3976-4050",
+     "pubType": "research support, non-u.s. gov't; review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 210,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "doi"
+      ]
+     },
+     "firstIndexDate": "2023-04-05",
+     "firstPublicationDate": "2023-03-29"
+    },
+    {
+     "id": "33344875",
+     "source": "MED",
+     "pmid": "33344875",
+     "pmcid": "PMC7725538",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC7725538"
+      ]
+     },
+     "doi": "10.1063/5.0027022",
+     "title": "Emerging applications at the interface of DNA nanotechnology and cellular membranes: Perspectives from biology, engineering, and physics.",
+     "authorString": "Wang W, Arias DS, Deserno M, Ren X, Taylor RE.",
+     "journalTitle": "APL Bioeng",
+     "issue": "4",
+     "journalVolume": "4",
+     "pubYear": "2020",
+     "journalIssn": "2473-2877",
+     "pageInfo": "041507",
+     "pubType": "review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 14,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "N",
+     "hasTMAccessionNumbers": "Y",
+     "tmAccessionTypeList": {
+      "accessionType": [
+       "doi"
+      ]
+     },
+     "firstIndexDate": "2020-12-24",
+     "firstPublicationDate": "2020-12-08"
+    },
+    {
+     "id": "32714763",
+     "source": "MED",
+     "pmid": "32714763",
+     "pmcid": "PMC7375253",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC7375253"
+      ]
+     },
+     "doi": "10.1002/advs.202000557",
+     "title": "Dynamic DNA Assemblies in Biomedical Applications.",
+     "authorString": "Hu Y, Wang Y, Yan J, Wen N, Xiong H, Cai S, He Q, Peng D, Liu Z, Liu Y.",
+     "journalTitle": "Adv Sci (Weinh)",
+     "issue": "14",
+     "journalVolume": "7",
+     "pubYear": "2020",
+     "journalIssn": "2198-3844",
+     "pageInfo": "2000557",
+     "pubType": "review-article; review; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 47,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "N",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2020-07-28",
+     "firstPublicationDate": "2020-06-08"
+    },
+    {
+     "id": "32449920",
+     "source": "MED",
+     "pmid": "32449920",
+     "pmcid": "PMC7337935",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC7337935"
+      ]
+     },
+     "doi": "10.1093/nar/gkaa417",
+     "title": "Design, optimization and analysis of large DNA and RNA nanostructures through interactive visualization, editing and molecular simulation.",
+     "authorString": "Poppleton E, Bohlin J, Matthies M, Sharma S, Zhang F, \u0160ulc P.",
+     "journalTitle": "Nucleic Acids Res",
+     "issue": "12",
+     "journalVolume": "48",
+     "pubYear": "2020",
+     "journalIssn": "0305-1048; 1362-4962; ",
+     "pageInfo": "e72",
+     "pubType": "research support, non-u.s. gov't; research-article; research support, u.s. gov't, non-p.h.s.; journal article",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "Y",
+     "citedByCount": 125,
+     "hasReferences": "Y",
+     "hasTextMinedTerms": "Y",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2020-05-27",
+     "firstPublicationDate": "2020-07-01"
+    },
+    {
+     "id": "PMC7080123",
+     "source": "PMC",
+     "pmcid": "PMC7080123",
+     "fullTextIdList": {
+      "fullTextId": [
+       "PMC7080123"
+      ]
+     },
+     "title": "Abstracts",
+     "journalTitle": "Eur Biophys J",
+     "issue": "suppl 1",
+     "journalVolume": "46",
+     "pubYear": "2017",
+     "journalIssn": "0175-7571; 1432-1017; ",
+     "pageInfo": "43-402",
+     "pubType": "calendar",
+     "isOpenAccess": "Y",
+     "inEPMC": "Y",
+     "inPMC": "Y",
+     "hasPDF": "Y",
+     "hasBook": "N",
+     "hasSuppl": "N",
+     "citedByCount": 0,
+     "hasReferences": "N",
+     "hasTextMinedTerms": "N",
+     "hasDbCrossReferences": "N",
+     "hasLabsLinks": "Y",
+     "hasTMAccessionNumbers": "N",
+     "firstIndexDate": "2020-03-26",
+     "firstPublicationDate": "2017-01-01"
+    }
+   ]
+  }
+ }
+}

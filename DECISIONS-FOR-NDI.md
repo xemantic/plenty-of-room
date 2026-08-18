@@ -31,21 +31,35 @@ and this file is the reviewable form of the same six.
 | 5 | which scaffold? | *"M13, circular ~7-8K nucleotides … To use excess scaffold, just make the tile thicker. The 1700 nucleotide structure the agent is proposing seems… thin and low stiffness"* | **ANSWERED**, and it carries a criticism of the tile this programme has been modelling |
 | 6 | a two-layer tile? | *"just make the tile thicker"* | **ANSWERED BY IMPLICATION — yes, and volunteered rather than granted** |
 
-**1. Decisions 1 and 2 are ONE decision, and this file asked them as two.**
+**1. Decisions 1 and 2 are ONE decision, this file asked them as two — and the reserve has only ONE
+claimant, because we measured the other and it buys nothing.**
 Both answers name the same reserve — *"additional operating margin"* bought with
 *"additional work on stabilizing DNA origami at low salt"* — so the buffer and the tall layer are two
-claimants on one budget line, and NDI is entitled to spend it once.
-This programme can rank them on its own numbers and the ranking is not close:
-the buffer buys **1.35×, 1.57× and 1.75×** at the state the device occupies (`C-0091`), three routes that are
-**common mode** below `C-0005`'s 123–214 % mean-field error and therefore not independent of each other;
-the tall layer is the **only** route to a whole clause of §3 (`C-0050`).
-**Of the two spends, the one this programme can price is the layer** — it buys a whole clause of §3, where the
-buffer buys 1.35–1.75× that is smaller than the error bar it is quoted inside.
-**That is a ranking of the two BUYS and not of the two PRICES, and only NDI holds the second column.**
-If stabilising origami at 0.5 mM and reaching a 17–26 nm layer cost the same, the layer wins on this
-programme's numbers; if they do not, this ranking says nothing at all, and saying otherwise would repeat the
-error the answer to decision 1 just caught — see the *"it costs nothing"* bullet below, which was a statement
-about the physics standing in for a statement about the cost.
+claimants on one budget line and NDI is entitled to spend it once.
+
+~~Of the two spends, the one this programme can price is the layer — it buys a whole clause of §3, where the
+buffer buys 1.35–1.75× that is smaller than the error bar it is quoted inside.~~
+**WITHDRAWN, 2026-08-18, by our own measurement** ([`C-0110`](gpd/claims/C-0110-device-b-tall-gap.md),
+[`C-0114`](gpd/claims/C-0114-one-reserve.md)).
+We wrote that before anything in this programme had ever evaluated the **bias** at a tall gap.
+Now that it has: **§3's 100 pN stops arriving across a gap of 13.6989179 nm at 0.5 mM** — *below the bottom*
+of NDI's own 17–26 nm band, 1.241× short at 17 nm and 1.898× at 26 — so a tall layer is refused at
+**96 of 96** states on §3's *acceptable* clause and admitted at **1 of 96** on the *desired* one, which is a
+bracket disagreement rather than a design.
+**A tall layer does not trade device A for device B. It loses both.**
+
+What `C-0050` priced is real and it is a **displacement**: the uncoupled tile reaches a 10 nm stroke at
+**52 of 96** tall states. The force does not follow it
+([`CH-0127`](gpd/challenges/CH-0127-the-tall-layer-escape-is-kinematic-not-actuated.md)).
+
+**So the ranking is not a ranking any more.**
+The reserve's one remaining claimant is the buffer, worth up to **1.75×** at the state the device occupies
+on **three** surviving routes (`C-0091`) that are **common mode** below `C-0005`'s 123–214 % one-loop
+error — an error larger than any of them, so they do not diversify the exposure and must not be counted as
+three pieces of evidence.
+**And that is a ranking of the two BUYS, not of the two PRICES; only NDI holds the second column** — the
+error the answer to decision 1 caught, and one this file will not repeat.
+The re-issued question is in **§1+2** below.
 
 **2. §3 specifies a ~10 nm tile and this programme has modelled a 2 nm one.**
 §3's parameter row reads *"Tile thickness ~10 nm (single-layer honeycomb)"*, which cannot hold both ways —
@@ -86,7 +100,7 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 | # | Decision | Owner task | Cost of deferring | Programme's recommendation | **NDI's answer (2026-08-18)** |
 |---|---|---|---|---|---|
 | 1 | Is 0.5 mM MgCl₂ acceptable as the Gen-1 nominal buffer, instead of §3's 2 mM? | `T-63` | ~~The device sits **on** its own pull-in fold at 2 mM~~ — **withdrawn, `C-0084`**; the recommended element does not fold at 2 mM at all, on **any** elastica branch (`C-0092`). The cost of deferring is now a **margin**, 1.39× against 1.87× at worst, not a failure | **Adopt 0.5 mM — but as a PREFERENCE, not a requirement, and on THREE routes rather than six (`C-0091`)** | **PRICED, NOT GRANTED** — reachable, at the cost of origami stabilisation work and a reserve held for margin. 2 mM stays the nominal; `T-50` is **not** deleted |
-| 2 | May the polymer layer be taller than 10 nm — 17–26 nm? | `T-115` | §3's *desired* ~10 nm stroke stays unreachable on §3's own stack | **A yes/no is enough**; a *no* closes a branch cheaply | **NOT EXAMINED**, and it draws the **same** reserve as decision 1 — so 1 and 2 are one decision, and this programme's numbers say spend it here |
+| 2 | May the polymer layer be taller than 10 nm — 17–26 nm? | `T-115` | §3's *desired* ~10 nm stroke stays unreachable on §3's own stack | ~~**A yes/no is enough**~~ — **the branch is now closed by measurement, and the answer does not depend on the ruling** | **NOT EXAMINED**, and it draws the **same** reserve as decision 1. **We then measured it: a tall layer delivers §3's 100 pN across NO gap in NDI's band** (`C-0110`), so the reserve has one claimant and 1+2 collapse to the buffer alone |
 | 3 | What is the electrode made of, and where is its potential of zero charge? | `P-13` | 2.6× on the one hold-down no design can remove | **Name a material**; the programme will not choose one | **TEMPLATE-STRIPPED GOLD.** The 2.6× bracket collapses onto its adverse end; the **PZC is still not given** |
 | 4 | Which device does §3's *desired* clause ask for? | `T-112` | Every desired-stroke number in the corpus has to be quoted twice | **One device, placed at the acceptable clause** | **TWO DEVICES.** Device B is placed at 10 pN/nm and its binding constraint becomes `C-0017`'s stability floor |
 | 5 | What is the scaffold — linear or circular, M13 or synthetic, and how long? | `T-154` | A seam costs 6–12 of 34 arm stations, and §3's 40.0 nm is not a buildable seamless width | **A purpose-length scaffold**; the choice is a fabrication decision, not a modelling one | **CIRCULAR M13, ~7–8 k nt** — so the remainder is the DEFAULT — and the remedy for the excess is *"just make the tile thicker"* |
@@ -236,8 +250,34 @@ margin, and `T-50` stays on the queue as a multi-week item that a one-word answe
 > whether the reserve is worth spending here at all.
 >
 > **What it changes.** The 16.63–26.12 nm threshold below stands as the *kinematic* requirement for a 10 nm
-> dead-load stroke; what it does not carry is whether such a layer can be actuated at 2 mM. Until `T-192`
-> runs, this decision's *yes* is worth a stroke and an unknown bias.
+> dead-load stroke; what it does not carry is whether such a layer can be actuated at 2 mM. ~~Until `T-192`
+> runs, this decision's *yes* is worth a stroke and an unknown bias.~~
+>
+> ### `T-192` HAS NOW RUN, AND THE OBJECTION IS UPHELD — 2026-08-18, [`C-0110`](gpd/claims/C-0110-device-b-tall-gap.md)
+>
+> **The answer is worse than the objection.** Measured on `C-0008`'s own solver, §3's 100 pN stops arriving
+> across a gap of **13.6989179 nm at 0.5 mM** (11.8724439 at 1 mM, 10.1299463 at 2 mM) — *below the bottom*
+> of the 17–26 nm band, which begins **1.241×** and ends **1.898×** beyond where the 0.5 mM reserve leaves
+> it. 100 pN reaches a resting 17–26 nm gap at **0 of 12** (gap, buffer) cells.
+>
+> **This decision's *yes* is worth a stroke and NO force.** The uncoupled tile does reach a 10 nm stroke, at
+> **52 of 96** tall states — so `C-0050`'s escape is real in *displacement* and empty in *force*, a split no
+> claim here had made ([`CH-0127`](gpd/challenges/CH-0127-the-tall-layer-escape-is-kinematic-not-actuated.md)).
+> §3's *acceptable* clause is refused at **96 of 96** tall states, because a 3 nm stroke from a 17–26 nm
+> layer still leaves a 14–23 nm gap.
+>
+> **And the concession is ours.** This programme's standing rebuttal was that *"the Debye length is three
+> numbers here, and the gap's is counterion-set"*. That is about ion **content** — still true, 6.37–38.94× —
+> and never about the **decay**, which measures 3.6–6.4 nm against a counterion length of 1.54–1.91.
+> Worse, diluting to 0.5 mM makes **NDI's own estimate optimistic** rather than conservative: `ℓ/λ_D` is
+> 0.910–0.983 at 2 mM — NDI's ~4 nm is exactly right — and **0.649–0.819 at 0.5 mM**, because the far
+> field is reached in `κh` and not in `h`.
+>
+> **`CH-0126` also falls out of it**: §3's own *"effort point ~20–25 nm above the electrode"* row cannot be
+> met by a tall layer at all — the effort point lands at **32–41 nm**.
+>
+> **So no ruling is needed on this decision.** It is closed by measurement, in the direction that costs
+> nothing to accept: a tall layer was the only route to §3's desired stroke, and it is not one.
 
 **The question.** §3 specifies a 5–10 nm polymer layer. Is that a hard bound, or a nominal?
 
@@ -261,6 +301,64 @@ substantial re-run across four claims, not a parameter change.
 
 **What deferring costs.** This is the only route in the programme that can buy the desired stroke, so
 while it is open the desired-stroke branch cannot be either pursued or closed.
+
+---
+
+## 1+2 (re-issued as one). The reserve, and its one remaining claimant (`T-194`)
+
+> **This section replaces decisions 1 and 2 as a single decision.**
+> They are kept above, unedited apart from struck text, because they are what the answers were given
+> against. This is `T-194`, claim [`C-0114`](gpd/claims/C-0114-one-reserve.md), and every number in it is
+> derived from a result file by [`tools/T-194-emit-result.py`](tools/T-194-emit-result.py) rather than
+> transcribed.
+
+**Why they are one.** Both answers name the same reserve, and the second says so in one word:
+*"an interesting regime we've been reserving, **again**, for low MgCl₂ concentrations we'd buy with
+additional work on stabilizing DNA origami at low salt."*
+The tall layer is available *at* 0.5 mM, and 0.5 mM is bought with origami-stabilisation work.
+**We asked as two questions what NDI can only spend once**, and that is this programme's own standing
+failure — counting routes that are one number (`C-0091`) — arriving in the deliverable instead of in the
+corpus.
+
+**What each spend buys**, each read at the state the device occupies:
+
+| | buffer: 2 mM → 0.5 mM | tall layer: 10 nm → 17–26 nm |
+|---|---|---|
+| owner | `C-0091` | `C-0110`, filed 2026-08-18 |
+| routes named / surviving | 6 / **3** — one withdrawn, **two are the others read again** | — |
+| best advantage at the operating point | **1.75104168×** | — |
+| weakest surviving advantage | **1.2825845×** | — |
+| the same clause at **zero stroke** | 4.96557132× — **not a state the device occupies** | — |
+| §3's 100 pN reaches | — | **13.6989179 nm** at 0.5 mM |
+| against NDI's 17–26 nm band | — | **1.241× short at 17 nm, 1.898× at 26** |
+| §3 **acceptable** clause | delivered | **0 of 96** states |
+| §3 **desired** clause (device B) | — | **1 of 96** — a bracket disagreement, not a design |
+| stroke alone, uncoupled | — | **52 of 96** — real, and empty of force |
+
+**So the reserve has one claimant.** The layer was withdrawn by our own measurement, not by a ruling.
+
+**And the qualifier on what remains, stated rather than implied.** The three surviving buffer routes are
+**not three pieces of evidence**: two of the six named routes are *transfers* carrying the others' own
+numbers (departures `0.0` and `2.7e−8`), one is withdrawn, and `C-0005`'s one-loop correction — **123–214 %**
+of the leading term — is **common mode to all three and larger than every one of the advantages**.
+
+### The decision we are actually asking for
+
+> **Is a preference worth up to 1.75× at the operating point — inside a 123–214 % error bar that is common
+> mode to every route recommending it — worth the origami-stabilisation work that buying 0.5 mM costs?**
+>
+> **And if it costs something, what?** That line is left open deliberately: the last time this file offered
+> only yes/no shapes, three of six answers came back as a price, a contingency or an answer to a different
+> question — and they were exactly the three with a cost dimension.
+
+**Why we cannot answer it.** We can rank what the two spends **buy** and have just done so. We cannot rank
+what they **cost**: both are bought with the same unpriced currency, and this programme has a column for
+fabrication **yield** wherever it is published and **no column at all** for fabrication **cost**. Writing
+*"it costs nothing"* of 0.5 mM — on `C-0007`'s ≤ 0.4 % layer sensitivity — was a statement about the
+*modulus* standing in for a statement about the *price*, and the answer to decision 1 caught it.
+
+**What deferring costs.** Nothing new. 2 mM stays the nominal, every margin in the corpus is owed there, and
+`T-50` stays on the queue exactly where it was.
 
 ---
 
@@ -310,6 +408,33 @@ programme will then carry the bracket explicitly rather than implicitly.
 
 **What deferring costs.** `C-0021` already states the exposure as a bracket with a threshold rather
 than a guess, so nothing is blocked. The number is simply softer than it needs to be.
+
+### The residue this answer left, and it is a ONE-LINE ask (`T-193`, [`C-0111`](gpd/claims/C-0111-gold-electrode-pzc.md))
+
+**The material half is answered and the PZC half now is too — from the literature, read directly.**
+`E_pzc(Au(111)) = 0.46–0.51 V vs SHE` in 1 mM HClO₄ (Adnan *et al.*, *PCCP* **26**:21419, 2024;
+template-stripped gold is (111)-dominated). Gold is the **stiffest** of the four candidate electrodes, so
+NDI's answer collapses the 2.6× bracket onto its **adverse** end — and **no verdict moves**, verified rather
+than inherited: 0 of 6 gold states confine, the deepest gold well in the box is 8.742 `k_BT` against a
+10 `k_BT` criterion, and the reason is structural (a `1/h³` force integrates to a bounded potential, so
+naming a material changes the amplitude and never the exponent).
+
+**What is left is not a material property — it is the cell's definition of zero**, and it is worth a
+sentence because it decides the **sign** of the force at rest:
+
+> **Is *"zero bias"* in the Gen-1 cell 0 V against a named reference electrode, the cell at open circuit, or
+> two identical electrodes shorted? Gold's potential of zero charge is 0.46–0.51 V vs SHE, and the residual
+> field is negligible only within about 1–5 mV of it — so the three answers are hundreds of millivolts
+> apart, and they differ in the SIGN of the force at rest.**
+
+An electrode sitting at zero volt on the rational scale is **negatively charged**, and it **lifts** the
+negatively charged tile rather than holding it down. The whole sign structure lives inside **11.2 mV** at
+10 nm (lift −6.087, force-free −0.314, hold-down +5.102 mV) — 41× narrower than the offset a bench must
+null — and the requirement is that the electrode be held within **5.102 mV** of its own PZC at the 10 nm
+layer, **0.886 mV** at 5 nm.
+
+**No number is quoted at the lifting sign**, because it falls outside `C-0005`'s point-ion boundary at 9 of
+9 states; the answer is the threshold, not a force.
 
 ---
 

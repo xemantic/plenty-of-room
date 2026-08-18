@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?><article xml:lang="en" article-type="research-article"><front><journal-meta><journal-id journal-id-type="pmc-domain-id">379</journal-id><journal-id journal-id-type="pmc-domain">blackwellopen</journal-id><journal-title-group><journal-title>Chemphyschem</journal-title><abbrev-journal-title>Chemphyschem</abbrev-journal-title></journal-title-group></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC12276039</article-id><article-id pub-id-type="pmcaid">12276039</article-id><article-id pub-id-type="pmcaiid">12276039</article-id><article-id pub-id-type="pmid">40342256</article-id><article-id pub-id-type="doi">10.1002/cphc.202401088</article-id><title-group><article-title>Capacitance Measurements for Evaluating Electrochemical Double‐Layer Models and Potentials of Zero Charge: A Reassessment</article-title></title-group><contrib-group content-type="author"><contrib><name name-style="western"><surname>Schalenbach</surname><given-names initials="M">Maximilian</given-names></name><xref ref-type="aff" rid="cphc202401088-aff-0001">1</xref><xref ref-type="author-notes" rid="_fncrsp93pmc__">✉</xref></contrib><contrib><name name-style="western"><surname>Tempel</surname><given-names initials="H">Hermann</given-names></name><xref ref-type="aff" rid="cphc202401088-aff-0001">1</xref></contrib><contrib><name name-style="western"><surname>Eichel</surname><given-names initials="RA">Rüdiger‐A</given-names></name><xref ref-type="aff" rid="cphc202401088-aff-0001">1</xref><xref ref-type="aff" rid="cphc202401088-aff-0002">2</xref></contrib></contrib-group><aff id="cphc202401088-aff-0001"><label>
+<sup>1</sup>
+</label>Institute of Energy Technologies (IET‐1): Fundamental Electrochemistry, Forschungszentrum Jülich, 52425, Jülich, Germany</aff><aff id="cphc202401088-aff-0002"><label>
+<sup>2</sup>
+</label>Institute of Physical Chemistry, RWTH Aachen University, 52062, Aachen, Germany</aff><author-notes><fn id="_fncrsp93pmc__"><label>✉</label><p>Corresponding author.</p></fn></author-notes><pub-date><day>25</day><month>5</month><year>2025</year></pub-date><volume>26</volume><issue>14</issue><fpage>e202401088</fpage><page-range>e202401088</page-range><pub-history><event event-type="pmc-release"><date><day>20</day><month>7</month><year>2025</year></date></event></pub-history><permissions><copyright-statement>© 2025 The Author(s). ChemPhysChem published by Wiley‐VCH GmbH</copyright-statement><license><license-p>This is an open access article under the terms of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://creativecommons.org/licenses/by/4.0/" ext-link-type="uri">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="CPHC-26-e202401088.pdf" content-type="pmc-pdf"><?cloudpmc-path cd21/12276039/d8664a2ea2a7/CPHC-26-e202401088.pdf?><?cloudpmc-bucket app?><?size 1150418?></self-uri><abstract id="abstract1"><title>Abstract</title><p>Differential capacitances (DCAPs) derived from electrostatic Gouy–Chapman‐type models for electrochemical double layers (DLs) typically show valley‐, bell‐, or camel‐type profiles as a function of the potential, centered around the potential of zero charge. These DCAP profiles are routinely evaluated with measured potential dependencies of capacitances. Here, the influences of hydrogen evolution, oxygen reduction, and oxide formation on the potential dependence of the capacitance of a polished gold electrode are experimentally examined. These parasitic reactions are found to cause most of the potential‐dependent capacitance features that are typically attributed to intrinsic DL properties. With these insights, the historical development of the literature regarding the development of the theoretical framework in relation to capacitance measurements is critically reevaluated. As a result, drawbacks of the 100‐year‐old Gouy–Chapman theory for the DL are identified. Moreover, DCAPs as differences of electrostatic states are discussed as unable to portray measured capacitances that result from capacitive–resistive and dynamic charge displacements in the DL. Hence, the links between theories and experiments are critically assessed, motivating the need for more advanced atomistic models to adequately portray the DL.</p><sec id="kwd-group1" sec-type="kwd-group" disp-level="2"><p><bold>Keywords:</bold> cyclic voltammetries, differential capacitances, double‐layer capacitances, impedance spectroscopies, potentials of zero charges</p></sec></abstract><abstract id="abstract2" abstract-type="graphical"><p>The electrochemical currents of oxide formation, hydrogen evolution reaction, and oxygen reduction reaction are shown to affect the potential dependencies of measured capacitances. Based on these findings, the routine approach of evaluating models for the electrochemical double layer and determining potentials of zero charge by capacitance measurements is critically assessed.</p><boxed-text id="boxed-text1" position="anchor"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="jats-graphic-1" xlink:href="CPHC-26-e202401088-g001.jpg"><?cloudpmc-path blobs/cd21/12276039/96cebadfe864/CPHC-26-e202401088-g001.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 169?><?original-width 217?><?scaled-height 169?><?scaled-width 217?><caption/></graphic></boxed-text></abstract><custom-meta-group><custom-meta><meta-name>status</meta-name><meta-value>released</meta-value></custom-meta><custom-meta><meta-name>display-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>is-in-collection-domain</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>is-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-journal-matter</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-scanned</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-retracted</meta-name><meta-value>no</meta-value></custom-meta></custom-meta-group></article-meta><notes notes-type="article-notes"><sec id="historyarticle-meta1" sec-type="history" disp-level="2"><p>Revised 2025 Apr 23; Received 2024 Dec 3; Issue date 2025 Jul 18.</p></sec></notes></front><body><sec id="cphc202401088-sec-0001" disp-level="1"><label>1.</label><title>Introduction</title><p>The electrochemical double layer (DL) describes the charge arrangement at the electrochemical interface, in which electrode potentials locally disturb the even ion distributions of bulk electrolytes as determined by the electroneutrality condition.<sup>[</sup>
+<xref rid="cphc202401088-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref>
+<sup>]</sup> In this introduction, the historical development of DL models and measurement techniques is reviewed, aiming to discuss how the links between models and measurements were established. Based on this brief review of the DL fundamentals, models and experiments will be critically analyzed and reevaluated.</p><p>In 1879, Helmholtz first examined the electric potential transition between a metal and an electrolyte.<sup>[</sup>
+<xref rid="cphc202401088-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref>
+<sup>]</sup> His model for the electrochemical interphase as opposing and infinitely thin surface charge layers at both media led to the denotation of a DL of charges that face one another at the interface. This interpretation of the interface reflects Gauss's law of electrostatics, from which displaced mobile charge carriers at the surfaces can be derived to shield conductive bulks. Thus, in this model, the bulks of both touching conductive media, electrode and electrolyte, are free of macroscopic electric fields, respectively. Electrostatics describes stationary electric charges, which implies no charge exchange or currents. Hence, the electric field‐free bulks of the conductors can be alternatively reasoned by Ohm's law.</p><p>In the beginning of the 20th century, Gouy<sup>[</sup>
+<xref rid="cphc202401088-bib-0003" ref-type="bibr">
+<sup>3</sup>
+</xref>
+<sup>]</sup> and Chapman<sup>[</sup>
+<xref rid="cphc202401088-bib-0004" ref-type="bibr">
+<sup>4</sup>
+</xref>
+<sup>]</sup> independently developed an electrostatic DL model in which the basic physical principles of thermomechanical statistics (Boltzmann equation) and electrostatics (Poisson equation) to the electrolytic part of the DL<sup>[</sup>
+<xref rid="cphc202401088-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref>
+<sup>]</sup> have been combined. As a result, Helmholtz interpretation of infinitely thin surface charge layers has been softened by spatially spread distributions of potential and ion concentrations in the electrolyte.</p><p>Deviating the modeled charge density of the DL in the electrode potential leads to a capacitance, which is commonly referred to as differential capacitance (DCAP).<sup>[</sup>
+<xref rid="cphc202401088-bib-0006" ref-type="bibr">
+<sup>6</sup>
+</xref>, <xref rid="cphc202401088-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref>, <xref rid="cphc202401088-bib-0008" ref-type="bibr">
+<sup>8</sup>
+</xref>, <xref rid="cphc202401088-bib-0009" ref-type="bibr">
+<sup>9</sup>
+</xref>
+<sup>]</sup>
+<bold>Figure</bold> <xref rid="cphc202401088-fig-0001" ref-type="fig">
+<bold>1</bold>A</xref> shows the parabola‐like shape of the DCAP from the Gouy–Chapman model as a function of the electrode potential. The minimum capacitance of this relation represents the uncharged surface. The potential at this minimum is commonly referred to as the potential of zero charge (PZC).<sup>[</sup>
+<xref rid="cphc202401088-bib-0010" ref-type="bibr">
+<sup>10</sup>
+</xref>, <xref rid="cphc202401088-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>, <xref rid="cphc202401088-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>
+<sup>]</sup> In 1924, Stern<sup>[</sup>
+<xref rid="cphc202401088-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>
+<sup>]</sup> described the DL capacitance as a serial combination of the inner Helmholtz's capacitance <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-1" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>IH</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> and the DCAP <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-2" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>diff</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula>.</p><disp-formula id="cphc202401088-disp-0001"><label>(1)</label><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-3" display="block"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>Stern</mml:mtext></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msup><mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>diff</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mfrac><mml:mo>+</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>IH</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mfrac></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math></disp-formula><fig id="cphc202401088-fig-0001" position="float"><?disp-level 2?><label>Figure 1</label><caption><p>Capacitances of common double‐layer models as a function of the electrode potential, assuming a potential of zero charge of 0.3 V. A) Classical Gouy–Chapman and Stern theory, modeled based on another study.<sup>[</sup>
+<xref rid="cphc202401088-bib-0010" ref-type="bibr">
+<sup>10</sup>
+</xref>
+<sup>]</sup> B) Lattice gas distribution models based on<sup>[</sup>
+<xref rid="cphc202401088-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref>
+<sup>]</sup> with a variation of compacity <italic>γ</italic> [8] as the degree of compressibility. This model can mimic the often‐reported camel‐to‐bell transition of measured capacitance profiles as a function of the electrolyte concentration.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="jats-graphic-3" xlink:href="CPHC-26-e202401088-g002.jpg"><?cloudpmc-path blobs/cd21/12276039/153f3c84f46d/CPHC-26-e202401088-g002.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 397?><?original-width 314?><?scaled-height 397?><?scaled-width 314?><caption/></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="CPHC-26-e202401088-g002.gif"><?cloudpmc-path blobs/cd21/12276039/66cb91d8cbf8/CPHC-26-e202401088-g002.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>Hence, Stern combined Helmholtz's model of a rigid “inner” DL with a diffusive “outer” layer.<sup>[</sup>
+<xref rid="cphc202401088-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref>, <xref rid="cphc202401088-bib-0009" ref-type="bibr">
+<sup>9</sup>
+</xref>, <xref rid="cphc202401088-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref>
+<sup>]</sup> Figure <xref rid="cphc202401088-fig-0001" ref-type="fig">1A</xref> shows that Stern's extension limits the unphysical diverging capacitance of the parabola‐type DCAP of the Gouy–Chapman model, leading to a valley‐type capacitance as a function of the potential.</p><p>In 1929, the valley‐type DCAPs predicted by the classical models were compared to electrocapillary measurements with mercury,<sup>[</sup>
+<xref rid="cphc202401088-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref>
+<sup>]</sup> as direct capacitance measurements were not feasible at that time. Hereto, the Lippman Equation<sup>[</sup>
+<xref rid="cphc202401088-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>
+<sup>]</sup> was used to estimate the surface charge density based on measuring the capillary of the mercury–electrolyte interface under a potential variation. By deviating the thus estimated charge densities after the measured electrode potential, the capacitance of the mercury electrode was determined. With the advances of electronic measurement devices, electric measurements of the capacitance as a function of the electrode potential were introduced in 1935.<sup>[</sup>
+<xref rid="cphc202401088-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref>
+<sup>]</sup> Sinusoidal potential variations were added to the applied electrode potential from which capacitances were extracted,<sup>[</sup>
+<xref rid="cphc202401088-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref>
+<sup>]</sup> showing good agreement with the capacitances derived from the electrocapillary measurements.<sup>[</sup>
+<xref rid="cphc202401088-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref>, <xref rid="cphc202401088-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>, <xref rid="cphc202401088-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>
+<sup>]</sup> The measured capacitance profiles (MCPs) agreed reasonably with calculated DCAPs. Based on these promising results, MCPs were commonly accepted to directly portray the DCAP from the electrostatic DL models.<sup>[</sup>
+<xref rid="cphc202401088-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref>, <xref rid="cphc202401088-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref>, <xref rid="cphc202401088-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref>, <xref rid="cphc202401088-bib-0022" ref-type="bibr">
+<sup>22</sup>
+</xref>
+<sup>]</sup> Decades later, MCPs were routinely measured during cyclic voltammetry (CV) with a simultaneous sinusoidal perturbation,<sup>[</sup>
+<xref rid="cphc202401088-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref>, <xref rid="cphc202401088-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref>
+<sup>]</sup> nowadays typically denoted as alternating cyclic voltammetry (ACV).</p><p>Further extensions on the GCMs included different ion sizes or interactions between the metals and the electrolyte,<sup>[</sup>
+<xref rid="cphc202401088-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref>, <xref rid="cphc202401088-bib-0026" ref-type="bibr">
+<sup>26</sup>
+</xref>, <xref rid="cphc202401088-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>
+<sup>]</sup> showing asymmetry in the capacitance as a function of the potential. By introducing the lattice gas theory into the GCMs,<sup>[</sup>
+<xref rid="cphc202401088-bib-0028" ref-type="bibr">
+<sup>28</sup>
+</xref>, <xref rid="cphc202401088-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref>, <xref rid="cphc202401088-bib-0030" ref-type="bibr">
+<sup>30</sup>
+</xref>, <xref rid="cphc202401088-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref>, <xref rid="cphc202401088-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref>
+<sup>]</sup> camel‐ and bell‐type shapes of capacitance profiles could be simulated as shown in Figure <xref rid="cphc202401088-fig-0001" ref-type="fig">1B</xref>. Hence, a more detailed match of the DL theories to MCPs was achieved,<sup>[</sup>
+<xref rid="cphc202401088-bib-0033" ref-type="bibr">
+<sup>33</sup>
+</xref>, <xref rid="cphc202401088-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>, <xref rid="cphc202401088-bib-0035" ref-type="bibr">
+<sup>35</sup>
+</xref>, <xref rid="cphc202401088-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref>
+<sup>]</sup> including the camel‐to‐bell‐type transition as a function of the electrolyte concentration that was already observed in the early works with the mercury electrode in NaF electrolytes.<sup>[</sup>
+<xref rid="cphc202401088-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>
+<sup>]</sup> In these models, the packing density <italic>γ</italic> of the electrolyte represents a parameter to account for the electrolyte concentration.<sup>[</sup>
+<xref rid="cphc202401088-bib-0022" ref-type="bibr">
+<sup>22</sup>
+</xref>, <xref rid="cphc202401088-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref>
+<sup>]</sup> Moreover, the effects of the solvent<sup>[</sup>
+<xref rid="cphc202401088-bib-0038" ref-type="bibr">
+<sup>38</sup>
+</xref>, <xref rid="cphc202401088-bib-0039" ref-type="bibr">
+<sup>39</sup>
+</xref>, <xref rid="cphc202401088-bib-0040" ref-type="bibr">
+<sup>40</sup>
+</xref>
+<sup>]</sup> and the electronic structure of the electrode<sup>[</sup>
+<xref rid="cphc202401088-bib-0041" ref-type="bibr">
+<sup>41</sup>
+</xref>, <xref rid="cphc202401088-bib-0042" ref-type="bibr">
+<sup>42</sup>
+</xref>
+<sup>]</sup> were added to the classical models.</p><p>Critics of the GCMs are a too narrow estimation of the DL, the issues with strong electric fields that lead to dielectric breakdown, to name just a few.<sup>[</sup>
+<xref rid="cphc202401088-bib-0043" ref-type="bibr">
+<sup>43</sup>
+</xref>
+<sup>]</sup> Modern atomistic models for the DL display a great chance to overcome the drawbacks of the classical models.<sup>[</sup>
+<xref rid="cphc202401088-bib-0044" ref-type="bibr">
+<sup>44</sup>
+</xref>, <xref rid="cphc202401088-bib-0045" ref-type="bibr">
+<sup>45</sup>
+</xref>, <xref rid="cphc202401088-bib-0046" ref-type="bibr">
+<sup>46</sup>
+</xref>, <xref rid="cphc202401088-bib-0047" ref-type="bibr">
+<sup>47</sup>
+</xref>, <xref rid="cphc202401088-bib-0048" ref-type="bibr">
+<sup>48</sup>
+</xref>, <xref rid="cphc202401088-bib-0049" ref-type="bibr">
+<sup>49</sup>
+</xref>
+<sup>]</sup> For instance, molecular dynamics simulations can show that the assumption of a dielectric continuum is not justified due to anisotropic arrangements of water molecules.<sup>[</sup>
+<xref rid="cphc202401088-bib-0050" ref-type="bibr">
+<sup>50</sup>
+</xref>
+<sup>]</sup> Like the classical models, these modern models are also often evaluated with the measured camel‐ and bell‐type capacitances as a function of the potential.<sup>[</sup>
+<xref rid="cphc202401088-bib-0051" ref-type="bibr">
+<sup>51</sup>
+</xref>, <xref rid="cphc202401088-bib-0052" ref-type="bibr">
+<sup>52</sup>
+</xref>, <xref rid="cphc202401088-bib-0053" ref-type="bibr">
+<sup>53</sup>
+</xref>, <xref rid="cphc202401088-bib-0054" ref-type="bibr">
+<sup>54</sup>
+</xref>, <xref rid="cphc202401088-bib-0055" ref-type="bibr">
+<sup>55</sup>
+</xref>, <xref rid="cphc202401088-bib-0056" ref-type="bibr">
+<sup>56</sup>
+</xref>
+<sup>]</sup> The often used 10 mM aqueous electrolyte for MCPs means that an ion pair is dissolved in more than 5000 water molecules. As the DL charging is an electrodynamic process that results from the interaction of millions of moving ions. Including also the solvent molecules means that billions of constituents must be considered to precisely model the DL. This n‐body problem with such large numbers of atoms, spatial scales, and time scales for the ion rearrangement is challenging to model with modern atomistic models such as density functional theory or molecular dynamics techniques. Hence, the classical Gouy–Chapman‐type models still represent today's textbook knowledge of the electrochemical interface, which is justified by a very good agreement in comparison to experimental data.</p><p>In 1984, Brug reported that the response of the DL in impedance spectroscopy shows a constant phase with higher values than the −90° of a capacitance.<sup>[</sup>
+<xref rid="cphc202401088-bib-0057" ref-type="bibr">
+<sup>57</sup>
+</xref>
+<sup>]</sup> He parameterized the DL by a constant phase element (CPE). In 1987, Wang reported that a CPE can be represented by a transmission line model of a semi‐infinite resistive–capacitive ladder network.<sup>[</sup>
+<xref rid="cphc202401088-bib-0058" ref-type="bibr">
+<sup>58</sup>
+</xref>
+<sup>]</sup> This CPE‐type response of the DL was explained by the transmission line character that results from the electric penetration into the electrolyte and the associated ion displacement with its resistive damping.<sup>[</sup>
+<xref rid="cphc202401088-bib-0059" ref-type="bibr">
+<sup>59</sup>
+</xref>, <xref rid="cphc202401088-bib-0060" ref-type="bibr">
+<sup>60</sup>
+</xref>
+<sup>]</sup> In contrast, DCAPs of the electrostatic models describe transition between two static states by ignoring the dynamic process of the charge displacement in the DL. This obvious inconsistency between the observed CPE‐type character of the DL and the solely capacitive description of the electrostatic theories is unfortunately widely ignored in the community.</p><p>The aim of this study is to critically analyze MCPs regarding the impact of parasitic reactions like oxygen reduction, hydrogen evolution, and electrode oxidation. Gold, as the noblest of all metals,<sup>[</sup>
+<xref rid="cphc202401088-bib-0061" ref-type="bibr">
+<sup>61</sup>
+</xref>, <xref rid="cphc202401088-bib-0062" ref-type="bibr">
+<sup>62</sup>
+</xref>
+<sup>]</sup> is used as a model electrode for these experiments, allowing oxide free surface preparation by polishing. An aqueous sodium fluoride electrolyte with a concentration of 5 mM is used as the electrolyte, with its symmetric ions representing the literature standard for DCAP measurements.<sup>[</sup>
+<xref rid="cphc202401088-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref>, <xref rid="cphc202401088-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>, <xref rid="cphc202401088-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref>
+<sup>]</sup> Features of MCPs that were previously associated with the intrinsic properties of the DL are here attributed to parasitic reactions, also showing that the surface preparation is an important factor that led to previous misinterpretations of MCPs on gold. The commonly accepted link between MCPs and DCAPs is reevaluated regarding the dynamics of the charge delocalization measured in the experiments but ignored in electrostatic DL theories. Published data on MCPs and PZCs are critically discussed and analyzed regarding parasitic reactions and the role of oxide layers. Hence, this study provides a critical view of electrostatic DL models that shall motivate the community to develop advanced atomistic models for the electrochemical interface.</p></sec><sec id="cphc202401088-sec-0002" disp-level="1"><label>2.</label><title>Experimental Section</title><sec id="cphc202401088-sec-0003" disp-level="2"><label>2.1.</label><title>Measurement Protocol</title><p>
+<bold>Figure</bold> <xref rid="cphc202401088-fig-0002" ref-type="fig">
+<bold>2</bold>
+</xref> shows the measurement protocol used in this study, in which initially, CV with three cycles and a scan rate of 10 mV s<sup>−1</sup> is applied. The lower and upper margins of this measurement are represented by the low vertex potential <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-4" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mtext>low</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> and the high vertex potential <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-5" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mtext>high</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula>, respectively. Subsequently, ACV is conducted, using again a scan rate of 10 mV s<sup>−1</sup> and a perturbation frequency of 1 Hz with an amplitude of 10 mV. The ACV measurement starts at <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-6" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mtext>high</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula>. After the CV and ACV measurement, a stepwise potential variation is employed that starts at <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-7" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mtext>low</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula>. In this procedure, amperometry is used to measure the current after a potential step. Afterward, an impedance measurement between 200 mHz and 200 kHz is conducted with an amplitude of 10 mV. Amperometry is applied again, before the next step starts with a potential variation. Starting from <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-8" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mtext>low</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula>, the potential is incrementally increased by 50 mV until <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-9" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mtext>high</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> is reached. Afterward, the direction of the potential step is reversed until <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-10" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mtext>low</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> is reached again.</p><fig id="cphc202401088-fig-0002" position="float"><?disp-level 3?><label>Figure 2</label><caption><p>Flowchart of the measurement procedure used in this study.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="jats-graphic-5" xlink:href="CPHC-26-e202401088-g004.jpg"><?cloudpmc-path blobs/cd21/12276039/ecfee8ad1c66/CPHC-26-e202401088-g004.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 485?><?original-width 326?><?scaled-height 485?><?scaled-width 326?><caption/></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="CPHC-26-e202401088-g004.gif"><?cloudpmc-path blobs/cd21/12276039/4ed6b89a075d/CPHC-26-e202401088-g004.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig></sec><sec id="cphc202401088-sec-0004" disp-level="2"><label>2.2.</label><title>Experimental Methods and Materials</title><p>The electrochemical three‐electrode cell used for the experiments in this study was reported in the literature.<sup>[</sup>
+<xref rid="cphc202401088-bib-0063" ref-type="bibr">
+<sup>63</sup>
+</xref>
+<sup>]</sup> A cold‐rolled polycrystalline gold electrode (Junker Edelmetalle GmbH) was used as the working electrode, prepared by grinding with 4000 mesh SiC sandpaper (Struers) and then polished with 1 μm diamond particle solution (Struers) for 20 min on an automized polishing machine (Struers, Tegramin). A stamped fluoropolymer flat sealing of 0.5 mm thickness was used to confine the exposed geometric area of the gold plate exposed to the electrolyte to 0.78 cm<sup>2</sup> (diameter of 1 cm). An Ag/AgCl reference electrode (Methohm) was used in a separated electrolyte compartment, while a platinum mesh counter electrode was employed, which was also placed in a separated electrolyte compartment. An electrolyte of NaF (99.99%, Thermo Fisher) dissolved in ultrapure water with a concentration of 5 mM was used for all presented measurements. The measured potential of the Ag/AgCl reference electrode was converted to the reversible hydrogen electrode (RHE) by adding 0.197 V for the offset of the reference electrode, while the pH was included by adding its value times 59 mV. The pH of the electrolyte was measured with a pH meter (Mettler Toledo, SevenCompact) to <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-11" display="inline"><mml:mrow><mml:mrow><mml:mn>7</mml:mn><mml:mo>±</mml:mo><mml:mn>0.5</mml:mn></mml:mrow></mml:mrow></mml:math></inline-formula>. Hence, the RHE values stated in this study were affected by an absolute error of ≈±0.03 V.</p><p>A biologic VMP‐3 potentiostat was used for all measurements. To reduce the amount of dissolved oxygen in the electrolyte, it was purged with argon using an immersed porous glass frit. The fine pores of the frit resulted in small bubbles that effectively removed oxygen. The entire cell was placed in a plastic bottle so that argon coming from the cell accumulated in the bottle, reducing the oxygen contamination from the environment. This plastic bottle was placed in a grounded metal container, which acted as a Faraday cage to eliminate electric stray fields.</p></sec><sec id="cphc202401088-sec-0005" disp-level="2"><label>2.3.</label><title>Data Evaluation</title><p>The impedance evaluation of the data was discussed in a previous study.<sup>[</sup>
+<xref rid="cphc202401088-bib-0063" ref-type="bibr">
+<sup>63</sup>
+</xref>
+<sup>]</sup> The Biologic potentiostat recorded the ACV measurement in the time domain with voltage and current in the resolution of 1 ms. From these time‐domain resolved data, the impedance amplitude and phase angle were calculated with the Python code supplied in the electronic supplementary information (ESI). In brief, the slope of the potential and current signal related to the scan rate of 10 mV s<sup>−1</sup> was subtracted. The signal was smoothed, and the impedance was calculated based on the amplitude of the alternating current and the phase between the potential and current. The procedure to extract the capacitance from the stepwise potential variation is described in the ESI.</p></sec></sec><sec id="cphc202401088-sec-0006" disp-level="1"><label>3.</label><title>Results and Discussion</title><sec id="cphc202401088-sec-0007" disp-level="2"><label>3.1.</label><title>Measurements on the Polished Gold Electrode</title><p>The measurement protocol graphed in Figure <xref rid="cphc202401088-fig-0002" ref-type="fig">2</xref> was applied three times in series to the polished polycrystalline gold electrode. First, the data were collected between 0.2 and 1.1 V versus RHE with the 5 mM NaF electrolyte that was previously purged for 2 min with argon, denoted as M1. Second, the electrolyte was purged for 1 h with argon and the electrochemical data were collected in between −0.1 and 1.1 V versus RHE, denoted as M2. Third, the protocol with the margins of −0.1 and 1.4 V was applied to the argon‐purged electrolyte, denoted as M3. All measurements were conducted without intermediate surface treatment or electrolyte exchange.</p><p>
+<bold>Figure</bold> <xref rid="cphc202401088-fig-0003" ref-type="fig">
+<bold>3</bold>
+</xref> shows the data recorded, comprising 1) CV measurements with the current <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-12" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mtext>CV</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> as a function of the electrode potential <italic>E</italic>. 2) The capacitance <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-13" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mtext>RF</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> is obtained via electrochemical impedance spectroscopy (EIS) at the relaxation frequency (RF). The capacitance at the RF was introduced in previous works as a reliable metric for surface area estimations.<sup>[</sup>
+<xref rid="cphc202401088-bib-0063" ref-type="bibr">
+<sup>63</sup>
+</xref>, <xref rid="cphc202401088-bib-0064" ref-type="bibr">
+<sup>64</sup>
+</xref>
+<sup>]</sup> The impedance spectra of the measurements are graphed in the electronic supporting information (ESI), showing that the RFs of the polished gold specimen in the used 5 mM NaF electrolyte ranged between 100 and 300 Hz. 3) The capacitance <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-14" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mn>1</mml:mn><mml:mtext>Hz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> equals the capacitive contributions to the EIS data at 1 Hz. 4) The parasitic electrochemical current <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-15" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mtext>par</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> is measured by amperometry after the impedance measurements (see Figure <xref rid="cphc202401088-fig-0002" ref-type="fig">2</xref>). 5) The capacitance <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-16" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>ACV</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> is obtained from alternating cyclic voltammetry (ACV) measurements. 6) The phase angle of the ACV measurements, which indicates the balance of resistive and capacitive contributions to the sinusoidal perturbation. 7) Square wave (SQW) capacitances, which derived from the amperometry after the potential step of 0.05 V of the measurement protocol. Charge transfer reactions are known to increase the electrode capacitance,<sup>[</sup>
+<xref rid="cphc202401088-bib-0063" ref-type="bibr">
+<sup>63</sup>
+</xref>, <xref rid="cphc202401088-bib-0065" ref-type="bibr">
+<sup>65</sup>
+</xref>
+<sup>]</sup> which is discussed for the MCPs in the following.</p><fig id="cphc202401088-fig-0003" position="float"><?disp-level 3?><label>Figure 3</label><caption><p>Data of the gold electrode in 5 mM NaF electrolyte obtained with three consecutive iterations of the measurement protocol from Figure <xref rid="cphc202401088-fig-0002" ref-type="fig">2</xref>. Blue: Measurement M1 (previous 2 min of argon electrolyte purging). Green: Measurement M2 with at least one hour of argon purging. Black: Measurement M3 with argon‐purged electrolyte. Triangles upwards: Data related to an increasing potential or ramp. Triangles downward: Down‐scan. A) CV measurements. B) Capacitances of impedance measurements at the relaxation frequency. C) Capacitances of impedance measurements at 1. D) Parasitic current at the end of each potential step measured by amperometry. E) The capacitance extracted from ACV measurements with a perturbation frequency of 1 Hz. F) The phase angle extracted from the ACV measurements. G) Capacitance from the stepwise potential variation of a SQW type.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="jats-graphic-7" xlink:href="CPHC-26-e202401088-g003.jpg"><?cloudpmc-path blobs/cd21/12276039/3cba7b846e62/CPHC-26-e202401088-g003.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 704?><?original-width 632?><?scaled-height 704?><?scaled-width 632?><caption/></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="CPHC-26-e202401088-g003.gif"><?cloudpmc-path blobs/cd21/12276039/68d8841d2877/CPHC-26-e202401088-g003.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig></sec><sec id="cphc202401088-sec-0008" disp-level="2"><label>3.2.</label><title>Surface Oxidation</title><p>In Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3A</xref>, the CV data of all measurements show above 0.8 V drastically increasing currents, which indicate an oxidative charge transfer reaction. The standard potential of gold is reported as 1.52 V,<sup>[</sup>
+<xref rid="cphc202401088-bib-0066" ref-type="bibr">
+<sup>66</sup>
+</xref>
+<sup>]</sup> which is calculated based on the thermodynamics of bulk properties. However, the potential at which its oxidation starts depends on the oxide species formed, while gold's hydroxide surface species<sup>[</sup>
+<xref rid="cphc202401088-bib-0067" ref-type="bibr">
+<sup>67</sup>
+</xref>
+<sup>]</sup> are typically not considered for the thermodynamic calculation of the standard potential. The surface oxidation can also lead to dissolution,<sup>[</sup>
+<xref rid="cphc202401088-bib-0068" ref-type="bibr">
+<sup>68</sup>
+</xref>, <xref rid="cphc202401088-bib-0069" ref-type="bibr">
+<sup>69</sup>
+</xref>
+<sup>]</sup> which depends on the amount of dissolved species (as graphed in Pourbaix diagrams<sup>[</sup>
+<xref rid="cphc202401088-bib-0070" ref-type="bibr">
+<sup>70</sup>
+</xref>
+<sup>]</sup>). Moreover, different facets show different stabilities,<sup>[</sup>
+<xref rid="cphc202401088-bib-0071" ref-type="bibr">
+<sup>71</sup>
+</xref>
+<sup>]</sup> while the surface thermodynamics are different from that of the bulk.<sup>[</sup>
+<xref rid="cphc202401088-bib-0072" ref-type="bibr">
+<sup>72</sup>
+</xref>
+<sup>]</sup> Hence, classical thermodynamic data for the nobleness of gold can be understood as an estimation rather than a precise value. In an alkaline regime, the dissolution of polycrystalline gold is reported to start at 1.12 V versus RHE<sup>[</sup>
+<xref rid="cphc202401088-bib-0069" ref-type="bibr">
+<sup>69</sup>
+</xref>
+<sup>]</sup> (with respect to the logarithmic data of the dissolution rate as a function of the electrode potential), while the detection limit of this measurement technique overestimates the potential at which the dissolution starts. In addition, the surface can oxidize prior to the dissolution process, so that the oxidative current above 0.8 V is most likely resulting from the oxidation of some parts of the polycristalline surface.</p><p>Measurement M3 shows a reduction reaction (valley at 1 V) during the descending branch, which originates from the electrochemical reduction of at least one of the different oxide species formed.<sup>[</sup>
+<xref rid="cphc202401088-bib-0073" ref-type="bibr">
+<sup>73</sup>
+</xref>
+<sup>]</sup> The dissolution and recrystallization during the oxidation or reduction also tend to increase the electrochemically active surface area (ECSA) of polished electrodes.<sup>[</sup>
+<xref rid="cphc202401088-bib-0063" ref-type="bibr">
+<sup>63</sup>
+</xref>, <xref rid="cphc202401088-bib-0065" ref-type="bibr">
+<sup>65</sup>
+</xref>
+<sup>]</sup> However, non or weak conducting oxide layers tend to decrease the electrode capacitance.<sup>[</sup>
+<xref rid="cphc202401088-bib-0063" ref-type="bibr">
+<sup>63</sup>
+</xref>, <xref rid="cphc202401088-bib-0065" ref-type="bibr">
+<sup>65</sup>
+</xref>, <xref rid="cphc202401088-bib-0074" ref-type="bibr">
+<sup>74</sup>
+</xref>
+<sup>]</sup> In case of conductive oxide layers, the capacitance increases due to the higher ECSA.<sup>[</sup>
+<xref rid="cphc202401088-bib-0063" ref-type="bibr">
+<sup>63</sup>
+</xref>, <xref rid="cphc202401088-bib-0065" ref-type="bibr">
+<sup>65</sup>
+</xref>
+<sup>]</sup> When reduced after oxidation, the surface changes are irreversible due to the preferential dissolution of different crystal sites<sup>[</sup>
+<xref rid="cphc202401088-bib-0075" ref-type="bibr">
+<sup>75</sup>
+</xref>
+<sup>]</sup> and kinetic barriers to reduce the oxides. As a result, all capacitances (Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3B,C,E, and G</xref>) of M3 are larger than those of M1 or M2.</p><p>In Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3B</xref>, <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-17" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mtext>RF</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> (measured above 100 Hz) of M1 and M2 only slightly depend on the potential and the oxidation process with rather flat MCPs. In contrast, <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-18" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mn>1</mml:mn><mml:mtext>Hz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> in Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3C</xref> shows a significant increase above 0.8 V by the oxidation process, as charge transfer reactions increase the impedance toward low frequencies.<sup>[</sup>
+<xref rid="cphc202401088-bib-0063" ref-type="bibr">
+<sup>63</sup>
+</xref>, <xref rid="cphc202401088-bib-0065" ref-type="bibr">
+<sup>65</sup>
+</xref>
+<sup>]</sup> In the case of M3, <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-19" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mtext>RF</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> and <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-20" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mn>1</mml:mn><mml:mtext>Hz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> show significant enlargements, attributed to the ECSA increase by the surface oxidation and reduction. The distinct differences of the capacitances between the ascending and descending branch for measurement M3 show that the oxidation and reduction lead to an irreversible change of the surface.</p><p>The <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-21" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>ACV</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> profile in Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3D</xref> shows more pronounced hysteresis of the M1 and M2 data than that of the <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-22" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mtext>RF</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> and <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-23" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mn>1</mml:mn><mml:mtext>Hz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> data. Moreover, the enlargements of the capacitances from 0.8 to 1.1 V are steeper for <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-24" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>ACV</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> than those for <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-25" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mtext>RF</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> and <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-26" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mn>1</mml:mn><mml:mtext>Hz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula>. These differences are ascribed to the more pronounced dynamics of the oxidation process due to the faster potential variation of the AVC technique in contrast to the steady state‐like perturbations during the impedance measurements. These dynamics of the phase transition also cause a more pronounced hysteresis of <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-27" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>ACV</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> between the ascending and descending branches than those of <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-28" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mn>1</mml:mn><mml:mtext>Hz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula>. The phase angle of the ACV data in Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3F</xref> shows a similar profile as that of the <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-29" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>ACV</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula>, indicating that partly Ohmic processes are responsible of the MCPs.</p></sec><sec id="cphc202401088-sec-0009" disp-level="2"><label>3.3.</label><title>ORR and HER</title><p>The ORR is characterized by a reversible potential of 1.23 V versus RHE. In near‐neutral electrolytes, the ORR on gold shows sluggish kinetics, so that large overpotentials are required to achieve significant currents.<sup>[</sup>
+<xref rid="cphc202401088-bib-0076" ref-type="bibr">
+<sup>76</sup>
+</xref>
+<sup>]</sup> In Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3A</xref>, the CV data of measurement M1 shows below 0.4 V negative currents, which are drastically reduced with the argon‐purged electrolyte of measurement M2. Hence, the reduction current of M1 is attributed mainly to the reduction of dissolved oxygen, while sluggish kinetics suppress the reduction currents at higher potentials. For M2, a significant reduction process starts below 0.2 V, which can also be influenced by the reduction of the surface oxides that were formed above 0.8 V. This process is even more pronounced for M3, where higher apex potentials led to an increased surface oxidation. The HER is expected to start already slightly above 0 V, as the reversible potential of the HER increases toward lower amounts of dissolved hydrogen (Nernst equation).<sup>[</sup>
+<xref rid="cphc202401088-bib-0077" ref-type="bibr">
+<sup>77</sup>
+</xref>
+<sup>]</sup> Toward lower potentials, the contributions of the HER to the measured currents increase.</p><p>In Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3B</xref>, the capacitance <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-30" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mtext>RF</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> (probed at frequencies between 100 and 300 Hz) of measurement M1 is not significantly influenced by the ORR or other potential dependent features. In contrast, the capacitance <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-31" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mn>1</mml:mn><mml:mtext>Hz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> (Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3C</xref>) is significantly affected by the ORR as the contributions of charge transfer reactions to the impedance increase toward low frequencies.<sup>[</sup>
+<xref rid="cphc202401088-bib-0063" ref-type="bibr">
+<sup>63</sup>
+</xref>, <xref rid="cphc202401088-bib-0065" ref-type="bibr">
+<sup>65</sup>
+</xref>
+<sup>]</sup> In the case of M2 and M3, significant increases of <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-32" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mtext>RF</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> and <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-33" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mn>1</mml:mn><mml:mtext>Hz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> below 0.1 V are observed due to the HER. For the case of the platinum electrode, the oxygen adsorption was reported to affect the pseudocapacitance less than hydrogen adsorption,<sup>[</sup>
+<xref rid="cphc202401088-bib-0060" ref-type="bibr">
+<sup>60</sup>
+</xref>
+<sup>]</sup> which was attributed to the slower kinetics of the oxygen adsorption. These findings are transferable to the pseudocapacitances associated with the hydrogen‐ and oxygen‐related charge transfer reactions on the gold electrode. Hence, the different effect of the HER and OER on the frequency‐dependencies of the capacitive contributions on the impedance can be explained.</p><p>Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3D</xref> shows the parasitic currents (measured at the end of each potential step by amperometry), which feature in the case of M1 a significant increase below 0.4 V that can be attributed to the ORR. Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3E</xref> shows the capacitances <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-34" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>ACV</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> that were extracted from the ACV measurements at a perturbation frequency of 1 Hz. Below 0.5 V, <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-35" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>ACV</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> shows a similar profile as <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-36" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mn>1</mml:mn><mml:mtext>Hz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula>. Both capacitances are probed at 1 Hz, yet the capacitance <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-37" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>ACV</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> is obtained during a perturbated linear potential variation, while <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-38" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mn>1</mml:mn><mml:mtext>Hz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> is obtained at a perturbated constant potential. These different measurement conditions for the capacitance do not affect the trends for the ORR or HER contributions to the measured capacitances.</p><p>The phase angle of the ACV signal in Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3F</xref> increases by the contributions of the ORR in measurement M1. The resistive contributions of the ORR shift the phase angle toward higher values. The HER shows a less pronounced effect on the phase angle as it affects the potential perturbation more pseudocapacitive as Ohmic.<sup>[</sup>
+<xref rid="cphc202401088-bib-0060" ref-type="bibr">
+<sup>60</sup>
+</xref>
+<sup>]</sup> For measurement M1, <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-39" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>SQW</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> in Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3G</xref> becomes negative below 0.5 V due to the parasitic contribution of the ORR (like CV data from Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3A</xref>). The data of M1 and M2 show below 0.1 V differences between the ascending and descending branch of the potential variation, which is ascribed to a hysteresis of the hydrogen or bubble coverage. Concluding, the increase of the phase angle toward the lowest potentials indicate parasitic currents that eventually increase the capacitances.</p><p>To summarize, the parasitic currents related to the ORR, HER, oxide layer formation, and oxide layer reduction increase the capacitances. Measurement M2 represented the case of a mostly pristine gold surface in argon‐purged electrolyte. The capacitance data of measurement M2 shows between 0.1 and 0.8 V a flat MCP without any clear hint for valley‐, camel‐, or bell‐type features. At lower or higher potentials, the impact of the charge transfer reactions and pseudocapacitances leads to deviations from this flat MCP.</p></sec><sec id="cphc202401088-sec-0010" disp-level="2"><label>3.4.</label><title>The Role of the Electrode Pretreatment</title><p>In the following, the above‐presented measurements are used to critically evaluate the literature data on MCPs and PZCs. The ORR and HER can increase capacitances toward low potentials, from which the left branch of a valley‐type MCP can originate. Moreover, the above‐presented measurements showed that dissolved oxygen shifts the left branch rightward. Experimental works presented in the literature often do not comment on how or if dissolved oxygen in the electrode was treated,<sup>[</sup>
+<xref rid="cphc202401088-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref>, <xref rid="cphc202401088-bib-0078" ref-type="bibr">
+<sup>78</sup>
+</xref>
+<sup>]</sup> which may mean that a lot of these data is obtained with oxygen‐containing electrolytes. Above, a porous glass frit was used for argon purging, which is more effective in removing oxygen than purging the standard approach with a tube for inert gas purging (see <xref rid="cphc202401088-sec-0004" ref-type="sec">Experimental Section</xref>).</p><p>The right branch of the MCP depended on the pretreatment of the Au electrode. The <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-40" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>ACV</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> data in Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3D</xref> shows the right branch of M3 is significantly more leftward than that of M1 or M2. An upper vertex potential of only 1.1 V versus RHE introduced changes to the surface that affect the MCP of M1 and M2. In the literature, gold specimens are often pretreated with CV using vertex potentials way above 1.1 V versus RHE or flame annealing, aiming to clean the surface.<sup>[</sup>
+<xref rid="cphc202401088-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref>, <xref rid="cphc202401088-bib-0078" ref-type="bibr">
+<sup>78</sup>
+</xref>, <xref rid="cphc202401088-bib-0079" ref-type="bibr">
+<sup>79</sup>
+</xref>
+<sup>]</sup> Such pretreatments affect the surface oxidation and thus the right branch of the measured MCPs. The right branch of the measurement M3 shown in Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3D</xref> represents a peak that caused a camel‐type MCP that is also often reported in the literature.<sup>[</sup>
+<xref rid="cphc202401088-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref>, <xref rid="cphc202401088-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref>
+<sup>]</sup> The related peak may indicate a change of oxdiation or a switch of oxide states from a conductive to a less conductive species that decreases the electrode capacitance.<sup>[</sup>
+<xref rid="cphc202401088-bib-0063" ref-type="bibr">
+<sup>63</sup>
+</xref>
+<sup>]</sup> However, attributing this peak to intrinsic potential dependencies of DL capacitances is not reasonable when the effects of the oxide formation are ignored.</p><p>Concluding, between 0.1 and 0.8 V, the MCP of a freshly polished gold electrode in argon‐purged electrolyte is shown as mostly flat. The electrode and electrolyte pretreatment significantly affect the MCP and can be responsible for many of the valley‐ or camel‐type features observed in the literature.<sup>[</sup>
+<xref rid="cphc202401088-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref>, <xref rid="cphc202401088-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>, <xref rid="cphc202401088-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref>
+<sup>]</sup> A certain amount of influence of the intrinsic DL properties on the capacitance especially for the right branch of the MCP cannot be excluded, which is also responsible for the unsymmetric CV data typically observed with gold electrodes.<sup>[</sup>
+<xref rid="cphc202401088-bib-0059" ref-type="bibr">
+<sup>59</sup>
+</xref>
+<sup>]</sup> However, a clear parabola‐like MCP in the region of the PZC could not be observed.</p></sec><sec id="cphc202401088-sec-0011" disp-level="2"><label>3.5.</label><title>The Role of the Electrode Material</title><p>As reviewed in the “Introduction”, historically, the measurement and theory development of the DL started with dropping mercury electrode. This electrode enables capillary and electric measurements to extract capacitances. The thermodynamic data of Pourbaix<sup>[</sup>
+<xref rid="cphc202401088-bib-0070" ref-type="bibr">
+<sup>70</sup>
+</xref>
+<sup>]</sup> shows that the equilibrium potential for mercury oxidation is 0.84 V with respect to an amount of 1 μM dissolved mercury ions at neutral pH. Like the gold electrode, the surface oxidation of the mercury electrode is expected to start at lower potentials than that of the thermodynamic standard potential. More importantly, the case of gold showed the electrode history and previous oxidation significantly affects the surface and reduction‐resistant oxide species. Unlike the case of gold, oxygen from the air or the electrolyte can directly react with the less noble mercury surface, displaying an additional factor that influences capacitance measurements. Hence, the electric capacitance measurements on the mercury electrode are affected by more systematic errors than those of the gold electrode.</p><p>The electric and electrocapillary measurements of mercury roughly correlate.<sup>[</sup>
+<xref rid="cphc202401088-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref>, <xref rid="cphc202401088-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>, <xref rid="cphc202401088-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>
+<sup>]</sup> Bubble evolution and oxide layer formation also affect the surface tension. The polarity of the oxide increases the ability of mercury to wet a glass surface. Different electron affinities of adsorbed hydrogen and the mercury surface also lead to dipoles that change the wetting behavior. Hence, the electrocapillary and electric capacitance measurements are expected to react similarly to the influence of HER, ORR, and oxidation. Moreover, the parasitic effects on the capacitance may also directly influence the electrocapillary by the Lippman equation.<sup>[</sup>
+<xref rid="cphc202401088-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>
+<sup>]</sup> The parabola‐, bell‐, or camel‐type MCPs at mercury were often related to the DL properties,<sup>[</sup>
+<xref rid="cphc202401088-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>, <xref rid="cphc202401088-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>, <xref rid="cphc202401088-bib-0080" ref-type="bibr">
+<sup>80</sup>
+</xref>
+<sup>]</sup> neglecting any other physicochemical effects that contributed to these measurements.</p><p>The classical DL models used to calculate the DCAP do not include the formation of the oxide layers and their potential dependencies. However, as discussed above for the case of mercury and gold, the oxidation processes significantly affect the MCPs. <bold>Table</bold> <xref rid="cphc202401088-tbl-0001" ref-type="table">
+<bold>1</bold>
+</xref> shows reported PZCs of transition metals as extracted by the minimum in MCPs.<sup>[</sup>
+<xref rid="cphc202401088-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>
+<sup>]</sup> Moreover, the standard potentials (STPs) of these metals are shown in Table <xref rid="cphc202401088-tbl-0001" ref-type="table">1</xref>. The following metals have a similar (±0.1 V) or higher PZC than the STD: Al, Bi, Cr, Fe, Ga, Nb, Ni, Pb, Ta, Ti, and Zn. The values for the PZC for these metals are obviously affected by oxide layers and are thus not relatable to the intrinsic properties of the DL.</p><table-wrap id="cphc202401088-tbl-0001" position="float"><?disp-level 3?><label>Table 1</label><caption><p>PZCs versus NHE from ref. <xref rid="cphc202401088-bib-0012" ref-type="bibr">[12]</xref> and STP versus the SHE from ref. <xref rid="cphc202401088-bib-0066" ref-type="bibr">[66]</xref> for various metals (the potentials of both reference electrodes roughly correlate). Some metals show a higher PZC than the STPs, indicating a falsification of the PZC determination by oxide layers. *: no data available.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="center" span="1"/><col align="center" span="1"/><thead><tr style="border-bottom:solid 1px #000000"><th align="left" rowspan="1" colspan="1">Metal</th><th align="center" rowspan="1" colspan="1">PZC (vs. NHE)</th><th align="center" rowspan="1" colspan="1">STP (vs. SHE)</th></tr></thead><tbody><tr><td align="left" rowspan="1" colspan="1">Ag</td><td align="center" rowspan="1" colspan="1">−0.44</td><td align="center" rowspan="1" colspan="1">0.8</td></tr><tr><td align="left" rowspan="1" colspan="1">Al</td><td align="center" rowspan="1" colspan="1">−0.52</td><td align="center" rowspan="1" colspan="1">−2.33</td></tr><tr><td align="left" rowspan="1" colspan="1">Au</td><td align="center" rowspan="1" colspan="1">0.18</td><td align="center" rowspan="1" colspan="1">1.52</td></tr><tr><td align="left" rowspan="1" colspan="1">Bi</td><td align="center" rowspan="1" colspan="1">−0.39</td><td align="center" rowspan="1" colspan="1">−0.8</td></tr><tr><td align="left" rowspan="1" colspan="1">Cd</td><td align="center" rowspan="1" colspan="1">−0.72</td><td align="center" rowspan="1" colspan="1">−0.4</td></tr><tr><td align="left" rowspan="1" colspan="1">Co</td><td align="center" rowspan="1" colspan="1">−0.45</td><td align="center" rowspan="1" colspan="1">−0.28</td></tr><tr><td align="left" rowspan="1" colspan="1">Cr</td><td align="center" rowspan="1" colspan="1">−0.45</td><td align="center" rowspan="1" colspan="1">−0.74</td></tr><tr><td align="left" rowspan="1" colspan="1">Cu</td><td align="center" rowspan="1" colspan="1">0.09</td><td align="center" rowspan="1" colspan="1">0.34</td></tr><tr><td align="left" rowspan="1" colspan="1">Fe</td><td align="center" rowspan="1" colspan="1">−0.35</td><td align="center" rowspan="1" colspan="1">−0.44</td></tr><tr><td align="left" rowspan="1" colspan="1">Ga</td><td align="center" rowspan="1" colspan="1">−0.69</td><td align="center" rowspan="1" colspan="1">−0.55</td></tr><tr><td align="left" rowspan="1" colspan="1">Hg</td><td align="center" rowspan="1" colspan="1">−0.19</td><td align="center" rowspan="1" colspan="1">0.79</td></tr><tr><td align="left" rowspan="1" colspan="1">In</td><td align="center" rowspan="1" colspan="1">−0.65</td><td align="center" rowspan="1" colspan="1">−0.34</td></tr><tr><td align="left" rowspan="1" colspan="1">Ir</td><td align="center" rowspan="1" colspan="1">−0.04</td><td align="center" rowspan="1" colspan="1">*</td></tr><tr><td align="left" rowspan="1" colspan="1">Nb</td><td align="center" rowspan="1" colspan="1">−0.79</td><td align="center" rowspan="1" colspan="1">−1.1</td></tr><tr><td align="left" rowspan="1" colspan="1">Ni</td><td align="center" rowspan="1" colspan="1">−0.3</td><td align="center" rowspan="1" colspan="1">−0.26</td></tr><tr><td align="left" rowspan="1" colspan="1">Pb</td><td align="center" rowspan="1" colspan="1">−0.62</td><td align="center" rowspan="1" colspan="1">−0.58</td></tr><tr><td align="left" rowspan="1" colspan="1">Pd</td><td align="center" rowspan="1" colspan="1">0</td><td align="center" rowspan="1" colspan="1">0.92</td></tr><tr><td align="left" rowspan="1" colspan="1">Pt</td><td align="center" rowspan="1" colspan="1">0.02</td><td align="center" rowspan="1" colspan="1">1.19</td></tr><tr><td align="left" rowspan="1" colspan="1">Rh</td><td align="center" rowspan="1" colspan="1">−0.02</td><td align="center" rowspan="1" colspan="1">*</td></tr><tr><td align="left" rowspan="1" colspan="1">Sb</td><td align="center" rowspan="1" colspan="1">−0.14</td><td align="center" rowspan="1" colspan="1">0.2</td></tr><tr><td align="left" rowspan="1" colspan="1">Sn</td><td align="center" rowspan="1" colspan="1">−0.43</td><td align="center" rowspan="1" colspan="1">−0.13</td></tr><tr><td align="left" rowspan="1" colspan="1">Ta</td><td align="center" rowspan="1" colspan="1">−0.85</td><td align="center" rowspan="1" colspan="1">−0.75</td></tr><tr><td align="left" rowspan="1" colspan="1">Ti</td><td align="center" rowspan="1" colspan="1">−1.05</td><td align="center" rowspan="1" colspan="1">−1.31</td></tr><tr><td align="left" rowspan="1" colspan="1">Tl</td><td align="center" rowspan="1" colspan="1">−0.75</td><td align="center" rowspan="1" colspan="1">−0.34</td></tr><tr><td align="left" rowspan="1" colspan="1">Zn</td><td align="center" rowspan="1" colspan="1">−0.63</td><td align="center" rowspan="1" colspan="1">−1.2</td></tr></tbody></table></table-wrap><p>Next to gold, the platinum group metals (Pt, Pd, Ru, Ir, Re, Os) have the highest nobleness across the metals in the periodic table. However, in aqueous electrolytes, their capacitances are affected by pseudocapacitances associated with the hydrogen and oxygen adsorption.<sup>[</sup>
+<xref rid="cphc202401088-bib-0060" ref-type="bibr">
+<sup>60</sup>
+</xref>
+<sup>]</sup> These pseudocapacitances were widely ignored for the PZC estimation,<sup>[</sup>
+<xref rid="cphc202401088-bib-0081" ref-type="bibr">
+<sup>81</sup>
+</xref>, <xref rid="cphc202401088-bib-0082" ref-type="bibr">
+<sup>82</sup>
+</xref>, <xref rid="cphc202401088-bib-0083" ref-type="bibr">
+<sup>83</sup>
+</xref>
+<sup>]</sup> but obviously the minimum of the MCP here just represents the region with least pseudocapacitive hydrogen or oxygen adsorption. In the electrochemical series, mercury and silver display the following next most noble metals. Both metals have similar nobleness and are affected by the above‐described oxidation by atmospheric oxygen and a very narrow window between the electrochemical oxidation and hydrogen evolution reaction. For less noble metals, MCPs mainly consist of competing electrode oxidation and HER. As a result, these MCPs cannot be meaningfully correlated with the DCAPs from models that represent the intrinsic DL properties. Hence, the measured PZCs are consequently not reliable. With reference to the above discussed difficulties of the MCPs of metals, gold displays the only polished metal for which MCPs can be measured in aqueous electrolytes by simultaneously fulfilling 1) an initially nonoxidized surface, 2) no distinct hydrogen or oxygen adsorption (like the platinum group metals), and 3) a broad potential range in which neither the electrode oxidation nor the HER significantly contribute.</p><p>The DL of gold was also examined in aprotic solvents,<sup>[</sup>
+<xref rid="cphc202401088-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref>
+<sup>]</sup> where the hydrogen evolution reaction and the electrode oxidation were avoided. However, the formation of the solid electrolyte interphase significantly affects the capacitance and causes a charge transfer reaction,<sup>[</sup>
+<xref rid="cphc202401088-bib-0084" ref-type="bibr">
+<sup>84</sup>
+</xref>
+<sup>]</sup> which consequently cause nonflat MCPs. Besides the electrical measurements of the PZC, optical measurements to determine the PZC were discussed.<sup>[</sup>
+<xref rid="cphc202401088-bib-0085" ref-type="bibr">
+<sup>85</sup>
+</xref>
+<sup>]</sup> However, like the electrocapillary of the mercury electrode, it remains questionable whether changes of the surface state such as oxide layers or adsorbed species also impact the optical properties of the surface.</p></sec><sec id="cphc202401088-sec-0012" disp-level="2"><label>3.6.</label><title>The Role of the Measurement Technique</title><p>Historically, MCPs were obtained with a potentiostat in combination with a function generator that added a sinusoidal voltage perturbation. A lock‐in amplifier analyzed the current response of the perturbation regarding the amplitude and phase angle, from which the impedance (and thus capacitance) could be determined.<sup>[</sup>
+<xref rid="cphc202401088-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref>
+<sup>]</sup> However, in this approach, the potentiostat counteracts against the enforced perturbation, displaying a potential error cause that may have falsified reported measurements. As described in the Experimental Section, the data discussed in this study were obtained with a modern‐day potentiostat, which applies the sinusoidal perturbation to the linear potential scan in the time domain. Thus, counteracting signals were avoided. In some recent works,<sup>[</sup>
+<xref rid="cphc202401088-bib-0086" ref-type="bibr">
+<sup>86</sup>
+</xref>, <xref rid="cphc202401088-bib-0087" ref-type="bibr">
+<sup>87</sup>
+</xref>
+<sup>]</sup> MCPs were determined by dividing the CV current by the scan rate. In this case, charge transfer reactions and capacitive contribution to the CV cannot be distinguished, for which this kind of measurement is experimentally less precise than the first electric capacitance measurements on the mercury electrode that were collected almost a century ago.<sup>[</sup>
+<xref rid="cphc202401088-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref>
+<sup>]</sup>
+</p><p>When probing the DL response, the amount of displaced charge and the associated capacitance increases toward lower frequencies.<sup>[</sup>
+<xref rid="cphc202401088-bib-0063" ref-type="bibr">
+<sup>63</sup>
+</xref>, <xref rid="cphc202401088-bib-0065" ref-type="bibr">
+<sup>65</sup>
+</xref>
+<sup>]</sup> This frequency effect led to different values of <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-41" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mtext>RF</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> and <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-42" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mn>1</mml:mn><mml:mtext>Hz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> in Figure <xref rid="cphc202401088-fig-0003" ref-type="fig">3</xref>. The MCPs with <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-43" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>EIS</mml:mtext><mml:mo>@</mml:mo><mml:mn>1</mml:mn><mml:mtext>Hz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> and <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-44" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>ACV </mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> mostly agreed, as both were measured at the same frequency. CV and EIS data of DL responses are for small amplitudes transferable via a Fourier transformation,<sup>[</sup>
+<xref rid="cphc202401088-bib-0088" ref-type="bibr">
+<sup>88</sup>
+</xref>
+<sup>]</sup> showing that the form of perturbation has a minor impact on capacitances measured. In contrast to the sinosoidal perturbations, with the step function, the transition between steady states is measured. Hence, for this technique, the dynamics of the ion rearrangement in the DL and the related relaxation are less important, which better portray the situation assumed for the DCAP calculations.</p></sec><sec id="cphc202401088-sec-0013" disp-level="2"><label>3.7.</label><title>A Critical View on DCAP and PZC Concepts</title><p>The classical theories for the DL describe electrostatic scenarios, which display stationary states without a current. The DCAP is typically<sup>[</sup>
+<xref rid="cphc202401088-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref>
+<sup>]</sup> derived by differentiating the charge distribution <italic>ρ</italic> in the electrode potential <italic>E</italic>
+</p><disp-formula id="cphc202401088-disp-0002"><label>(2)</label><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-45" display="block"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mtext>diff</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mi>∂</mml:mi><mml:mi>ρ</mml:mi></mml:mrow><mml:mrow><mml:mi>∂</mml:mi><mml:mi>E</mml:mi></mml:mrow></mml:mfrac></mml:mrow></mml:mrow></mml:math></disp-formula><p>Hence, the DCAP describes the transition between static states but does not give any information about the dynamics of the transition. However, the DL response is an electrodynamic process with a n‐body interaction of moving ions by diffusion and electromigration that results in a time‐dependent electric field penetration during the charge rearrangement in the DL.<sup>[</sup>
+<xref rid="cphc202401088-bib-0059" ref-type="bibr">
+<sup>59</sup>
+</xref>, <xref rid="cphc202401088-bib-0064" ref-type="bibr">
+<sup>64</sup>
+</xref>
+<sup>]</sup> Hence, interpreting the DL as a capacitance in terms of Equation (<xref rid="cphc202401088-disp-0002" ref-type="disp-formula">2</xref>) is an oversimplification. When extracting the capacitance from measurements that used potential variations, the dynamics of the ion rearrangement is measured, which cause resistive contributions that are often taken into accoutn by the constant phase element (CPE) parameterization.<sup>[</sup>
+<xref rid="cphc202401088-bib-0057" ref-type="bibr">
+<sup>57</sup>
+</xref>, <xref rid="cphc202401088-bib-0059" ref-type="bibr">
+<sup>59</sup>
+</xref>
+<sup>]</sup> Hence, the commonly used assumption <sup>[</sup>
+<xref rid="cphc202401088-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref>, <xref rid="cphc202401088-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>, <xref rid="cphc202401088-bib-0022" ref-type="bibr">
+<sup>22</sup>
+</xref>, <xref rid="cphc202401088-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref>
+<sup>]</sup> that MCPs display measured DCAPs and even the same wording for both is not correct. The series combination of capacitances described by Equation (<xref rid="cphc202401088-disp-0001" ref-type="disp-formula">1</xref>) from Sterns model and the following works does not account for the dynamics of the ion transport in the DL. By presuming Equation (<xref rid="cphc202401088-disp-0001" ref-type="disp-formula">1</xref>) and neglecting the DL dynamics, Parsons–Zobel plots<sup>[</sup>
+<xref rid="cphc202401088-bib-0089" ref-type="bibr">
+<sup>89</sup>
+</xref>
+<sup>]</sup> are commonly used to distinguish between inner and outer Helmholtz layer contributions,<sup>[</sup>
+<xref rid="cphc202401088-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref>, <xref rid="cphc202401088-bib-0090" ref-type="bibr">
+<sup>90</sup>
+</xref>, <xref rid="cphc202401088-bib-0091" ref-type="bibr">
+<sup>91</sup>
+</xref>
+<sup>]</sup> which are however not meaningful when the DL dynamics are actually probed in the experiments.</p><p>To directly measure the transition between static states that is described by the DCAP with Equation (<xref rid="cphc202401088-disp-0002" ref-type="disp-formula">2</xref>), the amperometry‐step‐function procedure introduced above to determine <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-46" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>SQW</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> may be usable. This technique starts and ends with a steady state (static states with negligible current are due to the parasitic reactions never reachable), and the dynamics in between this relaxation do not matter when the total charge of the transition (like Equation (<xref rid="cphc202401088-disp-0002" ref-type="disp-formula">2</xref>)) is counted. However, charge transfer reactions directly affect the measured currents and the capacitances <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-47" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mtext>SQW</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math></inline-formula> therefrom calculated.</p></sec><sec id="cphc202401088-sec-0014" disp-level="2"><label>3.8.</label><title>Assumptions of the Electrostatic DL Models</title><p>The electrostatic models for the DL assume a static statistical distribution<sup>[</sup>
+<xref rid="cphc202401088-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref>
+<sup>]</sup> (lattice gas model or Boltzmann) of the ions in the electrolyte, while the electrochemical interface is assumed as a macroscopic electrostatic equilibrium without moving ions at a constant electrode potential of a blocking electrode (no parasitic currents). However, the attraction of contrary and the distraction of evenly charged ions in combination with the Brownian motion lead to continuous ion rearrangements that interact with electrodynamic forces. Hence, the electrolyte and the DL are in a dynamic state rather than in a static electrostatic order. Consequently, the mean‐field assumptions used for the Poisson–Boltzmann framework<sup>[</sup>
+<xref rid="cphc202401088-bib-0038" ref-type="bibr">
+<sup>38</sup>
+</xref>, <xref rid="cphc202401088-bib-0092" ref-type="bibr">
+<sup>92</sup>
+</xref>
+<sup>]</sup> are not justifiable, while the microscopic dynamics are ignored in the electrostatic models that assume a macroscopic equilibrium. Similar criticism of the Deby–Hückel theory for electrolytic solution was recently published,<sup>[</sup>
+<xref rid="cphc202401088-bib-0093" ref-type="bibr">
+<sup>93</sup>
+</xref>
+<sup>]</sup> which relies on a similar Poisson–Boltzmann framework as the Gouy<italic>–</italic>Chapman theory. The mathematical independence of states presumed for the Boltzmann statistics is violated by convolution with the Poisson equation.<sup>[</sup>
+<xref rid="cphc202401088-bib-0093" ref-type="bibr">
+<sup>93</sup>
+</xref>
+<sup>]</sup> Moreover, the assumption of a dielectric continuum on an atomistic level is not justified,<sup>[</sup>
+<xref rid="cphc202401088-bib-0050" ref-type="bibr">
+<sup>50</sup>
+</xref>
+<sup>]</sup> so the dipoles of the solvent are not adequately represented in the classical theories.<sup>[</sup>
+<xref rid="cphc202401088-bib-0093" ref-type="bibr">
+<sup>93</sup>
+</xref>
+<sup>]</sup> The definition of a conductive dielectric in an electrostatic framework is also erroneous with reference to the electric field‐free conductors in classical electrostatics that was discussed in the “Introduction.”<sup>[</sup>
+<xref rid="cphc202401088-bib-0093" ref-type="bibr">
+<sup>93</sup>
+</xref>
+<sup>]</sup>
+</p><p>To summarize, the DL displays a dynamic state of matter and electrostatic models with mean‐field assumptions do not portray the spatially and temporally varying atomistic and molecular interactions. By adding multiple extensions to the electrostatic theories<sup>[</sup>
+<xref rid="cphc202401088-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref>, <xref rid="cphc202401088-bib-0026" ref-type="bibr">
+<sup>26</sup>
+</xref>, <xref rid="cphc202401088-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>, <xref rid="cphc202401088-bib-0038" ref-type="bibr">
+<sup>38</sup>
+</xref>, <xref rid="cphc202401088-bib-0039" ref-type="bibr">
+<sup>39</sup>
+</xref>, <xref rid="cphc202401088-bib-0040" ref-type="bibr">
+<sup>40</sup>
+</xref>, <xref rid="cphc202401088-bib-0041" ref-type="bibr">
+<sup>41</sup>
+</xref>, <xref rid="cphc202401088-bib-0042" ref-type="bibr">
+<sup>42</sup>
+</xref>
+<sup>]</sup> an overfitting of the theory to MCPs resulted, which probes the dynamic charge rearrangement in the DL rather than the transition between static states that is calculated with the DCAP. Consequently, the 100‐year‐old electrostatic models that are the basis of our today's textbook knowledge about the DL should be considered with care and skepticism. This study aims to raise awareness for such long‐overlooked inconsistencies of the electrostatic DL theories.</p></sec></sec><sec id="cphc202401088-sec-0015" disp-level="1"><label>4.</label><title>Conclusions</title><p>In this study, MCPs on a polycrystalline gold electrode are critically examined regarding the effect of oxide layer formation/reduction, hydrogen evolution reaction, and oxygen reduction reaction. By varying the examined potential windows and the amount of dissolved electrolytic oxygen, the contributions of the oxide formation/reduction and oxygen reduction reaction are controlled. This variation is shown to significantly affect the MCPs as charge transfer processes directly affect capacitances. The gold electrode shows a capacitance enlargement by the initial oxide layer formation, which irreversibly changes the MCPs toward the valley or camel‐type shape that was reported for previously oxidized gold specimens. By probing the capacitance at relaxation frequencies, the contributions of parasitic reactions to the response are weakened, resulting in almost flat capacitance profiles for non‐ or weakly‐oxidized gold. The DCAP from theory was discussed to describe a transition between static states, which does not describe the dynamic ion rearrangement of the ions in the DL that is actually measured. MCPs of other metals than gold are discussed as more vulnerable to nonintrinsic DL contributions, such as pseudocapacitances or oxide formation/reduction. The minima of MCPs are often associated with PZCs, which however cannot be determined with a rather flat MCP or dominant contributions of parasitic reactions. These findings hopefully encourage the community to critically assess electrostatic textbook models of the DL as well as PZCs and MCPs as deceptive evaluation metrics.</p></sec><sec id="cphc202401088-sec-0017" disp-level="1"><title>Conflict of Interest</title><p>The authors declare no conflict of interest.</p></sec><sec id="cphc202401088-sec-0018" disp-level="1"><title>Author Contributions</title><p>
+<bold>Maximilian Schalenbach</bold>: Conceptualization, Methodology, Experimental works, Data Curation, Writing—Original Draft, Visualization. <bold>Hermann Tempel</bold>: Writing—review &amp; editing (supporting). <bold>Rüdiger‐A. Eichel</bold>: Writing—review &amp; editing (supporting).</p></sec><sec id="sec18" disp-level="1"><title>Supporting information</title><supplementary-material id="supplementary-material1" position="float"><caption><p>Supplementary Material</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="CPHC-26-e202401088-s001.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path cd21/12276039/3edcfe16185e/CPHC-26-e202401088-s001.pdf?><?cloudpmc-bucket app?><?size 1040158?></media></supplementary-material></sec><sec id="cphc202401088-sec-0016" sec-type="ack" disp-level="1"><title>Acknowledgements</title><p>This work was supported by the German Federal Ministry of Education and Research (BMBF) within the Project iNEW2.0 (Inkubator Nachhaltige Elektrochemie, 03SF0627A).</p><p>Open Access funding enabled and organized by Projekt DEAL.</p></sec><sec id="cphc202401088-sec-0020" disp-level="1"><title>Data Availability Statement</title><p>The data that support the findings of this study are available from the corresponding author upon reasonable request.</p></sec><sec id="cphc202401088-bibl-0001" sec-type="ref-list" disp-level="1"><title>References</title><sec id="cphc202401088-bibl-0001_sec2" disp-level="2"><ref-list><ref id="cphc202401088-bib-0001"><label>1.</label><mixed-citation id="cphc202401088-cit-0001"><named-content content-type="citation-string">
+Janotta B., Schalenbach M., Tempel H., Eichel R. A., Electrochim. Acta
+2024, 508, 145280.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Electrochim. Acta&amp;author=B. Janotta&amp;author=M. Schalenbach&amp;author=H. Tempel&amp;author=R. A. Eichel&amp;volume=508&amp;publication_year=2024&amp;pages=145280&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0002"><label>2.</label><mixed-citation id="cphc202401088-cit-0002"><named-content content-type="citation-string">
+Helmholtz H., Ann. der Phys. und Chemie
+1879, 7, 22.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Ann. der Phys. und Chemie&amp;author=H. Helmholtz&amp;volume=7&amp;publication_year=1879&amp;pages=22&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0003"><label>3.</label><mixed-citation id="cphc202401088-cit-0003"><named-content content-type="citation-string">
+Gouy M., J. Phys. Théorique Appliquée
+1910, 9, 457.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Théorique Appliquée&amp;author=M. Gouy&amp;volume=9&amp;publication_year=1910&amp;pages=457&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0004"><label>4.</label><mixed-citation id="cphc202401088-cit-0004"><named-content content-type="citation-string">
+Chapman D. L., London, Edinburgh, Dublin Philos. Mag. J. Sci.
+1913, 25, 475.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=London, Edinburgh, Dublin Philos. Mag. J. Sci.&amp;author=D. L. Chapman&amp;volume=25&amp;publication_year=1913&amp;pages=475&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0005"><label>5.</label><mixed-citation id="cphc202401088-cit-0005"><named-content content-type="citation-string">
+Ivanov V. D., J. Electrochem. Soc.
+2023, 170, 106507.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electrochem. Soc.&amp;author=V. D. Ivanov&amp;volume=170&amp;publication_year=2023&amp;pages=106507&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0006"><label>6.</label><mixed-citation id="cphc202401088-cit-0006"><named-content content-type="citation-string">
+Parsons R., Chem. Rev.
+1990, 90, 813.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. Rev.&amp;author=R. Parsons&amp;volume=90&amp;publication_year=1990&amp;pages=813&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0007"><label>7.</label><mixed-citation id="cphc202401088-cit-0007"><named-content content-type="citation-string">
+Macdonald J. R., J. Chem. Phys.
+1954, 22, 1857.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;author=J. R. Macdonald&amp;volume=22&amp;publication_year=1954&amp;pages=1857&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0008"><label>8.</label><mixed-citation id="cphc202401088-cit-0008"><named-content content-type="citation-string">
+Ross Macdonald J., Barlow C. A., J. Chem. Phys.
+1962, 36, 3062.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;author=J. Ross Macdonald&amp;author=C. A. Barlow&amp;volume=36&amp;publication_year=1962&amp;pages=3062&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0009"><label>9.</label><mixed-citation id="cphc202401088-cit-0009"><named-content content-type="citation-string">
+Henderson D., Prog. Surf. Sci.
+1983, 13, 197.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Prog. Surf. Sci.&amp;author=D. Henderson&amp;volume=13&amp;publication_year=1983&amp;pages=197&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0010"><label>10.</label><mixed-citation id="cphc202401088-cit-0010"><named-content content-type="citation-string">
+Schmickler W., Electrochemical Theory: Double Layer, Reference Module in Chemistry, Molecular Sciences and Chemical Engineering, Elsevier Inc.
+New York: 
+2014, pp. 1–10,</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Electrochemical Theory: Double Layer, Reference Module in Chemistry, Molecular Sciences and Chemical Engineering&amp;author=W. Schmickler&amp;publication_year=2014&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0011"><label>11.</label><mixed-citation id="cphc202401088-cit-0011"><named-content content-type="citation-string">
+Trasatti S., Lust E., Modern Aspects of Electrochemistry, Kluwer Academic Publishers, New York, Vol. 33
+2002.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Modern Aspects of Electrochemistry&amp;author=S. Trasatti&amp;author=E. Lust&amp;publication_year=2002&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0012"><label>12.</label><mixed-citation id="cphc202401088-cit-0012"><named-content content-type="citation-string">
+Trasatti S., J. Electroanal. Chem.
+1971, 33, 351.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electroanal. Chem.&amp;author=S. Trasatti&amp;volume=33&amp;publication_year=1971&amp;pages=351&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0013"><label>13.</label><mixed-citation id="cphc202401088-cit-0013"><named-content content-type="citation-string">
+Stern O., Zeitschrift für Elektrochemie und Angew. Phys. Chemie
+1924, 30, 508.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Zeitschrift für Elektrochemie und Angew. Phys. Chemie&amp;author=O. Stern&amp;volume=30&amp;publication_year=1924&amp;pages=508&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0014"><label>14.</label><mixed-citation id="cphc202401088-cit-0014"><named-content content-type="citation-string">
+Schmickler W., Henderson D., Prog. Surf. Sci.
+1986, 22, 323.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Prog. Surf. Sci.&amp;author=W. Schmickler&amp;author=D. Henderson&amp;volume=22&amp;publication_year=1986&amp;pages=323&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0015"><label>15.</label><mixed-citation id="cphc202401088-cit-0015"><named-content content-type="citation-string">
+Heyrovsky J., Šimůnek R., London, Edinburgh, Dublin Philos. Mag. J. Sci.
+1929, 7, 951.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=London, Edinburgh, Dublin Philos. Mag. J. Sci.&amp;author=J. Heyrovsky&amp;author=R. Šimůnek&amp;volume=7&amp;publication_year=1929&amp;pages=951&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0016"><label>16.</label><mixed-citation id="cphc202401088-cit-0016"><named-content content-type="citation-string">
+Damaskin B. B., Petrii O. A., J. Solid State Electrochem.
+2011, 15, 1317.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Solid State Electrochem.&amp;author=B. B. Damaskin&amp;author=O. A. Petrii&amp;volume=15&amp;publication_year=2011&amp;pages=1317&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0017"><label>17.</label><mixed-citation id="cphc202401088-cit-0017"><named-content content-type="citation-string">
+Proskurnin M., Frumkin A., Trans. Faraday Soc.
+1935, 31, 110.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Trans. Faraday Soc.&amp;author=M. Proskurnin&amp;author=A. Frumkin&amp;volume=31&amp;publication_year=1935&amp;pages=110&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0018"><label>18.</label><mixed-citation id="cphc202401088-cit-0018"><named-content content-type="citation-string">
+Grahame D. C., J. Am. Chem. Soc.
+1954, 76, 4819.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Am. Chem. Soc.&amp;author=D. C. Grahame&amp;volume=76&amp;publication_year=1954&amp;pages=4819&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0019"><label>19.</label><mixed-citation id="cphc202401088-cit-0019"><named-content content-type="citation-string">
+Frumkin A., Trans. Faraday Soc.
+1940, 35, 117.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Trans. Faraday Soc.&amp;author=A. Frumkin&amp;volume=35&amp;publication_year=1940&amp;pages=117&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0020"><label>20.</label><mixed-citation id="cphc202401088-cit-0020"><named-content content-type="citation-string">
+Grahame D. C., Chem. Rev.
+1947, 41, 441.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/cr60130a002"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="18895519"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. Rev.&amp;author=D. C. Grahame&amp;volume=41&amp;publication_year=1947&amp;pages=441&amp;pmid=18895519&amp;doi=10.1021/cr60130a002&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0021"><label>21.</label><mixed-citation id="cphc202401088-cit-0021"><named-content content-type="citation-string">
+Shatla A. S., Landstorfer M., Baltruschat H., ChemElectroChem
+2021, 8, 1817.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ChemElectroChem&amp;author=A. S. Shatla&amp;author=M. Landstorfer&amp;author=H. Baltruschat&amp;volume=8&amp;publication_year=2021&amp;pages=1817&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0022"><label>22.</label><mixed-citation id="cphc202401088-cit-0022"><named-content content-type="citation-string">
+Wu J., Chem. Rev.
+2022, 122, 10821.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.chemrev.2c00097"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35594506"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. Rev.&amp;author=J. Wu&amp;volume=122&amp;publication_year=2022&amp;pages=10821&amp;pmid=35594506&amp;doi=10.1021/acs.chemrev.2c00097&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0023"><label>23.</label><mixed-citation id="cphc202401088-cit-0023"><named-content content-type="citation-string">
+Hamelin A., Vitanov T., Sevastyanov E., Popov A., J. Electroanal. Chem.
+1983, 145, 225.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electroanal. Chem.&amp;author=A. Hamelin&amp;author=T. Vitanov&amp;author=E. Sevastyanov&amp;author=A. Popov&amp;volume=145&amp;publication_year=1983&amp;pages=225&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0024"><label>24.</label><mixed-citation id="cphc202401088-cit-0024"><named-content content-type="citation-string">
+Fawcett W. R., Kováčová Z., Motheo A. J., Foss C. A., J. Electroanal. Chem.
+1992, 326, 91.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electroanal. Chem.&amp;author=W. R. Fawcett&amp;author=Z. Kováčová&amp;author=A. J. Motheo&amp;author=C. A. Foss&amp;volume=326&amp;publication_year=1992&amp;pages=91&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0025"><label>25.</label><mixed-citation id="cphc202401088-cit-0025"><named-content content-type="citation-string">
+Valleau J. P., Torrie G. M., J. Chem. Phys.
+1982, 76, 4623.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;author=J. P. Valleau&amp;author=G. M. Torrie&amp;volume=76&amp;publication_year=1982&amp;pages=4623&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0026"><label>26.</label><mixed-citation id="cphc202401088-cit-0026"><named-content content-type="citation-string">
+Outhwaite C. W., Bhuiyan L. B., J. Chem. Soc. Faraday Trans. 2 Mol. Chem. Phys.
+1983, 79, 707.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Soc. Faraday Trans. 2 Mol. Chem. Phys.&amp;author=C. W. Outhwaite&amp;author=L. B. Bhuiyan&amp;volume=79&amp;publication_year=1983&amp;pages=707&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0027"><label>27.</label><mixed-citation id="cphc202401088-cit-0027"><named-content content-type="citation-string">
+Greberg H., Kjellander R., J. Chem. Phys.
+1998, 108, 2940.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;author=H. Greberg&amp;author=R. Kjellander&amp;volume=108&amp;publication_year=1998&amp;pages=2940&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0028"><label>28.</label><mixed-citation id="cphc202401088-cit-0028"><named-content content-type="citation-string">
+Bikerman J. J., London, Edinburgh, Dublin Philos. Mag. J. Sci.
+1942, 33, 384.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=London, Edinburgh, Dublin Philos. Mag. J. Sci.&amp;author=J. J. Bikerman&amp;volume=33&amp;publication_year=1942&amp;pages=384&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0029"><label>29.</label><mixed-citation id="cphc202401088-cit-0029"><named-content content-type="citation-string">
+Kornyshev A. A., J. Phys. Chem. B
+2007, 111, 5545.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/jp067857o"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="17469864"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. B&amp;author=A. A. Kornyshev&amp;volume=111&amp;publication_year=2007&amp;pages=5545&amp;pmid=17469864&amp;doi=10.1021/jp067857o&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0030"><label>30.</label><mixed-citation id="cphc202401088-cit-0030"><named-content content-type="citation-string">
+Bazant M. Z., Kilic M. S., Storey B. D., Ajdari A., Adv. Colloid Interface Sci.
+2009, 152, 48.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cis.2009.10.001"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19879552"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Adv. Colloid Interface Sci.&amp;author=M. Z. Bazant&amp;author=M. S. Kilic&amp;author=B. D. Storey&amp;author=A. Ajdari&amp;volume=152&amp;publication_year=2009&amp;pages=48&amp;pmid=19879552&amp;doi=10.1016/j.cis.2009.10.001&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0031"><label>31.</label><mixed-citation id="cphc202401088-cit-0031"><named-content content-type="citation-string">
+Smagala T. G., Fawcett W. R., J. Phys. Chem. B
+2007, 111, 13075.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/jp073868l"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="17988076"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. B&amp;author=T. G. Smagala&amp;author=W. R. Fawcett&amp;volume=111&amp;publication_year=2007&amp;pages=13075&amp;pmid=17988076&amp;doi=10.1021/jp073868l&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0032"><label>32.</label><mixed-citation id="cphc202401088-cit-0032"><named-content content-type="citation-string">
+Nakayama Y., Andelman D., J. Chem. Phys.
+2015, 142, 044706.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1063/1.4906319"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="25638002"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;author=Y. Nakayama&amp;author=D. Andelman&amp;volume=142&amp;publication_year=2015&amp;pages=044706&amp;pmid=25638002&amp;doi=10.1063/1.4906319&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0033"><label>33.</label><mixed-citation id="cphc202401088-cit-0033"><named-content content-type="citation-string">
+Wu H., Wang Y., Shi Z., Wang X., Yang J., Xiao M., Ge J., Xing W., Liu C., J. Mater. Chem. A
+2022, 10, 13170.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Mater. Chem. A&amp;author=H. Wu&amp;author=Y. Wang&amp;author=Z. Shi&amp;author=X. Wang&amp;author=J. Yang&amp;volume=10&amp;publication_year=2022&amp;pages=13170&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0034"><label>34.</label><mixed-citation id="cphc202401088-cit-0034"><named-content content-type="citation-string">
+Hamelin A., Stoicoviciu L., Doubova L., Surf. Sci.
+1988, 201, L498.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Surf. Sci.&amp;author=A. Hamelin&amp;author=L. Stoicoviciu&amp;author=L. Doubova&amp;volume=201&amp;publication_year=1988&amp;pages=L498&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0035"><label>35.</label><mixed-citation id="cphc202401088-cit-0035"><named-content content-type="citation-string">
+Silva F., Sottomayor M. J., Hamelin A., Stoicoviciu L., J. Electroanal. Chem.
+1990, 295, 301.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electroanal. Chem.&amp;author=F. Silva&amp;author=M. J. Sottomayor&amp;author=A. Hamelin&amp;author=L. Stoicoviciu&amp;volume=295&amp;publication_year=1990&amp;pages=301&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0036"><label>36.</label><mixed-citation id="cphc202401088-cit-0036"><named-content content-type="citation-string">
+Hamelin A., J. Electroanal. Chem.
+1995, 386, 1.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electroanal. Chem.&amp;author=A. Hamelin&amp;volume=386&amp;publication_year=1995&amp;pages=1&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0037"><label>37.</label><mixed-citation id="cphc202401088-cit-0037"><named-content content-type="citation-string">
+May S., Curr. Opin. Electrochem.
+2019, 13, 125.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Curr. Opin. Electrochem.&amp;author=S. May&amp;volume=13&amp;publication_year=2019&amp;pages=125&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0038"><label>38.</label><mixed-citation id="cphc202401088-cit-0038"><named-content content-type="citation-string">
+Bohinc K., Bossa G. V., May S., Adv. Colloid Interface Sci.
+2017, 249, 220.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cis.2017.05.001"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28571611"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Adv. Colloid Interface Sci.&amp;author=K. Bohinc&amp;author=G. V. Bossa&amp;author=S. May&amp;volume=249&amp;publication_year=2017&amp;pages=220&amp;pmid=28571611&amp;doi=10.1016/j.cis.2017.05.001&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0039"><label>39.</label><mixed-citation id="cphc202401088-cit-0039"><named-content content-type="citation-string">
+Henderson D., Blum L., J. Electroanal. Chem. Interfacial Electrochem.
+1982, 132, 1.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electroanal. Chem. Interfacial Electrochem.&amp;author=D. Henderson&amp;author=L. Blum&amp;volume=132&amp;publication_year=1982&amp;pages=1&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0040"><label>40.</label><mixed-citation id="cphc202401088-cit-0040"><named-content content-type="citation-string">
+Carnie S. L., Chan D. Y. C., Adv. Colloid Interface Sci.
+1982, 16, 81.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Adv. Colloid Interface Sci.&amp;author=S. L. Carnie&amp;author=D. Y. C. Chan&amp;volume=16&amp;publication_year=1982&amp;pages=81&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0041"><label>41.</label><mixed-citation id="cphc202401088-cit-0041"><named-content content-type="citation-string">
+Schmickler W., J. ElectroanaL Chem.
+1983, 150, 19.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. ElectroanaL Chem.&amp;author=W. Schmickler&amp;volume=150&amp;publication_year=1983&amp;pages=19&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0042"><label>42.</label><mixed-citation id="cphc202401088-cit-0042"><named-content content-type="citation-string">
+Huang J., Li P., Chen S., Phys. Rev. B
+2020, 101, 1.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. B&amp;author=J. Huang&amp;author=P. Li&amp;author=S. Chen&amp;volume=101&amp;publication_year=2020&amp;pages=1&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0043"><label>43.</label><mixed-citation id="cphc202401088-cit-0043"><named-content content-type="citation-string">
+Henderson D., Boda D., Phys. Chem. Chem. Phys.
+2009, 11, 3822.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/b815946g"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19440608"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Chem. Chem. Phys.&amp;author=D. Henderson&amp;author=D. Boda&amp;volume=11&amp;publication_year=2009&amp;pages=3822&amp;pmid=19440608&amp;doi=10.1039/b815946g&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0044"><label>44.</label><mixed-citation id="cphc202401088-cit-0044"><named-content content-type="citation-string">
+Jeanmairet G., Rotenberg B., Salanne M., Chem. Rev.
+2022, 122, 10860.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.chemrev.1c00925"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9227719"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35389636"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. Rev.&amp;author=G. Jeanmairet&amp;author=B. Rotenberg&amp;author=M. Salanne&amp;volume=122&amp;publication_year=2022&amp;pages=10860&amp;pmid=35389636&amp;doi=10.1021/acs.chemrev.1c00925&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0045"><label>45.</label><mixed-citation id="cphc202401088-cit-0045"><named-content content-type="citation-string">
+Sakong S., Huang J., Eikerling M., Groß A., Curr. Opin. Electrochem.
+2022, 33, 100953.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Curr. Opin. Electrochem.&amp;author=S. Sakong&amp;author=J. Huang&amp;author=M. Eikerling&amp;author=A. Groß&amp;volume=33&amp;publication_year=2022&amp;pages=100953&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0046"><label>46.</label><mixed-citation id="cphc202401088-cit-0046"><named-content content-type="citation-string">
+Groß A., Sakong S., Curr. Opin. Electrochem.
+2019, 14, 1.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Curr. Opin. Electrochem.&amp;author=A. Groß&amp;author=S. Sakong&amp;volume=14&amp;publication_year=2019&amp;pages=1&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0047"><label>47.</label><mixed-citation id="cphc202401088-cit-0047"><named-content content-type="citation-string">
+Chen X., El Khatib M., Lindgren P., Willard A., Medford A. J., Peterson A. A., npj Comput. Mater.
+2023, 9, 73.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=npj Comput. Mater.&amp;author=X. Chen&amp;author=M. El Khatib&amp;author=P. Lindgren&amp;author=A. Willard&amp;author=A. J. Medford&amp;volume=9&amp;publication_year=2023&amp;pages=73&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0048"><label>48.</label><mixed-citation id="cphc202401088-cit-0048"><named-content content-type="citation-string">
+Johnson E., Haussener S., J. Phys. Chem. C
+2024, 128, 10450.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jpcc.4c03469"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC11215773"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="38957368"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. C&amp;author=E. Johnson&amp;author=S. Haussener&amp;volume=128&amp;publication_year=2024&amp;pages=10450&amp;pmid=38957368&amp;doi=10.1021/acs.jpcc.4c03469&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0049"><label>49.</label><mixed-citation id="cphc202401088-cit-0049"><named-content content-type="citation-string">
+Agrawal N. R., Duan C., Wang R., J. Phys. Chem. B
+2024, 128, 303.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jpcb.3c04739"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="38150660"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. B&amp;author=N. R. Agrawal&amp;author=C. Duan&amp;author=R. Wang&amp;volume=128&amp;publication_year=2024&amp;pages=303&amp;pmid=38150660&amp;doi=10.1021/acs.jpcb.3c04739&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0050"><label>50.</label><mixed-citation id="cphc202401088-cit-0050"><named-content content-type="citation-string">
+Limaye A., Suvlu D., Willard A. P., Faraday Discuss.
+2023, 249, 267.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/d3fd00114h"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37830233"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Faraday Discuss.&amp;author=A. Limaye&amp;author=D. Suvlu&amp;author=A. P. Willard&amp;volume=249&amp;publication_year=2023&amp;pages=267&amp;pmid=37830233&amp;doi=10.1039/d3fd00114h&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0051"><label>51.</label><mixed-citation id="cphc202401088-cit-0051"><named-content content-type="citation-string">
+Zhou S., J. Mol. Liq.
+2022, 364, 119943.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Mol. Liq.&amp;author=S. Zhou&amp;volume=364&amp;publication_year=2022&amp;pages=119943&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0052"><label>52.</label><mixed-citation id="cphc202401088-cit-0052"><named-content content-type="citation-string">
+Shin S. J., Kim D. H., Bae G., Ringe S., Choi H., Lim H. K., Choi C. H., Kim H., Nat. Commun.
+2022, 13, 174.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41467-021-27909-x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8748683"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35013347"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Commun.&amp;author=S. J. Shin&amp;author=D. H. Kim&amp;author=G. Bae&amp;author=S. Ringe&amp;author=H. Choi&amp;volume=13&amp;publication_year=2022&amp;pages=174&amp;pmid=35013347&amp;doi=10.1038/s41467-021-27909-x&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0053"><label>53.</label><mixed-citation id="cphc202401088-cit-0053"><named-content content-type="citation-string">
+Cats P., van Roij R., J. Chem. Phys.
+2021, 155, 104702.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1063/5.0064315"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34525830"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;author=P. Cats&amp;author=R. van Roij&amp;volume=155&amp;publication_year=2021&amp;pages=104702&amp;pmid=34525830&amp;doi=10.1063/5.0064315&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0054"><label>54.</label><mixed-citation id="cphc202401088-cit-0054"><named-content content-type="citation-string">
+Gan Z., Wang Y., Lu Y., Qin J., Nie Y., He H., ChemElectroChem
+2022, 9, e202200274.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ChemElectroChem&amp;author=Z. Gan&amp;author=Y. Wang&amp;author=Y. Lu&amp;author=J. Qin&amp;author=Y. Nie&amp;volume=9&amp;publication_year=2022&amp;pages=e202200274&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0055"><label>55.</label><mixed-citation id="cphc202401088-cit-0055"><named-content content-type="citation-string">
+Huang J., Chen S., Eikerling M., J. Chem. Theory Comput.
+2021, 17, 2417.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jctc.1c00098"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33787259"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Theory Comput.&amp;author=J. Huang&amp;author=S. Chen&amp;author=M. Eikerling&amp;volume=17&amp;publication_year=2021&amp;pages=2417&amp;pmid=33787259&amp;doi=10.1021/acs.jctc.1c00098&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0056"><label>56.</label><mixed-citation id="cphc202401088-cit-0056"><named-content content-type="citation-string">
+Merlet C., Limmer D. T., Salanne M., Van Roij R., Madden P. A., Chandler D., Rotenberg B., J. Phys. Chem. C
+2014, 118, 18291.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. C&amp;author=C. Merlet&amp;author=D. T. Limmer&amp;author=M. Salanne&amp;author=R. Van Roij&amp;author=P. A. Madden&amp;volume=118&amp;publication_year=2014&amp;pages=18291&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0057"><label>57.</label><mixed-citation id="cphc202401088-cit-0057"><named-content content-type="citation-string">
+Brug G. J., van den Eeden A. L. G., Sluyters‐Rehbach M., Sluyters J. H., J. Electroanal. Chem.
+1984, 176, 275.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electroanal. Chem.&amp;author=G. J. Brug&amp;author=A. L. G. van den Eeden&amp;author=M. Sluyters‐Rehbach&amp;author=J. H. Sluyters&amp;volume=176&amp;publication_year=1984&amp;pages=275&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0058"><label>58.</label><mixed-citation id="cphc202401088-cit-0058"><named-content content-type="citation-string">
+Wang J. C., J. Electrochem. Soc.
+1987, 134, 1915.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electrochem. Soc.&amp;author=J. C. Wang&amp;volume=134&amp;publication_year=1987&amp;pages=1915&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0059"><label>59.</label><mixed-citation id="cphc202401088-cit-0059"><named-content content-type="citation-string">
+Schalenbach M., Durmus Y. E., Tempel H., Kungl H., Eichel R. A., J. Phys. Chem. C
+2021, 125, 27465.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/d1cp03381f"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34523643"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. C&amp;author=M. Schalenbach&amp;author=Y. E. Durmus&amp;author=H. Tempel&amp;author=H. Kungl&amp;author=R. A. Eichel&amp;volume=125&amp;publication_year=2021&amp;pages=27465&amp;pmid=34523643&amp;doi=10.1039/d1cp03381f&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0060"><label>60.</label><mixed-citation id="cphc202401088-cit-0060"><named-content content-type="citation-string">
+Schalenbach M., Durmus Y. E., Tempel H., Kungl H., Eichel R. A., Sci. Rep.
+2022, 12, 1.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41598-022-07411-0"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8888654"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35233048"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Sci. Rep.&amp;author=M. Schalenbach&amp;author=Y. E. Durmus&amp;author=H. Tempel&amp;author=H. Kungl&amp;author=R. A. Eichel&amp;volume=12&amp;publication_year=2022&amp;pages=1&amp;pmid=35233048&amp;doi=10.1038/s41598-022-07411-0&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0061"><label>61.</label><mixed-citation id="cphc202401088-cit-0061"><named-content content-type="citation-string">
+Hammer B., Norskov J. K., Nature
+1995, 376, 238.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature&amp;author=B. Hammer&amp;author=J. K. Norskov&amp;volume=376&amp;publication_year=1995&amp;pages=238&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0062"><label>62.</label><mixed-citation id="cphc202401088-cit-0062"><named-content content-type="citation-string">
+Kepp K. P., ChemPhysChem
+2020, 21, 360.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/cphc.202000013"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31912974"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ChemPhysChem&amp;author=K. P. Kepp&amp;volume=21&amp;publication_year=2020&amp;pages=360&amp;pmid=31912974&amp;doi=10.1002/cphc.202000013&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0063"><label>63.</label><mixed-citation id="cphc202401088-cit-0063"><named-content content-type="citation-string">
+Schalenbach M., Raijmakers L., Selmert V., Kretzschmar A., Durmus Y. E., Tempel H., Eichel R.‐A., Phys. Chem. Chem. Phys.
+2024, 20, 1.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/d3cp04743a"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="38693897"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Chem. Chem. Phys.&amp;author=M. Schalenbach&amp;author=L. Raijmakers&amp;author=V. Selmert&amp;author=A. Kretzschmar&amp;author=Y. E. Durmus&amp;volume=20&amp;publication_year=2024&amp;pages=1&amp;pmid=38693897&amp;doi=10.1039/d3cp04743a&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0064"><label>64.</label><mixed-citation id="cphc202401088-cit-0064"><named-content content-type="citation-string">
+Schalenbach M., Durmus Y. E., Robinson S., Tempel H., Kungl H., Eichel R., Phys. Chem. C
+2021, 125, 5870.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/d1cp03381f"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34523643"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Chem. C&amp;author=M. Schalenbach&amp;author=Y. E. Durmus&amp;author=S. Robinson&amp;author=H. Tempel&amp;author=H. Kungl&amp;volume=125&amp;publication_year=2021&amp;pages=5870&amp;pmid=34523643&amp;doi=10.1039/d1cp03381f&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0065"><label>65.</label><mixed-citation id="cphc202401088-cit-0065"><named-content content-type="citation-string">
+Schalenbach M., Raijmakers L., Tempel H., Eichel R., Electrochem. Sci. Adv.
+2024, 5, e202400010.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Electrochem. Sci. Adv.&amp;author=M. Schalenbach&amp;author=L. Raijmakers&amp;author=H. Tempel&amp;author=R. Eichel&amp;volume=5&amp;publication_year=2024&amp;pages=e202400010&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0066"><label>66.</label><mixed-citation id="cphc202401088-cit-0066"><named-content content-type="citation-string">
+Vanýsek P., Handbook of Chemistry and Physics, (Ed: Haynes W. M.), CRC Press, Boca Raton 2014, pp. 5_80–5_89.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Handbook of Chemistry and Physics&amp;author=P. Vanýsek&amp;publication_year=2014&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0067"><label>67.</label><mixed-citation id="cphc202401088-cit-0067"><named-content content-type="citation-string">
+Juodkazis K., Juodkazyte J., Jasulaitiene V., Lukinskas A., Šebeka B., Electrochem. commun.
+2000, 2, 503.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Electrochem. commun.&amp;author=K. Juodkazis&amp;author=J. Juodkazyte&amp;author=V. Jasulaitiene&amp;author=A. Lukinskas&amp;author=B. Šebeka&amp;volume=2&amp;publication_year=2000&amp;pages=503&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0068"><label>68.</label><mixed-citation id="cphc202401088-cit-0068"><named-content content-type="citation-string">
+Cherevko S., Zeradjanin A. R., Topalov A. A., Kulyk N., Katsounaros I., Mayrhofer K. J. J., ChemCatChem
+2014, 6, 2219.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ChemCatChem&amp;author=S. Cherevko&amp;author=A. R. Zeradjanin&amp;author=A. A. Topalov&amp;author=N. Kulyk&amp;author=I. Katsounaros&amp;volume=6&amp;publication_year=2014&amp;pages=2219&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0069"><label>69.</label><mixed-citation id="cphc202401088-cit-0069"><named-content content-type="citation-string">
+Schalenbach M., Kasian O., Ledendecker M., Cherevko S., Mingers A., Speck F., Mayrhofer K. J. J., Electrocatalysis
+2018, 9, 153.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Electrocatalysis&amp;author=M. Schalenbach&amp;author=O. Kasian&amp;author=M. Ledendecker&amp;author=S. Cherevko&amp;author=A. Mingers&amp;volume=9&amp;publication_year=2018&amp;pages=153&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0070"><label>70.</label><mixed-citation id="cphc202401088-cit-0070"><named-content content-type="citation-string">
+Pourbaix M., Atlas of Electrochemical Equilibria in Aqueous Solutions, 2nd ed, NACE International, Cecelcor, Houston: 
+1974, p. 644.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Atlas of Electrochemical Equilibria in Aqueous Solutions&amp;author=M. Pourbaix&amp;publication_year=1974&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0071"><label>71.</label><mixed-citation id="cphc202401088-cit-0071"><named-content content-type="citation-string">
+Opalka D., Scheurer C., Reuter K., ACS Catal.
+2019, 9, 4944.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ACS Catal.&amp;author=D. Opalka&amp;author=C. Scheurer&amp;author=K. Reuter&amp;volume=9&amp;publication_year=2019&amp;pages=4944&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0072"><label>72.</label><mixed-citation id="cphc202401088-cit-0072"><named-content content-type="citation-string">
+Lee T., Soon A., Nat. Catal.
+2024, 7, 4.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Catal.&amp;author=T. Lee&amp;author=A. Soon&amp;volume=7&amp;publication_year=2024&amp;pages=4&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0073"><label>73.</label><mixed-citation id="cphc202401088-cit-0073"><named-content content-type="citation-string">
+Oesch U., Janata J., Electrochim. Acta
+1983, 28, 1237.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Electrochim. Acta&amp;author=U. Oesch&amp;author=J. Janata&amp;volume=28&amp;publication_year=1983&amp;pages=1237&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0074"><label>74.</label><mixed-citation id="cphc202401088-cit-0074"><named-content content-type="citation-string">
+Medway S. L., Lucas C. A., Kowal A., Nichols R. J., Johnson D., J. Electroanal. Chem.
+2006, 587, 172.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electroanal. Chem.&amp;author=S. L. Medway&amp;author=C. A. Lucas&amp;author=A. Kowal&amp;author=R. J. Nichols&amp;author=D. Johnson&amp;volume=587&amp;publication_year=2006&amp;pages=172&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0075"><label>75.</label><mixed-citation id="cphc202401088-cit-0075"><named-content content-type="citation-string">
+Sandbeck D. J. S., Brummel O., Mayrhofer K. J. J., Libuda J., Katsounaros I., Cherevko S., ChemPhysChem
+2019, 20, 2997.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/cphc.201900866"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6899853"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31603611"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ChemPhysChem&amp;author=D. J. S. Sandbeck&amp;author=O. Brummel&amp;author=K. J. J. Mayrhofer&amp;author=J. Libuda&amp;author=I. Katsounaros&amp;volume=20&amp;publication_year=2019&amp;pages=2997&amp;pmid=31603611&amp;doi=10.1002/cphc.201900866&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0076"><label>76.</label><mixed-citation id="cphc202401088-cit-0076"><named-content content-type="citation-string">
+Quaino P., Luque N. B., Nazmutdinov R., Santos E., Schmickler W., Angew. Chemie ‐ Int. Ed.
+2012, 51, 12997.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/anie.201205902"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="23169606"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Angew. Chemie ‐ Int. Ed.&amp;author=P. Quaino&amp;author=N. B. Luque&amp;author=R. Nazmutdinov&amp;author=E. Santos&amp;author=W. Schmickler&amp;volume=51&amp;publication_year=2012&amp;pages=12997&amp;pmid=23169606&amp;doi=10.1002/anie.201205902&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0077"><label>77.</label><mixed-citation id="cphc202401088-cit-0077"><named-content content-type="citation-string">
+Schalenbach M., Tesch R., Kowalski P. M., Eichel R. A., Phys. Chem. Chem. Phys.
+2024, 26, 14171.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/d4cp01084a"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="38713015"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Chem. Chem. Phys.&amp;author=M. Schalenbach&amp;author=R. Tesch&amp;author=P. M. Kowalski&amp;author=R. A. Eichel&amp;volume=26&amp;publication_year=2024&amp;pages=14171&amp;pmid=38713015&amp;doi=10.1039/d4cp01084a&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0078"><label>78.</label><mixed-citation id="cphc202401088-cit-0078"><named-content content-type="citation-string">
+Hamelin A., Borowska Z., Stafiej J., J. Electroanal. Chem. interfacial Electrochem.
+1985, 189, 85.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electroanal. Chem. interfacial Electrochem.&amp;author=A. Hamelin&amp;author=Z. Borowska&amp;author=J. Stafiej&amp;volume=189&amp;publication_year=1985&amp;pages=85&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0079"><label>79.</label><mixed-citation id="cphc202401088-cit-0079"><named-content content-type="citation-string">
+Hamelin A., Stoicoviciu L., Silva F., J. Electroanal. Chem.
+1987, 229, 107.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electroanal. Chem.&amp;author=A. Hamelin&amp;author=L. Stoicoviciu&amp;author=F. Silva&amp;volume=229&amp;publication_year=1987&amp;pages=107&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0080"><label>80.</label><mixed-citation id="cphc202401088-cit-0080"><named-content content-type="citation-string">
+Macdonald J. R., Barlow C. A. J., J. Chem. Phys.
+1962, 36, 3062.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;author=J. R. Macdonald&amp;author=C. A. J. Barlow&amp;volume=36&amp;publication_year=1962&amp;pages=3062&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0081"><label>81.</label><mixed-citation id="cphc202401088-cit-0081"><named-content content-type="citation-string">
+Gileadi E., Argade S. D., Bockris J. O. M., J. Phys. Chem.
+1966, 70, 2044.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem.&amp;author=E. Gileadi&amp;author=S. D. Argade&amp;author=J. O. M. Bockris&amp;volume=70&amp;publication_year=1966&amp;pages=2044&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0082"><label>82.</label><mixed-citation id="cphc202401088-cit-0082"><named-content content-type="citation-string">
+Frumkin A. N., Petrii O. A., Electrochim. Acta
+1975, 20, 347.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Electrochim. Acta&amp;author=A. N. Frumkin&amp;author=O. A. Petrii&amp;volume=20&amp;publication_year=1975&amp;pages=347&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0083"><label>83.</label><mixed-citation id="cphc202401088-cit-0083"><named-content content-type="citation-string">
+Zhang L., Huang J., Curr. Opin. Electrochem.
+2023, 42, 101419.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Curr. Opin. Electrochem.&amp;author=L. Zhang&amp;author=J. Huang&amp;volume=42&amp;publication_year=2023&amp;pages=101419&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0084"><label>84.</label><mixed-citation id="cphc202401088-cit-0084"><named-content content-type="citation-string">
+Schalenbach M., Wu B., Tsai C. L., Windmüller A., Raijmakers L., Yu S., Tempel H., Eichel R. A., Energy Adv.
+2024, 4, 140.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Energy Adv.&amp;author=M. Schalenbach&amp;author=B. Wu&amp;author=C. L. Tsai&amp;author=A. Windmüller&amp;author=L. Raijmakers&amp;volume=4&amp;publication_year=2024&amp;pages=140&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0085"><label>85.</label><mixed-citation id="cphc202401088-cit-0085"><named-content content-type="citation-string">
+Xu P., von Rueden A. D., Schimmenti R., Mavrikakis M., Suntivich J., Nat. Mater.
+2023, 22, 503.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41563-023-01474-8"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36781952"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Mater.&amp;author=P. Xu&amp;author=A. D. von Rueden&amp;author=R. Schimmenti&amp;author=M. Mavrikakis&amp;author=J. Suntivich&amp;volume=22&amp;publication_year=2023&amp;pages=503&amp;pmid=36781952&amp;doi=10.1038/s41563-023-01474-8&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0086"><label>86.</label><mixed-citation id="cphc202401088-cit-0086"><named-content content-type="citation-string">
+Kim M., Batsa Tetteh E., Krysiak O. A., Savan A., Xiao B., Piotrowiak T. H., Andronescu C., Ludwig A., Dong Chung T., Schuhmann W., Angew. Chemie ‐ Int. Ed.
+2023, 62, e202310069.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/anie.202310069"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37537136"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Angew. Chemie ‐ Int. Ed.&amp;author=M. Kim&amp;author=E. Batsa Tetteh&amp;author=O. A. Krysiak&amp;author=A. Savan&amp;author=B. Xiao&amp;volume=62&amp;publication_year=2023&amp;pages=e202310069&amp;pmid=37537136&amp;doi=10.1002/anie.202310069&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0087"><label>87.</label><mixed-citation id="cphc202401088-cit-0087"><named-content content-type="citation-string">
+Ojha K., Arulmozhi N., Aranzales D., Koper M. T. M., Angew. Chemie
+2020, 132, 721.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/anie.201911929"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6973170"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31682314"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Angew. Chemie&amp;author=K. Ojha&amp;author=N. Arulmozhi&amp;author=D. Aranzales&amp;author=M. T. M. Koper&amp;volume=132&amp;publication_year=2020&amp;pages=721&amp;pmid=31682314&amp;doi=10.1002/anie.201911929&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0088"><label>88.</label><mixed-citation id="cphc202401088-cit-0088"><named-content content-type="citation-string">
+Schalenbach M., Durmus Y. E., Tempel H., Kungl H., Eichel R.‐A., Phys. Chem. Chem. Phys.
+2021, 23, 21097.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/d1cp03381f"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34523643"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Chem. Chem. Phys.&amp;author=M. Schalenbach&amp;author=Y. E. Durmus&amp;author=H. Tempel&amp;author=H. Kungl&amp;author=R.‐A. Eichel&amp;volume=23&amp;publication_year=2021&amp;pages=21097&amp;pmid=34523643&amp;doi=10.1039/d1cp03381f&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0089"><label>89.</label><mixed-citation id="cphc202401088-cit-0089"><named-content content-type="citation-string">
+Parsons R., Zobel F. G. R., J. Electroanal. Chem.
+1965, 9, 333.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electroanal. Chem.&amp;author=R. Parsons&amp;author=F. G. R. Zobel&amp;volume=9&amp;publication_year=1965&amp;pages=333&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0090"><label>90.</label><mixed-citation id="cphc202401088-cit-0090"><named-content content-type="citation-string">
+Eberhardt D., Santos E., Schmickler W., J. Electroanal. Chem.
+1996, 419, 23.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electroanal. Chem.&amp;author=D. Eberhardt&amp;author=E. Santos&amp;author=W. Schmickler&amp;volume=419&amp;publication_year=1996&amp;pages=23&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0091"><label>91.</label><mixed-citation id="cphc202401088-cit-0091"><named-content content-type="citation-string">
+Hamelin A., Doubova L., Stoicoviciu L., Trasatti S., J. Electroanal. Chem.
+1988, 244, 133.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electroanal. Chem.&amp;author=A. Hamelin&amp;author=L. Doubova&amp;author=L. Stoicoviciu&amp;author=S. Trasatti&amp;volume=244&amp;publication_year=1988&amp;pages=133&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0092"><label>92.</label><mixed-citation id="cphc202401088-cit-0092"><named-content content-type="citation-string">
+Netz R. R., Orland H., Eur. Phys. J. E
+2000, 1, 203.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Eur. Phys. J. E&amp;author=R. R. Netz&amp;author=H. Orland&amp;volume=1&amp;publication_year=2000&amp;pages=203&amp;"/></mixed-citation></ref><ref id="cphc202401088-bib-0093"><label>93.</label><mixed-citation id="cphc202401088-cit-0093"><named-content content-type="citation-string">
+Janotta B., Schalenbach M., Tempel H., Eichel R. A., Phys. Chem. Chem. Phys.
+2025, 27, 7703.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/d5cp00646e"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="40151984"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Chem. Chem. Phys.&amp;author=B. Janotta&amp;author=M. Schalenbach&amp;author=H. Tempel&amp;author=R. A. Eichel&amp;volume=27&amp;publication_year=2025&amp;pages=7703&amp;pmid=40151984&amp;doi=10.1039/d5cp00646e&amp;"/></mixed-citation></ref></ref-list></sec></sec><sec id="_ad93_" xml:lang="en" sec-type="associated-data" disp-level="1"><title>Associated Data</title><sec id="_adsm93_" xml:lang="en" sec-type="supplementary-materials" disp-level="2"><title>Supplementary Materials</title><supplementary-material id="db_ds_supplementary-material1_reqid_" position="float"><caption><p>Supplementary Material</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="CPHC-26-e202401088-s001.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path cd21/12276039/3edcfe16185e/CPHC-26-e202401088-s001.pdf?><?cloudpmc-bucket app?><?size 1040158?></media></supplementary-material></sec><sec id="_adda93_" xml:lang="en" sec-type="data-availability-statement" disp-level="2"><title>Data Availability Statement</title><p>The data that support the findings of this study are available from the corresponding author upon reasonable request.</p></sec></sec></body></article>

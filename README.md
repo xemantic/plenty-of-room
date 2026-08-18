@@ -105,6 +105,10 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=coupling.CountPhaseInteractionStudyKt         # T-178, the count/phase interaction over all 32 crossover phases
 ./gradlew study -Pstudy=structure.RowEndPrestrainStudyKt              # T-172, the row-end crossover's PRESTRAIN, which is a load and not a stiffness
 ./gradlew study -Pstudy=synthesis.WithdrawnCeilingNoteStudyKt         # T-169, the withdrawn 40 pN/nm ceiling in an emitted note, and the verdict beside it
+./gradlew study -Pstudy=structure.InteriorCrossoverPrestrainStudyKt  # T-190, what the 42 INTERIOR crossovers of the corrugated prestrain field carry
+./gradlew study -Pstudy=anchoring.GoldElectrodePzcStudyKt        # T-193, gold alone, and where its potential of zero charge sits
+./gradlew study -Pstudy=tile.FourLayerTileStudyKt                 # T-191, the four-layer ~10 nm tile section 3 specifies, and the flatness negative on it
+./gradlew study -Pstudy=actuator.TallGapDeviceBStudyKt            # T-192, device B on a 17-26 nm layer at 0.5 mM, and how far section 3's 100 pN reaches at all
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.

@@ -1,0 +1,141 @@
+[query] "potential of zero charge" AND gold
+    hitCount=214  returned=25
+      - 2026 'Surface Hydrophilicity Governs the Potential of Zero Charge and Capacitive Performance of MXenes.' pmcid=None
+      - 2026 'Structure of interfacial water at gold electrodes during hydrogen evolution in alkaline medium: a spectroscopic study through isotopic dilution.' pmcid=None
+      - 2026 'Thermodynamic and Kinetic Analysis of Galactose Oxidase Direct Electron Transfer on Carboxyl-Terminated SAM-Modified Gold Electrodes.' pmcid=None
+      - 2026 'Enhanced biocathode performance through surface charge induced microbial adhesion.' pmcid=None
+      - 2026 'Electric Double Layer Phenomena Near Surfaces Irreversibly Trigger Assembly of Tau Protein.' pmcid=PMC13088244
+[query] "potential of zero charge" AND "Au(111)"
+    hitCount=100  returned=25
+      - 2026 'Deriving effective electrode-ion interactions from free-energy profiles at electrochemical interfaces.' pmcid=None
+      - 2026 'Modelling the Double Layer of Polycrystalline Electrodes: Capacitance, Potential of Zero Charge, and Parsons-Zobel Plot.' pmcid=PMC13051447
+      - 2025 'First-Principles Molecular Dynamics with Potential and Charge Fluctuations Applied to Au(111) in Alkaline Solutions.' pmcid=None
+      - 2026 'User-Defined Electrostatic Potentials in DFT Supercell Calculations: Implementation and Application to Electrified Interfaces.' pmcid=PMC12980727
+      - 2025 "Structural and Electrochemical Properties of 4-Methyl-4'-(&lt;i&gt;n&lt;/i&gt;-mercaptoalkyl) Biphenyls Self-Assembled on the Au(100)-(1\xa0×\xa01) Surface." pmcid=PMC12356081
+[query] "potential of zero charge" AND "single crystal" AND electrode
+    hitCount=98  returned=25
+      - 2026 'Modelling the Double Layer of Polycrystalline Electrodes: Capacitance, Potential of Zero Charge, and Parsons-Zobel Plot.' pmcid=PMC13051447
+      - 2026 'The Origin of the Constant Phase Element Behavior of Pt(111) Near the Potential of Zero Charge.' pmcid=PMC12969267
+      - 2026 'Molecular Insights into the Double-Layer Capacitance of Platinum Surfaces in Alkaline Media.' pmcid=PMC13126200
+      - 2026 'A comprehensive model for the electric double layer of stepped platinum electrodes.' pmcid=PMC13148983
+      - 2026 'Dynamic assembly of interfacial organic cations enables highly stable and selective CO&lt;sub&gt;2&lt;/sub&gt; electroreduction in acid.' pmcid=PMC13127569
+[query] "pzc" AND "Au(111)"
+    hitCount=97  returned=25
+      - 2026 'Modelling the Double Layer of Polycrystalline Electrodes: Capacitance, Potential of Zero Charge, and Parsons-Zobel Plot.' pmcid=PMC13051447
+      - 2026 'Dynamic assembly of interfacial organic cations enables highly stable and selective CO&lt;sub&gt;2&lt;/sub&gt; electroreduction in acid.' pmcid=PMC13127569
+      - 2026 'Constant-Potential MD with Neural Network Potentials Reveals Cation Effects on CO&lt;sub&gt;2&lt;/sub&gt; Reduction at Au-Water Interfaces.' pmcid=PMC12933322
+      - 2025 'Cation effects on CO<sub>2</sub> reduction catalyzed by single-crystal and polycrystalline gold under well-defined mass transport conditions.' pmcid=PMC11804923
+      - 2025 'Electronic Response and Charge Inversion at Polarized Gold Electrode.' pmcid=PMC11701363
+[query] "template-stripped gold"
+    hitCount=205  returned=25
+      - 2025 'Ultrathin Atomically Flat Gold Film for Scanning Tunneling Microscopy and Single-Particle Fluorescence Spectroscopy.' pmcid=None
+      - 2025 'Solid-supported polymer-lipid hybrid membrane for bioelectrochemistry of a membrane redox enzyme.' pmcid=PMC11834424
+      - 2025 'Photo-Controlled Conductance and Thermopower Switching in a Soft Photochromic Metallo-Supramolecular Polymer via EGaIn Junctions.' pmcid=None
+      - 2025 'Unveiling Thermoelectric Properties of SURMOF Nanofilms: A New Frontier in Molecular Thermoelectrics.' pmcid=PMC12667524
+      - 2025 'Template-stripped substrates with solvent-impermeable metal thin films.' pmcid=PMC12371504
+[query] "template stripped" AND gold AND electrode
+    hitCount=151  returned=25
+      - 2025 'Template-stripped substrates with solvent-impermeable metal thin films.' pmcid=PMC12371504
+      - 2026 'Phosphorylation-Dependent Charge Transport in Biomolecular Junctions of Major Histocompatibility Complex Phosphopeptides.' pmcid=PMC13093478
+      - 2026 'A graphene-coated AFM probe for durable and reproducible nanoscale electronic measurements.' pmcid=PMC12974596
+      - 2026 'Conformational bifurcation drives dual transport regimes in molecular junctions: Unsupervised machine learning insights.' pmcid=PMC13104088
+      - 2025 'Solid-supported polymer-lipid hybrid membrane for bioelectrochemistry of a membrane redox enzyme.' pmcid=PMC11834424
+[query] "Au(111)" AND "flame annealed" AND electrochemistry
+    hitCount=30  returned=25
+      - 2026 'Scanning Electrochemical Microscopy of Single-Crystal Platinum Electrode.' pmcid=PMC12874217
+      - 2026 'Oxide Growth and Place-Exchange on Au(111) in Alkaline Electrolyte.' pmcid=PMC12969257
+      - 2025 'Binary Monolayers Formed from the Sequential Adsorption of Terphenylthiol and Dodecanethiol on Gold.' pmcid=PMC12128101
+      - 2025 'Dynamics of Adatom and Vacancy Islands on Au(111) in Alkaline and Acidic Media.' pmcid=PMC12359112
+      - 2025 'Cation effects on CO<sub>2</sub> reduction catalyzed by single-crystal and polycrystalline gold under well-defined mass transport conditions.' pmcid=PMC11804923
+[query] "potential of zero charge" AND "MgCl2"
+    hitCount=11  returned=11
+      - 2024 'Cation desolvation-induced capacitance enhancement in reduced graphene oxide (rGO).' pmcid=PMC10908864
+      - 2023 'Water in the Electrical Double Layer of Ionic Liquids on Graphene.' pmcid=PMC10210538
+      - 2024 'How do Antimicrobial Peptides Interact with the Outer Membrane of Gram-Negative Bacteria? Role of Lipopolysaccharides in Peptide Binding, Anchoring, and Penetration.' pmcid=PMC10862549
+      - 2016 'Helix-Dependent Spin Filtering through the DNA Duplex.' pmcid=PMC5175457
+      - 2021 'DNA Electrochemistry: Charge-Transport Pathways through DNA Films on Gold.' pmcid=PMC9285625
+[query] "potential of zero charge" AND "perchlorate" AND gold
+    hitCount=31  returned=25
+      - 2026 'Nonequilibrium Electrical Double Layer Effects on Unilateral Peak Suppression in Cyclic Voltammetry.' pmcid=PMC13158924
+      - 2024 'Tracking the surface structure and the influence of cations and anions on the double-layer region of a Au(111) electrode.' pmcid=PMC11323936
+      - 2024 'In Situ STM Study of Roughening of Au(111) Single-Crystal Electrode in Sulfuric Acid Solution during Oxidation-Reduction Cycles.' pmcid=PMC11552071
+      - 2024 'Effect of ion-specific water structures at metal surfaces on hydrogen production.' pmcid=PMC11380671
+      - 2023 'Real-time visualisation of ion exchange in molecularly confined spaces where electric double layers overlap.' pmcid=PMC10568259
+[query] "potential of zero charge" AND "divalent" AND electrode
+    hitCount=27  returned=25
+      - 2026 'Digital materials ecosystem: from databases to AI agents for autonomous discovery.' pmcid=PMC12954778
+      - 2026 'Iodine-Based Electrolyte Chemistry Enabling Reversible Ca Metal Anodes.' pmcid=PMC12933320
+      - 2023 'Extreme Monovalent Ion Selectivity Via Capacitive Ion Exchange.' pmcid=None
+      - 2025 'Prussian Blue Analogues as Anode Materials for Battery Applications: Complexities and Horizons.' pmcid=PMC12199474
+      - 2024 'Cation desolvation-induced capacitance enhancement in reduced graphene oxide (rGO).' pmcid=PMC10908864
+[query] "absolute electrode potential" AND "hydrogen electrode"
+    hitCount=25  returned=25
+      - 2025 'A Universal Model of Cation Effects in Electrocatalysis.' pmcid=PMC12648287
+      - 2022 'Essays on Conceptual Electrochemistry: I. Bridging Open-Circuit Voltage of Electrochemical Cells and Charge Distribution at Electrode-Electrolyte Interfaces.' pmcid=PMC9358007
+      - 2025 'Computational Evaluation of Redox Potentials of Metal Complexes for Aqueous Flow Batteries.' pmcid=PMC12188176
+      - 2026 'Potential-dependent polaron formation activates TiO&lt;sub&gt;2&lt;/sub&gt; for the hydrogen evolution reaction.' pmcid=PMC12953770
+      - 2024 'Ab Initio Kinetics of Electrochemical Reactions Using the Computational Fc&lt;sup&gt;0&lt;/sup&gt;/Fc&lt;sup&gt;+&lt;/sup&gt; Electrode.' pmcid=PMC11492257
+[query] Trasatti AND "absolute electrode potential"
+    hitCount=4  returned=4
+      - 2022 'Essays on Conceptual Electrochemistry: I. Bridging Open-Circuit Voltage of Electrochemical Cells and Charge Distribution at Electrode-Electrolyte Interfaces.' pmcid=PMC9358007
+      - 2025 'Electrocatalysis: From Planar Surfaces to Nanostructured Interfaces.' pmcid=PMC11826915
+      - 2008 'Absolute standard hydrogen electrode potential measured by reduction of aqueous nanodrops in the gas phase.' pmcid=PMC2562797
+      - 2009 'Directly relating reduction energies of gaseous Eu(H2O)n(3+), n = 55-140, to aqueous solution: the absolute SHE potential and real proton solvation energy.' pmcid=PMC2909332
+[query] "DNA origami" AND electrode AND potential AND actuation
+    hitCount=70  returned=25
+      - 2026 'Active Plasmonic Surfaces via Electrically Driven Actuation of DNA-Tethered Nanoparticles.' pmcid=PMC13296604
+      - 2026 'Electronic Actuation of Surface-Immobilized, pH-Responsive DNA Nanoswitches.' pmcid=PMC13051421
+      - 2024 'Variable gain DNA nanostructure charge amplifiers for biosensing.' pmcid=PMC11883816
+      - 2026 'Advancements and challenges of nanorobots in surgical medicine: design, applications, and interdisciplinary integration.' pmcid=PMC13055592
+      - 2025 'Hybrid DNA Origami - Graphene Platform for Electrically-Gated Nanoscale Motion.' pmcid=PMC12382438
+[query] "DNA" AND "gold electrode" AND "potential of zero charge"
+    hitCount=20  returned=20
+      - 2021 'Ferrocene-Containing DNA Monolayers: Influence of Electrostatics on the Electron Transfer Dynamics.' pmcid=PMC8819689
+      - 2025 'Frontier interfacial water properties characterization and applications.' pmcid=PMC12526057
+      - 2018 'Experimental Measurement of Surface Charge Effects on the Stability of a Surface-Bound Biopolymer.' pmcid=PMC6501783
+      - 2021 'The effect of charged residue substitutions on the thermodynamics of protein-surface interactions.' pmcid=PMC8605371
+      - 2018 'Gated Single-Molecule Transport in Double-Barreled Nanopores.' pmcid=PMC6243394
+[query] Rant AND DNA AND "gold electrode" AND switching
+    hitCount=8  returned=8
+      - 2023 'Synthetic Antigen-Conjugated DNA Systems for Antibody Detection and Characterization.' pmcid=PMC10391708
+      - 2020 'The trimer to monomer transition of Tumor Necrosis Factor-Alpha is a dynamic process that is significantly altered by therapeutic antibodies.' pmcid=PMC7283243
+      - 2021 'Ferrocene-Containing DNA Monolayers: Influence of Electrostatics on the Electron Transfer Dynamics.' pmcid=PMC8819689
+      - 2010 'Platform for in situ real-time measurement of protein-induced conformational changes of DNA.' pmcid=PMC2824355
+      - 2007 'Switchable DNA interfaces for the highly sensitive detection of label-free DNA targets.' pmcid=PMC2077262
+[query] "electrically driven" AND "DNA origami" AND electrode
+    hitCount=15  returned=15
+      - 2026 'Active Plasmonic Surfaces via Electrically Driven Actuation of DNA-Tethered Nanoparticles.' pmcid=PMC13296604
+      - 2026 'Electronic Actuation of Surface-Immobilized, pH-Responsive DNA Nanoswitches.' pmcid=PMC13051421
+      - 2026 'Advancements and challenges of nanorobots in surgical medicine: design, applications, and interdisciplinary integration.' pmcid=PMC13055592
+      - 2025 'Microfluidic-based electrically driven particle manipulation techniques for biomedical applications.' pmcid=PMC11697266
+      - 2024 'Interplay of graphene-DNA interactions: Unveiling sensing potential of graphene materials.' pmcid=PMC11115426
+[query] "open circuit potential" AND gold AND "dilute" AND electrolyte
+    hitCount=128  returned=25
+      - 2026 'Electrolyte Structure Governs Formate Oxidation in Water-in-Salt Systems.' pmcid=PMC13047694
+      - 2025 'Absence of Hofmeister Selectivity in Hydrophobic Ion-Exchanger Nanopores.' pmcid=PMC12713612
+      - 2026 'Transient Potential Profiling for Rapid Calcium Ion Quantification: Eliminating Conditioning Time in Solid-Contact Ion-Selective Electrodes.' pmcid=PMC13297531
+      - 2025 'Electrochemical Corrosion and Catalysis Dynamics of Tin Oxide during Water Oxidation.' pmcid=PMC12603990
+      - 2025 'A Comparison of the Electrochemical Oxidative Dissolution of Pyrite and Chalcopyrite in Dilute Nitric Acid Solution.' pmcid=PMC12075099
+[query] "work function" AND "Au(111)" AND "electrochemical"
+    hitCount=172  returned=25
+      - 2025 'Toward rational understanding of the hydrogen evolution polarization curves through multiscale simulations.' pmcid=PMC12823593
+      - 2025 "Structural and Electrochemical Properties of 4-Methyl-4'-(&lt;i&gt;n&lt;/i&gt;-mercaptoalkyl) Biphenyls Self-Assembled on the Au(100)-(1\xa0×\xa01) Surface." pmcid=PMC12356081
+      - 2025 'Long-Range Redox and Water Activation at Metal-Water Interfaces with Ferroelectric Ordering.' pmcid=PMC12355686
+      - 2025 'Anisotropic Roughening of a Au(111) Single-Crystal Electrode Surface in HClO&lt;sub&gt;4&lt;/sub&gt; Solution during Oxidation-Reduction Cycles.' pmcid=PMC12086851
+      - 2025 'Atomic-Scale Imaging of Transferred Graphene Nanoribbons for Nanoelectronic Device Integration.' pmcid=PMC12379158
+[query] "capacitance minimum" AND "potential of zero charge" AND gold
+    hitCount=17  returned=17
+      - 2026 'Electric Double Layer Phenomena Near Surfaces Irreversibly Trigger Assembly of Tau Protein.' pmcid=PMC13088244
+      - 2024 'Tracking the surface structure and the influence of cations and anions on the double-layer region of a Au(111) electrode.' pmcid=PMC11323936
+      - 2025 'Cation effects on CO<sub>2</sub> reduction catalyzed by single-crystal and polycrystalline gold under well-defined mass transport conditions.' pmcid=PMC11804923
+      - 2024 'The Electrocatalytic Activity of Au Electrodes Changes Significantly in Various Na&lt;sup&gt;+&lt;/sup&gt;/K&lt;sup&gt;+&lt;/sup&gt; Supporting Electrolyte Mixtures.' pmcid=PMC11934990
+      - 2020 'Double Layer at the Pt(111)-Aqueous Electrolyte Interface: Potential of Zero Charge and Anomalous Gouy-Chapman Screening.' pmcid=PMC6973170
+[query] "differential capacitance" AND "Au(111)" AND electrolyte
+    hitCount=45  returned=25
+      - 2026 'A Spectroelectrochemical Study of the Effect of Asymmetry on the Electrochemical Response of Lipid Bilayers.' pmcid=PMC13007035
+      - 2026 'Deriving effective electrode-ion interactions from free-energy profiles at electrochemical interfaces.' pmcid=None
+      - 2026 'Thermodynamic and Kinetic Analysis of Galactose Oxidase Direct Electron Transfer on Carboxyl-Terminated SAM-Modified Gold Electrodes' pmcid=PMC12943723
+      - 2026 'Electrotunable Kapitza Resistance at Electrode-Water Interfaces: The Importance of Electrode Metallicity.' pmcid=PMC13200241
+      - 2024 'Tracking the surface structure and the influence of cations and anions on the double-layer region of a Au(111) electrode.' pmcid=PMC11323936
+
+wrote /home/claude/git/plenty-of-room/gpd/data/T-193-sources/europepmc-queries.json

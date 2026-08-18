@@ -1,0 +1,1080 @@
+
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.4 20241031//EN" "JATS-archivearticle1-4-mathml3.dtd">
+<article xml:lang="EN" article-type="review-article" dtd-version="1.4"><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Bioconjug Chem</journal-id><journal-id journal-id-type="iso-abbrev">Bioconjug Chem</journal-id><journal-id journal-id-type="pmc-domain-id">822</journal-id><journal-id journal-id-type="pmc-domain">acssd</journal-id><journal-id journal-id-type="nlm-id">9010319</journal-id><journal-id journal-id-type="publisher-id">bc</journal-id><journal-title-group><journal-title>Bioconjugate Chemistry</journal-title></journal-title-group><issn pub-type="ppub">1043-1802</issn><issn pub-type="epub">1520-4812</issn><?publisher_abbrev acs?><custom-meta-group><custom-meta><meta-name>pmc-is-collection-domain</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-collection-title</meta-name><meta-value>ACS AuthorChoice</meta-value></custom-meta></custom-meta-group></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC9853505</article-id><article-id pub-id-type="pmcid-ver">PMC9853505.1</article-id><article-id pub-id-type="pmcaid">9853505</article-id><article-id pub-id-type="pmcaiid">9853505</article-id><article-id pub-id-type="pmid">36174970</article-id><article-id pub-id-type="doi">10.1021/acs.bioconjchem.2c00312</article-id><article-version article-version-type="pmc-version">1</article-version><article-categories><subj-group><subject>Review</subject></subj-group></article-categories><title-group><article-title>Design, Mechanical Properties, and Dynamics of Synthetic
+DNA Filaments</article-title></title-group><contrib-group><contrib contrib-type="author" id="ath1"><name name-style="western"><surname>Stenke</surname><given-names initials="LJ">Lena J.</given-names></name></contrib><contrib contrib-type="author" corresp="yes" id="ath2"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0003-2708-2272</contrib-id><name name-style="western"><surname>Saccà</surname><given-names initials="B">Barbara</given-names></name><xref rid="cor1" ref-type="other">*</xref></contrib><aff id="aff1">Centre for Medical Biotechnology
+(ZB) and Centre for Nano Integration Duisburg-Essen (CENIDE), <institution>University of Duisburg-Essen</institution>, Universitätsstrasse 2, 45141 Essen, <country>Germany</country></aff></contrib-group><author-notes><corresp id="cor1"><label>*</label>Email: <email>barbara.sacca@uni-due.de</email>.</corresp></author-notes><pub-date pub-type="epub"><day>29</day><month>09</month><year>2022</year></pub-date><pub-date pub-type="collection"><day>18</day><month>01</month><year>2023</year></pub-date><volume>34</volume><issue>1</issue><issue-id pub-id-type="pmc-issue-id">426974</issue-id><issue-title>Chemistry
+of DNA Nanotechnology</issue-title><fpage>37</fpage><lpage>50</lpage><history><date date-type="received"><day>30</day><month>06</month><year>2022</year></date><date date-type="rev-recd"><day>22</day><month>08</month><year>2022</year></date></history><pub-history><event event-type="pmc-release"><date><day>20</day><month>01</month><year>2023</year></date></event><event event-type="pmc-live"><date><day>21</day><month>01</month><year>2023</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2023-01-23 04:10:54.020"><day>23</day><month>01</month><year>2023</year></date></event></pub-history><permissions><copyright-statement>© 2022 The Authors. Published by American Chemical Society</copyright-statement><copyright-year>2022</copyright-year><copyright-holder>The Authors</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbyncndlicense">https://creativecommons.org/licenses/by-nc-nd/4.0/</ali:license_ref><license-p>Permits non-commercial access and re-use, provided that author attribution and integrity are maintained; but does not permit creation of adaptations or other derivative works (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by-nc-nd/4.0/">https://creativecommons.org/licenses/by-nc-nd/4.0/</ext-link>).</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="bc2c00312.pdf"><?pdf-name bc2c00312.pdf?><?pdf-size 13194761?><?pdf-md5 8098147e872f820ce86eebfe03f23159?><?pdf-image-server-status NEVER_LOAD?><?pdf-cloudpmc-urn urn:app:4e6f/9853505/8098147e872f/bc2c00312.pdf?></self-uri><abstract><p content-type="toc-graphic"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" id="ab-tgr1" position="float" orientation="portrait" xlink:href="bc2c00312_0007.jpg"><?image-name bc2c00312_0007.jpg?><?image-size 100359?><?image-md5 132d370971a040404fc44f6bc4a26d81?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 535?><?image-original-width 930?><?image-scaled-height 357?><?image-scaled-width 620?><?image-cloudpmc-urn urn:cdn:blobs/4e6f/9853505/132d370971a0/bc2c00312_0007.jpg?><?thumb-name bc2c00312_0007.gif?><?thumb-size 17320?><?thumb-md5 c433ef2e5f9ad0c73ab4dbd38805889e?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 139?><?thumb-cloudpmc-urn urn:cdn:blobs/4e6f/9853505/c433ef2e5f9a/bc2c00312_0007.gif?></graphic></p><p>Over the past 40
+years, structural and dynamic DNA nanotechnologies
+have undoubtedly demonstrated to be effective means for organizing
+matter at the nanoscale and reconfiguring equilibrium structures,
+in a predictable fashion and with an accuracy of a few nanometers.
+Recently, novel concepts and methodologies have been developed to
+integrate nonequilibrium dynamics into DNA nanostructures, opening
+the way to the construction of synthetic materials that can adapt
+to environmental changes and thus acquire new properties. In this
+Review, we summarize the strategies currently applied for the construction
+of synthetic DNA filaments and conclude by reporting some recent and
+most relevant examples of DNA filaments that can emulate typical structural
+and dynamic features of the cytoskeleton, such as compartmentalization
+in cell-like vesicles, support for active transport of cargos, sustained
+or transient growth, and responsiveness to external stimuli.</p></abstract><funding-group><award-group><funding-source><institution-wrap><institution>Deutsche Forschungsgemeinschaft</institution><institution-id institution-id-type="doi">10.13039/501100001659</institution-id></institution-wrap></funding-source><award-id>CRC 1093/A6</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Deutsche Forschungsgemeinschaft</institution><institution-id institution-id-type="doi">10.13039/501100001659</institution-id></institution-wrap></funding-source><award-id>SA 1952/5-1</award-id></award-group></funding-group><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY-NC-ND</meta-value></custom-meta><custom-meta><meta-name>document-id-old-9</meta-name><meta-value>bc2c00312</meta-value></custom-meta><custom-meta><meta-name>document-id-new-14</meta-name><meta-value>bc2c00312</meta-value></custom-meta><custom-meta><meta-name>ccc-price</meta-name><meta-value/></custom-meta></custom-meta-group></article-meta></front><body><sec id="sec1"><label>1</label><title>Introduction</title><p>Filaments, with one dimension
+of the structure being much larger
+than the other two, are ubiquitous in nature. Emblematic examples
+are genomic DNA<sup><xref ref-type="bibr" rid="ref1">1</xref></sup> and protein filaments
+of the cytoskeleton.<sup><xref ref-type="bibr" rid="ref2">2</xref>−<xref ref-type="bibr" rid="ref4">4</xref></sup> Independent of their structural composition, a common
+feature of many natural filaments is the periodicity of their pattern,
+i.e., the recurrence of identical or very similar building components
+along the entire polymer chain. These units are linked together according
+to precise interunit association rules, and the resulting linear structure
+is often further organized into hierarchical architectures of higher
+structural order. Despite being simple, this self-assembly principle
+is extremely powerful for the generation of materials with superior
+mechanical properties, meaning that the global features of the final
+polymer are more than the sum of the features of its single components.
+In the cell, filamentous protein structures ensure structural rigidity,
+cell motility, cargo transport, as well as growth and division. Hence,
+the advancement of methods for the synthesis of man-made filaments
+with programmable energetic and kinetic features is very appealing,
+not only for a better understanding of the functioning of many biological
+beams but also for the creation of novel bioinspired materials that
+can adapt, respond, and evolve autonomously, once a sufficient energy
+source is provided.</p><p>A possible way to achieve this ambitious
+goal relies on the programmability
+of the DNA molecule.<sup><xref ref-type="bibr" rid="ref5">5</xref>,<xref ref-type="bibr" rid="ref6">6</xref></sup> In the past few decades, both
+structural and dynamic DNA nanotechnologies<sup><xref ref-type="bibr" rid="ref7">7</xref>−<xref ref-type="bibr" rid="ref9">9</xref></sup> have amply demonstrated
+that DNA sequences can be designed to achieve a desired structure
+at equilibrium and that not only can this structure be predictably
+reconfigured in a postassembly process, but also the assembly itself
+can be even controlled <italic toggle="yes">during</italic> its occurrence. In
+other words, almost every aspect of the energy landscape of nanostructure
+formation and transformation can be affected in a rational manner
+and reshaped by suitable means. Moreover, by combining DNA strand-displacement
+reaction networks with smart chemical or enzymatic systems, as well
+as crystallization methodologies and microfluidic techniques, synthetic
+DNA filaments have reached a level of complexity that allows the structural,
+mechanical, and dynamic properties of their natural protein analogues
+to be mimicked in many ways.</p><p>In this Review, we will briefly
+survey three aspects of synthetic
+DNA filaments, with each aspect reported in a dedicated section. The
+first section will focus on the design strategies used so far to engineer
+DNA filaments. Specifically, we will describe how base hybridization
+and base stacking can be rationally mastered to achieve the desired
+shape of the building unit and how several units can be programmed
+to associate into linear structures with predictable features. In
+the second part, we will explain how these approaches have been implemented
+to control the elastic properties of DNA filaments at equilibrium,
+such as their persistence length, bending degree, or twisting extent.
+Finally, in the third section, we will describe some of the newly
+emerging methods that allow the control of the polymerization state
+of DNA filaments, either through equilibrium-switching mechanisms
+or through more complex out-of-equilibrium (i.e., truly dynamic) processes.
+This topic has been deeply treated in recent authoritative reviews
+and references therein.<sup><xref ref-type="bibr" rid="ref10">10</xref>−<xref ref-type="bibr" rid="ref14">14</xref></sup></p></sec><sec id="sec2"><label>2</label><title>Design of DNA Filaments</title><p>In this section,
+we will describe the design rules that are necessary
+to shape the individual DNA units and control their mutual interactions.
+According to the type of DNA unit, we distinguish three classes of
+synthetic DNA filaments, namely, nanoribbons, nanotubes, and bundles.</p><sec id="sec2.1"><label>2.1</label><title>DNA Nanoribbons</title><p>Historically, nanoribbons
+were the first filamentous DNA structures obtained through programmable
+DNA self-assembly. The repeating unit of these filaments is the so-called
+double-crossover (or DX) tile (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>a).<sup><xref ref-type="bibr" rid="ref15">15</xref></sup> A DX tile is composed
+of two antiparallel duplexes intertwined at two junction points. The
+elongation of selected strands of the tile with unpaired short sequence
+stretches (so-called sticky ends) provides the means to polymerize
+DX tiles into long linear assemblies<sup><xref ref-type="bibr" rid="ref16">16</xref></sup> (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>a and b). Because
+of their easy programmability and straightforward visualization by
+various imaging techniques, nanoribbons were successfully employed
+to investigate the kinetics of tile assembly and thus provided the
+first and simple model of synthetic DNA filaments with tunable properties.
+Pioneering studies on the association of DX tiles were performed by
+the Winfree group and demonstrated that it is possible to control
+the rate of filament growth using nucleation seeds of predefined width<sup><xref ref-type="bibr" rid="ref17">17</xref></sup> (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>c). Later, Yin and co-workers developed an alternative strategy
+for the construction of customizable DNA filaments: the so-called
+single-stranded tile (SST) approach.<sup><xref ref-type="bibr" rid="ref18">18</xref></sup> Here,
+the tiles are single DNA strands, typically 42-nucleotides long, and
+are made of four domains (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>d, top panel). The domains are designed in a way that
+each tile can associate to four distinct adjacent neighbors, eventually
+leading to a planar arrangement of tiles in a “bricklike”
+fashion (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>d,
+bottom panel). Growth of the ribbon along the direction perpendicular
+to the helical axes is prevented by boundary strands, and this leads
+to the highly efficient formation of long filaments of defined width
+(<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>e).</p><fig id="fig1" position="float" orientation="portrait"><label>Figure 1</label><caption><p>Examples of
+DNA nanoribbons. (a) DX tiles display two pairs of
+sticky ends that enable their self-association into a zigzag planar
+structure. (b) AFM imaging of a nanoribbon of four-tiles width. Scale
+bar is 500 nm. (c) Nucleation-and-growth model for the formation of
+nanoribbon filaments. The addition of a nucleation seed in the assembly
+mixture lowers the energy barrier to nucleation. Reprinted with permission
+from ref (<xref ref-type="bibr" rid="ref17">17</xref>). Copyright
+2007 NAS. (d) A single-stranded tile (SST) composed of four domains
+(colored lines, top panel). Each SST binds to four neighboring tiles
+in a bricklike fashion. Short vertical bars indicate base pairing
+(number of base pairs is 10 or 11). The shaded area indicates a repeating
+structural unit. Boundary strands delimit the width of the nanoribbon.
+(e) AFM imaging of four-helix ribbons (width is 12.4 ± 0.4 nm).
+Reprinted with permission from ref (<xref ref-type="bibr" rid="ref18">18</xref>). Copyright 2008 AAAS. (f) Rectangular origami
+tiles assembled along one or the other diagonal (1–3 connections,
+left panels; 2–4 connections, right panels) lead to stairlike
+ribbons, with a zigzag (top AFM panels) or planar (bottom AFM panels)
+arrangement of helices. Zigzag tiles are twist-corrected, while planar
+tiles have an intrinsic global twist and when connected along the
+2–4 corners assemble into right-handed coiled ribbons, with
+every two or three tiles forming a half-turn twist. Reprinted with
+permission from ref (<xref ref-type="bibr" rid="ref25">25</xref>). Copyright 2010 ACS. (g) AFM imaging of nanoribbons composed of
+rectangular origami tiles connected by base stacking, either without
+or with twist correction (left and right panels, respectively). Models
+and AFM image of four origami tiles with shape complementary edges
+(lower panel). Dumbbell hairpins (orange dots) are used as topographical
+markers to label and distinguish the origami tiles as A, B, C, and
+D. Reprinted with permission from ref (<xref ref-type="bibr" rid="ref27">27</xref>). Copyright 2011 Springer Nature.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" id="gr1" position="float" orientation="portrait" xlink:href="bc2c00312_0001.jpg"><?image-name bc2c00312_0001.jpg?><?image-size 293413?><?image-md5 c43cf16305570c8b9265c799dceecb47?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 1628?><?image-original-width 1562?><?image-scaled-height 814?><?image-scaled-width 781?><?image-cloudpmc-urn urn:cdn:blobs/4e6f/9853505/c43cf1630557/bc2c00312_0001.jpg?><?thumb-name bc2c00312_0001.gif?><?thumb-size 24044?><?thumb-md5 b9c1e9df086f32a1902a41f78164daff?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 104?><?thumb-scaled-width 100?><?thumb-cloudpmc-urn urn:cdn:blobs/4e6f/9853505/b9c1e9df086f/bc2c00312_0001.gif?></graphic></fig><p>Besides multistranded and single-stranded tile methods, DNA
+nanostructures
+can be built using the DNA origami approach.<sup><xref ref-type="bibr" rid="ref19">19</xref>−<xref ref-type="bibr" rid="ref21">21</xref></sup> In this method,
+a long single-stranded DNA molecule, referred to as a “scaffold”,
+is folded into a target shape through hybridization to few hundreds
+of short oligonucleotides, called “staple strands”.
+Both tile-based and scaffold-based approaches have been used for the
+construction of DNA filaments. It is therefore important to understand
+the difference between these design strategies in order to be able
+to master the mechanical and dynamic features of the resulting structures.</p><p>Briefly, the main difference between a tile-based and a scaffold-based
+(or origami) approach is the following: whereas in the former method
+all strands hybridize to one another, in the latter method all strands
+hybridize to distinct regions of the same scaffold sequence.<sup><xref ref-type="bibr" rid="ref22">22</xref></sup> The consequence is that the self-assembly of
+tile-based structures requires careful control of the stoichiometry
+ratio and purity of the component strands to be successful. This results
+in lengthy and error-prone procedures, but—once optimal conditions
+are found—few sequences are sufficient to obtain very long
+filaments. On the contrary, the formation of DNA origami nanostructures
+is typically faster and more robust as it relies on the binding of
+a bunch of staples to their complementary regions on the scaffold
+sequence. This process is facilitated by the large excess of staples
+used in the assembly process and by mechanisms of strand displacement
+and exchange that progressively favor the hybridization of correct
+sequences over wrong ones (such as truncated or deleted analogues).
+Once the first nuclei are formed, the correct binding of the remaining
+staples in solution becomes kinetically and energetically favored,
+leading in most cases to the assembly of the target origami structure
+in high yields. The drawback of this method is that multiple DNA origami
+structures must be linked together to obtain long filaments. This
+issue has been easily solved by the development of hierarchical assembly
+strategies, which eventually allowed the construction of large supra-origami
+structures in a reliable fashion.<sup><xref ref-type="bibr" rid="ref23">23</xref></sup></p><p>Accordingly, rectangular DNA origami structures have been decorated
+at their edges with complementary handles and finally linked into
+nanoribbons using base hybridization (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>f, top panel).<sup><xref ref-type="bibr" rid="ref24">24</xref>,<xref ref-type="bibr" rid="ref25">25</xref></sup> The progressive
+accumulation of curvature due to the intrinsic twist of each origami
+unit led in some instances to the formation of right-handed spiral
+ribbons (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>f,
+lower panels). By the appropriate choice of staple crossover positioning
+and linker strand connections, Liu and co-workers were able to counteract
+this effect, guiding the self-association of twist-corrected origami
+tiles into linear planar arrays<sup><xref ref-type="bibr" rid="ref25">25</xref></sup> (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>f, lower panels).
+Although important steps have been done to control the formation of
+hierarchical DNA origami assemblies and characterize these structures
+at equilibrium, the kinetic mechanisms behind this process still remain
+partly unknown. The first quantitative studies on the hybridization
+of rectangular DNA origami structures into nanoribbons were performed
+by the Simmel group.<sup><xref ref-type="bibr" rid="ref24">24</xref></sup> The data revealed
+an approximately exponential distribution of polymer lengths, suggesting
+a step-growth mechanism of polymerization.<sup><xref ref-type="bibr" rid="ref26">26</xref></sup> According to this mechanism, most monomers are consumed early in
+the polymerization reaction to form short oligomeric chains that combine
+into long polymer chains at a later stage of the process. Thus, all
+molecules present in solution (i.e., monomers, oligomers, and polymers)
+can react with any other molecule, but high-molecular weight polymers
+can be attained only at the end of the process by long chains reacting
+with each other. On the contrary, the chain-growth mechanism<sup><xref ref-type="bibr" rid="ref26">26</xref></sup> typical of natural protein filaments proceeds
+exclusively by the attachment of monomers at the ends of the growing
+chain, with long polymers forming already in the initial phase of
+the reaction and persisting throughout the duration of the process.</p><p>Hierarchical association of DNA origami structures has been also
+attained using base stacking. Fundamental studies on this topic revealed
+that the strength and directionality of base-stacking interactions
+between DNA origami units can be modulated—to a certain extent—by
+adjusting specific energetic and geometric parameters of the system,
+such as the sequence of the nucleobases at the blunt ends of facing
+helices, the global twist of the individual units, and the shape-complementarity
+of their edges (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>g).<sup><xref ref-type="bibr" rid="ref27">27</xref></sup> In a different work, one edge of
+a rectangular DNA origami structure was modified with seed staples
+to initiate the self-assembly of SST nanoribbons, thus merging the
+scaffolding properties of DNA origami with the kinetic advantages
+of SST strategies.<sup><xref ref-type="bibr" rid="ref28">28</xref></sup> This approach will
+be further elaborated in the last section dedicated to the control
+of filament dynamics.</p></sec><sec id="sec2.2"><label>2.2</label><title>DNA Nanotubes</title><p>Tubular DNA filaments
+were first observed as unexpected side products of planar arrays and
+were originated by the unintended bending and closure of planar sheets
+of helices around a common axis.<sup><xref ref-type="bibr" rid="ref29">29</xref></sup> Later,
+DNA design strategies were developed to program the intrinsic curvature
+of individual tiles and guide their out-of-plane association into
+nanotubes of desired diameter (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>a, top panel).<sup><xref ref-type="bibr" rid="ref30">30</xref></sup> This led
+to the realization of hollow DNA filaments with a high persistence
+length (ca. 4 μm) and a diameter ranging between 7 and 20 nm
+(<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>a, bottom
+panel).<sup><xref ref-type="bibr" rid="ref30">30</xref></sup></p><fig id="fig2" position="float" orientation="portrait"><label>Figure 2</label><caption><p>Examples of DNA nanotubes. (a) Top panel:
+Schematic representation
+of a nanotube of radius <italic toggle="yes">R</italic> composed of seven double
+helices of radius <italic toggle="yes">r</italic>. Helices are indicated in different
+colors, and crossovers are marked by black circles. Bottom panel:
+Epifluorescence image of nanotubes shows the formation of rings (left)
+and branched or bundled structures (right). Reprinted with permission
+from ref (<xref ref-type="bibr" rid="ref30">30</xref>). Copyright
+2004 ACS. (b) Nanotubes of programmable circumference can be obtained
+by designing the boundary strands of SST patterns to be mutually complementary
+(left panel), as demonstrated by AFM imaging of <italic toggle="yes">n</italic>-helix tubes, with <italic toggle="yes">n</italic> = 4, 5, 6, 7, 8, 10, or 20.
+Scale bars of insets are 50 nm. Reprinted with permission from ref (<xref ref-type="bibr" rid="ref18">18</xref>). Copyright 2008 AAAS.
+(c) Schematic illustration of a six-helix tube (6HT) design (left
+panel) and its 3D model with double helices represented as cylinders
+(middle panel). The open sheet of duplexes can be closed into three
+different supertwist (ST) states (right panel). Subscripts indicate
+the number of helical turns offset upon closure. (d) TEM imaging of
+DNA nanotubes decorated with AuNPs. The relative distances between
+NPs attached to the same tube are indicative of the supertwist state
+(red arrows indicate the points at which the NPs cross the tube axes).
+Reprinted with permission from ref (<xref ref-type="bibr" rid="ref31">31</xref>). Copyright 2013 ACS. (e) Schematic illustration
+of a 12-helix tube (12HT) design. Closure of the array with zero offset
+between the boundary strands results in a straight tubular shape (left
+panel). Insertion (red lines) or deletion (blue lines) of a base pair
+into one of the duplexes generates, respectively, expansion or compression
+of the tube and, simultaneously, a right- or left-handed torque of
+the structure. (f) These mechanical forces result in bending and twisting
+of the overall structure and formation of complex helical shapes of
+defined chirality, as visible by TEM and fluorescence microscopy imaging
+(g). Reprinted with permission from ref (<xref ref-type="bibr" rid="ref32">32</xref>). Copyright 2017 ACS.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" id="gr2" position="float" orientation="portrait" xlink:href="bc2c00312_0002.jpg"><?image-name bc2c00312_0002.jpg?><?image-size 290609?><?image-md5 c7689eeeebb105cbf643a6f01a78f9e9?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 1917?><?image-original-width 1512?><?image-scaled-height 959?><?image-scaled-width 756?><?image-cloudpmc-urn urn:cdn:blobs/4e6f/9853505/c7689eeeebb1/bc2c00312_0002.jpg?><?thumb-name bc2c00312_0002.gif?><?thumb-size 23323?><?thumb-md5 ce7715b8ef68c399d045a5ae043213e0?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 127?><?thumb-scaled-width 100?><?thumb-cloudpmc-urn urn:cdn:blobs/4e6f/9853505/ce7715b8ef68/bc2c00312_0002.gif?></graphic></fig><p>Despite these major advancements, it soon appeared clear that multistranded
+tiles were not ideal building units of DNA nanotubes, owing to their
+demanding design and the difficulty in controlling their curvature
+in a precise fashion. The introduction of the single-stranded tiles
+approach provided the solution (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>b).<sup><xref ref-type="bibr" rid="ref18">18</xref></sup> As described above
+for the nanoribbons, the main feature of this strategy is the possibility
+to precisely define the width of open and planar arrays using boundary
+strands (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>a).
+By designing these strands to be mutually complementary in sequence,
+the ribbon can be forced to roll and close at a common edge (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>b, left panel), with
+the direction of bending dictated by the dihedral angle between adjacent
+helices and the diameter of the tube strictly related to the width
+of the lattice (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>b, AFM images). In addition, by selecting the pairing domains of
+boundary strands, tubular structures of identical circumference but
+different twist can be formed, with large offsets between connected
+domains resulting in highly twisted ribbons (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>c and d).<sup><xref ref-type="bibr" rid="ref31">31</xref></sup> Finally,
+SST approaches were combined with the insertion or deletion of base
+pairs between adjacent crossovers (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>e) for the construction of DNA hollow filaments
+with customizable degrees of bending and torque. This eventually enabled
+the realization of supercoiled structures of predefined global chirality
+and helical pitch (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>f and g).<sup><xref ref-type="bibr" rid="ref32">32</xref></sup></p></sec><sec id="sec2.3"><label>2.3</label><title>DNA Bundles</title><p>DNA helical bundles (HB)
+are another type of DNA-based filaments. Differently from nanotubes,
+which are derived by the rolling and closure of planar sheets, bundles
+are obtained by tightly packing a defined number of helical domains
+in a honeycomb<sup><xref ref-type="bibr" rid="ref20">20</xref></sup> or square lattice<sup><xref ref-type="bibr" rid="ref33">33</xref></sup> arrangement or even a hybrid of them.<sup><xref ref-type="bibr" rid="ref34">34</xref></sup> Bundles therefore can be considered as the first
+rationally designed 3D nanostructures with a space-filled arrangement
+of helices. This feature allows them to grow along a central axis
+with no addition of mechanical stress at the polyphosphate backbone
+during chain growth. One of the most recurrent building blocks of
+such structures is the six-helix bundle (6HB, <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>a).<sup><xref ref-type="bibr" rid="ref35">35</xref></sup> Upon modification
+of the two extremities of a 6HB with pairs of mutually complementary
+sticky ends, long wirelike species with lengths between 7 and 15 μm
+were readily obtained. Upon application of the same concept, multiple
+helices were packed together and elongated at their ends, giving rise
+to filaments with distinct cross-sectional symmetries and areas, as
+well as variable persistence lengths (<xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>b).<sup><xref ref-type="bibr" rid="ref36">36</xref></sup> Recently,
+our group developed a hierarchical and modular approach for the fabrication
+of various types of DNA filaments starting from the same 24HB unit
+(<xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>c–e
+illustrates only one of the possible arrangements).<sup><xref ref-type="bibr" rid="ref37">37</xref></sup> The results demonstrate that the type of interaction at
+the interface of connected origami units, as well as their periodic
+arrangement along the chain, affects the persistence length of the
+polymers, thus providing a strategy for the attainment of DNA filaments
+with programmable elastic features.</p><fig id="fig3" position="float" orientation="portrait"><label>Figure 3</label><caption><p>Examples of DNA bundles. (a) Front view
+of a six-helix bundle (6HB)
+along its central axis. Reprinted with permission from ref (<xref ref-type="bibr" rid="ref35">35</xref>). Copyright 2005 ACS. (b)
+Design and AFM images of linear nanotubes formed by the head-to-tail
+sticky-ended cohesion of 6HB (left), 6HB+2 (middle), and 6HB+3 tiles.
+The building units differ in the number of helices added to a central
+6HB. Reprinted with permission from ref (<xref ref-type="bibr" rid="ref36">36</xref>). Copyright 2012 ACS. (c) Head-to-tail hybridization
+of the AB origami monomer leads to the formation of periodic (AB)<sub><italic toggle="yes">n</italic></sub> filaments of micrometer length, as confirmed
+by AFM (d) and TEM (e) imaging. Reprinted with permission from ref (<xref ref-type="bibr" rid="ref37">37</xref>). Copyright 2018 ACS. (f)
+Stacking of DNA origami bricks at shape-complementary edges (left
+panel). Negative-stain TEM imaging shows the reversible association
+and dissociation of origami units, respectively, at high and low magnesium
+ion concentrations (right panels). Reprinted with permission from
+ref (<xref ref-type="bibr" rid="ref38">38</xref>). Copyright
+2015 AAAS. (g) The assembly state of DNA origami fibrils can be reversibly
+switched by heating/cooling cycles or (h) by applying hybridization/strand-displacement
+reactions at single-stranded handles appended at the edges of adjacent
+monomers. Reprinted with permission from ref (<xref ref-type="bibr" rid="ref40">40</xref>). Copyright 2016 ACS.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" id="gr3" position="float" orientation="portrait" xlink:href="bc2c00312_0003.jpg"><?image-name bc2c00312_0003.jpg?><?image-size 323242?><?image-md5 1917f496cf2459440f06673344c69911?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 1897?><?image-original-width 1412?><?image-scaled-height 949?><?image-scaled-width 706?><?image-cloudpmc-urn urn:cdn:blobs/4e6f/9853505/1917f496cf24/bc2c00312_0003.jpg?><?thumb-name bc2c00312_0003.gif?><?thumb-size 23800?><?thumb-md5 c5919677b31dbe5b7751b3c8d1a3a41f?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 134?><?thumb-scaled-width 100?><?thumb-cloudpmc-urn urn:cdn:blobs/4e6f/9853505/c5919677b31d/bc2c00312_0003.gif?></graphic></fig><p>Using base-stacking interactions at shape-complementary
+interfaces,
+the Dietz lab succeeded in constructing long-range-ordered origami
+filaments, with exceptional control over their assembled and disassembled
+states, given by the concentration of magnesium ions in solution (<xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>f).<sup><xref ref-type="bibr" rid="ref38">38</xref></sup> Base hybridization between complementary strands at the
+opposite sides of a divalent Janus DNA origami subunit was instead
+applied by the Walther group to generate fibrillar structures of low
+polydispersity. These DNA chains were also shown to be reversibly
+switched from oligomers to monomers and vice versa upon repetitive
+thermal or chemical treatment (<xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>g and h).<sup><xref ref-type="bibr" rid="ref39">39</xref>,<xref ref-type="bibr" rid="ref40">40</xref></sup> Alternatively, adamantane/β-cyclodextrin
+host/guest inclusion complexes were employed to promote the multivalent
+and cooperative binding of the origami patchy particles, thus demonstrating
+that supramolecular chemistry approaches also can be used to control
+the formation of DNA filaments.<sup><xref ref-type="bibr" rid="ref41">41</xref></sup></p><p>Other studies have focused on self-limiting growth mechanisms to
+control the maximum number of monomer units that can self-associate
+into the polymer chain. Relevant examples include an ingenious construct
+composed of a hollow cylinder with an inner rotating shaft, presented
+by the Murata group.<sup><xref ref-type="bibr" rid="ref42">42</xref></sup> Here, the self-association
+of the units is mediated by stacking of the cylinder at both extremities,
+with the maximal number of connected units given by the twisting angle
+of the shaft, according to a mechanical principle that is reminiscent
+of a Vernier device. Recently, Lee and coauthors proposed a different
+strategy based on strain accumulation to control the length distribution
+of self-assembled DNA polymers.<sup><xref ref-type="bibr" rid="ref43">43</xref></sup> The fundamental
+unit of the filaments is composed of interconnected bundles that bend
+to various extents in response to buckling forces (<xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>a). These deformations allosterically
+propagate along the filament during its growth, until no further extension
+becomes possible. The latest developments in the field include DNA
+origami subunits with more complex shapes or multiple patches available
+for assembly, leading to linear chains in a zigzag configuration or
+helical suprastructures.<sup><xref ref-type="bibr" rid="ref44">44</xref>,<xref ref-type="bibr" rid="ref45">45</xref></sup></p><fig id="fig4" position="float" orientation="portrait"><label>Figure 4</label><caption><p>Examples of alternative
+DNA filaments. (a) Self-limiting DNA filaments
+are constructed from a subunit made of three domains (labeled as A,
+B, and C) connected by flexible linkers (gray). While the upper and
+lower domains (A and C) have passivated interfaces to prevent interunit
+binding (red), the central domain (B) displays shape-complementary
+front and rear interfaces (blue) that mediate binding. By programming
+of the flexibility of the A and C domains relative to the B domain,
+the maximal number of units linked together can be controlled (middle
+panel), as demonstrated by TEM imaging of the filaments. Reprinted
+with permission from ref (<xref ref-type="bibr" rid="ref43">43</xref>). Copyright 2020 ACS. (b) Supramolecular DNA assembly is
+used to connect synthetic organic molecules into small and large triangles
+(green and red shapes, left panel). Linker strands are designed to
+connect those polygons along a longitudinal axis, yielding DNA nanotubes
+of variable cross-sectional size (middle panel). Linker strands can
+be introduced for the size-selective encapsulation of AuNPs (gold
+spheres) in the large cavities of the nanotubes (middle panel). Extension
+of linker strands with a single-stranded overhang eventually allows
+for the widening of the large cavities and the consequent release
+of the particle cargos (right panel). Reprinted with permission from
+ref (<xref ref-type="bibr" rid="ref50">50</xref>). Copyright
+2010 Springer Nature.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" id="gr4" position="float" orientation="portrait" xlink:href="bc2c00312_0004.jpg"><?image-name bc2c00312_0004.jpg?><?image-size 135412?><?image-md5 b83e328ae47d687a1904866f3343b72c?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 1286?><?image-original-width 1636?><?image-scaled-height 514?><?image-scaled-width 654?><?image-cloudpmc-urn urn:cdn:blobs/4e6f/9853505/b83e328ae47d/bc2c00312_0004.jpg?><?thumb-name bc2c00312_0004.gif?><?thumb-size 17841?><?thumb-md5 44d6762bfccc59a04c1f5d88e707fad8?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 79?><?thumb-scaled-width 101?><?thumb-cloudpmc-urn urn:cdn:blobs/4e6f/9853505/44d6762bfccc/bc2c00312_0004.gif?></graphic></fig></sec><sec id="sec2.4"><label>2.4</label><title>Not-Only-DNA
+Filaments and Alternative Building
+Units</title><p>Until now, we have reported about synthetic filaments
+made only of DNA. However, an important class of filamentous structures
+relies on the use of synthetic organic and metallo-organic molecules
+as DNA-scaffolding units.<sup><xref ref-type="bibr" rid="ref46">46</xref>,<xref ref-type="bibr" rid="ref47">47</xref></sup> In this approach, the
+cross section of the filament is a regular planar polygon, the vertices
+of which are occupied by synthetic molecules or transition metal ligands,
+while the edges are made up of DNA duplexes. The cross-sectional size
+and geometry of the filament are defined, respectively, by the length
+and number of the duplexes that connect the adjacent vertices of the
+polygonal shape, with the latter being ultimately dictated by the
+structure of the organic molecule used as a scaffold. In a further
+step, additional linker strands are employed to link two polygonal
+units along their longitudinal axis, resulting in a prism object of
+the desired size (<xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>b, left and middle panels).<sup><xref ref-type="bibr" rid="ref48">48</xref>,<xref ref-type="bibr" rid="ref49">49</xref></sup> Finally, several
+prisms are connected one on top of the other, giving rise to linear
+assemblies of prism-shaped cavities. Those filamentous structures
+were employed for the size-selective encapsulation of nanoparticle
+cargos. In more advanced applications, toehold-mediated single-strand
+displacement reactions were applied to extend and compress the size
+of the cavities in a programmable and reversible fashion, thus providing
+a facile tool for the modulation of filament porosity and the generation
+of structurally switchable materials (<xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>b, right panel).<sup><xref ref-type="bibr" rid="ref50">50</xref></sup></p><p>Differently from the filamentous structures viewed so far,
+these synthetic organic motifs offer new structural and functional
+features as compared to DNA-only junctions. First, the topology of
+the building unit is in this case more easily accessible because the
+DNA strands depart from the organic template and do not need to interweave
+one another to form a junction. Second, the periodic incorporation
+of organic molecules or transition metals provides the polymer with
+chemical and physical properties that are absent in DNA-only filaments.
+As a result, the programmable recognition properties of DNA are combined
+with the structural and functional diversity of supramolecular chemistry
+approaches. This field, termed supramolecular DNA assembly,<sup><xref ref-type="bibr" rid="ref51">51</xref></sup> was demonstrated to be very efficient for the
+fabrication of nanomaterials with addressable nanosized features as
+well as added electrochemical, photochemical, and catalytic properties.</p></sec></sec><sec id="sec3"><label>3</label><title>Mechanical Properties of DNA Filaments</title><p>Advancements
+in the design and realization of filaments with tailored
+physical properties are possible only if guided by a fundamental understanding
+of the elastic features of linear polymer chains, either in solution
+or confined onto a surface. Theoretical models of linear polymers
+based on the “wormlike chain” (WLC) hypothesis, first
+suggested by Kratky and Porod in 1949,<sup><xref ref-type="bibr" rid="ref52">52</xref></sup> have been appropriately adapted to DNA filaments and widely applied
+to describe the elastic properties of these structures. Accordingly,
+each restriction of random configuration adopted by the polymer is
+associated with an entropic penalty. This latter is counteracted by
+a corresponding cost in elastic energy that must be paid to bend the
+chain.<sup><xref ref-type="bibr" rid="ref53">53</xref></sup> The interplay between these two
+forces determines the elasticity of the polymer chain, which is recapitulated
+by the persistence length of the filament.<sup><xref ref-type="bibr" rid="ref54">54</xref></sup> This is defined as the length over which the polymer can be considered
+as roughly rigid and for double-stranded DNA assumes a value of about
+50 nm. An important assumption of this model is that the flexibility
+of the filament is continuous and homogeneously distributed along
+the chain, making it particularly suitable for describing semiflexible
+or rigid polymers, such as double-stranded DNA and unstructured polypeptides.
+Meanwhile, solid theoretical frameworks are available to reliably
+relate the macroscopic elastic behavior of long DNA chains to the
+geometry of their building components and their interaction mode.</p><p>The first studies on the elastic features of synthetic DNA filaments
+were performed by Rothemund and co-workers. In their work, the distribution
+of filament lengths was measured using fluorescently labeled DNA tubes
+adsorbed onto a glass surface.<sup><xref ref-type="bibr" rid="ref30">30</xref></sup> In a different
+study, fluorescence microscopy was employed to extract the persistence
+length of various six-helix bundles. For this purpose, the end-to-end
+distance and contour length of several tens of filaments were measured
+from the micrographs, and the experimental data were fitted to a 2D
+WLC model.<sup><xref ref-type="bibr" rid="ref36">36</xref></sup> Alternative procedures relied
+instead on electron microscopy<sup><xref ref-type="bibr" rid="ref55">55</xref></sup> and atomic
+force microscopy (AFM) imaging<sup><xref ref-type="bibr" rid="ref53">53</xref>,<xref ref-type="bibr" rid="ref54">54</xref></sup> to observe and quantify
+the trajectories of DNA chains. One should consider, however, that
+surface-based techniques may strongly affect the appearance of polymer
+traces because of kinetic trapping phenomena and/or structural damage
+of the filaments during sample handling and imaging. This may lead,
+in some instances, even to about 50% discrepancy in the values of
+persistence length measured by different imaging techniques. In a
+detailed study, the Fygenson group systematically analyzed the impact
+of various nanoscale features on the mechanical properties of DNA
+filaments.<sup><xref ref-type="bibr" rid="ref31">31</xref></sup> Altogether, these studies
+contributed to a deeper understanding of the correlation between the
+nanosized features of the DNA chains and their macroscopic mechanical
+properties, thus enabling the engineering of the physical behavior
+of DNA filaments through the rational design of the component strands.
+In a further step, structural reconfigurations were implemented to
+generate forces and perform work. One of the first realizations of
+this concept was shown by Castro and co-workers. In their study, the
+geometry and stiffness of a compliant DNA origami structure were finely
+tuned by applying a micromechanical model based on the WLC theory.<sup><xref ref-type="bibr" rid="ref56">56</xref></sup> In another example, Suzuki et al. constructed
+a DNA origami nanoarm that could assume different degrees of curvature
+in response to the collective action of linked modules, each one with
+adjustable tension properties.<sup><xref ref-type="bibr" rid="ref57">57</xref></sup> Employing
+G-quadruplex motifs for the actuation of the modules, the authors
+finally demonstrated the reversible and ion-dependent reconfiguration
+of the device.</p><p>While the bending of DNA filaments has been largely
+investigated,
+stretching and twisting modes of deformation have been only scarcely
+explored. Seidel and co-workers used magnetic tweezers to measure
+the bending and torsional stiffness of four- and six-helix bundles
+and explained the experimentally observed data considering the number
+of crossovers between the individual helices of the structure.<sup><xref ref-type="bibr" rid="ref58">58</xref></sup></p><p>Recently, detailed studies on the twisting
+mode of DNA superhelices
+have been reported by the Fygenson<sup><xref ref-type="bibr" rid="ref31">31</xref></sup> and
+Liedl<sup><xref ref-type="bibr" rid="ref32">32</xref></sup> groups. Using the SST approach,
+the authors constructed several DNA nanotubes of defined diameter,
+supertwist degree, and chirality and finally proposed an elastic cylinder
+model to justify the observed mechanical features of the filaments.
+In this model, two energy contributions are considered, a favorable
+hybridization energy and an unfavorable elastic energy. The former
+promotes the interaction of complementary boundary strands that form
+the tube, and the latter is the energy cost that must be paid to bend
+the planar array into the target structure. The data show that minimization
+of the total free energy of tube formation goes along with the minimization
+of the supertwist allowed by the sequence design. Altogether, these
+studies demonstrate that the currently available theoretical frameworks
+on linear polymers are suitable to predict and quantify the mechanical
+properties of DNA filaments, with interesting applications, particularly
+in the field of nano- and biomimetic materials.</p></sec><sec id="sec4"><label>4</label><title>Dynamics
+of DNA Filament Assembly and Disassembly</title><p>In this section,
+we will briefly summarize the third aspect of
+synthetic DNA filaments, namely, the dynamics of growth (and collapse,
+in some cases). The capability to interfere with the kinetics of the
+assembly/disassembly of artificial DNA filaments has attracted increasing
+attention in the past few years. Indeed, only by being able to modulate
+the dynamic features of such structures can the adaptability, stimuli-responsive,
+and evolution properties of natural protein filaments be truly emulated.
+Surely, mastering the dynamics of a process is a very challenging
+goal as it requires a profound knowledge of the mechanisms taking
+place during the various reaction steps and how these are affected
+by the surrounding environment. By contrast, the attainment of a defined
+equilibrium state does not necessarily require a knowledge of the
+exact path traveled by the system to reach it.</p><p>Pioneering studies
+in this direction have been performed by the
+Winfree group,<sup><xref ref-type="bibr" rid="ref30">30</xref></sup> with the work on the seeded
+nucleation of nanoribbons signaling the first important contribution
+to the field (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>a).<sup><xref ref-type="bibr" rid="ref17">17</xref></sup> As shortly mentioned above, this
+work demonstrates that it is possible to modify the kinetic barrier
+to a nucleation process by designing appropriate “nucleation
+seeds”. In a more general sense, the onset of a stage of the
+assembly, and thus the energy landscape of the reaction, has been
+here, for the first time, really engineered. This finding set up the
+first milestone of a long series of studies, by this and other groups,
+that rely on the design of seeds of various types to control the nucleation
+of DNA filament formation.<sup><xref ref-type="bibr" rid="ref59">59</xref>,<xref ref-type="bibr" rid="ref60">60</xref></sup> A polymerization model
+for algorithmic tile assembly was also developed quite early in the
+field to guide the design of such systems and provide a better understanding
+of the thermodynamic and kinetic properties of DNA nanotubes.<sup><xref ref-type="bibr" rid="ref61">61</xref></sup> Correspondingly, methods have been developed
+to measure the kinetics of filament growth in a reliable fashion,
+reducing possible interactions with the surface and enabling, for
+example, visualization of scission and joining events during the polymerization
+process.<sup><xref ref-type="bibr" rid="ref62">62</xref></sup> The striking similarities between
+the kinetic model of tile assembly and the polymerization model proposed
+for actin or microtubule formation inspired the development of biomimetic
+strategies for coupling energy-consuming reactions to the assembly
+of DNA tiles into filaments. The past 10 years have seen a great expansion
+of concepts and methods that aim at recapitulating the complex nonequilibrium
+processes of the cytoskeleton, including transients and dynamic instability.
+Initial advancements toward this goal relied on the use of upstream
+DNA strand-displacement circuits for triggering the activation of
+a tile capable of self-assembly from an inactive precursor (<xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>a and b).<sup><xref ref-type="bibr" rid="ref63">63</xref></sup> This idea has been later adopted by several
+researchers, with various approaches for the activation or deactivation
+of the initial tile precursor and its further association into the
+growing filament or its dissociation from it. For example, Fan and
+co-workers applied a toehold-mediated displacement reaction to initiate
+a cascade of association events between two distinct tile monomers.
+As each binding event resulted in the appearance of a newly activated
+polymer tip, the filament continued to polymerize as long as monomers
+were available in solution, hence mimicking the dynamics of chain-growth
+polymerization, typical of natural protein filaments.<sup><xref ref-type="bibr" rid="ref64">64</xref></sup> Applying a different approach, the Schulman group recently
+demonstrated how a simple feedback mechanism that compensates for
+changes in monomer concentration (and thus acts as a chemical buffer)
+can sustain nanotube growth, producing filaments with low polydispersity
+(<xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>c and d).<sup><xref ref-type="bibr" rid="ref65">65</xref></sup> This study essentially shows that an appropriate
+set of reversible reactions can be used to control the polymerization
+of DNA filaments, thus achieving the same goal obtained with more
+complex reaction networks.</p><fig id="fig5" position="float" orientation="portrait"><label>Figure 5</label><caption><p>Examples of dynamic DNA filaments I. (a) DNA
+nanotubes formed by
+self-association of DX tiles. (b) An upstream DNA circuit is designed
+to expedite the release of product strand D, which triggers the isothermal
+assembly of the tile into the nanotube. The circuit is composed of
+the S and F strands that react with the help of the catalyst C, produced
+again at the end of each reaction cycle. The release of product over
+time was monitored at three different concentrations of C, using a
+fluorescent reporter for D (top inset). DNA nanotubes obtained by
+thermal annealing were characterized by AFM and used as controls (bottom
+inset). Reprinted with permission from ref (<xref ref-type="bibr" rid="ref63">63</xref>). Copyright 2013 Springer Nature. (c) Working
+principle of a feedback system for controlling nanotube growth. Inactive
+monomers are continually converted into active monomers, thus keeping
+the monomer set point to a suitable value for seeded nucleation and
+sustained filament growth. (d) Time-course fluorescence imaging of
+controlled nanotube growth in the presence of 0.075 nM seeds. Reprinted
+with permission from ref (<xref ref-type="bibr" rid="ref65">65</xref>). Copyright 2020 Springer Nature. (e) Two orthogonal DNA
+circuits (circuit 1 and 2) respond to two different antibodies (green
+and red) by releasing two different outputs (a deprotector and an
+invader strand). This leads, respectively, to the assembly and disassembly
+of a DNA nanotube, which can be monitored by fluorescence microscopy.
+Reprinted with permission from ref (<xref ref-type="bibr" rid="ref66">66</xref>). Copyright 2019 Springer Nature.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" id="gr5" position="float" orientation="portrait" xlink:href="bc2c00312_0005.jpg"><?image-name bc2c00312_0005.jpg?><?image-size 139226?><?image-md5 f700175d5e6951d976049863b2c02385?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 1303?><?image-original-width 1810?><?image-scaled-height 521?><?image-scaled-width 724?><?image-cloudpmc-urn urn:cdn:blobs/4e6f/9853505/f700175d5e69/bc2c00312_0005.jpg?><?thumb-name bc2c00312_0005.gif?><?thumb-size 17058?><?thumb-md5 806710e701e640b15e0302bad1d47df6?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 111?><?thumb-cloudpmc-urn urn:cdn:blobs/4e6f/9853505/806710e701e6/bc2c00312_0005.gif?></graphic></fig><p>Besides the developments of methods for regulating the onset
+of
+DNA filament formation and the establishment of a fixed equilibrium
+state, several approaches have recently emerged that aim at the control
+of both the assembly and disassembly processes. For example, the Ricci
+group developed a DNA-based circuit that senses the presence of a
+specific antibody and liberates a DNA strand upon binding to it. By
+the coupling of the released strand to the activation or deactivation
+of a DX tile, two distinct antibody-dependent circuits were combined
+for the orthogonal control of the assembly and disassembly of DNA
+nanotubes (<xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>e).<sup><xref ref-type="bibr" rid="ref66">66</xref></sup> In a different work, Sleiman and
+co-workers employed a reversible proton gradient to control filament
+growth. Briefly, a merocyanine photoacid releases protons upon irradiation
+with visible light, resulting in the production of a spiropyran and
+acidification of a saturated solution from pH 5.3 to 3.5.<sup><xref ref-type="bibr" rid="ref67">67</xref></sup> This reaction was coupled to the disruption
+of a poly adenine cyanuric acid (CA) fiber into a protonated discrete
+duplex. Light removal caused the deprotonation of this intermediate
+duplex and its unfolding into monomer DNA strands. The latter eventually
+recombined with CA to reestablish poly(A)–CA fibers, however,
+this time, with fewer defects and less gaps in between associated
+monomers. Essentially, this work demonstrates that a reversible chemical
+reaction can be coupled to an assembly/disassembly process to change
+the morphology of DNA fibers and enhance their thermal stability.</p><p>Concurrent activation and deactivation mechanisms have been typically
+achieved integrating enzymatic reactions within the assembly/disassembly
+cycle. A brilliant example of this type of system was demonstrated
+by Franco and co-workers in 2019 (<xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>a).<sup><xref ref-type="bibr" rid="ref68">68</xref></sup> Here, the
+authors decorated the DNA-tile unit with a toehold for specific recognition
+by an RNA invader strand. Binding of the invader weakened the tile-to-tile
+recognition, promoting nanotube dissociation into monomers. On the
+other hand, degradation of the RNA invader strands by RNase H counteracted
+the disassembly process, favoring tile-to-tile association and tube
+growth. The input level of invaders was controlled by a transcriptional
+oscillator<sup><xref ref-type="bibr" rid="ref69">69</xref></sup> coupled to the nanotube by
+an “insulator” genelet.<sup><xref ref-type="bibr" rid="ref70">70</xref></sup> Hence, to summarize, two enzymes of opposite activity, namely, the
+bacteriophage T7 RNA polymerase and the RNase H, were concurrently
+employed for regulating, respectively, the breakage and regrowth of
+the nanotube through the production and degradation of RNA invader
+strands (<xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>a,
+left panel).</p><fig id="fig6" position="float" orientation="portrait"><label>Figure 6</label><caption><p>Examples of dynamic DNA filaments II. (a) A synthetic
+transcriptional
+oscillator is used to control the breakage and regrowth of DNA nanotubes.
+The oscillator is composed of two switches (SW12 and SW21) that regulate
+their own activity through an RNA activator (rA1) and an RNA inhibitor
+(rI2) module. The oscillator is coupled to the assembly/disassembly
+process by an insulator genelet (Ins), which produces the RNA invader
+strands responsible for nanotube breakage. The oscillatory on/off
+activity of the switch is coupled, respectively, to the high and low
+production of the invader strand. The former leads to nanotube disassembly,
+and the latter promotes nanotube regrowth, because of the simultaneous
+presence of an RNase H degradation process. One cycle of the oscillation
+is visible by fluorescence microscopy (right panels). Reprinted with
+permission from ref (<xref ref-type="bibr" rid="ref68">68</xref>). Copyright 2019 Springer Nature. (b) Left panel: DNA monomers with
+self-complementary sticky ends are covalently linked in the presence
+of T4 DNA ligase and ATP. The ligated product contains the recognition
+site for the endonuclease <italic toggle="yes">Bam</italic>HI (orange box), which
+cleaves the just-formed bond. The simultaneous occurrence of two counteracting
+enzymatic reactions results in a dynamic covalent bond until ATP is
+totally consumed. Right panel: Time-dependent agarose gel electrophoresis
+shows the transient assembly and disassembly of the filament upon
+the addition of 0.4 mM ATP fuel. Reprinted with permission from ref (<xref ref-type="bibr" rid="ref71">71</xref>). Copyright 2019 AAAS.
+(c) DNA nanotubes anchored at specific locations of a cell surface
+may serve as dynamic and/or functional elements (top panel). Confocal
+micrographs of seeded nanotubes anchored on top of HeLa cell membranes
+in response to fluid shear stresses of 0, 0.05, 0.2, and 1 dyn/cm<sup>2</sup>. Reprinted with permission from ref (<xref ref-type="bibr" rid="ref83">83</xref>). Copyright 2021 Springer
+Nature. (d) Left panel: Schematic illustration of the suggested cargo
+translocation mechanism on top of a DNA cytoskeleton: The SUV cargo
+is modified with DNA strands that hybridize to complementary RNA handles
+located on one side of the DNA filament. Degradation of the RNA handles
+by means of RNase H causes the detachment of the cargo from the filament
+and its forward movement according to a burnt-bridge mechanism. Right
+panel: Representative confocal imaging of a water-in-oil droplet containing
+DNA-based filaments at different time points (from 0 to 105 min).
+The filaments lose their fluorescence over time as a result of the
+progressive cleavage of the fluorophores during cargo transport. Reprinted
+with permission from ref (<xref ref-type="bibr" rid="ref90">90</xref>). Copyright 2022 Springer Nature.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" id="gr6" position="float" orientation="portrait" xlink:href="bc2c00312_0006.jpg"><?image-name bc2c00312_0006.jpg?><?image-size 169325?><?image-md5 cfa1544381f6ec619aacf02816e4db0d?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 1287?><?image-original-width 1833?><?image-scaled-height 515?><?image-scaled-width 733?><?image-cloudpmc-urn urn:cdn:blobs/4e6f/9853505/cfa1544381f6/bc2c00312_0006.jpg?><?thumb-name bc2c00312_0006.gif?><?thumb-size 20146?><?thumb-md5 905b676794ded615fe8663a6b1fb3e14?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 79?><?thumb-scaled-width 113?><?thumb-cloudpmc-urn urn:cdn:blobs/4e6f/9853505/905b676794de/bc2c00312_0006.gif?></graphic></fig><p>Important progress in the engineering and modulation of DNA filament
+dynamics was made by the Walther group. In a recent study, a dynamic
+covalent bond was introduced as a new concept for generating nonequilibrium
+DNA systems (<xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>b).<sup><xref ref-type="bibr" rid="ref71">71</xref></sup> The approach relies on the formation
+and disruption of a covalent phosphodiester DNA bond through the simultaneous
+action of an ATP-fueled DNA ligase and a counteracting endonuclease
+(<xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>b, left panel).
+The initial amount of ATP essentially dictated the lifetime of the
+process, whereas the dynamics of the system, that is, the balance
+between the ligation and restriction rates, was finely tuned by adjusting
+the enzyme concentrations and their stoichiometric ratio. Altogether,
+these factors affected the average length, polydispersity, and exchange
+frequency of the polymer chains (an exemplary agarose gel of the reaction
+mixture at different time points is given in <xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>b, right panel). This approach was later
+used by the same group to regulate the autonomous ATP-fueled assembly
+and disassembly of DNA nanotubes through a strand-displacement reaction
+that is powered and controlled by an upstream enzyme network.<sup><xref ref-type="bibr" rid="ref72">72</xref></sup> Finally, this method was shown to be suitable
+for engineering adaptiveness, pathway complexity, and light-modulated
+behavior of DNA polymers.<sup><xref ref-type="bibr" rid="ref73">73</xref>−<xref ref-type="bibr" rid="ref75">75</xref></sup></p></sec><sec id="sec5"><label>5</label><title>Conclusions
+and Perspectives</title><p>Synthetic DNA filaments may find interesting
+applications as components
+of nanoelectronic devices, biomimetic materials for tissue engineering,
+or alternative tools for biophysical characterizations. Early studies
+on DNA nanotubes showed the use of these structures as templates for
+the growth of conductive nanowires.<sup><xref ref-type="bibr" rid="ref76">76</xref></sup> In
+other reports, DNA filaments were employed to mediate the weak alignment
+of membrane proteins and facilitate their structural elucidation by
+NMR spectroscopy.<sup><xref ref-type="bibr" rid="ref77">77</xref></sup> Further developments
+in the field allowed the application of DNA filaments for the super-resolution
+imaging of DNA nanostructures.<sup><xref ref-type="bibr" rid="ref78">78</xref></sup></p><p>The emulation of the structure and function of the cytoskeleton
+is probably one of the most fascinating and instructive fields of
+applications of DNA-based filaments. In the past few years, ingenious
+constructs and advanced technologies have contributed to a deeper
+understanding of the mechanisms that regulate the dynamics of protein
+filament growth and shrinkage. Moreover, biochemical methods have
+been developed to reproduce synthetic analogues of protein scaffolds
+for the anchorage or transport of molecular cargos, as well as for
+cellular propulsion and motility.</p><p>For example, hierarchical
+self-assembly strategies were applied
+to link small DNA rodlike units into complex two- and three-dimensional
+meshlike architectures,<sup><xref ref-type="bibr" rid="ref7">7</xref>,<xref ref-type="bibr" rid="ref38">38</xref></sup> which can be used as artificial
+models of cell matrices. Other examples report about the use of DNA
+filaments as tracks for programmed long-range molecular motion.<sup><xref ref-type="bibr" rid="ref79">79</xref>,<xref ref-type="bibr" rid="ref80">80</xref></sup> Finally, striking examples of stimuli-responsive DNA filaments have
+shown that the potential of these structures can go much beyond their
+role as scaffolding static elements. These filaments, indeed, can
+be designed to sense the surrounding environment and actuate a change
+in response to it, thus emulating the active functioning and adaptiveness
+of their natural analogues. The path is therefore open to the more
+ambitious goal of constructing artificial cells from the bottom.</p><p>An illustrative example of this endeavor was reported by the Liedl
+group a few years ago.<sup><xref ref-type="bibr" rid="ref81">81</xref></sup> In this work,
+magnetic nanoparticles were decorated with supertwisted DNA nanotubes
+via hybridization with complementary strands. Upon the application
+of a rotating and homogeneous magnetic field, the DNA filaments formed
+a bundle that spontaneously aligned on one side of the particles,
+thus resembling the shape of bacterial flagella. Even more remarkably,
+the bundle acquired a coordinated clockwise (or counterclockwise) rotation that moved the particles forward
+along the rotation axis, thus mimicking the propulsion movement of
+their natural analogues. Despite still being simple prototypes of
+prokaryotic flagella, such artificial DNA swimmers undoubtedly demonstrate
+that DNA self-assembly procedures can be employed to engineer biomimetic
+materials, otherwise extremely challenging to realize with other fabrication
+methods.</p><p>Major progress in this field has been recently shown
+by Schulman
+and co-workers.<sup><xref ref-type="bibr" rid="ref82">82</xref></sup> In their work, DNA nanotubes
+were designed to nucleate and grow on a surface at defined locations.
+One end of the filament was attached to the surface, while the opposite
+end was free to diffuse in solution. Pairs of tubular structures at
+predefined distances (between 1 and 10 μm) and relative orientations
+were then joined at their growing tips. Unpaired filaments were selectively
+melted away by exchanging the buffer with a solution that contained
+no free tiles, thus effectively reducing the concentration of the
+monomer in solution below the critical value necessary for polymer
+growth. In a recent report, the same group organized micrometer-scale
+DNA nanotubes at specific receptors on living cells,<sup><xref ref-type="bibr" rid="ref83">83</xref></sup> proposing a model system to mimic the structural and functional
+role of cell membrane protrusions. For this purpose, the authors engineered
+a quite complex construct to link DNA nanotubes to epidermal growth
+factor receptors (EGFR) overexpressed on the surface of HeLa cells
+(<xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>c, top panel).
+The construct was sequentially composed of EGFR primary antibodies,
+biotinylated secondary antibodies, streptavidin, and a biotin-modified
+strand that hybridizes to complementary DNA sequences on the DNA origami
+seed, from which the nanotube grows. The authors demonstrated that
+such artificial DNA filaments specifically recognize receptors on
+the surface of live cells, grow on the membrane, and sense an external
+fluid flow (<xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>c, bottom panel). Recently, DNA origami-coiled filaments have been
+used to control cell motion by targeting clusters of integrin receptors
+on the surface of HeLa cells.<sup><xref ref-type="bibr" rid="ref84">84</xref></sup> The filaments
+were modified with RGD ligands domains, the spacing of which (and
+consequently the extent of integrin-receptors clustering) was regulated
+by pH through the insertion of i-motif structures between neighboring
+struts of the DNA origami device.</p><p>The internalization of DNA
+filaments within artificial compartments
+and the sculpting of membrane shape, from either the outside or inside
+of lipid vesicles, are other crucial features of cells that have been
+emulated in several synthetic biology approaches.<sup><xref ref-type="bibr" rid="ref85">85</xref>−<xref ref-type="bibr" rid="ref89">89</xref></sup> For example, Göpfrich and coauthors succeeded
+in reconstituting a DNA cytoskeleton inside giant unilamellar vesicles
+(GUV) and showed that, by suitably modifying the design of the DNA-tile
+unit, various types of filament responses can be visualized.<sup><xref ref-type="bibr" rid="ref86">86</xref></sup> In this way, they demonstrated the light-induced
+assembly and disassembly of the filaments, the formation of bundles
+and rings with high persistence lengths, and the appearance of DNA
+cortices deforming the vesicle from the interior. The Schwille group
+intensively investigated the impact of DNA filaments on the topological
+transformation of membranes, revealing that the curvature, membrane
+affinity, and surface density of the filaments are crucial for the
+induction of tubular membrane deformations.<sup><xref ref-type="bibr" rid="ref89">89</xref></sup> These and similar studies will surely advance the understanding
+of the physical–chemical mechanisms that control membrane deformation
+and will boost the further development of exciting applications, in
+which more elaborate DNA origami assemblies can be envisaged, for
+example, as drug delivery vehicles for targeting biological membrane
+barriers. A final representative example of the level of sophistication
+that can be achieved by the smart combination of microfluidic technologies,
+DNA nanotechnology, and enzyme chemistry has been recently reported
+by the Göpfrich group.<sup><xref ref-type="bibr" rid="ref90">90</xref></sup> In their
+work, the authors engineered a system that embodies some of the most
+peculiar features of natural cytoskeletons, namely, compartmentalization,
+ATP-driven polymerization, dynamic growth/collapse, and intracellular
+cargo transport. Inorganic gold nanoparticles and lipid vesicles were
+modified with DNA sequences for hybridization to complementary RNA
+handles extending from the DNA filaments. Molecular transport along
+the track was finally powered by the RNase H-mediated hydrolysis of
+the RNA handles, thus causing the detachment of the cargo and its
+forward movement according to a burnt-bridge mechanism (<xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>d).</p><p>In conclusion, synthetic
+DNA filaments present several structural
+and dynamic aspects that are typical of their protein counterparts.
+The structural properties of DNA filaments are critical for the support
+and transport of molecular cargos as well as membrane sculpturing
+and essentially rely on the fact that the mechanical features of these
+structures (i.e., the persistence length and curvature) can be rationally
+designed, approaching the performance and morphological diversity
+exhibited by their natural protein analogues. Nevertheless, more sophisticated
+hierarchical assembly strategies are required to improve the mechanical
+resilience of DNA filaments, ideally up to the micrometer scale. This
+would allow, for example, to better mimic the structural role played
+by microtubules and actin bundles or even to reproduce the complex
+organization of the axoneme, the fundamental element of cilia and
+eukaryotic flagella.<sup><xref ref-type="bibr" rid="ref91">91</xref></sup> When the physical
+properties of the filaments are coupled to mechanisms of molecular
+recognition and transient consumption/release of chemical energy,
+more complex and intriguing phenomena emerge, such as sensing, motility,
+and dynamic instability. Design and assembly procedures have meanwhile
+evolved to enable the engineering of such “active” DNA-based
+materials, which can fulfill defined tasks only when needed by adapting
+their shape in response to environmental inputs and, most importantly,
+in a predictable fashion. Nowadays, synthetic DNA filaments can impressively
+resemble the adaptive and evolutionary behavior of natural systems,
+and, in this sense, they are one of the most illustrative examples
+of truly biomimetic materials. Remarkably, the programmability of
+DNA with nanometer-scale accuracy provides these structures with the
+right level of architectural detail, which is necessary to establish
+a robust structure–function relationship and master the physical
+properties and dynamic behavior of the filaments at the macroscopic
+scale.</p><p>What are the next challenges? How can the gap between
+artificial
+and natural filaments be reduced? For the long term, a very ambitious
+goal would be to mimic the spatial organization and temporal evolution
+of larger filament assemblies, enabling for example to emulate, although
+probably only in a minimal form, the extremely complicated and fascinating
+coordination of mechanical forces occurring during chromosome segregation.
+Despite arduous tasks that still must be overcome to reach this and
+other ambitious goals, the achievements obtained up to now and mainly
+in the past few years undoubtedly demonstrate that the future of man-made
+DNA filaments for the bottom-up construction of artificial cells is
+bright and promises to be extremely stimulating and instructive.</p></sec></body><back><notes notes-type="" id="notes-1"><title>Author Contributions</title><p>The manuscript
+was written through contributions of all authors. All authors have
+given approval to the final version of the manuscript.</p></notes><notes notes-type="funding-statement" id="notes-2"><p>B.S. received
+funding from the Deutsche Forschungsgemeinschaft (DFG), project SA
+1952/5-1 and CRC 1093/A6.</p></notes><notes notes-type="COI-statement" id="notes-3"><p>The authors
+declare no competing financial interest.</p></notes><ack><title>Acknowledgments</title><p>We thank
+the DFG for financial support.</p></ack><ref-list><title>References</title><ref id="ref1"><mixed-citation publication-type="journal" id="cit1"><name name-style="western"><surname>Pombo</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Dillon</surname><given-names>N.</given-names></name>
+<article-title>Three-Dimensional Genome
+Architecture: Players and
+Mechanisms</article-title>. <source>Nat. Rev. Mol. Cell Biol.</source>
+<year>2015</year>, <volume>16</volume>, <fpage>245</fpage><pub-id pub-id-type="doi">10.1038/nrm3965</pub-id>.<pub-id pub-id-type="pmid">25757416</pub-id></mixed-citation></ref><ref id="ref2"><mixed-citation publication-type="journal" id="cit2"><name name-style="western"><surname>Revenu</surname><given-names>C.</given-names></name>; <name name-style="western"><surname>Athman</surname><given-names>R.</given-names></name>; <name name-style="western"><surname>Robine</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Louvard</surname><given-names>D.</given-names></name>
+<article-title>The Co-Workers of Actin
+Filaments: From Cell Structures to Signals</article-title>. <source>Nat. Rev. Mol. Cell Biol.</source>
+<year>2004</year>, <volume>5</volume>, <fpage>635</fpage><pub-id pub-id-type="doi">10.1038/nrm1437</pub-id>.<pub-id pub-id-type="pmid">15366707</pub-id></mixed-citation></ref><ref id="ref3"><mixed-citation publication-type="journal" id="cit3"><name name-style="western"><surname>Akhmanova</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Steinmetz</surname><given-names>M. O.</given-names></name>
+<article-title>Control
+of Microtubule Organization and Dynamics: Two
+Ends in the Limelight</article-title>. <source>Nat. Rev. Mol. Cell Biol.</source>
+<year>2015</year>, <volume>16</volume>, <fpage>711</fpage><pub-id pub-id-type="doi">10.1038/nrm4084</pub-id>.<pub-id pub-id-type="pmid">26562752</pub-id></mixed-citation></ref><ref id="ref4"><mixed-citation publication-type="journal" id="cit4"><name name-style="western"><surname>Herrmann</surname><given-names>H.</given-names></name>; <name name-style="western"><surname>Bär</surname><given-names>H.</given-names></name>; <name name-style="western"><surname>Kreplak</surname><given-names>L.</given-names></name>; <name name-style="western"><surname>Strelkov</surname><given-names>S. V.</given-names></name>; <name name-style="western"><surname>Aebi</surname><given-names>U.</given-names></name>
+<article-title>Intermediate
+Filaments: From Cell Architecture to Nanomechanics</article-title>. <source>Nat. Rev. Mol. Cell Biol.</source>
+<year>2007</year>, <volume>8</volume>, <fpage>562</fpage><pub-id pub-id-type="doi">10.1038/nrm2197</pub-id>.<pub-id pub-id-type="pmid">17551517</pub-id></mixed-citation></ref><ref id="ref5"><mixed-citation publication-type="journal" id="cit5"><name name-style="western"><surname>Seeman</surname><given-names>N. C.</given-names></name>
+<article-title>Nucleic
+Acid Junctions and Lattices</article-title>. <source>J. Theor. Biol.</source>
+<year>1982</year>, <volume>99</volume>, <fpage>237</fpage>–<lpage>247</lpage>. <pub-id pub-id-type="doi">10.1016/0022-5193(82)90002-9</pub-id>.<pub-id pub-id-type="pmid">6188926</pub-id></mixed-citation></ref><ref id="ref6"><mixed-citation publication-type="journal" id="cit6"><name name-style="western"><surname>Seeman</surname><given-names>N. C.</given-names></name>
+<article-title>DNA in
+a Material World</article-title>. <source>Nature</source>
+<year>2003</year>, <volume>421</volume>, <fpage>427</fpage>–<lpage>431</lpage>. <pub-id pub-id-type="doi">10.1038/nature01406</pub-id>.<pub-id pub-id-type="pmid">12540916</pub-id></mixed-citation></ref><ref id="ref7"><mixed-citation publication-type="journal" id="cit7"><name name-style="western"><surname>Hong</surname><given-names>F.</given-names></name>; <name name-style="western"><surname>Zhang</surname><given-names>F.</given-names></name>; <name name-style="western"><surname>Liu</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Yan</surname><given-names>H.</given-names></name>
+<article-title>DNA Origami: Scaffolds
+for Creating Higher Order Structures</article-title>. <source>Chem.
+Rev.</source>
+<year>2017</year>, <volume>117</volume>, <fpage>12584</fpage>–<lpage>12640</lpage>. <pub-id pub-id-type="doi">10.1021/acs.chemrev.6b00825</pub-id>.<pub-id pub-id-type="pmid">28605177</pub-id></mixed-citation></ref><ref id="ref8"><mixed-citation publication-type="journal" id="cit8"><name name-style="western"><surname>Zhang</surname><given-names>D. Y.</given-names></name>; <name name-style="western"><surname>Seelig</surname><given-names>G.</given-names></name>
+<article-title>Dynamic DNA Nanotechnology Using Strand-Displacement
+Reactions</article-title>. <source>Nat. Chem.</source>
+<year>2011</year>, <volume>3</volume>, <fpage>103</fpage>–<lpage>113</lpage>. <pub-id pub-id-type="doi">10.1038/nchem.957</pub-id>.<pub-id pub-id-type="pmid">21258382</pub-id></mixed-citation></ref><ref id="ref9"><mixed-citation publication-type="journal" id="cit9"><name name-style="western"><surname>Zhang</surname><given-names>F.</given-names></name>; <name name-style="western"><surname>Nangreave</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Liu</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Yan</surname><given-names>H.</given-names></name>
+<article-title>Structural DNA Nanotechnology:
+State of the Art and Future Perspective</article-title>. <source>J.
+Am. Chem. Soc.</source>
+<year>2014</year>, <volume>136</volume>, <fpage>11198</fpage>–<lpage>11211</lpage>. <pub-id pub-id-type="doi">10.1021/ja505101a</pub-id>.<pub-id pub-id-type="pmid">25029570</pub-id><pub-id pub-id-type="pmcid">PMC4140475</pub-id></mixed-citation></ref><ref id="ref10"><mixed-citation publication-type="journal" id="cit10"><name name-style="western"><surname>Fan</surname><given-names>X.</given-names></name>; <name name-style="western"><surname>Walther</surname><given-names>A.</given-names></name>
+<article-title>1d Colloidal Chains: Recent Progress from Formation
+to Emergent Properties and Applications</article-title>. <source>Chem.
+Soc. Rev.</source>
+<year>2022</year>, <volume>51</volume>, <fpage>4023</fpage>–<lpage>4074</lpage>. <pub-id pub-id-type="doi">10.1039/D2CS00112H</pub-id>.<pub-id pub-id-type="pmid">35502721</pub-id></mixed-citation></ref><ref id="ref11"><mixed-citation publication-type="journal" id="cit11"><name name-style="western"><surname>Wijnands</surname><given-names>S.
+P. W.</given-names></name>; <name name-style="western"><surname>Meijer</surname><given-names>E. W.</given-names></name>; <name name-style="western"><surname>Merkx</surname><given-names>M.</given-names></name>
+<article-title>DNA-Functionalized Supramolecular
+Polymers: Dynamic Multicomponent Assemblies with Emergent Properties</article-title>. <source>Bioconjugate Chem.</source>
+<year>2019</year>, <volume>30</volume>, <fpage>1905</fpage>–<lpage>1914</lpage>. <pub-id pub-id-type="doi">10.1021/acs.bioconjchem.9b00095</pub-id>.<pub-id pub-id-type="pmcid">PMC6756584</pub-id><pub-id pub-id-type="pmid">30860819</pub-id></mixed-citation></ref><ref id="ref12"><mixed-citation publication-type="journal" id="cit12"><name name-style="western"><surname>Goor</surname><given-names>O.</given-names></name>; <name name-style="western"><surname>Hendrikse</surname><given-names>S. I. S.</given-names></name>; <name name-style="western"><surname>Dankers</surname><given-names>P. Y. W.</given-names></name>; <name name-style="western"><surname>Meijer</surname><given-names>E. W.</given-names></name>
+<article-title>From Supramolecular
+Polymers to Multi-Component Biomaterials</article-title>. <source>Chem.
+Soc. Rev.</source>
+<year>2017</year>, <volume>46</volume>, <fpage>6621</fpage>–<lpage>6637</lpage>. <pub-id pub-id-type="doi">10.1039/C7CS00564D</pub-id>.<pub-id pub-id-type="pmid">28991958</pub-id></mixed-citation></ref><ref id="ref13"><mixed-citation publication-type="journal" id="cit13"><name name-style="western"><surname>De
+Greef</surname><given-names>T. F.</given-names></name>; <name name-style="western"><surname>Smulders</surname><given-names>M. M.</given-names></name>; <name name-style="western"><surname>Wolffs</surname><given-names>M.</given-names></name>; <name name-style="western"><surname>Schenning</surname><given-names>A. P.</given-names></name>; <name name-style="western"><surname>Sijbesma</surname><given-names>R. P.</given-names></name>; <name name-style="western"><surname>Meijer</surname><given-names>E. W.</given-names></name>
+<article-title>Supramolecular Polymerization</article-title>. <source>Chem. Rev.</source>
+<year>2009</year>, <volume>109</volume>, <fpage>5687</fpage>–<lpage>5754</lpage>. <pub-id pub-id-type="doi">10.1021/cr900181u</pub-id>.<pub-id pub-id-type="pmid">19769364</pub-id></mixed-citation></ref><ref id="ref14"><mixed-citation publication-type="journal" id="cit14"><name name-style="western"><surname>Liu</surname><given-names>X.</given-names></name>; <name name-style="western"><surname>Zhao</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Liu</surname><given-names>P.</given-names></name>; <name name-style="western"><surname>Wang</surname><given-names>L.</given-names></name>; <name name-style="western"><surname>Lin</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Fan</surname><given-names>C.</given-names></name>
+<article-title>Biomimetic DNA Nanotubes: Nanoscale Channel Design and Applications</article-title>. <source>Angew. Chem., Int. Ed.</source>
+<year>2019</year>, <volume>58</volume>, <fpage>8996</fpage>–<lpage>9011</lpage>. <pub-id pub-id-type="doi">10.1002/anie.201807779</pub-id>.<pub-id pub-id-type="pmid">30290046</pub-id></mixed-citation></ref><ref id="ref15"><mixed-citation publication-type="journal" id="cit15"><name name-style="western"><surname>Seeman</surname><given-names>N. C.</given-names></name>; <name name-style="western"><surname>Kallenbach</surname><given-names>N. R.</given-names></name>
+<article-title>DNA Branched Junctions</article-title>. <source>Annu.
+Rev. Biophys. Biomol. Struct.</source>
+<year>1994</year>, <volume>23</volume>, <fpage>53</fpage>–<lpage>86</lpage>. <pub-id pub-id-type="doi">10.1146/annurev.bb.23.060194.000413</pub-id>.<pub-id pub-id-type="pmid">7919792</pub-id></mixed-citation></ref><ref id="ref16"><mixed-citation publication-type="journal" id="cit16"><name name-style="western"><surname>Winfree</surname><given-names>E.</given-names></name>; <name name-style="western"><surname>Liu</surname><given-names>F.</given-names></name>; <name name-style="western"><surname>Wenzler</surname><given-names>L. A.</given-names></name>; <name name-style="western"><surname>Seeman</surname><given-names>N. C.</given-names></name>
+<article-title>Design and Self-Assembly of Two-Dimensional
+DNA Crystals</article-title>. <source>Nature</source>
+<year>1998</year>, <volume>394</volume>, <fpage>539</fpage>–<lpage>544</lpage>. <pub-id pub-id-type="doi">10.1038/28998</pub-id>.<pub-id pub-id-type="pmid">9707114</pub-id></mixed-citation></ref><ref id="ref17"><mixed-citation publication-type="journal" id="cit17"><name name-style="western"><surname>Schulman</surname><given-names>R.</given-names></name>; <name name-style="western"><surname>Winfree</surname><given-names>E.</given-names></name>
+<article-title>Synthesis of Crystals
+with a Programmable Kinetic Barrier
+to Nucleation</article-title>. <source>Proc. Natl. Acad. Sci. U.S.A.</source>
+<year>2007</year>, <volume>104</volume>, <fpage>15236</fpage>–<lpage>15241</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.0701467104</pub-id>.<pub-id pub-id-type="pmid">17881584</pub-id><pub-id pub-id-type="pmcid">PMC1986573</pub-id></mixed-citation></ref><ref id="ref18"><mixed-citation publication-type="journal" id="cit18"><name name-style="western"><surname>Yin</surname><given-names>P.</given-names></name>; <name name-style="western"><surname>Hariadi</surname><given-names>R. F.</given-names></name>; <name name-style="western"><surname>Sahu</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Choi</surname><given-names>H. M.</given-names></name>; <name name-style="western"><surname>Park</surname><given-names>S. H.</given-names></name>; <name name-style="western"><surname>Labean</surname><given-names>T. H.</given-names></name>; <name name-style="western"><surname>Reif</surname><given-names>J. H.</given-names></name>
+<article-title>Programming
+DNA Tube Circumferences</article-title>. <source>Science</source>
+<year>2008</year>, <volume>321</volume>, <fpage>824</fpage>–<lpage>826</lpage>. <pub-id pub-id-type="doi">10.1126/science.1157312</pub-id>.<pub-id pub-id-type="pmid">18687961</pub-id></mixed-citation></ref><ref id="ref19"><mixed-citation publication-type="journal" id="cit19"><name name-style="western"><surname>Rothemund</surname><given-names>P. W.</given-names></name>
+<article-title>Folding
+DNA to Create Nanoscale Shapes and Patterns</article-title>. <source>Nature</source>
+<year>2006</year>, <volume>440</volume>, <fpage>297</fpage>–<lpage>302</lpage>. <pub-id pub-id-type="doi">10.1038/nature04586</pub-id>.<pub-id pub-id-type="pmid">16541064</pub-id></mixed-citation></ref><ref id="ref20"><mixed-citation publication-type="journal" id="cit20"><name name-style="western"><surname>Douglas</surname><given-names>S. M.</given-names></name>; <name name-style="western"><surname>Dietz</surname><given-names>H.</given-names></name>; <name name-style="western"><surname>Liedl</surname><given-names>T.</given-names></name>; <name name-style="western"><surname>Hogberg</surname><given-names>B.</given-names></name>; <name name-style="western"><surname>Graf</surname><given-names>F.</given-names></name>; <name name-style="western"><surname>Shih</surname><given-names>W. M.</given-names></name>
+<article-title>Self-Assembly of DNA into Nanoscale Three-Dimensional
+Shapes</article-title>. <source>Nature</source>
+<year>2009</year>, <volume>459</volume>, <fpage>414</fpage>–<lpage>418</lpage>. <pub-id pub-id-type="doi">10.1038/nature08016</pub-id>.<pub-id pub-id-type="pmid">19458720</pub-id><pub-id pub-id-type="pmcid">PMC2688462</pub-id></mixed-citation></ref><ref id="ref21"><mixed-citation publication-type="journal" id="cit21"><name name-style="western"><surname>Dietz</surname><given-names>H.</given-names></name>; <name name-style="western"><surname>Douglas</surname><given-names>S. M.</given-names></name>; <name name-style="western"><surname>Shih</surname><given-names>W. M.</given-names></name>
+<article-title>Folding
+DNA into Twisted and Curved
+Nanoscale Shapes</article-title>. <source>Science</source>
+<year>2009</year>, <volume>325</volume>, <fpage>725</fpage>–<lpage>730</lpage>. <pub-id pub-id-type="doi">10.1126/science.1174251</pub-id>.<pub-id pub-id-type="pmid">19661424</pub-id><pub-id pub-id-type="pmcid">PMC2737683</pub-id></mixed-citation></ref><ref id="ref22"><mixed-citation publication-type="journal" id="cit22"><name name-style="western"><surname>Jaekel</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Lill</surname><given-names>P.</given-names></name>; <name name-style="western"><surname>Whitelam</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Saccà</surname><given-names>B.</given-names></name>
+<article-title>Insights into
+the Structure and Energy of DNA Nanoassemblies</article-title>. <source>Molecules</source>
+<year>2020</year>, <volume>25</volume>, <fpage>5466</fpage><pub-id pub-id-type="doi">10.3390/molecules25235466</pub-id>.<pub-id pub-id-type="pmid">33255286</pub-id><pub-id pub-id-type="pmcid">PMC7727707</pub-id></mixed-citation></ref><ref id="ref23"><mixed-citation publication-type="journal" id="cit23"><name name-style="western"><surname>Pfeifer</surname><given-names>W.</given-names></name>; <name name-style="western"><surname>Saccà</surname><given-names>B.</given-names></name>
+<article-title>From Nano
+to Macro through Hierarchical Self-Assembly:
+The DNA Paradigm</article-title>. <source>ChemBioChem.</source>
+<year>2016</year>, <volume>17</volume>, <fpage>1063</fpage><pub-id pub-id-type="doi">10.1002/cbic.201600034</pub-id>.<pub-id pub-id-type="pmid">27186937</pub-id></mixed-citation></ref><ref id="ref24"><mixed-citation publication-type="journal" id="cit24"><name name-style="western"><surname>Jungmann</surname><given-names>R.</given-names></name>; <name name-style="western"><surname>Scheible</surname><given-names>M.</given-names></name>; <name name-style="western"><surname>Kuzyk</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Pardatscher</surname><given-names>G.</given-names></name>; <name name-style="western"><surname>Castro</surname><given-names>C. E.</given-names></name>; <name name-style="western"><surname>Simmel</surname><given-names>F. C.</given-names></name>
+<article-title>DNA Origami-Based
+Nanoribbons: Assembly,
+Length Distribution, and Twist</article-title>. <source>Nanotechnology</source>
+<year>2011</year>, <volume>22</volume>, <fpage>275301</fpage><pub-id pub-id-type="doi">10.1088/0957-4484/22/27/275301</pub-id>.<pub-id pub-id-type="pmid">21597145</pub-id></mixed-citation></ref><ref id="ref25"><mixed-citation publication-type="journal" id="cit25"><name name-style="western"><surname>Li</surname><given-names>Z.</given-names></name>; <name name-style="western"><surname>Liu</surname><given-names>M.</given-names></name>; <name name-style="western"><surname>Wang</surname><given-names>L.</given-names></name>; <name name-style="western"><surname>Nangreave</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Yan</surname><given-names>H.</given-names></name>; <name name-style="western"><surname>Liu</surname><given-names>Y.</given-names></name>
+<article-title>Molecular
+Behavior of DNA Origami in Higher-Order Self-Assembly</article-title>. <source>J. Am. Chem. Soc.</source>
+<year>2010</year>, <volume>132</volume>, <fpage>13545</fpage>–<lpage>13552</lpage>. <pub-id pub-id-type="doi">10.1021/ja106292x</pub-id>.<pub-id pub-id-type="pmid">20825190</pub-id><pub-id pub-id-type="pmcid">PMC3071357</pub-id></mixed-citation></ref><ref id="ref26"><mixed-citation publication-type="book" id="cit26"><person-group person-group-type="allauthors"><name name-style="western"><surname>Young</surname><given-names>R. J.</given-names></name>; <name name-style="western"><surname>Lovell</surname><given-names>P. A.</given-names></name></person-group><source>Introduction to Polymers</source>, <edition>second</edition> ed.; <publisher-name>Chapman &amp; Hall</publisher-name>: <publisher-loc>London</publisher-loc>, <year>1991</year>.</mixed-citation></ref><ref id="ref27"><mixed-citation publication-type="journal" id="cit27"><name name-style="western"><surname>Woo</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Rothemund</surname><given-names>P. W.</given-names></name>
+<article-title>Programmable Molecular Recognition Based on the Geometry
+of DNA Nanostructures</article-title>. <source>Nat. Chem.</source>
+<year>2011</year>, <volume>3</volume>, <fpage>620</fpage>–<lpage>627</lpage>. <pub-id pub-id-type="doi">10.1038/nchem.1070</pub-id>.<pub-id pub-id-type="pmid">21778982</pub-id></mixed-citation></ref><ref id="ref28"><mixed-citation publication-type="journal" id="cit28"><name name-style="western"><surname>Zhang</surname><given-names>Z.</given-names></name>; <name name-style="western"><surname>Song</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Besenbacher</surname><given-names>F.</given-names></name>; <name name-style="western"><surname>Dong</surname><given-names>M.</given-names></name>; <name name-style="western"><surname>Gothelf</surname><given-names>K. V.</given-names></name>
+<article-title>Self-Assembly
+of DNA Origami and Single-Stranded Tile Structures at Room Temperature</article-title>. <source>Angew. Chem., Int. Ed.</source>
+<year>2013</year>, <volume>52</volume>, <fpage>9219</fpage>–<lpage>9223</lpage>. <pub-id pub-id-type="doi">10.1002/anie.201303611</pub-id>.<pub-id pub-id-type="pmid">23843201</pub-id></mixed-citation></ref><ref id="ref29"><mixed-citation publication-type="journal" id="cit29"><name name-style="western"><surname>Yan</surname><given-names>H.</given-names></name>; <name name-style="western"><surname>Park</surname><given-names>S. H.</given-names></name>; <name name-style="western"><surname>Finkelstein</surname><given-names>G.</given-names></name>; <name name-style="western"><surname>Reif</surname><given-names>J. H.</given-names></name>; <name name-style="western"><surname>LaBean</surname><given-names>T. H.</given-names></name>
+<article-title>DNA-Templated
+Self-Assembly of Protein Arrays and Highly Conductive Nanowires</article-title>. <source>Science</source>
+<year>2003</year>, <volume>301</volume>, <fpage>1882</fpage>–<lpage>1884</lpage>. <pub-id pub-id-type="doi">10.1126/science.1089389</pub-id>.<pub-id pub-id-type="pmid">14512621</pub-id></mixed-citation></ref><ref id="ref30"><mixed-citation publication-type="journal" id="cit30"><name name-style="western"><surname>Rothemund</surname><given-names>P. W.</given-names></name>; <name name-style="western"><surname>Ekani-Nkodo</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Papadakis</surname><given-names>N.</given-names></name>; <name name-style="western"><surname>Kumar</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Fygenson</surname><given-names>D. K.</given-names></name>; <name name-style="western"><surname>Winfree</surname><given-names>E.</given-names></name>
+<article-title>Design and Characterization of Programmable DNA Nanotubes</article-title>. <source>J. Am. Chem. Soc.</source>
+<year>2004</year>, <volume>126</volume>, <fpage>16344</fpage>–<lpage>16352</lpage>. <pub-id pub-id-type="doi">10.1021/ja044319l</pub-id>.<pub-id pub-id-type="pmid">15600335</pub-id></mixed-citation></ref><ref id="ref31"><mixed-citation publication-type="journal" id="cit31"><name name-style="western"><surname>Schiffels</surname><given-names>D.</given-names></name>; <name name-style="western"><surname>Liedl</surname><given-names>T.</given-names></name>; <name name-style="western"><surname>Fygenson</surname><given-names>D. K.</given-names></name>
+<article-title>Nanoscale Structure and Microscale
+Stiffness of DNA Nanotubes</article-title>. <source>ACS Nano</source>
+<year>2013</year>, <volume>7</volume>, <fpage>6700</fpage>–<lpage>6710</lpage>. <pub-id pub-id-type="doi">10.1021/nn401362p</pub-id>.<pub-id pub-id-type="pmid">23879368</pub-id></mixed-citation></ref><ref id="ref32"><mixed-citation publication-type="journal" id="cit32"><name name-style="western"><surname>Maier</surname><given-names>A. M.</given-names></name>; <name name-style="western"><surname>Bae</surname><given-names>W.</given-names></name>; <name name-style="western"><surname>Schiffels</surname><given-names>D.</given-names></name>; <name name-style="western"><surname>Emmerig</surname><given-names>J. F.</given-names></name>; <name name-style="western"><surname>Schiff</surname><given-names>M.</given-names></name>; <name name-style="western"><surname>Liedl</surname><given-names>T.</given-names></name>
+<article-title>Self-Assembled
+DNA Tubes Forming Helices of Controlled Diameter and Chirality</article-title>. <source>ACS Nano</source>
+<year>2017</year>, <volume>11</volume>, <fpage>1301</fpage>–<lpage>1306</lpage>. <pub-id pub-id-type="doi">10.1021/acsnano.6b05602</pub-id>.<pub-id pub-id-type="pmid">28125777</pub-id><pub-id pub-id-type="pmcid">PMC6544521</pub-id></mixed-citation></ref><ref id="ref33"><mixed-citation publication-type="journal" id="cit33"><name name-style="western"><surname>Ke</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Douglas</surname><given-names>S. M.</given-names></name>; <name name-style="western"><surname>Liu</surname><given-names>M.</given-names></name>; <name name-style="western"><surname>Sharma</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Cheng</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Leung</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Liu</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Shih</surname><given-names>W. M.</given-names></name>; <name name-style="western"><surname>Yan</surname><given-names>H.</given-names></name>
+<article-title>Multilayer
+DNA Origami Packed on a Square Lattice</article-title>. <source>J. Am.
+Chem. Soc.</source>
+<year>2009</year>, <volume>131</volume>, <fpage>15903</fpage>–<lpage>15908</lpage>. <pub-id pub-id-type="doi">10.1021/ja906381y</pub-id>.<pub-id pub-id-type="pmid">19807088</pub-id><pub-id pub-id-type="pmcid">PMC2821935</pub-id></mixed-citation></ref><ref id="ref34"><mixed-citation publication-type="journal" id="cit34"><name name-style="western"><surname>Ke</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Voigt</surname><given-names>N. V.</given-names></name>; <name name-style="western"><surname>Gothelf</surname><given-names>K. V.</given-names></name>; <name name-style="western"><surname>Shih</surname><given-names>W. M.</given-names></name>
+<article-title>Multilayer DNA Origami
+Packed on Hexagonal and Hybrid Lattices</article-title>. <source>J.
+Am. Chem. Soc.</source>
+<year>2012</year>, <volume>134</volume>, <fpage>1770</fpage>–<lpage>1774</lpage>. <pub-id pub-id-type="doi">10.1021/ja209719k</pub-id>.<pub-id pub-id-type="pmid">22187940</pub-id><pub-id pub-id-type="pmcid">PMC3336742</pub-id></mixed-citation></ref><ref id="ref35"><mixed-citation publication-type="journal" id="cit35"><name name-style="western"><surname>Mathieu</surname><given-names>F.</given-names></name>; <name name-style="western"><surname>Liao</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Kopatsch</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Wang</surname><given-names>T.</given-names></name>; <name name-style="western"><surname>Mao</surname><given-names>C.</given-names></name>; <name name-style="western"><surname>Seeman</surname><given-names>N. C.</given-names></name>
+<article-title>Six-Helix Bundles Designed from DNA</article-title>. <source>Nano Lett.</source>
+<year>2005</year>, <volume>5</volume>, <fpage>661</fpage>–<lpage>665</lpage>. <pub-id pub-id-type="doi">10.1021/nl050084f</pub-id>.<pub-id pub-id-type="pmid">15826105</pub-id><pub-id pub-id-type="pmcid">PMC3464188</pub-id></mixed-citation></ref><ref id="ref36"><mixed-citation publication-type="journal" id="cit36"><name name-style="western"><surname>Wang</surname><given-names>T.</given-names></name>; <name name-style="western"><surname>Schiffels</surname><given-names>D.</given-names></name>; <name name-style="western"><surname>Cuesta</surname><given-names>S. M.</given-names></name>; <name name-style="western"><surname>Fygenson</surname><given-names>D. K.</given-names></name>; <name name-style="western"><surname>Seeman</surname><given-names>N. C.</given-names></name>
+<article-title>Design
+and Characterization of 1d Nanotubes and 2D Periodic Arrays Self-Assembled
+from DNA Multi-Helix Bundles</article-title>. <source>J. Am. Chem. Soc.</source>
+<year>2012</year>, <volume>134</volume>, <fpage>1606</fpage>–<lpage>1616</lpage>. <pub-id pub-id-type="doi">10.1021/ja207976q</pub-id>.<pub-id pub-id-type="pmid">22239727</pub-id><pub-id pub-id-type="pmcid">PMC3267479</pub-id></mixed-citation></ref><ref id="ref37"><mixed-citation publication-type="journal" id="cit37"><name name-style="western"><surname>Pfeifer</surname><given-names>W.</given-names></name>; <name name-style="western"><surname>Lill</surname><given-names>P.</given-names></name>; <name name-style="western"><surname>Gatsogiannis</surname><given-names>C.</given-names></name>; <name name-style="western"><surname>Saccà</surname><given-names>B.</given-names></name>
+<article-title>Hierarchical
+Assembly of DNA Filaments with Designer Elastic Properties</article-title>. <source>ACS Nano</source>
+<year>2018</year>, <volume>12</volume>, <fpage>44</fpage>–<lpage>55</lpage>. <pub-id pub-id-type="doi">10.1021/acsnano.7b06012</pub-id>.<pub-id pub-id-type="pmid">29141133</pub-id></mixed-citation></ref><ref id="ref38"><mixed-citation publication-type="journal" id="cit38"><name name-style="western"><surname>Gerling</surname><given-names>T.</given-names></name>; <name name-style="western"><surname>Wagenbauer</surname><given-names>K. F.</given-names></name>; <name name-style="western"><surname>Neuner</surname><given-names>A. M.</given-names></name>; <name name-style="western"><surname>Dietz</surname><given-names>H.</given-names></name>
+<article-title>Dynamic DNA Devices
+and Assemblies Formed by Shape-Complementary, Non-Base Pairing 3D
+Components</article-title>. <source>Science</source>
+<year>2015</year>, <volume>347</volume>, <fpage>1446</fpage>–<lpage>1452</lpage>. <pub-id pub-id-type="doi">10.1126/science.aaa5372</pub-id>.<pub-id pub-id-type="pmid">25814577</pub-id></mixed-citation></ref><ref id="ref39"><mixed-citation publication-type="journal" id="cit39"><name name-style="western"><surname>Groeer</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Walther</surname><given-names>A.</given-names></name>
+<article-title>Switchable Supracolloidal
+3D DNA Origami Nanotubes
+Mediated through Fuel/Antifuel Reactions</article-title>. <source>Nanoscale</source>
+<year>2020</year>, <volume>12</volume>, <fpage>16995</fpage>–<lpage>17004</lpage>. <pub-id pub-id-type="doi">10.1039/D0NR04209A</pub-id>.<pub-id pub-id-type="pmid">32780076</pub-id><pub-id pub-id-type="pmcid">PMC7612458</pub-id></mixed-citation></ref><ref id="ref40"><mixed-citation publication-type="journal" id="cit40"><name name-style="western"><surname>Tigges</surname><given-names>T.</given-names></name>; <name name-style="western"><surname>Heuser</surname><given-names>T.</given-names></name>; <name name-style="western"><surname>Tiwari</surname><given-names>R.</given-names></name>; <name name-style="western"><surname>Walther</surname><given-names>A.</given-names></name>
+<article-title>3D DNA Origami Cuboids
+as Monodisperse Patchy Nanoparticles for Switchable Hierarchical Self-Assembly</article-title>. <source>Nano Lett.</source>
+<year>2016</year>, <volume>16</volume>, <fpage>7870</fpage>–<lpage>7874</lpage>. <pub-id pub-id-type="doi">10.1021/acs.nanolett.6b04146</pub-id>.<pub-id pub-id-type="pmid">27802042</pub-id></mixed-citation></ref><ref id="ref41"><mixed-citation publication-type="journal" id="cit41"><name name-style="western"><surname>Loescher</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Walther</surname><given-names>A.</given-names></name>
+<article-title>Supracolloidal Self-Assembly of Divalent
+Janus 3D DNA
+Origami Via Programmable Multivalent Host/Guest Interactions</article-title>. <source>Angew. Chem., Int. Ed.</source>
+<year>2020</year>, <volume>59</volume>, <fpage>5515</fpage>–<lpage>5520</lpage>. <pub-id pub-id-type="doi">10.1002/anie.201911795</pub-id>.<pub-id pub-id-type="pmcid">PMC7154728</pub-id><pub-id pub-id-type="pmid">31814217</pub-id></mixed-citation></ref><ref id="ref42"><mixed-citation publication-type="journal" id="cit42"><name name-style="western"><surname>Uchida</surname><given-names>T.</given-names></name>; <name name-style="western"><surname>Abe</surname><given-names>K.</given-names></name>; <name name-style="western"><surname>Endo</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Ichiseki</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Akita</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Liu</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Aradachi</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Saito</surname><given-names>M.</given-names></name>; <name name-style="western"><surname>Fukuchi</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Kikkawa</surname><given-names>T.</given-names></name>; <name name-style="western"><surname>Murata</surname><given-names>S.</given-names></name>; et al. <article-title>Revolving Vernier Mechanism Controls Size of Linear
+Homomultimer</article-title>. <source>Small</source>
+<year>2017</year>, <volume>13</volume>, <fpage>1702158</fpage><pub-id pub-id-type="doi">10.1002/smll.201702158</pub-id>.<pub-id pub-id-type="pmid">28895291</pub-id></mixed-citation></ref><ref id="ref43"><mixed-citation publication-type="journal" id="cit43"><name name-style="western"><surname>Berengut</surname><given-names>J. F.</given-names></name>; <name name-style="western"><surname>Wong</surname><given-names>C. K.</given-names></name>; <name name-style="western"><surname>Berengut</surname><given-names>J. C.</given-names></name>; <name name-style="western"><surname>Doye</surname><given-names>J. P. K.</given-names></name>; <name name-style="western"><surname>Ouldridge</surname><given-names>T. E.</given-names></name>; <name name-style="western"><surname>Lee</surname><given-names>L. K.</given-names></name>
+<article-title>Self-Limiting Polymerization of DNA Origami Subunits
+with Strain Accumulation</article-title>. <source>ACS Nano</source>
+<year>2020</year>, <volume>14</volume>, <fpage>17428</fpage>–<lpage>17441</lpage>. <pub-id pub-id-type="doi">10.1021/acsnano.0c07696</pub-id>.<pub-id pub-id-type="pmid">33232603</pub-id></mixed-citation></ref><ref id="ref44"><mixed-citation publication-type="journal" id="cit44"><name name-style="western"><surname>Lan</surname><given-names>X.</given-names></name>; <name name-style="western"><surname>Su</surname><given-names>Z.</given-names></name>; <name name-style="western"><surname>Zhou</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Meyer</surname><given-names>T.</given-names></name>; <name name-style="western"><surname>Ke</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Wang</surname><given-names>Q.</given-names></name>; <name name-style="western"><surname>Chiu</surname><given-names>W.</given-names></name>; <name name-style="western"><surname>Liu</surname><given-names>N.</given-names></name>; <name name-style="western"><surname>Zou</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Yan</surname><given-names>H.</given-names></name>; et al. <article-title>Programmable Supra-Assembly
+of a DNA Surface Adapter for Tunable
+Chiral Directional Self-Assembly of Gold Nanorods</article-title>. <source>Angew. Chem., Int. Ed.</source>
+<year>2017</year>, <volume>56</volume>, <fpage>14632</fpage>–<lpage>14636</lpage>. <pub-id pub-id-type="doi">10.1002/anie.201709775</pub-id>.<pub-id pub-id-type="pmcid">PMC5851444</pub-id><pub-id pub-id-type="pmid">28971555</pub-id></mixed-citation></ref><ref id="ref45"><mixed-citation publication-type="journal" id="cit45"><name name-style="western"><surname>Liu</surname><given-names>W.</given-names></name>; <name name-style="western"><surname>Halverson</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Tian</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Tkachenko</surname><given-names>A. V.</given-names></name>; <name name-style="western"><surname>Gang</surname><given-names>O.</given-names></name>
+<article-title>Self-Organized Architectures from Assorted DNA-Framed Nanoparticles</article-title>. <source>Nat. Chem.</source>
+<year>2016</year>, <volume>8</volume>, <fpage>867</fpage>–<lpage>873</lpage>. <pub-id pub-id-type="doi">10.1038/nchem.2540</pub-id>.<pub-id pub-id-type="pmid">27554413</pub-id></mixed-citation></ref><ref id="ref46"><mixed-citation publication-type="journal" id="cit46"><name name-style="western"><surname>Yang</surname><given-names>H.</given-names></name>; <name name-style="western"><surname>McLaughlin</surname><given-names>C. K.</given-names></name>; <name name-style="western"><surname>Aldaye</surname><given-names>F. A.</given-names></name>; <name name-style="western"><surname>Hamblin</surname><given-names>G. D.</given-names></name>; <name name-style="western"><surname>Rys</surname><given-names>A. Z.</given-names></name>; <name name-style="western"><surname>Rouiller</surname><given-names>I.</given-names></name>; <name name-style="western"><surname>Sleiman</surname><given-names>H. F.</given-names></name>
+<article-title>Metal-Nucleic Acid Cages</article-title>. <source>Nat. Chem.</source>
+<year>2009</year>, <volume>1</volume>, <fpage>390</fpage>–<lpage>396</lpage>. <pub-id pub-id-type="doi">10.1038/nchem.290</pub-id>.<pub-id pub-id-type="pmid">21378893</pub-id></mixed-citation></ref><ref id="ref47"><mixed-citation publication-type="journal" id="cit47"><name name-style="western"><surname>Yang</surname><given-names>H.</given-names></name>; <name name-style="western"><surname>Altvater</surname><given-names>F.</given-names></name>; <name name-style="western"><surname>de Bruijn</surname><given-names>A. D.</given-names></name>; <name name-style="western"><surname>McLaughlin</surname><given-names>C. K.</given-names></name>; <name name-style="western"><surname>Lo</surname><given-names>P. K.</given-names></name>; <name name-style="western"><surname>Sleiman</surname><given-names>H. F.</given-names></name>
+<article-title>Chiral Metal-DNA Four-Arm Junctions
+and Metalated Nanotubular Structures</article-title>. <source>Angew.
+Chem., Int. Ed.</source>
+<year>2011</year>, <volume>50</volume>, <fpage>4620</fpage>–<lpage>4623</lpage>. <pub-id pub-id-type="doi">10.1002/anie.201007403</pub-id>.<pub-id pub-id-type="pmid">21523864</pub-id></mixed-citation></ref><ref id="ref48"><mixed-citation publication-type="journal" id="cit48"><name name-style="western"><surname>Aldaye</surname><given-names>F. A.</given-names></name>; <name name-style="western"><surname>Sleiman</surname><given-names>H. F.</given-names></name>
+<article-title>Modular Access to Structurally Switchable 3D Discrete
+DNA Assemblies</article-title>. <source>J. Am. Chem. Soc.</source>
+<year>2007</year>, <volume>129</volume>, <fpage>13376</fpage>–<lpage>13377</lpage>. <pub-id pub-id-type="doi">10.1021/ja075966q</pub-id>.<pub-id pub-id-type="pmid">17939666</pub-id></mixed-citation></ref><ref id="ref49"><mixed-citation publication-type="journal" id="cit49"><name name-style="western"><surname>Aldaye</surname><given-names>F. A.</given-names></name>; <name name-style="western"><surname>Sleiman</surname><given-names>H. F.</given-names></name>
+<article-title>Sequential Self-Assembly
+of a DNA Hexagon as a Template
+for the Organization of Gold Nanoparticles</article-title>. <source>Angew. Chem., Int. Ed.</source>
+<year>2006</year>, <volume>45</volume>, <fpage>2204</fpage>–<lpage>2209</lpage>. <pub-id pub-id-type="doi">10.1002/anie.200502481</pub-id>.<pub-id pub-id-type="pmid">16502437</pub-id></mixed-citation></ref><ref id="ref50"><mixed-citation publication-type="journal" id="cit50"><name name-style="western"><surname>Lo</surname><given-names>P. K.</given-names></name>; <name name-style="western"><surname>Karam</surname><given-names>P.</given-names></name>; <name name-style="western"><surname>Aldaye</surname><given-names>F. A.</given-names></name>; <name name-style="western"><surname>McLaughlin</surname><given-names>C. K.</given-names></name>; <name name-style="western"><surname>Hamblin</surname><given-names>G. D.</given-names></name>; <name name-style="western"><surname>Cosa</surname><given-names>G.</given-names></name>; <name name-style="western"><surname>Sleiman</surname><given-names>H. F.</given-names></name>
+<article-title>Loading and Selective
+Release of Cargo in DNA Nanotubes with Longitudinal Variation</article-title>. <source>Nat. Chem.</source>
+<year>2010</year>, <volume>2</volume>, <fpage>319</fpage>–<lpage>328</lpage>. <pub-id pub-id-type="doi">10.1038/nchem.575</pub-id>.<pub-id pub-id-type="pmid">21124515</pub-id></mixed-citation></ref><ref id="ref51"><mixed-citation publication-type="journal" id="cit51"><name name-style="western"><surname>McLaughlin</surname><given-names>C. K.</given-names></name>; <name name-style="western"><surname>Hamblin</surname><given-names>G. D.</given-names></name>; <name name-style="western"><surname>Sleiman</surname><given-names>H. F.</given-names></name>
+<article-title>Supramolecular DNA Assembly</article-title>. <source>Chem. Soc. Rev.</source>
+<year>2011</year>, <volume>40</volume>, <fpage>5647</fpage>–<lpage>5656</lpage>. <pub-id pub-id-type="doi">10.1039/c1cs15253j</pub-id>.<pub-id pub-id-type="pmid">22012315</pub-id></mixed-citation></ref><ref id="ref52"><mixed-citation publication-type="journal" id="cit52"><name name-style="western"><surname>Kratky</surname><given-names>O.</given-names></name>; <name name-style="western"><surname>Porod</surname><given-names>G.</given-names></name>
+<article-title>Diffuse Small-Angle Scattering of X-Rays in Colloid Systems</article-title>. <source>J. Colloid. Sci.</source>
+<year>1949</year>, <volume>4</volume>, <fpage>35</fpage>–<lpage>70</lpage>. <pub-id pub-id-type="doi">10.1016/0095-8522(49)90032-X</pub-id>.<pub-id pub-id-type="pmid">18110601</pub-id></mixed-citation></ref><ref id="ref53"><mixed-citation publication-type="journal" id="cit53"><name name-style="western"><surname>Rivetti</surname><given-names>C.</given-names></name>; <name name-style="western"><surname>Walker</surname><given-names>C.</given-names></name>; <name name-style="western"><surname>Bustamante</surname><given-names>C.</given-names></name>
+<article-title>Polymer Chain
+Statistics and Conformational
+Analysis of DNA Molecules with Bends or Sections of Different Flexibility</article-title>. <source>J. Mol. Biol.</source>
+<year>1998</year>, <volume>280</volume>, <fpage>41</fpage>–<lpage>59</lpage>. <pub-id pub-id-type="doi">10.1006/jmbi.1998.1830</pub-id>.<pub-id pub-id-type="pmid">9653030</pub-id></mixed-citation></ref><ref id="ref54"><mixed-citation publication-type="journal" id="cit54"><name name-style="western"><surname>Rivetti</surname><given-names>C.</given-names></name>; <name name-style="western"><surname>Guthold</surname><given-names>M.</given-names></name>; <name name-style="western"><surname>Bustamante</surname><given-names>C.</given-names></name>
+<article-title>Scanning Force Microscopy of DNA
+Deposited onto Mica: Equilibration Versus Kinetic Trapping Studied
+by Statistical Polymer Chain Analysis</article-title>. <source>J. Mol.
+Biol.</source>
+<year>1996</year>, <volume>264</volume>, <fpage>919</fpage>–<lpage>932</lpage>. <pub-id pub-id-type="doi">10.1006/jmbi.1996.0687</pub-id>.<pub-id pub-id-type="pmid">9000621</pub-id></mixed-citation></ref><ref id="ref55"><mixed-citation publication-type="journal" id="cit55"><name name-style="western"><surname>Liedl</surname><given-names>T.</given-names></name>; <name name-style="western"><surname>Hogberg</surname><given-names>B.</given-names></name>; <name name-style="western"><surname>Tytell</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Ingber</surname><given-names>D. E.</given-names></name>; <name name-style="western"><surname>Shih</surname><given-names>W. M.</given-names></name>
+<article-title>Self-Assembly
+of Three-Dimensional Prestressed Tensegrity Structures from DNA</article-title>. <source>Nat. Nanotechnol.</source>
+<year>2010</year>, <volume>5</volume>, <fpage>520</fpage>–<lpage>524</lpage>. <pub-id pub-id-type="doi">10.1038/nnano.2010.107</pub-id>.<pub-id pub-id-type="pmid">20562873</pub-id><pub-id pub-id-type="pmcid">PMC2898913</pub-id></mixed-citation></ref><ref id="ref56"><mixed-citation publication-type="journal" id="cit56"><name name-style="western"><surname>Zhou</surname><given-names>L.</given-names></name>; <name name-style="western"><surname>Marras</surname><given-names>A. E.</given-names></name>; <name name-style="western"><surname>Su</surname><given-names>H. J.</given-names></name>; <name name-style="western"><surname>Castro</surname><given-names>C. E.</given-names></name>
+<article-title>DNA Origami Compliant
+Nanostructures with Tunable Mechanical Properties</article-title>. <source>ACS Nano</source>
+<year>2014</year>, <volume>8</volume>, <fpage>27</fpage>–<lpage>34</lpage>. <pub-id pub-id-type="doi">10.1021/nn405408g</pub-id>.<pub-id pub-id-type="pmid">24351090</pub-id></mixed-citation></ref><ref id="ref57"><mixed-citation publication-type="journal" id="cit57"><name name-style="western"><surname>Suzuki</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Kawamata</surname><given-names>I.</given-names></name>; <name name-style="western"><surname>Mizuno</surname><given-names>K.</given-names></name>; <name name-style="western"><surname>Murata</surname><given-names>S.</given-names></name>
+<article-title>Large Deformation of
+a DNA-Origami Nanoarm Induced by the Cumulative Actuation of Tension-Adjustable
+Modules</article-title>. <source>Angew. Chem., Int. Ed.</source>
+<year>2020</year>, <volume>59</volume>, <fpage>6230</fpage>–<lpage>6234</lpage>. <pub-id pub-id-type="doi">10.1002/anie.201916233</pub-id>.<pub-id pub-id-type="pmid">31944509</pub-id></mixed-citation></ref><ref id="ref58"><mixed-citation publication-type="journal" id="cit58"><name name-style="western"><surname>Kauert</surname><given-names>D. J.</given-names></name>; <name name-style="western"><surname>Kurth</surname><given-names>T.</given-names></name>; <name name-style="western"><surname>Liedl</surname><given-names>T.</given-names></name>; <name name-style="western"><surname>Seidel</surname><given-names>R.</given-names></name>
+<article-title>Direct Mechanical Measurements
+Reveal the Material Properties of Three-Dimensional DNA Origami</article-title>. <source>Nano Lett.</source>
+<year>2011</year>, <volume>11</volume>, <fpage>5558</fpage>–<lpage>5563</lpage>. <pub-id pub-id-type="doi">10.1021/nl203503s</pub-id>.<pub-id pub-id-type="pmid">22047401</pub-id></mixed-citation></ref><ref id="ref59"><mixed-citation publication-type="journal" id="cit59"><name name-style="western"><surname>Mohammed</surname><given-names>A. M.</given-names></name>; <name name-style="western"><surname>Velazquez</surname><given-names>L.</given-names></name>; <name name-style="western"><surname>Chisenhall</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Schiffels</surname><given-names>D.</given-names></name>; <name name-style="western"><surname>Fygenson</surname><given-names>D. K.</given-names></name>; <name name-style="western"><surname>Schulman</surname><given-names>R.</given-names></name>
+<article-title>Self-Assembly of Precisely Defined
+DNA Nanotube Superstructures Using DNA Origami Seeds</article-title>. <source>Nanoscale</source>
+<year>2017</year>, <volume>9</volume>, <fpage>522</fpage>–<lpage>526</lpage>. <pub-id pub-id-type="doi">10.1039/C6NR06983E</pub-id>.<pub-id pub-id-type="pmid">27957574</pub-id></mixed-citation></ref><ref id="ref60"><mixed-citation publication-type="journal" id="cit60"><name name-style="western"><surname>Mohammed</surname><given-names>A. M.</given-names></name>; <name name-style="western"><surname>Schulman</surname><given-names>R.</given-names></name>
+<article-title>Directing Self-Assembly of DNA Nanotubes Using Programmable
+Seeds</article-title>. <source>Nano Lett.</source>
+<year>2013</year>, <volume>13</volume>, <fpage>4006</fpage>–<lpage>4013</lpage>. <pub-id pub-id-type="doi">10.1021/nl400881w</pub-id>.<pub-id pub-id-type="pmid">23919535</pub-id></mixed-citation></ref><ref id="ref61"><mixed-citation publication-type="journal" id="cit61"><name name-style="western"><surname>Hariadi</surname><given-names>R. F.</given-names></name>; <name name-style="western"><surname>Yurke</surname><given-names>B.</given-names></name>; <name name-style="western"><surname>Winfree</surname><given-names>E.</given-names></name>
+<article-title>Thermodynamics
+and Kinetics of DNA
+Nanotube Polymerization from Single-Filament Measurements</article-title>. <source>Chem. Sci.</source>
+<year>2015</year>, <volume>6</volume>, <fpage>2252</fpage>–<lpage>2267</lpage>. <pub-id pub-id-type="doi">10.1039/C3SC53331J</pub-id>.<pub-id pub-id-type="pmid">29308139</pub-id><pub-id pub-id-type="pmcid">PMC5645730</pub-id></mixed-citation></ref><ref id="ref62"><mixed-citation publication-type="journal" id="cit62"><name name-style="western"><surname>Ekani-Nkodo</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Kumar</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Fygenson</surname><given-names>D. K.</given-names></name>
+<article-title>Joining and Scission in the Self-Assembly
+of Nanotubes from DNA Tiles</article-title>. <source>Phys. Rev. Lett.</source>
+<year>2004</year>, <volume>93</volume>, <fpage>268301</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.93.268301</pub-id>.<pub-id pub-id-type="pmid">15698032</pub-id></mixed-citation></ref><ref id="ref63"><mixed-citation publication-type="journal" id="cit63"><name name-style="western"><surname>Zhang</surname><given-names>D. Y.</given-names></name>; <name name-style="western"><surname>Hariadi</surname><given-names>R. F.</given-names></name>; <name name-style="western"><surname>Choi</surname><given-names>H. M.</given-names></name>; <name name-style="western"><surname>Winfree</surname><given-names>E.</given-names></name>
+<article-title>Integrating DNA Strand-Displacement
+Circuitry with DNA Tile Self-Assembly</article-title>. <source>Nat.
+Commun.</source>
+<year>2013</year>, <volume>4</volume>, <fpage>1965</fpage><pub-id pub-id-type="doi">10.1038/ncomms2965</pub-id>.<pub-id pub-id-type="pmid">23756381</pub-id><pub-id pub-id-type="pmcid">PMC3709499</pub-id></mixed-citation></ref><ref id="ref64"><mixed-citation publication-type="journal" id="cit64"><name name-style="western"><surname>Zhang</surname><given-names>H.</given-names></name>; <name name-style="western"><surname>Wang</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Zhang</surname><given-names>H.</given-names></name>; <name name-style="western"><surname>Liu</surname><given-names>X.</given-names></name>; <name name-style="western"><surname>Lee</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Huang</surname><given-names>Q.</given-names></name>; <name name-style="western"><surname>Wang</surname><given-names>F.</given-names></name>; <name name-style="western"><surname>Chao</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Liu</surname><given-names>H.</given-names></name>; <name name-style="western"><surname>Li</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Fan</surname><given-names>C.</given-names></name>; et al. <article-title>Programming Chain-Growth
+Copolymerization of
+DNA Hairpin Tiles for in-Vitro Hierarchical Supramolecular Organization</article-title>. <source>Nat. Commun.</source>
+<year>2019</year>, <volume>10</volume>, <fpage>1006</fpage><pub-id pub-id-type="doi">10.1038/s41467-019-09004-4</pub-id>.<pub-id pub-id-type="pmid">30824698</pub-id><pub-id pub-id-type="pmcid">PMC6397255</pub-id></mixed-citation></ref><ref id="ref65"><mixed-citation publication-type="journal" id="cit65"><name name-style="western"><surname>Schaffter</surname><given-names>S. W.</given-names></name>; <name name-style="western"><surname>Scalise</surname><given-names>D.</given-names></name>; <name name-style="western"><surname>Murphy</surname><given-names>T. M.</given-names></name>; <name name-style="western"><surname>Patel</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Schulman</surname><given-names>R.</given-names></name>
+<article-title>Feedback Regulation
+of Crystal Growth by Buffering Monomer Concentration</article-title>. <source>Nat. Commun.</source>
+<year>2020</year>, <volume>11</volume>, <fpage>6057</fpage><pub-id pub-id-type="doi">10.1038/s41467-020-19882-8</pub-id>.<pub-id pub-id-type="pmid">33247122</pub-id><pub-id pub-id-type="pmcid">PMC7695852</pub-id></mixed-citation></ref><ref id="ref66"><mixed-citation publication-type="journal" id="cit66"><name name-style="western"><surname>Ranallo</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Sorrentino</surname><given-names>D.</given-names></name>; <name name-style="western"><surname>Ricci</surname><given-names>F.</given-names></name>
+<article-title>Orthogonal Regulation of DNA Nanostructure
+Self-Assembly and Disassembly Using Antibodies</article-title>. <source>Nat. Commun.</source>
+<year>2019</year>, <volume>10</volume>, <fpage>5509</fpage><pub-id pub-id-type="doi">10.1038/s41467-019-13104-6</pub-id>.<pub-id pub-id-type="pmid">31796740</pub-id><pub-id pub-id-type="pmcid">PMC6890650</pub-id></mixed-citation></ref><ref id="ref67"><mixed-citation publication-type="journal" id="cit67"><name name-style="western"><surname>Rizzuto</surname><given-names>F. J.</given-names></name>; <name name-style="western"><surname>Platnich</surname><given-names>C. M.</given-names></name>; <name name-style="western"><surname>Luo</surname><given-names>X.</given-names></name>; <name name-style="western"><surname>Shen</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Dore</surname><given-names>M. D.</given-names></name>; <name name-style="western"><surname>Lachance-Brais</surname><given-names>C.</given-names></name>; <name name-style="western"><surname>Guarne</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Cosa</surname><given-names>G.</given-names></name>; <name name-style="western"><surname>Sleiman</surname><given-names>H. F.</given-names></name>
+<article-title>A Dissipative
+Pathway for the Structural Evolution of DNA Fibres</article-title>. <source>Nat. Chem.</source>
+<year>2021</year>, <volume>13</volume>, <fpage>843</fpage>–<lpage>849</lpage>. <pub-id pub-id-type="doi">10.1038/s41557-021-00751-w</pub-id>.<pub-id pub-id-type="pmid">34373598</pub-id></mixed-citation></ref><ref id="ref68"><mixed-citation publication-type="journal" id="cit68"><name name-style="western"><surname>Green</surname><given-names>L. N.</given-names></name>; <name name-style="western"><surname>Subramanian</surname><given-names>H. K. K.</given-names></name>; <name name-style="western"><surname>Mardanlou</surname><given-names>V.</given-names></name>; <name name-style="western"><surname>Kim</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Hariadi</surname><given-names>R. F.</given-names></name>; <name name-style="western"><surname>Franco</surname><given-names>E.</given-names></name>
+<article-title>Autonomous Dynamic Control of DNA
+Nanostructure Self-Assembly</article-title>. <source>Nat. Chem.</source>
+<year>2019</year>, <volume>11</volume>, <fpage>510</fpage>–<lpage>520</lpage>. <pub-id pub-id-type="doi">10.1038/s41557-019-0251-8</pub-id>.<pub-id pub-id-type="pmid">31011170</pub-id></mixed-citation></ref><ref id="ref69"><mixed-citation publication-type="journal" id="cit69"><name name-style="western"><surname>Kim</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>White</surname><given-names>K. S.</given-names></name>; <name name-style="western"><surname>Winfree</surname><given-names>E.</given-names></name>
+<article-title>Construction
+of an in Vitro Bistable
+Circuit from Synthetic Transcriptional Switches</article-title>. <source>Mol. Syst. Biol.</source>
+<year>2006</year>, <volume>2</volume>, <fpage>68</fpage>–<lpage>68</lpage>. <pub-id pub-id-type="doi">10.1038/msb4100099</pub-id>.<pub-id pub-id-type="pmid">17170763</pub-id><pub-id pub-id-type="pmcid">PMC1762086</pub-id></mixed-citation></ref><ref id="ref70"><mixed-citation publication-type="journal" id="cit70"><name name-style="western"><surname>Mishra</surname><given-names>D.</given-names></name>; <name name-style="western"><surname>Rivera</surname><given-names>P. M.</given-names></name>; <name name-style="western"><surname>Lin</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Del Vecchio</surname><given-names>D.</given-names></name>; <name name-style="western"><surname>Weiss</surname><given-names>R.</given-names></name>
+<article-title>A Load Driver Device for Engineering Modularity in Biological Networks</article-title>. <source>Nat. Biotechnol.</source>
+<year>2014</year>, <volume>32</volume>, <fpage>1268</fpage>–<lpage>1275</lpage>. <pub-id pub-id-type="doi">10.1038/nbt.3044</pub-id>.<pub-id pub-id-type="pmid">25419739</pub-id><pub-id pub-id-type="pmcid">PMC4262674</pub-id></mixed-citation></ref><ref id="ref71"><mixed-citation publication-type="journal" id="cit71"><name name-style="western"><surname>Heinen</surname><given-names>L.</given-names></name>; <name name-style="western"><surname>Walther</surname><given-names>A.</given-names></name>
+<article-title>Programmable Dynamic Steady States in Atp-Driven Nonequilibrium
+DNA Systems</article-title>. <source>Sci. Adv.</source>
+<year>2019</year>, <volume>5</volume>, <fpage>eaaw0590</fpage><pub-id pub-id-type="doi">10.1126/sciadv.aaw0590</pub-id>.<pub-id pub-id-type="pmid">31334349</pub-id><pub-id pub-id-type="pmcid">PMC6641946</pub-id></mixed-citation></ref><ref id="ref72"><mixed-citation publication-type="journal" id="cit72"><name name-style="western"><surname>Deng</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Walther</surname><given-names>A.</given-names></name>
+<article-title>Autonomous DNA Nanostructures Instructed by Hierarchically
+Concatenated Chemical Reaction Networks</article-title>. <source>Nat.
+Commun.</source>
+<year>2021</year>, <volume>12</volume>, <fpage>5132</fpage><pub-id pub-id-type="doi">10.1038/s41467-021-25450-5</pub-id>.<pub-id pub-id-type="pmid">34446724</pub-id><pub-id pub-id-type="pmcid">PMC8390752</pub-id></mixed-citation></ref><ref id="ref73"><mixed-citation publication-type="journal" id="cit73"><name name-style="western"><surname>Deng</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Walther</surname><given-names>A.</given-names></name>
+<article-title>Pathway Complexity
+in Fuel-Driven DNA Nanostructures
+with Autonomous Reconfiguration of Multiple Dynamic Steady States</article-title>. <source>J. Am. Chem. Soc.</source>
+<year>2020</year>, <volume>142</volume>, <fpage>685</fpage>–<lpage>689</lpage>. <pub-id pub-id-type="doi">10.1021/jacs.9b11598</pub-id>.<pub-id pub-id-type="pmid">31895547</pub-id><pub-id pub-id-type="pmcid">PMC7612462</pub-id></mixed-citation></ref><ref id="ref74"><mixed-citation publication-type="journal" id="cit74"><name name-style="western"><surname>Deng</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Bezold</surname><given-names>D.</given-names></name>; <name name-style="western"><surname>Jessen</surname><given-names>H. J.</given-names></name>; <name name-style="western"><surname>Walther</surname><given-names>A.</given-names></name>
+<article-title>Multiple Light Control
+Mechanisms in Atp-Fueled Non-Equilibrium DNA Systems</article-title>. <source>Angew. Chem., Int. Ed.</source>
+<year>2020</year>, <volume>59</volume>, <fpage>12084</fpage>–<lpage>12092</lpage>. <pub-id pub-id-type="doi">10.1002/anie.202003102</pub-id>.<pub-id pub-id-type="pmcid">PMC7384039</pub-id><pub-id pub-id-type="pmid">32232894</pub-id></mixed-citation></ref><ref id="ref75"><mixed-citation publication-type="journal" id="cit75"><name name-style="western"><surname>Sun</surname><given-names>M.</given-names></name>; <name name-style="western"><surname>Deng</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Walther</surname><given-names>A.</given-names></name>
+<article-title>Polymer Transformers: Interdigitating
+Reaction Networks of Fueled Monomer Species to Reconfigure Functional
+Polymer States</article-title>. <source>Angew. Chem., Int. Ed.</source>
+<year>2020</year>, <volume>59</volume>, <fpage>18161</fpage>–<lpage>18165</lpage>. <pub-id pub-id-type="doi">10.1002/anie.202006526</pub-id>.<pub-id pub-id-type="pmcid">PMC7590193</pub-id><pub-id pub-id-type="pmid">32608535</pub-id></mixed-citation></ref><ref id="ref76"><mixed-citation publication-type="journal" id="cit76"><name name-style="western"><surname>Liu</surname><given-names>D.</given-names></name>; <name name-style="western"><surname>Park</surname><given-names>S. H.</given-names></name>; <name name-style="western"><surname>Reif</surname><given-names>J. H.</given-names></name>; <name name-style="western"><surname>LaBean</surname><given-names>T. H.</given-names></name>
+<article-title>DNA Nanotubes Self-Assembled
+from Triple-Crossover Tiles as Templates for Conductive Nanowires</article-title>. <source>Proc. Natl. Acad. Sci. U.S.A.</source>
+<year>2004</year>, <volume>101</volume>, <fpage>717</fpage>–<lpage>722</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.0305860101</pub-id>.<pub-id pub-id-type="pmid">14709674</pub-id><pub-id pub-id-type="pmcid">PMC321746</pub-id></mixed-citation></ref><ref id="ref77"><mixed-citation publication-type="journal" id="cit77"><name name-style="western"><surname>Douglas</surname><given-names>S. M.</given-names></name>; <name name-style="western"><surname>Chou</surname><given-names>J. J.</given-names></name>; <name name-style="western"><surname>Shih</surname><given-names>W. M.</given-names></name>
+<article-title>DNA-Nanotube-Induced
+Alignment of
+Membrane Proteins for Nmr Structure Determination</article-title>. <source>Proc. Natl. Acad. Sci. U.S.A.</source>
+<year>2007</year>, <volume>104</volume>, <fpage>6644</fpage>–<lpage>6648</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.0700930104</pub-id>.<pub-id pub-id-type="pmid">17404217</pub-id><pub-id pub-id-type="pmcid">PMC1871839</pub-id></mixed-citation></ref><ref id="ref78"><mixed-citation publication-type="journal" id="cit78"><name name-style="western"><surname>Jungmann</surname><given-names>R.</given-names></name>; <name name-style="western"><surname>Avendano</surname><given-names>M. S.</given-names></name>; <name name-style="western"><surname>Woehrstein</surname><given-names>J. B.</given-names></name>; <name name-style="western"><surname>Dai</surname><given-names>M.</given-names></name>; <name name-style="western"><surname>Shih</surname><given-names>W. M.</given-names></name>; <name name-style="western"><surname>Yin</surname><given-names>P.</given-names></name>
+<article-title>Multiplexed 3D Cellular Super-Resolution
+Imaging with DNA-Paint and
+Exchange-Paint</article-title>. <source>Nat. Methods</source>
+<year>2014</year>, <volume>11</volume>, <fpage>313</fpage>–<lpage>318</lpage>. <pub-id pub-id-type="doi">10.1038/nmeth.2835</pub-id>.<pub-id pub-id-type="pmid">24487583</pub-id><pub-id pub-id-type="pmcid">PMC4153392</pub-id></mixed-citation></ref><ref id="ref79"><mixed-citation publication-type="journal" id="cit79"><name name-style="western"><surname>List</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Falgenhauer</surname><given-names>E.</given-names></name>; <name name-style="western"><surname>Kopperger</surname><given-names>E.</given-names></name>; <name name-style="western"><surname>Pardatscher</surname><given-names>G.</given-names></name>; <name name-style="western"><surname>Simmel</surname><given-names>F. C.</given-names></name>
+<article-title>Long-Range Movement
+of Large Mechanically Interlocked
+DNA Nanostructures</article-title>. <source>Nat. Commun.</source>
+<year>2016</year>, <volume>7</volume>, <fpage>12414</fpage><pub-id pub-id-type="doi">10.1038/ncomms12414</pub-id>.<pub-id pub-id-type="pmid">27492061</pub-id><pub-id pub-id-type="pmcid">PMC4980458</pub-id></mixed-citation></ref><ref id="ref80"><mixed-citation publication-type="journal" id="cit80"><name name-style="western"><surname>Powell</surname><given-names>J. T.</given-names></name>; <name name-style="western"><surname>Akhuetie-Oni</surname><given-names>B. O.</given-names></name>; <name name-style="western"><surname>Zhang</surname><given-names>Z.</given-names></name>; <name name-style="western"><surname>Lin</surname><given-names>C.</given-names></name>
+<article-title>DNA Origami Rotaxanes:
+Tailored Synthesis and Controlled Structure Switching</article-title>. <source>Angew. Chem., Int. Ed.</source>
+<year>2016</year>, <volume>55</volume>, <fpage>11412</fpage>–<lpage>11416</lpage>. <pub-id pub-id-type="doi">10.1002/anie.201604621</pub-id>.<pub-id pub-id-type="pmcid">PMC5019031</pub-id><pub-id pub-id-type="pmid">27527591</pub-id></mixed-citation></ref><ref id="ref81"><mixed-citation publication-type="journal" id="cit81"><name name-style="western"><surname>Maier</surname><given-names>A. M.</given-names></name>; <name name-style="western"><surname>Weig</surname><given-names>C.</given-names></name>; <name name-style="western"><surname>Oswald</surname><given-names>P.</given-names></name>; <name name-style="western"><surname>Frey</surname><given-names>E.</given-names></name>; <name name-style="western"><surname>Fischer</surname><given-names>P.</given-names></name>; <name name-style="western"><surname>Liedl</surname><given-names>T.</given-names></name>
+<article-title>Magnetic Propulsion of Microswimmers with DNA-Based Flagellar Bundles</article-title>. <source>Nano Lett.</source>
+<year>2016</year>, <volume>16</volume>, <fpage>906</fpage>–<lpage>910</lpage>. <pub-id pub-id-type="doi">10.1021/acs.nanolett.5b03716</pub-id>.<pub-id pub-id-type="pmid">26821214</pub-id><pub-id pub-id-type="pmcid">PMC4819949</pub-id></mixed-citation></ref><ref id="ref82"><mixed-citation publication-type="journal" id="cit82"><name name-style="western"><surname>Mohammed</surname><given-names>A. M.</given-names></name>; <name name-style="western"><surname>Sulc</surname><given-names>P.</given-names></name>; <name name-style="western"><surname>Zenk</surname><given-names>J.</given-names></name>; <name name-style="western"><surname>Schulman</surname><given-names>R.</given-names></name>
+<article-title>Self-Assembling
+DNA
+Nanotubes to Connect Molecular Landmarks</article-title>. <source>Nat.
+Nanotechnol.</source>
+<year>2017</year>, <volume>12</volume>, <fpage>312</fpage>–<lpage>316</lpage>. <pub-id pub-id-type="doi">10.1038/nnano.2016.277</pub-id>.<pub-id pub-id-type="pmid">27992412</pub-id></mixed-citation></ref><ref id="ref83"><mixed-citation publication-type="journal" id="cit83"><name name-style="western"><surname>Jia</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Phua</surname><given-names>S. C.</given-names></name>; <name name-style="western"><surname>Nihongaki</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Li</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Pacella</surname><given-names>M.</given-names></name>; <name name-style="western"><surname>Li</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Mohammed</surname><given-names>A. M.</given-names></name>; <name name-style="western"><surname>Sun</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Inoue</surname><given-names>T.</given-names></name>; <name name-style="western"><surname>Schulman</surname><given-names>R.</given-names></name>
+<article-title>Growth and
+Site-Specific Organization of Micron-Scale Biomolecular Devices on
+Living Mammalian Cells</article-title>. <source>Nat. Commun.</source>
+<year>2021</year>, <volume>12</volume>, <fpage>5729</fpage><pub-id pub-id-type="doi">10.1038/s41467-021-25890-z</pub-id>.<pub-id pub-id-type="pmid">34593818</pub-id><pub-id pub-id-type="pmcid">PMC8484582</pub-id></mixed-citation></ref><ref id="ref84"><mixed-citation publication-type="journal" id="cit84"><name name-style="western"><surname>Karna</surname><given-names>D.</given-names></name>; <name name-style="western"><surname>Stilgenbauer</surname><given-names>M.</given-names></name>; <name name-style="western"><surname>Jonchhe</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Ankai</surname><given-names>K.</given-names></name>; <name name-style="western"><surname>Kawamata</surname><given-names>I.</given-names></name>; <name name-style="western"><surname>Cui</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Zheng</surname><given-names>Y.-R.</given-names></name>; <name name-style="western"><surname>Suzuki</surname><given-names>Y.</given-names></name>; <name name-style="western"><surname>Mao</surname><given-names>H.</given-names></name>
+<article-title>Chemo-Mechanical Modulation
+of Cell Motions Using DNA Nanosprings</article-title>. <source>Bioconj.
+Chem.</source>
+<year>2021</year>, <volume>32</volume>, <fpage>311</fpage>–<lpage>317</lpage>. <pub-id pub-id-type="doi">10.1021/acs.bioconjchem.0c00674</pub-id>.<pub-id pub-id-type="pmcid">PMC8199798</pub-id><pub-id pub-id-type="pmid">33475341</pub-id></mixed-citation></ref><ref id="ref85"><mixed-citation publication-type="journal" id="cit85"><name name-style="western"><surname>Agarwal</surname><given-names>S.</given-names></name>; <name name-style="western"><surname>Klocke</surname><given-names>M. A.</given-names></name>; <name name-style="western"><surname>Pungchai</surname><given-names>P. E.</given-names></name>; <name name-style="western"><surname>Franco</surname><given-names>E.</given-names></name>
+<article-title>Dynamic Self-Assembly
+of Compartmentalized DNA Nanotubes</article-title>. <source>Nat. Commun.</source>
+<year>2021</year>, <volume>12</volume>, <fpage>3557</fpage><pub-id pub-id-type="doi">10.1038/s41467-021-23850-1</pub-id>.<pub-id pub-id-type="pmid">34117248</pub-id><pub-id pub-id-type="pmcid">PMC8196065</pub-id></mixed-citation></ref><ref id="ref86"><mixed-citation publication-type="journal" id="cit86"><name name-style="western"><surname>Jahnke</surname><given-names>K.</given-names></name>; <name name-style="western"><surname>Huth</surname><given-names>V.</given-names></name>; <name name-style="western"><surname>Mersdorf</surname><given-names>U.</given-names></name>; <name name-style="western"><surname>Liu</surname><given-names>N.</given-names></name>; <name name-style="western"><surname>Göpfrich</surname><given-names>K.</given-names></name>
+<article-title>Bottom-up
+Assembly of Synthetic Cells with a DNA Cytoskeleton</article-title>. <source>ACS Nano</source>
+<year>2022</year>, <volume>16</volume>, <fpage>7233</fpage>–<lpage>7241</lpage>. <pub-id pub-id-type="doi">10.1021/acsnano.1c10703</pub-id>.<pub-id pub-id-type="pmid">35377150</pub-id><pub-id pub-id-type="pmcid">PMC9134502</pub-id></mixed-citation></ref><ref id="ref87"><mixed-citation publication-type="journal" id="cit87"><name name-style="western"><surname>Journot</surname><given-names>C. M. A.</given-names></name>; <name name-style="western"><surname>Ramakrishna</surname><given-names>V.</given-names></name>; <name name-style="western"><surname>Wallace</surname><given-names>M. I.</given-names></name>; <name name-style="western"><surname>Turberfield</surname><given-names>A. J.</given-names></name>
+<article-title>Modifying
+Membrane Morphology and Interactions with DNA Origami Clathrin-Mimic
+Networks</article-title>. <source>ACS Nano</source>
+<year>2019</year>, <volume>13</volume>, <fpage>9973</fpage>–<lpage>9979</lpage>. <pub-id pub-id-type="doi">10.1021/acsnano.8b07734</pub-id>.<pub-id pub-id-type="pmid">31418553</pub-id><pub-id pub-id-type="pmcid">PMC6764109</pub-id></mixed-citation></ref><ref id="ref88"><mixed-citation publication-type="journal" id="cit88"><name name-style="western"><surname>Franquelim</surname><given-names>H. G.</given-names></name>; <name name-style="western"><surname>Dietz</surname><given-names>H.</given-names></name>; <name name-style="western"><surname>Schwille</surname><given-names>P.</given-names></name>
+<article-title>Reversible
+Membrane Deformations
+by Straight DNA Origami Filaments</article-title>. <source>Soft Matter</source>
+<year>2021</year>, <volume>17</volume>, <fpage>276</fpage>–<lpage>287</lpage>. <pub-id pub-id-type="doi">10.1039/D0SM00150C</pub-id>.<pub-id pub-id-type="pmid">32406895</pub-id></mixed-citation></ref><ref id="ref89"><mixed-citation publication-type="journal" id="cit89"><name name-style="western"><surname>Franquelim</surname><given-names>H. G.</given-names></name>; <name name-style="western"><surname>Khmelinskaia</surname><given-names>A.</given-names></name>; <name name-style="western"><surname>Sobczak</surname><given-names>J. P.</given-names></name>; <name name-style="western"><surname>Dietz</surname><given-names>H.</given-names></name>; <name name-style="western"><surname>Schwille</surname><given-names>P.</given-names></name>
+<article-title>Membrane Sculpting
+by Curved DNA Origami Scaffolds</article-title>. <source>Nat. Commun.</source>
+<year>2018</year>, <volume>9</volume>, <fpage>811</fpage><pub-id pub-id-type="doi">10.1038/s41467-018-03198-9</pub-id>.<pub-id pub-id-type="pmid">29476101</pub-id><pub-id pub-id-type="pmcid">PMC5824810</pub-id></mixed-citation></ref><ref id="ref90"><mixed-citation publication-type="journal" id="cit90"><name name-style="western"><surname>Zhan</surname><given-names>P.</given-names></name>; <name name-style="western"><surname>Jahnke</surname><given-names>K.</given-names></name>; <name name-style="western"><surname>Liu</surname><given-names>N.</given-names></name>; <name name-style="western"><surname>Göpfrich</surname><given-names>K.</given-names></name>
+<article-title>Functional
+DNA-Based Cytoskeletons for Synthetic Cells</article-title>. <source>Nat. Chem.</source>
+<year>2022</year>, <volume>14</volume>, <fpage>958</fpage><pub-id pub-id-type="doi">10.1038/s41557-022-00945-w</pub-id>.<pub-id pub-id-type="pmid">35725773</pub-id><pub-id pub-id-type="pmcid">PMC9359917</pub-id></mixed-citation></ref><ref id="ref91"><mixed-citation publication-type="book" id="cit91"><person-group person-group-type="allauthors"><name name-style="western"><surname>Rod</surname><given-names>P.</given-names></name>; <name name-style="western"><surname>Jane</surname><given-names>K.</given-names></name>; <name name-style="western"><surname>Julie</surname><given-names>T.</given-names></name>; <name name-style="western"><surname>G</surname><given-names>G. H.</given-names></name></person-group><source>Physical Biology of the Cell</source>, <edition>second</edition> ed.; <publisher-name>Garland Science,
+Taylor &amp; Francis Group</publisher-name>: <publisher-loc>London</publisher-loc>, <year>2013</year>.</mixed-citation></ref></ref-list></back></article>

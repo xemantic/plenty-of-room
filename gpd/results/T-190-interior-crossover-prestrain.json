@@ -1,0 +1,1141 @@
+{
+    "task": "T-190",
+    "leaf": "A8.2 (the plan and lattice model the anchoring array is written on), with A1.2",
+    "question": "What do the 42 interior crossovers of C-0107's graded corrugated field carry, and does the cancellation that keeps C-0090's placement flat hold?",
+    "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; single-layer square-lattice Rothemund sheet, 15 duplexes at 2.69 nm, 0.34 nm rise, 32/3 bp per turn design against B-DNA's 10.5, 16 bp column pitch; 38.08 nm along the helices at crossover phase 8; C-0090's published 34-root key; C-0017's 33.3333 pN/nm as 34 explicit elastic supports; C-0022's solved collar at 2 mM, a 10 nm gap and 0.192 V; C-0001's foundation secant; free stroke 5.15473846 nm",
+    "columns": [
+        {
+            "columnIndex": 0,
+            "x": -18.99,
+            "parity": 0,
+            "atRowEnd": true,
+            "sites": 7,
+            "prestrainDegrees": -22.5397532,
+            "amplitudeOverRowEnd": 1.0,
+            "absoluteCoupleShare": 0.231742944
+        },
+        {
+            "columnIndex": 1,
+            "x": -13.6,
+            "parity": 1,
+            "atRowEnd": false,
+            "sites": 7,
+            "prestrainDegrees": 14.896535,
+            "amplitudeOverRowEnd": 0.660900534,
+            "absoluteCoupleShare": 0.153159036
+        },
+        {
+            "columnIndex": 2,
+            "x": -8.16,
+            "parity": 0,
+            "atRowEnd": false,
+            "sites": 7,
+            "prestrainDegrees": -8.45485277,
+            "amplitudeOverRowEnd": 0.375108489,
+            "absoluteCoupleShare": 0.0869287455
+        },
+        {
+            "columnIndex": 3,
+            "x": -2.72,
+            "parity": 1,
+            "atRowEnd": false,
+            "sites": 7,
+            "prestrainDegrees": 2.73979651,
+            "amplitudeOverRowEnd": 0.121553971,
+            "absoluteCoupleShare": 0.028169275
+        },
+        {
+            "columnIndex": 4,
+            "x": 2.72,
+            "parity": 0,
+            "atRowEnd": false,
+            "sites": 7,
+            "prestrainDegrees": 2.73979651,
+            "amplitudeOverRowEnd": 0.121553971,
+            "absoluteCoupleShare": 0.028169275
+        },
+        {
+            "columnIndex": 5,
+            "x": 8.16,
+            "parity": 1,
+            "atRowEnd": false,
+            "sites": 7,
+            "prestrainDegrees": -8.45485277,
+            "amplitudeOverRowEnd": 0.375108489,
+            "absoluteCoupleShare": 0.0869287455
+        },
+        {
+            "columnIndex": 6,
+            "x": 13.6,
+            "parity": 0,
+            "atRowEnd": false,
+            "sites": 7,
+            "prestrainDegrees": 14.896535,
+            "amplitudeOverRowEnd": 0.660900534,
+            "absoluteCoupleShare": 0.153159036
+        },
+        {
+            "columnIndex": 7,
+            "x": 18.99,
+            "parity": 1,
+            "atRowEnd": true,
+            "sites": 7,
+            "prestrainDegrees": -22.5397532,
+            "amplitudeOverRowEnd": 1.0,
+            "absoluteCoupleShare": 0.231742944
+        }
+    ],
+    "states": [
+        {
+            "state": "zero prestrain — the reproduction gate",
+            "siteSet": "none",
+            "overallSign": 0,
+            "rowEndDegrees": 0.0,
+            "sites": 0,
+            "netCouple": 0.0,
+            "absoluteCouple": 0.0,
+            "coupledDishingOverStroke": 0.0621469087,
+            "freeDishingOverStroke": 0.299034765,
+            "peakHingeMoment": 0.376871713,
+            "flatAtTenPercent": true
+        },
+        {
+            "state": "the GRADED field over all 56, overall sign +",
+            "siteSet": "all 56",
+            "overallSign": 1,
+            "rowEndDegrees": -22.5397532,
+            "sites": 56,
+            "netCouple": -44.1605713,
+            "absoluteCouple": 160.767019,
+            "coupledDishingOverStroke": 0.0922622269,
+            "freeDishingOverStroke": 0.264731662,
+            "peakHingeMoment": 2.25289759,
+            "flatAtTenPercent": true
+        },
+        {
+            "state": "the 14 row-end sites of that same field, sign +",
+            "siteSet": "14 row-end",
+            "overallSign": 1,
+            "rowEndDegrees": -22.5397532,
+            "sites": 14,
+            "netCouple": -74.5132446,
+            "absoluteCouple": 74.5132446,
+            "coupledDishingOverStroke": 0.119074765,
+            "freeDishingOverStroke": 0.202418105,
+            "peakHingeMoment": 3.29288742,
+            "flatAtTenPercent": false
+        },
+        {
+            "state": "the 42 interior sites of that same field, sign +",
+            "siteSet": "42 interior",
+            "overallSign": 1,
+            "rowEndDegrees": -22.5397532,
+            "sites": 42,
+            "netCouple": 30.3526734,
+            "absoluteCouple": 86.2537746,
+            "coupledDishingOverStroke": 0.0815294071,
+            "freeDishingOverStroke": 0.35937599,
+            "peakHingeMoment": 2.29412701,
+            "flatAtTenPercent": true
+        },
+        {
+            "state": "the GRADED field over all 56, overall sign -",
+            "siteSet": "all 56",
+            "overallSign": -1,
+            "rowEndDegrees": 22.5397532,
+            "sites": 56,
+            "netCouple": 44.1605713,
+            "absoluteCouple": 160.767019,
+            "coupledDishingOverStroke": 0.0910196802,
+            "freeDishingOverStroke": 0.343511997,
+            "peakHingeMoment": 2.26561857,
+            "flatAtTenPercent": true
+        },
+        {
+            "state": "the 14 row-end sites of that same field, sign -",
+            "siteSet": "14 row-end",
+            "overallSign": -1,
+            "rowEndDegrees": 22.5397532,
+            "sites": 14,
+            "netCouple": 74.5132446,
+            "absoluteCouple": 74.5132446,
+            "coupledDishingOverStroke": 0.102054478,
+            "freeDishingOverStroke": 0.40337043,
+            "peakHingeMoment": 3.33172873,
+            "flatAtTenPercent": false
+        },
+        {
+            "state": "the 42 interior sites of that same field, sign -",
+            "siteSet": "42 interior",
+            "overallSign": -1,
+            "rowEndDegrees": 22.5397532,
+            "sites": 42,
+            "netCouple": -30.3526734,
+            "absoluteCouple": 86.2537746,
+            "coupledDishingOverStroke": 0.0841713133,
+            "freeDishingOverStroke": 0.239176331,
+            "peakHingeMoment": 2.22318598,
+            "flatAtTenPercent": true
+        },
+        {
+            "state": "C-0107's row-end-only idealisation at +22.6185 deg",
+            "siteSet": "14 row-end",
+            "overallSign": 1,
+            "rowEndDegrees": 22.6184533,
+            "sites": 14,
+            "netCouple": 74.773416,
+            "absoluteCouple": 74.773416,
+            "coupledDishingOverStroke": 0.102281982,
+            "freeDishingOverStroke": 0.40373473,
+            "peakHingeMoment": 3.34274481,
+            "flatAtTenPercent": false
+        },
+        {
+            "state": "C-0107's row-end-only idealisation at -22.6185 deg",
+            "siteSet": "14 row-end",
+            "overallSign": -1,
+            "rowEndDegrees": -22.6184533,
+            "sites": 14,
+            "netCouple": -74.773416,
+            "absoluteCouple": 74.773416,
+            "coupledDishingOverStroke": 0.119333389,
+            "freeDishingOverStroke": 0.202087644,
+            "peakHingeMoment": 3.30388086,
+            "flatAtTenPercent": false
+        }
+    ],
+    "decomposition": [
+        {
+            "overallSign": 1,
+            "rowEndNorm": 0.077353738,
+            "interiorNorm": 0.0532208269,
+            "gradedNorm": 0.0635978729,
+            "cosine": -0.579495374,
+            "quadraticIdentityDeparture": 2.1000000000000002E-15,
+            "superpositionDeparture": 2.1000000000000002E-15,
+            "peakRowEndOnly": 0.0740700165,
+            "peakInteriorOnly": 0.0446322147,
+            "peakGraded": 0.034903452,
+            "peakSumOfParts": 0.118702231,
+            "nonAdditivity": 0.294042089
+        },
+        {
+            "overallSign": -1,
+            "rowEndNorm": 0.077353738,
+            "interiorNorm": 0.0532208269,
+            "gradedNorm": 0.0635978729,
+            "cosine": -0.579495374,
+            "quadraticIdentityDeparture": 2.1000000000000002E-15,
+            "superpositionDeparture": 2.1000000000000002E-15,
+            "peakRowEndOnly": 0.0740700165,
+            "peakInteriorOnly": 0.0446322147,
+            "peakGraded": 0.034903452,
+            "peakSumOfParts": 0.118702231,
+            "nonAdditivity": 0.294042089
+        }
+    ],
+    "factorial": [
+        {
+            "overallSign": 1,
+            "rowEndAngleStation": "row end (19.04 nm)",
+            "interiorSitesLoaded": false,
+            "rowEndDegrees": -22.6184533,
+            "coupledDishingOverStroke": 0.119333389,
+            "flatAtTenPercent": false,
+            "reproduces": "C-0107's row-end-only NOMINAL, -theta_0"
+        },
+        {
+            "overallSign": 1,
+            "rowEndAngleStation": "row end (19.04 nm)",
+            "interiorSitesLoaded": true,
+            "rowEndDegrees": -22.6184533,
+            "coupledDishingOverStroke": 0.0923285369,
+            "flatAtTenPercent": true,
+            "reproduces": "not read by C-0107"
+        },
+        {
+            "overallSign": 1,
+            "rowEndAngleStation": "column (18.99 nm)",
+            "interiorSitesLoaded": false,
+            "rowEndDegrees": -22.5397532,
+            "coupledDishingOverStroke": 0.119074765,
+            "flatAtTenPercent": false,
+            "reproduces": "not read by C-0107"
+        },
+        {
+            "overallSign": 1,
+            "rowEndAngleStation": "column (18.99 nm)",
+            "interiorSitesLoaded": true,
+            "rowEndDegrees": -22.5397532,
+            "coupledDishingOverStroke": 0.0922622269,
+            "flatAtTenPercent": true,
+            "reproduces": "C-0107's GRADED field over all 56"
+        },
+        {
+            "overallSign": -1,
+            "rowEndAngleStation": "row end (19.04 nm)",
+            "interiorSitesLoaded": false,
+            "rowEndDegrees": 22.6184533,
+            "coupledDishingOverStroke": 0.102281982,
+            "flatAtTenPercent": false,
+            "reproduces": "C-0107's row-end-only NOMINAL, +theta_0"
+        },
+        {
+            "overallSign": -1,
+            "rowEndAngleStation": "row end (19.04 nm)",
+            "interiorSitesLoaded": true,
+            "rowEndDegrees": 22.6184533,
+            "coupledDishingOverStroke": 0.0911033595,
+            "flatAtTenPercent": true,
+            "reproduces": "not read by C-0107"
+        },
+        {
+            "overallSign": -1,
+            "rowEndAngleStation": "column (18.99 nm)",
+            "interiorSitesLoaded": false,
+            "rowEndDegrees": 22.5397532,
+            "coupledDishingOverStroke": 0.102054478,
+            "flatAtTenPercent": false,
+            "reproduces": "not read by C-0107"
+        },
+        {
+            "overallSign": -1,
+            "rowEndAngleStation": "column (18.99 nm)",
+            "interiorSitesLoaded": true,
+            "rowEndDegrees": 22.5397532,
+            "coupledDishingOverStroke": 0.0910196802,
+            "flatAtTenPercent": true,
+            "reproduces": "not read by C-0107"
+        }
+    ],
+    "ladder": [
+        {
+            "overallSign": 1,
+            "outermostColumnPairs": 1,
+            "sites": 14,
+            "coupledDishingOverStroke": 0.119074765,
+            "flatAtTenPercent": false,
+            "recoveredFraction": 0.0
+        },
+        {
+            "overallSign": 1,
+            "outermostColumnPairs": 2,
+            "sites": 28,
+            "coupledDishingOverStroke": 0.0906004881,
+            "flatAtTenPercent": true,
+            "recoveredFraction": 1.06197618
+        },
+        {
+            "overallSign": 1,
+            "outermostColumnPairs": 3,
+            "sites": 42,
+            "coupledDishingOverStroke": 0.0915672432,
+            "flatAtTenPercent": true,
+            "recoveredFraction": 1.0259201
+        },
+        {
+            "overallSign": 1,
+            "outermostColumnPairs": 4,
+            "sites": 56,
+            "coupledDishingOverStroke": 0.0922622269,
+            "flatAtTenPercent": true,
+            "recoveredFraction": 1.0
+        },
+        {
+            "overallSign": -1,
+            "outermostColumnPairs": 1,
+            "sites": 14,
+            "coupledDishingOverStroke": 0.102054478,
+            "flatAtTenPercent": false,
+            "recoveredFraction": 0.0
+        },
+        {
+            "overallSign": -1,
+            "outermostColumnPairs": 2,
+            "sites": 28,
+            "coupledDishingOverStroke": 0.0877288973,
+            "flatAtTenPercent": true,
+            "recoveredFraction": 1.29821867
+        },
+        {
+            "overallSign": -1,
+            "outermostColumnPairs": 3,
+            "sites": 42,
+            "coupledDishingOverStroke": 0.0912874724,
+            "flatAtTenPercent": true,
+            "recoveredFraction": 0.975732023
+        },
+        {
+            "overallSign": -1,
+            "outermostColumnPairs": 4,
+            "sites": 56,
+            "coupledDishingOverStroke": 0.0910196802,
+            "flatAtTenPercent": true,
+            "recoveredFraction": 1.0
+        }
+    ],
+    "bracket": [
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": true,
+            "decayLength": 24.0416306,
+            "endResidualDegrees": 24.983006,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0893920947,
+            "rowEndOnlyDishingOverStroke": 0.106594773,
+            "cancellation": 0.0172026779,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": true,
+            "decayLength": 24.0416306,
+            "endResidualDegrees": 24.983006,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.087721452,
+            "rowEndOnlyDishingOverStroke": 0.100137911,
+            "cancellation": 0.0124164587,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": false,
+            "decayLength": 24.0416306,
+            "endResidualDegrees": 24.983006,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0959733471,
+            "rowEndOnlyDishingOverStroke": 0.126845055,
+            "cancellation": 0.0308717081,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": false,
+            "decayLength": 24.0416306,
+            "endResidualDegrees": 24.983006,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0948520239,
+            "rowEndOnlyDishingOverStroke": 0.108889781,
+            "cancellation": 0.0140377576,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": true,
+            "decayLength": 17.5575245,
+            "endResidualDegrees": 21.9885337,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0855689071,
+            "rowEndOnlyDishingOverStroke": 0.0987054344,
+            "cancellation": 0.0131365273,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": true
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": true,
+            "decayLength": 17.5575245,
+            "endResidualDegrees": 21.9885337,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0837126891,
+            "rowEndOnlyDishingOverStroke": 0.0930994888,
+            "cancellation": 0.00938679967,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": true
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": false,
+            "decayLength": 17.5575245,
+            "endResidualDegrees": 21.9885337,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0912755845,
+            "rowEndOnlyDishingOverStroke": 0.117004752,
+            "cancellation": 0.0257291675,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": false,
+            "decayLength": 17.5575245,
+            "endResidualDegrees": 21.9885337,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0900005802,
+            "rowEndOnlyDishingOverStroke": 0.100233547,
+            "cancellation": 0.0102329663,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 1.0,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": true,
+            "decayLength": 18.622567,
+            "endResidualDegrees": 22.6184533,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0922622269,
+            "rowEndOnlyDishingOverStroke": 0.119074765,
+            "cancellation": 0.0268125384,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 1.0,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": true,
+            "decayLength": 18.622567,
+            "endResidualDegrees": 22.6184533,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0910196802,
+            "rowEndOnlyDishingOverStroke": 0.102054478,
+            "cancellation": 0.0110347981,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 1.0,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": true,
+            "decayLength": 13.6,
+            "endResidualDegrees": 18.971821,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0865661768,
+            "rowEndOnlyDishingOverStroke": 0.107091375,
+            "cancellation": 0.0205251985,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 1.0,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": true,
+            "decayLength": 13.6,
+            "endResidualDegrees": 18.971821,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0851344332,
+            "rowEndOnlyDishingOverStroke": 0.0915130309,
+            "cancellation": 0.00637859768,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": true
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": true,
+            "decayLength": 17.0,
+            "endResidualDegrees": 21.6313103,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0925897837,
+            "rowEndOnlyDishingOverStroke": 0.122323,
+            "cancellation": 0.0297332164,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": true,
+            "decayLength": 17.0,
+            "endResidualDegrees": 21.6313103,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0913757789,
+            "rowEndOnlyDishingOverStroke": 0.102456402,
+            "cancellation": 0.0110806235,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": false,
+            "decayLength": 17.0,
+            "endResidualDegrees": 21.6313103,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0907165026,
+            "rowEndOnlyDishingOverStroke": 0.115830861,
+            "cancellation": 0.0251143581,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": false,
+            "decayLength": 17.0,
+            "endResidualDegrees": 21.6313103,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0894230558,
+            "rowEndOnlyDishingOverStroke": 0.0992009077,
+            "cancellation": 0.00977785186,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": true
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": true,
+            "decayLength": 12.4150446,
+            "endResidualDegrees": 17.8213774,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0862853833,
+            "rowEndOnlyDishingOverStroke": 0.108831455,
+            "cancellation": 0.0225460721,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": true,
+            "decayLength": 12.4150446,
+            "endResidualDegrees": 17.8213774,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0848986657,
+            "rowEndOnlyDishingOverStroke": 0.0906409499,
+            "cancellation": 0.00574228418,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": true
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": false,
+            "decayLength": 12.4150446,
+            "endResidualDegrees": 17.8213774,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0847789968,
+            "rowEndOnlyDishingOverStroke": 0.103310847,
+            "cancellation": 0.0185318506,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 460.0,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": false,
+            "decayLength": 12.4150446,
+            "endResidualDegrees": 17.8213774,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0832867404,
+            "rowEndOnlyDishingOverStroke": 0.0881874079,
+            "cancellation": 0.00490066745,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": true
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": true,
+            "decayLength": 22.8132559,
+            "endResidualDegrees": 24.5484384,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0888362958,
+            "rowEndOnlyDishingOverStroke": 0.105449846,
+            "cancellation": 0.0166135499,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": true,
+            "decayLength": 22.8132559,
+            "endResidualDegrees": 24.5484384,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0871388088,
+            "rowEndOnlyDishingOverStroke": 0.0991164716,
+            "cancellation": 0.0119776628,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": true
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": false,
+            "decayLength": 22.8132559,
+            "endResidualDegrees": 24.5484384,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0952905091,
+            "rowEndOnlyDishingOverStroke": 0.125416998,
+            "cancellation": 0.0301264885,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": false,
+            "decayLength": 22.8132559,
+            "endResidualDegrees": 24.5484384,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0941469713,
+            "rowEndOnlyDishingOverStroke": 0.10763356,
+            "cancellation": 0.0134865886,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": true,
+            "decayLength": 16.6604465,
+            "endResidualDegrees": 21.4038701,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0848245406,
+            "rowEndOnlyDishingOverStroke": 0.0971650608,
+            "cancellation": 0.0123405202,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": true
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": true,
+            "decayLength": 16.6604465,
+            "endResidualDegrees": 21.4038701,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0829318988,
+            "rowEndOnlyDishingOverStroke": 0.0917252545,
+            "cancellation": 0.00879335571,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": true
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": false,
+            "decayLength": 16.6604465,
+            "endResidualDegrees": 21.4038701,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0903607161,
+            "rowEndOnlyDishingOverStroke": 0.115083457,
+            "cancellation": 0.0247227414,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 0.6,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": false,
+            "decayLength": 16.6604465,
+            "endResidualDegrees": 21.4038701,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0890555128,
+            "rowEndOnlyDishingOverStroke": 0.0985434383,
+            "cancellation": 0.00948792546,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": true
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 1.0,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": true,
+            "decayLength": 17.671072,
+            "endResidualDegrees": 22.058898,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0913857482,
+            "rowEndOnlyDishingOverStroke": 0.11723598,
+            "cancellation": 0.0258502315,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 1.0,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": true,
+            "decayLength": 17.671072,
+            "endResidualDegrees": 22.058898,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0901143735,
+            "rowEndOnlyDishingOverStroke": 0.100436951,
+            "cancellation": 0.0103225776,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 1.0,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": true,
+            "decayLength": 12.9051264,
+            "endResidualDegrees": 18.3125227,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0855412575,
+            "rowEndOnlyDishingOverStroke": 0.104924823,
+            "cancellation": 0.0193835656,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 1.0,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": true,
+            "decayLength": 12.9051264,
+            "endResidualDegrees": 18.3125227,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0840748964,
+            "rowEndOnlyDishingOverStroke": 0.0896071765,
+            "cancellation": 0.00553228007,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": true
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": true,
+            "decayLength": 16.1314079,
+            "endResidualDegrees": 21.0339018,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0915979798,
+            "rowEndOnlyDishingOverStroke": 0.120207485,
+            "cancellation": 0.0286095055,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": true,
+            "decayLength": 16.1314079,
+            "endResidualDegrees": 21.0339018,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0903571266,
+            "rowEndOnlyDishingOverStroke": 0.100603704,
+            "cancellation": 0.0102465773,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": false,
+            "decayLength": 16.1314079,
+            "endResidualDegrees": 21.0339018,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0897822758,
+            "rowEndOnlyDishingOverStroke": 0.113867685,
+            "cancellation": 0.0240854091,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 10.2,
+            "latticeHingeConsistent": false,
+            "decayLength": 16.1314079,
+            "endResidualDegrees": 21.0339018,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0884579236,
+            "rowEndOnlyDishingOverStroke": 0.0974739578,
+            "cancellation": 0.00901603413,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": true
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": true,
+            "decayLength": 11.7807147,
+            "endResidualDegrees": 17.1526548,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.0851851279,
+            "rowEndOnlyDishingOverStroke": 0.106463412,
+            "cancellation": 0.0212782837,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": true,
+            "decayLength": 11.7807147,
+            "endResidualDegrees": 17.1526548,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0837676375,
+            "rowEndOnlyDishingOverStroke": 0.0885670947,
+            "cancellation": 0.00479945725,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": true
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": false,
+            "decayLength": 11.7807147,
+            "endResidualDegrees": 17.1526548,
+            "overallSign": 1,
+            "gradedDishingOverStroke": 0.083743048,
+            "rowEndOnlyDishingOverStroke": 0.101113327,
+            "cancellation": 0.0173702793,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": false
+        },
+        {
+            "torsionalRigidity": 414.1947,
+            "crossoverAlpha": 1.2,
+            "crossoverSpacing": 5.44,
+            "latticeHingeConsistent": false,
+            "decayLength": 11.7807147,
+            "endResidualDegrees": 17.1526548,
+            "overallSign": -1,
+            "gradedDishingOverStroke": 0.0822153697,
+            "rowEndOnlyDishingOverStroke": 0.086254312,
+            "cancellation": 0.00403894232,
+            "gradedFlat": true,
+            "rowEndOnlyFlat": true
+        }
+    ],
+    "convergence": [
+        {
+            "axis": "beam subdivisions 1 -> 2, the graded field",
+            "coarse": 0.0903421097,
+            "fine": 0.0922622269,
+            "relativeDeparture": 0.021
+        },
+        {
+            "axis": "beam subdivisions 2 -> 4, the graded field",
+            "coarse": 0.0922622269,
+            "fine": 0.0919268824,
+            "relativeDeparture": 0.0036
+        },
+        {
+            "axis": "dishing sample grid 41 -> 81",
+            "coarse": 0.0922622269,
+            "fine": 0.0922622269,
+            "relativeDeparture": 0.0
+        },
+        {
+            "axis": "dishing sample grid 81 -> 161",
+            "coarse": 0.0922622269,
+            "fine": 0.0922622269,
+            "relativeDeparture": 0.0
+        },
+        {
+            "axis": "the row-end/interior cosine, subdivisions 2 -> 4",
+            "coarse": -0.579495374,
+            "fine": -0.579501561,
+            "relativeDeparture": 1.1E-5
+        }
+    ],
+    "reproductions": [
+        {
+            "what": "C-0090's 34-root dishing at 38.08 nm / phase 8",
+            "owner": "C-0090",
+            "expected": 0.0621469105,
+            "got": 0.0621469087,
+            "relativeDeparture": 3.0E-8
+        },
+        {
+            "what": "C-0107's zero-prestrain baseline",
+            "owner": "C-0107",
+            "expected": 0.0621469087,
+            "got": 0.0621469087,
+            "relativeDeparture": 7.0E-10
+        },
+        {
+            "what": "C-0107's GRADED field over all 56 crossovers",
+            "owner": "C-0107",
+            "expected": 0.0922622269,
+            "got": 0.0922622269,
+            "relativeDeparture": 1.1E-10
+        },
+        {
+            "what": "C-0107's row-end-only NOMINAL, +theta_0",
+            "owner": "C-0107",
+            "expected": 0.102281982,
+            "got": 0.102281982,
+            "relativeDeparture": 3.4E-9
+        },
+        {
+            "what": "C-0107's row-end-only NOMINAL, -theta_0",
+            "owner": "C-0107",
+            "expected": 0.119333389,
+            "got": 0.119333389,
+            "relativeDeparture": 3.4E-10
+        },
+        {
+            "what": "C-0107's nominal end residual in degrees",
+            "owner": "C-0107",
+            "expected": 22.6184533,
+            "got": 22.6184533,
+            "relativeDeparture": 3.8E-10
+        },
+        {
+            "what": "C-0107's uniform-load falsifier on the support-free prestrain-free lattice",
+            "owner": "C-0107",
+            "expected": 2.12606493E-7,
+            "got": 2.12606493E-7,
+            "relativeDeparture": 1.7E-9
+        },
+        {
+            "what": "C-0104's threshold in degrees",
+            "owner": "C-0104",
+            "expected": 15.4497275,
+            "got": 15.4497275,
+            "relativeDeparture": 0.0
+        },
+        {
+            "what": "C-0095's row-end crossover count",
+            "owner": "C-0095",
+            "expected": 14.0,
+            "got": 14.0,
+            "relativeDeparture": 0.0
+        },
+        {
+            "what": "C-0015's crossover inventory",
+            "owner": "C-0015",
+            "expected": 56.0,
+            "got": 56.0,
+            "relativeDeparture": 0.0
+        }
+    ],
+    "predicates": [
+        {
+            "id": "P1",
+            "statement": "the decomposition is an identity: load + row-end response + interior response = the graded response, to 1e-10 in the coefficient vector",
+            "verdict": "PASS",
+            "evidence": "worst superposition departure over both overall signs 2.10e-15"
+        },
+        {
+            "id": "P2",
+            "statement": "the interior contribution is quantified against the row-end one on a convention-free measure and both peaks are reported separately",
+            "verdict": "PASS",
+            "evidence": "cosine -0.579495, |interior|/|row end| 0.6880"
+        },
+        {
+            "id": "P3",
+            "statement": "the cancellation is tested over the overall sign, the 12-cell bracket and the column structure",
+            "verdict": "PASS",
+            "evidence": "40 bracket cells, 8 ladder rungs, both overall signs"
+        },
+        {
+            "id": "P4",
+            "statement": "every re-read upstream number is reproduced from its own result file",
+            "verdict": "PASS",
+            "evidence": "10 reproductions, worst 3.00e-08"
+        }
+    ],
+    "falsifiers": [
+        {
+            "id": "F1",
+            "statement": "the three solved fields do not superpose to 1e-10",
+            "fired": false,
+            "outcome": "worst 2.10e-15 over both signs"
+        },
+        {
+            "id": "F2",
+            "statement": "the graded field's restriction to the 14 row-end sites is C-0107's NOMINAL +22.6184533 deg map",
+            "fired": true,
+            "outcome": "the graded field at overall sign + puts -22.5398 deg on every row-end site, against C-0107's stated +22.6185"
+        },
+        {
+            "id": "F3",
+            "statement": "the interior contribution is a small correction, |d_I| < 0.2 |d_R|",
+            "fired": false,
+            "outcome": "|interior|/|row end| = 0.6880"
+        },
+        {
+            "id": "F4",
+            "statement": "the graded field at the OTHER overall sign is also flat",
+            "fired": true,
+            "outcome": "sign - reads 0.0910197, flat=true"
+        },
+        {
+            "id": "F5",
+            "statement": "every cell of the boundary-layer bracket keeps the graded field flat",
+            "fired": true,
+            "outcome": "40 of 40 bracket cells are flat under the graded field"
+        },
+        {
+            "id": "F6",
+            "statement": "a uniform load on a uniform foundation dishes more than 1e-6 of the free stroke, on the support-free prestrain-free lattice",
+            "fired": false,
+            "outcome": "2.126e-07"
+        }
+    ],
+    "findings": [
+        "THE FIELD IS EXACTLY SEPARABLE AND THE VERDICT IS NOT. A prestrain is a load, so the solved field under the graded corrugated map is the load-only field plus the 14-site response plus the 42-site response, to 2.10e-15 in the coefficient vector at both overall signs. Peak dishing is a seminorm of that field and does NOT add: the graded peak is 0.2940 of the sum of its two parts' peaks. So no part of the verdict can be assigned to either site set.",
+        "THE 42 INTERIOR SITES ARE NOT A CORRECTION, THEY ARE THE SAME ORDER AND THE OPPOSITE SIGN. Their dishing field has 0.6880 of the row-end field's area norm and a cosine of -0.5795 against it. The cancellation is a cross term, not a difference of two peaks, and it is structural: the column next inboard of the row end carries 0.661 of the row end's amplitude on the same number of sites at the opposite sign, which is arithmetic and needs no solve.",
+        "THE GRADED FIELD'S OWN ROW-END RESTRICTION IS UNIFORM AT -22.5398 deg AT OVERALL SIGN +, which is the sign C-0107 calls ADVERSE. The lattice's parity rule puts every interface's row-end crossover at the end where (-1)^b u(x) = -u(|x|), so the consistent row-end-only counterpart of the graded 0.0922622 is 0.1190748 and NOT C-0107's 0.1022820: the published comparison pairs the graded field at one overall sign with the row-end-only idealisation at the other. The cancellation is therefore LARGER than published, 0.0268 of the stroke against 0.0100.",
+        "THE OVERALL SIGN OF THE CORRUGATION IS UNDETERMINED AND C-0107 READ ONE OF TWO. The glide symmetry says the field alternates with the interface index and does not say which parity folds which way, so both signs are admissible. They read 0.0922622 (flat=true) and 0.0910197 (flat=true).",
+        "THE CANCELLATION IS COMPLETE BY THE FIRST INTERIOR COLUMN PAIR. Adding the column pair next inboard of the row ends recovers 106.2 % of the whole row-end-to-graded move; the two innermost pairs together are worth the remainder.",
+        "OVER C-0107'S OWN 12-CELL BRACKET AND BOTH SIGNS, 40 of 40 cells keep the graded field flat, against 14 of 40 for the row-end-only idealisation. The cancellation is a property of the field's SHAPE, and the shape is set by lambda/L, which the bracket moves by 2.04x.",
+        "THE ROW-END-ONLY IDEALISATION IS THE lambda -> 0 LIMIT OF THE GRADED FIELD, and the Gen-1 tile is nowhere near it: the derived decay length is 18.62 nm against a 19.04 nm half-row, so the field is graded over the whole tile and the 14-site map has nothing behind it. C-0104's three distributions are maps on 14 sites because C-0104 had no field; C-0107 has one.",
+        "THE STANDING UNIFORM-LOAD FALSIFIER READS 2.126e-07 on the support-free, prestrain-free lattice. CLAUDE.md's best falsifier is NOT declared against the eigenstrain here: a uniform prestrain is an eigenstrain and the relaxed state is a cylinder, which C-0104 Deliverable 5 measured, so asserting the zero would report a correct solver as broken."
+    ],
+    "parameters": {
+        "duplexes": "15",
+        "phaseBasePairs": "8",
+        "edgeX": "38.08",
+        "armCount": "34",
+        "armLength": "8.16",
+        "mandate": "33.3333333",
+        "crossoverHingeStiffness": "13.5294118",
+        "crossovers": "56",
+        "rowEndCrossovers": "14",
+        "interiorCrossovers": "42",
+        "twistRateMismatch": "0.0274999357",
+        "derivedCrossoverSpacing": "10.2",
+        "nominalDecayLength": "18.622567",
+        "nominalEndResidualDegrees": "22.6184533",
+        "gradedRowEndDegreesAtSignPlus": "-22.5397532",
+        "freeStroke": "5.15473846",
+        "flatnessTolerance": "0.1",
+        "c0104ThresholdDegrees": "15.4497275",
+        "wholeFieldAbsoluteCouple": "160.767019",
+        "rowEndAbsoluteCoupleShare": "0.463485888",
+        "interiorAbsoluteCoupleShare": "0.536514112",
+        "sources": "gpd/results/T-3b-tile-edge-load-profile.json, gpd/results/T-153-buildable-raster-width.json, gpd/results/T-172-row-end-prestrain.json, gpd/results/T-182-row-end-prestrain-value.json"
+    }
+}

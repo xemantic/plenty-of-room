@@ -271,7 +271,12 @@ class EquilibriumPath(
         val coarse = mutableListOf<BranchPoint>()
         var exhausted = false
         for (i in 0..coarseSteps) {
-            val point = at(i * step)
+            // `i * (ceiling/steps)` at `i == steps` need NOT equal `ceiling` in floating point —
+            // it landed three ulp ABOVE it on `T-192`'s 25.144662445344164 nm ceiling, and `at`'s
+            // own range `require` then killed a nine-minute sweep three quarters of the way
+            // through. The clamp is a no-op wherever the product lands at or below the ceiling,
+            // which is every case that did not previously throw, so no emitted number moves.
+            val point = at(minOf(i * step, strokeCeiling))
             if (point == null) {
                 exhausted = true
                 break
@@ -315,7 +320,7 @@ class EquilibriumPath(
             }
         }
         var low = (descent - 2).coerceAtLeast(0) * step
-        var high = descent * step
+        var high = minOf(descent * step, strokeCeiling)
         var candidate = coarse[descent - 1]
         val golden = 0.6180339887498949
         var left = high - golden * (high - low)

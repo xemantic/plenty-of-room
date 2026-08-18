@@ -1,0 +1,71 @@
+{
+  "task": "T-194",
+  "claim": "C-0114",
+  "what": "The buffer and the tall layer are ONE reserve -- NDI's answers to decisions 1 and 2 both name 'additional operating margin' bought with 'additional work on stabilizing DNA origami at low salt' -- so the two spends are re-issued as one decision, ranked on the corpus's own numbers. Deliverable task: it derives no new physics and every number is read out of an upstream result file at run time.",
+  "verificationType": "logical (a ranking assembled from two upstream result files)",
+  "maturity": "TRL 1-3. Model-consistent and traceable, never empirically demonstrated.",
+  "units": "nm for gaps and heights, mM for concentration, dimensionless for ratios",
+  "spends": {
+    "buffer": {
+      "source": "gpd/results/T-156-buffer-route-census.json (C-0091), its `verdict` block",
+      "namedRoutes": 6,
+      "withdrawn": 1,
+      "transfers": 2,
+      "independentSurvivors": 3,
+      "distinctMechanisms": 2,
+      "everySurvivorFavoursLowSalt": true,
+      "strongestSurvivingAdvantage": 4.96557132,
+      "weakestSurvivingAdvantage": 1.2825845,
+      "strongestAdvantageAtTheOperatingPoint": 1.75104168,
+      "heldForceClauseAdvantageMin": 1.48232118,
+      "heldForceClauseAdvantageMax": 1.57034099,
+      "heldForceClauseModelCount": 6,
+      "overstatementOfTheZeroStrokeReadingMin": 3.1620975,
+      "overstatementOfTheZeroStrokeReadingMax": 3.34986195,
+      "commonMode": true,
+      "commonModeNote": "C-0091: the three surviving advantages are smaller than C-0005's 123-214 % one-loop correction, which is common mode to all of them -- so they do not diversify the exposure and must not be counted as three pieces of evidence.",
+      "headlineTripleProvenance": "C-0091's '1.35, 1.57, 1.75' is 1.3480 (the Q5 re-read, a PROSE string in the census and not a field), 1.57034099 (heldForceClause max) and 1.75104168 (strongestAdvantageAtTheOperatingPoint). Only the last two are greppable."
+    },
+    "tallLayer": {
+      "source": "gpd/results/T-192-device-b-tall-gap.json (C-0110)",
+      "deepestGapDeliveringTheTargetForce": {
+        "0.5": 13.6989179,
+        "1.0": 11.8724439,
+        "2.0": 10.1299463
+      },
+      "ndiBandLow": 17.0,
+      "ndiBandHigh": 26.0,
+      "shortfallAtBandLow": 1.2409739312329189,
+      "shortfallAtBandHigh": 1.8979601301209346,
+      "admittedByLoadLine": {
+        "free": {
+          "admitted": 52,
+          "total": 96
+        },
+        "device-B (k_c = 10 pN/nm)": {
+          "admitted": 1,
+          "total": 96
+        },
+        "device-A (k_c = 33.333 pN/nm)": {
+          "admitted": 0,
+          "total": 96
+        },
+        "dead-load (100 pN)": {
+          "admitted": 0,
+          "total": 96
+        }
+      },
+      "strokeExistsForceDoesNot": true,
+      "strokeExistsNote": "CH-0127: the uncoupled tile reaches a 10 nm stroke at 52 of 96 tall states, so C-0050's escape is real in DISPLACEMENT and empty in FORCE, and no claim had separated the two."
+    }
+  },
+  "ranking": {
+    "asQueued": "spend it on the layer -- the layer buys a whole clause of SS3, the buffer buys 1.35-1.75x inside a 123-214 % error bar",
+    "asMeasured": "spend it on the buffer -- the layer buys NEITHER clause of SS3, and the buffer's gain survives at the state the device occupies",
+    "reversed": true,
+    "whatReversedIt": "C-0110 (T-192), filed in the same iteration this task was written: SS3's 100 pN stops arriving at 13.6989179 nm at 0.5 mM, below the BOTTOM of NDI's own 17-26 nm band, so the tall layer is refused at 96 of 96 states on the acceptable clause and admitted at 1 of 96 on the desired one.",
+    "premiseFalsified": "'the tall layer is the only route to a whole clause of SS3' (C-0050, as read by the T-194 queue row and by DECISIONS-FOR-NDI.md). CH-0127 splits it: the stroke exists and the force does not."
+  },
+  "whatThisProgrammeCannotRank": "The PRICE. Both spends are bought with the same unpriced currency -- origami stabilisation work at low salt -- and this programme has a column for what a spend BUYS and no column at all for what it COSTS. C-0091's lesson, and the lesson NDI's answer to decision 1 already taught: 'it costs nothing' was a statement about the physics standing in for a statement about the cost.",
+  "consequenceForTheReIssuedQuestion": "The re-issued question is no longer 'which of these two do we spend the reserve on'. One of the two claimants has been withdrawn by measurement, so the reserve has ONE claimant and the question becomes whether the buffer's 1.35-1.75x at the operating state is worth the stabilisation work -- which is a price question, i.e. NDI's."
+}

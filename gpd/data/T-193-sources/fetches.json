@@ -1,0 +1,74 @@
+[
+ {
+  "file": "PMC11323936-fullTextXML.xml",
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11323936/fullTextXML",
+  "what": "Adnan, Behjati, Felez-Guerrero, Ojha & Koper, PCCP 26:21419 (2024) \u2014 the E_pzc measurement",
+  "httpStatus": "200",
+  "bytes": "107745",
+  "kept": true
+ },
+ {
+  "file": "PMC13051447-fullTextXML.xml",
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13051447/fullTextXML",
+  "what": "Liu, Doblhoff-Dier & Koper, ACS Electrochem. 2:995 (2026) \u2014 the Au(111)/Au(110) literature statement",
+  "httpStatus": "200",
+  "bytes": "169555",
+  "kept": true
+ },
+ {
+  "file": "PMC12371504-fullTextXML.xml",
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12371504/fullTextXML",
+  "what": "Avedian, Trang & Inkpen, ACS Nanosci. Au 5:269 (2025) \u2014 template-stripped gold is (111)-dominated",
+  "httpStatus": "200",
+  "bytes": "92000",
+  "kept": true
+ },
+ {
+  "file": "PMC12276039-fullTextXML.xml",
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12276039/fullTextXML",
+  "what": "Schalenbach, Tempel & Eichel, ChemPhysChem 26:e202401088 (2025) \u2014 PZC-from-capacitance review",
+  "httpStatus": "200",
+  "bytes": "143158",
+  "kept": true
+ },
+ {
+  "file": "PMC10751779-fullTextXML.xml",
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10751779/fullTextXML",
+  "what": "Tang, Zhao & Huang, JACS Au (2023) \u2014 solvent dependence of the Au(111) PZC (non-aqueous)",
+  "httpStatus": "200",
+  "bytes": "129846",
+  "kept": true
+ },
+ {
+  "file": "PMC11613321-fullTextXML.xml",
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11613321/fullTextXML",
+  "what": "Doblhoff-Dier & Koper, Chem. Rev. (2024) \u2014 double-layer review, consulted, not load-bearing",
+  "httpStatus": "200",
+  "bytes": "966524",
+  "kept": true
+ },
+ {
+  "file": "PMC11804923-fullTextXML.xml",
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11804923/fullTextXML",
+  "what": "Cation effects on CO2 reduction on single-crystal gold \u2014 consulted, not load-bearing",
+  "httpStatus": "200",
+  "bytes": "167098",
+  "kept": true
+ },
+ {
+  "file": null,
+  "url": "https://publications.iupac.org/pac/pdf/1986/pdf/5807x0955.pdf",
+  "what": "Trasatti, Pure Appl. Chem. 58:955 (1986) \u2014 the absolute electrode potential; NOT OBTAINED",
+  "httpStatus": "403",
+  "bytes": "5503",
+  "kept": false
+ },
+ {
+  "file": null,
+  "url": "https://www.degruyterbrill.com/document/doi/10.1351/pac198658070955/pdf",
+  "what": "the same paper from the publisher; NOT OBTAINED",
+  "httpStatus": "202",
+  "bytes": "0",
+  "kept": false
+ }
+]
