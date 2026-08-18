@@ -9,62 +9,61 @@ Status vocabulary: `TODO` · `IN PROGRESS` · `BLOCKED` · `DONE` · `KILLED` (b
 IDs: `T*` are the eight tasks of the problem definition §6, `P*` are process tasks we raised ourselves.
 The `Leaf` column is the NDI `simulation-task-map` ID the work traces to.
 
-## Start here — the state after iteration 24
+## Start here — the state after iteration 26
 
 Written for whoever picks the loop up next. The queue below is the authority; this is only the reading order.
-**Superseding the iteration-21 note, which three iterations have overtaken.**
+**Superseding the iteration-24 note, which four iterations have overtaken — and the four-layer line has
+reversed this programme's largest standing negative.**
 
-**Read these four first, because they move things the rest of the file still assumes.**
+**Read these five first.**
 
-- **THE FLATNESS NEGATIVE IS OVERTURNED, and not by a coupling.** §3's own parameter row says
-  *"Tile thickness ~10 nm (single-layer honeycomb)"*; every structural claim before iteration 23 modelled a
-  **2 nm** tile. On the tile §3 actually specifies — **four** honeycomb layers, which one circular M13 pays
-  for exactly (**6 720** of 7 249 nt) — the free tile dishes **0.0577199433** of the stroke under `C-0022`'s
-  solved collar **with no attachment coupling at all**, inside `T-5b`'s 0.10, against the single layer's
-  **0.307902368** (`C-0109`). `C-0116` then located the threshold the verdict turns on: the crossing is at
-  **`f` = 0.0788618807** and the measured interlayer coupling **0.26–0.33** clears it **monotonically** by
-  **3.29690337×** at its adverse end. **The unspent axis was the BODY, not the coupling** — `C-0098` had
-  genuinely closed the coupling. What survives is a 1.16× statement about a *coupled* four-layer tile under
-  dropout, which is `T-197`.
-- **The tall layer is dead, and it takes NDI's own objection with it.** §3's 100 pN stops arriving across a
-  gap of **13.6989179 nm** at 0.5 mM — *below the bottom* of the 17–26 nm band NDI named — so a tall layer is
-  refused at **96 of 96** states on §3's acceptable clause and admitted at **1 of 96** on the desired one
-  (`C-0110`). It does not trade device A for device B: **it loses both.** It buys the *stroke* (52 of 96
-  uncoupled) and not the *force* (`CH-0127`), and the concession is ours — counterion dominance is about ion
-  **content**, never about the **decay**, and diluting makes NDI's estimate *optimistic*.
-- **So the one reserve has ONE claimant, and the remaining question is a PRICE.** NDI's answers to decisions
-  1 and 2 name the same reserve; the layer half is withdrawn by our own measurement, so what is left is the
-  buffer, worth **1.75104168×** at the operating point on **three** routes that are **common mode** below
-  `C-0005`'s 123–214 % one-loop error. `C-0114`, and `DECISIONS-FOR-NDI.md` now carries a consolidated §1+2.
-  **This programme can rank what two spends BUY and has no column for what they COST.**
-- **The electrode's unresolved quantity was a SIGN, not a magnitude.** `E_pzc(Au(111)) = 0.46–0.51 V vs SHE`,
-  read directly (`C-0111`) — **90–576×** the deciding scale, and an electrode at zero volt on the *rational*
-  scale is negatively charged and **lifts** the tile. What is open is the **cell's** definition of zero, filed
-  as a one-line ask under decision 3.
+1. **THE FLATNESS NEGATIVE IS OVERTURNED, AND THE TILE §3 SPECIFIES IS ONE SOMEBODY HAS ALREADY BUILT.**
+   Every structural claim before iteration 23 modelled a **2 nm** tile; §3 says *"~10 nm"*. On the tile §3
+   actually specifies — **four honeycomb layers**, which one circular M13 pays for exactly — the free tile
+   dishes **0.0577199433** of the stroke **with no coupling at all**, inside `T-5b`'s 0.10, against the single
+   layer's **0.307902368** (`C-0109`). The threshold that verdict turns on is at `f = 0.0788618807` and the
+   measured interlayer coupling clears it **monotonically by 3.29690337×** (`C-0116`). **And the tile is
+   design (i) of the caDNAno paper** — folded, gel-analysed, one of three of seven cross-sections to give
+   sharp monomer bands (`C-0119`).
+2. **ITS OWN SOURCE RECOMMENDS A DIFFERENT CROSS-SECTION, AND ON THIS PROGRAMME'S CRITERION IT IS BETTER.**
+   `10 × 6` — the same 60 helices — is **6.6× flatter** and has **no coupling-fraction threshold at all**,
+   flat even at `f = 0` where the layers do not couple, **so it removes the one unmeasured number the
+   `15 × 4` verdict rests on**. The cost is **two-thirds of the footprint** (38.08 × 25.36 nm against §3's
+   ~40 × 40), over which §3's 100 pN is specified and on which `C-0022`'s collar was **not** solved — a
+   specification trade for NDI, not a free improvement (`C-0120`).
+3. **AND A COUPLED TILE IS NOW FLAT UNDER THE MEASURED FOLDING STATISTICS, FOR THE FIRST TIME.** Of 16 graded
+   cells at `C-0017`'s mandated total under `C-0087`'s dropout, **9 are flat at the 90th percentile** — all
+   eight on `10 × 6`, best **0.0278431488** at the *sparsest* coupling tested. **The cross-section is worth
+   3.17109774× and the distribution has no consistent sign**, so the design order runs tile first, coupling
+   second (`C-0118`). The stations exist: the honeycomb top face supplies **90** on `15 × 4` and **60** on
+   `10 × 6`, and snapping to its real 21 bp ladder keeps every flat cell flat (`C-0122`).
+4. **THE TALL LAYER IS DEAD AND IT TAKES NDI'S OWN OBJECTION WITH IT.** §3's 100 pN stops arriving across a
+   gap of **13.6989179 nm** at 0.5 mM — *below the bottom* of the 17–26 nm band NDI named — so a tall layer
+   is refused at **96 of 96** states on the acceptable clause and admitted at **1 of 96** on the desired one.
+   **It does not trade device A for device B: it loses both** (`C-0110`). So the one reserve NDI can spend
+   once has **one** claimant, the buffer, and the remaining question is a **price** (`C-0114`).
+5. **The electrode's unresolved quantity was a SIGN.** `E_pzc(Au(111)) = 0.46–0.51 V vs SHE`, 90–576× the
+   deciding scale: an electrode at zero volt on the *rational* scale is negatively charged and **lifts** the
+   tile. What is open is the **cell's** definition of zero — a one-line ask, filed under decision 3 (`C-0111`).
 
-**Suggested order.** `T-197` (is a *coupled* four-layer tile flat under the measured dropout? — the only
-remaining piece of the flatness answer, and `C-0089`'s distribution and `C-0093`'s topology axes are worth
-1.3–2.2× on exactly that statistic, neither searched on the thicker tile) then `T-198` (can four honeycomb
-layers be rastered from one circular M13 at a buildable width? — the count fits, the raster rule does not
-transfer, and every plan result in the corpus is single-layer square-lattice). `T-195` may reduce to a
-statement now that `T-191` spends the scaffold remainder as thickness. `T-50` and `T-9` remain the two
-genuinely expensive items and both are named and costed rather than dodged.
+**Suggested order.** `C-0022`'s collar **re-solved at the `10 × 6` aspect ratio** — both `C-0120` and `C-0122`
+name it, it is the load every four-layer number is read under, and it was solved on a 40 nm square. Then the
+**oblique versus perpendicular root** (`C-0122`): half the top-face helices carry only oblique free azimuths
+and this corpus has never priced one. Then `T-195` (the scaffold remainder, now **1 344 nt** on the p8064 this
+cross-section is actually folded from, not 529). `T-50` and `T-9` remain the two genuinely expensive items and
+both are named and costed rather than dodged.
 
-**What is still true from earlier notes.** The buildable tile is **38.08 nm**, not §3's 40.0 (`C-0086`,
-`C-0095`), and it is 12 % flatter. The row-end crossover prestrain now has a derived value, **17.15–24.98°**
-(`C-0107`), with **no** accessible measurement — the one published study of that coordinate excludes exactly
-those sites in a scope clause — and `C-0112` shows the graded field over all 56 crossovers is **flat**
-(0.0922622269) where the 14-site idealisation is not, the 42 interior sites carrying the *larger* half.
-
-**Harness.** Run `tools/verify.sh` for anything authoritative — four post-Gradle gates, ~21 minutes. Four
-retained checkers guard the documents and each has its own self-tests: `tools/trace-answers.py` (now four
-checks, including challenge statuses), `tools/check-markdown-tables.py`, `tools/result-reader-census.py` and
-`tools/reemission-order.py` (ask it before any re-emission sweep — a sweep is a topological **order**, not a
-list). **Reserve claim, challenge AND task numbers in this file before starting parallel agents**; iteration
-23 did and had **zero** collisions after six consecutive iterations of them. **Three concurrent agents, not
-four**: four each running a `verify` and a `study` put this box at load 11.3 with 3 GB free and OOM'd the
-Kotlin daemon despite the documented `-Xmx3g`, because that cure is per **daemon** and the constraint is the
-**product**.
+**Harness.** `tools/verify.sh` for anything authoritative — ~21 minutes, five post-Gradle gates. **Four**
+retained document checkers, each with self-tests wired into `./gradlew test`: `tools/trace-answers.py`
+(numbers, task statuses, challenge statuses, self-consistency), `tools/check-markdown-tables.py`,
+`tools/result-reader-census.py`, and `tools/check-corpus-links.py` (new — 30 broken cross-references were
+found the day it was written). `tools/reemission-order.py` is not a gate but **ask it before any re-emission
+sweep**: a sweep is a topological *order*, not a list. **Reserve claim, challenge and task numbers in this
+file before starting parallel agents.** **Three concurrent agents, not four** — four each running a `verify`
+and a `study` OOM the Kotlin daemon despite the documented `-Xmx3g`, because that cure is per **daemon** and
+the constraint is the **product**. And if a subagent launch fails twice on a transient API error, **do the
+work in the main context** rather than relaunching; iteration 24 lost eight launches and completed all three
+of its tasks that way.
 
 ## Number reservations — iteration 24 (2026-08-18)
 
