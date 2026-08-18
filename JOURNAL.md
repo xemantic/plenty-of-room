@@ -8170,3 +8170,26 @@ long sides see different fringing. That re-solve remains the thorough answer —
 **less** than it looked, since the share it would correct is already covered more than twice over. That is the
 cheap-bound discipline paying in the direction it usually does not: not by settling a question, but by pricing
 the expensive calculation *down* before anyone spends a study on it.
+
+**And the four-layer line ends in a NEW question for NDI, recorded in all three places at once.**
+
+Decisions 1–6 were answered on 2026-08-18 and the work they opened ran four claims further than anyone
+expected. It ends at a tile that is **not** the one §3 describes.
+
+The tile that follows from NDI's own answers is `15 × 4` — 38.08 × 38.04 nm, essentially §3's square, and
+**design (i) of the caDNAno paper**, folded and gel-verified. That paper's own folding measurements recommend
+**`10 × 6`**: the same 60 helices at **38.08 × 25.36 nm**, which is 6.6× flatter, flat at 8 of 8 coupled cells
+rather than 1 of 8, and — the part that matters — has **no coupling-fraction threshold at all**, so it
+*removes* the interlayer-coupling calibration from the flatness verdict rather than clearing it by 3.3×.
+
+It costs **a third of the footprint**, over which §3's 100 pN is specified. `C-0123` establishes that the
+collar transfer is not the obstruction. **So both of this programme's criteria point the same way and the cost
+is a specification — we can rank what the two tiles BUY and not what the smaller one COSTS**, which is the
+same column NDI's answer to decision 1 already taught us we do not have.
+
+**It is filed as §7 of `DECISIONS-FOR-NDI.md`, item 12 of `TASKS.md`'s register, and the seventh row of
+`ANSWERS.md` §5 — all in the same hour.** That is deliberate. The last time this set gained a member, `T-166`
+lived in the decision file and **never** in the register, and six answers came back to a list of five. An
+addition is invisible to whoever files it in exactly the way `C-0071` found a discharge to be.
+
+**And it is the first question this programme has raised against its own recommendation.**

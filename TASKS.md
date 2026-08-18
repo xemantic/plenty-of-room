@@ -880,3 +880,24 @@ The question asked whether a second **body** may be tied to the tile at many out
 answered is that the **tile itself** may be thicker, which is the stronger permission — `C-0093`'s shared
 stiff body **fused** to the tile rather than tied to it, which deletes the ties and their compliance.
 Recorded as **inferred**, and it is the one answer worth confirming in a sentence. `T-191`.
+
+**12. Is a 38 × 25 nm tile acceptable, in exchange for removing the last unmeasured dependency in the
+flatness verdict?**
+**RAISED, iteration 26 — the seventh decision, and the first this programme has raised against its own
+recommendation.** It is `T-199`/`C-0120`, and it is in [`DECISIONS-FOR-NDI.md`](DECISIONS-FOR-NDI.md) as §7.
+**It is recorded here at the same time as there**, which is the whole point: item 11 exists because the
+six-question set gained a member the register never learned about, and `C-0071`'s standing finding is that
+*a discharge is invisible to whoever files the removal* — an **addition** is invisible the same way.
+
+The tile that follows from NDI's own answers is `15 × 4` — four honeycomb layers of fifteen rows, 38.08 ×
+38.04 nm, essentially §3's square, and **design (i) of the caDNAno paper**, folded and gel-verified. That
+paper's own folding measurements recommend **`10 × 6`** instead: the same 60 helices, **38.08 × 25.36 nm**.
+On this programme's criterion `10 × 6` is **6.6× flatter**, its coupled cells are flat at **8 of 8** rather
+than 1 of 8, and — the part that matters — **it has no coupling-fraction threshold at all**, so it *removes*
+the interlayer-coupling calibration from the flatness verdict rather than clearing it by 3.3×. It costs
+**a third of the footprint**, over which §3's 100 pN is specified.
+
+**Both criteria point the same way and the cost is a specification**, so this programme can rank what the two
+tiles **buy** and cannot rank what the smaller one **costs** — the same column NDI's answer to decision 1
+already taught us we do not have. `C-0123` shows the collar transfer is not the obstruction (bounded at
+1.32×, flatness surviving 2.27× beyond it).

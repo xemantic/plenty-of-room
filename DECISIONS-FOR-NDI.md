@@ -92,6 +92,14 @@ and **what it costs to leave it open** — which is the part that is easy to mis
 **A one-sentence answer is enough for all six.**
 None needs a document; three of them need a single word.
 
+**UPDATED, iteration 26 — there is now a SEVENTH, and it is the only one this programme raised against its
+own recommendation.** Decisions 1–6 were answered on 2026-08-18 and the work they opened ran four claims
+further than anyone expected. It ends at a tile that is **not** the one §3 describes: `10 × 6` is 6.6× flatter
+than the four-layer tile now recommended, has **no** coupling-fraction threshold at all — so it removes the
+last unmeasured dependency in the flatness verdict rather than bounding it — and is what the caDNAno paper's
+own folding measurements recommend. It costs **a third of the footprint**. That is §7, and a one-sentence
+answer is enough for it too.
+
 **Nothing here is measured.** Every number is TRL 1–3:
 model-consistent and traceable to a claim, never empirically demonstrated.
 
@@ -105,6 +113,7 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 | 4 | Which device does §3's *desired* clause ask for? | `T-112` | Every desired-stroke number in the corpus has to be quoted twice | **One device, placed at the acceptable clause** | **TWO DEVICES.** Device B is placed at 10 pN/nm and its binding constraint becomes `C-0017`'s stability floor |
 | 5 | What is the scaffold — linear or circular, M13 or synthetic, and how long? | `T-154` | A seam costs 6–12 of 34 arm stations, and §3's 40.0 nm is not a buildable seamless width | **A purpose-length scaffold**; the choice is a fabrication decision, not a modelling one | **CIRCULAR M13, ~7–8 k nt** — so the remainder is the DEFAULT — and the remedy for the excess is *"just make the tile thicker"* |
 | 6 | Does §3 admit a **two-layer** tile, or is single-layer a requirement? | `T-166` | The only coupling topology that narrows the flatness negative is multilayer, and it is the one motif here with a published precedent | **A yes/no is enough**; a *no* closes the last open recovery route | **YES, BY IMPLICATION**, and volunteered rather than granted. Reopens the body axis (`T-191`), not the coupling axis |
+| **7** | **NEW — is a 38 × 25 nm tile acceptable, in exchange for removing the last unmeasured dependency?** | `T-199` | Carrying the interlayer-coupling calibration as a live dependency on the flatness verdict, and the coupled result at 1 of 8 cells rather than 8 of 8 | **`10 × 6` on both flatness and published folding yield — but the footprint is a specification and only NDI holds that column** | *raised iteration 26; awaiting* |
 
 ---
 
@@ -613,6 +622,58 @@ yield.
 **What deferring costs.** Less than it did, because the axis is spent. The flatness answer stays *"flat as
 designed, not shown flat as built"*, and what would move it is the per-site incorporation measurement in
 [`ANSWERS.md`](ANSWERS.md) §5 — a bench measurement — rather than another coupling design.
+
+---
+
+## 7. NEW — is a 38 × 25 nm tile acceptable, in exchange for removing the last unmeasured dependency? (`T-199`)
+
+> **This decision did not exist when the other six were sent.** It is the consequence of NDI's own answer to
+> decision 5 — *"just make the tile thicker"* — followed four claims further than anyone expected, and it is
+> the only question on this list where **this programme has a recommendation it is not confident enough to
+> act on alone.**
+
+**The question.** §3 specifies a ~40 × 40 nm tile. The tile that follows from NDI's own answers is **four
+honeycomb layers of fifteen duplex rows** — 38.08 × 38.04 nm, essentially §3's, and it is **design (i) of the
+caDNAno paper**, folded and gel-verified. That paper's own conclusion is that a **different** cross-section of
+the same 60 helices folds better: **`10 × 6`**, ten raster rows of six helices, which is **38.08 × 25.36 nm**.
+
+**What each buys, in this programme's numbers.**
+
+| | `15 × 4` — essentially §3's tile | `10 × 6` — the paper's recommendation |
+|---|---|---|
+| footprint | 38.08 × 38.04 nm | **38.08 × 25.36 nm — 0.667 of it** |
+| folding, measured by Douglas et al. | sharp monomer band, 1 of 3 of seven | **the greatest fraction of defect-free objects** |
+| free tile, uncoupled | 0.0577199433 of the stroke | **0.00874363524 — 6.6× flatter** |
+| flatness threshold in the interlayer coupling | `f` = 0.0788618807, cleared **3.29690337×** | **none — flat at every `f` including 0** |
+| coupled, under the measured staple dropout | 1 of 8 cells flat at the 90th percentile | **8 of 8**, best 0.0278431488 |
+| attachment stations its top face supplies | 90 | 60 |
+
+**Why the third row is not the important one.** `10 × 6` being flatter is a convenience. **`10 × 6` having no
+threshold at all is a different kind of statement**: the `15 × 4` verdict depends on an interlayer-coupling
+fraction calibrated on **rods** rather than slabs, and this programme has said plainly that a slab plausibly
+realises less. On `10 × 6` that question **stops being load-bearing** — it is flat even with the layers fully
+uncoupled. It is the only place in this programme where a design choice **removes** an unmeasured dependency
+rather than bounding one.
+
+**What it costs.** A third of the area. §3's 100 pN is specified **over the footprint**, so a smaller tile is a
+higher pressure at the same force; `C-0022`'s edge collar was solved on the square, and its transfer to the new
+aspect ratio is bounded at **1.32×** with the flatness surviving **2.27×** beyond that (`C-0123`) — so the
+collar is not the obstruction. And the top face offers **60** attachment stations rather than 90, which is
+ample for the ten the flattest coupling needs but is the axis on which a denser coupling would run out.
+
+**What this programme recommends, and how far.** On flatness and on published folding yield, **`10 × 6`**.
+Both criteria point the same way, which was not expected and is why a falsifier was declared against it. **But
+the footprint is a specification, not a result** — it changes the actuation force per unit area, the electrode
+area, and anything downstream that assumed a ~40 nm square. **We can rank what the two tiles BUY and we cannot
+rank what the smaller one COSTS you**, which is the same column this programme has never had and the same
+distinction NDI's answer to decision 1 already taught us.
+
+**What deferring costs.** Little, and this is worth saying: the four-layer result stands either way, and
+`15 × 4` is a buildable, published, gel-verified cross-section that is flat as designed. Deferring means
+carrying the interlayer-coupling calibration as a live dependency on the flatness verdict, and carrying the
+coupled-flatness result at 1 of 8 cells rather than 8 of 8.
+
+**And if this costs something, what?** — the line decision 1 taught us to leave open.
 
 ---
 
