@@ -2,7 +2,7 @@
     "task": "T-152",
     "leaf": "A8.2",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm, 0.34 nm rise, crossover phase 24; C-0063's 34 upward roots at a 32 bp = 10.88 nm pitch; C-0017's 33.3333 pN/nm as a SUM, so 0.980392 pN/nm per path at 3 nm; EI = 230 pN nm^2, S = 1100 pN, k_theta = 13.5294 pN nm/rad, A2 = 78.2353; the blunt-end stack -2.63 kcal/mol per helix at 1xTAE + 12.5 mM Mg2+, 22 C (Woo & Rothemund), TRANSFERRED to 2 mM and 300 K and NOT re-measured",
-    "decision": "The collinear clearance should be 6 base pairs = 2.04 nm, and the design as built carries 8 — so the Q5 margin is 2 WHOLE RISES (0.6756091733686969 nm, 26.381529916716644x the published 0.02561) and it is an integer rather than a residue. The joint window opens 1.2574915915807825x in c and BOTH of Q5's joints gain real margin (tip 1.70878479537323x, root 1.8987522597874527x, against 1.018x and 1.030x). Nothing in the placement moves adversely.",
+    "decision": "The collinear clearance should be 6 base pairs = 2.04 nm, and the design as built carries 8 — so the Q5 margin is 2 WHOLE RISES (0.6756091733686986 nm, 26.381529916714886x the published 0.02561) and it is an integer rather than a residue. The joint window opens 1.2574915915807825x in c and BOTH of Q5's joints gain real margin (tip 1.70878479537323x, root 1.8987522597874527x, against 1.018x and 1.030x). Nothing in the placement moves adversely.",
     "bounds": [
         {
             "name": "the standing allowance read on the base-pair lattice",
@@ -436,7 +436,7 @@
             "source": "C-0069/C-0066/C-0072",
             "published": 0.02560917,
             "reproduced": 0.0256091734,
-            "departure": 1.31542658E-7
+            "departure": 1.31542727E-7
         },
         {
             "quantity": "C-0069's end-factor ceiling",
@@ -554,7 +554,7 @@
             "id": "P2",
             "statement": "the Q5 margin is re-read at it",
             "met": true,
-            "evidence": "0.6756091733686969 nm against the published 0.02560917336869828 — 26.381529916716644x — and on the lattice it is 2 whole rises"
+            "evidence": "0.6756091733686986 nm against the published 0.025609173368700056 — 26.381529916714886x — and on the lattice it is 2 whole rises"
         },
         {
             "id": "P3",
@@ -592,7 +592,7 @@
             "id": "F2",
             "falsifier": "the recommended clearance leaves the margin at or below zero",
             "fired": false,
-            "outcome": "0.6756091733686969 nm, 2 whole rises"
+            "outcome": "0.6756091733686986 nm, 2 whole rises"
         },
         {
             "id": "F3",

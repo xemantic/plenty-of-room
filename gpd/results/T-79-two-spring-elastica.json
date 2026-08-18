@@ -223,7 +223,7 @@
             "farRestraint": 0.0,
             "vanishingLoadFactor": 2.22422137,
             "secantAtAcceptable": 33.3333333,
-            "tangentAtAcceptable": 40.4465365,
+            "tangentAtAcceptable": 40.4465366,
             "tangentToSecantAtAcceptable": 1.2133961,
             "reachesDesiredStroke": false,
             "secantAtDesired": -1.0,
@@ -575,17 +575,17 @@
             "secantAtAcceptable": 33.3333333,
             "tangentAtAcceptable": 37.6891757,
             "tangentToSecantAtAcceptable": 1.13067527,
-            "reachesDesiredStroke": false,
-            "secantAtDesired": -1.0,
-            "tangentAtDesired": -1.0,
-            "nearRotationDesiredDegrees": -1.0,
-            "farRotationDesiredDegrees": -1.0,
+            "reachesDesiredStroke": true,
+            "secantAtDesired": 263.687031,
+            "tangentAtDesired": 8147.38354,
+            "nearRotationDesiredDegrees": 66.2891694,
+            "farRotationDesiredDegrees": 58.2054679,
             "drawInAtAcceptable": 0.456908086,
-            "drawInAtDesired": -1.0,
+            "drawInAtDesired": 8.36952853,
             "usableStrokeInsideCeiling": 3.43068012,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "FAILS the desired stroke: the arm folds before reaching it"
+            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
         },
         {
             "anchorageId": "A2",
@@ -600,17 +600,17 @@
             "secantAtAcceptable": 33.3333333,
             "tangentAtAcceptable": 37.3336752,
             "tangentToSecantAtAcceptable": 1.12001026,
-            "reachesDesiredStroke": false,
-            "secantAtDesired": -1.0,
-            "tangentAtDesired": -1.0,
-            "nearRotationDesiredDegrees": -1.0,
-            "farRotationDesiredDegrees": -1.0,
+            "reachesDesiredStroke": true,
+            "secantAtDesired": 134.312278,
+            "tangentAtDesired": 1480.59159,
+            "nearRotationDesiredDegrees": 53.0058884,
+            "farRotationDesiredDegrees": 50.0809372,
             "drawInAtAcceptable": 0.438090764,
-            "drawInAtDesired": -1.0,
+            "drawInAtDesired": 7.19915255,
             "usableStrokeInsideCeiling": 3.53340264,
             "insideCeilingAtAcceptable": true,
             "insideCeilingAtDesired": false,
-            "verdict": "FAILS the desired stroke: the arm folds before reaching it"
+            "verdict": "places, but past the 40 pN/nm ceiling at the desired stroke"
         },
         {
             "anchorageId": "A2",
@@ -1388,7 +1388,7 @@
             "farStiffness": 0.0,
             "armLength": 9.13882567,
             "armCeiling": 10.0860253,
-            "tangentAtAcceptable": 40.4465365,
+            "tangentAtAcceptable": 40.4465366,
             "usableStrokeInsideCeiling": 2.94509475,
             "reachesDesiredStroke": false,
             "clearsDesiredStrokeInsideCeiling": false
@@ -1579,7 +1579,7 @@
             "control": "RK4 steps",
             "level": 100.0,
             "value": 17.0591546,
-            "departureFromFinest": 1.14569378E-8
+            "departureFromFinest": 1.14569265E-8
         },
         {
             "quantity": "the tip force at the desired stroke on a 12.5 nm arm",
@@ -1614,14 +1614,14 @@
             "control": "RK4 steps",
             "level": 100.0,
             "value": 312.101588,
-            "departureFromFinest": 4.20114241E-8
+            "departureFromFinest": 4.20124484E-8
         },
         {
             "quantity": "the assembled tangent at the desired stroke",
             "control": "RK4 steps",
             "level": 200.0,
             "value": 312.101576,
-            "departureFromFinest": 2.6188467E-9
+            "departureFromFinest": 2.61449262E-9
         },
         {
             "quantity": "the assembled tangent at the desired stroke",

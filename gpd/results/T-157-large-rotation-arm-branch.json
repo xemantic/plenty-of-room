@@ -26,7 +26,7 @@
     ],
     "parameters": {
         "bendingRigidity": "230.0 pN nm^2 (CanDo model input, not a measurement)",
-        "contour": "8.164390826631303 nm",
+        "contour": "8.164390826631301 nm",
         "rootStiffness": "13.529411764705882 pN nm/rad",
         "tipStiffness": "78.23529411764706 pN nm/rad",
         "pathCount": "34",
@@ -49,11 +49,11 @@
     ],
     "contourBound": {
         "statement": "delta = integral of sin phi over [0, L] <= L, with equality only if phi is identically pi/2, which the near-end condition EI phi'(0) = k_n phi(0) forbids for any finite k_n > 0. So delta < L STRICTLY, on every branch, at every tip force, at every rotation",
-        "contour": "8.164390826631303 nm",
-        "C-0084's ceiling": "7.9096867493173955 nm (paths), 7.919686749317395 nm (refusal)",
+        "contour": "8.164390826631301 nm",
+        "C-0084's ceiling": "7.909686749317394 nm (paths), 7.9196867493173935 nm (refusal)",
         "the open window it leaves": "0.24470407731390775 nm",
-        "the window this task closes": "0.24139539488122086 nm",
-        "the window still open": "0.0033086824326868935 nm",
+        "the window this task closes": "0.24139539488122264 nm",
+        "the window still open": "0.003308682432685117 nm",
         "cost": "zero - it is a bound on an integral of a bounded function"
     },
     "enumeration": [
@@ -1194,7 +1194,7 @@
             "setting": "0.002",
             "quantity": "the deepest stroke the branch reaches [nm]",
             "value": 8.16108212,
-            "departureFromFinest": 2.77059173E-4
+            "departureFromFinest": 2.77059636E-4
         },
         {
             "axis": "continuation step [rad]",
@@ -1271,7 +1271,7 @@
         "The load line is the tile MEAN under a uniform load; a real 34-attachment coupling dishes the tile (C-0063, C-0068)"
     ],
     "openQuestions": [
-        "The last 0.0033086824326868935 nm below the contour, which the integrator cannot resolve at this step count. The contour bound says no equilibrium exists AT or above the contour; it does not by itself exclude a fold inside that sliver",
+        "The last 0.003308682432685117 nm below the contour, which the integrator cannot resolve at this step count. The contour bound says no equilibrium exists AT or above the contour; it does not by itself exclude a fold inside that sliver",
         "The disconnected curled branches are enumerated and are NOT priced: they are not reachable by quasi-static loading from the unloaded state, and whether a dynamic bias step could reach one is a question this static treatment cannot answer",
         "C-0033's collar at the extended fold gaps, which is one evaluation per state and is not done here",
         "Whether C-0084's other 96 states move. Only the 12 of the recommended device are re-run"

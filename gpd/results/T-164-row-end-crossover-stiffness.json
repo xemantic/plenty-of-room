@@ -1,0 +1,852 @@
+{
+    "task": "T-164 — how stiff is a ROW-END crossover?",
+    "leaf": "A8.2",
+    "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm, 0.34 nm rise, 32/3 bp per turn, 16 bp column pitch, 32 bp per-interface spacing; along-helix width 38.08 nm (112 bp, C-0086) at crossover phase 8; C-0090's buildable 24-rise 8.16 nm arm at C-0055's 34 roots; C-0017's 33.3333 pN/nm mandate shared equally; C-0022's solved collar at 2 mM, a 10 nm gap and 0.192 V, AS C-0090 CARRIED IT; C-0001's foundation secant",
+    "decision": "the 38.08 nm tile is flat at T-5b's 0.10 at EVERY row-end dihedral stiffness from zero to an interior crossover's, best 34-root dishing 0.06517538540278571 to 0.062146910466135304 of the stroke; CH-0111's bracket is not reachable because its lower end deletes a covalent constraint and a mesh node as well as a spring",
+    "cheapBounds": [
+        {
+            "name": "strand termini at a duplex end",
+            "statement": "C-0029's counting theorem: a duplex END has exactly two strand termini, and no force field can add a third",
+            "value": 2.0,
+            "unit": "count",
+            "owner": "C-0029",
+            "derivedHere": false
+        },
+        {
+            "name": "phosphate bonds of an interior crossover",
+            "statement": "Chen et al. put k2 = alpha B/(100 a) on ONE crossover phosphate bond and an antiparallel crossover carries two of them in parallel",
+            "value": 2.0,
+            "unit": "count",
+            "owner": "Chen et al. 2014, SI S2",
+            "derivedHere": false
+        },
+        {
+            "name": "k_theta of an interior crossover",
+            "statement": "2 alpha B/(100 a) at alpha = 1",
+            "value": 13.5294118,
+            "unit": "pN nm/rad",
+            "owner": "C-0009 / Gen1Tile",
+            "derivedHere": false
+        },
+        {
+            "name": "k_theta of a single-strand row-end turn",
+            "statement": "the other integer rung of the same ladder",
+            "value": 6.76470588,
+            "unit": "pN nm/rad",
+            "owner": "T-164",
+            "derivedHere": true
+        },
+        {
+            "name": "CEILING on the row-end softening s",
+            "statement": "a row-end crossover cannot carry MORE bonds than an interior one, so s <= 1 exactly — a ratio of two counts, in which alpha and every elastic constant cancels",
+            "value": 1.0,
+            "unit": "dimensionless",
+            "owner": "T-164",
+            "derivedHere": true
+        },
+        {
+            "name": "the counting FLOOR of the same ladder",
+            "statement": "a single-strand turn, which is the only other integer state a bond census admits",
+            "value": 0.5,
+            "unit": "dimensionless",
+            "owner": "T-164",
+            "derivedHere": true
+        },
+        {
+            "name": "the vertical link factor of a crossover that EXISTS",
+            "statement": "a crossover is TWO elements and only one of them is elastic; the link is a CONSTRAINT expressing covalent continuity across the interface, and Rothemund's own remedy adds slack to the torsion, not to the connectivity",
+            "value": 1.0,
+            "unit": "dimensionless",
+            "owner": "C-0009 / C-0095",
+            "derivedHere": true
+        }
+    ],
+    "sweep": [
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softening": 0.0,
+            "hingeStiffness": 0.0,
+            "linkFactor": 1.0,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0651753854,
+            "worstDishingOverStroke": 0.914216405,
+            "medianDishingOverStroke": 0.350931333,
+            "freeDishingOverStroke": 0.314026489,
+            "uniformLoadDishingOverStroke": 1.54174481E-7,
+            "publishedPlacementDishing": 0.0660509839,
+            "publishedPlacementPenalty": 8.755985E-4,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,16320000;2:0,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-16320000,-5440000,5440000;6:0,10880000;7:-16320000,16320000;8:-10880000,0;9:-5440000,5440000,16320000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,0;13:-16320000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": false
+        },
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softening": 0.125,
+            "hingeStiffness": 1.69117647,
+            "linkFactor": 1.0,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.065113784,
+            "worstDishingOverStroke": 0.913420806,
+            "medianDishingOverStroke": 0.349244118,
+            "freeDishingOverStroke": 0.310682714,
+            "uniformLoadDishingOverStroke": 1.96810606E-7,
+            "publishedPlacementDishing": 0.065113784,
+            "publishedPlacementPenalty": 0.0,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": true
+        },
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softening": 0.25,
+            "hingeStiffness": 3.38235294,
+            "linkFactor": 1.0,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0644132595,
+            "worstDishingOverStroke": 0.913367328,
+            "medianDishingOverStroke": 0.347885501,
+            "freeDishingOverStroke": 0.308016544,
+            "uniformLoadDishingOverStroke": 1.89821753E-7,
+            "publishedPlacementDishing": 0.0644132595,
+            "publishedPlacementPenalty": 0.0,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": true
+        },
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softening": 0.375,
+            "hingeStiffness": 5.07352941,
+            "linkFactor": 1.0,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0638503242,
+            "worstDishingOverStroke": 0.913328535,
+            "medianDishingOverStroke": 0.346750717,
+            "freeDishingOverStroke": 0.305838716,
+            "uniformLoadDishingOverStroke": 1.84207376E-7,
+            "publishedPlacementDishing": 0.0638503242,
+            "publishedPlacementPenalty": 0.0,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": true
+        },
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softening": 0.5,
+            "hingeStiffness": 6.76470588,
+            "linkFactor": 1.0,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0633880137,
+            "worstDishingOverStroke": 0.913299054,
+            "medianDishingOverStroke": 0.345846081,
+            "freeDishingOverStroke": 0.304025073,
+            "uniformLoadDishingOverStroke": 2.29077862E-7,
+            "publishedPlacementDishing": 0.0633880137,
+            "publishedPlacementPenalty": 0.0,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": true
+        },
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softening": 0.625,
+            "hingeStiffness": 8.45588235,
+            "linkFactor": 1.0,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.063001473,
+            "worstDishingOverStroke": 0.91327571,
+            "medianDishingOverStroke": 0.345123192,
+            "freeDishingOverStroke": 0.302490504,
+            "uniformLoadDishingOverStroke": 1.56970501E-7,
+            "publishedPlacementDishing": 0.063001473,
+            "publishedPlacementPenalty": 0.0,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": true
+        },
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softening": 0.75,
+            "hingeStiffness": 10.1470588,
+            "linkFactor": 1.0,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0626735024,
+            "worstDishingOverStroke": 0.913256715,
+            "medianDishingOverStroke": 0.344496272,
+            "freeDishingOverStroke": 0.301174822,
+            "uniformLoadDishingOverStroke": 2.03887819E-7,
+            "publishedPlacementDishing": 0.0626735024,
+            "publishedPlacementPenalty": 0.0,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": true
+        },
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softening": 0.875,
+            "hingeStiffness": 11.8382353,
+            "linkFactor": 1.0,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0623916969,
+            "worstDishingOverStroke": 0.913240762,
+            "medianDishingOverStroke": 0.343945389,
+            "freeDishingOverStroke": 0.300033856,
+            "uniformLoadDishingOverStroke": 2.00162848E-7,
+            "publishedPlacementDishing": 0.0623916969,
+            "publishedPlacementPenalty": 0.0,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": true
+        },
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softening": 1.0,
+            "hingeStiffness": 13.5294118,
+            "linkFactor": 1.0,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0621469105,
+            "worstDishingOverStroke": 0.913227076,
+            "medianDishingOverStroke": 0.343483622,
+            "freeDishingOverStroke": 0.299034765,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "publishedPlacementDishing": 0.0621469105,
+            "publishedPlacementPenalty": 0.0,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": true
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softening": 0.0,
+            "hingeStiffness": 0.0,
+            "linkFactor": 0.0,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.168640591,
+            "worstDishingOverStroke": 1.01389099,
+            "medianDishingOverStroke": 0.490772097,
+            "freeDishingOverStroke": 0.307661857,
+            "uniformLoadDishingOverStroke": 2.31402842E-7,
+            "publishedPlacementDishing": 0.256628835,
+            "publishedPlacementPenalty": 0.0879882439,
+            "flatAtTenPercent": false,
+            "publishedPlacementFlatAtTenPercent": false,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,-5440000,16320000;2:-10880000,0;3:-16320000,16320000;4:-10880000,0;5:-16320000,16320000;6:0,10880000;7:-16320000,16320000;8:-10880000,0;9:-16320000,16320000;10:0,10880000;11:-16320000,16320000;12:0,10880000;13:-16320000,5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": false
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softening": 0.125,
+            "hingeStiffness": 1.69117647,
+            "linkFactor": 0.125,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0651072886,
+            "worstDishingOverStroke": 0.913448834,
+            "medianDishingOverStroke": 0.349248809,
+            "freeDishingOverStroke": 0.310680718,
+            "uniformLoadDishingOverStroke": 1.80636009E-7,
+            "publishedPlacementDishing": 0.0651243992,
+            "publishedPlacementPenalty": 1.71105888E-5,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,16320000;2:0,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-16320000,-5440000,5440000;6:0,10880000;7:-16320000,16320000;8:-10880000,0;9:-5440000,5440000,16320000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,0;13:-16320000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": false
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softening": 0.25,
+            "hingeStiffness": 3.38235294,
+            "linkFactor": 0.25,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0644107011,
+            "worstDishingOverStroke": 0.913379321,
+            "medianDishingOverStroke": 0.347881149,
+            "freeDishingOverStroke": 0.308015686,
+            "uniformLoadDishingOverStroke": 1.9785476E-7,
+            "publishedPlacementDishing": 0.0644107011,
+            "publishedPlacementPenalty": 0.0,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": true
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softening": 0.375,
+            "hingeStiffness": 5.07352941,
+            "linkFactor": 0.375,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0638489184,
+            "worstDishingOverStroke": 0.913335185,
+            "medianDishingOverStroke": 0.346751536,
+            "freeDishingOverStroke": 0.305838245,
+            "uniformLoadDishingOverStroke": 2.05614133E-7,
+            "publishedPlacementDishing": 0.0638489184,
+            "publishedPlacementPenalty": 0.0,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": true
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softening": 0.5,
+            "hingeStiffness": 6.76470588,
+            "linkFactor": 0.5,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0633871783,
+            "worstDishingOverStroke": 0.913303081,
+            "medianDishingOverStroke": 0.34584603,
+            "freeDishingOverStroke": 0.304024825,
+            "uniformLoadDishingOverStroke": 1.89166488E-7,
+            "publishedPlacementDishing": 0.0633871783,
+            "publishedPlacementPenalty": 0.0,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": true
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softening": 0.625,
+            "hingeStiffness": 8.45588235,
+            "linkFactor": 0.625,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0630009819,
+            "worstDishingOverStroke": 0.913278116,
+            "medianDishingOverStroke": 0.34512323,
+            "freeDishingOverStroke": 0.302490339,
+            "uniformLoadDishingOverStroke": 2.13399602E-7,
+            "publishedPlacementDishing": 0.0630009819,
+            "publishedPlacementPenalty": 0.0,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": true
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softening": 0.75,
+            "hingeStiffness": 10.1470588,
+            "linkFactor": 0.75,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0626732229,
+            "worstDishingOverStroke": 0.913257985,
+            "medianDishingOverStroke": 0.344496094,
+            "freeDishingOverStroke": 0.30117464,
+            "uniformLoadDishingOverStroke": 1.50391635E-7,
+            "publishedPlacementDishing": 0.0626732229,
+            "publishedPlacementPenalty": 0.0,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": true
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softening": 0.875,
+            "hingeStiffness": 11.8382353,
+            "linkFactor": 0.875,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0623915726,
+            "worstDishingOverStroke": 0.913241269,
+            "medianDishingOverStroke": 0.343946045,
+            "freeDishingOverStroke": 0.300033744,
+            "uniformLoadDishingOverStroke": 1.72202369E-7,
+            "publishedPlacementDishing": 0.0623915726,
+            "publishedPlacementPenalty": 0.0,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": true
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softening": 1.0,
+            "hingeStiffness": 13.5294118,
+            "linkFactor": 1.0,
+            "columns": 8,
+            "crossovers": 56,
+            "softenedCrossovers": 14,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0621469105,
+            "worstDishingOverStroke": 0.913227076,
+            "medianDishingOverStroke": 0.343483622,
+            "freeDishingOverStroke": 0.299034765,
+            "uniformLoadDishingOverStroke": 2.12606493E-7,
+            "publishedPlacementDishing": 0.0621469105,
+            "publishedPlacementPenalty": 0.0,
+            "flatAtTenPercent": true,
+            "publishedPlacementFlatAtTenPercent": true,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "bestKeyIsFullStiffnessOptimum": true
+        }
+    ],
+    "monotonicity": [
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softeningLow": 0.0,
+            "softeningHigh": 0.125,
+            "dishingAtLow": 0.0651753854,
+            "dishingAtHigh": 0.065113784,
+            "difference": -6.16013919E-5,
+            "decreasingInStiffness": true
+        },
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softeningLow": 0.125,
+            "softeningHigh": 0.25,
+            "dishingAtLow": 0.065113784,
+            "dishingAtHigh": 0.0644132595,
+            "difference": -7.00524558E-4,
+            "decreasingInStiffness": true
+        },
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softeningLow": 0.25,
+            "softeningHigh": 0.375,
+            "dishingAtLow": 0.0644132595,
+            "dishingAtHigh": 0.0638503242,
+            "difference": -5.62935263E-4,
+            "decreasingInStiffness": true
+        },
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softeningLow": 0.375,
+            "softeningHigh": 0.5,
+            "dishingAtLow": 0.0638503242,
+            "dishingAtHigh": 0.0633880137,
+            "difference": -4.6231047E-4,
+            "decreasingInStiffness": true
+        },
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softeningLow": 0.5,
+            "softeningHigh": 0.625,
+            "dishingAtLow": 0.0633880137,
+            "dishingAtHigh": 0.063001473,
+            "difference": -3.86540755E-4,
+            "decreasingInStiffness": true
+        },
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softeningLow": 0.625,
+            "softeningHigh": 0.75,
+            "dishingAtLow": 0.063001473,
+            "dishingAtHigh": 0.0626735024,
+            "difference": -3.27970528E-4,
+            "decreasingInStiffness": true
+        },
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softeningLow": 0.75,
+            "softeningHigh": 0.875,
+            "dishingAtLow": 0.0626735024,
+            "dishingAtHigh": 0.0623916969,
+            "difference": -2.81805553E-4,
+            "decreasingInStiffness": true
+        },
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "softeningLow": 0.875,
+            "softeningHigh": 1.0,
+            "dishingAtLow": 0.0623916969,
+            "dishingAtHigh": 0.0621469105,
+            "difference": -2.44786417E-4,
+            "decreasingInStiffness": true
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softeningLow": 0.0,
+            "softeningHigh": 0.125,
+            "dishingAtLow": 0.168640591,
+            "dishingAtHigh": 0.0651072886,
+            "difference": -0.103533302,
+            "decreasingInStiffness": true
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softeningLow": 0.125,
+            "softeningHigh": 0.25,
+            "dishingAtLow": 0.0651072886,
+            "dishingAtHigh": 0.0644107011,
+            "difference": -6.96587554E-4,
+            "decreasingInStiffness": true
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softeningLow": 0.25,
+            "softeningHigh": 0.375,
+            "dishingAtLow": 0.0644107011,
+            "dishingAtHigh": 0.0638489184,
+            "difference": -5.61782639E-4,
+            "decreasingInStiffness": true
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softeningLow": 0.375,
+            "softeningHigh": 0.5,
+            "dishingAtLow": 0.0638489184,
+            "dishingAtHigh": 0.0633871783,
+            "difference": -4.61740147E-4,
+            "decreasingInStiffness": true
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softeningLow": 0.5,
+            "softeningHigh": 0.625,
+            "dishingAtLow": 0.0633871783,
+            "dishingAtHigh": 0.0630009819,
+            "difference": -3.86196354E-4,
+            "decreasingInStiffness": true
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softeningLow": 0.625,
+            "softeningHigh": 0.75,
+            "dishingAtLow": 0.0630009819,
+            "dishingAtHigh": 0.0626732229,
+            "difference": -3.27759049E-4,
+            "decreasingInStiffness": true
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softeningLow": 0.75,
+            "softeningHigh": 0.875,
+            "dishingAtLow": 0.0626732229,
+            "dishingAtHigh": 0.0623915726,
+            "difference": -2.81650326E-4,
+            "decreasingInStiffness": true
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "softeningLow": 0.875,
+            "softeningHigh": 1.0,
+            "dishingAtLow": 0.0623915726,
+            "dishingAtHigh": 0.0621469105,
+            "difference": -2.44662104E-4,
+            "decreasingInStiffness": true
+        }
+    ],
+    "crossings": [
+        {
+            "channel": "A — the dihedral spring alone, the vertical link retained",
+            "target": 0.1,
+            "crossingExists": false,
+            "softeningBelow": -1.0,
+            "softeningAbove": -1.0,
+            "dishingBelow": 0.0651753854,
+            "dishingAbove": 0.0621469105,
+            "bracketWidth": -1.0,
+            "evaluations": 0,
+            "aboveCountingFloor": false,
+            "note": "the whole reachable range lies on one side of T-5b's 0.10, so there is no crossing to bisect: the verdict does not change inside it"
+        },
+        {
+            "channel": "B — both elements, which is C-0090's refused reading in the limit",
+            "target": 0.1,
+            "crossingExists": true,
+            "softeningBelow": 0.0,
+            "softeningAbove": 0.015625,
+            "dishingBelow": 0.168640591,
+            "dishingAbove": 0.0650000447,
+            "bracketWidth": 0.015625,
+            "evaluations": 8,
+            "aboveCountingFloor": false,
+            "note": "NOT a stiffness threshold: the vertical link is a PENALTY enforcing a constraint, so scaling it is a step and not a ramp — this bracket locates the step, which is at the link being present at all"
+        }
+    ],
+    "references": [
+        {
+            "name": "C-0090's ADMITTED reading — full interior k_theta and vertical link",
+            "dishingOverStroke": 0.0621469105,
+            "insideConvention": true,
+            "reachableByASoftenedCrossover": true,
+            "why": "the s = 1 rung of both channels, and C-0090's own published optimum"
+        },
+        {
+            "name": "channel A at s = 0 — no dihedral spring, the vertical link retained",
+            "dishingOverStroke": 0.0651753854,
+            "insideConvention": true,
+            "reachableByASoftenedCrossover": true,
+            "why": "the softest state a crossover that EXISTS can be in: the backbone is covalently continuous whatever the strain relief does to the torsional register"
+        },
+        {
+            "name": "channel B at s = 0 — both elements gone, the node retained",
+            "dishingOverStroke": 0.168640591,
+            "insideConvention": false,
+            "reachableByASoftenedCrossover": false,
+            "why": "not a state of a crossover that exists; carried because it is the mechanical content of C-0090's refused reading, with the mesh held fixed"
+        },
+        {
+            "name": "C-0090's REFUSED reading — no column at all, on its own six-column host",
+            "dishingOverStroke": 0.168371808,
+            "insideConvention": false,
+            "reachableByASoftenedCrossover": false,
+            "why": "C-0095 has settled that this lattice is not the one a seamless boustrophedon builds"
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "dishing/stroke of C-0090's optimum at s = 1",
+            "axis": "nested subdivisions 1 c 2 c 4",
+            "values": [
+                0.0617554334,
+                0.0621469105,
+                0.0618196334
+            ],
+            "relativeSpread": 0.00629921962,
+            "note": "nested, per CLAUDE.md: a subdivision of 3 moves a point load off a node"
+        },
+        {
+            "quantity": "dishing/stroke of C-0090's optimum at s = 0",
+            "axis": "nested subdivisions 1 c 2 c 4",
+            "values": [
+                0.064130827,
+                0.0660509839,
+                0.0657151435
+            ],
+            "relativeSpread": 0.02907083,
+            "note": "the softened end of channel A, where the two end columns carry only their links"
+        },
+        {
+            "quantity": "dishing/stroke of C-0090's optimum at s = 1",
+            "axis": "dishing sample grid 41/81/161",
+            "values": [
+                0.0621469105,
+                0.0621469105,
+                0.0624086451
+            ],
+            "relativeSpread": 0.00421154717,
+            "note": "81 is the grid every published dishing in this programme is read on"
+        },
+        {
+            "quantity": "dishing/stroke of C-0090's optimum at s = 0",
+            "axis": "dishing sample grid 41/81/161",
+            "values": [
+                0.0660095093,
+                0.0660509839,
+                0.0666078528
+            ],
+            "relativeSpread": 0.00905881203,
+            "note": "the softened end, on the same grid"
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0090",
+            "quantity": "dishing/stroke, exhaustive centro-symmetric optimum, 38.08 nm, phase 8, row end ADMITTED at full interior stiffness",
+            "published": 0.0621469105,
+            "reproduced": 0.0621469105,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0090",
+            "quantity": "dishing/stroke, exhaustive centro-symmetric optimum, 38.08 nm, phase 8, row end REFUSED",
+            "published": 0.168371808,
+            "reproduced": 0.168371808,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0009 / Gen1Tile",
+            "quantity": "k_theta of one antiparallel crossover, pN nm/rad",
+            "published": 13.5294118,
+            "reproduced": 13.5294118,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0095",
+            "quantity": "row-end crossovers of the eight-column phase-8 lattice, one per interface",
+            "published": 14.0,
+            "reproduced": 14.0,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0015",
+            "quantity": "interface crossovers of the eight-column phase-8 lattice",
+            "published": 56.0,
+            "reproduced": 56.0,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "CH-0111",
+            "quantity": "the fraction of its bracket at which T-5b's 0.10 sits",
+            "published": 0.356,
+            "reproduced": 0.356348561,
+            "departure": 3.48561456E-4,
+            "strict": false
+        }
+    ],
+    "predicates": [
+        {
+            "name": "P1",
+            "statement": "a cheap bound on the row-end crossover's stiffness is stated before the sweep",
+            "verdict": "MET — a ceiling s <= 1 that is a ratio of two bond counts, a counting floor at s = 1/2, and the constraint/elasticity distinction that puts C-0090's refused reading OUTSIDE the reachable set",
+            "met": true
+        },
+        {
+            "name": "P2",
+            "statement": "the sweep is run on C-0090's own pipeline and monotonicity is MEASURED",
+            "verdict": "MET — 16 consecutive pairs over two channels, every one decreasing in stiffness",
+            "met": true
+        },
+        {
+            "name": "P3",
+            "statement": "the crossing is located and compared against the cheap bound",
+            "verdict": "MET — channel A does NOT cross T-5b's 0.10 anywhere in [0, 1], so the threshold is that no row-end stiffness whatever loses the verdict",
+            "met": true
+        },
+        {
+            "name": "P4",
+            "statement": "the consequence for C-0090's and C-0095's verdicts is stated",
+            "verdict": "MET — both stand, and CH-0111's bracket is corrected rather than the verdict",
+            "met": true
+        },
+        {
+            "name": "P5",
+            "statement": "where no source gives the stiffness, the ceiling and threshold are delivered",
+            "verdict": "MET — no accessible source gives a row-end crossover's k_theta; the ceiling is a count and the threshold is this sweep",
+            "met": true
+        }
+    ],
+    "falsifiers": [
+        {
+            "name": "F1",
+            "statement": "the best 34-root dishing is NOT monotone in the row-end softening",
+            "fired": false,
+            "outcome": "did not fire: all 16 consecutive pairs over both channels are decreasing in stiffness"
+        },
+        {
+            "name": "F2",
+            "statement": "at s = 1 the pipeline does not reproduce C-0090's 0.0621469105",
+            "fired": false,
+            "outcome": "reproduced at a departure of 3.3864695769825204E-11"
+        },
+        {
+            "name": "F3",
+            "statement": "channel B's s = 0 limit differs materially from the refused reading",
+            "fired": false,
+            "outcome": "channel B at s = 0 is 0.1686405908358075 against the refused reading's 0.1683718082999669; the two lattices carry the same mechanics and differ only in the mesh the two extra nodes impose"
+        },
+        {
+            "name": "F4",
+            "statement": "channel A's crossing lies above the counting floor s = 1/2",
+            "fired": false,
+            "outcome": "did not fire: there is no crossing at all — the reachable range is flat at every rung"
+        },
+        {
+            "name": "F5",
+            "statement": "the best placement key moves across the sweep",
+            "fired": true,
+            "outcome": "FIRED at 3 of 18 rungs, and BOUNDED: the worst penalty for keeping C-0090's own placement instead of each rung's optimum is 8.755984995810762E-4 of the stroke on channel A, and the published placement is flat at 17 of 18 rungs"
+        },
+        {
+            "name": "F6",
+            "statement": "a uniform load on a uniform foundation dishes more than 1e-6 of the free stroke",
+            "fired": false,
+            "outcome": "the worst over 18 rungs is 2.314028420585025E-7 of the free stroke"
+        }
+    ],
+    "findings": [
+        "THE BRACKET IS NOT A BRACKET. C-0090's two readings differ in THREE things — the dihedral spring, the vertical link and the node — and only the first of them is a stiffness. A crossover that EXISTS carries its vertical link at full value, because that element is a constraint expressing covalent continuity and not an elasticity; Rothemund's own remedy for the edge strain adds slack to the torsion, not to the connectivity. So the reachable set is channel A, and it spans 0.062146910466135304 to 0.06517538540278571 of the stroke — 0.028510029177790993 of the interval CH-0111 quotes.",
+        "THE VERDICT DOES NOT CHANGE INSIDE THE REACHABLE SET. Destroying the dihedral spring of all 14 row-end crossovers entirely takes the best 34-root placement to 0.06517538540278571 against T-5b's 0.10, so the 38.08 nm tile is flat at EVERY row-end stiffness, including zero. The counting ceiling s <= 1 and the counting floor s = 1/2 are then decoration: the answer does not need them.",
+        "THE COUNTING CEILING IS A RATIO OF TWO COUNTS AND CARRIES NO ELASTICITY. k_theta = 2 alpha B/(100 a) is TWO softened phosphate bonds in parallel and C-0029's theorem caps a duplex end at two strand termini, so s <= 1 exactly, with alpha and B cancelling. That is the whole of what the one-sided material costs that a bond census can see, and it is available before any solve.",
+        "WHAT MOVES THE ANSWER IS THE NODE, NOT THE SPRING. Channel B at s = 0 — both elements gone, the two extra mesh nodes retained — reads 0.1686405908358075 against the refused reading's 0.1683718082999669 on a six-column host, so the mechanics is the same and the mesh is worth the difference. The 2.7x that C-0090's two readings differ by is therefore a statement about a LATTICE, not about a joint.",
+        "MONOTONICITY WAS CHECKED RATHER THAN ASSUMED, and it holds: 16 of 16 consecutive pairs over two channels are decreasing in stiffness. CLAUDE.md records that a verdict which is not monotone in a swept variable has no threshold; this one has one, and the threshold is that there is no crossing.",
+        "THE DESIGN MOVES ONLY WHERE IT COSTS NOTHING TO KEEP IT. F5 fired: 3 of 18 rungs return a placement other than C-0090's, and every one of them is a rung where the two are nearly tied — keeping C-0090's own 34 roots at EVERY rung of channel A costs at most 8.755984995810762E-4 of the stroke and stays inside T-5b's 0.10 throughout. So the row-end stiffness moves the VALUE of the flatness and not the DESIGN, which is the separate and worse exposure.",
+        "CHANNEL B IS A STEP, NOT A RAMP, AND THAT IS THE POINT. The vertical link is a PENALTY enforcing a constraint, so a tenth of it still enforces the constraint: channel B reads 0.06510728863823426 at s = 0.125 and 0.1686405908358075 at s = 0 exactly. The bisection therefore locates a discontinuity and not a threshold, and CLAUDE.md's rule that the link's value must not affect the answer is what makes the 2.7x binary: the link is either there or it is not, and a covalently continuous backbone says it is.",
+        "NO VARIATIONAL ARGUMENT WOULD HAVE SETTLED MONOTONICITY. Adding stiffness lowers an energy, but the objective here is a PEAK DISHING — a maximum of a residual field after a best-fit plane is removed — which is not an energy and is not monotone by any Rayleigh argument, and the objective is then a minimum over 163 296 placements. Measuring it was necessary, and it is the cheap half of this task rather than the expensive one."
+    ],
+    "parameters": {
+        "edgeX": 38.08,
+        "phaseBasePairs": 8.0,
+        "duplexes": 15.0,
+        "armLength": 8.16,
+        "armCount": 34.0,
+        "mandate": 33.3333333,
+        "flatnessTolerance": 0.1,
+        "interiorHingeStiffness": 13.5294118,
+        "rowEndCrossovers": 14.0,
+        "latticeCrossovers": 56.0,
+        "freeStroke": 5.15473846,
+        "admittedReading": 0.0621469105,
+        "channelAAtZero": 0.0651753854,
+        "channelBAtZero": 0.168640591,
+        "refusedReading": 0.168371808,
+        "reachableFractionOfBracket": 0.0285100292,
+        "conventionFractionOfBracket": 0.356348561,
+        "worstUniformLoadDishing": 2.31402842E-7,
+        "enumeratedPerRung": 163296.0,
+        "rungsEvaluated": 21.0,
+        "everyRungFlat": 0.0,
+        "channelAEveryRungFlat": 1.0,
+        "crossingExistsChannelA": 0.0,
+        "crossingExistsChannelB": 1.0,
+        "countingCeiling": 1.0,
+        "countingFloor": 0.5
+    }
+}

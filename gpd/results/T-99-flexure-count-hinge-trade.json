@@ -976,10 +976,12 @@
             "insideCeilingAtWorking": false,
             "insideCeilingOverStroke": false,
             "bindingAtWorkingPointReading": [
+                "unzip allowable at the working point",
                 "geometric reach (the tip cannot rise past its own arm)",
                 "compliance ceiling at the working point"
             ],
             "bindingAtWholeStrokeReading": [
+                "unzip allowable at the working point",
                 "geometric reach (the tip cannot rise past its own arm)",
                 "compliance ceiling over the stroke"
             ],
@@ -2070,13 +2072,9 @@
             "insideCeilingAtWorking": true,
             "insideCeilingOverStroke": true,
             "bindingAtWorkingPointReading": [
-                "unzip allowable at the working point",
-                "unzip allowable at the target stroke",
                 "C-0017 stability floor (the placement itself is below |k_eff|)"
             ],
             "bindingAtWholeStrokeReading": [
-                "unzip allowable at the working point",
-                "unzip allowable at the target stroke",
                 "C-0017 stability floor (the placement itself is below |k_eff|)"
             ],
             "feasibleAtWorkingPointReading": false,
@@ -2891,25 +2889,25 @@
             "name": "C-0039's tangent at the acceptable stroke",
             "expected": 36.44,
             "obtained": 36.4400043,
-            "departure": 1.18991103E-7
+            "departure": 1.19002071E-7
         },
         {
             "name": "C-0039's secant at the desired stroke",
             "expected": 69.94,
             "obtained": 69.9399916,
-            "departure": 1.20083758E-7
+            "departure": 1.20083747E-7
         },
         {
             "name": "C-0039's tangent at the desired stroke",
             "expected": 264.24,
             "obtained": 264.239839,
-            "departure": 6.08722713E-7
+            "departure": 6.08695033E-7
         },
         {
             "name": "C-0039's usable stroke [nm]",
             "expected": 3.877,
             "obtained": 3.8767876,
-            "departure": 5.47839439E-5
+            "departure": 5.47839477E-5
         },
         {
             "name": "C-0039's 15-path arm [nm]",

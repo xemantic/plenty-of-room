@@ -662,15 +662,15 @@
             "phaseBasePairs": 8,
             "stations": 30,
             "rule": "the 30-parameter minimax over the design device's range",
-            "peakRatio": 2.45258143,
-            "designStateOverStroke": 0.0714562894,
-            "rangeWorstOverStroke": 0.0714562894,
+            "peakRatio": 2.31362128,
+            "designStateOverStroke": 0.0716155904,
+            "rangeWorstOverStroke": 0.0716155904,
             "reachableFloorOverStroke": 0.00484376909,
             "flatAtTenPercent": true,
             "planMargin": 1.76451193,
-            "peakPathStiffness": 2.72509047,
-            "peakPathForceAtAcceptableStroke": 8.17527142,
-            "peakThermalForce": 0.960602741,
+            "peakPathStiffness": 2.57069031,
+            "peakPathForceAtAcceptableStroke": 7.71207093,
+            "peakThermalForce": 0.90617621,
             "withinPerPathCeiling": true,
             "startsUsed": 12,
             "startsWithinOnePartInAMillion": 1
@@ -1786,7 +1786,7 @@
             "quantity": "the 34-path arm [nm]",
             "published": 8.16439083,
             "reproduced": 8.16439018,
-            "departure": 7.99544664E-8,
+            "departure": 7.99544655E-8,
             "strict": false
         },
         {
@@ -1852,12 +1852,12 @@
         {
             "name": "P3 — are the two satisfiable TOGETHER?",
             "statement": "the Pareto front of the exhaustive family: the flattest placement, the largest-ceiling placement, and the flattest placement whose margin clears one base-pair rise",
-            "verdict": "phase 8, the FLATTEST placement, plan margin unconstrained: equal springs 0.1726, margin 0.4195 nm; phase 8, the LARGEST plan ceiling, flatness unconstrained: equal springs 0.2424, margin 1.7645 nm; phase 8, the flattest placement whose margin clears one base-pair rise: equal springs 0.1726, margin 0.4195 nm; phase 8, the FLATTEST placement AT the largest plan ceiling the lattice affords: equal springs 0.1878, margin 1.7645 nm; phase 24, the FLATTEST placement, plan margin unconstrained: equal springs 0.1667, margin 0.4195 nm; phase 24, the LARGEST plan ceiling, flatness unconstrained: equal springs 0.3554, margin 1.7645 nm; phase 24, the flattest placement whose margin clears one base-pair rise: equal springs 0.1667, margin 0.4195 nm; phase 24, the FLATTEST placement AT the largest plan ceiling the lattice affords: equal springs 0.2017, margin 1.7645 nm — and under a distribution: C-0072's plan-rule 30-root reduction: 0.0732 at margin 1.3495 nm; phase 8 — the FLATTEST placement, plan margin unconstrained: 0.0648 at margin 0.4195 nm; phase 8 — the LARGEST plan ceiling, flatness unconstrained: 0.0682 at margin 1.7645 nm; phase 8 — the flattest placement whose margin clears one base-pair rise: 0.0648 at margin 0.4195 nm; phase 8 — the FLATTEST placement AT the largest plan ceiling the lattice affords: 0.0715 at margin 1.7645 nm; phase 24 — the FLATTEST placement, plan margin unconstrained: 0.0894 at margin 0.4195 nm; phase 24 — the LARGEST plan ceiling, flatness unconstrained: 0.1319 at margin 1.7645 nm; phase 24 — the flattest placement whose margin clears one base-pair rise: 0.0894 at margin 0.4195 nm; phase 24 — the FLATTEST placement AT the largest plan ceiling the lattice affords: 0.1124 at margin 1.7645 nm"
+            "verdict": "phase 8, the FLATTEST placement, plan margin unconstrained: equal springs 0.1726, margin 0.4195 nm; phase 8, the LARGEST plan ceiling, flatness unconstrained: equal springs 0.2424, margin 1.7645 nm; phase 8, the flattest placement whose margin clears one base-pair rise: equal springs 0.1726, margin 0.4195 nm; phase 8, the FLATTEST placement AT the largest plan ceiling the lattice affords: equal springs 0.1878, margin 1.7645 nm; phase 24, the FLATTEST placement, plan margin unconstrained: equal springs 0.1667, margin 0.4195 nm; phase 24, the LARGEST plan ceiling, flatness unconstrained: equal springs 0.3554, margin 1.7645 nm; phase 24, the flattest placement whose margin clears one base-pair rise: equal springs 0.1667, margin 0.4195 nm; phase 24, the FLATTEST placement AT the largest plan ceiling the lattice affords: equal springs 0.2017, margin 1.7645 nm — and under a distribution: C-0072's plan-rule 30-root reduction: 0.0732 at margin 1.3495 nm; phase 8 — the FLATTEST placement, plan margin unconstrained: 0.0648 at margin 0.4195 nm; phase 8 — the LARGEST plan ceiling, flatness unconstrained: 0.0682 at margin 1.7645 nm; phase 8 — the flattest placement whose margin clears one base-pair rise: 0.0648 at margin 0.4195 nm; phase 8 — the FLATTEST placement AT the largest plan ceiling the lattice affords: 0.0716 at margin 1.7645 nm; phase 24 — the FLATTEST placement, plan margin unconstrained: 0.0894 at margin 0.4195 nm; phase 24 — the LARGEST plan ceiling, flatness unconstrained: 0.1319 at margin 1.7645 nm; phase 24 — the flattest placement whose margin clears one base-pair rise: 0.0894 at margin 0.4195 nm; phase 24 — the FLATTEST placement AT the largest plan ceiling the lattice affords: 0.1124 at margin 1.7645 nm"
         },
         {
             "name": "P4 — does a DISTRIBUTION recover what equal springs lose?",
             "statement": "the 30-parameter minimax over the same range at C-0017's unchanged total and under C-0049's per-path ceiling, against the least-squares floor of the same station set",
-            "verdict": "C-0063's 34 roots at phase 24 — the knife-edge design: 0.0291 (floor 0.0031, peak ratio 1.74, FLAT); C-0072's plan-rule 30-root reduction: 0.0732 (floor 0.0057, peak ratio 3.00, FLAT); phase 8 — the FLATTEST placement, plan margin unconstrained: 0.0648 (floor 0.0070, peak ratio 2.35, FLAT); phase 8 — the LARGEST plan ceiling, flatness unconstrained: 0.0682 (floor 0.0055, peak ratio 2.06, FLAT); phase 8 — the flattest placement whose margin clears one base-pair rise: 0.0648 (floor 0.0070, peak ratio 2.35, FLAT); phase 8 — the FLATTEST placement AT the largest plan ceiling the lattice affords: 0.0715 (floor 0.0048, peak ratio 2.45, FLAT); phase 24 — the FLATTEST placement, plan margin unconstrained: 0.0894 (floor 0.0058, peak ratio 2.44, FLAT); phase 24 — the LARGEST plan ceiling, flatness unconstrained: 0.1319 (floor 0.0078, peak ratio 3.00, not flat); phase 24 — the flattest placement whose margin clears one base-pair rise: 0.0894 (floor 0.0058, peak ratio 2.44, FLAT); phase 24 — the FLATTEST placement AT the largest plan ceiling the lattice affords: 0.1124 (floor 0.0065, peak ratio 3.00, not flat)"
+            "verdict": "C-0063's 34 roots at phase 24 — the knife-edge design: 0.0291 (floor 0.0031, peak ratio 1.74, FLAT); C-0072's plan-rule 30-root reduction: 0.0732 (floor 0.0057, peak ratio 3.00, FLAT); phase 8 — the FLATTEST placement, plan margin unconstrained: 0.0648 (floor 0.0070, peak ratio 2.35, FLAT); phase 8 — the LARGEST plan ceiling, flatness unconstrained: 0.0682 (floor 0.0055, peak ratio 2.06, FLAT); phase 8 — the flattest placement whose margin clears one base-pair rise: 0.0648 (floor 0.0070, peak ratio 2.35, FLAT); phase 8 — the FLATTEST placement AT the largest plan ceiling the lattice affords: 0.0716 (floor 0.0048, peak ratio 2.31, FLAT); phase 24 — the FLATTEST placement, plan margin unconstrained: 0.0894 (floor 0.0058, peak ratio 2.44, FLAT); phase 24 — the LARGEST plan ceiling, flatness unconstrained: 0.1319 (floor 0.0078, peak ratio 3.00, not flat); phase 24 — the flattest placement whose margin clears one base-pair rise: 0.0894 (floor 0.0058, peak ratio 2.44, FLAT); phase 24 — the FLATTEST placement AT the largest plan ceiling the lattice affords: 0.1124 (floor 0.0065, peak ratio 3.00, not flat)"
         },
         {
             "name": "the recommendation",
@@ -2240,7 +2240,7 @@
         "The flatness answer for EQUAL springs: NO 30-root placement is flat with equal springs, at any of the 32 phases. Over the range the placed 2 mM / 10 nm / 0.192 V device traverses, the best two-per-row placement dishes 0.1667 (exhaustive centro-symmetric) and 0.1670 (32-phase descent) against T-5b's 0.10, C-0072's plan-rule 0.2603, C-0063's 34-root 0.0789 and a free tile at 0.3079.",
         "The winner sits at phase 24, dishes 0.1667 at the design state and 0.1667 over the range, and carries a plan margin of 0.4195 nm — 1.23 base-pair rises against C-0072's 3.97. Per path it carries 3.333 pN of the 100 pN duty against the 10 pN unzip allowable, 2.797 pN solved and 0.392 pN of C-0014 thermal force.",
         "The cheap bound did not decide it: the least-squares floor over EVERY phase-24 upward root is 0.0007 at the design state and 0.0005 at the compressed end, 140.5x below T-5b's convention, so the falsifier could not fire before the enumeration and the enumeration was necessary.",
-        "And the negative belongs to the EQUAL SPRINGS, not to the station set: the 30-parameter minimax at C-0017's unchanged total takes the same placements to 0.0732, 0.0648, 0.0682, 0.0648, 0.0715, 0.0894, 0.1319, 0.0894, 0.1124. So a flat 30-root design EXISTS, and it needs a distribution. C-0063's own advantage was that 34 roots need no distribution at all; at 30 that advantage is what is spent, which is CH-0080's finding on a new axis — the equal-spring advantage belongs to a COUNT as well as to a layer.",
+        "And the negative belongs to the EQUAL SPRINGS, not to the station set: the 30-parameter minimax at C-0017's unchanged total takes the same placements to 0.0732, 0.0648, 0.0682, 0.0648, 0.0716, 0.0894, 0.1319, 0.0894, 0.1124. So a flat 30-root design EXISTS, and it needs a distribution. C-0063's own advantage was that 34 roots need no distribution at all; at 30 that advantage is what is spent, which is CH-0080's finding on a new axis — the equal-spring advantage belongs to a COUNT as well as to a layer.",
         "And the margin becomes QUOTABLE: all five of C-0072's floors — four of them needing no fabrication measurement and the fifth being the only one there is — are cleared at the recommended placement, the base-pair rise — the design qu at 0.3400 nm, the two measured SAXS interhelical at 0.0400 nm, the thermal axial breathing of the at 0.2654 nm, the arm tip's own bending at a PER at 1.6782 nm, Fischer et al.'s fitted single-lay at 0.2500 nm, the weakest by 1.05x. Two of them scale with the arm and are re-evaluated here rather than carried across: the arm tip's own bending at a rigid root falls from 1.8074 to 1.6782 nm as the arm shortens from 8.164 to 7.7705 nm, which is the whole of that clearance."
     ],
     "parameters": {
