@@ -7827,3 +7827,55 @@ agents is the ceiling for *filing* work, not for *compiling* it.
 **What is owed.** `ANSWERS.md` now carries the largest debt any synthesis pass has faced, and **three of
 the four agents reported it independently** — which is itself the finding, since none could see the others'.
 Queued as `T-201`.
+
+---
+
+## Iteration 24 — `T-201`, and an API overload that turned a parallel iteration into a serial one
+
+**How the iteration actually went.** Three agents were commissioned — `T-201` (the fifth `ANSWERS.md`
+synthesis), `T-196` (the composite-fraction threshold `C-0109`'s verdict turns on) and `T-200` (amending
+`C-0092`). **All three died on transient API 529s, twice each**, without writing a byte. The tree was clean
+after every failure and no reserved number was consumed, so nothing was lost but time. Rather than keep
+relaunching against an overloaded API, the coordinator took the work into the main context and ran it
+serially. `T-201` is complete; `T-196` and `T-200` are next.
+
+**`T-201` (`C-0115`) — the census four passes have reported is the wrong summary.**
+
+The cheap bound ran first and was the strongest yet: **3 of 20** items in range cited by ID before the pass,
+against `C-0106`'s 34 of 48. That said in seconds that this pass had a product. Final partition: **14 carried
+in, 4 already reflected, 2 deliberately not.**
+
+What makes this pass different from the four before it is that **two of the twenty items are not values at
+all.** Every previous pass reported *"not one of these is a function of `σ`"* beside an unmoved window, and
+that is true again — but the two largest items are **scope corrections to what the deliverable's answers were
+about**:
+
+- §4(g)'s *"the question is closed on every coupling axis this programme can reach"* was a statement about a
+  **2 nm** tile, and §3 specifies a ~10 nm one (`C-0109`).
+- §1's *"only `T-115`, a taller layer, can buy the desired stroke"* was a statement about a **displacement**
+  the layer admits, where the clause needs a **force** the field must deliver (`C-0110`, `CH-0127`).
+
+**Neither is reachable by any check in the tree**, and this is `C-0106`'s finding in its sharpest form yet:
+not a missing passage, but a passage that **existed and was correct** while being *about* the wrong object.
+All four retained checks were clean before the pass and clean after.
+
+**The deliverable was also under-claiming again, for the second time.** It called the electrode's potential of
+zero charge `STILL OPEN` one iteration after `C-0111` answered it from published measurement. `C-0067`'s rule
+holds and is worth restating: *a deliverable that under-claims is as wrong as one that over-claims and is far
+harder to catch*, because a reviewer checks the assertions and not the disclaimers.
+
+**And the checker caught its own author, for the third consecutive iteration.** Two firings, both real, both
+caused by this pass's own edits: three numbers written at the wrong precision — two truncated **below** and
+one written **above** what their owning claims state, which the tracer flags equally loudly and correctly —
+and a sentence reading *"ANSWERED … and what is open is a different question"*, which put *open* inside the
+verdict window of a task the queue records as closed. The sentence was **wrong as written**: the residue is
+not `T-193`. Rephrased rather than suppressed. The check that caught it (`C-0113`) shipped one iteration
+earlier and was written by the same author it caught.
+
+**Two things deliberately not carried**, each with a reason that is itself the discipline: `C-0113`, a claim
+about a document checker that no §6 answer depends on; and `CH-0131`, whose amendment `T-200` owns — carrying
+it now would put a correction in the deliverable with no claim behind it, which is the drift class this pass
+exists to prevent.
+
+**Two passages are owed a re-read the moment `T-196` files**, and that dependency is written into the
+deliverable rather than only into this journal.
