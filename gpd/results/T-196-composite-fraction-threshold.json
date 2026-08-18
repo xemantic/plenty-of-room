@@ -1,0 +1,319 @@
+{
+    "task": "T-196",
+    "leaf": "A8.2",
+    "title": "Where the four-layer tile stops being flat: the composite-fraction threshold",
+    "verificationType": "in-silico (beam-and-hinge grillage) + logical (the scale inversion)",
+    "maturity": "TRL 1-3. Model-consistent and traceable. NOT empirically demonstrated.",
+    "units": {
+        "rigidity": "pN*nm",
+        "length": "nm",
+        "dishing": "dimensionless, as a fraction of the free-tile stroke",
+        "compositeFraction": "dimensionless, 0 at INDEPENDENT and 1 at COMPOSITE"
+    },
+    "conventions": {
+        "load": "C-0022's solved collar at 2 mM / 10 nm / 0.192 V",
+        "foundation": "Gen1Tile.FOUNDATION_SECANT, C-0001's secant",
+        "flat": "peak dishing below T-5b's 0.10 convention",
+        "tile": "four honeycomb layers, 15 duplex rows, C-0086's buildable 38.08 nm width",
+        "coupling": "NONE — this is the uncoupled free tile throughout"
+    },
+    "parameters": {
+        "duplexRows": "15",
+        "edgeX": "38.08",
+        "rowBasePairs": "112",
+        "dishingSamplesPerSide": "81",
+        "tolerance": "0.1",
+        "bisectionExitWidth": "1.0E-9",
+        "parallelAxisFactor": "39.4479652",
+        "layerSpacingDefault": "2.536"
+    },
+    "citedInputs": [
+        "C-0109 — the four-layer tile, its calibration and its stated open threshold",
+        "C-0022 — the solved edge collar this dishing is read under",
+        "C-0086 — the buildable 38.08 nm seamless raster width",
+        "MeasuredBundleRigidity — f = 0.26-0.33 from four measured bundles, DERIVED there",
+        "CH-0124 — the true honeycomb layer spacing, carried beside the default"
+    ],
+    "cheapBound": {
+        "parallelAxisFactor": "39.4479652",
+        "enhancementAtFractionZero": "1.0",
+        "enhancementAtFractionOne": "39.4479652",
+        "whyItRemovesTheSweep": "f enters only through realised = 1 + f(factor - 1), and that one number multiplies D_par and D_perp alike, so f is a pure SCALE on the plate and the threshold is a scalar inversion rather than a two-dimensional search. factor = 39.447965."
+    },
+    "samples": [
+        {
+            "compositeFraction": 0.0,
+            "realisedEnhancement": 1.0,
+            "alongHelixRigidity": 362.776025,
+            "acrossHelixRigidity": 19.2216181,
+            "reachAlong": 18.4124432,
+            "reachAcross": 8.83383457,
+            "freeTileDishingOverStroke": 0.18273857,
+            "flat": false
+        },
+        {
+            "compositeFraction": 0.005,
+            "realisedEnhancement": 1.19223983,
+            "alongHelixRigidity": 432.516025,
+            "acrossHelixRigidity": 22.9167786,
+            "reachAlong": 19.2398786,
+            "reachAcross": 9.23081758,
+            "freeTileDishingOverStroke": 0.171045158,
+            "flat": false
+        },
+        {
+            "compositeFraction": 0.01,
+            "realisedEnhancement": 1.38447965,
+            "alongHelixRigidity": 502.256025,
+            "acrossHelixRigidity": 26.6119391,
+            "reachAlong": 19.9725292,
+            "reachAcross": 9.58232522,
+            "freeTileDishingOverStroke": 0.161346593,
+            "flat": false
+        },
+        {
+            "compositeFraction": 0.02,
+            "realisedEnhancement": 1.7689593,
+            "alongHelixRigidity": 641.736025,
+            "acrossHelixRigidity": 34.0022601,
+            "reachAlong": 21.2344434,
+            "reachAcross": 10.1877604,
+            "freeTileDishingOverStroke": 0.145946573,
+            "flat": false
+        },
+        {
+            "compositeFraction": 0.03,
+            "realisedEnhancement": 2.15343896,
+            "alongHelixRigidity": 781.216025,
+            "acrossHelixRigidity": 41.3925811,
+            "reachAlong": 22.3046063,
+            "reachAcross": 10.7011981,
+            "freeTileDishingOverStroke": 0.13408121,
+            "flat": false
+        },
+        {
+            "compositeFraction": 0.05,
+            "realisedEnhancement": 2.92239826,
+            "alongHelixRigidity": 1060.17603,
+            "acrossHelixRigidity": 56.1732232,
+            "reachAlong": 24.07389,
+            "reachAcross": 11.5500566,
+            "freeTileDishingOverStroke": 0.116692022,
+            "flat": false
+        },
+        {
+            "compositeFraction": 0.075,
+            "realisedEnhancement": 3.88359739,
+            "alongHelixRigidity": 1408.87603,
+            "acrossHelixRigidity": 74.6490258,
+            "reachAlong": 25.8475849,
+            "reachAcross": 12.4010315,
+            "freeTileDishingOverStroke": 0.101848791,
+            "flat": false
+        },
+        {
+            "compositeFraction": 0.1,
+            "realisedEnhancement": 4.84479652,
+            "alongHelixRigidity": 1757.57603,
+            "acrossHelixRigidity": 93.1248283,
+            "reachAlong": 27.3168304,
+            "reachAcross": 13.1059392,
+            "freeTileDishingOverStroke": 0.091349054,
+            "flat": true
+        },
+        {
+            "compositeFraction": 0.15,
+            "realisedEnhancement": 6.76719478,
+            "alongHelixRigidity": 2454.97603,
+            "acrossHelixRigidity": 130.076433,
+            "reachAlong": 29.6970691,
+            "reachAcross": 14.2479188,
+            "freeTileDishingOverStroke": 0.0773820622,
+            "flat": true
+        },
+        {
+            "compositeFraction": 0.2,
+            "realisedEnhancement": 8.68959304,
+            "alongHelixRigidity": 3152.37603,
+            "acrossHelixRigidity": 167.028039,
+            "reachAlong": 31.6126775,
+            "reachAcross": 15.1669803,
+            "freeTileDishingOverStroke": 0.0684718726,
+            "flat": true
+        },
+        {
+            "compositeFraction": 0.26,
+            "realisedEnhancement": 10.996471,
+            "alongHelixRigidity": 3989.25603,
+            "acrossHelixRigidity": 211.369965,
+            "reachAlong": 33.5293206,
+            "reachAcross": 16.0865382,
+            "freeTileDishingOverStroke": 0.0612595738,
+            "flat": true
+        },
+        {
+            "compositeFraction": 0.3,
+            "realisedEnhancement": 12.5343896,
+            "alongHelixRigidity": 4547.17603,
+            "acrossHelixRigidity": 240.931249,
+            "reachAlong": 34.6447329,
+            "reachAcross": 16.6216854,
+            "freeTileDishingOverStroke": 0.0577199433,
+            "flat": true
+        },
+        {
+            "compositeFraction": 0.33,
+            "realisedEnhancement": 13.6878285,
+            "alongHelixRigidity": 4965.61603,
+            "acrossHelixRigidity": 263.102212,
+            "reachAlong": 35.4156372,
+            "reachAcross": 16.9915462,
+            "freeTileDishingOverStroke": 0.0555188286,
+            "flat": true
+        },
+        {
+            "compositeFraction": 0.5,
+            "realisedEnhancement": 20.2239826,
+            "alongHelixRigidity": 7336.77603,
+            "acrossHelixRigidity": 388.737669,
+            "reachAlong": 39.0461386,
+            "reachAcross": 18.733371,
+            "freeTileDishingOverStroke": 0.0473444632,
+            "flat": true
+        },
+        {
+            "compositeFraction": 0.74,
+            "realisedEnhancement": 29.4514943,
+            "alongHelixRigidity": 10684.296,
+            "acrossHelixRigidity": 566.105374,
+            "reachAlong": 42.8931809,
+            "reachAcross": 20.5790866,
+            "freeTileDishingOverStroke": 0.0415670656,
+            "flat": true
+        },
+        {
+            "compositeFraction": 1.0,
+            "realisedEnhancement": 39.4479652,
+            "alongHelixRigidity": 14310.776,
+            "acrossHelixRigidity": 758.253721,
+            "reachAlong": 46.144248,
+            "reachAcross": 22.1388682,
+            "freeTileDishingOverStroke": 0.0382012715,
+            "flat": true
+        }
+    ],
+    "threshold": {
+        "bracketLow": "0.0788618803",
+        "enhancementAtCrossing": "4.03207885",
+        "measuredBandLow": "0.26",
+        "marginAtTheBandLowEnd": "3.29690337",
+        "bracketHigh": "0.078861881",
+        "compositeFractionAtCrossing": "0.0788618807",
+        "dishingAtCrossing": "0.1",
+        "marginAtTheBandCentre": "3.80411927",
+        "monotone": "true",
+        "signChanges": "1"
+    },
+    "convergence": [
+        {
+            "axis": "beam subdivisions per node interval, free-tile dishing at the measured f",
+            "values": [
+                1.0,
+                2.0,
+                4.0
+            ],
+            "results": [
+                0.057713175,
+                0.0577199433,
+                0.0577190513
+            ],
+            "departure": 1.5E-5,
+            "note": "nested refinements only — a subdivision of 3 moves a load off a node (CLAUDE.md)"
+        },
+        {
+            "axis": "dishing grid samples per side",
+            "values": [
+                41.0,
+                81.0,
+                161.0
+            ],
+            "results": [
+                0.0577199433,
+                0.0577199433,
+                0.0577199433
+            ],
+            "departure": 0.0,
+            "note": "peak dishing is a max over the grid, so it can only rise with resolution"
+        },
+        {
+            "axis": "bisection exit width on the fraction axis",
+            "values": [
+                1.0E-6,
+                1.0E-9,
+                0.0
+            ],
+            "results": [
+                0.078861618,
+                0.0788618807,
+                0.0788618806
+            ],
+            "departure": 0.0,
+            "note": "an ABSOLUTE departure in the fraction — the abscissa is dimensionless, and a bisection on a solved field has its own few-ulp noise floor"
+        },
+        {
+            "axis": "scan resolution before the bisection",
+            "values": [
+                20.0,
+                40.0,
+                80.0
+            ],
+            "results": [
+                0.0788618807,
+                0.0788618807,
+                0.0788618807
+            ],
+            "departure": 0.0,
+            "note": "refining the scan must NOT move the root: the bisection owns the precision, and a scan that changes the answer is a scan that missed a feature"
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0109",
+            "quantity": "four-layer free-tile dishing at the measured f",
+            "published": 0.0577199433,
+            "reproduced": 0.0577199433,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0109 / C-0063",
+            "quantity": "single-layer free-tile dishing",
+            "published": 0.307902368,
+            "reproduced": 0.307902368,
+            "departure": 0.0,
+            "strict": false
+        }
+    ],
+    "falsifiers": [
+        "F1 — the dishing is NOT monotone in f, so no threshold exists and the sweep must report the alternation instead. Tested by counting EVERY sign change over the whole interval rather than bisecting the first one found.",
+        "F2 — the crossing lies ABOVE the measured band's low end 0.26, which would put C-0109's uncoupled verdict inside the measurement's own uncertainty.",
+        "F3 — C-0109's own numbers do not reproduce, in which case no comparison against them is licensed."
+    ],
+    "findings": {
+        "theCheapBoundRemovesTheSweep": "f enters only through realised = 1 + f(factor - 1), and that one number multiplies D_par and D_perp alike, so f is a pure SCALE on the plate and the threshold is a scalar inversion rather than a two-dimensional search. factor = 39.447965.",
+        "trueHoneycombThreshold": "At the true honeycomb layer spacing d*sqrt(3)/2 the parallel-axis factor is 29.8359739 rather than 39.4479652, so the threshold is its OWN number: f = 0.105149174, cleared by the measured band's low end 0.26 by 2.47267753x. CH-0124's geometry is carried beside the default rather than instead of it, because the challenge is open.",
+        "trueHoneycombSpacing": "At the true honeycomb layer spacing d*sqrt(3)/2 the same f gives 0.065120360, against 0.057719943 at C-0109's default spacing d — CH-0124's geometry, carried beside the default rather than instead of it."
+    },
+    "validity": [
+        "The body is a SMEARED equivalent sheet: OrigamiGrillage never reads `layers`, so the four-layer tile enters as one orthotropic sheet carrying the multi-layer rigidities. C-0109 asserts that reduction at 1e-12 and it is inherited here.",
+        "RIGID-LIMIT READING. C-0093 found a buildable four-layer body reads 0.100166871 where its rigid limit reads 0.0344013403, so body rigidity is FIRST ORDER. This study sweeps the interlayer coupling of a smeared sheet and does not model a buildable body's own compliance.",
+        "The measured f = 0.26-0.33 is calibrated on RODS — bundles crossovered around a closed ring. A 15-wide x 4-deep slab has a different crossover topology and a far larger second moment, so 0.30 is plausibly an UPPER bound there.",
+        "The staple-dropout statistics are measured on a SINGLE-LAYER rectangle and this study is of the UNCOUPLED tile, so they do not enter at all.",
+        "Kirchhoff: the four-layer thickness over span is 0.252, where transverse shear is not safe, so D_par is again an upper bound (C-0109's own caveat)."
+    ],
+    "openQuestions": [
+        "What f a 15-wide x 4-deep SLAB realises, as against the measured rods. That is a simulation or a measurement, not a solve — and it is the one number this verdict now rests on.",
+        "Whether a BUILDABLE four-layer body clears the threshold, which needs C-0093's Ritz body rather than a smeared sheet.",
+        "The honeycomb raster width (T-198) and the attachment lattice of a four-layer top face, neither of which this study needs but both of which a design does."
+    ]
+}

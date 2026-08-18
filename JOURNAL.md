@@ -7909,3 +7909,43 @@ et al. 15.3 %, Marras et al. 19.7 %, Bosco 5.1 %), and against a different *mode
 signal would fire constantly on correct files, which is the one failure `C-0080` says a checker cannot afford.
 Declined **with the number** rather than by assertion — the same discipline `C-0067` used when it refused to
 ship an approximation whose false-positive rate was unmeasured.
+
+**`T-196` (`C-0116`) — the four-layer verdict holds, with 3.30× of margin, and the cheap bound removed the
+sweep before it ran.**
+
+`C-0109` overturned this programme's flatness negative and said in its own §11 that the verdict turns on one
+number — the interlayer coupling fraction `f`, measured at 0.26–0.33, with the flatness crossing somewhere in
+`(0.00, 0.26)`. It is at **`f` = 0.0788618807**, and the measured band's *adverse* low end clears it by
+**3.29690337×**, its centre by **3.80411927×**. **Of three declared falsifiers, none fired.**
+
+**The cheap bound is the part worth keeping.** `multiLayerRigidities` admits `f` only through
+`realised = 1 + f(factor − 1)`, and that **one** number multiplies `D_∥` *and* `D_⊥` alike — the identity
+`k_s/k_θ = S/B` that `C-0109` already asserts as a gate. So `f` is a **pure scale** on the plate, the
+threshold is a **scalar inversion** rather than a two-dimensional search, and the whole task was minutes. The
+identity is asserted at `1e-12` before any plate is solved.
+
+**Monotonicity was measured, not assumed.** The search counts *every* sign change over `[0, 1]` and found
+**one**. `CLAUDE.md`'s warning — that a non-monotone verdict has no threshold and gets more alternating under
+refinement — is the reason the search scans before it bisects rather than differentiating at `f = 0`, which
+would have been the obvious shortcut and is the one `CLAUDE.md` records as having the wrong *sign*.
+
+**`CH-0124`'s geometry has its own threshold and that is not a detail.** The true honeycomb spacing `d√3/2`
+scales `Σy²` by 3/4 and therefore moves `factor` itself (29.8359739 against 39.4479652), so the crossing there
+is a **different number** — 0.105149174, still cleared, by 2.47267753×. Both are carried because the challenge
+is open, and the corrected geometry is the 1.33×-tighter one, which is the direction `CH-0124` predicted.
+
+**What the verdict now rests on is one unmeasured number**, and it is stated as a threshold rather than a
+confidence: the `f` a 15-wide × 4-deep **slab** realises, against the **rods** every published calibration is
+measured on. It would have to fall below **30 %** of the least-coupled measured bundle for the tile to stop
+being flat.
+
+**Two traps caught in passing.** A `Map<String, String>` of results carried full `Double.toString()` precision
+into a file that declares nine digits — `CLAUDE.md`'s *"a number emitted as a STRING is not rounded"*, walked
+into with the entry already written down, and repaired by routing every string-mapped number through an
+explicit rounding. And two of my own test assertions were wrong rather than the code: one asserted the root to
+`isCloseTo`'s 1e-9 *relative* default where the bisection promises a 1e-9 *absolute* bracket, and one used a
+strict `>` on a bracket endpoint that a converging bisection lands **exactly** on. Both are `CLAUDE.md`
+entries already, and the second is its *"a strict comparison between quantities that can be equal by
+construction reports a tie as a finding"* in a new place.
+
+`ANSWERS.md`'s three passages that said they were owed a re-read when this filed are discharged.
