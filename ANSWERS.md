@@ -682,6 +682,24 @@ Three DNA elements deliver it, and the eight substrate tethers `C-0021` needed l
   rigidity exists in any direction. Costed as `T-9` — days of oxDNA on 8 cores.
 - **The direction of the correlation correction for *oppositely* charged walls.** Every published coupling
   criterion is a like-charge result. This is the largest uncertainty on every electrostatic force here.
+- **A per-site staple-incorporation measurement on a COUPLING-BEARING tile.** This is now the single most
+  consequential missing measurement in the programme, and it was not on this list before iteration 21.
+  `C-0087`/`C-0089`/`C-0093`/`C-0098` between them close the flat-tile question on **every design axis this
+  programme can reach** — count, distribution, placement, topology and phase — leaving *"the tile is flat as
+  designed and has not been shown flat as built"*. What decides it is therefore a **fabrication yield**, and
+  the only per-staple map anybody has published (Strauss et al. 2018, 48–95 %, mean 84 %) is of a **bare
+  Rothemund rectangle**, which `CH-0102` shows is not this tile: a 40 nm tile carries **1.85×** the perimeter
+  per unit area, so the measured 0.84 transfers to 0.759–0.790 here. The measurement is **routine by
+  Strauss's own method** and needs a bench, not a solver.
+- **The stiffness spread of nominally identical hybridised staple extensions.** Distinct from the incorporation
+  map above and still not found in nine queries across three databases (`T-45`, `C-0072`). The nearest
+  published work measures an inter-subunit ssDNA handle by cryo-EM multi-body refinement, which is the method
+  that would supply it one level down.
+- **A DNA–DNA force curve at 2 mM MgCl₂.** `C-0079` establishes that two unbonded duplexes are repulsive at
+  every separation on four independent methods, so the plan model's exclusion width is a **threshold on an
+  energy** rather than a separation — but the lowest *parametrised* force curve in the literature is at
+  **20 mM**, an order of magnitude above the Gen-1 buffer, and the second-virial measurement nearest to it is
+  at 3 mM and gives a sign rather than a curve.
 - **A compression measurement of a PEG brush *inside* the Gen-1 grafting window.** None exists. `P-9` bounds
   the bulk-versus-brush `χ` difference at `|Δχ| ≤ 0.053` from *denser* layers, so the bound comes from above
   and assumes monotonicity in grafting density.
