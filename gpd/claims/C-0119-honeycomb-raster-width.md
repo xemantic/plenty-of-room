@@ -50,14 +50,22 @@ rather than closed.
 ## 3. The cross-section has been built, and the paper recommends a different one
 
 Figure 2's caption fixes the nomenclature: *"m × n, where m is the number of x-raster rows, and n is the
-number of helices per x-raster row."* **All seven designs are 60 helices**, differing only in cross-section:
+number of helices per x-raster row."* Seven designs, differing in cross-section:
 
-| design | | our tile |
-|---|---|---|
-| (i) **15 × 4** | folded from **p8064**, sharp leading monomer band | **this one** |
-| (ii) 10 × 6 | **the greatest fraction of defect-free objects** | |
-| (iii) 8 × 8, (iv) 6 × 10, (v) 4 × 16, (vi) 3 × 20 | | |
-| (vii) 2 × 30 | sharp band, folded at 15 mM MgCl₂ rather than 22 | |
+| design | helices | | our tile |
+|---|---|---|---|
+| (i) **15 × 4** | 60 | folded from **p8064**, sharp leading monomer band | **this one** |
+| (ii) **10 × 6** | 60 | **the greatest fraction of defect-free objects** | |
+| (iii) 8 × 8 | **64** | | |
+| (iv) 6 × 10 | 60 | | |
+| (v) 4 × 16 | **64** | | |
+| (vi) 3 × 20 | 60 | | |
+| (vii) 2 × 30 | 60 | sharp band, folded at 15 mM MgCl₂ rather than 22 | |
+
+**Five of the seven are 60 helices and two are 64**, so the family is *not* at constant scaffold length —
+which is why the paper folds them from **two** scaffolds, p7560 and p8064. **The comparison this claim rests
+on, 15 × 4 against 10 × 6, is at 60 helices for both**, so the scaffold budget genuinely is unchanged between
+them.
 
 > *"Only folding with **three of the seven** designs — four-helix-per-x-raster or **15 × 4** (two y-layers),
 > six-helix-per-x-raster or 10 × 6 (three y-layers), thirty-helix-per-x-raster or 2 × 30 (two x-layers) —

@@ -359,7 +359,15 @@ def main(argv):
             "ourTile": "{} x {} = {} helices".format(rows, per_row, helices),
             "designsInThePaper": ["15 x 4", "10 x 6", "8 x 8", "6 x 10", "4 x 16", "3 x 20",
                                   "2 x 30"],
-            "allSixtyHelices": True,
+            "helixCountPerDesign": {"15 x 4": 60, "10 x 6": 60, "8 x 8": 64, "6 x 10": 60,
+                                     "4 x 16": 64, "3 x 20": 60, "2 x 30": 60},
+            "allSixtyHelices": False,
+            "helixCountNote": "FIVE of the seven are 60 helices; 8 x 8 and 4 x 16 are 64. So the "
+                              "seven are not a constant-helix-count family and the comparison "
+                              "between them is not at fixed scaffold length -- which is why the "
+                              "paper folds them from two different scaffolds, p7560 and p8064. "
+                              "The comparison THIS claim rests on, 15 x 4 against 10 x 6, IS at "
+                              "60 helices for both.",
             "ourCrossSectionIsDesign": "(i) 15 x 4, folded from p8064",
             "sharpLeadingMonomerBands": ["15 x 4 (four-helix-per-x-raster, two y-layers)",
                                          "10 x 6 (six-helix-per-x-raster, three y-layers)",

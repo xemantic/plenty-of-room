@@ -7999,3 +7999,43 @@ fetching anything* has paid.
 **Meanwhile `T-197` lost two more subagent launches to API 529s** (eight across two iterations). Every failure
 left the tree clean, so nothing was lost but time, and per the rule iteration 24 added, its work moves into
 the main context rather than being relaunched a third time.
+
+**`T-199` (`C-0120`) — the yield recommendation and the flatness criterion agree, which was not expected.**
+
+`T-198` found that the tile this programme recommends is design (i) of the caDNAno paper, `15 × 4`, and that
+the paper's own recommendation is `10 × 6` — the same 60 helices, so the choice costs no scaffold. Taken
+before `T-197` deliberately, because running a coupling study on a cross-section its own source recommends
+against is the more expensive mistake.
+
+**`10 × 6` is 6.6× flatter — and, far more importantly, it has no threshold at all.** Its free-tile dishing
+never reaches `T-5b`'s 0.10 anywhere in `f ∈ [0, 1]`, **including `f = 0`, where the layers do not couple and
+simply add.** `C-0116` established that `15 × 4`'s flatness is *conditional* on an interlayer coupling
+calibrated on **rods**, and named that as the one unmeasured number the whole four-layer result rests on —
+it would have to fall below 30 % of the least-coupled measured bundle for the verdict to fail. **On `10 × 6`
+that question stops being load-bearing.** The stronger cross-section is stronger by **removing a dependency**,
+not by widening a margin, and those are different kinds of result.
+
+**The cheap bound predicted the direction with no plate solved at all.** `Σy²` for `n` layers is
+`n(n²−1)d²/12`, so the parallel-axis excess scales as `(n² − 1)` — a pure integer function of the layer count
+with no material constant in it — and six layers carry `35/15 = 2.3333×` four's at the same helix count.
+Asserted as a test before the grillage ran.
+
+**The cost is a specification cost and it is real.** At the fixed 112 bp span, changing `m` changes the tile's
+*other* side: `15 × 4` is 38.08 × 38.04 nm, essentially §3's ~40 × 40 square, and `10 × 6` is 38.08 × 25.36 —
+**two-thirds of the footprint**, over which §3's 100 pN is specified and on which `C-0022`'s collar was not
+solved. So this is a trade for NDI, not a free improvement.
+
+**And I got the comparison logic wrong on the first run, in the direction the corpus already warns about.**
+The derived *"better on flatness margin"* boolean coalesced a **null** threshold to `0.0` and compared — so it
+reported the cross-section with **no flatness requirement at all** as the weaker one. `CLAUDE.md` has the
+entry: *"a margin of Infinity is not a margin, it is the absence of a requirement; record it as `null`, not as
+a number."* The null was recorded correctly and then read as a zero one line later.
+
+**One more thing the four cross-sections settle between them.** `6 × 10` and `3 × 20` are flatter still and
+are recommended by **nothing** — both were folded by Douglas et al. and neither produced a sharp monomer band.
+Folding excludes what flatness does not, which is the clearest demonstration in the corpus that the two
+criteria are independent and that this programme needs both.
+
+**And a correction to `C-0119`, filed the same day.** It asserted that all seven of the paper's designs are 60
+helices. Five are; `8 × 8` and `4 × 16` are **64**. The comparison `C-0120` rests on — `15 × 4` against
+`10 × 6` — is at 60 for both, so nothing downstream moves, but the claim said something false and now does not.

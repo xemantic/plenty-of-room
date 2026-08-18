@@ -1,0 +1,241 @@
+{
+    "task": "T-199",
+    "leaf": "A8.2",
+    "title": "Is 10 x 6 a better tile than 15 x 4? The cross-section its own source recommends",
+    "verificationType": "in-silico (beam-and-hinge grillage) + logical (the second-moment bound)",
+    "maturity": "TRL 1-3. Model-consistent and traceable. NOT empirically demonstrated -- though BOTH cross-sections have been folded and gel-analysed by Douglas et al.",
+    "units": {
+        "rigidity": "pN*nm",
+        "length": "nm",
+        "dishing": "dimensionless, as a fraction of the free-tile stroke",
+        "compositeFraction": "dimensionless, 0 at INDEPENDENT and 1 at COMPOSITE"
+    },
+    "conventions": {
+        "nomenclature": "m x n = m x-raster rows of n helices (Douglas et al., Figure 2)",
+        "mapping": "m is the grillage's beam count, n its layer count",
+        "load": "C-0022's solved collar at 2 mM / 10 nm / 0.192 V",
+        "span": "112 bp along the helices for every cross-section, C-0086's buildable width",
+        "coupling": "NONE — the uncoupled free tile throughout",
+        "flat": "peak dishing below T-5b's 0.10"
+    },
+    "parameters": {
+        "rowBasePairs": "112",
+        "dishingSamplesPerSide": "81",
+        "tolerance": "0.1",
+        "bisectionExitWidth": "1.0E-9",
+        "measuredCompositeFraction": "0.3",
+        "measuredBandLowEnd": "0.26",
+        "interhelicalHoneycomb": "2.536"
+    },
+    "citedInputs": [
+        "C-0119 — the published cross-sections and the yield ordering that raised this task",
+        "C-0109 — the four-layer tile and its rigidity machinery",
+        "C-0116 — the composite-fraction threshold this re-reads per cross-section",
+        "C-0022 — the solved edge collar",
+        "C-0086 — the buildable 112 bp span"
+    ],
+    "cheapBound": {
+        "secondMomentLaw": "Sigma y^2 = n(n^2 - 1) d^2 / 12 for n layers at spacing d",
+        "excessScalesAs": "(n^2 - 1), a pure integer function of the layer count",
+        "sixOverFour": "2.33333333",
+        "predicts": "six layers are stiffer at the same helix count, so 10 x 6 should dish less than 15 x 4 unless the narrower span undoes it"
+    },
+    "crossSections": [
+        {
+            "name": "15 x 4",
+            "rasterRows": 15,
+            "helicesPerRasterRow": 4,
+            "helices": 60,
+            "edgeX": 38.08,
+            "edgeY": 38.04,
+            "thickness": 9.608,
+            "aspectRatio": 1.00105152,
+            "secondMomentOfLayers": 32.15648,
+            "parallelAxisFactor": 39.4479652,
+            "alongHelixRigidity": 4547.17603,
+            "acrossHelixRigidity": 240.931249,
+            "anisotropy": 18.8733344,
+            "reachAlong": 34.6447329,
+            "reachAcross": 16.6216854,
+            "reachAlongOverSpan": 0.909788155,
+            "reachAcrossOverSpan": 0.436952824,
+            "freeTileDishingOverStroke": 0.0577199433,
+            "flat": true,
+            "thresholdFraction": 0.0788618807,
+            "marginAtMeasuredBandLowEnd": 3.29690337,
+            "thicknessOverSpan": 0.252310924
+        },
+        {
+            "name": "10 x 6",
+            "rasterRows": 10,
+            "helicesPerRasterRow": 6,
+            "helices": 60,
+            "edgeX": 38.08,
+            "edgeY": 25.36,
+            "thickness": 14.68,
+            "aspectRatio": 1.50157729,
+            "secondMomentOfLayers": 112.54768,
+            "parallelAxisFactor": 90.7119188,
+            "alongHelixRigidity": 15189.564,
+            "acrossHelixRigidity": 804.816135,
+            "anisotropy": 18.8733344,
+            "reachAlong": 46.8368958,
+            "reachAcross": 22.4711834,
+            "reachAlongOverSpan": 1.2299605,
+            "reachAcrossOverSpan": 0.886087675,
+            "freeTileDishingOverStroke": 0.00874363524,
+            "flat": true,
+            "thresholdFraction": null,
+            "marginAtMeasuredBandLowEnd": null,
+            "thicknessOverSpan": 0.385504202
+        },
+        {
+            "name": "6 x 10",
+            "rasterRows": 6,
+            "helicesPerRasterRow": 10,
+            "helices": 60,
+            "edgeX": 38.08,
+            "edgeY": 15.216,
+            "thickness": 24.824,
+            "aspectRatio": 2.50262881,
+            "secondMomentOfLayers": 530.58192,
+            "parallelAxisFactor": 254.75657,
+            "alongHelixRigidity": 69949.5401,
+            "acrossHelixRigidity": 3706.26295,
+            "anisotropy": 18.8733344,
+            "reachAlong": 68.6116703,
+            "reachAcross": 32.9181813,
+            "reachAlongOverSpan": 1.80177706,
+            "reachAcrossOverSpan": 2.16339257,
+            "freeTileDishingOverStroke": 6.37505981E-4,
+            "flat": true,
+            "thresholdFraction": null,
+            "marginAtMeasuredBandLowEnd": null,
+            "thicknessOverSpan": 0.651890756
+        },
+        {
+            "name": "3 x 20",
+            "rasterRows": 3,
+            "helicesPerRasterRow": 20,
+            "helices": 60,
+            "edgeX": 38.08,
+            "edgeY": 7.608,
+            "thickness": 50.184,
+            "aspectRatio": 5.00525762,
+            "secondMomentOfLayers": 4276.81184,
+            "parallelAxisFactor": 1023.71587,
+            "alongHelixRigidity": 558339.08,
+            "acrossHelixRigidity": 29583.489,
+            "anisotropy": 18.8733344,
+            "reachAlong": 115.325749,
+            "reachAcross": 55.3304401,
+            "reachAlongOverSpan": 3.02851231,
+            "reachAcrossOverSpan": 7.27266562,
+            "freeTileDishingOverStroke": 2.62401211E-5,
+            "flat": true,
+            "thresholdFraction": null,
+            "marginAtMeasuredBandLowEnd": null,
+            "thicknessOverSpan": 1.31785714
+        }
+    ],
+    "comparison": {
+        "ourTile": "15 x 4",
+        "theirRecommendation": "10 x 6",
+        "sameHelixCount": "true",
+        "dishingOurs": "0.0577199433",
+        "dishingTheirs": "0.00874363524",
+        "thresholdOurs": "0.0788618807",
+        "thresholdTheirs": "none",
+        "marginOurs": "3.29690337",
+        "marginTheirs": "n/a",
+        "betterOnDishing": "true",
+        "betterOnFlatnessMargin": "true",
+        "marginNote": "a null threshold is the ABSENCE of a flatness requirement, not a zero margin: the cross-section never reaches T-5b's 0.10 at ANY interlayer coupling in [0, 1], which is strictly stronger than clearing a threshold",
+        "footprintOurs": "1448.5632",
+        "footprintTheirs": "965.7088",
+        "footprintRatio": "0.666666667",
+        "footprintNote": "SS3 asks for a ~40 x 40 nm tile. At the fixed 112 bp span, 15 x 4 is 38.08 x 38.04 nm -- essentially square and essentially SS3's -- while 10 x 6 is 38.08 x 25.36 nm. The flatter cross-section is a SMALLER tile, and SS3's 100 pN is specified over the footprint, so this is a specification consequence rather than a free improvement."
+    },
+    "convergence": [
+        {
+            "axis": "beam subdivisions per node interval, 10 x 6 free-tile dishing",
+            "values": [
+                1.0,
+                2.0,
+                4.0
+            ],
+            "results": [
+                0.00874233206,
+                0.00874363524,
+                0.00874344219
+            ],
+            "departure": 2.2E-5,
+            "note": "nested refinements only — a subdivision of 3 moves a load off a node (CLAUDE.md)"
+        },
+        {
+            "axis": "dishing grid samples per side, 10 x 6",
+            "values": [
+                41.0,
+                81.0,
+                161.0
+            ],
+            "results": [
+                0.00874363524,
+                0.00874363524,
+                0.00874363524
+            ],
+            "departure": 0.0,
+            "note": "peak dishing is a max over the grid, so it can only rise with resolution"
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0109 / C-0116",
+            "quantity": "15 x 4 free-tile dishing at the measured coupling",
+            "published": 0.0577199433,
+            "reproduced": 0.0577199433,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0116",
+            "quantity": "15 x 4 composite-fraction threshold",
+            "published": 0.0788618807,
+            "reproduced": 0.0788618807,
+            "departure": 0.0,
+            "strict": true
+        },
+        {
+            "source": "C-0116",
+            "quantity": "15 x 4 parallel-axis factor",
+            "published": 39.4479652,
+            "reproduced": 39.4479652,
+            "departure": 0.0,
+            "strict": true
+        }
+    ],
+    "falsifiers": [
+        "F1 — 10 x 6 is NOT flatter, in which case the paper's yield recommendation and this programme's flatness criterion disagree and the choice becomes a trade.",
+        "F2 — C-0116's threshold does not reproduce on 15 x 4, in which case no cross-section comparison built on it is licensed.",
+        "F3 — the narrower span makes some cross-section NOT flat at the measured coupling, which would bound the aspect ratio from the flatness side."
+    ],
+    "findings": {
+        "butTheSpanChangesToo": "10 x 6 is not merely a stiffer 15 x 4: it is NARROWER. edgeY goes 38.04 -> 25.36 nm at a fixed 38.08 nm span along the helices, so the aspect ratio goes 1.00105 -> 1.50158 and the across-helix reach is being compared against a shorter side.",
+        "theThresholdDisappearsRatherThanImproving": "10 x 6 has NO composite-fraction threshold at all: its free-tile dishing never reaches T-5b's 0.10 anywhere in f = [0, 1], including f = 0 where the layers are fully INDEPENDENT. So it is flat without depending on the interlayer coupling calibration -- which is the one unmeasured number C-0116 says the 15 x 4 verdict now rests on. The stronger cross-section is stronger by REMOVING a dependency, not by widening a margin.",
+        "theFootprintIsTheCost": "At the fixed 112 bp span a different m changes the tile's OTHER side: 15 x 4 is 38.08 x 38.04 nm, essentially square and essentially SS3's ~40 x 40; 10 x 6 is 38.08 x 25.36 nm, 0.6667 of the footprint. SS3's 100 pN is specified over that area, and C-0022's collar was solved on the square. So this is a SPECIFICATION trade, not a free improvement.",
+        "theCheapBoundPredictsTheDirection": "Sigma y^2 for n layers is n(n^2-1)d^2/12, so the parallel-axis excess scales as (n^2-1) and six layers carry 2.33333 x the excess of four at the SAME 60 helices. The factor goes 39.4479652 -> 90.7119188. No material constant enters.",
+        "theVerdict": "10 x 6 dishes 0.00874363524 against 15 x 4's 0.0577199433, and its flatness threshold sits at f = none against 0.0788618807 -- so the measured coupling clears it by n/a x rather than 3.2969 x. On this programme's own criterion the cross-section its SOURCE recommends is ALSO the flatter one."
+    },
+    "validity": [
+        "Every cross-section is a SMEARED equivalent sheet, as in C-0109 and C-0116; the grillage never reads `layers`.",
+        "Kirchhoff degrades as the block thickens: thickness over span is reported per cross-section and 10 x 6 is THICKER than 15 x 4, so its D_par is a WEAKER upper bound than the one C-0109 already flagged at 0.252.",
+        "The yield ordering is Douglas et al.'s, measured on gel and 100-particle TEM counts. This study does not re-derive it and cannot: it is a fabrication measurement.",
+        "The comparison is at FIXED span along the helices (112 bp). A different m changes the tile's OTHER dimension, so these are not similar rectangles and the aspect ratio is reported beside every row.",
+        "Only the UNCOUPLED tile is solved. Whether a coupling helps any cross-section is T-197, and C-0109 already reports every coupled cell as worse than uncoupled."
+    ],
+    "openQuestions": [
+        "Whether the electrode collar C-0022 solved for a 40 nm square transfers to a tile of a different aspect ratio -- the load is read at a fixed profile here.",
+        "What the honeycomb's three crossover azimuths offer as an attachment lattice at each cross-section, since every plan result in this corpus is single-layer square.",
+        "Whether 6 x 10 or 3 x 20 -- both 60 helices, both folded by Douglas et al., neither producing a sharp monomer band -- are excluded by folding alone or by flatness too."
+    ]
+}

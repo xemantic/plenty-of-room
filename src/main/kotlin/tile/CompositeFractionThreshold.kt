@@ -162,3 +162,18 @@ fun firstCrossing(
 /** True when [a] and [b] agree to [relative] of the larger magnitude. Used by the study's gates. */
 internal fun agreesTo(a: Double, b: Double, relative: Double): Boolean =
     abs(a - b) <= relative * maxOf(abs(a), abs(b), Double.MIN_VALUE)
+
+/**
+ * The helices in an `m × n` honeycomb block — Douglas et al.'s nomenclature, `m` x-raster rows of
+ * `n` helices each (*Nucleic Acids Research* **37**:5001, Figure 2 caption, read directly).
+ *
+ * `T-199` exists because two of that paper's seven designs — `15 × 4`, which is the tile this
+ * programme recommends, and `10 × 6`, which the paper itself recommends — are **both 60 helices**,
+ * so choosing between them costs no scaffold. Two of the seven (`8 × 8` and `4 × 16`) are 64, so
+ * the family as a whole is *not* a fixed-budget comparison and only this pair is.
+ */
+fun crossSectionHelices(rows: Int, layers: Int): Int {
+    require(rows >= 1) { "rows must be at least 1, was: $rows" }
+    require(layers >= 1) { "layers must be at least 1, was: $layers" }
+    return rows * layers
+}
