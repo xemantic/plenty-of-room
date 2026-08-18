@@ -80,6 +80,18 @@ and the constraint is the **product**. Nothing broke, and every study was half a
 
 An agent needing more takes the next free number **above every block above** and says where it moved from.
 
+## Number reservations — iteration 25 (2026-08-18)
+
+Two agents, plus the coordinator. Iteration 24's lesson stands: three concurrent heavy runs, not four —
+and after two transient API failures, an agent's work moves into the main context rather than being relaunched.
+
+| Agent | Task | Claims | Challenges |
+|---|---|---|---|
+| H | `T-197` is a COUPLED four-layer tile flat under the measured dropout? | `C-0118` | `CH-0137`, `CH-0138` |
+| I | `T-198` can four honeycomb layers be rastered from one circular M13? | `C-0119` | `CH-0139`, `CH-0140` |
+
+An agent needing more takes the next free number **above every block above** and says where it moved from.
+
 ## Process blockers
 
 | ID | Task | Status | Notes |
