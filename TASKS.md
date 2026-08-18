@@ -94,6 +94,20 @@ agent B took `CH-0131` and `T-200` and recorded that `T-195` had been claimed by
 coordinator took `T-201`. **Reserving in this file first is what did it** — re-listing `gpd/claims/`
 immediately before writing is what failed the six iterations before.
 
+## Number reservations — iteration 24 (2026-08-18)
+
+**Three** agents this iteration, not four: iteration 23 measured four concurrent `verify` + `study` runs at
+load 11.3 and 3 GB available, and the documented `-Xmx3g` OOM'd anyway because that cure is per **daemon**
+and the constraint is the **product**. Nothing broke, and every study was half an hour late.
+
+| Agent | Task | Claims | Challenges |
+|---|---|---|---|
+| E | `T-201` the fifth `ANSWERS.md` synthesis | `C-0115` | `CH-0132`, `CH-0133` |
+| F | `T-196` the composite-fraction threshold | `C-0116` | `CH-0134`, `CH-0135` |
+| G | `T-200` amend `C-0092`'s margin-movement deliverable | `C-0117` | `CH-0136` |
+
+An agent needing more takes the next free number **above every block above** and says where it moved from.
+
 ## Process blockers
 
 | ID | Task | Status | Notes |
