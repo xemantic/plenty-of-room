@@ -7316,3 +7316,80 @@ its whole literature answer in `T-151`'s manifested sources and `T-182` finding 
 (count-first +12.86 / −19.27 %, phase-first **−11.48 / +2.93 %**, the phase term changing sign between
 orderings on the search-free grid) while both totals agree at **0.0**. The recommendation rests on the total
 and stands; the explanation it was given does not.
+
+---
+
+## 2026-08-18 — NDI answers all six decisions, and two of them turn out to be one
+
+**Not an iteration.** Kazik put [`DECISIONS-FOR-NDI.md`](DECISIONS-FOR-NDI.md) to Jeremy Barton and all six
+came back in one pass, by email, with the reply reproduced verbatim in that file and in `TASKS.md`'s
+*Open questions for Kazik*. This entry records the interaction, per `SESSION-PROMPT.md`'s standing rule: what
+was asked, what was answered, and what changed as a result. **Nothing has been re-derived**; the work the
+answers open is queued as `T-191`–`T-195`, and no claim has been written on any of it.
+
+**The answers.**
+
+| # | asked | answered |
+|---|---|---|
+| 1 | 0.5 mM MgCl₂ as the nominal buffer? | **priced, not granted** — *"concerningly below the typical experimental stability window of DNA origami … pushing a parameter hard that I've been reserving for additional operating margin. So… well identified."* |
+| 2 | a 17–26 nm polymer layer? | **not examined** — *"an interesting regime we've been reserving, again, for low MgCl₂ concentrations we'd buy with additional work on stabilizing DNA origami at low salt."* |
+| 3 | which electrode? | *"Defaulting to template stripped gold for initial experiments."* |
+| 4 | one device or two? | *"2 devices."* |
+| 5 | which scaffold? | *"M13, circular ~7-8K nucleotides"*, 50 k available, hierarchical assembly above that — *"to use exess scaffold, just make the tile thicker. The 1700 nucleotide structure the agent is proposing seems… thin and low stiffness."* |
+| 6 | a two-layer tile? | answered **inside** 5, and volunteered rather than granted |
+
+**What changed, in the order of how much it costs us.**
+
+**1. Decisions 1 and 2 are one decision, and we asked them as two.** Both answers name the same reserve —
+operating margin bought with work on stabilising origami at low salt — so NDI can spend it once. We can rank
+the two spends on our own numbers and it is not close: the buffer buys **1.35×, 1.57× and 1.75×** at the state
+the device occupies (`C-0091`), three routes that are **common mode** below `C-0005`'s 123–214 % error and
+therefore not three; the tall layer is the only route to a whole clause of §3 (`C-0050`). **Spend it on the
+layer.** This is `C-0091`'s own finding — counting routes that are one number — arriving in the deliverable
+rather than in the corpus, and it is `T-194`.
+
+**2. §3 specifies a ~10 nm tile and every structural claim here modelled a 2 nm one.** *"Tile thickness ~10 nm
+(single-layer honeycomb)"* cannot hold both ways; `electrostatics/DnaOrigamiTile.kt` and `C-0021` both record
+the contradiction and both carry **two readings** of it, and the corpus took the thin one every time. NDI's
+answer resolves it toward the thick reading — and it arrives from the direction nobody was watching, the
+**scaffold**. `C-0086` measures the sheet at **1 680** of M13's **7 249** nt, **4.31×**, and the remedy offered
+for the excess is more layers. Four layers at the honeycomb rise is ~10 nm, which is §3's own number, so three
+independent statements describe one tile and **it is not the tile the flatness negative was derived on**.
+`C-0006`'s own variant table already carries it: `D_∥` = **14 310.78 pN·nm** against 85.50 and `D_⊥` ≥
+**19.222** against 3.345, and `C-0058`'s reach is their fourth root — 12.83 and 5.71 nm become ~46 and ~8.8 nm
+against a 38–40 nm tile. That is a cheap bound and not a result; it is `T-191`, and it is the first unspent
+design axis since iteration 20.
+
+**3. *"Thin and low stiffness"* is a criticism this repository already had the measurement for.** `C-0072`
+carries Fischer's SAXS width for a single-layer sheet — **9.1 %** against **2.9 %** for a multilayer brick —
+and Kube et al.'s inability to solve a single-layer structure at all, *"due to excessive conformational
+heterogeneity"*. We had the corroboration and had not read it as a verdict on the tile.
+
+**4. `T-50` is not deleted, and the file said it would be.** `DECISIONS-FOR-NDI.md` predicted that a one-word
+answer to decision 1 would delete the beyond-mean-field Monte Carlo and that only *"hold 2 mM"* would keep it.
+The answer was a **price** — neither word — so 2 mM stays the nominal and the last unbounded exposure on the
+critical path stands. **A binary was assumed where the answer was a cost.** The one prediction in that file
+the answers falsified, and it is worth keeping as a lesson about how a specification question is posed.
+
+**5. Two devices makes the desired clause its own object, and its refusal is quoted at a state it need not
+occupy.** Device B is `C-0046`'s 10 pN/nm placement and `C-0017`'s stability floor refuses it at **2.34–2.79×**
+— at the 10 nm layer in 2 mM, which is exactly the state decisions 1 and 2 together say device B does not sit
+at. So the three answers converge on one object: **device B is the low-salt tall-layer device**, and whether it
+exists is one evaluation of `|k_eff|` in a corner nobody has evaluated. `T-192`, and it also answers NDI's own
+objection to decision 2 — that 17–26 nm is 4.3–6.6 bulk Debye lengths — which **no claim here has ever
+addressed**, because nothing has evaluated the bias that delivers 100 pN across a tall gap.
+
+**6. Gold removes an uncertainty and does not remove a result.** The 2.6× material bracket collapses onto its
+**adverse** end — `C-0021`'s gold row becomes the number — and `C-0021`'s *"retardation is sourced for gold
+only"* caveat is discharged. Every verdict stands, because the finding there is about the *shape* of a `1/h³`
+force. **The potential of zero charge was not given**, and that is the half that supplies the entire
+thermal-scale hold-down at 0.9–5.1 mV. `T-193`; if the literature does not pin it for template-stripped Au in
+mM MgCl₂, it goes back as a one-line ask.
+
+**And one more drift found by the answers themselves.** Six answers came back to a list of five: `T-166` lived
+in `DECISIONS-FOR-NDI.md` and **never in `TASKS.md`'s *Open questions for Kazik***. That is `C-0071`'s *"a
+discharge is invisible to whoever files the removal"* run backwards — an **addition** the register never
+learned about — and no checker in the tree can see it, because all three compare the deliverable to the corpus,
+to the queue, or to itself, and this was a question the queue never had. It is now item 11, and the three
+checks (`trace-answers.py` numbers, status and self-consistency, and `check-markdown-tables.py`) are clean on
+all of it.

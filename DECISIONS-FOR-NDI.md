@@ -2,6 +2,14 @@
 
 Six decisions this programme cannot make for itself.
 
+> **ALL SIX ARE ANSWERED — 2026-08-18, Jeremy Barton (NDI), by email through Kazik.**
+> The answers are quoted verbatim in the block below and again in each section,
+> and the interaction is recorded in [`JOURNAL.md`](JOURNAL.md).
+> **Nothing has been re-derived yet.** What follows records the answers, names what each one changes,
+> and queues the work they open as `T-191`–`T-194`.
+> The analysis under each decision is kept as written — struck where an answer supersedes it,
+> intact where it does not — because a decision file that only ever grows is not a record.
+
 Each is a **specification** question rather than a modelling one:
 no amount of calculation closes it,
 because the thing that is missing is a statement of intent about the device,
@@ -11,6 +19,54 @@ rather than one at a time across iterations.
 
 They are live in [`TASKS.md`](TASKS.md) as `T-63`, `T-115`, `P-13`, `T-112`, `T-154` and `T-166`,
 and this file is the reviewable form of the same six.
+
+## The answers, and the three things that matter more than the answers
+
+| # | asked | NDI's answer, verbatim | what it is |
+|---|---|---|---|
+| 1 | 0.5 mM MgCl₂? | *"concerningly below the typical experimental stability window of DNA origami … pushing a parameter hard that I've been reserving for additional operating margin. So… well identified."* | **PRICED, NOT GRANTED.** Reachable, and it spends a reserve NDI is holding for margin |
+| 2 | a 17–26 nm layer? | *"beyond the regime I've bothered to examine … an interesting regime we've been reserving, again, for low MgCl₂ concentrations"* | **NOT EXAMINED — and contingent on the SAME reserve as decision 1** |
+| 3 | which electrode? | *"Defaulting to template stripped gold for initial experiments."* | **ANSWERED** for the material. The potential of zero charge is not given |
+| 4 | one device or two? | *"2 devices."* | **ANSWERED** |
+| 5 | which scaffold? | *"M13, circular ~7-8K nucleotides … To use excess scaffold, just make the tile thicker. The 1700 nucleotide structure the agent is proposing seems… thin and low stiffness"* | **ANSWERED**, and it carries a criticism of the tile this programme has been modelling |
+| 6 | a two-layer tile? | *"just make the tile thicker"* | **ANSWERED BY IMPLICATION — yes, and volunteered rather than granted** |
+
+**1. Decisions 1 and 2 are ONE decision, and this file asked them as two.**
+Both answers name the same reserve — *"additional operating margin"* bought with
+*"additional work on stabilizing DNA origami at low salt"* — so the buffer and the tall layer are two
+claimants on one budget line, and NDI is entitled to spend it once.
+This programme can rank them on its own numbers and the ranking is not close:
+the buffer buys **1.35×, 1.57× and 1.75×** at the state the device occupies (`C-0091`), three routes that are
+**common mode** below `C-0005`'s 123–214 % mean-field error and therefore not independent of each other;
+the tall layer is the **only** route to a whole clause of §3 (`C-0050`).
+**Of the two spends, the one this programme can price is the layer** — it buys a whole clause of §3, where the
+buffer buys 1.35–1.75× that is smaller than the error bar it is quoted inside.
+**That is a ranking of the two BUYS and not of the two PRICES, and only NDI holds the second column.**
+If stabilising origami at 0.5 mM and reaching a 17–26 nm layer cost the same, the layer wins on this
+programme's numbers; if they do not, this ranking says nothing at all, and saying otherwise would repeat the
+error the answer to decision 1 just caught — see the *"it costs nothing"* bullet below, which was a statement
+about the physics standing in for a statement about the cost.
+
+**2. §3 specifies a ~10 nm tile and this programme has modelled a 2 nm one.**
+§3's parameter row reads *"Tile thickness ~10 nm (single-layer honeycomb)"*, which cannot hold both ways —
+`electrostatics/DnaOrigamiTile.kt` and `C-0021` both record the contradiction and carry **both** readings —
+and every structural claim in the corpus took the thin one.
+NDI's answer resolves it toward the thick reading, from a direction nobody asked about: the **scaffold**.
+
+**3. M13 pays for exactly that tile.**
+`C-0086` measures the sheet at **1 680** of M13's **7 249** nt — **4.31×** — and NDI's remedy for the excess is
+*"just make the tile thicker"*.
+Four layers at the honeycomb rise is **9.61 nm**, and `Gen1Tile.kt`'s own variant is already documented as
+*"the ~10 nm thickness §3 also states"* — the reading was built, named and then never used.
+So three independent statements — §3's thickness row, M13's 4.31× excess, and NDI's answer — describe one tile,
+and it is not the tile the flatness negative was derived on.
+`C-0006`'s own variant table already carries it: a four-layer honeycomb sheet has `D_∥` = **14 310.78 pN·nm**
+against 85.50 and `D_⊥` ≥ **19.222** against 3.345, i.e. **167×** and **5.75×**.
+The Winkler reach is a fourth root of those, so `C-0058`'s 12.83 and 5.71 nm become ~46 and ~8.8 nm against a
+38–40 nm tile — the regime in which a tile stops dishing because it is rigid on its own scale.
+**That is a cheap bound and not a result**; it is queued as `T-191`, and it is the first unspent design axis
+since iteration 20.
+
 
 ## How to read this
 
@@ -27,18 +83,45 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 
 ## At a glance
 
-| # | Decision | Owner task | Cost of deferring | Programme's recommendation |
-|---|---|---|---|---| 
-| 1 | Is 0.5 mM MgCl₂ acceptable as the Gen-1 nominal buffer, instead of §3's 2 mM? | `T-63` | ~~The device sits **on** its own pull-in fold at 2 mM~~ — **withdrawn, `C-0084`**; the recommended element does not fold at 2 mM at all, on **any** elastica branch (`C-0092`). The cost of deferring is now a **margin**, 1.39× against 1.87× at worst, not a failure | **Adopt 0.5 mM — but as a PREFERENCE, not a requirement, and on THREE routes rather than six (`C-0091`)** |
-| 2 | May the polymer layer be taller than 10 nm — 17–26 nm? | `T-115` | §3's *desired* ~10 nm stroke stays unreachable on §3's own stack | **A yes/no is enough**; a *no* closes a branch cheaply |
-| 3 | What is the electrode made of, and where is its potential of zero charge? | `P-13` | 2.6× on the one hold-down no design can remove | **Name a material**; the programme will not choose one |
-| 4 | Which device does §3's *desired* clause ask for? | `T-112` | Every desired-stroke number in the corpus has to be quoted twice | **One device, placed at the acceptable clause** |
-| 5 | What is the scaffold — linear or circular, M13 or synthetic, and how long? | `T-154` | A seam costs 6–12 of 34 arm stations, and §3's 40.0 nm is not a buildable seamless width | **A purpose-length scaffold**; the choice is a fabrication decision, not a modelling one |
-| 6 | Does §3 admit a **two-layer** tile, or is single-layer a requirement? | `T-166` | The only coupling topology that narrows the flatness negative is multilayer, and it is the one motif here with a published precedent | **A yes/no is enough**; a *no* closes the last open recovery route |
+| # | Decision | Owner task | Cost of deferring | Programme's recommendation | **NDI's answer (2026-08-18)** |
+|---|---|---|---|---|---|
+| 1 | Is 0.5 mM MgCl₂ acceptable as the Gen-1 nominal buffer, instead of §3's 2 mM? | `T-63` | ~~The device sits **on** its own pull-in fold at 2 mM~~ — **withdrawn, `C-0084`**; the recommended element does not fold at 2 mM at all, on **any** elastica branch (`C-0092`). The cost of deferring is now a **margin**, 1.39× against 1.87× at worst, not a failure | **Adopt 0.5 mM — but as a PREFERENCE, not a requirement, and on THREE routes rather than six (`C-0091`)** | **PRICED, NOT GRANTED** — reachable, at the cost of origami stabilisation work and a reserve held for margin. 2 mM stays the nominal; `T-50` is **not** deleted |
+| 2 | May the polymer layer be taller than 10 nm — 17–26 nm? | `T-115` | §3's *desired* ~10 nm stroke stays unreachable on §3's own stack | **A yes/no is enough**; a *no* closes a branch cheaply | **NOT EXAMINED**, and it draws the **same** reserve as decision 1 — so 1 and 2 are one decision, and this programme's numbers say spend it here |
+| 3 | What is the electrode made of, and where is its potential of zero charge? | `P-13` | 2.6× on the one hold-down no design can remove | **Name a material**; the programme will not choose one | **TEMPLATE-STRIPPED GOLD.** The 2.6× bracket collapses onto its adverse end; the **PZC is still not given** |
+| 4 | Which device does §3's *desired* clause ask for? | `T-112` | Every desired-stroke number in the corpus has to be quoted twice | **One device, placed at the acceptable clause** | **TWO DEVICES.** Device B is placed at 10 pN/nm and its binding constraint becomes `C-0017`'s stability floor |
+| 5 | What is the scaffold — linear or circular, M13 or synthetic, and how long? | `T-154` | A seam costs 6–12 of 34 arm stations, and §3's 40.0 nm is not a buildable seamless width | **A purpose-length scaffold**; the choice is a fabrication decision, not a modelling one | **CIRCULAR M13, ~7–8 k nt** — so the remainder is the DEFAULT — and the remedy for the excess is *"just make the tile thicker"* |
+| 6 | Does §3 admit a **two-layer** tile, or is single-layer a requirement? | `T-166` | The only coupling topology that narrows the flatness negative is multilayer, and it is the one motif here with a published precedent | **A yes/no is enough**; a *no* closes the last open recovery route | **YES, BY IMPLICATION**, and volunteered rather than granted. Reopens the body axis (`T-191`), not the coupling axis |
 
 ---
 
 ## 1. Is 0.5 mM MgCl₂ acceptable as the Gen-1 nominal buffer? (`T-63`)
+
+> ### ANSWERED, 2026-08-18 — PRICED, NOT GRANTED
+>
+> **NDI, verbatim:** *"0.5 mM MgCl2 is concerningly below the typical experimental stability window of DNA
+> origami. There are routes to stabilize against that kind of concentration, but's pushing a parameter hard
+> that I've been reserving for additional operating margin. So… well identified."*
+>
+> **What that is.** Neither *yes* nor *hold 2 mM*.
+> 0.5 mM is reachable and it is **costed**: it needs origami stabilisation work, and it spends a reserve NDI
+> is holding for operating margin. Neither of those is a quantity this programme can compute.
+> The ask is granted as *well identified* and refused as free.
+>
+> **What it changes.**
+>
+> - **2 mM stays the nominal.** Every margin in the corpus is owed at 2 mM, and 0.5 mM travels beside it as an
+>   option with a named price rather than as a recommendation.
+> - **`T-50` is NOT deleted.** This file said the one-word answer would delete it and that only *"hold 2 mM"*
+>   would keep it. The answer is neither word, so the last unbounded exposure on the Gen-1 critical path —
+>   `C-0005`'s `Ξ = 17–24`, where there is no systematic theory at all — stands exactly where it was.
+>   That is the one prediction in this file the answer falsified.
+> - **The buy is small, and it is common mode.** At the state the device occupies the three surviving routes
+>   are worth **1.35×, 1.57× and 1.75×** (`C-0091`), and all three are downstream of `C-0008`'s single
+>   mean-field solve, whose one-loop error is **123–214 %** (`C-0005`) — larger than any of them.
+>   **Against a reserve NDI says it is holding for margin, this programme cannot argue that its own
+>   1.35–1.75× is the better use of it** — and it now knows what the other claimant on that reserve is.
+> - **The other claimant is decision 2**, which buys a whole clause of §3. See the block at the head of this
+>   file: the two decisions are one, and the recommendation between them is the layer.
 
 > ### CORRECTED, iteration 17 — this decision's severity is withdrawn, its recommendation stands
 >
@@ -113,7 +196,8 @@ not an output of the model.
 - **At 0.5 mM the fold does not exist at all** (0 of 6 states, against 6 of 6 at 2 mM), and the
   corrected stability margin is **2.16–9.87×** against 1.23–1.53×. It is the only margin in this
   repository that clears `C-0005`'s own 123–214 % mean-field error.
-- **It costs nothing.** `C-0007` puts the layer's buffer sensitivity at **≤ 0.4 %** of the modulus,
+- ~~**It costs nothing.**~~ **It costs nothing THIS PROGRAMME CAN SEE — corrected 2026-08-18, and the
+  answer is what corrected it.** `C-0007` puts the layer's buffer sensitivity at **≤ 0.4 %** of the modulus,
   so the window edges, the chain length, the stroke and the chemistry are all unchanged.
 - **The obvious escape is priced and fails.** The adverse mounting is 42.4–61.0 pN/nm, past
   `C-0023`'s 40 pN/nm compliance ceiling at **0 of 8** lengths. A shorter standoff lands 2.2 % short
@@ -130,6 +214,30 @@ margin, and `T-50` stays on the queue as a multi-week item that a one-word answe
 ---
 
 ## 2. May the polymer layer be taller than 10 nm — 17–26 nm? (`T-115`)
+
+> ### ANSWERED, 2026-08-18 — NOT EXAMINED, AND IT IS THE SAME RESERVE AS DECISION 1
+>
+> **NDI, verbatim:** *"17-26 nm of polymer thickness is beyond the regime I've bothered to examine as the debye
+> length of operation in 2 mM MgCl2 is only about 4 nm, so that thick polymer is far beyond what we've
+> considered. It's an interesting regime we've been reserving, again, for low MgCl2 concentrations we'd buy
+> with additional work on stabilizing DNA origami at low salt."*
+>
+> **What that is.** Not a refusal: an unexamined regime, held behind the same purchase as decision 1.
+> So the answer to *"may the layer be taller"* is *"at 0.5 mM, and that is one decision with the buffer"*.
+>
+> **The reason given is a real objection and this programme has not answered it.**
+> §3's own parameter row gives ~4 nm at 2 mM and `C-0008` derives **3.93 nm**, so a 17–26 nm layer is
+> **4.3–6.6 bulk Debye lengths** of separation, and no claim here has ever evaluated the bias that would
+> deliver §3's 100 pN across one.
+> What this programme can say is that *"the"* Debye length is the wrong single number for the question —
+> `C-0008` measures **three** in this stack, and the one in the actuated gap is counterion-dominated rather
+> than buffer-set — so the objection has to be answered by a field solve at the tall gap rather than by a
+> comparison of two lengths. That is `T-192`, it runs on `C-0008`'s existing machinery, and it decides
+> whether the reserve is worth spending here at all.
+>
+> **What it changes.** The 16.63–26.12 nm threshold below stands as the *kinematic* requirement for a 10 nm
+> dead-load stroke; what it does not carry is whether such a layer can be actuated at 2 mM. Until `T-192`
+> runs, this decision's *yes* is worth a stroke and an unknown bias.
 
 **The question.** §3 specifies a 5–10 nm polymer layer. Is that a hard bound, or a nominal?
 
@@ -158,6 +266,30 @@ while it is open the desired-stroke branch cannot be either pursued or closed.
 
 ## 3. What is the electrode made of, and where is its potential of zero charge? (`P-13`)
 
+> ### ANSWERED, 2026-08-18 — TEMPLATE-STRIPPED GOLD. The PZC is still not given.
+>
+> **NDI, verbatim:** *"Defaulting to template stripped gold for initial experiments."*
+>
+> **What it changes.**
+>
+> - **The 2.6× bracket collapses onto its ADVERSE end.** Gold is the metal row of `C-0021`'s `M4` table:
+>   `A_Au|water|Au` = **238.6–267.9 zJ** against alumina's 36.9, giving a hold-down of **10.4–17.2 pN at 5 nm**,
+>   3.0–5.2 at 7 nm and 0.74–1.42 at 10 nm. Those stop being the top of a four-material bracket and become
+>   the numbers.
+> - **No finding moves.** `C-0021`'s verdict is a statement about the *shape* of a `1/h³` force: it integrates
+>   to a **bounded** potential, the well is **4.82 `k_BT`** at 5 nm and **0.65** at 10 nm, and **0 of 54**
+>   van-der-Waals-only states confine. A stable equilibrium is still not a confinement.
+>   **The answer removes an uncertainty; it does not remove a result.**
+> - **One caveat is discharged.** `C-0021` records that its retardation factor is *"sourced for gold only"*.
+>   It is now sourced for the material in use.
+> - **Template-stripped is a second statement, and it is favourable.** An atomically flat, Au(111)-textured
+>   surface is the one case in which a smooth-wall Poisson-Boltzmann solve and a planar Hamaker slab are the
+>   right idealisations rather than convenient ones.
+> - **What is still open is the half that carries the zero-bias hold-down.** `C-0021` finds a contact potential
+>   of **0.9–5.1 mV** — below anything a bench would call zero — supplies the *entire* thermal-scale hold-down,
+>   and gold narrows where to look without supplying the number. Queued as `T-193`; if the literature does not
+>   pin a template-stripped gold PZC in mM MgCl₂, this comes back as a one-line ask.
+
 **The question.** §1 says *"patterned electrode"* and never says of what.
 
 **Why the programme cannot decide it.** A better calculation of the wrong material is not an
@@ -183,6 +315,24 @@ than a guess, so nothing is blocked. The number is simply softer than it needs t
 
 ## 4. Which device does §3's *desired* clause ask for? (`T-112`)
 
+> ### ANSWERED, 2026-08-18 — TWO DEVICES
+>
+> **NDI, verbatim:** *"2 devices."*
+>
+> **What it changes.**
+>
+> - **Every desired-stroke number read on the acceptable clause's coupling is read on a device that does not
+>   exist.** The 333 pN at 10 nm, `C-0039`'s 699 pN, and the per-path allowables that follow from them all
+>   belong to a 33.333 pN/nm coupling travelling 10 nm. Device B is `C-0046`'s **10 pN/nm** placement.
+> - **The composed cap stops being a programme bound.** `δ ≤ F/|k_eff|` = **3.58–4.27 nm at 100 pN** is a
+>   statement about **one** device, and it bounds device A.
+> - **Device B's binding constraint is `C-0017`'s stability floor**, `|k_eff|` = **23.41–27.91 pN/nm** at the
+>   10 nm layer in 2 mM: a 10 pN/nm coupling is refused at **2.34–2.79×**.
+> - **And that refusal is quoted at a state, not at a device.** `|k_eff|` is read at the 10 nm layer in 2 mM —
+>   and device B is exactly the device decision 2 says needs a **17–26 nm** layer, which decision 1 says needs
+>   **low salt**. **The three answers converge on one object**: device B is the low-salt tall-layer device, and
+>   whether it exists is one evaluation of `|k_eff|` in a corner nobody has evaluated. `T-192`, and it is cheap.
+
 **The question.** §3 gives an acceptable clause (100 pN at 3 nm) and a desired one (~10 nm stroke).
 Are these two operating points of **one** device, or two devices?
 
@@ -206,6 +356,35 @@ withdraw a 40 pN/nm ceiling for exactly this reason.
 ---
 
 ## 5. What is the scaffold — linear or circular, M13 or synthetic, and how long? (`T-154`)
+
+> ### ANSWERED, 2026-08-18 — CIRCULAR M13, AND THE REMEDY FOR THE EXCESS IS A THICKER TILE
+>
+> **NDI, verbatim:** *"Scaffold default is M13, circular ~7-8K nucleotides, but 50K nucleotide scaffold is
+> available for larger systems if we need it for optimization. Have been assuming hierarchical assembly for
+> complicated structures built of multiple 8K scaffolds. To use exess scaffold, just make the tile thicker.
+> The 1700 nucleotide structure the agent is proposing seems… thin and low stiffness, though we have not
+> assessed the specific details."*
+>
+> **What it changes, and this is the largest consequence of the whole reply.**
+>
+> - **Row three of the table below is the DEFAULT, not one of three options.** Circular M13, and the tile takes
+>   **1 680** of **7 249** nt, so the **5 569 nt / 33.3 nm** unpaired coil carrying **1.66×** the sheet's own
+>   charge is present unless something is done about it. `T-154`'s *modelling* half — carry that body into
+>   `C-0022`'s edge solve — stops being optional.
+> - **The programme's own recommendation is declined, implicitly.** It recommended a purpose-length 1 680 nt
+>   scaffold; NDI's answer is to **spend** the scaffold rather than to shorten it.
+> - **The criticism lands, and this repository already carries the measurement that corroborates it.**
+>   *"Thin and low stiffness"* is what the field has measured about single-layer sheets: Fischer et al.'s SAXS
+>   gives the single-layer sheet a fitted lattice width of **9.1 %** against **2.9 %** for a multilayer brick,
+>   and Kube et al. could not solve a single-layer structure at all, *"due to excessive conformational
+>   heterogeneity"* (`C-0072`).
+> - **And §3 agrees with NDI rather than with this programme.** §3's parameter row is *"Tile thickness ~10 nm
+>   (single-layer honeycomb)"* — a contradiction `electrostatics/DnaOrigamiTile.kt` and `C-0021` both record
+>   and both carry **two readings** of. Every structural claim took the thin one. **4.31× of scaffold and
+>   ~10 nm of thickness are the same tile**, and it is four layers.
+> - **So the flatness negative is a result about a tile nobody is asking for.** `C-0006`'s own variant table
+>   carries the thick one: `D_∥` = **14 310.78 pN·nm** against 85.50, `D_⊥` ≥ **19.222** against 3.345 — 167×
+>   and 5.75×, and the Winkler reach is their fourth root. `T-191`.
 
 **The question.** §1 and §3 specify a 40 × 40 nm single-layer origami tile and never say what scaffold folds it.
 Until iteration 17 that looked like an implementation detail. It is not: it decides whether the tile has a
@@ -251,6 +430,28 @@ every plan margin at 38.08 nm — cannot be scoped, because whether it is needed
 ---
 
 ## 6. Does §3 admit a two-layer tile, or is single-layer a requirement? (`T-166`)
+
+> ### ANSWERED BY IMPLICATION, 2026-08-18 — YES, AND VOLUNTEERED RATHER THAN GRANTED
+>
+> **NDI answered five numbered questions and this one is answered inside the fifth:**
+> *"To use exess scaffold, just make the tile thicker."*
+>
+> **Recorded as INFERRED rather than stated**, and it is the one answer worth confirming in a sentence —
+> because the question asked whether a **second body** may be tied to the tile at many out-of-plane sites,
+> and what was volunteered is that the **tile itself** may be thicker.
+> **The second is the stronger permission**: `C-0093`'s shared stiff body is a body the tile is tied *to*, and
+> a thicker tile is that body **fused** to the tile, which deletes the ties and the compliance in them.
+>
+> **What it changes.** The axis this section records as spent reopens — not on the **coupling**, where
+> `C-0098` genuinely closed it, but on the **body being coupled**. The 90th-percentile dishing under measured
+> staple dropout is a ratio to the stroke of a tile whose bending length is smaller than itself; `C-0006`'s
+> four-layer row moves both bending lengths by a fourth root of 167× and 5.75×. `T-191` runs it.
+>
+> **The honest caveat is that a thicker tile is not free anywhere else**: it carries more charge into the
+> actuated gap (`C-0022`), it is a different body for `C-0004`'s drainage, its dropout statistics are measured
+> on a *single-layer* Rothemund rectangle (`C-0087`), and `C-0093` already found that a *buildable* four-layer
+> body reads **0.100166871** where the rigid limit reads 0.0344 — so body rigidity is first order and a *yes*
+> opens work rather than delivering a win.
 
 **The question.** §1 and §3 name a single-layer origami tile. Is that a requirement, or the simplest thing
 that came to mind when the problem was written?
@@ -319,8 +520,13 @@ states it as a falsifiable threshold rather than a guess.
 
 **Compute.** `T-50` (above) and `T-51` (field-theoretic simulation of the grafted layer, costed at
 weeks) both exceed what one session can run on the current box. `T-51` is **not** warranted — `C-0019`
-bounds the layer response at ≤ 9.4 % without it. `T-50` is warranted only if decision 1 comes back as
-"hold 2 mM".
+bounds the layer response at ≤ 9.4 % without it. ~~`T-50` is warranted only if decision 1 comes back as
+"hold 2 mM".~~
+**CORRECTED, 2026-08-18 — this is the one prediction in this file the answers falsified.**
+Decision 1 came back as neither *"adopt 0.5 mM"* nor *"hold 2 mM"* but as **a price**, so 2 mM remains the
+nominal and `T-50` remains warranted. A binary was assumed where the answer was a cost, which is the same
+failure this file records elsewhere as *"a one-sentence answer is enough"*: it was, and the sentence was not
+one of the two on offer.
 
 ---
 Two things worth flagging about the document itself:
