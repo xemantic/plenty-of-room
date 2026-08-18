@@ -1,0 +1,183 @@
+{
+  "task": "T-198",
+  "leaf": "A8.2",
+  "title": "Can four honeycomb layers be rastered from one circular M13 at a buildable width?",
+  "verificationType": "logical (integer-lattice arithmetic and a brute-forced parity) + literature (the primary honeycomb design rules, read directly)",
+  "maturity": "TRL 1-3. Model-consistent and traceable. NOT empirically demonstrated here -- though the cross-section itself HAS been built and gel-analysed by others.",
+  "units": {
+    "length": "base pairs and nm",
+    "count": "dimensionless"
+  },
+  "primarySource": {
+    "citation": "Douglas, Marblestone, Teerapittayanon, Vazquez, Church & Shih, Nucleic Acids Research 37:5001 (2009), PMC2731887 -- the caDNAno paper",
+    "readDirectly": true,
+    "location": "gpd/data/T-151-sources/PMC2731887-fullTextXML.xml, fetched by T-151 two iterations earlier for a different question",
+    "cheapBoundNote": "The FOURTH time CLAUDE.md's 'check gpd/data/ BEFORE fetching anything' has paid: the entire literature answer was four greps over a source already in the repository, and zero fetches."
+  },
+  "cheapBound": {
+    "question": "does C-0086's odd-half-turn width rule transfer to the honeycomb?",
+    "squareHalfTurnBasePairs": 16,
+    "squareAdmissibleWidths": [
+      16,
+      48,
+      80,
+      112,
+      144
+    ],
+    "honeycombHalfTurnBasePairs": 5.25,
+    "anyOddMultipleIsInteger": false,
+    "verdict": "The rule is OUTSIDE ITS OWN DOMAIN on the honeycomb, not prohibitive: a half turn is 5.25 bp and no odd multiple of it is ever an integer."
+  },
+  "honeycombRules": {
+    "basePairsPerTurn": 10.5,
+    "neighboursPerHelix": 3,
+    "stapleCrossoverPeriodBasePairs": 21,
+    "stapleCrossoverStepBasePairs": 7,
+    "scaffoldOffsetFromStapleBasePairs": 5,
+    "scaffoldLatticeIsIntegral": true,
+    "scaffoldOffsetsOnA112bpRow": [
+      2,
+      5,
+      9,
+      12,
+      16,
+      19,
+      23,
+      26,
+      30,
+      33,
+      37,
+      40,
+      44,
+      47,
+      51,
+      54,
+      58,
+      61,
+      65,
+      68,
+      72,
+      75,
+      79,
+      82,
+      86,
+      89,
+      93,
+      96,
+      100,
+      103,
+      107,
+      110
+    ],
+    "quotation": "\"antiparallel crossovers between adjacent staple helices only where the strand backbones arrive at points of closest proximity, which repeat every 21 base pairs if the helical twist is fixed at 10.5 base pairs per turn. Thus for a given staple helix, potential staple-crossover positions occur every seven base pairs, or two-thirds of a turn. Our default rules allow antiparallel crossovers between adjacent scaffold helices to occur five base pairs, or half a turn, upstream or downstream of allowed crossover positions for the associated staple helices.\"",
+    "verdict": "The honeycomb quantises the half turn to FIVE base pairs, not 5.25, so its scaffold-crossover lattice IS integral and the routing question is open again rather than closed by the cheap bound."
+  },
+  "theCrossSectionHasBeenBuilt": {
+    "nomenclature": "m x n, where m is the number of x-raster rows and n the number of helices per x-raster row (Figure 2 caption, read directly)",
+    "ourTile": "15 x 4 = 60 helices",
+    "designsInThePaper": [
+      "15 x 4",
+      "10 x 6",
+      "8 x 8",
+      "6 x 10",
+      "4 x 16",
+      "3 x 20",
+      "2 x 30"
+    ],
+    "allSixtyHelices": true,
+    "ourCrossSectionIsDesign": "(i) 15 x 4, folded from p8064",
+    "sharpLeadingMonomerBands": [
+      "15 x 4 (four-helix-per-x-raster, two y-layers)",
+      "10 x 6 (six-helix-per-x-raster, three y-layers)",
+      "2 x 30 (thirty-helix-per-x-raster, two x-layers)"
+    ],
+    "ofSevenDesigns": 7,
+    "bestByDefectFreeFraction": "10 x 6 (six helices per x-raster row)",
+    "quotation": "\"Only folding with three of the seven designs -- four-helix-per-x-raster or 15 x 4 (two y-layers), six-helix-per-x-raster or 10 x 6 (three y-layers), thirty-helix-per-x-raster or 2 x 30 (two x-layers) -- produced sharp leading monomer bands by agarose-gel electrophoresis\"",
+    "trendQuotation": "\"designs with a smaller number of x-layers or y-layers may have a folding advantage due to fewer numbers of highly embedded helices, which may be more difficult to assemble, and perhaps also due to the lower crossover densities. Consistent with this trend, single-layer shapes fold much faster and to high[er yield]\""
+  },
+  "theSeam": {
+    "premise": "Figure 2b, read directly: \"Scaffold crossovers only occur between helices that are neighbors in the partially folded models. Thus, these models capture an important feature of the design: the path of the scaffold stays within a 2D SURFACE.\"",
+    "consequence": "The graph the SCAFFOLD may use is not the honeycomb's three-regular adjacency -- it is the adjacency of an unrolled 2D surface, which for an m x n raster is again a PATH over the helices in raster order. So CLAUDE.md's tree-parity argument survives the move to a multilayer lattice UNCHANGED, and it survives for a reason that is in the source rather than in the geometry.",
+    "bruteForced": {
+      "3": {
+        "closedWalksFound": 1,
+        "allEdgeParitiesEven": true,
+        "hamiltonianCycleExists": false,
+        "hamiltonianPaths": 2
+      },
+      "4": {
+        "closedWalksFound": 1,
+        "allEdgeParitiesEven": true,
+        "hamiltonianCycleExists": false,
+        "hamiltonianPaths": 2
+      },
+      "5": {
+        "closedWalksFound": 1,
+        "allEdgeParitiesEven": true,
+        "hamiltonianCycleExists": false,
+        "hamiltonianPaths": 2
+      },
+      "6": {
+        "closedWalksFound": 1,
+        "allEdgeParitiesEven": true,
+        "hamiltonianCycleExists": false,
+        "hamiltonianPaths": 2
+      },
+      "7": {
+        "closedWalksFound": 1,
+        "allEdgeParitiesEven": true,
+        "hamiltonianCycleExists": false,
+        "hamiltonianPaths": 2
+      }
+    },
+    "hamiltonianCycleOnTheRasterPath": false,
+    "hamiltonianCycleGround": "THEOREM, not enumerated: a path on more than two vertices has no Hamiltonian cycle, and the brute force above confirms it at every order from 3 to 7.",
+    "hamiltonianPathsOnTheRasterPath": 2,
+    "verdict": "A FULLY FOLDED CIRCULAR scaffold gives every helix TWO segments, so a seam (or its 3D analogue) is FORCED -- exactly as on the single-layer sheet. A LINEAR scaffold needs only a Hamiltonian path and there are exactly two.",
+    "whatThePublishedBlocksActuallyShow": "The 3D analogue is visible in the paper's own TEM analysis, which excludes defects \"more than 3 nm away from the unpaired scaffold loops at the front and rear interfaces\" -- i.e. the raster turns leave unpaired loops, and the published blocks have them."
+  },
+  "scaffoldBudget": {
+    "demandBasePairs": 6720,
+    "demandNote": "15 rows x 112 bp x 4 layers",
+    "candidates": {
+      "M13mp18 (C-0086's figure)": {
+        "nucleotides": 7249,
+        "sufficient": true,
+        "remainderNucleotides": 529,
+        "occupancy": 0.9270244171609877
+      },
+      "p7560 (Douglas et al., designs ii/iv/vi/vii)": {
+        "nucleotides": 7560,
+        "sufficient": true,
+        "remainderNucleotides": 840,
+        "occupancy": 0.8888888888888888
+      },
+      "p8064 (Douglas et al., designs i/iii/v)": {
+        "nucleotides": 8064,
+        "sufficient": true,
+        "remainderNucleotides": 1344,
+        "occupancy": 0.8333333333333334
+      }
+    },
+    "finding": "C-0109 costed the tile against M13mp18's 7249 nt and found 92.7 % occupancy. The scaffolds Douglas et al. ACTUALLY fold these blocks from are p7560 and p8064 -- M13mp18 derivatives bearing inserts -- and design (i), our own cross-section, used p8064. So the standard scaffold for this cross-section is LONGER than the one the budget was computed against, and NDI's \"M13, circular ~7-8K nucleotides\" already names that range."
+  },
+  "findings": {
+    "theAnswerIsYesAndItIsBuilt": "Four honeycomb layers of 15 rows CAN be rastered from one circular M13, and the cross-section is not a proposal: it is design (i) of the caDNAno paper, folded from p8064 and one of only THREE of seven to produce sharp leading monomer bands.",
+    "butThePaperRecommendsAgainstIt": "Its own conclusion is that SIX helices per x-raster row (10 x 6) yields the greatest fraction of defect-free objects, not four (15 x 4). So the tile aspect ratio is a design variable with published yield evidence attached, and this programme has never treated it as one.",
+    "theSeamSurvivesTheMoveToThreeDimensions": "And for a reason that is in the source rather than the geometry: the scaffold path stays within a 2D surface, so the adjacency it may use is a path even though the honeycomb's is three-regular.",
+    "theCheapBoundWasRightAndAlsoNotTheAnswer": "C-0086's odd-half-turn rule genuinely does not transfer -- no odd multiple of 5.25 bp is an integer -- but the honeycomb quantises its half turn to 5 bp instead, so the lattice is integral and the rule's failure was a domain error rather than a prohibition."
+  },
+  "validity": [
+    "The brute force is exhaustive to 7 helices and the parity beyond that is a THEOREM: a closed walk on a tree traverses every edge an even number of times, and a raster path is a tree. The 60-helix case is not enumerated and does not need to be.",
+    "The 2D-surface premise is the paper's OWN statement about ITS OWN default rules, and caDNAno explicitly permits the user to force crossovers outside them -- \"caDNAno permits the user to force crossovers between any two staple bases or between any two scaffold bases\" -- with the warning that \"departure from the default rules may lead to folding failure\". A forced-crossover route could use the honeycomb's third neighbour and break the path, and this task does NOT explore that.",
+    "The yield comparison is BETWEEN CROSS-SECTIONS at a fixed 60 helices, on seven designs, by gel and by 100-particle TEM counts. Fractions are reported in that paper's Figure 2d/2e, which are IMAGES and are not transcribed here -- only the ordering and the named winner are, both from the text.",
+    "Every plan ceiling, station lattice, crossover phase and placement in this corpus is SINGLE-LAYER SQUARE-LATTICE. The honeycomb's three azimuths at 7 bp are a different inventory and nothing here re-derives them.",
+    "This task settles the ROUTE and the WIDTH. It does not re-derive C-0109's rigidities, C-0116's threshold, or any flatness number."
+  ],
+  "openQuestions": [
+    "Whether a 10 x 6 cross-section -- the paper's own recommendation -- has the flexural rigidities the flatness verdict needs. It is 60 helices as well, so the scaffold budget is unchanged, but six layers of ten rows is a different plate: thicker, narrower, and with a different second moment. That is a direct successor to C-0109 and C-0116 and it may be a better tile than the one now recommended.",
+    "What the honeycomb's three crossover azimuths offer as an ATTACHMENT lattice, since every plan result in this corpus is square-lattice.",
+    "Whether the unpaired scaffold loops at the raster's front and rear interfaces sit in the actuated gap, which is T-195's question on a different body."
+  ]
+}

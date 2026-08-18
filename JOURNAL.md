@@ -7949,3 +7949,53 @@ entries already, and the second is its *"a strict comparison between quantities 
 construction reports a tie as a finding"* in a new place.
 
 `ANSWERS.md`'s three passages that said they were owed a re-read when this filed are discharged.
+
+---
+
+## Iteration 25 — `T-198`, and the tile turns out to be somebody's published design
+
+**`T-198` (`C-0119`) — yes, and the cross-section is not a proposal.** The tile this programme now
+recommends — four honeycomb layers of fifteen rows — is **design (i) of the caDNAno paper**: 15 × 4 in
+Douglas et al.'s own nomenclature, **60** duplexes, folded from p8064, and one of only **three of seven**
+cross-sections to produce sharp leading monomer bands by agarose gel.
+
+**And that paper recommends a different one.** Its conclusion is that *six* helices per x-raster row —
+**10 × 6**, the same 60 helices — yields the greatest fraction of defect-free objects. So **the tile's aspect
+ratio is a design variable with published yield evidence attached, and this programme has never treated it as
+one.** Queued as `T-199`, and it is the first design axis handed to us by a **measurement** rather than
+derived: the scaffold budget is unchanged, so it costs nothing to consider, but six layers of ten rows is a
+different plate and `C-0116`'s threshold is a function of the parallel-axis factor, which moves with it.
+
+**The cheap bound was right and was not the answer, and the difference is a domain error.** `C-0086`'s
+odd-half-turn width rule genuinely does not transfer: a honeycomb half turn is 5.25 bp and no odd multiple of
+it is ever an integer. That could mean *prohibitive* or *outside its own domain*, which have opposite
+consequences and the arithmetic cannot tell them apart. The primary source can: the honeycomb quantises its
+half turn to **5 bp**, so the scaffold lattice is `7k ± 5` and is integral.
+
+**The seam survives the move to three dimensions, and for a reason in the source rather than the geometry.**
+A honeycomb helix has **three** neighbours, so the adjacency graph has cycles and `CLAUDE.md`'s tree-parity
+argument — the one that makes Rothemund's seam a theorem — ought to collapse. It does not, because Figure 2b
+says *"the path of the scaffold stays within a 2D surface"*: the graph the **scaffold** may use is a path even
+though the **lattice**'s is three-regular. Brute-forced at every order 3–7 rather than asserted, and a theorem
+beyond.
+
+**The whole literature answer was four `grep`s and zero fetches.** PMC2731887 has been in `gpd/data/` since
+`T-151` fetched it two iterations ago for a different question. **Fourth time** *check `gpd/data/` before
+fetching anything* has paid.
+
+**Three mistakes worth recording, all mine and all caught by the checks.**
+
+1. **I enumerated permutations and called them closed walks.** A permutation is a Hamiltonian *cycle*; a
+   closed **walk** may revisit vertices, and on a path graph revisiting is the entire point. The self-test
+   caught it as *"a closed walk on the 7-helix raster path exists: expected True, got False"*. Had it passed
+   silently it would have answered the task **backwards**, because a Hamiltonian cycle is exactly what a
+   seam-free circular scaffold would need.
+2. **I then called that brute force on all 60 vertices** — 59! permutations, which does not fail, it simply
+   never returns. Now guarded at order 9 with a test, and the 60-helix case is stated as the theorem it is.
+3. **I killed my own shell** with `pkill -f` on a pattern contained in the same compound command — the
+   self-match trap `CLAUDE.md` records twice, walked into with both entries already written down. The cure is
+   the bracket trick or a PID, and I used the PID.
+
+**Meanwhile `T-197` lost two more subagent launches to API 529s** (eight across two iterations). Every failure
+left the tree clean, so nothing was lost but time, and per the rule iteration 24 added, its work moves into
+the main context rather than being relaunched a third time.
