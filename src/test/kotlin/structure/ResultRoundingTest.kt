@@ -248,4 +248,104 @@ class ResultRoundingTest {
         // agree to the last bit; `roundForResult` must not hand `roundToLong` a `NaN`.
         assert(roundForResult(0.0, digits = DEPARTURE_SIGNIFICANT_DIGITS, floor = 0.0) == 0.0)
     }
+
+    // -----------------------------------------------------------------------------------------
+    // `T-214`/`C-0138` — the rule as a BASELINE, so a study obeys it by construction
+    //
+    // `C-0131` refused `DEPARTURE_DIGITS_BY_KEY` as the default of `roundedForResult` on a
+    // measurement: keyed on a LEAF NAME it would have rounded `T-193`'s electrode potentials, in
+    // volts, to two digits. That refusal was right about the map it was written against and it
+    // does not survive the re-keying `C-0131` performed in the same task — a `record/spelling`
+    // map cannot reach `potentialOfZeroCharge/departure` at all. What was left was 351 fields in
+    // 31 files whose only defect is that their emission sites did not remember to pass the map.
+
+    @Test
+    fun `gate 3 symmetry - a departure record should obey the rule without the caller passing the map`() {
+        val document = Json.parseToJsonElement(
+            """{"reproductions":[{"relativeDeparture":5.36821841e-6,"carried":1.23456789012}],""" +
+                    """"convergence":[{"departureFromFinest":5.36821841e-6}]}"""
+        )
+        val rounded = document.roundedForResult(floor = 0.0).jsonObject
+        val reproduction = rounded.getValue("reproductions").jsonArray[0].jsonObject
+        assert(reproduction.getValue("relativeDeparture") == JsonPrimitive(5.4e-6))
+        // and the baseline must not reach the sibling it sits beside
+        assert(reproduction.getValue("carried") == JsonPrimitive(1.23456789))
+        assert(
+            rounded.getValue("convergence").jsonArray[0]
+                .jsonObject.getValue("departureFromFinest") == JsonPrimitive(5.4e-6)
+        )
+    }
+
+    @Test
+    fun `gate 4 numerical convergence - the baseline should not reach a departure that is not dimensionless`() {
+        // `CH-0154`'s measurement, re-asserted against the BASELINE rather than against a map the
+        // caller passes. This is the assertion that makes the default safe, and it is the exact
+        // statement `C-0131`'s bound 2 refused for the leaf-keyed map.
+        val document = Json.parseToJsonElement(
+            """{"potentialOfZeroCharge":[{"departure":0.001420712}],""" +
+                    """"upstreamChecks":[{"departure":5.36821841e-6}],""" +
+                    """"stationLattice":[{"departure":0.34123456789}]}"""
+        )
+        val rounded = document.roundedForResult(floor = 0.0).jsonObject
+        assert(
+            rounded.getValue("potentialOfZeroCharge").jsonArray[0]
+                .jsonObject.getValue("departure") == JsonPrimitive(0.001420712)
+        )
+        assert(
+            rounded.getValue("upstreamChecks").jsonArray[0]
+                .jsonObject.getValue("departure") == JsonPrimitive(5.36821841e-6)
+        )
+        assert(
+            rounded.getValue("stationLattice").jsonArray[0]
+                .jsonObject.getValue("departure") == JsonPrimitive(0.341234568)
+        )
+    }
+
+    @Test
+    fun `gate 3 symmetry - a caller's own qualified entry should beat the baseline`() {
+        // The baseline is a floor on the rule, not a ceiling on the study: a study that has
+        // MEASURED its own departure precision must still be able to declare it.
+        val document = Json.parseToJsonElement(
+            """{"convergence":[{"relativeDeparture":1.23456789012e-3}]}"""
+        )
+        val rounded = document.roundedForResult(
+            digitsByKey = mapOf("convergence/relativeDeparture" to 5), floor = 0.0
+        ).jsonObject
+        assert(
+            rounded.getValue("convergence").jsonArray[0]
+                .jsonObject.getValue("relativeDeparture") == JsonPrimitive(1.2346e-3)
+        )
+    }
+
+    @Test
+    fun `gate 2 limiting case - passing the map explicitly should be a no-op now that it is the baseline`() {
+        // The 34 studies that already pass it must be bit-identical after the change, which is
+        // what lets this task re-emit 31 files and not 65.
+        val document = Json.parseToJsonElement(
+            """{"reproductions":[{"departure":5.36821841e-6}],""" +
+                    """"convergence":[{"relativeDeparture":3.19469867e-11}],""" +
+                    """"answer":{"relativeDeparture":3.19469867e-11}}"""
+        )
+        assert(
+            document.roundedForResult(floor = 0.0) ==
+                    document.roundedForResult(digitsByKey = DEPARTURE_DIGITS_BY_KEY, floor = 0.0)
+        )
+    }
+
+    @Test
+    fun `gate 2 limiting case - the integral-number convention should be a parameter, not a fork`() {
+        // `CLAUDE.md` records six independent rounding implementations. Three of them differ from
+        // this one in exactly one observable: `coupling/` and `brush/`'s coerce an integral JSON
+        // number to a Double, so a count of 4 is emitted as `4.0`. That is a RENDERING convention
+        // frozen by the files already committed, not a precision choice — carrying it as a
+        // parameter is what lets those packages delegate without moving a single emitted count.
+        val document = Json.parseToJsonElement("""{"paths":45,"stiffness":1.23456789012}""")
+        val default = document.roundedForResult(floor = 0.0).jsonObject
+        assert(default.getValue("paths") == JsonPrimitive(45))
+        val coerced = document.roundedForResult(
+            floor = 0.0, roundIntegralNumbers = true
+        ).jsonObject
+        assert(coerced.getValue("paths") == JsonPrimitive(45.0))
+        assert(coerced.getValue("stiffness") == JsonPrimitive(1.23456789))
+    }
 }

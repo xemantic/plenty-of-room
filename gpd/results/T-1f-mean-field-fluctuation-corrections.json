@@ -1204,13 +1204,13 @@
             "axis": "node spacing, d ln k / d ln K at the 10 nm design point",
             "setting": 0.4,
             "value": 0.0598254,
-            "departureFromFinest": 0.00492299
+            "departureFromFinest": 0.0049
         },
         {
             "axis": "node spacing, d ln k / d ln K at the 10 nm design point",
             "setting": 0.2,
             "value": 0.0638634,
-            "departureFromFinest": 8.8499E-4
+            "departureFromFinest": 8.8E-4
         },
         {
             "axis": "node spacing, d ln k / d ln K at the 10 nm design point",
@@ -1222,7 +1222,7 @@
             "axis": "node spacing, the 10 nm stroke window edge",
             "setting": 0.4,
             "value": 0.342652,
-            "departureFromFinest": 0.233898
+            "departureFromFinest": 0.23
         },
         {
             "axis": "node spacing, the 10 nm stroke window edge",
@@ -1234,19 +1234,19 @@
             "axis": "interaction scale, k(0.8 L0) approaching the interaction-free floor",
             "setting": 0.01,
             "value": 6.10612,
-            "departureFromFinest": 7.80604E-4
+            "departureFromFinest": 7.8E-4
         },
         {
             "axis": "interaction scale, k(0.8 L0) approaching the interaction-free floor",
             "setting": 0.001,
             "value": 6.10183,
-            "departureFromFinest": 7.80594E-5
+            "departureFromFinest": 7.8E-5
         },
         {
             "axis": "interaction scale, k(0.8 L0) approaching the interaction-free floor",
             "setting": 1.0E-4,
             "value": 6.1014,
-            "departureFromFinest": 7.7363E-6
+            "departureFromFinest": 7.7E-6
         },
         {
             "axis": "interaction scale, k(0.8 L0) approaching the interaction-free floor",

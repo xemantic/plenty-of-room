@@ -2759,14 +2759,14 @@
             "control": "elements per leg",
             "level": 8.0,
             "value": 9.23647734,
-            "departureFromFinest": 2.91606624E-8
+            "departureFromFinest": 2.9E-8
         },
         {
             "quantity": "free-plane critical load of the capped truss",
             "control": "elements per leg",
             "level": 16.0,
             "value": 9.23647709,
-            "departureFromFinest": 1.74989632E-9
+            "departureFromFinest": 1.7E-9
         },
         {
             "quantity": "free-plane critical load of the capped truss",
@@ -2844,21 +2844,21 @@
             "quantity": "C-0037 L2a8 frame couple",
             "published": 96.88,
             "derived": 96.8838095,
-            "relativeDeparture": 3.93220872E-5,
+            "relativeDeparture": 3.9E-5,
             "source": "C-0037 recommended design"
         },
         {
             "quantity": "C-0037 L2a8 free-plane critical load",
             "published": 11.7,
             "derived": 11.7021091,
-            "relativeDeparture": 1.80266618E-4,
+            "relativeDeparture": 1.8E-4,
             "source": "C-0037"
         },
         {
             "quantity": "C-0037 L2a8 loaded-plane critical load",
             "published": 9.77,
             "derived": 9.77154247,
-            "relativeDeparture": 1.57878405E-4,
+            "relativeDeparture": 1.6E-4,
             "source": "C-0037"
         },
         {
@@ -2872,35 +2872,35 @@
             "quantity": "C-0042 7 bp free-plane critical load",
             "published": 10.3,
             "derived": 10.3020052,
-            "relativeDeparture": 1.94681357E-4,
+            "relativeDeparture": 1.9E-4,
             "source": "C-0042"
         },
         {
             "quantity": "C-0042 7 bp loaded-plane critical load",
             "published": 9.77,
             "derived": 9.77154247,
-            "relativeDeparture": 1.57878405E-4,
+            "relativeDeparture": 1.6E-4,
             "source": "C-0042"
         },
         {
             "quantity": "C-0029 hard-chord ceiling",
             "published": 78.24,
             "derived": 78.2352941,
-            "relativeDeparture": 6.01467581E-5,
+            "relativeDeparture": 6.0E-5,
             "source": "C-0029 bound 2"
         },
         {
             "quantity": "C-0029 free axis",
             "published": 13.53,
             "derived": 13.5294118,
-            "relativeDeparture": 4.34763706E-5,
+            "relativeDeparture": 4.3E-5,
             "source": "C-0029 gate 3"
         },
         {
             "quantity": "C-0029 head link axial stiffness",
             "published": 64.71,
             "derived": 64.7058824,
-            "relativeDeparture": 6.36323143E-5,
+            "relativeDeparture": 6.4E-5,
             "source": "C-0037 head tie H2"
         },
         {
@@ -2914,14 +2914,14 @@
             "quantity": "C-0042 chord budget",
             "published": 91.76,
             "derived": 91.7647059,
-            "relativeDeparture": 5.12846813E-5,
+            "relativeDeparture": 5.1E-5,
             "source": "C-0042 gate 3"
         },
         {
             "quantity": "Fields et al. implied rigidity",
             "published": 172.906,
             "derived": 172.906231,
-            "relativeDeparture": 1.33689234E-6,
+            "relativeDeparture": 1.3E-6,
             "source": "C-0030"
         },
         {
@@ -2935,21 +2935,21 @@
             "quantity": "C-0037 L2a8 span at 8 nm",
             "published": 33.43,
             "derived": 33.4341948,
-            "relativeDeparture": 1.2547884E-4,
+            "relativeDeparture": 1.3E-4,
             "source": "C-0037 window table"
         },
         {
             "quantity": "C-0037 L2a8 tangent at 8 nm",
             "published": 26.09,
             "derived": 26.0851422,
-            "relativeDeparture": 1.86193796E-4,
+            "relativeDeparture": 1.9E-4,
             "source": "C-0037 window table"
         },
         {
             "quantity": "C-0037 L2a8 supply/demand at 8 nm",
             "published": 2.9,
             "derived": 2.899839,
-            "relativeDeparture": 5.55171708E-5,
+            "relativeDeparture": 5.6E-5,
             "source": "C-0037 window table"
         }
     ],

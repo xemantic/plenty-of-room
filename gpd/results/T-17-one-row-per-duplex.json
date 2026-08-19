@@ -5418,14 +5418,14 @@
             "setting": "dof = 450",
             "degreesOfFreedom": 450.0,
             "peakCrossoverForce": 0.150040685,
-            "departureFromFinest": 0.00209942118
+            "departureFromFinest": 0.0021
         },
         {
             "axis": "nested beam subdivisions 1 in 2 in 4",
             "setting": "dof = 855",
             "degreesOfFreedom": 855.0,
             "peakCrossoverForce": 0.150350269,
-            "departureFromFinest": 4.04216092E-5
+            "departureFromFinest": 4.0E-5
         },
         {
             "axis": "nested beam subdivisions 1 in 2 in 4",
@@ -5439,14 +5439,14 @@
             "setting": "k_link = 1000.0 pN/nm",
             "degreesOfFreedom": 855.0,
             "peakCrossoverForce": 0.15009591,
-            "departureFromFinest": 0.00186113878
+            "departureFromFinest": 0.0019
         },
         {
             "axis": "crossover link penalty, STATIC force",
             "setting": "k_link = 10000.0 pN/nm",
             "degreesOfFreedom": 855.0,
             "peakCrossoverForce": 0.150350269,
-            "departureFromFinest": 1.69654212E-4
+            "departureFromFinest": 1.7E-4
         },
         {
             "axis": "crossover link penalty, STATIC force",
@@ -5460,14 +5460,14 @@
             "setting": "best of 32 phases, 24 bp",
             "degreesOfFreedom": 855.0,
             "peakCrossoverForce": 0.150350269,
-            "departureFromFinest": 1.03928543
+            "departureFromFinest": 1.0
         },
         {
             "axis": "crossover column PHASE (a design variable, not a convergence parameter)",
             "setting": "worst of 32 phases, 0 bp",
             "degreesOfFreedom": 855.0,
             "peakCrossoverForce": 0.156256843,
-            "departureFromFinest": 1.03928543
+            "departureFromFinest": 1.0
         }
     ],
     "reproductions": [
@@ -5483,42 +5483,42 @@
             "quantity": "yaw stiffness on the 3 x 15 grid [pN*nm/rad]",
             "published": 8205.0,
             "reproduced": 8206.24958,
-            "relativeDeparture": 1.52295502E-4
+            "relativeDeparture": 1.5E-4
         },
         {
             "source": "C-0017",
             "quantity": "mean squared attachment radius of the 3 x 15 grid [nm^2]",
             "published": 253.55377,
             "reproduced": 253.592385,
-            "relativeDeparture": 1.52295502E-4
+            "relativeDeparture": 1.5E-4
         },
         {
             "source": "C-0024 / CH-0029",
             "quantity": "staple-domain shear allowable at 30 bp, 100 pN/s [pN]",
             "published": 47.11,
             "reproduced": 47.1067253,
-            "relativeDeparture": 6.95121112E-5
+            "relativeDeparture": 7.0E-5
         },
         {
             "source": "C-0024 / CH-0029",
             "quantity": "staple-domain shear allowable at 8 bp, 100 pN/s [pN]",
             "published": 18.8,
             "reproduced": 18.7955672,
-            "relativeDeparture": 2.35788597E-4
+            "relativeDeparture": 2.4E-4
         },
         {
             "source": "C-0022",
             "quantity": "total electrostatic force gain at the design point, min-margin mapping",
             "published": 0.1471,
             "reproduced": 0.146139645,
-            "relativeDeparture": 0.00652858266
+            "relativeDeparture": 0.0065
         },
         {
             "source": "C-0017",
             "quantity": "per-path static share of the 45-path coupling [pN]",
             "published": 2.222,
             "reproduced": 2.22222222,
-            "relativeDeparture": 1.00010001E-4
+            "relativeDeparture": 1.0E-4
         }
     ],
     "findings": [

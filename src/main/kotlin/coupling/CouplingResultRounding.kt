@@ -16,16 +16,9 @@
 
 package com.xemantic.nano.plentyofroom.coupling
 
-import kotlinx.serialization.json.JsonArray
+import com.xemantic.nano.plentyofroom.structure.roundForResult
+import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.json.JsonElement
-import kotlinx.serialization.json.JsonObject
-import kotlinx.serialization.json.JsonPrimitive
-import kotlinx.serialization.json.doubleOrNull
-import kotlin.math.abs
-import kotlin.math.floor
-import kotlin.math.log10
-import kotlin.math.pow
-import kotlin.math.roundToLong
 
 /**
  * The reproducibility layer for `T-16`'s result file.
@@ -47,20 +40,26 @@ const val COUPLING_RESULT_SIGNIFICANT_DIGITS: Int = 9
 const val COUPLING_RESULT_ABSOLUTE_FLOOR: Double = 1e-9
 
 /** Rounds [value] to [COUPLING_RESULT_SIGNIFICANT_DIGITS], flooring tiny magnitudes to zero. */
-fun roundCouplingResult(value: Double): Double {
-    if (!value.isFinite()) return value
-    if (abs(value) < COUPLING_RESULT_ABSOLUTE_FLOOR) return 0.0
-    val scale = 10.0.pow(COUPLING_RESULT_SIGNIFICANT_DIGITS - 1 - floor(log10(abs(value))))
-    return (value * scale).roundToLong() / scale
-}
+fun roundCouplingResult(value: Double): Double = roundForResult(
+    value, COUPLING_RESULT_SIGNIFICANT_DIGITS, COUPLING_RESULT_ABSOLUTE_FLOOR
+)
 
-/** Rounds every `Double` in the tree, so nothing can be emitted unrounded by omission. */
-fun JsonElement.roundedForCouplingResult(): JsonElement = when (this) {
-    is JsonPrimitive -> {
-        val value = if (isString) null else doubleOrNull
-        if (value == null) this else JsonPrimitive(roundCouplingResult(value))
-    }
-
-    is JsonArray -> JsonArray(map { it.roundedForCouplingResult() })
-    is JsonObject -> JsonObject(mapValues { it.value.roundedForCouplingResult() })
-}
+/**
+ * Rounds every `Double` in the tree, so nothing can be emitted unrounded by omission.
+ *
+ * **Delegated to `structure/`** by `T-214`. `CH-0154` measured that a rounding entry point with no
+ * `digitsByKey` parameter cannot carry the departure rule *by any edit at its own emission sites*,
+ * and named `actuator/`; the same shape stood here, so `T-16`, `T-17`, `T-101`, `T-113`, `T-122`
+ * and `T-123` — six of that task's 31 residue files — were in exactly `T-60`'s position.
+ *
+ * The one observable this implementation had that `structure/`'s does not is that it coerces an
+ * **integral** JSON number to a `Double`, so every committed `coupling/` result file renders a
+ * count as `45.0`. That is a rendering convention frozen by those files rather than a precision
+ * choice, and it is preserved through `roundIntegralNumbers` so that the delegation moves
+ * departure fields and nothing else.
+ */
+fun JsonElement.roundedForCouplingResult(): JsonElement = roundedForResult(
+    digits = COUPLING_RESULT_SIGNIFICANT_DIGITS,
+    floor = COUPLING_RESULT_ABSOLUTE_FLOOR,
+    roundIntegralNumbers = true
+)

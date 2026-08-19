@@ -2800,13 +2800,13 @@
             "axis": "lattice subdivisions per crossover bay (NESTED 1 c 2 c 4)",
             "setting": "1",
             "dishingOverStroke": 0.710686263,
-            "departureFromFinest": 4.95194038E-4
+            "departureFromFinest": 5.0E-4
         },
         {
             "axis": "lattice subdivisions per crossover bay (NESTED 1 c 2 c 4)",
             "setting": "2",
             "dishingOverStroke": 0.710436394,
-            "departureFromFinest": 1.43432267E-4
+            "departureFromFinest": 1.4E-4
         },
         {
             "axis": "lattice subdivisions per crossover bay (NESTED 1 c 2 c 4)",
@@ -2818,13 +2818,13 @@
             "axis": "plate basis degree (the continuum comparison)",
             "setting": "8",
             "dishingOverStroke": 3.40949852,
-            "departureFromFinest": 0.00106586075
+            "departureFromFinest": 0.0011
         },
         {
             "axis": "plate basis degree (the continuum comparison)",
             "setting": "10",
             "dishingOverStroke": 3.40646691,
-            "departureFromFinest": 1.75746936E-4
+            "departureFromFinest": 1.8E-4
         },
         {
             "axis": "plate basis degree (the continuum comparison)",
@@ -2878,14 +2878,14 @@
             "quantity": "15 x 15 saturation floor, C-0022 design point",
             "published": 0.149,
             "reproduced": 0.148975132,
-            "relativeDeparture": 1.66899002E-4
+            "relativeDeparture": 1.7E-4
         },
         {
             "source": "C-0026",
             "quantity": "3 x 15 dishing / stroke under a UNIFORM load",
             "published": 0.049,
             "reproduced": 0.0486198383,
-            "relativeDeparture": 0.00775840183
+            "relativeDeparture": 0.0078
         },
         {
             "source": "C-0026",
@@ -2899,21 +2899,21 @@
             "quantity": "FREE tile dishing / stroke, design point (plate)",
             "published": 0.32125378,
             "reproduced": 0.321881237,
-            "relativeDeparture": 0.00195315042
+            "relativeDeparture": 0.002
         },
         {
             "source": "C-0026",
             "quantity": "1 x 15 peak crossover force, design point [pN]",
             "published": 0.2093,
             "reproduced": 0.209277129,
-            "relativeDeparture": 1.09274078E-4
+            "relativeDeparture": 1.1E-4
         },
         {
             "source": "C-0015/CLAUDE.md",
             "quantity": "sheet rigidity anisotropy, along over across",
             "published": 25.6,
             "reproduced": 25.5607302,
-            "relativeDeparture": 0.00153397548
+            "relativeDeparture": 0.0015
         },
         {
             "source": "C-0041",
@@ -2927,7 +2927,7 @@
             "quantity": "the 3 x 15 column pitch in nm",
             "published": 13.3333333,
             "reproduced": 13.3333333,
-            "relativeDeparture": 2.50000008E-9
+            "relativeDeparture": 2.5E-9
         }
     ],
     "findings": [

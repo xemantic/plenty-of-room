@@ -1896,28 +1896,28 @@
             "control": "orientation samples",
             "level": 180.0,
             "value": 2.0,
-            "departureFromFinest": 0.0104166667
+            "departureFromFinest": 0.01
         },
         {
             "quantity": "single-level orientations of the 3 x 15 arm array",
             "control": "orientation samples",
             "level": 360.0,
             "value": 2.0,
-            "departureFromFinest": 0.00486111111
+            "departureFromFinest": 0.0049
         },
         {
             "quantity": "single-level orientations of the 3 x 15 arm array",
             "control": "orientation samples",
             "level": 720.0,
             "value": 2.0,
-            "departureFromFinest": 0.00208333333
+            "departureFromFinest": 0.0021
         },
         {
             "quantity": "single-level orientations of the 3 x 15 arm array",
             "control": "orientation samples",
             "level": 1440.0,
             "value": 2.0,
-            "departureFromFinest": 6.94444444E-4
+            "departureFromFinest": 6.9E-4
         },
         {
             "quantity": "single-level orientations of the 3 x 15 arm array",
@@ -1995,13 +1995,13 @@
             "quantity": "C-0039's E5a1 arm at 45 paths [nm]",
             "published": 9.131,
             "derived": 9.1311565,
-            "relativeDeparture": 1.71397538E-5
+            "relativeDeparture": 1.7E-5
         },
         {
             "quantity": "C-0039's E5a1 assembled tangent at 3 nm [pN/nm]",
             "published": 39.18,
             "derived": 39.1816372,
-            "relativeDeparture": 4.17861014E-5
+            "relativeDeparture": 4.2E-5
         },
         {
             "quantity": "C-0017's mandate secant, discharged by construction [pN/nm]",
@@ -2013,7 +2013,7 @@
             "quantity": "C-0009's crossover hinge constant [pN nm/rad]",
             "published": 13.5294118,
             "derived": 13.5294118,
-            "relativeDeparture": 2.60869566E-9
+            "relativeDeparture": 2.6E-9
         },
         {
             "quantity": "C-0029's two-terminus couple ceiling [pN nm/rad]",
@@ -2025,7 +2025,7 @@
             "quantity": "C-0030's span at 45 paths [nm]",
             "published": 31.82,
             "derived": 31.8209241,
-            "relativeDeparture": 2.90408096E-5
+            "relativeDeparture": 2.9E-5
         },
         {
             "quantity": "C-0041's packing-limited path count",

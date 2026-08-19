@@ -205,12 +205,29 @@ fun roundForResult(
  *          a stiffness at deep compression is a second difference of free energies and moves ~10⁴×
  *          further than the height it is evaluated at.
  * @param floor see [roundForResult] — lower it for a study emitting dimensionless quantities.
+ * @param roundIntegralNumbers whether an integral JSON number (`45`) is coerced to a `Double`
+ *          (`45.0`) rather than passed through. A **rendering** convention, not a precision one:
+ *          three of the tree's independent rounding implementations coerce and three do not, and
+ *          every committed result file already carries its own package's answer. Carrying it as a
+ *          parameter is what lets `coupling/` and `brush/` delegate here (`T-214`) while moving
+ *          departure fields and nothing else. The default is this package's own convention.
+ *
+ * [DEPARTURE_DIGITS_BY_KEY] is applied as a **baseline** beneath `digitsByKey`, so a study obeys
+ * the departure rule by construction rather than by remembering to pass the map (`T-214`), and a
+ * study that has *measured* its own departure precision can still override it with a
+ * `record/spelling` entry of its own. `C-0131` refused this default on a measurement — keyed on a
+ * **leaf name** it would have rounded `T-193`'s electrode potentials, in volts, to two digits —
+ * and that refusal does not survive the re-keying `C-0131` performed in the same task: a
+ * `record/spelling` map cannot reach `potentialOfZeroCharge/departure` at all.
  */
 fun JsonElement.roundedForResult(
     digits: Int = RESULT_SIGNIFICANT_DIGITS,
     digitsByKey: Map<String, Int> = emptyMap(),
-    floor: Double = RESULT_ABSOLUTE_FLOOR
-): JsonElement = roundedForResult(digits, digitsByKey, floor, record = null)
+    floor: Double = RESULT_ABSOLUTE_FLOOR,
+    roundIntegralNumbers: Boolean = false
+): JsonElement = roundedForResult(
+    digits, DEPARTURE_DIGITS_BY_KEY + digitsByKey, floor, roundIntegralNumbers, record = null
+)
 
 /**
  * [roundedForResult], carrying the key of the nearest enclosing **object entry** as [record].
@@ -222,6 +239,7 @@ private fun JsonElement.roundedForResult(
     digits: Int,
     digitsByKey: Map<String, Int>,
     floor: Double,
+    roundIntegralNumbers: Boolean,
     record: String?
 ): JsonElement = when (this) {
     is JsonObject -> JsonObject(
@@ -230,14 +248,17 @@ private fun JsonElement.roundedForResult(
             // precision inherited from the enclosing subtree.
             val qualified = record?.let { digitsByKey["$it/$key"] }
             value.roundedForResult(
-                qualified ?: digitsByKey[key] ?: digits, digitsByKey, floor, record = key
+                qualified ?: digitsByKey[key] ?: digits,
+                digitsByKey, floor, roundIntegralNumbers, record = key
             )
         }
     )
-    is JsonArray -> JsonArray(map { it.roundedForResult(digits, digitsByKey, floor, record) })
+    is JsonArray -> JsonArray(
+        map { it.roundedForResult(digits, digitsByKey, floor, roundIntegralNumbers, record) }
+    )
     is JsonPrimitive -> when {
         isString -> this
-        content.none { it == '.' || it == 'e' || it == 'E' } -> this
+        !roundIntegralNumbers && content.none { it == '.' || it == 'e' || it == 'E' } -> this
         else -> doubleOrNull?.let { JsonPrimitive(roundForResult(it, digits, floor)) } ?: this
     }
     else -> this

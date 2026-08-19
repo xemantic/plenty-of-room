@@ -1280,7 +1280,7 @@
             "quantity": "Ke et al.'s preferred B-DNA twist [deg per bp]",
             "published": 34.3,
             "derived": 34.2857143,
-            "relativeDeparture": 4.16493128E-4,
+            "relativeDeparture": 4.2E-4,
             "source": "Ke et al. 2009, read directly (quoted to three digits)"
         },
         {
@@ -1336,14 +1336,14 @@
             "quantity": "C-0039's E5a1 arm at 45 paths [nm]",
             "published": 9.131,
             "derived": 9.1311565,
-            "relativeDeparture": 1.71397538E-5,
+            "relativeDeparture": 1.7E-5,
             "source": "C-0039, re-run as a library"
         },
         {
             "quantity": "C-0053's arm demand at 45 paths [nm]",
             "published": 11.821,
             "derived": 11.8211565,
-            "relativeDeparture": 1.32394122E-5,
+            "relativeDeparture": 1.3E-5,
             "source": "C-0053"
         },
         {

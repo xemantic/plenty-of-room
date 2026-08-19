@@ -7919,21 +7919,21 @@
             "source": "C-0030 / T-65",
             "published": 25.23,
             "reproduced": 25.2272684,
-            "relativeDeparture": 1.08269287E-4
+            "relativeDeparture": 1.1E-4
         },
         {
             "quantity": "C-0030 flexure span, 45 paths",
             "source": "C-0030 / T-65",
             "published": 31.82,
             "reproduced": 31.8209241,
-            "relativeDeparture": 2.90408096E-5
+            "relativeDeparture": 2.9E-5
         },
         {
             "quantity": "C-0017 mandate",
             "source": "C-0017 / §3",
             "published": 33.3333,
             "reproduced": 33.3333333,
-            "relativeDeparture": 1.000001E-6
+            "relativeDeparture": 1.0E-6
         },
         {
             "quantity": "C-0023 declared ceiling",
@@ -7989,14 +7989,14 @@
             "source": "C-0033 / T-60",
             "published": 2.604,
             "reproduced": 2.60503484,
-            "relativeDeparture": 3.97402176E-4
+            "relativeDeparture": 4.0E-4
         },
         {
             "quantity": "C-0033 collar-only fold tangent, highest of six",
             "source": "C-0033 / T-60",
             "published": 4.994,
             "reproduced": 4.99313506,
-            "relativeDeparture": 1.73194839E-4
+            "relativeDeparture": 1.7E-4
         },
         {
             "quantity": "C-0018 pull-in margin at 10 nm / 2 mM, lowest",

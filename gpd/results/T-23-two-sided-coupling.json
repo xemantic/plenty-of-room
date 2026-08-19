@@ -2596,19 +2596,19 @@
             "quantity": "two-sided zero-bias RMS at 10 nm [nm]",
             "setting": "panels = 500",
             "value": 0.330733931,
-            "departureFromFinest": 2.87227594E-5
+            "departureFromFinest": 2.9E-5
         },
         {
             "quantity": "two-sided zero-bias RMS at 10 nm [nm]",
             "setting": "panels = 1000",
             "value": 0.330742975,
-            "departureFromFinest": 1.38029024E-6
+            "departureFromFinest": 1.4E-6
         },
         {
             "quantity": "two-sided zero-bias RMS at 10 nm [nm]",
             "setting": "panels = 2000",
             "value": 0.330743174,
-            "departureFromFinest": 7.77331381E-7
+            "departureFromFinest": 7.8E-7
         },
         {
             "quantity": "two-sided zero-bias RMS at 10 nm [nm]",
@@ -2620,19 +2620,19 @@
             "quantity": "|F_es| at 10 nm, 0.15 V [pN]",
             "setting": "nodes = 200",
             "value": -51.3665435,
-            "departureFromFinest": 7.83508834E-4
+            "departureFromFinest": 7.8E-4
         },
         {
             "quantity": "|F_es| at 10 nm, 0.15 V [pN]",
             "setting": "nodes = 400",
             "value": -51.3359091,
-            "departureFromFinest": 1.86652734E-4
+            "departureFromFinest": 1.9E-4
         },
         {
             "quantity": "|F_es| at 10 nm, 0.15 V [pN]",
             "setting": "nodes = 800",
             "value": -51.3282452,
-            "departureFromFinest": 3.73356992E-5
+            "departureFromFinest": 3.7E-5
         },
         {
             "quantity": "|F_es| at 10 nm, 0.15 V [pN]",
@@ -2663,7 +2663,7 @@
             "quantity": "leaf A1.1's per-coordinate stiffness bound [pN/nm]",
             "published": 0.460216,
             "reproduced": 0.460216333,
-            "relativeDeparture": 7.24297576E-7,
+            "relativeDeparture": 7.2E-7,
             "definitional": false
         },
         {
@@ -2687,7 +2687,7 @@
             "quantity": "the fitted crossover hinge constant [pN*nm/rad]",
             "published": 13.5294,
             "reproduced": 13.5294118,
-            "relativeDeparture": 8.69565973E-7,
+            "relativeDeparture": 8.7E-7,
             "definitional": false
         },
         {
@@ -2695,7 +2695,7 @@
             "quantity": "zero-bias force at 5 nm, Stern series [pN]",
             "published": -0.41,
             "reproduced": -0.403739774,
-            "relativeDeparture": 0.0152688428,
+            "relativeDeparture": 0.015,
             "definitional": false
         },
         {
@@ -2703,7 +2703,7 @@
             "quantity": "zero-bias force at 10 nm, Stern series [pN]",
             "published": -0.078,
             "reproduced": -0.0777807375,
-            "relativeDeparture": 0.00281105799,
+            "relativeDeparture": 0.0028,
             "definitional": false
         },
         {
@@ -2711,7 +2711,7 @@
             "quantity": "the eight-tether preload at 10 nm [pN]",
             "published": 9.37,
             "reproduced": 9.42086866,
-            "relativeDeparture": 0.00542888575,
+            "relativeDeparture": 0.0054,
             "definitional": false
         },
         {
@@ -2719,7 +2719,7 @@
             "quantity": "the tetherless device's worst well depth [k_BT]",
             "published": 1.4,
             "reproduced": 1.39961835,
-            "relativeDeparture": 2.72605434E-4,
+            "relativeDeparture": 2.7E-4,
             "definitional": false
         },
         {
@@ -2727,7 +2727,7 @@
             "quantity": "the tetherless device's deepest well [k_BT]",
             "published": 5.37,
             "reproduced": 5.37135778,
-            "relativeDeparture": 2.52844944E-4,
+            "relativeDeparture": 2.5E-4,
             "definitional": false
         },
         {
@@ -2735,7 +2735,7 @@
             "quantity": "the worst stability floor at 10 nm / 2 mM [pN/nm]",
             "published": 27.91,
             "reproduced": 27.9123599,
-            "relativeDeparture": 8.45551464E-5,
+            "relativeDeparture": 8.5E-5,
             "definitional": false
         },
         {
@@ -2743,7 +2743,7 @@
             "quantity": "the best stability floor at 10 nm / 2 mM [pN/nm]",
             "published": 23.41,
             "reproduced": 23.4134398,
-            "relativeDeparture": 1.46935698E-4,
+            "relativeDeparture": 1.5E-4,
             "definitional": false
         },
         {
@@ -2751,7 +2751,7 @@
             "quantity": "fold-bias margin (moving equilibrium) against this task's HELD-GAP stability-bias margin — DIFFERENT QUANTITIES, worst model",
             "published": 1.007,
             "reproduced": 1.08445162,
-            "relativeDeparture": 0.0769132289,
+            "relativeDeparture": 0.077,
             "definitional": true
         },
         {
@@ -2759,7 +2759,7 @@
             "quantity": "the same, best model",
             "published": 1.032,
             "reproduced": 1.16048541,
-            "relativeDeparture": 0.124501365,
+            "relativeDeparture": 0.12,
             "definitional": true
         }
     ],

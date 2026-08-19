@@ -1,0 +1,43 @@
+# T-214 / C-0138 -- the order the 31 residue result files are RE-EMITTED in.
+#
+# `tools/reemission-order.py` over the WHOLE set at once, not a list (`CH-0131`: a re-emission
+# sweep is a topological sort of the reader census). Six dependency constraints inside the set,
+# all of them into `T-118`, which reads `T-108`, `T-13`, `T-16`, `T-17`, `T-1f` and `T-96` --
+# so `window.SecondResynthesisStudyKt` is last by construction, not by choice.
+#
+#     python3 tools/reemission-order.py T-101 T-106 T-108 T-110 T-113 T-116 T-119 T-120 T-122 \
+#         T-123 T-124 T-13 T-16 T-17 T-172 T-1e T-1f T-21 T-23 T-3a T-40 T-65 T-67 T-70 T-71 \
+#         T-72 T-75 T-79 T-96 T-97 T-118
+#
+# Fed to `tools/study-batch.sh --list` -- one snapshot, 31 runs, copy-back re-scoped per run.
+coupling.SingleColumnFlatnessStudyKt
+anchoring.TrussCapStudyKt
+synthesis.DesiredStrokeReachStudyKt
+structure.ConsumedCrossoverSheetStudyKt
+coupling.NonUniformCouplingStudyKt
+anchoring.HingeArmArrayPackingStudyKt
+anchoring.UnusedJunctionSiteStudyKt
+structure.ConnectivityCeilingPlateStudyKt
+coupling.BuildableStiffnessRatioStudyKt
+coupling.RobustDistributionStudyKt
+anchoring.TorsionFeasibleRoutingStudyKt
+anchoring.ZeroBiasRestingPositionStudyKt
+coupling.OutputCouplingStudyKt
+coupling.OneRowPerDuplexStudyKt
+structure.RowEndPrestrainStudyKt
+brush.FirstMomentConventionStudyKt
+brush.FluctuationCorrectionStudyKt
+crossover.ConcentratedCrossoverStudyKt
+anchoring.TwoSidedCouplingStudyKt
+electrostatics.NonlinearPbProfileStudyKt
+anchoring.StandoffBaseJointStudyKt
+anchoring.CoupledStandoffJointStudyKt
+anchoring.PerpendicularJunctionStudyKt
+anchoring.GuidedArmAnchorageStudyKt
+anchoring.BackboneTorsionStudyKt
+anchoring.TriangulatedStandoffStudyKt
+anchoring.FlexureMountingSenseStudyKt
+anchoring.TwoSpringElasticaStudyKt
+anchoring.FlexureArrayPackingStudyKt
+anchoring.PairedPerpendicularJunctionStudyKt
+window.SecondResynthesisStudyKt

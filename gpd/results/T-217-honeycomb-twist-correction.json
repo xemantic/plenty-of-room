@@ -1,0 +1,472 @@
+{
+    "task": "T-217",
+    "leaf": "A8.2",
+    "question": "Can the four-layer honeycomb tile be twist-corrected, and what does its own connectivity quantisation cost instead?",
+    "conditions": {
+        "temperature": "300 K",
+        "kBT": "4.141947 pN nm",
+        "rise": "0.34 nm per base pair",
+        "naturalTwist": "B-DNA at 10.5 bp per turn, 34.285714285714285 deg per base — this repository's locked value",
+        "honeycombRules": "Douglas et al., NAR 37:5001 (caDNAno), PMC2731887: three azimuths 7 bp apart, the same pair every 21 bp at 10.5 bp per turn, scaffold crossovers 5 bp — \"or half a turn\" — from the staple ones",
+        "squareRules": "Ke et al., JACS 131:15903 and Rothemund 2006: four azimuths 8 bp apart, the same pair every 32 bp, the two in-plane neighbours two classes apart, scaffold and staple crossovers on one plane lattice",
+        "nominalWidth": "40.0 nm, Sec 3's tile",
+        "c0104Threshold": "15.4497275 deg, quoted for scale only",
+        "solve": "NONE — this study is exact residue arithmetic and a literature reading"
+    },
+    "lattices": [
+        {
+            "name": "single-layer square lattice (Rothemund / Ke et al.)",
+            "azimuthsPerHelix": 4,
+            "basePairsPerAzimuthStep": 8,
+            "azimuthPeriodBasePairs": 32,
+            "turnsPerAzimuthPeriod": 3,
+            "halfTurnsPerAzimuthPeriod": 6,
+            "azimuthPeriodIsIntegralAtBDna": false,
+            "designTwistPerBase": 33.75,
+            "basePairsPerTurn": 10.6666667,
+            "mismatchPerBaseAgainstBDna": 0.535714286,
+            "accumulatedOver112BasePairs": 60.0,
+            "scaffoldOffsetBasePairs": 0,
+            "scaffoldOffsetResidualBasePairs": 0.0,
+            "scaffoldOffsetResidualDegrees": 0.0,
+            "admissibleRowResidues": "16",
+            "residuesPerPeriod": 1,
+            "basePairsPerAdmissibleWidth": 32.0
+        },
+        {
+            "name": "honeycomb (Douglas et al., caDNAno)",
+            "azimuthsPerHelix": 3,
+            "basePairsPerAzimuthStep": 7,
+            "azimuthPeriodBasePairs": 21,
+            "turnsPerAzimuthPeriod": 2,
+            "halfTurnsPerAzimuthPeriod": 4,
+            "azimuthPeriodIsIntegralAtBDna": true,
+            "designTwistPerBase": 34.2857143,
+            "basePairsPerTurn": 10.5,
+            "mismatchPerBaseAgainstBDna": 0.0,
+            "accumulatedOver112BasePairs": 0.0,
+            "scaffoldOffsetBasePairs": 5,
+            "scaffoldOffsetResidualBasePairs": 0.25,
+            "scaffoldOffsetResidualDegrees": 8.57142857,
+            "admissibleRowResidues": "3,4,7,14,17,18",
+            "residuesPerPeriod": 6,
+            "basePairsPerAdmissibleWidth": 3.5
+        }
+    ],
+    "halfTurns": [
+        {
+            "halfTurns": 1,
+            "basePairs": 5.25,
+            "distanceToNearestInteger": 0.25,
+            "integral": false,
+            "residueClassModFour": 1,
+            "role": "caDNAno's scaffold offset, \"five base pairs, or half a turn\""
+        },
+        {
+            "halfTurns": 2,
+            "basePairs": 10.5,
+            "distanceToNearestInteger": 0.5,
+            "integral": false,
+            "residueClassModFour": 2,
+            "role": "one turn"
+        },
+        {
+            "halfTurns": 3,
+            "basePairs": 15.75,
+            "distanceToNearestInteger": 0.25,
+            "integral": false,
+            "residueClassModFour": 3,
+            "role": "the square lattice's own 1.5-turn domain"
+        },
+        {
+            "halfTurns": 4,
+            "basePairs": 21.0,
+            "distanceToNearestInteger": 0.0,
+            "integral": true,
+            "residueClassModFour": 0,
+            "role": "THE HONEYCOMB AZIMUTH PERIOD — 21 bp, two turns"
+        },
+        {
+            "halfTurns": 6,
+            "basePairs": 31.5,
+            "distanceToNearestInteger": 0.5,
+            "integral": false,
+            "residueClassModFour": 2,
+            "role": "the square lattice's 32 bp azimuth period, three turns"
+        },
+        {
+            "halfTurns": 21,
+            "basePairs": 110.25,
+            "distanceToNearestInteger": 0.25,
+            "integral": false,
+            "residueClassModFour": 1,
+            "role": "C-0133's construction — 21 half turns of B-DNA, whose nearest integer is 110"
+        }
+    ],
+    "widths": [
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 1 (the raster turns to the NEXT neighbour class)",
+            "basePairs": 91,
+            "widthNm": 30.94,
+            "departureFromNominalPercent": -22.65,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 1 (the raster turns to the NEXT neighbour class)",
+            "basePairs": 101,
+            "widthNm": 34.34,
+            "departureFromNominalPercent": -14.15,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 1 (the raster turns to the NEXT neighbour class)",
+            "basePairs": 102,
+            "widthNm": 34.68,
+            "departureFromNominalPercent": -13.3,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 1 (the raster turns to the NEXT neighbour class)",
+            "basePairs": 112,
+            "widthNm": 38.08,
+            "departureFromNominalPercent": -4.8,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": true
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 1 (the raster turns to the NEXT neighbour class)",
+            "basePairs": 122,
+            "widthNm": 41.48,
+            "departureFromNominalPercent": 3.7,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 1 (the raster turns to the NEXT neighbour class)",
+            "basePairs": 123,
+            "widthNm": 41.82,
+            "departureFromNominalPercent": 4.55,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 1 (the raster turns to the NEXT neighbour class)",
+            "basePairs": 133,
+            "widthNm": 45.22,
+            "departureFromNominalPercent": 13.05,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 1 (the raster turns to the NEXT neighbour class)",
+            "basePairs": 143,
+            "widthNm": 48.62,
+            "departureFromNominalPercent": 21.55,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 1 (the raster turns to the NEXT neighbour class)",
+            "basePairs": 144,
+            "widthNm": 48.96,
+            "departureFromNominalPercent": 22.4,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 2 (the raster turns to the PREVIOUS neighbour class)",
+            "basePairs": 98,
+            "widthNm": 33.32,
+            "departureFromNominalPercent": -16.7,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 2 (the raster turns to the PREVIOUS neighbour class)",
+            "basePairs": 108,
+            "widthNm": 36.72,
+            "departureFromNominalPercent": -8.2,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 2 (the raster turns to the PREVIOUS neighbour class)",
+            "basePairs": 109,
+            "widthNm": 37.06,
+            "departureFromNominalPercent": -7.35,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 2 (the raster turns to the PREVIOUS neighbour class)",
+            "basePairs": 119,
+            "widthNm": 40.46,
+            "departureFromNominalPercent": 1.15,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 2 (the raster turns to the PREVIOUS neighbour class)",
+            "basePairs": 129,
+            "widthNm": 43.86,
+            "departureFromNominalPercent": 9.65,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 2 (the raster turns to the PREVIOUS neighbour class)",
+            "basePairs": 130,
+            "widthNm": 44.2,
+            "departureFromNominalPercent": 10.5,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 2 (the raster turns to the PREVIOUS neighbour class)",
+            "basePairs": 140,
+            "widthNm": 47.6,
+            "departureFromNominalPercent": 19.0,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "honeycomb (Douglas et al., caDNAno)",
+            "turnSense": "Delta = 2 (the raster turns to the PREVIOUS neighbour class)",
+            "basePairs": 150,
+            "widthNm": 51.0,
+            "departureFromNominalPercent": 27.5,
+            "accumulatedTwistDegrees": 0.0,
+            "isC0119Row": false
+        },
+        {
+            "lattice": "single-layer square lattice (Rothemund / Ke et al.)",
+            "turnSense": "the only sense a two-neighbour lattice has",
+            "basePairs": 112,
+            "widthNm": 38.08,
+            "departureFromNominalPercent": -4.8,
+            "accumulatedTwistDegrees": 60.0,
+            "isC0119Row": true
+        },
+        {
+            "lattice": "single-layer square lattice (Rothemund / Ke et al.)",
+            "turnSense": "the only sense a two-neighbour lattice has",
+            "basePairs": 144,
+            "widthNm": 48.96,
+            "departureFromNominalPercent": 22.4,
+            "accumulatedTwistDegrees": 77.1428571,
+            "isC0119Row": false
+        }
+    ],
+    "sensitivity": [
+        {
+            "basePairsPerTurn": 10.34,
+            "source": "the twist at which the honeycomb's own driver equals the square sheet's",
+            "mismatchPerBase": 0.530533296,
+            "accumulatedOver112BasePairs": 59.4197292,
+            "fractionOfSquareLatticeDriver": 0.99032882
+        },
+        {
+            "basePairsPerTurn": 10.44,
+            "source": "the low end of the solution B-DNA band in circulation",
+            "mismatchPerBase": 0.197044335,
+            "accumulatedOver112BasePairs": 22.0689655,
+            "fractionOfSquareLatticeDriver": 0.367816092
+        },
+        {
+            "basePairsPerTurn": 10.45,
+            "source": "a 0.5 % departure from the honeycomb's design constant",
+            "mismatchPerBase": 0.16404648,
+            "accumulatedOver112BasePairs": 18.3732057,
+            "fractionOfSquareLatticeDriver": 0.306220096
+        },
+        {
+            "basePairsPerTurn": 10.5,
+            "source": "THE LOCKED VALUE — the honeycomb's design twist and B-DNA's, one number",
+            "mismatchPerBase": 0.0,
+            "accumulatedOver112BasePairs": 0.0,
+            "fractionOfSquareLatticeDriver": 0.0
+        },
+        {
+            "basePairsPerTurn": 10.55,
+            "source": "a 0.5 % departure the other way",
+            "mismatchPerBase": -0.162491537,
+            "accumulatedOver112BasePairs": -18.1990521,
+            "fractionOfSquareLatticeDriver": 0.303317536
+        },
+        {
+            "basePairsPerTurn": 10.6667,
+            "source": "the SQUARE lattice's design twist, for scale",
+            "mismatchPerBase": -0.535819754,
+            "accumulatedOver112BasePairs": -60.0118125,
+            "fractionOfSquareLatticeDriver": 1.00019687
+        }
+    ],
+    "reproductions": [
+        {
+            "what": "C-0119's honeycomb staple-crossover period, base pairs",
+            "published": 21.0,
+            "here": 21.0,
+            "departure": 0.0,
+            "source": "gpd/results/T-198-honeycomb-raster-width.json"
+        },
+        {
+            "what": "C-0119's honeycomb staple-crossover step, base pairs",
+            "published": 7.0,
+            "here": 7.0,
+            "departure": 0.0,
+            "source": "gpd/results/T-198-honeycomb-raster-width.json"
+        },
+        {
+            "what": "C-0119's honeycomb scaffold offset from the staple lattice, base pairs",
+            "published": 5.0,
+            "here": 5.0,
+            "departure": 0.0,
+            "source": "gpd/results/T-198-honeycomb-raster-width.json"
+        },
+        {
+            "what": "C-0119's honeycomb bp per turn",
+            "published": 10.5,
+            "here": 10.5,
+            "departure": 0.0,
+            "source": "gpd/results/T-198-honeycomb-raster-width.json"
+        },
+        {
+            "what": "C-0119's 32 scaffold-crossover offsets on a 112 bp row, mismatching entries",
+            "published": 0.0,
+            "here": 0.0,
+            "departure": 0.0,
+            "source": "gpd/results/T-198-honeycomb-raster-width.json"
+        },
+        {
+            "what": "C-0086's square-lattice admissible widths, base pairs, largest below 200",
+            "published": 176.0,
+            "here": 176.0,
+            "departure": 0.0,
+            "source": "C-0086 — the odd multiples of 16 bp, re-derived from the azimuths"
+        },
+        {
+            "what": "C-0133's residual invariant, base pairs, recovered as the honeycomb scaffold offset",
+            "published": 0.25,
+            "here": 0.25,
+            "departure": 0.0,
+            "source": "C-0133 — 0.25 bp = 8.5714 deg"
+        }
+    ],
+    "predicates": [
+        {
+            "id": "P1",
+            "statement": "the twist-correction question is settled by exact arithmetic before any search",
+            "met": true
+        },
+        {
+            "id": "P2",
+            "statement": "the connectivity condition is DERIVED, and the same construction reproduces C-0086's odd multiples of 16 bp on the square sheet",
+            "met": true
+        },
+        {
+            "id": "P3",
+            "statement": "the admissible widths near 40 nm are listed, with the density against the square sheet's and C-0119's own 112 bp row checked against them",
+            "met": true
+        },
+        {
+            "id": "P4",
+            "statement": "the residual is quoted: whether C-0133's quarter base pair survives, and where",
+            "met": true
+        },
+        {
+            "id": "P5",
+            "statement": "the sensitivity to the one constant the favourable result rests on is quoted",
+            "met": true
+        }
+    ],
+    "falsifiers": [
+        {
+            "id": "F1",
+            "statement": "the honeycomb's design twist differs from B-DNA's 360/10.5",
+            "fired": false,
+            "outcome": "mismatch 0.000e+00 deg/bp; 720/21 and 360/10.5 are the same number"
+        },
+        {
+            "id": "F2",
+            "statement": "some ODD multiple of a half turn at 10.5 bp/turn is an integer number of base pairs, or some multiple of FOUR half turns is not",
+            "fired": false,
+            "outcome": "0 of 1001 odd half-turn counts integral and 0 of 500 quadruple ones non-integral, over h = 1..2001"
+        },
+        {
+            "id": "F3",
+            "statement": "the neighbour-azimuth construction does not reproduce C-0086's odd multiples of 16",
+            "fired": false,
+            "outcome": "16, 48, 80, 112, 144, 176 — C-0086's list exactly"
+        },
+        {
+            "id": "F4",
+            "statement": "no admissible honeycomb row length lies within 5 % of Sec 3's 40.0 nm",
+            "fired": false,
+            "outcome": "119 bp = 40.46 nm, +1.15 % of nominal"
+        },
+        {
+            "id": "F5",
+            "statement": "the honeycomb admissible list is not denser than the square sheet's",
+            "fired": false,
+            "outcome": "one admissible width every 7.00 bp at a fixed turn sense against the square sheet's every 32 — 4.571x"
+        },
+        {
+            "id": "F6",
+            "statement": "the scaffold half-turn quantisation residual is not exactly a quarter base pair",
+            "fired": false,
+            "outcome": "5 bp against the exact 5.25 — 0.2500 bp = 8.5714 deg"
+        },
+        {
+            "id": "F7",
+            "statement": "C-0119's own 112 bp row is inadmissible at EVERY turn sense",
+            "fired": false,
+            "outcome": "112 mod 21 = 7, which is in the Delta = 1 triple {7,17,18} and NOT in the Delta = 2 triple {3,4,14}"
+        }
+    ],
+    "findings": [
+        "THE HONEYCOMB NEEDS NO TWIST CORRECTION AT ALL, AND IT IS ONE DIVISION. Its azimuth period is 21 bp and caDNAno lays it out as TWO TURNS, so its design twist is 720/21 = 34.2857142857 deg/bp — which IS B-DNA's 360/10.5, the same number. The mismatch is 0.000e+00 deg/bp and the accumulated register across a 112 bp row is 0.000e+00 deg, against the square sheet's +60.0. C-0107's boundary layer, C-0104's threshold and every number in C-0133 are SQUARE-LATTICE numbers with driver zero here. F1 did not fire.",
+        "AND THE REASON UNIFIES BOTH TASKS IN ONE LINE: 10.5 = 21/2, SO A HALF TURN IS 5.25 BASE PAIRS. h half turns is an integer number of base pairs iff h = 0 (mod 4), and the distance to the nearest integer is EXACTLY 0.25 for odd h and EXACTLY 0.5 for h = 2 (mod 4). C-0133's theorem is the ODD case — a square-lattice boustrophedon needs an odd number of half turns across its row. The honeycomb is the h = 4 case: its azimuth period is FOUR half turns, which is 21 bp exactly. The two results are one fact read at two half-turn parities. F2 did not fire over 2001 counts.",
+        "THE CONNECTIVITY HALF DOES NOT TRANSFER AND HAD TO BE DERIVED, AND THE DERIVATION REPRODUCES C-0086 ON THE SQUARE SHEET. Scaffold crossovers to neighbour class j sit at 7j +- 5 (mod 21), so a raster row that receives the scaffold from neighbour a and passes it to b is admissible iff N = 7*Delta + {0,10,11} (mod 21) with Delta = (b-a) mod 3 nonzero. Run on the square sheet — four azimuths at 8 bp, the two in-plane neighbours two classes apart, no scaffold offset — the SAME construction returns N = 16 (mod 32), i.e. 16, 48, 80, 112, 144, 176: C-0086's odd multiples of 16 bp, exactly. F3 did not fire.",
+        "THE HONEYCOMB'S WIDTH LIST IS 4.57x DENSER AND IT REACHES Sec 3's 40 nm FAR CLOSER. At a fixed turn sense the honeycomb admits one width every 7.00 bp against the square sheet's every 32. The nearest admissible honeycomb width to the nominal 40.0 nm is 119 bp = 40.46 nm, +1.15 %, against the square sheet's 112 bp = 38.08 nm at -4.80 % and C-0133's twist-corrected 110 bp = 37.40 nm at -6.50 %. F4 and F5 did not fire.",
+        "BUT THE TWO TURN SENSES ARE DISJOINT, AND THAT IS THE ONE THING C-0119 DID NOT CHECK. Delta = 1 admits N = {7,17,18} (mod 21) and Delta = 2 admits {3,4,14}; their intersection is EMPTY. C-0119 establishes that the honeycomb scaffold lattice is INTEGRAL — necessary — and does not check that a crossover landing on it points at the neighbour the raster needs. Its own 112 bp row has residue 7: admissible at Delta = 1 and INADMISSIBLE at Delta = 2, where the nearest widths are 109 and 119 bp. Which Delta a 15 x 4 honeycomb raster carries is a property of the honeycomb path geometry that this repository has not derived. F7 did not fire — the row is admissible at one sense — but the verdict is now conditional where C-0119 states it flat.",
+        "THE QUARTER BASE PAIR DOES NOT VANISH — IT RELOCATES, AND IT STOPS ACCUMULATING. caDNAno's scaffold crossover sits \"five base pairs, or half a turn\" from the staple lattice, and an exact half turn is 5.25 bp: the offset is 0.2500 bp short, i.e. 8.5714 deg — C-0133's invariant, to the last digit. But on the square sheet that quarter base pair is a property of the WHOLE ROW and drives C-0107's boundary layer; here it is a fixed departure at each scaffold crossover and the STAPLE lattice, which carries every crossover column, every register field and every attachment station, is at B-DNA's own twist exactly. A local, non-accumulating 8.57 deg against a global 60.0. F6 did not fire.",
+        "THE WHOLE FAVOURABLE RESULT RESTS ON ONE CONSTANT, AND IT IS A CONVENTION SHARED BETWEEN THE LATTICE AND THE MATERIAL. The honeycomb is laid out at 10.5 bp/turn BECAUSE that is taken to be B-DNA's; if the duplex's own twist is 10.44 the honeycomb accumulates 22.07 deg over 112 bp, which is 37 % of the square sheet's 60.0, and at 10.34 it equals it. A 0.57 % error in the assumed twist therefore costs 37 % of C-0086's uncorrected driver — so the honeycomb's advantage is exactly as good as the constant, and nothing in this repository measures it. Quote the advantage with the twist it is read at.",
+        "NO SOLVE IS JUSTIFIED AND THAT IS A RESULT, NOT AN OMISSION. This repository's lattice machinery is single-layer square-lattice throughout — OrigamiGrillage never reads `layers` or `interlayerCoupling`, and CrossoverLayout's two-parity alternation IS the square lattice's combinatorics — so a dishing number computed on it would be a square-lattice number wearing a honeycomb label. What the honeycomb four-layer tile needs is a station lattice, a plan ceiling and a placement family of its own, and none of them exists here."
+    ],
+    "parameters": {
+        "honeycombDesignTwistPerBase": "34.285714285714285",
+        "squareDesignTwistPerBase": "33.75",
+        "bDnaTwistPerBase": "34.285714285714285",
+        "honeycombMismatchPerBase": "0.0",
+        "honeycombResiduesDelta1": "7,17,18",
+        "honeycombResiduesDelta2": "3,4,14",
+        "honeycombResiduesSameNeighbour": "0,10,11",
+        "squareResidues": "16",
+        "nearestHoneycombWidthBasePairs": "119",
+        "nearestHoneycombWidthNm": "40.46",
+        "nearestDelta1WidthBasePairs": "122",
+        "nearestSquareWidthBasePairs": "112",
+        "admissibleWidthDensityRatio": "4.571428571428571",
+        "oddHalfTurnCountsChecked": "2001",
+        "sources": "gpd/results/T-198-honeycomb-raster-width.json"
+    }
+}

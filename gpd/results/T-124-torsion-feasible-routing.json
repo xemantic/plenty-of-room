@@ -1996,21 +1996,21 @@
             "control": "torsion grid steps",
             "level": 30,
             "value": 2.65543661,
-            "departureFromFinest": 0.0940125119
+            "departureFromFinest": 0.094
         },
         {
             "quantity": "worst covalent z at the best-aligned feasible placement",
             "control": "torsion grid steps",
             "level": 60,
             "value": 2.65557262,
-            "departureFromFinest": 0.0941485253
+            "departureFromFinest": 0.094
         },
         {
             "quantity": "worst covalent z at the best-aligned feasible placement",
             "control": "torsion grid steps",
             "level": 120,
             "value": 2.56191077,
-            "departureFromFinest": 4.86677314E-4
+            "departureFromFinest": 4.9E-4
         },
         {
             "quantity": "worst covalent z at the best-aligned feasible placement",
@@ -2067,55 +2067,55 @@
             "quantity": "C-0048 recommended frame couple [pN nm/rad]",
             "published": 71.31,
             "derived": 71.3131298,
-            "relativeDeparture": 4.38896887E-5
+            "relativeDeparture": 4.4E-5
         },
         {
             "quantity": "C-0048 recommended critical load, CanDo [pN]",
             "published": 8.95,
             "derived": 8.94739526,
-            "relativeDeparture": 2.91032264E-4
+            "relativeDeparture": 2.9E-4
         },
         {
             "quantity": "C-0048 recommended margin, CanDo",
             "published": 1.95,
             "derived": 1.94667695,
-            "relativeDeparture": 0.00170412945
+            "relativeDeparture": 0.0017
         },
         {
             "quantity": "C-0048 recommended margin, Fields",
             "published": 1.46,
             "derived": 1.46344598,
-            "relativeDeparture": 0.00236025695
+            "relativeDeparture": 0.0024
         },
         {
             "quantity": "C-0048 recommended span [nm]",
             "published": 28.25,
             "derived": 28.2512884,
-            "relativeDeparture": 4.56069093E-5
+            "relativeDeparture": 4.6E-5
         },
         {
             "quantity": "C-0052 chord budget at 21 steps [deg]",
             "published": 78.53,
             "derived": 78.5285848,
-            "relativeDeparture": 1.80209188E-5
+            "relativeDeparture": 1.8E-5
         },
         {
             "quantity": "C-0029 alignment allowance [deg]",
             "published": 16.87,
             "derived": 16.8697282,
-            "relativeDeparture": 1.61108515E-5
+            "relativeDeparture": 1.6E-5
         },
         {
             "quantity": "C-0029 allowance as a couple fraction",
             "published": 0.9158,
             "derived": 0.915785917,
-            "relativeDeparture": 1.53776138E-5
+            "relativeDeparture": 1.5E-5
         },
         {
             "quantity": "C-0042 conserved chord budget [pN nm/rad]",
             "published": 91.76,
             "derived": 91.7647059,
-            "relativeDeparture": 5.12846813E-5
+            "relativeDeparture": 5.1E-5
         }
     ],
     "findings": {

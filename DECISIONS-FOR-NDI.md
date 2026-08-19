@@ -169,6 +169,10 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 >   would keep it. The answer is neither word, so the last unbounded exposure on the Gen-1 critical path —
 >   `C-0005`'s `Ξ = 17–24`, where there is no systematic theory at all — stands exactly where it was.
 >   That is the one prediction in this file the answer falsified.
+>   **AND THEN IT WAS DONE, 2026-08-19 (`C-0137`), without the Monte Carlo.** `Ξ = 17–24` still has no
+>   systematic theory; what changed is that the 123–214 % turned out to be an error bar on a **level**, and
+>   at the force-pinned operating point every margin here is read at, a level is absorbed into the bias.
+>   The exposure is bounded and the compute request is withdrawn. See decision 1's answer block above.
 > - **The buy is small, and it is common mode.** At the state the device occupies the three surviving routes
 >   are worth **1.35×, 1.57× and 1.75×** (`C-0091`), and all three are downstream of `C-0008`'s single
 >   mean-field solve, whose one-loop error is **123–214 %** (`C-0005`) — larger than any of them.
@@ -217,7 +221,12 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 > **Read at the state the device occupies, the three routes are worth 1.35×, 1.57× and 1.75×** —
 > and they are **not three independent exposures**: all three are downstream of `C-0008`'s single
 > mean-field solve, whose one-loop error (`C-0005`, **123–214 %**) is common mode over all of them
-> and larger than each. `T-50` is the only thing in the queue that would change that.
+> and larger than each. ~~`T-50` is the only thing in the queue that would change that.~~
+> **`T-50` DID change it, 2026-08-19 (`C-0137`):** the common-mode 123–214 % is a **level**, and the three
+> routes are read at a **force-pinned** point where the level is absorbed into the bias. The common-mode
+> exposure is the *gradient*, whose threshold is a 9.73 % shortening of the decay length — and nothing
+> evaluable reaches it. The three routes are still not three independent exposures; what they share is now
+> bounded.
 >
 > **Nothing here argues for 2 mM.** Every surviving route favours 0.5 mM, at every layer model.
 > What is corrected is the count, the word *independent*, and the size of the largest number.
@@ -257,13 +266,29 @@ not an output of the model.
   `C-0023`'s 40 pN/nm compliance ceiling at **0 of 8** lengths. A shorter standoff lands 2.2 % short
   at ℓ = 5 nm and is excluded by the 10 pN unzip allowable at ℓ = 4 nm.
 
-**The alternative if the answer is "hold 2 mM".** `T-50` — a beyond-mean-field treatment of the
+~~**The alternative if the answer is "hold 2 mM".** `T-50` — a beyond-mean-field treatment of the
 actuated gap, costed at **1–3 weeks of primitive-model Monte Carlo** in a regime `C-0005` reports has
 **no systematic theory at all** (`Ξ = 17–24`). It is the last unbounded exposure on the Gen-1 critical
-path, and `CH-0019` established that nothing else in the queue can reach it.
+path, and `CH-0019` established that nothing else in the queue can reach it.~~
 
-**What deferring costs.** The programme continues to carry two readings of every stability and bias
-margin, and `T-50` stays on the queue as a multi-week item that a one-word answer would delete.
+**ANSWERED, 2026-08-19 (`C-0137`, `T-50` DONE) — and the Monte Carlo was not run.** The exposure was
+bounded by an arithmetic instead: `C-0005`'s 123–214 % is a statement about the **level** of the
+correction, and at the force-pinned operating point every margin in this file is read at, the level is
+absorbed into the bias (checked over `C-0017`'s own 54 states — the pinned force is identical across all
+three buffers at every `(model, height)`, relative spread `0.0`). The margin's own thresholds are that
+the true force be **1.48–2.22× smaller**, or decay **9.73 % faster** at the 7 nm held gap, and every
+channel that can be evaluated is empty, favourable, or worth **1.44 %** of the margin. `C-0005`'s own
+open item — *"no published `Ξ` criterion exists for oppositely charged walls"* — is closed in the
+**favourable** direction: for oppositely charged walls the weak-coupling expansion has an
+*exponentially* larger validity bound, with published Monte Carlo at `Ξ` up to **86** where
+Poisson-Boltzmann and strong coupling *"nearly coincide"*. **The `Ξ = 17–24` alarm is calibrated on the
+LIKE-charged problem and this device is not that problem.**
+
+**What deferring decision 1 now costs.** Less than this file said. 2 mM's margin is no longer carried
+against an uncontrolled 123–214 %; it is carried against a threshold **1.48×** away in the force and
+**9.73 %** away in the decay length, with nothing evaluable getting there. `C-0017`'s verdict is still
+*not excluded rather than established* — that has not changed — but the reason is now the absence of a
+systematic theory at `Ξ = 17–24`, not the absence of a bound.
 
 ---
 
@@ -411,8 +436,9 @@ fabrication **yield** wherever it is published and **no column at all** for fabr
 *"it costs nothing"* of 0.5 mM — on `C-0007`'s ≤ 0.4 % layer sensitivity — was a statement about the
 *modulus* standing in for a statement about the *price*, and the answer to decision 1 caught it.
 
-**What deferring costs.** Nothing new. 2 mM stays the nominal, every margin in the corpus is owed there, and
-`T-50` stays on the queue exactly where it was.
+**What deferring costs.** Nothing new. 2 mM stays the nominal and every margin in the corpus is owed there.
+~~`T-50` stays on the queue exactly where it was.~~ **`T-50` is DONE as of 2026-08-19** (`C-0137`), bounded
+rather than run — see decision 1.
 
 ---
 
@@ -804,15 +830,21 @@ fetch (ACS, Elsevier, Springer and IOP all refuse; Crossref and EuropePMC serve 
 Neither is blocking: `C-0007` bounds the effect they would pin at **≤ 0.4 %** of the layer modulus and
 states it as a falsifiable threshold rather than a guess.
 
-**Compute.** `T-50` (above) and `T-51` (field-theoretic simulation of the grafted layer, costed at
-weeks) both exceed what one session can run on the current box. `T-51` is **not** warranted — `C-0019`
-bounds the layer response at ≤ 9.4 % without it. ~~`T-50` is warranted only if decision 1 comes back as
+**Compute.** ~~`T-50` (above) and~~ `T-51` (field-theoretic simulation of the grafted layer, costed at
+weeks) exceeds what one session can run on the current box, and is **not** warranted — `C-0019` bounds the
+layer response at ≤ 9.4 % without it. ~~`T-50` is warranted only if decision 1 comes back as
 "hold 2 mM".~~
 **CORRECTED, 2026-08-18 — this is the one prediction in this file the answers falsified.**
-Decision 1 came back as neither *"adopt 0.5 mM"* nor *"hold 2 mM"* but as **a price**, so 2 mM remains the
-nominal and `T-50` remains warranted. A binary was assumed where the answer was a cost, which is the same
+Decision 1 came back as neither *"adopt 0.5 mM"* nor *"hold 2 mM"* but as **a price**, so 2 mM remained the
+nominal and `T-50` remained warranted. A binary was assumed where the answer was a cost, which is the same
 failure this file records elsewhere as *"a one-sentence answer is enough"*: it was, and the sentence was not
 one of the two on offer.
+**AND THEN IT WAS ANSWERED WITHOUT THE COMPUTE, 2026-08-19 (`C-0137`).** The multi-week Monte Carlo was
+**not run** and is **not** superseded — the regime still has no systematic theory. What `T-50` returned
+instead is `P-6`'s ceiling and threshold, and the reason that was available at all is that the quantity
+`C-0005` bounds (a **level**) is not the quantity the margin is (a **stiffness at a force-pinned point**).
+**No compute request stands against this programme today**; the only item still exceeding one session is
+`T-9`, the crossover hinge constant from oxDNA, at days rather than weeks.
 
 ---
 ~~Two~~ **Three** things worth flagging about the document itself:

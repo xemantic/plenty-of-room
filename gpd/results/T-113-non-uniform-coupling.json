@@ -3385,27 +3385,27 @@
             "attachments": 45.0,
             "profile": "C-0022 2.0 mM, 10 nm, 0.192 V",
             "stiffnessCeiling": "10 pN unzip at the 3 nm acceptable stroke",
-            "latticePeakDishing": 0.611769358,
-            "platePeakDishing": 0.56563675,
-            "latticeOverPlate": 1.08155872,
-            "latticeExcessPercent": 8.15587179,
-            "dishingOverStroke": 0.124664884,
+            "latticePeakDishing": 0.679563125,
+            "platePeakDishing": 0.666192407,
+            "latticeOverPlate": 1.02007035,
+            "latticeExcessPercent": 2.00703546,
+            "dishingOverStroke": 0.138479734,
             "flat": false,
-            "overTolerance": 1.24664884,
+            "overTolerance": 1.38479734,
             "freeTileOverStroke": 0.307902368,
             "betterThanTheFreeTile": true,
-            "improvementOverUniform": 0.428701847,
-            "maximumOverMinimumStiffness": 17.303803,
-            "peakPathStiffness": 3.11532155,
-            "peakPathForceAtAcceptableStroke": 9.34596466,
-            "unzipMarginAtAcceptableStroke": 1.06998051,
+            "improvementOverUniform": 0.365392933,
+            "maximumOverMinimumStiffness": 134.133852,
+            "peakPathStiffness": 2.32592888,
+            "peakPathForceAtAcceptableStroke": 6.97778665,
+            "unzipMarginAtAcceptableStroke": 1.4331192,
             "admissibleUnderTheUnzipAllowable": true,
-            "peakSupportForce": 4.72625371,
-            "peakCrossoverForce": 1.42743687,
-            "peakDuplexShear": 1.57302672,
-            "peakThermalForce": 1.09816039,
-            "pathsCarryingHalfTheUniformShare": 33.0,
-            "pathsBelowATenthOfTheUniformShare": 0.0,
+            "peakSupportForce": 4.26336097,
+            "peakCrossoverForce": 1.30111759,
+            "peakDuplexShear": 1.68078536,
+            "peakThermalForce": 0.819897057,
+            "pathsCarryingHalfTheUniformShare": 37.0,
+            "pathsBelowATenthOfTheUniformShare": 5.0,
             "verdict": "NOT flat, but better than no coupling at all"
         }
     ],
@@ -5396,10 +5396,10 @@
             "index": 0.0,
             "x": -13.3333333,
             "y": -18.83,
-            "stiffness": 0.494494841,
-            "shareOfTheUniformPath": 0.667568035,
-            "forceAtAcceptableStroke": 1.48348452,
-            "thermalForce": 0.174310946
+            "stiffness": 0.798509345,
+            "shareOfTheUniformPath": 1.07798762,
+            "forceAtAcceptableStroke": 2.39552804,
+            "thermalForce": 0.281476991
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5407,10 +5407,10 @@
             "index": 1.0,
             "x": 0.0,
             "y": -18.83,
-            "stiffness": 0.850509827,
-            "shareOfTheUniformPath": 1.14818827,
-            "forceAtAcceptableStroke": 2.55152948,
-            "thermalForce": 0.29980732
+            "stiffness": 1.51489605,
+            "shareOfTheUniformPath": 2.04510967,
+            "forceAtAcceptableStroke": 4.54468815,
+            "thermalForce": 0.5340055
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5418,10 +5418,10 @@
             "index": 2.0,
             "x": 13.3333333,
             "y": -18.83,
-            "stiffness": 0.911881914,
-            "shareOfTheUniformPath": 1.23104058,
-            "forceAtAcceptableStroke": 2.73564574,
-            "thermalForce": 0.321441168
+            "stiffness": 1.20161208,
+            "shareOfTheUniformPath": 1.6221763,
+            "forceAtAcceptableStroke": 3.60483623,
+            "thermalForce": 0.423571938
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5429,10 +5429,10 @@
             "index": 3.0,
             "x": -13.3333333,
             "y": -16.14,
-            "stiffness": 0.926098788,
-            "shareOfTheUniformPath": 1.25023336,
-            "forceAtAcceptableStroke": 2.77829636,
-            "thermalForce": 0.32645266
+            "stiffness": 1.32605583,
+            "shareOfTheUniformPath": 1.79017537,
+            "forceAtAcceptableStroke": 3.97816749,
+            "thermalForce": 0.467438742
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5440,10 +5440,10 @@
             "index": 4.0,
             "x": 0.0,
             "y": -16.14,
-            "stiffness": 0.835721265,
-            "shareOfTheUniformPath": 1.12822371,
-            "forceAtAcceptableStroke": 2.5071638,
-            "thermalForce": 0.294594307
+            "stiffness": 0.017340357,
+            "shareOfTheUniformPath": 0.023409482,
+            "forceAtAcceptableStroke": 0.0520210711,
+            "thermalForce": 0.00611252898
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5451,10 +5451,10 @@
             "index": 5.0,
             "x": 13.3333333,
             "y": -16.14,
-            "stiffness": 0.902049752,
-            "shareOfTheUniformPath": 1.21776717,
-            "forceAtAcceptableStroke": 2.70614926,
-            "thermalForce": 0.317975301
+            "stiffness": 0.577794897,
+            "shareOfTheUniformPath": 0.780023111,
+            "forceAtAcceptableStroke": 1.73338469,
+            "thermalForce": 0.203674471
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5462,10 +5462,10 @@
             "index": 6.0,
             "x": -13.3333333,
             "y": -13.45,
-            "stiffness": 0.903919303,
-            "shareOfTheUniformPath": 1.22029106,
-            "forceAtAcceptableStroke": 2.71175791,
-            "thermalForce": 0.318634324
+            "stiffness": 0.653279276,
+            "shareOfTheUniformPath": 0.881927023,
+            "forceAtAcceptableStroke": 1.95983783,
+            "thermalForce": 0.230282946
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5473,10 +5473,10 @@
             "index": 7.0,
             "x": 0.0,
             "y": -13.45,
-            "stiffness": 0.180036814,
-            "shareOfTheUniformPath": 0.243049699,
-            "forceAtAcceptableStroke": 0.540110441,
-            "thermalForce": 0.0634635284
+            "stiffness": 0.348821568,
+            "shareOfTheUniformPath": 0.470909117,
+            "forceAtAcceptableStroke": 1.04646471,
+            "thermalForce": 0.122960672
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5484,10 +5484,10 @@
             "index": 8.0,
             "x": 13.3333333,
             "y": -13.45,
-            "stiffness": 0.902049752,
-            "shareOfTheUniformPath": 1.21776717,
-            "forceAtAcceptableStroke": 2.70614926,
-            "thermalForce": 0.317975301
+            "stiffness": 0.892657395,
+            "shareOfTheUniformPath": 1.20508748,
+            "forceAtAcceptableStroke": 2.67797219,
+            "thermalForce": 0.314664467
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5495,10 +5495,10 @@
             "index": 9.0,
             "x": -13.3333333,
             "y": -10.76,
-            "stiffness": 0.909995895,
-            "shareOfTheUniformPath": 1.22849446,
-            "forceAtAcceptableStroke": 2.72998768,
-            "thermalForce": 0.320776341
+            "stiffness": 1.25807972,
+            "shareOfTheUniformPath": 1.69840762,
+            "forceAtAcceptableStroke": 3.77423915,
+            "thermalForce": 0.443476955
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5506,10 +5506,10 @@
             "index": 10.0,
             "x": 0.0,
             "y": -10.76,
-            "stiffness": 0.182376383,
-            "shareOfTheUniformPath": 0.246208117,
-            "forceAtAcceptableStroke": 0.547129148,
-            "thermalForce": 0.0642882337
+            "stiffness": 0.41636006,
+            "shareOfTheUniformPath": 0.562086081,
+            "forceAtAcceptableStroke": 1.24908018,
+            "thermalForce": 0.146768197
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5517,10 +5517,10 @@
             "index": 11.0,
             "x": 13.3333333,
             "y": -10.76,
-            "stiffness": 0.911881914,
-            "shareOfTheUniformPath": 1.23104058,
-            "forceAtAcceptableStroke": 2.73564574,
-            "thermalForce": 0.321441168
+            "stiffness": 0.912223021,
+            "shareOfTheUniformPath": 1.23150108,
+            "forceAtAcceptableStroke": 2.73666906,
+            "thermalForce": 0.32156141
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5528,10 +5528,10 @@
             "index": 12.0,
             "x": -13.3333333,
             "y": -8.07,
-            "stiffness": 0.909995895,
-            "shareOfTheUniformPath": 1.22849446,
-            "forceAtAcceptableStroke": 2.72998768,
-            "thermalForce": 0.320776341
+            "stiffness": 0.422644781,
+            "shareOfTheUniformPath": 0.570570455,
+            "forceAtAcceptableStroke": 1.26793434,
+            "thermalForce": 0.14898358
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5539,10 +5539,10 @@
             "index": 13.0,
             "x": 0.0,
             "y": -8.07,
-            "stiffness": 0.183982933,
-            "shareOfTheUniformPath": 0.24837696,
-            "forceAtAcceptableStroke": 0.5519488,
-            "thermalForce": 0.0648545477
+            "stiffness": 0.689666981,
+            "shareOfTheUniformPath": 0.931050424,
+            "forceAtAcceptableStroke": 2.06900094,
+            "thermalForce": 0.243109724
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5550,10 +5550,10 @@
             "index": 14.0,
             "x": 13.3333333,
             "y": -8.07,
-            "stiffness": 0.908113776,
-            "shareOfTheUniformPath": 1.2259536,
-            "forceAtAcceptableStroke": 2.72434133,
-            "thermalForce": 0.320112888
+            "stiffness": 0.777773566,
+            "shareOfTheUniformPath": 1.04999431,
+            "forceAtAcceptableStroke": 2.3333207,
+            "thermalForce": 0.274167565
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5561,10 +5561,10 @@
             "index": 15.0,
             "x": -13.3333333,
             "y": -5.38,
-            "stiffness": 0.909995895,
-            "shareOfTheUniformPath": 1.22849446,
-            "forceAtAcceptableStroke": 2.72998768,
-            "thermalForce": 0.320776341
+            "stiffness": 0.754445751,
+            "shareOfTheUniformPath": 1.01850176,
+            "forceAtAcceptableStroke": 2.26333725,
+            "thermalForce": 0.265944439
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5572,10 +5572,10 @@
             "index": 16.0,
             "x": 0.0,
             "y": -5.38,
-            "stiffness": 0.244990309,
-            "shareOfTheUniformPath": 0.330736917,
-            "forceAtAcceptableStroke": 0.734970928,
-            "thermalForce": 0.0863598346
+            "stiffness": 0.749407861,
+            "shareOfTheUniformPath": 1.01170061,
+            "forceAtAcceptableStroke": 2.24822358,
+            "thermalForce": 0.264168567
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5583,10 +5583,10 @@
             "index": 17.0,
             "x": 13.3333333,
             "y": -5.38,
-            "stiffness": 0.90623555,
-            "shareOfTheUniformPath": 1.22341799,
-            "forceAtAcceptableStroke": 2.71870665,
-            "thermalForce": 0.319450808
+            "stiffness": 0.884862654,
+            "shareOfTheUniformPath": 1.19456458,
+            "forceAtAcceptableStroke": 2.65458796,
+            "thermalForce": 0.311916796
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5594,10 +5594,10 @@
             "index": 18.0,
             "x": -13.3333333,
             "y": -2.69,
-            "stiffness": 0.911881914,
-            "shareOfTheUniformPath": 1.23104058,
-            "forceAtAcceptableStroke": 2.73564574,
-            "thermalForce": 0.321441168
+            "stiffness": 0.715771445,
+            "shareOfTheUniformPath": 0.96629145,
+            "forceAtAcceptableStroke": 2.14731433,
+            "thermalForce": 0.252311627
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5605,10 +5605,10 @@
             "index": 19.0,
             "x": 0.0,
             "y": -2.69,
-            "stiffness": 0.182376383,
-            "shareOfTheUniformPath": 0.246208117,
-            "forceAtAcceptableStroke": 0.547129148,
-            "thermalForce": 0.0642882337
+            "stiffness": 0.843398493,
+            "shareOfTheUniformPath": 1.13858797,
+            "forceAtAcceptableStroke": 2.53019548,
+            "thermalForce": 0.297300553
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5616,10 +5616,10 @@
             "index": 20.0,
             "x": 13.3333333,
             "y": -2.69,
-            "stiffness": 0.480657554,
-            "shareOfTheUniformPath": 0.648887697,
-            "forceAtAcceptableStroke": 1.44197266,
-            "thermalForce": 0.16943326
+            "stiffness": 2.32592888,
+            "shareOfTheUniformPath": 3.14000399,
+            "forceAtAcceptableStroke": 6.97778665,
+            "thermalForce": 0.819897057
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5627,10 +5627,10 @@
             "index": 21.0,
             "x": -13.3333333,
             "y": 0.0,
-            "stiffness": 0.969619167,
-            "shareOfTheUniformPath": 1.30898588,
-            "forceAtAcceptableStroke": 2.9088575,
-            "thermalForce": 0.341793727
+            "stiffness": 0.888968698,
+            "shareOfTheUniformPath": 1.20010774,
+            "forceAtAcceptableStroke": 2.66690609,
+            "thermalForce": 0.31336419
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5638,10 +5638,10 @@
             "index": 22.0,
             "x": 0.0,
             "y": 0.0,
-            "stiffness": 0.203457748,
-            "shareOfTheUniformPath": 0.274667959,
-            "forceAtAcceptableStroke": 0.610373243,
-            "thermalForce": 0.0717194794
+            "stiffness": 0.393192125,
+            "shareOfTheUniformPath": 0.530809368,
+            "forceAtAcceptableStroke": 1.17957637,
+            "thermalForce": 0.138601429
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5649,10 +5649,10 @@
             "index": 23.0,
             "x": 13.3333333,
             "y": 0.0,
-            "stiffness": 0.658465661,
-            "shareOfTheUniformPath": 0.888928643,
-            "forceAtAcceptableStroke": 1.97539698,
-            "thermalForce": 0.232111163
+            "stiffness": 0.823199628,
+            "shareOfTheUniformPath": 1.1113195,
+            "forceAtAcceptableStroke": 2.46959888,
+            "thermalForce": 0.290180391
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5660,10 +5660,10 @@
             "index": 24.0,
             "x": -13.3333333,
             "y": 2.69,
-            "stiffness": 0.908113776,
-            "shareOfTheUniformPath": 1.2259536,
-            "forceAtAcceptableStroke": 2.72434133,
-            "thermalForce": 0.320112888
+            "stiffness": 2.21127091,
+            "shareOfTheUniformPath": 2.98521573,
+            "forceAtAcceptableStroke": 6.63381273,
+            "thermalForce": 0.77947977
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5671,10 +5671,10 @@
             "index": 25.0,
             "x": 0.0,
             "y": 2.69,
-            "stiffness": 0.183602407,
-            "shareOfTheUniformPath": 0.247863249,
-            "forceAtAcceptableStroke": 0.550807221,
-            "thermalForce": 0.0647204109
+            "stiffness": 0.127801386,
+            "shareOfTheUniformPath": 0.172531872,
+            "forceAtAcceptableStroke": 0.383404159,
+            "thermalForce": 0.0450503802
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5682,10 +5682,10 @@
             "index": 26.0,
             "x": 13.3333333,
             "y": 2.69,
-            "stiffness": 0.909995895,
-            "shareOfTheUniformPath": 1.22849446,
-            "forceAtAcceptableStroke": 2.72998768,
-            "thermalForce": 0.320776341
+            "stiffness": 0.063942756,
+            "shareOfTheUniformPath": 0.0863227206,
+            "forceAtAcceptableStroke": 0.191828268,
+            "thermalForce": 0.0225400174
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5693,10 +5693,10 @@
             "index": 27.0,
             "x": -13.3333333,
             "y": 5.38,
-            "stiffness": 0.909995895,
-            "shareOfTheUniformPath": 1.22849446,
-            "forceAtAcceptableStroke": 2.72998768,
-            "thermalForce": 0.320776341
+            "stiffness": 0.0574641716,
+            "shareOfTheUniformPath": 0.0775766317,
+            "forceAtAcceptableStroke": 0.172392515,
+            "thermalForce": 0.0202562966
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5704,10 +5704,10 @@
             "index": 28.0,
             "x": 0.0,
             "y": 5.38,
-            "stiffness": 0.180783861,
-            "shareOfTheUniformPath": 0.244058212,
-            "forceAtAcceptableStroke": 0.542351582,
-            "thermalForce": 0.0637268647
+            "stiffness": 0.0555981773,
+            "shareOfTheUniformPath": 0.0750575393,
+            "forceAtAcceptableStroke": 0.166794532,
+            "thermalForce": 0.0195985278
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5715,10 +5715,10 @@
             "index": 29.0,
             "x": 13.3333333,
             "y": 5.38,
-            "stiffness": 3.11532155,
-            "shareOfTheUniformPath": 4.2056841,
-            "forceAtAcceptableStroke": 9.34596466,
-            "thermalForce": 1.09816039
+            "stiffness": 0.311234042,
+            "shareOfTheUniformPath": 0.420165956,
+            "forceAtAcceptableStroke": 0.933702125,
+            "thermalForce": 0.109710953
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5726,10 +5726,10 @@
             "index": 30.0,
             "x": -13.3333333,
             "y": 8.07,
-            "stiffness": 0.909995895,
-            "shareOfTheUniformPath": 1.22849446,
-            "forceAtAcceptableStroke": 2.72998768,
-            "thermalForce": 0.320776341
+            "stiffness": 0.789899598,
+            "shareOfTheUniformPath": 1.06636446,
+            "forceAtAcceptableStroke": 2.36969879,
+            "thermalForce": 0.278442028
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5737,10 +5737,10 @@
             "index": 31.0,
             "x": 0.0,
             "y": 8.07,
-            "stiffness": 0.258227538,
-            "shareOfTheUniformPath": 0.348607176,
-            "forceAtAcceptableStroke": 0.774682613,
-            "thermalForce": 0.0910259982
+            "stiffness": 0.0483425724,
+            "shareOfTheUniformPath": 0.0652624728,
+            "forceAtAcceptableStroke": 0.145027717,
+            "thermalForce": 0.0170409049
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5748,10 +5748,10 @@
             "index": 32.0,
             "x": 13.3333333,
             "y": 8.07,
-            "stiffness": 0.709255971,
-            "shareOfTheUniformPath": 0.957495561,
-            "forceAtAcceptableStroke": 2.12776791,
-            "thermalForce": 0.250014903
+            "stiffness": 0.807212937,
+            "shareOfTheUniformPath": 1.08973747,
+            "forceAtAcceptableStroke": 2.42163881,
+            "thermalForce": 0.284545033
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5759,10 +5759,10 @@
             "index": 33.0,
             "x": -13.3333333,
             "y": 10.76,
-            "stiffness": 0.909995895,
-            "shareOfTheUniformPath": 1.22849446,
-            "forceAtAcceptableStroke": 2.72998768,
-            "thermalForce": 0.320776341
+            "stiffness": 0.77616492,
+            "shareOfTheUniformPath": 1.04782264,
+            "forceAtAcceptableStroke": 2.32849476,
+            "thermalForce": 0.273600512
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5770,10 +5770,10 @@
             "index": 34.0,
             "x": 0.0,
             "y": 10.76,
-            "stiffness": 0.225460308,
-            "shareOfTheUniformPath": 0.304371415,
-            "forceAtAcceptableStroke": 0.676380923,
-            "thermalForce": 0.0794754492
+            "stiffness": 0.467382239,
+            "shareOfTheUniformPath": 0.630966022,
+            "forceAtAcceptableStroke": 1.40214672,
+            "thermalForce": 0.164753671
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5781,10 +5781,10 @@
             "index": 35.0,
             "x": 13.3333333,
             "y": 10.76,
-            "stiffness": 0.908113776,
-            "shareOfTheUniformPath": 1.2259536,
-            "forceAtAcceptableStroke": 2.72434133,
-            "thermalForce": 0.320112888
+            "stiffness": 0.791536711,
+            "shareOfTheUniformPath": 1.06857456,
+            "forceAtAcceptableStroke": 2.37461013,
+            "thermalForce": 0.279019116
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5792,10 +5792,10 @@
             "index": 36.0,
             "x": -13.3333333,
             "y": 13.45,
-            "stiffness": 0.242486874,
-            "shareOfTheUniformPath": 0.327357279,
-            "forceAtAcceptableStroke": 0.727460621,
-            "thermalForce": 0.0854773659
+            "stiffness": 0.697184213,
+            "shareOfTheUniformPath": 0.941198687,
+            "forceAtAcceptableStroke": 2.09155264,
+            "thermalForce": 0.245759571
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5803,10 +5803,10 @@
             "index": 37.0,
             "x": 0.0,
             "y": 13.45,
-            "stiffness": 0.213018886,
-            "shareOfTheUniformPath": 0.287575496,
-            "forceAtAcceptableStroke": 0.639056657,
-            "thermalForce": 0.0750898099
+            "stiffness": 0.789899598,
+            "shareOfTheUniformPath": 1.06636446,
+            "forceAtAcceptableStroke": 2.36969879,
+            "thermalForce": 0.278442028
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5814,10 +5814,10 @@
             "index": 38.0,
             "x": 13.3333333,
             "y": 13.45,
-            "stiffness": 0.909995895,
-            "shareOfTheUniformPath": 1.22849446,
-            "forceAtAcceptableStroke": 2.72998768,
-            "thermalForce": 0.320776341
+            "stiffness": 0.480837353,
+            "shareOfTheUniformPath": 0.649130427,
+            "forceAtAcceptableStroke": 1.44251206,
+            "thermalForce": 0.16949664
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5825,10 +5825,10 @@
             "index": 39.0,
             "x": -13.3333333,
             "y": 16.14,
-            "stiffness": 0.918012034,
-            "shareOfTheUniformPath": 1.23931625,
-            "forceAtAcceptableStroke": 2.7540361,
-            "thermalForce": 0.323602055
+            "stiffness": 0.854358413,
+            "shareOfTheUniformPath": 1.15338386,
+            "forceAtAcceptableStroke": 2.56307524,
+            "thermalForce": 0.301163958
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5836,10 +5836,10 @@
             "index": 40.0,
             "x": 0.0,
             "y": 16.14,
-            "stiffness": 0.909995895,
-            "shareOfTheUniformPath": 1.22849446,
-            "forceAtAcceptableStroke": 2.72998768,
-            "thermalForce": 0.320776341
+            "stiffness": 0.788265871,
+            "shareOfTheUniformPath": 1.06415893,
+            "forceAtAcceptableStroke": 2.36479761,
+            "thermalForce": 0.277866135
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5847,10 +5847,10 @@
             "index": 41.0,
             "x": 13.3333333,
             "y": 16.14,
-            "stiffness": 0.909995895,
-            "shareOfTheUniformPath": 1.22849446,
-            "forceAtAcceptableStroke": 2.72998768,
-            "thermalForce": 0.320776341
+            "stiffness": 0.7080538,
+            "shareOfTheUniformPath": 0.95587263,
+            "forceAtAcceptableStroke": 2.1241614,
+            "thermalForce": 0.249591134
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5858,10 +5858,10 @@
             "index": 42.0,
             "x": -13.3333333,
             "y": 18.83,
-            "stiffness": 0.900184069,
-            "shareOfTheUniformPath": 1.21524849,
-            "forceAtAcceptableStroke": 2.70055221,
-            "thermalForce": 0.317317642
+            "stiffness": 0.729947155,
+            "shareOfTheUniformPath": 0.985428659,
+            "forceAtAcceptableStroke": 2.18984146,
+            "thermalForce": 0.257308609
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5869,10 +5869,10 @@
             "index": 43.0,
             "x": 0.0,
             "y": 18.83,
-            "stiffness": 0.909995895,
-            "shareOfTheUniformPath": 1.22849446,
-            "forceAtAcceptableStroke": 2.72998768,
-            "thermalForce": 0.320776341
+            "stiffness": 0.798509345,
+            "shareOfTheUniformPath": 1.07798762,
+            "forceAtAcceptableStroke": 2.39552804,
+            "thermalForce": 0.281476991
         },
         {
             "scheme": "3 x 15 (C-0015's answer)",
@@ -5880,10 +5880,10 @@
             "index": 44.0,
             "x": 13.3333333,
             "y": 18.83,
-            "stiffness": 0.909995895,
-            "shareOfTheUniformPath": 1.22849446,
-            "forceAtAcceptableStroke": 2.72998768,
-            "thermalForce": 0.320776341
+            "stiffness": 0.791536711,
+            "shareOfTheUniformPath": 1.06857456,
+            "forceAtAcceptableStroke": 2.37461013,
+            "thermalForce": 0.279019116
         }
     ],
     "optimiser": [
@@ -6012,10 +6012,10 @@
             "model": "lattice, MINIMAX over C-0022's five solved states",
             "stiffnessCeiling": "10 pN unzip at the 3 nm acceptable stroke",
             "starts": 3.0,
-            "lastSweepImprovementToTwoDigits": 0.0,
-            "objective": 0.778981047,
+            "lastSweepImprovementToTwoDigits": 6.6E-6,
+            "objective": 0.766641271,
             "reachableDishingFloor": 0.0131526148,
-            "objectiveOverFloor": 59.2263255
+            "objectiveOverFloor": 58.2881261
         }
     ],
     "transfers": [
@@ -6601,10 +6601,10 @@
             "fromModel": "lattice at C-0022 2.0 mM, 10 nm, 0.192 V",
             "toModel": "lattice",
             "profile": "C-0022 2.0 mM, 10 nm, 0.192 V",
-            "peakDishing": 0.611769358,
-            "dishingOverStroke": 0.124664884,
+            "peakDishing": 0.679563125,
+            "dishingOverStroke": 0.138479734,
             "uniformOverStroke": 0.21821335,
-            "improvementOverUniform": 0.428701847,
+            "improvementOverUniform": 0.365392933,
             "flat": false
         },
         {
@@ -6613,10 +6613,10 @@
             "fromModel": "lattice at C-0022 2.0 mM, 10 nm, 0.192 V",
             "toModel": "lattice",
             "profile": "C-0022 0.5 mM, 10 nm, 0.134 V",
-            "peakDishing": 0.630989887,
-            "dishingOverStroke": 0.128581597,
+            "peakDishing": 0.72374251,
+            "dishingOverStroke": 0.147482503,
             "uniformOverStroke": 0.208607926,
-            "improvementOverUniform": 0.38362075,
+            "improvementOverUniform": 0.293015824,
             "flat": false
         },
         {
@@ -6625,10 +6625,10 @@
             "fromModel": "lattice at C-0022 2.0 mM, 10 nm, 0.192 V",
             "toModel": "lattice",
             "profile": "C-0022 10.0 mM, 10 nm, 0.192 V",
-            "peakDishing": 0.778973488,
-            "dishingOverStroke": 0.158737338,
+            "peakDishing": 0.766641271,
+            "dishingOverStroke": 0.156224309,
             "uniformOverStroke": 0.255137797,
-            "improvementOverUniform": 0.37783684,
+            "improvementOverUniform": 0.387686534,
             "flat": false
         },
         {
@@ -6637,10 +6637,10 @@
             "fromModel": "lattice at C-0022 2.0 mM, 10 nm, 0.192 V",
             "toModel": "lattice",
             "profile": "C-0022 2.0 mM, 5 nm, 0.368 V",
-            "peakDishing": 0.586496323,
-            "dishingOverStroke": 0.119514806,
+            "peakDishing": 0.519845078,
+            "dishingOverStroke": 0.105932776,
             "uniformOverStroke": 0.0795565596,
-            "improvementOverUniform": -0.502262119,
+            "improvementOverUniform": -0.331540434,
             "flat": false
         },
         {
@@ -6649,10 +6649,10 @@
             "fromModel": "lattice at C-0022 2.0 mM, 10 nm, 0.192 V",
             "toModel": "lattice",
             "profile": "C-0022 2.0 mM, 2 nm, 0.368 V",
-            "peakDishing": 0.778981047,
-            "dishingOverStroke": 0.158738878,
+            "peakDishing": 0.766637241,
+            "dishingOverStroke": 0.156223487,
             "uniformOverStroke": 0.0709650644,
-            "improvementOverUniform": -1.2368595,
+            "improvementOverUniform": -1.20141402,
             "flat": false
         },
         {
@@ -6661,10 +6661,10 @@
             "fromModel": "lattice at C-0022 2.0 mM, 10 nm, 0.192 V",
             "toModel": "lattice",
             "profile": "uniform",
-            "peakDishing": 0.64129414,
-            "dishingOverStroke": 0.130681373,
+            "peakDishing": 0.599261792,
+            "dishingOverStroke": 0.122116122,
             "uniformOverStroke": 0.0486198383,
-            "improvementOverUniform": -1.68781998,
+            "improvementOverUniform": -1.51165217,
             "flat": false
         }
     ],
@@ -6673,13 +6673,13 @@
             "axis": "NESTED beam subdivisions 1 in 2 in 4 (never 1/2/3/4)",
             "setting": "1 per interval",
             "dishingOverStroke": 0.0548617107,
-            "departureFromFinest": 0.00802511063
+            "departureFromFinest": 0.008
         },
         {
             "axis": "NESTED beam subdivisions 1 in 2 in 4 (never 1/2/3/4)",
             "setting": "2 per interval",
             "dishingOverStroke": 0.0544295609,
-            "departureFromFinest": 8.4821126E-5
+            "departureFromFinest": 8.5E-5
         },
         {
             "axis": "NESTED beam subdivisions 1 in 2 in 4 (never 1/2/3/4)",
@@ -6691,13 +6691,13 @@
             "axis": "the peak-dishing sampling grid",
             "setting": "41 x 41",
             "dishingOverStroke": 0.054414779,
-            "departureFromFinest": 0.00955375542
+            "departureFromFinest": 0.0096
         },
         {
             "axis": "the peak-dishing sampling grid",
             "setting": "81 x 81",
             "dishingOverStroke": 0.0544295609,
-            "departureFromFinest": 0.00928469845
+            "departureFromFinest": 0.0093
         },
         {
             "axis": "the peak-dishing sampling grid",
@@ -6727,13 +6727,13 @@
             "axis": "the plate's Ritz basis degree",
             "setting": "degree 8",
             "dishingOverStroke": 0.0479031652,
-            "departureFromFinest": 0.010843614
+            "departureFromFinest": 0.011
         },
         {
             "axis": "the plate's Ritz basis degree",
             "setting": "degree 10",
             "dishingOverStroke": 0.0483715837,
-            "departureFromFinest": 0.00117120207
+            "departureFromFinest": 0.0012
         },
         {
             "axis": "the plate's Ritz basis degree",
@@ -6748,42 +6748,42 @@
             "quantity": "1 x 15 uniform dishing [nm]",
             "published": 3.412,
             "reproduced": 3.41157036,
-            "relativeDeparture": 1.25921418E-4
+            "relativeDeparture": 1.3E-4
         },
         {
             "source": "C-0047",
             "quantity": "1 x 15 uniform dishing / stroke",
             "published": 0.695,
             "reproduced": 0.695201577,
-            "relativeDeparture": 2.90038499E-4
+            "relativeDeparture": 2.9E-4
         },
         {
             "source": "C-0047",
             "quantity": "3 x 15 uniform dishing [nm]",
             "published": 1.071,
             "reproduced": 1.07084078,
-            "relativeDeparture": 1.48667535E-4
+            "relativeDeparture": 1.5E-4
         },
         {
             "source": "C-0047",
             "quantity": "3 x 15 uniform dishing / stroke",
             "published": 0.218,
             "reproduced": 0.21821335,
-            "relativeDeparture": 9.78670403E-4
+            "relativeDeparture": 9.8E-4
         },
         {
             "source": "C-0022/C-0047",
             "quantity": "free tile dishing / stroke",
             "published": 0.308,
             "reproduced": 0.307902368,
-            "relativeDeparture": 3.16987857E-4
+            "relativeDeparture": 3.2E-4
         },
         {
             "source": "C-0026",
             "quantity": "free-tile stroke [nm]",
             "published": 4.90731,
             "reproduced": 4.90731102,
-            "relativeDeparture": 2.07085419E-7
+            "relativeDeparture": 2.1E-7
         },
         {
             "source": "C-0049",
@@ -6811,7 +6811,7 @@
             "quantity": "the mandated total coupling stiffness [pN/nm]",
             "published": 33.3333333,
             "reproduced": 33.3333333,
-            "relativeDeparture": 1.00000008E-9
+            "relativeDeparture": 1.0E-9
         },
         {
             "source": "T-113 falsifier",
@@ -6832,7 +6832,7 @@
         "THE ANSWER IS YES AT THREE COLUMNS AND NO AT ONE, AND IT IS THE FIRST TIME ANYTHING IN THIS PROGRAMME HAS MADE THE GEN-1 TILE FLAT. At C-0015's 45 attachments as 3 x 15, redistributing C-0017's SAME mandated total — no extra stiffness, no extra paths — takes the dishing from 0.2182 of the free-tile stroke to 0.0544 (a 75.1% improvement), which is INSIDE T-5b's 0.10 convention. CH-0034's count axis saturates at 0.149 and never reaches it: 225 uniform attachments cannot do what 45 unequal ones can, so the last axis C-0047 named is not only real, it is the only one that works. At C-0041's buildable 1 x 15 the same search buys 13.0% and ends at 0.6048 — still 6.0x the convention and still 1.96x WORSE than having no coupling at all (the free tile dishes 0.3079). All fifteen of those springs sit on the single line x = 0, so they can only reshape the ACROSS-helix profile, and C-0047 showed the dishing there is the ALONG-helix bow. A distribution cannot repair a placement.",
         "AND THE DESIGN IS A ONE-PARAMETER FAMILY, NOT AN OPTIMISER'S ANSWER. Stiffening every attachment inside C-0022's own 8.94 nm collar by a single ratio, at constant total, crosses T-5b's line at a ratio of 10.00 and reaches 0.0753 of the stroke at the best (collar 6.70 nm, ratio 5). The 45-parameter optimum finds only 0.0544, i.e. the whole remaining tuning is worth 27.8% — so the answer is a rule (*stiffen the collar, soften the middle*) and not a table of forty-five numbers. THE FAMILY CONVERGES ON A PLACEMENT: at a large ratio the interior springs carry nothing, and the optimum's own distribution empties 1 of its 45 paths below a tenth of the uniform share while keeping 34 above half. What non-uniformity is really buying is C-0015's *shapes, not counts* — with the shape chosen continuously instead of by an integer.",
         "THE COST IS PAID ON THE LOAD PATH AND IT IS AFFORDABLE AT 45 PATHS AND NOT AT 15. A path carrying k_i delivers k_i·s at stroke s, so C-0006's 10 pN unzip allowable caps every path at a/s = 3.3333 pN/nm — against the uniform share that is a ratio ceiling of n·a/(s·K), 1.50 at 15 paths and 4.50 at 45 at S3's ACCEPTABLE 3 nm, and 0.45 at 15 paths at S3's DESIRED 10 nm, i.e. BELOW ONE, where not even the uniform coupling is admissible (C-0049 from the other side). The flat 3 x 15 design sits at 4.617 pN per path at the 3 nm stroke, 2.2x clear of the allowable; its worst crossover carries 0.823 pN (12x clear of unzip), its worst duplex shear 1.511 pN against the 48-65 pN band, its worst attachment 2.929 pN under the solved load, and its worst per-path THERMAL force 0.542 pN against the uniform coupling's 0.261 — C-0014's over-stiffening penalty, which is LINEAR in the path's share and not its square root, because every path sees the same rigid-body amplitude.",
-        "BUT A DISTRIBUTION IS TUNED TO A LOAD, AND THE LOAD IS AN OPERATING STATE. The 3 x 15 optimum found at C-0022's design point is worse than the UNIFORM coupling at the compressed states: over the five solved states its dishing runs to 0.2056 of the stroke where the uniform one runs to 0.2551. Optimising the WORST of the five at once — the same machinery, one objective up — gives a distribution whose worst state is 0.1587, against 0.1867 for the best rim family and 0.2551 for the uniform coupling. Flatness bought by tuning is flatness owed at ONE state, and this is the sixth instance in this project of a quantity that is not well posed without the state it is read at.",
+        "BUT A DISTRIBUTION IS TUNED TO A LOAD, AND THE LOAD IS AN OPERATING STATE. The 3 x 15 optimum found at C-0022's design point is worse than the UNIFORM coupling at the compressed states: over the five solved states its dishing runs to 0.2056 of the stroke where the uniform one runs to 0.2551. Optimising the WORST of the five at once — the same machinery, one objective up — gives a distribution whose worst state is 0.1562, against 0.1867 for the best rim family and 0.2551 for the uniform coupling. Flatness bought by tuning is flatness owed at ONE state, and this is the sixth instance in this project of a quantity that is not well posed without the state it is read at.",
         "THE CHEAP BOUND DID NOT FIRE, AND SAYING SO IS THE POINT OF HAVING RUN IT. Dishing is affine in the attachment FORCES, so the least-squares minimum over the whole of R^n — no mandate, no positivity, no relation between a force and a stiffness — is a rigorous lower bound on the peak dishing of EVERY distribution: 0.0169 of the stroke at 1 x 15 and 0.0027 at 3 x 15. Had it exceeded 0.10 the optimisation would have been unnecessary; it did not, and a distribution reaching the tolerance was then found. The best found sits 20.3x above the 3 x 15 floor, which is the honest statement of how loose the bound is rather than of how much room the search left: the floor ignores the mandate, and the mandate is what binds. Maxwell-Betti reciprocity of the influence matrix, measured between two different quadratures and not imposed, holds to 1.2e-15.",
         "THE IMPROVEMENT SURVIVES THE LATTICE AND THE PLATE, AND THE TWO MODELS AGREE ON THE DISTRIBUTION AS WELL AS ON THE NUMBER. The flat 3 x 15 design measures 0.0544 of the stroke on C-0009's beam-and-hinge lattice and 0.0484 on C-0006's continuum plate, an excess of +12.4%; the plate's OWN optimum, found independently by the same search on the plate's own surrogate, transfers to the lattice at 0.0668. A discretisation is not automatically a relaxation (CLAUDE.md), and here it is the stiffer model at every column count above two, as C-0047 found — the sign is reported rather than assumed, and no verdict in this study rests on which model is used."
     ],

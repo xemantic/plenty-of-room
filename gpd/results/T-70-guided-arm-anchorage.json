@@ -1454,7 +1454,7 @@
             "control": "iterations",
             "level": 8.0,
             "value": 13.4281954,
-            "departureFromFinest": 1.91452149E-8
+            "departureFromFinest": 1.9E-8
         },
         {
             "quantity": "adopted arm ceiling, by fixed-point iteration",
@@ -1497,7 +1497,7 @@
             "quantity": "C-0029 E5g16 arm [nm]",
             "published": 12.2423721,
             "derived": 12.2423721,
-            "relativeDeparture": 1.43101479E-9
+            "relativeDeparture": 1.4E-9
         },
         {
             "quantity": "C-0029 E5g16 tangent at 3 nm [pN/nm]",
@@ -1515,13 +1515,13 @@
             "quantity": "C-0029 E5g16 rotation at 10 nm [deg]",
             "published": 23.1971251,
             "derived": 23.1971251,
-            "relativeDeparture": 1.63622725E-9
+            "relativeDeparture": 1.6E-9
         },
         {
             "quantity": "C-0029 guided arm ceiling [nm]",
             "published": 15.5029478,
             "derived": 15.5029478,
-            "relativeDeparture": 2.76780462E-9
+            "relativeDeparture": 2.8E-9
         },
         {
             "quantity": "C-0029 cantilever arm ceiling [nm]",
@@ -1539,19 +1539,19 @@
             "quantity": "C-0029 chord-axis reading = C-0028 B1 [pN nm/rad]",
             "published": 13.5294118,
             "derived": 13.5294118,
-            "relativeDeparture": 2.60869566E-9
+            "relativeDeparture": 2.6E-9
         },
         {
             "quantity": "C-0025 J2 nicked continuation [pN nm/rad]",
             "published": 683.0,
             "derived": 683.235294,
-            "relativeDeparture": 3.44500904E-4
+            "relativeDeparture": 3.4E-4
         },
         {
             "quantity": "C-0025 J4-2 two-crossover clamp [pN nm/rad]",
             "published": 3857.9,
             "derived": 3856.81882,
-            "relativeDeparture": 2.80249999E-4
+            "relativeDeparture": 2.8E-4
         },
         {
             "quantity": "C-0025 c(0) pinned limit is 48",
@@ -1563,19 +1563,19 @@
             "quantity": "C-0009 crossover hinge constant [pN nm/rad]",
             "published": 13.5294118,
             "derived": 13.5294118,
-            "relativeDeparture": 2.60869566E-9
+            "relativeDeparture": 2.6E-9
         },
         {
             "quantity": "C-0023 mandate [pN/nm]",
             "published": 33.3333333,
             "derived": 33.3333333,
-            "relativeDeparture": 1.00000008E-9
+            "relativeDeparture": 1.0E-9
         },
         {
             "quantity": "CH-0029 shear allowable at 8 bp [pN]",
             "published": 18.796,
             "derived": 18.7955672,
-            "relativeDeparture": 2.30275387E-5
+            "relativeDeparture": 2.3E-5
         },
         {
             "quantity": "this task: c(0) is the cantilever",

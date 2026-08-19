@@ -662,11 +662,33 @@ alone**, and it clears the stability floor at every height, buffer and layer mod
 What a DNA lever cannot easily be is *compliant* enough: forty-five duplexes in tension are 4950 pN/nm,
 148× too stiff, and the element that closes the task is a 10–19 nt ssDNA spacer carrying **99.6 %** of each
 path's compliance.
-The margin at 2 mM is 1.19–1.42× against a 123–214 % mean-field error, so this is **not excluded rather than
-established**, and `T-50` — bounding that error — is the binding uncertainty in the programme.
-(**CORRECTED, iteration 12** — this named `T-1f`. `T-1f` is done (`C-0019`) and `CH-0019` is the reason it
-does not help: it bounds the **polymer** one-loop correction, which acts on the other term of `k_eff`, at
-≤ 9.4 %. The 123–214 % is the **electrostatic** expansion, and only `T-50` reaches it.)
+The margin at 2 mM is 1.19–1.42×, and this is **not excluded rather than established**.
+~~against a 123–214 % mean-field error, and `T-50` — bounding that error — is the binding uncertainty in the
+programme.~~
+**CORRECTED, iteration 32 (`C-0137`, `T-50` DONE; `CH-0167`): the 123–214 % is a statement about the LEVEL
+of the correction, and a stability margin is not a level.**
+All 54 of `C-0017`'s states are force-pinned — the pinned force is identical across all three buffers at every
+`(model, height)`, relative spread `0.0` — so a level correction is absorbed into the bias.
+The margin's own thresholds are that the true force be **1.48–2.22× smaller** than the mean-field one, or
+decay **9.73 % faster** at the 7 nm held gap (`d ln μ/dh = −0.0377 nm⁻¹`), and **both are on the suppression
+side**.
+Every channel that can be evaluated is empty, favourable or worth **1.44 %**: a factor of **sixteen** swept in
+effective wall charge moves the net margin 1.1942 → 1.1785–1.2114; finite ion size contributes **exactly zero**
+to the far-field gradient, by one line of algebra on the published steric Poisson-Boltzmann equation; and the
+**bulk** channel — the only one a surface correction can enter at all, by Kjellander's dressed-ion theorem —
+is **empty**, this device sitting at `dκ_D = 0.109–0.487` inside the window where four independent methods
+agree the decay length **is** the Debye length, with the Kirkwood crossover at 63.6 mM.
+Taking `C-0005`'s own broken expansion literally, in the only sign that is defensible for two *oppositely*
+charged walls, lands the margin at **1.0438** and not below one.
+And `C-0005`'s own open item 4 is closed in the favourable direction: Kanduč et al. give the oppositely charged
+branch an *exponentially* larger weak-coupling validity bound and Monte Carlo at `Ξ` up to **86** where
+Poisson-Boltzmann and strong coupling *"nearly coincide"* — **the `Ξ = 17–24` alarm is calibrated on the
+LIKE-charged problem, and this device is not that problem.**
+The primitive-model Monte Carlo `C-0005` prices at 1–3 weeks was **not run** and is not superseded; what is
+gone is the claim that only it could bound this.
+(**CORRECTED, iteration 12** — this originally named `T-1f`. `T-1f` is done (`C-0019`) and `CH-0019` is the
+reason it does not help: it bounds the **polymer** one-loop correction, which acts on the other term of
+`k_eff`, at ≤ 9.4 %. The 123–214 % is the **electrostatic** expansion.)
 
 Two further findings travel with it.
 **The bias ceiling has to be quoted with the load it was evaluated at**: `C-0012`'s 0.02–0.1 V is a property of

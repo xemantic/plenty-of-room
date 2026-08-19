@@ -34696,21 +34696,21 @@
             "quantity": "C-0018's phi = 0.2 ceiling bias, worst of 162 states",
             "here": 0.101833556,
             "upstream": 0.101833556,
-            "relativeDeparture": 4.50817747E-9,
+            "relativeDeparture": 4.5E-9,
             "source": "C-0018 / gpd/results/T-4-maximum-usable-bias.json, field concentratedCrossoverBias"
         },
         {
             "quantity": "thermal blob in Kuhn segments (scaling normalisation)",
             "here": 126.301484,
             "upstream": 126.3,
-            "relativeDeparture": 1.17508631E-5,
+            "relativeDeparture": 1.2E-5,
             "source": "CH-0020 / brush.thermalBlobKuhnSegmentsCorrected"
         },
         {
             "quantity": "Kuhn aspect ratio b^3/v_K",
             "here": 7.09176673,
             "upstream": 7.09,
-            "relativeDeparture": 2.49186799E-4,
+            "relativeDeparture": 2.5E-4,
             "source": "C-0002 parameter sheet"
         },
         {
@@ -34731,7 +34731,7 @@
             "quantity": "measured des Cloizeaux onset for PEG-5000, converted to physical phi",
             "here": 0.112606741,
             "upstream": 0.08,
-            "relativeDeparture": 0.407584261,
+            "relativeDeparture": 0.41,
             "source": "Hansen, Cohen, Podgornik & Parsegian, Biophys. J. 84:350 (2003) p. 352, READ DIRECTLY: 'PEG-5000 solutions are not in the scaling regime until the monomer volume fraction is larger than phi#5000 = 0.07-0.09'. Their phi = 0.59 w is a REDUCED density on a = 3.5 A, so the physical onset is 1.408x larger, 0.10-0.13 — ABOVE the Gen-1 layer's own 0.029-0.071 at rest"
         },
         {

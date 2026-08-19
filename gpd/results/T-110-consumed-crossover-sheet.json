@@ -3037,13 +3037,13 @@
             "axis": "lattice peak dishing at 45 spent, nested mesh 1 c 2 c 4",
             "setting": "subdivisions = 1",
             "value": 2.28520386,
-            "departureFromFinest": 9.75512873E-4
+            "departureFromFinest": 9.8E-4
         },
         {
             "axis": "lattice peak dishing at 45 spent, nested mesh 1 c 2 c 4",
             "setting": "subdivisions = 2",
             "value": 2.28302625,
-            "departureFromFinest": 2.16666579E-5
+            "departureFromFinest": 2.2E-5
         },
         {
             "axis": "lattice peak dishing at 45 spent, nested mesh 1 c 2 c 4",
@@ -3055,19 +3055,19 @@
             "axis": "lattice peak dishing at 45 spent, crossover link penalty",
             "setting": "k_link = 1e+03",
             "value": 2.28302667,
-            "departureFromFinest": 2.04609791E-7
+            "departureFromFinest": 2.0E-7
         },
         {
             "axis": "lattice peak dishing at 45 spent, crossover link penalty",
             "setting": "k_link = 1e+04",
             "value": 2.28302625,
-            "departureFromFinest": 2.01864852E-8
+            "departureFromFinest": 2.0E-8
         },
         {
             "axis": "lattice peak dishing at 45 spent, crossover link penalty",
             "setting": "k_link = 1e+05",
             "value": 2.28302621,
-            "departureFromFinest": 1.74761317E-9
+            "departureFromFinest": 1.7E-9
         },
         {
             "axis": "lattice peak dishing at 45 spent, crossover link penalty",
@@ -3079,13 +3079,13 @@
             "axis": "plate peak dishing at 45 spent, Ritz basis degree",
             "setting": "degree = 8",
             "value": 1.40046405,
-            "departureFromFinest": 0.00372034546
+            "departureFromFinest": 0.0037
         },
         {
             "axis": "plate peak dishing at 45 spent, Ritz basis degree",
             "setting": "degree = 10",
             "value": 1.40562184,
-            "departureFromFinest": 5.11341594E-5
+            "departureFromFinest": 5.1E-5
         },
         {
             "axis": "plate peak dishing at 45 spent, Ritz basis degree",
@@ -3100,35 +3100,35 @@
             "quantity": "D_perp, continuum k_theta d / p [pN nm]",
             "published": 3.345,
             "reproduced": 3.34504758,
-            "relativeDeparture": 1.42235739E-5
+            "relativeDeparture": 1.4E-5
         },
         {
             "source": "C-0009",
             "quantity": "D_perp, lattice imposed field [pN nm]",
             "published": 3.397,
             "reproduced": 3.39678431,
-            "relativeDeparture": 6.34931629E-5
+            "relativeDeparture": 6.3E-5
         },
         {
             "source": "C-0009",
             "quantity": "lattice / continuum D_perp ratio",
             "published": 1.015467,
             "reproduced": 1.01546667,
-            "relativeDeparture": 3.28256195E-7
+            "relativeDeparture": 3.3E-7
         },
         {
             "source": "C-0009",
             "quantity": "D_parallel = EI/d [pN nm]",
             "published": 85.5,
             "reproduced": 85.5018587,
-            "relativeDeparture": 2.1739603E-5
+            "relativeDeparture": 2.2E-5
         },
         {
             "source": "C-0009",
             "quantity": "bending anisotropy D_par / D_perp",
             "published": 25.56,
             "reproduced": 25.5607302,
-            "relativeDeparture": 2.85691553E-5
+            "relativeDeparture": 2.9E-5
         },
         {
             "source": "C-0040",
@@ -3149,49 +3149,49 @@
             "quantity": "3 x 15 dishing over stroke, C-0022's solved load",
             "published": 0.218,
             "reproduced": 0.21821335,
-            "relativeDeparture": 9.78670403E-4
+            "relativeDeparture": 9.8E-4
         },
         {
             "source": "C-0047",
             "quantity": "1 x 15 dishing over stroke, C-0022's solved load",
             "published": 0.695,
             "reproduced": 0.695201577,
-            "relativeDeparture": 2.90038499E-4
+            "relativeDeparture": 2.9E-4
         },
         {
             "source": "C-0022",
             "quantity": "the FREE uncoupled tile's dishing over stroke",
             "published": 0.308,
             "reproduced": 0.307902368,
-            "relativeDeparture": 3.16987857E-4
+            "relativeDeparture": 3.2E-4
         },
         {
             "source": "C-0046",
             "quantity": "the (45, 1) arm [nm]",
             "published": 9.131,
             "reproduced": 9.1311565,
-            "relativeDeparture": 1.71397537E-5
+            "relativeDeparture": 1.7E-5
         },
         {
             "source": "C-0046",
             "quantity": "the (45, 1) tangent at 3 nm [pN/nm]",
             "published": 39.18,
             "reproduced": 39.1816372,
-            "relativeDeparture": 4.17861074E-5
+            "relativeDeparture": 4.2E-5
         },
         {
             "source": "C-0046",
             "quantity": "the (45, 1) usable stroke [nm]",
             "published": 3.119,
             "reproduced": 3.11892034,
-            "relativeDeparture": 2.55404505E-5
+            "relativeDeparture": 2.6E-5
         },
         {
             "source": "C-0046",
             "quantity": "the (56, 1) usable stroke [nm]",
             "published": 3.312,
             "reproduced": 3.3118432,
-            "relativeDeparture": 4.73444154E-5
+            "relativeDeparture": 4.7E-5
         }
     ],
     "findings": [

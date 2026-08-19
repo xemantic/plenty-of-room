@@ -206,7 +206,7 @@
             "knob": "nodeSpacing",
             "knobValue": 0.4,
             "value": 6.07711,
-            "relativeDeparture": 0.00288378,
+            "relativeDeparture": 0.0029,
             "observedOrder": 1.58778
         },
         {
@@ -214,7 +214,7 @@
             "knob": "nodeSpacing",
             "knobValue": 0.2,
             "value": 6.064,
-            "relativeDeparture": 7.19889E-4,
+            "relativeDeparture": 7.2E-4,
             "observedOrder": null
         },
         {
@@ -230,7 +230,7 @@
             "knob": "nodeSpacing",
             "knobValue": 0.4,
             "value": 32.849,
-            "relativeDeparture": -0.0143644,
+            "relativeDeparture": -0.014,
             "observedOrder": 1.10747
         },
         {
@@ -238,7 +238,7 @@
             "knob": "nodeSpacing",
             "knobValue": 0.2,
             "value": 33.176,
-            "relativeDeparture": -0.00455336,
+            "relativeDeparture": -0.0046,
             "observedOrder": null
         },
         {

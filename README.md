@@ -111,6 +111,9 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=actuator.TallGapDeviceBStudyKt            # T-192, device B on a 17-26 nm layer at 0.5 mM, and how far section 3's 100 pN reaches at all
 ./gradlew study -Pstudy=coupling.DescentManifoldWidthStudyKt      # T-215, which part of T-129's result file is a descent manifold, and how wide
 ./gradlew study -Pstudy=coupling.BuildableWidthCountPhaseStudyKt   # T-188, the count/phase grid at C-0086's buildable 38.08 nm, both end-of-row conventions
+./gradlew study -Pstudy=structure.HoneycombTwistCorrectionStudyKt # T-217, whether the four-layer honeycomb tile has any twist to correct, and what its own connectivity costs instead
+./gradlew study -Pstudy=structure.MixedDomainPhaseLatticeStudyKt  # T-216, the phase, parity and arrangement census of C-0133's twist-corrected 110 bp row
+./gradlew study -Pstudy=electrostatics.BeyondMeanFieldGapStudyKt  # T-50, the beyond-mean-field exposure of the actuated gap as a ceiling and a threshold, not a Monte Carlo
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.

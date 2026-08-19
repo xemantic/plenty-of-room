@@ -6457,19 +6457,19 @@
             "quantity": "Boltzmann RMS, quadrature panels",
             "setting": "500",
             "value": 0.674540284,
-            "departureFromFinest": 1.87132526E-5
+            "departureFromFinest": 1.9E-5
         },
         {
             "quantity": "Boltzmann RMS, quadrature panels",
             "setting": "1000",
             "value": 0.674530783,
-            "departureFromFinest": 4.62673833E-6
+            "departureFromFinest": 4.6E-6
         },
         {
             "quantity": "Boltzmann RMS, quadrature panels",
             "setting": "2000",
             "value": 0.674528405,
-            "departureFromFinest": 1.10246834E-6
+            "departureFromFinest": 1.1E-6
         },
         {
             "quantity": "Boltzmann RMS, quadrature panels",
@@ -6481,19 +6481,19 @@
             "quantity": "zero-bias force at 10 nm, PB mesh nodes",
             "setting": "200",
             "value": -0.0786199823,
-            "departureFromFinest": 0.0106463787
+            "departureFromFinest": 0.011
         },
         {
             "quantity": "zero-bias force at 10 nm, PB mesh nodes",
             "setting": "400",
             "value": -0.0779889926,
-            "departureFromFinest": 0.00253511358
+            "departureFromFinest": 0.0025
         },
         {
             "quantity": "zero-bias force at 10 nm, PB mesh nodes",
             "setting": "800",
             "value": -0.0778312247,
-            "departureFromFinest": 5.0703501E-4
+            "departureFromFinest": 5.1E-4
         }
     ],
     "reproductions": [
@@ -6502,42 +6502,42 @@
             "quantity": "eight-tether preload at the 10 nm layer [pN]",
             "published": 9.37,
             "reproduced": 9.42086866,
-            "relativeDeparture": 0.00542888575
+            "relativeDeparture": 0.0054
         },
         {
             "source": "C-0014",
             "quantity": "eight-tether preload at the 5 nm layer [pN]",
             "published": 4.6,
             "reproduced": 4.62849508,
-            "relativeDeparture": 0.0061945831
+            "relativeDeparture": 0.0062
         },
         {
             "source": "C-0014",
             "quantity": "leaf A1.1 lateral bound [pN/nm]",
             "published": 0.460216,
             "reproduced": 0.460216333,
-            "relativeDeparture": 7.24297576E-7
+            "relativeDeparture": 7.2E-7
         },
         {
             "source": "C-0008",
             "quantity": "zero-bias force at 3 nm, Stern series [pN]",
             "published": 3.94,
             "reproduced": 3.94385039,
-            "relativeDeparture": 9.77257215E-4
+            "relativeDeparture": 9.8E-4
         },
         {
             "source": "C-0008",
             "quantity": "zero-bias force at 5 nm, Stern series [pN]",
             "published": -0.41,
             "reproduced": -0.403739774,
-            "relativeDeparture": 0.0152688428
+            "relativeDeparture": 0.015
         },
         {
             "source": "C-0008",
             "quantity": "zero-bias force at 5 nm, ideal constant-potential electrode [pN]",
             "published": -34.9,
             "reproduced": -34.9405434,
-            "relativeDeparture": 0.00116170296
+            "relativeDeparture": 0.0012
         },
         {
             "source": "C-0017",

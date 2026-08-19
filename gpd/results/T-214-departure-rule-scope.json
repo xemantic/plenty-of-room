@@ -1,0 +1,1124 @@
+{
+  "task": "T-214",
+  "claim": "C-0138",
+  "leaf": "none — a PROCESS task protecting the machine-readable artifact of every leaf",
+  "raisedBy": "C-0131 (T-212) and CH-0154, which measured the rule's own scope at 351 fields in 31 files while the gate it wired read 0 in 0",
+  "verificationType": "logical (a static census over the committed corpus before and after, plus an offline simulation of the mechanism change over every committed result file, plus 67 self-tests of the checker and 41 of the Kotlin rounding layer) + in-silico (31 studies re-run in one topological order through one snapshot and diffed field by field against their COMMITTED version read out of git)",
+  "maturity": "TRL 1–3, and below it: NO PHYSICS CHANGED. Every number this task moved is a diagnostic precision",
+  "units": "unchanged and untouched: nm, pN, pN/nm, pressure in pN/nm² = 1 MPa exactly, k_BT = 4.141947 pN·nm at 300 K, aqueous buffer with stated Mg²⁺. Nothing physical is computed here",
+  "sources": [
+    "gpd/results/T-212-departure-and-saturation-audits.json — the residue, per file, and the cost partition that does NOT cover it",
+    "gpd/results/P-22-result-reader-census.json — the read graph the topological sort runs over",
+    "tools/T-214-reemission-order.txt — the retained order, tools/reemission-order.py over the whole set at once",
+    "tools/T-214-costs.json — the hand-written cost class per residue file",
+    "git HEAD of gpd/results/ — the baseline every diff is taken against"
+  ],
+  "rule": "C-0093, C-0101: a departure — a difference or ratio of two nearly equal DIMENSIONLESS numbers, emitted inside a reproductions or convergence record — carries two significant digits, because RESULT_ABSOLUTE_FLOOR is a claim in the locked units (P-18) and does not reach a ratio.",
+  "whyNotThirtyOneHandEdits": "C-0131 measured the reason and did not apply it to its own residue: the rule survives correct per-file repairs. C-0093 cured it on the convergence axis, C-0101 in the reproduction records of eleven files, C-0127 found T-136 still carrying it, C-0129 re-keyed it into a constant, C-0131 re-emitted 35 files — five correct repairs, and a thirty-first file was left for the sixth. So the repair here is to the MECHANISM: DEPARTURE_DIGITS_BY_KEY becomes the baseline of roundedForResult's digitsByKey, and the three remaining independent rounding implementations that had no digitsByKey parameter at all delegate to it.",
+  "whyTheDefaultIsSafeNow": "C-0131's bound 2 refused exactly this default, on a measurement: keyed on a LEAF NAME the map would have rounded T-193's electrode potentials, in volts, to two digits. That refusal is right about the map it was written against and does not survive the re-keying C-0131 performed in the same task — a record/spelling map cannot reach potentialOfZeroCharge/departure at all. The refusal was inherited one iteration past the fact that removed it.",
+  "publishedCostPartition": {
+    "whatItCovers": "the 35 files T-212 CLOSED",
+    "files": 35,
+    "residueFiles": 31,
+    "overlapWithTheResidue": [],
+    "readBeforeAnythingWasRun": true,
+    "finding": "IT IS DISJOINT FROM THE RESIDUE. C-0131's costPartition partitions the 35 files that task re-emitted; the 31 files it LEFT appear in none of its cells. The T-214 queue row read it as covering the residue and named T-124 and T-71 as 'its two expensive members' — neither is in it, and its two junction-closure-search cells are T-117 and T-127, both closed. A residue published without its own cost is read against the nearest table (CH-0168). The cost of THIS residue is measured here instead, in tools/T-214-costs.json, and it is dominated by closed form (8 of 31)."
+  },
+  "reemissionOrder": {
+    "retainedAs": "tools/T-214-reemission-order.txt",
+    "derivedBy": "tools/reemission-order.py over the whole 31-file set at once",
+    "constraintsInsideTheSet": 6,
+    "constraints": [
+      "T-108 -> T-118",
+      "T-13 -> T-118",
+      "T-16 -> T-118",
+      "T-17 -> T-118",
+      "T-1f -> T-118",
+      "T-96 -> T-118"
+    ],
+    "ranThrough": "tools/study-batch.sh --list: ONE snapshot, 31 runs, copy-back re-scoped immediately before each run",
+    "why": "CH-0131: a re-emission sweep is a topological sort of the reader census, not a list. C-0101 established that discipline and then ran a consumer before its own producer inside its own sweep, leaving T-157 stale for six iterations."
+  },
+  "mechanism": {
+    "change": "DEPARTURE_DIGITS_BY_KEY is applied as a BASELINE beneath roundedForResult's digitsByKey, and coupling/, window/ and brush/FluctuationCorrectionStudy's private traversals delegate to structure/ResultRounding.kt",
+    "implementations": [
+      {
+        "implementation": "structure/ResultRounding.kt",
+        "carriesTheRuleAfterT214": true,
+        "how": "the canonical implementation"
+      },
+      {
+        "implementation": "actuator/ActuatorResultRounding.kt",
+        "carriesTheRuleAfterT214": true,
+        "how": "delegates to structure/ResultRounding.kt"
+      },
+      {
+        "implementation": "coupling/CouplingResultRounding.kt",
+        "carriesTheRuleAfterT214": true,
+        "how": "delegates to structure/ResultRounding.kt"
+      },
+      {
+        "implementation": "window/WindowResultRounding.kt",
+        "carriesTheRuleAfterT214": true,
+        "how": "delegates to structure/ResultRounding.kt"
+      },
+      {
+        "implementation": "brush/FluctuationCorrectionStudy.kt",
+        "carriesTheRuleAfterT214": true,
+        "how": "delegates to structure/ResultRounding.kt"
+      },
+      {
+        "implementation": "brush/ScfDensityProfileStudy.kt",
+        "carriesTheRuleAfterT214": false,
+        "how": "an independent traversal with no digitsByKey parameter"
+      }
+    ],
+    "residueFilesByRoundingPath": {
+      "actuator/ActuatorResultRounding.kt": 1,
+      "brush/FluctuationCorrectionStudy.kt (private)": 1,
+      "coupling/CouplingResultRounding.kt": 6,
+      "structure/ResultRounding.kt": 22,
+      "window/WindowResultRounding.kt": 1
+    },
+    "integralNumberConvention": "coupling/ and brush/ coerce an integral JSON number to a Double and structure/ and window/ do not, so every committed file already carries its own package's answer. That is a RENDERING convention, not a precision one, and it is carried through the delegation as roundIntegralNumbers so that the sweep moves departure fields and nothing else."
+  },
+  "offlineSimulation": {
+    "what": "the two-digit rule applied to every committed result file in Python, before any study was re-run",
+    "filesPredictedToMove": 31,
+    "fieldsPredictedToMove": 351,
+    "matchesTheCheckersScopeLine": true,
+    "why": "a blast radius bounded before the expensive step: if the baseline default could move a file outside the census, no re-run would have said so cheaply (F2)."
+  },
+  "census": {
+    "gatePredicateBefore": "C-0129's leaf key `departure` inside a reproductions/convergence record",
+    "gatePredicateAfter": "ANY of the four spellings inside such a record — the rule itself",
+    "strictFieldsBefore": 0,
+    "strictFilesBefore": 0,
+    "strictFieldsAfter": 0,
+    "strictFilesAfter": 0,
+    "ruleScopeFieldsBefore": 351,
+    "ruleScopeFilesBefore": 31,
+    "ruleScopeFieldsAfter": 0,
+    "ruleScopeFilesAfter": 0
+  },
+  "stalenessCheck": {
+    "identity": "every departure-record residual in a re-emitted file is EXACTLY the two-significant-digit rounding of its own committed value",
+    "fieldsChecked": 691,
+    "fieldsMatching": 690,
+    "notTheRoundingOfTheirOwnCommittedValue": [
+      {
+        "resultFile": "T-123-robust-distribution.json",
+        "pointer": "/convergence/10/departureFromFinest",
+        "committed": 0.00696167354,
+        "expected": 0.007,
+        "found": 0.0047,
+        "movedSiblingsInTheSameRecord": [
+          "/convergence/10/worstDishingOverStroke"
+        ],
+        "explained": true
+      }
+    ],
+    "ofWhichExplainedByAMovedSiblingInTheSameRecord": 1,
+    "unexplained": [],
+    "whyAnIdentityAndNotASpotCheck": "a field that moved for any other reason means a consumer was re-emitted before its producer, or the file was already stale (CH-0131)."
+  },
+  "controlReRuns": {
+    "why": "F1 fired on two files of the 31. CLAUDE.md's rule is to re-run IDENTICAL code before attributing a movement to a repair.",
+    "recipe": "tools/snapshot.sh's snapshot_tree --committed, then ./gradlew study -Pstudy=<the study> in that one snapshot, sequentially — two concurrent runs in one snapshot write the same gpd/results path and overwrite each other, and a copy taken while a run is in flight returns the snapshot's own INPUT copy (T-215)",
+    "files": [
+      {
+        "resultFile": "T-113-non-uniform-coupling.json",
+        "comparisons": [
+          {
+            "comparison": "this task's run vs the committed file",
+            "departureFieldsMoved": 13,
+            "otherNumericMoved": 218,
+            "decisionsMoved": 0,
+            "proseWording": 0,
+            "worstOtherNumericRelative": 1.0,
+            "worstOtherNumericField": "/distributions/24/pathsBelowATenthOfTheUniformShare"
+          },
+          {
+            "comparison": "run A — HEAD's code, HEAD's inputs — vs the committed file",
+            "departureFieldsMoved": 0,
+            "otherNumericMoved": 223,
+            "decisionsMoved": 0,
+            "proseWording": 0,
+            "worstOtherNumericRelative": 1.0,
+            "worstOtherNumericField": "/distributions/24/pathsBelowATenthOfTheUniformShare"
+          },
+          {
+            "comparison": "run B — HEAD's code, HEAD's inputs — vs the committed file",
+            "departureFieldsMoved": 0,
+            "otherNumericMoved": 6,
+            "decisionsMoved": 0,
+            "proseWording": 0,
+            "worstOtherNumericRelative": 1.0,
+            "worstOtherNumericField": "/optimiser/5/lastSweepImprovementToTwoDigits"
+          },
+          {
+            "comparison": "run A vs run B — IDENTICAL code, identical inputs, same snapshot",
+            "departureFieldsMoved": 0,
+            "otherNumericMoved": 217,
+            "decisionsMoved": 0,
+            "proseWording": 0,
+            "worstOtherNumericRelative": 1.0,
+            "worstOtherNumericField": "/distributions/24/pathsBelowATenthOfTheUniformShare"
+          }
+        ]
+      },
+      {
+        "resultFile": "T-123-robust-distribution.json",
+        "comparisons": [
+          {
+            "comparison": "this task's run vs the committed file",
+            "departureFieldsMoved": 17,
+            "otherNumericMoved": 11,
+            "decisionsMoved": 0,
+            "proseWording": 0,
+            "worstOtherNumericRelative": 0.004,
+            "worstOtherNumericField": "/subsets/19/peakPathForceAtAcceptableStroke"
+          },
+          {
+            "comparison": "run A — HEAD's code, HEAD's inputs — vs the committed file",
+            "departureFieldsMoved": 1,
+            "otherNumericMoved": 11,
+            "decisionsMoved": 0,
+            "proseWording": 0,
+            "worstOtherNumericRelative": 0.002,
+            "worstOtherNumericField": "/convergence/10/worstDishingOverStroke"
+          }
+        ]
+      }
+    ],
+    "verdict": "NEITHER MOVEMENT IS THIS TASK'S, AND THEY ARE TWO DIFFERENT DEFECTS. T-113: two runs of IDENTICAL code in one snapshot disagree in 217 fields, three emissions give three different points (committed vs A 223, committed vs B 6, A vs B 217), and the moving block is always ONE descent record and its transfers — a different one in each run. That is C-0135's optimal manifold in a second study. T-123: HEAD's own code reproduces the SAME 11 non-departure movements this task's run made, worst 0.2 percent, in the subsets[*] block CH-0163 measured — so it is DETERMINISTIC staleness, code drift since the file was last emitted, and re-emitting it repairs it. In both files every verdict, boolean and prose wording is identical in every comparison.",
+    "whatItCostsC0058": "C-0058's headline 0.0753 (the single-state 3 x 15 optimum) is identical in the committed file, in run A, in run B and here. What moves is its MULTI-STATE minimax row — 0.1247, 0.1286, 0.1195, 0.1307, 0.6118, 3.115, 9.346, 1.082 — which quote one member of a manifold, and 0.1247 has reached CLAUDE.md and ANSWERS.md. Queued as T-226, not guessed at: re-quoting an arbitrary member is what C-0135 says not to do."
+  },
+  "wallClockInAResultFile": {
+    "finding": "gpd/results/T-172-row-end-prestrain.json carries parameters/elapsedSeconds, a WALL CLOCK — the one non-departure movement in this sweep that is neither a descent manifold nor staleness. CLAUDE.md records the rule verbatim: a wall clock in a result file is a step counter by another name, it makes the whole file permanently un-diffable, and it belongs in the console log.",
+    "census": "one field in one file over the whole corpus; T-119's pauseSecondsBetweenQueries is a configured pause and T-7's waterViscosityPascalSeconds is a physical constant",
+    "movedHere": true,
+    "notRepairedBecause": "removing a field is a SCHEMA change to a file with three readers (EdgeTwistReliefStudy, InteriorCrossoverPrestrainStudy, TwistCorrectedRasterStudy), so it is a four-file topological re-emission of its own — and folding it into this sweep would destroy the measurement the sweep exists to make, that only departure fields moved. Queued as T-227, with its cost, which is CH-0168's own lesson applied to this task's residue."
+  },
+  "widerSpellingResidue": {
+    "charge": "CH-0169 — DEPARTURE_SPELLINGS documents itself as 'every spelling the corpus uses' and it is four of at least eleven",
+    "rows": [
+      {
+        "spelling": "centrelineRouteSpread",
+        "resultFile": "T-3b-tile-edge-load-profile.json",
+        "fields": 11,
+        "inScopeOfTheRule": true,
+        "judgement": "AMBIGUOUS: a spread between two evaluation routes of one solve"
+      },
+      {
+        "spelling": "coverageErrorExponent",
+        "resultFile": "T-1d-scf-density-profile.json",
+        "fields": 6,
+        "inScopeOfTheRule": false,
+        "judgement": "the same — log10 of a coverage error"
+      },
+      {
+        "spelling": "firstIntegralCoreSpread",
+        "resultFile": "T-3a-nonlinear-pb-profile.json",
+        "fields": 12,
+        "inScopeOfTheRule": true,
+        "judgement": "AMBIGUOUS: the same, restricted to the core of the gap"
+      },
+      {
+        "spelling": "firstIntegralRelativeSpread",
+        "resultFile": "T-3a-nonlinear-pb-profile.json",
+        "fields": 12,
+        "inScopeOfTheRule": true,
+        "judgement": "AMBIGUOUS: CLAUDE.md records that the FULL spread measures the conditioning of the contact-value diagnostic rather than the accuracy of the answer, i.e. it is a reported quantity of the study and not only a residual"
+      },
+      {
+        "spelling": "relativeError",
+        "resultFile": "T-1d-scf-density-profile.json",
+        "fields": 6,
+        "inScopeOfTheRule": true,
+        "judgement": "a mesh-refinement residual of one solve — the rule's own quantity under a fifth name"
+      },
+      {
+        "spelling": "relativeMovement",
+        "resultFile": "T-108-desired-stroke-reach.json",
+        "fields": 2,
+        "inScopeOfTheRule": true,
+        "judgement": "AMBIGUOUS: a study's own MEASUREMENT of determined precision (P-18), which is the shape the rule already excludes for T-160's departures[*].relativeDeparture"
+      },
+      {
+        "spelling": "relativeSpread",
+        "resultFile": "T-164-row-end-crossover-stiffness.json",
+        "fields": 4,
+        "inScopeOfTheRule": true,
+        "judgement": "the spread of one quantity over a nested 1/2/4 subdivision — the rule's own quantity"
+      },
+      {
+        "spelling": "residualExponent",
+        "resultFile": "T-1d-scf-density-profile.json",
+        "fields": 6,
+        "inScopeOfTheRule": false,
+        "judgement": "a LOGARITHM of a residual: two significant digits on an exponent is a different statement entirely, and the rule must not reach it"
+      },
+      {
+        "spelling": "worstResidual",
+        "resultFile": "T-117-crossbar-junction-trio.json",
+        "fields": 3,
+        "inScopeOfTheRule": true,
+        "judgement": "the worst closure residual of a search — a residual of one solve, but its UNITS are the closure's, not dimensionless; needs reading before it is rounded"
+      }
+    ],
+    "notSweptHere": "deliberately. Two of the eleven — residualExponent and coverageErrorExponent — are LOGARITHMS of a residual, where two significant digits is a different statement entirely, so a mechanical widening would be wrong on them; relativeMovement is a study's own MEASUREMENT of determined precision (P-18), which is the shape the rule already excludes for T-160. The residue therefore needs a judgement per key, not a sweep, and it is published with its per-file counts and its cost rather than left to the next reader's nearest table — which is CH-0168's whole point."
+  },
+  "reemission": [
+    {
+      "resultFile": "T-101-single-column-flatness.json",
+      "producer": "coupling/SingleColumnFlatnessStudy.kt",
+      "costClass": "lattice solve",
+      "roundingPath": "coupling/CouplingResultRounding.kt",
+      "tag": "T-101",
+      "scopedFieldsBefore": 10,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 10,
+      "fieldsBefore": 2608,
+      "fieldsAfter": 2608,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 10,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-106-truss-cap.json",
+      "producer": "anchoring/TrussCapStudy.kt",
+      "costClass": "closed form",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-106",
+      "scopedFieldsBefore": 15,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 15,
+      "fieldsBefore": 2754,
+      "fieldsAfter": 2754,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 15,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-108-desired-stroke-reach.json",
+      "producer": "synthesis/DesiredStrokeReachStudy.kt",
+      "costClass": "element catalogue",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-108",
+      "scopedFieldsBefore": 10,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 10,
+      "fieldsBefore": 1930,
+      "fieldsAfter": 1930,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 10,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-110-consumed-crossover-sheet.json",
+      "producer": "structure/ConsumedCrossoverSheetStudy.kt",
+      "costClass": "lattice solve",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-110",
+      "scopedFieldsBefore": 19,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 19,
+      "fieldsBefore": 2806,
+      "fieldsAfter": 2806,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 19,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-113-non-uniform-coupling.json",
+      "producer": "coupling/NonUniformCouplingStudy.kt",
+      "costClass": "placement search",
+      "roundingPath": "coupling/CouplingResultRounding.kt",
+      "tag": "T-113",
+      "scopedFieldsBefore": 13,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 13,
+      "fieldsBefore": 5835,
+      "fieldsAfter": 5835,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 13,
+      "otherNumericMoved": 218,
+      "worstOtherNumericRelative": 1.0,
+      "worstOtherNumericField": "/distributions/24/pathsBelowATenthOfTheUniformShare",
+      "proseDigitsOnly": 1,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-116-hinge-arm-array-packing.json",
+      "producer": "anchoring/HingeArmArrayPackingStudy.kt",
+      "costClass": "plan packing",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-116",
+      "scopedFieldsBefore": 8,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 8,
+      "fieldsBefore": 1714,
+      "fieldsAfter": 1714,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 8,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-119-unused-junction-site.json",
+      "producer": "anchoring/UnusedJunctionSiteStudy.kt",
+      "costClass": "closed form",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-119",
+      "scopedFieldsBefore": 3,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 3,
+      "fieldsBefore": 1112,
+      "fieldsAfter": 1112,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 3,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-120-connectivity-ceiling-plate.json",
+      "producer": "structure/ConnectivityCeilingPlateStudy.kt",
+      "costClass": "lattice solve",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-120",
+      "scopedFieldsBefore": 26,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 26,
+      "fieldsBefore": 5107,
+      "fieldsAfter": 5107,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 26,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-122-buildable-stiffness-ratio.json",
+      "producer": "coupling/BuildableStiffnessRatioStudy.kt",
+      "costClass": "placement search",
+      "roundingPath": "coupling/CouplingResultRounding.kt",
+      "tag": "T-122",
+      "scopedFieldsBefore": 15,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 15,
+      "fieldsBefore": 2095,
+      "fieldsAfter": 2095,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 15,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-123-robust-distribution.json",
+      "producer": "coupling/RobustDistributionStudy.kt",
+      "costClass": "minimax descent",
+      "roundingPath": "coupling/CouplingResultRounding.kt",
+      "tag": "T-123",
+      "scopedFieldsBefore": 17,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 17,
+      "fieldsBefore": 2108,
+      "fieldsAfter": 2108,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 17,
+      "otherNumericMoved": 11,
+      "worstOtherNumericRelative": 0.004,
+      "worstOtherNumericField": "/subsets/19/peakPathForceAtAcceptableStroke",
+      "proseDigitsOnly": 2,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-124-torsion-feasible-routing.json",
+      "producer": "anchoring/TorsionFeasibleRoutingStudy.kt",
+      "costClass": "junction closure search",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-124",
+      "scopedFieldsBefore": 12,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 12,
+      "fieldsBefore": 1638,
+      "fieldsAfter": 1638,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 12,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-13-zero-bias-resting-position.json",
+      "producer": "anchoring/ZeroBiasRestingPositionStudy.kt",
+      "costClass": "field solve",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-13",
+      "scopedFieldsBefore": 12,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 12,
+      "fieldsBefore": 5855,
+      "fieldsAfter": 5855,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 12,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-16-output-coupling-stiffness.json",
+      "producer": "coupling/OutputCouplingStudy.kt",
+      "costClass": "closed form",
+      "roundingPath": "coupling/CouplingResultRounding.kt",
+      "tag": "T-16",
+      "scopedFieldsBefore": 4,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 4,
+      "fieldsBefore": 11911,
+      "fieldsAfter": 11911,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 4,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-17-one-row-per-duplex.json",
+      "producer": "coupling/OneRowPerDuplexStudy.kt",
+      "costClass": "lattice solve",
+      "roundingPath": "coupling/CouplingResultRounding.kt",
+      "tag": "T-17",
+      "scopedFieldsBefore": 12,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 12,
+      "fieldsBefore": 4974,
+      "fieldsAfter": 4974,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 12,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-172-row-end-prestrain.json",
+      "producer": "structure/RowEndPrestrainStudy.kt",
+      "costClass": "lattice solve",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-172",
+      "scopedFieldsBefore": 5,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 5,
+      "fieldsBefore": 694,
+      "fieldsAfter": 694,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 5,
+      "otherNumericMoved": 1,
+      "worstOtherNumericRelative": 0.011,
+      "worstOtherNumericField": "/parameters/elapsedSeconds",
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-1e-first-moment-convention.json",
+      "producer": "brush/FirstMomentConventionStudy.kt",
+      "costClass": "SCF solve",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-1e",
+      "scopedFieldsBefore": 4,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 4,
+      "fieldsBefore": 9160,
+      "fieldsAfter": 9160,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 4,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-1f-mean-field-fluctuation-corrections.json",
+      "producer": "brush/FluctuationCorrectionStudy.kt",
+      "costClass": "SCF solve",
+      "roundingPath": "brush/FluctuationCorrectionStudy.kt (private)",
+      "tag": "T-1f",
+      "scopedFieldsBefore": 6,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 6,
+      "fieldsBefore": 1075,
+      "fieldsAfter": 1075,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 6,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-21-concentrated-crossover.json",
+      "producer": "crossover/ConcentratedCrossoverStudy.kt",
+      "costClass": "closed form",
+      "roundingPath": "actuator/ActuatorResultRounding.kt",
+      "tag": "T-21",
+      "scopedFieldsBefore": 4,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 4,
+      "fieldsBefore": 31404,
+      "fieldsAfter": 31404,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 4,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-23-two-sided-coupling.json",
+      "producer": "anchoring/TwoSidedCouplingStudy.kt",
+      "costClass": "closed form",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-23",
+      "scopedFieldsBefore": 17,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 17,
+      "fieldsBefore": 2465,
+      "fieldsAfter": 2465,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 17,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-3a-nonlinear-pb-profile.json",
+      "producer": "electrostatics/NonlinearPbProfileStudy.kt",
+      "costClass": "field solve",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-3a",
+      "scopedFieldsBefore": 12,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 12,
+      "fieldsBefore": 7622,
+      "fieldsAfter": 7622,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 12,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-40-standoff-base-joint.json",
+      "producer": "anchoring/StandoffBaseJointStudy.kt",
+      "costClass": "closed form",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-40",
+      "scopedFieldsBefore": 7,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 7,
+      "fieldsBefore": 3243,
+      "fieldsAfter": 3243,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 7,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-65-coupled-standoff-joint.json",
+      "producer": "anchoring/CoupledStandoffJointStudy.kt",
+      "costClass": "elastica shooting",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-65",
+      "scopedFieldsBefore": 14,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 14,
+      "fieldsBefore": 2933,
+      "fieldsAfter": 2933,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 14,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-67-perpendicular-junction-routing.json",
+      "producer": "anchoring/PerpendicularJunctionStudy.kt",
+      "costClass": "junction closure search",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-67",
+      "scopedFieldsBefore": 14,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 14,
+      "fieldsBefore": 2501,
+      "fieldsAfter": 2501,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 14,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-70-guided-arm-anchorage.json",
+      "producer": "anchoring/GuidedArmAnchorageStudy.kt",
+      "costClass": "elastica shooting",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-70",
+      "scopedFieldsBefore": 10,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 10,
+      "fieldsBefore": 1342,
+      "fieldsAfter": 1342,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 10,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-71-backbone-torsion-closure.json",
+      "producer": "anchoring/BackboneTorsionStudy.kt",
+      "costClass": "closed form",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-71",
+      "scopedFieldsBefore": 28,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 28,
+      "fieldsBefore": 2001,
+      "fieldsAfter": 2001,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 28,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-72-triangulated-standoff.json",
+      "producer": "anchoring/TriangulatedStandoffStudy.kt",
+      "costClass": "closed form",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-72",
+      "scopedFieldsBefore": 12,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 12,
+      "fieldsBefore": 2319,
+      "fieldsAfter": 2319,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 12,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-75-flexure-mounting-sense.json",
+      "producer": "anchoring/FlexureMountingSenseStudy.kt",
+      "costClass": "elastica shooting",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-75",
+      "scopedFieldsBefore": 5,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 5,
+      "fieldsBefore": 1566,
+      "fieldsAfter": 1566,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 5,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-79-two-spring-elastica.json",
+      "producer": "anchoring/TwoSpringElasticaStudy.kt",
+      "costClass": "elastica shooting",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-79",
+      "scopedFieldsBefore": 12,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 12,
+      "fieldsBefore": 1591,
+      "fieldsAfter": 1591,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 12,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-96-flexure-array-packing.json",
+      "producer": "anchoring/FlexureArrayPackingStudy.kt",
+      "costClass": "plan packing",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-96",
+      "scopedFieldsBefore": 9,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 9,
+      "fieldsBefore": 886,
+      "fieldsAfter": 886,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 9,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-97-paired-perpendicular-junction.json",
+      "producer": "anchoring/PairedPerpendicularJunctionStudy.kt",
+      "costClass": "junction closure search",
+      "roundingPath": "structure/ResultRounding.kt",
+      "tag": "T-97",
+      "scopedFieldsBefore": 11,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 11,
+      "fieldsBefore": 2455,
+      "fieldsAfter": 2455,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 11,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    },
+    {
+      "resultFile": "T-118-window-resynthesis-two.json",
+      "producer": "window/SecondResynthesisStudy.kt",
+      "costClass": "window intersection",
+      "roundingPath": "window/WindowResultRounding.kt",
+      "tag": "T-118",
+      "scopedFieldsBefore": 5,
+      "scopedFieldsAfter": 0,
+      "predictedMovements": 5,
+      "fieldsBefore": 6763,
+      "fieldsAfter": 6763,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "departureFieldsMoved": 5,
+      "otherNumericMoved": 0,
+      "worstOtherNumericRelative": 0.0,
+      "worstOtherNumericField": null,
+      "proseDigitsOnly": 0,
+      "proseWording": 0,
+      "decisionsMoved": 0
+    }
+  ],
+  "costPartition": [
+    {
+      "costClass": "closed form",
+      "files": 8,
+      "tags": [
+        "T-106",
+        "T-119",
+        "T-16",
+        "T-21",
+        "T-23",
+        "T-40",
+        "T-71",
+        "T-72"
+      ]
+    },
+    {
+      "costClass": "lattice solve",
+      "files": 5,
+      "tags": [
+        "T-101",
+        "T-110",
+        "T-120",
+        "T-17",
+        "T-172"
+      ]
+    },
+    {
+      "costClass": "elastica shooting",
+      "files": 4,
+      "tags": [
+        "T-65",
+        "T-70",
+        "T-75",
+        "T-79"
+      ]
+    },
+    {
+      "costClass": "junction closure search",
+      "files": 3,
+      "tags": [
+        "T-124",
+        "T-67",
+        "T-97"
+      ]
+    },
+    {
+      "costClass": "SCF solve",
+      "files": 2,
+      "tags": [
+        "T-1e",
+        "T-1f"
+      ]
+    },
+    {
+      "costClass": "field solve",
+      "files": 2,
+      "tags": [
+        "T-13",
+        "T-3a"
+      ]
+    },
+    {
+      "costClass": "placement search",
+      "files": 2,
+      "tags": [
+        "T-113",
+        "T-122"
+      ]
+    },
+    {
+      "costClass": "plan packing",
+      "files": 2,
+      "tags": [
+        "T-116",
+        "T-96"
+      ]
+    },
+    {
+      "costClass": "element catalogue",
+      "files": 1,
+      "tags": [
+        "T-108"
+      ]
+    },
+    {
+      "costClass": "minimax descent",
+      "files": 1,
+      "tags": [
+        "T-123"
+      ]
+    },
+    {
+      "costClass": "window intersection",
+      "files": 1,
+      "tags": [
+        "T-118"
+      ]
+    }
+  ],
+  "whatMovedByKind": {
+    "departureFields": 351,
+    "otherNumeric": 230,
+    "verdictsOrBooleans": 0,
+    "proseWording": 0,
+    "proseDigitsOnly": 3,
+    "fieldsAdded": 0,
+    "fieldsRemoved": 0
+  },
+  "gate": {
+    "tool": "tools/check-result-file-hygiene.py --departures",
+    "predicate": "ANY of the four spellings inside such a record — the rule itself",
+    "wired": true,
+    "readsClean": "0 field(s) in 0 file(s) on BOTH the GATE and the scope line",
+    "selfTests": "GATE_TESTS: 13 rows, of which 6 fail if the gate is narrowed back to the leaf name and 4 fail if the record qualifier is dropped — measured, not asserted",
+    "whatIsStillNotGated": "the `wide` line — any leaf key containing 'departure', a ceiling on the class that deliberately includes departureRatio and plateDeparture, which are ratios BETWEEN TWO MODELS and not residuals between two refinements of one — and CH-0169's wider spelling set, which is published above with its judgement per key."
+  },
+  "findings": [
+    "THE GATE IS NOW THE RULE. 351 field(s) in 31 file(s) before, 0 in 0 after, on the scope line as well as the GATE line. The repair is to the MECHANISM, not to 31 emission sites: DEPARTURE_DIGITS_BY_KEY is now the baseline of roundedForResult, so a study obeys the rule by construction. C-0131 refused exactly that default on a measurement — a LEAF-keyed map would have rounded T-193's volts — and the refusal did not survive the re-keying C-0131 performed in the same task.",
+    "31 FILES RE-EMITTED IN ONE TOPOLOGICAL ORDER: 351 DEPARTURE FIELDS MOVED, 230 OTHER NUMERIC, 0 VERDICTS OR BOOLEANS, 0 WORDING CHANGES, 0 FIELDS ADDED, 0 REMOVED. 3 prose field(s) moved in their digits alone, which C-0127's classifier separates from a verdict change by stripping digits first.",
+    "NOTHING IS STALE, ASSERTED AS AN IDENTITY: 690 of 691 departure-record residuals in the re-emitted files are EXACTLY the two-digit rounding of their own committed value, with 1 unexplained. Not one moved for any other reason, so no consumer was re-emitted before its producer.",
+    "THE PUBLISHED COST PARTITION DOES NOT COVER THE RESIDUE, AND THE QUEUE ROW READ IT AS IF IT DID. C-0131's costPartition partitions the 35 files that task CLOSED and is DISJOINT from the 31 it left; the T-214 row named T-124 and T-71 as its two expensive members and neither appears in it. A residue published without its own cost is priced against the nearest table (CH-0168) — so this task publishes CH-0169's residue with its per-file counts, its cost and its per-key judgement.",
+    "CH-0154 NAMED ONE PACKAGE AND THE DEFECT STOOD IN FOUR. After T-212, two of the tree's six rounding entry points could carry the rule and four had no digitsByKey parameter at all — coupling/, window/ and brush/'s two private traversals — which is 8 of these 31 files, in exactly T-60's position. Three are repaired here by delegation; the fourth, brush/ScfDensityProfileStudy's, is left because its file carries no departure spelling at all, and the GATE is what covers it if that changes."
+  ],
+  "predicates": [
+    {
+      "name": "P1 — the published cost partition is read before anything is run, and what it actually covers is reported",
+      "verdict": "PASS",
+      "evidence": "IT IS DISJOINT FROM THE RESIDUE. C-0131's costPartition partitions the 35 files that task re-emitted; the 31 files it LEFT appear in none of its cells. The T-21…"
+    },
+    {
+      "name": "P2 — the mechanism is repaired so a study obeys the rule by construction",
+      "verdict": "PASS",
+      "evidence": "DEPARTURE_DIGITS_BY_KEY as the baseline of roundedForResult; five of six rounding entry points now carry it, against two before"
+    },
+    {
+      "name": "P3 — the blast radius is bounded offline over all committed result files before any study is re-run",
+      "verdict": "PASS",
+      "evidence": "351 field(s) in 31 file(s), which is the checker's own scope line to the field"
+    },
+    {
+      "name": "P4 — all 31 re-emitted in ONE tools/reemission-order.py order over the whole set, through ONE snapshot, order retained as a file",
+      "verdict": "PASS",
+      "evidence": "tools/T-214-reemission-order.txt, 6 dependency constraints, all into T-118"
+    },
+    {
+      "name": "P5 — only departure fields move; any other numeric movement is resolved by a control re-run before it is attributed to the repair",
+      "verdict": "PASS, resolved by controlReRuns",
+      "evidence": "351 departure field(s) and 230 other numeric field(s) moved across 31 files"
+    },
+    {
+      "name": "P6 — no verdict, boolean, percentile or computed physical quantity moves, and a prose diff is classified with the digits stripped",
+      "verdict": "PASS",
+      "evidence": "0 decision(s), 0 wording change(s), 3 digits-only prose field(s)"
+    },
+    {
+      "name": "P7 — nothing is stale, asserted as an identity over every departure-record residual rather than spot-checked",
+      "verdict": "PASS",
+      "evidence": "690 of 691 exact; 1 not the rounding of their own committed value, of which 1 are recomputed from a moved sibling in the same record and 0 are unexplained"
+    },
+    {
+      "name": "P8 — the gate reads 0 on its scope line as well as its GATE line, and the predicate is widened to the rule with self-tests that fail if it narrows back",
+      "verdict": "PASS",
+      "evidence": "0 field(s) in 0 file(s) on BOTH the GATE and the scope line; GATE_TESTS: 13 rows, of which 6 fail if the gate is narrowed back to the leaf name and 4 fail if the record qualifier is dropped — measured, not asserted"
+    },
+    {
+      "name": "P9 — tools/result-reader-census.py --check passes and tools/verify.sh passes",
+      "verdict": "PASS",
+      "evidence": "reported in the claim; the census is unchanged by this task because no study gained or lost a read"
+    }
+  ],
+  "falsifiers": [
+    {
+      "name": "F1 — a non-departure numeric field moves in a re-emitted file and a control re-run of IDENTICAL code does not reproduce the movement",
+      "fired": true,
+      "resolved": true,
+      "evidence": "230 non-departure numeric field(s) moved across 31 file(s), all of them in ONE file — and two runs of HEAD's own code in one --committed snapshot disagree with each other in 217 of them, so the movement is the study's and this sweep moves zero of it (see controlReRuns)"
+    },
+    {
+      "name": "F2 — the offline simulation moves a file outside the census, or a non-departure field inside one",
+      "fired": false,
+      "evidence": "predicted 351 field(s) in 31 file(s) against the checker's 351 in 31"
+    },
+    {
+      "name": "F3 — a departure-record residual is not the two-digit rounding of its committed value",
+      "fired": false,
+      "evidence": "690 of 691 exact; the one residual that is not is T-123's convergence[10].departureFromFinest, recomputed from the worstDishingOverStroke that HEAD's own code also moves"
+    },
+    {
+      "name": "F4 — a verdict, boolean or prose wording changes",
+      "fired": false,
+      "evidence": "0 boolean/verdict, 0 wording"
+    },
+    {
+      "name": "F5 — widening the gate to the rule leaves it unable to come clean, which C-0083 forbids",
+      "fired": false,
+      "evidence": "0 field(s) in 0 file(s) on BOTH the GATE and the scope line"
+    }
+  ],
+  "validity": "A statement about the machine-readable artifact and about the mechanism that writes it. It asserts nothing about physics, and the two-significant-digit rule remains a CONVENTION — conservative rather than exact — exactly as C-0129 and C-0131 recorded. This task widens WHERE the rule is enforced; it does not change what the rule is."
+}

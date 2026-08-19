@@ -1683,7 +1683,7 @@
             "control": "RK4 steps",
             "level": 100.0,
             "value": 17.0591546,
-            "departureFromFinest": 1.14569265E-8
+            "departureFromFinest": 1.1E-8
         },
         {
             "quantity": "the tip force at the desired stroke on a 12.5 nm arm",
@@ -1718,14 +1718,14 @@
             "control": "RK4 steps",
             "level": 100.0,
             "value": 312.101588,
-            "departureFromFinest": 4.20124484E-8
+            "departureFromFinest": 4.2E-8
         },
         {
             "quantity": "the assembled tangent at the desired stroke",
             "control": "RK4 steps",
             "level": 200.0,
             "value": 312.101576,
-            "departureFromFinest": 2.61449262E-9
+            "departureFromFinest": 2.6E-9
         },
         {
             "quantity": "the assembled tangent at the desired stroke",
@@ -1754,19 +1754,19 @@
             "quantity": "C-0034's series placement (short end of its bracket)",
             "published": 11.028,
             "derived": 11.0284856,
-            "relativeDeparture": 4.40356085E-5
+            "relativeDeparture": 4.4E-5
         },
         {
             "quantity": "C-0034's two-spring BVP placement (long end)",
             "published": 12.496,
             "derived": 12.4958954,
-            "relativeDeparture": 8.37125731E-6
+            "relativeDeparture": 8.4E-6
         },
         {
             "quantity": "C-0029's E5g16 arm at an asserted c = 12",
             "published": 12.2423721,
             "derived": 12.2423721,
-            "relativeDeparture": 1.43101475E-9
+            "relativeDeparture": 1.4E-9
         },
         {
             "quantity": "C-0029's cantilever hinge-arm ceiling",
@@ -1778,7 +1778,7 @@
             "quantity": "C-0029's guided hinge-arm ceiling",
             "published": 15.5029478,
             "derived": 15.5029478,
-            "relativeDeparture": 2.76780465E-9
+            "relativeDeparture": 2.8E-9
         },
         {
             "quantity": "C-0029's two-terminus couple ceiling",
@@ -1790,31 +1790,31 @@
             "quantity": "C-0009's crossover hinge constant",
             "published": 13.5294118,
             "derived": 13.5294118,
-            "relativeDeparture": 2.6086957E-9
+            "relativeDeparture": 2.6E-9
         },
         {
             "quantity": "CH-0044's over-placement of E5g16 on its own c = 12",
             "published": 54.61,
             "derived": 54.6075194,
-            "relativeDeparture": 4.54242211E-5
+            "relativeDeparture": 4.5E-5
         },
         {
             "quantity": "the same, from the ELASTICA at vanishing load",
             "published": 54.61,
             "derived": 54.6075194,
-            "relativeDeparture": 4.54242211E-5
+            "relativeDeparture": 4.5E-5
         },
         {
             "quantity": "C-0034's realised factor at the BVP placement",
             "published": 6.284,
             "derived": 6.28406311,
-            "relativeDeparture": 1.00436984E-5
+            "relativeDeparture": 1.0E-5
         },
         {
             "quantity": "CH-0029's shear allowable at 8 bp",
             "published": 18.796,
             "derived": 18.7955672,
-            "relativeDeparture": 2.30275387E-5
+            "relativeDeparture": 2.3E-5
         },
         {
             "quantity": "the mandate secant discharged by the elastica placement",

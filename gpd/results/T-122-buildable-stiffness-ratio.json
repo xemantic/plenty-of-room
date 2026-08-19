@@ -2182,14 +2182,14 @@
             "parameter": "NESTED beam subdivisions",
             "value": "1",
             "result": 0.377388756,
-            "departureFromFinest": 0.00288012043
+            "departureFromFinest": 0.0029
         },
         {
             "quantity": "peak dishing of the BUILT C30 design [nm]",
             "parameter": "NESTED beam subdivisions",
             "value": "2",
             "result": 0.376358777,
-            "departureFromFinest": 1.43033711E-4
+            "departureFromFinest": 1.4E-4
         },
         {
             "quantity": "peak dishing of the BUILT C30 design [nm]",
@@ -2310,7 +2310,7 @@
             "quantity": "rim stiffness [pN/nm]",
             "published": 0.921,
             "reproduced": 0.920810313,
-            "relativeDeparture": 2.05957573E-4,
+            "relativeDeparture": 2.1E-4,
             "note": ""
         },
         {
@@ -2318,7 +2318,7 @@
             "quantity": "interior stiffness [pN/nm]",
             "published": 0.184,
             "reproduced": 0.184162063,
-            "relativeDeparture": 8.80775082E-4,
+            "relativeDeparture": 8.8E-4,
             "note": ""
         },
         {
@@ -2342,7 +2342,7 @@
             "quantity": "uniform 3 x 15 dishing / stroke",
             "published": 0.2182,
             "reproduced": 0.21821335,
-            "relativeDeparture": 6.11830792E-5,
+            "relativeDeparture": 6.1E-5,
             "note": ""
         },
         {
@@ -2350,7 +2350,7 @@
             "quantity": "rim x 5 dishing / stroke",
             "published": 0.0753,
             "reproduced": 0.0753432869,
-            "relativeDeparture": 5.74859419E-4,
+            "relativeDeparture": 5.7E-4,
             "note": ""
         },
         {
@@ -2358,7 +2358,7 @@
             "quantity": "free-tile stroke [nm]",
             "published": 4.90731,
             "reproduced": 4.90731102,
-            "relativeDeparture": 2.07085419E-7,
+            "relativeDeparture": 2.1E-7,
             "note": ""
         },
         {
@@ -2366,7 +2366,7 @@
             "quantity": "mandated total [pN/nm]",
             "published": 33.3333,
             "reproduced": 33.3333333,
-            "relativeDeparture": 1.000001E-6,
+            "relativeDeparture": 1.0E-6,
             "note": ""
         },
         {
@@ -2374,7 +2374,7 @@
             "quantity": "45-path span [nm]",
             "published": 31.82,
             "reproduced": 31.8209241,
-            "relativeDeparture": 2.90408096E-5,
+            "relativeDeparture": 2.9E-5,
             "note": "the R = 1 limiting case"
         },
         {
@@ -2382,7 +2382,7 @@
             "quantity": "45-path tangent [pN/nm]",
             "published": 25.23,
             "reproduced": 25.2272684,
-            "relativeDeparture": 1.08269287E-4,
+            "relativeDeparture": 1.1E-4,
             "note": ""
         },
         {
@@ -2390,7 +2390,7 @@
             "quantity": "E3 pinned free span at 45 paths [nm]",
             "published": 24.61,
             "reproduced": 24.48,
-            "relativeDeparture": 0.00528240553,
+            "relativeDeparture": 0.0053,
             "note": "read on the ladder, so it is the nearest BUILDABLE span and not the exact root"
         },
         {
@@ -2398,7 +2398,7 @@
             "quantity": "E5 one-hinge arm at 45 paths [nm]",
             "published": 4.11,
             "reproduced": 4.08,
-            "relativeDeparture": 0.00729927007,
+            "relativeDeparture": 0.0073,
             "note": "read on the ladder, so it is the nearest BUILDABLE arm and not the exact root"
         },
         {
@@ -2406,7 +2406,7 @@
             "quantity": "the preload quantum trap: required mounting offset [nm]",
             "published": 0.0409,
             "reproduced": 0.0408554003,
-            "relativeDeparture": 0.00109045663,
+            "relativeDeparture": 0.0011,
             "note": "the one case in this corpus where quantisation DEFEATED a requirement, 8.3x"
         },
         {
@@ -2438,7 +2438,7 @@
             "quantity": "E5a16 arm [nm]",
             "published": 12.7198,
             "reproduced": 12.7198339,
-            "relativeDeparture": 2.66791412E-6,
+            "relativeDeparture": 2.7E-6,
             "note": ""
         },
         {
@@ -2446,7 +2446,7 @@
             "quantity": "per-path thermal force at the uniform coupling [pN]",
             "published": 0.261,
             "reproduced": 0.261113381,
-            "relativeDeparture": 4.34408447E-4,
+            "relativeDeparture": 4.3E-4,
             "note": ""
         }
     ],

@@ -16,11 +16,9 @@
 
 package com.xemantic.nano.plentyofroom.window
 
-import kotlinx.serialization.json.JsonArray
+import com.xemantic.nano.plentyofroom.structure.roundForResult
+import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.json.JsonElement
-import kotlinx.serialization.json.JsonObject
-import kotlinx.serialization.json.JsonPrimitive
-import kotlinx.serialization.json.doubleOrNull
 import kotlin.math.abs
 import kotlin.math.floor
 import kotlin.math.log10
@@ -50,12 +48,9 @@ const val WINDOW_RESULT_SIGNIFICANT_DIGITS: Int = 9
 const val WINDOW_RESULT_ABSOLUTE_FLOOR: Double = 1e-9
 
 /** Rounds [value] to [WINDOW_RESULT_SIGNIFICANT_DIGITS], flooring tiny magnitudes to zero. */
-fun roundWindowResult(value: Double): Double {
-    if (!value.isFinite()) return value
-    if (abs(value) < WINDOW_RESULT_ABSOLUTE_FLOOR) return 0.0
-    val scale = 10.0.pow(WINDOW_RESULT_SIGNIFICANT_DIGITS - 1 - floor(log10(abs(value))))
-    return (value * scale).roundToLong() / scale
-}
+fun roundWindowResult(value: Double): Double = roundForResult(
+    value, WINDOW_RESULT_SIGNIFICANT_DIGITS, WINDOW_RESULT_ABSOLUTE_FLOOR
+)
 
 /**
  * The number of significant digits a **decision** is taken at, before it is compared with a
@@ -77,14 +72,19 @@ fun roundedDecision(value: Double): Double {
     return (value * scale).roundToLong() / scale
 }
 
-/** Returns this element with every non-integral number rounded by [roundWindowResult]. */
-fun JsonElement.roundedForWindowResult(): JsonElement = when (this) {
-    is JsonObject -> JsonObject(mapValues { (_, value) -> value.roundedForWindowResult() })
-    is JsonArray -> JsonArray(map { it.roundedForWindowResult() })
-    is JsonPrimitive -> when {
-        isString -> this
-        content.none { it == '.' || it == 'e' || it == 'E' } -> this
-        else -> doubleOrNull?.let { JsonPrimitive(roundWindowResult(it)) } ?: this
-    }
-    else -> this
-}
+/**
+ * Returns this element with every non-integral number rounded by [roundWindowResult].
+ *
+ * **Delegated to `structure/`** by `T-214`, for `CH-0154`'s reason: an entry point with no
+ * `digitsByKey` parameter cannot carry the departure rule by any edit at its own emission site,
+ * and `T-118` — five of `T-214`'s 351 residue fields — sits on this path. The delegation is
+ * observably identical apart from the rule itself: this implementation already passes an integral
+ * JSON number through untouched, which matters because `T-118` emits 25 of them.
+ *
+ * [roundedDecision] is deliberately **not** delegated. It is a *decision* precision taken before a
+ * comparison, not a serialisation precision, and the two must stay separately nameable.
+ */
+fun JsonElement.roundedForWindowResult(): JsonElement = roundedForResult(
+    digits = WINDOW_RESULT_SIGNIFICANT_DIGITS,
+    floor = WINDOW_RESULT_ABSOLUTE_FLOOR
+)

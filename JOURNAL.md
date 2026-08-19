@@ -9044,3 +9044,256 @@ by kind beside the scalar). No physical quantity, no boolean, no `bindingStates`
 moves anywhere in this iteration.
 
 Zero literature fetches.
+
+---
+
+## Iteration 32 — `T-50`: the last unbounded exposure was an arithmetic, not a Monte Carlo
+
+**What was done.** `T-50` — the beyond-mean-field treatment of the actuated tile-electrode gap,
+open since iteration 4, marked `HIGH` and *"the last unbounded exposure on the Gen-1 critical
+path"*. `C-0005` prices the calculation that reaches it at 1–3 weeks of primitive-model Monte
+Carlo, so the deliverable was `P-6`'s shape: a ceiling and a threshold instead of a value.
+
+**The cheap bound ran first and it decided the whole task.** Write the true force as
+`|F_true| = μ(h)|F_PB|`. `C-0005`'s 123–214 % is a statement about the **level** of `μ − 1`;
+`C-0017`'s margin is a **stiffness**, read at a point where the force is pinned by a mechanical
+balance. Checked over `C-0017`'s own 54 records — no solve at all — the pinned force is identical
+across all three buffers at every `(model, height)` pair, relative spread `0.0`. So the level is
+absorbed into the bias and **the 123–214 % is not the error bar on the margin**. That is the whole
+finding, and it was available from a result file already in the repository.
+
+**Then the thresholds, also by arithmetic.** `floor(g) = |F|(1/ℓ − g) − k_brush`, so
+`g* = (floor − mandate)/|F|`: one division per state. The margin reaches 1.0 at
+`g* = −0.0377 nm⁻¹` — the true force would have to decay **9.73 % faster** — and, on a bisection
+over the level with the bias re-solved at each step, at `μ = 0.451–0.675`, a force
+**1.48–2.22× smaller**. Both are on the **suppression** side, and the floor is monotone decreasing
+in the level, so every *enhancement* raises the margin.
+
+**Then the ceiling, and the point of it is that a correction has only two doors.** It can act on
+the **boundary condition** (any correlation-renormalised wall charge, image charge, charge
+regulation) or on the **constitutive relation** (finite ion size, ion-ion correlation). Both were
+solved on `C-0008`'s pipeline. Carried **net** — level and gradient together, which is what a
+design feels — a factor of **sixteen** swept in effective wall charge moves the margin from
+1.1942 to 1.1785–1.2114, i.e. by at most **1.44 %**, because the two channels largely cancel: at a
+quarter of the wall charge the level term is `+4.448 pN/nm` and the gradient term `−4.666`.
+
+**The literature turned out to carry the argument, and to carry a trap.** Härtel & Kjellander state
+the decay-length theorem in one sentence — *"Surface forces … decay for large separations with the
+same decay length as in the bulk phase … but the amplitude … depend[s] on the properties of the
+bodies"* — so no surface convention this project carries can enter the gradient at all. And the
+bulk decay length of this electrolyte **is** the Debye length: Cats, Evans, Härtel & van Roij
+measure it four independent ways and find `ξ_Z ≈ κ_D⁻¹` for `dκ_D < 0.5`; this device sits at
+`dκ_D = 0.109–0.487` and the Kirkwood crossover is at **63.6 mM**. The trap: the MSA screening
+parameter `2Γ` has a clean closed form, gives a decay length **9.9 % longer** than Debye at 2 mM —
+the same size as the threshold, opposite sign — and the paper that supplies it says verbatim that
+`1/2Γ` *"should not be regarded as a physical screening length"*. It is exactly the number that
+would have been quoted.
+
+**And `C-0005`'s own open item 4 is closed, in the favourable direction.** Kanduč, Trulsson, Naji,
+Burak, Forsman & Podgornik give the weak-coupling validity criterion for the **attractive**
+(oppositely charged) branch a right-hand side that is *"exponentially large"*, conclude that
+*"for charged surfaces of opposite sign, the weak-coupling analysis performs far better"*, and back
+it with Monte Carlo at `Ξ` up to **86** where PB and strong coupling *"nearly coincide for all
+rescaled separations"*. **The `Ξ = 17–24` alarm is calibrated on the like-charged problem.**
+
+**What surprised us.** Four things.
+
+First, **that the `Mg²⁺`-does-not-condense bound does not transfer, and the reason is that there is
+nothing for it to bound.** It is a statement about the *sign* of the force between *like* charges.
+Between oppositely charged walls the mean-field force is already an attraction and a correlation
+term adds to it. The programme's one empirical bound on strong coupling is silent here — and what
+replaced it is stronger than a null result.
+
+Second, **that a level correction is NOT exactly absorbed into the bias**, which is a standing
+claim (`CH-0035`: *"it is exactly zero at the operating point"*). The identity carries a premise it
+does not state — that the decay length is bias-independent — and `ℓ` runs `2.2593 → 3.3158 nm` over
+the level ladder because the gap is counterion-dominated and the counterion content is set by the
+bias. The residual is **−3.61 to −8.70 pN/nm per e-fold**, favourable, and `C-0033`'s own collar is
+worth `−0.633 pN/nm` of floor it recorded as zero. Filed as `CH-0166`.
+
+Third, **that the level is free in the stiffness and not free in the bias**: 7 of 30
+level-corrected states are unreachable at **any** bias up to 8 V, because the Stern-limited
+electrode makes `|F_es|` saturate — 365.1 pN at the 7 nm held gap against 352.7 pN already at §3's
+2 V. A large suppression of the force is refused twice over.
+
+Fourth, **that the corpus has made the same category error 90 times.** *"The margin sits inside
+`C-0005`'s 123–214 %"* appears **66 times in 31 claims**, plus 8 in `ANSWERS.md`, 10 in `TASKS.md`
+and 6 in `DECISIONS-FOR-NDI.md`. It compares a level with a stiffness. `CH-0019` made exactly this
+argument about the *polymer* loop parameter three years of iterations ago; this is the same failure
+one level in, inside the electrostatic expansion itself. Filed as `CH-0167`, with the repair queued
+as `T-220` rather than swept here — over-stating an uncertainty is the safe direction.
+
+**What is NOT settled, and it is named.** Which wall a planar coupling criterion is owed at: the
+bare duplex (`Ξ = 24.0`, **fails**) or the charge-saturated gap-facing wall (`Ξ = 1.46`, **passes**),
+16.5× apart and on opposite sides of one inequality. Queued as `T-221`. And `C-0017`'s verdict is
+still **not excluded rather than established** — `Ξ = 17–24` has no systematic theory and the Monte
+Carlo was not run.
+
+Filed as [`C-0137`](gpd/claims/C-0137-beyond-mean-field-gap.md), raising
+[`CH-0166`](gpd/challenges/CH-0166-a-level-correction-is-not-exactly-absorbed-into-the-bias.md) and
+[`CH-0167`](gpd/challenges/CH-0167-the-123-214-per-cent-is-a-level-and-it-is-quoted-as-an-error-bar-on-a-stiffness.md).
+Two of six declared falsifiers fired and both are recorded; `F5` was declared as *expected to fire*
+and did. The result file is byte-identical over two runs. Literature:
+[`gpd/data/T-50-beyond-mean-field-literature.md`](gpd/data/T-50-beyond-mean-field-literature.md),
+**38 recorded query strings**, a read flag per number, and two of its own derived numbers
+independently re-derived here in code with tests.
+
+
+## Iteration 32 — `T-216` + `T-217`: a seamless row has no phase, and the honeycomb has no twist to correct
+
+`C-0133` closed iteration 31 with two named gaps, and both turned out to be answerable by integer
+arithmetic before any solve — which is what made them one assignment.
+
+**`T-216` asked what the crossover phase lattice of a mixed-domain row is, and the answer is that
+there is no phase lattice, on any seamless row.** A seamless raster row's two ends *are* the tile
+edges and both carry a scaffold crossover, so both end columns are pinned; a rigid translation by any
+non-zero amount takes one of them off the edge. The admissible translation group is `{0}` — at
+`C-0133`'s twist-corrected 110 bp and at `C-0086`'s uniform 112 bp alike, enumerated over every
+base-pair translation rather than argued.
+
+**So `C-0090`'s *"ten eight-column phases collapse to two"* is a collapse from a translation to a
+PARITY.** At 38.08 nm phases 8 and 24 give identical column positions to `1e−12` nm with inverted
+parities at all eight columns. `C-0015`'s phase is a freedom of a tile whose row ends are *not*
+crossovers — at the nominal 40.00 nm ten of thirty-two phases carry eight columns, reproduced here —
+and `C-0086`'s seamlessness spends every one of them before a twist correction can. `C-0133`'s stated
+gap is real and its stated cause is wrong: `38.08 = 7 × 5.44` is what lets a *uniform* pitch be
+seamless at all, not what fixes the phase. That is `CH-0164`.
+
+**The binary is not cosmetic.** One column pitch is two 8 bp planes, so the shift exchanges every
+duplex's `EAST` and `WEST` azimuth — which face the arms point out of. The two parities partition the
+plane lattice, their station counts differ (52 against 53), and `C-0090` measures the cost without
+naming it: 0.0621469105 against 0.070693794 of the stroke.
+
+**What a mixed-domain row loses is nothing; what it GAINS is an arrangement axis.** 21 arrangements
+against the uniform row's one, every one carrying eight columns as an **identity** (`domains + 1`)
+where the uniform lattice's count is a function of the phase, three with a centro-symmetric column
+set, twelve up to reflection — 42 column lattices against the 112 bp row's two.
+
+**And a centro-symmetric column set is not a centro-symmetric station lattice.** `C-0063`'s exhaustive
+family needs the second, and six arrangements have one under some out-of-plane offset convention,
+giving seven enumerable lattices where selecting on column symmetry finds three. Three of the seven
+need no mirroring at all, so they carry **no 30° station** — `C-0133`'s azimuth cost is a property of
+its arrangement, not of the twist correction.
+
+**`T-217` closed in one division, and it is favourable.** caDNAno's honeycomb lays its azimuth period
+out as two turns in 21 bp, so its design twist is `720/21 = 34.2857 °/bp`, which **is** B-DNA's
+`360/10.5` — the same number. Its `Δω` is exactly zero: the honeycomb has nothing to correct, and
+`C-0104`'s threshold, `C-0107`'s 17.15–24.98° and every register number in `C-0133` are
+**square-lattice** numbers with driver zero there.
+
+**And the reason unifies both tasks in one line.** `10.5 = 21/2`, so a half turn is 5.25 bp: `h` half
+turns is an integer number of base pairs iff `h ≡ 0 (mod 4)`, and the distance to the nearest integer
+is exactly 0.25 for odd `h`. `C-0133`'s theorem is the odd case — a square-lattice boustrophedon needs
+an odd half-turn count. The honeycomb's azimuth period is **four**.
+
+**The connectivity half does not transfer and had to be derived.** Scaffold crossovers sit at
+`7j ± 5 (mod 21)`, so a raster row is admissible iff `N ≡ 7Δ + {0,10,11} (mod 21)` for its own turn
+sense. The gate that makes it a derivation: run on the square sheet's own azimuths the same
+expression returns `N ≡ 16 (mod 32)`, i.e. 16, 48, 80, 112, 144, 176 — `C-0086`'s list exactly. The
+honeycomb's list is **4.571× denser** and reaches §3's nominal width far closer: 119 bp = 40.46 nm,
+`+1.15 %`, against 38.08 nm at `−4.80 %`.
+
+**But the two turn senses are disjoint**, and `C-0119` checks that the honeycomb scaffold lattice is
+*integral* without checking that a crossover landing on it points at the neighbour the raster needs.
+Its own 112 bp row is admissible at one sense of two. That is `CH-0165`, and it leaves `C-0119`'s
+conclusion standing conditionally rather than overturning it.
+
+**The quarter base pair does not vanish; it relocates and stops accumulating.** caDNAno quantises the
+scaffold's half-turn offset to 5 bp against the exact 5.25, i.e. 0.25 bp = 8.5714° — `C-0133`'s
+invariant to the last digit — but as a **local** departure at each scaffold crossover, where the
+square sheet's is a property of the whole row.
+
+**And the whole favourable honeycomb reading rests on one constant.** At 10.44 bp/turn the honeycomb
+accumulates 22.07° over a 112 bp row, 37 % of the square sheet's 60.0°, and at 10.34 it equals it.
+The advantage is exactly as good as the assumption that B-DNA's twist is the number the lattice was
+drawn at, and nothing in this repository measures it.
+
+**Sixteen exhaustive enumerations settle what the census buys.** `C-0133`'s recommended lattice is
+confirmed flattest under the graded field — **0.0580196384**, reproduced from its own result file at
+relative departure `8.5e−10` on an independently constructed host — and **displaced at zero
+prestrain**, where `15+16+16+16+16+15+16` wins at **0.0552787638** and `C-0133`'s is fourth of seven.
+The best lattice carrying **no 30° station** dishes **0.0629599351**, **1.085×** the recommended one
+and well inside `T-5b`: the azimuth cost is buyable back, and it has a price. The parity binary is
+worth **1.29517266×** under the field, against `C-0090`'s **1.13752709** on the uniform row. And the
+two arrangements that admit a full **24-rise** arm — so that `CH-0159` would not apply — are exactly
+the two whose 34-root family collapses `163 296 → 11 664` and whose best placement is **outside**
+`T-5b`. The arm is not free; it is paid for in placement family.
+
+**One falsifier fired, as declared.** `F5` asked whether the flatness ranking of the centro-symmetric
+arrangements agrees with their peak-register ranking; under the graded field it does, which vindicates
+`C-0133`'s selection rule — and at zero prestrain it does not, which is *quote it with the state it is
+read at* on a lattice rather than a load.
+
+Both result files are **byte-identical across two independent JVM runs**. Two challenges filed and
+two tasks queued: `T-218` (which turn sense a `15 × 4` honeycomb x-raster carries — it decides whether
+`C-0119`'s 112 bp row and the 40.46 nm width are available) and `T-219` (the honeycomb has no station
+lattice, no plan ceiling and no placement family in this repository at all).
+
+## Iteration 32 — `T-214`: the gate is now the rule, and the refusal that blocked it had expired inside the task that made it
+
+**What was done.** `C-0131` wired the departure gate on `C-0129`'s strict predicate — the leaf key
+`departure` inside a `reproductions`/`convergence` record — read `0 fields in 0 files` under it, and
+printed the **rule's** own scope beside it, ungated, at **351 fields in 31 files**. This iteration
+closed the 31 and widened the predicate.
+
+**The repair is not 31 emission sites, and that is the point.** `C-0093`, `C-0101`, `C-0127`,
+`C-0129` and `C-0131` each closed the census they measured; each was applied per file or per call
+site; and 22 of the 31 files remaining call `roundedForResult()` **with no arguments at all**. A
+sixth per-file repair would have closed this census and left the next study free to break it.
+`DEPARTURE_DIGITS_BY_KEY` is now the **baseline** of `digitsByKey`, and three of the tree's six
+rounding entry points — `coupling/`, `window/` and `brush/`'s private one — delegate to it, which is
+`CH-0154`'s `actuator/` finding in three more packages.
+
+**`C-0131` refused exactly that default, and its own task had already removed the ground.** Cheap
+bound 2 refused a `DEPARTURE_DIGITS_BY_KEY` default because a **leaf**-keyed map would have rounded
+`T-193`'s electrode potentials, in volts, to two digits — and the same task re-keyed the map on
+`record/spelling` in the next sentence, which makes `potentialOfZeroCharge/departure` unreachable.
+The refusal outlived the fact that killed it by one iteration and 31 files. It is a test now, not a
+sentence.
+
+**Two challenges, both from cheap bounds run against the upstream claim's own artifact.**
+`CH-0168`: `C-0131` published a 31-file residue and, in the same JSON object, a `costPartition` of
+the **35** files it had *closed* — disjoint sets — and the `T-214` queue row then named the
+residue's *"two expensive members"* out of a table in which neither appears. Nothing in either
+artifact is wrong; adjacency did the reasoning, and the cure is to name the set inside the field.
+`CH-0169`: `DEPARTURE_SPELLINGS` documents itself as *"every spelling the corpus uses"* and it is
+four of eleven — seven more keys of the same kind inside the same two records, **62 fields in 6
+files** — of which **12 must not be swept at all**, being `log₁₀` of a residual. Past the mechanical
+part of a rule the residue needs a judgement per key, which is why it is measured and queued
+(`T-218`) rather than folded in.
+
+**`F1` fired on two files of the 31, and three runs of identical code settled it.** `T-113` moved
+218 non-departure fields. A `--committed` snapshot — `HEAD`'s code, `HEAD`'s inputs — moved 223 of
+the same, and a **second run of that same snapshot** disagrees with the first in **217**. The file
+has one commit, from iteration 9; its only input has not moved. The moving block is always one
+descent record and its transfers, and a *different* one in each run: `C-0135`'s optimal manifold in
+a second study, and `T-123`'s 11 fields at 0.42 % are the same `subsets[*]` block a third time.
+**No verdict, boolean or wording moves in any comparison**, and `C-0058`'s headline `0.0753` is
+identical in every emission — what moves is its multi-state minimax row, and `0.1247` has reached
+`CLAUDE.md` and `ANSWERS.md`. Queued as `T-219` rather than guessed at.
+
+**What surprised us.** That the blast radius of the one-line change could be **proved offline** —
+the two-digit rule applied in Python to all committed result files predicts exactly the checker's
+own scope line, 351 fields in 31 files, before a JVM started — and that a *rendering* convention
+nearly wrecked it: three of the six rounding implementations coerce an integral JSON number to a
+`Double`, so `T-16`, `T-113` and `T-123` carry no bare integer while `T-118` carries 25. Delegating
+without carrying that flag would have re-rendered every count in seven files, in a sweep whose whole
+claim is that only departure fields moved.
+
+**The sweep also found the corpus's only wall clock.** `T-172` carries `parameters/elapsedSeconds`,
+which `CLAUDE.md` forbids in as many words — *a wall clock in a result file is a step counter by another
+name*, and one such field makes the whole file permanently un-diffable. It is the only one in 126 files.
+It is **not** repaired here: removing a field is a schema change to a file with three readers, so it is a
+four-file topological re-emission of its own, and folding it in would destroy the measurement the sweep
+exists to make. Queued as `T-227` with its cost — which is `CH-0168`'s own lesson applied to this task.
+
+**Numbers.** 351 departure fields in 31 files moved; **0** verdicts, **0** booleans, **0** wording changes,
+**0** fields added or removed; 3 prose fields moved in their digits alone. 690 of 691 residuals are exactly
+the two-digit rounding of their own committed value and **0** are unexplained — the one that is not is
+recomputed from a sibling `HEAD`'s own code also moves. The gate reads `0 field(s) in 0 file(s)` on the
+`GATE` line, the `scope` line and `C-0129`'s `strict` line. 2 706 tests, 0 failures.
+
+Three task numbers had to be renumbered — `T-218`/`T-219`/`T-220` were taken by a sibling between one
+`grep` of `TASKS.md` and the next — so they are `T-225`, `T-226` and `T-227`. The rule that resolves
+without coordination is *the agent that notices moves, and moves past the next free number*; four numbers
+of headroom rather than one, because two siblings were writing.

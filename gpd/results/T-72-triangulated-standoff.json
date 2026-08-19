@@ -2373,73 +2373,73 @@
             "quantity": "C-0029 hard base ceiling [pN nm/rad]",
             "published": 78.24,
             "derived": 78.2352941,
-            "relativeDeparture": 6.01467581E-5
+            "relativeDeparture": 6.0E-5
         },
         {
             "quantity": "C-0029 nominal 120 groove ceiling",
             "published": 62.06,
             "derived": 62.0588235,
-            "relativeDeparture": 1.89569866E-5
+            "relativeDeparture": 1.9E-5
         },
         {
             "quantity": "C-0029 free axis = C-0028's B1",
             "published": 13.53,
             "derived": 13.5294118,
-            "relativeDeparture": 4.34763706E-5
+            "relativeDeparture": 4.3E-5
         },
         {
             "quantity": "C-0029 T1 weak-axis P_c at 5 nm [pN]",
             "published": 2.46,
             "derived": 2.46026701,
-            "relativeDeparture": 1.08540477E-4
+            "relativeDeparture": 1.1E-4
         },
         {
             "quantity": "C-0029 T1 weak-axis P_c at 7 nm [pN]",
             "published": 1.69,
             "derived": 1.69441051,
-            "relativeDeparture": 0.00260976749
+            "relativeDeparture": 0.0026
         },
         {
             "quantity": "C-0029 T1 weak-axis P_c at 8 nm [pN]",
             "published": 1.46,
             "derived": 1.45631513,
-            "relativeDeparture": 0.00252388617
+            "relativeDeparture": 0.0025
         },
         {
             "quantity": "C-0030 B2 coupled span at 8 nm [nm]",
             "published": 31.82,
             "derived": 31.8209241,
-            "relativeDeparture": 2.90408096E-5
+            "relativeDeparture": 2.9E-5
         },
         {
             "quantity": "C-0030 B2 coupled tangent at 3 nm [pN/nm]",
             "published": 25.23,
             "derived": 25.2272684,
-            "relativeDeparture": 1.08269287E-4
+            "relativeDeparture": 1.1E-4
         },
         {
             "quantity": "C-0030 B2 coupled duty at 10 nm [pN]",
             "published": 3.313,
             "derived": 3.31255763,
-            "relativeDeparture": 1.33524129E-4
+            "relativeDeparture": 1.3E-4
         },
         {
             "quantity": "C-0030 B2 free-head P_c at 8 nm [pN]",
             "published": 7.21,
             "derived": 7.20717719,
-            "relativeDeparture": 3.91513289E-4
+            "relativeDeparture": 3.9E-4
         },
         {
             "quantity": "C-0028 B2 rotational stiffness",
             "published": 261.17,
             "derived": 261.167941,
-            "relativeDeparture": 7.88307818E-6
+            "relativeDeparture": 7.9E-6
         },
         {
             "quantity": "Fields et al.'s implied EI [pN nm^2]",
             "published": 172.906,
             "derived": 172.906231,
-            "relativeDeparture": 1.33689234E-6
+            "relativeDeparture": 1.3E-6
         },
         {
             "quantity": "SAXS interhelical distance [nm]",

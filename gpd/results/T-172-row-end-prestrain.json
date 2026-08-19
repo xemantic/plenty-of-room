@@ -716,14 +716,14 @@
             "control": "beam subdivisions",
             "level": 1.0,
             "value": 0.0853935166,
-            "departureFromFinest": 0.0111227053
+            "departureFromFinest": 0.011
         },
         {
             "quantity": "C-0090's placement dishing at the 32 bp register prestrain",
             "control": "beam subdivisions",
             "level": 2.0,
             "value": 0.0864532913,
-            "departureFromFinest": 0.0011497381
+            "departureFromFinest": 0.0011
         },
         {
             "quantity": "C-0090's placement dishing at the 32 bp register prestrain",
@@ -773,21 +773,21 @@
             "quantity": "Gen1Tile's interior crossover hinge, from the bond count",
             "published": 13.5294118,
             "reproduced": 13.5294118,
-            "relativeDeparture": 2.60869566E-9,
+            "relativeDeparture": 2.6E-9,
             "source": "C-0009 / Chen et al. 2014"
         },
         {
             "quantity": "the 16 bp register departure in degrees",
             "published": 8.5714286,
             "reproduced": 8.57142857,
-            "relativeDeparture": 3.33333532E-9,
+            "relativeDeparture": 3.3E-9,
             "source": "CLAUDE.md / C-0015"
         },
         {
             "quantity": "the 8 bp out-of-plane register departure in degrees",
             "published": 4.2857143,
             "reproduced": 4.28571429,
-            "relativeDeparture": 3.33333532E-9,
+            "relativeDeparture": 3.3E-9,
             "source": "CLAUDE.md / C-0015"
         },
         {
@@ -901,7 +901,7 @@
         "worstLinearityDeparture": 0.207904632,
         "uniformCurlFreeDishing": 0.638117846,
         "enumeratedPerState": 163296.0,
-        "elapsedSeconds": 160.176,
+        "elapsedSeconds": 161.907,
         "firstCrossingDegreesMeasured": -16.875,
         "firstCrossingDishingMeasured": 0.100459277,
         "sweptStatesFlat": 23.0,

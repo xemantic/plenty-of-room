@@ -2553,49 +2553,49 @@
             "quantity": "C-0028 B1 base rotational stiffness [pN nm/rad]",
             "published": 13.53,
             "derived": 13.5294118,
-            "relativeDeparture": 4.34763706E-5
+            "relativeDeparture": 4.3E-5
         },
         {
             "quantity": "C-0028 B1 base axial stiffness [pN/nm]",
             "published": 64.71,
             "derived": 64.7058824,
-            "relativeDeparture": 6.36323143E-5
+            "relativeDeparture": 6.4E-5
         },
         {
             "quantity": "C-0028 B2 base rotational stiffness [pN nm/rad]",
             "published": 261.17,
             "derived": 261.167941,
-            "relativeDeparture": 7.88307818E-6
+            "relativeDeparture": 7.9E-6
         },
         {
             "quantity": "C-0028 B2u base rotational stiffness [pN nm/rad]",
             "published": 27.06,
             "derived": 27.0588235,
-            "relativeDeparture": 4.34763706E-5
+            "relativeDeparture": 4.3E-5
         },
         {
             "quantity": "C-0028 P6 threshold at 8 nm [pN nm/rad]",
             "published": 68.8,
             "derived": 68.8275584,
-            "relativeDeparture": 4.00558325E-4
+            "relativeDeparture": 4.0E-4
         },
         {
             "quantity": "C-0028 P6 threshold at 10 nm [pN nm/rad]",
             "published": 173.6,
             "derived": 173.608524,
-            "relativeDeparture": 4.9098965E-5
+            "relativeDeparture": 4.9E-5
         },
         {
             "quantity": "C-0028 B2 design span at 8 nm [nm]",
             "published": 31.06,
             "derived": 31.0630189,
-            "relativeDeparture": 9.71954192E-5
+            "relativeDeparture": 9.7E-5
         },
         {
             "quantity": "C-0028 B2 design tangent at 8 nm [pN/nm]",
             "published": 36.51,
             "derived": 36.5078225,
-            "relativeDeparture": 5.96399736E-5
+            "relativeDeparture": 6.0E-5
         },
         {
             "quantity": "C-0025 J5-8 clamped span [nm]",
@@ -2613,19 +2613,19 @@
             "quantity": "C-0023 E5 arm length [nm]",
             "published": 4.11,
             "derived": 4.11122638,
-            "relativeDeparture": 2.98390498E-4
+            "relativeDeparture": 3.0E-4
         },
         {
             "quantity": "C-0023 E5 hinge compliance share",
             "published": 0.925,
             "derived": 0.92540129,
-            "relativeDeparture": 4.33827221E-4
+            "relativeDeparture": 4.3E-4
         },
         {
             "quantity": "C-0023 E5 hinge bond force at 3 nm [pN]",
             "published": 3.4,
             "derived": 3.39630432,
-            "relativeDeparture": 0.00108696335
+            "relativeDeparture": 0.0011
         },
         {
             "quantity": "C-0009 crossover hinge constant [pN nm/rad]",
@@ -2649,7 +2649,7 @@
             "quantity": "square-lattice turns per 32 bp interface period",
             "published": 3.0,
             "derived": 2.99906279,
-            "relativeDeparture": 3.12402374E-4
+            "relativeDeparture": 3.1E-4
         },
         {
             "quantity": "Pan et al. four-way junction scissor stiffness [pN nm/rad]",
@@ -2661,13 +2661,13 @@
             "quantity": "hinge arm ceiling, cantilever arm [nm]",
             "published": 9.7666,
             "derived": 9.76624511,
-            "relativeDeparture": 3.63373856E-5
+            "relativeDeparture": 3.6E-5
         },
         {
             "quantity": "hinge arm ceiling, guided arm [nm]",
             "published": 15.5005,
             "derived": 15.5029478,
-            "relativeDeparture": 1.57914718E-4
+            "relativeDeparture": 1.6E-4
         },
         {
             "quantity": "C-0028 B2 lever arm over the phosphate radius",

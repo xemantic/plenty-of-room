@@ -1,0 +1,19 @@
+{
+  "task": "T-214",
+  "claim": "C-0138",
+  "leaf": "none — a PROCESS task protecting the machine-readable artifact of every leaf",
+  "raisedBy": "C-0131 (T-212) and CH-0154, which measured the rule's own scope at 351 fields in 31 files while the gate it wired read 0 in 0",
+  "verificationType": "logical (a static census over the committed corpus before and after, plus an offline simulation of the mechanism change over every committed result file, plus 67 self-tests of the checker and 41 of the Kotlin rounding layer) + in-silico (31 studies re-run in one topological order through one snapshot and diffed field by field against their COMMITTED version read out of git)",
+  "maturity": "TRL 1–3, and below it: NO PHYSICS CHANGED. Every number this task moved is a diagnostic precision",
+  "units": "unchanged and untouched: nm, pN, pN/nm, pressure in pN/nm² = 1 MPa exactly, k_BT = 4.141947 pN·nm at 300 K, aqueous buffer with stated Mg²⁺. Nothing physical is computed here",
+  "sources": [
+    "gpd/results/T-212-departure-and-saturation-audits.json — the residue, per file, and the cost partition that does NOT cover it",
+    "gpd/results/P-22-result-reader-census.json — the read graph the topological sort runs over",
+    "tools/T-214-reemission-order.txt — the retained order, tools/reemission-order.py over the whole set at once",
+    "tools/T-214-costs.json — the hand-written cost class per residue file",
+    "git HEAD of gpd/results/ — the baseline every diff is taken against"
+  ],
+  "rule": "C-0093, C-0101: a departure — a difference or ratio of two nearly equal DIMENSIONLESS numbers, emitted inside a reproductions or convergence record — carries two significant digits, because RESULT_ABSOLUTE_FLOOR is a claim in the locked units (P-18) and does not reach a ratio.",
+  "whyNotThirtyOneHandEdits": "C-0131 measured the reason and did not apply it to its own residue: the rule survives correct per-file repairs. C-0093 cured it on the convergence axis, C-0101 in the reproduction records of eleven files, C-0127 found T-136 still carrying it, C-0129 re-keyed it into a constant, C-0131 re-emitted 35 files — five correct repairs, and a thirty-first file was left for the sixth. So the repair here is to the MECHANISM: DEPARTURE_DIGITS_BY_KEY becomes the baseline of roundedForResult's digitsByKey, and the three remaining independent rounding implementations that had no digitsByKey parameter at all delegate to it.",
+  "whyTheDefaultIsSafeNow": "C-0131's bound 2 refused exactly this default, on a measurement: keyed on a LEAF NAME the map would have rounded T-193's electrode potentials, in volts, to two digits. That refusal is right about the map it was written against and does not survive the re-keying C-0131 performed in the same task — a record/spelling map cannot reach potentialOfZeroCharge/departure at all. The refusal was inherited one iteration past the fact that removed it."
+}

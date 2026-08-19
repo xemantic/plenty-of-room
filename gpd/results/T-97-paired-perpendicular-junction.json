@@ -2540,14 +2540,14 @@
             "control": "elements per leg",
             "level": 8.0,
             "value": 6.60277374,
-            "departureFromFinest": 1.20507199E-7
+            "departureFromFinest": 1.2E-7
         },
         {
             "quantity": "mixed-base critical load, EI = 230, l = 8 nm",
             "control": "elements per leg",
             "level": 16.0,
             "value": 6.602773,
-            "departureFromFinest": 7.74834731E-9
+            "departureFromFinest": 7.7E-9
         },
         {
             "quantity": "mixed-base critical load, EI = 230, l = 8 nm",
@@ -2637,43 +2637,43 @@
             "quantity": "C-0029 base couple ceiling [pN nm/rad]",
             "published": 78.24,
             "derived": 78.2352941,
-            "relativeDeparture": 6.01467581E-5
+            "relativeDeparture": 6.0E-5
         },
         {
             "quantity": "C-0029 free axis [pN nm/rad]",
             "published": 13.53,
             "derived": 13.5294118,
-            "relativeDeparture": 4.34763706E-5
+            "relativeDeparture": 4.3E-5
         },
         {
             "quantity": "C-0029 azimuthal quantum [deg/bp]",
             "published": 33.74,
             "derived": 33.7394564,
-            "relativeDeparture": 1.61108515E-5
+            "relativeDeparture": 1.6E-5
         },
         {
             "quantity": "C-0029 worst single-junction phase cost cos2",
             "published": 0.9158,
             "derived": 0.915785917,
-            "relativeDeparture": 1.53776138E-5
+            "relativeDeparture": 1.5E-5
         },
         {
             "quantity": "C-0037 L2a8 across second moment [nm2]",
             "published": 3.699,
             "derived": 3.6992,
-            "relativeDeparture": 5.40686672E-5
+            "relativeDeparture": 5.4E-5
         },
         {
             "quantity": "C-0037 L2a8 loaded critical load [pN]",
             "published": 9.77,
             "derived": 9.77154246,
-            "relativeDeparture": 1.57877114E-4
+            "relativeDeparture": 1.6E-4
         },
         {
             "quantity": "C-0037 L2a8 free critical load [pN]",
             "published": 11.7,
             "derived": 11.7021091,
-            "relativeDeparture": 1.80266618E-4
+            "relativeDeparture": 1.8E-4
         },
         {
             "quantity": "C-0037 L2a8 loaded critical load, mixed solver [pN]",
@@ -2691,7 +2691,7 @@
             "quantity": "C-0015 square-lattice helical repeat [bp]",
             "published": 32.0,
             "derived": 32.01,
-            "relativeDeparture": 3.125E-4
+            "relativeDeparture": 3.1E-4
         },
         {
             "quantity": "SAXS interhelical distance [nm]",
@@ -2703,7 +2703,7 @@
             "quantity": "Fields et al. implied rigidity [pN nm2]",
             "published": 172.906,
             "derived": 172.906231,
-            "relativeDeparture": 1.33689234E-6
+            "relativeDeparture": 1.3E-6
         }
     ],
     "literature": [

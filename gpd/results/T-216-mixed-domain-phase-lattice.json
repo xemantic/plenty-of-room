@@ -1,0 +1,1481 @@
+{
+    "task": "T-216",
+    "leaf": "A8.2",
+    "question": "Does a mixed-domain seamless raster row have a crossover phase variable, and what is its census?",
+    "conditions": {
+        "temperature": "300 K",
+        "kBT": "4.141947 pN nm",
+        "buffer": "aqueous 2 mM MgCl2",
+        "sheet": "single-layer square-lattice Rothemund, 15 duplexes at 2.69 nm, 0.34 nm rise",
+        "row": "110 bp = 37.400000000000006 nm, 7 domains, C-0133's twist-corrected raster row",
+        "designFamily": "domain lengths in {15,16} — Rothemund's \"by single bases\"",
+        "load": "C-0022's solved collar at 2 mM, a 10 nm gap and 0.192 V, CARRIED",
+        "coupling": "C-0017's 33.333333333333336 pN/nm shared equally over 34 roots",
+        "stationOffsets": "8 bp past each column, MIRRORED right of the row centre (C-0133)",
+        "flatness": "T-5b's 0.1 of the free stroke"
+    },
+    "translations": [
+        {
+            "row": "C-0086's uniform 112 bp row",
+            "basePairs": 112,
+            "uniformPitch": true,
+            "admissibleTranslations": "0",
+            "translationsChecked": 223,
+            "phaseVariableExists": false
+        },
+        {
+            "row": "C-0133's twist-corrected 110 bp row",
+            "basePairs": 110,
+            "uniformPitch": false,
+            "admissibleTranslations": "0",
+            "translationsChecked": 219,
+            "phaseVariableExists": false
+        },
+        {
+            "row": "a single 16 bp domain",
+            "basePairs": 16,
+            "uniformPitch": true,
+            "admissibleTranslations": "0",
+            "translationsChecked": 31,
+            "phaseVariableExists": false
+        },
+        {
+            "row": "the widest mixed row of the family",
+            "basePairs": 110,
+            "uniformPitch": false,
+            "admissibleTranslations": "0",
+            "translationsChecked": 219,
+            "phaseVariableExists": false
+        }
+    ],
+    "phases": [
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 0,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-16.3200,-10.8800,-5.4400,0.0000,5.4400,10.8800,16.3200",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 1,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-15.9800,-10.5400,-5.1000,0.3400,5.7800,11.2200,16.6600",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 2,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-15.6400,-10.2000,-4.7600,0.6800,6.1200,11.5600,17.0000",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 3,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-15.3000,-9.8600,-4.4200,1.0200,6.4600,11.9000,17.3400",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 4,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-14.9600,-9.5200,-4.0800,1.3600,6.8000,12.2400,17.6800",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 5,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-14.6200,-9.1800,-3.7400,1.7000,7.1400,12.5800,18.0200",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 6,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-14.2800,-8.8400,-3.4000,2.0400,7.4800,12.9200,18.3600",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 7,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-13.9400,-8.5000,-3.0600,2.3800,7.8200,13.2600,18.7000",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 8,
+            "columns": 8,
+            "bothEndsAreColumns": true,
+            "columnPositions": "-18.9900,-13.6000,-8.1600,-2.7200,2.7200,8.1600,13.6000,18.9900",
+            "parities": "01010101",
+            "positionsMatchPhaseEight": true,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 9,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-18.7000,-13.2600,-7.8200,-2.3800,3.0600,8.5000,13.9400",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 10,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-18.3600,-12.9200,-7.4800,-2.0400,3.4000,8.8400,14.2800",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 11,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-18.0200,-12.5800,-7.1400,-1.7000,3.7400,9.1800,14.6200",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 12,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-17.6800,-12.2400,-6.8000,-1.3600,4.0800,9.5200,14.9600",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 13,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-17.3400,-11.9000,-6.4600,-1.0200,4.4200,9.8600,15.3000",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 14,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-17.0000,-11.5600,-6.1200,-0.6800,4.7600,10.2000,15.6400",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 15,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-16.6600,-11.2200,-5.7800,-0.3400,5.1000,10.5400,15.9800",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 16,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-16.3200,-10.8800,-5.4400,0.0000,5.4400,10.8800,16.3200",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 17,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-15.9800,-10.5400,-5.1000,0.3400,5.7800,11.2200,16.6600",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 18,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-15.6400,-10.2000,-4.7600,0.6800,6.1200,11.5600,17.0000",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 19,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-15.3000,-9.8600,-4.4200,1.0200,6.4600,11.9000,17.3400",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 20,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-14.9600,-9.5200,-4.0800,1.3600,6.8000,12.2400,17.6800",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 21,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-14.6200,-9.1800,-3.7400,1.7000,7.1400,12.5800,18.0200",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 22,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-14.2800,-8.8400,-3.4000,2.0400,7.4800,12.9200,18.3600",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 23,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-13.9400,-8.5000,-3.0600,2.3800,7.8200,13.2600,18.7000",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 24,
+            "columns": 8,
+            "bothEndsAreColumns": true,
+            "columnPositions": "-18.9900,-13.6000,-8.1600,-2.7200,2.7200,8.1600,13.6000,18.9900",
+            "parities": "10101010",
+            "positionsMatchPhaseEight": true,
+            "paritiesAreInvertedFromPhaseEight": true
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 25,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-18.7000,-13.2600,-7.8200,-2.3800,3.0600,8.5000,13.9400",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 26,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-18.3600,-12.9200,-7.4800,-2.0400,3.4000,8.8400,14.2800",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 27,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-18.0200,-12.5800,-7.1400,-1.7000,3.7400,9.1800,14.6200",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 28,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-17.6800,-12.2400,-6.8000,-1.3600,4.0800,9.5200,14.9600",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 29,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-17.3400,-11.9000,-6.4600,-1.0200,4.4200,9.8600,15.3000",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 30,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-17.0000,-11.5600,-6.1200,-0.6800,4.7600,10.2000,15.6400",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 38.08,
+            "phaseBasePairs": 31,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-16.6600,-11.2200,-5.7800,-0.3400,5.1000,10.5400,15.9800",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 0,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-16.3200,-10.8800,-5.4400,0.0000,5.4400,10.8800,16.3200",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 1,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-15.9800,-10.5400,-5.1000,0.3400,5.7800,11.2200,16.6600",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 2,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-15.6400,-10.2000,-4.7600,0.6800,6.1200,11.5600,17.0000",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 3,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-15.3000,-9.8600,-4.4200,1.0200,6.4600,11.9000,17.3400",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 4,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-14.9600,-9.5200,-4.0800,1.3600,6.8000,12.2400,17.6800",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 5,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-14.6200,-9.1800,-3.7400,1.7000,7.1400,12.5800,18.0200",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 6,
+            "columns": 8,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-19.7200,-14.2800,-8.8400,-3.4000,2.0400,7.4800,12.9200,18.3600",
+            "parities": "01010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 7,
+            "columns": 8,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-19.3800,-13.9400,-8.5000,-3.0600,2.3800,7.8200,13.2600,18.7000",
+            "parities": "01010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 8,
+            "columns": 8,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-19.0400,-13.6000,-8.1600,-2.7200,2.7200,8.1600,13.6000,19.0400",
+            "parities": "01010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 9,
+            "columns": 8,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-18.7000,-13.2600,-7.8200,-2.3800,3.0600,8.5000,13.9400,19.3800",
+            "parities": "01010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 10,
+            "columns": 8,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-18.3600,-12.9200,-7.4800,-2.0400,3.4000,8.8400,14.2800,19.7200",
+            "parities": "01010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 11,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-18.0200,-12.5800,-7.1400,-1.7000,3.7400,9.1800,14.6200",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 12,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-17.6800,-12.2400,-6.8000,-1.3600,4.0800,9.5200,14.9600",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 13,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-17.3400,-11.9000,-6.4600,-1.0200,4.4200,9.8600,15.3000",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 14,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-17.0000,-11.5600,-6.1200,-0.6800,4.7600,10.2000,15.6400",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 15,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-16.6600,-11.2200,-5.7800,-0.3400,5.1000,10.5400,15.9800",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 16,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-16.3200,-10.8800,-5.4400,0.0000,5.4400,10.8800,16.3200",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 17,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-15.9800,-10.5400,-5.1000,0.3400,5.7800,11.2200,16.6600",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 18,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-15.6400,-10.2000,-4.7600,0.6800,6.1200,11.5600,17.0000",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 19,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-15.3000,-9.8600,-4.4200,1.0200,6.4600,11.9000,17.3400",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 20,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-14.9600,-9.5200,-4.0800,1.3600,6.8000,12.2400,17.6800",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 21,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-14.6200,-9.1800,-3.7400,1.7000,7.1400,12.5800,18.0200",
+            "parities": "0101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 22,
+            "columns": 8,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-19.7200,-14.2800,-8.8400,-3.4000,2.0400,7.4800,12.9200,18.3600",
+            "parities": "10101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 23,
+            "columns": 8,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-19.3800,-13.9400,-8.5000,-3.0600,2.3800,7.8200,13.2600,18.7000",
+            "parities": "10101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 24,
+            "columns": 8,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-19.0400,-13.6000,-8.1600,-2.7200,2.7200,8.1600,13.6000,19.0400",
+            "parities": "10101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 25,
+            "columns": 8,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-18.7000,-13.2600,-7.8200,-2.3800,3.0600,8.5000,13.9400,19.3800",
+            "parities": "10101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 26,
+            "columns": 8,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-18.3600,-12.9200,-7.4800,-2.0400,3.4000,8.8400,14.2800,19.7200",
+            "parities": "10101010",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 27,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-18.0200,-12.5800,-7.1400,-1.7000,3.7400,9.1800,14.6200",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 28,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-17.6800,-12.2400,-6.8000,-1.3600,4.0800,9.5200,14.9600",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 29,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-17.3400,-11.9000,-6.4600,-1.0200,4.4200,9.8600,15.3000",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 30,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-17.0000,-11.5600,-6.1200,-0.6800,4.7600,10.2000,15.6400",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        },
+        {
+            "edgeX": 40.0,
+            "phaseBasePairs": 31,
+            "columns": 7,
+            "bothEndsAreColumns": false,
+            "columnPositions": "-16.6600,-11.2200,-5.7800,-0.3400,5.1000,10.5400,15.9800",
+            "parities": "1010101",
+            "positionsMatchPhaseEight": false,
+            "paritiesAreInvertedFromPhaseEight": false
+        }
+    ],
+    "arrangements": [
+        {
+            "shortDomainsAt": "0,1",
+            "domains": "15+15+16+16+16+16+16",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 28.5441337,
+            "rowEndRegisterDegrees": 16.9871206,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "0,2",
+            "domains": "15+16+15+16+16+16+16",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 22.5176624,
+            "rowEndRegisterDegrees": 13.8736608,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "0,3",
+            "domains": "15+16+16+15+16+16+16",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 17.8262171,
+            "rowEndRegisterDegrees": 10.1641104,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "0,4",
+            "domains": "15+16+16+16+15+16+16",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 14.0694531,
+            "rowEndRegisterDegrees": 5.54194524,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "0,5",
+            "domains": "15+16+16+16+16+15+16",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 16.0278974,
+            "rowEndRegisterDegrees": -0.38735227,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": true,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "0,6",
+            "domains": "15+16+16+16+16+16+15",
+            "columns": 8,
+            "centroSymmetricColumns": true,
+            "peakRegisterDegrees": 17.2791161,
+            "rowEndRegisterDegrees": -8.13028399,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": true,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 23
+        },
+        {
+            "shortDomainsAt": "1,2",
+            "domains": "16+15+15+16+16+16+16",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 23.973239,
+            "rowEndRegisterDegrees": 11.0780327,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "1,3",
+            "domains": "16+15+16+15+16+16+16",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 19.083006,
+            "rowEndRegisterDegrees": 7.36837372,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "1,4",
+            "domains": "16+15+16+16+15+16+16",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 15.1668486,
+            "rowEndRegisterDegrees": 2.74603766,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": true,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "1,5",
+            "domains": "16+15+16+16+16+15+16",
+            "columns": 8,
+            "centroSymmetricColumns": true,
+            "peakRegisterDegrees": 12.7746316,
+            "rowEndRegisterDegrees": -3.18351934,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": true,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 23
+        },
+        {
+            "shortDomainsAt": "1,6",
+            "domains": "16+15+16+16+16+16+15",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 16.0278974,
+            "rowEndRegisterDegrees": -10.9268617,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "2,3",
+            "domains": "16+16+15+15+16+16+16",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 22.7583984,
+            "rowEndRegisterDegrees": 4.22713891,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": true,
+            "centroSymmetricStationsMirrored": true,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 24
+        },
+        {
+            "shortDomainsAt": "2,4",
+            "domains": "16+16+15+16+15+16+16",
+            "columns": 8,
+            "centroSymmetricColumns": true,
+            "peakRegisterDegrees": 18.3387815,
+            "rowEndRegisterDegrees": -0.395548674,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": true,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 24
+        },
+        {
+            "shortDomainsAt": "2,5",
+            "domains": "16+16+15+16+16+15+16",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 15.1668486,
+            "rowEndRegisterDegrees": -6.32553067,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "2,6",
+            "domains": "16+16+15+16+16+16+15",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 14.0694531,
+            "rowEndRegisterDegrees": -14.0694531,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "3,4",
+            "domains": "16+16+16+15+15+16+16",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 22.7583984,
+            "rowEndRegisterDegrees": -4.15076091,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "3,5",
+            "domains": "16+16+16+15+16+15+16",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 19.083006,
+            "rowEndRegisterDegrees": -10.0814362,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "3,6",
+            "domains": "16+16+16+15+16+16+15",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 17.8262171,
+            "rowEndRegisterDegrees": -17.8262171,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "4,5",
+            "domains": "16+16+16+16+15+15+16",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 23.973239,
+            "rowEndRegisterDegrees": -14.7715574,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "4,6",
+            "domains": "16+16+16+16+15+16+15",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 22.5176624,
+            "rowEndRegisterDegrees": -22.5176624,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        },
+        {
+            "shortDomainsAt": "5,6",
+            "domains": "16+16+16+16+16+15+15",
+            "columns": 8,
+            "centroSymmetricColumns": false,
+            "peakRegisterDegrees": 28.5441337,
+            "rowEndRegisterDegrees": -28.5441337,
+            "stationsAtParityZero": 52,
+            "stationsAtParityOne": 53,
+            "centroSymmetricStationsPlain": false,
+            "centroSymmetricStationsMirrored": false,
+            "outermostStationNm": 15.98,
+            "largestArmRises": 0
+        }
+    ],
+    "census": [
+        {
+            "what": "arrangements of the 110 bp row over domains in {15,16}",
+            "count": 21,
+            "note": "compositions of 110 into 7 parts, i.e. C(7,2) placements of the two 15 bp domains"
+        },
+        {
+            "what": "arrangements carrying eight columns",
+            "count": 21,
+            "note": "an IDENTITY: the column count is domainCount + 1 and cannot depend on anything"
+        },
+        {
+            "what": "arrangements with a centro-symmetric column set",
+            "count": 3,
+            "note": "exactly the palindromic domain sequences"
+        },
+        {
+            "what": "arrangements distinct up to reflection",
+            "count": 12,
+            "note": "3 self-mirror plus 9 mirror pairs"
+        },
+        {
+            "what": "column/interface parities",
+            "count": 2,
+            "note": "C-0015's binary — what a seamless row retains of C-0015's phase variable"
+        },
+        {
+            "what": "distinct column lattices of the 110 bp row",
+            "count": 42,
+            "note": "arrangements times parities; the 112 bp row has 1 x 2 = 2"
+        },
+        {
+            "what": "arrangements with a centro-symmetric STATION lattice, either convention",
+            "count": 6,
+            "note": "the condition C-0063's exhaustive family actually needs, and it is NOT the same condition as a centro-symmetric column set, in either direction"
+        },
+        {
+            "what": "arrangement/convention pairs with a centro-symmetric station lattice",
+            "count": 7,
+            "note": "every one of them is enumerated here"
+        },
+        {
+            "what": "of those, ones needing NO mirrored offset and therefore no 30 deg station",
+            "count": 3,
+            "note": "C-0133's 30 deg azimuth cost is a property of its ARRANGEMENT, not of the correction"
+        },
+        {
+            "what": "arrangements over the wider shell, domains in {14,17}",
+            "count": 1918,
+            "note": "the sensitivity: not adopted, because a wider shell raises the per-domain register"
+        },
+        {
+            "what": "phases of C-0015's 32 that put both 38.08 nm row ends on a column",
+            "count": 2,
+            "note": "C-0090's 8 and 24 — and they are ONE column lattice"
+        },
+        {
+            "what": "phases of C-0015's 32 carrying eight columns at the nominal 40.00 nm",
+            "count": 10,
+            "note": "C-0015's ten, reproduced — the freedom seamlessness spends"
+        }
+    ],
+    "dishing": [
+        {
+            "host": "110 bp 15+16+16+16+16+15+16, plain 8 bp offsets, parity 0",
+            "state": "zero prestrain",
+            "offsetConvention": "plain 8 bp everywhere",
+            "worstAzimuthDepartureDegrees": 4.28571429,
+            "stations": 52,
+            "armNm": 7.82,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0552787638,
+            "worstDishingOverStroke": 0.904024897,
+            "medianDishingOverStroke": 0.325669995,
+            "bestShape": "0:0,1,2;1:0,2,3;2:0,2;3:0,2;4:1,2;5:0,3;6:1,2;7:0,3;8:0,1;9:0,3;10:0,1;11:1,3;12:0,2;13:0,1,3;14:0,1,2",
+            "freeDishingOverStroke": 0.29564578,
+            "uniformLoadDishingOverStroke": 1.6095736E-7,
+            "flatAtTenPercent": true
+        },
+        {
+            "host": "110 bp 15+16+16+16+16+15+16, plain 8 bp offsets, parity 0",
+            "state": "the corrected graded field",
+            "offsetConvention": "plain 8 bp everywhere",
+            "worstAzimuthDepartureDegrees": 4.28571429,
+            "stations": 52,
+            "armNm": 7.82,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0629599351,
+            "worstDishingOverStroke": 0.936062527,
+            "medianDishingOverStroke": 0.350296223,
+            "bestShape": "0:0,1,2;1:0,2,3;2:1,2;3:0,3;4:0,2;5:0,1;6:1,2;7:0,3;8:0,1;9:2,3;10:0,2;11:0,3;12:0,1;13:0,1,3;14:0,1,2",
+            "freeDishingOverStroke": 0.330852951,
+            "uniformLoadDishingOverStroke": 1.6095736E-7,
+            "flatAtTenPercent": true
+        },
+        {
+            "host": "110 bp 15+16+16+16+16+16+15, mirrored offsets, parity 0",
+            "state": "zero prestrain",
+            "offsetConvention": "mirrored right of the row centre",
+            "worstAzimuthDepartureDegrees": 30.0,
+            "stations": 52,
+            "armNm": 7.82,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0553958981,
+            "worstDishingOverStroke": 0.900428765,
+            "medianDishingOverStroke": 0.321416748,
+            "bestShape": "0:0,1,2;1:0,2,3;2:0,2;3:0,2;4:1,2;5:0,3;6:1,2;7:0,3;8:0,1;9:0,3;10:0,1;11:1,3;12:0,2;13:0,1,3;14:0,1,2",
+            "freeDishingOverStroke": 0.295375302,
+            "uniformLoadDishingOverStroke": 1.56158523E-7,
+            "flatAtTenPercent": true
+        },
+        {
+            "host": "110 bp 15+16+16+16+16+16+15, mirrored offsets, parity 0",
+            "state": "the corrected graded field",
+            "offsetConvention": "mirrored right of the row centre",
+            "worstAzimuthDepartureDegrees": 30.0,
+            "stations": 52,
+            "armNm": 7.82,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0825537347,
+            "worstDishingOverStroke": 0.982006006,
+            "medianDishingOverStroke": 0.391137188,
+            "bestShape": "0:0,1,2;1:0,2,3;2:0,2;3:0,3;4:1,2;5:0,2;6:0,2;7:0,3;8:0,2;9:1,3;10:0,1;11:0,3;12:0,2;13:0,1,3;14:0,1,2",
+            "freeDishingOverStroke": 0.402622285,
+            "uniformLoadDishingOverStroke": 1.56158523E-7,
+            "flatAtTenPercent": true
+        },
+        {
+            "host": "110 bp 16+15+16+16+15+16+16, plain 8 bp offsets, parity 0",
+            "state": "zero prestrain",
+            "offsetConvention": "plain 8 bp everywhere",
+            "worstAzimuthDepartureDegrees": 4.28571429,
+            "stations": 52,
+            "armNm": 7.82,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0603128259,
+            "worstDishingOverStroke": 0.906331654,
+            "medianDishingOverStroke": 0.342394873,
+            "bestShape": "0:0,1,2;1:0,2,3;2:1,2;3:0,3;4:0,1;5:0,3;6:0,1;7:0,3;8:1,2;9:0,3;10:1,2;11:0,3;12:0,1;13:0,1,3;14:0,1,2",
+            "freeDishingOverStroke": 0.295189928,
+            "uniformLoadDishingOverStroke": 1.49474724E-7,
+            "flatAtTenPercent": true
+        },
+        {
+            "host": "110 bp 16+15+16+16+15+16+16, plain 8 bp offsets, parity 0",
+            "state": "the corrected graded field",
+            "offsetConvention": "plain 8 bp everywhere",
+            "worstAzimuthDepartureDegrees": 4.28571429,
+            "stations": 52,
+            "armNm": 7.82,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0659104296,
+            "worstDishingOverStroke": 0.902712335,
+            "medianDishingOverStroke": 0.3423503,
+            "bestShape": "0:0,1,2;1:0,2,3;2:0,2;3:0,3;4:1,2;5:0,1;6:0,2;7:0,3;8:0,2;9:2,3;10:0,1;11:0,3;12:0,2;13:0,1,3;14:0,1,2",
+            "freeDishingOverStroke": 0.288788054,
+            "uniformLoadDishingOverStroke": 1.49474724E-7,
+            "flatAtTenPercent": true
+        },
+        {
+            "host": "110 bp 16+15+16+16+16+15+16, mirrored offsets, parity 0",
+            "state": "zero prestrain",
+            "offsetConvention": "mirrored right of the row centre",
+            "worstAzimuthDepartureDegrees": 30.0,
+            "stations": 52,
+            "armNm": 7.82,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0602892387,
+            "worstDishingOverStroke": 0.90458386,
+            "medianDishingOverStroke": 0.341459783,
+            "bestShape": "0:0,1,2;1:0,2,3;2:1,2;3:0,3;4:0,1;5:0,3;6:0,1;7:0,3;8:1,2;9:0,3;10:1,2;11:0,3;12:0,1;13:0,1,3;14:0,1,2",
+            "freeDishingOverStroke": 0.295083606,
+            "uniformLoadDishingOverStroke": 1.71219772E-7,
+            "flatAtTenPercent": true
+        },
+        {
+            "host": "110 bp 16+15+16+16+16+15+16, mirrored offsets, parity 0",
+            "state": "the corrected graded field",
+            "offsetConvention": "mirrored right of the row centre",
+            "worstAzimuthDepartureDegrees": 30.0,
+            "stations": 52,
+            "armNm": 7.82,
+            "enumerated": 163296,
+            "bestDishingOverStroke": 0.0580196384,
+            "worstDishingOverStroke": 0.837538377,
+            "medianDishingOverStroke": 0.30517933,
+            "bestShape": "0:0,1,2;1:0,3;2:1,2;3:0,2,3;4:0,1;5:0,3;6:1,2;7:0,3;8:0,1;9:0,3;10:1,2;11:0,1,3;12:0,1;13:0,3;14:0,1,2",
+            "freeDishingOverStroke": 0.20335645,
+            "uniformLoadDishingOverStroke": 1.71219772E-7,
+            "flatAtTenPercent": true
+        },
+        {
+            "host": "110 bp 16+16+15+15+16+16+16, plain 8 bp offsets, parity 0",
+            "state": "zero prestrain",
+            "offsetConvention": "plain 8 bp everywhere",
+            "worstAzimuthDepartureDegrees": 4.28571429,
+            "stations": 52,
+            "armNm": 8.16,
+            "enumerated": 11664,
+            "bestDishingOverStroke": 0.14493967,
+            "worstDishingOverStroke": 0.739974271,
+            "medianDishingOverStroke": 0.265110607,
+            "bestShape": "0:0,2;1:0,1,3;2:1,2;3:2,3;4:0,2;5:0,2,3;6:1,2;7:1,2;8:0,1;9:0,1,3;10:0,2;11:0,1;12:0,1;13:0,2,3;14:0,2",
+            "freeDishingOverStroke": 0.295400404,
+            "uniformLoadDishingOverStroke": 2.20594006E-7,
+            "flatAtTenPercent": false
+        },
+        {
+            "host": "110 bp 16+16+15+15+16+16+16, plain 8 bp offsets, parity 0",
+            "state": "the corrected graded field",
+            "offsetConvention": "plain 8 bp everywhere",
+            "worstAzimuthDepartureDegrees": 4.28571429,
+            "stations": 52,
+            "armNm": 8.16,
+            "enumerated": 11664,
+            "bestDishingOverStroke": 0.135564386,
+            "worstDishingOverStroke": 0.729748995,
+            "medianDishingOverStroke": 0.258951908,
+            "bestShape": "0:0,2;1:0,1,3;2:1,2;3:2,3;4:0,2;5:0,2,3;6:1,2;7:0,3;8:0,1;9:0,1,3;10:0,2;11:0,1;12:0,1;13:0,2,3;14:0,2",
+            "freeDishingOverStroke": 0.281216667,
+            "uniformLoadDishingOverStroke": 2.20594006E-7,
+            "flatAtTenPercent": false
+        },
+        {
+            "host": "110 bp 16+16+15+15+16+16+16, mirrored offsets, parity 0",
+            "state": "zero prestrain",
+            "offsetConvention": "mirrored right of the row centre",
+            "worstAzimuthDepartureDegrees": 4.28571429,
+            "stations": 52,
+            "armNm": 8.16,
+            "enumerated": 11664,
+            "bestDishingOverStroke": 0.14493967,
+            "worstDishingOverStroke": 0.739974271,
+            "medianDishingOverStroke": 0.265110607,
+            "bestShape": "0:0,2;1:0,1,3;2:1,2;3:2,3;4:0,2;5:0,2,3;6:1,2;7:1,2;8:0,1;9:0,1,3;10:0,2;11:0,1;12:0,1;13:0,2,3;14:0,2",
+            "freeDishingOverStroke": 0.295400404,
+            "uniformLoadDishingOverStroke": 2.20594006E-7,
+            "flatAtTenPercent": false
+        },
+        {
+            "host": "110 bp 16+16+15+15+16+16+16, mirrored offsets, parity 0",
+            "state": "the corrected graded field",
+            "offsetConvention": "mirrored right of the row centre",
+            "worstAzimuthDepartureDegrees": 4.28571429,
+            "stations": 52,
+            "armNm": 8.16,
+            "enumerated": 11664,
+            "bestDishingOverStroke": 0.135564386,
+            "worstDishingOverStroke": 0.729748995,
+            "medianDishingOverStroke": 0.258951908,
+            "bestShape": "0:0,2;1:0,1,3;2:1,2;3:2,3;4:0,2;5:0,2,3;6:1,2;7:0,3;8:0,1;9:0,1,3;10:0,2;11:0,1;12:0,1;13:0,2,3;14:0,2",
+            "freeDishingOverStroke": 0.281216667,
+            "uniformLoadDishingOverStroke": 2.20594006E-7,
+            "flatAtTenPercent": false
+        },
+        {
+            "host": "110 bp 16+16+15+16+15+16+16, mirrored offsets, parity 0",
+            "state": "zero prestrain",
+            "offsetConvention": "mirrored right of the row centre",
+            "worstAzimuthDepartureDegrees": 30.0,
+            "stations": 52,
+            "armNm": 8.16,
+            "enumerated": 11664,
+            "bestDishingOverStroke": 0.1449728,
+            "worstDishingOverStroke": 0.739529252,
+            "medianDishingOverStroke": 0.26480979,
+            "bestShape": "0:0,2;1:0,1,3;2:1,2;3:2,3;4:0,1;5:0,1,3;6:1,2;7:1,2;8:0,1;9:0,2,3;10:1,2;11:0,1;12:0,1;13:0,2,3;14:0,2",
+            "freeDishingOverStroke": 0.295218069,
+            "uniformLoadDishingOverStroke": 1.6837442E-7,
+            "flatAtTenPercent": false
+        },
+        {
+            "host": "110 bp 16+16+15+16+15+16+16, mirrored offsets, parity 0",
+            "state": "the corrected graded field",
+            "offsetConvention": "mirrored right of the row centre",
+            "worstAzimuthDepartureDegrees": 30.0,
+            "stations": 52,
+            "armNm": 8.16,
+            "enumerated": 11664,
+            "bestDishingOverStroke": 0.184339439,
+            "worstDishingOverStroke": 0.781514366,
+            "medianDishingOverStroke": 0.305267441,
+            "bestShape": "0:0,2;1:0,1,3;2:1,2;3:2,3;4:1,2;5:0,1,3;6:0,1;7:1,2;8:1,2;9:0,2,3;10:0,1;11:0,1;12:0,1;13:0,2,3;14:0,2",
+            "freeDishingOverStroke": 0.354933461,
+            "uniformLoadDishingOverStroke": 1.6837442E-7,
+            "flatAtTenPercent": false
+        },
+        {
+            "host": "110 bp 16+15+16+16+16+15+16, mirrored offsets, parity 1",
+            "state": "zero prestrain",
+            "offsetConvention": "mirrored right of the row centre",
+            "worstAzimuthDepartureDegrees": 30.0,
+            "stations": 53,
+            "armNm": 7.82,
+            "enumerated": 198288,
+            "bestDishingOverStroke": 0.0704758494,
+            "worstDishingOverStroke": 0.951144842,
+            "medianDishingOverStroke": 0.361331848,
+            "bestShape": "0:0,2,3;1:0,1,2;2:0,1;3:0,2;4:2,3;5:0,1;6:0,3;7:0,2;8:0,3;9:1,2;10:0,1;11:0,2;12:2,3;13:0,1,2;14:0,1,3",
+            "freeDishingOverStroke": 0.295083606,
+            "uniformLoadDishingOverStroke": 1.71219772E-7,
+            "flatAtTenPercent": true
+        },
+        {
+            "host": "110 bp 16+15+16+16+16+15+16, mirrored offsets, parity 1",
+            "state": "the corrected graded field",
+            "offsetConvention": "mirrored right of the row centre",
+            "worstAzimuthDepartureDegrees": 30.0,
+            "stations": 53,
+            "armNm": 7.82,
+            "enumerated": 198288,
+            "bestDishingOverStroke": 0.0751454494,
+            "worstDishingOverStroke": 0.877618811,
+            "medianDishingOverStroke": 0.310019185,
+            "bestShape": "0:0,1,3;1:0,1;2:1,2,3;3:0,1;4:0,3;5:0,2;6:1,3;7:0,2;8:0,2;9:0,2;10:0,3;11:1,2;12:0,1,2;13:1,2;14:0,2,3",
+            "freeDishingOverStroke": 0.20335645,
+            "uniformLoadDishingOverStroke": 1.71219772E-7,
+            "flatAtTenPercent": true
+        }
+    ],
+    "convergence": [
+        {
+            "axis": "the dishing sample grid, free tile under the solved collar and the field",
+            "level": "41 x 41",
+            "value": 0.20335645,
+            "relativeDeparture": 0.0
+        },
+        {
+            "axis": "the dishing sample grid, free tile under the solved collar and the field",
+            "level": "81 x 81",
+            "value": 0.20335645,
+            "relativeDeparture": 0.0
+        },
+        {
+            "axis": "the dishing sample grid, free tile under the solved collar and the field",
+            "level": "161 x 161",
+            "value": 0.20335645,
+            "relativeDeparture": 0.0
+        },
+        {
+            "axis": "the beam subdivision of the grillage",
+            "level": "1 per span",
+            "value": 0.202104952,
+            "relativeDeparture": 0.0
+        },
+        {
+            "axis": "the beam subdivision of the grillage",
+            "level": "2 per span",
+            "value": 0.20335645,
+            "relativeDeparture": 0.0062
+        },
+        {
+            "axis": "the beam subdivision of the grillage",
+            "level": "4 per span",
+            "value": 0.203213612,
+            "relativeDeparture": 7.0E-4
+        },
+        {
+            "axis": "the hinge-smearing convention of the register field, peak degrees",
+            "level": "1 sub-segments per domain",
+            "value": 12.7746316,
+            "relativeDeparture": 0.0
+        },
+        {
+            "axis": "the hinge-smearing convention of the register field, peak degrees",
+            "level": "2 sub-segments per domain",
+            "value": 12.9056832,
+            "relativeDeparture": 0.01
+        },
+        {
+            "axis": "the hinge-smearing convention of the register field, peak degrees",
+            "level": "4 sub-segments per domain",
+            "value": 12.9389485,
+            "relativeDeparture": 0.0026
+        }
+    ],
+    "reproductions": [
+        {
+            "what": "C-0133's 110 bp enumerated optimum at zero prestrain",
+            "published": 0.0602892387,
+            "here": 0.0602892387,
+            "relativeDeparture": 3.1E-10,
+            "source": "gpd/results/T-189-twist-corrected-raster.json"
+        },
+        {
+            "what": "C-0133's 110 bp enumerated optimum under the corrected graded field",
+            "published": 0.0580196384,
+            "here": 0.0580196384,
+            "relativeDeparture": 8.5E-10,
+            "source": "gpd/results/T-189-twist-corrected-raster.json"
+        },
+        {
+            "what": "C-0090's parity binary at 38.08 nm, the two phases' optima",
+            "published": 1.13752709,
+            "here": 1.13752709,
+            "relativeDeparture": 0.0,
+            "source": "gpd/results/T-153-buildable-raster-width.json — read, not recomputed"
+        }
+    ],
+    "predicates": [
+        {
+            "id": "P1",
+            "statement": "the existence question is answered by exact arithmetic before any solve",
+            "met": true
+        },
+        {
+            "id": "P2",
+            "statement": "the corpus's own uniform case is reproduced: C-0090's phases 8 and 24, their column positions and their parities",
+            "met": true
+        },
+        {
+            "id": "P3",
+            "statement": "the census is delivered, with the station lattice beside each arrangement",
+            "met": true
+        },
+        {
+            "id": "P4",
+            "statement": "the census is given a consequence: the three centro-symmetric arrangements are re-read on the flatness and the ranking is reported",
+            "met": true
+        }
+    ],
+    "falsifiers": [
+        {
+            "id": "F1",
+            "statement": "some non-zero rigid translation of the 110 bp column pattern leaves both end columns on the tile edges",
+            "fired": false,
+            "outcome": "the admissible translation group is {0} on every row checked, over 223 translations each"
+        },
+        {
+            "id": "F2",
+            "statement": "C-0090's phases 8 and 24 do NOT give identical column positions at 38.08 nm",
+            "fired": false,
+            "outcome": "identical to 1e-12 nm at all eight columns, and the parities are inverted at all eight"
+        },
+        {
+            "id": "F3",
+            "statement": "some arrangement of the 110 bp row carries other than eight columns",
+            "fired": false,
+            "outcome": "8 at all 21 arrangements — the column count is the identity domainCount + 1"
+        },
+        {
+            "id": "F4",
+            "statement": "the centro-symmetric arrangements are not three, or the reflection classes not twelve",
+            "fired": false,
+            "outcome": "3 centro-symmetric of 21, 12 classes up to reflection"
+        },
+        {
+            "id": "F5",
+            "statement": "the flatness ranking of the three centro-symmetric arrangements AGREES with their peak-register ranking",
+            "fired": true,
+            "outcome": "the register picks 16+15+16+16+16+15+16 and the flatness picks 110 bp 16+15+16+16+16+15+16, mirrored offsets, parity 0"
+        },
+        {
+            "id": "F7",
+            "statement": "no arrangement gives a centro-symmetric station lattice at the plain 8 bp offset, so C-0133's 30 deg azimuth cost is unavoidable on a twist-corrected row",
+            "fired": false,
+            "outcome": "3 of 21 arrangements do, at 4.2857 deg everywhere: 15+16+16+16+16+15+16; 16+15+16+16+15+16+16; 16+16+15+15+16+16+16"
+        },
+        {
+            "id": "F6",
+            "statement": "a free tile under a UNIFORM load on a uniform Winkler foundation dishes something",
+            "fired": false,
+            "outcome": "largest over 16 solves 2.21e-07"
+        }
+    ],
+    "findings": [
+        "A MIXED-DOMAIN SEAMLESS ROW HAS NO TRANSLATIONAL PHASE VARIABLE — AND NEITHER DOES C-0086's UNIFORM ONE. A seamless raster row's two ends ARE the tile edges and both carry a scaffold crossover, so both end columns are pinned; a rigid translation by any non-zero amount takes one of them off the edge. The admissible translation group is {0} at 110 bp and at 112 bp alike, enumerated over every base-pair translation rather than argued. F1 did not fire.",
+        "SO C-0090's \"TWO PHASES\" IS ONE COLUMN LATTICE AND A PARITY BINARY, AND THAT IS THE REFRAMING THIS TASK EXISTS TO REPORT. At 38.08 nm exactly 2 of C-0015's 32 phases put both row ends on a column — 8 and 24, C-0090's own two — and they give IDENTICAL column positions to 1e-12 nm with INVERTED parities at all eight columns. C-0015's phase is a freedom of a tile whose row ends are not crossovers: at the nominal 40.00 nm 10 of 32 phases carry eight columns, and seamlessness spends every one of them. What survives is a binary. F2 did not fire.",
+        "AND THE BINARY IS NOT COSMETIC — IT IS THE FACE THE ARMS POINT OUT OF. One column pitch is two 8 bp planes, so shifting by it exchanges a duplex's EAST and WEST azimuths: the upward station lattice of one parity is the DOWNWARD lattice of the other, they partition the plane lattice, and their station counts differ (52 against 53 on the 110 bp row). C-0090 measures the cost without naming it: 0.0621469 of the stroke at phase 8 against 0.0706938 at phase 24, a factor of 1.138. It is CLAUDE.md's \"reflecting an out-of-plane array moves it to the other face of the sheet\", read as a design variable rather than as a warning.",
+        "THE CENSUS. The 110 bp twist-corrected row admits 21 arrangements of its two 15 bp domains, EVERY ONE of which carries eight columns — an identity, columns = domains + 1, where the uniform lattice's count is a function of the phase — 3 of them have a centro-symmetric column set, and there are 12 distinct up to reflection. With the parity binary that is 42 column lattices against the 112 bp row's TWO, of which 6 are centro-symmetric and therefore enumerable by C-0063's family at all. F3 and F4 did not fire.",
+        "THE ARRANGEMENT AXIS IS NEW AT 110 bp AND IT DID NOT EXIST AT 112. A uniform row has exactly ONE arrangement, so every phase, placement and centro-symmetry result in this corpus is written on a lattice with no arrangement freedom at all. The twist correction does not merely move the columns; it opens a design variable of 21 members where there was one, and closes a phase variable of 32 that seamlessness had already closed.",
+        "A CENTRO-SYMMETRIC COLUMN SET AND A CENTRO-SYMMETRIC STATION LATTICE ARE DIFFERENT CONDITIONS, AND C-0063's FAMILY NEEDS THE SECOND. Of the 21 arrangements 3 have a centro-symmetric column set and 6 have a centro-symmetric STATION lattice under one offset convention or the other, giving 7 enumerable (arrangement, convention) lattices where selecting on column symmetry finds three. Every column-symmetric arrangement is station-symmetric under the MIRRORED convention and NONE of them is under the plain one; 3 further arrangements whose columns are NOT centro-symmetric are station-symmetric at the PLAIN 8 bp offset, where the whole azimuth departure is 4.2857 deg: 15+16+16+16+16+15+16; 16+15+16+16+15+16+16; 16+16+15+15+16+16+16. So C-0133's 30 deg station is a cost of its ARRANGEMENT, not of the twist correction. F7 did not fire.",
+        "AND THE FLATNESS RANKING IS A PROPERTY OF THE STATE IT IS READ AT. Under the corrected graded field the flattest of the enumerated lattices is 110 bp 16+15+16+16+16+15+16, mirrored offsets, parity 0 at 0.0580196 and the worst is 0.1843394; at ZERO prestrain the winner is 110 bp 15+16+16+16+16+15+16, plain 8 bp offsets, parity 0 at 0.0552788. C-0133 selects its arrangement on the PEAK REGISTER ANGLE, and that selection is vindicated by the flatness under the field it was made for and REVERSED without it. CLAUDE.md's \"quote it with the state it is read at\", read on a lattice rather than on a load.",
+        "THE PARITY BINARY COSTS ALMOST WHAT IT COSTS ON THE UNIFORM ROW, WHICH IS THE PROOF THAT IT TRANSFERS. On C-0133's recommended lattice the other parity dishes 0.0751454 against 0.0580196 under the corrected graded field — a factor of 1.295 — where C-0090's two phases at 38.08 nm differ by 1.138. Same object, same size, one lattice non-uniform and one uniform.",
+        "THE WIDER SHELL IS 1918 ARRANGEMENTS AND IS NOT ADOPTED. Rothemund's own remedy is domain lengths adjusted \"by single bases\", i.e. {15,16} at a nominal 16; allowing {14..17} gives 1918 compositions, and every extra base pair of spread costs 34.2857 deg of per-domain register where the whole correction is worth 8.5714. The family is a convention and it is stated rather than searched."
+    ],
+    "parameters": {
+        "arrangements": "21",
+        "centroSymmetricArrangements": "3",
+        "reflectionClasses": "12",
+        "widerShellArrangements": "1918",
+        "seamlessPhasesAt3808": "8,24",
+        "eightColumnPhasesAtNominal": "10",
+        "columnLattices": "42",
+        "parityRatioAt110": "1.2951726612953898",
+        "c0090DishingPhaseEight": "0.0621469105",
+        "c0090DishingPhaseTwentyFour": "0.070693794",
+        "registerOptimalArrangement": "16+15+16+16+16+15+16",
+        "flatnessOptimalHost": "110 bp 16+15+16+16+16+15+16, mirrored offsets, parity 0",
+        "columnLayoutPositions": "-18.6500,-13.2600,-8.1600,-2.7200,2.7200,8.1600,13.2600,18.6500",
+        "sources": "gpd/results/T-3b-tile-edge-load-profile.json, gpd/results/T-153-buildable-raster-width.json, gpd/results/T-189-twist-corrected-raster.json"
+    }
+}

@@ -2179,70 +2179,70 @@
             "quantity": "C-0023 E3a span",
             "published": 24.61,
             "reproduced": 24.6093956,
-            "relativeDeparture": 2.45600076E-5,
+            "relativeDeparture": 2.5E-5,
             "source": "C-0023"
         },
         {
             "quantity": "C-0023 E3b span",
             "published": 49.41,
             "reproduced": 49.4139652,
-            "relativeDeparture": 8.02501712E-5,
+            "relativeDeparture": 8.0E-5,
             "source": "C-0023"
         },
         {
             "quantity": "C-0023 E3b tangent at 3 nm",
             "published": 91.13,
             "reproduced": 91.1275132,
-            "relativeDeparture": 2.7288279E-5,
+            "relativeDeparture": 2.7E-5,
             "source": "C-0023"
         },
         {
             "quantity": "C-0023 E5 arm",
             "published": 4.11,
             "reproduced": 4.11122638,
-            "relativeDeparture": 2.98390498E-4,
+            "relativeDeparture": 3.0E-4,
             "source": "C-0023"
         },
         {
             "quantity": "C-0039 E5a16 arm",
             "published": 12.7198,
             "reproduced": 12.7198339,
-            "relativeDeparture": 2.66791405E-6,
+            "relativeDeparture": 2.7E-6,
             "source": "C-0039"
         },
         {
             "quantity": "C-0039 E5a16 tangent at 3 nm",
             "published": 36.44,
             "reproduced": 36.4400043,
-            "relativeDeparture": 1.19014867E-7,
+            "relativeDeparture": 1.2E-7,
             "source": "C-0039"
         },
         {
             "quantity": "C-0039 E5a16 secant at 10 nm",
             "published": 69.94,
             "reproduced": 69.9399916,
-            "relativeDeparture": 1.20083587E-7,
+            "relativeDeparture": 1.2E-7,
             "source": "C-0039"
         },
         {
             "quantity": "C-0039 E5a16 tangent at 10 nm",
             "published": 264.24,
             "reproduced": 264.239839,
-            "relativeDeparture": 6.08722713E-7,
+            "relativeDeparture": 6.1E-7,
             "source": "C-0039"
         },
         {
             "quantity": "C-0030 coupled span",
             "published": 31.821,
             "reproduced": 31.8209241,
-            "relativeDeparture": 2.385891E-6,
+            "relativeDeparture": 2.4E-6,
             "source": "C-0030"
         },
         {
             "quantity": "C-0030 coupled tangent at 3 nm",
             "published": 25.227,
             "reproduced": 25.2272684,
-            "relativeDeparture": 1.06380423E-5,
+            "relativeDeparture": 1.1E-5,
             "source": "C-0030"
         },
         {

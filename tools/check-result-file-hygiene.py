@@ -28,18 +28,24 @@ Three predicates, three exit policies:
 - ``--conversions`` (the default) is a **GATE**.  It fires on a Java format conversion in any
   string of any committed result file, and exits 1.  The tree reads clean under it, which is
   why it is wired; `C-0083`: *a gate that cannot come clean is not a gate*.
-- ``--departures`` is a **GATE** since `T-212`.  `C-0093`'s rule is that a departure — a
-  dimensionless difference or ratio of two nearly equal numbers — is emitted at **two**
-  significant digits, because `RESULT_ABSOLUTE_FLOOR` is a claim in the locked units and does not
-  reach a ratio.  **222 fields in 29 files broke it before `T-208` and 199 in 27 after it**; the
-  27 were re-emitted by `T-212` and the gate now reads clean, which is the only condition under
-  which it could be wired at all (`C-0083`).  It exits 1 on the strict predicate.
+- ``--departures`` is a **GATE** since `T-212`, and since `T-214` the gate IS the rule.
+  `C-0093`'s rule is that a departure — a dimensionless difference or ratio of two nearly equal
+  numbers — is emitted at **two** significant digits, because `RESULT_ABSOLUTE_FLOOR` is a claim
+  in the locked units and does not reach a ratio.  **222 fields in 29 files broke it before
+  `T-208`, 199 in 27 after it**, and `T-212` re-emitted those 27 — but its predicate was the leaf
+  name `departure`, one spelling of four, so the rule's own scope stood at **351 fields in 31
+  files** while the gate read clean (`CH-0154`).  `T-214` re-emitted the 31 and widened the
+  predicate, so the gate now fires on **any** of the four spellings inside a `reproductions` or
+  `convergence` record.
 
-  **Its ``scope`` line is deliberately wider than its gate and is NOT gated.**  The same two
-  records carry three more spellings of the same quantity — 478 `reproductions[*].relativeDeparture`
-  fields alone — and closing those is 36 further study re-runs (`T-214`).  Reporting a number the
-  gate does not enforce is the honest form of `C-0083`: the residue is published rather than
-  redefined away.
+  The ``scope`` line is retained and now carries the **same** number as the gate: it is the line
+  `C-0131` published the residue on, and the reader who watched it fall 601 → 351 → 0 is entitled
+  to see it reach zero rather than disappear.  ``strict`` keeps `C-0129`'s original predicate as
+  a now-proper subset, and ``wide`` remains an ungated ceiling on the class.
+
+  What holds the predicate open is `C-0083`: *a gate that cannot come clean is not a gate*, and a
+  predicate can always be narrowed until the tree is clean.  The mutation test for that is in
+  [GATE_TESTS] — narrowing the gate back to the leaf name must FAIL a named self-test.
 - ``--saturated`` is an **AUDIT**.  A symmetric binomial standard error on a **saturated**
   proportion is identically zero for every sample count and therefore measures nothing.
   **302 records in 7 files carried one before `T-208`, 277 in 6 after it, and `T-213` repaired
@@ -66,7 +72,7 @@ Usage:
     tools/check-result-file-hygiene.py --self-test
 
 Exit status is 1 if either **gate** finds a defect, 0 otherwise.  The saturated-proportion audit
-never exits 1, and neither does the departure ``scope`` line.
+never exits 1, and neither does the departure ``wide`` line.
 """
 
 import json
@@ -165,6 +171,43 @@ SCOPE_TESTS = [
      "already at two digits"),
     ({"upstreamChecks": [{"departure": 5.36821841e-06}]}, 0, 0,
      "a comparison against a carried upstream number is not a residual between two refinements"),
+]
+
+# `T-214` -- the GATE's own predicate, tested separately from the census that reports it.
+# Each row is (document, expected gate hits, description). `C-0131` refused to gate the wider
+# predicate because the tree was not clean under it; it is clean now, so the gate is the rule and
+# these rows are what stop it narrowing back, and the mutation coverage is MEASURED rather than
+# asserted: **6** of the 13 fail if `departure_gate` is reverted to `C-0129`'s leaf-name predicate
+# (row 5 does not, being the one spelling both predicates share) and **4** fail if the record
+# qualifier is dropped.  A predicate that is only ever narrowed becomes a claim of cleanliness
+# (`C-0083`), so the test has to bite in both directions.
+GATE_TESTS = [
+    ({"reproductions": [{"departure": 5.36821841e-06}]}, 1,
+     "C-0129's own shape, which the widened gate must still catch"),
+    ({"reproductions": [{"relativeDeparture": 5.36821841e-06}]}, 1,
+     "503 of these exist; the gate must fire"),
+    ({"reproductions": [{"departureFromFinest": 5.36821841e-06}]}, 1,
+     "`departureFromFinest` under `reproductions`"),
+    ({"reproductions": [{"relativeDepartureInStroke": 5.36821841e-06}]}, 1,
+     "the fourth spelling, 12 fields in one file"),
+    ({"convergence": [{"departure": 5.36821841e-06}]}, 1,
+     "the second record type"),
+    ({"convergence": [{"relativeDeparture": 5.36821841e-06}]}, 1,
+     "the shape T-214 re-emitted 351 of"),
+    ({"convergence": [{"departureFromFinest": 5.36821841e-06}]}, 1,
+     "337 of these exist"),
+    ({"convergence": [{"relativeDepartureInStroke": 5.36821841e-06}]}, 1,
+     "the fourth spelling under the second record"),
+    ({"potentialOfZeroCharge": [{"departure": 0.001420712}]}, 0,
+     "CH-0154's VOLTS: the record qualifier is what keeps the gate off a literature comparison"),
+    ({"departures": [{"relativeDeparture": 0.000123456}]}, 0,
+     "T-160's own ANSWER, declared at six digits at its own emission site"),
+    ({"upstreamChecks": [{"departure": 5.36821841e-06}]}, 0,
+     "a comparison against a carried upstream number, 288 fields in 3 files"),
+    ({"stationLattice": [{"departure": 0.341234568}]}, 0,
+     "a lattice coordinate difference, in nm"),
+    ({"reproductions": [{"departure": 5.4e-06, "carried": 1.23456789}]}, 0,
+     "a compliant departure beside a nine-digit sibling: the gate must not reach the sibling"),
 ]
 
 SATURATION_TESTS = [
@@ -329,6 +372,17 @@ def departures_in(document, path):
     return gated, scoped
 
 
+def departure_gate(document, path):
+    """The fields `--departures` exits 1 on — **the rule's own scope** since `T-214`.
+
+    Named separately from [departures_in] so that what the gate enforces is one function rather
+    than a choice made at the exit statement, and so that narrowing it back to `C-0129`'s
+    leaf-name predicate fails [GATE_TESTS] rather than silently shrinking the corpus it covers.
+    """
+    _, scoped = departures_in(document, path)
+    return scoped
+
+
 def check_departures(root=RESULTS):
     """Returns `(gated, scoped, wide)` lists of over-precise departure fields.
 
@@ -384,6 +438,13 @@ def self_test():
             failures += 1
             print(f"SELF-TEST FAILED — saturation, {description}: "
                   f"expected {expected}, found {found}")
+    for document, expected, description in GATE_TESTS:
+        parsed = json.loads(json.dumps(document), parse_float=Decimal)
+        found = len(departure_gate(parsed, "fixture"))
+        if found != expected:
+            failures += 1
+            print(f"SELF-TEST FAILED — gate, {description}: "
+                  f"expected {expected}, found {found}")
     for document, gated, scoped, description in SCOPE_TESTS:
         # Parsed the way a committed file is parsed: `_numbers` walks `Decimal` leaves, because
         # the question is what the file CARRIES and `repr` returns the shortest round-trip.
@@ -413,7 +474,7 @@ def self_test():
         os.remove(os.path.join(fixture, name))
     os.rmdir(fixture)
     total = (len(CONVERSION_TESTS) + len(DEPARTURE_TESTS) + len(SATURATION_TESTS)
-             + len(SCOPE_TESTS) + 2)
+             + len(SCOPE_TESTS) + len(GATE_TESTS) + 2)
     print(f"{total - failures} of {total} self-tests pass")
     return failures
 
@@ -424,14 +485,16 @@ def self_test():
 
 def report_departures():
     gated, scoped, wide = check_departures()
-    print("-- departure precision (GATE on the strict predicate; C-0093's two-digit rule) --")
-    print(f"  GATE  (reproductions[*].departure, convergence[*].departure): "
-          f"{len(gated)} field(s) in {len({row[0] for row in gated})} file(s)")
-    print(f"  scope (all four spellings in those records; REPORTED, not gated): "
+    print("-- departure precision (GATE on the RULE's own scope; C-0093's two-digit rule) --")
+    print(f"  GATE  (all four spellings inside a reproductions/convergence record): "
           f"{len(scoped)} field(s) in {len({row[0] for row in scoped})} file(s)")
-    print(f"  wide  (any leaf key containing 'departure'; a ceiling on the class): "
+    print(f"  scope (the same predicate — since T-214 the gate IS the rule): "
+          f"{len(scoped)} field(s) in {len({row[0] for row in scoped})} file(s)")
+    print(f"  strict (C-0129's leaf-name predicate, now a proper subset of the gate): "
+          f"{len(gated)} field(s) in {len({row[0] for row in gated})} file(s)")
+    print(f"  wide  (any leaf key containing 'departure'; a ceiling on the class, NOT gated): "
           f"{len(wide)} field(s) in {len({row[0] for row in wide})} file(s)")
-    for label, rows in (("GATE", gated), ("scope", scoped)):
+    for label, rows in (("GATE", scoped), ("scope", scoped), ("strict", gated)):
         counts = {}
         for path, _, _, _ in rows:
             counts[os.path.basename(path)] = counts.get(os.path.basename(path), 0) + 1
@@ -440,7 +503,7 @@ def report_departures():
             continue
         for name in sorted(counts, key=lambda n: (-counts[n], n)):
             print(f"    {label} {counts[name]:4d}  {name}")
-    return gated, scoped, wide
+    return scoped, gated, wide
 
 
 def report_saturated():

@@ -2930,14 +2930,14 @@
             "control": "difference step",
             "level": 0.01,
             "value": 0.560606775,
-            "departureFromFinest": 1.44671301E-6
+            "departureFromFinest": 1.4E-6
         },
         {
             "quantity": "the analytic tangent against a central difference at 3 nm",
             "control": "difference step",
             "level": 0.001,
             "value": 0.560605972,
-            "departureFromFinest": 1.44671073E-8
+            "departureFromFinest": 1.4E-8
         },
         {
             "quantity": "the analytic tangent against a central difference at 3 nm",
@@ -2980,56 +2980,56 @@
             "quantity": "C-0028 B2 span at 8 nm [nm]",
             "published": 31.06,
             "derived": 31.0630189,
-            "relativeDeparture": 9.71954192E-5,
+            "relativeDeparture": 9.7E-5,
             "source": "C-0028 design table"
         },
         {
             "quantity": "C-0028 B2 c at 8 nm",
             "published": 91.8,
             "derived": 91.8071634,
-            "relativeDeparture": 7.80326396E-5,
+            "relativeDeparture": 7.8E-5,
             "source": "C-0028 design table"
         },
         {
             "quantity": "C-0028 B2 tangent at 8 nm [pN/nm]",
             "published": 36.51,
             "derived": 36.5078225,
-            "relativeDeparture": 5.96399736E-5,
+            "relativeDeparture": 6.0E-5,
             "source": "C-0028 design table"
         },
         {
             "quantity": "C-0028 B2 T(10) [pN]",
             "published": 2.94,
             "derived": 2.93731304,
-            "relativeDeparture": 9.13931461E-4,
+            "relativeDeparture": 9.1E-4,
             "source": "C-0028 design table"
         },
         {
             "quantity": "C-0028 B2 duty(10) element [pN]",
             "published": 5.113,
             "derived": 5.11255175,
-            "relativeDeparture": 8.76684315E-5,
+            "relativeDeparture": 8.8E-5,
             "source": "C-0028 design table, with CH-0037 applied"
         },
         {
             "quantity": "C-0028 B2 P_c free head [pN]",
             "published": 7.21,
             "derived": 7.20717719,
-            "relativeDeparture": 3.91513289E-4,
+            "relativeDeparture": 3.9E-4,
             "source": "C-0028 design table"
         },
         {
             "quantity": "C-0028 B2 buckling margin at 8 nm",
             "published": 1.41,
             "derived": 1.40970254,
-            "relativeDeparture": 2.10964611E-4,
+            "relativeDeparture": 2.1E-4,
             "source": "C-0028 design table"
         },
         {
             "quantity": "C-0028 B2 S_eff/S at 8 nm",
             "published": 0.0141,
             "derived": 0.0141026085,
-            "relativeDeparture": 1.85001656E-4,
+            "relativeDeparture": 1.9E-4,
             "source": "C-0028 nominal design"
         },
         {
@@ -3057,7 +3057,7 @@
             "quantity": "C-0025 J5-8 T(10) [pN]",
             "published": 3.82799407,
             "derived": 3.82799407,
-            "relativeDeparture": 1.16838045E-9,
+            "relativeDeparture": 1.2E-9,
             "source": "C-0025 design table"
         },
         {
@@ -3085,21 +3085,21 @@
             "quantity": "C-0028 off-diagonal correlation at a crossover base",
             "published": 0.947,
             "derived": 0.947073995,
-            "relativeDeparture": 7.81365191E-5,
+            "relativeDeparture": 7.8E-5,
             "source": "C-0028 validity range"
         },
         {
             "quantity": "C-0028 off-diagonal factor at a crossover base",
             "published": 9.7,
             "derived": 9.70394737,
-            "relativeDeparture": 4.06945198E-4,
+            "relativeDeparture": 4.1E-4,
             "source": "C-0028 validity range"
         },
         {
             "quantity": "Fields et al.'s implied bending rigidity [pN nm^2]",
             "published": 172.9,
             "derived": 172.906231,
-            "relativeDeparture": 3.60390787E-5,
+            "relativeDeparture": 3.6E-5,
             "source": "C-0028 literature table"
         },
         {

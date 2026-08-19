@@ -18,14 +18,11 @@ package com.xemantic.nano.plentyofroom.brush
 
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.structure.SOLVED_HEIGHT_SIGNIFICANT_DIGITS
+import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
-import kotlinx.serialization.json.JsonObject
-import kotlinx.serialization.json.JsonPrimitive
-import kotlinx.serialization.json.doubleOrNull
 import kotlinx.serialization.json.encodeToJsonElement
 import java.io.File
 import kotlin.math.PI
@@ -33,9 +30,7 @@ import kotlin.math.abs
 import kotlin.math.exp
 import kotlin.math.floor
 import kotlin.math.ln
-import kotlin.math.log10
 import kotlin.math.pow
-import kotlin.math.roundToLong
 import kotlin.math.sqrt
 
 /**
@@ -870,22 +865,19 @@ private const val SIGNIFICANT_DIGITS: Int = SOLVED_HEIGHT_SIGNIFICANT_DIGITS
 
 private const val ABSOLUTE_FLOOR: Double = 1e-12
 
-private fun roundResult(value: Double): Double {
-    if (!value.isFinite()) return value
-    if (abs(value) < ABSOLUTE_FLOOR) return 0.0
-    val scale = 10.0.pow(SIGNIFICANT_DIGITS - 1 - floor(log10(abs(value))))
-    return (value * scale).roundToLong() / scale
-}
-
-private fun JsonElement.roundedForFluctuationResult(): JsonElement = when (this) {
-    is JsonPrimitive -> {
-        val value = if (isString) null else doubleOrNull
-        if (value == null) this else JsonPrimitive(roundResult(value))
-    }
-
-    is JsonArray -> JsonArray(map { it.roundedForFluctuationResult() })
-    is JsonObject -> JsonObject(mapValues { it.value.roundedForFluctuationResult() })
-}
+/**
+ * Rounds every `Double` in the tree, so nothing can be emitted unrounded by omission.
+ *
+ * **Delegated to `structure/`** by `T-214`, for `CH-0154`'s reason: this file's own private
+ * traversal had no `digitsByKey` parameter, so `T-1f` could not have carried the departure rule
+ * by any edit at its own emission site. Its six residue fields are `convergence[*]` diagnostics.
+ *
+ * `roundIntegralNumbers` preserves the one observable that differed — this study coerces an
+ * integral JSON number to a `Double` — so the delegation moves departure fields and nothing else.
+ */
+private fun JsonElement.roundedForFluctuationResult(): JsonElement = roundedForResult(
+    digits = SIGNIFICANT_DIGITS, floor = ABSOLUTE_FLOOR, roundIntegralNumbers = true
+)
 
 private fun report(result: FluctuationCorrectionResult, output: File) {
     println()

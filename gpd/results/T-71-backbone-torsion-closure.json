@@ -1991,28 +1991,28 @@
             "control": "closure grid steps",
             "level": 45.0,
             "value": 0.85389834,
-            "departureFromFinest": 0.358304356
+            "departureFromFinest": 0.36
         },
         {
             "quantity": "baseline worst covalent z",
             "control": "closure grid steps",
             "level": 90.0,
             "value": 0.495602906,
-            "departureFromFinest": 8.92253094E-6
+            "departureFromFinest": 8.9E-6
         },
         {
             "quantity": "baseline worst covalent z",
             "control": "closure grid steps",
             "level": 180.0,
             "value": 0.49559241,
-            "departureFromFinest": 1.57360969E-6
+            "departureFromFinest": 1.6E-6
         },
         {
             "quantity": "baseline worst covalent z",
             "control": "closure grid steps",
             "level": 360.0,
             "value": 0.495763966,
-            "departureFromFinest": 1.69982401E-4
+            "departureFromFinest": 1.7E-4
         },
         {
             "quantity": "baseline worst covalent z",
@@ -2026,28 +2026,28 @@
             "control": "closure grid steps",
             "level": 45.0,
             "value": 4.54651362,
-            "departureFromFinest": 0.00342432596
+            "departureFromFinest": 0.0034
         },
         {
             "quantity": "junction worst covalent z",
             "control": "closure grid steps",
             "level": 90.0,
             "value": 4.71560667,
-            "departureFromFinest": 0.165668718
+            "departureFromFinest": 0.17
         },
         {
             "quantity": "junction worst covalent z",
             "control": "closure grid steps",
             "level": 180.0,
             "value": 4.55315176,
-            "departureFromFinest": 0.00321381342
+            "departureFromFinest": 0.0032
         },
         {
             "quantity": "junction worst covalent z",
             "control": "closure grid steps",
             "level": 360.0,
             "value": 4.54073058,
-            "departureFromFinest": 0.00920737083
+            "departureFromFinest": 0.0092
         },
         {
             "quantity": "junction worst covalent z",
@@ -2069,121 +2069,121 @@
             "quantity": "C-0029 R2 worst link gap [nm]",
             "published": 0.6,
             "derived": 0.600047126,
-            "relativeDeparture": 7.85441398E-5
+            "relativeDeparture": 7.9E-5
         },
         {
             "quantity": "C-0042 aligned pair binding link [nm]",
             "published": 0.6969,
             "derived": 0.696876136,
-            "relativeDeparture": 3.42434028E-5
+            "relativeDeparture": 3.4E-5
         },
         {
             "quantity": "C-0052 trio binding link [nm]",
             "published": 0.679,
             "derived": 0.679390076,
-            "relativeDeparture": 5.74485587E-4
+            "relativeDeparture": 5.7E-4
         },
         {
             "quantity": "C-0029 stylised intrastrand step [nm]",
             "published": 0.6728,
             "derived": 0.672648743,
-            "relativeDeparture": 2.24817386E-4
+            "relativeDeparture": 2.2E-4
         },
         {
             "quantity": "Parkinson P–O3' bond [nm]",
             "published": 0.1607,
             "derived": 0.160223597,
-            "relativeDeparture": 0.00296454935
+            "relativeDeparture": 0.003
         },
         {
             "quantity": "Parkinson P–O5' bond [nm]",
             "published": 0.1593,
             "derived": 0.159545973,
-            "relativeDeparture": 0.00154408677
+            "relativeDeparture": 0.0015
         },
         {
             "quantity": "Parkinson C3'–O3'–P [deg]",
             "published": 119.7,
             "derived": 121.299301,
-            "relativeDeparture": 0.0133609094
+            "relativeDeparture": 0.013
         },
         {
             "quantity": "Parkinson O3'–P–O5' [deg]",
             "published": 104.0,
             "derived": 103.291883,
-            "relativeDeparture": 0.00680881849
+            "relativeDeparture": 0.0068
         },
         {
             "quantity": "Parkinson P–O5'–C5' [deg]",
             "published": 120.9,
             "derived": 120.121079,
-            "relativeDeparture": 0.00644269048
+            "relativeDeparture": 0.0064
         },
         {
             "quantity": "Svozil BI alpha [deg]",
             "published": -61.0,
             "derived": -59.5422127,
-            "relativeDeparture": 0.0238981525
+            "relativeDeparture": 0.024
         },
         {
             "quantity": "Svozil BI beta [deg]",
             "published": 179.3,
             "derived": 172.250458,
-            "relativeDeparture": 0.0393170245
+            "relativeDeparture": 0.039
         },
         {
             "quantity": "Svozil BI gamma [deg]",
             "published": 48.4,
             "derived": 48.6689507,
-            "relativeDeparture": 0.00555683224
+            "relativeDeparture": 0.0056
         },
         {
             "quantity": "Svozil BI delta [deg]",
             "published": 132.8,
             "derived": 131.275093,
-            "relativeDeparture": 0.0114827347
+            "relativeDeparture": 0.011
         },
         {
             "quantity": "Svozil BI epsilon [deg]",
             "published": -178.3,
             "derived": -173.00685,
-            "relativeDeparture": 0.0296867621
+            "relativeDeparture": 0.03
         },
         {
             "quantity": "Svozil BI zeta [deg]",
             "published": -96.8,
             "derived": -98.0129712,
-            "relativeDeparture": 0.012530694
+            "relativeDeparture": 0.013
         },
         {
             "quantity": "Svozil BI chi [deg]",
             "published": -109.7,
             "derived": -108.896516,
-            "relativeDeparture": 0.00732437832
+            "relativeDeparture": 0.0073
         },
         {
             "quantity": "Svozil AI delta (C3'-endo) [deg]",
             "published": 82.1,
             "derived": 85.6914226,
-            "relativeDeparture": 0.0437444895
+            "relativeDeparture": 0.044
         },
         {
             "quantity": "Bosco C3'-endo P···P [nm]",
             "published": 0.6,
             "derived": 0.607233587,
-            "relativeDeparture": 0.012055978
+            "relativeDeparture": 0.012
         },
         {
             "quantity": "Bosco C2'-endo P···P [nm]",
             "published": 0.7,
             "derived": 0.66448058,
-            "relativeDeparture": 0.050742028
+            "relativeDeparture": 0.051
         },
         {
             "quantity": "B-form rise [nm]",
             "published": 0.34,
             "derived": 0.349503696,
-            "relativeDeparture": 0.0279520463
+            "relativeDeparture": 0.028
         }
     ],
     "literature": [

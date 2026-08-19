@@ -1736,28 +1736,28 @@
             "quantity": "C-0030 favourable span at l = 8 nm [nm]",
             "published": 31.82,
             "derived": 31.8209241,
-            "relativeDeparture": 2.90408096E-5,
+            "relativeDeparture": 2.9E-5,
             "source": "C-0030 Deliverable 3"
         },
         {
             "quantity": "C-0030 favourable assembled tangent at 3 nm [pN/nm]",
             "published": 25.23,
             "derived": 25.2272684,
-            "relativeDeparture": 1.08269287E-4,
+            "relativeDeparture": 1.1E-4,
             "source": "C-0030 Deliverable 3"
         },
         {
             "quantity": "C-0030 adverse span at l = 8 nm [nm]",
             "published": 40.14,
             "derived": 40.1371755,
-            "relativeDeparture": 7.03653979E-5,
+            "relativeDeparture": 7.0E-5,
             "source": "C-0030 Deliverable 4"
         },
         {
             "quantity": "C-0030 adverse assembled tangent at 3 nm [pN/nm]",
             "published": 44.82,
             "derived": 44.8173102,
-            "relativeDeparture": 6.00143458E-5,
+            "relativeDeparture": 6.0E-5,
             "source": "C-0030 Deliverable 4"
         },
         {
@@ -1771,7 +1771,7 @@
             "quantity": "C-0030 standoff length that covers the desired stroke [nm]",
             "published": 12.69,
             "derived": 12.7,
-            "relativeDeparture": 7.88022065E-4,
+            "relativeDeparture": 7.9E-4,
             "source": "C-0030 Deliverable 4"
         },
         {

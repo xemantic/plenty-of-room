@@ -5677,13 +5677,13 @@
             "axis": "lattice peak dishing at the ceiling, nested mesh 1 c 2 c 4",
             "setting": "subdivisions = 1",
             "value": 1.18800059,
-            "departureFromFinest": 0.00170703129
+            "departureFromFinest": 0.0017
         },
         {
             "axis": "lattice peak dishing at the ceiling, nested mesh 1 c 2 c 4",
             "setting": "subdivisions = 2",
             "value": 1.18603777,
-            "departureFromFinest": 5.20023523E-5
+            "departureFromFinest": 5.2E-5
         },
         {
             "axis": "lattice peak dishing at the ceiling, nested mesh 1 c 2 c 4",
@@ -5695,19 +5695,19 @@
             "axis": "lattice peak dishing at the ceiling, crossover link penalty",
             "setting": "k_link = 1e+03",
             "value": 1.18606825,
-            "departureFromFinest": 2.85280565E-5
+            "departureFromFinest": 2.9E-5
         },
         {
             "axis": "lattice peak dishing at the ceiling, crossover link penalty",
             "setting": "k_link = 1e+04",
             "value": 1.18603777,
-            "departureFromFinest": 2.82814411E-6
+            "departureFromFinest": 2.8E-6
         },
         {
             "axis": "lattice peak dishing at the ceiling, crossover link penalty",
             "setting": "k_link = 1e+05",
             "value": 1.18603472,
-            "departureFromFinest": 2.57364045E-7
+            "departureFromFinest": 2.6E-7
         },
         {
             "axis": "lattice peak dishing at the ceiling, crossover link penalty",
@@ -5719,13 +5719,13 @@
             "axis": "plate peak dishing at the ceiling, Ritz basis degree",
             "setting": "degree = 8",
             "value": 1.36146927,
-            "departureFromFinest": 0.00135565954
+            "departureFromFinest": 0.0014
         },
         {
             "axis": "plate peak dishing at the ceiling, Ritz basis degree",
             "setting": "degree = 10",
             "value": 1.36373863,
-            "departureFromFinest": 3.08930568E-4
+            "departureFromFinest": 3.1E-4
         },
         {
             "axis": "plate peak dishing at the ceiling, Ritz basis degree",
@@ -5737,7 +5737,7 @@
             "axis": "mean crossovers in an anchor patch at the ceiling, sample grid",
             "setting": "15 stations",
             "value": 0.533333333,
-            "departureFromFinest": 0.142857143
+            "departureFromFinest": 0.14
         },
         {
             "axis": "mean crossovers in an anchor patch at the ceiling, sample grid",
@@ -5758,91 +5758,91 @@
             "quantity": "D_parallel = EI/d [pN nm]",
             "published": 85.5,
             "reproduced": 85.5018587,
-            "relativeDeparture": 2.1739603E-5
+            "relativeDeparture": 2.2E-5
         },
         {
             "source": "C-0009",
             "quantity": "D_perp = k_theta d/p [pN nm]",
             "published": 3.345,
             "reproduced": 3.34504758,
-            "relativeDeparture": 1.42235739E-5
+            "relativeDeparture": 1.4E-5
         },
         {
             "source": "C-0009",
             "quantity": "bending anisotropy D_par/D_perp",
             "published": 25.56,
             "reproduced": 25.5607302,
-            "relativeDeparture": 2.85691553E-5
+            "relativeDeparture": 2.9E-5
         },
         {
             "source": "C-0009",
             "quantity": "ell_par [nm], nominal foundation",
             "published": 9.07,
             "reproduced": 9.07153264,
-            "relativeDeparture": 1.68979E-4
+            "relativeDeparture": 1.7E-4
         },
         {
             "source": "C-0009",
             "quantity": "ell_perp [nm], nominal foundation",
             "published": 4.03,
             "reproduced": 4.03447802,
-            "relativeDeparture": 0.00111117022
+            "relativeDeparture": 0.0011
         },
         {
             "source": "C-0009",
             "quantity": "ell_par/p intact, nominal",
             "published": 0.83,
             "reproduced": 0.833780573,
-            "relativeDeparture": 0.00455490781
+            "relativeDeparture": 0.0046
         },
         {
             "source": "C-0009",
             "quantity": "ell_perp/d intact, nominal",
             "published": 1.5,
             "reproduced": 1.49980595,
-            "relativeDeparture": 1.29364067E-4
+            "relativeDeparture": 1.3E-4
         },
         {
             "source": "C-0006",
             "quantity": "ell_perp/p intact, nominal (the MISMATCHED one)",
             "published": 0.37,
             "reproduced": 0.370815994,
-            "relativeDeparture": 0.00220538951
+            "relativeDeparture": 0.0022
         },
         {
             "source": "C-0009",
             "quantity": "crossovers in an anchor patch, intact",
             "published": 3.9,
             "reproduced": 3.9285901,
-            "relativeDeparture": 0.00733079549
+            "relativeDeparture": 0.0073
         },
         {
             "source": "C-0009",
             "quantity": "ell_par/p at 0.25x the foundation",
             "published": 1.18,
             "reproduced": 1.1791438,
-            "relativeDeparture": 7.25597401E-4
+            "relativeDeparture": 7.3E-4
         },
         {
             "source": "C-0009",
             "quantity": "crossovers in a patch at 0.25x the foundation",
             "published": 7.9,
             "reproduced": 7.8571802,
-            "relativeDeparture": 0.00542022724
+            "relativeDeparture": 0.0054
         },
         {
             "source": "C-0009",
             "quantity": "ell_perp/d at 4x the foundation",
             "published": 1.06,
             "reproduced": 1.06052296,
-            "relativeDeparture": 4.93358931E-4
+            "relativeDeparture": 4.9E-4
         },
         {
             "source": "C-0009",
             "quantity": "crossovers in a patch at 4x the foundation",
             "published": 2.0,
             "reproduced": 1.96429505,
-            "relativeDeparture": 0.0178524744
+            "relativeDeparture": 0.018
         },
         {
             "source": "C-0054",
@@ -5863,35 +5863,35 @@
             "quantity": "dishing/stroke, 3 x 15, solved",
             "published": 0.218,
             "reproduced": 0.21821335,
-            "relativeDeparture": 9.78670403E-4
+            "relativeDeparture": 9.8E-4
         },
         {
             "source": "C-0047",
             "quantity": "dishing/stroke, 1 x 15, solved",
             "published": 0.695,
             "reproduced": 0.695201577,
-            "relativeDeparture": 2.90038499E-4
+            "relativeDeparture": 2.9E-4
         },
         {
             "source": "C-0022",
             "quantity": "dishing/stroke, free uncoupled tile",
             "published": 0.308,
             "reproduced": 0.307902368,
-            "relativeDeparture": 3.16987857E-4
+            "relativeDeparture": 3.2E-4
         },
         {
             "source": "C-0054",
             "quantity": "dishing/stroke, 3 x 15 at the ceiling",
             "published": 0.242,
             "reproduced": 0.241687915,
-            "relativeDeparture": 0.00128960703
+            "relativeDeparture": 0.0013
         },
         {
             "source": "C-0010",
             "quantity": "the plate's D_perp insensitivity to a factor of two",
             "published": 0.025,
             "reproduced": 0.0370455941,
-            "relativeDeparture": 0.481823762,
+            "relativeDeparture": 0.48,
             "strict": false
         }
     ],
