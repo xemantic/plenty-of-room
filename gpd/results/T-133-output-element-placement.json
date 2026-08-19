@@ -728,7 +728,7 @@
       "quantity": "levels the flexure array requires",
       "published": 7.0,
       "here": 6.0,
-      "departure": 0.142857143,
+      "departure": 0.14,
       "note": "SEVEN with the truss blocks in the same conflict graph (asserted as a gate-2 test through placeTrussArray) and SIX for the bare flexure array evaluated here — two different bodies, and the PLACED count, which is what the verdict rests on, is the same 12"
     },
     {
@@ -744,7 +744,7 @@
       "quantity": "the 34-path arm [nm]",
       "published": 8.16439,
       "here": 8.16439083,
-      "departure": 1.01248385E-7,
+      "departure": 1.0E-7,
       "note": "C-0039's exact elastica at one crossover and C-0034's A2"
     },
     {
@@ -752,7 +752,7 @@
       "quantity": "the root pitch minus the arm [nm]",
       "published": 2.71561,
       "here": 2.71560917,
-      "departure": 3.04399859E-7,
+      "departure": 3.0E-7,
       "note": "C-0066's bound 4, re-derived"
     },
     {
@@ -760,7 +760,7 @@
       "quantity": "the mandate [pN/nm]",
       "published": 33.3333333,
       "here": 33.3333333,
-      "departure": 1.00000008E-9,
+      "departure": 1.0E-9,
       "note": "100 pN over 3 nm"
     },
     {
@@ -768,7 +768,7 @@
       "quantity": "the per-path secant ceiling at 34 paths and 3 nm [pN/nm]",
       "published": 113.333333,
       "here": 113.333333,
-      "departure": 2.94117647E-9,
+      "departure": 2.9E-9,
       "note": "n a/s, which tightens as 1/s"
     },
     {
@@ -784,7 +784,7 @@
       "quantity": "the crossover hinge constant [pN nm/rad]",
       "published": 13.5294118,
       "here": 13.5294118,
-      "departure": 2.60869566E-9,
+      "departure": 2.6E-9,
       "note": "CITED, FITTED — Chen et al. 2014 via C-0009"
     },
     {

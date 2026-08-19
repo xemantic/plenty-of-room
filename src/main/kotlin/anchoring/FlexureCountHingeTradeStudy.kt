@@ -16,6 +16,7 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
@@ -590,7 +591,9 @@ fun main() {
     val output = File("gpd/results/T-99-flexure-count-hinge-trade.json")
     output.parentFile.mkdirs()
     output.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(result).roundedForResult(
+            digitsByKey = DEPARTURE_DIGITS_BY_KEY
+        )) + "\n"
     )
 
     // ---------------------------------------------------------------- console

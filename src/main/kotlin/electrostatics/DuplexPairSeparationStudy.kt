@@ -20,6 +20,7 @@ import com.xemantic.nano.plentyofroom.anchoring.DuplexSteric
 import com.xemantic.nano.plentyofroom.anchoring.armDirections
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.thermalEnergy
@@ -971,7 +972,7 @@ fun main() {
         json.encodeToString(
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
-                floor = 1e-12
+                digitsByKey = DEPARTURE_DIGITS_BY_KEY, floor = 1e-12
             ) as JsonObject)
         ) + "\n"
     )

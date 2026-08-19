@@ -1225,14 +1225,14 @@
             "source": "C-0029",
             "expected": 10.305607,
             "obtained": 10.305607,
-            "departure": 3.76913032E-9
+            "departure": 3.8E-9
         },
         {
             "name": "C-0029: E5g16 arm",
             "source": "C-0029",
             "expected": 12.2423721,
             "obtained": 12.2423721,
-            "departure": 1.43101479E-9
+            "departure": 1.4E-9
         },
         {
             "name": "C-0029: the cantilever hinge-arm ceiling",
@@ -1246,42 +1246,42 @@
             "source": "C-0034",
             "expected": 11.028,
             "obtained": 11.0284856,
-            "departure": 4.40356085E-5
+            "departure": 4.4E-5
         },
         {
             "name": "C-0034: E5a16 tangent at 3 nm",
             "source": "C-0034",
             "expected": 33.56,
             "obtained": 33.5649337,
-            "departure": 1.47011488E-4
+            "departure": 1.5E-4
         },
         {
             "name": "C-0034: E5a16 tangent at 10 nm",
             "source": "C-0034",
             "expected": 36.78,
             "obtained": 36.7795408,
-            "departure": 1.2485606E-5
+            "departure": 1.2E-5
         },
         {
             "name": "C-0034: the 8-crossover arm that fails P4",
             "source": "C-0034",
             "expected": 9.52,
             "obtained": 9.51738514,
-            "departure": 2.7467026E-4
+            "departure": 2.7E-4
         },
         {
             "name": "C-0034: E5a16 realised end-condition factor",
             "source": "C-0034",
             "expected": 7.356,
             "obtained": 7.35566418,
-            "departure": 4.56524173E-5
+            "departure": 4.6E-5
         },
         {
             "name": "literature: 32 bp is three turns of the square lattice",
             "source": "Rothemund 2006 / Douglas 2009",
             "expected": 3.0,
             "obtained": 2.99906279,
-            "departure": 3.12402374E-4
+            "departure": 3.1E-4
         },
         {
             "name": "literature: the per-interface pitch in nm",

@@ -160,6 +160,7 @@
             "worstOverStroke": 1.02592541,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 12.5742,
             "peakStiffnessRatio": 1.0,
             "perPathForceAtPeak": 6.66666667,
@@ -180,6 +181,7 @@
             "worstOverStroke": 0.946788973,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 23.7123,
             "peakStiffnessRatio": 1.0,
             "perPathForceAtPeak": 3.33333333,
@@ -200,6 +202,7 @@
             "worstOverStroke": 0.899044265,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 36.2795,
             "peakStiffnessRatio": 1.0,
             "perPathForceAtPeak": 2.22222222,
@@ -220,6 +223,7 @@
             "worstOverStroke": 0.857601638,
             "exceedance": 0.9999,
             "exceedanceStandardError": 9.99949999E-5,
+            "exceedanceOneSidedBound": null,
             "meanSurvivors": 46.5071,
             "peakStiffnessRatio": 1.0,
             "perPathForceAtPeak": 1.66666667,
@@ -240,6 +244,7 @@
             "worstOverStroke": 0.818762594,
             "exceedance": 0.9999,
             "exceedanceStandardError": 9.99949999E-5,
+            "exceedanceOneSidedBound": null,
             "meanSurvivors": 59.038,
             "peakStiffnessRatio": 1.0,
             "perPathForceAtPeak": 1.33333333,
@@ -260,6 +265,7 @@
             "worstOverStroke": 0.786370625,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 71.7101,
             "peakStiffnessRatio": 1.0,
             "perPathForceAtPeak": 1.11111111,
@@ -280,6 +286,7 @@
             "worstOverStroke": 0.984238946,
             "exceedance": 0.9981,
             "exceedanceStandardError": 4.35475602E-4,
+            "exceedanceOneSidedBound": null,
             "meanSurvivors": 26.63,
             "peakStiffnessRatio": 1.0,
             "perPathForceAtPeak": 2.94117647,
@@ -300,6 +307,7 @@
             "worstOverStroke": 0.802317541,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 23.2606,
             "peakStiffnessRatio": 1.0,
             "perPathForceAtPeak": 3.33333333,
@@ -320,6 +328,7 @@
             "worstOverStroke": 0.756887579,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 75.5851,
             "peakStiffnessRatio": 1.0,
             "perPathForceAtPeak": 1.11111111,
@@ -340,6 +349,7 @@
             "worstOverStroke": 0.88443512,
             "exceedance": 0.9841,
             "exceedanceStandardError": 0.00125088729,
+            "exceedanceOneSidedBound": null,
             "meanSurvivors": 28.5621,
             "peakStiffnessRatio": 1.0,
             "perPathForceAtPeak": 2.94117647,
@@ -360,6 +370,7 @@
             "worstOverStroke": 0.870849011,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 12.5742,
             "peakStiffnessRatio": 2.69230769,
             "perPathForceAtPeak": 17.9487179,
@@ -380,6 +391,7 @@
             "worstOverStroke": 0.792170656,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 23.7123,
             "peakStiffnessRatio": 2.41935484,
             "perPathForceAtPeak": 8.06451613,
@@ -400,6 +412,7 @@
             "worstOverStroke": 0.764736784,
             "exceedance": 0.9716,
             "exceedanceStandardError": 0.00166112733,
+            "exceedanceOneSidedBound": null,
             "meanSurvivors": 36.2795,
             "peakStiffnessRatio": 1.28205128,
             "perPathForceAtPeak": 2.84900285,
@@ -420,6 +433,7 @@
             "worstOverStroke": 0.644534252,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 46.5071,
             "peakStiffnessRatio": 1.49253731,
             "perPathForceAtPeak": 2.48756219,
@@ -440,6 +454,7 @@
             "worstOverStroke": 0.608215919,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 59.038,
             "peakStiffnessRatio": 1.60550459,
             "perPathForceAtPeak": 2.14067278,
@@ -460,6 +475,7 @@
             "worstOverStroke": 0.554981246,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 71.7101,
             "peakStiffnessRatio": 1.72131148,
             "perPathForceAtPeak": 1.91256831,
@@ -480,6 +496,7 @@
             "worstOverStroke": 0.785202656,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 26.63,
             "peakStiffnessRatio": 1.43373494,
             "perPathForceAtPeak": 4.21686747,
@@ -500,6 +517,7 @@
             "worstOverStroke": 0.76862688,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 23.2606,
             "peakStiffnessRatio": 1.47058824,
             "perPathForceAtPeak": 4.90196078,
@@ -520,6 +538,7 @@
             "worstOverStroke": 0.860668976,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 36.2795,
             "peakStiffnessRatio": 4.5,
             "perPathForceAtPeak": 10.0,
@@ -540,6 +559,7 @@
             "worstOverStroke": 0.776546072,
             "exceedance": 0.9765,
             "exceedanceStandardError": 0.00151485148,
+            "exceedanceOneSidedBound": null,
             "meanSurvivors": 36.2795,
             "peakStiffnessRatio": 1.48408252,
             "perPathForceAtPeak": 3.29796116,
@@ -560,6 +580,7 @@
             "worstOverStroke": 0.573933867,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 71.7101,
             "peakStiffnessRatio": 4.76563597,
             "perPathForceAtPeak": 5.29515108,
@@ -580,6 +601,7 @@
             "worstOverStroke": 0.727428321,
             "exceedance": 0.9964,
             "exceedanceStandardError": 5.98919026E-4,
+            "exceedanceOneSidedBound": null,
             "meanSurvivors": 71.7101,
             "peakStiffnessRatio": 6.84725607,
             "perPathForceAtPeak": 7.60806231,
@@ -600,6 +622,7 @@
             "worstOverStroke": 0.837491883,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 26.63,
             "peakStiffnessRatio": 3.4,
             "perPathForceAtPeak": 10.0,
@@ -620,6 +643,7 @@
             "worstOverStroke": 0.99070568,
             "exceedance": 0.9991,
             "exceedanceStandardError": 2.9986497E-4,
+            "exceedanceOneSidedBound": null,
             "meanSurvivors": 26.63,
             "peakStiffnessRatio": 1.27325409,
             "perPathForceAtPeak": 3.74486497,
@@ -867,7 +891,7 @@
                 0.641377583,
                 0.639129638
             ],
-            "departure": 0.00224794481,
+            "departure": 0.0022,
             "note": "nested seeded ensembles; the departure is the 5 000 to 10 000 step"
         },
         {
@@ -885,7 +909,7 @@
                 0.00912891273,
                 0.00917153564
             ],
-            "departure": 4.26229159E-5,
+            "departure": 4.3E-5,
             "note": "the rigorous bound is the quantity a negative verdict rests on, so its own sampling convergence is reported separately from the dishing's"
         },
         {
@@ -917,7 +941,7 @@
                 0.0418637128,
                 0.082757141
             ],
-            "departure": 0.082757141,
+            "departure": 0.083,
             "note": "a descent reports what it found, never a global optimum; this is how much the last sweep still moved, against the 1e-4 tolerance it would have exited on"
         },
         {
@@ -933,7 +957,7 @@
                 0.449584219,
                 0.462315255
             ],
-            "departure": 0.012731036,
+            "departure": 0.013,
             "note": "an IN-SAMPLE percentile optimum is not a result; this is the convergence of the training ensemble a search sees, graded on the independent one"
         }
     ],
@@ -943,7 +967,7 @@
             "quantity": "the uniform 3 x 15 coupling's dishing / stroke",
             "published": 0.2182,
             "reproduced": 0.21821335,
-            "departure": 6.11831158E-5,
+            "departure": 6.1E-5,
             "strict": true
         },
         {
@@ -951,7 +975,7 @@
             "quantity": "the rim x 5 two-level dishing / stroke",
             "published": 0.0753,
             "reproduced": 0.0753432869,
-            "departure": 5.74859406E-4,
+            "departure": 5.7E-4,
             "strict": true
         },
         {
@@ -959,7 +983,7 @@
             "quantity": "the 34 equal springs at the design state",
             "published": 0.0706,
             "reproduced": 0.0706145537,
-            "departure": 2.06142772E-4,
+            "departure": 2.1E-4,
             "strict": true
         },
         {
@@ -967,7 +991,7 @@
             "quantity": "the same 34 roots over the device's range",
             "published": 0.0789,
             "reproduced": 0.0788500163,
-            "departure": 6.33507287E-4,
+            "departure": 6.3E-4,
             "strict": true
         },
         {
@@ -975,7 +999,7 @@
             "quantity": "the single-removal cost on C-0063's 34 roots",
             "published": 0.501,
             "reproduced": 0.501011167,
-            "departure": 2.22896895E-5,
+            "departure": 2.2E-5,
             "strict": true
         },
         {
@@ -983,7 +1007,7 @@
             "quantity": "the single-removal cost on C-0058's two-level 45",
             "published": 0.306,
             "reproduced": 0.305979511,
-            "departure": 6.6957863E-5,
+            "departure": 6.7E-5,
             "strict": true
         },
         {
@@ -991,7 +1015,7 @@
             "quantity": "the MEASURED_DEPTH p90 of C-0063's 34 equal roots, as built",
             "published": 0.6391,
             "reproduced": 0.639129638,
-            "departure": 4.63748872E-5,
+            "departure": 4.6E-5,
             "strict": true
         },
         {
@@ -999,7 +1023,7 @@
             "quantity": "the MEASURED_DEPTH exceedance of the same cell",
             "published": 0.998,
             "reproduced": 0.9981,
-            "departure": 1.00200401E-4,
+            "departure": 1.0E-4,
             "strict": false
         },
         {
@@ -1007,7 +1031,7 @@
             "quantity": "the UNIFORM p90 of C-0063's 34 equal roots, as built",
             "published": 0.5346,
             "reproduced": 0.534646638,
-            "departure": 8.72391598E-5,
+            "departure": 8.7E-5,
             "strict": true
         },
         {
@@ -1015,7 +1039,7 @@
             "quantity": "the free-tile stroke [nm]",
             "published": 4.90731,
             "reproduced": 4.90731102,
-            "departure": 2.07085419E-7,
+            "departure": 2.1E-7,
             "strict": true
         },
         {
@@ -1023,7 +1047,7 @@
             "quantity": "the mandate as a sum [pN/nm]",
             "published": 33.3333,
             "reproduced": 33.3333333,
-            "departure": 1.000001E-6,
+            "departure": 1.0E-6,
             "strict": false
         },
         {
@@ -1031,7 +1055,7 @@
             "quantity": "the Winkler bending length along the helices [nm]",
             "published": 12.83,
             "reproduced": 12.8290845,
-            "departure": 7.13569503E-5,
+            "departure": 7.1E-5,
             "strict": false
         },
         {
@@ -1039,7 +1063,7 @@
             "quantity": "the Winkler bending length across the helices [nm]",
             "published": 5.71,
             "reproduced": 5.70561353,
-            "departure": 7.68208877E-4,
+            "departure": 7.7E-4,
             "strict": false
         },
         {
@@ -1063,7 +1087,7 @@
             "quantity": "the per-path stiffness ceiling at the acceptable stroke [pN/nm]",
             "published": 3.33333333,
             "reproduced": 3.33333333,
-            "departure": 1.00000008E-9,
+            "departure": 1.0E-9,
             "strict": true
         }
     ],

@@ -154,6 +154,21 @@ data class DropoutDishing(
     /** `√(p(1 − p)/n)` on that fraction — a probability without one is not a result. */
     val exceedanceStandardError: Double,
 
+    /**
+     * The exact one-sided Clopper-Pearson limit where [exceedance] is **saturated**, else `null`.
+     *
+     * `T-213`/`CH-0153`. At `p̂ = 1` or `p̂ = 0` the symmetric [exceedanceStandardError] is
+     * `√(p̂(1 − p̂)/n)` with a zero numerator, so it is **identically zero for every sample
+     * count** and cannot distinguish 1 250 draws from 20 000. [saturatedProportionBound] can:
+     * `p > (1 − c)^(1/n)`, whose large-`n` form is the rule of three.
+     *
+     * It lives on the **summary** rather than at six emission sites because that is the defect
+     * `C-0129` measured — its own repair was applied to one file, and six more carried the same
+     * degenerate statistic. `null` at an unsaturated proportion is deliberate: there the
+     * symmetric error is the right instrument and a one-sided bound is the wrong question.
+     */
+    val exceedanceOneSidedBound: Double?,
+
     /** The mean number of surviving paths. */
     val meanSurvivors: Double,
 
@@ -210,6 +225,9 @@ fun summariseDropoutDishing(
         worst = sample.max(),
         exceedance = exceedance,
         exceedanceStandardError = binomialStandardError(exceedance, sample.size),
+        exceedanceOneSidedBound =
+            if (exceedance == 0.0 || exceedance == 1.0)
+                saturatedProportionBound(exceedance, sample.size) else null,
         meanSurvivors = meanSurvivors,
         flatAtP90 = p90 < tolerance,
         flatAtMedian = median < tolerance

@@ -30,6 +30,7 @@ import com.xemantic.nano.plentyofroom.coupling.rimStiffenedWeights
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
@@ -1241,7 +1242,9 @@ fun main() {
     output.writeText(
         json.encodeToString(
             JsonObject.serializer(),
-            (json.encodeToJsonElement(result).roundedForResult() as JsonObject)
+            (json.encodeToJsonElement(result).roundedForResult(
+                digitsByKey = DEPARTURE_DIGITS_BY_KEY
+            ) as JsonObject)
         )
     )
 

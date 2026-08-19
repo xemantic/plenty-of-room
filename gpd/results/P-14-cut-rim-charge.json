@@ -1,0 +1,1506 @@
+{
+    "task": "P-14",
+    "leaf": "A7.4",
+    "title": "The charge presented by the cut rim of a DNA-origami sheet",
+    "verificationType": "logical (a charge ledger and a geometric partition, both closed form) + in-silico (C-0022's own 2-D nonlinear Poisson-Boltzmann edge solve, extended to a laterally shaped face charge) + literature (T-71's measured backbone)",
+    "acceptance": "P1 licence, P2 conservation ledger, P3 derived rim density, P4 the two rims distinguished, P5 the 1.845x bracket re-quoted, P6 the four-layer transfer",
+    "maturity": "TRL 1-3. Model-consistent and traceable. NOTHING HERE IS MEASURED. Within mean field: C-0005 puts the one-loop correction at 123-214 % of the leading term across this gap range, which is larger than every effect reported here.",
+    "units": {
+        "length": "nm",
+        "areal charge density": "e/nm^2",
+        "volumetric charge density": "e/nm^3",
+        "line charge": "e/nm",
+        "load": "pN/nm^2 (= 1 MPa)",
+        "line force": "pN/nm",
+        "potential": "V; reduced potentials are dimensionless, y = e psi / k_B T",
+        "depth, width ratios, charge ratios": "dimensionless"
+    },
+    "conventions": [
+        "x is lateral, x = 0 the tile centre-line and a symmetry plane, the rim at x = a = 20 nm; s = a - x is distance INWARD from the rim",
+        "z is normal to the electrode, z = 0 the electrode, the tile at z in [h, h+t]; zeta = z - h is height above the tile's bottom face",
+        "the tile is NEGATIVE and the electrode POSITIVE; every charge density is SIGNED",
+        "MgCl2 is 2:1, so I = 3c and kappa^2 = 24 pi l_B c; the saturated far-field amplitude is 12 - 6 sqrt(3) at a negative wall",
+        "rho is the tile's Manning-renormalised charge over its BOUNDING-BOX volume, rho = 2 sigma_face / t, so every smearing is a repartition of C-0008's charge",
+        "a smearing CONSERVES when the charge it applies to the boundary equals the tile's own"
+    ],
+    "sources": [
+        "gpd/results/T-3b-tile-edge-load-profile.json (C-0022's published readings)"
+    ],
+    "citedInputs": [
+        "C-0008's Manning-renormalised face charge density, -0.398665238 e/nm^2 — CITED",
+        "C-0005/C-0008's ion model, Bjerrum length and Stern capacitance — CITED",
+        "C-0012's located operating bias at 10 nm, 0.192 V — CITED FROM C-0012 via C-0017",
+        "C-0006's plate, its rigidities and its foundation sweep — CONSUMED READ-ONLY",
+        "T-71's measured B-form phosphate radius, 0.9086 nm on 13084 linkages — MEASURED HERE",
+        "the duplex steric radius 1.0 nm and the honeycomb pitch 2.6 nm — CITED via DnaOrigamiTile, and the §3 thickness/single-layer contradiction travels with them"
+    ],
+    "temperature": 300.0,
+    "medium": "aqueous MgCl2, 0.5 / 2 / 10 mM, 300 K",
+    "thermalEnergy": 4.141947,
+    "bjerrumLength": 0.714106611,
+    "saturation": [
+        {
+            "concentration": 0.5,
+            "label": "uncharged rim (C-0022's headline)",
+            "bareChargeDensity": 0.0,
+            "bareOverFace": 0.0,
+            "reducedSurfacePotential": 0.0,
+            "farFieldAmplitude": 0.0,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.0,
+            "effectiveChargeDensity": 0.0,
+            "effectiveOverFaceEffective": 0.0
+        },
+        {
+            "concentration": 0.5,
+            "label": "one eighth of the face density",
+            "bareChargeDensity": -0.0498331547,
+            "bareOverFace": 0.125,
+            "reducedSurfacePotential": -1.84051676,
+            "farFieldAmplitude": -1.21722395,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.757123603,
+            "effectiveChargeDensity": -0.0172711044,
+            "effectiveOverFaceEffective": 0.784544129
+        },
+        {
+            "concentration": 0.5,
+            "label": "one quarter of the face density",
+            "bareChargeDensity": -0.0996663095,
+            "bareOverFace": 0.25,
+            "reducedSurfacePotential": -2.50816489,
+            "farFieldAmplitude": -1.39560788,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.868079922,
+            "effectiveChargeDensity": -0.0198021814,
+            "effectiveOverFaceEffective": 0.899518921
+        },
+        {
+            "concentration": 0.5,
+            "label": "the GEOMETRIC density, sigma_face/2 (P-14)",
+            "bareChargeDensity": -0.199332619,
+            "bareOverFace": 0.5,
+            "reducedSurfacePotential": -3.19427716,
+            "farFieldAmplitude": -1.49740796,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.931400428,
+            "effectiveChargeDensity": -0.0212466154,
+            "effectiveOverFaceEffective": 0.965132687
+        },
+        {
+            "concentration": 0.5,
+            "label": "three quarters of the face density",
+            "bareChargeDensity": -0.298998928,
+            "bareOverFace": 0.75,
+            "reducedSurfacePotential": -3.59838833,
+            "farFieldAmplitude": -1.53323769,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.953686824,
+            "effectiveChargeDensity": -0.0217550009,
+            "effectiveOverFaceEffective": 0.988226223
+        },
+        {
+            "concentration": 0.5,
+            "label": "the face density (C-0022's falsifier 5)",
+            "bareChargeDensity": -0.398665238,
+            "bareOverFace": 1.0,
+            "reducedSurfacePotential": -3.88559049,
+            "farFieldAmplitude": -1.55150476,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.965049097,
+            "effectiveChargeDensity": -0.0220141911,
+            "effectiveOverFaceEffective": 1.0
+        },
+        {
+            "concentration": 2.0,
+            "label": "uncharged rim (C-0022's headline)",
+            "bareChargeDensity": 0.0,
+            "bareOverFace": 0.0,
+            "reducedSurfacePotential": 0.0,
+            "farFieldAmplitude": 0.0,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.0,
+            "effectiveChargeDensity": 0.0,
+            "effectiveOverFaceEffective": 0.0
+        },
+        {
+            "concentration": 2.0,
+            "label": "one eighth of the face density",
+            "bareChargeDensity": -0.0498331547,
+            "bareOverFace": 0.125,
+            "reducedSurfacePotential": -1.2283243,
+            "farFieldAmplitude": -0.948485318,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.589965899,
+            "effectiveChargeDensity": -0.0269159819,
+            "effectiveOverFaceEffective": 0.633418111
+        },
+        {
+            "concentration": 2.0,
+            "label": "one quarter of the face density",
+            "bareChargeDensity": -0.0996663095,
+            "bareOverFace": 0.25,
+            "reducedSurfacePotential": -1.84051676,
+            "farFieldAmplitude": -1.21722395,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.757123603,
+            "effectiveChargeDensity": -0.0345422087,
+            "effectiveOverFaceEffective": 0.812887326
+        },
+        {
+            "concentration": 2.0,
+            "label": "the GEOMETRIC density, sigma_face/2 (P-14)",
+            "bareChargeDensity": -0.199332619,
+            "bareOverFace": 0.5,
+            "reducedSurfacePotential": -2.50816489,
+            "farFieldAmplitude": -1.39560788,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.868079922,
+            "effectiveChargeDensity": -0.0396043628,
+            "effectiveOverFaceEffective": 0.932015807
+        },
+        {
+            "concentration": 2.0,
+            "label": "three quarters of the face density",
+            "bareChargeDensity": -0.298998928,
+            "bareOverFace": 0.75,
+            "reducedSurfacePotential": -2.90845829,
+            "farFieldAmplitude": -1.46252429,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.909702495,
+            "effectiveChargeDensity": -0.0415033071,
+            "effectiveOverFaceEffective": 0.976703969
+        },
+        {
+            "concentration": 2.0,
+            "label": "the face density (C-0022's falsifier 5)",
+            "bareChargeDensity": -0.398665238,
+            "bareOverFace": 1.0,
+            "reducedSurfacePotential": -3.19427716,
+            "farFieldAmplitude": -1.49740796,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.931400428,
+            "effectiveChargeDensity": -0.0424932307,
+            "effectiveOverFaceEffective": 1.0
+        },
+        {
+            "concentration": 10.0,
+            "label": "uncharged rim (C-0022's headline)",
+            "bareChargeDensity": 0.0,
+            "bareOverFace": 0.0,
+            "reducedSurfacePotential": 0.0,
+            "farFieldAmplitude": 0.0,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.0,
+            "effectiveChargeDensity": 0.0,
+            "effectiveOverFaceEffective": 0.0
+        },
+        {
+            "concentration": 10.0,
+            "label": "one eighth of the face density",
+            "bareChargeDensity": -0.0498331547,
+            "bareOverFace": 0.125,
+            "reducedSurfacePotential": -0.671174834,
+            "farFieldAmplitude": -0.589717868,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.366809508,
+            "effectiveChargeDensity": -0.0374204413,
+            "effectiveOverFaceEffective": 0.42956616
+        },
+        {
+            "concentration": 10.0,
+            "label": "one quarter of the face density",
+            "bareChargeDensity": -0.0996663095,
+            "bareOverFace": 0.25,
+            "reducedSurfacePotential": -1.13918793,
+            "farFieldAmplitude": -0.898912242,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.559131026,
+            "effectiveChargeDensity": -0.0570403147,
+            "effectiveOverFaceEffective": 0.654791555
+        },
+        {
+            "concentration": 10.0,
+            "label": "the GEOMETRIC density, sigma_face/2 (P-14)",
+            "bareChargeDensity": -0.199332619,
+            "bareOverFace": 0.5,
+            "reducedSurfacePotential": -1.73678565,
+            "farFieldAmplitude": -1.17978362,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.733835401,
+            "effectiveChargeDensity": -0.0748629573,
+            "effectiveOverFaceEffective": 0.859385726
+        },
+        {
+            "concentration": 10.0,
+            "label": "three quarters of the face density",
+            "bareChargeDensity": -0.298998928,
+            "bareOverFace": 0.75,
+            "reducedSurfacePotential": -2.11971729,
+            "farFieldAmplitude": -1.30396147,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.811075076,
+            "effectiveChargeDensity": -0.0827426406,
+            "effectiveOverFaceEffective": 0.949840171
+        },
+        {
+            "concentration": 10.0,
+            "label": "the face density (C-0022's falsifier 5)",
+            "bareChargeDensity": -0.398665238,
+            "bareOverFace": 1.0,
+            "reducedSurfacePotential": -2.39886092,
+            "farFieldAmplitude": -1.37282199,
+            "saturatedAmplitude": -1.60769515,
+            "fractionOfSaturation": 0.8539069,
+            "effectiveChargeDensity": -0.0871121722,
+            "effectiveOverFaceEffective": 1.0
+        }
+    ],
+    "ledger": [
+        {
+            "label": "C-0022 headline: uniform face, UNCHARGED rim",
+            "faceTaperLength": 0.0,
+            "rimChargeDensity": 0.0,
+            "rimOverFace": 0.0,
+            "boundaryChargeRatioTwoDimensional": 1.0,
+            "boundaryChargeRatioThreeDimensional": 1.0,
+            "conserving": true,
+            "provenance": "the family C-0022 swept: the face untouched, the rim set by hand"
+        },
+        {
+            "label": "C-0022 falsifier 5: uniform face, rim at the FACE density",
+            "faceTaperLength": 0.0,
+            "rimChargeDensity": -0.398665238,
+            "rimOverFace": 1.0,
+            "boundaryChargeRatioTwoDimensional": 1.25,
+            "boundaryChargeRatioThreeDimensional": 1.5,
+            "conserving": false,
+            "provenance": "the family C-0022 swept: the face untouched, the rim set by hand"
+        },
+        {
+            "label": "uniform face, rim at the geometric density (no face taper)",
+            "faceTaperLength": 0.0,
+            "rimChargeDensity": -0.199332619,
+            "rimOverFace": 0.5,
+            "boundaryChargeRatioTwoDimensional": 1.125,
+            "boundaryChargeRatioThreeDimensional": 1.25,
+            "conserving": false,
+            "provenance": "the family C-0022 swept: the face untouched, the rim set by hand"
+        },
+        {
+            "label": "conserving family, face taper 0.00 nm, uniform rim",
+            "faceTaperLength": 0.0,
+            "rimChargeDensity": 0.0,
+            "rimOverFace": 0.0,
+            "boundaryChargeRatioTwoDimensional": 1.0,
+            "boundaryChargeRatioThreeDimensional": 1.0,
+            "conserving": true,
+            "provenance": "P-14: face deficit rho t l / 2 equals rim gain t rho l / 2, identically"
+        },
+        {
+            "label": "conserving family, face taper 2.50 nm, uniform rim",
+            "faceTaperLength": 2.5,
+            "rimChargeDensity": -0.0996663095,
+            "rimOverFace": 0.25,
+            "boundaryChargeRatioTwoDimensional": 1.0,
+            "boundaryChargeRatioThreeDimensional": 1.0,
+            "conserving": true,
+            "provenance": "P-14: face deficit rho t l / 2 equals rim gain t rho l / 2, identically"
+        },
+        {
+            "label": "conserving family, face taper 5.00 nm, uniform rim",
+            "faceTaperLength": 5.0,
+            "rimChargeDensity": -0.199332619,
+            "rimOverFace": 0.5,
+            "boundaryChargeRatioTwoDimensional": 1.0,
+            "boundaryChargeRatioThreeDimensional": 1.0,
+            "conserving": true,
+            "provenance": "P-14: face deficit rho t l / 2 equals rim gain t rho l / 2, identically"
+        },
+        {
+            "label": "conserving family, face taper 7.50 nm, uniform rim",
+            "faceTaperLength": 7.5,
+            "rimChargeDensity": -0.298998928,
+            "rimOverFace": 0.75,
+            "boundaryChargeRatioTwoDimensional": 1.0,
+            "boundaryChargeRatioThreeDimensional": 1.0,
+            "conserving": true,
+            "provenance": "P-14: face deficit rho t l / 2 equals rim gain t rho l / 2, identically"
+        },
+        {
+            "label": "conserving family, face taper 10.00 nm, uniform rim",
+            "faceTaperLength": 10.0,
+            "rimChargeDensity": -0.398665238,
+            "rimOverFace": 1.0,
+            "boundaryChargeRatioTwoDimensional": 1.0,
+            "boundaryChargeRatioThreeDimensional": 1.0,
+            "conserving": true,
+            "provenance": "P-14: face deficit rho t l / 2 equals rim gain t rho l / 2, identically"
+        },
+        {
+            "label": "MEDIAL (nearest-surface) partition — RECOMMENDED",
+            "faceTaperLength": 5.0,
+            "rimChargeDensity": -0.199332619,
+            "rimOverFace": 0.5,
+            "boundaryChargeRatioTwoDimensional": 1.0,
+            "boundaryChargeRatioThreeDimensional": 1.0,
+            "conserving": true,
+            "provenance": "P-14: every element of charge assigned to the boundary element it is nearest"
+        }
+    ],
+    "nearField": [
+        {
+            "concentration": 0.5,
+            "debyeLength": 7.85375705,
+            "screeningDepth": 7.85375705,
+            "screeningLimitedRimDensity": -0.626203985,
+            "overFaceDensity": 1.57075141,
+            "overMedialDensity": 3.14150282
+        },
+        {
+            "concentration": 2.0,
+            "debyeLength": 3.92687853,
+            "screeningDepth": 3.92687853,
+            "screeningLimitedRimDensity": -0.313101992,
+            "overFaceDensity": 0.785375705,
+            "overMedialDensity": 1.57075141
+        },
+        {
+            "concentration": 10.0,
+            "debyeLength": 1.75615346,
+            "screeningDepth": 1.75615346,
+            "screeningLimitedRimDensity": -0.140023468,
+            "overFaceDensity": 0.351230693,
+            "overMedialDensity": 0.702461386
+        }
+    ],
+    "census": {
+        "duplexEndsPerRimArea": 0.113875793,
+        "endFaceCoverage": 0.357751354,
+        "endRimFirstLayerCharge": 0.227751585,
+        "endRimNearestChargeDepth": 0.0,
+        "sidewallRimNearestChargeDepth": 0.0913621415,
+        "chargeDepthDifference": 0.0913621415
+    },
+    "censusNotes": {
+        "the_two_rims_are_different_objects_and_the_same_density": "A sheet's rim ACROSS the helices is a lattice of duplex END faces — 0.1139 of them per nm^2, covering 35.8 % of the plane — and its rim ALONG the helices is the outermost duplexes' SIDEWALLS. They are not the same object. They are backed by the same volumetric charge, so what could distinguish them is a DEPTH, not a density: the end rim's terminal phosphate lies IN the plane (0.0000 nm) and the sidewall's nearest phosphate 0.0914 nm inside it, at T-71's MEASURED backbone radius. The difference is 0.0914 nm — sub-Debye at every buffer here, and inside the 1.00 nm standoff C-0022 already discards as mesh-divergent. ONE areal density serves both rims, and the round 1.0 nm phosphate radius would have put the difference at exactly zero and hidden the question.",
+        "neither_rim_is_actually_cut": "Neither rim of a Rothemund raster is CUT in the sense of a severed backbone. The rim across the helices is where the scaffold TURNS — the row-end crossover C-0086 places — so its duplex ends are bridged, not broken; the rim along the helices is simply the last duplex, whose backbone is continuous. The phrase 'cut rim' names a plan-view boundary, and there is no missing phosphate behind it: the charge runs to the boundary at full lattice density on both faces. That is what excludes an UNCHARGED rim as a statement about the object, leaving it a statement about the smearing."
+    },
+    "transfer": [
+        {
+            "label": "Gen-1 as C-0022 solves it, 40 x 40 x 10 nm",
+            "faceTaperLength": 5.0,
+            "rimChargeDensity": -2.5,
+            "rimOverFace": 0.5,
+            "boundaryChargeRatioTwoDimensional": 1.0,
+            "boundaryChargeRatioThreeDimensional": 1.0,
+            "conserving": true,
+            "provenance": "sigma_rim/sigma_face = 1/2 at every t <= 2a, at rho = -1 e/nm^3 by choice"
+        },
+        {
+            "label": "four-layer honeycomb, C-0109's corrected thickness 8.589 nm",
+            "faceTaperLength": 4.2945,
+            "rimChargeDensity": -2.14725,
+            "rimOverFace": 0.5,
+            "boundaryChargeRatioTwoDimensional": 1.0,
+            "boundaryChargeRatioThreeDimensional": 1.0,
+            "conserving": true,
+            "provenance": "sigma_rim/sigma_face = 1/2 at every t <= 2a, at rho = -1 e/nm^3 by choice"
+        },
+        {
+            "label": "four-layer honeycomb, C-0006's layerSpacing reading 9.608 nm",
+            "faceTaperLength": 4.804,
+            "rimChargeDensity": -2.402,
+            "rimOverFace": 0.5,
+            "boundaryChargeRatioTwoDimensional": 1.0,
+            "boundaryChargeRatioThreeDimensional": 1.0,
+            "conserving": true,
+            "provenance": "sigma_rim/sigma_face = 1/2 at every t <= 2a, at rho = -1 e/nm^3 by choice"
+        },
+        {
+            "label": "single-layer Rothemund sheet, one duplex thick",
+            "faceTaperLength": 1.0,
+            "rimChargeDensity": -0.5,
+            "rimOverFace": 0.5,
+            "boundaryChargeRatioTwoDimensional": 1.0,
+            "boundaryChargeRatioThreeDimensional": 1.0,
+            "conserving": true,
+            "provenance": "sigma_rim/sigma_face = 1/2 at every t <= 2a, at rho = -1 e/nm^3 by choice"
+        }
+    ],
+    "solves": [
+        {
+            "label": "LICENCE: C-0022's uncharged rim",
+            "concentration": 2.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "refinement": 2,
+            "faceTaperLength": 0.0,
+            "rimChargeDensity": 0.0,
+            "conserving": true,
+            "centrelineLoad": 0.0390455345,
+            "oneDimensionalLoad": 0.0390182736,
+            "centrelineOverOneDimensional": 1.00069867,
+            "taperDepth": -0.290579117,
+            "taperWidth": 9.04168572,
+            "fitWidthOverHalfWidth": 0.452084286,
+            "deficitSignChanges": 1,
+            "rimLineForce": 0.0,
+            "minimumMarginForceGain": 0.147835901,
+            "additiveForceGain": 0.165495953,
+            "equivalentCollar": 1.65495953,
+            "appliedTileChargeOverOwn": 1.0,
+            "chargeBalance": 0.0035,
+            "centrelineRouteSpread": 7.5E-5,
+            "numericallyResolved": true
+        },
+        {
+            "label": "LICENCE: C-0022's falsifier 5, rim at the face density",
+            "concentration": 2.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "refinement": 2,
+            "faceTaperLength": 0.0,
+            "rimChargeDensity": -0.398665238,
+            "conserving": false,
+            "centrelineLoad": 0.0390448606,
+            "oneDimensionalLoad": 0.0390182736,
+            "centrelineOverOneDimensional": 1.0006814,
+            "taperDepth": -0.157533781,
+            "taperWidth": 9.56846937,
+            "fitWidthOverHalfWidth": 0.478423469,
+            "deficitSignChanges": 1,
+            "rimLineForce": -0.040639907,
+            "minimumMarginForceGain": 0.280575636,
+            "additiveForceGain": 0.291297923,
+            "equivalentCollar": 2.91297923,
+            "appliedTileChargeOverOwn": 1.25,
+            "chargeBalance": 0.003,
+            "centrelineRouteSpread": 7.0E-5,
+            "numericallyResolved": true
+        },
+        {
+            "label": "conserving family, face taper 2.50 nm, uniform rim",
+            "concentration": 2.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "refinement": 2,
+            "faceTaperLength": 2.5,
+            "rimChargeDensity": -0.0996663095,
+            "conserving": true,
+            "centrelineLoad": 0.0390460717,
+            "oneDimensionalLoad": 0.0390182736,
+            "centrelineOverOneDimensional": 1.00071244,
+            "taperDepth": -0.0864133941,
+            "taperWidth": 14.754455,
+            "fitWidthOverHalfWidth": 0.737722749,
+            "deficitSignChanges": 3,
+            "rimLineForce": -0.0391123365,
+            "minimumMarginForceGain": 0.163284215,
+            "additiveForceGain": 0.177269012,
+            "equivalentCollar": 1.77269012,
+            "appliedTileChargeOverOwn": 1.00000435,
+            "chargeBalance": 0.0035,
+            "centrelineRouteSpread": 7.9E-5,
+            "numericallyResolved": true
+        },
+        {
+            "label": "conserving family, face taper 5.00 nm, uniform rim",
+            "concentration": 2.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "refinement": 2,
+            "faceTaperLength": 5.0,
+            "rimChargeDensity": -0.199332619,
+            "conserving": true,
+            "centrelineLoad": 0.0390472462,
+            "oneDimensionalLoad": 0.0390182736,
+            "centrelineOverOneDimensional": 1.00074254,
+            "taperDepth": -0.0137802332,
+            "taperWidth": 31.7337845,
+            "fitWidthOverHalfWidth": 1.58668923,
+            "deficitSignChanges": 3,
+            "rimLineForce": -0.0745234716,
+            "minimumMarginForceGain": 0.155758154,
+            "additiveForceGain": 0.166074575,
+            "equivalentCollar": 1.66074575,
+            "appliedTileChargeOverOwn": 1.0,
+            "chargeBalance": 0.0035,
+            "centrelineRouteSpread": 8.7E-5,
+            "numericallyResolved": true
+        },
+        {
+            "label": "conserving family, face taper 7.50 nm, uniform rim",
+            "concentration": 2.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "refinement": 2,
+            "faceTaperLength": 7.5,
+            "rimChargeDensity": -0.298998928,
+            "conserving": true,
+            "centrelineLoad": 0.0390497457,
+            "oneDimensionalLoad": 0.0390182736,
+            "centrelineOverOneDimensional": 1.0008066,
+            "taperDepth": -0.0375616179,
+            "taperWidth": -12.9665386,
+            "fitWidthOverHalfWidth": -0.648326928,
+            "deficitSignChanges": 3,
+            "rimLineForce": -0.105734187,
+            "minimumMarginForceGain": 0.138917282,
+            "additiveForceGain": 0.143612126,
+            "equivalentCollar": 1.43612126,
+            "appliedTileChargeOverOwn": 1.00000652,
+            "chargeBalance": 0.0035,
+            "centrelineRouteSpread": 1.1E-4,
+            "numericallyResolved": true
+        },
+        {
+            "label": "conserving family, face taper 10.00 nm, uniform rim",
+            "concentration": 2.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "refinement": 2,
+            "faceTaperLength": 10.0,
+            "rimChargeDensity": -0.398665238,
+            "conserving": true,
+            "centrelineLoad": 0.0390549956,
+            "oneDimensionalLoad": 0.0390182736,
+            "centrelineOverOneDimensional": 1.00094115,
+            "taperDepth": 0.470631418,
+            "taperWidth": 2.99420313,
+            "fitWidthOverHalfWidth": 0.149710157,
+            "deficitSignChanges": 3,
+            "rimLineForce": -0.133965995,
+            "minimumMarginForceGain": 0.118407888,
+            "additiveForceGain": 0.115271193,
+            "equivalentCollar": 1.15271193,
+            "appliedTileChargeOverOwn": 1.00002434,
+            "chargeBalance": 0.0035,
+            "centrelineRouteSpread": 1.5E-4,
+            "numericallyResolved": true
+        },
+        {
+            "label": "MEDIAL partition — RECOMMENDED",
+            "concentration": 2.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "refinement": 2,
+            "faceTaperLength": 5.0,
+            "rimChargeDensity": -0.199332619,
+            "conserving": true,
+            "centrelineLoad": 0.0390476975,
+            "oneDimensionalLoad": 0.0390182736,
+            "centrelineOverOneDimensional": 1.00075411,
+            "taperDepth": -0.0220063013,
+            "taperWidth": 28.5908513,
+            "fitWidthOverHalfWidth": 1.42954257,
+            "deficitSignChanges": 3,
+            "rimLineForce": -0.0490584713,
+            "minimumMarginForceGain": 0.108889265,
+            "additiveForceGain": 0.1222623,
+            "equivalentCollar": 1.222623,
+            "appliedTileChargeOverOwn": 1.0,
+            "chargeBalance": 0.0035,
+            "centrelineRouteSpread": 9.0E-5,
+            "numericallyResolved": true
+        },
+        {
+            "label": "non-conserving control: uniform face, rim at the geometric density",
+            "concentration": 2.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "refinement": 2,
+            "faceTaperLength": 0.0,
+            "rimChargeDensity": -0.199332619,
+            "conserving": false,
+            "centrelineLoad": 0.0390449892,
+            "oneDimensionalLoad": 0.0390182736,
+            "centrelineOverOneDimensional": 1.0006847,
+            "taperDepth": -0.180264234,
+            "taperWidth": 9.45906928,
+            "fitWidthOverHalfWidth": 0.472953464,
+            "deficitSignChanges": 1,
+            "rimLineForce": -0.0294313765,
+            "minimumMarginForceGain": 0.258655051,
+            "additiveForceGain": 0.270645492,
+            "equivalentCollar": 2.70645492,
+            "appliedTileChargeOverOwn": 1.125,
+            "chargeBalance": 0.0032,
+            "centrelineRouteSpread": 7.1E-5,
+            "numericallyResolved": true
+        },
+        {
+            "label": "HEADLINE refinement, uncharged rim",
+            "concentration": 2.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "refinement": 3,
+            "faceTaperLength": 0.0,
+            "rimChargeDensity": 0.0,
+            "conserving": true,
+            "centrelineLoad": 0.0390315779,
+            "oneDimensionalLoad": 0.0390182736,
+            "centrelineOverOneDimensional": 1.00034098,
+            "taperDepth": -0.302887367,
+            "taperWidth": 8.93928311,
+            "fitWidthOverHalfWidth": 0.446964156,
+            "deficitSignChanges": 1,
+            "rimLineForce": 0.0,
+            "minimumMarginForceGain": 0.147080774,
+            "additiveForceGain": 0.16507426,
+            "equivalentCollar": 1.6507426,
+            "appliedTileChargeOverOwn": 1.0,
+            "chargeBalance": 0.0023,
+            "centrelineRouteSpread": 2.5E-5,
+            "numericallyResolved": true
+        },
+        {
+            "label": "HEADLINE refinement, MEDIAL partition",
+            "concentration": 2.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "refinement": 3,
+            "faceTaperLength": 5.0,
+            "rimChargeDensity": -0.199332619,
+            "conserving": true,
+            "centrelineLoad": 0.0390339292,
+            "oneDimensionalLoad": 0.0390182736,
+            "centrelineOverOneDimensional": 1.00040124,
+            "taperDepth": -0.0186220605,
+            "taperWidth": 30.7588472,
+            "fitWidthOverHalfWidth": 1.53794236,
+            "deficitSignChanges": 3,
+            "rimLineForce": -0.04845015,
+            "minimumMarginForceGain": 0.108628068,
+            "additiveForceGain": 0.121725815,
+            "equivalentCollar": 1.21725815,
+            "appliedTileChargeOverOwn": 1.00000771,
+            "chargeBalance": 0.0023,
+            "centrelineRouteSpread": 3.6E-5,
+            "numericallyResolved": true
+        },
+        {
+            "label": "0.5 mM, uncharged rim",
+            "concentration": 0.5,
+            "gapHeight": 10.0,
+            "appliedBias": 0.134,
+            "refinement": 2,
+            "faceTaperLength": 0.0,
+            "rimChargeDensity": 0.0,
+            "conserving": true,
+            "centrelineLoad": 0.0627722457,
+            "oneDimensionalLoad": 0.0628580758,
+            "centrelineOverOneDimensional": 0.998634541,
+            "taperDepth": -0.493321634,
+            "taperWidth": 9.26073682,
+            "fitWidthOverHalfWidth": 0.463036841,
+            "deficitSignChanges": 1,
+            "rimLineForce": 0.0,
+            "minimumMarginForceGain": 0.193017363,
+            "additiveForceGain": 0.224469489,
+            "equivalentCollar": 2.24469489,
+            "appliedTileChargeOverOwn": 1.0,
+            "chargeBalance": 0.0015,
+            "centrelineRouteSpread": 8.8E-5,
+            "numericallyResolved": true
+        },
+        {
+            "label": "0.5 mM, MEDIAL partition",
+            "concentration": 0.5,
+            "gapHeight": 10.0,
+            "appliedBias": 0.134,
+            "refinement": 2,
+            "faceTaperLength": 5.0,
+            "rimChargeDensity": -0.199332619,
+            "conserving": true,
+            "centrelineLoad": 0.0627776299,
+            "oneDimensionalLoad": 0.0628580758,
+            "centrelineOverOneDimensional": 0.998720199,
+            "taperDepth": -0.0809528527,
+            "taperWidth": 21.7007295,
+            "fitWidthOverHalfWidth": 1.08503648,
+            "deficitSignChanges": 2,
+            "rimLineForce": -0.114861648,
+            "minimumMarginForceGain": 0.203487306,
+            "additiveForceGain": 0.231827941,
+            "equivalentCollar": 2.31827941,
+            "appliedTileChargeOverOwn": 1.0,
+            "chargeBalance": 0.0015,
+            "centrelineRouteSpread": 1.3E-4,
+            "numericallyResolved": true
+        },
+        {
+            "label": "10.0 mM, uncharged rim",
+            "concentration": 10.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "refinement": 2,
+            "faceTaperLength": 0.0,
+            "rimChargeDensity": 0.0,
+            "conserving": true,
+            "centrelineLoad": 0.00402452344,
+            "oneDimensionalLoad": 0.00401208129,
+            "centrelineOverOneDimensional": 1.00310117,
+            "taperDepth": 0.369456071,
+            "taperWidth": 3.30715062,
+            "fitWidthOverHalfWidth": 0.165357531,
+            "deficitSignChanges": 1,
+            "rimLineForce": 0.0,
+            "minimumMarginForceGain": 0.0930506443,
+            "additiveForceGain": 0.0900466471,
+            "equivalentCollar": 0.900466471,
+            "appliedTileChargeOverOwn": 1.0,
+            "chargeBalance": 0.0044,
+            "centrelineRouteSpread": 1.4E-4,
+            "numericallyResolved": true
+        },
+        {
+            "label": "10.0 mM, MEDIAL partition",
+            "concentration": 10.0,
+            "gapHeight": 10.0,
+            "appliedBias": 0.192,
+            "refinement": 2,
+            "faceTaperLength": 5.0,
+            "rimChargeDensity": -0.199332619,
+            "conserving": true,
+            "centrelineLoad": 0.00402452912,
+            "oneDimensionalLoad": 0.00401208129,
+            "centrelineOverOneDimensional": 1.00310259,
+            "taperDepth": 0.272902699,
+            "taperWidth": 16.1566601,
+            "fitWidthOverHalfWidth": 0.807833007,
+            "deficitSignChanges": 2,
+            "rimLineForce": -0.00205181888,
+            "minimumMarginForceGain": 0.0290165764,
+            "additiveForceGain": -0.0239424231,
+            "equivalentCollar": -0.239424231,
+            "appliedTileChargeOverOwn": 1.0,
+            "chargeBalance": 0.0044,
+            "centrelineRouteSpread": 1.4E-4,
+            "numericallyResolved": true
+        }
+    ],
+    "profiles": [
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 0.0455309787,
+            "downwardLoad": -1.90072815,
+            "loadOverInterior": -48.6797831
+        },
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 0.207389679,
+            "downwardLoad": -0.268221694,
+            "loadOverInterior": -6.86945888
+        },
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 0.488307453,
+            "downwardLoad": -3.35501313E-4,
+            "loadOverInterior": -0.00859256552
+        },
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 0.759889049,
+            "downwardLoad": 0.0630405437,
+            "loadOverInterior": 1.61453914
+        },
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 0.991308545,
+            "downwardLoad": 0.0727631415,
+            "loadOverInterior": 1.86354579
+        },
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 1.52219534,
+            "downwardLoad": 0.0648104935,
+            "loadOverInterior": 1.65986954
+        },
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 2.02549566,
+            "downwardLoad": 0.0561589381,
+            "loadOverInterior": 1.43829349
+        },
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 2.95548857,
+            "downwardLoad": 0.0476703591,
+            "loadOverInterior": 1.22089145
+        },
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 4.014092,
+            "downwardLoad": 0.0435064442,
+            "loadOverInterior": 1.11424891
+        },
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 5.11938209,
+            "downwardLoad": 0.0414656138,
+            "loadOverInterior": 1.06198095
+        },
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 5.89245021,
+            "downwardLoad": 0.0406645887,
+            "loadOverInterior": 1.0414658
+        },
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 8.04760916,
+            "downwardLoad": 0.0396020139,
+            "loadOverInterior": 1.01425206
+        },
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 9.90133374,
+            "downwardLoad": 0.0392719653,
+            "loadOverInterior": 1.00579915
+        },
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 12.0106861,
+            "downwardLoad": 0.0391254707,
+            "loadOverInterior": 1.00204726
+        },
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 14.8371879,
+            "downwardLoad": 0.0390629623,
+            "loadOverInterior": 1.00044635
+        },
+        {
+            "member": "C-0022's uncharged rim (l = 0)",
+            "distanceFromEdge": 20.0,
+            "downwardLoad": 0.0390455345,
+            "loadOverInterior": 1.0
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 0.0455309787,
+            "downwardLoad": 0.0677994242,
+            "loadOverInterior": 1.73632323
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 0.207389679,
+            "downwardLoad": 0.0286090276,
+            "loadOverInterior": 0.732668746
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 0.488307453,
+            "downwardLoad": 0.0198385188,
+            "loadOverInterior": 0.508058607
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 0.759889049,
+            "downwardLoad": 0.0177530785,
+            "loadOverInterior": 0.454651098
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 0.991308545,
+            "downwardLoad": 0.0183070954,
+            "loadOverInterior": 0.468839305
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 1.52219534,
+            "downwardLoad": 0.0253292076,
+            "loadOverInterior": 0.648673525
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 2.02549566,
+            "downwardLoad": 0.0353866807,
+            "loadOverInterior": 0.906242441
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 2.95548857,
+            "downwardLoad": 0.047220786,
+            "loadOverInterior": 1.20931038
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 4.014092,
+            "downwardLoad": 0.0475170561,
+            "loadOverInterior": 1.21689777
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 5.11938209,
+            "downwardLoad": 0.0348275442,
+            "loadOverInterior": 0.891923121
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 5.89245021,
+            "downwardLoad": 0.0430648216,
+            "loadOverInterior": 1.10287736
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 8.04760916,
+            "downwardLoad": 0.0403310031,
+            "loadOverInterior": 1.03286508
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 9.90133374,
+            "downwardLoad": 0.0395471905,
+            "loadOverInterior": 1.01279187
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 12.0106861,
+            "downwardLoad": 0.0392240205,
+            "loadOverInterior": 1.00451558
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 14.8371879,
+            "downwardLoad": 0.039088936,
+            "loadOverInterior": 1.00105611
+        },
+        {
+            "member": "MEDIAL partition (l = t/2)",
+            "distanceFromEdge": 20.0,
+            "downwardLoad": 0.0390476975,
+            "loadOverInterior": 1.0
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 0.0455309787,
+            "downwardLoad": 0.596615784,
+            "loadOverInterior": 15.2793306
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 0.207389679,
+            "downwardLoad": 0.0744837352,
+            "loadOverInterior": 1.90752851
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 0.488307453,
+            "downwardLoad": 0.0351537549,
+            "loadOverInterior": 0.900287684
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 0.759889049,
+            "downwardLoad": 0.0275042823,
+            "loadOverInterior": 0.704384686
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 0.991308545,
+            "downwardLoad": 0.0256714349,
+            "loadOverInterior": 0.657445464
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 1.52219534,
+            "downwardLoad": 0.0285094056,
+            "loadOverInterior": 0.730125894
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 2.02549566,
+            "downwardLoad": 0.0352232323,
+            "loadOverInterior": 0.902067
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 2.95548857,
+            "downwardLoad": 0.0446126126,
+            "loadOverInterior": 1.14252903
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 4.014092,
+            "downwardLoad": 0.0457830978,
+            "loadOverInterior": 1.17250516
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 5.11938209,
+            "downwardLoad": 0.0339941359,
+            "loadOverInterior": 0.870589841
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 5.89245021,
+            "downwardLoad": 0.0425896801,
+            "loadOverInterior": 1.09072173
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 8.04760916,
+            "downwardLoad": 0.040195255,
+            "loadOverInterior": 1.02940051
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 9.90133374,
+            "downwardLoad": 0.0394938512,
+            "loadOverInterior": 1.01143755
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 12.0106861,
+            "downwardLoad": 0.0392047658,
+            "loadOverInterior": 1.00403408
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 14.8371879,
+            "downwardLoad": 0.0390839956,
+            "loadOverInterior": 1.00094115
+        },
+        {
+            "member": "conserving, l = t/2, uniform rim",
+            "distanceFromEdge": 20.0,
+            "downwardLoad": 0.0390472462,
+            "loadOverInterior": 1.0
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 0.0455309787,
+            "downwardLoad": -0.4675932,
+            "loadOverInterior": -11.9757938
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 0.207389679,
+            "downwardLoad": -0.066692727,
+            "loadOverInterior": -1.70810514
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 0.488307453,
+            "downwardLoad": 0.033411442,
+            "loadOverInterior": 0.855719333
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 0.759889049,
+            "downwardLoad": 0.0533606505,
+            "loadOverInterior": 1.36664979
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 0.991308545,
+            "downwardLoad": 0.0560296093,
+            "loadOverInterior": 1.435006
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 1.52219534,
+            "downwardLoad": 0.0525197828,
+            "loadOverInterior": 1.34511385
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 2.02549566,
+            "downwardLoad": 0.0486569103,
+            "loadOverInterior": 1.24617964
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 2.95548857,
+            "downwardLoad": 0.0443313685,
+            "loadOverInterior": 1.13539574
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 4.014092,
+            "downwardLoad": 0.0419209918,
+            "loadOverInterior": 1.07366222
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 5.11938209,
+            "downwardLoad": 0.0406479677,
+            "loadOverInterior": 1.04105808
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 5.89245021,
+            "downwardLoad": 0.040129219,
+            "loadOverInterior": 1.02777212
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 8.04760916,
+            "downwardLoad": 0.0394226921,
+            "loadOverInterior": 1.00967686
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 9.90133374,
+            "downwardLoad": 0.0391987552,
+            "loadOverInterior": 1.00394148
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 12.0106861,
+            "downwardLoad": 0.0390988257,
+            "loadOverInterior": 1.00138213
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 14.8371879,
+            "downwardLoad": 0.0390562854,
+            "loadOverInterior": 1.00029261
+        },
+        {
+            "member": "C-0022's falsifier 5 (non-conserving)",
+            "distanceFromEdge": 20.0,
+            "downwardLoad": 0.0390448606,
+            "loadOverInterior": 1.0
+        }
+    ],
+    "dishing": [
+        {
+            "label": "C-0022's uncharged rim",
+            "foundationMultiplier": 0.25,
+            "taperDepth": -0.302887367,
+            "taperWidth": 8.93928311,
+            "stroke": 19.801,
+            "peakDishing": 2.90087555,
+            "dishingOverStroke": 0.146501468,
+            "rigidPlateUpheld": false
+        },
+        {
+            "label": "MEDIAL partition, through the FITTED pair — an artefact, see findings",
+            "foundationMultiplier": 0.25,
+            "taperDepth": -0.0186220605,
+            "taperWidth": 30.7588472,
+            "stroke": 19.801,
+            "peakDishing": 0.0687812694,
+            "dishingOverStroke": 0.00347362606,
+            "rigidPlateUpheld": true
+        },
+        {
+            "label": "C-0022's uncharged rim",
+            "foundationMultiplier": 0.5,
+            "taperDepth": -0.302887367,
+            "taperWidth": 8.93928311,
+            "stroke": 9.90049998,
+            "peakDishing": 1.77672017,
+            "dishingOverStroke": 0.179457621,
+            "rigidPlateUpheld": false
+        },
+        {
+            "label": "MEDIAL partition, through the FITTED pair — an artefact, see findings",
+            "foundationMultiplier": 0.5,
+            "taperDepth": -0.0186220605,
+            "taperWidth": 30.7588472,
+            "stroke": 9.90049998,
+            "peakDishing": 0.0400967201,
+            "dishingOverStroke": 0.00404996921,
+            "rigidPlateUpheld": true
+        },
+        {
+            "label": "C-0022's uncharged rim",
+            "foundationMultiplier": 1.0,
+            "taperDepth": -0.302887367,
+            "taperWidth": 8.93928311,
+            "stroke": 4.95024999,
+            "peakDishing": 1.06570895,
+            "dishingOverStroke": 0.215283865,
+            "rigidPlateUpheld": false
+        },
+        {
+            "label": "MEDIAL partition, through the FITTED pair — an artefact, see findings",
+            "foundationMultiplier": 1.0,
+            "taperDepth": -0.0186220605,
+            "taperWidth": 30.7588472,
+            "stroke": 4.95024999,
+            "peakDishing": 0.0225797892,
+            "dishingOverStroke": 0.00456134321,
+            "rigidPlateUpheld": true
+        },
+        {
+            "label": "C-0022's uncharged rim",
+            "foundationMultiplier": 2.0,
+            "taperDepth": -0.302887367,
+            "taperWidth": 8.93928311,
+            "stroke": 2.47512499,
+            "peakDishing": 0.618687212,
+            "dishingOverStroke": 0.249962008,
+            "rigidPlateUpheld": false
+        },
+        {
+            "label": "MEDIAL partition, through the FITTED pair — an artefact, see findings",
+            "foundationMultiplier": 2.0,
+            "taperDepth": -0.0186220605,
+            "taperWidth": 30.7588472,
+            "stroke": 2.47512499,
+            "peakDishing": 0.0121816826,
+            "dishingOverStroke": 0.00492164341,
+            "rigidPlateUpheld": true
+        },
+        {
+            "label": "C-0022's uncharged rim",
+            "foundationMultiplier": 4.0,
+            "taperDepth": -0.302887367,
+            "taperWidth": 8.93928311,
+            "stroke": 1.2375625,
+            "peakDishing": 0.341845316,
+            "dishingOverStroke": 0.276224689,
+            "rigidPlateUpheld": false
+        },
+        {
+            "label": "MEDIAL partition, through the FITTED pair — an artefact, see findings",
+            "foundationMultiplier": 4.0,
+            "taperDepth": -0.0186220605,
+            "taperWidth": 30.7588472,
+            "stroke": 1.2375625,
+            "peakDishing": 0.00618925848,
+            "dishingOverStroke": 0.00500116842,
+            "rigidPlateUpheld": true
+        }
+    ],
+    "convergence": [
+        {
+            "axis": "mesh (nested 1/2/4)",
+            "setting": "refinement 1",
+            "member": "C-0022's uncharged rim (l = 0)",
+            "nodes": 10057,
+            "centrelineLoad": 0.0391263836,
+            "equivalentCollar": 1.67574002,
+            "minimumMarginForceGain": 0.151752429,
+            "taperDepth": -0.235392739,
+            "taperWidth": 9.50854193,
+            "appliedTileChargeOverOwn": 1.0
+        },
+        {
+            "axis": "mesh (nested 1/2/4)",
+            "setting": "refinement 1",
+            "member": "MEDIAL partition (l = t/2)",
+            "nodes": 10057,
+            "centrelineLoad": 0.0391291479,
+            "equivalentCollar": 1.24883079,
+            "minimumMarginForceGain": 0.112028333,
+            "taperDepth": -0.0294239896,
+            "taperWidth": 24.2418963,
+            "appliedTileChargeOverOwn": 1.00006599
+        },
+        {
+            "axis": "mesh (nested 1/2/4)",
+            "setting": "refinement 2",
+            "member": "C-0022's uncharged rim (l = 0)",
+            "nodes": 39825,
+            "centrelineLoad": 0.0390455345,
+            "equivalentCollar": 1.65495953,
+            "minimumMarginForceGain": 0.147835901,
+            "taperDepth": -0.290579117,
+            "taperWidth": 9.04168572,
+            "appliedTileChargeOverOwn": 1.0
+        },
+        {
+            "axis": "mesh (nested 1/2/4)",
+            "setting": "refinement 2",
+            "member": "MEDIAL partition (l = t/2)",
+            "nodes": 39825,
+            "centrelineLoad": 0.0390476975,
+            "equivalentCollar": 1.222623,
+            "minimumMarginForceGain": 0.108889265,
+            "taperDepth": -0.0220063013,
+            "taperWidth": 28.5908513,
+            "appliedTileChargeOverOwn": 1.0
+        },
+        {
+            "axis": "mesh (nested 1/2/4)",
+            "setting": "refinement 4",
+            "member": "C-0022's uncharged rim (l = 0)",
+            "nodes": 158497,
+            "centrelineLoad": 0.0390260481,
+            "equivalentCollar": 1.64954464,
+            "minimumMarginForceGain": 0.146836994,
+            "taperDepth": -0.30756425,
+            "taperWidth": 8.9015669,
+            "appliedTileChargeOverOwn": 1.0
+        },
+        {
+            "axis": "mesh (nested 1/2/4)",
+            "setting": "refinement 4",
+            "member": "MEDIAL partition (l = t/2)",
+            "nodes": 158497,
+            "centrelineLoad": 0.039028187,
+            "equivalentCollar": 1.21582195,
+            "minimumMarginForceGain": 0.108684,
+            "taperDepth": -0.0168328714,
+            "taperWidth": 32.1048748,
+            "appliedTileChargeOverOwn": 1.00000001
+        }
+    ],
+    "reproductions": [
+        {
+            "quantity": "C-0022 convergence, taperDepth at sigma_rim = 0",
+            "source": "gpd/results/T-3b-tile-edge-load-profile.json convergence[rim charge]",
+            "published": -0.290579117,
+            "reproduced": -0.290579117,
+            "relativeDeparture": 1.3E-9
+        },
+        {
+            "quantity": "C-0022 convergence, taperDepth at sigma_rim = sigma_face",
+            "source": "gpd/results/T-3b-tile-edge-load-profile.json convergence[rim charge]",
+            "published": -0.157533781,
+            "reproduced": -0.157533781,
+            "relativeDeparture": 3.0E-9
+        },
+        {
+            "quantity": "C-0022 nominal profile, taperDepth at the design point",
+            "source": "gpd/results/T-3b-tile-edge-load-profile.json profiles[2 mM, 10 nm, 0.192 V]",
+            "published": -0.302887367,
+            "reproduced": -0.302887367,
+            "relativeDeparture": 1.5E-9
+        },
+        {
+            "quantity": "C-0022 nominal profile, force gain at the design point",
+            "source": "gpd/results/T-3b-tile-edge-load-profile.json totalForce[40 nm]",
+            "published": 0.147080774,
+            "reproduced": 0.147080774,
+            "relativeDeparture": 9.8E-10
+        }
+    ],
+    "predicates": [
+        {
+            "id": "P1",
+            "statement": "C-0022's two rim-charge endpoints reproduce below 1e-6 before anything is quoted against them",
+            "verdict": "PASS — worst 3.0e-09"
+        },
+        {
+            "id": "P2",
+            "statement": "a charge-conservation ledger is emitted for every candidate smearing, on both cuts, and a non-conserving one is named",
+            "verdict": "PASS — 9 readings, 7 conserving to 0.0; C-0022's falsifier 5 applies 1.5000 of the tile's charge in 3-D and 1.2500 in 2-D and is named non-conserving"
+        },
+        {
+            "id": "P3",
+            "statement": "the rim density is derived in closed form from a stated geometric partition, with its aspect-ratio dependence explicit",
+            "verdict": "PASS — sigma_rim = rho t / 4 = sigma_face / 2 = -0.199332619 e/nm^2, exact for any rectangular slab with t <= 2a and independent of rho, t, buffer and Manning fraction"
+        },
+        {
+            "id": "P4",
+            "statement": "the two rims are distinguished, and it is stated whether they carry the same density",
+            "verdict": "PASS — the same density, because the same rho stands behind both; they differ by a charge DEPTH of 0.0914 nm, inside C-0022's 1.00 nm discarded standoff"
+        },
+        {
+            "id": "P5",
+            "statement": "the 1.845x bracket is re-quoted over the recommended family, with the movement of every C-0022 number a reader would carry",
+            "verdict": "PASS, and on a DIFFERENT quantity than C-0022 quoted it on — the fitted depth is not well posed under a face taper. On the collar: 1.6550 nm at l = 0 against 1.2226 nm at l = t/2, against C-0022's published 2.9130 nm. On the total force gain: 0.1478 against 0.1089, against 0.2806."
+        },
+        {
+            "id": "P6",
+            "statement": "the transfer to the four-layer tile is stated with its number",
+            "verdict": "PASS — the ratio is 1/2 at all 4 bodies, C-0109's four-layer tile included, because it contains neither rho nor t; the absolute density and the collar do not transfer"
+        }
+    ],
+    "falsifiers": [
+        {
+            "id": "F1",
+            "statement": "the licence solves do not reproduce C-0022's -0.290579117 / -0.157533781",
+            "fired": "no — worst departure 3.0e-09"
+        },
+        {
+            "id": "F2",
+            "statement": "the conserving smearings do not apply the tile's own charge, in the ASSEMBLY rather than in the algebra, to within the assembly's own second-order quadrature of a kinked shape on a graded mesh (1e-4 at the coarsest mesh)",
+            "fired": "no — worst 2.4e-05 over the solve set, and 6.6e-05 / 3.3e-12 / 6.9e-09 over the nested 1/2/4 refinement of the recommended member; the algebra itself is exact to 1e-12 and is asserted as a test"
+        },
+        {
+            "id": "F3",
+            "statement": "the recommended member's depth falls OUTSIDE C-0022's published bracket, making this a move rather than a narrowing",
+            "fired": "YES — -0.022006 lies outside [-0.157534, -0.290579], and the reason is that the fitted pair is not well posed under a face taper: the deficit changes sign 3 times outside the standoff and the fitted width is 1.43 of the tile half width. The bracket is therefore re-quoted on the collar and the force gain, which are integrals of the solved profile."
+        },
+        {
+            "id": "F4",
+            "statement": "the face taper reaches the centre-line, i.e. moves the 1-D load by more than the 0.03-0.14 % C-0022 already reports against T-3a",
+            "fired": "no — 0.075 %"
+        },
+        {
+            "id": "F5",
+            "statement": "the far-field effective charge at rho t / 4 differs from that at rho t / 2 by more than 25 %, i.e. the surface is not saturated",
+            "fired": "no — 0.9320 of the face's own"
+        },
+        {
+            "id": "F6",
+            "statement": "the two rims' charge depths differ by more than C-0022's discarded standoff, so one number cannot serve both",
+            "fired": "no — 0.0914 nm against 1.00 nm"
+        }
+    ],
+    "findings": {
+        "the_upper_endpoint_is_not_a_reading_of_this_tile": "The cheap bound that settles the task is a DIVISION. sigma_face = rho t / 2 is Gauss's law on a slab, not a convention — a uniformly charged slab has EXACTLY the exterior field of two sheets of rho t / 2 — so a smearing is a partition of ONE conserved charge onto ONE boundary, and the §3 tile's rim area is exactly half its face area. C-0022's falsifier 5 therefore hands the solver a tile carrying 1.5000 of the charge the tile has in 3-D and 1.2500 in 2-D. It is not a defensible reading of the rim; it is a bigger tile. The upper end of the published 1.845x bracket is removed before any field is solved.",
+        "the_rim_charge_is_half_the_face_charge_exactly": "The geometric answer the task asked for: the nearest-surface partition of the tile's own volumetric charge gives sigma_rim = rho t / 4 = sigma_face / 2 = -0.199332619 e/nm^2, with the rim TRIANGULAR in height, rho min(zeta, t - zeta), peaking at the full face density at mid-height and vanishing at both corners. The RATIO is exactly one half for any rectangular slab with t <= 2a, independently of rho, t, the buffer and the Manning fraction — the four quantities a reader would expect it to carry. That closes the geometric question; what it does not close is what the model is allowed to do with it.",
+        "the_model_has_already_spent_that_charge_on_its_faces": "Charge the rim takes has to be charge the faces gave up, and the faces are exact in the interior, so it comes from the COLLAR: the conserving family is one-parameter in the face taper length l, with sigma_rim = rho l / 2, and l = 0 IS C-0022's headline. But the real object's face charge does not taper — the column of material behind every face element is the full thickness right up to the rim — so a taper is a bookkeeping artefact with no counterpart in the sheet, and it moves charge across a 90-degree corner onto a wall that by the structure of the stress tensor exerts NO vertical force. l = 0 is therefore the only member that keeps the charge where the object puts it, and sigma_rim = 0 in this model is forced by sigma_face = rho t / 2 rather than being a statement that the rim is uncharged. C-0022's headline is the self-consistent reading of C-0022's own model.",
+        "the_published_bracket_is_one_sided_and_the_conserving_one_straddles_the_headline": "What replaces the 1.845x is not a narrower parameter range but a MODEL uncertainty, and the conserving family over l in [0, t/2] is the proxy for its size. Read on the equivalent collar, which owes the fit nothing: the family runs 1.2226 to 1.7727 nm, a span of 1.450x that CONTAINS C-0022's headline 1.6550 nm — the l = t/4 member is ABOVE it and the medial member below. The published bracket runs 1.6550 to 2.9130 nm, 1.760x, and is ONE-SIDED: it only goes up, and its upper end is a tile carrying a quarter more charge. On the total force gain the same reading is 0.1089 to 0.1478 against a published 0.1478 to 0.2806. So the exposure eleven downstream validity ranges carry as 'an unsourced rim charge worth 1.85x' is both larger than the real one and pointed the wrong way: the real span is +7.1 % / -26.1 % about the headline, against a published +76.0 %.",
+        "the_smearing_correction_changes_SIGN_with_the_buffer": "The direction of the conserving relocation is not a property of the construction, it is a property of the state — the seventh 'quote it with the state it is read at' this task touches. Substituting the medial member for the uncharged one at a 10 nm gap takes the collar 2.2447 -> 2.3183 nm at 0.5 mM (it RISES), 1.6550 -> 1.2226 at 2 mM (it falls) and 0.9005 -> -0.2394 at 10 mM, where it goes NEGATIVE and the finite tile behaves as one SMALLER than its footprint. 10 mM is where C-0022 already reports a genuine taper rather than an enhancement, so the two findings agree about which end of the buffer range is anomalous. No single sign can be quoted for this correction.",
+        "the_fitted_depth_and_width_cannot_carry_a_conserving_smearing": "edgeTaperedPressure's (depth, width) pair is a two-parameter fit to a ONE-SIGNED collar, matched on the first two moments of the load deficit. A conserving smearing's collar is not one-signed — the face taper lowers the load where fringing raises it — so the deficit changes sign 3 times outside the standoff and the fit returns a depth of -0.022006 over a width of 28.5909 nm, which is 1.43 of the tile half width; at l = 3t/4 the fitted width is -12.9665 nm, i.e. NEGATIVE. And it does not converge: over the nested 1/2/4 refinement the fitted depth runs -0.029424, -0.022006, -0.016833 and the width 24.24, 28.59, 32.10 nm, while the collar of the same solves settles at 1.2488, 1.2226, 1.2158 nm and C-0022's own uncharged collar at 1.6757, 1.6550, 1.6495 — both at second order, ratios 3.85 and 3.84. So it is not that the conserving solve is unconverged; it is that the FIT is not a representation of it. The correction is real and the downstream dishing pipeline cannot transmit it: a re-run needs the solved profile, not the pair.",
+        "the_rim_charge_is_a_profile_and_the_profile_beats_the_mean": "A rim charge is not one number. At the IDENTICAL mean rim density -0.199333 e/nm^2 and the IDENTICAL face taper of 5.00 nm, a rim uniform in height and a rim triangular in height give collars of 1.6607 and 1.2226 nm — 1.36x from the vertical distribution alone, which is as large as the whole conserving span. The reason is mechanical rather than electrostatic: the gap is below the tile, so rim charge near the bottom face acts on it and rim charge at mid-height does not. Anyone quoting 'the rim's areal charge density' has under-specified the boundary condition.",
+        "saturation_prices_the_choice_among_nonzero_readings_and_says_nothing_about_zero": "The saturation cheap bound ran first and answers a narrower question than it looks like it answers. At 2 mM the face sits at 0.9314 of the 2:1 saturated amplitude 12 - 6 sqrt(3) and the geometric rim at 0.8681, so HALVING the bare rim charge costs 6.8 % of its far-field effective charge and QUARTERING it 18.7 %. The choice among nonzero conventions is therefore nearly free — but zero is not a point inside the saturated family, it is the family's boundary, and saturation says nothing about it. This is the first task in the programme where the saturation bound did NOT settle the charge ambiguity, and the reason is worth recording: saturation flattens a surface's response to its own magnitude, and the question here was whether the surface exists.",
+        "one_number_serves_both_rims_and_the_measured_radius_is_what_shows_it": "The two rims are different objects — 0.1139 duplex END faces per nm^2 across the helices, covering 35.8 % of the plane, against continuous SIDEWALLS along them — and they carry the SAME areal density, because the same rho stands behind both and the partition depends only on the block, not on which way the helices run. All that separates them is a charge DEPTH of 0.0914 nm, sub-Debye and inside the 1.00 nm standoff C-0022 discards as mesh-divergent. At the ROUND 1.0 nm phosphate radius that depth is exactly zero and the question is invisible; it is T-71's MEASURED 0.9086 nm that makes it a number at all. And neither rim is CUT: the across-helix rim is where a Rothemund scaffold TURNS and the along-helix rim is simply the last duplex, so there is no severed backbone and no missing phosphate behind either.",
+        "a_permeable_rim_is_bounded_above_and_that_bound_is_what_would_close_the_question": "Every member here smears a volumetric charge onto the boundary of an IMPERMEABLE body, which is C-0022's tile and not an origami sheet. A permeable rim has more charge within reach of an ion at its surface than any boundary smearing of the same total can put there, and what is within reach is about one screening length: rho lambda_D, i.e. -0.6262 e/nm^2 at 0.5 mM, -0.3131 at 2 mM and -0.1400 at 10 mM — 1.57, 0.79 and 0.35 of the face density. It is carried as a CEILING, not as a member, because it does not conserve: it is a different body. And it names the one calculation that would close the question — a solve of the permeable, volumetrically charged sheet, which no claim in this programme has and which is a modelling change rather than a measurement.",
+        "the_answer_transfers_as_a_ratio_and_not_as_a_collar": "sigma_rim / sigma_face = 1/2 holds at every body in the transfer table, the four-layer tile C-0109/C-0120 recommend included, because it contains neither rho nor t. The absolute density does not — it is rho t / 4, and that tile has a different rho and a different t — and neither does the collar, which is a solved property of the 40 x 40 x 10 nm body C-0022 meshed. C-0109's own note that C-0022's charge 'is not re-derived here' is discharged for the RATIO and left open for the SOLVE. The conclusion that C-0022's headline is its model's self-consistent reading transfers whole, because it is an argument about smearing a slab and not about this slab. Force gains carried for context: 0.1478 and 0.1089 at the two ends of the conserving family, at the headline refinement 0.1471 and 0.1086.",
+        "the_rigid_plate_verdict_stands_and_the_pipeline_cannot_carry_the_alternative": "On C-0006's plate, consumed read-only, the recommended reading is C-0022's own and its rigid-plate rejection is unchanged: 0.2153 of the stroke at the nominal foundation, 2.15x past T-5b's 0.10. The other end of the conserving family reads 0.0046 through the same pipeline, and that number is an ARTEFACT rather than a flat tile: a raised cosine 30.76 nm wide on a 40 nm tile is nearly uniform, and a uniform load on a uniform foundation dishes exactly zero. It is reported so the artefact is on the record; §4(g) does not move, and no downstream flatness claim should be re-run on the fitted pair.",
+        "the_control_that_separates_the_two_terms": "Adding the geometric rim charge with the face UNTOUCHED — what C-0022 would have done with the right density — gives a collar of 2.7065 nm against the uncharged 1.6550; adding the conserving face taper as well gives 1.2226. So the rim charge alone moves the collar by +1.0515 nm and the face deficit it must be taken from moves it by -1.4838 nm, i.e. the term C-0022 could not express is 1.41x the one it swept and runs the other way. That is why its bracket has to be withdrawn rather than rescaled."
+    },
+    "validity": [
+        "NOTHING HERE IS MEASURED. TRL 1-3.",
+        "MEAN FIELD, inherited whole from C-0005 and C-0008: the one-loop correction is 123-214 % at these gaps and for an oppositely charged pair no published result gives even the direction. It is larger than the entire effect reported here.",
+        "The tile is an IMPERMEABLE OBSTACLE with smeared surface charges, exactly as in C-0008 and C-0022. A real origami sheet has electrolyte in its interstices, and a permeable rim is a different boundary condition that this study does not solve.",
+        "The partition is a CONVENTION with a criterion, not a measurement. Nearest-surface is the only member of the conserving family in which every element of charge is assigned to the boundary element it is closest to; it is not derived from a field solve of the volumetric object, and no such solve is performed here.",
+        "TWO-DIMENSIONAL, hence a STRAIGHT edge. C-0022's corner bracket travels unchanged.",
+        "The traction within 1 nm of the rim is not resolvable and is not used; the fit carries C-0022's standoff, and the rim census is precisely the geometry that standoff hides.",
+        "POINT IONS, a gap filled with FREE BUFFER, a MACROSCOPIC electrode and a Stern series solved in ONE dimension — all four inherited from C-0022 unchanged.",
+        "The §3 tile geometry is internally inconsistent (40 x 40 nm with a 10 nm thickness against 'single-layer honeycomb'), and DnaOrigamiTile resolves it toward the thick tile. The RATIO sigma_rim/sigma_face = 1/2 is independent of that choice; the absolute density is not, and C-0109/C-0120 have since moved the body."
+    ],
+    "openQuestions": [
+        "What the exterior field of the volumetric object actually is. The partition is selected on a nearest-surface criterion rather than by matching the field of a uniformly charged permeable block; a 3-D solve of the permeable body would replace the criterion with a measurement of the model, and it is the only thing that would.",
+        "Whether a PERMEABLE rim behaves as a charged wall at all. The interstitial volume fraction of a honeycomb lattice is over half, so a rim is as much buffer as it is DNA, and the smeared wall is the assumption this task inherits rather than tests.",
+        "The corner, which C-0022 brackets and nobody has solved. The rim charge now enters it.",
+        "Whether the scaffold remainder sits at a rim. C-0125 bounds its effect on the FACE charge and says the collar width carries no surface charge at all; where the coil rests against a rim is still unevaluated.",
+        "The four-layer tile's own edge solve. This study transfers the RATIO, which is exact, and not the collar, which is a function of the body C-0022 solved."
+    ],
+    "runParameters": {
+        "faceChargeDensity": -0.398665238,
+        "volumetricChargeDensity": -0.0797330476,
+        "recommendedRimChargeDensity": -0.199332619,
+        "recommendedFaceTaperLength": 5.0,
+        "rimOverFace": 0.5,
+        "tileThickness": 10.0,
+        "tileHalfWidth": 20.0,
+        "designConcentration": 2.0,
+        "designGapHeight": 10.0,
+        "designBias": 0.192,
+        "licenceRefinement": 2.0,
+        "headlineRefinement": 3.0,
+        "sternCapacitance": 20.0,
+        "searchNodes": 800.0,
+        "publishedDepthBracket": 1.84455115,
+        "publishedCollarBracket": 1.76015133,
+        "publishedForceGainBracket": 1.89788565,
+        "conservingCollarBracket": 1.44990738,
+        "conservingForceGainBracket": 1.49954373,
+        "unchargedCollar": 1.65495953,
+        "medialCollar": 1.222623,
+        "falsifierCollar": 2.91297923,
+        "unchargedForceGain": 0.147835901,
+        "medialForceGain": 0.108889265,
+        "falsifierForceGain": 0.280575636,
+        "worstLicenceDeparture": 3.0E-9,
+        "worstReproductionDeparture": 3.0E-9,
+        "geometricFractionOfSaturation": 0.868079922,
+        "faceFractionOfSaturation": 0.931400428,
+        "geometricOverFaceEffectiveCharge": 0.932015807,
+        "quarterOverFaceEffectiveCharge": 0.812887326,
+        "conservingCollarLow": 1.222623,
+        "conservingCollarHigh": 1.77269012
+    }
+}

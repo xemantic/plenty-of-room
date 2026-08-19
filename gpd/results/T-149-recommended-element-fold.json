@@ -7486,14 +7486,14 @@
             "setting": "1000",
             "quantity": "pull-in bias on the recommended line at 7.0 nm / 10.0 mM, alexander-box(two-body) [V]",
             "value": 0.237874748,
-            "departureFromFinest": 3.57846572E-5
+            "departureFromFinest": 3.6E-5
         },
         {
             "axis": "Poisson-Boltzmann mesh nodes",
             "setting": "2000",
             "quantity": "pull-in bias on the recommended line at 7.0 nm / 10.0 mM, alexander-box(two-body) [V]",
             "value": 0.23788156,
-            "departureFromFinest": 7.14919966E-6
+            "departureFromFinest": 7.1E-6
         },
         {
             "axis": "Poisson-Boltzmann mesh nodes",
@@ -7528,7 +7528,7 @@
             "setting": "0.01",
             "quantity": "pull-in bias on the recommended line at 7.0 nm / 10.0 mM, alexander-box(two-body) [V]",
             "value": 0.237881542,
-            "departureFromFinest": 7.68236638E-8
+            "departureFromFinest": 7.7E-8
         },
         {
             "axis": "golden-section stroke bracket [nm]",

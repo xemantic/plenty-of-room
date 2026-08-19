@@ -5160,14 +5160,14 @@
             "quantity": "measured phosphate contact [nm]",
             "published": 1.817276,
             "reproduced": 1.81727572,
-            "departure": 2.83058315E-7
+            "departure": 2.8E-7
         },
         {
             "source": "CH-0089",
             "quantity": "Q5 margin at the measured girth [nm]",
             "published": 0.898333,
             "reproduced": 0.898333453,
-            "departure": 4.53058315E-7
+            "departure": 4.5E-7
         },
         {
             "source": "C-0069 / C-0072",
@@ -5195,35 +5195,35 @@
             "quantity": "bulk Debye length at 2 mM MgCl2 [nm]",
             "published": 3.93,
             "reproduced": 3.92687853,
-            "departure": 0.00312147385
+            "departure": 0.0031
         },
         {
             "source": "DnaOrigamiTile",
             "quantity": "Manning-surviving line charge, q = 2 [e/nm]",
             "published": 0.70017,
             "reproduced": 0.700175566,
-            "departure": 5.56555928E-6
+            "departure": 5.6E-6
         },
         {
             "source": "Meng 2020, Table row 20 of Rau 1984",
             "quantity": "array pressure at 2.6 nm interaxial [pN/nm2]",
             "published": 3.98,
             "reproduced": 3.98166094,
-            "departure": 0.00166093888
+            "departure": 0.0017
         },
         {
             "source": "Meng 2020",
             "quantity": "array pressure at 3.0 nm interaxial [pN/nm2]",
             "published": 0.752,
             "reproduced": 0.75203861,
-            "departure": 3.86101255E-5
+            "departure": 3.9E-5
         },
         {
             "source": "Meng 2020",
             "quantity": "array pressure at 3.6 nm interaxial [pN/nm2]",
             "published": 0.062,
             "reproduced": 0.0617310883,
-            "departure": 2.68911723E-4
+            "departure": 2.7E-4
         }
     ],
     "literature": [
@@ -5325,35 +5325,35 @@
             "coarse": 0.00141058236,
             "fine": 3.76935127E-6,
             "finer": 1.78846973E-7,
-            "departure": 1.78846973E-7
+            "departure": 1.8E-7
         },
         {
             "quantity": "coaxial-rod quadrature against the closed form, Simpson 76/150/300",
             "coarse": 4.02037444E-4,
             "fine": 2.84292589E-5,
             "finer": 1.75092786E-6,
-            "departure": 1.75092786E-6
+            "departure": 1.8E-6
         },
         {
             "quantity": "Derjaguin crossing length against direct quadrature, Simpson 12/24/48",
             "coarse": 0.196312414,
             "fine": 6.48131672E-4,
             "finer": 2.28273681E-12,
-            "departure": 2.28273681E-12
+            "departure": 2.3E-12
         },
         {
             "quantity": "barrier separation under a 4x and 16x finer locating scan [nm]",
             "coarse": 2.11976751,
             "fine": 2.11976751,
             "finer": 2.11976751,
-            "departure": 1.1807888E-11
+            "departure": 1.2E-11
         },
         {
             "quantity": "5 kT threshold width under a +/- 1e-6 relative change of the threshold [nm]",
             "coarse": 2.69384854,
             "fine": 2.69384655,
             "finer": 2.69384455,
-            "departure": 1.99479659E-6
+            "departure": 2.0E-6
         }
     ],
     "falsifiers": [

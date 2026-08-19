@@ -16,6 +16,7 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
@@ -1038,7 +1039,9 @@ fun main() {
     file.parentFile.mkdirs()
     file.writeText(
         json.encodeToString(
-            (json.encodeToJsonElement(result) as JsonObject).roundedForResult()
+            (json.encodeToJsonElement(result) as JsonObject).roundedForResult(
+                digitsByKey = DEPARTURE_DIGITS_BY_KEY
+            )
         )
     )
     println("T-132 — wrote ${file.path} in ${(System.currentTimeMillis() - started) / 1000} s")

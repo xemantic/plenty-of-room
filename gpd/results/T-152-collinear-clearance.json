@@ -436,14 +436,14 @@
             "source": "C-0069/C-0066/C-0072",
             "published": 0.02560917,
             "reproduced": 0.0256091734,
-            "departure": 1.31542727E-7
+            "departure": 1.3E-7
         },
         {
             "quantity": "C-0069's end-factor ceiling",
             "source": "C-0069",
             "published": 2.34165925,
             "reproduced": 2.34165925,
-            "departure": 1.91133807E-9
+            "departure": 1.9E-9
         },
         {
             "quantity": "C-0069's tip ceiling",
@@ -457,7 +457,7 @@
             "source": "C-0069",
             "published": 13.9303697,
             "reproduced": 13.9303697,
-            "departure": 2.08556687E-9
+            "departure": 2.1E-9
         },
         {
             "quantity": "C-0055/C-0063's arm",
@@ -471,7 +471,7 @@
             "source": "C-0053",
             "published": 9.131,
             "reproduced": 9.1311565,
-            "departure": 1.71397538E-5
+            "departure": 1.7E-5
         },
         {
             "quantity": "C-0053's placed arm count at 45 paths",
@@ -492,7 +492,7 @@
             "source": "CH-0081/C-0069",
             "published": 9.247,
             "reproduced": 9.24698738,
-            "departure": 1.36467388E-6
+            "departure": 1.4E-6
         },
         {
             "quantity": "C-0069's midspan floor",
@@ -506,7 +506,7 @@
             "source": "C-0079/Woo & Rothemund",
             "published": 4.4114,
             "reproduced": 4.41155791,
-            "departure": 3.57959693E-5
+            "departure": 3.6E-5
         },
         {
             "quantity": "C-0072's floor 1, the design quantum",
@@ -520,7 +520,7 @@
             "source": "C-0072",
             "published": 0.26779,
             "reproduced": 0.267786987,
-            "departure": 1.12513283E-5
+            "departure": 1.1E-5
         }
     ],
     "convergence": [
@@ -528,7 +528,7 @@
             "quantity": "the tip restraint ceiling at the recommended budget, resolution 1e-6 -> 1e-9",
             "coarse": 133.687281,
             "fine": 133.687364,
-            "departure": 8.27640179E-5
+            "departure": 8.3E-5
         },
         {
             "quantity": "the arm at RK4 400 -> 800 steps",
@@ -540,7 +540,7 @@
             "quantity": "the 30-root capacity ceiling, resolution 1e-6 -> 1e-9",
             "coarse": 9.85999945,
             "fine": 9.86,
-            "departure": 5.51808625E-7
+            "departure": 5.5E-7
         }
     ],
     "predicates": [

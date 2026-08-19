@@ -10937,19 +10937,19 @@
             "axis": "Poisson-Boltzmann mesh nodes",
             "setting": "1000",
             "pullInBias": 0.129963093,
-            "departureFromFinest": 6.23293097E-6
+            "departureFromFinest": 6.2E-6
         },
         {
             "axis": "Poisson-Boltzmann mesh nodes",
             "setting": "2000",
             "pullInBias": 0.129963711,
-            "departureFromFinest": 1.48405434E-6
+            "departureFromFinest": 1.5E-6
         },
         {
             "axis": "Poisson-Boltzmann mesh nodes",
             "setting": "4000",
             "pullInBias": 0.129963865,
-            "departureFromFinest": 2.936331E-7
+            "departureFromFinest": 2.9E-7
         },
         {
             "axis": "Poisson-Boltzmann mesh nodes",
@@ -10985,7 +10985,7 @@
             "axis": "golden-section stroke bracket [nm]",
             "setting": "0.01",
             "pullInBias": 0.129963707,
-            "departureFromFinest": 2.478433E-8
+            "departureFromFinest": 2.5E-8
         },
         {
             "axis": "golden-section stroke bracket [nm]",
@@ -11009,13 +11009,13 @@
             "axis": "diffuse-drop bisection bracket [relative]",
             "setting": "1.0E-6",
             "pullInBias": 0.129964389,
-            "departureFromFinest": 5.22191127E-6
+            "departureFromFinest": 5.2E-6
         },
         {
             "axis": "diffuse-drop bisection bracket [relative]",
             "setting": "1.0E-8",
             "pullInBias": 0.129963712,
-            "departureFromFinest": 1.16824665E-8
+            "departureFromFinest": 1.2E-8
         },
         {
             "axis": "diffuse-drop bisection bracket [relative]",

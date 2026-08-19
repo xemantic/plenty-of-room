@@ -23,6 +23,7 @@ import com.xemantic.nano.plentyofroom.anchoring.rasterUpwardSites
 import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
@@ -989,7 +990,12 @@ fun main() {
     output.writeText(
         json.encodeToString(
             json.encodeToJsonElement(complete).roundedForResult(
-                digitsByKey = mapOf(
+                // `T-212`/`CH-0154`: the tree-wide rule for the DIAGNOSTIC records first, then
+                // this study's own precisions. The two carry the SAME SPELLING on different
+                // records -- `departures[*].relativeDeparture` is this study's ANSWER and
+                // `convergence[*].relativeDeparture` is a residual between two refinements --
+                // and the qualified keys win inside a departure record only.
+                digitsByKey = DEPARTURE_DIGITS_BY_KEY + mapOf(
                     "relativeDeparture" to 6,
                     "movementAgainstCarried" to 6,
                     "departure" to 6,

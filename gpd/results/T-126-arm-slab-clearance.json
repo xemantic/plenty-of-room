@@ -1065,7 +1065,7 @@
                 2.03,
                 2.0312
             ],
-            "departure": 5.91133005E-4,
+            "departure": 5.9E-4,
             "note": "two of the four windows are 0.0256 nm wide — the pitch-minus-arm gap itself — so the measure is resolved only once the step is well under it"
         },
         {
@@ -1081,7 +1081,7 @@
                 0.221863407,
                 0.221908297
             ],
-            "departure": 2.0233107E-4,
+            "departure": 2.0E-4,
             "note": "nested only, per CLAUDE.md"
         },
         {
@@ -1107,7 +1107,7 @@
             "quantity": "the arm at 34 paths [nm]",
             "published": 8.164,
             "here": 8.16439083,
-            "departure": 4.78723665E-5
+            "departure": 4.8E-5
         },
         {
             "source": "C-0055",
@@ -1142,7 +1142,7 @@
             "quantity": "the plan fraction of the array",
             "published": 0.4626,
             "here": 0.462648814,
-            "departure": 1.0552032E-4
+            "departure": 1.1E-4
         },
         {
             "source": "C-0063",
@@ -1156,28 +1156,28 @@
             "quantity": "dishing/stroke at the 34 roots",
             "published": 0.0706,
             "here": 0.0706145537,
-            "departure": 2.06142774E-4
+            "departure": 2.1E-4
         },
         {
             "source": "C-0022",
             "quantity": "dishing/stroke of the free tile",
             "published": 0.3079,
             "here": 0.307902368,
-            "departure": 7.6898974E-6
+            "departure": 7.7E-6
         },
         {
             "source": "C-0058",
             "quantity": "dishing/stroke at C-0015's 3 x 15",
             "published": 0.2182,
             "here": 0.21821335,
-            "departure": 6.11830792E-5
+            "departure": 6.1E-5
         },
         {
             "source": "C-0035",
             "quantity": "the tie aperture floor [nm2]",
             "published": 325.6,
             "here": 325.6245,
-            "departure": 7.52457002E-5
+            "departure": 7.5E-5
         },
         {
             "source": "C-0035",

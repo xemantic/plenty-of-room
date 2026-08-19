@@ -16,6 +16,7 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
@@ -962,7 +963,9 @@ fun main() {
     val file = File("gpd/results/T-117-crossbar-junction-trio.json")
     file.parentFile?.mkdirs()
     file.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(result).roundedForResult(
+            digitsByKey = DEPARTURE_DIGITS_BY_KEY
+        )) + "\n"
     )
 
     println("T-117 — do three 90 degree junctions close on one crossbar duplex?")

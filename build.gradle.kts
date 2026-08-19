@@ -191,10 +191,14 @@ tasks.register<Exec>("testChallengeIndex") {
  * in `tools/`, a hand-edited field — is caught here and only here. `C-0127` repaired 13 fields
  * carrying 23 raw conversions across 7 committed result files, every one of which had been read.
  *
- * Only its `--conversions` predicate is a GATE. Its two other censuses — departure precision
- * (`T-209`) and saturated proportions (`T-210`) — report 222 fields in 29 files and 302 records
- * in 7, so they cannot fail a build without a tree-wide re-emission first, and `C-0083` says a
- * gate that cannot come clean is not a gate. They exit 0, by construction and by test.
+ * `T-212`/`C-0131` promoted the **departure-precision** predicate from an audit to a second GATE:
+ * the 27 files that still carried a `reproductions[*].departure` or `convergence[*].departure` at
+ * more than two significant digits were re-emitted, so the tree reads **0 fields in 0 files** and
+ * `C-0083`'s rule — *a gate that cannot come clean is not a gate* — is satisfied rather than
+ * argued around. Its **scope** line is wider than its gate and is deliberately NOT gated: the same
+ * two records carry three more spellings of the same quantity, 378 fields in 36 files, and closing
+ * those is 36 further study re-runs (`T-214`). The saturated-proportion census (`T-210`/`T-213`)
+ * stays an audit for the same reason, and reports what is left.
  */
 tasks.register<Exec>("testResultFileHygiene") {
     group = "verification"

@@ -34,6 +34,7 @@ import com.xemantic.nano.plentyofroom.anchoring.perPathStiffness
 import com.xemantic.nano.plentyofroom.anchoring.rowOfThreeLengthCeiling
 import com.xemantic.nano.plentyofroom.anchoring.standoffTipFlexibility
 import com.xemantic.nano.plentyofroom.coupling.mandatedCouplingStiffness
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
@@ -536,7 +537,9 @@ fun main() {
     val output = File("gpd/results/T-135-output-element-recommendation.json")
     output.parentFile.mkdirs()
     output.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(result).roundedForResult(
+            digitsByKey = DEPARTURE_DIGITS_BY_KEY
+        )) + "\n"
     )
     report(result, worst, output)
 }

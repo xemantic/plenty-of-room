@@ -4192,7 +4192,7 @@
         6.95032802,
         15.7183693
       ],
-      "departure": 2.45032802,
+      "departure": 2.5,
       "note": "the search must lie between the two, and does — cheap bound 2 verified rather than asserted"
     },
     {
@@ -4216,7 +4216,7 @@
       "quantity": "the leg budget at 21 steps [deg]",
       "published": 78.53,
       "here": 78.5285848,
-      "departure": 0.00141518276,
+      "departure": 0.0014,
       "note": "C-0048's own recommended leg, and the worst in the envelope"
     },
     {
@@ -4224,7 +4224,7 @@
       "quantity": "the leg budget at 24 steps [deg]",
       "published": 0.25,
       "here": 0.253045923,
-      "departure": 0.00304592315,
+      "departure": 0.003,
       "note": "the best on the square lattice"
     },
     {
@@ -4232,7 +4232,7 @@
       "quantity": "the leg budget at 16 steps [deg]",
       "published": 89.8,
       "here": 89.8313027,
-      "departure": 0.0313027179,
+      "departure": 0.031,
       "note": "the worst quantised length in the envelope"
     },
     {
@@ -4352,7 +4352,7 @@
       "quantity": "the best representable design's margin on CanDo, 10 bp row",
       "published": 2.44607976,
       "here": 2.44607976,
-      "departure": 2.81130541E-9,
+      "departure": 2.8E-9,
       "note": "its own design table, re-run through this composition"
     },
     {
@@ -4360,7 +4360,7 @@
       "quantity": "the same on Fields et al.'s rigidity",
       "published": 1.83888014,
       "here": 1.83888014,
-      "departure": 1.19909571E-9,
+      "departure": 1.2E-9,
       "note": "the 25 % lower measured rigidity, carried beside CanDo's model input throughout"
     },
     {
@@ -4376,7 +4376,7 @@
       "quantity": "the cap's bending term 12EI/w at a 10 bp row [pN/nm]",
       "published": 811.764706,
       "here": 811.764706,
-      "departure": 1.17647232E-7,
+      "departure": 1.2E-7,
       "note": "the cap carries the ROW, not the crossbar's length"
     },
     {
@@ -4384,7 +4384,7 @@
       "quantity": "the cap's torsion term 4C/w at a 10 bp row [pN nm/rad]",
       "published": 541.176471,
       "here": 541.176471,
-      "departure": 4.11764745E-7,
+      "departure": 4.1E-7,
       "note": "the same statement for the torsional term"
     },
     {

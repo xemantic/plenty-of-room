@@ -775,7 +775,7 @@
             "quantity": "reference arm [nm]",
             "published": 8.16439083,
             "reproduced": 8.16439018,
-            "departure": 7.99544655E-8,
+            "departure": 8.0E-8,
             "strict": false
         },
         {
@@ -815,7 +815,7 @@
             "quantity": "EI 172.906 arm [nm]",
             "published": 7.883,
             "reproduced": 7.88253309,
-            "departure": 5.92303165E-5,
+            "departure": 5.9E-5,
             "strict": false
         },
         {
@@ -823,7 +823,7 @@
             "quantity": "alpha 0.6 arm [nm]",
             "published": 7.793,
             "reproduced": 7.79311482,
-            "departure": 1.47341223E-5,
+            "departure": 1.5E-5,
             "strict": false
         },
         {
@@ -831,7 +831,7 @@
             "quantity": "alpha 1.2 arm [nm]",
             "published": 8.332,
             "reproduced": 8.33244388,
-            "departure": 5.32736488E-5,
+            "departure": 5.3E-5,
             "strict": false
         },
         {
@@ -847,7 +847,7 @@
             "quantity": "45-path arm [nm]",
             "published": 9.131,
             "reproduced": 9.13115573,
-            "departure": 1.70553006E-5,
+            "departure": 1.7E-5,
             "strict": false
         },
         {
@@ -863,7 +863,7 @@
             "quantity": "15-path arm [nm]",
             "published": 5.963,
             "reproduced": 5.96297865,
-            "departure": 3.58047213E-6,
+            "departure": 3.6E-6,
             "strict": false
         },
         {
@@ -887,7 +887,7 @@
             "quantity": "the 30-path arm [nm]",
             "published": 7.77049,
             "reproduced": 7.77048807,
-            "departure": 2.47961023E-7,
+            "departure": 2.5E-7,
             "strict": false
         },
         {
@@ -903,7 +903,7 @@
             "quantity": "the margin of its own 30-root reduction [nm]",
             "published": 1.3495,
             "reproduced": 1.34951193,
-            "departure": 8.83856163E-6,
+            "departure": 8.8E-6,
             "strict": false
         },
         {

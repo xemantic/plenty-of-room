@@ -19,6 +19,7 @@ package com.xemantic.nano.plentyofroom.coupling
 import com.xemantic.nano.plentyofroom.anchoring.UpwardRootInfluenceBank
 import com.xemantic.nano.plentyofroom.anchoring.upwardRootLattice
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
@@ -97,6 +98,15 @@ private data class T178CellRecord(
     val worstOverStroke: Double,
     val exceedance: Double,
     val exceedanceStandardError: Double,
+    /**
+     * The one-sided Clopper-Pearson limit where [exceedance] saturates, else `null` — `T-213`.
+     *
+     * `CH-0153`: at `p̂ = 1` the symmetric [exceedanceStandardError] is identically zero for every
+     * sample count, and this study's headline is a design that **fails**, which is exactly the
+     * direction that saturates it. Emitted **beside** the symmetric error rather than replacing
+     * it: the symmetric error is uninformative rather than wrong.
+     */
+    val exceedanceOneSidedBound: Double?,
     val meanSurvivors: Double,
     val flatAtP90: Boolean,
     val p90OverFreeTile: Double,
@@ -515,6 +525,7 @@ fun main() {
                 worstOverStroke = summary.worst,
                 exceedance = summary.exceedance,
                 exceedanceStandardError = summary.exceedanceStandardError,
+                exceedanceOneSidedBound = summary.exceedanceOneSidedBound,
                 meanSurvivors = summary.meanSurvivors,
                 flatAtP90 = summary.flatAtP90,
                 p90OverFreeTile = summary.p90 / freeTileDishing,
@@ -1140,7 +1151,9 @@ fun main() {
         json.encodeToString(
             JsonObject.serializer(),
             (json.encodeToJsonElement(value).roundedForResult(
-                digits = T178_DECISION_DIGITS + 3, floor = T178_DECISION_FLOOR
+                digits = T178_DECISION_DIGITS + 3,
+                digitsByKey = DEPARTURE_DIGITS_BY_KEY,
+                floor = T178_DECISION_FLOOR
             ) as JsonObject)
         ) + "\n"
     )

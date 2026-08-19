@@ -2977,7 +2977,7 @@
             "closes": true,
             "worstResidual": 0.0,
             "worstMisalignmentDegrees": 9.87654321E-4,
-            "departure": 9.87654321E-4
+            "departure": 9.9E-4
         },
         {
             "axis": "azimuth grid",
@@ -3001,7 +3001,7 @@
             "closes": true,
             "worstResidual": 0.0,
             "worstMisalignmentDegrees": 1.63308642,
-            "departure": 1.63308642
+            "departure": 1.6
         },
         {
             "axis": "crossbar helical phase",
@@ -3009,7 +3009,7 @@
             "closes": true,
             "worstResidual": 0.0,
             "worstMisalignmentDegrees": 1.63308642,
-            "departure": 1.63308642
+            "departure": 1.6
         },
         {
             "axis": "crossbar helical phase",
@@ -3087,7 +3087,7 @@
             "name": "C-0048 Sy7 tangent at 3 nm",
             "published": 30.9319239,
             "reproduced": 30.9319239,
-            "departure": 1.34151876E-9,
+            "departure": 1.3E-9,
             "source": "T-106 result file"
         },
         {
@@ -3101,7 +3101,7 @@
             "name": "C-0048 Sy7 duty at 10 nm",
             "published": 4.59624041,
             "reproduced": 4.59624041,
-            "departure": 1.07463542E-9,
+            "departure": 1.1E-9,
             "source": "T-106 result file"
         },
         {
@@ -3122,14 +3122,14 @@
             "name": "C-0048 Sy7 margin on CanDo",
             "published": 1.94667695,
             "reproduced": 1.94667695,
-            "departure": 1.24956302E-9,
+            "departure": 1.2E-9,
             "source": "T-106 result file"
         },
         {
             "name": "C-0048 Sy7 margin on Fields",
             "published": 1.46344598,
             "reproduced": 1.46344598,
-            "departure": 3.31695358E-9,
+            "departure": 3.3E-9,
             "source": "T-106 result file"
         },
         {
@@ -3143,7 +3143,7 @@
             "name": "C-0048 Sx7 margin on CanDo",
             "published": 1.48333669,
             "reproduced": 1.48333669,
-            "departure": 1.01868156E-9,
+            "departure": 1.0E-9,
             "source": "T-106 result file"
         },
         {

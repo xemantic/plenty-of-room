@@ -94,27 +94,50 @@ const val SOLVED_HEIGHT_SIGNIFICANT_DIGITS: Int = 6
  * re-emitting; `C-0127` then found `T-136` still carrying `reproductions[2].departure` at nine
  * digits. Each repair was correct and each was applied **per file**, which is why the class
  * survived three of them. `tools/check-result-file-hygiene.py --departures` measures what is
- * left: **222 fields in 29 files** at the time of writing.
+ * left: **222 fields in 29 files** when `C-0129` wrote this, 199 in 27 after it, and **0 in 0**
+ * once `T-212` re-emitted them — which is what let the audit become a gate.
  */
 const val DEPARTURE_SIGNIFICANT_DIGITS: Int = 2
 
 /**
- * Every spelling the corpus uses for a departure, mapped to [DEPARTURE_SIGNIFICANT_DIGITS].
+ * The two **record types** a departure is emitted in, and the qualifier half of the rule.
  *
- * Pass as `digitsByKey` to [roundedForResult]. The rule is about the **quantity**, so the map is
- * keyed on all four spellings a census of `gpd/results/` finds rather than on whichever one the
- * last repair happened to look at — which is exactly the failure mode the constant above records.
+ * `T-212`/`CH-0154`. `C-0129` states the rule as being about a record type and then keys it on a
+ * **leaf name**, which is not the same statement: a census of `gpd/results/` finds a bare
+ * `departure` under **eleven** parents, and only these two are the residual-between-two-solves
+ * the rule is about. The other nine include `T-193`'s `potentialOfZeroCharge`, where the quantity
+ * is a difference of two electrode potentials **in volts** — a dimensional literature comparison,
+ * determined to far more than two digits, and exactly the kind of number
+ * [RESULT_ABSOLUTE_FLOOR] *does* reach.
+ */
+val DEPARTURE_RECORDS: Set<String> = setOf("reproductions", "convergence")
+
+/**
+ * Every spelling the corpus uses for a departure **inside** a [DEPARTURE_RECORDS] record.
+ *
+ * All four spellings a census of `gpd/results/` finds, rather than whichever one the last repair
+ * happened to look at — which is exactly the failure mode [DEPARTURE_SIGNIFICANT_DIGITS] records.
  *
  * `departureRatio`, `plateDeparture` and the like are deliberately **absent**: those are *ratios
  * between two models*, not a residual between two refinements of one, and they are determined to
  * the precision of the models themselves.
  */
-val DEPARTURE_DIGITS_BY_KEY: Map<String, Int> = mapOf(
-    "departure" to DEPARTURE_SIGNIFICANT_DIGITS,
-    "relativeDeparture" to DEPARTURE_SIGNIFICANT_DIGITS,
-    "departureFromFinest" to DEPARTURE_SIGNIFICANT_DIGITS,
-    "relativeDepartureInStroke" to DEPARTURE_SIGNIFICANT_DIGITS
+val DEPARTURE_SPELLINGS: Set<String> = setOf(
+    "departure", "relativeDeparture", "departureFromFinest", "relativeDepartureInStroke"
 )
+
+/**
+ * The departure rule, as `record/spelling` keys for [roundedForResult]'s `digitsByKey`.
+ *
+ * Pass it — merged with any per-study precisions, which are unqualified and therefore lose to it
+ * inside a departure record and win everywhere else. That precedence is the point: `T-160` carries
+ * the **same spelling** as its own answer (`departures[*].relativeDeparture`, declared at six
+ * digits with a reason) and as a diagnostic (`convergence[*].relativeDeparture`), and a map keyed
+ * on the leaf name alone cannot say both.
+ */
+val DEPARTURE_DIGITS_BY_KEY: Map<String, Int> = DEPARTURE_RECORDS.flatMap { record ->
+    DEPARTURE_SPELLINGS.map { spelling -> "$record/$spelling" to DEPARTURE_SIGNIFICANT_DIGITS }
+}.toMap()
 
 /**
  * The digits of a quantity whose largest relative movement under a legitimate change of the solve
@@ -187,13 +210,31 @@ fun JsonElement.roundedForResult(
     digits: Int = RESULT_SIGNIFICANT_DIGITS,
     digitsByKey: Map<String, Int> = emptyMap(),
     floor: Double = RESULT_ABSOLUTE_FLOOR
+): JsonElement = roundedForResult(digits, digitsByKey, floor, record = null)
+
+/**
+ * [roundedForResult], carrying the key of the nearest enclosing **object entry** as [record].
+ *
+ * An array contributes no key, so `convergence[*].departure` sees `record = "convergence"` — which
+ * is what makes the qualifier a statement about the *record type* rather than about an index.
+ */
+private fun JsonElement.roundedForResult(
+    digits: Int,
+    digitsByKey: Map<String, Int>,
+    floor: Double,
+    record: String?
 ): JsonElement = when (this) {
     is JsonObject -> JsonObject(
         mapValues { (key, value) ->
-            value.roundedForResult(digitsByKey[key] ?: digits, digitsByKey, floor)
+            // Most specific wins: a `record/key` entry beats a bare `key` one, which beats the
+            // precision inherited from the enclosing subtree.
+            val qualified = record?.let { digitsByKey["$it/$key"] }
+            value.roundedForResult(
+                qualified ?: digitsByKey[key] ?: digits, digitsByKey, floor, record = key
+            )
         }
     )
-    is JsonArray -> JsonArray(map { it.roundedForResult(digits, digitsByKey, floor) })
+    is JsonArray -> JsonArray(map { it.roundedForResult(digits, digitsByKey, floor, record) })
     is JsonPrimitive -> when {
         isString -> this
         content.none { it == '.' || it == 'e' || it == 'E' } -> this

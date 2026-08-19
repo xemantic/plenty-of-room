@@ -1130,7 +1130,7 @@
                 0.0706145537,
                 0.0706150738
             ],
-            "departure": 7.36609619E-6,
+            "departure": 7.4E-6,
             "note": "nested, per CLAUDE.md — a subdivision of 3 moves a station off a node and is not a refinement of 2"
         },
         {
@@ -1146,7 +1146,7 @@
                 0.0706145537,
                 0.0725266717
             ],
-            "departure": 0.0270782432,
+            "departure": 0.027,
             "note": "81 is the grid every published dishing in this programme is read on"
         },
         {
@@ -1198,7 +1198,7 @@
             "quantity": "arm length at 34 paths [nm]",
             "published": 8.164,
             "reproduced": 8.16439083,
-            "departure": 4.78723665E-5,
+            "departure": 4.8E-5,
             "strict": false
         },
         {
@@ -1230,7 +1230,7 @@
             "quantity": "dishing/stroke, C-0055's roots, uniform coupling",
             "published": 0.4156,
             "reproduced": 0.41558924,
-            "departure": 2.58900676E-5,
+            "departure": 2.6E-5,
             "strict": false
         },
         {
@@ -1238,7 +1238,7 @@
             "quantity": "dishing/stroke, free uncoupled tile",
             "published": 0.3079,
             "reproduced": 0.307902368,
-            "departure": 7.68996445E-6,
+            "departure": 7.7E-6,
             "strict": false
         },
         {
@@ -1246,7 +1246,7 @@
             "quantity": "dishing/stroke, 3 x 15, uniform",
             "published": 0.2182,
             "reproduced": 0.21821335,
-            "departure": 6.11830792E-5,
+            "departure": 6.1E-5,
             "strict": false
         },
         {
@@ -1254,7 +1254,7 @@
             "quantity": "dishing/stroke, 3 x 15, rim x 5",
             "published": 0.0753,
             "reproduced": 0.0753432869,
-            "departure": 5.74859419E-4,
+            "departure": 5.7E-4,
             "strict": false
         },
         {
@@ -1270,7 +1270,7 @@
             "quantity": "dishing/stroke, 1 x 15",
             "published": 0.695,
             "reproduced": 0.695201577,
-            "departure": 2.90038499E-4,
+            "departure": 2.9E-4,
             "strict": false
         },
         {

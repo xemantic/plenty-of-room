@@ -17,6 +17,7 @@
 package com.xemantic.nano.plentyofroom.anchoring
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.ShearJointAllowable
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
@@ -869,7 +870,9 @@ fun main() {
     val json = Json { prettyPrint = true; encodeDefaults = true }
     val file = File("gpd/results/T-30-flexure-end-joint.json")
     file.parentFile.mkdirs()
-    file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n")
+    file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult(
+        digitsByKey = DEPARTURE_DIGITS_BY_KEY
+    )) + "\n")
     report(result, file)
 }
 

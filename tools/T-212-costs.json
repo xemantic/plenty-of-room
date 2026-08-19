@@ -1,0 +1,403 @@
+{
+ "files": [
+  {
+   "resultFile": "T-117-crossbar-junction-trio.json",
+   "producer": "anchoring/CrossbarJunctionTrioStudy.kt",
+   "costClass": "junction closure search",
+   "costClassBasis": "a torsion-feasibility search over a continuum of helical phases; the inner solve is one junction closure",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-121-stacked-arm-sheet.json",
+   "producer": "structure/StackedArmSheetStudy.kt",
+   "costClass": "lattice solve",
+   "costClassBasis": "grillage solves on the origami sheet, no ensemble and no field",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-125-upward-root-placement.json",
+   "producer": "anchoring/UpwardRootPlacementStudy.kt",
+   "costClass": "placement search",
+   "costClassBasis": "an exhaustive enumeration of upward-root placements, sliced from one influence bank",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-127-crossbar-trio-existence.json",
+   "producer": "anchoring/CrossbarTrioExistenceStudy.kt",
+   "costClass": "junction closure search",
+   "costClassBasis": "the existence half of T-117's search",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-135-output-element-recommendation.json",
+   "producer": "synthesis/OutputElementRecommendationStudy.kt",
+   "costClass": "element catalogue",
+   "costClassBasis": "elastica and closed-form element laws over a catalogue of rows",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-149-recommended-element-fold.json",
+   "producer": "stability/RecommendedElementFoldStudy.kt",
+   "costClass": "elastica shooting",
+   "costClassBasis": "a shooting solve per fold, on a continuation",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-191-four-layer-tile.json",
+   "producer": "tile/FourLayerTileStudy.kt",
+   "costClass": "Monte Carlo ensemble",
+   "costClassBasis": "a staple-dropout ensemble per cell",
+   "declaredWorkload": {
+    "gradingRealisations": "10000",
+    "samplesPerEdge": "81"
+   },
+   "audit": [
+    "departure (T-212)",
+    "saturation (T-213)"
+   ]
+  },
+  {
+   "resultFile": "T-3-stroke-and-blocking-force.json",
+   "producer": "actuator/StrokeAndBlockingForceStudy.kt",
+   "costClass": "field solve",
+   "costClassBasis": "nonlinear Poisson-Boltzmann gap solves over the operating states",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-30-flexure-end-joint.json",
+   "producer": "anchoring/FlexureEndJointStudy.kt",
+   "costClass": "closed form",
+   "costClassBasis": "joint stiffness algebra; no solve of any kind",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-4-maximum-usable-bias.json",
+   "producer": "actuator/MaximumUsableBiasStudy.kt",
+   "costClass": "field solve",
+   "costClassBasis": "a Poisson-Boltzmann solve per bias state, with a fold search over each",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-60-collar-on-the-equilibrium-path.json",
+   "producer": "actuator/CollarEquilibriumPathStudy.kt",
+   "costClass": "field solve",
+   "costClassBasis": "the collar-corrected equilibrium path: a field solve per path point",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-76-softening-coupling-stability.json",
+   "producer": "stability/SofteningCouplingStabilityStudy.kt",
+   "costClass": "elastica shooting",
+   "costClassBasis": "a coupled-characteristic fold search per state",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-81-hinge-line-census.json",
+   "producer": "anchoring/HingeLineCensusStudy.kt",
+   "costClass": "closed form",
+   "costClassBasis": "a crossover census on a fixed lattice",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-99-flexure-count-hinge-trade.json",
+   "producer": "anchoring/FlexureCountHingeTradeStudy.kt",
+   "costClass": "closed form",
+   "costClassBasis": "hinge and flexure algebra over a count sweep",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-126-arm-slab-clearance.json",
+   "producer": "anchoring/ArmSlabClearanceStudy.kt",
+   "costClass": "closed form",
+   "costClassBasis": "plan geometry over a lattice",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-129-range-robust-placement.json",
+   "producer": "anchoring/RangeRobustPlacementStudy.kt",
+   "costClass": "placement search",
+   "costClassBasis": "723 168 placements sliced from one influence bank, plus a minimax descent",
+   "declaredWorkload": {
+    "placementsEnumerated": 723168.0
+   },
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-130-crossbar-array-placement.json",
+   "producer": "anchoring/CrossbarArrayPlacementStudy.kt",
+   "costClass": "placement search",
+   "costClassBasis": "an enumeration of crossbar array placements",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-134-plan-tolerance.json",
+   "producer": "anchoring/PlanToleranceStudy.kt",
+   "costClass": "closed form",
+   "costClassBasis": "plan-tolerance algebra and a seat sweep",
+   "declaredWorkload": {
+    "seatsSampledCoarse": 11.0,
+    "seatsSampledFine": 9.0
+   },
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-137-weave-exclusion-width.json",
+   "producer": "anchoring/WeaveExclusionWidthStudy.kt",
+   "costClass": "closed form",
+   "costClassBasis": "weave geometry on a fixed lattice",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-138-path-count-consistency.json",
+   "producer": "anchoring/PathCountConsistencyStudy.kt",
+   "costClass": "closed form",
+   "costClassBasis": "path-count arithmetic over the acceptance clauses",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-139-duplex-pair-separation.json",
+   "producer": "electrostatics/DuplexPairSeparationStudy.kt",
+   "costClass": "field solve",
+   "costClassBasis": "duplex-pair separation over four measured methods, with a PB route",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-140-seam-weave-congruence.json",
+   "producer": "anchoring/SeamWeaveStudy.kt",
+   "costClass": "closed form",
+   "costClassBasis": "seam and weave congruence on a fixed lattice",
+   "declaredWorkload": {
+    "candidateSeamPlanes": 8.0
+   },
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-151-scaffold-routing.json",
+   "producer": "anchoring/ScaffoldRoutingStudy.kt",
+   "costClass": "closed form",
+   "costClassBasis": "scaffold routing counts",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-152-collinear-clearance.json",
+   "producer": "anchoring/CollinearClearanceStudy.kt",
+   "costClass": "closed form",
+   "costClassBasis": "collinear clearance algebra",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-153-buildable-raster-width.json",
+   "producer": "anchoring/BuildableRasterWidthStudy.kt",
+   "costClass": "closed form",
+   "costClassBasis": "buildable raster widths on the base-pair lattice",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-157-large-rotation-arm-branch.json",
+   "producer": "stability/LargeRotationArmBranchStudy.kt",
+   "costClass": "elastica shooting",
+   "costClassBasis": "an RK4 shooting continuation over the arm branch",
+   "declaredWorkload": {
+    "rk4Steps": "800",
+    "meshNodes": "2000"
+   },
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-162-shared-body-coupling.json",
+   "producer": "coupling/SharedBodyCouplingStudy.kt",
+   "costClass": "Monte Carlo ensemble",
+   "costClassBasis": "a dropout ensemble per design, on a shared-body condensation",
+   "declaredWorkload": {
+    "gradingRealisations": "10000",
+    "dishingSamplesPerEdge": "81"
+   },
+   "audit": [
+    "departure (T-212)",
+    "saturation (T-213)"
+   ]
+  },
+  {
+   "resultFile": "T-132-pinned-leg-budget.json",
+   "producer": "anchoring/PinnedLegBudgetStudy.kt",
+   "costClass": "placement search",
+   "costClassBasis": "a leg-azimuth and length sweep with a junction check",
+   "declaredWorkload": {
+    "chordSampleSpacingDegrees": 22.4367385,
+    "bestLegSteps": 12.0
+   },
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-133-output-element-placement.json",
+   "producer": "anchoring/OutputElementPlacementStudy.kt",
+   "costClass": "placement search",
+   "costClassBasis": "an output-element placement enumeration",
+   "declaredWorkload": {
+    "candidatesPlacing": 3.0,
+    "candidatesEvaluated": 11.0,
+    "candidatesSurviving": 2.0
+   },
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-155-dropout-robust-placement.json",
+   "producer": "coupling/DropoutRobustPlacementStudy.kt",
+   "costClass": "Monte Carlo ensemble",
+   "costClassBasis": "a dropout ensemble per design plus a percentile descent",
+   "declaredWorkload": {
+    "gradingRealisations": "10000",
+    "trainingRealisations": "200",
+    "samplesPerEdge": "81"
+   },
+   "audit": [
+    "departure (T-212)",
+    "saturation (T-213)"
+   ]
+  },
+  {
+   "resultFile": "T-160-edge-width-dependence.json",
+   "producer": "electrostatics/EdgeWidthDependenceStudy.kt",
+   "costClass": "field solve",
+   "costClassBasis": "two-dimensional Poisson-Boltzmann edge solves at matched refinement",
+   "declaredWorkload": {
+    "placementSensitivity": 0.0032,
+    "sweepRefinement": 3.0
+   },
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-164-row-end-crossover-stiffness.json",
+   "producer": "anchoring/RowEndCrossoverStiffnessStudy.kt",
+   "costClass": "lattice solve",
+   "costClassBasis": "grillage solves with and without the row-end crossovers",
+   "declaredWorkload": null,
+   "audit": [
+    "departure (T-212)"
+   ]
+  },
+  {
+   "resultFile": "T-165-shared-body-placement.json",
+   "producer": "coupling/SharedBodyPlacementStudy.kt",
+   "costClass": "Monte Carlo ensemble",
+   "costClassBasis": "a dropout ensemble per phase plus two descents",
+   "declaredWorkload": {
+    "gradingRealisations": "10000",
+    "trainingRealisations": "200",
+    "shapeRealisations": "2000",
+    "dishingSamplesPerEdge": "81",
+    "gradedPhases": "7, 8, 9, 17, 23, 24",
+    "richestPhases": "0, 1, 2, 14, 15, 16, 17, 18, 30, 31",
+    "eightColumnPhases": "6, 7, 8, 9, 10, 22, 23, 24, 25, 26"
+   },
+   "audit": [
+    "saturation (T-213)"
+   ]
+  },
+  {
+   "resultFile": "T-163-path-count-fixed-geometry.json",
+   "producer": "coupling/PathCountFixedGeometryStudy.kt",
+   "costClass": "Monte Carlo ensemble",
+   "costClassBasis": "a dropout ensemble per cell under common random numbers",
+   "declaredWorkload": {
+    "gradingRealisations": "10000",
+    "dishingSamplesPerEdge": "81"
+   },
+   "audit": [
+    "saturation (T-213)"
+   ]
+  },
+  {
+   "resultFile": "T-178-count-phase-interaction.json",
+   "producer": "coupling/CountPhaseInteractionStudy.kt",
+   "costClass": "Monte Carlo ensemble",
+   "costClassBasis": "a dropout ensemble at every one of 32 crossover phases",
+   "declaredWorkload": {
+    "phasesSwept": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31",
+    "realisations": "10000",
+    "dishingSamplesPerEdge": "81"
+   },
+   "audit": [
+    "saturation (T-213)"
+   ]
+  }
+ ],
+ "controlReRuns": null
+}

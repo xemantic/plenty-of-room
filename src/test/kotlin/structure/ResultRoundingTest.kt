@@ -118,10 +118,114 @@ class ResultRoundingTest {
         // `C-0101` cured the trap in `convergence` records and `C-0127` found it alive in
         // `reproductions` ones. The rule is about the QUANTITY, so the map is keyed on every
         // spelling the corpus uses for it, not on the one file that last went wrong.
-        assert(DEPARTURE_DIGITS_BY_KEY["departure"] == DEPARTURE_SIGNIFICANT_DIGITS)
-        assert(DEPARTURE_DIGITS_BY_KEY["relativeDeparture"] == DEPARTURE_SIGNIFICANT_DIGITS)
-        assert(DEPARTURE_DIGITS_BY_KEY["departureFromFinest"] == DEPARTURE_SIGNIFICANT_DIGITS)
+        //
+        // `T-212`/`CH-0154`: and it is keyed on the RECORD as well as on the spelling. A bare
+        // `departure` is not a departure wherever it appears -- `T-193` emits one in VOLTS.
+        for (record in DEPARTURE_RECORDS) {
+            for (spelling in DEPARTURE_SPELLINGS) {
+                assert(
+                    DEPARTURE_DIGITS_BY_KEY["$record/$spelling"] == DEPARTURE_SIGNIFICANT_DIGITS
+                )
+            }
+        }
         assert(DEPARTURE_DIGITS_BY_KEY["strokeOverStroke"] == null)
+        assert(DEPARTURE_DIGITS_BY_KEY.size == DEPARTURE_RECORDS.size * DEPARTURE_SPELLINGS.size)
+    }
+
+    @Test
+    fun `gate 4 numerical convergence - the rule should not reach a departure that is not dimensionless`() {
+        // `T-212`'s `F4`, and the measurement that raised `CH-0154`. `C-0129` describes the rule
+        // as being about a RECORD TYPE and then keys it on a LEAF NAME -- and the corpus carries
+        // `departure` under nine other parents, one of which is
+        // `T-193`'s `potentialOfZeroCharge`, where the quantity is a difference of two electrode
+        // potentials in VOLTS. Two significant digits there would discard determined information
+        // about a literature comparison, which is the opposite of what the rule is for.
+        val document = Json.parseToJsonElement(
+            """{"potentialOfZeroCharge":[{"departure":0.001420712}],""" +
+                    """"convergence":[{"departure":0.001420712}]}"""
+        )
+        val rounded = document.roundedForResult(
+            digitsByKey = DEPARTURE_DIGITS_BY_KEY, floor = 0.0
+        ).jsonObject
+        assert(
+            rounded.getValue("potentialOfZeroCharge").jsonArray[0]
+                .jsonObject.getValue("departure") == JsonPrimitive(0.001420712)
+        )
+        assert(
+            rounded.getValue("convergence").jsonArray[0]
+                .jsonObject.getValue("departure") == JsonPrimitive(0.0014)
+        )
+    }
+
+    @Test
+    fun `gate 3 symmetry - a record-qualified key should beat an unqualified one`() {
+        // `T-160` is the file where the two disagree INSIDE ONE STUDY: the same spelling carries
+        // the study's ANSWER in `departures[*]`, declared at six digits with a reason, and a
+        // DIAGNOSTIC in `convergence[*]`. A map keyed on the leaf name alone cannot say both.
+        val document = Json.parseToJsonElement(
+            """{"departures":[{"relativeDeparture":1.23456789e-4}],""" +
+                    """"convergence":[{"relativeDeparture":1.23456789e-4}]}"""
+        )
+        val rounded = document.roundedForResult(
+            digitsByKey = DEPARTURE_DIGITS_BY_KEY + mapOf("relativeDeparture" to 6),
+            floor = 0.0
+        ).jsonObject
+        assert(
+            rounded.getValue("departures").jsonArray[0]
+                .jsonObject.getValue("relativeDeparture") == JsonPrimitive(1.23457e-4)
+        )
+        assert(
+            rounded.getValue("convergence").jsonArray[0]
+                .jsonObject.getValue("relativeDeparture") == JsonPrimitive(1.2e-4)
+        )
+    }
+
+    @Test
+    fun `gate 2 limiting case - an unqualified key should still apply where no qualified one does`() {
+        // The qualified form is an ADDITION, not a replacement: `P-18`'s per-key precisions are
+        // unqualified and must keep working exactly as they did.
+        val document = Json.parseToJsonElement(
+            """{"layer":{"height":1.23456789,"stiffness":1.23456789}}"""
+        )
+        val rounded = document.roundedForResult(
+            digitsByKey = mapOf("height" to 6), floor = 0.0
+        ).jsonObject.getValue("layer").jsonObject
+        assert(rounded.getValue("height") == JsonPrimitive(1.23457))
+        assert(rounded.getValue("stiffness") == JsonPrimitive(1.23456789))
+    }
+
+    @Test
+    fun `gate 2 limiting case - the qualifier should be the nearest OBJECT ancestor, not the array index`() {
+        // Every departure in this corpus sits inside an array of records, so a qualifier that
+        // counted the array as a level would match nothing at all -- which would be a silent
+        // no-op, the worst failure mode a rounding rule has.
+        val document = Json.parseToJsonElement(
+            """{"outer":{"convergence":[{"departure":1.23456789e-4}]}}"""
+        )
+        val rounded = document.roundedForResult(
+            digitsByKey = DEPARTURE_DIGITS_BY_KEY, floor = 0.0
+        ).jsonObject.getValue("outer").jsonObject
+        assert(
+            rounded.getValue("convergence").jsonArray[0]
+                .jsonObject.getValue("departure") == JsonPrimitive(1.2e-4)
+        )
+    }
+
+    @Test
+    fun `gate 3 symmetry - a qualified key should apply to its whole subtree like an unqualified one`() {
+        // `roundedForResult` documents `digitsByKey` as applying to the WHOLE SUBTREE under the
+        // key. The qualified form inherits that, so a departure emitted as a nested object rather
+        // than as a leaf is reached too.
+        val document = Json.parseToJsonElement(
+            """{"convergence":[{"departure":{"absolute":1.23456789e-4}}]}"""
+        )
+        val rounded = document.roundedForResult(
+            digitsByKey = DEPARTURE_DIGITS_BY_KEY, floor = 0.0
+        ).jsonObject
+        assert(
+            rounded.getValue("convergence").jsonArray[0].jsonObject
+                .getValue("departure").jsonObject.getValue("absolute") == JsonPrimitive(1.2e-4)
+        )
     }
 
     @Test

@@ -2054,7 +2054,7 @@
             "appliedBias": 0.368,
             "here": 1.04934229,
             "upstream": 1.049342,
-            "departure": 2.78131178E-7,
+            "departure": 2.8E-7,
             "source": "C-0022 / gpd/results/T-3b-tile-edge-load-profile.json"
         },
         {
@@ -2064,7 +2064,7 @@
             "appliedBias": 0.155,
             "here": 1.10631759,
             "upstream": 1.106318,
-            "departure": 3.72101545E-7,
+            "departure": 3.7E-7,
             "source": "C-0022 / gpd/results/T-3b-tile-edge-load-profile.json"
         },
         {
@@ -2074,7 +2074,7 @@
             "appliedBias": 0.192,
             "here": 1.14708077,
             "upstream": 1.147081,
-            "departure": 1.96895891E-7,
+            "departure": 2.0E-7,
             "source": "C-0022 / gpd/results/T-3b-tile-edge-load-profile.json"
         }
     ],

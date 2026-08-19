@@ -802,7 +802,7 @@
             "quantity": "the mandate as a sum [pN/nm]",
             "published": 33.3333333,
             "reproduced": 33.3333333,
-            "departure": 1.00000008E-9
+            "departure": 1.0E-9
         },
         {
             "owner": "C-0069",
@@ -837,28 +837,28 @@
             "quantity": "the arm's plan margin [nm]",
             "published": 0.0256091734,
             "reproduced": 0.0256091734,
-            "departure": 1.22221615E-9
+            "departure": 1.2E-9
         },
         {
             "owner": "C-0069",
             "quantity": "the end-condition budget c",
             "published": 2.3416,
             "reproduced": 2.34165925,
-            "departure": 2.53013001E-5
+            "departure": 2.5E-5
         },
         {
             "owner": "C-0069",
             "quantity": "the tip-restraint ceiling [pN nm/rad]",
             "published": 79.678,
             "reproduced": 79.6781387,
-            "departure": 1.74098257E-6
+            "departure": 1.7E-6
         },
         {
             "owner": "C-0069",
             "quantity": "the root-restraint ceiling [pN nm/rad]",
             "published": 13.93,
             "reproduced": 13.9303697,
-            "departure": 2.65419277E-5
+            "departure": 2.7E-5
         },
         {
             "owner": "C-0034",
@@ -872,14 +872,14 @@
             "quantity": "the crossover hinge [pN nm/rad]",
             "published": 13.5294118,
             "reproduced": 13.5294118,
-            "departure": 2.60869566E-9
+            "departure": 2.6E-9
         },
         {
             "owner": "C-0069",
             "quantity": "the two-support family's floor [nm]",
             "published": 22.414,
             "reproduced": 22.4141917,
-            "departure": 8.55211582E-6
+            "departure": 8.6E-6
         },
         {
             "owner": "C-0069",
@@ -893,28 +893,28 @@
             "quantity": "the entropic contour [nm]",
             "published": 6.035,
             "reproduced": 6.03540849,
-            "departure": 6.76861167E-5
+            "departure": 6.8E-5
         },
         {
             "owner": "C-0069",
             "quantity": "the hinge lever sqrt(k_theta/k) [nm]",
             "published": 3.715,
             "reproduced": 3.71483512,
-            "departure": 4.43811033E-5
+            "departure": 4.4E-5
         },
         {
             "owner": "C-0069",
             "quantity": "the standoff-headed crank [nm]",
             "published": 5.331,
             "reproduced": 5.33074719,
-            "departure": 4.74223583E-5
+            "departure": 4.7E-5
         },
         {
             "owner": "CH-0081",
             "quantity": "the rigid-root arm [nm]",
             "published": 9.247,
             "reproduced": 9.24698738,
-            "departure": 1.36467388E-6
+            "departure": 1.4E-6
         },
         {
             "owner": "C-0069",
@@ -935,28 +935,28 @@
             "quantity": "the per-path secant ceiling n a/s [pN/nm]",
             "published": 113.333333,
             "reproduced": 113.333333,
-            "departure": 2.94117647E-9
+            "departure": 2.9E-9
         },
         {
             "owner": "C-0066",
             "quantity": "the tip-to-neighbour clearance [nm]",
             "published": 2.71561,
             "reproduced": 2.71560917,
-            "departure": 3.04399859E-7
+            "departure": 3.0E-7
         },
         {
             "owner": "C-0069",
             "quantity": "the two-support family against the budget",
             "published": 2.737,
             "reproduced": 2.73677554,
-            "departure": 8.20088515E-5
+            "departure": 8.2E-5
         },
         {
             "owner": "CH-0081",
             "quantity": "the rigid-root arm against the budget",
             "published": 1.129,
             "reproduced": 1.12905829,
-            "departure": 5.16282209E-5
+            "departure": 5.2E-5
         }
     ],
     "convergence": [
@@ -972,14 +972,14 @@
             "axis": "bisection resolution 1e-4 -> 1e-7",
             "coarse": 13.9298604,
             "fine": 13.9303725,
-            "departure": 3.67574893E-5
+            "departure": 3.7E-5
         },
         {
             "quantity": "the tip-restraint ceiling [pN nm/rad]",
             "axis": "bisection resolution 1e-4 -> 1e-7",
             "coarse": 79.6765089,
             "fine": 79.6781678,
-            "departure": 2.0820237E-5
+            "departure": 2.1E-5
         },
         {
             "quantity": "the plan budget [nm]",

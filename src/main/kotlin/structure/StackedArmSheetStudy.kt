@@ -22,6 +22,7 @@ import com.xemantic.nano.plentyofroom.coupling.couplingSupports
 import com.xemantic.nano.plentyofroom.coupling.admissibleStiffnessRatio
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
 import com.xemantic.nano.plentyofroom.coupling.rimStiffenedWeights
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -1009,7 +1010,9 @@ fun main() {
     val json = Json { prettyPrint = true }
     output.writeText(
         json.encodeToString(
-            (json.encodeToJsonElement(result) as JsonObject).roundedForResult()
+            (json.encodeToJsonElement(result) as JsonObject).roundedForResult(
+                digitsByKey = DEPARTURE_DIGITS_BY_KEY
+            )
         )
     )
     t121Report(result, output, started)

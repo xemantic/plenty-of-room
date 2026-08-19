@@ -2410,7 +2410,7 @@
                 0.0621469087,
                 0.0618197415
             ],
-            "departure": 0.0052644151,
+            "departure": 0.0053,
             "note": "nested only, per CLAUDE.md — a subdivision of 3 moves a station off a node"
         },
         {
@@ -2426,7 +2426,7 @@
                 0.0621469087,
                 0.0624086433
             ],
-            "departure": 0.00421154705,
+            "departure": 0.0042,
             "note": "81 is the grid every published dishing in this programme is read on"
         },
         {
@@ -2440,7 +2440,7 @@
                 0.0621469105,
                 0.0621469087
             ],
-            "departure": 2.91187973E-8,
+            "departure": 2.9E-8,
             "note": "FALSIFIER: superposition is exact for a linear system, so any departure above round-off means the sweep was run on the wrong object"
         },
         {
@@ -2470,7 +2470,7 @@
                 0.0623464033,
                 0.0622667411
             ],
-            "departure": 0.00321004918,
+            "departure": 0.0032,
             "note": "the inset is a NUMERICAL GUARD (a column on the tile edge would seed a zero-length beam element), so the answer must not depend on it; swept over 0.05 nm, half a rise and one whole rise"
         },
         {
@@ -2486,7 +2486,7 @@
                 3.47987816E-9,
                 0.0
             ],
-            "departure": 2.12606493E-7,
+            "departure": 2.1E-7,
             "note": "a uniform load on a uniform Winkler foundation dishes EXACTLY zero on a free tile; the residual here is the conditioning of the short end element the inset creates, and it falls as the inset grows"
         },
         {
@@ -2558,7 +2558,7 @@
             "quantity": "the end-condition razor c at 40.00 nm",
             "published": 2.3416,
             "reproduced": 2.34165925,
-            "departure": 2.5301627E-5,
+            "departure": 2.5E-5,
             "strict": false
         },
         {
@@ -2574,7 +2574,7 @@
             "quantity": "the widened end-condition razor c at 40.00 nm",
             "published": 2.94462,
             "reproduced": 2.94461681,
-            "departure": 1.08246315E-6,
+            "departure": 1.1E-6,
             "strict": false
         },
         {
@@ -2582,7 +2582,7 @@
             "quantity": "the margin M = p - d - L [nm]",
             "published": 0.02561,
             "reproduced": 0.02560917,
-            "departure": 3.24092151E-5,
+            "departure": 3.2E-5,
             "strict": false
         },
         {

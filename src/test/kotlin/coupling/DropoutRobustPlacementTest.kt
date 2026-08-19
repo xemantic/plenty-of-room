@@ -254,6 +254,57 @@ class DropoutRobustPlacementTest {
         assert(longestAbsenceRun(List(8) { true }, 4) == 0)
     }
 
+    // ------------------------------------------------ T-213/CH-0153: the saturated statistic
+
+    @Test
+    fun `gate 3 symmetry - a saturated exceedance should carry a one-sided bound in the SUMMARY`() {
+        // `T-210`/`C-0129` repaired `T-148` at its own emission site. Six more files carry the
+        // same degenerate statistic, and they all build it here — so the instrument belongs on
+        // `DropoutDishing`, not on six record classes. A tolerance of zero saturates the
+        // exceedance at 1.0 by construction, which is the direction every one of the six
+        // affected studies is actually in: their headline is that a design FAILS.
+        val sample = doubleArrayOf(0.2, 0.3, 0.4, 0.5)
+        val saturated = summariseDropoutDishing(sample, 0.2, 40.0, 1e-9)
+        assert(saturated.exceedance == 1.0)
+        assert(saturated.exceedanceStandardError == 0.0)
+        val bound = saturated.exceedanceOneSidedBound
+        assert(bound != null)
+        assert(bound == saturatedProportionBound(1.0, sample.size))
+    }
+
+    @Test
+    fun `gate 2 limiting case - an unsaturated exceedance should carry NO one-sided bound`() {
+        // At `0 < p < 1` the symmetric error is the right instrument and a one-sided bound is
+        // the wrong question, so the field is `null` rather than a number nobody asked for.
+        val sample = doubleArrayOf(0.05, 0.30, 0.05, 0.40)
+        val partial = summariseDropoutDishing(sample, 0.05, 40.0, 0.10)
+        assert(partial.exceedance == 0.5)
+        assert(partial.exceedanceStandardError > 0.0)
+        assert(partial.exceedanceOneSidedBound == null)
+    }
+
+    @Test
+    fun `gate 2 limiting case - an exceedance saturated at ZERO should carry an UPPER bound`() {
+        val sample = doubleArrayOf(0.01, 0.02, 0.03, 0.04)
+        val none = summariseDropoutDishing(sample, 0.01, 40.0, 0.10)
+        assert(none.exceedance == 0.0)
+        assert(none.exceedanceStandardError == 0.0)
+        assert(none.exceedanceOneSidedBound == saturatedProportionBound(0.0, sample.size))
+    }
+
+    @Test
+    fun `gate 4 numerical convergence - the one-sided bound should carry the sample size where the symmetric error cannot`() {
+        // The whole point, and the reason `CH-0153` is a challenge rather than a tidy-up: the
+        // left column is a function of `p` alone and reports the saturation back to itself.
+        val bounds = listOf(1250, 2500, 5000, 10000, 20000).map { count ->
+            summariseDropoutDishing(DoubleArray(count) { 0.5 }, 0.5, 40.0, 1e-9)
+        }
+        assert(bounds.all { it.exceedanceStandardError == 0.0 })
+        val values = bounds.map { it.exceedanceOneSidedBound!! }
+        assert(values.distinct().size == values.size)
+        assert(values.zipWithNext().all { (a, b) -> a < b })
+    }
+
     @Test
     fun `gate 3 - the percentile summary is monotone and lands on the sample`() {
         val ensemble = dropoutEnsemble(List(grid.size) { 0.8 }, 200, 20260817L)

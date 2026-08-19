@@ -20,6 +20,7 @@ import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.couplingSupports
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
@@ -1030,7 +1031,9 @@ fun main() {
     file.parentFile.mkdirs()
     file.writeText(
         json.encodeToString(
-            (json.encodeToJsonElement(result) as JsonObject).roundedForResult()
+            (json.encodeToJsonElement(result) as JsonObject).roundedForResult(
+                digitsByKey = DEPARTURE_DIGITS_BY_KEY
+            )
         )
     )
     println("T-130 — wrote ${file.path} in ${(System.currentTimeMillis() - started) / 1000} s")

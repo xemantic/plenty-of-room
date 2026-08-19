@@ -1122,28 +1122,28 @@
             "quantity": "the plan margin at the lattice constant [nm]",
             "published": 0.0256,
             "reproduced": 0.02560917,
-            "departure": 9.17E-6
+            "departure": 9.2E-6
         },
         {
             "source": "C-0066",
             "quantity": "the tip gap pitch - arm [nm]",
             "published": 2.71561,
             "reproduced": 2.71560917,
-            "departure": 8.29999999E-7
+            "departure": 8.3E-7
         },
         {
             "source": "C-0072",
             "quantity": "the margin at the weave minimum [nm]",
             "published": 0.866,
             "reproduced": 0.86560917,
-            "departure": 3.9083E-4
+            "departure": 3.9E-4
         },
         {
             "source": "C-0072",
             "quantity": "the margin at the weave maximum [nm]",
             "published": -0.884,
             "reproduced": -0.88439083,
-            "departure": 3.9083E-4
+            "departure": 3.9E-4
         },
         {
             "source": "C-0063",

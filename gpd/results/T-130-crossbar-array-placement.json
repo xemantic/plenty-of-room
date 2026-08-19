@@ -2117,7 +2117,7 @@
         2.20588235,
         4.41176471
       ],
-      "departure": 2.20588235,
+      "departure": 2.2,
       "note": "the closing set is a MEASURE on a continuum, exactly as C-0062's closing count is; what the array needs is not the count but whether the station is in it"
     },
     {
@@ -2133,7 +2133,7 @@
         0.0780175595,
         0.0780146165
       ],
-      "departure": 2.94298283E-6,
+      "departure": 2.9E-6,
       "note": "nested subdivisions only, per CLAUDE.md — a subdivision of 3 moves a point load off a node and is not a refinement of 2"
     }
   ],
@@ -2143,7 +2143,7 @@
       "quantity": "dishing/stroke, 34 stations, equal springs, phase 24",
       "published": 0.0706,
       "here": 0.0706145537,
-      "departure": 2.06142774E-4,
+      "departure": 2.1E-4,
       "note": "re-solved on C-0063's own grillage under C-0022's solved load"
     },
     {
@@ -2151,7 +2151,7 @@
       "quantity": "dishing/stroke, the free tile",
       "published": 0.3079,
       "here": 0.307902368,
-      "departure": 7.6898974E-6,
+      "departure": 7.7E-6,
       "note": "the same host, no coupling"
     },
     {

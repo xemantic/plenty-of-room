@@ -960,7 +960,7 @@
             "coarse": 0.363636364,
             "medium": 0.444444444,
             "fine": 0.444444444,
-            "departure": 0.0808080808,
+            "departure": 0.081,
             "note": "NOT a convergence: refining the grid finds more alternation, because the verdict is not monotone in the seat. Reported so that the non-monotonicity is a measured property of the sweep and not an artefact of an 0.05 nm step"
         }
     ],
@@ -970,7 +970,7 @@
             "quantity": "the Q5 arm margin",
             "published": 0.0256,
             "reproduced": 0.02560917,
-            "departure": 9.17E-6,
+            "departure": 9.2E-6,
             "flag": "DERIVED here"
         },
         {
@@ -986,7 +986,7 @@
             "quantity": "the tip gap, root pitch minus the arm",
             "published": 2.71561,
             "reproduced": 2.71560917,
-            "departure": 8.29999999E-7,
+            "departure": 8.3E-7,
             "flag": "DERIVED here"
         },
         {
@@ -994,7 +994,7 @@
             "quantity": "the arm length",
             "published": 8.16439,
             "reproduced": 8.16439083,
-            "departure": 8.26631302E-7,
+            "departure": 8.3E-7,
             "flag": "RE-RUN through C-0039's own solver"
         },
         {
@@ -1010,7 +1010,7 @@
             "quantity": "the crossover hinge stiffness",
             "published": 13.5294,
             "reproduced": 13.5294118,
-            "departure": 1.17647059E-5,
+            "departure": 1.2E-5,
             "flag": "CITED, FITTED (Chen et al. 2014) via C-0009; re-evaluated from its own law"
         },
         {
@@ -1018,7 +1018,7 @@
             "quantity": "the crossover axial stiffness",
             "published": 64.7,
             "reproduced": 64.7058824,
-            "departure": 0.00588235294,
+            "departure": 0.0059,
             "flag": "DERIVED from C-0009's own law"
         },
         {
@@ -1026,7 +1026,7 @@
             "quantity": "the A2 two-terminus couple",
             "published": 78.2353,
             "reproduced": 78.2352941,
-            "departure": 5.88235294E-6,
+            "departure": 5.9E-6,
             "flag": "RE-RUN through C-0034's own library"
         },
         {
@@ -1034,7 +1034,7 @@
             "quantity": "the B2 two-crossover couple",
             "published": 261.2,
             "reproduced": 261.167941,
-            "departure": 0.0320588235,
+            "departure": 0.032,
             "flag": "RE-RUN through C-0028's own library"
         },
         {
@@ -1042,7 +1042,7 @@
             "quantity": "the dishing at its own 34 roots",
             "published": 0.0706,
             "reproduced": 0.0706145537,
-            "departure": 1.45536799E-5,
+            "departure": 1.5E-5,
             "flag": "RE-SOLVED on C-0009's grillage under C-0022's solved load"
         },
         {
@@ -1050,7 +1050,7 @@
             "quantity": "the free-tile dishing on this phase",
             "published": 0.3079,
             "reproduced": 0.307902368,
-            "departure": 2.36771941E-6,
+            "departure": 2.4E-6,
             "flag": "RE-SOLVED"
         },
         {

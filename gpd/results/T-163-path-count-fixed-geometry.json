@@ -154,6 +154,7 @@
             "worstOverStroke": 1.27317422,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 17.2367,
             "flatAtP90": false
         },
@@ -180,6 +181,7 @@
             "worstOverStroke": 1.20908968,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 19.6552,
             "flatAtP90": false
         },
@@ -206,6 +208,7 @@
             "worstOverStroke": 1.10605394,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 22.1027,
             "flatAtP90": false
         },
@@ -232,6 +235,7 @@
             "worstOverStroke": 0.99770508,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 23.5586,
             "flatAtP90": false
         },
@@ -258,6 +262,7 @@
             "worstOverStroke": 0.939092149,
             "exceedance": 0.9976,
             "exceedanceStandardError": 4.89309718E-4,
+            "exceedanceOneSidedBound": null,
             "meanSurvivors": 26.6247,
             "flatAtP90": false
         },
@@ -284,6 +289,7 @@
             "worstOverStroke": 0.890204496,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 35.4685,
             "flatAtP90": false
         },
@@ -310,6 +316,7 @@
             "worstOverStroke": 1.10397833,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 17.331,
             "flatAtP90": false
         },
@@ -336,6 +343,7 @@
             "worstOverStroke": 1.12659282,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 19.8533,
             "flatAtP90": false
         },
@@ -362,6 +370,7 @@
             "worstOverStroke": 1.10605394,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 22.246,
             "flatAtP90": false
         },
@@ -388,6 +397,7 @@
             "worstOverStroke": 0.99770508,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 23.5586,
             "flatAtP90": false
         },
@@ -414,6 +424,7 @@
             "worstOverStroke": 0.939092149,
             "exceedance": 0.9976,
             "exceedanceStandardError": 4.89309718E-4,
+            "exceedanceOneSidedBound": null,
             "meanSurvivors": 26.6247,
             "flatAtP90": false
         },
@@ -440,6 +451,7 @@
             "worstOverStroke": 0.912962089,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 35.4516,
             "flatAtP90": false
         },
@@ -466,6 +478,7 @@
             "worstOverStroke": 0.8492241,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 16.9242,
             "flatAtP90": false
         },
@@ -492,6 +505,7 @@
             "worstOverStroke": 0.841529968,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 19.3409,
             "flatAtP90": false
         },
@@ -518,6 +532,7 @@
             "worstOverStroke": 0.713606607,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 21.6256,
             "flatAtP90": false
         },
@@ -544,6 +559,7 @@
             "worstOverStroke": 0.687707603,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 23.1567,
             "flatAtP90": false
         },
@@ -570,6 +586,7 @@
             "worstOverStroke": 0.689818312,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 26.2576,
             "flatAtP90": false
         },
@@ -596,6 +613,7 @@
             "worstOverStroke": 0.811092813,
             "exceedance": 0.9953,
             "exceedanceStandardError": 6.83952484E-4,
+            "exceedanceOneSidedBound": null,
             "meanSurvivors": 35.2039,
             "flatAtP90": false
         },
@@ -622,6 +640,7 @@
             "worstOverStroke": 0.984238946,
             "exceedance": 0.9981,
             "exceedanceStandardError": 4.35475602E-4,
+            "exceedanceOneSidedBound": null,
             "meanSurvivors": 26.63,
             "flatAtP90": false
         },
@@ -648,6 +667,7 @@
             "worstOverStroke": 0.802317541,
             "exceedance": 1.0,
             "exceedanceStandardError": 0.0,
+            "exceedanceOneSidedBound": 0.999700472,
             "meanSurvivors": 23.2606,
             "flatAtP90": false
         },
@@ -674,6 +694,7 @@
             "worstOverStroke": 0.929774371,
             "exceedance": 0.9982,
             "exceedanceStandardError": 4.23882059E-4,
+            "exceedanceOneSidedBound": null,
             "meanSurvivors": 23.2606,
             "flatAtP90": false
         }

@@ -37,6 +37,7 @@ import com.xemantic.nano.plentyofroom.coupling.uniformIncorporation
 import com.xemantic.nano.plentyofroom.coupling.winklerBendingLength
 import com.xemantic.nano.plentyofroom.coupling.worstSinglePathRemoval
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
@@ -200,6 +201,15 @@ private data class T191DishingRecord(
     val worstOverStroke: Double,
     val exceedance: Double,
     val exceedanceStandardError: Double,
+    /**
+     * The one-sided Clopper-Pearson limit where [exceedance] saturates, else `null` — `T-213`.
+     *
+     * `CH-0153`: at `p̂ = 1` the symmetric [exceedanceStandardError] is identically zero for every
+     * sample count, and this study's headline is a design that **fails**, which is exactly the
+     * direction that saturates it. Emitted **beside** the symmetric error rather than replacing
+     * it: the symmetric error is uninformative rather than wrong.
+     */
+    val exceedanceOneSidedBound: Double?,
     val meanSurvivors: Double,
     val flatAtNominal: Boolean,
     val flatAtMedian: Boolean,
@@ -639,6 +649,7 @@ fun main() {
             worstOverStroke = summary.worst,
             exceedance = summary.exceedance,
             exceedanceStandardError = summary.exceedanceStandardError,
+            exceedanceOneSidedBound = summary.exceedanceOneSidedBound,
             meanSurvivors = summary.meanSurvivors,
             flatAtNominal = nominal < T191_TOLERANCE,
             flatAtMedian = summary.flatAtMedian,
@@ -667,6 +678,9 @@ fun main() {
             worstOverStroke = s.freeDishing,
             exceedance = if (s.freeDishing > T191_TOLERANCE) 1.0 else 0.0,
             exceedanceStandardError = 0.0,
+            // A DETERMINISTIC exceedance: the uncoupled tile has no
+            // attachments to lose, so there is no sample to bound.
+            exceedanceOneSidedBound = null,
             meanSurvivors = 0.0,
             flatAtNominal = s.freeDishing < T191_TOLERANCE,
             flatAtMedian = s.freeDishing < T191_TOLERANCE,
@@ -1104,7 +1118,9 @@ fun main() {
         json.encodeToString(
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
-                digits = T191_DECISION_DIGITS + 3, floor = T191_DECISION_FLOOR
+                digits = T191_DECISION_DIGITS + 3,
+                digitsByKey = DEPARTURE_DIGITS_BY_KEY,
+                floor = T191_DECISION_FLOOR
             ) as JsonObject)
         ) + "\n"
     )

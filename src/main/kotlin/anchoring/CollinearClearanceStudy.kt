@@ -18,6 +18,7 @@ package com.xemantic.nano.plentyofroom.anchoring
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.electrostatics.BluntEndStacking
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.thermalEnergy
@@ -680,7 +681,9 @@ fun main() {
     file.writeText(
         json.encodeToString(
             JsonObject.serializer(),
-            (json.encodeToJsonElement(result).roundedForResult() as JsonObject)
+            (json.encodeToJsonElement(result).roundedForResult(
+                digitsByKey = DEPARTURE_DIGITS_BY_KEY
+            ) as JsonObject)
         )
     )
     println("T-152 — wrote ${file.path}")

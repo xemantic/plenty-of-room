@@ -1,0 +1,66 @@
+{
+ "task": "T-212 / T-213 — finishing the two audits C-0129 measured, published, and declined to gate",
+ "claim": "C-0131",
+ "leaf": "none for T-212 (a process task); A8.2 for T-213, whose six files are all flatness studies",
+ "raisedBy": "C-0129 (T-209 and T-210), and CH-0153",
+ "verificationType": "logical (two static censuses over the committed corpus, before and after, each with a stated catch set and self-tested discriminators) + in-silico (35 studies re-run through one snapshot and diffed field by field against their COMMITTED version read out of git, with a control re-run wherever a non-departure field moved)",
+ "maturity": "TRL 1-3, and below it: NO PHYSICS CHANGED. Every number this task moved is a diagnostic or a precision. Not one computed quantity moved.",
+ "units": {
+  "note": "nothing physical is computed. Units unchanged and untouched: nm, pN, pN/nm, pressure in pN/nm^2 = 1 MPa exactly, k_BT = 4.141947 pN nm at 300 K, aqueous buffer with stated Mg2+",
+  "departure": "dimensionless — and that is part of the definition, which is what CH-0154 is about",
+  "oneSidedBound": "a probability, dimensionless"
+ },
+ "sources": [
+  "gpd/claims/C-0129-result-file-hygiene.md",
+  "gpd/results/T-208-result-file-hygiene.json",
+  "gpd/challenges/CH-0152-the-defect-was-read-tested-and-misdescribed-not-unread.md",
+  "gpd/challenges/CH-0153-a-statistical-power-gate-discharged-by-a-statistic-that-is-identically-zero.md",
+  "src/main/kotlin/structure/ResultRounding.kt",
+  "src/main/kotlin/actuator/ActuatorResultRounding.kt",
+  "src/main/kotlin/coupling/DropoutRobustPlacement.kt",
+  "tools/check-result-file-hygiene.py",
+  "tools/reemission-order.py",
+  "tools/study-batch.sh"
+ ],
+ "cheapBounds": [
+  {
+   "name": "bound 1 — how many files does each audit still touch, and do the two sets OVERLAP?",
+   "measured": "27 files owe a departure repair and 6 owe a saturated-proportion repair; three — T-155, T-162, T-191 — are in BOTH",
+   "decided": "the two are ONE re-emission sweep and not two. Run separately, each of the three overlapping files is re-run twice and the second diff has to be separated from the first; and two topological sorts over overlapping sets can put a consumer of one before a producer of the other (CH-0131)."
+  },
+  {
+   "name": "bound 2 — is the rule the map expresses the rule the claim states? (falsifier F4)",
+   "measured": "the leaf key `departure` appears under ELEVEN parents in gpd/results/. T-193's is a difference of two electrode potentials in VOLTS; T-160's `departures[*].relativeDeparture` is that study's own ANSWER, declared at six digits.",
+   "decided": "the mechanism is re-keyed on `record/spelling` rather than on the leaf name, and the alternative — making DEPARTURE_DIGITS_BY_KEY the default of roundedForResult, one line instead of 27 — is REFUSED on this measurement rather than on taste. It would have touched 66 files and rounded a literature comparison in volts to two digits."
+  },
+  {
+   "name": "bound 3 — can the six files on the actuator rounding path obey the rule at all?",
+   "measured": "roundedForActuatorResult() takes NO ARGUMENTS. There is no digitsByKey to pass.",
+   "decided": "T-60 is one of C-0129's 27 and was not 'one re-run away': it was one re-run and a change to a rounding implementation in another package away. The delegation adds T-3, T-4, T-76, T-149 and T-157 to the sweep, and that obligation is explicit — changing a rounding implementation without re-emitting what it emits is the one thing CLAUDE.md forbids outright."
+  },
+  {
+   "name": "bound 4 — how wide is the RULE against the GATE's predicate?",
+   "measured": "C-0129's strict predicate is the leaf key `departure` inside a reproductions or convergence record. The same records carry three more spellings of the same quantity: 564 `departure`, 503 `relativeDeparture`, 337 `departureFromFinest`, 12 `relativeDepartureInStroke`.",
+   "decided": "the gate is wired on C-0129's own predicate, where the tree can be made clean, and the wider scope is PRINTED BESIDE IT, ungated. A gate that reports a number it does not enforce is the honest form of C-0083; a gate that reports only what it enforces is how a narrow predicate becomes a claim of cleanliness."
+  },
+  {
+   "name": "bound 5 — which of the 35 re-runs are cheap and which are heavy?",
+   "measured": "three studies were timed before anything was edited, spanning the classes: a closed-form lattice census, a two-dimensional field solve, and the largest Monte Carlo ensemble in the corpus. The spread is a factor of ~170.",
+   "decided": "the sweep is affordable, and it is run as ONE snapshot with 35 runs inside it rather than 35 snapshots (tools/study-batch.sh). No timing is emitted into this file — CLAUDE.md: a wall clock in a result file is a step counter by another name — so the cost is published as a COST CLASS and each study's own declared workload, which are deterministic."
+  }
+ ],
+ "departureAudit": {
+  "rule": "C-0093, C-0101: a departure — a difference or ratio of two nearly equal DIMENSIONLESS numbers, emitted inside a reproductions or convergence record — carries two significant digits, because RESULT_ABSOLUTE_FLOOR is a claim in the LOCKED UNITS and does not reach a ratio (P-18).",
+  "gatePredicate": "the leaf key `departure` inside a reproductions or convergence record, at more than two significant digits — C-0129's own strict predicate, unchanged, so that the before/after numbers are comparable",
+  "ruleScopePredicate": "any of the four spellings the corpus uses (departure, relativeDeparture, departureFromFinest, relativeDepartureInStroke) inside such a record — the rule, which is wider than the gate and is REPORTED rather than enforced",
+  "mechanism": "DEPARTURE_RECORDS x DEPARTURE_SPELLINGS as `record/spelling` keys in structure/ResultRounding.kt, with most-specific-wins precedence in roundedForResult; and actuator/ActuatorResultRounding.kt delegating to it instead of hand-copying it",
+  "whyTheRecordQualifierIsLoadBearing": "T-193 emits `potentialOfZeroCharge[*].departure` in VOLTS and T-160 emits its own answer as `departures[*].relativeDeparture` at six digits. A map keyed on the leaf name would round both. CH-0154."
+ },
+ "saturationAudit": {
+  "defect": "at p-hat = 1 (or 0) the symmetric binomial standard error sqrt(p(1-p)/n) is IDENTICALLY ZERO for every n, so it cannot distinguish 1250 draws from 20000. A saturated statistic is the resolution of nothing.",
+  "instrument": "coupling.saturatedProportionBound — the exact one-sided Clopper-Pearson limit at x = n, p > (1 - c)^(1/n), whose large-n form is the rule of three",
+  "whereTheRepairWENT": "on the SHARED SUMMARY, coupling.DropoutDishing, which all seven studies build through summariseDropoutDishing — not at six emission sites. C-0129 repaired T-148 at its emission site, which is the same shape as the three per-file departure repairs its own section 3 diagnoses.",
+  "aRecordIsREPAIREDNotRemoved": "the symmetric error stays where the one-sided bound is emitted beside it. It is uninformative rather than wrong, and removing it would break every reader of the schema.",
+  "theDegeneracyIsWhereTheAnswersAre": "all seven affected files are studies whose headline is that a design FAILS T-5b's 0.10, which is exactly the direction that saturates the exceedance at 1.0. The better a design is, the more informative the symmetric error; the worse it is, the less. A statistic that goes blind in the direction of the finding is not a weak instrument, it is the wrong one."
+ }
+}

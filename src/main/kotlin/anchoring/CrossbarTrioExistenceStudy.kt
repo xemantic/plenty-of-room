@@ -16,6 +16,7 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
@@ -822,6 +823,8 @@ fun main() {
     val json = Json { prettyPrint = true }
     val file = File("gpd/results/T-127-crossbar-trio-existence.json")
     file.parentFile?.mkdirs()
-    file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n")
+    file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult(
+        digitsByKey = DEPARTURE_DIGITS_BY_KEY
+    )) + "\n")
     println("wrote ${file.path}")
 }

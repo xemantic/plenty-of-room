@@ -26,6 +26,18 @@ import kotlin.math.sqrt
 import kotlin.math.tanh
 
 /**
+ * A dimensionless shape multiplying a smeared surface charge along its own wall — `P-14`.
+ *
+ * The coordinate is **distance inward from the rim** for a face and **height above the tile's
+ * bottom face** for the rim, so a shape is written once and reads the same on either. A `null`
+ * shape is the constant 1 and leaves the solve bit-identical.
+ */
+fun interface EdgeChargeShape {
+    /** The multiplier at [coordinate] nm. */
+    fun factor(coordinate: Double): Double
+}
+
+/**
  * The **2-D** nonlinear 2:1 Poisson-Boltzmann solve of the Gen-1 tile **edge** — task `T-3b`,
  * leaf `A7.4`. It supplies the one thing `C-0008` said a 1-D treatment cannot: the lateral
  * profile of the electrostatic load, which `C-0006` makes the dishing exactly linear in.
@@ -221,9 +233,17 @@ class PoissonBoltzmannEdge(
         electrodeReducedPotential: Double,
         bottomChargeDensity: Double,
         topChargeDensity: Double = bottomChargeDensity,
-        rimChargeDensity: Double = 0.0
+        rimChargeDensity: Double = 0.0,
+        faceShape: EdgeChargeShape? = null,
+        rimShape: EdgeChargeShape? = null
     ): EdgeSolution {
+        // A shape multiplies its wall's density; a null shape is a factor of exactly 1.0, and
+        // `x * 1.0` is exact in IEEE arithmetic, so an unshaped solve is bit-identical to the one
+        // this method performed before `P-14` added the arguments. That is asserted as a test.
+        val faceFactor = { x: Double -> faceShape?.factor(tileHalfWidth - x) ?: 1.0 }
+        val rimFactor = { z: Double -> rimShape?.factor(z - gapHeight) ?: 1.0 }
         val nodes = stride * (lateralCount + 1)
+        var assignedTileCharge = 0.0
         val active = BooleanArray(nodes)
         val volume = DoubleArray(nodes)
         val north = DoubleArray(nodes)
@@ -269,13 +289,23 @@ class PoissonBoltzmannEdge(
                 }
                 // Wall segments: a side is a wall where the cell is fluid and its neighbour
                 // quadrant across that side is solid. The charge follows from where the wall is.
-                val northWall = (if (!ne && se) dxp else 0.0) + (if (!nw && sw) dxm else 0.0)
-                val southWall = (if (!se && ne) dxp else 0.0) + (if (!sw && nw) dxm else 0.0)
-                val westWall = (if (!nw && ne) dzp else 0.0) + (if (!sw && se) dzm else 0.0)
+                val northWallEast = if (!ne && se) dxp else 0.0
+                val northWallWest = if (!nw && sw) dxm else 0.0
+                val southWallEast = if (!se && ne) dxp else 0.0
+                val southWallWest = if (!sw && nw) dxm else 0.0
+                val westWallUp = if (!nw && ne) dzp else 0.0
+                val westWallDown = if (!sw && se) dzm else 0.0
+                val northWall = northWallEast * faceFactor(lateral[j] + 0.5 * dxp) +
+                        northWallWest * faceFactor(lateral[j] - 0.5 * dxm)
+                val southWall = southWallEast * faceFactor(lateral[j] + 0.5 * dxp) +
+                        southWallWest * faceFactor(lateral[j] - 0.5 * dxm)
+                val westWall = westWallUp * rimFactor(height[i] + 0.5 * dzp) +
+                        westWallDown * rimFactor(height[i] - 0.5 * dzm)
                 var flux = 0.0
-                if (northWall > 0.0 && i == bottomIndex) flux += bottomChargeDensity * northWall
-                if (southWall > 0.0 && i == topIndex) flux += topChargeDensity * southWall
-                if (westWall > 0.0 && j == rimIndex) flux += rimChargeDensity * westWall
+                if (i == bottomIndex) flux += bottomChargeDensity * northWall
+                if (i == topIndex) flux += topChargeDensity * southWall
+                if (j == rimIndex) flux += rimChargeDensity * westWall
+                assignedTileCharge += flux
                 wall[k] = coupling * flux
             }
         }
@@ -324,7 +354,14 @@ class PoissonBoltzmannEdge(
         }
         return report(
             potential, active, volume, electrodeReducedPotential,
-            bottomChargeDensity, topChargeDensity, rimChargeDensity,
+            bottomChargeDensity, topChargeDensity, rimChargeDensity, rimFactor,
+            // With no shape the closed form is kept verbatim, so no emitted charge balance moves
+            // by a summation order; with a shape it is the assembly's own total, which is what
+            // makes the conservation gate a statement about the discretisation.
+            if (faceShape == null && rimShape == null) {
+                (bottomChargeDensity + topChargeDensity) * tileHalfWidth +
+                        rimChargeDensity * tileThickness
+            } else assignedTileCharge,
             iterations, correction, linear
         )
     }
@@ -569,6 +606,8 @@ class PoissonBoltzmannEdge(
         bottomChargeDensity: Double,
         topChargeDensity: Double,
         rimChargeDensity: Double,
+        rimFactor: (Double) -> Double,
+        assignedTileCharge: Double,
         iterations: Int,
         correction: Double,
         linearIterations: Int
@@ -608,8 +647,8 @@ class PoissonBoltzmannEdge(
         val rimSlope = -coupling * rimChargeDensity / permittivity
         var rim = 0.0
         for (i in bottomIndex until topIndex) {
-            val lower = verticalSlope(potential, rimIndex, i)
-            val upper = verticalSlope(potential, rimIndex, i + 1)
+            val lower = verticalSlope(potential, rimIndex, i) * rimFactor(height[i])
+            val upper = verticalSlope(potential, rimIndex, i + 1) * rimFactor(height[i + 1])
             rim += 0.5 * (height[i + 1] - height[i]) * (lower + upper)
         }
         rim *= energy * permittivity * rimSlope / (4.0 * PI * bjerrumLength * referencePermittivity)
@@ -660,8 +699,7 @@ class PoissonBoltzmannEdge(
             rimLineForce = rim,
             integratedLoadPerUnitEdge = integratedLoad,
             momentumFluxLoadPerUnitEdge = flux,
-            tileChargePerLength = (bottomChargeDensity + topChargeDensity) * tileHalfWidth +
-                    rimChargeDensity * tileThickness,
+            tileChargePerLength = assignedTileCharge,
             electrodeChargePerLength = electrodeCharge(potential),
             outerBoundaryChargePerLength = outerBoundaryCharge(potential),
             spaceChargePerLength = spaceCharge,

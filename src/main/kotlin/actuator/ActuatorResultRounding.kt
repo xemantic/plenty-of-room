@@ -16,16 +16,10 @@
 
 package com.xemantic.nano.plentyofroom.actuator
 
-import kotlinx.serialization.json.JsonArray
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
+import com.xemantic.nano.plentyofroom.structure.roundForResult
+import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.json.JsonElement
-import kotlinx.serialization.json.JsonObject
-import kotlinx.serialization.json.JsonPrimitive
-import kotlinx.serialization.json.doubleOrNull
-import kotlin.math.abs
-import kotlin.math.floor
-import kotlin.math.log10
-import kotlin.math.pow
-import kotlin.math.roundToLong
 
 /**
  * The reproducibility layer for `T-3`'s result file.
@@ -52,25 +46,29 @@ const val ACTUATOR_RESULT_SIGNIFICANT_DIGITS: Int = 9
 const val ACTUATOR_RESULT_ABSOLUTE_FLOOR: Double = 1e-9
 
 /** Rounds [value] to [ACTUATOR_RESULT_SIGNIFICANT_DIGITS], flooring tiny magnitudes to zero. */
-fun roundActuatorResult(value: Double): Double {
-    if (!value.isFinite()) return value
-    if (abs(value) < ACTUATOR_RESULT_ABSOLUTE_FLOOR) return 0.0
-    val scale = 10.0.pow(ACTUATOR_RESULT_SIGNIFICANT_DIGITS - 1 - floor(log10(abs(value))))
-    return (value * scale).roundToLong() / scale
-}
+fun roundActuatorResult(value: Double): Double = roundForResult(
+    value, ACTUATOR_RESULT_SIGNIFICANT_DIGITS, ACTUATOR_RESULT_ABSOLUTE_FLOOR
+)
 
 /**
- * Returns this element with every non-integral number rounded by [roundActuatorResult].
+ * Returns this element with every non-integral number rounded by [roundActuatorResult], and every
+ * **departure** rounded by `C-0093`'s two-significant-digit rule.
  *
  * Applied to the whole tree at the serialisation boundary rather than at each construction
  * site, so no result can be emitted unrounded by omission.
+ *
+ * **`T-212`/`CH-0154` — this used to be a hand-copy of `structure/ResultRounding.kt` and is now a
+ * delegation to it.** The copy was deliberate and was correct when it was written (`T-3` owned
+ * `actuator/` and two agents were live in `structure/`), and it is what made `C-0129`'s
+ * *"the rule now lives once, by name"* untrue on this path: `roundedForResult` carries a
+ * `digitsByKey` parameter to express the departure rule and this function had **no parameter at
+ * all**, so the six files emitted through it — `T-3`, `T-4`, `T-60`, `T-76`, `T-149`, `T-157` —
+ * could not have obeyed the rule by any edit at their own emission sites. The two constants are
+ * asserted equal to the tree's in `ActuatorResultRoundingTest`, which is what makes the
+ * delegation a refactoring rather than a precision change.
  */
-fun JsonElement.roundedForActuatorResult(): JsonElement = when (this) {
-    is JsonObject -> JsonObject(mapValues { (_, value) -> value.roundedForActuatorResult() })
-    is JsonArray -> JsonArray(map { it.roundedForActuatorResult() })
-    is JsonPrimitive -> when {
-        isString -> this
-        content.none { it == '.' || it == 'e' || it == 'E' } -> this
-        else -> doubleOrNull?.let { JsonPrimitive(roundActuatorResult(it)) } ?: this
-    }
-}
+fun JsonElement.roundedForActuatorResult(): JsonElement = roundedForResult(
+    digits = ACTUATOR_RESULT_SIGNIFICANT_DIGITS,
+    digitsByKey = DEPARTURE_DIGITS_BY_KEY,
+    floor = ACTUATOR_RESULT_ABSOLUTE_FLOOR
+)

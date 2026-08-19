@@ -136,6 +136,9 @@ if [ "$checks" = "yes" ]; then
     echo "--- no committed result file carries a raw format conversion (T-208) ---"
     tools/check-result-file-hygiene.py
     echo
-    echo "--- the two audits that are NOT gates: departure precision, saturated statistics ---"
-    tools/check-result-file-hygiene.py --departures --saturated
+    echo "--- every departure is emitted at two significant digits (T-212) ---"
+    tools/check-result-file-hygiene.py --departures
+    echo
+    echo "--- the audit that is NOT a gate: saturated statistics (T-213) ---"
+    tools/check-result-file-hygiene.py --saturated
 fi

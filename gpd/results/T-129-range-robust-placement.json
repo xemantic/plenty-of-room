@@ -573,17 +573,17 @@
             ],
             "floorOverStroke": 0.00238709071,
             "equalSpringWorstOverStroke": 0.0853478866,
-            "minimaxWorstOverStroke": 0.0364754519,
+            "minimaxWorstOverStroke": 0.0365712568,
             "bindingStates": [
                 "0.5 mM, 7 nm, 0.155 V"
             ],
             "flatWithEqualSprings": true,
             "flatWithADistribution": true,
-            "minimaxPeakRatio": 1.72260028,
-            "peakPathStiffness": 1.6888238,
-            "peakPathForceAtAcceptableStroke": 5.06647141,
-            "peakSolvedPathForce": 3.54209932,
-            "peakThermalForce": 0.595315564,
+            "minimaxPeakRatio": 1.7123471,
+            "peakPathStiffness": 1.67877167,
+            "peakPathForceAtAcceptableStroke": 5.036315,
+            "peakSolvedPathForce": 3.54477498,
+            "peakThermalForce": 0.591772156,
             "withinUnzipAllowable": true,
             "startsUsed": 24,
             "startsWithinOnePartInAMillion": 1
@@ -687,7 +687,7 @@
             "containsTwoNanometreState": false,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.079771469,
-            "minimaxWorstOverStroke": 0.0242718332,
+            "minimaxWorstOverStroke": 0.0242566425,
             "flatWithEqualSprings": true,
             "flatWithADistribution": true
         },
@@ -752,7 +752,7 @@
             "containsTwoNanometreState": false,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.11043016,
-            "minimaxWorstOverStroke": 0.0545200678,
+            "minimaxWorstOverStroke": 0.0545088368,
             "flatWithEqualSprings": false,
             "flatWithADistribution": true
         },
@@ -900,7 +900,7 @@
             "containsTwoNanometreState": true,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.199989871,
-            "minimaxWorstOverStroke": 0.110704524,
+            "minimaxWorstOverStroke": 0.110704749,
             "flatWithEqualSprings": false,
             "flatWithADistribution": false
         },
@@ -928,7 +928,7 @@
             "containsTwoNanometreState": true,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.199989871,
-            "minimaxWorstOverStroke": 0.112790742,
+            "minimaxWorstOverStroke": 0.112790903,
             "flatWithEqualSprings": false,
             "flatWithADistribution": false
         },
@@ -1192,7 +1192,7 @@
                 0.0788500163,
                 0.0788475684
             ],
-            "departure": 3.10461308E-5,
+            "departure": 3.1E-5,
             "note": "nested only, per CLAUDE.md — a subdivision of 3 moves a station off a node"
         },
         {
@@ -1208,7 +1208,7 @@
                 0.0788500163,
                 0.0797279193
             ],
-            "departure": 0.0110112375,
+            "departure": 0.011,
             "note": "the same 2.7 % scale C-0063 reports at one state; both ends inside 0.10"
         },
         {
@@ -1224,7 +1224,7 @@
                 0.0896176107,
                 0.089691084
             ],
-            "departure": 8.19181121E-4,
+            "departure": 8.2E-4,
             "note": "the margin this range has against T-5b's 0.10 is what a grid sensitivity could consume, so it is measured there and not only at the design device"
         },
         {
@@ -1256,7 +1256,7 @@
             "quantity": "dishing/stroke, free uncoupled tile at the design state",
             "published": 0.3079,
             "reproduced": 0.307902368,
-            "departure": 7.6898974E-6,
+            "departure": 7.7E-6,
             "strict": false
         },
         {
@@ -1272,7 +1272,7 @@
             "quantity": "dishing/stroke, 3 x 15, uniform, at the design state",
             "published": 0.2182,
             "reproduced": 0.21821335,
-            "departure": 6.11831158E-5,
+            "departure": 6.1E-5,
             "strict": false
         },
         {
@@ -1280,7 +1280,7 @@
             "quantity": "dishing/stroke, 3 x 15, rim x 5, over the 2 mM device's range",
             "published": 0.0753,
             "reproduced": 0.0753432869,
-            "departure": 5.74859406E-4,
+            "departure": 5.7E-4,
             "strict": false
         },
         {
@@ -1288,7 +1288,7 @@
             "quantity": "the 45-path minimax over the 2 mM device's range",
             "published": 0.0373,
             "reproduced": 0.0373645106,
-            "departure": 0.00172950695,
+            "departure": 0.0017,
             "strict": false
         },
         {
@@ -1296,7 +1296,7 @@
             "quantity": "dishing/stroke, 3 x 15, UNIFORM, over the 5 nm device's range",
             "published": 0.0796,
             "reproduced": 0.0795565596,
-            "departure": 5.45733528E-4,
+            "departure": 5.5E-4,
             "strict": false
         },
         {
@@ -1320,7 +1320,7 @@
             "quantity": "arm length [nm]",
             "published": 8.164,
             "reproduced": 8.16439083,
-            "departure": 4.78723665E-5,
+            "departure": 4.8E-5,
             "strict": false
         },
         {
@@ -1328,7 +1328,7 @@
             "quantity": "the per-path stiffness ceiling [pN/nm]",
             "published": 3.33333333,
             "reproduced": 3.33333333,
-            "departure": 1.00000008E-9,
+            "departure": 1.0E-9,
             "strict": false
         },
         {
@@ -1365,7 +1365,7 @@
         {
             "name": "P2 — does the range need a distribution?",
             "statement": "the 34-parameter multi-state minimax against the equal-spring reading over the same range, at C-0017's unchanged total",
-            "verdict": "0.0291 / 0.0365 / 0.0565 / 0.0382 over the four devices, ALL FOUR inside T-5b's 0.10; at the design device the distribution is worth 63.0 % over equal springs and asks a peak ratio of only 1.83, and the one range equal springs miss is recovered at a peak ratio of 2.32"
+            "verdict": "0.0291 / 0.0366 / 0.0565 / 0.0382 over the four devices, ALL FOUR inside T-5b's 0.10; at the design device the distribution is worth 63.0 % over equal springs and asks a peak ratio of only 1.83, and the one range equal springs miss is recovered at a peak ratio of 2.32"
         },
         {
             "name": "P3 — which states one device co-occupies",

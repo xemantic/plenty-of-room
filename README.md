@@ -125,6 +125,7 @@ Several GPD loops are run against one working tree at a time, and Gradle does no
 tools/verify.sh                                # authoritative full suite, on an isolated copy (P-10)
 tools/verify.sh --committed                    # the same, against HEAD rather than the working tree
 tools/study.sh structure.InPlaneLoadPathStudyKt  # one study on an isolated copy (P-12)
+tools/study-batch.sh --list tools/T-212-reemission-order.txt  # a re-emission SWEEP: one copy, N runs (T-212)
 tools/test-snapshot.sh                         # the snapshot helpers' own tests (P-16)
 tools/test-check-markdown-tables.py            # the Markdown table checker's own tests (P-23)
 python3 tools/check-markdown-tables.py         # every tracked table renders; exit 1 if not (P-23)
@@ -133,6 +134,10 @@ python3 tools/result-transfers.py --subsets    # is one claim's number another's
 tools/verify.sh --no-checks                    # Gradle only, without the census check (P-22)
 python3 tools/check-kotlin-format-strings.py   # every String.format balances; exit 1 if not (T-207)
 python3 tools/check-kotlin-format-strings.py --self-test   # its own 19 tests, wired into `test` (T-207)
+python3 tools/check-result-file-hygiene.py     # no result file carries a raw % conversion; exit 1 (T-208)
+python3 tools/check-result-file-hygiene.py --departures   # every departure at two digits; exit 1 (T-212)
+python3 tools/check-result-file-hygiene.py --saturated    # saturated proportions; an audit, exit 0 (T-213)
+python3 tools/check-result-file-hygiene.py --self-test    # its own 54 tests, wired into `test`
 ```
 
 ### Who reads a result file

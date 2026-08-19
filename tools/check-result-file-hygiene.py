@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-"""Three censuses over `gpd/results/`, of which exactly ONE is a gate.  `T-208`/`C-0129`.
+"""Three censuses over `gpd/results/`, of which TWO are gates.  `T-208`/`C-0129`, `T-212`/`C-0131`.
 
 `tools/check-kotlin-format-strings.py` reads **source** and models `String.format` call sites.
 This reads **output** and models nothing, and **the catch sets are strictly different**: a raw
@@ -28,14 +28,23 @@ Three predicates, three exit policies:
 - ``--conversions`` (the default) is a **GATE**.  It fires on a Java format conversion in any
   string of any committed result file, and exits 1.  The tree reads clean under it, which is
   why it is wired; `C-0083`: *a gate that cannot come clean is not a gate*.
-- ``--departures`` is an **AUDIT**.  `C-0093`'s rule is that a departure — a dimensionless
-  difference or ratio of two nearly equal numbers — is emitted at **two** significant digits,
-  because `RESULT_ABSOLUTE_FLOOR` is a claim in the locked units and does not reach a ratio.
-  **222 fields in 29 files broke it before `T-208`; 199 in 27 still do**, so it cannot
-  be a gate without a tree-wide re-emission.  It exits 0 and reports.
+- ``--departures`` is a **GATE** since `T-212`.  `C-0093`'s rule is that a departure — a
+  dimensionless difference or ratio of two nearly equal numbers — is emitted at **two**
+  significant digits, because `RESULT_ABSOLUTE_FLOOR` is a claim in the locked units and does not
+  reach a ratio.  **222 fields in 29 files broke it before `T-208` and 199 in 27 after it**; the
+  27 were re-emitted by `T-212` and the gate now reads clean, which is the only condition under
+  which it could be wired at all (`C-0083`).  It exits 1 on the strict predicate.
+
+  **Its ``scope`` line is deliberately wider than its gate and is NOT gated.**  The same two
+  records carry three more spellings of the same quantity — 478 `reproductions[*].relativeDeparture`
+  fields alone — and closing those is 36 further study re-runs (`T-214`).  Reporting a number the
+  gate does not enforce is the honest form of `C-0083`: the residue is published rather than
+  redefined away.
 - ``--saturated`` is an **AUDIT**.  A symmetric binomial standard error on a **saturated**
   proportion is identically zero for every sample count and therefore measures nothing.
-  **302 records in 7 files carried one before `T-208`; 277 in 6 still do.**  A record
+  **302 records in 7 files carried one before `T-208`, 277 in 6 after it, and `T-213` repaired
+  the remaining six at their shared source** — `coupling.summariseDropoutDishing`, which all six
+  studies build their summary through.  A record
   is repaired by emitting the one-sided bound BESIDE the symmetric error, not by
   removing it.  It exits 0 and reports.
 
@@ -56,7 +65,8 @@ Usage:
     tools/check-result-file-hygiene.py --census         # all three, exit 0
     tools/check-result-file-hygiene.py --self-test
 
-Exit status is 1 if the **gate** finds a defect, 0 otherwise.  The two audits never exit 1.
+Exit status is 1 if either **gate** finds a defect, 0 otherwise.  The saturated-proportion audit
+never exits 1, and neither does the departure ``scope`` line.
 """
 
 import json
@@ -134,6 +144,27 @@ DEPARTURE_TESTS = [
     ("100.0", 1, "trailing zeros before the point are not significant here"),
     ("1.000001e-06", 7, "seven digits, an interior zero run"),
     ("9.17e-06", 3, "three digits"),
+]
+
+# `T-212` -- the RULE SCOPE, which is wider than the gate's predicate.  `C-0129`'s strict census
+# keys on the leaf name `departure` under those two parents; the same record carries three more
+# spellings of the same quantity, and 478 `reproductions[*].relativeDeparture` fields in 33 files
+# break the same rule.  Reported, never gated: closing it is 36 further study re-runs.
+SCOPE_TESTS = [
+    ({"reproductions": [{"departure": 5.36821841e-06}]}, 1, 1,
+     "the gate's own shape: `departure` under `reproductions`"),
+    ({"convergence": [{"relativeDeparture": 5.36821841e-06}]}, 0, 1,
+     "the same quantity under another spelling -- IN SCOPE, NOT IN THE GATE"),
+    ({"convergence": [{"departureFromFinest": 5.36821841e-06}]}, 0, 1,
+     "`departureFromFinest`, 337 of which sit under `convergence`"),
+    ({"potentialOfZeroCharge": [{"departure": 0.001420712}]}, 0, 0,
+     "T-193's departure in VOLTS -- in neither, and that is the point"),
+    ({"departures": [{"relativeDeparture": 0.000123456}]}, 0, 0,
+     "T-160's own ANSWER, which the rule must not reach"),
+    ({"reproductions": [{"departure": 5.4e-06}]}, 0, 0,
+     "already at two digits"),
+    ({"upstreamChecks": [{"departure": 5.36821841e-06}]}, 0, 0,
+     "a comparison against a carried upstream number is not a residual between two refinements"),
 ]
 
 SATURATION_TESTS = [
@@ -266,23 +297,59 @@ def check_conversions(root=RESULTS, allowlist=ALLOWLIST):
     return defects
 
 
+def departures_in(document, path):
+    """`(gated, scoped)` over-precise departure fields of one already-parsed `document`.
+
+    ``gated`` is `C-0129`'s strict predicate — the leaf key `departure` inside a
+    [STRICT_DEPARTURE_PARENTS] record — and is what `--departures` exits 1 on.
+
+    ``scoped`` is the **rule**: any of the four [DEPARTURE_KEYS] spellings inside such a record.
+    It is a superset of ``gated`` by construction, it is reported and never gated, and the gap
+    between the two is `T-212`'s measurement — 199 fields in 27 files against 601 in 63 when the
+    audit was closed.  The **record** qualifier is load-bearing in both: `T-193` emits a
+    `departure` in volts under `potentialOfZeroCharge`, and `T-160` emits its own *answer* as
+    `departures[*].relativeDeparture`.
+    """
+    gated, scoped = [], []
+    for pointer, value in _numbers(document):
+        key = pointer.rsplit("/", 1)[-1]
+        if key not in DEPARTURE_KEYS:
+            continue
+        digits = significant_digits(str(value))
+        if digits <= DEPARTURE_DIGITS:
+            continue
+        ancestors = [step for step in pointer.split("/") if step not in ("", "*")]
+        record = ancestors[-2] if len(ancestors) >= 2 else None
+        if record not in STRICT_DEPARTURE_PARENTS:
+            continue
+        entry = (path, pointer, str(value), digits)
+        scoped.append(entry)
+        if key == "departure":
+            gated.append(entry)
+    return gated, scoped
+
+
 def check_departures(root=RESULTS):
-    """Returns `(strict, wide)` lists of over-precise departure fields."""
-    strict, wide = [], []
+    """Returns `(gated, scoped, wide)` lists of over-precise departure fields.
+
+    ``wide`` keeps `C-0129`'s reported outer bound — **any** leaf key containing `departure` —
+    which deliberately includes `departureRatio` and `plateDeparture`, ratios *between two
+    models* that the rule does not cover.  It is a ceiling on the class, not a defect count.
+    """
+    gated, scoped, wide = [], [], []
     for path in result_files(root):
-        for pointer, value in _numbers(_load(path, keep_literals=True)):
+        document = _load(path, keep_literals=True)
+        a, b = departures_in(document, path)
+        gated += a
+        scoped += b
+        for pointer, value in _numbers(document):
             key = pointer.rsplit("/", 1)[-1]
             if "departure" not in key.lower():
                 continue
-            digits = significant_digits(str(value))
-            if digits <= DEPARTURE_DIGITS:
+            if significant_digits(str(value)) <= DEPARTURE_DIGITS:
                 continue
-            entry = (path, pointer, str(value), digits)
-            wide.append(entry)
-            parent = pointer.split("/")
-            if key == "departure" and len(parent) >= 3 and parent[-3] in STRICT_DEPARTURE_PARENTS:
-                strict.append(entry)
-    return strict, wide
+            wide.append((path, pointer, str(value), significant_digits(str(value))))
+    return gated, scoped, wide
 
 
 def check_saturated(root=RESULTS):
@@ -317,6 +384,15 @@ def self_test():
             failures += 1
             print(f"SELF-TEST FAILED — saturation, {description}: "
                   f"expected {expected}, found {found}")
+    for document, gated, scoped, description in SCOPE_TESTS:
+        # Parsed the way a committed file is parsed: `_numbers` walks `Decimal` leaves, because
+        # the question is what the file CARRIES and `repr` returns the shortest round-trip.
+        parsed = json.loads(json.dumps(document), parse_float=Decimal)
+        strict, scope = departures_in(parsed, "fixture")
+        if len(strict) != gated or len(scope) != scoped:
+            failures += 1
+            print(f"SELF-TEST FAILED — scope, {description}: expected gate {gated} / scope "
+                  f"{scoped}, found {len(strict)} / {len(scope)}")
     # The allowlist is itself a claim and is tested in both directions.
     fixture = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "build-selftest-T208")
     os.makedirs(fixture, exist_ok=True)
@@ -336,7 +412,8 @@ def self_test():
     for name in os.listdir(fixture):
         os.remove(os.path.join(fixture, name))
     os.rmdir(fixture)
-    total = len(CONVERSION_TESTS) + len(DEPARTURE_TESTS) + len(SATURATION_TESTS) + 2
+    total = (len(CONVERSION_TESTS) + len(DEPARTURE_TESTS) + len(SATURATION_TESTS)
+             + len(SCOPE_TESTS) + 2)
     print(f"{total - failures} of {total} self-tests pass")
     return failures
 
@@ -346,18 +423,24 @@ def self_test():
 # ---------------------------------------------------------------------------------------------
 
 def report_departures():
-    strict, wide = check_departures()
-    print("-- departure precision (AUDIT, never a gate; C-0093's two-significant-digit rule) --")
-    print(f"  strict (reproductions[*].departure, convergence[*].departure): "
-          f"{len(strict)} field(s) in {len({row[0] for row in strict})} file(s)")
-    print(f"  wide   (any leaf key containing 'departure'):                  "
+    gated, scoped, wide = check_departures()
+    print("-- departure precision (GATE on the strict predicate; C-0093's two-digit rule) --")
+    print(f"  GATE  (reproductions[*].departure, convergence[*].departure): "
+          f"{len(gated)} field(s) in {len({row[0] for row in gated})} file(s)")
+    print(f"  scope (all four spellings in those records; REPORTED, not gated): "
+          f"{len(scoped)} field(s) in {len({row[0] for row in scoped})} file(s)")
+    print(f"  wide  (any leaf key containing 'departure'; a ceiling on the class): "
           f"{len(wide)} field(s) in {len({row[0] for row in wide})} file(s)")
-    counts = {}
-    for path, _, _, _ in strict:
-        counts[os.path.basename(path)] = counts.get(os.path.basename(path), 0) + 1
-    for name in sorted(counts, key=lambda n: (-counts[n], n)):
-        print(f"    {counts[name]:4d}  {name}")
-    return strict, wide
+    for label, rows in (("GATE", gated), ("scope", scoped)):
+        counts = {}
+        for path, _, _, _ in rows:
+            counts[os.path.basename(path)] = counts.get(os.path.basename(path), 0) + 1
+        if not counts:
+            print(f"    {label}: clean")
+            continue
+        for name in sorted(counts, key=lambda n: (-counts[n], n)):
+            print(f"    {label} {counts[name]:4d}  {name}")
+    return gated, scoped, wide
 
 
 def report_saturated():
@@ -376,8 +459,9 @@ def main(argv):
     if "--self-test" in argv:
         return 1 if self_test() else 0
     census = "--census" in argv
+    over_precise = None
     if census or "--departures" in argv:
-        report_departures()
+        over_precise, _, _ = report_departures()
     if census or "--saturated" in argv:
         report_saturated()
     if census or ("--departures" not in argv and "--saturated" not in argv):
@@ -388,7 +472,9 @@ def main(argv):
               f"{len(result_files())} result file(s), "
               f"{len(ALLOWLIST)} allowlisted --")
         if not census:
-            return 1 if defects else 0
+            return 1 if defects or over_precise else 0
+    if not census and over_precise is not None:
+        return 1 if over_precise else 0
     return 0
 
 

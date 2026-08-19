@@ -2784,7 +2784,7 @@
             "parameter": "RK4 steps",
             "value": 200.0,
             "result": 9.1311565,
-            "departure": 0.0145729448
+            "departure": 0.015
         },
         {
             "quantity": "the usable stroke there",
@@ -2798,7 +2798,7 @@
             "parameter": "RK4 steps",
             "value": 400.0,
             "result": 9.1311565,
-            "departure": 0.0145729448
+            "departure": 0.015
         },
         {
             "quantity": "the usable stroke there",
@@ -2812,7 +2812,7 @@
             "parameter": "RK4 steps",
             "value": 800.0,
             "result": 9.1311565,
-            "departure": 0.0145729448
+            "departure": 0.015
         },
         {
             "quantity": "the usable stroke there",
@@ -2883,43 +2883,43 @@
             "name": "C-0039's E5a16 arm [nm]",
             "expected": 12.7198,
             "obtained": 12.7198339,
-            "departure": 2.66791412E-6
+            "departure": 2.7E-6
         },
         {
             "name": "C-0039's tangent at the acceptable stroke",
             "expected": 36.44,
             "obtained": 36.4400043,
-            "departure": 1.19002071E-7
+            "departure": 1.2E-7
         },
         {
             "name": "C-0039's secant at the desired stroke",
             "expected": 69.94,
             "obtained": 69.9399916,
-            "departure": 1.20083747E-7
+            "departure": 1.2E-7
         },
         {
             "name": "C-0039's tangent at the desired stroke",
             "expected": 264.24,
             "obtained": 264.239839,
-            "departure": 6.08695033E-7
+            "departure": 6.1E-7
         },
         {
             "name": "C-0039's usable stroke [nm]",
             "expected": 3.877,
             "obtained": 3.8767876,
-            "departure": 5.47839477E-5
+            "departure": 5.5E-5
         },
         {
             "name": "C-0039's 15-path arm [nm]",
             "expected": 8.4,
             "obtained": 8.39500393,
-            "departure": 5.94770639E-4
+            "departure": 5.9E-4
         },
         {
             "name": "C-0039's arm cap at 45 paths [nm]",
             "expected": 13.648,
             "obtained": 13.6479418,
-            "departure": 4.26445196E-6
+            "departure": 4.3E-6
         },
         {
             "name": "C-0040's hinge-line census on a 40 nm line",
@@ -2943,7 +2943,7 @@
             "name": "C-0009's crossover hinge constant [pN nm/rad]",
             "expected": 13.5294118,
             "obtained": 13.5294118,
-            "departure": 2.60869566E-9
+            "departure": 2.6E-9
         },
         {
             "name": "C-0029's two-terminus couple [pN nm/rad]",

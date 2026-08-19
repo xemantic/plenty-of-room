@@ -11645,14 +11645,14 @@
             "setting": "1000",
             "quantity": "pull-in bias on the softening line [V]",
             "value": 0.12845694,
-            "departureFromFinest": 8.73897702E-6
+            "departureFromFinest": 8.7E-6
         },
         {
             "axis": "Poisson-Boltzmann mesh nodes",
             "setting": "2000",
             "quantity": "pull-in bias on the softening line [V]",
             "value": 0.128457835,
-            "departureFromFinest": 1.77542598E-6
+            "departureFromFinest": 1.8E-6
         },
         {
             "axis": "Poisson-Boltzmann mesh nodes",
@@ -11687,14 +11687,14 @@
             "setting": "0.01",
             "quantity": "pull-in bias on the softening line [V]",
             "value": 0.128457824,
-            "departureFromFinest": 7.90517601E-8
+            "departureFromFinest": 7.9E-8
         },
         {
             "axis": "golden-section stroke bracket [nm]",
             "setting": "0.001",
             "quantity": "pull-in bias on the softening line [V]",
             "value": 0.128457834,
-            "departureFromFinest": 1.60593516E-9
+            "departureFromFinest": 1.6E-9
         },
         {
             "axis": "golden-section stroke bracket [nm]",

@@ -1488,7 +1488,7 @@
                 0.0215411924,
                 0.0556398404
             ],
-            "departure": 0.107061,
+            "departure": 0.11,
             "note": "the DEPARTURE is the answer, not either absolute collar: a difference of two solves on the same mesh cancels the discretisation error that C-0022's own depth still carries at ~4% at refinement 3"
         },
         {
@@ -1504,7 +1504,7 @@
                 -0.306536005,
                 -0.313383426
             ],
-            "departure": 0.207425,
+            "departure": 0.21,
             "note": "the ABSOLUTE depth is NOT converged at these meshes and C-0022 says so; it is reported to show that the departure above is, and it is not the answer"
         },
         {
@@ -1517,7 +1517,7 @@
                 2.04427507,
                 4.78751565E-5
             ],
-            "departure": 4.78752E-5,
+            "departure": 4.8E-5,
             "note": "an exponential tail is a two-parameter model of a solved profile and the residual is what says whether it is one"
         },
         {
@@ -1535,7 +1535,7 @@
                 3.99674194E-4,
                 3.61580222E-4
             ],
-            "departure": 2.344E-4,
+            "departure": 2.3E-4,
             "note": "this is the answer the acceptance asks for and it is converged: every refinement puts the collar's width-dependence two decades inside C-0090's 0.32%, where the FITTED triple does not converge at all"
         },
         {
@@ -1553,7 +1553,7 @@
                 9.73453006E-4,
                 8.77525053E-4
             ],
-            "departure": 4.91262E-4,
+            "departure": 4.9E-4,
             "note": "the diagnosis: the raw triple's departure is dominated by WHICH NODE the standoff lands on, and the tile half-width rescales the whole graded lateral mesh. Placing the standoff exactly removes most of it"
         },
         {
@@ -1591,7 +1591,7 @@
             "quantity": "the taper depth at 2 mM, 10 nm, 0.192 V",
             "published": -0.302887367,
             "reproduced": -0.302887367,
-            "departure": 1.48401E-9,
+            "departure": 1.5E-9,
             "strict": true
         },
         {
@@ -1599,7 +1599,7 @@
             "quantity": "the taper width",
             "published": 8.93928311,
             "reproduced": 8.93928311,
-            "departure": 3.3991E-10,
+            "departure": 3.4E-10,
             "strict": true
         },
         {
@@ -1607,7 +1607,7 @@
             "quantity": "the deficit centroid",
             "published": 2.65822321,
             "reproduced": 2.65822321,
-            "departure": 1.11245E-9,
+            "departure": 1.1E-9,
             "strict": true
         },
         {
@@ -1615,7 +1615,7 @@
             "quantity": "the rim residual depth",
             "published": -0.593889278,
             "reproduced": -0.593889278,
-            "departure": 7.56387E-10,
+            "departure": 7.6E-10,
             "strict": true
         },
         {
@@ -1623,7 +1623,7 @@
             "quantity": "the min-margin force fraction (the +14.71%)",
             "published": -0.147080774,
             "reproduced": -0.147080774,
-            "departure": 9.82211E-10,
+            "departure": 9.8E-10,
             "strict": true
         },
         {
@@ -1631,7 +1631,7 @@
             "quantity": "the centre-line load",
             "published": 0.0390315779,
             "reproduced": 0.0390315779,
-            "departure": 4.86138E-10,
+            "departure": 4.9E-10,
             "strict": true
         },
         {
@@ -1639,7 +1639,7 @@
             "quantity": "the recommended 34-root dishing at phase 8, 38.08 nm",
             "published": 0.0621469105,
             "reproduced": 0.0621469068,
-            "departure": 5.98838E-8,
+            "departure": 6.0E-8,
             "strict": false
         }
     ],

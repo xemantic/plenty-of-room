@@ -866,7 +866,7 @@
                 4.84247319E-7,
                 4.85750595E-9
             ],
-            "departure": 1.00315826E-4,
+            "departure": 1.0E-4,
             "note": "LINEAR in the regularisation over four decades, which is the numerical signature of an exact zero: a genuine added stiffness would converge to a non-zero limit instead"
         },
         {
@@ -882,7 +882,7 @@
                 1.07084078,
                 1.07078559
             ],
-            "departure": 5.15414872E-5,
+            "departure": 5.2E-5,
             "note": "nested refinement only — a subdivision of 3 moves a load from a node to mid-element and is not a refinement of 2 (`CLAUDE.md`)"
         },
         {
@@ -898,7 +898,7 @@
                 1.07084078,
                 1.07085852
             ],
-            "departure": 1.6569466E-5,
+            "departure": 1.7E-5,
             "note": "the vertical link is a CONSTRAINT and the answer must not depend on its penalty"
         }
     ],
@@ -908,7 +908,7 @@
             "quantity": "arm length at 34 paths [nm]",
             "published": 8.164,
             "reproduced": 8.16439083,
-            "departure": 4.78723665E-5,
+            "departure": 4.8E-5,
             "strict": false
         },
         {
@@ -932,7 +932,7 @@
             "quantity": "arm array plan footprint fraction",
             "published": 0.46,
             "reproduced": 0.462648814,
-            "departure": 0.00575829065,
+            "departure": 0.0058,
             "strict": false
         },
         {
@@ -940,7 +940,7 @@
             "quantity": "dishing/stroke, 3 x 15, C-0022's solved load",
             "published": 0.218,
             "reproduced": 0.21821335,
-            "departure": 9.78670403E-4,
+            "departure": 9.8E-4,
             "strict": false
         },
         {
@@ -948,7 +948,7 @@
             "quantity": "dishing/stroke, 1 x 15, C-0022's solved load",
             "published": 0.695,
             "reproduced": 0.695201577,
-            "departure": 2.90038499E-4,
+            "departure": 2.9E-4,
             "strict": false
         },
         {
@@ -956,7 +956,7 @@
             "quantity": "dishing/stroke, free uncoupled tile",
             "published": 0.308,
             "reproduced": 0.307902368,
-            "departure": 3.16987857E-4,
+            "departure": 3.2E-4,
             "strict": false
         },
         {
@@ -964,7 +964,7 @@
             "quantity": "corner frequency, nominal 40 x 40 nm point [Hz]",
             "published": 91231.5,
             "reproduced": 91231.5386,
-            "departure": 4.23559269E-7,
+            "departure": 4.2E-7,
             "strict": false
         },
         {
@@ -972,7 +972,7 @@
             "quantity": "in-band variance fraction below 1 kHz at 91 kHz",
             "published": 0.007,
             "reproduced": 0.00697778737,
-            "departure": 0.00317323237,
+            "departure": 0.0032,
             "strict": false
         },
         {
@@ -980,7 +980,7 @@
             "quantity": "dishing/stroke, 3 x 15, rim x 5 over a 6.70 nm collar",
             "published": 0.0753,
             "reproduced": 0.0753432869,
-            "departure": 5.74859419E-4,
+            "departure": 5.7E-4,
             "strict": false
         },
         {
@@ -1004,7 +1004,7 @@
             "quantity": "crossover hinge k_theta [pN nm/rad]",
             "published": 13.5294,
             "reproduced": 13.5294118,
-            "departure": 8.69565973E-7,
+            "departure": 8.7E-7,
             "strict": false
         },
         {

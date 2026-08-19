@@ -1581,7 +1581,7 @@
             "control": "central-difference step",
             "level": 0.001,
             "value": 3.89666168,
-            "departure": 2.54481723E-8
+            "departure": 2.5E-8
         },
         {
             "quantity": "J1 tangent at 3 nm",
@@ -1632,119 +1632,119 @@
             "source": "C-0023",
             "published": 24.61,
             "derived": 24.6093956,
-            "relativeDeparture": 2.45600076E-5
+            "relativeDeparture": 2.5E-5
         },
         {
             "quantity": "C-0023 E3b span (pinned, held axially)",
             "source": "C-0023",
             "published": 49.41,
             "derived": 49.4139652,
-            "relativeDeparture": 8.02501712E-5
+            "relativeDeparture": 8.0E-5
         },
         {
             "quantity": "C-0023 clamped/free span",
             "source": "C-0023",
             "published": 39.07,
             "derived": 39.0649804,
-            "relativeDeparture": 1.28476346E-4
+            "relativeDeparture": 1.3E-4
         },
         {
             "quantity": "C-0023 clamped/held span",
             "source": "C-0023",
             "published": 54.91,
             "derived": 54.9131497,
-            "relativeDeparture": 5.73614282E-5
+            "relativeDeparture": 5.7E-5
         },
         {
             "quantity": "C-0023 E3a tangent",
             "source": "C-0023",
             "published": 33.333,
             "derived": 33.3333333,
-            "relativeDeparture": 1.00001E-5
+            "relativeDeparture": 1.0E-5
         },
         {
             "quantity": "C-0023 E3b tangent",
             "source": "C-0023",
             "published": 91.13,
             "derived": 91.1275132,
-            "relativeDeparture": 2.7288279E-5
+            "relativeDeparture": 2.7E-5
         },
         {
             "quantity": "C-0023 E3b axial tension at 3 nm",
             "source": "C-0023",
             "published": 8.08,
             "derived": 8.07930112,
-            "relativeDeparture": 8.64944974E-5
+            "relativeDeparture": 8.6E-5
         },
         {
             "quantity": "C-0023 E3b axial tension at 10 nm",
             "source": "C-0023",
             "published": 86.7,
             "derived": 86.6841646,
-            "relativeDeparture": 1.8264621E-4
+            "relativeDeparture": 1.8E-4
         },
         {
             "quantity": "C-0023 end draw-in demand at the free span",
             "source": "C-0023",
             "published": 0.8776,
             "derived": 0.877713552,
-            "relativeDeparture": 1.29388987E-4
+            "relativeDeparture": 1.3E-4
         },
         {
             "quantity": "C-0023 end draw-in in base pairs",
             "source": "C-0023",
             "published": 2.58,
             "derived": 2.58151045,
-            "relativeDeparture": 5.8544434E-4
+            "relativeDeparture": 5.9E-4
         },
         {
             "quantity": "Gen1Tile crossover hinge constant",
             "source": "C-0009 / Chen et al. 2014",
             "published": 13.5294,
             "derived": 13.5294118,
-            "relativeDeparture": 8.69565973E-7
+            "relativeDeparture": 8.7E-7
         },
         {
             "quantity": "Gen1Tile crossover in-plane construction",
             "source": "C-0020",
             "published": 64.7059,
             "derived": 64.7058824,
-            "relativeDeparture": 2.72727198E-7
+            "relativeDeparture": 2.7E-7
         },
         {
             "quantity": "CH-0029 shear allowable at 8 bp",
             "source": "C-0024",
             "published": 18.8,
             "derived": 18.7955672,
-            "relativeDeparture": 2.35788597E-4
+            "relativeDeparture": 2.4E-4
         },
         {
             "quantity": "CH-0029 shear allowable at 16 bp",
             "source": "C-0024",
             "published": 34.81,
             "derived": 34.810029,
-            "relativeDeparture": 8.34392578E-7
+            "relativeDeparture": 8.3E-7
         },
         {
             "quantity": "CH-0029 shear allowable at 30 bp",
             "source": "C-0024",
             "published": 47.11,
             "derived": 47.1067253,
-            "relativeDeparture": 6.95121112E-5
+            "relativeDeparture": 7.0E-5
         },
         {
             "quantity": "CH-0029 loading-rate-free saturation",
             "source": "C-0024",
             "published": 68.12,
             "derived": 68.122753,
-            "relativeDeparture": 4.04137836E-5
+            "relativeDeparture": 4.0E-5
         },
         {
             "quantity": "C-0017 mandate",
             "source": "C-0017",
             "published": 33.3333,
             "derived": 33.3333333,
-            "relativeDeparture": 1.000001E-6
+            "relativeDeparture": 1.0E-6
         }
     ],
     "findings": {

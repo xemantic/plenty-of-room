@@ -8669,3 +8669,160 @@ the exceedance at 1.0. `C-0087`'s gate 4 discharges statistical power partly on 
 `1/√n`"*, and the test that demonstrates it evaluates at `p̂ = 0.5`, two lines above the assertion that it is zero
 at `p̂ = 1`. The verdicts do not move: a one-sided bound reads `p > 0.9997` at 10 000 draws, so every failure
 reading it replaces stands on **better** evidence than it was published with.
+
+## Iteration 30 — Agent P, `P-14`: the rim's charge is exactly half the face's, and the model has already spent it
+
+`C-0022` left one number unsourced and honestly flagged it: the charge presented by the cut rim of the tile.
+Its declared falsifier 5 fired on it — uncharged rim against face-density rim, `−0.2906` to `−0.1575`, a factor of 1.845 — and it recorded that
+*"the two readings are both defensible … the tile's charge is volumetric and the surface it is smeared onto is a convention."*
+The queue called it *"cheaper than it looks — a geometry question about helix ends, not a measurement."*
+It was cheaper than it looked and the cheap thing was not the geometry.
+
+**Two cheap bounds, and the second one is a division.**
+The saturation check ran first, as `CLAUDE.md` demands and as `C-0125` had just been closed on.
+It works: at 2 mM the face sits at 0.9314 of the 2:1 saturated amplitude `12 − 6√3` and the geometric rim at 0.8681, so **halving** the bare rim charge costs **6.8 %** of its far-field effective charge and **quartering** it 18.7 %.
+And it settles nothing, for a reason worth writing down: **saturation flattens a surface's response to its own magnitude, and the question here was whether the surface exists.**
+Zero is the family's boundary, not a point inside it.
+The bound that did the work was arithmetic.
+`σ_face = ρt/2` is **Gauss's law on a slab, not a convention** — a uniformly charged slab has exactly the exterior field of two sheets of `ρt/2` — so a smearing is a partition of **one conserved charge onto one boundary**, and the §3 tile's rim area (1600 nm²) is exactly half its face area (3200 nm²).
+Setting the rim to the face density hands the solver a tile carrying **1.5000** of the tile's charge in 3-D and **1.2500** in 2-D.
+The upper end of the published bracket is not a reading of the rim; it is a bigger tile (`CH-0156`), and no solver is needed to see it.
+
+**The geometry answers cleanly and then the model refuses the answer.**
+Charge the rim takes must be charge the faces gave up, and the faces are exact in the interior, so it comes from the **collar**: writing the face as a linear taper of length `ℓ` gives `σ_rim = ρℓ/2`, conserving identically at every `ℓ`, a **one-parameter family whose `ℓ = 0` member IS `C-0022`'s headline**.
+The nearest-surface partition picks `ℓ = t/2` and gives **`σ_rim = ρt/4 = σ_face/2 = −0.199332619 e/nm²`**, a ratio of **exactly one half** for any slab with `t ≤ 2a`, carrying no `ρ`, no `t`, no buffer and no Manning fraction.
+That is the number `P-14` was sent for.
+But the real object's face charge does not taper — the column of material behind every face element is the full thickness right up to the rim — so a taper is bookkeeping with no counterpart in the sheet, and it moves charge across a 90° corner onto a wall that by the structure of the stress tensor exerts **no vertical force**.
+**`σ_rim = 0` in this model is forced by `σ_face = ρt/2`; it is not a claim that the rim is uncharged.**
+`C-0022`'s headline survives — on a ground it was not published on.
+
+**What surprised us, twice.**
+First: the sensitivity `C-0022` ran varied the *smaller* of two terms.
+Adding the geometric rim charge with the face untouched moves the collar `1.65496 → 2.7065 nm`; adding the face deficit it must be taken from moves it to `1.222623`.
+**The term the solver could not express is 1.41× the one it swept and runs the other way** (`CH-0157`), so the published bracket is not merely too wide, it is one-sided upward where the real one **straddles**: `1.222623–1.77269012 nm`, `1.44990738×`, against `1.65496–2.91298 nm`, `1.76015133×`.
+Fourteen downstream claims carry that exposure in their validity ranges.
+
+Second, and this is the one nobody would have predicted: **`edgeTaperedPressure`'s `(depth, width)` pair cannot represent a charge-conserving smearing at all.**
+It is a two-parameter fit to a *one-signed* collar, matched on the first two moments of the load deficit; a conserving smearing's deficit changes sign **3 times** outside the standoff against 1, and the fit returns a depth of `−0.022` over a width of `28.59 nm` — **1.43 of the tile half-width** — and **−12.97 nm** at `ℓ = 3t/4`.
+Over the nested 1/2/4 refinement the fitted depth walks `−0.0294 / −0.0220 / −0.0168` and the width grows `24.2 / 28.6 / 32.1`, while the **collar of the same solves** settles at `1.2488 / 1.2226 / 1.2158` and `C-0022`'s own uncharged collar at `1.6757 / 1.6550 / 1.6495`, both at second order, ratios 3.85 and 3.84.
+**The solve is converged; the fit is not a representation of it.**
+Fed through the pipeline anyway, the medial member reads 0.0046 of the stroke on `C-0006`'s plate — an artefact, because a 30.76 nm raised cosine on a 40 nm tile is nearly uniform and a uniform load on a uniform foundation dishes exactly zero.
+A downstream re-run needs the solved profile, not the pair.
+
+**Two smaller findings that are worth their line.**
+A rim charge is not one number: at the *identical* mean density and the *identical* face taper, a rim uniform in height and one triangular in height give collars of **1.6607** and **1.2226 nm** — 1.36× from the vertical distribution alone, because the gap is *below* the tile, so rim charge near the bottom face acts on it and rim charge at mid-height does not.
+And the direction of the whole correction is a property of the **state**: substituting the medial member **raises** the collar at 0.5 mM (2.2447 → 2.3183), **lowers** it at 2 mM, and takes it **negative** at 10 mM (0.9005 → −0.2394), where the finite tile behaves as one *smaller* than its footprint.
+
+**The two rims turned out to be one number and a measured length.**
+Across the helices the rim is a lattice of duplex **end faces**, 0.1139 per nm², covering 35.8 % of the plane; along them it is continuous **sidewalls**.
+They carry the **same** areal density, because the same `ρ` stands behind both and the partition depends on the block and not on which way the helices run.
+All that separates them is a charge **depth** of **0.0913621415 nm** — and that number exists only because `T-71` **measured** the phosphate radius at 0.9086 nm: at the round 1.0 nm it is exactly zero and the question is invisible.
+It is sub-Debye and inside the 1 nm standoff `C-0022` already discards, so one density serves both.
+And **neither rim is *cut***: the across-helix rim is where a Rothemund scaffold turns and the along-helix rim is simply the last duplex, so there is no severed backbone behind either — which is what makes an uncharged rim a statement about the smearing rather than about the object.
+
+**What would close the residue is a modelling change, not a measurement.**
+The whole ambiguity is an artefact of representing a permeable lattice as an impermeable body with boundary charge.
+A permeable rim's near-field ceiling is closed form — `ρλ_D` = `−0.6262 / −0.3131 / −0.1400 e/nm²` at 0.5 / 2 / 10 mM, i.e. 1.57 / 0.79 / 0.35 of the face density — and it does not conserve, because it is a different body.
+The calculation that would settle it is a solve of the permeable, volumetrically charged sheet, which no claim in this programme has.
+
+The solver gained two optional arguments (`faceShape`, `rimShape`); a `null` shape is a factor of exactly `1.0` and `x * 1.0` is exact in IEEE, so the extension is inert by construction — and **`C-0022`'s own study re-run on the extended solver returns `gpd/results/T-3b-tile-edge-load-profile.json` byte for byte**, which turns the argument into a measurement.
+`tools/verify.sh` BUILD SUCCESSFUL in 21 m 37 s.
+
+Claim [`C-0132`](gpd/claims/C-0132-cut-rim-charge.md), challenges [`CH-0156`](gpd/challenges/CH-0156-the-rim-charge-bracket-is-a-bigger-tile.md) and [`CH-0157`](gpd/challenges/CH-0157-the-rim-sweep-varied-the-smaller-of-two-terms.md), result `gpd/results/P-14-cut-rim-charge.json` (re-run byte-for-byte identical).
+`ANSWERS.md` and `DECISIONS-FOR-NDI.md` are owed nothing new by this task except one correction: wherever they repeat *"an unsourced rim charge worth 1.85×"*, it is sourced, it is 1.45× on the collar, and it does not run one way.
+
+## Iteration 30 — `T-212`/`T-213`: both audits close, and both were narrower than the rules they measured
+
+**Task.** Finish the two audits `C-0129` measured, published, and deliberately declined to gate:
+the departure-precision rule (199 fields in 27 files still at nine significant digits) and the saturated-proportion statistic (277 records in 6 files).
+Both were left open because closing them costs re-runs.
+
+**Result.** Both close.
+`tools/check-result-file-hygiene.py --departures` is now a **gate** and reads **0 fields in 0 files**;
+the saturated-proportion census reads **0 records in 0 files**.
+**35 files re-emitted in one topological order: 250 departure fields moved, 342 one-sided bounds added, 0 verdicts, 0 wording changes, 0 booleans, 0 computed physical quantities.**
+Claim [`C-0131`](gpd/claims/C-0131-departure-and-saturation-audits.md), raising [`CH-0154`](gpd/challenges/CH-0154-the-rule-lives-once-was-true-of-one-package.md) and [`CH-0155`](gpd/challenges/CH-0155-the-degenerate-discharge-is-in-five-claims.md).
+
+**The finding is `C-0129`'s own opening sentence, read one level further out and pointed at `C-0129`.**
+It says each of its three items *"named one instance, and each instance was a population"*.
+Its own two censuses are narrower than the rules they measure, in three independent ways, and all three were found by a cheap bound before a line was edited.
+
+**First: the constant is keyed on a leaf name where the rule is about a record.**
+`C-0129` wrote *"the rule is about a **record type**, so it now lives once, by name"* and then keyed the map on `departure`.
+`roundedForResult` applies a `digitsByKey` entry to the whole subtree under that key *wherever it appears* — and a bare `departure` appears under **eleven** parents in `gpd/results/`.
+One of them is `T-193`'s `potentialOfZeroCharge`, where the quantity is a difference of two electrode potentials **in volts**, against a value read directly out of a paper.
+Another is `T-160`'s `departures[*].relativeDeparture`, which is **that study's own answer**, declared at six digits — and the *same file* carries the *same spelling* as a diagnostic in its `convergence` records.
+So the one-line alternative — make `DEPARTURE_DIGITS_BY_KEY` the default of `roundedForResult`, 66 files instead of 27 — is **refused on a measurement rather than on taste**, and the map is re-keyed on `record/spelling` with most-specific-wins precedence.
+That is the only form in which `T-160` can be written at all.
+
+**Second: the rule could not reach `actuator/`.**
+`roundedForActuatorResult()` takes **no arguments** — there is no `digitsByKey` to pass — so `T-3`, `T-4`, `T-60`, `T-76`, `T-149` and `T-157` could not have obeyed the rule by any edit at their own emission sites.
+`T-60` is one of `C-0129`'s 27, listed as *"each is now one re-run away"*.
+It was one re-run **and a change to a rounding implementation in another package** away.
+`CLAUDE.md` already records that there is no tree-wide digit count but **six independent rounding implementations**, and that a change to one silently leaves the other five; this is the first time that cost something concrete.
+The repair is a delegation, and it is a refactoring rather than a precision change only because the two constants are equal — which is now asserted in a test, so the equality cannot lapse silently.
+
+**Third: the census counted one spelling of four.**
+The strict predicate is the leaf key `departure`; the same two records carry **503 `relativeDeparture`** and **337 `departureFromFinest`** fields of the same quantity.
+Counted at more than two digits, the gate's predicate is 199 fields in 27 files and the rule's own scope is **601 in 63** — **3.0×** in fields and **2.3×** in files.
+So the gate is wired on `C-0129`'s own predicate, where the tree can be made clean, and the **wider scope is printed beside it, ungated**.
+`C-0083`'s rule is a statement about a *predicate*, and a predicate can always be narrowed until the tree is clean; publishing the residue beside the gate is what stops the narrowing from becoming a claim of cleanliness.
+The 31-file residue is queued as `T-214`.
+
+**`T-213` went on the shared summary, not on six emission sites.**
+All seven affected studies build their dropout summary through **one** function, `coupling.summariseDropoutDishing`, returning **one** type, so `DropoutDishing.exceedanceOneSidedBound` is a single field computed once and six record classes pass it through.
+`C-0129` repaired `T-148` at *its emission site* — precisely the shape its own §3 diagnoses as the reason the departure rule survived three correct repairs.
+
+**And `CH-0152`'s lesson was applied as a measurement, and found nothing.**
+Every string in the six remaining files was scanned for *resolution*, *statistical power*, *standard error*, *binomial* and *sampling*: **none** of them describes the symmetric error as a resolution.
+`T-148` was the only file whose prose asserted it.
+The misdescription is *rarer* than the degenerate statistic by a factor of seven — and the place it lives instead is the **claims**: the discharge *"a binomial standard error beside every exceedance"* stands in **five** of them (`C-0087`, `C-0089`, `C-0093`, `C-0098`, `C-0103`), each with the statistic exactly `0.0` at 25 of 60, 16 of 24, 16 of 39, 16 of 25 and 16 of 21 cells.
+`CH-0153` names one. That is `CH-0155`, and it is the same shape again: **a challenge can be a population too.**
+
+**A control re-run convicted the baseline instead of exonerating the change, which is a use nothing here had made of it.**
+One file of the 35 — `T-129`, a minimax descent — moved 10 non-departure fields, worst 0.60 %.
+`CLAUDE.md`'s rule is to re-run identical code before attributing it, so it was run twice more.
+Two runs of this task's code in separate snapshots agree on the whole `ranges[1]` block **to the last digit**, and so does a third run from a `--committed` snapshot carrying `HEAD`'s code and `HEAD`'s inputs — and the **committed file disagrees with all three**.
+`gpd/results/T-129-range-robust-placement.json` at `HEAD` is not reproducible from `HEAD`'s own code, and was not before this task began; this sweep moves **zero** of that 0.60 %.
+What is left between two runs of identical code is 7 `subsets[*].minimaxWorstOverStroke` fields at ≤ `8.6e−4` — the descent-manifold irreproducibility already on record, where the *value* is stable and the *point* is not.
+Queued as `T-215`.
+`C-0129`'s own `T-136` control landed run B back on `HEAD`; this one does not, and that difference is the finding.
+
+**The sweep left nothing stale, and the check is an identity rather than a spot check.**
+All **566** `reproductions`/`convergence` residual fields across the 35 re-emitted files are **exactly** the two-significant-digit rounding of their own committed value — so not one moved for any other reason, and no consumer was re-emitted before its producer.
+The order came from `tools/reemission-order.py` over the **whole union set** at once, which is what `CH-0131` exists to enforce; the three files that belong to *both* audits are why the two tasks had to be one sweep rather than two.
+
+**What it cost, and one new tool.**
+`tools/study.sh` snapshots the tree *per study*, which is right for a one-off and is 35 cold Gradle builds for a sweep.
+`tools/study-batch.sh` takes one snapshot and runs an ordered list inside it, **re-checksumming `gpd/results/` immediately before each individual run** so the copy-back stays scoped to what that run produced — batching changes how often the tree is copied, not what is copied back, which is the trap `S-95` records twice.
+The measured cost partition is in the result file: the sweep spans a **closed-form lattice census** at the cheap end and a **junction closure search** and a **Monte Carlo ensemble** at the expensive one, and the spread across the three probe studies run before any edit was ~170×.
+
+
+### Coordinator check — the shared solver's three consumers, run rather than argued
+
+`C-0131`'s report closed with a flag: `electrostatics/PoissonBoltzmannEdge.kt` was modified by the
+`P-14` sibling **after** the `T-212` sweep had re-emitted `T-160-edge-width-dependence.json` from a
+snapshot predating that change.
+`C-0132` had proved the extension inert — a `null` `EdgeChargeShape` is a factor of exactly `1.0`,
+and `x * 1.0` is exact in IEEE arithmetic — and demonstrated it on `T-3b`.
+
+`CLAUDE.md` records that this is not enough:
+*"A PROOF that a shared-source change is invisible is not a substitute for re-running the consumers,
+because the run also checks everything the proof was not about."*
+That entry exists because `C-0110`'s provably-inert clamp is what uncovered a six-iteration-stale `T-157`.
+
+The solver has **three** committed consumers, not one —
+`TileEdgeLoadProfileStudy` (`T-3b`), `CollarEquilibriumPathStudy` (`T-60`) and
+`EdgeWidthDependenceStudy` (`T-160`) — and **two** of them, `T-60` and `T-160`, were in `T-212`'s
+own sweep and had therefore been emitted against the pre-`P-14` solver.
+All three were re-run on the current tree in `tools/reemission-order.py`'s order
+(`T-3b` feeds both of the others), through `T-212`'s own new `tools/study-batch.sh`:
+one snapshot, three runs, copy-back scoped per run.
+
+**All three are byte-identical**, MD5 unchanged before and after, each study reporting
+*"no result file changed"*.
+`T-60` reproduced `T-3b`'s three `(gap, bias)` points at departures of `2.0e−7`–`3.7e−7`, and its
+gradient mesh convergence reproduced the recorded `2 → 3 → 4` behaviour.
+The flag is **discharged by measurement**, and the proof and the run agree —
+which is the outcome the discipline expects and not the reason it is followed.
+

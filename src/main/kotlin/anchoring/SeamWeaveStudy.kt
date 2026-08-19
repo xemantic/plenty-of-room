@@ -18,6 +18,7 @@ package com.xemantic.nano.plentyofroom.anchoring
 
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
@@ -553,7 +554,9 @@ fun main() {
     file.writeText(
         json.encodeToString(
             JsonObject.serializer(),
-            (json.encodeToJsonElement(result).roundedForResult() as JsonObject)
+            (json.encodeToJsonElement(result).roundedForResult(
+                digitsByKey = DEPARTURE_DIGITS_BY_KEY
+            ) as JsonObject)
         )
     )
     println("T-140 — wrote ${file.path}")
