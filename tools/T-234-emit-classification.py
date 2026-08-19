@@ -63,11 +63,24 @@ CORRECTING = {
     # cross-section (T-232), so its occurrences of the superseded numbers are the baseline it is
     # replacing.  It appeared in the census mid-run, which is what `--others` is for.
     "gpd/claims/C-0142-coupled-cells-at-the-honeycomb-cross-section.md",
+    # Iteration 35, concurrent again -- and this is CH-0182 happening for the second time inside
+    # two iterations, which is why the entry says so rather than just listing the files.  C-0146
+    # re-grades C-0142's cells at C-0140's two-length raster (T-235) and C-0147 prices that
+    # raster's turn loop and ragged face (T-230/T-231); both quote the superseded widths and
+    # footprints as the baseline they are replacing.  A census is DATED BY ITS PREMISE SET, so
+    # this set goes stale within the iteration that writes it, every time.
+    "gpd/claims/C-0146-coupled-cells-at-the-two-length-raster.md",
+    "gpd/claims/C-0147-honeycomb-turn-slack-and-ragged-face.md",
 }
 #: Synthesis claims: an occurrence there records what a past deliverable pass carried in.
 SYNTHESIS = {
     "gpd/claims/C-0115-fifth-answers-synthesis.md",
     "gpd/claims/C-0121-sixth-answers-synthesis.md",
+    # Iteration 35: the eighth pass, which performed the T-233 restatement and therefore quotes
+    # every withdrawn premise beside the value that replaced it.  Added here rather than to
+    # CORRECTING because it records what past passes carried in as well as correcting it --
+    # and because CH-0182 is exactly the observation that these sets go stale within one iteration.
+    "gpd/claims/C-0145-eighth-answers-synthesis.md",
 }
 #: Token collisions -- the statement is not about the four-layer line at all.
 OUT_OF_SCOPE_FILES = {

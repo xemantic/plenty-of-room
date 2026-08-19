@@ -9735,3 +9735,271 @@ is queued for it, and it is not obviously free: two of the four flat cells sit a
 
 **Gates.** `tools/verify.sh` — see the claim. Tables, corpus links, format strings, result-file
 hygiene, departure precision and the reader census all clean.
+
+---
+
+## Iteration 35 — `T-233`: the two outward-facing documents, and the eighth `ANSWERS.md` synthesis (`C-0145`)
+
+**The largest item in a synthesis pass was, for the first time, a QUESTION rather than an answer.**
+`DECISIONS-FOR-NDI.md`'s seventh decision asks NDI to accept a smaller tile *in exchange for* removing the
+last unmeasured dependency in the flatness verdict. Corrected to the honeycomb's own two pitches (`C-0141`),
+the tile it charges a footprint for — `10 × 6` — is **38.08 × 37.504 nm, 0.929467162 of §3's 40.35**, and the
+default it offers — `15 × 4` — is **38.08 × 56.524 nm, 1.40084263×** it, **and is no longer flat**: its
+interlayer-coupling threshold moves to **0.276970522**, inside the measured 0.26–0.33 band, where it dishes
+**0.101759944** and fails `T-5b`, and `C-0142` grades it at **0 of 8** coupled cells at *both* ends of that
+band. **The tile offered as the cost is the one that fits.** The trade does not exist and the question was
+posed the wrong way round.
+
+**So it is struck as posed and re-posed as two**, in both documents: **7a — confirm `10 × 6`**, there being
+nothing left to weigh once yield, flatness and footprint all point the same way; and **7b — which scaffold?**,
+which is a genuinely new specification question the correction exposed. The caDNAno paper's Methods list says
+**p8064** and its own main-text rule says **p7560**, they agree at **six of its seven designs and disagree at
+exactly ours**, and under the Methods reading design (i) leaves **504** nucleotides its own *"126 bases per
+helix"* accounting has no line for (`CH-0180`). And the **cost of deferring reversed sign**: both files said
+*"deferring costs little, the four-layer result stands either way"*. It does not.
+
+**The cheap bound was a reconciliation, not an arithmetic.** `C-0144` §9 published the work list — 41 entries,
+27 in `ANSWERS.md` and 14 in `DECISIONS-FOR-NDI.md`, over **21 physical lines**. Every line **number** had
+drifted, so `tools/T-233-reconcile.py` locates each entry by its **exact line text** and then dispositions it:
+**40 RESTATED, 1 LEFT, 0 DEFECT**. The one `LEFT` is a bullet explicitly retained as *"the entry as written at
+iteration 25"*, whose discharge is stated immediately above it.
+
+**And the published list turned out to be a floor, twice over — which is the methodological finding.**
+
+- **`CH-0182`.** `tools/T-234-census.py`'s five premise families are built from `C-0141` and `C-0140`.
+  `C-0142` was filed the **same iteration**, hours later, by a sibling, and re-graded the coupled cells — so
+  **26** occurrences of a withdrawn coupled premise stand in the two deliverables, **16** on lines the list
+  already names and **10 on 6 lines it does not**. The 21 lines are really **27**. *A corpus census is dated
+  by its own premise set*, and `C-0144` §12 records the families as *"a choice"* — a recall caveat — where the
+  real caveat is a **date**. It is `CLAUDE.md`'s *a discharge is invisible to whoever files the removal* with
+  the arrow reversed: here the census cannot see the claim.
+- **`CH-0183`.** Ten of the 41 — entries 10–19 — sit on **one preserved-verbatim blockquote** that `C-0130`
+  filed and `C-0071`'s *strike, never delete* makes binding. `C-0144`'s own `RECORD` class is defined to
+  include *"a verbatim source quotation"*. The discriminator is that every line of the block begins `>`, one
+  regex on an input the tool already has; it would take the published work list from **41 to 31**. The repair
+  owed for all ten is a **single superseding banner above the block**, which is what was written.
+
+**Three things the corpus had answered that a deliverable still called open** — `C-0067`'s under-claiming
+failure mode, still operating at the eighth pass:
+
+1. §5's *"the direction of the correlation correction for oppositely charged walls … **this is the largest
+   uncertainty on every electrostatic force here**"*. The premise is false: Kanduč et al. publish the branch,
+   and their Monte Carlo at `Ξ` up to **86** finds PB and strong coupling *"nearly coincide"*. `C-0137` closed
+   `T-50` three iterations ago; `C-0143` then settled which **input** the criterion is owed — the disputed
+   `16.5×` is **100 %** the bare/renormalised axis and **0 %** the geometry it was framed as.
+2. Task 6's *"mean field is **uncontrolled** across the whole 5–10 nm working range"*, with no mention of
+   `T-50`. All **54** of `C-0017`'s states are **force-pinned** — the pinned force identical across all three
+   buffers at every `(model, height)`, relative spread **`0.0`** — so a correction to the *level* contributes
+   **exactly zero** to the stiffness.
+3. §5's row-end register item. `C-0136`: the honeycomb's design twist is `720/21 = 34.2857 °/bp`, **which is
+   B-DNA's `360/10.5`**, so `Δω` is **exactly zero**. Every register number in `C-0104`, `C-0107` and `C-0133`
+   is a **square-lattice** number, and on the tile §3 specifies that axis is **empty rather than unmeasured**.
+
+**Falsifier `F2` fired, favourably, and it is the one worth remembering.** *"`10 × 6` is **6.6×** flatter"* is
+`C-0120`'s own number. Its corrected value — **4.06×**, the ratio of 0.0978155002 to 0.0240648102 — is stated
+by **no claim**. It stood in both documents through four synthesis passes because both of its *arguments* had
+owners, so the numeric tracer reads it `CITED` and nothing looks at whether the **quotient** still holds. It is
+now struck, restated, and quoted **with its construction**.
+
+**The gate's own first draft produced four classes of false positive**, each a way a checker written for one
+document is always wrong: strike spans read per line (a strike that opens on one line and closes on the next);
+a cue demanded on the occurrence's own line (so this task's own scaffold correction, which must *say* `p8064`
+to explain the contradiction, read as unqualified); the bare token `132` matched inside the identifier
+`C-0132`; and the `WIDTH` family fired on `C-0086`'s **square-lattice** 112 bp row, which `C-0140` does not
+touch. All four are self-tested by name — 28 checks — and the last two are conventions `tools/T-234-census.py`
+already carries, which is the argument for reading a tool before writing its consumer.
+
+**Partition.** Universe `C-0131`…`C-0144` (14) and `CH-0152`…`CH-0181` (30) = **44**. Cheap bound **7 of 44**
+cited by ID before the pass, **20** after. **13 newly carried in** and three already-cited items materially extended; **4 claims and 20 challenges deliberately not carried** — `C-0131` and
+`C-0138` are result-file hygiene and move no physical number, `C-0134` is a single-layer square-lattice result
+on a body the programme no longer proposes, and `C-0135` is a statement about a search's *point* where no
+number in either deliverable rests on the point rather than the value.
+
+**Gates.** `tools/verify.sh` — **BUILD SUCCESSFUL in 22 m 15 s**, every retained check clean, its one `note`
+a sibling's brand-new study not yet in the reader census; `trace-answers.py` on both documents (0 ABSENT, 0 open assertions contradicted,
+0 self-contradictions, before and after); `check-markdown-tables.py`, `check-corpus-links.py`,
+`check-challenge-index.py` all clean; `tools/T-233-reconcile.py` exit 0.
+
+---
+
+## Iteration 35 — `T-230` / `T-231`: six nucleotides reach, twenty-eight is what slack costs, and the ragged face is on the wrong axis to matter (`C-0147`)
+
+**Two cheap bounds, both run before any polymer model or any solve, decided both tasks — and one of
+them decided its task in the opposite direction from the way the task was framed.**
+
+`T-230` asked how much of the built blocks' **28 nt per turn** is a requirement. It is a **reach**
+problem, and the reach is one division: `n` unpaired nucleotides between two anchoring phosphates
+make **`n + 1`** phosphodiester steps, so the greatest span they can bridge is `(n + 1) × step`.
+The furthest apart the two anchors can be is `d + 2r_P = **4.35327572 nm**` on the honeycomb's SAXS
+lattice constant and `T-71`'s **measured** phosphate radius, and **six** nucleotides reach that at
+`T-71`'s measured C2′-endo step. **4.66666667× smaller than the built allowance**, so 28 nt is a
+choice.
+
+**The `n = 0` row is the part worth keeping.** A scaffold *crossover* is a turn with no unpaired
+nucleotides at all, so its span must be **one** phosphodiester step — and `d − 2r_P` comes out
+**0.718724283 nm**, `+1.49997857 σ` of the measured step and inside its 99th percentile. Nothing
+was fitted and nothing was tuned: a SAXS lattice constant and a 13 084-linkage crystallographic
+survey, from two unrelated literatures, agree that a crossover closes and that it closes **tightly**
+— which is *why* `C-0136`'s residue condition binds it at all. A check that costs one subtraction
+and validates the whole geometry is worth more than the answer it was written to support.
+
+**But the minimum is a CRITERION, not a number, and the built 28 sits inside the bracket.** At the
+worst relative azimuth — the reading a *free* row length is owed, because a free width leaves both
+backbone azimuths free — reach asks 6 nt, one `k_BT` of stored free energy asks **16–22** over
+`CLAUDE.md`'s zero-force ssDNA Kuhn bracket, and one pN of turn tension asks **29–41**. The built
+28 nt carries **1.00–1.47 pN** and stores **0.52–0.76 `k_BT`**: sub-thermal, about one piconewton.
+So the folded design is neither extravagant nor obliged — it is paying for a **slack** turn, and
+the surprise is how well an unexplained design constant lands on a criterion nobody wrote down.
+
+**And the route question turns on eight nucleotides.** `60 × (112 + L) ≤ 7 249` gives `L ≤ 8`, so
+route B — a uniform 112 bp × 60 raster on loops — **does** fit M13, by two nucleotides past the
+reach bound. What it costs is everything: an 8 nt turn sits at **0.777–0.837 of its own contour**,
+carries **6.54–12.11 pN** — at or past the 10 pN unzip allowable at the tight end of the Kuhn
+bracket — and stores **139–220 `k_BT`** over the raster's 59 turns. `C-0140`'s route A stands on a
+better reason than it had: *not that route B does not fit, but that it fits only strained*. That is
+[`CH-0186`](gpd/challenges/CH-0186-the-twenty-eight-nucleotide-turn-is-a-choice.md), and the
+challenged number — `CH-0173`'s *"the widest four-layer tile is 92 bp = 31.28 nm"* — is a ceiling
+on **one published allowance**, not on the route.
+
+**The yield half could not be priced and the threshold was quoted instead.** No published
+measurement is on the scaffold-turn-loop axis: Ke et al.'s is an 8 bp **staple** domain,
+Rothemund's 63 % → 11 % is a scaffold **linearisation**, Strauss et al.'s 48–95 % is per-**staple**
+incorporation. The number a folding experiment would have to bracket is **8 nt**.
+
+---
+
+**`T-231` was framed as the one that could bite, and it was closed by asking which axis the relief
+is on.** A four-layer honeycomb block's gap-facing surface is the outermost **layer**'s sidewalls —
+one *column* of the cross-section; a row length changes where a helix **ends**, which is a
+coordinate in the tile *plane*. **The ragged faces are the tile's RIM, and the coefficient of the
+raggedness on §3's normal-direction flatness field is exactly zero.** It is `CLAUDE.md`'s own
+*"ask which axis it is on"*, asked of a **specification** rather than of a measurement, and it cost
+one sentence.
+
+What is left is a **rim modulation**, and its wavelength is fixed by the lattice: the gap-facing
+rim alternates with period **exactly 2 raster rows = 7.608 nm**, against across-helix bending
+lengths of **17.23–23.21 nm** — 2.3 to 3.1 whole wavelengths inside one bending length, so the
+plate cannot follow it. Bounded through the plate's own transfer function **with `CLAUDE.md`'s
+measured 50× free-edge penalty applied**, the raggedness is worth **5.54e−05** of the stroke
+against a threshold of **0.0275** — the headroom `C-0142`'s tightest still-flat cell has. A margin
+of **496×**. The edge field cannot resolve it either: `1/q₀` is 2.47–4.95 nm against a 1.36 nm
+relief at all nine buffer/gap states.
+
+**A cross-check with a sibling, unplanned and worth keeping.** `C-0146` (`T-235`, same iteration,
+independent code) reads the same construction as *"every x-raster row of the block is still 112 bp,
+and consecutive rows are staggered by 4 bp"*, where this claim reads *"every helix carries 112 or
+108 bp and the faces are ragged by 4 and 8"*. Both are true and they are the **same object measured
+per row and per helix**: a 108 bp helix is **recessed inside its own row's window** rather than
+shortening it, which is also why the two faces are **not** mirror images — the front carries **two**
+levels and the rear **three**. The two derivations agree on the block extent, the stagger and the
+front spread.
+
+**What it does cost is plan budget** — 1.36 nm off an outboard bound that saturates at 2.380 nm,
+**57.1 %** — **and what it buys is a published anti-stacking geometry**, because all three of
+Rothemund's measured remedies work by denying a terminus a coaxial partner and a staggered face
+denies it geometrically.
+
+**Which is where `F6` fired, favourably, and it was declared open for exactly this.** Scored on
+that second axis, `C-0140`'s **112 / 108** clears the all-atom PMF's repulsive onset (1.30 nm) by
+**0.06 nm** — 0.18 of a rise, *below the design language's own quantum and therefore not a quotable
+margin* — while among **all** pairs that fit M13 the width optimum is **101 / 109 bp at `−0.55 %`**,
+which `C-0140` excluded through a self-imposed *"stagger of at most 4 bp"* filter it gives no
+ground for, and which wins the scaffold and the stacking clearance as well. **112 / 108 wins one
+axis of four: `C-0141`'s saturated outboard plan ceiling, 2.380 nm, which the wider pair's 2.72 nm
+exceeds.** So the recommendation is **conditional on a path count** — at `C-0142`'s flat cells
+(10–50 paths) both are affordable and the wider one is better on three axes. That is
+[`CH-0187`](gpd/challenges/CH-0187-the-two-length-recommendation-rests-on-an-unstated-filter.md),
+and it is the shape `CLAUDE.md` keeps recording: *a selection rule with a free parameter is a
+result about the parameter*.
+
+**What surprised us.** That a design constant nobody explains — 28 unpaired nucleotides, chosen in
+2009 — lands between two polymer criteria neither of which existed in that paper, and that the
+whole route question then rests on **two** nucleotides of scaffold. And that the task expected to
+threaten the flatness verdict could not reach it at all, because it was never on that axis.
+
+**Process.** The tests were written before the model file existed but were not watched to fail
+against an absent model, so they were **mutation-tested** instead — three mutations (dropping the
+`+ 1` from the reach, swapping the two face parities, crippling the inverse Langevin) each fail
+named tests, and the restored source passes 25 of 25. That is recorded in the claim rather than
+claimed as a watched failure. `tools/result-reader-census.py --check` passes and prints an advisory
+naming three studies absent from the emitted census; `--emit` was deliberately **not** run, because
+it writes a **shared** file and would have frozen a concurrent agent's in-flight study into it —
+`CLAUDE.md`'s *"scope the copy-back to the file the run produced"*, read on a tool instead of a
+snapshot. Filed as `T-241`.
+
+**Gates.** `tools/verify.sh`; both result files **byte-identical across two independent JVM runs**;
+`check-kotlin-format-strings.py`, `check-result-file-hygiene.py`, `check-markdown-tables.py`,
+`check-corpus-links.py`, `check-challenge-index.py` and `result-reader-census.py --check` all clean.
+
+## Iteration 35 — `T-235`: the width that threatened the recommendation is a stagger, and what the two-length raster costs is stations and a numerical guard (`C-0146`)
+
+**What was done.** `C-0142` re-graded `C-0118`'s sixteen coupled cells at `C-0141`'s corrected
+honeycomb cross-section and found four flat, all on `10 × 6` — and named the row length as the
+one moved input it deliberately did **not** move: `C-0140`'s two-length 112 / 108 bp raster has an
+axial extent of 116 bp = **39.44 nm**, `+3.57 %` on the 38.08 nm `C-0142` graded, with binding
+cells at 0.0954158305 and 0.0900369 against `T-5b`'s 0.10. `T-235` re-read them there.
+
+**The cheap bound changed the question.** `C-0140`'s path, turn senses and level walk are exact
+integer arithmetic and already in the tree; walking them costs microseconds. They say that
+**every x-raster row of the `10 × 6` block is still 112 bp** — the row unions are `[−112, 0]` and
+`[−116, −4]` on a global base-pair axis — and that the block extent is 116 bp **only because
+consecutive rows are staggered axially by 4 bp = 1.36 nm**. The face's rooting helices alternate
+sense exactly with the raster-row parity, so `C-0141`'s two-phase station lattice survives. And it
+is a property of the **family**, not of the selected pair: over all five pairs of `C-0140`'s own
+Deliverable 4 table and at both 60-helix cross-sections, every raster row spans the **larger** of
+the two lengths exactly and the block exceeds it by exactly the stagger — so `CH-0187`, filed by a
+sibling in the same iteration against `C-0140`'s selection rule, cannot overturn the reading.
+
+**So the `+3.57 %` is not a row length**, and the width question splits into a row-faithful 112 bp
+reading (which is `C-0142`'s own tile, reproduced here at `≤ 3.9e−9` over 28 published cells) and a
+bounding-box 116 bp one. A smeared plate has one `lengthX` and can represent neither the stagger
+nor the difference, which is why both are carried and neither is preferred.
+
+**The verdict.** The recommended design — `10 × 6`, one column, ten paths, equal springs —
+**survives its own buildable width at every reading**: `0.0680677948` at 112 bp,
+`0.0708759349` at 116 bp on eleven crossover columns, `0.0662801686` on twelve, and
+`0.072431426 / 0.0754995025 / 0.0708859619` at the band's adverse `f = 0.26`. `15 × 4` is 0 of 8
+at both widths, unchanged. `F3` was declared open and did not fire.
+
+**What the raster does cost is inventory and a guard.** The 21 bp ladder becomes **row-dependent**:
+`C-0142`'s own phase 0 / 7 bp offset carries **55 of 60** stations, and over all 42 `(phase,
+offset)` pairs exactly **one** keeps the full sixty — phase 11 at the **14 bp** offset, and
+`15 × 4` saturates at 90 of 90 at the *same* pair. `C-0141` §9 records that offset as free and that
+*"no answer here depends on the choice"*; that is now false, and it is `CH-0184`. Separately, a
+116 bp bounding box clears eleven honeycomb crossover pitches by **0.07 nm** — one fifth of a
+base-pair rise — so `CrossoverLayout.EDGE_MARGIN` admits a **twelfth** column at 0.05 nm and
+refuses it at half a rise, and that one column is **6 flat cells of 8 against 3**. `CH-0185`; it is
+the second geometry at which that `const val`'s own inertness sentence fails, after `C-0134`'s
+38.08 nm.
+
+**What surprised us.** That the two effects of a wider box run **opposite** ways and the guard
+picks the winner: the width alone costs the uncoupled tile `+4.97 %` (0.0240648102 → 0.0252615047)
+and the twelfth column buys `−8.44 %` (→ 0.0231299291), *below* the 112 bp reading. And that the
+one cell lost at eleven columns is exactly the one `C-0142` named tightest — 3 columns rim-graded,
+0.0954158305 → **0.100357905**, across the tolerance. `CLAUDE.md`'s *"a numerical guard becomes a
+physical assertion the moment the lattice lands on it"*, live, in a study that never calls the
+function the guard lives in.
+
+**`F6` also fired**, and informatively: `C-0142`'s *"every one of the three flat lattice cells is
+EQUAL SPRINGS"* does not persist. The best is still equal springs at every reading, but the
+5-column rim-graded cell becomes flat (0.108415983 → 0.0968448829) while the 3-column equal one is
+lost (0.0973238201 → 0.100550512) — *a distribution rule is a property of a station set, never of a
+tile*, measured again on a lattice that moved by 4 bp.
+
+**Process.** TDD: the 14 tests were written before the model file existed and failed to compile
+against it, then were **mutation-tested** — moving the lattice datum off the block centre, taking
+the face helix from the wrong end of the row, widening the station window from the row's own to
+the block's, and rounding instead of flooring the column count fail **4, 2, 2 and 1** of them. A
+defect the emitted file caught rather than a test: the `15 × 4` path-terminus face row was filled
+in from its *neighbour* instead of from a face row of its **own parity**, which put its window at
+`[−116, −4]` where every other even row is `[−112, 0]`; re-running moved only that record and its
+census (96 graded cells bit-identical), and 15 × 4's face census then saturates at 90 of 90 at the
+same unique pair as `10 × 6`. `tools/result-reader-census.py --check` prints its advisory naming
+this study and a sibling's; `--emit` was **not** run, because it writes a shared file — `T-241`
+already owns it.
+
+**Gates.** `tools/verify.sh`; the result file **byte-identical across two independent JVM runs**,
+twice (once before and once after the parity repair); every headline number of the claim and of
+both challenges grepped back out of `gpd/results/T-235-*.json`;
+`check-kotlin-format-strings.py`, `check-result-file-hygiene.py`, `check-markdown-tables.py`,
+`check-corpus-links.py`, `check-challenge-index.py` and `result-reader-census.py --check` clean.

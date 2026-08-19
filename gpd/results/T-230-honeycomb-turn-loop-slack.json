@@ -1,0 +1,1676 @@
+{
+    "task": "T-230",
+    "leaf": "A8.2",
+    "title": "The minimum unpaired slack a honeycomb raster turn needs, and what a short loop costs",
+    "verificationType": "logical (a covalent reach bound on the MEASURED backbone and an exact freely-jointed-chain law, both closed forms) + literature (the caDNAno per-helix allotment, read directly from gpd/data/T-151-sources/)",
+    "maturity": "TRL 1-3 - model-consistent and traceable, NOTHING HERE IS MEASURED except the constants, which are: T-71's backbone from 13 084 crystallographic linkages, the honeycomb's SAXS lattice constant, and the caDNAno blocks' own published scaffold accounting",
+    "units": {
+        "length": "nm",
+        "force": "pN",
+        "energy": "pN*nm and k_BT",
+        "count": "nucleotides, base pairs"
+    },
+    "conventions": [
+        "rise 0.34 nm/bp; k_BT = 4.141947 pN*nm at 300 K",
+        "n unpaired nucleotides between two anchoring phosphates make n + 1 phosphodiester steps, so the reach is (n + 1) x step",
+        "the loop is charged PER TURN; the built design's 14 + 14 makes the per-helix allotment and the per-turn loop the same number, 28",
+        "azimuth 0 degrees points at the other helix, so (0, 180) is the closest approach and (180, 0) the furthest",
+        "the Kuhn length is the ZERO-FORCE scattering bracket 2.10-2.84 nm and the contour the INEXTENSIBLE 0.65-0.70 nm/nt that travels with it; the 1.34-1.41 nm force-spectroscopy Kuhn and the 0.57 nm/nt extensible contour are never mixed with them"
+    ],
+    "parameters": {
+        "interhelicalDistanceNm": "2.536",
+        "phosphateRadiusNm": "0.9086378584708424",
+        "crossoverSpanNm": "0.718724283",
+        "crossoverSpanSigma": "1.49997857",
+        "worstAzimuthSpanNm": "4.35327572",
+        "azimuthAveragedSpanNm": "2.70321445",
+        "reachBoundWorstAzimuthNucleotides": "6",
+        "reachBoundAzimuthAveragedNucleotides": "4",
+        "builtLoopNucleotidesPerTurn": "28",
+        "builtOverReach": "4.66666667",
+        "oneThermalNucleotidesPerTurn": "6-8",
+        "onePicoNewtonNucleotidesPerTurn": "17-24",
+        "m13AffordanceAtOneHundredTwelveBasePairs": "8",
+        "p8064AffordanceAtOneHundredTwelveBasePairs": "22",
+        "helices": "60",
+        "builtTurnTensionAtWorstAzimuthPicoNewton": "1.00195245-1.46667915",
+        "builtTurnFreeEnergyAtWorstAzimuthThermal": "0.518481856-0.7570064",
+        "affordedTurnTensionAtWorstAzimuthPicoNewton": "6.54349121-12.112167",
+        "oneThermalNucleotidesPerTurnAtWorstAzimuth": "16-22",
+        "onePicoNewtonNucleotidesPerTurnAtWorstAzimuth": "29-41",
+        "azimuthGridPerAxis": "720"
+    },
+    "sources": [
+        "gpd/results/T-218-honeycomb-raster-turn-sense.json",
+        "gpd/data/T-151-sources/PMC2731887-fullTextXML.xml"
+    ],
+    "quotations": {
+        "caDNAno, the per-helix scaffold accounting": "Each helix was allotted 126 bases of scaffold. Of those 126 bases, 98 were paired with complementary staples, and the remaining 28 were divided into front and rear unpaired loop fragments at the ends of each helix.",
+        "caDNAno, the loops as an imaged feature": "more than 3 nm away from the unpaired scaffold loops at the front and rear interfaces"
+    },
+    "cheapBound": {
+        "statement": "a turn of n unpaired nucleotides reaches (n + 1) x step, so the minimum is span/step - 1 and below it the turn closes at NO conformation",
+        "worstSpanNm": "4.35327572",
+        "measuredStepNm": "0.66448058",
+        "minimumNucleotides": "6",
+        "builtNucleotides": "28",
+        "verdict": "the built allowance is a CHOICE; the reach bound is 4.7x smaller"
+    },
+    "reach": [
+        {
+            "azimuthCase": "aligned — both backbones on the line of centres (this IS a crossover)",
+            "exitAzimuthDegrees": 0.0,
+            "entryAzimuthDegrees": 180.0,
+            "spanNm": 0.718724283,
+            "stepConvention": "C2'-endo (south) mean, MEASURED",
+            "stepNm": 0.66448058,
+            "minimumUnpairedNucleotides": 1,
+            "reachAtThatCount": 1.32896116
+        },
+        {
+            "azimuthCase": "aligned — both backbones on the line of centres (this IS a crossover)",
+            "exitAzimuthDegrees": 0.0,
+            "entryAzimuthDegrees": 180.0,
+            "spanNm": 0.718724283,
+            "stepConvention": "C3'-endo (north) mean, MEASURED",
+            "stepNm": 0.607233587,
+            "minimumUnpairedNucleotides": 1,
+            "reachAtThatCount": 1.21446717
+        },
+        {
+            "azimuthCase": "aligned — both backbones on the line of centres (this IS a crossover)",
+            "exitAzimuthDegrees": 0.0,
+            "entryAzimuthDegrees": 180.0,
+            "spanNm": 0.718724283,
+            "stepConvention": "C2'-endo 99th percentile, MEASURED",
+            "stepNm": 0.756744753,
+            "minimumUnpairedNucleotides": 0,
+            "reachAtThatCount": 0.756744753
+        },
+        {
+            "azimuthCase": "azimuth-averaged over both backbones",
+            "exitAzimuthDegrees": -1.0,
+            "entryAzimuthDegrees": -1.0,
+            "spanNm": 2.70321445,
+            "stepConvention": "C2'-endo (south) mean, MEASURED",
+            "stepNm": 0.66448058,
+            "minimumUnpairedNucleotides": 4,
+            "reachAtThatCount": 3.3224029
+        },
+        {
+            "azimuthCase": "azimuth-averaged over both backbones",
+            "exitAzimuthDegrees": -1.0,
+            "entryAzimuthDegrees": -1.0,
+            "spanNm": 2.70321445,
+            "stepConvention": "C3'-endo (north) mean, MEASURED",
+            "stepNm": 0.607233587,
+            "minimumUnpairedNucleotides": 4,
+            "reachAtThatCount": 3.03616793
+        },
+        {
+            "azimuthCase": "azimuth-averaged over both backbones",
+            "exitAzimuthDegrees": -1.0,
+            "entryAzimuthDegrees": -1.0,
+            "spanNm": 2.70321445,
+            "stepConvention": "C2'-endo 99th percentile, MEASURED",
+            "stepNm": 0.756744753,
+            "minimumUnpairedNucleotides": 3,
+            "reachAtThatCount": 3.02697901
+        },
+        {
+            "azimuthCase": "centre to centre — the axes' own separation",
+            "exitAzimuthDegrees": -2.0,
+            "entryAzimuthDegrees": -2.0,
+            "spanNm": 2.536,
+            "stepConvention": "C2'-endo (south) mean, MEASURED",
+            "stepNm": 0.66448058,
+            "minimumUnpairedNucleotides": 3,
+            "reachAtThatCount": 2.65792232
+        },
+        {
+            "azimuthCase": "centre to centre — the axes' own separation",
+            "exitAzimuthDegrees": -2.0,
+            "entryAzimuthDegrees": -2.0,
+            "spanNm": 2.536,
+            "stepConvention": "C3'-endo (north) mean, MEASURED",
+            "stepNm": 0.607233587,
+            "minimumUnpairedNucleotides": 4,
+            "reachAtThatCount": 3.03616793
+        },
+        {
+            "azimuthCase": "centre to centre — the axes' own separation",
+            "exitAzimuthDegrees": -2.0,
+            "entryAzimuthDegrees": -2.0,
+            "spanNm": 2.536,
+            "stepConvention": "C2'-endo 99th percentile, MEASURED",
+            "stepNm": 0.756744753,
+            "minimumUnpairedNucleotides": 3,
+            "reachAtThatCount": 3.02697901
+        },
+        {
+            "azimuthCase": "worst — both backbones pointing away",
+            "exitAzimuthDegrees": 180.0,
+            "entryAzimuthDegrees": 0.0,
+            "spanNm": 4.35327572,
+            "stepConvention": "C2'-endo (south) mean, MEASURED",
+            "stepNm": 0.66448058,
+            "minimumUnpairedNucleotides": 6,
+            "reachAtThatCount": 4.65136406
+        },
+        {
+            "azimuthCase": "worst — both backbones pointing away",
+            "exitAzimuthDegrees": 180.0,
+            "entryAzimuthDegrees": 0.0,
+            "spanNm": 4.35327572,
+            "stepConvention": "C3'-endo (north) mean, MEASURED",
+            "stepNm": 0.607233587,
+            "minimumUnpairedNucleotides": 7,
+            "reachAtThatCount": 4.85786869
+        },
+        {
+            "azimuthCase": "worst — both backbones pointing away",
+            "exitAzimuthDegrees": 180.0,
+            "entryAzimuthDegrees": 0.0,
+            "spanNm": 4.35327572,
+            "stepConvention": "C2'-endo 99th percentile, MEASURED",
+            "stepNm": 0.756744753,
+            "minimumUnpairedNucleotides": 5,
+            "reachAtThatCount": 4.54046852
+        }
+    ],
+    "loops": [
+        {
+            "unpairedNucleotidesPerTurn": 6,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 3.9,
+            "extensionRatio": 0.65025641,
+            "tensionPicoNewton": 5.52217739,
+            "freeEnergyThermal": 1.38763721
+        },
+        {
+            "unpairedNucleotidesPerTurn": 8,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 5.2,
+            "extensionRatio": 0.487692308,
+            "tensionPicoNewton": 3.42034183,
+            "freeEnergyThermal": 0.95806848
+        },
+        {
+            "unpairedNucleotidesPerTurn": 10,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 6.5,
+            "extensionRatio": 0.390153846,
+            "tensionPicoNewton": 2.55537035,
+            "freeEnergyThermal": 0.74251777
+        },
+        {
+            "unpairedNucleotidesPerTurn": 12,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 7.8,
+            "extensionRatio": 0.325128205,
+            "tensionPicoNewton": 2.05948521,
+            "freeEnergyThermal": 0.608976582
+        },
+        {
+            "unpairedNucleotidesPerTurn": 14,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 9.1,
+            "extensionRatio": 0.278681319,
+            "tensionPicoNewton": 1.73193524,
+            "freeEnergyThermal": 0.517184179
+        },
+        {
+            "unpairedNucleotidesPerTurn": 17,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 11.05,
+            "extensionRatio": 0.229502262,
+            "tensionPicoNewton": 1.40315076,
+            "freeEnergyThermal": 0.422522827
+        },
+        {
+            "unpairedNucleotidesPerTurn": 20,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 13.0,
+            "extensionRatio": 0.195076923,
+            "tensionPicoNewton": 1.18162353,
+            "freeEnergyThermal": 0.357501587
+        },
+        {
+            "unpairedNucleotidesPerTurn": 24,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 15.6,
+            "extensionRatio": 0.162564103,
+            "tensionPicoNewton": 0.977545864,
+            "freeEnergyThermal": 0.296847477
+        },
+        {
+            "unpairedNucleotidesPerTurn": 28,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 18.2,
+            "extensionRatio": 0.139340659,
+            "tensionPicoNewton": 0.834272402,
+            "freeEnergyThermal": 0.253894068
+        },
+        {
+            "unpairedNucleotidesPerTurn": 34,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 22.1,
+            "extensionRatio": 0.114751131,
+            "tensionPicoNewton": 0.684422174,
+            "freeEnergyThermal": 0.208691477
+        },
+        {
+            "unpairedNucleotidesPerTurn": 40,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 26.0,
+            "extensionRatio": 0.0975384615,
+            "tensionPicoNewton": 0.580465943,
+            "freeEnergyThermal": 0.177191272
+        },
+        {
+            "unpairedNucleotidesPerTurn": 6,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 4.2,
+            "extensionRatio": 0.603809524,
+            "tensionPicoNewton": 4.78867943,
+            "freeEnergyThermal": 1.25215312
+        },
+        {
+            "unpairedNucleotidesPerTurn": 8,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 5.6,
+            "extensionRatio": 0.452857143,
+            "tensionPicoNewton": 3.09039053,
+            "freeEnergyThermal": 0.878552063
+        },
+        {
+            "unpairedNucleotidesPerTurn": 10,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 7.0,
+            "extensionRatio": 0.362285714,
+            "tensionPicoNewton": 2.33667819,
+            "freeEnergyThermal": 0.684471748
+        },
+        {
+            "unpairedNucleotidesPerTurn": 12,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 8.4,
+            "extensionRatio": 0.301904762,
+            "tensionPicoNewton": 1.89335859,
+            "freeEnergyThermal": 0.562755297
+        },
+        {
+            "unpairedNucleotidesPerTurn": 14,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 9.8,
+            "extensionRatio": 0.25877551,
+            "tensionPicoNewton": 1.59688824,
+            "freeEnergyThermal": 0.478588604
+        },
+        {
+            "unpairedNucleotidesPerTurn": 17,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 11.9,
+            "extensionRatio": 0.213109244,
+            "tensionPicoNewton": 1.29688673,
+            "freeEnergyThermal": 0.39144739
+        },
+        {
+            "unpairedNucleotidesPerTurn": 20,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 14.0,
+            "extensionRatio": 0.181142857,
+            "tensionPicoNewton": 1.09361219,
+            "freeEnergyThermal": 0.331425741
+        },
+        {
+            "unpairedNucleotidesPerTurn": 24,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 16.8,
+            "extensionRatio": 0.150952381,
+            "tensionPicoNewton": 0.905675947,
+            "freeEnergyThermal": 0.275335941
+        },
+        {
+            "unpairedNucleotidesPerTurn": 28,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 19.6,
+            "extensionRatio": 0.129387755,
+            "tensionPicoNewton": 0.773409787,
+            "freeEnergyThermal": 0.23556635
+        },
+        {
+            "unpairedNucleotidesPerTurn": 34,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 23.8,
+            "extensionRatio": 0.106554622,
+            "tensionPicoNewton": 0.634832497,
+            "freeEnergyThermal": 0.193678265
+        },
+        {
+            "unpairedNucleotidesPerTurn": 40,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 28.0,
+            "extensionRatio": 0.0905714286,
+            "tensionPicoNewton": 0.538575538,
+            "freeEnergyThermal": 0.164469522
+        },
+        {
+            "unpairedNucleotidesPerTurn": 6,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 3.9,
+            "extensionRatio": 0.65025641,
+            "tensionPicoNewton": 4.08330018,
+            "freeEnergyThermal": 1.02606977
+        },
+        {
+            "unpairedNucleotidesPerTurn": 8,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 5.2,
+            "extensionRatio": 0.487692308,
+            "tensionPicoNewton": 2.529126,
+            "freeEnergyThermal": 0.708430918
+        },
+        {
+            "unpairedNucleotidesPerTurn": 10,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 6.5,
+            "extensionRatio": 0.390153846,
+            "tensionPicoNewton": 1.88953441,
+            "freeEnergyThermal": 0.54904483
+        },
+        {
+            "unpairedNucleotidesPerTurn": 12,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 7.8,
+            "extensionRatio": 0.325128205,
+            "tensionPicoNewton": 1.52285878,
+            "freeEnergyThermal": 0.450299585
+        },
+        {
+            "unpairedNucleotidesPerTurn": 14,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 9.1,
+            "extensionRatio": 0.278681319,
+            "tensionPicoNewton": 1.28065634,
+            "freeEnergyThermal": 0.382424921
+        },
+        {
+            "unpairedNucleotidesPerTurn": 17,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 11.05,
+            "extensionRatio": 0.229502262,
+            "tensionPicoNewton": 1.03754105,
+            "freeEnergyThermal": 0.312428851
+        },
+        {
+            "unpairedNucleotidesPerTurn": 20,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 13.0,
+            "extensionRatio": 0.195076923,
+            "tensionPicoNewton": 0.87373571,
+            "freeEnergyThermal": 0.264349765
+        },
+        {
+            "unpairedNucleotidesPerTurn": 24,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 15.6,
+            "extensionRatio": 0.162564103,
+            "tensionPicoNewton": 0.722833209,
+            "freeEnergyThermal": 0.219499895
+        },
+        {
+            "unpairedNucleotidesPerTurn": 28,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 18.2,
+            "extensionRatio": 0.139340659,
+            "tensionPicoNewton": 0.616891565,
+            "freeEnergyThermal": 0.187738572
+        },
+        {
+            "unpairedNucleotidesPerTurn": 34,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 22.1,
+            "extensionRatio": 0.114751131,
+            "tensionPicoNewton": 0.506086819,
+            "freeEnergyThermal": 0.154314121
+        },
+        {
+            "unpairedNucleotidesPerTurn": 40,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 26.0,
+            "extensionRatio": 0.0975384615,
+            "tensionPicoNewton": 0.429217775,
+            "freeEnergyThermal": 0.131021715
+        },
+        {
+            "unpairedNucleotidesPerTurn": 6,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 4.2,
+            "extensionRatio": 0.603809524,
+            "tensionPicoNewton": 3.54092493,
+            "freeEnergyThermal": 0.925887871
+        },
+        {
+            "unpairedNucleotidesPerTurn": 8,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 5.6,
+            "extensionRatio": 0.452857143,
+            "tensionPicoNewton": 2.28514792,
+            "freeEnergyThermal": 0.649633568
+        },
+        {
+            "unpairedNucleotidesPerTurn": 10,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 7.0,
+            "extensionRatio": 0.362285714,
+            "tensionPicoNewton": 1.72782542,
+            "freeEnergyThermal": 0.506123476
+        },
+        {
+            "unpairedNucleotidesPerTurn": 12,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 8.4,
+            "extensionRatio": 0.301904762,
+            "tensionPicoNewton": 1.40001868,
+            "freeEnergyThermal": 0.416121874
+        },
+        {
+            "unpairedNucleotidesPerTurn": 14,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 9.8,
+            "extensionRatio": 0.25877551,
+            "tensionPicoNewton": 1.18079764,
+            "freeEnergyThermal": 0.353885939
+        },
+        {
+            "unpairedNucleotidesPerTurn": 17,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 11.9,
+            "extensionRatio": 0.213109244,
+            "tensionPicoNewton": 0.958965537,
+            "freeEnergyThermal": 0.289450535
+        },
+        {
+            "unpairedNucleotidesPerTurn": 20,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 14.0,
+            "extensionRatio": 0.181142857,
+            "tensionPicoNewton": 0.8086569,
+            "freeEnergyThermal": 0.24506833
+        },
+        {
+            "unpairedNucleotidesPerTurn": 24,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 16.8,
+            "extensionRatio": 0.150952381,
+            "tensionPicoNewton": 0.669689961,
+            "freeEnergyThermal": 0.203593477
+        },
+        {
+            "unpairedNucleotidesPerTurn": 28,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 19.6,
+            "extensionRatio": 0.129387755,
+            "tensionPicoNewton": 0.571887518,
+            "freeEnergyThermal": 0.174186386
+        },
+        {
+            "unpairedNucleotidesPerTurn": 34,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 23.8,
+            "extensionRatio": 0.106554622,
+            "tensionPicoNewton": 0.469418396,
+            "freeEnergyThermal": 0.143212802
+        },
+        {
+            "unpairedNucleotidesPerTurn": 40,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "centre to centre",
+            "spanNm": 2.536,
+            "contourLength": 28.0,
+            "extensionRatio": 0.0905714286,
+            "tensionPicoNewton": 0.398242475,
+            "freeEnergyThermal": 0.121614787
+        },
+        {
+            "unpairedNucleotidesPerTurn": 8,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 5.2,
+            "extensionRatio": 0.837168407,
+            "tensionPicoNewton": 12.112167,
+            "freeEnergyThermal": 3.7345672
+        },
+        {
+            "unpairedNucleotidesPerTurn": 10,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 6.5,
+            "extensionRatio": 0.669734726,
+            "tensionPicoNewton": 5.880168,
+            "freeEnergyThermal": 2.4869102
+        },
+        {
+            "unpairedNucleotidesPerTurn": 12,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 7.8,
+            "extensionRatio": 0.558112271,
+            "tensionPicoNewton": 4.18833868,
+            "freeEnergyThermal": 1.9398774
+        },
+        {
+            "unpairedNucleotidesPerTurn": 14,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 9.1,
+            "extensionRatio": 0.478381947,
+            "tensionPicoNewton": 3.32944623,
+            "freeEnergyThermal": 1.60758935
+        },
+        {
+            "unpairedNucleotidesPerTurn": 17,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 11.05,
+            "extensionRatio": 0.393961603,
+            "tensionPicoNewton": 2.58606465,
+            "freeEnergyThermal": 1.28839451
+        },
+        {
+            "unpairedNucleotidesPerTurn": 20,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 13.0,
+            "extensionRatio": 0.334867363,
+            "tensionPicoNewton": 2.13070196,
+            "freeEnergyThermal": 1.07900034
+        },
+        {
+            "unpairedNucleotidesPerTurn": 24,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 15.6,
+            "extensionRatio": 0.279056136,
+            "tensionPicoNewton": 1.73450624,
+            "freeEnergyThermal": 0.889048221
+        },
+        {
+            "unpairedNucleotidesPerTurn": 28,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 18.2,
+            "extensionRatio": 0.239190973,
+            "tensionPicoNewton": 1.46667915,
+            "freeEnergyThermal": 0.7570064
+        },
+        {
+            "unpairedNucleotidesPerTurn": 34,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 22.1,
+            "extensionRatio": 0.196980802,
+            "tensionPicoNewton": 1.19371796,
+            "freeEnergyThermal": 0.619817565
+        },
+        {
+            "unpairedNucleotidesPerTurn": 40,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 26.0,
+            "extensionRatio": 0.167433681,
+            "tensionPicoNewton": 1.00783426,
+            "freeEnergyThermal": 0.525089634
+        },
+        {
+            "unpairedNucleotidesPerTurn": 8,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 5.6,
+            "extensionRatio": 0.777370664,
+            "tensionPicoNewton": 8.84929288,
+            "freeEnergyThermal": 3.18805426
+        },
+        {
+            "unpairedNucleotidesPerTurn": 10,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 7.0,
+            "extensionRatio": 0.621896531,
+            "tensionPicoNewton": 5.05688312,
+            "freeEnergyThermal": 2.23734825
+        },
+        {
+            "unpairedNucleotidesPerTurn": 12,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 8.4,
+            "extensionRatio": 0.518247109,
+            "tensionPicoNewton": 3.73456512,
+            "freeEnergyThermal": 1.76919722
+        },
+        {
+            "unpairedNucleotidesPerTurn": 14,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 9.8,
+            "extensionRatio": 0.444211808,
+            "tensionPicoNewton": 3.01250671,
+            "freeEnergyThermal": 1.47505068
+        },
+        {
+            "unpairedNucleotidesPerTurn": 17,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 11.9,
+            "extensionRatio": 0.365821489,
+            "tensionPicoNewton": 2.36387393,
+            "freeEnergyThermal": 1.18747698
+        },
+        {
+            "unpairedNucleotidesPerTurn": 20,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 14.0,
+            "extensionRatio": 0.310948265,
+            "tensionPicoNewton": 1.95745816,
+            "freeEnergyThermal": 0.996778595
+        },
+        {
+            "unpairedNucleotidesPerTurn": 24,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 16.8,
+            "extensionRatio": 0.259123555,
+            "tensionPicoNewton": 1.59922521,
+            "freeEnergyThermal": 0.822693567
+        },
+        {
+            "unpairedNucleotidesPerTurn": 28,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 19.6,
+            "extensionRatio": 0.222105904,
+            "tensionPicoNewton": 1.35502141,
+            "freeEnergyThermal": 0.701184986
+        },
+        {
+            "unpairedNucleotidesPerTurn": 34,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 23.8,
+            "extensionRatio": 0.182910744,
+            "tensionPicoNewton": 1.10473091,
+            "freeEnergyThermal": 0.574589616
+        },
+        {
+            "unpairedNucleotidesPerTurn": 40,
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 28.0,
+            "extensionRatio": 0.155474133,
+            "tensionPicoNewton": 0.933605285,
+            "freeEnergyThermal": 0.487004181
+        },
+        {
+            "unpairedNucleotidesPerTurn": 8,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 5.2,
+            "extensionRatio": 0.837168407,
+            "tensionPicoNewton": 8.9561798,
+            "freeEnergyThermal": 2.76147574
+        },
+        {
+            "unpairedNucleotidesPerTurn": 10,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 6.5,
+            "extensionRatio": 0.669734726,
+            "tensionPicoNewton": 4.34801155,
+            "freeEnergyThermal": 1.83891247
+        },
+        {
+            "unpairedNucleotidesPerTurn": 12,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 7.8,
+            "extensionRatio": 0.558112271,
+            "tensionPicoNewton": 3.09701099,
+            "freeEnergyThermal": 1.43441638
+        },
+        {
+            "unpairedNucleotidesPerTurn": 14,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 9.1,
+            "extensionRatio": 0.478381947,
+            "tensionPicoNewton": 2.46191446,
+            "freeEnergyThermal": 1.18871043
+        },
+        {
+            "unpairedNucleotidesPerTurn": 17,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 11.05,
+            "extensionRatio": 0.393961603,
+            "tensionPicoNewton": 1.9122309,
+            "freeEnergyThermal": 0.952686082
+        },
+        {
+            "unpairedNucleotidesPerTurn": 20,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 13.0,
+            "extensionRatio": 0.334867363,
+            "tensionPicoNewton": 1.57551905,
+            "freeEnergyThermal": 0.797852361
+        },
+        {
+            "unpairedNucleotidesPerTurn": 24,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 15.6,
+            "extensionRatio": 0.279056136,
+            "tensionPicoNewton": 1.28255743,
+            "freeEnergyThermal": 0.657394811
+        },
+        {
+            "unpairedNucleotidesPerTurn": 28,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 18.2,
+            "extensionRatio": 0.239190973,
+            "tensionPicoNewton": 1.08451627,
+            "freeEnergyThermal": 0.559758253
+        },
+        {
+            "unpairedNucleotidesPerTurn": 34,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 22.1,
+            "extensionRatio": 0.196980802,
+            "tensionPicoNewton": 0.882678771,
+            "freeEnergyThermal": 0.458315805
+        },
+        {
+            "unpairedNucleotidesPerTurn": 40,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 26.0,
+            "extensionRatio": 0.167433681,
+            "tensionPicoNewton": 0.745229562,
+            "freeEnergyThermal": 0.388270504
+        },
+        {
+            "unpairedNucleotidesPerTurn": 8,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 5.6,
+            "extensionRatio": 0.777370664,
+            "tensionPicoNewton": 6.54349121,
+            "freeEnergyThermal": 2.35736406
+        },
+        {
+            "unpairedNucleotidesPerTurn": 10,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 7.0,
+            "extensionRatio": 0.621896531,
+            "tensionPicoNewton": 3.73924456,
+            "freeEnergyThermal": 1.65437723
+        },
+        {
+            "unpairedNucleotidesPerTurn": 12,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 8.4,
+            "extensionRatio": 0.518247109,
+            "tensionPicoNewton": 2.76147421,
+            "freeEnergyThermal": 1.30820921
+        },
+        {
+            "unpairedNucleotidesPerTurn": 14,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 9.8,
+            "extensionRatio": 0.444211808,
+            "tensionPicoNewton": 2.22755778,
+            "freeEnergyThermal": 1.09070649
+        },
+        {
+            "unpairedNucleotidesPerTurn": 17,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 11.9,
+            "extensionRatio": 0.365821489,
+            "tensionPicoNewton": 1.74793495,
+            "freeEnergyThermal": 0.878063963
+        },
+        {
+            "unpairedNucleotidesPerTurn": 20,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 14.0,
+            "extensionRatio": 0.310948265,
+            "tensionPicoNewton": 1.44741624,
+            "freeEnergyThermal": 0.737054595
+        },
+        {
+            "unpairedNucleotidesPerTurn": 24,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 16.8,
+            "extensionRatio": 0.259123555,
+            "tensionPicoNewton": 1.18252568,
+            "freeEnergyThermal": 0.60832975
+        },
+        {
+            "unpairedNucleotidesPerTurn": 28,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 19.6,
+            "extensionRatio": 0.222105904,
+            "tensionPicoNewton": 1.00195245,
+            "freeEnergyThermal": 0.518481856
+        },
+        {
+            "unpairedNucleotidesPerTurn": 34,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 23.8,
+            "extensionRatio": 0.182910744,
+            "tensionPicoNewton": 0.816878487,
+            "freeEnergyThermal": 0.424872604
+        },
+        {
+            "unpairedNucleotidesPerTurn": 40,
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "spanCase": "worst azimuth",
+            "spanNm": 4.35327572,
+            "contourLength": 28.0,
+            "extensionRatio": 0.155474133,
+            "tensionPicoNewton": 0.690341936,
+            "freeEnergyThermal": 0.360108725
+        }
+    ],
+    "criteria": [
+        {
+            "criterion": "reach — the turn closes at no conformation below this",
+            "ground": "T-71's MEASURED C2'-endo phosphodiester step, 13 084 linkages",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 3,
+            "maximumUniformRowLengthOnM13": 117,
+            "widthNmOnM13": 39.78,
+            "departureFromNominalPercentOnM13": -0.55,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "one k_BT of stored free energy",
+            "ground": "the fold's own currency; a turn costing more than thermal is a load",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 8,
+            "maximumUniformRowLengthOnM13": 112,
+            "widthNmOnM13": 38.08,
+            "departureFromNominalPercentOnM13": -4.8,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "one pN of turn tension",
+            "ground": "a scale below every per-path allowable this programme carries",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 24,
+            "maximumUniformRowLengthOnM13": 96,
+            "widthNmOnM13": 32.64,
+            "departureFromNominalPercentOnM13": -18.4,
+            "admitsOneHundredTwelveOnM13": false
+        },
+        {
+            "criterion": "the 10 pN unzip allowable",
+            "ground": "Gen1Tile.DUPLEX_UNZIP_ALLOWABLE, the weakest DNA load path here",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 5,
+            "maximumUniformRowLengthOnM13": 115,
+            "widthNmOnM13": 39.1,
+            "departureFromNominalPercentOnM13": -2.25,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "reach — the turn closes at no conformation below this",
+            "ground": "T-71's MEASURED C2'-endo phosphodiester step, 13 084 linkages",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 3,
+            "maximumUniformRowLengthOnM13": 117,
+            "widthNmOnM13": 39.78,
+            "departureFromNominalPercentOnM13": -0.55,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "one k_BT of stored free energy",
+            "ground": "the fold's own currency; a turn costing more than thermal is a load",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 8,
+            "maximumUniformRowLengthOnM13": 112,
+            "widthNmOnM13": 38.08,
+            "departureFromNominalPercentOnM13": -4.8,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "one pN of turn tension",
+            "ground": "a scale below every per-path allowable this programme carries",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 22,
+            "maximumUniformRowLengthOnM13": 98,
+            "widthNmOnM13": 33.32,
+            "departureFromNominalPercentOnM13": -16.7,
+            "admitsOneHundredTwelveOnM13": false
+        },
+        {
+            "criterion": "the 10 pN unzip allowable",
+            "ground": "Gen1Tile.DUPLEX_UNZIP_ALLOWABLE, the weakest DNA load path here",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 5,
+            "maximumUniformRowLengthOnM13": 115,
+            "widthNmOnM13": 39.1,
+            "departureFromNominalPercentOnM13": -2.25,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "reach — the turn closes at no conformation below this",
+            "ground": "T-71's MEASURED C2'-endo phosphodiester step, 13 084 linkages",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 3,
+            "maximumUniformRowLengthOnM13": 117,
+            "widthNmOnM13": 39.78,
+            "departureFromNominalPercentOnM13": -0.55,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "one k_BT of stored free energy",
+            "ground": "the fold's own currency; a turn costing more than thermal is a load",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 7,
+            "maximumUniformRowLengthOnM13": 113,
+            "widthNmOnM13": 38.42,
+            "departureFromNominalPercentOnM13": -3.95,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "one pN of turn tension",
+            "ground": "a scale below every per-path allowable this programme carries",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 18,
+            "maximumUniformRowLengthOnM13": 102,
+            "widthNmOnM13": 34.68,
+            "departureFromNominalPercentOnM13": -13.3,
+            "admitsOneHundredTwelveOnM13": false
+        },
+        {
+            "criterion": "the 10 pN unzip allowable",
+            "ground": "Gen1Tile.DUPLEX_UNZIP_ALLOWABLE, the weakest DNA load path here",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 5,
+            "maximumUniformRowLengthOnM13": 115,
+            "widthNmOnM13": 39.1,
+            "departureFromNominalPercentOnM13": -2.25,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "reach — the turn closes at no conformation below this",
+            "ground": "T-71's MEASURED C2'-endo phosphodiester step, 13 084 linkages",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 3,
+            "maximumUniformRowLengthOnM13": 117,
+            "widthNmOnM13": 39.78,
+            "departureFromNominalPercentOnM13": -0.55,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "one k_BT of stored free energy",
+            "ground": "the fold's own currency; a turn costing more than thermal is a load",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 6,
+            "maximumUniformRowLengthOnM13": 114,
+            "widthNmOnM13": 38.76,
+            "departureFromNominalPercentOnM13": -3.1,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "one pN of turn tension",
+            "ground": "a scale below every per-path allowable this programme carries",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 17,
+            "maximumUniformRowLengthOnM13": 103,
+            "widthNmOnM13": 35.02,
+            "departureFromNominalPercentOnM13": -12.45,
+            "admitsOneHundredTwelveOnM13": false
+        },
+        {
+            "criterion": "the 10 pN unzip allowable",
+            "ground": "Gen1Tile.DUPLEX_UNZIP_ALLOWABLE, the weakest DNA load path here",
+            "spanCase": "centre to centre",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 5,
+            "maximumUniformRowLengthOnM13": 115,
+            "widthNmOnM13": 39.1,
+            "departureFromNominalPercentOnM13": -2.25,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "reach — the turn closes at no conformation below this",
+            "ground": "T-71's MEASURED C2'-endo phosphodiester step, 13 084 linkages",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 6,
+            "maximumUniformRowLengthOnM13": 114,
+            "widthNmOnM13": 38.76,
+            "departureFromNominalPercentOnM13": -3.1,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "one k_BT of stored free energy",
+            "ground": "the fold's own currency; a turn costing more than thermal is a load",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 22,
+            "maximumUniformRowLengthOnM13": 98,
+            "widthNmOnM13": 33.32,
+            "departureFromNominalPercentOnM13": -16.7,
+            "admitsOneHundredTwelveOnM13": false
+        },
+        {
+            "criterion": "one pN of turn tension",
+            "ground": "a scale below every per-path allowable this programme carries",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 41,
+            "maximumUniformRowLengthOnM13": 79,
+            "widthNmOnM13": 26.86,
+            "departureFromNominalPercentOnM13": -32.85,
+            "admitsOneHundredTwelveOnM13": false
+        },
+        {
+            "criterion": "the 10 pN unzip allowable",
+            "ground": "Gen1Tile.DUPLEX_UNZIP_ALLOWABLE, the weakest DNA load path here",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 9,
+            "maximumUniformRowLengthOnM13": 111,
+            "widthNmOnM13": 37.74,
+            "departureFromNominalPercentOnM13": -5.65,
+            "admitsOneHundredTwelveOnM13": false
+        },
+        {
+            "criterion": "reach — the turn closes at no conformation below this",
+            "ground": "T-71's MEASURED C2'-endo phosphodiester step, 13 084 linkages",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 6,
+            "maximumUniformRowLengthOnM13": 114,
+            "widthNmOnM13": 38.76,
+            "departureFromNominalPercentOnM13": -3.1,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "one k_BT of stored free energy",
+            "ground": "the fold's own currency; a turn costing more than thermal is a load",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 20,
+            "maximumUniformRowLengthOnM13": 100,
+            "widthNmOnM13": 34.0,
+            "departureFromNominalPercentOnM13": -15.0,
+            "admitsOneHundredTwelveOnM13": false
+        },
+        {
+            "criterion": "one pN of turn tension",
+            "ground": "a scale below every per-path allowable this programme carries",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 38,
+            "maximumUniformRowLengthOnM13": 82,
+            "widthNmOnM13": 27.88,
+            "departureFromNominalPercentOnM13": -30.3,
+            "admitsOneHundredTwelveOnM13": false
+        },
+        {
+            "criterion": "the 10 pN unzip allowable",
+            "ground": "Gen1Tile.DUPLEX_UNZIP_ALLOWABLE, the weakest DNA load path here",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 8,
+            "maximumUniformRowLengthOnM13": 112,
+            "widthNmOnM13": 38.08,
+            "departureFromNominalPercentOnM13": -4.8,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "reach — the turn closes at no conformation below this",
+            "ground": "T-71's MEASURED C2'-endo phosphodiester step, 13 084 linkages",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 6,
+            "maximumUniformRowLengthOnM13": 114,
+            "widthNmOnM13": 38.76,
+            "departureFromNominalPercentOnM13": -3.1,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "one k_BT of stored free energy",
+            "ground": "the fold's own currency; a turn costing more than thermal is a load",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 17,
+            "maximumUniformRowLengthOnM13": 103,
+            "widthNmOnM13": 35.02,
+            "departureFromNominalPercentOnM13": -12.45,
+            "admitsOneHundredTwelveOnM13": false
+        },
+        {
+            "criterion": "one pN of turn tension",
+            "ground": "a scale below every per-path allowable this programme carries",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 31,
+            "maximumUniformRowLengthOnM13": 89,
+            "widthNmOnM13": 30.26,
+            "departureFromNominalPercentOnM13": -24.35,
+            "admitsOneHundredTwelveOnM13": false
+        },
+        {
+            "criterion": "the 10 pN unzip allowable",
+            "ground": "Gen1Tile.DUPLEX_UNZIP_ALLOWABLE, the weakest DNA load path here",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.65,
+            "nucleotidesPerTurn": 8,
+            "maximumUniformRowLengthOnM13": 112,
+            "widthNmOnM13": 38.08,
+            "departureFromNominalPercentOnM13": -4.8,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "reach — the turn closes at no conformation below this",
+            "ground": "T-71's MEASURED C2'-endo phosphodiester step, 13 084 linkages",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 6,
+            "maximumUniformRowLengthOnM13": 114,
+            "widthNmOnM13": 38.76,
+            "departureFromNominalPercentOnM13": -3.1,
+            "admitsOneHundredTwelveOnM13": true
+        },
+        {
+            "criterion": "one k_BT of stored free energy",
+            "ground": "the fold's own currency; a turn costing more than thermal is a load",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 16,
+            "maximumUniformRowLengthOnM13": 104,
+            "widthNmOnM13": 35.36,
+            "departureFromNominalPercentOnM13": -11.6,
+            "admitsOneHundredTwelveOnM13": false
+        },
+        {
+            "criterion": "one pN of turn tension",
+            "ground": "a scale below every per-path allowable this programme carries",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 29,
+            "maximumUniformRowLengthOnM13": 91,
+            "widthNmOnM13": 30.94,
+            "departureFromNominalPercentOnM13": -22.65,
+            "admitsOneHundredTwelveOnM13": false
+        },
+        {
+            "criterion": "the 10 pN unzip allowable",
+            "ground": "Gen1Tile.DUPLEX_UNZIP_ALLOWABLE, the weakest DNA load path here",
+            "spanCase": "worst azimuth",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "nucleotidesPerTurn": 8,
+            "maximumUniformRowLengthOnM13": 112,
+            "widthNmOnM13": 38.08,
+            "departureFromNominalPercentOnM13": -4.8,
+            "admitsOneHundredTwelveOnM13": true
+        }
+    ],
+    "scaffolds": [
+        {
+            "scaffold": "M13mp18",
+            "nucleotides": 7249,
+            "loopPerTurn": 28,
+            "loopProvenance": "the caDNAno blocks' own 126 = 98 + 28 allotment, READ DIRECTLY",
+            "maximumUniformRowLength": 92,
+            "widthNm": 31.28,
+            "departureFromNominalPercent": -21.8
+        },
+        {
+            "scaffold": "p7560 — the 60-helix designs, including (i) 15 x 4",
+            "nucleotides": 7560,
+            "loopPerTurn": 28,
+            "loopProvenance": "the caDNAno blocks' own 126 = 98 + 28 allotment, READ DIRECTLY",
+            "maximumUniformRowLength": 98,
+            "widthNm": 33.32,
+            "departureFromNominalPercent": -16.7
+        },
+        {
+            "scaffold": "p8064 — the 64-helix designs",
+            "nucleotides": 8064,
+            "loopPerTurn": 28,
+            "loopProvenance": "the caDNAno blocks' own 126 = 98 + 28 allotment, READ DIRECTLY",
+            "maximumUniformRowLength": 106,
+            "widthNm": 36.04,
+            "departureFromNominalPercent": -9.9
+        },
+        {
+            "scaffold": "M13mp18",
+            "nucleotides": 7249,
+            "loopPerTurn": 6,
+            "loopProvenance": "this task's REACH bound at the worst relative azimuth",
+            "maximumUniformRowLength": 114,
+            "widthNm": 38.76,
+            "departureFromNominalPercent": -3.1
+        },
+        {
+            "scaffold": "p7560",
+            "nucleotides": 7560,
+            "loopPerTurn": 6,
+            "loopProvenance": "this task's REACH bound at the worst relative azimuth",
+            "maximumUniformRowLength": 120,
+            "widthNm": 40.8,
+            "departureFromNominalPercent": 2.0
+        },
+        {
+            "scaffold": "p8064",
+            "nucleotides": 8064,
+            "loopPerTurn": 6,
+            "loopProvenance": "this task's REACH bound at the worst relative azimuth",
+            "maximumUniformRowLength": 128,
+            "widthNm": 43.52,
+            "departureFromNominalPercent": 8.8
+        }
+    ],
+    "reproductions": [
+        {
+            "what": "C-0140's widest paired row on M13 at the built allowance",
+            "here": 92.0,
+            "there": 92.0,
+            "relativeDeparture": 0.0,
+            "source": "gpd/results/T-218-honeycomb-raster-turn-sense.json"
+        },
+        {
+            "what": "C-0140's widest paired row on p8064 at the built allowance",
+            "here": 106.0,
+            "there": 106.0,
+            "relativeDeparture": 0.0,
+            "source": "gpd/results/T-218-honeycomb-raster-turn-sense.json"
+        },
+        {
+            "what": "the loop nucleotides a 60-helix tile spends at the built allowance",
+            "here": 1680.0,
+            "there": 1680.0,
+            "relativeDeparture": 0.0,
+            "source": "gpd/results/T-218-honeycomb-raster-turn-sense.json"
+        },
+        {
+            "what": "the paper's own per-helix accounting, 98 + 28 against 126",
+            "here": 126.0,
+            "there": 126.0,
+            "relativeDeparture": 0.0,
+            "source": "gpd/data/T-151-sources/PMC2731887-fullTextXML.xml"
+        },
+        {
+            "what": "60 helices at that allotment against the p7560 scaffold",
+            "here": 7560.0,
+            "there": 7560.0,
+            "relativeDeparture": 0.0,
+            "source": "gpd/data/T-151-sources/PMC2731887-fullTextXML.xml"
+        }
+    ],
+    "predicates": [
+        {
+            "id": "P1",
+            "statement": "the minimum is a REACH bound from the measured backbone, and it is an impossibility statement rather than a preference",
+            "met": true
+        },
+        {
+            "id": "P2",
+            "statement": "the reach bound is quoted at the WORST relative azimuth, with the favourable end beside it",
+            "met": true
+        },
+        {
+            "id": "P3",
+            "statement": "the zero-slack case reproduces: a scaffold crossover falls inside the measured phosphodiester step",
+            "met": true
+        },
+        {
+            "id": "P4",
+            "statement": "a cost is quoted WITH its criterion, over the whole zero-force Kuhn bracket and the inextensible contour that travels with it",
+            "met": true
+        },
+        {
+            "id": "P5",
+            "statement": "the maximum uniform row length is emitted for all three scaffolds and C-0140's 92 / 98 / 106 reproduced at departure 0.0",
+            "met": true
+        },
+        {
+            "id": "P6",
+            "statement": "the yield half is priced against a published measurement or declared unpriceable, with a threshold in its place",
+            "met": true
+        }
+    ],
+    "falsifiers": [
+        {
+            "id": "F1",
+            "statement": "the zero-slack crossover span falls OUTSIDE the measured phosphodiester step at 3 sigma, so a honeycomb scaffold crossover is geometrically impossible",
+            "fired": false,
+            "outcome": "d - 2 r_P = 0.718724 nm sits at +1.5000 sigma of the measured C2'-endo step and inside its 99th percentile, so route A's turn closes on ONE phosphodiester bond and the geometry here is being read correctly"
+        },
+        {
+            "id": "F2",
+            "statement": "the reach bound comes out at or above the built 28 nt, so 28 is a REQUIREMENT",
+            "fired": false,
+            "outcome": "the worst azimuth needs 6 nt and the built design spends 28, a factor of 4.6667: 28 nt is a CHOICE"
+        },
+        {
+            "id": "F3",
+            "statement": "the reach bound and the thermal-cost bound disagree by more than a decade, so \"the minimum\" is a criterion and not a number — DECLARED OPEN",
+            "fired": false,
+            "outcome": "at the worst azimuth: reach 6 nt, one k_BT 16-22 nt, one pN 29-41 nt — a factor of 6.8333 end to end, inside a decade, so the three criteria BRACKET the answer rather than contradict it, and the built 28 nt lies inside the bracket"
+        },
+        {
+            "id": "F4",
+            "statement": "the model fails to reproduce C-0140's 92 / 98 / 106 bp at the built allowance",
+            "fired": false,
+            "outcome": "92 / 98 / 106 bp reproduced at departure 0.0, and 60 x (98 + 28) = 7560 exactly"
+        },
+        {
+            "id": "F5",
+            "statement": "the loop route at the derived minimum still fails to fit a 112 bp row on M13, so the two routes never compete",
+            "fired": false,
+            "outcome": "M13 affords 8 nt of turn slack at a 112 bp row and the reach bound asks 6, so route B DOES reach 112 bp — at a turn strained to its own reach limit"
+        },
+        {
+            "id": "F6",
+            "statement": "the FJC law fails its own limits — vanishing tension at zero extension, divergence at the contour, and the Gaussian spring in between",
+            "fired": false,
+            "outcome": "asserted as three gate-2 and gate-3 tests, including a 20 000-point quadrature of the tension against the closed-form free energy"
+        }
+    ],
+    "findings": [
+        "THE 28 nt IS A CHOICE, NOT A REQUIREMENT, AND THE CHEAP BOUND SAYS SO IN ONE DIVISION. A turn's two anchoring phosphates are at most d + 2 r_P = 4.3533 nm apart, 6 unpaired nucleotides reach that at T-71's MEASURED C2'-endo phosphodiester step, and the built blocks spend 28 — a factor of 4.667. At the azimuth-averaged span 2.7032 nm the bound is 4 nt.",
+        "THE ZERO-SLACK CASE IS THE CHECK THAT THE GEOMETRY IS BEING READ RIGHT, AND IT PASSES ON MEASURED CONSTANTS ALONE. A scaffold crossover is n = 0, so its span must be one phosphodiester step: d - 2 r_P = 0.718724 nm against a measured step of 0.664481 +/- 0.036163 nm, i.e. +1.5000 sigma and inside the 99th percentile 0.756745. Nothing was fitted; the honeycomb's SAXS lattice constant and T-71's 13 084 crystallographic linkages agree that a crossover closes and that it closes TIGHTLY, which is why the residue condition binds it at all.",
+        "BUT THE MINIMUM IS A CRITERION AND NOT A NUMBER, AND THE SPREAD IS A FACTOR OF SEVEN. At the WORST relative azimuth — which is the reading a FREE row length is owed, because a free width leaves both backbone azimuths free — reach refuses below 6 nt, one k_BT of stored free energy asks 16-22 over the zero-force Kuhn bracket, and one pN of turn tension asks 29-41. At the azimuth-averaged span the same three are 4, 6-8 and 17-24. Quote a turn loop with the azimuth AND the criterion it was read at.",
+        "AND THE BUILT 28 nt IS EXACTLY THE ALLOWANCE THAT MAKES A WORST-AZIMUTH TURN THERMAL. Held at 4.3533 nm it sits at 0.222-0.239 of its own contour, carries 1.0020-1.4667 pN and stores 0.5185-0.7570 k_BT — sub-thermal, about one piconewton, and 4.6667x the reach bound. So 28 nt is a CHOICE and not a requirement, and it is the choice a SLACK turn costs: it is 1.27-1.75x the one-k_BT bound and 0.68-0.97x the one-pN bound at the same azimuth.",
+        "AND THAT DECIDES THE ROUTE, BECAUSE M13 AFFORDS EXACTLY 8 NUCLEOTIDES OF TURN SLACK AT A 112 bp ROW. 60 x (112 + L) <= 7 249 gives L <= 8, and the reach bound is 6 — so route B, a UNIFORM 112 bp x 60 raster on unpaired loops, is geometrically possible on M13, by two nucleotides. What it costs is the whole difference: at the worst azimuth an 8 nt turn sits at 0.777-0.837 of its contour, carries 6.543-12.112 pN and stores 2.357-3.735 k_BT — at or past Gen1Tile's 10 pN unzip allowable at the tight end of the Kuhn bracket, and 139-220 k_BT of stored strain over the raster's 59 turns. Route A, C-0140's two-length 112 / 108 raster, needs NO slack and keeps 653 nt spare. THE RECOMMENDATION STANDS, and this task supplies the reason it should: not that route B does not fit, but that it fits only strained.",
+        "THE YIELD HALF CANNOT BE PRICED AND THE THRESHOLD IS QUOTED INSTEAD. No published measurement relates a SCAFFOLD turn-loop length to origami folding yield: Ke et al.'s evidence is an 8 bp STAPLE domain between two crossovers, Rothemund's 63 % -> 11 % is a scaffold LINEARISATION, and Strauss et al.'s 48-95 % is per-STAPLE incorporation. What is available is the built blocks themselves — 28 nt per turn, folded, gel-purified and imaged — so the only measured point on the axis is the one this task shows to be 4.7x the reach bound. The threshold that decides the route is 8 nt: at or below it a uniform 112 bp row fits M13, above it it does not.",
+        "THE SCAFFOLD BUDGET IS DECIDED BY AN UNRESOLVED POLYMER CONVENTION, WHICH IS THE PART A DESIGN CANNOT DESIGN AROUND. Over the 2x method-systematic ssDNA Kuhn bracket CLAUDE.md records, a worst-azimuth turn costing one k_BT asks 16 nt at the loose end and 22 at the tight one — a 1.4x spread with no measurement between them — and M13's affordance at a 112 bp row is 8. p8064 removes the question, affording 22 nt, which is inside the one-k_BT band at both ends of the bracket; that is the cheapest thing anybody could do to route B."
+    ],
+    "validity": [
+        "the reach bound is a covalent geometry bound and carries no solvent, no salt and no sequence; it is an upper bound on what a chain can span and therefore a LOWER bound on the nucleotides a turn needs",
+        "the freely jointed chain ignores ssDNA's own excluded volume, its electrostatic self-repulsion at mM Mg2+ and the two duplexes it wraps around, all of which STIFFEN the loop; so the tension and the free energy here are lower bounds and the nucleotide counts they imply are lower bounds too",
+        "the azimuth-averaged span assumes both backbone azimuths are free, which they are exactly when the row length is free — which is the premise of route B",
+        "nothing here is a fabrication result: the only measured point on the loop-length axis is the built 28 nt, and this task does not fold anything"
+    ],
+    "openQuestions": [
+        "what a turn loop between 6 and 28 nt does to FOLDING YIELD is unmeasured and no published measurement is on that axis",
+        "whether a scaffold crossover at the honeycomb's own spacing is strained enough to matter is not asked here: the span sits 1.5 sigma above the mean measured step, which is inside the population but not at its centre",
+        "route B's turn also has to clear the neighbouring duplex STERICALLY, which this task does not model - the span is a straight line between two phosphates"
+    ]
+}

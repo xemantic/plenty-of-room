@@ -1,0 +1,988 @@
+{
+    "task": "T-231",
+    "leaf": "A8.2",
+    "title": "What a 4 bp ragged face costs a honeycomb tile that Sec 3 asks to be flat",
+    "verificationType": "logical (exact integer lattice arithmetic on the rise and the honeycomb cross-section, plus two closed forms already in this repository: the plate ripple transfer function and the slit's transverse eigenvalue) + literature (the blunt-end stacking range, consumed from gpd/data/T-139-blunt-end-stacking-literature.md with its own read flags)",
+    "maturity": "TRL 1-3 - model-consistent and traceable, NOTHING HERE IS MEASURED. The flatness cost is a BOUND with a stated conservative correction, not a solve; no model in this repository reads a per-row row length",
+    "units": {
+        "length": "nm",
+        "dishing": "fraction of the free stroke",
+        "count": "base pairs, rises, helices"
+    },
+    "conventions": [
+        "rise 0.34 nm/bp; the honeycomb in-plane row pitch is 3d/2 and the layer pitch d*sqrt(3)/2, d = 2.536 nm (C-0141's corrected cross-section)",
+        "Sec 3's gap is along the tile NORMAL; T-5b's flatness is a deflection field in that direction",
+        "a face's RAGGEDNESS is the spread of its own crossover levels, in base pairs, exactly as C-0140 emits it",
+        "every length is reported in RISES as well as nm, because a margin below one rise cannot be corrected, only removed",
+        "the ripple transfer function is written for a SINUSOID, so the rim's square-wave modulation enters through its fundamental, 2/pi of the peak-to-peak"
+    ],
+    "parameters": {
+        "senseOneRowLength": "112",
+        "senseTwoRowLength": "108",
+        "staggerBasePairs": "4",
+        "frontReliefNm": "1.36",
+        "rearReliefNm": "2.72",
+        "gapFacingFlatnessCoefficient": "0",
+        "modulationPeriodRows": "2",
+        "modulationWavelengthNm": "7.608",
+        "boundedDishingMove": "5.54399427E-5",
+        "thresholdThatMovesTheTightestCell": "0.0274976866",
+        "marginOverBound": "495.99053",
+        "tightestFlatCell": "0.0973238201",
+        "planCeilingAtSaturationNm": "2.38",
+        "reliefOverPlanCeilingAtSaturation": "0.571428571",
+        "attractiveLimbNm": "0.65",
+        "repulsiveOnsetNm": "1.3",
+        "marginOverRepulsiveOnsetRises": "0.176470588",
+        "widthOptimumAmongAllPairsFittingM13": "101/109",
+        "widthOptimumFrontReliefNm": "2.72",
+        "saturatedPlanCeilingNm": "2.38",
+        "firstWholeRiseClearingPair": "101/109"
+    },
+    "sources": [
+        "gpd/results/T-218-honeycomb-raster-turn-sense.json",
+        "gpd/results/T-219-honeycomb-station-lattice-and-placement.json",
+        "gpd/results/T-232-coupled-cells-at-the-honeycomb-cross-section.json",
+        "gpd/data/T-139-blunt-end-stacking-literature.md"
+    ],
+    "citedInputs": {
+        "the all-atom PMF's attractive limb, 3.5-6.5 A": "Maffeo et al. 2012, via gpd/data/T-139-blunt-end-stacking-literature.md, read directly",
+        "the same PMF's repulsive onset, ~13 A": "Maffeo et al. 2012, via the same manifest, read directly",
+        "the free-edge penalty on the ripple transfer function, 50x": "CLAUDE.md, from this repository's own finite-plate solve",
+        "T-5b's flatness convention, 0.10 of the stroke": "the project's own convention"
+    },
+    "cheapBound": {
+        "question": "which surface does the raggedness live on",
+        "answer": "the tile's in-plane RIM, x = 0 and x = L, not the gap-facing faces",
+        "gapFacingFlatnessCoefficient": "0",
+        "verdict": "the headline threat is closed before any solve; what remains is the plan budget, the edge field and an anti-stacking benefit"
+    },
+    "faces": [
+        {
+            "crossSection": "15 x 4",
+            "rasterRows": 15,
+            "helicesPerRow": 4,
+            "senseOneRowLength": 112,
+            "senseTwoRowLength": 108,
+            "staggerBasePairs": 4,
+            "frontSpreadBasePairs": 4,
+            "frontSpreadNm": 1.36,
+            "rearSpreadBasePairs": 8,
+            "rearSpreadNm": 2.72,
+            "axialExtentBasePairs": 116,
+            "axialExtentNm": 39.44,
+            "scaffoldNucleotides": 6596,
+            "gapFacingRimPeriodRows": 2,
+            "gapFacingRimSpreadBasePairs": 4,
+            "modulationWavelengthNm": 7.608,
+            "frontLevelPopulation": "28 at level -4, 30 at level 0",
+            "rearLevelPopulation": "14 at level -116, 28 at level -112, 16 at level -108"
+        },
+        {
+            "crossSection": "10 x 6",
+            "rasterRows": 10,
+            "helicesPerRow": 6,
+            "senseOneRowLength": 112,
+            "senseTwoRowLength": 108,
+            "staggerBasePairs": 4,
+            "frontSpreadBasePairs": 4,
+            "frontSpreadNm": 1.36,
+            "rearSpreadBasePairs": 8,
+            "rearSpreadNm": 2.72,
+            "axialExtentBasePairs": 116,
+            "axialExtentNm": 39.44,
+            "scaffoldNucleotides": 6600,
+            "gapFacingRimPeriodRows": 2,
+            "gapFacingRimSpreadBasePairs": 4,
+            "modulationWavelengthNm": 7.608,
+            "frontLevelPopulation": "29 at level -4, 29 at level 0",
+            "rearLevelPopulation": "20 at level -116, 18 at level -112, 20 at level -108"
+        }
+    ],
+    "flatness": [
+        {
+            "crossSection": "15 x 4",
+            "layers": 4,
+            "compositeFraction": 0.3,
+            "acrossHelixRigidity": 278.255762,
+            "bendingLengthAcross": 17.2310927,
+            "modulationWavelengthNm": 7.608,
+            "rippleTransmission": 2.43837603E-5,
+            "freeEdgePenalty": 50.0,
+            "transmissionWithPenalty": 0.00121918802,
+            "rimLeverPerturbation": 0.0454728409,
+            "boundedDishingMove": 5.54399427E-5,
+            "thresholdThatMovesTheTightestCell": 0.0274976866,
+            "marginOverBound": 495.99053
+        },
+        {
+            "crossSection": "10 x 6",
+            "layers": 6,
+            "compositeFraction": 0.3,
+            "acrossHelixRigidity": 916.230312,
+            "bendingLengthAcross": 23.2114857,
+            "modulationWavelengthNm": 7.608,
+            "rippleTransmission": 7.40538369E-6,
+            "freeEdgePenalty": 50.0,
+            "transmissionWithPenalty": 3.70269185E-4,
+            "rimLeverPerturbation": 0.0454728409,
+            "boundedDishingMove": 1.68371917E-5,
+            "thresholdThatMovesTheTightestCell": 0.0274976866,
+            "marginOverBound": 1633.1516
+        }
+    ],
+    "edge": [
+        {
+            "concentrationMillimolar": 0.5,
+            "gapNm": 5.0,
+            "debyeLengthNm": 7.85375705,
+            "transverseDecayLengthNm": 2.95001474,
+            "reliefNm": 1.36,
+            "reliefOverDecayLength": 0.461014646,
+            "resolvable": false
+        },
+        {
+            "concentrationMillimolar": 0.5,
+            "gapNm": 7.0,
+            "debyeLengthNm": 7.85375705,
+            "transverseDecayLengthNm": 3.87586881,
+            "reliefNm": 1.36,
+            "reliefOverDecayLength": 0.350889069,
+            "resolvable": false
+        },
+        {
+            "concentrationMillimolar": 0.5,
+            "gapNm": 10.0,
+            "debyeLengthNm": 7.85375705,
+            "transverseDecayLengthNm": 4.94550845,
+            "reliefNm": 1.36,
+            "reliefOverDecayLength": 0.274997003,
+            "resolvable": false
+        },
+        {
+            "concentrationMillimolar": 1.0,
+            "gapNm": 5.0,
+            "debyeLengthNm": 5.55344487,
+            "transverseDecayLengthNm": 2.76162311,
+            "reliefNm": 1.36,
+            "reliefOverDecayLength": 0.492464013,
+            "resolvable": false
+        },
+        {
+            "concentrationMillimolar": 1.0,
+            "gapNm": 7.0,
+            "debyeLengthNm": 5.55344487,
+            "transverseDecayLengthNm": 3.47566511,
+            "reliefNm": 1.36,
+            "reliefOverDecayLength": 0.391292013,
+            "resolvable": false
+        },
+        {
+            "concentrationMillimolar": 1.0,
+            "gapNm": 10.0,
+            "debyeLengthNm": 5.55344487,
+            "transverseDecayLengthNm": 4.18491944,
+            "reliefNm": 1.36,
+            "reliefOverDecayLength": 0.324976387,
+            "resolvable": false
+        },
+        {
+            "concentrationMillimolar": 2.0,
+            "gapNm": 5.0,
+            "debyeLengthNm": 3.92687853,
+            "transverseDecayLengthNm": 2.47275423,
+            "reliefNm": 1.36,
+            "reliefOverDecayLength": 0.549994005,
+            "resolvable": false
+        },
+        {
+            "concentrationMillimolar": 2.0,
+            "gapNm": 7.0,
+            "debyeLengthNm": 3.92687853,
+            "transverseDecayLengthNm": 2.94622211,
+            "reliefNm": 1.36,
+            "reliefOverDecayLength": 0.461608103,
+            "resolvable": false
+        },
+        {
+            "concentrationMillimolar": 2.0,
+            "gapNm": 10.0,
+            "debyeLengthNm": 3.92687853,
+            "transverseDecayLengthNm": 3.34219676,
+            "reliefNm": 1.36,
+            "reliefOverDecayLength": 0.406917994,
+            "resolvable": false
+        }
+    ],
+    "plan": [
+        {
+            "crossSection": "15 x 4",
+            "demandedPaths": 10,
+            "maximumPlanCeiling": 38.08,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.0357142857,
+            "ceilingLessRelief": 36.72
+        },
+        {
+            "crossSection": "15 x 4",
+            "demandedPaths": 15,
+            "maximumPlanCeiling": 38.08,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.0357142857,
+            "ceilingLessRelief": 36.72
+        },
+        {
+            "crossSection": "15 x 4",
+            "demandedPaths": 20,
+            "maximumPlanCeiling": 16.66,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.0816326531,
+            "ceilingLessRelief": 15.3
+        },
+        {
+            "crossSection": "15 x 4",
+            "demandedPaths": 30,
+            "maximumPlanCeiling": 16.66,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.0816326531,
+            "ceilingLessRelief": 15.3
+        },
+        {
+            "crossSection": "15 x 4",
+            "demandedPaths": 34,
+            "maximumPlanCeiling": 9.52,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.142857143,
+            "ceilingLessRelief": 8.16
+        },
+        {
+            "crossSection": "15 x 4",
+            "demandedPaths": 45,
+            "maximumPlanCeiling": 9.52,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.142857143,
+            "ceilingLessRelief": 8.16
+        },
+        {
+            "crossSection": "15 x 4",
+            "demandedPaths": 50,
+            "maximumPlanCeiling": 5.872,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.231607629,
+            "ceilingLessRelief": 4.512
+        },
+        {
+            "crossSection": "15 x 4",
+            "demandedPaths": 60,
+            "maximumPlanCeiling": 5.872,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.231607629,
+            "ceilingLessRelief": 4.512
+        },
+        {
+            "crossSection": "15 x 4",
+            "demandedPaths": 75,
+            "maximumPlanCeiling": 4.604,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.295395308,
+            "ceilingLessRelief": 3.244
+        },
+        {
+            "crossSection": "15 x 4",
+            "demandedPaths": 90,
+            "maximumPlanCeiling": 2.38,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.571428571,
+            "ceilingLessRelief": 1.02
+        },
+        {
+            "crossSection": "10 x 6",
+            "demandedPaths": 10,
+            "maximumPlanCeiling": 38.08,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.0357142857,
+            "ceilingLessRelief": 36.72
+        },
+        {
+            "crossSection": "10 x 6",
+            "demandedPaths": 15,
+            "maximumPlanCeiling": 16.66,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.0816326531,
+            "ceilingLessRelief": 15.3
+        },
+        {
+            "crossSection": "10 x 6",
+            "demandedPaths": 20,
+            "maximumPlanCeiling": 16.66,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.0816326531,
+            "ceilingLessRelief": 15.3
+        },
+        {
+            "crossSection": "10 x 6",
+            "demandedPaths": 30,
+            "maximumPlanCeiling": 9.52,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.142857143,
+            "ceilingLessRelief": 8.16
+        },
+        {
+            "crossSection": "10 x 6",
+            "demandedPaths": 34,
+            "maximumPlanCeiling": 5.872,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.231607629,
+            "ceilingLessRelief": 4.512
+        },
+        {
+            "crossSection": "10 x 6",
+            "demandedPaths": 45,
+            "maximumPlanCeiling": 4.604,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.295395308,
+            "ceilingLessRelief": 3.244
+        },
+        {
+            "crossSection": "10 x 6",
+            "demandedPaths": 50,
+            "maximumPlanCeiling": 4.604,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.295395308,
+            "ceilingLessRelief": 3.244
+        },
+        {
+            "crossSection": "10 x 6",
+            "demandedPaths": 60,
+            "maximumPlanCeiling": 2.38,
+            "reliefNm": 1.36,
+            "reliefOverCeiling": 0.571428571,
+            "ceilingLessRelief": 1.02
+        }
+    ],
+    "stacking": [
+        {
+            "senseOneRowLength": 101,
+            "senseTwoRowLength": 109,
+            "staggerBasePairs": 8,
+            "axialExtentBasePairs": 117,
+            "departureFromNominalPercent": -0.55,
+            "frontReliefNm": 2.72,
+            "frontReliefRises": 8,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 1.42,
+            "marginOverRepulsiveOnsetRises": 4.17647059,
+            "scaffoldNucleotides": 6308,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 102,
+            "senseTwoRowLength": 109,
+            "staggerBasePairs": 7,
+            "axialExtentBasePairs": 116,
+            "departureFromNominalPercent": -1.4,
+            "frontReliefNm": 2.38,
+            "frontReliefRises": 7,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 1.08,
+            "marginOverRepulsiveOnsetRises": 3.17647059,
+            "scaffoldNucleotides": 6337,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 112,
+            "senseTwoRowLength": 108,
+            "staggerBasePairs": 4,
+            "axialExtentBasePairs": 116,
+            "departureFromNominalPercent": -1.4,
+            "frontReliefNm": 1.36,
+            "frontReliefRises": 4,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 0.06,
+            "marginOverRepulsiveOnsetRises": 0.176470588,
+            "scaffoldNucleotides": 6596,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 101,
+            "senseTwoRowLength": 108,
+            "staggerBasePairs": 7,
+            "axialExtentBasePairs": 115,
+            "departureFromNominalPercent": -2.25,
+            "frontReliefNm": 2.38,
+            "frontReliefRises": 7,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 1.08,
+            "marginOverRepulsiveOnsetRises": 3.17647059,
+            "scaffoldNucleotides": 6277,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 112,
+            "senseTwoRowLength": 109,
+            "staggerBasePairs": 3,
+            "axialExtentBasePairs": 115,
+            "departureFromNominalPercent": -2.25,
+            "frontReliefNm": 1.02,
+            "frontReliefRises": 3,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": false,
+            "marginOverRepulsiveOnsetNm": -0.28,
+            "marginOverRepulsiveOnsetRises": -0.823529412,
+            "scaffoldNucleotides": 6627,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 102,
+            "senseTwoRowLength": 108,
+            "staggerBasePairs": 6,
+            "axialExtentBasePairs": 114,
+            "departureFromNominalPercent": -3.1,
+            "frontReliefNm": 2.04,
+            "frontReliefRises": 6,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 0.74,
+            "marginOverRepulsiveOnsetRises": 2.17647059,
+            "scaffoldNucleotides": 6306,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 122,
+            "senseTwoRowLength": 119,
+            "staggerBasePairs": 3,
+            "axialExtentBasePairs": 125,
+            "departureFromNominalPercent": 6.25,
+            "frontReliefNm": 1.02,
+            "frontReliefRises": 3,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": false,
+            "marginOverRepulsiveOnsetNm": -0.28,
+            "marginOverRepulsiveOnsetRises": -0.823529412,
+            "scaffoldNucleotides": 7227,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 112,
+            "senseTwoRowLength": 119,
+            "staggerBasePairs": 7,
+            "axialExtentBasePairs": 126,
+            "departureFromNominalPercent": 7.1,
+            "frontReliefNm": 2.38,
+            "frontReliefRises": 7,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 1.08,
+            "marginOverRepulsiveOnsetRises": 3.17647059,
+            "scaffoldNucleotides": 6937,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 123,
+            "senseTwoRowLength": 119,
+            "staggerBasePairs": 4,
+            "axialExtentBasePairs": 127,
+            "departureFromNominalPercent": 7.95,
+            "frontReliefNm": 1.36,
+            "frontReliefRises": 4,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 0.06,
+            "marginOverRepulsiveOnsetRises": 0.176470588,
+            "scaffoldNucleotides": 7256,
+            "fitsM13": false
+        },
+        {
+            "senseOneRowLength": 102,
+            "senseTwoRowLength": 98,
+            "staggerBasePairs": 4,
+            "axialExtentBasePairs": 106,
+            "departureFromNominalPercent": -9.9,
+            "frontReliefNm": 1.36,
+            "frontReliefRises": 4,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 0.06,
+            "marginOverRepulsiveOnsetRises": 0.176470588,
+            "scaffoldNucleotides": 5996,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 91,
+            "senseTwoRowLength": 98,
+            "staggerBasePairs": 7,
+            "axialExtentBasePairs": 105,
+            "departureFromNominalPercent": -10.75,
+            "frontReliefNm": 2.38,
+            "frontReliefRises": 7,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 1.08,
+            "marginOverRepulsiveOnsetRises": 3.17647059,
+            "scaffoldNucleotides": 5677,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 101,
+            "senseTwoRowLength": 98,
+            "staggerBasePairs": 3,
+            "axialExtentBasePairs": 104,
+            "departureFromNominalPercent": -11.6,
+            "frontReliefNm": 1.02,
+            "frontReliefRises": 3,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": false,
+            "marginOverRepulsiveOnsetNm": -0.28,
+            "marginOverRepulsiveOnsetRises": -0.823529412,
+            "scaffoldNucleotides": 5967,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 123,
+            "senseTwoRowLength": 129,
+            "staggerBasePairs": 6,
+            "axialExtentBasePairs": 135,
+            "departureFromNominalPercent": 14.75,
+            "frontReliefNm": 2.04,
+            "frontReliefRises": 6,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 0.74,
+            "marginOverRepulsiveOnsetRises": 2.17647059,
+            "scaffoldNucleotides": 7566,
+            "fitsM13": false
+        },
+        {
+            "senseOneRowLength": 122,
+            "senseTwoRowLength": 129,
+            "staggerBasePairs": 7,
+            "axialExtentBasePairs": 136,
+            "departureFromNominalPercent": 15.6,
+            "frontReliefNm": 2.38,
+            "frontReliefRises": 7,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 1.08,
+            "marginOverRepulsiveOnsetRises": 3.17647059,
+            "scaffoldNucleotides": 7537,
+            "fitsM13": false
+        },
+        {
+            "senseOneRowLength": 133,
+            "senseTwoRowLength": 130,
+            "staggerBasePairs": 3,
+            "axialExtentBasePairs": 136,
+            "departureFromNominalPercent": 15.6,
+            "frontReliefNm": 1.02,
+            "frontReliefRises": 3,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": false,
+            "marginOverRepulsiveOnsetNm": -0.28,
+            "marginOverRepulsiveOnsetRises": -0.823529412,
+            "scaffoldNucleotides": 7887,
+            "fitsM13": false
+        },
+        {
+            "senseOneRowLength": 123,
+            "senseTwoRowLength": 130,
+            "staggerBasePairs": 7,
+            "axialExtentBasePairs": 137,
+            "departureFromNominalPercent": 16.45,
+            "frontReliefNm": 2.38,
+            "frontReliefRises": 7,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 1.08,
+            "marginOverRepulsiveOnsetRises": 3.17647059,
+            "scaffoldNucleotides": 7597,
+            "fitsM13": false
+        },
+        {
+            "senseOneRowLength": 133,
+            "senseTwoRowLength": 129,
+            "staggerBasePairs": 4,
+            "axialExtentBasePairs": 137,
+            "departureFromNominalPercent": 16.45,
+            "frontReliefNm": 1.36,
+            "frontReliefRises": 4,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 0.06,
+            "marginOverRepulsiveOnsetRises": 0.176470588,
+            "scaffoldNucleotides": 7856,
+            "fitsM13": false
+        },
+        {
+            "senseOneRowLength": 122,
+            "senseTwoRowLength": 130,
+            "staggerBasePairs": 8,
+            "axialExtentBasePairs": 138,
+            "departureFromNominalPercent": 17.3,
+            "frontReliefNm": 2.72,
+            "frontReliefRises": 8,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 1.42,
+            "marginOverRepulsiveOnsetRises": 4.17647059,
+            "scaffoldNucleotides": 7568,
+            "fitsM13": false
+        },
+        {
+            "senseOneRowLength": 80,
+            "senseTwoRowLength": 88,
+            "staggerBasePairs": 8,
+            "axialExtentBasePairs": 96,
+            "departureFromNominalPercent": -18.4,
+            "frontReliefNm": 2.72,
+            "frontReliefRises": 8,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 1.42,
+            "marginOverRepulsiveOnsetRises": 4.17647059,
+            "scaffoldNucleotides": 5048,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 81,
+            "senseTwoRowLength": 88,
+            "staggerBasePairs": 7,
+            "axialExtentBasePairs": 95,
+            "departureFromNominalPercent": -19.25,
+            "frontReliefNm": 2.38,
+            "frontReliefRises": 7,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 1.08,
+            "marginOverRepulsiveOnsetRises": 3.17647059,
+            "scaffoldNucleotides": 5077,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 91,
+            "senseTwoRowLength": 87,
+            "staggerBasePairs": 4,
+            "axialExtentBasePairs": 95,
+            "departureFromNominalPercent": -19.25,
+            "frontReliefNm": 1.36,
+            "frontReliefRises": 4,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 0.06,
+            "marginOverRepulsiveOnsetRises": 0.176470588,
+            "scaffoldNucleotides": 5336,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 80,
+            "senseTwoRowLength": 87,
+            "staggerBasePairs": 7,
+            "axialExtentBasePairs": 94,
+            "departureFromNominalPercent": -20.1,
+            "frontReliefNm": 2.38,
+            "frontReliefRises": 7,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 1.08,
+            "marginOverRepulsiveOnsetRises": 3.17647059,
+            "scaffoldNucleotides": 5017,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 91,
+            "senseTwoRowLength": 88,
+            "staggerBasePairs": 3,
+            "axialExtentBasePairs": 94,
+            "departureFromNominalPercent": -20.1,
+            "frontReliefNm": 1.02,
+            "frontReliefRises": 3,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": false,
+            "marginOverRepulsiveOnsetNm": -0.28,
+            "marginOverRepulsiveOnsetRises": -0.823529412,
+            "scaffoldNucleotides": 5367,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 81,
+            "senseTwoRowLength": 87,
+            "staggerBasePairs": 6,
+            "axialExtentBasePairs": 93,
+            "departureFromNominalPercent": -20.95,
+            "frontReliefNm": 2.04,
+            "frontReliefRises": 6,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 0.74,
+            "marginOverRepulsiveOnsetRises": 2.17647059,
+            "scaffoldNucleotides": 5046,
+            "fitsM13": true
+        },
+        {
+            "senseOneRowLength": 143,
+            "senseTwoRowLength": 140,
+            "staggerBasePairs": 3,
+            "axialExtentBasePairs": 146,
+            "departureFromNominalPercent": 24.1,
+            "frontReliefNm": 1.02,
+            "frontReliefRises": 3,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": false,
+            "marginOverRepulsiveOnsetNm": -0.28,
+            "marginOverRepulsiveOnsetRises": -0.823529412,
+            "scaffoldNucleotides": 8487,
+            "fitsM13": false
+        },
+        {
+            "senseOneRowLength": 133,
+            "senseTwoRowLength": 140,
+            "staggerBasePairs": 7,
+            "axialExtentBasePairs": 147,
+            "departureFromNominalPercent": 24.95,
+            "frontReliefNm": 2.38,
+            "frontReliefRises": 7,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 1.08,
+            "marginOverRepulsiveOnsetRises": 3.17647059,
+            "scaffoldNucleotides": 8197,
+            "fitsM13": false
+        },
+        {
+            "senseOneRowLength": 144,
+            "senseTwoRowLength": 140,
+            "staggerBasePairs": 4,
+            "axialExtentBasePairs": 148,
+            "departureFromNominalPercent": 25.8,
+            "frontReliefNm": 1.36,
+            "frontReliefRises": 4,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 0.06,
+            "marginOverRepulsiveOnsetRises": 0.176470588,
+            "scaffoldNucleotides": 8516,
+            "fitsM13": false
+        },
+        {
+            "senseOneRowLength": 144,
+            "senseTwoRowLength": 150,
+            "staggerBasePairs": 6,
+            "axialExtentBasePairs": 156,
+            "departureFromNominalPercent": 32.6,
+            "frontReliefNm": 2.04,
+            "frontReliefRises": 6,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 0.74,
+            "marginOverRepulsiveOnsetRises": 2.17647059,
+            "scaffoldNucleotides": 8826,
+            "fitsM13": false
+        },
+        {
+            "senseOneRowLength": 143,
+            "senseTwoRowLength": 150,
+            "staggerBasePairs": 7,
+            "axialExtentBasePairs": 157,
+            "departureFromNominalPercent": 33.45,
+            "frontReliefNm": 2.38,
+            "frontReliefRises": 7,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 1.08,
+            "marginOverRepulsiveOnsetRises": 3.17647059,
+            "scaffoldNucleotides": 8797,
+            "fitsM13": false
+        },
+        {
+            "senseOneRowLength": 154,
+            "senseTwoRowLength": 151,
+            "staggerBasePairs": 3,
+            "axialExtentBasePairs": 157,
+            "departureFromNominalPercent": 33.45,
+            "frontReliefNm": 1.02,
+            "frontReliefRises": 3,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": false,
+            "marginOverRepulsiveOnsetNm": -0.28,
+            "marginOverRepulsiveOnsetRises": -0.823529412,
+            "scaffoldNucleotides": 9147,
+            "fitsM13": false
+        },
+        {
+            "senseOneRowLength": 144,
+            "senseTwoRowLength": 151,
+            "staggerBasePairs": 7,
+            "axialExtentBasePairs": 158,
+            "departureFromNominalPercent": 34.3,
+            "frontReliefNm": 2.38,
+            "frontReliefRises": 7,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 1.08,
+            "marginOverRepulsiveOnsetRises": 3.17647059,
+            "scaffoldNucleotides": 8857,
+            "fitsM13": false
+        },
+        {
+            "senseOneRowLength": 154,
+            "senseTwoRowLength": 150,
+            "staggerBasePairs": 4,
+            "axialExtentBasePairs": 158,
+            "departureFromNominalPercent": 34.3,
+            "frontReliefNm": 1.36,
+            "frontReliefRises": 4,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 0.06,
+            "marginOverRepulsiveOnsetRises": 0.176470588,
+            "scaffoldNucleotides": 9116,
+            "fitsM13": false
+        },
+        {
+            "senseOneRowLength": 143,
+            "senseTwoRowLength": 151,
+            "staggerBasePairs": 8,
+            "axialExtentBasePairs": 159,
+            "departureFromNominalPercent": 35.15,
+            "frontReliefNm": 2.72,
+            "frontReliefRises": 8,
+            "clearsAttractiveLimb": true,
+            "clearsRepulsiveOnset": true,
+            "marginOverRepulsiveOnsetNm": 1.42,
+            "marginOverRepulsiveOnsetRises": 4.17647059,
+            "scaffoldNucleotides": 8828,
+            "fitsM13": false
+        }
+    ],
+    "reproductions": [
+        {
+            "what": "C-0140's front-face raggedness at 112 / 108",
+            "here": 4.0,
+            "there": 4.0,
+            "relativeDeparture": 0.0,
+            "source": "gpd/results/T-218-honeycomb-raster-turn-sense.json"
+        },
+        {
+            "what": "C-0140's rear-face raggedness at 112 / 108",
+            "here": 8.0,
+            "there": 8.0,
+            "relativeDeparture": 0.0,
+            "source": "gpd/results/T-218-honeycomb-raster-turn-sense.json"
+        },
+        {
+            "what": "C-0140's axial extent at 112 / 108",
+            "here": 116.0,
+            "there": 116.0,
+            "relativeDeparture": 0.0,
+            "source": "gpd/results/T-218-honeycomb-raster-turn-sense.json"
+        },
+        {
+            "what": "C-0141's honeycomb in-plane row pitch, 3d/2",
+            "here": 3.804,
+            "there": 3.804,
+            "relativeDeparture": 0.0,
+            "source": "gpd/results/T-219-honeycomb-station-lattice-and-placement.json"
+        },
+        {
+            "what": "C-0142's tightest coupled cell that is still flat at the 90th percentile",
+            "here": 0.0973238201,
+            "there": 0.0973238201,
+            "relativeDeparture": 0.0,
+            "source": "gpd/results/T-232-coupled-cells-at-the-honeycomb-cross-section.json"
+        }
+    ],
+    "predicates": [
+        {
+            "id": "P1",
+            "statement": "the axis is settled before anything is priced, and the coefficient of the raggedness on Sec 3's gap-facing flatness is stated",
+            "met": true
+        },
+        {
+            "id": "P2",
+            "statement": "the raggedness is emitted per helix and both spreads reproduce C-0140's 4 and 8 bp at departure 0.0",
+            "met": true
+        },
+        {
+            "id": "P3",
+            "statement": "the modulation wavelength is DERIVED from the cross-section and the flatness cost bounded with the free-edge correction CLAUDE.md records for it",
+            "met": true
+        },
+        {
+            "id": "P4",
+            "statement": "the threshold that moves C-0142's tightest surviving cell is quoted",
+            "met": true
+        },
+        {
+            "id": "P5",
+            "statement": "the whole family of admissible pairs is scored on BOTH axes and the recommendation restated or changed",
+            "met": true
+        },
+        {
+            "id": "P6",
+            "statement": "what no model here can read is STATED rather than approximated silently",
+            "met": true
+        }
+    ],
+    "falsifiers": [
+        {
+            "id": "F1",
+            "statement": "the ragged face turns out to be a GAP-FACING face, so the coefficient is not zero and the cheap bound is void",
+            "fired": false,
+            "outcome": "a raster row's length is measured ALONG the helices and the gap-facing surface is a row of duplex sidewalls at one COLUMN of the cross-section; the two are orthogonal, so the ragged faces are the tile's rim at x = 0 and x = L and nothing about Sec 3's normal-direction flatness field reads them"
+        },
+        {
+            "id": "F2",
+            "statement": "the front and rear spreads fail to reproduce C-0140's 4 and 8 bp",
+            "fired": false,
+            "outcome": "4 and 8 bp on 15 x 4 at departure 0.0, and the SAME 4 and 8 on 10 x 6 — the raggedness is a property of the lattice's alternation, not of the cross-section's shape"
+        },
+        {
+            "id": "F3",
+            "statement": "the modulation wavelength comes out LONGER than the plate's bending length, so the ripple argument attenuates nothing",
+            "fired": false,
+            "outcome": "the gap-facing rim alternates with period 2 rows = 7.6080 nm against bending lengths of 17.2311-23.2115 nm, i.e. 2.26-3.05 wavelengths inside one bending length — the plate cannot follow it"
+        },
+        {
+            "id": "F4",
+            "statement": "the bounded flatness cost EXCEEDS the threshold that moves C-0142's tightest surviving cell — DECLARED OPEN, this is the outcome the task exists to detect",
+            "fired": false,
+            "outcome": "the bound is 5.544e-05 of the stroke against a threshold of 0.02750, a margin of 496x at the worse of the two cross-sections"
+        },
+        {
+            "id": "F5",
+            "statement": "the relief is smaller than the 0.34 nm design quantum, so nothing priced here is a design variable",
+            "fired": false,
+            "outcome": "the front relief is 4 rises = 1.3600 nm and the rear 8 rises = 2.7200 nm; both are integer multiples of the quantum by construction, because a row length is a base-pair count"
+        },
+        {
+            "id": "F6",
+            "statement": "the recommendation CHANGES under the second axis, i.e. 112 / 108 is not the best pair once raggedness is priced — DECLARED OPEN",
+            "fired": true,
+            "outcome": "FIRED, and favourably for the pair C-0140 excluded. Among ALL pairs that fit M13 the width optimum is 101 / 109 bp at -0.55 %, not 112 / 108 at -1.40 % — C-0140 reached 112 / 108 only through its own stated \"stagger of at most 4 bp\" filter. On the anti-stacking axis the same pair is better too, clearing the repulsive onset by 4.18 rises against 0.18. What keeps 112 / 108 is the THIRD axis, the plan budget: its 4 bp relief costs 1.3600 nm of outboard bound against 2.7200 nm for the wider pair, and C-0141's ceiling saturates at 2.380 nm — which the wider pair EXCEEDS. So the three axes rank the two pairs 2-1 against C-0140's choice and the tie is broken by whether the design needs a saturated path count."
+        }
+    ],
+    "findings": [
+        "THE CHEAP BOUND CLOSED THE HEADLINE THREAT IN ONE QUESTION AND THE ANSWER IS AN AXIS. A four-layer honeycomb block's gap-facing surface is the outermost LAYER's sidewalls — one column of the cross-section, every helix of it lying in the tile plane — while a row length changes where a helix ENDS, which is a coordinate in that same plane. So the two ragged faces are the tile's RIM at x = 0 and x = L, the coefficient of the raggedness on Sec 3's normal-direction flatness field is EXACTLY ZERO, and T-5b's dishing convention cannot read it at all. Sec 3 asks a tile to be flat in the direction of its gap; a two-length raster leaves it ragged at right angles to that.",
+        "WHAT IT ACTUALLY IS: A COMB, NOT A FACE, AND THE SAME COMB ON BOTH CROSS-SECTIONS. At 112 / 108 the front face's helix ends sit at exactly TWO levels 1.3600 nm apart (28 at level -4, 30 at level 0) and the rear face at THREE spanning 2.7200 nm (14 at level -116, 28 at level -112, 16 at level -108) — so over the outermost 4 bp of the tile only about half the helices are present, and the rim's cross-sectional area is halved over 1.36 nm. 10 x 6 gives the identical 4 and 8 bp, because the raggedness is a property of the honeycomb's turn-sense alternation and not of the block's shape. The two faces are NOT mirror images, and the asymmetry is what separates this reading from a per-ROW one: every raster row spans the LARGER length exactly and consecutive rows are staggered by 4 bp, so a shorter helix is RECESSED inside its own row's window rather than shortening it (C-0146 reads the same construction that way, and the two readings are the same object measured per helix and per row).",
+        "AND THE FLATNESS COST IS BOUNDED AT 5.5e-05 OF THE STROKE AGAINST A THRESHOLD OF 0.02750 — A MARGIN OF 496x — BECAUSE THE MODULATION IS TOO FINE FOR THE PLATE TO FOLLOW. The gap-facing rim alternates with period exactly 2 raster rows, 7.6080 nm, against across-helix bending lengths of 17.2311-23.2115 nm: the plate's own transfer function 1/(1 + (2 pi l / lambda)^4) passes 2.44e-05 of it, and even with CLAUDE.md's measured 50x free-edge penalty applied the rim's own lever-arm perturbation of 0.04547 survives at 5.5e-05. C-0142's tightest cell that is still flat sits at 0.0973238, so it has 2.75 % of headroom and the raggedness can consume at most 0.2016 % of it.",
+        "THE EDGE FIELD CANNOT RESOLVE IT EITHER, AND THAT IS A CLOSED FORM RATHER THAN A SOLVE. A lateral feature of the rim enters the slit as a transverse mode decaying at q0 with q0^2 >= kappa^2 + (pi/2h)^2, so its own reach is 2.4728-4.9455 nm over Sec 3's three gaps and the three buffers, and the 1.36 nm relief is only 0.27-0.55 of it. The rim wanders by less than the distance over which its own perturbation dies, so a ragged rim IS a straight rim at its mean as far as C-0022's collar is concerned. The relief is nevertheless the same size as C-0005's 1.46 nm gap resolution, which is why it had to be checked rather than assumed.",
+        "WHAT IT DOES COST IS PLAN BUDGET, AND THERE IT IS NOT NEGLIGIBLE: 1.3600 nm OFF AN OUTBOARD BOUND THAT SATURATES AT 2.380 nm. C-0141's honeycomb plan ceiling falls to 2.380 nm as the path count saturates, and a short row's rim is 4 bp further in — 57.1 % of the ceiling at saturation and 3.6 % at the widest. That is the one channel on which the raggedness is a real design variable, and it is a variable because a row length is a base-pair COUNT: the relief is 4 whole rises, not a residue.",
+        "AND ON THE SECOND AXIS THE RAGGED FACE IS A BENEFIT THAT THE TIGHTER PAIR DOES NOT BUY. All three of Rothemund's measured anti-stacking remedies work by denying a terminus a coaxial partner; a staggered face denies it geometrically. The measured range is a contact interaction — the all-atom PMF's attractive limb ends at 0.65 nm and its force turns repulsive past 1.30 nm — and C-0140's 4 bp stagger puts the face's two levels 1.3600 nm apart, CLEARING the conservative onset, while the 3 bp pair it lists as the tightest gives 1.0200 nm and does NOT. But 112 / 108 clears it by only 0.0600 nm — 0.18 of a rise, below the design language's own quantum and therefore NOT a quotable margin — and the first pair that fits M13 and clears it by a WHOLE rise is 101 / 109 bp at -0.55 %, which is a different design. See the next finding.",
+        "SO F6 FIRED AND THE RECOMMENDATION IS CONDITIONAL, WHICH IS THE RESULT. Priced on four axes the two candidates rank 3-1: 101 / 109 bp wins the WIDTH (-0.55 % against -1.40 %), wins the ANTI-STACKING clearance (4.18 rises against 0.18) and wins the SCAFFOLD (6308 nt against 6596); 112 / 108 wins only the PLAN BUDGET, and it wins it decisively — its 1.3600 nm of relief sits inside C-0141's saturated outboard ceiling of 2.380 nm where the wider pair's 2.7200 nm EXCEEDS it, leaving a short row no outboard budget at all. C-0140 selected on width under a self-imposed \"stagger at most 4 bp\" filter and arrived at the right answer for a reason it did not state. THE RECOMMENDATION THEREFORE STANDS ONLY FOR A DESIGN THAT NEEDS A SATURATED PATH COUNT: at C-0142's flat cells on 10 x 6, which sit at 10 to 50 paths with ceilings of 38.08 down to 4.604 nm, both pairs are affordable and the wider one is better on three axes of four."
+    ],
+    "validity": [
+        "the flatness number is a BOUND, not a solve: no model in this repository reads a per-row row length, and OrigamiGrillage and HoneycombCoupledTile both take a single edgeX",
+        "the ripple transfer function is derived for an INFINITE plate and CLAUDE.md records that it over-attenuates a RIM perturbation by 50x; that penalty is applied, and the bound is therefore conservative by construction rather than exact",
+        "the rim lever-arm perturbation is an upper bound on the load perturbation: the collar follows its own edge, so displacing the edge by dx displaces the collar's line of action by dx and nothing else",
+        "the stacking range is measured on OTHER objects, in monovalent salt, and is transferred exactly as C-0079 and C-0085 transfer it",
+        "the anti-stacking benefit is a FABRICATION consideration and this programme cannot price fabrication; it is reported as a mechanism with a measured range, never as a yield"
+    ],
+    "openQuestions": [
+        "a per-row row length is not a parameter of any lattice model here, so the flatness cost is bounded rather than measured; extending OrigamiGrillage to a per-beam lengthX would settle it and is not free",
+        "what a ragged face does to tile-to-tile stacking in an ARRAY is unmeasured; Sec 3 specifies no array, and the two-level face is reported as a capacity halving rather than as an aggregation rate",
+        "the rear face's 8 bp relief is twice the front's at every stagger, and nothing here asks which face Sec 3's effort point sits nearer"
+    ]
+}
