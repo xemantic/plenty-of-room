@@ -246,6 +246,36 @@ check(
     "OPEN",
 )
 
+# `PARTIALLY DONE` — iteration 35's coinage, for a task whose deliverable list is partly
+# discharged and partly live (`T-9`: the hinge constant measured, the vertical compliance and the
+# in-plane shear still open).  The failure direction is the UNSAFE one, so it needs a test in both
+# senses: the qualifier must not close, and it must not stop a plain closing word from closing.
+check(
+    "'PARTIALLY DONE' leaves a row OPEN",
+    trace_answers.queue_status(
+        "| T-9 | hinge | a | A1.2 | **PARTIALLY DONE** (iteration 35) — claim `C-0151`; two of "
+        "three deliverables remain |"
+    )["T-9"],
+    "OPEN",
+)
+check(
+    "'PARTLY DONE' leaves a row OPEN too",
+    trace_answers.queue_status("| T-9 | hinge | a | A1.2 | **PARTLY DONE** — `C-0151` |")["T-9"],
+    "OPEN",
+)
+check(
+    "a plain DONE still closes, beside the qualifier",
+    trace_answers.queue_status("| T-9 | hinge | a | A1.2 | **DONE** (iteration 35) |")["T-9"],
+    "CLOSED",
+)
+check(
+    "a qualified row that LATER carries a bare closing word still closes",
+    trace_answers.queue_status(
+        "| T-9 | hinge | a | A1.2 | **PARTIALLY DONE**, and now **RESOLVED** in full |"
+    )["T-9"],
+    "CLOSED",
+)
+
 # The deliverable's own phrasings.  Each of these is a claim that a task is still open.
 check(
     "`T-129`, open is detected",

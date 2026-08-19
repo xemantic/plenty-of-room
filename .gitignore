@@ -48,3 +48,6 @@ __pycache__/
 .DS_Store
 
 /*.hprof
+
+# oxDNA cross-check working data (649 MB); regenerate via tools/oxdna/README.md
+build-oxdna/
