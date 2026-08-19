@@ -44,8 +44,16 @@ CENSUS = os.path.join(ROOT, "gpd", "results", "P-22-result-reader-census.json")
 
 
 def tag_of(result_file_name):
-    """`T-149-recommended-element-fold.json` -> `T-149`. The task ID is the stable handle."""
-    parts = result_file_name.split("-")
+    """`T-149-recommended-element-fold.json` -> `T-149`. The task ID is the stable handle.
+
+    A PATH is accepted as readily as a basename (`T-249`).  It was not: `gpd/results/` contains
+    no dash, so `"gpd/results/T-108-...json".split("-")` made the tag `gpd/results/T-108`, which
+    matches nothing in the census — and the tool then reported **0 dependency constraints** over
+    a 47-file set that has **39**.  A wrong tag is silent here by construction, because an
+    unknown tag is deliberately "placed rather than lost", so the failure mode of the tool's own
+    input handling is exactly the failure mode `C-0117` exists to prevent.
+    """
+    parts = os.path.basename(result_file_name).split("-")
     if len(parts) < 2:
         return result_file_name
     return "{}-{}".format(parts[0], parts[1])
@@ -113,6 +121,10 @@ def _selftest():
     check("a tag is the first two dash-separated fields",
           tag_of("T-149-recommended-element-fold.json"), "T-149")
     check("a lettered task keeps its letter", tag_of("T-1d-layer-response.json"), "T-1d")
+    check("a PATH is accepted as readily as a basename",
+          tag_of("gpd/results/T-108-desired-stroke-reach.json"), "T-108")
+    check("an absolute path too",
+          tag_of("/home/x/gpd/results/T-1d-scf-density-profile.json"), "T-1d")
     # A producer must precede its consumer, whichever order it is asked in.
     reads = {"T-157": {"T-149"}, "T-149": set(), "T-138": {"T-136"}, "T-136": set()}
     check("the consumer follows the producer",

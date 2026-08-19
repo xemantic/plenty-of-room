@@ -22,6 +22,7 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 import kotlin.test.Test
 
 /**
@@ -475,5 +476,47 @@ class ResultRoundingTest {
             ).jsonObject.getValue("convergence").jsonArray[0].jsonObject
                 .getValue("centrelineRouteSpread") == JsonPrimitive(0.00043)
         )
+    }
+
+    // ----------------------------------------------------------------- T-249 / C-0150 -------
+
+    @Test
+    fun `gate 1 dimensional consistency - a number rendered for PROSE should carry the digits the file declares`() {
+        // `T-249`. The serialisation boundary dispatches on the JSON TYPE and passes strings
+        // through, correctly — by the time [roundedForResult] sees a sentence the number in it is
+        // no longer a number. So a `Double` interpolated into prose reaches the file through
+        // `Double.toString()` at up to seventeen digits, inside a file that declares nine, and
+        // the ONLY place the rule can be applied is the call site.
+        assert("${0.1686405908358075.roundedForProse()}" == "0.168640591")
+        assert("${0.06517538540278571.roundedForProse()}" == "0.0651753854")
+    }
+
+    @Test
+    fun `gate 3 symmetry - a prose number should equal the numeric field its own file carries`() {
+        // The defect is not only reproducibility: `T-164` emits `sweep[0].bestDishingOverStroke`
+        // as `0.0651753854` and says `0.06517538540278571` in the sentence beside it — one
+        // quantity, two precisions, in one file, one of which no field of the file states.
+        val emitted = Json.parseToJsonElement("""{"bestDishingOverStroke":0.06517538540278571}""")
+            .roundedForResult().jsonObject.getValue("bestDishingOverStroke").jsonPrimitive.content
+        assert("${0.06517538540278571.roundedForProse()}" == emitted)
+    }
+
+    @Test
+    fun `gate 2 limiting case - a prose DEPARTURE should take the two-digit rule and no floor`() {
+        // `T-164`'s F2 says "reproduced at a departure of 3.3864695769825204E-11". Two digits is
+        // the rule (`C-0093`), and the default [RESULT_ABSOLUTE_FLOOR] — a claim in the locked
+        // units — would render the whole sentence as `0.0` (`P-18`). Both have to be passed.
+        assert("${3.3864695769825204e-11.roundedForProse(DEPARTURE_SIGNIFICANT_DIGITS, 0.0)}" == "3.4E-11")
+        assert("${3.3864695769825204e-11.roundedForProse()}" == "0.0")
+    }
+
+    @Test
+    fun `gate 2 limiting case - rounding for prose should be idempotent and should not lengthen a short rendering`() {
+        // A value already at or below the ceiling must render identically, or the repair itself
+        // becomes a diff. `Double.toString` emits the SHORTEST round-trip form, which is what
+        // makes the artifact-side census of `T-249` exact.
+        assert("${33.5.roundedForProse()}" == "33.5")
+        assert("${0.0.roundedForProse()}" == "0.0")
+        assert("${0.168640591.roundedForProse()}" == "0.168640591")
     }
 }

@@ -1,0 +1,53 @@
+[
+ {
+  "query": "all:\"forced crossover\"",
+  "endpoint": "https://export.arxiv.org/api/query",
+  "totalResults": 0,
+  "file": "arxiv-all_forced_crossover.xml",
+  "entries": []
+ },
+ {
+  "query": "all:\"DNA origami\" AND all:\"crossover\" AND all:\"folding yield\"",
+  "endpoint": "https://export.arxiv.org/api/query",
+  "totalResults": 0,
+  "file": "arxiv-all_DNA_origami_AND_all_crossover_AND_all_folding_yield.xml",
+  "entries": []
+ },
+ {
+  "query": "all:\"DNA origami\" AND all:\"crossover spacing\"",
+  "endpoint": "https://export.arxiv.org/api/query",
+  "totalResults": 0,
+  "file": "arxiv-all_DNA_origami_AND_all_crossover_spacing.xml",
+  "entries": []
+ },
+ {
+  "query": "all:oxDNA AND all:crossover AND all:origami",
+  "endpoint": "https://export.arxiv.org/api/query",
+  "totalResults": 2,
+  "file": "arxiv-all_oxDNA_AND_all_crossover_AND_all_origami.xml",
+  "entries": [
+   {
+    "id": "1810.09356v1",
+    "title": "Lattice models and Monte Carlo methods for simulating DNA origami self-assembly"
+   },
+   {
+    "id": "2006.15029v1",
+    "title": "Computing the elastic mechanical properties of rod-like DNA nanostructures"
+   }
+  ]
+ },
+ {
+  "query": "all:\"DNA origami\" AND all:\"design rules\" AND all:crossover",
+  "endpoint": "https://export.arxiv.org/api/query",
+  "totalResults": 0,
+  "file": "arxiv-all_DNA_origami_AND_all_design_rules_AND_all_crossover.xml",
+  "entries": []
+ },
+ {
+  "query": "all:cadnano AND all:crossover",
+  "endpoint": "https://export.arxiv.org/api/query",
+  "totalResults": 0,
+  "file": "arxiv-all_cadnano_AND_all_crossover.xml",
+  "entries": []
+ }
+]

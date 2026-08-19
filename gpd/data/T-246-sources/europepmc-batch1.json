@@ -1,0 +1,1145 @@
+[
+ {
+  "query": "\"forced crossover\" AND \"DNA origami\"",
+  "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+  "hitCount": 0,
+  "file": "search-forced_crossover_AND_DNA_origami.json",
+  "top": []
+ },
+ {
+  "query": "\"forced crossovers\" AND DNA",
+  "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+  "hitCount": 3,
+  "file": "search-forced_crossovers_AND_DNA.json",
+  "top": [
+   {
+    "title": "Recombination is required for efficient HIV-1 replication and the maintenance of viral genome integrity.",
+    "year": "2018",
+    "pmcid": "PMC6237782",
+    "doi": "10.1093/nar/gky910",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "DNA Transformations for Diagnosis and Therapy.",
+    "year": "2021",
+    "pmcid": "PMC7883235",
+    "doi": "10.1002/adfm.202008279",
+    "journal": "Advanced functional materials",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Rapid prototyping of 3D DNA-origami shapes with caDNAno.",
+    "year": "2009",
+    "pmcid": "PMC2731887",
+    "doi": "10.1093/nar/gkp436",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   }
+  ]
+ },
+ {
+  "query": "\"force crossovers\" AND caDNAno",
+  "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+  "hitCount": 1,
+  "file": "search-force_crossovers_AND_caDNAno.json",
+  "top": [
+   {
+    "title": "Rapid prototyping of 3D DNA-origami shapes with caDNAno.",
+    "year": "2009",
+    "pmcid": "PMC2731887",
+    "doi": "10.1093/nar/gkp436",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   }
+  ]
+ },
+ {
+  "query": "\"DNA origami\" AND crossover AND \"folding yield\"",
+  "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+  "hitCount": 28,
+  "file": "search-DNA_origami_AND_crossover_AND_folding_yield.json",
+  "top": [
+   {
+    "title": "Uncovering Design and Assembly Rules for mRNA-DNA Origami.",
+    "year": "2026",
+    "pmcid": "PMC12947688",
+    "doi": "10.1021/acs.nanolett.5c05607",
+    "journal": "Nano letters",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Unraveling the Folding Dynamics of DNA Origami Structures.",
+    "year": "2025",
+    "pmcid": "PMC12696799",
+    "doi": "10.1002/smll.202504855",
+    "journal": "Small (Weinheim an der Bergstrasse, Germany)",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Unraveling the Folding Dynamics of DNA Origami Structures",
+    "year": "2025",
+    "pmcid": null,
+    "doi": "10.1101/2025.07.11.664431",
+    "journal": null,
+    "isOpenAccess": "N",
+    "inEPMC": "N"
+   },
+   {
+    "title": "Bioproduction of \u223c10 knt single-stranded DNA for constructing large DNA origami structures.",
+    "year": "2026",
+    "pmcid": "PMC13147996",
+    "doi": "10.1016/j.mtbio.2026.103092",
+    "journal": "Materials today. Bio",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Design principles for accurate folding of DNA origami.",
+    "year": "2024",
+    "pmcid": "PMC11621765",
+    "doi": "10.1073/pnas.2406769121",
+    "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Triple-Stranded DNA As a Structural Element in DNA Origami.",
+    "year": "2023",
+    "pmcid": "PMC10210531",
+    "doi": "10.1021/acsnano.2c11402",
+    "journal": "ACS nano",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Computer-Aided Design of A-Trail Routed Wireframe DNA Nanostructures with Square Lattice Edges.",
+    "year": "2023",
+    "pmcid": "PMC10100577",
+    "doi": "10.1021/acsnano.2c11982",
+    "journal": "ACS nano",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "A DNA turbine powered by a transmembrane potential across a nanopore.",
+    "year": "2024",
+    "pmcid": "PMC10950783",
+    "doi": "10.1038/s41565-023-01527-8",
+    "journal": "Nature nanotechnology",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Recent Advances in DNA Origami-Engineered Nanomaterials and Applications.",
+    "year": "2023",
+    "pmcid": "PMC10103138",
+    "doi": "10.1021/acs.chemrev.3c00028",
+    "journal": "Chemical reviews",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Mechanistic Aspects for the Modulation of Enzyme Reactions on the DNA Scaffold.",
+    "year": "2022",
+    "pmcid": "PMC9572797",
+    "doi": "10.3390/molecules27196309",
+    "journal": "Molecules (Basel, Switzerland)",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Design Approaches and Computational Tools for DNA Nanostructures.",
+    "year": "2021",
+    "pmcid": "PMC9232119",
+    "doi": "10.1109/ojnano.2021.3119913",
+    "journal": "IEEE open journal of nanotechnology",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "3D RNA-scaffolded wireframe origami.",
+    "year": "2023",
+    "pmcid": "PMC9872083",
+    "doi": "10.1038/s41467-023-36156-1",
+    "journal": "Nature communications",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution.",
+    "year": "2020",
+    "pmcid": "PMC7718922",
+    "doi": "10.1038/s41467-020-20020-7",
+    "journal": "Nature communications",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Increasing Complexity in Wireframe DNA Nanostructures.",
+    "year": "2020",
+    "pmcid": "PMC7221932",
+    "doi": "10.3390/molecules25081823",
+    "journal": "Molecules (Basel, Switzerland)",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "RNA origami design tools enable cotranscriptional folding of kilobase-sized nanoscaffolds.",
+    "year": "2021",
+    "pmcid": "PMC7610888",
+    "doi": "10.1038/s41557-021-00679-1",
+    "journal": "Nature chemistry",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Polymorphic design of DNA origami structures through mechanical control of modular components.",
+    "year": "2017",
+    "pmcid": "PMC5727162",
+    "doi": "10.1038/s41467-017-02127-6",
+    "journal": "Nature communications",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Folding complex DNA nanostructures from limited sets of reusable sequences.",
+    "year": "2016",
+    "pmcid": "PMC4914096",
+    "doi": "10.1093/nar/gkw208",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "The biological applications of DNA nanomaterials: current challenges and future directions.",
+    "year": "2021",
+    "pmcid": "PMC8497566",
+    "doi": "10.1038/s41392-021-00727-9",
+    "journal": "Signal transduction and targeted therapy",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "A Compact DNA Cube with Side Length 10 nm.",
+    "year": "2015",
+    "pmcid": "PMC4707664",
+    "doi": "10.1002/smll.201501370",
+    "journal": "Small (Weinheim an der Bergstrasse, Germany)",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Role of nanoscale antigen organization on B-cell activation probed using DNA origami.",
+    "year": "2020",
+    "pmcid": "PMC7415668",
+    "doi": "10.1038/s41565-020-0719-0",
+    "journal": "Nature nanotechnology",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Single-stranded DNA and RNA origami.",
+    "year": "2017",
+    "pmcid": "PMC6384012",
+    "doi": "10.1126/science.aao2648",
+    "journal": "Science (New York, N.Y.)",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Designer nanoscale DNA assemblies programmed from the top down.",
+    "year": "2016",
+    "pmcid": "PMC5111087",
+    "doi": "10.1126/science.aaf4388",
+    "journal": "Science (New York, N.Y.)",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Programming molecular topologies from single-stranded nucleic acids.",
+    "year": "2018",
+    "pmcid": "PMC6214983",
+    "doi": "10.1038/s41467-018-07039-7",
+    "journal": "Nature communications",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Universal folding pathways of polyhedron nets.",
+    "year": "2018",
+    "pmcid": "PMC6055160",
+    "doi": "10.1073/pnas.1722681115",
+    "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Two design strategies for enhancement of multilayer-DNA-origami folding: underwinding for specific intercalator rescue and staple-break positioning.",
+    "year": "2012",
+    "pmcid": "PMC3957201",
+    "doi": "10.1039/c2sc20446k",
+    "journal": "Chemical science",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   }
+  ]
+ },
+ {
+  "query": "caDNAno AND \"design rules\" AND yield",
+  "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+  "hitCount": 32,
+  "file": "search-caDNAno_AND_design_rules_AND_yield.json",
+  "top": [
+   {
+    "title": "Design principles for accurate folding of DNA origami.",
+    "year": "2024",
+    "pmcid": "PMC11621765",
+    "doi": "10.1073/pnas.2406769121",
+    "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Complex cooperativity in DNA origami revealed via design-dependent defectivity.",
+    "year": "2026",
+    "pmcid": "PMC12907558",
+    "doi": "10.1093/nar/gkag052",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Modular programming of interaction and geometric specificity enables assembly of complex DNA origami nanostructures.",
+    "year": "2025",
+    "pmcid": "PMC12738586",
+    "doi": "10.1038/s41467-025-66195-9",
+    "journal": "Nature communications",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Economical and Versatile Subunit Design Principles for Self-Assembled DNA Origami Structures.",
+    "year": "2025",
+    "pmcid": "PMC12410049",
+    "doi": "10.1021/acsnano.5c06681",
+    "journal": "ACS nano",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Rapid prototyping of arbitrary 2D and 3D wireframe DNA origami.",
+    "year": "2021",
+    "pmcid": "PMC8501967",
+    "doi": "10.1093/nar/gkab762",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Coarse-Grained Simulations for the Characterization and Optimization of Hybrid Protein-DNA Nanostructures.",
+    "year": "2022",
+    "pmcid": "PMC9590280",
+    "doi": "10.1021/acsnano.2c04013",
+    "journal": "ACS nano",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "<i>In silico</i> modelling of DNA nanostructures.",
+    "year": "2020",
+    "pmcid": "PMC7276390",
+    "doi": "10.1016/j.csbj.2020.05.016",
+    "journal": "Computational and structural biotechnology journal",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Design Approaches and Computational Tools for DNA Nanostructures.",
+    "year": "2021",
+    "pmcid": "PMC9232119",
+    "doi": "10.1109/ojnano.2021.3119913",
+    "journal": "IEEE open journal of nanotechnology",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Evolutionary Refinement of DNA Nanostructures Using Coarse-Grained Molecular Dynamics Simulations.",
+    "year": "2019",
+    "pmcid": "PMC7613751",
+    "doi": "10.1021/acsnano.9b03473",
+    "journal": "ACS nano",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Triple-Stranded DNA As a Structural Element in DNA Origami.",
+    "year": "2023",
+    "pmcid": "PMC10210531",
+    "doi": "10.1021/acsnano.2c11402",
+    "journal": "ACS nano",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Folding complex DNA nanostructures from limited sets of reusable sequences.",
+    "year": "2016",
+    "pmcid": "PMC4914096",
+    "doi": "10.1093/nar/gkw208",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "DNA Nanotechnology-Enabled Fabrication of Metal Nanomorphology.",
+    "year": "2022",
+    "pmcid": "PMC9275100",
+    "doi": "10.34133/2022/9840131",
+    "journal": "Research (Washington, D.C.)",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution.",
+    "year": "2020",
+    "pmcid": "PMC7718922",
+    "doi": "10.1038/s41467-020-20020-7",
+    "journal": "Nature communications",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Multi-micron crisscross structures grown from DNA-origami slats.",
+    "year": "2023",
+    "pmcid": "PMC10818227",
+    "doi": "10.1038/s41565-022-01283-1",
+    "journal": "Nature nanotechnology",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Autonomously designed free-form 2D DNA origami.",
+    "year": "2019",
+    "pmcid": "PMC6314877",
+    "doi": "10.1126/sciadv.aav0655",
+    "journal": "Science advances",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Cooperativity-based modeling of heterotypic DNA nanostructure assembly.",
+    "year": "2015",
+    "pmcid": "PMC4513873",
+    "doi": "10.1093/nar/gkv602",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "DNA Origami and Its Applications in Synthetic Biology.",
+    "year": "2026",
+    "pmcid": "PMC12786304",
+    "doi": "10.1002/advs.202513357",
+    "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "A large size-selective DNA nanopore with sensing applications.",
+    "year": "2019",
+    "pmcid": "PMC6906287",
+    "doi": "10.1038/s41467-019-13284-1",
+    "journal": "Nature communications",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "A universal way to enrich the nanoparticle lattices with polychrome DNA origami \"homologs\".",
+    "year": "2022",
+    "pmcid": "PMC9683696",
+    "doi": "10.1126/sciadv.adc9755",
+    "journal": "Science advances",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Peptide Assembly Directed and Quantified Using Megadalton DNA Nanostructures.",
+    "year": "2019",
+    "pmcid": "PMC6764022",
+    "doi": "10.1021/acsnano.9b04251",
+    "journal": "ACS nano",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Rapid prototyping of 3D DNA-origami shapes with caDNAno.",
+    "year": "2009",
+    "pmcid": "PMC2731887",
+    "doi": "10.1093/nar/gkp436",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Pursuing excitonic energy transfer with programmable DNA-based optical breadboards.",
+    "year": "2023",
+    "pmcid": "PMC10642627",
+    "doi": "10.1039/d0cs00936a",
+    "journal": "Chemical Society reviews",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Molecular goniometers for single-particle cryo-electron microscopy of DNA-binding proteins.",
+    "year": "2021",
+    "pmcid": "PMC7956247",
+    "doi": "10.1038/s41587-020-0716-8",
+    "journal": "Nature biotechnology",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Self-assembly of DNA into nanoscale three-dimensional shapes.",
+    "year": "2009",
+    "pmcid": "PMC2688462",
+    "doi": "10.1038/nature08016",
+    "journal": "Nature",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "The sequence of events during folding of a DNA origami.",
+    "year": "2019",
+    "pmcid": "PMC6499592",
+    "doi": "10.1126/sciadv.aaw1412",
+    "journal": "Science advances",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   }
+  ]
+ },
+ {
+  "query": "\"DNA origami\" AND \"crossover spacing\"",
+  "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+  "hitCount": 18,
+  "file": "search-DNA_origami_AND_crossover_spacing.json",
+  "top": [
+   {
+    "title": "Bioproduction of \u223c10 knt single-stranded DNA for constructing large DNA origami structures.",
+    "year": "2026",
+    "pmcid": "PMC13147996",
+    "doi": "10.1016/j.mtbio.2026.103092",
+    "journal": "Materials today. Bio",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "DNA Nanostructure Self-Assembly in an Aqueous Ionic Liquid Solution with Enhanced Stability and Target Binding Affinity.",
+    "year": "2025",
+    "pmcid": "PMC12706753",
+    "doi": "10.1021/jacs.5c13969",
+    "journal": "Journal of the American Chemical Society",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Doxorubicin-loaded DNA origami nanostructures: stability in vitreous and their uptake and toxicity in ocular cells.",
+    "year": "2024",
+    "pmcid": "PMC11372452",
+    "doi": "10.1039/d4nr01995d",
+    "journal": "Nanoscale",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Automated design of 3D DNA origami with non-rasterized 2D curvature.",
+    "year": "2022",
+    "pmcid": "PMC9788767",
+    "doi": "10.1126/sciadv.ade4455",
+    "journal": "Science advances",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Mechanics of dynamic and deformable DNA nanostructures.",
+    "year": "2023",
+    "pmcid": "PMC10395309",
+    "doi": "10.1039/d3sc01793a",
+    "journal": "Chemical science",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution.",
+    "year": "2020",
+    "pmcid": "PMC7718922",
+    "doi": "10.1038/s41467-020-20020-7",
+    "journal": "Nature communications",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Advancing the Utility of DNA Origami Technique through Enhanced Stability of DNA-Origami-Based Assemblies.",
+    "year": "2023",
+    "pmcid": "PMC9853507",
+    "doi": "10.1021/acs.bioconjchem.2c00311",
+    "journal": "Bioconjugate chemistry",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Programming ultrasensitive threshold response through chemomechanical instability.",
+    "year": "2021",
+    "pmcid": "PMC8405678",
+    "doi": "10.1038/s41467-021-25406-9",
+    "journal": "Nature communications",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Stretching DNA origami: effect of nicks and Holliday junctions on the axial stiffness.",
+    "year": "2020",
+    "pmcid": "PMC7708044",
+    "doi": "10.1093/nar/gkaa985",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "DNA Origami Design: A How-To Tutorial.",
+    "year": "2021",
+    "pmcid": "PMC11419732",
+    "doi": "10.6028/jres.126.001",
+    "journal": "Journal of research of the National Institute of Standards and Technology",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Exploring the Potential of Three-Dimensional DNA Crystals in Nanotechnology: Design, Optimization, and Applications.",
+    "year": "2023",
+    "pmcid": "PMC10460852",
+    "doi": "10.1002/advs.202302021",
+    "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "RNA origami design tools enable cotranscriptional folding of kilobase-sized nanoscaffolds.",
+    "year": "2021",
+    "pmcid": "PMC7610888",
+    "doi": "10.1038/s41557-021-00679-1",
+    "journal": "Nature chemistry",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "DNA Nanotechnology for Cancer Therapy.",
+    "year": "2016",
+    "pmcid": "PMC4805665",
+    "doi": "10.7150/thno.14203",
+    "journal": "Theranostics",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "DNA origami-based nanoribbons: assembly, length distribution, and twist.",
+    "year": "2011",
+    "pmcid": null,
+    "doi": "10.1088/0957-4484/22/27/275301",
+    "journal": "Nanotechnology",
+    "isOpenAccess": "N",
+    "inEPMC": "N"
+   },
+   {
+    "title": "Design space for complex DNA structures.",
+    "year": "2013",
+    "pmcid": "PMC4872871",
+    "doi": "10.1021/ja4062294",
+    "journal": "Journal of the American Chemical Society",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Quantitative prediction of 3D solution shape and flexibility of nucleic acid nanostructures.",
+    "year": "2012",
+    "pmcid": "PMC3326316",
+    "doi": "10.1093/nar/gkr1173",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Magnesium-free self-assembly of multi-layer DNA objects.",
+    "year": "2012",
+    "pmcid": "PMC3493638",
+    "doi": "10.1038/ncomms2095",
+    "journal": "Nature communications",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Rapid prototyping of 3D DNA-origami shapes with caDNAno.",
+    "year": "2009",
+    "pmcid": "PMC2731887",
+    "doi": "10.1093/nar/gkp436",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   }
+  ]
+ },
+ {
+  "query": "\"DNA origami\" AND \"crossover density\"",
+  "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+  "hitCount": 23,
+  "file": "search-DNA_origami_AND_crossover_density.json",
+  "top": [
+   {
+    "title": "Unraveling the Folding Dynamics of DNA Origami Structures.",
+    "year": "2025",
+    "pmcid": "PMC12696799",
+    "doi": "10.1002/smll.202504855",
+    "journal": "Small (Weinheim an der Bergstrasse, Germany)",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Bacteriophage-Mimetic DNA Origami Needle for Targeted Membrane Penetration and Cytosolic Cargo Delivery.",
+    "year": "2026",
+    "pmcid": "PMC12915191",
+    "doi": "10.1002/advs.202512844",
+    "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Plugging synthetic DNA nanoparticles into the central dogma of life.",
+    "year": "2024",
+    "pmcid": "PMC11606385",
+    "doi": "10.1039/d4cc04648j",
+    "journal": "Chemical communications (Cambridge, England)",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Structural stability of DNA origami nanostructures in organic solvents.",
+    "year": "2024",
+    "pmcid": "PMC11256221",
+    "doi": "10.1039/d4nr02185a",
+    "journal": "Nanoscale",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Designing Rigid DNA Origami Templates for Molecular Visualization Using Cryo-EM.",
+    "year": "2024",
+    "pmcid": "PMC11057029",
+    "doi": "10.1021/acs.nanolett.4c00915",
+    "journal": "Nano letters",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Triple-Stranded DNA As a Structural Element in DNA Origami.",
+    "year": "2023",
+    "pmcid": "PMC10210531",
+    "doi": "10.1021/acsnano.2c11402",
+    "journal": "ACS nano",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "In vitro transcription of self-assembling DNA nanoparticles.",
+    "year": "2023",
+    "pmcid": "PMC10415316",
+    "doi": "10.1038/s41598-023-39777-0",
+    "journal": "Scientific reports",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Mechanics of dynamic and deformable DNA nanostructures.",
+    "year": "2023",
+    "pmcid": "PMC10395309",
+    "doi": "10.1039/d3sc01793a",
+    "journal": "Chemical science",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "A DNA turbine powered by a transmembrane potential across a nanopore.",
+    "year": "2024",
+    "pmcid": "PMC10950783",
+    "doi": "10.1038/s41565-023-01527-8",
+    "journal": "Nature nanotechnology",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Design and synthesis of pleated DNA origami nanotubes with adjustable diameters.",
+    "year": "2019",
+    "pmcid": "PMC7145641",
+    "doi": "10.1093/nar/gkz1056",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution.",
+    "year": "2020",
+    "pmcid": "PMC7718922",
+    "doi": "10.1038/s41467-020-20020-7",
+    "journal": "Nature communications",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Enzyme-Free Exponential Amplification via Growth and Scission of Crisscross Ribbons from Single-Stranded DNA Components.",
+    "year": "2024",
+    "pmcid": "PMC10785819",
+    "doi": "10.1021/jacs.3c08205",
+    "journal": "Journal of the American Chemical Society",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Mechanical deformation behaviors and structural properties of ligated DNA crystals.",
+    "year": "2022",
+    "pmcid": "PMC9675025",
+    "doi": "10.1016/j.bpj.2022.09.036",
+    "journal": "Biophysical journal",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Folding complex DNA nanostructures from limited sets of reusable sequences.",
+    "year": "2016",
+    "pmcid": "PMC4914096",
+    "doi": "10.1093/nar/gkw208",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Uptake and stability of DNA nanostructures in cells: a cross-sectional overview of the current state of the art.",
+    "year": "2023",
+    "pmcid": "PMC10407680",
+    "doi": "10.1039/d2nr05868e",
+    "journal": "Nanoscale",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "CRISPR-Cas9-mediated nuclear transport and genomic integration of nanostructured genes in human primary cells.",
+    "year": "2022",
+    "pmcid": "PMC8860605",
+    "doi": "10.1093/nar/gkac049",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Design and Characterization of DX-Tile DNA Nanostar-Based Hydrogels.",
+    "year": "2026",
+    "pmcid": "PMC13042906",
+    "doi": "10.1002/advs.202514506",
+    "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "A Compact DNA Cube with Side Length 10 nm.",
+    "year": "2015",
+    "pmcid": "PMC4707664",
+    "doi": "10.1002/smll.201501370",
+    "journal": "Small (Weinheim an der Bergstrasse, Germany)",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Quantitative prediction of 3D solution shape and flexibility of nucleic acid nanostructures.",
+    "year": "2012",
+    "pmcid": "PMC3326316",
+    "doi": "10.1093/nar/gkr1173",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Multilayer DNA origami packed on hexagonal and hybrid lattices.",
+    "year": "2012",
+    "pmcid": "PMC3336742",
+    "doi": "10.1021/ja209719k",
+    "journal": "Journal of the American Chemical Society",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Two design strategies for enhancement of multilayer-DNA-origami folding: underwinding for specific intercalator rescue and staple-break positioning.",
+    "year": "2012",
+    "pmcid": "PMC3957201",
+    "doi": "10.1039/c2sc20446k",
+    "journal": "Chemical science",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Self-assembly of DNA into nanoscale three-dimensional shapes.",
+    "year": "2009",
+    "pmcid": "PMC2688462",
+    "doi": "10.1038/nature08016",
+    "journal": "Nature",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Oligolysine-based coating protects DNA nanostructures from low-salt denaturation and nuclease degradation.",
+    "year": "2017",
+    "pmcid": "PMC5460023",
+    "doi": "10.1038/ncomms15654",
+    "journal": "Nature communications",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   }
+  ]
+ },
+ {
+  "query": "\"DNA origami\" AND \"non-canonical\" AND crossover",
+  "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+  "hitCount": 28,
+  "file": "search-DNA_origami_AND_non_canonical_AND_crossover.json",
+  "top": [
+   {
+    "title": "Crystalline Assemblies of DNA Nanostructures and Their Functional Properties.",
+    "year": "2025",
+    "pmcid": "PMC11735872",
+    "doi": "10.1002/anie.202416948",
+    "journal": "Angewandte Chemie (International ed. in English)",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Advances and challenges in non-canonical nucleic acids data storage.",
+    "year": "2026",
+    "pmcid": "PMC12979619",
+    "doi": "10.1038/s41467-026-68708-6",
+    "journal": "Nature communications",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Triple-Stranded DNA As a Structural Element in DNA Origami.",
+    "year": "2023",
+    "pmcid": "PMC10210531",
+    "doi": "10.1021/acsnano.2c11402",
+    "journal": "ACS nano",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Self-Assembly of DNA Nanostructures in Different Cations.",
+    "year": "2023",
+    "pmcid": "PMC10538431",
+    "doi": "10.1002/smll.202300040",
+    "journal": "Small (Weinheim an der Bergstrasse, Germany)",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Nucleic acid nanostructures for <i>in vivo</i> applications: The influence of morphology on biological fate.",
+    "year": "2023",
+    "pmcid": "PMC9869343",
+    "doi": "10.1063/5.0121820",
+    "journal": "Applied physics reviews",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Exploring the Potential of Three-Dimensional DNA Crystals in Nanotechnology: Design, Optimization, and Applications.",
+    "year": "2023",
+    "pmcid": "PMC10460852",
+    "doi": "10.1002/advs.202302021",
+    "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Recent progress in stimuli-responsive DNA-based logic gates: Design, working principles and biological applications.",
+    "year": "2024",
+    "pmcid": "PMC12118300",
+    "doi": "10.1002/smo.20230023",
+    "journal": "Smart molecules : open access",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Pursuing excitonic energy transfer with programmable DNA-based optical breadboards.",
+    "year": "2023",
+    "pmcid": "PMC10642627",
+    "doi": "10.1039/d0cs00936a",
+    "journal": "Chemical Society reviews",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Biomolecule-Based Optical Metamaterials: Design and Applications.",
+    "year": "2022",
+    "pmcid": "PMC9688573",
+    "doi": "10.3390/bios12110962",
+    "journal": "Biosensors",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "An RNA origami robot that traps and releases a fluorescent aptamer",
+    "year": "2023",
+    "pmcid": null,
+    "doi": "10.1101/2023.05.19.541473",
+    "journal": null,
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Reconfigurable Two-Dimensional DNA Lattices: Static and Dynamic Angle Control.",
+    "year": "2021",
+    "pmcid": "PMC9649588",
+    "doi": "10.1002/anie.202112487",
+    "journal": "Angewandte Chemie (International ed. in English)",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Building machines with DNA molecules.",
+    "year": "2020",
+    "pmcid": "PMC6976304",
+    "doi": "10.1038/s41576-019-0175-6",
+    "journal": "Nature reviews. Genetics",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Self-Assembly of Hybrid Peptide-DNA Nanostructures using Homotrimeric Coiled-Coil/Nucleic Acid Building Blocks.",
+    "year": "2023",
+    "pmcid": "PMC10789489",
+    "doi": "10.1002/cbic.202300223",
+    "journal": "Chembiochem : a European journal of chemical biology",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "DNA-Based Super-Resolution Microscopy: DNA-PAINT.",
+    "year": "2018",
+    "pmcid": "PMC6315775",
+    "doi": "10.3390/genes9120621",
+    "journal": "Genes",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Triplex-forming oligonucleotides: a third strand for DNA nanotechnology.",
+    "year": "2018",
+    "pmcid": "PMC5814803",
+    "doi": "10.1093/nar/gkx1230",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Genetically Encodable Scaffolds for Optimizing Enzyme Function.",
+    "year": "2021",
+    "pmcid": "PMC7961827",
+    "doi": "10.3390/molecules26051389",
+    "journal": "Molecules (Basel, Switzerland)",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Three-dimensional structures self-assembled from DNA bricks.",
+    "year": "2012",
+    "pmcid": "PMC3843647",
+    "doi": "10.1126/science.1227268",
+    "journal": "Science (New York, N.Y.)",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Synapsable quadruplex-mediated fibers.",
+    "year": "2013",
+    "pmcid": "PMC3655031",
+    "doi": "10.1186/1556-276x-8-210",
+    "journal": "Nanoscale research letters",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "The emerging field of RNA nanotechnology.",
+    "year": "2010",
+    "pmcid": "PMC3149862",
+    "doi": "10.1038/nnano.2010.231",
+    "journal": "Nature nanotechnology",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "RNA as a stable polymer to build controllable and defined nanostructures for material and biomedical applications.",
+    "year": "2015",
+    "pmcid": "PMC4707685",
+    "doi": "10.1016/j.nantod.2015.09.003",
+    "journal": "Nano today",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Assembly of supramolecular DNA complexes containing both G-quadruplexes and i-motifs by enhancing the G-repeat-bearing capacity of i-motifs.",
+    "year": "2017",
+    "pmcid": "PMC5224476",
+    "doi": "10.1093/nar/gkw1049",
+    "journal": "Nucleic acids research",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Abstracts",
+    "year": "2017",
+    "pmcid": "PMC7080123",
+    "doi": null,
+    "journal": "European biophysics journal : EBJ",
+    "isOpenAccess": "Y",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Special issue title: The Protein Society 38th Annual Symposium, July 2024, Vancouver, Canada.",
+    "year": "2024",
+    "pmcid": "PMC11618884",
+    "doi": "10.1002/pro.5207",
+    "journal": "Protein science : a publication of the Protein Society",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "Award Winners and Abstracts of the 33rd Annual Symposium of The Protein Society; Seattle, Washington, June 30-July 3, 2019.",
+    "year": "2019",
+    "pmcid": "PMC6767941",
+    "doi": "10.1002/pro.3710",
+    "journal": "Protein science : a publication of the Protein Society",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   },
+   {
+    "title": "The 7th Congress of Biophysicists of Russia - conference proceedings : Abstracts",
+    "year": "2023",
+    "pmcid": "PMC10643713",
+    "doi": null,
+    "journal": "Biophysical reviews",
+    "isOpenAccess": "N",
+    "inEPMC": "Y"
+   }
+  ]
+ }
+]

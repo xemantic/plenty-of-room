@@ -1,0 +1,160 @@
+[
+ {
+  "pmcid": "PMC12907558",
+  "routes": [
+   {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12907558/fullTextXML",
+    "error": "HTTP Error 404: Not Found"
+   },
+   {
+    "url": "https://europepmc.org/articles/PMC12907558?pdf=render",
+    "status": 200,
+    "bytes": 2863797
+   }
+  ],
+  "saved": "PMC12907558.pdf",
+  "route": "pdf=render"
+ },
+ {
+  "pmcid": "PMC4872871",
+  "routes": [
+   {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4872871/fullTextXML",
+    "error": "HTTP Error 404: Not Found"
+   },
+   {
+    "url": "https://europepmc.org/articles/PMC4872871?pdf=render",
+    "error": "HTTP Error 500: "
+   }
+  ],
+  "route": "FAILED"
+ },
+ {
+  "pmcid": "PMC3957201",
+  "routes": [
+   {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3957201/fullTextXML",
+    "error": "HTTP Error 404: Not Found"
+   },
+   {
+    "url": "https://europepmc.org/articles/PMC3957201?pdf=render",
+    "error": "HTTP Error 500: "
+   }
+  ],
+  "route": "FAILED"
+ },
+ {
+  "pmcid": "PMC3336742",
+  "routes": [
+   {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3336742/fullTextXML",
+    "error": "HTTP Error 404: Not Found"
+   },
+   {
+    "url": "https://europepmc.org/articles/PMC3336742?pdf=render",
+    "error": "HTTP Error 500: "
+   }
+  ],
+  "route": "FAILED"
+ },
+ {
+  "pmcid": "PMC7708044",
+  "routes": [
+   {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7708044/fullTextXML",
+    "status": 200,
+    "bytes": 110834
+   }
+  ],
+  "saved": "PMC7708044-fullTextXML.xml",
+  "route": "fullTextXML"
+ },
+ {
+  "pmcid": "PMC6499592",
+  "routes": [
+   {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6499592/fullTextXML",
+    "status": 200,
+    "bytes": 99588
+   }
+  ],
+  "saved": "PMC6499592-fullTextXML.xml",
+  "route": "fullTextXML"
+ },
+ {
+  "pmcid": "PMC2821935",
+  "routes": [
+   {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2821935/fullTextXML",
+    "error": "HTTP Error 404: Not Found"
+   },
+   {
+    "url": "https://europepmc.org/articles/PMC2821935?pdf=render",
+    "error": "HTTP Error 500: "
+   }
+  ],
+  "route": "FAILED"
+ },
+ {
+  "pmcid": "PMC11621765",
+  "routes": [
+   {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11621765/fullTextXML",
+    "status": 200,
+    "bytes": 87390
+   }
+  ],
+  "saved": "PMC11621765-fullTextXML.xml",
+  "route": "fullTextXML"
+ },
+ {
+  "pmcid": "PMC4268701",
+  "routes": [
+   {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4268701/fullTextXML",
+    "status": 200,
+    "bytes": 106888
+   }
+  ],
+  "saved": "PMC4268701-fullTextXML.xml",
+  "route": "fullTextXML"
+ },
+ {
+  "pmcid": "PMC7727707",
+  "routes": [
+   {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7727707/fullTextXML",
+    "status": 200,
+    "bytes": 195535
+   }
+  ],
+  "saved": "PMC7727707-fullTextXML.xml",
+  "route": "fullTextXML"
+ },
+ {
+  "pmcid": "PMC2737683",
+  "routes": [
+   {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2737683/fullTextXML",
+    "error": "HTTP Error 404: Not Found"
+   },
+   {
+    "url": "https://europepmc.org/articles/PMC2737683?pdf=render",
+    "error": "HTTP Error 500: "
+   }
+  ],
+  "route": "FAILED"
+ },
+ {
+  "pmcid": "PMC12696799",
+  "routes": [
+   {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12696799/fullTextXML",
+    "status": 200,
+    "bytes": 124175
+   }
+  ],
+  "saved": "PMC12696799-fullTextXML.xml",
+  "route": "fullTextXML"
+ }
+]

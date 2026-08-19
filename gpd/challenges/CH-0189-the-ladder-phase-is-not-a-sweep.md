@@ -5,7 +5,7 @@
 | **Against** | [`C-0141`](../claims/C-0141-honeycomb-station-lattice-and-placement.md) §5, *"Every phase of every case is enumerated — 21 phases × 3 offsets × 2 row lengths × 2 cross-sections"*, read as an enumeration of **available** designs; and [`C-0146`](../claims/C-0146-coupled-cells-at-the-two-length-raster.md) §2 / [`CH-0184`](CH-0184-the-inter-row-offset-stops-being-free.md) §2, which report *"the two-length raster, best of 42 pairs: **60**, at **phase 11 / 14 bp**"* as an attainable optimum |
 | **Raised by** | [`C-0148`](../claims/C-0148-face-bond-class-residues-and-row-span-columns.md) / [`T-244`](../tasks/T-244-face-bond-class-residues.md), result [`gpd/results/T-244-face-bond-class-residues.json`](../results/T-244-face-bond-class-residues.json), sections `determined` and `census` |
 | **Grounds** | **logical.** The `±5 bp` scaffold-crossover rule read from the primary source, applied to `C-0140`'s own level walk. Exact integer arithmetic; `CH-0184`'s 42-cell table is reproduced first, at departure `0.0` |
-| **Status** | **raised.** `C-0141`'s enumeration is correct as an enumeration and its **structural** results — the forced stagger, the parity rule, the 30° azimuth, the centro-symmetry criterion — are untouched, being properties of the offset and of the row parity rather than of the phase |
+| **Status** | **ANSWERED** by [`C-0151`](../claims/C-0151-closing-raster-selection.md) (`T-245`), which grades the coupled design **at the determined phase** — 16, offset 14, 55 of 60 stations, no graded column count refused, and a **six**-column placement capped out by the sparsest row's five. `C-0141`'s enumeration is correct as an enumeration and its **structural** results — the forced stagger, the parity rule, the 30° azimuth, the centro-symmetry criterion — are untouched, being properties of the offset and of the row parity rather than of the phase |
 
 ---
 
@@ -73,3 +73,10 @@ A sweep of **closing** length pairs for the station census: the three closing re
 the `10 × 6` path are `(7, 14)`, `(17, 3)` and `(18, 4)` modulo 21, and only the last has been
 examined. If some closing pair's determined phase saturates the census, the six-column placement
 returns — at a raster nobody has graded.
+
+> **Done, by [`C-0151`](../claims/C-0151-closing-raster-selection.md) §4b, and the answer is a
+> price.** Exactly **one** closing pair inside M13 saturates the `10 × 6` census — `123 / 109 bp`,
+> 60 of 60 stations at 6 per row, determined phase 2 — and its axial extent is **137 bp =
+> 46.58 nm, `+16.45 %`** on §3's nominal 40.0 nm. No saturating closing pair inside M13 comes
+> within 5 % of the nominal width. **The six-column placement is drawable and costs a tile sixteen
+> per cent too wide.**

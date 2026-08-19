@@ -1,0 +1,50 @@
+HITS 0      "DNA origami" AND "irregular crossover"
+HITS 0      "DNA origami" AND "unconventional crossover"
+HITS 43     "DNA origami" AND caDNAno AND "manually" AND crossover
+   PMC13255533  2026   Tools For Building Artificial Biological Nanostructures.
+   PMC11621765  2024   Design principles for accurate folding of DNA origami.
+   PMC13204131  2026   DNA Origami and Their Application in Biosensors.
+   PMC11754647  2025   Generative design-enabled exploration of wireframe DNA origami nanostructures.
+   PMC11057029  2024   Designing Rigid DNA Origami Templates for Molecular Visualization Using Cryo-EM.
+   PMC11735872  2025   Crystalline Assemblies of DNA Nanostructures and Their Functional Properties.
+   PMC10371787  2023   Reverse engineering DNA origami nanostructure designs from raw scaffold and staple sequence lists.
+   PMC10100577  2023   Computer-Aided Design of A-Trail Routed Wireframe DNA Nanostructures with Square Lattice Edges.
+   PMC9788767   2022   Automated design of 3D DNA origami with non-rasterized 2D curvature.
+   PMC10176269  2023   Self-assembly of DNA origami for nanofabrication, biosensing, drug delivery, and computational storage.
+   PMC11001925  2024   Mechanism of DNA origami folding elucidated by mesoscopic simulations.
+   PMC11067225  2024   Folding molecular origami from ribosomal RNA.
+   PMC8501967   2021   Rapid prototyping of arbitrary 2D and 3D wireframe DNA origami.
+   PMC9232119   2021   Design Approaches and Computational Tools for DNA Nanostructures.
+   PMC11291742  2024   Predicting the effect of binding molecules on the shape and mechanical properties of structured DNA assemblies
+   PMC8728195   2022   Nanobase.org: a repository for DNA and RNA nanostructures.
+   PMC10371015  2023   Versatile computer-aided design of free-form DNA nanostructures and assemblies.
+   PMC8071251   2021   The Art of Designing DNA Nanostructures with CAD Software.
+   PMC7276390   2020   <i>In silico</i> modelling of DNA nanostructures.
+   -            2022   Estimation of microtubule-generated forces using a DNA origami nanospring
+   PMC10950783  2024   A DNA turbine powered by a transmembrane potential across a nanopore.
+   PMC10395309  2023   Mechanics of dynamic and deformable DNA nanostructures.
+   PMC7470936   2020   Adenita: interactive 3D modelling and visualization of DNA nanostructures.
+   PMC11419732  2021   DNA Origami Design: A How-To Tutorial.
+   PMC7229838   2020   MrDNA: a multi-resolution model for predicting the structure and dynamics of DNA systems.
+HITS 0      scadnano OR cadnano AND "crossover" AND "violat"
+HITS 0      "DNA origami" AND "helical phase" AND crossover
+HITS 4      "DNA origami" AND "defect rate" AND staple
+   PMC12907558  2026   Complex cooperativity in DNA origami revealed via design-dependent defectivity.
+   PMC11735872  2025   Crystalline Assemblies of DNA Nanostructures and Their Functional Properties.
+   PMC10818227  2023   Multi-micron crisscross structures grown from DNA-origami slats.
+   PMC11988993  2025   Advancements in Lithography Techniques and Emerging Molecular Strategies for Nanostructure Fabrication.
+HITS 2      "DNA origami" AND "crossover" AND "kinetic trap" AND yield
+   PMC10566746  2023   Structure, folding and flexibility of co-transcriptional RNA origami.
+   -            2022   High-resolution structures and conformational dynamics of RNA origami during folding
+HITS 11     "DNA origami" AND "junction" AND "strain" AND "folding yield"
+   PMC10103138  2023   Recent Advances in DNA Origami-Engineered Nanomaterials and Applications.
+   PMC9232119   2021   Design Approaches and Computational Tools for DNA Nanostructures.
+   PMC7221932   2020   Increasing Complexity in Wireframe DNA Nanostructures.
+   PMC7610888   2021   RNA origami design tools enable cotranscriptional folding of kilobase-sized nanoscaffolds.
+   PMC9872083   2023   3D RNA-scaffolded wireframe origami.
+   PMC5934368   2018   Isothermal folding of a light-up bio-orthogonal RNA origami nanoribbon.
+   PMC6384012   2017   Single-stranded DNA and RNA origami.
+   PMC6214983   2018   Programming molecular topologies from single-stranded nucleic acids.
+   PMC3265375   2011   Nanomechanical DNA origami 'single-molecule beacons' directly imaged by atomic force microscopy.
+   PMC5989258   2018   In vivo production of RNA nanostructures via programmed folding of single-stranded RNAs.
+   PMC6767941   2019   Award Winners and Abstracts of the 33rd Annual Symposium of The Protein Society; Seattle, Washington, June 30-

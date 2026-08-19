@@ -1,0 +1,708 @@
+
+ Multilayer DNA Origami Packed on a Square Lattice - PMC
+ Skip to main content
+ An official website of the United States government
+Here's how you know
+Here's how you know
+Official websites use .gov
+ A
+.gov
+ website belongs to an official
+ government organization in the United States.
+Secure .gov websites use HTTPS
+ A 
+lock
+ (
+Lock
+ Locked padlock icon
+) or 
+https://
+ means you've safely
+ connected to the .gov website. Share sensitive
+ information only on official, secure websites.
+ Search
+Log in
+ Dashboard
+ Publications
+ Account settings
+ Log out
+ Search…
+ Search NCBI
+ Primary site navigation
+ Search
+ Logged in as:
+ Dashboard
+ Publications
+ Account settings
+ Log in
+Search PMC Full-Text Archive
+Search in PMC
+ Journal List
+ User Guide
+PERMALINK
+Copy
+ As a library, NLM provides access to scientific literature. Inclusion in an NLM database does not imply endorsement of, or agreement with,
+ the contents by NLM or the National Institutes of Health.
+ Learn more:
+PMC Disclaimer
+ |
+ PMC Copyright Notice
+J Am Chem Soc
+. Author manuscript; available in PMC: 2010 Feb 15.
+Published in final edited form as: 
+J Am Chem Soc. 2009 Nov 4;131(43):15903. doi: 
+10.1021/ja906381y
+Search in PMC
+Search in PubMed
+View in NLM Catalog
+Add to search
+Multilayer DNA Origami Packed on a Square Lattice
+Yonggang Ke
+Yonggang Ke
+†
+Department of Chemistry and Biochemistry, and the Biodesign Institute, Arizona State University, Tempe, Arizona 85287
+Find articles by 
+Yonggang Ke
+†
+, 
+Shawn M Douglas
+Shawn M Douglas
+‡
+Department of Cancer Biology, Dana-Farber Cancer Institute, and Department of Biological Chemistry and Molecular Pharmacology, Harvard Medical School, Boston, Massachusetts 02115, Wyss Institute for Biologically Inspired Engineering at Harvard, Cambridge, Massachusetts 02138
+Find articles by 
+Shawn M Douglas
+‡
+, 
+Minghui Liu
+Minghui Liu
+†
+Department of Chemistry and Biochemistry, and the Biodesign Institute, Arizona State University, Tempe, Arizona 85287
+Find articles by 
+Minghui Liu
+†
+, 
+Jaswinder Sharma
+Jaswinder Sharma
+†
+Department of Chemistry and Biochemistry, and the Biodesign Institute, Arizona State University, Tempe, Arizona 85287
+Find articles by 
+Jaswinder Sharma
+†
+, 
+Anchi Cheng
+Anchi Cheng
+§
+National Resource for Automated Molecular Microscopy, The Scripps Research Institute, La Jolla, California 92037
+Find articles by 
+Anchi Cheng
+§
+, 
+Albert Leung
+Albert Leung
+§
+National Resource for Automated Molecular Microscopy, The Scripps Research Institute, La Jolla, California 92037
+Find articles by 
+Albert Leung
+§
+, 
+Yan Liu
+Yan Liu
+†
+Department of Chemistry and Biochemistry, and the Biodesign Institute, Arizona State University, Tempe, Arizona 85287
+Find articles by 
+Yan Liu
+†
+, 
+William M Shih
+William M Shih
+‡
+Department of Cancer Biology, Dana-Farber Cancer Institute, and Department of Biological Chemistry and Molecular Pharmacology, Harvard Medical School, Boston, Massachusetts 02115, Wyss Institute for Biologically Inspired Engineering at Harvard, Cambridge, Massachusetts 02138
+Find articles by 
+William M Shih
+‡,
+*
+, 
+Hao Yan
+Hao Yan
+†
+Department of Chemistry and Biochemistry, and the Biodesign Institute, Arizona State University, Tempe, Arizona 85287
+Find articles by 
+Hao Yan
+†,
+*
+Author information
+Copyright and License information
+†
+Department of Chemistry and Biochemistry, and the Biodesign Institute, Arizona State University, Tempe, Arizona 85287
+‡
+Department of Cancer Biology, Dana-Farber Cancer Institute, and Department of Biological Chemistry and Molecular Pharmacology, Harvard Medical School, Boston, Massachusetts 02115, Wyss Institute for Biologically Inspired Engineering at Harvard, Cambridge, Massachusetts 02138
+§
+National Resource for Automated Molecular Microscopy, The Scripps Research Institute, La Jolla, California 92037
+*
+hao.yan@asu.edu
+; 
+William_Shih@dfci.harvard.edu
+© XXXX American Chemical Society
+PMC Copyright notice
+PMCID: PMC2821935  NIHMSID: NIHMS153364  PMID: 
+19807088
+The publisher's version of this article is available at 
+J Am Chem Soc
+Abstract
+Molecular self-assembly using DNA as a structural building block has proven to be an efficient route to the construction of nanoscale objects and arrays of increasing complexity. Using the remarkable “scaffolded DNA origami” strategy, Rothemund demonstrated that a long single-stranded DNA from a viral genome (M13) can be folded into a variety of custom two-dimensional (2D) shapes using hundreds of short synthetic DNA molecules as staple strands. More recently, we generalized a strategy to build custom-shaped, three-dimensional (3D) objects formed as pleated layers of helices constrained to a honeycomb lattice, with precisely controlled dimensions ranging from 10 to 100 nm. Here we describe a more compact design for 3D origami, with layers of helices packed on a square lattice, that can be folded successfully into structures of designed dimensions in a one-step annealing process, despite the increased density of DNA helices. A square lattice provides a more natural framework for designing rectangular structures, the option for a more densely packed architecture, and the ability to create surfaces that are more flat than is possible with the honeycomb lattice. Thus enabling the design and construction of custom 3D shapes from helices packed on a square lattice provides a general foundational advance for increasing the versatility and scope of DNA nanotechnology.
+Introduction
+One of the prominent goals in molecular and nanoscale engineering is to achieve rationally designed 3D structures with high predictability and efficiency. Conventional methods for 3D nanofabrication thus far have relied on top-down lithographic approaches. For example, ion-beam lithography can produce features with nanometer resolution,
+1
+ but is characterized by slow throughput, which makes it impractical for large-area manufacturing. DNA-based nanofabrication offers many unique advantages in 3D nanopatterning over conventional methods, due to the fact that DNA is an information-carrying polymer. DNA can be programmed to assume specific robust branched shapes on the nanoscale, and intermolecular interactions of DNA can be programmed using base pairing to link components together to form stick figures, 2D lattices, and 3D lattices that can organize functional chemical species on the nanoscale.
+2
+Extending the advantage of sequence and spatial address-ability inherent in DNA nanostructures, 2D DNA nanoarrays have recently been used to display custom-designed surface patterns for the purpose of detection and organization of other molecules such as proteins and nanoparticles.
+3
+–
+7
+ Ever since the introduction of the DNA-origami concept,
+8
+ it has been an attractive goal to transform the design principle of 2D DNA origami into 3D folding strategies. Recently, successes in this direction have been achieved, for example with the honeycomb-pleated method mentioned above.
+9
+ As another example, origami of a hollow-box-like structure in cubic
+10
+,
+11
+ and tetrahedral
+12
+ shapes has been demonstrated by linking discrete 2D arrays assembled on a single scaffold such that they collectively enclose a three-dimensional volume. In the latter three examples, as well as in the original Rothemund-style origami, the helices are arranged on a single layer of a square lattice. Therefore a more direct extension of these 2D origami to 3D solid structures would invoke stacking of flat sheets of helices in alignment with a square rather than a honeycomb lattice, although this would be feasible only if the arrangement of charged DNA helices at such a high density was stable and kinetically accessible. Thus we were motivated to determine experimentally whether this would be a viable approach.
+Design
+The strategy to assemble the square-lattice DNA solid blocks is displayed in 
+Figure 1
+. For illustration purposes, only a small portion of the cuboid structure is shown, where 12 parallel helices, each 32 base pairs (bp) long, are arranged into a 3 by 4 square lattice viewed from the end. This is achieved conceptually by folding a plane of parallel DNA double helices (labeled numerically in 
+Figure 1a
+) into multiple layers such that helices all fall into a square lattice. In turn, this square-lattice arrangement of double helices can be conceived as the result of first laying down a scaffold strand in a raster pattern as an array of antiparallel helices (numbered sequentially in 
+Figure 1b
+). Next, complementary staple strands are wound in an antiparallel direction around the scaffold strands to assemble B-form double helices that have initial geometrical parameters of 2.0 nm diameter, 0.34 nm per bp rise, and 33.75° per bp average twist (or 32 bp per 3 turns; these parameters can be adjusted in the spatial model later). This initially imposed double-helical twist density implies a slight underwinding compared to the preferred 34.3° per bp or 10.5 bp per turn; this underwinding would be predicted to lead to a compensatory global right-handed twist of the entire structure.
+13
+ In the square lattice, each double helix has up to four nearest neighbors and is designed to link to each with antiparallel strand crossovers. For explanatory purposes, here we assume that only staple strands, and not the scaffold strand, cross over between adjacent helices. Every 8 bp, the staple strand of a given double helix completes a rotation of 8 bp/(10.67 bp/turn) = 0.75 turns. Thus every 8 bp, that staple strand is positioned to cross over to one of its four neighbors; that is, starting from 0 bp as “north”, then moving away from the viewer by 8 bp gives a clockwise rotation of 0.75 turns to “west”, moving 16 bp away gives a rotation of 1.5 turns to “south”, moving 24 bp away gives a rotation of 2.25 turns to “east”, and moving 32 bp away gives a rotation of 3.0 turns back to “north”. Thus adjacent helices share crossovers every 32 bp, and the positions of the crossovers are restricted to periodic intersection or “crossover” planes, labeled from i to iv, spaced at 8 bp intervals as illustrated in the scheme views in 
+Figure 1b
+ and section views in 
+Figure 1c
+. The crossover pattern in the fifth plane is exactly the same as that of the first plane; thus it is labeled as i again. As with the honeycomb-pleated designs, alternate routing paths of the scaffold strand can be chosen to achieve the same overall target structure, as long as every designed helix is visited.
+Figure 1.
+Open in a new tab
+Design of multilayer three-dimensional DNA origami on a square lattice. (a) Helical DNA model of the 3D origami square-lattice structure. The scaffold strand is in gray and the staple strands are in three shades of blue. This model is equivalent to the cylinder model shown on the right. Each cylindrical rod represents one DNA double helix. The numbers labeled at the helical ends indicate the order of the scaffold-strand segments that thread through the helices. (b) Layout and connectivity of the scaffold strand (gray) and the staple strands (colored), in an unfolded two-dimensional scheme of the target shape. Phosphate linkages that form crossovers between adjacent helices are shown as curved lines. The positions of the crossover points of the staple strands are labeled from i to iv, which are spaced apart at 8-bp intervals. (c) Three-dimensional cylinder model of the folded target shape. The square-lattice arrangement of parallel helices is revealed in cross-sectional slices (i–iv) that are parallel to the 
+xy
+-plane spaced at 8-bp intervals and repeating every 32 bp. Staple crossovers are shown as white lines linking two adjacent helices at each cross section.
+To create a desired cuboid shape, the dimensions of the target cuboid first must be specified, and these are determined by the number of layers, the number of helices per layer, and the length of each DNA helix. The maximum potential size of the structure is limited by the length of the scaffold strand. Unpaired scaffold bases often are introduced at the ends of helices (as unpaired loops) to minimize undesired multimerization. A longer unpaired loop is also needed to span the distance from the starting point of the first helix to the ending point of the last helix if the scaffold strand has a circular loop topology. Alternatively, if a seam
+8
+ composed of scaffold crossovers is implemented on the inside of the structure, then a circular scaffold path can be accommodated without the need for the long unpaired loop.
+Next, the crossovers of the staple strands between neighboring helices in the cuboid are assigned at the locations of the intersection planes, following the patterns as shown in 
+Figure 1b and c
+. These crossovers are labeled on the 2D scheme (
+Figure 1b
+) as thin lines, indicating direct connectivity of the phosphate backbone. Nick points are then introduced to break the staple strands into appropriate lengths ranging from 32 to 45 nucleotides (nt) long. Finally, the actual sequence of the scaffold strand is threaded on the target scaffold path so that the Watson–Crick-complementary sequences of the staple strands can be determined.
+Results and Discussion
+Four different cuboid shapes with various dimensions were designed and tested experimentally. The number of folded layers of the DNA helical planes ranges from 2 to 8, as illustrated in Figure 2a–d. The dimensions of the cuboids, 
+m
+ × 
+n
+ × 
+d
+, where 
+m
+ is the number of layers, 
+n
+ is the number of helices per layer, and 
+d
+ is the number of base-paired helical turns, are 2 × 21 × 15.75, 3 × 14 × 15.75, 6 × 12 × 7.5, and 8 × 8 × 9.0, respectively, which are translated into the length scale marked in the figures (assuming 3.5 nm per helical turn and 2.0 nm per helical diameter with no gap between helices). The scaffold used is the single-stranded M13mp18 (purchased from New England Biolabs, cat # N4040S), which is 7249 nt long, or else a variant with a site-directed insertion in the multiple cloning site that results in a final construct that is 8064 nt long.
+9
+ Target structures were designed so that 90–97% of the scaffold strand should be paired with staple strands. The remaining scaffold material was designed as unpaired loops at the ends of the helices. The 8 × 8 × 9.0 designs were implemented with a custom computer program. The 2 × 21 × 15.75, 3 × 14 × 15.75, and 6 × 12 × 7.5 designs were aided by the computer software caDNAno,
+14
+ which we modified to support this square-lattice design (the original version only supported the honeycomb-lattice pattern of antiparallel helices).
+For the formation of each designed DNA cuboid, the 174 to 221 staple strands (desalted oligodeoxyribonucleotides, custom ordered on 96-well plates from Bioneer for the 2 × 21 and 3 × 14 designs and from Integrated DNA Technology for the 6 × 12 and 8 × 8 designs) were mixed with the scaffold strand in 5-fold or 10-fold molar excess. A one-pot reaction (see below for details of thermal ramp) allowed hybridization of the scaffold strand with the hundreds of staple strands that direct its folding into the target shape. The annealed mixtures were subjected to agarose-gel electrophoresis. Next, rapidly migrating bands corresponding to monomeric, well-folded species were excised from the gel and recovered by physical extraction using a Freeze-N-Squeeze column (see experimental details in the 
+Supporting Information
+). The purified structures were imaged by transmission electron microscopy (TEM) after negative staining by uranyl formate or directly imaged by cryo-EM where the native conformations of the structures might be better preserved in vitreous ice during the quick freezing. Successful folding for the 6 × 12 and 8 × 8 designs was observed at the following conditions: 1 × TAE•Mg buffer (pH 8.0) that contains 20 mM Tris•acetate, 1 mM EDTA, and 12.5 mM Mg
+2+
+, and thermal annealing by rapid heating to 90 °C followed by slow cooling to 4 °C over 48 h (6 × 12 design) or 24 h (8 × 8 design). Successful folding for the 2 × 21 and 3 × 14 designs was observed at the following conditions: 5 mM Tris + 1 mM EDTA (pH 8.0), 16 mM MgCl
+2
+, and a thermal annealing ramp from 80 to 60 °C over the course of 80 min, followed by a ramp from 60 to 24 °C over the course of 172 h.
+The four objects displayed in 
+Figure 2
+ demonstrate the generality of this square-lattice origami approach in constructing the multilayered 3D DNA nanostructures, with increasing number of DNA layers (2, 3, 6, or 8 layers). TEM images of negatively stained samples show both the side view and top views of the assembled products corresponding to the designed structures. High-resolution zoom-in images clearly reveal the number of helices per layer and number of layers in each structure. The images also show increased contrast with increasing number of layers, consistent with the expected constructive reinforcement. The top-view images of the two-layer structure have the lowest contrast due to the thinness of the particles. The estimated yields of each structure were 56%, 89%, 27%, and 59% for two-, three-, six-, and eight-layer structures, respectively (see 
+Supporting Information
+ for methods of estimating yield used here in comparison to methods for estimating yield for previously analyzed honeycomb structures
+14
+).
+Figure 2.
+Open in a new tab
+3D DNA origami solid blocks. (a) Two-layer structure. (b) Three-layer structure. (c) Six-layer structure. (d) Eight-layer structure. The 3D perspective cylinder view and the projections of the top view and the side view are shown. Each cylinder represents a DNA double helix. For the 8-layer block in d, the end-view projection is shown. On the right are the representative transmission electron microscope (TEM) micrographs of negatively stained particles observed. The scale bars are 20 nm. For imaging, samples were adsorbed for 30 s onto glow-discharged grids (carbon-coated grid, 400 mesh, Ted Pella) and stained with 0.7% uranyl formate. Excess stain was wicked away by touching with a piece of filter paper, then dried at room temperature. The samples were imaged with a Philips CM200 microscope, operated at 200 kV in the bright field mode.
+The side views of the two-layer and three-layer structures display significant global twisting, while the six-layer and eight-layer structures do not. This behavior can be understood on the basis of a global relaxation in response to local underwinding of double helices.
+13
+ In the square-lattice structures, the initially imposed double-helical twist density is set as 10.67 bp/turn (i.e., 8 bp per 0.75 turns). If the preferred double-helical twist density for B-DNA is 10.5 bp/turn, then the double helices in the square lattice are underwound. The bundle of double helices will adopt a global right-handed twist in order to relieve the strain of the local underwinding. The magnitude of the global twist should vary inversely with the torsional stiffness of the structure and vary directly with the amount of torque. The torsion constant 
+J
+ for a cuboid as a function of cross-sectional dimensions can be approximated with the following formula:
+15
+J
+≈
+a
+b
+3
+(
+1
+3
+−
+0.210
+b
+a
+(
+1
+−
+b
+4
+12
+a
+4
+)
+)
+ where 
+a
+ is the long width of the cross section and 
+b
+ is the short width of the cross section. The torsional stiffness of each object should vary inversely with the length. We can estimate the normalized torsional stiffness of the 2 × 21 × 15.75, 3 × 14 × 15.75, 6 × 12 × 7.5, and 8 × 8 × 9.0 blocks as 1.0, 2.1, 24, and 19, respectively. Thus the 6 × 12 × 7.5 and 8 × 8 × 9.0 designs should be about 10 times more stiff than the 3 × 14 × 15.75 design. Furthermore, the total internal torque experienced by the 3 × 14 × 15.75 design would be expected to be significantly greater than for the 6 × 12 × 7.5 or 8 × 8 × 9.0 designs, since the underwound helices on the extremities of the block will contribute, by virtue of a larger mechanical advantage, a larger torque than the ones near the middle, and the average distance from the center is greater for the extended designs. Taken together, the combination of less internal torque and much greater torsional resistance would be expected to manifest as very little noticeable global compensatory twisting for the 6 × 12 × 7.5 and 8 × 8 × 9.0 designs.
+We sought to diminish the global twisting observed for the 3 × 14 × 15.75 design by introducing targeted deletions to reduce the initially imposed double-helical twist density to 10.5 bp/turn. This was implemented by removing a single bp from all helices in a cross section of the structure every 64 bp. TEM imaging revealed that global twisting was reduced; however a significant amount of global twisting still was evident. This was surprising, as 10.5 bp/turn was previously found to result in no global twist for honeycomb-lattice designs.
+13
+ Next we sought to overwind the double helices past 10.5 bp/turn to eliminate the residual global twisting. We constructed two more versions of the 3 × 14 × 15.75 design, with initially imposed double-helical twist densities of 10.44 and 10.39 bp/turn, respectively. The former was achieved by removing four bp evenly spaced along the 192-bp length ((192 − 4)/(24 × 0.75) = 10.44), while the latter was achieved by removing five bp evenly spaced along the 192-bp length ((192 − 5)/(24 × 0.75) = 10.39).
+To make visualization of global twisting more obvious, we programmed the structures to form ribbons consisting of head-to-tail multimers (
+Figure S2
+). We folded the structures, gel-purified monomeric particles, and then added staple strands that bridge the front and back ends such that homomultimers should form. We verified that the 10.5 bp/turn design retains a right-handed global twist by imaging ribbons with the TEM goniometer turned to +40° and then again with the TEM goniometer turned to −40° (i.e., counterclockwise rotation) and observing the nodes of the ribbons moving upward.
+13
+ No systematic global twist could be discerned with the 10.44 bp/turn and 10.39 bp/turn designs. Why the local double-helical twist density has to be slightly overwound to eliminate global twist in square-lattice designs is unclear. One speculative possibility is that global twisting stiffness may have two components, perhaps related to the presence of crossover junctions: a soft mode for small-amplitude twists and a hard mode for larger-amplitude twists. In this model, when the average double-helical twist density is 10.5 bp/turn, the sum of right-handed global twisting over the slightly underwound segments, mainly absorbed by the soft mode, is not fully compensated by the left-handed global twisting of the highly overwound segments, which saturate the soft mode and enter the hard mode. An analogous model has been discussed for two-component stretching of dsDNA.
+16
+To further reveal the 3D conformation of a square-lattice-based design, we investigated the eight-layer DNA-origami structure using cryo-EM imaging in which the structure might be better preserved in native conformation during quick freezing. We observed interesting internal structure that we can account for as described below. In our default design strategy, some staple breaks must be implemented between crossovers 8 bp apart. For the two-layer and three-layer structures, very few such breaks need to be incorporated. However, for the six-layer design, many such breaks must be used. We observed significantly lower yield for these structures. Introducing these breaks may be destabilizing for the structure. Alternatively, simply having a large number of layers with our default crossover pattern may be destabilizing, irrespective of the position of the breaks.
+For the 8 × 8 design, we avoided the implementation of such staple breaks by omitting many crossovers in the core of the block (
+Figure 3b
+). For this design, we observed a high yield of well-folded structures. These results suggest that omitting crossovers produces more relaxed structures that are easier to realize or else that the omission of staple breaks positioned between crossovers 8 bp apart could improve folding quality as well. Future systematic studies will be required to determine the relative importance of these staple breaks toward affecting folding efficiency.
+Figure 3.
+Open in a new tab
+Cryo-EM images of the 8 × 8 square lattice. (a) Three-dimensional cylinder model of a hypothetical 8 × 8 square lattice with all default staple crossovers intact. Cross-sectional slices i to iv (parallel to the 
+xy
+-plane, spaced at 8-bp intervals) reveal that each slice retains 28 crossovers (short line in red), evenly distributed across the 
+xy
+-plane. The crossovers in i and iii sectional slices are parallel to the 
+xz
+-plane, while the crossovers in ii and iv sectional slices are parallel to the 
+yz
+-plane. (b) 3D cylinder model of an 8 × 8 square lattice in which crossovers have been systematically omitted from i and iii sectional slices. This design decreases the density of crossovers parallel to the 
+xz
+-plane. (c) Diagram illustrating the distribution of crossovers in the 8 × 8 square lattice along 
+xy
+-, 
+xz
+-, and 
+yz
+-projections. As a result of the omissions of crossovers parallel to the 
+xz
+-plane, the numbers of crossovers along lines parallel to the 
+y
+-axis are significantly smaller at certain positions (number of crossovers indicated in red). (d) Left to right: predicted model of 8 × 8 square lattice in 
+xz
+-projection; cryo-EM image of a single particle; and averaged image of 45 particles showing the side view corresponding to the 
+xz
+-projection. (e) Left to right: predicted model of 8 × 8 square lattice in 
+yz
+-projection; cryo-EM image of a single particle; and averaged image of 70 particles showing the side view coresponding to the 
+yz
+-projection. (f) Cryo-EM image of a particle showing the end view corresponding to the 
+xy
+-projection. (g) Cross-section analysis of the images gives the width of the construct from which the periodicity of the helices in the structure can be obtained. (h) Narrow distribution of helical widths centered at 2.6 nm. Scale bars in d–g: 20 nm.
+The omission of crossovers we implemented leaves behind an uneven distribution of the remaining crossovers in the 8 × 8 square lattice (
+Figure 3c
+). We define the 
+z
+-axis as the helical axis, and the other two axes as 
+x
+ and 
+y
+, respectively. In our design, many helices that are adjacent in the 
+x
+-direction do not share any crossovers; thus electrostatic repulsion will cause them to bow away from each other. Consistent with our design, the cryo-EM images reveal that there are three distinguishable populations of particle views: (1) Particle views corresponding to the 
+xz
+-projection of the 8 × 8 square lattice (
+Figure 3d
+). In the averaged cryo-EM image, we can clearly see some larger spaces between two neighboring slices of DNA helices at the positions with a low number of crossovers summed along the 
+y
+-axis (low numbers indicated by red numerals). (2) Particles corresponding to the 
+yz
+-projection of the 8 × 8 square lattice (
+Figure 3e
+). Due to the even distribution of crossovers between helices that are adjacent in the 
+y
+-direction, the spaces between two neighboring slices of helices appear uniform at every position. (3) Particle views corresponding to the 
+xy
+-projection of the 8 × 8 square lattice (
+Figure 3f
+). This image clearly shows a 90° angle between the rows of helices arrayed along the 
+x
+- and 
+y
+-axes. However, only a small number of 8 × 8 structures could be found in this orientation; thus we could not generate accurate averaged images for this class of particle views. On the basis of these cryo-EM images, we estimated the effective diameter of the double helix in the structures as the width of the cuboids divided by the number of helix layers, which gives a result of 2.6 nm (±0.1 nm SD) per helix. Assuming an unhydrated helical diameter of 2.0 nm (although the hydrodynamic helical diameter
+17
+ has been estimated as 2.2 to 2.6 nm), this observation suggests the presence of interhelical gaps produced by electrostatic repulsion on the order of 0.6 nm, smaller than the 1.0 nm gap size estimated for Rothemund’s flat 2D origami and larger than the one observed in the 3D origami packed on the honeycomb lattice. This is possibly due to the longer distances between the crossover points along a pair of adjacent helices, i.e., three turns in the square-lattice design and two turns in the honeycomb-lattice design. Apparent differences in effective helix diameter between architectures may originate in part from staining artifacts (e.g., cavities where large amounts of positively charged stain accumulate, or flattening).
+13
+ Here the cryo-EM imaging should better resemble the native parameters.
+Discussion and Conclusion
+In summary, we have achieved the design and construction of multilayer 3D DNA nanostructures using the scaffolded-DNA-origami strategy with DNA helices packed on a square-lattice geometry. The new design parameters learned here provide us knowledge for building a more diverse set of 3D nanostructures. We expect that the square-lattice 3D objects should be more stable if cross-sectional area or volume is a constraint, since material density is higher. One might also anticipate that square-lattice structures should be more resistant to compression. Although further studies are needed to better understand their mechanical properties at a single-molecule level, we believe the multilayer structures developed here may find great potential in controlling the precise orientation of guest macromolecules by carving geometrically defined cavities across the layers. For example, arrays of microscopic features comprising different proteins are extremely important for proteomics and bioagent screening. Deposition of proteins onto electrodes has also been used to achieve efficient electron transfer from protein to the electrode for detection, energy, and environmental applications (e.g., electron transfer plays a pivotal role in biological functions essential to life, such as photosynthesis, respiration, and metabolic pathways; use of electroactive enzymes requires good contact of the enzyme with the electrode surface
+18
+). Conventional patterning techniques such as microcontact printing, spot arraying, or dip-pen nanolithography
+19
+ lack precise control of the protein orientation on and the distance from the surface. As a result, ligand-binding sites presented by the immobilized proteins can face up, down, or parallel to the surface such that only a small percentage of the protein molecules are functional. We believe our multilayer-square-lattice DNA origami nanostructures can be used to direct the organization of protein nanoarrays with precise control of the protein orientation, height from surface, local environment, and two-dimensional addressable position. Given the fact that there has been considerable progress in DNA-directed self-assembly of other materials, it is foreseeable that programmable 3D nanoassemblies may soon realize their great potential as promising biomimetic materials.
+Supplementary Material
+Supporting info
+NIHMS153364-supplement-Supporting_info.pdf
+ (39.2MB, pdf) 
+Acknowledgment
+This work was supported by grants from NSF, NIH, ONR, ARO, AFOSR, and DOE and a Sloan Research Fellowship to H.Y. and grants from NSF, ARO, and ONR to Y.L. This work was also supported by Claudia Adams Barr Program Investigator, Wyss Institute for Biologically Inspired Engineering, and NIH New Innovator (1DP2OD004641-01) grants to W.M.S. National Resource for Automated Molecular Microscopy is supported by the National Institutes of Health though the National Center for Research Resources’ P41 program (RR17573). We thank Erica Jacovetty for technical assistance.
+Footnotes
+Supporting Information Available:
+ Experimental methods, gel electrophoresis, sequence designs, and additional TEM images are available free of charge via the Internet at 
+http://pubs.acs.org
+.
+References
+1.
+Tseng AA. Small. 2005;10:924–939. doi: 10.1002/smll.200500113.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+2.
+Seeman NC. Nature (London, U. K.) 2003;421:427–431. doi: 10.1038/nature01406.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]; 
+He Y, Ye T, Su M, Zhang C, Ribble AE, Jiang W, Mao C. Nature. 2008;452:198–201. doi: 10.1038/nature06597.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]; 
+Zhang C, Su M, He Y, Zhao X, Fang P, Ribble AE, Jiang W, Mao C. Proc. Natl. Acad. Sci. U.S.A. 2008;105:10665–10669. doi: 10.1073/pnas.0803841105.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]; 
+Shih WM, Quispe JD, Joyce GF. Nature. 2004;427:618–621. doi: 10.1038/nature02307.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]; 
+Winfree E, Liu F, Wenzler LA, Seeman NC. Nature (London) 1998;394:539–544. doi: 10.1038/28998.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]; 
+Aldaye FA, Sleiman HF. J. Am. Chem. Soc. 2009;129:13376–13377. doi: 10.1021/ja075966q.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]; 
+Fu TJ, Seeman NC. Biochemistry. 1993;32:3211–3220. doi: 10.1021/bi00064a003.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]; 
+Li X, Yang X, Qi J, Seeman NC. J. Am. Chem. Soc. 1996;118:6131–6140.
+ [
+Google Scholar
+]; 
+Rothemund PWK, Ekani-Nkodo A, Papadakis N, Kumar A, Fygenson DK, Winfree E. J. Am. Chem. Soc. 2004;126:16344–16352. doi: 10.1021/ja044319l.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]; 
+Mathieu F, Liao S, Kopatsch J, Wang T, Mao C, Seeman NC. Nano Lett. 2005;5:661–665. doi: 10.1021/nl050084f.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]; 
+Yin P, Hariadi RF, Sahu S, Choi HMT, Park SH, LaBean TH, Reif JH. Science. 2008;321:824–826. doi: 10.1126/science.1157312.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]; 
+Goodman RP, Schaap IAT, Tardin CF, Erben CM, Berry RM, Schmidt CF, Turberfield AJ. Science. 2005;310:1661–1665. doi: 10.1126/science.1120367.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]; 
+Chen J, Seeman NC. Nature (London) 1991;350:631–633. doi: 10.1038/350631a0.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]; 
+Zhang Y, Seeman NC. J. Am. Chem. Soc. 1994;116:1661–1669.
+ [
+Google Scholar
+]
+3.
+Yan H, Park SH, Finkelstein G, Reif JH, LaBean TH. Science. 2003;301:1882–1884. doi: 10.1126/science.1089389.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+4.
+Park SH, Yin P, Liu Y, Reif JH, LaBean TH, Yan H. Nano Lett. 2005;5:729–733. doi: 10.1021/nl050175c.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+5.
+Sharma J, Ke Y, Lin C, Chhabra R, Wang Q, Nangreave J, Liu Y, Yan H. Angew. Chem. 2008;47:5157–5159. doi: 10.1002/anie.200801485.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+6.
+Sharma J, Chhabra R, Cheng A, Brownbell J, Liu Y, Yan H. Science. 2009;323:112–116. doi: 10.1126/science.1165831.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+7.
+Sharma J, Ke Y, Lin C, Chhabra R, Wang Q, Nangreave J, Liu Y, Yan H. Angew. Chem., Int. Ed. 2008;47:5157–5159. doi: 10.1002/anie.200801485.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+8.
+Rothemund PWK. Nature. 2006;440:297–302. doi: 10.1038/nature04586.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+9.
+Douglas SM, Dietz H, Liedl T, Hogberg B, Graf F, Shih WM. Nature. 2009;459:414–418. doi: 10.1038/nature08016.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+10.
+Andersen ES, Dong M, Nielsen MM, Jahn K, Subramani R, Mamdouh W, Golas MM, Sander B, Stark H, Oliveira CLP, Pedersen JS, Birkedal V, Besenbacher F, Gothelf KV, Kjems J. Nature. 2009;459:73–77. doi: 10.1038/nature07971.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+11.
+Kuzuya A, Komiyama M. Chem Commun. 2009;28:4182–4184. doi: 10.1039/b907800b.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+12.
+Ke Y, Sharma J, Liu M, Jahn K, Liu Y, Yan H. Nano Lett. 2009;9(6):2445–2447. doi: 10.1021/nl901165f.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+13.
+Dietz H, Douglas SM, Shih WM. Science. 2009;325:725–730. doi: 10.1126/science.1174251.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+14.
+Douglas SM, Marblestone AH, Teerapittayanon S, Vazquez A, Church GM, Shih WM. Nucleic Acids Res. 2009;37:5001–5006. doi: 10.1093/nar/gkp436.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+15.
+Young WC. Roark's Formulas for Stress &amp; Strain. 6th ed. New York: The McGraw-Hill Companies; 1989. 
+ [
+Google Scholar
+]
+16.
+Mathew-Fenn RS, Das R, Harbury PA. Science. 2008;322:446–449. doi: 10.1126/science.1158881.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+17.
+Mandelkern M, Elias JG, Eden D, Crothers DM. J. Mol. Biol. 1981;152:153–161. doi: 10.1016/0022-2836(81)90099-1.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+18.
+Willner I, Katz E. Angew. Chem., Int. Ed. 2000;39:1180–1218. doi: 10.1002/(sici)1521-3773(20000403)39:7&lt;1180::aid-anie1180&gt;3.0.co;2-e.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+19.
+Lee K-B, Park S-J, Mirkin CA, Smith JC, Mrksich M. Science. 2002;295:1702–1705. doi: 10.1126/science.1067172.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+Associated Data
+This section collects any data citations, data availability statements, or supplementary materials included in this article.
+Supplementary Materials
+Supporting info
+NIHMS153364-supplement-Supporting_info.pdf
+ (39.2MB, pdf) 
+ACTIONS
+View on publisher site
+PDF (3.2 MB)
+Cite
+Collections
+Permalink
+PERMALINK
+Copy
+RESOURCES
+ Similar articles
+ Cited by other articles
+ Links to NCBI Databases
+Cite
+Copy
+Download .nbib
+.nbib
+Format:
+ AMA
+ APA
+ MLA
+ NLM
+Add to Collections
+Create a new collection
+Add to an existing collection
+ Name your collection
+*
+ Choose a collection
+ Unable to load your collection due to an error
+Please try again
+ Add
+ Cancel
+ Follow NCBI
+NCBI on X (formerly known as Twitter)
+NCBI on Facebook
+NCBI on LinkedIn
+NCBI on GitHub
+NCBI RSS feed
+ Connect with NLM
+NLM on X (formerly known as Twitter)
+NLM on Facebook
+NLM on YouTube
+National Library of Medicine
+ 8600 Rockville Pike
+ Bethesda, MD 20894
+ Web Policies
+ FOIA
+ HHS Vulnerability Disclosure
+ Help
+ Accessibility
+ Careers
+ NLM
+ NIH
+ HHS
+ USA.gov
+Back to Top

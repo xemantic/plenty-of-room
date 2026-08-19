@@ -188,7 +188,7 @@ plus four in-study `check`s that abort the run and five strict reproduction gate
 | # | falsifier | fired? | outcome |
 |---|---|---|---|
 | **F1** *(the declared one)* | the best 34-root dishing is **not monotone** in the row-end softening | **NO** | 16 of 16 consecutive pairs over both channels decrease in stiffness |
-| **F2** | at `s = 1` the pipeline does not reproduce `C-0090`'s 0.0621469105 | **NO** | departure **`3.3864695769825204E-11`**, carried verbatim in `F2`'s own string |
+| **F2** | at `s = 1` the pipeline does not reproduce `C-0090`'s 0.0621469105 | **NO** | departure **`3.4E-11`**, carried in `F2`'s own string. ~~`3.3864695769825204E-11`~~ — amended by [`C-0153`](C-0153-unrounded-prose-interpolations.md) (`T-249`), which rounded that sentence to the two significant digits a departure is determined to; the quantity is unchanged and the digits were a `Double.toString()` |
 | **F3** | channel B's `s = 0` limit differs materially from the refused reading | **NO** | 0.168640591 against 0.168371808, **0.16 %** — same mechanics, two meshes |
 | **F4** | channel A's crossing lies **above** the counting floor `s = 1/2` | **NO** | there is no crossing at all |
 | **F5** | the best placement **key** moves across the sweep | **YES** | **fired at 3 of 18 rungs and bounded**: keeping `C-0090`'s own placement costs at most `8.755985E-4` of the stroke on channel A and is flat at 17 of 18 rungs. Deliverable 5 |

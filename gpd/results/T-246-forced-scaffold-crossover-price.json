@@ -1,0 +1,1715 @@
+{
+    "task": "T-246",
+    "leaf": "A8.2",
+    "units": {
+        "length": "nm",
+        "angle": "degrees at the API, radians inside",
+        "energy": "pN nm, and kT with k_BT = 4.141947 pN nm at 300 K",
+        "rotationalStiffness": "pN nm per rad",
+        "torsionalRigidity": "pN nm^2"
+    },
+    "conventions": {
+        "azimuth": "0 deg points at the other helix, so (0, 180) is closest approach; a departure rotates BOTH backbones by the same angle in the same sense, because the two helices are parallel and same-handed",
+        "departureSign": "folded to (-180, +180]; the span is even in it, so only the magnitude is ever priced",
+        "residues": "mod 21, non-negative, on C-0140's global axial datum",
+        "baseline": "the departure an ALLOWED crossover already carries is SUBTRACTED, never added - both readings of the +-5 bp rule are carried",
+        "ceiling": "the structure minimises over deformation channels, so ANY admissible channel's cost is an upper bound on the true price"
+    },
+    "parameters": {
+        "interhelicalDistanceHoneycomb": "2.536",
+        "phosphateRadiusMeasured": "0.9086378584708424",
+        "stericFloor": "1.8172757169416849",
+        "risePerBasePair": "0.34",
+        "basePairsPerTurn": "10.5 (caDNAno honeycomb)",
+        "azimuthPerBasePair": "34.285714285714285",
+        "residuePeriod": "21",
+        "scaffoldOffsetBasePairs": "5",
+        "measuredStepSouth": "0.6644805804152175",
+        "measuredStepSouthSd": "0.03616298498847594",
+        "measuredStepSouthP99": "0.7567447527195827",
+        "duplexTorsionalRigidity": "460.0",
+        "crossoverAlphaBracket": "0.6 to 1.2",
+        "thermalEnergy": "4.141947",
+        "hostSheetColumnEnergyKt": "7.99969697",
+        "temperature": "300 K, aqueous 2 mM MgCl2 (the buffer the calibration is read at)"
+    },
+    "sources": [
+        "gpd/results/T-139-duplex-pair-separation.json",
+        "gpd/data/T-151-sources/PMC2731887-fullTextXML.xml",
+        "gpd/data/T-246-sources/"
+    ],
+    "citedInputs": [
+        "C-0148 / CH-0188 - the residue-lattice closure test and its 10-of-59 count, reproduced here before anything new is read off it",
+        "C-0140 - the honeycomb x-raster path, its turn senses and its level walk",
+        "C-0147 - turnPhosphateSpan and the n = 0 scaffold-crossover check, consumed unmodified",
+        "C-0104 / T-182 - the mapping from an azimuthal register error to a crossover ROLL, and the 15.4497275 deg flatness threshold quoted as a NOT-LICENSED marker",
+        "C-0079 - the host sheet's own 7.99969697 kT per crossover column, read from its file",
+        "T-71 - the 13 084-linkage measured phosphodiester step and phosphate radius"
+    ],
+    "cheapBound": {
+        "whatItSaid": "The departure a forced crossover implies is an AZIMUTH, and because one turn is 10.5 bp the smallest one the 21-residue lattice offers is HALF a base-pair step - 17.142857 deg, at a displacement of TEN or ELEVEN base pairs, not one. That span is 0.96232 nm against a MEASURED phosphodiester step whose 99th percentile is 0.756745 nm, so a forced crossover does not close as a covalent bond at rigid geometry and its price is elastic. The rigid-duplex limit of C-0104's own roll mapping is then a strict CEILING on that price, and it is one multiplication.",
+        "cost": "closed form throughout; no solve, no mesh, no sampling, no minimiser",
+        "minimalAzimuthalDepartureDegrees": "17.1428571",
+        "achievedAtBasePairs": "10 and 11",
+        "minimalForcedSpanNm": "0.962320075",
+        "sigmaOfMeasuredStep": "8.2360318",
+        "elasticCeilingPerCrossoverKt": "0.350894669",
+        "elasticCeilingWholeBlockKt": "3.50894669"
+    },
+    "allowedCrossoverReadings": [
+        {
+            "convention": "caDNAno's idealisation - '5 bp, OR HALF A TURN', read as an aligned crossover",
+            "azimuthDegrees": 0.0,
+            "spanNm": 0.718724283,
+            "sigmaOfMeasuredStep": 1.49997857,
+            "insideP99": true
+        },
+        {
+            "convention": "exact 10.5 bp per turn - the half turn is 5.25 bp, so +-5 is 0.25 bp off it",
+            "azimuthDegrees": 8.57142857,
+            "spanNm": 0.787091706,
+            "sigmaOfMeasuredStep": 3.39051453,
+            "insideP99": false
+        }
+    ],
+    "azimuthLadder": [
+        {
+            "residueDepartureBasePairs": 0,
+            "azimuthalDepartureDegrees": 0.0,
+            "spanNm": 0.718724283,
+            "sigmaOfMeasuredStep": 1.49997857,
+            "spanOverP99": 0.949757868,
+            "closesAsABond": true
+        },
+        {
+            "residueDepartureBasePairs": 1,
+            "azimuthalDepartureDegrees": 34.2857143,
+            "spanNm": 1.45539014,
+            "sigmaOfMeasuredStep": 21.8706935,
+            "spanOverP99": 1.92322462,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 2,
+            "azimuthalDepartureDegrees": 68.5714286,
+            "spanNm": 2.52316419,
+            "sigmaOfMeasuredStep": 51.3974057,
+            "spanOverP99": 3.33423414,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 3,
+            "azimuthalDepartureDegrees": 102.857143,
+            "spanNm": 3.43290139,
+            "sigmaOfMeasuredStep": 76.5539906,
+            "spanOverP99": 4.53640594,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 4,
+            "azimuthalDepartureDegrees": 137.142857,
+            "spanNm": 4.06084833,
+            "sigmaOfMeasuredStep": 93.9183465,
+            "spanOverP99": 5.36620613,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 5,
+            "azimuthalDepartureDegrees": 171.428571,
+            "spanNm": 4.34143533,
+            "sigmaOfMeasuredStep": 101.677302,
+            "spanOverP99": 5.73698769,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 6,
+            "azimuthalDepartureDegrees": -154.285714,
+            "spanNm": 4.24714227,
+            "sigmaOfMeasuredStep": 99.0698554,
+            "spanOverP99": 5.61238417,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 7,
+            "azimuthalDepartureDegrees": -120.0,
+            "spanNm": 3.78713589,
+            "sigmaOfMeasuredStep": 86.34949,
+            "spanOverP99": 5.00450895,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 8,
+            "azimuthalDepartureDegrees": -85.7142857,
+            "spanNm": 3.00748784,
+            "sigmaOfMeasuredStep": 64.7902065,
+            "spanOverP99": 3.97424341,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 9,
+            "azimuthalDepartureDegrees": -51.4285714,
+            "spanNm": 1.99673304,
+            "sigmaOfMeasuredStep": 36.8402238,
+            "spanOverP99": 2.63858195,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 10,
+            "azimuthalDepartureDegrees": -17.1428571,
+            "spanNm": 0.962320075,
+            "sigmaOfMeasuredStep": 8.2360318,
+            "spanOverP99": 1.27165741,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 11,
+            "azimuthalDepartureDegrees": 17.1428571,
+            "spanNm": 0.962320075,
+            "sigmaOfMeasuredStep": 8.2360318,
+            "spanOverP99": 1.27165741,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 12,
+            "azimuthalDepartureDegrees": 51.4285714,
+            "spanNm": 1.99673304,
+            "sigmaOfMeasuredStep": 36.8402238,
+            "spanOverP99": 2.63858195,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 13,
+            "azimuthalDepartureDegrees": 85.7142857,
+            "spanNm": 3.00748784,
+            "sigmaOfMeasuredStep": 64.7902065,
+            "spanOverP99": 3.97424341,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 14,
+            "azimuthalDepartureDegrees": 120.0,
+            "spanNm": 3.78713589,
+            "sigmaOfMeasuredStep": 86.34949,
+            "spanOverP99": 5.00450895,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 15,
+            "azimuthalDepartureDegrees": 154.285714,
+            "spanNm": 4.24714227,
+            "sigmaOfMeasuredStep": 99.0698554,
+            "spanOverP99": 5.61238417,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 16,
+            "azimuthalDepartureDegrees": -171.428571,
+            "spanNm": 4.34143533,
+            "sigmaOfMeasuredStep": 101.677302,
+            "spanOverP99": 5.73698769,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 17,
+            "azimuthalDepartureDegrees": -137.142857,
+            "spanNm": 4.06084833,
+            "sigmaOfMeasuredStep": 93.9183465,
+            "spanOverP99": 5.36620613,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 18,
+            "azimuthalDepartureDegrees": -102.857143,
+            "spanNm": 3.43290139,
+            "sigmaOfMeasuredStep": 76.5539906,
+            "spanOverP99": 4.53640594,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 19,
+            "azimuthalDepartureDegrees": -68.5714286,
+            "spanNm": 2.52316419,
+            "sigmaOfMeasuredStep": 51.3974057,
+            "spanOverP99": 3.33423414,
+            "closesAsABond": false
+        },
+        {
+            "residueDepartureBasePairs": 20,
+            "azimuthalDepartureDegrees": -34.2857143,
+            "spanNm": 1.45539014,
+            "sigmaOfMeasuredStep": 21.8706935,
+            "spanOverP99": 1.92322462,
+            "closesAsABond": false
+        }
+    ],
+    "closure": [
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 10,
+            "classZeroResidue": 5,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 10,
+            "classZeroResidue": 12,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                -10
+            ]
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 10,
+            "classZeroResidue": 5,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                -10
+            ]
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 10,
+            "classZeroResidue": 12,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 8,
+            "classZeroResidue": 5,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 7,
+            "classZeroResidue": 12,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                -10
+            ]
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 7,
+            "classZeroResidue": 5,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                -10
+            ]
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 8,
+            "classZeroResidue": 12,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 34,
+            "classZeroResidue": 5,
+            "worstAzimuthalDepartureDegrees": 51.4285714,
+            "distinctResidueDepartures": [
+                -1,
+                9,
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 34,
+            "classZeroResidue": 12,
+            "worstAzimuthalDepartureDegrees": 51.4285714,
+            "distinctResidueDepartures": [
+                -1,
+                9,
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 34,
+            "classZeroResidue": 5,
+            "worstAzimuthalDepartureDegrees": 51.4285714,
+            "distinctResidueDepartures": [
+                -1,
+                9,
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 34,
+            "classZeroResidue": 12,
+            "worstAzimuthalDepartureDegrees": 51.4285714,
+            "distinctResidueDepartures": [
+                -1,
+                9,
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 29,
+            "classZeroResidue": 16,
+            "worstAzimuthalDepartureDegrees": 34.2857143,
+            "distinctResidueDepartures": [
+                -10,
+                -1,
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 29,
+            "classZeroResidue": 2,
+            "worstAzimuthalDepartureDegrees": 34.2857143,
+            "distinctResidueDepartures": [
+                -10,
+                -1,
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 29,
+            "classZeroResidue": 16,
+            "worstAzimuthalDepartureDegrees": 34.2857143,
+            "distinctResidueDepartures": [
+                -10,
+                -1,
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 29,
+            "classZeroResidue": 2,
+            "worstAzimuthalDepartureDegrees": 34.2857143,
+            "distinctResidueDepartures": [
+                -10,
+                -1,
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 0,
+            "classZeroResidue": 5,
+            "worstAzimuthalDepartureDegrees": 0.0,
+            "distinctResidueDepartures": []
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 0,
+            "classZeroResidue": 2,
+            "worstAzimuthalDepartureDegrees": 0.0,
+            "distinctResidueDepartures": []
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 0,
+            "classZeroResidue": 16,
+            "worstAzimuthalDepartureDegrees": 0.0,
+            "distinctResidueDepartures": []
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 0,
+            "classZeroResidue": 12,
+            "worstAzimuthalDepartureDegrees": 0.0,
+            "distinctResidueDepartures": []
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 0,
+            "classZeroResidue": 5,
+            "worstAzimuthalDepartureDegrees": 0.0,
+            "distinctResidueDepartures": []
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 0,
+            "classZeroResidue": 2,
+            "worstAzimuthalDepartureDegrees": 0.0,
+            "distinctResidueDepartures": []
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 0,
+            "classZeroResidue": 16,
+            "worstAzimuthalDepartureDegrees": 0.0,
+            "distinctResidueDepartures": []
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 0,
+            "classZeroResidue": 12,
+            "worstAzimuthalDepartureDegrees": 0.0,
+            "distinctResidueDepartures": []
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 10,
+            "classZeroResidue": 16,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                -10
+            ]
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 10,
+            "classZeroResidue": 2,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 10,
+            "classZeroResidue": 16,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 10,
+            "classZeroResidue": 2,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                -10
+            ]
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 8,
+            "classZeroResidue": 16,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                -10
+            ]
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 7,
+            "classZeroResidue": 2,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 7,
+            "classZeroResidue": 16,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 8,
+            "classZeroResidue": 2,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                -10
+            ]
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 10,
+            "classZeroResidue": 16,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 10,
+            "classZeroResidue": 2,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                -10
+            ]
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 10,
+            "classZeroResidue": 16,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                -10
+            ]
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 10,
+            "classZeroResidue": 2,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 7,
+            "classZeroResidue": 16,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                10
+            ]
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 8,
+            "classZeroResidue": 2,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                -10
+            ]
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 8,
+            "classZeroResidue": 16,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                -10
+            ]
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "forcedCrossovers": 7,
+            "classZeroResidue": 2,
+            "worstAzimuthalDepartureDegrees": 17.1428571,
+            "distinctResidueDepartures": [
+                10
+            ]
+        }
+    ],
+    "approach": [
+        {
+            "azimuthalDepartureDegrees": 17.1428571,
+            "targetStepNm": 0.66448058,
+            "targetName": "the measured C2'-endo mean",
+            "smallestReachableSpanNm": 0.535651421,
+            "reachableAtAnySeparation": true,
+            "interhelicalDistanceNm": 2.12974658,
+            "approachNm": 0.406253424,
+            "insideStericFloor": false
+        },
+        {
+            "azimuthalDepartureDegrees": 17.1428571,
+            "targetStepNm": 0.756744753,
+            "targetName": "its 99th percentile",
+            "smallestReachableSpanNm": 0.535651421,
+            "reachableAtAnySeparation": true,
+            "interhelicalDistanceNm": 2.27108596,
+            "approachNm": 0.264914043,
+            "insideStericFloor": false
+        },
+        {
+            "azimuthalDepartureDegrees": 17.1428571,
+            "targetStepNm": 0.718724283,
+            "targetName": "the aligned crossover's own span",
+            "smallestReachableSpanNm": 0.535651421,
+            "reachableAtAnySeparation": true,
+            "interhelicalDistanceNm": 2.21574918,
+            "approachNm": 0.320250821,
+            "insideStericFloor": false
+        },
+        {
+            "azimuthalDepartureDegrees": 34.2857143,
+            "targetStepNm": 0.66448058,
+            "targetName": "the measured C2'-endo mean",
+            "smallestReachableSpanNm": 1.02370786,
+            "reachableAtAnySeparation": false,
+            "interhelicalDistanceNm": -1.0,
+            "approachNm": -1.0,
+            "insideStericFloor": false
+        },
+        {
+            "azimuthalDepartureDegrees": 34.2857143,
+            "targetStepNm": 0.756744753,
+            "targetName": "its 99th percentile",
+            "smallestReachableSpanNm": 1.02370786,
+            "reachableAtAnySeparation": false,
+            "interhelicalDistanceNm": -1.0,
+            "approachNm": -1.0,
+            "insideStericFloor": false
+        },
+        {
+            "azimuthalDepartureDegrees": 34.2857143,
+            "targetStepNm": 0.718724283,
+            "targetName": "the aligned crossover's own span",
+            "smallestReachableSpanNm": 1.02370786,
+            "reachableAtAnySeparation": false,
+            "interhelicalDistanceNm": -1.0,
+            "approachNm": -1.0,
+            "insideStericFloor": false
+        }
+    ],
+    "ceiling": [
+        {
+            "baselineConvention": "caDNAno's own idealisation - 5 bp IS a half turn, so an allowed crossover is aligned",
+            "baselineDegrees": 0.0,
+            "departureDegrees": 17.1428571,
+            "crossoverAlpha": 0.6,
+            "hingeStiffness": 8.11764706,
+            "channel": "rigid duplex - the crossover hinge carries all of it (the CEILING)",
+            "crossoverSpacingNm": 0.0,
+            "effectiveStiffness": 8.11764706,
+            "energyPnNm": 0.363346781,
+            "energyThermalUnits": 0.0877236673,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 0.877236673,
+            "blockOverHostSheetColumn": 0.109658738
+        },
+        {
+            "baselineConvention": "caDNAno's own idealisation - 5 bp IS a half turn, so an allowed crossover is aligned",
+            "baselineDegrees": 0.0,
+            "departureDegrees": 17.1428571,
+            "crossoverAlpha": 0.6,
+            "hingeStiffness": 8.11764706,
+            "channel": "duplex torsion relieves the hinge over lambda - every azimuth, 7 bp",
+            "crossoverSpacingNm": 2.38,
+            "effectiveStiffness": 7.36314882,
+            "energyPnNm": 0.329575356,
+            "energyThermalUnits": 0.0795701529,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 0.795701529,
+            "blockOverHostSheetColumn": 0.0994664588
+        },
+        {
+            "baselineConvention": "caDNAno's own idealisation - 5 bp IS a half turn, so an allowed crossover is aligned",
+            "baselineDegrees": 0.0,
+            "departureDegrees": 17.1428571,
+            "crossoverAlpha": 0.6,
+            "hingeStiffness": 8.11764706,
+            "channel": "duplex torsion relieves the hinge over lambda - one pair, 21 bp",
+            "crossoverSpacingNm": 7.14,
+            "effectiveStiffness": 6.89407086,
+            "energyPnNm": 0.308579375,
+            "energyThermalUnits": 0.0745010438,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 0.745010438,
+            "blockOverHostSheetColumn": 0.0931298323
+        },
+        {
+            "baselineConvention": "caDNAno's own idealisation - 5 bp IS a half turn, so an allowed crossover is aligned",
+            "baselineDegrees": 0.0,
+            "departureDegrees": 17.1428571,
+            "crossoverAlpha": 1.0,
+            "hingeStiffness": 13.5294118,
+            "channel": "rigid duplex - the crossover hinge carries all of it (the CEILING)",
+            "crossoverSpacingNm": 0.0,
+            "effectiveStiffness": 13.5294118,
+            "energyPnNm": 0.605577968,
+            "energyThermalUnits": 0.146206112,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 1.46206112,
+            "blockOverHostSheetColumn": 0.182764563
+        },
+        {
+            "baselineConvention": "caDNAno's own idealisation - 5 bp IS a half turn, so an allowed crossover is aligned",
+            "baselineDegrees": 0.0,
+            "departureDegrees": 17.1428571,
+            "crossoverAlpha": 1.0,
+            "hingeStiffness": 13.5294118,
+            "channel": "duplex torsion relieves the hinge over lambda - every azimuth, 7 bp",
+            "crossoverSpacingNm": 2.38,
+            "effectiveStiffness": 11.9487418,
+            "energyPnNm": 0.534827005,
+            "energyThermalUnits": 0.129124541,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 1.29124541,
+            "blockOverHostSheetColumn": 0.16141179
+        },
+        {
+            "baselineConvention": "caDNAno's own idealisation - 5 bp IS a half turn, so an allowed crossover is aligned",
+            "baselineDegrees": 0.0,
+            "departureDegrees": 17.1428571,
+            "crossoverAlpha": 1.0,
+            "hingeStiffness": 13.5294118,
+            "channel": "duplex torsion relieves the hinge over lambda - one pair, 21 bp",
+            "crossoverSpacingNm": 7.14,
+            "effectiveStiffness": 11.0073183,
+            "energyPnNm": 0.492688785,
+            "energyThermalUnits": 0.118951011,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 1.18951011,
+            "blockOverHostSheetColumn": 0.148694397
+        },
+        {
+            "baselineConvention": "caDNAno's own idealisation - 5 bp IS a half turn, so an allowed crossover is aligned",
+            "baselineDegrees": 0.0,
+            "departureDegrees": 17.1428571,
+            "crossoverAlpha": 1.2,
+            "hingeStiffness": 16.2352941,
+            "channel": "rigid duplex - the crossover hinge carries all of it (the CEILING)",
+            "crossoverSpacingNm": 0.0,
+            "effectiveStiffness": 16.2352941,
+            "energyPnNm": 0.726693561,
+            "energyThermalUnits": 0.175447335,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 1.75447335,
+            "blockOverHostSheetColumn": 0.219317476
+        },
+        {
+            "baselineConvention": "caDNAno's own idealisation - 5 bp IS a half turn, so an allowed crossover is aligned",
+            "baselineDegrees": 0.0,
+            "departureDegrees": 17.1428571,
+            "crossoverAlpha": 1.2,
+            "hingeStiffness": 16.2352941,
+            "channel": "duplex torsion relieves the hinge over lambda - every azimuth, 7 bp",
+            "crossoverSpacingNm": 2.38,
+            "effectiveStiffness": 14.1803641,
+            "energyPnNm": 0.634714668,
+            "energyThermalUnits": 0.153240654,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 1.53240654,
+            "blockOverHostSheetColumn": 0.191558074
+        },
+        {
+            "baselineConvention": "caDNAno's own idealisation - 5 bp IS a half turn, so an allowed crossover is aligned",
+            "baselineDegrees": 0.0,
+            "departureDegrees": 17.1428571,
+            "crossoverAlpha": 1.2,
+            "hingeStiffness": 16.2352941,
+            "channel": "duplex torsion relieves the hinge over lambda - one pair, 21 bp",
+            "crossoverSpacingNm": 7.14,
+            "effectiveStiffness": 12.9778737,
+            "energyPnNm": 0.580891062,
+            "energyThermalUnits": 0.140245894,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 1.40245894,
+            "blockOverHostSheetColumn": 0.175314009
+        },
+        {
+            "baselineConvention": "exact 10.5 bp per turn - a half turn is 5.25 bp, so an allowed crossover already carries",
+            "baselineDegrees": 8.57142857,
+            "departureDegrees": 25.7142857,
+            "crossoverAlpha": 0.6,
+            "hingeStiffness": 8.11764706,
+            "channel": "rigid duplex - the crossover hinge carries all of it (the CEILING)",
+            "crossoverSpacingNm": 0.0,
+            "effectiveStiffness": 8.11764706,
+            "energyPnNm": 0.726693561,
+            "energyThermalUnits": 0.175447335,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 1.75447335,
+            "blockOverHostSheetColumn": 0.219317476
+        },
+        {
+            "baselineConvention": "exact 10.5 bp per turn - a half turn is 5.25 bp, so an allowed crossover already carries",
+            "baselineDegrees": 8.57142857,
+            "departureDegrees": 25.7142857,
+            "crossoverAlpha": 0.6,
+            "hingeStiffness": 8.11764706,
+            "channel": "duplex torsion relieves the hinge over lambda - every azimuth, 7 bp",
+            "crossoverSpacingNm": 2.38,
+            "effectiveStiffness": 7.36314882,
+            "energyPnNm": 0.659150712,
+            "energyThermalUnits": 0.159140306,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 1.59140306,
+            "blockOverHostSheetColumn": 0.198932918
+        },
+        {
+            "baselineConvention": "exact 10.5 bp per turn - a half turn is 5.25 bp, so an allowed crossover already carries",
+            "baselineDegrees": 8.57142857,
+            "departureDegrees": 25.7142857,
+            "crossoverAlpha": 0.6,
+            "hingeStiffness": 8.11764706,
+            "channel": "duplex torsion relieves the hinge over lambda - one pair, 21 bp",
+            "crossoverSpacingNm": 7.14,
+            "effectiveStiffness": 6.89407086,
+            "energyPnNm": 0.617158749,
+            "energyThermalUnits": 0.149002088,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 1.49002088,
+            "blockOverHostSheetColumn": 0.186259665
+        },
+        {
+            "baselineConvention": "exact 10.5 bp per turn - a half turn is 5.25 bp, so an allowed crossover already carries",
+            "baselineDegrees": 8.57142857,
+            "departureDegrees": 25.7142857,
+            "crossoverAlpha": 1.0,
+            "hingeStiffness": 13.5294118,
+            "channel": "rigid duplex - the crossover hinge carries all of it (the CEILING)",
+            "crossoverSpacingNm": 0.0,
+            "effectiveStiffness": 13.5294118,
+            "energyPnNm": 1.21115594,
+            "energyThermalUnits": 0.292412224,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 2.92412224,
+            "blockOverHostSheetColumn": 0.365529126
+        },
+        {
+            "baselineConvention": "exact 10.5 bp per turn - a half turn is 5.25 bp, so an allowed crossover already carries",
+            "baselineDegrees": 8.57142857,
+            "departureDegrees": 25.7142857,
+            "crossoverAlpha": 1.0,
+            "hingeStiffness": 13.5294118,
+            "channel": "duplex torsion relieves the hinge over lambda - every azimuth, 7 bp",
+            "crossoverSpacingNm": 2.38,
+            "effectiveStiffness": 11.9487418,
+            "energyPnNm": 1.06965401,
+            "energyThermalUnits": 0.258249082,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 2.58249082,
+            "blockOverHostSheetColumn": 0.322823581
+        },
+        {
+            "baselineConvention": "exact 10.5 bp per turn - a half turn is 5.25 bp, so an allowed crossover already carries",
+            "baselineDegrees": 8.57142857,
+            "departureDegrees": 25.7142857,
+            "crossoverAlpha": 1.0,
+            "hingeStiffness": 13.5294118,
+            "channel": "duplex torsion relieves the hinge over lambda - one pair, 21 bp",
+            "crossoverSpacingNm": 7.14,
+            "effectiveStiffness": 11.0073183,
+            "energyPnNm": 0.98537757,
+            "energyThermalUnits": 0.237902023,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 2.37902023,
+            "blockOverHostSheetColumn": 0.297388793
+        },
+        {
+            "baselineConvention": "exact 10.5 bp per turn - a half turn is 5.25 bp, so an allowed crossover already carries",
+            "baselineDegrees": 8.57142857,
+            "departureDegrees": 25.7142857,
+            "crossoverAlpha": 1.2,
+            "hingeStiffness": 16.2352941,
+            "channel": "rigid duplex - the crossover hinge carries all of it (the CEILING)",
+            "crossoverSpacingNm": 0.0,
+            "effectiveStiffness": 16.2352941,
+            "energyPnNm": 1.45338712,
+            "energyThermalUnits": 0.350894669,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 3.50894669,
+            "blockOverHostSheetColumn": 0.438634952
+        },
+        {
+            "baselineConvention": "exact 10.5 bp per turn - a half turn is 5.25 bp, so an allowed crossover already carries",
+            "baselineDegrees": 8.57142857,
+            "departureDegrees": 25.7142857,
+            "crossoverAlpha": 1.2,
+            "hingeStiffness": 16.2352941,
+            "channel": "duplex torsion relieves the hinge over lambda - every azimuth, 7 bp",
+            "crossoverSpacingNm": 2.38,
+            "effectiveStiffness": 14.1803641,
+            "energyPnNm": 1.26942934,
+            "energyThermalUnits": 0.306481308,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 3.06481308,
+            "blockOverHostSheetColumn": 0.383116147
+        },
+        {
+            "baselineConvention": "exact 10.5 bp per turn - a half turn is 5.25 bp, so an allowed crossover already carries",
+            "baselineDegrees": 8.57142857,
+            "departureDegrees": 25.7142857,
+            "crossoverAlpha": 1.2,
+            "hingeStiffness": 16.2352941,
+            "channel": "duplex torsion relieves the hinge over lambda - one pair, 21 bp",
+            "crossoverSpacingNm": 7.14,
+            "effectiveStiffness": 12.9778737,
+            "energyPnNm": 1.16178212,
+            "energyThermalUnits": 0.280491789,
+            "forcedCrossovers": 10,
+            "blockEnergyThermalUnits": 2.80491789,
+            "blockOverHostSheetColumn": 0.350628018
+        }
+    ],
+    "thresholds": [
+        {
+            "axis": "elastic energy, per forced crossover",
+            "quantity": "the price of one forced crossover in kT",
+            "ceilingHere": "0.350894669 kT",
+            "valueThatWouldChangeTheAnswer": "1 kT - the fold's own currency",
+            "factor": "2.84985806x the ceiling",
+            "licensed": true,
+            "note": "The ceiling is sub-thermal, so a forced crossover of the MINIMAL departure this lattice offers cannot be argued out of a fold on elastic grounds."
+        },
+        {
+            "axis": "elastic energy, whole block",
+            "quantity": "the price of all 10 forced crossovers in kT",
+            "ceilingHere": "3.50894669 kT",
+            "valueThatWouldChangeTheAnswer": "7.99969697 kT - what ONE crossover column of the host sheet already pays (C-0079)",
+            "factor": "2.27980009x the ceiling",
+            "licensed": true,
+            "note": "The whole block's forcing costs a fraction of what one crossover of the DEMONSTRATED square-lattice sheet pays to hold its own two duplexes."
+        },
+        {
+            "axis": "crossover hinge stiffness",
+            "quantity": "k_theta in pN nm/rad",
+            "ceilingHere": "16.2352941",
+            "valueThatWouldChangeTheAnswer": "37.0132249 - where the block would cost one host-sheet column",
+            "factor": "2.27980009x",
+            "licensed": true,
+            "note": "k_theta is the one measured-ish input in the ceiling; the answer needs it wrong by this factor, well outside Gen1Tile's own 0.6-1.2 alpha bracket."
+        },
+        {
+            "axis": "azimuthal departure - and the lattice QUANTISES it",
+            "quantity": "the departure a forced crossover carries, in degrees",
+            "ceilingHere": "17.1428571 deg, the lattice's smallest nonzero rung",
+            "valueThatWouldChangeTheAnswer": "25.8840118 deg - which falls BETWEEN two rungs, so the first rung that would change the answer is the NEXT one, 34.2857143 deg (a 1 bp displacement), where the block costs 10.5268401 kT",
+            "factor": "1.50990069x is demanded and the lattice's next rung supplies 2x, i.e. 1.31590485x of a host-sheet column",
+            "licensed": true,
+            "note": "The energy is quadratic and the departure axis is discrete, so the threshold is bracketed rather than crossed: the departure this raster actually needs is a factor of two below the first rung that would exceed the calibration. The 112 / 108 raster's stray residue is one bp from an allowed residue and ELEVEN from the other, and it is the eleven that the azimuth prefers."
+        },
+        {
+            "axis": "PUBLISHED FOLDING OUTCOME - the one measurement on this axis",
+            "quantity": "azimuthal register departure per crossover interface, in degrees",
+            "ceilingHere": "17.1428571 deg, at 10 of 59 SCAFFOLD crossovers",
+            "valueThatWouldChangeTheAnswer": "34.2857143 deg at EVERY interface is the smallest departure Ke et al. tested, and it folds - ambiguously, improving a 60hb and degrading a 24hb; 102.857143 deg at every interface abolishes folding",
+            "factor": "the forced crossover is HALF the smallest rung anyone has measured, and it is applied to a sixth of the interfaces rather than to all of them",
+            "licensed": false,
+            "note": "NOT a transfer. Ke et al. change the twist of the WHOLE lattice by inserting base pairs, so every interface carries the departure and the duplex relieves it by actually adopting the non-canonical twist; here the departure is LOCAL and unrelieved. What the ladder licenses is a scale, not a verdict - and the scale says the forced crossover is below the bottom rung of the only published ladder."
+        },
+        {
+            "axis": "FLATNESS - the prestrain-as-a-LOAD channel",
+            "quantity": "the uniform crossover prestrain a tile tolerates, in degrees",
+            "ceilingHere": "17.1428571 deg is what a forced crossover imposes",
+            "valueThatWouldChangeTheAnswer": "15.4497275 deg - C-0104's threshold on the SINGLE-LAYER SQUARE-LATTICE 40 nm tile",
+            "factor": "1.10958961x, i.e. the departure EXCEEDS that threshold",
+            "licensed": false,
+            "note": "NOT LICENSED and that is the finding. C-0104's number is a UNIFORM prestrain on ALL 56 crossovers of a single-layer SQUARE-lattice tile at one placement; here it is 10 of 59 SCAFFOLD crossovers on a four-layer HONEYCOMB block. CLAUDE.md records that OrigamiGrillage never reads layers and that CrossoverLayout's two-parity alternation makes the lattice machinery square-lattice, so this repository cannot evaluate the channel on a honeycomb face at all. The number is quoted to say WHICH measurement is owed, never to transfer a verdict."
+        }
+    ],
+    "publishedTwistLadder": [
+        {
+            "basePairsPerTurn": 10.5,
+            "basePairsPerInterface": 21,
+            "insertedBasePairs": 0,
+            "azimuthalDepartureDegrees": 0.0,
+            "overForcedCrossover": 0.0,
+            "outcome": "the design twist - the control"
+        },
+        {
+            "basePairsPerTurn": 11.0,
+            "basePairsPerInterface": 22,
+            "insertedBasePairs": 1,
+            "azimuthalDepartureDegrees": 34.2857143,
+            "overForcedCrossover": 2.0,
+            "outcome": "'underwinding 24hb to 11.0 bp/turn appeared to decrease the efficiency of folding' - AND the SIGN REVERSES between architectures of the same laboratory: 'the previously reported 60hb folded better at 11.0 bp/turn'"
+        },
+        {
+            "basePairsPerTurn": 11.5,
+            "basePairsPerInterface": 23,
+            "insertedBasePairs": 2,
+            "azimuthalDepartureDegrees": 68.5714286,
+            "overForcedCrossover": 4.0,
+            "outcome": "'folding performance on par with 24hb underwound to 11.0 bp/turn'"
+        },
+        {
+            "basePairsPerTurn": 12.0,
+            "basePairsPerInterface": 24,
+            "insertedBasePairs": 3,
+            "azimuthalDepartureDegrees": 102.857143,
+            "overForcedCrossover": 6.0,
+            "outcome": "'underwinding 24hb to 12.0 bp/turn abolished productive folding completely' - and the authors name the mechanism: 'the penalty from torsional strain energy'"
+        }
+    ],
+    "literature": [
+        {
+            "what": "what caDNAno permits, and its only stated warning",
+            "citation": "Douglas et al., Nucleic Acids Res. 37:5001 (2009), PMC2731887",
+            "provenance": "read directly (gpd/data/T-151-sources/PMC2731887-fullTextXML.xml)",
+            "quotation": "However, caDNAno permits the user to force crossovers between any two staple bases or between any two scaffold bases. Users should take care when forcing crossovers, as departure from the default rules may lead to folding failure if too much deviation from canonical DNA geometry is implied."
+        },
+        {
+            "what": "the SOURCE'S OWN statement that the quantity is unpredicted - the strongest evidence here, and it is an explicit exclusion rather than a null search",
+            "citation": "Douglas et al., Nucleic Acids Res. 37:5001 (2009), PMC2731887, Discussion",
+            "provenance": "read directly (gpd/data/T-151-sources/PMC2731887-fullTextXML.xml)",
+            "quotation": "caDNAno provides tools to introduce deviations from the basic honeycomb architecture, such as forced crossovers, to create very complicated designs. Additional software development will be required to make designs of these non-standard motifs more natural, for example for caDNAno to predict the structural consequences of these changes. More work is also needed to see what design rules lead to stable structures; for examples of designs that folded successfully, although with varying yields, see the gallery section at http://cadnano.org/."
+        },
+        {
+            "what": "the ONLY published measurement on the same AXIS - a systematic twist-density sweep of a honeycomb bundle, whose rungs convert to azimuthal register departures per crossover interface",
+            "citation": "Ke, Bellot, Voigt, Fradkov & Shih, Chem. Sci. 3:2587 (2012), PMC3957201",
+            "provenance": "read directly (gpd/data/T-246-sources/PMC3957201.txt)",
+            "quotation": "Whereas the previously reported 60hb folded better at 11.0 bp/turn, here underwinding 24hb to 11.0 bp/turn appeared to decrease the efficiency of folding ... However, underwinding 24hb to 12.0 bp/turn abolished productive folding completely ... We hypothesized that for >= 12.0 bp/turn underwinding, the penalty from torsional strain energy was greater than the energetic gain from increased helical bowing and decreased electrostatic repulsion."
+        },
+        {
+            "what": "the nearest analogue this repository already cites - and the citation is OVER-READ: the yield observation is published, the ATTRIBUTION is not",
+            "citation": "Ke et al., J. Am. Chem. Soc. 131:15903 (2009), PMC2821935",
+            "provenance": "read directly (gpd/data/T-246-sources/PMC2821935.txt)",
+            "quotation": "We observed significantly lower yield for these structures. Introducing these breaks may be destabilizing for the structure. Alternatively, simply having a large number of layers with our default crossover pattern may be destabilizing, irrespective of the position of the breaks. ... Future systematic studies will be required to determine the relative importance of these staple breaks toward affecting folding efficiency."
+        },
+        {
+            "what": "caDNAno's FORCING TOOL is demonstrated in a folded, high-yield published structure - but for a LATTICE change, not for an off-register position",
+            "citation": "Ke, Voigt, Shih et al., J. Am. Chem. Soc. 134:1770 (2012), PMC3336742",
+            "provenance": "read directly (gpd/data/T-246-sources/PMC3336742.txt)",
+            "quotation": "Currently, all crossovers need to be manually implemented in caDNAno for hexagonal-lattice or hybrid origami. ... high yields, as indicated by agarose-gel electrophoresis and TEM analysis. [No percentage is stated.]"
+        },
+        {
+            "what": "the yield measurement of a ROUTING change this repository cites - and its own author hedges the cause away from the routing",
+            "citation": "Rothemund, Nature 440:297 (2006)",
+            "provenance": "read directly (gpd/data/T-151-sources/DNAorigami-nature.txt)",
+            "quotation": "The low yield of stars ... may be due to strand breakage occurring during BsrBI digestion or subsequent steps to remove the enzyme. [So the 63 % to 11 % is the cost of enzymatic linearisation, hedged by its author, and not a crossover-position measurement at all.]"
+        },
+        {
+            "what": "the calibration the ceiling is read against",
+            "citation": "C-0079 / gpd/results/T-139-duplex-pair-separation.json, calibration[4]",
+            "provenance": "read directly (this repository's own emitted result file)",
+            "quotation": "7.99969697 kT per crossover column - what one crossover of the host sheet demonstrably pays to hold its own two duplexes at the SAXS 2.69 nm, and the sheet folds."
+        }
+    ],
+    "literatureQueries": [
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA nanostructure\" AND \"geometric frustration\"",
+            "hits": 1
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA nanostructure\" AND \"junction\" AND distortion AND \"coarse-grained\"",
+            "hits": 4
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"21 base pairs\" AND crossover",
+            "hits": 10
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"arbitrary crossover\"",
+            "hits": 0
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"base pairs per turn\" AND yield",
+            "hits": 14
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND caDNAno AND \"manually\" AND crossover",
+            "hits": 43
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"canonical DNA geometry\"",
+            "hits": 1
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND crossover AND \"folding efficiency\"",
+            "hits": 18
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND crossover AND \"folding yield\"",
+            "hits": 28
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"crossover\" AND \"free energy penalty\"",
+            "hits": 2
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"crossover\" AND \"kinetic trap\" AND yield",
+            "hits": 2
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"crossover\" AND \"local strain\"",
+            "hits": 2
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"crossover\" AND \"off-lattice\"",
+            "hits": 3
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"crossover\" AND \"structural consequences\"",
+            "hits": 6
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"crossover\" AND \"thermal stability\" AND melting",
+            "hits": 52
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"crossover\" AND \"twist density\" AND folding",
+            "hits": 12
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"crossover density\"",
+            "hits": 23
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"crossover position\" AND yield",
+            "hits": 8
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"crossover spacing\"",
+            "hits": 18
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"defect rate\" AND staple",
+            "hits": 4
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"design defect\" OR \"design flaw\" AND yield",
+            "hits": 1
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"design rule\" AND violation",
+            "hits": 0
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"design rules\" AND \"crossover\" AND stability",
+            "hits": 41
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"folding failure\"",
+            "hits": 2
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"helical phase\" AND crossover",
+            "hits": 0
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND insertions AND deletions AND twist AND yield",
+            "hits": 28
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"irregular crossover\"",
+            "hits": 0
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"junction\" AND \"strain\" AND \"folding yield\"",
+            "hits": 11
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"lattice-free\" AND crossover",
+            "hits": 11
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"melting temperature\" AND crossover",
+            "hits": 85
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"misfolded\" AND crossover",
+            "hits": 37
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"non-canonical\" AND crossover",
+            "hits": 28
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"non-lattice\" AND crossover",
+            "hits": 1
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"off-register\"",
+            "hits": 0
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"overwound\" AND yield",
+            "hits": 8
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"seven base pairs\" AND crossover",
+            "hits": 4
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"single crossover\" AND \"double crossover\" AND stability",
+            "hits": 8
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"strain energy\" AND crossover",
+            "hits": 11
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND strained AND crossover",
+            "hits": 37
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"torsional strain\" AND yield",
+            "hits": 12
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"twist correction\" AND yield",
+            "hits": 5
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"unconventional crossover\"",
+            "hits": 0
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"DNA origami\" AND \"unconventional crossover\" OR \"irregular crossover\"",
+            "hits": 5540
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"Holliday junction\" AND \"DNA origami\" AND \"free energy\" AND simulation",
+            "hits": 20
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "TITLE:\"Multilayer DNA origami packed on hexagonal and hybrid lattices\"",
+            "hits": 1
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "caDNAno AND \"design rules\" AND yield",
+            "hits": 32
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "caDNAno AND gallery AND yield",
+            "hits": 10
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"force crossovers\" AND caDNAno",
+            "hits": 1
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"forced crossover\" AND \"DNA origami\"",
+            "hits": 0
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"forced crossovers\" AND DNA",
+            "hits": 3
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"four-way junction\" AND \"DNA origami\" AND \"stacking\" AND \"angle\" AND measurement",
+            "hits": 13
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "oxDNA AND crossover AND \"DNA origami\" AND energy",
+            "hits": 40
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "scadnano OR cadnano AND \"crossover\" AND \"violat\"",
+            "hits": 0
+        },
+        {
+            "endpoint": "EuropePMC",
+            "queryString": "\"staple crossover\" AND yield AND DNA",
+            "hits": 17
+        }
+    ],
+    "literatureVerdict": {
+        "question": "Is there ANY published measurement - folding yield, thermal stability, defect rate, structural quality or simulated strain energy - attributable to a FORCED (off-rule) crossover in DNA origami?",
+        "verdict": "NOT FOUND. No published price for a forced crossover was located.",
+        "whatWasFoundInstead": "Every crossover variable anyone has swept moves the WHOLE lattice or the WHOLE staple set - spacing, density, count, type, staple-break position, twist density. NOTHING isolates a single junction. The closest is Ke et al.'s twist-density ladder (publishedTwistLadder), whose bottom rung is TWICE this study's departure and folds.",
+        "twoCorrectionsToThisRepository": "Ke et al. 2009 is OVER-READ in CLAUDE.md as 'a published YIELD cost' of an 8 bp staple break: the yield observation is published, and the same paragraph offers an alternative cause 'irrespective of the position of the breaks' and defers the attribution to 'future systematic studies'. And Rothemund's 63 % to 11 % is hedged by its own author onto BsrBI digestion, not onto the routing. Both are raised as challenges.",
+        "strongestEvidence": "It is an EXPLICIT EXCLUSION rather than a null search: the paper that DEFINES the operation states in its own discussion that 'additional software development will be required ... for caDNAno to predict the structural consequences of these changes' and that 'more work is also needed to see what design rules lead to stable structures'.",
+        "queriesRun": "68 in 7 declared families - 54 EuropePMC (8 s spacing, 5 retries), 10 arXiv, 4 OpenAlex, 8 direct fetches; 14 candidate papers examined, 13 READ DIRECTLY, 1 abstract only, 0 not found. The full log with every query verbatim is gpd/data/T-246-sources/queries.md",
+        "queriesRecordedInThisField": "54 - the MACHINE-READABLE subset, recovered from the retained JSON responses by this study rather than transcribed; the arXiv (XML) and direct-fetch queries carry no such field and are in queries.md only",
+        "rawResponses": "gpd/data/T-246-sources/ - every search response retained so the negative is auditable and falsifiable by one paper",
+        "whatWouldFalsifyIt": "One published measurement of yield, melting temperature, defect rate or simulated strain for a design differing from a control only in a forced crossover."
+    },
+    "reproductions": [
+        {
+            "what": "CH-0188 - forced crossovers on the 112 / 108 raster, 10 x 6",
+            "published": "10 of 59",
+            "here": "10 of 59",
+            "relativeDeparture": "0.0",
+            "reproduced": true
+        },
+        {
+            "what": "CH-0188 - forced crossovers on the 112 / 108 raster, 15 x 4",
+            "published": "8 of 59",
+            "here": "8 of 59",
+            "relativeDeparture": "0.0",
+            "reproduced": true
+        },
+        {
+            "what": "CH-0188 - 102 / 109 closes at zero forced crossovers",
+            "published": "0",
+            "here": "0",
+            "relativeDeparture": "0.0",
+            "reproduced": true
+        },
+        {
+            "what": "C-0147 - the aligned crossover span d - 2 r_P",
+            "published": "0.718724283",
+            "here": "0.718724283",
+            "relativeDeparture": "1.5E-16",
+            "reproduced": true
+        },
+        {
+            "what": "C-0147 - the opposed span d + 2 r_P",
+            "published": "4.35327572",
+            "here": "4.35327572",
+            "relativeDeparture": "0.0",
+            "reproduced": true
+        },
+        {
+            "what": "C-0079 - the host sheet's own cost per crossover column",
+            "published": "7.99969697",
+            "here": "7.99969697",
+            "relativeDeparture": "0.0",
+            "reproduced": true
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "the azimuth ladder, the span, the census and the elastic ceiling",
+            "axis": "none - every one is a closed form in exact integer or elementary arithmetic",
+            "relativeDeparture": "0.0",
+            "note": "There is no mesh, no timestep, no sampling and no root-finder in any of them, so a convergence axis would be a measurement of the floating-point unit."
+        },
+        {
+            "quantity": "the interhelical approach that would close a forced crossover",
+            "axis": "the quadratic root, asserted back through the span it was solved from",
+            "relativeDeparture": "8.4E-16",
+            "note": "The one inversion in this study, and it is closed form; the round trip is the whole of its convergence."
+        }
+    ],
+    "falsifiers": [
+        {
+            "name": "F1",
+            "statement": "the span identity reproduces C-0147's d - 2 r_P and d + 2 r_P",
+            "fired": false,
+            "note": "Both endpoints reproduce to the last ulp, so the geometry is being read the same way the standing turn-slack claim reads it and no new convention enters."
+        },
+        {
+            "name": "F2",
+            "statement": "17.142857 deg is the SMALLEST nonzero azimuthal departure the 21-residue lattice offers",
+            "fired": false,
+            "note": "The minimum is reached at 10 and at 11 bp and nowhere else, because one turn is 10.5 bp - so the cheapest forcing is the one displaced FURTHEST in base pairs, which no count of base pairs can see."
+        },
+        {
+            "name": "F3",
+            "statement": "a forced crossover does NOT close as a bond at rigid ideal geometry - written the favourable way round, so its not firing is the finding",
+            "fired": false,
+            "note": "The minimal forced span is 0.962320075 nm against a 99th percentile of 0.756744753 nm, so there IS something to price."
+        },
+        {
+            "name": "F4",
+            "statement": "the elastic ceiling for all 10 forced crossovers is below the host sheet's own cost per crossover column",
+            "fired": false,
+            "note": "The block's whole forcing costs 0.438634952 of what ONE crossover of the demonstrated sheet already pays."
+        },
+        {
+            "name": "F5",
+            "statement": "no published yield or stability cost for a FORCED crossover exists - one paper falsifies it, which would be the better outcome",
+            "fired": false,
+            "note": "See literatureVerdict. The source that DEFINES the operation states in its own discussion that its structural consequences are not predicted."
+        }
+    ],
+    "findings": {
+        "theCheapBoundDecidedIt": "The departure is an AZIMUTH and one turn is 10.5 bp, so the smallest nonzero departure the 21-residue lattice offers is HALF a base-pair step - 17.1428571 deg at TEN or ELEVEN base pairs of displacement, not the 34.2857143 deg one base pair costs. The cheapest forcing is the one displaced FURTHEST in base pairs, and no count of base pairs can see that.",
+        "itDoesNotCloseAsABond": "At rigid ideal geometry the minimal forced crossover spans 0.962320075 nm, which is 8.24 sigma of T-71's MEASURED C2'-endo phosphodiester step and 1.27165741 times its 99th percentile - against an ALLOWED crossover's 0.718724283 nm, which C-0147 already showed sits INSIDE it at +1.5 sigma. So a forced crossover is not free and there is something to price.",
+        "theLATTICEsOwnCALIBRATION": "An ALLOWED scaffold crossover is aligned only to caDNAno's own idealisation. The exact half turn at 10.5 bp per turn is 5.25 bp, so the +-5 bp rule places every allowed scaffold crossover 8.57142857 deg off the line of centres - spanning 0.787091706 nm at 3.39 sigma, which is OUTSIDE the measured 99th percentile, against the aligned reading's 1.5 sigma inside it. So the rigid model is already at its limit for a crossover that demonstrably folds, and the structure absorbs 8.57142857 deg at EVERY scaffold crossover of every honeycomb origami ever built. A forced crossover adds exactly TWICE that. This is a calibration the lattice supplies for free, and it needs no measurement that does not already exist.",
+        "theAxesCannotPayItAlone": "The span is minimised over the interhelical distance at 2 r_P cos theta, which is inside the steric floor, so the approach that would close the bond without any twist is 2.12974658 nm - a 0.406253424 nm approach on a 2.536 nm lattice constant, 16.0 % of it. It is geometrically available and it is not what the structure will choose; either way it can only LOWER the ceiling.",
+        "theCeiling": "Any admissible deformation channel's cost is an upper bound on the true price, because the structure minimises over channels. On C-0104's own mapping of an azimuthal register error to a crossover ROLL, the rigid-duplex limit is half k_theta theta squared and it is 0.350894669 kT per forced crossover at the STIFFEST end of Gen1Tile's alpha bracket and the more expensive of the two baseline conventions. That is SUB-THERMAL - 2.84985806 times below one k_BT - and all 10 of the 112 / 108 raster's forced crossovers together cost 3.50894669 kT, which is 0.438634952 of what ONE crossover column of the DEMONSTRATED host sheet already pays to hold its own two duplexes (C-0079), and origami folds.",
+        "theTwoBaselineReadingsDifferByExactlyTwo": "caDNAno's +-5 bp is half a turn only to its own idealisation - the exact half turn is 5.25 bp - so an ALLOWED scaffold crossover already sits 8.57142857 deg off the line of centres and a forced one sits at three times that. The excess is then 8 x squared against the idealised reading's 4 x squared: EXACTLY a factor of two, at every stiffness and every alpha. The expensive reading is the one quoted.",
+        "whatIsStillNotPriced": "An elastic energy is not a folding yield. The ceiling says a forced crossover cannot be argued out of a fold on ELASTIC grounds; it says nothing about a kinetic trap, and no published measurement of one was found. What the FLATNESS channel would say cannot be computed here at all: the departure, 17.1428571 deg, is 1.10958961 times C-0104's 15.4497275 deg threshold, and that threshold is a UNIFORM prestrain on ALL 56 crossovers of a SINGLE-LAYER SQUARE-LATTICE tile. It does not transfer, and this repository's lattice machinery cannot run the honeycomb case.",
+        "thePublishedLadderTheAnswerSitsUnDER": "No published price for a forced crossover exists - 68 queries in 7 families, every raw response retained. What exists is one systematic sweep on the same AXIS: Ke et al. underwind a honeycomb 24-helix bundle by inserting base pairs into its 21 bp crossover period, so each rung is a whole number of base pairs of azimuthal register per interface. One base pair (34.2857143 deg) folds - and AMBIGUOUSLY, improving a 60hb while degrading a 24hb; three base pairs (102.857143 deg) abolish folding, which the authors attribute to 'the penalty from torsional strain energy'. A forced crossover here is 17.1428571 deg - HALF the bottom rung, and at 10 of 59 interfaces rather than all of them. It is not a transfer, because their departure is global and relieved by an actual change of twist and this one is local and unrelieved; what it licenses is a SCALE.",
+        "whatItMeansForCH0188": "CH-0188's geometric verdict is untouched: the 112 / 108 raster does not close, and 102 / 109 does. What changes is the SEVERITY. On the one axis this repository can price, forcing ten crossovers is sub-thermal and cheap against the fold's own demonstrated currency - so closure is a REASON to prefer 102 / 109 and not a proof that 112 / 108 is unbuildable. The unpriced risk is kinetic and flatness-side, and both are now named rather than assumed."
+    },
+    "validity": [
+        "TRL 1-3. Nothing here is measured on a folded object. The geometry is a LATTICE statement and the price is an ELASTIC model; what is measured is the phosphodiester step, the phosphate radius and the host sheet's own pair interaction, all consumed from this repository's own measured inputs.",
+        "AN ELASTIC ENERGY IS NOT A FOLDING YIELD. Folding is kinetic and cooperative; a sub-thermal strain says a forced crossover cannot be argued out of a fold on ELASTIC grounds and says nothing about a kinetic trap. That is exactly why the literature branch is run and why its null result is recorded.",
+        "The ceiling is a ceiling WITHIN C-0104's mapping of an azimuthal register error onto a crossover roll at k_theta. A mechanism outside that mapping - base pair unstacking, backbone strain, a local melt - is not bounded by it.",
+        "k_theta is Gen1Tile's SQUARE-LATTICE crossover hinge, swept over its own 0.6-1.2 alpha bracket. No honeycomb measurement of it exists here.",
+        "The half turn is 5.25 bp at 10.5 bp per turn and caDNAno writes 5. Both readings of that rounding are carried, and they differ by EXACTLY a factor of two in the energy, because (3x)^2 - x^2 = 8x^2 against (2x)^2 = 4x^2.",
+        "The FLATNESS channel is NOT evaluated. CLAUDE.md records that OrigamiGrillage never reads layers or interlayerCoupling and that CrossoverLayout's two-parity alternation makes the crossover combinatorics square-lattice, so a honeycomb prestrain solve does not exist in this repository. The threshold is quoted to say which measurement is owed, never to transfer a verdict.",
+        "Every raster crossover of an x-raster sits at a row TURN, which is the block's axial rim rather than its gap-facing face. That is an observation, not a result: C-0147 proved the coefficient is zero for the RAGGEDNESS, and nothing here proves it for a prestrain."
+    ],
+    "openQuestions": [
+        "What does a four-layer HONEYCOMB tile do under a prestrain on 10 of 59 of its SCAFFOLD crossovers? The lattice machinery is single-layer square-lattice, so the question needs a honeycomb grillage before it can be asked.",
+        "Is a forced crossover a KINETIC cost rather than an elastic one? Nothing in this repository can see a folding pathway, and the elastic ceiling explicitly does not bound one.",
+        "Does the forced crossover's position at the raster TURN - the block's axial rim - give it the zero coefficient on flatness that C-0147 proved for the raggedness? Not established here.",
+        "caDNAno's gallery is named by its own paper as the record of what folded and with what yield. Whether any gallery design carries a forced crossover, and with what yield, is a data question this repository has not closed."
+    ],
+    "proseFailure": "none"
+}

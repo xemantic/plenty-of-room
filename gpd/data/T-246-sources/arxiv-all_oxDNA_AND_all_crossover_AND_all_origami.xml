@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/jzecMyvN1SkPLtso+K47X41MBv4</id>
+  <title>arXiv Query: search_query=all:oxDNA AND all:crossover AND all:origami&amp;id_list=&amp;start=0&amp;max_results=25</title>
+  <updated>2026-08-19T19:43:02Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:oxDNA+AND+(all:crossover+AND+all:origami)&amp;start=0&amp;max_results=25&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>25</opensearch:itemsPerPage>
+  <opensearch:totalResults>2</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1810.09356v1</id>
+    <title>Lattice models and Monte Carlo methods for simulating DNA origami self-assembly</title>
+    <updated>2018-10-22T15:19:59Z</updated>
+    <link href="https://arxiv.org/abs/1810.09356v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1810.09356v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The optimal design of DNA origami systems that assemble rapidly and robustly is hampered by the lack of a model for self-assembly that is sufficiently detailed yet computationally tractable. Here, we propose a model for DNA origami that strikes a balance between these two criteria by representing these systems on a lattice at the level of binding domains. The free energy of hybridization between individual binding domains is estimated with a nearest-neighbour model. Double helical segments are treated as rigid rods, but we allow flexibility at points where the backbone of one of the strands is interrupted, which provides a reasonably realistic representation of partially and fully assembled states. Particular attention is paid to the constraints imposed by the double helical twist, as they determine where strand crossovers between adjacent helices can occur. To improve the efficiency of sampling configuration space, we develop Monte Carlo methods for sampling scaffold conformations in near-assembled states, and we carry out simulations in the grand canonical ensemble, enabling us to avoid considering states with unbound staples. We demonstrate that our model can quickly sample assembled configurations of a small origami design previously studied with the oxDNA model, as well as a design with staples that span longer segments of the scaffold. The sampling ability of our method should allow for good statistics to be obtained when studying the assembly pathways, and is suited to investigating in particular the effects of design and assembly conditions on these pathways and their resulting final assembled structures.</summary>
+    <category term="cond-mat.soft" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-bio.BM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-10-22T15:19:59Z</published>
+    <arxiv:comment>16 pages, 15 figures</arxiv:comment>
+    <arxiv:primary_category term="cond-mat.soft"/>
+    <arxiv:journal_ref>J. Chem. Phys. 149, 234905 (2018)</arxiv:journal_ref>
+    <author>
+      <name>Alexander Cumberworth</name>
+    </author>
+    <author>
+      <name>Aleks Reinhardt</name>
+    </author>
+    <author>
+      <name>Daan Frenkel</name>
+    </author>
+    <arxiv:doi>10.1063/1.5051835</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1063/1.5051835" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2006.15029v1</id>
+    <title>Computing the elastic mechanical properties of rod-like DNA nanostructures</title>
+    <updated>2020-06-26T14:53:47Z</updated>
+    <link href="https://arxiv.org/abs/2006.15029v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2006.15029v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>To study the elastic properties of rod-like DNA nanostructures, we perform long simulations of these structure using the oxDNA coarse-grained model. By analysing the fluctuations in these trajectories we obtain estimates of the bend and twist persistence lengths, and the underlying bend and twist elastic moduli and couplings between them. Only on length scales beyond those associated with the spacings between the interhelix crossovers do the bending fluctuations behave like those of a worm-like chain. The obtained bending persistence lengths are much larger than that for double-stranded DNA and increase non-linearly with the number of helices, whereas the twist moduli increase approximately linearly. To within the numerical error in our data, the twist-bend coupling constants are of order zero. That the bending persistence lengths we obtain are generally somewhat higher than in experiment probably reflects both that the simulated origami have no assembly defects and that the oxDNA extensional modulus for double-stranded DNA is too large.</summary>
+    <category term="cond-mat.soft" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-06-26T14:53:47Z</published>
+    <arxiv:primary_category term="cond-mat.soft"/>
+    <arxiv:journal_ref>J. Chem. Theory Comput. 16, 7748-7763 (2020)</arxiv:journal_ref>
+    <author>
+      <name>Hemani Chhabra</name>
+    </author>
+    <author>
+      <name>Garima Mishra</name>
+    </author>
+    <author>
+      <name>Yijing Cao</name>
+    </author>
+    <author>
+      <name>Domen Prešern</name>
+    </author>
+    <author>
+      <name>Enrico Skoruppa</name>
+    </author>
+    <author>
+      <name>Maxime M. C. Tortora</name>
+    </author>
+    <author>
+      <name>Jonathan P. K. Doye</name>
+    </author>
+    <arxiv:doi>10.1021/acs.jctc.0c00661</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1021/acs.jctc.0c00661" title="doi"/>
+  </entry>
+</feed>

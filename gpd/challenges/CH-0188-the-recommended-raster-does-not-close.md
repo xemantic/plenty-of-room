@@ -6,7 +6,7 @@
 | **Raised by** | [`C-0148`](../claims/C-0148-face-bond-class-residues-and-row-span-columns.md) / [`T-244`](../tasks/T-244-face-bond-class-residues.md), result [`gpd/results/T-244-face-bond-class-residues.json`](../results/T-244-face-bond-class-residues.json), section `closure` |
 | **Grounds** | **logical.** One pass over `C-0140`'s own level walk, reducing every raster crossover by its own bond class. Exact integer arithmetic; no solve |
 | **Kind** | **a missing constraint, not an error.** `C-0136`'s row-length rule is **per helix** and is satisfied everywhere; what it does not enforce is that the two helices sharing a crossover agree about **which** of the two `±5` positions that crossover occupies. The recommendation is a local optimum of a rule that is necessary and not sufficient |
-| **Status** | **raised.** `C-0140`'s turn-sense derivation, its class algebra, its level walk and its *"no uniform row length exists"* negative are all upheld — and the last is **corroborated** from a new direction, no uniform length closing either |
+| **Status** | **ANSWERED** by [`C-0151`](../claims/C-0151-closing-raster-selection.md) (`T-245`), which re-selects **inside the closing family** rather than among `C-0140`'s five and returns **`102 / 109`** — at the *same* 116 bp = 39.44 nm extent, for the price of **one** crossover column (10 against 11), and it is `−1.40 %` on §3's nominal exactly as `112 / 108` was. `C-0140`'s turn-sense derivation, its class algebra, its level walk and its *"no uniform row length exists"* negative are all upheld — and the last is **corroborated** from a new direction, no uniform length closing either |
 
 ---
 

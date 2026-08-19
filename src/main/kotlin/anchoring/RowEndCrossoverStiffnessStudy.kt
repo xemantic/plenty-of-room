@@ -25,12 +25,14 @@ import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.CrossoverSite
 import com.xemantic.nano.plentyofroom.structure.CrossoverSoftening
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_SIGNIFICANT_DIGITS
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
 import kotlinx.serialization.Serializable
@@ -690,22 +692,25 @@ fun main() {
         T164FalsifierRecord(
             "F2", "at s = 1 the pipeline does not reproduce C-0090's 0.0621469105",
             abs(admittedReading - admittedPublished) >= 1.0e-9,
-            "reproduced at a departure of ${abs(admittedReading - admittedPublished)}"
+            "reproduced at a departure of " +
+                    "${abs(admittedReading - admittedPublished)
+                        .roundedForProse(DEPARTURE_SIGNIFICANT_DIGITS, floor = 0.0)}"
         ),
         T164FalsifierRecord(
             "F3", "channel B's s = 0 limit differs materially from the refused reading",
             abs(wholeElementZero - refusedOptimum.bestValue) /
                     refusedOptimum.bestValue >= 0.05,
-            "channel B at s = 0 is $wholeElementZero against the refused reading's " +
-                    "${refusedOptimum.bestValue}; the two lattices carry the same mechanics and " +
+            "channel B at s = 0 is ${wholeElementZero.roundedForProse()} against the " +
+                    "refused reading's ${refusedOptimum.bestValue.roundedForProse()}; the two " +
+                    "lattices carry the same mechanics and " +
                     "differ only in the mesh the two extra nodes impose"
         ),
         T164FalsifierRecord(
             "F4", "channel A's crossing lies above the counting floor s = 1/2",
             crossingA.crossingExists && crossingA.aboveCountingFloor,
             if (crossingA.crossingExists)
-                "the crossing is bracketed at [${crossingA.softeningBelow}, " +
-                        "${crossingA.softeningAbove}]"
+                "the crossing is bracketed at [${crossingA.softeningBelow.roundedForProse()}, " +
+                        "${crossingA.softeningAbove.roundedForProse()}]"
             else "did not fire: there is no crossing at all — the reachable range is flat at " +
                     "every rung"
         ),
@@ -716,14 +721,15 @@ fun main() {
             else "FIRED at ${sweep.count { !it.bestKeyIsFullStiffnessOptimum }} of " +
                     "${sweep.size} rungs, and BOUNDED: the worst penalty for keeping C-0090's " +
                     "own placement instead of each rung's optimum is " +
-                    "${sweep.filter { it.channel == HINGE_ONLY }.maxOf { it.publishedPlacementPenalty }} " +
+                    "${sweep.filter { it.channel == HINGE_ONLY }
+                        .maxOf { it.publishedPlacementPenalty }.roundedForProse()} " +
                     "of the stroke on channel A, and the published placement is flat at " +
                     "${sweep.count { it.publishedPlacementFlatAtTenPercent }} of ${sweep.size} rungs"
         ),
         T164FalsifierRecord(
             "F6", "a uniform load on a uniform foundation dishes more than 1e-6 of the free stroke",
             worstUniform >= 1.0e-6,
-            "the worst over ${sweep.size} rungs is $worstUniform of the free stroke"
+            "the worst over ${sweep.size} rungs is ${worstUniform.roundedForProse()} of the free stroke"
         )
     )
 
@@ -734,11 +740,13 @@ fun main() {
                 "value, because that element is a constraint expressing covalent continuity " +
                 "and not an elasticity; Rothemund's own remedy for the edge strain adds slack " +
                 "to the torsion, not to the connectivity. So the reachable set is channel A, " +
-                "and it spans $admittedReading to $worstReachable of the stroke — " +
-                "$reachableFraction of the interval CH-0111 quotes.",
+                "and it spans ${admittedReading.roundedForProse()} to " +
+                "${worstReachable.roundedForProse()} of the stroke — " +
+                "${reachableFraction.roundedForProse()} of the interval CH-0111 quotes.",
         "THE VERDICT DOES NOT CHANGE INSIDE THE REACHABLE SET. Destroying the dihedral spring " +
                 "of all 14 row-end crossovers entirely takes the best 34-root placement to " +
-                "$worstReachable against T-5b's 0.10, so the 38.08 nm tile is flat at EVERY " +
+                "${worstReachable.roundedForProse()} against T-5b's 0.10, so the 38.08 nm tile is " +
+                "flat at EVERY " +
                 "row-end stiffness, including zero. The counting ceiling s <= 1 and the " +
                 "counting floor s = 1/2 are then decoration: the answer does not need them.",
         "THE COUNTING CEILING IS A RATIO OF TWO COUNTS AND CARRIES NO ELASTICITY. " +
@@ -747,8 +755,9 @@ fun main() {
                 "with alpha and B cancelling. That is the whole of what the one-sided material " +
                 "costs that a bond census can see, and it is available before any solve.",
         "WHAT MOVES THE ANSWER IS THE NODE, NOT THE SPRING. Channel B at s = 0 — both elements " +
-                "gone, the two extra mesh nodes retained — reads $wholeElementZero against the " +
-                "refused reading's ${refusedOptimum.bestValue} on a six-column host, so the " +
+                "gone, the two extra mesh nodes retained — reads " +
+                "${wholeElementZero.roundedForProse()} against the refused reading's " +
+                "${refusedOptimum.bestValue.roundedForProse()} on a six-column host, so the " +
                 "mechanics is the same and the mesh is worth the difference. The 2.7x that " +
                 "C-0090's two readings differ by is therefore a statement about a LATTICE, not " +
                 "about a joint.",
@@ -762,14 +771,17 @@ fun main() {
                 "return a placement other than C-0090's, and every one of them is a rung where " +
                 "the two are nearly tied — keeping C-0090's own 34 roots at EVERY rung of " +
                 "channel A costs at most " +
-                "${sweep.filter { it.channel == HINGE_ONLY }.maxOf { it.publishedPlacementPenalty }} " +
+                "${sweep.filter { it.channel == HINGE_ONLY }
+                    .maxOf { it.publishedPlacementPenalty }.roundedForProse()} " +
                 "of the stroke and stays inside T-5b's 0.10 throughout. So the row-end " +
                 "stiffness moves the VALUE of the flatness and not the DESIGN, which is the " +
                 "separate and worse exposure.",
         "CHANNEL B IS A STEP, NOT A RAMP, AND THAT IS THE POINT. The vertical link is a PENALTY " +
                 "enforcing a constraint, so a tenth of it still enforces the constraint: " +
-                "channel B reads ${cache.getValue(WHOLE_ELEMENT to 0.125).bestDishingOverStroke} " +
-                "at s = 0.125 and ${cache.getValue(WHOLE_ELEMENT to 0.0).bestDishingOverStroke} " +
+                "channel B reads ${cache.getValue(WHOLE_ELEMENT to 0.125)
+                    .bestDishingOverStroke.roundedForProse()} " +
+                "at s = 0.125 and ${cache.getValue(WHOLE_ELEMENT to 0.0)
+                    .bestDishingOverStroke.roundedForProse()} " +
                 "at s = 0 exactly. The bisection therefore locates a discontinuity and not a " +
                 "threshold, and CLAUDE.md's rule that the link's value must not affect the " +
                 "answer is what makes the 2.7x binary: the link is either there or it is not, " +
@@ -784,8 +796,9 @@ fun main() {
 
     val decision =
         "the 38.08 nm tile is flat at T-5b's 0.10 at EVERY row-end dihedral stiffness from zero " +
-                "to an interior crossover's, best 34-root dishing $worstReachable to " +
-                "$admittedReading of the stroke; CH-0111's bracket is not reachable because its " +
+                "to an interior crossover's, best 34-root dishing " +
+                "${worstReachable.roundedForProse()} to ${admittedReading.roundedForProse()} " +
+                "of the stroke; CH-0111's bracket is not reachable because its " +
                 "lower end deletes a covalent constraint and a mesh node as well as a spring"
 
     val result = T164Result(

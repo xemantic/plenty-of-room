@@ -141,4 +141,11 @@ if [ "$checks" = "yes" ]; then
     echo
     echo "--- the audit that is NOT a gate: saturated statistics (T-213) ---"
     tools/check-result-file-hygiene.py --saturated
+    echo
+    # `T-249`/`C-0153`. Also an AUDIT and not a gate: the corpus reads 748 tokens in 48 files, and
+    # `C-0083`'s rule is that a gate which cannot come clean is not a gate. Reported here anyway,
+    # because an audit nobody sees decays into a warning -- which is the same argument that put
+    # `--saturated` on the line above. It becomes a gate when `T-250` closes.
+    echo "--- the audit that is NOT a gate: unrounded numbers inside PROSE (T-249) ---"
+    tools/check-result-file-hygiene.py --prose | head -8
 fi

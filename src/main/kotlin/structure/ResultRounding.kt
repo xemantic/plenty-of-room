@@ -223,6 +223,39 @@ fun roundForResult(
 }
 
 /**
+ * This number rendered for a **sentence**, at the precision the result file declares.
+ *
+ * `T-249`, raised by `C-0150`. [JsonElement.roundedForResult] dispatches on the JSON **type** and
+ * passes strings through — which is correct, and which is also why it **cannot** be the cure here:
+ * by the time the serialisation boundary sees `"channel B at s = 0 is $x"` the number in it is no
+ * longer a number, and re-parsing decimals back out of a study's own prose would rewrite cited
+ * literals as readily as computed ones. **The only place this rule can be applied is the call
+ * site**, which is what makes the artifact-side census
+ * (`tools/check-result-file-hygiene.py --prose`) the instrument that keeps it closed rather than a
+ * one-line repair in this layer.
+ *
+ * Two things go wrong when a `Double` is interpolated raw, and only the first is a reproducibility
+ * defect:
+ *
+ *  - `Double.toString()` emits the **shortest round-trip** decimal, up to seventeen significant
+ *    digits, so a JIT recompilation of a hot reduction moves the sentence — `C-0150`'s sweep
+ *    watched `0.1686405908358076` become `…075` in three `T-164` findings on a run that changed
+ *    nothing.
+ *  - the file then **contradicts itself**: `T-164`'s numeric `sweep[0].bestDishingOverStroke` is
+ *    `0.0651753854` and the sentence beside it says `0.06517538540278571` — one quantity at two
+ *    precisions, one of which no field of the file states.
+ *
+ * Pass the digits and the floor the quantity is entitled to, exactly as at any other emission
+ * site: a **departure** in prose takes [DEPARTURE_SIGNIFICANT_DIGITS] and `floor = 0.0`, because
+ * [RESULT_ABSOLUTE_FLOOR] is a claim in the locked units (`P-18`) and would render the whole
+ * sentence as `0.0`.
+ */
+fun Double.roundedForProse(
+    digits: Int = RESULT_SIGNIFICANT_DIGITS,
+    floor: Double = RESULT_ABSOLUTE_FLOOR
+): Double = roundForResult(this, digits, floor)
+
+/**
  * Returns this element with every non-integral number rounded by [roundForResult].
  *
  * Applied to the whole tree at the serialisation boundary rather than at each construction

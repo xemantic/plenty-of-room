@@ -1,0 +1,6 @@
+["all:\"forced crossover\"",
+ "all:\"DNA origami\" AND all:\"crossover\" AND all:\"folding yield\"",
+ "all:\"DNA origami\" AND all:\"crossover spacing\"",
+ "all:oxDNA AND all:crossover AND all:origami",
+ "all:\"DNA origami\" AND all:\"design rules\" AND all:crossover",
+ "all:cadnano AND all:crossover"]

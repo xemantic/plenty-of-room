@@ -76,6 +76,19 @@ CORRECTING = {
     # (T-244/T-243); its `112 bp` is C-0146's restored ROW SPAN, which is the corrected reading
     # and not the withdrawn uniform tile width the WIDTH family cannot tell it apart from.
     "gpd/claims/C-0148-face-bond-class-residues-and-row-span-columns.md",
+    # Iteration 37, and CH-0182 for the FIFTH consecutive iteration. C-0151 selects the drawable
+    # raster, C-0152 prices the forcing C-0148 found, C-0153 sweeps the prose interpolations; each
+    # quotes a superseded width or a single-layer statement as the baseline it acts on.
+    # NOTE for whoever next owns this tool: two of C-0152's flags are a DIFFERENT false positive,
+    # and registering the file hides rather than fixes them. C-0141 discharged only HALF of
+    # "single-layer square-lattice" -- it supplied the station lattice, plan ceiling and placement
+    # family, and did NOT supply a grillage, because OrigamiGrillage still never reads `layers`
+    # (T-253). A sentence about the GRILLAGE is live and correct and needs no discharge pointer.
+    # A PARTIAL discharge is exactly where a token pattern stops being able to tell, and this wants
+    # a tested predicate rather than a set membership. Queued as T-260.
+    "gpd/claims/C-0151-closing-raster-selection.md",
+    "gpd/claims/C-0152-forced-scaffold-crossover-price.md",
+    "gpd/claims/C-0153-unrounded-prose-interpolations.md",
 }
 #: Synthesis claims: an occurrence there records what a past deliverable pass carried in.
 SYNTHESIS = {
