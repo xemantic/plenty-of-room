@@ -1,0 +1,81 @@
+{
+  "task": "T-211",
+  "claim": "C-0130",
+  "what": "The seventh synthesis of ANSWERS.md, against C-0122-C-0128 and CH-0147-CH-0151, and the REWRITE of SS3 row (g) that C-0121 asked for. No physics is derived. Units: none.",
+  "verificationType": "logical, with the five retained checkers run before and after",
+  "maturity": "TRL 1-3, and below it: nothing here is physics.",
+  "baseCommit": "29b0153",
+  "cheapBound": {
+    "citedBefore": 0,
+    "citedAfter": 9,
+    "items": 11,
+    "note": "0 of 11 is the strongest product signal any pass has had -- C-0106's was 14 of 48 and C-0115's 3 of 20. It under-reports, as every pass records."
+  },
+  "dispositions": {
+    "C-0122": {
+      "disposition": "CARRIED_IN",
+      "reason": "the honeycomb station census: SS3 row (g), and it DISCHARGES SS5's own missing-measurement entry raised three iterations earlier"
+    },
+    "C-0124": {
+      "disposition": "NOT_CARRIED",
+      "reason": "an audit of DECISIONS-FOR-NDI.md. It corrected that document, not this one, and no SS6 answer depends on it. Its finding -- that a decisions file's drift is one-signed by construction -- is about a document class and belongs in CLAUDE.md, where it is."
+    },
+    "C-0125": {
+      "disposition": "CARRIED_IN",
+      "reason": "the scaffold remainder: SS5's decisions row 5, with CH-0147's 840 nt and CH-0148's effective-charge correction"
+    },
+    "C-0126": {
+      "disposition": "NOT_CARRIED",
+      "reason": "a queue reclassification. It marks eight TASKS.md rows contingent on the tile-thickness ruling; ANSWERS.md reports answers, not the queue's state, and the ruling itself IS carried, as decision 7."
+    },
+    "C-0127": {
+      "disposition": "NOT_CARRIED",
+      "reason": "a source repair. Its own finding is that NOT ONE claim had inherited a defective number, so by its own measurement this deliverable owes nothing -- and saying so is the reason to record the disposition."
+    },
+    "C-0128": {
+      "disposition": "CARRIED_IN",
+      "reason": "the oblique root: SS3 row (g) and SS5's discharged census entry"
+    },
+    "CH-0147": {
+      "disposition": "CARRIED_IN",
+      "reason": "the recommended cross-section is folded from p7560: SS5 row 5"
+    },
+    "CH-0148": {
+      "disposition": "CARRIED_IN",
+      "reason": "bare against effective charge, 1.66x becoming 5.56-6.82x: SS5 row 5"
+    },
+    "CH-0149": {
+      "disposition": "NOT_CARRIED",
+      "reason": "a census correction inside C-0125's process note; no number here"
+    },
+    "CH-0150": {
+      "disposition": "NOT_CARRIED",
+      "reason": "a diagnosis correction inside C-0127's process note; no number here"
+    },
+    "CH-0151": {
+      "disposition": "CARRIED_IN",
+      "reason": "the station census corrected UPWARD, 90/60 to 132/90: SS3 row (g) and SS5's discharged entry"
+    }
+  },
+  "dispositionCounts": {
+    "CARRIED_IN": 6,
+    "NOT_CARRIED": 5
+  },
+  "rowG": {
+    "charactersBefore": 23134,
+    "charactersAfter": 2489,
+    "ratio": 9.294495781438329,
+    "historyPreservedVerbatim": true,
+    "why": "C-0121 recorded that row (g) was the passage most in need of a REWRITE rather than another append: eleven revision markers in one table cell, and a standing verdict that had reversed twice, so a reader wanting the current answer had to reconstruct it from a chronological accretion. The history is kept verbatim below the table rather than deleted, because the reversals are the most instructive thing in this deliverable and removing them would leave the answer looking inevitable."
+  },
+  "findings": {
+    "aRewriteIsNotADeletion": "The row is 9.3x shorter and NOTHING was discarded: the cell as it stood is quoted verbatim below the table. A deliverable whose answers have reversed twice owes a reader both the answer and the reversals, and those are different jobs for different places on the page.",
+    "aDischargeIsAnEDIT": "SS5's honeycomb-census entry was raised at iteration 25 as the largest gap in the four-layer line and discharged at 26-28 by C-0122, CH-0151 and C-0128. Struck rather than deleted, with the original kept, because it is the reasoning the discharge answers.",
+    "threeProcessClaimsAreNotCarriedAndTheReasonsDiffer": "C-0124 corrected a different document; C-0126 reclassified the queue, whose state this deliverable does not report; and C-0127's own measurement is that no claim inherited a defective number, so it owes nothing here BY ITS OWN FINDING. Recording the third is the point -- an absence with a measured reason is not the same as an omission."
+  },
+  "validity": [
+    "It re-derives nothing; every number is another claim's, at that claim's precision.",
+    "The (sigma, L0) window is un-re-run for the seventh consecutive pass, and again for the same reason: not one item in range is a function of sigma.",
+    "The rewritten row (g) states the CURRENT answer. A reader who wants to know how the programme got there, or which readings were withdrawn, must read the preserved history -- and the row says so."
+  ]
+}

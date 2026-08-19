@@ -8574,3 +8574,40 @@ reads output where the other reads source), `T-209` (`T-136`'s nine-digit reprod
 two-digit rule was applied per **file** rather than per **record type**, so a sweep is owed) and `T-210`
 (`T-148`'s exceedance statistic, saturated at 1.0 at every sample count, where a symmetric error bar is the
 resolution of nothing and a one-sided bound is the instrument).
+
+---
+
+## Iteration 29 — `T-211`, and a rewrite that had to lose nothing
+
+**`C-0130`.** `C-0121` closed the sixth synthesis by naming §3 row (g) *"the passage most in need of a rewrite
+rather than another append"*. It had reached **23 134 characters in a single table cell**, eleven revision
+markers deep, carrying a standing verdict that had **reversed twice** — so a reader wanting to know whether
+the tile is flat had to reconstruct the answer from a chronological accretion.
+
+It is now **2 489 characters**, stating the answer in five steps, and **nothing was discarded**: the cell as it
+stood is quoted **verbatim below the table**.
+
+**That was the whole design problem.** A deliverable whose answer has reversed twice owes its reader **two
+different things in two different places** — the current answer, stated plainly at the top, and the reversals,
+which are the most instructive material in the document. The flatness negative stood for eight iterations, was
+closed on four separate axes, and was then overturned by a claim about the **body** rather than the coupling.
+Deleting that history would leave the answer looking inevitable, which it very much was not. So the falsifier
+declared for this task was exactly *"the rewrite loses something"*, and it is checked rather than asserted: the
+tracer reads **0 ABSENT** before and after.
+
+**Cheap bound 0 of 11 cited** — the strongest product signal any pass has had, against `C-0106`'s 14 of 48 and
+`C-0115`'s 3 of 20.
+
+**Six carried in, five deliberately not, and the reasons for the five differ.** `C-0124` corrected a different
+document; `C-0126` reclassified the queue, whose state this deliverable does not report; and **`C-0127` is not
+carried by its own measurement** — its finding is that not one claim had inherited a defective number, so by
+its own arithmetic this deliverable owes nothing. Recording that is the point: **an absence with a measured
+reason is not the same as an omission**, and the difference is invisible unless somebody writes it down.
+
+**§5's honeycomb-census entry is discharged** — raised at iteration 25 as the largest gap in the four-layer
+line, answered by `C-0122`, corrected *upward* by `CH-0151`, and priced by `C-0128`. Struck with the original
+kept below it, which is the row-(g) discipline at the scale of a bullet.
+
+**No checker fired during this pass.** The previous two both introduced a defect only one instrument could
+see — a verdict-window misattribution and a table cell-count error — and a rewrite of a 23 000-character cell
+was the likeliest place yet for the table checker to fire.
