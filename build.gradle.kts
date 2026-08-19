@@ -182,10 +182,30 @@ tasks.register<Exec>("testChallengeIndex") {
     commandLine("$projectDir/tools/check-challenge-index.py", "--selftest")
 }
 
+/*
+ * `tools/check-result-file-hygiene.py` (`T-208`, `C-0129`) is the sixth, and it is the first that
+ * reads the **output** rather than the source. Its catch set and `testFormatStrings`' are
+ * strictly different: that one models `String.format` call sites, this one models nothing and
+ * simply reads what was committed, so a conversion arriving by a route the static check does not
+ * model — a `settles` string assembled in one function and formatted in another, a Python emitter
+ * in `tools/`, a hand-edited field — is caught here and only here. `C-0127` repaired 13 fields
+ * carrying 23 raw conversions across 7 committed result files, every one of which had been read.
+ *
+ * Only its `--conversions` predicate is a GATE. Its two other censuses — departure precision
+ * (`T-209`) and saturated proportions (`T-210`) — report 222 fields in 29 files and 302 records
+ * in 7, so they cannot fail a build without a tree-wide re-emission first, and `C-0083` says a
+ * gate that cannot come clean is not a gate. They exit 0, by construction and by test.
+ */
+tasks.register<Exec>("testResultFileHygiene") {
+    group = "verification"
+    description = "Runs tools/check-result-file-hygiene.py --self-test, the tests for the result-file checker"
+    commandLine("$projectDir/tools/check-result-file-hygiene.py", "--self-test")
+}
+
 tasks.named("test") {
     dependsOn(
         "testHarness", "testDeliverableTracer", "testMarkdownTables", "testCorpusLinks",
-        "testFormatStrings", "testChallengeIndex"
+        "testFormatStrings", "testChallengeIndex", "testResultFileHygiene"
     )
 }
 

@@ -20,6 +20,7 @@ import kotlin.math.abs
 import kotlin.math.exp
 import kotlin.math.max
 import kotlin.math.min
+import kotlin.math.pow
 import kotlin.math.sqrt
 
 /**
@@ -840,4 +841,44 @@ fun binomialStandardError(probability: Double, count: Int): Double {
     require(probability in 0.0..1.0) { "probability must lie in [0, 1], was: $probability" }
     require(count > 0) { "count must be positive, was: $count" }
     return sqrt(probability * (1.0 - probability) / count)
+}
+
+/**
+ * The one-sided confidence bound on a **saturated** proportion — `T-210`, `C-0129`.
+ *
+ * At `p̂ = 1` (or `p̂ = 0`) the symmetric binomial error [binomialStandardError] is **identically
+ * zero for every sample count**: it is `√(p̂(1 − p̂)/n)`, and the numerator is zero whatever `n`
+ * is. It therefore cannot distinguish 1 250 draws from 20 000, and quoting it as *"the resolution
+ * the verdict is quoted to"* — which `gpd/results/T-148-staple-dropout.json` did — states the
+ * opposite of the truth. **A saturated statistic is the resolution of nothing.**
+ *
+ * The instrument that does carry the sample size is one-sided. Observing [count] successes out of
+ * [count] is exactly as likely as `p^count`, so the 95 % lower limit is the `p` at which that
+ * equals `1 − confidence`:
+ *
+ *     p_lower = (1 − confidence)^(1/n)
+ *
+ * the exact Clopper-Pearson limit at `x = n`. The **rule of three**, `p > 1 − 3/n`, is its
+ * large-`n` form, because `ln(1/20) = −2.996 ≈ −3`; at `n = 10 000` the two agree to `5e−7`.
+ * For `p̂ = 0` the same argument gives the upper limit `1 − (1 − confidence)^(1/n)`.
+ *
+ * @param probability the observed proportion. **Must be saturated** — at `0 < p̂ < 1` the
+ *          symmetric error is the right instrument and a one-sided bound is the wrong question,
+ *          so this refuses rather than answering it silently.
+ */
+fun saturatedProportionBound(
+    probability: Double,
+    count: Int,
+    confidence: Double = 0.95
+): Double {
+    require(probability == 0.0 || probability == 1.0) {
+        "probability must be saturated (exactly 0.0 or 1.0) for a one-sided bound, " +
+                "was: $probability"
+    }
+    require(count > 0) { "count must be positive, was: $count" }
+    require(confidence > 0.0 && confidence < 1.0) {
+        "confidence must lie in (0, 1), was: $confidence"
+    }
+    val limit = (1.0 - confidence).pow(1.0 / count)
+    return if (probability == 1.0) limit else 1.0 - limit
 }

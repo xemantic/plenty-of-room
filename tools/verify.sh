@@ -132,4 +132,10 @@ if [ "$checks" = "yes" ]; then
     echo "--- every challenge is in its own index (P-26) ---"
     tools/check-challenge-index.py --selftest > /dev/null
     tools/check-challenge-index.py
+    echo
+    echo "--- no committed result file carries a raw format conversion (T-208) ---"
+    tools/check-result-file-hygiene.py
+    echo
+    echo "--- the two audits that are NOT gates: departure precision, saturated statistics ---"
+    tools/check-result-file-hygiene.py --departures --saturated
 fi

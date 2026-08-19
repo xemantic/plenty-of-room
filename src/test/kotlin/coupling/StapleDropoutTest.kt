@@ -25,6 +25,7 @@ import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
 import kotlin.math.abs
 import kotlin.math.exp
+import kotlin.math.pow
 import kotlin.math.sqrt
 import kotlin.test.Test
 import kotlin.test.assertFailsWith
@@ -540,5 +541,53 @@ class StapleDropoutTest {
         val p = List(45) { 0.84 }
         assert(expectedTotalStiffness(k, p).isCloseTo(28.0, 1e-4))
         assert((1.0 - expectedTotalStiffness(k, p) / k.sum()).isCloseTo(0.16, 1e-9))
+    }
+
+    // ---------------------------------------------------------------------------------------
+    // `T-210`/`C-0129` — a SATURATED statistic is the resolution of nothing
+    // ---------------------------------------------------------------------------------------
+
+    @Test
+    fun `gate 4 statistical power - the symmetric error carries no information at saturation`() {
+        // The instrument `T-148`'s convergence note calls "the resolution the verdict is quoted
+        // to" is IDENTICALLY zero at every one of the five sample counts it was read over, so it
+        // cannot distinguish 1250 draws from 20000. The one-sided bound can, and does.
+        assert(binomialStandardError(1.0, 1250) == binomialStandardError(1.0, 20000))
+        assert(saturatedProportionBound(1.0, 1250) < saturatedProportionBound(1.0, 20000))
+    }
+
+    @Test
+    fun `gate 5 literature cross-check - the rule of three approximates the exact bound`() {
+        // Hanley & Lippman-Hand: at zero observed events in n trials the 95 % upper bound is
+        // about 3/n. It is the large-n form of the exact Clopper-Pearson bound implemented here.
+        // Compared ABSOLUTELY: the two bounds are 1 - x and x of each other, so a RELATIVE
+        // comparison flatters the p-hat = 1 end by exactly the factor the p-hat = 0 end is
+        // penalised by (4.7e-7 either way, but 4.7e-7 against 1e-3 relative).
+        val n = 10000
+        assert(abs(saturatedProportionBound(1.0, n) - (1.0 - 3.0 / n)) < 5e-7)
+        assert(abs(saturatedProportionBound(0.0, n) - 3.0 / n) < 5e-7)
+    }
+
+    @Test
+    fun `gate 3 symmetry - the bound is exact by construction`() {
+        // `bound^n` is the probability of observing n successes in a row at the bound, which IS
+        // the definition of a one-sided Clopper-Pearson limit: it must return 1 - confidence.
+        val n = 137
+        val bound = saturatedProportionBound(1.0, n)
+        assert(bound.pow(n).isCloseTo(0.05, 1e-12))
+        assert(saturatedProportionBound(0.0, n).isCloseTo(1.0 - bound, 1e-12))
+    }
+
+    @Test
+    fun `gate 2 limiting case - a single draw bounds the proportion at the confidence level`() {
+        assert(saturatedProportionBound(1.0, 1).isCloseTo(0.05, 1e-12))
+    }
+
+    @Test
+    fun `gate 1 dimensional consistency - the bound refuses an unsaturated proportion`() {
+        // At 0 < p-hat < 1 the symmetric error IS the instrument; asking for a one-sided bound
+        // there is asking the wrong question, and a silent answer would hide that.
+        assertFailsWith<IllegalArgumentException> { saturatedProportionBound(0.5, 100) }
+        assertFailsWith<IllegalArgumentException> { saturatedProportionBound(1.0, 0) }
     }
 }

@@ -16,6 +16,7 @@
 
 package com.xemantic.nano.plentyofroom.coupling
 
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
@@ -117,6 +118,15 @@ private data class T148MonteCarloRecord(
     val rangeWorstP90OverStroke: Double,
     val exceedanceAtDesignState: Double,
     val exceedanceStandardError: Double,
+    /**
+     * The one-sided 95 % bound where [exceedanceAtDesignState] is saturated, `null` otherwise.
+     *
+     * `T-210`/`C-0129`. At `p̂ = 1` or `p̂ = 0` the symmetric [exceedanceStandardError] is
+     * identically zero for **every** sample count, so it reports the saturation and nothing
+     * else. This field is the instrument that carries the count there; where the proportion is
+     * unsaturated it is `null`, because there the symmetric error is the right one.
+     */
+    val exceedanceOneSidedBound: Double?,
     val exceedanceOverRange: Double,
     val meanSurvivingPaths: Double,
     val meanRealisedTotal: Double,
@@ -744,6 +754,9 @@ fun main() {
                 rangeWorstP90OverStroke = orderStatistic(rangeSample, 0.90),
                 exceedanceAtDesignState = exceedance,
                 exceedanceStandardError = binomialStandardError(exceedance, samples),
+                exceedanceOneSidedBound =
+                    if (exceedance == 0.0 || exceedance == 1.0)
+                        saturatedProportionBound(exceedance, samples) else null,
                 exceedanceOverRange = exceedRange.toDouble() / samples,
                 meanSurvivingPaths = survivors / samples,
                 meanRealisedTotal = realisedTotal / samples,
@@ -822,9 +835,23 @@ fun main() {
             "the exceedance probability against T-5b's 0.10", "the same counts",
             sampleCounts.map { it.toDouble() }, exceedanceAtCount,
             abs(exceedanceAtCount.last() - exceedanceAtCount[exceedanceAtCount.size - 2]),
-            ("the binomial standard error at 10 000 draws is %.4f, which is the resolution the " +
-                    "verdict is quoted to").format(
-                binomialStandardError(exceedanceAtCount[3], T148_REALISATIONS)
+            // `T-210`/`C-0129`: this note used to read "the binomial standard error at
+            // 10 000 draws is <value>, which is the resolution the verdict is quoted to".
+            // The value is 0.0000, and it is 0.0000 because the exceedance is SATURATED at
+            // 1.0 at every one of the five counts -- so it is a function of p-hat alone and
+            // says nothing whatever about the sample. A saturated statistic is the resolution
+            // of nothing. The instrument that does carry the count is one-sided.
+            ("the exceedance is SATURATED at %.1f at all five counts, so the symmetric " +
+                    "binomial standard error is identically %.1f and resolves nothing; the " +
+                    "one-sided 95 %% bound at %d draws is p > %.6f (rule of three: %.6f), " +
+                    "and at %d draws p > %.6f").format(
+                exceedanceAtCount[3],
+                binomialStandardError(exceedanceAtCount[3], T148_REALISATIONS),
+                T148_REALISATIONS,
+                saturatedProportionBound(exceedanceAtCount[3], T148_REALISATIONS),
+                1.0 - 3.0 / T148_REALISATIONS,
+                sampleCounts.first(),
+                saturatedProportionBound(exceedanceAtCount.first(), sampleCounts.first())
             )
         ),
         T148ConvergenceRecord(
@@ -968,8 +995,10 @@ fun main() {
         ),
         T148PredicateRecord(
             "P3 — a distribution, not a point",
-            ("percentiles over %d seeded realisations with a binomial standard error on every " +
-                    "exceedance probability").format(T148_REALISATIONS),
+            ("percentiles over %d seeded realisations, with a binomial standard error on every " +
+                    "UNSATURATED exceedance probability and a one-sided bound on every " +
+                    "saturated one -- at p-hat = 1 the symmetric error is identically zero at " +
+                    "every sample count and is not an instrument").format(T148_REALISATIONS),
             "PASS"
         ),
         T148PredicateRecord(
@@ -1086,7 +1115,12 @@ fun main() {
         json.encodeToString(
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
-                digits = T148_DECISION_DIGITS + 3, floor = T148_DECISION_FLOOR
+                digits = T148_DECISION_DIGITS + 3,
+                // `T-209`/`C-0129`: a DEPARTURE is a record type, not a file. Nine digits of a
+                // difference of two nearly equal dimensionless numbers is a statement about the
+                // JIT's warm-up schedule, and `T148_DECISION_FLOOR` cannot reach it.
+                digitsByKey = DEPARTURE_DIGITS_BY_KEY,
+                floor = T148_DECISION_FLOOR
             ) as JsonObject)
         ) + "\n"
     )

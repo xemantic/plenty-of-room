@@ -1680,7 +1680,7 @@
                 0.166652742,
                 0.166655146
             ],
-            "departure": 1.44251477E-5,
+            "departure": 1.4E-5,
             "note": "nested only, per CLAUDE.md — a subdivision of 3 moves a station off a node"
         },
         {
@@ -1746,7 +1746,7 @@
             "quantity": "dishing/stroke, 34 roots, over the 2 mM device's range",
             "published": 0.0789,
             "reproduced": 0.0788500163,
-            "departure": 6.33507287E-4,
+            "departure": 6.3E-4,
             "strict": false
         },
         {
@@ -1754,7 +1754,7 @@
             "quantity": "dishing/stroke, its plan-rule 30 roots, design state",
             "published": 0.26028,
             "reproduced": 0.260281397,
-            "departure": 5.3682184E-6,
+            "departure": 5.4E-6,
             "strict": false
         },
         {
@@ -1770,7 +1770,7 @@
             "quantity": "the margin of its own 30-root reduction [nm]",
             "published": 1.3495,
             "reproduced": 1.34951193,
-            "departure": 8.83856163E-6,
+            "departure": 8.8E-6,
             "strict": false
         },
         {
@@ -1778,7 +1778,7 @@
             "quantity": "the 30-path arm [nm]",
             "published": 7.77049,
             "reproduced": 7.77048807,
-            "departure": 2.47961023E-7,
+            "departure": 2.5E-7,
             "strict": false
         },
         {
@@ -1786,7 +1786,7 @@
             "quantity": "the 34-path arm [nm]",
             "published": 8.16439083,
             "reproduced": 8.16439018,
-            "departure": 7.99544655E-8,
+            "departure": 8.0E-8,
             "strict": false
         },
         {
@@ -1826,7 +1826,7 @@
             "quantity": "dishing/stroke, free uncoupled tile, design state, phase 24",
             "published": 0.3079,
             "reproduced": 0.307902368,
-            "departure": 7.6898974E-6,
+            "departure": 7.7E-6,
             "strict": false
         },
         {

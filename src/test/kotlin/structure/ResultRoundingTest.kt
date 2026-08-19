@@ -94,4 +94,54 @@ class ResultRoundingTest {
         }
     }
 
+
+    // ---------------------------------------------------------------------------------------
+    // `T-208`/`C-0129` — a DEPARTURE is a record type, not a file
+    // ---------------------------------------------------------------------------------------
+
+    @Test
+    fun `gate 4 numerical convergence - a departure should be emitted at two significant digits`() {
+        // `C-0093`'s own instance: two runs of identical code agreeing on every number in a
+        // 100 kB file and disagreeing in the eleventh decimal of one convergence departure.
+        val runA = 3.19469867e-11
+        val runB = 3.19472365e-11
+        assert(roundForResult(runA, floor = 0.0) != roundForResult(runB, floor = 0.0))
+        assert(
+            roundForResult(runA, digits = DEPARTURE_SIGNIFICANT_DIGITS, floor = 0.0) ==
+                    roundForResult(runB, digits = DEPARTURE_SIGNIFICANT_DIGITS, floor = 0.0)
+        )
+        assert(DEPARTURE_SIGNIFICANT_DIGITS == 2)
+    }
+
+    @Test
+    fun `gate 3 symmetry - the departure key map should carry every spelling of the record`() {
+        // `C-0101` cured the trap in `convergence` records and `C-0127` found it alive in
+        // `reproductions` ones. The rule is about the QUANTITY, so the map is keyed on every
+        // spelling the corpus uses for it, not on the one file that last went wrong.
+        assert(DEPARTURE_DIGITS_BY_KEY["departure"] == DEPARTURE_SIGNIFICANT_DIGITS)
+        assert(DEPARTURE_DIGITS_BY_KEY["relativeDeparture"] == DEPARTURE_SIGNIFICANT_DIGITS)
+        assert(DEPARTURE_DIGITS_BY_KEY["departureFromFinest"] == DEPARTURE_SIGNIFICANT_DIGITS)
+        assert(DEPARTURE_DIGITS_BY_KEY["strokeOverStroke"] == null)
+    }
+
+    @Test
+    fun `gate 2 limiting case - the departure map should reach a departure nested in an array`() {
+        val document = Json.parseToJsonElement(
+            """{"reproductions":[{"quantity":"a","departure":5.36821841e-6,"published":1.23456789}]}"""
+        )
+        val rounded = document.roundedForResult(
+            digitsByKey = DEPARTURE_DIGITS_BY_KEY, floor = 0.0
+        ).jsonObject
+        val record = rounded.getValue("reproductions").jsonArray[0].jsonObject
+        assert(record.getValue("departure") == JsonPrimitive(5.4e-6))
+        // and it must NOT reach the sibling it sits beside
+        assert(record.getValue("published") == JsonPrimitive(1.23456789))
+    }
+
+    @Test
+    fun `gate 3 symmetry - an exact zero departure should survive the two-digit rule unchanged`() {
+        // `T-190` emits a convergence departure that is exactly zero because two sample grids
+        // agree to the last bit; `roundForResult` must not hand `roundToLong` a `NaN`.
+        assert(roundForResult(0.0, digits = DEPARTURE_SIGNIFICANT_DIGITS, floor = 0.0) == 0.0)
+    }
 }

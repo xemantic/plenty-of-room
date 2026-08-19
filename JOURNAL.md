@@ -8611,3 +8611,61 @@ kept below it, which is the row-(g) discipline at the scale of a bullet.
 **No checker fired during this pass.** The previous two both introduced a defect only one instrument could
 see — a verdict-window misattribution and a table cell-count error — and a rewrite of a 23 000-character cell
 was the likeliest place yet for the table checker to fire.
+
+## Iteration 29 — `T-208`/`T-209`/`T-210`, and three items that were each a population
+
+**`C-0129`.** `C-0127` spawned three result-file hygiene items and named one instance in each.
+All three cheap bounds ran before anything was written, each cost a walk of the committed corpus and no solve,
+and **all three turned out to be populations**: `1`, `222`, `302`.
+
+| item | raised on | measured |
+|---|---|---|
+| `T-208` | 13 fields, 7 files, all repaired by `C-0127` | **1** file fires today — `T-207`'s own record |
+| `T-209` | **1** field, `T-136`'s `reproductions[2].departure` | **222** fields in **29** files |
+| `T-210` | **1** note in `T-148` | **302** of 403 records, in **7** files |
+
+**Only one of the three could honestly become a gate**, and the counts are what said so.
+`C-0083`'s rule — *a gate that cannot come clean is not a gate* — turned from a piece of style advice into the
+decision that shaped the whole deliverable: the raw-conversion checker is **wired**, and the other two predicates
+of the same tool ship as **audits that exit 0**, with the census published per file and the wiring cost stated
+(27 study re-runs and 6 respectively, now `T-212` and `T-213`).
+
+**The cheap bound caught its own instrument first.** The conversion regex, written with a space in Java's flag
+class — which is a legal Java flag — fired on **87 of 117 files**, every hit a prose percentage (`"% of"`,
+`"% over"`). Had that been wired it would have failed the build on 74 % of the corpus for nothing. It is why the
+conversion/percent-sign discriminator is a **self-tested part of the tool**, mutation-tested three ways, rather
+than a regular expression quoted in a claim.
+
+**`T-209`'s real finding is why the rule survived three correct repairs.** `C-0093` cured it on its convergence
+axis; `C-0101` cured it in the reproduction records of the files it was re-emitting; `C-0127` found `T-136` still
+carrying nine digits. Each repair was right and each was applied **per file**, to a rule that is about a **record
+type**. It now lives once, by name, as `DEPARTURE_SIGNIFICANT_DIGITS` / `DEPARTURE_DIGITS_BY_KEY` — four
+spellings, because a census of the corpus finds four, and keying on whichever one the last repair happened to
+look at is exactly the failure being fixed.
+
+**A `grep` excluded four heavy re-runs and one of the excluded ones ran anyway.** `T-136` is read by five
+studies and every one reads `parameters/*` or `recommendedPlacement` — none reads a departure — so the rounding
+change provably cannot reach them. `coupling/StapleDropoutStudy.kt` is one of the five and re-ran for `T-210`:
+**0 non-departure numeric fields moved**, which turns the containment argument into a measurement for free.
+
+**`F3` fired, and the answer is a control run rather than an argument.** The first `T-136` re-emission moved six
+fields the repair cannot explain, all inside a 30-parameter minimax, worst movement 0.057. Run a second time with
+identical code, the same six move **back onto `HEAD`** — so the retained file differs from `HEAD` in exactly its
+**seven departure fields and nothing else in 1 743**.
+
+**What surprised us — `T-210` is a counter-instance to the diagnosis that found it.** `CH-0150` explains this
+family by *"nobody re-reads a result file once the claim is written"*, and the evidence for that is strong: not
+one claim had inherited a defective number. `T-148`'s saturated statistic fails every clause of it. The number
+was **computed correctly, emitted correctly, unit-tested** — `binomialStandardError(1.0, 100) == 0.0` has been a
+standing assertion since `C-0087` — **read, and described in a sentence written around it**. And the sentence,
+*"which is the resolution the verdict is quoted to"*, says the opposite of what the number means: `√(p̂(1−p̂)/n)`
+at `p̂ = 1` is a function of `p̂` alone, `0` at 1 250 draws and `0` at 20 000. **A saturated statistic is the
+resolution of nothing.** That is `CH-0152`: two failure modes, not one, and only the first is reachable by a text
+gate. There is no gate for a reader whose own model is wrong.
+
+**And the degeneracy is exactly where the programme's answers are** (`CH-0153`). All seven affected files are
+studies whose headline is that a design **fails** `T-5b`'s 0.10 — which is precisely the direction that saturates
+the exceedance at 1.0. `C-0087`'s gate 4 discharges statistical power partly on *"the binomial error to fall as
+`1/√n`"*, and the test that demonstrates it evaluates at `p̂ = 0.5`, two lines above the assertion that it is zero
+at `p̂ = 1`. The verdicts do not move: a one-sided bound reads `p > 0.9997` at 10 000 draws, so every failure
+reading it replaces stands on **better** evidence than it was published with.

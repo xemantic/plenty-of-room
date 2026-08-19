@@ -24,6 +24,7 @@ import com.xemantic.nano.plentyofroom.coupling.normalisedStiffnesses
 import com.xemantic.nano.plentyofroom.coupling.perPathStiffnessCeiling
 import com.xemantic.nano.plentyofroom.coupling.perPathThermalForces
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
@@ -1376,7 +1377,14 @@ fun main() {
     output.writeText(
         json.encodeToString(
             JsonObject.serializer(),
-            (json.encodeToJsonElement(result).roundedForResult() as JsonObject)
+            // `T-209`/`C-0129`: a DEPARTURE is a record type, not a file. `C-0093` cured the
+            // trap on its own convergence axis and `C-0101` in the reproduction records of the
+            // files it happened to be re-emitting; `C-0127` then found this file still carrying
+            // `reproductions[2].departure` at nine significant digits. The rule now travels as
+            // `DEPARTURE_DIGITS_BY_KEY` rather than as a `2` at an emission site.
+            (json.encodeToJsonElement(result).roundedForResult(
+                digitsByKey = DEPARTURE_DIGITS_BY_KEY
+            ) as JsonObject)
         )
     )
 

@@ -73,6 +73,50 @@ const val RESULT_ABSOLUTE_FLOOR: Double = 1e-9
 const val SOLVED_HEIGHT_SIGNIFICANT_DIGITS: Int = 6
 
 /**
+ * The number of significant digits a **departure** is determined to, and it is a rule about a
+ * RECORD TYPE rather than about a file.
+ *
+ * A departure is a difference or a ratio of two nearly equal **dimensionless** numbers, and it
+ * is therefore the field a change of the solve *path* moves: `C-0093` found two runs of one
+ * study agreeing on every number in a 100 kB result file and disagreeing in the eleventh decimal
+ * of one convergence departure, `3.19469867e−11` against `3.19472365e−11`, because the JIT
+ * recompiled a hot reduction between the two solves.
+ *
+ * [RESULT_ABSOLUTE_FLOOR] cannot catch it: the floor is a claim **in the locked units** (`P-18`)
+ * and a ratio of two dishing fractions is not in them, so the only instrument left is the digit
+ * count. Two is what `CLAUDE.md` asks for and it is the right count for the reason above — a
+ * departure `d` between two quantities each determined to `RESULT_SIGNIFICANT_DIGITS` is itself
+ * determined to about `RESULT_SIGNIFICANT_DIGITS + log₁₀ d` digits, which at the `1e−6` to
+ * `1e−11` where these fields live is between three and *minus two*.
+ *
+ * **Why it is a constant here and not a `2` at an emission site.** `C-0093` cured the trap on
+ * its own *convergence* axis; `C-0101` cured it in *reproduction* records of the files it was
+ * re-emitting; `C-0127` then found `T-136` still carrying `reproductions[2].departure` at nine
+ * digits. Each repair was correct and each was applied **per file**, which is why the class
+ * survived three of them. `tools/check-result-file-hygiene.py --departures` measures what is
+ * left: **222 fields in 29 files** at the time of writing.
+ */
+const val DEPARTURE_SIGNIFICANT_DIGITS: Int = 2
+
+/**
+ * Every spelling the corpus uses for a departure, mapped to [DEPARTURE_SIGNIFICANT_DIGITS].
+ *
+ * Pass as `digitsByKey` to [roundedForResult]. The rule is about the **quantity**, so the map is
+ * keyed on all four spellings a census of `gpd/results/` finds rather than on whichever one the
+ * last repair happened to look at — which is exactly the failure mode the constant above records.
+ *
+ * `departureRatio`, `plateDeparture` and the like are deliberately **absent**: those are *ratios
+ * between two models*, not a residual between two refinements of one, and they are determined to
+ * the precision of the models themselves.
+ */
+val DEPARTURE_DIGITS_BY_KEY: Map<String, Int> = mapOf(
+    "departure" to DEPARTURE_SIGNIFICANT_DIGITS,
+    "relativeDeparture" to DEPARTURE_SIGNIFICANT_DIGITS,
+    "departureFromFinest" to DEPARTURE_SIGNIFICANT_DIGITS,
+    "relativeDepartureInStroke" to DEPARTURE_SIGNIFICANT_DIGITS
+)
+
+/**
  * The digits of a quantity whose largest relative movement under a legitimate change of the solve
  * path is [relativeMovement] — `floor(−log₁₀ m)`, clamped to `[1, RESULT_SIGNIFICANT_DIGITS]`.
  *
