@@ -70,6 +70,19 @@ At the fixed 112 bp span, changing `m` changes the tile's **other** side:
 | **15 × 4** | 38.08 × 38.04 = **1 448.5632 nm²** | essentially square, essentially §3's |
 | **10 × 6** | 38.08 × 25.36 = **965.7088 nm²** | **0.666666667** of it |
 
+> **Annotated, iteration 33 ([`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md), [`CH-0174`](../challenges/CH-0174-the-four-layer-cross-section-is-not-a-honeycomb.md)).**
+> **This table's `edgeY` is `rasterRows × d`, which is not a honeycomb pitch.** A honeycomb has two
+> pitches — `3d/2` in plane and `d√3/2` through the thickness — whose product is the cell
+> `3√3/4 · d²`; `d × d` is **1.29903811×** denser than any honeycomb of that bond length. Every
+> `edgeY` here is exactly **1.5×** too small, and because `10 × 1.5 = 15` the corrected `10 × 6`
+> carries **38.04 nm**, the very number this table gives `15 × 4`. **The ordering reverses**:
+> `15 × 4` is **56.524 nm** across, **1.40084263** of §3's 40.35, and `10 × 6` is **37.504 nm**,
+> **0.929467162** of it. ~~and it costs a third of the footprint~~ — **there is no footprint to
+> pay**, and the claim's central finding is strengthened: re-solved, this claim's own `f*` for
+> `15 × 4` moves `0.0788618807 → 0.276970522`, **inside** the measured 0.26–0.33 band, while
+> `10 × 6`'s is 0.012737738 and stays 20× below it.
+
+
 **§3's 100 pN is specified over that footprint**, and `C-0022`'s collar was solved on the square. So the
 flatter cross-section is a **smaller tile**, and this is a trade for NDI rather than a free improvement:
 a third less area, at the same scaffold, for a flatness that no longer depends on an unmeasured coupling.

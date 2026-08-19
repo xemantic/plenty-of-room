@@ -2,12 +2,12 @@
   "task": "P-22",
   "claim": "C-0082",
   "what": "The reader graph over gpd/results/, derived from the Kotlin sources rather than grepped. A read is a result-file string literal in the argument list of a File(...) construction, propagated along top-level references; comments and prose strings are not reads. See tools/result-reader-census.py and CH-0092.",
-  "studyCount": 112,
+  "studyCount": 114,
   "helperCount": 3,
-  "resultFileCount": 127,
-  "declaringStudyCount": 9,
+  "resultFileCount": 132,
+  "declaringStudyCount": 10,
   "transitiveEdgeCount": 27,
-  "directEdgeCount": 109,
+  "directEdgeCount": 112,
   "studies": {
     "HelloWorldApp.kt": {
       "reads": [],
@@ -1738,6 +1738,7 @@
         "coupling/CouplingRequirement.kt",
         "coupling/CouplingResultRounding.kt",
         "coupling/NonUniformCoupling.kt",
+        "coupling/RobustDistribution.kt",
         "coupling/SharedBodyCoupling.kt",
         "coupling/UniformityBudget.kt",
         "structure/Cholesky.kt",
@@ -2709,6 +2710,31 @@
         "structure/TilePositionalVarianceStudy.kt"
       ]
     },
+    "structure/HoneycombRasterTurnSenseStudy.kt": {
+      "reads": [
+        "T-198-honeycomb-raster-width.json",
+        "T-217-honeycomb-twist-correction.json"
+      ],
+      "directReads": [
+        "T-198-honeycomb-raster-width.json",
+        "T-217-honeycomb-twist-correction.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-218-honeycomb-raster-turn-sense.json",
+      "declaredSources": [
+        "T-198",
+        "T-217"
+      ],
+      "reaches": [],
+      "reachesFiles": [
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/LatticePhaseCensus.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "structure/TwistCorrectedRaster.kt"
+      ]
+    },
     "structure/HoneycombTwistCorrectionStudy.kt": {
       "reads": [
         "T-198-honeycomb-raster-width.json"
@@ -3330,6 +3356,47 @@
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/FourLayerTile.kt"
+      ]
+    },
+    "tile/HoneycombPlacementStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-219-honeycomb-station-lattice-and-placement.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/HingeLineCensus.kt",
+        "anchoring/OutputElementPlacement.kt",
+        "anchoring/TwoPerRowPlacement.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "structure/TwistCorrectedRaster.kt",
+        "tile/CompositeFractionThreshold.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombFaceLattice.kt",
+        "tile/HoneycombStationLattice.kt"
       ]
     },
     "tile/HoneycombStationLatticeStudy.kt": {
@@ -4092,6 +4159,7 @@
       "structure/MixedDomainPhaseLatticeStudy.kt"
     ],
     "T-198-honeycomb-raster-width.json": [
+      "structure/HoneycombRasterTurnSenseStudy.kt",
       "structure/HoneycombTwistCorrectionStudy.kt"
     ],
     "T-1d-scf-density-profile.json": [
@@ -4105,6 +4173,9 @@
     ],
     "T-2-design-window.json": [
       "synthesis/BufferRouteCensusStudy.kt"
+    ],
+    "T-217-honeycomb-twist-correction.json": [
+      "structure/HoneycombRasterTurnSenseStudy.kt"
     ],
     "T-25-window-resynthesis.json": [
       "synthesis/BufferRouteCensusStudy.kt",
@@ -4152,6 +4223,7 @@
       "tile/CoupledFourLayerStudy.kt",
       "tile/CrossSectionComparisonStudy.kt",
       "tile/FourLayerTileStudy.kt",
+      "tile/HoneycombPlacementStudy.kt",
       "tile/HoneycombStationLatticeStudy.kt",
       "tile/ObliqueRootStudy.kt",
       "window/SecondResynthesisStudy.kt",
@@ -4511,6 +4583,12 @@
     "T-217-honeycomb-twist-correction.json": [
       "structure/HoneycombTwistCorrectionStudy.kt"
     ],
+    "T-218-honeycomb-raster-turn-sense.json": [
+      "structure/HoneycombRasterTurnSenseStudy.kt"
+    ],
+    "T-219-honeycomb-station-lattice-and-placement.json": [
+      "tile/HoneycombPlacementStudy.kt"
+    ],
     "T-23-two-sided-coupling.json": [
       "anchoring/TwoSidedCouplingStudy.kt"
     ],
@@ -4691,9 +4769,14 @@
     "T-21-concentrated-crossover.json",
     "T-211-seventh-answers-synthesis.json",
     "T-212-departure-and-saturation-audits.json",
+    "T-214-departure-rule-scope.json",
     "T-215-descent-manifold-width.json",
     "T-216-mixed-domain-phase-lattice.json",
     "T-217-honeycomb-twist-correction.json",
+    "T-218-honeycomb-raster-turn-sense.json",
+    "T-219-honeycomb-station-lattice-and-placement.json",
+    "T-220-level-not-a-stiffness-error-bar.json",
+    "T-226-nonuniform-coupling-manifold.json",
     "T-23-two-sided-coupling.json",
     "T-25-window-resynthesis.json",
     "T-3-stroke-and-blocking-force.json",
@@ -4738,7 +4821,10 @@
     "T-207-format-string-repair.json",
     "T-208-result-file-hygiene.json",
     "T-211-seventh-answers-synthesis.json",
-    "T-212-departure-and-saturation-audits.json"
+    "T-212-departure-and-saturation-audits.json",
+    "T-214-departure-rule-scope.json",
+    "T-220-level-not-a-stiffness-error-bar.json",
+    "T-226-nonuniform-coupling-manifold.json"
   ],
   "missingResultFiles": [],
   "roundingSites": [
@@ -4896,6 +4982,7 @@
         "structure/DiscreteLatticeTileStudy.kt",
         "structure/EdgeTwistReliefStudy.kt",
         "structure/EntryTopologyStudy.kt",
+        "structure/HoneycombRasterTurnSenseStudy.kt",
         "structure/HoneycombTwistCorrectionStudy.kt",
         "structure/InPlaneLoadPathStudy.kt",
         "structure/InteriorCrossoverPrestrainStudy.kt",
@@ -4915,6 +5002,7 @@
         "tile/CoupledFourLayerStudy.kt",
         "tile/CrossSectionComparisonStudy.kt",
         "tile/FourLayerTileStudy.kt",
+        "tile/HoneycombPlacementStudy.kt",
         "tile/HoneycombStationLatticeStudy.kt",
         "tile/ObliqueRootStudy.kt",
         "window/DesignWindowStudy.kt",
@@ -5001,6 +5089,8 @@
         "T-215-descent-manifold-width.json",
         "T-216-mixed-domain-phase-lattice.json",
         "T-217-honeycomb-twist-correction.json",
+        "T-218-honeycomb-raster-turn-sense.json",
+        "T-219-honeycomb-station-lattice-and-placement.json",
         "T-23-two-sided-coupling.json",
         "T-25-window-resynthesis.json",
         "T-3-stroke-and-blocking-force.json",

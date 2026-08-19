@@ -141,7 +141,7 @@ Through `C-0006`'s own shear routes, per crossover on the worst cut parallel to 
 
 Respected downstream, and enforced in code where enforceable.
 
-- **MEAN FIELD**, inherited whole from `C-0005` and `C-0008`: 123–214 % at these gaps, and for the *oppositely charged* tile-electrode pair no published result gives even the direction. **A 2-D mean-field solve is still a mean-field solve.** This is the largest uncertainty on every number here and it is bigger than the entire edge effect.
+- **MEAN FIELD**, inherited whole from `C-0005` and `C-0008`: 123–214 % at these gaps, and for the *oppositely charged* tile-electrode pair no published result gives even the direction. **A 2-D mean-field solve is still a mean-field solve.** This is the largest uncertainty on every number here and it is bigger than the entire edge effect. (**RESTATED, `CH-0167`/`C-0137`**: this is an error bar on a LEVEL, and the quantity beside it is a RATIO read on one field, in which the level is a common factor and divides out.)
 - **POINT IONS.** `C-0008`'s Bikerman bracket raises `|F_es|` by +0.8 % to +56 %, one-sided and upward. It is a *scale* correction and the taper is a *ratio*, which is the argument for not repeating it — and that argument is itself untested here.
 - **TWO-DIMENSIONAL, hence a STRAIGHT edge.** The corner is **bracketed by two mappings and not solved**; the bracket is 1.8 percentage points of total force at 40 nm and it widens as the tile shrinks (7.2 points at 20 nm).
 - **The rim charge is a 1.85× bracket on the depth** — see the falsifier below. It is *not* a bracket on the rim's own vertical force, which is exactly zero for an uncharged rim.

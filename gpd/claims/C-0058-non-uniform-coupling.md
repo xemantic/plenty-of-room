@@ -5,18 +5,79 @@
 | **Task** | [`T-113`](../tasks/T-113-non-uniform-coupling.md), which is `C-0047`'s *"Still open"* item 2 and which it names **the last unexplored axis, and the only one that could attack `CH-0034`'s floor** |
 | **Leaf** | **`A8.2`** (*"identify the dominant compliance term … and budget stiffness at the joints"*), with `A1.2` for the anchoring scheme the distribution belongs to |
 | **Verification type** | **in-silico** (`C-0009`/`C-0015`'s beam-and-hinge grillage and `C-0006`'s continuum plate, under `C-0022`'s **solved** electrostatic profile read from its own result file and keyed on concentration, gap **and bias**, both driven by an **exact Woodbury surrogate** asserted against the assembled solve to `1.5e−12`) **+ logical** (a least-squares bound in the space of attachment *forces*, which bounds every stiffness distribution whatever, and the per-path force ceiling as two lines of arithmetic) |
-| **Verdict** | **PASS on the predicate, and the answer is POSITIVE at three columns and NEGATIVE at one.** At **3 × 15** the same 33.3333 pN/nm, redistributed, dishes **0.0753** of the free-tile stroke under a one-parameter rule (*the 34 stations within 6.7 nm of an edge carry 5× the other 11*) and **0.0544** under a 45-parameter optimisation, against the uniform coupling's **0.2182** — improvements of **65.5 %** and **75.1 %**, and **both are inside `T-5b`'s 0.10**. `CH-0034`'s count axis saturates at **0.149** and never reaches it, so **225 uniform attachments cannot do what 45 unequal ones can**, and the 0.149 is a property of the equal-spring family and not of the rim — this is [`CH-0071`](../challenges/CH-0071-the-saturation-floor-is-a-property-of-the-equal-spring-family.md). **The cost is affordable and is a force**: the flat rim design peaks at **2.762 pN per path** at §3's 3 nm stroke, 3.62× clear of the 10 pN unzip allowable, with 0.784 pN in the worst crossover (12.8× clear) and 1.13 pN of duplex shear against a 48–65 pN band; the per-path **thermal** force rises 24 % (`C-0014`, and it is **linear** in the path's share, not its square root). **At `C-0041`'s buildable 1 × 15 the axis fails**: the best admissible distribution buys **13.0 %** (0.6952 → 0.6048), stays **6.0×** the convention and **1.96× worse than no coupling at all** — fifteen springs on the single line `x = 0` can reshape only the across-helix profile, and `C-0047` showed the dishing there is the along-helix bow. **A distribution cannot repair a placement.** **And flatness bought this way is owed at ONE state**: the same rim design is flat at three of `C-0022`'s five solved states and dishes 0.187 at the 2 nm gap, where the *uniform* coupling dishes 0.071; a **minimax over all five** reaches a worst case of only **0.1587**, so no distribution found is flat everywhere. Two smaller results: **the per-path ceiling costs nothing at 45 paths** — the capped and uncapped optima coincide to the last digit — and **non-uniformity moves `C-0047`'s break-even from three columns to two** (2 × 15 goes 0.3504 → 0.2512, past the free tile's 0.3079). |
+| **Verdict** | **PASS on the predicate, and the answer is POSITIVE at three columns and NEGATIVE at one.** At **3 × 15** the same 33.3333 pN/nm, redistributed, dishes **0.0753** of the free-tile stroke under a one-parameter rule (*the 34 stations within 6.7 nm of an edge carry 5× the other 11*) and ~~**0.0544**~~ **0.0482** under a 45-parameter optimisation (**AMENDED, `T-226`/`C-0139`** — see the amendment block below; the descent's terminal point was one member of a manifold and the file now reproduces byte for byte), against the uniform coupling's **0.2182** — improvements of **65.5 %** and ~~**75.1 %**~~ **77.9 %**, and **both are inside `T-5b`'s 0.10**. `CH-0034`'s count axis saturates at **0.149** and never reaches it, so **225 uniform attachments cannot do what 45 unequal ones can**, and the 0.149 is a property of the equal-spring family and not of the rim — this is [`CH-0071`](../challenges/CH-0071-the-saturation-floor-is-a-property-of-the-equal-spring-family.md). **The cost is affordable and is a force**: the flat rim design peaks at **2.762 pN per path** at §3's 3 nm stroke, 3.62× clear of the 10 pN unzip allowable, with 0.784 pN in the worst crossover (12.8× clear) and 1.13 pN of duplex shear against a 48–65 pN band; the per-path **thermal** force rises 24 % (`C-0014`, and it is **linear** in the path's share, not its square root). **At `C-0041`'s buildable 1 × 15 the axis fails**: the best admissible distribution buys **13.0 %** (0.6952 → 0.6048), stays **6.0×** the convention and **1.96× worse than no coupling at all** — fifteen springs on the single line `x = 0` can reshape only the across-helix profile, and `C-0047` showed the dishing there is the along-helix bow. **A distribution cannot repair a placement.** **And flatness bought this way is owed at ONE state**: the same rim design is flat at three of `C-0022`'s five solved states and dishes 0.187 at the 2 nm gap, where the *uniform* coupling dishes 0.071; a **minimax over all five** reaches a worst case of only ~~**0.1587**~~ **0.1537** (`C-0139`), so no distribution found is flat everywhere. Two smaller results: ~~**the per-path ceiling costs nothing at 45 paths** — the capped and uncapped optima coincide to the last digit —~~ **AMENDED (`C-0139`): the ceiling costs 1.6 %, 0.0482 against 0.0474, and still does not bind (unzip margin 1.43)** — and **non-uniformity moves `C-0047`'s break-even from three columns to two** (2 × 15 goes 0.3504 → ~~0.2512~~ **0.2520**, past the free tile's 0.3079). |
 | **Maturity** | **TRL 1–3. Model-consistent and traceable. NOTHING HERE IS MEASURED**, and nothing here says a per-path stiffness can be **built** to a prescribed value — see the validity range, where that is the largest open item this claim leaves. |
-| **Provenance** | `gpd/results/T-113-non-uniform-coupling.json`, produced by `coupling.NonUniformCouplingStudyKt`; model in `src/main/kotlin/coupling/NonUniformCoupling.kt`; **3 cheap-bound records, 150 rim-sweep records, 25 solved distributions, 225 per-path records, 13 optimiser records, 54 transfer records, 12 convergence records, 12 upstream reproductions**; **23 gate-named tests in `src/test/kotlin/coupling/NonUniformCouplingTest.kt`**; `tools/verify.sh` **BUILD SUCCESSFUL in 8 m 23 s** (the whole suite, on the finished tree) on its own isolated tree, with one concurrent agent's mid-TDD test dropped by `--drop-file` (`src/test/kotlin/anchoring/BackboneTorsionTest.kt`, `T-71`); the result file re-run through `tools/study.sh` and diffed **byte-for-byte identical on two independent runs** — after the search's **path** diagnostics were removed from it, the evaluation count, the sweep count and the winning start all being ulp-sensitive while every objective is identical to nine significant digits |
+| **Provenance** | `gpd/results/T-113-non-uniform-coupling.json`, produced by `coupling.NonUniformCouplingStudyKt`; model in `src/main/kotlin/coupling/NonUniformCoupling.kt`; **3 cheap-bound records, 150 rim-sweep records, 25 solved distributions, 225 per-path records, 13 optimiser records, 54 transfer records, 12 convergence records, 12 upstream reproductions**; **23 gate-named tests in `src/test/kotlin/coupling/NonUniformCouplingTest.kt`**; `tools/verify.sh` **BUILD SUCCESSFUL in 8 m 23 s** (the whole suite, on the finished tree) on its own isolated tree, with one concurrent agent's mid-TDD test dropped by `--drop-file` (`src/test/kotlin/anchoring/BackboneTorsionTest.kt`, `T-71`); ~~the result file re-run through `tools/study.sh` and diffed **byte-for-byte identical on two independent runs** — after the search's **path** diagnostics were removed from it, the evaluation count, the sweep count and the winning start all being ulp-sensitive while every objective is identical to nine significant digits~~ **CORRECTED, iteration 33 (`C-0138` §8, `C-0139`/`T-226`): removing the path diagnostics did NOT make the file reproducible — it made the irreproducibility invisible.** Two runs of identical code disagree in 217–224 fields, always one descent record and its transfers; the file is byte-for-byte reproducible only from iteration 33, when the three descent objectives were wrapped at the decision precision. **Three fresh runs, byte-identical over all 5 835 fields** |
 | **Conditions** | T = 300 K, `k_BT = 4.141947 pN·nm`; aqueous buffer with **Mg²⁺**; 40.0 × 40.35 nm tile, 15 duplexes at the SAXS-measured 2.69 nm; 8 symmetrically centred crossover columns (`T-10`); §3's 100 pN over the footprint; `C-0017`'s **33.3333 pN/nm as a SUM**, distributed; `C-0001`'s foundation secant, ×1; free-tile stroke **4.90731 nm**; design point `C-0022` 2 mM, 10 nm, 0.192 V |
 | **Consumes** | [`C-0047`](C-0047-single-column-flatness.md) (the question, the 1 × 15 and 3 × 15 uniform numbers, the free tile — all three reproduced here to `1e−3` as the limiting case), [`CH-0034`](../challenges/CH-0034-flatness-count-saturates-under-the-solved-load.md)/[`C-0026`](C-0026-one-row-per-duplex.md) (the saturation table and the pipeline), [`C-0022`](C-0022-tile-edge-load-profile.md) (the **solved** collar, read from `gpd/results/T-3b-tile-edge-load-profile.json`), [`C-0015`](C-0015-crossover-phase-and-registration.md) (the 3 × 15 grid, *"shapes, not counts"*), [`C-0009`](C-0009-discrete-lattice-tile.md) (the grillage and its rank-one anchor update, generalised here to rank `n`), [`C-0006`](C-0006-tile-load-distribution-and-flatness.md) (the plate, the flatness convention, the 10 pN unzip allowable via [`CH-0029`](../challenges/CH-0029-the-48-pn-allowable-is-a-30-bp-number.md)), [`C-0017`](C-0017-output-coupling-stiffness.md) (the mandate, **as a sum**), [`C-0049`](C-0049-compliance-ceiling-stroke.md) (`perPathSecantCeiling`, re-derived and asserted equal), [`C-0014`](C-0014-lateral-confinement.md) (`√(k_BT k)/n`, generalised to unequal paths and reduced back exactly), [`C-0041`](C-0041-flexure-array-packing.md) (the 15-path count) |
 | **Raises** | [`CH-0071`](../challenges/CH-0071-the-saturation-floor-is-a-property-of-the-equal-spring-family.md), against `CH-0034` |
+
+
+---
+
+## AMENDED, iteration 33 (`T-226`, [`C-0139`](C-0139-two-quantities-quoted-out-of-scope.md)) — every DESCENT number in this claim was one member of a manifold, and the file now reproduces
+
+**Nothing struck below is wrong; what is struck is a number that was never determined to the precision it was written at.**
+
+`C-0138` §8 measured that two runs of **identical code on identical inputs** emit
+`gpd/results/T-113-non-uniform-coupling.json` with **217** fields different.
+`C-0139` reproduced it over three uncured emissions and found **224** moved fields, **0** of them outside `C-0135`'s
+VALUE/POINT classification, **0** booleans and **0** verdicts — and located the cause exactly:
+`optimiseStiffnessDistribution` compares **raw `Double`s** at every branch it takes (the coarse scan, the golden
+section, the sweep acceptance and the start ranking), so the JIT recompiling a hot reduction part-way through a run
+is enough to move the terminal point on an optimal manifold.
+`coupling.NonUniformCouplingStudy` now wraps all three of its objectives in `searchDecision` — `CLAUDE.md`'s
+*"a DECISION must be rounded COARSER than the number it is taken on"*, at six significant digits — and
+**three fresh runs are byte-identical over all 5 835 fields**.
+
+**What did NOT move, over five independent emissions.**
+
+- **`0.0753`, this claim's headline** — the one-parameter rim rule — is **bit-identical** in the iteration-9 file,
+  the iteration-32 re-emission and all three cured runs (`0.075343`). It is a closed-form family evaluated on a
+  sweep, not a descent, and no manifold touches it.
+- **Every `flat` boolean and every `verdict` string.** The 1 × 15 negative, the 3 × 15 positive and the
+  *"no distribution found is flat at every solved state"* verdict are all unchanged.
+- `0.2182` (uniform), `0.1615`, `0.1145`, `0.0949` (the rim family), `0.6952` and `0.6048` (1 × 15).
+
+**What moved, and to what.**
+
+| this claim says | the file now says | why |
+|---|---|---|
+| the 45-parameter **optimum**, `0.0544` of the stroke (0.2671 nm) | **`0.0482`** (0.2363 nm), capped; `0.0474` uncapped | a better point on the same manifold — the rounded descent takes a different path and finds a lower minimum. **Still inside `T-5b`'s 0.10; the verdict is unchanged and improved.** |
+| *"the capped and uncapped optima coincide to the last digit"* | they no longer do: `0.0482` against `0.0474`, **1.6 %** apart | the per-path ceiling is now worth 1.6 % rather than nothing. It still does not bind: `unzipMarginAtAcceptableStroke` is 1.43 |
+| the five-state **minimax** worst case, `0.1587` | **`0.1537`** | improved; still **1.54×** outside the convention, so *"no distribution found is flat at every solved state"* stands |
+| the minimax's five-state row `0.1247 / 0.1286 / 0.1587 / 0.1195 / 0.1587 / 0.1307` | **`0.1401 / 0.1507 / 0.1537 / 0.1271 / 0.1537 / 0.1228`** | a functional of the minimax **argmin**, which is what the manifold is widest in |
+| the minimax's `k_max` **3.115 pN/nm**, `k_max·s` **9.346 pN**, lattice/plate **1.082**, dishing **0.6118 nm** | **2.338 / 7.014 / 1.086 / 0.6876** | same |
+
+**The width, measured rather than asserted** — over three uncured emissions (two fresh runs at `HEAD` plus the
+committed file, one of which reproduced the iteration-9 point **exactly**):
+
+| quantity | kind | values | width |
+|---|---|---|---|
+| the minimax **objective** (worst of five) | VALUE | 0.1543 / 0.1562 / 0.1587 | **2.80 %** |
+| the minimax at the design point (this claim's `0.1247`) | POINT | 0.1247 / 0.1385 / 0.1403 | **11.2 %** |
+| the minimax at 0.5 mM (this claim's `0.1286`) | POINT | 0.1286 / 0.1475 / 0.1525 | **15.7 %** |
+| the minimax's **max/min stiffness ratio** | POINT | **17.3 / 134.1 / 880.7** | **98.0 %**, i.e. **51×** |
+
+> **The last row is the one a design reads.** `C-0060`'s buildable two-level window is `3.5 ≤ R ≤ 20`;
+> the minimax's own demanded ratio is **not determined at all** across the manifold — it straddles that window,
+> and the cured file's value, **741**, is far outside it. **The VALUE of a minimax is determined to 2.8 % and the
+> POINT it is attained at is not determined**, which is `C-0135`'s finding on `T-129` reproduced on a second study
+> and, here, on a quantity that decides buildability rather than flatness.
+
+**Cost of the cure, stated rather than left to be found.** Against the committed file the re-emission moves
+**1 132** numeric fields, **0** booleans, **0** verdicts and **6** prose fields **in their digits alone**.
+One optimum is **worse** by 0.34 % (the 2 × 15 lattice, `1.2325 → 1.2367 nm`) and every other moves the favourable
+way; all of it is inside the manifold measured above. `T-113` has **zero readers**
+(`tools/result-reader-census.py`), so no downstream file is owed a re-emission.
+
+---
 
 ---
 
 ## The claim, in one line
 
-**`C-0017`'s mandate is an equality on a SUM and every claim in this corpus had read it as an equality on each path; freeing the distribution — no extra stiffness, no extra attachments, no new motif — is worth 65–75 % of the dishing at 45 paths and takes the Gen-1 tile inside `T-5b`'s tolerance for the first time, while at 15 paths it is worth 13 % and changes nothing, because a distribution can reweight a placement and cannot move it.**
+**`C-0017`'s mandate is an equality on a SUM and every claim in this corpus had read it as an equality on each path; freeing the distribution — no extra stiffness, no extra attachments, no new motif — is worth 65–78 % of the dishing at 45 paths (65–75 % as published; **`C-0139`** re-emits the 45-parameter optimum at 0.0482) and takes the Gen-1 tile inside `T-5b`'s tolerance for the first time, while at 15 paths it is worth 13 % and changes nothing, because a distribution can reweight a placement and cannot move it.**
 
 ---
 
@@ -84,8 +145,8 @@ A path carrying `k_i` delivers `k_i·s` at stroke `s`, so `C-0006`'s per-path al
 | rim × 5 over the same collar | 0.5619 | 0.1145 | +47.5 % | 0.882 | 2.646 | no | 1.130 |
 | **rim × 10 over the same collar** | 0.4658 | **0.0949** | +56.5 % | 0.903 | 2.710 | **YES** | 1.252 |
 | **rim × 5 over a 6.70 nm collar — the best one-parameter design** | **0.3697** | **0.0753** | **+65.5 %** | **0.921** | **2.762** | **YES** | 1.239 |
-| **the 45-parameter OPTIMUM** (capped = uncapped) | **0.2671** | **0.0544** | **+75.1 %** | 1.539 | 4.617 | **YES** | 1.124 |
-| minimax over all five solved states | 0.6118 | 0.1247 | +42.9 % | 3.115 | 9.346 | no | 1.082 |
+| **the 45-parameter OPTIMUM** ~~(capped = uncapped)~~ (capped) | ~~**0.2671**~~ **0.2363** | ~~**0.0544**~~ **0.0482** | ~~**+75.1 %**~~ **+77.9 %** | ~~1.539~~ 1.535 | ~~4.617~~ 4.604 | **YES** | ~~1.124~~ 1.239 |
+| minimax over all five solved states | ~~0.6118~~ **0.6876** | ~~0.1247~~ **0.1401** | ~~+42.9 %~~ **+35.8 %** | ~~3.115~~ **2.338** | ~~9.346~~ **7.014** | no | ~~1.082~~ **1.086** |
 
 ### 1 × 15 — `C-0041`'s buildable count, and 2 × 15
 
@@ -94,9 +155,9 @@ A path carrying `k_i` delivers `k_i·s` at stroke `s`, so `C-0006`'s per-path al
 | 1 × 15 | uniform | 0.6952 | — | 6.667 | yes | no | **2.26× worse** |
 | 1 × 15 | best rim (×20 over 13.0 nm) | 0.6136 | +11.7 % | 9.756 | yes | no | 1.99× worse |
 | 1 × 15 | **best admissible optimum** | **0.6048** | **+13.0 %** | 10.000 | yes (exactly at the cap) | no | **1.96× worse** |
-| 1 × 15 | optimum, no cap | 0.5514 | +20.7 % | 23.945 | **no** — 2.4× past unzip | no | 1.79× worse |
+| 1 × 15 | optimum, no cap | ~~0.5514~~ 0.5513 | +20.7 % | 23.945 | **no** — 2.4× past unzip | no | 1.79× worse |
 | 2 × 15 | uniform | 0.3504 | — | 3.333 | yes | no | 1.14× worse |
-| 2 × 15 | **optimum** | **0.2512** | **+28.3 %** | 6.097 | yes | no | **0.82× — better** |
+| 2 × 15 | **optimum** | ~~**0.2512**~~ **0.2520** | **+28.3 %** | 6.097 | yes | no | **0.82× — better** |
 
 &nbsp;&nbsp;&nbsp;&nbsp;**`C-0047`'s break-even moves from three columns to two.** A uniform 2 × 15 coupling is a net dishing source and a redistributed one is not.
 
@@ -118,7 +179,7 @@ Three things follow.
 
 1. **The sweep is not monotone in either parameter** and the flat window is bounded on both sides: at a large ratio the interior springs carry nothing, and what is left is an attachment scheme placed *only* on the collar, which dishes between its own supports again. **The family converges on a placement**, so what non-uniformity buys is `C-0015`'s *"shapes, not counts"* — with the shape chosen **continuously** instead of by an integer.
 2. **`C-0022`'s own 8.94 nm collar is not the best selector.** The load's collar and the *structure's* influence patch are different lengths, and it is the second that matters: `C-0047`'s along-helix Winkler bending length is 12.83 nm against a 13.33 nm column pitch, so the outer columns are the last stations whose patches reach the edge. Matching the stiffness to the **load** — the load-matched distribution, which is what a local argument predicts — is worth only 25.4 % against the rim rule's 65.5 %. **A plate is not a local response.**
-3. **The full optimisation is worth a further 27.8 %** (0.0753 → 0.0544) and needs 45 numbers, one near-zero path, and a search. The one-parameter rule carries most of the effect and is the thing a design can be written from.
+3. **The full optimisation is worth a further 27.8 %** ~~(0.0753 → 0.0544)~~ **(0.0753 → 0.0482, i.e. 36.0 %, `C-0139`)** and needs 45 numbers, one near-zero path, and a search. The one-parameter rule carries most of the effect and is the thing a design can be written from.
 
 ---
 
@@ -128,16 +189,16 @@ At the two flat 3 × 15 designs, against `C-0006`/`CH-0029`'s **10 pN** unzip al
 
 | | uniform | **rim × 5 / 6.70 nm** | **optimum** | allowable |
 |---|---|---|---|---|
-| peak path stiffness [pN/nm] | 0.741 | 0.921 | 1.539 | 3.333 (`= a/s`) |
-| **peak path force at the 3 nm stroke** [pN] | 2.222 | **2.762** | **4.617** | **10** — margins **3.62×** and **2.17×** |
-| peak attachment force under the solved load [pN] | 1.943 | 2.034 | 2.929 | 10 |
-| **peak crossover force** [pN] | 0.150 | **0.784** | **0.823** | 10 — margins 12.8× and 12.2× |
-| peak duplex shear [pN] | 0.793 | 1.132 | 1.511 | 48–65 |
-| **peak per-path thermal force** [pN] | 0.261 | **0.325** (+24 %) | **0.542** (2.08×) | — |
+| peak path stiffness [pN/nm] | 0.741 | 0.921 | ~~1.539~~ 1.535 | 3.333 (`= a/s`) |
+| **peak path force at the 3 nm stroke** [pN] | 2.222 | **2.762** | ~~**4.617**~~ **4.606** | **10** — margins **3.62×** and **2.17×** |
+| peak attachment force under the solved load [pN] | 1.943 | 2.034 | ~~2.929~~ 2.970 | 10 |
+| **peak crossover force** [pN] | 0.150 | **0.784** | ~~**0.823**~~ **0.886** | 10 — margins 12.8× and ~~12.2×~~ 11.3× |
+| peak duplex shear [pN] | 0.793 | 1.132 | ~~1.511~~ 1.557 | 48–65 |
+| **peak per-path thermal force** [pN] | 0.261 | **0.325** (+24 %) | **0.541** (2.08×) | — |
 
-- **The per-path ceiling costs nothing at 45 paths**: the optimisation run *with* the `a/s` cap and the one run *without* it return the same distribution to the last digit, because the optimum's own peak (1.539 pN/nm) sits well inside the cap (3.333). At **15** paths the cap is binding and worth 7.7 percentage points of dishing (0.6048 capped against 0.5514 uncapped, and the uncapped one is 2.4× past the allowable).
+- ~~**The per-path ceiling costs nothing at 45 paths**: the optimisation run *with* the `a/s` cap and the one run *without* it return the same distribution to the last digit, because the optimum's own peak (1.539 pN/nm) sits well inside the cap (3.333).~~ **AMENDED, `C-0139`/`T-226`: at the decision precision the two no longer coincide — 0.0482 capped against 0.0474 uncapped, 1.6 % — because they are two members of one manifold rather than one point. The ceiling still does not BIND: the capped optimum's peak is 1.535 pN/nm inside a 3.333 cap, unzip margin 1.43.** At **15** paths the cap is binding and worth 7.7 percentage points of dishing (0.6048 capped against 0.5514 uncapped, and the uncapped one is 2.4× past the allowable).
 - **`C-0014`'s over-stiffening penalty is LINEAR in the path's share, not its square root.** The tile's rigid-body coordinate has variance `k_BT/K` against the *whole* coupling and every path sees the same amplitude, so `F_i = k_i √(k_BT/K)`, which reduces to `√(k_BT K)/n` at equal paths exactly (gate 5). A path stiffened `R×` therefore carries `R×` the thermal force — the flat design's worst path carries 0.325 pN where a uniform one carries 0.261.
-- The crossover path is where the redistribution is most visible — **5.2×** the uniform value — and it is still **12.8×** clear of unzip. No allowable in the stack is threatened by either flat design.
+- The crossover path is where the redistribution is most visible — **5.2×** the uniform value — and it is still **12.8×** clear of unzip (~~12.2×~~ **11.3×** at the re-emitted optimum, `C-0139`). No allowable in the stack is threatened by either flat design.
 
 ---
 
@@ -162,17 +223,17 @@ A distribution is tuned to a **load**, and the load is an operating state. All f
 
 | state | uniform | rim × 5 / 6.70 | optimum | minimax |
 |---|---|---|---|---|
-| **2 mM, 10 nm, 0.192 V (design point)** | 0.2182 | **0.0753** | **0.0544** | 0.1247 |
-| 0.5 mM, 10 nm, 0.134 V | 0.2086 | **0.0574** | **0.0638** | 0.1286 |
-| 10 mM, 10 nm, 0.192 V | 0.2551 | 0.1179 | **0.0966** | 0.1587 |
-| 2 mM, 5 nm, 0.368 V | **0.0796** | **0.0944** | 0.1085 | 0.1195 |
-| 2 mM, 2 nm, 0.368 V | **0.0710** | 0.1867 | 0.2056 | 0.1587 |
-| *uniform load (the falsifier case)* | *0.0486* | *0.1156* | *0.1228* | *0.1307* |
-| **worst of the five** | **0.2551** | 0.1867 | 0.2056 | **0.1587** |
+| **2 mM, 10 nm, 0.192 V (design point)** | 0.2182 | **0.0753** | ~~**0.0544**~~ **0.0482** | ~~0.1247~~ **0.1401** |
+| 0.5 mM, 10 nm, 0.134 V | 0.2086 | **0.0574** | **0.0638** | ~~0.1286~~ **0.1507** |
+| 10 mM, 10 nm, 0.192 V | 0.2551 | 0.1179 | **0.0966** | ~~0.1587~~ **0.1537** |
+| 2 mM, 5 nm, 0.368 V | **0.0796** | **0.0944** | 0.1085 | ~~0.1195~~ **0.1271** |
+| 2 mM, 2 nm, 0.368 V | **0.0710** | 0.1867 | 0.2056 | ~~0.1587~~ **0.1537** |
+| *uniform load (the falsifier case)* | *0.0486* | *0.1156* | *0.1228* | ~~*0.1307*~~ ***0.1228*** |
+| **worst of the five** | **0.2551** | 0.1867 | 0.2056 | ~~**0.1587**~~ **0.1537** |
 
 - **The uniform coupling is already flat at the two compressed states** and fails only where `C-0022`'s collar is deep, i.e. at the 10 nm gaps. Nobody had reported that: `C-0047`'s 21-state sweep is on 1 × 15.
 - **The rim design is flat at three of five** and is *worse than uniform* at the 2 nm gap by 2.6×.
-- **A minimax over all five** — the same machinery, one objective up — reaches a worst case of **0.1587**, so **no distribution found is flat at every solved state**. That is a *"not found"*, not a *"does not exist"*: the search is a descent from three starts at 45 paths, and the force-space floor forbids nothing.
+- **A minimax over all five** — the same machinery, one objective up — reaches a worst case of ~~**0.1587**~~ **0.1537** (`C-0139`, and the manifold's own width on that objective is 2.80 %), so **no distribution found is flat at every solved state**. That is a *"not found"*, not a *"does not exist"*: the search is a descent from three starts at 45 paths, and the force-space floor forbids nothing.
 - This is the **sixth** instance in this project of a quantity that is not well posed without the state it is read at — after stiffness-with-a-compression, variance-with-a-bandwidth, rupture-force-with-a-loading-rate, `k_es`-with-a-gap and flatness-count-with-a-load-case. **A flatness count now needs a load case *and* an operating state.**
 
 ---
@@ -230,7 +291,7 @@ Executed as **23 gate-named tests** in `src/test/kotlin/coupling/NonUniformCoupl
 - **The optimiser is a DESCENT** reporting the best point it found, never a global optimum. The bound it is quoted against is rigorous; the optimum is not, and the minimax result in particular is a *"not found"*.
 - **The crossover's vertical link is `C-0009`'s rigid PENALTY**, inherited unchanged; no thermal channel is computed on it (`CH-0033`).
 - **One crossover layout** — `T-10`'s eight symmetrically centred columns; `C-0015`'s **32 bp phase is not swept**.
-- **`T-5b`'s 10 % is a CONVENTION.** The flat verdicts here are at 0.0544–0.0949 against 0.10; the rim × 10 design at 0.0949 would **not** survive a 5 % tolerance and the optimum would.
+- **`T-5b`'s 10 % is a CONVENTION.** The flat verdicts here are at ~~0.0544~~ **0.0482**–0.0949 against 0.10; the rim × 10 design at 0.0949 would **not** survive a 5 % tolerance and the optimum would.
 - **No electrostatics is solved and no lateral coordinate is carried.** The dishing is out-of-plane only.
 - **Single layer, static, 300 K, aqueous buffer with Mg²⁺.**
 
@@ -258,7 +319,7 @@ Everything else — the Woodbury surrogate and its reciprocity, the force-space 
    All seven settings of the five catalogue elements reach both levels — the coarsest quantum is 19.1 % of a level's own stiffness against a flat ratio window measured at `3.5 ≤ R ≤ 20`, so quantisation is 25× finer than the requirement — and all fourteen built designs are flat (0.0715–0.0815).
    Two qualifications this claim's own text does not carry: **rounding the two levels independently misses `C-0017`'s mandate by up to 5.44 %**, recoverable only by trimming individual paths one base pair (3–4 distinct settings, not two); and the `1.71×` span ratio above is exactly what breaks the **array** — the interior span is 52.36 nm on a 40 nm tile and six of seven elements place 0–30 of the 45 stations, `C-0041`'s obstruction unchanged and made worse.
    `C-0060` also finds the best one-parameter ratio at this claim's own 6.70 nm collar is **7, not 5** — 0.0653 of the stroke against 0.0753, a further 13.4 %, and no harder to build.
-2. **Whether a distribution flat at every operating state exists.** The minimax found 0.1587 from three starts; a better search, more paths, or the placement freedom below might reach the tolerance.
+2. **Whether a distribution flat at every operating state exists.** The minimax found ~~0.1587~~ **0.1537** from three starts (and `C-0139` measures the objective's own manifold width at 2.80 %); a better search, more paths, or the placement freedom below might reach the tolerance.
 3. **The placement itself.** Every station here sits on `C-0026`'s grid. `C-0047`'s stagger sweep found 45 % on an axis nobody had swept, and this claim's own finding — that the family converges on a *placement* — says that is where the remaining room is.
 4. **The foundation multiplier**, held at `C-0001`'s secant throughout.
 5. **`C-0015`'s 32 base-pair crossover phase**, unswept here as in `C-0047`.

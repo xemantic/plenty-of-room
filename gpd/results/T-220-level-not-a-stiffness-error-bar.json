@@ -1,0 +1,421 @@
+{
+ "task": "T-220",
+ "claim": "C-0139",
+ "leaf": "A7.4 - the beyond-mean-field exposure, consumed by A2.2 and A8.2",
+ "title": "The 123-214 % is an error bar on a LEVEL: the corpus census reproduced, partitioned four ways, and every HELD or SHAPE occurrence restated or pointed",
+ "raisedBy": "CH-0167, from C-0137 (T-50)",
+ "verificationType": "logical - a mechanical corpus census, a per-occurrence partition against a stated predicate retained as data, and a retained gate. NO SOLVER RUNS: C-0137 supplies the replacement thresholds and nothing is re-derived here",
+ "maturity": "TRL 1-3, and below it: NO PHYSICS CHANGED AND NO NUMBER RECOMPUTED. Every edit is a scope statement about a number somebody else measured",
+ "units": "untouched: nm, pN, pN/nm, pN/nm^2 = 1 MPa exactly, k_BT = 4.141947 pN.nm at 300 K",
+ "sources": [
+  "gpd/claims/C-0137-beyond-mean-field-gap.md",
+  "gpd/claims/C-0005-mean-field-screening-validity.md",
+  "gpd/challenges/CH-0167-the-123-214-per-cent-is-a-level-and-it-is-quoted-as-an-error-bar-on-a-stiffness.md"
+ ],
+ "instrument": {
+  "tool": "tools/T-220-census.py",
+  "classificationData": "tools/T-220-classification.json",
+  "selfTests": 234,
+  "gate": "--check: every occurrence classified HELD or SHAPE carries a CH-0167 pointer within 900 characters AFTER it, or lies inside a struck span",
+  "whyTheWindowIsForwardOnly": "a restatement follows the sentence it restates, so a pointer belonging to the PREVIOUS occurrence must not discharge the next one",
+  "whyStruckCounts": "C-0071's strike-never-delete: a withdrawn sentence stays in the file, and a checker that cannot read a strike penalises the repair discipline it exists to support",
+  "scope": [
+   "gpd/claims/",
+   "ANSWERS.md",
+   "DECISIONS-FOR-NDI.md",
+   "TASKS.md"
+  ],
+  "excludedWithReason": {
+   "JOURNAL.md (9)": "an append-only history; rewriting it would falsify the record",
+   "gpd/tasks/ (27)": "a Formulate/Plan record of what was believed when the task was set",
+   "gpd/challenges/ (17)": "including CH-0167 itself, which states the quantity correctly",
+   "CLAUDE.md (3)": "all inside C-0005's own entries, which state the quantity rather than transfer it",
+   "gpd/data + COMPARISON-p1-p2.md (2)": "a literature manifest and a historical comparison"
+  }
+ },
+ "census": {
+  "publishedByCH0167": {
+   "claims": 66,
+   "claimFiles": 31,
+   "ANSWERS.md": 8,
+   "TASKS.md": 10,
+   "DECISIONS-FOR-NDI.md": 6
+  },
+  "reproducedClaimOccurrences": 66,
+  "reproducedClaimFiles": 31,
+  "reproducedDocumentOccurrencesBeforeThisTask": {
+   "ANSWERS.md": 9,
+   "TASKS.md": 15,
+   "DECISIONS-FOR-NDI.md": 10
+  },
+  "whyTheDocumentsReadHigher": "iteration 32 already restated four of them and every correction sentence names the ratio again; TASKS.md has since gained the T-50 DONE row and the T-220 row itself. The CLAIM census reproduces EXACTLY at 66 in 31, which is the falsifiable half",
+  "wholeCorpusOccurrences": 158,
+  "claimFiles": [
+   "gpd/claims/C-0008-electrostatic-force-and-decay-length.md",
+   "gpd/claims/C-0012-coupled-stroke-and-blocking-force.md",
+   "gpd/claims/C-0016-design-window.md",
+   "gpd/claims/C-0017-output-coupling-stiffness.md",
+   "gpd/claims/C-0018-maximum-usable-bias.md",
+   "gpd/claims/C-0019-mean-field-fluctuation-corrections.md",
+   "gpd/claims/C-0021-zero-bias-resting-position.md",
+   "gpd/claims/C-0022-tile-edge-load-profile.md",
+   "gpd/claims/C-0023-two-sided-coupling.md",
+   "gpd/claims/C-0026-one-row-per-duplex.md",
+   "gpd/claims/C-0027-window-resynthesis.md",
+   "gpd/claims/C-0032-softening-coupling-stability.md",
+   "gpd/claims/C-0033-collar-on-the-equilibrium-path.md",
+   "gpd/claims/C-0036-concentrated-crossover.md",
+   "gpd/claims/C-0047-single-column-flatness.md",
+   "gpd/claims/C-0049-compliance-ceiling-stroke.md",
+   "gpd/claims/C-0050-desired-stroke-reach.md",
+   "gpd/claims/C-0051-second-window-resynthesis.md",
+   "gpd/claims/C-0067-answers-reconciliation.md",
+   "gpd/claims/C-0069-output-element-placement.md",
+   "gpd/claims/C-0071-output-element-recommendation.md",
+   "gpd/claims/C-0079-unbonded-duplex-separation.md",
+   "gpd/claims/C-0084-recommended-element-pull-in-fold.md",
+   "gpd/claims/C-0091-buffer-route-census.md",
+   "gpd/claims/C-0092-large-rotation-arm-branch.md",
+   "gpd/claims/C-0096-doubling-ladder-repair.md",
+   "gpd/claims/C-0100-collar-at-the-buildable-width.md",
+   "gpd/claims/C-0110-device-b-tall-gap.md",
+   "gpd/claims/C-0114-one-reserve.md",
+   "gpd/claims/C-0132-cut-rim-charge.md",
+   "gpd/claims/C-0137-beyond-mean-field-gap.md"
+  ],
+  "noteOnIndexShift": "This task's own TASKS.md rows added one META occurrence (the withdrawn DECISIONS-FOR-NDI.md sentence, quoted inside the T-220 row), so the final in-scope count is 101 with 27 META. The claim census is unaffected: still 66 in 31."
+ },
+ "partition": {
+  "HELD": 56,
+  "SHAPE": 7,
+  "LEVEL": 11,
+  "META": 27,
+  "total": 101,
+  "addressed": 63,
+  "addressedByStriking": 6,
+  "addressedByPointer": 62,
+  "leftAlone": 38,
+  "definitions": {
+   "HELD": "a stability floor, a coupling margin, a fold or pull-in margin, or a window edge built on one, read at the FORCE-PINNED operating point where |F_es| = 100 pN + P(g)A is fixed by a mechanical balance and k_es = -|F_es|/l identically, so a multiplier on the level is absorbed into the BIAS. WRONG ERROR BAR - restate or point",
+   "SHAPE": "a ratio, a departure, a taper or a dishing fraction read on ONE field, in which the level enters as a COMMON FACTOR and divides out. ALSO the wrong error bar, for a DIFFERENT reason - CH-0170",
+   "LEVEL": "a force, a pressure, a bias, a well depth or a decay length: the quantity IS a level, so C-0005's ratio is the right error bar and CH-0167 exempts it explicitly. LEFT ALONE",
+   "META": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row. Not a transfer. LEFT ALONE"
+  }
+ },
+ "perFile": {
+  "ANSWERS.md": {
+   "occurrences": 9,
+   "classes": {
+    "HELD": 6,
+    "META": 3
+   }
+  },
+  "DECISIONS-FOR-NDI.md": {
+   "occurrences": 10,
+   "classes": {
+    "HELD": 6,
+    "META": 4
+   }
+  },
+  "TASKS.md": {
+   "occurrences": 16,
+   "classes": {
+    "META": 9,
+    "LEVEL": 1,
+    "HELD": 6
+   }
+  },
+  "gpd/claims/C-0008-electrostatic-force-and-decay-length.md": {
+   "occurrences": 2,
+   "classes": {
+    "LEVEL": 2
+   }
+  },
+  "gpd/claims/C-0012-coupled-stroke-and-blocking-force.md": {
+   "occurrences": 3,
+   "classes": {
+    "LEVEL": 2,
+    "HELD": 1
+   }
+  },
+  "gpd/claims/C-0016-design-window.md": {
+   "occurrences": 1,
+   "classes": {
+    "HELD": 1
+   }
+  },
+  "gpd/claims/C-0017-output-coupling-stiffness.md": {
+   "occurrences": 5,
+   "classes": {
+    "HELD": 5
+   }
+  },
+  "gpd/claims/C-0018-maximum-usable-bias.md": {
+   "occurrences": 2,
+   "classes": {
+    "HELD": 2
+   }
+  },
+  "gpd/claims/C-0019-mean-field-fluctuation-corrections.md": {
+   "occurrences": 2,
+   "classes": {
+    "META": 2
+   }
+  },
+  "gpd/claims/C-0021-zero-bias-resting-position.md": {
+   "occurrences": 1,
+   "classes": {
+    "LEVEL": 1
+   }
+  },
+  "gpd/claims/C-0022-tile-edge-load-profile.md": {
+   "occurrences": 2,
+   "classes": {
+    "LEVEL": 1,
+    "SHAPE": 1
+   }
+  },
+  "gpd/claims/C-0023-two-sided-coupling.md": {
+   "occurrences": 1,
+   "classes": {
+    "HELD": 1
+   }
+  },
+  "gpd/claims/C-0026-one-row-per-duplex.md": {
+   "occurrences": 1,
+   "classes": {
+    "SHAPE": 1
+   }
+  },
+  "gpd/claims/C-0027-window-resynthesis.md": {
+   "occurrences": 4,
+   "classes": {
+    "LEVEL": 1,
+    "HELD": 3
+   }
+  },
+  "gpd/claims/C-0032-softening-coupling-stability.md": {
+   "occurrences": 3,
+   "classes": {
+    "HELD": 3
+   }
+  },
+  "gpd/claims/C-0033-collar-on-the-equilibrium-path.md": {
+   "occurrences": 2,
+   "classes": {
+    "HELD": 2
+   }
+  },
+  "gpd/claims/C-0036-concentrated-crossover.md": {
+   "occurrences": 1,
+   "classes": {
+    "HELD": 1
+   }
+  },
+  "gpd/claims/C-0047-single-column-flatness.md": {
+   "occurrences": 1,
+   "classes": {
+    "SHAPE": 1
+   }
+  },
+  "gpd/claims/C-0049-compliance-ceiling-stroke.md": {
+   "occurrences": 1,
+   "classes": {
+    "HELD": 1
+   }
+  },
+  "gpd/claims/C-0050-desired-stroke-reach.md": {
+   "occurrences": 1,
+   "classes": {
+    "HELD": 1
+   }
+  },
+  "gpd/claims/C-0051-second-window-resynthesis.md": {
+   "occurrences": 1,
+   "classes": {
+    "HELD": 1
+   }
+  },
+  "gpd/claims/C-0067-answers-reconciliation.md": {
+   "occurrences": 1,
+   "classes": {
+    "META": 1
+   }
+  },
+  "gpd/claims/C-0069-output-element-placement.md": {
+   "occurrences": 1,
+   "classes": {
+    "HELD": 1
+   }
+  },
+  "gpd/claims/C-0071-output-element-recommendation.md": {
+   "occurrences": 3,
+   "classes": {
+    "HELD": 3
+   }
+  },
+  "gpd/claims/C-0079-unbonded-duplex-separation.md": {
+   "occurrences": 1,
+   "classes": {
+    "LEVEL": 1
+   }
+  },
+  "gpd/claims/C-0084-recommended-element-pull-in-fold.md": {
+   "occurrences": 3,
+   "classes": {
+    "HELD": 2,
+    "META": 1
+   }
+  },
+  "gpd/claims/C-0091-buffer-route-census.md": {
+   "occurrences": 4,
+   "classes": {
+    "HELD": 3,
+    "META": 1
+   }
+  },
+  "gpd/claims/C-0092-large-rotation-arm-branch.md": {
+   "occurrences": 3,
+   "classes": {
+    "HELD": 2,
+    "META": 1
+   }
+  },
+  "gpd/claims/C-0096-doubling-ladder-repair.md": {
+   "occurrences": 2,
+   "classes": {
+    "HELD": 2
+   }
+  },
+  "gpd/claims/C-0100-collar-at-the-buildable-width.md": {
+   "occurrences": 2,
+   "classes": {
+    "SHAPE": 2
+   }
+  },
+  "gpd/claims/C-0110-device-b-tall-gap.md": {
+   "occurrences": 2,
+   "classes": {
+    "LEVEL": 2
+   }
+  },
+  "gpd/claims/C-0114-one-reserve.md": {
+   "occurrences": 4,
+   "classes": {
+    "HELD": 3,
+    "META": 1
+   }
+  },
+  "gpd/claims/C-0132-cut-rim-charge.md": {
+   "occurrences": 2,
+   "classes": {
+    "SHAPE": 2
+   }
+  },
+  "gpd/claims/C-0137-beyond-mean-field-gap.md": {
+   "occurrences": 4,
+   "classes": {
+    "META": 4
+   }
+  }
+ },
+ "replacementQualifier": {
+  "source": "C-0137 P2, at C-0017's binding state: 10 nm layer, 2 mM MgCl2, held at 7 nm, alexander-box(two-body)",
+  "levelThreshold": "the true force would have to be 1.48x to 2.22x SMALLER than the mean-field one, over the six C-0003 models",
+  "gradientThreshold": "the decay length would have to be 9.73 % shorter, g* = -0.03766 nm^-1 - the shallowest of the 18 states that have a floor at all",
+  "whyTheseAreOfTHESAMEKIND": "a margin is 33.3333 / max(0, -k_eff) with k_eff = |F_es|/l - k_brush, so a FORCE and a DECAY LENGTH are the two quantities it is built from; a ratio of a correction to a leading term is not",
+  "whatIsMeasuredAgainstThem": "a factor of SIXTEEN swept in effective wall charge moves the margin by at most 1.44 %; finite ion size 1.4 % of the threshold; the bulk channel is EMPTY; C-0005's own broken expansion taken literally lands the margin at 1.0438 and not below one"
+ },
+ "groundsThatMOVED": [
+  {
+   "where": "C-0017's verdict, and every claim that inherits it",
+   "verdict": "NOT EXCLUDED, never established - UNCHANGED",
+   "oldGround": "the margin (1.19-1.42x) is smaller than the model error (123-214 %)",
+   "newGround": "there is no systematic theory at Xi = 17-24, so the correction is UNQUANTIFIED - even though every evaluable channel is worth at most 1.44 % of the margin. The verdict survives on a DIFFERENT and WEAKER-SOUNDING ground that is in fact a much smaller exposure"
+  },
+  {
+   "where": "DECISIONS-FOR-NDI.md section 1, the strongest sentence in the file",
+   "verdict": "0.5 mM is still preferred - UNCHANGED",
+   "oldGround": "'the only margin in this repository that clears C-0005's own 123-214 % mean-field error'",
+   "newGround": "WITHDRAWN: no margin ever had to clear that percentage. At 0.5 mM the GRADIENT threshold is -0.1477 nm^-1, 3.9x further away than at 2 mM"
+  },
+  {
+   "where": "C-0091 / C-0114 / ANSWERS.md - the three buffer routes",
+   "verdict": "three routes, common mode, not three exposures - UNCHANGED",
+   "oldGround": "the one-loop correction is larger than each of the three advantages",
+   "newGround": "the common mode is a shared FIELD MODEL, and its same-kind measure is the gradient, a decay length 9.73 % shorter"
+  }
+ ],
+ "falsifiers": [
+  {
+   "id": "F1",
+   "statement": "the census does not reproduce at 66 occurrences in 31 claims",
+   "fired": false,
+   "found": "66 in 31, exactly"
+  },
+  {
+   "id": "F2",
+   "statement": "the partition is not decidable from the sentence",
+   "fired": false,
+   "found": "every one of the 101 in-scope occurrences classified, 0 unclassified, 0 stale, and the classification is retained as data so it is inspectable one occurrence at a time"
+  },
+  {
+   "id": "F3",
+   "statement": "a restatement moves a verdict",
+   "fired": false,
+   "found": "0 verdicts move. Three GROUNDS move and are recorded above; one of them is a WITHDRAWAL of the sentence rather than a restatement of it"
+  },
+  {
+   "id": "F4",
+   "statement": "a not-HELD occurrence turns out to be quoting the level against a quantity that is not a level either",
+   "fired": true,
+   "found": "SEVEN of them, in C-0022, C-0026, C-0047, C-0100 (x2) and C-0132 (x2): a RATIO in which the level is a common factor and divides out. TWO of the seven state the cancellation themselves in the sentence beside the banner. This is CH-0170, and it makes CH-0167's two-way partition a three-way one"
+  }
+ ],
+ "findings": [
+  "THE CENSUS REPRODUCES EXACTLY: 66 occurrences in 31 claims. F1 did not fire.",
+  "THE PARTITION IS 56 HELD, 7 SHAPE, 11 LEVEL, 26 META over the 101 in-scope occurrences - so 63 are addressed and 37 are LEFT, with the reason recorded per occurrence. CH-0167's own exemption (a free-tile quantity) is 11 of them and its own META class is 26.",
+  "F4 FIRED AND IT IS A THIRD CLASS: seven occurrences sit beside a RATIO, where the level enters as a COMMON FACTOR and cancels. C-0100 and C-0032 already write that argument in their own words, in the sentence next to the banner they do not apply it to. CH-0170.",
+  "A PERCENTAGE IS AN ERROR BAR ON THE THING ITS DENOMINATOR IS, and a quantity is exposed to it only if it is HOMOGENEOUS OF DEGREE ONE in that thing. A margin is not (it is pinned by a force balance); a ratio is not (it cancels); a force is. That is the one-line generalisation of CH-0167 and CH-0170 together.",
+  "NO VERDICT MOVES AND THREE GROUNDS DO - and one of the three is the strongest sentence in DECISIONS-FOR-NDI.md, 'the only margin in this repository that clears C-0005's own 123-214 %', which is WITHDRAWN rather than restated because no margin ever had to clear it."
+ ],
+ "predicates": [
+  {
+   "id": "P1",
+   "statement": "the census reproduces mechanically at 66 in 31",
+   "verdict": "PASS"
+  },
+  {
+   "id": "P2",
+   "statement": "every occurrence partitioned by a stated, retained predicate",
+   "verdict": "PASS - 101 of 101, 0 unclassified, 0 stale"
+  },
+  {
+   "id": "P3",
+   "statement": "no HELD occurrence left unaddressed in the four external documents",
+   "verdict": "PASS - and none anywhere: the gate reads 0 defects over the whole scope"
+  },
+  {
+   "id": "P4",
+   "statement": "no number deleted; every withdrawn sentence survives struck",
+   "verdict": "PASS - 6 struck spans carry an occurrence, 0 deletions"
+  },
+  {
+   "id": "P5",
+   "statement": "trace-answers clean on both deliverables, links and tables clean",
+   "verdict": "PASS - 0 ABSENT of 1355 and 473, 0 broken links, 0 table defects"
+  },
+  {
+   "id": "P6",
+   "statement": "the ground of every restated verdict re-checked",
+   "verdict": "PASS - three grounds moved and are recorded; no verdict did"
+  }
+ ],
+ "validity": [
+  "THE PARTITION IS A READING, not a derivation. It is retained as data (tools/T-220-classification.json) precisely so that it is falsifiable one occurrence at a time rather than as a whole.",
+  "THE GATE IS A PROXIMITY TEST, not a semantic one. It checks that a pointer FOLLOWS a HELD or SHAPE occurrence within 900 characters; it cannot check that the pointer says the right thing.",
+  "THE INDEX KEY IS FRAGILE UNDER CONCURRENT EDITING. The classification is keyed on (file, occurrence index within file), so a sibling inserting a new occurrence of the ratio ABOVE an existing one shifts every index below it. The tool reports that as 'unclassified' or 'stale' rather than mis-gating silently, which is the safe direction, and none of this task's own pointer text contains the ratio.",
+  "C-0137's THRESHOLDS ARE READ AT ONE STATE - C-0017's binding 10 nm / 2 mM / 7 nm held state, the shallowest of eighteen. They are quoted here as the replacement qualifier for margins at OTHER states too, which is exactly the discipline this task exists to enforce; the reason it is admissible is that the binding state is the shallowest, so every other state's threshold is further away.",
+  "NOTHING HERE NARROWS THE MEAN-FIELD EXPOSURE. C-0137 bounds it; this task only stops it being quoted against the wrong kind of quantity."
+ ]
+}

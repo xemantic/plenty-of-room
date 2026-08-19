@@ -359,7 +359,7 @@ where they fail.** That is a `T-2` finding about a challenge, not about a claim.
   move if the true crossing is higher.
 - **Mean-field electrostatics, inherited whole.** `C-0005` puts the one-loop correction at **123–214 % of the
   leading term across the entire 5–10 nm range**. This is the largest single uncertainty in `P2` and it is not
-  reducible by a better Poisson-Boltzmann solve.
+  reducible by a better Poisson-Boltzmann solve. (**RESTATED, `CH-0167`/`C-0137`**: this is an error bar on a LEVEL, and a margin read at a force-pinned operating point is not a level — the same-kind thresholds are a force **1.48–2.22×** smaller or a decay length **9.73 %** shorter.)
 - **The in-plane load path is `C-0009`'s out-of-plane concentration factor used as a conservative stand-in**
   (`C-0014`, `T-15`). Every minimum tether length here could shrink by up to 2.8×.
 - **The layer is neutral linear PEG.** §3 also permits PEO and a PS→PEG block copolymer, for which **no

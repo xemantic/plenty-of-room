@@ -34,7 +34,17 @@ Three things follow with no computation at all, and they are what decided where 
    tangential axis, whatever the radial one is.** That is why the oblique root's *absolute*
    stiffness turns out quotable where its *ratio* to the perpendicular one is not.
 
-**The oblique azimuth is derived, not asserted.** The honeycomb is two interpenetrating triangular
+**The oblique azimuth is derived, not asserted.**
+
+> **Annotated, iteration 33 ([`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md), [`CH-0175`](../challenges/CH-0175-the-face-azimuth-is-thirty-degrees-and-there-is-one-of-it.md)).**
+> The azimuth **set** is right and which members of it are **free** is a property of the block, not
+> of the sublattice. On a full `m × n` block the `±60°` pair points at the other sublattice's helices
+> **in its own x-raster row**, which are present; the real face gives every helix **exactly one**
+> rooting azimuth at **30°**. `κ(30°) = 0.75 + 0.25 A`, so the rigid-body cost is **2.67233333×** and not
+> 6.017× — a **favourable** correction that strengthens this claim's verdict — and *"three quarters
+> of the load path is the tangential axis"* becomes three quarters **radial**.
+
+ The honeycomb is two interpenetrating triangular
 sublattices whose azimuth sets differ by half the separation, so where one carries `{0°, 120°, 240°}`
 the other carries `{60°, 180°, 300°}` — and a top-face helix of the second sublattice has `±60°`
 free. `obliqueAzimuthDegrees()` is `HoneycombLattice.azimuthSeparationDegrees()/2` and would be a

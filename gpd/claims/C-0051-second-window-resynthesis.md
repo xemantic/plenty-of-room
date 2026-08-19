@@ -274,7 +274,7 @@ Executed as **23 gate-named tests** in `src/test/kotlin/window/SecondResynthesis
 - **`C-0032`'s SMALL-DEFLECTION exposure travels unchanged**: its tangent minimum sits at the edge of small
   deflection and a large-deflection solve would move it in an unknown direction.
 - **Mean-field electrostatics, inherited whole.** `C-0005`: 123–214 % of the leading term across the whole
-  5–10 nm range. **Every margin here is NOT EXCLUDED, never established.**
+  5–10 nm range. **Every margin here is NOT EXCLUDED, never established.** (**RESTATED, `CH-0167`/`C-0137`**: this is an error bar on a LEVEL, and a margin read at a force-pinned operating point is not a level — the same-kind thresholds are a force **1.48–2.22×** smaller or a decay length **9.73 %** shorter.)
 - **`C-0036` replaces `C-0002`'s `φ = 0.2` with a one-parameter family and `CH-0049` disputes the 0.2
   independently.** All three readings are carried and the window's verdict is the same under every one — which
   is computed, not assumed.

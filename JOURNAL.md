@@ -9297,3 +9297,236 @@ Three task numbers had to be renumbered — `T-218`/`T-219`/`T-220` were taken b
 `grep` of `TASKS.md` and the next — so they are `T-225`, `T-226` and `T-227`. The rule that resolves
 without coordination is *the agent that notices moves, and moves past the next free number*; four numbers
 of headroom rather than one, because two siblings were writing.
+
+## Iteration 33 — `T-218`, which turn sense a `15 × 4` honeycomb x-raster carries
+
+**What was done.** `C-0136`/`CH-0165` left the honeycomb's admissible row-length rule
+`N ≡ 7Δ + {0, 10, 11} (mod 21)` with its `Δ` unknown and its two senses **disjoint**, so which one
+the built cross-section carries decided whether `C-0119`'s 112 bp and `C-0136`'s 40.46 nm existed
+at all. It carries **both**. Claim [`C-0140`](gpd/claims/C-0140-honeycomb-raster-turn-sense.md),
+task [`T-218`](gpd/tasks/T-218-honeycomb-raster-turn-sense.md), result
+`gpd/results/T-218-honeycomb-raster-turn-sense.json`, study
+`structure.HoneycombRasterTurnSenseStudyKt`, 21 gate-named tests. No solve, and that is a result:
+this repository's lattice machinery is single-layer square-lattice throughout.
+
+**What was decided and why.** The cheap bound ran first and it is a **theorem** rather than a
+reading: from a sublattice-A honeycomb site the bonds are `90/210/330°` and from a B site
+`270/30/150°`, so no bond can be followed by itself and **no honeycomb path is ever straight**. An
+x-raster row is therefore corrugated at every lattice — which is exactly the sentence the caDNAno
+paper spends on it — consecutive helices sit on opposite sublattices, and the geometric sense
+alternates. The scaffold runs the full length of every helix, so its axial direction alternates too,
+and because a row *length* is `|z_out − z_in|` the sense that enters the residue formula is
+`Δ_eff = (s·Δ_geom) mod 3` — a sign `C-0136`'s formula does not carry.
+
+**What surprised us.** `CLAUDE.md`'s *"two independent sign alternations can CANCEL"* is **half**
+right here, and the half that fails is the one that matters. They cancel **within** a row — every
+row interior carries one sense, and consecutive rows carry opposite ones — and each of the `m − 1`
+row turns breaks the phase and contaminates three helices. So a **one-row** raster has a constant
+sense and a uniform row length, and one corrugated row is two `y` positions, not four layers. The
+escape exists and is not available to the tile.
+
+The second surprise is why the square lattice never had this problem: its two in-plane neighbours
+are 180° apart, i.e. **two** azimuth classes, and **2 is its own negative modulo 4**. `C-0086`'s
+rule is unconditional by an accident of `4 = 2 × 2`, and modulo 3 neither 1 nor 2 is self-inverse.
+The same code run on the square sheet returns a constant sense and `N ≡ 16 (mod 32)`, which is what
+makes this a derivation rather than a second assertion.
+
+The third is that the **built blocks need none of it**: *"Each helix was allotted 126 bases of
+scaffold. Of those 126 bases, 98 were paired … and the remaining 28 bases were divided into front
+and rear unpaired loop fragments at the ends of each helix."* Every raster turn of the folded
+objects passes through 28 unpaired nucleotides, so the residue condition does not bind them — which
+is how a block whose turn sense alternates is folded with all sixty helices at one length. The
+finding and its own explanation arrived in the same paragraph of the same paper, and `60 × 126 =
+7 560` and `64 × 126 = 8 064` are both **exact**, which also says design (i) is a **p7560** design
+and not the p8064 one `C-0119` assigns it.
+
+**Numbers.** Sense 2 on **30** helices and sense 1 on **28**, of the 58 with a defined sense;
+`{7,17,18}` and `{3,4,14}` disjoint, so **0 of 2 100** widths serve both. Minimum stagger **3 bp =
+1.02 nm**. At **112 / 108 bp** the tile's axial extent is **116 bp = 39.44 nm**, `−1.40 %` of §3's
+nominal, on 6 596 nt inside M13, faces ragged by 4 and 8 bp — better than the square lattice's
+38.08 nm at `−4.80 %` and `C-0133`'s 37.40 nm at `−6.50 %`. At the built 28 nt loop allowance the
+widest four-layer tile is **92 bp = 31.28 nm** from M13 and **106 bp = 36.04 nm** from p8064, and
+`C-0119`'s uniform 112 bp × 60 needs 8 400 nt and fits neither. Seven reproductions at departure
+`0.0`; six predicates met; **none** of nine falsifiers fired, including `F3`, declared open. Result
+file byte-identical across two runs. Raises `CH-0172` and `CH-0173`; spawns `T-230` and `T-231`,
+numbered four past the next free slot because two siblings were writing.
+
+**A small correction in passing.** `C-0136`'s width table gives its `Δ = 1` nearest width to 40.0 nm
+as 112 bp = 38.08 nm; the nearest is **122 bp = 41.48 nm**, and `C-0136`'s **own result file** says
+so (`nearestDelta1WidthBasePairs: 122`). Filed inside `CH-0172` rather than as a third challenge.
+
+## Iteration 33 — `T-219`: the honeycomb's station lattice, and the cross-section it turned out not to have
+
+**What was done.** `C-0118` produced the programme's first coupled tile flat at the 90th percentile
+under the measured folding statistics and named its own largest caveat in one sentence: *"the
+attachment grid is the abstract one, not a lattice census … a path count here is a **REQUEST**, not
+a demonstration that the stations exist."* `T-219` was formulated to close it — a station census, an
+arm/plan ceiling and a centro-symmetric placement family on the honeycomb, **or** the statement of
+what a single-layer square-lattice model cannot supply.
+
+All three exist, and the cheap bound found something else on the way.
+
+**The cheap bound, before any code.** Two multiplications. The along-helix ladder is 21 bp = 7.14 nm
+against the square lattice's 32 bp = 10.88 nm, so the collinear inboard budget is 4.604 nm against
+8.19 — **1.77888792× less**. And a honeycomb lattice spends `3√3/4 · d² = 8.35449857 nm²` of plan per
+helix where the cross-section every four-layer claim in this repository is written on spends
+`d² = 6.431296` — **1.29903811×**. The second is one multiplication and it says the geometry has to
+be re-derived before a census means anything: **the assumed cross-section is denser than any
+honeycomb of that bond length can be.** `CLAUDE.md` already carried half of it (*"a honeycomb array
+stacks its rows at `d√3/2`"*) — and applying that half **alone** makes the density error worse,
+1.50× against 1.30×, because the *other* pitch is `3d/2` and only the product is the cell.
+
+**The site set came from the paper, not from a picture.** Douglas et al.'s own sentence — *"the
+x-raster rows … are **corrugated**; they stagger up and down and encompass helices that are actually
+at **two different y-positions**"* — plus the Figure 2 nomenclature fixes the block exactly: `m`
+corrugated rows of `n` helices, neighbours `(r, c ± 1)` and `(r ± 1, c)` by the parity of `r + c`.
+Everything else follows, and every bond in the emitted coordinates is asserted to be exactly `d`
+long rather than argued.
+
+**The census survives and every reason for it is withdrawn.** `C-0122`'s **90** and **60**
+reproduce at departure `0.0`. But its perpendicular/oblique split does not: the tile's face is the
+one normal to the *thin* cross-section direction, every one of its `m` helices has exactly **one**
+absent neighbour, the bond to it lies at **30°** from the outward normal with the sign alternating,
+and **there is no perpendicular root anywhere on the face**. `CH-0151`'s correction to 132 and 90
+does not hold either — its `±60°` pair points at the other sublattice's helices *in its own
+x-raster row*, which are present; that helix is free only in a half-row termination none of the
+seven published designs has. `C-0128`'s rigid-body oblique cost falls **6.017× → 2.67233333×**, which is
+favourable to its own verdict.
+
+**The surprise was the footprint.** Every four-layer `edgeY` is `rasterRows × d`, and the honeycomb's
+in-plane pitch is `3d/2` — so every one is exactly **1.5×** too small. Because `10 × 1.5 = 15`, the
+corrected `10 × 6` tile carries **38.04 nm**, the very number `C-0120` gives `15 × 4`. **The
+footprint ordering reverses**: `15 × 4` is 56.524 nm across, **1.40084263** of §3's 40.35, and
+`10 × 6` is 37.504 nm, **0.929467162** of it. The cross-section this programme charges *"a third of
+the footprint"* for **is** §3's footprint.
+
+**And the geometry moves a verdict.** Re-solved with only `edgeY` and the two pitches changed —
+`C-0120`'s `0.0577199433` and `0.00874363524` reproduce at departure `0.0` at the geometry they were
+solved on — `15 × 4` dishes **0.0978155002** and `C-0116`'s composite-fraction threshold moves
+`0.0788618807 → 0.276970522`, **inside** the measured 0.26–0.33 band: at `f = 0.26` it dishes
+**0.101759944** and **fails `T-5b`**. `10 × 6` dishes 0.0240648102, threshold 0.012737738, flat
+across the whole band. `C-0120`'s central finding — that the second cross-section removes the
+dependency on the interlayer-coupling calibration — **survives and is now the only cross-section for
+which it is true**.
+
+**The placement family is decided by a parity nobody had looked for.** The two face sublattices carry
+their free azimuth on two *different* bond classes, whose crossover residues differ by 7 or 14 bp
+mod 21 — never 0 — so the 7 bp stagger between adjacent station rows is **forced** and no honeycomb
+face has its rows in register. Rows `r` and `m − 1 − r` share a parity when `m` is odd, so the
+reflection demands the same ladder phase and the stagger refuses it: `15 × 4` admits **no**
+centro-symmetric station lattice at any of 21 phases, either offset, either row length. When `m` is
+even the reflection *swaps* the phases and the stagger is exactly what makes the symmetry available:
+`10 × 6` admits one at the **full** 60 stations, with more than 20 000 members at two roots per row.
+`C-0063`'s whole family exists on one cross-section and provably not on the other.
+
+**`F3` fired, and the lesson is one this file already knows from the other side.** The cheap bound
+predicted a tighter plan budget and it is right only at **saturation**: a placement spending 45 of 90
+stations *skips* stations, so the binding pitch is 42 bp and the exact bisection returns **9.52 nm**,
+above the square lattice's 8.19. Only at 90 of 90 does it fall to 2.38 nm — and there the tile
+**edge** binds, not the neighbour. A denser ladder is a larger choice set.
+
+**What the square lattice cannot supply, and the half of it that was already there.** The site
+generator (`upwardRootLattice`, four azimuths at 8 bp, `k ≡ 2r+3 (mod 4)`, 32 bp pitch),
+`centroSymmetricUpwardPhases`' congruence, `CrossoverLayout`'s period-32 two-parity alternation and
+the grillage's single pitch are all square-lattice-specific. **The placement machinery is not**:
+`maximumPlanCeilingForCount`, `rootedLengthCeiling`, `rowRootOptions`, `armDirections` and
+`centroSymmetricPlacementsOn` all take an explicit lattice and took the honeycomb one unmodified —
+and reproduced `C-0072`'s **9.535 nm** on the square phase-24 lattice, through the same call, at
+departure `0.0`.
+
+**Numbers.** Census 90 and 60 at one azimuth per helix, 30.0°, across-helix station pitch 3.804 nm,
+ladder 7.14 nm. Plan ceilings 38.08 / 16.66 / 9.52 / 5.872 / 4.604 / 2.38 nm as the count saturates;
+`C-0069`'s 8.16439083 nm element is afforded to 45 paths on `15 × 4` and 30 on `10 × 6`. Four
+reproductions at departure `0.0`. Convergence: subdivisions 1/2/4 at `8.3e−5`, `6e−6`, 0; samples
+41/81/161 at 0 throughout. `F4`, the standing falsifier, holds at `4.1e−11 … 1.2e−10` over four
+solves. 23 tests, written first and watched to fail. Raises `CH-0174` and `CH-0175`; spawns `T-232`
+(re-grade `C-0118`'s sixteen cells at the corrected cross-section) and `T-233` (restate the
+footprint and threshold in the two outward-facing documents, which another agent owned this
+iteration).
+
+**What surprised us.** That a census can be right, corrected to something wrong, and restored — three
+documents in a row reasoning about which azimuths are *free* without ever enumerating a *neighbour*.
+And that the largest finding of a task about attachment stations was the tile's own cross-section:
+the geometry had been carried through six claims as `d × d`, which is a packing no honeycomb has.
+
+---
+
+## Iteration 33 — `T-220` + `T-226`: two numbers quoted out of their scope, one a level and one a manifold member
+
+**Claim [`C-0139`](gpd/claims/C-0139-two-quantities-quoted-out-of-scope.md); challenges [`CH-0170`](gpd/challenges/CH-0170-a-common-factor-is-not-an-error-bar-either.md), [`CH-0171`](gpd/challenges/CH-0171-an-irreproducible-number-was-substituted-for-a-reproducible-one.md); results `gpd/results/T-220-level-not-a-stiffness-error-bar.json`, `gpd/results/T-226-nonuniform-coupling-manifold.json`.**
+
+Two tasks, one claim, because both are *"a number is quoted outside the scope it was established in"* and both land in the deliverable.
+
+### `T-220` — the census reproduced exactly, and the partition is four ways rather than two
+
+`CH-0167` publishes **66 occurrences in 31 claims**; `tools/T-220-census.py` reproduces that **exactly**, and `F1` did not fire.
+The three external documents read higher than the challenge's 8 / 10 / 6 and the reason is recorded rather than reconciled away:
+iteration 32 already restated four of them, and **every correction sentence names the ratio again**.
+
+The work is the partition, and it is a reading — retained as data (`tools/T-220-classification.json`) so it can be falsified one
+occurrence at a time. Of **101** in-scope occurrences: **56 HELD** (a margin at a force-pinned point, `CH-0167`'s case),
+**7 SHAPE**, **11 LEVEL** and **27 META**. **63 addressed, 38 left with the reason recorded** — a third of the corpus's banners
+are quoting the **right** error bar, and saying so is as much of the answer as correcting the rest.
+
+**The declared falsifier `F4` fired, and it is the finding.** Seven occurrences sit beside a **ratio** — an edge enhancement,
+a dishing fraction under a normalised load, a departure between two tile widths, a collar span — where a level multiplier
+is a **common factor** and cancels. `CH-0167`'s mechanism is a force balance and does not reach them at all.
+And the argument is already in the corpus, **in the sentence next to the banner it contradicts**: `C-0100`'s *"a common factor
+rather than an error on it"*, `C-0026`'s *"one common factor and no ratio at all"*, `C-0032`'s *"read on the identical field,
+so their differences are not exposed to it"*. `CH-0170`.
+
+The generalisation both cases are instances of: **a percentage is an error bar on the thing its denominator is, and a quantity
+is exposed to it only if it is homogeneous of degree one in that thing.**
+
+**No verdict moved and three grounds did.** `C-0017`'s *not excluded* now rests on the absence of a systematic theory at
+`Ξ = 17–24` rather than on a 214 % number — a weaker-sounding ground and a much smaller exposure. `C-0091`'s common-mode
+statement survives with the gradient as its measure. And `DECISIONS-FOR-NDI.md`'s **strongest sentence** — *"the only margin
+in this repository that clears `C-0005`'s own 123–214 % mean-field error"* — is **withdrawn** rather than restated, because
+no margin ever had to clear it. That one has been in front of NDI since iteration 8.
+
+### `T-226` — the cure was already in the tree, two function calls away
+
+`C-0138` §8 reported that two runs of identical code emit `T-113` with 217 fields different. Reproduced here: **224** over three
+emissions, **0** outside `C-0135`'s VALUE/POINT classification once the *instrument's* own key list was completed (it first
+reported 11 `OTHER`, all of them argmin functionals inside the minimax record — the classifier was incomplete, not the study).
+
+Two cheap bounds shaped the whole task. `T-113` has **zero readers**, so a repair costs one file. And `T-113` does **not** call
+`minimaxStiffnessDistribution`, which has carried `C-0135`'s cure since iteration 13 — all three of its optimisations call
+`C-0058`'s plain coordinate descent with a **raw** objective, every branch of which is an untoleranced `Double` comparison.
+**A cure is a property of a call site, not of a repository.**
+
+Wrapping the three objectives in `searchDecision` — six significant digits, earlier candidate wins ties — makes **three runs
+byte-identical over all 5 835 fields**. Pinned by five tests on a `1e-14` relative perturbation, chosen to sit far above a
+last ulp and far below the decision cell: it moves the unwrapped descent on a manifold and does not move the wrapped one.
+`CH-0162` is right that agreeing runs are a draw, so the load-bearing evidence is the cell-to-ulp ratio, `~1e-10` per
+comparison against a raw comparison that flips whenever two evaluations are near-equal.
+
+**The width, which is the other half of the answer.** The minimax **objective** is determined to **2.80 %**; the
+**max/min stiffness ratio** its argmin demands is **17.3 / 134.1 / 880.7** — a factor of **51**, straddling `C-0060`'s
+buildable `3.5 ≤ R ≤ 20`. So the declared falsifier on `T-5b`'s flatness threshold never fired and a threshold **no falsifier
+named** was crossed. And `C-0058`'s headline **0.0753** is **bit-identical in all five emissions**, because it is a closed-form
+sweep rather than a descent — the manifold is a property of the **objective**, not of the parameter count.
+
+The surprise inside the surprise: `C-0058`'s provenance sentence certifies the file *"byte-for-byte identical on two
+independent runs — after the search's path diagnostics were removed from it"*. **Removing the path diagnostics did not make
+the file reproducible; it made the irreproducibility invisible.** Struck, with the reason, along with eleven other places.
+
+`CH-0171` is the small one and it is the sharpest: `CLAUDE.md` and `ANSWERS.md` both print `0.1247` for a five-state minimax
+citing `C-0064`, whose number is `0.1254`. `0.1247` is `C-0058`'s minimax at **one** state — and it is the **worst-determined**
+number in the study (11.2 % wide) put where its **best-determined** one (a converged objective) belonged. No corpus grep can
+see it, because the number *is* in a claim at that precision.
+
+**Numbers.** Census 66/31 exact; partition 56/7/11/27 of 101; 63 addressed, 6 by striking. Thresholds `1.48–2.22×` and
+`9.73 %`. `T-113`: 224 moved uncured, 0 cured, 1 132 against the committed file, 0 booleans and 0 wordings anywhere;
+`0.0544 → 0.0482` and `0.1587 → 0.1537`, both improvements, both inside their own verdicts.
+`tools/verify.sh` BUILD SUCCESSFUL.
+
+**One coordinator note, acted on rather than absorbed.** Mid-iteration the coordinator reported that sibling Y's
+`C-0141` moves the cross-section every four-layer claim is written on — a honeycomb spends `3√3/4·d²` of plan per
+helix and the standing model spends `d²`, so every four-layer `edgeY` is 1.5× too small, the `15 × 4` / `10 × 6`
+footprint ordering **reverses**, and `C-0116`'s interlayer threshold moves to **0.276970522**, *inside* the measured
+0.26–0.33 band. Restating it is `T-233` and Y's to own; what this iteration owed, holding `ANSWERS.md`, was a
+**forward pointer** so the deliverable does not go out freshly synthesised and already stale. Two added — §3 row (g)
+and the four-layer passage in §1 — naming `C-0141`, `CH-0174` and `T-233`, and `trace-answers.py` reads **0 ABSENT of
+1 382** after them, i.e. every number in the pointer greps out of Y's claim. That is exactly the drift class
+`C-0067`, `C-0078` and `C-0080` each found from a different side: a document is stalest in the hour after it is edited.

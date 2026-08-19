@@ -338,7 +338,7 @@ implies 11–25, so **most of the steepness of that fold is the equilibrium movi
   profile; `C-0016` reports the solved layer 1.22× outside that bracket at 5 nm.
 - **Mean-field electrostatics, inherited whole.** `C-0005`'s one-loop correction is 123–214 % across this gap
   range — larger than every margin in the pull-in section, which is therefore reported as a **sensitivity** and
-  not as a ceiling.
+  not as a ceiling. (**RESTATED, `CH-0167`/`C-0137`**: this is an error bar on a LEVEL, and a margin read at a force-pinned operating point is not a level — the same-kind thresholds are a force **1.48–2.22×** smaller or a decay length **9.73 %** shorter.)
 - **The pull-in reading is taken at the HELD gap**, not on `C-0018`'s moving equilibrium path. The two are
   different quantities and are labelled as such; the stiffness floor they share reproduces to 1.5e−4.
 - **The flexure is one beam per load path.** A real superstructure would carry many on a common sheet, where

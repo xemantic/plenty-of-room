@@ -1,0 +1,474 @@
+{
+ "ANSWERS.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "1": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "2": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "3": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "4": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "5": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "6": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "7": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "8": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "DECISIONS-FOR-NDI.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "1": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "2": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "3": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "4": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "5": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "6": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "7": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "8": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "9": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "TASKS.md": {
+  "0": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "1": {
+   "class": "LEVEL",
+   "why": "a force, pressure, bias, well depth or decay length — the quantity IS a level, so C-0005's ratio is the right error bar"
+  },
+  "2": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "3": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "4": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "5": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "6": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "7": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "8": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "9": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "10": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "11": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "12": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "13": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "14": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "15": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0008-electrostatic-force-and-decay-length.md": {
+  "0": {
+   "class": "LEVEL",
+   "why": "a force, pressure, bias, well depth or decay length — the quantity IS a level, so C-0005's ratio is the right error bar"
+  },
+  "1": {
+   "class": "LEVEL",
+   "why": "a force, pressure, bias, well depth or decay length — the quantity IS a level, so C-0005's ratio is the right error bar"
+  }
+ },
+ "gpd/claims/C-0012-coupled-stroke-and-blocking-force.md": {
+  "0": {
+   "class": "LEVEL",
+   "why": "a force, pressure, bias, well depth or decay length — the quantity IS a level, so C-0005's ratio is the right error bar"
+  },
+  "1": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "2": {
+   "class": "LEVEL",
+   "why": "a force, pressure, bias, well depth or decay length — the quantity IS a level, so C-0005's ratio is the right error bar"
+  }
+ },
+ "gpd/claims/C-0016-design-window.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0017-output-coupling-stiffness.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "1": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "2": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "3": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "4": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0018-maximum-usable-bias.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "1": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0019-mean-field-fluctuation-corrections.md": {
+  "0": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "1": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  }
+ },
+ "gpd/claims/C-0021-zero-bias-resting-position.md": {
+  "0": {
+   "class": "LEVEL",
+   "why": "a force, pressure, bias, well depth or decay length — the quantity IS a level, so C-0005's ratio is the right error bar"
+  }
+ },
+ "gpd/claims/C-0022-tile-edge-load-profile.md": {
+  "0": {
+   "class": "LEVEL",
+   "why": "a force, pressure, bias, well depth or decay length — the quantity IS a level, so C-0005's ratio is the right error bar"
+  },
+  "1": {
+   "class": "SHAPE",
+   "why": "a ratio, departure, taper or dishing fraction read on one field, in which the level enters as a common factor and divides out"
+  }
+ },
+ "gpd/claims/C-0023-two-sided-coupling.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0026-one-row-per-duplex.md": {
+  "0": {
+   "class": "SHAPE",
+   "why": "a ratio, departure, taper or dishing fraction read on one field, in which the level enters as a common factor and divides out"
+  }
+ },
+ "gpd/claims/C-0027-window-resynthesis.md": {
+  "0": {
+   "class": "LEVEL",
+   "why": "a force, pressure, bias, well depth or decay length — the quantity IS a level, so C-0005's ratio is the right error bar"
+  },
+  "1": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "2": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "3": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0032-softening-coupling-stability.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "1": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "2": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0033-collar-on-the-equilibrium-path.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "1": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0036-concentrated-crossover.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0047-single-column-flatness.md": {
+  "0": {
+   "class": "SHAPE",
+   "why": "a ratio, departure, taper or dishing fraction read on one field, in which the level enters as a common factor and divides out"
+  }
+ },
+ "gpd/claims/C-0049-compliance-ceiling-stroke.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0050-desired-stroke-reach.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0051-second-window-resynthesis.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0067-answers-reconciliation.md": {
+  "0": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  }
+ },
+ "gpd/claims/C-0069-output-element-placement.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0071-output-element-recommendation.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "1": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "2": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0079-unbonded-duplex-separation.md": {
+  "0": {
+   "class": "LEVEL",
+   "why": "a force, pressure, bias, well depth or decay length — the quantity IS a level, so C-0005's ratio is the right error bar"
+  }
+ },
+ "gpd/claims/C-0084-recommended-element-pull-in-fold.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "1": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "2": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  }
+ },
+ "gpd/claims/C-0091-buffer-route-census.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "1": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "2": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "3": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  }
+ },
+ "gpd/claims/C-0092-large-rotation-arm-branch.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "1": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "2": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  }
+ },
+ "gpd/claims/C-0096-doubling-ladder-repair.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "1": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0100-collar-at-the-buildable-width.md": {
+  "0": {
+   "class": "SHAPE",
+   "why": "a ratio, departure, taper or dishing fraction read on one field, in which the level enters as a common factor and divides out"
+  },
+  "1": {
+   "class": "SHAPE",
+   "why": "a ratio, departure, taper or dishing fraction read on one field, in which the level enters as a common factor and divides out"
+  }
+ },
+ "gpd/claims/C-0110-device-b-tall-gap.md": {
+  "0": {
+   "class": "LEVEL",
+   "why": "a force, pressure, bias, well depth or decay length — the quantity IS a level, so C-0005's ratio is the right error bar"
+  },
+  "1": {
+   "class": "LEVEL",
+   "why": "a force, pressure, bias, well depth or decay length — the quantity IS a level, so C-0005's ratio is the right error bar"
+  }
+ },
+ "gpd/claims/C-0114-one-reserve.md": {
+  "0": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "1": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "2": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  },
+  "3": {
+   "class": "HELD",
+   "why": "a stability floor, coupling margin, fold/pull-in margin or a window edge built on one, read at the force-pinned operating point where a level multiplier is absorbed into the bias"
+  }
+ },
+ "gpd/claims/C-0132-cut-rim-charge.md": {
+  "0": {
+   "class": "SHAPE",
+   "why": "a ratio, departure, taper or dishing fraction read on one field, in which the level enters as a common factor and divides out"
+  },
+  "1": {
+   "class": "SHAPE",
+   "why": "a ratio, departure, taper or dishing fraction read on one field, in which the level enters as a common factor and divides out"
+  }
+ },
+ "gpd/claims/C-0137-beyond-mean-field-gap.md": {
+  "0": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "1": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "2": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  },
+  "3": {
+   "class": "META",
+   "why": "a sentence about C-0005, CH-0019, T-50 or CH-0167 itself, or a bare CITED provenance row — not a transfer"
+  }
+ }
+}

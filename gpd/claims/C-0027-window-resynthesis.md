@@ -226,7 +226,7 @@ property of `C-0022`'s rim collar, which is height-level.
 > bias, and now the corrected margin. At 0.5 mM the pull-in fold **does not exist**, the stability margin is
 > **1.76× larger at its worst end** and is **the only margin in the programme that clears `C-0005`'s own
 > 123–214 % mean-field error**. It costs nothing: `C-0007` shows the layer's mechanics are buffer-independent
-> to ≤ 0.4 %, so the window edges, the chain length, the stroke and the chemistry are all unchanged.
+> to ≤ 0.4 %, so the window edges, the chain length, the stroke and the chemistry are all unchanged. (**RESTATED, `CH-0167`/`C-0137`**: this is an error bar on a LEVEL, and a margin read at a force-pinned operating point is not a level — the same-kind thresholds are a force **1.48–2.22×** smaller or a decay length **9.73 %** shorter.)
 >
 > **The alternative to adopting it is `T-50` — primitive-model Monte Carlo, costed by `C-0005` at 1–3 weeks
 > of wall clock for a regime it says has no systematic theory at all.** §3 names 2 / 5 / 10 mM and does not
@@ -243,7 +243,7 @@ property of `C-0022`'s rim collar, which is height-level.
 | **the binding constraints** | **lower: coil overlap `Σ = πR₀²σ ≥ 1`, the 1-D mean field's own validity condition. Upper: §3's 3 nm stroke, now read as `3.0 + d` delivered.** Unchanged owners, at both heights, through nine claims and ten challenges |
 | **a proof of emptiness** | **YES at 5 nm.** `C-0016`'s 13.3× crossing stands, and under `CH-0024` the compliance clause is now empty on the whole grid at that height rather than merely crossing |
 | **the axes §4 does not name** | **NON-EMPTY and CONDITIONAL.** §3's own mandated 33.333 pN/nm clears the stability floor at all 54 states with 1.23–1.53× at the worst; the coupling exists as a design (45 flexures, span 31.64 nm = 93 bp, on 8 nm = 24 bp normal standoffs, `C-0025`); the zero-bias position is closed by the same part; flatness, load path, lateral confinement and yaw are all discharged by the one grid |
-| **what the verdict is conditional on** | **the buffer, and a model error nothing in this programme narrows.** At §3's 2 mM the margin is 1.23–1.53× against `C-0005`'s 123–214 % one-loop electrostatic correction, so the 10 nm verdict remains **NOT EXCLUDED, never established** (`CH-0019`). At 0.5 mM it is 2.16–9.87× and clears it |
+| **what the verdict is conditional on** | **the buffer, and a model error nothing in this programme narrows.** At §3's 2 mM the margin is 1.23–1.53× against `C-0005`'s 123–214 % one-loop electrostatic correction, so the 10 nm verdict remains **NOT EXCLUDED, never established** (`CH-0019`). At 0.5 mM it is 2.16–9.87× and clears it (**RESTATED, `CH-0167`/`C-0137`**: this is an error bar on a LEVEL, and a margin read at a force-pinned operating point is not a level — the same-kind thresholds are a force **1.48–2.22×** smaller or a decay length **9.73 %** shorter.) |
 | **§3's *desired* ~10 nm stroke** | **STILL UNREACHABLE** at every height and every grafting density — `C-0001`'s one surviving headline, untouched by iteration 4 |
 
 ---
@@ -305,7 +305,7 @@ Executed as **27 gate-named tests** in `src/test/kotlin/window/ResynthesisTransf
   balance non-linearly. Licensed at 7 and 10 nm, **not licensed at 5 nm** (0.2 % outside).
 - **Mean-field electrostatics, inherited whole.** `C-0005`: 123–214 % of the leading term across the whole
   5–10 nm range, and `CH-0019` establishes that nothing in this queue narrows it. **Every margin here is
-  NOT EXCLUDED, never established.**
+  NOT EXCLUDED, never established.** (**RESTATED, `CH-0167`/`C-0137`**: this is an error bar on a LEVEL, and a margin read at a force-pinned operating point is not a level — the same-kind thresholds are a force **1.48–2.22×** smaller or a decay length **9.73 %** shorter.)
 - **`C-0016`'s and `C-0017`'s own validity ranges travel unchanged**, including the 1.22× exposure of the
   solved layer against `C-0003`'s bracket at 5 nm.
 - **The layer is neutral linear PEG.** §3 also permits PEO and a PS→PEG block copolymer, for which no osmotic

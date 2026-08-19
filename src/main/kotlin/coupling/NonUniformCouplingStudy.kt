@@ -44,6 +44,16 @@ import kotlin.math.pow
 /**
  * Task `T-113` — can a **non-uniform** coupling stiffness buy back the edge dishing? Leaf `A8.2`.
  *
+ * **Every descent in this study decides at [searchDecision]'s six significant digits** (`T-226`,
+ * `C-0139`). [optimiseStiffnessDistribution] compares raw `Double`s at every branch it takes — the
+ * coarse scan, the golden section, the sweep acceptance and the start ranking — so before this the
+ * JIT recompiling a hot reduction part-way through a run was enough to move the terminal point:
+ * two runs of identical code on identical inputs emitted this file with **224** fields different
+ * (`C-0138` §8, reproduced by `C-0139`), always one descent record and its transfers, and a
+ * different record each run. `CLAUDE.md`: *a DECISION must be rounded COARSER than the number it
+ * is taken on.* The wrap is at the **call sites** rather than inside the shared optimiser, because
+ * five other studies call it and their published files must not move for a repair this file needs.
+ *
  * Run with:
  *
  * ```shell
@@ -672,7 +682,7 @@ fun main() {
                 searchHalfWidth = 2.0,
                 scanPoints = 7,
                 refinements = 8
-            ) { surrogate.solve(it).peakDishing }
+            ) { searchDecision(surrogate.solve(it).peakDishing) }
             optima["${scheme.label}|$ceilingLabel"] = optimum.stiffnesses
             starts += optimum.stiffnesses
             optimiserRecords += T113OptimiserRecord(
@@ -728,7 +738,7 @@ fun main() {
                 searchHalfWidth = 2.0,
                 scanPoints = 7,
                 refinements = 8
-            ) { plateSurrogate.solve(it).peakDishing }
+            ) { searchDecision(plateSurrogate.solve(it).peakDishing) }
             val plateOptimumOnLattice = surrogate.solve(plateOptimum.stiffnesses).peakDishing
             optimiserRecords += T113OptimiserRecord(
                 scheme = scheme.label,
@@ -822,7 +832,9 @@ fun main() {
         searchHalfWidth = 2.0,
         scanPoints = 7,
         refinements = 8
-    ) { stiffnesses -> robustSurrogates.maxOf { it.solve(stiffnesses).peakDishing } }
+    ) { stiffnesses ->
+        searchDecision(robustSurrogates.maxOf { it.solve(stiffnesses).peakDishing })
+    }
     optimiserRecords += T113OptimiserRecord(
         scheme = robustScheme.label,
         model = "lattice, MINIMAX over C-0022's five solved states",

@@ -1,0 +1,274 @@
+{
+ "task": "T-226",
+ "claim": "C-0139",
+ "leaf": "none - a PROCESS task about the reproducibility of an emitted artifact and the numbers a claim quotes from it",
+ "title": "T-113's descents decided on raw Doubles; three cured runs are byte-identical, and the manifold they were drawing from is 2.8 % wide in the VALUE and 51x in the POINT",
+ "raisedBy": "C-0138 section 8 (T-214), whose F1 fired on this file",
+ "verificationType": "in-silico (six independent emissions of coupling.NonUniformCouplingStudyKt: three of HEAD's uncured code, three of the cured code, plus the iteration-9 commit read out of git) + logical (a mechanism located in the source and pinned by five unit tests, and a reader census that prices the re-emission)",
+ "maturity": "TRL 1-3, and below it: NO PHYSICS CHANGED. No verdict, no boolean and no wording moves in any comparison. What moves is which member of an optimal manifold a descent lands on",
+ "units": "dishing is a FRACTION OF THE FREE-TILE STROKE (4.90731 nm), dimensionless; stiffness pN/nm; force pN; k_BT = 4.141947 pN.nm at 300 K",
+ "sources": [
+  "gpd/results/T-113-non-uniform-coupling.json",
+  "gpd/claims/C-0138-departure-rule-scope.md",
+  "gpd/claims/C-0135-descent-manifold-width.md",
+  "gpd/claims/C-0058-non-uniform-coupling.md"
+ ],
+ "cheapBoundsBeforeAnyRun": {
+  "readers": "tools/result-reader-census.py: T-113 has ZERO readers. The re-emission is one file and no downstream sweep is owed - which is what made a repair affordable at all",
+  "reemissionOrder": "tools/reemission-order.py T-113-non-uniform-coupling.json -> 1 file, 0 constraints",
+  "whichOptimiser": "C-0135's cure is ALREADY APPLIED inside minimaxStiffnessDistribution (periodic restarts, a small-difference restart, a lattice snap on the iterate, searchDecision on the polish objective). T-113 does not call it: all three of its optimisations call optimiseStiffnessDistribution - C-0058's cyclic coordinate descent - with a RAW objective. So the mechanism is a different one and the applicable half of the cure is the decision rounding",
+  "corpusCarriers": "the eight moving numbers are carried by C-0058 (5 places), CLAUDE.md (2) and ANSWERS.md (1)"
+ },
+ "mechanism": {
+  "where": "coupling/NonUniformCoupling.kt optimiseStiffnessDistribution",
+  "what": "every branch is a raw Double comparison with no tolerance: the coarse scan's `value < bestValue`, the golden section's `leftValue < rightValue`, the refinement's `refined.second < bestValue`, the sweep acceptance `bestValue < best - 1e-15` (1e-14 RELATIVE at a dishing of 0.1, three decades under the JIT's own jitter budget over a run) and the start ranking `candidate.objective < bestOverall.objective`",
+  "why it moves the answer": "CLAUDE.md: a descent on an optimal MANIFOLD has no isolated answer to be reproducible about. Where the active constraints are fewer than the free directions the optimal set is a manifold, so the terminal point is whatever the trajectory reached, and an ulp decides the trajectory",
+  "cure": "the THREE call sites in coupling/NonUniformCouplingStudy.kt wrap their objective in searchDecision (six significant digits, earlier candidate wins ties). The wrap is at the CALL SITES and not inside the shared optimiser, because five other studies call it and their published files must not move for a repair this file needs",
+  "tests": "src/test/kotlin/coupling/T226DescentDecisionPrecisionTest.kt, 5 tests. A 1e-14 relative perturbation - far above a last ulp and far below the six-digit decision cell - MOVES the unwrapped descent on a manifold and does NOT move the wrapped one, and the wrapped descent is not worse than the raw one"
+ },
+ "baselineIrreproducibility": {
+  "emissions": 3,
+  "fields": 5835,
+  "movedFields": 224,
+  "OTHER": 0,
+  "movedDecisions": 1,
+  "whatTheOneMovedStringIs": "findings[3], a prose sentence differing in its DIGITS alone - 0.1543 / 0.1562 / 0.1587 for the worst of the five. CLAUDE.md's 'a moved STRING is not necessarily a moved decision'",
+  "blocksTouched": 55,
+  "note": "the moving block is always ONE descent record and its transfers, and a different one each run, exactly as C-0138 section 8 reports. runB landed BIT-FOR-BIT on the iteration-9 point, which is C-0135's 'a fresh run draws from both' reproduced on a second study",
+  "instrumentCorrection": "the classifier's FIRST run reported 11 OTHER, and all eleven sat inside the minimax record and were argmin functionals (a max/min stiffness ratio, peak forces, path counts). The instrument was incomplete, not the study; the key list is extended and OTHER is 0"
+ },
+ "curedReproducibility": {
+  "emissions": 3,
+  "fields": 5835,
+  "movedFields": 0,
+  "movedDecisions": 0,
+  "byteIdentical": true,
+  "howStrongThatIs": "CH-0162's caution applies to concluding reproducibility from agreement, so the load-bearing evidence is the MECHANISM rather than the sample: the decision cell is ~1e-6 relative and a last-ulp difference is ~1e-16, so a flip needs a straddle whose probability is ~1e-10 per comparison, against a raw comparison where any ulp difference flips whenever two evaluations are near-equal - which near an optimum is every time. Three agreeing runs is the sample; the cell ratio is the bound"
+ },
+ "costOfTheCure": {
+  "againstTheCommittedFile": {
+   "movedNumericFields": 1132,
+   "OTHER": 8,
+   "movedDecisions": 6,
+   "allOfWhichAre": "prose fields differing in their DIGITS alone - 6 of 6, checked with the digits stripped",
+   "booleansMoved": 0,
+   "verdictsMoved": 0
+  },
+  "optimaThatIMPROVED": "the 3 x 15 45-parameter optimum 0.0544 -> 0.0482 (11.5 % better), the uncapped one 0.0544 -> 0.0474, the five-state minimax worst case 0.1587 -> 0.1537, the 1 x 15 uncapped 0.5514 -> 0.5513",
+  "optimaThatWORSENED": "one: the 2 x 15 lattice optimum, 0.2512 -> 0.2520, 0.34 % - inside the manifold measured here",
+  "downstream": "NONE. T-113 has zero readers"
+ },
+ "manifoldWidth": [
+  {
+   "quantity": "minimax objective (worst of five)",
+   "field": "/optimiser/12/objective",
+   "iteration9": 0.778981047,
+   "committedIteration32": 0.766641271,
+   "runA": 0.757193829,
+   "runB": 0.778981047,
+   "curedAndReproducible": 0.754408,
+   "widthOverThreeUncuredEmissions": 0.027969
+  },
+  {
+   "quantity": "minimax dishing/stroke at the design point (C-0058's 0.1247)",
+   "field": "/distributions/24/dishingOverStroke",
+   "iteration9": 0.124664884,
+   "committedIteration32": 0.138479734,
+   "runA": 0.140319232,
+   "runB": 0.124664884,
+   "curedAndReproducible": 0.140121121,
+   "widthOverThreeUncuredEmissions": 0.111562
+  },
+  {
+   "quantity": "minimax dishing [nm] (C-0058's 0.6118)",
+   "field": "/distributions/24/latticePeakDishing",
+   "iteration9": 0.611769358,
+   "committedIteration32": 0.679563125,
+   "runA": 0.688590115,
+   "runB": 0.611769358,
+   "curedAndReproducible": 0.687617919,
+   "widthOverThreeUncuredEmissions": 0.111562
+  },
+  {
+   "quantity": "minimax at 0.5 mM (C-0058's 0.1286)",
+   "field": "/transfers/49/dishingOverStroke",
+   "iteration9": 0.128581597,
+   "committedIteration32": 0.147482503,
+   "runA": 0.152518818,
+   "runB": 0.128581597,
+   "curedAndReproducible": 0.150696399,
+   "widthOverThreeUncuredEmissions": 0.156946
+  },
+  {
+   "quantity": "minimax at 10 mM (C-0058's 0.1587)",
+   "field": "/transfers/50/dishingOverStroke",
+   "iteration9": 0.158737338,
+   "committedIteration32": 0.156224309,
+   "runA": 0.154299132,
+   "runB": 0.158737338,
+   "curedAndReproducible": 0.153731483,
+   "widthOverThreeUncuredEmissions": 0.027959
+  },
+  {
+   "quantity": "minimax at 5 nm (C-0058's 0.1195)",
+   "field": "/transfers/51/dishingOverStroke",
+   "iteration9": 0.119514806,
+   "committedIteration32": 0.105932776,
+   "runA": 0.121397258,
+   "runB": 0.119514806,
+   "curedAndReproducible": 0.127100761,
+   "widthOverThreeUncuredEmissions": 0.127387
+  },
+  {
+   "quantity": "minimax at 2 nm (C-0058's 0.1587)",
+   "field": "/transfers/52/dishingOverStroke",
+   "iteration9": 0.158738878,
+   "committedIteration32": 0.156223487,
+   "runA": 0.154299063,
+   "runB": 0.158738878,
+   "curedAndReproducible": 0.153731406,
+   "widthOverThreeUncuredEmissions": 0.027969
+  },
+  {
+   "quantity": "minimax under a uniform load (C-0058's 0.1307)",
+   "field": "/transfers/53/dishingOverStroke",
+   "iteration9": 0.130681373,
+   "committedIteration32": 0.122116122,
+   "runA": 0.118131933,
+   "runB": 0.130681373,
+   "curedAndReproducible": 0.122844974,
+   "widthOverThreeUncuredEmissions": 0.096031
+  },
+  {
+   "quantity": "minimax max/min stiffness ratio",
+   "field": "/distributions/24/maximumOverMinimumStiffness",
+   "iteration9": 17.303803,
+   "committedIteration32": 134.133852,
+   "runA": 880.669152,
+   "runB": 17.303803,
+   "curedAndReproducible": 740.875768,
+   "widthOverThreeUncuredEmissions": 0.980352
+  },
+  {
+   "quantity": "minimax lattice/plate (C-0058's 1.082)",
+   "field": "/distributions/24/latticeOverPlate",
+   "iteration9": 1.08155872,
+   "committedIteration32": 1.02007035,
+   "runA": 1.03689243,
+   "runB": 1.08155872,
+   "curedAndReproducible": 1.0863112,
+   "widthOverThreeUncuredEmissions": 0.056852
+  },
+  {
+   "quantity": "minimax k_max*s [pN] (C-0058's 9.346)",
+   "field": "/distributions/24/peakPathForceAtAcceptableStroke",
+   "iteration9": 9.34596466,
+   "committedIteration32": 6.97778665,
+   "runA": 9.68540453,
+   "runB": 9.34596466,
+   "curedAndReproducible": 7.01447358,
+   "widthOverThreeUncuredEmissions": 0.279557
+  },
+  {
+   "quantity": "the 45-parameter single-state optimum (C-0058's 0.0544)",
+   "field": "/distributions/22/dishingOverStroke",
+   "iteration9": 0.0544295609,
+   "committedIteration32": 0.0544295609,
+   "runA": 0.0544295609,
+   "runB": 0.0544295609,
+   "curedAndReproducible": 0.0481520342,
+   "widthOverThreeUncuredEmissions": 0.0,
+   "note": "STABLE across all three uncured emissions and moved ONLY by the cure. A single-state descent at 45 paths landed in the same basin every time; the five-state MINIMAX did not. So the manifold is a property of the OBJECTIVE, not of the parameter count"
+  },
+  {
+   "quantity": "C-0058's HEADLINE rim rule 0.0753",
+   "field": "/distributions/20/dishingOverStroke",
+   "iteration9": 0.0753432869,
+   "committedIteration32": 0.0753432869,
+   "runA": 0.0753432869,
+   "runB": 0.0753432869,
+   "curedAndReproducible": 0.0753432869,
+   "widthOverThreeUncuredEmissions": 0.0,
+   "note": "BIT-IDENTICAL in all five emissions including the cured one: it is a closed-form one-parameter family evaluated on a sweep, not a descent"
+  }
+ ],
+ "findings": [
+  "TWO RUNS OF IDENTICAL CODE ON IDENTICAL INPUTS DISAGREE IN 224 FIELDS, and three cured runs are BYTE-IDENTICAL over all 5835. C-0138 section 8 reproduces exactly, and the cause is a raw Double comparison in a descent rather than anything about the physics.",
+  "C-0135's CURE WAS ALREADY IN THE TREE AND T-113 DOES NOT CALL THE FUNCTION THAT CARRIES IT. minimaxStiffnessDistribution has the restarts, the lattice snap and the decision rounding; NonUniformCouplingStudy calls C-0058's plain coordinate descent three times with a raw objective. A cure is a property of a CALL SITE, not of a repository.",
+  "THE VALUE IS DETERMINED TO 2.80 % AND THE POINT IS NOT DETERMINED AT ALL. Over three uncured emissions the minimax OBJECTIVE spans 2.80 % and its max/min stiffness RATIO spans 17.3 / 134.1 / 880.7 - a factor of 51. C-0060's buildable two-level window is 3.5 <= R <= 20, so the manifold STRADDLES the buildability question while the flatness answer barely moves.",
+  "C-0058's HEADLINE 0.0753 IS BIT-IDENTICAL IN ALL FIVE EMISSIONS, because it is a closed-form one-parameter family evaluated on a sweep and not a descent. Everything this task moves is a descent output.",
+  "0.1247 IS C-0058's READING AT ONE STATE AND IT WAS SUBSTITUTED FOR C-0064's WORST-OF-FIVE 0.1254 - in CLAUDE.md and in ANSWERS.md, both citing C-0064. The substitution replaced the study's best-determined number (converged to 1e-4) with its worst-determined one (11.2 % wide). CH-0171.",
+  "NO VERDICT, NO BOOLEAN AND NO WORDING MOVES IN ANY OF THE SIX EMISSIONS OR IN THE CURE. Every 'flat' flag, every verdict string and C-0058's 1 x 15 negative and 3 x 15 positive are unchanged."
+ ],
+ "predicates": [
+  {
+   "id": "P1",
+   "statement": "the irreproducibility reproduces and the moving block is one descent record and its transfers",
+   "verdict": "PASS - 224 fields over three emissions, 56 blocks, all descent records and their transfers"
+  },
+  {
+   "id": "P2",
+   "statement": "the moving fields classify VALUE/POINT with OTHER = 0",
+   "verdict": "PASS, after the instrument's own key list was completed - see baselineIrreproducibility.instrumentCorrection"
+  },
+  {
+   "id": "P3",
+   "statement": "no verdict, boolean or bindingStates list moves",
+   "verdict": "PASS - 0 booleans in every comparison; the only moved strings differ in digits alone"
+  },
+  {
+   "id": "P4",
+   "statement": "the width of C-0058's multi-state minimax numbers measured at both the VALUE and the POINT over at least three emissions",
+   "verdict": "PASS - see manifoldWidth, 13 quantities over four emissions"
+  },
+  {
+   "id": "P5",
+   "statement": "every corpus carrier of a moved number carries the width or a pointer",
+   "verdict": "PASS - C-0058 amended in 12 places, CLAUDE.md and ANSWERS.md corrected"
+  },
+  {
+   "id": "P6",
+   "statement": "consumers re-emitted in reemission-order and C-0058 amended where it quotes a moved number",
+   "verdict": "PASS - there are no consumers, and the claim is amended"
+  }
+ ],
+ "falsifiers": [
+  {
+   "id": "F1",
+   "statement": "two fresh runs agree, i.e. the irreproducibility does not reproduce",
+   "fired": false,
+   "found": "three uncured emissions give three distinct points; runB reproduced the iteration-9 point bit for bit"
+  },
+  {
+   "id": "F2",
+   "statement": "a moving field is neither a VALUE nor a POINT of a descent",
+   "fired": false,
+   "found": "0 OTHER once the classifier's key list covers the argmin functionals it first missed. It fired on the INSTRUMENT and not on the study, and that is recorded rather than repaired away"
+  },
+  {
+   "id": "F3",
+   "statement": "a verdict moves between two emissions",
+   "fired": false,
+   "found": "0 booleans, 0 wording changes, 6 prose fields moving in their digits alone"
+  },
+  {
+   "id": "F4",
+   "statement": "the measured width crosses T-5b's 0.10 flatness convention",
+   "fired": false,
+   "found": "the minimax is 0.1537-0.1587 across every emission, 1.54-1.59x outside; it never approaches 0.10. BUT the POINT crosses a DIFFERENT threshold - C-0060's buildable stiffness ratio - which no declared falsifier named"
+  },
+  {
+   "id": "F5",
+   "statement": "C-0135's cure applies cleanly and collapses the manifold, so branch (b) was the wrong one",
+   "fired": true,
+   "found": "it does, in the form the sibling function already uses - a decision-rounded objective. Branch (a) is taken AND the width is reported, because the width is what says how much every number this claim ever quoted was worth"
+  }
+ ],
+ "validity": [
+  "THE CURE PINS A PATH, NOT A POINT. C-0135 is right that rounding the decisions stabilises which branch is taken and does not make the optimal set a single point. What the cured file reports is one member of the manifold, chosen deterministically; the manifold is as wide as measured here and no wider search was run.",
+  "THE MANIFOLD WIDTH IS A MAXIMUM OVER A SAMPLE of three uncured emissions plus the iteration-9 commit, monotone non-decreasing in the member count. It is a lower bound on the width, never a proof that no further basin exists.",
+  "THE CURED FILE'S OPTIMUM IS BETTER, NOT RIGHT. A descent reports the best point it found. The 0.0482 is a lower minimum than 0.0544 on the same problem; the reachable-dishing floor beside it is unchanged and still forbids nothing.",
+  "THE EMITTED OBJECTIVE IS NOW THE ROUNDED ONE at optimiser[*].objective, because the wrapped objective is what the optimiser returns. Six significant digits is the decision precision and the file already emits at nine, so the two disagree by construction; the re-solved quantities (dishingOverStroke, latticePeakDishing) are unrounded.",
+  "T-113 HAS ZERO READERS, so nothing here propagates. If a future study reads it, the re-emission order must be recomputed."
+ ]
+}

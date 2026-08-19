@@ -1,4 +1,4 @@
-# C-0114 — **The two spends NDI can make once are one decision, and between the queue row and the measurement the ranking REVERSED.** `T-194` was queued to say *"spend the reserve on the layer"* — the layer buys a whole clause of §3, the buffer buys 1.35–1.75× inside a 123–214 % error bar. `C-0110`, filed in the same iteration, measures the layer and it buys **neither** clause: §3's 100 pN stops arriving at **13.6989179 nm** at 0.5 mM, **below the bottom** of NDI's own 17–26 nm band, so a tall layer is refused at **96 of 96** states on the acceptable clause and admitted at **1 of 96** on the desired one. **The reserve has one claimant, not two**, and the re-issued question is no longer *which* — it is whether the buffer's **1.75×** at the operating point is worth the stabilisation work, which is a **price**, i.e. NDI's column and not ours
+# C-0114 — **The two spends NDI can make once are one decision, and between the queue row and the measurement the ranking REVERSED.** `T-194` was queued to say *"spend the reserve on the layer"* — the layer buys a whole clause of §3, the buffer buys 1.35–1.75× inside a 123–214 % error bar (a LEVEL, not a stiffness error bar — `CH-0167`). `C-0110`, filed in the same iteration, measures the layer and it buys **neither** clause: §3's 100 pN stops arriving at **13.6989179 nm** at 0.5 mM, **below the bottom** of NDI's own 17–26 nm band, so a tall layer is refused at **96 of 96** states on the acceptable clause and admitted at **1 of 96** on the desired one. **The reserve has one claimant, not two**, and the re-issued question is no longer *which* — it is whether the buffer's **1.75×** at the operating point is worth the stabilisation work, which is a **price**, i.e. NDI's column and not ours
 
 | | |
 |---|---|
@@ -63,7 +63,7 @@ The three surviving buffer routes are **not three pieces of evidence**.
 - One is **withdrawn** (`C-0032`, `CH-0098`).
 - The three survivors run through **two** distinct mechanisms and **one** field model, and
   `C-0005`'s one-loop correction — **123–214 %** of the leading term over this gap range — is **common mode
-  to all three and larger than every one of the advantages**.
+  to all three and larger than every one of the advantages**. (**RESTATED, `CH-0167`/`C-0137`**: this is an error bar on a LEVEL, and a margin read at a force-pinned operating point is not a level — the same-kind thresholds are a force **1.48–2.22×** smaller or a decay length **9.73 %** shorter.)
 
 So the honest statement is *"a preference worth up to 1.75× at the operating point, inside an error bar
 larger than itself, on three readings that do not diversify the exposure"* —
@@ -103,6 +103,7 @@ One claimant has been **withdrawn by measurement**, so the reserve has one, and 
 
 > **Is a preference worth up to 1.75× at the operating point — inside a 123–214 % error bar that is common
 > mode to every route that recommends it — worth the origami-stabilisation work that buying 0.5 mM costs?**
+> (**RESTATED, `CH-0167`/`C-0137`**: this is an error bar on a LEVEL, and a margin read at a force-pinned operating point is not a level — the same-kind thresholds are a force **1.48–2.22×** smaller or a decay length **9.73 %** shorter.)
 
 That is a **price** question. This programme cannot answer it and should not pretend the ranking of the
 buys settles it.

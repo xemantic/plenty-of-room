@@ -32,7 +32,7 @@
 > ~~*PASS at 5 nm; FAIL at 7 and 10 nm*~~ → PASS at 5 **and 7** nm, FAIL at 10 nm**, once read at the bias the
 > device operates at. §3's own mandated 33.333 pN/nm clears the floor at every height, buffer and model in the
 > box, so the requirement this claim opened is closed and closed favourably — with a margin of only 1.19× at
-> 10 nm and 2 mM, against `C-0005`'s 123–214 % mean-field error.
+> 10 nm and 2 mM, against `C-0005`'s 123–214 % mean-field error. (**RESTATED, `CH-0167`/`C-0137`**: this is an error bar on a LEVEL, and a margin read at a force-pinned operating point is not a level — the same-kind thresholds are a force **1.48–2.22×** smaller or a decay length **9.73 %** shorter.)
 
 ---
 

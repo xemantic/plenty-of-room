@@ -79,6 +79,12 @@ The reserve's one remaining claimant is the buffer, worth up to **1.75×** at th
 on **three** surviving routes (`C-0091`) that are **common mode** below `C-0005`'s 123–214 % one-loop
 error — an error larger than any of them, so they do not diversify the exposure and must not be counted as
 three pieces of evidence.
+**RESTATED, 2026-08-19 (`CH-0167`, `C-0137`, `C-0139`): that percentage is an error bar on the LEVEL of the
+electrostatic force, and all three routes are read at a FORCE-PINNED operating point, where a level
+correction is absorbed into the bias rather than into the margin.**
+The common-mode statement survives — what these three routes share is one field model — and its same-kind
+measure is `C-0137`'s: a force **1.48–2.22× smaller**, or a decay length **9.73 % shorter**.
+Nothing evaluable reaches either.
 **And that is a ranking of the two BUYS, not of the two PRICES; only NDI holds the second column** — the
 error the answer to decision 1 caught, and one this file will not repeat.
 The re-issued question is in **§1+2** below.
@@ -176,6 +182,8 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 > - **The buy is small, and it is common mode.** At the state the device occupies the three surviving routes
 >   are worth **1.35×, 1.57× and 1.75×** (`C-0091`), and all three are downstream of `C-0008`'s single
 >   mean-field solve, whose one-loop error is **123–214 %** (`C-0005`) — larger than any of them.
+>   (**RESTATED, `CH-0167`/`C-0137`**: a LEVEL, not the error bar on a margin. The common-mode exposure is the
+>   *gradient*, whose same-kind threshold is a decay length **9.73 %** shorter.)
 >   **Against a reserve NDI says it is holding for margin, this programme cannot argue that its own
 >   1.35–1.75× is the better use of it** — and it now knows what the other claimant on that reserve is.
 > - **The other claimant is decision 2**, which buys a whole clause of §3. See the block at the head of this
@@ -222,7 +230,8 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 > and they are **not three independent exposures**: all three are downstream of `C-0008`'s single
 > mean-field solve, whose one-loop error (`C-0005`, **123–214 %**) is common mode over all of them
 > and larger than each. ~~`T-50` is the only thing in the queue that would change that.~~
-> **`T-50` DID change it, 2026-08-19 (`C-0137`):** the common-mode 123–214 % is a **level**, and the three
+> **`T-50` DID change it, 2026-08-19 (`C-0137`, and `CH-0167` against the way it was being quoted):**
+> the common-mode 123–214 % is a **level**, and the three
 > routes are read at a **force-pinned** point where the level is absorbed into the bias. The common-mode
 > exposure is the *gradient*, whose threshold is a 9.73 % shortening of the decay length — and nothing
 > evaluable reaches it. The three routes are still not three independent exposures; what they share is now
@@ -257,8 +266,14 @@ not an output of the model.
   bias margin collapses from 1.007–1.032 to **1.0000–1.0019**, and the fold's stroke walks back from
   3.41–4.13 nm to 2.80–3.17 nm — **through §3's own 3 nm target at two of six layer models**.
 - **At 0.5 mM the fold does not exist at all** (0 of 6 states, against 6 of 6 at 2 mM), and the
-  corrected stability margin is **2.16–9.87×** against 1.23–1.53×. It is the only margin in this
-  repository that clears `C-0005`'s own 123–214 % mean-field error.
+  corrected stability margin is **2.16–9.87×** against 1.23–1.53×. ~~It is the only margin in this
+  repository that clears `C-0005`'s own 123–214 % mean-field error.~~
+  **RESTATED, 2026-08-19 (`CH-0167`, `C-0137`): no margin has ever had to clear that percentage, because it
+  is an error bar on a LEVEL and a margin is not a level.** What a margin is owed against is `C-0137`'s
+  same-kind pair — a force **1.48–2.22× smaller** or a decay length **9.73 % shorter** — and at 0.5 mM the
+  gradient threshold is `−0.1477 nm⁻¹`, **3.9× further away** than at 2 mM. The preference for 0.5 mM is
+  unchanged; the reason it was being given was the wrong kind of number, and it was the *strongest* sentence
+  in this file.
 - ~~**It costs nothing.**~~ **It costs nothing THIS PROGRAMME CAN SEE — corrected 2026-08-18, and the
   answer is what corrected it.** `C-0007` puts the layer's buffer sensitivity at **≤ 0.4 %** of the modulus,
   so the window edges, the chain length, the stroke and the chemistry are all unchanged.
@@ -420,11 +435,18 @@ corpus.
 **not three pieces of evidence**: two of the six named routes are *transfers* carrying the others' own
 numbers (departures `0.0` and `2.7e−8`), one is withdrawn, and `C-0005`'s one-loop correction — **123–214 %**
 of the leading term — is **common mode to all three and larger than every one of the advantages**.
+(**RESTATED, `CH-0167`/`C-0137`**: the count and the common mode stand; the percentage is a LEVEL and these
+are margins, so the same-kind common-mode measure is the *gradient* — a decay length **9.73 %** shorter.)
 
 ### The decision we are actually asking for
 
-> **Is a preference worth up to 1.75× at the operating point — inside a 123–214 % error bar that is common
-> mode to every route recommending it — worth the origami-stabilisation work that buying 0.5 mM costs?**
+> **Is a preference worth up to 1.75× at the operating point — carried against a common-mode field model
+> whose own same-kind threshold is a decay length 9.73 % shorter — worth the origami-stabilisation work
+> that buying 0.5 mM costs?**
+> (~~*inside a 123–214 % error bar that is common mode to every route recommending it*~~ — **RESTATED,
+> 2026-08-19, `CH-0167`/`C-0137`**: that percentage is an error bar on a LEVEL and the 1.75× is a margin
+> read at a force-pinned point, so the two are not comparable and the question was harder to answer than it
+> needed to be. The buy is still small and still common mode.)
 >
 > **And if it costs something, what?** That line is left open deliberately: the last time this file offered
 > only yes/no shapes, three of six answers came back as a price, a contingency or an answer to a different

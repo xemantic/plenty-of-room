@@ -107,7 +107,7 @@
 **The three largest non-undemonstrated exposures**, named because they are not what a reader expects:
 
 1. **`L2` — `C-0053`'s footprint convention is worth the entire margin.** A rooted element occupies `[root, root ± L]` and the next along the same row may start at `high + d`. At a zero-gap convention the budget is the bare **10.88 nm** and the margin **2.72 nm** rather than 0.0256. It is inherited, restated, and **the single largest lever on this recommendation**.
-2. **`K3` — the stability floors carry `C-0005`'s 123–214 % one-loop correction**, which is **two orders larger** than the 7.6 % by which the array clears its worst floor. The 6-of-6 is a **re-reading**, never an establishment of stability at 2 mM.
+2. **`K3` — the stability floors carry `C-0005`'s 123–214 % one-loop correction**, which is **two orders larger** than the 7.6 % by which the array clears its worst floor. The 6-of-6 is a **re-reading**, never an establishment of stability at 2 mM. (**RESTATED, `CH-0167`/`C-0137`**: this is an error bar on a LEVEL, and a margin read at a force-pinned operating point is not a level — the same-kind thresholds are a force **1.48–2.22×** smaller or a decay length **9.73 %** shorter.)
 3. **`K5` — the flatness belongs to the 10 nm layer.** `C-0068` shows the **layer selects the phase** (24 for 10 nm, 8 for 5 nm, the two argmins mutually poor) and that the same 34 roots dish **0.2000** at the 5 nm layer's own two states.
 
 ---
@@ -194,7 +194,7 @@
 | 4 | a maximum usable bias with margin, **or** the osmotic divergence removing the instability | **PASS**, both branches, each for a different load line | **NOT re-run for this element.** This is the one §6 task the recommendation does not discharge for itself — `CH-0083`, and open item 1 |
 | 5 | peak per-load-path force against the 35–60 pN band, distributed and concentrated separately | **PASS** | the array's own worst path is **2.298 pN** under `C-0022`'s solved load and its worst crossover **1.246 pN** — 8× clear of the 10 pN unzip allowable and an order below the band |
 | 5b | deformation against the stroke; rigid plate upheld or rejected | **PASS**, **rigid plate REJECTED** | **this is where it contributes most**: the first Gen-1 design in the programme whose flatness stands on a placement a claim actually supplies — 0.0706 at the design state and 0.0789–0.0896 over the range, with **34 equal springs** |
-| 6 | quantified deviation from mean field, boundary stated | **PASS** | nothing — but `C-0005`'s 123–214 % correction is what stops the 7.6 % stability margin being an establishment |
+| 6 | quantified deviation from mean field, boundary stated | **PASS** | nothing — but `C-0005`'s 123–214 % correction is what stops the 7.6 % stability margin being an establishment (**RESTATED, `CH-0167`/`C-0137`**: this is an error bar on a LEVEL, and a margin read at a force-pinned operating point is not a level — the same-kind thresholds are a force **1.48–2.22×** smaller or a decay length **9.73 %** shorter.) |
 | 7 | bounded drainage, conditions to constrain ≥ 1 kHz | **PASS** — not binding | nothing |
 | 8 | `σ_RMS ≤ 3.0 nm` | **PASS** at the operating point, **partial** against leaf `A1.2` | the array adds 0.346 pN of thermal force per path (`C-0063`), inside every allowable |
 
@@ -233,7 +233,7 @@ Executed as **26 gate-named tests** in `src/test/kotlin/synthesis/OutputElementR
 - **The recommendation is for §3's ACCEPTABLE clause only.** At the desired clause no rooted element exists on this lattice at all.
 - **Every clause the funnel applies is inherited.** This claim adds no clause; it ranks what survives them. If `C-0069`'s catalogue is incomplete (route `R9`) the ranking is over the wrong set.
 - **The three tie-break axes are declared here and are a convention.** They were chosen because each is an integer count a standing claim already carries; a different set of axes could, in principle, rank differently — but `Q5` **dominates** `Q7` on all three, so no reordering of these three changes the winner, and only a **fourth** axis favouring `Q7` could.
-- **The stability count (6 of 6) is a re-reading, never an establishment of stability at 2 mM**, and it inherits `C-0005`'s 123–214 % one-loop correction, two orders larger than the margin it clears by.
+- **The stability count (6 of 6) is a re-reading, never an establishment of stability at 2 mM**, and it inherits `C-0005`'s 123–214 % one-loop correction, two orders larger than the margin it clears by. (**RESTATED, `CH-0167`/`C-0137`**: this is an error bar on a LEVEL, and a margin read at a force-pinned operating point is not a level — the same-kind thresholds are a force **1.48–2.22×** smaller or a decay length **9.73 %** shorter.)
 - **The pull-in fold is NOT computed for this element**, and `C-0032`'s is not transferable. See `CH-0083`.
 - **The flatness numbers are `C-0063`'s and `C-0068`'s and are CITED**, not recomputed here; both are grillage solves at phase 24 under `C-0022`'s solved load, and both belong to the **10 nm** layer.
 - **A "places" verdict is the weak direction** (`C-0069`): the plan model is hard-body at nominal positions, so a real array is **less** likely to place.

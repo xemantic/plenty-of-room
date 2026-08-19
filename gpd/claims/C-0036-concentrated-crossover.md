@@ -266,7 +266,7 @@ resolving a charge model"* — and it says the programme should stop resolving t
   whether Gaussian chain elasticity or the Alexander/strong-stretching profile survive to `φ = 0.5`.
   A reader who adopts it inherits that gap.
 - **The propagation inherits `C-0018`'s whole mean-field statement**: `C-0005` puts the one-loop
-  electrostatic correction at 123–214 % of the leading term, larger than every margin quoted here.
+  electrostatic correction at 123–214 % of the leading term, larger than every margin quoted here. (**RESTATED, `CH-0167`/`C-0137`**: this is an error bar on a LEVEL, and a margin read at a force-pinned operating point is not a level — the same-kind thresholds are a force **1.48–2.22×** smaller or a decay length **9.73 %** shorter.)
 - **The equation of state was fitted in pure water at 20 °C**; the propagation is at 300 K in
   0.5–10 mM MgCl₂ (`C-0007`: ≤ 3.3 % of the modulus).
 

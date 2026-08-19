@@ -115,6 +115,17 @@ Replaced by one `normpath` resolver against the file's own directory, with no de
   > **90** and **60** remain correct as the count at **one azimuth per helix**, which a design may prefer:
   > two roots 7 bp apart on one duplex is the domain length Ke et al. report as a folding-yield cost.
   > The **stiffness** question this bullet raises is answered by `C-0128`.
+
+  > **Annotated again, iteration 33 ([`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md), [`CH-0175`](../challenges/CH-0175-the-face-azimuth-is-thirty-degrees-and-there-is-one-of-it.md)).**
+  > **`CH-0151`'s correction is itself withdrawn and this claim's 90 and 60 are restored, at
+  > departure `0.0`.** A free azimuth is a lattice neighbour that is **absent**, and on a full
+  > `m × n` block the oblique sublattice's `±60°` pair points at the **other** sublattice's helices
+  > in its own x-raster row, which are present. The real face — the one normal to the thin
+  > cross-section direction — gives every one of its `m` helices **exactly one** rooting azimuth, at
+  > **30°** from the normal with the sign alternating. So this claim's **count** stands and its
+  > **perpendicular/oblique split** does not: **there is no perpendicular root anywhere on the
+  > face**. The `acrossHelixPitch` emitted here is `d`; the face's station pitch is `3d/2` = 3.804 nm
+  > ([`CH-0174`](../challenges/CH-0174-the-four-layer-cross-section-is-not-a-honeycomb.md)).
 - **Equal springs only**, as `C-0118`'s best cells use.
 - **Nothing here re-derives a rigidity, a threshold, a collar or a dishing field**; it re-grades on moved
   stations using machinery those claims established.

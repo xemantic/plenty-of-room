@@ -113,6 +113,8 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=coupling.BuildableWidthCountPhaseStudyKt   # T-188, the count/phase grid at C-0086's buildable 38.08 nm, both end-of-row conventions
 ./gradlew study -Pstudy=structure.HoneycombTwistCorrectionStudyKt # T-217, whether the four-layer honeycomb tile has any twist to correct, and what its own connectivity costs instead
 ./gradlew study -Pstudy=structure.MixedDomainPhaseLatticeStudyKt  # T-216, the phase, parity and arrangement census of C-0133's twist-corrected 110 bp row
+./gradlew study -Pstudy=structure.HoneycombRasterTurnSenseStudyKt # T-218, which turn sense a caDNAno 15 x 4 honeycomb x-raster carries, and what a uniform row length costs
+./gradlew study -Pstudy=tile.HoneycombPlacementStudyKt            # T-219, the honeycomb face's station census, plan ceiling and centro-symmetric placement family -- and the cross-section they live on
 ./gradlew study -Pstudy=electrostatics.BeyondMeanFieldGapStudyKt  # T-50, the beyond-mean-field exposure of the actuated gap as a ceiling and a threshold, not a Monte Carlo
 ```
 
@@ -143,6 +145,10 @@ python3 tools/check-result-file-hygiene.py     # no result file carries a raw % 
 python3 tools/check-result-file-hygiene.py --departures   # every departure at two digits; exit 1 (T-212)
 python3 tools/check-result-file-hygiene.py --saturated    # saturated proportions; an audit, exit 0 (T-213)
 python3 tools/check-result-file-hygiene.py --self-test    # its own 54 tests, wired into `test`
+python3 tools/T-220-census.py --check          # C-0005's 123-214 % quoted against a margin; advisory (T-220)
+python3 tools/T-220-census.py --self-test      # its own 236 tests
+python3 tools/T-226-emission-diff.py a.json b.json [c.json ...]   # the manifold width of a re-run (T-226)
+python3 tools/T-226-emission-diff.py --self-test                  # its own 24 tests
 ```
 
 ### Who reads a result file
