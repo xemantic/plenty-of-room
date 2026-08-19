@@ -72,8 +72,8 @@ data class SurfaceModel(
     val contactDensity: Double,
     val contactDensityMolar: Double,
     val contactOverStericLimit: Double,
-    val meanFieldValidityGap: Double,
-    val loopExpansionValidityGap: Double,
+    val meanFieldValidityGap: Double?,
+    val loopExpansionValidityGap: Double?,
     val rouzinaBloomfieldRange: Double,
     val regime: String
 )
@@ -525,6 +525,10 @@ private fun boundary(tile: DnaOrigamiTile, bjerrumLength: Double): Map<String, S
     val hardCoreCoupling = hardCore.couplingParameter(bjerrumLength)
     val hardCoreMu = hardCore.gouyChapmanLength(bjerrumLength)
     fun f(value: Double, digits: Int = 2) = "%.${digits}f".format(value)
+    // a weakly coupled wall has NO validity boundary, and before T-221 the bisection returned
+    // its own bracket floor for one; the null is a verdict and it must reach the prose (CH-0178)
+    fun fOrNone(value: Double?, digits: Int = 2) =
+        if (value == null) "NONE — the criterion holds at every separation" else f(value, digits)
     return mapOf(
         "band_A_qualitative_failure" to
                 "gap < a_perp = ${f(surface.rouzinaBloomfieldRange)} nm " +
@@ -533,15 +537,15 @@ private fun boundary(tile: DnaOrigamiTile, bjerrumLength: Double): Map<String, S
                 "it AT ALL. NOT reached in the Gen-1 geometry — the polymer layer holds the " +
                 "tile 5-10 nm off the electrode, 3.4x to 6.8x outside this band.",
         "band_B_uncontrolled" to
-                "a_perp < gap < ${f(meanFieldValidityGap(coupling, mu))} nm " +
-                "(${f(meanFieldValidityGap(hardCoreCoupling, hardCoreMu))} nm hard-core " +
+                "a_perp < gap < ${fOrNone(meanFieldValidityGap(coupling, mu))} nm " +
+                "(${fOrNone(meanFieldValidityGap(hardCoreCoupling, hardCoreMu))} nm hard-core " +
                 "corrected). The one-loop correction is a finite fraction of, and eventually " +
                 "exceeds, the leading PB term. PB is qualitatively right (monotone, no " +
                 "attraction) but quantitatively uncontrolled. THE ENTIRE 5-10 nm GEN-1 " +
                 "WORKING RANGE IS IN THIS BAND.",
         "band_C_controlled" to
-                "gap > ${f(meanFieldValidityGap(coupling, mu))} nm " +
-                "(Naji Eq. 20 closed form: ${f(loopExpansionValidityGap(coupling, mu))} nm). " +
+                "gap > ${fOrNone(meanFieldValidityGap(coupling, mu))} nm " +
+                "(Naji Eq. 20 closed form: ${fOrNone(loopExpansionValidityGap(coupling, mu))} nm). " +
                 "The loop expansion converges and PB is quantitatively usable, with the " +
                 "residual error given by the relativeDeviation column.",
         "deviation_at_working_range" to

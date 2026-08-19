@@ -1,5 +1,11 @@
 # C-0128 — **The cost of an oblique attachment root is ONE anisotropy, and the corpus has three answers for it, none of which spends `C-0118`'s flatness.** `κ(ψ) = cos²ψ + sin²ψ·A` with `A = k_radial/k_tangential`, so at the honeycomb's own **60°** the cost is `0.25 + 0.75 A` — **exactly 1.000 for a flexible tie** (an isotropy *symmetry*, not a small number), **6.017× for a crossover-hinged rigid body**, and **NOT REPRESENTABLE** as a ratio under this corpus's own reading of a covalent link as a *constraint*. The **absolute** oblique stiffness survives that boundary — **10.753 pN/nm** against **11.220 pN/nm**, 1.043× apart — and re-graded with the alternation the lattice imposes, **4 of 4 `10 × 6` cells stay flat at the 90th percentile**, the paired cost of the alternation being **0.04–0.56 %**
 
+> **Annotated, iteration 34 — see the iteration-33 annotation in §1 below ([`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md), [`CH-0175`](../challenges/CH-0175-the-face-azimuth-is-thirty-degrees-and-there-is-one-of-it.md); swept under [`T-234`](../tasks/T-234-honeycomb-correction-supersession.md)).**
+> **The angle is 30°, not 60°, and THERE IS NO PERPENDICULAR ROOT ANYWHERE ON A HONEYCOMB FACE** —
+> so this claim's `k_z(60°)`, its `±60°` pair, and every comparison here against a *perpendicular* root describe a half-row termination the published designs do not have.
+> `κ(30°) = 0.75 + 0.25 A` against `κ(60°) = 0.25 + 0.75 A`, so the rigid-body oblique cost **falls from 6.017× to 2.67233333×**:
+> **the correction is favourable and this claim's verdict — that the azimuth does not spend `C-0118`'s flatness — is strengthened.**
+
 | | |
 |---|---|
 | **Task** | [`T-206`](../tasks/T-206-oblique-root.md) — what does an oblique attachment root cost against a perpendicular one? |

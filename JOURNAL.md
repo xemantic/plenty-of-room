@@ -9530,3 +9530,208 @@ footprint ordering **reverses**, and `C-0116`'s interlayer threshold moves to **
 and the four-layer passage in §1 — naming `C-0141`, `CH-0174` and `T-233`, and `trace-answers.py` reads **0 ABSENT of
 1 382** after them, i.e. every number in the pointer greps out of Y's claim. That is exactly the drift class
 `C-0067`, `C-0078` and `C-0080` each found from a different side: a document is stalest in the hour after it is edited.
+
+## Iteration 34 — `T-234`: what `C-0141` and `C-0140` superseded, in the queue and in the corpus
+
+**Done.** The supersession sweep for iteration 33's two structural corrections, modelled on
+`T-205`/`C-0126`. Claim [`C-0144`](gpd/claims/C-0144-honeycomb-correction-supersession.md),
+task [`T-234`](gpd/tasks/T-234-honeycomb-correction-supersession.md),
+result `gpd/results/T-234-honeycomb-correction-supersession.json`,
+gate [`tools/T-234-census.py`](tools/T-234-census.py) (42 self-tests, `--check` reads **GATE 0 defect(s)**),
+retained classification [`tools/T-234-classification.json`](tools/T-234-classification.json),
+regenerable from stated rules by [`tools/T-234-emit-classification.py`](tools/T-234-emit-classification.py).
+Census taken at commit `a414045`, with two sibling agents concurrently adding rows.
+
+**Decided, and why.** The cheap bound is a grep and it ran before any reading: **12** of 59 open rows
+carry a moved-premise token, and **240** corpus occurrences over five premise families. The reading
+only classified — it kept 11 rows and released 1. `T-205` classified three ways; this needed four,
+and the fourth column came out **empty**, which is the finding: a **body** correction makes work
+CONTINGENT, a **lattice** correction REPRICES it.
+
+**Surprised us, four times.**
+
+1. **The one SUPERSEDED item is not a queue row.** *Decision 7* — the question this programme put to
+   NDI — asks it to accept a `38 × 25 nm` tile in exchange for removing an unmeasured dependency.
+   Corrected, the tile it charges for is **38.08 × 37.504 nm**, essentially §3's square, and the
+   default it offers is **38.08 × 56.524 nm**, 1.401× §3's, and no longer flat. The trade does not
+   exist and the question is posed the wrong way round. It is prose in a numbered list, so no
+   retained checker reaches it; the **token** census found it.
+2. **`C-0126`'s own ground moved.** Its eight CONTINGENT items are contingent because *"the
+   four-layer tile is flat with no coupling at all"*. At the corrected cross-section that is `10 × 6`
+   0.0240648102 (flat) and `15 × 4` **0.101759944** at the measured band's low end, which **fails
+   `T-5b`**. The classification survives on a different reason — `CH-0181`.
+3. **The scaffold is a SOURCE contradiction.** `C-0119`/`C-0125` read *"i: p8064"* from the caDNAno
+   Methods; `C-0140` derives p7560 from the main text. Both read correctly and the paper disagrees
+   with itself — and the Methods list agrees with the main-text rule at **6 of its 7 designs and
+   disagrees at exactly one, ours**, leaving 504 nt the paper's own accounting has no line for.
+   `CH-0180`: the scaffold is **not established**.
+4. **A closing word about another task closed the row it sat in.** `T-231`'s live cell says *"the
+   honeycomb station lattice was **ANSWERED** by `C-0141`"*, and `queue_status` reads the whole row —
+   so the register read **57** open where **59** are. `T-111` had the same defect and is older. Both
+   repaired by lower-casing the word, which is the queue's own idiom.
+
+**Repaired, strike-not-delete.** Twelve claims carry a new iteration-34 headline banner — three of
+them (`C-0120`, `C-0122`, `C-0128`) were already annotated in their **body** and their **title** still
+asserted the withdrawn statement. `TASKS.md`: the preamble's four-layer paragraph, the footprint cost,
+the suggested order, decision 7 / item 12, the eight repriced rows, `T-9`, `T-232` and `T-233`.
+**Neither deliverable is edited** — `T-233` owns them, and what this task hands it is a **41-entry
+list** with file, line and exact string, **41 of 41 verified in place**.
+
+**Gates.** `tools/verify.sh` — see the claim. `trace-answers.py` on both deliverables: 0 ABSENT,
+0 open assertions contradicted, 0 self-contradictions. `check-corpus-links.py` run in a snapshot
+(the checkout run cannot see uncommitted files): 0 broken. Tables, format strings, challenge index,
+result-file hygiene and the reader census all clean.
+
+## Iteration 34 — `T-221`: the criterion is scale-covariant, so the disputed factor is a logarithm and the question is not the one it was framed as
+
+**The question, as `C-0137` left it.** Kanduč et al.'s Eq. (64), `Ξ < D̃/ln D̃`, gives a bound of
+**14.43** against `Ξ = 24.00` at the bare duplex wall (**FAILS**) and **2.80** against `Ξ = 1.455`
+at the charge-saturated gap-facing wall (**PASSES**). `16.5×` apart, opposite sides of one
+inequality, and `C-0137` said in as many words that which wall it is owed at is *"queued, not
+answered"*.
+
+**The cheap bound ran first and it reframed the question.** `Ξ = 2πq³l_B²σ` and `D̃ = 2πq l_Bσ D`
+are **both** linear in the wall's charge density, so `Ξ/D̃ = q²l_B/D` is a property of the **gap**
+and Eq. (64) is *exactly* equivalent to `ln(D/μ) < D/(q²l_B)`. The whole disputed convention enters
+**once**, as `ln 16.495 = 2.8031`. That is one line of algebra, it ran before anything compiled, and
+it did two things: it said the naive *"16.5× apart"* overstates the disagreement by `5.88×` in the
+variable that decides, and it handed over a closed-form threshold — `Ξ*(7 nm) = 4.7317`, i.e.
+**`σ* = 0.18459 e/nm²`** — reproduced by an independent bisection to `5.6e−16`.
+
+**What that threshold showed.** *Every* bare reading of the Gen-1 gap-facing wall is **above** it and
+*both* renormalised readings are **below** it. So the question bundles two axes, and only one of
+them carries anything:
+
+| | bare | renormalised |
+|---|---|---|
+| duplex cylinder | `Ξ = 24.00` FAILS | Manning, `Ξ = 2.8564` PASSES |
+| smeared gap face | Gauss `ρt/2`, `Ξ = 85.85` FAILS | saturated, `Ξ = 1.4548` PASSES |
+
+**The verdict is constant down the charge column at 5, 7 and 10 nm and not constant across the
+geometry row.** The cylinder/plane axis it was framed as moves `Ξ` by `7.16×` end to end and moves
+**zero verdicts**. In logarithms the total is `−2.8031` and the two orderings disagree on the
+**sign** of the geometry term (`+1.2747` against `−0.6747`, interaction `−1.9495`) while agreeing on
+the total to `0.0` — `CLAUDE.md`'s *"a two-factor move has a TOTAL and an INTERACTION"*, again.
+
+**The rule, and its ground.** BARE, on four properties of Kanduč's own derivation rather than a
+preference — the decisive one being that his Eq. (14) fixes the counterion population by
+**electroneutrality** against `σ₁ + σ₂`, so a renormalised `σ` deletes from the slit exactly the
+population `Ξ` is counting. A saturated `σ_eff` is a nonlinear-PB *output* and a Manning fraction a
+mean-field association model; either as the **input** to a mean-field validity test assumes the
+answer. **Within** the bare family the geometry is a `3.58×` **bracket**, not a choice, because the
+tile is not the model's wall at all — Kanduč's `σ₁` is a delta sheet at the contact plane and this
+tile's charge runs through 10 nm of duplex lattice. `CLAUDE.md`'s cylinder entry needs no change: it
+is the optimistic end of the bare family.
+
+**And the corpus had already chosen, which nobody noticed.** Kanduč Eq. (64) **is** Naji Eq. (20),
+implemented here as `loopExpansionValidityGap` since `T-6` and emitted in `T-6`'s own `surfaces`
+table at the bare duplex wall — `13.5177 nm`, reproduced to `0.0`. `C-0005`'s whole band structure
+*is* that evaluation, and its `123–214 %` reproduces at the bare wall to `1.4e−3 – 4.7e−3`. At the
+saturated wall the same five gaps read `UNDEFINED / 0.87 / 0.70 / 0.51 / 0.40`. **The straddle was
+never symmetric**: taking the saturated reading requires retracting the number this corpus's whole
+beyond-mean-field exposure is written on.
+
+**Three domain checks, all free, all against the passing reading.** `D̃/ln D̃` has a global minimum
+of `e`, and the saturated wall's bound sits **3.17 %** above it; `ln D̃` is `1.27` there, order one
+against Eq. (64)'s own `D̃ ≫ 1` premise; and at 5 nm its `D̃ = 2.55` falls **below `π`**, where Naji's
+one-loop coefficient is not defined at all. **The reading that fails is inside the criterion's
+domain and the reading that passes is outside it.**
+
+**But Eq. (64) is the wrong branch, and that had to be measured rather than waved at.** This gap
+attracts, so Eq. (65) is owed — and both `C-0137` and `BeyondMeanFieldGap.kt`'s KDoc dispose of it
+as *"exponentially large"* without evaluating it. The exponential is at **fixed `ζ`**. Attraction
+needs `D̃ > (1+ζ)/|ζ|` (derived here from Eq. (18) at `α → 0`), and over that domain the bound is
+minimised **at the branch boundary** and sits at `0.9447–1.1543` of Eq. (64)'s over 18 readings.
+The two criteria agree to within a sixth where continuity across `p₀ = 0` demands it. What the
+branch actually buys is an excluded sliver **0.23–1.10 %** wide — `CH-0179`, which also records
+that *"the criterion below is the conservative one here"* **reverses** at the saturated wall at 5 nm.
+
+**Does anything move? No, and the reason is structural.** The criterion is a validity **flag** and
+not a term in any answer, and `C-0137` already measured what the same factor is worth where it *is*
+a term: a `16×` sweep of the effective wall charge moves `C-0017`'s stability margin by **1.4399 %**.
+The flag is maximally sensitive to exactly the factor the answer is insensitive to. **All six
+declared falsifiers were checked and none fired.**
+
+**What was not predicted.** `CH-0178`: `loopExpansionValidityGap` has **no root at all** for
+`Ξ ≤ e`, because `D̃/ln D̃` bottoms out there — and it returned its own bracket floor, `e·μ`, which
+`T-6` has been emitting as `0.9241 nm`. Found by emitting the criterion's own log residual beside
+each root: five walls came back `0.0` and one came back **`0.87`**. Repaired in the same iteration;
+both root finders return `Double?`; `T-6` re-emitted with **exactly one field moved**, and no
+document in the corpus quotes the withdrawn number. It survived because the row it fires on is a
+`q = 1` cross-check nobody quotes.
+
+**Also retained.** The Kanduč primary itself, in `gpd/data/T-50-sources/` with an equation manifest
+— because `T-221` **derives** the branch boundary from its Eq. (18), and a derivation on a source is
+not checkable without the source. It had been sitting in a scratchpad since iteration 32.
+
+**Gates.** `tools/verify.sh` — see the claim. Tables, corpus links, format strings and the reader
+census all clean (the two broken links reported are a sibling's, to a claim not yet written).
+
+## Iteration 34 — `T-232`: the first flat coupled tile is flat at four cells of sixteen, and `15 × 4` has none
+
+**What was done.** `C-0118`'s sixteen coupled cells — two cross-sections × four path counts × two
+distributions, at `C-0017`'s mandated total, under `C-0087`'s measured dropout, 4 000 realisations on
+one common stream — re-graded at `C-0141`'s corrected honeycomb cross-section, and graded a third
+time on `C-0141`'s own **station lattice**. Claim [`C-0142`](gpd/claims/C-0142-coupled-cells-at-the-honeycomb-cross-section.md),
+challenges `CH-0176` and `CH-0177`.
+
+**The cheap bound ran first and its job was to say whether the run was needed.** The correction moves
+the *uncoupled* reference **1.69×** on `15 × 4` and **2.75×** on `10 × 6`, so a proportional transfer
+of `C-0118`'s own cells lands `10 × 6` at 0.076–0.171 — **straddling `T-5b`'s 0.10**. That is what
+bought a four-minute run. The same bound settled the *count* question for free: a 112 bp row carries
+6 stations per rooting helix on the 21 bp ladder, so 90 on `15 × 4` and 60 on `10 × 6`, and every
+requested path count is inside its own inventory.
+
+**The result.** At the measured `f = 0.30`, **4 of 16** cells are flat against `C-0118`'s 9, all four
+on `10 × 6`, and `15 × 4` is **0 of 8**. At the band's adverse low end `f = 0.26` it is the *same
+four cells*, so neither verdict is an artefact of reading a band at one point — which mattered,
+because `C-0141` moved `C-0116`'s `15 × 4` threshold **inside** that band. The best cell moves
+0.0278431488 → **0.0680677948** and is still the sparsest coupling tested; the cross-section's worth
+falls 3.17109774× → **2.13543134×**.
+
+**`C-0118`'s largest open item is discharged.** It states its path counts are *"a REQUEST, not a
+demonstration that the stations exist"*. Snapped onto the honeycomb station lattice at phase 0 with
+`C-0141`'s forced 7 bp stagger, all sixteen placements are realisable — largest snap **3.332 nm**,
+inside a 3.57 nm half-ladder-pitch ceiling — and **three** are flat. That is the first coupled
+flatness result here that is not standing on an abstract grid.
+
+**What surprised us, twice.** First, **every flat snapped cell is EQUAL SPRINGS**: on the lattice the
+rim grading loses at all four counts where on the abstract grid it wins at two, because the snap
+moves a station across the rim/interior partition the grading reads its *unsnapped* position in.
+`CLAUDE.md`'s *"a distribution rule is a property of a station set, never of a tile"*, measured.
+
+Second, **the correction moved a statistic off its own degeneracy.** Six of `C-0118`'s `10 × 6` cells
+sat at exceedance exactly zero, where `√(p̂(1−p̂)/n)` is identically zero and only `C-0129`'s
+one-sided bound says anything; at the corrected geometry **no** cell is saturated, so
+`exceedanceOneSidedBound` is `null` throughout and the symmetric error is the right instrument again.
+
+**And a defect in a standing claim, found by reading four numbers instead of the sentence around
+them.** `C-0118` §2 says *"More paths are monotonically worse there"* and prints
+`0.0278431488 → 0.0541089284 → 0.0461988976 → 0.0408747025` in the same sentence — one rise and
+three falls. It is non-monotone at **both** geometries, with step ratios agreeing to two figures
+across a 1.5× change in attachment pitch, so the shape belongs to the coupling axis and not to the
+cross-section. At `C-0118`'s geometry the error cost nothing because all four cells passed; at the
+corrected one **the peak is exactly the region that fails**. `CH-0177`.
+
+**The paired reading earned its keep.** The two geometries share one dropout stream, so the cost is
+read per realisation: median ratios **1.62966102–1.7893938** on `15 × 4` and **2.14530087–3.823843**
+on `10 × 6`, against unpaired ratios of two 90th percentiles running 1.59114801–1.70315632 and
+2.1609551–3.34944336 — **14.2 % apart** at the worst row. And the direction is itself a finding: the
+*sparser, stiffer* tile pays more, because the correction widens the attachment pitch 1.5× and a
+wider pitch costs a sparse coupling more than a dense one.
+
+**Discipline notes.** The tests were written first but implemented before being watched to fail, so
+they were **mutation-tested** instead — un-snapping the grid and substituting a ratio of medians for
+a median of ratios fails 3 of the 10, which is the property TDD was buying. The smoke pass at 300
+realisations fired `F1` and fired `F5` on a different cell set; nothing but the sample count changed,
+and it was read only for the prose paths, the argmins and the serialisation. The result file is
+byte-identical across two independent JVM runs.
+
+**What is carried unchanged, and named.** `edgeX` stays at 112 bp = 38.08 nm. `C-0140` (same
+iteration) makes the row length a **fourth** moved geometry input — 112 / 108 bp, 39.44 nm, **+3.57 %**
+— and holding it fixed is what makes this movement attributable to the cross-section alone. `T-235`
+is queued for it, and it is not obviously free: two of the four flat cells sit at 0.0954158305 and
+0.0900369 against 0.10.
+
+**Gates.** `tools/verify.sh` — see the claim. Tables, corpus links, format strings, result-file
+hygiene, departure precision and the reader census all clean.

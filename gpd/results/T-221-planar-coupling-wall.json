@@ -1,0 +1,1085 @@
+{
+    "task": "T-221",
+    "leaf": "A7.4",
+    "title": "Which wall a planar wall-wall coupling criterion is owed at: the criterion's scale covariance, the two-by-two the question bundles, and the branch the device is actually on",
+    "verificationType": "logical (a scale-covariance identity that reduces Kanduc Eq. (64) to one closed form, and a two-by-two decomposition of the disputed factor) + in-silico (both of Kanduc's branches evaluated over six candidate walls, three gaps and the whole admissible asymmetry range) + literature (the criterion's own derivation, read directly, for what its variables are DEFINED to be)",
+    "acceptance": "P1 the wall dependence isolated in closed form with its threshold; P2 the disputed factor decomposed over geometry and charge convention; P3 a stated rule with a ground in the criterion's own derivation; P4 both branches evaluated; P5 whether any verdict moves, measured; P6 a ceiling and a threshold",
+    "maturity": "TRL 1-3. Model-consistent and traceable. NOTHING HERE IS MEASURED. This task settles which INPUT a published inequality is owed, not whether the inequality is right; the intermediate-coupling regime Xi = 17-24 still has no systematic theory (C-0005) and no primitive-model Monte Carlo of this gap exists.",
+    "units": {
+        "length": "nm",
+        "chargeDensity": "e/nm^2",
+        "coupling": "dimensionless",
+        "reducedGap": "dimensionless",
+        "asymmetry": "dimensionless, in (-1, 0) for oppositely charged walls",
+        "concentration": "mM",
+        "temperature": "K"
+    },
+    "conventions": [
+        "sigma is always a MAGNITUDE in e/nm^2; q = 2 for Mg2+; l_B = 0.7141 nm at 300 K, eps_r = 78",
+        "mu = mu_GC = 1/(2 pi q l_B sigma) in nm; Xi = q^2 l_B/mu; Dtilde = D/mu",
+        "Kanduc's sigma_1 is the LARGER-magnitude wall by his own Eq. (3) (sigma_1 + sigma_2 < 0, sigma_2 > sigma_1), and zeta = sigma_2/sigma_1",
+        "oppositely charged walls are -1 < zeta < 0; zeta = -1 is excluded by Eq. (3) because it leaves no counterions at all",
+        "Eq. (64) is the criterion where the mean-field pressure is REPULSIVE and Eq. (65) where it is ATTRACTIVE; which holds is set by the sign of p0, not by the wall",
+        "a criterion is quoted WITH its wall and WITH its gap",
+        "MgCl2 is 2:1, so I = 3c"
+    ],
+    "sources": [
+        "gpd/results/T-6-mean-field-screening-validity.json (C-0005's coupling parameters, saturated charge and the emitted loopExpansionValidityGap; read as literals for the reproduction records)",
+        "gpd/results/T-50-beyond-mean-field-gap.json (C-0137's boundary-channel margin ratios, read at run time)",
+        "gpd/data/T-50-beyond-mean-field-literature.md (rows 25-30, the criterion and its two branches, READ DIRECTLY)",
+        "Kanduc, Trulsson, Naji, Burak, Forsman & Podgornik, arXiv:0905.3851, Eqs. (3), (5), (6), (7), (14), (18), (61), (62), (64), (65) - READ DIRECTLY",
+        "Naji, Jungblut, Moreira & Netz, Physica A 352:131 (2005), Eqs. (3), (4), (9), (19), (20) - the same closed form as Kanduc Eq. (64), already implemented"
+    ],
+    "citedInputs": [
+        "C-0005's Xi = 24.0 at the bare duplex cylinder - CITED and REPRODUCED here",
+        "C-0005's saturated far-field charge 0.0568 e/nm^2 at 2 mM - CITED and re-derived here as kappa/(pi l_B q)",
+        "C-0005's five one-loop deviations 2.14/1.63/1.23/0.89/0.70 - CITED and REPRODUCED here at the bare duplex wall",
+        "T-6's emitted loopExpansionValidityGap 13.517697558570946 nm - CITED as a literal and REPRODUCED here",
+        "C-0137's two Eq. (64) bounds 14.43 and 2.80 at 7 nm - CITED and REPRODUCED here",
+        "C-0137's boundary-channel margin ratios - READ from its result file at run time",
+        "B-DNA rise 0.34 nm and duplex radius 1.0 nm - CITED, through DnaOrigamiTile",
+        "honeycomb interhelical distance 2.6 nm - CITED, through DnaOrigamiTile"
+    ],
+    "runParameters": {
+        "temperature": "300.0",
+        "waterRelativePermittivity": "78.0",
+        "bjerrumLength": "0.7141066106764419",
+        "counterionValency": "2",
+        "buffer": "2.0 mM MgCl2",
+        "gaps": "[5.0, 7.0, 10.0]",
+        "operatingGap": "7.0",
+        "tileEdge": "40.0",
+        "tileThickness": "10.0",
+        "interhelicalDistance": "2.6",
+        "risePerBasePair": "0.34",
+        "helixRadius": "1.0",
+        "asymmetryScanSamples": "[5000, 20000, 80000]"
+    },
+    "walls": [
+        {
+            "id": "bare-cylinder",
+            "label": "duplex cylinder, bare",
+            "geometry": "duplex cylinder",
+            "chargeConvention": "bare",
+            "surfaceChargeDensity": 0.936205548,
+            "gouyChapmanLength": 0.119029846,
+            "coupling": 23.9975648,
+            "provenance": "DERIVED: tau/(2 pi R) with tau = 1/b, b = rise/2 - the reading CLAUDE.md adopts for the LOCAL coupling, and C-0005's Xi = 24.0"
+        },
+        {
+            "id": "bare-single-layer",
+            "label": "single row of duplexes, projected, bare",
+            "geometry": "smeared gap face",
+            "chargeConvention": "bare",
+            "surfaceChargeDensity": 2.26244344,
+            "gouyChapmanLength": 0.0492548898,
+            "coupling": 57.9927486,
+            "provenance": "DERIVED: section 3's other reading of 'single-layer honeycomb'"
+        },
+        {
+            "id": "bare-face",
+            "label": "gap-facing plane, Gauss partition, bare",
+            "geometry": "smeared gap face",
+            "chargeConvention": "bare",
+            "surfaceChargeDensity": 3.34928802,
+            "gouyChapmanLength": 0.033271669,
+            "coupling": 85.8516129,
+            "provenance": "DERIVED: CLAUDE.md's sigma_face = rho t/2, which is Gauss's law on a slab and not a convention"
+        },
+        {
+            "id": "manning-cylinder",
+            "label": "duplex cylinder, Manning-renormalised",
+            "geometry": "duplex cylinder",
+            "chargeConvention": "renormalised",
+            "surfaceChargeDensity": 0.111436402,
+            "gouyChapmanLength": 1.0,
+            "coupling": 2.85642644,
+            "provenance": "DERIVED: the surviving fraction 1/(q xi_M); its Gouy-Chapman length is EXACTLY the helix radius, an identity carrying no rise, no l_B and no valency"
+        },
+        {
+            "id": "saturated-face",
+            "label": "gap-facing plane, charge-saturated",
+            "geometry": "smeared gap face",
+            "chargeConvention": "renormalised",
+            "surfaceChargeDensity": 0.0567557166,
+            "gouyChapmanLength": 1.96343926,
+            "coupling": 1.45480764,
+            "provenance": "DERIVED as kappa/(pi l_B q) at 2 mM; C-0005 publishes 0.0568 e/nm^2 and C-0137 reads Xi = 1.455 from it"
+        },
+        {
+            "id": "bare-projected",
+            "label": "all the tile's charge on its footprint, bare",
+            "geometry": "smeared gap face",
+            "chargeConvention": "bare",
+            "surfaceChargeDensity": 6.69857604,
+            "gouyChapmanLength": 0.0166358345,
+            "coupling": 171.703226,
+            "provenance": "DERIVED: the far-field reading CLAUDE.md explicitly refuses for Xi; carried so the geometry axis is bracketed at both ends"
+        }
+    ],
+    "repulsiveReadings": [
+        {
+            "wall": "bare-cylinder",
+            "geometry": "duplex cylinder",
+            "chargeConvention": "bare",
+            "gap": 5.0,
+            "reducedGap": 42.0062712,
+            "coupling": 23.9975648,
+            "bound": 11.2381772,
+            "logResidual": -1.98738001,
+            "margin": 0.468304899,
+            "satisfied": false,
+            "couplingOverReducedGap": 0.571285289,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "bare-cylinder",
+            "geometry": "duplex cylinder",
+            "chargeConvention": "bare",
+            "gap": 7.0,
+            "reducedGap": 58.8087797,
+            "coupling": 23.9975648,
+            "bound": 14.4341132,
+            "logResidual": -1.62367668,
+            "margin": 0.601482414,
+            "satisfied": false,
+            "couplingOverReducedGap": 0.40806092,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "bare-cylinder",
+            "geometry": "duplex cylinder",
+            "chargeConvention": "bare",
+            "gap": 10.0,
+            "reducedGap": 84.0125424,
+            "coupling": 23.9975648,
+            "bound": 18.9603216,
+            "logResidual": -0.930088275,
+            "margin": 0.79009357,
+            "satisfied": false,
+            "couplingOverReducedGap": 0.285642644,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "bare-single-layer",
+            "geometry": "smeared gap face",
+            "chargeConvention": "bare",
+            "gap": 5.0,
+            "reducedGap": 101.512764,
+            "coupling": 57.9927486,
+            "bound": 21.9715821,
+            "logResidual": -2.86974563,
+            "margin": 0.378867748,
+            "satisfied": false,
+            "couplingOverReducedGap": 0.571285289,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "bare-single-layer",
+            "geometry": "smeared gap face",
+            "chargeConvention": "bare",
+            "gap": 7.0,
+            "reducedGap": 142.117869,
+            "coupling": 57.9927486,
+            "bound": 28.6721223,
+            "logResidual": -2.5060423,
+            "margin": 0.494408749,
+            "satisfied": false,
+            "couplingOverReducedGap": 0.40806092,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "bare-single-layer",
+            "geometry": "smeared gap face",
+            "chargeConvention": "bare",
+            "gap": 10.0,
+            "reducedGap": 203.025528,
+            "coupling": 57.9927486,
+            "bound": 38.2105877,
+            "logResidual": -1.8124539,
+            "margin": 0.658885613,
+            "satisfied": false,
+            "couplingOverReducedGap": 0.285642644,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "bare-face",
+            "geometry": "smeared gap face",
+            "chargeConvention": "bare",
+            "gap": 5.0,
+            "reducedGap": 150.278004,
+            "coupling": 85.8516129,
+            "bound": 29.9807273,
+            "logResidual": -3.26204802,
+            "margin": 0.349215656,
+            "satisfied": false,
+            "couplingOverReducedGap": 0.571285289,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "bare-face",
+            "geometry": "smeared gap face",
+            "chargeConvention": "bare",
+            "gap": 7.0,
+            "reducedGap": 210.389206,
+            "coupling": 85.8516129,
+            "bound": 39.3327372,
+            "logResidual": -2.8983447,
+            "margin": 0.458147912,
+            "satisfied": false,
+            "couplingOverReducedGap": 0.40806092,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "bare-face",
+            "geometry": "smeared gap face",
+            "chargeConvention": "bare",
+            "gap": 10.0,
+            "reducedGap": 300.556008,
+            "coupling": 85.8516129,
+            "bound": 52.677056,
+            "logResidual": -2.20475629,
+            "margin": 0.613582602,
+            "satisfied": false,
+            "couplingOverReducedGap": 0.285642644,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "manning-cylinder",
+            "geometry": "duplex cylinder",
+            "chargeConvention": "renormalised",
+            "gap": 5.0,
+            "reducedGap": 5.0,
+            "coupling": 2.85642644,
+            "bound": 3.10667467,
+            "logResidual": 0.141001001,
+            "margin": 1.08760885,
+            "satisfied": true,
+            "couplingOverReducedGap": 0.571285289,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "manning-cylinder",
+            "geometry": "duplex cylinder",
+            "chargeConvention": "renormalised",
+            "gap": 7.0,
+            "reducedGap": 7.0,
+            "coupling": 2.85642644,
+            "bound": 3.5972884,
+            "logResidual": 0.50470433,
+            "margin": 1.25936672,
+            "satisfied": true,
+            "couplingOverReducedGap": 0.40806092,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "manning-cylinder",
+            "geometry": "duplex cylinder",
+            "chargeConvention": "renormalised",
+            "gap": 10.0,
+            "reducedGap": 10.0,
+            "coupling": 2.85642644,
+            "bound": 4.34294482,
+            "logResidual": 1.19829273,
+            "margin": 1.52041192,
+            "satisfied": true,
+            "couplingOverReducedGap": 0.285642644,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "saturated-face",
+            "geometry": "smeared gap face",
+            "chargeConvention": "renormalised",
+            "gap": 5.0,
+            "reducedGap": 2.54655191,
+            "coupling": 1.45480764,
+            "bound": 2.72434177,
+            "logResidual": 0.815698663,
+            "margin": 1.87264741,
+            "satisfied": true,
+            "couplingOverReducedGap": 0.571285289,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "saturated-face",
+            "geometry": "smeared gap face",
+            "chargeConvention": "renormalised",
+            "gap": 7.0,
+            "reducedGap": 3.56517267,
+            "coupling": 1.45480764,
+            "bound": 2.80454503,
+            "logResidual": 1.17940199,
+            "margin": 1.92777722,
+            "satisfied": true,
+            "couplingOverReducedGap": 0.40806092,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "saturated-face",
+            "geometry": "smeared gap face",
+            "chargeConvention": "renormalised",
+            "gap": 10.0,
+            "reducedGap": 5.09310381,
+            "coupling": 1.45480764,
+            "bound": 3.12865848,
+            "logResidual": 1.8729904,
+            "margin": 2.15056506,
+            "satisfied": true,
+            "couplingOverReducedGap": 0.285642644,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "bare-projected",
+            "geometry": "smeared gap face",
+            "chargeConvention": "bare",
+            "gap": 5.0,
+            "reducedGap": 300.556008,
+            "coupling": 171.703226,
+            "bound": 52.677056,
+            "logResidual": -3.95519521,
+            "margin": 0.306791301,
+            "satisfied": false,
+            "couplingOverReducedGap": 0.571285289,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "bare-projected",
+            "geometry": "smeared gap face",
+            "chargeConvention": "bare",
+            "gap": 7.0,
+            "reducedGap": 420.778411,
+            "coupling": 171.703226,
+            "bound": 69.6410136,
+            "logResidual": -3.59149188,
+            "margin": 0.405589431,
+            "satisfied": false,
+            "couplingOverReducedGap": 0.40806092,
+            "couplingOverReducedGapDeparture": 0.0
+        },
+        {
+            "wall": "bare-projected",
+            "geometry": "smeared gap face",
+            "chargeConvention": "bare",
+            "gap": 10.0,
+            "reducedGap": 601.112016,
+            "coupling": 171.703226,
+            "bound": 93.941641,
+            "logResidual": -2.89790347,
+            "margin": 0.547116344,
+            "satisfied": false,
+            "couplingOverReducedGap": 0.285642644,
+            "couplingOverReducedGapDeparture": 0.0
+        }
+    ],
+    "thresholds": [
+        {
+            "gap": 5.0,
+            "thresholdGouyChapmanLength": 0.868488442,
+            "thresholdCoupling": 3.28896311,
+            "thresholdChargeDensity": 0.128310749,
+            "bisectionDeparture": 0.0,
+            "note": "every bare reading is above this charge density and every renormalised one is below it"
+        },
+        {
+            "gap": 7.0,
+            "thresholdGouyChapmanLength": 0.60368404,
+            "thresholdCoupling": 4.73165804,
+            "thresholdChargeDensity": 0.184593918,
+            "bisectionDeparture": 0.0,
+            "note": "every bare reading is above this charge density and every renormalised one is below it"
+        },
+        {
+            "gap": 10.0,
+            "thresholdGouyChapmanLength": 0.30170887,
+            "thresholdCoupling": 9.46749245,
+            "thresholdChargeDensity": 0.369350767,
+            "bisectionDeparture": 0.0,
+            "note": "every bare reading is above this charge density and every renormalised one is below it"
+        }
+    ],
+    "validityGaps": [
+        {
+            "wall": "bare-cylinder",
+            "validityGap": 13.5176976,
+            "logResidualAtRoot": 0.0,
+            "insideSectionThreeRange": false,
+            "note": "the gap above which Kanduc Eq. (64) is satisfied at this wall"
+        },
+        {
+            "wall": "bare-single-layer",
+            "validityGap": 16.6299831,
+            "logResidualAtRoot": 0.0,
+            "insideSectionThreeRange": false,
+            "note": "the gap above which Kanduc Eq. (64) is satisfied at this wall"
+        },
+        {
+            "wall": "bare-face",
+            "validityGap": 17.9722934,
+            "logResidualAtRoot": 0.0,
+            "insideSectionThreeRange": false,
+            "note": "the gap above which Kanduc Eq. (64) is satisfied at this wall"
+        },
+        {
+            "wall": "manning-cylinder",
+            "validityGap": 3.85260059,
+            "logResidualAtRoot": 0.0,
+            "insideSectionThreeRange": true,
+            "note": "the gap above which Kanduc Eq. (64) is satisfied at this wall"
+        },
+        {
+            "wall": "saturated-face",
+            "validityGap": null,
+            "logResidualAtRoot": null,
+            "insideSectionThreeRange": false,
+            "note": "NO ROOT: Xi is below the criterion's own global minimum e, so the criterion holds at every separation - CH-0178"
+        },
+        {
+            "wall": "bare-projected",
+            "validityGap": 20.3001167,
+            "logResidualAtRoot": 0.0,
+            "insideSectionThreeRange": false,
+            "note": "the gap above which Kanduc Eq. (64) is satisfied at this wall"
+        }
+    ],
+    "domains": [
+        {
+            "wall": "bare-cylinder",
+            "chargeConvention": "bare",
+            "gap": 5.0,
+            "reducedGap": 42.0062712,
+            "logReducedGap": 3.73781892,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": true,
+            "boundOverItsGlobalMinimum": 4.13429433
+        },
+        {
+            "wall": "bare-cylinder",
+            "chargeConvention": "bare",
+            "gap": 7.0,
+            "reducedGap": 58.8087797,
+            "logReducedGap": 4.07429116,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": true,
+            "boundOverItsGlobalMinimum": 5.31001349
+        },
+        {
+            "wall": "bare-cylinder",
+            "chargeConvention": "bare",
+            "gap": 10.0,
+            "reducedGap": 84.0125424,
+            "logReducedGap": 4.4309661,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": true,
+            "boundOverItsGlobalMinimum": 6.97511253
+        },
+        {
+            "wall": "bare-single-layer",
+            "chargeConvention": "bare",
+            "gap": 5.0,
+            "reducedGap": 101.512764,
+            "logReducedGap": 4.62018454,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": true,
+            "boundOverItsGlobalMinimum": 8.08289334
+        },
+        {
+            "wall": "bare-single-layer",
+            "chargeConvention": "bare",
+            "gap": 7.0,
+            "reducedGap": 142.117869,
+            "logReducedGap": 4.95665678,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": true,
+            "boundOverItsGlobalMinimum": 10.5478843
+        },
+        {
+            "wall": "bare-single-layer",
+            "chargeConvention": "bare",
+            "gap": 10.0,
+            "reducedGap": 203.025528,
+            "logReducedGap": 5.31333172,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": true,
+            "boundOverItsGlobalMinimum": 14.0568896
+        },
+        {
+            "wall": "bare-face",
+            "chargeConvention": "bare",
+            "gap": 5.0,
+            "reducedGap": 150.278004,
+            "logReducedGap": 5.01248694,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": true,
+            "boundOverItsGlobalMinimum": 11.0292932
+        },
+        {
+            "wall": "bare-face",
+            "chargeConvention": "bare",
+            "gap": 7.0,
+            "reducedGap": 210.389206,
+            "logReducedGap": 5.34895918,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": true,
+            "boundOverItsGlobalMinimum": 14.4697054
+        },
+        {
+            "wall": "bare-face",
+            "chargeConvention": "bare",
+            "gap": 10.0,
+            "reducedGap": 300.556008,
+            "logReducedGap": 5.70563412,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": true,
+            "boundOverItsGlobalMinimum": 19.3788059
+        },
+        {
+            "wall": "manning-cylinder",
+            "chargeConvention": "renormalised",
+            "gap": 5.0,
+            "reducedGap": 5.0,
+            "logReducedGap": 1.60943791,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": false,
+            "boundOverItsGlobalMinimum": 1.14288174
+        },
+        {
+            "wall": "manning-cylinder",
+            "chargeConvention": "renormalised",
+            "gap": 7.0,
+            "reducedGap": 7.0,
+            "logReducedGap": 1.94591015,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": false,
+            "boundOverItsGlobalMinimum": 1.32336845
+        },
+        {
+            "wall": "manning-cylinder",
+            "chargeConvention": "renormalised",
+            "gap": 10.0,
+            "reducedGap": 10.0,
+            "logReducedGap": 2.30258509,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": false,
+            "boundOverItsGlobalMinimum": 1.59768011
+        },
+        {
+            "wall": "saturated-face",
+            "chargeConvention": "renormalised",
+            "gap": 5.0,
+            "reducedGap": 2.54655191,
+            "logReducedGap": 0.934740251,
+            "aboveOneLoopCoefficientDomain": false,
+            "aboveBoundMinimum": false,
+            "aboveOperationalAsymptotic": false,
+            "boundOverItsGlobalMinimum": 1.00222933
+        },
+        {
+            "wall": "saturated-face",
+            "chargeConvention": "renormalised",
+            "gap": 7.0,
+            "reducedGap": 3.56517267,
+            "logReducedGap": 1.27121249,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": false,
+            "boundOverItsGlobalMinimum": 1.03173446
+        },
+        {
+            "wall": "saturated-face",
+            "chargeConvention": "renormalised",
+            "gap": 10.0,
+            "reducedGap": 5.09310381,
+            "logReducedGap": 1.62788743,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": false,
+            "boundOverItsGlobalMinimum": 1.15096913
+        },
+        {
+            "wall": "bare-projected",
+            "chargeConvention": "bare",
+            "gap": 5.0,
+            "reducedGap": 300.556008,
+            "logReducedGap": 5.70563412,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": true,
+            "boundOverItsGlobalMinimum": 19.3788059
+        },
+        {
+            "wall": "bare-projected",
+            "chargeConvention": "bare",
+            "gap": 7.0,
+            "reducedGap": 420.778411,
+            "logReducedGap": 6.04210636,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": true,
+            "boundOverItsGlobalMinimum": 25.6194972
+        },
+        {
+            "wall": "bare-projected",
+            "chargeConvention": "bare",
+            "gap": 10.0,
+            "reducedGap": 601.112016,
+            "logReducedGap": 6.3987813,
+            "aboveOneLoopCoefficientDomain": true,
+            "aboveBoundMinimum": true,
+            "aboveOperationalAsymptotic": true,
+            "boundOverItsGlobalMinimum": 34.5591984
+        }
+    ],
+    "square": [
+        {
+            "geometry": "duplex cylinder",
+            "chargeConvention": "bare",
+            "wall": "bare-cylinder",
+            "coupling": 23.9975648,
+            "logCoupling": 3.17795236,
+            "satisfiedAtFive": false,
+            "satisfiedAtSeven": false,
+            "satisfiedAtTen": false
+        },
+        {
+            "geometry": "smeared gap face",
+            "chargeConvention": "bare",
+            "wall": "bare-face",
+            "coupling": 85.8516129,
+            "logCoupling": 4.45262037,
+            "satisfiedAtFive": false,
+            "satisfiedAtSeven": false,
+            "satisfiedAtTen": false
+        },
+        {
+            "geometry": "duplex cylinder",
+            "chargeConvention": "renormalised",
+            "wall": "manning-cylinder",
+            "coupling": 2.85642644,
+            "logCoupling": 1.04957135,
+            "satisfiedAtFive": true,
+            "satisfiedAtSeven": true,
+            "satisfiedAtTen": true
+        },
+        {
+            "geometry": "smeared gap face",
+            "chargeConvention": "renormalised",
+            "wall": "saturated-face",
+            "coupling": 1.45480764,
+            "logCoupling": 0.374873686,
+            "satisfiedAtFive": true,
+            "satisfiedAtSeven": true,
+            "satisfiedAtTen": true
+        }
+    ],
+    "squareDecomposition": {
+        "total": -2.80307867,
+        "geometryFirstGeometryTerm": 1.27466802,
+        "geometryFirstChargeTerm": -4.07774669,
+        "chargeFirstChargeTerm": -2.12838101,
+        "chargeFirstGeometryTerm": -0.674697662,
+        "interaction": -1.94936568,
+        "orderingsAgreeOnTotal": 0.0,
+        "verdictIsConstantDownTheChargeColumn": true,
+        "verdictIsConstantAcrossTheGeometryRow": false,
+        "note": "the two orderings disagree on the SIGN of the geometry term, because the smeared face is more charged than the cylinder when both are bare and less charged when both are renormalised; the total is the quotable number"
+    },
+    "attractiveReadings": [
+        {
+            "wall": "bare-cylinder",
+            "gap": 5.0,
+            "reducedGap": 42.0062712,
+            "coupling": 23.9975648,
+            "branchBoundaryAsymmetry": -0.0232524228,
+            "criterionThresholdAsymmetry": -0.0340209066,
+            "excludedSliverFraction": 0.011024838,
+            "infimumBound": 12.6355686,
+            "infimumOverRepulsiveBound": 1.12434325,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "bare-cylinder",
+            "gap": 7.0,
+            "reducedGap": 58.8087797,
+            "coupling": 23.9975648,
+            "branchBoundaryAsymmetry": -0.0167199532,
+            "criterionThresholdAsymmetry": -0.0216179314,
+            "excludedSliverFraction": 0.00498126466,
+            "infimumBound": 16.2842751,
+            "infimumOverRepulsiveBound": 1.12817981,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "bare-cylinder",
+            "gap": 10.0,
+            "reducedGap": 84.0125424,
+            "coupling": 23.9975648,
+            "branchBoundaryAsymmetry": -0.0117629702,
+            "criterionThresholdAsymmetry": -0.0128176433,
+            "excludedSliverFraction": 0.00106722693,
+            "infimumBound": 21.4700496,
+            "infimumOverRepulsiveBound": 1.13236737,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "bare-single-layer",
+            "gap": 5.0,
+            "reducedGap": 101.512764,
+            "coupling": 57.9927486,
+            "branchBoundaryAsymmetry": -0.00975488283,
+            "criterionThresholdAsymmetry": -0.0157139088,
+            "excludedSliverFraction": 0.00601772818,
+            "infimumBound": 24.9292075,
+            "infimumOverRepulsiveBound": 1.1346114,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "bare-single-layer",
+            "gap": 7.0,
+            "reducedGap": 142.117869,
+            "coupling": 57.9927486,
+            "branchBoundaryAsymmetry": -0.00698724767,
+            "criterionThresholdAsymmetry": -0.0100087665,
+            "excludedSliverFraction": 0.00304277948,
+            "infimumBound": 32.6457676,
+            "infimumOverRepulsiveBound": 1.13858916,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "bare-single-layer",
+            "gap": 10.0,
+            "reducedGap": 203.025528,
+            "coupling": 57.9927486,
+            "branchBoundaryAsymmetry": -0.00490134745,
+            "criterionThresholdAsymmetry": -0.00600687228,
+            "excludedSliverFraction": 0.00111097009,
+            "infimumBound": 43.6642329,
+            "infimumOverRepulsiveBound": 1.14272602,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "bare-face",
+            "gap": 5.0,
+            "reducedGap": 150.278004,
+            "coupling": 85.8516129,
+            "branchBoundaryAsymmetry": -0.00661034634,
+            "criterionThresholdAsymmetry": -0.0110195315,
+            "excludedSliverFraction": 0.0044385253,
+            "infimumBound": 34.1553577,
+            "infimumOverRepulsiveBound": 1.1392438,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "bare-face",
+            "gap": 7.0,
+            "reducedGap": 210.389206,
+            "coupling": 85.8516129,
+            "branchBoundaryAsymmetry": -0.00473061052,
+            "criterionThresholdAsymmetry": -0.00702915049,
+            "excludedSliverFraction": 0.00230946514,
+            "infimumBound": 44.9625229,
+            "infimumOverRepulsiveBound": 1.14313231,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "bare-face",
+            "gap": 10.0,
+            "reducedGap": 300.556008,
+            "coupling": 85.8516129,
+            "branchBoundaryAsymmetry": -0.00331613357,
+            "criterionThresholdAsymmetry": -0.0042372429,
+            "excludedSliverFraction": 9.24174023E-4,
+            "infimumBound": 60.4264612,
+            "infimumOverRepulsiveBound": 1.14711158,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "manning-cylinder",
+            "gap": 5.0,
+            "reducedGap": 5.0,
+            "coupling": 2.85642644,
+            "branchBoundaryAsymmetry": -0.166666667,
+            "criterionThresholdAsymmetry": null,
+            "excludedSliverFraction": 0.0,
+            "infimumBound": 3.33461517,
+            "infimumOverRepulsiveBound": 1.07337122,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "manning-cylinder",
+            "gap": 7.0,
+            "reducedGap": 7.0,
+            "coupling": 2.85642644,
+            "branchBoundaryAsymmetry": -0.125,
+            "criterionThresholdAsymmetry": null,
+            "excludedSliverFraction": 0.0,
+            "infimumBound": 3.93755702,
+            "infimumOverRepulsiveBound": 1.09459031,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "manning-cylinder",
+            "gap": 10.0,
+            "reducedGap": 10.0,
+            "coupling": 2.85642644,
+            "branchBoundaryAsymmetry": -0.0909090909,
+            "criterionThresholdAsymmetry": null,
+            "excludedSliverFraction": 0.0,
+            "infimumBound": 4.80271602,
+            "infimumOverRepulsiveBound": 1.10586623,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "saturated-face",
+            "gap": 5.0,
+            "reducedGap": 2.54655191,
+            "coupling": 1.45480764,
+            "branchBoundaryAsymmetry": -0.281964011,
+            "criterionThresholdAsymmetry": null,
+            "excludedSliverFraction": 0.0,
+            "infimumBound": 2.57369313,
+            "infimumOverRepulsiveBound": 0.94470274,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "saturated-face",
+            "gap": 7.0,
+            "reducedGap": 3.56517267,
+            "coupling": 1.45480764,
+            "branchBoundaryAsymmetry": -0.219049765,
+            "criterionThresholdAsymmetry": null,
+            "excludedSliverFraction": 0.0,
+            "infimumBound": 2.88962166,
+            "infimumOverRepulsiveBound": 1.03033527,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "saturated-face",
+            "gap": 10.0,
+            "reducedGap": 5.09310381,
+            "coupling": 1.45480764,
+            "branchBoundaryAsymmetry": -0.164119968,
+            "criterionThresholdAsymmetry": null,
+            "excludedSliverFraction": 0.0,
+            "infimumBound": 3.36317506,
+            "infimumOverRepulsiveBound": 1.07495755,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "bare-projected",
+            "gap": 5.0,
+            "reducedGap": 300.556008,
+            "coupling": 171.703226,
+            "branchBoundaryAsymmetry": -0.00331613357,
+            "criterionThresholdAsymmetry": -0.00582116023,
+            "excludedSliverFraction": 0.0025133613,
+            "infimumBound": 60.4264612,
+            "infimumOverRepulsiveBound": 1.14711158,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "bare-projected",
+            "gap": 7.0,
+            "reducedGap": 420.778411,
+            "coupling": 171.703226,
+            "branchBoundaryAsymmetry": -0.00237091319,
+            "criterionThresholdAsymmetry": -0.00372375162,
+            "excludedSliverFraction": 0.00135605351,
+            "infimumBound": 80.1356992,
+            "infimumOverRepulsiveBound": 1.15069691,
+            "satisfiedAtHalfAsymmetry": true
+        },
+        {
+            "wall": "bare-projected",
+            "gap": 10.0,
+            "reducedGap": 601.112016,
+            "coupling": 171.703226,
+            "branchBoundaryAsymmetry": -0.00166082053,
+            "criterionThresholdAsymmetry": -0.00225995511,
+            "excludedSliverFraction": 6.00131287E-4,
+            "infimumBound": 108.436614,
+            "infimumOverRepulsiveBound": 1.15429763,
+            "satisfiedAtHalfAsymmetry": true
+        }
+    ],
+    "downstreamSensitivity": {
+        "wallChargeRatioBareOverSaturated": 16.4953524,
+        "logOfThatRatio": 2.80307867,
+        "C0137BoundaryChannelSweepSpan": 16.0,
+        "C0137LargestMarginMovement": 0.01439903,
+        "C0137MarginRatioRange": 0.027553712,
+        "oneLoopDeviationAtSevenBare": 1.63398095,
+        "oneLoopDeviationAtSevenSaturated": 0.874054087
+    },
+    "convergence": [
+        {
+            "quantity": "the infimum of Kanduc Eq. (65) over its own branch, at the bare duplex wall and the 7 nm gap",
+            "axis": "asymmetry scan samples 5000 / 20000 / 80000",
+            "values": [
+                16.2842751,
+                16.2842751,
+                16.2842751
+            ],
+            "departure": 0.0,
+            "settles": "the scan includes the branch boundary at every count and the boundary IS the argmin, so the scan is exact at every count; the closed form is what is quoted and the scan is the gate that says the argmin is not an artefact"
+        },
+        {
+            "quantity": "the scale-covariance identity Xi/Dtilde - q^2 l_B/D, over every wall and every gap",
+            "axis": "the wall convention itself",
+            "values": [
+                0.0
+            ],
+            "departure": 0.0,
+            "settles": "exact to the last unit in the last place at all 18 readings, which is the cheap bound this task rests on"
+        }
+    ],
+    "reproductions": [
+        {
+            "quantity": "C-0005's one-loop deviation at 5.0 nm, BARE DUPLEX wall",
+            "published": 2.14,
+            "reproduced": 2.13700654,
+            "relativeDeparture": 0.0014,
+            "source": "C-0005 / gpd/results/T-6-mean-field-screening-validity.json"
+        },
+        {
+            "quantity": "C-0005's one-loop deviation at 7.0 nm, BARE DUPLEX wall",
+            "published": 1.63,
+            "reproduced": 1.63398095,
+            "relativeDeparture": 0.0024,
+            "source": "C-0005 / gpd/results/T-6-mean-field-screening-validity.json"
+        },
+        {
+            "quantity": "C-0005's one-loop deviation at 10.0 nm, BARE DUPLEX wall",
+            "published": 1.23,
+            "reproduced": 1.22815678,
+            "relativeDeparture": 0.0015,
+            "source": "C-0005 / gpd/results/T-6-mean-field-screening-validity.json"
+        },
+        {
+            "quantity": "C-0005's one-loop deviation at 15.0 nm, BARE DUPLEX wall",
+            "published": 0.89,
+            "reproduced": 0.885821548,
+            "relativeDeparture": 0.0047,
+            "source": "C-0005 / gpd/results/T-6-mean-field-screening-validity.json"
+        },
+        {
+            "quantity": "C-0005's one-loop deviation at 20.0 nm, BARE DUPLEX wall",
+            "published": 0.7,
+            "reproduced": 0.701260028,
+            "relativeDeparture": 0.0018,
+            "source": "C-0005 / gpd/results/T-6-mean-field-screening-validity.json"
+        },
+        {
+            "quantity": "T-6's emitted loopExpansionValidityGap for the bare duplex, q = 2 - which IS Kanduc Eq. (64), under Naji's Eq. (20) numbering",
+            "published": 13.5176976,
+            "reproduced": 13.5176976,
+            "relativeDeparture": 0.0,
+            "source": "gpd/results/T-6-mean-field-screening-validity.json, surfaces[]"
+        },
+        {
+            "quantity": "C-0005's Xi at the bare duplex cylinder with Mg2+",
+            "published": 24.0,
+            "reproduced": 23.9975648,
+            "relativeDeparture": 1.0E-4,
+            "source": "C-0005"
+        },
+        {
+            "quantity": "C-0005's saturated far-field charge at 2 mM",
+            "published": 0.0568,
+            "reproduced": 0.0567557166,
+            "relativeDeparture": 7.8E-4,
+            "source": "C-0005, re-derived here as kappa/(pi l_B q)"
+        },
+        {
+            "quantity": "C-0137's Eq. (64) bound at 7 nm, bare duplex wall",
+            "published": 14.43,
+            "reproduced": 14.4341132,
+            "relativeDeparture": 2.9E-4,
+            "source": "C-0137 section P4"
+        },
+        {
+            "quantity": "C-0137's Eq. (64) bound at 7 nm, saturated gap face",
+            "published": 2.8,
+            "reproduced": 2.80454503,
+            "relativeDeparture": 0.0016,
+            "source": "C-0137 section P4"
+        }
+    ],
+    "falsifiers": [
+        {
+            "id": "F1",
+            "statement": "the GEOMETRY axis - duplex cylinder against a smeared gap-facing plane - flips Kanduc Eq. (64)'s verdict at some candidate and some gap",
+            "fired": false,
+            "outcome": "all four bare readings (Xi = 23.9976, 57.9927, 85.8516, 171.7032) FAIL at 5, 7 and 10 nm and both renormalised readings PASS at all three; the geometry axis moves Xi by 7.16x within the bare family and moves no verdict"
+        },
+        {
+            "id": "F2",
+            "statement": "the CHARGE-CONVENTION axis - bare against renormalised - does NOT flip the verdict",
+            "fired": false,
+            "outcome": "every bare reading fails and every renormalised one passes, at 5, 7 and 10 nm: the whole 16.495x straddle is the renormalisation and none of it is the geometry"
+        },
+        {
+            "id": "F3",
+            "statement": "Kanduc Eq. (65)'s infimum over its own admissible asymmetry exceeds Eq. (64)'s bound by more than 2x, i.e. 'exponentially large' is operative",
+            "fired": false,
+            "outcome": "the infimum is attained AT the branch boundary and sits at 0.9447 to 1.1543 of Eq. (64)'s bound over all 18 readings - the two criteria agree to within a sixth where continuity across p0 = 0 requires them to"
+        },
+        {
+            "id": "F4",
+            "statement": "C-0005's published 123-214 % one-loop deviation is NOT reproduced by the bare duplex reading, i.e. the corpus has not in fact committed to a wall",
+            "fired": false,
+            "outcome": "the five published deviations reproduce to 1.40e-03 - 4.69e-03 at the bare duplex wall, and T-6's own emitted loopExpansionValidityGap - which IS this criterion - reproduces to 0.0e+00"
+        },
+        {
+            "id": "F5",
+            "statement": "adopting the saturated reading moves C-0017's stability margin by more than 2 %, i.e. past the band C-0137 measured for the same factor",
+            "fired": false,
+            "outcome": "C-0137 swept the effective wall charge over 16x - which contains the 16.495x this convention is worth - and the margin moved by at most 1.4399 %, which is C-0137's own published 1.44 %"
+        },
+        {
+            "id": "F6",
+            "statement": "the renormalised readings sit inside Eq. (64)'s own asymptotic domain D/mu >> 1, so their PASS is entitled",
+            "fired": false,
+            "outcome": "the renormalised readings sit at D/mu = 3.5652 and 7.0000 at the 7 nm gap, where ln(D/mu) is 1.2712 and 1.9459 - order one, not large - against 58.8 and 210.4 for the bare readings; the saturated wall's bound sits 3.17 % above the SMALLEST value D/ln D can ever take, and at the 5 nm gap its D/mu = 2.5466 falls below Naji Eq. (19)'s own domain of pi, where the one-loop coefficient is not defined at all"
+        }
+    ],
+    "findings": {
+        "cheapBound": "Xi and Dtilde are BOTH linear in the wall's charge density, so Xi/Dtilde = q^2 l_B/D = 0.408061 carries no wall convention at all - the largest departure over all 18 readings is 2.2e-16, below this file's own 1e-14 emission floor and therefore emitted as 0. Kanduc Eq. (64) is therefore EQUIVALENT to ln(D/mu) < D/(q^2 l_B), and the whole disputed 16.495x enters once, as ln = 2.8031, against a threshold distance of 1.6237 at the bare duplex wall and 1.1794 at the saturated one. The naive '16.5x apart' overstates the disagreement by 5.88x in the variable that decides - and it still flips it.",
+        "threshold": "The criterion at a 7.0 nm gap admits Xi < 4.7317, i.e. sigma < 0.1846 e/nm^2 (mu > 0.6037 nm) - a closed form, mu* = D exp(-D/(q^2 l_B)), reproduced by an independent bisection to 5.6e-16. EVERY bare reading of the Gen-1 gap-facing wall is above that charge density (0.9362 to 6.6986 e/nm^2) and BOTH renormalised ones are below it (0.1114 and 0.0568).",
+        "theTwoByTwo": "'Bare duplex versus charge-saturated gap face' moves TWO things at once. Swept as a square, the verdict is constant down the charge column (true) and NOT constant across the geometry row (false): all four bare readings FAIL at 5, 7 and 10 nm (Xi = 24.00 cylinder, 57.99 single layer, 85.85 Gauss-partitioned face, 171.70 projected) and both renormalised readings PASS (2.8564 Manning cylinder, 1.4548 saturated face). The geometry axis is worth 7.16x in Xi and ZERO verdicts. In logarithms the total move is -2.8031, and the two orderings disagree on the SIGN of the geometry term (+1.2747 geometry-first against -0.6747 charge-first, interaction -1.9494) while agreeing on the total to 0.0e+00.",
+        "theRule": "TWO clauses, and only the first is a choice. (1) Xi and mu are owed at the BARE charge, never at a renormalised one. The ground is four properties of Kanduc's own derivation rather than a preference: his Eq. (14) fixes the counterion population by ELECTRONEUTRALITY against sigma_1 + sigma_2, and those are exactly the ions whose correlations Xi measures, so a renormalised sigma deletes from the slit the very population the parameter counts; his Eq. (6) defines mu as the distance at which a counterion interacts with the WALL at k_BT, a Gauss's-law quantity and not a far-field fitting amplitude; the contact-value theorem rho(0) = 2 pi l_B sigma^2 is exact BEYOND mean field (Naji, after Eq. 9) and is written on the bare sigma, so a sigma that does not reproduce the exact contact density is not the sigma these variables are defined with; and a saturated sigma_eff is the nonlinear-PB far-field amplitude while a Manning fraction is a mean-field two-state association model, so using either as the INPUT to a mean-field validity criterion assumes the answer. (2) WITHIN the bare family the geometry is a BRACKET and not a choice, because the Gen-1 tile is not the model's wall: Kanduc's sigma_1 sits in a delta sheet at the contact plane, and this tile's charge is distributed through 10 nm of duplex lattice. The duplex cylinder (24.00) is what a CONTACT counterion sits on at mu = 0.1190 nm and the Gauss-partitioned gap face (85.85) is what the slit's field integrates to; they differ by 3.58x and THE VERDICT IS INVARIANT ACROSS THE BRACKET at 5, 7 and 10 nm. Carry both, quote the cylinder as the optimistic end - which is exactly what CLAUDE.md's standing entry already does, and it needs no change.",
+        "theCorpusAlreadyChose": "Kanduc Eq. (64) is the SAME closed form as Naji Eq. (20), which this repository has implemented as loopExpansionValidityGap since T-6 and emits in T-6's own surfaces table at the BARE duplex wall - 13.517698 nm, reproduced here to 0.0e+00. C-0005's whole band structure IS that evaluation, and its headline 123-214 % one-loop deviation reproduces at the bare wall to 1.40e-03-4.69e-03. At the saturated wall the same five gaps would read UNDEFINED/0.8741/0.6954/0.5096/0.4044 - the 5 nm one is not defined at all, because D/mu = 2.55 there falls below Naji Eq. (19)'s own domain of pi - and the four that are defined run 40-87 %. So the straddle was never symmetric: adopting the saturated reading requires RETRACTING C-0005's 123-214 %, which is the number this corpus's entire beyond-mean-field exposure - CH-0019, C-0137, CH-0167 - is written on.",
+        "theBranchTheDeviceIsOn": "Eq. (64) is derived for a REPULSIVE mean-field pressure and this device's walls are oppositely charged, so Eq. (65) is what is owed. C-0137 and BeyondMeanFieldGap.kt both dispose of it as 'the right hand side here is exponentially large' and neither evaluates it. The exponential is at FIXED zeta. Over the branch's own domain - attraction needs Dtilde > (1+zeta)/|zeta|, derived here from Kanduc Eq. (18) in the vanishing-alpha limit - the bound is minimised AT the branch boundary and sits at 0.9447 to 1.1543 of Eq. (64)'s bound over all 18 readings. The two criteria agree to within a sixth where continuity across p0 = 0 requires them to, and 'exponentially large' is not an operative statement about this device.",
+        "whatTheWallIsWorthOnTheRightBranch": "On Eq. (65) the criterion is satisfied for every zeta more negative than a threshold barely past the branch boundary. At the bare duplex wall and the 7 nm gap the boundary is zeta = -0.01672 and the threshold zeta = -0.02162, so the excluded sliver is 0.4981 % of the attractive branch; at the Gauss-partitioned face it is 0.2309 %; and at BOTH renormalised readings it is exactly zero. The worst sliver over all 18 readings is 1.1025 %, and it sits adjacent to the p0 = 0 locus where Kanduc is explicit that NEITHER criterion applies - 'the leading order term is zero and the fluctuations are dominant at any finite value of Xi'. So on the branch this device occupies the 16.495x wall disagreement is worth under one per cent of an asymmetry range, not a verdict.",
+        "theWallDoesConstrainSomething": "It constrains how much electrode charge the device needs before it is on the easy branch at all. Attraction requires |zeta| > 1/(1 + Dtilde), which at the 7 nm gap is 0.01672 at the bare duplex wall and 0.21905 at the saturated one - a factor of 13.10. The Gen-1 gap force IS an attraction at every operating state (C-0008 solves it; it is the actuation force), so the reading with the smaller Dtilde makes the stronger implicit claim about the electrode. The bare rule is the PERMISSIVE one here, which is the opposite direction from the one it takes on Eq. (64).",
+        "doesAnyVerdictMove": "No. The criterion is a validity FLAG and not a term in any answer, and C-0137 already measured what the same factor is worth where it IS a term: a sweep of the effective wall charge over 16x - which CONTAINS the 16.495x this convention spans - moves C-0017's stability margin by at most 0.0144. So the flag is maximally sensitive to exactly the factor the answer is insensitive to. C-0017's 10 nm / 2 mM verdict stays NOT EXCLUDED, never established; C-0005's bands stand as published; and CLAUDE.md's cylinder rule stands. What changes is that the loop expansion is now known to be OUTSIDE its own validity range at the actuated gap on the repulsive branch and INSIDE it on the attractive one, rather than queued.",
+        "ceilingAndThreshold": "P-6's shape, for whoever wants to reopen it. The criterion would change verdict at the bare wall if sigma_face fell below 0.1846 e/nm^2 at 7 nm - a 18.14x renormalisation of the tile's gap-facing charge, deeper than Manning condensation under Mg2+ delivers on a duplex (0.1114 e/nm^2, 8.40x). Equivalently, the bare readings become controlled at gaps above 13.5177 nm (duplex cylinder) and 17.9723 nm (Gauss-partitioned face), which is OUTSIDE section 3's 5-10 nm band and inside the 17-26 nm tall-layer range C-0110 examined and refused on reach. No published sigma_eff for an origami face in mM Mg2+ was found, and none is needed: the two ends of the family are both in print and the verdict is constant across each.",
+        "theManningIdentity": "A Manning-renormalised cylinder's Gouy-Chapman length is EXACTLY the helix radius, 1.0000 nm, and its Xi is exactly q^2 l_B/R = 2.8564 - carrying no rise, no linear charge density, no Bjerrum length and no valency beyond the q^2. Manning condensation is defined so that the surviving linear density is 1/(q l_B) per nm, which is precisely what mu = 1/(2 pi q l_B sigma) inverts. So the 'renormalised duplex' reading contains no DNA chemistry at all, only a geometric radius - which is one more reason it cannot be the input to a criterion about counterion correlations."
+    },
+    "validity": [
+        "TRL 1-3, nothing measured. This task settles which INPUT a published inequality is owed. It does not compute a correlation correction and it does not make Xi = 17-24 tractable; C-0005's 'no systematic theory in the intermediate regime' stands verbatim.",
+        "Kanduc et al. is COUNTERION-ONLY - 'neglecting completely the effects of salt' - so it has no Debye length. Every number here is a statement about that model transferred to this gap on C-0008's counterion-dominance finding, which is a TRANSFER and is why the whole deliverable is a rule rather than a prediction.",
+        "The attractive branch's zeta is NOT measured here. What is measured is the criterion as a function of zeta over the whole admissible range, and the width of the excluded sliver. The device's own zeta - the ratio of the electrode's charge to the tile's - has never been computed in this corpus.",
+        "The branch boundary Dtilde* = (1+zeta)/|zeta| is DERIVED here from Kanduc Eq. (18) in the alpha -> 0 limit, not quoted; the paper states the qualitative fact ('they attract at large separations and a repulsion emerges only at sufficiently small separations') and prints the locus only as a figure. The derivation is asserted as a gate against Eq. (18) itself.",
+        "AT the branch boundary neither criterion applies, by the paper's own words: 'for p0 = 0 ... the leading order term is zero and the fluctuations are dominant at any finite value of Xi'. The excluded slivers reported here sit adjacent to exactly that locus.",
+        "sigma_face = rho t/2 is Gauss's law on a UNIFORMLY charged slab. The Gen-1 tile is a lattice of duplexes and its face is corrugated at the interhelical pitch; the smearing is the criterion's own idealisation and is exact only for the exterior field far from the corrugation.",
+        "The tile thickness used is section 3's 10 nm, which DnaOrigamiTile carries with its own recorded inconsistency against 'single-layer honeycomb'. Both readings are carried as separate candidates and both fail.",
+        "The criterion is evaluated at the TILE, which is Kanduc's sigma_1 (the larger-magnitude wall) at the operating biases this programme uses. If a bias made the electrode the larger-magnitude wall, sigma_1 would be the electrode's and the whole question would not arise - a metal's charge has no bare/renormalised ambiguity."
+    ],
+    "openQuestions": [
+        "The device's asymmetry parameter zeta has never been computed. It decides which of Kanduc's two branches the gap is on at any given bias, and at zero applied bias - where C-0021's contact potential and the gold PZC decide the electrode's sign and magnitude - it may put the gap back on the REPULSIVE branch, where the bare reading fails. One Stern-series evaluation per state would settle it.",
+        "Whether a criterion should ever be evaluated at a renormalised charge is a general question this task answers only for Kanduc Eq. (64)/(65). The same argument would have to be re-made for any criterion whose derivation does not fix the counterion count by electroneutrality.",
+        "No published effective charge for an origami face in mM Mg2+ was found. It is not needed for this verdict, because both ends of the family are in print and the verdict is constant across each - but it is the quantity a bench measurement would supply."
+    ]
+}

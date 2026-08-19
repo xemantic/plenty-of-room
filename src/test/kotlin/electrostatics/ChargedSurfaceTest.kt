@@ -218,7 +218,7 @@ class ChargedSurfaceTest {
         // deviation brackets it on both sides.
         val coupling = dna.couplingParameter(lb)
         val mu = dna.gouyChapmanLength(lb)
-        val gap = meanFieldValidityGap(coupling, mu)
+        val gap = meanFieldValidityGap(coupling, mu)!!
         assert(meanFieldDeviation(coupling, gap / mu).isCloseTo(1.0, relativeTolerance = 1e-6))
         assert(meanFieldDeviation(coupling, 0.9 * gap / mu) > 1.0)
         assert(meanFieldDeviation(coupling, 1.1 * gap / mu) < 1.0)
@@ -231,8 +231,8 @@ class ChargedSurfaceTest {
         // Eq. (13). They must land in the same place or one of them is mis-transcribed.
         val coupling = dna.couplingParameter(lb)
         val mu = dna.gouyChapmanLength(lb)
-        val full = meanFieldValidityGap(coupling, mu)
-        val closedForm = loopExpansionValidityGap(coupling, mu)
+        val full = meanFieldValidityGap(coupling, mu)!!
+        val closedForm = loopExpansionValidityGap(coupling, mu)!!
         assert(full.isCloseTo(12.91, relativeTolerance = 1e-3))
         assert(closedForm.isCloseTo(13.52, relativeTolerance = 1e-3))
         assert(abs(full - closedForm) / closedForm < 0.2)

@@ -1,5 +1,10 @@
 # C-0123 — **The collar transfer cannot move the `10 × 6` verdict, and the bound needed no field solve.** The collar is a **local** rim effect, so its share of the load scales as **perimeter over area**: `15 × 4` carries **1.05555×** what `C-0022`'s solved tile does and `10 × 6` carries **1.31958×**, a **1.25013×** difference between them. Re-graded over a range containing those factors, **`10 × 6` is flat at the 90th percentile at every scale tested up to 3.0×** — against the **1.32×** it actually needs — so the margin is at least **2.27×** and the true break is above the range. `F1` did not fire and neither did `F2`: the response is monotone in the scale, so a single-factor bound is the right instrument
 
+> **Annotated, iteration 34 ([`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md), [`CH-0174`](../challenges/CH-0174-the-four-layer-cross-section-is-not-a-honeycomb.md); swept under [`T-234`](../tasks/T-234-honeycomb-correction-supersession.md)).**
+> **BOTH aspect ratios this claim is written on have moved by 1.5×**, in the same direction and by the same factor:
+> the honeycomb `15 × 4` is **38.08 × 56.524 nm** and `10 × 6` is **38.08 × 37.504 nm**, so the two perimeter-to-area ratios swap places.
+> `C-0141` records that the collar is read unchanged at both, which **reopens this claim's question rather than answering it**.
+
 | | |
 |---|---|
 | **Task** | [`T-204`](../tasks/T-204-collar-aspect-ratio.md) — does `C-0022`'s collar transfer to the `10 × 6` aspect ratio? |

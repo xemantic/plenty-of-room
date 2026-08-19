@@ -163,7 +163,7 @@
             "contactDensityMolar": 3.2024180510856466,
             "contactOverStericLimit": 0.3992254028029595,
             "meanFieldValidityGap": 1.74105913497681,
-            "loopExpansionValidityGap": 0.9240787673730241,
+            "loopExpansionValidityGap": null,
             "rouzinaBloomfieldRange": 1.2350328194711737,
             "regime": "INTERMEDIATE COUPLING — neither the loop expansion about PB nor the virial expansion about strong coupling converges (Naji et al. §IV C)"
         },

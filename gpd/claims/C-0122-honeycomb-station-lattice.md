@@ -1,5 +1,13 @@
 # C-0122 — **`C-0118`'s largest caveat is discharged: the honeycomb supplies the stations, and the flatness survives being placed on the real lattice.** All **8** demands fit — `15 × 4` offers **90** upward stations and `10 × 6` offers **60**, against 10 to 75 asked for — and snapping every station to the honeycomb's own **21 bp = 7.140 nm** ladder leaves **all four `10 × 6` cells flat at the 90th percentile**, three of them slightly *better*. Both declared falsifiers failed to fire. **And the census carries a finding nobody was looking for: a deeper block offers FEWER stations.** At a fixed 60 helices the count is set by the **face**, not the helix count, so the flatter, stiffer `10 × 6` supplies 60 where `15 × 4` supplies 90 — **a thicker tile buys rigidity and spends attachment lattice**
 
+> **Annotated, iteration 34 ([`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md), [`CH-0175`](../challenges/CH-0175-the-face-azimuth-is-thirty-degrees-and-there-is-one-of-it.md); swept under [`T-234`](../tasks/T-234-honeycomb-correction-supersession.md)).**
+> **This claim's 90 and 60 are RESTORED at departure `0.0` and every reason given for them is withdrawn**,
+> including `CH-0151`'s iteration-28 correction to 132/90 in the annotation below.
+> A honeycomb face carries exactly **one** rooting azimuth per helix, at **30°** from the normal with the sign alternating,
+> **no perpendicular root anywhere**, an across-helix station pitch of `3d/2` = 3.804 nm rather than `d`,
+> and a **forced 7 bp stagger** between adjacent station rows.
+> See the iteration-33 annotation in the same bullet below.
+
 | | |
 |---|---|
 | **Task** | [`T-203`](../tasks/T-203-honeycomb-station-lattice.md) — what attachment lattice does a honeycomb block's top face offer? |
@@ -101,7 +109,10 @@ Replaced by one `normpath` resolver against the file's own directory, with no de
 - **It counts STATIONS, not a placement.** Whether a chosen subset is centro-symmetric, clear of the seam, or
   compatible with the scaffold raster is not asked. A census without a routing is well posed for the count and
   not for the design.
-- **Half the top-face helices carry only OBLIQUE free azimuths** (7 of 15, 5 of 10), and **this corpus has
+- ~~**Half the top-face helices carry only OBLIQUE free azimuths** (7 of 15, 5 of 10)~~ — **withdrawn by
+  [`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md)/[`CH-0175`](../challenges/CH-0175-the-face-azimuth-is-thirty-degrees-and-there-is-one-of-it.md),
+  which finds *every* face helix carrying exactly one rooting azimuth at 30° and **no perpendicular root anywhere** —
+  and **this corpus has
   never priced an oblique attachment against a perpendicular one.** ~~The count is unaffected — every top-face
   helix has exactly one free direction either way~~ — but the *stiffness* of a root on an oblique azimuth is an
   open question this claim raises and does not answer.

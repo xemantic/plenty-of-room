@@ -1,5 +1,20 @@
 # C-0118 — **THE FIRST COUPLED TILE IN THIS PROGRAMME'S HISTORY THAT IS FLAT AT THE 90th PERCENTILE UNDER THE MEASURED FOLDING STATISTICS — and what delivers it is the CROSS-SECTION, not the coupling.** Of 16 graded cells, **9 are flat**; on `10 × 6` **all eight** are, best **0.0278431488** at the *sparsest* coupling of all (one column, ten paths, equal springs), and on `15 × 4` **one of eight** is, at **0.0882933461**. The cross-section is worth **3.17109774×** on this statistic, against what the distribution axis buys inside either one. And `C-0109`'s standing comparison is re-framed rather than contradicted: **the uncoupled tile is a reference, never a design**, because §3 requires 100 pN to reach a load and `C-0017`'s mandate is an **equality on the SUM**
 
+> **Annotated, iteration 34 ([`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md), [`CH-0174`](../challenges/CH-0174-the-four-layer-cross-section-is-not-a-honeycomb.md); swept under [`T-234`](../tasks/T-234-honeycomb-correction-supersession.md)).**
+> **Two things move and they run opposite ways.**
+> The sixteen cells are graded on a cross-section that is not a honeycomb (`edgeY` 1.5× too small at every `m`),
+> ~~so the grading is owed a re-run — that is [`T-232`](../../TASKS.md), and **no 90th-percentile number here is re-derived**.~~
+> **[`T-232`](../tasks/T-232-coupled-cells-at-the-honeycomb-cross-section.md) has now run it ([`C-0142`](C-0142-coupled-cells-at-the-honeycomb-cross-section.md), [`CH-0176`](../challenges/CH-0176-the-first-flat-coupled-tile-is-flat-at-half-its-cells.md)), and EVERY 90th-percentile number in this claim's title, §2 and §3 is superseded:**
+> **4** of 16 cells are flat, not 9; `10 × 6` is **4 of 8**, not eight of eight; `15 × 4` is **0 of 8** — at `f = 0.30` **and** at the measured band's low `f = 0.26` — so its single flat cell, 0.0882933461, is **0.145354102** and fails.
+> The best cell is **0.0680677948** (still `10 × 6`, one column, ten paths, equal springs) and the cross-section's worth is **2.13543134×**, not 3.17109774×.
+> Every one of the sixteen numbers below reproduces at `1.4e−10 … 4.4e−9` in the process that produced the corrected ones, so **the movement is the geometry and nothing else** —
+> and this claim's *conclusion*, that what delivers flatness is the cross-section rather than the coupling, is **strengthened**: `15 × 4` now has no coupled design at all.
+> §2's *"More paths are monotonically **worse**"* is separately withdrawn by [`CH-0177`](../challenges/CH-0177-the-path-count-axis-is-not-monotone.md) — the four numbers printed beside it rise once and fall three times, at both geometries.
+> And the *"a path count here is a REQUEST, not a demonstration"* caveat below is **DISCHARGED on the count, the positions AND now the grading**:
+> `C-0141` derives the honeycomb face's own station lattice (90 on `15 × 4`, 60 on `10 × 6`, one azimuth each at 30°),
+> its plan ceiling, and a centro-symmetric placement family that exists on `10 × 6` and provably not on `15 × 4`;
+> `C-0142` grades all sixteen placements **on that lattice** — every one is realisable, the largest snap being 3.332 nm inside a 3.57 nm ceiling — and **three** are flat, all three **equal springs**.
+
 | | |
 |---|---|
 | **Task** | [`T-197`](../tasks/T-197-coupled-four-layer.md) — is a coupled four-layer tile flat under the measured staple dropout? |

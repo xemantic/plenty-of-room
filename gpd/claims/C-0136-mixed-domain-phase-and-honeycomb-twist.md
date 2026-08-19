@@ -1,5 +1,13 @@
 # C-0136 — **A SEAMLESS RASTER ROW HAS NO PHASE VARIABLE AT ALL, AND THE HONEYCOMB HAS NO TWIST TO CORRECT.** `C-0090`'s *"ten eight-column phases collapse to two"* is a collapse from a **translation** to a **parity**: the admissible rigid translation group of a seamless row is `{0}` at 112 bp and at `C-0133`'s twist-corrected 110 bp alike, and phases 8 and 24 give **identical column positions** with **inverted parities**. What a mixed-domain row loses is nothing; what it **gains** is an **arrangement** axis of **21** members that the uniform row does not have, every one carrying **eight columns as an identity**. And the honeycomb's design twist is `720/21 = 34.2857 °/bp`, which **is** B-DNA's `360/10.5` — the same number — so its `Δω` is **exactly zero** and every register number in `C-0104`, `C-0107` and `C-0133` is a **square-lattice** number here. One fact unifies both: `10.5 = 21/2`, so an **odd** multiple of a half turn is a quarter base pair off an integer and a **quadruple** one is exact; the square lattice's raster demands an odd count and the honeycomb's azimuth period is **four**
 
+> **Annotated, iteration 34 ([`C-0140`](C-0140-honeycomb-raster-turn-sense.md), [`CH-0172`](../challenges/CH-0172-a-honeycomb-x-raster-carries-both-turn-senses.md), [`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md); swept under [`T-234`](../tasks/T-234-honeycomb-correction-supersession.md)).**
+> **`119 bp = 40.46 nm, +1.15 %` is WITHDRAWN as an available tile width.**
+> An x-raster carries **both** turn senses, the two residue triples are disjoint, and `0 of 2 100` candidate widths serve both —
+> so 119 bp is admissible on the 30 helices of sense 2 and 112 bp on the 28 of sense 1, and neither is a uniform width.
+> The two-length remedy costs 3 bp; the recommendation is **112 / 108 bp**, 116 bp = 39.44 nm, `−1.40 %`.
+> **The residue condition itself, its derivation and the disjointness are upheld and reproduced at departure `0.0`** — what was missing was the sign that selects the sense.
+> *Still open* item 2 — *"the honeycomb has no station lattice, no plan ceiling and no placement family in this repository"* — is **DISCHARGED** by `C-0141`.
+
 | | |
 |---|---|
 | **Task** | [`T-216`](../tasks/T-216-mixed-domain-phase-lattice.md) and [`T-217`](../tasks/T-217-honeycomb-twist-correction.md), both raised by [`C-0133`](C-0133-twist-corrected-raster-row.md) *Still open* items 1 and 6 |

@@ -1,5 +1,10 @@
 # C-0130 — **§3 row (g) is 9.3× shorter and nothing was discarded, which is what makes it a rewrite rather than a deletion.** `C-0121` named it the passage most in need of one: **23 134 characters in a single table cell**, eleven revision markers, and a standing verdict that had **reversed twice**, so a reader wanting the current answer had to reconstruct it from a chronological accretion. It is now **2 489**, stating the answer in five steps, with the cell as it stood quoted **verbatim below the table** — because the reversals are the most instructive material in this deliverable and removing them would leave the answer looking inevitable. Cheap bound **0 of 11 cited**, the strongest product signal any pass has had. **6 carried in, 5 deliberately not** — and one of the five is not carried *by its own measurement*
 
+> **Annotated, iteration 34 ([`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md), [`CH-0175`](../challenges/CH-0175-the-face-azimuth-is-thirty-degrees-and-there-is-one-of-it.md); swept under [`T-234`](../tasks/T-234-honeycomb-correction-supersession.md)).**
+> **The `90/60 → 132/90` correction this pass carried in is itself WITHDRAWN**: `CH-0151`'s `±60°` pair belongs to a helix
+> whose two up-oblique neighbours are absent, which on a full `m × n` block they are not, so `C-0122`'s **90 and 60** are restored at departure `0.0`
+> and the face carries exactly **one** rooting azimuth per helix at **30°**.
+
 | | |
 |---|---|
 | **Task** | [`T-211`](../tasks/T-211-seventh-answers-synthesis.md) — the seventh synthesis of `ANSWERS.md` |

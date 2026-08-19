@@ -1,5 +1,13 @@
 # C-0126 — **A claim can supersede a TASK, and six claims that did it in a row none of them noticed.** Of **59** open queue items, **8** optimise a coupling placement, phase or distribution on the **single-layer** tile — and the four-layer tile is flat with **no coupling at all**. They are marked **CONTINGENT**, not killed: §3's thickness row cannot hold both ways, NDI's answer resolves it **by implication** rather than by ruling, and decision 7 is unanswered, so they are **well posed only on one side of a live specification question**. **And two are STRENGTHENED** — `T-9`, the crossover hinge constant from oxDNA, is now the input the four-layer rigidity *and* `C-0116`'s threshold both rest on. A sweep that only looks for work to cancel would have missed it
 
+> **Annotated, iteration 34 ([`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md), [`CH-0181`](../challenges/CH-0181-the-supersession-sweeps-own-ground-moved.md); swept under [`T-234`](../tasks/T-234-honeycomb-correction-supersession.md)).**
+> **The classification stands and its GROUND moved, which is exactly the failure this claim was written about.**
+> The eight CONTINGENT items are contingent because *"the four-layer tile is flat with no coupling at all"* — 0.0577199433.
+> On the corrected honeycomb cross-section that reading is **`15 × 4` 0.0978155002 free and 0.101759944 at the measured band's low end, which FAILS `T-5b`**,
+> and `10 × 6` **0.0240648102**, flat across the whole band.
+> **So the ground holds on one cross-section and not on the other**, and the eight are REPRICED: their value rises if the tile is `15 × 4`.
+> `T-234` records the four-way classification; nothing here is struck.
+
 | | |
 |---|---|
 | **Task** | [`T-205`](../tasks/T-205-four-layer-supersession.md) — what did the four-layer line supersede in the queue? |

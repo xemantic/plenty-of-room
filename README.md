@@ -116,6 +116,7 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=structure.HoneycombRasterTurnSenseStudyKt # T-218, which turn sense a caDNAno 15 x 4 honeycomb x-raster carries, and what a uniform row length costs
 ./gradlew study -Pstudy=tile.HoneycombPlacementStudyKt            # T-219, the honeycomb face's station census, plan ceiling and centro-symmetric placement family -- and the cross-section they live on
 ./gradlew study -Pstudy=electrostatics.BeyondMeanFieldGapStudyKt  # T-50, the beyond-mean-field exposure of the actuated gap as a ceiling and a threshold, not a Monte Carlo
+./gradlew study -Pstudy=tile.HoneycombCoupledStudyKt              # T-232, C-0118's sixteen coupled cells re-graded at the corrected honeycomb cross-section, and on the honeycomb's own station lattice
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.

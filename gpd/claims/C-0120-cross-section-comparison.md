@@ -1,5 +1,11 @@
 # C-0120 — **The cross-section its own source recommends on YIELD grounds is also the one that removes this programme's last unmeasured dependency on FLATNESS grounds — and it costs a third of the footprint.** `10 × 6` dishes **0.00874363524** of the stroke against `15 × 4`'s **0.0577199433**, 6.6× flatter at the **same 60 helices** — and it has **no composite-fraction threshold at all**: its dishing never reaches `T-5b`'s 0.10 anywhere in `f ∈ [0, 1]`, **including `f = 0`, where the layers are fully independent**. So it is flat *without* depending on the interlayer-coupling calibration, which `C-0116` identifies as the one unmeasured number the `15 × 4` verdict rests on. **The stronger cross-section is stronger by REMOVING a dependency, not by widening a margin.** The cost is a specification one: at the fixed 112 bp span it is **38.08 × 25.36 nm**, **0.667** of the footprint, against §3's ~40 × 40
 
+> **Annotated, iteration 34 — see the iteration-33 annotation in §2 below ([`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md), [`CH-0174`](../challenges/CH-0174-the-four-layer-cross-section-is-not-a-honeycomb.md); swept under [`T-234`](../tasks/T-234-honeycomb-correction-supersession.md)).**
+> **The headline clause *"and it costs a third of the footprint"* is WITHDRAWN, and so is every `edgeY` in the tables below:**
+> corrected to the honeycomb's own two pitches, `10 × 6` is **38.08 × 37.504 nm** and `15 × 4` is **38.08 × 56.524 nm** —
+> **the ordering reverses and there is no footprint to pay.**
+> The claim's central finding is *strengthened*: `15 × 4`'s `f*` moves to **0.276970522**, inside the measured band, and `10 × 6`'s to 0.012737738.
+
 | | |
 |---|---|
 | **Task** | [`T-199`](../tasks/T-199-cross-section-comparison.md) — is 10 × 6 a better tile than 15 × 4? |

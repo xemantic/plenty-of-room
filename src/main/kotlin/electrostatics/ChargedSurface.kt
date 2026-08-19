@@ -243,18 +243,26 @@ fun meanFieldDeviation(coupling: Double, reducedGap: Double): Double =
 
 /**
  * Returns the wall separation in nm at which [meanFieldDeviation] reaches one — the
- * boundary above which the loop expansion about mean field is still controlled.
+ * boundary above which the loop expansion about mean field is still controlled — or `null`
+ * where the deviation never reaches one, i.e. where mean field is controlled at **every**
+ * separation the coefficient is defined at.
  *
  * Found by bisection, which is safe because the deviation decreases monotonically with
- * separation over the whole range where the expansion is meaningful.
+ * separation over the whole range where the expansion is meaningful — but only once the
+ * bracket has been checked to straddle. A weakly coupled wall has no such boundary at all,
+ * and returning the bracket's own floor for it is `CLAUDE.md`'s *"a root-finder handed a
+ * target the function never reaches should return `null`, and the `null` is a VERDICT"*
+ * (`T-221`, `CH-0178`).
  */
-fun meanFieldValidityGap(coupling: Double, gouyChapmanLength: Double): Double {
+fun meanFieldValidityGap(coupling: Double, gouyChapmanLength: Double): Double? {
     require(coupling > 0.0) { "coupling must be positive, was: $coupling" }
     require(gouyChapmanLength > 0.0) {
         "gouyChapmanLength must be positive, was: $gouyChapmanLength"
     }
     var low = 4.0 * gouyChapmanLength
     var high = 1e6 * gouyChapmanLength
+    if (meanFieldDeviation(coupling, low / gouyChapmanLength) <= 1.0) return null
+    if (meanFieldDeviation(coupling, high / gouyChapmanLength) > 1.0) return null
     repeat(200) {
         val middle = 0.5 * (low + high)
         if (meanFieldDeviation(coupling, middle / gouyChapmanLength) > 1.0) low = middle
@@ -265,14 +273,24 @@ fun meanFieldValidityGap(coupling: Double, gouyChapmanLength: Double): Double {
 
 /**
  * Returns the same boundary from Naji's own closed-form criterion Eq. (20),
- * `(Δ/μ)/ln(Δ/μ) > Ξ`, in nm.
+ * `(Δ/μ)/ln(Δ/μ) > Ξ`, in nm — or `null` where there is no such boundary.
  *
  * Kept alongside [meanFieldValidityGap] deliberately: Eq. (20) drops the sub-leading terms
  * of Eq. (19), so agreement between the two is a check that Eq. (19) was transcribed
  * correctly, and disagreement would be a transcription bug rather than physics.
+ *
+ * **`Δ/μ over ln(Δ/μ)` has a global minimum of `e` at `Δ/μ = e`**, so for `Ξ ≤ e` the
+ * criterion holds at *every* separation and there is no root to find. Before `T-221` the
+ * bisection returned its own bracket floor there — `e μ`, a plausible-looking length that is
+ * a property of the bracket and not of the physics — and `T-6` emitted one such number
+ * (`0.9241 nm` for the hydrated-hard-core wall with `Na⁺`, `Ξ = 2.10`). See `CH-0178`.
  */
-fun loopExpansionValidityGap(coupling: Double, gouyChapmanLength: Double): Double {
+fun loopExpansionValidityGap(coupling: Double, gouyChapmanLength: Double): Double? {
     require(coupling > 0.0) { "coupling must be positive, was: $coupling" }
+    require(gouyChapmanLength > 0.0) {
+        "gouyChapmanLength must be positive, was: $gouyChapmanLength"
+    }
+    if (coupling <= kotlin.math.E) return null
     var low = kotlin.math.E * 1.000001
     var high = 1e12
     repeat(300) {

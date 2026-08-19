@@ -1,5 +1,16 @@
 # C-0119 — **YES, and the cross-section is not a proposal: it is design (i) of the caDNAno paper, folded from p8064 and one of only THREE of seven to produce sharp leading monomer bands.** The tile this programme now recommends is **15 × 4** in Douglas et al.'s own nomenclature — 15 x-raster rows of 4 helices, **60** duplexes — and their conclusion is that **10 × 6 yields the greatest fraction of defect-free objects**, so the tile's aspect ratio is a design variable with **published yield evidence** that this programme has never treated as one. `C-0086`'s odd-half-turn rule genuinely does not transfer (no odd multiple of 5.25 bp is an integer) — but the honeycomb quantises its half turn to **5 bp**, so the scaffold lattice **is** integral and the rule's failure was a **domain error, not a prohibition**. A seam is still forced, and for a reason in the source rather than the geometry: *"the path of the scaffold stays within a 2D surface"*
 
+> **Annotated, iteration 34 ([`C-0140`](C-0140-honeycomb-raster-turn-sense.md), [`CH-0172`](../challenges/CH-0172-a-honeycomb-x-raster-carries-both-turn-senses.md), [`CH-0173`](../challenges/CH-0173-the-built-block-turns-on-loops-not-crossovers.md), [`CH-0180`](../challenges/CH-0180-the-scaffold-pairing-contradicts-its-own-paper.md), [`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md); swept under [`T-234`](../tasks/T-234-honeycomb-correction-supersession.md)).**
+> **THREE READINGS ARE WITHDRAWN AND THE INTEGRALITY RESULT IS NOT.**
+> (1) *"Drawable"* read as *"at a uniform row length"* falls: an x-raster is corrugated, so its turn sense **alternates**,
+> and design (i) ends at sense 2 on 30 helices and sense 1 on 28 — the 112 bp row is admissible on **28 of 58** of them.
+> The remedy is a two-length raster at **112 / 108 bp**, 116 bp = 39.44 nm of axial extent.
+> (2) The scaffold budget has **no line for the 28 nt of unpaired turn loop** the only folded instance of this cross-section uses.
+> (3) *"p8064 — designs i, iii, v, including ours"* is read from a Methods sentence that **contradicts the paper's own main text**
+> at exactly this design and no other; the main text's rule (60 helices → 7 560, 64 → 8 064) makes design (i) a **p7560** design.
+> **The `7k ± 5` integrality result, the seam, the yield reading and the cross-section identification are untouched and reproduce at departure `0.0`.**
+> The *"every plan ceiling, station lattice, crossover phase and placement in this corpus is single-layer square-lattice"* item below is **DISCHARGED** by `C-0141`.
+
 | | |
 |---|---|
 | **Task** | [`T-198`](../tasks/T-198-honeycomb-raster-width.md) — can four honeycomb layers be rastered from one circular M13 at a buildable width? |

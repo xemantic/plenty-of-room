@@ -1,5 +1,14 @@
 # C-0116 — **`C-0109`'s overturning of the flatness negative SURVIVES, with 3.30× of margin on the adverse end of the measured band.** The uncoupled four-layer free-tile dishing crosses `T-5b`'s 0.10 at `f = 0.0788618807`, **monotonically** (one sign change over the whole unit interval), against a measured interlayer coupling of **0.26–0.33** — so the measured band's *low* end clears the threshold by **3.29690337×** and its centre by **3.80411927×**. Declared falsifier **`F2` did not fire**: the crossing is nowhere near the measurement's own uncertainty. **The cheap bound removed the sweep before it ran**: `f` enters only through `1 + f(factor − 1)`, and that one number multiplies `D_∥` and `D_⊥` alike, so the threshold is a **scalar inversion** and not a two-dimensional search. And `CH-0124`'s true honeycomb spacing has its **own** threshold, `f = 0.105149174` — still cleared, by 2.47267753×
 
+> **Annotated, iteration 34 ([`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md), [`CH-0174`](../challenges/CH-0174-the-four-layer-cross-section-is-not-a-honeycomb.md); swept under [`T-234`](../tasks/T-234-honeycomb-correction-supersession.md)).**
+> **THE HEADLINE MARGIN IS WITHDRAWN FOR `15 × 4`.**
+> The cross-section this threshold is read on is not a honeycomb — every `edgeY` in the four-layer line is 1.5× too small —
+> and re-solved at the corrected geometry the crossing moves from `f = 0.0788618807` to **`0.276970522`**,
+> which is **inside** the measured 0.26–0.33 band rather than 3.29690337× below it:
+> at the band's low end the `15 × 4` four-layer tile dishes **0.101759944** and **fails `T-5b`**.
+> `10 × 6`'s crossing moves to **0.012737738** and stays 20× below the band, so *that* cross-section still has no threshold to clear.
+> **The verdict *"the four-layer tile is flat"* survives on a different cross-section from the one this claim reads it on.**
+
 | | |
 |---|---|
 | **Task** | [`T-196`](../tasks/T-196-composite-fraction-threshold.md) — where the four-layer tile stops being flat |

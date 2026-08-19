@@ -2,12 +2,12 @@
   "task": "P-22",
   "claim": "C-0082",
   "what": "The reader graph over gpd/results/, derived from the Kotlin sources rather than grepped. A read is a result-file string literal in the argument list of a File(...) construction, propagated along top-level references; comments and prose strings are not reads. See tools/result-reader-census.py and CH-0092.",
-  "studyCount": 114,
+  "studyCount": 116,
   "helperCount": 3,
-  "resultFileCount": 132,
-  "declaringStudyCount": 10,
+  "resultFileCount": 135,
+  "declaringStudyCount": 11,
   "transitiveEdgeCount": 27,
-  "directEdgeCount": 112,
+  "directEdgeCount": 114,
   "studies": {
     "HelloWorldApp.kt": {
       "reads": [],
@@ -2258,6 +2258,27 @@
         "structure/ResultRounding.kt"
       ]
     },
+    "electrostatics/PlanarCouplingWallStudy.kt": {
+      "reads": [
+        "T-50-beyond-mean-field-gap.json"
+      ],
+      "directReads": [
+        "T-50-beyond-mean-field-gap.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-221-planar-coupling-wall.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "electrostatics/BeyondMeanFieldGap.kt",
+        "electrostatics/ChargedSurface.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PlanarCouplingWall.kt",
+        "structure/ResultRounding.kt"
+      ]
+    },
     "electrostatics/ScaffoldRemainderStudy.kt": {
       "reads": [
         "T-3b-tile-edge-load-profile.json"
@@ -3358,6 +3379,48 @@
         "tile/FourLayerTile.kt"
       ]
     },
+    "tile/HoneycombCoupledStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-232-coupled-cells-at-the-honeycomb-cross-section.json",
+      "declaredSources": [
+        "T-3b"
+      ],
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/DropoutRobustPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/SharedBodyCoupling.kt",
+        "coupling/SingleColumnFlatness.kt",
+        "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/CoupledFourLayer.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombCoupledTile.kt",
+        "tile/HoneycombFaceLattice.kt",
+        "tile/HoneycombStationLattice.kt"
+      ]
+    },
     "tile/HoneycombPlacementStudy.kt": {
       "reads": [
         "T-3b-tile-edge-load-profile.json"
@@ -4223,6 +4286,7 @@
       "tile/CoupledFourLayerStudy.kt",
       "tile/CrossSectionComparisonStudy.kt",
       "tile/FourLayerTileStudy.kt",
+      "tile/HoneycombCoupledStudy.kt",
       "tile/HoneycombPlacementStudy.kt",
       "tile/HoneycombStationLatticeStudy.kt",
       "tile/ObliqueRootStudy.kt",
@@ -4234,6 +4298,9 @@
       "synthesis/BufferRouteCensusStudy.kt",
       "window/SecondResynthesisStudy.kt",
       "window/WindowResynthesisStudy.kt"
+    ],
+    "T-50-beyond-mean-field-gap.json": [
+      "electrostatics/PlanarCouplingWallStudy.kt"
     ],
     "T-60-collar-on-the-equilibrium-path.json": [
       "stability/DoublingLadderRepairStudy.kt",
@@ -4589,8 +4656,14 @@
     "T-219-honeycomb-station-lattice-and-placement.json": [
       "tile/HoneycombPlacementStudy.kt"
     ],
+    "T-221-planar-coupling-wall.json": [
+      "electrostatics/PlanarCouplingWallStudy.kt"
+    ],
     "T-23-two-sided-coupling.json": [
       "anchoring/TwoSidedCouplingStudy.kt"
+    ],
+    "T-232-coupled-cells-at-the-honeycomb-cross-section.json": [
+      "tile/HoneycombCoupledStudy.kt"
     ],
     "T-25-window-resynthesis.json": [
       "window/WindowResynthesisStudy.kt"
@@ -4776,8 +4849,11 @@
     "T-218-honeycomb-raster-turn-sense.json",
     "T-219-honeycomb-station-lattice-and-placement.json",
     "T-220-level-not-a-stiffness-error-bar.json",
+    "T-221-planar-coupling-wall.json",
     "T-226-nonuniform-coupling-manifold.json",
     "T-23-two-sided-coupling.json",
+    "T-232-coupled-cells-at-the-honeycomb-cross-section.json",
+    "T-234-honeycomb-correction-supersession.json",
     "T-25-window-resynthesis.json",
     "T-3-stroke-and-blocking-force.json",
     "T-30-flexure-end-joint.json",
@@ -4824,7 +4900,8 @@
     "T-212-departure-and-saturation-audits.json",
     "T-214-departure-rule-scope.json",
     "T-220-level-not-a-stiffness-error-bar.json",
-    "T-226-nonuniform-coupling-manifold.json"
+    "T-226-nonuniform-coupling-manifold.json",
+    "T-234-honeycomb-correction-supersession.json"
   ],
   "missingResultFiles": [],
   "roundingSites": [
@@ -4857,6 +4934,7 @@
         "T-156-buffer-route-census.json",
         "T-16-output-coupling-stiffness.json",
         "T-2-design-window.json",
+        "T-221-planar-coupling-wall.json",
         "T-25-window-resynthesis.json",
         "T-50-beyond-mean-field-gap.json"
       ],
@@ -4890,6 +4968,7 @@
       "downstreamResultFiles": [
         "T-118-window-resynthesis-two.json",
         "T-156-buffer-route-census.json",
+        "T-221-planar-coupling-wall.json",
         "T-25-window-resynthesis.json",
         "T-50-beyond-mean-field-gap.json"
       ],
@@ -4970,6 +5049,7 @@
         "electrostatics/DuplexPairSeparationStudy.kt",
         "electrostatics/EdgeWidthDependenceStudy.kt",
         "electrostatics/NonlinearPbProfileStudy.kt",
+        "electrostatics/PlanarCouplingWallStudy.kt",
         "electrostatics/ScaffoldRemainderStudy.kt",
         "electrostatics/TileEdgeLoadProfileStudy.kt",
         "stability/DoublingLadderRepairStudy.kt",
@@ -5002,6 +5082,7 @@
         "tile/CoupledFourLayerStudy.kt",
         "tile/CrossSectionComparisonStudy.kt",
         "tile/FourLayerTileStudy.kt",
+        "tile/HoneycombCoupledStudy.kt",
         "tile/HoneycombPlacementStudy.kt",
         "tile/HoneycombStationLatticeStudy.kt",
         "tile/ObliqueRootStudy.kt",
@@ -5091,7 +5172,9 @@
         "T-217-honeycomb-twist-correction.json",
         "T-218-honeycomb-raster-turn-sense.json",
         "T-219-honeycomb-station-lattice-and-placement.json",
+        "T-221-planar-coupling-wall.json",
         "T-23-two-sided-coupling.json",
+        "T-232-coupled-cells-at-the-honeycomb-cross-section.json",
         "T-25-window-resynthesis.json",
         "T-3-stroke-and-blocking-force.json",
         "T-30-flexure-end-joint.json",

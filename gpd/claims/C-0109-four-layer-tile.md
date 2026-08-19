@@ -1,5 +1,15 @@
 # C-0109 — the tile §3 actually specifies: a four-layer, ~10 nm body
 
+> **Annotated, iteration 34 ([`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md), [`CH-0174`](../challenges/CH-0174-the-four-layer-cross-section-is-not-a-honeycomb.md); swept under [`T-234`](../tasks/T-234-honeycomb-correction-supersession.md)).**
+> **The cross-section this claim solves is not a honeycomb.**
+> A honeycomb of bond length `d` has an in-plane row pitch `3d/2` and a layer pitch `d√3/2`,
+> so `edgeY = rasterRows × d` is exactly **1.5×** too small at every `m`.
+> Re-solved on the corrected geometry the `15 × 4` free tile dishes **0.0978155002** where this claim reads 0.0577199433,
+> and its `f*` moves **inside** the measured 0.26–0.33 band.
+> **The four-layer verdict survives on `10 × 6` and not on `15 × 4`.**
+> This claim's numbers reproduce at departure `0.0` **at the geometry they were solved on**; what moved is the geometry.
+> `T-232` re-grades the coupled cells and [`C-0140`](C-0140-honeycomb-raster-turn-sense.md) moves the row length as well.
+
 | | |
 |---|---|
 | **Task** | [`T-191`](../tasks/T-191-four-layer-tile.md) |
