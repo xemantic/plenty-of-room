@@ -135,6 +135,13 @@ An agent needing more takes the next free number **above every block above** and
 
 `CH-0152` was reserved by `T-206` and **not used**, so it is free.
 
+## Number reservations — iteration 30 (2026-08-19)
+
+| Agent | Task | Claims | Challenges |
+|---|---|---|---|
+| O | `T-212` + `T-213` — finish the two audits `C-0129` measured and declined to gate | `C-0131` | `CH-0154`, `CH-0155` |
+| P | `P-14` the charge presented by the cut rim of a DNA-origami sheet | `C-0132` | `CH-0156`, `CH-0157` |
+
 ## Process blockers
 
 | ID | Task | Status | Notes |
