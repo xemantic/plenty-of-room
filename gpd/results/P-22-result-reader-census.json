@@ -2,12 +2,12 @@
   "task": "P-22",
   "claim": "C-0082",
   "what": "The reader graph over gpd/results/, derived from the Kotlin sources rather than grepped. A read is a result-file string literal in the argument list of a File(...) construction, propagated along top-level references; comments and prose strings are not reads. See tools/result-reader-census.py and CH-0092.",
-  "studyCount": 119,
+  "studyCount": 121,
   "helperCount": 3,
-  "resultFileCount": 138,
-  "declaringStudyCount": 12,
+  "resultFileCount": 141,
+  "declaringStudyCount": 13,
   "transitiveEdgeCount": 27,
-  "directEdgeCount": 119,
+  "directEdgeCount": 121,
   "studies": {
     "HelloWorldApp.kt": {
       "reads": [],
@@ -3437,6 +3437,60 @@
         "tile/FourLayerTile.kt"
       ]
     },
+    "tile/HoneycombBondClassStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-244-face-bond-class-residues.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombStationLattice.kt",
+        "tile/HoneycombTwoLengthRaster.kt"
+      ]
+    },
+    "tile/HoneycombColumnWindowStudy.kt": {
+      "reads": [
+        "T-235-coupled-cells-at-the-two-length-raster.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-235-coupled-cells-at-the-two-length-raster.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-243-columns-from-row-spans.json",
+      "declaredSources": [
+        "T-235",
+        "T-3b"
+      ],
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombFaceLattice.kt"
+      ]
+    },
     "tile/HoneycombCoupledStudy.kt": {
       "reads": [
         "T-3b-tile-edge-load-profile.json"
@@ -4352,6 +4406,9 @@
     "T-232-coupled-cells-at-the-honeycomb-cross-section.json": [
       "structure/RaggedFaceCostStudy.kt"
     ],
+    "T-235-coupled-cells-at-the-two-length-raster.json": [
+      "tile/HoneycombColumnWindowStudy.kt"
+    ],
     "T-25-window-resynthesis.json": [
       "synthesis/BufferRouteCensusStudy.kt",
       "window/SecondResynthesisStudy.kt"
@@ -4398,6 +4455,7 @@
       "tile/CoupledFourLayerStudy.kt",
       "tile/CrossSectionComparisonStudy.kt",
       "tile/FourLayerTileStudy.kt",
+      "tile/HoneycombColumnWindowStudy.kt",
       "tile/HoneycombCoupledStudy.kt",
       "tile/HoneycombPlacementStudy.kt",
       "tile/HoneycombStationLatticeStudy.kt",
@@ -4787,6 +4845,12 @@
     "T-235-coupled-cells-at-the-two-length-raster.json": [
       "tile/HoneycombTwoLengthStudy.kt"
     ],
+    "T-243-columns-from-row-spans.json": [
+      "tile/HoneycombColumnWindowStudy.kt"
+    ],
+    "T-244-face-bond-class-residues.json": [
+      "tile/HoneycombBondClassStudy.kt"
+    ],
     "T-25-window-resynthesis.json": [
       "window/WindowResynthesisStudy.kt"
     ],
@@ -4972,6 +5036,7 @@
     "T-219-honeycomb-station-lattice-and-placement.json",
     "T-220-level-not-a-stiffness-error-bar.json",
     "T-221-planar-coupling-wall.json",
+    "T-225-departure-spelling-set.json",
     "T-226-nonuniform-coupling-manifold.json",
     "T-23-two-sided-coupling.json",
     "T-230-honeycomb-turn-loop-slack.json",
@@ -4979,6 +5044,8 @@
     "T-232-coupled-cells-at-the-honeycomb-cross-section.json",
     "T-234-honeycomb-correction-supersession.json",
     "T-235-coupled-cells-at-the-two-length-raster.json",
+    "T-243-columns-from-row-spans.json",
+    "T-244-face-bond-class-residues.json",
     "T-25-window-resynthesis.json",
     "T-3-stroke-and-blocking-force.json",
     "T-30-flexure-end-joint.json",
@@ -5025,6 +5092,7 @@
     "T-212-departure-and-saturation-audits.json",
     "T-214-departure-rule-scope.json",
     "T-220-level-not-a-stiffness-error-bar.json",
+    "T-225-departure-spelling-set.json",
     "T-226-nonuniform-coupling-manifold.json",
     "T-234-honeycomb-correction-supersession.json"
   ],
@@ -5209,6 +5277,8 @@
         "tile/CoupledFourLayerStudy.kt",
         "tile/CrossSectionComparisonStudy.kt",
         "tile/FourLayerTileStudy.kt",
+        "tile/HoneycombBondClassStudy.kt",
+        "tile/HoneycombColumnWindowStudy.kt",
         "tile/HoneycombCoupledStudy.kt",
         "tile/HoneycombPlacementStudy.kt",
         "tile/HoneycombStationLatticeStudy.kt",
@@ -5306,6 +5376,8 @@
         "T-231-ragged-face-cost.json",
         "T-232-coupled-cells-at-the-honeycomb-cross-section.json",
         "T-235-coupled-cells-at-the-two-length-raster.json",
+        "T-243-columns-from-row-spans.json",
+        "T-244-face-bond-class-residues.json",
         "T-25-window-resynthesis.json",
         "T-3-stroke-and-blocking-force.json",
         "T-30-flexure-end-joint.json",

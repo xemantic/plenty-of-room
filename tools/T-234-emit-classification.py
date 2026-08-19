@@ -71,6 +71,11 @@ CORRECTING = {
     # this set goes stale within the iteration that writes it, every time.
     "gpd/claims/C-0146-coupled-cells-at-the-two-length-raster.md",
     "gpd/claims/C-0147-honeycomb-turn-slack-and-ragged-face.md",
+    # Iteration 36, and CH-0182 for the fourth consecutive time.  C-0148 settles the honeycomb
+    # face's bond-class residues and derives the crossover-column count from the ROW spans
+    # (T-244/T-243); its `112 bp` is C-0146's restored ROW SPAN, which is the corrected reading
+    # and not the withdrawn uniform tile width the WIDTH family cannot tell it apart from.
+    "gpd/claims/C-0148-face-bond-class-residues-and-row-span-columns.md",
 }
 #: Synthesis claims: an occurrence there records what a past deliverable pass carried in.
 SYNTHESIS = {
@@ -81,6 +86,10 @@ SYNTHESIS = {
     # CORRECTING because it records what past passes carried in as well as correcting it --
     # and because CH-0182 is exactly the observation that these sets go stale within one iteration.
     "gpd/claims/C-0145-eighth-answers-synthesis.md",
+    # Iteration 36: the ninth pass, for the same reason as the eighth -- it quotes p8064 and the
+    # withdrawn footprints in order to say what replaced them.  Added here in the same iteration
+    # it was written, which is CH-0182's observation happening for the third consecutive time.
+    "gpd/claims/C-0149-ninth-answers-synthesis.md",
 }
 #: Token collisions -- the statement is not about the four-layer line at all.
 OUT_OF_SCOPE_FILES = {

@@ -348,4 +348,132 @@ class ResultRoundingTest {
         assert(coerced.getValue("paths") == JsonPrimitive(45.0))
         assert(coerced.getValue("stiffness") == JsonPrimitive(1.23456789))
     }
+
+    // -----------------------------------------------------------------------------------------
+    // `T-225`/`C-0150` — the SPELLING set, and the twelve fields that must not be swept
+    //
+    // `CH-0169`: `DEPARTURE_SPELLINGS`'s KDoc said *"every spelling the corpus uses"* and named
+    // four; a shape census of `gpd/results/` finds fourteen more candidates inside a
+    // `DEPARTURE_RECORDS` record. Eight of them ARE the rule's quantity under another name and
+    // six are not — and the six are not excluded by taste. Two are a `log10` of a residual, one
+    // is a convergence ORDER derived from two of them, one is a LENGTH in nm carrying a decision,
+    // and two are ABSOLUTE residuals in the solved quantity's own scale. The exclusions carry the
+    // mutation coverage that stops the set being widened by pattern next time.
+
+    @Test
+    fun `gate 3 symmetry - every in-scope spelling should be reached by the baseline in both records`() {
+        // Fails if the set is narrowed back to `T-214`'s four. One assertion per (record,
+        // spelling) pair, which is what makes the narrowing loud rather than silent.
+        val inScope = setOf(
+            "relativeError", "relativeSpread", "relativeMovement", "multiplierDeparture",
+            "gradientDeparture", "firstIntegralRelativeSpread", "firstIntegralCoreSpread",
+            "centrelineRouteSpread"
+        )
+        assert(DEPARTURE_SPELLINGS.containsAll(inScope))
+        for (record in DEPARTURE_RECORDS) {
+            for (spelling in inScope) {
+                val document = Json.parseToJsonElement(
+                    """{"$record":[{"$spelling":5.36821841e-6}]}"""
+                )
+                assert(
+                    document.roundedForResult(floor = 0.0).jsonObject
+                        .getValue(record).jsonArray[0].jsonObject
+                        .getValue(spelling) == JsonPrimitive(5.4e-6)
+                )
+            }
+        }
+    }
+
+    @Test
+    fun `gate 4 numerical convergence - the rule should not reach a LOGARITHM of a residual`() {
+        // `T-1d` emits `residual` and `coverageError` as exactly `0.0` — `RESULT_ABSOLUTE_FLOOR`
+        // reaches them — and carries their information in the EXPONENT instead. Two significant
+        // digits on `-11.0931` is `-11`, which is a residual of `1e-11` where the solve produced
+        // `8.07e-12`: the rule's own instrument would move the quantity it protects by 24 %, and
+        // the three-row node-spacing axis (-11.0931, -11.0912, -11.0906) would collapse to one
+        // constant. This is the arithmetic, asserted, rather than the argument.
+        assert(roundForResult(-11.0931, digits = 2, floor = 0.0) == -11.0)
+        val trueResidual = 1e-11 * kotlin.math.exp(-0.0931 * kotlin.math.ln(10.0))
+        assert((1e-11 / trueResidual) > 1.23)
+        for (record in DEPARTURE_RECORDS) {
+            for (spelling in listOf("residualExponent", "coverageErrorExponent", "observedOrder")) {
+                assert(spelling !in DEPARTURE_SPELLINGS)
+                val document = Json.parseToJsonElement(
+                    """{"$record":[{"$spelling":-11.0931}]}"""
+                )
+                assert(
+                    document.roundedForResult(floor = 0.0).jsonObject
+                        .getValue(record).jsonArray[0].jsonObject
+                        .getValue(spelling) == JsonPrimitive(-11.0931)
+                )
+            }
+        }
+    }
+
+    @Test
+    fun `gate 1 dimensional consistency - the rule should not reach a LEVEL or an ABSOLUTE residual`() {
+        // `T-117`'s `worstResidual` is *the binding link's distance from the measured 0.60-0.70 nm
+        // step* — a LENGTH, in the locked units, carrying the decision `covalent = residual <= 0`,
+        // and sitting beside the record's own dimensionless `departure`, which is already at two
+        // digits. `T-1d`'s `residual` and `coverageError` are ABSOLUTE residuals in the solved
+        // quantity's own scale. A departure is a RELATIVE comparison of two computations of one
+        // quantity; these are not, and the rule must leave all three where they are.
+        for (record in DEPARTURE_RECORDS) {
+            for (spelling in listOf("worstResidual", "residual", "coverageError")) {
+                assert(spelling !in DEPARTURE_SPELLINGS)
+                val document = Json.parseToJsonElement(
+                    """{"$record":[{"$spelling":0.249373451}]}"""
+                )
+                assert(
+                    document.roundedForResult(floor = 0.0).jsonObject
+                        .getValue(record).jsonArray[0].jsonObject
+                        .getValue(spelling) == JsonPrimitive(0.249373451)
+                )
+            }
+        }
+    }
+
+    @Test
+    fun `gate 3 symmetry - the record qualifier should still protect a study whose ANSWER carries an in-scope spelling`() {
+        // The reason `CH-0169` refused to sweep `relativeMovement`: `P-18`'s
+        // `brush/DeterminedPrecisionStudy` declares it at THREE digits because it is that study's
+        // own answer — the number that decides how many digits everything else carries. The
+        // record qualifier is what makes the widening safe: `P-18` does not emit it inside a
+        // `reproductions` or `convergence` record, and `T-108`, `T-182` and `T-189` do.
+        val document = Json.parseToJsonElement(
+            """{"quantities":[{"relativeMovement":3.30000004e-13}],""" +
+                    """"collars":[{"centrelineRouteSpread":0.000430063133}],""" +
+                    """"forces":[{"firstIntegralCoreSpread":0.000282217766}]}"""
+        )
+        val rounded = document.roundedForResult(floor = 0.0).jsonObject
+        assert(
+            rounded.getValue("quantities").jsonArray[0].jsonObject
+                .getValue("relativeMovement") == JsonPrimitive(3.30000004e-13)
+        )
+        assert(
+            rounded.getValue("collars").jsonArray[0].jsonObject
+                .getValue("centrelineRouteSpread") == JsonPrimitive(0.000430063133)
+        )
+        assert(
+            rounded.getValue("forces").jsonArray[0].jsonObject
+                .getValue("firstIntegralCoreSpread") == JsonPrimitive(0.000282217766)
+        )
+    }
+
+    @Test
+    fun `gate 5 literature cross-check - a study's own measured per-key precision should still win inside a departure record`() {
+        // `T-160` declares `"centrelineRouteSpread" to 3` at its own emission site, having
+        // MEASURED it. A baseline that could not be overridden would silently demote a study's own
+        // measurement, which is the failure `C-0131` refused the leaf-keyed default for. A
+        // `record/spelling` entry from the caller still beats the baseline.
+        val document = Json.parseToJsonElement(
+            """{"convergence":[{"centrelineRouteSpread":0.000430063133}]}"""
+        )
+        assert(
+            document.roundedForResult(
+                digitsByKey = mapOf("convergence/centrelineRouteSpread" to 3), floor = 0.0
+            ).jsonObject.getValue("convergence").jsonArray[0].jsonObject
+                .getValue("centrelineRouteSpread") == JsonPrimitive(0.00043)
+        )
+    }
 }

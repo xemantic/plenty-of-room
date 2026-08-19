@@ -1,8 +1,12 @@
 # DECISIONS-FOR-NDI
 
-~~Six~~ **Seven** decisions this programme cannot make for itself.
+~~Six~~ ~~**Seven**~~ **Eight** decisions this programme cannot make for itself.
 Six were sent on 2026-08-18 and all six came back in one pass;
-the seventh is §7, raised in iteration 26, and it is the one question here still outstanding.
+the seventh is §7, raised in iteration 26 and **re-posed as 7a/7b in iteration 35**;
+the **eighth is §8, raised in iteration 36** ([`T-242`](TASKS.md),
+[`C-0146`](gpd/claims/C-0146-coupled-cells-at-the-two-length-raster.md)) —
+*which of two width readings of the same folded block is the one §3's `40 × 40 nm` names.*
+**Those are the questions here still outstanding.**
 
 > **ALL SIX OF THE SIX THAT WERE SENT ARE ANSWERED — 2026-08-18, Jeremy Barton (NDI), by email through Kazik.**
 > The answers are quoted verbatim in the block below and again in each section,
@@ -49,6 +53,8 @@ and this file is the reviewable form of the same six.~~
 **CORRECTED, iteration 27.** All six of those rows now read **ANSWERED** in [`TASKS.md`](TASKS.md); none is live.
 The seventh is carried in the queue as *Open questions for Kazik* item 12 rather than as a task row of its own,
 its analysis task `T-199` being closed.
+**The eighth is item 13, and it has a task row too — `T-242` — because unlike the seventh it was raised as a
+task and not as a recommendation against itself.**
 
 ## The answers, and the three things that matter more than the answers
 
@@ -144,8 +150,19 @@ what has been established either way, the options with their consequences,
 what the programme would recommend and on what grounds,
 and **what it costs to leave it open** — which is the part that is easy to miss.
 
-**A one-sentence answer is enough for all six.**
-None needs a document; three of them need a single word.
+~~**A one-sentence answer is enough for all six.**
+None needs a document; three of them need a single word.~~
+**WITHDRAWN AS A FRAMING, iteration 36 — and the withdrawal is the lesson, not the count.**
+All six were answered in one pass and **three of them came back in a shape this document had not offered**:
+a *price* (decision 1 — *"pushing a parameter hard that I've been reserving"*),
+a *contingency on another decision* (decision 2 — the same reserve as decision 1),
+and an answer volunteered inside a **different** question (decision 6, answered inside decision 5).
+**The three that came back in the offered shape are the three with no cost dimension** — a material,
+a device count and a scaffold.
+A question whose admissible answers are enumerated cannot return the one that was not enumerated,
+and the missing shape is a **price**.
+So every question below now carries its price line **explicitly open**:
+*and if this costs something, what?*
 
 **UPDATED, iteration 26 — there is now a SEVENTH, and it is the only one this programme raised against its
 own recommendation.** Decisions 1–6 were answered on 2026-08-18 and the work they opened ran four claims
@@ -162,6 +179,15 @@ is the one that fits, and the default it offered is the one that overruns §3 by
 That is §7, and **the question there is superseded as posed** — what is left is a confirmation and a new question about
 the scaffold, not a trade.
 
+**UPDATED AGAIN, iteration 36 — there is now an EIGHTH, and it is the first that this programme has no
+recommendation for at all.** Decision 7's answer makes the tile a two-length honeycomb raster, and a
+two-length raster has **two true widths**: the 112 bp = 38.08 nm span every one of its rows has, and the
+116 bp = 39.44 nm box the folded block occupies. §3 states one number. The 3.57 % between them is a
+**1.36 nm inter-row stagger**, which no model in this repository can represent, so nothing here can break the
+tie — and it is worth **six flat coupled cells of eight against three**, through a crossover column decided by
+a 0.07 nm slack ([`C-0146`](gpd/claims/C-0146-coupled-cells-at-the-two-length-raster.md),
+[`CH-0185`](gpd/challenges/CH-0185-a-bounding-box-crossover-column.md)). That is §8.
+
 **Nothing here is measured.** Every number is TRL 1–3:
 model-consistent and traceable to a claim, never empirically demonstrated.
 
@@ -176,6 +202,7 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 | 5 | What is the scaffold — linear or circular, M13 or synthetic, and how long? | `T-154` | A seam costs 6–12 of 34 arm stations, and §3's 40.0 nm is not a buildable seamless width | **A purpose-length scaffold**; the choice is a fabrication decision, not a modelling one | **CIRCULAR M13, ~7–8 k nt** — so the remainder is the DEFAULT — and the remedy for the excess is *"just make the tile thicker"* |
 | 6 | Does §3 admit a **two-layer** tile, or is single-layer a requirement? | `T-166` | The only coupling topology that narrows the flatness negative is multilayer, and it is the one motif here with a published precedent | **A yes/no is enough**; a *no* closes the last open recovery route | **YES, BY IMPLICATION**, and volunteered rather than granted. Reopens the body axis (`T-191`), not the coupling axis |
 | **7** | ~~**NEW — is a 38 × 25 nm tile acceptable, in exchange for removing the last unmeasured dependency?**~~ **SUPERSEDED AS POSED, iteration 35** (`C-0144` §4, on `C-0141`) — **RE-POSED as two questions: confirm `10 × 6`, and name the scaffold** (§7) | item 12 of the queue's questions for Kazik — the only row here whose owner column names a decision rather than a task, its analysis having closed in iteration 25 (§7) | ~~Carrying the interlayer-coupling calibration as a live dependency on the flatness verdict, and the coupled result at 1 of 8 cells rather than 8 of 8~~ — **the cost of deferring has REVERSED SIGN**: the tile this question offered as its *default*, `15 × 4`, is **1.40084263×** §3's footprint, **fails** `T-5b` at the measured band's adverse end (**0.101759944**) and is **0 of 8** coupled cells at both ends of that band | ~~**`10 × 6` on both flatness and published folding yield — but the footprint is a specification and only NDI holds that column**~~ **`10 × 6` on all THREE criteria this programme can rank — flatness, published folding yield and now footprint, which is 0.929467162 of §3's. There is no trade left to weigh** | *raised iteration 26; **superseded as posed and re-posed iteration 35**; awaiting* |
+| **8** | **NEW — which width reading is the Gen-1 tile SPECIFIED to: the 112 bp = 38.08 nm span every one of its rows has, or the 116 bp = 39.44 nm box the folded block occupies?** (§8) | `T-242`, and item 13 of the queue's questions for Kazik | The two readings are **3.57 %** apart and the difference is a **stagger**, not a length. Deferring means a four-layer flatness verdict decided by a **0.07 nm** slack against a numerical guard — **6 flat cells of 8 against 3** (`C-0146`, `CH-0185`) — and every plan margin in the corpus quoted at whichever width its author happened to take | **None. This programme cannot rank them**, because no model here has a per-row row length and both readings are true of the same object. What it can do is say what each costs, and ask **what a `1.36 nm` stagger costs NDI** | *raised iteration 36; awaiting* |
 
 ---
 
@@ -302,9 +329,18 @@ not an output of the model.
 - ~~**It costs nothing.**~~ **It costs nothing THIS PROGRAMME CAN SEE — corrected 2026-08-18, and the
   answer is what corrected it.** `C-0007` puts the layer's buffer sensitivity at **≤ 0.4 %** of the modulus,
   so the window edges, the chain length, the stroke and the chemistry are all unchanged.
-- **The obvious escape is priced and fails.** The adverse mounting is 42.4–61.0 pN/nm, past
-  `C-0023`'s 40 pN/nm compliance ceiling at **0 of 8** lengths. A shorter standoff lands 2.2 % short
+- **The obvious escape is priced and fails.** The adverse mounting is ~~42.4–61.0~~ **42.38–61.04** pN/nm, past
+  ~~`C-0023`'s 40 pN/nm compliance ceiling~~ at **0 of 8** lengths. A shorter standoff lands 2.2 % short
   at ℓ = 5 nm and is excluded by the 10 pN unzip allowable at ℓ = 4 nm.
+  **CORRECTED TWICE, iteration 36, and the verdict survives both times on a different ground.**
+  *(i)* `42.4–61.0` is `C-0032`'s **42.38–61.04** rounded, and `C-0067` found and repaired exactly that token
+  in `ANSWERS.md` **in iteration 12** — it stood here for twenty-four iterations because this file had no
+  checker until `C-0115` gave it one, which is `CLAUDE.md`'s *a checker's default is part of its logic*.
+  *(ii)* **`C-0023`'s 40 pN/nm ceiling has been withdrawn** ([`C-0049`](gpd/claims/C-0049-compliance-ceiling-stroke.md)):
+  it is exactly `1.2 × (100 pN / 3 nm)`, so it carries the *acceptable* clause's stroke inside it and is
+  3.33× too generous when read at the desired one.
+  **The adverse mounting still fails, and it fails on `C-0035`'s ground instead** — both adverse mountings
+  cannot place §3's own effort point at all. `ANSWERS.md` §1 carries both corrections and this file did not.
 
 ~~**The alternative if the answer is "hold 2 mM".** `T-50` — a beyond-mean-field treatment of the
 actuated gap, costed at **1–3 weeks of primitive-model Monte Carlo** in a regime `C-0005` reports has
@@ -737,7 +773,9 @@ so *"cannot be scoped"* was already false when it was written. What deferring co
 > **The honest caveat is that a thicker tile is not free anywhere else**: it carries more charge into the
 > actuated gap (`C-0022`), it is a different body for `C-0004`'s drainage, its dropout statistics are measured
 > on a *single-layer* Rothemund rectangle (`C-0087`), and `C-0093` already found that a *buildable* four-layer
-> body reads **0.100166871** where the rigid limit reads 0.0344 — so body rigidity is first order and a *yes*
+> body reads **0.100166871** where the rigid limit reads ~~0.0344~~ **0.0344013403** (`C-0093`, `C-0116`;
+> **restored to full width, iteration 36** — `C-0115` repaired this same truncation in `ANSWERS.md`
+> and the instance here survived it) — so body rigidity is first order and a *yes*
 > opens work rather than delivering a win.
 > **That 0.100166871 is under [`CH-0125`](gpd/challenges/CH-0125-the-four-layer-brick-is-mis-specified-in-three-ways.md), raised by `C-0109` and OPEN**, which names
 > *"`DECISIONS-FOR-NDI.md` (twice)"* as a carrier and says it should not be re-quoted without the challenge.
@@ -828,7 +866,7 @@ thing that could move the answer, and this paragraph said it was.
 | | `15 × 4` — what §7 offered as the default | `10 × 6` — what §7 charged a footprint for |
 |---|---|---|
 | footprint, across the helices | **56.524 nm — 1.40084263× §3's 40.35** | **37.504 nm — 0.929467162 of it** |
-| footprint, along the helices | the row length is **not uniform** — `C-0140`; design (i)'s remedy is 112 / 108 bp, an axial extent of **39.44 nm**, `−1.40 %` of §3's nominal | the same alternation (**29 / 29**); its own two row lengths are not derived here |
+| footprint, along the helices | the row length is **not uniform** — `C-0140`; design (i)'s remedy is 112 / 108 bp, an axial extent of **39.44 nm**, `−1.40 %` of §3's nominal | the same alternation (**29 / 29**); ~~its own two row lengths are not derived here~~ **the same 112 / 108 pair, derived iteration 35** (`C-0146` grades the whole `10 × 6` coupled family at it; `C-0147` finds the **identical** 4 / 8 bp faces and 116 bp extent on it, the alternation being a property of the turn sense and not of the block's shape). **And the extent is a STAGGER, not a length — see §8** |
 | folding, measured by Douglas et al. | sharp monomer band, 1 of 3 of seven | **the greatest fraction of defect-free objects** |
 | free tile, uncoupled | **0.0978155002** of the stroke | **0.0240648102** |
 | interlayer-coupling threshold | **`f` = 0.276970522 — INSIDE the measured 0.26–0.33 band** | none — flat at every `f` including 0 |
@@ -857,12 +895,77 @@ default — **is** the difference between the scaffold length and the tile's 6 7
 number under each reading: `C-0125` gives **529 / 840 / 1 344 nt** for M13mp18's 7 249, p7560 and p8064.
 If the main text governs, design (i) is a p7560 design and its remainder is **0** rather than **1 344 nt**.
 
+**And the scaffold's turn allowance is a CHOICE, not a constraint — which is what decides between the two
+routes** ([`C-0147`](gpd/claims/C-0147-honeycomb-turn-slack-and-ragged-face.md), `T-230`).
+The caDNAno blocks spend **28 unpaired nucleotides** per raster turn. The **reach** bound is **6**: `n`
+unpaired nucleotides make `n + 1` phosphodiester steps, the two anchoring phosphates of a worst-azimuth turn
+are at most `d + 2r_P` = **4.35327572 nm** apart, and on `T-71`'s **measured** backbone step six nucleotides
+reach that. **28 is 4.66666667× its own bound.**
+**But the minimum is a CRITERION, not a number**, and the criteria bracket rather than agree — reach **6**,
+the 10 pN unzip allowable **8–9**, one `k_BT` of stored free energy **16–22**, one piconewton of turn tension
+**29–41** — and the built 28 lands **inside** that bracket, at **1.00195245–1.46667915 pN** and
+**0.518481856–0.7570064 `k_BT`**, i.e. sub-thermal and about one piconewton. A slack turn is what 28 buys.
+
+> **So *"the widest four-layer tile is 92 bp = 31.28 nm"* is a ceiling on ONE published allowance, not on the
+> route.** At the reach bound the widest uniform row M13 pays for is **114 bp = 38.76 nm**.
+
+**What M13 actually affords is exactly EIGHT nucleotides**: `60 × (112 + L) ≤ 7 249` gives `L ≤ 8`.
+So a **uniform** 112 bp row — the route that needs no two-length raster and no ragged face at all — **fits, by
+two nucleotides**, and fits only **strained**: an 8 nt turn sits at **0.777–0.837 of its own contour** and
+carries **6.54349121–12.112167 pN**, at or past the 10 pN unzip allowable at the tight end of the ssDNA Kuhn
+bracket, for **139–220 `k_BT`** over the block's 59 turns. `C-0140`'s recommendation of the two-length route
+therefore **stands on a better reason than it had**: not that the uniform route does not fit, but that it fits
+only strained. **p8064 removes the question**, affording **22 nt**, inside the one-`k_BT` band at both ends of
+the bracket — which is a second reason 7b matters.
+
+**And the yield half is DECLARED UNPRICEABLE.** No published measurement relates a scaffold **turn-loop
+length** to folding yield; the three nearest are on different axes (Ke et al.'s 8 bp staple domain, Rothemund's
+scaffold **linearisation**, Strauss et al.'s per-**staple** incorporation), and the only measured point on this
+axis is the built blocks themselves. **The threshold is quoted instead: 8 nt.** At or below it a uniform 112 bp
+row fits M13; above it it does not. That is the number a folding experiment would have to bracket, and this
+programme cannot supply it.
+
 **And the tile has no single row length.** `C-0140` proves a honeycomb x-raster carries **both** turn senses, so
 there is no uniform honeycomb row length at all: design (i) ends at **30 helices in one sense and 28 in the
 other**, and the remedy costs 3 base pairs — **112 / 108 bp, an axial extent of 116 bp = 39.44 nm, `−1.40 %`
-of §3's nominal**, which beats the square lattice's `−4.80 %`. `10 × 6` carries the same alternation (**29 / 29**);
-its own two row lengths are not derived here.
-**So every `38.08 × …` in the analysis below is a withdrawn width.**
+of §3's nominal**, ~~which beats the square lattice's `−4.80 %`~~. **THAT COMPARISON IS CROSS-CONVENTION
+([`CH-0191`](gpd/challenges/CH-0191-a-width-advantage-across-two-conventions.md), iteration 36): 39.44 nm is a
+BOUNDING BOX and the square lattice's 38.08 nm is a ROW LENGTH.** A uniform square-lattice raster has no
+stagger, so its two readings coincide; the honeycomb's do not. Read on the **row length** the honeycomb's rows
+are **112 bp = 38.08 nm — exactly the square lattice's, so the advantage is EXACTLY ZERO**; read on the
+**bounding box** the honeycomb wins by **1.36 nm**, and that 1.36 nm **is the stagger**, i.e. it wins by being
+ragged. `10 × 6` carries the same alternation (**29 / 29**);
+~~its own two row lengths are not derived here.~~
+**They are, iteration 35 — the same 112 / 108 pair** ([`C-0146`](gpd/claims/C-0146-coupled-cells-at-the-two-length-raster.md),
+[`C-0147`](gpd/claims/C-0147-honeycomb-turn-slack-and-ragged-face.md)): `C-0146` grades the whole `10 × 6`
+coupled family at it, and `C-0147` finds the **identical** 4 bp front face, 8 bp rear face and 116 bp extent on
+`10 × 6` as on `15 × 4` — the raggedness being a property of the honeycomb's turn-sense alternation and not of
+the block's shape.
+~~**So every `38.08 × …` in the analysis below is a withdrawn width.**~~
+**RESTATED, iteration 36** (`C-0146` §1): **38.08 nm is not withdrawn — it is one of two readings of the same
+block, and it is the one every raster row actually has.** Every x-raster row of the block spans **112 bp =
+38.08 nm exactly**, at all ten rows and at **every one** of `C-0140`'s five candidate pairs; the 116 bp extent
+exceeds it by exactly a **4 bp = 1.36 nm inter-row STAGGER**, which no plate model in this repository can
+represent. **Which of the two §3 names is decision 8, below.**
+
+**And the 4 bp raggedness that follows costs §3's flatness EXACTLY NOTHING**
+([`C-0147`](gpd/claims/C-0147-honeycomb-turn-slack-and-ragged-face.md), `T-231`).
+A four-layer block's **gap-facing** surface is the outermost layer's sidewalls; a row length moves where a
+helix **ends**, which is a coordinate in the tile plane at right angles to the gap. **So the two ragged faces
+are the tile's RIM, the coefficient of the raggedness on the normal-direction flatness field is exactly zero,
+and `T-5b`'s convention cannot read it at all.** The residual channel — a 2-row rim modulation at **7.608 nm**
+against across-helix bending lengths of **17.2310927** (`15 × 4`) and **23.2114857 nm** (`10 × 6`) — is bounded
+at **5.54399427e−05** and **1.68371917e−05** of the stroke, against the **0.0274976866** of headroom the
+tightest flat coupled cell has: a margin of **496×**, consuming at most **0.2016 %** of it.
+**What the raggedness does cost is plan budget**, and there it is not small: a 4 bp short row has **1.36 nm**
+less axial extent outboard of a fixed root plane, against a `C-0141` outboard ceiling that **saturates at
+2.380 nm** at 90 demanded paths — **0.571 of it**, and 0.036 at 10–15 paths.
+What it **buys** is a published anti-stacking geometry: 1.36 nm clears the all-atom PMF's attractive limb
+(0.65 nm) and its repulsive turn (1.30 nm), by **0.18 of a base-pair rise** — which by this project's own rule
+is not a quotable margin. **`CH-0187` is open on exactly that**: among all pairs that fit M13 the width optimum
+is **101 / 109 bp at `−0.55 %`**, with an 8 bp = 2.72 nm relief and **`+4.18` rises** of clearance, and it wins
+three of four axes. **112 / 108 wins only the plan budget, and only for a design that needs a saturated path
+count** — so anything quoting 112 / 108 as *the* honeycomb width must carry that condition.
 
 **What deferring costs, re-priced — and the sign has reversed.** Deferring used to mean carrying the
 interlayer-coupling calibration as a live dependency. It now means carrying a **default that overruns §3's
@@ -938,6 +1041,75 @@ coupled cells at both ends of that band. See the re-priced cost at the head of t
 **And if this costs something, what?** — the line decision 1 taught us to leave open.
 
 ---
+
+## 8. NEW — which width is the Gen-1 tile SPECIFIED to: the row length or the bounding box? (`T-242`)
+
+**RAISED, iteration 36.** It follows from decision 7's own answer, in the way decision 7 followed from
+decision 5's: once the tile is a **two-length honeycomb raster**, *"the tile is 38.08 nm along the helices"*
+and *"the tile is 39.44 nm along the helices"* are **both true of the same folded object**, and §3 states one
+number.
+
+**The question.** §3's parameter table says *"Tile footprint — 40 × 40 nm (test tiles up to ~70 × 100 nm)"*,
+with no convention attached — and **the tilde is on the test tiles, not on the nominal.**
+This programme has written that row as *"~40 × 40 nm"* throughout, which quietly supplies a tolerance §3 does
+not state; **§3 states the footprint without one**, which is what makes a 3.57 % ambiguity a question rather
+than a rounding.
+For a two-length raster there are two readings, and they are not the same tile:
+
+| reading | value | what it is |
+|---|---|---|
+| **row length** | **112 bp = 38.08 nm**, `−4.80 %` of 40.0 | the span **every one** of the block's x-raster rows actually has — at all ten rows, and at **every one** of `C-0140`'s five candidate length pairs |
+| **bounding box** | **116 bp = 39.44 nm**, `−1.40 %` of 40.0 | the axial extent the folded object occupies, i.e. the dimension a micrograph or an AFM trace measures |
+
+**The `3.57 %` between them is not a length. It is a `4 bp = 1.36 nm` inter-row STAGGER**
+([`C-0146`](gpd/claims/C-0146-coupled-cells-at-the-two-length-raster.md) §1):
+every raster row spans the **larger** of the two lengths exactly, and the block exceeds it by exactly the
+stagger — 3 to 8 bp across the candidate pairs. **A short helix is recessed inside its own row's window
+rather than shortening it** (`C-0147` reconciles the per-row and per-helix readings and they agree).
+
+**Why this programme cannot decide it.** Every plate and grillage model in this repository takes a single
+`lengthX`, so **the stagger is not representable at all** — not approximately, not coarsely. `C-0146` carries
+both readings and prefers neither, and `C-0146` §9 records the choice as a specification question in as many
+words. It is not a modelling gap that more work would close; it is a statement about which dimension of a
+staggered object the specification is a statement about.
+
+**What it is worth, so the question has a threshold.** It is **not** cosmetic, and the channel is the one
+nobody would guess: the crossover-column count. A 116 bp box clears **eleven** honeycomb crossover pitches by
+**0.07 nm** — one fifth of a base-pair rise — so `CrossoverLayout.EDGE_MARGIN` admits a **twelfth** column at
+its standing 0.05 nm and refuses it at half a rise. Under the measured staple dropout at the 90th percentile
+that one column is the difference between **six flat cells of eight and three**
+([`CH-0185`](gpd/challenges/CH-0185-a-bounding-box-crossover-column.md)); the row-length reading gives **four**.
+The recommended cell — one column, ten paths, equal springs on `10 × 6` — is flat at **all** of them
+(**0.0662801686** at twelve columns, **0.0708759349** at eleven, **0.0708859619** and **0.0754995025** at the
+measured band's adverse end), so **no recommendation turns on the answer; a margin does.**
+
+**The options, and what each costs.**
+
+| option | what it means | what it costs |
+|---|---|---|
+| **A — the row length, 38.08 nm** | §3's dimension is the span of a row; the block may protrude by the stagger | every plan margin in the corpus is quoted against a width **1.36 nm smaller** than the object's own extent, so a body placed to the specification can overhang it |
+| **B — the bounding box, 39.44 nm** | §3's dimension is the extent of the object | the flatness verdict inherits a crossover column decided by a **0.07 nm** slack against a numerical guard, which is `CH-0185` and is a defect to repair, not a result |
+| **C — specify the row length AND a stagger tolerance** | two numbers instead of one | nothing this programme can see; it is the only option under which both readings are stated rather than one inferred |
+| **D — require a uniform row** | no stagger exists | it is decision 7b's route B: it fits M13 by **two nucleotides** and only **strained**, at **6.54349121–12.112167 pN** per turn — at or past the 10 pN unzip allowable — unless the scaffold is p8064, which affords 22 nt and is itself **RE-POSED** as decision 7b (`CH-0180`) |
+
+**Programme's recommendation: none, and that is the honest answer.** Both readings are true of the same block
+and this repository has no model that can tell them apart. If pressed it would state **C**, because it is the
+only option that does not require a reader to infer which of two true numbers was meant — but that is a
+drafting preference, not a result.
+
+**And the price line is left explicitly open.** This programme can rank what an option **buys** and has no
+column at all for what it **costs** — `CLAUDE.md` records that lesson, and decision 1's answer taught it.
+So the question is asked with its price line open rather than as a menu:
+
+> **Which width is the Gen-1 tile specified to — the 112 bp = 38.08 nm row span, the 116 bp = 39.44 nm block
+> extent, or both with a stated stagger? And if this costs something — in metrology, in how a folded object is
+> accepted at the bench, or in a downstream drawing this programme cannot see — what?**
+
+**What deferring costs.** Every plan margin, every packing verdict and every four-layer flatness cell in the
+corpus is quoted at whichever of the two widths its author happened to take, and the two differ by 3.57 %.
+`T-243` is queued to derive the crossover-column count from the **row spans** rather than from `edgeX`, which
+removes the guard's vote but not the question.
+
 
 ## Two questions that were on this list and have been DISCHARGED
 

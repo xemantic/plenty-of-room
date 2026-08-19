@@ -1,0 +1,3073 @@
+{
+    "task": "T-244 - the honeycomb face's crossover bond-class residues, and the inter-row ladder offset",
+    "leaf": "A8.2",
+    "units": {
+        "length": "nm",
+        "axialPosition": "base pairs on one global z",
+        "residue": "base pairs modulo 21",
+        "angle": "degrees"
+    },
+    "conventions": {
+        "handedness": "B-DNA right-handed; viewed from +z the backbone azimuth increases counter-clockwise with z, so +7 bp advances it by +240 = -120 degrees (HoneycombRasterTurnSense's own sentence)",
+        "class": "the neighbour class increases as the azimuth decreases by 120 degrees; class zero is 330 on sublattice A and 150 on B, which are the two ends of ONE bond",
+        "residue": "a bond of class c carries staple crossovers at b0 + 7c and scaffold crossovers at b0 + 7c +- 5, all modulo 21",
+        "face": "the outward normal is +1 or -1 on x; a station is a crossover position on a free azimuth with a positive component along it",
+        "offset": "TwoLengthRaster.stationLattice's own parameterisation - even raster rows carry basePhase, odd rows basePhase + offset",
+        "phase": "measured from the block's own low axial plane, which is stationLattice's convention",
+        "properTransformation": "mirrored == axialReversed; a cross-section reflection alone is improper for a chiral object"
+    },
+    "parameters": {
+        "samePairPeriodBasePairs": "21",
+        "anyAzimuthStepBasePairs": "7",
+        "scaffoldOffsetBasePairs": "5",
+        "candidatePairs": "112 / 108, 101 / 109, 102 / 109, 112 / 109, 122 / 119",
+        "crossSections": "10 x 6, 15 x 4",
+        "phasesSwept": "21",
+        "offsetsSwept": "7, 14",
+        "primarySource": "gpd/data/T-151-sources/PMC2731887-fullTextXML.xml (a LITERATURE source, not a result-file input; this study reads no result file at all)"
+    },
+    "sources": [
+        "gpd/data/T-151-sources/PMC2731887-fullTextXML.xml - Douglas et al., Nucleic Acids Res. 37:5001 (caDNAno). READ DIRECTLY: the 21 bp pair period, the 7 bp class step and the +-5 bp scaffold offset are one paragraph of RESULTS AND DISCUSSION, quoted verbatim in HoneycombBondClassResidues.kt"
+    ],
+    "citedInputs": [
+        "C-0140 - the honeycomb x-raster path, its turn senses and its level walk, consumed unmodified",
+        "C-0141 - the cross-section, the face census and the 21 bp ladder",
+        "C-0136 - the admissible row-length residues N = 7d + {0, 10, 11} mod 21, re-derived here as a cross-check",
+        "C-0146 / CH-0184 - the 42-cell (phase, offset) census this reproduces before reading anything new"
+    ],
+    "cheapBound": {
+        "whatItSaid": "Three numbers out of one paragraph of the caDNAno paper settle the offset before any sweep: a class step is 7 bp, a pair repeats at 21 bp, and the face's two sublattices carry their free azimuth on classes 0 and 1. The offset is therefore ONE class step, 7 bp of residue, and the raster's own row parity decides its sign: 14 bp. The same paragraph's +-5 bp scaffold rule then over-determines the phase, and that is what showed that C-0140's recommended length pair does not close at all.",
+        "cost": "integer arithmetic; no solve, no mesh, no sampling",
+        "offsetBasePairs": "14",
+        "closingPairsOfFive": "1",
+        "determinedPhase": "16",
+        "stationsAtTheDeterminedPhase": "55"
+    },
+    "bondClasses": [
+        {
+            "sublattice": "A",
+            "azimuthDegrees": 90.0,
+            "neighbourClass": 2,
+            "stapleResidueAtClassZeroFive": 19,
+            "scaffoldResiduesAtClassZeroFive": [
+                3,
+                14
+            ],
+            "partnerSublattice": "B",
+            "partnerAzimuthDegrees": 270.0,
+            "partnerNeighbourClass": 2
+        },
+        {
+            "sublattice": "A",
+            "azimuthDegrees": 210.0,
+            "neighbourClass": 1,
+            "stapleResidueAtClassZeroFive": 12,
+            "scaffoldResiduesAtClassZeroFive": [
+                7,
+                17
+            ],
+            "partnerSublattice": "B",
+            "partnerAzimuthDegrees": 30.0,
+            "partnerNeighbourClass": 1
+        },
+        {
+            "sublattice": "A",
+            "azimuthDegrees": 330.0,
+            "neighbourClass": 0,
+            "stapleResidueAtClassZeroFive": 5,
+            "scaffoldResiduesAtClassZeroFive": [
+                0,
+                10
+            ],
+            "partnerSublattice": "B",
+            "partnerAzimuthDegrees": 150.0,
+            "partnerNeighbourClass": 0
+        },
+        {
+            "sublattice": "B",
+            "azimuthDegrees": 270.0,
+            "neighbourClass": 2,
+            "stapleResidueAtClassZeroFive": 19,
+            "scaffoldResiduesAtClassZeroFive": [
+                3,
+                14
+            ],
+            "partnerSublattice": "A",
+            "partnerAzimuthDegrees": 90.0,
+            "partnerNeighbourClass": 2
+        },
+        {
+            "sublattice": "B",
+            "azimuthDegrees": 30.0,
+            "neighbourClass": 1,
+            "stapleResidueAtClassZeroFive": 12,
+            "scaffoldResiduesAtClassZeroFive": [
+                7,
+                17
+            ],
+            "partnerSublattice": "A",
+            "partnerAzimuthDegrees": 210.0,
+            "partnerNeighbourClass": 1
+        },
+        {
+            "sublattice": "B",
+            "azimuthDegrees": 150.0,
+            "neighbourClass": 0,
+            "stapleResidueAtClassZeroFive": 5,
+            "scaffoldResiduesAtClassZeroFive": [
+                0,
+                10
+            ],
+            "partnerSublattice": "A",
+            "partnerAzimuthDegrees": 330.0,
+            "partnerNeighbourClass": 0
+        }
+    ],
+    "closure": [
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                4,
+                14,
+                15
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                6,
+                7,
+                17
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                20
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                1,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                3,
+                4,
+                14
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                17,
+                18
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 8
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 8
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                4,
+                14,
+                15
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                6,
+                7,
+                17
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                20
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                1,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                3,
+                4,
+                14
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 8
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                17,
+                18
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 8
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                1,
+                10,
+                11,
+                12
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 34
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                9,
+                10,
+                11,
+                20
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 34
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                2,
+                3,
+                4,
+                13,
+                14
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 34
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                8,
+                17,
+                18,
+                19
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 34
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                1,
+                10,
+                11,
+                12
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 34
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                9,
+                10,
+                11,
+                20
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 34
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                2,
+                3,
+                4,
+                13,
+                14
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 34
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                8,
+                17,
+                18,
+                19
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 34
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                1,
+                10,
+                11,
+                12
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 29
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                9,
+                10,
+                11,
+                20
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 29
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                2,
+                3,
+                4,
+                13,
+                14
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 29
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                8,
+                17,
+                18,
+                19
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 29
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                1,
+                10,
+                11,
+                12
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 29
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                9,
+                10,
+                11,
+                20
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 29
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                2,
+                3,
+                4,
+                13,
+                14
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 29
+        },
+        {
+            "senseOneBasePairs": 101,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                8,
+                17,
+                18,
+                19
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 29
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                5
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                11
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                16
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                3,
+                14
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                19
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                18
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                2
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                11
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                16
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                5
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                4,
+                14
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                9
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                17
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                12
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                5
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                11
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                16
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                3,
+                14
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                19
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                18
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                2
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                11
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                16
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                5
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                4,
+                14
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                9
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                17
+            ],
+            "closes": true,
+            "classZeroResidueCandidates": [
+                12
+            ],
+            "offRuleCrossovers": 0
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                3,
+                13,
+                14
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                8,
+                18
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                1,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                20
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                3,
+                4,
+                14
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                17,
+                18
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 8
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 8
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                3,
+                13,
+                14
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                8,
+                18
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                1,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                20
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                3,
+                4,
+                14
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 8
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                17,
+                18
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 8
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                1,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                20
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                3,
+                4,
+                14
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                17,
+                18
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                3,
+                13,
+                14
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                8,
+                18
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 10
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                1,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 7
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                20
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 7
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                3,
+                4,
+                14
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 8
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                17,
+                18
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 8
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 8
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                0,
+                10,
+                11
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 8
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                3,
+                13,
+                14
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 7
+        },
+        {
+            "senseOneBasePairs": 122,
+            "senseTwoBasePairs": 119,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "rasterCrossovers": 59,
+            "distinctReducedResidues": [
+                7,
+                8,
+                18
+            ],
+            "closes": false,
+            "classZeroResidueCandidates": [],
+            "offRuleCrossovers": 7
+        }
+    ],
+    "offsets": [
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "10 x 6",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": 1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": false,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": 1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": false,
+            "faceNormalX": -1,
+            "properTransformation": false,
+            "interRowOffsetBasePairs": 7
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": 1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        },
+        {
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "crossSection": "15 x 4",
+            "firstAxialSign": -1,
+            "mirrored": true,
+            "axialReversed": true,
+            "faceNormalX": -1,
+            "properTransformation": true,
+            "interRowOffsetBasePairs": 14
+        }
+    ],
+    "determined": [
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "classZeroResidue": 5,
+            "blockLowBasePairs": -109,
+            "blockHighBasePairs": 7,
+            "ladderPhaseBasePairs": 16,
+            "interRowOffsetBasePairs": 14,
+            "stationsPerRow": [
+                5,
+                6,
+                5,
+                6,
+                5,
+                6,
+                5,
+                6,
+                5,
+                6
+            ],
+            "stationsOnFace": 55,
+            "stationsAtSaturation": 60,
+            "sparsestRow": 5,
+            "bestOverThePhaseSweep": 55,
+            "determinedPhaseIsOptimal": true
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "classZeroResidue": 5,
+            "blockLowBasePairs": -109,
+            "blockHighBasePairs": 7,
+            "ladderPhaseBasePairs": 16,
+            "interRowOffsetBasePairs": 14,
+            "stationsPerRow": [
+                5,
+                6,
+                5,
+                6,
+                5,
+                6,
+                5,
+                6,
+                5,
+                6,
+                5,
+                6,
+                5,
+                6,
+                5
+            ],
+            "stationsOnFace": 82,
+            "stationsAtSaturation": 90,
+            "sparsestRow": 5,
+            "bestOverThePhaseSweep": 82,
+            "determinedPhaseIsOptimal": true
+        }
+    ],
+    "census": [
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 0,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 1,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 2,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 3,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 4,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 5,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 6,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 7,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 8,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 9,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 10,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 11,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 12,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 13,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 14,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 15,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 16,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 17,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 18,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 19,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 20,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 0,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 1,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 2,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 3,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 4,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 5,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 6,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 7,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 8,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 9,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 10,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 11,
+            "stationsOnFace": 60
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 12,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 13,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 14,
+            "stationsOnFace": 55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 15,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 16,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 17,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 18,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 19,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 20,
+            "stationsOnFace": 50
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 0,
+            "stationsOnFace": 82
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 1,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 2,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 3,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 4,
+            "stationsOnFace": 83
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 5,
+            "stationsOnFace": 83
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 6,
+            "stationsOnFace": 83
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 7,
+            "stationsOnFace": 83
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 8,
+            "stationsOnFace": 83
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 9,
+            "stationsOnFace": 83
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 10,
+            "stationsOnFace": 83
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 11,
+            "stationsOnFace": 83
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 12,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 13,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 14,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 15,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 16,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 17,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 18,
+            "stationsOnFace": 82
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 19,
+            "stationsOnFace": 82
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 7,
+            "basePhaseBasePairs": 20,
+            "stationsOnFace": 82
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 0,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 1,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 2,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 3,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 4,
+            "stationsOnFace": 83
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 5,
+            "stationsOnFace": 83
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 6,
+            "stationsOnFace": 83
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 7,
+            "stationsOnFace": 83
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 8,
+            "stationsOnFace": 83
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 9,
+            "stationsOnFace": 83
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 10,
+            "stationsOnFace": 83
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 11,
+            "stationsOnFace": 90
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 12,
+            "stationsOnFace": 82
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 13,
+            "stationsOnFace": 82
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 14,
+            "stationsOnFace": 82
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 15,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 16,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 17,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 18,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 19,
+            "stationsOnFace": 75
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "interRowOffsetBasePairs": 14,
+            "basePhaseBasePairs": 20,
+            "stationsOnFace": 75
+        }
+    ],
+    "reproductions": [
+        {
+            "what": "CH-0184's 10 x 6 census at phase 0, offset 7",
+            "published": "55.0",
+            "here": "55.0",
+            "relativeDeparture": "0.0",
+            "reproduced": true
+        },
+        {
+            "what": "CH-0184's 10 x 6 census at phase 0, offset 14",
+            "published": "50.0",
+            "here": "50.0",
+            "relativeDeparture": "0.0",
+            "reproduced": true
+        },
+        {
+            "what": "CH-0184's saturating pairs, of 84 swept cells",
+            "published": "2.0",
+            "here": "2.0",
+            "relativeDeparture": "0.0",
+            "reproduced": true
+        },
+        {
+            "what": "C-0136's sense-1 row-length residues, summed",
+            "published": "42.0",
+            "here": "42.0",
+            "relativeDeparture": "0.0",
+            "reproduced": true
+        },
+        {
+            "what": "C-0136's sense-2 row-length residues, summed",
+            "published": "21.0",
+            "here": "21.0",
+            "relativeDeparture": "0.0",
+            "reproduced": true
+        },
+        {
+            "what": "C-0146's block extent at 112 / 108, base pairs",
+            "published": "116.0",
+            "here": "116.0",
+            "relativeDeparture": "0.0",
+            "reproduced": true
+        }
+    ],
+    "falsifiers": [
+        {
+            "name": "F1",
+            "statement": "the derived offset is not invariant under the raster's proper relabellings",
+            "fired": false,
+            "note": "proper readings give [14]; the improper mirror gives [7], which is the reflection of a chiral object with its own handedness left unreflected"
+        },
+        {
+            "name": "F2",
+            "statement": "the residue map fails to reproduce C-0136's {0, 10, 11} length rule",
+            "fired": false,
+            "note": "sense 1 [7, 17, 18], sense 2 [3, 4, 14]"
+        },
+        {
+            "name": "F3",
+            "statement": "CH-0184's census table is not reproduced",
+            "fired": false,
+            "note": "55 / 50 at phase 0 and exactly two saturating cells of 84"
+        },
+        {
+            "name": "F4",
+            "statement": "the ladder phase is free, so C-0141's 21-phase sweep is a sweep over buildable designs",
+            "fired": false,
+            "note": "the closing pair fixes the phase at [16]"
+        },
+        {
+            "name": "F5",
+            "statement": "C-0140's 112 / 108 raster satisfies the scaffold rule at every crossover",
+            "fired": false,
+            "note": "10 of 59 raster crossovers must be FORCED"
+        }
+    ],
+    "findings": {
+        "OFFSET": "The inter-row ladder offset is 14 bp, not 7. A face helix's free azimuth is class 0 on sublattice A (330 degrees) and class 1 on B (30 degrees), and a class step is 7 bp, so the two face parities' station ladders differ by exactly one class step. Which parity leads is fixed by the raster: the +x face helix of an EVEN row is B and of an ODD row is A, so odd rows lead even ones by -7 = 14 bp in TwoLengthRaster.stationLattice's own parameterisation. The value is [14] at every proper reading of 32 swept -- both cross-sections, both axial signs, both faces, and the proper rotation about y. C-0141 section 9's 'this repository cannot yet say which' is answered.",
+        "PHASE": "The ladder PHASE is not free either, and that is the larger half. A scaffold crossover sits 5 bp from its pair's staple position, so every raster crossover fixes a residue; one lattice constant b0 must serve them all, and where it does the station ladder is DETERMINED. At the one closing pair the phase is [16] and the face carries 55 of 60 stations, 5 and 6 alternating. C-0141's and C-0146's 21-phase sweep is therefore a sweep over ONE buildable design and twenty that are not.",
+        "CLOSURE": "C-0140's recommended 112 / 108 bp raster does NOT close: no b0 serves it, its reduced residues are [0, 10, 11] where at most two 10 apart are admissible, and 10 of 59 raster crossovers would have to be FORCED -- which caDNAno permits and warns 'may lead to folding failure'. Of C-0140's five candidate pairs exactly one closes, 102 / 109, and the closure verdict is identical at both cross-sections and all four (sign, mirror, datum) conventions.",
+        "SATURATION_WITHDRAWN": "CH-0184's saturating pair -- phase 11 at the 14 bp offset, 60 of 60 and 90 of 90 -- is reproduced here and is NOT a buildable design: it lives at 112 / 108, which does not close, and the phase that pair would need is not the phase the rule determines (2 or 13 depending on which near-miss b0 is taken). A six-column placement therefore does not stand.",
+        "CARDINALITY": "Both sublattices carry three azimuths and one residue each, so nothing here asks a parity to justify a count. The check is CH-0151's own and it is asserted rather than assumed."
+    },
+    "validity": [
+        "TRL 1-3. This is a LATTICE statement. No folded object is measured; what is read from the source is the design rule, and the arithmetic follows from it.",
+        "The +-5 bp scaffold rule is caDNAno's DEFAULT. The paper states that the user may force crossovers between any two scaffold bases, and warns that departure from the default rules 'may lead to folding failure if too much deviation from canonical DNA geometry is implied'. A non-closing raster is therefore buildable and off-rule, not impossible.",
+        "The half turn is 5.25 bp at 10.5 bp per turn and caDNAno writes 5. Every residue here inherits that rounding, which is the source's own.",
+        "The offset is a difference of two classes and contains no b0, so it survives a raster that does not close. The PHASE does not: where no b0 serves the raster, no phase is determined.",
+        "The census counts ONE face. The opposite face carries the same inventory pointing into the grafted layer.",
+        "Nothing here re-grades a tile. The flatness consequence of a station count is C-0142's and C-0146's and is not touched."
+    ],
+    "openQuestions": [
+        "Does a closing length pair exist that also saturates the station count? The three closing residue classes are (7, 14), (17, 3) and (18, 4) mod 21; only the third is among C-0140's five candidates, and the family has not been swept for the station census.",
+        "C-0147/CH-0187 re-open the length-pair selection on four axes; scaffold closure is a fifth, and it excludes 101 / 109 as well as 112 / 108.",
+        "Does the scaffold-crossover closure condition have a closed form in the two lengths? The sweep here is exhaustive over residues mod 21 and is not a proof."
+    ]
+}

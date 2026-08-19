@@ -113,17 +113,49 @@ const val DEPARTURE_SIGNIFICANT_DIGITS: Int = 2
 val DEPARTURE_RECORDS: Set<String> = setOf("reproductions", "convergence")
 
 /**
- * Every spelling the corpus uses for a departure **inside** a [DEPARTURE_RECORDS] record.
+ * The spellings **classified as** a departure inside a [DEPARTURE_RECORDS] record — a
+ * **judgement per name**, not a pattern, and `tools/T-225-census.py --check` is what keeps it
+ * complete.
  *
- * All four spellings a census of `gpd/results/` finds, rather than whichever one the last repair
- * happened to look at — which is exactly the failure mode [DEPARTURE_SIGNIFICANT_DIGITS] records.
+ * `T-225`/`CH-0169`. The four names `T-212` enumerated were introduced as *"every spelling the
+ * corpus uses"*, which is a **list**, and a list is a census that stopped: a shape census of
+ * `gpd/results/` finds **fourteen** further leaf keys of the same kind inside those two records.
+ * Eight of them are the rule's quantity under another name and are here; six are **not**, and
+ * they are excluded on stated grounds rather than on taste, because a mechanical widening would
+ * have been wrong on 21 fields in 3 files:
  *
- * `departureRatio`, `plateDeparture` and the like are deliberately **absent**: those are *ratios
- * between two models*, not a residual between two refinements of one, and they are determined to
- * the precision of the models themselves.
+ *  - `residualExponent`, `coverageErrorExponent` — a **`log₁₀`** of a residual. `T-1d` emits
+ *    `residual` and `coverageError` as exactly `0.0` (the floor reaches them) and carries their
+ *    information in the exponent instead; two digits on `−11.0931` is `−11`, i.e. a residual of
+ *    `1e−11` where the solve produced `8.07e−12`, and the three-row node-spacing axis collapses
+ *    to a constant.
+ *  - `observedOrder` — a **logarithm of a ratio** of two of them, and the *answer* of the
+ *    convergence axis. `CLAUDE.md` quotes it as `2.08–2.32`, `1.59` and `1.11`; at two digits the
+ *    file would say `2.1`, `2.3`, `1.6` and `1.1`.
+ *  - `worstResidual` — a **length in nm** (`T-117`: the binding link's distance from the measured
+ *    `[0.60, 0.70]` nm step), carrying the decision `covalent`, and sitting beside the record's
+ *    own dimensionless `departure`, which already obeys the rule.
+ *  - `residual`, `coverageError` — **absolute** residuals in the solved quantity's own scale, not
+ *    a relative comparison of two computations of it.
+ *
+ * `departureRatio` and `plateDeparture` remain absent for `T-212`'s reason: those are *ratios
+ * between two models*, determined to the precision of the models themselves.
  */
 val DEPARTURE_SPELLINGS: Set<String> = setOf(
-    "departure", "relativeDeparture", "departureFromFinest", "relativeDepartureInStroke"
+    // `T-212`'s four
+    "departure", "relativeDeparture", "departureFromFinest", "relativeDepartureInStroke",
+    // `T-225`'s eight: a RELATIVE comparison of two computations of one quantity, dimensionless
+    // by construction, zero in exact arithmetic, and therefore a field whose every digit is a
+    // property of the solve path rather than of the physics
+    "relativeError",                 // T-1d: |P − P_finest| / P_finest over a mesh refinement
+    "relativeSpread",                // T-164: the spread over a nested 1/2/4 subdivision
+    "relativeMovement",              // T-108: |coarse − fine| / coarse; T-182 and T-189 already
+                                     //        emit the same key at two digits
+    "multiplierDeparture",           // T-60: the 2-D edge mesh's own refinement residual on μ
+    "gradientDeparture",             // T-60: the same on d ln μ/dh, which converges more slowly
+    "firstIntegralRelativeSpread",   // T-3a: a first integral is constant in exact arithmetic
+    "firstIntegralCoreSpread",       // T-3a: the same, over the core of the gap
+    "centrelineRouteSpread"          // T-3b: two evaluation routes to one solved load
 )
 
 /**

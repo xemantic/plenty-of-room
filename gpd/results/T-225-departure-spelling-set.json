@@ -1,0 +1,928 @@
+{
+  "task": "T-225 + T-227 — the departure rule's SPELLING set, classified per key with its exclusions proved, and the corpus's one wall clock removed",
+  "leaf": "none — a process task protecting the machine-readable artifact of every leaf",
+  "conditions": "The tree at HEAD of iteration 35 plus this iteration's edits. Nothing physical is computed. Units unchanged and untouched: nm, pN, pN/nm, pressure in pN/nm^2 = 1 MPa exactly, k_BT = 4.141947 pN.nm at 300 K in aqueous buffer with stated Mg2+.",
+  "question": "DEPARTURE_SPELLINGS enumerated four names and called them 'every spelling the corpus uses'. CH-0169 found seven more by exact match and refused to sweep them, because 12 of the 62 fields are a log10 of a residual or a study's own answer. Which names ARE the rule's quantity, which are not, and how is each exclusion PROVED rather than asserted? And: remove the corpus's one wall clock, whose three readers make the removal a schema change.",
+  "cheapBounds": [
+    {
+      "name": "bound 1 — the SHAPE census over every committed result file",
+      "cost": "seconds, no solve",
+      "measured": "14 candidate names inside a reproductions/convergence record whose name denotes a discrepancy; 75 fields in 8 files above two significant digits",
+      "decided": "the job is five names larger and two files wider than CH-0169's exact-match census, and the five it adds include two COMPOUNDS of the rule's own word (T-60's multiplierDeparture and gradientDeparture)"
+    },
+    {
+      "name": "bound 2 — the classification, read at each emission site",
+      "cost": "minutes of reading, no solve",
+      "measured": "8 in (54 fields in 6 files), 6 out (21 fields in 3 files)",
+      "decided": "the exclusions removed no file from the sweep and the additions added one; the classification is what makes the widening SAFE, not what makes it small"
+    },
+    {
+      "name": "bound 3 — the offline simulation of the widened rule over all committed files",
+      "cost": "seconds",
+      "measured": "54 fields in 6 files, per file identical to the checker's independent count",
+      "decided": "the blast radius is bounded before an SCF solve or a 158 497-node field solve is spent"
+    },
+    {
+      "name": "bound 4 — the wall-clock census over the SOURCE, not over field names",
+      "cost": "one grep",
+      "measured": "31 studies call System.nanoTime or System.currentTimeMillis; exactly 1 puts the result in a result file",
+      "decided": "C-0138's 'exactly one' is confirmed by a stronger instrument. A name census cannot do it: T-7 emits waterViscosityPascalSeconds and five model times, T-119 a configured pauseSecondsBetweenQueries"
+    },
+    {
+      "name": "bound 5 — the reader census against the MOVED keys",
+      "cost": "seconds",
+      "measured": "0 of 62 reader/producer pairs mention a moved key; the one apparent hit, EdgeWidthDependenceStudy against T-3b, reads only profiles[*].taperDepth/taperWidth/taperDecayLength and emits centrelineRouteSpread from its OWN solve",
+      "decided": "the sweep is the seven producers plus T-227's three consumers, not T-3b's 43 readers"
+    }
+  ],
+  "census": {
+    "measuredOver": "the committed corpus at HEAD, read out of git",
+    "candidateNames": 18,
+    "classifiedIn": 12,
+    "classifiedOut": 6,
+    "unclassified": [],
+    "inScopeFieldsAboveTwoDigits": 54,
+    "inScopeFiles": [
+      "T-108-desired-stroke-reach.json",
+      "T-164-row-end-crossover-stiffness.json",
+      "T-1d-scf-density-profile.json",
+      "T-3a-nonlinear-pb-profile.json",
+      "T-3b-tile-edge-load-profile.json",
+      "T-60-collar-on-the-equilibrium-path.json"
+    ],
+    "excludedFieldsAboveTwoDigits": 21,
+    "excludedFiles": [
+      "T-117-crossbar-junction-trio.json",
+      "T-1d-scf-density-profile.json",
+      "T-1e-first-moment-convention.json"
+    ],
+    "publishedByChallenge": {
+      "spellings": 9,
+      "fieldsAboveTwoDigits": 62,
+      "files": 6,
+      "mustNotBeSwept": 12,
+      "note": "CH-0169 / C-0138 section 7. The shape census finds 14, 75, 8 and 21."
+    }
+  },
+  "classification": [
+    {
+      "spelling": "firstIntegralCoreSpread",
+      "fieldsInDepartureRecords": 12,
+      "fieldsAboveTwoDigits": 12,
+      "files": [
+        "T-3a-nonlinear-pb-profile.json"
+      ],
+      "verdict": "IN",
+      "addedByT225": true,
+      "ground": "T-3a: the same, restricted to the core of the gap, which is the reading CLAUDE.md says to quote"
+    },
+    {
+      "spelling": "firstIntegralRelativeSpread",
+      "fieldsInDepartureRecords": 12,
+      "fieldsAboveTwoDigits": 12,
+      "files": [
+        "T-3a-nonlinear-pb-profile.json"
+      ],
+      "verdict": "IN",
+      "addedByT225": true,
+      "ground": "T-3a: the first integral of the PB solve is CONSTANT in exact arithmetic, so its spread over the nodes is zero physics and all path"
+    },
+    {
+      "spelling": "centrelineRouteSpread",
+      "fieldsInDepartureRecords": 11,
+      "fieldsAboveTwoDigits": 11,
+      "files": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "verdict": "IN",
+      "addedByT225": true,
+      "ground": "T-3b: two evaluation ROUTES to one solved centreline load, equal in exact arithmetic"
+    },
+    {
+      "spelling": "coverageErrorExponent",
+      "fieldsInDepartureRecords": 6,
+      "fieldsAboveTwoDigits": 6,
+      "files": [
+        "T-1d-scf-density-profile.json"
+      ],
+      "verdict": "OUT",
+      "addedByT225": false,
+      "ground": "the same, on the coverage error"
+    },
+    {
+      "spelling": "observedOrder",
+      "fieldsInDepartureRecords": 6,
+      "fieldsAboveTwoDigits": 6,
+      "files": [
+        "T-1d-scf-density-profile.json",
+        "T-1e-first-moment-convention.json"
+      ],
+      "verdict": "OUT",
+      "addedByT225": false,
+      "ground": "a logarithm of a RATIO of two residuals, and the answer of the convergence axis; CLAUDE.md quotes 2.08-2.32, 1.59 and 1.11 at three digits"
+    },
+    {
+      "spelling": "relativeError",
+      "fieldsInDepartureRecords": 6,
+      "fieldsAboveTwoDigits": 6,
+      "files": [
+        "T-1d-scf-density-profile.json"
+      ],
+      "verdict": "IN",
+      "addedByT225": true,
+      "ground": "T-1d: abs(pressure - reference)/reference over a mesh and contour refinement — departureFromFinest under a fifth name"
+    },
+    {
+      "spelling": "residualExponent",
+      "fieldsInDepartureRecords": 6,
+      "fieldsAboveTwoDigits": 6,
+      "files": [
+        "T-1d-scf-density-profile.json"
+      ],
+      "verdict": "OUT",
+      "addedByT225": false,
+      "ground": "a log10 of a residual: two digits on -11.0931 is -11, i.e. 1e-11 where the solve produced 8.07e-12, and the node-spacing axis collapses"
+    },
+    {
+      "spelling": "gradientDeparture",
+      "fieldsInDepartureRecords": 8,
+      "fieldsAboveTwoDigits": 5,
+      "files": [
+        "T-60-collar-on-the-equilibrium-path.json"
+      ],
+      "verdict": "IN",
+      "addedByT225": true,
+      "ground": "T-60: the same on d ln mu/dh, which converges 6-8x more slowly and is the binding one"
+    },
+    {
+      "spelling": "relativeSpread",
+      "fieldsInDepartureRecords": 4,
+      "fieldsAboveTwoDigits": 4,
+      "files": [
+        "T-164-row-end-crossover-stiffness.json"
+      ],
+      "verdict": "IN",
+      "addedByT225": true,
+      "ground": "T-164: the relative spread of one quantity over a NESTED 1/2/4 subdivision, with the three levels emitted beside it"
+    },
+    {
+      "spelling": "worstResidual",
+      "fieldsInDepartureRecords": 12,
+      "fieldsAboveTwoDigits": 3,
+      "files": [
+        "T-117-crossbar-junction-trio.json"
+      ],
+      "verdict": "OUT",
+      "addedByT225": false,
+      "ground": "a LENGTH in nm (T-117: distance from the measured 0.60-0.70 nm step) carrying the decision `covalent`, beside the record's own `departure`"
+    },
+    {
+      "spelling": "multiplierDeparture",
+      "fieldsInDepartureRecords": 8,
+      "fieldsAboveTwoDigits": 2,
+      "files": [
+        "T-60-collar-on-the-equilibrium-path.json"
+      ],
+      "verdict": "IN",
+      "addedByT225": true,
+      "ground": "T-60: the 2-D edge mesh's refinement residual on the force multiplier mu, quoted in CLAUDE.md at two significant digits already"
+    },
+    {
+      "spelling": "relativeMovement",
+      "fieldsInDepartureRecords": 14,
+      "fieldsAboveTwoDigits": 2,
+      "files": [
+        "T-108-desired-stroke-reach.json"
+      ],
+      "verdict": "IN",
+      "addedByT225": true,
+      "ground": "T-108: abs(coarse - fine)/coarse over a scan-step and RK4-step refinement, with coarse and fine emitted beside it. T-182 and T-189 already emit the same key in the same record at two digits; P-18's own answer of the same name lives OUTSIDE both records, where the record qualifier protects it"
+    },
+    {
+      "spelling": "coverageError",
+      "fieldsInDepartureRecords": 6,
+      "fieldsAboveTwoDigits": 0,
+      "files": [],
+      "verdict": "OUT",
+      "addedByT225": false,
+      "ground": "the same"
+    },
+    {
+      "spelling": "departure",
+      "fieldsInDepartureRecords": 765,
+      "fieldsAboveTwoDigits": 0,
+      "files": [],
+      "verdict": "IN",
+      "addedByT225": false,
+      "ground": "T-212's own four"
+    },
+    {
+      "spelling": "departureFromFinest",
+      "fieldsInDepartureRecords": 343,
+      "fieldsAboveTwoDigits": 0,
+      "files": [],
+      "verdict": "IN",
+      "addedByT225": false,
+      "ground": "T-212's own four"
+    },
+    {
+      "spelling": "relativeDeparture",
+      "fieldsInDepartureRecords": 561,
+      "fieldsAboveTwoDigits": 0,
+      "files": [],
+      "verdict": "IN",
+      "addedByT225": false,
+      "ground": "T-212's own four"
+    },
+    {
+      "spelling": "relativeDepartureInStroke",
+      "fieldsInDepartureRecords": 12,
+      "fieldsAboveTwoDigits": 0,
+      "files": [],
+      "verdict": "IN",
+      "addedByT225": false,
+      "ground": "T-212's own four"
+    },
+    {
+      "spelling": "residual",
+      "fieldsInDepartureRecords": 6,
+      "fieldsAboveTwoDigits": 0,
+      "files": [],
+      "verdict": "OUT",
+      "addedByT225": false,
+      "ground": "an ABSOLUTE residual in the solved quantity's own scale, not a relative comparison of two computations of it"
+    }
+  ],
+  "exclusionProofs": [
+    {
+      "spelling": "residualExponent",
+      "basis": "T-1d convergence[0]",
+      "exponent": -11.0931,
+      "roundedExponent": -11.0,
+      "quantity": 8.070491789118664e-12,
+      "roundedQuantity": 1e-11,
+      "relativeMovement": 0.239081862828095
+    },
+    {
+      "spelling": "residualExponent",
+      "basis": "T-1d convergence[2]",
+      "exponent": -11.0906,
+      "roundedExponent": -11.0,
+      "quantity": 8.117083246672247e-12,
+      "roundedQuantity": 1e-11,
+      "relativeMovement": 0.2319696245692305
+    },
+    {
+      "spelling": "coverageErrorExponent",
+      "basis": "T-1d convergence[0]",
+      "exponent": -14.1669,
+      "roundedExponent": -14.0,
+      "quantity": 6.80926129679685e-15,
+      "roundedQuantity": 1e-14,
+      "relativeMovement": 0.4685880838064046
+    },
+    {
+      "spelling": "coverageErrorExponent",
+      "basis": "T-1d convergence[4]",
+      "exponent": -14.5744,
+      "roundedExponent": -15.0,
+      "quantity": 2.6644035277248922e-15,
+      "roundedQuantity": 1e-15,
+      "relativeMovement": 0.6246814757620854
+    }
+  ],
+  "observedOrderQuotations": [
+    {
+      "where": "CLAUDE.md, poroelastic/brush convergence entry",
+      "quoted": "2.08–2.32 for the disjoining pressure on the same solves",
+      "fileValues": [
+        2.07533,
+        2.31513
+      ],
+      "atTwoDigits": [
+        2.1,
+        2.3
+      ],
+      "finding": "the corpus's own prose is written at THREE significant digits from these fields; sweeping them would put the prose outside the file it is read from"
+    },
+    {
+      "where": "CLAUDE.md, first-moment convergence entry",
+      "quoted": "converges at 1.59 in the SCF node spacing and the chain length inverted on it at 1.11",
+      "fileValues": [
+        1.58778,
+        1.10747
+      ],
+      "atTwoDigits": [
+        1.6,
+        1.1
+      ],
+      "finding": "the same, on T-1e"
+    }
+  ],
+  "offlineSimulation": {
+    "predictedFields": 54,
+    "predictedFiles": 6,
+    "perFile": {
+      "T-108-desired-stroke-reach.json": 2,
+      "T-164-row-end-crossover-stiffness.json": 4,
+      "T-1d-scf-density-profile.json": 6,
+      "T-3a-nonlinear-pb-profile.json": 24,
+      "T-3b-tile-edge-load-profile.json": 11,
+      "T-60-collar-on-the-equilibrium-path.json": 7
+    },
+    "checkerAgrees": true
+  },
+  "reemissionOrder": [
+    {
+      "order": 1,
+      "file": "T-108-desired-stroke-reach.json"
+    },
+    {
+      "order": 2,
+      "file": "T-1d-scf-density-profile.json"
+    },
+    {
+      "order": 3,
+      "file": "T-3a-nonlinear-pb-profile.json"
+    },
+    {
+      "order": 4,
+      "file": "T-3b-tile-edge-load-profile.json"
+    },
+    {
+      "order": 5,
+      "file": "T-60-collar-on-the-equilibrium-path.json"
+    },
+    {
+      "order": 6,
+      "file": "T-164-row-end-crossover-stiffness.json"
+    },
+    {
+      "order": 7,
+      "file": "T-172-row-end-prestrain.json"
+    },
+    {
+      "order": 8,
+      "file": "T-182-row-end-prestrain-value.json"
+    },
+    {
+      "order": 9,
+      "file": "T-189-twist-corrected-raster.json"
+    },
+    {
+      "order": 10,
+      "file": "T-190-interior-crossover-prestrain.json"
+    }
+  ],
+  "sweep": [
+    {
+      "order": 1,
+      "file": "T-108-desired-stroke-reach.json",
+      "predictedDepartureFields": 2,
+      "movedByKind": {
+        "departureFields": 2,
+        "otherNumericFields": 0,
+        "verdictOrWordingFields": 0,
+        "proseDigitOnlyFields": 0,
+        "booleanFields": 0,
+        "fieldsAdded": 0,
+        "fieldsRemoved": 0,
+        "worstOtherNumericRelative": 0.0
+      },
+      "stalenessIdentity": {
+        "alreadyAtTwoDigits": 16,
+        "exactlyTheTwoDigitRounding": 2,
+        "unexplained": 0
+      },
+      "note": "2 relativeMovement fields, the spelling CH-0169 excluded as P-18's own answer"
+    },
+    {
+      "order": 2,
+      "file": "T-1d-scf-density-profile.json",
+      "predictedDepartureFields": 6,
+      "movedByKind": {
+        "departureFields": 6,
+        "otherNumericFields": 0,
+        "verdictOrWordingFields": 0,
+        "proseDigitOnlyFields": 0,
+        "booleanFields": 0,
+        "fieldsAdded": 0,
+        "fieldsRemoved": 0,
+        "worstOtherNumericRelative": 0.0
+      },
+      "stalenessIdentity": {
+        "alreadyAtTwoDigits": 0,
+        "exactlyTheTwoDigitRounding": 6,
+        "unexplained": 0
+      },
+      "note": "6 relativeError fields. The file the LAST un-delegated rounding implementation writes; the delegation carried the six-digit ceiling, the absolute floor and the integral-number rendering, and moved nothing else"
+    },
+    {
+      "order": 3,
+      "file": "T-3a-nonlinear-pb-profile.json",
+      "predictedDepartureFields": 24,
+      "movedByKind": {
+        "departureFields": 24,
+        "otherNumericFields": 0,
+        "verdictOrWordingFields": 0,
+        "proseDigitOnlyFields": 0,
+        "booleanFields": 0,
+        "fieldsAdded": 0,
+        "fieldsRemoved": 0,
+        "worstOtherNumericRelative": 0.0
+      },
+      "stalenessIdentity": {
+        "alreadyAtTwoDigits": 12,
+        "exactlyTheTwoDigitRounding": 24,
+        "unexplained": 0
+      },
+      "note": "24 fields, the two first-integral spreads; the same 12 records also carry a relativeDeparture that already obeyed the rule"
+    },
+    {
+      "order": 4,
+      "file": "T-3b-tile-edge-load-profile.json",
+      "predictedDepartureFields": 11,
+      "movedByKind": {
+        "departureFields": 11,
+        "otherNumericFields": 0,
+        "verdictOrWordingFields": 0,
+        "proseDigitOnlyFields": 0,
+        "booleanFields": 0,
+        "fieldsAdded": 0,
+        "fieldsRemoved": 0,
+        "worstOtherNumericRelative": 0.0
+      },
+      "stalenessIdentity": {
+        "alreadyAtTwoDigits": 0,
+        "exactlyTheTwoDigitRounding": 11,
+        "unexplained": 0
+      },
+      "note": "11 centrelineRouteSpread fields, in the file with 43 readers; none of them reads the convergence record"
+    },
+    {
+      "order": 5,
+      "file": "T-60-collar-on-the-equilibrium-path.json",
+      "predictedDepartureFields": 7,
+      "movedByKind": {
+        "departureFields": 7,
+        "otherNumericFields": 0,
+        "verdictOrWordingFields": 0,
+        "proseDigitOnlyFields": 0,
+        "booleanFields": 0,
+        "fieldsAdded": 0,
+        "fieldsRemoved": 0,
+        "worstOtherNumericRelative": 0.0
+      },
+      "stalenessIdentity": {
+        "alreadyAtTwoDigits": 12,
+        "exactlyTheTwoDigitRounding": 7,
+        "unexplained": 0
+      },
+      "note": "7 fields under two spellings CH-0169's census did not find, and whose four over-precise values CLAUDE.md already quotes at two significant digits"
+    },
+    {
+      "order": 6,
+      "file": "T-164-row-end-crossover-stiffness.json",
+      "predictedDepartureFields": 4,
+      "movedByKind": {
+        "departureFields": 4,
+        "otherNumericFields": 0,
+        "verdictOrWordingFields": 0,
+        "proseDigitOnlyFields": 3,
+        "booleanFields": 0,
+        "fieldsAdded": 0,
+        "fieldsRemoved": 0,
+        "worstOtherNumericRelative": 0.0
+      },
+      "stalenessIdentity": {
+        "alreadyAtTwoDigits": 6,
+        "exactlyTheTwoDigitRounding": 4,
+        "unexplained": 0
+      },
+      "note": "4 relativeSpread fields. Three prose strings also moved in their sixteenth digit — a Double.toString() interpolated into a sentence, which the serialisation boundary cannot reach (queued as T-249)"
+    },
+    {
+      "order": 7,
+      "file": "T-172-row-end-prestrain.json",
+      "predictedDepartureFields": 0,
+      "movedByKind": {
+        "departureFields": 0,
+        "otherNumericFields": 0,
+        "verdictOrWordingFields": 0,
+        "proseDigitOnlyFields": 0,
+        "booleanFields": 0,
+        "fieldsAdded": 0,
+        "fieldsRemoved": 1,
+        "worstOtherNumericRelative": 0.0
+      },
+      "stalenessIdentity": {
+        "alreadyAtTwoDigits": 14,
+        "exactlyTheTwoDigitRounding": 0,
+        "unexplained": 0
+      },
+      "note": "T-227: parameters/elapsedSeconds REMOVED. No other field moved"
+    },
+    {
+      "order": 8,
+      "file": "T-182-row-end-prestrain-value.json",
+      "predictedDepartureFields": 0,
+      "movedByKind": {
+        "departureFields": 0,
+        "otherNumericFields": 0,
+        "verdictOrWordingFields": 0,
+        "proseDigitOnlyFields": 0,
+        "booleanFields": 0,
+        "fieldsAdded": 0,
+        "fieldsRemoved": 0,
+        "worstOtherNumericRelative": 0.0
+      },
+      "stalenessIdentity": {
+        "alreadyAtTwoDigits": 12,
+        "exactlyTheTwoDigitRounding": 0,
+        "unexplained": 0
+      },
+      "note": "a reader of T-172, re-run after it. BYTE-IDENTICAL"
+    },
+    {
+      "order": 9,
+      "file": "T-189-twist-corrected-raster.json",
+      "predictedDepartureFields": 0,
+      "movedByKind": {
+        "departureFields": 0,
+        "otherNumericFields": 0,
+        "verdictOrWordingFields": 1,
+        "proseDigitOnlyFields": 0,
+        "booleanFields": 0,
+        "fieldsAdded": 0,
+        "fieldsRemoved": 0,
+        "worstOtherNumericRelative": 0.0
+      },
+      "stalenessIdentity": {
+        "alreadyAtTwoDigits": 17,
+        "exactlyTheTwoDigitRounding": 0,
+        "unexplained": 0
+      },
+      "note": "a reader of T-172. One wording field moved: parameters/sources gained T-182. A --committed control run of HEAD's own code on HEAD's own inputs produces a file BYTE-IDENTICAL to this one, so the movement is HEAD's deterministic staleness from iteration 31 and this sweep moved zero bytes of it"
+    },
+    {
+      "order": 10,
+      "file": "T-190-interior-crossover-prestrain.json",
+      "predictedDepartureFields": 0,
+      "movedByKind": {
+        "departureFields": 0,
+        "otherNumericFields": 0,
+        "verdictOrWordingFields": 0,
+        "proseDigitOnlyFields": 0,
+        "booleanFields": 0,
+        "fieldsAdded": 0,
+        "fieldsRemoved": 0,
+        "worstOtherNumericRelative": 0.0
+      },
+      "stalenessIdentity": {
+        "alreadyAtTwoDigits": 15,
+        "exactlyTheTwoDigitRounding": 0,
+        "unexplained": 0
+      },
+      "note": "a reader of T-172, re-run after it. BYTE-IDENTICAL"
+    }
+  ],
+  "sweepTotals": {
+    "files": 10,
+    "departureFields": 54,
+    "otherNumericFields": 0,
+    "verdictOrWordingFields": 1,
+    "proseDigitOnlyFields": 3,
+    "booleanFields": 0,
+    "fieldsAdded": 0,
+    "fieldsRemoved": 1,
+    "stalenessIdentity": {
+      "alreadyAtTwoDigits": 104,
+      "exactlyTheTwoDigitRounding": 54,
+      "unexplained": 0
+    }
+  },
+  "wallClock": {
+    "studiesMeasuringElapsedTime": 31,
+    "studiesEmittingIt": 0,
+    "emittingFiles": [],
+    "nearMisses": [
+      {
+        "field": "T-119-literature-queries.json /pauseSecondsBetweenQueries",
+        "value": 8,
+        "why": "a CONFIGURED constant — the deliberate 8 s sleep between EuropePMC queries — not a measurement of the run"
+      },
+      {
+        "field": "T-7-poroelastic-drainage.json /parameters/waterViscosityPascalSeconds",
+        "why": "a physical constant whose NAME contains 'Seconds'; the reason a name census cannot answer this question"
+      },
+      {
+        "field": "T-7-poroelastic-drainage.json /designPoints[*]/relaxationTime and four more",
+        "why": "model times — poroelastic, Zimm, inertial — computed from the material, not read off a clock"
+      },
+      {
+        "field": "brush/DeterminedPrecisionStudy.kt seconds",
+        "why": "measured and PRINTED; its own KDoc says 'the seconds go to stdout only' and 'cost is counted in SCF SOLVES, not seconds'"
+      },
+      {
+        "field": "brush/FirstMomentConventionStudy.kt",
+        "why": "the elapsed time is interpolated into a println string, not into a record field"
+      }
+    ],
+    "readers": [
+      {
+        "reader": "structure/EdgeTwistReliefStudy.kt (T-182)",
+        "reads": "cheapBounds[*] by name prefix, taking `value`",
+        "touchesParameters": false
+      },
+      {
+        "reader": "structure/InteriorCrossoverPrestrainStudy.kt (T-190)",
+        "reads": "cheapBounds[*] by name prefix, taking `value`",
+        "touchesParameters": false
+      },
+      {
+        "reader": "structure/TwistCorrectedRasterStudy.kt (T-189)",
+        "reads": "cheapBounds[*] by name prefix, taking `value`",
+        "touchesParameters": false
+      }
+    ]
+  },
+  "gate": {
+    "gatedSpellings": 12,
+    "excludedSpellings": 6,
+    "gateFields": 0,
+    "gateFiles": 0,
+    "strictFields": 0,
+    "wideFields": 938,
+    "wideFiles": 27,
+    "gatedFieldsInsideTheWideSubstringAtBaseline": 7,
+    "gatedFieldsOutsideItAtBaseline": 47,
+    "excludedFieldsInsideTheWideSubstringAtBaseline": 0,
+    "selfTests": 91
+  },
+  "mutationCoverage": {
+    "baselineFailures": 0,
+    "namedTests": 31,
+    "wholePredicate": [
+      {
+        "mutation": "narrowed back to T-214's four spellings",
+        "namedTestsFailed": 9,
+        "namedTests": 31
+      },
+      {
+        "mutation": "narrowed back to C-0129's leaf name",
+        "namedTestsFailed": 15,
+        "namedTests": 31
+      },
+      {
+        "mutation": "the six EXCLUDED names swept in by pattern",
+        "namedTestsFailed": 6,
+        "namedTests": 31
+      },
+      {
+        "mutation": "the record qualifier dropped",
+        "namedTestsFailed": 7,
+        "namedTests": 31
+      }
+    ],
+    "perName": [
+      {
+        "spelling": "centrelineRouteSpread",
+        "direction": "drop",
+        "namedTestsFailed": 1
+      },
+      {
+        "spelling": "departure",
+        "direction": "drop",
+        "namedTestsFailed": 2
+      },
+      {
+        "spelling": "departureFromFinest",
+        "direction": "drop",
+        "namedTestsFailed": 2
+      },
+      {
+        "spelling": "firstIntegralCoreSpread",
+        "direction": "drop",
+        "namedTestsFailed": 1
+      },
+      {
+        "spelling": "firstIntegralRelativeSpread",
+        "direction": "drop",
+        "namedTestsFailed": 1
+      },
+      {
+        "spelling": "gradientDeparture",
+        "direction": "drop",
+        "namedTestsFailed": 1
+      },
+      {
+        "spelling": "multiplierDeparture",
+        "direction": "drop",
+        "namedTestsFailed": 1
+      },
+      {
+        "spelling": "relativeDeparture",
+        "direction": "drop",
+        "namedTestsFailed": 2
+      },
+      {
+        "spelling": "relativeDepartureInStroke",
+        "direction": "drop",
+        "namedTestsFailed": 2
+      },
+      {
+        "spelling": "relativeError",
+        "direction": "drop",
+        "namedTestsFailed": 2
+      },
+      {
+        "spelling": "relativeMovement",
+        "direction": "drop",
+        "namedTestsFailed": 1
+      },
+      {
+        "spelling": "relativeSpread",
+        "direction": "drop",
+        "namedTestsFailed": 1
+      },
+      {
+        "spelling": "coverageError",
+        "direction": "sweep in",
+        "namedTestsFailed": 1
+      },
+      {
+        "spelling": "coverageErrorExponent",
+        "direction": "sweep in",
+        "namedTestsFailed": 1
+      },
+      {
+        "spelling": "observedOrder",
+        "direction": "sweep in",
+        "namedTestsFailed": 1
+      },
+      {
+        "spelling": "residual",
+        "direction": "sweep in",
+        "namedTestsFailed": 1
+      },
+      {
+        "spelling": "residualExponent",
+        "direction": "sweep in",
+        "namedTestsFailed": 1
+      },
+      {
+        "spelling": "worstResidual",
+        "direction": "sweep in",
+        "namedTestsFailed": 1
+      }
+    ],
+    "everyClassificationProtected": true
+  },
+  "readerCensus": {
+    "method": "tools/result-reader-census.py, cross-checked by grepping each reader source for every moved key name",
+    "pairsExamined": 62,
+    "readersMentioningAMovedKey": 1,
+    "resolution": "electrostatics/EdgeWidthDependenceStudy.kt mentions centrelineRouteSpread because it EMITS one (and declares it at three digits); its read of T-3b is t160PublishedCollar, which selects a record from `profiles` and takes seven named fields, none of them in a convergence record"
+  },
+  "predicates": [
+    {
+      "name": "P1",
+      "statement": "The census is re-derived from the corpus by SHAPE rather than inherited as a list; if it finds more than CH-0169's nine that is a finding about the census instrument.",
+      "verdict": "MET — the shape census finds 14 candidate names and 75 fields in 8 files against the challenge's 9, 62 and 6; the five it adds are two COMPOUNDS of the rule's own word and a third logarithm",
+      "met": true
+    },
+    {
+      "name": "P2",
+      "statement": "Every key classified OUT carries a NUMBER: how far the rule would move the quantity it stands for, and what in the corpus that movement would contradict.",
+      "verdict": "MET — each of the six exclusions carries a number: +23.9 % and +46.9 % on the two log10 fields, a collapse of a three-row axis to a constant, four CLAUDE.md quotations that two digits would contradict, and a length in nm carrying a decision",
+      "met": true
+    },
+    {
+      "name": "P3",
+      "statement": "The in-scope names enter DEPARTURE_SPELLINGS so every study obeys the widened rule through roundedForResult's baseline, and the last un-delegated rounding implementation is delegated, closing CH-0169's Ground 2 at 6 of 6.",
+      "verdict": "MET — DEPARTURE_SPELLINGS carries 12, and brush/ScfDensityProfileStudy.kt is delegated, closing CH-0169's Ground 2 at 6 of 6 rounding implementations",
+      "met": true
+    },
+    {
+      "name": "P4",
+      "statement": "The blast radius is simulated offline over every committed result file before any study is re-run, and the predicted (file, field) set is exactly what the sweep moves.",
+      "verdict": "MET — the offline simulation predicted 54 fields in 6 files, file by file, and the sweep moved exactly that",
+      "met": true
+    },
+    {
+      "name": "P5",
+      "statement": "Every affected file is re-emitted in ONE tools/reemission-order.py order over the whole set, through tools/study-batch.sh, and the order is retained as a file.",
+      "verdict": "MET — ten files, one tools/reemission-order.py order, one tools/study-batch.sh snapshot, retained as tools/T-225-reemission-order.txt",
+      "met": true
+    },
+    {
+      "name": "P6",
+      "statement": "Nothing is stale, as an IDENTITY: every residual in every re-emitted file is exactly the two-significant-digit rounding of its own committed value, counted, with 0 unexplained.",
+      "verdict": "MET — 54 of 54 moved residuals are exactly the two-digit rounding of their committed value; 0 unexplained",
+      "met": true
+    },
+    {
+      "name": "P7",
+      "statement": "The diff is classified by KIND — departure fields, other numeric, verdicts, wording, booleans, fields added or removed — and anything but the first is reported as a finding.",
+      "verdict": "MET — 54 departure fields, 0 other numeric, 0 booleans, 0 fields added, 1 field removed by design, 1 wording field attributed to HEAD by a byte-identical control run, 3 prose-digit fields classified and queued",
+      "met": true
+    },
+    {
+      "name": "P8",
+      "statement": "The widened predicate is mutation-tested in BOTH directions and the coverage is MEASURED: the count that fails if it narrows back and the count that fails if an excluded key is swept in.",
+      "verdict": "MET — 31 GATE_TESTS; 9 fail if narrowed to T-214's four, 15 to C-0129's leaf name, 6 if the exclusions are swept in, 7 if the record qualifier is dropped, and every one of the 18 classifications fails at least one named test on its own",
+      "met": true
+    },
+    {
+      "name": "P9",
+      "statement": "Whatever stays outside the rule is named, counted and priced (CH-0168), and the standing obligation to classify a newly coined name is MECHANISED rather than written down.",
+      "verdict": "MET — 21 fields in 3 files stay out with a ground and a mutation test each, and the obligation to classify a new name is mechanised as tools/T-225-census.py --check",
+      "met": true
+    },
+    {
+      "name": "P10",
+      "statement": "T-227: the wall clock is removed, the removal is proved schema-safe against all three readers BEFORE it is made, and the three readers are re-emitted after it in the same topological order.",
+      "verdict": "MET — one field removed, proved schema-safe against all three readers before the edit and confirmed by re-running them: two byte-identical, the third byte-identical to a control run of HEAD's own code",
+      "met": true
+    }
+  ],
+  "falsifiers": [
+    {
+      "name": "F1",
+      "statement": "A re-emitted file moves a NON-departure numeric field, a verdict, a boolean, or a word.",
+      "fired": true,
+      "outcome": "FIRED on 2 of 10 files and both are attributed away from this sweep. T-164 moved 3 PROSE strings in their sixteenth digit (Double.toString() interpolated into a sentence, which the serialisation boundary cannot round) — queued as T-249. T-189 moved 1 wording field, and a --committed control run of HEAD's own code on HEAD's own inputs emits a file BYTE-IDENTICAL to the swept one, so the movement is HEAD's staleness from iteration 31 and this sweep moved zero bytes of that file. 0 numeric fields, 0 booleans and 0 verdicts moved anywhere"
+    },
+    {
+      "name": "F2",
+      "statement": "The offline simulation's predicted (file, field) set differs from what the sweep moves.",
+      "fired": false,
+      "outcome": "the offline simulation predicted 54 fields in 6 files with the per-file counts 24/11/7/6/4/2, and the sweep moved exactly that"
+    },
+    {
+      "name": "F3",
+      "statement": "A re-emitted file's residuals are NOT the two-digit rounding of their committed values.",
+      "fired": false,
+      "outcome": "54 of 54 moved residuals are exactly the two-significant-digit rounding of their own committed value; 0 unexplained"
+    },
+    {
+      "name": "F4",
+      "statement": "An excluded key can be shown from the corpus to be a residual between two refinements after all; or an included key can be shown to be a level or an answer.",
+      "fired": false,
+      "outcome": "against THIS classification it did not fire. Against the INHERITED one it fires twice: relativeMovement was excluded as P-18's own answer and is a mesh-refinement residual that T-182 and T-189 already emit at two digits, and worstResidual was left 'needs reading' and is a length in nm carrying a decision. That is CH-0192"
+    },
+    {
+      "name": "F5",
+      "statement": "The widened gate does not come clean, or the mutation test finds a direction in which the predicate can be changed without failing a named test.",
+      "fired": false,
+      "outcome": "the gate reads 0 field(s) in 0 file(s) on all three lines, and no mutation of the predicate — in either direction, whole or per name — passes"
+    },
+    {
+      "name": "F6",
+      "statement": "T-227: a reader of T-172 fails, or moves a number, after the field is removed.",
+      "fired": false,
+      "outcome": "T-182 and T-190 are byte-identical after the removal; T-189's single movement is reproduced by HEAD's own code and is byte-identical between the control and the sweep, so the removal is invisible to all three"
+    },
+    {
+      "name": "F7",
+      "statement": "T-227: the corpus census finds a second wall clock, i.e. C-0138's 'exactly one' is wrong.",
+      "fired": false,
+      "outcome": "31 studies measure their own elapsed time and exactly one emitted it; 30 println it. After this task, 0 emit it"
+    }
+  ],
+  "findings": [
+    "A LIST IS A CENSUS THAT STOPPED, AND SO IS THE CENSUS THAT SAYS SO, BECAUSE BOTH SEARCH FOR A NAME WHERE THE RULE IS ABOUT A SHAPE. DEPARTURE_SPELLINGS enumerated four; CH-0169 found seven more by exact match; a shape census — a leaf key inside a reproductions/convergence record whose NAME DENOTES A DISCREPANCY — finds fourteen, i.e. 75 fields in 8 files against the published 62 in 6. The three it adds are two COMPOUNDS of the rule's own word (T-60's convergence[*].multiplierDeparture and gradientDeparture, which an exact-match list cannot see) and a third logarithm (observedOrder, in T-1d and T-1e). CH-0192.",
+    "THE EXCLUSIONS ARE THE EXPENSIVE HALF, AND EACH ONE IS A MEASUREMENT. Two significant digits on residualExponent = -11.0931 is -11: a residual of 1e-11 where the solve produced 8.070e-12, +23.9 %, and the three-row node-spacing axis collapses to one constant. On coverageErrorExponent = -14.1669 it is +46.9 %, and -14.5744 rounds the OTHER way to -15 (-62.5 %), so two rows a factor of 2.56 apart in the quantity render a factor of TEN apart. observedOrder is a logarithm of their RATIO and the answer of the axis: CLAUDE.md quotes exactly these four values as 2.08-2.32, 1.59 and 1.11, so sweeping them would put the corpus's own prose outside the file it is read from. worstResidual is a LENGTH in nm carrying the decision `covalent`. residual and coverageError are ABSOLUTE.",
+    "TWO OF THE NINE INHERITED JUDGEMENTS ARE WRONG, ONE IN EACH DIRECTION, AND BOTH BECAUSE A SPELLING WAS READ AS A STUDY. relativeMovement was excluded as 'P-18's own determined-precision measurement'; P-18 declares it at three digits and emits it OUTSIDE both departure records, where the record qualifier already protects it — exactly as it protects T-193's volts. The fields the census counts belong to T-108 and are abs(coarse - fine)/coarse over a refinement, with coarse and fine emitted beside them, and T-182 and T-189 ALREADY emit the same key in the same record at two significant digits. The corpus had classified it correctly twice before the challenge classified it wrongly once. worstResidual was left 'needs reading' when the reading is one KDoc line.",
+    "A WALL CLOCK CANNOT BE FOUND BY FIELD NAME, AND CAN BE FOUND EXACTLY IN THE SOURCE. T-7 emits waterViscosityPascalSeconds and five model times; T-119 a configured pauseSecondsBetweenQueries. A grep of System.nanoTime/System.currentTimeMillis over src/main/kotlin, following the variable to its use, is exact: 31 studies measure their own elapsed time and exactly ONE put it in a result file. brush/DeterminedPrecisionStudy states the discipline in its own KDoc — 'the seconds go to stdout only', 'cost is counted in SCF SOLVES, not seconds' — which the other thirty follow without saying so.",
+    "REMOVING A FIELD IS A SCHEMA CHANGE AND THE PROOF IS CHEAPER THAN THE RUN, BUT THE RUN IS WHAT FINDS WHAT THE PROOF WAS NOT ABOUT. All three readers of T-172 take a NAMED LOOKUP in cheapBounds and never deserialise parameters, so the removal is invisible by construction. Running them anyway (C-0110) returned two byte-identical files and one carrying a wording change that a --committed control run attributes entirely to HEAD's own code — a deterministic staleness from iteration 31, in a file whose emitter and result were committed together and disagree.",
+    "THE `wide` LINE IS DOCUMENTED AS A CEILING ON THE CLASS AND THE CLASS EXCEEDS IT BY 68 OF 75. It is keyed on the substring 'departure', so 7 of this task's 54 gated fields are inside it and 47 are not, and none of the 21 excluded ones are. It is the line a reader differences against the gate to know that a clean gate means something. Retained, and re-described as a bound on ONE SPELLING FAMILY; the ceiling on the class is tools/T-225-census.py, which searches for the shape and requires a classification. CH-0193.",
+    "A MUTATION TEST HAS TWO DIRECTIONS ONCE A PREDICATE CARRIES EXCLUSIONS, AND THE SECOND IS THE ONE NOTHING ELSE HERE TESTS. C-0127's standard is that narrowing must fail a named test; a predicate that can only be widened becomes a PATTERN, which is what CH-0169 refused. Measured over 31 GATE_TESTS: 9 fail if narrowed to T-214's four, 15 to C-0129's leaf name, 7 if the record qualifier is dropped, and 6 if the six exclusions are swept in — and every one of the 18 classifications fails at least one named test on its own, which a whole-predicate count can hide."
+  ],
+  "parameters": {
+    "departureSignificantDigits": 2,
+    "resultSignificantDigits": 9,
+    "candidateNames": 18,
+    "namesAddedByT225": 8,
+    "namesExcludedByT225": 6,
+    "inScopeFieldsAboveTwoDigits": 54,
+    "inScopeFiles": 6,
+    "excludedFieldsAboveTwoDigits": 21,
+    "excludedFiles": 3,
+    "filesReemitted": 10,
+    "roundingImplementations": 6,
+    "roundingImplementationsCarryingTheRule": 6,
+    "studiesMeasuringElapsedTime": 31,
+    "studiesEmittingIt": 0,
+    "gateTests": 31,
+    "checkerSelfTests": 91,
+    "censusSelfTests": 28,
+    "emitterSelfTests": 15
+  },
+  "sources": [
+    "gpd/results/T-214-departure-rule-scope.json (the residue, its per-file counts and its judgement)",
+    "gpd/results/T-212-departure-and-saturation-audits.json (the audit that became a gate)",
+    "the committed corpus at HEAD of iteration 35, read out of git",
+    "src/main/kotlin (the emission sites, and the wall-clock census)"
+  ]
+}

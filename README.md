@@ -118,6 +118,8 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=electrostatics.BeyondMeanFieldGapStudyKt  # T-50, the beyond-mean-field exposure of the actuated gap as a ceiling and a threshold, not a Monte Carlo
 ./gradlew study -Pstudy=tile.HoneycombCoupledStudyKt              # T-232, C-0118's sixteen coupled cells re-graded at the corrected honeycomb cross-section, and on the honeycomb's own station lattice
 ./gradlew study -Pstudy=tile.HoneycombTwoLengthStudyKt            # T-235, the corrected 10 x 6 coupled cells re-read at C-0140's two-length raster -- two width readings, a row-dependent station ladder, and the crossover-column guard swept
+./gradlew study -Pstudy=tile.HoneycombBondClassStudyKt            # T-244, the honeycomb face's crossover bond-class residues -- the inter-row ladder offset, the determined ladder phase, and whether a two-length raster closes on caDNAno's scaffold rule
+./gradlew study -Pstudy=tile.HoneycombColumnWindowStudyKt         # T-243, the crossover-column count from the ROW spans rather than a bounding-box edgeX, with EDGE_MARGIN swept at every window reading
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.
@@ -146,7 +148,11 @@ python3 tools/check-kotlin-format-strings.py --self-test   # its own 19 tests, w
 python3 tools/check-result-file-hygiene.py     # no result file carries a raw % conversion; exit 1 (T-208)
 python3 tools/check-result-file-hygiene.py --departures   # every departure at two digits; exit 1 (T-212)
 python3 tools/check-result-file-hygiene.py --saturated    # saturated proportions; an audit, exit 0 (T-213)
-python3 tools/check-result-file-hygiene.py --self-test    # its own 54 tests, wired into `test`
+python3 tools/check-result-file-hygiene.py --self-test    # its own 91 tests, wired into `test`
+python3 tools/T-225-census.py                  # the SHAPE census behind DEPARTURE_SPELLINGS (T-225)
+python3 tools/T-225-census.py --check          # exit 1 on an UNCLASSIFIED candidate spelling (T-225)
+python3 tools/T-225-census.py --self-test      # its own 28 tests
+python3 tools/T-225-mutation-test.py --check   # the departure gate's mutation coverage, both ways (T-225)
 python3 tools/T-220-census.py --check          # C-0005's 123-214 % quoted against a margin; advisory (T-220)
 python3 tools/T-220-census.py --self-test      # its own 236 tests
 python3 tools/T-226-emission-diff.py a.json b.json [c.json ...]   # the manifold width of a re-run (T-226)

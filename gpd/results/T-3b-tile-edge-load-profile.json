@@ -1109,7 +1109,7 @@
             "taperDepth": -0.235392739,
             "taperWidth": 9.50854193,
             "chargeBalance": 0.00684359435,
-            "centrelineRouteSpread": 4.30063133E-4
+            "centrelineRouteSpread": 4.3E-4
         },
         {
             "axis": "mesh (nested 1/2/4)",
@@ -1119,7 +1119,7 @@
             "taperDepth": -0.290579117,
             "taperWidth": 9.04168572,
             "chargeBalance": 0.0034775913,
-            "centrelineRouteSpread": 7.48805646E-5
+            "centrelineRouteSpread": 7.5E-5
         },
         {
             "axis": "mesh (nested 1/2/4)",
@@ -1129,7 +1129,7 @@
             "taperDepth": -0.30756425,
             "taperWidth": 8.9015669,
             "chargeBalance": 0.00174835405,
-            "centrelineRouteSpread": 1.47414005E-5
+            "centrelineRouteSpread": 1.5E-5
         },
         {
             "axis": "lateral domain",
@@ -1139,7 +1139,7 @@
             "taperDepth": -0.290581508,
             "taperWidth": 9.04155217,
             "chargeBalance": 0.00195582116,
-            "centrelineRouteSpread": 7.48810612E-5
+            "centrelineRouteSpread": 7.5E-5
         },
         {
             "axis": "lateral domain",
@@ -1149,7 +1149,7 @@
             "taperDepth": -0.290579117,
             "taperWidth": 9.04168572,
             "chargeBalance": 0.0034775913,
-            "centrelineRouteSpread": 7.48805646E-5
+            "centrelineRouteSpread": 7.5E-5
         },
         {
             "axis": "headroom",
@@ -1159,7 +1159,7 @@
             "taperDepth": -0.291343134,
             "taperWidth": 9.06330849,
             "chargeBalance": 0.00338629599,
-            "centrelineRouteSpread": 7.496158E-5
+            "centrelineRouteSpread": 7.5E-5
         },
         {
             "axis": "headroom",
@@ -1169,7 +1169,7 @@
             "taperDepth": -0.290579117,
             "taperWidth": 9.04168572,
             "chargeBalance": 0.0034775913,
-            "centrelineRouteSpread": 7.48805646E-5
+            "centrelineRouteSpread": 7.5E-5
         },
         {
             "axis": "far-field boundary condition",
@@ -1179,7 +1179,7 @@
             "taperDepth": -0.290579117,
             "taperWidth": 9.04168572,
             "chargeBalance": 0.0034775913,
-            "centrelineRouteSpread": 7.48805646E-5
+            "centrelineRouteSpread": 7.5E-5
         },
         {
             "axis": "far-field boundary condition",
@@ -1189,7 +1189,7 @@
             "taperDepth": -0.290579115,
             "taperWidth": 9.04168573,
             "chargeBalance": 1.7915436E-4,
-            "centrelineRouteSpread": 7.48805645E-5
+            "centrelineRouteSpread": 7.5E-5
         },
         {
             "axis": "rim charge",
@@ -1199,7 +1199,7 @@
             "taperDepth": -0.290579117,
             "taperWidth": 9.04168572,
             "chargeBalance": 0.0034775913,
-            "centrelineRouteSpread": 7.48805646E-5
+            "centrelineRouteSpread": 7.5E-5
         },
         {
             "axis": "rim charge",
@@ -1209,7 +1209,7 @@
             "taperDepth": -0.157533781,
             "taperWidth": 9.56846937,
             "chargeBalance": 0.00296926478,
-            "centrelineRouteSpread": 7.00982513E-5
+            "centrelineRouteSpread": 7.0E-5
         }
     ],
     "totalForce": [

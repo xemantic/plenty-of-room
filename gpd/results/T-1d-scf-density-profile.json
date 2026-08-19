@@ -846,7 +846,7 @@
             "coverageError": 0.0,
             "coverageErrorExponent": -14.1669,
             "pressure": 0.0490218,
-            "relativeError": 0.00298087,
+            "relativeError": 0.003,
             "observedOrder": null
         },
         {
@@ -862,7 +862,7 @@
             "coverageError": 0.0,
             "coverageErrorExponent": -14.3245,
             "pressure": 0.0489107,
-            "relativeError": 7.07304E-4,
+            "relativeError": 7.1E-4,
             "observedOrder": 2.07533
         },
         {
@@ -878,7 +878,7 @@
             "coverageError": 0.0,
             "coverageErrorExponent": -14.2856,
             "pressure": 0.0488831,
-            "relativeError": 1.42129E-4,
+            "relativeError": 1.4E-4,
             "observedOrder": 2.31513
         },
         {
@@ -894,7 +894,7 @@
             "coverageError": 0.0,
             "coverageErrorExponent": -14.4147,
             "pressure": 0.0490343,
-            "relativeError": 2.54649E-4,
+            "relativeError": 2.5E-4,
             "observedOrder": null
         },
         {
@@ -910,7 +910,7 @@
             "coverageError": 0.0,
             "coverageErrorExponent": -14.5744,
             "pressure": 0.049025,
-            "relativeError": 6.51211E-5,
+            "relativeError": 6.5E-5,
             "observedOrder": 1.96731
         },
         {
@@ -926,7 +926,7 @@
             "coverageError": 0.0,
             "coverageErrorExponent": -14.3245,
             "pressure": 0.0490226,
-            "relativeError": 1.6105E-5,
+            "relativeError": 1.6E-5,
             "observedOrder": 2.01562
         }
     ],

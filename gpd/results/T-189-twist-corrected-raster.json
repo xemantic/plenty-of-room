@@ -1189,6 +1189,6 @@
         "c0104Threshold": "15.4497275",
         "c0090PublishedDishing": "0.0621469105",
         "flatnessTolerance": "0.1",
-        "sources": "gpd/results/T-3b-tile-edge-load-profile.json, gpd/results/T-153-buildable-raster-width.json, gpd/results/T-172-row-end-prestrain.json"
+        "sources": "gpd/results/T-3b-tile-edge-load-profile.json, gpd/results/T-153-buildable-raster-width.json, gpd/results/T-172-row-end-prestrain.json, gpd/results/T-182-row-end-prestrain-value.json"
     }
 }

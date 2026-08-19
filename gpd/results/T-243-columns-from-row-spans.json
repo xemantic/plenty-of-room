@@ -1,0 +1,1267 @@
+{
+    "task": "T-243 - the crossover-column count from the row spans, not from a bounding-box edgeX",
+    "leaf": "A8.2",
+    "units": {
+        "length": "nm",
+        "axialPosition": "base pairs on one global z",
+        "dishing": "dimensionless, as a fraction of the free stroke",
+        "pressure": "pN/nm^2 (= MPa)"
+    },
+    "conventions": {
+        "temperature": "300 K, aqueous 2 mM MgCl2, k_BT = 4.142 pN nm",
+        "pitch": "the honeycomb per-interface crossover spacing 21 bp, halved as every four-layer study here halves it: 3.57 nm",
+        "columnConstruction": "CrossoverLayout.centred(count, pitch), count = floor((window - 2 m)/pitch) + 1",
+        "window": "four readings are carried: the bounding box, an x-raster row span, an interface (two adjacent row spans intersected) and every interior helix intersected",
+        "load": "C-0022's solved collar at 2 mM / 10 nm / 0.192 V; C-0001's secant foundation",
+        "tolerance": "T-5b's 0.10 of the free stroke"
+    },
+    "parameters": {
+        "pitchNm": "3.57",
+        "edgeMarginsSwept": "0.05, 0.17, 0.34",
+        "risePerBasePair": "0.34",
+        "lengthPairs": "112 / 108, 102 / 109",
+        "crossSections": "10 x 6, 15 x 4",
+        "compositeFractions": "0.26, 0.3",
+        "dishingSamplesPerSide": "81",
+        "beamSubdivisions": "2",
+        "sources": "gpd/results/T-3b-tile-edge-load-profile.json, gpd/results/T-235-coupled-cells-at-the-two-length-raster.json"
+    },
+    "sources": [
+        "gpd/results/T-3b-tile-edge-load-profile.json - C-0022's solved collar at the design state, read at 2 mM / 10 nm / 0.192 V",
+        "gpd/results/T-235-coupled-cells-at-the-two-length-raster.json - C-0146's eight graded 10 x 6 cells at the three width/column readings, READ rather than transcribed, and asserted equal to the literals this study also carries"
+    ],
+    "citedInputs": [
+        "C-0140 - the two-length raster's level walk, which supplies every window here",
+        "C-0146 / CH-0185 - the bounding-box column table and the eight graded cells this selects among",
+        "C-0142 - the tile, the collar and the grading machinery, consumed unmodified",
+        "C-0141 - the honeycomb cross-section geometry",
+        "C-0116 - the measured composite-fraction band"
+    ],
+    "cheapBound": {
+        "whatItSaid": "A crossover column serves an INTERFACE between two rows, so its window is the intersection of two row spans, not the union of every row. At 112 / 108 that is 108 bp = 36.72 nm against the box's 116 bp = 39.44 nm, and eleven pitches need 39.27 nm -- so the twelfth column needs 115.5 bp of shared window and no row has more than 112. One floor division per reading, no solve.",
+        "cost": "integer windows and one floor division; the five dishing states are one linear plate solve each",
+        "rowDerivedColumns": "11",
+        "interfaceDerivedColumns": "11",
+        "boundingBoxColumns": "12",
+        "guardInertOnEveryRowReadingAt112Over108": "true",
+        "guardInertOnEveryRowReadingOverBothPairs": "false"
+    },
+    "windows": [
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "bounding box",
+            "lowBasePairs": -116,
+            "highBasePairs": 0,
+            "basePairs": 116,
+            "nanometres": 39.44,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 12,
+            "slackBeyondLastPitch": 0.07
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "bounding box",
+            "lowBasePairs": -116,
+            "highBasePairs": 0,
+            "basePairs": 116,
+            "nanometres": 39.44,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 3.4
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "bounding box",
+            "lowBasePairs": -116,
+            "highBasePairs": 0,
+            "basePairs": 116,
+            "nanometres": 39.44,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 3.06
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "x-raster row span",
+            "lowBasePairs": -112,
+            "highBasePairs": 0,
+            "basePairs": 112,
+            "nanometres": 38.08,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 2.28
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "x-raster row span",
+            "lowBasePairs": -112,
+            "highBasePairs": 0,
+            "basePairs": 112,
+            "nanometres": 38.08,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 2.04
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "x-raster row span",
+            "lowBasePairs": -112,
+            "highBasePairs": 0,
+            "basePairs": 112,
+            "nanometres": 38.08,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 1.7
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "interface (two adjacent row spans intersected)",
+            "lowBasePairs": -112,
+            "highBasePairs": -4,
+            "basePairs": 108,
+            "nanometres": 36.72,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 0.92
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "interface (two adjacent row spans intersected)",
+            "lowBasePairs": -112,
+            "highBasePairs": -4,
+            "basePairs": 108,
+            "nanometres": 36.72,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 0.68
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "interface (two adjacent row spans intersected)",
+            "lowBasePairs": -112,
+            "highBasePairs": -4,
+            "basePairs": 108,
+            "nanometres": 36.72,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 0.34
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "every interior helix intersected",
+            "lowBasePairs": -108,
+            "highBasePairs": -4,
+            "basePairs": 104,
+            "nanometres": 35.36,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 10,
+            "slackBeyondLastPitch": 3.13
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "every interior helix intersected",
+            "lowBasePairs": -108,
+            "highBasePairs": -4,
+            "basePairs": 104,
+            "nanometres": 35.36,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 10,
+            "slackBeyondLastPitch": 2.89
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "every interior helix intersected",
+            "lowBasePairs": -108,
+            "highBasePairs": -4,
+            "basePairs": 104,
+            "nanometres": 35.36,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 10,
+            "slackBeyondLastPitch": 2.55
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "bounding box",
+            "lowBasePairs": -116,
+            "highBasePairs": 0,
+            "basePairs": 116,
+            "nanometres": 39.44,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 12,
+            "slackBeyondLastPitch": 0.07
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "bounding box",
+            "lowBasePairs": -116,
+            "highBasePairs": 0,
+            "basePairs": 116,
+            "nanometres": 39.44,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 3.4
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "bounding box",
+            "lowBasePairs": -116,
+            "highBasePairs": 0,
+            "basePairs": 116,
+            "nanometres": 39.44,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 3.06
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "x-raster row span",
+            "lowBasePairs": -112,
+            "highBasePairs": 0,
+            "basePairs": 112,
+            "nanometres": 38.08,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 2.28
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "x-raster row span",
+            "lowBasePairs": -112,
+            "highBasePairs": 0,
+            "basePairs": 112,
+            "nanometres": 38.08,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 2.04
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "x-raster row span",
+            "lowBasePairs": -112,
+            "highBasePairs": 0,
+            "basePairs": 112,
+            "nanometres": 38.08,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 1.7
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "interface (two adjacent row spans intersected)",
+            "lowBasePairs": -112,
+            "highBasePairs": -4,
+            "basePairs": 108,
+            "nanometres": 36.72,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 0.92
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "interface (two adjacent row spans intersected)",
+            "lowBasePairs": -112,
+            "highBasePairs": -4,
+            "basePairs": 108,
+            "nanometres": 36.72,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 0.68
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "interface (two adjacent row spans intersected)",
+            "lowBasePairs": -112,
+            "highBasePairs": -4,
+            "basePairs": 108,
+            "nanometres": 36.72,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 0.34
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "every interior helix intersected",
+            "lowBasePairs": -108,
+            "highBasePairs": -4,
+            "basePairs": 104,
+            "nanometres": 35.36,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 10,
+            "slackBeyondLastPitch": 3.13
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "every interior helix intersected",
+            "lowBasePairs": -108,
+            "highBasePairs": -4,
+            "basePairs": 104,
+            "nanometres": 35.36,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 10,
+            "slackBeyondLastPitch": 2.89
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "every interior helix intersected",
+            "lowBasePairs": -108,
+            "highBasePairs": -4,
+            "basePairs": 104,
+            "nanometres": 35.36,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 10,
+            "slackBeyondLastPitch": 2.55
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "bounding box",
+            "lowBasePairs": -109,
+            "highBasePairs": 7,
+            "basePairs": 116,
+            "nanometres": 39.44,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 12,
+            "slackBeyondLastPitch": 0.07
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "bounding box",
+            "lowBasePairs": -109,
+            "highBasePairs": 7,
+            "basePairs": 116,
+            "nanometres": 39.44,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 3.4
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "bounding box",
+            "lowBasePairs": -109,
+            "highBasePairs": 7,
+            "basePairs": 116,
+            "nanometres": 39.44,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 3.06
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "x-raster row span",
+            "lowBasePairs": -109,
+            "highBasePairs": 0,
+            "basePairs": 109,
+            "nanometres": 37.06,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 1.26
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "x-raster row span",
+            "lowBasePairs": -109,
+            "highBasePairs": 0,
+            "basePairs": 109,
+            "nanometres": 37.06,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 1.02
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "x-raster row span",
+            "lowBasePairs": -109,
+            "highBasePairs": 0,
+            "basePairs": 109,
+            "nanometres": 37.06,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 0.68
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "interface (two adjacent row spans intersected)",
+            "lowBasePairs": -102,
+            "highBasePairs": 0,
+            "basePairs": 102,
+            "nanometres": 34.68,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 10,
+            "slackBeyondLastPitch": 2.45
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "interface (two adjacent row spans intersected)",
+            "lowBasePairs": -102,
+            "highBasePairs": 0,
+            "basePairs": 102,
+            "nanometres": 34.68,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 10,
+            "slackBeyondLastPitch": 2.21
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "interface (two adjacent row spans intersected)",
+            "lowBasePairs": -102,
+            "highBasePairs": 0,
+            "basePairs": 102,
+            "nanometres": 34.68,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 10,
+            "slackBeyondLastPitch": 1.87
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "every interior helix intersected",
+            "lowBasePairs": -95,
+            "highBasePairs": 0,
+            "basePairs": 95,
+            "nanometres": 32.3,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 10,
+            "slackBeyondLastPitch": 0.07
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "every interior helix intersected",
+            "lowBasePairs": -95,
+            "highBasePairs": 0,
+            "basePairs": 95,
+            "nanometres": 32.3,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 9,
+            "slackBeyondLastPitch": 3.4
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "every interior helix intersected",
+            "lowBasePairs": -95,
+            "highBasePairs": 0,
+            "basePairs": 95,
+            "nanometres": 32.3,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 9,
+            "slackBeyondLastPitch": 3.06
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "bounding box",
+            "lowBasePairs": -109,
+            "highBasePairs": 7,
+            "basePairs": 116,
+            "nanometres": 39.44,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 12,
+            "slackBeyondLastPitch": 0.07
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "bounding box",
+            "lowBasePairs": -109,
+            "highBasePairs": 7,
+            "basePairs": 116,
+            "nanometres": 39.44,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 3.4
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "bounding box",
+            "lowBasePairs": -109,
+            "highBasePairs": 7,
+            "basePairs": 116,
+            "nanometres": 39.44,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 3.06
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "x-raster row span",
+            "lowBasePairs": -109,
+            "highBasePairs": 0,
+            "basePairs": 109,
+            "nanometres": 37.06,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 1.26
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "x-raster row span",
+            "lowBasePairs": -109,
+            "highBasePairs": 0,
+            "basePairs": 109,
+            "nanometres": 37.06,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 1.02
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "x-raster row span",
+            "lowBasePairs": -109,
+            "highBasePairs": 0,
+            "basePairs": 109,
+            "nanometres": 37.06,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 11,
+            "slackBeyondLastPitch": 0.68
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "interface (two adjacent row spans intersected)",
+            "lowBasePairs": -102,
+            "highBasePairs": 0,
+            "basePairs": 102,
+            "nanometres": 34.68,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 10,
+            "slackBeyondLastPitch": 2.45
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "interface (two adjacent row spans intersected)",
+            "lowBasePairs": -102,
+            "highBasePairs": 0,
+            "basePairs": 102,
+            "nanometres": 34.68,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 10,
+            "slackBeyondLastPitch": 2.21
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "interface (two adjacent row spans intersected)",
+            "lowBasePairs": -102,
+            "highBasePairs": 0,
+            "basePairs": 102,
+            "nanometres": 34.68,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 10,
+            "slackBeyondLastPitch": 1.87
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "every interior helix intersected",
+            "lowBasePairs": -95,
+            "highBasePairs": 0,
+            "basePairs": 95,
+            "nanometres": 32.3,
+            "edgeMargin": 0.05,
+            "edgeMarginConvention": "the standing numerical guard",
+            "crossoverColumns": 10,
+            "slackBeyondLastPitch": 0.07
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "every interior helix intersected",
+            "lowBasePairs": -95,
+            "highBasePairs": 0,
+            "basePairs": 95,
+            "nanometres": 32.3,
+            "edgeMargin": 0.17,
+            "edgeMarginConvention": "half a base-pair rise",
+            "crossoverColumns": 9,
+            "slackBeyondLastPitch": 3.4
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "every interior helix intersected",
+            "lowBasePairs": -95,
+            "highBasePairs": 0,
+            "basePairs": 95,
+            "nanometres": 32.3,
+            "edgeMargin": 0.34,
+            "edgeMarginConvention": "one base-pair rise",
+            "crossoverColumns": 9,
+            "slackBeyondLastPitch": 3.06
+        }
+    ],
+    "guards": [
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "bounding box",
+            "nanometres": 39.44,
+            "columnsAtEachMargin": [
+                12,
+                11,
+                11
+            ],
+            "inert": false,
+            "slackAtTightestMargin": 0.07,
+            "slackInRises": 0.205882353
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "x-raster row span",
+            "nanometres": 38.08,
+            "columnsAtEachMargin": [
+                11,
+                11,
+                11
+            ],
+            "inert": true,
+            "slackAtTightestMargin": 2.28,
+            "slackInRises": 6.70588235
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "interface (two adjacent row spans intersected)",
+            "nanometres": 36.72,
+            "columnsAtEachMargin": [
+                11,
+                11,
+                11
+            ],
+            "inert": true,
+            "slackAtTightestMargin": 0.92,
+            "slackInRises": 2.70588235
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "every interior helix intersected",
+            "nanometres": 35.36,
+            "columnsAtEachMargin": [
+                10,
+                10,
+                10
+            ],
+            "inert": true,
+            "slackAtTightestMargin": 3.13,
+            "slackInRises": 9.20588235
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "bounding box",
+            "nanometres": 39.44,
+            "columnsAtEachMargin": [
+                12,
+                11,
+                11
+            ],
+            "inert": false,
+            "slackAtTightestMargin": 0.07,
+            "slackInRises": 0.205882353
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "x-raster row span",
+            "nanometres": 38.08,
+            "columnsAtEachMargin": [
+                11,
+                11,
+                11
+            ],
+            "inert": true,
+            "slackAtTightestMargin": 2.28,
+            "slackInRises": 6.70588235
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "interface (two adjacent row spans intersected)",
+            "nanometres": 36.72,
+            "columnsAtEachMargin": [
+                11,
+                11,
+                11
+            ],
+            "inert": true,
+            "slackAtTightestMargin": 0.92,
+            "slackInRises": 2.70588235
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 112,
+            "senseTwoBasePairs": 108,
+            "reading": "every interior helix intersected",
+            "nanometres": 35.36,
+            "columnsAtEachMargin": [
+                10,
+                10,
+                10
+            ],
+            "inert": true,
+            "slackAtTightestMargin": 3.13,
+            "slackInRises": 9.20588235
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "bounding box",
+            "nanometres": 39.44,
+            "columnsAtEachMargin": [
+                12,
+                11,
+                11
+            ],
+            "inert": false,
+            "slackAtTightestMargin": 0.07,
+            "slackInRises": 0.205882353
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "x-raster row span",
+            "nanometres": 37.06,
+            "columnsAtEachMargin": [
+                11,
+                11,
+                11
+            ],
+            "inert": true,
+            "slackAtTightestMargin": 1.26,
+            "slackInRises": 3.70588235
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "interface (two adjacent row spans intersected)",
+            "nanometres": 34.68,
+            "columnsAtEachMargin": [
+                10,
+                10,
+                10
+            ],
+            "inert": true,
+            "slackAtTightestMargin": 2.45,
+            "slackInRises": 7.20588235
+        },
+        {
+            "crossSection": "10 x 6",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "every interior helix intersected",
+            "nanometres": 32.3,
+            "columnsAtEachMargin": [
+                10,
+                9,
+                9
+            ],
+            "inert": false,
+            "slackAtTightestMargin": 0.07,
+            "slackInRises": 0.205882353
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "bounding box",
+            "nanometres": 39.44,
+            "columnsAtEachMargin": [
+                12,
+                11,
+                11
+            ],
+            "inert": false,
+            "slackAtTightestMargin": 0.07,
+            "slackInRises": 0.205882353
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "x-raster row span",
+            "nanometres": 37.06,
+            "columnsAtEachMargin": [
+                11,
+                11,
+                11
+            ],
+            "inert": true,
+            "slackAtTightestMargin": 1.26,
+            "slackInRises": 3.70588235
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "interface (two adjacent row spans intersected)",
+            "nanometres": 34.68,
+            "columnsAtEachMargin": [
+                10,
+                10,
+                10
+            ],
+            "inert": true,
+            "slackAtTightestMargin": 2.45,
+            "slackInRises": 7.20588235
+        },
+        {
+            "crossSection": "15 x 4",
+            "senseOneBasePairs": 102,
+            "senseTwoBasePairs": 109,
+            "reading": "every interior helix intersected",
+            "nanometres": 32.3,
+            "columnsAtEachMargin": [
+                10,
+                9,
+                9
+            ],
+            "inert": false,
+            "slackAtTightestMargin": 0.07,
+            "slackInRises": 0.205882353
+        }
+    ],
+    "dishing": [
+        {
+            "crossSection": "10 x 6",
+            "widthReading": "row length 112 bp",
+            "edgeX": 38.08,
+            "crossoverColumns": 11,
+            "compositeFraction": 0.3,
+            "uncoupledDishingOverStroke": 0.0240648102,
+            "flat": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "widthReading": "row length 112 bp",
+            "edgeX": 38.08,
+            "crossoverColumns": 11,
+            "compositeFraction": 0.26,
+            "uncoupledDishingOverStroke": 0.0255589305,
+            "flat": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "widthReading": "block extent 116 bp",
+            "edgeX": 39.44,
+            "crossoverColumns": 11,
+            "compositeFraction": 0.3,
+            "uncoupledDishingOverStroke": 0.0252615047,
+            "flat": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "widthReading": "block extent 116 bp",
+            "edgeX": 39.44,
+            "crossoverColumns": 11,
+            "compositeFraction": 0.26,
+            "uncoupledDishingOverStroke": 0.0268332278,
+            "flat": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "widthReading": "block extent 116 bp",
+            "edgeX": 39.44,
+            "crossoverColumns": 12,
+            "compositeFraction": 0.3,
+            "uncoupledDishingOverStroke": 0.0231299291,
+            "flat": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "widthReading": "block extent 116 bp",
+            "edgeX": 39.44,
+            "crossoverColumns": 12,
+            "compositeFraction": 0.26,
+            "uncoupledDishingOverStroke": 0.0245899925,
+            "flat": true
+        },
+        {
+            "crossSection": "15 x 4",
+            "widthReading": "row length 112 bp",
+            "edgeX": 38.08,
+            "crossoverColumns": 11,
+            "compositeFraction": 0.3,
+            "uncoupledDishingOverStroke": 0.0978155002,
+            "flat": true
+        },
+        {
+            "crossSection": "15 x 4",
+            "widthReading": "row length 112 bp",
+            "edgeX": 38.08,
+            "crossoverColumns": 11,
+            "compositeFraction": 0.26,
+            "uncoupledDishingOverStroke": 0.101759944,
+            "flat": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "widthReading": "block extent 116 bp",
+            "edgeX": 39.44,
+            "crossoverColumns": 11,
+            "compositeFraction": 0.3,
+            "uncoupledDishingOverStroke": 0.10083281,
+            "flat": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "widthReading": "block extent 116 bp",
+            "edgeX": 39.44,
+            "crossoverColumns": 11,
+            "compositeFraction": 0.26,
+            "uncoupledDishingOverStroke": 0.104867575,
+            "flat": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "widthReading": "block extent 116 bp",
+            "edgeX": 39.44,
+            "crossoverColumns": 12,
+            "compositeFraction": 0.3,
+            "uncoupledDishingOverStroke": 0.0964527384,
+            "flat": true
+        },
+        {
+            "crossSection": "15 x 4",
+            "widthReading": "block extent 116 bp",
+            "edgeX": 39.44,
+            "crossoverColumns": 12,
+            "compositeFraction": 0.26,
+            "uncoupledDishingOverStroke": 0.100511159,
+            "flat": false
+        }
+    ],
+    "cells": [
+        {
+            "columns": 1,
+            "paths": 10,
+            "distribution": "equal springs",
+            "at112BpEleven": 0.0680677948,
+            "at116BpEleven": 0.0708759349,
+            "at116BpTwelve": 0.0662801686,
+            "selectedByRowDerivation": 0.0708759349,
+            "flatAtSelected": true,
+            "flatAtTwelve": true,
+            "decidedByTheGuard": false
+        },
+        {
+            "columns": 1,
+            "paths": 10,
+            "distribution": "rim-graded 5:1",
+            "at112BpEleven": 0.102582764,
+            "at116BpEleven": 0.104654401,
+            "at116BpTwelve": 0.0998334915,
+            "selectedByRowDerivation": 0.104654401,
+            "flatAtSelected": false,
+            "flatAtTwelve": true,
+            "decidedByTheGuard": true
+        },
+        {
+            "columns": 2,
+            "paths": 20,
+            "distribution": "equal springs",
+            "at112BpEleven": 0.119502047,
+            "at116BpEleven": 0.125509341,
+            "at116BpTwelve": 0.116688801,
+            "selectedByRowDerivation": 0.125509341,
+            "flatAtSelected": false,
+            "flatAtTwelve": false,
+            "decidedByTheGuard": false
+        },
+        {
+            "columns": 2,
+            "paths": 20,
+            "distribution": "rim-graded 5:1",
+            "at112BpEleven": 0.168817101,
+            "at116BpEleven": 0.174594445,
+            "at116BpTwelve": 0.16373126,
+            "selectedByRowDerivation": 0.174594445,
+            "flatAtSelected": false,
+            "flatAtTwelve": false,
+            "decidedByTheGuard": false
+        },
+        {
+            "columns": 3,
+            "paths": 30,
+            "distribution": "equal springs",
+            "at112BpEleven": 0.101905503,
+            "at116BpEleven": 0.107278473,
+            "at116BpTwelve": 0.0997830457,
+            "selectedByRowDerivation": 0.107278473,
+            "flatAtSelected": false,
+            "flatAtTwelve": true,
+            "decidedByTheGuard": true
+        },
+        {
+            "columns": 3,
+            "paths": 30,
+            "distribution": "rim-graded 5:1",
+            "at112BpEleven": 0.0954158305,
+            "at116BpEleven": 0.100357905,
+            "at116BpTwelve": 0.0938556471,
+            "selectedByRowDerivation": 0.100357905,
+            "flatAtSelected": false,
+            "flatAtTwelve": true,
+            "decidedByTheGuard": true
+        },
+        {
+            "columns": 5,
+            "paths": 50,
+            "distribution": "equal springs",
+            "at112BpEleven": 0.0900369,
+            "at116BpEleven": 0.0946671181,
+            "at116BpTwelve": 0.0880177483,
+            "selectedByRowDerivation": 0.0946671181,
+            "flatAtSelected": true,
+            "flatAtTwelve": true,
+            "decidedByTheGuard": false
+        },
+        {
+            "columns": 5,
+            "paths": 50,
+            "distribution": "rim-graded 5:1",
+            "at112BpEleven": 0.0822611821,
+            "at116BpEleven": 0.0855380627,
+            "at116BpTwelve": 0.0805842317,
+            "selectedByRowDerivation": 0.0855380627,
+            "flatAtSelected": true,
+            "flatAtTwelve": true,
+            "decidedByTheGuard": false
+        }
+    ],
+    "reproductions": [
+        {
+            "what": "C-0146's 10 x 6 uncoupled dishing, 112 bp / 11 columns, f = 0.30",
+            "published": "0.0240648102",
+            "here": "0.0240648102",
+            "relativeDeparture": "4.1E-10",
+            "reproduced": true
+        },
+        {
+            "what": "C-0146's 10 x 6 uncoupled dishing, 116 bp / 11 columns, f = 0.30",
+            "published": "0.0252615047",
+            "here": "0.0252615047",
+            "relativeDeparture": "9.6E-10",
+            "reproduced": true
+        },
+        {
+            "what": "C-0146's 10 x 6 uncoupled dishing, 116 bp / 12 columns, f = 0.30",
+            "published": "0.0231299291",
+            "here": "0.0231299291",
+            "relativeDeparture": "2.0E-9",
+            "reproduced": true
+        },
+        {
+            "what": "C-0146's 10 x 6 uncoupled dishing, 116 bp / 11 columns, f = 0.26",
+            "published": "0.0268332278",
+            "here": "0.0268332278",
+            "relativeDeparture": "7.4E-10",
+            "reproduced": true
+        },
+        {
+            "what": "C-0146's 15 x 4 uncoupled dishing, 112 bp / 11 columns, f = 0.30",
+            "published": "0.0978155002",
+            "here": "0.0978155002",
+            "relativeDeparture": "1.9E-10",
+            "reproduced": true
+        },
+        {
+            "what": "C-0146's bounding-box column count at the standing guard",
+            "published": "12.0",
+            "here": "12.0",
+            "relativeDeparture": "0.0",
+            "reproduced": true
+        },
+        {
+            "what": "C-0146's bounding-box slack past the eleventh pitch",
+            "published": "0.07",
+            "here": "0.07",
+            "relativeDeparture": "4.0E-15",
+            "reproduced": true
+        }
+    ],
+    "falsifiers": [
+        {
+            "name": "F1",
+            "statement": "a row-derived column count moves across the three EDGE_MARGIN conventions",
+            "fired": true,
+            "note": "FIRED at 2 of 12 row-derived readings, and all of them are the STRICTEST reading (every interior helix intersected) at the length pair 102 / 109, whose 32.30 nm window clears nine pitches by 0.07 nm - the same knife edge as the bounding box's, at a different window. At C-0140's own 112 / 108, which is the pair every graded cell is read at, all 6 row-derived readings are inert: true"
+        },
+        {
+            "name": "F2",
+            "statement": "the row-span and interface readings disagree",
+            "fired": false,
+            "note": "both give 11 at 112 / 108"
+        },
+        {
+            "name": "F3",
+            "statement": "the bounding-box reading does not reproduce C-0146's 12 / 11 / 11",
+            "fired": false,
+            "note": "[12, 11, 11]"
+        },
+        {
+            "name": "F4",
+            "statement": "the uncoupled dishing re-solved here does not reproduce C-0146's",
+            "fired": false,
+            "note": "five states re-solved, departures 4.1E-10, 9.6E-10, 2.0E-9, 7.4E-10, 1.9E-10"
+        }
+    ],
+    "findings": {
+        "THE_TWELFTH_COLUMN": "The twelfth crossover column is a property of the bounding BOX and of no row. Every x-raster row of the 10 x 6 block spans 112 bp = 38.08 nm and every INTERFACE -- two adjacent row spans intersected, which is what a crossover column actually serves -- spans 108 bp = 36.72 nm. Both give 11 columns at all three EDGE_MARGIN conventions, with 2.28 nm and 0.92 nm of slack past the last pitch. The box gives 12 at 0.05 nm on 0.07 nm of slack and 11 at half a rise. So the guard is INERT on every row-derived reading and decisive only on the box.",
+        "THE_VERDICT_IT_MOVES": "Reading the count off the rows selects C-0146's 116 bp / 11-column column, which is 3 flat cells of 8 against the twelve-column reading's 6. 3 cells are decided by the guard alone, and the tightest is C-0142's own -- the 3-column rim-graded cell at 0.100357905 against 0.0938556471, straddling T-5b's 0.10. The RECOMMENDED cell -- one column, ten paths, equal springs -- is flat at every reading.",
+        "THE_STRICTEST_READING": "A fourth reading exists and it is not chosen here: the window every interior helix of the block shares is 104 bp = 35.36 nm and gives 10 columns, again at all three margins at 112 / 108 -- though NOT at 102 / 109, where its 32.30 nm clears nine pitches by the same 0.07 nm the bounding box clears eleven by, and F1 duly fires. It is the right window for a crossover that must exist on EVERY helix of an interface; the interface reading is the right one for a column that must exist on the ROWS it ties, which is what a smeared grillage models. Both are guard-inert, which is the point.",
+        "EQUIVALENCE": "No per-beam axial window is needed in OrigamiGrillage, and the reason is an identity rather than an approximation: at a two-length raster every interface is between an even row and an odd one, so ALL nine interfaces of the 10 x 6 block carry the IDENTICAL window -112 to -4 bp. A uniform column lattice is therefore exact for the crossovers; what a single-lengthX plate still cannot represent is the 4 bp of free overhang at alternating row ends, and that material carries no crossover at either reading."
+    },
+    "validity": [
+        "TRL 1-3. Model-consistent and traceable. NOT empirically demonstrated.",
+        "The dishing rows re-solve the SMEARED equivalent sheet; the grillage is still single-layer and still square-lattice in its crossover combinatorics (C-0141's own caveat).",
+        "The eight cells are C-0146's Monte Carlo grading, READ rather than re-run. What moves here is which of its three columns a row-faithful column count selects.",
+        "The window readings are exact only for C-0140's own level walk. CH-0187 and T-244 both re-open the length pair, and every window here moves with it: at 102 / 109 the interface window is 102 bp and the count is 10.",
+        "EDGE_MARGIN is a numerical guard against a zero-length beam element and is not a physical clearance. Its inertness is a property of the geometry it is read at, and this is the second geometry at which it is not inert on the standing reading."
+    ],
+    "openQuestions": [
+        "Which width reading section 3 names is a specification question (T-242), and it is upstream of this one: the count derived here is row-faithful whatever edgeX the plate is given, but the plate's own extent is not.",
+        "At 102 / 109 -- the one length pair that closes on the scaffold-crossover rule (T-244) -- the interface window falls to 102 bp and the row-derived count to 10. Nothing has been graded there."
+    ]
+}

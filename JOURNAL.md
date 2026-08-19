@@ -10003,3 +10003,239 @@ twice (once before and once after the parity repair); every headline number of t
 both challenges grepped back out of `gpd/results/T-235-*.json`;
 `check-kotlin-format-strings.py`, `check-result-file-hygiene.py`, `check-markdown-tables.py`,
 `check-corpus-links.py`, `check-challenge-index.py` and `result-reader-census.py --check` clean.
+
+## Iteration 36 — `T-240` / `T-242`: the two removals the deliverables did not carry, and the eighth decision is a width with its price line open (`C-0149`)
+
+**What was done.** The two outward-facing documents were reconciled against `C-0147` (`T-230`,
+`T-231`) and `C-0146` (`T-235`), both filed in iteration 35 while another agent owned the
+documents; and `T-242`'s specification question was posed as **decision 8** in
+`DECISIONS-FOR-NDI.md`, row 8 of `ANSWERS.md`'s NDI table and item 13 of the queue's *Open
+questions for Kazik*. No study was run and no result file was emitted.
+
+**The cheap bound inverted the task, which is the surprise.** Before a word of prose, both
+documents were grepped for every token the two claims bear on. `92 bp`, `31.28`, `28 nt` and
+`ragged` appear **zero** times between them — so `C-0147` owed six **additions** and **no**
+strikes, and `T-240`'s `F1` (*"a passage contradicts `C-0147`"*) did not fire on its own terms.
+What fired instead is `F1` against the **wrong claim**: **four** live passages contradict `C-0146`,
+the sibling filed the same iteration — *"`10 × 6`'s own two row lengths are not derived here"*
+(twice), *"every `38.08 × …` is a withdrawn width"* and *"what remains is the **row length**"*.
+`CH-0182`'s *a census is dated by its premise set*, with the task's own scope as the census.
+
+**What the documents now say.** The honeycomb turn slack is **6 nt by reach** against the built
+**28** — `4.66666667×`, so 28 is a **choice** — and the minimum is a **criterion, not a number**:
+reach 6, unzip 8–9, one `k_BT` 16–22, one pN 29–41, with the built 28 **inside** that bracket at
+`1.00195245–1.46667915 pN` and `0.518481856–0.7570064 k_BT`. M13 affords exactly **8 nt**, so a
+uniform 112 bp row fits **by two nucleotides** and only **strained** —
+`6.54349121–12.112167 pN`, at or past the 10 pN unzip allowable — and the yield half is **declared
+unpriceable** with the **threshold 8 nt** quoted instead, which is now a bullet of `ANSWERS.md`'s
+*What we cannot answer, and why*. The 4 bp ragged face costs §3's flatness **exactly zero**,
+because the ragged faces are the tile's **rim** and not its gap-facing surface; the residual rim
+channel is bounded at `5.54399427e−05` and `1.68371917e−05` of the stroke against `0.0274976866` of
+headroom, **496×**. What it costs is **plan budget** — 1.36 nm against an outboard ceiling that
+saturates at **2.380 nm**, `0.571` of it at 90 paths — and `CH-0187`'s condition now travels with
+every 112 / 108 quotation.
+
+**`T-242` was posed with its price line open, and the framing that hid it was withdrawn.**
+`DECISIONS-FOR-NDI.md`'s *"a one-sentence answer is enough for all six; three of them need a single
+word"* is struck: **all three answers that came back in a shape the document had not offered are
+the three with a cost dimension**, and the three that came back as offered are a material, a device
+count and a scaffold. Decision 8 states four options, expresses **no preference**, and ends with
+*"and if this costs something — in metrology, in how a folded object is accepted at the bench, or
+in a downstream drawing this programme cannot see — what?"*
+
+**Five things the sweep found that neither task asked for**, and `C-0067`'s sign held on every one:
+two under-claims (above); **`42.4–61.0 pN/nm`** in `DECISIONS-FOR-NDI.md` where `C-0032` says
+**42.38–61.04**, repaired by `C-0067` in `ANSWERS.md` **in iteration 12** and standing here for
+twenty-four; **`0.0344`** where `C-0093` says **0.0344013403**, the exact token `C-0115` repaired
+in the other file; and **`C-0023`'s 40 pN/nm ceiling** cited as live after `C-0049` withdrew it —
+the verdict survives, on `C-0035`'s effort point instead.
+
+**Two challenges.** `CH-0190`: **a synthesis claim that quotes a defective token in order to
+diagnose it becomes that token's owner**, so `tools/trace-answers.py` reads the defect as
+traceable. Partitioned by owner on the corpus at the start of the iteration, exactly **3** of
+**2 097** numeric tokens in the two documents have an owner set of synthesis claims only — and
+**two are live, unqualified assertions in `DECISIONS-FOR-NDI.md`, and both are the tokens the two
+audits were written about.** A repair is applied where the checker reports, and the checker
+reported one file. The census **destroys itself**: quoting the tokens in the challenge gives them a
+non-synthesis owner, so re-running it now returns zero rows. `CH-0191`: `C-0140`'s *"`−1.40 %`
+beats the square lattice's `−4.80 %`"* reads a **bounding box** against a **row length** — a
+uniform square-lattice raster has no stagger, so on the row length both tiles are **38.08 nm** and
+the advantage is **exactly zero**, and on the bounding box the honeycomb wins by **1.36 nm, which
+is the stagger**. Downstream that matters: every four-layer plan ceiling and coupled cell outside
+`C-0146` is computed at 38.08 nm while both documents reported the **footprint** at 39.44.
+
+**One reading of the specification.** §3's row is *"Tile footprint — 40 × 40 nm (test tiles up to
+~70 × 100 nm)"*: **the tilde is on the test tiles, not on the nominal.** This corpus has written
+*"~40 × 40 nm"* throughout, quietly supplying a tolerance §3 does not state.
+
+**`CH-0182` for the third consecutive iteration, and this time on a RESTORED premise.**
+`tools/T-234-census.py`'s `WIDTH` family is *"a honeycomb row length asserted as a uniform tile
+width"*, built from `C-0140`'s withdrawal; `C-0146` restores `112 bp` as a **row span**, and the
+family cannot tell the two apart — so this pass's own correct sentences read as debt (18 → 23,
+five of five new occurrences being this claim's). `C-0149` was added to
+`tools/T-234-emit-classification.py`'s `SYNTHESIS` set and the classification regenerated, exactly
+as `C-0145` had to add itself; the `WIDTH` family was **not** changed, because it belongs to
+`T-234`, and the observation is recorded instead.
+
+**Gates.** `tools/verify.sh`; `tools/trace-answers.py` on **both** documents — 0 ABSENT, 0
+contradicted, 0 self-contradicted, before and after; `T-233-reconcile.py` **40 RESTATED, 1 LEFT,
+0 DEFECT** (two superseding cues had to be added to this pass's own new sentences);
+`T-234-census.py --check` **GATE 0 defects**; `check-markdown-tables.py`, `check-corpus-links.py`
+and `check-challenge-index.py` clean. Every number written was grepped out of the claim that owns
+it, and the two ratios are quoted with their construction (`1.36 / 2.380`;
+`0.0274976866 / 5.54399427e−05`).
+
+## Iteration 36 — `T-244` / `T-243`: the offset is 14, the phase is not a sweep, and the recommended raster does not close (`C-0148`)
+
+**What was done.** `CH-0184` asked which of the 7 or 14 bp inter-row ladder offsets a honeycomb
+face carries, and `CH-0185` asked for a crossover-column count derived from the row spans rather
+than from a bounding-box `edgeX`. Both were answerable as lattice arithmetic and a reading, and
+both were: `tile/HoneycombBondClassResidues.kt` (18 tests, written first and watched fail),
+`tile.HoneycombBondClassStudyKt` and `tile.HoneycombColumnWindowStudyKt`, claim `C-0148`.
+
+**The cheap bound was the whole of `T-244`, and it was three numbers out of one paragraph.**
+The caDNAno paper has been in `gpd/data/T-151-sources/` since iteration 30 and this corpus has
+been quoting two of its three crossover numbers — 21 bp per pair, 7 bp per class step. The third,
+*"five base pairs, or half a turn, upstream or downstream"* for a **scaffold** crossover, had never
+been used here. It is what turns the question from a sweep into a derivation.
+
+**The offset is 14.** A face helix's free azimuth is bond class 0 on sublattice `A` and class 1 on
+`B`; a class step is 7 bp; the raster's row parity puts `B` on the even rows. So the offset is
+`−7 ≡ 14` in `TwoLengthRaster.stationLattice`'s own parameterisation, at **32 of 32** proper
+readings. `C-0141` §9's *"this repository cannot yet say which"* is answered.
+
+**What surprised us, twice.** First: the **phase** is not free either. Every raster crossover is a
+scaffold crossover, so every one of them fixes a residue, and **one** lattice constant `b₀` must
+serve them all. Where it does, the station ladder is determined — and where it does not, nothing
+is. Sliding a design along its own base-pair axis moves the windows *with* the lattice, which is
+why the phase looks free and is not.
+
+Second, and larger: **`C-0140`'s recommended `112 / 108 bp` raster does not close.** Reduce every
+raster crossover by its own bond class and the values must be at most two, exactly 10 apart; at
+112 / 108 they are `0, 10, 11`, and **10 of 59** crossovers would have to be *forced* — which
+caDNAno permits and warns *"may lead to folding failure"*. Exactly **one** of `C-0140`'s five
+candidate pairs closes, **102 / 109**, at zero forced crossovers, identical at both cross-sections
+and all four sign/mirror/datum conventions. `C-0136`'s per-helix row-length rule is **necessary and
+not sufficient**: it cannot make the two helices sharing a crossover agree about which of the two
+`±5` positions it occupies.
+
+At the closing pair `b₀ = 5`, the phase is **16**, and the face carries **55 of 60** stations —
+which is also the sweep's own maximum, a result rather than a construction. **`CH-0184`'s
+saturating cell (phase 11 at the 14 bp offset, 60 of 60) is reproduced at departure `0.0` and is
+withdrawn as unbuildable**, so the six-column placement it promised does not stand at any pair
+examined. Raised as `CH-0188` and `CH-0189`.
+
+**`T-243` was one sentence and one floor division.** A crossover column serves an **interface**
+between two rows, so its window is the intersection of two row spans. At 112 / 108 the row span is
+112 bp = 38.08 nm and every interface `[−112, −4]` = 108 bp = 36.72 nm; both give **11** columns at
+all three `EDGE_MARGIN` conventions, against the bounding box's **12** at 0.05 nm on **0.07 nm** of
+slack. Eleven pitches need 39.27 nm — **115.5 bp of shared window** — and no row has more than 112.
+**The twelfth column is a box artefact**, and the guard is inert on every row-derived reading.
+
+**And no per-beam axial window was needed, which was the third surprise.** `CH-0185` asks for one,
+noting `OrigamiGrillage` has none. It does not need one: every interface of a two-length raster is
+between an even row and an odd one, so **all nine carry the identical window** and a uniform column
+lattice is exact for the crossovers. What a single-`lengthX` plate still cannot represent — 4 bp of
+free overhang at alternating row ends — carries no crossover at either reading.
+
+**What it costs.** Selecting the row-faithful count moves `C-0146`'s verdict to its 116 bp /
+11-column column: **3 flat cells of 8** against the twelve-column reading's 6, with `C-0142`'s
+tightest cell (3 columns rim-graded, `0.100357905`) lost across `T-5b`'s 0.10. The **recommended**
+cell — one column, ten paths, equal springs — is flat at every reading. Five uncoupled dishing
+states were re-solved here and reproduce `C-0146` at `1.9e−10` to `2.0e−9`.
+
+**`EDGE_MARGIN`'s KDoc is replaced**, by the condition `(lengthX − 2·margin) mod columnSpacing`
+rather than by a sentence about a 40 nm tile, with both of its failures named (`C-0134`'s 38.08 nm
+and this claim's 39.44 nm) and pointers to `columnSlack`, `guardIsInert` and `crossoverColumnsIn` —
+the last of which takes the **window** as its parameter rather than a tile dimension. That sentence
+has now been re-read against a moved geometry three times and been wrong twice; the replacement
+carries no geometry at all.
+
+**A falsifier that fired, and it was informative.** `T-243`'s `F1` — *a row-derived column count
+moves across the three conventions* — fired at **2 of 12** readings, both the strictest reading at
+102 / 109, whose 32.30 nm window clears nine pitches by the same **0.07 nm** the box clears eleven
+by. A second instance of the knife edge rather than a counter-example, and **0 of 6** at the pair
+every graded cell is read at.
+
+**Gates.** `tools/verify.sh`; 18 new tests written first and watched fail;
+`check-markdown-tables.py`, `check-corpus-links.py`, `check-challenge-index.py`,
+`check-kotlin-format-strings.py` and `result-reader-census.py --check` all clean —
+`--emit` was **not** run, because it writes a shared file and `T-241` owns it, so the census's
+advisory *"2 studies not in the census"* is left standing deliberately. Every headline number was
+grepped out of the result JSON that owns it, and two were wrong on the first pass and corrected:
+`F1` fired at 2 readings and not 4, and the five re-solved dishing states reproduce at `1.9e−10` to
+`2.0e−9` rather than at exactly zero.
+
+---
+
+## Iteration 36 — `T-225` + `T-227`: the departure rule's spelling set is a **shape**, and the corpus's one wall clock is gone
+
+**What was done.** `C-0138`/`CH-0169` left two things: `DEPARTURE_SPELLINGS`'s KDoc claims *"every spelling
+the corpus uses"* and enumerates four, and `T-172` emits a wall clock into a committed result file.
+
+**The cheap bounds shrank and re-shaped the job before anything ran.**
+The first one changed what the task was.
+`CH-0169`'s census is an **exact match against a list of names** — the same instrument whose failure it
+diagnosed in `C-0131` — so it cannot see a **compound** of the rule's own word.
+A *shape* census (a leaf key inside a `reproductions`/`convergence` record whose name denotes a discrepancy)
+finds **14** candidate names and **75 fields in 8 files**, against the queued 9, 62 and 6.
+The three it adds are `T-60`'s `convergence[*].multiplierDeparture` and `gradientDeparture` —
+whose four over-precise values `CLAUDE.md` **already quotes at exactly two significant digits**
+(`6.4e−4`, `5.1e−3`, `1.8e−4`, `1.1e−3`), so the corpus's prose has been written at the rule's precision
+while the file it is read from has not — and a third logarithm, `observedOrder`, in `T-1d` and `T-1e`.
+`CH-0192`.
+
+**The exclusions are the expensive half, and each one is now a number rather than a word.**
+Eight names are the rule's quantity (54 fields in 6 files) and six are not (21 fields in 3 files, against the
+queued 12). Two significant digits on `residualExponent = −11.0931` is `−11`: a residual of `1e−11` where the
+solve produced `8.07e−12`, **+23.9 %**, and the three-row node-spacing axis collapses to one constant.
+`observedOrder` is a logarithm of a **ratio** of two residuals and the answer of the axis — `CLAUDE.md`
+quotes exactly those four values as `2.08–2.32`, `1.59` and `1.11`, so sweeping them would put this
+repository's own prose outside the file it is read from. `worstResidual` is a **length in nm** carrying the
+decision `covalent`.
+
+**And two of the nine inherited judgements were wrong, one in each direction, both because a spelling was
+read as a study.** `relativeMovement` was excluded as *"`P-18`'s own determined-precision measurement"*;
+`P-18` emits it **outside** both departure records, where the record qualifier already protects it, and
+`T-182` and `T-189` already emit the same key **inside** one at two digits. The corpus had classified it
+correctly twice before the challenge classified it wrongly once.
+
+**The sweep.** Ten files, one `tools/reemission-order.py` order, one `tools/study-batch.sh` snapshot:
+**54 departure fields moved — exactly what the offline simulation predicted, file by file — 0 other numeric,
+0 booleans, 0 verdicts, 0 fields added, 1 removed by design.** Nothing stale, as an identity: 54 of 54 are
+exactly the two-digit rounding of their committed value, **0** unexplained over 158 residuals.
+
+**`T-227`.** The census that finds a wall clock cannot be run on field **names** — `T-7` emits
+`waterViscosityPascalSeconds` and five model times, `T-119` a configured `pauseSecondsBetweenQueries` —
+so it was run on the **source**: 31 studies measure their own elapsed time and exactly one emitted it.
+The removal is a schema change and all three readers take a *named lookup* in `cheapBounds`, never
+deserialising `parameters`, so it is safe by construction; `C-0110` says run them anyway, and that is what
+paid. `T-182` and `T-190` came back **byte-identical**; `T-189` came back with one wording field moved, and
+a `--committed` control run of `HEAD`'s own code on `HEAD`'s own inputs emits a file **byte-identical to the
+swept one** — deterministic staleness from iteration 31, in a file whose emitter and result were committed
+in the same commit and disagree.
+
+**What surprised us.** That `C-0127`'s mutation standard is **one-sided**. *"Narrowing must fail a named
+test"* is free for a widening to satisfy, and a predicate that can only ever be widened has become the
+pattern the per-key judgement refused. Measured over 31 named tests: 9 fail if the gate narrows to `T-214`'s
+four, 15 to `C-0129`'s leaf name, 7 if the record qualifier is dropped — and **6 if the six exclusions are
+swept in**. Better than any of those, every one of the 18 classifications fails at least one named test on
+its own, which a whole-predicate count can hide behind two popular rows.
+
+And that the `wide` line — described in three claims as *"a ceiling on the class"* — is keyed on a
+**substring**, so **47 of the 54** fields this task gated were outside it and **none** of the 21 it excluded
+were. `T-60`'s two fields sat inside a printed `945` on every run for four iterations, in the one line whose
+purpose is to be differenced against the gate. `CH-0193`.
+
+**Residue, published with its cost.** `T-164` emits three unrounded `Double.toString()` values **inside
+prose**, which the serialisation boundary cannot reach, so that file is un-diffable for the same reason
+`T-172` was — one of them moved in its sixteenth digit on this run. Queued as `T-249`; it has no readers.
+
+**Gates.** `tools/verify.sh`; 5 new Kotlin tests written first and watched fail (one failed, four are
+regression guards whose bite is measured by the mutation harness instead), the checker's self-tests
+67 → **91**, plus 28 census and 15 emitter self-tests; `check-markdown-tables.py`, `check-corpus-links.py`,
+`check-challenge-index.py`, `check-kotlin-format-strings.py` and `result-reader-census.py --check` clean.
+`--emit` was **not** run (`T-241` owns that shared file). Every headline number was grepped out of
+`gpd/results/T-225-departure-spelling-set.json`, and two were wrong on the first pass and corrected: the
+staleness identity's held count is 104 and not 73, and `coverageErrorExponent`'s second row moves `−62.5 %`
+rather than making two rows *"45 % apart"*.

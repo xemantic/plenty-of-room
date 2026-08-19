@@ -925,7 +925,11 @@ fun main() {
         "worstLinearityDeparture" to worstLinearity,
         "uniformCurlFreeDishing" to curlFree,
         "enumeratedPerState" to zeroEnumeration.enumerated.toDouble(),
-        "elapsedSeconds" to elapsed,
+        // `T-227`/`C-0150`: the wall clock is PRINTED (see `report`), never emitted.
+        // `CLAUDE.md`: *a WALL CLOCK in a result file is a step counter by another name*, and one
+        // such field makes the whole file permanently un-diffable — which is the check the
+        // rounding layer exists to enable. `T-214` re-emitted this file and watched
+        // `elapsedSeconds` move 1.1 % for no reason but the clock, on a run that changed nothing.
         "firstCrossingDegreesMeasured" to (firstMeasuredCrossing?.degrees ?: 0.0),
         "firstCrossingDishingMeasured" to
                 (firstMeasuredCrossing?.publishedPlacementDishing ?: 0.0),

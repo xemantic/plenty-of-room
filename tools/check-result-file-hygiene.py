@@ -102,12 +102,39 @@ RESULTS = "gpd/results"
 DEPARTURE_DIGITS = 2
 STRICT_DEPARTURE_PARENTS = ("reproductions", "convergence")
 
-# The four spellings the corpus uses for the quantity, mirroring
-# `structure/ResultRounding.kt`'s `DEPARTURE_DIGITS_BY_KEY`.  A gate test in
-# `ResultRoundingTest` asserts the Kotlin side; this list is what the emitter classifies on.
+# The spellings CLASSIFIED as the quantity, mirroring `structure/ResultRounding.kt`'s
+# `DEPARTURE_SPELLINGS`.  A gate test in `ResultRoundingTest` asserts the Kotlin side; this list is
+# what the checker gates on.
+#
+# `T-225`/`CH-0169`: `T-212`'s four were introduced as "every spelling the corpus uses", which is a
+# LIST, and a list is a census that stopped.  A shape census of `gpd/results/` finds fourteen more
+# leaf keys of the same kind inside those two records; eight are the quantity under another name
+# and six are not.  `tools/T-225-census.py --check` is what keeps this complete — it fails if the
+# corpus grows a candidate name that appears in NEITHER this tuple nor `EXCLUDED_DEPARTURE_KEYS`.
 DEPARTURE_KEYS = (
-    "departure", "relativeDeparture", "departureFromFinest", "relativeDepartureInStroke"
+    # `T-212`'s four
+    "departure", "relativeDeparture", "departureFromFinest", "relativeDepartureInStroke",
+    # `T-225`'s eight: a RELATIVE comparison of two computations of one quantity
+    "relativeError", "relativeSpread", "relativeMovement",
+    "multiplierDeparture", "gradientDeparture",
+    "firstIntegralRelativeSpread", "firstIntegralCoreSpread", "centrelineRouteSpread",
 )
+
+# `T-225` — the names a shape census turns up inside a departure record that are NOT the rule's
+# quantity, carried here so that the exclusion is a checkable statement rather than an omission.
+# The gate must not fire on any of them, and `GATE_TESTS` says so one name at a time.
+EXCLUDED_DEPARTURE_KEYS = {
+    "residualExponent": "a log10 of a residual: two digits on -11.0931 is -11, i.e. 1e-11 where "
+                        "the solve produced 8.07e-12, and the node-spacing axis collapses",
+    "coverageErrorExponent": "the same, on the coverage error",
+    "observedOrder": "a logarithm of a RATIO of two residuals, and the answer of the convergence "
+                     "axis; CLAUDE.md quotes 2.08-2.32, 1.59 and 1.11 at three digits",
+    "worstResidual": "a LENGTH in nm (T-117: distance from the measured 0.60-0.70 nm step) "
+                     "carrying the decision `covalent`, beside the record's own `departure`",
+    "residual": "an ABSOLUTE residual in the solved quantity's own scale, not a relative "
+                "comparison of two computations of it",
+    "coverageError": "the same",
+}
 
 # the three test tables, written before the implementation
 CONVERSION_TESTS = [
@@ -208,6 +235,48 @@ GATE_TESTS = [
      "a lattice coordinate difference, in nm"),
     ({"reproductions": [{"departure": 5.4e-06, "carried": 1.23456789}]}, 0,
      "a compliant departure beside a nine-digit sibling: the gate must not reach the sibling"),
+    # `T-225` -- the eight spellings the shape census classified IN.  One row each, so a narrowing
+    # back to `T-214`'s four fails eight NAMED tests rather than shrinking the corpus silently.
+    ({"convergence": [{"relativeError": 0.00298087}]}, 1,
+     "T-225: T-1d's mesh-refinement residual, |P - P_finest| / P_finest"),
+    ({"convergence": [{"relativeSpread": 0.00629921962}]}, 1,
+     "T-225: T-164's spread over a nested 1/2/4 subdivision"),
+    ({"convergence": [{"relativeMovement": 2.20225957e-05}]}, 1,
+     "T-225: T-108's |coarse - fine| / coarse, which T-182 and T-189 already emit at two digits"),
+    ({"convergence": [{"multiplierDeparture": 0.000638001852}]}, 1,
+     "T-225: T-60's 2-D edge mesh residual on the force multiplier, MISSED by CH-0169's census"),
+    ({"convergence": [{"gradientDeparture": 0.00505980955}]}, 1,
+     "T-225: the same on d ln mu/dh, which converges more slowly and is the binding one"),
+    ({"convergence": [{"firstIntegralRelativeSpread": 0.00605645349}]}, 1,
+     "T-225: T-3a's first integral is constant in exact arithmetic"),
+    ({"convergence": [{"firstIntegralCoreSpread": 0.000282217766}]}, 1,
+     "T-225: the same, over the core of the gap"),
+    ({"convergence": [{"centrelineRouteSpread": 0.000430063133}]}, 1,
+     "T-225: T-3b's two evaluation routes to one solved load"),
+    ({"reproductions": [{"relativeError": 0.00298087}]}, 1,
+     "T-225: the widened spellings are gated in BOTH records, not only in `convergence`"),
+    # `T-225` -- the six the shape census classified OUT.  One row each, so SWEEPING a name in by
+    # pattern fails six NAMED tests.  These are the rows `CH-0169` refused a mechanical widening
+    # for, and the refusal is now a test rather than a sentence.
+    ({"convergence": [{"residualExponent": -11.0931}]}, 0,
+     "T-225: a log10 of a residual -- two digits is -11, i.e. 1e-11 for a solved 8.07e-12"),
+    ({"convergence": [{"coverageErrorExponent": -14.1669}]}, 0,
+     "T-225: the same, on the coverage error"),
+    ({"convergence": [{"observedOrder": 2.07533}]}, 0,
+     "T-225: a convergence ORDER -- CLAUDE.md quotes 2.08-2.32 and 1.59 at three digits"),
+    ({"convergence": [{"worstResidual": 0.249373451}]}, 0,
+     "T-225: T-117's closure residual is a LENGTH in nm and carries the decision `covalent`"),
+    ({"convergence": [{"residual": 0.00298087}]}, 0,
+     "T-225: an ABSOLUTE residual in the solved quantity's own scale"),
+    ({"convergence": [{"coverageError": 0.00298087}]}, 0,
+     "T-225: the same"),
+    # `T-225` -- the record qualifier still protects the studies that OWN these spellings
+    ({"collars": [{"centrelineRouteSpread": 0.000430063133}]}, 0,
+     "T-160 declares centrelineRouteSpread at THREE digits and emits it outside both records"),
+    ({"quantities": [{"relativeMovement": 3.30000004e-13}]}, 0,
+     "P-18's own determined-precision ANSWER, which is what CH-0169 feared a widening would round"),
+    ({"forces": [{"firstIntegralCoreSpread": 0.000282217766}]}, 0,
+     "T-3a emits the same spread outside the record, where `numericallyResolved` is decided on it"),
 ]
 
 SATURATION_TESTS = [
@@ -346,7 +415,7 @@ def departures_in(document, path):
     ``gated`` is `C-0129`'s strict predicate — the leaf key `departure` inside a
     [STRICT_DEPARTURE_PARENTS] record — and is what `--departures` exits 1 on.
 
-    ``scoped`` is the **rule**: any of the four [DEPARTURE_KEYS] spellings inside such a record.
+    ``scoped`` is the **rule**: any [DEPARTURE_KEYS] spelling inside such a record.
     It is a superset of ``gated`` by construction, it is reported and never gated, and the gap
     between the two is `T-212`'s measurement — 199 fields in 27 files against 601 in 63 when the
     audit was closed.  The **record** qualifier is load-bearing in both: `T-193` emits a
@@ -388,7 +457,14 @@ def check_departures(root=RESULTS):
 
     ``wide`` keeps `C-0129`'s reported outer bound — **any** leaf key containing `departure` —
     which deliberately includes `departureRatio` and `plateDeparture`, ratios *between two
-    models* that the rule does not cover.  It is a ceiling on the class, not a defect count.
+    models* that the rule does not cover.
+
+    **It is a bound on ONE SPELLING FAMILY, not on the class** (`CH-0193`).  It over-counts in
+    one direction and under-counts badly in the other: of the 54 fields `T-225`'s widened
+    predicate gates, 7 contain the substring and 47 do not, and of the 21 it classifies OUT,
+    none do.  It is retained because it is the census `C-0129` published and a reader who watched
+    it fall is entitled to keep watching it; the ceiling on the CLASS is
+    `tools/T-225-census.py`, which searches for the shape and requires a classification.
     """
     gated, scoped, wide = [], [], []
     for path in result_files(root):
@@ -438,6 +514,10 @@ def self_test():
             failures += 1
             print(f"SELF-TEST FAILED — saturation, {description}: "
                   f"expected {expected}, found {found}")
+    for name in EXCLUDED_DEPARTURE_KEYS:
+        if name in DEPARTURE_KEYS:
+            failures += 1
+            print(f"SELF-TEST FAILED — {name!r} is both classified OUT and gated")
     for document, expected, description in GATE_TESTS:
         parsed = json.loads(json.dumps(document), parse_float=Decimal)
         found = len(departure_gate(parsed, "fixture"))
@@ -474,7 +554,7 @@ def self_test():
         os.remove(os.path.join(fixture, name))
     os.rmdir(fixture)
     total = (len(CONVERSION_TESTS) + len(DEPARTURE_TESTS) + len(SATURATION_TESTS)
-             + len(SCOPE_TESTS) + len(GATE_TESTS) + 2)
+             + len(SCOPE_TESTS) + len(GATE_TESTS) + len(EXCLUDED_DEPARTURE_KEYS) + 2)
     print(f"{total - failures} of {total} self-tests pass")
     return failures
 
@@ -486,13 +566,15 @@ def self_test():
 def report_departures():
     gated, scoped, wide = check_departures()
     print("-- departure precision (GATE on the RULE's own scope; C-0093's two-digit rule) --")
-    print(f"  GATE  (all four spellings inside a reproductions/convergence record): "
+    print(f"  GATE  ({len(DEPARTURE_KEYS)} classified spellings inside a "
+          f"reproductions/convergence record): "
           f"{len(scoped)} field(s) in {len({row[0] for row in scoped})} file(s)")
     print(f"  scope (the same predicate — since T-214 the gate IS the rule): "
           f"{len(scoped)} field(s) in {len({row[0] for row in scoped})} file(s)")
     print(f"  strict (C-0129's leaf-name predicate, now a proper subset of the gate): "
           f"{len(gated)} field(s) in {len({row[0] for row in gated})} file(s)")
-    print(f"  wide  (any leaf key containing 'departure'; a ceiling on the class, NOT gated): "
+    print(f"  wide  (any leaf key containing 'departure'; ONE SPELLING FAMILY, not the class "
+          f"— CH-0193; NOT gated): "
           f"{len(wide)} field(s) in {len({row[0] for row in wide})} file(s)")
     for label, rows in (("GATE", scoped), ("scope", scoped), ("strict", gated)):
         counts = {}

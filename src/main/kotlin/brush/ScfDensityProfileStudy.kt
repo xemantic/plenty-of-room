@@ -21,6 +21,8 @@ import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.equipartitionRms
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.structure.SOLVED_HEIGHT_SIGNIFICANT_DIGITS
+import com.xemantic.nano.plentyofroom.structure.roundForResult as roundToSignificantDigits
+import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -492,7 +494,7 @@ fun main() {
     output.parentFile.mkdirs()
     output.writeText(
         json.encodeToString(
-            json.parseToJsonElement(json.encodeToString(result)).roundedForResult()
+            json.parseToJsonElement(json.encodeToString(result)).roundedForScfResult()
         ) + "\n"
     )
     report(result, output, elapsed)
@@ -1068,36 +1070,40 @@ private val DEEP_COMPRESSION_DIGITS = mapOf(
     "stiffnessAtNineTenths" to 3
 )
 
-private fun roundForResult(
-    value: Double,
-    digits: Int = RESULT_SIGNIFICANT_DIGITS
-): Double {
-    if (!value.isFinite()) return value
-    if (abs(value) < RESULT_ABSOLUTE_FLOOR) return 0.0
-    val scale = 10.0.pow(digits - 1 - floor(log10(abs(value))))
-    return (value * scale).roundToLong() / scale
-}
-
 /**
- * Returns this element with every non-integral number rounded by [roundForResult], at
- * [digits] significant digits or at the [DEEP_COMPRESSION_DIGITS] override for its key.
+ * Returns this element with every non-integral number rounded, at [RESULT_SIGNIFICANT_DIGITS] or
+ * at the [DEEP_COMPRESSION_DIGITS] override for its key.
  *
  * The override applies to the whole subtree under the key, so an array of stiffnesses under one
  * of those names is covered.
+ *
+ * **Delegated to `structure/`** by `T-225`, for `CH-0154`'s reason and `CH-0169`'s count: this
+ * file's own private traversal had no `digitsByKey` parameter, so `T-1d` could not have carried
+ * the departure rule *by any edit at its own emission site*. It was the last of the tree's six
+ * rounding implementations still in that position — `T-214` delegated three and measured this one
+ * clean, because `T-1d` carries no field under the four spellings that existed then. It carries
+ * six under `convergence[*].relativeError`, which `T-225` classifies as the rule's quantity.
+ *
+ * The delegation is observationally identical apart from the departure baseline: the same
+ * absolute floor, the same **six**-digit ceiling ([RESULT_SIGNIFICANT_DIGITS], `P-18`'s
+ * solved-height precision rather than the tree ceiling), and `roundIntegralNumbers = false`,
+ * which is this study's own rendering convention and is frozen by the committed file.
  */
-private fun JsonElement.roundedForResult(
+private fun JsonElement.roundedForScfResult(): JsonElement = roundedForResult(
+    digits = RESULT_SIGNIFICANT_DIGITS,
+    digitsByKey = DEEP_COMPRESSION_DIGITS,
+    floor = RESULT_ABSOLUTE_FLOOR
+)
+
+/**
+ * One scalar rounded at this file's own precision.
+ *
+ * Retained as a named wrapper across `T-225`'s delegation because it is called on a
+ * **decision** — `insideStandingBracket` compares three rounded values — and this file's
+ * precision is six digits, not the tree ceiling of nine. Delegating without carrying the
+ * default would have changed a boolean and nothing visible beside it.
+ */
+private fun roundForResult(
+    value: Double,
     digits: Int = RESULT_SIGNIFICANT_DIGITS
-): JsonElement = when (this) {
-    is JsonObject -> JsonObject(
-        mapValues { (key, value) ->
-            value.roundedForResult(DEEP_COMPRESSION_DIGITS[key] ?: digits)
-        }
-    )
-    is JsonArray -> JsonArray(map { it.roundedForResult(digits) })
-    is JsonPrimitive -> when {
-        isString -> this
-        content.none { it == '.' || it == 'e' || it == 'E' } -> this
-        else -> doubleOrNull?.let { JsonPrimitive(roundForResult(it, digits)) } ?: this
-    }
-    else -> this
-}
+): Double = roundToSignificantDigits(value, digits, RESULT_ABSOLUTE_FLOOR)

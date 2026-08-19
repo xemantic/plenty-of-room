@@ -101,9 +101,24 @@ data class CrossoverLayout(
         /**
          * The margin in nm inside the footprint edge within which a column is not placed.
          *
-         * A column exactly on the edge would seed a zero-length beam element. The margin is
-         * far below the 0.28 nm closest approach any base-pair phase makes on a 40 nm tile,
-         * so it never decides a column count that the physics does not already decide.
+         * A column exactly on the edge would seed a zero-length beam element.
+         *
+         * **The guard is inert exactly where the slack past the last pitch,
+         * `(lengthX − 2·margin) mod columnSpacing`, stays clear of zero by more than the range
+         * of margins a design might use — and it is NOT inert everywhere.** It was documented
+         * here as *"far below the 0.28 nm closest approach any base-pair phase makes on a 40 nm
+         * tile"*, which was a statement about **one** geometry and has since failed at two
+         * others: `C-0134` found it deleting two of eight columns at the square lattice's
+         * buildable 38.08 nm, and `C-0146`/`C-0148` found it admitting a **twelfth** honeycomb
+         * crossover column on **0.07 nm** of slack — one fifth of a base-pair rise — at the
+         * four-layer block's 39.44 nm bounding box, worth six flat coupled cells of eight
+         * against three.
+         *
+         * So quote the slack beside any column count read at a new extent.
+         * `tile.columnSlack` and `tile.guardIsInert` compute the condition, and
+         * `tile.crossoverColumnsIn` takes the **window** as its parameter rather than a tile
+         * dimension — because on a staggered row lattice the count belongs to the window two
+         * adjacent rows share and not to the block's bounding box (`C-0148`).
          */
         const val EDGE_MARGIN: Double = 0.05
 

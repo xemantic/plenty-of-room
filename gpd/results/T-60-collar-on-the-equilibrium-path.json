@@ -2085,8 +2085,8 @@
             "gapHeight": 6.5,
             "multiplierMinimumMargin": 1.09735984,
             "logGradient": 0.0180574356,
-            "multiplierDeparture": 6.38001852E-4,
-            "gradientDeparture": 0.00505980955
+            "multiplierDeparture": 6.4E-4,
+            "gradientDeparture": 0.0051
         },
         {
             "axis": "2-D mesh refinement",
@@ -2094,8 +2094,8 @@
             "gapHeight": 6.5,
             "multiplierMinimumMargin": 1.09685957,
             "logGradient": 0.0179867236,
-            "multiplierDeparture": 1.81823524E-4,
-            "gradientDeparture": 0.00112404467
+            "multiplierDeparture": 1.8E-4,
+            "gradientDeparture": 0.0011
         },
         {
             "axis": "2-D mesh refinement",
@@ -2122,7 +2122,7 @@
             "multiplierMinimumMargin": 1.09685957,
             "logGradient": 0.0179867236,
             "multiplierDeparture": 0.0,
-            "gradientDeparture": 0.00179627398
+            "gradientDeparture": 0.0018
         },
         {
             "axis": "central-difference step",
@@ -2131,7 +2131,7 @@
             "multiplierMinimumMargin": 1.09685957,
             "logGradient": 0.0180836723,
             "multiplierDeparture": 0.0,
-            "gradientDeparture": 0.00719597241
+            "gradientDeparture": 0.0072
         },
         {
             "axis": "central-difference step",
@@ -2140,7 +2140,7 @@
             "multiplierMinimumMargin": 1.09685957,
             "logGradient": 0.0182346267,
             "multiplierDeparture": 0.0,
-            "gradientDeparture": 0.01560359
+            "gradientDeparture": 0.016
         },
         {
             "axis": "central-difference step",

@@ -1,0 +1,18 @@
+# T-225 + T-227 — the ONE topological order the ten affected result files were re-emitted in,
+# from `tools/reemission-order.py T-108 T-1d T-3a T-3b T-60 T-164 T-172 T-182 T-190 T-189`
+# (10 constraints inside the set; every one of them into T-3b, T-172 or T-182).
+#
+# 1-6 are `T-225`: the six files carrying a field under one of the eight spellings the shape
+# census classified IN.  7 is `T-227`: the wall clock.  8-10 are `T-227`'s three readers, which
+# are re-run because removing a field is a SCHEMA change and because `C-0110` records that a
+# proof a change is invisible is not a substitute for running the consumers.
+synthesis.DesiredStrokeReachStudyKt
+brush.ScfDensityProfileStudyKt
+electrostatics.NonlinearPbProfileStudyKt
+electrostatics.TileEdgeLoadProfileStudyKt
+actuator.CollarEquilibriumPathStudyKt
+anchoring.RowEndCrossoverStiffnessStudyKt
+structure.RowEndPrestrainStudyKt
+structure.EdgeTwistReliefStudyKt
+structure.TwistCorrectedRasterStudyKt
+structure.InteriorCrossoverPrestrainStudyKt

@@ -2273,14 +2273,14 @@
             "knob": "elastica RK4 steps 200 -> 1600",
             "coarse": 5.87214106,
             "fine": 5.87214104,
-            "relativeMovement": 2.25412212E-9
+            "relativeMovement": 2.3E-9
         },
         {
             "quantity": "C-0030 minimum tangent over [3, 10] — the one INTERIOR minimum in the catalogue",
             "knob": "sampling 64 -> 4096",
             "coarse": 22.8754985,
             "fine": 22.8749947,
-            "relativeMovement": 2.20225957E-5
+            "relativeMovement": 2.2E-5
         }
     ],
     "verdict": {

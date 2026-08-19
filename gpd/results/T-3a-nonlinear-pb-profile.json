@@ -8315,96 +8315,96 @@
             "nodes": 500,
             "force": -877.691204,
             "relativeDeparture": 1.2E-5,
-            "firstIntegralRelativeSpread": 0.00605645349,
-            "firstIntegralCoreSpread": 2.82217766E-4
+            "firstIntegralRelativeSpread": 0.0061,
+            "firstIntegralCoreSpread": 2.8E-4
         },
         {
             "gapHeight": 5.0,
             "nodes": 1000,
             "force": -877.6834,
             "relativeDeparture": 3.0E-6,
-            "firstIntegralRelativeSpread": 0.00151410994,
-            "firstIntegralCoreSpread": 7.05650791E-5
+            "firstIntegralRelativeSpread": 0.0015,
+            "firstIntegralCoreSpread": 7.1E-5
         },
         {
             "gapHeight": 5.0,
             "nodes": 2000,
             "force": -877.681428,
             "relativeDeparture": 7.1E-7,
-            "firstIntegralRelativeSpread": 3.78529185E-4,
-            "firstIntegralCoreSpread": 1.79952813E-5
+            "firstIntegralRelativeSpread": 3.8E-4,
+            "firstIntegralCoreSpread": 1.8E-5
         },
         {
             "gapHeight": 5.0,
             "nodes": 4000,
             "force": -877.680956,
             "relativeDeparture": 1.8E-7,
-            "firstIntegralRelativeSpread": 9.46384585E-5,
-            "firstIntegralCoreSpread": 4.54358057E-6
+            "firstIntegralRelativeSpread": 9.5E-5,
+            "firstIntegralCoreSpread": 4.5E-6
         },
         {
             "gapHeight": 5.0,
             "nodes": 8000,
             "force": -877.680838,
             "relativeDeparture": 4.2E-8,
-            "firstIntegralRelativeSpread": 2.36740605E-5,
-            "firstIntegralCoreSpread": 1.14152352E-6
+            "firstIntegralRelativeSpread": 2.4E-5,
+            "firstIntegralCoreSpread": 1.1E-6
         },
         {
             "gapHeight": 5.0,
             "nodes": 16000,
             "force": -877.680808,
             "relativeDeparture": 8.4E-9,
-            "firstIntegralRelativeSpread": 5.94612036E-6,
-            "firstIntegralCoreSpread": 2.85380806E-7
+            "firstIntegralRelativeSpread": 5.9E-6,
+            "firstIntegralCoreSpread": 2.9E-7
         },
         {
             "gapHeight": 30.0,
             "nodes": 500,
             "force": -0.395291657,
             "relativeDeparture": 0.0018,
-            "firstIntegralRelativeSpread": 16.3748108,
-            "firstIntegralCoreSpread": 0.0252054279
+            "firstIntegralRelativeSpread": 16.0,
+            "firstIntegralCoreSpread": 0.025
         },
         {
             "gapHeight": 30.0,
             "nodes": 1000,
             "force": -0.394771417,
             "relativeDeparture": 4.4E-4,
-            "firstIntegralRelativeSpread": 4.09896078,
-            "firstIntegralCoreSpread": 0.00630985776
+            "firstIntegralRelativeSpread": 4.1,
+            "firstIntegralCoreSpread": 0.0063
         },
         {
             "gapHeight": 30.0,
             "nodes": 2000,
             "force": -0.394640902,
             "relativeDeparture": 1.1E-4,
-            "firstIntegralRelativeSpread": 1.02507143,
-            "firstIntegralCoreSpread": 0.00161574445
+            "firstIntegralRelativeSpread": 1.0,
+            "firstIntegralCoreSpread": 0.0016
         },
         {
             "gapHeight": 30.0,
             "nodes": 4000,
             "force": -0.394608339,
             "relativeDeparture": 2.7E-5,
-            "firstIntegralRelativeSpread": 0.256290263,
-            "firstIntegralCoreSpread": 4.0876133E-4
+            "firstIntegralRelativeSpread": 0.26,
+            "firstIntegralCoreSpread": 4.1E-4
         },
         {
             "gapHeight": 30.0,
             "nodes": 8000,
             "force": -0.394600199,
             "relativeDeparture": 6.4E-6,
-            "firstIntegralRelativeSpread": 0.0640794737,
-            "firstIntegralCoreSpread": 1.02796194E-4
+            "firstIntegralRelativeSpread": 0.064,
+            "firstIntegralCoreSpread": 1.0E-4
         },
         {
             "gapHeight": 30.0,
             "nodes": 16000,
             "force": -0.394598164,
             "relativeDeparture": 1.3E-6,
-            "firstIntegralRelativeSpread": 0.0160307894,
-            "firstIntegralCoreSpread": 2.56991859E-5
+            "firstIntegralRelativeSpread": 0.016,
+            "firstIntegralCoreSpread": 2.6E-5
         }
     ],
     "pullIn": [
