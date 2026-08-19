@@ -1,0 +1,510 @@
+{
+    "task": "T-215",
+    "leaf": "none — a process task about the reproducibility of an emitted artifact",
+    "conditions": "T = 300 K, k_BT = 4.141947 pN nm; the ensemble is 10 independent emissions of gpd/results/T-129-range-robust-placement.json, three read out of git and the rest fresh runs of anchoring.RangeRobustPlacementStudyKt at HEAD; the degeneracy measurement is a 45-path multi-state minimax on C-0022's solved collars at C-0017's 33.3333 pN/nm mandate",
+    "decision": "the file's irreproducibility is confined to 15 of 1042 fields, all of them descent outputs; the VALUE moves 2.6197e-03 and the POINT 5.9522e-03, and no verdict moves",
+    "members": [
+        {
+            "label": "iteration 13 (as committed)",
+            "provenance": "git cf7de13:gpd/results/T-129-range-robust-placement.json"
+        },
+        {
+            "label": "iteration 28 (as committed)",
+            "provenance": "git d1ff95e:gpd/results/T-129-range-robust-placement.json"
+        },
+        {
+            "label": "iteration 30 (as committed, HEAD)",
+            "provenance": "git ce11aaf:gpd/results/T-129-range-robust-placement.json"
+        },
+        {
+            "label": "fresh run A1 at HEAD",
+            "provenance": "/tmp/claude-1000/-home-claude-git-plenty-of-room/1ebe63bd-7cfe-4ffb-9f57-4d4946474277/scratchpad/T-215/ens/A1.json"
+        },
+        {
+            "label": "fresh run A2 at HEAD",
+            "provenance": "/tmp/claude-1000/-home-claude-git-plenty-of-room/1ebe63bd-7cfe-4ffb-9f57-4d4946474277/scratchpad/T-215/ens/A2.json"
+        },
+        {
+            "label": "fresh run A3 at HEAD",
+            "provenance": "/tmp/claude-1000/-home-claude-git-plenty-of-room/1ebe63bd-7cfe-4ffb-9f57-4d4946474277/scratchpad/T-215/ens/A3.json"
+        },
+        {
+            "label": "fresh run B1 at HEAD",
+            "provenance": "/tmp/claude-1000/-home-claude-git-plenty-of-room/1ebe63bd-7cfe-4ffb-9f57-4d4946474277/scratchpad/T-215/ens/B1.json"
+        },
+        {
+            "label": "fresh run B2 at HEAD",
+            "provenance": "/tmp/claude-1000/-home-claude-git-plenty-of-room/1ebe63bd-7cfe-4ffb-9f57-4d4946474277/scratchpad/T-215/ens/B2.json"
+        },
+        {
+            "label": "fresh run B3 at HEAD",
+            "provenance": "/tmp/claude-1000/-home-claude-git-plenty-of-room/1ebe63bd-7cfe-4ffb-9f57-4d4946474277/scratchpad/T-215/ens/B3.json"
+        },
+        {
+            "label": "the iteration-13 tree, git-archived and run today",
+            "provenance": "/tmp/claude-1000/-home-claude-git-plenty-of-room/1ebe63bd-7cfe-4ffb-9f57-4d4946474277/scratchpad/T-215/ens/H1.json"
+        }
+    ],
+    "fields": [
+        {
+            "path": "/bounds[3]/settles",
+            "kind": "string",
+            "classification": "REPAIR",
+            "width": 0.0,
+            "distinctReadings": 2,
+            "note": "iteration 28's +-binds-tighter-than-format repair; one member still carries the raw conversion"
+        },
+        {
+            "path": "/convergence[0]/departure",
+            "kind": "number",
+            "classification": "ROUNDING",
+            "width": 0.0014858792,
+            "distinctReadings": 2,
+            "note": "T-212's deliberate two-significant-digit departure rule"
+        },
+        {
+            "path": "/convergence[1]/departure",
+            "kind": "number",
+            "classification": "ROUNDING",
+            "width": 0.00102054833,
+            "distinctReadings": 2,
+            "note": "T-212's deliberate two-significant-digit departure rule"
+        },
+        {
+            "path": "/convergence[2]/departure",
+            "kind": "number",
+            "classification": "ROUNDING",
+            "width": 9.98632927E-4,
+            "distinctReadings": 2,
+            "note": "T-212's deliberate two-significant-digit departure rule"
+        },
+        {
+            "path": "/predicates[1]/verdict",
+            "kind": "string",
+            "classification": "RENDERING",
+            "width": 0.0,
+            "distinctReadings": 2,
+            "note": "a prose field whose only movement is a rendered VALUE"
+        },
+        {
+            "path": "/ranges[1]/minimaxPeakRatio",
+            "kind": "number",
+            "classification": "POINT",
+            "width": 0.00595215275,
+            "distinctReadings": 2,
+            "note": "a functional of the argmin, not of the objective"
+        },
+        {
+            "path": "/ranges[1]/minimaxWorstOverStroke",
+            "kind": "number",
+            "classification": "VALUE",
+            "width": 0.00261967754,
+            "distinctReadings": 2,
+            "note": "the objective a minimax descent reports"
+        },
+        {
+            "path": "/ranges[1]/peakPathForceAtAcceptableStroke",
+            "kind": "number",
+            "classification": "POINT",
+            "width": 0.00595215241,
+            "distinctReadings": 2,
+            "note": "a functional of the argmin, not of the objective"
+        },
+        {
+            "path": "/ranges[1]/peakPathStiffness",
+            "kind": "number",
+            "classification": "POINT",
+            "width": 0.00595214847,
+            "distinctReadings": 2,
+            "note": "a functional of the argmin, not of the objective"
+        },
+        {
+            "path": "/ranges[1]/peakSolvedPathForce",
+            "kind": "number",
+            "classification": "POINT",
+            "width": 7.54818011E-4,
+            "distinctReadings": 2,
+            "note": "a functional of the argmin, not of the objective"
+        },
+        {
+            "path": "/ranges[1]/peakThermalForce",
+            "kind": "number",
+            "classification": "POINT",
+            "width": 0.00595215078,
+            "distinctReadings": 2,
+            "note": "a functional of the argmin, not of the objective"
+        },
+        {
+            "path": "/reproductions[10]/departure",
+            "kind": "number",
+            "classification": "ROUNDING",
+            "width": 7.99999935E-8,
+            "distinctReadings": 2,
+            "note": "T-212's deliberate two-significant-digit departure rule"
+        },
+        {
+            "path": "/reproductions[1]/departure",
+            "kind": "number",
+            "classification": "ROUNDING",
+            "width": 0.00131202597,
+            "distinctReadings": 2,
+            "note": "T-212's deliberate two-significant-digit departure rule"
+        },
+        {
+            "path": "/reproductions[3]/departure",
+            "kind": "number",
+            "classification": "ROUNDING",
+            "width": 0.00299291394,
+            "distinctReadings": 2,
+            "note": "T-212's deliberate two-significant-digit departure rule"
+        },
+        {
+            "path": "/reproductions[4]/departure",
+            "kind": "number",
+            "classification": "ROUNDING",
+            "width": 0.00845320777,
+            "distinctReadings": 2,
+            "note": "T-212's deliberate two-significant-digit departure rule"
+        },
+        {
+            "path": "/reproductions[5]/departure",
+            "kind": "number",
+            "classification": "ROUNDING",
+            "width": 0.0170609028,
+            "distinctReadings": 2,
+            "note": "T-212's deliberate two-significant-digit departure rule"
+        },
+        {
+            "path": "/reproductions[6]/departure",
+            "kind": "number",
+            "classification": "ROUNDING",
+            "width": 0.00775722182,
+            "distinctReadings": 2,
+            "note": "T-212's deliberate two-significant-digit departure rule"
+        },
+        {
+            "path": "/reproductions[9]/departure",
+            "kind": "number",
+            "classification": "ROUNDING",
+            "width": 0.00265903125,
+            "distinctReadings": 2,
+            "note": "T-212's deliberate two-significant-digit departure rule"
+        },
+        {
+            "path": "/subsets[10]/minimaxWorstOverStroke",
+            "kind": "number",
+            "classification": "VALUE",
+            "width": 1.35936303E-4,
+            "distinctReadings": 2,
+            "note": "the objective a minimax descent reports"
+        },
+        {
+            "path": "/subsets[15]/minimaxWorstOverStroke",
+            "kind": "number",
+            "classification": "VALUE",
+            "width": 8.88744119E-9,
+            "distinctReadings": 2,
+            "note": "the objective a minimax descent reports"
+        },
+        {
+            "path": "/subsets[19]/minimaxWorstOverStroke",
+            "kind": "number",
+            "classification": "VALUE",
+            "width": 3.72802435E-4,
+            "distinctReadings": 6,
+            "note": "the objective a minimax descent reports"
+        },
+        {
+            "path": "/subsets[21]/minimaxWorstOverStroke",
+            "kind": "number",
+            "classification": "VALUE",
+            "width": 1.42742008E-6,
+            "distinctReadings": 2,
+            "note": "the objective a minimax descent reports"
+        },
+        {
+            "path": "/subsets[27]/minimaxWorstOverStroke",
+            "kind": "number",
+            "classification": "VALUE",
+            "width": 1.29226045E-4,
+            "distinctReadings": 3,
+            "note": "the objective a minimax descent reports"
+        },
+        {
+            "path": "/subsets[2]/minimaxWorstOverStroke",
+            "kind": "number",
+            "classification": "VALUE",
+            "width": 0.00457447964,
+            "distinctReadings": 6,
+            "note": "the objective a minimax descent reports"
+        },
+        {
+            "path": "/subsets[3]/minimaxWorstOverStroke",
+            "kind": "number",
+            "classification": "VALUE",
+            "width": 6.42823304E-4,
+            "distinctReadings": 3,
+            "note": "the objective a minimax descent reports"
+        },
+        {
+            "path": "/subsets[8]/minimaxWorstOverStroke",
+            "kind": "number",
+            "classification": "VALUE",
+            "width": 0.00263382198,
+            "distinctReadings": 7,
+            "note": "the objective a minimax descent reports"
+        },
+        {
+            "path": "/subsets[9]/minimaxWorstOverStroke",
+            "kind": "number",
+            "classification": "VALUE",
+            "width": 2.8648147E-4,
+            "distinctReadings": 2,
+            "note": "the objective a minimax descent reports"
+        }
+    ],
+    "widths": [
+        {
+            "quantity": "ranges[1] — 0.5 mM, L0 = 10 nm, C-0032's recommendation",
+            "members": 10,
+            "distinctValues": 2,
+            "valueWidth": 0.00261967754,
+            "pointWidth": 0.00595215275,
+            "amplification": 2.27209367,
+            "note": "the POINT read on max_i k_i, which minimaxPeakRatio, peakPathStiffness, peakPathForceAtAcceptableStroke and peakThermalForce all are"
+        },
+        {
+            "quantity": "ranges[1], the POINT read on the peak SUPPORT force instead",
+            "members": 10,
+            "distinctValues": 2,
+            "valueWidth": 0.00261967754,
+            "pointWidth": 7.54818011E-4,
+            "amplification": 0.28813394,
+            "note": "a different functional of the same argmin — which is why a POINT width is not one number either"
+        },
+        {
+            "quantity": "the 31 device subsets — VALUE only, no POINT is emitted for them",
+            "members": 10,
+            "distinctValues": 33,
+            "valueWidth": 0.00457447964,
+            "pointWidth": 0.0,
+            "amplification": null,
+            "note": "9 of 31 subsets vary; the worst is the widest VALUE movement anywhere in the file outside ranges[1]"
+        }
+    ],
+    "degeneracy": [
+        {
+            "problem": "two anti-parallel 10 nm states",
+            "states": 2,
+            "paths": 45,
+            "bindingStates": 1,
+            "ulpOffsets": [
+                0,
+                1,
+                2,
+                4,
+                8
+            ],
+            "valueWidth": 0.0,
+            "pointWidth": 0.0,
+            "amplification": null,
+            "note": "one weight of one start advanced by whole units in the last place; everything else held. Widths are floored at 1.0E-12, below which a width is a difference of two Doubles and not a reading"
+        },
+        {
+            "problem": "three states, the 2 nm state included",
+            "states": 3,
+            "paths": 45,
+            "bindingStates": 2,
+            "ulpOffsets": [
+                0,
+                1,
+                2,
+                4,
+                8
+            ],
+            "valueWidth": 0.0,
+            "pointWidth": 0.0,
+            "amplification": null,
+            "note": "one weight of one start advanced by whole units in the last place; everything else held. Widths are floored at 1.0E-12, below which a width is a difference of two Doubles and not a reading"
+        }
+    ],
+    "spreads": [
+        {
+            "problem": "two anti-parallel 10 nm states",
+            "states": 2,
+            "paths": 45,
+            "startsUsed": 3,
+            "startsWithinTolerance": 3,
+            "tolerance": 0.01,
+            "valueWidth": 0.0058,
+            "pointWidth": 0.021,
+            "amplification": 3.5,
+            "allStartsValueWidth": 0.0058,
+            "allStartsPointWidth": 0.021,
+            "note": "each start run ALONE; the ensemble's answer is whichever of these wins a single strict comparison, so a jitter that flips it moves the file by the POINT width of this set and not by anything smaller. The band test is taken at the decision precision; the widths themselves move by up to 8e-5 between two runs of this study and are emitted at two significant digits"
+        },
+        {
+            "problem": "three states, the 2 nm state included",
+            "states": 3,
+            "paths": 45,
+            "startsUsed": 3,
+            "startsWithinTolerance": 2,
+            "tolerance": 0.01,
+            "valueWidth": 0.0072,
+            "pointWidth": 0.012,
+            "amplification": 1.7,
+            "allStartsValueWidth": 0.011,
+            "allStartsPointWidth": 0.034,
+            "note": "each start run ALONE; the ensemble's answer is whichever of these wins a single strict comparison, so a jitter that flips it moves the file by the POINT width of this set and not by anything smaller. The band test is taken at the decision precision; the widths themselves move by up to 8e-5 between two runs of this study and are emitted at two significant digits"
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "the VALUE width of ranges[1]",
+            "parameter": "ensemble members",
+            "values": [
+                2.0,
+                3.0,
+                4.0,
+                5.0,
+                6.0,
+                7.0,
+                8.0,
+                9.0,
+                10.0
+            ],
+            "results": [
+                0.0,
+                0.00261967754,
+                0.00261967754,
+                0.00261967754,
+                0.00261967754,
+                0.00261967754,
+                0.00261967754,
+                0.00261967754,
+                0.00261967754
+            ],
+            "departure": 0.0,
+            "note": "a width is a MAXIMUM over an ensemble, so it is monotone non-decreasing in the member count and settles only once every basin has been drawn"
+        },
+        {
+            "quantity": "the POINT width of ranges[1]",
+            "parameter": "ensemble members",
+            "values": [
+                2.0,
+                3.0,
+                4.0,
+                5.0,
+                6.0,
+                7.0,
+                8.0,
+                9.0,
+                10.0
+            ],
+            "results": [
+                0.0,
+                0.00595215275,
+                0.00595215275,
+                0.00595215275,
+                0.00595215275,
+                0.00595215275,
+                0.00595215275,
+                0.00595215275,
+                0.00595215275
+            ],
+            "departure": 0.0,
+            "note": "same statistic on the argmin's own functional"
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0131 §6",
+            "quantity": "the widest non-departure movement of T-129, ranges[1] POINT — C-0131 read it against the committed file and this ensemble contains that pair",
+            "published": 0.006,
+            "reproduced": 0.00595215275,
+            "departure": 0.008,
+            "strict": false
+        },
+        {
+            "source": "C-0131 §6",
+            "quantity": "the subsets[*] residual between two runs of identical code — C-0131's is a TWO-member reading and this is a TEN-member MAXIMUM, so a width that did not grow would mean the ensemble had drawn no new basin",
+            "published": 8.6E-4,
+            "reproduced": 0.00457447964,
+            "departure": 4.3,
+            "strict": false
+        }
+    ],
+    "predicates": [
+        {
+            "name": "P2",
+            "statement": "every varying field is a VALUE, a POINT, a deliberate rounding or a rendering of one of them; the OTHER bucket is empty",
+            "met": true,
+            "verdict": "27 varying field(s) of 1042 compared: 10 VALUE, 5 POINT, 10 ROUNDING, 2 RENDERING, 0 OTHER"
+        },
+        {
+            "name": "P3",
+            "statement": "the width is quoted on the VALUE and on the POINT, with the ratio",
+            "met": true,
+            "verdict": "VALUE 2.6197e-03, POINT 5.9522e-03, amplification 2.2721"
+        },
+        {
+            "name": "P4",
+            "statement": "no verdict of the file depends on the unstable part",
+            "met": true,
+            "verdict": "0 boolean field(s) vary; 2 string field(s) vary, 1 of those differ in DIGITS ONLY and 1 is iteration 28's format-string repair; 0 unaccounted"
+        },
+        {
+            "name": "P6",
+            "statement": "the optimiser's degeneracy is measured directly, not inferred",
+            "met": true,
+            "verdict": "two anti-parallel 10 nm states: binding 1 of 2, VALUE 0.00e+00, POINT 0.00e+00; three states, the 2 nm state included: binding 2 of 3, VALUE 0.00e+00, POINT 0.00e+00"
+        }
+    ],
+    "falsifiers": [
+        {
+            "name": "F1",
+            "statement": "a varying field outside the two descent blocks would falsify the manifold reading",
+            "fired": false,
+            "evidence": "every one of 27 varying fields is a descent output or a deliberate rounding"
+        },
+        {
+            "name": "F2",
+            "statement": "the POINT moving no further than the VALUE would mean the answer moves, not its place",
+            "fired": false,
+            "evidence": "POINT 5.9522e-03 against VALUE 2.6197e-03"
+        },
+        {
+            "name": "F3",
+            "statement": "any boolean, binding-state list or verdict differing across the ensemble",
+            "fired": false,
+            "evidence": "0 boolean(s) and 0 unaccounted string(s) vary"
+        },
+        {
+            "name": "F5",
+            "statement": "a whole-ulp perturbation moving neither the value nor the point would mean the optimiser is locally unique and the movement has another cause",
+            "fired": true,
+            "evidence": "the raw widths are at machine epsilon (1e-16 to 1e-15, and they differ between two runs of this study, which is why they are floored at 1.0E-12), so the INPUT channel is excluded — two anti-parallel 10 nm states VALUE 0.00e+00 POINT 0.00e+00; three states, the 2 nm state included VALUE 0.00e+00 POINT 0.00e+00. The channel that does carry the movement is the winning-start comparison: two anti-parallel 10 nm states VALUE 5.82e-03 POINT 2.06e-02 over 3 near-optimal start(s); three states, the 2 nm state included VALUE 7.23e-03 POINT 1.24e-02 over 2 near-optimal start(s)"
+        }
+    ],
+    "findings": [
+        "THE 0.60 % AND THE 8.6e-4 ARE ONE PHENOMENON, READ ON TWO FUNCTIONALS. Over 10 independent emissions of gpd/results/T-129-range-robust-placement.json, 1015 of 1042 fields are identical in every member. Every one of the 27 that vary is a descent output or a deliberate rounding: 10 are a minimax objective, 5 are a functional of a minimax argmin, 10 are T-212's two-digit departure rule and 2 is that objective rendered into a prose verdict. F1 did not fire.",
+        "THE OPTIMAL SET AT ranges[1] IS TWO-VALUED AND A FRESH RUN DRAWS FROM BOTH. 0.0365712568 in 7 of 10 member(s): iteration 30 (as committed, HEAD), fresh run A1 at HEAD, fresh run A2 at HEAD, fresh run A3 at HEAD, fresh run B1 at HEAD, fresh run B3 at HEAD, the iteration-13 tree, git-archived and run today; 0.0364754519 in 3 of 10 member(s): iteration 13 (as committed), iteration 28 (as committed), fresh run B2 at HEAD. The iteration-13 tree, git-archived and run unmodified today, lands on the reading iteration 13 did NOT emit — so nothing in the repository between then and HEAD is responsible, and the movement is a live draw rather than a one-time upstream change.",
+        "THE POINT IS 2.27x WIDER THAN THE VALUE, AND THE POINT IS NOT ONE NUMBER EITHER. At ranges[1] the objective spans 2.6197e-03 and max_i k_i spans 5.9522e-03 — and the peak SUPPORT force at the same argmin spans 7.5482e-04, 7.89x narrower than max_i k_i. Which functional of the point a file happens to emit decides how large its irreproducibility looks.",
+        "THE FOUR max_i k_i FIELDS MOVE BY THE IDENTICAL RELATIVE AMOUNT, WHICH IS THE CHECK THAT THEY ARE ONE QUANTITY: 5.952153e-03, 5.952148e-03, 5.952152e-03, 5.952151e-03. Agreement to one part in a million: true.",
+        "NO VERDICT MOVES. Of 253 boolean and 313 string fields compared — the booleans are the flatness verdicts and the strings carry every bindingStates list — 0 boolean(s) vary and 2 string(s) do: 1 of the strings differ in DIGITS ONLY — \"0.0365\" against \"0.0366\" inside predicates[1].verdict, which is CLAUDE.md's own \"a moved STRING is not necessarily a moved decision\" — and 1 is iteration 28's +-binds-tighter-than-.format repair, where one member still carries a RAW conversion. 0 unaccounted. F3 did not fire.",
+        "THE INPUT CHANNEL IS EXCLUDED AND THE WINNER-SELECTION CHANNEL IS NOT — WHICH IS WHAT THE ULP PROBE WAS FOR. Advancing ONE weight of ONE start by whole units in the last place, holding everything else, moves the answer by two anti-parallel 10 nm states VALUE 0.00e+00 POINT 0.00e+00; three states, the 2 nm state included VALUE 0.00e+00 POINT 0.00e+00 — the raw readings are at 1e-16 to 1e-15 and are floored: the descent is NOT chaotic in its own input. What it is sensitive to is which start wins, and that is ONE strict comparison over the terminal readings of the whole ensemble — two anti-parallel 10 nm states: 3 of 3 starts within 1 %, VALUE 5.82e-03, POINT 2.06e-02; three states, the 2 nm state included: 2 of 3 starts within 1 %, VALUE 7.23e-03, POINT 1.24e-02. A jitter that flips that comparison moves the file by the POINT width of the near-optimal set, which is the size the file shows."
+    ],
+    "parameters": {
+        "ensembleMembers": 10.0,
+        "fieldsCompared": 1042.0,
+        "fieldsVarying": 27.0,
+        "fieldsIdentical": 1015.0,
+        "rangeValueWidth": 0.00261967754,
+        "rangePointWidth": 0.00595215275,
+        "rangeAmplification": 2.27209367,
+        "worstSubsetValueWidth": 0.00457447964,
+        "degeneracyPaths": 45.0,
+        "nearOptimalPointWidth": 0.0206432638,
+        "mandate": 33.3333333
+    }
+}

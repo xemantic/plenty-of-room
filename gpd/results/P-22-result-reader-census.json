@@ -2,12 +2,12 @@
   "task": "P-22",
   "claim": "C-0082",
   "what": "The reader graph over gpd/results/, derived from the Kotlin sources rather than grepped. A read is a result-file string literal in the argument list of a File(...) construction, propagated along top-level references; comments and prose strings are not reads. See tools/result-reader-census.py and CH-0092.",
-  "studyCount": 98,
+  "studyCount": 109,
   "helperCount": 3,
-  "resultFileCount": 102,
-  "declaringStudyCount": 6,
+  "resultFileCount": 124,
+  "declaringStudyCount": 7,
   "transitiveEdgeCount": 27,
-  "directEdgeCount": 90,
+  "directEdgeCount": 104,
   "studies": {
     "HelloWorldApp.kt": {
       "reads": [],
@@ -47,7 +47,8 @@
         "electrostatics/TileEdgeFringing.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
-        "material/PegWater.kt"
+        "material/PegWater.kt",
+        "structure/ResultRounding.kt"
       ]
     },
     "actuator/MaximumUsableBiasStudy.kt": {
@@ -74,7 +75,8 @@
         "electrostatics/PoissonBoltzmannGap.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
-        "material/PegWater.kt"
+        "material/PegWater.kt",
+        "structure/ResultRounding.kt"
       ]
     },
     "actuator/StrokeAndBlockingForceStudy.kt": {
@@ -102,7 +104,8 @@
         "electrostatics/PolymerLayerPartitioning.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
-        "material/PegWater.kt"
+        "material/PegWater.kt",
+        "structure/ResultRounding.kt"
       ]
     },
     "actuator/TallGapDeviceBStudy.kt": {
@@ -131,7 +134,8 @@
         "electrostatics/PoissonBoltzmannGap.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
-        "material/PegWater.kt"
+        "material/PegWater.kt",
+        "structure/ResultRounding.kt"
       ]
     },
     "anchoring/ArmSlabClearanceStudy.kt": {
@@ -1560,6 +1564,49 @@
         "synthesis/CouplingCeiling.kt"
       ]
     },
+    "coupling/BuildableWidthCountPhaseStudy.kt": {
+      "reads": [
+        "T-153-buildable-raster-width.json",
+        "T-178-count-phase-interaction.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-153-buildable-raster-width.json",
+        "T-178-count-phase-interaction.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-188-buildable-width-count-phase.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/BuildableRasterWidth.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "coupling/BuildableWidthLattice.kt",
+        "coupling/CountPhaseInteraction.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/DropoutRobustPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/PathCountAtFixedGeometry.kt",
+        "coupling/SharedBodyCoupling.kt",
+        "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
     "coupling/CountPhaseInteractionStudy.kt": {
       "reads": [
         "T-125-upward-root-placement.json",
@@ -1589,6 +1636,34 @@
         "coupling/PathCountAtFixedGeometry.kt",
         "coupling/SharedBodyCoupling.kt",
         "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "coupling/DescentManifoldWidthStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "T-215-descent-manifold-width.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/DescentManifoldWidth.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/RobustDistribution.kt",
         "coupling/UniformityBudget.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
@@ -2004,7 +2079,35 @@
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
-        "material/SolventQuality.kt"
+        "material/SolventQuality.kt",
+        "structure/ResultRounding.kt"
+      ]
+    },
+    "electrostatics/CutRimChargeStudy.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": "P-14-cut-rim-charge.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "electrostatics/AsymmetricGouyChapman.kt",
+        "electrostatics/ConfinedGap.kt",
+        "electrostatics/CutRimCharge.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PoissonBoltzmannEdge.kt",
+        "electrostatics/PoissonBoltzmannGap.kt",
+        "electrostatics/TileEdgeFringing.kt",
+        "structure/Cholesky.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt"
       ]
     },
     "electrostatics/DuplexPairSeparationStudy.kt": {
@@ -2121,6 +2224,31 @@
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
+        "structure/ResultRounding.kt"
+      ]
+    },
+    "electrostatics/ScaffoldRemainderStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-195-scaffold-remainder.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/ScaffoldRouting.kt",
+        "electrostatics/AsymmetricGouyChapman.kt",
+        "electrostatics/ConfinedGap.kt",
+        "electrostatics/DnaOrigamiTile.kt",
+        "electrostatics/Electrolyte.kt",
+        "electrostatics/PoissonBoltzmannGap.kt",
+        "electrostatics/ScaffoldRemainder.kt",
+        "electrostatics/TileEdgeFringing.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -2246,6 +2374,7 @@
         "stability/RecommendedElementFold.kt",
         "stability/SofteningCouplingStability.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
     },
@@ -2288,6 +2417,7 @@
         "stability/RecommendedElementFold.kt",
         "stability/SofteningCouplingStability.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
     },
@@ -2325,6 +2455,7 @@
         "stability/RecommendedElementFold.kt",
         "stability/SofteningCouplingStability.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
     },
@@ -2360,6 +2491,7 @@
         "material/PegWater.kt",
         "stability/SofteningCouplingStability.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
     },
@@ -2760,6 +2892,58 @@
         "structure/TilePositionalVariance.kt"
       ]
     },
+    "structure/TwistCorrectedRasterStudy.kt": {
+      "reads": [
+        "T-153-buildable-raster-width.json",
+        "T-172-row-end-prestrain.json",
+        "T-182-row-end-prestrain-value.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-153-buildable-raster-width.json",
+        "T-172-row-end-prestrain.json",
+        "T-182-row-end-prestrain-value.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-189-twist-corrected-raster.json",
+      "declaredSources": [
+        "T-153",
+        "T-172",
+        "T-182",
+        "T-3b"
+      ],
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/BuildableRasterWidth.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/HingeLineCensus.kt",
+        "anchoring/RowEndCrossoverStiffness.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/SharedBodyCoupling.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/EdgeTwistRelief.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/StackedArmSheet.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "structure/TwistCorrectedRaster.kt"
+      ]
+    },
     "synthesis/BufferRouteCensusStudy.kt": {
       "reads": [
         "T-149-recommended-element-fold.json",
@@ -2877,6 +3061,142 @@
         "synthesis/CouplingCeiling.kt"
       ]
     },
+    "tile/CollarAspectRatioStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-204-collar-aspect-ratio.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/DropoutRobustPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/SharedBodyCoupling.kt",
+        "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/CoupledFourLayer.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombStationLattice.kt"
+      ]
+    },
+    "tile/CompositeFractionThresholdStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-196-composite-fraction-threshold.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/SingleColumnFlatness.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/CompositeFractionThreshold.kt",
+        "tile/FourLayerTile.kt"
+      ]
+    },
+    "tile/CoupledFourLayerStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-197-coupled-four-layer.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/DropoutRobustPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/SharedBodyCoupling.kt",
+        "coupling/SingleColumnFlatness.kt",
+        "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/CoupledFourLayer.kt",
+        "tile/FourLayerTile.kt"
+      ]
+    },
+    "tile/CrossSectionComparisonStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-199-cross-section-comparison.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/SingleColumnFlatness.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/CompositeFractionThreshold.kt",
+        "tile/FourLayerTile.kt"
+      ]
+    },
     "tile/FourLayerTileStudy.kt": {
       "reads": [
         "T-3b-tile-edge-load-profile.json"
@@ -2912,6 +3232,81 @@
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/FourLayerTile.kt"
+      ]
+    },
+    "tile/HoneycombStationLatticeStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-203-honeycomb-station-lattice.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/DropoutRobustPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/SharedBodyCoupling.kt",
+        "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/CoupledFourLayer.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombStationLattice.kt"
+      ]
+    },
+    "tile/ObliqueRootStudy.kt": {
+      "reads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-206-oblique-root.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/DropoutRobustPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/SharedBodyCoupling.kt",
+        "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/CoupledFourLayer.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombStationLattice.kt",
+        "tile/ObliqueRoot.kt"
       ]
     },
     "window/DesignWindowStudy.kt": {
@@ -3284,6 +3679,19 @@
       "reaches": [],
       "reachesFiles": []
     },
+    "electrostatics/ScaffoldRemainderResultTest.kt": {
+      "reads": [
+        "T-195-scaffold-remainder.json"
+      ],
+      "directReads": [
+        "T-195-scaffold-remainder.json"
+      ],
+      "transitiveReads": [],
+      "writes": null,
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": []
+    },
     "stability/DoublingLadderRepairTest.kt": {
       "reads": [
         "T-149-recommended-element-fold.json"
@@ -3540,10 +3948,12 @@
       "anchoring/CrossoverPhaseSelectionStudy.kt",
       "anchoring/RowEndCrossoverStiffnessStudy.kt",
       "anchoring/RowEndCrossoverStudy.kt",
+      "coupling/BuildableWidthCountPhaseStudy.kt",
       "electrostatics/EdgeWidthDependenceStudy.kt",
       "structure/EdgeTwistReliefStudy.kt",
       "structure/InteriorCrossoverPrestrainStudy.kt",
-      "structure/RowEndPrestrainStudy.kt"
+      "structure/RowEndPrestrainStudy.kt",
+      "structure/TwistCorrectedRasterStudy.kt"
     ],
     "T-155-dropout-robust-placement.json": [
       "coupling/PathCountFixedGeometryStudy.kt"
@@ -3565,10 +3975,15 @@
     ],
     "T-172-row-end-prestrain.json": [
       "structure/EdgeTwistReliefStudy.kt",
-      "structure/InteriorCrossoverPrestrainStudy.kt"
+      "structure/InteriorCrossoverPrestrainStudy.kt",
+      "structure/TwistCorrectedRasterStudy.kt"
+    ],
+    "T-178-count-phase-interaction.json": [
+      "coupling/BuildableWidthCountPhaseStudy.kt"
     ],
     "T-182-row-end-prestrain-value.json": [
-      "structure/InteriorCrossoverPrestrainStudy.kt"
+      "structure/InteriorCrossoverPrestrainStudy.kt",
+      "structure/TwistCorrectedRasterStudy.kt"
     ],
     "T-1d-scf-density-profile.json": [
       "window/DesignWindowStudy.kt",
@@ -3602,6 +4017,7 @@
       "anchoring/TwoPerRowPlacementStudy.kt",
       "anchoring/UpwardRootPlacementStudy.kt",
       "coupling/BuildableStiffnessRatioStudy.kt",
+      "coupling/BuildableWidthCountPhaseStudy.kt",
       "coupling/CountPhaseInteractionStudy.kt",
       "coupling/DropoutRobustPlacementStudy.kt",
       "coupling/NonUniformCouplingStudy.kt",
@@ -3613,13 +4029,21 @@
       "coupling/SingleColumnFlatnessStudy.kt",
       "coupling/StapleDropoutStudy.kt",
       "electrostatics/EdgeWidthDependenceStudy.kt",
+      "electrostatics/ScaffoldRemainderStudy.kt",
       "structure/ConnectivityCeilingPlateStudy.kt",
       "structure/ConsumedCrossoverSheetStudy.kt",
       "structure/EdgeTwistReliefStudy.kt",
       "structure/InteriorCrossoverPrestrainStudy.kt",
       "structure/RowEndPrestrainStudy.kt",
       "structure/StackedArmSheetStudy.kt",
+      "structure/TwistCorrectedRasterStudy.kt",
+      "tile/CollarAspectRatioStudy.kt",
+      "tile/CompositeFractionThresholdStudy.kt",
+      "tile/CoupledFourLayerStudy.kt",
+      "tile/CrossSectionComparisonStudy.kt",
       "tile/FourLayerTileStudy.kt",
+      "tile/HoneycombStationLatticeStudy.kt",
+      "tile/ObliqueRootStudy.kt",
       "window/SecondResynthesisStudy.kt",
       "window/WindowResynthesisStudy.kt"
     ],
@@ -3679,6 +4103,9 @@
       "window/ResynthesisTransferTest.kt",
       "window/SecondResynthesisTest.kt"
     ],
+    "T-195-scaffold-remainder.json": [
+      "electrostatics/ScaffoldRemainderResultTest.kt"
+    ],
     "T-1d-scf-density-profile.json": [
       "brush/FirstMomentThicknessTest.kt",
       "window/ResynthesisTransferTest.kt",
@@ -3722,6 +4149,9 @@
     ]
   },
   "writtenBy": {
+    "P-14-cut-rim-charge.json": [
+      "electrostatics/CutRimChargeStudy.kt"
+    ],
     "P-18-determined-precision.json": [
       "brush/DeterminedPrecisionStudy.kt"
     ],
@@ -3902,6 +4332,12 @@
     "T-182-row-end-prestrain-value.json": [
       "structure/EdgeTwistReliefStudy.kt"
     ],
+    "T-188-buildable-width-count-phase.json": [
+      "coupling/BuildableWidthCountPhaseStudy.kt"
+    ],
+    "T-189-twist-corrected-raster.json": [
+      "structure/TwistCorrectedRasterStudy.kt"
+    ],
     "T-19-attachment-entry-topology.json": [
       "structure/EntryTopologyStudy.kt"
     ],
@@ -3916,6 +4352,18 @@
     ],
     "T-193-gold-electrode-pzc.json": [
       "anchoring/GoldElectrodePzcStudy.kt"
+    ],
+    "T-195-scaffold-remainder.json": [
+      "electrostatics/ScaffoldRemainderStudy.kt"
+    ],
+    "T-196-composite-fraction-threshold.json": [
+      "tile/CompositeFractionThresholdStudy.kt"
+    ],
+    "T-197-coupled-four-layer.json": [
+      "tile/CoupledFourLayerStudy.kt"
+    ],
+    "T-199-cross-section-comparison.json": [
+      "tile/CrossSectionComparisonStudy.kt"
     ],
     "T-1c-crossover-valid-layer-response.json": [
       "brush/CrossoverLayerStudy.kt"
@@ -3932,8 +4380,20 @@
     "T-2-design-window.json": [
       "window/DesignWindowStudy.kt"
     ],
+    "T-203-honeycomb-station-lattice.json": [
+      "tile/HoneycombStationLatticeStudy.kt"
+    ],
+    "T-204-collar-aspect-ratio.json": [
+      "tile/CollarAspectRatioStudy.kt"
+    ],
+    "T-206-oblique-root.json": [
+      "tile/ObliqueRootStudy.kt"
+    ],
     "T-21-concentrated-crossover.json": [
       "crossover/ConcentratedCrossoverStudy.kt"
+    ],
+    "T-215-descent-manifold-width.json": [
+      "coupling/DescentManifoldWidthStudy.kt"
     ],
     "T-23-two-sided-coupling.json": [
       "anchoring/TwoSidedCouplingStudy.kt"
@@ -4015,6 +4475,7 @@
     ]
   },
   "resultFiles": [
+    "P-14-cut-rim-charge.json",
     "P-18-determined-precision.json",
     "P-22-result-reader-census.json",
     "P-3-peg-material-parameters.json",
@@ -4080,17 +4541,38 @@
     "T-178-count-phase-interaction.json",
     "T-182-row-end-prestrain-value.json",
     "T-183-challenge-status-self-consistency.json",
+    "T-184-decision-file-drift.json",
+    "T-188-buildable-width-count-phase.json",
+    "T-189-twist-corrected-raster.json",
     "T-19-attachment-entry-topology.json",
     "T-190-interior-crossover-prestrain.json",
     "T-191-four-layer-tile.json",
     "T-192-device-b-tall-gap.json",
     "T-193-gold-electrode-pzc.json",
+    "T-194-one-reserve.json",
+    "T-195-scaffold-remainder.json",
+    "T-196-composite-fraction-threshold.json",
+    "T-197-coupled-four-layer.json",
+    "T-198-honeycomb-raster-width.json",
+    "T-199-cross-section-comparison.json",
     "T-1c-crossover-valid-layer-response.json",
     "T-1d-scf-density-profile.json",
     "T-1e-first-moment-convention.json",
     "T-1f-mean-field-fluctuation-corrections.json",
     "T-2-design-window.json",
+    "T-200-reemission-order.json",
+    "T-201-fifth-answers-synthesis.json",
+    "T-202-sixth-answers-synthesis.json",
+    "T-203-honeycomb-station-lattice.json",
+    "T-204-collar-aspect-ratio.json",
+    "T-205-four-layer-supersession.json",
+    "T-206-oblique-root.json",
+    "T-207-format-string-repair.json",
+    "T-208-result-file-hygiene.json",
     "T-21-concentrated-crossover.json",
+    "T-211-seventh-answers-synthesis.json",
+    "T-212-departure-and-saturation-audits.json",
+    "T-215-descent-manifold-width.json",
     "T-23-two-sided-coupling.json",
     "T-25-window-resynthesis.json",
     "T-3-stroke-and-blocking-force.json",
@@ -4123,7 +4605,18 @@
     "T-119-literature-queries.json",
     "T-147-third-answers-synthesis.json",
     "T-175-fourth-answers-synthesis.json",
-    "T-183-challenge-status-self-consistency.json"
+    "T-183-challenge-status-self-consistency.json",
+    "T-184-decision-file-drift.json",
+    "T-194-one-reserve.json",
+    "T-198-honeycomb-raster-width.json",
+    "T-200-reemission-order.json",
+    "T-201-fifth-answers-synthesis.json",
+    "T-202-sixth-answers-synthesis.json",
+    "T-205-four-layer-supersession.json",
+    "T-207-format-string-repair.json",
+    "T-208-result-file-hygiene.json",
+    "T-211-seventh-answers-synthesis.json",
+    "T-212-departure-and-saturation-audits.json"
   ],
   "missingResultFiles": [],
   "roundingSites": [
@@ -4199,6 +4692,10 @@
     {
       "site": "structure/ResultRounding.kt",
       "studies": [
+        "actuator/CollarEquilibriumPathStudy.kt",
+        "actuator/MaximumUsableBiasStudy.kt",
+        "actuator/StrokeAndBlockingForceStudy.kt",
+        "actuator/TallGapDeviceBStudy.kt",
         "anchoring/ArmSlabClearanceStudy.kt",
         "anchoring/BackboneTorsionStudy.kt",
         "anchoring/BuildableRasterWidthStudy.kt",
@@ -4243,16 +4740,25 @@
         "brush/FirstMomentConventionStudy.kt",
         "brush/FluctuationCorrectionStudy.kt",
         "brush/ScfDensityProfileStudy.kt",
+        "coupling/BuildableWidthCountPhaseStudy.kt",
         "coupling/CountPhaseInteractionStudy.kt",
+        "coupling/DescentManifoldWidthStudy.kt",
         "coupling/DropoutRobustPlacementStudy.kt",
         "coupling/PathCountFixedGeometryStudy.kt",
         "coupling/SharedBodyCouplingStudy.kt",
         "coupling/SharedBodyPlacementStudy.kt",
         "coupling/StapleDropoutStudy.kt",
+        "crossover/ConcentratedCrossoverStudy.kt",
+        "electrostatics/CutRimChargeStudy.kt",
         "electrostatics/DuplexPairSeparationStudy.kt",
         "electrostatics/EdgeWidthDependenceStudy.kt",
         "electrostatics/NonlinearPbProfileStudy.kt",
+        "electrostatics/ScaffoldRemainderStudy.kt",
         "electrostatics/TileEdgeLoadProfileStudy.kt",
+        "stability/DoublingLadderRepairStudy.kt",
+        "stability/LargeRotationArmBranchStudy.kt",
+        "stability/RecommendedElementFoldStudy.kt",
+        "stability/SofteningCouplingStabilityStudy.kt",
         "structure/ConnectivityCeilingPlateStudy.kt",
         "structure/ConsumedCrossoverSheetStudy.kt",
         "structure/CrossoverRegistrationStudy.kt",
@@ -4266,13 +4772,21 @@
         "structure/TileFlatnessStudy.kt",
         "structure/TileLoadDistributionStudy.kt",
         "structure/TilePositionalVarianceStudy.kt",
+        "structure/TwistCorrectedRasterStudy.kt",
         "synthesis/BufferRouteCensusStudy.kt",
         "synthesis/DesiredStrokeReachStudy.kt",
         "synthesis/OutputElementRecommendationStudy.kt",
         "synthesis/WithdrawnCeilingNoteStudy.kt",
-        "tile/FourLayerTileStudy.kt"
+        "tile/CollarAspectRatioStudy.kt",
+        "tile/CompositeFractionThresholdStudy.kt",
+        "tile/CoupledFourLayerStudy.kt",
+        "tile/CrossSectionComparisonStudy.kt",
+        "tile/FourLayerTileStudy.kt",
+        "tile/HoneycombStationLatticeStudy.kt",
+        "tile/ObliqueRootStudy.kt"
       ],
       "emits": [
+        "P-14-cut-rim-charge.json",
         "P-18-determined-precision.json",
         "T-10-discrete-lattice-tile.json",
         "T-106-truss-cap.json",
@@ -4302,12 +4816,15 @@
         "T-14-crossover-phase-and-registration.json",
         "T-140-seam-weave-congruence.json",
         "T-148-staple-dropout.json",
+        "T-149-recommended-element-fold.json",
         "T-15-in-plane-shear-lag.json",
         "T-151-scaffold-routing.json",
         "T-152-collinear-clearance.json",
         "T-153-buildable-raster-width.json",
         "T-155-dropout-robust-placement.json",
         "T-156-buffer-route-census.json",
+        "T-157-large-rotation-arm-branch.json",
+        "T-159-doubling-ladder-repair.json",
         "T-160-edge-width-dependence.json",
         "T-161-row-end-crossover.json",
         "T-162-shared-body-coupling.json",
@@ -4319,26 +4836,42 @@
         "T-172-row-end-prestrain.json",
         "T-178-count-phase-interaction.json",
         "T-182-row-end-prestrain-value.json",
+        "T-188-buildable-width-count-phase.json",
+        "T-189-twist-corrected-raster.json",
         "T-19-attachment-entry-topology.json",
         "T-190-interior-crossover-prestrain.json",
         "T-191-four-layer-tile.json",
+        "T-192-device-b-tall-gap.json",
         "T-193-gold-electrode-pzc.json",
+        "T-195-scaffold-remainder.json",
+        "T-196-composite-fraction-threshold.json",
+        "T-197-coupled-four-layer.json",
+        "T-199-cross-section-comparison.json",
         "T-1d-scf-density-profile.json",
         "T-1e-first-moment-convention.json",
         "T-1f-mean-field-fluctuation-corrections.json",
+        "T-203-honeycomb-station-lattice.json",
+        "T-204-collar-aspect-ratio.json",
+        "T-206-oblique-root.json",
+        "T-21-concentrated-crossover.json",
+        "T-215-descent-manifold-width.json",
         "T-23-two-sided-coupling.json",
+        "T-3-stroke-and-blocking-force.json",
         "T-30-flexure-end-joint.json",
         "T-3a-nonlinear-pb-profile.json",
         "T-3b-tile-edge-load-profile.json",
+        "T-4-maximum-usable-bias.json",
         "T-40-standoff-base-joint.json",
         "T-5-load-distribution.json",
         "T-5b-tile-flatness.json",
+        "T-60-collar-on-the-equilibrium-path.json",
         "T-65-coupled-standoff-joint.json",
         "T-67-perpendicular-junction-routing.json",
         "T-70-guided-arm-anchorage.json",
         "T-71-backbone-torsion-closure.json",
         "T-72-triangulated-standoff.json",
         "T-75-flexure-mounting-sense.json",
+        "T-76-softening-coupling-stability.json",
         "T-79-two-spring-elastica.json",
         "T-8-tile-positional-variance.json",
         "T-81-hinge-line-census.json",
@@ -4352,6 +4885,7 @@
         "T-118-window-resynthesis-two.json",
         "T-122-buildable-stiffness-ratio.json",
         "T-123-robust-distribution.json",
+        "T-16-output-coupling-stiffness.json",
         "T-17-one-row-per-duplex.json",
         "T-2-design-window.json",
         "T-25-window-resynthesis.json"
@@ -4360,7 +4894,10 @@
         "anchoring/RowEndCrossoverStiffnessTest.kt",
         "anchoring/RowEndCrossoverTest.kt",
         "brush/FirstMomentThicknessTest.kt",
+        "coupling/CoupledCharacteristicTest.kt",
         "electrostatics/EdgeWidthDependenceResultTest.kt",
+        "electrostatics/ScaffoldRemainderResultTest.kt",
+        "stability/DoublingLadderRepairTest.kt",
         "synthesis/BufferRouteCensusTest.kt",
         "window/ResynthesisTransferTest.kt",
         "window/SecondResynthesisTest.kt",

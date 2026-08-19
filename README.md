@@ -109,6 +109,8 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=anchoring.GoldElectrodePzcStudyKt        # T-193, gold alone, and where its potential of zero charge sits
 ./gradlew study -Pstudy=tile.FourLayerTileStudyKt                 # T-191, the four-layer ~10 nm tile section 3 specifies, and the flatness negative on it
 ./gradlew study -Pstudy=actuator.TallGapDeviceBStudyKt            # T-192, device B on a 17-26 nm layer at 0.5 mM, and how far section 3's 100 pN reaches at all
+./gradlew study -Pstudy=coupling.DescentManifoldWidthStudyKt      # T-215, which part of T-129's result file is a descent manifold, and how wide
+./gradlew study -Pstudy=coupling.BuildableWidthCountPhaseStudyKt   # T-188, the count/phase grid at C-0086's buildable 38.08 nm, both end-of-row conventions
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.

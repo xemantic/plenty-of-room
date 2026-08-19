@@ -8826,3 +8826,221 @@ gradient mesh convergence reproduced the recorded `2 → 3 → 4` behaviour.
 The flag is **discharged by measurement**, and the proof and the run agree —
 which is the outcome the discipline expects and not the reason it is followed.
 
+
+---
+
+## Iteration 31 — `T-189`: the twist correction is exactly impossible, worth a quarter of a base pair, and worth 7 % of the flatness
+
+`C-0107` derives a **17.15–24.98°** row-end crossover prestrain from the square lattice's 33.75 °/bp
+against B-DNA's 34.2857, and `C-0104` puts `T-5b`'s flatness convention at **15.4497275°**.
+Both published *cures* in the field act on the **driver**, not on the response:
+Snodin et al.'s measured tile *"included a suitable number of sections with 31 base pairs between
+equivalent junctions in order to remove this net twist"*, and Rothemund's own program changes
+*"helical domain lengths … by single bases until the strain energy is minimized"*.
+`T-189` asked whether `C-0086`'s buildable 112 bp seamless raster row can be corrected that way.
+
+**The cheap bound is the whole answer, and it took one line before any code was written.**
+A boustrophedon needs an **odd** number of half turns across its row (Rothemund; `C-0086`), and a
+twist correction needs those half turns to be B-DNA's. Together `N = 180 q/34.2857 = 21q/4` with `q`
+odd — and `21q` is odd, so `N` is **never an integer**. **The two quantisations are exactly
+incompatible, at every width and every domain mix.** That is `C-0133`'s falsifier `F1`, checked over
+the first 2001 odd half-turn counts, and it did not fire.
+
+**What was not expected is that the residual is an invariant.** Because `21q ≡ 1` or `3 (mod 4)`, the
+nearest integer to `21q/4` is **exactly a quarter of a base pair away**, for every odd `q` — so the
+best twist-corrected seamless row carries exactly `0.25 × 34.2857 = 8.5714°` of accumulated twist
+across the whole tile, **independently of its width**. `C-0086`'s 112 bp row sits **1.75 bp** away
+and carries **60.0°**: exactly **7×**, a ratio of two integers rather than a computed number. The
+same quarter base pair turns out to be the *per-domain* floor as well — 16 bp of B-DNA is 548.571°
+against the 540° two crossovers demand, i.e. 8.571° again.
+
+**The construction exists**: **110 bp = 37.40 nm**, seven domains `16+15+16+16+16+15+16`. Its
+per-interface spacings are `31,31,32,32,31,31` — **Snodin's measured 31/32 mix, arrived at from the
+arithmetic rather than fitted to it**, which is the moment the derivation started to look right.
+The arrangement of the two short domains is a design variable worth **2.23×** in the peak register,
+and the innermost symmetric pair — what an even split writes down first — is the **worst** of the
+three centro-symmetric options.
+
+**The re-read of `C-0107`'s twelve-cell bracket cost nothing**, because `u(±L/2) = Δω λ tanh(L/2λ)`
+and `λ = √(Cp/k_θ)` contains no `Δω`: the boundary layer is **exactly linear** in its driver. Proved
+by inspection, then measured at `0.0` on an independent non-uniform discrete chain that reproduces
+`EdgeTwistRelief.discreteEndResidual` to the last bit on equal domains. The row end moves
+**+16.68…+24.79° → −3.56…−2.19°**, 12 of 12 cells below the threshold where 12 of 12 were above, and
+the **sign flips** — a 110 bp row is *over*twisted by its own lattice where a 112 bp row is
+*under*twisted.
+
+**And then the surprise, which is the result the task exists to report.**
+Read at `C-0090`'s own placement shape, the prestrain's contribution to the dishing is `+0.0298` of
+the stroke at 112 bp and `+0.0279` at 110 — **1.07×**, against 7× on the accumulated twist. The
+correction **relocates** the strain rather than removing it: a 15 bp domain is 25.714° short of what
+its two crossovers demand, and that error is *local*, so the corrected row's peak register is
+**12.37–12.84°** sitting in the **interior**, at the columns flanking the short domains, where
+`C-0086`'s peak is at the ends. Dishing responds to the whole crossover prestrain **field**, not to
+its row-end value. Re-optimised over the full 163 296-member centro-symmetric family the correction
+is worth more — **0.0580196384** against **0.0817325013**, with the contribution changing **sign** —
+but the **design moves**: the winning shape at 110 bp is not `C-0090`'s.
+
+Two things it costs, neither of them anticipated:
+
+- **the station lattice's centro-symmetry.** The `EAST` site sits 8 bp past its column, which is not
+  mirror-symmetric inside an **odd** domain, so the 110 bp lattice is not centro-symmetric — and
+  `C-0063`'s whole exhaustive family assumes it is. Mirroring the offsets right of centre restores
+  it exactly and puts 8 of 52 stations at a 7 bp offset, whose azimuth departure is **30.0°**
+  against 4.29°.
+- **one base pair of arm.** `C-0090` reports its plan clearance as *exactly zero* at 38.08 nm;
+  moving every station 0.34 nm inboard **empties** the 34-root family at 24 rises, and the largest
+  arm that admits it is **23**. A margin of exactly zero has no side to be perturbed on, and the
+  first design change the programme contemplated fell off it — [`CH-0159`](gpd/challenges/CH-0159-a-zero-plan-clearance-cannot-survive-a-width-change.md).
+
+Two challenges filed. [`CH-0158`](gpd/challenges/CH-0158-the-admissible-width-list-assumes-an-uncorrected-twist.md) says `C-0086`'s *"the buildable widths are the odd multiples of
+16 bp"* is a property of the `(sheet, design twist)` pair and not of the sheet: at B-DNA's twist the
+list is 16, 47, 79, **110**, 142 bp and the two lists intersect only at 16.
+[`CH-0159`](gpd/challenges/CH-0159-a-zero-plan-clearance-cannot-survive-a-width-change.md) is the zero-clearance one above.
+
+**A falsifier caught the author.** `F3` fired on the first full run, reporting the generalised
+lattice construction as *"a different object"* — and the cause was `CLAUDE.md`'s own gotcha,
+*"comparing two quantities that are both meant to be zero relatively compares their noise"*: the two
+lattice reproductions have an expected value of exactly `0.0` and the departure was being divided by
+a `1e−12` floor, turning a machine-epsilon agreement into `8.9e−4`. Repaired at the decision point
+(absolute departure where the expected value is zero) and re-run; the only two fields that moved are
+those departures and the falsifier's own verdict.
+
+Zero literature fetches. Snodin and Rothemund were already in `gpd/data/T-151-sources/`, fetched by
+`T-151` two iterations earlier — the fourth time `CLAUDE.md`'s *check `gpd/data/` before fetching
+anything* has paid.
+
+---
+
+## Iteration 31 — `T-188`, the count/phase grid at the buildable 38.08 nm
+
+**`C-0134` — the width does not move the interaction, and the guard everyone was told to sweep does
+nothing at all.**
+
+`C-0108`'s 32 × 6 count/phase grid is read at §3's nominal **40.00 nm**, because that is where its
+reproduction gates live; everything downstream of `C-0086`, `C-0090` and `C-0102` is read at
+**112 bp = 38.08 nm**, the only seamless raster row the design language can draw near it. `T-188`
+moved the grid there — both end-of-row conventions, all 32 phases, 400 graded cells at 10 000
+seeded dropout realisations each — and put the interaction beside the 40.00 nm one.
+
+**The cheap bound settled the axis the task was briefed to turn on, and it settled it the other way
+round.** The brief, following `CLAUDE.md`, expected `CrossoverLayout.EDGE_MARGIN` to dominate at a
+width that is an exact whole number of column pitches. Swept over 0.05 nm, half a rise and one rise,
+the guard's **value** leaves **one** lattice over all 32 phases of the buildable tile — worst station
+displacement **`0.0` nm**, worst column-count change **`0`** — and **two** at 40.00 nm, where it moves
+the column count at phases 6, 10, 22, 26 and the upward inventory at 2, 14, 18, 30. The reason needs
+no solve: a column that lands *on* the edge is deleted by any positive inset and the next one inboard
+is a whole 16 bp = 5.44 nm further, while at 40.00 nm the closest approach is 0.28 nm and one rise
+crosses it. **What went live at the buildable width is the guard's EXISTENCE, a binary `C-0095` and
+`C-0099` had already closed** — worth 0.0621469105 → 0.168371808, i.e. 171 %, against the value
+sweep's `0.0` (refused) and 0.4442352 % of a level (admitted). Filed as
+[`CH-0161`](gpd/challenges/CH-0161-the-guard-that-went-live-is-the-existence-not-the-value.md)
+against `CLAUDE.md`'s own entry, and the entry amended in place.
+
+**The interaction is the same object at both widths.** Worst additive residual **0.075221185** log
+units (7.81225891 % of a level, **1.87085751×** its own 34 → 30 count main effect) against
+`C-0108`'s **0.0744123217** / 7.72508879 % / **1.53234726×** — refitted here from `C-0108`'s own
+result file at run time, so its published numbers are a reproduction and not a citation. The
+variation splits 5.64944784 % phase / 85.7457525 % count / **8.60479966 %** interaction against
+7.83610303 / 82.3717151 / 9.79218186, so `C-0108`'s signature — *the interaction is larger than the
+phase main effect* — holds and widens, 1.24963× → **1.52312×**. On the 2 × 2 the interaction is
+**−6.70707057 %** against **−5.74202426 %**, ratio **1.16806726**, same sign: falsifier `F2` did not
+fire.
+
+**And the comparison is matched where it matters.** At phases 8 and 24 the buildable admitted station
+lattice is **bit-identical** to the 40.00 nm one, position by position, and the columns are not — so
+every difference in the headline 2 × 2 is host geometry and load, and none of it is which stations
+were available. That is asserted as a test, not argued.
+
+**`F1` fired, in the programme's favour.** Held at 34 paths the argmin over the 32 phases moves from
+phase **22** at 40.00 nm to phase **8** at 38.08 nm, and at 30 paths and over the whole grid it is
+phase 8 too. So at the buildable width the dropout-robustness optimum and `C-0090`/`C-0102`'s
+recommended phase are the **same phase**, which at 40.00 nm they were not — `C-0090`'s *"the width
+selects the design the programme already recommends"*, read on a second objective.
+
+**The end-of-row convention is worth three times what the width is worth.** Refused, the 2 × 2
+interaction is **−20.2843017 %**, **2.88226311×** its own count term, and there the **count** term
+changes sign between the two orderings. `C-0095` and `C-0099` closing that binary was worth more than
+this whole task.
+
+**What surprised us.** Three things. First, that a tolerance sweep could be turned into a *proof* by
+comparing lattice signatures instead of grading an objective — identical is stronger than small,
+because nothing downstream can then separate the cases, and it is what let the compute go to the grid
+instead of the guard. Second, that the reversal band `C-0108` could not explain (phases 25–29) is
+**not** an artefact of the unbuildable width: at 38.08 nm it is 25–31, contiguous, containing the old
+set and two wider — which narrows `T-187` rather than reopening it. Third, that the buildable tile is
+**flatter uncoupled** than the nominal one (0.299034733–0.305393677 against 0.307902368–0.312235717)
+and yet 192 of 192 admitted cells are still worse than no coupling at all.
+
+Filed as [`C-0134`](gpd/claims/C-0134-buildable-width-count-phase.md), raising
+[`CH-0160`](gpd/challenges/CH-0160-a-stratified-robustness-argument-is-quantified-over-a-widths-own-strata.md)
+(a stratified robustness argument is quantified over the strata of the width it was run at, and three
+of `C-0108`'s four do not exist at the buildable one — its conclusion upheld on a new partition) and
+`CH-0161` above. 104 reproductions, worst strict departure `8.7e-08`; the result file produced twice
+and diffed **byte-identical**, 0 differing lines over 545 kB.
+
+Zero literature fetches: every input was already in the corpus, read at run time from
+`gpd/results/T-178-*.json`, `gpd/results/T-153-*.json` and `gpd/results/T-3b-*.json`.
+
+---
+
+## Iteration 31 — `T-215`: the file reproduces, and what does not is a two-valued manifold
+
+`C-0131` closed iteration 30 with an open loose end it queued honestly: `T-129`'s committed result
+file moved by up to **0.60 %** against three independent re-runs, and it could not say why. `T-215`
+was set as an either/or — reproduce the file, or record which part of it is a descent manifold and
+how wide.
+
+**The cheap bound was nearly the whole answer, and it cost `git log`.** The study source has changed
+twice since iteration 13 and both changes are provably non-numeric: a `+`-binds-tighter-than
+`.format()` repair inside one prose field, and a `digitsByKey` argument at the serialisation
+boundary. Its three inputs (`T-3b`, `T-108`, `T-125`) have not moved but for departure roundings.
+And **neither of the two files the descent actually runs in** — `coupling/RobustDistribution.kt`,
+`coupling/NonUniformCoupling.kt` — changed between iterations 28 and 30. So the three committed
+versions of the file are a **free three-member ensemble of one computation**, and an input change,
+a library change and a rounding change were all excluded before a single solve.
+
+**The structural bound came next and it is the falsifier.** A closed-form field that moved would
+have ended the manifold reading immediately. Over ten members, **1015 of 1042 fields are identical
+in every one**, and all 27 that move are descent outputs or deliberate roundings — 10 objectives,
+5 functionals of an argmin, 10 departure roundings, 2 prose renderings, **0 unclassified**.
+
+**The answer to the question the row was set: yes, the 0.60 % and the `8.6e−4` are one phenomenon.**
+Two clean fresh runs at `HEAD`, `A1` and `B2`, differ in exactly twelve fields — the six of
+`ranges[1]` and six `subsets[*]` — so both halves of `C-0131`'s split appear between one pair of
+runs. `ranges[1]` only looked like the outlier because it is the **only block that emits an argmin
+functional at all**; measured on the objective the two blocks share, the widest movement in the file
+is a **subset** (`4.5745e−3`) and it is *wider* than `ranges[1]`'s (`2.6197e−3`).
+
+**The archaeology run settled the one thing the ensemble could not.** The readings cluster in time —
+iterations 13 and 28 on one value, iteration 30 and `C-0131`'s three runs on the other — which reads
+like something in the tree having changed, and `C-0131` never ran a tree older than its own `HEAD`.
+`git archive cf7de13 | tar -x`, run unmodified: it emits **the reading iteration 13 did not commit**.
+And a clean fresh run at `HEAD` emits the one it did. The census over ten members is **7:3**.
+
+**A declared falsifier fired and that is how the mechanism was found.** `F5` said a whole-ulp
+perturbation moving nothing would mean the movement has another cause. It moved `1e−16`: the descent
+is **not** chaotic in its own input. The channel that does carry it is one line —
+`results.minWithOrNull(compareBy(searchDecision, index))` — and measured, the near-optimal starts
+agree in VALUE to under 1 % while disagreeing in POINT by 2 %. The file's own
+`startsWithinOnePartInAMillion = 1` had been saying the search is start-limited for eighteen
+iterations.
+
+**What surprised us.** Three things. First, that the study measuring an irreproducibility **inherited
+it**: two runs of `T-215` moved its own `spreads[*]` by `8e−5` and flipped one start across a `<`
+band, which is the defect under study appearing inside its own instrument — fixed by taking the band
+at the decision precision and emitting the widths at two digits, after which the file is
+byte-identical. Second, that a copy taken from a snapshot while its run is still in flight returns
+the snapshot's own **input** copy, which is byte-identical to the committed file and reads as a
+perfect reproduction; two concurrent runs in one snapshot then overwrite each other's output.
+Both cost a false "run A reproduces byte for byte" that had to be withdrawn. Third, that the size of
+a re-run difference is an **emission choice**: one flip of one argmin reads `5.95e−3`, `2.62e−3` or
+`7.55e−4` depending on which functional the file happens to serialise.
+
+Filed as [`C-0135`](gpd/claims/C-0135-descent-manifold-width.md), raising
+[`CH-0162`](gpd/challenges/CH-0162-three-agreeing-runs-are-a-draw-not-a-verdict.md) (three agreeing
+runs are a draw, not a verdict — at a 7:3 split they agree by chance 34 % of the time) and
+[`CH-0163`](gpd/challenges/CH-0163-a-worst-field-movement-is-an-emission-choice.md) (report a count
+by kind beside the scalar). No physical quantity, no boolean, no `bindingStates` list and no verdict
+moves anywhere in this iteration.
+
+Zero literature fetches.

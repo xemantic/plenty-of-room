@@ -1,0 +1,522 @@
+{
+ "task": "T-215",
+ "source": "gpd/results/T-129-range-robust-placement.json",
+ "members": [
+  {
+   "label": "iteration 13 (as committed)",
+   "provenance": "git cf7de13:gpd/results/T-129-range-robust-placement.json"
+  },
+  {
+   "label": "iteration 28 (as committed)",
+   "provenance": "git d1ff95e:gpd/results/T-129-range-robust-placement.json"
+  },
+  {
+   "label": "iteration 30 (as committed, HEAD)",
+   "provenance": "git ce11aaf:gpd/results/T-129-range-robust-placement.json"
+  },
+  {
+   "label": "fresh run A1 at HEAD",
+   "provenance": "/tmp/claude-1000/-home-claude-git-plenty-of-room/1ebe63bd-7cfe-4ffb-9f57-4d4946474277/scratchpad/T-215/ens/A1.json"
+  },
+  {
+   "label": "fresh run A2 at HEAD",
+   "provenance": "/tmp/claude-1000/-home-claude-git-plenty-of-room/1ebe63bd-7cfe-4ffb-9f57-4d4946474277/scratchpad/T-215/ens/A2.json"
+  },
+  {
+   "label": "fresh run A3 at HEAD",
+   "provenance": "/tmp/claude-1000/-home-claude-git-plenty-of-room/1ebe63bd-7cfe-4ffb-9f57-4d4946474277/scratchpad/T-215/ens/A3.json"
+  },
+  {
+   "label": "fresh run B1 at HEAD",
+   "provenance": "/tmp/claude-1000/-home-claude-git-plenty-of-room/1ebe63bd-7cfe-4ffb-9f57-4d4946474277/scratchpad/T-215/ens/B1.json"
+  },
+  {
+   "label": "fresh run B2 at HEAD",
+   "provenance": "/tmp/claude-1000/-home-claude-git-plenty-of-room/1ebe63bd-7cfe-4ffb-9f57-4d4946474277/scratchpad/T-215/ens/B2.json"
+  },
+  {
+   "label": "fresh run B3 at HEAD",
+   "provenance": "/tmp/claude-1000/-home-claude-git-plenty-of-room/1ebe63bd-7cfe-4ffb-9f57-4d4946474277/scratchpad/T-215/ens/B3.json"
+  },
+  {
+   "label": "the iteration-13 tree, git-archived and run today",
+   "provenance": "/tmp/claude-1000/-home-claude-git-plenty-of-room/1ebe63bd-7cfe-4ffb-9f57-4d4946474277/scratchpad/T-215/ens/H1.json"
+  }
+ ],
+ "fieldsCompared": 1042,
+ "fieldsComparedByKind": {
+  "number": 476,
+  "boolean": 253,
+  "string": 313,
+  "mixed": 0
+ },
+ "fieldsVarying": 27,
+ "fieldsVaryingByKind": {
+  "number": 25,
+  "boolean": 0,
+  "string": 2,
+  "mixed": 0
+ },
+ "stringFieldsVaryingInDigitsOnly": 1,
+ "stringFieldsVaryingWithARawConversion": 1,
+ "varying": [
+  {
+   "path": "/bounds[3]/settles",
+   "kind": "string",
+   "values": [
+    "the ceiling the 8 nm demand above is read against, taken over all six layer models AND every grafting density of C-0027's 10 nm window (at S3's own sigma = %.3f nm^-2 it is %.4f nm); C-0017's own theorem is that a coupling can only REDUCE the delivered stroke, so this is a supremum over every coupling that could ever be designed",
+    "the ceiling the 8 nm demand above is read against, taken over all six layer models AND every grafting density of C-0027's 10 nm window (at S3's own sigma = 0.024 nm^-2 it is 6.0135 nm); C-0017's own theorem is that a coupling can only REDUCE the delivered stroke, so this is a supremum over every coupling that could ever be designed",
+    "the ceiling the 8 nm demand above is read against, taken over all six layer models AND every grafting density of C-0027's 10 nm window (at S3's own sigma = 0.024 nm^-2 it is 6.0135 nm); C-0017's own theorem is that a coupling can only REDUCE the delivered stroke, so this is a supremum over every coupling that could ever be designed",
+    "the ceiling the 8 nm demand above is read against, taken over all six layer models AND every grafting density of C-0027's 10 nm window (at S3's own sigma = 0.024 nm^-2 it is 6.0135 nm); C-0017's own theorem is that a coupling can only REDUCE the delivered stroke, so this is a supremum over every coupling that could ever be designed",
+    "the ceiling the 8 nm demand above is read against, taken over all six layer models AND every grafting density of C-0027's 10 nm window (at S3's own sigma = 0.024 nm^-2 it is 6.0135 nm); C-0017's own theorem is that a coupling can only REDUCE the delivered stroke, so this is a supremum over every coupling that could ever be designed",
+    "the ceiling the 8 nm demand above is read against, taken over all six layer models AND every grafting density of C-0027's 10 nm window (at S3's own sigma = 0.024 nm^-2 it is 6.0135 nm); C-0017's own theorem is that a coupling can only REDUCE the delivered stroke, so this is a supremum over every coupling that could ever be designed",
+    "the ceiling the 8 nm demand above is read against, taken over all six layer models AND every grafting density of C-0027's 10 nm window (at S3's own sigma = 0.024 nm^-2 it is 6.0135 nm); C-0017's own theorem is that a coupling can only REDUCE the delivered stroke, so this is a supremum over every coupling that could ever be designed",
+    "the ceiling the 8 nm demand above is read against, taken over all six layer models AND every grafting density of C-0027's 10 nm window (at S3's own sigma = 0.024 nm^-2 it is 6.0135 nm); C-0017's own theorem is that a coupling can only REDUCE the delivered stroke, so this is a supremum over every coupling that could ever be designed",
+    "the ceiling the 8 nm demand above is read against, taken over all six layer models AND every grafting density of C-0027's 10 nm window (at S3's own sigma = 0.024 nm^-2 it is 6.0135 nm); C-0017's own theorem is that a coupling can only REDUCE the delivered stroke, so this is a supremum over every coupling that could ever be designed",
+    "the ceiling the 8 nm demand above is read against, taken over all six layer models AND every grafting density of C-0027's 10 nm window (at S3's own sigma = %.3f nm^-2 it is %.4f nm); C-0017's own theorem is that a coupling can only REDUCE the delivered stroke, so this is a supremum over every coupling that could ever be designed"
+   ],
+   "digitsOnly": false,
+   "carriesRawConversion": [
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true
+   ]
+  },
+  {
+   "path": "/convergence[0]/departure",
+   "kind": "number",
+   "values": [
+    3.10461308e-05,
+    3.10461308e-05,
+    3.1e-05,
+    3.1e-05,
+    3.1e-05,
+    3.1e-05,
+    3.1e-05,
+    3.1e-05,
+    3.1e-05,
+    3.10461308e-05
+   ]
+  },
+  {
+   "path": "/convergence[1]/departure",
+   "kind": "number",
+   "values": [
+    0.0110112375,
+    0.0110112375,
+    0.011,
+    0.011,
+    0.011,
+    0.011,
+    0.011,
+    0.011,
+    0.011,
+    0.0110112375
+   ]
+  },
+  {
+   "path": "/convergence[2]/departure",
+   "kind": "number",
+   "values": [
+    0.000819181121,
+    0.000819181121,
+    0.00082,
+    0.00082,
+    0.00082,
+    0.00082,
+    0.00082,
+    0.00082,
+    0.00082,
+    0.000819181121
+   ]
+  },
+  {
+   "path": "/predicates[1]/verdict",
+   "kind": "string",
+   "values": [
+    "0.0291 / 0.0365 / 0.0565 / 0.0382 over the four devices, ALL FOUR inside T-5b's 0.10; at the design device the distribution is worth 63.0 % over equal springs and asks a peak ratio of only 1.83, and the one range equal springs miss is recovered at a peak ratio of 2.32",
+    "0.0291 / 0.0365 / 0.0565 / 0.0382 over the four devices, ALL FOUR inside T-5b's 0.10; at the design device the distribution is worth 63.0 % over equal springs and asks a peak ratio of only 1.83, and the one range equal springs miss is recovered at a peak ratio of 2.32",
+    "0.0291 / 0.0366 / 0.0565 / 0.0382 over the four devices, ALL FOUR inside T-5b's 0.10; at the design device the distribution is worth 63.0 % over equal springs and asks a peak ratio of only 1.83, and the one range equal springs miss is recovered at a peak ratio of 2.32",
+    "0.0291 / 0.0366 / 0.0565 / 0.0382 over the four devices, ALL FOUR inside T-5b's 0.10; at the design device the distribution is worth 63.0 % over equal springs and asks a peak ratio of only 1.83, and the one range equal springs miss is recovered at a peak ratio of 2.32",
+    "0.0291 / 0.0366 / 0.0565 / 0.0382 over the four devices, ALL FOUR inside T-5b's 0.10; at the design device the distribution is worth 63.0 % over equal springs and asks a peak ratio of only 1.83, and the one range equal springs miss is recovered at a peak ratio of 2.32",
+    "0.0291 / 0.0366 / 0.0565 / 0.0382 over the four devices, ALL FOUR inside T-5b's 0.10; at the design device the distribution is worth 63.0 % over equal springs and asks a peak ratio of only 1.83, and the one range equal springs miss is recovered at a peak ratio of 2.32",
+    "0.0291 / 0.0366 / 0.0565 / 0.0382 over the four devices, ALL FOUR inside T-5b's 0.10; at the design device the distribution is worth 63.0 % over equal springs and asks a peak ratio of only 1.83, and the one range equal springs miss is recovered at a peak ratio of 2.32",
+    "0.0291 / 0.0365 / 0.0565 / 0.0382 over the four devices, ALL FOUR inside T-5b's 0.10; at the design device the distribution is worth 63.0 % over equal springs and asks a peak ratio of only 1.83, and the one range equal springs miss is recovered at a peak ratio of 2.32",
+    "0.0291 / 0.0366 / 0.0565 / 0.0382 over the four devices, ALL FOUR inside T-5b's 0.10; at the design device the distribution is worth 63.0 % over equal springs and asks a peak ratio of only 1.83, and the one range equal springs miss is recovered at a peak ratio of 2.32",
+    "0.0291 / 0.0366 / 0.0565 / 0.0382 over the four devices, ALL FOUR inside T-5b's 0.10; at the design device the distribution is worth 63.0 % over equal springs and asks a peak ratio of only 1.83, and the one range equal springs miss is recovered at a peak ratio of 2.32"
+   ],
+   "digitsOnly": true,
+   "carriesRawConversion": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  {
+   "path": "/ranges[1]/minimaxPeakRatio",
+   "kind": "number",
+   "values": [
+    1.72260028,
+    1.72260028,
+    1.7123471,
+    1.7123471,
+    1.7123471,
+    1.7123471,
+    1.7123471,
+    1.72260028,
+    1.7123471,
+    1.7123471
+   ]
+  },
+  {
+   "path": "/ranges[1]/minimaxWorstOverStroke",
+   "kind": "number",
+   "values": [
+    0.0364754519,
+    0.0364754519,
+    0.0365712568,
+    0.0365712568,
+    0.0365712568,
+    0.0365712568,
+    0.0365712568,
+    0.0364754519,
+    0.0365712568,
+    0.0365712568
+   ]
+  },
+  {
+   "path": "/ranges[1]/peakPathForceAtAcceptableStroke",
+   "kind": "number",
+   "values": [
+    5.06647141,
+    5.06647141,
+    5.036315,
+    5.036315,
+    5.036315,
+    5.036315,
+    5.036315,
+    5.06647141,
+    5.036315,
+    5.036315
+   ]
+  },
+  {
+   "path": "/ranges[1]/peakPathStiffness",
+   "kind": "number",
+   "values": [
+    1.6888238,
+    1.6888238,
+    1.67877167,
+    1.67877167,
+    1.67877167,
+    1.67877167,
+    1.67877167,
+    1.6888238,
+    1.67877167,
+    1.67877167
+   ]
+  },
+  {
+   "path": "/ranges[1]/peakSolvedPathForce",
+   "kind": "number",
+   "values": [
+    3.54209932,
+    3.54209932,
+    3.54477498,
+    3.54477498,
+    3.54477498,
+    3.54477498,
+    3.54477498,
+    3.54209932,
+    3.54477498,
+    3.54477498
+   ]
+  },
+  {
+   "path": "/ranges[1]/peakThermalForce",
+   "kind": "number",
+   "values": [
+    0.595315564,
+    0.595315564,
+    0.591772156,
+    0.591772156,
+    0.591772156,
+    0.591772156,
+    0.591772156,
+    0.595315564,
+    0.591772156,
+    0.591772156
+   ]
+  },
+  {
+   "path": "/reproductions[10]/departure",
+   "kind": "number",
+   "values": [
+    1.00000008e-09,
+    1.00000008e-09,
+    1e-09,
+    1e-09,
+    1e-09,
+    1e-09,
+    1e-09,
+    1e-09,
+    1e-09,
+    1.00000008e-09
+   ]
+  },
+  {
+   "path": "/reproductions[1]/departure",
+   "kind": "number",
+   "values": [
+    7.6898974e-06,
+    7.6898974e-06,
+    7.7e-06,
+    7.7e-06,
+    7.7e-06,
+    7.7e-06,
+    7.7e-06,
+    7.7e-06,
+    7.7e-06,
+    7.6898974e-06
+   ]
+  },
+  {
+   "path": "/reproductions[3]/departure",
+   "kind": "number",
+   "values": [
+    6.11831158e-05,
+    6.11831158e-05,
+    6.1e-05,
+    6.1e-05,
+    6.1e-05,
+    6.1e-05,
+    6.1e-05,
+    6.1e-05,
+    6.1e-05,
+    6.11831158e-05
+   ]
+  },
+  {
+   "path": "/reproductions[4]/departure",
+   "kind": "number",
+   "values": [
+    0.000574859406,
+    0.000574859406,
+    0.00057,
+    0.00057,
+    0.00057,
+    0.00057,
+    0.00057,
+    0.00057,
+    0.00057,
+    0.000574859406
+   ]
+  },
+  {
+   "path": "/reproductions[5]/departure",
+   "kind": "number",
+   "values": [
+    0.00172950695,
+    0.00172950695,
+    0.0017,
+    0.0017,
+    0.0017,
+    0.0017,
+    0.0017,
+    0.0017,
+    0.0017,
+    0.00172950695
+   ]
+  },
+  {
+   "path": "/reproductions[6]/departure",
+   "kind": "number",
+   "values": [
+    0.000545733528,
+    0.000545733528,
+    0.00055,
+    0.00055,
+    0.00055,
+    0.00055,
+    0.00055,
+    0.00055,
+    0.00055,
+    0.000545733528
+   ]
+  },
+  {
+   "path": "/reproductions[9]/departure",
+   "kind": "number",
+   "values": [
+    4.78723665e-05,
+    4.78723665e-05,
+    4.8e-05,
+    4.8e-05,
+    4.8e-05,
+    4.8e-05,
+    4.8e-05,
+    4.8e-05,
+    4.8e-05,
+    4.78723665e-05
+   ]
+  },
+  {
+   "path": "/subsets[10]/minimaxWorstOverStroke",
+   "kind": "number",
+   "values": [
+    0.0552302795,
+    0.0552227717,
+    0.0552227717,
+    0.0552302795,
+    0.0552302795,
+    0.0552302795,
+    0.0552227717,
+    0.0552227717,
+    0.0552227717,
+    0.0552227717
+   ]
+  },
+  {
+   "path": "/subsets[15]/minimaxWorstOverStroke",
+   "kind": "number",
+   "values": [
+    0.0225036648,
+    0.022503665,
+    0.022503665,
+    0.022503665,
+    0.0225036648,
+    0.0225036648,
+    0.022503665,
+    0.022503665,
+    0.0225036648,
+    0.022503665
+   ]
+  },
+  {
+   "path": "/subsets[19]/minimaxWorstOverStroke",
+   "kind": "number",
+   "values": [
+    0.110663478,
+    0.110704524,
+    0.110704749,
+    0.110704749,
+    0.110704661,
+    0.110693959,
+    0.110704742,
+    0.110704749,
+    0.110704749,
+    0.110704661
+   ]
+  },
+  {
+   "path": "/subsets[21]/minimaxWorstOverStroke",
+   "kind": "number",
+   "values": [
+    0.112790903,
+    0.112790742,
+    0.112790903,
+    0.112790742,
+    0.112790742,
+    0.112790742,
+    0.112790742,
+    0.112790742,
+    0.112790742,
+    0.112790742
+   ]
+  },
+  {
+   "path": "/subsets[27]/minimaxWorstOverStroke",
+   "kind": "number",
+   "values": [
+    0.110449871,
+    0.110435598,
+    0.110435598,
+    0.110449871,
+    0.110449639,
+    0.110435598,
+    0.110449871,
+    0.110449639,
+    0.110449871,
+    0.110449871
+   ]
+  },
+  {
+   "path": "/subsets[2]/minimaxWorstOverStroke",
+   "kind": "number",
+   "values": [
+    0.0243351595,
+    0.0243561009,
+    0.0243561009,
+    0.0243781127,
+    0.0243351595,
+    0.0243781127,
+    0.0243212402,
+    0.0243561009,
+    0.0244330085,
+    0.0243377537
+   ]
+  },
+  {
+   "path": "/subsets[3]/minimaxWorstOverStroke",
+   "kind": "number",
+   "values": [
+    0.0242718332,
+    0.0242718332,
+    0.0242566425,
+    0.0242718332,
+    0.0242566425,
+    0.0242562307,
+    0.0242566425,
+    0.0242718332,
+    0.0242566425,
+    0.0242566425
+   ]
+  },
+  {
+   "path": "/subsets[8]/minimaxWorstOverStroke",
+   "kind": "number",
+   "values": [
+    0.0545189178,
+    0.0545200678,
+    0.0545088368,
+    0.0546527825,
+    0.0545157715,
+    0.054519513,
+    0.0545274307,
+    0.0545157715,
+    0.0545274307,
+    0.0546527825
+   ]
+  },
+  {
+   "path": "/subsets[9]/minimaxWorstOverStroke",
+   "kind": "number",
+   "values": [
+    0.0501892845,
+    0.0501892845,
+    0.0501892845,
+    0.0501749062,
+    0.0501892845,
+    0.0501749062,
+    0.0501892845,
+    0.0501892845,
+    0.0501749062,
+    0.0501892845
+   ]
+  }
+ ]
+}

@@ -347,6 +347,16 @@ def declared_sources(text):
     i = match.end()
     n = len(stripped)
     pieces = []
+    # `"sources" to ("a, " + "b")` is as legal as `"sources" to "a, " + "b"`, and the parenthesised
+    # form is what `T-189` wrote. Without this the walk below breaks on the `(` with `pieces` empty
+    # and the study reads as declaring NOTHING -- which is the costly direction, because a study
+    # that declares nothing is silently exempt from the declaration check it was meant to fail.
+    # Same shape as `CH-0092`: an audit is only as complete as the SHAPE of the search performing it.
+    depth = 0
+    while i < n and stripped[i] in " \t\r\n(":
+        if stripped[i] == "(":
+            depth += 1
+        i += 1
     while i < n:
         while i < n and stripped[i] in " \t\r\n":
             i += 1

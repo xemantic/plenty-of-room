@@ -186,6 +186,24 @@ eq(
     ),
     {"T-1d", "T-3", "T-14"},
 )
+# `T-189` wrote the declaration PARENTHESISED, which is as legal as the bare form and which the
+# walk had never seen: it broke on the `(` with no pieces collected and returned the empty set, so
+# the study read as declaring NOTHING and was silently exempt from the very check it should have
+# failed. A checker's blind spot is invisible in exactly the cases it misses.
+eq(
+    "a PARENTHESISED concatenated sources declaration parses",
+    census.declared_sources(
+        '"sources" to ("gpd/results/T-3b-tile-edge-load-profile.json, " +\n'
+        '        "gpd/results/T-153-buildable-raster-width.json, " +\n'
+        '        "gpd/results/T-172-row-end-prestrain.json")'
+    ),
+    {"T-3b", "T-153", "T-172"},
+)
+eq(
+    "a parenthesised single-literal declaration parses",
+    census.declared_sources('"sources" to ("gpd/results/T-125-upward-root-placement.json")'),
+    {"T-125"},
+)
 eq(
     "a study with no sources parameter declares nothing",
     census.declared_sources('val output = File("gpd/results/T-1-layer-stiffness.json")'),
