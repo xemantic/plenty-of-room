@@ -10401,7 +10401,10 @@ documents at `HEAD`, of which 19 are already unfindable in any committed result 
 19 are *deliberate* historical evidence that no instrument can distinguish from a stale quotation.
 `C-0099` is amended per `C-0101`; it quoted one number this re-emission moved.
 
-**Gates.** `tools/verify.sh`; 4 new Kotlin tests written first and watched fail; the hygiene checker's
+**Gates.** `tools/verify.sh` run twice on its own isolated tree — `BUILD SUCCESSFUL in 21m 53s`, and again
+in `22m 11s` after the final edits, so the report covers the tree as filed — with all eight post-Gradle
+gates clean and the new `--prose` audit line now printed beside `--saturated`; 4 new Kotlin tests written
+first and watched fail; the hygiene checker's
 self-tests 91 → **120**, plus 17 emitter self-tests and a 10-mutation harness; `check-markdown-tables.py`,
 `check-corpus-links.py`, `check-challenge-index.py`, `check-kotlin-format-strings.py`, `trace-answers.py`
 on both deliverables and `result-reader-census.py --check` all clean. `--emit` was **not** run.

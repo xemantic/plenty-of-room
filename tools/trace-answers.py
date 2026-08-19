@@ -78,6 +78,16 @@ _ID_PATTERNS = [
 # facing and both are syntheses rather than sources, which is the property every check here
 # assumes.  Pinned by tools/test-trace-answers.py.
 DEFAULT_DOCUMENTS = ["ANSWERS.md", "DECISIONS-FOR-NDI.md"]
+# `TOOLING-NOVELTY.md` is a THIRD outward-facing document (iteration 37) and is DELIBERATELY
+# NOT in this list, which is the opposite of the `T-184` decision one file over in
+# `check-corpus-links.py`. The two gates want different things. Its CLAIM SLUGS are corpus
+# references and belong in the link gate; its NUMBERS are not this corpus's at all — it is a
+# survey of external tooling, so its tokens are arXiv identifiers and reference numbers, and
+# the numeric half reports **9 ABSENT on one line of citations**. Wiring it here would buy nine
+# permanent false positives, and `CLAUDE.md` is explicit that a drift checker's FALSE
+# positives cost more than its true ones. Run it by hand with `--answers` if the document ever
+# starts quoting this repository's own numbers; the STATUS half already reads clean there.
+
 
 _NUMBER = re.compile(r"\d+(?:\.\d+)?(?:e-?\d+)?")
 
