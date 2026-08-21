@@ -65,6 +65,13 @@
 # path and the fallback no longer emits the prefix, both asserted as tests, and the gate is
 # clean in a real `.git`-less snapshot. Restored here by `P-23` on that evidence.
 #
+# `tools/check-entry-points.py` (`P-28`) is here for the same reason as the census: it reads
+# `src/`, so it must be skipped when a drop was requested. It answers the one question a cold
+# session asks first — *how do I run this?* — and it was written after the table decayed to 99 rows
+# against 122 emitting studies, three of the missing being the emitters of `P-27`'s own eight red
+# result files. Its self-test runs first because its first draft reported two CORRECT rows as
+# defects: the write path is the binding that reaches `.writeText`, not the last path in the file.
+#
 # The three SELF-tests are wired in `build.gradle.kts` instead, because they read only
 # fixtures: `tools/test-snapshot.sh` since `P-16`, and `tools/test-trace-answers.py` and
 # `tools/test-check-markdown-tables.py` since `P-22`.
@@ -128,6 +135,10 @@ if [ "$checks" = "yes" ]; then
     echo
     echo "--- every String.format call balances its conversions (T-207) ---"
     tools/check-kotlin-format-strings.py
+    echo
+    echo "--- every study that writes a committed result file has an Entry points row (P-28) ---"
+    tools/check-entry-points.py --selftest > /dev/null
+    tools/check-entry-points.py
     echo
     echo "--- every challenge is in its own index (P-26) ---"
     tools/check-challenge-index.py --selftest > /dev/null
