@@ -1,0 +1,394 @@
+{
+    "task": "T-267",
+    "leaf": "none — step 5 of ARCHITECTURE.md",
+    "title": "Mechanics on an imported design: OrigamiGrillage and HoneycombGrillage constructible from a scadnano file, or from a lattice plus a cross-section",
+    "verificationType": "in-silico (the existing grillage finite-element models, rebuilt through a new constructor) + logical (every lattice derivation is integer arithmetic on the design file, and the reproduction is an exact identity)",
+    "maturity": "TRL 1-3 — model-consistent and traceable, NOT empirically demonstrated. Nothing here is folded and nothing is measured; what is demonstrated is that a design file and a set of constants produce the same object",
+    "units": {
+        "length": "nm",
+        "force": "pN",
+        "pressure": "pN/nm^2 (= MPa)",
+        "foundationStiffness": "pN/nm^3",
+        "hingeStiffness": "pN*nm/rad",
+        "flexuralRigidity": "pN*nm",
+        "departure": "dimensionless, relative"
+    },
+    "conventions": [
+        "x runs ALONG the helices, y ACROSS them, z normal to the sheet; w is positive downward, toward the electrode",
+        "a crossover column's position is measured from the centre of the design's own AXIAL WINDOW, which is the span of every domain in the file and not the largest offset a scaffold domain reaches",
+        "a column's PARITY is the parity of the lower helices its crossings join; interface b carries the columns whose parity matches b mod 2",
+        "the sheet's lattice sites are the STAPLE crossings; a raster's scaffold crossings are its TURNS and are not lattice sites (C-0157, CLAUDE.md)",
+        "a foundation stiffness is an ENVIRONMENT number and is never part of a specification; it is passed to grillage() at the state it was read at"
+    ],
+    "parameters": {
+        "foundationStiffness": "0.012625625",
+        "foundationProvenance": "C-0001's secant over the 10 nm layer at sigma = 0.024 nm^-2, the value T-10's nominal case uses",
+        "interiorPressure": "0.0619578686",
+        "pressureProvenance": "section 3's 100 pN over T-10's own 40 x 40.35 nm footprint, held FIXED across every graded design so that the dishing compares shapes and not total forces",
+        "edgeTaperWidth": "4.0",
+        "edgeTaperDepth": "0.5",
+        "subdivisions": "2",
+        "risePerBasePair": "0.34",
+        "squareLatticeCrossoverSpacingNm": "10.88",
+        "duplexBendingRigidity": "230.0",
+        "crossoverHingeStiffness": "13.5294118",
+        "solvedFieldTolerance": "1.0E-10"
+    },
+    "sources": [
+        "gpd/results/T-10-discrete-lattice-tile.json",
+        "gpd/designs/gen1-sheet-square-15x112.sc",
+        "gpd/designs/gen1-block-honeycomb-10x6-102-109.sc",
+        "gpd/designs/third-party/scadnano-origami-rectangle-16x8.sc"
+    ],
+    "cheapBound": {
+        "statement": "OrigamiGrillage takes exactly five scalars from its sheet and never reads layers or interlayerCoupling (CLAUDE.md), so the surface a design has to supply is small",
+        "scalars": "interhelicalDistance, crossoverSpacing, crossoverHingeStiffness, duplex.bendingRigidity, duplex.torsionalRigidity",
+        "latticeScalars": "1 of 5 — the crossover spacing, which is azimuths x step",
+        "squareSamePairPeriodBasePairs": "32",
+        "verdict": "the constructor is a mapping and not a model change, which is what makes P2 achievable"
+    },
+    "identities": [
+        {
+            "what": "T-10's tile, built from Gen1Tile's constants against the lattice-plus-cross-section specification",
+            "quantity": "assembleLoad(edge taper + one point load)",
+            "bitIdentical": true,
+            "bitIdentityExpected": true,
+            "columnPositionDepartureNm": 0.0,
+            "degreesOfFreedom": 855,
+            "solvedFieldRelativeDeparture": 0.0,
+            "solvedFieldTolerance": 1.0E-10,
+            "note": "CLAUDE.md: bit-identity is assertable on a fixed-order scatter-add and NOT on a solved field, where two identically constructed grillages differ by ~4 ulp inside one JVM. The load case is deliberately NOT a bare uniform pressure — a free tile on a uniform foundation dishes exactly zero, so that comparison tests nothing"
+        },
+        {
+            "what": "C-0086's buildable tile, read from gpd/designs/gen1-sheet-square-15x112.sc against anchoring.rasterColumnLayout at phase 16",
+            "quantity": "assembleLoad(edge taper)",
+            "bitIdentical": false,
+            "bitIdentityExpected": false,
+            "columnPositionDepartureNm": 1.8E-15,
+            "degreesOfFreedom": 765,
+            "solvedFieldRelativeDeparture": 4.7E-12,
+            "solvedFieldTolerance": 1.0E-10,
+            "note": "the file's own crossover offsets are 8 + 16k; this corpus lays the same columns down from the tile centre, so the two phase conventions differ by 112/2 = 56 = 8 (mod 16) and the lattices do not differ at all"
+        },
+        {
+            "what": "C-0151's recommended 10 x 6 block, read from gpd/designs/gen1-block-honeycomb-10x6-102-109.sc against HoneycombBlock(10, 6)",
+            "quantity": "assembleLoad(edge taper)",
+            "bitIdentical": true,
+            "bitIdentityExpected": true,
+            "columnPositionDepartureNm": 0.0,
+            "degreesOfFreedom": 4080,
+            "solvedFieldRelativeDeparture": 0.0,
+            "solvedFieldTolerance": 1.0E-10,
+            "note": "the cross-section is read from the helices' own grid positions, which is the one place a scadnano file states it; C-0151's pair of integers in a study literal is now a file"
+        }
+    ],
+    "parityPairs": [
+        {
+            "design": "gen1-sheet-square-15x112",
+            "designPhaseBasePairs": 16,
+            "mirrorPhaseBasePairs": 0,
+            "columnPositionsIdentical": true,
+            "positionDepartureNm": 0.0,
+            "paritiesInverted": true,
+            "designParities": [
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0
+            ],
+            "mirrorParities": [
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+            ],
+            "designPeakDishingNm": 1.273683,
+            "mirrorPeakDishingNm": 1.273683,
+            "relativeDifference": 6.7E-12,
+            "note": "C-0090's two phases, met from the file side: the positions are identical and the interfaces the columns serve are exchanged, so a phase integer does not determine the sheet and the DESIGN does. The two peaks agree because the exchange is the reflection b -> D-2-b across the helices and the edge taper is symmetric in y — a SYMMETRY of this load case, not an insensitivity to the parity"
+        }
+    ],
+    "reproductions": [
+        {
+            "what": "peak dishing under the 50 % electrostatic edge taper, C-0001 secant foundation",
+            "here": 1.28014255,
+            "there": 1.28014255,
+            "relativeDeparture": 2.1E-9,
+            "source": "gpd/results/T-10-discrete-lattice-tile.json, cases[multiplier = 1].sources[electrostatic-edge-taper].latticePeak — the committed file is emitted at nine significant digits, so a departure at 1e-9 IS agreement to the precision the corpus states"
+        }
+    ],
+    "gradings": [
+        {
+            "design": "gen1-sheet-square-15x112",
+            "artifact": "gpd/designs/gen1-sheet-square-15x112.sc",
+            "drawnBy": "this corpus (C-0157's oxDNA driver, round-tripped by C-0160's writer)",
+            "reading": "AS_DRAWN",
+            "grid": "square",
+            "representable": true,
+            "duplexes": 15,
+            "axialSpanBasePairs": 112,
+            "lengthXNm": 38.08,
+            "lengthYNm": 40.35,
+            "interhelicalDistanceNm": 2.69,
+            "columnsAsDrawn": 7,
+            "columnsAsJunctions": 7,
+            "columnParities": [
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0
+            ],
+            "columnParitiesAlternate": true,
+            "designCrossovers": 49,
+            "designJunctions": 49,
+            "latticeCrossovers": 49,
+            "absentCrossovers": 0,
+            "peakDishingNm": 1.273683,
+            "strokeNm": 4.90731101,
+            "peakDishingOverStroke": 0.259548049,
+            "refusals": [],
+            "notes": [
+                "the file is drawn at 10.67 bp/turn and this project's square lattice at 10.6666667 — the rounded literal against the exact ratio; nothing in a grillage reads the design twist, but a register departure does"
+            ]
+        },
+        {
+            "design": "gen1-block-honeycomb-10x6-102-109",
+            "artifact": "gpd/designs/gen1-block-honeycomb-10x6-102-109.sc",
+            "drawnBy": "this corpus (C-0160's writer, on C-0151's recommendation)",
+            "reading": "AS_DRAWN",
+            "grid": "honeycomb",
+            "representable": false,
+            "duplexes": 60,
+            "axialSpanBasePairs": 116,
+            "lengthXNm": 39.44,
+            "lengthYNm": null,
+            "interhelicalDistanceNm": 2.536,
+            "columnsAsDrawn": 0,
+            "columnsAsJunctions": 0,
+            "columnParities": [],
+            "columnParitiesAlternate": true,
+            "designCrossovers": 0,
+            "designJunctions": 0,
+            "latticeCrossovers": 0,
+            "absentCrossovers": 0,
+            "peakDishingNm": null,
+            "strokeNm": null,
+            "peakDishingOverStroke": null,
+            "refusals": [
+                "the honeycomb lattice's single-layer interfaces are not a path graph, and OrigamiGrillage bonds beam i to beam i+1 and to nothing else (C-0056, CH-0066, C-0154) — a honeycomb block is HoneycombGrillage's object",
+                "a lattice needs at least two crossover columns and this design offers 0"
+            ],
+            "notes": []
+        },
+        {
+            "design": "scadnano-origami-rectangle-16x8",
+            "artifact": "gpd/designs/third-party/scadnano-origami-rectangle-16x8.sc",
+            "drawnBy": "the REFERENCE implementation (scadnano 0.21.1, origami_rectangle.create), not this corpus",
+            "reading": "AS_DRAWN",
+            "grid": "square",
+            "representable": true,
+            "duplexes": 16,
+            "axialSpanBasePairs": 128,
+            "lengthXNm": 43.52,
+            "lengthYNm": 43.04,
+            "interhelicalDistanceNm": 2.69,
+            "columnsAsDrawn": 12,
+            "columnsAsJunctions": 6,
+            "columnParities": [
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0
+            ],
+            "columnParitiesAlternate": false,
+            "designCrossovers": 90,
+            "designJunctions": 45,
+            "latticeCrossovers": 90,
+            "absentCrossovers": 0,
+            "peakDishingNm": 1.26636974,
+            "strokeNm": 4.90731101,
+            "peakDishingOverStroke": 0.258057772,
+            "refusals": [],
+            "notes": [
+                "the file states no rise per base pair; the caller's 0.34 nm is used, and every length below is nominal in it",
+                "the file states no interhelical distance; the caller's 2.69 nm is used and is declared here rather than defaulted",
+                "the design registers 12 distinct crossover offsets that are 6 junctions: a pair at o and o+1 between one helix pair is 0.34 nm apart, which is one column boundary drawn as two strand crossings. This reading is AS_DRAWN"
+            ]
+        },
+        {
+            "design": "scadnano-origami-rectangle-16x8",
+            "artifact": "gpd/designs/third-party/scadnano-origami-rectangle-16x8.sc",
+            "drawnBy": "the REFERENCE implementation (scadnano 0.21.1, origami_rectangle.create), not this corpus",
+            "reading": "ONE_JUNCTION",
+            "grid": "square",
+            "representable": true,
+            "duplexes": 16,
+            "axialSpanBasePairs": 128,
+            "lengthXNm": 43.52,
+            "lengthYNm": 43.04,
+            "interhelicalDistanceNm": 2.69,
+            "columnsAsDrawn": 12,
+            "columnsAsJunctions": 6,
+            "columnParities": [
+                0,
+                1,
+                0,
+                1,
+                1,
+                0
+            ],
+            "columnParitiesAlternate": false,
+            "designCrossovers": 90,
+            "designJunctions": 45,
+            "latticeCrossovers": 45,
+            "absentCrossovers": 0,
+            "peakDishingNm": 1.37691383,
+            "strokeNm": 4.90731101,
+            "peakDishingOverStroke": 0.28058418,
+            "refusals": [],
+            "notes": [
+                "the file states no rise per base pair; the caller's 0.34 nm is used, and every length below is nominal in it",
+                "the file states no interhelical distance; the caller's 2.69 nm is used and is declared here rather than defaulted",
+                "the design registers 12 distinct crossover offsets that are 6 junctions: a pair at o and o+1 between one helix pair is 0.34 nm apart, which is one column boundary drawn as two strand crossings. This reading is ONE_JUNCTION"
+            ]
+        },
+        {
+            "design": "scadnano-origami-rectangle-16x8-no-geometry-supplied",
+            "artifact": "gpd/designs/third-party/scadnano-origami-rectangle-16x8.sc",
+            "drawnBy": "the REFERENCE implementation (scadnano 0.21.1), with nothing supplied by the caller",
+            "reading": "AS_DRAWN",
+            "grid": "square",
+            "representable": false,
+            "duplexes": 16,
+            "axialSpanBasePairs": 128,
+            "lengthXNm": 43.52,
+            "lengthYNm": null,
+            "interhelicalDistanceNm": null,
+            "columnsAsDrawn": 12,
+            "columnsAsJunctions": 6,
+            "columnParities": [
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0
+            ],
+            "columnParitiesAlternate": false,
+            "designCrossovers": 90,
+            "designJunctions": 45,
+            "latticeCrossovers": 90,
+            "absentCrossovers": 0,
+            "peakDishingNm": null,
+            "strokeNm": null,
+            "peakDishingOverStroke": null,
+            "refusals": [
+                "the file states no interhelical distance and none was supplied — a design that does not say what gap it was drawn at has not said 2.69 nm, and guessing one is the same class of error as guessing a grid"
+            ],
+            "notes": [
+                "the file states no rise per base pair; the caller's 0.34 nm is used, and every length below is nominal in it",
+                "the design registers 12 distinct crossover offsets that are 6 junctions: a pair at o and o+1 between one helix pair is 0.34 nm apart, which is one column boundary drawn as two strand crossings. This reading is AS_DRAWN"
+            ]
+        }
+    ],
+    "predicates": [
+        {
+            "id": "P1",
+            "statement": "OrigamiGrillage and HoneycombGrillage are constructible from a ScadnanoDesign, or from a lattice plus a cross-section",
+            "met": true
+        },
+        {
+            "id": "P2",
+            "statement": "the existing Gen1Tile constructor is retained, so the step is additive",
+            "met": true
+        },
+        {
+            "id": "P3",
+            "statement": "an existing study's lattice is reproduced through the new path: the load vector bit for bit, the solved field at 1.0E-10, and T-10's own committed peak dishing",
+            "met": true
+        },
+        {
+            "id": "P4",
+            "statement": "the imported path is exercised on a design this corpus did not produce, and what it reports is recorded",
+            "met": true
+        }
+    ],
+    "falsifiers": [
+        {
+            "id": "F1",
+            "statement": "the specification path does not reproduce T-10's load vector bit for bit, so the new path is not the same object. Taken only where the two objects are built by the SAME arithmetic: two independent constructions of one column set differ in the last ulp of a position, which is not a difference of object",
+            "fired": false,
+            "outcome": "did NOT fire — every load-vector identity that is owed exactness holds exactly (2 of 3), and the cross-construction one agrees at 4.7E-12 on the solved field"
+        },
+        {
+            "id": "F2",
+            "statement": "the imported grillage builds crossovers the design does not draw, or misses some it does",
+            "fired": false,
+            "outcome": "did NOT fire on any representable design: the parity lattice and the file agree site for site, and where they would not, the difference is carried as T-110's consumedCrossovers"
+        },
+        {
+            "id": "F3",
+            "statement": "a honeycomb design is accepted by the single-layer sheet grillage",
+            "fired": false,
+            "outcome": "did NOT fire — refused, and routed to HoneycombGrillage instead"
+        },
+        {
+            "id": "F4",
+            "statement": "the reference implementation's own origami rectangle cannot be expressed as a grillage at all",
+            "fired": false,
+            "outcome": "did NOT fire — it is expressible, and EXACTLY: 90 lattice sites against 90 drawn, 0 absent"
+        },
+        {
+            "id": "F5",
+            "statement": "a design that states no geometry is given a default rather than refused",
+            "fired": false,
+            "outcome": "did NOT fire — refused, naming the same reason ScadnanoDesign.lattice refuses to guess a grid"
+        }
+    ],
+    "findings": [
+        "THE MECHANICS NOW TAKES A DESIGN. OrigamiGrillage and HoneycombGrillage are constructible from a scadnano `.sc` file, or from a lattice plus a cross-section, and the Gen1Tile constructors are untouched: T-10's own tile, rebuilt through the new path, has a load vector BIT-IDENTICAL to the constants-built one over 855 degrees of freedom, a solved field agreeing to 0.0 relative, and it reproduces T-10's committed edge-taper peak dishing at a departure of 2.1E-9",
+        "EXACTLY ONE OF ORIGAMIGRILLAGE'S FIVE SCALARS IS A LATTICE NUMBER, and it was a constant with a lattice baked into its name. `samePairPeriod = azimuths x step` gives 4 x 8 = 32 bp on the square lattice and 3 x 7 = 21 on the honeycomb, so `Gen1Tile.CROSSOVER_SPACING_SHEET_BP` is now derived rather than cited, and a specification on a lattice whose single-layer interfaces are not a path graph is REFUSED (C-0154) rather than silently reshaped",
+        "THE FIELD'S OWN REFERENCE IMPLEMENTATION DRAWS A ROTHEMUND RECTANGLE THIS GRILLAGE REPRESENTS EXACTLY — 16 duplexes, 128 bp, 90 staple crossings, 90 lattice sites, 0 absent — and it does so at a column parity sequence [0, 1, 0, 1, 1, 0] that NO phase sweep in this corpus can generate. CrossoverLayout.centred and .phased alternate the parity by construction; a SEAM does not, because it doubles a column pitch. Every phase-swept placement, count and flatness result here is over the alternating family, and a seamed sheet is outside it",
+        "A CROSSOVER IS ONE JUNCTION AND THE REFERENCE IMPLEMENTATION DRAWS IT AS TWO STRAND CROSSINGS, at offsets o and o+1. This corpus's own `.sc` registers one, and C-0157 records that registering the SAME offset twice does not relax in oxDNA — 112 over-stretched bonds against 63 designed crossovers. An adjacent PAIR is neither of those, and `checkBuildability`'s noSiteIsCrossedTwice predicate — keyed on the exact offset — does not see it. Read as drawn the rectangle is 12 columns and 90 crossovers; read as junctions it is 6 and 45, and reading it as junctions SOFTENS the tile by 1.087x in peak dishing over stroke (0.258057772 against 0.28058418). The reading is named in the record rather than defaulted, because it is a modelling decision and not a parse",
+        "A PHASE INTEGER DOES NOT DETERMINE A SHEET AND A DESIGN DOES. C-0090's two phases with identical column positions and inverted parities are, at the buildable 38.08 nm with the row-end plane excluded, 16 and 0 — the positions agree to 0.0 nm and every parity is exchanged. The drawn design occupies phase 16, which no integer in this corpus recorded: the oxDNA driver calls the same tile 'phase 8' because it counts from the ROW START. The two peaks agree to 6.7E-12 because the exchange is the reflection across the helices and this load case is symmetric in y — a symmetry of the load, not an insensitivity to the parity",
+        "AND TWO CONSTRUCTIONS OF ONE COLUMN SET ARE NOT BIT-IDENTICAL, at 1.8E-15 nm of column position. CLAUDE.md's rule is that bit-identity is assertable on assembleLoad and not on a solved field; one level further out it is assertable only where the two objects are built by the SAME arithmetic. `(offset - 56) x 0.34` and `5.44 + k x 2.72` are the same seven numbers and not the same seven Doubles, and the solved fields then differ by 4.7E-12 — two decades inside the tolerance, and not zero",
+        "A DESIGN THAT STATES NO GEOMETRY IS REFUSED. scadnano's own rectangle carries no geometry block at all, so the interhelical distance and the rise have to be supplied by the caller and the import says which ones were — the same discipline as ScadnanoDesign.lattice refusing to guess a grid, one field down",
+        "AND `rowBasePairs` IS NOT A SPAN. C-0160's reader takes the largest offset any scaffold domain reaches, which is the extent only when the design starts at offset zero. Both artifacts this repository writes do; scadnano's rectangle starts its scaffold at offset 16, where rowBasePairs reads 16 bp of empty lattice as tile — 144 bp against the true 128. axialSpanBasePairs is added beside it and C-0160's method is left exactly as published"
+    ],
+    "validity": [
+        "this is a CONSTRUCTOR, not a model: every number it produces is the number the existing grillage produces on the same lattice, and no physics is added",
+        "the elasticity is never read from a design file and never will be — a .sc states a lattice, a cross-section and a routing, and a persistence length is a measurement; DuplexMechanics is what the caller supplies, by name",
+        "OrigamiGrillage remains a SINGLE-LAYER, path-graph object: a cross-section of more than one layer is refused here rather than ignored there, and a honeycomb design is routed to HoneycombGrillage",
+        "the gradings hold the foundation, the pressure and the taper FIXED across designs of different footprint, so a peak dishing over stroke compares the lattice's own response and not a device state; none of these numbers is an operating point of the Gen-1 actuator",
+        "the reference rectangle is graded at this corpus's own single-layer interhelical distance because its file states none; that number is supplied and declared, and every length derived from it is nominal in it",
+        "no committed result file moves and no study is re-run: the reproduction is taken by reading T-10's committed file, not by re-emitting it"
+    ],
+    "openQuestions": [
+        "whether an antiparallel crossover drawn as two strand crossings at o and o+1 relaxes in oxDNA as a doubly-registered one at a single offset does not — C-0157 measured the second and nothing has measured the first, and the two readings differ by a factor of two in the crossover census",
+        "no placement, phase or plan-ceiling study in this corpus has been re-run through the imported path; this task supplies the constructor and re-running them is a separate, and larger, piece of work",
+        "the seam's broken parity alternation is REPRESENTABLE and has never been SWEPT: CrossoverLayout carries the parities explicitly, so a seamed sheet can be graded, and no study here has graded one"
+    ]
+}

@@ -77,6 +77,24 @@ interface CrossoverLattice {
      */
     val hasCentroSymmetricPhaseCongruence: Boolean
 
+    /**
+     * Whether a **single-layer** sheet on this lattice has interfaces that form a **path graph**
+     * on its duplexes — duplex `b` adjacent to `b−1` and `b+1` and to nothing else.
+     *
+     * This is what `OrigamiGrillage` is: it bonds beam `i` to beam `i+1` and to nothing else, so
+     * `C-0056` and `CH-0066` record its interfaces as a path of maximum degree **two**. On the
+     * square lattice a single-layer sheet occupies two of the four azimuths and they point at its
+     * two in-plane neighbours, so the path is exact. A honeycomb site has **three** neighbours and
+     * only half the in-plane adjacent pairs are bonded at all, so one layer of a honeycomb block is
+     * a set of **dimers** rather than a sheet (`C-0154`) and no relabelling of the helices puts
+     * every bond between consecutive indices.
+     *
+     * It is declared here, beside [hasCentroSymmetricPhaseCongruence], for the same reason: the
+     * placement and grillage machinery of this repository is lattice-**generic** and took the
+     * honeycomb unmodified, and nothing in the type system said which of its assumptions travel.
+     */
+    val singleLayerInterfacesFormAPath: Boolean
+
     /** Base pairs before the **same** adjacent pair comes round again — one azimuth's period. */
     val samePairPeriodBasePairs: Int get() = azimuths * anyAzimuthStepBasePairs
 
@@ -153,6 +171,9 @@ object SquareCrossoverLattice : CrossoverLattice {
 
     override val hasCentroSymmetricPhaseCongruence: Boolean = true
 
+    /** A single-layer square-lattice sheet is a row of duplexes bonded to their two neighbours. */
+    override val singleLayerInterfacesFormAPath: Boolean = true
+
     /**
      * Base pairs between crossovers on **one interface** of a single-layer sheet.
      *
@@ -189,6 +210,9 @@ object HoneycombCrossoverLattice : CrossoverLattice {
     override val designBasesPerTurn: Double = B_DNA_BASES_PER_TURN
 
     override val hasCentroSymmetricPhaseCongruence: Boolean = false
+
+    /** Three neighbours per site, and half the in-plane adjacent pairs unbonded — `C-0154`. */
+    override val singleLayerInterfacesFormAPath: Boolean = false
 }
 
 /** Both lattices, for a study that wants to run a rule against every one this project knows. */

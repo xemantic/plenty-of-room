@@ -103,3 +103,39 @@ It is here because it is the one design in this programme that has been *simulat
 and because it is what makes the writer's round trip a proof rather than an assertion:
 what is written must read back as the same 15 / 112 / 8 / 7 / 49 / 4-3 the corpus derived
 independently, and does.
+
+---
+
+## `third-party/scadnano-origami-rectangle-16x8.sc` — somebody else's design
+
+Not this programme's, and that is the point.
+It is what
+[`scadnano.origami_rectangle.create`](https://github.com/UC-Davis-molecular-computing/scadnano-python-package)
+emits at `num_helices = 16, num_cols = 8` —
+the **reference** implementation's own canonical Rothemund rectangle,
+written by its authors and following scadnano's conventions rather than this corpus's.
+
+```
+python3 tools/scadnano/emit-reference-rectangle.py          # writes it
+python3 tools/scadnano/emit-reference-rectangle.py --check  # asserts the committed copy is current
+```
+
+Nothing in it is edited: the file is the generator's `to_json()` verbatim.
+It exists so that
+[`T-267`](../tasks/T-267-mechanics-on-imported-design.md) can grade a design
+**this corpus did not parameterise**,
+which is the only honest test of an import.
+
+| | |
+|---|---|
+| grid | square, **no geometry block at all** |
+| helices | 16 |
+| axial window | offsets `[16, 144)` — **128 bp**, and the scaffold does **not** start at zero |
+| scaffold | one strand, 31 domains, a **seam** |
+| staple crossings | **90**, in adjacent pairs at `o` and `o+1` on every interface |
+| crossover columns | **12** offsets, **6** junctions |
+| column parities | `[0, 1, 0, 1, 1, 0]` — the seam breaks the alternation |
+
+What it reported when graded is [`C-0161`](../claims/C-0161-mechanics-on-an-imported-design.md)
+and [`CH-0209`](../challenges/CH-0209-a-crossover-drawn-as-two-strand-crossings.md);
+three of the six rows above are things no design in this repository has.

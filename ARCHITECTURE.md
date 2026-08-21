@@ -38,7 +38,7 @@ Innermost first. A layer may depend only on the ones above it.
 | 2. lattice | `lattice/` | crossover lattices behind one interface: azimuths, step, period, register departure, station ladder | **exists** |
 | 3. design | `design/` | the interchange boundary — read **and write** a scadnano `.sc`, derive the lattice facts, check buildability | **exists** (`T-266`/`C-0160` added the writer and the committed designs) |
 | 4. environment | `environment/` over `brush/`, `electrostatics/` (`material/`, `poroelastic/` not yet) | the layer, the electrolyte, the field — validatable without a tile | **exists** (`T-265`/`C-0159` added the interface and the typed regime) |
-| 5. mechanics | `structure/`, `crossover/`, `coupling/` | grillage, influence banks, prestrain-as-load | exists, **consumes `Gen1Tile` directly** |
+| 5. mechanics | `structure/`, `crossover/`, `coupling/` | grillage, influence banks, prestrain-as-load | **exists** (`T-267`/`C-0161` made the grillages constructible from a design; the studies still call the `Gen1Tile` constructors, which is what kept the step additive) |
 | 6. device | `actuator/`, `stability/`, `anchoring/`, `tile/` | the force balance, the folds, the joints | exists |
 | 7. emission | `structure/ResultRounding.kt` ×6 | one rounding rule, typed records, declared inputs | **six implementations; not started** |
 | 8. corpus tools | `tools/*.py` | provenance, drift, transfer detection | exists, **belongs outside this repository** |
@@ -104,12 +104,31 @@ so it cannot re-run its own study
 
 ## The order the rest goes in
 
-**Step 5 — `mechanics` on an imported design.**
-`OrigamiGrillage` currently takes its lattice from `Gen1Tile`'s constants;
-it should take a `ScadnanoDesign` (or a lattice plus a cross-section).
-Additive if the existing constructor stays.
-This is what makes every placement, phase and plan result re-runnable on a different design
-instead of being a property of one.
+**Step 5 — `mechanics` on an imported design. Done** (`T-267`, [`C-0161`](gpd/claims/C-0161-mechanics-on-an-imported-design.md)).
+
+`OrigamiGrillage` and `HoneycombGrillage` now take a `ScadnanoDesign`, or a lattice plus a
+cross-section, and the `Gen1Tile` constructors are untouched —
+so `T-10`'s tile rebuilt through the new path has a **bit-identical** load vector over 855 degrees
+of freedom and reproduces `T-10`'s committed peak dishing at that file's own emission precision.
+Exactly **one** of the five scalars `OrigamiGrillage` reads is a lattice number
+(`samePairPeriod = azimuths × step`), and a lattice whose single-layer interfaces are not a path
+graph is now **refused** rather than silently reshaped.
+
+Its value is what grading somebody else's design reported.
+`scadnano.origami_rectangle` — the reference implementation's own Rothemund rectangle — is
+representable **exactly**, and it carries three things no design in this repository has:
+a column parity sequence that **does not alternate**, because a seam doubles a column pitch and
+`CrossoverLayout.centred`/`.phased` alternate by construction — so every phase-swept placement
+result here is over the alternating family and a seamed sheet is outside it;
+a crossover drawn as **two** strand crossings at adjacent offsets where this corpus draws one
+([`CH-0209`](gpd/challenges/CH-0209-a-crossover-drawn-as-two-strand-crossings.md));
+and a scaffold that does not start at offset zero, where `rowBasePairs` reads 16 bp of empty
+lattice as tile.
+
+What it deliberately did **not** do is re-run anything.
+No placement, phase, plan-ceiling or flatness study has been re-run through the imported path;
+this step supplies the constructor those re-runs need, and doing them inside a task whose
+predicate is *"no committed number moves"* would have been incoherent.
 
 **Step 6 — one emission layer. This one moves numbers.**
 Six rounding implementations, a departure rule repaired five times per call site,

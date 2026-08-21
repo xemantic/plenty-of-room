@@ -240,6 +240,48 @@ class ScadnanoDesign(
     fun edgeAlongHelicesNm(): Double = rowBasePairs() * Gen1Tile.RISE_PER_BASE_PAIR
 
     /**
+     * The **axial window** every strand of the design lies inside, as `[low, high)` offsets.
+     *
+     * [rowBasePairs] is the largest offset any scaffold domain **reaches**, which is the span only
+     * when the design starts at offset zero. Both artifacts this repository writes do — the
+     * honeycomb block is deliberately shifted to zero by its own builder — so the two agree on
+     * everything committed here, and they do **not** agree on a design drawn by anybody else:
+     * `scadnano.origami_rectangle` places its flanking columns first and starts its scaffold at
+     * offset 16, where `rowBasePairs` reads 16 bp of empty lattice as tile.
+     *
+     * A grillage's footprint is a **span**, so this is the quantity the import takes, and
+     * [rowBasePairs] is left exactly as `C-0160` published it.
+     */
+    fun axialWindowBasePairs(): IntRange {
+        val domains = strands.flatMap { it.domains }
+        require(domains.isNotEmpty()) { "a design with no domains has no axial window" }
+        return domains.minOf { it.start } until domains.maxOf { it.end }
+    }
+
+    /** The axial extent in base pairs — the width of [axialWindowBasePairs]. */
+    fun axialSpanBasePairs(): Int = axialWindowBasePairs().let { it.last + 1 - it.first }
+
+    /**
+     * The rise per base pair the **file** states, or `null` where it states none.
+     *
+     * Returned rather than defaulted: a design that does not say what it was drawn at has not said
+     * it was drawn at 0.34 nm, and `ScadnanoDesign.lattice`'s refusal to guess a grid is the same
+     * discipline one field down.
+     */
+    fun risePerBasePairOrNull(): Double? = geometry?.risePerBasePair
+
+    /**
+     * The interhelical centre-to-centre distance in nm the **file** states, or `null`.
+     *
+     * scadnano writes the gap between helix surfaces, so the centre-to-centre distance is
+     * `2r + gap`; the radius is defaulted to scadnano's own 1.0 nm when the file omits it, and
+     * a file that omits the **gap** states no interhelical distance at all.
+     */
+    fun interhelicalDistanceNm(): Double? = geometry?.interHelixGap?.let {
+        2.0 * (geometry.helixRadius ?: DUPLEX_RADIUS_NM) + it
+    }
+
+    /**
      * Every strand crossing in the design: consecutive domains of one strand on **different**
      * helices, scaffold and staple alike.
      *
