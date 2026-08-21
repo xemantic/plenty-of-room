@@ -19,6 +19,7 @@ package com.xemantic.nano.plentyofroom.window
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.poroelastic.RectangularFootprint
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -582,7 +583,7 @@ fun main() {
                     "coinciding at an edge, which must be reported as a tie rather than a name.",
             fired = heightWindows.any { it.predicateOneLowerTie || it.predicateOneUpperTie },
             outcome = heightWindows.filter { it.predicateOneLowerTie || it.predicateOneUpperTie }
-                .joinToString("; ") { "L0 = ${it.layerHeight} nm" }
+                .joinToString("; ") { "L0 = ${it.layerHeight.roundedForProse()} nm" }
                 .ifEmpty { "no tie at any edge of any height: every edge has one owner" }
         ),
         Falsifier(
@@ -683,7 +684,7 @@ fun main() {
             "requiredCoilOverlap" to REQUIRED_COIL_OVERLAP.toString(),
             "requiredStretchingRatio" to REQUIRED_STRETCHING_RATIO.toString(),
             "unzipAllowable" to unzipAllowable.toString(),
-            "tetherAllowable" to tetherAllowable.toString(),
+            "tetherAllowable" to tetherAllowable.roundedForProse().toString(),
             "referenceFoundationStiffness" to referenceStiffness.toString(),
             "sources" to "gpd/results/T-1d-scf-density-profile.json, " +
                     "gpd/results/T-3-stroke-and-blocking-force.json, " +
@@ -837,17 +838,17 @@ private fun verdict(
     }
     return mapOf(
         "P1 — §4(a)-(d) as posed" to heightWindows.joinToString("; ") { window ->
-            if (window.predicateOneEmpty) "L0 = ${window.layerHeight} nm: EMPTY"
-            else "L0 = ${window.layerHeight} nm: sigma in [" +
+            if (window.predicateOneEmpty) "L0 = ${window.layerHeight.roundedForProse()} nm: EMPTY"
+            else "L0 = ${window.layerHeight.roundedForProse()} nm: sigma in [" +
                     "${format(window.predicateOneLowest)}, " +
                     "${format(window.predicateOneHighest)}] nm^-2"
         },
         "P1 binding constraints" to heightWindows.joinToString("; ") { window ->
             if (window.predicateOneEmpty)
-                "L0 = ${window.layerHeight} nm closed by " +
+                "L0 = ${window.layerHeight.roundedForProse()} nm closed by " +
                         "${window.predicateOneCrossing?.lowerBoundConstraint} against " +
                         window.predicateOneCrossing?.upperBoundConstraint
-            else "L0 = ${window.layerHeight} nm: lower edge " +
+            else "L0 = ${window.layerHeight.roundedForProse()} nm: lower edge " +
                     "${window.predicateOneLowerBinding}, upper edge " +
                     "${window.predicateOneUpperBinding}"
         },
@@ -855,7 +856,7 @@ private fun verdict(
                 if (readingAPassing.isEmpty())
                     "EMPTY AT EVERY HEIGHT AND EVERY BUFFER"
                 else "non-empty only at " + readingAPassing.joinToString(", ") {
-                    "L0 = ${it.layerHeight} nm, ${it.concentration} mM " +
+                    "L0 = ${it.layerHeight.roundedForProse()} nm, ${it.concentration.roundedForProse()} mM " +
                             "(${it.readingAModelsPassing}/${it.readingAModelsTotal} models)"
                 },
         "P2 reading B — the held operating point" to

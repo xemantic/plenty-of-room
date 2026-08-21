@@ -10515,3 +10515,161 @@ including 32 of `C-0146`'s own cells. `check-markdown-tables.py`, `check-corpus-
 being a sibling's. `ANSWERS.md` and `DECISIONS-FOR-NDI.md` were not edited, by instruction; what
 they owe is filed as `T-257`. Two siblings had both taken `T-253`; renumbered one to `T-256` and
 said so in the row.
+
+---
+
+## Iteration 38 — `T-257`: the two deliverables owe the closing raster, and the drift that mattered was a PRICE inside a question (`C-0155`, Agent AM)
+
+**What was done.** `ANSWERS.md` and `DECISIONS-FOR-NDI.md` restated against `C-0151` and `C-0152`,
+the two claims iteration 37 filed and nobody carried outward, by instruction.
+No study, no result file, no physics.
+
+**The cheap bound ran first and it made the work list a measurement rather than a memory.**
+Both documents were counted at `HEAD` with a `re.findall` before a word was written:
+`112 / 108` stood in **10** live places against `102 / 109`'s **1** — and that one was the
+coordinator's own repair of the stale *"`CH-0187` is open"* sentence, made hours earlier as `T-256`.
+**`C-0148` — the claim that found the recommended raster does not close — was named nowhere in
+either document, and neither was `C-0152`.**
+`40.46` and `123 / 109` were on the census list and appear **zero** times, which is worth recording:
+a census that only ever confirms is not a census.
+
+**What the documents now say.** The drawable two-length honeycomb raster is **`102 / 109 bp`** at the
+**same** 116 bp = 39.44 nm extent, `−1.40 %` — so §7's width finding, which this file has told NDI
+three times, does not move at all. The whole cost of closure is **one crossover column**, 10 against
+11, a uniform `1.0567397`–`1.09611647×` of the dishing and one flat cell of eight; the recommended
+coupled cell survives at both ends of the measured band, **0.0773373597** and **0.0821458169**
+against `T-5b`'s 0.10. The ladder phase is determined at 16 and carries **55 of 60** stations, and
+closure **buys** 270 nt of scaffold.
+
+**And the distinction the pass exists to preserve is now explicit in both documents**: closure is a
+reason to **prefer** `102 / 109` and **not** a proof that `112 / 108` is unbuildable. `C-0152`
+prices the elastic half of forcing at `0.350894669 k_BT` — sub-thermal — with all ten forced
+crossovers at `0.438634952` of one crossover column of a sheet that folds. What is unpriced is the
+kinetic half, over 68 queries in 7 families. A document that says *"does not close"* without that
+sentence has converted a preference into a prohibition.
+
+**`F2` fired twice, and the second one is a class this corpus has not seen before.**
+The first is routine: `DECISIONS` §8 said *"`T-243` is queued"* two iterations after `C-0148` closed
+it. The second is not. **Decision 8 was put to NDI carrying a price the corpus had already
+withdrawn** — *"six flat coupled cells of eight against three, through a crossover column decided by
+a 0.07 nm slack (`CH-0185`)"* — and `C-0148` **answered `CH-0185` in the same iteration `C-0149`
+posed the question**. `C-0151` then removed the eleventh column too. So the one number that gave
+decision 8 a **cost dimension** was wrong when it was asked, on the axis `CLAUDE.md` records this
+programme has no column for. The question survives; its threshold does not. That is `CH-0203`, and
+it is queued as `T-261` because the tracer already parses challenge statuses and only checks the
+*assertion* form (*"`CH-0185` is open"*), never the *reliance* form (*"worth six cells
+(`CH-0185`)"*).
+
+**`CH-0202`, and it came out of the claim's own result file.** `C-0151` §2a discharges the plan-budget
+axis at *"50 paths … 4.604 nm, comfortably above the 2.38 nm relief"*, and its own `planCeilings`
+block carries a **55**-path row at the same determined lattice — 55 being the claim's own headline
+census. There the ceiling is **3.06 nm**, a margin of **exactly 2 base-pair rises**, `1.28571429×`
+rather than `1.93445378×`. The verdict is upheld on every reachable count. One rung further, at the
+saturation `C-0141`'s axis is written on, the margin is **exactly zero** — `7 × 0.34` against 7 bp,
+the same integer on the same quantum, a lattice identity rather than a near miss. **A cap on
+COLUMNS is not a cap on PATHS**, and the axis is written on paths.
+
+**What surprised us.** That the width finding survives a change of recommendation intact. Going in,
+a raster selected on a *different* rule looked certain to cost some of the `−1.40 %`; it costs none,
+because the two pairs share a bounding box exactly — which turned the comparison into an identity
+and made *"the whole cost of closure is one crossover column"* a statement rather than an estimate.
+And that the sharpest drift in a synthesis pass was not a number in a table but the **price tag on a
+question** — the one place where being wrong propagates into somebody else's decision rather than
+into our own next claim.
+
+**A near-miss worth recording, and it is now a `CLAUDE.md` entry.** Taking a `HEAD` baseline with
+`git stash` reverted **31 files**, 29 of them two siblings' in-flight sources; a sibling
+re-edited one it found reverted, and `git stash pop` then aborted outright, leaving everything
+unapplied. Recovered by `git checkout stash@{0} -- <path>` for every file except that one and a hand
+merge of two disjoint edit sets on it — nothing lost, and only because the diff was read before
+anything was written. **On a shared checkout, read a baseline with `git show HEAD:<path>`**, which
+touches nothing. Same family as *never pattern-kill a snapshot directory*.
+
+**Gates.** `tools/verify.sh --drop-file src/main/kotlin/tile/HoneycombGrillageStudy.kt` —
+**BUILD SUCCESSFUL in 22 m 3 s**, the drop being a sibling's in-flight study main (`T-253`) that
+failed `compileKotlin` on the first attempt; nothing under `src/` is touched here.
+`trace-answers.py` on both documents at **0 ABSENT, 0 open assertions
+contradicted, 0 self-contradiction**, before and after; `check-markdown-tables.py` 0 over 505 files,
+`check-corpus-links.py` 0 over 498, `check-challenge-index.py` 174 of 174; `T-233-reconcile.py`
+**40 RESTATED, 1 LEFT, 0 DEFECT**, unchanged; `T-234-census.py --check` **0 defects** after
+regenerating `T-234-classification.json` from its stated rules — its advisory `T-233 debt` line went
+**23 → 32** and all nine new occurrences are this pass's own correcting sentences, which is
+`CH-0182` for the sixth consecutive iteration and is queued as `T-262`. No result file was
+re-emitted and `result-reader-census.py --emit` was not run.
+
+## Iteration 38 — `T-253`: a honeycomb block's interfaces are **not a path graph**, and that one integer decided the whole task (`C-0154`, Agent AL)
+
+**What was done.** `C-0152` priced a forced honeycomb scaffold crossover on the *energy* axis and
+refused the *flatness* axis, and the refusal was structural: `CLAUDE.md` records that
+`OrigamiGrillage` never reads `layers` or `interlayerCoupling` and that `CrossoverLayout`'s
+two-parity alternation makes its crossover combinatorics square-lattice, so every placement, phase
+and plan ceiling in this corpus is a single-layer square-lattice result. `C-0141` supplied the
+honeycomb's station lattice, plan ceiling and placement family and explicitly did **not** supply a
+grillage. This iteration supplied one, and then used it.
+
+**The cheap bound was one integer and it ran before any solver.** `OrigamiGrillage` bonds beam `i`
+to beam `i+1` and to nothing else, so — as `C-0056`/`CH-0066` already record — its interfaces form a
+**path graph** on the duplexes, whose maximum degree is **two**. A honeycomb site has **three**
+lattice neighbours. So no relabelling of the sixty helices can put every bond between consecutive
+indices, and the answer to *adapt or replace* is settled with a degree count. Five further
+requirements were counted beside it and every one came out `adaptable = false`; the boundary of the
+first is exact and sits at `n = 2`, where an `m × 2` block **is** path-representable.
+
+**The surprise underneath it.** Only half a honeycomb's in-plane adjacent pairs are bonded — the
+bond `(r, c) → (r+1, c)` exists where `r + c` is even — so **one layer of a honeycomb block is not
+a sheet at all**: five dimer components on `10 × 6`, eight on `15 × 4`. The across-helix load path
+*necessarily* traverses the thickness, and `OrigamiSheet`'s `D_⊥ = layers × k_θ d / p` is a sum over
+bodies the block does not contain. Measured on the new lattice at the same `k_θ`, the same 21 bp per
+interface and `C-0141`'s corrected `3d/2` pitch, it is **`24/7 = 3.43×`** overstated — while the
+**same** function reproduces `D_∥` at **`2.8e−15`**, which is what confines `CH-0200` to one term.
+
+**And the composite fraction turned out to be a length.** Giving every duplex an axial coordinate
+and every bond Chen et al.'s own slip spring makes `f` an **output**: impose the bending kinematics,
+relax the axial coordinates, read where the realised rigidity sits between the two limits. It runs
+**0.0717 at 56 bp to 0.7371 at 448 bp** on one lattice, one `k_s`, one load case — because in
+*uniform* bending an infinitely long composite is rigid whatever its connectors, so a partial
+composite measures a **boundary layer at the free ends**. The two 60-helix cross-sections the corpus
+applies one band to fall on **opposite sides** of it (0.2468 and 0.4065), and on the same lattice
+`f` read on the *dishing* is **0.9405** against the *rigidity*'s **0.2468**. That is `CH-0201`, and
+it is *quote it with the state it is read at* landing on a calibration.
+
+**The question `C-0152` refused, answered.** A prestrain is a **load** (`C-0104`) and peak dishing is
+a convex seminorm, so the sum of the ten largest **unit** responses bounds **every** choice of ten
+sites — one factorisation and 435 back-substitutions, and no raster path to reconstruct. At the
+recommended `10 × 6` the ceiling is **0.0797106495** at the calibrated coupling and **0.0881294066**
+at the lattice's own, both inside `T-5b`'s 0.10, and the departure that would reach the tolerance is
+**22.1867557–27.1460514°** against the **17.1428571°** the raster needs. `F5` — *"the ten forced
+crossovers never decide the flatness verdict"* — did not fire: at every state where the free tile is
+flat the ceiling is too, and where the ceiling is out the free tile alone already is.
+
+**Two things bit, and both are now `CLAUDE.md` entries.** A Dirichlet relaxation that reads the
+*pinned* axial coordinate at the imposed field's value instead of at zero reports a **coupled** block
+for a connector `1e−8` of nominal — caught only by the limiting case written the obvious way. And a
+**corrugated** face breaks this repository's own best falsifier: its helices alternate `±d/4` about
+the `3d/2` ladder, so tributary strips that *tile* the width sit off-centre on their beams and a
+uniform pressure applies a rolling moment at the row pitch. Strips centred on their own beams keep
+the total measure exact and the falsifier exact, at the price of a corrugation term nothing
+calibrates — and saying which term that is, is the whole of the fix.
+
+**What made it affordable.** Ordering the degrees of freedom node-major puts the half-bandwidth at
+**243** on **4080** unknowns, so the factor is **7.96 MB** against a dense **133.17 MB** and the work
+falls from `O(n³)` to `n b²/2`. Two cross-sections, three couplings, a ten-point `k_s` sweep, a
+four-point length sweep and **2535** unit prestrain responses run in **27 s**. That arithmetic is in
+the task file, before the code.
+
+**Gates.** `tools/verify.sh` — **BUILD SUCCESSFUL in 22 m 17 s**, with no `--drop-file` needed
+despite two siblings' in-flight sources; its post-build checks then read the result-reader census
+**ok** (47 self-tests, 124 studies, 128 direct + 27 transitive edges) and `check-markdown-tables.py`
+**0 over 507**, and stopped at `check-corpus-links.py` on **4** links to a sibling's `C-0156`, which
+did not yet exist when the snapshot was taken and resolves to **0 over 504** in the live checkout.
+The remaining gates were run by hand and are clean: `check-kotlin-format-strings.py` **0 over `src`**,
+`check-challenge-index.py` **178 of 178**, `check-result-file-hygiene.py --departures --saturated`
+clean on both, `trace-answers.py` on both deliverables at **0 ABSENT, 0 open assertions contradicted,
+0 self-contradiction**, and `T-234-census.py --check` at **0 defects** after registering `C-0154` in
+`tools/T-234-emit-classification.py` and regenerating the classification — `CH-0182` for the
+**sixth** consecutive iteration, and **both** of this claim's flags are the two false positives
+`T-260` exists to fix rather than a superseded premise. `result-reader-census.py --emit` was **not**
+run: three studies are outstanding in it, two of them siblings'. A separate full `./gradlew test` on
+the final tree — which differs from the verified snapshot only by the deletion of one unused
+`internal` function — is **BUILD SUCCESSFUL in 20 m 51 s, 2 984 tests, 0 failures**, and the study's
+result file is byte-identical before and after that deletion.

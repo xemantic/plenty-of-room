@@ -47,7 +47,8 @@ Four predicates, three exit policies:
   What holds the predicate open is `C-0083`: *a gate that cannot come clean is not a gate*, and a
   predicate can always be narrowed until the tree is clean.  The mutation test for that is in
   [GATE_TESTS] — narrowing the gate back to the leaf name must FAIL a named self-test.
-- ``--prose`` is an **AUDIT** (`T-249`).  `roundedForResult` dispatches on the JSON **type** and
+- ``--prose`` is a **GATE** since `T-250`, and was an audit for one iteration (`T-249`).
+  `roundedForResult` dispatches on the JSON **type** and
   passes strings through — correctly, and that is also why the boundary cannot cure this: by the
   time it sees ``"channel B at s = 0 is $x"`` the number in it is no longer a number.  So a
   `Double` interpolated into a sentence reaches the file through `Double.toString()` at up to
@@ -56,8 +57,11 @@ Four predicates, three exit policies:
   [RESULT_DIGITS] by construction — and its false-positive rate is **measured exhaustively**:
   all 757 hits of the committed corpus are the **shortest decimal that round-trips** their own
   double, which is what `Double.toString` emits and what a transcribed literature value has no
-  reason to be.  It reads **748 tokens in 48 files** and therefore cannot be a gate (`C-0083`);
-  the corpus sweep that would let it become one is `T-250`.
+  reason to be.  It read **748 tokens in 48 files** when it was written and therefore could not be a gate
+  (`C-0083`); `T-250` swept the corpus — 47 studies re-emitted in one topological sort — and the
+  line now reads **0 in 0** and gates.  Its one exemption is a **token-level** allowlist
+  ([PROSE_ALLOWLIST]), not the per-file kind ``--conversions`` uses: a per-file entry would
+  exempt a whole file for the sake of one quoted sentence.
 - ``--saturated`` is an **AUDIT**.  A symmetric binomial standard error on a **saturated**
   proportion is identically zero for every sample count and therefore measures nothing.
   **302 records in 7 files carried one before `T-208`, 277 in 6 after it, and `T-213` repaired
@@ -80,11 +84,13 @@ Usage:
     tools/check-result-file-hygiene.py                  # the gate, over gpd/results/
     tools/check-result-file-hygiene.py --departures     # the departure-precision census
     tools/check-result-file-hygiene.py --saturated      # the saturated-proportion census
+    tools/check-result-file-hygiene.py --prose          # the prose-precision gate (T-250)
     tools/check-result-file-hygiene.py --census         # all three, exit 0
     tools/check-result-file-hygiene.py --self-test
 
-Exit status is 1 if either **gate** finds a defect, 0 otherwise.  The saturated-proportion and
-prose-precision audits never exit 1, and neither does the departure ``wide`` line.
+Exit status is 1 if any of the three **gates** finds a defect, 0 otherwise.  The
+saturated-proportion audit never exits 1, and neither does the departure ``wide`` line or any
+line under ``--census``.
 """
 
 import json
@@ -169,19 +175,81 @@ RESULT_DIGITS = 9
 # The lookarounds are the whole false-positive defence and each has a named test below.
 #
 # `(?<![\w.])` refuses a decimal inside an identifier (`v3.14159265358979`) and the **tail** of a
-# dotted version or date (`2026.08.19`).  `(?!\w)` refuses a **prefix** of a longer token, which
-# is what makes the captured literal the whole `2.314028420585025E-7` rather than its mantissa,
-# and `(?!\.\d)` refuses the **head** of a dotted one.
+# dotted version or date (`2026.08.19`).  `(?!\d)` refuses a **prefix** of a longer digit run and
+# `(?!\.\d)` refuses the **head** of a dotted token.
 #
-# The trailing guard is written as those two negatives and NOT as the symmetric `(?![\w.])`,
-# and that is a repair rather than a preference: `(?![\w.])` refuses a number followed by a
-# full stop, i.e. **every number at the end of a sentence** — which in a corpus of findings and
-# outcomes is most of them.  The first draft of this predicate had it, and the named test
-# `a defect at the end of a sentence` is what caught it.
+# THE TRAILING GUARD HAS NOW BEEN WRONG TWICE, IN OPPOSITE DIRECTIONS, and each time the blind
+# spot was invisible in exactly the cases it missed:
+#
+#   * `T-249`'s first draft wrote the symmetric `(?![\w.])`, which refuses a number followed by a
+#     full stop — i.e. **every number at the end of a sentence**, which in a corpus of findings
+#     and outcomes is most of them.  Repaired to `(?!\w)(?!\.\d)`, and held open by the named
+#     test `a defect at the END of a sentence`.
+#   * `T-250` found that `(?!\w)` refuses a number abutting a **unit letter** — `1.33396039x`,
+#     the way this corpus writes "times" — and measured the cost: **31 further tokens in 4 of
+#     the 47 files**, every one a genuine over-precise ratio and not one a false positive.
+#     `(?!\w)` was there to stop the pattern capturing a mantissa without its exponent; greedy
+#     matching of `(?:[eE][+-]?\d+)?` plus `(?!\d)` does that and does not refuse a letter, so
+#     the guard is strictly better rather than merely wider.  `PROSE_TOKEN_TESTS` holds the
+#     mantissa property open and `a ratio abutting its multiplication sign` holds the repair.
 #
 # A bare integer is never matched — an integer literal is exact at any length, its rendering is
 # deterministic, and `163296` placements is not a precision defect.
-PROSE_NUMBER = re.compile(r"(?<![\w.])(\d+\.\d+(?:[eE][+-]?\d+)?)(?!\w)(?!\.\d)")
+PROSE_NUMBER = re.compile(r"(?<![\w.])(\d+\.\d+(?:[eE][+-]?\d+)?)(?!\d)(?!\.\d)")
+
+# `T-250` — the **token-level** allowlist, and it is deliberately not the per-FILE kind the
+# conversions gate uses.  A per-file entry would exempt a whole result file from the gate for the
+# sake of one sentence; a per-token entry exempts one quoted literal in one file and leaves every
+# other string of that file checked.  `C-0092`'s rule is that a repair must leave the defect
+# MEASURABLE, and `C-0153` §6's self-contradiction table quotes the two precisions side by side —
+# which IS the finding, and which the predicate cannot distinguish from a stale quotation
+# (`CH-0199`).  So the exemption is written down, at token granularity, with its reason.
+PROSE_ALLOWLIST = {
+    "T-249-unrounded-prose-interpolations.json": {
+        # `C-0153` §6: the BEFORE half of "the file contradicted itself", quoted so that the
+        # defect this repository closed stays measurable in the artifact that closed it.
+        "0.06517538540278571",
+    },
+}
+
+# `T-250` — the exit policy, as a function so that it can be MUTATED and named-tested.
+# `C-0083`: a gate that cannot come clean is not a gate, and until `T-250` swept the corpus this
+# line could not.  It reads 0 tokens in 0 files now, so it gates.
+PROSE_IS_A_GATE = True
+
+
+def prose_exit_code(found, census=False):
+    """The `--prose` exit policy: **1** on any defect since `T-250`, **0** under `--census`.
+
+    Written as a function because the promotion from audit to gate is exactly one decision, and
+    `C-0127`'s standard is that restoring the old behaviour must fail a **named** test.
+    """
+    if census or not PROSE_IS_A_GATE:
+        return 0
+    return 1 if found else 0
+
+
+# `T-250` — the allowlist is a claim, so it is tested in four directions, and the third row is
+# the one a per-FILE allowlist would get wrong.
+PROSE_ALLOWLIST_TESTS = [
+    ("T-249-unrounded-prose-interpolations.json", "0.06517538540278571", True,
+     "the allowlisted token in its own file is admitted"),
+    ("T-999-ordinary.json", "0.06517538540278571", False,
+     "the SAME token in another file is still a defect"),
+    ("T-249-unrounded-prose-interpolations.json", "0.1686405908358075", False,
+     "a DIFFERENT over-precise token in the allowlisted file is still a defect — "
+     "which a per-file allowlist would miss"),
+    ("T-207-format-string-repair.json", "0.06517538540278571", False,
+     "the CONVERSIONS allowlist does not carry over to prose"),
+]
+
+# `T-250` — the exit policy's own named rows.
+PROSE_EXIT_TESTS = [
+    (["a defect"], False, 1, "a prose defect FAILS the build — the T-250 promotion"),
+    ([], False, 0, "a clean corpus passes"),
+    (["a defect"], True, 0, "--census reports and never gates"),
+    ([], True, 0, "--census on a clean corpus"),
+]
 
 PROSE_TESTS = [
     ("channel B at s = 0 is 0.1686405908358075", 1, "the live T-164 shape, 16 digits in prose"),
@@ -212,6 +280,13 @@ PROSE_TESTS = [
      "a large bare integer -- a seed is exact at any length and is not a precision defect"),
     ("build 1.4142135623730951.2 of the schema", 0,
      "the HEAD of a dotted token; synthetic -- the guard is a specification, not an observation"),
+    ("yaw stiffness, short by 1.3339603864734038x", 1,
+     "a ratio abutting its multiplication sign -- T-250's blind spot in the OTHER direction"),
+    ("costing 1.0260872964756085 % of the stroke", 1,
+     "a percentage: the space makes this one visible to BOTH guards"),
+    ("26.381529916714886x the published 0.02561", 1,
+     "the live T-152 shape: a ratio, an `x`, and a short literal that is not a defect"),
+    ("2.69x", 0, "a short ratio abutting its sign is not a defect"),
 ]
 
 # The same predicate asserted on the LITERAL it captures rather than on the count, because two
@@ -226,6 +301,11 @@ PROSE_TOKEN_TESTS = [
     ("0.1686405908358075 against 0.1683718082999668",
      ["0.1686405908358075", "0.1683718082999668"], "two tokens, in order"),
     ("phi = 0.14100858607612618)", ["0.14100858607612618"], "punctuation is not part of it"),
+    ("2.314028420585025E-7x the bound", ["2.314028420585025E-7"],
+     "the exponent still belongs to the token when a unit letter follows it -- the property "
+     "`(?!\\w)` was there to protect, kept by greedy matching plus `(?!\\d)`"),
+    ("tip 1.70878479537323x, root 1.8987522597874527x",
+     ["1.70878479537323", "1.8987522597874527"], "two ratios, both abutting their sign"),
 ]
 
 # the three test tables, written before the implementation
@@ -515,12 +595,20 @@ def check_conversions(root=RESULTS, allowlist=ALLOWLIST):
     return defects
 
 
-def check_prose_precision(root=RESULTS, digits=RESULT_DIGITS):
+def prose_allowlisted(path, literal, allowlist=None):
+    """Whether this exact literal in this exact file is a deliberate quotation (`T-250`)."""
+    allowlist = PROSE_ALLOWLIST if allowlist is None else allowlist
+    return literal in allowlist.get(os.path.basename(path), ())
+
+
+def check_prose_precision(root=RESULTS, digits=RESULT_DIGITS, allowlist=None):
     """`(path, pointer, literal, string)` for every over-precise number inside a string value."""
     defects = []
     for path in result_files(root):
         for pointer, text in _strings(_load(path)):
             for literal in unrounded_numbers_in(text, digits):
+                if prose_allowlisted(path, literal, allowlist):
+                    continue
                 defects.append((path, pointer, literal, text))
     return defects
 
@@ -642,6 +730,18 @@ def self_test():
             failures += 1
             print(f"SELF-TEST FAILED — prose precision, {description}: "
                   f"expected {expected}, found {found} in {text!r}")
+    for name, literal, admitted, description in PROSE_ALLOWLIST_TESTS:
+        found = prose_allowlisted(os.path.join(RESULTS, name), literal)
+        if found != admitted:
+            failures += 1
+            print(f"SELF-TEST FAILED — prose allowlist, {description}: "
+                  f"expected admitted={admitted}, found {found}")
+    for found_rows, census, expected, description in PROSE_EXIT_TESTS:
+        code = prose_exit_code(found_rows, census)
+        if code != expected:
+            failures += 1
+            print(f"SELF-TEST FAILED — prose exit policy, {description}: "
+                  f"expected {expected}, found {code}")
     for name in EXCLUDED_DEPARTURE_KEYS:
         if name in DEPARTURE_KEYS:
             failures += 1
@@ -683,7 +783,8 @@ def self_test():
     os.rmdir(fixture)
     total = (len(CONVERSION_TESTS) + len(DEPARTURE_TESTS) + len(SATURATION_TESTS)
              + len(SCOPE_TESTS) + len(GATE_TESTS) + len(EXCLUDED_DEPARTURE_KEYS)
-             + len(PROSE_TESTS) + len(PROSE_TOKEN_TESTS) + 2)
+             + len(PROSE_TESTS) + len(PROSE_TOKEN_TESTS)
+             + len(PROSE_ALLOWLIST_TESTS) + len(PROSE_EXIT_TESTS) + 2)
     print(f"{total - failures} of {total} self-tests pass")
     return failures
 
@@ -732,7 +833,7 @@ def report_saturated():
 def report_prose_precision():
     found = check_prose_precision()
     print("-- numbers emitted inside STRINGS, above the nine digits the file declares "
-          "(AUDIT; T-249) --")
+          "(GATE since T-250; raised by T-249) --")
     counts = {}
     fields = set()
     for path, pointer, _, _ in found:
@@ -754,8 +855,9 @@ def main(argv):
         over_precise, _, _ = report_departures()
     if census or "--saturated" in argv:
         report_saturated()
+    prose = None
     if census or "--prose" in argv:
-        report_prose_precision()
+        prose = report_prose_precision()
     if census or ("--departures" not in argv and "--saturated" not in argv
                   and "--prose" not in argv):
         defects = check_conversions()
@@ -765,9 +867,11 @@ def main(argv):
               f"{len(result_files())} result file(s), "
               f"{len(ALLOWLIST)} allowlisted --")
         if not census:
-            return 1 if defects or over_precise else 0
+            return 1 if defects or over_precise or prose else 0
     if not census and over_precise is not None:
-        return 1 if over_precise else 0
+        return 1 if over_precise or prose else 0
+    if prose is not None:
+        return prose_exit_code(prose, census)
     return 0
 
 

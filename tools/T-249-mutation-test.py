@@ -80,6 +80,12 @@ def mutations(module):
     def dropped_dotted_guard(text, digits=ceiling):
         return [m for m in no_dotted_guard.findall(text) if _digits_of(module, m) > ceiling]
 
+    def word_trailing_guard(text, digits=ceiling):
+        # `T-249`'s SHIPPED guard, which `T-250` found refuses a number abutting a unit letter
+        # (`1.33396039x`) -- 31 tokens in 4 files of the corpus it certified clean
+        narrow = re.compile(r"(?<![\w.])(\d+\.\d+(?:[eE][+-]?\d+)?)(?!\w)(?!\.\d)")
+        return [m for m in narrow.findall(text) if _digits_of(module, m) > ceiling]
+
     def symmetric_trailing_guard(text, digits=ceiling):
         # the FIRST DRAFT of this predicate, and the reason the table has an end-of-sentence row
         return [m for m in symmetric_guard.findall(text) if _digits_of(module, m) > ceiling]
@@ -109,6 +115,7 @@ def mutations(module):
         ("the trailing word guard dropped", dropped_word_guard),
         ("the dotted-token guard dropped", dropped_dotted_guard),
         ("the symmetric trailing guard of the FIRST DRAFT restored", symmetric_trailing_guard),
+        ("T-249's own `(?!\\w)` trailing guard restored", word_trailing_guard),
         ("bare integers matched as well", integral_tokens_too),
         ("no digit threshold at all", no_threshold),
         ("a naive digit-run pattern, no guards and no threshold", naive_digit_run),

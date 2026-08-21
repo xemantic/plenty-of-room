@@ -36,6 +36,7 @@ import com.xemantic.nano.plentyofroom.anchoring.standoffTipFlexibility
 import com.xemantic.nano.plentyofroom.coupling.mandatedCouplingStiffness
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -504,8 +505,8 @@ fun main() {
             "risePerBasePair" to Gen1Tile.RISE_PER_BASE_PAIR.toString(),
             "duplexBendingRigidity" to rigidity.toString(),
             "duplexStretchModulus" to Gen1Tile.DUPLEX_STRETCH_MODULUS.toString(),
-            "crossoverHingeStiffness" to hinge.toString(),
-            "duplexEndCouple" to tipCouple.toString(),
+            "crossoverHingeStiffness" to hinge.roundedForProse().toString(),
+            "duplexEndCouple" to tipCouple.roundedForProse().toString(),
             "standoffLength" to STANDOFF_LENGTH.toString(),
             "unzipAllowable" to UNZIP_ALLOWABLE.toString(),
             "worstStabilityFloorTwoMillimolar" to WORST_FLOOR_TWO_MILLIMOLAR.toString(),

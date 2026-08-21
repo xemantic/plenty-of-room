@@ -26,6 +26,7 @@ import com.xemantic.nano.plentyofroom.structure.PointLoad
 import com.xemantic.nano.plentyofroom.structure.PressureField
 import com.xemantic.nano.plentyofroom.structure.ShearJointAllowable
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -940,8 +941,8 @@ fun main() {
             "crossovers" to bareLattice.crossovers.size.toString(),
             "subdivisions" to "2",
             "linkStiffness" to OrigamiGrillage.RIGID_LINK_STIFFNESS.toString(),
-            "mandatedCouplingStiffness" to MANDATED_STIFFNESS.toString(),
-            "interiorPressure" to interiorPressure.toString(),
+            "mandatedCouplingStiffness" to MANDATED_STIFFNESS.roundedForProse().toString(),
+            "interiorPressure" to interiorPressure.roundedForProse().toString(),
             "foundationSecant" to Gen1Tile.FOUNDATION_SECANT.toString(),
             "gridShapes" to GRID_SHAPES.size.toString(),
             "loadProfiles" to profiles.size.toString(),
@@ -951,7 +952,7 @@ fun main() {
         citedInputs = mapOf(
             "C-0015 exact zero at one row per duplex" to "0 pN, reproduced here",
             "C-0015 flatness scheme" to "45 attachments as 3 x 15",
-            "C-0017 mandated coupling stiffness" to "$MANDATED_STIFFNESS pN/nm",
+            "C-0017 mandated coupling stiffness" to "${MANDATED_STIFFNESS.roundedForProse()} pN/nm",
             "C-0017 lateral by-product" to "32.36 pN/nm on the same grid",
             "C-0017 yaw by-product" to "8205 pN*nm/rad on the same grid",
             "C-0014 lateral bound" to "$LATERAL_BOUND pN/nm per coordinate",

@@ -20,6 +20,7 @@ import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.structure.SOLVED_HEIGHT_SIGNIFICANT_DIGITS
 import com.xemantic.nano.plentyofroom.structure.roundForResult
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -462,10 +463,10 @@ fun main() {
                     "layer's buffer dependence at <= 0.4 %)",
             "tileArea" to TILE_AREA.toString(),
             "restingLoad" to PRIMARY_RESTING_LOAD.toString(),
-            "monomerVolume" to peg.monomerVolume.toString(),
+            "monomerVolume" to peg.monomerVolume.roundedForProse().toString(),
             "monomerMolarMass" to peg.monomerMolarMass.toString(),
             "kuhnLength" to peg.kuhnLength.toString(),
-            "monomersPerKuhnSegment" to peg.monomersPerKuhnSegment.toString(),
+            "monomersPerKuhnSegment" to peg.monomersPerKuhnSegment.roundedForProse().toString(),
             "nodeSpacing" to PRODUCTION_GRID.nodeSpacing.toString(),
             "contourStepsPerMonomer" to PRODUCTION_GRID.contourStepsPerMonomer.toString(),
             "graftingDensityRange" to
@@ -618,19 +619,19 @@ private fun scalingEstimates(records: List<FirstMomentRecord>): List<ScalingEsti
         val onsetExponent = ln(high.targetHeight / low.targetHeight) /
                 ln(high.forceOnsetChainLength / low.forceOnsetChainLength)
         estimates += estimate(
-            "d ln 2<z> / d ln N measured between L0^F = ${low.targetHeight} and " +
-                    "${high.targetHeight} nm — the RIGHT exponent for this extrapolation",
+            "d ln 2<z> / d ln N measured between L0^F = ${low.targetHeight.roundedForProse()} and " +
+                    "${high.targetHeight.roundedForProse()} nm — the RIGHT exponent for this extrapolation",
             momentExponent, reference
         )
         estimates += estimate(
-            "d ln L0^F / d ln N measured between L0^F = ${low.targetHeight} and " +
-                    "${high.targetHeight} nm — the exponent C-0011's formula actually uses",
+            "d ln L0^F / d ln N measured between L0^F = ${low.targetHeight.roundedForProse()} and " +
+                    "${high.targetHeight.roundedForProse()} nm — the exponent C-0011's formula actually uses",
             onsetExponent, reference
         )
     }
     listOf(0.49, 0.5, 0.55, 0.64).forEach { exponent ->
         estimates += estimate(
-            "asserted exponent $exponent, from C-0011's quoted N^(0.5-0.55) and its own " +
+            "asserted exponent ${exponent.roundedForProse()}, from C-0011's quoted N^(0.5-0.55) and its own " +
                     "stated 0.49-0.64 band",
             exponent, reference
         )
@@ -648,7 +649,7 @@ private fun estimate(
     // where the value was made (CLAUDE.md). An exponent that is not a positive finite number is
     // not an estimate, and it is emitted as one that failed rather than as a number.
     require(exponent.isFinite() && exponent > 0.0) {
-        "a scaling exponent must be positive and finite, was: $exponent ($description)"
+        "a scaling exponent must be positive and finite, was: ${exponent.roundedForProse()} ($description)"
     }
     val estimated = reference.forceOnsetChainLength * reference.shapeRatio.pow(1.0 / exponent)
     return ScalingEstimate(

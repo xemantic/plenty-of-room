@@ -1,0 +1,680 @@
+{
+    "task": "T-253",
+    "leaf": "A8.2",
+    "title": "A honeycomb grillage, so a prestrain on a four-layer face can be solved at all",
+    "verificationType": "logical (a graph census of what the honeycomb supplies against what OrigamiGrillage requires) + in-silico (a three-dimensional beam-and-bond lattice, its long-wavelength limits and a linear prestrain solve)",
+    "maturity": "TRL 1-3. Model-consistent and traceable. NOT empirically demonstrated. Nothing here is measured on a folded object; the lattice rule is read from the caDNAno paper and the elastic constants are this repository's own.",
+    "units": {
+        "length": "nm",
+        "force": "pN",
+        "energy": "pN nm",
+        "rigidity": "pN nm",
+        "stiffness": "pN/nm",
+        "rotationalStiffness": "pN nm/rad",
+        "angle": "degrees at the API, rad internally",
+        "foundation": "pN/nm^3",
+        "dishing": "dimensionless, over the free stroke"
+    },
+    "conventions": {
+        "axes": "s along the helices, y across them in the plane of the face (the m direction, pitch 3d/2), z through the block's thickness (the n direction, pitch d sqrt(3)/2)",
+        "deflection": "W positive DOWNWARD, toward the electrode - C-0006's convention",
+        "face": "the gap-facing face is column 0; the flatness field is read on it alone",
+        "crossoverPlanes": "class c carries its crossovers at residues b0 + 7c mod 21, so with b0 = 0 the planes are every 7 bp and class c occupies plane q = c mod 3",
+        "prestrain": "a LOAD, not a stiffness: the couple is taken at the physical k_theta and never at the enhanced one",
+        "tributary": "each face beam owns a strip of one row pitch CENTRED on its own axis; the face is corrugated, so a tiling strip would be off-centre and a uniform pressure would then apply a rolling moment at the row pitch"
+    },
+    "parameters": {
+        "interhelicalDistanceHoneycomb": "2.536",
+        "inPlaneRowPitch": "3.804",
+        "layerPitch": "2.19624042",
+        "rowBasePairs": "112",
+        "risePerBasePair": "0.34",
+        "crossoverPlaneStepBasePairs": "7",
+        "samePairPeriodBasePairs": "21",
+        "hingeStiffness": "13.5294118",
+        "slipStiffness": "64.7058824",
+        "linkPenalty": "10000.0",
+        "duplexBendingRigidity": "230.0",
+        "duplexTorsionalRigidity": "460.0",
+        "duplexStretchModulus": "1100.0",
+        "foundationStiffness": "0.012625625",
+        "targetForce": "100.0",
+        "freeStroke": "5.4677628",
+        "flatnessTolerance": "0.1",
+        "forcedCrossovers": "10",
+        "rasterCrossovers": "59",
+        "forcedDepartureDegrees": "17.1428571",
+        "realisedEnhancement10x6": "21.1851817",
+        "realisedEnhancement15x4": "9.65079217",
+        "dishingSamples": "81",
+        "temperature": "300 K, aqueous 2 mM MgCl2"
+    },
+    "sources": [
+        "gpd/results/T-3b-tile-edge-load-profile.json",
+        "gpd/results/T-246-forced-scaffold-crossover-price.json"
+    ],
+    "citedInputs": [
+        "C-0141 - the honeycomb cross-section, the 3d/2 in-plane pitch, the d sqrt(3)/2 layer pitch and the m x n block, consumed unmodified from tile/HoneycombFaceLattice.kt",
+        "C-0148 - the published crossover-class rule: 21 bp per pair, 7 bp per class step",
+        "C-0152 / CH-0188 - the 10-of-59 forced-crossover census and the 17.1428571 degree minimal departure, read from T-246's result file at run time",
+        "C-0104 / T-172 - a prestrain is a LOAD and peak dishing is a convex seminorm, which is what makes the triangle-inequality ceiling rigorous",
+        "C-0022 / T-3b - the solved edge collar at 2 mM, 10 nm, 0.192 V",
+        "C-0001 - the secant foundation stiffness",
+        "C-0116 - the measured composite fraction and its 0.26-0.33 band",
+        "T-5b - the 0.10 flatness convention"
+    ],
+    "cheapBound": [
+        {
+            "requirement": "the interface graph on the duplexes",
+            "whatOrigamiGrillageAssumes": "beam i is bonded to beam i+1 and to nothing else, so the interfaces form a PATH: maximum degree 2 (C-0100)",
+            "whatAHoneycombBlockSupplies": "three lattice neighbours per site, so maximum degree 3 at every m x n with n >= 3",
+            "adaptable": false,
+            "consequence": "no relabelling of the helices puts every bond between consecutive indices; this is a REPLACEMENT and not a parameter. At n = 2 the degree is 2 and a block IS path-representable, which is where the boundary lies."
+        },
+        {
+            "requirement": "the across-helix beam spacing",
+            "whatOrigamiGrillageAssumes": "a uniform pitch d, beamY[i] = (i - (n-1)/2) d",
+            "whatAHoneycombBlockSupplies": "an alternating d, 2d within one layer, mean 3d/2 - the corrugation the caDNAno paper states in its own sentence",
+            "adaptable": false,
+            "consequence": "C-0141's 1.5x in-plane pitch is not a rescaling of a uniform lattice; the face is a zigzag and its beams are off their own tributary centres."
+        },
+        {
+            "requirement": "which adjacent pairs are bonded at all",
+            "whatOrigamiGrillageAssumes": "every adjacent pair, at alternating column parity",
+            "whatAHoneycombBlockSupplies": "exactly half the in-plane adjacent pairs, decided by (r + c) mod 2",
+            "adaptable": false,
+            "consequence": "ONE LAYER OF A HONEYCOMB BLOCK IS NOT A SHEET - it is a set of dimers. The across-helix load path necessarily traverses the thickness, which is why layers x (single-layer D_perp) is not the honeycomb's D_perp."
+        },
+        {
+            "requirement": "the crossover column combinatorics",
+            "whatOrigamiGrillageAssumes": "a TWO-parity alternation of columns between a helix's two neighbours - the square lattice's 16 / 32 bp",
+            "whatAHoneycombBlockSupplies": "THREE bond classes at 7 bp, the same pair recurring every 21 bp: class c occupies plane q with q = c (mod 3)",
+            "adaptable": false,
+            "consequence": "CrossoverLayout's parities cannot express a three-class lattice; the in-plane bonds are all ONE class and the two interlayer ones share the rest."
+        },
+        {
+            "requirement": "the degrees of freedom per node",
+            "whatOrigamiGrillageAssumes": "three - W, dW/ds and the roll; no axial coordinate",
+            "whatAHoneycombBlockSupplies": "the parallel-axis enhancement that `layers` buys is S x sum(z^2), which is an AXIAL strain in offset fibres",
+            "adaptable": false,
+            "consequence": "OrigamiGrillage cannot read `layers` because it has no coordinate for what `layers` does. Adding the axial DOF is what makes the interlayer coupling an OUTPUT (a slip spring) rather than a NONE/RIGID binary."
+        },
+        {
+            "requirement": "the foundation",
+            "whatOrigamiGrillageAssumes": "a Winkler strip of width d under EVERY beam",
+            "whatAHoneycombBlockSupplies": "one gap-facing face of m helices, tributary 3d/2, and 3m buried helices that touch no polymer at all",
+            "adaptable": false,
+            "consequence": "a smeared equivalent sheet puts the whole block's rigidity on one beam row and therefore cannot carry a load on a NAMED subset of crossovers."
+        }
+    ],
+    "census": [
+        {
+            "crossSection": "10 x 6",
+            "helices": 60,
+            "faceHelices": 10,
+            "inPlaneInterfaces": 27,
+            "interlayerInterfaces": 50,
+            "bondedInterfaces": 77,
+            "maximumDegree": 3,
+            "representableAsAPathGraph": false,
+            "oneLayerComponents": 5,
+            "bonds": 435,
+            "degreesOfFreedom": 4080,
+            "bandwidth": 243,
+            "denseMegabytes": 133.1712,
+            "bandedMegabytes": 7.96416,
+            "storageRatio": 16.7213115,
+            "plateEdgeY": 38.04,
+            "lengthS": 38.08
+        },
+        {
+            "crossSection": "15 x 4",
+            "helices": 60,
+            "faceHelices": 15,
+            "inPlaneInterfaces": 28,
+            "interlayerInterfaces": 45,
+            "bondedInterfaces": 73,
+            "maximumDegree": 3,
+            "representableAsAPathGraph": false,
+            "oneLayerComponents": 8,
+            "bonds": 410,
+            "degreesOfFreedom": 4080,
+            "bandwidth": 243,
+            "denseMegabytes": 133.1712,
+            "bandedMegabytes": 7.96416,
+            "storageRatio": 16.7213115,
+            "plateEdgeY": 57.06,
+            "lengthS": 38.08
+        }
+    ],
+    "longWavelength": [
+        {
+            "crossSection": "10 x 6",
+            "quantity": "D_parallel at rigid composite action, pN nm",
+            "measuredOnTheLattice": 24771.776,
+            "closedForm": 24771.776,
+            "corpusFormulaAtTheBondLength": 37157.664,
+            "corpusFormulaAtTheRowPitch": 24771.776,
+            "latticeOverCorpusAtTheBondLength": 0.666666667,
+            "latticeOverCorpusAtTheRowPitch": 1.0,
+            "note": "the imposed field carries zero slip and zero link extension, so the lattice's own energy IS the parallel-axis closed form; it differs from the corpus's only by the in-plane pitch, d against 3d/2"
+        },
+        {
+            "crossSection": "10 x 6",
+            "quantity": "D_perpendicular, carried entirely by the dihedral springs, pN nm",
+            "measuredOnTheLattice": 12.6141869,
+            "closedForm": 12.6141869,
+            "corpusFormulaAtTheBondLength": 28.8324271,
+            "corpusFormulaAtTheRowPitch": 43.2486406,
+            "latticeOverCorpusAtTheBondLength": 0.4375,
+            "latticeOverCorpusAtTheRowPitch": 0.291666667,
+            "note": "an in-plane bond carries a full d of lever arm and an interlayer bond only d/2, and only half the in-plane adjacent pairs are bonded at all - which is what the corpus's layers x (k_theta d / p) cannot see"
+        },
+        {
+            "crossSection": "15 x 4",
+            "quantity": "D_parallel at rigid composite action, pN nm",
+            "measuredOnTheLattice": 7215.85068,
+            "closedForm": 7215.85068,
+            "corpusFormulaAtTheBondLength": 10823.776,
+            "corpusFormulaAtTheRowPitch": 7215.85068,
+            "latticeOverCorpusAtTheBondLength": 0.666666667,
+            "latticeOverCorpusAtTheRowPitch": 1.0,
+            "note": "the imposed field carries zero slip and zero link extension, so the lattice's own energy IS the parallel-axis closed form; it differs from the corpus's only by the in-plane pitch, d against 3d/2"
+        },
+        {
+            "crossSection": "15 x 4",
+            "quantity": "D_perpendicular, carried entirely by the dihedral springs, pN nm",
+            "measuredOnTheLattice": 8.30934531,
+            "closedForm": 8.30934531,
+            "corpusFormulaAtTheBondLength": 19.2216181,
+            "corpusFormulaAtTheRowPitch": 28.8324271,
+            "latticeOverCorpusAtTheBondLength": 0.432291667,
+            "latticeOverCorpusAtTheRowPitch": 0.288194444,
+            "note": "an in-plane bond carries a full d of lever arm and an interlayer bond only d/2, and only half the in-plane adjacent pairs are bonded at all - which is what the corpus's layers x (k_theta d / p) cannot see"
+        }
+    ],
+    "realisedRigidity": [
+        {
+            "crossSection": "10 x 6",
+            "independentLimit": 362.776025,
+            "parallelAxisLimit": 24771.776,
+            "parallelAxisFactor": 68.2839391,
+            "realisedOnThisLattice": 6387.00468,
+            "compositeFraction": 0.246803583,
+            "measuredBandLow": 0.26,
+            "measuredBandHigh": 0.33,
+            "insideTheMeasuredBand": false,
+            "realisedEnhancementAtThisFraction": 17.6059172,
+            "realisedEnhancementAtTheMeasuredBand": 21.1851817
+        },
+        {
+            "crossSection": "15 x 4",
+            "independentLimit": 241.850683,
+            "parallelAxisLimit": 7215.85068,
+            "parallelAxisFactor": 29.8359739,
+            "realisedOnThisLattice": 3077.02895,
+            "compositeFraction": 0.406535456,
+            "measuredBandLow": 0.26,
+            "measuredBandHigh": 0.33,
+            "insideTheMeasuredBand": false,
+            "realisedEnhancementAtThisFraction": 12.7228458,
+            "realisedEnhancementAtTheMeasuredBand": 9.65079217
+        }
+    ],
+    "lengthDependence": [
+        {
+            "crossSection": "10 x 6",
+            "rowBasePairs": 56,
+            "lengthS": 19.04,
+            "degreesOfFreedom": 2160,
+            "independentLimit": 362.776025,
+            "parallelAxisLimit": 24771.776,
+            "realisedOnThisLattice": 2113.26686,
+            "compositeFraction": 0.0717149752
+        },
+        {
+            "crossSection": "10 x 6",
+            "rowBasePairs": 112,
+            "lengthS": 38.08,
+            "degreesOfFreedom": 4080,
+            "independentLimit": 362.776025,
+            "parallelAxisLimit": 24771.776,
+            "realisedOnThisLattice": 6387.00468,
+            "compositeFraction": 0.246803583
+        },
+        {
+            "crossSection": "10 x 6",
+            "rowBasePairs": 224,
+            "lengthS": 76.16,
+            "degreesOfFreedom": 7920,
+            "independentLimit": 362.776025,
+            "parallelAxisLimit": 24771.776,
+            "realisedOnThisLattice": 11987.8619,
+            "compositeFraction": 0.476262276
+        },
+        {
+            "crossSection": "10 x 6",
+            "rowBasePairs": 448,
+            "lengthS": 152.32,
+            "degreesOfFreedom": 15600,
+            "independentLimit": 362.776025,
+            "parallelAxisLimit": 24771.776,
+            "realisedOnThisLattice": 18353.8233,
+            "compositeFraction": 0.737066133
+        }
+    ],
+    "interlayerCoupling": [
+        {
+            "slipStiffnessMultiplier": 1.0E-4,
+            "slipStiffness": 0.00647058824,
+            "realisedAlongHelixRigidity": 363.737059,
+            "compositeFractionOnRigidity": 3.93721119E-5,
+            "freeDishingOverStroke": 0.149649169,
+            "compositeFractionOnDishing": 0.0
+        },
+        {
+            "slipStiffnessMultiplier": 0.03125,
+            "slipStiffness": 2.02205882,
+            "realisedAlongHelixRigidity": 656.535267,
+            "compositeFractionOnRigidity": 0.0120348741,
+            "freeDishingOverStroke": 0.139333265,
+            "compositeFractionOnDishing": 0.435239756
+        },
+        {
+            "slipStiffnessMultiplier": 0.125,
+            "slipStiffness": 8.08823529,
+            "realisedAlongHelixRigidity": 1469.66364,
+            "compositeFractionOnRigidity": 0.04534752,
+            "freeDishingOverStroke": 0.132258181,
+            "compositeFractionOnDishing": 0.733745647
+        },
+        {
+            "slipStiffnessMultiplier": 0.5,
+            "slipStiffness": 32.3529412,
+            "realisedAlongHelixRigidity": 4026.45037,
+            "compositeFractionOnRigidity": 0.150095225,
+            "freeDishingOverStroke": 0.128364534,
+            "compositeFractionOnDishing": 0.898023047
+        },
+        {
+            "slipStiffnessMultiplier": 1.0,
+            "slipStiffness": 64.7058824,
+            "realisedAlongHelixRigidity": 6387.00468,
+            "compositeFractionOnRigidity": 0.246803583,
+            "freeDishingOverStroke": 0.127358454,
+            "compositeFractionOnDishing": 0.940470719
+        },
+        {
+            "slipStiffnessMultiplier": 2.0,
+            "slipStiffness": 129.411765,
+            "realisedAlongHelixRigidity": 9306.42932,
+            "compositeFractionOnRigidity": 0.366408017,
+            "freeDishingOverStroke": 0.126730069,
+            "compositeFractionOnDishing": 0.966983003
+        },
+        {
+            "slipStiffnessMultiplier": 8.0,
+            "slipStiffness": 517.647059,
+            "realisedAlongHelixRigidity": 14546.3376,
+            "compositeFractionOnRigidity": 0.581079174,
+            "freeDishingOverStroke": 0.126160426,
+            "compositeFractionOnDishing": 0.991016893
+        },
+        {
+            "slipStiffnessMultiplier": 32.0,
+            "slipStiffness": 2070.58824,
+            "realisedAlongHelixRigidity": 17048.432,
+            "compositeFractionOnRigidity": 0.683586217,
+            "freeDishingOverStroke": 0.126001528,
+            "compositeFractionOnDishing": 0.997720957
+        },
+        {
+            "slipStiffnessMultiplier": 128.0,
+            "slipStiffness": 8282.35294,
+            "realisedAlongHelixRigidity": 17833.8872,
+            "compositeFractionOnRigidity": 0.715765136,
+            "freeDishingOverStroke": 0.12596093,
+            "compositeFractionOnDishing": 0.999433853
+        },
+        {
+            "slipStiffnessMultiplier": 10000.0,
+            "slipStiffness": 647058.824,
+            "realisedAlongHelixRigidity": 18111.5077,
+            "compositeFractionOnRigidity": 0.727138831,
+            "freeDishingOverStroke": 0.125947511,
+            "compositeFractionOnDishing": 1.0
+        }
+    ],
+    "flatness": [
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 1.0,
+            "subdivisions": 1,
+            "freeDishingOverStroke": 0.127358454,
+            "flat": false
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 1.0,
+            "subdivisions": 2,
+            "freeDishingOverStroke": 0.127338362,
+            "flat": false
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 21.1851817,
+            "subdivisions": 1,
+            "freeDishingOverStroke": 0.0449400126,
+            "flat": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 21.1851817,
+            "subdivisions": 2,
+            "freeDishingOverStroke": 0.0449472614,
+            "flat": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 17.6059172,
+            "subdivisions": 1,
+            "freeDishingOverStroke": 0.0477844467,
+            "flat": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 17.6059172,
+            "subdivisions": 2,
+            "freeDishingOverStroke": 0.0477908727,
+            "flat": true
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 1.0,
+            "subdivisions": 1,
+            "freeDishingOverStroke": 0.312237799,
+            "flat": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 1.0,
+            "subdivisions": 2,
+            "freeDishingOverStroke": 0.312126414,
+            "flat": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 9.65079217,
+            "subdivisions": 1,
+            "freeDishingOverStroke": 0.227177955,
+            "flat": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 9.65079217,
+            "subdivisions": 2,
+            "freeDishingOverStroke": 0.227126687,
+            "flat": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 12.7228458,
+            "subdivisions": 1,
+            "freeDishingOverStroke": 0.220064299,
+            "flat": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 12.7228458,
+            "subdivisions": 2,
+            "freeDishingOverStroke": 0.220017415,
+            "flat": false
+        }
+    ],
+    "prestrain": [
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 1.0,
+            "bonds": 435,
+            "rimBonds": 50,
+            "departureDegrees": 17.1428571,
+            "unitPeakDishingPerRadian": 0.0956113619,
+            "largestUnitOverStroke": 0.0286068525,
+            "tenLargestOverStroke": 0.279799381,
+            "tenLargestRimOverStroke": 0.243003031,
+            "freeDishingOverStroke": 0.127358454,
+            "ceilingOverStroke": 0.407157835,
+            "rimCeilingOverStroke": 0.370361485,
+            "insideTolerance": false,
+            "departureThatWouldReachTheTolerance": null
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 21.1851817,
+            "bonds": 435,
+            "rimBonds": 50,
+            "departureDegrees": 17.1428571,
+            "unitPeakDishingPerRadian": 0.012831521,
+            "largestUnitOverStroke": 0.0038391821,
+            "tenLargestOverStroke": 0.0347706369,
+            "tenLargestRimOverStroke": 0.0288323733,
+            "freeDishingOverStroke": 0.0449400126,
+            "ceilingOverStroke": 0.0797106495,
+            "rimCeilingOverStroke": 0.0737723859,
+            "insideTolerance": true,
+            "departureThatWouldReachTheTolerance": 27.1460514
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 17.6059172,
+            "bonds": 435,
+            "rimBonds": 50,
+            "departureDegrees": 17.1428571,
+            "unitPeakDishingPerRadian": 0.0148947631,
+            "largestUnitOverStroke": 0.00445650269,
+            "tenLargestOverStroke": 0.0403449599,
+            "tenLargestRimOverStroke": 0.0337972249,
+            "freeDishingOverStroke": 0.0477844467,
+            "ceilingOverStroke": 0.0881294066,
+            "rimCeilingOverStroke": 0.0815816716,
+            "insideTolerance": true,
+            "departureThatWouldReachTheTolerance": 22.1867557
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 1.0,
+            "bonds": 410,
+            "rimBonds": 45,
+            "departureDegrees": 17.1428571,
+            "unitPeakDishingPerRadian": 0.208828075,
+            "largestUnitOverStroke": 0.0624812137,
+            "tenLargestOverStroke": 0.48567377,
+            "tenLargestRimOverStroke": 0.435625754,
+            "freeDishingOverStroke": 0.312237799,
+            "ceilingOverStroke": 0.797911569,
+            "rimCeilingOverStroke": 0.747863554,
+            "insideTolerance": false,
+            "departureThatWouldReachTheTolerance": null
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 9.65079217,
+            "bonds": 410,
+            "rimBonds": 45,
+            "departureDegrees": 17.1428571,
+            "unitPeakDishingPerRadian": 0.0393597618,
+            "largestUnitOverStroke": 0.0117764132,
+            "tenLargestOverStroke": 0.105713956,
+            "tenLargestRimOverStroke": 0.0909281742,
+            "freeDishingOverStroke": 0.227177955,
+            "ceilingOverStroke": 0.332891911,
+            "rimCeilingOverStroke": 0.318106129,
+            "insideTolerance": false,
+            "departureThatWouldReachTheTolerance": null
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 12.7228458,
+            "bonds": 410,
+            "rimBonds": 45,
+            "departureDegrees": 17.1428571,
+            "unitPeakDishingPerRadian": 0.0311679424,
+            "largestUnitOverStroke": 0.00932542654,
+            "tenLargestOverStroke": 0.0855856842,
+            "tenLargestRimOverStroke": 0.0723978339,
+            "freeDishingOverStroke": 0.220064299,
+            "ceilingOverStroke": 0.305649983,
+            "rimCeilingOverStroke": 0.292462133,
+            "insideTolerance": false,
+            "departureThatWouldReachTheTolerance": null
+        }
+    ],
+    "convergence": [
+        {
+            "quantity": "the free-tile peak dishing over the stroke at 10 x 6",
+            "axis": "nested beam subdivisions between crossover planes",
+            "values": [
+                1.0,
+                2.0,
+                4.0
+            ],
+            "results": [
+                0.127358454,
+                0.127338362,
+                0.127348703
+            ],
+            "relativeDeparture": 8.1E-5,
+            "note": "NOT read under a uniform pressure: a free lattice on a uniform foundation answers that one with an exact rigid translation at every mesh."
+        },
+        {
+            "quantity": "the same, over the dishing sample grid",
+            "axis": "samples per side of the face grid",
+            "values": [
+                41.0,
+                81.0,
+                161.0
+            ],
+            "results": [
+                0.127358454,
+                0.127358454,
+                0.127358454
+            ],
+            "relativeDeparture": 0.0,
+            "note": "the peak is a max over a grid, so it is monotone non-decreasing in the sample count and its departure is one-sided."
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0141 - the honeycomb plateEdgeY of 10 x 6",
+            "quantity": "the in-plane width in nm",
+            "published": 38.04,
+            "here": 38.04,
+            "relativeDeparture": 0.0,
+            "reproduced": true
+        },
+        {
+            "source": "C-0141 - the honeycomb plateEdgeY of 15 x 4",
+            "quantity": "the in-plane width in nm",
+            "published": 57.06,
+            "here": 57.06,
+            "relativeDeparture": 0.0,
+            "reproduced": true
+        },
+        {
+            "source": "C-0152 - the minimal forced-crossover azimuthal departure",
+            "quantity": "degrees, read out of T-246's result file at run time",
+            "published": 17.1428571,
+            "here": 17.1428571,
+            "relativeDeparture": 0.0,
+            "reproduced": true
+        },
+        {
+            "source": "multiLayerRigidities at COMPOSITE and C-0141's corrected 3d/2 in-plane pitch - the corpus's own smeared four-layer D_parallel",
+            "quantity": "the along-helix flexural rigidity in pN nm at rigid composite action, 10 x 6",
+            "published": 24771.776,
+            "here": 24771.776,
+            "relativeDeparture": 0.0,
+            "reproduced": true
+        },
+        {
+            "source": "the uniform-load identity - a free lattice translates by q / k_f exactly",
+            "quantity": "the mean face deflection in nm",
+            "published": 5.4677628,
+            "here": 5.4677628,
+            "relativeDeparture": 5.7E-12,
+            "reproduced": true
+        }
+    ],
+    "falsifiers": [
+        {
+            "name": "F1",
+            "statement": "a uniform pressure on the honeycomb lattice on a uniform Winkler foundation produces zero dishing",
+            "fired": false,
+            "note": "peak dishing 2.1E-11 nm against a stroke of 5.46776 nm; the standing falsifier DOES transfer to a load and it is the one that catches a wrong tributary."
+        },
+        {
+            "name": "F2",
+            "statement": "the lattice's measured long-wavelength D_parallel equals the parallel-axis closed form",
+            "fired": false,
+            "note": "the imposed composite-compatible field has zero slip and zero link extension identically, so the agreement tests the axial arms and the geometry at once."
+        },
+        {
+            "name": "F3",
+            "statement": "no single layer of a honeycomb block is a connected sheet",
+            "fired": false,
+            "note": "written the favourable way round: its NOT firing is the finding. A one-helix row bonds (r, 0) to (r+1, 0) only where r + c is even, so a layer is a set of dimers - 5 components on the 10-row face."
+        },
+        {
+            "name": "F4",
+            "statement": "no OrigamiGrillage, at any beam count and any CrossoverLayout, reproduces a four-layer honeycomb block's bond graph",
+            "fired": false,
+            "note": "an OrigamiGrillage's interfaces are a PATH, maximum degree 2; both candidate blocks have maximum degree 3. The boundary is exact and it is at n = 2, where a block IS path-representable."
+        },
+        {
+            "name": "F5",
+            "statement": "the ten forced crossovers never DECIDE the flatness verdict - there is no state in which the free tile is inside T-5b's 0.10 and the ceiling on the forcing is outside it",
+            "fired": false,
+            "note": "this is the question C-0152 refused, and it is the right way round: where the FREE tile already exceeds the tolerance the forcing is not what breaks the design. The ceiling is free dishing plus the ten largest UNIT responses times the departure, which bounds EVERY choice of ten sites by the triangle inequality and needs no raster path."
+        },
+        {
+            "name": "F6",
+            "statement": "the global force balance holds - the foundation carries the whole applied load",
+            "fired": false,
+            "note": "relative residual 5.7E-12; exact on a field the two quadratures integrate identically, which a uniform pressure is."
+        },
+        {
+            "name": "F7",
+            "statement": "the composite fraction is a property of the CROSSOVERS, so a value measured on a micron-long bundle transfers to a 38 nm tile unchanged",
+            "fired": true,
+            "note": "its FIRING is the finding: the partial-composite effect is a boundary layer at the free ends, so f is a property of the LENGTH and the LOAD CASE. Over 56 to 448 bp it runs 0.07171 to 0.7371."
+        }
+    ],
+    "findings": {
+        "theCheapBoundDecidedIt": "OrigamiGrillage bonds beam i to beam i+1 and to nothing else, so its interfaces form a PATH on the duplexes and its maximum degree is 2. A honeycomb site has THREE lattice neighbours, so both four-layer candidates have maximum degree 3 and no relabelling of the helices puts every bond between consecutive indices. That is one integer, it runs before any solver, and it says REPLACE rather than ADAPT. The boundary is exact: at two helices per row the degree is 2 and a block IS path-representable.",
+        "theCompositeFractionIsNotAMaterialCONSTANT": "Swept over the row length at 10 x 6 the same lattice, the same crossovers and the same k_s report f = 56 bp: 0.07171, 112 bp: 0.2468, 224 bp: 0.4763, 448 bp: 0.7371. In UNIFORM bending an infinitely long composite is rigid whatever its connectors, so what a partial composite measures is a boundary layer at the free ends - which is why Kauert et al.'s 0.26-0.33, measured on 740 nm to 2 micron bundles, is not a constant this project may substitute into a 38 nm tile. That it lands so close here is a coincidence of two effects and not a validation of either.",
+        "theForcedCrossoverPrestrain": "At the calibrated across-helix enhancement the ceiling on ALL TEN forced crossovers, over EVERY choice of sites, is 0.0797106 of the stroke at 10 x 6 against T-5b's 0.10, of which the free tile alone is 0.04494 and the forcing 0.0347706. The largest single bond is worth 0.00383918 at the 17.1428571 degree departure, and the departure that would reach the tolerance is 27.1461 degrees. WITHOUT the across-helix enhancement the free tile alone is 0.127358, already past the tolerance, so at that end of the bracket the forced crossovers are not what decides the verdict - the term this lattice does not carry is.",
+        "whatTheCeilingCosts": "A prestrain is a load, so the field is linear in it and peak dishing is a convex seminorm: the sum of the ten largest UNIT responses bounds every choice of ten sites. One factorisation and 435 back-substitutions settle the whole placement question without reconstructing the raster path - which is the half C-0152 could not run.",
+        "oneLayerOfAHoneycombBlockIsNotASheet": "Only half the in-plane adjacent pairs are bonded - (r + c) even - so a single layer of a 10 x 6 block falls into 5 components, which are dimers. The across-helix load path therefore NECESSARILY traverses the thickness, and OrigamiSheet's layers x (k_theta d / p) is a statement about a stack of independent single-layer sheets, of which a honeycomb block has none. Measured on the lattice, D_perpendicular is 0.291667 of that formula at C-0141's corrected in-plane pitch, and 0.4375 of it at C-0120's, at 10 x 6.",
+        "theCompositeFractionIsAnOutputAndNotAnINPUT": "Adding the axial degree of freedom and Chen et al.'s own slip spring k_s = 2 alpha S / (100 a) = 64.7059 pN/nm makes the composite fraction something the lattice REPORTS. Imposing the bending kinematics and relaxing the axial coordinates, the 10 x 6 block realises 6387.0 pN nm along the helices between an independent 362.776 and a parallel-axis 24771.8 - a fraction of 0.246804 against the 0.26-0.33 measured on four origami bundles. The two are NOT the same quantity: in uniform bending an infinitely long composite is rigid whatever its connectors, so the partial-composite effect is a boundary layer at the free ends and f is a property of the LENGTH and the LOAD CASE. Read on the dishing under C-0022's collar instead of on the rigidity the same lattice reports 0.940471, between 0.149649 and 0.125948 of the stroke - which is CLAUDE.md's own quote it with the state it is read at, on a calibration.",
+        "theBandedOrderingIsWhatMakesItAffordable": "Node-major ordering makes the half-bandwidth 243 on 4080 unknowns, so the factor is 7.96 MB against a dense 133.0 MB - 16.72x - and the work falls from O(n^3) to n b^2 / 2."
+    },
+    "validity": [
+        "TRL 1-3, model-consistent and traceable, not empirically demonstrated.",
+        "The lattice carries NO across-helix parallel-axis term: the layers' membrane action across the helices needs an in-plane transverse coordinate this model does not have, so its D_perpendicular is the INDEPENDENT one and therefore a LOWER bound. The bracket is run explicitly at THREE ends - no enhancement at all, the corpus's calibrated one, and the one this lattice's own measured composite fraction implies through k_s / k_theta = S / B - and the two ends that carry ANY interlayer coupling agree on every verdict. At the end that carries none the FREE tile already exceeds the tolerance, so the forcing is not what decides it there either.",
+        "The composite fraction this lattice measures is a property of the ROW LENGTH: it runs 0.0717 at 56 bp to 0.7371 at 448 bp on one cross-section, one k_s and one load case. Kauert et al.'s 0.26-0.33 is measured on 740 nm to 2 micron bundles by bending fluctuations, which is neither this length nor this load case; the closeness of the 38 nm reading to it is not a validation.",
+        "The 112 / 108 raster is a TWO-LENGTH raster and this lattice carries ONE row length. The 4 bp difference is 1.36 nm of axial extent and is not modelled.",
+        "The forced crossovers are SCAFFOLD crossovers, which sit 5 bp from a staple position; the lattice's node stations are the staple planes, so the ceiling is taken over the lattice's own bonds rather than at the scaffold offsets. That is why it is quoted as a ceiling over EVERY bond and not as a value at ten named ones.",
+        "k_theta is Gen1Tile's square-lattice-fitted constant (Chen et al.); no honeycomb measurement of it exists in this repository. k_s is a CONSTRUCTION, not a measurement, and is swept over four decades.",
+        "Kirchhoff is not safe at these thicknesses (C-0109, C-0120): transverse shear is not carried, so every D_parallel here is an upper bound.",
+        "The face's peak dishing is read on a grid over the full in-plane width while each face beam's tributary is centred on its own axis, so the outermost quarter of a bond length at each edge is evaluated on the nearest beam.",
+        "The foundation acts on the gap-facing face only, and the opposite face is free - which is the physical arrangement and not a simplification.",
+        "The block is FREE: no attachment coupling is applied here, so every dishing number is C-0109's uncoupled reference and not a design."
+    ],
+    "openQuestions": [
+        "What the across-helix parallel-axis term is worth once an in-plane transverse coordinate is carried. CLAUDE.md records that k_s / k_theta = S / B makes the enhancement the same factor both ways under Chen et al.'s construction; this lattice can test that rather than assume it.",
+        "Whether a coupled honeycomb block - C-0142's cells re-graded on THIS lattice rather than on a smeared equivalent sheet - moves any flatness verdict. Every coupled cell in the corpus is a smeared single-layer square-lattice solve.",
+        "Whether the raster TURN's position on the block's axial rim gives it the zero coefficient C-0147 proved for the raggedness (T-254). The ceiling here is placement-free and therefore does not answer it.",
+        "What a per-LAYER defect does. This lattice can remove one crossover of one interface of one layer, which a smeared equivalent sheet cannot express at all - C-0087's dropout statistics have never been read on a multi-layer body."
+    ],
+    "proseFailure": "none"
+}

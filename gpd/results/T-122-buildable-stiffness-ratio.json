@@ -26,13 +26,13 @@
         "scatterScan": "190 intervals over [0, 0.95], then bisection on the bracket width"
     },
     "citedInputs": {
-        "C-0017 mandate": "33.333333333333336 pN/nm = 100 pN / 3 nm",
+        "C-0017 mandate": "33.3333333 pN/nm = 100 pN / 3 nm",
         "C-0058 two levels": "re-derived here from its own rim x 5 rule, not tabulated",
         "rise per base pair": "0.34 nm — CITED, MEASURED (Douglas et al. 2009)",
         "ssDNA contour per nucleotide": "0.65 nm — CITED, MEASURED, inextensible convention (Sim et al. 2012; Bosco et al. 2014)",
         "ssDNA Kuhn length": "2.1 nm — CITED, MEASURED, zero-force end",
         "duplex EI": "230.0 pN*nm^2 — a CanDo MODEL INPUT, not a measurement",
-        "crossover hinge k_theta": "13.529411764705882 pN*nm/rad — CITED, FITTED (Chen 2014)",
+        "crossover hinge k_theta": "13.5294118 pN*nm/rad — CITED, FITTED (Chen 2014)",
         "C-0006/CH-0029 unzip allowable": "10.0 pN per path",
         "C-0026 scatter sensitivity": "0.883 pN per unit relative amplitude, break-even 0.17 — CITED from C-0026, T-45 is still unmeasured",
         "T-5b tolerance": "0.1 — a CONVENTION",

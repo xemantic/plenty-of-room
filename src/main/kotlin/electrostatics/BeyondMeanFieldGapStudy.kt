@@ -18,6 +18,7 @@ package com.xemantic.nano.plentyofroom.electrostatics
 
 import com.xemantic.nano.plentyofroom.brush.bracketedRoot
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_SIGNIFICANT_DIGITS
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -901,7 +902,8 @@ fun main() {
         ),
         T50LiteratureCriterion(
             name = "Kanduc et al. Eq. (64), weak-coupling validity, Xi < D/mu / ln(D/mu)",
-            reading = "at the BARE duplex wall, mu_GC = " + gouyChapman + " nm, 7 nm gap",
+            reading = "at the BARE duplex wall, mu_GC = " + gouyChapman.roundedForProse() +
+                    " nm, 7 nm gap",
             quantity = couplingParameter,
             bound = weakCouplingValidityCoupling(OPERATING_GAP / gouyChapman),
             satisfied = couplingParameter < weakCouplingValidityCoupling(OPERATING_GAP / gouyChapman),
@@ -1346,9 +1348,9 @@ fun main() {
         ),
         runParameters = mapOf(
             "temperature" to "300.0",
-            "bjerrumLength" to lb.toString(),
-            "tileChargeDensity" to tileCharge.toString(),
-            "manningSurvivingFraction" to surviving.toString(),
+            "bjerrumLength" to lb.roundedForProse().toString(),
+            "tileChargeDensity" to tileCharge.roundedForProse().toString(),
+            "manningSurvivingFraction" to surviving.roundedForProse().toString(),
             "footprintArea" to FOOTPRINT.toString(),
             "sternCapacitance" to STERN_CAPACITANCE.toString(),
             "gapMeshNodes" to DEFAULT_GAP_MESH_NODES.toString(),
@@ -1356,13 +1358,15 @@ fun main() {
             "operatingGap" to OPERATING_GAP.toString(),
             "operatingBuffer" to OPERATING_BUFFER.toString(),
             "channelBias" to CHANNEL_BIAS.toString(),
-            "mandatedCouplingStiffness" to MANDATE.toString(),
-            "levelMultipliers" to LEVEL_MULTIPLIERS.joinToString(", "),
+            "mandatedCouplingStiffness" to MANDATE.roundedForProse().toString(),
+            "levelMultipliers" to LEVEL_MULTIPLIERS.joinToString(", ") {
+                it.roundedForProse().toString()
+            },
             "chargeFactors" to CHARGE_FACTORS.joinToString(", "),
             "channelGaps" to CHANNEL_GAPS.joinToString(", "),
             "differenceSteps" to DIFFERENCE_STEPS.joinToString(", "),
-            "gouyChapmanLength" to gouyChapman.toString(),
-            "couplingParameter" to couplingParameter.toString()
+            "gouyChapmanLength" to gouyChapman.roundedForProse().toString(),
+            "couplingParameter" to couplingParameter.roundedForProse().toString()
         ),
         thresholds = thresholdRecords,
         bindingThreshold = binding,

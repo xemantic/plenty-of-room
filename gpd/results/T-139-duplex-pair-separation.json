@@ -5,14 +5,14 @@
         "temperature [K]": "300.0",
         "k_BT [pN nm]": "4.141947",
         "medium": "aqueous 2 mM MgCl2, 2:1, I = 3c = 6.0 mM",
-        "Debye length [nm]": "3.926878526147063",
-        "Bjerrum length [nm]": "0.7141066106764419",
+        "Debye length [nm]": "3.92687853",
+        "Bjerrum length [nm]": "0.714106611",
         "relative permittivity": "78.0",
-        "phosphate (charge) radius [nm], MEASURED T-71": "0.9086378584708424",
+        "phosphate (charge) radius [nm], MEASURED T-71": "0.908637858",
         "hard (steric) radius [nm], CITED convention": "1.0",
-        "bare linear charge density [e/nm]": "5.88235294117647",
-        "Manning parameter xi_M": "4.200627121626129",
-        "Manning-surviving line charge at q = 2 [e/nm]": "0.7001755655592824",
+        "bare linear charge density [e/nm]": "5.88235294",
+        "Manning parameter xi_M": "4.20062712",
+        "Manning-surviving line charge at q = 2 [e/nm]": "0.700175566",
         "Hamaker constant [zJ = pN nm]": "5.9",
         "short-range Pi_R [pN/nm2], CITED Meng 2020": "201800.0",
         "short-range lambda [nm], CITED Meng 2020": "0.24",
@@ -20,8 +20,8 @@
         "plan-relevant range [nm]": "20.0",
         "C-0055 arm [nm]": "8.16439083",
         "root pitch [nm]": "10.88",
-        "placement threshold [nm]": "2.7156091700000005",
-        "T-71 steric floor [nm]": "1.8172757169416849",
+        "placement threshold [nm]": "2.71560917",
+        "T-71 steric floor [nm]": "1.81727572",
         "row pitch [nm]": "2.69",
         "stations": "34",
         "sources": "gpd/results/T-125-upward-root-placement.json"
@@ -4872,7 +4872,7 @@
             "energy": 31.9218637,
             "energyInThermalUnits": 7.70697058,
             "isEquilibrium": false,
-            "note": "the top of the primary-minimum barrier, at a surface separation of 0.11976751421269993 nm — well inside a water diameter of contact and not a separation any body sits at"
+            "note": "the top of the primary-minimum barrier, at a surface separation of 0.119767514 nm — well inside a water diameter of contact and not a separation any body sits at"
         },
         {
             "kind": "secondary minimum",
@@ -5299,7 +5299,7 @@
         },
         {
             "quantity": "blunt-end coaxial stacking is an established origami motif and it is ATTRACTIVE",
-            "value": "-2.63 kcal/mol per helix between two separate tiles = -4.411557910339179 kT",
+            "value": "-2.63 kcal/mol per helix between two separate tiles = -4.41155791 kT",
             "conditions": "1xTAE + 12.5 mM Mg2+, 22 C, AFM monomer/dimer counting",
             "source": "Woo & Rothemund, Nature Chem. 3:620 (2011), SI Table S4",
             "readFlag": "READ DIRECTLY"
@@ -5361,7 +5361,7 @@
             "id": "F1",
             "statement": "the pair interaction has a real MINIMUM at finite separation above steric contact",
             "fired": false,
-            "outcome": "NO inside the plan-relevant range: zero local minima between 2.1 and 20.0 nm. A far minimum exists at 37.153675907942684 nm and is -0.005999045832899163 kT deep — 170x below thermal, an unretarded-Lifshitz artefact, and not a confinement. The literature is unanimous and independent: no equilibrium separation exists."
+            "outcome": "NO inside the plan-relevant range: zero local minima between 2.1 and 20.0 nm. A far minimum exists at 37.1536759 nm and is -0.00599904583 kT deep — 170x below thermal, an unretarded-Lifshitz artefact, and not a confinement. The literature is unanimous and independent: no equilibrium separation exists."
         },
         {
             "id": "F2",
@@ -5373,19 +5373,19 @@
             "id": "F3",
             "statement": "the energy of placing a body in C-0066's gap at the measured girth EXCEEDS what the host sheet demonstrably pays to hold its own duplexes at 2.69 nm",
             "fired": false,
-            "outcome": "NO at the placement threshold (4.946736098407883 kT against 7.999696970799437 kT per host crossover) and YES at the bare measured floor (7.653544378336925 kT). The affordable width is therefore between them, and it is below the threshold."
+            "outcome": "NO at the placement threshold (4.9467361 kT against 7.99969697 kT per host crossover) and YES at the bare measured floor (7.65354438 kT). The affordable width is therefore between them, and it is below the threshold."
         },
         {
             "id": "F4",
             "statement": "van der Waals is at least 10 % of the repulsion anywhere in the bracket",
             "fired": true,
-            "outcome": "FIRED, and only at the model floor: the peak share over the bracket is 0.23482408607767874 at a 0.1 nm surface separation, falling to 0.0628507340308222 at the placement threshold and 0.06426711403455046 at the SAXS 2.69 nm. Its declared consequence — that a minimum may exist and F1 becomes live — was tested and did NOT materialise: zero local minima in the plan-relevant range. Rau & Parsegian's own argument, reproduced: the 1e-20 J in circulation is their explicit overestimate introduced to show van der Waals is too weak."
+            "outcome": "FIRED, and only at the model floor: the peak share over the bracket is 0.234824086 at a 0.1 nm surface separation, falling to 0.062850734 at the placement threshold and 0.064267114 at the SAXS 2.69 nm. Its declared consequence — that a minimum may exist and F1 becomes live — was tested and did NOT materialise: zero local minima in the plan-relevant range. Rau & Parsegian's own argument, reproduced: the 1e-20 J in circulation is their explicit overestimate introduced to show van der Waals is too weak."
         },
         {
             "id": "F5",
             "statement": "the coaxial geometry costs MORE than the crossed geometry at the same separation",
             "fired": false,
-            "outcome": "NO — 15.110341201220582x the other way at the placement threshold. A coaxial pair's charge is spread along the axis away from the contact, and its energy is FINITE even at zero gap (1.3747521964638107 kT)."
+            "outcome": "NO — 15.110341201220582x the other way at the placement threshold. A coaxial pair's charge is spread along the axis away from the contact, and its energy is FINITE even at zero gap (1.3747522 kT)."
         }
     ],
     "predicates": [
@@ -5413,11 +5413,11 @@
     "findings": [
         "THE QUESTION AS POSED HAS NO ANSWER, AND THAT IS THE ANSWER. Two unbonded parallel duplexes in 2 mM MgCl2 hold no separation at all: the interaction is repulsive at every separation and the array swells without bound as the load goes to zero. Four independent methods, every one read directly.",
         "THE WIDTH IS A THRESHOLD, NOT A SEPARATION — the eighth instance in this project of a quantity that is not well posed without the state it is read at, and the first where the missing state is an ENERGY BUDGET rather than a load, a compression or a lattice coordinate.",
-        "AND THE BUDGET IS MEASURABLE, because the host sheet is a measured object: holding two adjacent duplexes at the SAXS 2.69 nm over one 40 nm interface costs 31.99878788319775 kT, i.e. 7.999696970799437 kT per crossover column. That is the design's own demonstrated currency, and the width it buys is 2.1 nm — BELOW the 2.7156091700000005 nm placement threshold.",
-        "A THERMAL CRITERION IS THE WRONG ONE HERE and it is worth the whole verdict: at 1 kT the width is 8.786009311359567 nm and nothing places. Both bodies are covalently rooted to the same sheet, so the energy is paid by the fold and not by kT; Barker-Henderson is the criterion for two FREE bodies colliding.",
+        "AND THE BUDGET IS MEASURABLE, because the host sheet is a measured object: holding two adjacent duplexes at the SAXS 2.69 nm over one 40 nm interface costs 31.9987879 kT, i.e. 7.99969697 kT per crossover column. That is the design's own demonstrated currency, and the width it buys is 2.1 nm — BELOW the 2.71560917 nm placement threshold.",
+        "A THERMAL CRITERION IS THE WRONG ONE HERE and it is worth the whole verdict: at 1 kT the width is 8.78600931 nm and nothing places. Both bodies are covalently rooted to the same sheet, so the energy is paid by the fold and not by kT; Barker-Henderson is the criterion for two FREE bodies colliding.",
         "THE EDGE EXISTS AND IT IS NOT ELECTROSTATIC. The Debye length at 2 mM is 3.926878526147063 nm, longer than the whole disputed bracket, so electrostatics cannot place an edge at 2.7 nm. The measured short-range law can: 0.24 nm. A bespoke two-cylinder nonlinear PB solve would have resolved the term that carries no edge.",
-        "THE COLLINEAR CLEARANCE IS A COAXIAL GEOMETRY AND IT IS 15.110341201220582x CHEAPER than the crossed one at the same separation — and FINITE at zero gap, 1.3747521964638107 kT. C-0069's Q5 gap contains no body at all; charging it a duplex girth charges a body that is not there.",
-        "AND THE SIGN REVERSES: what a collinear gap has to prevent is a BOND, not a clash. Two duplexes end to end blunt-end STACK — an established origami motif worth -4.411557910339179 kT per helix (Woo & Rothemund, read directly) — so the clearance is a stacking-PREVENTION allowance and its length is the stacking range, 0.51108 nm (oxDNA2's cutoff) to 1.3 nm (where the all-atom PMF turns repulsive). At the generous end that is a plan margin of 1.4156091699999998 nm, 55.27743265400635x the published knife edge. This is CH-0089's own failure route 2 — 'a demonstration that C-0053's footprint convention is charging something other than a body' — answered in the direction that WIDENS the margin.",
+        "THE COLLINEAR CLEARANCE IS A COAXIAL GEOMETRY AND IT IS 15.110341201220582x CHEAPER than the crossed one at the same separation — and FINITE at zero gap, 1.3747522 kT. C-0069's Q5 gap contains no body at all; charging it a duplex girth charges a body that is not there.",
+        "AND THE SIGN REVERSES: what a collinear gap has to prevent is a BOND, not a clash. Two duplexes end to end blunt-end STACK — an established origami motif worth -4.41155791 kT per helix (Woo & Rothemund, read directly) — so the clearance is a stacking-PREVENTION allowance and its length is the stacking range, 0.51108 nm (oxDNA2's cutoff) to 1.3 nm (where the all-atom PMF turns repulsive). At the generous end that is a plan margin of 1.4156091699999998 nm, 55.27743265400635x the published knife edge. This is CH-0089's own failure route 2 — 'a demonstration that C-0053's footprint convention is charging something other than a body' — answered in the direction that WIDENS the margin.",
         "THE KNIFE EDGE IS UNRESOLVABLE BY PHYSICS TOO. 0.0256 nm at 2.7 nm is 0.012372538622489031 of the pair energy — C-0072's 'neither margin is quotable' arriving through a second, wholly independent channel.",
         "THE TWO RADII ARE NOT THE SAME NUMBER, and it is 41 % of the quantity under test. The charge sits at T-71's measured 0.9086 nm and the field's hard body at 1.0 nm; working in INTERAXIAL coordinates throughout is what avoids having to choose.",
         "MEAN FIELD IS NOT CONTROLLED HERE AND THE BOUND THAT SAVES IT IS EMPIRICAL. C-0005 puts Xi at 17-24 for Mg2+ at a DNA surface with no systematic theory, and like-charged rods in strong coupling is exactly where PB has the wrong SIGN. What bounds it is a measurement, not a theory: Mg2+ does not condense duplex DNA at any concentration.",

@@ -25,8 +25,8 @@
         "seed": "20260817",
         "dishingSamplesPerEdge": "81",
         "insetsSwept": "0.050000000,0.170000000,0.340000000",
-        "freeStrokeBuildable": "5.154738462",
-        "mandate": "33.333333333",
+        "freeStrokeBuildable": "5.15473846",
+        "mandate": "33.3333333",
         "tolerance": "0.100000000",
         "decisionDigits": "6",
         "referencePhase": "24",
@@ -14199,7 +14199,7 @@
             "name": "F2",
             "statement": "the interaction on the 2 x 2 the recommendation moves through changes SIGN between the two widths, or its magnitude moves by more than a factor of two",
             "fired": false,
-            "outcome": "the buildable admitted 2 x 2 interaction is -6.707070569 per cent against C-0108's -5.742024263 per cent, a ratio of 1.168067264, and the sign did not change"
+            "outcome": "the buildable admitted 2 x 2 interaction is -6.70707057 per cent against C-0108's -5.74202426 per cent, a ratio of 1.16806726, and the sign did not change"
         },
         {
             "name": "F3",

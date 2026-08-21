@@ -18,6 +18,7 @@ package com.xemantic.nano.plentyofroom.anchoring
 
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -511,8 +512,8 @@ fun main() {
         val flexureFloor = trio.flexureMisalignmentDegrees * PI / 180.0
         (12..26).forEach { steps ->
             designs += designRecord(
-                "$row bp row at BOTH ends: base ${pairFloors[row]}°, cap " +
-                        "${trio.legMisalignmentDegrees}° on the ${trio.crossbarBasePairs} bp crossbar",
+                "$row bp row at BOTH ends: base ${pairFloors[row]?.roundedForProse()}°, cap " +
+                        "${trio.legMisalignmentDegrees.roundedForProse()}° on the ${trio.crossbarBasePairs} bp crossbar",
                 feasibleTrussDesign(steps, baseFloor, capFloor, flexureFloor, row)
             )
         }
@@ -748,7 +749,7 @@ fun main() {
             "search grid" to "$SEARCH_GRID torsion steps, $SEARCH_REFINEMENTS refinements — C-0059's own",
             "verdict grid" to "$VERDICT_GRID torsion steps, $VERDICT_REFINEMENTS refinements — C-0057's own",
             "rigidities" to "CanDo EI = ${Gen1Tile.DUPLEX_BENDING_RIGIDITY} pN nm^2 and Fields " +
-                    "et al.'s implied $FIELDS_BENDING_RIGIDITY pN nm^2",
+                    "et al.'s implied ${FIELDS_BENDING_RIGIDITY.roundedForProse()} pN nm^2",
             "units" to "nm, pN, pN nm, degrees for every reported angle"
         ),
         bounds = bounds,

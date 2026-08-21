@@ -30,6 +30,7 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PointSupport
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
 import kotlinx.serialization.Serializable
@@ -578,7 +579,7 @@ fun main() {
             "clearing windows at 1 / 2 / 3 columns: " +
                     grids.joinToString(" / ") { it.clearingOffsets.toString() },
             "ONLY at one column, and only " +
-                    "${oneColumn.nearestClearingOffset} nm off the tile centre-line"
+                    "${oneColumn.nearestClearingOffset.roundedForProse()} nm off the tile centre-line"
         ),
         T126PredicateRecord(
             "is it the ROOM that refuses them?",
@@ -587,13 +588,15 @@ fun main() {
         ),
         T126PredicateRecord(
             "do the arms' OWN tip links clear?",
-            "worst clearance ${worstTipClearance(rowRoots, arm, edgeX, width)} nm against " +
+            "worst clearance " +
+                    "${worstTipClearance(rowRoots, arm, edgeX, width).roundedForProse()} nm " +
+                    "against " +
                     "${width / 2.0} nm demanded",
             "YES, at all 34"
         ),
         T126PredicateRecord(
             "does SS3's desired 10 nm stroke change the answer?",
-            "an arm of $arm nm delivers a $stroke nm stroke: " +
+            "an arm of $arm nm delivers a ${stroke.roundedForProse()} nm stroke: " +
                     "${armDeliversStroke(arm, stroke)}; a 10 nm one: " +
                     "${armDeliversStroke(arm, Gen1Tile.DESIRED_STROKE)}",
             "it removes the element rather than moving the clearance — C-0050's kinematic " +
@@ -608,8 +611,8 @@ fun main() {
                 "of those level-independent.",
         "No rigid translation of a two- or three-column grid clears every row. A ONE-column " +
                 "grid does, in ${oneColumn.clearingOffsets} windows, the nearest " +
-                "${oneColumn.nearestClearingOffset} nm off the tile centre-line and the widest " +
-                "${oneColumn.widestClearingWindow} nm wide.",
+                "${oneColumn.nearestClearingOffset.roundedForProse()} nm off the tile centre-line and the widest " +
+                "${oneColumn.widestClearingWindow.roundedForProse()} nm wide.",
         "The room is not what is missing: the array's free tie capacity is $capacity against " +
                 "the 45 demanded, and every one of the fifteen rows carries at least three.",
         "What refuses them is REGISTRATION. The escape is to displace the ties into the room " +

@@ -30,7 +30,7 @@
         "targetForce": "100.0 pN (section 3)",
         "acceptableStroke": "3.0 nm (section 3)",
         "desiredStroke": "10.0 nm (section 3)",
-        "mandate": "33.333333333333336 pN/nm (C-0017)",
+        "mandate": "33.3333333 pN/nm (C-0017)",
         "pathCount": "45 (C-0015's 3 x 15 flatness grid, via C-0023)",
         "compliantCeiling": "40.0 pN/nm (C-0023's own declared ceiling)",
         "bendingRigidity": "230.0 pN*nm^2 — CITED, a CanDo MODEL INPUT, not a measurement",

@@ -8,12 +8,12 @@
         "buffer": "aqueous 2 mM MgCl2",
         "sheet": "single-layer square-lattice Rothemund, 15 duplexes at 2.69 nm, 0.34 nm rise",
         "designTwist": "32/3 bp per turn against B-DNA's 10.5",
-        "widths": "38.080000000000005 nm (C-0086's 112 bp) against 37.400000000000006 nm (the 110 bp twist-corrected row)",
+        "widths": "38.08 nm (C-0086's 112 bp) against 37.4 nm (the 110 bp twist-corrected row)",
         "placement": "C-0090's published 34-root key 0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000 at phase 8",
         "load": "C-0022's solved collar at 2 mM, a 10 nm gap and 0.192 V",
-        "coupling": "C-0017's 33.333333333333336 pN/nm shared equally over 34 roots",
-        "freeStrokeUniform": "5.154738462428933 nm",
-        "freeStrokeCorrected": "5.248460979927639 nm"
+        "coupling": "C-0017's 33.3333333 pN/nm shared equally over 34 roots",
+        "freeStrokeUniform": "5.15473846 nm",
+        "freeStrokeCorrected": "5.24846098 nm"
     },
     "rows": [
         {
@@ -1171,14 +1171,14 @@
         "THE RE-READ IS A SCALING AND THE PROOF IS ONE LINE, WHICH IS WHY NO SWEEP WAS PAID FOR. u(+-L/2) = Delta_omega lambda tanh(L/2 lambda) and lambda = sqrt(C p/k) contains no Delta_omega, so the whole boundary layer is exactly linear in the driver; measured on the discrete chain, halving the mismatch halves every node to 0.0e+00. C-0107's twelve cells therefore re-read by multiplication."
     ],
     "parameters": {
-        "naturalTwistPerBase": "34.285714285714285",
+        "naturalTwistPerBase": "34.2857143",
         "uniformDesignTwistPerBase": "33.75",
-        "correctedDesignTwistPerBase": "34.36363636363637",
+        "correctedDesignTwistPerBase": "34.3636364",
         "correctedDomains": "16+15+16+16+16+15+16",
         "residualBasePairsFloor": "0.25",
-        "residualDegreesFloor": "8.571428571429038",
-        "uniformTotalMismatchDegrees": "59.999999999999886",
-        "crossoverHingeStiffness": "13.529411764705882",
+        "residualDegreesFloor": "8.57142857",
+        "uniformTotalMismatchDegrees": "60.0",
+        "crossoverHingeStiffness": "13.5294118",
         "torsionalRigidity": "460.0",
         "crossoverSpacing": "10.2",
         "armLength": "8.16",

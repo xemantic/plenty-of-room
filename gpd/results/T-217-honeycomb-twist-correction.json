@@ -6,7 +6,7 @@
         "temperature": "300 K",
         "kBT": "4.141947 pN nm",
         "rise": "0.34 nm per base pair",
-        "naturalTwist": "B-DNA at 10.5 bp per turn, 34.285714285714285 deg per base — this repository's locked value",
+        "naturalTwist": "B-DNA at 10.5 bp per turn, 34.2857143 deg per base — this repository's locked value",
         "honeycombRules": "Douglas et al., NAR 37:5001 (caDNAno), PMC2731887: three azimuths 7 bp apart, the same pair every 21 bp at 10.5 bp per turn, scaffold crossovers 5 bp — \"or half a turn\" — from the staple ones",
         "squareRules": "Ke et al., JACS 131:15903 and Rothemund 2006: four azimuths 8 bp apart, the same pair every 32 bp, the two in-plane neighbours two classes apart, scaffold and staple crossovers on one plane lattice",
         "nominalWidth": "40.0 nm, Sec 3's tile",
@@ -443,7 +443,7 @@
         }
     ],
     "findings": [
-        "THE HONEYCOMB NEEDS NO TWIST CORRECTION AT ALL, AND IT IS ONE DIVISION. Its azimuth period is 21 bp and caDNAno lays it out as TWO TURNS, so its design twist is 720/21 = 34.2857142857 deg/bp — which IS B-DNA's 360/10.5, the same number. The mismatch is 0.000e+00 deg/bp and the accumulated register across a 112 bp row is 0.000e+00 deg, against the square sheet's +60.0. C-0107's boundary layer, C-0104's threshold and every number in C-0133 are SQUARE-LATTICE numbers with driver zero here. F1 did not fire.",
+        "THE HONEYCOMB NEEDS NO TWIST CORRECTION AT ALL, AND IT IS ONE DIVISION. Its azimuth period is 21 bp and caDNAno lays it out as TWO TURNS, so its design twist is 720/21 = 34.2857143 deg/bp — which IS B-DNA's 360/10.5, the same number. The mismatch is 0.000e+00 deg/bp and the accumulated register across a 112 bp row is 0.000e+00 deg, against the square sheet's +60.0. C-0107's boundary layer, C-0104's threshold and every number in C-0133 are SQUARE-LATTICE numbers with driver zero here. F1 did not fire.",
         "AND THE REASON UNIFIES BOTH TASKS IN ONE LINE: 10.5 = 21/2, SO A HALF TURN IS 5.25 BASE PAIRS. h half turns is an integer number of base pairs iff h = 0 (mod 4), and the distance to the nearest integer is EXACTLY 0.25 for odd h and EXACTLY 0.5 for h = 2 (mod 4). C-0133's theorem is the ODD case — a square-lattice boustrophedon needs an odd number of half turns across its row. The honeycomb is the h = 4 case: its azimuth period is FOUR half turns, which is 21 bp exactly. The two results are one fact read at two half-turn parities. F2 did not fire over 2001 counts.",
         "THE CONNECTIVITY HALF DOES NOT TRANSFER AND HAD TO BE DERIVED, AND THE DERIVATION REPRODUCES C-0086 ON THE SQUARE SHEET. Scaffold crossovers to neighbour class j sit at 7j +- 5 (mod 21), so a raster row that receives the scaffold from neighbour a and passes it to b is admissible iff N = 7*Delta + {0,10,11} (mod 21) with Delta = (b-a) mod 3 nonzero. Run on the square sheet — four azimuths at 8 bp, the two in-plane neighbours two classes apart, no scaffold offset — the SAME construction returns N = 16 (mod 32), i.e. 16, 48, 80, 112, 144, 176: C-0086's odd multiples of 16 bp, exactly. F3 did not fire.",
         "THE HONEYCOMB'S WIDTH LIST IS 4.57x DENSER AND IT REACHES Sec 3's 40 nm FAR CLOSER. At a fixed turn sense the honeycomb admits one width every 7.00 bp against the square sheet's every 32. The nearest admissible honeycomb width to the nominal 40.0 nm is 119 bp = 40.46 nm, +1.15 %, against the square sheet's 112 bp = 38.08 nm at -4.80 % and C-0133's twist-corrected 110 bp = 37.40 nm at -6.50 %. F4 and F5 did not fire.",
@@ -453,9 +453,9 @@
         "NO SOLVE IS JUSTIFIED AND THAT IS A RESULT, NOT AN OMISSION. This repository's lattice machinery is single-layer square-lattice throughout — OrigamiGrillage never reads `layers` or `interlayerCoupling`, and CrossoverLayout's two-parity alternation IS the square lattice's combinatorics — so a dishing number computed on it would be a square-lattice number wearing a honeycomb label. What the honeycomb four-layer tile needs is a station lattice, a plan ceiling and a placement family of its own, and none of them exists here."
     ],
     "parameters": {
-        "honeycombDesignTwistPerBase": "34.285714285714285",
+        "honeycombDesignTwistPerBase": "34.2857143",
         "squareDesignTwistPerBase": "33.75",
-        "bDnaTwistPerBase": "34.285714285714285",
+        "bDnaTwistPerBase": "34.2857143",
         "honeycombMismatchPerBase": "0.0",
         "honeycombResiduesDelta1": "7,17,18",
         "honeycombResiduesDelta2": "3,4,14",
@@ -465,7 +465,7 @@
         "nearestHoneycombWidthNm": "40.46",
         "nearestDelta1WidthBasePairs": "122",
         "nearestSquareWidthBasePairs": "112",
-        "admissibleWidthDensityRatio": "4.571428571428571",
+        "admissibleWidthDensityRatio": "4.57142857",
         "oddHalfTurnCountsChecked": "2001",
         "sources": "gpd/results/T-198-honeycomb-raster-width.json"
     }

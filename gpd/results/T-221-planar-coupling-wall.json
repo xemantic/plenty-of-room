@@ -34,7 +34,7 @@
         "C-0005's Xi = 24.0 at the bare duplex cylinder - CITED and REPRODUCED here",
         "C-0005's saturated far-field charge 0.0568 e/nm^2 at 2 mM - CITED and re-derived here as kappa/(pi l_B q)",
         "C-0005's five one-loop deviations 2.14/1.63/1.23/0.89/0.70 - CITED and REPRODUCED here at the bare duplex wall",
-        "T-6's emitted loopExpansionValidityGap 13.517697558570946 nm - CITED as a literal and REPRODUCED here",
+        "T-6's emitted loopExpansionValidityGap 13.5176976 nm - CITED as a literal and REPRODUCED here",
         "C-0137's two Eq. (64) bounds 14.43 and 2.80 at 7 nm - CITED and REPRODUCED here",
         "C-0137's boundary-channel margin ratios - READ from its result file at run time",
         "B-DNA rise 0.34 nm and duplex radius 1.0 nm - CITED, through DnaOrigamiTile",
@@ -43,7 +43,7 @@
     "runParameters": {
         "temperature": "300.0",
         "waterRelativePermittivity": "78.0",
-        "bjerrumLength": "0.7141066106764419",
+        "bjerrumLength": "0.714106611",
         "counterionValency": "2",
         "buffer": "2.0 mM MgCl2",
         "gaps": "[5.0, 7.0, 10.0]",

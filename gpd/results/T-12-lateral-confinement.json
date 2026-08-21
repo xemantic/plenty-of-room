@@ -135,7 +135,7 @@
             "compressionPerAnchor": 100.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 22.70009012250552 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 22.7000901 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -165,7 +165,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 22.70009012250552 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 22.7000901 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -195,7 +195,7 @@
             "compressionPerAnchor": 100.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 90.80036049002209 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 90.8003605 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -255,7 +255,7 @@
             "compressionPerAnchor": 100.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 16.351751336111548 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 16.3517513 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -285,7 +285,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 16.351751336111548 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 16.3517513 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -315,7 +315,7 @@
             "compressionPerAnchor": 100.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 65.40700534444619 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 65.4070053 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -375,7 +375,7 @@
             "compressionPerAnchor": 100.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 11.58167863393139 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 11.5816786 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -405,7 +405,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 11.58167863393139 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 11.5816786 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -435,7 +435,7 @@
             "compressionPerAnchor": 100.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 46.32671453572556 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 46.3267145 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -495,7 +495,7 @@
             "compressionPerAnchor": 100.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 8.3427302735263 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 8.34273027 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -525,7 +525,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 8.3427302735263 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 8.34273027 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -555,7 +555,7 @@
             "compressionPerAnchor": 100.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 33.3709210941052 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 33.3709211 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -615,7 +615,7 @@
             "compressionPerAnchor": 100.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 5.67502253062638 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 5.67502253 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -645,7 +645,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 5.67502253062638 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 5.67502253 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -675,7 +675,7 @@
             "compressionPerAnchor": 100.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 22.70009012250552 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 22.7000901 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -705,7 +705,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 22.70009012250552 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 22.7000901 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -735,7 +735,7 @@
             "compressionPerAnchor": 100.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 4.087937834027887 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 4.08793783 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -765,7 +765,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 4.087937834027887 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 4.08793783 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -795,7 +795,7 @@
             "compressionPerAnchor": 100.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 16.351751336111548 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 100.0 pN against a critical load of 16.3517513 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S1",
@@ -825,7 +825,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": true,
             "verdict": "FAIL",
-            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 16.351751336111548 pN, and a buckled column has no lateral stiffness at all"
+            "bindingConstraint": "BUCKLING: each anchor carries 25.0 pN against a critical load of 16.3517513 pN, and a buckled column has no lateral stiffness at all"
         },
         {
             "id": "S2",
@@ -1155,7 +1155,7 @@
             "compressionPerAnchor": 0.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "yaw stiffness, short by 1.3339603864734038x"
+            "bindingConstraint": "yaw stiffness, short by 1.33396039x"
         },
         {
             "id": "S4t",
@@ -1275,7 +1275,7 @@
             "compressionPerAnchor": 0.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "yaw stiffness, short by 10.67168309178547x"
+            "bindingConstraint": "yaw stiffness, short by 10.6716831x"
         },
         {
             "id": "S4t",
@@ -1335,7 +1335,7 @@
             "compressionPerAnchor": 0.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "yaw stiffness, short by 2.6679207729468075x"
+            "bindingConstraint": "yaw stiffness, short by 2.66792077x"
         },
         {
             "id": "S4t",
@@ -1395,7 +1395,7 @@
             "compressionPerAnchor": 0.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "yaw stiffness, short by 1.3339603864734293x"
+            "bindingConstraint": "yaw stiffness, short by 1.33396039x"
         }
     ],
     "entropicTetherDesigns": [
@@ -2116,7 +2116,7 @@
             "thresholdModulationDepth": 0.567873054,
             "rippleTransferAtOptimum": 0.973567287,
             "dishingFractionOfStrokeAtThreshold": 0.552862628,
-            "verdict": "REACHABLE BUT SELF-DEFEATING — the modulation depth it needs costs 55.286262805937305 % of the stroke in dishing, and C-0006 rejects the rigid-plate assumption above ~19 %"
+            "verdict": "REACHABLE BUT SELF-DEFEATING — the modulation depth it needs costs 55.2862628 % of the stroke in dishing, and C-0006 rejects the rigid-plate assumption above ~19 %"
         },
         {
             "layerHeight": 7.0,
@@ -2129,7 +2129,7 @@
             "thresholdModulationDepth": 0.457163974,
             "rippleTransferAtOptimum": 0.97385638,
             "dishingFractionOfStrokeAtThreshold": 0.445212053,
-            "verdict": "REACHABLE BUT SELF-DEFEATING — the modulation depth it needs costs 44.52120530031844 % of the stroke in dishing, and C-0006 rejects the rigid-plate assumption above ~19 %"
+            "verdict": "REACHABLE BUT SELF-DEFEATING — the modulation depth it needs costs 44.5212053 % of the stroke in dishing, and C-0006 rejects the rigid-plate assumption above ~19 %"
         },
         {
             "layerHeight": 10.0,
@@ -2142,7 +2142,7 @@
             "thresholdModulationDepth": 0.372999196,
             "rippleTransferAtOptimum": 0.974284594,
             "dishingFractionOfStrokeAtThreshold": 0.36340737,
-            "verdict": "REACHABLE BUT SELF-DEFEATING — the modulation depth it needs costs 36.340737037391484 % of the stroke in dishing, and C-0006 rejects the rigid-plate assumption above ~19 %"
+            "verdict": "REACHABLE BUT SELF-DEFEATING — the modulation depth it needs costs 36.340737 % of the stroke in dishing, and C-0006 rejects the rigid-plate assumption above ~19 %"
         }
     ],
     "validity": [
@@ -2172,10 +2172,10 @@
         "the 3.0 nm bound, the 100 pN, the 40 x 40 nm footprint, the layer heights — §3, §6"
     ],
     "verdict": {
-        "doesASchemeExist": "YES — 4 surface-parallel duplex tethers of 40.0 nm to a coplanar fixed frame, tangential, GUIDED_HEAD: k_lat = 55.08625 pN/nm (119.69642537676121x the bound), k_yaw = 88000.00000000003 pN*nm/rad (239.01802702931744x), costing 1.0260872964756085 % of the stroke at the soft end of the C-0003 bracket",
+        "doesASchemeExist": "YES — 4 surface-parallel duplex tethers of 40.0 nm to a coplanar fixed frame, tangential, GUIDED_HEAD: k_lat = 55.08625 pN/nm (119.696425x the bound), k_yaw = 88000.0 pN*nm/rad (239.018027x), costing 1.0260873 % of the stroke at the soft end of the C-0003 bracket",
         "theBindingConstraint": "ANISOTROPY, and it is topological rather than material. Every load path that crosses the layer must accommodate the stroke axially, and for a convex force-extension law that costs at least as much normal stiffness as it buys laterally; for a rigid rod it costs 160x more. The same duplex laid IN the surface has the ratio the other way up.",
         "whatItCostsTheActuator": "The passing schemes add of order 1 pN/nm of normal stiffness against C-0003's 16.6-26.1 pN/nm layer secant, i.e. a few per cent of the stroke at 3 nm. The real cost is the CABLE term: an in-plane tether must stretch by delta^2/2L to let the tile descend, and both the tension and the normal force grow as powers of the stroke, so the §3 DESIRED 10 nm stroke needs a much longer tether than the acceptable 3 nm one.",
-        "yawBudget": "Declared in the same currency as translation: the in-plane displacement of the tile's CORNER, at r = 28.284271247461902 nm, held to 3.0 nm. k_yaw >= 368.17306666666667 pN*nm/rad. For anchors AT the corner radius this is EXACTLY the translation requirement, independent of the radius; anchors inside it make yaw the binding condition by (r_budget/r_anchor)^2.",
+        "yawBudget": "Declared in the same currency as translation: the in-plane displacement of the tile's CORNER, at r = 28.2842712 nm, held to 3.0 nm. k_yaw >= 368.173067 pN*nm/rad. For anchors AT the corner radius this is EXACTLY the translation requirement, independent of the radius; anchors inside it make yaw the binding condition by (r_budget/r_anchor)^2.",
         "sameAnchorsAsFlatness": "NO. The lateral scheme's anchors sit on the PERIMETER and load the tile in its own plane; C-0009's 64 attachments are an AREA-DISTRIBUTED normal-direction output coupling. They are additional, and that is a T-2 window constraint in its own right.",
         "maturity": "TRL 1-3. PASS means model-consistent and traceable, never measured."
     }

@@ -1203,7 +1203,7 @@
         },
         {
             "axis": "rim charge",
-            "setting": "sigma_rim = -0.3986652379247042 e/nm^2",
+            "setting": "sigma_rim = -0.398665238 e/nm^2",
             "nodes": 39825,
             "centrelineLoad": 0.0390448606,
             "taperDepth": -0.157533781,

@@ -17,6 +17,7 @@
 package com.xemantic.nano.plentyofroom.electrostatics
 
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_SIGNIFICANT_DIGITS
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -567,7 +568,7 @@ fun main(arguments: Array<String>) {
             val reproduced = meanFieldDeviation(bareCoupling, gap / bareMu)
             add(
                 T221Reproduction(
-                    quantity = "C-0005's one-loop deviation at $gap nm, BARE DUPLEX wall",
+                    quantity = "C-0005's one-loop deviation at ${gap.roundedForProse()} nm, BARE DUPLEX wall",
                     published = ONE_LOOP_PUBLISHED[index],
                     reproduced = reproduced,
                     relativeDeparture = abs(reproduced / ONE_LOOP_PUBLISHED[index] - 1.0),
@@ -789,7 +790,8 @@ fun main(arguments: Array<String>) {
                 "re-derived here as kappa/(pi l_B q)",
             "C-0005's five one-loop deviations 2.14/1.63/1.23/0.89/0.70 - CITED and " +
                 "REPRODUCED here at the bare duplex wall",
-            "T-6's emitted loopExpansionValidityGap 13.517697558570946 nm - CITED as a " +
+            "T-6's emitted loopExpansionValidityGap " +
+                "${PUBLISHED_VALIDITY_GAP.roundedForProse()} nm - CITED as a " +
                 "literal and REPRODUCED here",
             "C-0137's two Eq. (64) bounds 14.43 and 2.80 at 7 nm - CITED and REPRODUCED here",
             "C-0137's boundary-channel margin ratios - READ from its result file at run time",
@@ -799,7 +801,7 @@ fun main(arguments: Array<String>) {
         runParameters = mapOf(
             "temperature" to "300.0",
             "waterRelativePermittivity" to "78.0",
-            "bjerrumLength" to bjerrum.toString(),
+            "bjerrumLength" to bjerrum.roundedForProse().toString(),
             "counterionValency" to VALENCY.toString(),
             "buffer" to "$OPERATING_BUFFER mM MgCl2",
             "gaps" to GAPS.toString(),

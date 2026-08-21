@@ -580,7 +580,7 @@ fun main() {
         ),
         parameters = mapOf(
             "interhelicalDistanceNm" to d.toString(),
-            "phosphateRadiusNm" to rP.toString(),
+            "phosphateRadiusNm" to rP.roundedForProse().toString(),
             "crossoverSpanNm" to roundForResult(crossoverSpan).toString(),
             "crossoverSpanSigma" to roundForResult(crossoverSigma).toString(),
             "worstAzimuthSpanNm" to roundForResult(worstSpan).toString(),

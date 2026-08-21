@@ -47,6 +47,7 @@ import com.xemantic.nano.plentyofroom.electrostatics.sternChargeDensityPerVolt
 import com.xemantic.nano.plentyofroom.electrostatics.thermalVoltage
 import com.xemantic.nano.plentyofroom.electrostatics.uniformMedium
 import com.xemantic.nano.plentyofroom.material.PegWater
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -164,12 +165,12 @@ private class T157BranchLoadLine(
 ) : StrokeLoadLine {
 
     override fun reaction(stroke: Double): Double {
-        require(stroke >= 0.0) { "stroke must not be negative, was: $stroke" }
+        require(stroke >= 0.0) { "stroke must not be negative, was: ${stroke.roundedForProse()}" }
         return branch.reaction(stroke, count)
     }
 
     override fun tangent(stroke: Double): Double {
-        require(stroke >= 0.0) { "stroke must not be negative, was: $stroke" }
+        require(stroke >= 0.0) { "stroke must not be negative, was: ${stroke.roundedForProse()}" }
         val step = 1.0e-4 * max(1.0, stroke)
         val low = max(1.0e-9, stroke - step)
         val high = min(branch.strokeSupremum, stroke + step)
@@ -376,7 +377,7 @@ fun main() {
             )
             val binding = bindingCeiling(candidates)
             val margin = biasMargin(binding?.bias, operating?.appliedBias)
-            val before = upstream["$name|$concentration"]
+            val before = upstream["$name|${concentration.roundedForProse()}"]
             val tangencyResidual = fold?.let { point ->
                 if (search.foldAtBranchStart || abs(point.stroke - ceiling) <= 1e-6) null
                 else {
@@ -409,7 +410,8 @@ fun main() {
                 marginMovement = if (before != null && margin != null) margin / before else null,
                 tangencyResidual = tangencyResidual,
                 verdict = when {
-                    fold == null -> "NO FOLD below $ceiling nm of stroke, which is " +
+                    fold == null -> "NO FOLD below ${ceiling.roundedForProse()} nm of stroke, " +
+                            "which is " +
                             "${"%.4f".format(ceiling / contour)} of the arm's own contour"
                     fold.stroke > ladder - T157_CEILING_SAFETY ->
                         "FOLD, and it is INSIDE the extension C-0084 could not reach"
@@ -470,9 +472,9 @@ fun main() {
         ),
         parameters = mapOf(
             "bendingRigidity" to "230.0 pN nm^2 (CanDo model input, not a measurement)",
-            "contour" to "$contour nm",
-            "rootStiffness" to "$GEN1_ARM_ROOT_STIFFNESS pN nm/rad",
-            "tipStiffness" to "$GEN1_ARM_TIP_STIFFNESS pN nm/rad",
+            "contour" to "${contour.roundedForProse()} nm",
+            "rootStiffness" to "${GEN1_ARM_ROOT_STIFFNESS.roundedForProse()} pN nm/rad",
+            "tipStiffness" to "${GEN1_ARM_TIP_STIFFNESS.roundedForProse()} pN nm/rad",
             "pathCount" to "$GEN1_RECOMMENDED_PATH_COUNT",
             "rk4Steps" to "${branch.steps}",
             "rotationStep" to "${branch.rotationStep} rad",
@@ -496,11 +498,12 @@ fun main() {
                     "phi is identically pi/2, which the near-end condition EI phi'(0) = " +
                     "k_n phi(0) forbids for any finite k_n > 0. So delta < L STRICTLY, on every " +
                     "branch, at every tip force, at every rotation"),
-            "contour" to "$contour nm",
-            "C-0084's ceiling" to "${ladder - T157_CEILING_SAFETY} nm (paths), $ladder nm (refusal)",
-            "the open window it leaves" to "${contour - ladder} nm",
-            "the window this task closes" to "${supremum - ladder} nm",
-            "the window still open" to "${contour - supremum} nm",
+            "contour" to "${contour.roundedForProse()} nm",
+            "C-0084's ceiling" to "${(ladder - T157_CEILING_SAFETY).roundedForProse()} nm " +
+                    "(paths), ${ladder.roundedForProse()} nm (refusal)",
+            "the open window it leaves" to "${(contour - ladder).roundedForProse()} nm",
+            "the window this task closes" to "${(supremum - ladder).roundedForProse()} nm",
+            "the window still open" to "${(contour - supremum).roundedForProse()} nm",
             "cost" to "zero - it is a bound on an integral of a bounded function"
         ),
         enumeration = enumeration,
@@ -532,7 +535,8 @@ fun main() {
                     "dishes the tile (C-0063, C-0068)"
         ),
         openQuestions = listOf(
-            "The last " + (contour - supremum) + " nm below the contour, which the integrator " +
+            "The last " + (contour - supremum).roundedForProse() + " nm below the contour, " +
+                    "which the integrator " +
                     "cannot resolve at this step count. The contour bound says no equilibrium " +
                     "exists AT or above the contour; it does not by itself exclude a fold inside " +
                     "that sliver",
@@ -568,7 +572,7 @@ private fun c0084Margins(): Map<String, Double> {
     return rows.mapNotNull { row ->
         val fold = reader.decodeFromJsonElement<T157UpstreamFold>(row)
         if (fold.layerHeight != T157_LAYER_HEIGHT || !fold.loadLine.startsWith("LQ5")) null
-        else fold.biasMargin?.let { "${fold.model}|${fold.concentration}" to it }
+        else fold.biasMargin?.let { "${fold.model}|${fold.concentration.roundedForProse()}" to it }
     }.toMap()
 }
 

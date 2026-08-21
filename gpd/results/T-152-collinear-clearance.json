@@ -2,7 +2,7 @@
     "task": "T-152",
     "leaf": "A8.2",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm, 0.34 nm rise, crossover phase 24; C-0063's 34 upward roots at a 32 bp = 10.88 nm pitch; C-0017's 33.3333 pN/nm as a SUM, so 0.980392 pN/nm per path at 3 nm; EI = 230 pN nm^2, S = 1100 pN, k_theta = 13.5294 pN nm/rad, A2 = 78.2353; the blunt-end stack -2.63 kcal/mol per helix at 1xTAE + 12.5 mM Mg2+, 22 C (Woo & Rothemund), TRANSFERRED to 2 mM and 300 K and NOT re-measured",
-    "decision": "The collinear clearance should be 6 base pairs = 2.04 nm, and the design as built carries 8 — so the Q5 margin is 2 WHOLE RISES (0.6756091733686986 nm, 26.381529916714886x the published 0.02561) and it is an integer rather than a residue. The joint window opens 1.2574915915807825x in c and BOTH of Q5's joints gain real margin (tip 1.70878479537323x, root 1.8987522597874527x, against 1.018x and 1.030x). Nothing in the placement moves adversely.",
+    "decision": "The collinear clearance should be 6 base pairs = 2.04 nm, and the design as built carries 8 — so the Q5 margin is 2 WHOLE RISES (0.675609173 nm, 26.3815299x the published 0.02561) and it is an integer rather than a residue. The joint window opens 1.25749159x in c and BOTH of Q5's joints gain real margin (tip 1.7087848x, root 1.89875226x, against 1.018x and 1.030x). Nothing in the placement moves adversely.",
     "bounds": [
         {
             "name": "the standing allowance read on the base-pair lattice",
@@ -554,25 +554,25 @@
             "id": "P2",
             "statement": "the Q5 margin is re-read at it",
             "met": true,
-            "evidence": "0.6756091733686986 nm against the published 0.025609173368700056 — 26.381529916714886x — and on the lattice it is 2 whole rises"
+            "evidence": "0.675609173 nm against the published 0.0256091734 — 26.3815299x — and on the lattice it is 2 whole rises"
         },
         {
             "id": "P3",
             "statement": "the c <= 2.3416 joint window is re-read at it",
             "met": true,
-            "evidence": "the end factor rises to 2.9446168115942033, the tip ceiling to 133.687281049788 (1.70878479537323x A2) and the root ceiling to 25.68900116183024 (1.8987522597874527x one crossover)"
+            "evidence": "the end factor rises to 2.94461681, the tip ceiling to 133.687281 (1.7087848x A2) and the root ceiling to 25.6890012 (1.89875226x one crossover)"
         },
         {
             "id": "P4",
             "statement": "C-0053's plan budget and the placed counts are re-read at it",
             "met": true,
-            "evidence": "34 of 34 at one level; C-0053's 45-arm count 43; C-0074's 30-root ceiling 9.860000000207297 nm"
+            "evidence": "34 of 34 at one level; C-0053's 45-arm count 43; C-0074's 30-root ceiling 9.86 nm"
         },
         {
             "id": "P5",
             "statement": "the requirement is stated as an energy against k_BT, not as a distance",
             "met": true,
-            "evidence": "the elastic work to close the recommended gap is 10.637764065414105 k_BT against a 4.411557910339179 k_BT bond"
+            "evidence": "the elastic work to close the recommended gap is 10.6377641 k_BT against a 4.411557910339179 k_BT bond"
         },
         {
             "id": "P6",
@@ -586,13 +586,13 @@
             "id": "F1",
             "falsifier": "the suppression criterion comes out ABOVE the standing 2.69 nm, so CH-0093 buys nothing",
             "fired": false,
-            "outcome": "the loosest adopted criterion demands 1.9051792511880512 nm against 2.69"
+            "outcome": "the loosest adopted criterion demands 1.90517925 nm against 2.69"
         },
         {
             "id": "F2",
             "falsifier": "the recommended clearance leaves the margin at or below zero",
             "fired": false,
-            "outcome": "0.6756091733686986 nm, 2 whole rises"
+            "outcome": "0.675609173 nm, 2 whole rises"
         },
         {
             "id": "F3",
@@ -604,22 +604,22 @@
             "id": "F4",
             "falsifier": "at the recommended budget one of Q5's two joints is still inside its ceiling by under 10 %",
             "fired": false,
-            "outcome": "tip 1.70878479537323x (C-0069: 1.01844x), root 1.8987522597874527x (C-0069: 1.02964x)"
+            "outcome": "tip 1.7087848x (C-0069: 1.01844x), root 1.89875226x (C-0069: 1.02964x)"
         },
         {
             "id": "F5",
             "falsifier": "the array stops placing 34 at one level, or C-0053's 45-arm count or C-0074's 30-root ceiling moves adversely",
             "fired": false,
-            "outcome": "34 of 34 at one level; 45-arm 43 -> 43; 30-root 9.520000000114223 -> 9.860000000207297 nm"
+            "outcome": "34 of 34 at one level; 45-arm 43 -> 43; 30-root 9.52 -> 9.86 nm"
         }
     ],
     "findings": [
         "THE MARGIN IS AN INTEGER, NOT A RESIDUE. A collinear gap is an AXIAL length between two duplex end faces, so it is quantised at the rise — and so are the other two terms: M = (32 - N_d - N_L) rises. The published 0.02561 nm is what is left over when a TRANSVERSE SAXS constant (7.912 rises) and an elastica root (24.013 rises) are subtracted from an integer pitch. On the lattice the standing design closes at EXACTLY zero.",
-        "THE CRITERION IS AN ENERGY AND THE GEOMETRY SUPPLIES IT. Both faces are covalently tethered to the same sheet at a fixed pitch, so a stacking bond costs the elastic work of closing the gap. Requiring that work to hold the stacked state below one per cent on the softest closure path gives 1.9051792511880512 nm, i.e. 6 rises.",
+        "THE CRITERION IS AN ENERGY AND THE GEOMETRY SUPPLIES IT. Both faces are covalently tethered to the same sheet at a fixed pitch, so a stacking bond costs the elastic work of closing the gap. Requiring that work to hold the stacked state below one per cent on the softest closure path gives 1.90517925 nm, i.e. 6 rises.",
         "THE RECOMMENDATION IS 6 BASE PAIRS = 2.04 nm, and the design as built carries 8 — so the requirement is met with 2 whole rises to spare, and that margin is quotable where 0.0256 nm was not.",
-        "THE JOINT WINDOW OPENS BY 1.2574915915807825x IN c AND THE TWO JOINTS GAIN REAL MARGIN: the tip ceiling goes 79.678 -> 133.687281049788 pN nm/rad (1.70878479537323x A2's 78.235, against C-0069's 1.018x) and the root ceiling 13.930 -> 25.68900116183024 (1.8987522597874527x one crossover's 13.529, against 1.030x). TWO of C-0071's four NONE bands close.",
-        "NOTHING IN THE PLACEMENT MOVES ADVERSELY: 34 of 34 at one level at every clearance from 1 to 7 rises, C-0053's 45-arm count 43 -> 43, C-0074's 30-root ceiling 9.520000000114223 -> 9.860000000207297 nm.",
-        "THE CONSERVATISM IS WHAT KEEPS CH-0081 STANDING. A rigid-rooted arm needs 9.246987380860645 nm and places at a clearance of 4 rises or fewer — so a design that adopted the LOOSEST end of the stacking range would reopen the truss branch that CH-0081 closed.",
+        "THE JOINT WINDOW OPENS BY 1.25749159x IN c AND THE TWO JOINTS GAIN REAL MARGIN: the tip ceiling goes 79.678 -> 133.687281 pN nm/rad (1.7087848x A2's 78.235, against C-0069's 1.018x) and the root ceiling 13.930 -> 25.6890012 (1.89875226x one crossover's 13.529, against 1.030x). TWO of C-0071's four NONE bands close.",
+        "NOTHING IN THE PLACEMENT MOVES ADVERSELY: 34 of 34 at one level at every clearance from 1 to 7 rises, C-0053's 45-arm count 43 -> 43, C-0074's 30-root ceiling 9.52 -> 9.86 nm.",
+        "THE CONSERVATISM IS WHAT KEEPS CH-0081 STANDING. A rigid-rooted arm needs 9.24698738 nm and places at a clearance of 4 rises or fewer — so a design that adopted the LOOSEST end of the stacking range would reopen the truss branch that CH-0081 closed.",
         "AND THE DISTANCE IS THE ONLY CONTROL THE DESIGN STILL OWNS. Rothemund's three measured anti-stacking remedies all need a strand TERMINUS, and C-0034's A2 joint has already spent both of the two a duplex end has (C-0029's counting theorem). The escape is a staple break one base pair inboard, which is a nick and an 8 bp domain — so the clearance is not a backup for the end chemistry here, it is the primary control.",
         "C-0069's CENTRAL NEGATIVE IS UNTOUCHED. The two-support flexure family's floor is 22.414191687124024 nm against a BARE pitch of 10.88, so it is refused at a clearance of zero and no reading of this task reopens it."
     ],

@@ -57,6 +57,7 @@ import com.xemantic.nano.plentyofroom.poroelastic.squeezeDragCoefficient
 import com.xemantic.nano.plentyofroom.poroelastic.tileStokesDrag
 import com.xemantic.nano.plentyofroom.poroelastic.waterViscosity
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -1133,17 +1134,18 @@ fun main() {
             "layerHeights" to DESIGN_POINTS.map { it.first }.toString(),
             "layerModels" to models.joinToString { it.name },
             "pathCount" to "$PATH_COUNT (C-0015's 3 x 15 flatness grid)",
-            "mandatedStiffness" to "$mandate pN/nm",
+            "mandatedStiffness" to "${mandate.roundedForProse()} pN/nm",
             "complianceCeiling" to "$COMPLIANT_CEILING pN/nm (declared)",
             "duplexBendingRigidity" to "$bendingRigidity pN*nm^2 (CanDo model input)",
             "duplexStretchModulus" to "$stretchModulus pN (Wang et al. 1997, measured)",
-            "crossoverHingeStiffness" to "$hingeConstant pN*nm/rad at alpha = 1 " +
+            "crossoverHingeStiffness" to "${hingeConstant.roundedForProse()} pN*nm/rad " +
+                    "at alpha = 1 " +
                     "(Chen et al. 2014, fitted; alpha in [0.6, 1.2])",
             "ssDnaKuhnLength" to "$TETHER_KUHN nm (Chen et al. 2012, zero force — the " +
                     "applicable end for a ~1 pN element)",
             "risePerBasePair" to "$rise nm",
-            "recommendedFlexureSpan" to "$freeSpan nm",
-            "recommendedHingeArm" to "$hingeArm nm",
+            "recommendedFlexureSpan" to "${freeSpan.roundedForProse()} nm",
+            "recommendedHingeArm" to "${hingeArm.roundedForProse()} nm",
             "quadraturePanels" to "$QUADRATURE_PANELS",
             "quadratureTail" to "C-0021's rule: min(40 k_BT/F_down, 60) nm above L0, capped at " +
                     "the tether contour"

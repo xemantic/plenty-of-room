@@ -27,6 +27,7 @@ import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundForResult
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
 import kotlinx.serialization.Serializable
@@ -1077,8 +1078,8 @@ fun main() {
             "realisations" to t178Realisations.toString(),
             "seed" to T178_GRADING_SEED.toString(),
             "dishingSamplesPerEdge" to T178_SAMPLES.toString(),
-            "freeTileStroke" to "%.9f".format(freeStroke),
-            "mandate" to "%.9f".format(T178_MANDATE),
+            "freeTileStroke" to freeStroke.roundedForProse().toString(),
+            "mandate" to T178_MANDATE.roundedForProse().toString(),
             "tolerance" to "%.9f".format(T178_TOLERANCE),
             "separabilityThresholdInLogUnits" to "%.9f".format(T178_SEPARABLE),
             "decisionDigits" to T178_DECISION_DIGITS.toString(),

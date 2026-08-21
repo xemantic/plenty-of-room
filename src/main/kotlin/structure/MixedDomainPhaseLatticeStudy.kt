@@ -923,11 +923,12 @@ fun main() {
             "buffer" to "aqueous 2 mM MgCl2",
             "sheet" to ("single-layer square-lattice Rothemund, $T216_DUPLEXES duplexes at " +
                     "${Gen1Tile.INTERHELICAL_SHEET} nm, ${Gen1Tile.RISE_PER_BASE_PAIR} nm rise"),
-            "row" to ("$T216_ROW_BASE_PAIRS bp = ${T216_ROW_BASE_PAIRS * rise} nm, " +
+            "row" to ("$T216_ROW_BASE_PAIRS bp = ${(T216_ROW_BASE_PAIRS * rise).roundedForProse()} nm, " +
                     "$T216_DOMAIN_COUNT domains, C-0133's twist-corrected raster row"),
             "designFamily" to "domain lengths in {15,16} — Rothemund's \"by single bases\"",
             "load" to "C-0022's solved collar at 2 mM, a 10 nm gap and 0.192 V, CARRIED",
-            "coupling" to "C-0017's $T216_MANDATE pN/nm shared equally over $T216_ARM_COUNT roots",
+            "coupling" to "C-0017's ${T216_MANDATE.roundedForProse()} pN/nm shared equally over " +
+                    "$T216_ARM_COUNT roots",
             "stationOffsets" to "8 bp past each column, MIRRORED right of the row centre (C-0133)",
             "flatness" to "T-5b's $T216_FLATNESS_TOLERANCE of the free stroke"
         ),
@@ -950,7 +951,7 @@ fun main() {
             "seamlessPhasesAt3808" to seamless.joinToString(",") { it.phaseBasePairs.toString() },
             "eightColumnPhasesAtNominal" to eightColumnAtNominal.toString(),
             "columnLattices" to (2 * family.size).toString(),
-            "parityRatioAt110" to parityRatio.toString(),
+            "parityRatioAt110" to parityRatio.roundedForProse().toString(),
             "c0090DishingPhaseEight" to c0090Eight.toString(),
             "c0090DishingPhaseTwentyFour" to c0090TwentyFour.toString(),
             "registerOptimalArrangement" to registerBest.domains,

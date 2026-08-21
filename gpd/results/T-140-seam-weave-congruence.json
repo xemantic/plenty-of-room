@@ -488,7 +488,7 @@
             "id": "P4",
             "statement": "the plan-margin coefficient is still exactly zero under any seam",
             "met": true,
-            "evidence": "M = p - d - L is an along-helix identity between unbonded bodies and carries no weave coordinate at all; 1 distinct value over 8 seam positions, 0.8983334530583154 nm"
+            "evidence": "M = p - d - L is an along-helix identity between unbonded bodies and carries no weave coordinate at all; 1 distinct value over 8 seam positions, 0.898333453 nm"
         },
         {
             "id": "P5",

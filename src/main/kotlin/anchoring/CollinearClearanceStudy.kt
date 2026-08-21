@@ -20,6 +20,7 @@ import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.electrostatics.BluntEndStacking
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -484,34 +485,34 @@ fun main() {
         T152PredicateRecord(
             "P1", "a collinear clearance quantised at the 0.34 nm rise is stated",
             true,
-            "$required bp = ${recommended.clearance} nm, the largest of four adopted energy " +
+            "$required bp = ${recommended.clearance.roundedForProse()} nm, the largest of four adopted energy " +
                     "criteria"
         ),
         T152PredicateRecord(
             "P2", "the Q5 margin is re-read at it", true,
-            "${recommended.margin} nm against the published $standingMargin — " +
-                    "${recommended.marginOverPublished}x — and on the lattice it is " +
+            "${recommended.margin.roundedForProse()} nm against the published ${standingMargin.roundedForProse()} — " +
+                    "${recommended.marginOverPublished.roundedForProse()}x — and on the lattice it is " +
                     "${recommended.marginBasePairs} whole rises"
         ),
         T152PredicateRecord(
             "P3", "the c <= 2.3416 joint window is re-read at it", true,
-            "the end factor rises to ${recommended.endFactorCeiling}, the tip ceiling to " +
-                    "${recommended.tipRestraintCeiling} (${recommended.tipHeadroom}x A2) and the " +
-                    "root ceiling to ${recommended.rootRestraintCeiling} " +
-                    "(${recommended.rootHeadroom}x one crossover)"
+            "the end factor rises to ${recommended.endFactorCeiling.roundedForProse()}, the tip ceiling to " +
+                    "${recommended.tipRestraintCeiling.roundedForProse()} (${recommended.tipHeadroom.roundedForProse()}x A2) and the " +
+                    "root ceiling to ${recommended.rootRestraintCeiling.roundedForProse()} " +
+                    "(${recommended.rootHeadroom.roundedForProse()}x one crossover)"
         ),
         T152PredicateRecord(
             "P4", "C-0053's plan budget and the placed counts are re-read at it", true,
             "${recommended.placedOf34} of 34 at one level; C-0053's 45-arm count " +
                     "${recommended.fortyFiveArmsPlaced}; C-0074's 30-root ceiling " +
-                    "${recommended.thirtyRootCeiling} nm"
+                    "${recommended.thirtyRootCeiling.roundedForProse()} nm"
         ),
         T152PredicateRecord(
             "P5", "the requirement is stated as an energy against k_BT, not as a distance",
             true,
             "the elastic work to close the recommended gap is " +
-                    "${recommended.closureWorkInThermalUnits} k_BT against a " +
-                    "${state.stackInThermalUnits} k_BT bond"
+                    "${recommended.closureWorkInThermalUnits.roundedForProse()} k_BT against a " +
+                    "${state.stackInThermalUnits.roundedForProse()} k_BT bond"
         ),
         T152PredicateRecord(
             "P6", "what the design must CONTROL is named, not only how far apart to put things",
@@ -528,12 +529,13 @@ fun main() {
                     "nothing",
             criteria.filter { it.adopted }.maxOf { it.requiredGap } > T152_BODY_WIDTH,
             "the loosest adopted criterion demands " +
-                    "${criteria.filter { it.adopted }.maxOf { it.requiredGap }} nm against 2.69"
+                    "${criteria.filter { it.adopted }.maxOf { it.requiredGap }.roundedForProse()} nm " +
+                    "against 2.69"
         ),
         T152FalsifierRecord(
             "F2", "the recommended clearance leaves the margin at or below zero",
             recommended.margin <= 0.0,
-            "${recommended.margin} nm, ${recommended.marginBasePairs} whole rises"
+            "${recommended.margin.roundedForProse()} nm, ${recommended.marginBasePairs} whole rises"
         ),
         T152FalsifierRecord(
             "F3",
@@ -549,8 +551,8 @@ fun main() {
             "at the recommended budget one of Q5's two joints is still inside its ceiling by " +
                     "under 10 %",
             recommended.tipHeadroom < 1.10 || recommended.rootHeadroom < 1.10,
-            "tip ${recommended.tipHeadroom}x (C-0069: 1.01844x), root " +
-                    "${recommended.rootHeadroom}x (C-0069: 1.02964x)"
+            "tip ${recommended.tipHeadroom.roundedForProse()}x (C-0069: 1.01844x), root " +
+                    "${recommended.rootHeadroom.roundedForProse()}x (C-0069: 1.02964x)"
         ),
         T152FalsifierRecord(
             "F5",
@@ -561,7 +563,7 @@ fun main() {
                     recommended.thirtyRootCeiling < standingRow.thirtyRootCeiling,
             "34 of 34 at one level; 45-arm ${standingRow.fortyFiveArmsPlaced} -> " +
                     "${recommended.fortyFiveArmsPlaced}; 30-root " +
-                    "${standingRow.thirtyRootCeiling} -> ${recommended.thirtyRootCeiling} nm"
+                    "${standingRow.thirtyRootCeiling.roundedForProse()} -> ${recommended.thirtyRootCeiling.roundedForProse()} nm"
         )
     )
 
@@ -576,24 +578,24 @@ fun main() {
                 "tethered to the same sheet at a fixed pitch, so a stacking bond costs the " +
                 "elastic work of closing the gap. Requiring that work to hold the stacked state " +
                 "below one per cent on the softest closure path gives " +
-                "${criteria.last().requiredGap} nm, i.e. $required rises.",
-        "THE RECOMMENDATION IS $required BASE PAIRS = ${recommended.clearance} nm, and the " +
+                "${criteria.last().requiredGap.roundedForProse()} nm, i.e. $required rises.",
+        "THE RECOMMENDATION IS $required BASE PAIRS = ${recommended.clearance.roundedForProse()} nm, and the " +
                 "design as built carries ${32 - state.armBasePairs} — so the requirement is met " +
                 "with ${recommended.marginBasePairs} whole rises to spare, and that margin is " +
                 "quotable where 0.0256 nm was not.",
-        "THE JOINT WINDOW OPENS BY ${recommended.endFactorHeadroom}x IN c AND THE TWO JOINTS " +
-                "GAIN REAL MARGIN: the tip ceiling goes 79.678 -> ${recommended.tipRestraintCeiling} " +
-                "pN nm/rad (${recommended.tipHeadroom}x A2's 78.235, against C-0069's 1.018x) " +
-                "and the root ceiling 13.930 -> ${recommended.rootRestraintCeiling} " +
-                "(${recommended.rootHeadroom}x one crossover's 13.529, against 1.030x). " +
+        "THE JOINT WINDOW OPENS BY ${recommended.endFactorHeadroom.roundedForProse()}x IN c AND THE TWO JOINTS " +
+                "GAIN REAL MARGIN: the tip ceiling goes 79.678 -> ${recommended.tipRestraintCeiling.roundedForProse()} " +
+                "pN nm/rad (${recommended.tipHeadroom.roundedForProse()}x A2's 78.235, against C-0069's 1.018x) " +
+                "and the root ceiling 13.930 -> ${recommended.rootRestraintCeiling.roundedForProse()} " +
+                "(${recommended.rootHeadroom.roundedForProse()}x one crossover's 13.529, against 1.030x). " +
                 "TWO of C-0071's four NONE bands close.",
         "NOTHING IN THE PLACEMENT MOVES ADVERSELY: 34 of 34 at one level at every clearance " +
                 "from 1 to ${candidates.count { it.placedOf34 == T152_PATHS }} rises, C-0053's " +
                 "45-arm count ${standingRow.fortyFiveArmsPlaced} -> " +
                 "${recommended.fortyFiveArmsPlaced}, C-0074's 30-root ceiling " +
-                "${standingRow.thirtyRootCeiling} -> ${recommended.thirtyRootCeiling} nm.",
+                "${standingRow.thirtyRootCeiling.roundedForProse()} -> ${recommended.thirtyRootCeiling.roundedForProse()} nm.",
         "THE CONSERVATISM IS WHAT KEEPS CH-0081 STANDING. A rigid-rooted arm needs " +
-                "$rigidRootArm nm and places at a clearance of " +
+                "${rigidRootArm.roundedForProse()} nm and places at a clearance of " +
                 "${candidates.filter { it.rigidRootArmPlaces }.maxOfOrNull { it.clearanceBasePairs } ?: 0} " +
                 "rises or fewer — so a design that adopted the LOOSEST end of the stacking " +
                 "range would reopen the truss branch that CH-0081 closed.",
@@ -604,7 +606,8 @@ fun main() {
                 "8 bp domain — so the clearance is not a backup for the end chemistry here, it " +
                 "is the primary control.",
         "C-0069's CENTRAL NEGATIVE IS UNTOUCHED. The two-support flexure family's floor is " +
-                "$midspanFloor nm against a BARE pitch of $pitch, so it is refused at a " +
+                "${midspanFloor.roundedForProse()} nm against a BARE pitch of " +
+                "${pitch.roundedForProse()}, so it is refused at a " +
                 "clearance of zero and no reading of this task reopens it."
     )
 
@@ -619,13 +622,13 @@ fun main() {
                 "78.2353; the blunt-end stack -2.63 kcal/mol per helix at 1xTAE + 12.5 mM Mg2+, " +
                 "22 C (Woo & Rothemund), TRANSFERRED to 2 mM and 300 K and NOT re-measured",
         decision = "The collinear clearance should be $required base pairs = " +
-                "${recommended.clearance} nm, and the design as built carries " +
+                "${recommended.clearance.roundedForProse()} nm, and the design as built carries " +
                 "${32 - state.armBasePairs} — so the Q5 margin is ${recommended.marginBasePairs} " +
-                "WHOLE RISES (${recommended.margin} nm, ${recommended.marginOverPublished}x the " +
+                "WHOLE RISES (${recommended.margin.roundedForProse()} nm, ${recommended.marginOverPublished.roundedForProse()}x the " +
                 "published 0.02561) and it is an integer rather than a residue. The joint " +
-                "window opens ${recommended.endFactorHeadroom}x in c and BOTH of Q5's joints " +
-                "gain real margin (tip ${recommended.tipHeadroom}x, root " +
-                "${recommended.rootHeadroom}x, against 1.018x and 1.030x). Nothing in the " +
+                "window opens ${recommended.endFactorHeadroom.roundedForProse()}x in c and BOTH of Q5's joints " +
+                "gain real margin (tip ${recommended.tipHeadroom.roundedForProse()}x, root " +
+                "${recommended.rootHeadroom.roundedForProse()}x, against 1.018x and 1.030x). Nothing in the " +
                 "placement moves adversely.",
         bounds = bounds,
         closurePaths = closures,

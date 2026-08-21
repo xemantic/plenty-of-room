@@ -17,6 +17,7 @@
 package com.xemantic.nano.plentyofroom.window
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -356,7 +357,7 @@ fun main() {
             "layerHeights" to LAYER_HEIGHTS.toString(),
             "graftingDensityGridPoints" to grid.size.toString(),
             "graftingDensityGridRatio" to (grid[1] / grid[0]).toString(),
-            "mandatedCouplingStiffness" to MANDATED_COUPLING_STIFFNESS.toString(),
+            "mandatedCouplingStiffness" to MANDATED_COUPLING_STIFFNESS.roundedForProse().toString(),
             "acceptableStroke" to ACCEPTABLE_STROKE_NM.toString(),
             "flatnessTolerance" to FLATNESS_TOLERANCE.toString(),
             "correctionSets" to CORRECTION_SETS.joinToString("; ") { it.label },
@@ -674,7 +675,7 @@ private fun findings(
                         "the layer's stiffness at L0 does, so it is a genuinely sigma-resolved " +
                         "tightening of the stroke threshold from 3.0 to " +
                         full.joinToString("; ") {
-                            "L0 = ${it.layerHeight} nm: " +
+                            "L0 = ${it.layerHeight.roundedForProse()} nm: " +
                                     "${"%.4f".format(it.requiredLayerStrokeLow)}-" +
                                     "${"%.4f".format(it.requiredLayerStrokeHigh)} nm"
                         } + ".",
@@ -688,7 +689,7 @@ private fun findings(
                         "caused it left the design in the same iteration.",
         "how_many_edges_actually_move" to
                 edges.filter { it.baselineGraftingDensity != null }.joinToString("; ") {
-                    "L0 = ${it.layerHeight} nm ${it.edge}: ${it.movedBy}"
+                    "L0 = ${it.layerHeight.roundedForProse()} nm ${it.edge}: ${it.movedBy}"
                 },
         "three_more_axes_that_cannot_narrow" to
                 "Iteration 4 added four axes and removed one. " +
@@ -726,18 +727,18 @@ private fun verdict(
     strokeClauses: List<StrokeClause>
 ): Map<String, String> = mapOf(
     "P1 — §4(a)-(d) after iteration 4" to full.joinToString("; ") { window ->
-        if (window.empty) "L0 = ${window.layerHeight} nm: EMPTY"
-        else "L0 = ${window.layerHeight} nm: sigma in [" +
+        if (window.empty) "L0 = ${window.layerHeight.roundedForProse()} nm: EMPTY"
+        else "L0 = ${window.layerHeight.roundedForProse()} nm: sigma in [" +
                 "${"%.5g".format(window.lowestGraftingDensity)}, " +
                 "${"%.5g".format(window.highestGraftingDensity)}] nm^-2, " +
                 "${"%.4g".format(window.widthRatio)}x wide"
     },
     "P1 binding constraints" to full.joinToString("; ") { window ->
         if (window.empty)
-            "L0 = ${window.layerHeight} nm closed by " +
+            "L0 = ${window.layerHeight.roundedForProse()} nm closed by " +
                     "${window.crossing?.lowerBoundConstraint} against " +
                     window.crossing?.upperBoundConstraint
-        else "L0 = ${window.layerHeight} nm: lower ${window.lowerBinding}, " +
+        else "L0 = ${window.layerHeight.roundedForProse()} nm: lower ${window.lowerBinding}, " +
                 "upper ${window.upperBinding}"
     },
     "P2 — the output-coupling verdict" to
@@ -759,7 +760,7 @@ private fun verdict(
     "P4 — the '>= 3 nm' clauses" to strokeClauses.filter {
         it.couplingTopology.startsWith("C-0023")
     }.joinToString("; ") {
-        "L0 = ${it.layerHeight} nm delivers ${"%.3f".format(it.deliveredLow)}-" +
+        "L0 = ${it.layerHeight.roundedForProse()} nm delivers ${"%.3f".format(it.deliveredLow)}-" +
                 "${"%.3f".format(it.deliveredHigh)} nm (${it.verdict})"
     },
     "P5 — the buffer" to

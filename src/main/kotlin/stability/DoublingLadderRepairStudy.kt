@@ -17,6 +17,7 @@
 package com.xemantic.nano.plentyofroom.stability
 
 import com.xemantic.nano.plentyofroom.actuator.roundedForActuatorResult
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -383,7 +384,7 @@ fun main() {
         citedInputs = listOf(
             "C-0084's 108 fold rows, its element ceiling safety and its arm length — READ from " +
                     "gpd/results/T-149-recommended-element-fold.json.",
-            "C-0092's contour bound 8.164390826631303 nm and its continuation supremum " +
+            "C-0092's contour bound 8.16439083 nm and its continuation supremum " +
                     "8.1610821 nm — CITED, and the contour RE-DERIVED here.",
             "C-0084's ladder refusal 7.91968584 nm and path ceiling 7.909685836937754 nm — CITED.",
             "C-0033's measured d ln mu/dh — READ from " +
@@ -471,12 +472,12 @@ fun main() {
     findings["theCorrectedDomain"] =
         ("The repaired continuation answers to %.8f nm of stroke where C-0084's doubling ladder " +
                 "refused at 7.91968584, %.8f nm further, with max_s|phi| = %.7f rad — %.6f of a " +
-                "right angle and still below it — out of a contour of %.9f nm. The path ceiling " +
+                "right angle and still below it — out of a contour of %s nm. The path ceiling " +
                 "moves 7.90968584 -> %.8f nm.")
             .format(
                 domain.refusalStrokeCeiling, domain.refusalStrokeCeiling - 7.91968584,
                 domain.maximumRotationAtRefusal,
-                domain.maximumRotationAtRefusal / (0.5 * Math.PI), domain.contour,
+                domain.maximumRotationAtRefusal / (0.5 * Math.PI), domain.contour.roundedForProse(),
                 domain.pathStrokeCeiling
             )
     findings["theRepricing"] =

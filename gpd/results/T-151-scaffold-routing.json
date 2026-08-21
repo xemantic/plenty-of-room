@@ -396,7 +396,7 @@
             "id": "F4",
             "falsifier": "no admissible seamless width lies near 40 nm",
             "fired": false,
-            "outcome": "112 bp = 38.080000000000005 nm, -4.80 % from the nominal 40.0 — and the NOMINAL width is NOT admissible"
+            "outcome": "112 bp = 38.08 nm, -4.80 % from the nominal 40.0 — and the NOMINAL width is NOT admissible"
         },
         {
             "id": "F5",
@@ -411,7 +411,7 @@
         "THE THEOREM PREDICTS ROTHEMUND'S OWN RECORD AND HE STATES IT IN ONE CLAUSE EACH. His 26-helix square \"had no vertical reversals in raster direction, REQUIRED A LINEAR SCAFFOLD\"; his rectangles' folding path \"is compatible with a circular scaffold and LEAVES A 'SEAM' (a contour which the path does not cross)\".",
         "AND THE GEN-1 TILE IS ALREADY IN THE DEMONSTRATED REGIME. The sheet needs 1680 nt of a 7249 nt M13 — 4.31x too long — so a remainder is unavoidable on that scaffold, and Rothemund's FIRST origami experiment was exactly that: an 8-helix seamless raster on a circular M13 with two thirds unfolded, which he reports \"could easily bridge the corners without deforming the rectangle\".",
         "THE PRICE THE PROGRAMME HAS NOT COUNTED IS THE REMAINDER ITSELF. 5569 unpaired nucleotides is a 33.3 nm ideal coil carrying 1.66x the sheet's own backbone charge, beside a tile whose edge load C-0022 solved with nothing there. A purpose-built scaffold of 1680 nt removes it, and a purpose-built CIRCULAR one still needs only a 67 nt return loop.",
-        "AND A SEAMLESS RASTER QUANTISES THE TILE'S WIDTH AT 32 bp, NOT AT THE RISE. Rothemund's fundamental constraint — successive scaffold crossovers an ODD number of half turns apart — binds the ROW LENGTH of a boustrophedon, because a boustrophedon has only progressive crossovers. On the square lattice that admits 16, 48, 80, 112, 144 bp and nothing between: the nearest buildable width to 40.0 nm is 112 bp = 38.080000000000005 nm, and the NOMINAL 40.0 nm is not on the list.",
+        "AND A SEAMLESS RASTER QUANTISES THE TILE'S WIDTH AT 32 bp, NOT AT THE RISE. Rothemund's fundamental constraint — successive scaffold crossovers an ODD number of half turns apart — binds the ROW LENGTH of a boustrophedon, because a boustrophedon has only progressive crossovers. On the square lattice that admits 16, 48, 80, 112, 144 bp and nothing between: the nearest buildable width to 40.0 nm is 112 bp = 38.08 nm, and the NOMINAL 40.0 nm is not on the list.",
         "ROTHEMUND'S OWN STAGGERED SEAM IS NOT THE REMEDY. Solved exactly over the three-row coupling C-0081's mechanism implies, the best staggered seam still takes 5 of 34 stations off the node against the best straight seam's 6 and the worst's 12. It is worth one station. Seamlessness is worth all 34.",
         "C-0081's SWEEP REPRODUCES FROM ITS STATION PLANES ALONE: 8 candidate planes, 6 to 12 stations affected, 34 of 34 on an odd plane."
     ],

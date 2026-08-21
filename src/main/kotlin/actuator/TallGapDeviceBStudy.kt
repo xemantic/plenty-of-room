@@ -33,6 +33,7 @@ import com.xemantic.nano.plentyofroom.electrostatics.sternChargeDensityPerVolt
 import com.xemantic.nano.plentyofroom.electrostatics.thermalVoltage
 import com.xemantic.nano.plentyofroom.electrostatics.uniformMedium
 import com.xemantic.nano.plentyofroom.material.PegWater
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -492,10 +493,10 @@ fun main() {
         runParameters = mapOf(
             "temperature" to ROOM_TEMPERATURE.toString(),
             "thermalEnergy" to thermalEnergy().toString(),
-            "bjerrumLength" to lb.toString(),
+            "bjerrumLength" to lb.roundedForProse().toString(),
             "footprintArea" to TALL_GAP_FOOTPRINT.toString(),
-            "manningSurvivingFraction" to surviving.toString(),
-            "nominalTileChargeDensity" to tileCharge.toString(),
+            "manningSurvivingFraction" to surviving.roundedForProse().toString(),
+            "nominalTileChargeDensity" to tileCharge.roundedForProse().toString(),
             "sternCapacitance" to TALL_GAP_STERN_CAPACITANCE.toString(),
             "meshNodes" to TALL_GAP_MESH_NODES.toString(),
             "tallHeights" to TALL_GAP_HEIGHTS.toString(),
@@ -504,11 +505,12 @@ fun main() {
             "reachBuffers" to TALL_GAP_REACH_BUFFERS.toString(),
             "foldBuffers" to TALL_GAP_BUFFERS.toString(),
             "loadLines" to TALL_GAP_LOAD_LINES.map {
-                it.name + ": R = " + it.preload + " + " + it.stiffness + " s, read at s = " +
-                        it.targetStroke
+                it.name + ": R = " + it.preload.roundedForProse() + " + " +
+                        it.stiffness.roundedForProse() + " s, read at s = " +
+                        it.targetStroke.roundedForProse()
             }.toString(),
             "deviceBStiffness" to TALL_GAP_DEVICE_B_STIFFNESS.toString(),
-            "deviceAStiffness" to TALL_GAP_DEVICE_A_STIFFNESS.toString(),
+            "deviceAStiffness" to TALL_GAP_DEVICE_A_STIFFNESS.roundedForProse().toString(),
             "targetForce" to TALL_GAP_TARGET_FORCE.toString(),
             "deviceBStroke" to TALL_GAP_DEVICE_B_STROKE.toString(),
             "pointIonCeiling" to TALL_GAP_POINT_ION_CEILING.toString(),
@@ -523,7 +525,8 @@ fun main() {
             "osmoticSecondVirial" to TALL_GAP_OSMOTIC_SECOND_VIRIAL.toString(),
             "osmoticThirdVirial" to TALL_GAP_OSMOTIC_THIRD_VIRIAL.toString(),
             "heldDensityRule" to (heldRule.amplitude.toString() + " * h^" + heldRule.exponent),
-            "trendDensityRule" to (trendRule.amplitude.toString() + " * h^" + trendRule.exponent)
+            "trendDensityRule" to (trendRule.amplitude.roundedForProse().toString() + " * h^" +
+                    trendRule.exponent.roundedForProse())
         ),
         citedInputs = TALL_GAP_CITED,
         densityRules = rules,
@@ -753,7 +756,8 @@ private fun tallGapVerdict(
         "REFUSED — no bias below the diffuse ceiling holds the tile at " +
                 line.targetStroke + " nm"
     fold != null && fold.stroke < line.targetStroke ->
-        "REFUSED — the equilibrium path folds at " + fold.stroke + " nm, inside the stroke"
+        "REFUSED — the equilibrium path folds at " + fold.stroke.roundedForProse() +
+                " nm, inside the stroke"
     clears == false -> "REFUSED — the coupling is below its own stability floor at the stroke"
     usable == false -> "REFUSED — the operating bias is above the binding ceiling"
     else -> "ADMITTED at this state"

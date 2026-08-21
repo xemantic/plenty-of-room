@@ -49,6 +49,7 @@ import com.xemantic.nano.plentyofroom.brush.twoBodyInteraction
 import com.xemantic.nano.plentyofroom.coupling.mandatedCouplingStiffness
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -690,8 +691,11 @@ fun main() {
             "per-path unzip allowable" to "$UNZIP_ALLOWABLE pN (C-0006, CH-0029)",
             "duplex EI" to "${Gen1Tile.DUPLEX_BENDING_RIGIDITY} pN·nm^2 (CanDo MODEL INPUT, not a measurement)",
             "duplex S" to "${AnchorMaterials.DUPLEX_STRETCH_MODULUS} pN (Wang 1997, MEASURED)",
-            "crossover hinge k_theta" to "${Gen1Tile.crossoverHingeStiffness()} pN·nm/rad (Chen 2014, FITTED)",
-            "A2 anchorage couple" to "$DUPLEX_END_ANCHORAGE pN·nm/rad (C-0034)",
+            "crossover hinge k_theta" to
+                    "${Gen1Tile.crossoverHingeStiffness().roundedForProse()} pN·nm/rad " +
+                            "(Chen 2014, FITTED)",
+            "A2 anchorage couple" to
+                    "${DUPLEX_END_ANCHORAGE.roundedForProse()} pN·nm/rad (C-0034)",
             "concentrated crossover" to "phi = 0.2 (C-0002)",
             "§3 targets" to "100 pN, 3 nm acceptable, ~10 nm desired, 40 x 40 nm, 5/7/10 nm, 2 mM"
         ),

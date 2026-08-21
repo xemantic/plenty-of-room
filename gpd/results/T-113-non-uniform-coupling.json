@@ -32,7 +32,7 @@
         "optimiser": "deterministic cyclic coordinate descent on log-stiffness, 4 starts, 8 sweeps, coarse scan of 7 plus 8 golden-section refinements"
     },
     "citedInputs": {
-        "C-0017 mandate": "33.333333333333336 pN/nm = 100 pN / 3 nm",
+        "C-0017 mandate": "33.3333333 pN/nm = 100 pN / 3 nm",
         "C-0006/CH-0029 unzip allowable": "10.0 pN per path",
         "C-0006 duplex shear allowable": "48.0 pN, 65.0 pN nicked ceiling",
         "C-0022 solved collars": "read at run time from gpd/results/T-3b-tile-edge-load-profile.json, keyed on (concentration, gap, bias)",

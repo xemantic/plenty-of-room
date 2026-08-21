@@ -17,6 +17,7 @@
 package com.xemantic.nano.plentyofroom.anchoring
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -333,14 +334,17 @@ private fun scheme(
         PerPathAllowables.CONCENTRATION_FACTOR_MAX
     ) else 0.0
     val binding = when {
-        buckles -> "BUCKLING: each anchor carries $compressionPerAnchor pN against a " +
-                "critical load of $critical pN, and a buckled column has no lateral stiffness at all"
-        lateralMargin < 1.0 -> "lateral stiffness, short by ${1.0 / lateralMargin}x"
-        yawMargin < 1.0 -> "yaw stiffness, short by ${1.0 / yawMargin}x"
-        retainedSoft < 0.9 -> "the stroke: the anchors take ${100.0 * (1.0 - retainedSoft)} % " +
+        buckles -> "BUCKLING: each anchor carries ${compressionPerAnchor.roundedForProse()} pN against a " +
+                "critical load of ${critical.roundedForProse()} pN, and a buckled column has " +
+                "no lateral stiffness at all"
+        lateralMargin < 1.0 -> "lateral stiffness, short by ${(1.0 / lateralMargin).roundedForProse()}x"
+        yawMargin < 1.0 -> "yaw stiffness, short by ${(1.0 / yawMargin).roundedForProse()}x"
+        retainedSoft < 0.9 -> "the stroke: the anchors take " +
+                "${(100.0 * (1.0 - retainedSoft)).roundedForProse()} % " +
                 "of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
         cableEntryForce > PerPathAllowables.SHEAR ->
-            "the CABLE tension: $cableEntryForce pN enters the tile at a 3 nm stroke once " +
+            "the CABLE tension: ${cableEntryForce.roundedForProse()} pN enters the tile at a " +
+                    "3 nm stroke once " +
                     "C-0009's concentration factor is applied, against a 48 pN shear allowable"
         else -> "none — passes lateral, yaw, the 10 % stroke budget and the cable check together"
     }
@@ -448,7 +452,8 @@ private fun inPlaneSchemes(): List<SchemeRecord> = buildList {
                 add(
                     scheme(
                         id = if (tangential) "S4t" else "S4",
-                        name = "4 surface-parallel duplex tethers of $length nm to a coplanar " +
+                        name = "4 surface-parallel duplex tethers of ${length.roundedForProse()} " +
+                                "nm to a coplanar " +
                                 "fixed frame, ${if (tangential) "tangential" else "radial"}, ${end.name}",
                         topology = "in-plane, theta = 90 degrees",
                         layerHeight = nominalLayer.height,
@@ -879,7 +884,8 @@ fun main() {
                             "the bound"
                 threshold * transfer > 0.19 ->
                     "REACHABLE BUT SELF-DEFEATING — the modulation depth it needs costs " +
-                            "${100.0 * threshold * transfer} % of the stroke in dishing, and " +
+                            "${(100.0 * threshold * transfer).roundedForProse()} % of the " +
+                            "stroke in dishing, and " +
                             "C-0006 rejects the rigid-plate assumption above ~19 %"
                 else -> "NOT EXCLUDED — hand to T-3b, which owns the 2-D solve"
             }
@@ -1006,9 +1012,9 @@ fun main() {
         ),
         verdict = mapOf(
             "doesASchemeExist" to (best?.let {
-                "YES — ${it.name}: k_lat = ${it.lateralStiffness} pN/nm " +
-                        "(${it.lateralMargin}x the bound), k_yaw = ${it.yawStiffness} pN*nm/rad " +
-                        "(${it.yawMargin}x), costing ${it.strokeLostPercentWorst} % of the stroke " +
+                "YES — ${it.name}: k_lat = ${it.lateralStiffness.roundedForProse()} pN/nm " +
+                        "(${it.lateralMargin.roundedForProse()}x the bound), k_yaw = ${it.yawStiffness.roundedForProse()} pN*nm/rad " +
+                        "(${it.yawMargin.roundedForProse()}x), costing ${it.strokeLostPercentWorst.roundedForProse()} % of the stroke " +
                         "at the soft end of the C-0003 bracket"
             } ?: "NO scheme in the evaluated set passes all three simultaneously"),
             "theBindingConstraint" to "ANISOTROPY, and it is topological rather than material. " +
@@ -1023,8 +1029,9 @@ fun main() {
                     "tension and the normal force grow as powers of the stroke, so the §3 " +
                     "DESIRED 10 nm stroke needs a much longer tether than the acceptable 3 nm one.",
             "yawBudget" to "Declared in the same currency as translation: the in-plane " +
-                    "displacement of the tile's CORNER, at r = ${CORNER_RADIUS} nm, held to " +
-                    "3.0 nm. k_yaw >= $requiredYaw pN*nm/rad. For anchors AT the corner radius " +
+                    "displacement of the tile's CORNER, at r = ${CORNER_RADIUS.roundedForProse()} " +
+                    "nm, held to 3.0 nm. k_yaw >= ${requiredYaw.roundedForProse()} pN*nm/rad. " +
+                    "For anchors AT the corner radius " +
                     "this is EXACTLY the translation requirement, independent of the radius; " +
                     "anchors inside it make yaw the binding condition by (r_budget/r_anchor)^2.",
             "sameAnchorsAsFlatness" to "NO. The lateral scheme's anchors sit on the PERIMETER " +

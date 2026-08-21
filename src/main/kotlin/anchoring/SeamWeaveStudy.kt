@@ -20,6 +20,7 @@ import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -357,7 +358,8 @@ fun main() {
             marginUnderEverySeam.size == 1,
             "M = p - d - L is an along-helix identity between unbonded bodies and carries no " +
                     "weave coordinate at all; ${marginUnderEverySeam.size} distinct value over " +
-                    "${candidateSeams.size} seam positions, ${marginAtMeasured} nm"
+                    "${candidateSeams.size} seam positions, " +
+                    "${marginAtMeasured.roundedForProse()} nm"
         ),
         T140PredicateRecord(
             "P5", "the seam's position is swept exhaustively and the Rothemund reading is named",

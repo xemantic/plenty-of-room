@@ -20,6 +20,7 @@ import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.ShearJointAllowable
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -631,7 +632,7 @@ fun main() {
             "targetForce" to "$TARGET_FORCE pN (section 3)",
             "acceptableStroke" to "$ACCEPTABLE_STROKE nm (section 3)",
             "desiredStroke" to "$DESIRED_STROKE nm (section 3)",
-            "mandate" to "$MANDATE pN/nm (C-0017)",
+            "mandate" to "${MANDATE.roundedForProse()} pN/nm (C-0017)",
             "pathCount" to "$PATH_COUNT (C-0015's 3 x 15 flatness grid, via C-0023)",
             "compliantCeiling" to "$COMPLIANT_CEILING pN/nm (C-0023's own declared ceiling)",
             "bendingRigidity" to "$EI pN*nm^2 — CITED, a CanDo MODEL INPUT, not a measurement",

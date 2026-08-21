@@ -17,6 +17,7 @@
 package com.xemantic.nano.plentyofroom.anchoring
 
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -599,10 +600,12 @@ fun main() {
             "sheet" to "single-layer square-lattice Rothemund, $ROWS duplexes at $DUPLEX nm",
             "edgeX" to "$EDGE_X nm",
             "risePerBasePair" to "$RISE nm",
-            "designedTwist" to "$SQUARE_LATTICE_BASE_PAIRS_PER_TURN bp/turn (33.75 deg/bp)",
+            "designedTwist" to
+                    "${SQUARE_LATTICE_BASE_PAIRS_PER_TURN.roundedForProse()} bp/turn (33.75 deg/bp)",
             "preferredTwist" to "$PREFERRED_BASE_PAIRS_PER_TURN bp/turn",
             "crossoverPlaneSpacing" to "$CROSSOVER_PLANE_BASE_PAIRS bp",
-            "arm" to "C-0039's E5a1, placed at the mandate ${MANDATE} pN/nm at $ACCEPTABLE nm"
+            "arm" to "C-0039's E5a1, placed at the mandate ${MANDATE.roundedForProse()} pN/nm " +
+                    "at $ACCEPTABLE nm"
         ),
         cheapBounds = cheapBounds,
         azimuths = azimuths,

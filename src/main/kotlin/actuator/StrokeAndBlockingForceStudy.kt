@@ -46,6 +46,7 @@ import com.xemantic.nano.plentyofroom.electrostatics.sternChargeDensityPerVolt
 import com.xemantic.nano.plentyofroom.electrostatics.thermalVoltage
 import com.xemantic.nano.plentyofroom.electrostatics.uniformMedium
 import com.xemantic.nano.plentyofroom.material.PegWater
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -589,13 +590,13 @@ fun main() {
         runParameters = mapOf(
             "temperature" to ROOM_TEMPERATURE.toString(),
             "thermalEnergy" to thermalEnergy().toString(),
-            "bjerrumLength" to lb.toString(),
+            "bjerrumLength" to lb.roundedForProse().toString(),
             "tileEdge" to geometry.tileEdge.toString(),
             "tileThickness" to geometry.tileThickness.toString(),
             "leverAttachmentHeight" to geometry.leverAttachmentHeight.toString(),
             "footprintArea" to geometry.footprintArea.toString(),
-            "manningSurvivingFraction" to surviving.toString(),
-            "nominalTileChargeDensity" to tileCharge.toString(),
+            "manningSurvivingFraction" to surviving.roundedForProse().toString(),
+            "nominalTileChargeDensity" to tileCharge.roundedForProse().toString(),
             "sternCapacitance" to STERN_CAPACITANCE.toString(),
             "meshNodes" to DEFAULT_GAP_MESH_NODES.toString(),
             "biasSearchNodes" to SEARCH_NODES.toString(),
@@ -608,7 +609,7 @@ fun main() {
             "biases" to BIASES.toString(),
             "osmoticSecondVirial" to OSMOTIC_SECOND_VIRIAL.toString(),
             "osmoticThirdVirial" to OSMOTIC_THIRD_VIRIAL.toString(),
-            "pegFibreRadius" to fibreRadius.toString(),
+            "pegFibreRadius" to fibreRadius.roundedForProse().toString(),
             "targetForce" to TARGET_FORCE.toString(),
             "acceptableStroke" to ACCEPTABLE_STROKE.toString(),
             "desiredStroke" to DESIRED_STROKE.toString(),

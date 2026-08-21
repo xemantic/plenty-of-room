@@ -22,6 +22,7 @@ import com.xemantic.nano.plentyofroom.equipartitionRms
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.structure.SOLVED_HEIGHT_SIGNIFICANT_DIGITS
 import com.xemantic.nano.plentyofroom.structure.roundForResult as roundToSignificantDigits
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -442,7 +443,7 @@ fun main() {
             "temperature" to ROOM_TEMPERATURE.toString(),
             "medium" to "aqueous buffer, 2/5/10 mM MgCl2 (not entering this task)",
             "thermalEnergy" to thermalEnergy().toString(),
-            "thermalEnergyElectronVolts" to (thermalEnergy() / ELECTRON_VOLT).toString(),
+            "thermalEnergyElectronVolts" to (thermalEnergy() / ELECTRON_VOLT).roundedForProse().toString(),
             "tileFootprint" to "${TILE_EDGE.toInt()} x ${TILE_EDGE.toInt()} nm",
             "tileArea" to tileArea.toString(),
             "targetForce" to TARGET_FORCE.toString(),
@@ -450,11 +451,11 @@ fun main() {
             "targetStrokeDesired" to DESIRED_STROKE.toString(),
             "restingLoad" to PRIMARY_RESTING_LOAD.toString(),
             "restingLoadSensitivity" to RESTING_LOADS.toString(),
-            "monomerVolume" to peg.monomerVolume.toString(),
+            "monomerVolume" to peg.monomerVolume.roundedForProse().toString(),
             "kuhnLength" to peg.kuhnLength.toString(),
-            "monomersPerKuhnSegment" to peg.monomersPerKuhnSegment.toString(),
+            "monomersPerKuhnSegment" to peg.monomersPerKuhnSegment.roundedForProse().toString(),
             "contourDiffusion" to (peg.kuhnLength * peg.kuhnLength /
-                    (6.0 * peg.monomersPerKuhnSegment)).toString(),
+                    (6.0 * peg.monomersPerKuhnSegment)).roundedForProse().toString(),
             "contourDiffusionMeaning" to "b^2/(6 n_K) in nm^2 per monomer, so that <R^2> = " +
                     "6 D N = N_K b^2 exactly — the Edwards diffusion coefficient written on the " +
                     "MEASURED Kuhn parameters of C-0002",

@@ -26,7 +26,7 @@
         "graftingDensity": "0.024 nm^-2",
         "lowSalt": "0.5 mM MgCl2",
         "highSalt": "2.0 mM MgCl2",
-        "mandatedSecant": "33.333333333333336 pN/nm",
+        "mandatedSecant": "33.3333333 pN/nm",
         "recommendedTangentMinimum": "30.028762 pN/nm (C-0069's Q5 over [0, 3 nm])",
         "emittedFieldSlack": "1.0E-6",
         "inputs": "T-3, T-2, T-16, T-4, T-25, T-76, T-149"
@@ -721,7 +721,7 @@
     "findings": {
         "the count": "six named routes: 1 withdrawn, 2 transfers, 3 independent survivors",
         "the cheap bound - C-0016 against C-0012": "T-2's biasClauses carry T-3's own biasForHundredPiconewtonBlocking at 15 of 15 states, worst departure 0.0. The binding clause at 10 nm is literally 'force' at every buffer",
-        "the cheap bound - C-0027 against C-0017 and C-0018": "T-25's bufferComparison carries T-16's stabilityMargin extrema and T-4's coupled margin extrema at 20 of 20 comparisons, worst departure 2.660432130619297E-8 - which is T-25 printing eight significant digits where T-16 prints nine",
+        "the cheap bound - C-0027 against C-0017 and C-0018": "T-25's bufferComparison carries T-16's stabilityMargin extrema and T-4's coupled margin extrema at 20 of 20 comparisons, worst departure 2.7E-8 - which is T-25 printing eight significant digits where T-16 prints nine",
         "the stability floor does not move and the margin does": "|k_eff| at the held gap is 3.8557-15.9409 pN/nm at 0.5 mM against 23.4145-27.9132 at 2 mM - element-independent, so Q5 changes nothing about it. The MARGIN moves, because stability is owed on the tangent: 30.028762 rather than 33.333333 pN/nm, so C-0017's 2.0911-8.6452 becomes 1.8838-7.7882 and its 1.1942-1.4236 becomes 1.0758-1.2825. The RATIO between the buffers is invariant under that rescaling",
         "the force clause is quoted at a stroke the device does not occupy": "C-0012's 4.9656x is the bias ratio for 100 pN of BLOCKING force, i.e. at zero stroke. At the held operating point the device sits at - L0 - 3 nm, 100 pN delivered - the same clause is 1.4823-1.5703 x, an overstatement of 3.1621-3.3499. Same discipline as quoting a stiffness with its compression",
         "C-0018's ground is void and its conclusion is not": "'0.5 mM removes the fold entirely' cannot be true of an element that has no fold at 2 mM. On Q5 the comparison is a bias margin of 1.8706 against 1.3877, a factor of 1.3480 - a quantified preference, and a stronger one than the affine line's 1.2826, on a different ground",

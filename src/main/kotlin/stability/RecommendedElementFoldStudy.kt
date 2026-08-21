@@ -55,6 +55,7 @@ import com.xemantic.nano.plentyofroom.electrostatics.thermalVoltage
 import com.xemantic.nano.plentyofroom.electrostatics.uniformMedium
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -495,10 +496,10 @@ fun main() {
         runParameters = mapOf(
             "temperature" to ROOM_TEMPERATURE.toString(),
             "thermalEnergy" to thermalEnergy().toString(),
-            "bjerrumLength" to lb.toString(),
+            "bjerrumLength" to lb.roundedForProse().toString(),
             "footprintArea" to FOOTPRINT.toString(),
-            "manningSurvivingFraction" to surviving.toString(),
-            "nominalTileChargeDensity" to tileCharge.toString(),
+            "manningSurvivingFraction" to surviving.roundedForProse().toString(),
+            "nominalTileChargeDensity" to tileCharge.roundedForProse().toString(),
             "sternCapacitance" to STERN_CAPACITANCE.toString(),
             "meshNodes" to MESH_NODES.toString(),
             "layerHeights" to DESIGN_POINTS.map { it.first }.toString(),
@@ -507,14 +508,14 @@ fun main() {
             "recommendedLayerHeight" to RECOMMENDED_LAYER_HEIGHT.toString(),
             "loadLines" to listOf(mandate.name, recommended.name).toString(),
             "pathCount" to GEN1_RECOMMENDED_PATH_COUNT.toString(),
-            "armRootStiffness" to GEN1_ARM_ROOT_STIFFNESS.toString(),
-            "armTipStiffness" to GEN1_ARM_TIP_STIFFNESS.toString(),
-            "armLength" to recommended.length.toString(),
+            "armRootStiffness" to GEN1_ARM_ROOT_STIFFNESS.roundedForProse().toString(),
+            "armTipStiffness" to GEN1_ARM_TIP_STIFFNESS.roundedForProse().toString(),
+            "armLength" to recommended.length.roundedForProse().toString(),
             "duplexBendingRigidity" to Gen1Tile.DUPLEX_BENDING_RIGIDITY.toString(),
             "targetForce" to GEN1_TARGET_FORCE.toString(),
             "acceptableStroke" to GEN1_ACCEPTABLE_STROKE.toString(),
-            "mandatedCouplingStiffness" to GEN1_MANDATE_STIFFNESS.toString(),
-            "elementStrokeCeiling" to elementCeiling.toString(),
+            "mandatedCouplingStiffness" to GEN1_MANDATE_STIFFNESS.roundedForProse().toString(),
+            "elementStrokeCeiling" to elementCeiling.roundedForProse().toString(),
             "elementCeilingSafety" to ELEMENT_CEILING_SAFETY.toString(),
             "concentratedCrossover" to CONCENTRATED_CROSSOVER.toString(),
             "trustedBiasCeiling" to TRUSTED_BIAS_CEILING.toString(),
@@ -922,11 +923,11 @@ private fun upstreamChecks(
         if (rows.isNotEmpty()) {
             add(
                 "C-0017 stability floor |k_eff(3 nm)| at 10 nm, six-model minimum [pN/nm]",
-                "$concentration mM", rows.min(), bracket.first, "C-0017"
+                "${concentration.roundedForProse()} mM", rows.min(), bracket.first, "C-0017"
             )
             add(
                 "C-0017 stability floor |k_eff(3 nm)| at 10 nm, six-model maximum [pN/nm]",
-                "$concentration mM", rows.max(), bracket.second, "C-0017"
+                "${concentration.roundedForProse()} mM", rows.max(), bracket.second, "C-0017"
             )
         }
     }

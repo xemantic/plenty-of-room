@@ -44,6 +44,7 @@ import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PointSupport
 import com.xemantic.nano.plentyofroom.structure.PressureField
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
 import com.xemantic.nano.plentyofroom.synthesis.perPathSecantCeiling
 import com.xemantic.nano.plentyofroom.thermalEnergy
@@ -1327,7 +1328,7 @@ fun main() {
             "scatterScan" to "190 intervals over [0, 0.95], then bisection on the bracket width"
         ),
         citedInputs = mapOf(
-            "C-0017 mandate" to "$T122_MANDATE pN/nm = 100 pN / 3 nm",
+            "C-0017 mandate" to "${T122_MANDATE.roundedForProse()} pN/nm = 100 pN / 3 nm",
             "C-0058 two levels" to "re-derived here from its own rim x 5 rule, not tabulated",
             "rise per base pair" to "$RISE nm — CITED, MEASURED (Douglas et al. 2009)",
             "ssDNA contour per nucleotide" to
@@ -1337,7 +1338,8 @@ fun main() {
                     "${SsDnaTether.KUHN_LENGTH_ZERO_FORCE} nm — CITED, MEASURED, zero-force end",
             "duplex EI" to "$EI pN*nm^2 — a CanDo MODEL INPUT, not a measurement",
             "crossover hinge k_theta" to
-                    "${Gen1Tile.crossoverHingeStiffness()} pN*nm/rad — CITED, FITTED (Chen 2014)",
+                    "${Gen1Tile.crossoverHingeStiffness().roundedForProse()} pN*nm/rad — " +
+                            "CITED, FITTED (Chen 2014)",
             "C-0006/CH-0029 unzip allowable" to "${Gen1Tile.DUPLEX_UNZIP_ALLOWABLE} pN per path",
             "C-0026 scatter sensitivity" to
                     "$T122_SCATTER_SENSITIVITY pN per unit relative amplitude, break-even " +

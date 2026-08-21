@@ -17,6 +17,7 @@
 package com.xemantic.nano.plentyofroom.anchoring
 
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -646,7 +647,7 @@ fun main() {
             "verdict grid" to "$VERDICT_GRID torsion steps, $VERDICT_REFINEMENTS refinements " +
                     "— C-0057's own",
             "rigidities" to "CanDo EI = ${Gen1Tile.DUPLEX_BENDING_RIGIDITY} pN nm^2 and Fields " +
-                    "et al.'s implied $FIELDS_BENDING_RIGIDITY pN nm^2",
+                    "et al.'s implied ${FIELDS_BENDING_RIGIDITY.roundedForProse()} pN nm^2",
             "units" to "nm, pN, pN nm, pN/nm, k_BT = 4.141947 pN nm"
         ),
         bounds = bounds,

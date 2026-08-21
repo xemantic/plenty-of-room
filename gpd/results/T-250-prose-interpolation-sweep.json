@@ -1,0 +1,587 @@
+{
+  "task": "T-250 \u2014 the 46 other result files whose PROSE carries an unrounded Double, and the promotion of the census from an audit to a gate",
+  "leaf": "none \u2014 a process claim protecting the machine-readable artifact of every leaf",
+  "verificationType": "logical (a shape census over the committed corpus, an offline movement classification against git HEAD, a staleness identity measured token by token, mutation coverage of the predicate AND of the promotion) + in-silico (47 studies re-emitted through one snapshot in one topological sort)",
+  "conditions": "The tree at HEAD of iteration 37 plus this iteration's edits. Units unchanged and untouched: nm, pN, pN/nm, pN/nm^2 = 1 MPa exactly, k_BT = 4.141947 pN nm at 300 K, aqueous buffer with stated Mg2+. Nothing physical is computed and no physics may move; the movement-by-kind report is how that is checked.",
+  "conventions": [
+    "A defect is a decimal token carrying more than RESULT_SIGNIFICANT_DIGITS = 9 significant digits inside a STRING value of a committed result file. A number that went through JsonElement.roundedForResult cannot carry more, by construction, so every hit reached the file as text.",
+    "The repair is per CALL SITE \u2014 Double.roundedForProse(digits, floor) \u2014 because the serialisation boundary sees a sentence and not a number. Nine digits and the locked-units floor for a quantity; DEPARTURE_SIGNIFICANT_DIGITS = 2 and floor = 0.0 for a departure, because RESULT_ABSOLUTE_FLOOR is a claim in the locked units (P-18).",
+    "The staleness identity is taken on the VALUE and not on the text: Kotlin's Double.toString and Python's repr disagree about exponent spelling (8.755985E-4 against 0.0008755985) and that is a rendering, not a number.",
+    "require/check/println/error messages are deliberately left raw: full precision is exactly what a failed reproduction needs, and they never reach a file."
+  ],
+  "census": {
+    "baselineRef": "c979541e6964da094d1b8b5707b38a8ff073e339",
+    "beforeAtHead": {
+      "tokens": 778,
+      "stringFields": 708,
+      "files": 47,
+      "pointerSites": 178,
+      "scanned": 144
+    },
+    "beforeAtHeadUnderTheT249Guard": {
+      "tokens": 747,
+      "stringFields": 702,
+      "files": 47,
+      "pointerSites": 178,
+      "scanned": 144
+    },
+    "widenedGuardExtraTokens": 31,
+    "afterInTheWorkingTree": {
+      "tokens": 615,
+      "stringFields": 579,
+      "files": 37,
+      "pointerSites": 131,
+      "scanned": 146
+    }
+  },
+  "reemission": {
+    "files": 47,
+    "constraintsFromTheCensus": 38,
+    "order": [
+      [
+        "T-108",
+        "T-119",
+        "T-12",
+        "T-124",
+        "T-13",
+        "T-135",
+        "T-139",
+        "T-140",
+        "T-149",
+        "T-151",
+        "T-152",
+        "T-161",
+        "T-192",
+        "T-1c",
+        "T-1d",
+        "T-1e",
+        "T-217",
+        "T-23",
+        "T-230",
+        "T-246",
+        "T-3",
+        "T-30",
+        "T-3b",
+        "T-4",
+        "T-60",
+        "T-76",
+        "T-113",
+        "T-122",
+        "T-123",
+        "T-126",
+        "T-127",
+        "T-157",
+        "T-159",
+        "T-16",
+        "T-17",
+        "T-178",
+        "T-182",
+        "T-2",
+        "T-21",
+        "T-134",
+        "T-188",
+        "T-189",
+        "T-25",
+        "T-50",
+        "T-156",
+        "T-216",
+        "T-221"
+      ],
+      []
+    ]
+  },
+  "movementByKind": {
+    "files": 47,
+    "totals": {
+      "prose": 133,
+      "wording": 0,
+      "departure": 0,
+      "numeric": 0,
+      "boolean": 0,
+      "added": 0,
+      "removed": 0,
+      "movedTokens": 163,
+      "tokensExplained": 163,
+      "tokensUnexplained": 0,
+      "tokensBelowTheCensus": 18,
+      "tokenCountChanged": 0
+    },
+    "perFile": [
+      {
+        "file": "T-108-desired-stroke-reach.json",
+        "prose": 2,
+        "wording": 0,
+        "departure": 0,
+        "numeric": 0,
+        "boolean": 0,
+        "added": 0,
+        "removed": 0,
+        "movedTokens": 2,
+        "tokensExplained": 2,
+        "tokensUnexplained": 0,
+        "tokensBelowTheCensus": 0,
+        "tokenCountChanged": 0,
+        "unexplainedExamples": [],
+        "wordingExamples": [],
+        "numericExamples": []
+      },
+      {
+        "file": "T-119-unused-junction-site.json",
+        "prose": 2,
+        "wording": 0,
+        "departure": 0,
+        "numeric": 0,
+        "boolean": 0,
+        "added": 0,
+        "removed": 0,
+        "movedTokens": 2,
+        "tokensExplained": 2,
+        "tokensUnexplained": 0,
+        "tokensBelowTheCensus": 0,
+        "tokenCountChanged": 0,
+        "unexplainedExamples": [],
+        "wordingExamples": [],
+        "numericExamples": []
+      },
+      {
+        "file": "T-12-lateral-confinement.json",
+        "prose": 29,
+        "wording": 0,
+        "departure": 0,
+        "numeric": 0,
+        "boolean": 0,
+        "added": 0,
+        "removed": 0,
+        "movedTokens": 33,
+        "tokensExplained": 33,
+        "tokensUnexplained": 0,
+        "tokensBelowTheCensus": 6,
+        "tokenCountChanged": 0,
+        "unexplainedExamples": [],
+        "wordingExamples": [],
+        "numericExamples": []
+      },
+      {
+        "file": "T-124-torsion-feasible-routing.json",
+        "prose": 1,
+        "wording": 0,
+        "departure": 0,
+        "numeric": 0,
+        "boolean": 0,
+        "added": 0,
+        "removed": 0,
+        "movedTokens": 1,
+        "tokensExplained": 1,
+        "tokensUnexplained": 0,
+        "tokensBelowTheCensus": 0,
+        "tokenCountChanged": 0,
+        "unexplainedExamples": [],
+        "wordingExamples": [],
+        "numericExamples": []
+      },
+      {
+        "file": "T-13-zero-bias-resting-position.json",
+        "prose": 3,
+        "wording": 0,
+        "departure": 0,
+        "numeric": 0,
+        "boolean": 0,
+        "added": 0,
+        "removed": 0,
+        "movedTokens": 3,
+        "tokensExplained": 3,
+        "tokensUnexplained": 0,
+        "tokensBelowTheCensus": 0,
+        "tokenCountChanged": 0,
+        "unexplainedExamples": [],
+        "wordingExamples": [],
+        "numericExamples": []
+      },
+      {
+        "file": "T-135-output-element-recommendation.json",
+        "prose": 2,
+        "wording": 0,
+        "departure": 0,
+        "numeric": 0,
+        "boolean": 0,
+        "added": 0,
+        "removed": 0,
+        "movedTokens": 2,
+        "tokensExplained": 2,
+        "tokensUnexplained": 0,
+        "tokensBelowTheCensus": 0,
+        "tokenCountChanged": 0,
+        "unexplainedExamples": [],
+        "wordingExamples": [],
+        "numericExamples": []
+      },
+      {
+        "file": "T-139-duplex-pair-separation.json",
+        "prose": 18,
+        "wording": 0,
+        "departure": 0,
+        "numeric": 0,
+        "boolean": 0,
+        "added": 0,
+        "removed": 0,
+        "movedTokens": 25,
+        "tokensExplained": 25,
+        "tokensUnexplained": 0,
+        "tokensBelowTheCensus": 0,
+        "tokenCountChanged": 0,
+        "unexplainedExamples": [],
+        "wordingExamples": [],
+        "numericExamples": []
+      },
+      {
+        "file": "T-140-seam-weave-congruence.json",
+        "prose": 1,
+        "wording": 0,
+        "departure": 0,
+        "numeric": 0,
+        "boolean": 0,
+        "added": 0,
+        "removed": 0,
+        "movedTokens": 1,
+        "tokensExplained": 1,
+        "tokensUnexplained": 0,
+        "tokensBelowTheCensus": 0,
+        "tokenCountChanged": 0,
+        "unexplainedExamples": [],
+        "wordingExamples": [],
+        "numericExamples": []
+      },
+      {
+        "file": "T-149-recommended-element-fold.json",
+        "prose": 8,
+        "wording": 0,
+        "departure": 0,
+        "numeric": 0,
+        "boolean": 0,
+        "added": 0,
+        "removed": 0,
+        "movedTokens": 8,
+        "tokensExplained": 8,
+        "tokensUnexplained": 0,
+        "tokensBelowTheCensus": 0,
+        "tokenCountChanged": 0,
+        "unexplainedExamples": [],
+        "wordingExamples": [],
+        "numericExamples": []
+      },
+      {
+        "file": "T-151-scaffold-routing.json",
+        "prose": 2,
+        "wording": 0,
+        "departure": 0,
+        "numeric": 0,
+        "boolean": 0,
+        "added": 0,
+        "removed": 0,
+        "movedTokens": 2,
+        "tokensExplained": 2,
+        "tokensUnexplained": 0,
+        "tokensBelowTheCensus": 0,
+        "tokenCountChanged": 0,
+        "unexplainedExamples": [],
+        "wordingExamples": [],
+        "numericExamples": []
+      },
+      {
+        "file": "T-152-collinear-clearance.json",
+        "prose": 13,
+        "wording": 0,
+        "departure": 0,
+        "numeric": 0,
+        "boolean": 0,
+        "added": 0,
+        "removed": 0,
+        "movedTokens": 30,
+        "tokensExplained": 30,
+        "tokensUnexplained": 0,
+        "tokensBelowTheCensus": 12,
+        "tokenCountChanged": 0,
+        "unexplainedExamples": [],
+        "wordingExamples": [],
+        "numericExamples": []
+      },
+      {
+        "file": "T-161-row-end-crossover.json",
+        "prose": 1,
+        "wording": 0,
+        "departure": 0,
+        "numeric": 0,
+        "boolean": 0,
+        "added": 0,
+        "removed": 0,
+        "movedTokens": 2,
+        "tokensExplained": 2,
+        "tokensUnexplained": 0,
+        "tokensBelowTheCensus": 0,
+        "tokenCountChanged": 0,
+        "unexplainedExamples": [],
+        "wordingExamples": [],
+        "numericExamples": []
+      },
+      {
+        "file": "T-192-device-b-tall-gap.json",
+        "prose": 48,
+        "wording": 0,
+        "departure": 0,
+        "numeric": 0,
+        "boolean": 0,
+        "added": 0,
+        "removed": 0,
+        "movedTokens": 49,
+        "tokensExplained": 49,
+        "tokensUnexplained": 0,
+        "tokensBelowTheCensus": 0,
+        "tokenCountChanged": 0,
+        "unexplainedExamples": [],
+        "wordingExamples": [],
+        "numericExamples": []
+      },
+      {
+        "file": "T-1c-crossover-valid-layer-response.json",
+        "prose": 3,
+        "wording": 0,
+        "departure": 0,
+        "numeric": 0,
+        "boolean": 0,
+        "added": 0,
+        "removed": 0,
+        "movedTokens": 3,
+        "tokensExplained": 3,
+        "tokensUnexplained": 0,
+        "tokensBelowTheCensus": 0,
+        "tokenCountChanged": 0,
+        "unexplainedExamples": [],
+        "wordingExamples": [],
+        "numericExamples": []
+      }
+    ]
+  },
+  "residue": {
+    "siteClassesAtTheBaseline": {
+      "sites": 178,
+      "bareNumberStrings": 98,
+      "sentences": 80
+    },
+    "bareNumberStringLeaves": {
+      "leaves": 2096,
+      "files": 76,
+      "scanned": 144
+    },
+    "stringTypedNumericChannels": {
+      "literalKeyReads": 54,
+      "keysAlsoEmittedAsAString": 7,
+      "keys": [
+        "armLength",
+        "compositeFraction",
+        "edgeX",
+        "freeStrokeBuildable",
+        "minimalAzimuthalDepartureDegrees",
+        "recommendedAxialExtentBasePairs",
+        "value"
+      ]
+    },
+    "filesTheWidenedGuardAdded": [],
+    "widenedGuardExtraFiles": 4,
+    "t249GuardNamedTestsFailed": 4
+  },
+  "gate": {
+    "line": "tools/check-result-file-hygiene.py --prose",
+    "wasAnAuditIn": "T-249",
+    "isAGate": true,
+    "allowlistEntries": 1,
+    "allowlistIsTokenLevel": true,
+    "allowlistedFiles": [
+      "T-249-unrounded-prose-interpolations.json"
+    ],
+    "selfTests": 134
+  },
+  "mutationCoverage": {
+    "predicate": {
+      "mutations": 11,
+      "namedTests": 35,
+      "rowsReachedBySomeMutation": 34,
+      "mutationsPassingEveryTest": 0,
+      "perMutation": [
+        {
+          "mutation": "threshold widened to six digits",
+          "namedTestsFailed": 2
+        },
+        {
+          "mutation": "threshold narrowed to seventeen digits",
+          "namedTestsFailed": 20
+        },
+        {
+          "mutation": "the leading lookaround dropped",
+          "namedTestsFailed": 6
+        },
+        {
+          "mutation": "the trailing word guard dropped",
+          "namedTestsFailed": 1
+        },
+        {
+          "mutation": "the dotted-token guard dropped",
+          "namedTestsFailed": 5
+        },
+        {
+          "mutation": "the symmetric trailing guard of the FIRST DRAFT restored",
+          "namedTestsFailed": 6
+        },
+        {
+          "mutation": "T-249's own `(?!\\w)` trailing guard restored",
+          "namedTestsFailed": 4
+        },
+        {
+          "mutation": "bare integers matched as well",
+          "namedTestsFailed": 5
+        },
+        {
+          "mutation": "no digit threshold at all",
+          "namedTestsFailed": 8
+        },
+        {
+          "mutation": "a naive digit-run pattern, no guards and no threshold",
+          "namedTestsFailed": 24
+        },
+        {
+          "mutation": "character count instead of significant digits",
+          "namedTestsFailed": 3
+        }
+      ]
+    },
+    "promotion": {
+      "mutations": 8,
+      "namedTests": 8,
+      "rowsReachedBySomeMutation": 7,
+      "mutationsPassingEveryTest": 0,
+      "perMutation": [
+        {
+          "mutation": "the AUDIT-ONLY exit policy of T-249 restored",
+          "direction": "narrowing",
+          "namedTestsFailed": 1
+        },
+        {
+          "mutation": "the gate applied under --census as well",
+          "direction": "widening",
+          "namedTestsFailed": 1
+        },
+        {
+          "mutation": "any run fails, defects or not",
+          "direction": "widening",
+          "namedTestsFailed": 1
+        },
+        {
+          "mutation": "a single defect treated as noise",
+          "direction": "narrowing",
+          "namedTestsFailed": 1
+        },
+        {
+          "mutation": "a per-FILE allowlist, the shape --conversions uses",
+          "direction": "widening",
+          "namedTestsFailed": 1
+        },
+        {
+          "mutation": "the token exempted in any file",
+          "direction": "widening",
+          "namedTestsFailed": 2
+        },
+        {
+          "mutation": "no allowlist at all",
+          "direction": "narrowing",
+          "namedTestsFailed": 1
+        },
+        {
+          "mutation": "the conversions allowlist reused for prose",
+          "direction": "widening",
+          "namedTestsFailed": 1
+        }
+      ]
+    }
+  },
+  "predicates": [
+    {
+      "id": "P1",
+      "statement": "the census is re-run over the committed corpus before any repair",
+      "met": true,
+      "evidence": "778 tokens in 708 string fields at 178 JSON pointer sites in 47 of 144 committed files"
+    },
+    {
+      "id": "P2",
+      "statement": "every affected file is repaired at its source call sites and re-emitted",
+      "met": false,
+      "evidence": "47 files re-emitted; the census now reads 615 tokens in 37 files"
+    },
+    {
+      "id": "P3",
+      "statement": "the order is reemission-order.py's topological sort and its constraint count is asserted non-zero",
+      "met": true,
+      "evidence": "38 dependency constraints inside the set, derived from the reader census rather than typed"
+    },
+    {
+      "id": "P4",
+      "statement": "what moved is reported by kind against each file's committed version",
+      "met": true,
+      "evidence": "prose=133, wording=0, departure=0, numeric=0, boolean=0, added=0, removed=0"
+    },
+    {
+      "id": "P5",
+      "statement": "nothing is stale, as an identity: every moved prose token is exactly the rounding its own call site declares",
+      "met": true,
+      "evidence": "163 of 163 moved tokens explained, 0 unexplained"
+    },
+    {
+      "id": "P6",
+      "statement": "the --prose line reads 0 in 0 and is promoted to a gate",
+      "met": false,
+      "evidence": "615 tokens in 37 files; PROSE_IS_A_GATE = True; wired in tools/verify.sh"
+    },
+    {
+      "id": "P7",
+      "statement": "the promotion is mutation-tested in both directions",
+      "met": true,
+      "evidence": "8 mutations over 8 named tests, 0 passing every one, 7 of 8 rows reached; the predicate separately at 11/35/0"
+    }
+  ],
+  "falsifiers": [
+    {
+      "id": "F1",
+      "statement": "a re-emission moves a numeric field, a boolean or a verdict",
+      "fired": false,
+      "outcome": "133 prose fields moved; 0 numeric, 0 boolean, 0 wording, 0 departure, 0 added, 0 removed"
+    },
+    {
+      "id": "F2",
+      "statement": "a moved prose token is NOT the rounding its call site declares",
+      "fired": false,
+      "outcome": "0 of 163 unexplained"
+    },
+    {
+      "id": "F3",
+      "statement": "a repaired file still carries a token",
+      "fired": true,
+      "outcome": "615 tokens in 37 files after the sweep"
+    },
+    {
+      "id": "F4",
+      "statement": "reemission-order.py reports zero dependency constraints",
+      "fired": false,
+      "outcome": "38 constraints over 47 files"
+    },
+    {
+      "id": "F5",
+      "statement": "a mutation of the promoted gate passes every named test",
+      "fired": false,
+      "outcome": "0 of 8 pass every named test"
+    },
+    {
+      "id": "F6",
+      "statement": "the widened trailing guard costs a file the sweep did not already own",
+      "fired": false,
+      "outcome": "31 extra tokens, all in files already in the sweep"
+    }
+  ]
+}

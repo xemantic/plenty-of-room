@@ -22,6 +22,7 @@ import com.xemantic.nano.plentyofroom.structure.OrthotropicPlate
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.edgeTaperedPressure
 import com.xemantic.nano.plentyofroom.structure.gen1SheetVariants
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
 import com.xemantic.nano.plentyofroom.thermalEnergy
@@ -632,7 +633,7 @@ private fun convergencePoints(charge: Double): List<EdgeConvergencePoint> {
     for (rim in listOf(0.0, charge)) {
         val solver = solverFor(2.0, 10.0, 2)
         records += convergenceRecord(
-            "rim charge", "sigma_rim = $rim e/nm^2",
+            "rim charge", "sigma_rim = ${rim.roundedForProse()} e/nm^2",
             solver.height.size * solver.lateral.size,
             solver.solve(diffuse / thermalVoltage(), charge, rimChargeDensity = rim)
         )

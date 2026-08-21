@@ -10,7 +10,7 @@
         "chord convention": "chord azimuth = standoff azimuth + groove/2 + pi/2; the flexure axis is pi/2; misalignment folded into [0, pi/2] because a chord is a line",
         "search grid": "60 torsion steps, 4 refinements",
         "verdict grid": "180 torsion steps, 6 refinements — C-0057's own",
-        "rigidities": "CanDo EI = 230.0 pN nm^2 and Fields et al.'s implied 172.9062311567061 pN nm^2",
+        "rigidities": "CanDo EI = 230.0 pN nm^2 and Fields et al.'s implied 172.906231 pN nm^2",
         "units": "nm, pN, pN nm, pN/nm, k_BT = 4.141947 pN nm"
     },
     "bounds": [

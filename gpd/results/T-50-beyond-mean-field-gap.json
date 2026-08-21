@@ -41,9 +41,9 @@
     ],
     "runParameters": {
         "temperature": "300.0",
-        "bjerrumLength": "0.7141066106764419",
-        "tileChargeDensity": "-0.3986652379247042",
-        "manningSurvivingFraction": "0.11902984614507801",
+        "bjerrumLength": "0.714106611",
+        "tileChargeDensity": "-0.398665238",
+        "manningSurvivingFraction": "0.119029846",
         "footprintArea": "1600.0",
         "sternCapacitance": "20.0",
         "gapMeshNodes": "4000",
@@ -51,13 +51,13 @@
         "operatingGap": "7.0",
         "operatingBuffer": "2.0",
         "channelBias": "0.155",
-        "mandatedCouplingStiffness": "33.333333333333336",
-        "levelMultipliers": "0.3184713375796178, 0.4484304932735426, 1.0, 2.23, 3.14",
+        "mandatedCouplingStiffness": "33.3333333",
+        "levelMultipliers": "0.318471338, 0.448430493, 1.0, 2.23, 3.14",
         "chargeFactors": "0.25, 0.5, 1.0, 2.0, 4.0",
         "channelGaps": "5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0",
         "differenceSteps": "0.25, 0.5, 1.0",
-        "gouyChapmanLength": "0.11902984614507801",
-        "couplingParameter": "23.99756477231978"
+        "gouyChapmanLength": "0.119029846",
+        "couplingParameter": "23.9975648"
     },
     "thresholds": [
         {
@@ -4352,7 +4352,7 @@
         },
         {
             "name": "Kanduc et al. Eq. (64), weak-coupling validity, Xi < D/mu / ln(D/mu)",
-            "reading": "at the BARE duplex wall, mu_GC = 0.11902984614507801 nm, 7 nm gap",
+            "reading": "at the BARE duplex wall, mu_GC = 0.119029846 nm, 7 nm gap",
             "quantity": 23.9975648,
             "bound": 14.4341132,
             "satisfied": false,

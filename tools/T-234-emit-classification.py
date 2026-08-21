@@ -89,6 +89,15 @@ CORRECTING = {
     "gpd/claims/C-0151-closing-raster-selection.md",
     "gpd/claims/C-0152-forced-scaffold-crossover-price.md",
     "gpd/claims/C-0153-unrounded-prose-interpolations.md",
+    # Iteration 38, and CH-0182 for the SIXTH consecutive iteration. C-0154 builds the honeycomb
+    # grillage T-253 asked for, and BOTH of its flags are the two false positives the note above
+    # names rather than a superseded premise: its `112 bp` is C-0146's restored ROW SPAN (the same
+    # false positive as C-0148's), and its "single-layer square-lattice" is a live, correct
+    # statement about the COUPLED CELLS of C-0142/C-0146/C-0151, which are still smeared
+    # single-layer square-lattice solves -- the half C-0141 did NOT discharge and which C-0154
+    # itself now supplies the replacement for. Registering the file hides them rather than fixing
+    # the predicate; T-260 is the fix and T-263 is the port that would make the sentence stale.
+    "gpd/claims/C-0154-honeycomb-grillage.md",
 }
 #: Synthesis claims: an occurrence there records what a past deliverable pass carried in.
 SYNTHESIS = {

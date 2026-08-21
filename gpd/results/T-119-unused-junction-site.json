@@ -7,10 +7,10 @@
         "sheet": "single-layer square-lattice Rothemund, 15 duplexes at 2.69 nm",
         "edgeX": "40.0 nm",
         "risePerBasePair": "0.34 nm",
-        "designedTwist": "10.666666666666666 bp/turn (33.75 deg/bp)",
+        "designedTwist": "10.6666667 bp/turn (33.75 deg/bp)",
         "preferredTwist": "10.5 bp/turn",
         "crossoverPlaneSpacing": "8 bp",
-        "arm": "C-0039's E5a1, placed at the mandate 33.333333333333336 pN/nm at 3.0 nm"
+        "arm": "C-0039's E5a1, placed at the mandate 33.3333333 pN/nm at 3.0 nm"
     },
     "cheapBounds": [
         {

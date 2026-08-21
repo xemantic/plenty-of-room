@@ -19,6 +19,7 @@ package com.xemantic.nano.plentyofroom.anchoring
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -454,8 +455,8 @@ fun main() {
             "the readings recomputed from C-0090's result file differ from its published " +
                     "0.0621469105 and 0.168371808",
             false,
-            "recomputed: ${verdict.dishingOverStroke} admitted and " +
-                    "${verdict.rejectedDishingOverStroke} refused, at phase " +
+            "recomputed: ${verdict.dishingOverStroke.roundedForProse()} admitted and " +
+                    "${verdict.rejectedDishingOverStroke.roundedForProse()} refused, at phase " +
                     "${verdict.phaseBasePairs}"
         ),
         T161Falsifier(
@@ -517,10 +518,10 @@ fun main() {
                 "between any two staple bases or between any two scaffold bases'; scadnano's " +
                 "API states that 'an xover is necessarily at an enpoint of a strand'; and " +
                 "cadnano 2.1 AUTOMATES the raster turn.",
-        "THE PROGRAMME SHOULD CARRY ${verdict.dishingOverStroke}, NOT " +
-                "${verdict.rejectedAtSamePhase} — a factor of ${verdict.ratioAtSamePhase} at " +
-                "C-0090's own phase 8, and ${verdict.ratio} against the best refused reading " +
-                "anywhere (${verdict.rejectedDishingOverStroke}, at phase 24; the two framings " +
+        "THE PROGRAMME SHOULD CARRY ${verdict.dishingOverStroke.roundedForProse()}, NOT " +
+                "${verdict.rejectedAtSamePhase.roundedForProse()} — a factor of ${verdict.ratioAtSamePhase.roundedForProse()} at " +
+                "C-0090's own phase 8, and ${verdict.ratio.roundedForProse()} against the best refused reading " +
+                "anywhere (${verdict.rejectedDishingOverStroke.roundedForProse()}, at phase 24; the two framings " +
                 "differ and neither may be quoted as the other) — so the 38.08 nm tile is " +
                 "INSIDE T-5b's ${FLATNESS_CONVENTION} and is " +
                 "${if (verdict.dishingOverStroke < nominal) "FLATTER" else "worse"} than " +

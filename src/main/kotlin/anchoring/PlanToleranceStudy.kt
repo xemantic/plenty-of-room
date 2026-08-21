@@ -23,12 +23,14 @@ import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_SIGNIFICANT_DIGITS
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PointSupport
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
 import com.xemantic.nano.plentyofroom.thermalEnergy
@@ -781,7 +783,8 @@ fun main() {
             "zero", 0.0, 0.0,
             "at the weave maximum the margin is NEGATIVE and the element does not place at all; " +
                     "at the weave minimum it is " +
-                    "${planMargin(pitch, weaveMinimum, arm)} nm. The measured weave brackets " +
+                    "${planMargin(pitch, weaveMinimum, arm).roundedForProse()} nm. The " +
+                    "measured weave brackets " +
                     "the verdict from comfortable to impossible, and the plan model samples " +
                     "neither end"
         ),
@@ -1050,7 +1053,8 @@ fun main() {
                     abs((rowOfThreeLengthCeiling(pitch, width) - arm) - ((pitch - arm) - width)) <
                     1.0e-12,
             "both group pitch - width - length; the two groupings agree to " +
-                    "${abs((rowOfThreeLengthCeiling(pitch, width) - arm) - ((pitch - arm) - width))} nm"
+                    "${abs((rowOfThreeLengthCeiling(pitch, width) - arm) - ((pitch - arm) - width))
+                        .roundedForProse(DEPARTURE_SIGNIFICANT_DIGITS, floor = 0.0)} nm"
         ),
         T134PredicateRecord(
             "P2",
@@ -1065,8 +1069,8 @@ fun main() {
                     "coefficients differ by a factor this task measures",
             RiseCorrelation.entries.size >= 3 &&
                     (opposedThreshold > 0.0 && commonThreshold / opposedThreshold > 2.0),
-            "common-mode ${commonThreshold} against opposed ${opposedThreshold} — a factor of " +
-                    "${commonThreshold / opposedThreshold}"
+            "common-mode ${(commonThreshold).roundedForProse()} against opposed ${(opposedThreshold).roundedForProse()} — a factor of " +
+                    "${(commonThreshold / opposedThreshold).roundedForProse()}"
         ),
         T134PredicateRecord(
             "P4",
@@ -1081,8 +1085,8 @@ fun main() {
             "a design with margin is delivered, or the statement that none exists",
             marginDesign != null,
             marginDesign?.let {
-                "${it.paths} paths leave ${it.margin} nm — ${it.marginOverRise} base-pair " +
-                        "rises — but it is NOT flat: ${flatness[2].dishingOverStroke} of the " +
+                "${it.paths} paths leave ${it.margin.roundedForProse()} nm — ${it.marginOverRise.roundedForProse()} base-pair " +
+                        "rises — but it is NOT flat: ${(flatness[2].dishingOverStroke).roundedForProse()} of the " +
                         "free stroke against T-5b's $FLATNESS_TOLERANCE, so the margin and the " +
                         "flatness are bought from the same four arms"
             } ?: "no path count on this lattice leaves a margin above one base-pair rise"
@@ -1100,59 +1104,67 @@ fun main() {
     val findings = listOf(
         "THE MEASUREMENT EXISTS, IT IS IN A SUPPLEMENTARY TABLE NOBODY QUOTES, AND IT IS " +
                 "FAR WIDER THAN THE MARGIN. Fischer et al. (2016) fit a lattice-constant width " +
-                "of ${sheetLatticeWidth} nm on a ${sheetLatticeMean} nm mean for the " +
-                "SINGLE-LAYER sheet — ${100.0 * sheetLatticeWidth / sheetLatticeMean} % " +
-                "relative, ${sheetLatticeWidth / margin}x the margin in absolute terms and " +
-                "${(sheetLatticeWidth / sheetLatticeMean) / commonThresholdForLiterature}x this " +
+                "of ${sheetLatticeWidth.roundedForProse()} nm on a " +
+                "${sheetLatticeMean.roundedForProse()} nm mean for the " +
+                "SINGLE-LAYER sheet — " +
+                "${(100.0 * sheetLatticeWidth / sheetLatticeMean).roundedForProse()} % " +
+                "relative, ${(sheetLatticeWidth / margin).roundedForProse()}x the margin in " +
+                "absolute terms and " +
+                "${((sheetLatticeWidth / sheetLatticeMean) / commonThresholdForLiterature)
+                    .roundedForProse()}x this " +
                 "claim's LOOSEST relative threshold — while the main text quotes only the peak " +
                 "POSITION with its fit uncertainty, which is the error on the mean and is 20x " +
                 "smaller. The same paper's multilayer brick is 3.1x better ordered. Falsifier " +
                 "F5 fired in the direction that reinforces the verdict rather than the one that " +
                 "would have overturned it.",
         "THE 2.69 nm IS A BRAGG LATTICE CONSTANT AND NOT A LOCAL DISTANCE. Bai et al. (2012) " +
-                "measure the midpoints of neighbouring duplexes moving from ${weaveMinimum} nm " +
-                "at a crossover to ${weaveMaximum} nm midway — a DETERMINISTIC sawtooth, " +
+                "measure the midpoints of neighbouring duplexes moving from ${(weaveMinimum).roundedForProse()} nm " +
+                "at a crossover to ${(weaveMaximum).roundedForProse()} nm midway — a DETERMINISTIC sawtooth, " +
                 "confirmed by all-atom MD and by oxDNA on a 2D tile, whose amplitude is " +
-                "${(weaveMaximum - weaveMinimum) / margin}x the margin. Read through the plan " +
-                "model the two ends give ${planMargin(pitch, weaveMinimum, arm)} nm and " +
-                "${planMargin(pitch, weaveMaximum, arm)} nm, so the measured weave brackets the " +
+                "${((weaveMaximum - weaveMinimum) / margin).roundedForProse()}x the margin. Read through " +
+                "the plan " +
+                "model the two ends give ${(planMargin(pitch, weaveMinimum, arm)).roundedForProse()} nm and " +
+                "${(planMargin(pitch, weaveMaximum, arm)).roundedForProse()} nm, so the measured weave brackets the " +
                 "verdict from comfortable to impossible and the plan model samples neither end. " +
                 "The minimum is also INSIDE the 2.0 nm steric diameter this project asserts.",
         "T-45 IS ANSWERABLE FROM PUBLISHED MEASUREMENT, AND THE ANSWER IS THAT THE FLAT DESIGN " +
                 "FAILS ON IT. Strauss et al. (2018) map staple incorporation across all 168 " +
-                "staples of a Rothemund rectangle at ${straussEdgeIncorporation} on the edges " +
-                "to 0.95 in the centre, mean ${straussMeanIncorporation}. A missing staple " +
+                "staples of a Rothemund rectangle at ${(straussEdgeIncorporation).roundedForProse()} on the edges " +
+                "to 0.95 in the centre, mean ${(straussMeanIncorporation).roundedForProse()}. A missing staple " +
                 "removes a load path entirely, so the population is two-valued and the implied " +
                 "relative per-path stiffness scatter is " +
-                "${relativeScatterForDropoutRate(1.0 - straussMeanIncorporation)} — " +
-                "${relativeScatterForDropoutRate(1.0 - straussMeanIncorporation) / c0060Flatness}x " +
+                "${(relativeScatterForDropoutRate(1.0 - straussMeanIncorporation)).roundedForProse()} — " +
+                "${(relativeScatterForDropoutRate(1.0 - straussMeanIncorporation) / c0060Flatness).roundedForProse()}x " +
                 "C-0060's 34.6 % flatness threshold and " +
-                "${relativeScatterForDropoutRate(1.0 - straussMeanIncorporation) / c0026BreakEven}x " +
+                "${(relativeScatterForDropoutRate(1.0 - straussMeanIncorporation) / c0026BreakEven).roundedForProse()}x " +
                 "C-0026's break-even — and the same dropout is a " +
-                "${1.0 - straussMeanIncorporation} shortfall on C-0017's mandate, 2.9x the " +
+                "${(1.0 - straussMeanIncorporation).roundedForProse()} shortfall on C-0017's mandate, 2.9x the " +
                 "worst rounding placement error C-0060 treats as significant. The position " +
                 "dependence runs the wrong way for C-0058, which puts 34 of its 45 stations on " +
                 "the rim.",
         "THE TWO KNIFE EDGES ARE ONE QUANTITY. C-0069's arm margin and C-0066's tie clearance " +
-                "are both pitch - width - length = ${margin} nm; C-0069 groups it as a budget " +
+                "are both pitch - width - length = ${margin.roundedForProse()} nm; C-0069 groups it as a budget " +
                 "minus an arm and C-0066 as a gap minus a duplex, and the grouping is all that " +
                 "separates them. One scatter model settles both, which is what the task supposed " +
                 "and what nothing upstream had asserted.",
         "NO DISTRIBUTION IS NEEDED, BECAUSE FOUR FLOORS ALREADY EXCEED THE MARGIN. The " +
-                "base-pair rise is ${rise / margin}x it, the disagreement between two SAXS " +
-                "readings of the same lattice constant ${(SQUARE_LATTICE_INTERHELICAL - width) / margin}x, " +
+                "base-pair rise is ${(rise / margin).roundedForProse()}x it, the disagreement between " +
+                "two SAXS " +
+                "readings of the same lattice constant ${((SQUARE_LATTICE_INTERHELICAL - width) / margin).roundedForProse()}x, " +
                 "the thermal axial breathing of the two segments the margin differences " +
-                "${axialTotal / margin}x, and the arm tip's own bending at a PERFECTLY RIGID " +
-                "root ${tipCantilever / margin}x. The declared falsifier — a channel landing " +
+                "${(axialTotal / margin).roundedForProse()}x, and the arm tip's own bending at a " +
+                "PERFECTLY RIGID " +
+                "root ${(tipCantilever / margin).roundedForProse()}x. The declared falsifier — a " +
+                "channel landing " +
                 "inside 0.0256 nm — did not fire on any of them.",
         "THE MARGIN IS BELOW THE DESIGN QUANTUM, WHICH IS A STRONGER STATEMENT THAN 'SMALL'. " +
-                "0.0256 nm is ${margin / rise} of a base-pair rise: not merely inside the " +
+                "0.0256 nm is ${(margin / rise).roundedForProse()} of a base-pair rise: not merely inside the " +
                 "scatter, but below the finest length increment any DNA design can specify, so " +
                 "no correction can be applied to recover it even if the scatter were known.",
         "CORRELATION IS WORTH 7x AND THE SIGN IS NOT OBVIOUS. The rise enters twice — the " +
                 "host's 32 bp pitch and the element's 24 bp length — so a COMMON-mode strain " +
-                "carries the DIFFERENCE (8 bp, threshold ${commonThreshold} relative) and an " +
-                "OPPOSED one the SUM (56 bp, ${opposedThreshold}). The sensitivity has an exact " +
+                "carries the DIFFERENCE (8 bp, threshold ${(commonThreshold).roundedForProse()} relative) and an " +
+                "OPPOSED one the SUM (56 bp, ${(opposedThreshold).roundedForProse()}). The sensitivity has an exact " +
                 "null at a 4:3 differential strain and no build can reach it, because an arm " +
                 "and its host are the same molecule in the same buffer.",
         "THE TWIST DOES NOT PROPAGATE AT ALL. A crossover interface spacing is an integer " +
@@ -1161,21 +1173,22 @@ fun main() {
                 "plan margin. A quantity that cannot move the answer is worth reporting.",
         "T-45's SCATTER LIVES ON A DIFFERENT AXIS AND HAS REAL MARGIN. A relative rise scatter " +
                 "enters the per-path stiffness with exponent exactly 3, so the amplitude that " +
-                "destroys the PLAN margin (${commonThreshold} common mode) moves the stiffness " +
-                "by ${stiffnessScatterFromRise(commonThreshold)} — " +
-                "${stiffnessScatterFromRise(commonThreshold) / c0026BreakEven}x C-0026's " +
+                "destroys the PLAN margin (${(commonThreshold).roundedForProse()} common mode) moves the stiffness " +
+                "by ${(stiffnessScatterFromRise(commonThreshold)).roundedForProse()} — " +
+                "${(stiffnessScatterFromRise(commonThreshold) / c0026BreakEven).roundedForProse()}x " +
+                "C-0026's " +
                 "break-even. The knife edges and T-45 cannot be traded against each other.",
         "C-0026's AND C-0060's THRESHOLDS BECOME BUILD NUMBERS UNDER A DROPOUT MODEL. A staple " +
                 "is incorporated or it is not, so the honest population is two-valued: 17 % " +
-                "relative scatter is a ${dropoutRateForRelativeScatter(c0026BreakEven)} dropout " +
-                "rate and 34.6 % a ${dropoutRateForRelativeScatter(c0060Flatness)} one. That is " +
+                "relative scatter is a ${(dropoutRateForRelativeScatter(c0026BreakEven)).roundedForProse()} dropout " +
+                "rate and 34.6 % a ${(dropoutRateForRelativeScatter(c0060Flatness)).roundedForProse()} one. That is " +
                 "a translation onto a build-controllable variable, NOT an equivalence — C-0060 " +
                 "shows the pattern is worth 2.21x.",
         "THE KNIFE EDGE IS BOUGHT BY FOUR ARMS. C-0063's bound 1 forces four rows of three at " +
                 "34 paths, and a row of three is the only configuration in which two same-sense " +
                 "arms sit at the bare root pitch. Dissolving them — 34 paths to 30 — takes the " +
-                "ceiling from ${counts.first().ceiling} to " +
-                "${counts.first { it.paths == 30 }.ceiling} nm and the margin from ${margin} to " +
+                "ceiling from ${(counts.first().ceiling).roundedForProse()} to " +
+                "${counts.first { it.paths == 30 }.ceiling} nm and the margin from ${margin.roundedForProse()} to " +
                 "${counts.first { it.paths == 30 }.margin} nm, because the shorter path count " +
                 "also demands a shorter arm.",
         "C-0070's SEAT HAS NO THRESHOLD AT ALL, BECAUSE THE VERDICT IS NOT MONOTONE IN IT. Over " +
@@ -1187,9 +1200,9 @@ fun main() {
                 "a seat, and C-0070's 0.5 nm reading is one unlucky choice among several lucky " +
                 "ones.",
         "THE MARGIN AND THE FLATNESS ARE BOUGHT FROM THE SAME FOUR ARMS, AND THAT IS THE REAL " +
-                "TRADE. Dissolving the rows of three takes the plan margin from $margin to " +
+                "TRADE. Dissolving the rows of three takes the plan margin from ${margin.roundedForProse()} to " +
                 "${counts.first { it.paths == 30 }.margin} nm and the dishing from " +
-                "${flatness[1].dishingOverStroke} to ${flatness[2].dishingOverStroke} of the " +
+                "${(flatness[1].dishingOverStroke).roundedForProse()} to ${(flatness[2].dishingOverStroke).roundedForProse()} of the " +
                 "free stroke — through T-5b's 0.10 and out the other side. The reduction rule " +
                 "here is a PLAN rule and not a flatness optimisation, so that dishing is an " +
                 "UPPER bound on what a re-optimised 30-root placement would give; re-running " +
@@ -1197,9 +1210,9 @@ fun main() {
                 "names.",
         "AND THERE IS A SECOND ESCAPE THAT COSTS NO FLATNESS: SOFTEN A JOINT. The arm length is " +
                 "(c EI/k)^(1/3), so at 34 paths a margin of one base-pair rise is bought by a " +
-                "tip no stiffer than ${jointWindow[1].tipCeiling} pN nm/rad against C-0034's " +
-                "A2 at ${tipCouple}, or a root no stiffer than ${jointWindow[1].rootCeiling} " +
-                "against one crossover's ${hinge}. Both ceilings are BELOW what the design uses, " +
+                "tip no stiffer than ${(jointWindow[1].tipCeiling).roundedForProse()} pN nm/rad against C-0034's " +
+                "A2 at ${(tipCouple).roundedForProse()}, or a root no stiffer than ${(jointWindow[1].rootCeiling).roundedForProse()} " +
+                "against one crossover's ${(hinge).roundedForProse()}. Both ceilings are BELOW what the design uses, " +
                 "so the escape asks for a joint softer than the two the design already chose — " +
                 "which is a joint search this task does not run."
     )
@@ -1207,11 +1220,13 @@ fun main() {
     val result = T134Result(
         task = "T-134",
         leaf = "A8.2",
-        conditions = "T = 300 K, k_BT = ${kT} pN nm; aqueous 2 mM MgCl2; 40.0 x ${lengthY} nm " +
+        conditions = "T = 300 K, k_BT = ${kT.roundedForProse()} pN nm; aqueous 2 mM MgCl2; " +
+                "40.0 x ${lengthY.roundedForProse()} nm " +
                 "single-layer square-lattice Rothemund sheet, $DUPLEXES duplexes at the SAXS " +
                 "2.69 nm, 0.34 nm rise, 32 bp crossover interface spacing, crossover phase " +
                 "$PHASE; C-0063's 34 upward roots read from gpd/results/T-125-*.json; " +
-                "C-0017's ${MANDATE} pN/nm mandate as a SUM at the acceptable 3 nm stroke",
+                "C-0017's ${MANDATE.roundedForProse()} pN/nm mandate as a SUM at the " +
+                "acceptable 3 nm stroke",
         decision = "PASS — a tolerance model CAN be built, it settles both knife edges at once " +
                 "because they are ONE quantity, and the answer is that neither margin is " +
                 "quotable. Four floors, none of which needs a fabrication measurement, exceed " +
@@ -1292,10 +1307,10 @@ fun main() {
     println("  the margin: $margin nm (solved), $builtMargin nm (built at $armBasePairs bp)")
     println("  the four floors, over the margin: ${bounds.take(4).map { it.ratio }}")
     println("  common-mode rise threshold: $commonThreshold; opposed: $opposedThreshold")
-    println("  the design with margin: ${marginDesign?.paths} paths at ${marginDesign?.margin} nm")
+    println("  the design with margin: ${marginDesign?.paths} paths at ${marginDesign?.margin?.roundedForProse()} nm")
     println("  seats passing: $coarsePassing/${coarseSeats.size} coarse, " +
             "$finePassing/${fineSeats.size} fine; monotone: $seatMonotone")
-    println("  joint ceilings for a one-rise margin: tip ${jointWindow[1].tipCeiling}, " +
-            "root ${jointWindow[1].rootCeiling}")
+    println("  joint ceilings for a one-rise margin: tip ${(jointWindow[1].tipCeiling).roundedForProse()}, " +
+            "root ${(jointWindow[1].rootCeiling).roundedForProse()}")
     println("  flatness: " + flatness.map { it.stations to it.dishingOverStroke })
 }

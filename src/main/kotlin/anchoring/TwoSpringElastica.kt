@@ -17,6 +17,7 @@
 package com.xemantic.nano.plentyofroom.anchoring
 
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.cos
@@ -486,8 +487,13 @@ class TwoSpringElastica(
         axialForce: Double
     ): ElasticaState {
         require(displacement > 0.0) { "displacement must be positive, was: $displacement" }
+        // ROUNDED, deliberately, where every other `require` message in this repository is not
+        // (`C-0153` §5): this refusal is DESIGNED to be caught and catalogued -- `C-0092`'s
+        // branch taxonomy, `T-108`'s `catalogue[*].note` -- so it is a RESULT and not a
+        // diagnostic, and it reaches a committed result file as text.
         require(displacement < length) {
-            "an inextensible arm of $length nm cannot lift its tip $displacement nm"
+            "an inextensible arm of ${length.roundedForProse()} nm cannot lift its tip " +
+                    "${displacement.roundedForProse()} nm"
         }
         require(
             abs(axialForce) * length * length / bendingRigidity <= AXIAL_CONDITIONING_LIMIT
@@ -505,9 +511,11 @@ class TwoSpringElastica(
         while (reached == null) {
             steps++
             require(steps < CONTINUATION_STEPS) {
-                "the arm's small-rotation branch does not reach a stroke of $displacement nm: " +
-                        "the continuation reached $lowStroke nm at $lowForce pN on a $length nm " +
-                        "arm and exhausted its $CONTINUATION_STEPS force steps there"
+                "the arm's small-rotation branch does not reach a stroke of " +
+                        "${displacement.roundedForProse()} nm: the continuation reached " +
+                        "${lowStroke.roundedForProse()} nm at ${lowForce.roundedForProse()} pN " +
+                        "on a ${length.roundedForProse()} nm arm and exhausted its " +
+                        "$CONTINUATION_STEPS force steps there"
             }
             val point = branchPointAt(trial, axialForce, lowParameter)
             if (point == null || point.trace.displacement <= lowStroke) {
@@ -554,8 +562,10 @@ class TwoSpringElastica(
         axialForce: Double
     ): ElasticaState {
         require(displacement > 0.0) { "displacement must be positive, was: $displacement" }
+        // ROUNDED for the same reason as its twin above: a catalogued refusal is a result.
         require(displacement < length) {
-            "an inextensible arm of $length nm cannot lift its tip $displacement nm"
+            "an inextensible arm of ${length.roundedForProse()} nm cannot lift its tip " +
+                    "${displacement.roundedForProse()} nm"
         }
         var low = 0.0
         var atLow = -displacement

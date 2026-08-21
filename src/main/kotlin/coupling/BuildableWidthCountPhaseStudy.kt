@@ -30,6 +30,7 @@ import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundForResult
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
 import kotlinx.serialization.Serializable
@@ -1045,11 +1046,11 @@ fun main() {
                     "SIGN between the two widths, or its magnitude moves by more than a factor " +
                     "of two",
             fired = f2Fired,
-            outcome = ("the buildable admitted 2 x 2 interaction is %.9f per cent against " +
-                    "C-0108's %.9f per cent, a ratio of %.9f, and the sign %s").format(
-                buildableSplit?.interactionPerCent ?: 0.0,
-                nominalSplit?.interactionPerCent ?: 0.0,
-                interactionRatio,
+            outcome = ("the buildable admitted 2 x 2 interaction is %s per cent against " +
+                    "C-0108's %s per cent, a ratio of %s, and the sign %s").format(
+                (buildableSplit?.interactionPerCent ?: 0.0).roundedForProse(),
+                (nominalSplit?.interactionPerCent ?: 0.0).roundedForProse(),
+                interactionRatio.roundedForProse(),
                 if (signChanged) "CHANGED" else "did not change"
             )
         ),
@@ -1170,8 +1171,8 @@ fun main() {
             "seed" to T188_GRADING_SEED.toString(),
             "dishingSamplesPerEdge" to T188_SAMPLES.toString(),
             "insetsSwept" to T188_INSETS.joinToString(",") { "%.9f".format(it) },
-            "freeStrokeBuildable" to "%.9f".format(admitted.freeStroke),
-            "mandate" to "%.9f".format(T188_MANDATE),
+            "freeStrokeBuildable" to admitted.freeStroke.roundedForProse().toString(),
+            "mandate" to T188_MANDATE.roundedForProse().toString(),
             "tolerance" to "%.9f".format(T188_TOLERANCE),
             "decisionDigits" to T188_DECISION_DIGITS.toString(),
             "referencePhase" to T188_REFERENCE_PHASE.toString(),

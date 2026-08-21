@@ -48,7 +48,7 @@
         "requiredCoilOverlap": "1.0",
         "requiredStretchingRatio": "1.0",
         "unzipAllowable": "10.0",
-        "tetherAllowable": "6.315789473684211",
+        "tetherAllowable": "6.31578947",
         "referenceFoundationStiffness": "20.201",
         "sources": "gpd/results/T-1d-scf-density-profile.json, gpd/results/T-3-stroke-and-blocking-force.json, gpd/results/T-14-crossover-phase-and-registration.json"
     },

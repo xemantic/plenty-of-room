@@ -18,6 +18,7 @@ package com.xemantic.nano.plentyofroom.anchoring
 
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -344,7 +345,7 @@ fun main() {
         T151FalsifierRecord(
             "F4", "no admissible seamless width lies near 40 nm",
             abs(nearest * T151_RISE - T151_EDGE_X) > 5.44,
-            "112 bp = ${nearest * T151_RISE} nm, ${"%.2f".format(
+            "112 bp = ${(nearest * T151_RISE).roundedForProse()} nm, ${"%.2f".format(
                 100.0 * (nearest * T151_RISE - T151_EDGE_X) / T151_EDGE_X
             )} % from the nominal 40.0 — and the NOMINAL width is NOT admissible"
         ),
@@ -388,7 +389,8 @@ fun main() {
                 "turns apart — binds the ROW LENGTH of a boustrophedon, because a boustrophedon " +
                 "has only progressive crossovers. On the square lattice that admits 16, 48, 80, " +
                 "112, 144 bp and nothing between: the nearest buildable width to 40.0 nm is " +
-                "112 bp = ${nearest * T151_RISE} nm, and the NOMINAL 40.0 nm is not on the list.",
+                "112 bp = ${(nearest * T151_RISE).roundedForProse()} nm, and the NOMINAL " +
+                "40.0 nm is not on the list.",
         "ROTHEMUND'S OWN STAGGERED SEAM IS NOT THE REMEDY. Solved exactly over the three-row " +
                 "coupling C-0081's mechanism implies, the best staggered seam still takes " +
                 "${staggered.affectedStations} of 34 stations off the node against the best " +

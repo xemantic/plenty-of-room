@@ -1219,7 +1219,7 @@
         },
         {
             "predicate": "do the arms' OWN tip links clear?",
-            "value": "worst clearance 2.7156091699999996 nm against 1.345 nm demanded",
+            "value": "worst clearance 2.71560917 nm against 1.345 nm demanded",
             "verdict": "YES, at all 34"
         },
         {
@@ -1230,7 +1230,7 @@
     ],
     "findings": [
         "The arm slab and a REGULAR tie-down grid cannot share one face. On C-0015's own 3 x 15 grid 30 of 45 ties land on an arm at C-0063's own arm senses and 26 at the best of them; the section makes every one of those level-independent.",
-        "No rigid translation of a two- or three-column grid clears every row. A ONE-column grid does, in 4 windows, the nearest 6.785 nm off the tile centre-line and the widest 0.990000000000002 nm wide.",
+        "No rigid translation of a two- or three-column grid clears every row. A ONE-column grid does, in 4 windows, the nearest 6.785 nm off the tile centre-line and the widest 0.99 nm wide.",
         "The room is not what is missing: the array's free tie capacity is 108 against the 45 demanded, and every one of the fifteen rows carries at least three.",
         "What refuses them is REGISTRATION. The escape is to displace the ties into the room the arms leave — 45 stations, worst displacement 4.331666666666667 nm — and its price is that the coupling no longer enters on a grid.",
         "The only registration the slab supplies for free is the arms' OWN tips: 34 ties landing on the arms clear every neighbour by 2.7156091699999996 nm, which is the root pitch minus the arm and is a lattice quantity, not a fitted one.",

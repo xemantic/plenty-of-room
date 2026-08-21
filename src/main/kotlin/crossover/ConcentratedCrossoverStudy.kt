@@ -52,6 +52,7 @@ import com.xemantic.nano.plentyofroom.material.ReciprocalTemperatureChi
 import com.xemantic.nano.plentyofroom.material.WATER_MASS_DENSITY_AT_300K
 import com.xemantic.nano.plentyofroom.material.monomerExcludedVolume
 import com.xemantic.nano.plentyofroom.material.waterMoleculeVolume
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -477,7 +478,7 @@ fun main() {
                     else state.correlationBandBias
                 ),
                 BiasCeiling(
-                    "concentrated crossover (T-21, phi = ${candidate.volumeFraction})",
+                    "concentrated crossover (T-21, phi = ${candidate.volumeFraction.roundedForProse()})",
                     if (beyondFold) null else bias
                 ),
                 BiasCeiling("point-ion boundary (CH-0007, 1.0 V)", TRUSTED_BIAS_CEILING)
@@ -580,24 +581,24 @@ fun main() {
             "temperature" to ROOM_TEMPERATURE.toString(),
             "thermalEnergy" to thermalEnergy().toString(),
             "kuhnLength" to peg.kuhnLength.toString(),
-            "kuhnSegmentVolume" to peg.kuhnSegmentVolume.toString(),
-            "kuhnPairExcludedVolume" to correlation.kuhnPairExcludedVolume.toString(),
-            "kuhnAspectRatio" to correlation.kuhnAspectRatio.toString(),
-            "monomerVolume" to peg.monomerVolume.toString(),
-            "monomersPerKuhnSegment" to peg.monomersPerKuhnSegment.toString(),
+            "kuhnSegmentVolume" to peg.kuhnSegmentVolume.roundedForProse().toString(),
+            "kuhnPairExcludedVolume" to correlation.kuhnPairExcludedVolume.roundedForProse().toString(),
+            "kuhnAspectRatio" to correlation.kuhnAspectRatio.roundedForProse().toString(),
+            "monomerVolume" to peg.monomerVolume.roundedForProse().toString(),
+            "monomersPerKuhnSegment" to peg.monomersPerKuhnSegment.roundedForProse().toString(),
             "osmoticSecondVirial" to OSMOTIC_SECOND_VIRIAL.toString(),
             "osmoticThirdVirial" to OSMOTIC_THIRD_VIRIAL.toString(),
             "reducedSecondVirial" to peg.reducedSecondVirialCoefficient(OSMOTIC_SECOND_VIRIAL)
-                .toString(),
-            "thermalBlobSegmentsScaling" to correlation.thermalBlobSegments.toString(),
-            "thermalBlobSegmentsExact" to correlation.exact.thermalBlobSegments.toString(),
-            "fixmanPrefactor" to correlation.exact.fixmanPrefactor.toString(),
+                .roundedForProse().toString(),
+            "thermalBlobSegmentsScaling" to correlation.thermalBlobSegments.roundedForProse().toString(),
+            "thermalBlobSegmentsExact" to correlation.exact.thermalBlobSegments.roundedForProse().toString(),
+            "fixmanPrefactor" to correlation.exact.fixmanPrefactor.roundedForProse().toString(),
             "equationOfStateFitWeightFraction" to EQUATION_OF_STATE_FIT_WEIGHT_FRACTION.toString(),
-            "equationOfStateFitVolumeFraction" to fitVolumeFraction.toString(),
+            "equationOfStateFitVolumeFraction" to fitVolumeFraction.roundedForProse().toString(),
             "equationOfStateFitWeightFractionAtGen1Chain" to
                     EQUATION_OF_STATE_FIT_WEIGHT_FRACTION_AT_GEN1_CHAIN.toString(),
             "equationOfStateFitVolumeFractionAtGen1Chain" to
-                    fitAtGen1ChainVolumeFraction.toString(),
+                    fitAtGen1ChainVolumeFraction.roundedForProse().toString(),
             "layerHeights" to DESIGN_POINTS.map { it.first }.toString(),
             "graftingDensities" to DESIGN_POINTS.map { it.second }.toString(),
             "buffers" to BUFFERS.toString(),

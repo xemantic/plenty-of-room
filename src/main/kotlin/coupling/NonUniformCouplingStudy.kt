@@ -26,6 +26,7 @@ import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PointSupport
 import com.xemantic.nano.plentyofroom.structure.PressureField
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -1244,7 +1245,7 @@ fun main() {
                     "8 sweeps, coarse scan of 7 plus 8 golden-section refinements"
         ),
         citedInputs = mapOf(
-            "C-0017 mandate" to "$T113_MANDATE pN/nm = 100 pN / 3 nm",
+            "C-0017 mandate" to "${T113_MANDATE.roundedForProse()} pN/nm = 100 pN / 3 nm",
             "C-0006/CH-0029 unzip allowable" to "${Gen1Tile.DUPLEX_UNZIP_ALLOWABLE} pN per path",
             "C-0006 duplex shear allowable" to "${Gen1Tile.DUPLEX_SHEAR_ALLOWABLE} pN, " +
                     "${Gen1Tile.OVERSTRETCHING_CEILING} pN nicked ceiling",

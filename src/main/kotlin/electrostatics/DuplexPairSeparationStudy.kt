@@ -22,6 +22,7 @@ import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -393,7 +394,7 @@ fun main() {
             note = "AT CONTACT and inside the continuum model's own floor. The Lifshitz 1/D_s " +
                 "diverges where every repulsive term is bounded, so an unretarded DLVO always " +
                 "carries one. It is not carried here: the model floor is " +
-                "${state.minimumSeparation} nm."
+                "${(state.minimumSeparation).roundedForProse()} nm."
         ),
         T139Stationary(
             kind = "barrier maximum",
@@ -402,7 +403,7 @@ fun main() {
             energyInThermalUnits = barrier?.let { state.totalCrossedEnergy(it) / kT },
             isEquilibrium = false,
             note = "the top of the primary-minimum barrier, at a surface separation of " +
-                "${barrier?.minus(2.0 * state.hardRadius)} nm — well inside a water diameter " +
+                "${(barrier?.minus(2.0 * state.hardRadius))?.roundedForProse()} nm — well inside a water diameter " +
                 "of contact and not a separation any body sits at"
         ),
         T139Stationary(
@@ -695,8 +696,8 @@ fun main() {
             "the pair interaction has a real MINIMUM at finite separation above steric contact",
             fired = false,
             outcome = "NO inside the plan-relevant range: zero local minima between " +
-                "${state.minimumSeparation} and $PLAN_RELEVANT_RANGE nm. A far minimum exists " +
-                "at ${secondary?.first} nm and is ${secondary?.second?.div(kT)} kT deep — " +
+                "${(state.minimumSeparation).roundedForProse()} and $PLAN_RELEVANT_RANGE nm. A far minimum exists " +
+                "at ${(secondary?.first)?.roundedForProse()} nm and is ${(secondary?.second?.div(kT))?.roundedForProse()} kT deep — " +
                 "170x below thermal, an unretarded-Lifshitz artefact, and not a confinement. " +
                 "The literature is unanimous and independent: no equilibrium separation exists."
         ),
@@ -705,9 +706,10 @@ fun main() {
             "the electrostatic range is SHORTER than the disputed bracket, so a solve can " +
                 "place an edge inside it",
             fired = false,
-            outcome = "NO — ${buffer.debyeLength()} nm against a $disputedBracket nm bracket. " +
+            outcome = "NO — ${(buffer.debyeLength()).roundedForProse()} nm against a " +
+                "${disputedBracket.roundedForProse()} nm bracket. " +
                 "And the finding is stronger than the bound: the measured short-range law has " +
-                "a ${shortRange.decayLength} nm decay length, so an edge EXISTS and is sharp, " +
+                "a ${(shortRange.decayLength).roundedForProse()} nm decay length, so an edge EXISTS and is sharp, " +
                 "but it is not electrostatic. A two-cylinder PB solve would have resolved the " +
                 "wrong term."
         ),
@@ -716,9 +718,9 @@ fun main() {
             "the energy of placing a body in C-0066's gap at the measured girth EXCEEDS what " +
                 "the host sheet demonstrably pays to hold its own duplexes at 2.69 nm",
             fired = false,
-            outcome = "NO at the placement threshold (${crossedAtThreshold / kT} kT against " +
-                "${sheetPerCrossover / kT} kT per host crossover) and YES at the bare measured " +
-                "floor (${state.totalCrossedEnergy(state.minimumSeparation) / kT} kT). The " +
+            outcome = "NO at the placement threshold (${(crossedAtThreshold / kT).roundedForProse()} kT against " +
+                "${(sheetPerCrossover / kT).roundedForProse()} kT per host crossover) and YES at the bare measured " +
+                "floor (${(state.totalCrossedEnergy(state.minimumSeparation) / kT).roundedForProse()} kT). The " +
                 "affordable width is therefore between them, and it is below the threshold."
         ),
         T139Falsifier(
@@ -726,9 +728,9 @@ fun main() {
             "van der Waals is at least 10 % of the repulsion anywhere in the bracket",
             fired = vdwPeak >= 0.10,
             outcome = "FIRED, and only at the model floor: the peak share over the bracket is " +
-                "$vdwPeak at a ${state.modelFloor} nm surface separation, falling to " +
-                "${state.vanDerWaalsShare(threshold)} at the placement threshold and " +
-                "${state.vanDerWaalsShare(SAXS_SHEET_LATTICE_CONSTANT)} at the SAXS 2.69 nm. " +
+                "${vdwPeak.roundedForProse()} at a ${(state.modelFloor).roundedForProse()} nm surface separation, falling to " +
+                "${(state.vanDerWaalsShare(threshold)).roundedForProse()} at the placement threshold and " +
+                "${(state.vanDerWaalsShare(SAXS_SHEET_LATTICE_CONSTANT)).roundedForProse()} at the SAXS 2.69 nm. " +
                 "Its declared consequence — that a minimum may exist and F1 becomes live — was " +
                 "tested and did NOT materialise: zero local minima in the plan-relevant range. " +
                 "Rau & Parsegian's own " +
@@ -739,10 +741,11 @@ fun main() {
             "F5",
             "the coaxial geometry costs MORE than the crossed geometry at the same separation",
             fired = coaxialAtThreshold >= crossedAtThreshold,
-            outcome = "NO — ${crossedAtThreshold / coaxialAtThreshold}x the other way at the " +
+            outcome = "NO — ${(crossedAtThreshold / coaxialAtThreshold).roundedForProse()}x the " +
+                "other way at the " +
                 "placement threshold. A coaxial pair's charge is spread along the axis away " +
                 "from the contact, and its energy is FINITE even at zero gap " +
-                "(${pair.coaxialScreenedCoulombEnergy(0.0, kappa) / kT} kT)."
+                "(${(pair.coaxialScreenedCoulombEnergy(0.0, kappa) / kT).roundedForProse()} kT)."
         )
     )
 
@@ -770,7 +773,7 @@ fun main() {
             "a verdict against the 2.715609 nm placement threshold",
             "34 of 34 PLACE",
             "at every width from the measured floor to the sheet-calibrated " +
-                "$coaxialWidth nm; the only readings that " +
+                "${coaxialWidth.roundedForProse()} nm; the only readings that " +
                 "put it at 22 are thermal-criterion widths, and a thermal criterion is the " +
                 "wrong one for two bodies covalently rooted to the same sheet"
         )
@@ -843,7 +846,7 @@ fun main() {
         T139Literature(
             "blunt-end coaxial stacking is an established origami motif and it is ATTRACTIVE",
             "-2.63 kcal/mol per helix between two separate tiles = " +
-                "${BluntEndStacking.perStackEnergy / thermalEnergy()} kT",
+                "${(BluntEndStacking.perStackEnergy / thermalEnergy()).roundedForProse()} kT",
             "1xTAE + 12.5 mM Mg2+, 22 C, AFM monomer/dimer counting",
             "Woo & Rothemund, Nature Chem. 3:620 (2011), SI Table S4", "READ DIRECTLY"
         ),
@@ -873,37 +876,38 @@ fun main() {
             "a lattice coordinate.",
         "AND THE BUDGET IS MEASURABLE, because the host sheet is a measured object: holding two " +
             "adjacent duplexes at the SAXS 2.69 nm over one 40 nm interface costs " +
-            "${sheetPerInterface / kT} kT, i.e. ${sheetPerCrossover / kT} kT per crossover " +
+            "${(sheetPerInterface / kT).roundedForProse()} kT, i.e. ${(sheetPerCrossover / kT).roundedForProse()} kT per crossover " +
             "column. That is the design's own demonstrated currency, and the width it buys is " +
-            "$coaxialWidth nm — BELOW the " +
-            "$threshold nm placement threshold.",
+            "${coaxialWidth.roundedForProse()} nm — BELOW the " +
+            "${threshold.roundedForProse()} nm placement threshold.",
         "A THERMAL CRITERION IS THE WRONG ONE HERE and it is worth the whole verdict: at 1 kT " +
-            "the width is ${state.exclusionWidthAtEnergy(kT)} nm and nothing places. Both " +
+            "the width is ${state.exclusionWidthAtEnergy(kT)?.roundedForProse()} nm and nothing " +
+            "places. Both " +
             "bodies are covalently rooted to the same sheet, so the energy is paid by the fold " +
             "and not by kT; Barker-Henderson is the criterion for two FREE bodies colliding.",
         "THE EDGE EXISTS AND IT IS NOT ELECTROSTATIC. The Debye length at 2 mM is " +
-            "${buffer.debyeLength()} nm, longer than the whole disputed bracket, so " +
+            "${(buffer.debyeLength()).roundedForProse()} nm, longer than the whole disputed bracket, so " +
             "electrostatics cannot place an edge at 2.7 nm. The measured short-range law can: " +
-            "${shortRange.decayLength} nm. A bespoke two-cylinder nonlinear PB solve would " +
+            "${(shortRange.decayLength).roundedForProse()} nm. A bespoke two-cylinder nonlinear PB solve would " +
             "have resolved the term that carries no edge.",
-        "THE COLLINEAR CLEARANCE IS A COAXIAL GEOMETRY AND IT IS ${crossedAtThreshold / coaxialAtThreshold}x " +
+        "THE COLLINEAR CLEARANCE IS A COAXIAL GEOMETRY AND IT IS ${(crossedAtThreshold / coaxialAtThreshold).roundedForProse()}x " +
             "CHEAPER than the crossed one at the same separation — and FINITE at zero gap, " +
-            "${pair.coaxialScreenedCoulombEnergy(0.0, kappa) / kT} kT. C-0069's Q5 gap contains " +
+            "${(pair.coaxialScreenedCoulombEnergy(0.0, kappa) / kT).roundedForProse()} kT. C-0069's Q5 gap contains " +
             "no body at all; charging it a duplex girth charges a body that is not there.",
         "AND THE SIGN REVERSES: what a collinear gap has to prevent is a BOND, not a clash. " +
             "Two duplexes end to end blunt-end STACK — an established origami motif worth " +
-            "${BluntEndStacking.perStackEnergy / kT} kT per helix (Woo & Rothemund, read " +
+            "${(BluntEndStacking.perStackEnergy / kT).roundedForProse()} kT per helix (Woo & Rothemund, read " +
             "directly) — so the clearance is a stacking-PREVENTION allowance and its length is " +
-            "the stacking range, ${BluntEndStacking.OXDNA2_CUTOFF} nm (oxDNA2's cutoff) to " +
-            "${BluntEndStacking.ALL_ATOM_REPULSIVE_ONSET} nm (where the all-atom PMF turns " +
+            "the stacking range, ${(BluntEndStacking.OXDNA2_CUTOFF).roundedForProse()} nm (oxDNA2's cutoff) to " +
+            "${(BluntEndStacking.ALL_ATOM_REPULSIVE_ONSET).roundedForProse()} nm (where the all-atom PMF turns " +
             "repulsive). At the generous end that is a plan margin of " +
-            "${32 * 0.34 - BluntEndStacking.ALL_ATOM_REPULSIVE_ONSET - T139_ARM} nm, " +
-            "${(32 * 0.34 - BluntEndStacking.ALL_ATOM_REPULSIVE_ONSET - T139_ARM) / 0.02560917}x " +
+            "${(32 * 0.34 - BluntEndStacking.ALL_ATOM_REPULSIVE_ONSET - T139_ARM).roundedForProse()} nm, " +
+            "${((32 * 0.34 - BluntEndStacking.ALL_ATOM_REPULSIVE_ONSET - T139_ARM) / 0.02560917).roundedForProse()}x " +
             "the published knife edge. This is CH-0089's own failure route 2 — 'a demonstration " +
             "that C-0053's footprint convention is charging something other than a body' — " +
             "answered in the direction that WIDENS the margin.",
         "THE KNIFE EDGE IS UNRESOLVABLE BY PHYSICS TOO. 0.0256 nm at 2.7 nm is " +
-            "${abs(state.energyGradient(threshold)) * 0.02560917 / crossedAtThreshold} of the " +
+            "${(abs(state.energyGradient(threshold)) * 0.02560917 / crossedAtThreshold).roundedForProse()} of the " +
             "pair energy — C-0072's 'neither margin is quotable' arriving through a second, " +
             "wholly independent channel.",
         "THE TWO RADII ARE NOT THE SAME NUMBER, and it is 41 % of the quantity under test. " +
@@ -915,7 +919,7 @@ fun main() {
             "bounds it is a measurement, not a theory: Mg2+ does not condense duplex DNA at " +
             "any concentration.",
         "THE DEBYE-HUCKEL PREMISE FAILS ON THIS MATERIAL and is reported rather than assumed: " +
-            "the reduced surface potential is ${pair.reducedSurfacePotential(kappa)}, above one " +
+            "the reduced surface potential is ${(pair.reducedSurfacePotential(kappa)).roundedForProse()}, above one " +
             "even after Manning renormalisation. Every electrostatic number here is an " +
             "order-of-magnitude bracket, which is why the verdict rests on the RANGE."
     )
@@ -926,16 +930,16 @@ fun main() {
         parameters = mapOf(
             "temperature [K]" to "300.0",
             "k_BT [pN nm]" to kT.toString(),
-            "medium" to "aqueous 2 mM MgCl2, 2:1, I = 3c = ${buffer.ionicStrength} mM",
-            "Debye length [nm]" to buffer.debyeLength().toString(),
-            "Bjerrum length [nm]" to pair.bjerrumLength.toString(),
+            "medium" to "aqueous 2 mM MgCl2, 2:1, I = 3c = ${(buffer.ionicStrength).roundedForProse()} mM",
+            "Debye length [nm]" to buffer.debyeLength().roundedForProse().toString(),
+            "Bjerrum length [nm]" to pair.bjerrumLength.roundedForProse().toString(),
             "relative permittivity" to WATER_RELATIVE_PERMITTIVITY.toString(),
-            "phosphate (charge) radius [nm], MEASURED T-71" to pair.helixRadius.toString(),
+            "phosphate (charge) radius [nm], MEASURED T-71" to pair.helixRadius.roundedForProse().toString(),
             "hard (steric) radius [nm], CITED convention" to state.hardRadius.toString(),
-            "bare linear charge density [e/nm]" to pair.bareLinearChargeDensity.toString(),
-            "Manning parameter xi_M" to pair.manningParameter.toString(),
+            "bare linear charge density [e/nm]" to pair.bareLinearChargeDensity.roundedForProse().toString(),
+            "Manning parameter xi_M" to pair.manningParameter.roundedForProse().toString(),
             "Manning-surviving line charge at q = 2 [e/nm]" to
-                pair.effectiveLinearChargeDensity.toString(),
+                pair.effectiveLinearChargeDensity.roundedForProse().toString(),
             "Hamaker constant [zJ = pN nm]" to state.hamaker.toString(),
             "short-range Pi_R [pN/nm2], CITED Meng 2020" to
                 shortRange.repulsionAmplitude.toString(),
@@ -944,8 +948,8 @@ fun main() {
             "plan-relevant range [nm]" to PLAN_RELEVANT_RANGE.toString(),
             "C-0055 arm [nm]" to T139_ARM.toString(),
             "root pitch [nm]" to (32 * 0.34).toString(),
-            "placement threshold [nm]" to threshold.toString(),
-            "T-71 steric floor [nm]" to floor.toString(),
+            "placement threshold [nm]" to threshold.roundedForProse().toString(),
+            "T-71 steric floor [nm]" to floor.roundedForProse().toString(),
             "row pitch [nm]" to T139_ROW_PITCH.toString(),
             "stations" to C0055_ARM_COUNT.toString(),
             "sources" to "gpd/results/T-125-upward-root-placement.json"

@@ -53,6 +53,7 @@ import com.xemantic.nano.plentyofroom.poroelastic.brinkmanTransmissivity
 import com.xemantic.nano.plentyofroom.poroelastic.squeezeDragCoefficient
 import com.xemantic.nano.plentyofroom.poroelastic.tileStokesDrag
 import com.xemantic.nano.plentyofroom.poroelastic.waterViscosity
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -1015,12 +1016,12 @@ fun main() {
             "layerModels" to models.joinToString { it.name },
             "positionBound" to "$POSITION_BOUND nm (leaf A1.1)",
             "bandwidth" to "$BANDWIDTH Hz (§3)",
-            "tileCharge" to "$tileCharge e/nm^2 (C-0008's nominal, Manning-renormalised)",
-            "debyeLength" to "${1.0 / inverseDebye} nm",
+            "tileCharge" to "${tileCharge.roundedForProse()} e/nm^2 (C-0008's nominal, Manning-renormalised)",
+            "debyeLength" to "${(1.0 / inverseDebye).roundedForProse()} nm",
             "sternCapacitance" to "$STERN_CAPACITANCE uF/cm^2",
             "tetherCount" to "$TETHER_COUNT",
             "tetherKuhnLength" to "$TETHER_KUHN nm (Chen et al. 2012, zero force)",
-            "tetherContour" to "$tetherContour nm",
+            "tetherContour" to "${tetherContour.roundedForProse()} nm",
             "couplingK2" to "45 paths, 5 nm duplex standoff (S/L = $standoffStiffness pN/nm) in " +
                     "series with an $spacerContour nm ssDNA spacer (C-0017)",
             "quadraturePanels" to "$QUADRATURE_PANELS",

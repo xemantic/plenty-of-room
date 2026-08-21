@@ -33,7 +33,7 @@
         "layerHeights": "[5.0, 7.0, 10.0]",
         "graftingDensityGridPoints": "61",
         "graftingDensityGridRatio": "1.10913",
-        "mandatedCouplingStiffness": "33.333333333333336",
+        "mandatedCouplingStiffness": "33.3333333",
         "acceptableStroke": "3.0",
         "flatnessTolerance": "0.1",
         "correctionSets": "C-0016 baseline; + C-0019 fluctuation; + CH-0024 delivered stroke; + CH-0024 delivered stroke, C-0021's tethered device; T-25 re-synthesis; T-25 re-synthesis, had the substrate tethers stayed",

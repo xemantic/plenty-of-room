@@ -34,8 +34,8 @@
         "per-path unzip allowable": "10.0 pN (C-0006, CH-0029)",
         "duplex EI": "230.0 pN·nm^2 (CanDo MODEL INPUT, not a measurement)",
         "duplex S": "1100.0 pN (Wang 1997, MEASURED)",
-        "crossover hinge k_theta": "13.529411764705882 pN·nm/rad (Chen 2014, FITTED)",
-        "A2 anchorage couple": "78.2352941176 pN·nm/rad (C-0034)",
+        "crossover hinge k_theta": "13.5294118 pN·nm/rad (Chen 2014, FITTED)",
+        "A2 anchorage couple": "78.2352941 pN·nm/rad (C-0034)",
         "concentrated crossover": "phi = 0.2 (C-0002)",
         "§3 targets": "100 pN, 3 nm acceptable, ~10 nm desired, 40 x 40 nm, 5/7/10 nm, 2 mM"
     },

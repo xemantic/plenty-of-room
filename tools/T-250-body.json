@@ -1,0 +1,12 @@
+{
+  "task": "T-250 — the 46 other result files whose PROSE carries an unrounded Double, and the promotion of the census from an audit to a gate",
+  "leaf": "none — a process claim protecting the machine-readable artifact of every leaf",
+  "verificationType": "logical (a shape census over the committed corpus, an offline movement classification against git HEAD, a staleness identity measured token by token, mutation coverage of the predicate AND of the promotion) + in-silico (47 studies re-emitted through one snapshot in one topological sort)",
+  "conditions": "The tree at HEAD of iteration 37 plus this iteration's edits. Units unchanged and untouched: nm, pN, pN/nm, pN/nm^2 = 1 MPa exactly, k_BT = 4.141947 pN nm at 300 K, aqueous buffer with stated Mg2+. Nothing physical is computed and no physics may move; the movement-by-kind report is how that is checked.",
+  "conventions": [
+    "A defect is a decimal token carrying more than RESULT_SIGNIFICANT_DIGITS = 9 significant digits inside a STRING value of a committed result file. A number that went through JsonElement.roundedForResult cannot carry more, by construction, so every hit reached the file as text.",
+    "The repair is per CALL SITE — Double.roundedForProse(digits, floor) — because the serialisation boundary sees a sentence and not a number. Nine digits and the locked-units floor for a quantity; DEPARTURE_SIGNIFICANT_DIGITS = 2 and floor = 0.0 for a departure, because RESULT_ABSOLUTE_FLOOR is a claim in the locked units (P-18).",
+    "The staleness identity is taken on the VALUE and not on the text: Kotlin's Double.toString and Python's repr disagree about exponent spelling (8.755985E-4 against 0.0008755985) and that is a rendering, not a number.",
+    "require/check/println/error messages are deliberately left raw: full precision is exactly what a failed reproduction needs, and they never reach a file."
+  ]
+}

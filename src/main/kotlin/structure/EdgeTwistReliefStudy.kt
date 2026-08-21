@@ -854,12 +854,13 @@ fun main() {
             "buffer" to "aqueous 2 mM MgCl2",
             "sheet" to "single-layer square-lattice Rothemund, $DUPLEXES duplexes at " +
                     "${Gen1Tile.INTERHELICAL_SHEET} nm, 0.34 nm rise, 32/3 bp per turn",
-            "width" to "$edgeX nm at crossover phase $PHASE (C-0086, C-0090)",
+            "width" to "${edgeX.roundedForProse()} nm at crossover phase $PHASE (C-0086, C-0090)",
             "placement" to "C-0090's published 34-root key $publishedKey",
             "load" to "C-0022's solved collar at 2 mM, a 10 nm gap and 0.192 V",
-            "coupling" to "C-0017's ${MANDATE} pN/nm shared equally over $ARM_COUNT roots, " +
+            "coupling" to "C-0017's ${MANDATE.roundedForProse()} pN/nm shared equally over " +
+                    "$ARM_COUNT roots, " +
                     "as EXPLICIT elastic supports",
-            "freeStroke" to "${host.freeStroke} nm"
+            "freeStroke" to "${host.freeStroke.roundedForProse()} nm"
         ),
         ceilings = ceilings,
         boundaryLayer = boundaryLayer,
@@ -873,18 +874,18 @@ fun main() {
         findings = findings,
         parameters = mapOf(
             "designTwistPerBase" to DESIGN_TWIST.toString(),
-            "naturalTwistPerBase" to NATURAL_TWIST.toString(),
-            "twistRateMismatchPerNm" to mismatch.toString(),
-            "crossoverHingeStiffness" to hinge.toString(),
+            "naturalTwistPerBase" to NATURAL_TWIST.roundedForProse().toString(),
+            "twistRateMismatchPerNm" to mismatch.roundedForProse().toString(),
+            "crossoverHingeStiffness" to hinge.roundedForProse().toString(),
             "phosphateRadius" to BForm.PHOSPHATE_RADIUS.toString(),
-            "derivedCrossoverSpacing" to derivedSpacing.toString(),
+            "derivedCrossoverSpacing" to derivedSpacing.roundedForProse().toString(),
             "crossoverCount" to crossoverCount.toString(),
             "rowEndCrossovers" to host.rowEndSites.size.toString(),
             "c0104Threshold" to c0104Threshold.toString(),
             "c0104UnitSlope" to c0104Slope.toString(),
-            "unitPrestrainPeakHere" to unitSlope.toString(),
-            "c0104SecantReproducedHere" to unitSecant.toString(),
-            "trueTriangleCeilingDegrees" to trueTriangleCeiling.toString(),
+            "unitPrestrainPeakHere" to unitSlope.roundedForProse().toString(),
+            "c0104SecantReproducedHere" to unitSecant.roundedForProse().toString(),
+            "trueTriangleCeilingDegrees" to trueTriangleCeiling.roundedForProse().toString(),
             "flatnessTolerance" to FLATNESS_TOLERANCE.toString(),
             "sources" to "gpd/results/T-3b-tile-edge-load-profile.json, " +
                     "gpd/results/T-153-buildable-raster-width.json, " +

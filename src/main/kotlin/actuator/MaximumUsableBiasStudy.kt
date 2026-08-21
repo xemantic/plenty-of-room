@@ -40,6 +40,7 @@ import com.xemantic.nano.plentyofroom.electrostatics.sternChargeDensityPerVolt
 import com.xemantic.nano.plentyofroom.electrostatics.thermalVoltage
 import com.xemantic.nano.plentyofroom.electrostatics.uniformMedium
 import com.xemantic.nano.plentyofroom.material.PegWater
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -483,20 +484,22 @@ fun main() {
         runParameters = mapOf(
             "temperature" to ROOM_TEMPERATURE.toString(),
             "thermalEnergy" to thermalEnergy().toString(),
-            "bjerrumLength" to lb.toString(),
+            "bjerrumLength" to lb.roundedForProse().toString(),
             "footprintArea" to FOOTPRINT.toString(),
-            "manningSurvivingFraction" to surviving.toString(),
-            "nominalTileChargeDensity" to tileCharge.toString(),
+            "manningSurvivingFraction" to surviving.roundedForProse().toString(),
+            "nominalTileChargeDensity" to tileCharge.roundedForProse().toString(),
             "sternCapacitance" to STERN_CAPACITANCE.toString(),
             "meshNodes" to MESH_NODES.toString(),
             "layerHeights" to DESIGN_POINTS.map { it.first }.toString(),
             "graftingDensities" to DESIGN_POINTS.map { it.second }.toString(),
             "buffers" to BUFFERS.toString(),
-            "loadLines" to LOAD_LINES.map { "${it.name}: R = ${it.preload} + ${it.stiffness} s" }
+            "loadLines" to LOAD_LINES.map {
+                "${it.name}: R = ${it.preload.roundedForProse()} + ${it.stiffness.roundedForProse()} s"
+            }
                 .toString(),
             "targetForce" to TARGET_FORCE.toString(),
             "targetStroke" to TARGET_STROKE.toString(),
-            "mandatedCouplingStiffness" to MANDATED_COUPLING.toString(),
+            "mandatedCouplingStiffness" to MANDATED_COUPLING.roundedForProse().toString(),
             "trustedBiasCeiling" to TRUSTED_BIAS_CEILING.toString(),
             "electrochemicalCeiling" to ELECTROCHEMICAL_CEILING.toString(),
             "correlationAttractionGap" to CORRELATION_ATTRACTION_GAP.toString(),

@@ -21,6 +21,7 @@ import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.equipartitionRms
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.material.ScalingEquationOfState
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -414,16 +415,16 @@ fun main() {
             "temperature" to ROOM_TEMPERATURE.toString(),
             "medium" to "aqueous buffer, 2/5/10 mM MgCl2 (not yet entering this task)",
             "thermalEnergy" to thermalEnergy().toString(),
-            "thermalEnergyElectronVolts" to (thermalEnergy() / ELECTRON_VOLT).toString(),
+            "thermalEnergyElectronVolts" to (thermalEnergy() / ELECTRON_VOLT).roundedForProse().toString(),
             "tileFootprint" to "${TILE_EDGE.toInt()} x ${TILE_EDGE.toInt()} nm",
             "tileArea" to tileArea.toString(),
             "targetForce" to TARGET_FORCE.toString(),
             "targetStrokeAcceptable" to ACCEPTABLE_STROKE.toString(),
             "targetStrokeDesired" to DESIRED_STROKE.toString(),
-            "monomerVolume" to peg.monomerVolume.toString(),
+            "monomerVolume" to peg.monomerVolume.roundedForProse().toString(),
             "monomerVolumeProvenance" to "DERIVED from M0 and the cited partial specific volume (C-0002)",
             "kuhnLength" to peg.kuhnLength.toString(),
-            "monomersPerKuhnSegment" to peg.monomersPerKuhnSegment.toString(),
+            "monomersPerKuhnSegment" to peg.monomersPerKuhnSegment.roundedForProse().toString(),
             "kuhnProvenance" to "CITED, Rubinstein & Colby Table 2.1 (PEO) — independent of the " +
                     "failed semidilute premise, which is why the elasticity is written on it",
             "crossoverIndex" to peg.crossoverIndex.toString(),

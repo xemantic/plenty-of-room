@@ -25,21 +25,21 @@
         "temperature": "300.0",
         "thermalEnergy": "4.141947",
         "kuhnLength": "1.1",
-        "kuhnSegmentVolume": "0.18768242806732402",
-        "kuhnPairExcludedVolume": "0.11843329945678654",
-        "kuhnAspectRatio": "7.091766734403895",
-        "monomerVolume": "0.06035017520912281",
-        "monomersPerKuhnSegment": "3.1098903593398863",
+        "kuhnSegmentVolume": "0.187682428",
+        "kuhnPairExcludedVolume": "0.118433299",
+        "kuhnAspectRatio": "7.09176673",
+        "monomerVolume": "0.0603501752",
+        "monomersPerKuhnSegment": "3.10989036",
         "osmoticSecondVirial": "0.0019",
         "osmoticThirdVirial": "0.02",
-        "reducedSecondVirial": "0.20291078787878786",
-        "thermalBlobSegmentsScaling": "126.3014841340052",
-        "thermalBlobSegmentsExact": "1160.3374110196924",
-        "fixmanPrefactor": "0.3299226101861591",
+        "reducedSecondVirial": "0.202910788",
+        "thermalBlobSegmentsScaling": "126.301484",
+        "thermalBlobSegmentsExact": "1160.33741",
+        "fixmanPrefactor": "0.32992261",
         "equationOfStateFitWeightFraction": "0.675",
-        "equationOfStateFitVolumeFraction": "0.6306647574118055",
+        "equationOfStateFitVolumeFraction": "0.630664757",
         "equationOfStateFitWeightFractionAtGen1Chain": "0.54",
-        "equationOfStateFitVolumeFractionAtGen1Chain": "0.4911321367445652",
+        "equationOfStateFitVolumeFractionAtGen1Chain": "0.491132137",
         "layerHeights": "[5.0, 7.0, 10.0]",
         "graftingDensities": "[0.092, 0.045, 0.024]",
         "buffers": "[0.5, 2.0, 10.0]",
@@ -536,7 +536,7 @@
             "correlationBandBias": 0.234799339,
             "pullInBias": null,
             "operatingBias": 0.172758451,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.049051081,
             "margin": 0.283928692,
             "operatingPointIsUsable": false
@@ -557,7 +557,7 @@
             "correlationBandBias": 0.234799339,
             "pullInBias": null,
             "operatingBias": 0.172758451,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.39543830075663566)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.395438301)",
             "usableBias": 0.204528402,
             "margin": 1.1838981,
             "operatingPointIsUsable": true
@@ -578,7 +578,7 @@
             "correlationBandBias": 0.234799339,
             "pullInBias": null,
             "operatingBias": 0.172758451,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.0994159102,
             "margin": 0.575461922,
             "operatingPointIsUsable": false
@@ -599,7 +599,7 @@
             "correlationBandBias": 0.234799339,
             "pullInBias": null,
             "operatingBias": 0.172758451,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.133456682,
             "margin": 0.772504509,
             "operatingPointIsUsable": false
@@ -746,7 +746,7 @@
             "correlationBandBias": 0.233530604,
             "pullInBias": null,
             "operatingBias": 0.172758451,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0593658945,
             "margin": 0.343635256,
             "operatingPointIsUsable": false
@@ -767,7 +767,7 @@
             "correlationBandBias": 0.233530604,
             "pullInBias": null,
             "operatingBias": 0.172758451,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.39543830075663566)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.395438301)",
             "usableBias": 0.20365278,
             "margin": 1.17882963,
             "operatingPointIsUsable": true
@@ -788,7 +788,7 @@
             "correlationBandBias": 0.233530604,
             "pullInBias": null,
             "operatingBias": 0.172758451,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.108094815,
             "margin": 0.625699145,
             "operatingPointIsUsable": false
@@ -809,7 +809,7 @@
             "correlationBandBias": 0.233530604,
             "pullInBias": null,
             "operatingBias": 0.172758451,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.136246657,
             "margin": 0.788654076,
             "operatingPointIsUsable": false
@@ -956,7 +956,7 @@
             "correlationBandBias": 0.226419674,
             "pullInBias": null,
             "operatingBias": 0.162480674,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.049051081,
             "margin": 0.30188871,
             "operatingPointIsUsable": false
@@ -977,7 +977,7 @@
             "correlationBandBias": 0.226419674,
             "pullInBias": null,
             "operatingBias": 0.162480674,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.39543830075663566)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.395438301)",
             "usableBias": 0.195357724,
             "margin": 1.20234437,
             "operatingPointIsUsable": true
@@ -998,7 +998,7 @@
             "correlationBandBias": 0.226419674,
             "pullInBias": null,
             "operatingBias": 0.162480674,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.0870084356,
             "margin": 0.535500213,
             "operatingPointIsUsable": false
@@ -1019,7 +1019,7 @@
             "correlationBandBias": 0.226419674,
             "pullInBias": null,
             "operatingBias": 0.162480674,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.121648377,
             "margin": 0.748694436,
             "operatingPointIsUsable": false
@@ -1166,7 +1166,7 @@
             "correlationBandBias": 0.253523426,
             "pullInBias": null,
             "operatingBias": 0.191761845,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0322828406,
             "margin": 0.168348613,
             "operatingPointIsUsable": false
@@ -1187,7 +1187,7 @@
             "correlationBandBias": 0.253523426,
             "pullInBias": null,
             "operatingBias": 0.191761845,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.39543830075663566)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.395438301)",
             "usableBias": 0.223324521,
             "margin": 1.1645931,
             "operatingPointIsUsable": true
@@ -1208,7 +1208,7 @@
             "correlationBandBias": 0.253523426,
             "pullInBias": null,
             "operatingBias": 0.191761845,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.119078355,
             "margin": 0.620970009,
             "operatingPointIsUsable": false
@@ -1229,7 +1229,7 @@
             "correlationBandBias": 0.253523426,
             "pullInBias": null,
             "operatingBias": 0.191761845,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.152913344,
             "margin": 0.797412767,
             "operatingPointIsUsable": false
@@ -1376,7 +1376,7 @@
             "correlationBandBias": 0.252227529,
             "pullInBias": null,
             "operatingBias": 0.191761845,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0791728379,
             "margin": 0.412870652,
             "operatingPointIsUsable": false
@@ -1397,7 +1397,7 @@
             "correlationBandBias": 0.252227529,
             "pullInBias": null,
             "operatingBias": 0.191761845,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.39543830075663566)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.395438301)",
             "usableBias": 0.222427113,
             "margin": 1.15991329,
             "operatingPointIsUsable": true
@@ -1418,7 +1418,7 @@
             "correlationBandBias": 0.252227529,
             "pullInBias": null,
             "operatingBias": 0.191761845,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.128420235,
             "margin": 0.66968606,
             "operatingPointIsUsable": false
@@ -1439,7 +1439,7 @@
             "correlationBandBias": 0.252227529,
             "pullInBias": null,
             "operatingBias": 0.191761845,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.15584587,
             "margin": 0.812705312,
             "operatingPointIsUsable": false
@@ -1586,7 +1586,7 @@
             "correlationBandBias": 0.244970484,
             "pullInBias": null,
             "operatingBias": 0.181164591,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.030597744,
             "margin": 0.168894726,
             "operatingPointIsUsable": false
@@ -1607,7 +1607,7 @@
             "correlationBandBias": 0.244970484,
             "pullInBias": null,
             "operatingBias": 0.181164591,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.39543830075663566)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.395438301)",
             "usableBias": 0.213933895,
             "margin": 1.18088139,
             "operatingPointIsUsable": true
@@ -1628,7 +1628,7 @@
             "correlationBandBias": 0.244970484,
             "pullInBias": null,
             "operatingBias": 0.181164591,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.10580949,
             "margin": 0.584051714,
             "operatingPointIsUsable": false
@@ -1649,7 +1649,7 @@
             "correlationBandBias": 0.244970484,
             "pullInBias": null,
             "operatingBias": 0.181164591,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.140539995,
             "margin": 0.775758631,
             "operatingPointIsUsable": false
@@ -1796,7 +1796,7 @@
             "correlationBandBias": 0.291108822,
             "pullInBias": null,
             "operatingBias": 0.235900751,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0643746249,
             "margin": 0.272888597,
             "operatingPointIsUsable": false
@@ -1817,7 +1817,7 @@
             "correlationBandBias": 0.291108822,
             "pullInBias": null,
             "operatingBias": 0.235900751,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.39543830075663566)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.395438301)",
             "usableBias": 0.262986615,
             "margin": 1.1148189,
             "operatingPointIsUsable": true
@@ -1838,7 +1838,7 @@
             "correlationBandBias": 0.291108822,
             "pullInBias": null,
             "operatingBias": 0.235900751,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.182646397,
             "margin": 0.774251019,
             "operatingPointIsUsable": false
@@ -1859,7 +1859,7 @@
             "correlationBandBias": 0.291108822,
             "pullInBias": null,
             "operatingBias": 0.235900751,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.206999675,
             "margin": 0.877486293,
             "operatingPointIsUsable": false
@@ -2006,7 +2006,7 @@
             "correlationBandBias": 0.289515533,
             "pullInBias": null,
             "operatingBias": 0.235900751,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.165284678,
             "margin": 0.700653461,
             "operatingPointIsUsable": false
@@ -2027,7 +2027,7 @@
             "correlationBandBias": 0.289515533,
             "pullInBias": null,
             "operatingBias": 0.235900751,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.39543830075663566)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.395438301)",
             "usableBias": 0.261852106,
             "margin": 1.11000963,
             "operatingPointIsUsable": true
@@ -2048,7 +2048,7 @@
             "correlationBandBias": 0.289515533,
             "pullInBias": null,
             "operatingBias": 0.235900751,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.20013738,
             "margin": 0.848396537,
             "operatingPointIsUsable": false
@@ -2069,7 +2069,7 @@
             "correlationBandBias": 0.289515533,
             "pullInBias": null,
             "operatingBias": 0.235900751,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.211573479,
             "margin": 0.896874971,
             "operatingPointIsUsable": false
@@ -2216,7 +2216,7 @@
             "correlationBandBias": 0.280671293,
             "pullInBias": null,
             "operatingBias": 0.221842882,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.052903354,
             "margin": 0.238472172,
             "operatingPointIsUsable": false
@@ -2237,7 +2237,7 @@
             "correlationBandBias": 0.280671293,
             "pullInBias": null,
             "operatingBias": 0.221842882,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.39543830075663566)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.395438301)",
             "usableBias": 0.251224761,
             "margin": 1.13244454,
             "operatingPointIsUsable": true
@@ -2258,7 +2258,7 @@
             "correlationBandBias": 0.280671293,
             "pullInBias": null,
             "operatingBias": 0.221842882,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.159526665,
             "margin": 0.719097513,
             "operatingPointIsUsable": false
@@ -2279,7 +2279,7 @@
             "correlationBandBias": 0.280671293,
             "pullInBias": null,
             "operatingBias": 0.221842882,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.188325156,
             "margin": 0.848912322,
             "operatingPointIsUsable": false
@@ -2426,7 +2426,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.317744671,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.127604659,
             "margin": 0.401594962,
             "operatingPointIsUsable": false
@@ -2468,7 +2468,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.317744671,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.23350873,
             "margin": 0.734894246,
             "operatingPointIsUsable": false
@@ -2489,7 +2489,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.317744671,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.326394387,
             "margin": 1.02722222,
             "operatingPointIsUsable": true
@@ -2636,7 +2636,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.317744671,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.137993637,
             "margin": 0.434290955,
             "operatingPointIsUsable": false
@@ -2678,7 +2678,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.317744671,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.23513516,
             "margin": 0.740012914,
             "operatingPointIsUsable": false
@@ -2699,7 +2699,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.317744671,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.326306605,
             "margin": 1.02694596,
             "operatingPointIsUsable": true
@@ -2846,7 +2846,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.310299301,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.117803851,
             "margin": 0.37964588,
             "operatingPointIsUsable": false
@@ -2888,7 +2888,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.310299301,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.224956646,
             "margin": 0.724966653,
             "operatingPointIsUsable": false
@@ -2909,7 +2909,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.310299301,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.318986273,
             "margin": 1.02799546,
             "operatingPointIsUsable": true
@@ -3056,7 +3056,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.349141313,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.151462264,
             "margin": 0.433813641,
             "operatingPointIsUsable": false
@@ -3098,7 +3098,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.349141313,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.260811688,
             "margin": 0.747008957,
             "operatingPointIsUsable": false
@@ -3119,7 +3119,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.349141313,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.3585466,
             "margin": 1.02693834,
             "operatingPointIsUsable": true
@@ -3266,7 +3266,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.349141313,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.163327816,
             "margin": 0.467798596,
             "operatingPointIsUsable": false
@@ -3308,7 +3308,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.349141313,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.262675982,
             "margin": 0.752348611,
             "operatingPointIsUsable": false
@@ -3329,7 +3329,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.349141313,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.358440286,
             "margin": 1.02663384,
             "operatingPointIsUsable": true
@@ -3476,7 +3476,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.340302391,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.140442817,
             "margin": 0.41270006,
             "operatingPointIsUsable": false
@@ -3518,7 +3518,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.340302391,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.251092345,
             "margin": 0.737850664,
             "operatingPointIsUsable": false
@@ -3539,7 +3539,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.340302391,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.349661788,
             "margin": 1.02750318,
             "operatingPointIsUsable": true
@@ -3686,7 +3686,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.582497121,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.280500687,
             "margin": 0.481548624,
             "operatingPointIsUsable": false
@@ -3728,7 +3728,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.582497121,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.43011416,
             "margin": 0.738397057,
             "operatingPointIsUsable": false
@@ -3749,7 +3749,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.582497121,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.605484563,
             "margin": 1.03946361,
             "operatingPointIsUsable": true
@@ -3896,7 +3896,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.582497121,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.319956419,
             "margin": 0.549284121,
             "operatingPointIsUsable": false
@@ -3938,7 +3938,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.582497121,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.436351166,
             "margin": 0.749104417,
             "operatingPointIsUsable": false
@@ -3959,7 +3959,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.582497121,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.60500568,
             "margin": 1.03864149,
             "operatingPointIsUsable": true
@@ -4106,7 +4106,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.547015896,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.249150641,
             "margin": 0.455472397,
             "operatingPointIsUsable": false
@@ -4148,7 +4148,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.547015896,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.399730254,
             "margin": 0.730747053,
             "operatingPointIsUsable": false
@@ -4169,7 +4169,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.547015896,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.567810939,
             "margin": 1.03801543,
             "operatingPointIsUsable": true
@@ -4316,7 +4316,7 @@
             "correlationBandBias": 0.374049642,
             "pullInBias": null,
             "operatingBias": 0.252629085,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.129893337,
             "margin": 0.5141662,
             "operatingPointIsUsable": false
@@ -4358,7 +4358,7 @@
             "correlationBandBias": 0.374049642,
             "pullInBias": null,
             "operatingBias": 0.252629085,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.21063518,
             "margin": 0.833772487,
             "operatingPointIsUsable": false
@@ -4379,7 +4379,7 @@
             "correlationBandBias": 0.374049642,
             "pullInBias": null,
             "operatingBias": 0.252629085,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.273669949,
             "margin": 1.08328757,
             "operatingPointIsUsable": true
@@ -4526,7 +4526,7 @@
             "correlationBandBias": 0.372441549,
             "pullInBias": null,
             "operatingBias": 0.252629085,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.138485228,
             "margin": 0.548176105,
             "operatingPointIsUsable": false
@@ -4568,7 +4568,7 @@
             "correlationBandBias": 0.372441549,
             "pullInBias": null,
             "operatingBias": 0.252629085,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.211841608,
             "margin": 0.838547978,
             "operatingPointIsUsable": false
@@ -4589,7 +4589,7 @@
             "correlationBandBias": 0.372441549,
             "pullInBias": null,
             "operatingBias": 0.252629085,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.273323866,
             "margin": 1.08191765,
             "operatingPointIsUsable": true
@@ -4736,7 +4736,7 @@
             "correlationBandBias": 0.364075484,
             "pullInBias": null,
             "operatingBias": 0.244390713,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.119522024,
             "margin": 0.489061234,
             "operatingPointIsUsable": false
@@ -4778,7 +4778,7 @@
             "correlationBandBias": 0.364075484,
             "pullInBias": null,
             "operatingBias": 0.244390713,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.201505945,
             "margin": 0.824523741,
             "operatingPointIsUsable": false
@@ -4799,7 +4799,7 @@
             "correlationBandBias": 0.364075484,
             "pullInBias": null,
             "operatingBias": 0.244390713,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.265779551,
             "margin": 1.08751903,
             "operatingPointIsUsable": true
@@ -4946,7 +4946,7 @@
             "correlationBandBias": 0.403159294,
             "pullInBias": null,
             "operatingBias": 0.27570845,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.152856248,
             "margin": 0.554412634,
             "operatingPointIsUsable": false
@@ -4988,7 +4988,7 @@
             "correlationBandBias": 0.403159294,
             "pullInBias": null,
             "operatingBias": 0.27570845,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.233797899,
             "margin": 0.847989604,
             "operatingPointIsUsable": false
@@ -5009,7 +5009,7 @@
             "correlationBandBias": 0.403159294,
             "pullInBias": null,
             "operatingBias": 0.27570845,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.296856297,
             "margin": 1.07670366,
             "operatingPointIsUsable": true
@@ -5156,7 +5156,7 @@
             "correlationBandBias": 0.401170179,
             "pullInBias": null,
             "operatingBias": 0.27570845,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.162486414,
             "margin": 0.589341437,
             "operatingPointIsUsable": false
@@ -5198,7 +5198,7 @@
             "correlationBandBias": 0.401170179,
             "pullInBias": null,
             "operatingBias": 0.27570845,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.235109677,
             "margin": 0.852747446,
             "operatingPointIsUsable": false
@@ -5219,7 +5219,7 @@
             "correlationBandBias": 0.401170179,
             "pullInBias": null,
             "operatingBias": 0.27570845,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.296482898,
             "margin": 1.07534933,
             "operatingPointIsUsable": true
@@ -5366,7 +5366,7 @@
             "correlationBandBias": 0.391078196,
             "pullInBias": null,
             "operatingBias": 0.26685275,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.14137291,
             "margin": 0.529778727,
             "operatingPointIsUsable": false
@@ -5408,7 +5408,7 @@
             "correlationBandBias": 0.391078196,
             "pullInBias": null,
             "operatingBias": 0.26685275,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.223920879,
             "margin": 0.839117748,
             "operatingPointIsUsable": false
@@ -5429,7 +5429,7 @@
             "correlationBandBias": 0.391078196,
             "pullInBias": null,
             "operatingBias": 0.26685275,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.288373321,
             "margin": 1.08064587,
             "operatingPointIsUsable": true
@@ -5576,7 +5576,7 @@
             "correlationBandBias": 0.575939975,
             "pullInBias": null,
             "operatingBias": 0.370938255,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.263701419,
             "margin": 0.71090381,
             "operatingPointIsUsable": false
@@ -5618,7 +5618,7 @@
             "correlationBandBias": 0.575939975,
             "pullInBias": null,
             "operatingBias": 0.370938255,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.333852454,
             "margin": 0.900021632,
             "operatingPointIsUsable": false
@@ -5639,7 +5639,7 @@
             "correlationBandBias": 0.575939975,
             "pullInBias": null,
             "operatingBias": 0.370938255,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.392267179,
             "margin": 1.05749993,
             "operatingPointIsUsable": true
@@ -5786,7 +5786,7 @@
             "correlationBandBias": 0.568523178,
             "pullInBias": null,
             "operatingBias": 0.370938255,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.290541401,
             "margin": 0.783260818,
             "operatingPointIsUsable": false
@@ -5828,7 +5828,7 @@
             "correlationBandBias": 0.568523178,
             "pullInBias": null,
             "operatingBias": 0.370938255,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.336685539,
             "margin": 0.907659251,
             "operatingPointIsUsable": false
@@ -5849,7 +5849,7 @@
             "correlationBandBias": 0.568523178,
             "pullInBias": null,
             "operatingBias": 0.370938255,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.391518891,
             "margin": 1.05548265,
             "operatingPointIsUsable": true
@@ -5996,7 +5996,7 @@
             "correlationBandBias": 0.534189898,
             "pullInBias": null,
             "operatingBias": 0.353644249,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.235300859,
             "margin": 0.665360343,
             "operatingPointIsUsable": false
@@ -6038,7 +6038,7 @@
             "correlationBandBias": 0.534189898,
             "pullInBias": null,
             "operatingBias": 0.353644249,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.313419734,
             "margin": 0.886257121,
             "operatingPointIsUsable": false
@@ -6059,7 +6059,7 @@
             "correlationBandBias": 0.534189898,
             "pullInBias": null,
             "operatingBias": 0.353644249,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.375744622,
             "margin": 1.06249324,
             "operatingPointIsUsable": true
@@ -6206,7 +6206,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.147943097,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0739176,
             "margin": 0.499635343,
             "operatingPointIsUsable": false
@@ -6248,7 +6248,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.147943097,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.117464748,
             "margin": 0.793986002,
             "operatingPointIsUsable": false
@@ -6269,7 +6269,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.147943097,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.154554293,
             "margin": 1.04468743,
             "operatingPointIsUsable": true
@@ -6416,7 +6416,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.147943097,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0739176,
             "margin": 0.499635343,
             "operatingPointIsUsable": false
@@ -6458,7 +6458,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.147943097,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.117464748,
             "margin": 0.793986002,
             "operatingPointIsUsable": false
@@ -6479,7 +6479,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.147943097,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.154554293,
             "margin": 1.04468743,
             "operatingPointIsUsable": true
@@ -6626,7 +6626,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.147943097,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0739176,
             "margin": 0.499635343,
             "operatingPointIsUsable": false
@@ -6668,7 +6668,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.147943097,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.117464748,
             "margin": 0.793986002,
             "operatingPointIsUsable": false
@@ -6689,7 +6689,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.147943097,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.154554293,
             "margin": 1.04468743,
             "operatingPointIsUsable": true
@@ -6836,7 +6836,7 @@
             "correlationBandBias": 0.171823074,
             "pullInBias": null,
             "operatingBias": 0.127557245,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0599608316,
             "margin": 0.47006998,
             "operatingPointIsUsable": false
@@ -6878,7 +6878,7 @@
             "correlationBandBias": 0.171823074,
             "pullInBias": null,
             "operatingBias": 0.127557245,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.104457253,
             "margin": 0.818904898,
             "operatingPointIsUsable": false
@@ -6899,7 +6899,7 @@
             "correlationBandBias": 0.171823074,
             "pullInBias": null,
             "operatingBias": 0.127557245,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.132394141,
             "margin": 1.03791941,
             "operatingPointIsUsable": true
@@ -7256,7 +7256,7 @@
             "correlationBandBias": 0.163161298,
             "pullInBias": null,
             "operatingBias": 0.114096939,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0502243948,
             "margin": 0.440190554,
             "operatingPointIsUsable": false
@@ -7298,7 +7298,7 @@
             "correlationBandBias": 0.163161298,
             "pullInBias": null,
             "operatingBias": 0.114096939,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.0891132961,
             "margin": 0.781031436,
             "operatingPointIsUsable": false
@@ -7319,7 +7319,7 @@
             "correlationBandBias": 0.163161298,
             "pullInBias": null,
             "operatingBias": 0.114096939,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.119303236,
             "margin": 1.04563047,
             "operatingPointIsUsable": true
@@ -7466,7 +7466,7 @@
             "correlationBandBias": 0.196551753,
             "pullInBias": null,
             "operatingBias": 0.155365592,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0928774929,
             "margin": 0.597799627,
             "operatingPointIsUsable": false
@@ -7508,7 +7508,7 @@
             "correlationBandBias": 0.196551753,
             "pullInBias": null,
             "operatingBias": 0.155365592,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.135072934,
             "margin": 0.869387695,
             "operatingPointIsUsable": false
@@ -7529,7 +7529,7 @@
             "correlationBandBias": 0.196551753,
             "pullInBias": null,
             "operatingBias": 0.155365592,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.159714315,
             "margin": 1.02799026,
             "operatingPointIsUsable": true
@@ -7886,7 +7886,7 @@
             "correlationBandBias": 0.184799286,
             "pullInBias": null,
             "operatingBias": 0.139468648,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0668583121,
             "margin": 0.479378793,
             "operatingPointIsUsable": false
@@ -7928,7 +7928,7 @@
             "correlationBandBias": 0.184799286,
             "pullInBias": null,
             "operatingBias": 0.139468648,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.115753373,
             "margin": 0.829959813,
             "operatingPointIsUsable": false
@@ -7949,7 +7949,7 @@
             "correlationBandBias": 0.184799286,
             "pullInBias": null,
             "operatingBias": 0.139468648,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.144414467,
             "margin": 1.03546187,
             "operatingPointIsUsable": true
@@ -8096,7 +8096,7 @@
             "correlationBandBias": 0.331406041,
             "pullInBias": null,
             "operatingBias": 0.205071463,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.11667868,
             "margin": 0.568965953,
             "operatingPointIsUsable": false
@@ -8138,7 +8138,7 @@
             "correlationBandBias": 0.331406041,
             "pullInBias": null,
             "operatingBias": 0.205071463,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.208866618,
             "margin": 1.0185065,
             "operatingPointIsUsable": true
@@ -8159,7 +8159,7 @@
             "correlationBandBias": 0.331406041,
             "pullInBias": null,
             "operatingBias": 0.205071463,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.296719595,
             "margin": 1.44690827,
             "operatingPointIsUsable": true
@@ -8306,7 +8306,7 @@
             "correlationBandBias": 0.33020613,
             "pullInBias": null,
             "operatingBias": 0.205071463,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.121338628,
             "margin": 0.591689485,
             "operatingPointIsUsable": false
@@ -8348,7 +8348,7 @@
             "correlationBandBias": 0.33020613,
             "pullInBias": null,
             "operatingBias": 0.205071463,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.208792564,
             "margin": 1.01814539,
             "operatingPointIsUsable": true
@@ -8369,7 +8369,7 @@
             "correlationBandBias": 0.33020613,
             "pullInBias": null,
             "operatingBias": 0.205071463,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.295746943,
             "margin": 1.44216528,
             "operatingPointIsUsable": true
@@ -8516,7 +8516,7 @@
             "correlationBandBias": 0.323591987,
             "pullInBias": null,
             "operatingBias": 0.195784026,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.104280192,
             "margin": 0.532628705,
             "operatingPointIsUsable": false
@@ -8558,7 +8558,7 @@
             "correlationBandBias": 0.323591987,
             "pullInBias": null,
             "operatingBias": 0.195784026,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.199684513,
             "margin": 1.0199224,
             "operatingPointIsUsable": true
@@ -8579,7 +8579,7 @@
             "correlationBandBias": 0.323591987,
             "pullInBias": null,
             "operatingBias": 0.195784026,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.289072642,
             "margin": 1.47648737,
             "operatingPointIsUsable": true
@@ -8726,7 +8726,7 @@
             "correlationBandBias": 0.35429211,
             "pullInBias": null,
             "operatingBias": 0.225306923,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.136088612,
             "margin": 0.60401434,
             "operatingPointIsUsable": false
@@ -8768,7 +8768,7 @@
             "correlationBandBias": 0.35429211,
             "pullInBias": null,
             "operatingBias": 0.225306923,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.229134484,
             "margin": 1.01698821,
             "operatingPointIsUsable": true
@@ -8789,7 +8789,7 @@
             "correlationBandBias": 0.35429211,
             "pullInBias": null,
             "operatingBias": 0.225306923,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.318287426,
             "margin": 1.41268374,
             "operatingPointIsUsable": true
@@ -9146,7 +9146,7 @@
             "correlationBandBias": 0.345857351,
             "pullInBias": null,
             "operatingBias": 0.215623304,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.123017537,
             "margin": 0.570520599,
             "operatingPointIsUsable": false
@@ -9188,7 +9188,7 @@
             "correlationBandBias": 0.345857351,
             "pullInBias": null,
             "operatingBias": 0.215623304,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.21956141,
             "margin": 1.01826382,
             "operatingPointIsUsable": true
@@ -9209,7 +9209,7 @@
             "correlationBandBias": 0.345857351,
             "pullInBias": null,
             "operatingBias": 0.215623304,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.310219427,
             "margin": 1.43871011,
             "operatingPointIsUsable": true
@@ -9356,7 +9356,7 @@
             "correlationBandBias": 0.442237103,
             "pullInBias": null,
             "operatingBias": 0.283658984,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.19208923,
             "margin": 0.677183665,
             "operatingPointIsUsable": false
@@ -9398,7 +9398,7 @@
             "correlationBandBias": 0.442237103,
             "pullInBias": null,
             "operatingBias": 0.283658984,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.28769521,
             "margin": 1.01422915,
             "operatingPointIsUsable": true
@@ -9419,7 +9419,7 @@
             "correlationBandBias": 0.442237103,
             "pullInBias": null,
             "operatingBias": 0.283658984,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.390146186,
             "margin": 1.37540571,
             "operatingPointIsUsable": true
@@ -9776,7 +9776,7 @@
             "correlationBandBias": 0.425870213,
             "pullInBias": null,
             "operatingBias": 0.269269681,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.171555672,
             "margin": 0.637114701,
             "operatingPointIsUsable": false
@@ -9818,7 +9818,7 @@
             "correlationBandBias": 0.425870213,
             "pullInBias": null,
             "operatingBias": 0.269269681,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.273469328,
             "margin": 1.01559644,
             "operatingPointIsUsable": true
@@ -9839,7 +9839,7 @@
             "correlationBandBias": 0.425870213,
             "pullInBias": null,
             "operatingBias": 0.269269681,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.376820851,
             "margin": 1.39941805,
             "operatingPointIsUsable": true
@@ -9986,7 +9986,7 @@
             "correlationBandBias": 0.245655068,
             "pullInBias": null,
             "operatingBias": 0.168951137,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.116995697,
             "margin": 0.692482451,
             "operatingPointIsUsable": false
@@ -10028,7 +10028,7 @@
             "correlationBandBias": 0.245655068,
             "pullInBias": null,
             "operatingBias": 0.168951137,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.187341793,
             "margin": 1.10885192,
             "operatingPointIsUsable": true
@@ -10196,7 +10196,7 @@
             "correlationBandBias": 0.244413016,
             "pullInBias": null,
             "operatingBias": 0.168951137,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.12031122,
             "margin": 0.712106599,
             "operatingPointIsUsable": false
@@ -10238,7 +10238,7 @@
             "correlationBandBias": 0.244413016,
             "pullInBias": null,
             "operatingBias": 0.168951137,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.186841245,
             "margin": 1.10588924,
             "operatingPointIsUsable": true
@@ -10406,7 +10406,7 @@
             "correlationBandBias": 0.23745886,
             "pullInBias": null,
             "operatingBias": 0.158538286,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.106292363,
             "margin": 0.670452327,
             "operatingPointIsUsable": false
@@ -10448,7 +10448,7 @@
             "correlationBandBias": 0.23745886,
             "pullInBias": null,
             "operatingBias": 0.158538286,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.177605771,
             "margin": 1.12027054,
             "operatingPointIsUsable": true
@@ -10616,7 +10616,7 @@
             "correlationBandBias": 0.26462667,
             "pullInBias": null,
             "operatingBias": 0.187832873,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.135821886,
             "margin": 0.723099658,
             "operatingPointIsUsable": false
@@ -10658,7 +10658,7 @@
             "correlationBandBias": 0.26462667,
             "pullInBias": null,
             "operatingBias": 0.187832873,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.206218123,
             "margin": 1.0978809,
             "operatingPointIsUsable": true
@@ -11036,7 +11036,7 @@
             "correlationBandBias": 0.256241024,
             "pullInBias": null,
             "operatingBias": 0.17710676,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.122607539,
             "margin": 0.692280401,
             "operatingPointIsUsable": false
@@ -11078,7 +11078,7 @@
             "correlationBandBias": 0.256241024,
             "pullInBias": null,
             "operatingBias": 0.17710676,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.196218371,
             "margin": 1.10791011,
             "operatingPointIsUsable": true
@@ -11246,7 +11246,7 @@
             "correlationBandBias": 0.30495303,
             "pullInBias": null,
             "operatingBias": 0.230641528,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.183388767,
             "margin": 0.795124661,
             "operatingPointIsUsable": false
@@ -11288,7 +11288,7 @@
             "correlationBandBias": 0.30495303,
             "pullInBias": null,
             "operatingBias": 0.230641528,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.247785886,
             "margin": 1.07433335,
             "operatingPointIsUsable": true
@@ -11666,7 +11666,7 @@
             "correlationBandBias": 0.294464665,
             "pullInBias": null,
             "operatingBias": 0.216561461,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.164310943,
             "margin": 0.75872661,
             "operatingPointIsUsable": false
@@ -11708,7 +11708,7 @@
             "correlationBandBias": 0.294464665,
             "pullInBias": null,
             "operatingBias": 0.216561461,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.234944197,
             "margin": 1.08488462,
             "operatingPointIsUsable": true
@@ -11876,7 +11876,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0944472701,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.092665959,
             "margin": 0.981139623,
             "operatingPointIsUsable": false
@@ -11918,7 +11918,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0944472701,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.119824128,
             "margin": 1.26868811,
             "operatingPointIsUsable": true
@@ -11939,7 +11939,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0944472701,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.141193328,
             "margin": 1.49494346,
             "operatingPointIsUsable": true
@@ -12086,7 +12086,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0944472701,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0935237843,
             "margin": 0.990222207,
             "operatingPointIsUsable": false
@@ -12128,7 +12128,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0944472701,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.113359407,
             "margin": 1.20024016,
             "operatingPointIsUsable": true
@@ -12149,7 +12149,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0944472701,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.13387832,
             "margin": 1.41749275,
             "operatingPointIsUsable": true
@@ -12296,7 +12296,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0655798049,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0636193905,
             "margin": 0.970106431,
             "operatingPointIsUsable": false
@@ -12338,7 +12338,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0655798049,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.0968430048,
             "margin": 1.47671993,
             "operatingPointIsUsable": true
@@ -12359,7 +12359,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0655798049,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.129132377,
             "margin": 1.96908754,
             "operatingPointIsUsable": true
@@ -12506,7 +12506,7 @@
             "correlationBandBias": 0.219624225,
             "pullInBias": null,
             "operatingBias": 0.116344831,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.114740942,
             "margin": 0.986214347,
             "operatingPointIsUsable": false
@@ -12548,7 +12548,7 @@
             "correlationBandBias": 0.219624225,
             "pullInBias": null,
             "operatingBias": 0.116344831,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.139423246,
             "margin": 1.19836218,
             "operatingPointIsUsable": true
@@ -12569,7 +12569,7 @@
             "correlationBandBias": 0.219624225,
             "pullInBias": null,
             "operatingBias": 0.116344831,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.159908398,
             "margin": 1.37443491,
             "operatingPointIsUsable": true
@@ -12926,7 +12926,7 @@
             "correlationBandBias": 0.205084827,
             "pullInBias": null,
             "operatingBias": 0.084383331,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0824401027,
             "margin": 0.97697142,
             "operatingPointIsUsable": false
@@ -12968,7 +12968,7 @@
             "correlationBandBias": 0.205084827,
             "pullInBias": null,
             "operatingBias": 0.084383331,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.113930743,
             "margin": 1.35015697,
             "operatingPointIsUsable": true
@@ -12989,7 +12989,7 @@
             "correlationBandBias": 0.205084827,
             "pullInBias": null,
             "operatingBias": 0.084383331,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.138871777,
             "margin": 1.64572523,
             "operatingPointIsUsable": true
@@ -13346,7 +13346,7 @@
             "correlationBandBias": 0.243026014,
             "pullInBias": null,
             "operatingBias": 0.220572604,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.226221343,
             "margin": 1.02560943,
             "operatingPointIsUsable": true
@@ -13388,7 +13388,7 @@
             "correlationBandBias": 0.243026014,
             "pullInBias": null,
             "operatingBias": 0.220572604,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.186549468,
             "margin": 0.845750853,
             "operatingPointIsUsable": false
@@ -13409,7 +13409,7 @@
             "correlationBandBias": 0.243026014,
             "pullInBias": null,
             "operatingBias": 0.220572604,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.192648098,
             "margin": 0.873399935,
             "operatingPointIsUsable": false
@@ -13556,7 +13556,7 @@
             "correlationBandBias": 0.233923584,
             "pullInBias": null,
             "operatingBias": 0.147009763,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.146529809,
             "margin": 0.996735221,
             "operatingPointIsUsable": false
@@ -13598,7 +13598,7 @@
             "correlationBandBias": 0.233923584,
             "pullInBias": null,
             "operatingBias": 0.147009763,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.157998157,
             "margin": 1.07474601,
             "operatingPointIsUsable": true
@@ -13619,7 +13619,7 @@
             "correlationBandBias": 0.233923584,
             "pullInBias": null,
             "operatingBias": 0.147009763,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.174949333,
             "margin": 1.19005248,
             "operatingPointIsUsable": true
@@ -13766,7 +13766,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.129333089,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.158649378,
             "margin": 1.22667277,
             "operatingPointIsUsable": true
@@ -13808,7 +13808,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.129333089,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.240159617,
             "margin": 1.85690777,
             "operatingPointIsUsable": true
@@ -13829,7 +13829,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.129333089,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.326054268,
             "margin": 2.52104292,
             "operatingPointIsUsable": true
@@ -13976,7 +13976,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.129333089,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.154910291,
             "margin": 1.19776225,
             "operatingPointIsUsable": true
@@ -14018,7 +14018,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.129333089,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.23486599,
             "margin": 1.81597758,
             "operatingPointIsUsable": true
@@ -14039,7 +14039,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.129333089,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.320957259,
             "margin": 2.48163298,
             "operatingPointIsUsable": true
@@ -14186,7 +14186,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.105319901,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.137502203,
             "margin": 1.30556715,
             "operatingPointIsUsable": true
@@ -14228,7 +14228,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.105319901,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.225275798,
             "margin": 2.13896705,
             "operatingPointIsUsable": true
@@ -14249,7 +14249,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.105319901,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.313895693,
             "margin": 2.98040247,
             "operatingPointIsUsable": true
@@ -14396,7 +14396,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.156697082,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.185041401,
             "margin": 1.18088607,
             "operatingPointIsUsable": true
@@ -14438,7 +14438,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.156697082,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.265872467,
             "margin": 1.6967289,
             "operatingPointIsUsable": true
@@ -14459,7 +14459,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.156697082,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.354670402,
             "margin": 2.26341421,
             "operatingPointIsUsable": true
@@ -14606,7 +14606,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.156697082,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.180724538,
             "margin": 1.15333697,
             "operatingPointIsUsable": true
@@ -14648,7 +14648,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.156697082,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.259970757,
             "margin": 1.65906572,
             "operatingPointIsUsable": true
@@ -14669,7 +14669,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.156697082,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.348786615,
             "margin": 2.22586541,
             "operatingPointIsUsable": true
@@ -14816,7 +14816,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.128658347,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.160984774,
             "margin": 1.25125791,
             "operatingPointIsUsable": true
@@ -14858,7 +14858,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.128658347,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.249381514,
             "margin": 1.93832363,
             "operatingPointIsUsable": true
@@ -14879,7 +14879,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.128658347,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.340735707,
             "margin": 2.64837622,
             "operatingPointIsUsable": true
@@ -15236,7 +15236,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.373239029,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.341042484,
             "margin": 0.913737464,
             "operatingPointIsUsable": false
@@ -15278,7 +15278,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.373239029,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.388864627,
             "margin": 1.04186486,
             "operatingPointIsUsable": true
@@ -15299,7 +15299,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.373239029,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.513395563,
             "margin": 1.37551414,
             "operatingPointIsUsable": true
@@ -15446,7 +15446,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.256981603,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.279298972,
             "margin": 1.08684423,
             "operatingPointIsUsable": true
@@ -15488,7 +15488,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.256981603,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.362854329,
             "margin": 1.41198562,
             "operatingPointIsUsable": true
@@ -15509,7 +15509,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.256981603,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.489510812,
             "margin": 1.90484769,
             "operatingPointIsUsable": true
@@ -15656,7 +15656,7 @@
             "correlationBandBias": 0.317865531,
             "pullInBias": null,
             "operatingBias": 0.122149397,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.155357718,
             "margin": 1.27186643,
             "operatingPointIsUsable": true
@@ -15698,7 +15698,7 @@
             "correlationBandBias": 0.317865531,
             "pullInBias": null,
             "operatingBias": 0.122149397,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.214860363,
             "margin": 1.75899651,
             "operatingPointIsUsable": true
@@ -15719,7 +15719,7 @@
             "correlationBandBias": 0.317865531,
             "pullInBias": null,
             "operatingBias": 0.122149397,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.271667844,
             "margin": 2.2240621,
             "operatingPointIsUsable": true
@@ -15866,7 +15866,7 @@
             "correlationBandBias": 0.312349736,
             "pullInBias": null,
             "operatingBias": 0.122149397,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.150461936,
             "margin": 1.23178615,
             "operatingPointIsUsable": true
@@ -15908,7 +15908,7 @@
             "correlationBandBias": 0.312349736,
             "pullInBias": null,
             "operatingBias": 0.122149397,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.208981618,
             "margin": 1.71086901,
             "operatingPointIsUsable": true
@@ -15929,7 +15929,7 @@
             "correlationBandBias": 0.312349736,
             "pullInBias": null,
             "operatingBias": 0.122149397,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.266163205,
             "margin": 2.17899729,
             "operatingPointIsUsable": true
@@ -16076,7 +16076,7 @@
             "correlationBandBias": 0.305857127,
             "pullInBias": null,
             "operatingBias": 0.097311377,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.134298976,
             "margin": 1.38009532,
             "operatingPointIsUsable": true
@@ -16118,7 +16118,7 @@
             "correlationBandBias": 0.305857127,
             "pullInBias": null,
             "operatingBias": 0.097311377,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.199384071,
             "margin": 2.04892867,
             "operatingPointIsUsable": true
@@ -16139,7 +16139,7 @@
             "correlationBandBias": 0.305857127,
             "pullInBias": null,
             "operatingBias": 0.097311377,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.258975075,
             "margin": 2.66130316,
             "operatingPointIsUsable": true
@@ -16286,7 +16286,7 @@
             "correlationBandBias": 0.339730699,
             "pullInBias": null,
             "operatingBias": 0.148163557,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.178943149,
             "margin": 1.20774064,
             "operatingPointIsUsable": true
@@ -16328,7 +16328,7 @@
             "correlationBandBias": 0.339730699,
             "pullInBias": null,
             "operatingBias": 0.148163557,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.236402853,
             "margin": 1.5955533,
             "operatingPointIsUsable": true
@@ -16349,7 +16349,7 @@
             "correlationBandBias": 0.339730699,
             "pullInBias": null,
             "operatingBias": 0.148163557,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.292897904,
             "margin": 1.97685524,
             "operatingPointIsUsable": true
@@ -16496,7 +16496,7 @@
             "correlationBandBias": 0.333866337,
             "pullInBias": null,
             "operatingBias": 0.148163557,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.173519026,
             "margin": 1.17113162,
             "operatingPointIsUsable": true
@@ -16538,7 +16538,7 @@
             "correlationBandBias": 0.333866337,
             "pullInBias": null,
             "operatingBias": 0.148163557,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.230172058,
             "margin": 1.55349981,
             "operatingPointIsUsable": true
@@ -16559,7 +16559,7 @@
             "correlationBandBias": 0.333866337,
             "pullInBias": null,
             "operatingBias": 0.148163557,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.287113268,
             "margin": 1.93781301,
             "operatingPointIsUsable": true
@@ -16706,7 +16706,7 @@
             "correlationBandBias": 0.3270034,
             "pullInBias": null,
             "operatingBias": 0.119570154,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.155824085,
             "margin": 1.30320218,
             "operatingPointIsUsable": true
@@ -16748,7 +16748,7 @@
             "correlationBandBias": 0.3270034,
             "pullInBias": null,
             "operatingBias": 0.119570154,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.220048634,
             "margin": 1.84033078,
             "operatingPointIsUsable": true
@@ -16769,7 +16769,7 @@
             "correlationBandBias": 0.3270034,
             "pullInBias": null,
             "operatingBias": 0.119570154,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.279587853,
             "margin": 2.3382746,
             "operatingPointIsUsable": true
@@ -17126,7 +17126,7 @@
             "correlationBandBias": 0.40447165,
             "pullInBias": null,
             "operatingBias": 0.331131598,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.280823819,
             "margin": 0.848073156,
             "operatingPointIsUsable": false
@@ -17168,7 +17168,7 @@
             "correlationBandBias": 0.40447165,
             "pullInBias": null,
             "operatingBias": 0.331131598,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.301306431,
             "margin": 0.909929566,
             "operatingPointIsUsable": false
@@ -17189,7 +17189,7 @@
             "correlationBandBias": 0.40447165,
             "pullInBias": null,
             "operatingBias": 0.331131598,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.351990461,
             "margin": 1.06299267,
             "operatingPointIsUsable": true
@@ -17336,7 +17336,7 @@
             "correlationBandBias": 0.393026384,
             "pullInBias": null,
             "operatingBias": 0.229530134,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.240792975,
             "margin": 1.04906912,
             "operatingPointIsUsable": true
@@ -17378,7 +17378,7 @@
             "correlationBandBias": 0.393026384,
             "pullInBias": null,
             "operatingBias": 0.229530134,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.28457613,
             "margin": 1.23982034,
             "operatingPointIsUsable": true
@@ -17399,7 +17399,7 @@
             "correlationBandBias": 0.393026384,
             "pullInBias": null,
             "operatingBias": 0.229530134,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.340323568,
             "margin": 1.48269668,
             "operatingPointIsUsable": true
@@ -17546,7 +17546,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.064381155,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0888261634,
             "margin": 1.37969198,
             "operatingPointIsUsable": true
@@ -17588,7 +17588,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.064381155,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.138727592,
             "margin": 2.1547857,
             "operatingPointIsUsable": true
@@ -17609,7 +17609,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.064381155,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.180022995,
             "margin": 2.79620636,
             "operatingPointIsUsable": true
@@ -17966,7 +17966,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0617297928,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0888261634,
             "margin": 1.43895126,
             "operatingPointIsUsable": true
@@ -18008,7 +18008,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0617297928,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.138727592,
             "margin": 2.24733611,
             "operatingPointIsUsable": true
@@ -18029,7 +18029,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0617297928,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.180022995,
             "margin": 2.91630649,
             "operatingPointIsUsable": true
@@ -18176,7 +18176,7 @@
             "correlationBandBias": 0.163161298,
             "pullInBias": null,
             "operatingBias": 0.0830723858,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0967834322,
             "margin": 1.16504939,
             "operatingPointIsUsable": true
@@ -18218,7 +18218,7 @@
             "correlationBandBias": 0.163161298,
             "pullInBias": null,
             "operatingBias": 0.0830723858,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.11815681,
             "margin": 1.42233558,
             "operatingPointIsUsable": true
@@ -18239,7 +18239,7 @@
             "correlationBandBias": 0.163161298,
             "pullInBias": null,
             "operatingBias": 0.0830723858,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.139426053,
             "margin": 1.67836823,
             "operatingPointIsUsable": true
@@ -18596,7 +18596,7 @@
             "correlationBandBias": 0.163161298,
             "pullInBias": null,
             "operatingBias": 0.0444456761,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0641563964,
             "margin": 1.44347892,
             "operatingPointIsUsable": true
@@ -18638,7 +18638,7 @@
             "correlationBandBias": 0.163161298,
             "pullInBias": null,
             "operatingBias": 0.0444456761,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.103790283,
             "margin": 2.33521666,
             "operatingPointIsUsable": true
@@ -18659,7 +18659,7 @@
             "correlationBandBias": 0.163161298,
             "pullInBias": null,
             "operatingBias": 0.0444456761,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.139426053,
             "margin": 3.13699926,
             "operatingPointIsUsable": true
@@ -19016,7 +19016,7 @@
             "correlationBandBias": 0.167571512,
             "pullInBias": null,
             "operatingBias": 0.144420999,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.127471855,
             "margin": 0.882640722,
             "operatingPointIsUsable": false
@@ -19058,7 +19058,7 @@
             "correlationBandBias": 0.167571512,
             "pullInBias": null,
             "operatingBias": 0.144420999,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.135188749,
             "margin": 0.936074049,
             "operatingPointIsUsable": false
@@ -19079,7 +19079,7 @@
             "correlationBandBias": 0.167571512,
             "pullInBias": null,
             "operatingBias": 0.144420999,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.152898068,
             "margin": 1.05869693,
             "operatingPointIsUsable": true
@@ -19226,7 +19226,7 @@
             "correlationBandBias": 0.156794718,
             "pullInBias": null,
             "operatingBias": 0.07607625,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0919849338,
             "margin": 1.20911498,
             "operatingPointIsUsable": true
@@ -19268,7 +19268,7 @@
             "correlationBandBias": 0.156794718,
             "pullInBias": null,
             "operatingBias": 0.07607625,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.116888,
             "margin": 1.53645849,
             "operatingPointIsUsable": true
@@ -19289,7 +19289,7 @@
             "correlationBandBias": 0.156794718,
             "pullInBias": null,
             "operatingBias": 0.07607625,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.139979945,
             "margin": 1.83999533,
             "operatingPointIsUsable": true
@@ -19436,7 +19436,7 @@
             "correlationBandBias": 0.288496508,
             "pullInBias": null,
             "operatingBias": 0.0848355454,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.136972994,
             "margin": 1.61457079,
             "operatingPointIsUsable": true
@@ -19478,7 +19478,7 @@
             "correlationBandBias": 0.288496508,
             "pullInBias": null,
             "operatingBias": 0.0848355454,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.213022343,
             "margin": 2.51100341,
             "operatingPointIsUsable": true
@@ -19856,7 +19856,7 @@
             "correlationBandBias": 0.276404277,
             "pullInBias": null,
             "operatingBias": 0.0617297928,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.115173808,
             "margin": 1.86577345,
             "operatingPointIsUsable": true
@@ -19898,7 +19898,7 @@
             "correlationBandBias": 0.276404277,
             "pullInBias": null,
             "operatingBias": 0.0617297928,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.198207898,
             "margin": 3.21089524,
             "operatingPointIsUsable": true
@@ -20066,7 +20066,7 @@
             "correlationBandBias": 0.308821633,
             "pullInBias": null,
             "operatingBias": 0.105603466,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.156711671,
             "margin": 1.48396333,
             "operatingPointIsUsable": true
@@ -20108,7 +20108,7 @@
             "correlationBandBias": 0.308821633,
             "pullInBias": null,
             "operatingBias": 0.105603466,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.232632709,
             "margin": 2.20288896,
             "operatingPointIsUsable": true
@@ -20486,7 +20486,7 @@
             "correlationBandBias": 0.296269155,
             "pullInBias": null,
             "operatingBias": 0.0719268199,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.133847984,
             "margin": 1.86089117,
             "operatingPointIsUsable": true
@@ -20528,7 +20528,7 @@
             "correlationBandBias": 0.296269155,
             "pullInBias": null,
             "operatingBias": 0.0719268199,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.217335685,
             "margin": 3.02162233,
             "operatingPointIsUsable": true
@@ -20696,7 +20696,7 @@
             "correlationBandBias": 0.36487096,
             "pullInBias": null,
             "operatingBias": 0.193142747,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.214317598,
             "margin": 1.10963317,
             "operatingPointIsUsable": true
@@ -20738,7 +20738,7 @@
             "correlationBandBias": 0.36487096,
             "pullInBias": null,
             "operatingBias": 0.193142747,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.282333488,
             "margin": 1.46178664,
             "operatingPointIsUsable": true
@@ -20906,7 +20906,7 @@
             "correlationBandBias": 0.35649886,
             "pullInBias": null,
             "operatingBias": 0.193142747,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.203269573,
             "margin": 1.05243182,
             "operatingPointIsUsable": true
@@ -20948,7 +20948,7 @@
             "correlationBandBias": 0.35649886,
             "pullInBias": null,
             "operatingBias": 0.193142747,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.273552161,
             "margin": 1.41632117,
             "operatingPointIsUsable": true
@@ -21116,7 +21116,7 @@
             "correlationBandBias": 0.346856896,
             "pullInBias": null,
             "operatingBias": 0.123317923,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.179547702,
             "margin": 1.4559741,
             "operatingPointIsUsable": true
@@ -21158,7 +21158,7 @@
             "correlationBandBias": 0.346856896,
             "pullInBias": null,
             "operatingBias": 0.123317923,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.261554953,
             "margin": 2.12098085,
             "operatingPointIsUsable": true
@@ -21326,7 +21326,7 @@
             "correlationBandBias": 0.218077932,
             "pullInBias": null,
             "operatingBias": 0.0829986859,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.13421978,
             "margin": 1.61713139,
             "operatingPointIsUsable": true
@@ -21368,7 +21368,7 @@
             "correlationBandBias": 0.218077932,
             "pullInBias": null,
             "operatingBias": 0.0829986859,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.190938615,
             "margin": 2.30050167,
             "operatingPointIsUsable": true
@@ -21746,7 +21746,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0617297928,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.120634989,
             "margin": 1.95424257,
             "operatingPointIsUsable": true
@@ -21788,7 +21788,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0617297928,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.182056531,
             "margin": 2.94924903,
             "operatingPointIsUsable": true
@@ -21956,7 +21956,7 @@
             "correlationBandBias": 0.23646935,
             "pullInBias": null,
             "operatingBias": 0.103563694,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.153052133,
             "margin": 1.4778551,
             "operatingPointIsUsable": true
@@ -21998,7 +21998,7 @@
             "correlationBandBias": 0.23646935,
             "pullInBias": null,
             "operatingBias": 0.103563694,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.20934443,
             "margin": 2.02140752,
             "operatingPointIsUsable": true
@@ -22376,7 +22376,7 @@
             "correlationBandBias": 0.222521264,
             "pullInBias": null,
             "operatingBias": 0.0695201828,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.130868328,
             "margin": 1.88245086,
             "operatingPointIsUsable": true
@@ -22418,7 +22418,7 @@
             "correlationBandBias": 0.222521264,
             "pullInBias": null,
             "operatingBias": 0.0695201828,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.193692215,
             "margin": 2.78612925,
             "operatingPointIsUsable": true
@@ -22796,7 +22796,7 @@
             "correlationBandBias": 0.262949925,
             "pullInBias": null,
             "operatingBias": 0.188295562,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.187825869,
             "margin": 0.997505554,
             "operatingPointIsUsable": false
@@ -22838,7 +22838,7 @@
             "correlationBandBias": 0.262949925,
             "pullInBias": null,
             "operatingBias": 0.188295562,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.23646,
             "margin": 1.25579168,
             "operatingPointIsUsable": true
@@ -23006,7 +23006,7 @@
             "correlationBandBias": 0.254029123,
             "pullInBias": null,
             "operatingBias": 0.118946964,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.168100711,
             "margin": 1.41324087,
             "operatingPointIsUsable": true
@@ -23048,7 +23048,7 @@
             "correlationBandBias": 0.254029123,
             "pullInBias": null,
             "operatingBias": 0.118946964,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.225862009,
             "margin": 1.89884635,
             "operatingPointIsUsable": true
@@ -23216,7 +23216,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.103041839,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.121087435,
             "margin": 1.17512883,
             "operatingPointIsUsable": true
@@ -23258,7 +23258,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.103041839,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.133852681,
             "margin": 1.29901293,
             "operatingPointIsUsable": true
@@ -23279,7 +23279,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.103041839,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.150043527,
             "margin": 1.45614178,
             "operatingPointIsUsable": true
@@ -23636,7 +23636,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0360502082,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0687907195,
             "margin": 1.90819202,
             "operatingPointIsUsable": true
@@ -23678,7 +23678,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0360502082,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.104724436,
             "margin": 2.90496064,
             "operatingPointIsUsable": true
@@ -23699,7 +23699,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0360502082,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.138922554,
             "margin": 3.85358536,
             "operatingPointIsUsable": true
@@ -24266,7 +24266,7 @@
             "correlationBandBias": 0.189233105,
             "pullInBias": null,
             "operatingBias": 0.0571058969,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0875423263,
             "margin": 1.53298225,
             "operatingPointIsUsable": true
@@ -24308,7 +24308,7 @@
             "correlationBandBias": 0.189233105,
             "pullInBias": null,
             "operatingBias": 0.0571058969,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.112691873,
             "margin": 1.97338418,
             "operatingPointIsUsable": true
@@ -24329,7 +24329,7 @@
             "correlationBandBias": 0.189233105,
             "pullInBias": null,
             "operatingBias": 0.0571058969,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.135979121,
             "margin": 2.38117476,
             "operatingPointIsUsable": true
@@ -24518,7 +24518,7 @@
             "correlationBandBias": 0.242249135,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.212352928,
             "margin": null,
             "operatingPointIsUsable": false
@@ -24539,7 +24539,7 @@
             "correlationBandBias": 0.242249135,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.209612518,
             "margin": null,
             "operatingPointIsUsable": false
@@ -24686,7 +24686,7 @@
             "correlationBandBias": 0.225330421,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.212032714,
             "margin": null,
             "operatingPointIsUsable": false
@@ -24728,7 +24728,7 @@
             "correlationBandBias": 0.225330421,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.176356234,
             "margin": null,
             "operatingPointIsUsable": false
@@ -24749,7 +24749,7 @@
             "correlationBandBias": 0.225330421,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.184009721,
             "margin": null,
             "operatingPointIsUsable": false
@@ -25106,7 +25106,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.1141612,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.178446557,
             "margin": 1.56311039,
             "operatingPointIsUsable": true
@@ -25148,7 +25148,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.1141612,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.249908711,
             "margin": 2.18908623,
             "operatingPointIsUsable": true
@@ -25169,7 +25169,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.1141612,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.332636425,
             "margin": 2.91374324,
             "operatingPointIsUsable": true
@@ -25526,7 +25526,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.0516673319,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.141840333,
             "margin": 2.74526143,
             "operatingPointIsUsable": true
@@ -25568,7 +25568,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.0516673319,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.225926558,
             "margin": 4.37271579,
             "operatingPointIsUsable": true
@@ -25589,7 +25589,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.0516673319,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.313488707,
             "margin": 6.06744524,
             "operatingPointIsUsable": true
@@ -26156,7 +26156,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.0775854793,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.165585629,
             "margin": 2.13423479,
             "operatingPointIsUsable": true
@@ -26198,7 +26198,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.0775854793,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.249810655,
             "margin": 3.21981197,
             "operatingPointIsUsable": true
@@ -26219,7 +26219,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": 0.0775854793,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.339885072,
             "margin": 4.38078201,
             "operatingPointIsUsable": true
@@ -26366,7 +26366,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.451139926,
             "margin": null,
             "operatingPointIsUsable": false
@@ -26408,7 +26408,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.428473405,
             "margin": null,
             "operatingPointIsUsable": false
@@ -26429,7 +26429,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.549260217,
             "margin": null,
             "operatingPointIsUsable": false
@@ -26576,7 +26576,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.348929392,
             "margin": null,
             "operatingPointIsUsable": false
@@ -26618,7 +26618,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.384576085,
             "margin": null,
             "operatingPointIsUsable": false
@@ -26639,7 +26639,7 @@
             "correlationBandBias": null,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.504049113,
             "margin": null,
             "operatingPointIsUsable": false
@@ -26996,7 +26996,7 @@
             "correlationBandBias": 0.310604478,
             "pullInBias": null,
             "operatingBias": 0.114897045,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.171595694,
             "margin": 1.49347352,
             "operatingPointIsUsable": true
@@ -27038,7 +27038,7 @@
             "correlationBandBias": 0.310604478,
             "pullInBias": null,
             "operatingBias": 0.114897045,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.222616268,
             "margin": 1.93752823,
             "operatingPointIsUsable": true
@@ -27059,7 +27059,7 @@
             "correlationBandBias": 0.310604478,
             "pullInBias": null,
             "operatingBias": 0.114897045,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.276414924,
             "margin": 2.40576182,
             "operatingPointIsUsable": true
@@ -27416,7 +27416,7 @@
             "correlationBandBias": 0.292130475,
             "pullInBias": null,
             "operatingBias": 0.0526575904,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.136342436,
             "margin": 2.58922664,
             "operatingPointIsUsable": true
@@ -27458,7 +27458,7 @@
             "correlationBandBias": 0.292130475,
             "pullInBias": null,
             "operatingBias": 0.0526575904,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.198191207,
             "margin": 3.76377281,
             "operatingPointIsUsable": true
@@ -27479,7 +27479,7 @@
             "correlationBandBias": 0.292130475,
             "pullInBias": null,
             "operatingBias": 0.0526575904,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.256804256,
             "margin": 4.87687062,
             "operatingPointIsUsable": true
@@ -28046,7 +28046,7 @@
             "correlationBandBias": 0.312610062,
             "pullInBias": null,
             "operatingBias": 0.0789146592,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.1575735,
             "margin": 1.99675829,
             "operatingPointIsUsable": true
@@ -28088,7 +28088,7 @@
             "correlationBandBias": 0.312610062,
             "pullInBias": null,
             "operatingBias": 0.0789146592,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.218440031,
             "margin": 2.7680539,
             "operatingPointIsUsable": true
@@ -28109,7 +28109,7 @@
             "correlationBandBias": 0.312610062,
             "pullInBias": null,
             "operatingBias": 0.0789146592,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.276990481,
             "margin": 3.51000034,
             "operatingPointIsUsable": true
@@ -28256,7 +28256,7 @@
             "correlationBandBias": 0.401336727,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.329556832,
             "margin": null,
             "operatingPointIsUsable": false
@@ -28298,7 +28298,7 @@
             "correlationBandBias": 0.401336727,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.319307755,
             "margin": null,
             "operatingPointIsUsable": false
@@ -28319,7 +28319,7 @@
             "correlationBandBias": 0.401336727,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.363408934,
             "margin": null,
             "operatingPointIsUsable": false
@@ -28466,7 +28466,7 @@
             "correlationBandBias": 0.380910301,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.273616641,
             "margin": null,
             "operatingPointIsUsable": false
@@ -28508,7 +28508,7 @@
             "correlationBandBias": 0.380910301,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.292863576,
             "margin": null,
             "operatingPointIsUsable": false
@@ -28529,7 +28529,7 @@
             "correlationBandBias": 0.380910301,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.343178359,
             "margin": null,
             "operatingPointIsUsable": false
@@ -28886,7 +28886,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0865613049,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0999753199,
             "margin": 1.15496549,
             "operatingPointIsUsable": true
@@ -28928,7 +28928,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0865613049,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.149021386,
             "margin": 1.72157047,
             "operatingPointIsUsable": true
@@ -28949,7 +28949,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0865613049,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.192021557,
             "margin": 2.21833021,
             "operatingPointIsUsable": true
@@ -29306,7 +29306,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0268138762,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0961897044,
             "margin": 3.58731068,
             "operatingPointIsUsable": true
@@ -29348,7 +29348,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0268138762,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.149021386,
             "margin": 5.55762191,
             "operatingPointIsUsable": true
@@ -29369,7 +29369,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0268138762,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.192021557,
             "margin": 7.1612756,
             "operatingPointIsUsable": true
@@ -29936,7 +29936,7 @@
             "correlationBandBias": 0.163161298,
             "pullInBias": null,
             "operatingBias": 0.0237155867,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.0683120235,
             "margin": 2.88046947,
             "operatingPointIsUsable": true
@@ -29978,7 +29978,7 @@
             "correlationBandBias": 0.163161298,
             "pullInBias": null,
             "operatingBias": 0.0237155867,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.112550917,
             "margin": 4.74586266,
             "operatingPointIsUsable": true
@@ -29999,7 +29999,7 @@
             "correlationBandBias": 0.163161298,
             "pullInBias": null,
             "operatingBias": 0.0237155867,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.150072073,
             "margin": 6.32799326,
             "operatingPointIsUsable": true
@@ -30146,7 +30146,7 @@
             "correlationBandBias": 0.176345916,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.165351458,
             "margin": null,
             "operatingPointIsUsable": false
@@ -30188,7 +30188,7 @@
             "correlationBandBias": 0.176345916,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.158206836,
             "margin": null,
             "operatingPointIsUsable": false
@@ -30209,7 +30209,7 @@
             "correlationBandBias": 0.176345916,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.170271311,
             "margin": null,
             "operatingPointIsUsable": false
@@ -30356,7 +30356,7 @@
             "correlationBandBias": 0.15670206,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.124864268,
             "margin": null,
             "operatingPointIsUsable": false
@@ -30398,7 +30398,7 @@
             "correlationBandBias": 0.15670206,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.131667451,
             "margin": null,
             "operatingPointIsUsable": false
@@ -30419,7 +30419,7 @@
             "correlationBandBias": 0.15670206,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.2566666666666668)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.256666667)",
             "usableBias": 0.149222503,
             "margin": null,
             "operatingPointIsUsable": false
@@ -30776,7 +30776,7 @@
             "correlationBandBias": 0.284257139,
             "pullInBias": null,
             "operatingBias": 0.0916827608,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.152232868,
             "margin": 1.66043067,
             "operatingPointIsUsable": true
@@ -30818,7 +30818,7 @@
             "correlationBandBias": 0.284257139,
             "pullInBias": null,
             "operatingBias": 0.0916827608,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.220532644,
             "margin": 2.40538835,
             "operatingPointIsUsable": true
@@ -31196,7 +31196,7 @@
             "correlationBandBias": 0.265470673,
             "pullInBias": null,
             "operatingBias": 0.0268138762,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.117216224,
             "margin": 4.37147628,
             "operatingPointIsUsable": true
@@ -31238,7 +31238,7 @@
             "correlationBandBias": 0.265470673,
             "pullInBias": null,
             "operatingBias": 0.0268138762,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.197576044,
             "margin": 7.36842532,
             "operatingPointIsUsable": true
@@ -31826,7 +31826,7 @@
             "correlationBandBias": 0.284978917,
             "pullInBias": null,
             "operatingBias": 0.0347060104,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.135830953,
             "margin": 3.91375878,
             "operatingPointIsUsable": true
@@ -31868,7 +31868,7 @@
             "correlationBandBias": 0.284978917,
             "pullInBias": null,
             "operatingBias": 0.0347060104,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.21653429,
             "margin": 6.23910058,
             "operatingPointIsUsable": true
@@ -32036,7 +32036,7 @@
             "correlationBandBias": 0.358429202,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.237033144,
             "margin": null,
             "operatingPointIsUsable": false
@@ -32078,7 +32078,7 @@
             "correlationBandBias": 0.358429202,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.290437919,
             "margin": null,
             "operatingPointIsUsable": false
@@ -32246,7 +32246,7 @@
             "correlationBandBias": 0.340713857,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.202984026,
             "margin": null,
             "operatingPointIsUsable": false
@@ -32288,7 +32288,7 @@
             "correlationBandBias": 0.340713857,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.270163775,
             "margin": null,
             "operatingPointIsUsable": false
@@ -32456,7 +32456,7 @@
             "correlationBandBias": 0.331409852,
             "pullInBias": null,
             "operatingBias": 0.120485161,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.180376283,
             "margin": 1.49708297,
             "operatingPointIsUsable": true
@@ -32498,7 +32498,7 @@
             "correlationBandBias": 0.331409852,
             "pullInBias": null,
             "operatingBias": 0.120485161,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.258605543,
             "margin": 2.14636841,
             "operatingPointIsUsable": true
@@ -32666,7 +32666,7 @@
             "correlationBandBias": 0.217090669,
             "pullInBias": null,
             "operatingBias": 0.0932077916,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.147812937,
             "margin": 1.58584314,
             "operatingPointIsUsable": true
@@ -32708,7 +32708,7 @@
             "correlationBandBias": 0.217090669,
             "pullInBias": null,
             "operatingBias": 0.0932077916,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.19808706,
             "margin": 2.12521997,
             "operatingPointIsUsable": true
@@ -33086,7 +33086,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0268138762,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.125074575,
             "margin": 4.6645466,
             "operatingPointIsUsable": true
@@ -33128,7 +33128,7 @@
             "correlationBandBias": 0.206501108,
             "pullInBias": null,
             "operatingBias": 0.0268138762,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.187842593,
             "margin": 7.0054248,
             "operatingPointIsUsable": true
@@ -33716,7 +33716,7 @@
             "correlationBandBias": 0.213714223,
             "pullInBias": null,
             "operatingBias": 0.037849023,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.132067497,
             "margin": 3.4893238,
             "operatingPointIsUsable": true
@@ -33758,7 +33758,7 @@
             "correlationBandBias": 0.213714223,
             "pullInBias": null,
             "operatingBias": 0.037849023,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.192618844,
             "margin": 5.08913648,
             "operatingPointIsUsable": true
@@ -33926,7 +33926,7 @@
             "correlationBandBias": 0.269268324,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.215235523,
             "margin": null,
             "operatingPointIsUsable": false
@@ -33968,7 +33968,7 @@
             "correlationBandBias": 0.269268324,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.251645496,
             "margin": null,
             "operatingPointIsUsable": false
@@ -34136,7 +34136,7 @@
             "correlationBandBias": 0.252819722,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.14100858607612618)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.141008586)",
             "usableBias": 0.186463327,
             "margin": null,
             "operatingPointIsUsable": false
@@ -34178,7 +34178,7 @@
             "correlationBandBias": 0.252819722,
             "pullInBias": null,
             "operatingBias": null,
-            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.20291078787878786)",
+            "bindingCeilingName": "concentrated crossover (T-21, phi = 0.202910788)",
             "usableBias": 0.233490936,
             "margin": null,
             "operatingPointIsUsable": false

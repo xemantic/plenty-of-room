@@ -31,10 +31,10 @@
     "runParameters": {
         "temperature": "300.0",
         "thermalEnergy": "4.141947",
-        "bjerrumLength": "0.7141066106764419",
+        "bjerrumLength": "0.714106611",
         "footprintArea": "1600.0",
-        "manningSurvivingFraction": "0.11902984614507801",
-        "nominalTileChargeDensity": "-0.3986652379247042",
+        "manningSurvivingFraction": "0.119029846",
+        "nominalTileChargeDensity": "-0.398665238",
         "sternCapacitance": "20.0",
         "meshNodes": "2000",
         "tallHeights": "[17.0, 20.0, 23.0, 26.0]",
@@ -42,9 +42,9 @@
         "reachGaps": "[5.0, 7.0, 10.0, 13.0, 15.0, 16.0, 17.0, 20.0, 23.0, 26.0]",
         "reachBuffers": "[0.5, 1.0, 2.0]",
         "foldBuffers": "[0.5, 2.0]",
-        "loadLines": "[free: R = 0.0 + 0.0 s, read at s = 10.0, device-B (k_c = 10 pN/nm): R = 0.0 + 10.0 s, read at s = 10.0, device-A (k_c = 33.333 pN/nm): R = 0.0 + 33.333333333333336 s, read at s = 3.0, dead-load (100 pN): R = 100.0 + 0.0 s, read at s = 10.0]",
+        "loadLines": "[free: R = 0.0 + 0.0 s, read at s = 10.0, device-B (k_c = 10 pN/nm): R = 0.0 + 10.0 s, read at s = 10.0, device-A (k_c = 33.333 pN/nm): R = 0.0 + 33.3333333 s, read at s = 3.0, dead-load (100 pN): R = 100.0 + 0.0 s, read at s = 10.0]",
         "deviceBStiffness": "10.0",
-        "deviceAStiffness": "33.333333333333336",
+        "deviceAStiffness": "33.3333333",
         "targetForce": "100.0",
         "deviceBStroke": "10.0",
         "pointIonCeiling": "1.0",
@@ -59,7 +59,7 @@
         "osmoticSecondVirial": "0.0019",
         "osmoticThirdVirial": "0.02",
         "heldDensityRule": "0.024 * h^0.0",
-        "trendDensityRule": "2.033386956109642 * h^-1.9368383357459866"
+        "trendDensityRule": "2.03338696 * h^-1.93683834"
     },
     "citedInputs": [
         "eps_r of water at 300 K = 78 — literature spans 77.7-78.3; l_B goes as 1/eps and F_es roughly as l_B, so ~3% on every force. Moves no verdict here.",
@@ -2020,7 +2020,7 @@
             "usableBias": 0.197130352,
             "margin": 1.12205466,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.825502416878164 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.82550242 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(two-body)",
@@ -2170,7 +2170,7 @@
             "usableBias": 0.308709482,
             "margin": 1.55592681,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 4.786963495169624 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 4.7869635 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(two-body)",
@@ -2420,7 +2420,7 @@
             "usableBias": 0.276795847,
             "margin": 1.02842321,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 6.54844164027602 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 6.54844164 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(virial)",
@@ -2820,7 +2820,7 @@
             "usableBias": 0.277237279,
             "margin": 1.13635784,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 6.018647679113941 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 6.01864768 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(des-Cloizeaux)",
@@ -3220,7 +3220,7 @@
             "usableBias": 0.137276532,
             "margin": 1.05826907,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 6.685160193642361 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 6.68516019 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(two-body)",
@@ -4020,7 +4020,7 @@
             "usableBias": 0.165747378,
             "margin": 1.00130419,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 7.702166186790587 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 7.70216619 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(des-Cloizeaux)",
@@ -5620,7 +5620,7 @@
             "usableBias": 0.298126889,
             "margin": 1.42286646,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.889158992421696 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.88915899 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(two-body)",
@@ -5770,7 +5770,7 @@
             "usableBias": 0.171086297,
             "margin": 1.04022411,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 8.222037141400023 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 8.22203714 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(two-body)",
@@ -6020,7 +6020,7 @@
             "usableBias": 0.434798302,
             "margin": 1.4991237,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 6.282417734019232 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 6.28241773 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(virial)",
@@ -6170,7 +6170,7 @@
             "usableBias": 0.490994922,
             "margin": 1.10888839,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 8.30574570931053 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 8.30574571 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(virial)",
@@ -6420,7 +6420,7 @@
             "usableBias": 0.50858601,
             "margin": 1.7145161,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 6.178727925885881 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 6.17872793 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(des-Cloizeaux)",
@@ -6570,7 +6570,7 @@
             "usableBias": 0.739587015,
             "margin": 1.51911877,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 7.5082436559490775 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 7.50824366 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(des-Cloizeaux)",
@@ -6770,7 +6770,7 @@
             "usableBias": 0.23613156,
             "margin": 1.01279429,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 8.827174616110534 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 8.82717462 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(two-body)",
@@ -8170,7 +8170,7 @@
             "usableBias": 1.0,
             "margin": 1.34719619,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 7.8300833542318 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 7.83008335 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(two-body)",
@@ -11620,7 +11620,7 @@
             "usableBias": 0.123490119,
             "margin": 1.19507445,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.513104831665951 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.51310483 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(two-body)",
@@ -11770,7 +11770,7 @@
             "usableBias": 0.0582049164,
             "margin": 1.0095448,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 6.295914858533703 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 6.29591486 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(two-body)",
@@ -12020,7 +12020,7 @@
             "usableBias": 0.129324592,
             "margin": 1.11776774,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.7427452312958165 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.74274523 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(virial)",
@@ -12420,7 +12420,7 @@
             "usableBias": 0.132166076,
             "margin": 1.12797367,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.736108549243011 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.73610855 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(des-Cloizeaux)",
@@ -12820,7 +12820,7 @@
             "usableBias": 0.11097205,
             "margin": 1.22309841,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.555374079402772 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.55537408 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(two-body)",
@@ -13220,7 +13220,7 @@
             "usableBias": 0.113341691,
             "margin": 1.17195251,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.702647382243207 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.70264738 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(virial)",
@@ -13620,7 +13620,7 @@
             "usableBias": 0.115669709,
             "margin": 1.16350756,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.756521062056752 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.75652106 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(des-Cloizeaux)",
@@ -14020,7 +14020,7 @@
             "usableBias": 0.233007939,
             "margin": 1.49248082,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.197968808651776 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.19796881 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(two-body)",
@@ -14170,7 +14170,7 @@
             "usableBias": 0.0663077677,
             "margin": 1.14242701,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.374003422908721 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.37400342 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(two-body)",
@@ -14420,7 +14420,7 @@
             "usableBias": 0.242983201,
             "margin": 1.4803441,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.247310177131703 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.24731018 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(virial)",
@@ -14570,7 +14570,7 @@
             "usableBias": 0.0796923788,
             "margin": 1.07009355,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.856378687795848 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.85637869 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(virial)",
@@ -14820,7 +14820,7 @@
             "usableBias": 0.251029137,
             "margin": 1.49813682,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.2535481579895755 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.25354816 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(des-Cloizeaux)",
@@ -14970,7 +14970,7 @@
             "usableBias": 0.0896580889,
             "margin": 1.10346718,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.666344805654192 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.66634481 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(des-Cloizeaux)",
@@ -15220,7 +15220,7 @@
             "usableBias": 0.205772653,
             "margin": 1.42742051,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.263375856770231 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.26337586 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(two-body)",
@@ -15620,7 +15620,7 @@
             "usableBias": 0.208734022,
             "margin": 1.41450907,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.301479630636608 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.30147963 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(virial)",
@@ -16020,7 +16020,7 @@
             "usableBias": 0.213214242,
             "margin": 1.41583712,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.323372968682433 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.32337297 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(des-Cloizeaux)",
@@ -16570,7 +16570,7 @@
             "usableBias": 0.083776008,
             "margin": 1.25084629,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.028566891966622 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.02856689 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(two-body)",
@@ -16970,7 +16970,7 @@
             "usableBias": 0.098655683,
             "margin": 1.20109727,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.262867294881289 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.26286729 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(virial)",
@@ -17370,7 +17370,7 @@
             "usableBias": 0.114457578,
             "margin": 1.23350741,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 5.214466812177488 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 5.21446681 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(des-Cloizeaux)",
@@ -17770,7 +17770,7 @@
             "usableBias": 0.0332331529,
             "margin": 1.00482611,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 9.148171790726524 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 9.14817179 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(two-body)",
@@ -18170,7 +18170,7 @@
             "usableBias": 0.0400122146,
             "margin": 1.00014894,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 9.815315473125287 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 9.81531547 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(virial)",
@@ -18570,7 +18570,7 @@
             "usableBias": 0.0489275143,
             "margin": 1.00540422,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 8.996903673068438 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 8.99690367 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(des-Cloizeaux)",
@@ -18970,7 +18970,7 @@
             "usableBias": 0.11760558,
             "margin": 1.37547713,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 4.825969876575475 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 4.82596988 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(two-body)",
@@ -19370,7 +19370,7 @@
             "usableBias": 0.139292084,
             "margin": 1.35617772,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 4.973379915310131 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 4.97337992 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(virial)",
@@ -19770,7 +19770,7 @@
             "usableBias": 0.171139502,
             "margin": 1.42367648,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 4.969512875490518 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 4.96951288 nm, inside the stroke"
         },
         {
             "modelName": "alexander-box(des-Cloizeaux)",
@@ -20170,7 +20170,7 @@
             "usableBias": 0.0392495821,
             "margin": 1.01466767,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 8.698044762047742 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 8.69804476 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(two-body)",
@@ -20570,7 +20570,7 @@
             "usableBias": 0.0457964481,
             "margin": 1.00900044,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 8.919401632079367 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 8.91940163 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(virial)",
@@ -20970,7 +20970,7 @@
             "usableBias": 0.0578244277,
             "margin": 1.02175391,
             "operatingPointIsUsable": false,
-            "verdict": "REFUSED — the equilibrium path folds at 8.362601849548103 nm, inside the stroke"
+            "verdict": "REFUSED — the equilibrium path folds at 8.36260185 nm, inside the stroke"
         },
         {
             "modelName": "strong-stretching(des-Cloizeaux)",

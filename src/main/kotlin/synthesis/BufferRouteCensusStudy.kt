@@ -16,6 +16,8 @@
 
 package com.xemantic.nano.plentyofroom.synthesis
 
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_SIGNIFICANT_DIGITS
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -182,7 +184,7 @@ fun main() {
             "graftingDensity" to "0.024 nm^-2",
             "lowSalt" to "0.5 mM MgCl2",
             "highSalt" to "2.0 mM MgCl2",
-            "mandatedSecant" to "$GEN1_MANDATED_SECANT pN/nm",
+            "mandatedSecant" to "${GEN1_MANDATED_SECANT.roundedForProse()} pN/nm",
             "recommendedTangentMinimum" to "$tangent pN/nm (C-0069's Q5 over [0, 3 nm])",
             "emittedFieldSlack" to "$EMITTED_FIELD_SLACK",
             "inputs" to "T-3, T-2, T-16, T-4, T-25, T-76, T-149"
@@ -439,7 +441,8 @@ private fun censusFindings(
                     .format(
                         blockingTransfers.count { it.transfer },
                         blockingTransfers.size,
-                        blockingTransfers.mapNotNull { it.departure }.maxOrNull() ?: 0.0
+                        (blockingTransfers.mapNotNull { it.departure }.maxOrNull() ?: 0.0)
+                            .roundedForProse(DEPARTURE_SIGNIFICANT_DIGITS, floor = 0.0)
                     ),
         "the cheap bound - C-0027 against C-0017 and C-0018" to
                 ("T-25's bufferComparison carries T-16's stabilityMargin extrema and T-4's " +
@@ -448,7 +451,8 @@ private fun censusFindings(
                     .format(
                         correctedTransfers.count { it.transfer },
                         correctedTransfers.size,
-                        correctedTransfers.mapNotNull { it.departure }.maxOrNull() ?: 0.0
+                        (correctedTransfers.mapNotNull { it.departure }.maxOrNull() ?: 0.0)
+                            .roundedForProse(DEPARTURE_SIGNIFICANT_DIGITS, floor = 0.0)
                     ),
         "the stability floor does not move and the margin does" to
                 ("|k_eff| at the held gap is %.4f-%.4f pN/nm at 0.5 mM against %.4f-%.4f at " +

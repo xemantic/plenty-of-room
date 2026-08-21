@@ -1117,13 +1117,15 @@ fun main() {
             "sheet" to ("single-layer square-lattice Rothemund, $DUPLEXES duplexes at " +
                     "${Gen1Tile.INTERHELICAL_SHEET} nm, ${Gen1Tile.RISE_PER_BASE_PAIR} nm rise"),
             "designTwist" to "32/3 bp per turn against B-DNA's 10.5",
-            "widths" to ("${uniformRow.width(rise)} nm (C-0086's 112 bp) against " +
-                    "${correctedRow.width(rise)} nm (the 110 bp twist-corrected row)"),
+            "widths" to ("${uniformRow.width(rise).roundedForProse()} nm (C-0086's 112 bp) " +
+                    "against ${correctedRow.width(rise).roundedForProse()} nm " +
+                    "(the 110 bp twist-corrected row)"),
             "placement" to "C-0090's published 34-root key $publishedKey at phase $PHASE",
             "load" to "C-0022's solved collar at 2 mM, a 10 nm gap and 0.192 V",
-            "coupling" to ("C-0017's $MANDATE pN/nm shared equally over $ARM_COUNT roots"),
-            "freeStrokeUniform" to "${hostA.freeStroke} nm",
-            "freeStrokeCorrected" to "${hostB.freeStroke} nm"
+            "coupling" to ("C-0017's ${MANDATE.roundedForProse()} pN/nm shared equally over " +
+                    "$ARM_COUNT roots"),
+            "freeStrokeUniform" to "${hostA.freeStroke.roundedForProse()} nm",
+            "freeStrokeCorrected" to "${hostB.freeStroke.roundedForProse()} nm"
         ),
         rows = rows,
         arrangements = arrangements,
@@ -1137,14 +1139,14 @@ fun main() {
         falsifiers = falsifiers,
         findings = findings,
         parameters = mapOf(
-            "naturalTwistPerBase" to B_DNA_TWIST_PER_BASE.toString(),
+            "naturalTwistPerBase" to B_DNA_TWIST_PER_BASE.roundedForProse().toString(),
             "uniformDesignTwistPerBase" to uniformRow.designTwistPerBase.toString(),
-            "correctedDesignTwistPerBase" to correctedRow.designTwistPerBase.toString(),
+            "correctedDesignTwistPerBase" to correctedRow.designTwistPerBase.roundedForProse().toString(),
             "correctedDomains" to correctedRow.domains.joinToString("+"),
             "residualBasePairsFloor" to correctedRow.residualBasePairs().toString(),
-            "residualDegreesFloor" to abs(correctedRow.totalMismatchDegrees()).toString(),
-            "uniformTotalMismatchDegrees" to uniformRow.totalMismatchDegrees().toString(),
-            "crossoverHingeStiffness" to hinge.toString(),
+            "residualDegreesFloor" to abs(correctedRow.totalMismatchDegrees()).roundedForProse().toString(),
+            "uniformTotalMismatchDegrees" to uniformRow.totalMismatchDegrees().roundedForProse().toString(),
+            "crossoverHingeStiffness" to hinge.roundedForProse().toString(),
             "torsionalRigidity" to nominalRigidity.toString(),
             "crossoverSpacing" to nominalSpacing.toString(),
             "armLength" to arm.toString(),

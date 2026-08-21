@@ -437,12 +437,12 @@ fun main() {
     val findings = listOf(
         ("THE HONEYCOMB NEEDS NO TWIST CORRECTION AT ALL, AND IT IS ONE DIVISION. Its azimuth " +
                 "period is 21 bp and caDNAno lays it out as TWO TURNS, so its design twist is " +
-                "720/21 = %.10f deg/bp — which IS B-DNA's 360/10.5, the same number. The " +
+                "720/21 = %s deg/bp — which IS B-DNA's 360/10.5, the same number. The " +
                 "mismatch is %.3e deg/bp and the accumulated register across a 112 bp row is " +
                 "%.3e deg, against the square sheet's %+.1f. C-0107's boundary layer, C-0104's " +
                 "threshold and every number in C-0133 are SQUARE-LATTICE numbers with driver " +
                 "zero here. F1 did not fire.").format(
-            honeycomb.designTwistPerBase, honeycomb.mismatchPerBase(),
+            honeycomb.designTwistPerBase.roundedForProse(), honeycomb.mismatchPerBase(),
             honeycomb.accumulatedMismatchDegrees(112), square.accumulatedMismatchDegrees(112)),
         ("AND THE REASON UNIFIES BOTH TASKS IN ONE LINE: 10.5 = 21/2, SO A HALF TURN IS 5.25 " +
                 "BASE PAIRS. h half turns is an integer number of base pairs iff h = 0 (mod 4), " +
@@ -527,7 +527,8 @@ fun main() {
             "kBT" to "4.141947 pN nm",
             "rise" to "$rise nm per base pair",
             "naturalTwist" to ("B-DNA at $naturalBasePairsPerTurn bp per turn, " +
-                    "$B_DNA_TWIST_PER_BASE deg per base — this repository's locked value"),
+                    "${B_DNA_TWIST_PER_BASE.roundedForProse()} deg per base — this " +
+                    "repository's locked value"),
             "honeycombRules" to ("Douglas et al., NAR 37:5001 (caDNAno), PMC2731887: three " +
                     "azimuths 7 bp apart, the same pair every 21 bp at 10.5 bp per turn, " +
                     "scaffold crossovers 5 bp — \"or half a turn\" — from the staple ones"),
@@ -547,9 +548,9 @@ fun main() {
         falsifiers = falsifiers,
         findings = findings,
         parameters = mapOf(
-            "honeycombDesignTwistPerBase" to honeycomb.designTwistPerBase.toString(),
+            "honeycombDesignTwistPerBase" to honeycomb.designTwistPerBase.roundedForProse().toString(),
             "squareDesignTwistPerBase" to square.designTwistPerBase.toString(),
-            "bDnaTwistPerBase" to B_DNA_TWIST_PER_BASE.toString(),
+            "bDnaTwistPerBase" to B_DNA_TWIST_PER_BASE.roundedForProse().toString(),
             "honeycombMismatchPerBase" to honeycomb.mismatchPerBase().toString(),
             "honeycombResiduesDelta1" to
                     honeycomb.turnPairResidues(0, 1).sorted().joinToString(","),
@@ -562,7 +563,7 @@ fun main() {
             "nearestHoneycombWidthNm" to nearestUnion.widthNm.toString(),
             "nearestDelta1WidthBasePairs" to nearestDelta1.basePairs.toString(),
             "nearestSquareWidthBasePairs" to nearestSquare.basePairs.toString(),
-            "admissibleWidthDensityRatio" to densityRatio.toString(),
+            "admissibleWidthDensityRatio" to densityRatio.roundedForProse().toString(),
             "oddHalfTurnCountsChecked" to "2001",
             "sources" to "gpd/results/T-198-honeycomb-raster-width.json"
         )

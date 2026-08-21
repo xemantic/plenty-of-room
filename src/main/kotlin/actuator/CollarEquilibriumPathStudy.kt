@@ -47,6 +47,7 @@ import com.xemantic.nano.plentyofroom.electrostatics.sternChargeDensityPerVolt
 import com.xemantic.nano.plentyofroom.electrostatics.thermalVoltage
 import com.xemantic.nano.plentyofroom.electrostatics.uniformMedium
 import com.xemantic.nano.plentyofroom.material.PegWater
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -832,7 +833,7 @@ fun main() {
         schemes.forEach { (step, value) ->
             convergence += T60ConvergenceRecord(
                 axis = "central-difference step",
-                setting = "step ${step} nm",
+                setting = "step ${step.roundedForProse()} nm",
                 gapHeight = 6.5,
                 multiplierMinimumMargin = byGap.getValue(6.5),
                 logGradient = value,
@@ -1011,15 +1012,16 @@ fun main() {
             "temperature" to ROOM_TEMPERATURE.toString(),
             "tileEdge" to TILE_EDGE.toString(),
             "footprint" to FOOTPRINT.toString(),
-            "tileChargeDensity" to charge.toString(),
+            "tileChargeDensity" to charge.roundedForProse().toString(),
             "sternCapacitance" to STERN_CAPACITANCE.toString(),
             "edgeRefinement" to EDGE_REFINEMENT.toString(),
             "oneDimensionalMeshNodes" to MESH_NODES.toString(),
             "sternInversionNodes" to SEARCH_NODES.toString(),
-            "fixedBias" to STATES.joinToString("; ") { "${it.label}: ${it.fixedBias} V" },
+            "fixedBias" to STATES.joinToString("; ") { "${it.label}: ${it.fixedBias.roundedForProse()} V" },
             "gapsSolved" to STATES.joinToString("; ") { "${it.label}: ${it.gaps}" },
             "loadLines" to LOAD_LINES.joinToString("; ") {
-                "${it.name}: R = ${it.preload} + ${it.stiffness} s"
+                "${it.name}: R = ${it.preload.roundedForProse()} + " +
+                        "${it.stiffness.roundedForProse()} s"
             },
             "targetForce" to TARGET_FORCE.toString(),
             "targetStroke" to TARGET_STROKE.toString()

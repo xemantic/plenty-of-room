@@ -7,11 +7,11 @@
         "kBT": "4.141947 pN nm",
         "buffer": "aqueous 2 mM MgCl2",
         "sheet": "single-layer square-lattice Rothemund, 15 duplexes at 2.69 nm, 0.34 nm rise, 32/3 bp per turn",
-        "width": "38.080000000000005 nm at crossover phase 8 (C-0086, C-0090)",
+        "width": "38.08 nm at crossover phase 8 (C-0086, C-0090)",
         "placement": "C-0090's published 34-root key 0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
         "load": "C-0022's solved collar at 2 mM, a 10 nm gap and 0.192 V",
-        "coupling": "C-0017's 33.333333333333336 pN/nm shared equally over 34 roots, as EXPLICIT elastic supports",
-        "freeStroke": "5.154738462428933 nm"
+        "coupling": "C-0017's 33.3333333 pN/nm shared equally over 34 roots, as EXPLICIT elastic supports",
+        "freeStroke": "5.15473846 nm"
     },
     "ceilings": [
         {
@@ -630,18 +630,18 @@
     ],
     "parameters": {
         "designTwistPerBase": "33.75",
-        "naturalTwistPerBase": "34.285714285714285",
-        "twistRateMismatchPerNm": "0.027499935693187913",
-        "crossoverHingeStiffness": "13.529411764705882",
+        "naturalTwistPerBase": "34.2857143",
+        "twistRateMismatchPerNm": "0.0274999357",
+        "crossoverHingeStiffness": "13.5294118",
         "phosphateRadius": "1.0",
-        "derivedCrossoverSpacing": "10.200000000000001",
+        "derivedCrossoverSpacing": "10.2",
         "crossoverCount": "56",
         "rowEndCrossovers": "14",
         "c0104Threshold": "15.4497275",
         "c0104UnitSlope": "0.140379322",
-        "unitPrestrainPeakHere": "0.18828508431310892",
-        "c0104SecantReproducedHere": "0.1403793148925057",
-        "trueTriangleCeilingDegrees": "11.518822021501977",
+        "unitPrestrainPeakHere": "0.188285084",
+        "c0104SecantReproducedHere": "0.140379315",
+        "trueTriangleCeilingDegrees": "11.518822",
         "flatnessTolerance": "0.1",
         "sources": "gpd/results/T-3b-tile-edge-load-profile.json, gpd/results/T-153-buildable-raster-width.json, gpd/results/T-172-row-end-prestrain.json"
     }

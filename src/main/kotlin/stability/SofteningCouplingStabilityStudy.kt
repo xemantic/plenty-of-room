@@ -57,6 +57,7 @@ import com.xemantic.nano.plentyofroom.electrostatics.thermalVoltage
 import com.xemantic.nano.plentyofroom.electrostatics.uniformMedium
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -439,10 +440,10 @@ fun main() {
         runParameters = mapOf(
             "temperature" to ROOM_TEMPERATURE.toString(),
             "thermalEnergy" to thermalEnergy().toString(),
-            "bjerrumLength" to lb.toString(),
+            "bjerrumLength" to lb.roundedForProse().toString(),
             "footprintArea" to FOOTPRINT.toString(),
-            "manningSurvivingFraction" to surviving.toString(),
-            "nominalTileChargeDensity" to tileCharge.toString(),
+            "manningSurvivingFraction" to surviving.roundedForProse().toString(),
+            "nominalTileChargeDensity" to tileCharge.roundedForProse().toString(),
             "sternCapacitance" to STERN_CAPACITANCE.toString(),
             "meshNodes" to MESH_NODES.toString(),
             "layerHeights" to DESIGN_POINTS.map { it.first }.toString(),
@@ -451,13 +452,13 @@ fun main() {
             "loadLines" to lines.map { it.name }.toString(),
             "pathCount" to GEN1_PATH_COUNT.toString(),
             "standoffLength" to GEN1_STANDOFF_LENGTH.toString(),
-            "baseRotationalStiffness" to RECOMMENDED_BASE.rotationalStiffness.toString(),
+            "baseRotationalStiffness" to RECOMMENDED_BASE.rotationalStiffness.roundedForProse().toString(),
             "duplexBendingRigidity" to Gen1Tile.DUPLEX_BENDING_RIGIDITY.toString(),
             "duplexStretchModulus" to Gen1Tile.DUPLEX_STRETCH_MODULUS.toString(),
             "targetForce" to GEN1_TARGET_FORCE.toString(),
             "acceptableStroke" to GEN1_ACCEPTABLE_STROKE.toString(),
             "desiredStroke" to GEN1_DESIRED_STROKE.toString(),
-            "mandatedCouplingStiffness" to GEN1_MANDATE_STIFFNESS.toString(),
+            "mandatedCouplingStiffness" to GEN1_MANDATE_STIFFNESS.roundedForProse().toString(),
             "complianceCeiling" to GEN1_COMPLIANCE_CEILING.toString(),
             "concentratedCrossover" to CONCENTRATED_CROSSOVER.toString(),
             "trustedBiasCeiling" to TRUSTED_BIAS_CEILING.toString(),
@@ -745,11 +746,11 @@ private fun upstreamChecks(
         if (rows.isNotEmpty()) {
             add(
                 "C-0017 stability floor |k_eff(3 nm)| at 10 nm, six-model minimum [pN/nm]",
-                "$concentration mM", rows.min(), bracket.first, "C-0017 (the located floor)"
+                "${concentration.roundedForProse()} mM", rows.min(), bracket.first, "C-0017 (the located floor)"
             )
             add(
                 "C-0017 stability floor |k_eff(3 nm)| at 10 nm, six-model maximum [pN/nm]",
-                "$concentration mM", rows.max(), bracket.second, "C-0017 (the located floor)"
+                "${concentration.roundedForProse()} mM", rows.max(), bracket.second, "C-0017 (the located floor)"
             )
         }
     }
@@ -920,7 +921,7 @@ private fun findings(result: SofteningCouplingStabilityResult): Map<String, Stri
                 val floors = rows.mapNotNull { it.stabilityFloor }
                 val pullIn = rows.mapNotNull { it.pullInBias }
                 val margins = rows.mapNotNull { it.biasMargin }
-                findings["10 nm, $concentration mM, $line"] =
+                findings["10 nm, ${concentration.roundedForProse()} mM, $line"] =
                     (("floor |k_eff| %.2f - %.2f, tangent %.2f, min tangent %.2f, " +
                             "Q2 stable %d of %d, pull-in %s, bias margin %s")).format(
                         floors.minOrNull() ?: 0.0, floors.maxOrNull() ?: 0.0,
