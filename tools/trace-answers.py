@@ -225,7 +225,15 @@ _QUEUE_ROW = re.compile(r"^\|\s*(T-\d{1,4}[a-z]?|P-\d{1,4})\s*\|(.*)\|\s*$")
 # upper case and its prose in lower case, and two substring traps are live in the real file:
 # "Left undone" contains DONE, and several rows discuss having "answered" something in passing.
 # Upper-casing the row before matching — the obvious implementation — closes both of them.
-_CLOSED = re.compile(r"\b(DONE|KILLED|CLOSED|ANSWERED|RESOLVED|DISCHARGED)\b")
+#
+# `PARTIALLY DONE` is iteration 35's coinage (`T-9`, `C-0151`) and it is a NEGATIVE: a task whose
+# deliverable list is partly discharged and partly live.  It has to be excluded explicitly, because
+# the failure direction here is the unsafe one — the row contains a closing word, so without the
+# guard a genuinely open item disappears from the register, which is `CLAUDE.md`'s own "a closing
+# word about another task closes the row it sits in" met from the inside of one row.  Any further
+# qualifier the queue coins belongs in `_NOT_CLOSED_QUALIFIER`, with a test, the day it is written.
+_NOT_CLOSED_QUALIFIER = r"(?<!PARTIALLY )(?<!PARTLY )"
+_CLOSED = re.compile(_NOT_CLOSED_QUALIFIER + r"\b(DONE|KILLED|CLOSED|ANSWERED|RESOLVED|DISCHARGED)\b")
 _IN_PROGRESS = re.compile(r"\bIN PROGRESS\b")
 
 

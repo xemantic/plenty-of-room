@@ -1,0 +1,287 @@
+{
+  "task": "T-9",
+  "leaf": "A1.2, with A8.2",
+  "title": "The crossover hinge constant k_theta from oxDNA: a 5.1x bracket that CONTAINS the corpus's fitted value, a reproduced interhelical sawtooth, and three plate rigidities this box cannot settle",
+  "verificationType": "in-silico (oxDNA2 coarse-grained MD, 5 replicas) + logical (the design generator asserts the corpus's own lattice counts)",
+  "maturity": "TRL 1-3. Model-consistent and traceable. NOT empirically demonstrated -- a coarse-grained model in a substituted buffer, not a folded object.",
+  "units": {
+    "length": "nm",
+    "angle": "degrees",
+    "hingeStiffness": "pN*nm/rad",
+    "rigidity": "pN*nm",
+    "bendingRigidity": "pN*nm^2",
+    "energy": "pN*nm"
+  },
+  "conventions": {
+    "kBT": "4.141947 pN*nm at 300 K, the corpus's locked value",
+    "crossoverSpacing": "p = 32 bp, the PER-INTERFACE spacing -- crossovers recur every 16 bp along a helix but alternate between its two neighbours",
+    "roll": "the signed dihedral of two adjacent duplexes about the interface line, positive by the right-hand rule along +x",
+    "derivedVersusRecorded": "DERIVED fields are recomputed by this script from build-oxdna/*.json and are checkable; RECORDED fields were measured by the run and are NOT recomputable, because the raw trajectories were pruned. Every RECORDED field says so."
+  },
+  "parameters": {
+    "model": "oxDNA2 (DNA2), sequence-averaged",
+    "saltConcentration": "0.5 M monovalent -- the standard origami proxy",
+    "temperature": "27 C",
+    "thermostat": "John (Langevin, no hydrodynamics)",
+    "timestep": 0.005,
+    "productionStepsPerReplica": 300000,
+    "replicas": 5,
+    "framesAnalysed": 450,
+    "nucleotides": 3360,
+    "relaxation": "temperature-free steepest descent with a harmonic backbone (sim_type = min, interaction_type = DNA_relax), then a cold capped-force stage, heating and equilibration"
+  },
+  "sources": [
+    "tools/oxdna/README.md -- build, environment, and the five traps this run hit",
+    "tools/oxdna/RESULTS.md -- the reading and its validity range",
+    "Bai, Martin, Scheres & Dietz, PNAS 109:20012 (2012) -- the cryo-EM sawtooth",
+    "Fischer et al. (2016) -- the SAXS single-layer lattice constant",
+    "Kim, Kilchherr, Dietz & Bathe, NAR 40:2862 (2012) -- CanDo's duplex constants",
+    "Snodin et al., NAR 47:1585 (2019) -- the one published measurement of this coordinate"
+  ],
+  "citedInputs": [
+    "C-0086 (the buildable seamless width)",
+    "C-0063 (the centro-symmetric phase)",
+    "C-0015 (the column count)",
+    "C-0006 / C-0009 (what k_theta carries)",
+    "T-10 (the three closed-form plate rigidities)"
+  ],
+  "structure": {
+    "helices": 15,
+    "rowBasePairs": 112,
+    "crossoverPhase": 8,
+    "crossoverPlanePeriodBp": 16,
+    "crossoverColumns": [
+      8,
+      24,
+      40,
+      56,
+      72,
+      88,
+      104
+    ],
+    "crossoversBuilt": 49,
+    "crossoversPerInterface": [
+      4,
+      3,
+      4,
+      3,
+      4,
+      3,
+      4,
+      3,
+      4,
+      3,
+      4,
+      3,
+      4,
+      3
+    ],
+    "scaffoldLengthNt": 1680,
+    "stapleCount": 64,
+    "stapleLengthMinNt": 8,
+    "stapleLengthMaxNt": 48,
+    "totalNucleotides": 3360,
+    "shortestDomainNt": 8,
+    "edgeXNm": 38.08,
+    "edgeYNm": 37.66,
+    "risePerBasePairNm": 0.34,
+    "interhelicalDistanceNm": 2.69,
+    "designBasesPerTurn": 10.67
+  },
+  "hinge": {
+    "coordinate": "the interduplex ROLL, the dihedral of two adjacent duplexes about the interface line, which is the coordinate k_theta is written on",
+    "frames": 450,
+    "interfaces": 14,
+    "crossoverSamples": 49,
+    "rollSdAtCrossoverDeg": 22.902573,
+    "rollSdOffCrossoverDeg": 25.879324,
+    "meanRollAtCrossoverDeg": 38.1171349,
+    "upperReadingPnNmPerRad": 25.9227606,
+    "upperAssumption": "the hinge is the ONLY constraint on the dihedral at a crossover",
+    "lowerReadingPnNmPerRad": 5.62052112,
+    "lowerAssumption": "the hinge is what a crossover ADDS over the mid-span roll",
+    "bracketWidth": 4.6121632,
+    "corpusValuePnNmPerRad": 13.5294118,
+    "corpusValueProvenance": "T-10's 2 alpha B / (100 a); the 1/100 is borrowed from CanDo's NICK softening and has never been measured (TASKS.md, T-9)",
+    "corpusValueInsideBracket": true,
+    "perReplicaStability": "better than 10 % across the five replicas, at both readings (RECORDED, tools/oxdna/RESULTS.md)"
+  },
+  "derivedRigidity": {
+    "note": "D_perpendicular = k_theta d / p with p the PER-INTERFACE spacing of 32 bp, so the bracket on the hinge maps straight onto the two quantities that carry it",
+    "corpusDPerpendicular": 3.34504758,
+    "dPerpendicularAtLowerReading": 1.38963252,
+    "dPerpendicularAtUpperReading": 6.40921196,
+    "corpusAnisotropy": 25.5607302,
+    "anisotropyAtUpperReading": 13.3404636,
+    "anisotropyAtLowerReading": 61.5283951,
+    "corpusDPerpendicularInsideBracket": true
+  },
+  "sawtooth": {
+    "atCrossoverColumnNm": 2.22893786,
+    "midwayNm": 3.60109097,
+    "meanNm": 2.95153925,
+    "sdNm": 0.690759758,
+    "baiAtCrossoverNm": 1.85,
+    "baiMidwayNm": 3.6,
+    "midwayRatioToBai": 1.00030305,
+    "atCrossoverRatioToBai": 1.20483128,
+    "meanRatioToSaxs": 1.09722649,
+    "whyItIsOnlyVisiblePerParity": "each interface must be read at the columns of ITS OWN parity; averaging over all seven columns dilutes the modulation away to a flat 2.92 / 2.90 nm (RECORDED)",
+    "basePairsIntact": 0.997769841,
+    "basePairsIntactInterior": 0.999661681,
+    "basePairsIntactEdge": 0.992304527
+  },
+  "notResolved": {
+    "whatWasAttempted": "the three orthotropic plate rigidities by equipartition of the plate's three constant-curvature Legendre modes -- the estimator that matches the plate's own definition and recovers known rigidities to 1.7 % on synthetic ensembles",
+    "pooledDParallel": 52.4616225,
+    "pooledDPerpendicular": 39.4812112,
+    "pooledDK": 24.6055492,
+    "autocorrelationTimeFrames": [
+      18.6895389,
+      18.5851381,
+      21.9235763
+    ],
+    "effectiveSamplesPerMode": [
+      24.0776405,
+      24.2128951,
+      20.5258483
+    ],
+    "framesPerReplica": 90,
+    "halfSplitRatio": {
+      "D_parallel": 0.834298852,
+      "D_perpendicular": 0.885591105,
+      "D_coupling": 0.1378841,
+      "D_k": 1.46922653
+    },
+    "perReplicaSpreadDParallel": 3.35521858,
+    "perReplicaSpreadDPerpendicular": 3.03999742,
+    "perReplicaSpreadDK": 5.81171769,
+    "verdict": "NOT CONVERGED, and the direction is the one that matters: those three modes are the tile's SOFTEST and therefore its slowest, and an under-sampled soft mode reads as STIFFER than it is -- which is the direction that would have flattered a large D_perpendicular. The pooled reading is therefore NOT quoted as evidence against the corpus's 3.34504758.",
+    "costToSettle": "100 independent samples per mode needs 12-55 h per replica on this machine at the measured correlation times (RECORDED)",
+    "spectralFitRejected": "a maximum-likelihood fit over the whole Legendre bending spectrum is strongly degree-dependent -- D_parallel running 33.7 / 24.3 / 11.0 at degree 2 / 3 / 4 -- so it is retained as a diagnostic and not used for a value (RECORDED)"
+  },
+  "duplexControl": {
+    "bendingRigidityPnNm2": 211.810255,
+    "persistenceLengthNm": 51.1378477,
+    "candoEiPnNm2": 230.0,
+    "ratioToCando": 0.920914152,
+    "fitWindowSweepNm": {
+      "10nm": 51.1378477,
+      "15nm": 60.0582403,
+      "20nm": 69.3448732,
+      "30nm": 93.4750593,
+      "45nm": 148.771455,
+      "60nm": 247.206733
+    },
+    "verdict": "the NICKED duplex the tile is actually made of, fitted over 10 nm, comes out 0.92 of CanDo's continuous-duplex EI. The fit is NOT converged in its window -- L_p runs 51 -> 247 nm as the window opens 10 -> 60 nm -- so this is a consistency check on the constitutive input, not a measurement of it."
+  },
+  "globalTwist": {
+    "meanTwistDegreesOverTile": 25.5869441,
+    "perReplicaDegrees": [
+      12.1,
+      19.2,
+      27.6,
+      39.3,
+      28.3
+    ],
+    "perReplicaProvenance": "RECORDED -- tools/oxdna/RESULTS.md; s.e. 4.6 deg, all five replicas agreeing in SIGN",
+    "corpusBoundaryLayerPredictionDeg": [
+      17.0,
+      25.0
+    ],
+    "designBasesPerTurn": 10.67,
+    "verdict": "the magnitudes agree and these are DIFFERENT FUNCTIONALS of the same strain -- the corpus's is a register angle AT A ROW END, this is the tile's mid-surface twist ACROSS ITS WIDTH. Read as a consistency check of sign and order, never as an identity.",
+    "theFalsifierThatWasNotRun": "build C-0133's twist-corrected 110 bp raster and the twist should collapse. Until that control exists a global twist of this size is CONSISTENT with the register mismatch and is not attributed to it."
+  },
+  "reproductions": [
+    {
+      "quantity": "duplexes in the raster",
+      "corpus": 15,
+      "run": 15,
+      "departure": 0.0,
+      "source": "C-0086"
+    },
+    {
+      "quantity": "buildable seamless row, bp",
+      "corpus": 112,
+      "run": 112,
+      "departure": 0.0,
+      "source": "C-0086 -- the only buildable seamless width near 40 nm"
+    },
+    {
+      "quantity": "crossover phase",
+      "corpus": 8,
+      "run": 8,
+      "departure": 0.0,
+      "source": "C-0063 -- one of the two centro-symmetric phases"
+    },
+    {
+      "quantity": "crossover columns",
+      "corpus": 7,
+      "run": 7,
+      "departure": 0.0,
+      "source": "C-0015"
+    },
+    {
+      "quantity": "crossovers built",
+      "corpus": 49,
+      "run": 49,
+      "departure": 0.0,
+      "source": "CLAUDE.md -- the 4/3 parity split of a seven-column sheet"
+    },
+    {
+      "quantity": "tile edge along the helices, nm",
+      "corpus": 38.08,
+      "run": 38.08,
+      "departure": 0.0,
+      "source": "C-0086"
+    },
+    {
+      "quantity": "hinge stiffness from the roll variance, pN nm/rad",
+      "corpus": 25.9227606,
+      "run": 25.9227606,
+      "departure": 0.0,
+      "source": "this script against the run's own analysis -- pins k_B T and the equipartition"
+    }
+  ],
+  "verdict": {
+    "kThetaIsBracketedAndTheCorpusValueSurvives": true,
+    "bracketWidth": 4.6121632,
+    "whatThisSettles": "T-9's FIRST deliverable only. The hinge constant is bracketed to about a factor of 2.5 either way and the corpus's fitted value sits inside it, so every result that rests on k_theta stands -- on a measurement now, not on a borrowed nick factor.",
+    "whatThisDoesNotSettle": "T-9's other two deliverables. The crossover's VERTICAL compliance (C-0009 models it as a rigid constraint, and C-0100 shows the only two physical states of a constraint are present and absent) and the in-plane SHEAR k_s (C-0020's single undetermined input, which C-0028 shows moves a buckling verdict) are untouched by this run.",
+    "theBracketIsNotSharpened": "its width is set by an ASSUMPTION -- which of two readings of the same roll data is the hinge -- and not by the sampling, so more compute does not narrow it."
+  },
+  "falsifiers": {
+    "F1": "the corpus's fitted k_theta lies OUTSIDE the measured bracket, so the 1/100 nick borrowing is refuted",
+    "F2": "the design generator does not reproduce the corpus's lattice counts, so the object simulated is not the object the corpus is about",
+    "F3": "the three plate rigidities ARE converged, so the run settles them and the non-resolution is a reporting choice rather than a sampling limit",
+    "F4": "the structure did not hold together, so no equilibrium average is a property of the designed lattice",
+    "F5": "the crossover sawtooth is absent, so the relaxed structure is not the weave the corpus's plan models are written on"
+  },
+  "falsifiersFired": {
+    "F1": "did not fire -- bracket 5.621 - 25.92, corpus 13.53",
+    "F2": "did not fire -- 15 duplexes, 112 bp, phase 8, 7 columns, 49 crossovers, 38.08 nm",
+    "F3": "did not fire -- 21-24 independent samples per mode against the 100 wanted",
+    "F4": "did not fire -- 0.9978 of designed base pairs intact, 0.9997 in the interior",
+    "F5": "did not fire -- 2.229 at a column, 2.952 mean, 3.601 midway"
+  },
+  "findings": {
+    "theCorpusValueSurvivesOnAMeasurement": "k_theta = 13.53 sits inside the measured 5.621 - 25.92, so T-9's standing assumption is UPHELD rather than overturned -- and the two quantities that carry it, D_perpendicular and the 25.6x anisotropy, are inside their own brackets with it.",
+    "theSawtoothIsREPRODUCED": "this repository has cited Bai et al.'s 1.85 -> 3.60 nm deterministic modulation since C-0076 and had never checked it against a simulation of its OWN tile. The far end matches to three digits (3.601 against 3.60), and the signal is only visible if each interface is read at the columns of its own parity.",
+    "aNonResultIsQuotedAsOne": "the three plate rigidities are NOT converged -- 21-24 independent samples per mode, half-split ratios 0.83/0.89/1.47, per-replica spread up to 5.8x -- and the direction of the bias is the flattering one, so the pooled reading is reported and explicitly NOT used.",
+    "theBufferIsASubstitution": "oxDNA2 carries no divalent ions and its Debye-Huckel term is parameterised at or above 0.1 M MONOVALENT salt; SS3's buffer is 2 mM MgCl2. The run uses the field's standard 0.5 M monovalent proxy. This is the largest single reason a rigidity here need not equal one measured in the device's own buffer, and it is a property of the MODEL rather than of this run."
+  },
+  "validity": [
+    "THE BUFFER IS NOT SS3's. 0.5 M monovalent against 2 mM MgCl2; a stated substitution.",
+    "THE TILE IS FREE -- no PEG layer, no electrode. The three rigidities are properties of the sheet and are the right objects to compare; T-10's THERMAL numbers are not, because they sit on the Winkler foundation.",
+    "CROSSOVER PHASE 8 FORCES 8 nt CORNER DOMAINS. Fourteen staples are lone 8-mers. They carry no crossover, so their fraying costs the lattice nothing, but they do fray and the intact fraction is reported beside every result.",
+    "AN UNDER-SAMPLED SOFT MODE READS AS STIFFER THAN IT IS, which is the direction that would flatter the corpus. Every rigidity here is quoted with its convergence.",
+    "THE RAW TRAJECTORIES WERE PRUNED (649 MB of .dat). Every DERIVED field is recomputable from the retained JSON by this script; every RECORDED field is not, and says so. tools/oxdna/README.md carries the recipe that regenerates the run from scratch."
+  ],
+  "openQuestions": [
+    "T-9's vertical-compliance half: C-0009 models the crossover as rigid in z, and C-0015 makes that assumption decide whether the registration design rule exists at all.",
+    "T-9's in-plane shear k_s: C-0020's single undetermined input, and C-0028 shows it moves a buckling verdict.",
+    "The twist control: build C-0133's twist-corrected 110 bp raster and the +25.6 deg should collapse. Cheap, and it was not run.",
+    "Whether the bracket's ASSUMPTION can be replaced by a measurement -- an umbrella sampling of the roll with the duplex torsion constrained would separate the hinge from what sits in parallel with it, which is the only thing that narrows 5.1x."
+  ]
+}

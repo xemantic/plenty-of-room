@@ -984,7 +984,7 @@ an answer.
 | Disagreement raised as a challenge, not an overwrite | ~~**One hundred and nine**~~ **One hundred and fifty-four** challenges in [`gpd/challenges/`](gpd/challenges/), against ~~**one hundred**~~ **one hundred and forty** claims — **more challenges than claims, and that ratio is the point** (**CORRECTED three times**: this row read *"Twenty-nine"* at iteration 4, *"Sixty-nine … against sixty"* at iteration 12 and *"Eighty-four … against seventy-four"* at iteration 16 — the ratio is the invariant, not either count). `CH-0007` challenges **our own** queue's reading, not a subordinate's, and `CH-0021` corrects a factor `C-0014` had itself flagged as a stand-in — finding it wrong in **both** directions. |
 | Model-consistent vs measured maintained | Every claim header carries it; no `PASS` in this repository asserts measurement. |
 | A feared effect chased down and *dissolved* rather than carried | The "grafted `χ` ≈ 0.60", once thought 239× the salt effect, turned out to be `1.2 × ½` assembled from an abstract, against a model whose own theta is 0.696, for the wrong geometry and the wrong observable (`C-0013`, `CH-0012`). |
-| Unanswerable questions stated plainly | The Mg²⁺/PEG binding constant does not exist in accessible literature (`P-8`); the crossover hinge constant is a fitted model input (`T-9`); leaf `A1.2`'s CI is **not discharged** rather than approximated; the intermediate-coupling regime has no systematic theory and the sources say so themselves. |
+| Unanswerable questions stated plainly | The Mg²⁺/PEG binding constant does not exist in accessible literature (`P-8`); ~~the crossover hinge constant is a fitted model input (`T-9`)~~ — **measured in iteration 35** (`C-0151`): oxDNA brackets `k_θ` at `5.62052112 – 25.9227606 pN·nm/rad` and the fitted `13.5294118` is inside it, so the input keeps its value and changes its ground; the crossover's **vertical compliance** and **in-plane shear** stay unmeasured; leaf `A1.2`'s CI is **not discharged** rather than approximated; the intermediate-coupling regime has no systematic theory and the sources say so themselves. |
 
 ---
 
@@ -993,8 +993,16 @@ an answer.
 - **The 95 % CI of leaf `A1.2`.** Requires an ensemble; the named tool models the wrong subsystem.
 - **The Mg²⁺/PEG coordination constant.** Two independent searches; the mechanism is documented in water, the
   number is not, and the quantitative NMR work is in methanol. It needs a paywalled pull or an experiment.
-- **The crossover hinge constant `k_θ`.** No accessible measurement of a single-layer origami sheet's bending
-  rigidity exists in any direction. Costed as `T-9` — days of oxDNA on 8 cores.
+- ~~**The crossover hinge constant `k_θ`.** No accessible measurement of a single-layer origami sheet's bending
+  rigidity exists in any direction. Costed as `T-9` — days of oxDNA on 8 cores.~~
+  **RUN, iteration 35** (`C-0151`, `gpd/results/T-9-crossover-hinge-constant.json`). It cost a day on 8 cores.
+  The interduplex roll of this programme's own 112 bp raster brackets `k_θ` at
+  **`5.62052112 – 25.9227606 pN·nm/rad`**, and the corpus's fitted **`13.5294118`** sits inside — so `D_⊥`
+  and the `25.5607302×` anisotropy survive on a measurement. **The bracket is `4.61×` wide and its width is
+  an assumption, not a sample size**, so more compute does not narrow it. What the same run could **not**
+  answer is the item below it: the three plate rigidities are under-sampled by 4–5× in the direction that
+  would have flattered this corpus, at 12–55 h per replica to settle. Still unanswered: the crossover's
+  **vertical compliance** and **in-plane shear `k_s`**, which is why `T-9` stays open.
 - ~~**The direction of the correlation correction for *oppositely* charged walls.** Every published coupling
   criterion is a like-charge result. This is the largest uncertainty on every electrostatic force here.~~
   **NARROWED TWICE AND NO LONGER THE LARGEST, iterations 32–34** (`C-0137`, `T-50`; `C-0143`, `T-221`).
