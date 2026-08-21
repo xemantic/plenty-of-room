@@ -37,13 +37,13 @@ Innermost first. A layer may depend only on the ones above it.
 | 1. quantities | `quantities/` | a number **and the state it was read at**; comparisons that refuse two states | **exists** |
 | 2. lattice | `lattice/` | crossover lattices behind one interface: azimuths, step, period, register departure, station ladder | **exists** |
 | 3. design | `design/` | the interchange boundary — read **and write** a scadnano `.sc`, derive the lattice facts, check buildability | **exists** (`T-266`/`C-0160` added the writer and the committed designs) |
-| 4. environment | `brush/`, `electrostatics/`, `material/`, `poroelastic/` | the layer, the electrolyte, the field — validatable without a tile | exists, **not yet behind an interface** |
+| 4. environment | `environment/` over `brush/`, `electrostatics/` (`material/`, `poroelastic/` not yet) | the layer, the electrolyte, the field — validatable without a tile | **exists** (`T-265`/`C-0159` added the interface and the typed regime) |
 | 5. mechanics | `structure/`, `crossover/`, `coupling/` | grillage, influence banks, prestrain-as-load | exists, **consumes `Gen1Tile` directly** |
 | 6. device | `actuator/`, `stability/`, `anchoring/`, `tile/` | the force balance, the folds, the joints | exists |
 | 7. emission | `structure/ResultRounding.kt` ×6 | one rounding rule, typed records, declared inputs | **six implementations; not started** |
 | 8. corpus tools | `tools/*.py` | provenance, drift, transfer detection | exists, **belongs outside this repository** |
 
-## What layers 1–3 buy, concretely
+## What layers 1–4 buy, concretely
 
 **1. `quantities/`** — the corpus's dominant error class, made unrepresentable.
 `CLAUDE.md` records eleven instances of *"a quantity is not well posed without the state it is read
@@ -87,13 +87,22 @@ read the other way it puts 7 nt of phantom scaffold in the block
 and would have raised a challenge against a correct standing number.
 **A quantity that nothing draws is a quantity nothing checks.**
 
-## The order the rest goes in
+**4. `environment/`** — `pressure(h)`, `force(h, bias)`, `decayLength`,
+behind which the SCF brush, the 1-D 2:1 Poisson-Boltzmann gap and the **2-D** electrode edge sit.
+The two packages with no counterpart in the field are now reachable without `Gen1Tile`,
+and that is asserted of the *sources* rather than of the tests.
+`decayLength` is a `ScreeningLength` rather than a `Double`,
+so `CH-0004` — substituting one of this project's three correct Debye lengths for another —
+is a refused operation;
+and the **regime** (buffer, valency, gap, bias, band) is `@Serializable` data,
+which is what step 6 has to write.
+`T-265` moved no committed number, and re-expressing the packages measured two things:
+the SCF layer's answer depends on which heights were solved before it (`2.2e−13`, deterministic),
+and a result file's **parameter block is rounded like everything else**,
+so it cannot re-run its own study
+([`CH-0207`](gpd/challenges/CH-0207-a-parameter-block-cannot-re-run-its-own-study.md)).
 
-**Step 4 — an `environment` interface.**
-`pressure(h)`, `force(h, bias)`, `decayLength`, behind which the SCF brush and the 2-D PB edge sit.
-Additive; moves no number.
-What it buys is that the two packages with no counterpart in the field can be validated,
-and cited, without the tile.
+## The order the rest goes in
 
 **Step 5 — `mechanics` on an imported design.**
 `OrigamiGrillage` currently takes its lattice from `Gen1Tile`'s constants;
@@ -128,7 +137,7 @@ Their relatives are statcheck and GRIM, not ReproZip.
 ## What was deliberately not done in this pass
 
 - **No committed result file moved**, and no study was re-run.
-  Layers 1–3 are new code with new tests; nothing existing calls them yet.
+  Layers 1–4 are new code with new tests; nothing existing calls them yet.
 - **Nothing was deleted or renamed.**
   `tile/HoneycombLattice`, `structure/CrossoverLayout` and `Gen1Tile` are untouched, and the new
   lattice objects *take their constants from* the old ones rather than restating them, so the two
