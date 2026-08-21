@@ -617,12 +617,13 @@ fun main() {
                 "the 45 demanded, and every one of the fifteen rows carries at least three.",
         "What refuses them is REGISTRATION. The escape is to displace the ties into the room " +
                 "the arms leave — 45 stations, worst displacement " +
-                "${displacements.max()} nm — and its price is that the coupling no longer " +
-                "enters on a grid.",
+                "${displacements.max().roundedForProse()} nm — and its price is that the " +
+                "coupling no longer enters on a grid.",
         "The only registration the slab supplies for free is the arms' OWN tips: 34 ties " +
                 "landing on the arms clear every neighbour by " +
-                "${worstTipClearance(rowRoots, arm, edgeX, width)} nm, which is the root pitch " +
-                "minus the arm and is a lattice quantity, not a fitted one.",
+                "${worstTipClearance(rowRoots, arm, edgeX, width).roundedForProse()} nm, " +
+                "which is the root pitch minus the arm and is a lattice quantity, not a " +
+                "fitted one.",
         "The sweep runs the FAVOURABLE way: an arm's plan projection is a cosine, so the swept " +
                 "envelope is the rest footprint identically and a static plan view is " +
                 "conservative at every stroke.",

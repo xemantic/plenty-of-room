@@ -210,6 +210,18 @@ PROSE_ALLOWLIST = {
         # defect this repository closed stays measurable in the artifact that closed it.
         "0.06517538540278571",
     },
+    "T-149-recommended-element-fold.json": {
+        # A string leaf a CONSUMER PARSES BACK is an input, not a sentence.  `T-250`'s sweep
+        # rounded `runParameters.armLength` to nine digits; `DoublingLadderRepairTest` reads it
+        # with `.toDouble()` and asserts the re-derived contour against it at `1e-14`, so the
+        # rendering decision silently became a decision about how many digits an input carries —
+        # `CH-0205`'s latent channel, made live.  The emitter now writes it at full precision and
+        # the token is exempted here.  Measured over the whole corpus (every string leaf whose
+        # value the sweep moved and whose key any `.toDouble()` call site reads) this is the ONLY
+        # live instance; `T-188`'s `freeStrokeBuildable` shares the key with a read site but is an
+        # echo of its own answer that nothing parses, so it stays rounded.
+        "8.164390826631301",
+    },
 }
 
 # `T-250` — the exit policy, as a function so that it can be MUTATED and named-tested.
@@ -241,6 +253,12 @@ PROSE_ALLOWLIST_TESTS = [
      "which a per-file allowlist would miss"),
     ("T-207-format-string-repair.json", "0.06517538540278571", False,
      "the CONVERSIONS allowlist does not carry over to prose"),
+    ("T-149-recommended-element-fold.json", "8.164390826631301", True,
+     "the parsed-back parameter is admitted in its own file — a string leaf a consumer reads "
+     "with `.toDouble()` is an input, not a sentence"),
+    ("T-149-recommended-element-fold.json", "13.529411764705882", False,
+     "a DIFFERENT full-precision parameter of the same file is still a defect — the exemption "
+     "is the one field a consumer parses, not the whole parameter block"),
 ]
 
 # `T-250` — the exit policy's own named rows.

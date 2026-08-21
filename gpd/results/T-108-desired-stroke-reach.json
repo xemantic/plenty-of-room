@@ -1740,7 +1740,7 @@
                 "reachesTheStroke": false
             },
             "bindingConstraint": "the element's own law does not reach this stroke",
-            "note": "an inextensible arm of 9.985355359136125 nm cannot lift its tip 10.001 nm"
+            "note": "an inextensible arm of 9.98535536 nm cannot lift its tip 10.001 nm"
         },
         {
             "element": "E5a1 two-spring elastica arm",
@@ -1796,7 +1796,7 @@
                 "reachesTheStroke": false
             },
             "bindingConstraint": "the element's own law does not reach this stroke",
-            "note": "the arm's small-rotation branch does not reach a stroke of 9.1259125 nm: the continuation reached 9.0991884812617 nm at 284.8222866488131 pN on a 9.131156503090608 nm arm and exhausted its 400 force steps there"
+            "note": "the arm's small-rotation branch does not reach a stroke of 9.1259125 nm: the continuation reached 9.09918848 nm at 284.822287 pN on a 9.1311565 nm arm and exhausted its 400 force steps there"
         },
         {
             "element": "C-0030 coupled flexure, favourable (45 paths)",

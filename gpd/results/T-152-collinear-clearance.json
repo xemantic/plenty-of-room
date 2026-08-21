@@ -572,7 +572,7 @@
             "id": "P5",
             "statement": "the requirement is stated as an energy against k_BT, not as a distance",
             "met": true,
-            "evidence": "the elastic work to close the recommended gap is 10.6377641 k_BT against a 4.411557910339179 k_BT bond"
+            "evidence": "the elastic work to close the recommended gap is 10.6377641 k_BT against a 4.41155791 k_BT bond"
         },
         {
             "id": "P6",
@@ -621,7 +621,7 @@
         "NOTHING IN THE PLACEMENT MOVES ADVERSELY: 34 of 34 at one level at every clearance from 1 to 7 rises, C-0053's 45-arm count 43 -> 43, C-0074's 30-root ceiling 9.52 -> 9.86 nm.",
         "THE CONSERVATISM IS WHAT KEEPS CH-0081 STANDING. A rigid-rooted arm needs 9.24698738 nm and places at a clearance of 4 rises or fewer — so a design that adopted the LOOSEST end of the stacking range would reopen the truss branch that CH-0081 closed.",
         "AND THE DISTANCE IS THE ONLY CONTROL THE DESIGN STILL OWNS. Rothemund's three measured anti-stacking remedies all need a strand TERMINUS, and C-0034's A2 joint has already spent both of the two a duplex end has (C-0029's counting theorem). The escape is a staple break one base pair inboard, which is a nick and an 8 bp domain — so the clearance is not a backup for the end chemistry here, it is the primary control.",
-        "C-0069's CENTRAL NEGATIVE IS UNTOUCHED. The two-support flexure family's floor is 22.414191687124024 nm against a BARE pitch of 10.88, so it is refused at a clearance of zero and no reading of this task reopens it."
+        "C-0069's CENTRAL NEGATIVE IS UNTOUCHED. The two-support flexure family's floor is 22.4141917 nm against a BARE pitch of 10.88, so it is refused at a clearance of zero and no reading of this task reopens it."
     ],
     "parameters": {
         "edgeX": 40.0,

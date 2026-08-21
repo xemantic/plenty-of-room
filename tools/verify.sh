@@ -155,8 +155,22 @@ if [ "$checks" = "yes" ]; then
     echo
     # `T-249`/`C-0153` raised it as an AUDIT, because the corpus read 748 tokens in 48 files and
     # `C-0083`'s rule is that a gate which cannot come clean is not a gate. `T-250`/`C-0156` swept
-    # the 47 studies that carried them, in one `tools/reemission-order.py` topological sort, so
-    # the line reads 0 in 0 and is a GATE. No `head` here: a gate must show what it found.
-    echo "--- no committed result file carries an unrounded number inside PROSE (T-250) ---"
+    # the 47 studies that carried them, in one `tools/reemission-order.py` topological sort, and
+    # promoted the line to a GATE. No `head` here: a gate must show what it found.
+    #
+    # `P-27`/`C-0158`: this comment used to certify a READING -- "so the line reads 0 in 0" -- and
+    # that reading was false at the very commit that wrote it. `git archive 49b1a01 | tar -x` and
+    # running THAT tree's own copy of the checker exits 1 on 69 tokens in 8 files, so `verify.sh`
+    # was never run after the gate line was added: 62 of the 69 were artifacts the sweep repaired
+    # in source and did not re-emit, and 7 were source-side call sites at four shapes the sweep's
+    # mechanical rule cannot match. `CLAUDE.md`'s own rule applies -- a guard's justification is a
+    # statement about a STATE, and it expires when the state moves -- so the comment now states
+    # the RULE and the line below states the reading, which is the only place a reading belongs.
+    #
+    # Note which corpus is read: this script scans the SNAPSHOT, so the default mode reads the
+    # working tree and `--committed` reads `HEAD`. Only the second answers "does the commit come
+    # clean", which is the control `P-27` recommends running before any push that moves a result
+    # file.
+    echo "--- no result file in this snapshot carries an unrounded number inside PROSE (T-250) ---"
     tools/check-result-file-hygiene.py --prose
 fi

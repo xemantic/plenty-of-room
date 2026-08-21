@@ -225,7 +225,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the stroke: the anchors take 93.08628318584071 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
+            "bindingConstraint": "the stroke: the anchors take 93.0862832 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
         },
         {
             "id": "S1",
@@ -345,7 +345,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the stroke: the anchors take 93.08628318584071 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
+            "bindingConstraint": "the stroke: the anchors take 93.0862832 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
         },
         {
             "id": "S1",
@@ -465,7 +465,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the stroke: the anchors take 95.2779276848354 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
+            "bindingConstraint": "the stroke: the anchors take 95.2779277 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
         },
         {
             "id": "S1",
@@ -585,7 +585,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the stroke: the anchors take 95.2779276848354 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
+            "bindingConstraint": "the stroke: the anchors take 95.2779277 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
         },
         {
             "id": "S1",
@@ -855,7 +855,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the stroke: the anchors take 98.17704535511157 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
+            "bindingConstraint": "the stroke: the anchors take 98.1770454 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
         },
         {
             "id": "S2",
@@ -885,7 +885,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the stroke: the anchors take 98.17704535511157 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
+            "bindingConstraint": "the stroke: the anchors take 98.1770454 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
         },
         {
             "id": "S2",
@@ -915,7 +915,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the stroke: the anchors take 98.77613819148192 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
+            "bindingConstraint": "the stroke: the anchors take 98.7761382 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
         },
         {
             "id": "S2",
@@ -945,7 +945,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the stroke: the anchors take 98.77613819148192 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
+            "bindingConstraint": "the stroke: the anchors take 98.7761382 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
         },
         {
             "id": "S2",
@@ -975,7 +975,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the stroke: the anchors take 99.06345995354762 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
+            "bindingConstraint": "the stroke: the anchors take 99.06346 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
         },
         {
             "id": "S2",
@@ -1005,7 +1005,7 @@
             "compressionPerAnchor": 25.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the stroke: the anchors take 99.06345995354762 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
+            "bindingConstraint": "the stroke: the anchors take 99.06346 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
         },
         {
             "id": "S4",
@@ -1035,7 +1035,7 @@
             "compressionPerAnchor": 0.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the stroke: the anchors take 14.227585094812822 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
+            "bindingConstraint": "the stroke: the anchors take 14.2275851 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
         },
         {
             "id": "S4t",
@@ -1065,7 +1065,7 @@
             "compressionPerAnchor": 0.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the stroke: the anchors take 14.227585094812822 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
+            "bindingConstraint": "the stroke: the anchors take 14.2275851 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
         },
         {
             "id": "S4",
@@ -1095,7 +1095,7 @@
             "compressionPerAnchor": 0.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the stroke: the anchors take 39.88592753609249 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
+            "bindingConstraint": "the stroke: the anchors take 39.8859275 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
         },
         {
             "id": "S4t",
@@ -1125,7 +1125,7 @@
             "compressionPerAnchor": 0.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the stroke: the anchors take 39.88592753609249 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
+            "bindingConstraint": "the stroke: the anchors take 39.8859275 % of it at the soft end of the C-0003 secant bracket, against a declared 10 % budget"
         },
         {
             "id": "S4",
@@ -1185,7 +1185,7 @@
             "compressionPerAnchor": 0.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the CABLE tension: 93.52683795349421 pN enters the tile at a 3 nm stroke once C-0009's concentration factor is applied, against a 48 pN shear allowable"
+            "bindingConstraint": "the CABLE tension: 93.526838 pN enters the tile at a 3 nm stroke once C-0009's concentration factor is applied, against a 48 pN shear allowable"
         },
         {
             "id": "S4",
@@ -1215,7 +1215,7 @@
             "compressionPerAnchor": 0.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the CABLE tension: 93.52683795349421 pN enters the tile at a 3 nm stroke once C-0009's concentration factor is applied, against a 48 pN shear allowable"
+            "bindingConstraint": "the CABLE tension: 93.526838 pN enters the tile at a 3 nm stroke once C-0009's concentration factor is applied, against a 48 pN shear allowable"
         },
         {
             "id": "S4t",
@@ -1245,7 +1245,7 @@
             "compressionPerAnchor": 0.0,
             "buckles": false,
             "verdict": "FAIL",
-            "bindingConstraint": "the CABLE tension: 93.52683795349421 pN enters the tile at a 3 nm stroke once C-0009's concentration factor is applied, against a 48 pN shear allowable"
+            "bindingConstraint": "the CABLE tension: 93.526838 pN enters the tile at a 3 nm stroke once C-0009's concentration factor is applied, against a 48 pN shear allowable"
         },
         {
             "id": "S4",

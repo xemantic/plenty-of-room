@@ -4360,7 +4360,7 @@
         },
         {
             "name": "Kanduc et al. Eq. (64), weak-coupling validity, Xi < D/mu / ln(D/mu)",
-            "reading": "at the charge-SATURATED gap-facing wall, mu_GC = 1.9634392630735316 nm, 7 nm gap",
+            "reading": "at the charge-SATURATED gap-facing wall, mu_GC = 1.96343926 nm, 7 nm gap",
             "quantity": 1.45480764,
             "bound": 2.80454503,
             "satisfied": true,

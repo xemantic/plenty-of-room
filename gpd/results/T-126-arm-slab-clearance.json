@@ -1232,8 +1232,8 @@
         "The arm slab and a REGULAR tie-down grid cannot share one face. On C-0015's own 3 x 15 grid 30 of 45 ties land on an arm at C-0063's own arm senses and 26 at the best of them; the section makes every one of those level-independent.",
         "No rigid translation of a two- or three-column grid clears every row. A ONE-column grid does, in 4 windows, the nearest 6.785 nm off the tile centre-line and the widest 0.99 nm wide.",
         "The room is not what is missing: the array's free tie capacity is 108 against the 45 demanded, and every one of the fifteen rows carries at least three.",
-        "What refuses them is REGISTRATION. The escape is to displace the ties into the room the arms leave — 45 stations, worst displacement 4.331666666666667 nm — and its price is that the coupling no longer enters on a grid.",
-        "The only registration the slab supplies for free is the arms' OWN tips: 34 ties landing on the arms clear every neighbour by 2.7156091699999996 nm, which is the root pitch minus the arm and is a lattice quantity, not a fitted one.",
+        "What refuses them is REGISTRATION. The escape is to displace the ties into the room the arms leave — 45 stations, worst displacement 4.33166667 nm — and its price is that the coupling no longer enters on a grid.",
+        "The only registration the slab supplies for free is the arms' OWN tips: 34 ties landing on the arms clear every neighbour by 2.71560917 nm, which is the root pitch minus the arm and is a lattice quantity, not a fitted one.",
         "The sweep runs the FAVOURABLE way: an arm's plan projection is a cosine, so the swept envelope is the rest footprint identically and a static plan view is conservative at every stroke.",
         "SS3's desired 10 nm stroke does not change the clearance — it removes the element, because 10 nm exceeds the 8.164 nm arm and a lever is a rotation."
     ],

@@ -5367,7 +5367,7 @@
             "id": "F2",
             "statement": "the electrostatic range is SHORTER than the disputed bracket, so a solve can place an edge inside it",
             "fired": false,
-            "outcome": "NO — 3.926878526147063 nm against a 1.7827242830583152 nm bracket. And the finding is stronger than the bound: the measured short-range law has a 0.24 nm decay length, so an edge EXISTS and is sharp, but it is not electrostatic. A two-cylinder PB solve would have resolved the wrong term."
+            "outcome": "NO — 3.92687853 nm against a 1.78272428 nm bracket. And the finding is stronger than the bound: the measured short-range law has a 0.24 nm decay length, so an edge EXISTS and is sharp, but it is not electrostatic. A two-cylinder PB solve would have resolved the wrong term."
         },
         {
             "id": "F3",
@@ -5385,7 +5385,7 @@
             "id": "F5",
             "statement": "the coaxial geometry costs MORE than the crossed geometry at the same separation",
             "fired": false,
-            "outcome": "NO — 15.110341201220582x the other way at the placement threshold. A coaxial pair's charge is spread along the axis away from the contact, and its energy is FINITE even at zero gap (1.3747522 kT)."
+            "outcome": "NO — 15.1103412x the other way at the placement threshold. A coaxial pair's charge is spread along the axis away from the contact, and its energy is FINITE even at zero gap (1.3747522 kT)."
         }
     ],
     "predicates": [
@@ -5415,12 +5415,12 @@
         "THE WIDTH IS A THRESHOLD, NOT A SEPARATION — the eighth instance in this project of a quantity that is not well posed without the state it is read at, and the first where the missing state is an ENERGY BUDGET rather than a load, a compression or a lattice coordinate.",
         "AND THE BUDGET IS MEASURABLE, because the host sheet is a measured object: holding two adjacent duplexes at the SAXS 2.69 nm over one 40 nm interface costs 31.9987879 kT, i.e. 7.99969697 kT per crossover column. That is the design's own demonstrated currency, and the width it buys is 2.1 nm — BELOW the 2.71560917 nm placement threshold.",
         "A THERMAL CRITERION IS THE WRONG ONE HERE and it is worth the whole verdict: at 1 kT the width is 8.78600931 nm and nothing places. Both bodies are covalently rooted to the same sheet, so the energy is paid by the fold and not by kT; Barker-Henderson is the criterion for two FREE bodies colliding.",
-        "THE EDGE EXISTS AND IT IS NOT ELECTROSTATIC. The Debye length at 2 mM is 3.926878526147063 nm, longer than the whole disputed bracket, so electrostatics cannot place an edge at 2.7 nm. The measured short-range law can: 0.24 nm. A bespoke two-cylinder nonlinear PB solve would have resolved the term that carries no edge.",
-        "THE COLLINEAR CLEARANCE IS A COAXIAL GEOMETRY AND IT IS 15.110341201220582x CHEAPER than the crossed one at the same separation — and FINITE at zero gap, 1.3747522 kT. C-0069's Q5 gap contains no body at all; charging it a duplex girth charges a body that is not there.",
-        "AND THE SIGN REVERSES: what a collinear gap has to prevent is a BOND, not a clash. Two duplexes end to end blunt-end STACK — an established origami motif worth -4.41155791 kT per helix (Woo & Rothemund, read directly) — so the clearance is a stacking-PREVENTION allowance and its length is the stacking range, 0.51108 nm (oxDNA2's cutoff) to 1.3 nm (where the all-atom PMF turns repulsive). At the generous end that is a plan margin of 1.4156091699999998 nm, 55.27743265400635x the published knife edge. This is CH-0089's own failure route 2 — 'a demonstration that C-0053's footprint convention is charging something other than a body' — answered in the direction that WIDENS the margin.",
-        "THE KNIFE EDGE IS UNRESOLVABLE BY PHYSICS TOO. 0.0256 nm at 2.7 nm is 0.012372538622489031 of the pair energy — C-0072's 'neither margin is quotable' arriving through a second, wholly independent channel.",
+        "THE EDGE EXISTS AND IT IS NOT ELECTROSTATIC. The Debye length at 2 mM is 3.92687853 nm, longer than the whole disputed bracket, so electrostatics cannot place an edge at 2.7 nm. The measured short-range law can: 0.24 nm. A bespoke two-cylinder nonlinear PB solve would have resolved the term that carries no edge.",
+        "THE COLLINEAR CLEARANCE IS A COAXIAL GEOMETRY AND IT IS 15.1103412x CHEAPER than the crossed one at the same separation — and FINITE at zero gap, 1.3747522 kT. C-0069's Q5 gap contains no body at all; charging it a duplex girth charges a body that is not there.",
+        "AND THE SIGN REVERSES: what a collinear gap has to prevent is a BOND, not a clash. Two duplexes end to end blunt-end STACK — an established origami motif worth -4.41155791 kT per helix (Woo & Rothemund, read directly) — so the clearance is a stacking-PREVENTION allowance and its length is the stacking range, 0.51108 nm (oxDNA2's cutoff) to 1.3 nm (where the all-atom PMF turns repulsive). At the generous end that is a plan margin of 1.41560917 nm, 55.2774327x the published knife edge. This is CH-0089's own failure route 2 — 'a demonstration that C-0053's footprint convention is charging something other than a body' — answered in the direction that WIDENS the margin.",
+        "THE KNIFE EDGE IS UNRESOLVABLE BY PHYSICS TOO. 0.0256 nm at 2.7 nm is 0.0123725386 of the pair energy — C-0072's 'neither margin is quotable' arriving through a second, wholly independent channel.",
         "THE TWO RADII ARE NOT THE SAME NUMBER, and it is 41 % of the quantity under test. The charge sits at T-71's measured 0.9086 nm and the field's hard body at 1.0 nm; working in INTERAXIAL coordinates throughout is what avoids having to choose.",
         "MEAN FIELD IS NOT CONTROLLED HERE AND THE BOUND THAT SAVES IT IS EMPIRICAL. C-0005 puts Xi at 17-24 for Mg2+ at a DNA surface with no systematic theory, and like-charged rods in strong coupling is exactly where PB has the wrong SIGN. What bounds it is a measurement, not a theory: Mg2+ does not condense duplex DNA at any concentration.",
-        "THE DEBYE-HUCKEL PREMISE FAILS ON THIS MATERIAL and is reported rather than assumed: the reduced surface potential is 1.7103380645841426, above one even after Manning renormalisation. Every electrostatic number here is an order-of-magnitude bracket, which is why the verdict rests on the RANGE."
+        "THE DEBYE-HUCKEL PREMISE FAILS ON THIS MATERIAL and is reported rather than assumed: the reduced surface potential is 1.71033806, above one even after Manning renormalisation. Every electrostatic number here is an order-of-magnitude bracket, which is why the verdict rests on the RANGE."
     ]
 }

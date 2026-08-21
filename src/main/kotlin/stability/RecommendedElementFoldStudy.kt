@@ -510,7 +510,12 @@ fun main() {
             "pathCount" to GEN1_RECOMMENDED_PATH_COUNT.toString(),
             "armRootStiffness" to GEN1_ARM_ROOT_STIFFNESS.roundedForProse().toString(),
             "armTipStiffness" to GEN1_ARM_TIP_STIFFNESS.roundedForProse().toString(),
-            "armLength" to recommended.length.roundedForProse().toString(),
+            // NOT `roundedForProse`: `DoublingLadderRepairTest` and `T-157`/`T-156`/`T-159`
+            // parse this field back, so it is an INPUT and not a sentence — `CH-0205`'s
+            // latent channel, made live by `T-250`'s sweep, which rounded it to nine digits
+            // and broke a `1e-14` reproduction gate. A number a consumer reads is emitted at
+            // full precision and exempted in `tools/check-result-file-hygiene.py`.
+            "armLength" to recommended.length.toString(),
             "duplexBendingRigidity" to Gen1Tile.DUPLEX_BENDING_RIGIDITY.toString(),
             "targetForce" to GEN1_TARGET_FORCE.toString(),
             "acceptableStroke" to GEN1_ACCEPTABLE_STROKE.toString(),

@@ -914,7 +914,8 @@ fun main() {
         ),
         T50LiteratureCriterion(
             name = "Kanduc et al. Eq. (64), weak-coupling validity, Xi < D/mu / ln(D/mu)",
-            reading = "at the charge-SATURATED gap-facing wall, mu_GC = " + saturatedGouyChapman +
+            reading = "at the charge-SATURATED gap-facing wall, mu_GC = " +
+                saturatedGouyChapman.roundedForProse() +
                 " nm, 7 nm gap",
             quantity = saturatedCoupling,
             bound = weakCouplingValidityCoupling(OPERATING_GAP / saturatedGouyChapman),

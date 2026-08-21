@@ -1188,9 +1188,10 @@ fun main() {
                 "34 paths, and a row of three is the only configuration in which two same-sense " +
                 "arms sit at the bare root pitch. Dissolving them — 34 paths to 30 — takes the " +
                 "ceiling from ${(counts.first().ceiling).roundedForProse()} to " +
-                "${counts.first { it.paths == 30 }.ceiling} nm and the margin from ${margin.roundedForProse()} to " +
-                "${counts.first { it.paths == 30 }.margin} nm, because the shorter path count " +
-                "also demands a shorter arm.",
+                "${counts.first { it.paths == 30 }.ceiling.roundedForProse()} nm and the margin from " +
+                "${margin.roundedForProse()} to " +
+                "${counts.first { it.paths == 30 }.margin.roundedForProse()} nm, because " +
+                "the shorter path count also demands a shorter arm.",
         "C-0070's SEAT HAS NO THRESHOLD AT ALL, BECAUSE THE VERDICT IS NOT MONOTONE IN IT. Over " +
                 "an 0.05 nm sweep of [0, 0.5] the 9 bp row passes at $coarsePassing of " +
                 "${coarseSeats.size} seats and the failures ALTERNATE — it fails at " +
@@ -1201,7 +1202,7 @@ fun main() {
                 "ones.",
         "THE MARGIN AND THE FLATNESS ARE BOUGHT FROM THE SAME FOUR ARMS, AND THAT IS THE REAL " +
                 "TRADE. Dissolving the rows of three takes the plan margin from ${margin.roundedForProse()} to " +
-                "${counts.first { it.paths == 30 }.margin} nm and the dishing from " +
+                "${counts.first { it.paths == 30 }.margin.roundedForProse()} nm and the dishing from " +
                 "${(flatness[1].dishingOverStroke).roundedForProse()} to ${(flatness[2].dishingOverStroke).roundedForProse()} of the " +
                 "free stroke — through T-5b's 0.10 and out the other side. The reduction rule " +
                 "here is a PLAN rule and not a flatness optimisation, so that dishing is an " +

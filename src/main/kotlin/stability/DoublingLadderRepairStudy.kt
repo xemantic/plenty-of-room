@@ -386,7 +386,7 @@ fun main() {
                     "gpd/results/T-149-recommended-element-fold.json.",
             "C-0092's contour bound 8.16439083 nm and its continuation supremum " +
                     "8.1610821 nm — CITED, and the contour RE-DERIVED here.",
-            "C-0084's ladder refusal 7.91968584 nm and path ceiling 7.909685836937754 nm — CITED.",
+            "C-0084's ladder refusal 7.91968584 nm and path ceiling 7.90968584 nm — CITED.",
             "C-0033's measured d ln mu/dh — READ from " +
                     "gpd/results/T-60-collar-on-the-equilibrium-path.json.",
             "CH-0099's 2.567-3.740x inflation at 8 states — CITED, and recomputed here from the " +
