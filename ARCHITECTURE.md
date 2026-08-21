@@ -64,7 +64,7 @@ from which the register departure falls out,
 `−17.14°` per period on the square sheet and **exactly zero** on the honeycomb.
 
 **3. `design/`** — the door.
-`ScadnanoDesign.fromResource` reads the `.sc` file the oxDNA run of `C-0151` actually simulated,
+`ScadnanoDesign.fromResource` reads the `.sc` file the oxDNA run of `C-0157` actually simulated,
 and derives 15 duplexes, 112 bp, phase 8, seven columns, the 4/3 parity split and 49 crossovers
 **from the file** — a reproduction of the corpus's own counts across two implementations in two
 languages, not a restatement of them.

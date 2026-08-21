@@ -40,7 +40,7 @@ import java.io.File
  *
  * This file is the smallest thing that removes both: a reader for the scadnano `.sc` format, and
  * the derivation of the lattice facts this corpus reasons about **from the file** rather than from
- * a constant. The oxDNA run of `C-0151` already produced such a file for the Gen-1 tile
+ * a constant. The oxDNA run of `C-0157` already produced such a file for the Gen-1 tile
  * (`tools/oxdna/gen1_tile_design.py`), so the round trip is testable against a design this
  * programme has actually simulated: read it back, and the counts must be the corpus's own.
  *
@@ -104,7 +104,7 @@ private data class ScadnanoFile(
  *
  * A crossover is a **single** strand crossing. Registering it from both sides — which is the
  * natural thing to write, and which the corpus's own `k_θ` provenance invites by speaking of *"two
- * bonds per crossover"* — is geometrically over-constrained, and `C-0151`'s run records that it
+ * bonds per crossover"* — is geometrically over-constrained, and `C-0157`'s run records that it
  * does not relax at all: 112 over-stretched bonds against 63 designed crossovers, exactly twice the
  * 49 staple sites. [ScadnanoDesign.checkBuildability] therefore asserts single coverage.
  */
@@ -261,7 +261,7 @@ class ScadnanoDesign(
      * The register error one row accumulates against B-DNA, in degrees.
      *
      * Single-signed and linear in the row length, so it accumulates rather than cancelling — and
-     * on the imported Gen-1 raster it is the −60° `C-0086`'s 112 bp row carries and `C-0151`'s
+     * on the imported Gen-1 raster it is the −60° `C-0086`'s 112 bp row carries and `C-0157`'s
      * oxDNA run relaxed against.
      */
     fun accumulatedRegisterDepartureDegrees(): Double =

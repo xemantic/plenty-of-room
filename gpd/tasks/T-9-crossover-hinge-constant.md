@@ -4,7 +4,7 @@
 |---|---|
 | **Leaf** | `A1.2`, with `A8.2` |
 | **Raised by** | the opening structural iteration, and carried as the largest open premise under `C-0006` ever since |
-| **Claim** | `C-0151` (the hinge constant; the task's other two deliverables stay open) |
+| **Claim** | `C-0157` (the hinge constant; the task's other two deliverables stay open) |
 | **Result** | `gpd/results/T-9-crossover-hinge-constant.json`, emitted by [`tools/T-9-emit-result.py`](../../tools/T-9-emit-result.py) |
 | **Run** | [`tools/oxdna/`](../../tools/oxdna/) — [`README.md`](../../tools/oxdna/README.md) carries the build, the environment and five traps; [`RESULTS.md`](../../tools/oxdna/RESULTS.md) carries the reading and its validity range |
 | **Verification type** | **in-silico** (oxDNA2, five replicas) **+ logical** (the design generator asserts the corpus's own lattice counts) |
@@ -41,7 +41,7 @@ That is what makes the run a measurement of `k_θ` rather than of DNA elasticity
 
 ### The three deliverables, and which one this closes
 
-1. **the hinge constant `k_θ`** — **CLOSED** by `C-0151`, as a bracket that contains the fitted value;
+1. **the hinge constant `k_θ`** — **CLOSED** by `C-0157`, as a bracket that contains the fitted value;
 2. the crossover's **vertical/axial compliance** — `C-0009` models it as a rigid constraint,
    and `C-0015` makes that assumption decide whether the registration design rule exists at all — **OPEN**;
 3. the crossover's **in-plane shear `k_s`** — `C-0020`'s single undetermined input,

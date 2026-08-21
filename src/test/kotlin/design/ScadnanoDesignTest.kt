@@ -32,7 +32,7 @@ import kotlin.test.assertFailsWith
  * without a human redrawing it.
  *
  * The fixture is not a hand-written stub: it is `src/test/resources/gen1-tile.sc`, the scadnano
- * file the oxDNA run (`C-0151`, `tools/oxdna/gen1_tile_design.py`) actually simulated. So these
+ * file the oxDNA run (`C-0157`, `tools/oxdna/gen1_tile_design.py`) actually simulated. So these
  * tests assert that a design **read from a file** reproduces the lattice facts this corpus derived
  * on its own — 15 duplexes, 112 bp, phase 8, seven columns, the 4/3 parity split, 49 crossovers —
  * which is a reproduction across two independent implementations in two languages, not a restatement.

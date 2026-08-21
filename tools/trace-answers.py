@@ -226,7 +226,7 @@ _QUEUE_ROW = re.compile(r"^\|\s*(T-\d{1,4}[a-z]?|P-\d{1,4})\s*\|(.*)\|\s*$")
 # "Left undone" contains DONE, and several rows discuss having "answered" something in passing.
 # Upper-casing the row before matching — the obvious implementation — closes both of them.
 #
-# `PARTIALLY DONE` is iteration 35's coinage (`T-9`, `C-0151`) and it is a NEGATIVE: a task whose
+# `PARTIALLY DONE` is iteration 35's coinage (`T-9`, `C-0157`) and it is a NEGATIVE: a task whose
 # deliverable list is partly discharged and partly live.  It has to be excluded explicitly, because
 # the failure direction here is the unsafe one — the row contains a closing word, so without the
 # guard a genuinely open item disappears from the register, which is `CLAUDE.md`'s own "a closing

@@ -253,14 +253,14 @@ check(
 check(
     "'PARTIALLY DONE' leaves a row OPEN",
     trace_answers.queue_status(
-        "| T-9 | hinge | a | A1.2 | **PARTIALLY DONE** (iteration 35) — claim `C-0151`; two of "
+        "| T-9 | hinge | a | A1.2 | **PARTIALLY DONE** (iteration 35) — claim `C-0157`; two of "
         "three deliverables remain |"
     )["T-9"],
     "OPEN",
 )
 check(
     "'PARTLY DONE' leaves a row OPEN too",
-    trace_answers.queue_status("| T-9 | hinge | a | A1.2 | **PARTLY DONE** — `C-0151` |")["T-9"],
+    trace_answers.queue_status("| T-9 | hinge | a | A1.2 | **PARTLY DONE** — `C-0157` |")["T-9"],
     "OPEN",
 )
 check(
