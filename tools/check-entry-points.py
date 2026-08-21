@@ -55,7 +55,20 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 _MAIN = re.compile(r"^fun main\b", re.MULTILINE)
-_RESULT_FILE = re.compile(r'"(gpd/results/[^"]+\.json)"')
+# THE SCOPE IS `gpd/results/`, AND THAT IS A DECISION RATHER THAN AN OVERSIGHT. `T-266` opened a
+# second committed-artifact directory, `gpd/designs/`, within an hour of this checker shipping, and
+# widening to cover it was tried and REVERTED: a design's staleness is caught by
+# `CommittedDesignsTest`, which rebuilds the file and compares it byte for byte, and that is a
+# strictly stronger guarantee than a row saying how to run something. A row answers *how do I
+# re-run this*; a rebuild-and-compare test answers *is this file what the code produces*. Where the
+# second exists the first is documentation, and `gpd/designs/README.md` carries it.
+#
+# There is a second reason not to widen, and it is the one `CLAUDE.md` already records: that
+# emitter assembles its path from a directory constant and a name (`"$DESIGN_DIRECTORY/....sc"`),
+# which is invisible to a search for either half — the same shape that made `C-0073`'s reader audit
+# miss two thirds of its graph. A checker that silently cannot see a whole emission style should
+# not claim that style as its scope.
+_ARTIFACT = re.compile(r'"(gpd/results/[^"]+\.json)"')
 # `val output = File(` -- the binding's HEAD only. The argument list is then walked to its matching
 # parenthesis, because a study may take an output override from the command line and put its own
 # committed path on an `else` branch three lines down:
@@ -83,7 +96,7 @@ def _bindings(source):
         while index < len(source) and depth:
             depth += {"(": 1, ")": -1}.get(source[index], 0)
             index += 1
-        paths = _RESULT_FILE.findall(source[match.end():index])
+        paths = _ARTIFACT.findall(source[match.end():index])
         if paths:
             found.append((match.group(1), paths[-1]))
     return found
@@ -93,7 +106,7 @@ def _bindings(source):
 # The middle cell is `[^|]*` rather than `[^`|]*` on purpose -- several rows carry TWO backticked
 # task tags (`T-75` / `T-78`), and a stricter cell silently dropped three rows, which then read as
 # three MISSING-ROW defects. A checker's own regex is the first thing its cheap bound must test.
-_ROW = re.compile(r"-Pstudy=([A-Za-z0-9_.]+)Kt`\s*\|[^|]*\|\s*`(gpd/results/[^`]+\.json)`")
+_ROW = re.compile(r"-Pstudy=([A-Za-z0-9_.]+)Kt`\s*\|[^|]*\|\s*`(gpd/[^`]+)`")
 
 
 def written_result(source):

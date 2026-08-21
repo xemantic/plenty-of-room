@@ -117,3 +117,16 @@ directory nobody meant it to. Removed.
   `TASKS.md` — the gate simply could not have noticed if there had been. Repaired by walking the
   argument list to its matching parenthesis, held open by a named test, and **the exemption list is
   now one study long**, which is short enough to read.
+
+- **The scope is `gpd/results/`, and that was tested within the hour.** `T-266` ([`C-0160`](C-0160-scadnano-writer.md))
+  opened a second committed-artifact directory, `gpd/designs/`, while this claim was being written.
+  Widening the gate to cover it was **tried and reverted**, on the emitter's own argument: a design's
+  staleness is caught by `CommittedDesignsTest`, which rebuilds the file and compares it **byte for
+  byte**, and that is strictly stronger than a row saying how to run something. A row answers *how
+  do I re-run this*; a rebuild-and-compare test answers *is this file what the code produces*.
+  Where the second exists the first is documentation, and `gpd/designs/README.md` carries it.
+  The second reason is the one `CLAUDE.md` already records and it is the harder one: that emitter
+  assembles its path from a **directory constant and a name**, which is invisible to a search for
+  either half — the shape that made `C-0073`'s reader audit miss two thirds of its own graph. **A
+  checker that silently cannot see a whole emission style must not claim that style as its scope**,
+  so the limitation is written into the tool's header rather than left as a clean run.
