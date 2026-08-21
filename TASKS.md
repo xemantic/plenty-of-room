@@ -1279,3 +1279,33 @@ removes the numerical guard's vote but not the question.~~
 **`T-243` is DONE, iteration 36** ([`C-0148`](gpd/claims/C-0148-face-bond-class-residues-and-row-span-columns.md)),
 and it did remove the guard's vote — a crossover column serves an **interface**, so its window is the
 intersection of two row spans and not the bounding box.
+
+**14. Should the corpus-integrity toolkit leave this repository?**
+`tools/trace-answers.py`, `result-transfers.py`, `reemission-order.py`, `result-reader-census.py`
+and the `check-*.py` family check **provenance, drift, staleness and transfer between published
+numbers**, and nothing in any of them knows what a duplex is.
+Their relatives are **statcheck** and **GRIM**, not ReproZip,
+and what they encode is not about this device at all —
+*a number is traceable to a claim or it is not*,
+*a status word is a vocabulary and an unknown one reads OPEN*,
+*a gate that cannot come clean is not a gate*,
+*a checker without self-tests is an assertion*,
+*a false-positive rate is not a completeness argument*.
+
+This is a **repository-boundary decision and therefore the owner's**, which is why
+[`T-269`](gpd/tasks/T-269-corpus-tools-extraction.md) is the one iteration-39 row deliberately left
+**unreserved**: it should not consume a claim number until somebody has decided it is this
+programme's work at all rather than a by-product worth giving away.
+
+The honest counter-argument is in the task file and it is not weak: several of these tools are
+correct **because** they were written against this corpus's conventions — `C-0117`'s topological
+sort, the struck-span blanking, the per-record departure keys — and a general tool that must be
+configured per corpus may be worse than a specific one that is right about this one.
+Iteration 39 supplied two more data points on that axis, in **opposite** directions:
+the link checker's outward-facing set stopped being a hand-written list and became the directory
+listing, which is a **generalisation**; and the entry-point gate's scope was deliberately held at
+`gpd/results/` because a sibling directory has a **stronger** guarantee of its own
+([`C-0163`](gpd/claims/C-0163-cold-start-entry-points.md)), which is a **specialisation**.
+
+**What is needed is a decision, not an analysis.** Either answer discharges `T-269`; the second
+one needs to be recorded where a reader will meet it, because the question will be asked again.
