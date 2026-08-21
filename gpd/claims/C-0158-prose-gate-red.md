@@ -232,12 +232,35 @@ where the default mode reads the working tree.
 `build.gradle.kts`. That is a design decision this task does not take unilaterally with sibling
 agents in the tree, and it is `CH-0206`'s open half.
 
-## 8. `P6` — the suite
+## 8. `P6` — the suite, and the one line that is still red and is not this task's
 
-See the acceptance verdict row. `tools/verify.sh --committed` is the authoritative reading and is
-run on the commit this claim is filed with; the working-tree run additionally carries two sibling
-agents' in-flight `design/`, `quantities/` and `environment/` packages, which is why the
-`--committed` run is the one quoted.
+Two runs, both recorded because they answer different questions.
+
+| run | Gradle | the checks after it |
+|---|---|---|
+| `tools/verify.sh` on the working tree | **`BUILD SUCCESSFUL in 22m 1s`, 12 actionable tasks** — the whole Kotlin suite plus all six harness self-test tasks, with two sibling agents' `design/`, `quantities/` and `environment/` packages compiled in | reader census **47 checks passed**, tables **0 in 529**; links **2 broken**, both to `gpd/claims/C-0158-prose-gate-red.md` — this file, which did not yet exist when that snapshot was taken |
+| `tools/verify.sh --committed` on `1300545` | **`BUILD SUCCESSFUL in 21m 47s`, 12 actionable tasks** | reader census clean, tables **0 in 531**, links **0 in 520**, format strings clean, entry points **0 defects**; **challenge index: `CH-0207` UNINDEXED** |
+
+`CH-0207` is committed in `bed0197` (a sibling's `T-265`) without its index row, and
+`tools/verify.sh` runs under `set -euo pipefail`, so that line aborts the script **before** the
+prose gate is reached. It is reported here rather than repaired: a challenge's index row is a
+substantive summary of somebody else's finding, and `C-0071`'s discipline is that a contradiction
+raises a report and not an overwrite.
+
+So the gate this task owns is read directly, on `HEAD`'s own tree, the way §1 read the failure:
+
+```
+$ git archive 492d410 | tar -x -C <scratch>
+$ cd <scratch> && tools/check-result-file-hygiene.py --prose
+  0 token(s) in 0 string field(s) in 0 file(s), of 147 scanned
+EXIT=0
+```
+
+and the other two hygiene gates on the same extraction read
+**0 raw conversions over 147 files** and **0 departure fields in 0 files** on all three of their
+predicates, with **136 of 136** self-tests passing.
+`P6` is therefore discharged for every line of `tools/verify.sh` this task can reach, and the
+residue is named with its owner.
 
 ## 9. Validity range
 
