@@ -84,16 +84,45 @@ data class ScadnanoStrand(
     val color: String? = null
 )
 
+/**
+ * One helix of a scadnano design: where it sits on the grid, and how it is rolled.
+ *
+ * The reader derives no lattice fact from either — a crossover census is a statement about strand
+ * topology — but a **writer** cannot emit a design without them, and it must not invent them:
+ * laying a honeycomb design out on square grid positions is the same class of error as inheriting
+ * a square-lattice congruence on a honeycomb lattice, which is what `C-0141` had to undo.
+ */
 @Serializable
-private data class ScadnanoHelix(
+data class ScadnanoHelix(
     @SerialName("grid_position") val gridPosition: List<Int> = emptyList(),
-    val roll: Double = 0.0
+    val roll: Double = 0.0,
+    @SerialName("max_offset") val maxOffset: Int? = null
 )
 
+/**
+ * The design's own geometry block.
+ *
+ * Carried so that a written design states the rise, the **design twist** and the interhelical gap
+ * it was drawn at, rather than inheriting whatever the reading tool defaults to. The design twist
+ * is load-bearing here: caDNAno's square lattice draws at 10.67 bp/turn, not B-DNA's 10.5, and
+ * that difference **is** the accumulated register error `C-0086` reports and `C-0157`'s oxDNA run
+ * relaxed against.
+ */
 @Serializable
-private data class ScadnanoFile(
+data class ScadnanoGeometry(
+    @SerialName("rise_per_base_pair") val risePerBasePair: Double? = null,
+    @SerialName("helix_radius") val helixRadius: Double? = null,
+    @SerialName("bases_per_turn") val basesPerTurn: Double? = null,
+    @SerialName("minor_groove_angle") val minorGrooveAngle: Double? = null,
+    @SerialName("inter_helix_gap") val interHelixGap: Double? = null
+)
+
+/** The on-disk `.sc` document, in both directions: this is what is parsed and what is emitted. */
+@Serializable
+data class ScadnanoFile(
     val version: String = "",
     val grid: String = "",
+    val geometry: ScadnanoGeometry? = null,
     val helices: List<ScadnanoHelix> = emptyList(),
     val strands: List<ScadnanoStrand> = emptyList()
 )
@@ -137,7 +166,15 @@ data class BuildabilityReport(
 class ScadnanoDesign(
     val grid: String,
     val helixCount: Int,
-    val strands: List<ScadnanoStrand>
+    val strands: List<ScadnanoStrand>,
+    /**
+     * The helix records, where the design has them. Empty is the honest state of a design built
+     * from constants rather than read from a file, and [toScadnanoText] refuses it rather than
+     * guessing a grid position.
+     */
+    val helices: List<ScadnanoHelix> = emptyList(),
+    val geometry: ScadnanoGeometry? = null,
+    val version: String = SCADNANO_FORMAT_VERSION
 ) {
 
     companion object {
@@ -160,7 +197,14 @@ class ScadnanoDesign(
             val parsed = json.decodeFromString(ScadnanoFile.serializer(), text)
             require(parsed.helices.isNotEmpty()) { "a design with no helices" }
             require(parsed.strands.isNotEmpty()) { "a design with no strands" }
-            return ScadnanoDesign(parsed.grid, parsed.helices.size, parsed.strands)
+            return ScadnanoDesign(
+                grid = parsed.grid,
+                helixCount = parsed.helices.size,
+                strands = parsed.strands,
+                helices = parsed.helices,
+                geometry = parsed.geometry,
+                version = parsed.version.ifEmpty { SCADNANO_FORMAT_VERSION }
+            )
         }
     }
 
@@ -267,7 +311,16 @@ class ScadnanoDesign(
     fun accumulatedRegisterDepartureDegrees(): Double =
         lattice().registerDepartureDegrees(rowBasePairs())
 
-    /** This repository's own buildability rules, run against the imported design. */
+    /**
+     * This repository's own buildability rules, run against the imported design.
+     *
+     * **The seamless row-width rule this applies is a SQUARE-lattice statement** — `C-0086`'s odd
+     * number of half turns, i.e. the odd multiples of 16 bp — and it is applied here to whatever
+     * design is handed in, so on a honeycomb design it reports a violation naming a ladder that
+     * design's 21 bp period has nothing to do with. That is measured, filed and left in place by
+     * `C-0160` rather than repaired silently; use [checkBuildabilityOnItsOwnLattice] to have the
+     * rule **withheld** with its reason on a lattice it does not hold on.
+     */
     fun checkBuildability(): BuildabilityReport {
         val violations = mutableListOf<String>()
         val row = rowBasePairs()
@@ -317,7 +370,7 @@ fun seamlessRowWidthIsAdmissible(rowBasePairs: Int): Boolean =
     rowBasePairs % SquareCrossoverLattice.samePairPeriodBasePairs ==
         SquareCrossoverLattice.SHEET_DOMAIN_BASE_PAIRS
 
-private fun seamlessRowWidthViolation(rowBasePairs: Int): String {
+internal fun seamlessRowWidthViolation(rowBasePairs: Int): String {
     val period = SquareCrossoverLattice.samePairPeriodBasePairs
     val nearest = ((rowBasePairs - SquareCrossoverLattice.SHEET_DOMAIN_BASE_PAIRS).toDouble() /
         period).let { Math.round(it) } * period + SquareCrossoverLattice.SHEET_DOMAIN_BASE_PAIRS

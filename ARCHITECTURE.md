@@ -36,7 +36,7 @@ Innermost first. A layer may depend only on the ones above it.
 |---|---|---|---|
 | 1. quantities | `quantities/` | a number **and the state it was read at**; comparisons that refuse two states | **exists** |
 | 2. lattice | `lattice/` | crossover lattices behind one interface: azimuths, step, period, register departure, station ladder | **exists** |
-| 3. design | `design/` | the interchange boundary — read a scadnano `.sc`, derive the lattice facts, check buildability | **exists** (reader; no writer yet) |
+| 3. design | `design/` | the interchange boundary — read **and write** a scadnano `.sc`, derive the lattice facts, check buildability | **exists** (`T-266`/`C-0160` added the writer and the committed designs) |
 | 4. environment | `brush/`, `electrostatics/`, `material/`, `poroelastic/` | the layer, the electrolyte, the field — validatable without a tile | exists, **not yet behind an interface** |
 | 5. mechanics | `structure/`, `crossover/`, `coupling/` | grillage, influence banks, prestrain-as-load | exists, **consumes `Gen1Tile` directly** |
 | 6. device | `actuator/`, `stability/`, `anchoring/`, `tile/` | the force balance, the folds, the joints | exists |
@@ -63,7 +63,7 @@ and the step is the step **because** it lands on the neighbouring azimuth (270°
 from which the register departure falls out,
 `−17.14°` per period on the square sheet and **exactly zero** on the honeycomb.
 
-**3. `design/`** — the door.
+**3. `design/`** — the door, and it now opens both ways.
 `ScadnanoDesign.fromResource` reads the `.sc` file the oxDNA run of `C-0157` actually simulated,
 and derives 15 duplexes, 112 bp, phase 8, seven columns, the 4/3 parity split and 49 crossovers
 **from the file** — a reproduction of the corpus's own counts across two implementations in two
@@ -71,6 +71,21 @@ languages, not a restatement of them.
 `checkBuildability()` runs this repository's rules against an imported design,
 which is the capability nothing in the field has:
 caDNAno will happily let you draw a row width a boustrophedon cannot turn at.
+
+`T-266` added the **writer**,
+so `C-0151`'s recommended block is a committed file ([`gpd/designs/`](gpd/designs/README.md))
+rather than a pair of integers in a study literal,
+and `read → write → read` reproduces every lattice fact of the simulated sheet at integer equality.
+Its first use found two things nothing else could.
+`checkBuildability()` was applying the **square** sheet's width rule to a honeycomb design —
+in the one function whose sibling `lattice()` refuses to guess —
+which is filed rather than repaired, with the lattice-aware check added beside it.
+And a `require` that had been written **tautologically** refused the writer's own first reading of
+*"every x-raster row spans exactly the larger of the two lengths"*,
+which is a statement about a row's union **window** and not about its helices:
+read the other way it puts 7 nt of phantom scaffold in the block
+and would have raised a challenge against a correct standing number.
+**A quantity that nothing draws is a quantity nothing checks.**
 
 ## The order the rest goes in
 
