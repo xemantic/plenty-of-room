@@ -1,0 +1,60 @@
+{
+  "task": "T-249 — a number emitted as a STRING is not rounded, and the census of that shape is the deliverable",
+  "leaf": "none — a process claim protecting the machine-readable artifact of every leaf",
+  "conditions": "No physics is computed. Units unchanged and untouched: nm, pN, pN/nm, pN/nm^2 = 1 MPa exactly, k_BT = 4.141947 pN nm at 300 K, aqueous buffer with stated Mg2+. The corpus is gpd/results/ at HEAD of iteration 36 plus this iteration's edits; the baseline every diff is taken against is read out of git rather than out of the working tree.",
+  "verificationType": "logical — a shape census over the committed corpus, an exhaustive shortest-round-trip test of every hit, a mutation measurement over the predicate in both directions, and 29 named checker + 15 emitter self-tests — plus in-silico: one study re-run through one snapshot and diffed field by field against its committed version",
+  "cheapBounds": [
+    {
+      "name": "1 — the artifact-side census, run before any repair",
+      "value": 757.0,
+      "unit": "tokens above nine significant digits inside a string value of a committed result file",
+      "decides": "The blast radius is bounded before a single study is re-run. It is 47 files, not one, and 175 distinct emission sites, not three."
+    },
+    {
+      "name": "2 — the shortest-round-trip test over every hit",
+      "value": 0.0,
+      "unit": "tokens that are NOT the shortest decimal that round-trips their own double",
+      "decides": "The false-positive rate is MEASURED and it is exhaustive rather than sampled: every one of the 757 is exactly what Double.toString() emits, which is the signature of an interpolated Double and not of a transcribed literature value."
+    },
+    {
+      "name": "3 — the offline prediction over the one file being repaired",
+      "value": 16.0,
+      "unit": "tokens in 10 string fields predicted to move, with their new values",
+      "decides": "What the re-emission must move, and what it must not, before the seventeen-minute solve is spent."
+    },
+    {
+      "name": "4 — the reader census against the target",
+      "value": 0.0,
+      "unit": "readers of T-164",
+      "decides": "The re-emission is one file and needs no topological sort. Confirmed twice: tools/result-reader-census.py and a grep of the basename."
+    },
+    {
+      "name": "5 — the runbook cost of the residue",
+      "value": 47.0,
+      "unit": "files the shape reaches, 39 dependency constraints between them",
+      "decides": "The corpus sweep is a multi-hour, multi-iteration job with a real topological order, so the fourth line ships as an AUDIT and the sweep is queued with its own cost rather than smuggled into this task."
+    }
+  ],
+  "predicates": [
+    {"name": "P1", "statement": "a shape census over the committed corpus, run before any repair", "verdict": "MET", "met": true},
+    {"name": "P2", "statement": "the census is a retained tool with self-tests and a MEASURED false-positive rate", "verdict": "MET — and the measurement is exhaustive rather than sampled", "met": true},
+    {"name": "P3", "statement": "the predicate is mutation-tested in BOTH directions", "verdict": "MET — ten mutations, every one failing at least one named test, and the widening mutations fail as loudly as the narrowing ones", "met": true},
+    {"name": "P4", "statement": "the prose is built from rounded values, with digits and floor chosen per CALL SITE, and T-164 re-emitted", "verdict": "MET", "met": true},
+    {"name": "P5", "statement": "what moved is reported BY KIND against the committed version read out of git, with the staleness identity confirmed and counted", "verdict": "MET", "met": true},
+    {"name": "P6", "statement": "a decision, with its ground, on whether the census is wired as a gate, and the residue published with its own cost", "verdict": "MET — an AUDIT, not a gate, because the corpus reads 757 in 47 and a gate that cannot come clean is not a gate (C-0083)", "met": true},
+    {"name": "P7", "statement": "every prose number in the re-emitted file equals the file's own numeric field for the same quantity, where the file carries one", "verdict": "MET, with one NAMED exception that is a finding rather than a defect — see CH-0198", "met": true}
+  ],
+  "parameters": {
+    "predicate": "a decimal token inside a STRING value of a result file carrying more than RESULT_SIGNIFICANT_DIGITS significant digits",
+    "guards": "(?<![\\w.]) refuses a decimal inside an identifier and the tail of a dotted token; (?!\\w) refuses a prefix of a longer token; (?!\\.\\d) refuses the head of a dotted one",
+    "corpus": "gpd/results/*.json",
+    "tools": "tools/check-result-file-hygiene.py --prose; tools/T-249-mutation-test.py; tools/T-249-emit-result.py"
+  },
+  "sources": [
+    "gpd/results/T-164-row-end-crossover-stiffness.json",
+    "gpd/claims/C-0150-departure-spelling-set-and-the-wall-clock.md",
+    "gpd/claims/C-0138-departure-rule-scope.md",
+    "src/main/kotlin/structure/ResultRounding.kt",
+    "TASKS.md (the runbook, for the residue's cost)"
+  ]
+}

@@ -1,0 +1,634 @@
+[
+ {
+  "query": "forced crossover DNA origami",
+  "endpoint": "https://api.openalex.org/works?search=",
+  "count": 115,
+  "file": "openalex-forced_crossover_DNA_origami.json",
+  "top": [
+   {
+    "title": "Rapid prototyping of 3D DNA-origami shapes with caDNAno",
+    "year": 2009,
+    "doi": "10.1093/nar/gkp436",
+    "id": "https://openalex.org/W2129096474"
+   },
+   {
+    "title": "Electrotransfection of Polyamine Folded DNA Origami Structures",
+    "year": 2016,
+    "doi": "10.1021/acs.nanolett.6b03586",
+    "id": "https://openalex.org/W2508840116"
+   },
+   {
+    "title": "Conformational Effects of UV Light on DNA Origami",
+    "year": 2017,
+    "doi": "10.1021/jacs.6b10821",
+    "id": "https://openalex.org/W2573016627"
+   },
+   {
+    "title": "Stabilization and structural changes of 2D DNA origami by enzymatic ligation",
+    "year": 2021,
+    "doi": "10.1093/nar/gkab611",
+    "id": "https://openalex.org/W3183606165"
+   },
+   {
+    "title": "Robotic DNA Nanostructures",
+    "year": 2020,
+    "doi": "10.1021/acssynbio.0c00235",
+    "id": "https://openalex.org/W3037912440"
+   },
+   {
+    "title": "Competitive annealing of multiple DNA origami: formation of chimeric origami",
+    "year": 2016,
+    "doi": "10.1088/1367-2630/18/11/115001",
+    "id": "https://openalex.org/W2555780734"
+   },
+   {
+    "title": "Long-range movement of large mechanically interlocked DNA nanostructures",
+    "year": 2016,
+    "doi": "10.1038/ncomms12414",
+    "id": "https://openalex.org/W2493281993"
+   },
+   {
+    "title": "3D DNA Origami Crystals",
+    "year": 2018,
+    "doi": "10.1002/adma.201800273",
+    "id": "https://openalex.org/W2650166347"
+   },
+   {
+    "title": "Lattice-free prediction of three-dimensional structure of programmed DNA assemblies",
+    "year": 2014,
+    "doi": "10.1038/ncomms6578",
+    "id": "https://openalex.org/W2099181260"
+   },
+   {
+    "title": "DNA nanostructure-directed assembly of metal nanoparticle superlattices",
+    "year": 2018,
+    "doi": "10.1007/s11051-018-4225-3",
+    "id": "https://openalex.org/W2801824016"
+   },
+   {
+    "title": "DNA-encircled lipid bilayers",
+    "year": 2018,
+    "doi": "10.1039/c8nr06505e",
+    "id": "https://openalex.org/W2949351570"
+   },
+   {
+    "title": "DNA Origami \u201cQuick\u201d Refolding inside of a Micron-Sized Compartment",
+    "year": 2019,
+    "doi": "10.3390/molecules25010008",
+    "id": "https://openalex.org/W2995053812"
+   },
+   {
+    "title": "Prescribing DNA Origami Barrel\u2010Directed Subtractive Patterning of Nanoparticles for Crystalline Superstructure Assembly",
+    "year": 2025,
+    "doi": "10.1002/anie.202424230",
+    "id": "https://openalex.org/W4406965445"
+   },
+   {
+    "title": "A Primer on the oxDNA Model of DNA: When to Use it, How to Simulate it and How to Interpret the Results",
+    "year": 2021,
+    "doi": "10.3389/fmolb.2021.693710",
+    "id": "https://openalex.org/W3157414663"
+   },
+   {
+    "title": "Modulating transformation of DNA origami nanoarray via sequence design",
+    "year": 2025,
+    "doi": "10.1038/s41467-025-61421-w",
+    "id": "https://openalex.org/W4411886840"
+   },
+   {
+    "title": "DNA hydrogels and their derivatives in biomedical engineering applications",
+    "year": 2024,
+    "doi": "10.1186/s12951-024-02791-z",
+    "id": "https://openalex.org/W4402016722"
+   },
+   {
+    "title": "A primer on the oxDNA model of DNA : when to use it, how to simulate it and how to interpret the results",
+    "year": 2021,
+    "doi": "",
+    "id": "https://openalex.org/W3173582189"
+   },
+   {
+    "title": "Reverse engineering DNA origami nanostructure designs from raw scaffold and staple sequence lists",
+    "year": 2023,
+    "doi": "10.1016/j.csbj.2023.07.011",
+    "id": "https://openalex.org/W4384461306"
+   },
+   {
+    "title": "Peptide Nucleic Acids: From Origami to Editing",
+    "year": 2024,
+    "doi": "10.1002/cplu.202400305",
+    "id": "https://openalex.org/W4400417082"
+   },
+   {
+    "title": "Multilayer DNA Origami with Terminal Interfaces That Are Flat and Wide-Area",
+    "year": 2023,
+    "doi": "10.1021/acsnano.3c09522",
+    "id": "https://openalex.org/W4389885937"
+   },
+   {
+    "title": "Construction and characterization of metal ion-containing DNA nanowires for synthetic biology and nanotechnology",
+    "year": 2019,
+    "doi": "10.1038/s41598-019-43316-1",
+    "id": "https://openalex.org/W2943161442"
+   },
+   {
+    "title": "Spatial regulation of synthetic and biological nanoparticles by DNA nanotechnology",
+    "year": 2015,
+    "doi": "10.1038/am.2015.2",
+    "id": "https://openalex.org/W2015795331"
+   },
+   {
+    "title": "<i>In silico</i> modelling of DNA nanostructures",
+    "year": 2020,
+    "doi": "10.1016/j.csbj.2020.05.016",
+    "id": "https://openalex.org/W3027557280"
+   },
+   {
+    "title": "Self-assembly of DNA-functionalized colloids",
+    "year": 2015,
+    "doi": "10.5488/cmp.18.22801",
+    "id": "https://openalex.org/W1569159074"
+   },
+   {
+    "title": "3D DNA Nanostructures: The Nanoscale Architect",
+    "year": 2021,
+    "doi": "10.3390/app11062624",
+    "id": "https://openalex.org/W3137250595"
+   }
+  ]
+ },
+ {
+  "query": "DNA origami crossover folding yield design rules",
+  "endpoint": "https://api.openalex.org/works?search=",
+  "count": 364,
+  "file": "openalex-DNA_origami_crossover_folding_yield_design_rules.json",
+  "top": [
+   {
+    "title": "Folding DNA to create nanoscale shapes and patterns",
+    "year": 2006,
+    "doi": "10.1038/nature04586",
+    "id": "https://openalex.org/W2126961173"
+   },
+   {
+    "title": "Rapid prototyping of 3D DNA-origami shapes with caDNAno",
+    "year": 2009,
+    "doi": "10.1093/nar/gkp436",
+    "id": "https://openalex.org/W2129096474"
+   },
+   {
+    "title": "Autonomously designed free-form 2D DNA origami",
+    "year": 2019,
+    "doi": "10.1126/sciadv.aav0655",
+    "id": "https://openalex.org/W2908052785"
+   },
+   {
+    "title": "DNA origami cryptography for secure communication",
+    "year": 2019,
+    "doi": "10.1038/s41467-019-13517-3",
+    "id": "https://openalex.org/W2989620465"
+   },
+   {
+    "title": "Designer nanoscale DNA assemblies programmed from the top down",
+    "year": 2016,
+    "doi": "10.1126/science.aaf4388",
+    "id": "https://openalex.org/W2395219941"
+   },
+   {
+    "title": "Single\u2010Molecule FRET Ruler Based on Rigid DNA Origami Blocks",
+    "year": 2011,
+    "doi": "10.1002/cphc.201000781",
+    "id": "https://openalex.org/W2151523975"
+   },
+   {
+    "title": "Rapid prototyping of arbitrary 2D and 3D wireframe DNA origami",
+    "year": 2021,
+    "doi": "10.1093/nar/gkab762",
+    "id": "https://openalex.org/W3196361664"
+   },
+   {
+    "title": "DNA origami single crystals with Wulff shapes",
+    "year": 2021,
+    "doi": "10.1038/s41467-021-23332-4",
+    "id": "https://openalex.org/W3161820440"
+   },
+   {
+    "title": "Stability of DNA Origami Nanostructures in Physiological Media: The Role of Molecular Interactions",
+    "year": 2023,
+    "doi": "10.1002/smll.202301935",
+    "id": "https://openalex.org/W4366822372"
+   },
+   {
+    "title": "Mechanism of DNA origami folding elucidated by mesoscopic simulations",
+    "year": 2024,
+    "doi": "10.1038/s41467-024-46998-y",
+    "id": "https://openalex.org/W4394578142"
+   },
+   {
+    "title": "Designed DNA molecules: principles and applications of molecular nanotechnology",
+    "year": 2006,
+    "doi": "10.1038/nrg1892",
+    "id": "https://openalex.org/W1996155495"
+   },
+   {
+    "title": "Self-assembly of DNA origami for nanofabrication, biosensing, drug delivery, and computational storage",
+    "year": 2023,
+    "doi": "10.1016/j.isci.2023.106638",
+    "id": "https://openalex.org/W4363649814"
+   },
+   {
+    "title": "Magnesium-free self-assembly of multi-layer DNA objects",
+    "year": 2012,
+    "doi": "10.1038/ncomms2095",
+    "id": "https://openalex.org/W2081104658"
+   },
+   {
+    "title": "DNA Nanotechnology for Cancer Therapeutics",
+    "year": 2016,
+    "doi": "10.7150/thno.14203",
+    "id": "https://openalex.org/W2312557846"
+   },
+   {
+    "title": "Polymorphic design of DNA origami structures through mechanical control of modular components",
+    "year": 2017,
+    "doi": "10.1038/s41467-017-02127-6",
+    "id": "https://openalex.org/W2772700448"
+   },
+   {
+    "title": "Stabilization and structural changes of 2D DNA origami by enzymatic ligation",
+    "year": 2021,
+    "doi": "10.1093/nar/gkab611",
+    "id": "https://openalex.org/W3183606165"
+   },
+   {
+    "title": "RNA origami: design, simulation and application",
+    "year": 2023,
+    "doi": "10.1080/15476286.2023.2237719",
+    "id": "https://openalex.org/W4385295158"
+   },
+   {
+    "title": "Superstructure-Dependent Loading of DNA Origami Nanostructures with a Groove-Binding Drug",
+    "year": 2018,
+    "doi": "10.1021/acsomega.8b00934",
+    "id": "https://openalex.org/W2888205889"
+   },
+   {
+    "title": "3D RNA-scaffolded wireframe origami",
+    "year": 2023,
+    "doi": "10.1038/s41467-023-36156-1",
+    "id": "https://openalex.org/W4317905934"
+   },
+   {
+    "title": "DNA-directed self-assembly of shape-controlled hydrogels",
+    "year": 2013,
+    "doi": "10.1038/ncomms3275",
+    "id": "https://openalex.org/W2123614959"
+   },
+   {
+    "title": "Triple-Stranded DNA As a Structural Element in DNA Origami",
+    "year": 2023,
+    "doi": "10.1021/acsnano.2c11402",
+    "id": "https://openalex.org/W4375955025"
+   },
+   {
+    "title": "Competitive annealing of multiple DNA origami: formation of chimeric origami",
+    "year": 2016,
+    "doi": "10.1088/1367-2630/18/11/115001",
+    "id": "https://openalex.org/W2555780734"
+   },
+   {
+    "title": "Beyond DNA origami: the unfolding prospects of nucleic acid nanotechnology",
+    "year": 2011,
+    "doi": "10.1002/wnan.170",
+    "id": "https://openalex.org/W2059534834"
+   },
+   {
+    "title": "Folding of mRNA\u2010DNA Origami for Controlled Translation and Viral Vector Packaging",
+    "year": 2025,
+    "doi": "10.1002/adma.202417642",
+    "id": "https://openalex.org/W4408026366"
+   },
+   {
+    "title": "A large size-selective DNA nanopore with sensing applications",
+    "year": 2019,
+    "doi": "10.1038/s41467-019-13284-1",
+    "id": "https://openalex.org/W2996249413"
+   }
+  ]
+ },
+ {
+  "query": "DNA origami crossover spacing stability",
+  "endpoint": "https://api.openalex.org/works?search=",
+  "count": 295,
+  "file": "openalex-DNA_origami_crossover_spacing_stability.json",
+  "top": [
+   {
+    "title": "Environment\u2010Dependent Stability and Mechanical Properties of DNA Origami Six\u2010Helix Bundles with Different Crossover Spacings",
+    "year": 2022,
+    "doi": "10.1002/smll.202107393",
+    "id": "https://openalex.org/W4220697112"
+   },
+   {
+    "title": "Stability of DNA Origami Nanostructures in Physiological Media: The Role of Molecular Interactions",
+    "year": 2023,
+    "doi": "10.1002/smll.202301935",
+    "id": "https://openalex.org/W4366822372"
+   },
+   {
+    "title": "Automated sequence design of 2D wireframe DNA origami with honeycomb edges",
+    "year": 2019,
+    "doi": "10.1038/s41467-019-13457-y",
+    "id": "https://openalex.org/W2990648821"
+   },
+   {
+    "title": "Signal Amplification in Electrochemical DNA Biosensors Using Target-Capturing DNA Origami Tiles",
+    "year": 2023,
+    "doi": "10.1021/acssensors.2c02469",
+    "id": "https://openalex.org/W4324025964"
+   },
+   {
+    "title": "The potential of DNA origami to build multifunctional materials",
+    "year": 2020,
+    "doi": "10.1088/2399-7532/ab80d5",
+    "id": "https://openalex.org/W3042297081"
+   },
+   {
+    "title": "DNA Nanotechnology for Cancer Therapeutics",
+    "year": 2016,
+    "doi": "10.7150/thno.14203",
+    "id": "https://openalex.org/W2312557846"
+   },
+   {
+    "title": "DNA-origami-directed virus capsid polymorphism",
+    "year": 2023,
+    "doi": "10.1038/s41565-023-01443-x",
+    "id": "https://openalex.org/W4384522443"
+   },
+   {
+    "title": "Advancing the Utility of DNA Origami Technique through Enhanced Stability of DNA-Origami-Based Assemblies",
+    "year": 2022,
+    "doi": "10.1021/acs.bioconjchem.2c00311",
+    "id": "https://openalex.org/W4292366942"
+   },
+   {
+    "title": "DNA Nanostructures as Smart Drug-Delivery Vehicles and Molecular Devices",
+    "year": 2015,
+    "doi": "10.1016/j.tibtech.2015.08.001",
+    "id": "https://openalex.org/W1763950462"
+   },
+   {
+    "title": "Advanced applications of DNA nanostructures dominated by DNA origami in antitumor drug delivery",
+    "year": 2023,
+    "doi": "10.3389/fmolb.2023.1239952",
+    "id": "https://openalex.org/W4385637970"
+   },
+   {
+    "title": "Programmable and Multifunctional DNA\u2010Based Materials for Biomedical Applications",
+    "year": 2018,
+    "doi": "10.1002/adma.201703658",
+    "id": "https://openalex.org/W2792187498"
+   },
+   {
+    "title": "<i>De novo</i>reconstruction of DNA origami structures through atomistic molecular dynamics simulation",
+    "year": 2016,
+    "doi": "10.1093/nar/gkw155",
+    "id": "https://openalex.org/W2301661013"
+   },
+   {
+    "title": "Triple-Stranded DNA As a Structural Element in DNA Origami",
+    "year": 2023,
+    "doi": "10.1021/acsnano.2c11402",
+    "id": "https://openalex.org/W4375955025"
+   },
+   {
+    "title": "Quantitative prediction of 3D solution shape and flexibility of nucleic acid nanostructures",
+    "year": 2011,
+    "doi": "10.1093/nar/gkr1173",
+    "id": "https://openalex.org/W2106267572"
+   },
+   {
+    "title": "Controlling Nuclease Degradation of Wireframe DNA Origami with Minor Groove Binders",
+    "year": 2022,
+    "doi": "10.1021/acsnano.1c11575",
+    "id": "https://openalex.org/W4281992387"
+   },
+   {
+    "title": "The biological applications of DNA nanomaterials: current challenges and future directions",
+    "year": 2021,
+    "doi": "10.1038/s41392-021-00727-9",
+    "id": "https://openalex.org/W3202014670"
+   },
+   {
+    "title": "DNA Origami Penetration in Cell Spheroid Tissue Models is Enhanced by Wireframe Design",
+    "year": 2021,
+    "doi": "10.1002/adma.202008457",
+    "id": "https://openalex.org/W3167329921"
+   },
+   {
+    "title": "Superstructure-Dependent Loading of DNA Origami Nanostructures with a Groove-Binding Drug",
+    "year": 2018,
+    "doi": "10.1021/acsomega.8b00934",
+    "id": "https://openalex.org/W2888205889"
+   },
+   {
+    "title": "Structure, folding and flexibility of co-transcriptional RNA origami",
+    "year": 2023,
+    "doi": "10.1038/s41565-023-01321-6",
+    "id": "https://openalex.org/W4322492219"
+   },
+   {
+    "title": "Effect of Staple Age on DNA Origami Nanostructure Assembly and Stability",
+    "year": 2019,
+    "doi": "10.3390/molecules24142577",
+    "id": "https://openalex.org/W2958149891"
+   },
+   {
+    "title": "Sites of high local frustration in DNA origami",
+    "year": 2019,
+    "doi": "10.1038/s41467-019-09002-6",
+    "id": "https://openalex.org/W2920284863"
+   },
+   {
+    "title": "Beyond DNA origami: the unfolding prospects of nucleic acid nanotechnology",
+    "year": 2011,
+    "doi": "10.1002/wnan.170",
+    "id": "https://openalex.org/W2059534834"
+   },
+   {
+    "title": "Effect of Ionic Strength on the Thermal Stability of DNA Origami Nanostructures",
+    "year": 2023,
+    "doi": "10.1002/cbic.202300338",
+    "id": "https://openalex.org/W4368355869"
+   },
+   {
+    "title": "Mechanism of DNA origami folding elucidated by mesoscopic simulations",
+    "year": 2024,
+    "doi": "10.1038/s41467-024-46998-y",
+    "id": "https://openalex.org/W4394578142"
+   },
+   {
+    "title": "Polymorphic design of DNA origami structures through mechanical control of modular components",
+    "year": 2017,
+    "doi": "10.1038/s41467-017-02127-6",
+    "id": "https://openalex.org/W2772700448"
+   }
+  ]
+ },
+ {
+  "query": "off-lattice crossover DNA origami strain",
+  "endpoint": "https://api.openalex.org/works?search=",
+  "count": 134,
+  "file": "openalex-off_lattice_crossover_DNA_origami_strain.json",
+  "top": [
+   {
+    "title": "Force-Induced Unravelling of DNA Origami",
+    "year": 2018,
+    "doi": "10.1021/acsnano.8b01844",
+    "id": "https://openalex.org/W2806404031"
+   },
+   {
+    "title": "Automated sequence design of 2D wireframe DNA origami with honeycomb edges",
+    "year": 2019,
+    "doi": "10.1038/s41467-019-13457-y",
+    "id": "https://openalex.org/W2990648821"
+   },
+   {
+    "title": "Environment\u2010Dependent Stability and Mechanical Properties of DNA Origami Six\u2010Helix Bundles with Different Crossover Spacings",
+    "year": 2022,
+    "doi": "10.1002/smll.202107393",
+    "id": "https://openalex.org/W4220697112"
+   },
+   {
+    "title": "Design of DNA origami",
+    "year": 2005,
+    "doi": "",
+    "id": "https://openalex.org/W2113653529"
+   },
+   {
+    "title": "Programmable and Multifunctional DNA\u2010Based Materials for Biomedical Applications",
+    "year": 2018,
+    "doi": "10.1002/adma.201703658",
+    "id": "https://openalex.org/W2792187498"
+   },
+   {
+    "title": "DNA-origami-directed virus capsid polymorphism",
+    "year": 2023,
+    "doi": "10.1038/s41565-023-01443-x",
+    "id": "https://openalex.org/W4384522443"
+   },
+   {
+    "title": "Structure and conformational dynamics of scaffolded DNA origami nanoparticles",
+    "year": 2017,
+    "doi": "10.1093/nar/gkx378",
+    "id": "https://openalex.org/W2612872910"
+   },
+   {
+    "title": "A Structurally Variable Hinged Tetrahedron Framework from DNA Origami",
+    "year": 2011,
+    "doi": "10.4061/2011/360954",
+    "id": "https://openalex.org/W2107154004"
+   },
+   {
+    "title": "3D DNA Origami Crystals",
+    "year": 2018,
+    "doi": "10.1002/adma.201800273",
+    "id": "https://openalex.org/W2650166347"
+   },
+   {
+    "title": "Folding of mRNA\u2010DNA Origami for Controlled Translation and Viral Vector Packaging",
+    "year": 2025,
+    "doi": "10.1002/adma.202417642",
+    "id": "https://openalex.org/W4408026366"
+   },
+   {
+    "title": "Fabricating higher-order functional DNA origami structures to reveal biological processes at multiple scales",
+    "year": 2023,
+    "doi": "10.1038/s41427-023-00470-3",
+    "id": "https://openalex.org/W4366548589"
+   },
+   {
+    "title": "Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution",
+    "year": 2020,
+    "doi": "10.1038/s41467-020-20020-7",
+    "id": "https://openalex.org/W3110444244"
+   },
+   {
+    "title": "Electronic Properties of DNA Origami Nanostructures Revealed by <i>In Silico</i> Calculations",
+    "year": 2024,
+    "doi": "10.1021/acs.jpcb.4c00445",
+    "id": "https://openalex.org/W4396706854"
+   },
+   {
+    "title": "The Art of Designing DNA Nanostructures with CAD Software",
+    "year": 2021,
+    "doi": "10.3390/molecules26082287",
+    "id": "https://openalex.org/W3153452937"
+   },
+   {
+    "title": "Design and Synthesis of Pleated DNA Origami Nanotubes with Adjustable Diameters",
+    "year": 2019,
+    "doi": "10.1101/534792",
+    "id": "https://openalex.org/W2912342747"
+   },
+   {
+    "title": "DNA-encircled lipid bilayers",
+    "year": 2018,
+    "doi": "10.1039/c8nr06505e",
+    "id": "https://openalex.org/W2949351570"
+   },
+   {
+    "title": "The influence of Holliday junction sequence and dynamics on DNA crystal self-assembly",
+    "year": 2022,
+    "doi": "10.1038/s41467-022-30779-6",
+    "id": "https://openalex.org/W4281709308"
+   },
+   {
+    "title": "Molecular mechanics of DNA bricks:<i>in situ</i>structure, mechanical properties and ionic conductivity",
+    "year": 2016,
+    "doi": "10.1088/1367-2630/18/5/055012",
+    "id": "https://openalex.org/W2397279345"
+   },
+   {
+    "title": "Probing the Mechanical Properties of DNA Nanostructures with Metadynamics",
+    "year": 2022,
+    "doi": "10.1021/acsnano.1c08999",
+    "id": "https://openalex.org/W3204356843"
+   },
+   {
+    "title": "Thermodynamics and kinetics of DNA nanotube polymerization from single-filament measurements",
+    "year": 2015,
+    "doi": "10.1039/c3sc53331j",
+    "id": "https://openalex.org/W2169964409"
+   },
+   {
+    "title": "Designer DNA nanostructures for viral inhibition",
+    "year": 2022,
+    "doi": "10.1038/s41596-021-00641-y",
+    "id": "https://openalex.org/W4206667663"
+   },
+   {
+    "title": "Mechanics of dynamic and deformable DNA nanostructures",
+    "year": 2023,
+    "doi": "10.1039/d3sc01793a",
+    "id": "https://openalex.org/W4383427083"
+   },
+   {
+    "title": "Chemically modified nucleic acids and DNA intercalators as tools for nanoparticle assembly",
+    "year": 2021,
+    "doi": "10.1039/d1cs00632k",
+    "id": "https://openalex.org/W3213523163"
+   },
+   {
+    "title": "Multi-step self-guided pathways for shape-changing metamaterials",
+    "year": 2018,
+    "doi": "10.1038/s41586-018-0541-0",
+    "id": "https://openalex.org/W2891099552"
+   },
+   {
+    "title": "Size-Selective Capturing of Exosomes Using DNA Tripods",
+    "year": 2024,
+    "doi": "10.1021/jacs.3c11067",
+    "id": "https://openalex.org/W4393903129"
+   }
+  ]
+ }
+]

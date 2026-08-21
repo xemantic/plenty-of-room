@@ -1,0 +1,643 @@
+
+ Multilayer DNA Origami Packed on Hexagonal and Hybrid Lattices - PMC
+ Skip to main content
+ An official website of the United States government
+Here's how you know
+Here's how you know
+Official websites use .gov
+ A
+.gov
+ website belongs to an official
+ government organization in the United States.
+Secure .gov websites use HTTPS
+ A 
+lock
+ (
+Lock
+ Locked padlock icon
+) or 
+https://
+ means you've safely
+ connected to the .gov website. Share sensitive
+ information only on official, secure websites.
+ Search
+Log in
+ Dashboard
+ Publications
+ Account settings
+ Log out
+ Search…
+ Search NCBI
+ Primary site navigation
+ Search
+ Logged in as:
+ Dashboard
+ Publications
+ Account settings
+ Log in
+Search PMC Full-Text Archive
+Search in PMC
+ Journal List
+ User Guide
+PERMALINK
+Copy
+ As a library, NLM provides access to scientific literature. Inclusion in an NLM database does not imply endorsement of, or agreement with,
+ the contents by NLM or the National Institutes of Health.
+ Learn more:
+PMC Disclaimer
+ |
+ PMC Copyright Notice
+J Am Chem Soc
+. Author manuscript; available in PMC: 2013 Jan 25.
+Published in final edited form as: 
+J Am Chem Soc. 2012 Jan 13;134(3):1770–1774. doi: 
+10.1021/ja209719k
+Search in PMC
+Search in PubMed
+View in NLM Catalog
+Add to search
+Multilayer DNA Origami Packed on Hexagonal and Hybrid Lattices
+Yonggang Ke
+Yonggang Ke
+†
+Department of Cancer Biology, Dana-Farber Cancer Institute, and Department of Biological Chemistry and Molecular Pharmacology, Harvard Medical School, Boston, Massachusetts 02115, USA
+Find articles by 
+Yonggang Ke
+†
+, 
+Niels V Voigt
+Niels V Voigt
+‡
+Danish National Research Foundation: Centre for DNA Nanotechnology at Interdisciplinary Nanoscience Center (iNANO) and Department of Chemistry, Aarhus University, DK-8000 Aarhus, Denmark 
+Find articles by 
+Niels V Voigt
+‡
+, 
+Kurt V Gothelf
+Kurt V Gothelf
+‡
+Danish National Research Foundation: Centre for DNA Nanotechnology at Interdisciplinary Nanoscience Center (iNANO) and Department of Chemistry, Aarhus University, DK-8000 Aarhus, Denmark 
+Find articles by 
+Kurt V Gothelf
+‡
+, 
+William M Shih
+William M Shih
+†
+Department of Cancer Biology, Dana-Farber Cancer Institute, and Department of Biological Chemistry and Molecular Pharmacology, Harvard Medical School, Boston, Massachusetts 02115, USA
+§
+Wyss Institute for Biologically Inspired Engineering at Harvard, Cambridge, Massachusetts 02138, USA
+Find articles by 
+William M Shih
+†,
+§
+Author information
+Article notes
+Copyright and License information
+†
+Department of Cancer Biology, Dana-Farber Cancer Institute, and Department of Biological Chemistry and Molecular Pharmacology, Harvard Medical School, Boston, Massachusetts 02115, USA
+§
+Wyss Institute for Biologically Inspired Engineering at Harvard, Cambridge, Massachusetts 02138, USA
+‡
+Danish National Research Foundation: Centre for DNA Nanotechnology at Interdisciplinary Nanoscience Center (iNANO) and Department of Chemistry, Aarhus University, DK-8000 Aarhus, Denmark 
+✉
+Email: 
+William_Shih@dfci.harvard.edu
+Issue date 2012 Jan 25.
+PMC Copyright notice
+PMCID: PMC3336742  NIHMSID: NIHMS350944  PMID: 
+22187940
+The publisher's version of this article is available at 
+J Am Chem Soc
+Abstract
+“Scaffolded DNA origami” has been proven to be a powerful and efficient approach to construct two-dimensional or three-dimensional objects with great complexity. Multilayer DNA origami has been demonstrated with helices packing along either honeycomb-lattice geometry or square-lattice geometry. Here we report successful folding of multilayer DNA origami with helices arranged on a close-packed hexagonal lattice. This arrangement yields a higher density of helical packing and therefore higher resolution of spatial addressing than has been shown previously. We also demonstrate hybrid multilayer DNA origami with honeycomb-lattice, square-lattice, and hexagonal lattice packing of helices all in one design. The availability of hexagonal close packing of helices extends our ability to build complex structures using DNA nanotechnology.
+Introduction
+The past two decades have witnessed the rapid growth of structural DNA nanotechnology as a field. A variety of one-dimensional (1D), two-dimensional (2D) and three-dimensional (3D) DNA nanostructures have been developed.
+1
+, 
+2
+, 
+3
+ These versatile DNA nanostructures offer unique advantages for nano-scale patterning.
+4
+-
+8
+ and construction of nanoscale devices
+9
+-
+13
+ with applications such as tools for molecular biophysics.
+14
+-
+17
+ Nonetheless, rational design of complicated 3D DNA objects with high accuracy still poses great challenges. Recently, great progress has been achieved in this realm by using strategies based on scaffolded DNA origami.
+18
+ For example, two origami boxes
+19
+, 
+20
+ and a hollow tetrahedral shape
+21
+ have been demonstrated by linking discrete 2D origami assembled on a single scaffold. More generalized methods to construct 3D DNA origami packed on honeycomb-lattice geometry
+22
+ or square-lattice geometry
+23
+ also have been reported. Seven helices in a close-packed hexagonal lattice have been demonstrated for a non-origami DNA system.
+24
+ Here we generalize hexagonal-lattice close packing for helices in 3D DNA origami, and also demonstrate hybrid 3D DNA origami packed on mixed geometries of honeycomb lattice, square lattice, and hexagonal lattice.
+Design
+Hexagonal-Lattice Origami
+The design strategy used in this study for multilayer hexagonal-lattice DNA origami is illustrated in 
+Figure 1
+. DNA origami conventionally are designed with a long single “scaffold” strand, typically the 7-kilobase genome of the M13 bacteriophage, that is folded with hundreds of short “staple” strands into a parallel array of double helices. Viewed down the axis parallel to the helices of the bundle (i.e. Z-axis), every double helix can be conceived as of two strands that each are characterized by a polarity (i.e. 5′ to 3′ away from the viewer versus towards the viewer) and a parity (made of scaffold DNA versus staple DNA). In the honeycomb- or square-lattice designs, like-parity strands on nearest-neighbor helices all are arranged with antiparallel polarity. As a result, adjacent helices are held together by antiparallel scaffold crossovers and antiparallel staple crossovers. In contrast, it is impossible to arrange helices in a hexagonal-lattice design such that like-parity strands on nearest-neighbor helices all are antiparallel. For example, if the six nearest neighbor scaffold-type strands are all antiparallel to the central strand, then they must all be parallel to each other.
+Figure 1.
+Open in a new tab
+For our design, we chose to arrange strand polarity in the pattern shown in 
+Figure 1B
+. Each double helix is connected by staple-strand antiparallel crossovers to three, four, or five of its six potential neighbors. Alternative crossover patterns are possible, although near equal representation of polarity for scaffold-parity strands has to be present to enable a single scaffold to traverse back and forth through the entire structure. Two versions of hexagonal-lattice origami were designed: Long (
+L
+) with staple crossovers occurring at 13 base-pair intervals (every 7/6 helical turns), and Short (
+S
+) with staple crossovers occurring at 9 base-pair intervals (every 5/6 helical turns). At each of these intervals (repeating slices I to VI in 
+Figures 1C, 1D
+), one-sixth of neighboring helical pairs have staple bases that are positioned at the interhelix junction for antiparallel cross over. However, in our design, we only allowed like-parity crossovers, thus fewer than one-sixth of helical pairings have actual staple crossovers at any given interval slice.
+Both L (11.1 bp/turn) and S (10.8 bp/turn) were designed with underwinding stress, compared to the naturally occurring B-form DNA double helix (10.5 bp per turn). We expected this underwinding would lead to a compensatory global right-handed twist, as previous studies suggested.
+23
+-
+25
+ Two 
+L
+ origami (12HB-L and 24HB-L) and two 
+S
+ origami (24HB-S and 60HB-S) were designed and tested experimentally. Detailed descriptions of the designs can be found in the Supporting Materials (
+Figures S9 – S12
+).
+Hybrid-Lattice Origami
+We modified the 
+S
+ design to test the construction of multilayer DNA origami that combine honeycomb-, square-, and hexagonal-lattice packing of helices. Reciprocal twist and crossover densities were aligned throughout each design to minimize strain at the interfaces where helical packing was made to switch. For our 56HB honeycomb/hexagonal lattice design, we adjusted reciprocal twist densities to 10.8 bp/turn, and adjusted crossover densities to one every 54 bp. For our 52HB honeycomb/square/hexagonal lattice design, we adjusted reciprocal twist densities to 10.4 bp/turn, and adjusted crossover densities to one every 52 bp. Detailed descriptions of the designs can be found in the Supporting Materials (
+figure S13-S14
+).
+Results
+To form each designed DNA origami, the staple strands were mixed with 10 nM scaffold strands (p3024 for 12HB-L and 24HB-S; p7560 for 24HB-L, 60HB-S, 56HB, 52HB) at 50 nM each strand. A one-pot reaction allowed assembly of target structures by using the following thermal annealing conditions: 5 mM Tris + 1 mM EDTA at pH 8.0, a ramp from 80 to 60 °C over the course of 80 minutes, followed by a ramp from 60 to 24 °C over the course of 72 hours. The annealed mixtures were subjected to agarose-gel electrophoresis. Four different MgCl
+2
+ concentrations (2, 6, 10, 14 mM) were tested for annealing each structure. Successful folding of all designs was observed at the 14 mM MgCl
+2
+ annealing condition. Next, rapidly migrating bands corresponding to monomeric, well-folded species were excised from the gel and recovered by physical extraction using a Freeze-N-Squeeze column (see experimental details in the 
+Supporting Information
+). The purified structures were imaged by transmission electron microscopy (TEM) after negative staining by uranyl formate.
+Hexagonal-lattice Origami
+The results of agarose-gel electrophoresis and TEM images for 12HB-L, 24HB-L, 24HB-S and 60HB-S hexagonal-lattices are shown in 
+Figure 2
+. Folding with lower concentrations of MgCl
+2
+ yielded slowly migrating bands on agarose-gel electrophoresis while folding with higher concentrations of MgCl
+2
+ yielded fast-migrating bands, along with aggregated objects that barely moved into the agarose gel. Similar effects of divalent-cation concentration on multilayer DNA-origami folding had been observed previously for honeycomb and square-lattice origami.
+22
+, 
+23
+ TEM images revealed mostly views perpendicular to the Z axis of each shape; however, due to the large number of DNA double helices per cross section (i.e. large XY surface area), some particles of 60HB-S landed on the TEM grids to reveal an XY-projection view. For the 12HB-L and 60HB-S shapes, the YZ projection is predicted to be much thinner than the XZ projection, and correspondingly the experimental TEM views of these objects are easy to classify into these two types. For the 24HB-L and 24HB-S, the YZ projection is more modestly thinner, nevertheless classification still appears to be possible. We measured particle sizes of the four hexagonal-lattice structures (12HB-L, 24HB-L, 24HB-S and 60HB-S) and the two hybrid-lattice (56HB and 52HB) based on TEM images. Histograms of these measurements are shown in 
+Figure S7
+. We also examined incorporation efficiency of twelve staple strands in 60HB-S using a gel-mobility shift assay (
+Figure S8
+). Both inside and outside staple strands had lower incorporation efficiencies if the strands were shorter; for strands of similar length, inside staple strands exhibited 20% lower incorporation efficiency than outside staple strands (see 
+Figure S8
+ for further discussion).
+Figure 2.
+Open in a new tab
+Table 1
+ compares the experimentally measured particle dimensions to the theoretical values. Comparing 
+L
+-version objects to 
+S
+-version objects, TEM images and results from 
+Table 1
+ and 
+Figure S7
+ revealed that the 
+L
+-version shapes appear more disordered, while the 
+S
+-version objects appear more compact and well-defined. Presumably the higher density of crossovers in the 
+S
+-version hexagonal-lattices results in a stronger constraint on DNA double helix positional fluctuation. A distinctive feature of these well-defined 
+S
+ version hexagonal-lattices is that they do not exhibit profound stripes parallel to DNA double helices in the TEM images, while images of both the honeycomb-lattices and square-lattices show clear stripes when they land on TEM grids in certain orientations. These stripes originate from patterns of integrated transmission intensity that is directly related to the geometry of the structures. A detailed explanation of this phenomenon is included in 
+Figure S15
+.
+Table 1.
+X (nm)
+Y (nm)
+Z (nm)
+Theoretical
+Experimental
+Theoretical
+Experimental
+Theoretical
+Experimental
+12HB-L
+13.5
+15.4 ± 2.0
+7.8
+9.0 ± 1.7
+79.6
+76.6 ± 3.2
+24HB-L
+13.5
+18.0 ± 1.3
+11.7
+13.0 ± 1.8
+53.0
+58.6 ± 4.5
+24HB-S
+13.5
+13.5 ± 1.2
+11.7
+10.8 ± 1.2
+36.7
+41.0 ± 1.7
+60HB-S
+27.3
+29.0 ± 1.8
+13.5
+13.7 ± 1.3
+36.7
+40.4 ± 2.2
+56HB
+23.4
+21.6 ± 2.3
+18
+15.6 ± 1.6
+36.7
+38.5 ± 2.0
+52HB
+23.4
+22.2 ± 1.7
+19.4
+17.1 ± 1.3
+36.7
+39.8 ± 1.7
+Open in a new tab
+For 
+S
+ version hexagonal-lattice structures, an effective diameter of 2.60 nm (SD ± 0.17 nm) for each DNA double helix was calculated from experimental measurements of X-dimension width (27.3nm ± 1.8nm) of 60HB-S (
+Table 1
+). The 2.60 nm effective diameter of 
+S
+ version hexagonal-lattice structures is the same as the effective DNA diameter reported earlier for square-lattice origami,
+23
+ and significantly larger than the 2.4 nm effective DNA diameter reported earlier for honeycomb-lattice origami.
+22
+ This trend is roughly consistent with the lower crossover density employed (every 9 bp in hexagonal lattice versus every 8 bp in square lattice versus every 7 bp in honeycomb lattice).
+Hybrid-Lattice Origami
+Figure 3
+ shows experimental results of the two hybrid-lattice origami - 56HB (honeycomb-lattice / hexagonal-lattice) and 52HB (honeycomb-lattice / square-lattice / hexagonal-lattice). Despite their more complex geometries, both hybrid-lattice origami successfully assembled with high yields, as indicated by agarose-gel electrophoresis and TEM analysis. Three types of TEM images were observed for each design; to aid in interpretation, a toy model of the DNA bundles was evaluated computationally and used to generate simulated XY, XZ, and YZ projections. Each base pair was represented by a sphere, where the Z-position was fixed, and the XY position was determined as the minimum in a potential composed of attractive terms representing the effect of crossovers and repulsive terms representing electrostatics. Each attractive term was modeled as a pulling force exerted from a crossover between the base pair’s helix and a neighboring helix, with a magnitude that decays exponentially according to distance between the base pair and the crossover point on its helix. Each repulsive term was modeled as an electrostatic pushing force from another base pair in the same XY-plane.
+26
+ The model was implemented in the Python programming language (
+http://python.org/
+) and all the base pairs were allowed to relax iteratively. Subsequently, the final relaxed structures could be projected onto XY, XZ, and YZ planes to generate approximations representing expected TEM-images.
+Figure 3.
+Open in a new tab
+Comparisons of the simulated TEM images and actual data can be seen in 
+Figures 3D and 3G
+. For the 56HB honeycomb/hexagonal lattice hybrid structure, the XZ projection is expected to consist of one section of pure honeycomb lattice with a striking pattern of stripes and one section of pure hexagonal lattice with a pattern of stripes that is not resolvable. Frequent examples of this easily identified projection can be found in the experimental images. For the YZ projection, on the other hand, no clear stripes and a more pronounced aspect ratio are expected; many examples of this type of image are seen experimentally as well. For the experimental images corresponding to the XY projection, it is clearly seen that the honeycomb-lattice section is significantly smaller than the hexagonal-lattice section, in good agreement with the simulations.
+For the 52HB (honeycomb/square/hexagonal lattice) structure, a good match also was found between predicted and experimentally observed projection images. In the center of the structure exists a cavity without crossovers. For the XZ and YZ projections, the predicted stripe patterns can clearly be seen. For the YZ projection, a central dark strong line can be seen at the boundary between the honeycomb/hexagonal-lattice section and the square-lattice section; this boundary is especially pronounced due to the crossovers left out between helices along this interface. Viewed down the Z-axis, the hexagonal- and honeycomb-lattice side of the structures generally came out larger than the square-lattice part, as expected. However, the structures in 
+Figure 3G
+ did not exhibit a significant bulging as could have been expected given the large central interface without crossovers in the design. Other preparations of the sample did, however, show a stronger bulging, suggesting that it could be dependent on salt concentration or staining conditions.
+Given that the toy model assumed a lack of defects, the strong correspondence between the simulated and experimental data indicates that the assembled origami structures are actually folding as expected.
+Discussion
+Here we have designed and realized a new family of three-dimensional DNA origami where parallel DNA double helices are packed on the highly compact hexagonal-lattice geometry. Taking advantage of all three available geometries of regular-packing helices in multilayer DNA origami—honeycomb, square, and hexagonal lattice—we also demonstrated that more complicated hybrid three-dimensional DNA origami could be constructed. A designer with some knowledge and experience of structural DNA nanotechnology could design a multilayer hexagonal-lattice origami or hybrid origami with desired geometry in a few hours, using computer programs such as caDNAno.
+27
+ Currently, all crossovers need to be manually implemented in caDNAno for hexagonal-lattice or hybrid origami. We anticipate an updated version of caDNAno that can accommodate designs of all three geometries and even hybrid origami, which will make the process more automated and less time-consuming (Shawn Douglas, personal communication).
+Two-dimensional and three-dimensional DNA-origami structures have been utilized or proposed for positioning guest macromolecules with precise orientational and spatial control in three-dimensional space. Such applications often will demand high-level control over overall shape and density as well as over the precise positions of each double helix of the DNA-origami structures. The hexagonal-lattice and hybrid-lattice origami design paradigms presented here will expand our capability to achieve such versatile and detailed control. For instance, since hexagonal-lattice 3D origami have the highest material density among all three architectures (honeycomb-lattice, square-lattice, and hexagonal-lattice), they should exhibit the strongest resistance to twist or compression per unit volume. Further systematic studies will be needed to better understand the mechanical properties of these 3D DNA lattices and thereby bring us closer to realizing the full potential of DNA-origami-directed self-assembly.
+Supplementary Material
+1_si_001
+NIHMS350944-supplement-1_si_001.pdf
+ (25MB, pdf) 
+Acknowledgements
+This work was supported by Wyss Institute for Biologically Inspired Engineering, ONR (N000014091118), and NIH New Innovator (1DP2OD004641-01) grants to W.M.S. and by the Danish Research Foundation support to K.V.G.
+Footnotes
+Supporting Information.
+ Experimental details, structure design and DNA sequences, additional analysis results and discussions. This information is available free of charge via the Internet at 
+http://pubs.acs.org
+.
+References
+(1).
+Seeman NC. Nature. 2003;421:427–31. doi: 10.1038/nature01406.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+(2).
+Seeman NC. Mol. Biotechnol. 2007;37:246–257. doi: 10.1007/s12033-007-0059-4.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+(3).
+Lin C, Liu Y, Rinker S, Yan H. ChemPhysChem. 2006;7:1641–1647. doi: 10.1002/cphc.200600260.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+(4).
+Yan H, Park SH, Finkelstein G, Reif JH, LaBean TH. Science. 2003;301:1882–1884. doi: 10.1126/science.1089389.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+(5).
+Sharma J, Chhabra R, Cheng A, Brownell J, Liu Y, Yan H. Science. 2009;323:112–116. doi: 10.1126/science.1165831.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+(6).
+Sharma J, Ke Y, Lin C, Chhabra R, Wang Q, Nangreave J, Liu Y, Yan H. Angew Chem Int Ed Engl. 2008;47:5157–5159. doi: 10.1002/anie.200801485.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+(7).
+Maune H, Han S, Barish R, Bockrath M, Goddard W, Rothemund P, Winfree E. Nat. Nanotechnol. 2010;5:61–66. doi: 10.1038/nnano.2009.311.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+(8).
+Aldaye FA, Palmer AL, Sleiman HF. Science. 2008;321:1795–1799. doi: 10.1126/science.1154533.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+(9).
+Mao C, Sun W, Shen Z, Seeman NC. Nature (London) 1999;397:144–146. doi: 10.1038/16437.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+(10).
+Sherman W, Seeman NC. Nano Lett. 2004;4:1203–1207.
+ [
+Google Scholar
+]
+(11).
+Yan H, Zhang X, Shen Z, Seeman NC. Nature. 2002;415:62–65. doi: 10.1038/415062a.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+(12).
+Chakraborty B, Sha R, Seeman NC. Proc. Natl. Acad. Sci. U. S. A. 2008;105:17245–17249. doi: 10.1073/pnas.0707681105.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+(13).
+Lund K, Manzo AJ, Dabby N, Michelotti N, Johnson-Buck A, Nangreave J, Taylor S, Pei R, Stojanovic MN, Walter NG, Winfree E, Yan H. Nature. 2010;465:206–210. doi: 10.1038/nature09012.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+(14).
+Douglas SM, Chou J, Shih WM. PNAS. 2007;104:6644–6648. doi: 10.1073/pnas.0700930104.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+(15).
+Gu H, Yang W, Seeman NC. J.Am.Chem.Soc. 2010;132:4352–4357. doi: 10.1021/ja910188p.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+(16).
+Endo M, Katsuda Y, Hidaka K, Sugiyama H. J.Am.Chem.Soc. 2010;132:1592–1597. doi: 10.1021/ja907649w.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+(17).
+Selmi DN, Adamson RJ, Attrill H, Goddard AD, Gilbert RJC, Watts A, Turberfield AJ. Nano Lett. 2011;11:657–660. doi: 10.1021/nl1037769.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+(18).
+Rothemund P. Nature. 2006;440:297–302. doi: 10.1038/nature04586.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+(19).
+Andersen ES, Dong M, Nielsen MM, Jahn K, Subramani R, Mamdouh W, Golas MM, Sander B, Stark H, Oliveira CLP, Pedersen JS, Birkedal V, Besenbacher F, Gothelf KV, Kjems J. Nature. 2009;459:73–76. doi: 10.1038/nature07971.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+(20).
+Kuzuya A, Komiyama M. Chem Commun (Camb) 2009;28:4182–4184. doi: 10.1039/b907800b.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+(21).
+Ke Y, Sharma J, Liu M, Jahn K, Liu Y, Yan H. Nano Letters. 2009;9:2445–2447. doi: 10.1021/nl901165f.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+(22).
+Douglas SM, Dietz H, Liedl T, Hogberg B, Graf F, Shih WM. Nature. 2009;459:414–418. doi: 10.1038/nature08016.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+(23).
+Ke Y, Douglas SM, Liu M, Sharma J, Cheng A, Leung A, Liu Y, Shih WM, Yan H. J.Am.Chem.Soc. 2009;131:15903–15908. doi: 10.1021/ja906381y.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+(24).
+Wang R, Liu W, Seeman NC. Chem. Biol. 2009;16:862–867. doi: 10.1016/j.chembiol.2009.07.008.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+(25).
+Dietz H, Douglas SM, Shih WM. Science. 2009;325:725–730. doi: 10.1126/science.1174251.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+(26).
+Debye P, Hückel E. Physikalische Zeitschrift. 1923;24:185–206.
+ [
+Google Scholar
+]
+(27).
+Douglas SM, Marblestone AH, Teerapittayanon S, Vazquez A, Church GM, Shih WM. Nucleic Acids Research. 2009;37:5001–5006. doi: 10.1093/nar/gkp436.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+Associated Data
+This section collects any data citations, data availability statements, or supplementary materials included in this article.
+Supplementary Materials
+1_si_001
+NIHMS350944-supplement-1_si_001.pdf
+ (25MB, pdf) 
+ACTIONS
+View on publisher site
+PDF (1.7 MB)
+Cite
+Collections
+Permalink
+PERMALINK
+Copy
+RESOURCES
+ Similar articles
+ Cited by other articles
+ Links to NCBI Databases
+Cite
+Copy
+Download .nbib
+.nbib
+Format:
+ AMA
+ APA
+ MLA
+ NLM
+Add to Collections
+Create a new collection
+Add to an existing collection
+ Name your collection
+*
+ Choose a collection
+ Unable to load your collection due to an error
+Please try again
+ Add
+ Cancel
+ Follow NCBI
+NCBI on X (formerly known as Twitter)
+NCBI on Facebook
+NCBI on LinkedIn
+NCBI on GitHub
+NCBI RSS feed
+ Connect with NLM
+NLM on X (formerly known as Twitter)
+NLM on Facebook
+NLM on YouTube
+National Library of Medicine
+ 8600 Rockville Pike
+ Bethesda, MD 20894
+ Web Policies
+ FOIA
+ HHS Vulnerability Disclosure
+ Help
+ Accessibility
+ Careers
+ NLM
+ NIH
+ HHS
+ USA.gov
+Back to Top

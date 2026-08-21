@@ -1,0 +1,5 @@
+["all:\"DNA origami\"",
+ "all:\"DNA origami\" AND all:crossover",
+ "all:\"DNA origami\" AND all:yield AND all:crossover",
+ "all:\"DNA nanostructure\" AND all:\"crossover\" AND all:\"strain\""
+]

@@ -10239,3 +10239,279 @@ regression guards whose bite is measured by the mutation harness instead), the c
 `gpd/results/T-225-departure-spelling-set.json`, and two were wrong on the first pass and corrected: the
 staleness identity's held count is 104 and not 73, and `coverageErrorExponent`'s second row moves `−62.5 %`
 rather than making two rows *"45 % apart"*.
+
+---
+
+## Iteration 37 — `T-246`, pricing a forced scaffold crossover (Agent AJ)
+
+**The cheap bound decided it, and it turned on an arithmetic nobody had run.** `CH-0188` says the
+recommended 112 / 108 raster needs **10 of 59** crossovers *forced*, and rests entirely on that
+being bad. What forcing costs is not a count of base pairs — it is an **azimuth**, because
+displacing a crossover rotates both backbones together. caDNAno's honeycomb fixes 10.5 bp per turn,
+so one base pair is `240/7 = 34.2857143°` and 21 bp is **720° exactly** — and the fold of that map
+puts the lattice's smallest nonzero departure at **`17.1428571°`, reached at TEN and ELEVEN base
+pairs of displacement, not at one.** *The cheapest forcing is the one displaced furthest in base
+pairs.* And that is exactly the choice the raster's stray residue has: **1 bp** from one
+allowed residue and **10 bp** the other way round the ring from the other, and the azimuth takes
+the ten.
+
+**Then it does not close as a bond, which is what makes there be something to price.** At `17.14°`
+the two phosphates are `0.962320075 nm` apart — `+8.24 σ` of `T-71`'s measured phosphodiester step,
+`1.27×` its 99th percentile. Nor can the axes pay alone: the minimum of the span over *all*
+separations is `2 r_P |sin θ|`, a closed form, and at a 1 bp displacement it is `1.02370786 nm`, so
+**no separation whatever** reaches a covalent step and the root-finder returns a `null` that is a
+verdict.
+
+**The ceiling needed no solve, because the structure minimises over channels.** Any admissible
+deformation channel's cost is an upper bound on the true price, so the rigid-duplex limit of
+`C-0104`'s own roll mapping — `½ k_θ θ²` — settles it in one multiplication: **`0.350894669 k_BT`
+per forced crossover, sub-thermal, and `3.50894669 k_BT` for all ten, which is `0.438634952` of
+what ONE crossover column of the demonstrated host sheet already pays** (`C-0079`) and origami
+folds.
+
+**No published price exists, and it is an explicit exclusion rather than a null search.** 68 queries
+in 7 families, 14 papers examined, 13 read directly, every raw response retained in
+`gpd/data/T-246-sources/`. `"forced crossover" AND "DNA origami"` returns **0**; `"off-register"`
+**0**; `"canonical DNA geometry"` returns **1**, and it is the caDNAno paper. And that paper's own
+Discussion says *"additional software development will be required … for caDNAno to predict the
+structural consequences of these changes"* and *"more work is also needed to see what design rules
+lead to stable structures"* — unanswered for seventeen years. The gallery it points at for yields
+carries none, live or at its 2012 Wayback capture.
+
+**So the answer is `P-6`'s ceiling and threshold, and the LATTICE quantises the threshold.** The
+energy is quadratic and the departure axis is discrete, so the crossing point (`1.51×` the
+departure) falls **between two rungs**: the next rung up, a 1 bp displacement, costs `10.5268401
+k_BT` for the block, `1.31590485×` the calibration. The departure this raster actually needs sits a
+**factor of two below the first rung that would exceed the fold's own currency**.
+
+**Two surprises, and both are corrections to the corpus rather than to the physics.**
+
+`CH-0197` — **`C-0147`'s `n = 0` check reads a scaffold crossover as aligned, and caDNAno's rule
+does not put it there.** *"Five base pairs, **or half a turn**"* are offered as the same thing and
+the half turn at 10.5 bp/turn is **5.25** bp, so every *allowed* scaffold crossover sits `8.571429°`
+off the line of centres, at `+3.39 σ` and **outside** the measured 99th percentile where the aligned
+reading is `+1.50 σ` inside it. The verdict survives and the ground is the stronger one: **the
+lattice demonstrably absorbs `8.571429°` at every scaffold crossover of every honeycomb origami ever
+folded**, so a forced one asks for exactly **twice** what is already known to be affordable. That is
+an empirical calibration for free, and no measurement can improve on it.
+
+`CH-0196` — **the nearest priced analogue in this corpus is not priced.** `C-0055` and this file
+both quote Ke et al.'s 8 bp staple-break yield across an ellipsis, and the ellipsis removes the
+authors' own declination: *"Alternatively, simply having a large number of layers with our default
+crossover pattern may be destabilizing, **irrespective of the position of the breaks**"*, and
+*"future systematic studies will be required"*. There is **no percentage** in it either. The
+observation is real; the attribution was ours. It is `CLAUDE.md`'s own *"read the scope statement"*
+failing in the one place it cannot be caught by a search — **inside a quotation we had already
+written down**.
+
+**What is still not priced is named rather than assumed.** An elastic energy is not a folding yield;
+the residue is kinetic and nothing here can see a folding pathway. And the **flatness** channel
+cannot be run at all: the departure is `1.10958961×` `C-0104`'s 15.4497275° threshold, but that
+threshold is a *uniform* prestrain on a *single-layer square-lattice* tile, and `OrigamiGrillage`
+never reads `layers`. Queued as `T-253`, with `T-254` (does a raster **turn** sit on the flatness
+axis at all, as `C-0147` showed the ragged face does not) and `T-255` (the gallery `.zip` files,
+which were not opened).
+
+**For `CH-0188`:** its geometry is untouched and reproduced at departure `0.0`. Its **severity** is
+now stated — scaffold closure is a *reason to prefer 102 / 109*, a free improvement on a hard rule,
+and not a proof that 112 / 108 is unbuildable.
+
+**Gates.** `tools/verify.sh`; **25** Kotlin tests written first and watched fail; two runs of the
+study **byte-identical**; `check-markdown-tables.py`, `check-corpus-links.py`,
+`check-kotlin-format-strings.py`, `check-result-file-hygiene.py` and
+`result-reader-census.py --check` clean on this agent's files (`--emit` **not** run). Every headline
+number grepped out of `gpd/results/T-246-forced-scaffold-crossover-price.json`, and every quotation
+verified character-for-character against its retained source file. One defect caught before the
+run: `10` and `−11` base pairs are the *same* azimuth by construction and came out `3.4e−14` apart,
+so the `minByOrNull` reported whichever the rounding favoured — a discrete-lattice instance of a
+rule this file already carried for searches.
+
+## Iteration 37 — `T-249`: the three unrounded sentences are **757**, and this is the one member of the family the serialisation boundary cannot cure (`C-0153`)
+
+**What was done.** `C-0150` watched three `T-164` sentences move in their sixteenth digit on a run that
+changed nothing, and queued the repair. The repair is eleven lines; the deliverable is the census.
+
+**The census, run offline against the committed corpus before any study was touched.** A decimal token
+above nine significant digits inside a **string** value of a result file — which a rounded file cannot
+contain by construction — reaches **757 tokens in 706 string fields at 175 JSON pointer sites in 47 of
+141 committed result files**. The queue row said three.
+
+**The false-positive rate is a proof, not a sample.** `Double.toString` emits the shortest decimal that
+round-trips, and so does Python's `repr`; a token carrying exactly that many digits therefore came out of
+a `Double`, and a transcribed literature value, a version, a date or an identifier has no reason to
+satisfy it. All **757** do: **0 false positives, over the whole population, in one pass.** That single
+line is the most load-bearing thing in the claim, because an audit that cannot be gated is believed only
+as far as its measured false-positive rate.
+
+**The structural finding, and it is what makes this task different from its five predecessors.**
+`C-0138` cured the departure rule by moving it into `roundedForResult`, *"one line in the layer every
+study already goes through"*. That worked because the boundary sees a **number**. Here it sees a
+**sentence** — by the time it is called the `Double` is gone — and re-parsing decimals back out of a
+study's own prose would rewrite `"13.529411764705882 pN·nm/rad (Chen 2014, FITTED)"` as readily as a
+computed value. **So the cure is necessarily per call site, and the only thing that can hold the class
+closed is a census.** A task that assumed the mechanism was available would have spent the iteration
+writing the wrong repair.
+
+**The checker's own first draft was wrong, in the direction the corpus is made of.** Written with the
+symmetric trailing guard `(?![\w.])` — the obvious mirror of its leading one, and the form that
+correctly refuses `2026.08.19` — it refuses a number followed by a **full stop**, i.e. every number at
+the **end of a sentence**, in a corpus whose defects live in `findings` and `outcome` strings. Third
+instance of `CLAUDE.md`'s *a checker's blind spot is invisible in exactly the cases it misses*, and the
+first where the wrong guard was the symmetric one.
+
+**`T-164` repaired and re-emitted.** Eleven call sites, each given the digits and floor its own quantity
+is entitled to — the `F2` departure at two digits with `floor = 0.0`, everything else at nine. Zero
+readers, so one file and no topological sort. **10 prose-digit fields moved; 0 numeric, 0 boolean,
+0 verdict, 0 added, 0 removed** — ten lines of an 823-line file — and exactly the 16 tokens in 10 fields
+the offline prediction had named, with **16 of 16 the rounding their own call site declares and 0
+unexplained**. The file also stopped **contradicting itself**: five sentences now quote the numeric field
+beside them exactly, where `sweep[0].bestDishingOverStroke` said `0.0651753854` and the sentence said
+`0.06517538540278571`.
+
+**Wired as an AUDIT and not a gate**, because `C-0083`'s rule bites: the corpus reads 748 in 48. Mutation
+coverage measured in **both** directions — **10 mutations, 29 named tests, 0 mutations pass every test,
+28 of 29 rows reached by some mutation**, five of the ten mutations being widenings.
+
+**What surprised us, three things.**
+
+1. **The class is live, not historical.** A sibling's result file, written in this same iteration while
+   the census was being taken, arrived carrying **6** tokens of the same defect.
+2. **`tools/reemission-order.py` answered a different question when handed a path.** `tag_of` split on
+   `-` without a `basename`, so `gpd/results/T-108-…` became the tag `gpd/results/T-108`, which matches
+   nothing in the census — and an unknown tag is deliberately *"placed rather than lost"*, so it reported
+   **0 dependency constraints** over a 47-file set that has **39**. `C-0117`'s own failure mode, reached
+   through the tool's input handling. Repaired with two named self-tests.
+3. **A wait loop matched itself again, twice, in two new ways.** `until grep -qE "written to|FAILURE" log`
+   exited in seconds because `kotlinc` prints *"This 'var' property is never written to"*. And the immortal
+   `pgrep -f` loop has a **third** form that survives its own cure: each backgrounded waiter leaves a shell
+   whose command line contains the pattern, so a later loop matches the **earlier ones** — `verify.sh`
+   reported `BUILD SUCCESSFUL in 21m 53s` and three orphaned waiters went on reporting `RUNNING` for
+   twenty-five further minutes. The tell is free: the **log's mtime stops advancing**. Cured by the bracket
+   trick and by killing **by PID** — a `pkill -f` on that prefix would have destroyed the sibling verify
+   running in `/tmp/plenty-of-room-verify.1007959` at that moment.
+
+**Two challenges, both measured.** [`CH-0198`](gpd/challenges/CH-0198-the-floor-half-of-the-rule-never-travelled.md):
+the departure rule's **digit** half is a baseline in the layer and its **floor** half is still a default —
+**32 of 49** call sites pass a `digitsByKey` map and no floor, so they emit any departure below `1e−9` as
+exactly `0.0`; `T-164` states one quantity as `0.0` in a record and as `3.4e−11` in its own sentence, and
+**811 departure fields in 86 files** are exactly zero with no way to tell a floored one from a true one.
+[`CH-0199`](gpd/challenges/CH-0199-a-quoted-number-has-no-link-back-to-its-file.md): a number quoted in a
+claim has no mechanical link back to the result file it came from — **43 over-precise tokens in 17
+documents at `HEAD`, of which 19 are already unfindable in any committed result file**, and several of the
+19 are *deliberate* historical evidence that no instrument can distinguish from a stale quotation.
+`C-0099` is amended per `C-0101`; it quoted one number this re-emission moved.
+
+**Gates.** `tools/verify.sh` run twice on its own isolated tree — `BUILD SUCCESSFUL in 21m 53s`, and again
+in `22m 11s` after the final edits, so the report covers the tree as filed — with all eight post-Gradle
+gates clean and the new `--prose` audit line now printed beside `--saturated`; 4 new Kotlin tests written
+first and watched fail; the hygiene checker's
+self-tests 91 → **120**, plus 17 emitter self-tests and a 10-mutation harness; `check-markdown-tables.py`,
+`check-corpus-links.py`, `check-challenge-index.py`, `check-kotlin-format-strings.py`, `trace-answers.py`
+on both deliverables and `result-reader-census.py --check` all clean. `--emit` was **not** run.
+`ANSWERS.md` and `DECISIONS-FOR-NDI.md` were not edited and are owed nothing: neither quotes a `T-164`
+number and no physical quantity, verdict or window edge moved. Every headline number was grepped out of
+`gpd/results/T-249-unrounded-prose-interpolations.json`.
+
+## Iteration 37 — `T-245`: the filter that chose the raster is the filter that could not have chosen a drawable one (`C-0151`)
+
+**Agent AI.** `C-0148` had just shown that `C-0140`'s recommended **112 / 108 bp** honeycomb raster
+cannot be drawn on caDNAno's own default rules — 10 of its 59 raster crossovers would have to be
+forced — and that of `C-0140`'s five candidate pairs exactly one closes.
+The task was to re-select **inside the closing family** rather than among those five,
+and to re-grade `C-0146`'s eight `10 × 6` coupled cells at whatever that returned.
+
+**The cheap bound was the whole of the selection, and it took no solve.**
+Closure depends on the two row lengths only through their **residues modulo 21** —
+a raster crossover's reduced residue is `(level − 7·class) mod 21`,
+every level is an integer combination of the two lengths on a *fixed* class sequence —
+so the family lives in **441** cases and enumerating them is exact rather than a search.
+Three residue pairs close, `(7, 14)`, `(17, 3)` and `(18, 4)`, identical on both 60-helix cross-sections.
+
+And then the line that decided the iteration:
+**all three have `L₁ − L₂ ≡ 14 (mod 21)`**,
+so `|L₁ − L₂| ∈ {7, 14, 28, …}` and **the minimum stagger a drawable raster can carry is 7 bp**.
+`C-0140` selected its recommendation under a filter of *"a stagger of at most 4 bp"*.
+**The filter and the closing family are disjoint.**
+That rule could not have returned a buildable design at any pair of lengths whatever,
+which is why `CH-0188` found four of five undrawable and the fifth — at a 7 bp stagger —
+is precisely the one the filter had already thrown away.
+`C-0140`'s `F9` (*"the minimum stagger is 3 bp"*) is right and is a **per-helix** statement;
+the headline sentence *"the remedy costs 3 base pairs"* reads as the other one.
+That is [`CH-0194`](gpd/challenges/CH-0194-the-filter-and-closure-are-disjoint.md).
+
+**The recommendation is `102 / 109 bp`, and closure is free on the axis `C-0140` scored.**
+Its extent is **116 bp = 39.44 nm**, `−1.40 %` on §3's nominal — the *identical* figure `112 / 108` carries.
+Three closing pairs reach that extent and the tie breaks three times in the same direction:
+a wider stagger at the same extent spends the **interface window** (`rowSpan − stagger`, exactly),
+so 60 / 88 and 102 / 88 give 6 and 9 crossover columns and 40 and 50 stations
+against 102 / 109's **10** and **55**.
+The same rule on `15 × 4` returns the same pair.
+
+**What closure costs the flatness is one crossover column, and the reason it is exactly that is a
+coincidence worth stating: the two pairs give the SAME TILE.**
+Same 116 bp block extent, so same `edgeX`, same pressure field, same free stroke —
+graded at the same column count all eight cells agree below `1e−10`,
+which is what a *solved* field of this lattice can be asserted to.
+The only difference is the interface window, 102 bp against 108, and the count it derives: **10 against 11**.
+Read per realisation on one common stream that is a uniform `1.0567397`–`1.09611647`× of the dishing,
+**2 flat cells of 8** against 3 — and the recommended coupled design
+(one column, ten paths, equal springs) survives at both ends of the measured band,
+`0.0773373597` at `f = 0.30` and `0.0821458169` at `f = 0.26`.
+
+**Three things came free with the drawable pair.**
+The ladder phase is **determined at 16** (`CH-0189`), so the design is graded at one lattice
+rather than swept over 21, and the sparsest row's five stations cap a placement at five columns.
+Closure **buys** 270 nt of scaffold — 919 spare on M13 against 649 — and takes `C-0147`'s
+unpaired-nucleotide allowance from 8 nt per helix at a uniform 112 bp row to **15**.
+And the blunt-end stacking clearance goes from `CH-0187`'s **0.18 rises** — below the design
+language's own quantum, so by `CLAUDE.md`'s rule not a quotable margin at all — to **3.18**.
+
+**`CH-0189`'s open item came back as a price rather than a negative.**
+It asks whether *some* closing pair's determined phase saturates the station census,
+which would restore the six-column placement `CH-0184` reported.
+Exactly **one** does inside M13 on `10 × 6` — `123 / 109 bp`, 60 of 60 stations at 6 per row —
+and its axial extent is **137 bp = 46.58 nm, `+16.45 %`** on §3's 40.0 nm.
+No saturating closing pair inside M13 comes within 5 % of the nominal width.
+The six-column placement is drawable and costs a tile sixteen per cent too wide.
+
+**And the sibling on `T-246` closed the other half of the trade in the same iteration.**
+`C-0152` prices a forced scaffold crossover at `0.350894669 k_BT` — **sub-thermal** —
+and the whole ten-crossover forcing at `0.438634952` of one crossover column of the host sheet,
+concluding in its own words that closure is *"a reason to prefer 102/109 … and not a proof that
+112/108 is unbuildable"*. Two claims, opposite directions, one recommendation.
+What neither can close is the **kinetic** half: whether ten forced crossovers cost folding yield.
+Written up in `C-0151` §7a rather than left to the reader, because
+*"a discharge is invisible to whoever files the removal"* applies just as much to a discharge
+filed by somebody else at the same moment.
+
+**Two challenges raised.**
+[`CH-0194`](gpd/challenges/CH-0194-the-filter-and-closure-are-disjoint.md), above;
+and [`CH-0195`](gpd/challenges/CH-0195-both-graded-column-counts-belong-to-an-undrawable-raster.md) —
+**both** crossover-column counts this corpus has ever graded a honeycomb block at, 11 and 12,
+belong to `112 / 108`. At the drawable pair the count is **10**, the `EDGE_MARGIN` guard is
+**inert** (10 columns at all three conventions, slack 2.45 / 2.21 / 1.87 nm), and `C-0146`'s
+*"three cells of eight are decided by a numerical guard"* is a statement about a geometry nobody
+can draw. `C-0142`'s tightest cell is lost for the third time and now for a structural reason.
+`CH-0187`, `CH-0188` and `CH-0189` are all **ANSWERED**.
+
+**What surprised us.** That the width finding did not move at all.
+Going in, the expectation was that a drawable raster would cost some of the honeycomb's `−1.40 %`
+width advantage over the square lattice's `−4.80 %`; it costs none of it,
+because 116 bp is reachable in the closing family and in `C-0140`'s filtered one alike.
+The entire price of drawing the thing turned out to be one crossover column and one flat cell —
+and it is visible *only* because the two rasters happen to share a bounding box,
+which made the comparison an identity rather than an estimate.
+
+**Gates.** `tools/verify.sh`; 23 Kotlin tests written first and watched fail, then
+**mutation-tested** (collapsing the minimum-stagger fold, reading the column window off the row
+span, dropping the two path ends from the scaffold, swapping the two face parities each fail 1, 3,
+1 and 1 named tests). Result file **byte-identical across two independent JVM runs** — after one
+field, a same-tile identity departure sitting at ulp level (`4.2e−17` against `1.4e−17`), was
+replaced by the **threshold** it should always have been. 46 reproductions at `≤ 4.1e−9`,
+including 32 of `C-0146`'s own cells. `check-markdown-tables.py`, `check-corpus-links.py`,
+`check-challenge-index.py`, `check-kotlin-format-strings.py`, `check-result-file-hygiene.py` with
+`--departures`, `--saturated` and `--prose`, and `result-reader-census.py --check` all clean;
+`--emit` was **not** run. `tools/T-234-census.py --check` goes 10 defects → 3, the remaining three
+being a sibling's. `ANSWERS.md` and `DECISIONS-FOR-NDI.md` were not edited, by instruction; what
+they owe is filed as `T-257`. Two siblings had both taken `T-253`; renumbered one to `T-256` and
+said so in the row.

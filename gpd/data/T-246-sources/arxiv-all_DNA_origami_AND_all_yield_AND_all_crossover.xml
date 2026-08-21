@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ag5t39xN71pGv3+Wewq3Pa8p0Dk</id>
+  <title>arXiv Query: search_query=all:"DNA origami" AND all:yield AND all:crossover&amp;id_list=&amp;start=0&amp;max_results=25</title>
+  <updated>2026-08-19T19:43:26Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22DNA+origami%22+AND+(all:yield+AND+all:crossover)&amp;start=0&amp;max_results=25&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>25</opensearch:itemsPerPage>
+  <opensearch:totalResults>0</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+</feed>

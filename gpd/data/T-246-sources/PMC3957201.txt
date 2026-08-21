@@ -1,0 +1,819 @@
+
+ Two design strategies for enhancement of multilayer–DNA-origami folding: underwinding for specific intercalator rescue and staple-break positioning - PMC
+ Skip to main content
+ An official website of the United States government
+Here's how you know
+Here's how you know
+Official websites use .gov
+ A
+.gov
+ website belongs to an official
+ government organization in the United States.
+Secure .gov websites use HTTPS
+ A 
+lock
+ (
+Lock
+ Locked padlock icon
+) or 
+https://
+ means you've safely
+ connected to the .gov website. Share sensitive
+ information only on official, secure websites.
+ Search
+Log in
+ Dashboard
+ Publications
+ Account settings
+ Log out
+ Search…
+ Search NCBI
+ Primary site navigation
+ Search
+ Logged in as:
+ Dashboard
+ Publications
+ Account settings
+ Log in
+Search PMC Full-Text Archive
+Search in PMC
+ Journal List
+ User Guide
+PERMALINK
+Copy
+ As a library, NLM provides access to scientific literature. Inclusion in an NLM database does not imply endorsement of, or agreement with,
+ the contents by NLM or the National Institutes of Health.
+ Learn more:
+PMC Disclaimer
+ |
+ PMC Copyright Notice
+Chem Sci
+. Author manuscript; available in PMC: 2014 Mar 18.
+Published in final edited form as: 
+Chem Sci. 2012 May 29;3(8):2587–2597. doi: 
+10.1039/C2SC20446K
+Search in PMC
+Search in PubMed
+View in NLM Catalog
+Add to search
+Two design strategies for enhancement of multilayer–DNA-origami folding: underwinding for specific intercalator rescue and staple-break positioning
+Yonggang Ke
+Yonggang Ke
+1
+Department of Biological Chemistry and Molecular Pharmacology, Harvard Medical School, Boston, MA 02115, USA
+2
+Department of Cancer Biology, Dana-Farber Cancer Institute, Boston, MA 02115, USA
+3
+Wyss Institute for Biologically Inspired Engineering at Harvard, Cambridge, MA 02138, USA
+Find articles by 
+Yonggang Ke
+1,
+2,
+3,
+*
+, 
+Gaëtan Bellot
+Gaëtan Bellot
+1
+Department of Biological Chemistry and Molecular Pharmacology, Harvard Medical School, Boston, MA 02115, USA
+2
+Department of Cancer Biology, Dana-Farber Cancer Institute, Boston, MA 02115, USA
+3
+Wyss Institute for Biologically Inspired Engineering at Harvard, Cambridge, MA 02138, USA
+Find articles by 
+Gaëtan Bellot
+1,
+2,
+3,
+*
+, 
+Niels V Voigt
+Niels V Voigt
+4
+Danish National Research Foundation: Centre for DNA Nanotechnology at Interdisciplinary Nanoscience Center (iNANO), and Department of Chemistry, Aarhus University, DK-8000 Aarhus, Denmark
+Find articles by 
+Niels V Voigt
+4
+, 
+Elena Fradkov
+Elena Fradkov
+1
+Department of Biological Chemistry and Molecular Pharmacology, Harvard Medical School, Boston, MA 02115, USA
+2
+Department of Cancer Biology, Dana-Farber Cancer Institute, Boston, MA 02115, USA
+3
+Wyss Institute for Biologically Inspired Engineering at Harvard, Cambridge, MA 02138, USA
+Find articles by 
+Elena Fradkov
+1,
+2,
+3
+, 
+William M Shih
+William M Shih
+1
+Department of Biological Chemistry and Molecular Pharmacology, Harvard Medical School, Boston, MA 02115, USA
+2
+Department of Cancer Biology, Dana-Farber Cancer Institute, Boston, MA 02115, USA
+3
+Wyss Institute for Biologically Inspired Engineering at Harvard, Cambridge, MA 02138, USA
+Find articles by 
+William M Shih
+1,
+2,
+3
+Author information
+Article notes
+Copyright and License information
+1
+Department of Biological Chemistry and Molecular Pharmacology, Harvard Medical School, Boston, MA 02115, USA
+2
+Department of Cancer Biology, Dana-Farber Cancer Institute, Boston, MA 02115, USA
+3
+Wyss Institute for Biologically Inspired Engineering at Harvard, Cambridge, MA 02138, USA
+4
+Danish National Research Foundation: Centre for DNA Nanotechnology at Interdisciplinary Nanoscience Center (iNANO), and Department of Chemistry, Aarhus University, DK-8000 Aarhus, Denmark
+✉
+Corresponding author: Shih, William M. (
+William_Shih@dfci.harvard.edu
+)
+*
+These authors contributed equally to this manuscript.
+Issue date 2012 Aug 1.
+PMC Copyright notice
+PMCID: PMC3957201  NIHMSID: NIHMS411654  PMID: 
+24653832
+The publisher's version of this article is available at 
+Chem Sci
+Abstract
+Single-layer DNA origami is an efficient method for programmable self-assembly of nanostructures approximating almost any desired two-dimensional shape from ~5 MDa of DNA building material. In this method, a 7 kilobase single “scaffold” strand is assembled with hundreds of oligodeoxyribonucleotide “staple” strands to form a parallel array of double helices. Multiple layers of such DNA sheets also can be designed to assemble into a stack, enabling construction of solid three-dimensional shapes with considerably greater mechanical rigidity than two-dimensional shapes; however, the folding yield often is much lower and the required folding times are much longer. Here we introduce two strategies for designing multi-layer DNA origami that demonstrate potential for boosting assembly yield: (1) individual base pairs can be inserted between crossovers, allowing for greater bowing of helices at positions away from crossovers and therefore reduced electrostatic repulsion. At the same time, this underwinding of double helices increases a destabilizing torsional strain energy but then also increases affinity for intercalators, and binding of such intercalators can relieve this stress. We also have exploited this enhanced affinity for intercalators to PEGylate the surface of the nanostructures in a noncovalent fashion using PEG-tris-acridine. (2) Positioning of staple-strand breaks in the DNA origami such that each staple strand includes a 14 nucleotide (nt) continuous segment that binds to a complementary 14 nt continuous segment of the scaffold can greatly improve folding yields.
+INTRODUCTION
+Structural DNA nanotechnology, a method pioneered by Ned Seeman three decades ago, seeks the self-assembly of macromolecular shapes and devices while relying almost exclusively on Watson-Crick base pairing to program specific association between component strands
+1
+–
+2
+. The field has witnessed steady growth in the versatility and complexity of nanostructures that can be built. DNA origami in particular has served as a robust strategy for construction of two- (2D) and three-dimensional (3D) shapes that are multiple megadaltons in size
+3
+–
+6
+. Several applications are being explored for this rapidly developing technology, for example in molecular biophysics and structural biology, biomimetic nanostructures (e.g. nanopore channels), photonics and energy, and therapeutics and diagnostics
+7
+.
+Solid three-dimensional shapes can be achieved by folding stacked layers of DNA origami
+4
+. However, yields of reported multi-layer designs have varied from a few percent to ~50% depending on the design, folding restrictions on monovalent versus divalent cation concentrations are much more stringent, and required folding times can be up to two orders of magnitude longer than what is necessary for single-layer DNA origami. This increased difficulty in folding multi-layer versus single-layer DNA origami may arise from the greater density of negative charge, access issues for components destined for the interior of solid 3D shapes, and more complicated strand crossover patterns due to the greater density of nearest-neighbor double helices. Many future applications will require reasonable yields of significantly more complex DNA nanostructures than currently are possible, which only will be attainable if optimization of the folding process can be achieved
+7
+.
+In this study, we present two design strategies that show promise for folding optimization of multi-layer DNA origami. In the first method, we design our nanostructures to have underwound double helices that are stabilized by binding of intercalator dyes. This enhanced affinity of intercalators can be exploited for design of functionalities that are targeted to the underwound helices of the nanostructure via multivalent intercalation. In the second method, we explore the role of staple-break selection and find that avoidance of breaks in continuous 14 bp segments of the nanostructure can dramatically enhance folding. This result suggests that the corresponding 14 nt segments of the staple strands act as “seeds” that can nucleate proper folding of the desired target structure.
+RESULTS
+Improved multi-layer DNA origami folding by specific intercalator rescue of underwound designs
+Previously
+5
+, we reported that a multi-layer DNA origami (60 helix bundle (hb) packed on a honeycomb lattice) folded at higher yields for a design where the initial reciprocal twist density of helices was programmed to be underwound at 11 bp/turn versus the relaxed density of 10.5 bp/turn. The torsional stress was relieved somewhat by right-handed supertwisting of the bundle of double helices. The implication was that the destabilization from this underwinding was more than compensated by some other energetic gain. Underwinding was achieved by increasing the number of base pairs between crossovers (“targeted insertions”), thus the energetic gain may have derived from the increased ability of the negatively charged helices to bow away from each other away from these crossovers and thereby reduce electrostatic repulsion. Inserting base pairs in this way also increased the lengths of the staple strands, which also may help to improve folding.
+Motivated by this previous result, here we sought to explore further the effects of “targeted insertions” on multi-layer DNA-origami folding yield. Towards this end, we generated a series of 24hb multi-layer DNA origami where the helices are programmed via targeted insertions with initial reciprocal twist densities of 10.5 to 13.5 bp/turn at 0.5 bp/turn increments; therefore the total number of base pairs per design is proportional to the reciprocal twist density (e.g. 13.5 bp/turn 24hb has 29% more base pairs than 10.5 bp/turn 24hb) (
+Fig. 1A
+). In this design, the helices are arranged with their axes on a honeycomb lattice, in a manner that resembles a six-helix nanotube enclosed within an 18-helix nanotube (
+Fig. 1A
+). The average length of double helices for the 10.5 bp/turn design is 77 bp, with a staple crossover density along each interhelical interface of one per 21 bp. The “head” of the bundle (
+Fig. 1A
+) is programmed to behave as a homodimerization motif (
+Fig. 1B
+, 
+Figs. S1–S8
+) for production of 24hb with double helices that have a length of 154 bp each (51 nm). Folding was achieved by mixing all component strands together, heating the mixture to 80°C and cooling to 60°C over the course of an hour, and then cooling to 24°C over the course of 72 hours. Divalent cations are critical for folding of multi-layer DNA origami, therefore we folded each design at MgCl
+2
+ concentrations of 6, 10, 14, and 18 mM; the free Mg
+2+
+ concentrations were 1 mM lower due to the presence of 1 mM EDTA added to chelate contaminating divalent cations. Folding was assayed by agarose-gel and transmission electron microscopy (TEM) analysis as the ability to form specific homodimers. We observed that the target homodimer exhibited a gel mobility intermediate between that for misfolded monomer and misfolded dimer (see below), as verified by gel extraction and subsequent TEM imaging (data not shown). The discrepancy in gel mobility between the well-folded homodimer and the misfolded homodimer was fortuitous; otherwise, gel electrophoresis would have been much less informative.
+Figure 1. Specific intercalator rescue of torsional-strain-induced misfolding of underwound DNA origami.
+Open in a new tab
+(A) Design schematic of 24hb DNA origami folded with p3024 scaffold. Each cylinder represents a double helix. Left, view down helical axes. Right, rotated view. (B) Head-to-head dimer connected by connector staple strands. The yield of this dimer as indicated by agarose gel analysis was used as a measure of folding quality. (C) Gel electrophoresis assay of different versions of 24hb folded without intercalators. Lane M shows 1 kb DNA ladder (Fermentas). Lane S shows the p3024 scaffold. Lanes 1 to 4 show the 24hb samples annealed in the presence of 6, 10, 14, 18 mM MgCl
+2
+. The 24hb dimer bands circled in the red boxes correspond to best folded particles present. (D) Left, not underwound (10.5 bp/turn) version; right, underwound version. The folding of low yield underwound versions can be improved by including DNA intercalators during the annealing process. (E) Gel electrophoresis assay of different versions of 24hb folded with EtBr and 10 mM MgCl
+2
+. Lane M shows 1 kb DNA ladder. Lane S shows the p3024 scaffold. Lanes 1 to 8 show 24hb samples annealed in the presence of 0, 8, 16, 32, 64, 128, 256, 512 µM EtBr. The 24hb dimer bands circled in the red boxes correspond to the best folded particles present in that sample. These circled materials were extracted and subjected to TEM analysis. (F) TEM images of well-folded 24hb dimers extracted from gels in (E). (G) Comparison of the folding of untwisted 24hb (10.5 bp/turn) and underwound 24hb (11, 11.5, 12 bp/turn) dimers. Each dimer was annealed under its optimal folding condition. Lane M shows 1 kb DNA ladder. Lane S shows the p3024 scaffold. Lanes 1 to 4 respectively show 24hb_10.5 bp/turn dimer folded with 18 mM MgCl
+2
+ and no EtBr, 24hb_11 bp/turn dimer folded with 18 mM MgCl
+2
+ and no EtBr, 24hb_11.5 bp/turn dimer folded with 10 mM MgCl
+2
+ and 16 µM EtBr, 24hb_12 bp/turn dimer with 10 mM MgCl
+2
+ and 16 µM EtBr. (H) Folding of 24hb_10.5 bp/turn and 24hb_12 bp/turn dimers in the presence of other mono-intercalators. The 24hb dimer bands circled in the red boxes correspond to the best folded particles present in the sample. The green box indicates three bands that correspond to misfolded monomer, well folded dimer, and misfolded dimer, in order of decreasing mobility. Scale bars are 100 nm.
+Formation of the desired homodimer was most efficient for folding at 18 mM MgCl
+2
+ concentration (
+Fig. 1C
+, first gel; TEM images not shown). Whereas the previously reported 60hb folded better at 11.0 bp/turn, here underwinding 24hb to 11.0 bp/turn appeared to decrease the efficiency of folding, as indicated by the diffuseness and lower intensity of the product band (
+Fig. 1C
+, second gel; TEM images not shown). Underwinding 24hb to 11.5 bp/turn gave rise to folding performance on par with 24hb underwound to 11.0 bp/turn (
+Fig. 1C
+, third gel; TEM images not shown). However, underwinding 24hb to 12.0 bp/turn abolished productive folding completely. Instead, a ladder of multimers of misfolded products was formed (gel results, 
+Fig. 1C
+; TEM images not shown).
+We hypothesized that for ≥12.0 bp/turn underwinding, the penalty from torsional strain energy was greater than the energetic gain from increased helical bowing and decreased electrostatic repulsion. As positively charged intercalators can stabilize DNA in an underwound state, and furthermore can neutralize negative charge, we were motivated to investigate whether the presence of such intercalators in the folding mixture could rescue folding of the underwound 24hb designs (
+Fig. 1D
+). Therefore we refolded all the designs in the presence of 12 mM MgCl
+2
+ and ethidium bromide at concentrations of 0, 8, 16, and 32 µM (
+Fig. 1E
+). In order to saturate all potential binding sites for ethidium, assuming one site every two bp, a concentration of 10 nM particles, and ~1200 bp per particle, over 6 µM of dye bound are required. However, if each intercalation event were to unwind a duplex by 26°
+8
+, then the reciprocal twist density for such a hypothetically saturated dsDNA would be 17 bp/turn. The dissociation constant for ethidium binding to relaxed dsDNA is ~ 1 µM
+9
+, with stronger binding expected for underwound DNA but weaker binding expected for overwound DNA or DNA with greater occupancy of dye, due to charge neutralization and fewer open sites available.
+Increasing concentrations of ethidium abrogated the ability of the 10.5 bp/turn 24hb to fold, presumably due to preferential stabilization of DNA in an underwound state that only can be accommodated with a compensatory left-handed supertwisting that eventually becomes overly strained. In contrast, the 11.0 bp/turn 24hb exhibited optimal folding at 8 µM ethidium. This was consistent with our hypothesis that intercalator binding may improve folding by specific stabilization of the underwinding in the designed target structure relative to misfolded states, where underwinding is not enforced. At concentrations of ethidium higher than 8 µM, folding of 11.0 bp/turn 24hb may be inhibited by the same mechanism whereby ethidium counters the folding of 10.5 bp/turn 24hb.
+For 24hb underwound to 11.5 bp/turn and 12.0 bp/turn, optimal folding occurred at 16 µM ethidium. In this condition, the bands representing properly folded product each are significantly brighter than the corresponding band for the 10.5 bp/turn design. We attribute this to two effects. First, the underwound designs have a greater number of ethidium molecules bound per particle, mainly due to greater affinity. Secondly, the 11.5 bp/turn and 12.0 bp/turn 24hb both appear to fold to higher yield (estimated 24% for 24hb_11.5bp/turn and 30% for 24hb_12bp/turn) than the 10.5 bp/turn 24hb (estimated 14%), as evidenced by the greater number of particles counted on the TEM grids (
+Fig. 1F
+) and the lower amount of aggregated material in the gels of the analytical agarose gels under optimized MgCl
+2
+/ethidium concentrations (
+Fig. 1G
+, lane 1 versus lane 3 or 4). For 24hb underwound to 12.5 bp/turn, 13.0 bp/turn, or 13.5 bp/turn, optimal folding occurred at 64 µM ethidium bromide. However, at increasing concentrations of ethidium, aggregated folding products became more prevalent. Overall, the optimal yield was obtained with 12.0 bp/turn 24hb folded at 10 mM MgCl
+2
+ and 16 µM ethidium bromide.
+Ethidium has been reported to underwind relaxed dsDNA by 26° per intercalation
+8
+, therefore we can calculate the number of ethidium intercalations needed to stabilize the helices at the designed underwinding, shown as ”Expected number of intercalations per helix” in 
+Table 1
+. For example, one ethidium intercalation every six bp will yield a reciprocal twist density of 12 bp/turn in linear dsDNA, and one ethidium intercalation every 3.4 bp will yield a reciprocal twist density of 13.5 bp/turn in linear dsDNA (the maximum binding occupancy for ethidium intercalation to dsDNA is one every 2 bp). We then measured the mean TEM length of each folded 24hb and used this to estimate the number of ethidium intercalators bound per helix, shown as “Apparent number of intercalation per helix” in 
+Table 1
+.
+Table 1.
+Expected versus measured EtBr intercalation events for 24hb DNA origami 10.5bp/turn, 11bp/turn, 11.5bp/turn, 12bp/turn, 12.5bp/turn, 13bp/turn, 13.5bp/turn versions.
+24hb_10.5
+bp/turn
+24hb_ 11
+bp/turn
+24hb_ 11.5
+bp/turn
+24hb_ 12
+bp/turn
+24hb_ 12.5
+bp/turn
+24hb_ 13
+bp/turn
+24hb_ 13.5
+bp/turn
+Base-pair per helix
+154
+161
+169
+176
+183
+191
+198
+Expected length without
+EtBr (nm)
+52
+54
+57
+59
+62
+65
+67
+Measured length for
+sample with EtBr (nm)
+54
+56
+59
+65
+78
+83
+84
+Expected number of
+ethidium intercalations
+per helix
+0
+9
+20
+29
+38
+49
+58
+Apparent observed
+number of ethidium
+intercalations per helix
+6
+6
+6
+18
+47
+53
+50
+Open in a new tab
+We repeated these intercalator rescue experiments for 12 bp/turn versus 10.5 bp/turn 24hb using three other DNA-binding small molecules: 9-aminoacridine, proflavine, and doxorubicin. The results were qualitatively very similar to what was observed with ethidium, however the optimal concentrations were all higher (
+Fig. 1H
+). This is consistent with the lower reported affinities of proflavine and 9-aminoacridine
+10
+–
+12
+, along with the lower amount of underwinding (17° per intercalation for 9-aminoacridine, proflavine, 10° per intercalation for doxorubicin) induced by binding of these three relative to that for ethidium
+13
+. A particular clear example of the mobility differences between misfolded monomer, well-folded dimer, and misfolded dimer can be seen in lane of the gel analyzing 12 bp/turn 24hb folded in the presence of 9-aminoacridine (
+Fig. 1H
+, lane 13, lowest three bands outlined in green).
+Functionalization of underwound DNA nanostructures with PEG-tris-acridine
+The enhanced affinity of intercalators in underwound DNA nanostructures previously described can be exploited for design of functionalities that are targeted to the underwound DNA helices via multivalent intercalation-based conjugation. Previous work has shown that multiple tethered intercalators exhibit avidity and form a more stable interaction with the double helix of DNA than a single intercalator
+14
+,
+15
+. In addition, it has been described that tris-acridine has proper dimensions and good fitting for intercalation in the double helix of DNA 
+16
+,
+17
+. Therefore, we have synthesized a 20 kDa PEG molecule linked to tris-acridine in order to achieve better DNA binding affinity. The synthesis of the PEG-tris-acridine conjugates is described in 
+Fig. S9
+ and involves two major steps: conjugation of 20 kDa PEG with dendrimer and reaction of dendrimer with acridine reagent. After each step, the isolation of products was achieved by size exclusion chromatography exploiting the large difference in molecular weight between reagents and by-products. Final purification was performed by reverse phase HPLC and good separation from non-reacted and other minor by-products was obtained. On the HPLC chromatogram, a stronger retention of PEG-tris-acridine was observed. Finally, mass spectrometry confirmed the synthesis of PEG-tris-acridine conjugates in the correct molecular weight range.
+To test the DNA binding affinity of the PEG-tris-acridine, four distinct DNA nanostructures were designed using the honeycomb-lattice version of the caDNAno software
+18
+: six-helix bundle at 10.5 bp/turn (6hb_10.5 bp/turn), twelve-helix bundle at 10.5 bp/turn (12hb_10.5 bp/turn), 12hb_11 bp/turn, and 6hb ring. The designs are illustrated and detailed in 
+Figs. 2A, B
+ and 
+Figs. S10–S12
+. Optimal MgCl
+2
+ concentrations for folding were determined, and then used for assembling each DNA origami object in a one-pot reaction. Folding of the four nanostructures resulted in products that migrate as sharp bands on a 2% Mg-agarose gel. To further verify structural integrity, DNA-origami nanostructures were extracted from the gels and visualized by TEM. The TEM micrographs in 
+Fig. 2B
+ indicate successful formation of monodisperse and homogeneous DNA nanostructures.
+Figure 2. Specific PEG-tris-acridine functionalization by multivalent intercalation into underwound DNA origami.
+Open in a new tab
+(A) Design schematic of PEG-tris-acridine targeting the underwound helices of the twelve-helix DNA bundle. Left, model views off perpendicular and along to the helical axis of 200 nm-long twelve-helix DNA bundles with 10.5 and 11 bp/turn reciprocal double-helical twist density. Right, model of the multivalent intercalation between underwound twelve-helix DNA bundle and synthesized PEG-tris-acridine. (B) Gel-mobility-shift assays using Mg-agarose electrophoresis following the DNA binding with PEG-tris-acridine at different weight ratios. The gels were stained by ethidium bromide after 1% (w/v) agarose gel electrophoresis. In green, the ethidium fluorescence from the DNA and in red, the acridine fluorescence from the PEG-tris-acridine. Lanes 1 to 5 show the retention of the p8064 M13-derived ssDNA at various PEG-tris-acridine to DNA weight ratios of 0:1, 2:1, 5:1, 10:1, 15:1. Lane 6, 6hb_10.5 bp/turn without PEG-tris-acridine. Lane 7, 6hb_10.5 bp/turn with PEG-tris-acridine at 60 µM. Lane 8, 12hb_10.5 bp/turn without PEG-tris-acridine. Lane 9, 12hb_10.5 bp/turn with PEG-tris-acridine at 60 µM. Lane 10, 1 kb ladder. Lane 11, underwound 12hb_11 bp/turn without PEG-tris-acridine. Lanes 12 to 16 show the retention of underwound 12hb_11 bp/turn at various PEG-tris-acridine to DNA weight ratio of 3:2, 4:1, 6:1, 8:1, 12:1. Lane 17,1 kb ladder. Lane 18, 6hb_ring. Lanes 19 to 23 show the retention of 6hb_ring at various PEG-tris-acridine to DNA weight ratios from 3:2, 4:1, 6:1, 8:1, 12:1. (C) TEM images of unPEGylated and PEGylated DNA nanostructures. 1, 12hb_10.5 bp/turn extracted from gels and 2, zoom in images. 3, 12hb_11 bp/turn extracted from gels and 4, zoom in images. 5, PEGylated 12hb_11 bp/turn, 6, zoom in images and 7, stained with 0.5% Ruthenium tetroxide. 8, 6hb_ring unPEGylated. 9, 6hb_ring PEGylated. Scale bars are 50 nm.
+Next, we investigated the binding capabilities of the synthesized PEG-tris-acridine on single-stranded DNA (ssDNA) and DNA origami. The intercalation complexes were prepared by premixing DNA with synthesized HPLC-purified PEG-tris-acridine at different ratios and incubated at 25°C for 30 min. The binding efficiencies of PEG-tris-acridine conjugates with the DNA structures were analyzed by gel-mobility-shift assays using Mg-agarose electrophoresis. Incubated objects were electrophoresed for 3h on a 2% agarose gel containing 0.5× TBE buffer and 11 mM MgCl
+2
+. The samples were run on an ethidium-bromide-free gel in order to prevent intercalation competition between the ethidium and the PEG-tris-acridine. After electrophoresis, the gel was stained by ethidium bromide and subjected to image analysis on a Typhoon biomolecular imager following the fluorescence of ethidium bromide and acridine on a gel-shift assay (
+Fig. 2B
+).
+First, we tested the binding efficiency of PEG-tris-acridine to ssDNA. M13mp18 viral DNA (8064nt), which often is used as a scaffold strand in the assembly of DNA origami, was selected for this assay. The DNA scaffold (8064 nt) at 2 nM was incubated with different amounts of HPLC-purified PEG-tris-acridine conjugates in 40 µL reaction for 30 minutes at room temperature. The synthesized PEG-tris-acridine retarded the agarose-gel mobility of the ssDNA, as evidenced by the disappearance of the representative sharp DNA band (
+Fig. 2B
+). As shown in the gel in 
+Fig. 2B
+, the intercalation of the PEG-tris-acridine molecule drastically reduced the DNA gel mobility at a weight ratio of PEG-tris-acridine to DNA of 5:1 or higher. By contrast, equivalent amounts of individual PEG(20 kDa) or tris-acridine demonstrated no influence on ssDNA mobility (data not shown). These results suggest that only the binding of PEG-tris-acridine conjugate with DNA resulted in band retardation during electrophoresis.
+We next explored the ability of the PEG-tris-acridine to bind folded DNA-origami nanostructures. To prevent further PEG-tris-acridine binding to ssDNA portions of DNA origami, each DNA-origami nanostructure was designed with capping strands (
+Figs. S10–S12
+). The 6hb_10.5bp/turn and 12hb_10.5bp/turn nanostructures were folded with 10 nM scaffold and then were incubated with different amounts of HPLC-purified PEG-tris-acridine conjugates in a 40 µL reaction volume for 30 minutes at room temperature. After electrophoresis, no DNA gel-shift was observed even for mixtures with PEG-tris-acridine at 60 µM (i.e. 6000 times molar excess) (
+Fig. 2B
+). Even after incubation for 24 hours and higher incubation temperature (50°C), no evidence of binding was observed.
+To assess whether global twisting could improve PEG-tris-acridine binding on DNA-origami, we designed a new version of 12hb in which we added a single base pair to every 21 bp, resulting in a shape with double helices underwound to an average initial reciprocal twist density of 11 bp/turn; such structures relax some of the resulting torsional strain by right-handed supercoiling, similar to the above designs with 24hb (
+Figs. 2A, B
+). For this 12hb_11bp/turn design, significant gel retardation was observed for samples incubated in the presence of PEG-tris-acridine conjugates at a weight ratio of PEG-tris-acridine:DNA of 6:1 or greater, with partial retardation already observed at a ratio of 1.5:1 (
+Fig. 2B
+).
+We next designed a 6hb_ring structure, with a 46 nm inner diameter and a 60 nm outer diameter, by implementing a balanced gradient of insertions in the outermost double helices and deletions on the innermost double helices to produce global bend with no global twist
+3
+. After the addition of PEG-tris-acridine at different ratios to 6hb_ring, the mixture was incubated at room temperature for 30 minutes and analyzed by agarose gel electrophoresis as before. A similar gel retardation was observed to that seen for underwound 12hb at PEG-tris-acridine:DNA mass ratios of 8:1 or greater.
+To provide direct visualization of the PEG-tris-acridine binding, the DNA nanostructures were characterized by negative-stain transmission electron microscopy (TEM) (
+Fig. 2C
+). We first visualized the DNA/PEG complex by using uranyl formate staining. For both successfully PEGylated nanostructures (12hb_11bp/turn and 6hb_ring), we were able to detect DNA nanoparticles displaying surface features suggesting PEGylation, however the staining of these features was not robust or easily reproducible. More robust staining of the PEG functionalities could be seen with 0.5% ruthenium tetroxide. Ruthenium tetroxide is an aggressive oxidant, and exposure of the sample to the 80KeV electron beam often lead to visible damage on the carbon grid making the data collection more difficult. However, several areas on the carbon grid can appear preserved and intact. In 
+Fig. 2B
+, it is clearly possible to see in both PEGylated nanostructures examples of specific PEG staining surrounding the DNA origami.
+For 12hb_11bp/turn, a change in the diameter of the DNA rod was evident that was not seen in the absence of treatment with PEG-tris-acridine. The formula relating the molecular weight (M
+w
+) of PEG to it’s radius of gyration (R
+g
+) is R
+g
+ + 0.215M
+w
+0.583
+ Å, which is 70Å for a 20kd PEG polymer
+19
+. PEG polymer can be represented as a sphere of radius R
+g
+ attached to the surface of the DNA-origami walls (
+Fig. 2A
+). The thickness of 12hb coated with PEG-tris-acridine appeared to be roughly consistent with the 35 nm predicted by this model; we can expect that the globular shape of the PEG polymer is deformed to some extent both by interactions with the DNA surface as well as due to staining and drying artifacts.
+For the 6hb_ring, the PEG polymer appeared to localize to the outer double helices, where base pairs were inserted to exert bending of the bundle. Here the DNA is predicted to be locally underwound, thus it is as expected to find the PEG-tris-acridine binding favorably only on this surface. According to the TEM images, a global diameter of 84 nm of the 6hb_ring was observed, compared to 60 nm for the unPEGylated 6hb_ring. corresponding to an effective diameter of 12 nm for the PEG molecule, which is coherent with the diameter predicted.
+Staple-break positioning for improved folding
+As a second strategy for improving folding yield of multi-layer DNA origami, we investigated the effects of altering the staple-break distribution pattern in 24hb folded with 308 bp (336 nt accounting for the ssDNA ends) long double helices and the p8064 scaffold. If staple crossovers are installed every 21 bp along each inter-helix interface, then there are exactly four staple paths, of length 1848 bases, two traversing from one end to the other from 5´ to 3´, and two traversing in the opposite direction from 5´ to 3´. We define the z-coordinate as the distance along each helix from the “front” (i.e. left-hand side of caDNAno file) to the “back” (i.e. right-hand side of caDNAno file). The staple paths of 24hb follow a very regular pattern, whereby they wind back and forth within a 7 bp z-window along five of the outer helices, and then wind back and forth within the next 7 bp z-window along seven helices through the interior of the helix bundle (
+Fig. S13–S17
+). Therefore, an aesthetically pleasing pattern is produced by breaking each staple path into alternating 35mer and 49mer subpaths along these transitions between adjacent z-windows (
+Fig. 3B
+, version 1).
+Figure 3. Engineering kinetic acess to productive folding of 24hb via staple-break selection: the importance of 14 nt seeds.
+Open in a new tab
+(A) Schematic of 24hb DNA origami folded with p8064 scaffold. Each cylinder represents a double helix. (B) Different break patterns of staple strands. Four patterns of breaking points were applied to the four continuous staple-strand paths of the 24hb. Version 1 breaks each 14 nt segment into two 7 nt subsegments. Version 2 breaks each 14 nt segment into a 3 nt and an 11 nt subsegment, or a 4 nt and 10 nt subsegment as indicated. Versions 3 and 4 retain intact 14 nt “seeds” and only apply the breaks at select 7 nt segments. (C) Gel electrophoresis and TEM assays of 24hb with different staple-break designs. Top panel shows the unsuccessful folding by version 1 and version 2 staple-strand sets. Lane M shows 1 kb ladder. Lane S shows p8064 scaffold. Lanes 1 to 6 show the 24hb folded in the presence of 10, 12, 14, 16, 18, 20 mM MgCl
+2
+. The red arrow indicates the position corresponding to the well folded 24hb particles. The bottom panel shows the well folded particles produced by annealing with version 3 and 4 staple strands. Lane M shows 1 kb ladder. Lane S shows p8064 scaffold. Lanes 1 to 2 respectively show version 2 and version 3 folded in the presence of 18 mM MgCl
+2
+. Samples were extracted from the bands circled in the red boxes and subjected to TEM imaging. (D) Hybrid versions produced by mixing version 2 and 3 staple strands. Each hybrid version consists of 0, 25, 75 or 100 percent of staple strands with 14 nt seeds. This is achieved by mixing a subset of the the staple strands lacking a 14 nt seed (version 2) with a subset of the staple strands with a 14 nt seed (version 3). Strand Path 1 to Strand Path 4 refer to the “continuous” staple-strand paths that exist before application of breaks. “−” indicates version 2 design with no 14 nt seed. “+” indicates version 3 design with one 14 nt seed for each staple strand. (E) Study of the folding of hybrid versions of 24hb as a function of annealing time (from top to bottom: 24, 16, 8, 4, or 2 hour folding ramps). Versions with higher percentage of staple strands with 14 nt seeds show better folding quality, given same folding time. Arrows indicate band mobility corresponding to the well-folded 24hb particles. (F) Designs of the scaffold path with increasingly larger modules. (G) Gel electrophoresis and TEM assays of 24hb with 21 bp modular scaffold design. Lane M shows 1 kb ladder. Lane S shows p8064 scaffold. Lanes 1 to 6 respectively show 24hb folded in the presence of 10, 12, 14, 16, 18, 20 mM MgCl
+2
+. The arrow indicates band mobility corresponding to well folded 24HB particles. The 24hb sample was extracted from the bands circled in the red boxes and subjected to TEM imaging. (H) Gel electrophoresis assays of 24hb with 42 to 336 bp modular scaffold designs. Lane M shows 1 kb ladder. Lane S shows p8064 scaffold. Lanes 1 to 6 respectively show 24hb folded in the presence of 10, 12, 14, 16, 18, 20 mM MgCl
+2
+. The arrows indicate band mobility corresponding to well folded 24hb particles. Scale bars for TEM images in (C) and (G) are 100 nm.
+Surprisingly, when we implemented this staple-break pattern in 24hb, little or no productive folding could be observed, as indicated by gel electrophoresis as a lack of material migrating with the faster mobility associated with well folded structures (
+Fig. 3C
+, version 1). Similarly, if the staple-break pattern was altered so that each 35mer was lengthened by 3 nt on its 5´ end and 4 nt on its 3´ end compared to version 1, leading to a uniform length of 42 nt for almost every staple strand (
+Fig. 3B
+, version 2), still little or no productive folding could be observed
+(
+Fig. 3C
+, version 2). No significant improvement was observed for a longer (3 day) folding ramp. In contrast, when the staple-break pattern was shifted by 14 nt upstream compared to version 1 (equivalent to a shift 28 nt downstream due to the 42 nt pseudo-repeat) (
+Fig. 3B
+, version 3), folding then became enabled (
+Fig. 3C
+, version 3). Similarly, when the staple-break pattern was shifted by 24 nt upstream compared to version 1 (equivalent of 18 nt downstream) (
+Fig. 3B
+, version 4), then folding became enabled as well (
+Fig. 3C
+, version 4). The folding yields of version 3 and version 4 are estimated to be 22% and 25% respectively. The most obvious difference between the failed version 1 or version 2 designs and the successful version 3 or version 4 designs is that the latter two maintain a 14 nt uninterrupted stretch of complementarity to the scaffold, i.e. without any strand breaks or crossovers on either scaffold or staple segments. For version 0, each uninterrupted stretch is exactly 7 nt, while for version 1, each staple strand has a longest uninterrupted stretch of only 11 nt. This result is consistent with a model in which productive folding of 24hb requires staple strands to have a sufficiently long “seed” segment (e.g. 14 nt) that can nucleate specific attachment to the scaffold. If the staple strands lack these seeds, we hypothesize that folding fails because a family of kinetically trapped misfolded intermediates is the dominant product of the thermal-ramp folding procedure. Without further investigation, however, we cannot rule out the possibility that the origin of the misfolding is thermodynamic rather than kinetic in nature (see Discussion). We also observed the importance of 14 nt seeds for folding a more complex multi-layer origami structure, the honeycomb 8 × 8 64hb; these results are described in the Supplementary Information (
+Fig. S18–S23
+). For all studies permuting the staple break points, the mapping of the scaffold sequence on to the design is not permuted.
+In order to test the effect of folding 24hb where only a subset of the staple strands possess 14 nt seeds, we repeated assembly with hybrid structures built from combinations of strands from the version 2 and version 3 designs. Each complete set of staple strands was divided into four subpools according to which of the four global staple paths it embodied. For each staple path of each hybrid structure, either the version 2 (i.e. non-seed-bearing staple strands that hinder folding) or the version 3 (i.e. seed-bearing staple strands that promote folding) subpool was selected. We tested all 2
+4
+=16 possible combinations, listed in 
+Fig. 3D
+. Folding quality was assessed by relative agarose-gel mobility (
+Fig. 3E
+); as before, the fastest migrating bands with the mobility indicated by the red arrow represent the population of successfully folded structures.
+For a 24 hour thermal ramp, folding was rescued partially when 25% of the staple strands had a 14 nt seed, but rescued almost completely when 50% or 75% of the staple strands had a 14 nt seed. However, for more demanding folding conditions, simulated with compressed thermal ramps down to two hours, folding was rescued only partially when 50% of the staple strands had a 14 nt seed, and the best folding was obtained when 100% of the strands had a 14 nt seed. Thus it appears the best folding can be achieved under more stringent conditions when as many staple strands as possible have a 14 nt seed.
+Contact order for DNA origami refers to the average sequence distance between scaffold segments that are brought into close proximity by staple strand interaction; greater average distances correspond to higher contact order. For M13-scaffolded 24hb, we examined how contact order affects folding. We designed versions with the scaffold folded into modules of length 21 bp, 42 bp, 84 bp, 126 bp, 168 bp, and 336 bp (
+Fig. 3F
+, 
+S24–S30
+) (note that the structures described in 
+Fig. 3B
+ were routed with the scaffold in 168 bp modules). The only version that was not able to fold efficiently was the one with 336 bp modules. This observation is consistent with a model where a large contact order can creates difficulties for multi-layer DNA origami folding. The threshold of the contact order where it becomes limiting for folding may vary from one architecture to another; for example, the Rothemund rectangular origami, a single-layer 2D design, consists of a single module of length 288 bp, and this design folds well; the threshold may be shorter in length for complex 3D multi-layer designs.
+We further investigated the importance of seeds for folding 24hb in the context of a new design strategy for DNA origami: use of “short scaffold-parity” strands. In the original presentation of DNA origami, one long scaffold strand and many shorter staple strands are employed, where the only programmed complementarity occurs between scaffold- and staple-parity segments. The use of a long strand to scaffold small oligonucleotide-based tiles also has been reported
+20
+. Here we implemented a fraction of the scaffold-parity segments as short oligonucleotides that we dub “short scaffold-parity” strands.
+We first tried three different implementations of short scaffold-parity strands to fold 24hb. For all versions, the scaffold used was the M13-based p7308. Each double helix contains 308 base pairs (and 28 total unpaired scaffold bases) distributed between two 168 bp scaffold modules. Each short scaffold-parity strand is 42 nt long and based on a randomly-generated sequence. Most staple strands are 42 nt long and contain a 14 nt seed. In addition,1260 bases of the p7308 scaffold were left unstapled on one end of the 24hb (
+Fig. S31–S34
+). In version 1 (
+Fig. 4A
+), the outer eighteen helices are populated by p7308, and the inner six by the short scaffold-parity strands. In version 2 (
+Fig. 4B
+), p7308 traverses a three-leaf clover path covering eighteen helices, leaving six outer helices to be populated by short scaffold-parity strands. In version 3 (
+Fig. 4C
+), p7308 traverses an accordion-style folding through twenty helices, leaving four outer helices for occupancy by short scaffold-parity strands.
+Figure 4. Multi-layer DNA origami folding with a mixture of long and short scaffold strands.
+Open in a new tab
+(A) to (C) Designs of 24hb with short “short scaffold-parity” strands. Cylinders in red indicate the DNA duplexes formed by p8064 scaffold and staple strands. Cylinders in blue indicate the DNA duplexes formed by short scaffold-parity strands and staple strands. (D) and (E) Gel electrophoresis and TEM images of version 1, version 2, and version 3 designs. Lane M shows 1 kb ladder. Lane S shows p8064 scaffold. Lanes 1 to 6 respectively show 24hb folded in the presence of 10, 12, 14, 16, 18, 20 mM MgCl
+2
+. Well folded structures were extracted from the bands circled in the red boxes and subjected to TEM imaging. (F) A design of 24hb with twelve outside helices formed by p8064 scaffold and staple strands and twelve inside helices formed by short scaffold-parity strands and staple strands. (G) Three versions of staple-break designs for the 24hb shown in (F). Version i breaks each 14 nt segment into two 7 nt subsegments. Version ii and version iii both retain intact 14 nt seeds. The 14 nt seeds are close to the middle of each staple strand for version ii, while the 14 nt seeds are close to the 5´ end of each staple strand for version 3. (H) Agarose gel electrophoresis of the three designs shown in (G). Lane M shows 1 kb ladder. Lane S shows p8064 scaffold. Lanes 1 to 3 respectively show the folding results of version i, version ii, and version iii. Structures were extracted from the bands circled in the red boxes and subjected to TEM imaging. (I) TEM images of the structures of version i, version ii, and version iii. Scale bars are 100 nm.
+All three versions produced successful folding, although the yields varied dramatically (
+Figs. 4D–4F
+). The major mode of folding failure was manifested by gel analysis as multimerization, and the least unwanted multimerization was seen for version 1. This improved folding coincides with the design of the short scaffold-parity strands as sequestered on the interior of the nanoparticle. The unwanted multimerization observed for designs where the short scaffold-parity strands are displayed on the exterior of the nanoparticles is consistent with unwanted short scaffold-parity strand exchange with other like particles in solution. This result suggests that the implementation of short scaffold-parity strands only will lead to high-yield assembly in cases where the unwanted strand exchange can be suppressed. One method for such suppression is to avoid designing short scaffold-parity strands on the exterior of the nanoparticles. However, other methods for suppressing strand exchange for short scaffold-parity strands on the exterior surface may be possible; for example, particles perhaps could be sequestered inside of larger “folding compartments” that prevent them from encountering each other.
+We implemented a fourth version (
+Fig. 4F
+) where the twelve outermost scaffold helices are populated by p7308 that jumps through unpaired scaffold segments that make parallel crossovers moving from one pair of outer scaffold helices to the next (
+Fig. S35–S40
+). Then the six “inner” helices and six “middle” helices are populated by short scaffold-parity strands. When the staple strands are designed with no 14 nt seeds (
+Fig. 4G
+, version i), the structures fail to fold properly (
+Fig. 4H
+, lane 1; 
+Fig. 4I
+, first TEM image). In contrast, successful folding can be obtained when the staple strands contain 14 nt seeds. However, significant unwanted multimerization still is observed. This result suggests that short scaffold-parity strands on the “middle” helices still can participate in unwanted strand exchange. Interestingly, greater unwanted multimerization is observed for staple strands where the 14 nt seed is placed near the middle of each staple strand (version ii) versus staple strands where the 14 nt seed is placed on the 5´ end of each staple strand (version iii) (
+Fig. 4H
+, lane 2 versus lane 3). Placement of the seeds on the end of the staple strands may enable more rapid nucleation, which then may allow productive folding to occur more quickly compared to unwanted multimerization.
+Discussion
+We previously found that design of honeycomb 6 × 10 multi-layer 60hb origami folded to higher yield when the helices were designed to be underwound to 11 bp/turn, and speculated that the resulting underwinding strain was more than compensated by energetic relief from the ability of adjacent helices to bow further away from each other, due to the greater length between crossovers, and therefore the reduced electrostatic repulsion
+5
+; an additional origin of folding improvement could have derived from the overall longer staple strand length distribution, or else the greater number of 8 bp anchorages versus 7 bp anchorages. However, for the 24hb under investigation for this study, the design underwound to 11 bp/turn did not fold as well as the design at 10.5 bp/turn. The different behavior between these 60hb and 24hb designs suggests that the net energetic benefit for introducing underwinding into DNA nanostructures is architecture dependent. For this 24hb, we observed that the best folding result was achieved with a 12 bp/turn design and annealing in the presence of 8 µM ethidium. Folding under these optimized conditions appeared to be mildly better than that achieved for the default 10.5 bp/turn folding in the absence of an intercalator. For this 12 bp/turn design, the underwinding strain was too great to support folding in the absence of an intercalator. Conversely, the presence of the positively charged intercalator stabilized the underwound conformation and provided charge neutralization, and further increased the length between crossovers, which could have led to even greater relief of electrostatic repulsion due to increased bowing of helices allowed. One prediction from this result is that some DNA-origami architectures, perhaps the 6 × 10 60hb origami discussed above, may exhibit markedly improved folding from a 12 bp/turn design folded in the presence of an intercalator, compared to a default 10.5 bp/turn design.
+Origami designs with greater than 12 bp/turn reciprocal twist density could be partially but not fully rescued in their folding by increased concentrations of intercalator, due to a competing aggregation behavior. One possible contributing factor is that, for the 12 bp/turn design, a uniform incorporation of ethidium intercalators, one every six bp, is predicted to stabilize the structure, explained as follows: each ethidium intercalation has a preferred underwinding of the double helix of −26 degrees (c.f. 360 degrees/(10.5 bp/turn) or 34.3 degrees equilibrium twist per base pair). So two intercalation events every 12 bp gives rise to an equilibrium twist of 12*34.3 - 2*26 = 360 degrees. However, for higher reciprocal twist densities (e.g. 13.5 bp/turn), such a uniform preferred intercalation pattern does not exist; a non-uniform intercalation pattern may introduce more strain microscopically than a uniform intercalation pattern.
+The ability to construct robust DNA nanostructures with a reciprocal twist density of 12 bp/turn, stabilized by intercalator binding, could serve as a useful capability. Here the twist per base pair is a round number: 30 degrees. For example, the hexagonal close packed lattice structures
+21
+ perhaps could be implemented with 10 bp = 300 degrees, and therefore six 10 bp steps would enable crossovers to all six nearest neighbors with a repeating 60 bp, five-turn pattern. It also may be possible to suppress supertwisting in paranemic crossover structures
+22
+,
+23
+ that have 7 bp per major groove spacing and 5 bp per minor groove spacing.
+We have found here that trisacridine ligands exhibit much stronger binding to underwound DNA nanostructures than to torsionally relaxed DNA nanostructures. This behavior is consistent with the known propensity of intercalators to unwind DNA upon binding. We have exploited this specificity to develop a new approach to engineering biomimetic surfaces on underwound DNA nanotubes or else to the convex face of DNA nanotube rings, where the DNA is designed to be locally underwound. Attachment of inert guests to the trisacridine, such as PEG, provides a route to homogenous coating of the DNA nanostructure to provide passivation, which may prove useful for antifouling and improved biocompatibility. We anticipate that this method should prove readily adaptable to coat DNA nanostructures with a large variety of molecules such as polymers, proteins, and ligands.
+Here we reported a second design strategy to improve the folding yield of a multi-layer DNA origami nanostructure: shifting of the staple-break distribution such that as many staple strands as possible include a 14 nt seed segment. As the number of staple strands was not changed by this shift, it seems more likely to us that there was little change in the thermodynamic stability of the structures, and that the improvement in folding was due almost entirely to kinetic factors; however, conclusive resolution of this issue awaits further analysis. If kinetic factors dominate, then a route to ordered assembly becomes evident. For example, the subset of staple strands bearing 14 nt seeds would be expected to bind to the scaffold earlier than strands without 14 nt seeds. Furthermore, altering the binding energy of the seeds, either via increasing the length or else changing the sequence, may enable finer control over order of assembly, e.g. direct folding of outside before inside, or vice versa. The exact length requirements for the seeds likely will be both sequence and architecture dependent; this should prove an interesting topic of investigation for a later study. The observation that the placement of seeds on the end of strands appears consistent with the increased binding kinetics observed when toeholds are placed on the ends of strands. The presumed mechanism is that swiveling of double helices where one strand is short is much faster due to frictional considerations
+24
+.
+Finally, we have found that the scaffold fraction of DNA origami can be distributed over a single long strand and multiple shorter “short scaffold-parity” strands. This capability should add flexibility in DNA origami design, especially the ability to construct shapes that are much larger than is allowed if all the scaffold material is required to be on a single strand, as the production of such long scaffold strands presents additional technical challenges. Furthermore, longer scaffold strands may be subject to greater tangling behavior. However, we have observed that placement of short scaffold-parity strands on the exterior of 3D DNA origami can lead to greater unwanted aggregation, perhaps due to a strand exchange mechanism. Therefore short scaffold-parity strands are better suited to designs where such strand exchange is discouraged, such as on the interior of the object, or else in conjunction with some other folding environment where unwanted multimerization is otherwise inhibited.
+METHODS
+Synthesis and characterization of PEG-tris-acridine conjugates
+Coupling of PEG20k-NHS and dendrimer
+5.0 µmol of PEG20k-N-hydroxysuccinimide (NHS) was dissolved in 2 mL dichloromethane and slowly added to a stirred 100 µmol 25% aqueous solution of G1.0 Polypropylenimine tetramine with 10% dichloromethane (DCM). After 30 minutes of stirring at 20°C, after 60 minutes, and after 90 minutes, 42 µmol dry EDC•HCl was added to the reaction mixture. After 2 hours total reaction time, solvent was removed 
+in vacuo
+. The product was purified by gel-filtration on a Superdex 75 column (GE Life Sciences), concentrated 
+in vacuo
+ and immediately used in the next step.
+Acridine-isothiocyanate synthesis
+9-chloroacridine (1 mmol, 214 mg) and AgSCN (2 mmol, 332 mg) was dispersed in 3 mL toluene in a closed 4 mL glass vial with thorough stirring and incubated in a 110°C oil bath for 24 hours. After 24 hours, the stirring of the reaction mixture was stopped and the solids were allowed to drop to the bottom of the vial. The clear colorless liquid was transferred to a glass vial and DCM was added to the reaction vial to extract more product from the solids. The DCM washing was repeated 3–4 times.
+PEG-dendrimer coupling to acridine-isothiocyanate
+The product from the previous step was re-dissolved in 2 mL methanol containing 70 µmol of triethylamine and 1 mL of the acridine-isothiocyanate product solution was added. After mixing, the solution was incubated at 20°C for 30 minutes. 1 mL of acridine-isothiocyanate was added two more times along with 0.1 mmol of triethylamine and the mixture was left to react for 30 minutes each cycle. After reaction, water and n-BuOH were added to have the reaction mixture separate into an organic and an aqueous phase, with the organic phase holding the excess acridine and the aqueous phase the PEG-conjugate. The aqueous phase was extracted several times with BuOH, until the BuOH-phase was not yellow anymore. After extraction, the yellow aqueous phases were lyophilized. Yellow PEG-dendrimer-acridine conjugate was purified by gel filtration using a Superdex 75 column in water and by reverse phase HPLC C18 column (Sigma Aldrich). UV absorbance of these conjugates at 420 nm was measured to calculate the acridine content. MALDI-TOF mass spectrometry was used to determine an average MW of these conjugates.
+Design and assembly of DNA origami structures
+The DNA origami nanostructures were designed using the honeycomb-lattice version of the caDNAno software (
+http://www.cadnano.org/
+). Assembly of the DNA nanostructures was accomplished in a one-pot reaction by mixing scaffold strands derived from M13 bacteriophage at 10 nM with 50 nM each oligonucleotide staple strand (reverse-phase cartridge purified, Bioneer Inc.) in a folding buffer containing 5mM Tris, 1 mM EDTA, pH 8, and a concentration of MgCl
+2
+ noted below, and subjecting the mixture to a thermal-annealing ramp: 80°C for 5 minutes, −1°C per cycle for 14 additional cycles, 65°C for 20 minutes, −1°C per cycle for 35 additional cycles. MgCl
+2
+ conditions listed in parenthesis: 6hb_10.5 bp/turn (20 mM), 6hb_ring (20 mM), 12hb_10.5 bp/turn (16 mM), 12hb_11.0 bp/turn (16 mM). For other structures, the MgCl
+2
+ was varied as listed in the figures, and structures were formed by quickly cooling the oligo mixtures from 80 °C to 60 °C over 1 hour, then continue cooling from 60 °C to 24°C over different time course of 2 hours, 4 hours, 8 hours, 16 hours, 24 hours or 72 hours. The folding ramps were named according to the time of the second cooling step, as 2-hour ramp, 4-hour ramp, etc.
+Agarose gel analysis
+Annealed DNA structures were purified by gel (1.5% to 2% agarose, 0.5×TBE (45 mM Tris-borate, 1 mM EDTA, pH 8.3), 11 mM MgCl
+2
+, 0.5 µg/mL ethidium bromide) electrophoresis with a Thermo Scientific Owl B2 EasyCast Mini Gel System apparatus in an ice-water bath. The DNA structure samples were loaded into the agarose gel and allowed to migrate for 3 hours (running buffer: 0.5×TBE, 11 mM MgCl
+2
+; running voltage: 2.85 V/cm). The fast migrating bands corresponding to the correctly folded structures were then visualized with ultraviolet light and cut out from the gel. Excised bands were crushed and transferred into DNA gel extraction spin column (BIO-RAD, Catalog number: 732–6166). The DNA structure solution was recovered by centrifugation of the loaded column for 10 minutes at 16000 × g. Yields of DNA nanostructures are estimated form fluorescence intensity. First the intensity of target band and that of the entire lane were measured using software ImageJ. After background correction, the yield is calculated as the ratio between the two, i.e. (Yield = Intensity of nanostructure band / Intensity of entire lane).
+Coating and agarose gel mobility shift assay
+The intercalation complex were prepared by mixing DNA with synthesized HPLC-purified PEG-tris-acridine in 10mM Tris, 1 mM EDTA, pH 8.0, 20 mM MgCl
+2
+, at the weight ratios indicated in the text, and incubated at 25°C for 30 minutes.
+Incubated particles were electrophoresed on a 1.5% agarose gel containing 0.5× TBE buffer (45 mM Tris boric acid, 45 mM Tris base, 11 mM MgCl
+2
+ and 1 mM EDTA (pH8) ) at 2.5 V/cm for 3 hours. After electrophoresis, the gel was stained by 0.5 µg/mL of ethidium bromide and analyzed by a Typhoon biomolecular imager (Typhoon Trio™ Variable mode imager, GE Healthcare) following the fluorescence of ethidium bromide at 610 nm band-pass 30 nm width emission filter and acridine at 520 nm band-pass 40 nm width emission filter.
+Transmission electron microscopy
+For imaging, particles were adsorbed onto glow discharged collodion and carbon coated TEM grids (Ted Pella) and then stained using a 2% aqueous uranyl formate solution containing 25 mM NaOH and visualized at 68000× magnification with an FEI Tecnai T12 BioTWIN or a JEOL JEM-1400 transmission electron microscope, operated at 80 kV in the bright field mode. For PEGylated nanostructures, 0.5% ruthenium tetroxide aqueous was used to stain synthetic polymers like PEG.
+Supplementary Material
+Supplementary
+NIHMS411654-supplement-Supplementary.pdf
+ (29MB, pdf) 
+References
+1.
+Seeman NC. J. Theor. Biol. 1982;99:237–247. doi: 10.1016/0022-5193(82)90002-9.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+2.
+Seeman NC. Annu. Rev. Biochem. 2010;79:65–87. doi: 10.1146/annurev-biochem-060308-102244.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+3.
+Rothemund P. Nature. 2006;440:297–302. doi: 10.1038/nature04586.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+4.
+Douglas SM, Dietz H, Liedl T, Hogberg B, Graf F, Shih WM. Nature. 2009;459:414–418. doi: 10.1038/nature08016.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+5.
+Dietz H, Douglas SM, Shih WM. Science. 2009;325:725–730. doi: 10.1126/science.1174251.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+6.
+Han D, Pal S, Nangreave J, Deng Z, Liu Y, Yan H. Science. 2011;332:342–346. doi: 10.1126/science.1202998.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+7.
+Pinheiro AV, Han D, Shih WM, Yan H. Nature Nanotechnology. 2011;6:763–772. doi: 10.1038/nnano.2011.187.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+8.
+Liu LF, Wang JC. Biochim. Biophys. Acta. 1975;395:401–412.
+ [
+PubMed
+] [
+Google Scholar
+]
+9.
+Nelson JW, Tinoco I. Biopolymers. 1984;23:213–233. doi: 10.1002/bip.360230205.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+10.
+Gaugain B, Markovits J, Lepecq J, Roques B. FEBS Letters. 1984;169:123–126. doi: 10.1016/0014-5793(84)80302-6.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+11.
+Li HJ, Crothers DM. J. Mol. Biol. 1969;39:461–477. doi: 10.1016/0022-2836(69)90138-7.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+12.
+Zunino F, Di Marco A, Zaccara A, Gambetta RA. Biochim. Biophys. Acta. 1980;607:206–214. doi: 10.1016/0005-2787(80)90073-8.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+13.
+Neto B, Lapis A. Molecules 2009, Vol. 14, Pages 1725–1746. 2009;14:1725–1746. doi: 10.3390/molecules14051725.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+14.
+Boulanger C, Di Giorgio C, Vierling P. Eur J Med Chem. 2005;40:1295–1306. doi: 10.1016/j.ejmech.2005.07.015.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+15.
+Shiraishi T, Hamzavi R, Nielsen PE. Bioconjug Chem. 2005;16:1112–1116. doi: 10.1021/bc050093f.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+16.
+Zhang H, Mitin A, Vinogradov SV. Bioconjug Chem. 2009;20:120–128. doi: 10.1021/bc8003414.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+17.
+Vinogradov SV, Zhang H, Mitin A, Warren G. Polymer Prepr. 2008;49:434–435.
+ [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+18.
+Douglas SM, Marblestone AH, Teerapittayanon S, Vazquez A, Church GM, Shih WM. Nucleic Acids Research. 2009;37:5001–5006. doi: 10.1093/nar/gkp436.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+19.
+Dogic Z, Fraden S. Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences. 2001;359:997–1015.
+ [
+Google Scholar
+]
+20.
+Yan H, LaBean TH, Feng L, Reif JH. PNAS. 2003;100:8103–8108. doi: 10.1073/pnas.1032954100.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+21.
+Ke Y, Voigt NV, Gothelf KV, Shih WM. J.Am.Chem.Soc. 2012 doi: 10.1021/ja209719k.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+22.
+Zhang X, Yan H, Shen Z, Seeman NC. J.Am.Chem.Soc. 2002;124:12940–12941. doi: 10.1021/ja026973b.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+23.
+Shen Z, Yan H, Wang T, Seeman NC. J.Am.Chem.Soc. 2004;126:1666–1674. doi: 10.1021/ja038381e.
+ [
+DOI
+] [
+PMC free article
+] [
+PubMed
+] [
+Google Scholar
+]
+24.
+Yurke B, Turberfield AJ, Mills AP, Simmel FC, Neumann JL. Nature. 2000;406:605–608. doi: 10.1038/35020524.
+ [
+DOI
+] [
+PubMed
+] [
+Google Scholar
+]
+Associated Data
+This section collects any data citations, data availability statements, or supplementary materials included in this article.
+Supplementary Materials
+Supplementary
+NIHMS411654-supplement-Supplementary.pdf
+ (29MB, pdf) 
+ACTIONS
+View on publisher site
+PDF (4.1 MB)
+Cite
+Collections
+Permalink
+PERMALINK
+Copy
+RESOURCES
+ Similar articles
+ Cited by other articles
+ Links to NCBI Databases
+Cite
+Copy
+Download .nbib
+.nbib
+Format:
+ AMA
+ APA
+ MLA
+ NLM
+Add to Collections
+Create a new collection
+Add to an existing collection
+ Name your collection
+*
+ Choose a collection
+ Unable to load your collection due to an error
+Please try again
+ Add
+ Cancel
+ Follow NCBI
+NCBI on X (formerly known as Twitter)
+NCBI on Facebook
+NCBI on LinkedIn
+NCBI on GitHub
+NCBI RSS feed
+ Connect with NLM
+NLM on X (formerly known as Twitter)
+NLM on Facebook
+NLM on YouTube
+National Library of Medicine
+ 8600 Rockville Pike
+ Bethesda, MD 20894
+ Web Policies
+ FOIA
+ HHS Vulnerability Disclosure
+ Help
+ Accessibility
+ Careers
+ NLM
+ NIH
+ HHS
+ USA.gov
+Back to Top

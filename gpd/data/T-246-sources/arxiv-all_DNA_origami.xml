@@ -1,0 +1,852 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/LCcoqcpKkpQJB8JqIWI1G5uKaTE</id>
+  <title>arXiv Query: search_query=all:"DNA origami"&amp;id_list=&amp;start=0&amp;max_results=25</title>
+  <updated>2026-08-19T19:43:17Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22DNA+origami%22&amp;start=0&amp;max_results=25&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>25</opensearch:itemsPerPage>
+  <opensearch:totalResults>131</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2105.00807v1</id>
+    <title>DNA Origami Route for Nanophotonics</title>
+    <updated>2021-04-30T12:08:28Z</updated>
+    <link href="https://arxiv.org/abs/2105.00807v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2105.00807v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The specificity and simplicity of the Watson-Crick base pair interactions make DNA one of the most versatile construction materials for creating nanoscale structures and devices. Among several DNA-based approaches, the DNA origami technique excels in programmable self-assembly of complex, arbitrary shaped structures with dimensions of hundreds of nanometers. Importantly, DNA origami can be used as templates for assembly of functional nanoscale components into three-dimensional structures with high precision and controlled stoichiometry. This is often beyond the reach of other nanofabrication techniques. In this Perspective, we highlight the capability of the DNA origami technique for realization of novel nanophotonic systems. First, we introduce the basic principles of designing and fabrication of DNA origami structures. Subsequently, we review recent advances of the DNA origami applications in nanoplasmonics, single-molecule and super-resolution fluorescent imaging, as well as hybrid photonic systems. We conclude by outlining the future prospects of the DNA origami technique for advanced nanophotonic systems with tailored functionalities.</summary>
+    <category term="physics.optics" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.bio-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-04-30T12:08:28Z</published>
+    <arxiv:primary_category term="physics.optics"/>
+    <arxiv:journal_ref>ACS Photonics 5, 4, 1151-1163 (2018)</arxiv:journal_ref>
+    <author>
+      <name>Anton Kuzyk</name>
+    </author>
+    <author>
+      <name>Ralf Jungmann</name>
+    </author>
+    <author>
+      <name>Guillermo P. Acuna</name>
+    </author>
+    <author>
+      <name>Na Liu</name>
+    </author>
+    <arxiv:doi>10.1021/acsphotonics.7b01580</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1021/acsphotonics.7b01580" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2104.15016v1</id>
+    <title>DNA origami</title>
+    <updated>2021-04-30T14:03:59Z</updated>
+    <link href="https://arxiv.org/abs/2104.15016v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2104.15016v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Biological materials are self-assembled with near-atomic precision in living cells, whereas synthetic 3D structures generally lack such precision and controllability. Recently, DNA nanotechnology, especially DNA origami technology, has been useful in the bottom-up fabrication of well-defined nanostructures ranging from tens of nanometres to sub-micrometres. In this Primer, we summarize the methodologies of DNA origami technology, including origami design, synthesis, functionalization and characterization. We highlight applications of origami structures in nanofabrication, nanophotonics and nanoelectronics, catalysis, computation, molecular machines, bioimaging, drug delivery and biophysics. We identify challenges for the field, including size limits, stability issues and the scale of production, and discuss their possible solutions. We further provide an outlook on next-generation DNA origami techniques that will allow in vivo synthesis and multiscale manufacturing.</summary>
+    <category term="physics.bio-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.soft" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-04-30T14:03:59Z</published>
+    <arxiv:primary_category term="physics.bio-ph"/>
+    <arxiv:journal_ref>Nature Reviews Methods Primers 1, Article number: 13 (2021)</arxiv:journal_ref>
+    <author>
+      <name>Swarup Dey</name>
+    </author>
+    <author>
+      <name>Chunhai Fan</name>
+    </author>
+    <author>
+      <name>Kurt V. Gothelf</name>
+    </author>
+    <author>
+      <name>Jiang Li</name>
+    </author>
+    <author>
+      <name>Chenxiang Lin</name>
+    </author>
+    <author>
+      <name>Longfei Liu</name>
+    </author>
+    <author>
+      <name>Na Liu</name>
+    </author>
+    <author>
+      <name>Minke A. D. Nijenhuis</name>
+    </author>
+    <author>
+      <name>Barbara Sacca</name>
+    </author>
+    <author>
+      <name>Friedrich C. Simmel</name>
+    </author>
+    <author>
+      <name>Hao Yan</name>
+    </author>
+    <author>
+      <name>Pengfei Zhan</name>
+    </author>
+    <arxiv:doi>10.1038/s43586-020-00009-8</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1038/s43586-020-00009-8" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2409.13206v1</id>
+    <title>How we simulate DNA origami</title>
+    <updated>2024-09-20T04:28:22Z</updated>
+    <link href="https://arxiv.org/abs/2409.13206v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2409.13206v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>DNA origami consists of a long scaffold strand and short staple strands that self-assemble into a target 2D or 3D shape. It is a widely used construct in nucleic acid nanotechnology, offering a cost-effective way to design and create diverse nanoscale shapes. With promising applications in areas such as nanofabrication, diagnostics, and therapeutics, DNA origami has become a key tool in the bionanotechnology field. Simulations of these structures can offer insight into their shape and function, thus speeding up and simplifying the design process. However, simulating these structures, often comprising thousands of base pairs, poses challenges due to their large size. OxDNA, a coarse-grained model specifically designed for DNA nanotechnology, offers powerful simulation capabilities. Its associated ecosystem of visualization and analysis tools can complement experimental work with in silico characterization. This tutorial provides a general approach to simulating DNA origami structures using the oxDNA ecosystem, tailored for experimentalists looking to integrate computational analysis into their design workflow.</summary>
+    <category term="cond-mat.soft" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.comp-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.ed-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-09-20T04:28:22Z</published>
+    <arxiv:primary_category term="cond-mat.soft"/>
+    <author>
+      <name>Sarah Haggenmueller</name>
+    </author>
+    <author>
+      <name>Michael Matthies</name>
+    </author>
+    <author>
+      <name>Matthew Sample</name>
+    </author>
+    <author>
+      <name>Petr Šulc</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2501.14966v1</id>
+    <title>Structures of Monoids Motivated by DNA Origami</title>
+    <updated>2025-01-24T23:01:30Z</updated>
+    <link href="https://arxiv.org/abs/2501.14966v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2501.14966v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We construct a class of monoids, called origami monoids, motivated by Jones monoids and by strand organization in DNA origami structures. Two types of basic building blocks of DNA origami closely associated with the graphical representation of Jones monoids are identified and are taken as generators for the origami monoid. Motivated by plausible modifications of the DNA origami structures and the relations of the well studied Jones monoids, we then identify a set of relations that characterize the origami monoid. These relations expand the relations of the Jones monoids and include a new set of relations called contextual commutation. With contextual commutation, certain generators commute only when found within a given context. We prove that the origami monoids are finite and propose a normal form representation of their elements. We establish a correspondence between the Green's classes of the origami monoid and the Green's classes of a direct product of Jones monoids.</summary>
+    <category term="math.RA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-01-24T23:01:30Z</published>
+    <arxiv:primary_category term="math.RA"/>
+    <author>
+      <name>Peter Alspaugh</name>
+    </author>
+    <author>
+      <name>James Garrett</name>
+    </author>
+    <author>
+      <name>Nataša Jonoska</name>
+    </author>
+    <author>
+      <name>Masahico Saito</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.21741v1</id>
+    <title>Rheology and Programmable Gelation of DNA Origami Polymer Tadpoles</title>
+    <updated>2026-05-20T21:09:12Z</updated>
+    <link href="https://arxiv.org/abs/2605.21741v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.21741v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>DNA origami is a powerful method to achieve nanoscale folded structures. Despite rapid improvements in folding and purification methods, DNA origami objects are still often produced in small quantities and studied at single molecule scale. Here, we design simple DNA origami-inspired polymers with complex topologies, and study their rheology and viscoelastic properties in dense conditions. First, we designed and purified topologically distinct DNA nanostructures, linear, circular, and "tadpole" polymers, to evaluate how polymer architecture influences entanglement and rheology. Despite their distinct topologies, we observe that all constructs obeyed universal rheological scalings, likely due to their short length. However, upon thermal annealing in the bulk, the DNA origami-like polymers displayed significantly different behaviours. Our results suggest that DNA origami-like polymers could be used to engineer thermoresponsive behaviours in complex fluids by introducing reversible and topology-dependent crosslinking.</summary>
+    <category term="cond-mat.soft" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-20T21:09:12Z</published>
+    <arxiv:primary_category term="cond-mat.soft"/>
+    <author>
+      <name>Jennifer Harnett</name>
+    </author>
+    <author>
+      <name>Saminathan Ramakrishnan</name>
+    </author>
+    <author>
+      <name>Alice L. B. Pyne</name>
+    </author>
+    <author>
+      <name>Elizabeth P. Holmes</name>
+    </author>
+    <author>
+      <name>Davide Michieletto</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1912.05261v1</id>
+    <title>Interchromophoric Interactions Determine the Maximum Brightness Density in DNA Origami Structures</title>
+    <updated>2019-12-11T12:29:09Z</updated>
+    <link href="https://arxiv.org/abs/1912.05261v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1912.05261v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>An ideal point light source is as small and as bright as possible. For fluorescent point light sources, homogeneity of the light sources is important as well as that the fluorescent units inside the light source maintain their photophysical properties which is compromised by dye aggregation. Here we propose DNA origami as a rigid scaffold to arrange dye molecules in a dense pixel array with high control of stoichiometry and dye-dye interactions. In order to find the highest labeling density in a DNA origami structure without influencing dye photophysics we alter the distance of two ATTO647N dyes in single base pair steps and probe the dye-dye interactions on the single-molecule level. For small distances strong quenching in terms of intensity and fluorescence lifetime is observed. With increasing distance, we observe reduced quenching and molecular dynamics. However, energy transfer processes in the weak coupling regime still have a significant impact and can lead to quenching by singlet-dark-state-annihilation. Our study fills a gap of studying the interactions of dyes relevant for superresolution microscopy with dense labeling and for single-molecule biophysics. Incorporating these findings in a 3D DNA origami object will pave the way to bright and homogeneous DNA origami nanobeads.</summary>
+    <category term="physics.chem-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-12-11T12:29:09Z</published>
+    <arxiv:primary_category term="physics.chem-ph"/>
+    <author>
+      <name>Tim Schröder</name>
+    </author>
+    <author>
+      <name>Max B. Scheible</name>
+    </author>
+    <author>
+      <name>Florian Steiner</name>
+    </author>
+    <author>
+      <name>Jan Vogelsang</name>
+    </author>
+    <author>
+      <name>Philip Tinnefeld</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1705.08944v1</id>
+    <title>Molecular engineering of chiral colloidal liquid crystals using DNA origami</title>
+    <updated>2017-05-24T19:44:48Z</updated>
+    <link href="https://arxiv.org/abs/1705.08944v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1705.08944v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Establishing precise control over the shape and the interactions of the microscopic building blocks is essential for design of macroscopic soft materials with novel structural, optical and mechanical properties. Here, we demonstrate robust assembly of DNA origami filaments into cholesteric liquid crystals, 1D supramolecular twisted ribbons and 2D colloidal membranes. The exquisite control afforded by the DNA origami technology establishes a quantitative relationship between the microscopic filament structure and the macroscopic cholesteric pitch. Furthermore, it also enables robust assembly of 1D twisted ribbons, which behave as effective supramolecular polymers whose structure and elastic properties can be precisely tuned by controlling the geometry of the elemental building blocks. Our results demonstrate the potential synergy between DNA origami technology and colloidal science, in which the former allows for rapid and robust synthesis of complex particles, and the latter can be used to assemble such particles into bulk materials.</summary>
+    <category term="cond-mat.soft" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-05-24T19:44:48Z</published>
+    <arxiv:primary_category term="cond-mat.soft"/>
+    <arxiv:journal_ref>Nature Materials (2017)</arxiv:journal_ref>
+    <author>
+      <name>Mahsa Siavashpouri</name>
+    </author>
+    <author>
+      <name>Christian H. Wachauf</name>
+    </author>
+    <author>
+      <name>Mark J. Zakhary</name>
+    </author>
+    <author>
+      <name>Florian Praetorius</name>
+    </author>
+    <author>
+      <name>Hendrik Dietz</name>
+    </author>
+    <author>
+      <name>Zvonimir Dogic</name>
+    </author>
+    <arxiv:doi>10.1038/nmat4909</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1038/nmat4909" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2104.14943v1</id>
+    <title>DNA Origami Catenanes Templated by Gold Nanoparticles</title>
+    <updated>2021-04-30T12:15:10Z</updated>
+    <link href="https://arxiv.org/abs/2104.14943v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2104.14943v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Mechanically interlocked molecules have marked a breakthrough in the field of topological chemistry and boosted the vigorous development of molecular machinery. As an archetypal example of the interlocked molecules, catenanes comprise macrocycles that are threaded through one another like links in a chain. Inspired by the transition metal-templated approach of catenanes synthesis, the hierarchical assembly of DNA origami catenanes templated by gold nanoparticles is demonstrated in this work. DNA origami catenanes, which contain two, three or four interlocked rings are successfully created. In particular, the origami rings within the individual catenanes can be set free with respect to one another by releasing the interconnecting gold nanoparticles. This work will set the basis for rich progress toward DNA-based molecular architectures with unique structural programmability and well-defined topology.</summary>
+    <category term="physics.bio-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.optics" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-04-30T12:15:10Z</published>
+    <arxiv:primary_category term="physics.bio-ph"/>
+    <arxiv:journal_ref>Small Vol. 16, Issue 6 (2020)</arxiv:journal_ref>
+    <author>
+      <name>Andreas Peil</name>
+    </author>
+    <author>
+      <name>Pengfei Zhan</name>
+    </author>
+    <author>
+      <name>Na Liu</name>
+    </author>
+    <arxiv:doi>10.1002/smll.201905987</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1002/smll.201905987" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2410.13393v1</id>
+    <title>Fabrication of functional 3D nanoarchitectures via atomic layer deposition on DNA origami crystals</title>
+    <updated>2024-10-17T09:45:30Z</updated>
+    <link href="https://arxiv.org/abs/2410.13393v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2410.13393v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While DNA origami is a powerful bottom-up fabrication technique, the physical and chemical stability of DNA nanostructures is generally limited to aqueous buffer conditions. Wet chemical silicification can stabilise these structures but does not add further functionality. Here, we demonstrate a versatile 3D nanofabrication technique to conformally coat micrometre-sized DNA origami crystals with functional metal oxides via atomic layer deposition (ALD). In addition to depositing homogenous and conformal nanometre-thin ZnO, TiO2, and IrO2 (multi)layers inside SiO2-stablised crystals, we establish a method to directly coat bare DNA crystals with ALD layers while maintaining the crystal integrity, enabled by critical point drying and low ALD process temperatures. As a proof-of-concept application, we demonstrate electrocatalytic water oxidation using ALD IrO2-coated DNA origami crystals, resulting in improved performance relative to planar films. Overall, our coating strategy establishes a tool set for designing custom-made 3D nanomaterials with precisely defined topologies and material compositions, combining the unique advantages of DNA origami and atomically controlled deposition of functional inorganic materials.</summary>
+    <category term="physics.app-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.mtrl-sci" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.bio-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-10-17T09:45:30Z</published>
+    <arxiv:primary_category term="physics.app-ph"/>
+    <author>
+      <name>Arthur Ermatov</name>
+    </author>
+    <author>
+      <name>Melisande Kost</name>
+    </author>
+    <author>
+      <name>Xin Yin</name>
+    </author>
+    <author>
+      <name>Paul Butler</name>
+    </author>
+    <author>
+      <name>Mihir Dass</name>
+    </author>
+    <author>
+      <name>Ian D. Sharp</name>
+    </author>
+    <author>
+      <name>Tim Liedl</name>
+    </author>
+    <author>
+      <name>Thomas Bein</name>
+    </author>
+    <author>
+      <name>Gregor Posnjak</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1901.09120v1</id>
+    <title>Algebraic Systems for DNA Origami Motivated from Temperley-Lieb Algebras</title>
+    <updated>2019-01-26T00:12:26Z</updated>
+    <link href="https://arxiv.org/abs/1901.09120v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1901.09120v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We initiate an algebraic approach to study DNA origami structures by associating an element from a monoid to each structure. We identify two types of basic building blocks and describe an DNA origami structure with their composition. These building blocks are taken as generators of a monoid, called origami monoid, and, motivated by the well studied Temperley-Lieb algebras, we identify a set of relations that characterize the origami monoid. We also present several observations about the Green's relations for the origami monoid and study the relations to a cross product of Jones monoids that is a morphic image of an origami monoid.</summary>
+    <category term="math.RA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-01-26T00:12:26Z</published>
+    <arxiv:primary_category term="math.RA"/>
+    <author>
+      <name>James Garrett</name>
+    </author>
+    <author>
+      <name>Nataša Jonoska</name>
+    </author>
+    <author>
+      <name>Hwee Kim</name>
+    </author>
+    <author>
+      <name>Masahico Saito</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1310.4556v2</id>
+    <title>SERS Plasmonic Enhancement using DNA Origami-based Complex Metallic Nanostructures</title>
+    <updated>2014-01-25T03:29:09Z</updated>
+    <link href="https://arxiv.org/abs/1310.4556v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1310.4556v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>DNA origami is a novel self-assembly technique allowing one to form various 2D shapes and position matter with nanometer accuracy. It has been used to coordinate placement of nanoscale objects, both organic and inorganic; to make molecular motors and walkers; and to create optically active nanostructures. Here we use DNA origami templates to engineer Surfaced Enhanced Raman Scattering (SERS) substrates. Specifically, gold nanoparticles were selectively attached to the corners of rectangular origami and subsequently enlarged via solution-based metal deposition. The resulting assemblies were designed to form "hot spots" of enhanced electromagnetic field between the nanoparticles. We observed a significant enhancement of the Raman signal from molecules covalently attached to the assemblies, as compared to control nanoparticle samples which lack inter-particle hot spots. Our method opens up the prospects of using DNA origami to rationally engineer and assemble plasmonic structures for molecular spectroscopy.</summary>
+    <category term="cond-mat.mtrl-sci" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.soft" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2013-10-17T00:51:21Z</published>
+    <arxiv:primary_category term="cond-mat.mtrl-sci"/>
+    <author>
+      <name>M. Pilo-Pais</name>
+    </author>
+    <author>
+      <name>A. Watson</name>
+    </author>
+    <author>
+      <name>S. Demers</name>
+    </author>
+    <author>
+      <name>T. H. LaBean</name>
+    </author>
+    <author>
+      <name>G. Finkelstein</name>
+    </author>
+    <arxiv:doi>10.1021/nl5003069</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1021/nl5003069" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.05440v1</id>
+    <title>3D DNA Origami-Enabled Molecularly Addressable Optical Nanocircuit</title>
+    <updated>2025-08-07T14:29:43Z</updated>
+    <link href="https://arxiv.org/abs/2508.05440v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.05440v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The optical nanocircuit concept provides a predictive framework analogous to an electric RLC circuit, where induced dipoles in plasmonic nanoparticle (NPs), ohmic losses in NPs, and dielectric gaps serve as inductors (L), capacitors (C), and resistors (R), respectively. This modular theory allows unprecedented design flexibility, expanding the range of achievable optical resonances in plasmonic clusters. However, existing experimental approaches, such as atomic force microscope tip-enabled nanomanipulation and electron-beam lithography, lack the critical accuracy in nanogap tuning and molecular loading required for applications like PRET. Here, we introduce a molecularly addressable optical nanocircuit enabled by DNA origami. First, we theoretically and experimentally confirmed that gold (Au) NPs and dye-loaded DNA origami can function as different circuit elements: R- and C-coupled L and R-coupled C, respectively. To assemble large Au NPs into designer optical nanocircuits, we utilized a mechanically robust 3D DNA origami design rather than conventionally used 2D origami sheet. This platform provided high reproducibility and accuracy in assembling a range of structures-from dimers to tetramers-with controlled symmetry, heterogeneity, and nanogap tunability. Together with ultrasmoothness and uniformity of Au NPs, we achieved the highest Q-factor for magnetic resonance of a nanoparticle-based optical nanocircuit (~19.2). Also, selective molecular cargo loading onto designated 3D DNA origami sites within plasmonic clusters enabled deterministic, predictive light-molecule coupling in optical nanocircuits. This resulted in 100-fold stronger PRET signal in dimeric clusters compared to monomeric NPs. Our approach opens promising directions in designing custom optical resonances for use in molecular sensing, nonlinear optics, and quantum photonics.</summary>
+    <category term="physics.optics" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.app-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-07T14:29:43Z</published>
+    <arxiv:comment>7 Figures</arxiv:comment>
+    <arxiv:primary_category term="physics.optics"/>
+    <author>
+      <name>Jaewon Lee</name>
+    </author>
+    <author>
+      <name>Hayun Ahn</name>
+    </author>
+    <author>
+      <name>Kyung Hun Rho</name>
+    </author>
+    <author>
+      <name>Shelley F. J. Wickham</name>
+    </author>
+    <author>
+      <name>William M. Shih</name>
+    </author>
+    <author>
+      <name>Seungwoo Lee</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2204.07385v1</id>
+    <title>In situ small-angle X-ray scattering reveals strong condensation of DNA origami during silicification</title>
+    <updated>2022-04-15T08:48:56Z</updated>
+    <link href="https://arxiv.org/abs/2204.07385v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2204.07385v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The silicification of DNA origami structures increases their mechanical and thermal stability and provides chemical protection. So far, it is unclear how silicification affects the internal structure of the DNA origami and whether the whole DNA framework is embedded or if silica just forms an outer shell. By using in situ small-angle X-ray scattering (SAXS), we show that the net-cationic silica precursor TMAPS induces substantial condensation of the DNA origami, which is further enhanced by the addition of TEOS at early reaction times to an almost 10 % size reduction. We identify the SAXS Porod invariant as a reliable, model-free parameter for the evaluation of the amount of silica formation at a given time. Contrast matching of the DNA double helix Lorentzian peak reveals that silica growth also occurs on the inner surfaces of the origami. The less polar silica forming within the origami structure, replacing more than 40 % of the internal hydration water causes a hydrophobic effect: origami condensation. In the maximally condensed state, thermal stabilization of the origami up to 60 °C could be observed. If the reaction is driven beyond this point, the overall size of the silicified origami increases again due to more and more silica deposition on the DNA origami. DNA origami objects with flat surfaces show a strong tendency towards aggregation during silicification, presumably driven by the very same entropic forces causing condensation. Our studies provide novel insights into the silicification reaction and hints for the formulation of optimized reaction protocols.</summary>
+    <category term="cond-mat.soft" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.bio-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-04-15T08:48:56Z</published>
+    <arxiv:primary_category term="cond-mat.soft"/>
+    <author>
+      <name>Martina F. Ober</name>
+    </author>
+    <author>
+      <name>Anna Baptist</name>
+    </author>
+    <author>
+      <name>Lea Wassermann</name>
+    </author>
+    <author>
+      <name>Amelie Heuer-Jungemann</name>
+    </author>
+    <author>
+      <name>Bert Nickel</name>
+    </author>
+    <arxiv:doi>10.1038/s41467-022-33083-5</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1038/s41467-022-33083-5" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2112.00406v2</id>
+    <title>Electrical Characterization of DNA Origami Structures with PEG-PLL coating for improved robustness</title>
+    <updated>2022-06-12T09:32:17Z</updated>
+    <link href="https://arxiv.org/abs/2112.00406v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2112.00406v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Electrical conductivity of DNA has been a controversial topic since it was first proposed in 1962. Disparities in the experimental results can often be explained by differences of the ambient or experimental conditions. We report the dielectrophoretic trapping and electrical characterization of two rod-like DNA origami structures with different modifications. These were 12helix bundles, with either thiol-ends or polyA single-stranded overhangs, and 30-helix bundles, with thiol-ends and either with or without a PEG-PLL coating. The observed impedance spectra showed ohmic resistances ranging from 500 k$Ω$ to 3.4 M$Ω$ for the 30-helix bundle structures with a PEG-PLL coating. DNA origami structures without the coating were always nonconductive. Depending on the structure, destruction of the gold nanoelectrodes occurred frequently during the trapping of DNA origami nanostructures. This indicates high currents, resulting from the trapped conductive nanostructures.</summary>
+    <category term="cond-mat.soft" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-12-01T10:45:16Z</published>
+    <arxiv:comment>12 pages, 6 figures, one table; updated after revier comments. Submitted to Chem Phys Chem</arxiv:comment>
+    <arxiv:primary_category term="cond-mat.soft"/>
+    <author>
+      <name>Florian Heimbach</name>
+      <arxiv:affiliation>Physikalisch-Technische Bundesanstalt</arxiv:affiliation>
+      <arxiv:affiliation>Ludwig-Maximilians-Universität München</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Johann Bohlen</name>
+      <arxiv:affiliation>Ludwig-Maximilians-Universität München</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Hans Rabus</name>
+      <arxiv:affiliation>Physikalisch-Technische Bundesanstalt</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Woon Yong Baek</name>
+      <arxiv:affiliation>Physikalisch-Technische Bundesanstalt</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Philip Tinnefeld</name>
+      <arxiv:affiliation>Ludwig-Maximilians-Universität München</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.17801v2</id>
+    <title>Characterizing the Structure of 3D DNA Origami in a Transmission Electron Microscope</title>
+    <updated>2025-11-17T12:11:30Z</updated>
+    <link href="https://arxiv.org/abs/2509.17801v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.17801v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>DNA origami nanostructures provide programmable control over nanoscale geometry but remain challenging to image due to their low atomic number. Here, we systematically evaluate imaging strategies for both stained and unstained DNA origami deposited on carbon-coated TEM grids. Using Weber contrast as a quantitative metric, we compared different operating modes of (scanning) transmission electron microscopy, (S)TEM, in order to find optimum imaging conditions. STEM was consistently found to deliver the highest contrast, with optimal performance at a camera length of 600 mm towards the high angle annular dark field (HAADF) detector. As expected, the contrast was higher for the thicker three-dimensional nanotubes as compared to DNA 6-helix bundles (6HBs) due to the larger projected thickness of the former. The contrast was effectively enhanced by heavy metal staining with uranyl formate. Notably, 3D molds preserved their designated dimensions upon staining and also largely retained their structural integrity upon complexation with palladium, which also improved the visibility of the structures. These results establish STEM as the optimal approach for high-contrast imaging of DNA origami even of unstained samples and provide practical guidelines for sample preparation and imaging conditions that promote reliable structural visualization.</summary>
+    <category term="cond-mat.mtrl-sci" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-22T13:56:27Z</published>
+    <arxiv:comment>18 pages, 6 figures, 2 supplementary figures. Corrected funding source in the acknowledgement. Added one reference and on affiliation. Corrected typos</arxiv:comment>
+    <arxiv:primary_category term="cond-mat.mtrl-sci"/>
+    <author>
+      <name>Alyna Ong</name>
+    </author>
+    <author>
+      <name>Christoph Hadlich</name>
+    </author>
+    <author>
+      <name>Taekyu Jeong</name>
+    </author>
+    <author>
+      <name>Darius Pohl</name>
+    </author>
+    <author>
+      <name>Iman Elbalasy</name>
+    </author>
+    <author>
+      <name>Ralf Seidel</name>
+    </author>
+    <author>
+      <name>Michael Mertig</name>
+    </author>
+    <author>
+      <name>Bernd Rellinghaus</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1706.06965v1</id>
+    <title>3D DNA origami crystals</title>
+    <updated>2017-06-21T15:41:45Z</updated>
+    <link href="https://arxiv.org/abs/1706.06965v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1706.06965v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Engineering shape and interactions of nanoscopic building blocks allows for the assembly of rationally designed macroscopic three-dimensional (3D) materials with spatial accuracy inaccessible to top-down fabrication methods. Owing to its sequence-specific interaction, DNA is often used as selective binder to connect metallic nanoparticles into highly ordered lattices. Moreover, 3D crystals assembled entirely from DNA have been proposed and implemented with the declared goal to arrange guest molecules in predefined lattices. This requires design schemes that provide high rigidity and sufficiently large open guest space. We here present a DNA origami-based tensegrity triangle structure that assembles into a 3D rhombohedral crystalline lattice. We site-specifically place 10 nm and 20 nm gold particles within the lattice, demonstrating that our crystals are spacious enough to host e.g. ribosome-sized macromolecules. We validate the accurate assembly of the DNA origami lattice itself as well as the precise incorporation of gold particles by electron microscopy and small angle X-ray scattering (SAXS) experiments. Our results show that it is possible to create DNA building blocks that assemble into lattices with customized geometry. Site-specific hosting of nano objects in the transparent DNA lattice sets the stage for metamaterial and structural biology applications.</summary>
+    <category term="cond-mat.soft" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-06-21T15:41:45Z</published>
+    <arxiv:comment>21 pages; 4 figures; supplementary information is included</arxiv:comment>
+    <arxiv:primary_category term="cond-mat.soft"/>
+    <author>
+      <name>Tao Zhang</name>
+    </author>
+    <author>
+      <name>Caroline Hartl</name>
+    </author>
+    <author>
+      <name>Stefan Fischer</name>
+    </author>
+    <author>
+      <name>Kilian Frank</name>
+    </author>
+    <author>
+      <name>Philipp Nickels</name>
+    </author>
+    <author>
+      <name>Amelie Heuer-Jungemann</name>
+    </author>
+    <author>
+      <name>Bert Nickel</name>
+    </author>
+    <author>
+      <name>Tim Liedl</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2004.05052v1</id>
+    <title>The oxDNA coarse-grained model as a tool to simulate DNA origami</title>
+    <updated>2020-04-10T14:35:27Z</updated>
+    <link href="https://arxiv.org/abs/2004.05052v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2004.05052v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This chapter introduces how to run molecular dynamics simulations for DNA origami using the oxDNA coarse-grained model.</summary>
+    <category term="cond-mat.soft" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.mes-hall" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-04-10T14:35:27Z</published>
+    <arxiv:comment>17 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="cond-mat.soft"/>
+    <arxiv:journal_ref>Methods in Molecular Biology 2639, 93-112 (2023)</arxiv:journal_ref>
+    <author>
+      <name>Jonathan P. K. Doye</name>
+    </author>
+    <author>
+      <name>Hannah Fowler</name>
+    </author>
+    <author>
+      <name>Domen Prešern</name>
+    </author>
+    <author>
+      <name>Joakim Bohlin</name>
+    </author>
+    <author>
+      <name>Lorenzo Rovigatti</name>
+    </author>
+    <author>
+      <name>Flavio Romano</name>
+    </author>
+    <author>
+      <name>Petr Šulc</name>
+    </author>
+    <author>
+      <name>Chak Kui Wong</name>
+    </author>
+    <author>
+      <name>Ard A. Louis</name>
+    </author>
+    <author>
+      <name>John S. Schreck</name>
+    </author>
+    <author>
+      <name>Megan C. Engel</name>
+    </author>
+    <author>
+      <name>Michael Matthies</name>
+    </author>
+    <author>
+      <name>Erik Benson</name>
+    </author>
+    <author>
+      <name>Erik Poppleton</name>
+    </author>
+    <author>
+      <name>Benedict E. K. Snodin</name>
+    </author>
+    <arxiv:doi>10.1007/978-1-0716-3028-0_6</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/978-1-0716-3028-0_6" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2201.08920v1</id>
+    <title>The free-energy landscape of a mechanically bistable DNA origami</title>
+    <updated>2022-01-21T23:09:49Z</updated>
+    <link href="https://arxiv.org/abs/2201.08920v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2201.08920v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Molecular simulations using coarse-grained models allow the structure, dynamics and mechanics of DNA origamis to be comprehensively characterized. Here, we focus on the free-energy landscape of a jointed DNA origami that has been designed to exhibit two mechanically stable states and for which a bistable landscape has been inferred from ensembles of structures visualized by electron microscopy. Surprisingly, simulations using the oxDNA model predict that the defect-free origami has a single free-energy minimum. The expected second state is not stable because the hinge joints do not simply allow free angular motion but instead lead to increasing free-energetic penalties as the joint angles relevant to the second state are approached. This raises interesting questions about the cause of this difference between simulations and experiment, such as how assembly defects might affect the ensemble of structures observed experimentally.</summary>
+    <category term="cond-mat.soft" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-01-21T23:09:49Z</published>
+    <arxiv:comment>main: 7 pages, 6 figures; supplementary material: 6 pages, 8 figures</arxiv:comment>
+    <arxiv:primary_category term="cond-mat.soft"/>
+    <arxiv:journal_ref>Appl. Sci. 12, 5875 (2022)</arxiv:journal_ref>
+    <author>
+      <name>Chak Kui Wong</name>
+    </author>
+    <author>
+      <name>Jonathan P. K. Doye</name>
+    </author>
+    <arxiv:doi>10.3390/app12125875</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.3390/app12125875" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.10760v1</id>
+    <title>Patterning programmable spin arrays on DNA origami for quantum technologies</title>
+    <updated>2025-09-13T00:13:18Z</updated>
+    <link href="https://arxiv.org/abs/2509.10760v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.10760v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The controlled assembly of solid-state spins with nanoscale spatial precision is an outstanding challenge for quantum technology. Here, we combine DNA-based patterning with nitrogen-vacancy (NV) ensemble quantum sensors in diamond to form and sense programmable 2D arrays of spins. We use DNA origami to control the spacing of chelated Gd$^{3+}$ spins, as verified by the observed linear relationship between proximal NVs' relaxation rate, $1/T_1$, and the engineered number of Gd$^{3+}$ spins per origami unit. We further show that DNA origami provides a robust way of functionalizing the diamond surface with spins as it preserves the charge state and spin coherence of proximal, shallow NV centers. Our work enables the formation and interrogation of ordered, strongly interacting spin networks with applications in quantum sensing and quantum simulation. We quantitatively discuss the prospects of entanglement-enhanced metrology and high-throughput proteomics.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.mes-hall" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.bio-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-13T00:13:18Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Zhiran Zhang</name>
+    </author>
+    <author>
+      <name>Taylor Morrison</name>
+    </author>
+    <author>
+      <name>Lillian Hughes</name>
+    </author>
+    <author>
+      <name>Weijie Wu</name>
+    </author>
+    <author>
+      <name>Ruiyao Liu</name>
+    </author>
+    <author>
+      <name>Dolev Bluvstein</name>
+    </author>
+    <author>
+      <name>Norman Yao</name>
+    </author>
+    <author>
+      <name>Deborah Fygenson</name>
+    </author>
+    <author>
+      <name>Ania C. Bleszynski Jayich</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2108.06517v1</id>
+    <title>Characterizing the free-energy landscapes of DNA origamis</title>
+    <updated>2021-08-14T11:10:04Z</updated>
+    <link href="https://arxiv.org/abs/2108.06517v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2108.06517v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We show how coarse-grained modelling combined with umbrella sampling using distance-based order parameters can be applied to compute the free-energy landscapes associated with mechanical deformations of large DNA nanostructures. We illustrate this approach for the strong bending of DNA nanotubes and the potentially bistable landscape of twisted DNA origami sheets. The homogeneous bending of the DNA nanotubes is well described by the worm-like chain model; for more extreme bending the nanotubes reversibly buckle with the bending deformations localized at one or two "kinks". For a twisted one-layer DNA origami, the twist is coupled to the bending of the sheet giving rise to a free-energy landscape that has two nearly-degenerate minima that have opposite curvatures. By contrast, for a two-layer origami, the increased stiffness with respect to bending leads to a landscape with a single free-energy minimum that has a saddle-like geometry. The ability to compute such landscapes is likely to be particularly useful for DNA mechanotechnology and for understanding stress accumulation during the self-assembly of origamis into higher-order structures.</summary>
+    <category term="cond-mat.soft" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-08-14T11:10:04Z</published>
+    <arxiv:comment>main (17 pages, 7 figures); Supporting Information (14 pages, 11 figures)</arxiv:comment>
+    <arxiv:primary_category term="cond-mat.soft"/>
+    <arxiv:journal_ref>Nanoscale 14, 2638-2648 (2022)</arxiv:journal_ref>
+    <author>
+      <name>Chak Kui Wong</name>
+    </author>
+    <author>
+      <name>Chuyan Tang</name>
+    </author>
+    <author>
+      <name>John S. Schreck</name>
+    </author>
+    <author>
+      <name>Jonathan P. K. Doye</name>
+    </author>
+    <arxiv:doi>10.1039/D1NR05716B</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1039/D1NR05716B" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.11522v1</id>
+    <title>Modulating lipid membrane morphology by dynamic DNA origami networks</title>
+    <updated>2025-06-13T07:23:20Z</updated>
+    <link href="https://arxiv.org/abs/2506.11522v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.11522v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Membrane morphology and its dynamic adaptation regulate many cellular functions, which are often mediated by membrane proteins. Advances in DNA nanotechnology have enabled the realization of various protein-inspired structures and functions with precise control at the nanometer level, suggesting a viable tool to artificially engineer the membrane morphology. In this work, we demonstrate a DNA origami cross (DOC) structure that can be anchored onto giant unilamellar vesicles (GUVs) and subsequently polymerized into micron-scale reconfigurable one-dimensional (1D) chains or two-dimensional (2D) lattices. Such DNA origami-based networks can be switched between left-handed (LH) and right-handed (RH) conformations by DNA fuels and exhibit potent efficacy in remodeling the membrane curvatures of GUVs. This work sheds light on designing hierarchically-assembled dynamic DNA systems for the programmable modulation of synthetic cells for useful applications.</summary>
+    <category term="physics.bio-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-13T07:23:20Z</published>
+    <arxiv:comment>This document is the Accepted Manuscript version of a Published Work that appeared in final form in ACS Nano Letters, copyright American Chemical Society after peer review. To access the final edited and published work see Nano Lett. 2023, 23, 14, 6330-6336</arxiv:comment>
+    <arxiv:primary_category term="physics.bio-ph"/>
+    <arxiv:journal_ref>Nano Lett. 2023, 23, 14, 6330-6336</arxiv:journal_ref>
+    <author>
+      <name>Juanjuan Yang</name>
+    </author>
+    <author>
+      <name>Kevin Jahnke</name>
+    </author>
+    <author>
+      <name>Ling Xin</name>
+    </author>
+    <author>
+      <name>Xinxin Jing</name>
+    </author>
+    <author>
+      <name>Pengfei Zhan</name>
+    </author>
+    <author>
+      <name>Andreas Peil</name>
+    </author>
+    <author>
+      <name>Alessandra Griffo</name>
+    </author>
+    <author>
+      <name>Marko Škugor</name>
+    </author>
+    <author>
+      <name>Donglei Yang</name>
+    </author>
+    <author>
+      <name>Sisi Fan</name>
+    </author>
+    <author>
+      <name>Kerstin Göpfrich</name>
+    </author>
+    <author>
+      <name>Hao Yan</name>
+    </author>
+    <author>
+      <name>Pengfei Wang</name>
+    </author>
+    <author>
+      <name>Na Liu</name>
+    </author>
+    <arxiv:doi>10.1021/acs.nanolett.3c00750</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1021/acs.nanolett.3c00750" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2204.02499v2</id>
+    <title>Simulations of DNA-origami self-assembly reveal design-dependent nucleation barriers</title>
+    <updated>2023-03-21T17:59:43Z</updated>
+    <link href="https://arxiv.org/abs/2204.02499v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2204.02499v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Nucleation is the rate-determining step in the kinetics of many self-assembly processes. However, the importance of nucleation in the kinetics of DNA-origami self-assembly, which involves both the binding of staple strands and the folding of the scaffold strand, is unclear. Here, using Monte Carlo simulations of a lattice model of DNA origami, we find that some, but not all, designs can have a nucleation barrier and that this barrier disappears at lower temperatures, rationalizing the success of isothermal assembly. We show that the height of the nucleation barrier depends primarily on the coaxial stacking of staples that are adjacent on the same helix, a parameter that can be modified with staple design. Creating a nucleation barrier to DNA-origami assembly could be useful in optimizing assembly times and yields, while eliminating the barrier may allow for fast molecular sensors that can assemble/disassemble without hysteresis in response to changes in the environment.</summary>
+    <category term="cond-mat.soft" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-bio.BM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-04-05T21:31:36Z</published>
+    <arxiv:comment>28 pages, 17 figures, accepted in Nano Letters with improved text and figure accessibility</arxiv:comment>
+    <arxiv:primary_category term="cond-mat.soft"/>
+    <arxiv:journal_ref>Nano Lett. 22, 6916 (2022)</arxiv:journal_ref>
+    <author>
+      <name>Alexander Cumberworth</name>
+    </author>
+    <author>
+      <name>Daan Frenkel</name>
+    </author>
+    <author>
+      <name>Aleks Reinhardt</name>
+    </author>
+    <arxiv:doi>10.1021/acs.nanolett.2c01372</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1021/acs.nanolett.2c01372" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2310.09475v1</id>
+    <title>Twisted DNA origami-based chiral monolayers for spin filtering</title>
+    <updated>2023-10-14T02:56:10Z</updated>
+    <link href="https://arxiv.org/abs/2310.09475v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2310.09475v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>DNA monolayers with inherent chirality play a pivotal role across various domains, including biosensors, DNA chips, and bioelectronics. Nonetheless, conventional DNA chiral monolayers, typically constructed from single-stranded DNA (ssDNA) or double-stranded DNA (dsDNA), often lack structural orderliness and design flexibility at the interface. Structural DNA nanotechnology emerges as a promising solution to tackle these challenges. In this study, we present a strategy for crafting highly adaptable twisted DNA origami-based chiral monolayers. These structures exhibit distinct interfacial assembly characteristics and effectively mitigate the structural disorder of dsDNA monolayers, which is constrained by a limited persistence length of ~50 nm of dsDNA. We highlight the spin-filtering capabilities of four representative DNA origami-based chiral monolayers, demonstrating a maximal one-order-of-magnitude increase in spin-filtering efficiency per unit area compared to conventional dsDNA chiral monolayers. Intriguingly, our findings reveal that the higher-order, tertiary, chiral structure of twisted DNA origami further enhances the spin-filtering efficiency. This work paves the way for the rational design of DNA chiral monolayers.</summary>
+    <category term="physics.chem-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-10-14T02:56:10Z</published>
+    <arxiv:primary_category term="physics.chem-ph"/>
+    <author>
+      <name>Haozhi Wang</name>
+    </author>
+    <author>
+      <name>Fangfei Yin</name>
+    </author>
+    <author>
+      <name>Linyun Li</name>
+    </author>
+    <author>
+      <name>Mingqiang Li</name>
+    </author>
+    <author>
+      <name>Zheng Fang</name>
+    </author>
+    <author>
+      <name>Chenyun Sun</name>
+    </author>
+    <author>
+      <name>Bochen Li</name>
+    </author>
+    <author>
+      <name>Jiye Shi</name>
+    </author>
+    <author>
+      <name>Jiang Li</name>
+    </author>
+    <author>
+      <name>Lihua Wang</name>
+    </author>
+    <author>
+      <name>Shiping Song</name>
+    </author>
+    <author>
+      <name>Xiaolei Zuo</name>
+    </author>
+    <author>
+      <name>Xiaoguo Liu</name>
+    </author>
+    <author>
+      <name>Chunhai Fan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.11505v1</id>
+    <title>Recent advances in DNA origami-engineered nanomaterials and applications</title>
+    <updated>2025-06-13T07:07:11Z</updated>
+    <link href="https://arxiv.org/abs/2506.11505v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.11505v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>DNA nanotechnology is a unique field, where physics, chemistry, biology, mathematics, engineering, and materials science can elegantly converge. Since the original proposal of Nadrian Seeman, significant advances have been achieved in the past four decades. During this glory time, the DNA origami technique developed by Paul Rothemund further pushed the field forward with a vigorous momentum, fostering a plethora of concepts, models, methodologies, and applications that were not thought of before. This review focuses on the recent progress in DNA origami-engineered nanomaterials in the past five years, outlining the exciting achievements as well as the unexplored research avenues. We believe that the spirits and asset that Seeman left for scientists will continue to bring inter-disciplinary innovations and useful applications to this field in the next decade.</summary>
+    <category term="physics.bio-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-13T07:07:11Z</published>
+    <arxiv:primary_category term="physics.bio-ph"/>
+    <arxiv:journal_ref>Chem. Rev. 2023, 123, 7, 3976-4050</arxiv:journal_ref>
+    <author>
+      <name>Pengfei Zhan</name>
+    </author>
+    <author>
+      <name>Andreas Peil</name>
+    </author>
+    <author>
+      <name>Qiao Jiang</name>
+    </author>
+    <author>
+      <name>Dongfang Wang</name>
+    </author>
+    <author>
+      <name>Shikufa Mousavi</name>
+    </author>
+    <author>
+      <name>Qiancheng Xiong</name>
+    </author>
+    <author>
+      <name>Qi Shen</name>
+    </author>
+    <author>
+      <name>Yingxu Shang</name>
+    </author>
+    <author>
+      <name>Baoquan Ding</name>
+    </author>
+    <author>
+      <name>Chenxiang Lin</name>
+    </author>
+    <author>
+      <name>Yonggang Ke</name>
+    </author>
+    <author>
+      <name>Na Liu</name>
+    </author>
+    <arxiv:doi>10.1021/acs.chemrev.3c00028</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1021/acs.chemrev.3c00028" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2407.07271v1</id>
+    <title>Leveraging the Versatility of DNA Origami and Electrochemistry for New Sensing Modalities</title>
+    <updated>2024-07-09T23:16:46Z</updated>
+    <link href="https://arxiv.org/abs/2407.07271v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2407.07271v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Electrochemical Biosensors are uniquely positioned to offer real-time in vivo molecular sensing due to their robustness to both biofluids and contaminants found in biofluids, and their adaptability for the detection of different analytes by their use of oligonucleotides or proteins as binding moiety. DNA Origami, the folding of a long DNA scaffold by hundreds of shorter oligonucleotide staple strands, allows the construction of nanoscale molecular objects of essentially arbitrary form, flexibility and functionality. We describe work at the intersection of these two fields and their-hopefully-bright future together.</summary>
+    <category term="physics.bio-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-07-09T23:16:46Z</published>
+    <arxiv:primary_category term="physics.bio-ph"/>
+    <author>
+      <name>Philip S Lukeman</name>
+    </author>
+    <arxiv:doi>10.1149/2754-2726/ad816e</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1149/2754-2726/ad816e" title="doi"/>
+  </entry>
+</feed>

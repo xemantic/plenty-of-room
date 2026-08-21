@@ -68,7 +68,13 @@ def broken_links_in(text, directory, root=ROOT):
 # reads -- checked by nothing at all, this checker included: it scanned `gpd/` and stopped there,
 # so a mistyped claim slug in either deliverable was invisible. They carry more claim links than
 # most claims do, and a broken one in them is read by the customer rather than by an agent.
-ROOT_DOCUMENTS = ["ANSWERS.md", "DECISIONS-FOR-NDI.md"]
+ROOT_DOCUMENTS = ["ANSWERS.md", "DECISIONS-FOR-NDI.md", "TOOLING-NOVELTY.md"]
+# `TOOLING-NOVELTY.md` was added by the repository owner in iteration 37 and was checked by
+# NOTHING, exactly as `T-184`/`C-0124` found for `DECISIONS-FOR-NDI.md`: *a checker's DEFAULT
+# is part of its logic, and the document nobody checks is the one the customer reads*. It is a
+# third outward-facing deliverable in the same house style (SURVIVES / CORRECTED / WITHDRAWN,
+# a read-flag per source), so it belongs in the same set. It was clean when added — the point
+# is to keep it so, not to repair it.
 
 
 def tracked_markdown(root=ROOT):
@@ -149,8 +155,9 @@ def _selftest():
     check("the corpus listing finds files", len(tracked_markdown()) > 0, True)
     # `T-184`: the two outward-facing documents are IN the listing. They were not, and a broken
     # claim slug in the file NDI reads is worse than one in a claim, not better.
-    check("the outward-facing set is exactly the two deliverables",
-          ROOT_DOCUMENTS, ["ANSWERS.md", "DECISIONS-FOR-NDI.md"])
+    check("the outward-facing set is exactly the three deliverables",
+          ROOT_DOCUMENTS,
+          ["ANSWERS.md", "DECISIONS-FOR-NDI.md", "TOOLING-NOVELTY.md"])
     # On a SYNTHETIC root, so the check does not depend on this checkout: `tools/verify.sh` runs
     # these in a snapshot, and a self-test that reads the real tree is not a fixture test.
     import tempfile

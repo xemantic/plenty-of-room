@@ -2,7 +2,7 @@
     "task": "T-164 — how stiff is a ROW-END crossover?",
     "leaf": "A8.2",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm, 0.34 nm rise, 32/3 bp per turn, 16 bp column pitch, 32 bp per-interface spacing; along-helix width 38.08 nm (112 bp, C-0086) at crossover phase 8; C-0090's buildable 24-rise 8.16 nm arm at C-0055's 34 roots; C-0017's 33.3333 pN/nm mandate shared equally; C-0022's solved collar at 2 mM, a 10 nm gap and 0.192 V, AS C-0090 CARRIED IT; C-0001's foundation secant",
-    "decision": "the 38.08 nm tile is flat at T-5b's 0.10 at EVERY row-end dihedral stiffness from zero to an interior crossover's, best 34-root dishing 0.06517538540278571 to 0.062146910466135304 of the stroke; CH-0111's bracket is not reachable because its lower end deletes a covalent constraint and a mesh node as well as a spring",
+    "decision": "the 38.08 nm tile is flat at T-5b's 0.10 at EVERY row-end dihedral stiffness from zero to an interior crossover's, best 34-root dishing 0.0651753854 to 0.0621469105 of the stroke; CH-0111's bracket is not reachable because its lower end deletes a covalent constraint and a mesh node as well as a spring",
     "cheapBounds": [
         {
             "name": "strand termini at a duplex end",
@@ -784,13 +784,13 @@
             "name": "F2",
             "statement": "at s = 1 the pipeline does not reproduce C-0090's 0.0621469105",
             "fired": false,
-            "outcome": "reproduced at a departure of 3.3864695769825204E-11"
+            "outcome": "reproduced at a departure of 3.4E-11"
         },
         {
             "name": "F3",
             "statement": "channel B's s = 0 limit differs materially from the refused reading",
             "fired": false,
-            "outcome": "channel B at s = 0 is 0.1686405908358075 against the refused reading's 0.1683718082999668; the two lattices carry the same mechanics and differ only in the mesh the two extra nodes impose"
+            "outcome": "channel B at s = 0 is 0.168640591 against the refused reading's 0.168371808; the two lattices carry the same mechanics and differ only in the mesh the two extra nodes impose"
         },
         {
             "name": "F4",
@@ -802,23 +802,23 @@
             "name": "F5",
             "statement": "the best placement key moves across the sweep",
             "fired": true,
-            "outcome": "FIRED at 3 of 18 rungs, and BOUNDED: the worst penalty for keeping C-0090's own placement instead of each rung's optimum is 8.755984995810762E-4 of the stroke on channel A, and the published placement is flat at 17 of 18 rungs"
+            "outcome": "FIRED at 3 of 18 rungs, and BOUNDED: the worst penalty for keeping C-0090's own placement instead of each rung's optimum is 8.755985E-4 of the stroke on channel A, and the published placement is flat at 17 of 18 rungs"
         },
         {
             "name": "F6",
             "statement": "a uniform load on a uniform foundation dishes more than 1e-6 of the free stroke",
             "fired": false,
-            "outcome": "the worst over 18 rungs is 2.314028420585025E-7 of the free stroke"
+            "outcome": "the worst over 18 rungs is 2.31402842E-7 of the free stroke"
         }
     ],
     "findings": [
-        "THE BRACKET IS NOT A BRACKET. C-0090's two readings differ in THREE things — the dihedral spring, the vertical link and the node — and only the first of them is a stiffness. A crossover that EXISTS carries its vertical link at full value, because that element is a constraint expressing covalent continuity and not an elasticity; Rothemund's own remedy for the edge strain adds slack to the torsion, not to the connectivity. So the reachable set is channel A, and it spans 0.062146910466135304 to 0.06517538540278571 of the stroke — 0.028510029177791017 of the interval CH-0111 quotes.",
-        "THE VERDICT DOES NOT CHANGE INSIDE THE REACHABLE SET. Destroying the dihedral spring of all 14 row-end crossovers entirely takes the best 34-root placement to 0.06517538540278571 against T-5b's 0.10, so the 38.08 nm tile is flat at EVERY row-end stiffness, including zero. The counting ceiling s <= 1 and the counting floor s = 1/2 are then decoration: the answer does not need them.",
+        "THE BRACKET IS NOT A BRACKET. C-0090's two readings differ in THREE things — the dihedral spring, the vertical link and the node — and only the first of them is a stiffness. A crossover that EXISTS carries its vertical link at full value, because that element is a constraint expressing covalent continuity and not an elasticity; Rothemund's own remedy for the edge strain adds slack to the torsion, not to the connectivity. So the reachable set is channel A, and it spans 0.0621469105 to 0.0651753854 of the stroke — 0.0285100292 of the interval CH-0111 quotes.",
+        "THE VERDICT DOES NOT CHANGE INSIDE THE REACHABLE SET. Destroying the dihedral spring of all 14 row-end crossovers entirely takes the best 34-root placement to 0.0651753854 against T-5b's 0.10, so the 38.08 nm tile is flat at EVERY row-end stiffness, including zero. The counting ceiling s <= 1 and the counting floor s = 1/2 are then decoration: the answer does not need them.",
         "THE COUNTING CEILING IS A RATIO OF TWO COUNTS AND CARRIES NO ELASTICITY. k_theta = 2 alpha B/(100 a) is TWO softened phosphate bonds in parallel and C-0029's theorem caps a duplex end at two strand termini, so s <= 1 exactly, with alpha and B cancelling. That is the whole of what the one-sided material costs that a bond census can see, and it is available before any solve.",
-        "WHAT MOVES THE ANSWER IS THE NODE, NOT THE SPRING. Channel B at s = 0 — both elements gone, the two extra mesh nodes retained — reads 0.1686405908358075 against the refused reading's 0.1683718082999668 on a six-column host, so the mechanics is the same and the mesh is worth the difference. The 2.7x that C-0090's two readings differ by is therefore a statement about a LATTICE, not about a joint.",
+        "WHAT MOVES THE ANSWER IS THE NODE, NOT THE SPRING. Channel B at s = 0 — both elements gone, the two extra mesh nodes retained — reads 0.168640591 against the refused reading's 0.168371808 on a six-column host, so the mechanics is the same and the mesh is worth the difference. The 2.7x that C-0090's two readings differ by is therefore a statement about a LATTICE, not about a joint.",
         "MONOTONICITY WAS CHECKED RATHER THAN ASSUMED, and it holds: 16 of 16 consecutive pairs over two channels are decreasing in stiffness. CLAUDE.md records that a verdict which is not monotone in a swept variable has no threshold; this one has one, and the threshold is that there is no crossing.",
-        "THE DESIGN MOVES ONLY WHERE IT COSTS NOTHING TO KEEP IT. F5 fired: 3 of 18 rungs return a placement other than C-0090's, and every one of them is a rung where the two are nearly tied — keeping C-0090's own 34 roots at EVERY rung of channel A costs at most 8.755984995810762E-4 of the stroke and stays inside T-5b's 0.10 throughout. So the row-end stiffness moves the VALUE of the flatness and not the DESIGN, which is the separate and worse exposure.",
-        "CHANNEL B IS A STEP, NOT A RAMP, AND THAT IS THE POINT. The vertical link is a PENALTY enforcing a constraint, so a tenth of it still enforces the constraint: channel B reads 0.06510728863823426 at s = 0.125 and 0.1686405908358075 at s = 0 exactly. The bisection therefore locates a discontinuity and not a threshold, and CLAUDE.md's rule that the link's value must not affect the answer is what makes the 2.7x binary: the link is either there or it is not, and a covalently continuous backbone says it is.",
+        "THE DESIGN MOVES ONLY WHERE IT COSTS NOTHING TO KEEP IT. F5 fired: 3 of 18 rungs return a placement other than C-0090's, and every one of them is a rung where the two are nearly tied — keeping C-0090's own 34 roots at EVERY rung of channel A costs at most 8.755985E-4 of the stroke and stays inside T-5b's 0.10 throughout. So the row-end stiffness moves the VALUE of the flatness and not the DESIGN, which is the separate and worse exposure.",
+        "CHANNEL B IS A STEP, NOT A RAMP, AND THAT IS THE POINT. The vertical link is a PENALTY enforcing a constraint, so a tenth of it still enforces the constraint: channel B reads 0.0651072886 at s = 0.125 and 0.168640591 at s = 0 exactly. The bisection therefore locates a discontinuity and not a threshold, and CLAUDE.md's rule that the link's value must not affect the answer is what makes the 2.7x binary: the link is either there or it is not, and a covalently continuous backbone says it is.",
         "NO VARIATIONAL ARGUMENT WOULD HAVE SETTLED MONOTONICITY. Adding stiffness lowers an energy, but the objective here is a PEAK DISHING — a maximum of a residual field after a best-fit plane is removed — which is not an energy and is not monotone by any Rayleigh argument, and the objective is then a minimum over 163 296 placements. Measuring it was necessary, and it is the cheap half of this task rather than the expensive one."
     ],
     "parameters": {

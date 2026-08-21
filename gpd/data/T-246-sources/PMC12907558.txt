@@ -1,0 +1,704 @@
+Nucleic Acids Research, 2026, 54, gkag052
+https://doi.org/10.1093/nar/gkag052
+Synthetic Biology and Bioengineering
+
+
+
+
+Complex cooperativity in DNA origami revealed via
+design-dependent defectivity
+Jacob M. Majikes 1,2 ,* , Amna Hasni3 , Shankar Haridas4 , Joseph W.F. Robertson                                          2
+                                                                                                                              ,
+Adam L. Pintar 5 , Michael Zwolak 2 , J. Alexander Liddle 2 ,*
+1
+  Theiss Research, La Jolla, CA 92037, United States
+2
+  Microsystems and Nanotechnology Division, National Institute of Standards and Technology, Gaithersburg, MD 20899, United States
+3
+  Biomedical Engineering, Johns Hopkins University, Baltimore, MD 21211,United States
+4
+  University of Maryland, College Park, MD 20742, United States
+5
+  Statistical Engineering Division, National Institute of Standards and Technology, Gaithersburg, MD 92037, United States
+∗
+ To whom correspondence should be addressed. Email: Jacob.Majikes@nist.gov
+Correspondence may also be addressed to J. Alexander Liddle. Email: Liddle@gmail.com
+
+
+
+Abstract
+DNA origami has become a ubiquitous platform because it enables straightforward design of nanostructures that self-assemble with high yield.
+The interactions between the cooperative effects involved in its assembly are currently not well understood. Fortunately, the nearly infinite
+number of choices available to the origami designer provides a rich environment in which to explore cooperativity. The DNA domains comprising
+origami have predictable energetics, and the sources of cooperativity are conceptually straightforward, and the difficulty in predicting assembly
+comes from their large number of cooperative interactions. We are able to probe cooperativity by using design variations and measuring their
+effect on assembly yield. We employ an accelerated assembly protocol that increases the sensitivity of structural perfection, or lack thereof, to
+design variation, and apply this approach to survey a broad set of design features. Using the resulting dataset, we develop metrics to correlate
+thermal stability, beneficial cooperativity from short folds, and detrimental cooperativity from long folds, with defectivity. Surprisingly, these
+metrics can be combined to create a single parameter with a clear correlation to yield, which serves as a useful starting place for a predictive
+understanding of the interplay between cooperativity and design. In doing so, we also identify qualitative trends that provide useful insight into
+design best practice.
+
+
+
+
+Graphical abstract
+
+
+
+
+Introduction                                                                  complex environmental cues. Nucleic acid nanofabrication is
+Cooperative effects are ubiquitous in biomacromolecular sys-                  an ideal platform for investigating these concepts.
+tems and drive emergent properties associated with complex                       Cooperativity is the propensity for identical, or similar
+systems like cell signaling [1]. Molecular nanofabrication em-                components in a system to modulate each other’s behavior.
+ploys networks of cooperative effects to steer self-assembling                The archetypal example of cooperativity is the binding of mul-
+systems toward a single, final state. In short, cooperativity is              tiple oxygen molecules by hemoglobin, where each binding
+nature’s answer to Levinthal’s paradox [2]. However, a full                   event increases the binding strength of the subsequent one [3],
+mechanistic understanding of how assembly events interact                     for which the well-known Hill parameter was originally devel-
+and progress would facilitate the rational design of systems                  oped. Unfortunately, this parameter, and other common met-
+capable of accessing multiple metastable states in response to                rics of cooperativity, are properties of a dose-response curve
+
+
+Received: July 15, 2025. Revised: November 7, 2025. Accepted: January 4, 2026
+Published by Oxford University Press 2026.
+This work is written by (a) US Government employee(s) and is in the public domain in the US.
+2    Majikes et al.
+
+
+and are not readily applicable to complex self-assembling sys-        bly [23, 29]. Oligomer inclusion studies have indicated assem-
+tems. This concern is, in many ways, definitional; to quantify        bly in two to three distinct stages for at least one 3D design
+cooperativity, one must identify what the system is coopera-          [30]. While theoretical advances improve our ability to un-
+tive in reference to. Clearer definitions with better specified       derstand and predict the cooperativity of origami assembly
+reference states are easier to quantify but harder to compare         [4, 5], we have yet to extend this understanding to evalua-
+or combine across differing physical sources of cooperativity.        tion of designs, or to relate general design rules to cooperative
+For complex systems with multiple sources of cooperativity,           effects.
+this necessitates iterative research cycles as individual sources        Additionally, one might anticipate that the relative contri-
+are identified, their quantification devised, and their convolu-      butions of each source of cooperativity might scale differently
+tion evaluated against whole system behavior. Complex coop-           with origami size. For example, one might assume folds on the
+erative systems suffer from the classic curse of dimensionality.      outer edge of an origami must always be short folds, while the
+   DNA origami combines top-down design with bottom-                  longest folds will always be across some seam inside the center
+up assembly and DNA hybridization’s well-understood en-               of the structure. One might then reasonably assume a geomet-
+ergetics. The assembly of a single origami structure involves         ric progression of fold size distribution, like that of perimeter
+over 600 reversible hybridization reactions between domains           versus area. Across whole origami, we expect positive inter-
+spread across >200 multivalent oligomer strands (staples) and         domain and base-stacking cooperativity, Fig. 1a and d, not to
+a primary continuous template strand (scaffold), all of which         scale with size, while negative inter-domain cooperativity and
+exhibiting a variety of cooperative energetic contributions, as       positive inter-fold cooperativity, Fig. 1b and c, should, with
+depicted in Fig. 1. The resulting myriad reaction pathways            the former scaling faster. This suggests higher defectivity for
+make a priori modeling exceptionally difficult, but also lead to      larger origami.
+robust assembly, with quoted yield values often in the range of          In origami the sources of cooperativity are mediated by
+90%—a surprisingly high fraction for such a complex series            where events occur as topology changes progress during as-
+of reactions. Though modeling efforts continue, we cannot yet         sembly. This topology progression is controlled by origami de-
+predict the effect of design on yield [4, 5], nor are current algo-   sign, and the origami design space is notoriously vast, where
+rithmic design tools fully “yield aware” [6–9]. This is a highly      any one shape can be designed a nearly infinite number of
+relevant topic for industrial applications [10–12], as the size       ways [31, 32]. A crude estimation of this space would con-
+of origami, 4.5·106 g.mol−1 (4.5 MDa), precludes simple pu-           sider changing the scaffold routing (including the direction of
+rification [11] and limits potential application areas [13]. This     the helices through the structure, number of seams, and seam
+topic is also a subject of continuing interest, with recent ex-       locations), rotation of the sequence through the routing, and
+amples including other comparative design studies [14] and            the length and distribution of binding domains on the staples
+work to expand the design space to enable longer staples [15,         (i.e. staple motif), as shown in Fig. 2. Such an estimate, assum-
+16].                                                                  ing only four choices for each of the above design variables,
+   The four sources cooperativity we define in Fig. 1 originate       would suggest at least 45, or 1024, possible variants for a sin-
+from a variety of observations from studies which varied a sin-       gle 2D shape.
+gle design feature or measured a subset of an origami. These             This multiplicity of designs provides an exciting space for
+include the presence of a “nucleating” domain on each staple          exploration, but unfortunately no change to design will vary
+[17, 18] (promoting inter-domain cooperativity by providing           any source of cooperativity independently. This, and the lack
+energetic heterogeneity [19, 20]), the loop distance distribu-        of metrics that quantify sources of cooperativity across whole
+tion [21–24] (affecting inter-fold and inter-domain coopera-          designs, formulates a central challenge and Gordian knot of
+tivity and nucleation of folding [5, 25]), high guanine and cy-       this area of research. To confirm that all relevant sources of co-
+tosine (GC) content at long loop distance folds (encouraging          operativity are identified, one must deconvolve them from be-
+negative inter-domain cooperativity induced defects [26, 27]),        havior of the whole origami; in order to deconvolve them, one
+and the presence of high GC content at crossovers (creating           must devise quantitative metrics for each source, and to devise
+a kinetic road bump through negative base stacking cooper-            quantitative metrics for them, one must first identify the rele-
+ativity [25]). Theoretical works have also indicated that the         vant sources of cooperativity. Identifying, devising, and decon-
+distribution of GC content, as bounded by rotations of a sin-         volving the sources of cooperativity present a trifold problem
+gle scaffold sequence, is unlikely to affect assembly yield [25].     that is, at its core, an example of the curse of dimensionality
+To understand full origami behavior, these sources of coopera-        that plagues any complex system.
+tivity must be quantified and weighed against each other. This           Yield is the most relevant measurand to leverage against
+is made more difficult still by their operation at different lay-     this challenge, as some formulation of it was used by the ma-
+ers of conceptual abstraction, e.g. the cooperative events for        jority of the previously cited works that identified sources of
+inter-domain cooperativity are domain hybridization events,           origami cooperativity. However, quantitative yield measure-
+while for inter-fold cooperativity they are staple:scaffold fold-     ments sufficient for deconvolving cooperative effects pose a
+ing events. However, doing so is a prerequisite to emulate as-        much greater challenge than those necessary for more qual-
+pects of protein behavior or to perform engineered chemo-             itative work. Yield is typically defined as the ratio of prod-
+mechanical work.                                                      uct to reactant: [product]/[reactant], but for an origami, the
+   These proposals are consistent growing body of research on         definition of “product” is ambiguous. For example, must the
+the mechanisms of DNA origami assembly. The current con-              origami be perfect, in the sense that every designed staple is
+sensus is that origami fold via nucleation and growth [21, 22,        incorporated, or is it sufficient for it to assume the designed
+24, 28], in which loop entropy and base-stacking contribu-            shape, or have the desired functionality? If perfect staple in-
+tions play a role [5, 25]. Notable works have shown multiple          corporation is required, then one’s measurement must resolve
+paths for nucleation and growth in individual structures [22,         a 0.17% change in mass. In contrast, measuring geometric fi-
+28], which explain other, less direct measurements of assem-          delity between an image and a structure’s design presents dra-
+                                                                                                  Cooperativity and defectivity in DNA origami             3
+
+
+
+
+Figure 1. Schematic of the primary forms of cooperativity in DNA origami discussed in the literature. (a) Positive inter-domain cooperativity: at short
+scaffold distances, when a single domain on a staple binds, neighboring domains on that staple experience positive cooperativity as their effective local
+concentration is higher than their competitors in solution. This is reduced by loop entropy at longer distances. (b) Inter-fold cooperativity: at any fold
+distance, the closing of one fold reduces the possible conformations available to the entire remaining scaffold, stabilizing all other non-competing folds
+but most heavily affecting close neighbors. (c) Negative inter-domain cooperativity, or blocking: at very long scaffold distances, the second domain on a
+staple can become less likely to bind than a competing domain on another copy in solution as the effective local concentration for the bound staple
+(quantified by loop entropy or j-factor) is lower than the solution concentration of the competitors. (d) Base stacking cooperativity: when an immediate
+neighboring domain has already bound there is an energetic bonus for π–π stacking between helix ends.
+
+
+
+
+Figure 2. DNA origami design schematics emphasizing simple changes to design that dramatically alter the distribution of cooperative events. (a)
+Examples of staple motifs showing the tiling of that motif. Motifs are named by the length and number of their domains. Note that changing the motif
+from 8-16-8 to 16-16 will convert the double crossovers to single crossovers, but not change the number or position of topological links on the scaffold.
+By contrast, changing from 8-16-8 to 8-32-16-8 will remove a fraction of topological links, as the two staple tiling unit repeats vertically. (b) Examples of
+scaffold routings and inter-helix angles. Changing the angle of helix connections, as between lattices, changes the location of viable crossovers and thus
+the possible staple motifs. Similarly, using scaffold, rather than staple, crossovers, as in the weave routing, will alter the folding pathways available for
+assembly. The design numbers (#1, #23, #27, #30, and #34) refer to specific designs (see Fig. 3). Note: the arrow in routing plots indicates the start of
+the scaffold sequence, as well as the position where any excess, unused, scaffold enters and exits the structure. In this study this ‘goatee’ of excess
+scaffold was ∼209 bases in length.
+
+
+matic challenges to calibration and replication between labo-                    the ability to determine a coarse-grained level of fidelity of an
+ratories.                                                                        assembled 2D origami to its design, with a throughput high
+   At present, yield measurements have an inverse relationship                   enough to provide adequate statistical confidence across many
+between their resolution and both their cost and throughput.                     designs. To aid plotting and interpretation in this work, we
+They can be categorized from low to high resolution: migra-                      chose to use the portion of defective structures rather than the
+tory yield (e.g. gel electrophoresis and chromatography) [17,                    yield of well-folded ones and will refer to yield in the context
+33, 34], imaging yield [e.g. atomic force microscopy (AFM)                       of defectivity through the rest of the manuscript.
+and transmission electron microscopy] [22, 28, 35–38], and                          To address these questions and explore the role of coop-
+oligomer inclusion yield (e.g. DNA-PAINT) [30, 38–40]. For                       erativity in DNA origami assembly, we introduce an acceler-
+the purposes of our study, we select AFM imaging yield as                        ated annealing protocol to facilitate more efficient extraction
+the method with the optimum combination of resolution, i.e.                      of data, which dramatically improves the efficiency of time
+4   Majikes et al.
+
+
+spent imaging each design. Optimizing our anneal to differen-        more than one seam, four designs in which the helices run
+tiate between designs required a higher proportion of defective      perpendicular to the long direction of the rectangle, and finally
+origami to minimize sampling uncertainty. We achieved this           we tested three designs in which the helices connected at π
+with a reduced forward reaction rate through moderately low-         2/3 rad (120◦ ) angles typical of 3D designs rather than the
+ering scaffold concentration and staple excess. Without this,        π/2 rad (90◦ ) typical of 2D designs. These last three designs
+the imaging and classification time would have been infeasi-         had, by necessity, a mix of staple motifs, which were made to
+ble. Therefore, the degree to which this work will be useful for     either have heterogenous or non-heterogeneous distributions
+industrial application of DNA nanotechnology, as well as for         of staple domain lengths.
+an academic understanding thereof, is the degree to which the           Each source of cooperativity identified in the literature (Fig.
+primary mechanism of defectivity is similar at low and high          1) is simple to describe and may be modeled on the level
+concentrations.                                                      of an individual set of reactions. However, creating metrics
+   This annealing protocol allowed us to perform one of the          to weight designs based on their relative propensity for each
+broadest explorations to date of design variations within a          source of cooperativity is less straightforward. We describe
+fixed geometry. This provided the data needed to begin de-           our approach to doing so below.
+convolving cooperative contributions in this complex system.            For each source of cooperativity below, a more in-depth
+In so doing, we have identified the most relevant contribu-          discussion is provided in supplementary material section 3,
+tors and shed light on why the human aesthetic preference for        including alternate formulations.
+symmetry and shorter seams is synonymous with high quality              Inter-domain cooperativity (Fig. 1a), or the propensity sta-
+DNA origami designs.                                                 ple domains to nucleate folds, had several potential formu-
+                                                                     lations. The one used here is the sum across all fold of the
+                                                                     difference in predicted nearest-neighbor Tm between the most
+Materials and methods                                                and least stable staple domains normalized by the all-domain
+Design variation                                                     average Tm .
+Given the multiplicity of cooperative effects and their inter-          Inter-fold cooperativity (Fig. 1b), or reduction in confor-
+connectedness, it is essential to survey a wide variety of de-       mational entropy penalties caused by neighboring folds, is
+signs rather than explore the effects of incremental variations      straightforward to calculate for any two folds, but ill-defined
+of a single design parameter, e.g. seam location. See Fig. 3 for a   across a whole origami. As for the previous source of cooper-
+summary of the designs, and supplementary material section 2         ativity, we chose to represent it as a property of the distribu-
+for more detailed information about each. All the designs, ex-       tion of possible folds. For this, we chose the skew of the loop
+cept the notched rectangle, had a nearly identical aspect ratio,     entropy penalty distribution for each fold, assuming it was
+number of bases engaged in double-stranded DNA (dsDNA),              first to bind. The entropic penalty is asymptotic with increas-
+and had two unpaired thymine nucleotides of single-stranded          ing fold distances, ensuring that the skew is most sensitive to
+DNA (ssDNA) at the end of each helix to minimize base stack-         changes in the relevant short and medium folds. A distribu-
+ing; where ssDNA had to loop between edge helices, five un-          tion’s skew is also conveniently unitless. We chose this, as we
+paired thymine nucleotides were used. We grouped the designs         anticipate it will be correlated with how path-like or funnel-
+into families of similar modifications to facilitate comparisons     like the assembly process is.
+between them and discussions of how sources of cooperativity            Negative inter-domain cooperativity or blocking (Fig. 1c)
+may vary between families.                                           is quantified as in our previous work, which provides a useful
+   In some designs these ssDNA extensions were connected,            frame of reference [27]. We calculate the portion of scaffolds
+which could explain the limited origami stacking observed in         that would bind two copies of the staple at thermodynamic
+AFM images, as looped ssDNA may be less efficient per base           equilibrium and our experimental concentrations, neglecting
+at preventing favorable stacking effects [41].                       the effects of other staples. This assumes that there is an equi-
+   To aid comparison, we varied designs relative to standard         librium between the folded and blocked states, which balances
+2D origami features. These features for a typical design (design     the entropic penalty of folding with the entropy lost when a
+#1) are: helices connected at π/2 (90◦ ) angles (square lattice)     second staple copy binds.
+that run parallel to the long direction of the structure, a single      Base stacking cooperativity (Fig. 1d) was simply the sum
+symmetric seam with the scaffold excess coiled at the center         across all domain terminuses of the enthalpy term of the
+bottom of the structure, and an 8-16-8 staple motif. Although        nearest-neighbor model for those terminal bases. We similarly
+these design features cannot be fully varied independently of        summed enthalpies of base stacks at crossovers to examine
+each other, we selected design variants to minimize the number       the hypothesis by Cumberworth et al. [42]; see Supplemen-
+of simultaneous changes.                                             tary Material section 14.
+   To test the role of GC content and the excess ssDNA coil,            Under typical anneal conditions (1 nMol.l−1 to >10
+we rotate the sequence start position, labeled as a dot in Fig. 3    nMol.L−1 scaffold, 5 × to 100 × staple excess, 1–12 h an-
+and throughout the text. This is also annotated as −X or +Y          neal from ≈80◦ C to 4◦ C), designs either fold into the desired
+nucleotides, where the negative value pulls the scaffold clock-      shape with defect fractions on the order of a single-digit per-
+wise through the routing pattern. As the scaffold is circular,       centage, or not fold at all due to some catastrophic design flaw.
+any rotation could be expressed by either a negative or posi-        Distinguishing small variations in defect fractions of a few per-
+tive number. We chose the smaller absolute value for our no-         cent with high confidence would require a prohibitive level of
+tation.                                                              statistical sampling. For example, two designs that yield 90%
+   Our design variants comprised six staple motifs, 12 scaffold      and 95% well-folded structures, respectively, would require
+rotations, eight designs which broke or modified the symmetry        classifying hundreds of structures each to ensure sampling un-
+of the seam incrementally, two designs in which there were           certainty much lower than their difference in yield.
+                                                                                                  Cooperativity and defectivity in DNA origami            5
+
+
+
+
+Figure 3. Design survey. Each design is numbered #1 to #34 and comprises a scaffold routing with a sequence start position that also denotes the
+location of the excess ssDNA loop (labeled with a circle), an interhelical angle or lattice, and a staple motif. A tabular version of this, emphasizing
+comparable design features, is given in Supplementary Section 2. Designs #1 to #22 all had an 8-16-8 staple motif, and #23 had a 16-16 motif. The
+numeric order was assigned after analysis was completed to emphasize similarities and sources of cooperativity between designs.
+
+
+   However, it requires far smaller sample sizes to distinguish                 overall trend in defectivity for a wide range of values. How-
+between designs when the defective fractions are closer to                      ever, in the long run defectivity measurements will require a
+50%. Analytical solutions of similar problems in cell counting                  definition of ϕ that can be readily measured orthogonally.
+serve as a useful example (43). We therefore engineered our                     Future work might consider pursuing algorithms for relative
+annealing conditions to increase both the defective fraction                    surface area of each origami, or potentially comparison with
+and its sensitivity to design changes by reducing the concen-                   DNA-PAINT based quantification.
+tration of scaffold and staples, while keeping a short anneal
+                                                                                         1nwell−folded + 5ndamaged + 15nripped + 50ncatastrophic
+time. This approach is valid, provided the mechanisms of de-                       =                                                            . (1)
+fect formation are the same under poor annealing conditions                                                       ntotal
+as they are under typical ones. Our control experiments, sup-                      Our observed trends in ϕ were robust to differences in the
+plementary material section 8, indicate that the trends found                   exact coefficients because the classification categories were
+under our poor annealing conditions will hold under more                        sufficiently distinct. However, we caution the reader to use this
+standard conditions.                                                            only as a very approximate substitute for the number of miss-
+   To estimate defectivity, we classified origami into easily dis-              ing or blocked staples. The primary utility of ϕ is to facilitate
+tinguished categories, which we defined as well-folded, dam-                    comparison between designs.
+aged, ripped, and catastrophic (Fig. 4a and b, and supplemen-                      As a control, we ran 1% agarose gels of some of our best-
+tary material sections 6 and 7).                                                and worst-performing structures. In Fig. 4c, we show sepa-
+   Well-folded structures exhibit no visible defects; damaged                   rate gels of origami annealed under typical high-yield condi-
+structures display one to two visible defects that did not                      tions on the left, and under our accelerated conditions on the
+change the overall geometry; ripped structures are ones whose                   right. The lower section of Fig. 4c shows AFM images from the
+integrity is obviously reduced, but which are still more assem-                 high-yield condition and illustrates the difficulty in using gel
+bled than not; and catastrophic origami have no recognizable                    electrophoresis for high-precision measurements of the defec-
+structure. In lieu of ground-truth data sets of sufficient size to              tive fraction formed in an origami assembly. First, the origami
+enable machine learning approaches, we use human analysts                       are sufficiently large that only a significant amount of damage
+to classify the images.                                                         will shift the band; under high-yield anneal conditions, de-
+   We equate the defectivity, or ϕ, to the average number                       sign #7 had damage in its AFM image but exhibited a single
+of missing or blocked staples for a design. The coefficients                    clear band of roughly the same mobility as the well-folded de-
+in equation (1) correspond to an estimate of the minimum                        signs, #1 and #14. Second, design variations can significantly
+number of defective staples necessary for a given level of                      shift the mobility even for well-folded structures: for example,
+visible damage with 1 staple, 5 staples, 15 staples, and 50                     designs #1, #14, and #24 were all reasonably well-folded un-
+staples corresponding to the well-folded, damaged, ripped,                      der high-yield anneal conditions but had different mobilities.
+and catastrophic classifications, respectively. By choosing only                Third, it is difficult to self-consistently quantify band shifts of
+four classifications, we ensured each classification was suffi-                 such large structures; the origami bands associated with ac-
+ciently different from the others that the trends in the defec-                 celerated anneal conditions migrated more slowly relative to
+tivity were robust to the exact coefficients used in equation (1).              the M13 control than their high-yield anneal condition coun-
+Our preliminary tests changing these coefficients preserved the                 terparts, indicating damage. However, quantifying the degree
+6    Majikes et al.
+
+
+
+
+Figure 4. (a) Example AFM images and routing pattern of one of the designs with the high yield under accelerated test conditions, design #1, and one of
+the worse-performing designs, #7. (b) Classifications, AFM examples, and schematics. (c) Gel images, in 1% agarose, 100 V, 2 h, where the staple band
+is cropped out of the image. Bottom: AFM images of the example structures annealed at 100× staple:scaffold and imaged on mica in liquid tapping
+modes. All scale bars 100 nm.
+
+
+of that damage would require intensive modeling of the elec-                  Origami anneals
+trophoretic mobility of each design.                                          Samples of each design were annealed at a low M13MP18
+   However, other studies with a more constrained parameter                   scaffold concentration of 0.375 nmol·l−1 , a low staple ex-
+space can make good use of migratory yield measurements.                      cess of 5×, for a 45-min period, during which the tempera-
+For example, 3D origami have dramatically larger band shifts                  ture was reduced from 80◦ C to 4◦ C. Buffer conditions were
+for poorly folded structures and tend to fail more catastroph-                40 mmol·l−1 Tris, 12.5 mmol·l−1 magnesium chloride, and
+ically than 2D ones. Studies concerning catastrophic levels of                1 mmol·l−1 ethylenediaminetetraacetic acid, pH 8.0. Samples
+defects in 3D structures typically find gel electrophoresis suf-              were then kept on ice for no more than 14 h before imaging.
+ficient [6, 17, 18]. Similarly, if a single design is being used to              Origami are more typically annealed at >5 nmol·l−1 with
+probe annealing condition optimization or nuclease degrada-                   10× staples at the lab scale, and commercial production
+tion, band shifts for that design are more readily interpretable              would presumably perform assembly under much higher con-
+[44, 45].                                                                     centrations. We note that the forward reaction rate is propor-
+                                                                              tional to the product of these concentrations, and thus the
+                                                                              square of the scaffold concentration. Even simply increasing
+Classification and uncertainty                                                the annealing conditions to 10 nmol·l−1 scaffold with 10× sta-
+We consider several sources of uncertainty in imaging yield:                  ples would result in a >1000 × increase in forward reaction
+the variation between analysts in classifying origami; the sam-               rate compared to those used here.
+ple size and statistics associated with calculating ϕ; the day-                  As discussed earlier, these poor anneal conditions were cho-
+to-day variation in analyst classification; and variation in the              sen to ensure a higher distribution of defective origami to min-
+synthesis yield of the staple pools for each design. These were               imize the necessary sample size. This, in turn, minimizes the
+quantified via control experiments and Monte Carlo simula-                    time required for AFM imaging and image classification.
+tion, all uncertainties presented here represent one standard
+deviation.                                                                    Staple pool concentration
+   Variation between analysists was evaluated for a subset of
+                                                                              When staple concentrations and excesses are described in this
+our initial designs and evaluated as a consistency check (see
+                                                                              manuscript, we refer to an estimated concentration of cor-
+Supplementary Material section 6). While analysts disagreed
+                                                                              rectly synthesized staples. Such normalization is necessary, as
+on the exact defectivity value, there was agreement in the trend
+                                                                              designs with longer staples will have lower concentrations of
+between designs for all analysts.
+                                                                              correctly synthesized staples [46]. As discussed in section 5 of
+   The three remaining uncertainty sources were quantified by
+                                                                              the SI, we used Monte Carlo simulation of the staple synthesis
+a mix of control experiments and Monte Carlo simulation, as
+                                                                              yield assuming a 99.5% coupling efficiency and no sequence
+discussed in section 8 of the SI. Our designs exhibited a range
+                                                                              dependence on coupling efficiency, along with standard ex-
+of defectivity, ϕ, from ≈10 to ≈35. Surprisingly, we found
+                                                                              tinction coefficient prediction [47, 48]. Staple pools were pur-
+that variation in staple pool synthesis contributes the most to
+                                                                              chased in multiple iterations, discussed in image classification
+uncertainty in defectivity, where a single standard deviation
+                                                                              below, though we do not anticipate staple pool age to be rel-
+contributed ± 2.8 in ϕ in the control. Sample size and day-to-
+                                                                              evant to yield [49].
+day variation contributed less for a single standard deviation,
+from ±0.2 to ±1.7 in ϕ for the former and ±0.1 to ±0.3 in ϕ
+for the latter. Future developers of protocols who wish to opti-              Intercalating dye melt and anneal curves, and
+mize imaging-yield experiments may consider imaging fewer                     electrophoresis
+origami from multiple pools of the same design to dramat-                     To ensure high signal, we performed these experiments at a
+ically reduce the overall uncertainty for similar person-hour                 much higher concentration and staple excess than in our accel-
+costs.                                                                        erated test conditions (7.5 nmol·l−1 scaffold, 10× staple con-
+                                                                                  Cooperativity and defectivity in DNA origami      7
+
+
+centration), with an intercalating dye (13.3 μmol·l−1 SYBR          counterintuitive changes in the distribution of fold distances,
+Green—note: materials are identified in this paper in order to      as discussed in supplementary material section 10.
+specify the experimental procedure adequately. Such identifi-          Taken together, these results indicate that origami designers
+cation is not intended to imply recommendation or endorse-          are well served by their aesthetic biases. Keeping symmetric
+ment of any product or service by NIST, nor is it intended          seams, keeping staples short, keeping excess scaffold on the
+to imply that the materials or equipment identified are nec-        outside of the structure, and using 8-16-8 motifs were effective
+essarily the best available for the purpose), and curves were       approaches to reduce defectivity in the systems we examined.
+obtained across four replicate wells. For more detailed exper-
+imental conditions, see section 13 of the SI.
+   1% agarose gels in annealing buffer were run at 100 V for        Individual sources of cooperativity and defectivity
+2 h on ice, stained with SYBR Green, and imaged.                    Before examining combinations of metrics, we plot each met-
+                                                                    ric against defectivity, Fig. 5a–d. If a clear trend is visible,
+Atomic force microscopy                                             it indicates that the metric is strongly correlated with defec-
+All images were taken on mica surfaces in liquid tapping            tivity. However, the absence of a clear trend does not nec-
+mode. Buffer conditions were identical to those used in an-         essarily mean that a metric is uncorrelated with defectivity,
+nealing. If significant precipitation was observed during imag-     but that a correlation may be obscured by collapsing a multi-
+ing, imaging was continued so long as the structures could be       dimensional space onto a single axis.
+clearly visualized, and buffer was filtered or prepared fresh for      The inter-fold cooperativity metric, as measured by the
+the next sample.                                                    skew of the initial entropy penalty distribution, is strongly cor-
+   To prevent tip-damage-induced biases, at the beginning of        related with defectivity. We note that the strength of the corre-
+each imaging session the same one-micron-squared area was           lation with negative inter-domain cooperativity (or blocking),
+scanned multiple times and visually inspected for indications       as measured by the sum of the blocking probabilities across
+of increasing damage.                                               all folds, is more pronounced for some design families, partic-
+                                                                    ularly those with modified staple seams.
+                                                                       While it is intuitive that more blocking leads to higher
+Evaluation of design files                                          defectivity, understanding the effect of the entropy penalty
+To deconvolve the sources of cooperativity from defectivity         skew is more involved. The nucleation and growth picture of
+data, it was necessary to condense design information into our      origami assembly is intrinsically linked to interfold coopera-
+devised metrics. As discussed in section 11 of the SI, we modi-     tivity and loop entropy. It is computationally challenging to
+fied a version of cadnano to provide outputs including domain       model the ensemble of different folding pathways for even a
+sequences, loop distances between domains, and basic nearest        single design. However, it is possible to generate the entropy
+neighbor model thermodynamic predictions.                           penalty for each fold if it is considered to be the first fold,
+   Section 2 of the supplementary material discusses the or-        generating a distribution across all folds. We may also expect
+ganization of the supplemental zip file in the data repository      the folds with the smallest penalty in this distribution to actu-
+containing sequence lists for each design, broken up into folds,    ally form first, nucleating assembly pathways. While, in princi-
+or sets of two domains on the same staple, with the predicted       ple, it would be possible to recalculate the distribution for the
+Tm for each domain, the loop distance, and estimated entropy        remaining folds, this may not be necessary. This is because,
+penalty.                                                            while the initial fold will reduce the penalty for subsequent
+                                                                    events, it will not, on average, change the order in which sub-
+                                                                    sequent folds occur. The shape of the distribution, represented
+Results
+                                                                    by the skew, thus reveals the proportion of nucleation events
+Qualitative trends in defectivity as a function of                  that can propagate smoothly, i.e. with the smallest disconti-
+design                                                              nuity in penalty, via intermediate to long folds and complete
+Outside of our direct goal of probing cooperativity, several in-    assembly, see supplementary material sections 9 and 10 for
+teresting qualitative trends in defectivity are observable within   histogram distributions of these penalties.
+the families of design we examined. We detail these trends and         A large negative skew is indicative of many nucleation
+the evidence for them in section 9 of the SI and summarize          points, but a limited number of pathways leading to the ge-
+them here as follows.                                               ometrically necessary long folds. Conversely, a large positive
+   When the scaffold sequence was rotated in ways that kept         skew represents few nucleation events and an excess of long
+the loop of excess scaffold (∼200 nucleotides) on the top or        folds, susceptible to blocking. Unfortunately, because the dis-
+bottom edge, we observed no change in defectivity. When the         tributions reflect initial penalties, the exact value of the skew
+excess loop of scaffold was internal to the structure or posi-      is difficult to link to specific design properties, though it does
+tioned to increase the loop distance of an entire row of staples,   illustrate meaningful differences between designs. For exam-
+the defectivity dramatically increased. These designs are de-       ple, designs #1 and #24 represent a typical design and that
+picted as hollow circles in the following figures and are labeled   same design if the scaffold routing was rotated π/2 radians
+as flawed due to catastrophic steric effects. We observed sig-      (90◦ ). Design #1 therefore has a hierarchy of short to long
+nificant changes for modified staple motifs, but without a clear    folds. In contrast, design #24 is optimized to have as many
+interpretation for these changes. This is likely because the mo-    short folds as possible. They have skew values of 1.0 and −1.6,
+tifs affect multiple sources of cooperativity and will have ad-     respectively, and design #24 performs objectively worse than
+ditional changes in staple pool synthesis variation due to their    design#1. Supplementary material section 10 of the illustrates
+different staple lengths. Finally, altering the seam symmetry       these differences. Our lowest defectivity occurs for a skew
+consistently increased defectivity, despite our hypothesis that     value of +1, though we could not obtain higher skew without
+interdigitated seams should improve yield. We attribute this to     modifying the aspect ratio of the designs. The relationship be-
+8    Majikes et al.
+
+
+
+
+Figure 5. Defectivity ϕ as a function of several proposed design metrics which are intended to describe how much that source of cooperativity
+contributes across all 200+ staples in the design. Datapoints are colored to correspond with the categories in Fig. 3, where hollow circles represent
+clearly flawed designs. (1) indicates a dimensionless quantity, error bars represent a single standard deviation and were calculated via Monte Carlo
+simulations as discussed in SI Section 8.
+
+
+tween skew and defectivity suggests that simply increasing the                    The observed relationship between stability and defectiv-
+number of short folds at the expense of medium folds merely                    ity suggests interesting avenues for future work. Improved
+creates additional kinetic traps for the topologically necessary               thermal stability prediction could be invaluable in optimiz-
+long folds.                                                                    ing designs for yield: Dannenberg et al. reported a proof-of-
+                                                                               concept model for origami melting, which incorporated con-
+                                                                               formational effects, but which was only experimentally veri-
+Thermal stability and defectivity                                              fied for one design and required manual input of topological
+Because assembly occurs across a steep thermal gradient, it is                 information [5]. Further testing of this model against multi-
+useful to have an orthogonal, thermal measurement of these                     ple designs or annealing conditions could help to deconvolve
+systems. This is also useful as thermal stability is often dis-                cooperative contributions.
+cussed in the context of assembly, yield, and defectivity [5, 18,
+50, 51].
+   Obtaining high-quality melt data are problematic, as the                    Combination of sources of cooperativity
+large molar mass of origami and their excess staple popu-                      So far, we have identified and devised cooperativity metrics
+lations make calorimetry and temperature-dependent UV-vis                      and shown that a subset correlate strongly with defectivity.
+absorption measurements difficult, while fluorescence mea-                     Given the highly interconnected nature of cooperative effects
+surements using intercalating dyes are confounded by dye                       in origami assembly, it is not obvious that even the strongly
+binding to ssDNA and dsDNA, and dye quantum yield, all                         correlated metrics would form a suitably orthogonal basis,
+of which change with temperature [52]. However, intercalat-                    i.e. a set of independent parameters that can be calculated
+ing dye measurements are useful as a comparative metric of                     from an origami design, whose combination can effectively
+the assembly process, though we needed to perform the mea-                     predict defectivity. If this is the case, then it implies that it
+surements at a higher concentration to ensure high signal, see                 is not necessary to simulate the details of all possible assem-
+the methods.                                                                   bly pathways, because the behavior of the system can be un-
+   Figure 6a shows two examples of melt and anneal curves,                     derstood from the aggregate properties of all possible first
+which provide examples of two designs, #7 and #1, respec-                      folds.
+tively. We plot these curves for each design in section 2 of the                  A simple test indicating that aggregate properties of the de-
+SI.                                                                            sign are sufficient to predict yield would be to combine nor-
+   In Fig. 6b we plot the anneal and melt peak positions                       malized metrics for different sources of cooperativity to see if
+against defectivity. Note that we consider the flawed designs,                 the defectivity data collapses onto a single curve.
+indicated by hollow circles, as outliers that do not contribute                   However, this system presents additional complications for
+to the trend of reduced defect rate as a function of increased                 such a test. Because there are hundreds of events, our de-
+thermal stability.                                                             scribe the propensity of the whole design to be affected by
+   The average predicted Tm for full staples, including loop-                  that source of cooperativity. This is not as well defined as ex-
+entropy penalties, is given in the rightmost panel of Fig. 6b.                 cess energy for a single cooperative interaction and requires
+The predicted Tm was calculated for all staples in a design,                   judgement calls for weighting schemes when averaging across
+assuming that each staple was the first to bind and did so in                  the hundreds of events. These decisions increase the risk of
+one step, see supplementary material section 2 and 12. This                    accidental p-hacking.
+results in an underestimate of the stability of the origami, and                  As steric contributions are unlikely to be captured by any
+a correspondingly lower predicted Tm .                                         of our metrics, the designs with internal excess scaffold loops
+                                                                                                  Cooperativity and defectivity in DNA origami             9
+
+
+
+
+Figure 6. (a) Numerical derivatives of the melt (red) and anneal (black) curves for four replicate wells for two designs (#7 and #24). Each line represents a
+single measurement. The black circle indicates the loop of excess ssDNA and the start of the m13 sequence. (b) Plot of the defectivity, or ϕ, against the
+measured anneal temperature, melt temperature, and average predicted full staple melt temperature for each design. We note the similar distribution of
+different families of design in melt, anneal, and predicted melt temperature distributions. The measured melt and anneal temperatures were found by
+the derivative peak position. Datapoints are colored to correspond with the categories in Fig. 3, where hollow symbols represent clearly flawed designs.
+Y-error bars were calculated for ϕ as described in the text, and x-error bars represent the standard deviation in peak position between the four replicates
+for experimental Tm and Ta .
+
+
+(labeled flawed designs) were likely to map noise onto our                       rics, detailed in supplementary material section 3. This results
+model and were omitted from any regression. As we could                          in an exponential increase in the number of possible combi-
+only reasonably expect 28 of 34 designs to have defectivity                      nations of metrics.
+correlated with our metrics and given the risk of accidental p-                      To provide some confidence in our choice of metrics from
+hacking discussed above, we chose to take an Occom’s Razor                       Fig. 7, we turn to a basic Least Absolute Shrinkage and Se-
+approach and only consider the simplist first order combina-                     lection Operator (LASSO) analysis. In brief, LASSO analysis
+tions of normalized metrics with linear weighting coefficients.                  takes some dataset, i.e. measured defectivity, and input covari-
+   Our first approach was to combine the three metrics with                      ates, i.e. calculated metrics, where the dataset itself is small
+the strongest correlation with defectivity, namely the inter-fold                compared to the number of potential inputs, i.e. there are more
+cooperativity, blocking inter-domain cooperativity, and ther-                    potential formulations of metrics than measured designs. It
+mal stability. The fitted model value for any design is the sum                  then performs iterative linear regressions on subsets of the
+of each metric multiplied by the weighting coefficient for that                  data and subsets of the input metrics with a regularization
+metric, where the three weights and offset were found by a                       parameter, which controls how many input metrics can have
+linear regression. As shown in Fig. 7 this model fit captured                    non-zero weights. If the metrics most correlated with defectiv-
+a surprising amount of variation in defectivity. This approach                   ity are consistently weighted by the analysis across iterations,
+yielded roughly equivalent weights of 33%, 32%, and 35%                          it suggests that they are truly better correlated than a com-
+for Tm , entropy skew, and blocking, respectively, where Tm                      bination of their peers. A full description of the analysis is
+and entropy skew had a negative sign as their metric is corre-                   provided in section 4 of the SI.
+lated with reduced defectivity.                                                      Of the >30 potential formulations of cooperativity met-
+   The results shown in Fig. 7 indicate that the variation in                    rics, and their inverses, the LASSO analysis consistently iden-
+defectivity can readily be collapsed into a single trend, and                    tified inter-fold cooperativity, as described by the skew of the
+therefore that initial, aggregate properties of a design may be                  entropy penalty distribution, and thermal stability, as repre-
+sufficient for predicting yield. It also suggests that the metrics               sented by the inverse of the Tm , as principal factors with sim-
+we selected are a good starting place for such a prediction,                     ilar weighting to our initial intuition-driven analysis. How-
+though it does not necessarily provide confidence that the ex-                   ever, it also consistently identified the positive inter-domain
+act metric formulations we chose will work for any arbitrary                     cooperativity (nucleating staple domains) instead of the neg-
+origami system. While we have so far presented a single metric                   ative inter-domain cooperativity (blocking) and had a vari-
+for each source of cooperativity, it is not obvious, a priori, how               ety of other metrics contributing <10% of coefficient weight.
+to best construct a metric that represents the propensity of a                   Given the variation in contributions between iterations of the
+single source of cooperativity to propagate through the entire                   LASSO analysis, it is difficult to say whether these other met-
+assembly, discussed in supplementary material section 1. We                      rics are meaningful or simply a mapping of noise onto the
+therefore constructed >30 alternate versions of various met-                     model form.
+10    Majikes et al.
+
+
+
+
+Figure 7 Fitted model in dimensionless units combining normalized metrics for inter-fold cooperativity and negative inter-domain cooperativity (blocking)
+with thermal stability in the form of experimental Tm , with example AFM images of a high defectivity (#28) and low defectivity (#33) designs. Designs
+with a higher model value have some combination of a lower Tm , lower skew in fold entropy penalties, or higher average probability of staple blocking.
+The scale bars represent 100 nm. X-error bars in the heuristic come exclusively from the uncertainty in measured melt temperature and fit underneath
+the data points.
+
+
+   The agreement between our intuition-driven analysis and                        Additionally, our observations contribute to origami design
+the LASSO analysis on the role of inter-fold cooperativity and                 best practice: absent a predictive model, keeping staples short,
+thermal stability provides a measure of confidence for using                   maintaining symmetry where possible, and keeping the excess
+the entropy skew metric. It also suggests future avenues of                    scaffold ssDNA outside the structure on a helix rather than on
+work in which experimental melt data, which contains co-                       a scaffold crossover are, collectively, reasonable approaches to
+operative effects, and theoretical melt predictions, which may                 good origami design.
+not contain those effects, may be used as a higher throughput
+test system. The disagrements between these analyses regard-
+ing the positive inter-domain cooperativity and negative inter-                Discussion
+domain cooperativity suggest that our overall set of metrics is                In the DNA nanofabrication literature, the majority of de-
+in some way incomplete or incorrect, or that these two sources                 sign and cooperativity studies sample small families of related
+of cooperativity must be combined in a more complicated way                    structures and vary a single design parameter, such as staple
+than a simple linear combination.                                              motif, and have proven useful in identifying sources of coop-
+   In summary, it is both surprising and encouraging that sim-                 erativity. Generalizing any observed trends is, however, prob-
+ple linear combinations of cooperativity metrics and thermal                   lematic, given the complex relationships between design pa-
+stability metrics can so readily capture variability in defectiv-              rameters and the various cooperative effects.
+ity, at least over the range our design variations can probe.                     By measuring defectivity values precisely, and across a wide
+That such a network of hundreds of interacting events can be                   range of structures, we have found good correlation between
+so easily simplified supports the hypothesis that 2D origami                   defectivity and the propensity of design to be influenced by
+is more funnel-like than path-like. This indicates that over the               sources of cooperativity proposed in the literature. An initial
+next decade a combination of physical insight and statistical                  statistical analysis indicates that a unified heuristic, created
+analysis may, with achievable increases in dataset size and pre-               from a linear combination of two such cooperativity metrics
+cision, build a clear understanding of how cooperativity prop-                 and thermal stability, once normalized, is surprisingly effective
+agates through these complex and interconnected model sys-                     at capturing the trend in defectivity. This suggests that despite,
+tems.                                                                          or perhaps because of, the very large number of events and
+   These results also suggest that origami present an interest-                possible assembly pathways, the aggregate properties of event
+ing model system for emergent properties problems. Specif-                     distributions in origami matter more than their precise propa-
+ically, DNA origami may be a highly useful test system for                     gation during assembly. Further, our analysis indicates that the
+understanding how a few cooperative effects can propagate                      inter-fold cooperativity and thermal stability are the principal
+through a large network with many connections but in which                     factors controlling defectivity. Interestingly, it appears that the
+each connection is relatively weak. The weakness of these co-                  human aesthetic bias towards symmetry reduces defectivity
+operative interactions relative to the energetics of DNA hy-                   via its effect on the distribution of entropic penalties. The re-
+bridization, and the geometric and topological constraints on                  mainder of the variation in defectivity can be ascribed to either
+useful DNA routing, are likely why it is possible to use initial               positive or negative inter-domain cooperativity, with a poten-
+cooperative energetics aggregated across the entire design to                  tial admixture of base stacking. However, a more extensive
+meaningfully predict defectivity. With further improved mea-                   data set would be needed to distinguish these contributions.
+surements and developments of theory, it should be possible to                    Fortunately, emerging capabilities in automated design,
+identify when and how cooperative effects compound across                      synthesis, image classification, and even autonomous exper-
+such a network by identifying when and how these aggregate                     imentation should enable the generation of sufficiently large
+properties fail to predict defectivity.                                        data sets to construct a physics-based predictive model con-
+                                                                                      Cooperativity and defectivity in DNA origami          11
+
+
+necting defectivity and design in DNA nanostructures. More              3. Hill AV. The possible effects of the aggregation of the molecules of
+importantly, this simple yet rich system enables a deeper ex-              haemoglobin on its dissociation curves. Proc Physiol Society
+ploration of cooperative effects. If the resulting insights could          1910;40:iv–vii
+be applied to the interaction of nanostructure molecular mo-            4. DeLuca M, Duke D, Ye T et al. Mechanism of DNA origami
+                                                                           folding elucidated by mesoscopic simulations. Nat Commun
+tions, then it would be possible to emulate cellular mecha-
+                                                                           2024;15:3015. https://doi.org/10.1038/s41467- 024- 46998- y
+nisms, such as the ribosome.                                            5. Dannenberg F, Dunn KE, Bath J et al. Modelling DNA origami
+                                                                           self-assembly at the domain level. J Chem Phys 2015;143:165102.
+Acknowledgements                                                           https://doi.org/10.1063/1.4933426
+                                                                        6. Aksel T, Navarro EJ, Fong N et al. Design principles for accurate
+We would like to thank John Majikes for help in trou-                      folding of DNA origami. Proc Natl Acad Sci USA
+bleshooting and streamlining our analysis scripts. We would                2024;121:e2406769121.
+like to thank Sam Stavis, Andy Madison, Ruohong Shi, Sam                   https://doi.org/10.1073/pnas.2406769121
+Schaffter, and Arvind Balijepalli for useful discussions. We            7. Jun H, Zhang F, Shepherd T et al. Autonomously designed
+would also like to thank Sam Schaffter, Divita Mathur, and                 free-form 2D DNA origami. Sci Adv 2019;5:1–9.
+Dominic Scalise for their feedback on our methods and                      https://doi.org/10.1126/sciadv.aav0655
+                                                                        8. Babatunde B, Cagan J, Taylor RE. An improved shape annealing
+manuscript.
+                                                                           algorithm for the generation of coated deoxyribonucleic acid
+   Author contributions: Jacob Majikes (Conceptualization                  origami nanostructures. J Mech Des 2024;146:051708.
+[equal], Investigation [lead], Formal analysis [lead], Project             https://doi.org/10.1115/1.4064242
+administration [supporting], Writing [lead]), Amna Hasni                9. Shirt-Ediss + B, Torelli + E, Navarro SA et al. Optimizing DNA
+(Formal analysis [supporting]), Shankar Haridas (Formal                    origami assembly through selection of scaffold sequences that
+analysis [supporting]), Joseph W. F. Robertson (Formal anal-               minimise off-target interactions. bioRxiv,
+ysis [supporting], Writing – review & editing [equal]), Adam               https://doi.org/10.1101/2025.01.29.635450, 30 January 2025,
+L. Pintar (Formal analysis [equal]), Michael Zwolak (Supervi-              preprint: not peer reviewed.
+sion [equal], Project administration [equal], Writing – review         10. Dunn KE. The business of DNA nanotechnology:
+& editing [equal]), and J. Alexander Liddle (Conceptualiza-                commercialization of origami and other technologies. Molecules
+                                                                           2020;25:377. https://doi.org/10.3390/molecules25020377 .
+tion [equal], Supervision [lead], Project administration [lead],
+                                                                       11. Mathur D, Medintz IL. Analyzing DNA nanotechnology: a call to
+Writing [equal])                                                           arms for the analytical chemistry community. Anal Chem 2017;
+                                                                           89:2646–63. https://doi.org/10.1021/acs.analchem.6b04033
+Supplementary data                                                     12. Kick B, Praetorius F, Dietz H et al. Efficient production of
+                                                                           single-stranded phage DNA as scaffolds for DNA origami. Nano
+Supplementary data is available at NAR online.                             Lett 2015;15:4672–6.
+                                                                           https://doi.org/10.1021/acs.nanolett.5b01461
+                                                                       13. Majikes JM, Liddle JA. Synthesizing the biochemical and
+Conflict of interest                                                       semiconductor worlds: the future of nucleic acid nanotechnology.
+None declared.                                                             Nanoscale 2022;14:15586–95.
+                                                                           https://doi.org/10.1039/D2NR04040A
+                                                                       14. Mohammadi-Zerankeshi M, Houston J, Elisha-Wigwe OKU et al.
+Funding                                                                    Unraveling the folding dynamics of DNA origami structures. Small
+                                                                           2025;21:e04855. https://doi.org/10.1002/smll.202504855
+This work was performed under financial assistance award               15. Lee C, Kim Y, Jeon K et al. A long-staple design approach towards
+70NANB24H108 and 70NANB23H110 from the National                            the scalable production of scaffolded DNA origami. Nanoscale
+Institute of Standards and Technology, U.S. Department of                  Horiz 2025;10:2584–92. https://doi.org/10.1039/D5NH00357A
+Commerce. The statements, findings, conclusions, and recom-            16. Wang Y, Wang H, Li Y et al. Chemically conjugated branched
+mendations are those of the author(s) and do not necessar-                 staples for super-DNA origami. J Am Chem Soc
+ily reflect the views of the National Institute of Standards               2024;146:4178–86.
+                                                                       17. Ke Y, Bellot G, Voigt NV et al. Two design strategies for
+and Technology. Funding to pay the Open Access publication
+                                                                           enhancement of multilayer–DNA-origami folding: underwinding
+charges for this article was provided by internal funds.                   for specific intercalator rescue and staple-break positioning. Chem
+                                                                           Sci 2012;3:2587. https://doi.org/10.1039/c2sc20446k
+                                                                       18. Martin TG, Dietz H. Magnesium-free self-assembly of multi-layer
+Data availability                                                          DNA objects. Nat Commun 2012;3:1103–6.
+The data underlying this article are available in the NIST Data            https://doi.org/10.1038/ncomms2095
+Repository, at https://datapub.nist.gov/od/id/mds2-3887 and            19. Jacobs WM, Reinhardt A, Frenkel D. Rational design of
+at doi.org/10.18434/mds2-3887, including origami design                    self-assembly pathways for complex multicomponent structures.
+files (cadnano, .json format), intermediate data on the toplogy            Proc Natl Acad Sci USA 2015;112:6313–8.
+                                                                           https://doi.org/10.1073/pnas.1502210112
+of folds (worksheet, .csv), and defectivity counts (worksheet,
+                                                                       20. Jacobs WM, Frenkel D. Self-assembly of structures with
+.csv).                                                                     addressable complexity. J Am Chem Soc 2016;138:2457–67.
+                                                                           https://doi.org/10.1021/jacs.5b11918
+                                                                       21. Majikes JM, Nash JA, LaBean TH. Search for effective chemical
+References
+                                                                           quenching to arrest molecular assembly and directly monitor DNA
+ 1. Hartman NC, Groves JT. Signaling clusters in the cell membrane.        nanostructure formation. Nanoscale 2017;9:1637–44.
+    Curr Opin Cell Biol 2011;23:370–6.                                     https://doi.org/10.1039/C6NR08433H
+    https://doi.org/10.1016/j.ceb.2011.05.003                          22. Wah JLT, David C, Rudiuk S et al. Observing and controlling the
+ 2. Levinthal C. Are there pathways for protein folding? J Chim Phys       folding pathway of DNA origami at the nanoscale. ACS Nano
+    1968; 65:44–5. https://doi.org/10.1051/jcp/1968650044                  2016;10:1978–87.
+12      Majikes et al.
+
+
+23. Dunn KE, Dannenberg F, Ouldridge TE et al. Guiding the folding                                 nanostructures and characterization of addressable site defects.
+    pathway of DNA origami. Nature 2015;525:82–6.                                                  ACS Nano 2021;15:11597–606.
+    https://doi.org/10.1038/nature14860                                                            https://doi.org/10.1021/acsnano.1c01976
+24. Song J, Arbona J-M, Zhang Z et al. Direct visualization of                                 39. Strauss MT, Schueder F, Haas D et al. Quantifying absolute
+    transient thermal response of a DNA origami. J Am Chem Soc                                     addressability in DNA origami with molecular resolution. Nat
+    2012;134:9844–7. https://doi.org/10.1021/ja3017939                                             Commun 2018;9:1–7.
+25. Arbona J-M, Aimé J-P, Elezgaray J. Cooperativity in the annealing                              https://doi.org/10.1038/s41467- 018- 04031- z
+    of DNA origamis. J Chem Phys 2013;138:015105.                                              40. Wagenbauer KF, Wachauf CH, Dietz H. Quantifying quality in
+    https://doi.org/10.1063/1.4773405                                                              DNA self-assembly. Nat Commun 2014;5:3691.
+26. Snodin BEK, Romano F, Rovigatti L et al. Direct simulation of the                              https://doi.org/10.1038/ncomms4691
+    self-assembly of a small DNA origami. ACS Nano                                             41. Berengut JF, Berg Wr, rizzuto fj et al. Passivating blunt-ended
+    2016;10:1724–37. https://doi.org/10.1021/acsnano.5b05865                                       helices to control monodispersity and multi-subunit assembly of
+27. Majikes J, Patrone P, Kearsley A et al. Failure mechanisms in DNA                              dna origami structures. Small Structures
+    self-assembly: barriers to single-fold yield. ACS Nano 15:3284–94.                             2024;5:2300441https://doi.org/10.1002/sstr.202470015
+    https://doi.org/10.1021/acsnano.0c10114                                                    42. Cumberworth A, Frenkel D, Reinhardt A. Simulations of
+28. Rossi-Gendron C, El Fakih F, Nakazawa K et al. Isothermal                                      DNA-origami self-assembly reveal design-dependent nucleation
+    self-assembly of multicomponent and evolutive DNA                                              barriers. Nano Lett 2022;22:6916–22.
+    nanostructures. Nature Nanotchenology 2023.18:1311–18.                                         https://doi.org/10.1021/acs.nanolett.2c01372
+    https://doi.org/10.1038/s41565- 023- 01468- 2                                              43. Fuentes-Arderiu X, Dot-Bach D. Measurement uncertainty in
+29. Majikes JM, Nash JA, LaBean TH. Competitive annealing of                                       manual differential leukocyte counting. Clin Chem Lab Med
+    multiple DNA origami: formation of chimeric origami. New J                                     2009;47:112–5. https://doi.org/10.1515/CCLM.2009.014
+    Phys 2016;18:115001.                                                                       44. Sobczak J-PJ, Martin TG, Gerling T et al. Rapid folding of DNA
+    https://doi.org/10.1088/1367-2630/18/11/115001                                                 into nanoscale shapes at constant temperature. Science
+30. Schneider F, Möritz N, Dietz H. The sequence of events during                                  2012;338:1458–61. https://doi.org/10.1126/science.1229919
+    folding of a DNA origami. Sci Adv 2019;5:eaaw1412.                                         45. Hernandez-Garcia A, Estrich NA, Werten MWT et al. Precise
+    https://doi.org/10.1126/sciadv.aaw1412                                                         coating of a wide range of DNA templates by a protein polymer
+31. Majikes JM, Liddle JA. DNA Origami Design: a How-To Tutorial.                                  with a DNA binding domain. ACS Nano 2017;11:144–52.
+    J Res Natl Inst Stan                                                                           https://doi.org/10.1021/acsnano.6b05938
+    2021;126:126001https://doi.org/10.6028/jres.126.001                                        46. Sabary O, Orlev Y, Shafir R et al. SOLQC: synthetic oligo library
+32. Wagenbauer KF, Engelhardt FAS, Stahl E et al. How we make                                      quality control tool. Bioinformatics 2021;37:720–2.
+    DNA origami. ChemBioChem 2017;18:1873–85.                                                      https://doi.org/10.1093/bioinformatics/btaa740 .
+    https://doi.org/10.1002/cbic.201700377                                                     47. Cavaluzzi MJ, Borer PN. Revised UV extinction coefficients for
+33. Halvorsen K, Kizer ME, Wang X et al. Shear dependent LC                                        nucleoside-5 -monophosphates and unpaired DNA and RNA.
+    purification of an engineered DNA nanoswitch and implications                                  Nucleic Acids Res 2004;32:e13.
+    for DNA origami. Anal Chem 2017;89:5673–7.                                                     https://doi.org/10.1093/nar/gnh015 .
+    https://doi.org/10.1021/acs.analchem.7b00791                                               48. Cantor CR, Warshaw MM, Shapiro H. Oligonucleotide
+34. Martin TG, Dietz H. Magnesium-free self-assembly of multi-layer                                interactions. III. Circular dichroism studies of the conformation of
+    DNA objects. Nat Commun 2012;3:1103–6.                                                         deoxyoligonucleolides. Biopolymers 1970;9:1059–77.
+    https://doi.org/10.1038/ncomms2095                                                             https://doi.org/10.1002/bip.1970.360090909
+35. Ko SH, Gallatin GM, Liddle JA. Nanomanufacturing with DNA                                  49. Kielar C, Xin Y, Xu X et al. Effect of staple age on DNA origami
+    origami: factors affecting the kinetics and yield of quantum dot                               nanostructure assembly and stability. Molecules 2019;24:2577.
+    binding. Adv Funct Materials 2012;22:1015–23.                                                  https://doi.org/10.3390/molecules24142577 .
+    https://doi.org/10.1002/adfm.201102077                                                     50. Arbona JM, Elezgaray J, Aimé JP. Modelling the folding of DNA
+36. Sheheade B, Liber M, Popov M et al. Self-assembly of DNA                                       origami. EPL 2012;100:28006.
+    origami heterodimers in high yields and analysis of the involved                               https://doi.org/10.1209/0295-5075/100/28006
+    mechanisms. Small 2019;15:1902979.                                                         51. Harkness V, RW, Avakyan N, Sleiman HF et al. Mapping the
+    https://doi.org/10.1002/smll.201902979                                                         energy landscapes of supramolecular assembly by thermal
+37. Ko SH, Gallatin GM, Liddle JA. Nanomanufacturing with DNA                                      hysteresis. Nat Commun 2018;9:3152.
+    origami: factors affecting the kinetics and yield of quantum dot                               https://doi.org/10.1038/s41467- 018- 05502- z
+    binding. Adv Funct Materials 2012;22:1015–23.                                              52. DeJaco RF, Majikes JM, Liddle JA et al. Binding, brightness, or
+    https://doi.org/10.1002/adfm.201102077                                                         noise? Extracting temperature-dependent properties of dye bound
+38. Green CM, Hughes WL, Graugnard E et al. Correlative                                            to DNA. Biophys J 2023;122:1364–75.
+    super-resolution and atomic force microscopy of DNA                                            https://doi.org/10.1016/j.bpj.2023.03.002
+
+
+
+
+Received: July 15, 2025. Revised: November 7, 2025. Accepted: January 4, 2026
+Published by Oxford University Press 2026.
+This work is written by (a) US Government employee(s) and is in the public domain in the US.
+

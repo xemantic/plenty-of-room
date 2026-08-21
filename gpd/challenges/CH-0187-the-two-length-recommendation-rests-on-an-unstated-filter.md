@@ -5,7 +5,7 @@
 | **Against** | [`C-0140`](../claims/C-0140-honeycomb-raster-turn-sense.md) §4 — *"Read on a stated rule — **minimum `\|extent − 40 nm\|` among pairs with a stagger of at most 4 bp that fit M13** — the recommendation is **112 / 108 bp**"* — and the headline's *"the remedy costs **3 base pairs = 1.02 nm**"* |
 | **Raised by** | [`C-0147`](../claims/C-0147-honeycomb-turn-slack-and-ragged-face.md) (`T-231`) |
 | **Kind** | **methodological** — a selection rule with a free parameter that is neither derived nor priced, on a family in which two of the three axes that matter run the **other** way |
-| **Status** | **OPEN.** The recommendation is not wrong; it is **conditional**, and the condition is a path count. `C-0140`'s own table carries every number this challenge uses |
+| **Status** | **ANSWERED** by [`C-0151`](../claims/C-0151-closing-raster-selection.md) (`T-245`): the four axes below are re-scored on the **closing** family, where a fifth axis this challenge could not have had — scaffold closure — settles the choice at **`102 / 109`**, which wins three of these four. `CH-0187`'s own `101 / 109` does not close either. The reading of the filter as *merely unstated* is superseded by [`CH-0194`](CH-0194-the-filter-and-closure-are-disjoint.md): it is **disjoint** from closure |
 
 ---
 

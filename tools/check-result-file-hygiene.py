@@ -14,7 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-"""Three censuses over `gpd/results/`, of which TWO are gates.  `T-208`/`C-0129`, `T-212`/`C-0131`.
+"""Four censuses over `gpd/results/`, of which TWO are gates.  `T-208`/`C-0129`, `T-212`/`C-0131`,
+`T-249`/`C-0153`.
 
 `tools/check-kotlin-format-strings.py` reads **source** and models `String.format` call sites.
 This reads **output** and models nothing, and **the catch sets are strictly different**: a raw
@@ -23,7 +24,7 @@ string assembled in one function and formatted in another, a field written by a 
 in `tools/`, a hand-edited JSON.  `C-0127` repaired **13 fields carrying 23 raw conversions
 across 7 result files**, every one of which had been committed and read at least once.
 
-Three predicates, three exit policies:
+Four predicates, three exit policies:
 
 - ``--conversions`` (the default) is a **GATE**.  It fires on a Java format conversion in any
   string of any committed result file, and exits 1.  The tree reads clean under it, which is
@@ -46,6 +47,17 @@ Three predicates, three exit policies:
   What holds the predicate open is `C-0083`: *a gate that cannot come clean is not a gate*, and a
   predicate can always be narrowed until the tree is clean.  The mutation test for that is in
   [GATE_TESTS] — narrowing the gate back to the leaf name must FAIL a named self-test.
+- ``--prose`` is an **AUDIT** (`T-249`).  `roundedForResult` dispatches on the JSON **type** and
+  passes strings through — correctly, and that is also why the boundary cannot cure this: by the
+  time it sees ``"channel B at s = 0 is $x"`` the number in it is no longer a number.  So a
+  `Double` interpolated into a sentence reaches the file through `Double.toString()` at up to
+  seventeen significant digits, inside a file that declares nine.  The predicate is exact rather
+  than heuristic — a number that went through the rounding layer cannot exceed
+  [RESULT_DIGITS] by construction — and its false-positive rate is **measured exhaustively**:
+  all 757 hits of the committed corpus are the **shortest decimal that round-trips** their own
+  double, which is what `Double.toString` emits and what a transcribed literature value has no
+  reason to be.  It reads **748 tokens in 48 files** and therefore cannot be a gate (`C-0083`);
+  the corpus sweep that would let it become one is `T-250`.
 - ``--saturated`` is an **AUDIT**.  A symmetric binomial standard error on a **saturated**
   proportion is identically zero for every sample count and therefore measures nothing.
   **302 records in 7 files carried one before `T-208`, 277 in 6 after it, and `T-213` repaired
@@ -71,8 +83,8 @@ Usage:
     tools/check-result-file-hygiene.py --census         # all three, exit 0
     tools/check-result-file-hygiene.py --self-test
 
-Exit status is 1 if either **gate** finds a defect, 0 otherwise.  The saturated-proportion audit
-never exits 1, and neither does the departure ``wide`` line.
+Exit status is 1 if either **gate** finds a defect, 0 otherwise.  The saturated-proportion and
+prose-precision audits never exit 1, and neither does the departure ``wide`` line.
 """
 
 import json
@@ -135,6 +147,86 @@ EXCLUDED_DEPARTURE_KEYS = {
                 "comparison of two computations of it",
     "coverageError": "the same",
 }
+
+# `T-249`/`C-0150` — the fourth line, and it is an AUDIT rather than a gate.
+#
+# `JsonElement.roundedForResult` dispatches on the JSON **type** and passes strings through, which
+# is correct — a string is not a number.  So a `Double` interpolated into a sentence
+# (`"… reads $x against …"`) reaches the file through `Double.toString()`, at up to seventeen
+# significant digits, inside a file that declares nine.  `C-0150`'s sweep watched exactly this:
+# three `T-164` sentences moved `0.1686405908358076` → `…075` on a run that changed nothing.
+#
+# The predicate is EXACT rather than heuristic, and that is why it is run over the artifact and
+# not over the source.  A number that went through the rounding layer cannot carry more than
+# [RESULT_DIGITS] significant digits, by construction.  So every hit is a number that did not.
+#
+# It is a strict LOWER bound, and the bound has a stated direction: an unrounded number whose
+# `Double.toString()` happens to be short (`33.5`, `0.125`) is indistinguishable from a rounded
+# one and is not counted.  A source-side census is the complement, and it needs a type Python
+# does not have.
+RESULT_DIGITS = 9
+
+# The lookarounds are the whole false-positive defence and each has a named test below.
+#
+# `(?<![\w.])` refuses a decimal inside an identifier (`v3.14159265358979`) and the **tail** of a
+# dotted version or date (`2026.08.19`).  `(?!\w)` refuses a **prefix** of a longer token, which
+# is what makes the captured literal the whole `2.314028420585025E-7` rather than its mantissa,
+# and `(?!\.\d)` refuses the **head** of a dotted one.
+#
+# The trailing guard is written as those two negatives and NOT as the symmetric `(?![\w.])`,
+# and that is a repair rather than a preference: `(?![\w.])` refuses a number followed by a
+# full stop, i.e. **every number at the end of a sentence** — which in a corpus of findings and
+# outcomes is most of them.  The first draft of this predicate had it, and the named test
+# `a defect at the end of a sentence` is what caught it.
+#
+# A bare integer is never matched — an integer literal is exact at any length, its rendering is
+# deterministic, and `163296` placements is not a precision defect.
+PROSE_NUMBER = re.compile(r"(?<![\w.])(\d+\.\d+(?:[eE][+-]?\d+)?)(?!\w)(?!\.\d)")
+
+PROSE_TESTS = [
+    ("channel B at s = 0 is 0.1686405908358075", 1, "the live T-164 shape, 16 digits in prose"),
+    ("reproduced at a departure of 3.3864695769825204E-11", 1, "an exponent form"),
+    ("the two groupings agree to 4.440892098500626E-16 nm", 1, "a roundoff residual in prose"),
+    ("33.333333333333336 pN/nm = 100 pN / 3 nm", 1, "C-0017's mandate rendered by toString"),
+    ("cap 20.999999999999993 deg", 1, "a value one ulp below a whole number"),
+    ("C-0090's published 0.0621469105", 0, "exactly nine digits -- the rule, not a defect"),
+    ("the mandate is 33.3333333 pN/nm", 0, "nine digits with a repeating tail"),
+    ("a departure of 1.9e-09", 0, "two digits"),
+    ("the widest 0.990000000 nm", 0, "trailing zeros are not significant digits"),
+    ("163296 placements at 18 rungs", 0, "a bare integer is exact and is not matched"),
+    ("13084 crystallographic linkages", 0, "a large bare integer"),
+    ("today is 2026.08.19", 0, "a dotted date: the lookarounds refuse both halves"),
+    ("oxDNA v3.14159265358979", 0, "a decimal inside an identifier"),
+    ("doi 10.1021/ja906186f", 0, "a DOI prefix is six digits and abuts a slash"),
+    ("gpd/results/T-1d-scf-density-profile.json", 0, "a path with no decimal token"),
+    ("the SAXS 2.69 nm and the 0.34 nm rise", 0, "ordinary short quantities"),
+    ("", 0, "an empty string"),
+    ("0.1686405908358075 and 0.1683718082999668 differ", 2, "two defects in one string"),
+    ("1.0000000000000002", 1, "a bare over-precise string value, not embedded in prose"),
+    ("phi = 0.14100858607612618)", 1, "a defect abutting a closing bracket"),
+    ("-0.005999045832899163 kT deep", 1, "a negative sign is punctuation, not part of the token"),
+    ("the worst over 18 rungs is 2.314028420585025E-7.", 1,
+     "a defect at the END of a sentence -- the first draft's blind spot"),
+    ("channel B at s = 0 is 0.1686405908358075.", 1, "the same, without an exponent"),
+    ("a Monte Carlo stream seeded at 987654321012345", 0,
+     "a large bare integer -- a seed is exact at any length and is not a precision defect"),
+    ("build 1.4142135623730951.2 of the schema", 0,
+     "the HEAD of a dotted token; synthetic -- the guard is a specification, not an observation"),
+]
+
+# The same predicate asserted on the LITERAL it captures rather than on the count, because two
+# of the guards are invisible to a count: dropping `(?!\w)` still finds one token in
+# `2.314028420585025E-7`, it just finds the wrong one -- the mantissa, without its exponent,
+# which is a different number by seven orders of magnitude.
+PROSE_TOKEN_TESTS = [
+    ("the worst over 18 rungs is 2.314028420585025E-7 of the free stroke",
+     ["2.314028420585025E-7"], "the exponent belongs to the token"),
+    ("a departure of 3.3864695769825204E-11", ["3.3864695769825204E-11"],
+     "a negative exponent of two digits"),
+    ("0.1686405908358075 against 0.1683718082999668",
+     ["0.1686405908358075", "0.1683718082999668"], "two tokens, in order"),
+    ("phi = 0.14100858607612618)", ["0.14100858607612618"], "punctuation is not part of it"),
+]
 
 # the three test tables, written before the implementation
 CONVERSION_TESTS = [
@@ -326,6 +418,20 @@ def significant_digits(literal):
     return len(trimmed)
 
 
+def unrounded_numbers_in(text, digits=RESULT_DIGITS):
+    """Every decimal token in `text` carrying more than `digits` significant digits.
+
+    The predicate a **string** value of a result file is audited against.  A number that went
+    through `JsonElement.roundedForResult` cannot exceed [RESULT_DIGITS] by construction, so a
+    token that does is a number that reached the file as text — `"$x"`, `Double.toString()`,
+    up to seventeen digits — and the serialisation boundary could not reach it.
+    """
+    return [
+        literal for literal in PROSE_NUMBER.findall(text)
+        if significant_digits(literal) > digits
+    ]
+
+
 def saturated_records(document, path=""):
     """Every `*StandardError` field whose sibling proportion is exactly 0.0 or 1.0."""
     found = []
@@ -406,6 +512,16 @@ def check_conversions(root=RESULTS, allowlist=ALLOWLIST):
         for pointer, text in _strings(_load(path)):
             for conversion in conversions_in(text):
                 defects.append(f"{path}{pointer}: raw format conversion {conversion!r}")
+    return defects
+
+
+def check_prose_precision(root=RESULTS, digits=RESULT_DIGITS):
+    """`(path, pointer, literal, string)` for every over-precise number inside a string value."""
+    defects = []
+    for path in result_files(root):
+        for pointer, text in _strings(_load(path)):
+            for literal in unrounded_numbers_in(text, digits):
+                defects.append((path, pointer, literal, text))
     return defects
 
 
@@ -514,6 +630,18 @@ def self_test():
             failures += 1
             print(f"SELF-TEST FAILED — saturation, {description}: "
                   f"expected {expected}, found {found}")
+    for text, expected_tokens, description in PROSE_TOKEN_TESTS:
+        found = unrounded_numbers_in(text)
+        if found != expected_tokens:
+            failures += 1
+            print(f"SELF-TEST FAILED — prose token, {description}: "
+                  f"expected {expected_tokens}, found {found}")
+    for text, expected, description in PROSE_TESTS:
+        found = len(unrounded_numbers_in(text))
+        if found != expected:
+            failures += 1
+            print(f"SELF-TEST FAILED — prose precision, {description}: "
+                  f"expected {expected}, found {found} in {text!r}")
     for name in EXCLUDED_DEPARTURE_KEYS:
         if name in DEPARTURE_KEYS:
             failures += 1
@@ -554,7 +682,8 @@ def self_test():
         os.remove(os.path.join(fixture, name))
     os.rmdir(fixture)
     total = (len(CONVERSION_TESTS) + len(DEPARTURE_TESTS) + len(SATURATION_TESTS)
-             + len(SCOPE_TESTS) + len(GATE_TESTS) + len(EXCLUDED_DEPARTURE_KEYS) + 2)
+             + len(SCOPE_TESTS) + len(GATE_TESTS) + len(EXCLUDED_DEPARTURE_KEYS)
+             + len(PROSE_TESTS) + len(PROSE_TOKEN_TESTS) + 2)
     print(f"{total - failures} of {total} self-tests pass")
     return failures
 
@@ -600,6 +729,22 @@ def report_saturated():
     return found
 
 
+def report_prose_precision():
+    found = check_prose_precision()
+    print("-- numbers emitted inside STRINGS, above the nine digits the file declares "
+          "(AUDIT; T-249) --")
+    counts = {}
+    fields = set()
+    for path, pointer, _, _ in found:
+        counts[os.path.basename(path)] = counts.get(os.path.basename(path), 0) + 1
+        fields.add((path, pointer))
+    print(f"  {len(found)} token(s) in {len(fields)} string field(s) in {len(counts)} file(s), "
+          f"of {len(result_files())} scanned")
+    for name in sorted(counts, key=lambda n: (-counts[n], n)):
+        print(f"    {counts[name]:4d}  {name}")
+    return found
+
+
 def main(argv):
     if "--self-test" in argv:
         return 1 if self_test() else 0
@@ -609,7 +754,10 @@ def main(argv):
         over_precise, _, _ = report_departures()
     if census or "--saturated" in argv:
         report_saturated()
-    if census or ("--departures" not in argv and "--saturated" not in argv):
+    if census or "--prose" in argv:
+        report_prose_precision()
+    if census or ("--departures" not in argv and "--saturated" not in argv
+                  and "--prose" not in argv):
         defects = check_conversions()
         for defect in defects:
             print(defect)

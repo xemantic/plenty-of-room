@@ -1,0 +1,140 @@
+[
+ {
+  "query": "all:\"DNA origami\"",
+  "endpoint": "https://export.arxiv.org/api/query",
+  "totalResults": 131,
+  "file": "arxiv-all_DNA_origami.xml",
+  "entries": [
+   {
+    "id": "2105.00807v1",
+    "title": "DNA Origami Route for Nanophotonics"
+   },
+   {
+    "id": "2104.15016v1",
+    "title": "DNA origami"
+   },
+   {
+    "id": "2409.13206v1",
+    "title": "How we simulate DNA origami"
+   },
+   {
+    "id": "2501.14966v1",
+    "title": "Structures of Monoids Motivated by DNA Origami"
+   },
+   {
+    "id": "2605.21741v1",
+    "title": "Rheology and Programmable Gelation of DNA Origami Polymer Tadpoles"
+   },
+   {
+    "id": "1912.05261v1",
+    "title": "Interchromophoric Interactions Determine the Maximum Brightness Density in DNA Origami Structures"
+   },
+   {
+    "id": "1705.08944v1",
+    "title": "Molecular engineering of chiral colloidal liquid crystals using DNA origami"
+   },
+   {
+    "id": "2104.14943v1",
+    "title": "DNA Origami Catenanes Templated by Gold Nanoparticles"
+   },
+   {
+    "id": "2410.13393v1",
+    "title": "Fabrication of functional 3D nanoarchitectures via atomic layer deposition on DNA origami crystals"
+   },
+   {
+    "id": "1901.09120v1",
+    "title": "Algebraic Systems for DNA Origami Motivated from Temperley-Lieb Algebras"
+   },
+   {
+    "id": "1310.4556v2",
+    "title": "SERS Plasmonic Enhancement using DNA Origami-based Complex Metallic Nanostructures"
+   },
+   {
+    "id": "2508.05440v1",
+    "title": "3D DNA Origami-Enabled Molecularly Addressable Optical Nanocircuit"
+   },
+   {
+    "id": "2204.07385v1",
+    "title": "In situ small-angle X-ray scattering reveals strong condensation of DNA origami during silicification"
+   },
+   {
+    "id": "2112.00406v2",
+    "title": "Electrical Characterization of DNA Origami Structures with PEG-PLL coating for improved robustness"
+   },
+   {
+    "id": "2509.17801v2",
+    "title": "Characterizing the Structure of 3D DNA Origami in a Transmission Electron Microscope"
+   },
+   {
+    "id": "1706.06965v1",
+    "title": "3D DNA origami crystals"
+   },
+   {
+    "id": "2004.05052v1",
+    "title": "The oxDNA coarse-grained model as a tool to simulate DNA origami"
+   },
+   {
+    "id": "2201.08920v1",
+    "title": "The free-energy landscape of a mechanically bistable DNA origami"
+   },
+   {
+    "id": "2509.10760v1",
+    "title": "Patterning programmable spin arrays on DNA origami for quantum technologies"
+   },
+   {
+    "id": "2108.06517v1",
+    "title": "Characterizing the free-energy landscapes of DNA origamis"
+   },
+   {
+    "id": "2506.11522v1",
+    "title": "Modulating lipid membrane morphology by dynamic DNA origami networks"
+   },
+   {
+    "id": "2204.02499v2",
+    "title": "Simulations of DNA-origami self-assembly reveal design-dependent nucleation barriers"
+   },
+   {
+    "id": "2310.09475v1",
+    "title": "Twisted DNA origami-based chiral monolayers for spin filtering"
+   },
+   {
+    "id": "2506.11505v1",
+    "title": "Recent advances in DNA origami-engineered nanomaterials and applications"
+   },
+   {
+    "id": "2407.07271v1",
+    "title": "Leveraging the Versatility of DNA Origami and Electrochemistry for New Sensing Modalities"
+   }
+  ]
+ },
+ {
+  "query": "all:\"DNA origami\" AND all:crossover",
+  "endpoint": "https://export.arxiv.org/api/query",
+  "totalResults": 2,
+  "file": "arxiv-all_DNA_origami_AND_all_crossover.xml",
+  "entries": [
+   {
+    "id": "1810.09356v1",
+    "title": "Lattice models and Monte Carlo methods for simulating DNA origami self-assembly"
+   },
+   {
+    "id": "1509.03066v2",
+    "title": "Modelling DNA Origami Self-Assembly at the Domain Level"
+   }
+  ]
+ },
+ {
+  "query": "all:\"DNA origami\" AND all:yield AND all:crossover",
+  "endpoint": "https://export.arxiv.org/api/query",
+  "totalResults": 0,
+  "file": "arxiv-all_DNA_origami_AND_all_yield_AND_all_crossover.xml",
+  "entries": []
+ },
+ {
+  "query": "all:\"DNA nanostructure\" AND all:\"crossover\" AND all:\"strain\"",
+  "endpoint": "https://export.arxiv.org/api/query",
+  "totalResults": 0,
+  "file": "arxiv-all_DNA_nanostructure_AND_all_crossover_AND_all_strain.xml",
+  "entries": []
+ }
+]

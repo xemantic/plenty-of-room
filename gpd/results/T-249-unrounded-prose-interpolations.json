@@ -1,0 +1,283 @@
+{
+  "task": "T-249 \u2014 a number emitted as a STRING is not rounded, and the census of that shape is the deliverable",
+  "leaf": "none \u2014 a process claim protecting the machine-readable artifact of every leaf",
+  "conditions": "No physics is computed. Units unchanged and untouched: nm, pN, pN/nm, pN/nm^2 = 1 MPa exactly, k_BT = 4.141947 pN nm at 300 K, aqueous buffer with stated Mg2+. The corpus is gpd/results/ at HEAD of iteration 36 plus this iteration's edits; the baseline every diff is taken against is read out of git rather than out of the working tree.",
+  "verificationType": "logical \u2014 a shape census over the committed corpus, an exhaustive shortest-round-trip test of every hit, a mutation measurement over the predicate in both directions, and 29 named checker + 15 emitter self-tests \u2014 plus in-silico: one study re-run through one snapshot and diffed field by field against its committed version",
+  "cheapBounds": [
+    {
+      "name": "1 \u2014 the artifact-side census, run before any repair",
+      "value": 757.0,
+      "unit": "tokens above nine significant digits inside a string value of a committed result file",
+      "decides": "The blast radius is bounded before a single study is re-run. It is 47 files, not one, and 175 distinct emission sites, not three."
+    },
+    {
+      "name": "2 \u2014 the shortest-round-trip test over every hit",
+      "value": 0.0,
+      "unit": "tokens that are NOT the shortest decimal that round-trips their own double",
+      "decides": "The false-positive rate is MEASURED and it is exhaustive rather than sampled: every one of the 757 is exactly what Double.toString() emits, which is the signature of an interpolated Double and not of a transcribed literature value."
+    },
+    {
+      "name": "3 \u2014 the offline prediction over the one file being repaired",
+      "value": 16.0,
+      "unit": "tokens in 10 string fields predicted to move, with their new values",
+      "decides": "What the re-emission must move, and what it must not, before the seventeen-minute solve is spent."
+    },
+    {
+      "name": "4 \u2014 the reader census against the target",
+      "value": 0.0,
+      "unit": "readers of T-164",
+      "decides": "The re-emission is one file and needs no topological sort. Confirmed twice: tools/result-reader-census.py and a grep of the basename."
+    },
+    {
+      "name": "5 \u2014 the runbook cost of the residue",
+      "value": 47.0,
+      "unit": "files the shape reaches, 39 dependency constraints between them",
+      "decides": "The corpus sweep is a multi-hour, multi-iteration job with a real topological order, so the fourth line ships as an AUDIT and the sweep is queued with its own cost rather than smuggled into this task."
+    }
+  ],
+  "predicates": [
+    {
+      "name": "P1",
+      "statement": "a shape census over the committed corpus, run before any repair",
+      "verdict": "MET",
+      "met": true
+    },
+    {
+      "name": "P2",
+      "statement": "the census is a retained tool with self-tests and a MEASURED false-positive rate",
+      "verdict": "MET \u2014 and the measurement is exhaustive rather than sampled",
+      "met": true
+    },
+    {
+      "name": "P3",
+      "statement": "the predicate is mutation-tested in BOTH directions",
+      "verdict": "MET \u2014 ten mutations, every one failing at least one named test, and the widening mutations fail as loudly as the narrowing ones",
+      "met": true
+    },
+    {
+      "name": "P4",
+      "statement": "the prose is built from rounded values, with digits and floor chosen per CALL SITE, and T-164 re-emitted",
+      "verdict": "MET",
+      "met": true
+    },
+    {
+      "name": "P5",
+      "statement": "what moved is reported BY KIND against the committed version read out of git, with the staleness identity confirmed and counted",
+      "verdict": "MET",
+      "met": true
+    },
+    {
+      "name": "P6",
+      "statement": "a decision, with its ground, on whether the census is wired as a gate, and the residue published with its own cost",
+      "verdict": "MET \u2014 an AUDIT, not a gate, because the corpus reads 757 in 47 and a gate that cannot come clean is not a gate (C-0083)",
+      "met": true
+    },
+    {
+      "name": "P7",
+      "statement": "every prose number in the re-emitted file equals the file's own numeric field for the same quantity, where the file carries one",
+      "verdict": "MET, with one NAMED exception that is a finding rather than a defect \u2014 see CH-0198",
+      "met": true
+    }
+  ],
+  "parameters": {
+    "predicate": "a decimal token inside a STRING value of a result file carrying more than RESULT_SIGNIFICANT_DIGITS significant digits",
+    "guards": "(?<![\\w.]) refuses a decimal inside an identifier and the tail of a dotted token; (?!\\w) refuses a prefix of a longer token; (?!\\.\\d) refuses the head of a dotted one",
+    "corpus": "gpd/results/*.json",
+    "tools": "tools/check-result-file-hygiene.py --prose; tools/T-249-mutation-test.py; tools/T-249-emit-result.py",
+    "resultSignificantDigits": 9,
+    "departureSignificantDigits": 2,
+    "headBaselineFrom": "git show HEAD:gpd/results/*.json"
+  },
+  "sources": [
+    "gpd/results/T-164-row-end-crossover-stiffness.json",
+    "gpd/claims/C-0150-departure-spelling-set-and-the-wall-clock.md",
+    "gpd/claims/C-0138-departure-rule-scope.md",
+    "src/main/kotlin/structure/ResultRounding.kt",
+    "TASKS.md (the runbook, for the residue's cost)"
+  ],
+  "census": {
+    "beforeTheRepair": {
+      "tokens": 757,
+      "stringFields": 706,
+      "files": 47,
+      "emissionSites": 175,
+      "filesScanned": 141,
+      "tokensMissedByTheFirstDraft": 1,
+      "tokensThatAreNotAShortestRoundTripDouble": 0
+    },
+    "afterTheRepair": {
+      "tokens": 748,
+      "stringFields": 703,
+      "files": 48,
+      "emissionSites": 179,
+      "filesScanned": 144,
+      "tokensMissedByTheFirstDraft": 1,
+      "tokensThatAreNotAShortestRoundTripDouble": 0
+    },
+    "tokensArrivingAfterTheBaseline": {
+      "T-246-forced-scaffold-crossover-price.json": 6,
+      "T-249-unrounded-prose-interpolations.json": 1
+    },
+    "predicateDigitCeiling": 9,
+    "namedSelfTests": 29,
+    "checkerSelfTestsTotal": 120,
+    "emitterSelfTests": 17
+  },
+  "target": {
+    "file": "T-164-row-end-crossover-stiffness.json",
+    "predictedTokens": 16,
+    "predictedStringFields": 10,
+    "movedByKind": {
+      "proseDigitOnlyFields": 10,
+      "verdictOrWordingFields": 0,
+      "numericFields": 0,
+      "booleanFields": 0,
+      "fieldsAdded": 0,
+      "fieldsRemoved": 0,
+      "worstNumericRelative": 0.0
+    },
+    "stalenessIdentity": {
+      "replacedByTheDeclaredRounding": 16,
+      "unexplained": 0
+    },
+    "readers": 0
+  },
+  "mutationCoverage": {
+    "mutations": 10,
+    "namedTests": 29,
+    "rowsReachedBySomeMutation": 28,
+    "mutationsPassingEveryTest": 0,
+    "perMutation": [
+      {
+        "mutation": "threshold widened to six digits",
+        "namedTestsFailed": 2
+      },
+      {
+        "mutation": "threshold narrowed to seventeen digits",
+        "namedTestsFailed": 15
+      },
+      {
+        "mutation": "the leading lookaround dropped",
+        "namedTestsFailed": 2
+      },
+      {
+        "mutation": "the trailing word guard dropped",
+        "namedTestsFailed": 1
+      },
+      {
+        "mutation": "the dotted-token guard dropped",
+        "namedTestsFailed": 1
+      },
+      {
+        "mutation": "the symmetric trailing guard of the FIRST DRAFT restored",
+        "namedTestsFailed": 2
+      },
+      {
+        "mutation": "bare integers matched as well",
+        "namedTestsFailed": 1
+      },
+      {
+        "mutation": "no digit threshold at all",
+        "namedTestsFailed": 6
+      },
+      {
+        "mutation": "a naive digit-run pattern, no guards and no threshold",
+        "namedTestsFailed": 21
+      },
+      {
+        "mutation": "character count instead of significant digits",
+        "namedTestsFailed": 3
+      }
+    ]
+  },
+  "residue": {
+    "unrepairedBaselineFiles": {
+      "tokens": 741,
+      "stringFields": 696,
+      "jsonPointerSites": 172,
+      "files": 46
+    },
+    "runbookCost": {
+      "affectedFiles": 47,
+      "inTheRunbook": 38,
+      "notInTheRunbook": 9,
+      "withAStatedRuntime": 8,
+      "statedRuntimeMinutes": 161,
+      "longestStatedRuntimeMinutes": 55
+    },
+    "reemissionOrder": {
+      "files": 47,
+      "constraints": 39
+    },
+    "floorHalfOfTheDepartureRule": {
+      "callSitesWithADigitsMap": 49,
+      "alsoPassingAFloor": 17,
+      "passingNoFloor": 32,
+      "departureFieldsExactlyZero": 811,
+      "departureFieldsNonzero": 933,
+      "filesWithAZeroDeparture": 86
+    },
+    "quotedNumbersWithNoLinkBack": {
+      "tokensInDocuments": 43,
+      "inSomeResultFile": 24,
+      "unfindable": 19,
+      "documentsCarryingOne": 17
+    },
+    "targetCallSitesRepaired": 11,
+    "targetJsonPointerSites": 3
+  },
+  "falsifiers": [
+    {
+      "name": "F1",
+      "statement": "the re-emitted T-164 moves a numeric field, a boolean or a verdict",
+      "fired": false,
+      "outcome": "10 prose-digit field(s), 0 numeric, 0 boolean, 0 verdict/wording, 0 added, 0 removed"
+    },
+    {
+      "name": "F2",
+      "statement": "the artifact census has a false positive: a hit that is not an unrounded number",
+      "fired": false,
+      "outcome": "0 of 748 \u2014 every hit is EXACTLY the shortest decimal that round-trips its own double, which is what Double.toString emits and what a transcribed literature value has no reason to be"
+    },
+    {
+      "name": "F3",
+      "statement": "a prose number in the re-emitted file disagrees with the file's own numeric field for the same quantity",
+      "fired": false,
+      "outcome": "checked by hand over the ten repaired fields; the one exception is F2's departure, where the record floors a DIMENSIONLESS ratio with a claim in the locked units and the prose does not \u2014 CH-0198"
+    },
+    {
+      "name": "F4",
+      "statement": "the census still finds a hit in the repaired file",
+      "fired": false,
+      "outcome": "0 token(s) remain in T-164-row-end-crossover-stiffness.json"
+    },
+    {
+      "name": "F5",
+      "statement": "a mutation of the predicate passes every named test",
+      "fired": false,
+      "outcome": "10 mutations over 29 named tests; 0 pass every one, and 28 of 29 rows are reached by some mutation"
+    },
+    {
+      "name": "F6",
+      "statement": "T-164 has a reader, so the re-emission is a sweep rather than one file",
+      "fired": false,
+      "outcome": "0 readers, by tools/result-reader-census.py and by a grep of the basename; the only other mention is T-225's own record of what it re-emitted"
+    },
+    {
+      "name": "F7",
+      "statement": "the shipped predicate is the first draft, i.e. the tool was never wrong and therefore was never tested",
+      "fired": false,
+      "outcome": "the first draft's symmetric trailing guard refuses a number followed by a full stop and therefore missed every number at the END of a sentence; it misses 1 of the committed corpus's 757, and restoring it fails 2 named tests"
+    }
+  ],
+  "findings": [
+    "THE SERIALISATION BOUNDARY CANNOT BE THE CURE, AND THAT IS THE STRUCTURAL DIFFERENCE FROM EVERY EARLIER MEMBER OF THIS FAMILY. C-0138 moved the departure rule into the one layer every study goes through, because the boundary sees a NUMBER. Here it sees a SENTENCE: by the time roundedForResult is called the Double is gone, and re-parsing decimals back out of a study's own prose would rewrite a cited literal as readily as a computed one. So the cure is necessarily per CALL SITE, and the only thing that can keep it closed is a census.",
+    "THE SHAPE REACHES 48 OF 144 COMMITTED RESULT FILES, NOT ONE. 757 tokens in 706 string fields at 175 distinct emission sites, of which C-0150 saw three. The queue row priced this task as one lattice solve plus a census; the solve is one file and the census is the deliverable, exactly as the row said \u2014 and what the census found is that the class is 250x the instance that raised it.",
+    "THE FALSE-POSITIVE RATE IS MEASURED EXHAUSTIVELY RATHER THAN SAMPLED, AND THE INSTRUMENT IS THE SHORTEST-ROUND-TRIP PROPERTY. Double.toString emits the shortest decimal that round-trips, and so does Python's repr; a token carrying more digits than that is not a toString output. All 748 of the corpus's hits satisfy it, so every one is an interpolated Double and none is a transcribed literature value. That is a proof over the whole population, and it cost one pass.",
+    "THE CHECKER'S OWN FIRST DRAFT HAD THE BLIND SPOT ITS THIRD NAMED TEST NOW HOLDS OPEN. Written with the symmetric trailing guard refusing a word char OR A DOT \u2014 the mirror of the leading one \u2014 it refused any number followed by a full stop, i.e. every number at the END of a sentence, in a corpus whose defects live in findings and outcomes. It cost 1 token(s) here and it could have cost far more in a corpus that punctuates differently. CLAUDE.md already records this for check-corpus-links.py and check-kotlin-format-strings.py: a checker's blind spot is invisible in exactly the cases it misses.",
+    "IT IS AN AUDIT AND NOT A GATE, AND THE GROUND IS ARITHMETIC. C-0083's rule is that a gate that cannot come clean is not a gate, and the corpus reads 748 in 48. The residue's cost is read out of the runbook rather than guessed: 38 of 47 affected files are in it, 8 carry a stated runtime and those alone sum to 161 minutes, and the set carries 39 dependency constraints \u2014 so the sweep is a topological sort over several iterations, not a tidy-up.",
+    "A PATH IS NOT A BASENAME, AND tools/reemission-order.py WAS SILENT ABOUT IT. Asked for the order of the 47 affected files by PATH it reported 0 dependency constraints; asked by basename it reports 39. tag_of split on '-' without taking a basename first, so 'gpd/results/T-108-...' became the tag 'gpd/results/T-108', which matches nothing in the census \u2014 and an unknown tag is deliberately 'placed rather than lost', so the wrong answer is indistinguishable from a set with no constraints. Repaired with two named self-tests. It is C-0117's own failure mode reached through the tool's input.",
+    "THE FILE DID NOT ONLY FAIL TO REPRODUCE, IT CONTRADICTED ITSELF. T-164's numeric sweep[0].bestDishingOverStroke is 0.0651753854 and the sentence beside it said 0.06517538540278571 \u2014 one quantity at two precisions in one file, one of which no field of the file states. A reproducibility rule and a self-consistency rule are the same rule here, and only the first of them was ever stated."
+  ],
+  "decision": "The shape is a corpus-wide class: 757 tokens in 706 string fields at 175 emission sites in 47 of 141 committed result files, all of them interpolated Doubles by an exhaustive test. T-164 is repaired at its eleven call sites and re-emitted, moving 10 prose fields and 0 numeric ones. The census ships as the fourth line of tools/check-result-file-hygiene.py, as an AUDIT rather than a gate, and the corpus sweep that would let it become a gate is queued with the cost this task measured."
+}
