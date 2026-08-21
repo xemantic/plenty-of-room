@@ -45,6 +45,22 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # depth assumptions.
 _LINK = re.compile(r"\]\(([^)\s]+?\.md)(?:#[^)]*)?\)")
 
+# A link inside CODE is not a link, it is a description of one -- and the one place in this
+# repository that describes link SHAPES is `CLAUDE.md`'s own entry about this checker's first
+# blind spot, which quotes `](C-0006-....md)` verbatim. Scanning the root documents without
+# stripping code first would therefore report the sentence that records the defect as a defect.
+# Fences first, then inline spans; both are replaced by same-length blanks so that nothing below
+# moves and a reported position stays true.
+_FENCE = re.compile(r"```.*?```", re.DOTALL)
+_CODE_SPAN = re.compile(r"`[^`\n]*`")
+
+
+def _without_code(text):
+    """`text` with fenced blocks and inline code spans blanked, length-preserving."""
+    def blank(match):
+        return "".join(" " if character != "\n" else "\n" for character in match.group(0))
+    return _CODE_SPAN.sub(blank, _FENCE.sub(blank, text))
+
 
 def broken_links_in(text, directory, root=ROOT):
     """[(link, resolved path)] for every relative Markdown link in `text` that does not resolve.
@@ -54,7 +70,7 @@ def broken_links_in(text, directory, root=ROOT):
     the live defects got in. Absolute URLs and anchors-only links are not this checker's business.
     """
     missing = []
-    for match in _LINK.finditer(text):
+    for match in _LINK.finditer(_without_code(text)):
         link = match.group(1)
         if "://" in link or link.startswith("/"):
             continue
@@ -68,7 +84,18 @@ def broken_links_in(text, directory, root=ROOT):
 # reads -- checked by nothing at all, this checker included: it scanned `gpd/` and stopped there,
 # so a mistyped claim slug in either deliverable was invisible. They carry more claim links than
 # most claims do, and a broken one in them is read by the customer rather than by an agent.
-ROOT_DOCUMENTS = ["ANSWERS.md", "DECISIONS-FOR-NDI.md", "TOOLING-NOVELTY.md"]
+def root_documents(root=ROOT):
+    """Every Markdown file at the repository root, DERIVED rather than listed.
+
+    It was a hand-written list of two, then three, and `C-0160` found the fourth and fifth —
+    `ARCHITECTURE.md` and `CLAUDE.md`, both carrying relative links and neither scanned. A list
+    that has to be extended by hand every time somebody adds a root document is the same decay
+    this checker exists to stop, one level up: *a checker's DEFAULT is part of its logic*. There
+    is no root Markdown file that should be exempt from having working links, so the set is the
+    directory listing.
+    """
+    return sorted(name for name in os.listdir(root)
+                  if name.endswith(".md") and os.path.isfile(os.path.join(root, name)))
 # `TOOLING-NOVELTY.md` was added by the repository owner in iteration 37 and was checked by
 # NOTHING, exactly as `T-184`/`C-0124` found for `DECISIONS-FOR-NDI.md`: *a checker's DEFAULT
 # is part of its logic, and the document nobody checks is the one the customer reads*. It is a
@@ -83,7 +110,7 @@ def tracked_markdown(root=ROOT):
     `C-0083` records why the fallback matters: a verification SNAPSHOT has no `.git`, so a checker
     that only knows `git ls-files` silently checks nothing there.
     """
-    extra = [name for name in ROOT_DOCUMENTS if os.path.isfile(os.path.join(root, name))]
+    extra = root_documents(root)
     try:
         listed = subprocess.run(
             ["git", "ls-files", "gpd/**/*.md", "gpd/*.md"],
@@ -155,15 +182,30 @@ def _selftest():
     check("the corpus listing finds files", len(tracked_markdown()) > 0, True)
     # `T-184`: the two outward-facing documents are IN the listing. They were not, and a broken
     # claim slug in the file NDI reads is worse than one in a claim, not better.
-    check("the outward-facing set is exactly the three deliverables",
-          ROOT_DOCUMENTS,
+    check("the outward-facing set is DERIVED, and it carries the three deliverables",
+          [name for name in ["ANSWERS.md", "DECISIONS-FOR-NDI.md", "TOOLING-NOVELTY.md"]
+           if name in root_documents()],
           ["ANSWERS.md", "DECISIONS-FOR-NDI.md", "TOOLING-NOVELTY.md"])
+    # `C-0160` found these two scanned by nothing; a derived set cannot lose them again.
+    check("and the two documents a hand-written list had missed",
+          [name for name in ["ARCHITECTURE.md", "CLAUDE.md"] if name in root_documents()],
+          ["ARCHITECTURE.md", "CLAUDE.md"])
+    # A link inside code is a DESCRIPTION of a link. `CLAUDE.md` quotes one verbatim, in the very
+    # entry that records this checker's first blind spot.
+    check("a link inside an inline code span is not a link",
+          broken_links_in("a check that matched `](C-0006-nope.md)` and not ...", ""), [])
+    check("a link inside a fenced block is not a link",
+          broken_links_in("```\n[`x`](gpd/claims/C-0001-nope.md)\n```", ""), [])
+    check("a real link whose TEXT is a code span is still a link",
+          [l for l, _ in broken_links_in("[`C-0006`](gpd/claims/C-0006-nope.md)", "")],
+          ["gpd/claims/C-0006-nope.md"])
     # On a SYNTHETIC root, so the check does not depend on this checkout: `tools/verify.sh` runs
     # these in a snapshot, and a self-test that reads the real tree is not a fixture test.
     import tempfile
     with tempfile.TemporaryDirectory() as fake:
         os.makedirs(os.path.join(fake, "gpd", "claims"))
-        for name in ROOT_DOCUMENTS + [os.path.join("gpd", "claims", "C-0001-x.md")]:
+        for name in ["ANSWERS.md", "DECISIONS-FOR-NDI.md", "TOOLING-NOVELTY.md",
+                     os.path.join("gpd", "claims", "C-0001-x.md")]:
             open(os.path.join(fake, name), "w").close()
         listed = tracked_markdown(root=fake)
         check("a root document is in the listing", "ANSWERS.md" in listed, True)
