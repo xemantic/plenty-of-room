@@ -269,11 +269,134 @@ check(
     trace_answers.queue_status("| T-9 | hinge | a | A1.2 | **DONE** (iteration 35) |")["T-9"],
     "CLOSED",
 )
+# RESTATED by `P-30`.  This fixture used to assert CLOSED, on the whole-row scan: a `PARTIALLY
+# DONE` qualifier must not stop a LATER bare closing word from closing.  `queue_status` now reads
+# the row's FIRST leading verdict where it has one, so the row reads OPEN — and that is the
+# reading the queue's own practice supports, because the file REPLACES a leading verdict when a
+# task closes (`P-29`'s own row reads `**DONE** (iteration 42)`) rather than appending beside it.
+# The direction is the safe one: a row still leading with a qualifier stays IN the register.
+# What the original fixture was protecting is kept below, on the FALLBACK path, where it belongs.
 check(
-    "a qualified row that LATER carries a bare closing word still closes",
+    "a row LEADING with a qualifier stays open, whatever it says later",
     trace_answers.queue_status(
         "| T-9 | hinge | a | A1.2 | **PARTIALLY DONE**, and now **RESOLVED** in full |"
     )["T-9"],
+    "OPEN",
+)
+check(
+    "on the fallback path the qualifier still does not swallow a later closing word",
+    trace_answers.queue_status(
+        "| T-9 | hinge | a | A1.2 | partially done so far, and now **RESOLVED** in full |"
+    )["T-9"],
+    "CLOSED",
+)
+
+# --- P-30: the row's LEADING verdict decides, and the reader sees every row -------------------
+#
+# `queue_status` used to search the WHOLE row after the identifier, so a closing word about some
+# OTHER object — a challenge, a deliverable, a candidate of a remedy, or the row's own title —
+# closed the row.  Four live rows were outside the register for exactly that reason.  The rule is
+# now: the FIRST leading verdict wins; a row with none falls back to the whole-row scan.
+check(
+    "a closing word in the row's own TITLE does not close it",
+    trace_answers.queue_status(
+        "| T-261 | **A synthesis rests a number on a challenge the corpus has since ANSWERED** | "
+        "an arm of the tracer | — | TODO — **MEDIUM**, raised by `CH-0203` |"
+    )["T-261"],
+    "OPEN",
+)
+check(
+    "an unbolded leading TODO is a verdict — the bold carries the PRIORITY",
+    trace_answers.queue_status("| T-1 | t | a | — | TODO — **MEDIUM**, raised by `C-1` |")["T-1"],
+    "OPEN",
+)
+check(
+    "a closing word about a CHALLENGE does not close the row",
+    trace_answers.queue_status(
+        "| T-268 | t | a | **PARTIALLY DONE** (iteration 39) — `CH-0207` **CLOSED and REPAIRED** |"
+        " **TODO — HIGH VALUE, HIGHEST COST** |"
+    )["T-268"],
+    "OPEN",
+)
+check(
+    "a closing word about a DELIVERABLE does not close the row",
+    trace_answers.queue_status(
+        "| T-272 | t | a | **PARTIALLY DONE** (iteration 41) — `P2` is DISCHARGED over the whole "
+        "corpus | **TODO — HIGH** |"
+    )["T-272"],
+    "OPEN",
+)
+check(
+    "a closing word about a CANDIDATE of the remedy does not close the row",
+    trace_answers.queue_status(
+        "| T-280 | t | a | — | **TODO — LOW.** Candidate 1 is **DONE**; this is candidate 2 |"
+    )["T-280"],
+    "OPEN",
+)
+# The queue's own practice: the live verdict is written to the LEFT and the original priority
+# note is preserved to its right.  Nine rows of the committed queue are that shape, so the last
+# verdict cannot be the one that wins.
+check(
+    "a live DONE to the LEFT beats a preserved TODO note to its right",
+    trace_answers.queue_status(
+        "| T-263 | t | a | **DONE** (iteration 40) — claim `C-0167` | TODO — **MEDIUM-HIGH** |"
+    )["T-263"],
+    "CLOSED",
+)
+# A row with no leading verdict at all still falls back to the whole-row scan, which is how the
+# oldest rows in the queue are written (`| P-1 | ... | DONE | Iteration 1 |`).
+check(
+    "a bare unbolded DONE in a cell of its own still closes, on the fallback path",
+    trace_answers.queue_status("| P-1 | the GPD loop skeleton | DONE | Iteration 1 |")["P-1"],
+    "CLOSED",
+)
+check(
+    "a leading bold run too long to be a verdict falls back to the whole-row scan",
+    trace_answers.queue_status(
+        "| T-45 | q | a | A1.2 | **ANSWERED as far as published measurement allows** |"
+    )["T-45"],
+    "CLOSED",
+)
+
+# COVERAGE.  `_QUEUE_ROW` required a TRAILING pipe, and the `T-182` row has none — so that row was
+# invisible to the reader entirely, 271 rows seen of 272.  GFM does not require it, so
+# `tools/check-markdown-tables.py` is clean on such a row and the assumption was asserted nowhere.
+check(
+    "a row with no trailing pipe is still seen",
+    trace_answers.queue_status("| T-182 | t | a | A1.2 | **DONE** (iteration 22) — new rows.")
+    .get("T-182"),
+    "CLOSED",
+)
+check(
+    "a row whose identifier is wrapped in backticks is still seen",
+    trace_answers.queue_status("| `T-183` | t | a | A1.2 | TODO — high |").get("T-183"),
+    "OPEN",
+)
+check(
+    "a row whose identifier is bold is still seen",
+    trace_answers.queue_status("| **T-184** | t | a | A1.2 | TODO — high |").get("T-184"),
+    "OPEN",
+)
+check(
+    "a line that is not a table row is still not a row",
+    sorted(trace_answers.queue_status("T-185 is not in a table at all")),
+    [],
+)
+check(
+    "a table whose first cell is not an identifier is not a queue row",
+    sorted(trace_answers.queue_status("| E | `T-201` the fifth synthesis | `C-0115` | **DONE** |")),
+    [],
+)
+check(
+    "a pipe table starting mid-line is not a queue row",
+    sorted(trace_answers.queue_status("prose about it: | T-186 | t | a | **DONE** |")),
+    [],
+)
+check(
+    "a TODO later in a cell does not reopen a row its verdict closed",
+    trace_answers.queue_status(
+        "| T-187 | t | a | A1.2 | **DONE** (iteration 3) — the TODO it raised is struck |"
+    )["T-187"],
     "CLOSED",
 )
 

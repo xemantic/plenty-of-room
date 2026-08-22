@@ -44,6 +44,13 @@ import re
 import sys
 from collections import namedtuple
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# `P-30`: the "what is this row's verdict" predicate lives in ONE module, which this reader and
+# `tools/check-queue-vocabulary.py` both import.  The dependency runs one way -- the gate imports
+# the reader, so the shared predicate cannot live in the gate without making the reader depend on
+# the thing that checks it.
+import queue_verdicts as _verdicts
+
 # ANSWERS.md is typographically rich: en dashes for ranges, U+2212 for minus, thin spaces.
 # Every comparison below runs on the normalised form, on both sides.
 _DASHES = {
@@ -208,8 +215,11 @@ def blocks(answers_text):
 # deliberately does not try the converse (a task closed in the deliverable and open in the
 # queue), because a synthesis is entitled to summarise a partial answer.
 
-# A queue row is `| T-129 | task | acceptance | leaf | status |`; the status is the last cell.
-_QUEUE_ROW = re.compile(r"^\|\s*(T-\d{1,4}[a-z]?|P-\d{1,4})\s*\|(.*)\|\s*$")
+# A queue row is `| T-129 | task | acceptance | leaf | status |`.  The pattern lives in
+# `tools/queue_verdicts.py` (`P-30`) because the vocabulary gate has to share it, and it is
+# deliberately tolerant of a MISSING TRAILING PIPE: this pattern used to require one, GFM does not,
+# and one committed row omits it -- so that row was invisible to this reader entirely, 271 of 272.
+_QUEUE_ROW = _verdicts.TASK_ROW
 
 # Words in a status cell that mean the task is no longer open.
 #
@@ -232,18 +242,26 @@ _QUEUE_ROW = re.compile(r"^\|\s*(T-\d{1,4}[a-z]?|P-\d{1,4})\s*\|(.*)\|\s*$")
 # guard a genuinely open item disappears from the register, which is `CLAUDE.md`'s own "a closing
 # word about another task closes the row it sits in" met from the inside of one row.  Any further
 # qualifier the queue coins belongs in `_NOT_CLOSED_QUALIFIER`, with a test, the day it is written.
-_NOT_CLOSED_QUALIFIER = r"(?<!PARTIALLY )(?<!PARTLY )"
-_CLOSED = re.compile(_NOT_CLOSED_QUALIFIER + r"\b(DONE|KILLED|CLOSED|ANSWERED|RESOLVED|DISCHARGED)\b")
+# `P-30`: ONE definition, in `tools/queue_verdicts.py`, so that the reader and the gate cannot
+# disagree about what a closing word is.  It was written out twice here and once there.
+_NOT_CLOSED_QUALIFIER = _verdicts.NOT_CLOSED_QUALIFIER
+_CLOSED = _verdicts.UNQUALIFIED_CLOSING_WORD
 _IN_PROGRESS = re.compile(r"\bIN PROGRESS\b")
 
 
 def queue_status(queue_text):
     """{task ID: OPEN | CLOSED | IN PROGRESS} read out of TASKS.md's own rows.
 
-    The status is taken from the whole row after the ID rather than from the last cell alone,
-    because the queue writes its verdict in several columns depending on the table — but a
-    closing word appears in bold near the front of whichever cell carries it, and a row that
-    closes never omits one.  `TODO` is not consulted: absence of a closing word IS open.
+    The row's FIRST LEADING VERDICT decides (`P-30`).  A verdict is a run that OPENS a cell —
+    a short bold run carrying a closing word, or a `TODO` — and the leftmost one is the live one,
+    because the queue writes a new verdict into an earlier cell and PRESERVES the original
+    `TODO — **PRIORITY**` note in a later one.  Nine committed rows are that shape.
+
+    This used to be a scan of the WHOLE row after the identifier, and that scan closed four open
+    rows on a closing word that was not about the task at all: the row's own title, a challenge,
+    a deliverable, and a candidate of a remedy.  A row that carries no leading verdict at all —
+    the oldest rows are written `| P-1 | ... | DONE | Iteration 1 |` — still falls back to it.
+    `TODO` is not required: on the fallback path, absence of a closing word IS open.
     """
     statuses = {}
     for line in queue_text.splitlines():
@@ -251,8 +269,11 @@ def queue_status(queue_text):
         if not match:
             continue
         identifier, rest = match.group(1), match.group(2)
+        verdicts = _verdicts.row_verdicts(rest)
         if _IN_PROGRESS.search(rest):
             statuses[identifier] = "IN PROGRESS"
+        elif verdicts:
+            statuses[identifier] = verdicts[0][1]
         elif _CLOSED.search(rest):
             statuses[identifier] = "CLOSED"
         else:

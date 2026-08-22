@@ -474,6 +474,98 @@ def classify(records, table):
     return records, problems
 
 
+#: What the advisory line's ratio is a fraction OF, in words, printed beside the number.
+#: `CLAUDE.md`: *name the set inside the field* -- a residue published without its own denominator
+#: is priced against whatever table it sits next to.
+#:
+#: `CH-0230` candidate 2 names the OTHER one -- *"unpointed occurrences over all occurrences of the
+#: same families"* -- and over the last 40 revisions of the two deliverables that reading rises at
+#: every pass where the count rose, because the numerator and the denominator gain the SAME
+#: occurrences and a ratio below one that gains equally top and bottom goes UP.  What makes the
+#: wider denominator informative is `C-0176`'s own split: a correcting sentence written properly
+#: lands in `ROW_SPAN` or `GRILLAGE`, which is denominator and not numerator.  Both readings are
+#: printed, because the challenge named one and the measurement chose the other (`T-280`).
+DEBT_DENOMINATOR = (
+    "every occurrence this census finds in the two deliverables, of every family -- the families "
+    "belonging to another discharge, and to none, included, because that is where a CORRECTING "
+    "restatement lands"
+)
+DEBT_DENOMINATOR_NAMED_BY_CH0230 = (
+    "every occurrence of the same families -- the ones this census gates, and only those"
+)
+
+#: The ratio is an exact quotient of two integers, so it carries no solver noise; it is rendered at
+#: the corpus's nine significant digits, and an ABSENT ratio is `null` rather than a sentinel.
+DEBT_RATIO_DIGITS = 9
+
+
+def ratio_text(value) -> str:
+    """A ratio at `DEBT_RATIO_DIGITS`, or the word `null` where there is no ratio to render."""
+    if value is None:
+        return "null"
+    return "{:.{}g}".format(value, DEBT_RATIO_DIGITS)
+
+
+def debt_ratio(records):
+    """The advisory line's count, its two candidate denominators, and the two ratios.
+
+    Numerator: the debt line's own predicate -- an occurrence in one of the two deliverables, on a
+    family THIS census gates, classified `MOVED` or `DISCHARGED`, and neither struck nor pointed.
+
+    Denominators: `allFamilyOccurrences` is `DEBT_DENOMINATOR`; `sameFamilyOccurrences` is
+    `DEBT_DENOMINATOR_NAMED_BY_CH0230`.  Both count struck and pointed occurrences, which is the
+    whole point: a repair moves an occurrence out of the numerator and leaves it in the denominator.
+    """
+    deliverables = [r for r in records if r.get("deliverable")]
+    same = [r for r in deliverables if r.get("discharge") == SUBJECT]
+    unpointed = [
+        r for r in same
+        if r.get("class") in ADDRESSED
+        and not r.get("pointer") and not r.get("struck") and not r.get("headlinePointer")
+    ]
+    return {
+        "unpointed": len(unpointed),
+        "allFamilyOccurrences": len(deliverables),
+        "sameFamilyOccurrences": len(same),
+        "ratioOverAllFamilies": len(unpointed) / len(deliverables) if deliverables else None,
+        "ratioOverTheSameFamilies": len(unpointed) / len(same) if same else None,
+        "denominatorName": DEBT_DENOMINATOR,
+        "denominatorNamedByCh0230": DEBT_DENOMINATOR_NAMED_BY_CH0230,
+    }
+
+
+def debt_report(debt):
+    """The advisory line, as a list of printable lines: the count, the ratio and its denominator."""
+    if not debt["allFamilyOccurrences"]:
+        return [
+            "T-233 debt no occurrence of any family in the two deliverables, so there is no ratio"
+            " to quote"
+        ]
+    return [
+        "T-233 debt {} of {} occurrence(s) = {} in the two deliverables, which this task does NOT"
+        " edit".format(
+            debt["unpointed"], debt["allFamilyOccurrences"],
+            ratio_text(debt["ratioOverAllFamilies"]),
+        ),
+        "  denominator: " + DEBT_DENOMINATOR,
+        "  CH-0230's own reading -- {} -- is {} of {} = {}, and that is the reading which does NOT"
+        " fall when the documents are corrected".format(
+            DEBT_DENOMINATOR_NAMED_BY_CH0230,
+            debt["unpointed"], debt["sameFamilyOccurrences"],
+            ratio_text(debt["ratioOverTheSameFamilies"]),
+        ),
+        "  -- and the COUNT alone is NOT a measure of debt. It is a count over a MOVING corpus, and"
+        " it GROWS when the deliverables are corrected: over the last 40 revisions of the two"
+        " documents every single increase is a synthesis pass, because a correcting sentence has to"
+        " NAME the withdrawn premise in order to withdraw it. The T-260/T-262 split cuts the rate"
+        " by about three fifths and does not change that sign (CH-0230,"
+        " gpd/results/T-262-width-restatement-predicate.json). The RATIO does fall, at 3 of the 4"
+        " passes at which the count rose and a ratio was defined, and the fourth is a pass that"
+        " added two unpointed assertions and no repair (C-0179,"
+        " gpd/results/T-280-debt-line-as-a-ratio.json).",
+    ]
+
+
 def check(root: str) -> int:
     records = census(root)
     records, problems = classify(records, load_classification())
@@ -541,16 +633,8 @@ def check(root: str) -> int:
                 record["family"], record["token"],
             )
         )
-    print("T-233 debt {} occurrence(s) in the two deliverables, which this task does NOT edit"
-          .format(len(debt)))
-    print(
-        "  -- and this line is NOT a measure of debt. It is a count over a MOVING corpus, and it"
-        " GROWS when the deliverables are corrected: over the last 40 revisions of the two"
-        " documents every single increase is a synthesis pass, because a correcting sentence has"
-        " to NAME the withdrawn premise in order to withdraw it. The T-260/T-262 split cuts the"
-        " rate by about three fifths and does not change that sign (CH-0230,"
-        " gpd/results/T-262-width-restatement-predicate.json)."
-    )
+    for line in debt_report(debt_ratio(records)):
+        print(line)
     print("GATE {} defect(s)".format(len(problems) + len(gate)))
     return 1 if problems or gate else 0
 
@@ -918,6 +1002,97 @@ def self_test() -> int:
         "T-260 every non-subject family has a non-subject class",
         set(NON_SUBJECT_CLASSES) == {"SURVIVING", "RESTATED", "RECORD", "CORRECT", "OUT_OF_SCOPE"},
     )
+
+    # ------------------------------------------------------------------ T-280: the line as a RATIO
+    # A count over a MOVING corpus is not a debt.  The ratio's denominator is the whole question,
+    # and `CH-0230` named the one that does NOT work, so both readings are published and each rule
+    # is asserted in BOTH directions: what enters the numerator, and what enters each denominator.
+
+    def deliverable(index, family, cls, pointer=False, struck=False, headline=False,
+                    path="ANSWERS.md"):
+        return {
+            "file": path, "index": index, "line": 1, "family": family,
+            "discharge": discharge_of(family), "class": cls, "pointer": pointer,
+            "struck": struck, "headlinePointer": headline, "deliverable": path in DELIVERABLES,
+            "token": "x",
+        }
+
+    debt = debt_ratio([deliverable(0, "WIDTH", "MOVED")])
+    ok("T-280 an unpointed MOVED occurrence is the numerator", debt["unpointed"] == 1)
+    ok("T-280 it is in both denominators",
+       debt["allFamilyOccurrences"] == 1 and debt["sameFamilyOccurrences"] == 1)
+    ok("T-280 the ratio is the quotient of the two counts", debt["ratioOverAllFamilies"] == 1.0)
+
+    pointed = debt_ratio([deliverable(0, "WIDTH", "MOVED"),
+                          deliverable(1, "WIDTH", "MOVED", pointer=True)])
+    ok("T-280 a POINTED occurrence leaves the numerator", pointed["unpointed"] == 1)
+    ok("T-280 a POINTED occurrence stays in both denominators",
+       pointed["allFamilyOccurrences"] == 2 and pointed["sameFamilyOccurrences"] == 2)
+    ok("T-280 adding a pointed occurrence LOWERS the ratio -- the behaviour `debt` implies",
+       pointed["ratioOverAllFamilies"] < debt["ratioOverAllFamilies"])
+
+    struck = debt_ratio([deliverable(0, "WIDTH", "MOVED"),
+                         deliverable(1, "WIDTH", "MOVED", struck=True)])
+    ok("T-280 a STRUCK occurrence leaves the numerator and stays in the denominator",
+       struck["unpointed"] == 1 and struck["allFamilyOccurrences"] == 2)
+    headlined = debt_ratio([deliverable(0, "WIDTH", "MOVED", headline=True)])
+    ok("T-280 a HEADLINE pointer leaves the numerator", headlined["unpointed"] == 0)
+
+    record = debt_ratio([deliverable(0, "WIDTH", "MOVED"), deliverable(1, "WIDTH", "RECORD")])
+    ok("T-280 a class this census does not gate is not in the numerator", record["unpointed"] == 1)
+    ok("T-280 but it IS in the denominator: it is the corpus discussing the premise",
+       record["allFamilyOccurrences"] == 2)
+
+    other = debt_ratio([deliverable(0, "WIDTH", "MOVED"), deliverable(1, "ROW_SPAN", "RESTATED")])
+    ok("T-280 a RESTORED reading is in the all-family denominator", other["allFamilyOccurrences"] == 2)
+    ok("T-280 and NOT in the same-family one, which is CH-0230's own reading",
+       other["sameFamilyOccurrences"] == 1)
+    ok("T-280 so the two readings can differ, and both are published",
+       other["ratioOverAllFamilies"] < other["ratioOverTheSameFamilies"])
+    grillage = debt_ratio([deliverable(0, "WIDTH", "MOVED"),
+                           deliverable(1, "GRILLAGE", "SURVIVING")])
+    ok("T-280 another census's discharge is in the all-family denominator only",
+       grillage["allFamilyOccurrences"] == 2 and grillage["sameFamilyOccurrences"] == 1)
+
+    outside = debt_ratio([deliverable(0, "WIDTH", "MOVED", path="gpd/claims/C-0001-x.md")])
+    ok("T-280 an occurrence outside the two deliverables enters neither",
+       outside["unpointed"] == 0 and outside["allFamilyOccurrences"] == 0)
+    ok("T-280 an empty denominator gives a null ratio, not a division",
+       debt_ratio([])["ratioOverAllFamilies"] is None)
+    ok("T-280 the numerator never exceeds either denominator",
+       all(debt_ratio(rs)["unpointed"] <= debt_ratio(rs)["sameFamilyOccurrences"]
+           for rs in ([deliverable(0, "WIDTH", "MOVED")], [deliverable(0, "AZIMUTH", "DISCHARGED")])))
+    ok(
+        "T-280 the debt line counts only the two deliverables, so a claim's own worked examples "
+        "cannot enter it -- C-0176's two readings COINCIDE here",
+        not any(d.startswith("gpd/claims/") for d in DELIVERABLES),
+    )
+
+    # --- the denominator must be NAMED in the tool's own output
+    lines = debt_report(debt_ratio([deliverable(0, "WIDTH", "MOVED"),
+                                    deliverable(1, "ROW_SPAN", "RESTATED")]))
+    body = " ".join(lines)
+    ok(
+        "T-280 the report's HEADLINE carries the count as well as the ratio -- a weaker test here "
+        "was satisfied by the word `occurrence` inside the denominator's own name, and a mutation "
+        "that dropped the count from the line failed nothing",
+        lines[0].startswith("T-233 debt 1 of 2 occurrence(s) = 0.5 "),
+    )
+    ok("T-280 the report NAMES the denominator", DEBT_DENOMINATOR in body)
+    ok("T-280 the report names CH-0230's own denominator beside it",
+       DEBT_DENOMINATOR_NAMED_BY_CH0230 in body)
+    ok("T-280 the two denominators are named differently",
+       DEBT_DENOMINATOR != DEBT_DENOMINATOR_NAMED_BY_CH0230)
+    ok("T-280 the denominator name says EVERY family", "every family" in DEBT_DENOMINATOR)
+    ok("T-280 CH-0230's name says the SAME families", "same families" in
+       DEBT_DENOMINATOR_NAMED_BY_CH0230)
+    ok("T-280 the report says the line is not a debt measure",
+       "not a measure of debt" in body.lower() or "NOT a measure of debt" in body)
+    ok("T-280 an empty census reports no ratio rather than a zero one",
+       "no occurrence" in " ".join(debt_report(debt_ratio([]))).lower())
+    ok("T-280 the ratio is rendered at nine significant digits",
+       ratio_text(24.0 / 88.0) == "0.272727273")
+    ok("T-280 a null ratio renders as `null`, not as a number", ratio_text(None) == "null")
 
     for failure in failures:
         print("FAIL  " + failure)

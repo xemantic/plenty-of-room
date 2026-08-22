@@ -102,6 +102,17 @@
 # which is true of the inner `check_document` and false of the function `sys.exit` reads. Repaired
 # by `C-0177` (`CH-0231`), which is why this block is worth more than it was yesterday.
 #
+# `P-30` gave the same gate two further arms, so nothing new is wired here and the coverage of
+# what IS wired grew. (1) COVERAGE: every table row whose first cell is a task identifier must be
+# a row the reader SEES -- `_QUEUE_ROW` used to require a TRAILING PIPE, which GFM does not, so a
+# row that omitted one was invisible to the register entirely; over the queue's own history that
+# hid 5 distinct rows across 81 of 138 revisions, **two of them OPEN**. (2) PER-ROW AGREEMENT:
+# `P-29` put each declared phrase through the reader in a SYNTHETIC row; this asks the same
+# question of the real ones. The residue -- a row whose PROSE carries a closing word that is not
+# its verdict -- is printed beside the gate and deliberately NOT gated, because `T-261`'s
+# acceptance criterion quotes `ANSWERED`, `UPHELD` and `RESOLVED` as DATA and lower-casing them
+# would falsify the quotation.
+#
 # `tools/check-corpus-identifiers.py` (`T-273`) closes the one cross-reference class the other two
 # could not reach. `C-0083` gates a claim's FILENAME and `check-corpus-links.py` a relative LINK; a
 # bare `CH-0133` in a sentence is neither, and `T-268` cited two numbers that had been reserved in

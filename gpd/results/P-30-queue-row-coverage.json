@@ -1,0 +1,96 @@
+{
+  "task": "P-30",
+  "claim": "C-0178",
+  "subject": "the queue register reads a row's LEADING verdict, and it sees every row",
+  "baselineRef": "3e71284d5fe2bd05bf3b96ccb32cc20d6ba79ddd",
+  "parameters": {
+    "queue": "TASKS.md",
+    "reader": "tools/trace-answers.py",
+    "gate": "tools/check-queue-vocabulary.py",
+    "sharedPredicate": "tools/queue_verdicts.py"
+  },
+  "coverage": {
+    "taskRowsInTheFile": 275,
+    "rowsSeenBefore": 271,
+    "rowsSeenAfter": 275
+  },
+  "readingsThatMoved": {
+    "T-182": {
+      "before": "UNSEEN",
+      "after": "CLOSED"
+    },
+    "T-261": {
+      "before": "CLOSED",
+      "after": "OPEN"
+    },
+    "T-268": {
+      "before": "CLOSED",
+      "after": "OPEN"
+    },
+    "T-272": {
+      "before": "CLOSED",
+      "after": "OPEN"
+    },
+    "T-280": {
+      "before": "CLOSED",
+      "after": "OPEN"
+    }
+  },
+  "workingTreeReadings": {
+    "T-182": "CLOSED",
+    "T-261": "OPEN",
+    "T-268": "OPEN",
+    "T-272": "OPEN",
+    "T-280": "CLOSED"
+  },
+  "whatCarriesEachRow": {
+    "T-182": "the document repair alone",
+    "T-261": "the reader change",
+    "T-268": "the document repair alone",
+    "T-272": "the document repair alone",
+    "T-280": "the document repair alone"
+  },
+  "whatCarriesEachRowNote": "measured against the WORKING TREE at emit time, which on a shared checkout may carry another agent's edits to the same file: `T-280` was rewritten to **DONE** by a sibling in this same iteration, so its row is closed for a reason that is not this task's repair. The reader-effect figures above contain no working tree at all.",
+  "openRowCount": {
+    "baselineQueueBaselineReader": 62,
+    "baselineQueueRepairedReader": 66,
+    "workingTreeRepairedReader": 67
+  },
+  "coverageDefectOverHistory": {
+    "revisionsOfTheQueue": 138,
+    "revisionsWithAnInvisibleRow": 81,
+    "rowInstancesInvisible": 116,
+    "distinctRowsInvisible": [
+      "T-182",
+      "T-66",
+      "T-72",
+      "T-97",
+      "T-98"
+    ],
+    "revisionsWithAnInvisibleOPENRow": 17,
+    "distinctOPENRowsInvisible": [
+      "T-97",
+      "T-98"
+    ]
+  },
+  "containment": {
+    "ANSWERS.md": {
+      "staleStatusesBefore": 0,
+      "staleStatusesAfter": 0
+    },
+    "DECISIONS-FOR-NDI.md": {
+      "staleStatusesBefore": 0,
+      "staleStatusesAfter": 0
+    }
+  },
+  "residue": {
+    "note": "reported by the gate and deliberately NOT gated; see `residue()`",
+    "rows": [
+      {
+        "task": "T-261",
+        "verdict": "TODO",
+        "wholeRowScanReads": "CLOSED"
+      }
+    ]
+  }
+}

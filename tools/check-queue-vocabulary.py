@@ -51,6 +51,7 @@
 # the second sense the rule asks for and the one nobody writes.
 
 import argparse
+import inspect
 import os
 import re
 import sys
@@ -61,13 +62,16 @@ QUEUE = os.path.join(ROOT, "TASKS.md")
 
 sys.path.insert(0, HERE)
 _trace = __import__("trace-answers")
+import queue_verdicts as _verdicts
 
-# A verdict is a bold run that OPENS a cell.  Six words is the widest legitimate one in the
-# corpus (`ANSWERED in its specification half` is four); the bound exists so that a bold PROSE
-# sentence containing a closing word is not read as a verdict.
-MAX_WORDS = 6
-
-CLOSING_WORD = re.compile(r"\b(DONE|KILLED|CLOSED|ANSWERED|RESOLVED|DISCHARGED)\b")
+# `P-30` moved the predicate itself into `tools/queue_verdicts.py`, so that this gate and the
+# reader it gates cannot drift apart -- which is exactly what they had done: this file gated a
+# LEADING, short, BOLD run and the reader scanned the WHOLE row, and the residue between the two
+# held four open rows the register read CLOSED.  The names are re-exported here because the
+# module's whole subject is the vocabulary and its predicate.
+MAX_WORDS = _verdicts.MAX_WORDS
+CLOSING_WORD = _verdicts.CLOSING_WORD
+blank_struck = _verdicts.blank_struck
 
 # The vocabulary, in its two senses.  A phrase belongs here the day the queue coins it, and it
 # belongs in the sense the QUEUE means -- not in the sense that makes this file pass.
@@ -89,39 +93,32 @@ CLOSING_VERDICTS = frozenset({
 NOT_CLOSING_VERDICTS = frozenset({
     "PARTIALLY DONE",
     "PARTLY DONE",
+    # `P-30`.  `TODO` carries no closing word, so `P-29`'s census could not see it at all -- and
+    # it is the shape `T-261`'s status cell is written in, `TODO -- **MEDIUM**`, where the BOLD
+    # carries the PRIORITY and the verdict is bare.  Every `TODO ...` opening normalises to this
+    # one token, because the queue writes a different priority tail on each of them and a
+    # vocabulary that enumerated the tails would be a vocabulary of prose.
+    "TODO",
 })
 
-_ROW = re.compile(r"^\|\s*\**`?([TP]-\d{1,4}[a-z]?)`?\**\s*\|(.*)$")
-# NO `^` here, deliberately: the anchoring is carried by `.match()` at the one call site.
-# With both, the two are redundant and a mutation of EITHER is a no-op -- which the mutation
-# test found by surviving twice.  One anchor, one place, and `.match` -> `.search` now bites.
-_LEADING_BOLD = re.compile(r"\s*\*\*([^*]{1,120}?)\*\*")
-
-
-def blank_struck(text):
-    """Replace every ~~struck~~ span by spaces of the same length.
-
-    `C-0071`'s rule is *strike, never delete*, so a withdrawn verdict stays in the file forever.
-    A struck verdict is not a verdict, and blanking length-preservingly keeps offsets usable.
-    """
-    return re.sub(r"~~.*?~~", lambda m: " " * len(m.group(0)), text, flags=re.DOTALL)
+_ROW = _verdicts.TASK_ROW
 
 
 def leading_verdicts(queue_text):
-    """[(task id, verdict phrase)] for every bold run that OPENS a cell and closes something."""
+    """[(task id, verdict phrase)] for every run that OPENS a cell and is a verdict."""
+    return [(i, p) for i, p, _ in _verdicts.leading_verdicts(queue_text)]
+
+
+def first_verdicts(queue_text):
+    """[(task id, phrase, sense)] -- the LEFTMOST verdict of each row, which is the live one."""
     found = []
     for line in queue_text.splitlines():
         match = _ROW.match(line.strip())
         if not match:
             continue
-        identifier, rest = match.group(1), blank_struck(match.group(2))
-        for cell in rest.split("|"):
-            bold = _LEADING_BOLD.match(cell)
-            if not bold:
-                continue
-            phrase = bold.group(1).strip()
-            if CLOSING_WORD.search(phrase) and len(phrase.split()) <= MAX_WORDS:
-                found.append((identifier, phrase))
+        verdicts = _verdicts.row_verdicts(match.group(2))
+        if verdicts:
+            found.append((match.group(1), verdicts[0][0], verdicts[0][1]))
     return found
 
 
@@ -152,10 +149,73 @@ def disagreements():
     return out
 
 
+def unseen_rows(queue_text):
+    """[identifier] for every task row the READER does not see (`P-30`, F1).
+
+    `tools/queue_verdicts.task_rows` is written independently of the reader's own regular
+    expression and is deliberately more permissive -- a coverage check that shares the reader's
+    pattern cannot see the reader's own format assumption, and that assumption is what hid the
+    `T-182` row: `_QUEUE_ROW` required a TRAILING PIPE, GFM does not, and one committed row omits
+    one.  272 rows in the file, 271 seen, and `tools/check-markdown-tables.py` clean throughout.
+    """
+    seen = set(_trace.queue_status(queue_text))
+    return [i for i, _ in _verdicts.task_rows(queue_text) if i not in seen]
+
+
+def row_disagreements(queue_text):
+    """[(id, phrase, declared sense, sense the reader reads)] over the REAL rows (`P-30`, F5).
+
+    `disagreements()` above puts each declared phrase through a SYNTHETIC one-row queue; this is
+    the same question asked of the queue itself.  It is not tautological: the declared sense comes
+    from the hand-maintained sets in this file and the read sense from the reader's own regular
+    expression, so a phrase declared in the sense that makes this file comfortable rather than in
+    the sense the queue means fires here, on the row that means it.
+    """
+    statuses = _trace.queue_status(queue_text)
+    out = []
+    for identifier, phrase, _ in first_verdicts(queue_text):
+        if phrase in CLOSING_VERDICTS:
+            expected = "CLOSED"
+        elif phrase in NOT_CLOSING_VERDICTS:
+            expected = "OPEN"
+        else:
+            continue  # undeclared() owns this one
+        read = statuses.get(identifier, "OPEN")
+        if read != expected:
+            out.append((identifier, phrase, expected, read))
+    return out
+
+
+def residue(queue_text):
+    """[(id, phrase, whole-row reading)] where the row's PROSE contradicts its verdict.
+
+    UNGATED, and deliberately.  This is the residue `P-30` was raised about -- a closing word in a
+    row that is not about the task -- and it CANNOT be made clean: `T-261`'s acceptance criterion
+    quotes `ANSWERED`, `UPHELD` and `RESOLVED` as DATA, and lower-casing them would falsify the
+    quotation.  `CLAUDE.md`'s rule for exactly this shape is to wire the gate on what can be made
+    clean and print the residue beside it, with the count and the per-row list.
+    """
+    out = []
+    for line in queue_text.splitlines():
+        match = _ROW.match(line.strip())
+        if not match:
+            continue
+        body = _verdicts.blank_struck(match.group(2))
+        verdicts = _verdicts.row_verdicts(match.group(2))
+        if not verdicts:
+            continue
+        scanned = "CLOSED" if _verdicts.UNQUALIFIED_CLOSING_WORD.search(body) else "OPEN"
+        if scanned != verdicts[0][1]:
+            out.append((match.group(1), verdicts[0][0], scanned))
+    return out
+
+
 def _selftest():
     failures = []
+    ran = []
 
     def check(name, condition):
+        ran.append(name)
         if not condition:
             failures.append(name)
 
@@ -170,7 +230,19 @@ def _selftest():
     )
     check(
         "a row with no verdict yields none",
-        leading_verdicts("| T-1 | a | TODO — **MEDIUM**, raised by `C-1` |") == [],
+        leading_verdicts("| T-1 | a | see the claim, raised by `C-1` |") == [],
+    )
+    # RESTATED by `P-30`.  This fixture used to assert `[]`: before `TODO` was a verdict, a status
+    # cell whose only bold run is the PRIORITY carried nothing the census could see -- which is
+    # precisely why `T-261` was on the fallback path and read CLOSED off its own title.
+    check(
+        "an unbolded leading TODO IS a verdict — the bold carries the priority",
+        leading_verdicts("| T-1 | a | TODO — **MEDIUM**, raised by `C-1` |") == [("T-1", "TODO")],
+    )
+    check(
+        "a bolded leading TODO normalises to the same one token",
+        leading_verdicts("| T-1 | a | **TODO — HIGH VALUE, HIGHEST COST.** Step 6 of x |")
+        == [("T-1", "TODO")],
     )
 
     # --- the two shapes the corpus is full of, which must NOT be read as verdicts ---
@@ -178,7 +250,7 @@ def _selftest():
         "a bold PROSE sentence mid-cell is not a verdict",
         leading_verdicts(
             "| T-1 | a | TODO — x, and **`CH-0185` is ANSWERED** so the price is withdrawn |"
-        ) == [],
+        ) == [("T-1", "TODO")],
     )
     check(
         "a long leading bold sentence is not a verdict",
@@ -199,6 +271,31 @@ def _selftest():
         "blanking a struck span preserves length",
         len(blank_struck("ab~~cd~~ef")) == len("ab~~cd~~ef"),
     )
+    # --- P-30: the guards that make the predicate a predicate rather than a substring search ---
+    check(
+        "a closing word INSIDE a word is not a closing word",
+        leading_verdicts("| T-1 | a | **ABANDONED BRANCH** — see `C-1` |") == [],
+    )
+    check(
+        "a leading bold run carrying NO closing word is not a verdict",
+        leading_verdicts("| T-6b | a | **Downgraded to low** — folded into `T-3a` |") == [],
+    )
+    check(
+        "a bold closing word LATER in a cell does not lead it",
+        leading_verdicts("| T-1 | a | see `C-1`, which is **DONE** |") == [],
+    )
+    check(
+        "`TODO` inside a longer word does not open a cell",
+        leading_verdicts("| T-1 | a | TODOS remain, and the row is **DONE** |") == [],
+    )
+    # `task_rows` is the coverage gate's second opinion, and a second opinion that consults the
+    # first is not one.  This asserts the INDEPENDENCE structurally, because it is a structural
+    # property: a coverage check sharing the reader's own pattern cannot see the reader's own
+    # format assumption, which is exactly what hid the `T-182` row.
+    check(
+        "the coverage scanner does not consult the reader's own pattern",
+        "TASK_ROW" not in inspect.getsource(_verdicts.task_rows),
+    )
 
     # --- the gate itself, in both directions ---
     check(
@@ -213,6 +310,10 @@ def _selftest():
     check(
         "a scope qualifier nobody has declared is REFUSED",
         undeclared("| T-1 | a | **FIRST HALF DONE** — x |") == [("T-1", "FIRST HALF DONE")],
+    )
+    check(
+        "`TODO` is a DECLARED verdict, in the not-closing sense",
+        undeclared("| T-1 | a | TODO — **MEDIUM**, raised by `C-1` |") == [],
     )
 
     # --- the agreement half: this is what a list edit cannot satisfy ---
@@ -229,6 +330,75 @@ def _selftest():
         == "OPEN",
     )
 
+    # --- P-30: which verdict WINS, measured over the queue's own practice ---
+    check(
+        "the LEFTMOST verdict is the live one, not the last",
+        first_verdicts("| T-1 | a | **DONE** (iteration 40) | TODO — **MEDIUM-HIGH** |")
+        == [("T-1", "DONE", "CLOSED")],
+    )
+    check(
+        "a row leading with TODO stays open however it ends",
+        first_verdicts("| T-1 | a | — | **TODO — LOW.** Candidate 1 is **DONE** |")
+        == [("T-1", "TODO", "OPEN")],
+    )
+    check(
+        "a qualifier leads over a later TODO and both mean open",
+        [s for _, _, s in first_verdicts("| T-1 | a | **PARTIALLY DONE** — x | **TODO — HIGH** |")]
+        == ["OPEN"],
+    )
+
+    # --- P-30 F1: coverage.  The reader must see every row a permissive scanner finds ---
+    check(
+        "a row with no trailing pipe is a task row",
+        [i for i, _ in _verdicts.task_rows("| T-182 | t | a | A1.2 | **DONE** (iteration 22).")]
+        == ["T-182"],
+    )
+    check(
+        "and the reader now sees it",
+        unseen_rows("| T-182 | t | a | A1.2 | **DONE** (iteration 22).") == [],
+    )
+    check(
+        "a table whose first cell is not an identifier is not a task row",
+        _verdicts.task_rows("| E | `T-201` the fifth synthesis | `C-0115` | **DONE** |") == [],
+    )
+    check(
+        "a separator row is not a task row",
+        _verdicts.task_rows("|---|---|---|---|") == [],
+    )
+    check(
+        "prose naming a task is not a task row",
+        _verdicts.task_rows("T-182 is discussed here, and | is not a table") == [],
+    )
+
+    # --- P-30 F5: per-row agreement, on the REAL rows rather than synthetic ones ---
+    check(
+        "a declared row agrees with the reader",
+        row_disagreements("| T-1 | a | b | c | **DONE** (iteration 3) |") == [],
+    )
+    check(
+        "a row whose declared sense the reader contradicts is CAUGHT",
+        row_disagreements("| T-1 | a | **PARTIALLY DONE** — x | e | **IN PROGRESS** |")
+        == [("T-1", "PARTIALLY DONE", "OPEN", "IN PROGRESS")],
+    )
+    # The queue's preserved-priority shape: a live `**DONE**` to the left and the original
+    # `TODO — **PRIORITY**` note to its right.  Nine committed rows are this shape, so the
+    # agreement check must read the LEFTMOST verdict and not every verdict of the row.
+    check(
+        "a preserved TODO note beside a live DONE is not a disagreement",
+        row_disagreements("| T-1 | a | **DONE** (iteration 40) | TODO — **MEDIUM-HIGH** |") == [],
+    )
+
+    # --- P-30: the residue, reported and never gated ---
+    check(
+        "a closing word in prose beside a TODO verdict is residue",
+        residue("| T-1 | a | b | c | TODO — high, and `CH-1` is now RESOLVED |")
+        == [("T-1", "TODO", "CLOSED")],
+    )
+    check(
+        "a row whose prose agrees with its verdict is not residue",
+        residue("| T-1 | a | b | c | TODO — high, and `CH-1` is now resolved |") == [],
+    )
+
     # --- MUTATION: narrowing or widening the predicate must fail a NAMED test ---
     # widened to any bold run anywhere -> the prose tests above fail; narrowed to whole-cell
     # equality -> the "(iteration 3)" tests fail.  Both are asserted by the tests, not asserted
@@ -240,7 +410,7 @@ def _selftest():
 
     for failure in failures:
         print("SELFTEST FAIL: {}".format(failure))
-    print("# {} self-test(s), {} failure(s)".format(16, len(failures)))
+    print("# {} self-test(s), {} failure(s)".format(len(ran), len(failures)))
     return 1 if failures else 0
 
 
@@ -290,12 +460,40 @@ def main(argv):
         )
         defects += 1
 
+    for identifier in unseen_rows(text):
+        print(
+            "UNSEEN      {}  is a task row that `trace-answers.queue_status` does not read\n"
+            "            — check the row's shape against `queue_verdicts.TASK_ROW`; a row the\n"
+            "            reader cannot see is an item silently outside the register".format(
+                identifier
+            )
+        )
+        defects += 1
+    for identifier, phrase, expected, read in row_disagreements(text):
+        print(
+            "ROW         {}  leads with {!r}, declared {}, and the reader reads the row {}".format(
+                identifier, phrase, expected, read
+            )
+        )
+        defects += 1
+
     total = len(leading_verdicts(text))
+    rows = len(_verdicts.task_rows(text))
     print(
-        "# {} defect(s); {} leading verdict(s) in {}".format(
-            defects, total, os.path.relpath(args.queue, ROOT)
+        "# {} defect(s); {} leading verdict(s) over {} row(s) in {}".format(
+            defects, total, rows, os.path.relpath(args.queue, ROOT)
         )
     )
+
+    # UNGATED, and deliberately — see `residue()`.
+    trailing = residue(text)
+    print(
+        "# residue (reported, NOT gated): {} row(s) whose prose carries a closing word that is "
+        "not their verdict".format(len(trailing))
+    )
+    for identifier, phrase, scanned in trailing:
+        print("#   {}  verdict {!r}, whole-row scan reads {}".format(identifier, phrase, scanned))
+
     return 1 if defects else 0
 
 
