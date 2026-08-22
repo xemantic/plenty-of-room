@@ -80,9 +80,9 @@ So *"multiply `C-0151`'s table by 1.87"* is not a repair, and no design can be r
 re-reading an existing sweep at a rescaled tolerance.
 
 **And the paired reading and the unpaired one disagree in SIGN at six of the 64 cells.** The ratio
-of the two 90th percentiles falls **below one** — 0.946828178 to 0.968492853, *"the honeycomb is
+of the two 90th percentiles falls **below one** — 0.946828178 to 0.96849327, *"the honeycomb is
 better"* — at six cells, all of them `3 × 10` rim-graded; on the **same** realisations, read one by
-one, the median of the ratios is **1.063755 to 1.137788** and the honeycomb is worse at **58.1–64.8
+one, the median of the ratios is **1.06375481 to 1.13778808** and the honeycomb is worse at **58.1–64.8
 %** of them. Over all 64 cells the median of the per-realisation ratios is **above one everywhere**
 and the honeycomb is worse at **58.1 % to 100 %** of realisations, at 8 cells all 4 000 of them.
 `CLAUDE.md`'s *"a ratio of two ORDER STATISTICS is not the order statistic of the ratio"*, met on a

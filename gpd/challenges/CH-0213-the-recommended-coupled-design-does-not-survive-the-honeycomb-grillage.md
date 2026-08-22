@@ -49,11 +49,11 @@ of them a loss. Restricted to `C-0151`'s own eight `f = 0.30` abstract-grid cell
   `f = 0.30`. It is the measured **staple dropout** that takes it past the tolerance, which is
   `C-0087`'s statistics acting on a stiffer-graded tile, not a new mechanism.
 - **The correction is not a uniform multiplier and it is not monotone in the path count.** The
-  per-realisation median ratio runs **1.063755 to 2.474855** — 1.380–2.475 at one column,
+  per-realisation median ratio runs **1.06375481 to 2.47485493** — 1.380–2.475 at one column,
   1.166–1.555 at two, 1.064–1.208 at three and 1.190–1.462 at five. So *"multiply `C-0151`'s table
   by 1.87"* is not a repair. And at **six** of the 64 cells the ratio of the two 90th percentiles
-  falls **below one** (0.946828178–0.968492853) while the median of the **per-realisation** ratios
-  on the same draws is **1.063755–1.137788**: the unpaired summary reverses the sign, which is
+  falls **below one** (0.946828178–0.96849327) while the median of the **per-realisation** ratios
+  on the same draws is **1.06375481–1.13778808**: the unpaired summary reverses the sign, which is
   `CLAUDE.md`'s *"a ratio of two ORDER STATISTICS is not the order statistic of the ratio"*.
 - **`C-0151`'s selection of `102 / 109` is untouched**: it is exhaustive integer arithmetic on the
   closure lattice, and the flatness axis was not what selected it.
