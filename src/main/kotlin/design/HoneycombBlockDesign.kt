@@ -16,9 +16,7 @@
 
 package com.xemantic.nano.plentyofroom.design
 
-import com.xemantic.nano.plentyofroom.lattice.CrossoverLattice
 import com.xemantic.nano.plentyofroom.lattice.HoneycombCrossoverLattice
-import com.xemantic.nano.plentyofroom.lattice.SquareCrossoverLattice
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.honeycombXRasterPath
 import com.xemantic.nano.plentyofroom.tile.AxialWindow
@@ -166,92 +164,3 @@ const val HONEYCOMB_GRID: String = "honeycomb"
 
 /** The duplex radius scadnano's geometry block is written on, in nm. */
 const val DUPLEX_RADIUS_NM: Double = 1.0
-
-/**
- * A buildability report that knows which lattice it was taken on.
- *
- * [ScadnanoDesign.checkBuildability] applies `C-0086`'s seamless row-width rule — an **odd** number
- * of half turns across the row, which on the square sheet is the odd multiples of 16 bp —
- * unconditionally, to any design. That rule is a square-lattice statement, and on the honeycomb the
- * corresponding condition is not a width rule at all but `C-0148`'s `±5 bp` closure over the whole
- * raster. Applying the first where the second belongs is exactly the transfer `C-0141` had to undo,
- * and it is why [ScadnanoDesign.lattice] refuses to guess a grid.
- *
- * So this report carries a **third** state the boolean one cannot: *not applicable*. A rule that
- * does not hold on this lattice is named in [notApplicable] rather than silently answered.
- */
-data class LatticeBuildabilityReport(
-    val lattice: String,
-    val rowBasePairs: Int,
-    val widthRuleApplies: Boolean,
-    val seamlessRowWidthIsAdmissible: Boolean?,
-    val everyStrandCrossingJoinsLatticeNeighbours: Boolean,
-    val noSiteIsCrossedTwice: Boolean,
-    val carriesInsertionsOrDeletions: Boolean,
-    val violations: List<String>,
-    val notApplicable: List<String>
-)
-
-/**
- * This repository's buildability rules, run **on the design's own lattice**.
- *
- * On a square design this reproduces [ScadnanoDesign.checkBuildability] field for field — asserted
- * as a test, because a second implementation that merely agreed by construction would prove nothing.
- * On any other lattice the width rule is withheld with its reason instead of being answered wrongly.
- */
-fun ScadnanoDesign.checkBuildabilityOnItsOwnLattice(): LatticeBuildabilityReport {
-    val lattice: CrossoverLattice = lattice()
-    val row = rowBasePairs()
-    val violations = mutableListOf<String>()
-    val notApplicable = mutableListOf<String>()
-
-    val widthRuleApplies = lattice === SquareCrossoverLattice
-    val admissible: Boolean? = if (widthRuleApplies) {
-        seamlessRowWidthIsAdmissible(row).also { if (!it) violations += seamlessRowWidthViolation(row) }
-    } else {
-        notApplicable += "the seamless row-width rule of `C-0086` — an ODD number of half turns " +
-            "across the row, i.e. the odd multiples of " +
-            "${SquareCrossoverLattice.SHEET_DOMAIN_BASE_PAIRS} bp — is a **square**-lattice " +
-            "statement, and this design is drawn on the ${lattice.name} lattice, whose " +
-            "corresponding condition is `C-0148`'s ±5 bp scaffold closure over the whole raster " +
-            "rather than a width at all"
-        null
-    }
-
-    val crossings = allStrandCrossings()
-    val adjacency = crossings.all { it.upperHelix - it.lowerHelix == 1 }
-    if (!adjacency) {
-        violations += "a strand crossing joins two helices that are not consecutive in this " +
-            "design's own helix ordering"
-    }
-    val sites = crossings.map { Triple(it.lowerHelix, it.offset, it.onScaffold) }
-    val single = sites.size == sites.toSet().size
-    if (!single) {
-        violations += "a crossover site is registered twice: a crossover is a SINGLE strand " +
-            "crossing, and a reciprocal pair at one offset is geometrically over-constrained"
-    }
-    val modified = strands.any { strand ->
-        strand.domains.any { it.deletions.isNotEmpty() || it.insertions.isNotEmpty() }
-    }
-    if (modified) {
-        violations += "the design carries insertions or deletions — the standard twist " +
-            "correction — so an offset is not a base pair and every length here is nominal"
-    }
-    if (lattice !== SquareCrossoverLattice) {
-        notApplicable += "the crossing-adjacency predicate reads this design's own HELIX " +
-            "ORDERING, which on a raster is the scaffold path; it is not the interface graph, " +
-            "and `C-0154` records that a honeycomb block's interfaces are not a path graph at all"
-    }
-
-    return LatticeBuildabilityReport(
-        lattice = lattice.name,
-        rowBasePairs = row,
-        widthRuleApplies = widthRuleApplies,
-        seamlessRowWidthIsAdmissible = admissible,
-        everyStrandCrossingJoinsLatticeNeighbours = adjacency,
-        noSiteIsCrossedTwice = single,
-        carriesInsertionsOrDeletions = modified,
-        violations = violations,
-        notApplicable = notApplicable
-    )
-}

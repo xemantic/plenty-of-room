@@ -150,8 +150,8 @@ class ScadnanoWriterTest {
     fun `the written design passes this repository's own buildability rules`() {
         val report = reread.checkBuildability()
         assert(report.violations.isEmpty())
-        assert(report.seamlessRowWidthIsAdmissible)
-        assert(report.everyCrossoverJoinsAdjacentDuplexes)
+        assert(report.seamlessRowWidthIsAdmissible == true)
+        assert(report.everyStrandCrossingJoinsLatticeNeighbours == true)
         assert(report.noSiteIsCrossedTwice)
         assert(!report.carriesInsertionsOrDeletions)
     }

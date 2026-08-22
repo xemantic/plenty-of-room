@@ -81,7 +81,12 @@ fun main() {
             " columns, " + sheet.crossoverCount() + " crossovers, " +
             sheet.scaffoldTurns().size + " raster turns"
     )
-    println("  buildability: " + sheet.checkBuildability().violations.size + " violation(s)")
+    val sheetReport = sheet.checkBuildability()
+    println(
+        "  buildability: " + sheetReport.verdict + " on the " + sheetReport.lattice +
+            " lattice, " + sheetReport.violations.size + " violation(s), " +
+            sheetReport.notApplicable.size + " rule(s) withheld"
+    )
 
     val block = recommendedHoneycombBlockDesign()
     val blockFile = block.writeTo(File(HONEYCOMB_BLOCK_DESIGN))
@@ -109,9 +114,12 @@ fun main() {
             " interRowOffset=" + profile.interRowOffsetBasePairs +
             " classZeroResidue=" + profile.classZeroResidue
     )
-    println("  buildability (square rule): " + block.checkBuildability().violations.size +
-        " violation(s)")
-    val aware = block.checkBuildabilityOnItsOwnLattice()
-    println("  buildability (own lattice): " + aware.violations.size + " violation(s), " +
-        aware.notApplicable.size + " rule(s) withheld")
+    val blockReport = block.checkBuildability()
+    println(
+        "  buildability: " + blockReport.verdict + " on the " + blockReport.lattice +
+            " lattice, " + blockReport.violations.size + " violation(s), " +
+            blockReport.notApplicable.size + " rule(s) withheld; closes=" +
+            blockReport.honeycombRasterCloses + " forced=" +
+            blockReport.honeycombForcedCrossovers + " b0=" + blockReport.honeycombClassZeroResidues
+    )
 }

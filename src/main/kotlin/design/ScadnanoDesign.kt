@@ -147,16 +147,6 @@ data class DesignCrossover(
     val interfaceIndex: Int get() = lowerHelix
 }
 
-/** What this repository's own rules say about an imported design. */
-data class BuildabilityReport(
-    val rowBasePairs: Int,
-    val seamlessRowWidthIsAdmissible: Boolean,
-    val everyCrossoverJoinsAdjacentDuplexes: Boolean,
-    val noSiteIsCrossedTwice: Boolean,
-    val carriesInsertionsOrDeletions: Boolean,
-    val violations: List<String>
-)
-
 /**
  * A design read from a scadnano file, and the lattice facts derived from it.
  *
@@ -353,50 +343,6 @@ class ScadnanoDesign(
     fun accumulatedRegisterDepartureDegrees(): Double =
         lattice().registerDepartureDegrees(rowBasePairs())
 
-    /**
-     * This repository's own buildability rules, run against the imported design.
-     *
-     * **The seamless row-width rule this applies is a SQUARE-lattice statement** — `C-0086`'s odd
-     * number of half turns, i.e. the odd multiples of 16 bp — and it is applied here to whatever
-     * design is handed in, so on a honeycomb design it reports a violation naming a ladder that
-     * design's 21 bp period has nothing to do with. That is measured, filed and left in place by
-     * `C-0160` rather than repaired silently; use [checkBuildabilityOnItsOwnLattice] to have the
-     * rule **withheld** with its reason on a lattice it does not hold on.
-     */
-    fun checkBuildability(): BuildabilityReport {
-        val violations = mutableListOf<String>()
-        val row = rowBasePairs()
-        val admissible = seamlessRowWidthIsAdmissible(row)
-        if (!admissible) {
-            violations += seamlessRowWidthViolation(row)
-        }
-        val adjacency = allStrandCrossings().all { it.upperHelix - it.lowerHelix == 1 }
-        if (!adjacency) {
-            violations += "a crossover joins two duplexes that are not adjacent, so the " +
-                "row-adjacency graph is not a path and the seam parity argument does not apply"
-        }
-        val sites = allStrandCrossings().map { Triple(it.lowerHelix, it.offset, it.onScaffold) }
-        val single = sites.size == sites.toSet().size
-        if (!single) {
-            violations += "a crossover site is registered twice: a crossover is a SINGLE strand " +
-                "crossing, and a reciprocal pair at one offset is geometrically over-constrained"
-        }
-        val modified = strands.any { strand ->
-            strand.domains.any { it.deletions.isNotEmpty() || it.insertions.isNotEmpty() }
-        }
-        if (modified) {
-            violations += "the design carries insertions or deletions — the standard twist " +
-                "correction — so an offset is not a base pair and every length here is nominal"
-        }
-        return BuildabilityReport(
-            rowBasePairs = row,
-            seamlessRowWidthIsAdmissible = admissible,
-            everyCrossoverJoinsAdjacentDuplexes = adjacency,
-            noSiteIsCrossedTwice = single,
-            carriesInsertionsOrDeletions = modified,
-            violations = violations
-        )
-    }
 }
 
 /**
@@ -408,11 +354,11 @@ class ScadnanoDesign(
  * 16 bp: 16, 48, 80, 112, 144. A nominal 40.0 nm (117.6 bp) is not among them, and the nearest
  * buildable tile is 112 bp = 38.08 nm.
  */
-fun seamlessRowWidthIsAdmissible(rowBasePairs: Int): Boolean =
+fun squareSeamlessRowWidthIsAdmissible(rowBasePairs: Int): Boolean =
     rowBasePairs % SquareCrossoverLattice.samePairPeriodBasePairs ==
         SquareCrossoverLattice.SHEET_DOMAIN_BASE_PAIRS
 
-internal fun seamlessRowWidthViolation(rowBasePairs: Int): String {
+internal fun squareSeamlessRowWidthViolation(rowBasePairs: Int): String {
     val period = SquareCrossoverLattice.samePairPeriodBasePairs
     val nearest = ((rowBasePairs - SquareCrossoverLattice.SHEET_DOMAIN_BASE_PAIRS).toDouble() /
         period).let { Math.round(it) } * period + SquareCrossoverLattice.SHEET_DOMAIN_BASE_PAIRS
@@ -420,17 +366,4 @@ internal fun seamlessRowWidthViolation(rowBasePairs: Int): String {
         "number of half turns across its row, which on this lattice is the odd multiples of " +
         "${SquareCrossoverLattice.SHEET_DOMAIN_BASE_PAIRS} bp. The nearest buildable width is " +
         "$nearest bp."
-}
-
-/** The buildability of a bare row width, for a design that has not been drawn yet. */
-fun buildabilityOfRowWidth(rowBasePairs: Int): BuildabilityReport {
-    val admissible = seamlessRowWidthIsAdmissible(rowBasePairs)
-    return BuildabilityReport(
-        rowBasePairs = rowBasePairs,
-        seamlessRowWidthIsAdmissible = admissible,
-        everyCrossoverJoinsAdjacentDuplexes = true,
-        noSiteIsCrossedTwice = true,
-        carriesInsertionsOrDeletions = false,
-        violations = if (admissible) emptyList() else listOf(seamlessRowWidthViolation(rowBasePairs))
-    )
 }

@@ -68,9 +68,11 @@ from which the register departure falls out,
 and derives 15 duplexes, 112 bp, phase 8, seven columns, the 4/3 parity split and 49 crossovers
 **from the file** — a reproduction of the corpus's own counts across two implementations in two
 languages, not a restatement of them.
-`checkBuildability()` runs this repository's rules against an imported design,
+`checkBuildability()` runs this repository's rules against an imported design
+**on the lattice that design is drawn on** (`T-270`/`C-0164`),
 which is the capability nothing in the field has:
-caDNAno will happily let you draw a row width a boustrophedon cannot turn at.
+caDNAno will happily let you draw a row width a boustrophedon cannot turn at,
+and it will just as happily let you draw a honeycomb raster no lattice constant `b₀` serves.
 
 `T-266` added the **writer**,
 so `C-0151`'s recommended block is a committed file ([`gpd/designs/`](gpd/designs/README.md))
@@ -79,7 +81,12 @@ and `read → write → read` reproduces every lattice fact of the simulated she
 Its first use found two things nothing else could.
 `checkBuildability()` was applying the **square** sheet's width rule to a honeycomb design —
 in the one function whose sibling `lattice()` refuses to guess —
-which is filed rather than repaired, with the lattice-aware check added beside it.
+which `C-0160` filed rather than repaired, with the lattice-aware check added beside it,
+and which `T-270`/`C-0164` then made the default:
+one rule `N ≡ step·Δ + {0, ±2·offset} (mod period)` on both lattices,
+`C-0148`'s `±5 bp` closure derived from the **file**,
+and a third verdict state so that a design whose lattice cannot be derived
+cannot read as a pass.
 And a `require` that had been written **tautologically** refused the writer's own first reading of
 *"every x-raster row spans exactly the larger of the two lengths"*,
 which is a statement about a row's union **window** and not about its helices:

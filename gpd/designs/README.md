@@ -39,7 +39,7 @@ scaffold-closure rule, at [`C-0141`](../claims/C-0141-honeycomb-station-lattice-
 | cross-section | ten corrugated x-raster rows of six helices, 60 helices, four layers |
 | row lengths | **102 / 109 bp**, a 7 bp stagger — the least a *drawable* two-length honeycomb raster can carry |
 | per-row composition | a row is **not** uniform: 102, 109, 109, 109, 109, 102 on one parity and 109, 102, 102, 102, 102, 109 on the other, both spanning a 109 bp window |
-| closure | closes on caDNAno's published `±5 bp` scaffold rule at **zero** forced crossovers, `b₀ = 5` |
+| closure | closes on caDNAno's published `±5 bp` scaffold rule at **zero** forced crossovers, `b₀ = 5` on the corpus's own `z` — **`b₀ = 9` read on the file's datum**, which the emission shifts by 4 bp; a global shift moves every reduced residue alike, so the verdict is the same one (`C-0164`, and `python3 tools/T-270-closure-from-sc.py` reads it out of this file) |
 | raster turns | 59, every one a direct scaffold crossover |
 | station ladder | phase **16**, inter-row offset **14 bp**, **55** of 60 stations on the face |
 | scaffold | **6 330 nt**, 919 spare on one M13 |

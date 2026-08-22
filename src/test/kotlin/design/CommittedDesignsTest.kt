@@ -63,7 +63,7 @@ class CommittedDesignsTest {
         assert(design.scaffoldTurns().size == 14)
         assert(design.crossoversPerInterface().count { it == 4 } == 7)
         assert(design.crossoversPerInterface().count { it == 3 } == 7)
-        assert(design.checkBuildability().violations.isEmpty())
+        assert(design.checkBuildability().verdict == BuildabilityVerdict.ADMISSIBLE)
     }
 
     @Test
@@ -91,7 +91,16 @@ class CommittedDesignsTest {
         assert(profile.interRowOffsetBasePairs == 14)
         assert(profile.classZeroResidue == 5)
         assert(profile.fitsM13)
-        assert(design.checkBuildabilityOnItsOwnLattice().violations.isEmpty())
+        // T-270: graded on its OWN lattice, and the honeycomb branch now ANSWERS rather than
+        // withholding -- `C-0148`'s closure, derived from the file the artifact is
+        val report = design.checkBuildability()
+        assert(report.lattice == "honeycomb")
+        assert(report.honeycombRasterCloses == true)
+        assert(report.honeycombForcedCrossovers == 0)
+        // one b0, and it is the construction's own shifted onto the file's datum (T-270's tests
+        // carry the shift; here what matters is that the file determines exactly one)
+        assert(report.honeycombClassZeroResidues.size == 1)
+        assert(report.verdict == BuildabilityVerdict.ADMISSIBLE)
     }
 
     @Test

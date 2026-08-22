@@ -134,16 +134,17 @@ class ScadnanoDesignTest {
     fun `the imported design passes this repository's own buildability rules`() {
         val report = design.checkBuildability()
         assert(report.violations.isEmpty())
-        assert(report.seamlessRowWidthIsAdmissible)
-        assert(report.everyCrossoverJoinsAdjacentDuplexes)
+        assert(report.seamlessRowWidthIsAdmissible == true)
+        assert(report.everyStrandCrossingJoinsLatticeNeighbours == true)
         assert(report.noSiteIsCrossedTwice)
     }
 
     @Test
     fun `a row width off the seamless ladder is REPORTED rather than silently accepted`() {
         // 118 bp is not an odd multiple of 16, so a boustrophedon cannot turn there: C-0086.
-        val report = buildabilityOfRowWidth(118)
-        assert(!report.seamlessRowWidthIsAdmissible)
-        assert(report.violations.any { "118" in it })
+        // `T-270` renamed the rule to carry the lattice it belongs to; `buildabilityOfRowWidth`,
+        // which answered it for any design that had not been drawn yet, is retired with it.
+        assert(!squareSeamlessRowWidthIsAdmissible(118))
+        assert(squareSeamlessRowWidthIsAdmissible(112))
     }
 }

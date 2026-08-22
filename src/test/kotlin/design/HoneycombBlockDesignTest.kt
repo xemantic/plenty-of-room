@@ -167,48 +167,59 @@ class HoneycombBlockDesignTest {
         }
     }
 
-    // --- H4: the finding -- this repository's buildability check is LATTICE-BLIND ----------------
+    // --- H4: the finding -- and its repair, with C-0160's pinning test explicitly RETIRED -------
 
     @Test
-    fun `checkBuildability applies a SQUARE-lattice width rule to a honeycomb design`() {
-        // the finding of T-266, recorded as a test rather than repaired quietly: `lattice()`
-        // REFUSES to guess a lattice, and `checkBuildability()` then silently applies the square
-        // sheet's odd-multiple-of-16-bp seamless width rule to a design on the other lattice
+    fun `the SQUARE-lattice width rule is no longer applied to this honeycomb design`() {
+        // RETIREMENT, recorded rather than deleted. `C-0160` left `checkBuildability()`
+        // byte-identical and pinned its lattice-blind behaviour with a named test:
+        //
+        //     `checkBuildability applies a SQUARE-lattice width rule to a honeycomb design`
+        //         val report = design.checkBuildability()
+        //         assert(!report.seamlessRowWidthIsAdmissible)
+        //         assert(report.violations.size == 1)
+        //         assert("16 bp" in report.violations.single())
+        //
+        // That was a pin on a defect, held so `T-266`'s fired falsifier `F2` stayed measurable
+        // until it was repaired. `T-270` repaired it, so the pin is retired here and replaced by
+        // its negation: the design's OWN lattice answers, and no sentence of a honeycomb report
+        // may name the square sheet's 16 bp ladder.
         val report = design.checkBuildability()
-        assert(!report.seamlessRowWidthIsAdmissible)
-        assert(report.violations.size == 1)
-        assert("16 bp" in report.violations.single())
-        // and the rule it applied is not this design's lattice
+        assert(report.lattice == "honeycomb")
+        assert(report.seamlessRowWidthIsAdmissible == null)
+        assert((report.violations + report.notApplicable).none { "16 bp" in it })
         assert(design.lattice().samePairPeriodBasePairs == 21)
         assert(SquareCrossoverLattice.samePairPeriodBasePairs == 32)
     }
 
     @Test
-    fun `the lattice-aware check reports the width rule as NOT APPLICABLE, and passes the rest`() {
-        val report = design.checkBuildabilityOnItsOwnLattice()
-        assert(report.lattice == "honeycomb")
-        assert(!report.widthRuleApplies)
-        assert(report.seamlessRowWidthIsAdmissible == null)
-        assert(report.everyStrandCrossingJoinsLatticeNeighbours)
+    fun `the honeycomb branch ANSWERS the rule it used to withhold, and the block closes`() {
+        val report = design.checkBuildability()
+        assert(report.honeycombRasterCloses == true)
+        assert(report.honeycombForcedCrossovers == 0)
+        assert(report.everyScaffoldRunIsAdmissible == true)
+        assert(report.everyStrandCrossingJoinsLatticeNeighbours == true)
         assert(report.noSiteIsCrossedTwice)
         assert(!report.carriesInsertionsOrDeletions)
         assert(report.violations.isEmpty())
-        assert(report.notApplicable.any { "square" in it })
+        assert(report.notApplicable.isEmpty())
+        assert(report.verdict == BuildabilityVerdict.ADMISSIBLE)
     }
 
     @Test
-    fun `on a SQUARE design the lattice-aware check reproduces the original, exactly`() {
+    fun `on a SQUARE design the check reproduces C-0160's report field for field`() {
+        // `C-0160` asserted the lattice-aware check against the lattice-blind one at run time;
+        // the lattice-blind one is gone, so its four fields are pinned here as LITERALS -- which
+        // is the stronger pin, because it survives the function it was taken from.
         val tile = ScadnanoDesign.fromResource("/gen1-tile.sc")
-        val original = tile.checkBuildability()
-        val aware = tile.checkBuildabilityOnItsOwnLattice()
-        assert(aware.lattice == "square")
-        assert(aware.widthRuleApplies)
-        assert(aware.seamlessRowWidthIsAdmissible == original.seamlessRowWidthIsAdmissible)
-        assert(aware.everyStrandCrossingJoinsLatticeNeighbours ==
-            original.everyCrossoverJoinsAdjacentDuplexes)
-        assert(aware.noSiteIsCrossedTwice == original.noSiteIsCrossedTwice)
-        assert(aware.carriesInsertionsOrDeletions == original.carriesInsertionsOrDeletions)
-        assert(aware.violations == original.violations)
-        assert(aware.notApplicable.isEmpty())
+        val report = tile.checkBuildability()
+        assert(report.lattice == "square")
+        assert(report.rowBasePairs == 112)
+        assert(report.seamlessRowWidthIsAdmissible == true)
+        assert(report.everyStrandCrossingJoinsLatticeNeighbours == true)
+        assert(report.noSiteIsCrossedTwice)
+        assert(!report.carriesInsertionsOrDeletions)
+        assert(report.violations.isEmpty())
+        assert(report.notApplicable.isEmpty())
     }
 }

@@ -16,6 +16,7 @@
 
 package com.xemantic.nano.plentyofroom.lattice
 
+import com.xemantic.nano.plentyofroom.tile.HoneycombCrossoverRule
 import com.xemantic.nano.plentyofroom.tile.HoneycombLattice
 
 /** B-DNA's own helical twist, 10.5 bp per turn — the twist a lattice's design twist departs from. */
@@ -95,6 +96,17 @@ interface CrossoverLattice {
      */
     val singleLayerInterfacesFormAPath: Boolean
 
+    /**
+     * How far a **scaffold** crossover sits from its pair's staple position, in base pairs.
+     *
+     * caDNAno's honeycomb rule is *"five base pairs, or half a turn"* from the staple position, so
+     * a run's length can differ from `step × Δ` by `0` or `±10` and `C-0136`'s admissible widths
+     * are a three-member set. The square lattice has no such offset — its scaffold and staple
+     * crossovers sit on the same 8 bp planes — which is one of the two reasons `C-0086`'s width
+     * rule is a single residue where the honeycomb's is three.
+     */
+    val scaffoldCrossoverOffsetBasePairs: Int
+
     /** Base pairs before the **same** adjacent pair comes round again — one azimuth's period. */
     val samePairPeriodBasePairs: Int get() = azimuths * anyAzimuthStepBasePairs
 
@@ -171,6 +183,9 @@ object SquareCrossoverLattice : CrossoverLattice {
 
     override val hasCentroSymmetricPhaseCongruence: Boolean = true
 
+    /** None: `C-0086`'s width rule is derived with no scaffold offset at all. */
+    override val scaffoldCrossoverOffsetBasePairs: Int = 0
+
     /** A single-layer square-lattice sheet is a row of duplexes bonded to their two neighbours. */
     override val singleLayerInterfacesFormAPath: Boolean = true
 
@@ -210,6 +225,9 @@ object HoneycombCrossoverLattice : CrossoverLattice {
     override val designBasesPerTurn: Double = B_DNA_BASES_PER_TURN
 
     override val hasCentroSymmetricPhaseCongruence: Boolean = false
+
+    /** caDNAno's own `±5 bp`, taken from [HoneycombCrossoverRule] so the two cannot drift. */
+    override val scaffoldCrossoverOffsetBasePairs: Int = HoneycombCrossoverRule.SCAFFOLD_OFFSET_BP
 
     /** Three neighbours per site, and half the in-plane adjacent pairs unbonded — `C-0154`. */
     override val singleLayerInterfacesFormAPath: Boolean = false

@@ -124,6 +124,14 @@ crossing-adjacency predicate reads the design's **helix ordering**, which on a r
 path — it is *not* the interface graph, and `C-0154` records that a honeycomb block's interfaces are
 not a path graph at all.
 
+> **`T-270`/[`C-0164`](C-0164-lattice-aware-buildability.md)**: both are now **answered** rather
+> than withheld. The width rule is replaced by the honeycomb's own — `C-0136` per run and `C-0148`'s
+> `±5 bp` closure — and the adjacency predicate by a **bond of the cross-section**, read off
+> `grid_position`, which is the right question on a lattice whose interfaces are not a path graph.
+> `checkBuildabilityOnItsOwnLattice()` no longer exists as a separate function: it *is*
+> `checkBuildability()`. This section's finding is upheld exactly as filed, and the pinning test
+> named in it is **retired explicitly**, not deleted (`C-0164` §7).
+
 ## 5. What a non-tautological `require` refused, and why it matters more than what it emitted
 
 Drawing the block means giving all 60 helices an axial span, including the two path ends whose
@@ -213,10 +221,16 @@ than leaving a stale file somebody could fold. No study of this claim writes a r
   are absent by decision, and any downstream use must carry that.
 - **The path ends' lengths rest on the row-parity symmetry**, which is asserted on this raster and
   this cross-section rather than proved in general; the builder refuses any raster where it fails.
-- **The lattice-aware check withholds rather than decides on a honeycomb design.** It does not
+- ~~**The lattice-aware check withholds rather than decides on a honeycomb design.** It does not
   implement `C-0148`'s closure predicate from the file — that needs the turn senses, which the `.sc`
   format does not carry in a form this reader derives — so a honeycomb design's *drawability* is
-  still answered by `HoneycombRasterResidues` and not by the imported file.
+  still answered by `HoneycombRasterResidues` and not by the imported file.~~
+  **WITHDRAWN by [`CH-0211`](../challenges/CH-0211-the-closure-does-not-need-the-turn-senses.md)
+  ([`C-0164`](C-0164-lattice-aware-buildability.md), `T-270`): the closure needs the crossover
+  LEVELS and the bond CLASSES, and a `.sc` states both — the level in its domain boundaries, the
+  class in its `grid_position`. A turn sense is what a *construction* needs to place a crossover;
+  an *import* reads where it already is. The verdict — that this claim's check withheld rather
+  than answered — stands; the reason given for it does not.**
 
 ## 10. Still open
 
@@ -224,8 +238,13 @@ than leaving a stale file somebody could fold. No study of this claim writes a r
   one, and it is the largest single thing between this corpus and a bench order.
 - **Loopout support in the reader and writer**, one schema change (`domains` becomes a heterogeneous
   array), which would let `C-0147`'s turn allowance be *drawn* rather than priced.
-- **`C-0148`'s closure predicate, derived from an imported file.** It would make
+- ~~**`C-0148`'s closure predicate, derived from an imported file.** It would make
   `checkBuildabilityOnItsOwnLattice()` answer on the honeycomb instead of withholding, and it is the
-  capability nothing in the field has: caDNAno will let you draw a raster that does not close.
+  capability nothing in the field has: caDNAno will let you draw a raster that does not close.~~
+  **CLOSED by [`C-0164`](C-0164-lattice-aware-buildability.md) (`T-270`)**, which makes the
+  lattice-aware form the **default** — `checkBuildabilityOnItsOwnLattice()` is folded into
+  `checkBuildability()` — and answers the closure from the file: the committed block's 59 raster
+  crossovers reduce to `{4, 14}`, one `b₀`, **zero forced**, while a drawn `112 / 108` is refused
+  at `C-0148`'s own **10**.
 - **A caDNAno v2 writer.** scadnano's own exporter exists; whether this repository needs its own is a
   question about who the recipient is.
