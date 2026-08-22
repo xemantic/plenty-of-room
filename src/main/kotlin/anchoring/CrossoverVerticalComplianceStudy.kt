@@ -99,8 +99,8 @@ private data class T9bRungRecord(
     val bestKey: String,
     val publishedPlacementDishing: Double,
     val peakCrossoverForce: Double,
-    val peakLinkExtension: Double,
-    val registrationLever: Double,
+    val peakLinkExtension: Double?,
+    val registrationLever: Double?,
     val registrationPeakForces: List<Double>,
     val uniformLoadDishing: Double,
     val flatAtTenPercent: Boolean,
@@ -525,7 +525,7 @@ fun main() {
     check(host.columns.size == 8) { "phase $T9B_PHASE must carry 8 columns" }
     val publishedPlacement = placementFromKey(c0090Key, T9B_PHASE, arm, edgeX)
 
-    println("T-9b — the sweep: the link ALONE, hinge intact, at all 49 crossovers ...")
+    println("T-9b — the sweep: the link ALONE, hinge intact, at all 56 crossovers ...")
 
     fun rung(name: String, linkStiffness: Double, deleteLink: Boolean = false): T9bRungRecord {
         val solve = host.Solve(linkStiffness, deleteLink)
@@ -539,19 +539,22 @@ fun main() {
             bestKey = optimum.best.key,
             publishedPlacementDishing = solve.dishing(publishedPlacement),
             peakCrossoverForce = solve.peakCrossoverForce,
-            peakLinkExtension = if (deleteLink) Double.NaN
+            // null, not a sentinel: with the link deleted every crossover carries EXACTLY zero
+            // force, so neither an extension nor a lever exists to be quoted (CLAUDE.md: a
+            // margin of Infinity is not a margin, it is the absence of a requirement)
+            peakLinkExtension = if (deleteLink) null
             else solve.peakCrossoverForce / linkStiffness,
-            registrationLever = solve.registrationLever,
+            registrationLever = if (deleteLink) null else solve.registrationLever,
             registrationPeakForces = solve.registrationPeakForces,
             uniformLoadDishing = solve.uniformLoadDishing,
             flatAtTenPercent = optimum.bestValue < FLATNESS_CONVENTION,
             enumerated = optimum.enumerated
         )
         println(
-            ("  %-46s k_z = %10.4f  best = %.9f  free = %.6f  F = %.6f  lever = %.4f").format(
+            ("  %-46s k_z = %10.4f  best = %.9f  free = %.6f  F = %.6f  lever = %s").format(
                 name, record.linkStiffness, record.bestDishingOverStroke,
                 record.freeDishingOverStroke, record.peakCrossoverForce,
-                record.registrationLever
+                record.registrationLever?.let { "%.4f".format(it) } ?: "none"
             )
         )
         return record
@@ -567,8 +570,7 @@ fun main() {
     val physicalRung = sweep.first { abs(it.linkStiffness - physical) < 1e-9 }
     val absent = rung("ABSENT — the link deleted, the dihedral spring retained", penalty, true)
 
-    // NaN cannot be serialised (CLAUDE.md), and an absent link has no extension to quote
-    val absentRecord = absent.copy(peakLinkExtension = 0.0)
+    val absentRecord = absent
 
     // ------------------------------------------------------------------------------ the verdict
     val verdict = verticalComplianceVerdict(
@@ -600,8 +602,35 @@ fun main() {
             abs(host.columns.size - 8.0) / 8.0, "C-0015 / C-0090"
         ),
         T9bReproduction(
-            "crossovers built on the sheet", 49.0, host.lattice(penalty).crossovers.size.toDouble(),
-            abs(host.lattice(penalty).crossovers.size - 49.0) / 49.0, "CLAUDE.md / C-0015"
+            // NOT 49: 49 is the SEVEN-column count (a 4/3 parity split over 14 interfaces), which
+            // is the lattice C-0157's oxDNA tile was generated on -- x = 8 + 16k, k = 0..6, the
+            // row-end column REFUSED.  C-0090's and C-0099's object, and this one, admits the
+            // row-end column, so phase 8 carries EIGHT columns splitting 4/4 and 14 x 4 = 56.
+            "crossovers built on the sheet, row-end column ADMITTED",
+            56.0, host.lattice(penalty).crossovers.size.toDouble(),
+            abs(host.lattice(penalty).crossovers.size - 56.0) / 56.0, "C-0090 / C-0099"
+        ),
+        T9bReproduction(
+            "C-0157's 49 against rasterColumnLayout's row-end-REFUSED reading, same " +
+                    "width and phase -- a NON-reproduction, and the finding",
+            49.0,
+            OrigamiGrillage(
+                sheet = sheet, lengthX = edgeX, beamCount = T9B_DUPLEXES,
+                foundationStiffness = Gen1Tile.FOUNDATION_SECANT,
+                columns = rasterColumnLayout(
+                    T9B_PHASE, sheet, edgeX, false, CrossoverLayout.EDGE_MARGIN
+                )
+            ).crossovers.size.toDouble(),
+            abs(
+                OrigamiGrillage(
+                    sheet = sheet, lengthX = edgeX, beamCount = T9B_DUPLEXES,
+                    foundationStiffness = Gen1Tile.FOUNDATION_SECANT,
+                    columns = rasterColumnLayout(
+                        T9B_PHASE, sheet, edgeX, false, CrossoverLayout.EDGE_MARGIN
+                    )
+                ).crossovers.size - 49.0
+            ) / 49.0,
+            "C-0157 / CLAUDE.md"
         ),
         T9bReproduction(
             "the corpus's k_theta, pN nm/rad", 13.5294118, Gen1Tile.crossoverHingeStiffness(),
@@ -679,7 +708,8 @@ fun main() {
                         "did not resolve before calling the response a discontinuity."
                 ),
         "whatTheSweepMeasures" to (
-                "The link ALONE, hinge intact, at all 49 crossovers. C-0099 swept the 14 row-end " +
+                "The link ALONE, hinge intact, at all 56 crossovers of the row-end-admitted phase-8 " +
+                        "lattice. C-0099 swept the 14 row-end " +
                         "crossovers and scaled both elements together, so this channel has never " +
                         "been run. Best 34-root dishing: " +
                         "${rigid.bestDishingOverStroke.roundedForProse()} rigid, " +
@@ -694,16 +724,43 @@ fun main() {
                         "CROSSOVER, and that curve exists only because a rigid vertical tie " +
                         "localises the reaction there. Re-measured at every rung as the spread " +
                         "of the peak crossover force over one registration cell at C-0015's own " +
-                        "nine stations: ${rigid.registrationLever.roundedForProse()} rigid, " +
-                        "${physicalRung.registrationLever.roundedForProse()} at the derived " +
-                        "value, ${absentRecord.registrationLever.roundedForProse()} with the " +
-                        "link deleted. This is corroboration and NOT the criterion: V3 was fixed " +
-                        "on the peak force itself, before the sweep."
+                        "nine stations: ${rigid.registrationLever!!.roundedForProse()} rigid, " +
+                        "${physicalRung.registrationLever!!.roundedForProse()} at the derived " +
+                        "value, and with the link DELETED there is no lever at all because " +
+                        "every crossover carries EXACTLY zero force. This is corroboration and " +
+                        "NOT the criterion: V3 was fixed on the peak force itself, before the " +
+                        "sweep."
+                ),
+        "theV2ThresholdWasMISTRANSCRIBEDANDBOTHAREPUBLISHED" to (
+                "T-9's Plan registered V2 as 'three percentage points of the convention' and " +
+                        "wrote the number 0.030, which is a factor of ten out: three percentage " +
+                        "points OF 0.10 is 0.0030, and C-0099's own two emitted readings differ " +
+                        "by 0.0030284749 of the stroke. The corrected threshold is that " +
+                        "difference; the registered one is retained as " +
+                        "ROW_END_UNKNOWN_MARGIN_AS_FIRST_WRITTEN and BOTH verdicts are emitted. " +
+                        "The measured movement is " +
+                        "${verdict.dishingMovement.roundedForProse()} of the stroke, " +
+                        "${verdict.dishingMovementOverTheRowEndUnknown.roundedForProse()}x the " +
+                        "row-end unknown — so V2 fires on the corrected threshold and not on " +
+                        "the registered one, and V1, V3 and V4 are the same under both."
+                ),
+        "THESIMULATEDTILEISNOTTHEGRADEDTILE" to (
+                "At 38.08 nm and phase 8 rasterColumnLayout puts its columns on the EVEN junction " +
+                        "planes and gives 8 columns admitted (a 4/4 split over 14 interfaces, 56 " +
+                        "crossovers) and 6 refused (3/3, 42). C-0157's oxDNA generator built 7 " +
+                        "columns at x = 8 + 16k, k = 0..6, and 49 crossovers. NEITHER grillage " +
+                        "reading is 7, so the simulated tile and the tile every placement result " +
+                        "in this corpus is graded on are not the same object: their column sets " +
+                        "are one 8 bp PLANE apart, which is CLAUDE.md's own 'a shift by one " +
+                        "column pitch hands every interface the OTHER parity's columns -- a " +
+                        "physically different sheet', met between a simulation and the lattice " +
+                        "its answer would be read against. This study does not resolve which is " +
+                        "right; it emits both counts and lists it open."
                 ),
         "theLinkExtensionIsALENGTH" to (
                 "At the penalty the peak link extension is " +
-                        "${rigid.peakLinkExtension.roundedForProse()} nm and at the derived " +
-                        "value ${physicalRung.peakLinkExtension.roundedForProse()} nm, against " +
+                        "${rigid.peakLinkExtension!!.roundedForProse()} nm and at the derived " +
+                        "value ${physicalRung.peakLinkExtension!!.roundedForProse()} nm, against " +
                         "the 0.34 nm rise which is the smallest length the design language can " +
                         "draw. A constraint whose extension is orders below the lattice quantum " +
                         "is a constraint; one whose extension approaches it is a spring."
@@ -805,7 +862,8 @@ fun main() {
     out.parentFile.mkdirs()
     out.writeText(json.encodeToString(encoded.roundedForResult()))
     println("T-9b — written to ${out.path}")
-    println("T-9b — verdict: binary reading right = ${verdict.binaryReadingIsRight}, " +
+    println("T-9b — verdict: binary reading right = ${verdict.binaryReadingIsRight} " +
+            "(as first written: ${verdict.binaryReadingIsRightAsFirstWritten}), " +
             "ramp fraction = ${verdict.rampFraction}, V1 = ${verdict.crossesFlatnessConvention}, " +
             "V2 = ${verdict.movesMoreThanTheRowEndUnknown}, " +
             "V3 = ${verdict.movesThePeakCrossoverForce}, V4 = ${verdict.isARampNotAStep}")

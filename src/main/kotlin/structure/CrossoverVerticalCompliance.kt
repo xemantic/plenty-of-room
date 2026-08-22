@@ -62,11 +62,26 @@ import kotlin.math.abs
 const val FLATNESS_CONVENTION: Double = 0.10
 
 /**
- * `C-0099`'s whole row-end unknown, **as a fraction of the stroke**: 3.0 percentage points of
- * [FLATNESS_CONVENTION].  A movement below this is smaller than a question the corpus has already
- * measured and closed.
+ * `C-0099`'s whole row-end unknown, as a movement of the dishing **over the free stroke**:
+ * `0.0651753854 − 0.0621469105`, its own two emitted readings, which it describes as
+ * **3.0 percentage points of margin** against `T-5b`'s [FLATNESS_CONVENTION].
+ * A movement below this is smaller than a question the corpus has already measured and closed.
+ *
+ * **CORRECTED, and the correction is published rather than applied silently.**
+ * `T-9`'s Plan first wrote this threshold as `0.030` — a factor of ten out against the quantity
+ * its own sentence names, because three percentage points *of* `0.10` is `0.0030`, not `0.030`.
+ * The mis-transcribed value is retained as [ROW_END_UNKNOWN_MARGIN_AS_FIRST_WRITTEN] and **both**
+ * verdicts are emitted, because a threshold corrected after a sweep has to stay checkable against
+ * the one registered before it. `C-0169` reports both and neither moves `V1`, `V3` or `V4`.
  */
-const val ROW_END_UNKNOWN_MARGIN: Double = 0.030
+const val ROW_END_UNKNOWN_MARGIN: Double = 0.0030284749
+
+/**
+ * The factor-of-ten mis-transcription of [ROW_END_UNKNOWN_MARGIN] that `T-9`'s Plan registered
+ * before the sweep, retained so that the pre-registered verdict stays computable from the code
+ * that reports the corrected one.
+ */
+const val ROW_END_UNKNOWN_MARGIN_AS_FIRST_WRITTEN: Double = 0.030
 
 /**
  * `C-0015`'s own count effect — *"seven crossover columns instead of eight moves the peak
@@ -163,15 +178,23 @@ fun rampFraction(atPhysical: Double, atRigid: Double, atAbsent: Double): Double 
 data class VerticalComplianceVerdict(
     val crossesFlatnessConvention: Boolean,
     val movesMoreThanTheRowEndUnknown: Boolean,
+    val movesMoreThanTheRowEndUnknownAsFirstWritten: Boolean,
     val movesThePeakCrossoverForce: Boolean,
     val isARampNotAStep: Boolean,
     val rampFraction: Double,
     val dishingMovement: Double,
+    val dishingMovementOverTheRowEndUnknown: Double,
     val relativeForceMovement: Double
 ) {
 
+    /** The conjunction none of the four fired, at the **corrected** `V2` threshold. */
     val binaryReadingIsRight: Boolean
         get() = !crossesFlatnessConvention && !movesMoreThanTheRowEndUnknown &&
+                !movesThePeakCrossoverForce && !isARampNotAStep
+
+    /** The same, at the threshold `T-9`'s Plan registered before the sweep. */
+    val binaryReadingIsRightAsFirstWritten: Boolean
+        get() = !crossesFlatnessConvention && !movesMoreThanTheRowEndUnknownAsFirstWritten &&
                 !movesThePeakCrossoverForce && !isARampNotAStep
 
 }
@@ -193,10 +216,13 @@ fun verticalComplianceVerdict(
     return VerticalComplianceVerdict(
         crossesFlatnessConvention = dishingAtPhysical > FLATNESS_CONVENTION,
         movesMoreThanTheRowEndUnknown = movement > ROW_END_UNKNOWN_MARGIN,
+        movesMoreThanTheRowEndUnknownAsFirstWritten =
+            movement > ROW_END_UNKNOWN_MARGIN_AS_FIRST_WRITTEN,
         movesThePeakCrossoverForce = force > REGISTRATION_FORCE_THRESHOLD,
         isARampNotAStep = ramp > RAMP_FRACTION_THRESHOLD,
         rampFraction = ramp,
         dishingMovement = movement,
+        dishingMovementOverTheRowEndUnknown = movement / ROW_END_UNKNOWN_MARGIN,
         relativeForceMovement = force
     )
 }

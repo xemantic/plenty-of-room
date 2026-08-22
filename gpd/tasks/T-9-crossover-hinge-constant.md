@@ -123,8 +123,15 @@ Write `D_rigid = D(1e4)`, `D_absent` the same objective with the link deleted
 (`CrossoverSoftening(hinge = 1.0, link = 0.0)` at every crossover), and `D_phys = D(64.7)`.
 
 - **V1** fires iff `D_phys > 0.10`.
-- **V2** fires iff `|D_phys − D_rigid| > 0.030` — three percentage points *of the convention*,
-  which is `T-5b`'s 0.10 times `C-0099`'s 3.0.
+- **V2** fires iff `|D_phys − D_rigid| > `~~`0.030`~~ **`0.0030284749`** — three percentage points
+  *of the convention*.
+  **CORRECTED after the sweep, and the correction is published rather than applied silently.**
+  Three percentage points *of* `0.10` is `0.0030`, not `0.030`, and `C-0099`'s own two emitted
+  readings differ by exactly `0.0651753854 − 0.0621469105 = 0.0030284749` of the stroke.
+  The number registered here before the sweep was a factor of ten out against the quantity the
+  same sentence names; it is retained in code as `ROW_END_UNKNOWN_MARGIN_AS_FIRST_WRITTEN`,
+  **both** verdicts are emitted, and the registered wording is in this file's own git history
+  one commit before the result. `V1`, `V3` and `V4` read the same under both.
 - **V3** fires iff `|F_phys − F_rigid| / F_rigid > 0.19`, `F` the peak per-crossover vertical force.
 - **V4** fires iff the **ramp fraction**
   `R = (D_phys − D_rigid) / (D_absent − D_rigid)` exceeds **0.05** —

@@ -160,9 +160,11 @@ class CrossoverVerticalComplianceTest {
         )
         assert(!verdict.crossesFlatnessConvention)
         assert(!verdict.movesMoreThanTheRowEndUnknown)
+        assert(!verdict.movesMoreThanTheRowEndUnknownAsFirstWritten)
         assert(!verdict.movesThePeakCrossoverForce)
         assert(!verdict.isARampNotAStep)
         assert(verdict.binaryReadingIsRight)
+        assert(verdict.binaryReadingIsRightAsFirstWritten)
     }
 
     @Test
@@ -176,9 +178,11 @@ class CrossoverVerticalComplianceTest {
         )
         assert(verdict.crossesFlatnessConvention)
         assert(verdict.movesMoreThanTheRowEndUnknown)
+        assert(verdict.movesMoreThanTheRowEndUnknownAsFirstWritten)
         assert(verdict.movesThePeakCrossoverForce)
         assert(verdict.isARampNotAStep)
         assert(!verdict.binaryReadingIsRight)
+        assert(!verdict.binaryReadingIsRightAsFirstWritten)
     }
 
     @Test
@@ -211,9 +215,35 @@ class CrossoverVerticalComplianceTest {
     }
 
     @Test
+    fun `G6 the corrected V2 threshold is C-0099's own difference of two emitted readings`() {
+        // C-0099 emits 0.0651753854 at s = 0 and 0.0621469105 at s = 1 and calls the gap
+        // "3.0 percentage points of margin" against T-5b's 0.10 -- so the movement it prices the
+        // whole row-end unknown at is 0.0030284749 of the stroke, not 0.030.  T-9's Plan wrote
+        // the second, a factor of ten out; both are kept and both verdicts are emitted.
+        assert(abs(ROW_END_UNKNOWN_MARGIN - (0.0651753854 - 0.0621469105)) < 1e-9)
+        assert(abs(ROW_END_UNKNOWN_MARGIN_AS_FIRST_WRITTEN / ROW_END_UNKNOWN_MARGIN - 9.906) < 0.01)
+    }
+
+    @Test
+    fun `G6 a movement between the two thresholds fires the corrected V2 and not the registered one`() {
+        val verdict = verticalComplianceVerdict(
+            dishingAtPhysical = 0.062146910 + 0.0034,
+            dishingAtRigid = 0.062146910,
+            dishingAtAbsent = 0.168640591,
+            peakForceAtPhysical = 1.0,
+            peakForceAtRigid = 1.0
+        )
+        assert(verdict.movesMoreThanTheRowEndUnknown)
+        assert(!verdict.movesMoreThanTheRowEndUnknownAsFirstWritten)
+        assert(!verdict.binaryReadingIsRight)
+        assert(verdict.binaryReadingIsRightAsFirstWritten)
+        assert(verdict.dishingMovementOverTheRowEndUnknown > 1.0)
+    }
+
+    @Test
     fun `G6 the thresholds are the ones the task file fixed`() {
         assert(abs(FLATNESS_CONVENTION - 0.10) < 1e-12)
-        assert(abs(ROW_END_UNKNOWN_MARGIN - 0.030) < 1e-12)
+        assert(abs(ROW_END_UNKNOWN_MARGIN_AS_FIRST_WRITTEN - 0.030) < 1e-12)
         assert(abs(REGISTRATION_FORCE_THRESHOLD - 0.19) < 1e-12)
         assert(abs(RAMP_FRACTION_THRESHOLD - 0.05) < 1e-12)
         assert(abs(C0099_UNRESOLVED_PENALTY_FRACTION - 0.015625) < 1e-12)

@@ -1,0 +1,551 @@
+{
+    "task": "T-9",
+    "deliverable": "second of three — the crossover's vertical/axial compliance",
+    "leaf": "A1.2, with A8.2",
+    "title": "The crossover's vertical link: the criterion the corpus never had, the physical value in the interval C-0099 left unresolved, and the statement that C-0157's trajectory cannot answer it",
+    "verificationType": "in-silico (structure.OrigamiGrillage, the link stiffness swept globally over C-0020's own four decades, C-0090's exhaustive centro-symmetric enumeration at every rung) + logical (a cheap bound that is five file checks and three divisions, and settles the shape of the answer before any solve)",
+    "maturity": "TRL 1-3. Model-consistent and traceable. NOT empirically demonstrated, and NOTHING about a crossover's vertical stiffness has been measured anywhere: the value swept is a CONSTRUCTION this repository already applies to the in-plane axis, and it is reported over four decades exactly as C-0020 reports that one.",
+    "units": {
+        "length": "nm",
+        "force": "pN",
+        "stiffness": "pN/nm",
+        "dishing": "dimensionless, as a fraction of the free stroke"
+    },
+    "conventions": {
+        "kBT": "4.141947 pN*nm at 300 K",
+        "axes": "x along the helices, y across them, z normal and positive upward",
+        "linkCoordinate": "e = (w_b + (d/2) phi_b) - (w_{b+1} - (d/2) phi_{b+1}), the relative out-of-plane displacement of the two duplex SURFACES facing each other across the interface — OrigamiGrillage.linkExtension",
+        "notTheRoll": "the roll is the dihedral C-0157 measured; the interhelical distance is the in-plane separation whose sawtooth C-0157 reproduced; this is neither",
+        "tile": "38.08 nm x 40.35 nm, 15 duplexes, crossover phase 8, 8 columns, 49 crossovers, under C-0022's solved collar at 2 mM / 10 nm / 0.192 V"
+    },
+    "sources": [
+        "C-0157 (T-9's first deliverable, and the run whose trajectory this needed)",
+        "C-0009 (the grillage, and the rigid vertical link)",
+        "C-0099 (the penalty step, and the bisection bracket it left unresolved)",
+        "C-0100 (the only two physical states of a constraint are present and absent)",
+        "C-0015 (the registration design rule the vertical link's rigidity underwrites)",
+        "C-0020 (the softened-bond displacement construction, and its four-decade sweep)",
+        "C-0090 / T-153 (the 38.08 nm phase-8 lattice and its recommended placement)",
+        "C-0022 / T-3b (the solved edge collar)"
+    ],
+    "trajectoryCheck": [
+        {
+            "check": "the trajectory directory",
+            "question": "does build-oxdna/ — the directory tools/T-9-emit-result.py reads — exist here?",
+            "answer": "NO — absent from this checkout",
+            "canAnswerTheVerticalQuestion": false
+        },
+        {
+            "check": "the raw frames",
+            "question": "were the .dat trajectories retained?",
+            "answer": "NO — C-0157 section 7 records that the raw trajectories (649 MB) were pruned after the analysis, and every field it marks RECORDED says so",
+            "canAnswerTheVerticalQuestion": false
+        },
+        {
+            "check": "the host",
+            "question": "can the run be repeated on this machine as it stands?",
+            "answer": "NOT AS IT STANDS — tools/oxdna/README.md names an Apple M1 / macOS host and this box is Linux with no oxDNA build; the build recipe is retained, so the run is reproducible, but it is a re-run and not a re-read",
+            "canAnswerTheVerticalQuestion": false
+        },
+        {
+            "check": "the retained result file",
+            "question": "does gpd/results/T-9-crossover-hinge-constant.json carry a vertical coordinate?",
+            "answer": "yes",
+            "canAnswerTheVerticalQuestion": true
+        },
+        {
+            "check": "the estimator",
+            "question": "is there code that would compute the vertical offset if the frames returned?",
+            "answer": "NO — interduplex_roll.py computes signed ANGLES only, and analyse_tile.py reduces the interhelical vector to its NORM, which cannot separate an out-of-plane offset from an in-plane one; both files are retained and neither has a z-decomposition (roll estimator present: true, tile estimator present: true)",
+            "canAnswerTheVerticalQuestion": false
+        }
+    ],
+    "theRunThatCouldAnswerIt": [
+        {
+            "item": "the coordinate's locality",
+            "quantity": "LOCAL — one relative displacement of two adjacent duplexes at one crossover node, over 49 sites",
+            "basis": "the same locality as the interduplex roll, which C-0157 read to better than 10 % across five replicas at 450 frames; NOT the three plate modes, which are the tile's softest and slowest and got 20.5-24.2 independent samples"
+        },
+        {
+            "item": "the protocol",
+            "quantity": "unchanged — oxDNA2, 15 x 112 bp at phase 8, 300 000 steps x 5 replicas",
+            "basis": "C-0157's own run; what is added is a six-line estimator and RETAINING the frames"
+        },
+        {
+            "item": "the wall clock",
+            "quantity": "about one day on an 8-core CPU box, of which the simulation is a few hours",
+            "basis": "tools/oxdna/README.md and T-9 section 3, unchanged"
+        },
+        {
+            "item": "the disk",
+            "quantity": "about 649 MB of .dat frames, which must NOT be pruned this time",
+            "basis": "C-0157 section 7"
+        },
+        {
+            "item": "what it is NOT",
+            "quantity": "not the 12-55 h per replica the three plate rigidities need",
+            "basis": "C-0157's own convergence diagnostics: those are global modes, this is a local one"
+        },
+        {
+            "item": "the caveat that runs the other way",
+            "quantity": "a SOFTER restraint decorrelates SLOWER, so the locality argument is self-referential in the adverse direction and the run must emit the vertical coordinate's own autocorrelation time beside its variance",
+            "basis": "CLAUDE.md: quote a variance with its bandwidth; C-0157's own discipline for the plate modes, applied before rather than after"
+        }
+    ],
+    "cheapBounds": [
+        {
+            "name": "the crossover's vertical displacement stiffness",
+            "statement": "2 alpha S/(100 a) at alpha = 1 — Chen et al.'s softened-bond construction applied to the duplex constant that describes DISPLACEMENT rather than rotation, which is Gen1Tile.crossoverInPlaneStiffness on the orthogonal axis. DERIVED, not measured.",
+            "value": 64.7058824,
+            "unit": "pN/nm",
+            "owner": "C-0020 / Gen1Tile, applied here to the vertical axis",
+            "derivedHere": true
+        },
+        {
+            "name": "the penalty C-0009 enforces the link with",
+            "statement": "OrigamiGrillage.RIGID_LINK_STIFFNESS, a penalty whose value the answer is asserted not to depend on",
+            "value": 10000.0,
+            "unit": "pN/nm",
+            "owner": "C-0009",
+            "derivedHere": false
+        },
+        {
+            "name": "the hinge's own equivalent vertical stiffness",
+            "statement": "k_theta/d^2 — the quantity RIGID_LINK_STIFFNESS's KDoc compares itself against",
+            "value": 1.86971045,
+            "unit": "pN/nm",
+            "owner": "C-0009",
+            "derivedHere": true
+        },
+        {
+            "name": "the penalty over the physical value",
+            "statement": "how much stiffer the constraint is enforced than the two phosphate bonds that supply it — a division, and the whole cheap bound",
+            "value": 154.545455,
+            "unit": "dimensionless",
+            "owner": "T-9b",
+            "derivedHere": true
+        },
+        {
+            "name": "the physical value over the hinge equivalent",
+            "statement": "the crossover's two elements against each other on ONE coordinate",
+            "value": 34.6074348,
+            "unit": "dimensionless",
+            "owner": "T-9b",
+            "derivedHere": true
+        },
+        {
+            "name": "the physical value as a fraction of the penalty",
+            "statement": "which is inside C-0099's channel-B bisection bracket [0, 0.015625] — the one interval of the penalty axis this repository has never resolved",
+            "value": 0.00647058824,
+            "unit": "dimensionless",
+            "owner": "T-9b, against C-0099",
+            "derivedHere": true
+        },
+        {
+            "name": "C-0099's unresolved bracket, upper end",
+            "statement": "the last rung its bisection reached before it stopped and called the response a discontinuity",
+            "value": 0.015625,
+            "unit": "dimensionless",
+            "owner": "C-0099",
+            "derivedHere": false
+        }
+    ],
+    "sweep": [
+        {
+            "name": "sweep x0.03125 of the derived value",
+            "linkStiffness": 2.02205882,
+            "penaltyFraction": 2.02205882E-4,
+            "freeDishingOverStroke": 0.287223651,
+            "bestDishingOverStroke": 0.094866631,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:0,10880000;3:-16320000,16320000;4:-10880000,0;5:-16320000,16320000;6:0,10880000;7:-16320000,16320000;8:-10880000,0;9:-16320000,16320000;10:0,10880000;11:-16320000,16320000;12:-10880000,0;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "publishedPlacementDishing": 0.140444678,
+            "peakCrossoverForce": 0.177728702,
+            "peakLinkExtension": 0.0878949218,
+            "registrationLever": 1.11285331,
+            "registrationPeakForces": [
+                0.285487943,
+                0.283187036,
+                0.277285062,
+                0.268246769,
+                0.256536905,
+                0.268246769,
+                0.277285061,
+                0.283187035,
+                0.285487942
+            ],
+            "uniformLoadDishing": 2.29212288E-7,
+            "flatAtTenPercent": true,
+            "enumerated": 163296
+        },
+        {
+            "name": "sweep x0.12500 of the derived value",
+            "linkStiffness": 8.08823529,
+            "penaltyFraction": 8.08823529E-4,
+            "freeDishingOverStroke": 0.29391121,
+            "bestDishingOverStroke": 0.075833409,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:0,10880000;3:-16320000,5440000;4:-10880000,10880000;5:-16320000,16320000;6:0,10880000;7:-16320000,16320000;8:-10880000,0;9:-16320000,16320000;10:-10880000,10880000;11:-5440000,16320000;12:-10880000,0;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "publishedPlacementDishing": 0.0877473246,
+            "peakCrossoverForce": 0.220497632,
+            "peakLinkExtension": 0.0272615255,
+            "registrationLever": 1.15314243,
+            "registrationPeakForces": [
+                0.369497739,
+                0.365075022,
+                0.354894886,
+                0.339748443,
+                0.320426803,
+                0.339748444,
+                0.354894888,
+                0.365075023,
+                0.369497741
+            ],
+            "uniformLoadDishing": 1.84856086E-7,
+            "flatAtTenPercent": true,
+            "enumerated": 163296
+        },
+        {
+            "name": "sweep x0.50000 of the derived value",
+            "linkStiffness": 32.3529412,
+            "penaltyFraction": 0.00323529412,
+            "freeDishingOverStroke": 0.297459536,
+            "bestDishingOverStroke": 0.0673168772,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:0,10880000;3:-16320000,16320000;4:0,10880000;5:-16320000,-5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:5440000,16320000;10:-10880000,0;11:-16320000,16320000;12:-10880000,0;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "publishedPlacementDishing": 0.069047724,
+            "peakCrossoverForce": 0.240528676,
+            "peakLinkExtension": 0.00743452272,
+            "registrationLever": 1.17233108,
+            "registrationPeakForces": [
+                0.410732158,
+                0.405093881,
+                0.392496049,
+                0.373922005,
+                0.35035509,
+                0.373922006,
+                0.392496051,
+                0.405093883,
+                0.41073216
+            ],
+            "uniformLoadDishing": 1.50476812E-7,
+            "flatAtTenPercent": true,
+            "enumerated": 163296
+        },
+        {
+            "name": "sweep x1.00000 of the derived value",
+            "linkStiffness": 64.7058824,
+            "penaltyFraction": 0.00647058824,
+            "freeDishingOverStroke": 0.298217671,
+            "bestDishingOverStroke": 0.0655626469,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "publishedPlacementDishing": 0.0655626469,
+            "peakCrossoverForce": 0.247473281,
+            "peakLinkExtension": 0.00382458707,
+            "registrationLever": 1.17637685,
+            "registrationPeakForces": [
+                0.419459187,
+                0.413547914,
+                0.400411009,
+                0.381075576,
+                0.35656872,
+                0.381075577,
+                0.40041101,
+                0.413547915,
+                0.419459188
+            ],
+            "uniformLoadDishing": 2.61918117E-7,
+            "flatAtTenPercent": true,
+            "enumerated": 163296
+        },
+        {
+            "name": "sweep x2.00000 of the derived value",
+            "linkStiffness": 129.411765,
+            "penaltyFraction": 0.0129411765,
+            "freeDishingOverStroke": 0.298620229,
+            "bestDishingOverStroke": 0.0637725927,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "publishedPlacementDishing": 0.0637725927,
+            "peakCrossoverForce": 0.251162501,
+            "peakLinkExtension": 0.00194080115,
+            "registrationLever": 1.17852904,
+            "registrationPeakForces": [
+                0.424094058,
+                0.418035227,
+                0.404607781,
+                0.384862539,
+                0.359850324,
+                0.384862539,
+                0.404607781,
+                0.418035228,
+                0.424094059
+            ],
+            "uniformLoadDishing": 1.4307474E-7,
+            "flatAtTenPercent": true,
+            "enumerated": 163296
+        },
+        {
+            "name": "sweep x8.00000 of the derived value",
+            "linkStiffness": 517.647059,
+            "penaltyFraction": 0.0517647059,
+            "freeDishingOverStroke": 0.298933652,
+            "bestDishingOverStroke": 0.0625251952,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "publishedPlacementDishing": 0.0625251952,
+            "peakCrossoverForce": 0.254032433,
+            "peakLinkExtension": 4.90744473E-4,
+            "registrationLever": 1.18020635,
+            "registrationPeakForces": [
+                0.427700396,
+                0.42152545,
+                0.407869827,
+                0.387803037,
+                0.36239459,
+                0.387803036,
+                0.407869826,
+                0.421525449,
+                0.427700395
+            ],
+            "uniformLoadDishing": 1.88193727E-7,
+            "flatAtTenPercent": true,
+            "enumerated": 163296
+        },
+        {
+            "name": "sweep x32.00000 of the derived value",
+            "linkStiffness": 2070.58824,
+            "penaltyFraction": 0.207058824,
+            "freeDishingOverStroke": 0.299013558,
+            "bestDishingOverStroke": 0.0622261953,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "publishedPlacementDishing": 0.0622261953,
+            "peakCrossoverForce": 0.254764543,
+            "peakLinkExtension": 1.23039694E-4,
+            "registrationLever": 1.18063466,
+            "registrationPeakForces": [
+                0.428620299,
+                0.422415546,
+                0.408701418,
+                0.388552226,
+                0.363042282,
+                0.388552227,
+                0.40870142,
+                0.422415547,
+                0.4286203
+            ],
+            "uniformLoadDishing": 1.50775824E-7,
+            "flatAtTenPercent": true,
+            "enumerated": 163296
+        },
+        {
+            "name": "sweep x128.00000 of the derived value",
+            "linkStiffness": 8282.35294,
+            "penaltyFraction": 0.828235294,
+            "freeDishingOverStroke": 0.299033626,
+            "bestDishingOverStroke": 0.062151211,
+            "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+            "publishedPlacementDishing": 0.062151211,
+            "peakCrossoverForce": 0.254948364,
+            "peakLinkExtension": 3.07821178E-5,
+            "registrationLever": 1.18074231,
+            "registrationPeakForces": [
+                0.42885145,
+                0.422639195,
+                0.408910347,
+                0.388740425,
+                0.363204948,
+                0.388740425,
+                0.408910348,
+                0.422639196,
+                0.42885145
+            ],
+            "uniformLoadDishing": 1.70873923E-7,
+            "flatAtTenPercent": true,
+            "enumerated": 163296
+        }
+    ],
+    "absentLinkReading": {
+        "name": "ABSENT — the link deleted, the dihedral spring retained",
+        "linkStiffness": 0.0,
+        "penaltyFraction": 0.0,
+        "freeDishingOverStroke": 0.307739631,
+        "bestDishingOverStroke": 0.34586382,
+        "bestKey": "0:-10880000,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,0,10880000;5:-16320000,16320000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-16320000,16320000;10:-10880000,0,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,10880000",
+        "publishedPlacementDishing": 0.518013326,
+        "peakCrossoverForce": 0.0,
+        "peakLinkExtension": null,
+        "registrationLever": null,
+        "registrationPeakForces": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "uniformLoadDishing": 1.03065162E-7,
+        "flatAtTenPercent": false,
+        "enumerated": 163296
+    },
+    "rigidLinkReading": {
+        "name": "RIGID — C-0009's penalty, the corpus's own lattice",
+        "linkStiffness": 10000.0,
+        "penaltyFraction": 1.0,
+        "freeDishingOverStroke": 0.299034765,
+        "bestDishingOverStroke": 0.0621469105,
+        "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+        "publishedPlacementDishing": 0.0621469105,
+        "peakCrossoverForce": 0.254959195,
+        "peakLinkExtension": 2.54959195E-5,
+        "registrationLever": 1.18074849,
+        "registrationPeakForces": [
+            0.428864698,
+            0.422652013,
+            0.408922321,
+            0.38875121,
+            0.36321427,
+            0.388751212,
+            0.408922323,
+            0.422652015,
+            0.4288647
+        ],
+        "uniformLoadDishing": 2.12606493E-7,
+        "flatAtTenPercent": true,
+        "enumerated": 163296
+    },
+    "physicalLinkReading": {
+        "name": "sweep x1.00000 of the derived value",
+        "linkStiffness": 64.7058824,
+        "penaltyFraction": 0.00647058824,
+        "freeDishingOverStroke": 0.298217671,
+        "bestDishingOverStroke": 0.0655626469,
+        "bestKey": "0:-10880000,0,10880000;1:-16320000,5440000,16320000;2:-10880000,10880000;3:-16320000,16320000;4:-10880000,10880000;5:-5440000,5440000;6:-10880000,10880000;7:-16320000,16320000;8:-10880000,10880000;9:-5440000,5440000;10:-10880000,10880000;11:-16320000,16320000;12:-10880000,10880000;13:-16320000,-5440000,16320000;14:-10880000,0,10880000",
+        "publishedPlacementDishing": 0.0655626469,
+        "peakCrossoverForce": 0.247473281,
+        "peakLinkExtension": 0.00382458707,
+        "registrationLever": 1.17637685,
+        "registrationPeakForces": [
+            0.419459187,
+            0.413547914,
+            0.400411009,
+            0.381075576,
+            0.35656872,
+            0.381075577,
+            0.40041101,
+            0.413547915,
+            0.419459188
+        ],
+        "uniformLoadDishing": 2.61918117E-7,
+        "flatAtTenPercent": true,
+        "enumerated": 163296
+    },
+    "verdict": {
+        "crossesFlatnessConvention": false,
+        "movesMoreThanTheRowEndUnknown": true,
+        "movesMoreThanTheRowEndUnknownAsFirstWritten": false,
+        "movesThePeakCrossoverForce": false,
+        "isARampNotAStep": false,
+        "rampFraction": 0.0120392417,
+        "dishingMovement": 0.00341573646,
+        "dishingMovementOverTheRowEndUnknown": 1.12787346,
+        "relativeForceMovement": 0.0293612244
+    },
+    "monotoneInLinkStiffness": true,
+    "reproductions": [
+        {
+            "quantity": "C-0090's recommended 34-root dishing at the rigid link",
+            "corpus": 0.0621469105,
+            "here": 0.0621469105,
+            "departure": 0.0,
+            "source": "C-0090 / T-153"
+        },
+        {
+            "quantity": "the buildable seamless width, nm",
+            "corpus": 38.08,
+            "here": 38.08,
+            "departure": 0.0,
+            "source": "C-0086"
+        },
+        {
+            "quantity": "crossover columns at phase 8",
+            "corpus": 8.0,
+            "here": 8.0,
+            "departure": 0.0,
+            "source": "C-0015 / C-0090"
+        },
+        {
+            "quantity": "crossovers built on the sheet, row-end column ADMITTED",
+            "corpus": 56.0,
+            "here": 56.0,
+            "departure": 0.0,
+            "source": "C-0090 / C-0099"
+        },
+        {
+            "quantity": "C-0157's 49 against rasterColumnLayout's row-end-REFUSED reading, same width and phase -- a NON-reproduction, and the finding",
+            "corpus": 49.0,
+            "here": 42.0,
+            "departure": 0.14,
+            "source": "C-0157 / CLAUDE.md"
+        },
+        {
+            "quantity": "the corpus's k_theta, pN nm/rad",
+            "corpus": 13.5294118,
+            "here": 13.5294118,
+            "departure": 2.6E-9,
+            "source": "C-0009 / C-0157"
+        }
+    ],
+    "falsifiers": [
+        {
+            "id": "F1",
+            "statement": "the rigid rung does not reproduce C-0090's published 34-root dishing, so the object swept is not the tile the corpus is about",
+            "fired": false,
+            "reading": "departure 0.0"
+        },
+        {
+            "id": "F2",
+            "statement": "a uniform load on the free lattice dishes materially at some rung, so the solver is wrong (CLAUDE.md's standing falsifier)",
+            "fired": false,
+            "reading": "worst |uniform-load dishing| = 2.61918117E-7"
+        },
+        {
+            "id": "F3",
+            "statement": "the response is not monotone in the link stiffness, so there is no threshold and no bisection on it is meaningful (C-0070's discipline)",
+            "fired": false,
+            "reading": "monotone over 8 rungs: true"
+        },
+        {
+            "id": "F4",
+            "statement": "the response is flat over the whole four decades, so the sweep measures nothing",
+            "fired": false,
+            "reading": "soft end 0.094866631 against stiff end 0.062151211"
+        },
+        {
+            "id": "F5",
+            "statement": "the derived vertical stiffness falls outside C-0099's unresolved bracket, so the cheap bound's central arithmetic is wrong",
+            "fired": false,
+            "reading": "penalty fraction 0.00647058824 against 0.015625"
+        }
+    ],
+    "findings": {
+        "theTrajectoryCannotAnswerIt": "Five checks and the run is unreadable for this question on all five: build-oxdna/ is absent, the 649 MB of frames were pruned, the host was an Apple M1 where this box is Linux, the retained result file carries no vertical field, and NO ESTIMATOR EXISTS EVEN IF THE FRAMES RETURNED — interduplex_roll.py computes angles and analyse_tile.py takes a norm. The fifth is the one that matters, because it is the only one a retained trajectory would not have cured.",
+        "theRunThatCouldIsTheRunTHATALREADYEXISTS": "The vertical link offset is a LOCAL coordinate at a crossover site, like the roll C-0157 read to better than 10 % across five replicas — not a global plate mode, which is what cost 12-55 h per replica. So the protocol that answers it is C-0157's own, unchanged, plus a six-line estimator and the discipline of not pruning: about a day. The caveat runs the other way and is stated: a softer restraint decorrelates slower, so the run must emit the coordinate's own autocorrelation time.",
+        "thePhysicalValueSitsInTheGapC0099LEFTOPEN": "This repository derives a crossover's DISPLACEMENT stiffness — 2 alpha S/(100 a) = 64.7058824 pN/nm — for the IN-PLANE axis and asserts a rigid constraint on the OUT-OF-PLANE one, and the two axes are the same two phosphate bonds. The penalty is 154.545455x that value, i.e. a fraction 0.00647058824 of it, which lies INSIDE C-0099's bisection bracket [0, 0.015625] — the one interval it did not resolve before calling the response a discontinuity.",
+        "whatTheSweepMeasures": "The link ALONE, hinge intact, at all 56 crossovers of the row-end-admitted phase-8 lattice. C-0099 swept the 14 row-end crossovers and scaled both elements together, so this channel has never been run. Best 34-root dishing: 0.0621469105 rigid, 0.0655626469 at the derived value, 0.34586382 with the link deleted — a ramp fraction of 0.0120392417 against the 0.05 the binary reading is allowed.",
+        "theRegistrationLeverIsWhatC0015OWNS": "C-0015's governing variable is THE DISTANCE FROM THE ATTACHMENT TO THE NEAREST CROSSOVER, and that curve exists only because a rigid vertical tie localises the reaction there. Re-measured at every rung as the spread of the peak crossover force over one registration cell at C-0015's own nine stations: 1.18074849 rigid, 1.17637685 at the derived value, and with the link DELETED there is no lever at all because every crossover carries EXACTLY zero force. This is corroboration and NOT the criterion: V3 was fixed on the peak force itself, before the sweep.",
+        "theV2ThresholdWasMISTRANSCRIBEDANDBOTHAREPUBLISHED": "T-9's Plan registered V2 as 'three percentage points of the convention' and wrote the number 0.030, which is a factor of ten out: three percentage points OF 0.10 is 0.0030, and C-0099's own two emitted readings differ by 0.0030284749 of the stroke. The corrected threshold is that difference; the registered one is retained as ROW_END_UNKNOWN_MARGIN_AS_FIRST_WRITTEN and BOTH verdicts are emitted. The measured movement is 0.00341573646 of the stroke, 1.12787346x the row-end unknown — so V2 fires on the corrected threshold and not on the registered one, and V1, V3 and V4 are the same under both.",
+        "THESIMULATEDTILEISNOTTHEGRADEDTILE": "At 38.08 nm and phase 8 rasterColumnLayout puts its columns on the EVEN junction planes and gives 8 columns admitted (a 4/4 split over 14 interfaces, 56 crossovers) and 6 refused (3/3, 42). C-0157's oxDNA generator built 7 columns at x = 8 + 16k, k = 0..6, and 49 crossovers. NEITHER grillage reading is 7, so the simulated tile and the tile every placement result in this corpus is graded on are not the same object: their column sets are one 8 bp PLANE apart, which is CLAUDE.md's own 'a shift by one column pitch hands every interface the OTHER parity's columns -- a physically different sheet', met between a simulation and the lattice its answer would be read against. This study does not resolve which is right; it emits both counts and lists it open.",
+        "theLinkExtensionIsALENGTH": "At the penalty the peak link extension is 2.54959195E-5 nm and at the derived value 0.00382458707 nm, against the 0.34 nm rise which is the smallest length the design language can draw. A constraint whose extension is orders below the lattice quantum is a constraint; one whose extension approaches it is a spring."
+    },
+    "validity": [
+        "THE SWEPT VALUE IS A CONSTRUCTION, NOT A MEASUREMENT. 2 alpha S/(100 a) is Chen et al.'s softened-bond heuristic on the duplex stretch modulus, which C-0020 already applies to the in-plane axis and already sweeps four decades. Nothing here measures a crossover's vertical stiffness.",
+        "THE CONSTRUCTION'S AXIS IS AN ASSUMPTION. The in-plane connector resists sliding ALONG the helices; the vertical link resists an offset NORMAL to the sheet. Both are relative displacements of the same two duplexes carried by the same two phosphate bonds, and that is the whole argument for transferring the constant. It is a transfer, and the four-decade sweep is what it is for.",
+        "THE LATTICE IS SINGLE-LAYER SQUARE. Every number here is a property of C-0009's grillage, whose crossover combinatorics are square-lattice and whose interfaces are a path graph; none of it transfers to a honeycomb block (CLAUDE.md, C-0154).",
+        "THE LOAD IS C-0022's SOLVED COLLAR AT ONE STATE, 2 mM / 10 nm / 0.192 V. A flatness verdict needs an operating state as well as a load case and this is one state, the one C-0090 and C-0099 are read at.",
+        "THE DISHING IS A PEAK OVER A BEST-FIT PLANE, minimised over C-0090's centro-symmetric family with C-0090's own tie-break. It is not an energy, so monotonicity in the swept variable is MEASURED and not assumed."
+    ],
+    "openQuestions": [
+        "The measurement itself: the vertical offset's variance at a crossover, from an oxDNA run that retains its frames — priced above, and it is the run that already exists plus an estimator.",
+        "T-9's THIRD deliverable, the in-plane shear k_s, is untouched: C-0020's single undetermined input, which C-0028 shows moves a buckling verdict — and it is the SAME constant as the one transferred here, so one measurement settles both axes only if the transfer is right.",
+        "Whether a crossover's vertical restraint is a spring at all, or a DEAD BAND then rigid: CLAUDE.md records that a flexible link pays its axial slack back as a transverse dead band of the same size, and a linear stiffness cannot express that. The trajectory would show it directly as a non-Gaussian offset distribution, which is one more reason the frames matter."
+    ]
+}
