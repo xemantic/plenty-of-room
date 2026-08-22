@@ -1,4 +1,4 @@
-# C-0119 — **YES, and the cross-section is not a proposal: it is design (i) of the caDNAno paper, folded from p8064 and one of only THREE of seven to produce sharp leading monomer bands.** The tile this programme now recommends is **15 × 4** in Douglas et al.'s own nomenclature — 15 x-raster rows of 4 helices, **60** duplexes — and their conclusion is that **10 × 6 yields the greatest fraction of defect-free objects**, so the tile's aspect ratio is a design variable with **published yield evidence** that this programme has never treated as one. `C-0086`'s odd-half-turn rule genuinely does not transfer (no odd multiple of 5.25 bp is an integer) — but the honeycomb quantises its half turn to **5 bp**, so the scaffold lattice **is** integral and the rule's failure was a **domain error, not a prohibition**. A seam is still forced, and for a reason in the source rather than the geometry: *"the path of the scaffold stays within a 2D surface"*
+# C-0119 — **YES, and the cross-section is not a proposal: it is design (i) of the caDNAno paper, folded from p8064 and one of only THREE of seven to produce sharp leading monomer bands.** The tile this programme now recommends is **15 × 4** in Douglas et al.'s own nomenclature — 15 x-raster rows of 4 helices, **60** duplexes — and their conclusion is that **10 × 6 yields the greatest fraction of defect-free objects**, so the tile's aspect ratio is a design variable with **published yield evidence** that this programme has never treated as one. `C-0086`'s odd-half-turn rule genuinely does not transfer (no odd multiple of 5.25 bp is an integer) — but the honeycomb quantises its half turn to **5 bp**, so the scaffold lattice **is** integral and the rule's failure was a **domain error, not a prohibition**. ~~A seam is still forced, and for a reason in the source rather than the geometry: *"the path of the scaffold stays within a 2D surface"*~~ **A seam is AVAILABLE and is not forced** (§4, annotated iteration 40 by [`C-0168`](C-0168-recommended-block-seam.md))
 
 > **Annotated, iteration 34 ([`C-0140`](C-0140-honeycomb-raster-turn-sense.md), [`CH-0172`](../challenges/CH-0172-a-honeycomb-x-raster-carries-both-turn-senses.md), [`CH-0173`](../challenges/CH-0173-the-built-block-turns-on-loops-not-crossovers.md), [`CH-0180`](../challenges/CH-0180-the-scaffold-pairing-contradicts-its-own-paper.md), [`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md); swept under [`T-234`](../tasks/T-234-honeycomb-correction-supersession.md)).**
 > **THREE READINGS ARE WITHDRAWN AND THE INTEGRALITY RESULT IS NOT.**
@@ -8,7 +8,7 @@
 > (2) The scaffold budget has **no line for the 28 nt of unpaired turn loop** the only folded instance of this cross-section uses.
 > (3) *"p8064 — designs i, iii, v, including ours"* is read from a Methods sentence that **contradicts the paper's own main text**
 > at exactly this design and no other; the main text's rule (60 helices → 7 560, 64 → 8 064) makes design (i) a **p7560** design.
-> **The `7k ± 5` integrality result, the seam, the yield reading and the cross-section identification are untouched and reproduce at departure `0.0`.**
+> **The `7k ± 5` integrality result, ~~the seam,~~ the yield reading and the cross-section identification are untouched and reproduce at departure `0.0`.** (The seam is untouched by *that* correction and is withdrawn by a later one — see the §4 annotation, `C-0168`.)
 > The *"every plan ceiling, station lattice, crossover phase and placement in this corpus is single-layer square-lattice"* item below is **DISCHARGED** by `C-0141`.
 
 | | |
@@ -17,7 +17,7 @@
 | **Leaf** | `A8.2` |
 | **Verification type** | **logical** (integer-lattice arithmetic; a parity brute-forced at every order 3–7 and a theorem beyond) **+ literature** (the primary honeycomb design rules, **read directly**) |
 | **Maturity** | **TRL 1–3** for everything derived here. **The cross-section itself is above that** — it has been designed, folded, gel-analysed and imaged by others, and this claim reports their result rather than demonstrating anything. |
-| **Verdict** | **PASS on all four predicates; the declared falsifier did NOT fire.** The honeycomb scaffold-crossover lattice is **integral** (`7k ± 5` bp), so the four-layer tile is drawable. A **seam is forced** by the same tree-parity that forces Rothemund's, because the scaffold's usable adjacency is a **path** even though the honeycomb's is three-regular. `C-0109`'s budget reproduces exactly — 6 720 of 7 249 nt, 529 remainder, **92.7 %**. |
+| **Verdict** | **PASS on all four predicates; the declared falsifier did NOT fire.** The honeycomb scaffold-crossover lattice is **integral** (`7k ± 5` bp), so the four-layer tile is drawable. ~~A **seam is forced** by the same tree-parity that forces Rothemund's, because the scaffold's usable adjacency is a **path** even though the honeycomb's is three-regular.~~ **A seam is AVAILABLE and NOT forced** — the tree parity needs a **fully folded** circular scaffold and this block leaves 919 nt spare (`C-0168`, §4). `C-0109`'s budget reproduces exactly — 6 720 of 7 249 nt, 529 remainder, **92.7 %**. |
 | **Provenance** | [`gpd/results/T-198-honeycomb-raster-width.json`](../results/T-198-honeycomb-raster-width.json), emitted by the retained [`tools/T-198-honeycomb-raster.py`](../../tools/T-198-honeycomb-raster.py) (**29** self-tests, `--selftest`). Primary source [`gpd/data/T-151-sources/PMC2731887-fullTextXML.xml`](../data/T-151-sources/), **already in the repository**. |
 | **Conditions** | The corpus at iteration 25. Honeycomb lattice at 10.5 bp/turn; the tile is 15 rows × 4 layers × 112 bp. |
 | **Consumes** | [`C-0109`](C-0109-four-layer-tile.md) (the tile and the count it left open), [`C-0116`](C-0116-composite-fraction-threshold.md) (the threshold, unaffected), [`C-0086`](C-0086-seamless-scaffold-routing.md) (the square-lattice width rule this one does **not** transfer) |
@@ -97,6 +97,22 @@ moment — and it may be a better tile than the one now recommended.
 ---
 
 ## 4. The seam survives the move to three dimensions, for a reason in the source
+
+> **ANNOTATED, iteration 40 ([`C-0168`](C-0168-recommended-block-seam.md), [`CH-0212`](../challenges/CH-0212-the-recommended-block-is-drawn-without-the-seam-its-own-claim-forces.md); task [`T-274`](../tasks/T-274-recommended-block-seam.md)).**
+> **THE WORD *FORCED* IS WITHDRAWN AND EVERY DERIVATION BELOW IS UPHELD.**
+> `CLAUDE.md`'s theorem has **two** premises — a **tree**, *and* a **fully folded circular** scaffold — and this
+> section argues the first and never examines the second. The recommended `10 × 6` block leaves **919 nt** spare
+> on M13 and its two raster termini sit **35.504 nm = 14 d** apart, both at offset 7 and on the same face, so the
+> circle closes through its own remainder at **1.03–2.69 `k_BT`** across the whole 2× ssDNA Kuhn bracket — against
+> the **8.0 `k_BT`** the host sheet pays per crossover column. **A seam needs both premises and this block drops the
+> second**, so ~~*"a seam is still forced"*~~ reads **a seam is available and is not forced**, and `C-0160`'s
+> committed artifact — 60 domains on 60 helices, a Hamiltonian path — is right as drawn.
+> The **first** premise is also false of the block's own cross-section adjacency (**77** edges on 60 helices,
+> **18** independent cycles, not a path), and it does not matter: the two raster termini are **degree one**, so
+> **no Hamiltonian cycle exists** on either reading and a fully folded circular scaffold would need **at least 62**
+> domains on the lattice adjacency or **at least 118** on the surface — the latter being the `2(\|V\| − 1)` this
+> section computes, reproduced at departure `0.0`. **The brute force at orders 3–7, the reading of Figure 2b, the `7k ± 5` integrality result and
+> the scaffold budget are untouched.**
 
 `CLAUDE.md` records that a seam is *a parity on a tree*: crossovers join only adjacent duplexes, a single-layer
 sheet's row-adjacency graph is a **path**, a closed walk on a tree traverses every edge an **even** number of

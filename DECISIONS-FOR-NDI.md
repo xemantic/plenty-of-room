@@ -745,8 +745,16 @@ All three rows are `C-0086`'s Deliverable 2, and every figure in them is quoted 
   SQUARE lattice**, and the tile NDI's own answer produces is **honeycomb**, where the half turn is **5 bp**
   rather than 5.25 and the scaffold-crossover lattice is `7k ± 5` — integral. `C-0086`'s odd-half-turn rule
   admits **no** honeycomb row length at all, which is the rule being **outside its own domain** and not a
-  prohibition. ~~**The 112 bp = 38.08 nm width survives and its ground has moved**~~, and a seam is still forced —
-  by the same tree parity, for a reason in the primary source rather than in the arithmetic above.
+  prohibition. ~~**The 112 bp = 38.08 nm width survives and its ground has moved**~~, ~~and a seam is still forced —
+  by the same tree parity, for a reason in the primary source rather than in the arithmetic above.~~
+  **WITHDRAWN, iteration 40** ([`C-0168`](gpd/claims/C-0168-recommended-block-seam.md),
+  [`CH-0212`](gpd/challenges/CH-0212-the-recommended-block-is-drawn-without-the-seam-its-own-claim-forces.md)):
+  the tree parity needs **two** premises and the block drops the second. Its two raster termini sit
+  **35.504 nm = 14 d** apart, both at offset 7 and on the same face, and the **919 nt** this design
+  leaves spare close the circle at **1.03–2.69 `k_BT`** across the whole ssDNA Kuhn bracket — against
+  the **8.0 `k_BT`** the host sheet pays per crossover column. So **a seam is available and is not
+  forced**, and the committed artifact (60 domains on 60 helices, a Hamiltonian path) is right as
+  drawn. Every derivation of `C-0119` §4 is upheld and reproduces at departure `0.0`.
   **RESTATED, iterations 35–38** (`C-0140`, [`C-0151`](gpd/claims/C-0151-closing-raster-selection.md)): a
   honeycomb x-raster carries **both** turn senses, so it has **no uniform row length** — the drawable
   two-length pair is **`102 / 109 bp`**, whose rows span **`109 bp`** and whose block extent is

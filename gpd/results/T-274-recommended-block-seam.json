@@ -1,0 +1,681 @@
+{
+    "task": "T-274",
+    "leaf": "A8.2",
+    "title": "Does the recommended 10 x 6 honeycomb block need a scaffold seam, and is the committed design drawn without one?",
+    "verificationType": "logical (integer graph theory on the block's own cross-section lattice) + in-silico (a census of the committed artifacts and one counterfactual grillage grading)",
+    "maturity": "TRL 1-3. Model-consistent and traceable, NOT empirically demonstrated. No object is folded and no folding yield is derived here.",
+    "units": {
+        "length": "nm",
+        "energy": "k_BT = 4.142 pN nm at 300 K, and eV",
+        "counts": "integers - helices, domains, crossovers, nucleotides",
+        "dishing": "dimensionless, peak dishing over the free-tile stroke"
+    },
+    "conventions": {
+        "cells": "HoneycombRasterTurnSense's integer HoneycombCell(x, y), x in units of d sqrt(3)/2 and y in units of d/2",
+        "raster": "honeycombXRasterPath(rows, helicesPerRow) - Douglas et al.'s corrugated x-raster, left to right then down then right to left",
+        "domain": "one contiguous run of the scaffold on one helix, which is one VISIT of the walk; a closed walk of m edge traversals makes exactly m visits",
+        "seam": "a scaffold routing that gives some helix more than one domain",
+        "ssDNA": "the Kuhn length and the contour per nucleotide travel as a PAIR and are never mixed across conventions (CLAUDE.md)"
+    },
+    "parameters": {
+        "block": "10 x 6, 60 helices",
+        "control block": "15 x 4, 60 helices",
+        "bond length": "2.536 nm (honeycomb SAXS)",
+        "spare scaffold, 10 x 6": "919 nt of M13's 7249 (C-0160)",
+        "spare scaffold, 15 x 4": "529 nt (C-0119)",
+        "row length graded": "112 bp, which is what both studies use",
+        "dishing samples": "81",
+        "flatness tolerance": "0.1 (T-5b)",
+        "crossover column currency": "8.0 k_BT"
+    },
+    "sources": [
+        "gpd/designs/gen1-block-honeycomb-10x6-102-109.sc",
+        "gpd/designs/gen1-sheet-square-15x112.sc",
+        "gpd/designs/third-party/scadnano-origami-rectangle-16x8.sc",
+        "gpd/results/T-3b-tile-edge-load-profile.json",
+        "gpd/results/T-219-honeycomb-station-lattice-and-placement.json"
+    ],
+    "citedInputs": [
+        "CLAUDE.md - a seam is a parity on a tree, and it needs BOTH premises",
+        "C-0119 §4 - the seam asserted as a theorem on the 60-helix block",
+        "C-0154 - a honeycomb block's interfaces are NOT a path graph",
+        "C-0160 - the committed artifact, 6330 nt with 919 spare on M13",
+        "C-0161 §4(b) - a seam breaks the column-parity alternation",
+        "SsDnaTether - the ssDNA Kuhn bracket and contour conventions, CITED MEASURED"
+    ],
+    "cheapBound": {
+        "instrument": "a degree census on the block's own cross-section adjacency",
+        "why it decides": "a vertex of degree one lies on no cycle at all, so a graph with a leaf has no Hamiltonian cycle and a fully folded circular scaffold cannot give one domain per helix - decided in microseconds where C-0119's own brute force refuses beyond order 9",
+        "what it returns": "both raster termini of every m x n honeycomb block tested are degree ONE, because two of a corner helix's three honeycomb bonds point out of the block",
+        "cost": "60 lookups of a three-element neighbour list, against 59! permutations"
+    },
+    "graphs": [
+        {
+            "block": "10 x 6",
+            "reading": "Douglas et al. - the scaffold stays within a 2D surface",
+            "helices": 60,
+            "admissibleCrossovers": 59,
+            "connected": true,
+            "isTree": true,
+            "cyclomaticNumber": 0,
+            "maximumDegree": 2,
+            "leaves": [
+                0,
+                59
+            ],
+            "leavesAreTheRasterTermini": true,
+            "bridges": 59,
+            "hamiltonianCycle": "none - a degree-one helix lies on no cycle",
+            "lowerBoundDomainsFullyFoldedCircular": 118,
+            "domainsHamiltonianPath": 60,
+            "fullFoldingNeedsMoreThanOneDomainPerHelix": true
+        },
+        {
+            "block": "10 x 6",
+            "reading": "the honeycomb lattice's own adjacency, induced on the block",
+            "helices": 60,
+            "admissibleCrossovers": 77,
+            "connected": true,
+            "isTree": false,
+            "cyclomaticNumber": 18,
+            "maximumDegree": 3,
+            "leaves": [
+                0,
+                59
+            ],
+            "leavesAreTheRasterTermini": true,
+            "bridges": 2,
+            "hamiltonianCycle": "none - a degree-one helix lies on no cycle",
+            "lowerBoundDomainsFullyFoldedCircular": 62,
+            "domainsHamiltonianPath": 60,
+            "fullFoldingNeedsMoreThanOneDomainPerHelix": true
+        },
+        {
+            "block": "15 x 4",
+            "reading": "Douglas et al. - the scaffold stays within a 2D surface",
+            "helices": 60,
+            "admissibleCrossovers": 59,
+            "connected": true,
+            "isTree": true,
+            "cyclomaticNumber": 0,
+            "maximumDegree": 2,
+            "leaves": [
+                0,
+                59
+            ],
+            "leavesAreTheRasterTermini": true,
+            "bridges": 59,
+            "hamiltonianCycle": "none - a degree-one helix lies on no cycle",
+            "lowerBoundDomainsFullyFoldedCircular": 118,
+            "domainsHamiltonianPath": 60,
+            "fullFoldingNeedsMoreThanOneDomainPerHelix": true
+        },
+        {
+            "block": "15 x 4",
+            "reading": "the honeycomb lattice's own adjacency, induced on the block",
+            "helices": 60,
+            "admissibleCrossovers": 73,
+            "connected": true,
+            "isTree": false,
+            "cyclomaticNumber": 14,
+            "maximumDegree": 3,
+            "leaves": [
+                0,
+                59
+            ],
+            "leavesAreTheRasterTermini": true,
+            "bridges": 2,
+            "hamiltonianCycle": "none - a degree-one helix lies on no cycle",
+            "lowerBoundDomainsFullyFoldedCircular": 62,
+            "domainsHamiltonianPath": 60,
+            "fullFoldingNeedsMoreThanOneDomainPerHelix": true
+        }
+    ],
+    "pathBoundary": [
+        {
+            "block": "2 x 2",
+            "helicesPerRow": 2,
+            "helices": 4,
+            "admissibleCrossovers": 3,
+            "isTree": true
+        },
+        {
+            "block": "2 x 4",
+            "helicesPerRow": 4,
+            "helices": 8,
+            "admissibleCrossovers": 8,
+            "isTree": false
+        },
+        {
+            "block": "2 x 6",
+            "helicesPerRow": 6,
+            "helices": 12,
+            "admissibleCrossovers": 13,
+            "isTree": false
+        },
+        {
+            "block": "3 x 2",
+            "helicesPerRow": 2,
+            "helices": 6,
+            "admissibleCrossovers": 5,
+            "isTree": true
+        },
+        {
+            "block": "3 x 4",
+            "helicesPerRow": 4,
+            "helices": 12,
+            "admissibleCrossovers": 13,
+            "isTree": false
+        },
+        {
+            "block": "3 x 6",
+            "helicesPerRow": 6,
+            "helices": 18,
+            "admissibleCrossovers": 21,
+            "isTree": false
+        },
+        {
+            "block": "4 x 2",
+            "helicesPerRow": 2,
+            "helices": 8,
+            "admissibleCrossovers": 7,
+            "isTree": true
+        },
+        {
+            "block": "4 x 4",
+            "helicesPerRow": 4,
+            "helices": 16,
+            "admissibleCrossovers": 18,
+            "isTree": false
+        },
+        {
+            "block": "4 x 6",
+            "helicesPerRow": 6,
+            "helices": 24,
+            "admissibleCrossovers": 29,
+            "isTree": false
+        },
+        {
+            "block": "5 x 2",
+            "helicesPerRow": 2,
+            "helices": 10,
+            "admissibleCrossovers": 9,
+            "isTree": true
+        },
+        {
+            "block": "5 x 4",
+            "helicesPerRow": 4,
+            "helices": 20,
+            "admissibleCrossovers": 23,
+            "isTree": false
+        },
+        {
+            "block": "5 x 6",
+            "helicesPerRow": 6,
+            "helices": 30,
+            "admissibleCrossovers": 37,
+            "isTree": false
+        },
+        {
+            "block": "6 x 2",
+            "helicesPerRow": 2,
+            "helices": 12,
+            "admissibleCrossovers": 11,
+            "isTree": true
+        },
+        {
+            "block": "6 x 4",
+            "helicesPerRow": 4,
+            "helices": 24,
+            "admissibleCrossovers": 28,
+            "isTree": false
+        },
+        {
+            "block": "6 x 6",
+            "helicesPerRow": 6,
+            "helices": 36,
+            "admissibleCrossovers": 45,
+            "isTree": false
+        },
+        {
+            "block": "7 x 2",
+            "helicesPerRow": 2,
+            "helices": 14,
+            "admissibleCrossovers": 13,
+            "isTree": true
+        },
+        {
+            "block": "7 x 4",
+            "helicesPerRow": 4,
+            "helices": 28,
+            "admissibleCrossovers": 33,
+            "isTree": false
+        },
+        {
+            "block": "7 x 6",
+            "helicesPerRow": 6,
+            "helices": 42,
+            "admissibleCrossovers": 53,
+            "isTree": false
+        },
+        {
+            "block": "8 x 2",
+            "helicesPerRow": 2,
+            "helices": 16,
+            "admissibleCrossovers": 15,
+            "isTree": true
+        },
+        {
+            "block": "8 x 4",
+            "helicesPerRow": 4,
+            "helices": 32,
+            "admissibleCrossovers": 38,
+            "isTree": false
+        },
+        {
+            "block": "8 x 6",
+            "helicesPerRow": 6,
+            "helices": 48,
+            "admissibleCrossovers": 61,
+            "isTree": false
+        },
+        {
+            "block": "9 x 2",
+            "helicesPerRow": 2,
+            "helices": 18,
+            "admissibleCrossovers": 17,
+            "isTree": true
+        },
+        {
+            "block": "9 x 4",
+            "helicesPerRow": 4,
+            "helices": 36,
+            "admissibleCrossovers": 43,
+            "isTree": false
+        },
+        {
+            "block": "9 x 6",
+            "helicesPerRow": 6,
+            "helices": 54,
+            "admissibleCrossovers": 69,
+            "isTree": false
+        },
+        {
+            "block": "10 x 2",
+            "helicesPerRow": 2,
+            "helices": 20,
+            "admissibleCrossovers": 19,
+            "isTree": true
+        },
+        {
+            "block": "10 x 4",
+            "helicesPerRow": 4,
+            "helices": 40,
+            "admissibleCrossovers": 48,
+            "isTree": false
+        },
+        {
+            "block": "10 x 6",
+            "helicesPerRow": 6,
+            "helices": 60,
+            "admissibleCrossovers": 77,
+            "isTree": false
+        }
+    ],
+    "artifacts": [
+        {
+            "file": "gpd/designs/gen1-block-honeycomb-10x6-102-109.sc",
+            "grid": "honeycomb",
+            "helices": 60,
+            "strands": 1,
+            "scaffoldStrands": 1,
+            "scaffoldDomains": 60,
+            "stapleStrands": 0,
+            "scaffoldBases": 6330,
+            "scaffoldTurns": 59,
+            "stapleCrossings": 0,
+            "crossoverColumns": 0,
+            "fivePrimeOffset": 7,
+            "threePrimeOffset": 7,
+            "domainsPerHelix": "1",
+            "discriminator": "one domain per helix - a HAMILTONIAN PATH, which is C-0161's own discriminator returning NO SEAM"
+        },
+        {
+            "file": "gpd/designs/gen1-sheet-square-15x112.sc",
+            "grid": "square",
+            "helices": 15,
+            "strands": 65,
+            "scaffoldStrands": 1,
+            "scaffoldDomains": 15,
+            "stapleStrands": 64,
+            "scaffoldBases": 1680,
+            "scaffoldTurns": 14,
+            "stapleCrossings": 49,
+            "crossoverColumns": 7,
+            "fivePrimeOffset": 0,
+            "threePrimeOffset": 111,
+            "domainsPerHelix": "1",
+            "discriminator": "one domain per helix - a HAMILTONIAN PATH, which is C-0161's own discriminator returning NO SEAM"
+        },
+        {
+            "file": "gpd/designs/third-party/scadnano-origami-rectangle-16x8.sc",
+            "grid": "square",
+            "helices": 16,
+            "strands": 65,
+            "scaffoldStrands": 1,
+            "scaffoldDomains": 31,
+            "stapleStrands": 64,
+            "scaffoldBases": 2048,
+            "scaffoldTurns": 30,
+            "stapleCrossings": 90,
+            "crossoverColumns": 12,
+            "fivePrimeOffset": 95,
+            "threePrimeOffset": 96,
+            "domainsPerHelix": "1, 2",
+            "discriminator": "31 domains against 16 helices - the excess IS the seam"
+        }
+    ],
+    "secondReading": {
+        "what CH-0212 proposed": "run T-267's importer on the block and read its column parity sequence directly out of the file, the way the rectangle's [0,1,0,1,1,0] was read",
+        "outcome": "UNAVAILABLE, and the reason is in C-0160 §6",
+        "why": "a column parity is a property of the STAPLE crossover ladder, and the block carries NO staple set at all - 0 staple crossings, 0 columns, so crossoverPhase() throws rather than returning a phase",
+        "the control": "the reference rectangle carries 90 staple crossings and does return a parity sequence, which is what makes the block's absence a fact about the block rather than about the reader",
+        "consequence": "the fork CH-0212 states can only be settled on the ARGUMENT, which is the half it called the more expensive one - and it is not: the argument is a degree census"
+    },
+    "closures": [
+        {
+            "block": "10 x 6",
+            "convention": "zero-force scattering, 2 mM MgCl2",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "terminusCells": "(0, 0) and (0, -28)",
+            "terminiShareAFace": true,
+            "terminusSeparation": 35.504,
+            "spareNucleotides": 919,
+            "contourLength": 643.3,
+            "kuhnSegments": 226.514085,
+            "rootMeanSquareEndToEnd": 42.743093,
+            "extensionRatio": 0.0551904244,
+            "minimumNucleotidesToReach": 51,
+            "stretchFreeEnergyKbt": 1.03493706,
+            "stretchFreeEnergyEv": 0.0267551926,
+            "nucleotidesAtOneCrossoverColumn": 119,
+            "reaches": true,
+            "affordable": true
+        },
+        {
+            "block": "10 x 6",
+            "convention": "zero-force scattering, 10 mM MgCl2",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "terminusCells": "(0, 0) and (0, -28)",
+            "terminiShareAFace": true,
+            "terminusSeparation": 35.504,
+            "spareNucleotides": 919,
+            "contourLength": 597.35,
+            "kuhnSegments": 284.452381,
+            "rootMeanSquareEndToEnd": 35.4180039,
+            "extensionRatio": 0.0594358416,
+            "minimumNucleotidesToReach": 55,
+            "stretchFreeEnergyKbt": 1.50729294,
+            "stretchFreeEnergyEv": 0.0389665369,
+            "nucleotidesAtOneCrossoverColumn": 174,
+            "reaches": true,
+            "affordable": true
+        },
+        {
+            "block": "10 x 6",
+            "convention": "force spectroscopy, 2 mM MgCl2",
+            "kuhnLength": 1.41,
+            "contourPerNucleotide": 0.57,
+            "terminusCells": "(0, 0) and (0, -28)",
+            "terminiShareAFace": true,
+            "terminusSeparation": 35.504,
+            "spareNucleotides": 919,
+            "contourLength": 523.83,
+            "kuhnSegments": 371.510638,
+            "rootMeanSquareEndToEnd": 27.1772018,
+            "extensionRatio": 0.0677777141,
+            "minimumNucleotidesToReach": 63,
+            "stretchFreeEnergyKbt": 2.55997868,
+            "stretchFreeEnergyEv": 0.0661805684,
+            "nucleotidesAtOneCrossoverColumn": 295,
+            "reaches": true,
+            "affordable": true
+        },
+        {
+            "block": "10 x 6",
+            "convention": "force spectroscopy, 10 mM MgCl2",
+            "kuhnLength": 1.34,
+            "contourPerNucleotide": 0.57,
+            "terminusCells": "(0, 0) and (0, -28)",
+            "terminiShareAFace": true,
+            "terminusSeparation": 35.504,
+            "spareNucleotides": 919,
+            "contourLength": 523.83,
+            "kuhnSegments": 390.91791,
+            "rootMeanSquareEndToEnd": 26.4940031,
+            "extensionRatio": 0.0677777141,
+            "minimumNucleotidesToReach": 63,
+            "stretchFreeEnergyKbt": 2.69370891,
+            "stretchFreeEnergyEv": 0.0696377623,
+            "nucleotidesAtOneCrossoverColumn": 310,
+            "reaches": true,
+            "affordable": true
+        },
+        {
+            "block": "15 x 4",
+            "convention": "zero-force scattering, 2 mM MgCl2",
+            "kuhnLength": 2.84,
+            "contourPerNucleotide": 0.7,
+            "terminusCells": "(0, 0) and (3, -43)",
+            "terminiShareAFace": false,
+            "terminusSeparation": 54.9206503,
+            "spareNucleotides": 529,
+            "contourLength": 370.3,
+            "kuhnSegments": 130.387324,
+            "rootMeanSquareEndToEnd": 32.4291844,
+            "extensionRatio": 0.148313935,
+            "minimumNucleotidesToReach": 79,
+            "stretchFreeEnergyKbt": 4.30219953,
+            "stretchFreeEnergyEv": 0.111220461,
+            "nucleotidesAtOneCrossoverColumn": 285,
+            "reaches": true,
+            "affordable": true
+        },
+        {
+            "block": "15 x 4",
+            "convention": "zero-force scattering, 10 mM MgCl2",
+            "kuhnLength": 2.1,
+            "contourPerNucleotide": 0.65,
+            "terminusCells": "(0, 0) and (3, -43)",
+            "terminiShareAFace": false,
+            "terminusSeparation": 54.9206503,
+            "spareNucleotides": 529,
+            "contourLength": 343.85,
+            "kuhnSegments": 163.738095,
+            "rootMeanSquareEndToEnd": 26.8716393,
+            "extensionRatio": 0.1597227,
+            "minimumNucleotidesToReach": 85,
+            "stretchFreeEnergyKbt": 6.26576751,
+            "stretchFreeEnergyEv": 0.16198262,
+            "nucleotidesAtOneCrossoverColumn": 415,
+            "reaches": true,
+            "affordable": true
+        },
+        {
+            "block": "15 x 4",
+            "convention": "force spectroscopy, 2 mM MgCl2",
+            "kuhnLength": 1.41,
+            "contourPerNucleotide": 0.57,
+            "terminusCells": "(0, 0) and (3, -43)",
+            "terminiShareAFace": false,
+            "terminusSeparation": 54.9206503,
+            "spareNucleotides": 529,
+            "contourLength": 301.53,
+            "kuhnSegments": 213.851064,
+            "rootMeanSquareEndToEnd": 20.6193429,
+            "extensionRatio": 0.182139921,
+            "minimumNucleotidesToReach": 97,
+            "stretchFreeEnergyKbt": 10.6417477,
+            "stretchFreeEnergyEv": 0.27511046,
+            "nucleotidesAtOneCrossoverColumn": 704,
+            "reaches": true,
+            "affordable": false
+        },
+        {
+            "block": "15 x 4",
+            "convention": "force spectroscopy, 10 mM MgCl2",
+            "kuhnLength": 1.34,
+            "contourPerNucleotide": 0.57,
+            "terminusCells": "(0, 0) and (3, -43)",
+            "terminiShareAFace": false,
+            "terminusSeparation": 54.9206503,
+            "spareNucleotides": 529,
+            "contourLength": 301.53,
+            "kuhnSegments": 225.022388,
+            "rootMeanSquareEndToEnd": 20.101,
+            "extensionRatio": 0.182139921,
+            "minimumNucleotidesToReach": 97,
+            "stretchFreeEnergyKbt": 11.1976599,
+            "stretchFreeEnergyEv": 0.289481902,
+            "nucleotidesAtOneCrossoverColumn": 741,
+            "reaches": true,
+            "affordable": false
+        }
+    ],
+    "counterfactual": [
+        {
+            "layout": "alternating - what CrossoverLayout.centred generates, and what both studies grade on",
+            "columns": 11,
+            "parities": "01010101010",
+            "consecutiveEqualParities": 0,
+            "collarDishing": 0.0240648102,
+            "uniformLoadDishing": 0.0,
+            "flat": true,
+            "relativeToAlternating": 1.0
+        },
+        {
+            "layout": "seamed - the rectangle's own shape: one column deleted, a doubled pitch, two consecutive columns of the SAME parity",
+            "columns": 10,
+            "parities": "0101001010",
+            "consecutiveEqualParities": 1,
+            "collarDishing": 0.0278434397,
+            "uniformLoadDishing": 0.0,
+            "flat": true,
+            "relativeToAlternating": 1.15701888
+        }
+    ],
+    "extentSensitivity": [
+        {
+            "reading": "the drawable raster's row span (C-0151, 102 / 109)",
+            "rowBasePairs": 109,
+            "edgeX": 37.06,
+            "columns": 11,
+            "collarDishing": 0.0231880196,
+            "flat": true,
+            "relativeToAsGraded": 0.963565448
+        },
+        {
+            "reading": "as graded by both studies - the square sheet's 112 bp",
+            "rowBasePairs": 112,
+            "edgeX": 38.08,
+            "columns": 11,
+            "collarDishing": 0.0240648102,
+            "flat": true,
+            "relativeToAsGraded": 1.0
+        },
+        {
+            "reading": "the drawable raster's bounding box (C-0146, the stagger included)",
+            "rowBasePairs": 116,
+            "edgeX": 39.44,
+            "columns": 12,
+            "collarDishing": 0.0231299291,
+            "flat": true,
+            "relativeToAsGraded": 0.96115153
+        }
+    ],
+    "reproductions": [
+        {
+            "of": "C-0141 / T-219",
+            "quantity": "10 x 6 free-tile collar dishing over stroke",
+            "published": 0.0240648102,
+            "here": 0.0240648102,
+            "relativeDeparture": 0.0
+        },
+        {
+            "of": "C-0141 / T-219",
+            "quantity": "10 x 6 plate edgeY in nm",
+            "published": 38.04,
+            "here": 38.04,
+            "relativeDeparture": 0.0
+        },
+        {
+            "of": "C-0119 / CLAUDE.md",
+            "quantity": "domains a fully folded circular scaffold needs on a 60-helix PATH graph",
+            "published": 118.0,
+            "here": 118.0,
+            "relativeDeparture": 0.0
+        },
+        {
+            "of": "C-0160",
+            "quantity": "scaffold bases in the committed block",
+            "published": 6330.0,
+            "here": 6330.0,
+            "relativeDeparture": 0.0
+        },
+        {
+            "of": "C-0161",
+            "quantity": "scaffold domains of the reference rectangle",
+            "published": 31.0,
+            "here": 31.0,
+            "relativeDeparture": 0.0
+        }
+    ],
+    "verdict": {
+        "is the seam forced": "NO. It is forced only on a FULLY FOLDED circular scaffold, and the recommended block leaves 919 nt spare whose closure reaches and is affordable on every ssDNA convention.",
+        "is the committed design drawn without one": "YES, and correctly so - 60 domains on 60 helices is a Hamiltonian path, which a linear scaffold or a remainder-closed circular one both supply.",
+        "does either premise hold on the block": "P1 holds only under Douglas et al.'s surface restriction (the block's own adjacency has 18 independent cycles); P2 does not hold at all. The verdict is the same on both readings of P1, which is what makes it robust.",
+        "do the two studies move": "NO. The block is seamless, so both are inside C-0161's alternating family and no number moves. The seamed counterfactual is measured anyway and is flat on both readings.",
+        "what C-0119 §4 needs": "an annotation, not a withdrawal: its brute force, its reading of the caDNAno figure and its integrality result are untouched, and the word that fails is FORCED.",
+        "full folding needs more than one domain per helix on both readings": "true"
+    },
+    "falsifiers": [
+        "F1 - the induced graph on the block's cells has exactly 59 edges, i.e. it IS a tree",
+        "F2 - a Hamiltonian cycle exists, so P1 fails outright",
+        "F3 - the committed .sc does not carry 60 domains on 60 helices",
+        "F4 - the remainder cannot reach, or costs more than the fold's own currency",
+        "F5 - the seamed counterfactual moves a flatness verdict across T-5b's 0.10"
+    ],
+    "falsifiersFired": {
+        "F1": "did NOT fire - the induced graph carries 77 edges on 60 vertices, 18 independent cycles",
+        "F2": "did NOT fire - both raster termini are degree one, so no cycle covers them",
+        "F3": "did NOT fire - the committed block carries 60 domains on 60 helices, as CH-0212 states",
+        "F4": "did NOT fire - the remainder reaches on every ssDNA convention and costs less than one crossover column of the host sheet",
+        "F5": "did NOT fire - both layouts are flat at T-5b's 0.10, at 0.0240648 and 0.0278434"
+    },
+    "findings": {
+        "A1_the_seam_is_not_forced": "A SEAM NEEDS BOTH PREMISES AND THIS BLOCK DROPS THE SECOND. The scaffold graph is a tree only under Douglas et al.'s 2-D-surface restriction; the block's own cross-section adjacency carries 77 edges on 60 helices, 18 independent cycles. But the seam does not turn on that at all: on BOTH readings a fully folded circular scaffold needs AT LEAST 118 domains on the surface and AT LEAST 62 on the lattice - both above 60 - and the committed design carries exactly 60 - a HAMILTONIAN PATH. So the drawn routing asserts a scaffold that is not fully folded, which is the premise CLAUDE.md already names and C-0119 §4 never examines.",
+        "A2_the_degree_census_decides_it": "THE TWO RASTER TERMINI ARE DEGREE ONE, at every one of the 27 blocks swept, because two of a corner helix's three honeycomb bonds point OUT of the block. A degree-one vertex lies on no cycle, so no honeycomb block of this family has a Hamiltonian cycle and no scaffold routing gives one domain per helix while closing inside the design. C-0119's factorial guard is never reached.",
+        "A3_the_seam_BOUND_is_two_domains_not_sixty": "AND EVEN WHERE THE SECOND PREMISE HOLDS, THE HONEYCOMB'S SEAM IS NOTHING LIKE ROTHEMUND'S. On the block's own lattice adjacency the bound is 62 domains - the leaf bound, |V| + leaves - against 118 on the path, which is the bridge bound 2(|V| - 1), i.e. the two-segments-per-helix seam C-0119 transfers. The factor between the two readings is 1.903, and the corpus has been quoting the expensive one. Both are LOWER bounds and nothing here needs either to be attained: what decides the question is that both exceed 60.",
+        "A4_the_path_boundary_is_n_equals_two": "THE INDUCED SCAFFOLD GRAPH IS A PATH IF AND ONLY IF THE ROW CARRIES TWO HELICES, at every one of the 27 blocks swept - which is EXACTLY C-0154's boundary for path-representability of the MECHANICAL interfaces. Two independent questions, one integer.",
+        "B1_the_closure_price": "THE REMAINDER CLOSES, AND IT COSTS LESS THAN ONE CROSSOVER COLUMN. The two termini sit 35.504 nm apart - 14 d exactly, both at offset 7, so the separation is purely lateral - and 919 spare nucleotides span it: the reach bound asks 51-63 and the Gaussian stretch costs 1.03-2.69 k_BT over the whole 2x ssDNA Kuhn bracket, against the 8.0 k_BT the host sheet pays per crossover column. The extension ratio is 0.0552-0.0678, so the Gaussian is inside its own validity.",
+        "B2_the_recommended_cross_section_closes_cheapest": "AND THE CROSS-SECTION THIS PROGRAMME RECOMMENDS IS ALSO THE ONE WHOSE REMAINDER CLOSES CHEAPEST, which nothing selected for. 10 x 6's termini are 35.504 nm apart with 919 nt spare; 15 x 4's are 54.9207 nm apart with 529 - so the closure costs 4.3-11.2 k_BT there against 1.03-2.69 here, 4.16x worse at the same convention.",
+        "C1_the_studies_are_in_family": "BOTH STUDIES ARE IN-FAMILY, AND THE COUNTERFACTUAL SAYS WHAT THE OTHER BRANCH WOULD HAVE COST. C-0161 §4(b) restricts every phase-swept result in this corpus to the ALTERNATING family; the block is seamless, so HoneycombCoupledStudy and HoneycombPlacementStudy are inside it and NO NUMBER MOVES. Graded anyway, the rectangle's own seam shape - one column deleted, two consecutive columns of the same parity - takes the free-tile collar dishing from 0.0240648102 to 0.0278434397, 1.157x, and both are flat at T-5b's 0.10. CH-0212's 'by how much is unmeasured' is now measured, on the branch that is not taken.",
+        "C3_the_extent_both_studies_grade_at_is_neither_of_the_block's": "AND WHILE LOOKING, A SECOND SCOPE ITEM, PRICED RATHER THAN LEFT OPEN. Both studies grade the recommended block at 112 bp = 38.08 nm, which is the SQUARE sheet's own row length and the WITHDRAWN 112 / 108 pair's; the drawable 102 / 109 raster's rows span 109 bp = 37.06 nm and its box is 116 bp = 39.44 nm, and 38.08 is neither. Swept, the free-tile collar dishing reads 0.0231880196 / 0.0240648102 / 0.0231299291 over the three - at most 0.0388 of the as-graded value, all three flat at T-5b's 0.10 - so the extent convention is worth under four per cent and NO VERDICT MOVES. The repair is a re-emission and it belongs with T-263.",
+        "C2_the_second_reading_is_unavailable": "CH-0212'S SECOND FREE READING CANNOT BE TAKEN, AND THAT IS ITSELF THE ANSWER TO A DIFFERENT QUESTION. A column parity is a property of the STAPLE ladder and the block carries no staple set - 0 staple crossings, 0 columns - so crossoverPhase() throws. The reference rectangle returns one, so the absence is a fact about the design and not about the reader. A design that cannot be asked whether its columns alternate also cannot be graded on its own crossovers, which is why C-0161 refused it as an OrigamiGrillage."
+    },
+    "validity": [
+        "LATTICE AND TOPOLOGY ONLY. Nothing here derives a folding YIELD. An elastic or entropic price is not a yield, and CLAUDE.md already records that residue as kinetic.",
+        "THE CLOSURE IS AN IDEAL CHAIN. The Gaussian stretch ignores ssDNA's excluded volume, its electrostatic stiffening in Mg2+, and exclusion by the block itself. All three RAISE the price; the margin against one crossover column is a factor of 3-8, so the sign is known and the conclusion is not close.",
+        "THE INDUCED READING IS PERMISSIVE. It allows scaffold crossovers Douglas et al. say do not occur; it is carried because the verdict must not depend on which reading a reader prefers, and here it does not.",
+        "THE COUNTERFACTUAL IS A SHAPE, NOT A DESIGN. The block carries no staple routing, so 'a seamed honeycomb column layout' is the rectangle's own signature applied to the block's ladder. It prices the branch not taken and recommends nothing.",
+        "THE COUNTERFACTUAL IS ON THE SMEARED EQUIVALENT SHEET both studies use today. A re-grade on the honeycomb grillage would move both cells together and the ratio is what this study quotes.",
+        "THE ARTIFACT STILL DOES NOT STATE ITS SCAFFOLD TOPOLOGY. scadnano's strand carries a 'circular' field and the emitted block has none, so the file asserts a LINEAR scaffold by default while the budget it was drawn to is M13's circle."
+    ],
+    "openQuestions": [
+        "Should the emitted block carry the 919 nt remainder as an explicit loopout, or the scaffold's circularity as a flag? Both are schema steps in ScadnanoWriter (C-0160 §6 names the first); neither is a lattice question.",
+        "Does a honeycomb raster whose remainder is SHORT - a bigger block on the same scaffold - reach the closure threshold this study names? The threshold is emitted per convention and the answer is one comparison.",
+        "The 62-domain minimum on the induced adjacency is attained by a construction this study bounds but does not emit. Whether any such routing is DRAWABLE under caDNAno's +/-5 bp scaffold rule is a separate question."
+    ]
+}

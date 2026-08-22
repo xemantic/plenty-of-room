@@ -75,6 +75,16 @@ and no single number in the format can express it.
   turn allowance separately — 6 nt on reach, 8 nt affordable on M13 at a 112 bp row, 28 nt as built
   — and emitting one needs scadnano's heterogeneous `domains` array, which this reader does not parse.
 - **No sequence.** The scaffold routing fixes the base count and not the M13 phase.
+- **No scaffold TOPOLOGY** — added iteration 40
+  ([`CH-0215`](../challenges/CH-0215-the-artifact-does-not-state-its-scaffold-topology.md)).
+  scadnano's strand carries a `circular` property and this one does not, whose default is `False`,
+  so the file **says linear** while the 919 nt spare above are M13's **circle**.
+  Both readings give the same 60 domains and the same verdict
+  ([`C-0168`](../claims/C-0168-recommended-block-seam.md)),
+  and the remainder that would close the circle is not drawn either —
+  the same heterogeneous-`domains` step the turn loopouts need.
+  **A seam is not forced on this block**: its two raster termini sit 35.504 nm = `14 d` apart,
+  both at offset 7 and on the same face, and 919 nt close that at **1.03–2.69 `k_BT`**.
 
 ---
 

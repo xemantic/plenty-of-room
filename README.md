@@ -120,6 +120,7 @@ Each task adds its own entry point rather than competing for the single `applica
 ./gradlew study -Pstudy=tile.HoneycombTwoLengthStudyKt            # T-235, the corrected 10 x 6 coupled cells re-read at C-0140's two-length raster -- two width readings, a row-dependent station ladder, and the crossover-column guard swept
 ./gradlew study -Pstudy=tile.HoneycombBondClassStudyKt            # T-244, the honeycomb face's crossover bond-class residues -- the inter-row ladder offset, the determined ladder phase, and whether a two-length raster closes on caDNAno's scaffold rule
 ./gradlew study -Pstudy=tile.HoneycombColumnWindowStudyKt         # T-243, the crossover-column count from the ROW spans rather than a bounding-box edgeX, with EDGE_MARGIN swept at every window reading
+./gradlew study -Pstudy=design.ScaffoldSeamStudyKt                # T-274, does the recommended 10 x 6 honeycomb block need a scaffold SEAM -- the tree parity re-derived on the block's own adjacency, and the remainder closure priced
 ```
 
 [TASKS.md](TASKS.md#entry-points) carries the full list, one row per study, with the result file each emits.
