@@ -213,8 +213,8 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 | 4 | Which device does §3's *desired* clause ask for? | `T-112` | Every desired-stroke number in the corpus has to be quoted twice | **One device, placed at the acceptable clause** | **TWO DEVICES.** Device B is placed at 10 pN/nm and its binding constraint becomes `C-0017`'s stability floor |
 | 5 | What is the scaffold — linear or circular, M13 or synthetic, and how long? | `T-154` | A seam costs 6–12 of 34 arm stations, and §3's 40.0 nm is not a buildable seamless width | **A purpose-length scaffold**; the choice is a fabrication decision, not a modelling one | **CIRCULAR M13, ~7–8 k nt** — so the remainder is the DEFAULT — and the remedy for the excess is *"just make the tile thicker"* |
 | 6 | Does §3 admit a **two-layer** tile, or is single-layer a requirement? | `T-166` | The only coupling topology that narrows the flatness negative is multilayer, and it is the one motif here with a published precedent | **A yes/no is enough**; a *no* closes the last open recovery route | **YES, BY IMPLICATION**, and volunteered rather than granted. Reopens the body axis (`T-191`), not the coupling axis |
-| **7** | ~~**NEW — is a 38 × 25 nm tile acceptable, in exchange for removing the last unmeasured dependency?**~~ **SUPERSEDED AS POSED, iteration 35** (`C-0144` §4, on `C-0141`) — **RE-POSED as two questions: confirm `10 × 6`, and name the scaffold** (§7) | item 12 of the queue's questions for Kazik — the only row here whose owner column names a decision rather than a task, its analysis having closed in iteration 25 (§7) | ~~Carrying the interlayer-coupling calibration as a live dependency on the flatness verdict, and the coupled result at 1 of 8 cells rather than 8 of 8~~ — **the cost of deferring has REVERSED SIGN**: the tile this question offered as its *default*, `15 × 4`, is **1.40084263×** §3's footprint, **fails** `T-5b` at the measured band's adverse end (**0.101759944**) and is **0 of 8** coupled cells at both ends of that band | ~~**`10 × 6` on both flatness and published folding yield — but the footprint is a specification and only NDI holds that column**~~ **`10 × 6` on all THREE criteria this programme can rank — flatness, published folding yield and now footprint, which is 0.929467162 of §3's. There is no trade left to weigh** | *raised iteration 26; **superseded as posed and re-posed iteration 35**; awaiting* |
-| **8** | **NEW — which width reading is the Gen-1 tile SPECIFIED to: the ~~112 bp = 38.08 nm~~ **`109 bp`** span every one of its rows has, or the 116 bp = 39.44 nm box the folded block occupies?** (§8) | `T-242`, and item 13 of the queue's questions for Kazik | ~~The two readings are **3.57 %** apart and the difference is a **stagger**, not a length. Deferring means a four-layer flatness verdict decided by a **0.07 nm** slack against a numerical guard — **6 flat cells of 8 against 3** (`C-0146`, `CH-0185`)~~ **RESTATED, iteration 38 (`C-0151`, `CH-0195`): the difference is the `7 bp = 2.38 nm` stagger of the DRAWABLE `102 / 109` raster, and the flatness threshold is WITHDRAWN — the eleventh and twelfth columns both belonged to a raster that does not close, and the drawable one reads 10 columns at every guard convention.** What deferring costs is now the drafting ambiguity alone — every plan margin in the corpus quoted at whichever width its author happened to take | **None. This programme cannot rank them**, because no model here has a per-row row length and both readings are true of the same object. What it can do is say what each costs, and ask **what a ~~`1.36 nm`~~ `2.38 nm` stagger costs NDI** | *raised iteration 36; awaiting* |
+| **7** | ~~**NEW — is a 38 × 25 nm tile acceptable, in exchange for removing the last unmeasured dependency?**~~ **SUPERSEDED AS POSED, iteration 35** (`C-0144` §4, on `C-0141`) — **RE-POSED as two questions: confirm `10 × 6`, and name the scaffold** (§7) | item 12 of the queue's questions for Kazik — the only row here whose owner column names a decision rather than a task, its analysis having closed in iteration 25 (§7) | ~~Carrying the interlayer-coupling calibration as a live dependency on the flatness verdict, and the coupled result at 1 of 8 cells rather than 8 of 8~~ — **the cost of deferring has REVERSED SIGN**: the tile this question offered as its *default*, `15 × 4`, is **1.40084263×** §3's footprint, **fails** `T-5b` at the measured band's adverse end (**0.101759944**) and is **0 of 8** coupled cells at both ends of that band | ~~**`10 × 6` on both flatness and published folding yield — but the footprint is a specification and only NDI holds that column**~~ **`10 × 6` on all THREE criteria this programme can rank — flatness, published folding yield and now footprint, which is 0.929467162 of §3's. There is no trade left to weigh** — **and since iteration 39 the block is a committed scadnano FILE that the reference implementation loads with zero warnings and that reads `ADMISSIBLE` at ZERO forced crossovers** (`C-0160`, `C-0164`), so a *yes* is now given against an object rather than against a pair of integers. It carries **no staple set** and `ADMISSIBLE` is a statement about this repository's rules, not about foldability | *raised iteration 26; **superseded as posed and re-posed iteration 35**; **updated iteration 39**; awaiting* |
+| **8** | **NEW — which width reading is the Gen-1 tile SPECIFIED to: the ~~112 bp = 38.08 nm~~ **`109 bp`** span every one of its rows has, or the 116 bp = 39.44 nm box the folded block occupies?** (§8) | `T-242`, and item 13 of the queue's questions for Kazik | ~~The two readings are **3.57 %** apart and the difference is a **stagger**, not a length. Deferring means a four-layer flatness verdict decided by a **0.07 nm** slack against a numerical guard — **6 flat cells of 8 against 3** (`C-0146`, `CH-0185`)~~ **RESTATED, iteration 38 (`C-0151`, `CH-0195`): the difference is the `7 bp = 2.38 nm` stagger of the DRAWABLE `102 / 109` raster, and the flatness threshold is WITHDRAWN — the eleventh and twelfth columns both belonged to a raster that does not close, and the drawable one reads 10 columns at every guard convention.** What deferring costs is now the drafting ambiguity alone — every plan margin in the corpus quoted at whichever width its author happened to take | **None. This programme cannot rank them**, because no model here has a per-row row length and both readings are true of the same object. What it can do is say what each costs, and ask **what a ~~`1.36 nm`~~ `2.38 nm` stagger costs NDI**. **RE-READ against iteration 39 (`C-0160`, `C-0164`): nothing moves it** — the block is now a file and **both** readings are re-derived on that same file, so drawing the object did not choose between them | *raised iteration 36; **re-read iteration 39**; awaiting* |
 
 ---
 
@@ -898,6 +898,22 @@ by `CH-0151` and restored by `C-0141`**.
 A *yes* costs nothing that this programme can see. A *no* re-opens a flatness verdict that now **fails** at
 one end of the only measured band there is.
 
+**UPDATED, iteration 39 — the block this question names is now a FILE, and it passes a check it could not be
+given before.** ([`C-0160`](gpd/claims/C-0160-scadnano-writer.md),
+[`C-0164`](gpd/claims/C-0164-lattice-aware-buildability.md).)
+`gpd/designs/gen1-block-honeycomb-10x6-102-109.sc` is a committed scadnano artifact — **60 helices, ten
+corrugated x-raster rows of six, `102 / 109 bp`** — which the **reference** scadnano implementation (0.21.1)
+loads with **zero warnings**, and on which the block's 55 stations, phase 16, 14 bp inter-row offset, 7 bp
+stagger, 102 bp interface window and `116 bp = 39.44 nm` extent are re-derived rather than asserted.
+`checkBuildability()` is now **lattice-aware**, and the honeycomb branch answers: the block reads
+**`ADMISSIBLE` at ZERO forced crossovers**, its **59** raster crossovers reducing by their own bond class to
+exactly two residues `{4, 14}` — ten apart, which *is* caDNAno's `±5 bp` closure condition — under one `b₀`.
+**Two clauses travel with that word and neither is a formality.** `ADMISSIBLE` means *"every rule this
+repository has for this design's lattice applies, and passes"*, and **not** that anything is foldable; and the
+emitted block **carries no staple set**, so it is a lattice artifact rather than a design somebody could order.
+**Nothing here changes the answer this question is asking for**, and nothing here is a new cost: what changed
+is that a *yes* can now be given against an object rather than against a pair of integers in a study literal.
+
 **7b — Which scaffold? The caDNAno paper contradicts itself at exactly the design this programme proposed.**
 
 `C-0119` and `C-0125` read *"i: p8064"* from that paper's Methods list; its own main-text rule — 60 helices take
@@ -1212,6 +1228,15 @@ columns at every guard convention. **What deferring now costs is the drafting am
 numbers for one dimension of one object, differing by the **7 bp = 2.38 nm** stagger, with **no margin and no
 verdict on either side of it**.
 
+**RE-READ AGAINST ITERATION 39, AND NOTHING IN IT MOVES THIS QUESTION — stated rather than left silent,
+because a question put to a customer can carry a stale price.** The block is now a committed scadnano file
+([`C-0160`](gpd/claims/C-0160-scadnano-writer.md)) and reads `ADMISSIBLE` at zero forced crossovers
+([`C-0164`](gpd/claims/C-0164-lattice-aware-buildability.md)) — and **both** width readings are re-derived on
+that same file, so drawing the object did not choose between them and could not have. There is still no margin
+on either side and this programme still states no preference. What the file *does* add is that the ambiguity is
+now inspectable rather than described: whoever answers can open the object in the field's own software and see
+one dimension carrying two true numbers.
+
 
 ## Two questions that were on this list and have been DISCHARGED
 
@@ -1253,8 +1278,26 @@ one of the two on offer.
 **not run** and is **not** superseded — the regime still has no systematic theory. What `T-50` returned
 instead is `P-6`'s ceiling and threshold, and the reason that was available at all is that the quantity
 `C-0005` bounds (a **level**) is not the quantity the margin is (a **stiffness at a force-pinned point**).
-**No compute request stands against this programme today**; the only item still exceeding one session is
-`T-9`, the crossover hinge constant from oxDNA, at days rather than weeks.
+~~**No compute request stands against this programme today**; the only item still exceeding one session is
+`T-9`, the crossover hinge constant from oxDNA, at days rather than weeks.~~
+**CORRECTED, iteration 39 — that sentence names as outstanding a run this programme had already made, and it
+stood for four iterations.** The **crossover hinge constant itself was run in iteration 35**
+([`C-0157`](gpd/claims/C-0157-crossover-hinge-constant-from-oxdna.md),
+`gpd/results/T-9-crossover-hinge-constant.json`): oxDNA2, five replicas, **a day on 8 cores**, bracketing `k_θ`
+at **`5.62052112 – 25.9227606 pN·nm/rad`** with the corpus's fitted `13.5294118` inside it. **This is
+`C-0067`'s standing failure in its own direction**: the sentence under-claims — it says a thing is still owed
+that was delivered — and a reviewer checks the assertions, not the disclaimers.
+**What is genuinely outstanding is now THREE oxDNA items, and one of them is new this iteration.**
+`T-9` is **`PARTIALLY DONE`** in [`TASKS.md`](TASKS.md) and stays live on two of its three deliverables: the
+crossover's **vertical / axial compliance** (`C-0009` models it rigid in `z`) and its **in-plane shear `k_s`**
+(`C-0020`'s single undetermined input). The third is
+[`CH-0209`](gpd/challenges/CH-0209-a-crossover-drawn-as-two-strand-crossings.md), raised in iteration 39: the
+field's own reference generator draws every Rothemund crossover as **two** strand crossings at adjacent offsets
+where this corpus draws **one**, and `C-0157` relaxed only the second. Settling it is one relaxation of the
+shape `T-9` already has a driver for — the same 15 × 112 bp sheet with each crossover drawn as a pair — and
+**all three of its possible outcomes are useful**. None of the three exceeds this box; what they cost is days.
+**Nothing here is an ask of NDI.** It is a correction to this section's own record, kept visible because a file
+that only ever grows is not a record.
 
 ---
 ~~Two~~ **Three** things worth flagging about the document itself:
@@ -1267,8 +1310,25 @@ an entry that stood seven iterations after being answered. A questions-for-NDI f
 way.
 
 **This file is now checked, and it was not before.**
-`ANSWERS.md` had four retained checkers on it — numbers, task statuses, challenge statuses and self-consistency
-— and `DECISIONS-FOR-NDI.md`, which is the document NDI actually reads, had none.
+~~`ANSWERS.md` had four retained checkers on it — numbers, task statuses, challenge statuses and self-consistency
+— and `DECISIONS-FOR-NDI.md`, which is the document NDI actually reads, had none.~~
+**UPDATED, iteration 39 — there are now SEVEN, and every one of them reads this file.** Numbers, task
+statuses, challenge statuses and self-consistency ([`tools/trace-answers.py`](tools/trace-answers.py), which
+takes `--answers` and defaults to **both** documents); corpus links
+([`tools/check-corpus-links.py`](tools/check-corpus-links.py)); Markdown table rendering
+([`tools/check-markdown-tables.py`](tools/check-markdown-tables.py)); the challenge index
+([`tools/check-challenge-index.py`](tools/check-challenge-index.py)); the queue's entry points
+([`tools/check-entry-points.py`](tools/check-entry-points.py),
+[`C-0163`](gpd/claims/C-0163-cold-start-entry-points.md)); result-file hygiene
+([`tools/check-result-file-hygiene.py`](tools/check-result-file-hygiene.py),
+[`C-0158`](gpd/claims/C-0158-prose-gate-red.md)); and, since iteration 39, **dangling identifiers** —
+a bare challenge number written into a sentence being *neither a filename nor a link*, so no earlier gate
+could see one
+([`tools/check-corpus-identifiers.py`](tools/check-corpus-identifiers.py),
+[`C-0166`](gpd/claims/C-0166-dangling-identifiers.md)). All seven are wired into
+[`tools/verify.sh`](tools/verify.sh).
+**A count of checkers is itself a self-describing number and this one was stale**, which is the same class
+the paragraph above it records.
 `T-184` ([`C-0124`](gpd/claims/C-0124-decision-file-drift.md)) enumerated **36** of its assertions and found
 **23** needing an edit: fourteen stale outright, four superseded by an answer block in their own section and
 left unstruck below it, three numbers carried by an open challenge that names this file by name, and two
