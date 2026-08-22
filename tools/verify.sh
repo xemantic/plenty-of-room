@@ -65,6 +65,12 @@
 # path and the fallback no longer emits the prefix, both asserted as tests, and the gate is
 # clean in a real `.git`-less snapshot. Restored here by `P-23` on that evidence.
 #
+# `tools/trace-answers.py` (`T-277`) was the ONLY retained checker not run here, and it is the only
+# one that reads the two outward-facing documents BY NAME -- so the numeric, task-status,
+# challenge-status and self-consistency checks ran only when somebody remembered. `C-0171` measured
+# that and it is `C-0078`'s own finding about itself: a check nobody remembers to ask for is not a
+# check. It already exits with its defect count, so wiring it cost one line per document.
+#
 # `tools/check-corpus-identifiers.py` (`T-273`) closes the one cross-reference class the other two
 # could not reach. `C-0083` gates a claim's FILENAME and `check-corpus-links.py` a relative LINK; a
 # bare `CH-0133` in a sentence is neither, and `T-268` cited two numbers that had been reserved in
@@ -142,6 +148,10 @@ if [ "$checks" = "yes" ]; then
     echo
     echo "--- every String.format call balances its conversions (T-207) ---"
     tools/check-kotlin-format-strings.py
+    echo
+    echo "--- both deliverables trace to the corpus and agree with the queue (T-277) ---"
+    tools/trace-answers.py
+    tools/trace-answers.py --answers DECISIONS-FOR-NDI.md
     echo
     echo "--- every claim and challenge IDENTIFIER cited in the corpus exists (T-273) ---"
     tools/check-corpus-identifiers.py --selftest > /dev/null
