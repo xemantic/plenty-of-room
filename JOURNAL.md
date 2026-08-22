@@ -10789,3 +10789,91 @@ document checkers now, two of them new this iteration (`tools/check-entry-points
 decision and therefore the owner's**, which is why `T-269` is the one iteration-39 row deliberately left
 unreserved. The counter-argument is recorded with it, and this iteration supplied two data points running in
 opposite directions — one generalisation, one deliberate specialisation.
+
+## Iteration 40 — 2026-08-22: science again, and a verdict that flipped
+
+Three independent rows, three agents, all closed: `T-263`, `T-274` and `T-9`'s second deliverable.
+Three claims (`C-0167`–`C-0169`), **six** challenges raised (`CH-0213`–`CH-0218`) and one closed
+(`CH-0212`). Every reserved number was taken, so nothing had to be released — which is the first
+iteration since the release rule was written where that line can be stated as a fact rather than
+as an omission.
+
+### The result that moves published verdicts
+
+**Every coupled cell in this corpus was a smeared single-layer square-lattice solve.** `C-0154` had
+already measured that `OrigamiSheet`'s across-helix rigidity is `24/7 = 3.43×` overstated on a
+honeycomb block — one layer of such a block is a set of **dimers**, not a sheet, so the across-helix
+load path must traverse the thickness. `T-263` ported `C-0142`'s influence surrogate onto the
+honeycomb grillage and re-graded the recommended cells.
+
+The smeared reading **reproduces at `6.3e−10`** and then parts company. At `C-0151`'s recommended
+state it gives 0.0773373597 and the honeycomb grillage gives **0.145086839**; **0 of 64** cells clear
+`T-5b` at the 90th percentile against **15 of 64** smeared, and `C-0151`'s published *"2 flat of 8"*
+is **0 of 8**. On the paired stream the honeycomb is worse at **4 000 of 4 000** realisations.
+
+**What fails is the coupling, not the block.** The uncoupled four-layer honeycomb block is flat at
+**both** ends of the composite-fraction bracket, and the recommended cell is flat at **zero defects**
+— it is `C-0087`'s measured staple dropout, acting on a tile whose `D_⊥` is `24/7` smaller, that
+takes it past the tolerance. So the programme's headline flatness story survives on the uncoupled
+tile and the coupled one does not, and **both deliverables state the coupled reading**. That is
+`T-276`, and it is the first synthesis that has to carry a reversal rather than a refinement.
+
+And the standing falsifier earned its keep again: `HoneycombGrillage`'s node set stepped by 7 bp, so
+a row length not a multiple of 7 left an unsupported, unloaded strip — at the recommended **116 bp**
+a **uniform pressure dished 0.15 of the stroke** where the exact answer is exactly zero. Repaired,
+with a control re-run moving not one numeric field.
+
+### The seam is not forced, and neither premise failed the way expected
+
+`CLAUDE.md`'s seam theorem has two premises. The recommended block's cross-section adjacency is
+**not a tree at all** — 77 edges on 60 helices, **18 independent cycles** — so the parity argument
+does not apply; and both raster termini are **degree one at every one of 27 blocks swept**, so **no
+honeycomb block of this family admits a Hamiltonian cycle** and the factorial guard is never reached.
+What removes the seam is the *other* premise: the termini are on the **same face**, and the **919 nt**
+of M13 remainder close the gap at **1.03–2.69 `k_BT`** against the **8.0** the host sheet pays per
+crossover column. Inverted, the falsifier is quotable — the seam would be forced only **below
+119–310 nt** of remainder. The corpus had also been quoting the **path's** seam bound, 118 domains,
+where the lattice's is **62** — 1.903× too expensive.
+
+The committed design is unchanged and right as drawn, and no number moved. The queue row's own claim
+that *"two free readings settle it"* was **falsified**: one reading cannot be taken at all, because a
+column parity is a property of a staple ladder this block has none of.
+
+### A negative with a price, and a rigid assumption finally bounded
+
+`T-9`'s vertical-compliance half answered its cheap bound **first**, and the answer was **no** on five
+counts. The decisive one is the fifth: **no estimator in this repository computes the coordinate**,
+so even with the 649 MB of pruned frames the answer was not there. The row's *"at no extra cost"* was
+void the moment `C-0157` was filed. Priced replacement: `C-0157`'s own protocol plus a six-line
+estimator, **~1 day on 8 cores**.
+
+What it could do without new compute is sharper. The repository already derives a crossover
+**in-plane** displacement stiffness of **64.7058824 pN/nm** from the same two phosphate bonds, and
+asserts a *rigid constraint* on the orthogonal one — the penalty is **154.545455×** that, and sits
+**inside** `C-0099`'s unresolved bracket, **1.545× below** `C-0009`'s own lowest convergence rung.
+Swept, the binary reading survives (ramp fraction **0.0120392417**) and the vertical link is worth
+**3.42 percentage points** of `T-5b` — more than the entire row-end hinge unknown a whole task was
+spent settling — and, like it, **it does not cross**. `C-0015`'s registration rule survives for a
+better reason than a small number: with the link deleted **every crossover carries exactly zero
+vertical force**, so the rule rests on the link's *existence*, not its stiffness.
+
+The agent registered its criterion in a **separate commit before the sweep**, so the criterion is a
+diff rather than an assertion — and then disclosed that one registered constant was a **9.906×**
+mis-transcription, publishing **both** verdicts rather than picking one.
+
+### What surprised us
+
+- **A `CLAUDE.md` entry outlived its repair by eleven iterations and misled an agent inside this
+  session.** *"`check-corpus-links.py` skips uncommitted files"* was repaired in iteration 28;
+  verified empirically here and withdrawn. The inverse of a rule already in the file: a repair that
+  does not withdraw the entry leaves the entry to do the damage the defect used to do — and it is
+  worse than a stale claim, because a claim carries a date and an entry does not.
+- **A scripted edit can no-op while the commit message describes it**, which happened to the
+  coordinator: a heredoc whose anchor assertion failed wrote nothing, and the commit went out naming
+  seven entries its diff did not contain. Read `git diff --stat` between the edit and the message.
+- **The tile oxDNA simulated and the tile every placement result is graded on are one 8 bp plane
+  apart** — 49 crossovers against the lattice's 56 or 42, which is *neither*. Queued as `T-275`; it
+  decides what a measured constant is read against.
+- **A ratio of two order statistics can reverse a paired reading's SIGN**, not merely inflate it: six
+  cells read *"better"* on the ratio of 90th percentiles while the honeycomb is worse at 58–65 % of
+  the same draws.

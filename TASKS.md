@@ -331,8 +331,10 @@ independent of each other and of `T-272`.
 and goes red the moment a new study is committed without one. A one-line table append cannot
 collide the way a narrative row can. Everything else is still reported, not edited.
 
-**Reserved and not yet taken**: `C-0167`, `C-0168`, `C-0169`, `CH-0213`, `CH-0214`, `CH-0215`, `CH-0216`,
-`CH-0217`, `CH-0218`. Anything still unused when the iteration closes must be **released by name here** —
+**ALL NINE WERE TAKEN — nothing to release.** `C-0167`, `C-0168` and `C-0169` are filed, and every one of
+`CH-0213`, `CH-0214`, `CH-0215`, `CH-0216`, `CH-0217` and `CH-0218` was raised. The reservation line is kept
+rather than deleted, because that is the record: it read *"reserved and not yet taken"* while the iteration
+ran, and it says so now. Anything still unused when the iteration closes must be **released by name here** —
 [`C-0166`](gpd/claims/C-0166-dangling-identifiers.md) found thirteen reservations released by nobody at all,
 and that a release note written as a **range** does not release the numbers inside it. This line exists so
 that [`tools/check-corpus-identifiers.py`](tools/check-corpus-identifiers.py) can see the reservation, which
