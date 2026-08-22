@@ -66,7 +66,7 @@
     "cheapBound": [
         {
             "requirement": "the interface graph on the duplexes",
-            "whatOrigamiGrillageAssumes": "beam i is bonded to beam i+1 and to nothing else, so the interfaces form a PATH: maximum degree 2 (C-0100)",
+            "whatOrigamiGrillageAssumes": "beam i is bonded to beam i+1 and to nothing else, so the interfaces form a PATH: maximum degree 2 (C-0056, CH-0066)",
             "whatAHoneycombBlockSupplies": "three lattice neighbours per site, so maximum degree 3 at every m x n with n >= 3",
             "adaptable": false,
             "consequence": "no relabelling of the helices puts every bond between consecutive indices; this is a REPLACEMENT and not a parameter. At n = 2 the degree is 2 and a block IS path-representable, which is where the boundary lies."

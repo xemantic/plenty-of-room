@@ -20,6 +20,7 @@ import com.xemantic.nano.plentyofroom.structure.BandedCholesky
 import com.xemantic.nano.plentyofroom.structure.DnaDuplex
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.HoneycombSublattice
+import com.xemantic.nano.plentyofroom.structure.PointLoad
 import com.xemantic.nano.plentyofroom.structure.PressureField
 import com.xemantic.nano.plentyofroom.structure.gaussLegendreRule
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
@@ -305,13 +306,29 @@ class HoneycombGrillage(
     val planeBasePairs: List<Int> =
         (0..rowBasePairs step HoneycombCrossoverRule.ANY_AZIMUTH_STEP_BP).toList()
 
-    /** The `s` of every node of every beam, in nm, ascending. */
+    /**
+     * The `s` of every node of every beam, in nm, ascending.
+     *
+     * The crossover planes are every 7 bp, so a row whose length is a multiple of 7 ends **on** a
+     * plane and the ladder alone spans it. A row that does not — `C-0151`'s 116 bp block extent
+     * is 16 planes and a 4 bp remainder — carries a **free overhang** past its last crossover
+     * column, and the beams have to reach the end of the tile whether or not a bond sits there:
+     * otherwise the strip beyond the last plane has no foundation and no load, and the standing
+     * uniform-load falsifier duly fires on a correct solver. The trailing segment is subdivided
+     * like any other, and where the remainder is zero **no node is added at all**, so every
+     * lattice `C-0154` measured is bit-identical.
+     */
     val nodeS: List<Double> = buildList {
         val stations = planeBasePairs.map { it * Gen1Tile.RISE_PER_BASE_PAIR - lengthS / 2.0 }
         add(stations.first())
         for (i in 0 until stations.size - 1) {
             val step = (stations[i + 1] - stations[i]) / subdivisions
             for (k in 1..subdivisions) add(stations[i] + k * step)
+        }
+        val remainder = lengthS / 2.0 - stations.last()
+        if (remainder > 1e-9) {
+            val step = remainder / subdivisions
+            for (k in 1..subdivisions) add(stations.last() + k * step)
         }
     }
 
@@ -874,9 +891,66 @@ class HoneycombGrillage(
         }
     }
 
-    /** Solves one load case: a [pressure] field on the face, plus any prestrain. */
-    fun solve(pressure: PressureField = uniformPressure(0.0)): HoneycombDeflection =
-        HoneycombDeflection(this, factorisation.solve(assembleLoad(pressure)), pressure)
+    /**
+     * `T-263` — the work-conjugate load vector of a downward point load of [magnitude] pN applied
+     * to the **face** at ([s], [y]).
+     *
+     * It is the exact gradient of [evaluate] at that point, which is what makes it the work
+     * conjugate rather than a lumped approximation of one: a station off its beam's own axis is
+     * carried through that beam's **roll**, with the offset `y − beamY` as the moment arm, and a
+     * station on the axis puts nothing into the roll at all.
+     *
+     * Two consequences are worth stating, because one of them is a gate and the other is not.
+     * The influence matrix a coupling surrogate assembles from this dual is `M = eᵀK⁻¹e`, so
+     * Maxwell-Betti holds **by construction** and its residual measures nothing; what does have
+     * content is Betti between this point functional and the **pressure quadrature**, which is a
+     * different rule on different points, and that is asserted in the tests.
+     */
+    fun pointLoadDual(s: Double, y: Double, magnitude: Double = 1.0): F64Array {
+        val load = F64Array(degreesOfFreedom)
+        addPointLoad(load, s, y, magnitude)
+        return load
+    }
+
+    private fun addPointLoad(load: F64Array, s: Double, y: Double, magnitude: Double) {
+        require(abs(s) < lengthS / 2.0 + FACE_TOLERANCE) {
+            "a station must lie on the face, |s| <= ${lengthS / 2.0} nm, was: $s"
+        }
+        require(abs(y) < lengthY / 2.0 + FACE_TOLERANCE) {
+            "a station must lie on the face, |y| <= ${lengthY / 2.0} nm, was: $y"
+        }
+        require(magnitude.isFinite()) { "the point load must be finite, was: $magnitude" }
+        val beam = faceBeamOf(y)
+        val element = elementOf(s)
+        val length = nodeS[element + 1] - nodeS[element]
+        val t = (s - nodeS[element]) / length
+        val hermite = honeycombHermiteShape(t, length)
+        val arm = y - beamY[beam]
+        load[dof(element, beam, W)] += magnitude * hermite[0]
+        load[dof(element, beam, THETA)] += magnitude * hermite[1]
+        load[dof(element + 1, beam, W)] += magnitude * hermite[2]
+        load[dof(element + 1, beam, THETA)] += magnitude * hermite[3]
+        load[dof(element, beam, PHI)] += magnitude * (1.0 - t) * arm
+        load[dof(element + 1, beam, PHI)] += magnitude * t * arm
+    }
+
+    /**
+     * Solves one load case: a [pressure] field on the face, any [pointLoads] on the face, plus
+     * any prestrain.
+     *
+     * [pointLoads] carry `force` **positive downward**, which is `W`'s own sense — so a coupling's
+     * upward support force enters as its negative, and that sign is asserted against the
+     * surrogate rather than argued.
+     */
+    fun solve(
+        pressure: PressureField = uniformPressure(0.0),
+        pointLoads: List<PointLoad> = emptyList()
+    ): HoneycombDeflection {
+        val load = assembleLoad(pressure)
+        pointLoads.forEach { addPointLoad(load, it.x, it.y, it.force) }
+        load[pinnedDof] = 0.0
+        return HoneycombDeflection(this, factorisation.solve(load), pressure)
+    }
 
     /**
      * The face field of a unit prestrain at [bond] alone — the influence function the triangle
@@ -913,6 +987,15 @@ class HoneycombGrillage(
 
         /** Gauss points per element and per tributary strip. */
         const val QUADRATURE_POINTS: Int = 6
+
+        /**
+         * How far outside the face in nm a station may be quoted and still be accepted.
+         *
+         * A tenth of a base-pair rise: a placement is quantised at 0.34 nm, so nothing a design
+         * can draw lands inside this, and it exists only so that a station written exactly at the
+         * rim survives its own rounding.
+         */
+        const val FACE_TOLERANCE: Double = 0.034
 
     }
 
