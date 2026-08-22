@@ -71,6 +71,18 @@
 # that and it is `C-0078`'s own finding about itself: a check nobody remembers to ask for is not a
 # check. It already exits with its defect count, so wiring it cost one line per document.
 #
+# `tools/check-queue-vocabulary.py` (`P-29`) runs immediately BEFORE the tracer, and the order is
+# the point: the tracer compares the two deliverables against the queue, so a queue row whose
+# verdict the tracer misreads makes the tracer's own verdict meaningless. Iteration 41 coined
+# `**SECOND DELIVERABLE ANSWERED**` on `T-9`; `queue_status` read the row CLOSED, and an OPEN task
+# left the register. Its self-test runs first for the same reason the census's does.
+#
+# AND THE TRACER COULD NOT FAIL WHEN IT WAS WIRED HERE. `main` accumulated its defect count into a
+# dead local and ended `return 0`, from iteration 12 -- so `C-0173` added two lines under
+# `set -euo pipefail` on the stated ground that the tool *"already returned its defect count"*,
+# which is true of the inner `check_document` and false of the function `sys.exit` reads. Repaired
+# by `C-0177` (`CH-0231`), which is why this block is worth more than it was yesterday.
+#
 # `tools/check-corpus-identifiers.py` (`T-273`) closes the one cross-reference class the other two
 # could not reach. `C-0083` gates a claim's FILENAME and `check-corpus-links.py` a relative LINK; a
 # bare `CH-0133` in a sentence is neither, and `T-268` cited two numbers that had been reserved in
@@ -148,6 +160,10 @@ if [ "$checks" = "yes" ]; then
     echo
     echo "--- every String.format call balances its conversions (T-207) ---"
     tools/check-kotlin-format-strings.py
+    echo
+    echo "--- the queue's own status vocabulary is closed and agrees with the reader (P-29) ---"
+    tools/check-queue-vocabulary.py --selftest > /dev/null
+    tools/check-queue-vocabulary.py
     echo
     echo "--- both deliverables trace to the corpus and agree with the queue (T-277) ---"
     tools/trace-answers.py

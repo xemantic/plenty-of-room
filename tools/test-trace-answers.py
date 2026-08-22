@@ -23,6 +23,7 @@
 # false CITED would let a drifted one through.  Both failure modes are silent, which is
 # exactly the case for executable tests.  Fixtures are in-memory; nothing here reads the
 # checkout.
+import shutil
 import sys
 import os
 
@@ -810,6 +811,84 @@ check(
     trace_answers.status_words("`T-195` is still TODO"),
     {"OPEN"},
 )
+
+# --- P-29: the exit code must carry the TASK-status check ------------------------------------
+#
+# `C-0173` wired this checker into `tools/verify.sh` under `set -euo pipefail`, which makes the
+# exit code the whole of the wiring.  Three of its four checks fed that code and the fourth --
+# the task-status contradiction, which is `C-0067`/`C-0078`/`C-0088`'s entire class -- was printed
+# and dropped.  The two `STALE-OPEN` lines are printed with the SAME tag, one failing the build and
+# one not, so the output could not tell them apart either.  These run the tool end to end, because
+# the defect was in the return statement and no unit test of a predicate can reach it.
+
+import subprocess
+import tempfile
+
+_TOOL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "trace-answers.py")
+
+
+def _run_tool(answers, queue):
+    """(exit code, stdout) for the tool over a synthetic one-line deliverable and queue."""
+    directory = tempfile.mkdtemp(prefix="trace-answers-exit.")
+    try:
+        answers_path = os.path.join(directory, "ANSWERS.md")
+        queue_path = os.path.join(directory, "TASKS.md")
+        open(answers_path, "w", encoding="utf-8").write(answers)
+        open(queue_path, "w", encoding="utf-8").write(queue)
+        run = subprocess.run(
+            [sys.executable, _TOOL, "--answers", answers_path, "--queue", queue_path],
+            capture_output=True,
+            text=True,
+        )
+        return run.returncode, run.stdout
+    finally:
+        shutil.rmtree(directory, ignore_errors=True)
+
+
+_AGREES = _run_tool(
+    "`T-9` is still open.\n",
+    "| T-9 | subject | goal | leaf | **PARTIALLY DONE** (iteration 35) |\n",
+)
+check("a deliverable that AGREES with the queue exits 0", _AGREES[0], 0)
+
+_CONTRADICTS = _run_tool(
+    "`T-9` is still open.\n",
+    "| T-9 | subject | goal | leaf | **DONE** (iteration 41) |\n",
+)
+check(
+    "a deliverable CONTRADICTED by the queue exits non-zero",
+    _CONTRADICTS[0] > 0,
+    True,
+)
+check(
+    "and it says which task",
+    "STALE-OPEN\tT-9\tCLOSED" in _CONTRADICTS[1],
+    True,
+)
+
+check(
+    "an ABSENT number exits non-zero too -- all four checks reach the code",
+    _run_tool("The layer stiffness is 123.456789012 pN/nm.\n", "")[0] > 0,
+    True,
+)
+
+check(
+    "a SELF-CONTRADICTION exits non-zero",
+    _run_tool(
+        "`T-9` is answered.\n\nElsewhere: `T-9` is still open.\n",
+        "",
+    )[0] > 0,
+    True,
+)
+
+# `sys.exit(n)` truncates modulo 256, so a raw defect COUNT of exactly 256 exits 0 and reads as a
+# clean corpus.  The counts belong in the output; the exit code is a boolean.
+_MANY = _run_tool(
+    "".join("Value {}.{:09d} appears here.\n".format(i, i) for i in range(300)),
+    "",
+)
+check("300 defects still exit non-zero (256 would truncate to 0)", _MANY[0] > 0, True)
+check("and the exit code is exactly 1, not the count", _MANY[0], 1)
 
 # --- summary -------------------------------------------------------------------------------
 if _failures:

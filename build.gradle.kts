@@ -206,10 +206,35 @@ tasks.register<Exec>("testResultFileHygiene") {
     commandLine("$projectDir/tools/check-result-file-hygiene.py", "--self-test")
 }
 
+/*
+ * `tools/check-queue-vocabulary.py` (`P-29`, `C-0177`) is the last, and it exists because the
+ * convention it enforces has been in `CLAUDE.md` twice as prose and was broken a third time:
+ * *a new status word must be tested in BOTH senses the day it is coined*.  Iteration 41 coined
+ * `**SECOND DELIVERABLE ANSWERED**` on the `T-9` row, `queue_status` read the row CLOSED, and an
+ * OPEN task left the register while `ANSWERS.md` correctly said it was live.
+ *
+ * TWO tasks rather than one, because this tool has a mutation test as well as self-tests, and
+ * `C-0127`'s standard is that a predicate's self-tests are worth nothing unless CHANGING the
+ * predicate fails a NAMED one.  Both read only in-memory fixtures; the CHECK over `TASKS.md`
+ * lives in `tools/verify.sh` beside the other corpus gates, for the reason stated above.
+ */
+tasks.register<Exec>("testQueueVocabulary") {
+    group = "verification"
+    description = "Runs tools/check-queue-vocabulary.py --selftest, the tests for the queue vocabulary"
+    commandLine("$projectDir/tools/check-queue-vocabulary.py", "--selftest")
+}
+
+tasks.register<Exec>("testQueueVocabularyMutations") {
+    group = "verification"
+    description = "Runs tools/test-check-queue-vocabulary.py, the mutation test for that predicate"
+    commandLine("$projectDir/tools/test-check-queue-vocabulary.py")
+}
+
 tasks.named("test") {
     dependsOn(
         "testHarness", "testDeliverableTracer", "testMarkdownTables", "testCorpusLinks",
-        "testFormatStrings", "testChallengeIndex", "testResultFileHygiene"
+        "testFormatStrings", "testChallengeIndex", "testResultFileHygiene",
+        "testQueueVocabulary", "testQueueVocabularyMutations"
     )
 }
 

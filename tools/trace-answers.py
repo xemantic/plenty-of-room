@@ -626,7 +626,16 @@ def main(argv=None):
     failures = 0
     for document in arguments.answers:
         failures += check_document(document, arguments, sources)
-    return 0
+    # `P-29`.  This read `return 0` from iteration 12's multi-document refactor, which accumulated
+    # `failures` into a DEAD local -- so for ~30 commits the tool could not fail on ANY of its four
+    # checks, and `C-0173` then wired it into `tools/verify.sh` under `set -euo pipefail` on the
+    # stated ground that *"it already returned its defect count"*.  It did not, and nothing had run
+    # it to find out: a gate is a claim about a corpus and it is discharged by RUNNING it.
+    #
+    # A BOOLEAN and not the count, deliberately.  `sys.exit(n)` truncates modulo 256, and
+    # `counts["ABSENT"]` is unbounded -- exactly 256 absent tokens would exit 0 and read as clean.
+    # The counts are printed; the exit code only has to say whether the corpus is clean.
+    return 1 if failures else 0
 
 
 def check_document(document, arguments, sources):
@@ -662,6 +671,7 @@ def check_document(document, arguments, sources):
     # The status check runs unconditionally and reports to stderr beside the token summary,
     # because `C-0067` found this class of drift outlives the numeric class by iterations and
     # a check nobody remembers to ask for is not a check.
+    stale = []
     if os.path.isfile(arguments.queue):
         with open(arguments.queue, encoding="utf-8") as handle:
             queue_text = handle.read()
@@ -715,7 +725,14 @@ def check_document(document, arguments, sources):
         "# {}: {} task(s) the document contradicts itself about".format(tag, len(contradictions)),
         file=sys.stderr,
     )
-    return counts["ABSENT"] + len(stale_challenges) + len(contradictions)
+    # `P-29`.  `len(stale)` was printed and DROPPED: three of the four checks fed the exit
+    # code and the TASK-status one -- `C-0067`/`C-0078`/`C-0088`'s whole class, and the reason
+    # this file exists -- did not.  `C-0173` then wired the tool into `tools/verify.sh` under
+    # `set -euo pipefail`, where the exit code IS the wiring, so for that class the gate could
+    # not fail: a `T-9` contradiction printed on stdout through three commits and two claims
+    # recording a green suite.  Worse, the challenge-status check prints the SAME `STALE-OPEN`
+    # tag and WAS counted, so the output could not tell a failing line from an inert one.
+    return counts["ABSENT"] + len(stale) + len(stale_challenges) + len(contradictions)
 
 
 if __name__ == "__main__":
