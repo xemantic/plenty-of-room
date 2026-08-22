@@ -10877,3 +10877,48 @@ mis-transcription, publishing **both** verdicts rather than picking one.
 - **A ratio of two order statistics can reverse a paired reading's SIGN**, not merely inflate it: six
   cells read *"better"* on the ratio of 90th percentiles while the honeycomb is worse at 58–65 % of
   the same draws.
+
+## Iteration 41 — 2026-08-22: the emission layer, a reversal carried, and two graphs that disagree
+
+Three rows: `T-275`, `T-276` and `T-272`, plus `T-277` raised and closed inside the pass.
+Four claims (`C-0170`–`C-0173`), six challenges (`CH-0219`–`CH-0224`). Every reserved number taken.
+
+**The synthesis carried a reversal for the first time.** `C-0171` struck **twenty-two** passages —
+counted by *differencing struck spans against `HEAD`*, not by hand — because `C-0167` overturned the
+coupled-cell flatness reading and `F4` did **not** fire: the reversal is **not a multiplier**, so no
+single scaling note was available and every passage had to go individually. Its sharper finding is
+`CH-0221`: **`C-0154` had no carrier in either deliverable for two whole syntheses**, zero hits on
+five search keys, because *a claim whose subject is a **model** states no verdict about the device*
+and a verdict-keyed synthesis cannot see it. And the checker census was **right in its number and
+wrong in its predicate** — eight exist, four read the deliverables, seven were wired, and the
+unwired one was `tools/trace-answers.py`, the **only** one that reads the two customer-facing
+documents by name. Wired (`C-0173`); it already returned its defect count, so it cost one line each.
+That is `C-0078`'s own finding recurring against itself.
+
+**One division settled the census.** `112 bp` is seven column pitches and **seven is odd**, so the
+tile-centre and row-start phase data are exactly 8 bp apart: the simulated tile (phase 16, 49 staple
+crossovers) and the graded lattice (phase 8, 42) **share not one column**. `k_θ` does not move — it
+is a per-site equipartition reading no count — and the continuum runs the *other* way, `D_⊥ = k_θ d/p`
+landing exactly on **49.0**, so the count effect has opposite signs in the smeared and discrete
+representations. Priced at **2.3 %** of peak dishing.
+
+**The emission layer's `P2` is discharged whole**: 166 reads in 75 sources became typed handles, **0**
+literal reads remain, and the derived reader graph is **edge-for-edge identical**. `P3`/`P4` are
+declared on 127 of 128 and emitted on 72, with the 55-study residue **named** rather than estimated.
+
+### What surprised us
+
+- **`A1`'s constraint-count assertion is necessary and not sufficient.** There are **two** dependency
+  graphs — the committed census `tools/reemission-order.py` actually reads, and the one derived from
+  the tree — and both came back non-zero and acyclic at 148 against 164 constraints while **their
+  orders diverge from position 50 of 151**.
+- **A shared Kotlin source is a dependency edge no result-file reader graph can see.** A repair to
+  `HoneycombGrillage` left `T-267` stale by 240 degrees of freedom, because that study *constructs*
+  the object without *reading* its result file.
+- **A new schema key's name is a census, not a preference** — `lattice` was already a top-level key
+  and 101 numeric leaves; twenty-three files were emitted and reverted before the block was
+  namespaced.
+- **`--help` built a 151-file shadow corpus**, `P-28`'s `./--check/` reproduced exactly, by an
+  emitter that treated an unrecognised argument as an output path.
+- A `CLAUDE.md` entry withdrawn last iteration for being eleven iterations stale has a companion
+  hazard: **`git checkout <dir>` on a shared checkout is `git stash`'s twin.**
