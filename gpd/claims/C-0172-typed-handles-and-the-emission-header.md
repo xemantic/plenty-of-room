@@ -319,6 +319,13 @@ carry, and it is now a **count** rather than a hope:
 *regression* one — a file carrying a header its study no longer declares, which is `C-0101`'s
 `T-157` staleness with the arrow reversed.
 
+### The suite
+
+`tools/verify.sh` on this tree: **`BUILD SUCCESSFUL in 22m 27s`**, and a confirmatory
+`./gradlew test` against the committed tree afterwards: **3 254 tests in 186 classes, 0 failures,
+`BUILD SUCCESSFUL in 20m 19s`**. Every gate in `tools/verify.sh` comes back clean, including the
+three this task adds.
+
 ## 10. Validity range
 
 - **This claim is about emission, provenance and the dependency graph.** No physics, no model, no
