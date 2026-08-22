@@ -169,9 +169,15 @@ own recommendation.** Decisions 1–6 were answered on 2026-08-18 and the work t
 further than anyone expected. It ends at a tile that is ~~**not** the one §3 describes~~ **0.929467162 of §3's
 footprint, i.e. essentially the one §3 describes** (`C-0141`): `10 × 6` is ~~6.6×~~ **4.06×** flatter
 than the four-layer tile now recommended — 0.0978155002 against 0.0240648102, a ratio constructed here and
-stated by no claim — has **no** coupling-fraction threshold at all — so it removes the
-last unmeasured dependency in the flatness verdict rather than bounding it — and is what the caDNAno paper's
-own folding measurements recommend. ~~It costs **a third of the footprint**.~~
+stated by no claim — ~~has **no** coupling-fraction threshold at all — so it removes the
+last unmeasured dependency in the flatness verdict rather than bounding it~~ **WITHDRAWN, iteration 40**
+([`C-0167`](gpd/claims/C-0167-coupled-cells-on-the-honeycomb-grillage.md),
+[`C-0154`](gpd/claims/C-0154-honeycomb-grillage.md)): **that was a smeared-sheet statement.**
+On the honeycomb **grillage** the enhancement-free `10 × 6` block dishes **0.132443428** at the 116 bp extent and
+**0.127358454** at 112 bp, **neither of them flat** — so the interlayer-coupling calibration is **back inside** the
+`10 × 6` verdict and is **cleared** by it (0.0501417315 and 0.0522223659 at the two ends of the measured 0.26–0.33
+band) rather than being absent from it. **It bounds the dependency; it does not remove it** — and it is what the
+caDNAno paper's own folding measurements recommend. ~~It costs **a third of the footprint**.~~
 **WITHDRAWN, iteration 35** (`C-0141`, `C-0144`): **it costs no footprint at all.**
 Corrected to the honeycomb's own two pitches, `10 × 6` is **38.08 × 37.504 nm — 0.929467162 of §3's 40.35 nm** and
 `15 × 4` is **38.08 × 56.524 nm — 1.40084263×** it, so the ordering **reverses**: the tile §7 offered as the *cost*
@@ -213,7 +219,7 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 | 4 | Which device does §3's *desired* clause ask for? | `T-112` | Every desired-stroke number in the corpus has to be quoted twice | **One device, placed at the acceptable clause** | **TWO DEVICES.** Device B is placed at 10 pN/nm and its binding constraint becomes `C-0017`'s stability floor |
 | 5 | What is the scaffold — linear or circular, M13 or synthetic, and how long? | `T-154` | A seam costs 6–12 of 34 arm stations, and §3's 40.0 nm is not a buildable seamless width | **A purpose-length scaffold**; the choice is a fabrication decision, not a modelling one | **CIRCULAR M13, ~7–8 k nt** — so the remainder is the DEFAULT — and the remedy for the excess is *"just make the tile thicker"* |
 | 6 | Does §3 admit a **two-layer** tile, or is single-layer a requirement? | `T-166` | The only coupling topology that narrows the flatness negative is multilayer, and it is the one motif here with a published precedent | **A yes/no is enough**; a *no* closes the last open recovery route | **YES, BY IMPLICATION**, and volunteered rather than granted. Reopens the body axis (`T-191`), not the coupling axis |
-| **7** | ~~**NEW — is a 38 × 25 nm tile acceptable, in exchange for removing the last unmeasured dependency?**~~ **SUPERSEDED AS POSED, iteration 35** (`C-0144` §4, on `C-0141`) — **RE-POSED as two questions: confirm `10 × 6`, and name the scaffold** (§7) | item 12 of the queue's questions for Kazik — the only row here whose owner column names a decision rather than a task, its analysis having closed in iteration 25 (§7) | ~~Carrying the interlayer-coupling calibration as a live dependency on the flatness verdict, and the coupled result at 1 of 8 cells rather than 8 of 8~~ — **the cost of deferring has REVERSED SIGN**: the tile this question offered as its *default*, `15 × 4`, is **1.40084263×** §3's footprint, **fails** `T-5b` at the measured band's adverse end (**0.101759944**) and is **0 of 8** coupled cells at both ends of that band | ~~**`10 × 6` on both flatness and published folding yield — but the footprint is a specification and only NDI holds that column**~~ **`10 × 6` on all THREE criteria this programme can rank — flatness, published folding yield and now footprint, which is 0.929467162 of §3's. There is no trade left to weigh** — **and since iteration 39 the block is a committed scadnano FILE that the reference implementation loads with zero warnings and that reads `ADMISSIBLE` at ZERO forced crossovers** (`C-0160`, `C-0164`), so a *yes* is now given against an object rather than against a pair of integers. It carries **no staple set** and `ADMISSIBLE` is a statement about this repository's rules, not about foldability | *raised iteration 26; **superseded as posed and re-posed iteration 35**; **updated iteration 39**; awaiting* |
+| **7** | ~~**NEW — is a 38 × 25 nm tile acceptable, in exchange for removing the last unmeasured dependency?**~~ **SUPERSEDED AS POSED, iteration 35** (`C-0144` §4, on `C-0141`) — **RE-POSED as two questions: confirm `10 × 6`, and name the scaffold** (§7) | item 12 of the queue's questions for Kazik — the only row here whose owner column names a decision rather than a task, its analysis having closed in iteration 25 (§7) | ~~Carrying the interlayer-coupling calibration as a live dependency on the flatness verdict, and the coupled result at 1 of 8 cells rather than 8 of 8~~ — **the cost of deferring has REVERSED SIGN**: the tile this question offered as its *default*, `15 × 4`, is **1.40084263×** §3's footprint, **fails** `T-5b` at the measured band's adverse end (**0.101759944**) and is **0 of 8** coupled cells at both ends of that band. **RE-READ against iteration 40 (`C-0167`, `C-0154`, `CH-0213`): the coupled-cell halves of this row are SMEARED single-layer square-lattice solves and on the honeycomb GRILLAGE no coupled cell of either cross-section is flat — but the ordering STRENGTHENS, because `15 × 4`'s FREE tile is outside `T-5b` at every enhancement read on that lattice (0.312237799 / 0.227177955 / 0.220064299) where `10 × 6`'s is inside it (0.0501417315 / 0.0522223659). This row now stands on the UNCOUPLED tile alone** | ~~**`10 × 6` on both flatness and published folding yield — but the footprint is a specification and only NDI holds that column**~~ **`10 × 6` on all THREE criteria this programme can rank — flatness, published folding yield and now footprint, which is 0.929467162 of §3's. There is no trade left to weigh** — **and since iteration 39 the block is a committed scadnano FILE that the reference implementation loads with zero warnings and that reads `ADMISSIBLE` at ZERO forced crossovers** (`C-0160`, `C-0164`), so a *yes* is now given against an object rather than against a pair of integers. It carries **no staple set** and `ADMISSIBLE` is a statement about this repository's rules, not about foldability — **and since iteration 40 a fourth stated omission: the file does not declare its scaffold TOPOLOGY, so it reads as LINEAR by default where the budget it was drawn to is M13's CIRCLE** ([`CH-0215`](gpd/challenges/CH-0215-the-artifact-does-not-state-its-scaffold-topology.md), open; no number and no verdict moves, `C-0168`) | *raised iteration 26; **superseded as posed and re-posed iteration 35**; **updated iteration 39**; awaiting* |
 | **8** | **NEW — which width reading is the Gen-1 tile SPECIFIED to: the ~~112 bp = 38.08 nm~~ **`109 bp`** span every one of its rows has, or the 116 bp = 39.44 nm box the folded block occupies?** (§8) | `T-242`, and item 13 of the queue's questions for Kazik | ~~The two readings are **3.57 %** apart and the difference is a **stagger**, not a length. Deferring means a four-layer flatness verdict decided by a **0.07 nm** slack against a numerical guard — **6 flat cells of 8 against 3** (`C-0146`, `CH-0185`)~~ **RESTATED, iteration 38 (`C-0151`, `CH-0195`): the difference is the `7 bp = 2.38 nm` stagger of the DRAWABLE `102 / 109` raster, and the flatness threshold is WITHDRAWN — the eleventh and twelfth columns both belonged to a raster that does not close, and the drawable one reads 10 columns at every guard convention.** What deferring costs is now the drafting ambiguity alone — every plan margin in the corpus quoted at whichever width its author happened to take | **None. This programme cannot rank them**, because no model here has a per-row row length and both readings are true of the same object. What it can do is say what each costs, and ask **what a ~~`1.36 nm`~~ `2.38 nm` stagger costs NDI**. **RE-READ against iteration 39 (`C-0160`, `C-0164`): nothing moves it** — the block is now a file and **both** readings are re-derived on that same file, so drawing the object did not choose between them | *raised iteration 36; **re-read iteration 39**; awaiting* |
 
 ---
@@ -852,17 +858,41 @@ it was the **cross-section**. [`C-0118`](gpd/claims/C-0118-coupled-four-layer.md
 ones, best **0.0278431488**, against **one of eight** on `15 × 4`~~ — and
 [`C-0122`](gpd/claims/C-0122-honeycomb-station-lattice.md) shows the flatness survives being placed on the
 honeycomb's own 21 bp station ladder.
-**RE-GRADED at the corrected cross-section, iteration 34**
+~~**RE-GRADED at the corrected cross-section, iteration 34**
 ([`C-0142`](gpd/claims/C-0142-coupled-cells-at-the-honeycomb-cross-section.md),
 [`CH-0176`](gpd/challenges/CH-0176-the-first-flat-coupled-tile-is-flat-at-half-its-cells.md)):
 **four** of sixteen cells are flat, **all four on `10 × 6`**, and `15 × 4` is **0 of 8 at both ends of the measured
 0.26–0.33 band** — its one flat cell moving 0.0882933461 → **0.145354102**.
 The best cell moves 0.0278431488 → **0.0680677948** and is still the sparsest coupling tested; the cross-section's
-worth falls 3.17109774× → **2.13543134×**.
-**A coupled four-layer tile is still flat at the 90th percentile under the measured folding statistics** — and the
+worth falls 3.17109774× → **2.13543134×**.~~
+~~**A coupled four-layer tile is still flat at the 90th percentile under the measured folding statistics** — and the
 path count has stopped being a request: snapped onto `C-0141`'s honeycomb station ladder all sixteen placements are
 realisable (worst snap **3.332 nm**, inside a 3.57 nm ceiling) and **three** of them are flat, all three **equal
-springs**. **The per-site incorporation measurement is still wanted** — this is a
+springs**.~~
+**WITHDRAWN AND REVERSED, iteration 40 — A COUPLED TILE IS NOT FLAT, AND AN UNCOUPLED ONE IS**
+([`C-0167`](gpd/claims/C-0167-coupled-cells-on-the-honeycomb-grillage.md),
+[`C-0154`](gpd/claims/C-0154-honeycomb-grillage.md),
+[`CH-0213`](gpd/challenges/CH-0213-the-recommended-coupled-design-does-not-survive-the-honeycomb-grillage.md)).
+**Every coupled cell in this section was solved on a smeared equivalent sheet**, whose `acrossHelixRigidity`
+overstates a honeycomb block's across-helix rigidity by **`24/7` = 3.42857×** — only half a honeycomb's in-plane
+adjacent pairs are bonded, so one layer of the block is a set of **dimers** rather than a sheet and the across-helix
+load path must traverse the thickness.
+Re-graded on that lattice — same extent, same stations, same mandate, same normalising stroke, the **same
+4 000-realisation dropout stream**, and the smeared half **reproducing the four published percentiles at
+`≤ 6.3e−10` in the same process** — **0 of 64** cells clear `T-5b`'s 0.10 at the 90th percentile against **15 of 64**
+smeared, the recommended cell moves **0.0773373597 → 0.145086839**, and the honeycomb reads worse at **4 000 of
+4 000** paired realisations.
+**It is not a multiplier** — the median of the per-realisation ratios runs **1.06375481 to 2.47485493** and is not
+monotone in the path count — so no table in this file can be rescaled.
+**What fails is the COUPLING, not the block.**
+The **uncoupled** four-layer honeycomb block is flat at **0.0501417315** and **0.0522223659** at the two ends of the
+measured 0.26–0.33 band, and the recommended cell is flat at **zero defects**, **0.0626407003**; it is the
+**measured** staple dropout, acting on a tile whose across-helix rigidity is `24/7` smaller than this file believed,
+that carries it past the tolerance.
+**So the question this section has been answering since iteration 25 changes**: not *which* coupling, but **whether
+the `10 × 6` block needs one at all** — a question this programme has never asked of a body that was already flat on
+its own, and one the stroke, the lateral confinement and the output-coupling stability mandate all still want ties
+for, on grounds that are not flatness. **The per-site incorporation measurement is still wanted** — this is a
 TRL 1–3 result under somebody else's measured statistics, not a built tile — but it is no longer the only
 thing that could move the answer, and this paragraph said it was.
 
@@ -892,10 +922,10 @@ thing that could move the answer, and this paragraph said it was.
 | footprint, across the helices | **56.524 nm — 1.40084263× §3's 40.35** | **37.504 nm — 0.929467162 of it** |
 | footprint, along the helices | the row length is **not uniform** — `C-0140`; design (i)'s remedy is ~~112 / 108 bp~~ **`102 / 109 bp`, iteration 37 (`C-0151`)**, an axial extent of **39.44 nm**, `−1.40 %` of §3's nominal — **the extent is unchanged by the correction** | the same alternation (**29 / 29**); ~~its own two row lengths are not derived here~~ ~~**the same 112 / 108 pair, derived iteration 35**~~ **the same `102 / 109` pair, RESTATED iteration 38** (`C-0146` graded the whole `10 × 6` coupled family at 112 / 108 and `C-0151` re-graded it at the drawable pair; `C-0147`'s alternation is a property of the turn sense and not of the block's shape, and at `102 / 109` the two faces are **7 / 14 bp** rather than 4 / 8). **And the extent is a STAGGER, not a length — see §8** |
 | folding, measured by Douglas et al. | sharp monomer band, 1 of 3 of seven | **the greatest fraction of defect-free objects** |
-| free tile, uncoupled | **0.0978155002** of the stroke | **0.0240648102** |
-| interlayer-coupling threshold | **`f` = 0.276970522 — INSIDE the measured 0.26–0.33 band** | none — flat at every `f` including 0 |
+| free tile, uncoupled | **0.0978155002** of the stroke | **0.0240648102** ([`CH-0216`](gpd/challenges/CH-0216-the-recommended-block-is-graded-at-neither-of-its-widths.md), raised iteration 40: that number is graded at `edgeX` = **112 bp = 38.08 nm**, which is **neither** of the block's two width readings — its rows span 109 bp and its box 116 bp — and re-graded it is **0.0231880196** at 109 bp and **0.0231299291** at 116, **≤ 3.9 %** and *both better than the value in print*, so no verdict moves) |
+| interlayer-coupling threshold | **`f` = 0.276970522 — INSIDE the measured 0.26–0.33 band** | ~~none — flat at every `f` including 0~~ **RESTATED, iteration 40 (`C-0167`, `C-0154`): on the honeycomb GRILLAGE there IS a threshold — the enhancement-free block dishes 0.132443428 at 116 bp and 0.127358454 at 112 bp, neither flat — and the measured band CLEARS it, 0.0501417315 / 0.0522223659. The dependency is bounded, not removed** |
 | at the band's adverse end, `f` = 0.26 | **0.101759944 — FAILS `T-5b`'s 0.10** | **0.0255589305 — flat** |
-| coupled, under the measured staple dropout | **0 of 8 cells flat, at BOTH ends of the band** | **4 of 8**, best **0.0680677948** — on the abstract cross-section (`C-0142`). **Re-graded on the DRAWABLE `102 / 109` raster's own 10 crossover columns (`C-0151`): 2 of 8, and the RECOMMENDED cell — one column, ten paths, equal springs — is flat at both ends of the band, `0.0773373597` at `f` = 0.30 and `0.0821458169` at `f` = 0.26** |
+| coupled, under the measured staple dropout | **0 of 8 cells flat, at BOTH ends of the band** | ~~**4 of 8**, best **0.0680677948** — on the abstract cross-section (`C-0142`). **Re-graded on the DRAWABLE `102 / 109` raster's own 10 crossover columns (`C-0151`): 2 of 8, and the RECOMMENDED cell — one column, ten paths, equal springs — is flat at both ends of the band, `0.0773373597` at `f` = 0.30 and `0.0821458169` at `f` = 0.26**~~ **REVERSED, iteration 40 (`C-0167`, `CH-0213`): every one of those cells is a SMEARED single-layer square-lattice solve. Re-graded on the honeycomb GRILLAGE — same extent, stations, mandate, stroke and 4 000-realisation stream, the smeared half reproducing at `≤ 6.3e−10` — `0` of `64` cells clear `T-5b` against `15` of `64` smeared, the recommended cell is `0.145086839` / `0.149852804`, and the honeycomb is worse at 4 000 of 4 000 paired realisations. It is NOT a multiplier (1.06375481–2.47485493, non-monotone in the path count). **What fails is the COUPLING**: the UNCOUPLED block is flat at both ends of the band and the recommended cell is flat at ZERO defects, `0.0626407003` |
 | attachment stations its top face supplies | 90 | 60 |
 
 Provenance, row by row: the footprint, the free-tile dishing and the threshold are `C-0141`'s and **all of them
@@ -1083,16 +1113,22 @@ rows of six helices, which is ~~**38.08 × 25.36 nm**~~ **38.08 × 37.504 nm, 0.
 | footprint | ~~38.08 × 38.04 nm~~ **38.08 × 56.524 nm — 1.40084263× §3's** | ~~**38.08 × 25.36 nm — 0.667 of it**~~ **38.08 × 37.504 nm — 0.929467162 of §3's** |
 | folding, measured by Douglas et al. | sharp monomer band, 1 of 3 of seven | **the greatest fraction of defect-free objects** |
 | free tile, uncoupled | ~~0.0577199433 of the stroke~~ **0.0978155002** | ~~**0.00874363524 — 6.6× flatter**~~ **0.0240648102 — 4.06× flatter, which is the ratio of the two cells of this row and is stated by no claim** |
-| flatness threshold in the interlayer coupling | ~~`f` = 0.0788618807, cleared **3.29690337×**~~ **`f` = 0.276970522 — INSIDE the measured 0.26–0.33 band, and it FAILS at 0.26** | **none — flat at every `f` including 0** |
-| coupled, under the measured staple dropout | ~~1 of 8 cells flat at the 90th percentile~~ **0 of 8, at both ends of the band** | ~~**8 of 8**, best 0.0278431488~~ **4 of 8**, best **0.0680677948** |
+| flatness threshold in the interlayer coupling | ~~`f` = 0.0788618807, cleared **3.29690337×**~~ **`f` = 0.276970522 — INSIDE the measured 0.26–0.33 band, and it FAILS at 0.26** | ~~**none — flat at every `f` including 0**~~ **RESTATED, iteration 40 (`C-0167`, `C-0154`): a threshold DOES exist on the honeycomb grillage — enhancement-free the block dishes 0.132443428 / 0.127358454, neither flat — and the measured band clears it at 0.0501417315 / 0.0522223659** |
+| coupled, under the measured staple dropout | ~~1 of 8 cells flat at the 90th percentile~~ **0 of 8, at both ends of the band** | ~~**8 of 8**, best 0.0278431488~~ ~~**4 of 8**, best **0.0680677948**~~ **REVERSED, iteration 40 (`C-0167`, `CH-0213`): those were smeared-sheet solves; on the honeycomb grillage `0` of `64` cells clear `T-5b` against `15` of `64` smeared, and the recommended cell is `0.145086839`. The UNCOUPLED block stays flat, and the recommended cell is flat at zero defects, `0.0626407003`** |
 | attachment stations its top face supplies | 90 | 60 |
 
-**Why the third row is not the important one.** `10 × 6` being flatter is a convenience. **`10 × 6` having no
+~~**Why the third row is not the important one.** `10 × 6` being flatter is a convenience. **`10 × 6` having no
 threshold at all is a different kind of statement**: the `15 × 4` verdict depends on an interlayer-coupling
 fraction calibrated on **rods** rather than slabs, and this programme has said plainly that a slab plausibly
 realises less. On `10 × 6` that question **stops being load-bearing** — it is flat even with the layers fully
 uncoupled. It is the only place in this programme where a design choice **removes** an unmeasured dependency
-rather than bounding one.
+rather than bounding one.~~
+**CORRECTED, iteration 40** (`C-0167`, `C-0154`). `10 × 6` being flatter is still a convenience, and the
+second sentence is **wrong on the honeycomb lattice**: enhancement-free, the block dishes **0.132443428** and is
+not flat, so the interlayer-coupling fraction is **load-bearing on `10 × 6` too**. What `10 × 6` buys is not the
+*removal* of that dependency but a **wide clearance** of it — flat at **0.0501417315** and **0.0522223659** across
+the whole measured 0.26–0.33 band where `15 × 4` fails inside it, and outside the tolerance only at an enhancement
+**no calibration proposes**. That is a bound rather than a removal, and this file said removal.
 
 **What it costs.** ~~A third of the area.~~ **NOTHING — WITHDRAWN, iteration 35 (`C-0141`): corrected, `10 × 6`
 is 0.929467162 of §3's footprint and `15 × 4` is 1.40084263× it.** §3's 100 pN is specified **over the
@@ -1193,11 +1229,23 @@ pair, and **`112 / 108` does not close on caDNAno's `±5 bp` rule**, so *both* g
 undrawable design. At the drawable `102 / 109` the interface window is **102 bp**, the count is **10**, and it
 is **10** at all three `EDGE_MARGIN` conventions — 0.05, 0.17 and 0.34 nm, slack **2.45 / 2.21 / 1.87 nm** —
 so the guard is **inert** and **the width convention decides no flatness cell at all**.
-What the tenth-versus-eleventh column *is* worth is the cost of **closure**, not of the convention: **2** flat
+What the tenth-versus-eleventh column *is* worth is the cost of **closure**, not of the convention: ~~**2** flat
 cells of eight against 3, a uniform **1.0567397–1.09611647×** of the dishing, and the recommended cell — one
 column, ten paths, equal springs on `10 × 6` — flat at both ends of the measured band, **0.0773373597** at
-`f = 0.30` and **0.0821458169** at `f = 0.26` against `T-5b`'s 0.10.
+`f = 0.30` and **0.0821458169** at `f = 0.26` against `T-5b`'s 0.10.~~
+**RESTATED, iteration 40** ([`C-0167`](gpd/claims/C-0167-coupled-cells-on-the-honeycomb-grillage.md),
+[`CH-0213`](gpd/challenges/CH-0213-the-recommended-coupled-design-does-not-survive-the-honeycomb-grillage.md)):
+those cells are **smeared** single-layer square-lattice solves. Re-graded on the honeycomb **grillage** the count
+is **0** of 8 and the recommended cell is **0.145086839** / **0.149852804** — but the **conclusion of this section
+is unchanged and strengthened**, because on that lattice **no** coupled cell of either column count is flat, so the
+width convention decides no flatness cell on **either** model.
+What is now flat is the **uncoupled** block, at **0.0501417315** and **0.0522223659**, and the recommended cell at
+**zero defects**, **0.0626407003** — neither of which reads the width convention differently.
 **So the question is now purely a drafting one, and nothing this programme recommends turns on it.**
+**And this section's own price line has now been withdrawn TWICE** — once in iteration 38 when the graded column
+counts turned out to belong to an undrawable raster, and once here when the cells they were graded on turned out to
+be the wrong model. Both withdrawals run the same way: **the question loses a cost dimension and keeps its
+substance.**
 
 **The options, and what each costs.**
 
@@ -1296,9 +1344,29 @@ at **`5.62052112 – 25.9227606 pN·nm/rad`** with the corpus's fitted `13.52941
 `C-0067`'s standing failure in its own direction**: the sentence under-claims — it says a thing is still owed
 that was delivered — and a reviewer checks the assertions, not the disclaimers.
 **What is genuinely outstanding is now THREE oxDNA items, and one of them is new this iteration.**
-`T-9` is **`PARTIALLY DONE`** in [`TASKS.md`](TASKS.md) and stays live on two of its three deliverables: the
+~~`T-9` is **`PARTIALLY DONE`** in [`TASKS.md`](TASKS.md) and stays live on two of its three deliverables: the
 crossover's **vertical / axial compliance** (`C-0009` models it rigid in `z`) and its **in-plane shear `k_s`**
-(`C-0020`'s single undetermined input). The third is
+(`C-0020`'s single undetermined input).~~
+**UPDATED, iteration 40** ([`C-0169`](gpd/claims/C-0169-crossover-vertical-compliance.md)): **the vertical half is
+delivered — as a CRITERION rather than as a measured `k_z`, and the claim says so plainly.**
+The existing oxDNA trajectory cannot answer it on five checks, the decisive one being that **no estimator in this
+repository computes the coordinate at all**, so the 649 MB of pruned frames would not have contained the answer
+either and `T-9`'s *"at no extra cost"* was void the moment the hinge constant was filed. A measurement is priced
+at **about one day on 8 cores** plus a six-line estimator, with the frames retained.
+What ran instead is three orders of magnitude cheaper and settles the question the model actually asks: this
+repository already **derives** a crossover's in-plane displacement stiffness from the same two phosphate bonds,
+**64.7058824 pN/nm**, and the lattice's *rigid* vertical link is a penalty **154.545455×** that.
+Swept alone at all 56 crossovers over four decades, the **binary reading of the constraint holds on three of four**
+pre-registered predicates — it carries **0.0120392417** of the whole present-versus-absent movement and moves the
+peak per-crossover force **2.93612244 %** — and **fails the fourth by 1.12787346×**: the vertical link is worth
+**3.42** percentage points of the flatness convention against the **3.03** points the *entire* row-end hinge unknown
+was worth, and **like it, it does not cross**.
+**So `C-0009`'s rigid link is now BOUNDED rather than ASSERTED**, over the one interval of the penalty axis this
+repository had never resolved
+([`CH-0217`](gpd/challenges/CH-0217-the-penalty-was-never-compared-against-the-crossovers-own-displacement-stiffness.md)),
+and the registration design rule it supports survives on a sharper ground than a small number: with the link
+**deleted** every crossover carries **exactly zero** vertical force, so the rule rests on the link's **existence**.
+**`T-9` stays live on the in-plane shear `k_s` alone**, and on a measured `k_z` if one is ever wanted. The third is
 [`CH-0209`](gpd/challenges/CH-0209-a-crossover-drawn-as-two-strand-crossings.md), raised in iteration 39: the
 field's own reference generator draws every Rothemund crossover as **two** strand crossings at adjacent offsets
 where this corpus draws **one**, and `C-0157` relaxed only the second. Settling it is one relaxation of the
@@ -1320,7 +1388,16 @@ way.
 **This file is now checked, and it was not before.**
 ~~`ANSWERS.md` had four retained checkers on it — numbers, task statuses, challenge statuses and self-consistency
 — and `DECISIONS-FOR-NDI.md`, which is the document NDI actually reads, had none.~~
-**UPDATED, iteration 39 — there are now SEVEN, and every one of them reads this file.** Numbers, task
+~~**UPDATED, iteration 39 — there are now SEVEN, and every one of them reads this file.**~~
+**CORRECTED, iteration 41 — the count was right and the two claims around it were not, and all three are DERIVED
+here rather than written.** `ls tools/check-*.py tools/trace-answers.py` returns **eight** retained checkers;
+`grep` of [`tools/verify.sh`](tools/verify.sh) shows **seven** of the eight wired into it — every one **except**
+`trace-answers.py`, which is the one that reads this document *by name* and is run by hand each synthesis (only its
+self-test is wired, in `build.gradle.kts`); and of the eight, **four** read this file at all — `trace-answers.py`,
+`check-corpus-links.py`, `check-markdown-tables.py` and `check-corpus-identifiers.py`. The other four read `src/`,
+`TASKS.md`, `gpd/challenges/` and `gpd/results/`.
+**A self-describing count can be right in its NUMBER and wrong in its PREDICATE**, and this sentence bundled three
+different counts under one of them. What follows is the enumeration, which is correct as a list: numbers, task
 statuses, challenge statuses and self-consistency ([`tools/trace-answers.py`](tools/trace-answers.py), which
 takes `--answers` and defaults to **both** documents); corpus links
 ([`tools/check-corpus-links.py`](tools/check-corpus-links.py)); Markdown table rendering
@@ -1333,8 +1410,11 @@ takes `--answers` and defaults to **both** documents); corpus links
 a bare challenge number written into a sentence being *neither a filename nor a link*, so no earlier gate
 could see one
 ([`tools/check-corpus-identifiers.py`](tools/check-corpus-identifiers.py),
-[`C-0166`](gpd/claims/C-0166-dangling-identifiers.md)). All seven are wired into
-[`tools/verify.sh`](tools/verify.sh).
+[`C-0166`](gpd/claims/C-0166-dangling-identifiers.md)); and, reading `src/` rather than this file,
+Kotlin format-string balance ([`tools/check-kotlin-format-strings.py`](tools/check-kotlin-format-strings.py)),
+which the previous count omitted.
+~~All seven are wired into [`tools/verify.sh`](tools/verify.sh).~~ **Seven of the eight are; `trace-answers.py` is
+not, and that is the one whose absence a synthesis has to remember.**
 **A count of checkers is itself a self-describing number and this one was stale**, which is the same class
 the paragraph above it records.
 `T-184` ([`C-0124`](gpd/claims/C-0124-decision-file-drift.md)) enumerated **36** of its assertions and found
