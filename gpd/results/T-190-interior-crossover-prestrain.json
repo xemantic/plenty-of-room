@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-190",
     "leaf": "A8.2 (the plan and lattice model the anchoring array is written on), with A1.2",
     "question": "What do the 42 interior crossovers of C-0107's graded corrugated field carry, and does the cancellation that keeps C-0090's placement flat hold?",

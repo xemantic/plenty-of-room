@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-122",
     "title": "Can a 5:1 per-path coupling stiffness ratio be BUILT?",
     "leaf": "A8.2",

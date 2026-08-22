@@ -19,6 +19,7 @@ package com.xemantic.nano.plentyofroom.brush
 import com.xemantic.nano.plentyofroom.ELECTRON_VOLT
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -167,7 +168,19 @@ fun main() {
     output.parentFile.mkdirs()
     output.writeText(
         json.encodeToString(
-            json.encodeToJsonElement(result).withEmissionHeader(LatticeTag.NONE, null)
+            json.encodeToJsonElement(result)
+                // NINE DIGITS (`T-278`, closing `CH-0223`). `P-18`'s provenance rule is "the
+                // loosest solver tolerance on any path from a model input to it". Every one of
+                // this study's three compression models is analytic — `DeGennesScaling`'s
+                // `alexanderDeGennesHeight` and `MilnerWittenCates`' closed-form equilibrium —
+                // and the only iteration on the path is `heightUnderLoad`, a hundred bisection
+                // halvings of a bracket that is `[L0e-12, L0]` wide, which is machine precision
+                // and then some. `CH-0223` names this study as "downstream of a solved SCF
+                // height"; neither it nor anything it calls names `SelfConsistentField` or
+                // `heightAtPressure` at all, so `SOLVED_HEIGHT_SIGNIFICANT_DIGITS` is a rule
+                // about a solver this study does not use.
+                .roundedForResult()
+                .withEmissionHeader(LatticeTag.NONE, null)
         ) + "\n"
     )
     report(result, output)

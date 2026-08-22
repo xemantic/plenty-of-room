@@ -18,6 +18,7 @@ package com.xemantic.nano.plentyofroom.material
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -378,7 +379,12 @@ fun main() {
     output.parentFile.mkdirs()
     output.writeText(
         json.encodeToString(
-            json.encodeToJsonElement(result).withEmissionHeader(LatticeTag.NONE, null)
+            json.encodeToJsonElement(result)
+                // NINE DIGITS (`T-278`, closing `CH-0223`). Like `P-6`, `P-9` runs no solver:
+                // the Alexander-de Gennes compression fits are inverted in closed form. Smallest
+                // emitted magnitude `0.0114`, seven decades above the default floor.
+                .roundedForResult()
+                .withEmissionHeader(LatticeTag.NONE, null)
         ) + "\n"
     )
 

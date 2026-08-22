@@ -230,11 +230,85 @@ tasks.register<Exec>("testQueueVocabularyMutations") {
     commandLine("$projectDir/tools/test-check-queue-vocabulary.py")
 }
 
+/*
+ * `tools/T-234-census.py` and its emitter (`T-260`/`T-262`, `C-0176`) are the seventh and eighth.
+ * Their self-tests read only in-memory fixtures, so they wire in here beside the others.
+ *
+ * `--check` is deliberately NOT wired into `tools/verify.sh`, on the agent's own reasoning and
+ * `C-0083`'s rule read FORWARD: the census's scope includes `TASKS.md`, which every agent edits
+ * every iteration, so a new occurrence arrives unclassified through no fault of the tree. A gate
+ * that fires on correct work is a gate that gets switched off. The check stays an audit and its
+ * self-tests stay a gate — which is the split the repository already draws for the reader census.
+ */
+tasks.register<Exec>("testHoneycombCensus") {
+    group = "verification"
+    description = "Runs tools/T-234-census.py --self-test, the tests for the supersession census"
+    commandLine("$projectDir/tools/T-234-census.py", "--self-test")
+}
+
+tasks.register<Exec>("testHoneycombCensusClassification") {
+    group = "verification"
+    description = "Runs tools/T-234-emit-classification.py --self-test, the tests for its emitter"
+    commandLine("$projectDir/tools/T-234-emit-classification.py", "--self-test")
+}
+
+/*
+ * And its MUTATION test, for the reason `C-0127` gives and `C-0176` measured on itself: a
+ * predicate's self-tests are worth nothing unless changing the predicate fails a NAMED one, and
+ * the first draft of this very table had 9 of 22 rows failing nothing -- eight of them because
+ * the mutation was written as an ALTERNATION with the original, which is a no-op. 0.67 s.
+ */
+/*
+ * `tools/T-278-emitter-rounding-census.py` (`T-278`, `C-0174`) and the three tools built with it.
+ * Their self-tests read fixtures (the rounding mirror pins its baseline to `b853b85`, the commit
+ * `CH-0223` was filed on, because `C-0174` found that a self-test reading a MUTABLE artifact expires
+ * the moment the defect it asserts is repaired). The census's SOURCE half is gated in
+ * `tools/verify.sh`; its artifact half is reported and not gated.
+ */
+tasks.register<Exec>("testColdStartNote") {
+    group = "verification"
+    description = "Runs tools/check-cold-start-note.py --selftest, the tests for the cold-start heading"
+    commandLine("$projectDir/tools/check-cold-start-note.py", "--selftest")
+}
+
+tasks.register<Exec>("testEmitterRounding") {
+    group = "verification"
+    description = "Runs tools/T-278-emitter-rounding-census.py --self-test"
+    commandLine("$projectDir/tools/T-278-emitter-rounding-census.py", "--self-test")
+}
+
+tasks.register<Exec>("testEmitterRoundingMutations") {
+    group = "verification"
+    description = "Runs tools/T-278-mutation-test.py, the mutation test for the rounding mirror"
+    commandLine("$projectDir/tools/T-278-mutation-test.py")
+}
+
+tasks.register<Exec>("testRoundingSimulation") {
+    group = "verification"
+    description = "Runs tools/T-278-rounding-simulation.py --self-test, the offline rounding mirror"
+    commandLine("$projectDir/tools/T-278-rounding-simulation.py", "--self-test")
+}
+
+tasks.register<Exec>("testSolverProvenance") {
+    group = "verification"
+    description = "Runs tools/T-278-solver-provenance.py --selftest"
+    commandLine("$projectDir/tools/T-278-solver-provenance.py", "--selftest")
+}
+
+tasks.register<Exec>("testHoneycombCensusMutations") {
+    group = "verification"
+    description = "Runs tools/T-234-mutation-test.py, the mutation test for the census predicates"
+    commandLine("$projectDir/tools/T-234-mutation-test.py")
+}
+
 tasks.named("test") {
     dependsOn(
         "testHarness", "testDeliverableTracer", "testMarkdownTables", "testCorpusLinks",
         "testFormatStrings", "testChallengeIndex", "testResultFileHygiene",
-        "testQueueVocabulary", "testQueueVocabularyMutations"
+        "testQueueVocabulary", "testQueueVocabularyMutations",
+        "testHoneycombCensus", "testHoneycombCensusClassification",
+        "testHoneycombCensusMutations", "testEmitterRounding", "testEmitterRoundingMutations",
+        "testRoundingSimulation", "testSolverProvenance", "testColdStartNote"
     )
 }
 

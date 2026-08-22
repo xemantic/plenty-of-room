@@ -1,0 +1,1324 @@
+{
+    "emission": {
+        "lattice": "honeycomb",
+        "regime": null
+    },
+    "task": "T-254",
+    "leaf": "A8.2",
+    "title": "does a raster TURN sit on the flatness axis at all?",
+    "verificationType": "logical - an exact census of the raster's turns against the honeycomb bond lattice, and a lever-arm argument that costs no solve - PLUS in-silico: C-0154's three-dimensional beam-and-bond lattice, a linear prestrain influence bank and a triangle-inequality ceiling",
+    "maturity": "TRL 1-3. Model-consistent and traceable. NOTHING HERE IS MEASURED on a folded object. k_theta is Gen1Tile's square-lattice-fitted constant and the departure is a lattice statement, not a measurement.",
+    "units": {
+        "length": "nm",
+        "angle": "degrees in prose, radians internally",
+        "hinge stiffness": "pN nm / rad",
+        "dishing": "dimensionless, a fraction of the free stroke",
+        "temperature": "K"
+    },
+    "conventions": {
+        "beam index": "rasterRow * helicesPerRow + column",
+        "gap-facing face": "column 0; the Winkler foundation acts on it alone",
+        "s": "along the helices, s = 0 at the block's centre, rims at +-L/2",
+        "w": "the deflection along the tile normal, positive downward",
+        "phi": "the roll about s - the coordinate a prestrain is conjugate to",
+        "a raster turn": "a consecutive pair of the x-raster path; with zero unpaired nucleotides it IS a scaffold crossover, a covalent tie at the two helices' ends, so it sits at s = +-L/2",
+        "raster order in block coordinates": "row r is traversed n-1..0 when r is even, which is honeycombXRasterPath under the COLUMN MIRROR c = n-1-x; HoneycombBlock and HoneycombCell use opposite vertical-bond parities",
+        "prestrain": "the relative roll a tie is built at; it enters as a couple pair +-k_theta theta_0 and changes no entry of the stiffness matrix (C-0104)",
+        "dishing": "T-5b's: the peak of the field with its mean and both rigid tilts removed, over the free stroke p / k_f; tolerance 0.10"
+    },
+    "parameters": {
+        "cross-sections": "10 x 6 (recommended) and 15 x 4 (control), 60 helices each",
+        "row [bp]": "116",
+        "honeycomb d [nm]": "2.536",
+        "in-plane row pitch 3d/2 [nm]": "3.804",
+        "layer pitch d sqrt(3)/2 [nm]": "2.19624042",
+        "rise [nm/bp]": "0.34",
+        "k_theta [pN nm/rad]": "13.5294118",
+        "k_s [pN/nm]": "64.7058824",
+        "link penalty [pN/nm]": "10000.0",
+        "hinge stiffness enhancements, 10 x 6": "1.0, 18.4938242, 21.1851817",
+        "hinge stiffness enhancements, 15 x 4": "1.0, 9.65079217, 12.7228458",
+        "foundation secant [pN/nm per nm^2]": "0.012625625",
+        "target force [pN]": "100.0",
+        "collar": "C-0022's solved profile at 2 mM / 10 nm / 0.192 V",
+        "rim standoff [nm]": "1.0",
+        "dishing sample grid": "81",
+        "flatness tolerance (T-5b)": "0.1",
+        "allowed scaffold departure [deg]": "8.57142857",
+        "minimal forced departure [deg]": "17.1428571",
+        "temperature [K]": "300"
+    },
+    "sources": [
+        "C-0152 (T-246) - the azimuthal departures, the closure census and the calibration",
+        "C-0154 (T-253) - the honeycomb grillage, and the open question this answers",
+        "C-0151 (T-245) - the drawable raster 102 / 109 and its zero forced crossovers",
+        "C-0147 (T-231) - the raggedness argument this one does NOT inherit",
+        "C-0104 (T-172) - a prestrain is a load, and the influence-function trap",
+        "C-0022 (T-3b) - the solved edge collar",
+        "C-0140 (T-224) - the x-raster path and its turn senses"
+    ],
+    "citedInputs": {
+        "T-3b": "gpd/results/T-3b-tile-edge-load-profile.json",
+        "T-246": "gpd/results/T-246-forced-scaffold-crossover-price.json"
+    },
+    "cheapBound": {
+        "question": "does a prestrain at a raster turn reach w at all?",
+        "the mechanism": "a prestrain's work conjugate is a ROLL; a roll reaches w only through the covalent link, whose in-plane arm is (d/2) u_y",
+        "the exact-zero condition": "u_y = 0 - a tie stacked purely through the thickness would roll its two duplexes against each other and lift neither",
+        "what the honeycomb supplies": "|u_y| = 1 for the in-plane bond and 1/2 for each of the two through-thickness ones; no azimuth gives zero",
+        "verdict": "the coefficient is NOT zero, at any turn, on either cross-section - and C-0147's zero does not transfer because a raggedness is a GEOMETRY on an orthogonal coordinate and a prestrain is a LOAD",
+        "cost": "one line of azimuth arithmetic, before a matrix is assembled"
+    },
+    "census": [
+        {
+            "crossSection": "10 x 6",
+            "helices": 60,
+            "turns": 59,
+            "throughThicknessTurns": 50,
+            "inPlaneTurns": 9,
+            "turnsAtHighRim": 30,
+            "turnsAtLowRim": 29,
+            "latticeBonds": 435,
+            "interfacesCarryingATurn": 59,
+            "interlayerInterfaces": 50,
+            "inPlaneInterfaces": 27,
+            "turnsBetweenTwoGapFacingHelices": 5,
+            "leastAbsoluteInPlaneArm": 0.5,
+            "anyTieHasAZeroInPlaneArm": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "helices": 60,
+            "turns": 59,
+            "throughThicknessTurns": 45,
+            "inPlaneTurns": 14,
+            "turnsAtHighRim": 30,
+            "turnsAtLowRim": 29,
+            "latticeBonds": 410,
+            "interfacesCarryingATurn": 59,
+            "interlayerInterfaces": 45,
+            "inPlaneInterfaces": 28,
+            "turnsBetweenTwoGapFacingHelices": 7,
+            "leastAbsoluteInPlaneArm": 0.5,
+            "anyTieHasAZeroInPlaneArm": false
+        }
+    ],
+    "turns": [
+        {
+            "index": 0,
+            "lowerBeam": 4,
+            "upperBeam": 5,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 9.56882294E-4,
+            "atTheAllowedDeparture": 1.43149256E-4
+        },
+        {
+            "index": 1,
+            "lowerBeam": 3,
+            "upperBeam": 4,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00221029262,
+            "atTheAllowedDeparture": 3.30659003E-4
+        },
+        {
+            "index": 2,
+            "lowerBeam": 2,
+            "upperBeam": 3,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00295501555,
+            "atTheAllowedDeparture": 4.42069292E-4
+        },
+        {
+            "index": 3,
+            "lowerBeam": 1,
+            "upperBeam": 2,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00613515864,
+            "atTheAllowedDeparture": 9.17817586E-4
+        },
+        {
+            "index": 4,
+            "lowerBeam": 0,
+            "upperBeam": 1,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": true,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00988017922,
+            "atTheAllowedDeparture": 0.00147807135
+        },
+        {
+            "index": 5,
+            "lowerBeam": 0,
+            "upperBeam": 6,
+            "inPlane": true,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": true,
+            "unitY": 1.0,
+            "unitZ": 0.0,
+            "peakDishingPerRadian": 0.00988722098,
+            "atTheAllowedDeparture": 0.0014791248
+        },
+        {
+            "index": 6,
+            "lowerBeam": 6,
+            "upperBeam": 7,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": true,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.0084022551,
+            "atTheAllowedDeparture": 0.00125697442
+        },
+        {
+            "index": 7,
+            "lowerBeam": 7,
+            "upperBeam": 8,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 8.31623471E-4,
+            "atTheAllowedDeparture": 1.2441058E-4
+        },
+        {
+            "index": 8,
+            "lowerBeam": 8,
+            "upperBeam": 9,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 7.95175725E-4,
+            "atTheAllowedDeparture": 1.1895801E-4
+        },
+        {
+            "index": 9,
+            "lowerBeam": 9,
+            "upperBeam": 10,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 1.4132248E-4,
+            "atTheAllowedDeparture": 2.11417936E-5
+        },
+        {
+            "index": 10,
+            "lowerBeam": 10,
+            "upperBeam": 11,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 3.28080302E-4,
+            "atTheAllowedDeparture": 4.90806984E-5
+        },
+        {
+            "index": 11,
+            "lowerBeam": 11,
+            "upperBeam": 17,
+            "inPlane": true,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": 1.0,
+            "unitZ": 0.0,
+            "peakDishingPerRadian": 0.00202779312,
+            "atTheAllowedDeparture": 3.03357141E-4
+        },
+        {
+            "index": 12,
+            "lowerBeam": 16,
+            "upperBeam": 17,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 9.40613297E-4,
+            "atTheAllowedDeparture": 1.4071542E-4
+        },
+        {
+            "index": 13,
+            "lowerBeam": 15,
+            "upperBeam": 16,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00195155165,
+            "atTheAllowedDeparture": 2.91951444E-4
+        },
+        {
+            "index": 14,
+            "lowerBeam": 14,
+            "upperBeam": 15,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00242282813,
+            "atTheAllowedDeparture": 3.6245424E-4
+        },
+        {
+            "index": 15,
+            "lowerBeam": 13,
+            "upperBeam": 14,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00520701853,
+            "atTheAllowedDeparture": 7.7896815E-4
+        },
+        {
+            "index": 16,
+            "lowerBeam": 12,
+            "upperBeam": 13,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": true,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00795798772,
+            "atTheAllowedDeparture": 0.00119051218
+        },
+        {
+            "index": 17,
+            "lowerBeam": 12,
+            "upperBeam": 18,
+            "inPlane": true,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": true,
+            "unitY": 1.0,
+            "unitZ": 0.0,
+            "peakDishingPerRadian": 0.00754766778,
+            "atTheAllowedDeparture": 0.00112912846
+        },
+        {
+            "index": 18,
+            "lowerBeam": 18,
+            "upperBeam": 19,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": true,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00683657051,
+            "atTheAllowedDeparture": 0.00102274856
+        },
+        {
+            "index": 19,
+            "lowerBeam": 19,
+            "upperBeam": 20,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 6.29034037E-4,
+            "atTheAllowedDeparture": 9.41032718E-5
+        },
+        {
+            "index": 20,
+            "lowerBeam": 20,
+            "upperBeam": 21,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 7.47369581E-4,
+            "atTheAllowedDeparture": 1.11806228E-4
+        },
+        {
+            "index": 21,
+            "lowerBeam": 21,
+            "upperBeam": 22,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 1.90800388E-4,
+            "atTheAllowedDeparture": 2.85436713E-5
+        },
+        {
+            "index": 22,
+            "lowerBeam": 22,
+            "upperBeam": 23,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 3.90128936E-4,
+            "atTheAllowedDeparture": 5.83631523E-5
+        },
+        {
+            "index": 23,
+            "lowerBeam": 23,
+            "upperBeam": 29,
+            "inPlane": true,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": 1.0,
+            "unitZ": 0.0,
+            "peakDishingPerRadian": 0.00257208556,
+            "atTheAllowedDeparture": 3.847831E-4
+        },
+        {
+            "index": 24,
+            "lowerBeam": 28,
+            "upperBeam": 29,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00113872601,
+            "atTheAllowedDeparture": 1.70353013E-4
+        },
+        {
+            "index": 25,
+            "lowerBeam": 27,
+            "upperBeam": 28,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00259964142,
+            "atTheAllowedDeparture": 3.88905447E-4
+        },
+        {
+            "index": 26,
+            "lowerBeam": 26,
+            "upperBeam": 27,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00299779187,
+            "atTheAllowedDeparture": 4.48468615E-4
+        },
+        {
+            "index": 27,
+            "lowerBeam": 25,
+            "upperBeam": 26,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.0052016719,
+            "atTheAllowedDeparture": 7.78168297E-4
+        },
+        {
+            "index": 28,
+            "lowerBeam": 24,
+            "upperBeam": 25,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": true,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.010215537,
+            "atTheAllowedDeparture": 0.00152824077
+        },
+        {
+            "index": 29,
+            "lowerBeam": 24,
+            "upperBeam": 30,
+            "inPlane": true,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": true,
+            "unitY": 1.0,
+            "unitZ": 0.0,
+            "peakDishingPerRadian": 0.00750899377,
+            "atTheAllowedDeparture": 0.00112334284
+        },
+        {
+            "index": 30,
+            "lowerBeam": 30,
+            "upperBeam": 31,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": true,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00684002205,
+            "atTheAllowedDeparture": 0.00102326491
+        },
+        {
+            "index": 31,
+            "lowerBeam": 31,
+            "upperBeam": 32,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 6.32435857E-4,
+            "atTheAllowedDeparture": 9.46121829E-5
+        },
+        {
+            "index": 32,
+            "lowerBeam": 32,
+            "upperBeam": 33,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 7.50465603E-4,
+            "atTheAllowedDeparture": 1.12269392E-4
+        },
+        {
+            "index": 33,
+            "lowerBeam": 33,
+            "upperBeam": 34,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 1.91183363E-4,
+            "atTheAllowedDeparture": 2.86009642E-5
+        },
+        {
+            "index": 34,
+            "lowerBeam": 34,
+            "upperBeam": 35,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 3.95874631E-4,
+            "atTheAllowedDeparture": 5.92227063E-5
+        },
+        {
+            "index": 35,
+            "lowerBeam": 35,
+            "upperBeam": 41,
+            "inPlane": true,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": 1.0,
+            "unitZ": 0.0,
+            "peakDishingPerRadian": 0.00259116145,
+            "atTheAllowedDeparture": 3.87636846E-4
+        },
+        {
+            "index": 36,
+            "lowerBeam": 40,
+            "upperBeam": 41,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00114802398,
+            "atTheAllowedDeparture": 1.71743986E-4
+        },
+        {
+            "index": 37,
+            "lowerBeam": 39,
+            "upperBeam": 40,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00262748972,
+            "atTheAllowedDeparture": 3.93071544E-4
+        },
+        {
+            "index": 38,
+            "lowerBeam": 38,
+            "upperBeam": 39,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00299882426,
+            "atTheAllowedDeparture": 4.4862306E-4
+        },
+        {
+            "index": 39,
+            "lowerBeam": 37,
+            "upperBeam": 38,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00548492318,
+            "atTheAllowedDeparture": 8.20542589E-4
+        },
+        {
+            "index": 40,
+            "lowerBeam": 36,
+            "upperBeam": 37,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": true,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.0102074461,
+            "atTheAllowedDeparture": 0.00152703036
+        },
+        {
+            "index": 41,
+            "lowerBeam": 36,
+            "upperBeam": 42,
+            "inPlane": true,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": true,
+            "unitY": 1.0,
+            "unitZ": 0.0,
+            "peakDishingPerRadian": 0.00800466893,
+            "atTheAllowedDeparture": 0.00119749567
+        },
+        {
+            "index": 42,
+            "lowerBeam": 42,
+            "upperBeam": 43,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": true,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00677336884,
+            "atTheAllowedDeparture": 0.00101329361
+        },
+        {
+            "index": 43,
+            "lowerBeam": 43,
+            "upperBeam": 44,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 6.52243885E-4,
+            "atTheAllowedDeparture": 9.7575457E-5
+        },
+        {
+            "index": 44,
+            "lowerBeam": 44,
+            "upperBeam": 45,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 7.05148169E-4,
+            "atTheAllowedDeparture": 1.05489919E-4
+        },
+        {
+            "index": 45,
+            "lowerBeam": 45,
+            "upperBeam": 46,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 2.04845339E-4,
+            "atTheAllowedDeparture": 3.0644791E-5
+        },
+        {
+            "index": 46,
+            "lowerBeam": 46,
+            "upperBeam": 47,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 3.27043734E-4,
+            "atTheAllowedDeparture": 4.89256282E-5
+        },
+        {
+            "index": 47,
+            "lowerBeam": 47,
+            "upperBeam": 53,
+            "inPlane": true,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": 1.0,
+            "unitZ": 0.0,
+            "peakDishingPerRadian": 0.00209985625,
+            "atTheAllowedDeparture": 3.14137761E-4
+        },
+        {
+            "index": 48,
+            "lowerBeam": 52,
+            "upperBeam": 53,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00107366694,
+            "atTheAllowedDeparture": 1.60620199E-4
+        },
+        {
+            "index": 49,
+            "lowerBeam": 51,
+            "upperBeam": 52,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00291853217,
+            "atTheAllowedDeparture": 4.36611392E-4
+        },
+        {
+            "index": 50,
+            "lowerBeam": 50,
+            "upperBeam": 51,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00295198949,
+            "atTheAllowedDeparture": 4.41616594E-4
+        },
+        {
+            "index": 51,
+            "lowerBeam": 49,
+            "upperBeam": 50,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00755291522,
+            "atTheAllowedDeparture": 0.00112991347
+        },
+        {
+            "index": 52,
+            "lowerBeam": 48,
+            "upperBeam": 49,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": true,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.0101601275,
+            "atTheAllowedDeparture": 0.00151995152
+        },
+        {
+            "index": 53,
+            "lowerBeam": 48,
+            "upperBeam": 54,
+            "inPlane": true,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": true,
+            "unitY": 1.0,
+            "unitZ": 0.0,
+            "peakDishingPerRadian": 0.012534868,
+            "atTheAllowedDeparture": 0.00187521186
+        },
+        {
+            "index": 54,
+            "lowerBeam": 54,
+            "upperBeam": 55,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": true,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00797793328,
+            "atTheAllowedDeparture": 0.00119349603
+        },
+        {
+            "index": 55,
+            "lowerBeam": 55,
+            "upperBeam": 56,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 0.00160133969,
+            "atTheAllowedDeparture": 2.39559858E-4
+        },
+        {
+            "index": 56,
+            "lowerBeam": 56,
+            "upperBeam": 57,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 8.320668E-4,
+            "atTheAllowedDeparture": 1.24476902E-4
+        },
+        {
+            "index": 57,
+            "lowerBeam": 57,
+            "upperBeam": 58,
+            "inPlane": false,
+            "atHighEnd": false,
+            "touchesTheGapFacingFace": false,
+            "unitY": -0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 3.01699915E-4,
+            "atTheAllowedDeparture": 4.51342018E-5
+        },
+        {
+            "index": 58,
+            "lowerBeam": 58,
+            "upperBeam": 59,
+            "inPlane": false,
+            "atHighEnd": true,
+            "touchesTheGapFacingFace": false,
+            "unitY": 0.5,
+            "unitZ": 0.866025404,
+            "peakDishingPerRadian": 2.76648405E-4,
+            "atTheAllowedDeparture": 4.13865047E-5
+        }
+    ],
+    "ceilings": [
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 1.0,
+            "compositeFraction": "the lattice's own lower bound",
+            "freeDishingOverStroke": 0.12738041,
+            "largestUnitPerRadian": 0.0916216967,
+            "medianUnitPerRadian": 0.0175610343,
+            "allTurnsUnitSum": 1.78362279,
+            "tenLargestUnitSum": 0.781682236,
+            "allowedDepartureDegrees": 8.57142857,
+            "allTurnsCeilingOverStroke": 0.394209756,
+            "forcedExcessCeilingOverStroke": 0.511149144,
+            "insideTolerance": false,
+            "departureThatWouldReachTheTolerance": null
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 18.4938242,
+            "compositeFraction": "f = 0.26",
+            "freeDishingOverStroke": 0.0467367262,
+            "largestUnitPerRadian": 0.0137281051,
+            "medianUnitPerRadian": 0.00252694655,
+            "allTurnsUnitSum": 0.231892761,
+            "tenLargestUnitSum": 0.105634458,
+            "allowedDepartureDegrees": 8.57142857,
+            "allTurnsCeilingOverStroke": 0.0814278021,
+            "forcedExcessCeilingOverStroke": 0.09723068,
+            "insideTolerance": true,
+            "departureThatWouldReachTheTolerance": 13.1602245
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 21.1851817,
+            "compositeFraction": "f = 0.30",
+            "freeDishingOverStroke": 0.0446459684,
+            "largestUnitPerRadian": 0.012534868,
+            "medianUnitPerRadian": 0.00242282813,
+            "allTurnsUnitSum": 0.21242383,
+            "tenLargestUnitSum": 0.0952282238,
+            "allowedDepartureDegrees": 8.57142857,
+            "allTurnsCeilingOverStroke": 0.0764244991,
+            "forcedExcessCeilingOverStroke": 0.090670608,
+            "insideTolerance": true,
+            "departureThatWouldReachTheTolerance": 14.9303041
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 1.0,
+            "compositeFraction": "the lattice's own lower bound",
+            "freeDishingOverStroke": 0.31116115,
+            "largestUnitPerRadian": 0.170467125,
+            "medianUnitPerRadian": 0.0445615131,
+            "allTurnsUnitSum": 3.76536474,
+            "tenLargestUnitSum": 1.26802807,
+            "allowedDepartureDegrees": 8.57142857,
+            "allTurnsCeilingOverStroke": 0.874458398,
+            "forcedExcessCeilingOverStroke": 1.06415495,
+            "insideTolerance": false,
+            "departureThatWouldReachTheTolerance": null
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 9.65079217,
+            "compositeFraction": "f = 0.26",
+            "freeDishingOverStroke": 0.227094793,
+            "largestUnitPerRadian": 0.0300725633,
+            "medianUnitPerRadian": 0.00999067725,
+            "allTurnsUnitSum": 0.747795142,
+            "tenLargestUnitSum": 0.253470346,
+            "allowedDepartureDegrees": 8.57142857,
+            "allTurnsCeilingOverStroke": 0.338964685,
+            "forcedExcessCeilingOverStroke": 0.37688376,
+            "insideTolerance": false,
+            "departureThatWouldReachTheTolerance": null
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 12.7228458,
+            "compositeFraction": "f = 0.30",
+            "freeDishingOverStroke": 0.220086801,
+            "largestUnitPerRadian": 0.0240985023,
+            "medianUnitPerRadian": 0.00910010495,
+            "allTurnsUnitSum": 0.618565219,
+            "tenLargestUnitSum": 0.20311687,
+            "allowedDepartureDegrees": 8.57142857,
+            "allTurnsCeilingOverStroke": 0.312623942,
+            "forcedExcessCeilingOverStroke": 0.343010154,
+            "insideTolerance": false,
+            "departureThatWouldReachTheTolerance": null
+        }
+    ],
+    "fields": [
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 1.0,
+            "signAssignment": "every turn the same way",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.149943676,
+            "overTheCeiling": 0.380365207,
+            "insideTolerance": false
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 1.0,
+            "signAssignment": "alternating along the raster path",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.135080506,
+            "overTheCeiling": 0.3426615,
+            "insideTolerance": false
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 1.0,
+            "signAssignment": "by the rim the turn sits at",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.135080506,
+            "overTheCeiling": 0.3426615,
+            "insideTolerance": false
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 18.4938242,
+            "signAssignment": "every turn the same way",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.0484843568,
+            "overTheCeiling": 0.59542755,
+            "insideTolerance": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 18.4938242,
+            "signAssignment": "alternating along the raster path",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.0480631402,
+            "overTheCeiling": 0.590254667,
+            "insideTolerance": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 18.4938242,
+            "signAssignment": "by the rim the turn sits at",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.0480631402,
+            "overTheCeiling": 0.590254667,
+            "insideTolerance": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 21.1851817,
+            "signAssignment": "every turn the same way",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.0460995878,
+            "overTheCeiling": 0.603204318,
+            "insideTolerance": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 21.1851817,
+            "signAssignment": "alternating along the raster path",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.0457993778,
+            "overTheCeiling": 0.599276126,
+            "insideTolerance": true
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 21.1851817,
+            "signAssignment": "by the rim the turn sits at",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.0457993778,
+            "overTheCeiling": 0.599276126,
+            "insideTolerance": true
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 1.0,
+            "signAssignment": "every turn the same way",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.316008197,
+            "overTheCeiling": 0.361375907,
+            "insideTolerance": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 1.0,
+            "signAssignment": "alternating along the raster path",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.300809154,
+            "overTheCeiling": 0.343994814,
+            "insideTolerance": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 1.0,
+            "signAssignment": "by the rim the turn sits at",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.300809154,
+            "overTheCeiling": 0.343994814,
+            "insideTolerance": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 9.65079217,
+            "signAssignment": "every turn the same way",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.227591761,
+            "overTheCeiling": 0.671432074,
+            "insideTolerance": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 9.65079217,
+            "signAssignment": "alternating along the raster path",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.222521659,
+            "overTheCeiling": 0.656474461,
+            "insideTolerance": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 9.65079217,
+            "signAssignment": "by the rim the turn sits at",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.222521659,
+            "overTheCeiling": 0.656474461,
+            "insideTolerance": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 12.7228458,
+            "signAssignment": "every turn the same way",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.219772029,
+            "overTheCeiling": 0.702991676,
+            "insideTolerance": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 12.7228458,
+            "signAssignment": "alternating along the raster path",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.216013224,
+            "overTheCeiling": 0.690968269,
+            "insideTolerance": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 12.7228458,
+            "signAssignment": "by the rim the turn sits at",
+            "departureDegrees": 8.57142857,
+            "peakDishingOverStroke": 0.216013224,
+            "overTheCeiling": 0.690968269,
+            "insideTolerance": false
+        }
+    ],
+    "stiffness": [
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 1.0,
+            "freeDishingWithoutTies": 0.132443428,
+            "freeDishingWithTies": 0.12738041,
+            "ratio": 0.961772226,
+            "tiesSoftenTheBlock": false
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 18.4938242,
+            "freeDishingWithoutTies": 0.0522223659,
+            "freeDishingWithTies": 0.0467367262,
+            "ratio": 0.894956124,
+            "tiesSoftenTheBlock": false
+        },
+        {
+            "crossSection": "10 x 6",
+            "hingeStiffnessEnhancement": 21.1851817,
+            "freeDishingWithoutTies": 0.0501417316,
+            "freeDishingWithTies": 0.0446459684,
+            "ratio": 0.890395426,
+            "tiesSoftenTheBlock": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 1.0,
+            "freeDishingWithoutTies": 0.316408058,
+            "freeDishingWithTies": 0.31116115,
+            "ratio": 0.983417274,
+            "tiesSoftenTheBlock": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 9.65079217,
+            "freeDishingWithoutTies": 0.23097815,
+            "freeDishingWithTies": 0.227094793,
+            "ratio": 0.983187342,
+            "tiesSoftenTheBlock": false
+        },
+        {
+            "crossSection": "15 x 4",
+            "hingeStiffnessEnhancement": 12.7228458,
+            "freeDishingWithoutTies": 0.22389874,
+            "freeDishingWithTies": 0.220086801,
+            "ratio": 0.982974723,
+            "tiesSoftenTheBlock": false
+        }
+    ],
+    "convergence": [
+        {
+            "axis": "beam subdivisions",
+            "setting": "1",
+            "quantity": "the largest unit turn response, per radian",
+            "value": 0.012534868,
+            "departure": 0.0
+        },
+        {
+            "axis": "beam subdivisions",
+            "setting": "2",
+            "quantity": "the largest unit turn response, per radian",
+            "value": 0.0125348684,
+            "departure": 3.1E-8
+        },
+        {
+            "axis": "dishing sample grid",
+            "setting": "41",
+            "quantity": "the largest unit turn response, per radian",
+            "value": 0.012534868,
+            "departure": 0.0
+        },
+        {
+            "axis": "dishing sample grid",
+            "setting": "81",
+            "quantity": "the largest unit turn response, per radian",
+            "value": 0.012534868,
+            "departure": 0.0
+        },
+        {
+            "axis": "dishing sample grid",
+            "setting": "161",
+            "quantity": "the largest unit turn response, per radian",
+            "value": 0.012534868,
+            "departure": 0.0
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0154 / T-253",
+            "quantity": "the free 10 x 6 tile at the calibrated coupling, 112 bp row",
+            "published": "0.0449400126",
+            "here": "0.0449400126",
+            "departure": 2.4E-10,
+            "reproduced": true
+        },
+        {
+            "source": "C-0152 / T-246",
+            "quantity": "the minimal forced azimuthal departure",
+            "published": "17.1428571",
+            "here": "17.1428571",
+            "departure": 0.0,
+            "reproduced": true
+        },
+        {
+            "source": "C-0152 / T-246",
+            "quantity": "the departure an ALLOWED scaffold crossover carries",
+            "published": "8.57142857",
+            "here": "8.57142857",
+            "departure": 1.7E-10,
+            "reproduced": true
+        },
+        {
+            "source": "C-0152 / T-246",
+            "quantity": "forced crossovers at 112 / 108 on 10 x 6",
+            "published": "10",
+            "here": "10",
+            "departure": 0.0,
+            "reproduced": true
+        },
+        {
+            "source": "C-0151 / T-245 through C-0152",
+            "quantity": "forced crossovers at the DRAWABLE 102 / 109",
+            "published": "0",
+            "here": "0",
+            "departure": 0.0,
+            "reproduced": true
+        },
+        {
+            "source": "C-0154 / T-253",
+            "quantity": "raster crossovers of the block",
+            "published": "59",
+            "here": "59",
+            "departure": 0.0,
+            "reproduced": true
+        },
+        {
+            "source": "C-0154 / T-253",
+            "quantity": "the interlayer interfaces of 10 x 6, all of them turn-loaded",
+            "published": "50",
+            "here": "50",
+            "departure": 0.0,
+            "reproduced": true
+        },
+        {
+            "source": "C-0167 / T-263",
+            "quantity": "the UNCOUPLED 10 x 6 tile at f = 0.30 and f = 0.26, 116 bp row",
+            "published": "0.0501417315 and 0.0522223659",
+            "here": "0.0501417316 and 0.0522223659",
+            "departure": 1.0E-9,
+            "reproduced": true
+        },
+        {
+            "source": "C-0154 / T-253",
+            "quantity": "the lattice bonds and interfaces of both cross-sections",
+            "published": "435 bonds, 27 in plane + 50 interlayer on 10 x 6; 410, 28 + 45 on 15 x 4",
+            "here": "435 bonds, 27 + 50; 410 bonds, 28 + 45",
+            "departure": 0.0,
+            "reproduced": true
+        },
+        {
+            "source": "CLAUDE.md's standing falsifier",
+            "quantity": "uniform pressure on the tied lattice, peak dishing",
+            "published": "0",
+            "here": "0.0",
+            "departure": 3.0E-12,
+            "reproduced": true
+        }
+    ],
+    "falsifiers": [
+        {
+            "id": "F1",
+            "statement": "some honeycomb bond has u_y = 0, so the roll couple has no in-plane arm",
+            "declaredOpen": false,
+            "fired": false,
+            "evidence": "the least |u_y| over every tie of both cross-sections is 0.5; the honeycomb's azimuths give 1 in plane and 1/2 through the thickness"
+        },
+        {
+            "id": "F2",
+            "statement": "the turn census fails to reproduce honeycombXRasterPath, or the two turn kinds fail to sum to H - 1, or a consecutive path pair is not a honeycomb bond",
+            "declaredOpen": false,
+            "fired": false,
+            "evidence": "59 = 50 + 9 on 10 x 6 and 59 = 45 + 14 on 15 x 4, and the order reproduces the path under the COLUMN MIRROR, which is not optional"
+        },
+        {
+            "id": "F3",
+            "statement": "adding the turn ties moves the uniform-load dishing off zero",
+            "declaredOpen": false,
+            "fired": false,
+            "evidence": "peak dishing under a uniform pressure on the tied lattice is 0.0"
+        },
+        {
+            "id": "F4",
+            "statement": "the field is not linear in the prestrain, or an influence taken on the prestrained lattice differs from one taken on withoutPrestrain",
+            "declaredOpen": false,
+            "fired": false,
+            "evidence": "asserted as two named tests; every influence here is taken on withoutPrestrain"
+        },
+        {
+            "id": "F5",
+            "statement": "the turn-set ceiling at the departure the recommended raster carries exceeds T-5b's 0.10",
+            "declaredOpen": true,
+            "fired": true,
+            "evidence": "it fires at 2 of 4 coupled states, ALL of them 15 x 4, and at every one of those the FREE tile already exceeds the tolerance - so the turns never DECIDE the verdict, which is C-0154's own F5 read at the turns. At the recommended 10 x 6 the ceiling is 0.0764244991 and the departure that would reach the tolerance is 14.9303 deg against the 8.57142857 deg carried, a margin of 1.74187x"
+        },
+        {
+            "id": "F6",
+            "statement": "adding 59 covalent ties moves the free-tile dishing by more than the convergence departure",
+            "declaredOpen": true,
+            "fired": true,
+            "evidence": "the ratio runs 0.890395 to 0.983417 against a worst convergence departure of 3.14308E-8"
+        },
+        {
+            "id": "F7",
+            "statement": "the recommended raster carries forced crossovers, or 112 / 108 carries none",
+            "declaredOpen": false,
+            "fired": false,
+            "evidence": "0 at 102 / 109 and 10 at 112 / 108, read from C-0152's own closure census"
+        },
+        {
+            "id": "F8",
+            "statement": "the largest single-turn coefficient is below the emitted solve residual",
+            "declaredOpen": false,
+            "fired": false,
+            "evidence": "the largest is 0.012534868 of the stroke per radian, four orders above anything numerical here"
+        }
+    ],
+    "findings": [
+        "THE ANSWER IS NO, AND IT IS A LEVER ARM. A prestrain's work conjugate is a ROLL, and a roll reaches the deflection field only through the covalent link, whose in-plane arm is (d/2) u_y - so the coefficient is exactly zero if and only if u_y = 0. The honeycomb's three azimuths give |u_y| = 1 for the in-plane bond and 1/2 for each of the two through-thickness ones, so NO bond and NO turn tie has a zero arm and the least over both cross-sections is 0.5. C-0147's exact zero for the RAGGEDNESS does not transfer, and the reason is that a raggedness is a GEOMETRY on an orthogonal coordinate while a prestrain is a LOAD - a load is not confined to the coordinate it is applied on. One line of azimuth arithmetic, no solve.",
+        "AND THE LOAD IS NOT THE ONE THE QUESTION WAS RAISED ABOUT. C-0151's drawable raster 102 / 109 carries ZERO forced crossovers, so C-0152's ten-crossover forcing does not exist on the recommended design at all. What does exist at EVERY raster turn of EVERY honeycomb origami is C-0152's own calibration: caDNAno's +-5 bp is an integer approximation to a 5.25 bp half turn, so an ALLOWED scaffold crossover already sits 8.57142857 deg off the line of centres. That is a prestrain on all 59 turns, on either raster, and no claim in this corpus has ever applied it as a load.",
+        "THE COEFFICIENT, AND IT IS A DISTRIBUTION. At 10 x 6 and the calibrated coupling the largest single turn is 0.012534868 of the free stroke per radian and the median 0.00242282813; at the allowed departure the largest single turn is worth 0.00187521186 of the stroke. The triangle-inequality ceiling over ALL 59 turns and EVERY sign is 0.0764244991 against a free tile of 0.0446459684, and the departure that would reach T-5b's 0.10 is 14.9303 deg.",
+        "THE CENSUS IS THE OTHER HALF, AND IT SAYS WHICH INTERFACES THE SCAFFOLD LOADS. On a 10 x 6 block the 59 turns are 50 through-thickness ties - which is EVERY one of the 50 interlayer interfaces C-0154 counts - and 9 in-plane ones, 9 of its 27; on 15 x 4 the split is 45 and 14. They alternate axial ends, 30 at one rim and 29 at the other, and only 5 of them join two gap-facing helices.",
+        "THE 59 TURN TIES ARE COVALENT ELEMENTS THE CORPUS'S HONEYCOMB LATTICE DOES NOT CARRY, and putting them in is worth 0.890395 to 0.983417x of the free-tile dishing. C-0154's bonds are the STAPLE ladder at 7 bp planes; a raster turn sits at s = +-L/2, past the last of them, and it is a covalent crossover like any other. This is C-0099's square-lattice 56 = 42 + 14 read on the honeycomb, where the split is 435 + 59.",
+        "THE SIGN IS UNDETERMINED AND IT IS WORTH A FACTOR. Swept over three assignments the realised field runs 0.0457993778 to 0.227591761 of the stroke, the worst being every turn the same way at 15 x 4 - all of them under the ceiling, which is what a ceiling is for."
+    ],
+    "validity": [
+        "TRL 1-3, model-consistent and traceable, not empirically demonstrated.",
+        "The grillage carries ONE row length, so the two-length raster enters as its 116 bp block extent. The 7 bp stagger between the two lengths is 2.38 nm of axial extent and is not modelled; T-258 shows the coefficient of that raggedness on the flatness is exactly zero, so what is missing here is the AXIAL POSITION of a turn to within the stagger, not a flatness term.",
+        "The turn tie is modelled at the block's own rim node, s = +-L/2. A scaffold crossover sits 5 bp from a staple position, so its true axial position is within 5 bp = 1.7 nm of that node; the influence bank is emitted per turn so the sensitivity to that placement is readable rather than assumed.",
+        "The departure is read through C-0104's roll mapping, which is the mapping this corpus already uses for the same quantity. It is a rigid-duplex reading and therefore a CEILING on the true relative roll: a real crossover absorbs part of the azimuth in backbone strain.",
+        "The sign of each turn's prestrain is undetermined by any source in this repository. Three assignments are swept and the triangle-inequality ceiling bounds all of them and every subset, which is why the ceiling and not the field is the quotable number.",
+        "The lattice carries no across-helix parallel-axis term (C-0154), so its D_perp is the independent one and a LOWER bound; the bracket is run at three ends and the two that carry any interlayer coupling agree on every verdict.",
+        "The block is FREE: no attachment coupling is applied, so every dishing number is C-0109's uncoupled reference and not a design.",
+        "k_theta is Gen1Tile's square-lattice-fitted constant; no honeycomb measurement of it exists in this repository."
+    ],
+    "openQuestions": [
+        "What the 59 turn ties do to a COUPLED honeycomb cell. C-0167 re-graded every cell on the tie-free lattice and found 0 of 64 flat at p90; the ties stiffen the block, so the re-grade is owed on the tied lattice.",
+        "Whether the allowed departure is a prestrain the folded structure actually carries, or one it relaxes by unstacking a base pair. The rigid-duplex reading is a ceiling and nothing here bounds it from below.",
+        "What the sign assignment of the turn prestrains is. It is a property of the raster's own turn senses and the crossover's displacement direction, and no source in this repository fixes it.",
+        "Whether the same argument applies to the SQUARE lattice's row-end crossovers, where C-0104 measured the flatness effect but the lever-arm census has never been taken."
+    ],
+    "proseFailure": "none"
+}

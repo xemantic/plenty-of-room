@@ -20,6 +20,7 @@ import com.xemantic.nano.plentyofroom.ELECTRON_VOLT
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
+import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -336,7 +337,16 @@ fun main() {
     output.parentFile.mkdirs()
     output.writeText(
         json.encodeToString(
-            json.encodeToJsonElement(result).withEmissionHeader(LatticeTag.NONE, null)
+            json.encodeToJsonElement(result)
+                // NINE DIGITS (`T-278`, closing `CH-0223`). Everything here is a closed form in
+                // `electrostatics/ChargedSurface.kt` except two boundary searches,
+                // `meanFieldValidityGap` and `loopExpansionValidityGap`, and both are 300
+                // geometric halvings of a bracket spanning eleven decades — machine precision by
+                // rung 60. The smallest emitted magnitude is `oneLoopMagnitude = 5.35e-06`, four
+                // decades above `RESULT_ABSOLUTE_FLOOR`, so the default floor is inert here and
+                // measured to be (`tools/T-278-rounding-simulation.py`: 0 fields flattened).
+                .roundedForResult()
+                .withEmissionHeader(LatticeTag.NONE, null)
         ) + "\n"
     )
     report(result, output)

@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-182",
     "leaf": "A1.2, with A8.2",
     "question": "What prestrain does a row-end crossover actually carry, against C-0104's 15.4497275 degree threshold?",

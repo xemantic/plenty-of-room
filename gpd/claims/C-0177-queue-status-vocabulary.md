@@ -43,11 +43,32 @@ of the broken `T-9` row start `TODO`, and over the whole queue the predicate is 
 | (a) | `T-9`'s status restored to `**PARTIALLY DONE** — second deliverable answered, iteration 41` | the established vocabulary, and it carries strictly more than the coinage: the row is *not closed* **and** which deliverable closed |
 | (b) | `main` returns `1 if failures else 0` | six end-to-end tests in `tools/test-trace-answers.py`, one per check plus the truncation |
 | (c) | `tools/check-queue-vocabulary.py`, gated, with `tools/test-check-queue-vocabulary.py` | 16 self-tests; **6 mutations, 0 survivors** |
+| (d) | `tools/check-cold-start-note.py`, gated | 9 self-tests; fires at every commit carrying the drift and reads 0 at `HEAD` |
 
 **The exit code is a boolean and not the count, deliberately.** `sys.exit(n)` truncates modulo 256
 and `counts["ABSENT"]` is unbounded, so exactly 256 absent tokens would have exited 0 and read as a
 clean corpus — a second latent way for this gate to be inert. Named test:
 *"300 defects still exit non-zero (256 would truncate to 0)"*.
+
+## 2b. A fourth defect, found while writing the third
+
+The same iteration found `## Start here — the state after iteration 38` heading a queue at
+**iteration 42**. `P-28` had already retitled that heading once, from 26 to 38, and had written down
+why it matters — *a cold session is told to trust a reading order dated before four of the
+corrections it carries*. It drifted back within four iterations with nothing visibly wrong, because
+a **date in a heading has no owner**: it is not a number `tools/trace-answers.py` can attribute to a
+claim, not a status word `queue_status` reads, and not a link `check-corpus-links` resolves. Every
+instrument here was blind to it.
+
+`tools/check-cold-start-note.py` requires the heading's iteration to be **at least** the highest
+`## Iteration N` in `JOURNAL.md` — `>=` rather than equality, because the journal is appended before
+the heading is retitled and both land in one commit, so `>=` is true of every *committed* state while
+being false of exactly this drift. It fires on **35 of the last 60 commits**, which is not a
+false-positive rate but a measurement of how long the drift stood, and the predicate admits no
+judgement, so there is nothing for it to be wrong about. Writing *"a date in a heading has no
+checker"* and then not writing one is the pattern this repository criticises; this is the fifth
+recorded instance of *a convention is not a mechanism*, and the first where the convention had
+already been written down **twice**.
 
 ## 3. The new gate's predicate, which is a measurement rather than a taste
 

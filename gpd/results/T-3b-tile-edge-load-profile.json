@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-3b",
     "leaf": "A7.4",
     "title": "2-D nonlinear Poisson-Boltzmann solve of the Gen-1 tile edge, and the lateral load profile it delivers",

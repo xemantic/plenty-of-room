@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-8",
     "leaf": "A1.2",
     "title": "Tile positional variance at 300 K, by mode, across the C-0003 stiffness bracket",

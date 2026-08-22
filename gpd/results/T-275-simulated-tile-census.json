@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-275",
     "leaf": "A1.2, with A8.2",
     "title": "Which crossover census a measured constant is read against: the tile oxDNA simulated and the tile every placement result is graded on, censused against each other",

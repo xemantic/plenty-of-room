@@ -69,4 +69,7 @@ happens to contradict one. The measurement is 40 revisions of `TASKS.md`, and it
 2. `tools/check-queue-vocabulary.py`, with `--census`, `--selftest` and the agreement check.
 3. `tools/test-check-queue-vocabulary.py`, the mutation test, in both directions.
 4. The gate wired into `tools/verify.sh`, and its self-test into `./gradlew test`.
-5. A challenge on the fact that the gate that caught this was **red at the commit that wired it**.
+5. A challenge on the fact that the gate that caught this **could not fail at all** — `CH-0231`.
+6. **Added during the task**: `tools/check-cold-start-note.py`, because the same iteration found the
+   `## Start here` heading four iterations stale for the **second** time, and writing *"a date in a
+   heading has no checker"* while leaving it without one is the pattern this repository criticises.

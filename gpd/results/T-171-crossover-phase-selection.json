@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-171",
     "leaf": "A8.2",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm (40.35 nm across the helices, unchanged), 0.34 nm rise, 32/3 bp per turn, 16 bp column pitch; along-helix width 40.00 nm (§3) and 38.08 nm (C-0086's 112 bp); C-0055's 34 upward roots on C-0039's arm quantised to 24 rises; C-0017's 33.3333333 pN/nm mandate as a SUM; C-0022's solved edge profile at 2 mM, a 10 nm gap and 0.192 V, carried unchanged (C-0100: worth 0.0712 %); C-0001's foundation secant; dishing on an 81 x 81 grid over the free-tile stroke; flat means below T-5b's 0.10 CONVENTION",

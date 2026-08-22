@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-125 — sweep the row phases of C-0055's upward arm array",
     "leaf": "A8.2",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at 2.69 nm; C-0039's 8.164 nm arm at C-0055's self-consistent 34 roots; C-0017's 33.3333 pN/nm mandate; C-0022's solved profile at 2 mM, a 10 nm gap and 0.192 V; C-0001's foundation secant",
@@ -1342,7 +1346,7 @@
         "bestDishingOverStroke": 0.07061455367969466,
         "bestReachableFloor": 0.0031213253012380413,
         "greedyReachableFloor": 0.011636272809850376,
-        "optimisedDishingOverStroke": 0.060791845213580324,
+        "optimisedDishingOverStroke": 0.0607918452135803,
         "placementEvaluations": 783274.0,
         "symmetricEnumerated": 361584.0
     }

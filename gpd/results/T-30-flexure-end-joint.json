@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-30",
     "leaf": "A8.2",
     "title": "The origami joint at a transverse flexure's end: does it draw in, and does it clamp?",

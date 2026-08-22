@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "both",
+        "regime": null
+    },
     "task": "T-253",
     "leaf": "A8.2",
     "title": "A honeycomb grillage, so a prestrain on a four-layer face can be solved at all",

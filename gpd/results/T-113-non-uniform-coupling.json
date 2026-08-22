@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-113",
     "leaf": "A8.2",
     "title": "Can a NON-UNIFORM coupling stiffness buy back the edge dishing?",

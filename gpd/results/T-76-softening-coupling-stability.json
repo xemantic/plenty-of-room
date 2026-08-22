@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-76",
     "leaf": "A8.2",
     "title": "C-0018's pull-in and fold analysis re-run on a strain-SOFTENING output coupling: the placement clause fixes the level of the load line and the stability clause its slope, and C-0030's element satisfies the first while failing the second wherever the fold binds",

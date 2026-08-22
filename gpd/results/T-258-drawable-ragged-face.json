@@ -1,0 +1,490 @@
+{
+    "emission": {
+        "lattice": "honeycomb",
+        "regime": null
+    },
+    "task": "T-258",
+    "leaf": "A8.2",
+    "title": "the ragged face at the relief the DRAWABLE raster carries",
+    "verificationType": "logical - exact integer lattice arithmetic on the rise and on the honeycomb cross-section, plus three closed forms already in the corpus (the plate ripple transfer function, the square wave's fundamental and the slit's transverse eigenvalue). No solve, and that is a stated refusal: no model in this repository carries a per-helix row length.",
+    "maturity": "TRL 1-3. Model-consistent and traceable. NOTHING HERE IS MEASURED.",
+    "units": {
+        "length": "nm",
+        "rise": "nm per base pair",
+        "rigidity": "pN nm",
+        "foundation": "pN/nm per nm^2",
+        "dishing": "dimensionless, a fraction of the free stroke",
+        "temperature": "K"
+    },
+    "conventions": {
+        "gap axis": "z, the tile normal; T-5b's flatness is w(x, y) normal to the gap-facing surface",
+        "gap-facing surface": "one COLUMN of the cross-section - a row of duplex sidewalls",
+        "ragged faces": "the planes x = 0 and x = L, the tile's AXIAL RIM, where the helices terminate",
+        "raggedness": "max - min of a face's own helix end levels, in base pairs, exactly as C-0140 and C-0147 emit it",
+        "rim modulation": "a SQUARE wave in the raster-row index, entered into a sinusoidal transfer function through its fundamental 2A/pi",
+        "half span": "half the LARGER of the two row lengths - the row every interface of the block shares (C-0146)"
+    },
+    "parameters": {
+        "honeycomb interhelical distance d [nm]": "2.536",
+        "in-plane row pitch 3d/2 [nm]": "3.804",
+        "layer pitch d sqrt(3)/2 [nm]": "2.19624042",
+        "rise [nm/bp]": "0.34",
+        "crossover spacing, honeycomb [bp]": "21.0",
+        "composite fraction": "0.3",
+        "interlayer coupling": "CALIBRATED",
+        "foundation secant [pN/nm per nm^2]": "0.012625625",
+        "free-edge penalty on the ripple transfer": "50.0",
+        "flatness tolerance (T-5b)": "0.1",
+        "cross-sections": "15 x 4 and 10 x 6, 60 helices each",
+        "rasters": "102 / 109 (drawable) and 112 / 108 (C-0140, does not close)",
+        "buffers [mM MgCl2]": "0.5, 1.0, 2.0",
+        "gaps [nm]": "5, 7, 10",
+        "temperature [K]": "300"
+    },
+    "sources": [
+        "C-0147 (T-231) - the two channels, the 4 / 8 bp reading and the published bound",
+        "C-0151 (T-245) - the drawable pair 102 / 109 and its 7 bp stagger",
+        "C-0140 (T-224) - the turn-sense machinery and the level walk",
+        "C-0167 (T-263) - the honeycomb-grillage re-grade that withdrew the comparand",
+        "C-0006 - loadRippleTransmission",
+        "C-0022 / C-0110 - transverseDecayRateBound",
+        "C-0141 - the corrected honeycomb cross-section"
+    ],
+    "citedInputs": {
+        "T-231": "gpd/results/T-231-ragged-face-cost.json",
+        "T-232": "gpd/results/T-232-coupled-cells-at-the-honeycomb-cross-section.json",
+        "T-263": "gpd/results/T-263-honeycomb-grillage-regrade.json"
+    },
+    "axis": {
+        "question": "which axis is the relief on?",
+        "gap-facing surface": "one column of the cross-section, every helix of it lying in the tile plane",
+        "what a row length changes": "where a helix ENDS - a coordinate in that same plane",
+        "verdict": "the two ragged faces are the tile's RIM, at every column, and the coefficient of the raggedness on T-5b's flatness field is EXACTLY ZERO",
+        "does it scale with the relief?": "no - the statement carries no magnitude, and the test that it still holds is that no column loses a helix at any relief",
+        "what would break it": "a relief large enough to remove a helix from a column, or a two-length assignment that put the short helices in one column"
+    },
+    "relief": [
+        {
+            "raster": "102 / 109 (drawable)",
+            "crossSection": "15 x 4",
+            "senseOneRowLength": 102,
+            "senseTwoRowLength": 109,
+            "staggerBasePairs": 7,
+            "frontSpreadBasePairs": 7,
+            "frontSpreadNm": 2.38,
+            "frontSpreadRises": 7,
+            "rearSpreadBasePairs": 14,
+            "rearSpreadNm": 4.76,
+            "axialExtentBasePairs": 116,
+            "axialExtentNm": 39.44,
+            "scaffoldNucleotides": 6337,
+            "gapFacingRimPeriodRows": 2,
+            "modulationWavelengthNm": 7.608,
+            "frontSpreadByColumn": [
+                7,
+                7,
+                7,
+                7
+            ],
+            "everyColumnIsRagged": true,
+            "drawable": true
+        },
+        {
+            "raster": "102 / 109 (drawable)",
+            "crossSection": "10 x 6",
+            "senseOneRowLength": 102,
+            "senseTwoRowLength": 109,
+            "staggerBasePairs": 7,
+            "frontSpreadBasePairs": 7,
+            "frontSpreadNm": 2.38,
+            "frontSpreadRises": 7,
+            "rearSpreadBasePairs": 14,
+            "rearSpreadNm": 4.76,
+            "axialExtentBasePairs": 116,
+            "axialExtentNm": 39.44,
+            "scaffoldNucleotides": 6330,
+            "gapFacingRimPeriodRows": 2,
+            "modulationWavelengthNm": 7.608,
+            "frontSpreadByColumn": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+            ],
+            "everyColumnIsRagged": true,
+            "drawable": true
+        },
+        {
+            "raster": "112 / 108 (C-0140, does not close)",
+            "crossSection": "15 x 4",
+            "senseOneRowLength": 112,
+            "senseTwoRowLength": 108,
+            "staggerBasePairs": 4,
+            "frontSpreadBasePairs": 4,
+            "frontSpreadNm": 1.36,
+            "frontSpreadRises": 4,
+            "rearSpreadBasePairs": 8,
+            "rearSpreadNm": 2.72,
+            "axialExtentBasePairs": 116,
+            "axialExtentNm": 39.44,
+            "scaffoldNucleotides": 6596,
+            "gapFacingRimPeriodRows": 2,
+            "modulationWavelengthNm": 7.608,
+            "frontSpreadByColumn": [
+                4,
+                4,
+                4,
+                4
+            ],
+            "everyColumnIsRagged": true,
+            "drawable": false
+        },
+        {
+            "raster": "112 / 108 (C-0140, does not close)",
+            "crossSection": "10 x 6",
+            "senseOneRowLength": 112,
+            "senseTwoRowLength": 108,
+            "staggerBasePairs": 4,
+            "frontSpreadBasePairs": 4,
+            "frontSpreadNm": 1.36,
+            "frontSpreadRises": 4,
+            "rearSpreadBasePairs": 8,
+            "rearSpreadNm": 2.72,
+            "axialExtentBasePairs": 116,
+            "axialExtentNm": 39.44,
+            "scaffoldNucleotides": 6600,
+            "gapFacingRimPeriodRows": 2,
+            "modulationWavelengthNm": 7.608,
+            "frontSpreadByColumn": [
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+            ],
+            "everyColumnIsRagged": true,
+            "drawable": false
+        }
+    ],
+    "bound": [
+        {
+            "raster": "102 / 109 (drawable)",
+            "crossSection": "15 x 4",
+            "layers": 4,
+            "compositeFraction": 0.3,
+            "acrossHelixRigidity": 278.255762,
+            "bendingLengthAcrossNm": 17.2310927,
+            "modulationWavelengthNm": 7.608,
+            "rippleTransmission": 2.43837603E-5,
+            "freeEdgePenalty": 50.0,
+            "halfSpanNm": 18.53,
+            "reliefNm": 2.38,
+            "rimLeverPerturbation": 0.0817676772,
+            "boundedDishingMove": 9.96901722E-5,
+            "overTheFourBasePairReading": 1.79816514
+        },
+        {
+            "raster": "102 / 109 (drawable)",
+            "crossSection": "10 x 6",
+            "layers": 6,
+            "compositeFraction": 0.3,
+            "acrossHelixRigidity": 916.230312,
+            "bendingLengthAcrossNm": 23.2114857,
+            "modulationWavelengthNm": 7.608,
+            "rippleTransmission": 7.40538369E-6,
+            "freeEdgePenalty": 50.0,
+            "halfSpanNm": 18.53,
+            "reliefNm": 2.38,
+            "rimLeverPerturbation": 0.0817676772,
+            "boundedDishingMove": 3.02760512E-5,
+            "overTheFourBasePairReading": 1.79816514
+        },
+        {
+            "raster": "112 / 108 (C-0140, does not close)",
+            "crossSection": "15 x 4",
+            "layers": 4,
+            "compositeFraction": 0.3,
+            "acrossHelixRigidity": 278.255762,
+            "bendingLengthAcrossNm": 17.2310927,
+            "modulationWavelengthNm": 7.608,
+            "rippleTransmission": 2.43837603E-5,
+            "freeEdgePenalty": 50.0,
+            "halfSpanNm": 19.04,
+            "reliefNm": 1.36,
+            "rimLeverPerturbation": 0.0454728409,
+            "boundedDishingMove": 5.54399427E-5,
+            "overTheFourBasePairReading": 1.0
+        },
+        {
+            "raster": "112 / 108 (C-0140, does not close)",
+            "crossSection": "10 x 6",
+            "layers": 6,
+            "compositeFraction": 0.3,
+            "acrossHelixRigidity": 916.230312,
+            "bendingLengthAcrossNm": 23.2114857,
+            "modulationWavelengthNm": 7.608,
+            "rippleTransmission": 7.40538369E-6,
+            "freeEdgePenalty": 50.0,
+            "halfSpanNm": 19.04,
+            "reliefNm": 1.36,
+            "rimLeverPerturbation": 0.0454728409,
+            "boundedDishingMove": 1.68371917E-5,
+            "overTheFourBasePairReading": 1.0
+        }
+    ],
+    "thresholds": [
+        {
+            "comparand": "C-0142 tightest coupled cell flat at p90",
+            "model": "smeared equivalent sheet",
+            "state": "T-232, the comparand C-0147 used",
+            "dishingOverStroke": 0.0973238201,
+            "headroomToTolerance": 0.0026761799,
+            "relativeHeadroom": 0.0274976866,
+            "worstBound": 9.96901722E-5,
+            "marginOverBound": 275.831468,
+            "withdrawn": true,
+            "note": "WITHDRAWN as a comparand by C-0167: re-graded on the honeycomb grillage 0 of 64 cells clear T-5b, so no coupled cell of this family is flat at p90 on the lattice the block actually is. Carried here for continuity with C-0147 and not used for the verdict."
+        },
+        {
+            "comparand": "C-0167 tightest coupled cell flat with NO defects",
+            "model": "honeycomb grillage",
+            "state": "T-263, nominal",
+            "dishingOverStroke": 0.0974496759,
+            "headroomToTolerance": 0.0025503241,
+            "relativeHeadroom": 0.0261706781,
+            "worstBound": 9.96901722E-5,
+            "marginOverBound": 262.520141,
+            "withdrawn": false,
+            "note": "The tightest reading the corpus currently calls flat on the honeycomb lattice. It is a zero-defect reading: C-0087's measured staple dropout is what takes it past the tolerance, not the raggedness."
+        },
+        {
+            "comparand": "C-0167 UNCOUPLED four-layer honeycomb tile",
+            "model": "honeycomb grillage",
+            "state": "T-263, uncoupled reference",
+            "dishingOverStroke": 0.0522223659,
+            "headroomToTolerance": 0.0477776341,
+            "relativeHeadroom": 0.914888349,
+            "worstBound": 9.96901722E-5,
+            "marginOverBound": 9177.31736,
+            "withdrawn": false,
+            "note": "CLAUDE.md's own always run the uncoupled tile as the reference. This is the TIGHTEST uncoupled reference that is itself flat: the honeycomb lattice's own no-enhancement lower bound reads 0.132443428 and is not a state anything calls flat, so it cannot serve as a comparand."
+        }
+    ],
+    "edgeField": [
+        {
+            "concentrationMillimolar": 0.5,
+            "gapNm": 5.0,
+            "debyeLengthNm": 7.85375705,
+            "transverseDecayLengthNm": 2.95001474,
+            "reliefNm": 2.38,
+            "reliefOverDecayLength": 0.80677563,
+            "resolvable": false,
+            "marginAtFourBasePairs": 2.16912848
+        },
+        {
+            "concentrationMillimolar": 0.5,
+            "gapNm": 7.0,
+            "debyeLengthNm": 7.85375705,
+            "transverseDecayLengthNm": 3.87586881,
+            "reliefNm": 2.38,
+            "reliefOverDecayLength": 0.614055871,
+            "resolvable": false,
+            "marginAtFourBasePairs": 2.84990354
+        },
+        {
+            "concentrationMillimolar": 0.5,
+            "gapNm": 10.0,
+            "debyeLengthNm": 7.85375705,
+            "transverseDecayLengthNm": 4.94550845,
+            "reliefNm": 2.38,
+            "reliefOverDecayLength": 0.481244754,
+            "resolvable": false,
+            "marginAtFourBasePairs": 3.63640327
+        },
+        {
+            "concentrationMillimolar": 1.0,
+            "gapNm": 5.0,
+            "debyeLengthNm": 5.55344487,
+            "transverseDecayLengthNm": 2.76162311,
+            "reliefNm": 2.38,
+            "reliefOverDecayLength": 0.861812023,
+            "resolvable": false,
+            "marginAtFourBasePairs": 2.03060523
+        },
+        {
+            "concentrationMillimolar": 1.0,
+            "gapNm": 7.0,
+            "debyeLengthNm": 5.55344487,
+            "transverseDecayLengthNm": 3.47566511,
+            "reliefNm": 2.38,
+            "reliefOverDecayLength": 0.684761023,
+            "resolvable": false,
+            "marginAtFourBasePairs": 2.55563611
+        },
+        {
+            "concentrationMillimolar": 1.0,
+            "gapNm": 10.0,
+            "debyeLengthNm": 5.55344487,
+            "transverseDecayLengthNm": 4.18491944,
+            "reliefNm": 2.38,
+            "reliefOverDecayLength": 0.568708677,
+            "resolvable": false,
+            "marginAtFourBasePairs": 3.07714665
+        },
+        {
+            "concentrationMillimolar": 2.0,
+            "gapNm": 5.0,
+            "debyeLengthNm": 3.92687853,
+            "transverseDecayLengthNm": 2.47275423,
+            "reliefNm": 2.38,
+            "reliefOverDecayLength": 0.962489509,
+            "resolvable": false,
+            "marginAtFourBasePairs": 1.81820164
+        },
+        {
+            "concentrationMillimolar": 2.0,
+            "gapNm": 7.0,
+            "debyeLengthNm": 3.92687853,
+            "transverseDecayLengthNm": 2.94622211,
+            "reliefNm": 2.38,
+            "reliefOverDecayLength": 0.807814181,
+            "resolvable": false,
+            "marginAtFourBasePairs": 2.16633979
+        },
+        {
+            "concentrationMillimolar": 2.0,
+            "gapNm": 10.0,
+            "debyeLengthNm": 3.92687853,
+            "transverseDecayLengthNm": 3.34219676,
+            "reliefNm": 2.38,
+            "reliefOverDecayLength": 0.712106489,
+            "resolvable": false,
+            "marginAtFourBasePairs": 2.45749762
+        }
+    ],
+    "reproductions": [
+        {
+            "source": "C-0147 / T-231",
+            "quantity": "the 4 bp bounded dishing move on 15 x 4",
+            "published": "5.54399427E-5",
+            "here": "5.54399427E-5",
+            "departure": 3.6E-10,
+            "reproduced": true
+        },
+        {
+            "source": "C-0147 / T-231",
+            "quantity": "the 4 bp bounded dishing move on 10 x 6",
+            "published": "1.68371917E-5",
+            "here": "1.68371917E-5",
+            "departure": 8.1E-10,
+            "reproduced": true
+        },
+        {
+            "source": "C-0147 / T-231",
+            "quantity": "the front and rear spreads at 112 / 108, both cross-sections",
+            "published": "4 and 8 bp",
+            "here": "4 and 8; 4 and 8",
+            "departure": 0.0,
+            "reproduced": true
+        },
+        {
+            "source": "C-0151 / T-245",
+            "quantity": "the drawable pair's front relief, in rises",
+            "published": "7",
+            "here": "7",
+            "departure": 0.0,
+            "reproduced": true
+        },
+        {
+            "source": "C-0151 / T-245",
+            "quantity": "the block extent, both rasters",
+            "published": "116 bp",
+            "here": "116 bp",
+            "departure": 0.0,
+            "reproduced": true
+        },
+        {
+            "source": "C-0167 / T-263",
+            "quantity": "coupled cells of the recommended family flat at p90 on the honeycomb lattice",
+            "published": "0 of 64",
+            "here": "0 of 96",
+            "departure": 0.0,
+            "reproduced": true
+        }
+    ],
+    "falsifiers": [
+        {
+            "id": "F1",
+            "statement": "the drawable relief moves material off the gap-facing COLUMN, so the raggedness is on the gap-facing surface after all",
+            "declaredOpen": false,
+            "fired": false,
+            "evidence": "the relief is a spread of AXIAL end levels and it is present at 4 of 4 columns; no column loses or gains a helix, so the gap-facing surface is the same set of sidewalls it was and w(x, y) has no term in the relief"
+        },
+        {
+            "id": "F2",
+            "statement": "the model fails to reproduce C-0147's 4 and 8 bp at 112 / 108, or fails to return 7 and 14 at 102 / 109",
+            "declaredOpen": false,
+            "fired": false,
+            "evidence": "4 / 8 at 112 / 108 and 7 / 14 at 102 / 109, at both cross-sections, and the published bound reproduced at a departure below 1e-6"
+        },
+        {
+            "id": "F3",
+            "statement": "the modulation WAVELENGTH moves with the relief",
+            "declaredOpen": true,
+            "fired": false,
+            "evidence": "the period is 2 raster rows at both rasters and both cross-sections: it is a property of the turn-sense ALTERNATION and carries no length"
+        },
+        {
+            "id": "F4",
+            "statement": "the bounded move exceeds the headroom of any state the corpus currently calls flat",
+            "declaredOpen": true,
+            "fired": false,
+            "evidence": "the worst standing margin is 262.52x"
+        },
+        {
+            "id": "F5",
+            "statement": "the relief falls below the 0.34 nm design quantum",
+            "declaredOpen": false,
+            "fired": false,
+            "evidence": "7 and 14 WHOLE rises, by construction"
+        },
+        {
+            "id": "F6",
+            "statement": "the relief is RESOLVABLE by the slit's transverse decay at any (gap, buffer) state",
+            "declaredOpen": false,
+            "fired": false,
+            "evidence": "the tightest is 0.96249 of the transverse decay length, against 0.549994 at C-0147's 4 bp - it does not fire, and the margin has fallen from 1.8-3.6x to 1.0-2.1x"
+        },
+        {
+            "id": "F7",
+            "statement": "the two length-to-sense assignments give different spreads",
+            "declaredOpen": false,
+            "fired": false,
+            "evidence": "the assignment is a relabelling of the two senses and the spreads are invariant under it, asserted at both cross-sections"
+        }
+    ],
+    "findings": [
+        "THE AXIS VERDICT IS RE-TAKEN AND IT HOLDS AT 7 / 14 bp, for a reason that carries no magnitude: the relief is a spread of AXIAL end levels, present at 4 of 4 columns of the cross-section, so it is the tile's RIM at every column and not its gap-facing surface. The coefficient on Sec 3's normal-direction flatness is EXACTLY ZERO at 4 bp, at 7 bp and at any relief a two-length raster can carry, because no relief moves a helix off a column.",
+        "THE RESIDUAL BOUND MOVES BY 1.79817x AND THAT IS TWO FACTORS, NOT ONE: 7/4 in the relief and 112/109 in the row span, because the drawable raster's rows span 109 bp where C-0140's span 112. At the drawable 102 / 109 the bound is 9.96901722E-5 of the stroke on 15 x 4 and 3.02760512E-5 on 10 x 6. The rim lever is linear in the relief; the ripple transfer and the 50x free-edge penalty contain no relief at all, and the modulation wavelength is 2 raster rows = 7.608 nm at BOTH rasters.",
+        "THE COMPARAND C-0147 QUOTED ITS 496x AGAINST HAS BEEN WITHDRAWN, and saying so is the point of this deliverable. C-0167 re-graded every coupled cell on the honeycomb grillage and finds 0 of 96 flat at p90, so C-0142's tightest surviving cell is no longer a state of this design. Against what does exist - the zero-defect recommended cell at 0.0974496759 and the uncoupled tile at 0.0522223659 - the margin is 262.52x to 9177.32x.",
+        "WHAT DID MOVE IS THE EDGE FIELD'S MARGIN, and it is the one number that got uncomfortable. The relief is now 0.96249 of the slit's transverse decay length at its tightest state (2 mM, a 5 nm gap) against 0.549994 at C-0147's 4 bp: the rim still wanders by less than the distance over which its own perturbation dies, so a ragged rim is still a straight rim at its mean as far as C-0022's collar is concerned, but the reserve is 1.0-2.1x where C-0147 read 1.8-3.6x.",
+        "AND THE RELIEF HAS CROSSED C-0005's GAP RESOLUTION. C-0147 noted that 1.36 nm was below the 1.46 nm at which this project can resolve a gap; 2.38 nm is above it, and 4.76 nm is 3.26x it. Nothing here reads that as a cost, because the axis argument makes the coefficient zero whatever the relief - but it removes the second, independent reason C-0147 could give for calling the relief invisible."
+    ],
+    "validity": [
+        "TRL 1-3, model-consistent and traceable, not empirically demonstrated.",
+        "A per-helix row length is not a parameter of ANY lattice model in this repository: OrigamiGrillage, HoneycombCoupledTile and HoneycombGrillage all take a single edgeX / rowBasePairs. The flatness cost is therefore BOUNDED, not measured, and the bound carries CLAUDE.md's 50x free-edge penalty for exactly that reason - the transfer function is an infinite-plate result.",
+        "The bound is a bound on a LOAD perturbation transmitted to a deflection, which is a different channel from the coefficient of the raggedness on the flatness field. The coefficient is zero; the bound is what is left over once the rim's own lever arm is admitted as a perturbation of the edge load.",
+        "The threshold is quoted at the state it is read at, and the state moved: C-0147's comparand was C-0142's tightest coupled cell flat at p90, and C-0167 finds no such cell on the honeycomb lattice. Both readings are emitted and the withdrawn one is flagged.",
+        "The rim census excludes the raster's two path ends, whose turn sense is undefined (C-0140); it is a spread over the interior helices of each column.",
+        "The edge-field channel is a comparison of two LENGTHS and says only that the rim's wander is smaller than the reach of its own perturbation. It is not a solve of a ragged rim, and at the drawable relief the reserve is 1.0-2.1x."
+    ],
+    "openQuestions": [
+        "What a ragged rim does to C-0022's collar once the reserve is only 1.04x, at 2 mM and a 5 nm gap. The comparison of lengths still passes; a 2-D solve on a stepped rim has never been run and this is the first state where the two lengths are within four per cent of each other.",
+        "Whether the rear relief - 14 bp = 4.76 nm, twice the front's and 3.26x C-0005's gap resolution - matters on the face Sec 3's effort point sits nearer. C-0147 named that question and it is still open.",
+        "Whether any state of the recommended honeycomb design is flat under the measured staple dropout at all. C-0167 says 0 of 64 coupled cells, and this task's margin is therefore quoted against a zero-defect reading and an uncoupled one."
+    ],
+    "proseFailure": "none"
+}

@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-101",
     "leaf": "A8.2",
     "title": "Is a 15-attachment scheme flat under the SOLVED load? The dishing of a 1 x 15 grid under C-0022's solved profile, against T-5b's 10% convention",

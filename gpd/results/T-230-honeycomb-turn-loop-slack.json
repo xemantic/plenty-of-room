@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "both",
+        "regime": null
+    },
     "task": "T-230",
     "leaf": "A8.2",
     "title": "The minimum unpaired slack a honeycomb raster turn needs, and what a short loop costs",

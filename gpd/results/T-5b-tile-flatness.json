@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-5b",
     "leaf": "A8.2",
     "title": "Deflected shape of the Gen-1 tile under the actuation load",

@@ -10922,3 +10922,113 @@ declared on 127 of 128 and emitted on 72, with the 55-study residue **named** ra
   emitter that treated an unrecognised argument as an output path.
 - A `CLAUDE.md` entry withdrawn last iteration for being eleven iterations stale has a companion
   hazard: **`git checkout <dir>` on a shared checkout is `git stash`'s twin.**
+
+## Iteration 42 — 2026-08-22: the emission rule reaches every writer, and a gate that could not fail
+
+Three agents in parallel, split so that **only one touched an existing result file** — the emission
+cluster is serial by construction, and `C-0101`'s consumer-before-producer error with two authors
+would have been unreadable rather than merely wrong.
+
+### The emission rule now reaches every writer, not every implementation
+
+`T-278` closed the residue `C-0172` named: `tools/T-272-header-census.py` reads **`BOTH 130`,
+`DECLARED-NOT-EMITTED 0`** where it read 72 / 55, from **61 studies re-emitted in one 43-constraint
+topological order, 0 failures**. And `CH-0223`'s seven emitters — which wrote committed result files
+through **no rounding function at all**, carrying **41 297 of the corpus's 41 369** over-precise
+numeric leaves, **99.83 %** — now all round: `tools/T-278-emitter-rounding-census.py` reads
+**0 of 130**, and is a gate.
+
+**`CH-0223`'s own precision argument was wrong, and the judgement it declined was the FLOOR.** Its
+ground was that `T-1` and `T-1c` are *"downstream of a solved SCF height"* and therefore determined
+to six digits; `SelfConsistentField` and `heightAtPressure` occur **zero** times in the five sources
+concerned, which close through `bracketedRoot` at `1e−15` (`CH-0225`). What genuinely needed a
+per-study decision was the floor: the default `1e−9` would have flattened **370** fields — 96 of
+`T-7`'s `inertialTime` **in seconds**, smallest `6.96645e−14`, and 274 of `T-1c`'s
+`equilibriumStiffness`, which `CLAUDE.md` records as *exactly* zero, so flattening would have
+**stated the physics**. One of seven took a declared floor.
+
+The offline simulation predicted every moved leaf **before a JVM started** and matched field for
+field — `25 774 / 7 914 / 7 049 / 330 / 81 / 79 / 70 = 41 297`, **0 missing, 0 unpredicted**.
+
+### A gate that could not fail, wired into a build that could not see it
+
+`tools/trace-answers.py` reported a live contradiction on the first run of this iteration: `ANSWERS.md`
+said `T-9` was open, the queue read it closed. Three defects, and the second is the one that matters.
+
+Iteration 41 coined `**SECOND DELIVERABLE ANSWERED**` on the `T-9` row — a third, **scoped** status
+qualifier after *a closing word about another task* and *`PARTIALLY DONE`* — and `queue_status`,
+which matches a closing word anywhere after the identifier, read the row CLOSED. An **open** task
+silently left the register while the deliverable was right about it.
+
+**And the checker could not fail.** Its `main` accumulated the defect count into a **dead local** and
+ended `return 0`, from iteration 12 — so `sys.exit(main())` was `sys.exit(0)` for every input, on
+**all four** of its checks. `C-0173` then wired it into `tools/verify.sh` under `set -euo pipefail`,
+where the exit code **is** the wiring, on the stated ground that it *"already returned its defect
+count"* — true of the inner `check_document` and false of the function `sys.exit` reads. The
+contradiction printed on stdout through six commits, two of which record a full-suite run of 3 229
+and 3 254 tests. `CH-0231`, and `CH-0206` recurring: **a suite count is not a gate reading.**
+
+Repaired to `return 1 if failures else 0` — a **boolean**, because `sys.exit(n)` truncates modulo 256
+and exactly 256 absent tokens would have read as a clean corpus. Mechanised as
+`tools/check-queue-vocabulary.py`: 16 self-tests, **6 mutations and 0 survivors**, **0 false
+positives over 37 clean revisions** of `TASKS.md`, and it reads 1 defect at the commit that
+introduced the coinage. The half a list edit cannot satisfy is the **agreement** check — every
+declared phrase is put through `queue_status` and must be read in the sense it is declared in.
+
+**`CLAUDE.md`'s own prescribed sweep for this class does not catch it**, and is withdrawn in the
+commit that lands the repair: it matches **0 of 5** cells of the broken row, and over the queue it is
+**21** hits of which **20** are correct, because *strike, never delete* keeps a closed row's original
+`TODO — MEDIUM` prose forever.
+
+### A partial discharge is a data structure, and a debt line that grows when the work is done right
+
+`T-260`/`T-262` took the `T-234` census gate from 5 defects to **0** and the advisory debt line from
+41 to **24**, on **42 mutations with 0 failing nothing** over **126** named self-tests.
+
+`C-0141` discharged *half* of what the string *"single-layer square-lattice"* matches and left the
+grillage half standing, so **no regular expression over that string can be right** — the cure is a
+per-family **pointer set**, after which **four** `CORRECTING`/`OUT_OF_SCOPE_FILES` exemptions were
+deleted and none added. Registering a file silences a symptom.
+
+And `CH-0230`: over 40 revisions of the two deliverables, **every single increase** in the debt line
+is a synthesis pass, because *a correcting sentence has to name the withdrawn premise in order to
+withdraw it*. A monotone counter is not a debt, and the tool now says so in its own output.
+
+### The rim, on two channels, and a load nobody had applied
+
+`T-258` re-took `C-0147`'s zero rather than inheriting it: the drawable raster's relief is present at
+**6 of 6** columns of `10 × 6` and **4 of 4** of `15 × 4`, so the coefficient on §3's gap-facing
+flatness is exactly zero and does not scale. The rim bound moves **`1.79816514×`** — and that is
+**two** factors, `7/4` from the relief and **`112/109` from the row span**, which is why grepping the
+number out of the artifact beat predicting it.
+
+`T-254` found **no zero to inherit**, with a lever arm and no solve: a prestrain reaches the
+deflection only through the covalent link on arm `(d/2)û_y`, and the honeycomb's azimuths never give
+`û_y = 0`. A raggedness is a *geometry* on an orthogonal coordinate; a prestrain is a *load*.
+
+The sharper result is `CH-0228`: **the forced crossovers are the small load.** Every *allowed*
+honeycomb scaffold crossover carries `8.57142857°`, there are **59** of them on every raster, and the
+flatness question had been asked about the **10** that only the *undrawable* raster has. `59 × 8.57°`
+and `10 × 17.14°` move a ceiling within **9 %** of each other, and the 59 exist on the design this
+programme recommends while the 10 do not. No verdict reverses — `0.0764244991` is inside `T-5b`'s
+`0.10` — but the question that is owed has changed.
+
+### What surprised us
+
+- **A gate can be wired and still be unable to fail, and the claim that wired it read the return
+  statement of the wrong function.** Nine lines apart, and one of them decides the process's exit.
+- **An emitter keyed on `git ls-files` deletes a concurrent agent's work by construction**, and the
+  failure surfaces in a test about something else. Third form of *never revert a path you do not
+  own*, after `git stash` and `git checkout <dir>` — this time through a **generator**, where no
+  reviewer is looking. It cost two suite failures that were the coordinator's, not the agent's.
+- **The rounding rule has three populations** — implementations (6), emitters (130), artifacts (156)
+  — and `C-0138` counted the one that cannot decide whether the rule holds.
+- **Kotlin's `roundToLong` rounds ties towards positive infinity** (`−2.5 → −2`), and `10.0.pow(k)` is
+  correctly rounded in Java and not in Python, disagreeing over this corpus at exactly one exponent.
+  A cross-language mirror of a numeric rule is a numeric claim.
+- **A mutation table indicts itself before it indicts the tool**, twice in one iteration and by the
+  same shape: a mutation written as an **alternation with the original** is a no-op. `C-0176`'s first
+  table had 9 of 22 rows failing nothing; the coordinator's had 2 of 6, one of which exposed a
+  redundant `^` beside a `.match()` call site that made a mutation of *either* anchor inert.
+- **A claim about a census is inside that census's own scope** — writing `C-0176` added 13
+  occurrences to the census it measures — so both readings have to be published.

@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-67 — does a 90 degree scaffold or staple routing between a sheet duplex and a normal standoff exist at all?",
     "leaf": "A8.2, with A1.2",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40 x 40 nm tile; 45 load paths on C-0015's 3 x 15 grid; section 3's 100 pN at the acceptable 3 nm and the desired 10 nm; single-layer square-lattice Rothemund sheet at the SAXS-measured 2.69 nm interhelical distance",

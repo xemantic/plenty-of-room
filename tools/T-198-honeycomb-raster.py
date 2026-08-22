@@ -28,6 +28,8 @@
 import json
 import os
 import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from emission_header import with_emission_header  # noqa: E402
 from itertools import permutations
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -485,7 +487,12 @@ def main(argv):
     }
     destination = os.path.join(ROOT, "gpd", "results", "T-198-honeycomb-raster-width.json")
     with open(destination, "w", encoding="utf-8") as handle:
-        json.dump(result, handle, indent=2, ensure_ascii=False)
+        # `T-278`. The header the Kotlin emission layer puts on every study's record, mirrored
+        # for the emitters written in Python (`tools/emission_header.py`). This is a honeycomb
+        # raster and the tag is what makes "which results are honeycomb" a query.
+        json.dump(
+            with_emission_header(result, "honeycomb"), handle, indent=2, ensure_ascii=False
+        )
         handle.write("\n")
     print("wrote {}".format(destination))
     return 0

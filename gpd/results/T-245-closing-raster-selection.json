@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "both",
+        "regime": null
+    },
     "task": "T-245",
     "leaf": "A8.2",
     "title": "Re-selecting the honeycomb two-length row pair on SCAFFOLD CLOSURE, and re-grading the coupled cells at its own row-derived crossover-column count",

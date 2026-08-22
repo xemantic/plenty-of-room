@@ -40,6 +40,48 @@ data class HoneycombBondSite(val lowerBeam: Int, val upperBeam: Int, val plane: 
 
 }
 
+/**
+ * `T-254` — a scaffold tie the raster's **turn** adds at a node the staple lattice does not reach.
+ *
+ * A raster turn with zero unpaired nucleotides is a covalent crossover between two duplexes at
+ * their **ends**, so it sits at `s = ±L/2` — past the last 7 bp crossover plane. It carries the
+ * same three elements a lattice bond does (a dihedral spring, a normal link and an axial slip
+ * spring), because it is the same covalent object; what differs is where it sits.
+ *
+ * @param prestrainRadians the relative roll the tie is built at. `C-0152` measures
+ *   `8.5714286°` at **every** allowed honeycomb scaffold crossover and twice that at a forced
+ *   one; a prestrain is a **load** (`C-0104`), so it changes no entry of the stiffness matrix.
+ */
+data class HoneycombScaffoldTurnTie(
+    val lowerBeam: Int,
+    val upperBeam: Int,
+    val node: Int,
+    val prestrainRadians: Double = 0.0
+) {
+
+    init {
+        require(lowerBeam >= 0) { "lowerBeam must not be negative, was: $lowerBeam" }
+        require(upperBeam > lowerBeam) { "upperBeam must exceed lowerBeam, was: $upperBeam" }
+        require(node >= 0) { "node must not be negative, was: $node" }
+        require(prestrainRadians.isFinite()) {
+            "prestrainRadians must be finite, was: $prestrainRadians"
+        }
+    }
+
+}
+
+/** A scaffold turn tie of the assembled lattice, as geometry. */
+data class HoneycombTurnElement(
+    val tie: HoneycombScaffoldTurnTie,
+    val node: Int,
+    val s: Double,
+    val inPlane: Boolean,
+    val unitY: Double,
+    val unitZ: Double,
+    val y: Double,
+    val z: Double
+)
+
 /** A bond of the assembled lattice, as geometry. */
 data class HoneycombLatticeBond(
     val site: HoneycombBondSite,
@@ -231,7 +273,8 @@ class HoneycombGrillage(
     val linkStiffness: Double = RIGID_LINK_STIFFNESS,
     val faceColumn: Int = 0,
     val axialPinBeam: Int = 0,
-    val bondPrestrains: Map<HoneycombBondSite, Double> = emptyMap()
+    val bondPrestrains: Map<HoneycombBondSite, Double> = emptyMap(),
+    val scaffoldTurnTies: List<HoneycombScaffoldTurnTie> = emptyList()
 ) {
 
     init {
@@ -381,11 +424,45 @@ class HoneycombGrillage(
         }
     }
 
+    /**
+     * `T-254`'s scaffold turn ties, as assembled geometry.
+     *
+     * Empty by default, so every lattice `C-0154` and `C-0167` measured is **bit-identical**
+     * — asserted as a test rather than claimed.
+     */
+    val turnElements: List<HoneycombTurnElement> = scaffoldTurnTies.map { tie ->
+        require(tie.upperBeam < beamCount) {
+            "a tie must join two beams of the block, was: ${tie.lowerBeam}, ${tie.upperBeam}"
+        }
+        require(tie.node in nodeS.indices) {
+            "a tie's node must be one of the beam's own, was: ${tie.node}"
+        }
+        val dy = beamY[tie.upperBeam] - beamY[tie.lowerBeam]
+        val dz = beamZ[tie.upperBeam] - beamZ[tie.lowerBeam]
+        val length = sqrt(dy * dy + dz * dz)
+        require(abs(length - block.bondLength) < 1e-8) {
+            "a tie must join two beams exactly one lattice constant apart, was: $length"
+        }
+        HoneycombTurnElement(
+            tie = tie,
+            node = tie.node,
+            s = nodeS[tie.node],
+            inPlane = abs(dz) < 1e-9,
+            unitY = dy / length,
+            unitZ = dz / length,
+            y = (beamY[tie.lowerBeam] + beamY[tie.upperBeam]) / 2.0,
+            z = (beamZ[tie.lowerBeam] + beamZ[tie.upperBeam]) / 2.0
+        )
+    }
+
     /** The same lattice with no prestrain — the object every influence function must be taken on. */
     val withoutPrestrain: HoneycombGrillage by lazy {
-        if (bondPrestrains.isEmpty()) this else HoneycombGrillage(
+        if (bondPrestrains.isEmpty() && scaffoldTurnTies.none { it.prestrainRadians != 0.0 }) {
+            this
+        } else HoneycombGrillage(
             block, rowBasePairs, foundationStiffness, hingeStiffness, hingeStiffnessEnhancement,
-            slipStiffness, duplex, subdivisions, linkStiffness, faceColumn, axialPinBeam
+            slipStiffness, duplex, subdivisions, linkStiffness, faceColumn, axialPinBeam,
+            emptyMap(), scaffoldTurnTies.map { it.copy(prestrainRadians = 0.0) }
         )
     }
 
@@ -461,6 +538,28 @@ class HoneycombGrillage(
                 Array(4) { i -> DoubleArray(4) { j -> linkStiffness * linkGradient[i] * linkGradient[j] } }
             )
             val armZ = half * bond.unitZ
+            val slipGradient = doubleArrayOf(1.0, -armZ, -1.0, -armZ)
+            scatter(
+                intArrayOf(dof(node, a, U), dof(node, a, THETA), dof(node, b, U), dof(node, b, THETA)),
+                Array(4) { i -> DoubleArray(4) { j -> slipStiffness * slipGradient[i] * slipGradient[j] } }
+            )
+        }
+        turnElements.forEach { element ->
+            val a = element.tie.lowerBeam
+            val b = element.tie.upperBeam
+            val node = element.node
+            val hinge = hingeStiffness * hingeStiffnessEnhancement
+            scatter(
+                intArrayOf(dof(node, a, PHI), dof(node, b, PHI)),
+                arrayOf(doubleArrayOf(hinge, -hinge), doubleArrayOf(-hinge, hinge))
+            )
+            val armY = half * element.unitY
+            val linkGradient = doubleArrayOf(1.0, armY, -1.0, armY)
+            scatter(
+                intArrayOf(dof(node, a, W), dof(node, a, PHI), dof(node, b, W), dof(node, b, PHI)),
+                Array(4) { i -> DoubleArray(4) { j -> linkStiffness * linkGradient[i] * linkGradient[j] } }
+            )
+            val armZ = half * element.unitZ
             val slipGradient = doubleArrayOf(1.0, -armZ, -1.0, -armZ)
             scatter(
                 intArrayOf(dof(node, a, U), dof(node, a, THETA), dof(node, b, U), dof(node, b, THETA)),
@@ -711,10 +810,13 @@ class HoneycombGrillage(
 
     /** The energy in pN·nm the dihedral springs store in [field], prestrain included. */
     fun hingeEnergy(field: F64Array): Double = 0.5 * hingeStiffness * hingeStiffnessEnhancement *
-            bonds.sumOf {
+            (bonds.sumOf {
                 val rotation = hingeRotation(field, it) - prestrainOf(it)
                 rotation * rotation
-            }
+            } + turnElements.sumOf {
+                val rotation = turnRotation(field, it) - it.tie.prestrainRadians
+                rotation * rotation
+            })
 
     /** The penalty residual in pN·nm of the normal links in [field]. */
     fun linkEnergy(field: F64Array): Double = 0.5 * linkStiffness *
@@ -881,13 +983,21 @@ class HoneycombGrillage(
      * smeared stiffness and a prestrain is a real hinge's real couple.
      */
     private fun addPrestrainCouples(load: F64Array) {
-        if (bondPrestrains.isEmpty()) return
-        bonds.forEach { bond ->
-            val angle = prestrainOf(bond)
+        if (bondPrestrains.isNotEmpty()) {
+            bonds.forEach { bond ->
+                val angle = prestrainOf(bond)
+                if (angle == 0.0) return@forEach
+                val couple = hingeStiffness * angle
+                load[dof(bond.node, bond.site.upperBeam, PHI)] += couple
+                load[dof(bond.node, bond.site.lowerBeam, PHI)] -= couple
+            }
+        }
+        turnElements.forEach { element ->
+            val angle = element.tie.prestrainRadians
             if (angle == 0.0) return@forEach
             val couple = hingeStiffness * angle
-            load[dof(bond.node, bond.site.upperBeam, PHI)] += couple
-            load[dof(bond.node, bond.site.lowerBeam, PHI)] -= couple
+            load[dof(element.node, element.tie.upperBeam, PHI)] += couple
+            load[dof(element.node, element.tie.lowerBeam, PHI)] -= couple
         }
     }
 
@@ -964,6 +1074,24 @@ class HoneycombGrillage(
         load[pinnedDof] = 0.0
         return HoneycombDeflection(this, factorisation.solve(load), uniformPressure(0.0))
     }
+
+    /**
+     * The face field of a unit prestrain at the scaffold turn tie [element] alone — `T-254`'s
+     * influence function, taken on this lattice's own factorisation.
+     */
+    fun unitTurnResponse(element: HoneycombTurnElement): HoneycombDeflection {
+        val load = F64Array(degreesOfFreedom)
+        val couple = hingeStiffness
+        load[dof(element.node, element.tie.upperBeam, PHI)] += couple
+        load[dof(element.node, element.tie.lowerBeam, PHI)] -= couple
+        load[pinnedDof] = 0.0
+        return HoneycombDeflection(this, factorisation.solve(load), uniformPressure(0.0))
+    }
+
+    /** The relative roll in radians across the turn tie [element] in [field]. */
+    fun turnRotation(field: F64Array, element: HoneycombTurnElement): Double =
+        field[dof(element.node, element.tie.upperBeam, PHI)] -
+                field[dof(element.node, element.tie.lowerBeam, PHI)]
 
     companion object {
 

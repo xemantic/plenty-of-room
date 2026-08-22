@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-5",
     "leaf": "A1.2",
     "title": "Load distribution across the Gen-1 DNA-origami tile",

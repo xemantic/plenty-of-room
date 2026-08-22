@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-120 — is a sheet held together by ONE crossover per interface still a plate?",
     "leaf": "A8.2 (structural rigidity), with A1.2 for the anchoring scheme",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm tile, 15 duplexes at the SAXS-measured 2.69 nm; 8 symmetrically centred crossover columns, 56 crossovers; C-0022's SOLVED edge profile at 2 mM, 10 nm, 0.192 V; C-0017's 33.3333 pN/nm mandate",

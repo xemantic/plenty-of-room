@@ -28,6 +28,8 @@ import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_SIGNIFICANT_DIGITS
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.lattice.SquareCrossoverLattice
 import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import kotlinx.serialization.json.Json
@@ -470,7 +472,7 @@ fun main() {
                     "reproductions/relativeDeparture" to DEPARTURE_SIGNIFICANT_DIGITS
                 ),
                 floor = 1e-15
-            )
+            ).withEmissionHeader(LatticeTag.SQUARE, null)
         ) + "\n"
     )
     println("T-275 written to ${out.path}")

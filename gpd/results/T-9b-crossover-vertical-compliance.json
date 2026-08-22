@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-9",
     "deliverable": "second of three — the crossover's vertical/axial compliance",
     "leaf": "A1.2, with A8.2",

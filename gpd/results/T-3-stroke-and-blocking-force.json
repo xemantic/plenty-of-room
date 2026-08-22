@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "none",
+        "regime": null
+    },
     "task": "T-3",
     "leaf": "A2.2",
     "title": "Stroke and blocking force versus bias for the Gen-1 actuator, including ionic screening, from a self-consistent force balance between C-0008's F_es(h, V) and C-0003's P(h)",

@@ -18,6 +18,7 @@ package com.xemantic.nano.plentyofroom.material
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -426,7 +427,14 @@ fun main() {
     output.parentFile.mkdirs()
     output.writeText(
         json.encodeToString(
-            json.encodeToJsonElement(result).withEmissionHeader(LatticeTag.NONE, null)
+            json.encodeToJsonElement(result)
+                // NINE DIGITS (`T-278`, closing `CH-0223`). `P-6` runs no solver at all — the
+                // solver-provenance closure over this source finds ZERO named convergence
+                // criteria — so it is `P-18`'s "analytic models and closed-form geometry" site,
+                // whose loosest tolerance is the arithmetic's own and whose `determinedDigits`
+                // saturates the clamp. Smallest emitted magnitude `1.08e-04`.
+                .roundedForResult()
+                .withEmissionHeader(LatticeTag.NONE, null)
         ) + "\n"
     )
 

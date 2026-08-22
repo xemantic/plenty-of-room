@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-40",
     "leaf": "A8.2",
     "title": "The base of C-0025's normal duplex standoff, modelled rather than assumed",

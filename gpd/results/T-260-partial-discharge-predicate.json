@@ -1,0 +1,222 @@
+{
+  "leaf": "none — a process claim protecting the census that protects every honeycomb leaf",
+  "conditions": "No physics is computed. Units unchanged and untouched: nm, pN, pN/nm, pN/nm^2 = 1 MPa exactly, k_BT = 4.141947 pN nm at 300 K. The corpus is the in-scope Markdown of this repository — gpd/claims/, TASKS.md and the two deliverables — read at the baselineRef below plus this iteration's own edits.",
+  "verificationType": "logical — a token census over the corpus, a predicate measured against a hand reading of every occurrence of its two families, a mutation measurement in BOTH directions, a historical series taken out of git, and the census's and the emitter's own named self-tests (counted in mutationCoverage)",
+  "baselineRef": "68d9a6cf5c9b5068f38c887afcd95a1e295fc50a",
+  "parameters": {
+    "censusTool": "tools/T-234-census.py",
+    "classification": "tools/T-234-classification.json",
+    "emitter": "tools/T-234-emit-classification.py",
+    "mutationTest": "tools/T-234-mutation-test.py",
+    "subjectDischarge": "C-0140/C-0141",
+    "discharges": {
+      "C-0140/C-0141": [
+        "C-0140",
+        "C-0141",
+        "CH-0172",
+        "CH-0173",
+        "CH-0174",
+        "CH-0175",
+        "CH-0180",
+        "CH-0181",
+        "T-233",
+        "T-234"
+      ],
+      "C-0154/C-0167": [
+        "C-0154",
+        "C-0167",
+        "CH-0213",
+        "T-253",
+        "T-263"
+      ],
+      "none": []
+    },
+    "refineWindowCharacters": 300,
+    "structuralWindowCharacters": 120,
+    "contextRemoteCharacters": 1000,
+    "snippetCharacters": 40,
+    "overrideKeyCharacters": 100
+  },
+  "baselineChain": {
+    "note": "A census whose scope includes TASKS.md has a READING, not a value. These are the same tool against the corpus as it stood when each was taken. The first three are recorded readings, taken in scratch copies of HEAD's tools; the last is computed live by this emitter. The inherited working-tree classification was itself a legitimate regeneration that had gone stale before three further claims entered the corpus, which is CH-0182 happening while the task that reads it runs.",
+    "committedClassificationAgainstTheCorpusAsItStands": {
+      "gateDefects": 41,
+      "deliverableDebt": 37,
+      "howMeasured": "git show HEAD:tools/T-234-census.py and HEAD:tools/T-234-classification.json into a scratch directory, then --root at the checkout"
+    },
+    "inheritedUncommittedRegeneration": {
+      "gateDefects": 18,
+      "deliverableDebt": 41,
+      "howMeasured": "the same, with the working tree's uncommitted classification"
+    },
+    "freshRegenerationByTheStandingEmitter": {
+      "gateDefects": 5,
+      "deliverableDebt": 41,
+      "howMeasured": "HEAD's census and emitter over a copy of the corpus's Markdown",
+      "whatTheFiveAre": [
+        "C-0167 headline — GRILLAGE, resolved by the T-260 predicate",
+        "C-0172 LatticeTag row — GRILLAGE, resolved by the T-260 predicate",
+        "C-0171 coupling-threshold row — ROW_SPAN, resolved by the T-262 predicate",
+        "TASKS.md's T-9 row — a square-lattice oxDNA design, settled by hand",
+        "C-0167's five-gates reproduction row — settled by hand"
+      ]
+    }
+  },
+  "census": {
+    "occurrences": 379,
+    "files": 39,
+    "byFamily": {
+      "FOOTPRINT": 135,
+      "GRILLAGE": 21,
+      "AZIMUTH": 39,
+      "ROW_SPAN": 60,
+      "WIDTH": 49,
+      "PLACEMENT": 13,
+      "SCAFFOLD": 51,
+      "SQUARE": 11
+    },
+    "byFamilyExcludingThisClaimsWorkedExamples": {
+      "FOOTPRINT": 135,
+      "GRILLAGE": 17,
+      "AZIMUTH": 39,
+      "ROW_SPAN": 57,
+      "WIDTH": 46,
+      "PLACEMENT": 13,
+      "SCAFFOLD": 51,
+      "SQUARE": 8
+    },
+    "occurrencesInThisClaimsWorkedExamples": 13,
+    "byClass": {
+      "MOVED": 158,
+      "SURVIVING": 14,
+      "RESTATED": 27,
+      "OUT_OF_SCOPE": 7,
+      "DISCHARGED": 10,
+      "RECORD": 85,
+      "CORRECT": 78
+    },
+    "gateDefects": 0,
+    "remoteContextOccurrences": 7,
+    "handSettledOccurrences": 6,
+    "deliverableDebt": 24
+  },
+  "task": "T-260 — a discharge can be PARTIAL, and a token pattern is exactly the instrument that cannot tell: one token, two discharges, two dates",
+  "cheapBounds": [
+    "Before writing any predicate, dump every occurrence of the two ambiguous families with a window around the token and READ them: 38 PLACEMENT-family occurrences, hand-read as 17 structural-model, 14 absence-claim and 7 attributive. The census picked the predicate.",
+    "The `PLACEMENT` pattern is one string and `C-0141` discharged half of what it matches, so no regular expression over that string can be right; what has to change is that a FAMILY carries its own pointer set. One data-structure change, no new pattern.",
+    "Ask what the gate would cost before widening it: gating the GRILLAGE half on C-0154/C-0167 would demand annotating claims this task does not own, so the honest form is to report that half on its own line and name the census it belongs to."
+  ],
+  "predicates": [
+    {
+      "predicate": "the PLACEMENT family splits by a tested predicate rather than by a CORRECTING set membership",
+      "verdict": "MET",
+      "reading": "GRILLAGE 17 / PLACEMENT 13 / SQUARE 8, excluding this claim's own worked examples"
+    },
+    {
+      "predicate": "the two CORRECTING entries registered only to hide false positives are removed and the gate stays clean",
+      "verdict": "MET",
+      "reading": "C-0152 and C-0154 removed; OUT_OF_SCOPE_FILES emptied; gate 0 defects"
+    },
+    {
+      "predicate": "the class and the family cannot disagree — a family this census does not gate may not carry a class it gates",
+      "verdict": "MET",
+      "reading": "asserted in classify(), 4 named tests, and the coercion is measured by 2 mutations in both directions"
+    },
+    {
+      "predicate": "every rule fails a NAMED test when narrowed AND when widened",
+      "verdict": "MET",
+      "reading": "see mutationCoverage"
+    }
+  ],
+  "partialDischarge": {
+    "whatC0141Supplied": "the honeycomb station lattice, the plan ceiling, the placement family and the price of an oblique root",
+    "whatItDidNotSupply": "a honeycomb grillage — OrigamiGrillage never reads `layers`, so every coupled cell stayed a smeared single-layer square-lattice solve until C-0154 built one and C-0167 re-graded onto it",
+    "grillageOccurrences": 17,
+    "placementOccurrences": 13,
+    "attributiveOccurrences": 8,
+    "gateDefectsResolvedByTheGrillageSplit": 2,
+    "gateDefectsResolvedByTheRowSpanSplit": 1,
+    "gateDefectsResolvedByAHandOverride": 2,
+    "fileSetEntriesReplacedByThePredicate": 4
+  },
+  "handReading": {
+    "occurrencesReadByHand": 38,
+    "predicateAgrees": 36,
+    "predicateDisagrees": 2,
+    "disagreements": [
+      "TASKS.md's own T-260 row reads GRILLAGE because it quotes the word `grillage` in describing the split; either reading is defensible and the row is a queue RECORD",
+      "C-0145's synthesis row reads SQUARE where the hand reading said PLACEMENT; the file is a synthesis claim, so the class is RECORD either way"
+    ],
+    "materialDisagreements": 0
+  },
+  "structuralWindowSweep": [
+    {
+      "radiusCharacters": 80,
+      "GRILLAGE": 17,
+      "PLACEMENT": 13,
+      "SQUARE": 8
+    },
+    {
+      "radiusCharacters": 100,
+      "GRILLAGE": 17,
+      "PLACEMENT": 13,
+      "SQUARE": 8
+    },
+    {
+      "radiusCharacters": 120,
+      "GRILLAGE": 17,
+      "PLACEMENT": 13,
+      "SQUARE": 8
+    },
+    {
+      "radiusCharacters": 150,
+      "GRILLAGE": 17,
+      "PLACEMENT": 13,
+      "SQUARE": 8
+    },
+    {
+      "radiusCharacters": 200,
+      "GRILLAGE": 18,
+      "PLACEMENT": 12,
+      "SQUARE": 8
+    },
+    {
+      "radiusCharacters": 300,
+      "GRILLAGE": 19,
+      "PLACEMENT": 11,
+      "SQUARE": 8
+    }
+  ],
+  "sources": [
+    "gpd/claims/C-0140-honeycomb-raster-turn-sense.md — no uniform honeycomb row length",
+    "gpd/claims/C-0141-honeycomb-station-lattice-and-placement.md — the station lattice, plan ceiling and placement family this census's PLACEMENT family records the absence of",
+    "gpd/claims/C-0146-coupled-cells-at-the-two-length-raster.md — 112 bp restored as a ROW SPAN, and the width that threatened the design is not a width",
+    "gpd/claims/C-0151-closing-raster-selection.md — the drawable 102 / 109 raster",
+    "gpd/claims/C-0154-honeycomb-grillage.md — the honeycomb grillage C-0141 did not supply",
+    "gpd/claims/C-0167-coupled-cells-on-the-honeycomb-grillage.md — the coupled cells re-graded",
+    "gpd/challenges/CH-0182-a-census-is-dated-by-its-premise-set.md"
+  ],
+  "mutationCoverage": {
+    "mutations": 42,
+    "directions": [
+      "NARROW",
+      "WIDEN"
+    ],
+    "narrowing": 26,
+    "widening": 16,
+    "namedTestsTotal": 126,
+    "namedTestsCensus": 95,
+    "namedTestsEmitter": 31,
+    "mutationsFailingNoNamedTest": 0,
+    "namedTestsAddedByTheseTasks": 83,
+    "namedTestsReachedBySomeMutation": 77,
+    "exitStatus": 0,
+    "note": "An unreached row is a measurement of the mutation table, not of the tool: a limiting case such as `an empty table carries nothing` is reached by no plausible mutation of the shipped logic, and inventing one would be testing a test."
+  },
+  "residue": {
+    "notGatedInVerify": "The census's --check is NOT wired into tools/verify.sh. Its scope includes TASKS.md, which every agent edits every iteration, so an occurrence arrives unclassified through no fault of the tree and the gate goes red for a reason nobody caused — C-0083's rule, that a gate which cannot come clean is not a gate, read forward.",
+    "wiringRequested": "tools/T-234-census.py --self-test and tools/T-234-emit-classification.py --self-test read only in-memory fixtures apart from three corpus assertions, and belong beside the other checker self-tests on ./gradlew test. This task does not edit build.gradle.kts; the wiring is requested of the coordinator.",
+    "whatThePredicateStillCannotDo": "It cannot tell which LATTICE a token belongs to. `15 x 112 bp` and `15 duplexes, 112 bp` are this corpus's square-lattice sheet, and they sit on lines that discuss the honeycomb block beside them: 5 such occurrences, 2 of them caught by the remote-context advisory and 3 not. All 5 are settled by hand, and the residue is a LATTICE question rather than a width one.",
+    "cH0182": "The classification is still dated by the corpus: a claim filed later in the same iteration arrives unclassified. What this task changes is the failure DIRECTION — a new occurrence in a non-subject family is now classed SURVIVING or RESTATED rather than MOVED, so a correcting claim no longer arrives as debt."
+  }
+}

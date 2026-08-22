@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-165",
     "question": "Is a shared-body coupling flat under the measured dropout once its PLACEMENT and its DISTRIBUTION are searched?",
     "leaf": "A8.2 (the flatness of the tile), with A1.2 for the anchoring scheme",

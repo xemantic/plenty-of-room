@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-178",
     "question": "Does C-0103's count effect at fixed station geometry hold at the other 31 crossover phases, and is its decomposition of the recommended 34 -> 30 move into a count term and a phase term well posed?",
     "leaf": "A8.2, with A1.2",

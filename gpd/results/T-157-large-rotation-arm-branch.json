@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-157",
     "leaf": "A2.2",
     "title": "Does C-0069's Q5 fold on the LARGE-rotation branch? An inextensibility bound that holds on every branch, a multi-branch enumeration of C-0039's shooting residual, a continuation of the branch connected to the unloaded state, and C-0018's equilibrium path re-run over the extended domain",

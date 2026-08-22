@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-188",
     "question": "At C-0086's buildable 38.08 nm, is the count/phase interaction the same object C-0108 measured at 40.00 nm, and does the recommended (count, phase) endpoint move?",
     "leaf": "A8.2, with A1.2",
@@ -14096,7 +14100,7 @@
             "quantity": "the free-tile stroke at the buildable width [nm]",
             "published": 5.15473846,
             "reproduced": 5.15473846,
-            "departure": 2.4E-9,
+            "departure": 0.0,
             "strict": true
         },
         {
@@ -14104,7 +14108,7 @@
             "quantity": "the free-tile stroke at the buildable width under the refused convention [nm]",
             "published": 5.15473846,
             "reproduced": 5.15473846,
-            "departure": 2.4E-9,
+            "departure": 0.0,
             "strict": true
         },
         {

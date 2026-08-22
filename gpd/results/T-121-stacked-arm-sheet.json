@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-121 — what do 34 duplexes stacked ABOVE the tile do to it?",
     "leaf": "A8.2 (structural rigidity and joint stiffness), with A1.2 for the anchoring scheme and the variance predicate",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS-measured 2.69 nm, 8 symmetrically centred crossover columns; C-0055's own 34-arm upward placement at C-0039's 8.164 nm arm; C-0022's SOLVED edge profile at 2 mM, a 10 nm gap and 0.192 V; C-0017's 33.3333 pN/nm mandate; C-0004's drag budget at 40 x 40 nm",
@@ -48,7 +52,7 @@
         },
         {
             "name": "the arms' drag as a fraction of C-0004's total at the nominal design point",
-            "value": 0.0911001875,
+            "value": 0.0911001876,
             "unit": "-",
             "settles": "the ONE channel that moves anything, and it is an UPPER bound: an arm one duplex diameter above a translating plate sits in fluid already moving with it, and the lower bound is exactly zero"
         }
@@ -710,7 +714,7 @@
             "areaRms": 1.07928171,
             "centreRms": 0.821490367,
             "cornerFrequency": 91231.5386,
-            "inBandFraction": 0.00697778737,
+            "inBandFraction": 0.00697778738,
             "inBandRms": 0.0901558023,
             "marginAgainstThreeNanometresBroadband": 2.77962646,
             "marginAgainstThreeNanometresInBand": 33.2757285
@@ -723,11 +727,11 @@
             "dishingRms": 0.966385688,
             "areaRms": 1.07928171,
             "centreRms": 0.821490367,
-            "cornerFrequency": 82920.3284,
+            "cornerFrequency": 82920.3283,
             "inBandFraction": 0.00767711519,
-            "inBandRms": 0.0945657443,
+            "inBandRms": 0.0945657444,
             "marginAgainstThreeNanometresBroadband": 2.77962646,
-            "marginAgainstThreeNanometresInBand": 31.7239612
+            "marginAgainstThreeNanometresInBand": 31.7239611
         },
         {
             "placement": "ROOTS — C-0055's 34 upward arm roots",
@@ -738,7 +742,7 @@
             "areaRms": 0.963476395,
             "centreRms": 0.747582462,
             "cornerFrequency": 91231.5386,
-            "inBandFraction": 0.00697778737,
+            "inBandFraction": 0.00697778738,
             "inBandRms": 0.0804822195,
             "marginAgainstThreeNanometresBroadband": 3.11372444,
             "marginAgainstThreeNanometresInBand": 37.275314
@@ -751,7 +755,7 @@
             "dishingRms": 0.877684501,
             "areaRms": 0.963476395,
             "centreRms": 0.747582462,
-            "cornerFrequency": 82920.3284,
+            "cornerFrequency": 82920.3283,
             "inBandFraction": 0.00767711519,
             "inBandRms": 0.0844189813,
             "marginAgainstThreeNanometresBroadband": 3.11372444,
@@ -766,7 +770,7 @@
             "areaRms": 0.965128087,
             "centreRms": 0.717857036,
             "cornerFrequency": 91231.5386,
-            "inBandFraction": 0.00697778737,
+            "inBandFraction": 0.00697778738,
             "inBandRms": 0.0806201905,
             "marginAgainstThreeNanometresBroadband": 3.10839571,
             "marginAgainstThreeNanometresInBand": 37.2115221
@@ -779,7 +783,7 @@
             "dishingRms": 0.886249223,
             "areaRms": 0.965128087,
             "centreRms": 0.717857036,
-            "cornerFrequency": 82920.3284,
+            "cornerFrequency": 82920.3283,
             "inBandFraction": 0.00767711519,
             "inBandRms": 0.0845637012,
             "marginAgainstThreeNanometresBroadband": 3.10839571,
@@ -796,11 +800,11 @@
             "armDrag": 1.29253117E-6,
             "totalDragBare": 1.28954876E-5,
             "totalDragWithArms": 1.41880188E-5,
-            "armDragFraction": 0.0911001875,
+            "armDragFraction": 0.0911001876,
             "cornerFrequencyBare": 91231.5386,
-            "cornerFrequencyWithArms": 82920.3284,
+            "cornerFrequencyWithArms": 82920.3283,
             "marginBare": 91.2315386,
-            "marginWithArms": 82.9203284,
+            "marginWithArms": 82.9203283,
             "stillDischarged": true
         },
         {
@@ -811,12 +815,12 @@
             "stokesDrag": 3.08384331E-7,
             "armDrag": 1.23435072E-6,
             "totalDragBare": 1.28954876E-5,
-            "totalDragWithArms": 1.41298384E-5,
-            "armDragFraction": 0.087357738,
+            "totalDragWithArms": 1.41298383E-5,
+            "armDragFraction": 0.0873577381,
             "cornerFrequencyBare": 91231.5386,
-            "cornerFrequencyWithArms": 83261.7578,
+            "cornerFrequencyWithArms": 83261.7577,
             "marginBare": 91.2315386,
-            "marginWithArms": 83.2617578,
+            "marginWithArms": 83.2617577,
             "stillDischarged": true
         },
         {
@@ -828,7 +832,7 @@
             "armDrag": 1.29253117E-6,
             "totalDragBare": 1.28954876E-5,
             "totalDragWithArms": 1.41880188E-5,
-            "armDragFraction": 0.0911001875,
+            "armDragFraction": 0.0911001876,
             "cornerFrequencyBare": 22807.8847,
             "cornerFrequencyWithArms": 20730.0821,
             "marginBare": 22.8078847,
@@ -843,12 +847,12 @@
             "stokesDrag": 3.08384331E-7,
             "armDrag": 1.23435072E-6,
             "totalDragBare": 1.28954876E-5,
-            "totalDragWithArms": 1.41298384E-5,
-            "armDragFraction": 0.087357738,
+            "totalDragWithArms": 1.41298383E-5,
+            "armDragFraction": 0.0873577381,
             "cornerFrequencyBare": 22807.8847,
-            "cornerFrequencyWithArms": 20815.4394,
+            "cornerFrequencyWithArms": 20815.4395,
             "marginBare": 22.8078847,
-            "marginWithArms": 20.8154394,
+            "marginWithArms": 20.8154395,
             "stillDischarged": true
         }
     ],
@@ -971,7 +975,7 @@
             "source": "C-0004",
             "quantity": "in-band variance fraction below 1 kHz at 91 kHz",
             "published": 0.007,
-            "reproduced": 0.00697778737,
+            "reproduced": 0.00697778738,
             "departure": 0.0032,
             "strict": false
         },
@@ -1069,9 +1073,9 @@
         "armArrayMass": 8.812238471377075E-19,
         "sheetMass": 1.9047359920588236E-18,
         "armDragUpperBound": 1.2925311749348272E-6,
-        "bareDragNominal": 1.2895487641247253E-5,
-        "cornerFrequencyBare": 91231.53864194745,
-        "cornerFrequencyWithArms": 82920.32836236311,
+        "bareDragNominal": 1.2895487631E-5,
+        "cornerFrequencyBare": 91231.5386,
+        "cornerFrequencyWithArms": 82920.32831823434,
         "edgeX": 40.0,
         "edgeY": 40.35,
         "interiorPressure": 0.061957868649318466,

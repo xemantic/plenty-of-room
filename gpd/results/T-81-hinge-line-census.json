@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-81",
     "leaf": "A8.2",
     "question": "Does a 16-crossover hinge line exist on a 40 nm tile?",

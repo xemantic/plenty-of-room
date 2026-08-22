@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "none",
+        "regime": null
+    },
     "task": "T-4",
     "leaf": "A2.2",
     "title": "Electrostatic softening and pull-in: the maximum usable bias of the Gen-1 actuator, separated into a static-stability ceiling, an upstream-validity ceiling and an electrochemical bound, each quoted with the load line it belongs to",

@@ -23,6 +23,7 @@ import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.material.ScalingEquationOfState
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
+import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -465,7 +466,22 @@ fun main() {
     output.parentFile.mkdirs()
     output.writeText(
         json.encodeToString(
-            json.encodeToJsonElement(result).withEmissionHeader(LatticeTag.NONE, null)
+            json.encodeToJsonElement(result)
+                // NINE DIGITS (`T-278`, closing `CH-0223`). The layer models here are
+                // `AlexanderBoxLayer` and `StrongStretchingLayer`, whose roots close through
+                // `bracketedRoot` at its default `1e-15` and whose `solveLambda` exits on
+                // `CONVERGENCE = 1e-15`; `InteractionFreeEnergy`'s inversion carries the same
+                // constant. `CH-0223` names this study as downstream of a solved SCF height and
+                // it constructs no `SelfConsistentFieldLayer`.
+                //
+                // The DEFAULT floor is kept, and it is load-bearing rather than incidental: 274
+                // of the emitted `equilibriumStiffness` values are a strong-stretching layer's
+                // stiffness at its own resting height, which `CLAUDE.md` records as EXACTLY zero
+                // — the MWC pressure vanishes quadratically at `L0` — and the solver returns it
+                // as `1e-13` to `1e-16 pN/nm`. Stating that as `0.0` is `RESULT_ABSOLUTE_FLOOR`'s
+                // own documented case, not a loss.
+                .roundedForResult()
+                .withEmissionHeader(LatticeTag.NONE, null)
         ) + "\n"
     )
     report(result, output)

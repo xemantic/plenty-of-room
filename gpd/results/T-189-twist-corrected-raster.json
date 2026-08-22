@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-189",
     "leaf": "A8.2, with A1.2",
     "question": "Can C-0086's 112 bp seamless raster row be twist-corrected, and what does the correction leave for C-0107's row-end prestrain and C-0090's placement?",

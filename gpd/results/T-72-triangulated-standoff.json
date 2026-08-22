@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-72 (covering T-66) — the triangulated standoff as a stability remedy",
     "leaf": "A8.2",
     "conditions": {

@@ -74,6 +74,22 @@ POINTERS = (
 )
 POINTER_WINDOW = 900
 
+#: The discharge this census is ABOUT.  A census is defined by the discharge it is about, and a
+#: token that spans two discharges belongs to two censuses -- which is the whole of `T-260`.
+SUBJECT = "C-0140/C-0141"
+
+#: Every discharge a family of this census can belong to.  `C-0141` supplied the station lattice,
+#: the plan ceiling and the placement family; it did **not** supply a grillage, because
+#: `OrigamiGrillage` never reads `layers` (`C-0154`, `T-253`) -- so the ONE token
+#: `single-layer square-lattice` carries two statements with two correcting claims and two dates.
+#: A family whose discharge is `None` is not a debt at all: it is the RESTORED reading, or the
+#: token used of an object that genuinely is a single-layer square-lattice sheet.
+DISCHARGES = {
+    SUBJECT: POINTERS,
+    "C-0154/C-0167": ("C-0154", "C-0167", "CH-0213", "T-253", "T-263"),
+    None: (),
+}
+
 #: A claim whose HEADLINE carries an annotation banner is a repaired claim: a reader cannot reach
 #: any number in it without passing the banner.  Requiring a pointer within POINTER_WINDOW of every
 #: occurrence instead would demand sprinkling pointers through result tables, which is not how this
@@ -82,9 +98,16 @@ POINTER_WINDOW = 900
 #: buried in a body section cannot pass as one.
 HEADLINE_WINDOW = 3000
 
-CLASSES = ("MOVED", "DISCHARGED", "RECORD", "CORRECT", "OUT_OF_SCOPE")
+CLASSES = (
+    "MOVED", "DISCHARGED", "RECORD", "CORRECT", "OUT_OF_SCOPE", "SURVIVING", "RESTATED",
+)
 #: The classes the gate requires a pointer for.
 ADDRESSED = ("MOVED", "DISCHARGED")
+#: The classes admissible on a family that belongs to another discharge, or to none.  `SURVIVING`
+#: is `T-260`'s: the half of a partially discharged premise the correcting claim did NOT supply,
+#: live when written and the subject of a different census.  `RESTATED` is `T-262`'s: the token in
+#: its RESTORED reading, which is the correcting statement itself rather than the debt.
+NON_SUBJECT_CLASSES = ("SURVIVING", "RESTATED", "RECORD", "CORRECT", "OUT_OF_SCOPE")
 
 #: The two outward-facing documents.  `T-233` owns them; this task produces their list and
 #: does not edit them, so their debt is reported on its own line and does NOT fail the gate.
@@ -106,6 +129,95 @@ STRIKE = re.compile(r"~~.*?~~", re.DOTALL)
 _HONEYCOMB = r"honeycomb|four-layer|four layer|15 . 4|10 . 6"
 _AZIMUTH_CTX = r"honeycomb|azimuth|oblique|top face|top-face|station|sublattice|15 . 4|10 . 6"
 
+#: Markdown emphasis, which sits between a token and the noun that governs it often enough that a
+#: predicate written without stripping it reads `**single-layer square-lattice**\n number` as a
+#: bare predicate rather than as an attributive use.
+_EMPHASIS = re.compile(r"[*`~_]+")
+
+#: How far either side of a token a governing word is looked for.  A refinement is a statement
+#: about the SENTENCE the token stands in, and a sentence in this corpus is shorter than this.
+REFINE_WINDOW = 300
+
+#: The structural-model test is a PROXIMITY test, not a phrase test, so it needs its own and much
+#: tighter radius: at `REFINE_WINDOW` it reached a *"coupled cell"* **253 characters away, in a
+#: different sentence*, and read `ANSWERS.md`'s own *"every plan ceiling, station lattice, crossover
+#: phase and placement in this corpus is single-layer square-lattice"* as a grillage statement.
+#: Swept, the split is a PLATEAU -- 17/13/8 at 80, 100, 120 and 150, drifting only at 200 (18/12/8)
+#: and 300 (19/11/8) -- so 120 is the middle of a flat region rather than a fitted number.
+STRUCTURAL_WINDOW = 120
+
+#: `T-262`'s second instance.  A `TASKS.md` row is a paragraph on one physical line, so the
+#: line-scoped honeycomb context is no context at all there: the `T-9` row's nearest honeycomb word
+#: is over three thousand characters from its `112 bp`, which is a SQUARE-lattice oxDNA design.
+#: Sentence-scoping the context test would drop 56 of 103 WIDTH occurrences, most of them genuine,
+#: so the tool measures the distance, REPORTS it, and refuses to guess; the per-occurrence hand
+#: override in `tools/T-234-classification.json` is where a reader settles it.
+CONTEXT_REMOTE = 1000
+
+#: `T-260`.  The structural model -- the half of *"single-layer square-lattice"* that `C-0141` did
+#: NOT supply and `C-0154`/`C-0167` did.
+_STRUCTURAL_MODEL = re.compile(
+    r"grillage|OrigamiGrillage|CrossoverLayout|smeared|coupled cell|lattice machinery"
+    r"|crossover combinatorics|equivalent sheet|which results are",
+    re.I,
+)
+#: The token used ATTRIBUTIVELY of an object that genuinely is a single-layer square-lattice one.
+#: Not an assertion about the corpus's inventory at all, so not a debt in either direction.
+_ATTRIBUTIVE = re.compile(
+    r"single-layer\s+square-lattice\s+(?:sheet|tile|number|design|question|d\s*=)", re.I
+)
+
+#: `T-262`.  What the token GOVERNS: a row span (`C-0146`'s restored reading) or a tile width
+#: (`C-0140`'s withdrawn one).  Nearest wins, because the restoring sentences name both.
+_ROW_WORDS = re.compile(r"\bspans?\b|\bspanned\b|\brows?\b|x-raster|per row|interface window", re.I)
+_WIDTH_WORDS = re.compile(
+    r"\bwidths?\b|\bextent\b|footprint|edgeX|\bnominal\b|[×x]\s*4\b|\bacross\b|bounding box", re.I
+)
+#: `C-0151`'s drawable RASTER against `C-0119`'s *"drawable at a uniform width"*.  `drawable` is not
+#: a length, so the governing-noun rule cannot apply to it and it takes its own two-way test.
+_DRAWABLE_RASTER = re.compile(
+    r"102 . 109|drawable(?:\s+\S+){0,3}\s+raster|drawable one|drawable pair|closing raster"
+    r"|closes", re.I
+)
+
+
+def plain(text: str) -> str:
+    """Markdown emphasis removed, length NOT preserved.  Used only inside a refinement window."""
+    return _EMPHASIS.sub("", text)
+
+
+def _window(text: str, start: int, end: int, radius: int = None) -> str:
+    radius = REFINE_WINDOW if radius is None else radius
+    return plain(text[max(0, start - radius): end + radius])
+
+
+def _nearest(pattern, text: str, at: int) -> int:
+    return min((abs(m.start() - at) for m in pattern.finditer(text)), default=10 ** 9)
+
+
+def refine_placement(text: str, start: int, end: int) -> str:
+    """`PLACEMENT` | `GRILLAGE` | `SQUARE` -- which of two discharges, or neither."""
+    window = _window(text, start, end)
+    if _STRUCTURAL_MODEL.search(_window(text, start, end, STRUCTURAL_WINDOW)):
+        return "GRILLAGE"
+    if _ATTRIBUTIVE.search(window):
+        return "SQUARE"
+    return "PLACEMENT"
+
+
+def refine_width(text: str, start: int, end: int) -> str:
+    """`WIDTH` | `ROW_SPAN` -- the withdrawn uniform tile width, or the restored row span."""
+    window = _window(text, start, end)
+    if text[start:end] == "drawable":
+        return "ROW_SPAN" if _DRAWABLE_RASTER.search(window) else "WIDTH"
+    at = len(plain(text[max(0, start - REFINE_WINDOW): start]))
+    row = _nearest(_ROW_WORDS, window, at)
+    width = _nearest(_WIDTH_WORDS, window, at)
+    return "ROW_SPAN" if row < width else "WIDTH"
+
+
+#: name, pattern, line context, refinement, discharge.  The refinement may rename the family, and
+#: the RENAMED family carries its own discharge -- which is how a partial discharge is represented.
 FAMILIES = (
     (
         "FOOTPRINT",
@@ -113,22 +225,74 @@ FAMILIES = (
         r"|third of the footprint|38 [x×] 25 nm|0\.0577199433|0\.00874363524"
         r"|0\.0788618807|3\.29690337",
         None,
+        None,
     ),
-    ("WIDTH", r"\bdrawable\b|\b119 bp\b|\b40\.46\b|\b112 bp\b", _HONEYCOMB),
+    ("WIDTH", r"\bdrawable\b|\b119 bp\b|\b40\.46\b|\b112 bp\b", _HONEYCOMB, refine_width),
     (
         "AZIMUTH",
         r"perpendicular root|perpendicular azimuth|oblique versus perpendicular"
         r"|±60°|k_z\(60°\)|\b132\b|perpendicular one",
         _AZIMUTH_CTX,
+        None,
     ),
-    ("SCAFFOLD", r"p8064", None),
+    ("SCAFFOLD", r"p8064", None, None),
     (
         "PLACEMENT",
         r"single-layer square-lattice|single-layer\n\s*square-lattice"
         r"|no station lattice, no plan ceiling|never priced an oblique",
         None,
+        refine_placement,
     ),
 )
+
+#: Which discharge each family belongs to.  A family absent from this map belongs to `SUBJECT`.
+FAMILY_DISCHARGE = {
+    "GRILLAGE": "C-0154/C-0167",
+    "SQUARE": None,
+    "ROW_SPAN": None,
+}
+
+
+def discharge_of(family: str):
+    """The discharge a family belongs to, or `None` where the family is not a debt at all."""
+    return FAMILY_DISCHARGE.get(family, SUBJECT)
+
+
+def gated_families() -> set:
+    """Every family this census GATES -- exactly those belonging to its own subject discharge."""
+    families = {f[0] for f in FAMILIES} | set(FAMILY_DISCHARGE)
+    return {f for f in families if discharge_of(f) == SUBJECT}
+
+
+#: How much of an occurrence's own NEIGHBOURHOOD identifies it.  A `TASKS.md` row is a paragraph on
+#: one line, so a line prefix identifies the row and not the occurrence; a window centred on the
+#: token identifies the occurrence and survives an edit elsewhere in the same row.
+SNIPPET_CHARS = 40
+
+
+def snippet(text: str, start: int, token: str) -> str:
+    """The `SNIPPET_CHARS` either side of a token, whitespace collapsed.  An occurrence's identity."""
+    window = text[max(0, start - SNIPPET_CHARS): start + len(token) + SNIPPET_CHARS]
+    return " ".join(window.split())
+
+
+def context_distance(text: str, start: int, context: str = None) -> int:
+    """Characters from the token at `start` to the nearest word of its family's OWN line context.
+
+    `CONTEXT_REMOTE` and above, the line context has said nothing about this token: it admitted the
+    match on the strength of a word a kilobyte away, which on a `TASKS.md` row is a different
+    subject entirely.
+    """
+    context = context or _HONEYCOMB
+    line_start = text.rfind("\n", 0, start) + 1
+    line_end = text.find("\n", start)
+    line = text[line_start: line_end if line_end != -1 else len(text)]
+    return _nearest(re.compile(context, re.I), line, start - line_start)
+
+
+def context_distance_of(text: str, token: str) -> int:
+    """`context_distance` at the first occurrence of `token`.  For the self-tests."""
+    return context_distance(text, text.index(token))
 
 
 def in_scope(path: str) -> bool:
@@ -183,14 +347,16 @@ def occurrences(text: str):
     hunted = blank_identifiers(text)
     lines = text.split("\n")
     found = []
-    for family, pattern, context in FAMILIES:
+    for family, pattern, context, refine in FAMILIES:
         for match in re.finditer(pattern, hunted):
             line_index = text.count("\n", 0, match.start())
             if context and not re.search(context, lines[line_index], re.I):
                 continue
-            found.append((match.start(), family, line_index + 1, match.group(0)))
+            name = refine(text, match.start(), match.end()) if refine else family
+            distance = context_distance(text, match.start(), context) if context else None
+            found.append((match.start(), name, line_index + 1, match.group(0), distance))
     found.sort()
-    return [(f, l, o, t) for o, f, l, t in found]
+    return [(f, l, o, t, d) for o, f, l, t, d in found]
 
 
 def corpus_files(root: str):
@@ -239,19 +405,22 @@ def census(root: str):
         lines = text.split("\n")
         spans = struck_spans(text)
         banner = headline_pointer(text, path)
-        for index, (family, line, offset, token) in enumerate(occurrences(text)):
+        for index, (family, line, offset, token, distance) in enumerate(occurrences(text)):
             records.append(
                 {
                     "file": path,
                     "index": index,
                     "family": family,
+                    "discharge": discharge_of(family),
                     "line": line,
                     "token": token,
+                    "contextDistance": distance,
                     "pointer": has_pointer(text, offset),
                     "headlinePointer": banner,
                     "struck": is_struck(spans, offset),
                     "deliverable": path in DELIVERABLES,
                     "text": lines[line - 1].strip()[:300],
+                    "snippet": snippet(text, offset, token),
                 }
             )
     return records
@@ -282,6 +451,21 @@ def classify(records, table):
             )
         record["class"] = entry["class"]
         record["why"] = entry.get("why")
+        record["byHand"] = bool(entry.get("byHand"))
+        owner = record.get("discharge", SUBJECT)
+        if owner == SUBJECT and entry["class"] not in ADDRESSED + NON_SUBJECT_CLASSES[2:]:
+            problems.append(
+                "wrong discharge: {}#{} is {} on family {}, which this census gates".format(
+                    record["file"], record["index"], entry["class"], record["family"]
+                )
+            )
+        if owner != SUBJECT and entry["class"] in ADDRESSED:
+            problems.append(
+                "wrong discharge: {}#{} is {} on family {}, which belongs to {}".format(
+                    record["file"], record["index"], entry["class"], record["family"],
+                    owner or "no discharge at all",
+                )
+            )
     seen = {(r["file"], r["index"]) for r in records}
     for path, entries in table.items():
         for index in entries:
@@ -297,6 +481,7 @@ def check(root: str) -> int:
         r
         for r in records
         if r["class"] in ADDRESSED
+        and r.get("discharge") == SUBJECT
         and not r["pointer"]
         and not r["struck"]
         and not r["headlinePointer"]
@@ -310,10 +495,36 @@ def check(root: str) -> int:
         )
     )
     print("  " + "  ".join("{} {}".format(c, counts[c]) for c in CLASSES))
-    for family, _pattern, _context in FAMILIES:
+    for family in sorted({f[0] for f in FAMILIES} | set(FAMILY_DISCHARGE)):
+        owner = discharge_of(family)
         print(
-            "  {:<12} {}".format(family, sum(1 for r in records if r["family"] == family))
+            "  {:<12} {:<4} {}".format(
+                family,
+                sum(1 for r in records if r["family"] == family),
+                "gated by this census ({})".format(SUBJECT)
+                if owner == SUBJECT
+                else "belongs to {} -- a different census".format(owner)
+                if owner
+                else "not a debt: the restored reading, or a token collision",
+            )
         )
+    remote = [
+        r for r in records
+        if r["contextDistance"] is not None and r["contextDistance"] > CONTEXT_REMOTE
+    ]
+    for record in remote:
+        print(
+            "REMOTE-CONTEXT  {}:{} #{} [{} {}]  nearest honeycomb word {} characters away on the"
+            " same line{}".format(
+                record["file"], record["line"], record["index"], record["class"],
+                record["family"], record["contextDistance"],
+                " -- settled by hand" if record.get("byHand") else "",
+            )
+        )
+    print(
+        "remote context {} occurrence(s) whose LINE context says nothing about them; the tool"
+        " refuses to guess and each is settled by hand in the classification".format(len(remote))
+    )
     for problem in problems:
         print("PROBLEM  " + problem)
     for record in gate:
@@ -332,6 +543,14 @@ def check(root: str) -> int:
         )
     print("T-233 debt {} occurrence(s) in the two deliverables, which this task does NOT edit"
           .format(len(debt)))
+    print(
+        "  -- and this line is NOT a measure of debt. It is a count over a MOVING corpus, and it"
+        " GROWS when the deliverables are corrected: over the last 40 revisions of the two"
+        " documents every single increase is a synthesis pass, because a correcting sentence has"
+        " to NAME the withdrawn premise in order to withdraw it. The T-260/T-262 split cuts the"
+        " rate by about three fifths and does not change that sign (CH-0230,"
+        " gpd/results/T-262-width-restatement-predicate.json)."
+    )
     print("GATE {} defect(s)".format(len(problems) + len(gate)))
     return 1 if problems or gate else 0
 
@@ -478,6 +697,227 @@ def self_test() -> int:
     # --- ADDRESSED is exactly the two repair classes
     ok("ADDRESSED", set(ADDRESSED) == {"MOVED", "DISCHARGED"})
     ok("every ADDRESSED is a CLASS", all(a in CLASSES for a in ADDRESSED))
+
+    # ----------------------------------------------------------------- T-260: a PARTIAL discharge
+    # `C-0141` supplied the station lattice, the plan ceiling and the placement family, and did NOT
+    # supply a grillage.  One token, two discharges, two dates.  Each rule is asserted in BOTH
+    # directions: the sentence it must fire on, and the sentence it must NOT.
+
+    def sub(text):
+        return [r[0] for r in occurrences(text)]
+
+    ok(
+        "T-260 the absence statement is PLACEMENT",
+        sub("every plan ceiling, phase result and placement in this corpus is"
+            " single-layer square-lattice") == ["PLACEMENT"],
+    )
+    ok(
+        "T-260 a coupled cell is GRILLAGE, not PLACEMENT",
+        sub("every coupled cell in this corpus is a smeared single-layer square-lattice solve")
+        == ["GRILLAGE"],
+    )
+    ok(
+        "T-260 the lattice machinery is GRILLAGE",
+        sub("the lattice machinery is single-layer square-lattice, so the question needs a"
+            " honeycomb grillage") == ["GRILLAGE"],
+    )
+    ok(
+        "T-260 OrigamiGrillage in the window makes it GRILLAGE",
+        sub("a uniform prestrain on all 56 crossovers of a single-layer square-lattice tile at one"
+            " placement, and OrigamiGrillage never reads layers") == ["GRILLAGE"],
+    )
+    ok(
+        "T-260 an attributive SHEET is SQUARE, not an absence claim",
+        sub("40.0 x 40.35 nm single-layer square-lattice sheet, 15 duplexes") == ["SQUARE"],
+    )
+    ok(
+        "T-260 an attributive NUMBER is SQUARE even under emphasis",
+        sub("every register number is therefore a **single-layer square-lattice**\nnumber")
+        == ["SQUARE"],
+    )
+    ok(
+        "T-260 an attributive QUESTION is SQUARE",
+        sub("a material constant, a single-layer square-lattice question, the harness")
+        == ["SQUARE"],
+    )
+    ok(
+        "T-260 `no station lattice, no plan ceiling` stays PLACEMENT",
+        sub("the honeycomb has no station lattice, no plan ceiling and no placement family")
+        == ["PLACEMENT"],
+    )
+    # the same sentence carries an AZIMUTH token too, so this asserts the PLACEMENT member of it
+    ok(
+        "T-260 `never priced an oblique` stays PLACEMENT",
+        sub("this corpus has never priced an oblique attachment against a perpendicular one")
+        == ["PLACEMENT", "AZIMUTH"],
+    )
+    ok(
+        "T-260 GRILLAGE belongs to a DIFFERENT discharge from PLACEMENT",
+        discharge_of("GRILLAGE") != discharge_of("PLACEMENT"),
+    )
+    ok("T-260 PLACEMENT is this census's own subject", discharge_of("PLACEMENT") == SUBJECT)
+    ok("T-260 GRILLAGE is not this census's subject", discharge_of("GRILLAGE") != SUBJECT)
+    ok("T-260 SQUARE is no discharge at all", discharge_of("SQUARE") is None)
+    far = ("this grillage sentence is far away. " + "y " * (REFINE_WINDOW // 2 + 200)
+           + "every plan ceiling and placement in this corpus is single-layer square-lattice")
+    ok(
+        "T-260 a structural-model word BEYOND the refinement window is not seen",
+        [r[0] for r in occurrences(far)] == ["PLACEMENT"],
+    )
+    # ANSWERS.md line 1147 verbatim, whose nearest structural-model word is a *different sentence*
+    # 253 characters away: this is the false positive STRUCTURAL_WINDOW exists to remove.
+    sentence_away = (
+        "every plan ceiling, station lattice, crossover phase and placement in this corpus is"
+        " single-layer square-lattice; the honeycomb has three crossover azimuths at 7 bp rather"
+        " than the square lattice's four at 8 bp, and nobody has counted what that offers. So every"
+        " path count in the flat coupled cells is a requirement on a lattice nobody has censused."
+    )
+    ok(
+        "T-260 a structural-model word a SENTENCE away does not make it GRILLAGE",
+        sub(sentence_away) == ["PLACEMENT"],
+    )
+    ok(
+        "T-260 a structural-model word in the SAME clause still does",
+        sub("every coupled cell here is single-layer square-lattice") == ["GRILLAGE"],
+    )
+    ok("T-260 REFINE_WINDOW is a stated constant", REFINE_WINDOW == 300)
+    ok("T-260 STRUCTURAL_WINDOW is tighter than REFINE_WINDOW", STRUCTURAL_WINDOW == 120)
+    ok(
+        "T-260 the grillage discharge names C-0154/C-0167",
+        set(DISCHARGES[discharge_of("GRILLAGE")]) >= {"C-0154", "C-0167", "T-253"},
+    )
+    ok(
+        "T-260 the subject discharge does NOT name C-0154",
+        "C-0154" not in DISCHARGES[SUBJECT],
+    )
+    ok("T-260 only subject families are gated", gated_families() == {"FOOTPRINT", "WIDTH",
+                                                                    "AZIMUTH", "SCAFFOLD",
+                                                                    "PLACEMENT"})
+
+    # ----------------------------------------------------------------- T-262: a RESTATEMENT
+    # `C-0140` withdrew a honeycomb row length asserted as a UNIFORM TILE WIDTH.  `C-0146` restored
+    # the same token as a ROW SPAN, and `C-0151` restored `drawable` as the drawable RASTER.
+
+    ok(
+        "T-262 a span is ROW_SPAN",
+        sub("honeycomb at 10.5 bp/turn, 112 bp span, d = 2.536 nm") == ["ROW_SPAN"],
+    )
+    ok(
+        "T-262 `every x-raster row spans` is ROW_SPAN even beside the word extent",
+        sub("on the honeycomb every x-raster row spans 112 bp = 38.08 nm and the 116 bp ="
+            " 39.44 nm extent is a stagger") == ["ROW_SPAN"],
+    )
+    ok(
+        "T-262 `rows of 112 bp` is ROW_SPAN",
+        sub("honeycomb rows of 112 bp and 119 bp") == ["ROW_SPAN", "ROW_SPAN"],
+    )
+    ok(
+        "T-262 a tile dimension is WIDTH",
+        sub("the honeycomb tile is 15 rows x 4 layers x 112 bp") == ["WIDTH"],
+    )
+    ok(
+        "T-262 `is a uniform width` is WIDTH",
+        sub("so neither 112 bp nor 119 bp is a uniform honeycomb width") == ["WIDTH", "WIDTH"],
+    )
+    ok(
+        "T-262 a bare honeycomb width-table cell defaults to WIDTH",
+        sub("| honeycomb | 112 bp = 38.08 nm | -4.80 % |") == ["WIDTH"],
+    )
+    ok(
+        "T-262 the drawable RASTER is ROW_SPAN",
+        sub("at the drawable 102 / 109 honeycomb raster the count is 10") == ["ROW_SPAN"],
+    )
+    ok(
+        "T-262 `drawable` with modifiers before `raster` is still the drawable RASTER",
+        sub("the minimum stagger a drawable two-length honeycomb raster can carry is 7 bp")
+        == ["ROW_SPAN"],
+    )
+    ok(
+        "T-262 `drawable at a uniform width` stays WIDTH",
+        sub("the honeycomb tile is overturned in the reading drawable at a uniform width")
+        == ["WIDTH"],
+    )
+    ok(
+        "T-262 a bare `the four-layer tile is drawable` stays WIDTH",
+        sub("the four-layer tile is drawable") == ["WIDTH"],
+    )
+    ok("T-262 WIDTH is this census's own subject", discharge_of("WIDTH") == SUBJECT)
+    ok("T-262 ROW_SPAN is no discharge at all", discharge_of("ROW_SPAN") is None)
+    ok(
+        "T-262 the square lattice's own 112 bp still does not fire at all",
+        occurrences("the buildable seamless square-lattice row is 112 bp = 38.08 nm") == [],
+    )
+
+    # --- the REMOTE-CONTEXT diagnostic: a TASKS.md row is a paragraph, so a line context is not a
+    # context.  The tool reports the distance and refuses to guess; the JSON carries the hand call.
+    remote = "the honeycomb block. " + "x" * 2000 + " oxDNA2, 15 duplexes at 112 bp and phase 8"
+    ok("T-262 a remote honeycomb word still fires", sub(remote) == ["WIDTH"])
+    ok(
+        "T-262 the remote distance is measured and large",
+        context_distance_of(remote, "112 bp") > CONTEXT_REMOTE,
+    )
+    near = "the honeycomb tile is 15 rows x 4 layers x 112 bp"
+    ok(
+        "T-262 a near honeycomb word is not remote",
+        context_distance_of(near, "112 bp") < CONTEXT_REMOTE,
+    )
+    ok("T-262 CONTEXT_REMOTE is a stated constant", CONTEXT_REMOTE == 1000)
+
+    # --- a snippet identifies an OCCURRENCE, not its line: a queue row is a paragraph
+    row = "| T-9 | a very long queue row | " + "x" * 900 + " at 112 bp and phase 8 | DONE |"
+    ok(
+        "T-262 a snippet is centred on the token, not on the line",
+        "112 bp" in snippet(row, row.index("112 bp"), "112 bp"),
+    )
+    ok(
+        "T-262 a snippet does not reach the start of a long row",
+        "T-9" not in snippet(row, row.index("112 bp"), "112 bp"),
+    )
+    twice = "a 112 bp here" + " y" * 60 + " and 112 bp there"
+    ok(
+        "T-262 two tokens far apart on one line get different snippets",
+        snippet(twice, 2, "112 bp") != snippet(twice, twice.rindex("112 bp"), "112 bp"),
+    )
+    close = "a 112 bp and 112 bp"
+    ok(
+        "T-262 two tokens CLOSER than SNIPPET_CHARS share one -- the collision is reported",
+        snippet(close, 2, "112 bp") == snippet(close, close.rindex("112 bp"), "112 bp"),
+    )
+    ok(
+        "a snippet collapses whitespace, so a re-wrap does not move it",
+        snippet("x  112 bp\n  y", 3, "112 bp") == snippet("x 112 bp y", 2, "112 bp"),
+    )
+    ok("T-262 SNIPPET_CHARS is a stated constant", SNIPPET_CHARS == 40)
+
+    # --- the two layers must AGREE: a class that demands a pointer may not sit on a family that
+    # belongs to another census.  This is what makes a partial discharge representable rather than
+    # remembered -- without it, a stale table silently re-gates the half that was split off.
+    grillage = [{"file": "a.md", "index": 0, "line": 1, "family": "GRILLAGE",
+                 "discharge": discharge_of("GRILLAGE"), "token": "single-layer square-lattice"}]
+    _, problems = classify(list(grillage), {"a.md": {"0": {"class": "DISCHARGED", "why": "x"}}})
+    ok(
+        "T-260 a subject class on a non-subject family is reported",
+        any(p.startswith("wrong discharge") for p in problems),
+    )
+    _, problems = classify(list(grillage), {"a.md": {"0": {"class": "SURVIVING", "why": "x"}}})
+    ok("T-260 SURVIVING on GRILLAGE is accepted", not problems)
+    placement = [{"file": "a.md", "index": 0, "line": 1, "family": "PLACEMENT",
+                  "discharge": discharge_of("PLACEMENT"), "token": "x"}]
+    _, problems = classify(list(placement), {"a.md": {"0": {"class": "DISCHARGED", "why": "x"}}})
+    ok("T-260 DISCHARGED on PLACEMENT is accepted", not problems)
+    _, problems = classify(list(placement), {"a.md": {"0": {"class": "RESTATED", "why": "x"}}})
+    ok(
+        "T-260 a non-subject class on a subject family is reported too",
+        any(p.startswith("wrong discharge") for p in problems),
+    )
+    ok("T-260 SURVIVING is not ADDRESSED", "SURVIVING" not in ADDRESSED)
+    ok("T-262 RESTATED is not ADDRESSED", "RESTATED" not in ADDRESSED)
+    ok("T-260 SURVIVING is a CLASS", "SURVIVING" in CLASSES)
+    ok("T-262 RESTATED is a CLASS", "RESTATED" in CLASSES)
+    ok(
+        "T-260 every non-subject family has a non-subject class",
+        set(NON_SUBJECT_CLASSES) == {"SURVIVING", "RESTATED", "RECORD", "CORRECT", "OUT_OF_SCOPE"},
+    )
 
     for failure in failures:
         print("FAIL  " + failure)

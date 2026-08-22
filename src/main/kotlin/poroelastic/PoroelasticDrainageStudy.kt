@@ -23,6 +23,7 @@ import com.xemantic.nano.plentyofroom.brush.brushOfHeight
 import com.xemantic.nano.plentyofroom.brush.stiffness
 import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
+import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -362,11 +363,40 @@ fun main() {
     output.parentFile.mkdirs()
     output.writeText(
         json.encodeToString(
-            json.encodeToJsonElement(result).withEmissionHeader(LatticeTag.NONE, null)
+            json.encodeToJsonElement(result)
+                // NINE DIGITS at a ZERO FLOOR (`T-278`, closing `CH-0223`). The digit count is
+                // the easy half: the Brinkman transmissivity and every drag, time and frequency
+                // here is a closed form, and the one search — the 1 kHz bandwidth contour — is
+                // 200 bisection halvings. What is NOT the shared site is the FLOOR; see
+                // [POROELASTIC_RESULT_FLOOR].
+                .roundedForResult(floor = POROELASTIC_RESULT_FLOOR)
+                .withEmissionHeader(LatticeTag.NONE, null)
         ) + "\n"
     )
     report(result, output)
 }
+
+/**
+ * The magnitude below which `T-7` reports a result as exactly zero, and it is **zero**.
+ *
+ * `RESULT_ABSOLUTE_FLOOR` is a claim **in the locked units** — `gpd/README.md`'s "no force below a
+ * nanopiconewton is of interest" — and `P-18` records that such a claim **does not travel**: it
+ * found its own determined-precision measurement flattened to `0.0` by the default, and `C-0031`
+ * found a floored `layerStiffness` printed beside an unfloored `sqrt(k_BT/k)` derived from it, an
+ * arithmetically impossible pair.
+ *
+ * `T-7` emits almost nothing in the locked units. Its answers are **times in seconds**, frequencies
+ * in hertz, drags in `pN*s/nm` and dimensionless ratios, and its smallest non-zero committed value
+ * is an `inertialTime` of `6.97e-14 s` — half a picosecond, and the quantity whose ratio to the
+ * drainage time IS the study's own "is this overdamped" verdict. The default floor flattens 96 of
+ * them to `0.0` (measured, `tools/T-278-rounding-simulation.py`), and a `verticalDrainageTime` of
+ * `1.53e-09 s` clears it by half a unit in the first digit.
+ *
+ * Zero rather than a smaller positive number because there is nothing here for a floor to be a
+ * claim about: no quantity this study emits is exactly zero by any symmetry, so a floor could only
+ * suppress a value the physics means.
+ */
+internal const val POROELASTIC_RESULT_FLOOR: Double = 0.0
 
 private fun layerState(
     peg: PegWater,

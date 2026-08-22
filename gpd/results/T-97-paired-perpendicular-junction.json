@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-97 — can TWO 90 degree junctions close on ONE sheet duplex 6-8 bp apart?",
     "leaf": "A8.2",
     "conditions": {

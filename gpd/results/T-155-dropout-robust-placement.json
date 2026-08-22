@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-155",
     "leaf": "A8.2",
     "conditions": "T = 300 K, k_BT = 4.141947 pN.nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice sheet, 15 duplexes at 2.69 nm; C-0022's SOLVED edge profiles at 2 mM / 10 nm / 0.192 V (design, every headline) and 2 mM / 7 nm / 0.192 V (the held end of C-0068's range); C-0017's 33.3333 pN/nm as a SUM at the acceptable 3 nm stroke; free-tile stroke 4.90731 nm; dishing on an 81 x 81 grid; flat means below T-5b's 0.10 CONVENTION; grading seed 20260817 at 10000 realisations, training seed 20260819 at 200",

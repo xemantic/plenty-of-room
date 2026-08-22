@@ -1,0 +1,469 @@
+{
+  "emission": {
+    "lattice": "none",
+    "regime": null
+  },
+  "task": "T-278",
+  "leaf": "A8.2",
+  "title": "The emission header's residue, and the seven emitters that call no rounding function",
+  "verificationType": "logical (two censuses over the committed corpus, a call-graph reading, four tools with named self-tests and a mutation test) + in-silico (studies re-emitted through one snapshot in one topological order, movement classified by kind against the baseline ref)",
+  "maturity": "TRL 1-3, and below it: NO PHYSICS CHANGED. No model, solver, mesh, tolerance or convergence parameter was touched; every field this task moved is a PRECISION or a SCHEMA field.",
+  "baselineRef": "68d9a6cf5c9b5068f38c887afcd95a1e295fc50a",
+  "challengeRef": "b853b854277caa89fab32569dcdf1b646b3f094e",
+  "units": {
+    "counts": "dimensionless",
+    "significantDigits": "dimensionless",
+    "absoluteFloor": "the emitting study's own units; see each row's ground"
+  },
+  "conventions": [
+    "A result file whose subject is the CORPUS names the corpus state it measured (CLAUDE.md). Every `before` figure and the whole movement table is taken from `baselineRef` out of git, never from the working tree, so this file still reproduces after the sweep it describes is committed.",
+    "PROVENANCE of an emitted number is the loosest solver tolerance on any path from a model input to it; nine digits is defensible only where that is <= 1e-9 (P-18).",
+    "An absolute floor is a claim about UNITS and it does not travel (P-18). This file's own floor is zero, because every number in it is a count or a dimensionless ratio.",
+    "No wall-clock timing and no step count is emitted (CLAUDE.md). The 61 per-study run times this sweep measured are in gpd/data/T-278-study-run-times.txt."
+  ],
+  "parameters": {
+    "baselineRef": "68d9a6cf5c9b5068f38c887afcd95a1e295fc50a",
+    "challengeRef": "b853b854277caa89fab32569dcdf1b646b3f094e",
+    "dependencyConstraintsInTheOrder": 43,
+    "studiesInTheOrder": 61,
+    "committedAndDerivedCensusOrdersIdentical": true
+  },
+  "headerCensus": {
+    "before": {
+      "studiesWritingAResultFile": 128,
+      "both": 72,
+      "declaredNotEmitted": 55,
+      "emittedNotDeclared": 0,
+      "neither": 1,
+      "filesWrittenByNoKotlinStudy": 24,
+      "ofThoseCarryingAHeader": 2,
+      "residue": [
+        "T-101-single-column-flatness.json",
+        "T-110-consumed-crossover-sheet.json",
+        "T-113-non-uniform-coupling.json",
+        "T-120-connectivity-ceiling-plate.json",
+        "T-121-stacked-arm-sheet.json",
+        "T-122-buildable-stiffness-ratio.json",
+        "T-123-robust-distribution.json",
+        "T-125-upward-root-placement.json",
+        "T-127-crossbar-trio-existence.json",
+        "T-155-dropout-robust-placement.json",
+        "T-157-large-rotation-arm-branch.json",
+        "T-159-doubling-ladder-repair.json",
+        "T-163-path-count-fixed-geometry.json",
+        "T-164-row-end-crossover-stiffness.json",
+        "T-165-shared-body-placement.json",
+        "T-171-crossover-phase-selection.json",
+        "T-172-row-end-prestrain.json",
+        "T-178-count-phase-interaction.json",
+        "T-182-row-end-prestrain-value.json",
+        "T-188-buildable-width-count-phase.json",
+        "T-189-twist-corrected-raster.json",
+        "T-190-interior-crossover-prestrain.json",
+        "T-216-mixed-domain-phase-lattice.json",
+        "T-221-planar-coupling-wall.json",
+        "T-230-honeycomb-turn-loop-slack.json",
+        "T-231-ragged-face-cost.json",
+        "T-245-closing-raster-selection.json",
+        "T-246-forced-scaffold-crossover-price.json",
+        "T-253-honeycomb-grillage.json",
+        "T-263-honeycomb-grillage-regrade.json",
+        "T-275-simulated-tile-census.json",
+        "T-3-stroke-and-blocking-force.json",
+        "T-30-flexure-end-joint.json",
+        "T-3a-nonlinear-pb-profile.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-4-maximum-usable-bias.json",
+        "T-40-standoff-base-joint.json",
+        "T-5-load-distribution.json",
+        "T-5b-tile-flatness.json",
+        "T-6-mean-field-screening-validity.json",
+        "T-60-collar-on-the-equilibrium-path.json",
+        "T-65-coupled-standoff-joint.json",
+        "T-67-perpendicular-junction-routing.json",
+        "T-7-poroelastic-drainage.json",
+        "T-70-guided-arm-anchorage.json",
+        "T-71-backbone-torsion-closure.json",
+        "T-72-triangulated-standoff.json",
+        "T-75-flexure-mounting-sense.json",
+        "T-76-softening-coupling-stability.json",
+        "T-79-two-spring-elastica.json",
+        "T-8-tile-positional-variance.json",
+        "T-81-hinge-line-census.json",
+        "T-96-flexure-array-packing.json",
+        "T-97-paired-perpendicular-junction.json",
+        "T-99-flexure-count-hinge-trade.json",
+        "T-9b-crossover-vertical-compliance.json"
+      ]
+    },
+    "after": {
+      "studiesWritingAResultFile": 130,
+      "both": 130,
+      "declaredNotEmitted": 0,
+      "emittedNotDeclared": 0,
+      "neither": 0,
+      "filesWrittenByNoKotlinStudy": 27,
+      "ofThoseCarryingAHeader": 4,
+      "residue": []
+    }
+  },
+  "emitterRoundingCensus": {
+    "atTheChallengeRef": {
+      "emittingStudies": 128,
+      "writingThroughNoRoundingFunction": 7,
+      "unroundedEmitters": [
+        "brush.BrushStiffnessStudy",
+        "brush.CrossoverLayerStudy",
+        "electrostatics.MeanFieldValidityStudy",
+        "material.GraftedChiStudy",
+        "material.PegMaterialStudy",
+        "material.SolventQualitySaltStudy",
+        "poroelastic.PoroelasticDrainageStudy"
+      ],
+      "overPreciseLeavesFlatNineDigits": 41361,
+      "filesFlatNineDigits": 14,
+      "overPreciseLeavesAtDeclaredPrecision": 41312,
+      "filesAtDeclaredPrecision": 12,
+      "falsePositivesOfAFlatNineDigitReading": 49,
+      "residueByFile": {
+        "P-3-peg-material-parameters.json": 79,
+        "P-6-solvent-quality-vs-salt.json": 81,
+        "P-9-grafted-chi.json": 70,
+        "T-1-layer-stiffness.json": 7049,
+        "T-194-one-reserve.json": 2,
+        "T-198-honeycomb-raster-width.json": 3,
+        "T-1c-crossover-valid-layer-response.json": 25774,
+        "T-200-reemission-order.json": 1,
+        "T-211-seventh-answers-synthesis.json": 1,
+        "T-225-departure-spelling-set.json": 8,
+        "T-6-mean-field-screening-validity.json": 330,
+        "T-7-poroelastic-drainage.json": 7914
+      }
+    },
+    "before": {
+      "emittingStudies": 128,
+      "writingThroughNoRoundingFunction": 7,
+      "unroundedEmitters": [
+        "brush.BrushStiffnessStudy",
+        "brush.CrossoverLayerStudy",
+        "electrostatics.MeanFieldValidityStudy",
+        "material.GraftedChiStudy",
+        "material.PegMaterialStudy",
+        "material.SolventQualitySaltStudy",
+        "poroelastic.PoroelasticDrainageStudy"
+      ],
+      "overPreciseLeavesFlatNineDigits": 41361,
+      "filesFlatNineDigits": 14,
+      "overPreciseLeavesAtDeclaredPrecision": 41312,
+      "filesAtDeclaredPrecision": 12,
+      "falsePositivesOfAFlatNineDigitReading": 49,
+      "residueByFile": {
+        "P-3-peg-material-parameters.json": 79,
+        "P-6-solvent-quality-vs-salt.json": 81,
+        "P-9-grafted-chi.json": 70,
+        "T-1-layer-stiffness.json": 7049,
+        "T-194-one-reserve.json": 2,
+        "T-198-honeycomb-raster-width.json": 3,
+        "T-1c-crossover-valid-layer-response.json": 25774,
+        "T-200-reemission-order.json": 1,
+        "T-211-seventh-answers-synthesis.json": 1,
+        "T-225-departure-spelling-set.json": 8,
+        "T-6-mean-field-screening-validity.json": 330,
+        "T-7-poroelastic-drainage.json": 7914
+      }
+    },
+    "after": {
+      "emittingStudies": 130,
+      "writingThroughNoRoundingFunction": 0,
+      "unroundedEmitters": [],
+      "overPreciseLeavesFlatNineDigits": 64,
+      "filesFlatNineDigits": 7,
+      "overPreciseLeavesAtDeclaredPrecision": 15,
+      "filesAtDeclaredPrecision": 5,
+      "falsePositivesOfAFlatNineDigitReading": 49,
+      "residueByFile": {
+        "T-194-one-reserve.json": 2,
+        "T-198-honeycomb-raster-width.json": 3,
+        "T-200-reemission-order.json": 1,
+        "T-211-seventh-answers-synthesis.json": 1,
+        "T-225-departure-spelling-set.json": 8
+      }
+    }
+  },
+  "movementByKind": {
+    "filesCompared": 62,
+    "filesThatMovedAgainstTheBaselineAndAreNotThisTask": [
+      "T-254-raster-turn-prestrain.json",
+      "T-258-drawable-ragged-face.json"
+    ],
+    "totals": {
+      "prose": 1,
+      "wording": 0,
+      "departure": 2,
+      "parameter": 4,
+      "numeric": 41319,
+      "boolean": 0,
+      "added": 114,
+      "removed": 0
+    },
+    "signatureDeclaredBeforeTheSweep": "a header-only file moves added = 2 and nothing else; a rounded file moves added = 2 plus exactly the numeric fields the offline simulation named",
+    "filesOutsideTheSignature": [
+      {
+        "resultFile": "P-3-peg-material-parameters.json",
+        "numeric": 79
+      },
+      {
+        "resultFile": "P-6-solvent-quality-vs-salt.json",
+        "numeric": 81
+      },
+      {
+        "resultFile": "P-9-grafted-chi.json",
+        "numeric": 70
+      },
+      {
+        "resultFile": "T-1-layer-stiffness.json",
+        "numeric": 7049
+      },
+      {
+        "resultFile": "T-121-stacked-arm-sheet.json",
+        "parameter": 3,
+        "numeric": 22,
+        "added": 2
+      },
+      {
+        "resultFile": "T-123-robust-distribution.json",
+        "prose": 1,
+        "added": 2
+      },
+      {
+        "resultFile": "T-125-upward-root-placement.json",
+        "parameter": 1,
+        "added": 2
+      },
+      {
+        "resultFile": "T-188-buildable-width-count-phase.json",
+        "departure": 2,
+        "added": 2
+      },
+      {
+        "resultFile": "T-1c-crossover-valid-layer-response.json",
+        "numeric": 25774
+      },
+      {
+        "resultFile": "T-6-mean-field-screening-validity.json",
+        "numeric": 330,
+        "added": 2
+      },
+      {
+        "resultFile": "T-7-poroelastic-drainage.json",
+        "numeric": 7914,
+        "added": 2
+      }
+    ]
+  },
+  "controls": [
+    {
+      "resultFile": "T-121-stacked-arm-sheet.json",
+      "movement": {
+        "numeric": 22,
+        "parameter": 3,
+        "added": 2
+      },
+      "control": "structure/StackedArmSheetStudy reads ResultInputs.T_7.file(), and 240 of the fields it reads out of T-7 moved in this sweep",
+      "fieldsReadFromT7ThatMoved": 240,
+      "verdict": "PROPAGATION, not noise. The rounding repair travelling one live reader edge, with the topological order putting T-7 at position 25 and T-121 at 41 -- C-0162's T-136 -> T-138 edge doing exactly what it was built to do."
+    },
+    {
+      "resultFile": "T-125-upward-root-placement.json",
+      "movement": {
+        "parameter": 1,
+        "added": 2
+      },
+      "control": "two runs at HEAD's own code in a git archive HEAD tree: run A and run B disagree WITH EACH OTHER on parameters/bestReachableFloor, and both disagree with the committed file on three leaves",
+      "runsThatDisagreeWithEachOther": 2,
+      "verdict": "PRE-EXISTING. Three unrounded `parameters` leaves carry this study's own SEARCH OUTPUTS, so C-0162's input exemption is protecting the one field that most needs rounding -- C-0172's T-129/T-138 case, third instance."
+    },
+    {
+      "resultFile": "T-123-robust-distribution.json",
+      "movement": {
+        "prose": 1,
+        "added": 2
+      },
+      "control": "one run at HEAD: the committed file does not reproduce from its own code -- 15 fields of subsets/17/* differ, and this sweep landed back on the committed values for all 15",
+      "fieldsTwoValuedAtHead": 15,
+      "verdict": "C-0135's DESCENT MANIFOLD, and the only thing this sweep moved is a search-path diagnostic in prose, which CLAUDE.md says should not be emitted at all."
+    },
+    {
+      "resultFile": "T-188-buildable-width-count-phase.json",
+      "movement": {
+        "departure": 2,
+        "added": 2
+      },
+      "control": "none needed -- the direction is the diagnosis",
+      "verdict": "A RESIDUAL CLOSING. CLAUDE.md: a reproduction residual is a staleness detector. T-188 reproduces C-0090's free-tile stroke 5.15473846 nm at exactly zero now, where it carried 2.4e-09 of its input's staleness before."
+    },
+    {
+      "resultFile": "T-253-honeycomb-grillage.json",
+      "movement": {
+        "added": 2
+      },
+      "control": "a concurrent agent was rewriting tile/HoneycombGrillage.kt while this sweep ran; this snapshot was taken BEFORE that edit and its copy of the file is byte-identical to the baseline ref, checked by one diff",
+      "verdict": "GRADED ON THE COMMITTED MODEL. added = 2 and nothing else; the sibling's own re-run reports no numeric field of this study moving under its change."
+    },
+    {
+      "resultFile": "T-263-honeycomb-grillage-regrade.json",
+      "movement": {
+        "added": 2
+      },
+      "control": "the same diff, and the same snapshot",
+      "verdict": "GRADED ON THE COMMITTED MODEL. added = 2 and nothing else."
+    }
+  ],
+  "sevenEmitters": [
+    {
+      "resultFile": "T-1-layer-stiffness.json",
+      "source": "brush/BrushStiffnessStudy.kt",
+      "significantDigits": 9,
+      "absoluteFloor": 1e-09,
+      "ground": "DeGennesScaling and MilnerWittenCates equilibria are closed forms; the only iteration is heightUnderLoad, a hundred bisection halvings of a bracket [L0*1e-12, L0]. Zero occurrences of SelfConsistentField or heightAtPressure on any source of its path. Smallest emitted magnitude 0.002, so the default floor is inert and measured to be.",
+      "predicted": 7049,
+      "observed": 7049,
+      "missing": 0,
+      "unpredicted": 0
+    },
+    {
+      "resultFile": "T-1c-crossover-valid-layer-response.json",
+      "source": "brush/CrossoverLayerStudy.kt",
+      "significantDigits": 9,
+      "absoluteFloor": 1e-09,
+      "ground": "AlexanderBoxLayer and StrongStretchingLayer: bracketedRoot at its default 1e-15, solveLambda at CONVERGENCE = 1e-15, InteractionFreeEnergy at the same. Constructs no SelfConsistentFieldLayer. The default floor is KEPT and is load-bearing: 274 of the emitted equilibriumStiffness values are a strong-stretching layer at its own resting height, which CLAUDE.md records as exactly zero, so stating them as 0.0 is the floor's own documented case.",
+      "predicted": 25774,
+      "observed": 25774,
+      "missing": 0,
+      "unpredicted": 0
+    },
+    {
+      "resultFile": "T-6-mean-field-screening-validity.json",
+      "source": "electrostatics/MeanFieldValidityStudy.kt",
+      "significantDigits": 9,
+      "absoluteFloor": 1e-09,
+      "ground": "Closed forms in electrostatics/ChargedSurface.kt plus two boundary searches, meanFieldValidityGap and loopExpansionValidityGap, each 300 geometric halvings over eleven decades. Smallest emitted magnitude 5.34577e-06, four decades above the default floor.",
+      "predicted": 330,
+      "observed": 330,
+      "missing": 0,
+      "unpredicted": 0
+    },
+    {
+      "resultFile": "T-7-poroelastic-drainage.json",
+      "source": "poroelastic/PoroelasticDrainageStudy.kt",
+      "significantDigits": 9,
+      "absoluteFloor": 0.0,
+      "ground": "The Brinkman transmissivity and every drag, time and frequency is a closed form; the one search, the 1 kHz bandwidth contour, is 200 bisection halvings. THE FLOOR IS THE JUDGEMENT: RESULT_ABSOLUTE_FLOOR is a claim IN THE LOCKED UNITS and this study emits seconds, hertz, pN*s/nm and dimensionless ratios. Its smallest non-zero value is an inertialTime of 6.96645e-14 s, and the default floor flattens 96 of them to 0.0 while verticalDrainageTime clears it by half a unit in the first digit at 1.52639e-09 s. Zero rather than a smaller positive number because no quantity this study emits is exactly zero by any symmetry, so a floor could only suppress a value the physics means.",
+      "predicted": 7914,
+      "observed": 7914,
+      "missing": 0,
+      "unpredicted": 0
+    },
+    {
+      "resultFile": "P-3-peg-material-parameters.json",
+      "source": "material/PegMaterialStudy.kt",
+      "significantDigits": 9,
+      "absoluteFloor": 1e-09,
+      "ground": "Arithmetic on measured material constants; two iterations, heightUnderLoad's hundred halvings and desCloizeauxReach's two hundred, both at machine precision. Smallest emitted magnitude 0.0115694.",
+      "predicted": 79,
+      "observed": 79,
+      "missing": 0,
+      "unpredicted": 0
+    },
+    {
+      "resultFile": "P-6-solvent-quality-vs-salt.json",
+      "source": "material/SolventQualitySaltStudy.kt",
+      "significantDigits": 9,
+      "absoluteFloor": 1e-09,
+      "ground": "No solver at all: the solver-provenance closure over this source finds zero named convergence criteria. P-18's 'analytic models and closed-form geometry' site. Smallest emitted magnitude 0.000107726.",
+      "predicted": 81,
+      "observed": 81,
+      "missing": 0,
+      "unpredicted": 0
+    },
+    {
+      "resultFile": "P-9-grafted-chi.json",
+      "source": "material/GraftedChiStudy.kt",
+      "significantDigits": 9,
+      "absoluteFloor": 1e-09,
+      "ground": "No solver: the Alexander-de Gennes compression fits are inverted in closed form. Smallest emitted magnitude 0.0113837.",
+      "predicted": 70,
+      "observed": 70,
+      "missing": 0,
+      "unpredicted": 0
+    }
+  ],
+  "pythonEmitters": {
+    "total": 24,
+    "reproduces": [
+      "T-194-one-reserve.json",
+      "T-198-honeycomb-raster-width.json"
+    ],
+    "differs": [
+      "P-22-result-reader-census.json",
+      "T-183-challenge-status-self-consistency.json",
+      "T-184-decision-file-drift.json",
+      "T-200-reemission-order.json",
+      "T-201-fifth-answers-synthesis.json",
+      "T-202-sixth-answers-synthesis.json",
+      "T-205-four-layer-supersession.json",
+      "T-207-format-string-repair.json",
+      "T-211-seventh-answers-synthesis.json"
+    ],
+    "fails": [
+      "T-208-result-file-hygiene.json",
+      "T-212-departure-and-saturation-audits.json",
+      "T-214-departure-rule-scope.json",
+      "T-225-departure-spelling-set.json",
+      "T-234-honeycomb-correction-supersession.json",
+      "T-249-unrounded-prose-interpolations.json",
+      "T-250-prose-interpolation-sweep.json",
+      "T-9-crossover-hinge-constant.json"
+    ],
+    "noEmitter": [
+      "T-119-literature-queries.json",
+      "T-147-third-answers-synthesis.json",
+      "T-175-fourth-answers-synthesis.json",
+      "T-220-level-not-a-stiffness-error-bar.json",
+      "T-226-nonuniform-coupling-manifold.json"
+    ],
+    "reached": {
+      "T-194-one-reserve.json": "already reached by C-0172",
+      "T-198-honeycomb-raster-width.json": "reached here through tools/emission_header.py; movement added = 2 and nothing else"
+    },
+    "note": "Measured by running each at the baseline ref in a git checkout reset to it, with the SCRIPT's own exit code captured rather than a pipeline's. C-0172 measured the same population one iteration earlier and got 1/10/5/2; both are right, and the difference is the finding -- these emitters are functions of the mutable corpus, so T-249 and T-250, which census the corpus and assert their own body against it, move from `differs` to `fails` when HEAD moves."
+  },
+  "residue": {
+    "overPreciseLeaves": 15,
+    "files": 5,
+    "byFile": {
+      "T-194-one-reserve.json": 2,
+      "T-198-honeycomb-raster-width.json": 3,
+      "T-200-reemission-order.json": 1,
+      "T-211-seventh-answers-synthesis.json": 1,
+      "T-225-departure-spelling-set.json": 8
+    },
+    "note": "Every remaining over-precise numeric result leaf is in a file written by a Python emitter in tools/, which no rule in the Kotlin emission layer reaches. NOT ONE Kotlin-written result file in the corpus is over-precise at its own declared precision.",
+    "pythonEmittersNotReached": 22,
+    "regimeBlock": "P4's regime block is still null on every record, for CH-0224's reason, which this task does not touch."
+  },
+  "findings": [
+    "The header residue is CLOSED: the census reads BOTH 130, DECLARED-NOT-EMITTED 0, EMITTED-NOT-DECLARED 0, NEITHER 0, where it read 72 / 55 / 0 / 1.",
+    "CH-0223's stated ground is wrong about the only two studies it names. SelfConsistentField and heightAtPressure occur ZERO times in BrushStiffnessStudy, CrossoverLayerStudy, LayerDesignPoint, BrushCompression and PolymerBrush, so SOLVED_HEIGHT_SIGNIFICANT_DIGITS is a rule about a solver neither study uses. All seven are P-18's nine-digit site (CH-0225).",
+    "The per-study judgement is the FLOOR and not the digit count. The default floor would flatten 370 of the 41 297 fields; 274 of them are a strong-stretching layer's exactly zero resting stiffness in the locked units and are correctly stated as 0.0, and 96 are an inertialTime in SECONDS, which is why POROELASTIC_RESULT_FLOOR is 0.0.",
+    "The change was simulated offline over the committed corpus before a JVM started and the prediction is EXACT: 41297 predicted, 41297 observed, 0 missing, 0 unpredicted over the seven.",
+    "CH-0223's corpus figure over-counts twice: 49 leaves are a study's own declared per-key precision, and 8 more are the predicate's own arithmetic -- Kotlin's 10.0.pow(23) and Python's 10.0 ** 23 differ by one unit in the last place, which is enough to decide an over-precision verdict at 1e-15 (CH-0226).",
+    "A reproduction residual CLOSED: T-188's two reproductions[*].departure went 2.4e-09 to exactly 0.0, which is CLAUDE.md's own staleness detector reading the favourable way."
+  ],
+  "validity": [
+    "Nothing physical is asserted. A numeric movement in this sweep is a precision change or a pre-existing irreproducibility, and every one is classified in `controls`.",
+    "The precision argument is a PROVENANCE argument, not a perturbation measurement. It is the conservative one -- a solver tighter than 1e-9 cannot make a quantity LESS determined -- and it is not a measurement of the quantity's own conditioning.",
+    "tools/T-278-solver-provenance.py ENUMERATES candidates and does not decide. Cut at the serialisation boundary it reads 15-19 sources for six of the seven and 140 for T-6, whose electrostatics package siblings pull in the whole tree: CLAUDE.md's 'a static call graph over FILES is not a conservative approximation, it is noise'. The seven judgements rest on reading each study's own constructed models.",
+    "The pythonEmitters classification is a RECORDED measurement at baselineRef, not re-derived on each run: re-running those emitters would rewrite nine committed files."
+  ]
+}

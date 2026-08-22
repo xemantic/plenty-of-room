@@ -1,0 +1,464 @@
+{
+  "leaf": "none — a process claim protecting the census that protects every honeycomb leaf",
+  "conditions": "No physics is computed. Units unchanged and untouched: nm, pN, pN/nm, pN/nm^2 = 1 MPa exactly, k_BT = 4.141947 pN nm at 300 K. The corpus is the in-scope Markdown of this repository — gpd/claims/, TASKS.md and the two deliverables — read at the baselineRef below plus this iteration's own edits.",
+  "verificationType": "logical — a token census over the corpus, a predicate measured against a hand reading of every occurrence of its two families, a mutation measurement in BOTH directions, a historical series taken out of git, and the census's and the emitter's own named self-tests (counted in mutationCoverage)",
+  "baselineRef": "68d9a6cf5c9b5068f38c887afcd95a1e295fc50a",
+  "parameters": {
+    "censusTool": "tools/T-234-census.py",
+    "classification": "tools/T-234-classification.json",
+    "emitter": "tools/T-234-emit-classification.py",
+    "mutationTest": "tools/T-234-mutation-test.py",
+    "subjectDischarge": "C-0140/C-0141",
+    "discharges": {
+      "C-0140/C-0141": [
+        "C-0140",
+        "C-0141",
+        "CH-0172",
+        "CH-0173",
+        "CH-0174",
+        "CH-0175",
+        "CH-0180",
+        "CH-0181",
+        "T-233",
+        "T-234"
+      ],
+      "C-0154/C-0167": [
+        "C-0154",
+        "C-0167",
+        "CH-0213",
+        "T-253",
+        "T-263"
+      ],
+      "none": []
+    },
+    "refineWindowCharacters": 300,
+    "structuralWindowCharacters": 120,
+    "contextRemoteCharacters": 1000,
+    "snippetCharacters": 40,
+    "overrideKeyCharacters": 100
+  },
+  "baselineChain": {
+    "note": "A census whose scope includes TASKS.md has a READING, not a value. These are the same tool against the corpus as it stood when each was taken. The first three are recorded readings, taken in scratch copies of HEAD's tools; the last is computed live by this emitter. The inherited working-tree classification was itself a legitimate regeneration that had gone stale before three further claims entered the corpus, which is CH-0182 happening while the task that reads it runs.",
+    "committedClassificationAgainstTheCorpusAsItStands": {
+      "gateDefects": 41,
+      "deliverableDebt": 37,
+      "howMeasured": "git show HEAD:tools/T-234-census.py and HEAD:tools/T-234-classification.json into a scratch directory, then --root at the checkout"
+    },
+    "inheritedUncommittedRegeneration": {
+      "gateDefects": 18,
+      "deliverableDebt": 41,
+      "howMeasured": "the same, with the working tree's uncommitted classification"
+    },
+    "freshRegenerationByTheStandingEmitter": {
+      "gateDefects": 5,
+      "deliverableDebt": 41,
+      "howMeasured": "HEAD's census and emitter over a copy of the corpus's Markdown",
+      "whatTheFiveAre": [
+        "C-0167 headline — GRILLAGE, resolved by the T-260 predicate",
+        "C-0172 LatticeTag row — GRILLAGE, resolved by the T-260 predicate",
+        "C-0171 coupling-threshold row — ROW_SPAN, resolved by the T-262 predicate",
+        "TASKS.md's T-9 row — a square-lattice oxDNA design, settled by hand",
+        "C-0167's five-gates reproduction row — settled by hand"
+      ]
+    }
+  },
+  "census": {
+    "occurrences": 379,
+    "files": 39,
+    "byFamily": {
+      "FOOTPRINT": 135,
+      "GRILLAGE": 21,
+      "AZIMUTH": 39,
+      "ROW_SPAN": 60,
+      "WIDTH": 49,
+      "PLACEMENT": 13,
+      "SCAFFOLD": 51,
+      "SQUARE": 11
+    },
+    "byFamilyExcludingThisClaimsWorkedExamples": {
+      "FOOTPRINT": 135,
+      "GRILLAGE": 17,
+      "AZIMUTH": 39,
+      "ROW_SPAN": 57,
+      "WIDTH": 46,
+      "PLACEMENT": 13,
+      "SCAFFOLD": 51,
+      "SQUARE": 8
+    },
+    "occurrencesInThisClaimsWorkedExamples": 13,
+    "byClass": {
+      "MOVED": 158,
+      "SURVIVING": 14,
+      "RESTATED": 27,
+      "OUT_OF_SCOPE": 7,
+      "DISCHARGED": 10,
+      "RECORD": 85,
+      "CORRECT": 78
+    },
+    "gateDefects": 0,
+    "remoteContextOccurrences": 7,
+    "handSettledOccurrences": 6,
+    "deliverableDebt": 24
+  },
+  "task": "T-262 — the WIDTH family reads a RESTATEMENT as debt, and the advisory debt line grows when the documents are CORRECTED",
+  "cheapBounds": [
+    "Count the tokens before writing a rule: of 24 `drawable` occurrences, 20 name C-0151's drawable 102 / 109 raster (the correction) and 4 name C-0119's `drawable at a uniform width` (the withdrawn premise). One word, two statements.",
+    "Sentence-scoping the honeycomb context — the obvious cure for the T-9 row — drops 56 of 103 WIDTH occurrences, most of them genuine. Measured before it was written, and rejected: a predicate can always be narrowed until the tree is clean.",
+    "Measure the false-positive rate over HISTORY, not over the current tree: one loop over `git show <commit>:<file>` needs no solve and it is what makes the split believable."
+  ],
+  "predicates": [
+    {
+      "predicate": "the WIDTH family distinguishes C-0140's withdrawn uniform tile width from C-0146's restored row span and C-0151's drawable raster",
+      "verdict": "MET",
+      "reading": "WIDTH 46 / ROW_SPAN 57, excluding this claim's own worked examples"
+    },
+    {
+      "predicate": "a document pass that CORRECTS the deliverables no longer inflates the advisory debt line by its own correcting sentences",
+      "verdict": "MET",
+      "reading": "at the largest such pass the old predicate adds 9 and the new one 1"
+    },
+    {
+      "predicate": "the SQUARE-lattice collision the family cannot resolve is REPORTED rather than guessed, and settled by a hand override that survives regeneration",
+      "verdict": "MET",
+      "reading": "7 remote-context occurrences reported; 6 hand-settled; the emitter now reads back the file it overwrites"
+    },
+    {
+      "predicate": "every rule fails a NAMED test when narrowed AND when widened",
+      "verdict": "MET",
+      "reading": "see mutationCoverage"
+    }
+  ],
+  "deliverableDebtSeries": {
+    "whatIsCounted": "occurrences of the WIDTH/PLACEMENT token families in ANSWERS.md and DECISIONS-FOR-NDI.md that are neither struck nor already pointed — the advisory debt line's own predicate, minus the class judgement, which is what makes it computable from a historical text alone",
+    "revisions": 40,
+    "oldPredicateAtTheEnd": 25,
+    "newPredicateAtTheEnd": 10,
+    "series": [
+      {
+        "commit": "1177073",
+        "date": "2026-08-15",
+        "subject": "Record C-0071's recommendation in ANSWERS.md, and discharge two questions to NDI",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "ae3837e",
+        "date": "2026-08-15",
+        "subject": "C-0072: the tolerance model does not clear C-0071's recommendation",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "f342371",
+        "date": "2026-08-17",
+        "subject": "C-0078: the drift C-0067 named as the worst is the one its own tool cannot see",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "494eaf5",
+        "date": "2026-08-17",
+        "subject": "Iteration 15: four claims, seven challenges, and a propagation that did not close",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "e0dce99",
+        "date": "2026-08-17",
+        "subject": "add DECISIONS-FOR-NDI.md",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "fc6d19b",
+        "date": "2026-08-17",
+        "subject": "Iteration 16: five claims, four challenges, and the instruments to keep them honest",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "44dee83",
+        "date": "2026-08-17",
+        "subject": "P-24: the two discharged NDI questions were still open in the register",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "44d50d0",
+        "date": "2026-08-17",
+        "subject": "C-0088 (T-150): the deliverable contradicted itself about two tasks, not one",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "2925e11",
+        "date": "2026-08-17",
+        "subject": "Iteration 17: five claims, five challenges, and a decision withdrawn hours after it was written",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "6835204",
+        "date": "2026-08-17",
+        "subject": "Iteration 18: four claims, five challenges, and six routes that were three",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "b36be47",
+        "date": "2026-08-17",
+        "subject": "C-0097 (T-158): mechanising C-0091's transfer detection, recall 2 of 2",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "6856935",
+        "date": "2026-08-18",
+        "subject": "Iteration 19: three claims, five challenges, and a sixth question for NDI",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "cd262f9",
+        "date": "2026-08-18",
+        "subject": "Iteration 20: the flat-tile question closes on every axis this programme can reach",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "d223452",
+        "date": "2026-08-18",
+        "subject": "ANSWERS.md §5: three things iterations 17-21 made newly unanswerable",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "67e6028",
+        "date": "2026-08-18",
+        "subject": "Iteration 21: the row-end question reopens, and a phase conflict that is real",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "53d4738",
+        "date": "2026-08-18",
+        "subject": "Iteration 22: the checks were clean and the tile was the wrong size",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "4cf7b76",
+        "date": "2026-08-18",
+        "subject": "Record C-0108's total-not-the-split reading, and two findings already in the corpus",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "bb4ec0c",
+        "date": "2026-08-18",
+        "subject": "Record NDI's answers to all six specification decisions",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "0f937d2",
+        "date": "2026-08-18",
+        "subject": "Iteration 23: the flatness negative was a result about a 2 nm tile, and the tall layer loses both devices",
+        "oldPredicate": 0,
+        "newPredicate": 0
+      },
+      {
+        "commit": "89fd099",
+        "date": "2026-08-18",
+        "subject": "T-201: the fifth ANSWERS.md synthesis, and the census four passes have reported is the wrong summary",
+        "oldPredicate": 2,
+        "newPredicate": 2
+      },
+      {
+        "commit": "9e03592",
+        "date": "2026-08-18",
+        "subject": "T-196: the four-layer verdict holds with 3.30x of margin, and the cheap bound removed the sweep before it ran",
+        "oldPredicate": 2,
+        "newPredicate": 2
+      },
+      {
+        "commit": "47ef394",
+        "date": "2026-08-18",
+        "subject": "T-202: the sixth ANSWERS.md synthesis, and the first in six whose range is mostly favourable movement",
+        "oldPredicate": 3,
+        "newPredicate": 3
+      },
+      {
+        "commit": "c7d9e84",
+        "date": "2026-08-18",
+        "subject": "A seventh question for NDI: is a 38 x 25 nm tile acceptable, in exchange for removing the last unmeasured dependency?",
+        "oldPredicate": 3,
+        "newPredicate": 3
+      },
+      {
+        "commit": "8c60d61",
+        "date": "2026-08-18",
+        "subject": "T-184: the decision file's drift is ONE-SIGNED, and the checker was penalising the discipline it exists to support",
+        "oldPredicate": 3,
+        "newPredicate": 3
+      },
+      {
+        "commit": "78b3a7f",
+        "date": "2026-08-18",
+        "subject": "T-195: the four-layer tile had already paid for the scaffold remainder before the question was asked",
+        "oldPredicate": 3,
+        "newPredicate": 3
+      },
+      {
+        "commit": "b410c32",
+        "date": "2026-08-19",
+        "subject": "T-211: row (g) is 9.3x shorter and nothing was discarded",
+        "oldPredicate": 3,
+        "newPredicate": 3
+      },
+      {
+        "commit": "3f15f8a",
+        "date": "2026-08-19",
+        "subject": "Iteration 31: the raster can be twist-corrected but the strain relocates, and T-129 reproduces after all",
+        "oldPredicate": 3,
+        "newPredicate": 3
+      },
+      {
+        "commit": "f4d9d88",
+        "date": "2026-08-19",
+        "subject": "Iteration 32: the last unbounded exposure closes, and the honeycomb has no twist to correct",
+        "oldPredicate": 3,
+        "newPredicate": 3
+      },
+      {
+        "commit": "a414045",
+        "date": "2026-08-19",
+        "subject": "Iteration 33: the four-layer cross-section is not a honeycomb, and the recommended tile changes",
+        "oldPredicate": 3,
+        "newPredicate": 3
+      },
+      {
+        "commit": "7b6e465",
+        "date": "2026-08-19",
+        "subject": "Iteration 35: the width that threatened the design is not a width, and the turn loop is a choice",
+        "oldPredicate": 4,
+        "newPredicate": 3
+      },
+      {
+        "commit": "413659f",
+        "date": "2026-08-19",
+        "subject": "Iteration 36: the recommended raster cannot be drawn, and a census that diagnosed a list used one",
+        "oldPredicate": 7,
+        "newPredicate": 4
+      },
+      {
+        "commit": "d864733",
+        "date": "2026-08-19",
+        "subject": "File the oxDNA run: T-9's hinge constant measured, and the corpus value survives",
+        "oldPredicate": 7,
+        "newPredicate": 4
+      },
+      {
+        "commit": "c979541",
+        "date": "2026-08-19",
+        "subject": "Gate the third deliverable, and repair the stale CH-0187 assertion it sat beside",
+        "oldPredicate": 7,
+        "newPredicate": 4
+      },
+      {
+        "commit": "ae91d60",
+        "date": "2026-08-21",
+        "subject": "Merge remote-tracking branch 'origin/main'",
+        "oldPredicate": 7,
+        "newPredicate": 4
+      },
+      {
+        "commit": "49b1a01",
+        "date": "2026-08-21",
+        "subject": "Iteration 38: the honeycomb block is not a path graph, the deliverables carry the closing raster, and the prose census becomes a gate",
+        "oldPredicate": 16,
+        "newPredicate": 5
+      },
+      {
+        "commit": "fb17876",
+        "date": "2026-08-21",
+        "subject": "Merge remote-tracking branch 'origin/main'",
+        "oldPredicate": 16,
+        "newPredicate": 5
+      },
+      {
+        "commit": "692b315",
+        "date": "2026-08-21",
+        "subject": "Renumber the oxDNA hinge-constant claim C-0151 -> C-0157 after the merge collision",
+        "oldPredicate": 16,
+        "newPredicate": 5
+      },
+      {
+        "commit": "d077d55",
+        "date": "2026-08-22",
+        "subject": "T-271/C-0165: the eleventh synthesis, and a restructure iteration is not a synthesis holiday",
+        "oldPredicate": 19,
+        "newPredicate": 7
+      },
+      {
+        "commit": "9b6697d",
+        "date": "2026-08-22",
+        "subject": "T-274: the recommended 10 x 6 block needs no scaffold seam, and the degree census says so before any search",
+        "oldPredicate": 19,
+        "newPredicate": 7
+      },
+      {
+        "commit": "cfbe0cc",
+        "date": "2026-08-22",
+        "subject": "T-276/C-0171: the twelfth synthesis, and the first that carries a REVERSED verdict",
+        "oldPredicate": 25,
+        "newPredicate": 10
+      }
+    ]
+  },
+  "theDrawableToken": {
+    "occurrences": 24,
+    "namingTheDrawableRaster": 20,
+    "namingTheWithdrawnUniformWidth": 4,
+    "note": "`drawable` entered the WIDTH pattern at iteration 34 for C-0119's `drawable at a uniform width`; by iteration 37 C-0151 had made it the name of the CORRECTION."
+  },
+  "theEmitterDocstring": {
+    "promise": "a rule that is wrong for one occurrence is overridden by hand in the JSON and the override survives",
+    "wasTrue": false,
+    "isTrueNow": true,
+    "keyedOn": "file, family, token and the census's own snippet — the occurrence's neighbourhood, not its index, because TASKS.md gains rows every iteration",
+    "overridesCarriedOverOnRegeneration": 6
+  },
+  "sources": [
+    "gpd/claims/C-0140-honeycomb-raster-turn-sense.md — no uniform honeycomb row length",
+    "gpd/claims/C-0141-honeycomb-station-lattice-and-placement.md — the station lattice, plan ceiling and placement family this census's PLACEMENT family records the absence of",
+    "gpd/claims/C-0146-coupled-cells-at-the-two-length-raster.md — 112 bp restored as a ROW SPAN, and the width that threatened the design is not a width",
+    "gpd/claims/C-0151-closing-raster-selection.md — the drawable 102 / 109 raster",
+    "gpd/claims/C-0154-honeycomb-grillage.md — the honeycomb grillage C-0141 did not supply",
+    "gpd/claims/C-0167-coupled-cells-on-the-honeycomb-grillage.md — the coupled cells re-graded",
+    "gpd/challenges/CH-0182-a-census-is-dated-by-its-premise-set.md"
+  ],
+  "mutationCoverage": {
+    "mutations": 42,
+    "directions": [
+      "NARROW",
+      "WIDEN"
+    ],
+    "narrowing": 26,
+    "widening": 16,
+    "namedTestsTotal": 126,
+    "namedTestsCensus": 95,
+    "namedTestsEmitter": 31,
+    "mutationsFailingNoNamedTest": 0,
+    "namedTestsAddedByTheseTasks": 83,
+    "namedTestsReachedBySomeMutation": 77,
+    "exitStatus": 0,
+    "note": "An unreached row is a measurement of the mutation table, not of the tool: a limiting case such as `an empty table carries nothing` is reached by no plausible mutation of the shipped logic, and inventing one would be testing a test."
+  },
+  "residue": {
+    "notGatedInVerify": "The census's --check is NOT wired into tools/verify.sh. Its scope includes TASKS.md, which every agent edits every iteration, so an occurrence arrives unclassified through no fault of the tree and the gate goes red for a reason nobody caused — C-0083's rule, that a gate which cannot come clean is not a gate, read forward.",
+    "wiringRequested": "tools/T-234-census.py --self-test and tools/T-234-emit-classification.py --self-test read only in-memory fixtures apart from three corpus assertions, and belong beside the other checker self-tests on ./gradlew test. This task does not edit build.gradle.kts; the wiring is requested of the coordinator.",
+    "whatThePredicateStillCannotDo": "It cannot tell which LATTICE a token belongs to. `15 x 112 bp` and `15 duplexes, 112 bp` are this corpus's square-lattice sheet, and they sit on lines that discuss the honeycomb block beside them: 5 such occurrences, 2 of them caught by the remote-context advisory and 3 not. All 5 are settled by hand, and the residue is a LATTICE question rather than a width one.",
+    "cH0182": "The classification is still dated by the corpus: a claim filed later in the same iteration arrives unclassified. What this task changes is the failure DIRECTION — a new occurrence in a non-subject family is now classed SURVIVING or RESTATED rather than MOVED, so a correcting claim no longer arrives as debt."
+  }
+}

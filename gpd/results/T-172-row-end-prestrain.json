@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-172",
     "leaf": "A8.2",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm, 0.34 nm rise, 32/3 bp per turn, 16 bp column pitch, 32 bp per-interface spacing; along-helix width 38.08 nm (112 bp, C-0086) at crossover phase 8; C-0090's buildable 24-rise 8.16 nm arm at C-0055's 34 roots; C-0017's 33.3333 pN/nm mandate shared equally; C-0022's solved collar at 2 mM, a 10 nm gap and 0.192 V, AS C-0090 AND C-0099 CARRIED IT; C-0001's foundation secant",

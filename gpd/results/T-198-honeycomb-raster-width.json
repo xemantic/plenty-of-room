@@ -1,4 +1,8 @@
 {
+  "emission": {
+    "lattice": "honeycomb",
+    "regime": null
+  },
   "task": "T-198",
   "leaf": "A8.2",
   "title": "Can four honeycomb layers be rastered from one circular M13 at a buildable width?",

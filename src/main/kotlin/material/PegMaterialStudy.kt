@@ -23,6 +23,7 @@ import com.xemantic.nano.plentyofroom.brush.alexanderDeGennesMatchedExcludedVolu
 import com.xemantic.nano.plentyofroom.brush.brushOfHeight
 import com.xemantic.nano.plentyofroom.brush.heightUnderLoad
 import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -210,7 +211,14 @@ fun main() {
     output.parentFile.mkdirs()
     output.writeText(
         json.encodeToString(
-            json.encodeToJsonElement(result).withEmissionHeader(LatticeTag.NONE, null)
+            json.encodeToJsonElement(result)
+                // NINE DIGITS (`T-278`, closing `CH-0223`). `P-3` is arithmetic on measured
+                // material constants, with two iterations on the path and both at machine
+                // precision: `heightUnderLoad`'s hundred halvings and `desCloizeauxReach`'s two
+                // hundred. Its smallest emitted magnitude is `0.0116 pN/nm^2`, seven decades
+                // above `RESULT_ABSOLUTE_FLOOR`, so the default floor is inert and measured so.
+                .roundedForResult()
+                .withEmissionHeader(LatticeTag.NONE, null)
         ) + "\n"
     )
     report(result, peg, output)

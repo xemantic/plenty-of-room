@@ -221,7 +221,7 @@ So: `C-0017`'s 10 nm / 2 mM verdict stays **NOT EXCLUDED, never established**; `
 | `C-0005`'s `Ξ` at the bare duplex cylinder, `Mg²⁺` | 24.0 | **CITED and REPRODUCED to `1e−4`** |
 | `C-0005`'s saturated far-field charge at 2 mM | 0.0568 e/nm² | **CITED and RE-DERIVED as `κ/(π l_B q)` to `7.8e−4`** |
 | `C-0005`'s five one-loop deviations | 2.14 / 1.63 / 1.23 / 0.89 / 0.70 | **CITED and REPRODUCED to `1.4e−3 – 4.7e−3`** |
-| `T-6`'s emitted `loopExpansionValidityGap`, bare duplex, `q = 2` | 13.517697558570946 nm | **CITED as a literal and REPRODUCED to `0.0`** |
+| `T-6`'s emitted `loopExpansionValidityGap`, bare duplex, `q = 2` | ~~13.517697558570946~~ **13.5176976** nm | **CITED as a literal and REPRODUCED to `0.0`**, and the reproduction is untouched — `T-221` carries the literal in its own source, not by reading `T-6`. Amended by [`T-278`](../tasks/T-278-emission-header-residue.md)/[`C-0174`](C-0174-emission-header-residue-and-the-seven-unrounded-emitters.md), which gave `T-6` the rounding call every other emitter already went through (`CH-0223`): the seventeen-digit form is now a number **no file states**, and §2 of this claim has printed the nine-digit one since it was written |
 | `C-0137`'s two Eq. (64) bounds at 7 nm | 14.43 and 2.80 | **CITED and REPRODUCED to `2.9e−4` and `1.6e−3`** |
 | `C-0137`'s boundary-channel margin ratios | — | **READ from its result file at run time** |
 | Kanduč Eqs. (3), (5), (6), (7), (14), (18), (61), (62), (64), (65) | — | **CITED formulas, READ DIRECTLY, DERIVED evaluations** |

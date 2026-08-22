@@ -71,7 +71,26 @@
 # that and it is `C-0078`'s own finding about itself: a check nobody remembers to ask for is not a
 # check. It already exits with its defect count, so wiring it cost one line per document.
 #
-# `tools/check-queue-vocabulary.py` (`P-29`) runs immediately BEFORE the tracer, and the order is
+# `tools/check-cold-start-note.py` (`P-29`) is the smallest gate here and it exists because the
+# convention was written down TWICE and broke a third time. `P-28` retitled `## Start here -- the
+# state after iteration N` from 26 to 38 and recorded that a mis-titled note is worse than a stale
+# one; four iterations later it read 38 again. A date in a heading has no owner: it is not a number
+# a tracer can attribute, not a status word a queue checker reads, and not a link. `CLAUDE.md`'s
+# *a convention is not a mechanism*, fifth instance.
+#
+# # `tools/T-278-emitter-rounding-census.py` (`T-278`, `C-0174`) gates the SOURCE half only: every study
+# that writes a committed result file must write it through a rounding function. `CH-0223` measured
+# seven that did not, carrying 41 297 of the corpus's 41 369 over-precise numeric leaves -- 99.83 % --
+# because `C-0138` counted rounding IMPLEMENTATIONS (six, all correctly delegated) where the number
+# that decides whether the rule holds is the count of WRITES. Wired here with its reading recorded,
+# per `C-0158`: at the commit that lands it the check is **0 of 130 emitting studies**, exit 0.
+#
+# The ARTIFACT half is deliberately not gated. Its residue is 15 over-precise leaves in 5 files, every
+# one written by a Python emitter in `tools/` that no rule in the Kotlin serialisation layer reaches;
+# gating it would fail the build on files this tree cannot yet repair, and `C-0083`'s rule is that a
+# gate which cannot come clean is not a gate. The census prints the residue beside the gated half.
+#
+# # `tools/check-queue-vocabulary.py` (`P-29`) runs immediately BEFORE the tracer, and the order is
 # the point: the tracer compares the two deliverables against the queue, so a queue row whose
 # verdict the tracer misreads makes the tracer's own verdict meaningless. Iteration 41 coined
 # `**SECOND DELIVERABLE ANSWERED**` on `T-9`; `queue_status` read the row CLOSED, and an OPEN task
@@ -160,6 +179,14 @@ if [ "$checks" = "yes" ]; then
     echo
     echo "--- every String.format call balances its conversions (T-207) ---"
     tools/check-kotlin-format-strings.py
+    echo
+    echo "--- the cold-start heading is not behind the journal (P-29) ---"
+    tools/check-cold-start-note.py --selftest > /dev/null
+    tools/check-cold-start-note.py
+    echo
+    echo "--- every emitting study writes through a rounding function (T-278) ---"
+    tools/T-278-emitter-rounding-census.py --self-test > /dev/null
+    tools/T-278-emitter-rounding-census.py --check
     echo
     echo "--- the queue's own status vocabulary is closed and agrees with the reader (P-29) ---"
     tools/check-queue-vocabulary.py --selftest > /dev/null

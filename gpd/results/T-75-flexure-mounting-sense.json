@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-75 (which body carries the standoffs) and T-78 (what sits under the midspan)",
     "leaf": "A8.2",
     "units": {

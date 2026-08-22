@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-216",
     "leaf": "A8.2",
     "question": "Does a mixed-domain seamless raster row have a crossover phase variable, and what is its census?",

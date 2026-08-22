@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "both",
+        "regime": null
+    },
     "task": "T-231",
     "leaf": "A8.2",
     "title": "What a 4 bp ragged face costs a honeycomb tile that Sec 3 asks to be flat",
