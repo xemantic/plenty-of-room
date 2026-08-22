@@ -10673,3 +10673,119 @@ run: three studies are outstanding in it, two of them siblings'. A separate full
 the final tree — which differs from the verified snapshot only by the deletion of one unused
 `internal` function — is **BUILD SUCCESSFUL in 20 m 51 s, 2 984 tests, 0 failures**, and the study's
 result file is byte-identical before and after that deletion.
+
+## Iteration 39 — 2026-08-21/22: the restructure, and the gate that was red at the commit that promoted it
+
+**A restructure pass, not a science pass**, and its two inputs were both already spent: NDI's six answers
+(`T-191`–`T-195`, all `DONE`) and the second-pass tooling survey in [`TOOLING-NOVELTY.md`](TOOLING-NOVELTY.md).
+What they produced together is the target layering in [`ARCHITECTURE.md`](ARCHITECTURE.md), whose layers 1–3
+were built in the previous pass and which nothing called. This iteration built steps 4, 5 and 6, and it found
+more about this repository's own artifacts than any science pass has.
+
+**Eight tasks closed** — `P-27`, `P-28`, `T-265`, `T-266`, `T-267`, `T-270`, `T-271`, `T-273` — plus `T-268`
+**partially**, with its remainder measured rather than estimated. **Nine** claims (`C-0158`–`C-0166`), **six**
+challenges raised (`CH-0206`, `CH-0207`, `CH-0209`, `CH-0210`, `CH-0211`, `CH-0212`), one of them closed by
+repair in the same iteration (`CH-0207`), and `CH-0208` reserved and **released unused**. Three agents at a time, which is this box's measured ceiling.
+
+### The blocker, and it was worse than the queue said
+
+`tools/verify.sh` had been **red since the commit that promoted the prose census to a gate**. `git archive` of
+that commit, running that tree's own checker, exits 1 — so no mode of the script was ever clean. `C-0156`'s
+provenance names both mutation tables, 134 self-tests and **no suite run**; its result file's `gate` record
+carries `isAGate` and `selfTests` and **no reading**; and its own after-the-sweep figure was measured by the
+emitter's `census()` against the **live working tree at emit time**. *A claim that wires a gate is not obliged
+to run one*, and the control that answers it — `tools/verify.sh --committed` — already existed (`CH-0206`).
+
+The task file's premise was **half wrong, in the informative direction**. *The source is clean and the
+artifacts are stale* held for four files, not eight: **62 of 69** tokens were staleness and **7 were
+source-side call sites at four shapes a mechanical sweep cannot match** — a lambda inside a template, a call
+inside one, a `+` concatenation, and a hardcoded 16-digit literal **with no call site at all**, which no
+widening of a rounding helper can reach because there is nothing to widen. *A residue counted in tokens hides
+that it is two defects*, and the only thing that separates them is re-emitting first and reading the gate
+again. Movement over nine files: **45 prose** fields and **0** numeric.
+
+### What the interchange boundary bought, immediately
+
+Layer 3 was a reader; `T-266` added the **writer**, and `read → write → read` reproduces every lattice fact at
+**integer equality with no tolerance**, with the second write byte-identical — so the writer is the reader's
+*inverse* rather than a plausible second implementation. The **reference scadnano implementation** loads both
+emitted artifacts with zero warnings and independently counts 49 staple and 14 scaffold crossings.
+
+Then `T-267` put the mechanics on a design: `T-10`'s tile rebuilt through the new path has a **bit-identical
+load vector over 855 degrees of freedom**, and the recommended `10 × 6` block imports its cross-section out of
+its own helix grid positions and reproduces the constant-built object bit-identically over **4 080**.
+
+**And then it graded a design this corpus did not draw** — the reference implementation's own Rothemund
+rectangle, which cost a `pip install` — and that is the iteration's most consequential result. Three findings
+no committed design could have produced:
+
+1. its **column parities do not alternate**, because a seam doubles a column pitch, and `CrossoverLayout`'s
+   two constructors alternate by construction — so **every phase-swept placement, count and flatness result in
+   this corpus is over the alternating family**, a restriction no claim states because no claim could see it;
+2. **a crossover is two strand crossings** in the field's own generator and one here — 90 sites or 45
+   depending on the reading, `1.087×` in a flatness (`CH-0209`);
+3. **`rowBasePairs` is not a span** on a design whose scaffold does not start at offset 0 — correct on every
+   design this repository writes, wrong on the first one it imports.
+
+*Grading your own artifacts tests the plumbing and not the assumptions.*
+
+### The rule that was two rules
+
+`T-270` finished the migration `T-266` half-made, and both lattices' width rules turned out to be **one
+predicate**, `N ≡ step·Δ + {0, ±2·offset} (mod period)` — with the square lattice's rule unconditional **only
+because 2 is self-inverse modulo 4**, which is `CLAUDE.md`'s own lattice-transfer condition made executable
+instead of asserted. The recommended block reports **ADMISSIBLE**: **59 raster** crossovers reducing to
+`{4, 14}`, one `b₀`, **zero forced**. The withdrawn `112 / 108` pair fails closure at exactly ten forced
+crossovers **while passing the per-element rule**. And the foreign rectangle had been **passing for the wrong
+reason** — a verdict whose ground was replaced while the verdict stood, which no check written on a verdict
+can see.
+
+### Where the honesty was expensive
+
+`T-268` is the step that moves committed numbers, and **`P5` as written does not fit this box**: the whole
+corpus is **411 min** over 71 of 124 emitting studies with 53 untimed — **≥ 7 h**, and **≥ 14 h** with the
+by-kind control. It was reported rather than shrunk. What was swept is **46 studies** in a **38-constraint**
+topological order, asserted non-zero before it was trusted: **333** parameter fields, **14** numeric, 3 prose,
+and zero of everything else, with all 14 numeric controlled by a `--committed` re-run and none of them this
+sweep's. `CH-0207` — *a parameter block is rounded like its outputs, so a result file cannot re-run its own
+study* — is closed and repaired. The remainder is `T-272`, with its cost in its own task file.
+
+### Three defects the queue itself had
+
+`P-28`: the `Start here` note was titled *after iteration 26* over a queue at 38 — **correct and mis-titled**,
+which is worse than stale; the `Entry points` table had **99 rows against 123 emitting studies**, and three of
+the missing were the emitters of `P-27`'s own red files, so **the blocker could not be actioned from the queue
+at all**; and `./--check/` was a shadow `gpd/results/` built by a mis-parsed argument. All three closed, the
+second **mechanised**.
+
+`T-273` closed the class `T-268` could only annotate: a bare `` `CH-0133` `` in a sentence is **neither a
+filename nor a link**, so no gate here could see it — and `T-268` cited two such numbers, both **reserved by
+`T-201` in iteration 24 and never filed**. The gate can come clean only because the corpus's legitimate
+mentions are exactly two kinds, and the exemption is per **(document, identifier)**: `CLAUDE.md`'s entry about
+this very defect names the ID three times and only the first is beside the words declaring it absent. It also
+found **thirteen reservations released by nobody**, under a rule stated in the very block that reserves them —
+and that **a release note written as a RANGE does not release the numbers inside it**.
+
+### What surprised us
+
+- **A checker's false negatives collect in its EXEMPTION list, and that is the list nobody reads.** The
+  entry-point gate's one false negative was found there, not in its defect list.
+- **A gate written this iteration was red by the end of it, twice, correctly** — once when `T-267` added a
+  study without a row, once when a challenge was committed without its index row, which aborts `verify.sh`
+  under `set -euo pipefail` *before* the gate the iteration existed to make green.
+- **Fourth consecutive iteration in which a check caught its own author**, this time twice inside one pass.
+- **A self-describing count is the one number a numeric tracer cannot own**, and two gates already print it
+  every run — the number is not missing, the comparison is.
+
+### Gates
+
+`tools/verify.sh --committed` at `ee5cf1a`: **BUILD SUCCESSFUL in 21m 47s**, every gate clean. Seven retained
+document checkers now, two of them new this iteration (`tools/check-entry-points.py`,
+`tools/check-corpus-identifiers.py`), both wired into `verify.sh` with self-tests.
+
+### Open for Kazik
+
+**Item 14** was added: should the corpus-integrity toolkit leave this repository? It is a **repository-boundary
+decision and therefore the owner's**, which is why `T-269` is the one iteration-39 row deliberately left
+unreserved. The counter-argument is recorded with it, and this iteration supplied two data points running in
+opposite directions — one generalisation, one deliberate specialisation.
