@@ -17,7 +17,7 @@ Three things that are one thing:
 - **six rounding implementations**, two of which disagree on the absolute floor (`1e-9` against `1e-12`), so
   *"the tree rounds to nine significant digits"* was a description and never a design. `C-0129` and `C-0138`
   moved the departure rule into the layer for one of the six; the others could not have obeyed it by any edit
-  at their own call sites (`CH-0132`).
+  at their own call sites (~~`CH-0132`~~ — **there is no `CH-0132` either**: it and `CH-0133` were reserved by `T-201` in iteration 24 and **never filed**, and this task cited both as though they were challenges. The finding is [`CH-0154`](../challenges/CH-0154-the-rule-lives-once-was-true-of-one-package.md), *"'the rule lives once' was true of one package"*).
 - **a dependency graph that has to be derived**, because studies read result files by **path**.
   `tools/result-reader-census.py` exists to recover what a typed input handle would have declared, and the
   convention that would have made the graph self-maintaining is used by **2 of 72** studies.

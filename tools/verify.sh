@@ -65,6 +65,13 @@
 # path and the fallback no longer emits the prefix, both asserted as tests, and the gate is
 # clean in a real `.git`-less snapshot. Restored here by `P-23` on that evidence.
 #
+# `tools/check-corpus-identifiers.py` (`T-273`) closes the one cross-reference class the other two
+# could not reach. `C-0083` gates a claim's FILENAME and `check-corpus-links.py` a relative LINK; a
+# bare `CH-0133` in a sentence is neither, and `T-268` cited two numbers that had been reserved in
+# iteration 24 and never filed. It can be a gate only because the corpus's legitimate mentions of a
+# non-existent identifier are exactly two kinds -- released, and declared absent -- and the
+# exemption is per (document, identifier) so that the sentence recording the defect does not fire.
+#
 # `tools/check-entry-points.py` (`P-28`) is here for the same reason as the census: it reads
 # `src/`, so it must be skipped when a drop was requested. It answers the one question a cold
 # session asks first — *how do I run this?* — and it was written after the table decayed to 99 rows
@@ -135,6 +142,10 @@ if [ "$checks" = "yes" ]; then
     echo
     echo "--- every String.format call balances its conversions (T-207) ---"
     tools/check-kotlin-format-strings.py
+    echo
+    echo "--- every claim and challenge IDENTIFIER cited in the corpus exists (T-273) ---"
+    tools/check-corpus-identifiers.py --selftest > /dev/null
+    tools/check-corpus-identifiers.py
     echo
     echo "--- every study that writes a committed result file has an Entry points row (P-28) ---"
     tools/check-entry-points.py --selftest > /dev/null
