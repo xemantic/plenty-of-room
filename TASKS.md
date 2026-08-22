@@ -352,6 +352,23 @@ run cannot answer it, say so and price the run that can, rather than shrinking t
 
 The highest numbers in use at the time of writing are `T-274`, `P-28`, `C-0166`, `CH-0212`.
 
+## Number reservations — iteration 41 (2026-08-22)
+
+| Agent | Task | Claims | Challenges |
+|---|---|---|---|
+| A | `T-275` which crossover census a measured constant is read against | `C-0170` | `CH-0219`, `CH-0220` |
+| B | `T-276` the twelfth synthesis — the first carrying a REVERSED verdict | `C-0171` | `CH-0221`, `CH-0222` |
+| C | `T-272` the rest of the emission layer, in one sorted pass | `C-0172` | `CH-0223`, `CH-0224` |
+
+**Reserved and not yet taken**: `C-0170`, `C-0171`, `C-0172`, `CH-0219`, `CH-0220`, `CH-0221`, `CH-0222`,
+`CH-0223`, `CH-0224`. Anything unused when the iteration closes is **released by name here**, never by range.
+
+**`T-276` runs BEFORE `T-272`, deliberately, against its own row's advice.** That row says to run it after the
+emission sweep; a **reversed verdict standing in a customer-facing document** outranks a rendering pass, and
+`T-272` moves no verdict by construction — it moves precisions. If `T-272` lands first the synthesis is
+re-read, which is cheap; the other order leaves `DECISIONS-FOR-NDI.md` asserting a coupled-flatness reading
+`C-0167` has overturned.
+
 ## Process blockers
 
 | ID | Task | Status | Notes |
