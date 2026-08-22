@@ -360,7 +360,13 @@ def context_distance(text: str, start: int, context: str = None) -> int:
     line_start = text.rfind("\n", 0, start) + 1
     line_end = text.find("\n", start)
     line = text[line_start: line_end if line_end != -1 else len(text)]
-    return _nearest(re.compile(context, re.I), line, start - line_start)
+    # `T-287`.  The line is BLANKED, the same way the match is: a `honeycomb` inside a link target
+    # is a name and asserts nothing, so counting it here would make the diagnostic contradict the
+    # admission rule it diagnoses -- and it can only under-report, because a filename is a context
+    # word this counted and that did not.  `blank_identifiers` is length-preserving, so the
+    # offset arithmetic above is untouched, and it is line-local, so blanking the line and
+    # blanking the file give the same answer.
+    return _nearest(re.compile(context, re.I), blank_identifiers(line), start - line_start)
 
 
 def context_distance_of(text: str, token: str) -> int:
@@ -418,7 +424,13 @@ def occurrences(text: str):
     offset reported here indexes the file as it is on disk.
     """
     hunted = blank_identifiers(text)
-    lines = text.split("\n")
+    # `T-287`.  The line context is tested against the SAME blanked text the match is taken
+    # against.  Reading the ORIGINAL line let a family token be admitted by a context word sitting
+    # inside a neighbouring FILENAME -- a name, which asserts nothing about a row length or a tile
+    # width -- and 10 in-scope occurrences entered the census that way, every one of them in a
+    # `Consumes`, `Raises` or `Provenance` row that is a list of links.  Blanking is
+    # length-preserving (`T-285`), so every line number and offset below is unmoved.
+    lines = hunted.split("\n")
     found = []
     for family, pattern, context, refine in FAMILIES:
         for match in re.finditer(pattern, hunted):
@@ -1340,14 +1352,43 @@ def self_test() -> int:
         "drawable"
         in blank_identifiers("C-0175-a-rim.md and the honeycomb tile is drawable at 38.08 nm"),
     )
+    # --- T-287: the line CONTEXT is read from the SAME blanked text the match is
+    #
+    # `T-285` deliberately left this alone and pinned the old behaviour with a named test, because
+    # it runs the OPPOSITE way -- it ADMITS matches where `T-285` removes them -- and two deltas
+    # of opposite sign in one before-and-after list can be audited against neither.  That pinning
+    # test is INVERTED here rather than struck: a test that asserts a repaired defect is not a
+    # record, it is a false assertion, and the sentence it was written under is preserved above.
     ok(
-        # `T-285` deliberately does NOT touch the context test, which reads the ORIGINAL line: a
-        # filename can therefore still supply its family's line context.  That runs the OPPOSITE
-        # way (it admits matches rather than removing them) and is its own row; the behaviour is
-        # asserted here so that a silent change to it fails a named test.
-        "T-285 the line CONTEXT is read from the original line, so a filename still supplies it",
+        "T-287 a line whose only context word is inside a FILENAME does not supply a context",
         sub("see C-0140-honeycomb-raster-turn-sense.md - the tile is 15 rows x 4 layers x 112 bp")
+        == [],
+    )
+    ok(
+        "T-287 and a line whose own PROSE carries the context word still admits",
+        sub("see C-0140-raster-turn-sense.md - the honeycomb tile is 4 layers x 112 bp")
         == ["WIDTH"],
+    )
+    ok(
+        "T-287 the context DISTANCE is measured on the same blanked line, so it cannot count a "
+        "filename as a context word the admission rule does not count",
+        context_distance_of(
+            "see C-0140-honeycomb-raster-turn-sense.md - the tile is 112 bp", "112 bp"
+        ) >= CONTEXT_REMOTE,
+    )
+    ok(
+        "T-287 and the distance is FINITE where the line's own prose carries the word",
+        context_distance_of(
+            "see C-0140-raster-turn-sense.md - the honeycomb tile is 112 bp", "112 bp"
+        ) < CONTEXT_REMOTE,
+    )
+    ok(
+        "T-287 blanking the line is length-preserving, so a surviving occurrence's offset and "
+        "line number are unmoved",
+        occurrences(
+            "x\nsee C-0140-raster.md - the honeycomb tile is 4 layers x 112 bp\n"
+        )[0][1:3]
+        == (2, len("x\nsee C-0140-raster.md - the honeycomb tile is 4 layers x ")),
     )
     ok(
         "T-285 a surviving occurrence's offset still indexes the ORIGINAL text",

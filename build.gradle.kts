@@ -357,6 +357,12 @@ tasks.register<Exec>("testQueueResidueMutations") {
     commandLine("$projectDir/tools/T-283-mutation-test.py")
 }
 
+tasks.register<Exec>("testQueueColumnMutations") {
+    group = "verification"
+    description = "Runs tools/T-289-mutation-test.py, the mutation test for the column predicate"
+    commandLine("$projectDir/tools/T-289-mutation-test.py")
+}
+
 /*
  * `tools/T-225-mutation-test.py` needs `--check` to be a gate at all: without it, an UNPROTECTED
  * classification is printed and the exit code is 0. That default was right while nothing ran it;
@@ -392,7 +398,7 @@ tasks.named("test") {
         // remembered.  3 of 10 were wired before this line; all 10 are now.
         "testMutationAnchorSelfTests", "testMutationAnchors",
         "testLeadingVerdictMutations", "testDebtLineMutations", "testDischargeCensusMutations",
-        "testQueueResidueMutations", "testDepartureKeyMutations",
+        "testQueueResidueMutations", "testQueueColumnMutations", "testDepartureKeyMutations",
         "testProsePredicateMutations", "testProseGateMutations"
     )
 }

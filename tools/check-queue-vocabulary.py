@@ -106,6 +106,21 @@ NOT_CLOSING_VERDICTS = frozenset({
 _ROW = _verdicts.TASK_ROW
 
 
+def _queue_at(ref):
+    """`TASKS.md` as it stands at one commit, or None where git cannot supply it.
+
+    `T-289`.  A gate that cannot report the instance that motivated it is an argument and not an
+    instrument, and the instance is in the COMMITTED past -- so it is read out of git rather than
+    reconstructed as a fixture, which would assert the fixture.
+    """
+    import subprocess
+    result = subprocess.run(
+        ["git", "-C", ROOT, "show", "%s:TASKS.md" % ref],
+        capture_output=True, text=True, errors="replace",
+    )
+    return result.stdout if result.returncode == 0 else None
+
+
 def leading_verdicts(queue_text):
     """[(task id, verdict phrase)] for every run that OPENS a cell and is a verdict."""
     return [(i, p) for i, p, _ in _verdicts.leading_verdicts(queue_text)]
@@ -585,6 +600,177 @@ def _selftest():
         "T-1" in _residue_message and "CLOSED" in _residue_message,
     )
 
+    # --- T-289: WHICH COLUMN a verdict stands in, read off the table's own header ---
+    # `P-29` gates the vocabulary and `P-30` decides which verdict wins; neither reads a COLUMN,
+    # so a verdict written into the LEAF cell agrees with both and the register still reads the
+    # row off the wrong cell.  The status column is located by the header because `TASKS.md`
+    # carries two schemas and a rule that counts from either end is wrong about one of them.
+    check(
+        "T-289 the four-column schema's status column is its THIRD",
+        _verdicts.status_column(["ID", "Task", "Status", "Notes"]) == 2,
+    )
+    check(
+        "T-289 the five-column schema's status column is its FIFTH",
+        _verdicts.status_column(["ID", "Task", "Acceptance", "Leaf", "Status"]) == 4,
+    )
+    check(
+        "T-289 a table with no status column has none, and its rows are not checked",
+        _verdicts.status_column(["Agent", "Task", "Claims", "Challenges"]) is None,
+    )
+    check(
+        "T-289 a status heading wrapped in emphasis is still the status heading",
+        _verdicts.status_column(["ID", "**Status**"]) == 1,
+    )
+    check(
+        "T-289 a verdict in the status column is not miscolumned",
+        _verdicts.miscolumned_verdicts(
+            "| ID | Task | Acceptance | Leaf | Status |\n|---|---|---|---|---|\n"
+            "| T-1 | t | a | A8.2 | **DONE** (iteration 3) |\n"
+        ) == [],
+    )
+    check(
+        "T-289 a verdict in the LEAF column IS miscolumned — the `T-276` shape",
+        _verdicts.miscolumned_verdicts(
+            "| ID | Task | Acceptance | Leaf | Status |\n|---|---|---|---|---|\n"
+            "| T-1 | t | a | **DONE** (iteration 3) | **TODO — HIGH** |\n"
+        ) == [("T-1", 3, "DONE", "leaf", "status")],
+    )
+    check(
+        "T-289 a verdict in the NOTES column of the four-column schema is miscolumned too",
+        _verdicts.miscolumned_verdicts(
+            "| ID | Task | Status | Notes |\n|---|---|---|---|\n"
+            "| P-1 | t | an acceptance | **DONE** (iteration 3) |\n"
+        ) == [("P-1", 3, "DONE", "notes", "status")],
+    )
+    check(
+        "T-289 a row in a table with NO status column is not checked at all",
+        _verdicts.miscolumned_verdicts(
+            "| Agent | Task | Claims | Challenges |\n|---|---|---|---|\n"
+            "| T-1 | t | **DONE** | — |\n"
+        ) == [],
+    )
+    check(
+        "T-289 a row whose first cell is not an identifier is not checked",
+        _verdicts.miscolumned_verdicts(
+            "| ID | Task | Status | Notes |\n|---|---|---|---|\n"
+            "| E | the fifth synthesis | an acceptance | **DONE** (iteration 3) |\n"
+        ) == [],
+    )
+    check(
+        "T-289 a wholly STRUCK verdict in the wrong column is not a verdict",
+        _verdicts.miscolumned_verdicts(
+            "| ID | Task | Acceptance | Leaf | Status |\n|---|---|---|---|---|\n"
+            "| T-1 | t | a | ~~**DONE** (iteration 3)~~ | **TODO — HIGH** |\n"
+        ) == [],
+    )
+    # The DISCRIMINATING struck fixture, and the mutation test is what asked for it: a wholly
+    # struck verdict is refused by `_LEADING_BOLD` whether or not anything is blanked, so it holds
+    # the blanking open nowhere.  A verdict BEHIND a struck prefix is found only when the strike
+    # is blanked, which is the shape `C-0071`'s *strike, never delete* actually produces.
+    check(
+        "T-289 a verdict behind a STRUCK prefix in the wrong column is still miscolumned",
+        _verdicts.miscolumned_verdicts(
+            "| ID | Task | Acceptance | Leaf | Status |\n|---|---|---|---|---|\n"
+            "| T-1 | t | a | ~~TODO~~ **DONE** (iteration 3) | **TODO — HIGH** |\n"
+        ) == [("T-1", 3, "DONE", "leaf", "status")],
+    )
+    # `C-0083`: the only literal pipe a GFM cell can carry is `\|`, and this corpus uses it — a
+    # naive `split("|")` gives `T-60`'s four-column row SIX cells, so a column index computed
+    # that way is not a column index.  Nine committed rows carry one.
+    check(
+        "T-289 an ESCAPED pipe is a literal, not a column boundary",
+        _verdicts.split_cells(r"| T-1 | a `\|F_es\|` b | c |") == ["T-1", r"a `\|F_es\|` b", "c"],
+    )
+    check(
+        "T-289 and a verdict behind an escaped pipe is still read in its own column",
+        _verdicts.miscolumned_verdicts(
+            "| ID | Task | Acceptance | Leaf | Status |\n|---|---|---|---|---|\n"
+            + r"| T-1 | t | a `\|F_es\|` b | A8.2 | **DONE** (iteration 3) |" + "\n"
+        ) == [],
+    )
+    check(
+        "T-289 the cell split is the WIDTH GATE's own, so one definition of a cell serves both",
+        "cells" in inspect.getsource(_verdicts.split_cells),
+    )
+    # A pipe line that is NOT followed by a separator is not a header, which is the renderer's
+    # reading and `tools/check-markdown-tables.py`'s.  Without that rule the stray line above
+    # becomes the header and the row is read against the wrong schema — it still fires, and it
+    # names the wrong column, which is the failure a column rule must not have.
+    check(
+        "T-289 a pipe line not followed by a SEPARATOR is not a header",
+        _verdicts.miscolumned_verdicts(
+            "| ID | Task | Status | Notes |\n"
+            "| ID | Task | Acceptance | Leaf | Status |\n|---|---|---|---|---|\n"
+            "| T-1 | t | a | **DONE** (iteration 3) | **TODO** |\n"
+        ) == [("T-1", 4, "DONE", "leaf", "status")],
+    )
+    check(
+        "T-289 a row is attributed to the table whose header PRECEDES it",
+        [row[0] for row in _verdicts.miscolumned_verdicts(
+            "| ID | Task | Status | Notes |\n|---|---|---|---|\n"
+            "| P-1 | t | **DONE** (iteration 1) | notes |\n"
+            "\n"
+            "| ID | Task | Acceptance | Leaf | Status |\n|---|---|---|---|---|\n"
+            "| T-1 | t | a | **DONE** (iteration 3) | **TODO** |\n"
+        )] == ["T-1"],
+    )
+    # THE INSTANCE THIS WAS WRITTEN FOR.  At `9620d3e` -- `P-30`'s own commit -- the `T-276` row
+    # carried its iteration-41 record in the LEAF cell and its live `**TODO — HIGH**` in the
+    # status cell, `queue_status` read the row CLOSED, and all three existing arms of this gate
+    # read zero defects on it.  A gate that cannot report the instance that motivated it is an
+    # argument and not an instrument (`P-31`'s own standard, on `P-31`'s own commit).
+    _broken = _queue_at("9620d3e")
+    if _broken is not None:
+        check(
+            "T-289 the column rule fires on `T-276` at the commit the register read it CLOSED",
+            [row for row in _verdicts.miscolumned_verdicts(_broken) if row[0] == "T-276"]
+            == [("T-276", 700, "DONE", "leaf", "status")],
+        )
+        check(
+            "T-289 and at that same commit the register really did read it CLOSED",
+            _trace.queue_status(_broken).get("T-276") == "CLOSED",
+        )
+        check(
+            "T-289 and every EXISTING arm of this gate read zero defects on that row — which is "
+            "why the class needed a new predicate rather than a wider vocabulary",
+            [r for r in undeclared(_broken) if r[0] == "T-276"] == []
+            and [r for r in row_disagreements(_broken) if r[0] == "T-276"] == []
+            and [r for r in residue(_broken) if r[0] == "T-276"] == [],
+        )
+
+    # --- T-289: the arm is ADVISORY, and that is a decision with a measurement behind it ---
+    _leaf_row = (
+        "| ID | Task | Acceptance | Leaf | Status |\n|---|---|---|---|---|\n"
+        "| T-1 | t | a | **DONE** (iteration 3) | **TODO — HIGH** |\n"
+    )
+    _leaf_code, _leaf_message = _gate_on(_leaf_row)
+    check(
+        "T-289 a miscolumned verdict does NOT fail the gate — the arm is advisory, because the"
+        " predicate reads 21 genuine rows of the queue it lands on and a gate that cannot come"
+        " clean is not a gate",
+        _leaf_code == 0,
+    )
+    check(
+        "T-289 and it is REPORTED rather than silently tolerated",
+        "MISCOLUMN" in _leaf_message and "T-1" in _leaf_message,
+    )
+    check(
+        "T-289 the advisory names the heading it renders under and the one it belongs under",
+        "'leaf'" in _leaf_message and "'status'" in _leaf_message,
+    )
+    check(
+        "T-289 the advisory names the REPAIR, because a refusal that does not say what to do is a"
+        " traceback with a nicer name",
+        "status cell" in _leaf_message and "strik" in _leaf_message,
+    )
+    check(
+        "T-289 the count is printed even when it is zero, so the residue cannot go quiet",
+        "miscolumned verdicts" in _gate_on(
+            "| ID | Task | Acceptance | Leaf | Status |\n|---|---|---|---|---|\n"
+            "| T-1 | t | a | A8.2 | **DONE** (iteration 3) |\n"
+        )[1],
+    )
+
     # --- MUTATION: narrowing or widening the predicate must fail a NAMED test ---
     # widened to any bold run anywhere -> the prose tests above fail; narrowed to whole-cell
     # equality -> the "(iteration 3)" tests fail.  Both are asserted by the tests, not asserted
@@ -677,6 +863,28 @@ def main(argv):
         )
         defects += 1
 
+    # `T-289`.  ADVISORY, and it says why in its own output: the predicate reads 21 rows of the
+    # queue it lands on and every one of them is genuine, so gating it would be a build failure
+    # nobody could clear without editing 21 rows -- `C-0083`'s *a gate that cannot come clean is
+    # not a gate*, and `CLAUDE.md`'s *print an ungated residue beside a gated arm rather than
+    # narrowing the predicate until the tree is clean*.  The repair is a queue edit and it is
+    # queued as a row of its own; when the count reaches 0 this arm becomes a gate by deleting a
+    # word.
+    miscolumned = _verdicts.miscolumned_verdicts(text)
+    for identifier, line, phrase, heading, status_heading in miscolumned:
+        print(
+            "MISCOLUMN   {:<6} line {}: {!r} renders under {!r}, not under {!r}".format(
+                identifier, line, phrase, heading, status_heading
+            )
+        )
+    if miscolumned:
+        print(
+            "            move the record into the status cell, striking any verdict it supersedes.\n"
+            "            The register reads a row's LEFTMOST verdict, so a row in this shape is\n"
+            "            right only while the leftmost cell happens to hold the LIVE one --\n"
+            "            `T-276` held the SUPERSEDED one there and a live HIGH row read CLOSED"
+        )
+
     total = len(leading_verdicts(text))
     rows = len(_verdicts.task_rows(text))
     print(
@@ -689,6 +897,11 @@ def main(argv):
         " {} row(s) whose prose carries a closing word that is not their verdict".format(
             len(residue(text))
         )
+    )
+    print(
+        "# miscolumned verdicts (T-289, ADVISORY -- 0 false positives over 140 revisions and it"
+        " cannot come clean without a queue edit): {} verdict(s) rendering under a heading that is"
+        " not their table's status column".format(len(miscolumned))
     )
 
     return 1 if defects else 0

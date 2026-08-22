@@ -207,8 +207,11 @@ object ResultInputs {
     val T_281: ResultInput = ResultInput("T-281", "T-281-name-the-discharge.json")
     val T_282: ResultInput = ResultInput("T-282", "T-282-classification-regeneration.json")
     val T_283: ResultInput = ResultInput("T-283", "T-283-residue-as-a-gate.json")
+    val T_284: ResultInput = ResultInput("T-284", "T-284-turn-prestrain-sign.json")
     val T_285: ResultInput = ResultInput("T-285", "T-285-a-slug-is-not-a-statement.json")
     val T_286: ResultInput = ResultInput("T-286", "T-286-a-regime-is-a-set.json")
+    val T_287: ResultInput = ResultInput("T-287", "T-287-a-filename-cannot-supply-a-context.json")
+    val T_289: ResultInput = ResultInput("T-289", "T-289-a-verdict-in-the-wrong-column.json")
     val T_3: ResultInput = ResultInput("T-3", "T-3-stroke-and-blocking-force.json")
     val T_30: ResultInput = ResultInput("T-30", "T-30-flexure-end-joint.json")
     val T_3A: ResultInput = ResultInput("T-3a", "T-3a-nonlinear-pb-profile.json")
@@ -249,9 +252,9 @@ object ResultInputs {
         T_201, T_202, T_203, T_204, T_205, T_206, T_207, T_208, T_21, T_211, T_212, T_214, T_215,
         T_216, T_217, T_218, T_219, T_220, T_221, T_225, T_226, T_23, T_230, T_231, T_232, T_234,
         T_235, T_243, T_244, T_245, T_246, T_249, T_25, T_250, T_253, T_254, T_258, T_260, T_262,
-        T_263, T_267, T_274, T_275, T_278, T_279, T_280, T_281, T_282, T_283, T_285, T_286, T_3,
-        T_30, T_3A, T_3B, T_4, T_40, T_5, T_50, T_5B, T_6, T_60, T_65, T_67, T_7, T_70, T_71, T_72,
-        T_75, T_76, T_79, T_8, T_81, T_9, T_96, T_97, T_99, T_9B
+        T_263, T_267, T_274, T_275, T_278, T_279, T_280, T_281, T_282, T_283, T_284, T_285, T_286,
+        T_287, T_289, T_3, T_30, T_3A, T_3B, T_4, T_40, T_5, T_50, T_5B, T_6, T_60, T_65, T_67, T_7,
+        T_70, T_71, T_72, T_75, T_76, T_79, T_8, T_81, T_9, T_96, T_97, T_99, T_9B
     )
 
     /** The handle a task id names, or `null` where a task id names two files. */

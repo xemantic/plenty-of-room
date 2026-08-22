@@ -11227,3 +11227,85 @@ the last cell* fires on **46** rows, because the two tables have different colum
 And the residue gate `T-283` landed **caught the coordinator writing that very row** — an unbackticked
 status word in its prose — and the repair was its own suggested idiom. **Four consecutive iterations
 in which a retained check caught the mistake of the person using it.**
+
+## Iteration 44 — 2026-08-22/23: the sign was not free, a departure with coefficient zero, and a verdict in the wrong column
+
+### The sign that decides the coupled recovery is derivable, and it is the rule that supplies the magnitude
+
+`T-284`/`C-0187` answered `C-0180`'s open binary the strong way. caDNAno's *"five base pairs, **or
+half a turn**"* is an integer approximation to **5.25 bp**, so a scaffold crossover at `+5` falls a
+quarter of a base pair **short** of the exact half turn and one at `−5` sits a quarter **past** it —
+equal magnitude, opposite sign — and which side a turn takes is `C-0148`'s closure condition, already
+in the tree as `(level − 7·class) mod 21`.
+
+On the recommended `102 / 109` raster the reduced residues are **`[0, 10]`**, exactly ten apart, so
+**`b₀ = 5` is unique** and **`2^59` sign assignments collapse to one global phase**. The assignment is
+**strictly alternating**, and that is a theorem about the row lengths rather than an observation:
+`C-0136`'s per-helix residue is **11 at every one of the 58 interior helices**. Read on the block, a
+turn at the high axial rim carries `+8.57142857°` and one at the low rim its negation — invariant at
+**all eight** readings of the datum conventions. That is `C-0175` §8's third *guess*, now **derived**.
+The undrawable `112 / 108` control carries three residues, no `b₀`, and determines nothing.
+
+**A phase-free design rule is not reachable on the graded family**, and that is reported rather than
+answered anyway: 1 of 64 flat at each phase, **0 at both**, and the cheap sufficient condition —
+`p90 < 0.10 − max|movement|` = **0.0979624378** — is missed by the corpus's tightest cell
+(`0.0995744767`) by **1.612 %** of the tolerance.
+
+### And then the load itself was challenged, at coefficient zero
+
+`CH-0240` is the sharper half. A level displacement rotates **both** backbones the same way — the
+model's own header says so — so `∂(ψ_P − ψ_Q)/∂ζ = 0` identically: the allowed `8.57142857°`
+departure is **common-mode**, and its coefficient on the **relative roll** is **exactly zero**, which
+is the coordinate `CH-0228`, `C-0175` §8 and `C-0180` §4 all load it through. No number of theirs is
+disputed; what is disputed is the coordinate. What replaces it is a per-beam **twist** of
+`17.1428571°` per interior helix — to the digit, `C-0152`'s *forced*-crossover departure — whose sign
+relative to the applied term is unknown (`T-291`).
+
+**A mutation that failed nothing was the finding**, again: relaxing the uniqueness check on `b₀`
+killed no test, because **neither corpus raster can tell the two checks apart**. The discriminating
+state had to be **constructed** — `112 / 119`, which carries one residue and two candidates, so a
+uniform assignment exists on a raster nobody recommends.
+
+### A verdict can be in the right ROW and the wrong COLUMN
+
+`T-289`/`C-0188` turned the coordinator's one-row repair into a predicate. The status column of each
+table is fixed by that table's **own header**, and **21 verdicts on 21 rows render under a heading
+that is not it** — 11 under `Leaf`, because those rows **dropped a cell** (and
+`tools/check-markdown-tables.py` is clean on every one, because their cell **count** matches), and 10
+under `Notes`, because the four-column table is headed `Status` third while its rows from `P-11` on
+are written in the five-column schema's semantics.
+
+The cheap census this repository wrote down as *not* the predicate is wrong in **both** directions:
+of its 46 rows the header rule **clears 34** and **finds 9 it misses**, so the two disagree about 43
+of the 55 rows in their union. False positives: **615 row-instances over 24 distinct rows in 129 of
+140 revisions, 0 false**. The measurement that settles it is not the hand table — **3 of the 24 no
+longer fire and all three were repaired in the direction the predicate prescribes**, by three hands
+in three iterations, with no rule written down anywhere. It is **not wired**, because it reads 21 and
+not 0; it prints as an ungated residue, and the queue repair is `T-292`.
+
+`CH-0241` is raised against `C-0178` **and annotated in the same iteration**: **9 of its 9**
+*preserved-priority* rows are miscolumned at its own baseline ref, so that reading of *strike, never
+delete* is withdrawn while the rule stands on its measurement.
+
+### And the census's other half
+
+`T-287`/`C-0189`: a filename cannot supply a family's line **context** either — **10 occurrences
+leave, 0 enter, and not one carries a class the census gates**, which is what made the change safe to
+take rather than merely arguable. **A mutation had to be RETIRED**: `T-285` had carried this very
+change as a *widening* to hold its own scope open, so taking it made that row a no-op — the harness
+reported it as the run's only row failing nothing.
+
+### What surprised us
+
+- **A binary that looked like a specification gap was a theorem.** `C-0180` recorded the sign as
+  *"contingent on a binary no source in this repository fixes"*; the source was the same published
+  rule that fixes the magnitude, and it had been in the tree since `C-0148`.
+- **The most valuable thing a mutation table produced, twice in two iterations, was a row that failed
+  nothing** — and both times the cure was to **construct** the discriminating state rather than to
+  weaken the mutation.
+- **A challenge can dispute a coordinate without disputing a single number.** `CH-0240` leaves every
+  figure of `C-0175`, `C-0180` and `CH-0228` intact and asks whether the coefficient they multiply is
+  zero.
+- **A cell-count check and a column-semantics check are different questions**, and eleven rows have
+  been passing the first while failing the second — one of them a HIGH row that spent an iteration
+  outside the register.

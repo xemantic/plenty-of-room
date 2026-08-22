@@ -1,0 +1,293 @@
+{
+  "task": "T-287",
+  "title": "a filename cannot supply a premise family's line context either",
+  "subject": "the in-scope corpus tools/T-234-census.py reads -- gpd/claims/, TASKS.md and the two deliverables; a corpus-subject result file, so the ref is an argument and the resolved SHA is recorded",
+  "baselineRef": "2c043809540a68c1e4e8be356b5b736ea75a6ce9",
+  "baselineRefRequested": "HEAD",
+  "units": "none; every value is an integer count or a name",
+  "parameters": {
+    "corpus": "the in-scope corpus of tools/T-234-census.py -- gpd/claims/, TASKS.md, ANSWERS.md and DECISIONS-FOR-NDI.md -- as it stands in the working tree, against the census and classification committed at the baselineRef",
+    "predicate": "the family match, the line context test and the context distance all read the same text: identifiers and `<ID>-<slug>.<ext>` filenames blanked, length-preservingly",
+    "unchanged": "the family patterns, the refinement window, CONTEXT_REMOTE, SNIPPET_CHARS and the discharge registry",
+    "note": "no wall-clock timing and no step counter is emitted; every value is an integer count or a name"
+  },
+  "change": {
+    "rule": "the line context test and the context distance read the SAME text the match is taken against -- identifiers and filenames blanked, length-preservingly",
+    "whyBlankingAndNotALinkRule": "a rule recognising a Markdown link target specifically would miss the same slug written bare, which this corpus does in Provenance and Conditions rows and in prose naming a result file; blank_identifiers already answers `what is a name here` and is tested in both directions by T-285",
+    "whyTheDistanceTravelsWithTheAdmissionTest": "context_distance exists to say `the line context said nothing about this token`. Measured on the original text it can only UNDER-report, because a filename is a context word it counts and the admission rule does not; both readings must come from one text or the diagnostic contradicts the rule it diagnoses"
+  },
+  "delta": {
+    "occurrencesBefore": 387,
+    "occurrencesAfter": 377,
+    "filesBefore": 41,
+    "filesAfter": 40,
+    "removed": 10,
+    "added": 0,
+    "removedOneAtATime": [
+      {
+        "file": "TASKS.md",
+        "line": 688,
+        "index": 42,
+        "family": "ROW_SPAN",
+        "token": "112 bp",
+        "classAtTheBaselineRef": "RECORD",
+        "byHand": false,
+        "contextDistanceAtTheBaselineRef": 306
+      },
+      {
+        "file": "TASKS.md",
+        "line": 688,
+        "index": 43,
+        "family": "ROW_SPAN",
+        "token": "112 bp",
+        "classAtTheBaselineRef": "RECORD",
+        "byHand": false,
+        "contextDistanceAtTheBaselineRef": 1522
+      },
+      {
+        "file": "gpd/claims/C-0140-honeycomb-raster-turn-sense.md",
+        "line": 8,
+        "index": 3,
+        "family": "WIDTH",
+        "token": "drawable",
+        "classAtTheBaselineRef": "CORRECT",
+        "byHand": false,
+        "contextDistanceAtTheBaselineRef": 151
+      },
+      {
+        "file": "gpd/claims/C-0140-honeycomb-raster-turn-sense.md",
+        "line": 13,
+        "index": 4,
+        "family": "WIDTH",
+        "token": "drawable",
+        "classAtTheBaselineRef": "CORRECT",
+        "byHand": false,
+        "contextDistanceAtTheBaselineRef": 69
+      },
+      {
+        "file": "gpd/claims/C-0140-honeycomb-raster-turn-sense.md",
+        "line": 13,
+        "index": 5,
+        "family": "WIDTH",
+        "token": "40.46",
+        "classAtTheBaselineRef": "CORRECT",
+        "byHand": false,
+        "contextDistanceAtTheBaselineRef": 95
+      },
+      {
+        "file": "gpd/claims/C-0175-drawable-raster-rim.md",
+        "line": 12,
+        "index": 3,
+        "family": "ROW_SPAN",
+        "token": "drawable",
+        "classAtTheBaselineRef": "RESTATED",
+        "byHand": false,
+        "contextDistanceAtTheBaselineRef": 151
+      },
+      {
+        "file": "gpd/claims/C-0175-drawable-raster-rim.md",
+        "line": 13,
+        "index": 4,
+        "family": "WIDTH",
+        "token": "drawable",
+        "classAtTheBaselineRef": "OUT_OF_SCOPE",
+        "byHand": true,
+        "contextDistanceAtTheBaselineRef": 137
+      },
+      {
+        "file": "gpd/claims/C-0176-partial-discharge-and-restatement-predicates.md",
+        "line": 12,
+        "index": 0,
+        "family": "ROW_SPAN",
+        "token": "112 bp",
+        "classAtTheBaselineRef": "CORRECT",
+        "byHand": false,
+        "contextDistanceAtTheBaselineRef": 133
+      },
+      {
+        "file": "gpd/claims/C-0176-partial-discharge-and-restatement-predicates.md",
+        "line": 12,
+        "index": 1,
+        "family": "ROW_SPAN",
+        "token": "drawable",
+        "classAtTheBaselineRef": "CORRECT",
+        "byHand": false,
+        "contextDistanceAtTheBaselineRef": 48
+      },
+      {
+        "file": "gpd/claims/C-0182-name-the-discharge.md",
+        "line": 69,
+        "index": 0,
+        "family": "WIDTH",
+        "token": "drawable",
+        "classAtTheBaselineRef": "CORRECT",
+        "byHand": false,
+        "contextDistanceAtTheBaselineRef": 57
+      }
+    ],
+    "removedByClassAtTheBaselineRef": {
+      "CORRECT": 6,
+      "OUT_OF_SCOPE": 1,
+      "RECORD": 2,
+      "RESTATED": 1
+    },
+    "F2": {
+      "movedOrDischargedRemoved": 0,
+      "whyThatIsTheAcceptancePredicate": "MOVED and DISCHARGED are the debt; a repair that hides debt is the failure direction this census exists to avoid, and it is the one thing that would have made the answer `state the decision and keep the original line`"
+    },
+    "classCountsBefore": {
+      "MOVED": 158,
+      "DISCHARGED": 9,
+      "RECORD": 88,
+      "CORRECT": 79,
+      "OUT_OF_SCOPE": 8,
+      "SURVIVING": 14,
+      "RESTATED": 30
+    },
+    "classCountsAfter": {
+      "MOVED": 158,
+      "DISCHARGED": 9,
+      "RECORD": 86,
+      "CORRECT": 73,
+      "OUT_OF_SCOPE": 7,
+      "SURVIVING": 14,
+      "RESTATED": 30
+    }
+  },
+  "diagnostic": {
+    "remoteContextBefore": [
+      {
+        "file": "ANSWERS.md",
+        "line": 303,
+        "token": "drawable",
+        "contextDistance": 1087
+      },
+      {
+        "file": "ANSWERS.md",
+        "line": 987,
+        "token": "drawable",
+        "contextDistance": 1102
+      },
+      {
+        "file": "TASKS.md",
+        "line": 509,
+        "token": "112 bp",
+        "contextDistance": 3425
+      },
+      {
+        "file": "TASKS.md",
+        "line": 688,
+        "token": "112 bp",
+        "contextDistance": 1522
+      },
+      {
+        "file": "TASKS.md",
+        "line": 728,
+        "token": "drawable",
+        "contextDistance": 2296
+      },
+      {
+        "file": "TASKS.md",
+        "line": 742,
+        "token": "112 bp",
+        "contextDistance": 1069
+      },
+      {
+        "file": "TASKS.md",
+        "line": 750,
+        "token": "drawable",
+        "contextDistance": 1784
+      },
+      {
+        "file": "gpd/claims/C-0160-scadnano-writer.md",
+        "line": 1,
+        "token": "112 bp",
+        "contextDistance": 1011
+      }
+    ],
+    "remoteContextAfter": [
+      {
+        "file": "ANSWERS.md",
+        "line": 302,
+        "token": "112 bp",
+        "contextDistance": 1248
+      },
+      {
+        "file": "ANSWERS.md",
+        "line": 303,
+        "token": "drawable",
+        "contextDistance": 1087
+      },
+      {
+        "file": "ANSWERS.md",
+        "line": 987,
+        "token": "drawable",
+        "contextDistance": 1102
+      },
+      {
+        "file": "TASKS.md",
+        "line": 509,
+        "token": "112 bp",
+        "contextDistance": 3425
+      },
+      {
+        "file": "TASKS.md",
+        "line": 728,
+        "token": "drawable",
+        "contextDistance": 2296
+      },
+      {
+        "file": "TASKS.md",
+        "line": 742,
+        "token": "112 bp",
+        "contextDistance": 1069
+      },
+      {
+        "file": "TASKS.md",
+        "line": 750,
+        "token": "drawable",
+        "contextDistance": 1784
+      },
+      {
+        "file": "gpd/claims/C-0160-scadnano-writer.md",
+        "line": 1,
+        "token": "112 bp",
+        "contextDistance": 1011
+      }
+    ],
+    "whatMoved": "the two TASKS.md occurrences on one row are gone with the occurrences themselves, and one ANSWERS.md occurrence enters the list because its nearest context word was inside a filename -- which is the diagnostic doing its job rather than a regression"
+  },
+  "theOtherDeltaNotTakenHere": {
+    "what": "the refinement window (REFINE_WINDOW, STRUCTURAL_WINDOW) reads the original text too, so a filename can supply a governing word there as well",
+    "measured": [
+      {
+        "file": "gpd/challenges/CH-0229-a-census-assumes-a-premise-is-withdrawn-once.md",
+        "line": 19,
+        "token": "single-layer square-lattice",
+        "onTheOriginalText": "GRILLAGE",
+        "onTheBlankedText": "PLACEMENT",
+        "inScope": false
+      }
+    ],
+    "inScopeEffect": 0,
+    "whyNotTakenHere": "C-0184's reason for splitting T-285 from T-287, one level down: one delta at a time, or neither can be audited against the other. Its in-scope effect at this ref is zero, so nothing in this census's own scope could hold a named test open for it; it is queued as a row of its own"
+  },
+  "regeneration": {
+    "handOverridesAtTheBaselineRef": 7,
+    "handOverridesCarried": 6,
+    "droppedOverrides": [
+      {
+        "file": "gpd/claims/C-0175-drawable-raster-rim.md",
+        "family": "WIDTH",
+        "class": "OUT_OF_SCOPE"
+      }
+    ],
+    "whyItIsDroppedRatherThanMoved": "the occurrence it qualified no longer exists -- the statement it read was admitted by a name and by nothing else. C-0176's mechanism: an override is keyed on what the occurrence IS and is dropped LOUDLY, never silently moved",
+    "whyTheRegenerationIsNotOptional": "a family change moves a class and the table is keyed on the index; with the predicate in and the table still on the old indices the gate reads 10 stale entries, and that number measures nothing (C-0184)"
+  },
+  "gate": {
+    "toolsT234CensusCheckBefore": 0,
+    "toolsT234CensusCheckAfter": 0,
+    "whyBothAreRecorded": "C-0158: a claim that lands a change to a gated tool records the gate's actual reading"
+  }
+}

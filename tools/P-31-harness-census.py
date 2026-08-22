@@ -89,6 +89,8 @@ HARNESSES = (
      "census_discharges.py + T-234-census.py"),
     ("T-283-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
      "queue_verdicts.py + check-queue-vocabulary.py"),
+    ("T-289-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
+     "queue_verdicts.py + check-queue-vocabulary.py"),
     ("T-234-mutation-test.py", "TEXT-ANCHOR", "kind_name_path_subs",
      "T-234-census.py + T-234-emit-classification.py"),
     ("T-280-mutation-test.py", "TEXT-ANCHOR", "kind_name_subs",

@@ -205,6 +205,15 @@ def mutations():
          [(row_words, "_ROW_WORDS = re.compile(" + NEVER + ")")]),
         ("NARROW", "nothing is ever remote -- the line context is trusted at any distance", CENSUS,
          [("CONTEXT_REMOTE = 1000", "CONTEXT_REMOTE = 10 ** 9")]),
+        # ------------------------------------------------------------------ T-287
+        ("NARROW", "the line context is read from the ORIGINAL line -- a filename supplies it "
+                   "again", CENSUS,
+         [('    lines = hunted.split("\\n")', '    lines = text.split("\\n")')]),
+        ("NARROW", "the context DISTANCE is measured on the unblanked line, so the diagnostic "
+                   "contradicts the rule it diagnoses", CENSUS,
+         [("    return _nearest(re.compile(context, re.I), blank_identifiers(line), "
+           "start - line_start)",
+           "    return _nearest(re.compile(context, re.I), line, start - line_start)")]),
         # ------------------------------------------------------------------ T-262, widening
         ("WIDEN", "row nouns match anything -- every match is a restored row span", CENSUS,
          [(row_words, "_ROW_WORDS = re.compile(" + ALWAYS + ")")]),
@@ -334,12 +343,12 @@ def mutations():
                   "spaced or dotted behind it -- C-0150's judgement-becomes-a-pattern", CENSUS,
          [(_SLUG_ANCHOR,
            'SLUG_FILENAME = re.compile(r"\\b(?:CH|C|P|T|S)-\\d{1,4}[a-z]?[- .A-Za-z0-9]+")')]),
-        ("WIDEN", "the blanking is applied to the line CONTEXT as well as the match, so a filename "
-                  "stops supplying its family's context -- T-285's stated scope, reversed", CENSUS,
-         [("            if context and not re.search(context, lines[line_index], re.I):",
-           "            if context and not re.search(\n"
-           "                context, blank_identifiers(lines[line_index]), re.I\n"
-           "            ):")]),
+        # `T-285` carried this WIDENING here -- *the blanking applied to the line context as
+        # well as the match* -- as the boundary of its own stated scope.  `T-287` took that
+        # widening, so it is now the BEHAVIOUR and a mutation of it is a no-op; the harness said
+        # so, reporting it as the run's only row failing nothing.  It is replaced by the two
+        # NARROWINGS above, which restore the original-line reading of the context and of the
+        # distance.  A mutation table is dated by the predicate it mutates.
     ]
 
 

@@ -66,10 +66,16 @@ ROOT = os.path.dirname(HERE)
 VERDICTS = "queue_verdicts.py"
 READER = "trace-answers.py"
 GATE = "check-queue-vocabulary.py"
+# `T-289`.  `queue_verdicts` imports the WIDTH GATE's own cell reader, so that "what is a cell"
+# has one definition in this tree; the fixture therefore has to carry it too.  This tuple is a
+# DEPENDENCY DECLARATION and a new import edge in the subject invalidates it -- which it did, and
+# it said so: `C-0185`'s baseline assertion turned what would have been *12 mutations, 12
+# survivors* into `the UNMUTATED copy crashed, so nothing below is a measurement`.
+TABLES = "check-markdown-tables.py"
 
 # Every file the gate's `--selftest` touches, at the path it expects to find it at.  A subprocess
 # harness must reproduce the tree's own LAYOUT, not merely its contents (`CH-0237`).
-FIXTURE_TOOLS = (VERDICTS, READER, GATE)
+FIXTURE_TOOLS = (VERDICTS, READER, GATE, TABLES)
 FIXTURE_ROOT_FILES = ("TASKS.md",)
 
 

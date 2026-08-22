@@ -1,0 +1,434 @@
+{
+  "task": "T-289",
+  "title": "a status verdict can sit in a column that is not its table's status column",
+  "subject": "TASKS.md and its whole history -- a corpus-subject result file, so the ref is an argument and the resolved SHA is recorded (gpd/README.md, C-0165)",
+  "baselineRef": "2c043809540a68c1e4e8be356b5b736ea75a6ce9",
+  "baselineRefRequested": "HEAD",
+  "units": "none; every value is an integer count, a name, or an exact quotient",
+  "parameters": {
+    "corpus": "TASKS.md, every revision reachable from the baselineRef",
+    "predicate": "a verdict -- a leading, short, bold run carrying an unqualified closing word, or a leading TODO -- opening a cell of a task row that is not that table's status column, where the status column is the index of the header cell reading `status` with emphasis stripped and case folded",
+    "cellSplit": "unescaped pipes only, via tools/check-markdown-tables.py's own `cells`, so `what is a cell` has one definition in this tree",
+    "blankedSpans": "struck spans, length-preservingly, before the row is split",
+    "tablesSkipped": "every table whose header carries no `status` cell",
+    "note": "no wall-clock timing and no step counter is emitted; the only non-integer is the false-positive rate, an exact quotient rendered at nine significant digits"
+  },
+  "predicate": {
+    "rule": "the status column of a table is the index of the header cell reading `status`, with emphasis stripped and case folded; a verdict opening any other cell of a task row of that table is a defect",
+    "whyTheHeaderAndNotAPosition": "TASKS.md carries two schemas -- `| ID | Task | Status | Notes |` and `| ID | Task | Acceptance | Leaf | Status |` -- so the status column is the third in one and the fifth in the other, and a rule counting from either end is wrong about one of them",
+    "whyNotAMajorityVoteOverTheTablesOwnRows": "a majority vote is self-confirming on exactly the schema drift this looks for; the header is one hand-written line, is width-checked by tools/check-markdown-tables.py, and is the only thing in the file that says what a column MEANS",
+    "cellsAreSplitOnUnescapedPipes": "C-0083: the only literal pipe a GFM cell can carry is an escaped one, and this corpus uses it -- a naive split gives T-60's four-column row six cells. The split is tools/check-markdown-tables.py's own, so `what is a cell` has one definition in this tree",
+    "tablesWithNoStatusColumnAreNotCheckedAtAll": true
+  },
+  "cheapBound": {
+    "rule": "the row's FIRST verdict is not in its LAST cell",
+    "statedInTheRowAs": 46,
+    "atTheWorkingTree": {
+      "cheapCensus": 47,
+      "headerAware": 21,
+      "agree": [
+        "P-26",
+        "T-263",
+        "T-265",
+        "T-266",
+        "T-267",
+        "T-268",
+        "T-270",
+        "T-271",
+        "T-272",
+        "T-274",
+        "T-275",
+        "T-9"
+      ],
+      "cheapOnlyClearedByTheHeaderRule": [
+        "P-10",
+        "P-12",
+        "P-14",
+        "P-15",
+        "P-16",
+        "P-17",
+        "P-18",
+        "P-19",
+        "P-20",
+        "P-23",
+        "P-24",
+        "P-3",
+        "P-4",
+        "P-5",
+        "P-6",
+        "P-7",
+        "P-8",
+        "P-9",
+        "T-112",
+        "T-132",
+        "T-156",
+        "T-157",
+        "T-159",
+        "T-182",
+        "T-190",
+        "T-1f",
+        "T-221",
+        "T-254",
+        "T-284",
+        "T-290",
+        "T-42",
+        "T-50",
+        "T-52",
+        "T-60",
+        "T-76b"
+      ],
+      "headerOnlyMissedByTheCheapCensus": [
+        "P-11",
+        "P-21",
+        "P-22",
+        "P-25",
+        "P-27",
+        "P-28",
+        "P-29",
+        "P-30",
+        "P-31"
+      ]
+    },
+    "whatTheContrastSays": "the cheap census is wrong in BOTH directions: it flags 34 rows the header rule clears -- the four-column table's own correct rows, whose status cell is not their last -- and misses 9 the header rule finds"
+  },
+  "reading": {
+    "atTheBaselineRef": [
+      "P-11",
+      "P-21",
+      "P-22",
+      "P-25",
+      "P-26",
+      "P-27",
+      "P-28",
+      "P-29",
+      "P-30",
+      "P-31",
+      "T-263",
+      "T-265",
+      "T-266",
+      "T-267",
+      "T-268",
+      "T-270",
+      "T-271",
+      "T-272",
+      "T-274",
+      "T-275",
+      "T-9"
+    ],
+    "onTheWorkingTree": [
+      "P-11",
+      "P-21",
+      "P-22",
+      "P-25",
+      "P-26",
+      "P-27",
+      "P-28",
+      "P-29",
+      "P-30",
+      "P-31",
+      "T-263",
+      "T-265",
+      "T-266",
+      "T-267",
+      "T-268",
+      "T-270",
+      "T-271",
+      "T-272",
+      "T-274",
+      "T-275",
+      "T-9"
+    ],
+    "verdictsOnTheWorkingTree": 21,
+    "byHeadingOnTheWorkingTree": {
+      "leaf": 11,
+      "notes": 10
+    },
+    "perTablePartitionOnTheWorkingTree": [
+      {
+        "headerLine": 462,
+        "header": [
+          "ID",
+          "Task",
+          "Status",
+          "Notes"
+        ],
+        "statusColumnIndex": 2,
+        "taskRows": 31,
+        "verdictOnlyInTheStatusColumn": 19,
+        "noVerdictAtAll": 2,
+        "aVerdictSomewhereElse": 10
+      },
+      {
+        "headerLine": 498,
+        "header": [
+          "ID",
+          "Task",
+          "Acceptance (abridged — full text in `gpd/tasks/`)",
+          "Leaf",
+          "Status"
+        ],
+        "statusColumnIndex": 4,
+        "taskRows": 255,
+        "verdictOnlyInTheStatusColumn": 236,
+        "noVerdictAtAll": 8,
+        "aVerdictSomewhereElse": 11
+      }
+    ]
+  },
+  "history": {
+    "revisions": 140,
+    "revisionsThatFire": 129,
+    "rowInstances": 615,
+    "distinctRows": [
+      "P-11",
+      "P-12",
+      "P-20",
+      "P-21",
+      "P-22",
+      "P-25",
+      "P-26",
+      "P-27",
+      "P-28",
+      "P-29",
+      "P-30",
+      "P-31",
+      "T-263",
+      "T-265",
+      "T-266",
+      "T-267",
+      "T-268",
+      "T-270",
+      "T-271",
+      "T-272",
+      "T-274",
+      "T-275",
+      "T-276",
+      "T-9"
+    ],
+    "truePositives": [
+      "P-11",
+      "P-12",
+      "P-20",
+      "P-21",
+      "P-22",
+      "P-25",
+      "P-26",
+      "P-27",
+      "P-28",
+      "P-29",
+      "P-30",
+      "P-31",
+      "T-263",
+      "T-265",
+      "T-266",
+      "T-267",
+      "T-268",
+      "T-270",
+      "T-271",
+      "T-272",
+      "T-274",
+      "T-275",
+      "T-276",
+      "T-9"
+    ],
+    "falsePositives": [],
+    "falsePositiveRate": 0.0,
+    "unclassified": [],
+    "rowsThatStoppedFiring": [
+      "P-12",
+      "P-20",
+      "T-276"
+    ],
+    "unexplainedRepairs": [],
+    "classification": {
+      "P-11": {
+        "verdict": "TRUE",
+        "reason": "the four-column process table is headed `| ID | Task | Status | Notes |` and this row is written `| ID | Task | Acceptance | Status |`, so its verdict renders under *Notes* and an acceptance criterion renders under *Status*. 21 of that table's 31 rows follow the header"
+      },
+      "P-12": {
+        "verdict": "TRUE",
+        "reason": "the four-column process table is headed `| ID | Task | Status | Notes |` and this row is written `| ID | Task | Acceptance | Status |`, so its verdict renders under *Notes* and an acceptance criterion renders under *Status*. 21 of that table's 31 rows follow the header"
+      },
+      "P-20": {
+        "verdict": "TRUE",
+        "reason": "the four-column process table is headed `| ID | Task | Status | Notes |` and this row is written `| ID | Task | Acceptance | Status |`, so its verdict renders under *Notes* and an acceptance criterion renders under *Status*. 21 of that table's 31 rows follow the header"
+      },
+      "P-21": {
+        "verdict": "TRUE",
+        "reason": "the four-column process table is headed `| ID | Task | Status | Notes |` and this row is written `| ID | Task | Acceptance | Status |`, so its verdict renders under *Notes* and an acceptance criterion renders under *Status*. 21 of that table's 31 rows follow the header"
+      },
+      "P-22": {
+        "verdict": "TRUE",
+        "reason": "the four-column process table is headed `| ID | Task | Status | Notes |` and this row is written `| ID | Task | Acceptance | Status |`, so its verdict renders under *Notes* and an acceptance criterion renders under *Status*. 21 of that table's 31 rows follow the header"
+      },
+      "P-25": {
+        "verdict": "TRUE",
+        "reason": "the four-column process table is headed `| ID | Task | Status | Notes |` and this row is written `| ID | Task | Acceptance | Status |`, so its verdict renders under *Notes* and an acceptance criterion renders under *Status*. 21 of that table's 31 rows follow the header"
+      },
+      "P-26": {
+        "verdict": "TRUE",
+        "reason": "the four-column process table is headed `| ID | Task | Status | Notes |` and this row is written `| ID | Task | Acceptance | Status |`, so its verdict renders under *Notes* and an acceptance criterion renders under *Status*. 21 of that table's 31 rows follow the header"
+      },
+      "P-27": {
+        "verdict": "TRUE",
+        "reason": "the four-column process table is headed `| ID | Task | Status | Notes |` and this row is written `| ID | Task | Acceptance | Status |`, so its verdict renders under *Notes* and an acceptance criterion renders under *Status*. 21 of that table's 31 rows follow the header"
+      },
+      "P-28": {
+        "verdict": "TRUE",
+        "reason": "the four-column process table is headed `| ID | Task | Status | Notes |` and this row is written `| ID | Task | Acceptance | Status |`, so its verdict renders under *Notes* and an acceptance criterion renders under *Status*. 21 of that table's 31 rows follow the header"
+      },
+      "P-29": {
+        "verdict": "TRUE",
+        "reason": "the four-column process table is headed `| ID | Task | Status | Notes |` and this row is written `| ID | Task | Acceptance | Status |`, so its verdict renders under *Notes* and an acceptance criterion renders under *Status*. 21 of that table's 31 rows follow the header"
+      },
+      "P-30": {
+        "verdict": "TRUE",
+        "reason": "the four-column process table is headed `| ID | Task | Status | Notes |` and this row is written `| ID | Task | Acceptance | Status |`, so its verdict renders under *Notes* and an acceptance criterion renders under *Status*. 21 of that table's 31 rows follow the header"
+      },
+      "P-31": {
+        "verdict": "TRUE",
+        "reason": "the four-column process table is headed `| ID | Task | Status | Notes |` and this row is written `| ID | Task | Acceptance | Status |`, so its verdict renders under *Notes* and an acceptance criterion renders under *Status*. 21 of that table's 31 rows follow the header"
+      },
+      "T-9": {
+        "verdict": "TRUE",
+        "reason": "the five-column science table is headed `| ID | Task | Acceptance | Leaf | Status |` and this row omits its **Leaf** cell, so its status record renders under *Leaf* and the preserved note behind it renders under *Status*. `T-276` is this shape with the live verdict and the superseded one exchanged, and there the register read a live HIGH row CLOSED"
+      },
+      "T-263": {
+        "verdict": "TRUE",
+        "reason": "the five-column science table is headed `| ID | Task | Acceptance | Leaf | Status |` and this row omits its **Leaf** cell, so its status record renders under *Leaf* and the preserved note behind it renders under *Status*. `T-276` is this shape with the live verdict and the superseded one exchanged, and there the register read a live HIGH row CLOSED"
+      },
+      "T-265": {
+        "verdict": "TRUE",
+        "reason": "the five-column science table is headed `| ID | Task | Acceptance | Leaf | Status |` and this row omits its **Leaf** cell, so its status record renders under *Leaf* and the preserved note behind it renders under *Status*. `T-276` is this shape with the live verdict and the superseded one exchanged, and there the register read a live HIGH row CLOSED"
+      },
+      "T-266": {
+        "verdict": "TRUE",
+        "reason": "the five-column science table is headed `| ID | Task | Acceptance | Leaf | Status |` and this row omits its **Leaf** cell, so its status record renders under *Leaf* and the preserved note behind it renders under *Status*. `T-276` is this shape with the live verdict and the superseded one exchanged, and there the register read a live HIGH row CLOSED"
+      },
+      "T-267": {
+        "verdict": "TRUE",
+        "reason": "the five-column science table is headed `| ID | Task | Acceptance | Leaf | Status |` and this row omits its **Leaf** cell, so its status record renders under *Leaf* and the preserved note behind it renders under *Status*. `T-276` is this shape with the live verdict and the superseded one exchanged, and there the register read a live HIGH row CLOSED"
+      },
+      "T-268": {
+        "verdict": "TRUE",
+        "reason": "the five-column science table is headed `| ID | Task | Acceptance | Leaf | Status |` and this row omits its **Leaf** cell, so its status record renders under *Leaf* and the preserved note behind it renders under *Status*. `T-276` is this shape with the live verdict and the superseded one exchanged, and there the register read a live HIGH row CLOSED"
+      },
+      "T-270": {
+        "verdict": "TRUE",
+        "reason": "the five-column science table is headed `| ID | Task | Acceptance | Leaf | Status |` and this row omits its **Leaf** cell, so its status record renders under *Leaf* and the preserved note behind it renders under *Status*. `T-276` is this shape with the live verdict and the superseded one exchanged, and there the register read a live HIGH row CLOSED"
+      },
+      "T-271": {
+        "verdict": "TRUE",
+        "reason": "the five-column science table is headed `| ID | Task | Acceptance | Leaf | Status |` and this row omits its **Leaf** cell, so its status record renders under *Leaf* and the preserved note behind it renders under *Status*. `T-276` is this shape with the live verdict and the superseded one exchanged, and there the register read a live HIGH row CLOSED"
+      },
+      "T-272": {
+        "verdict": "TRUE",
+        "reason": "the five-column science table is headed `| ID | Task | Acceptance | Leaf | Status |` and this row omits its **Leaf** cell, so its status record renders under *Leaf* and the preserved note behind it renders under *Status*. `T-276` is this shape with the live verdict and the superseded one exchanged, and there the register read a live HIGH row CLOSED"
+      },
+      "T-274": {
+        "verdict": "TRUE",
+        "reason": "the five-column science table is headed `| ID | Task | Acceptance | Leaf | Status |` and this row omits its **Leaf** cell, so its status record renders under *Leaf* and the preserved note behind it renders under *Status*. `T-276` is this shape with the live verdict and the superseded one exchanged, and there the register read a live HIGH row CLOSED"
+      },
+      "T-275": {
+        "verdict": "TRUE",
+        "reason": "the five-column science table is headed `| ID | Task | Acceptance | Leaf | Status |` and this row omits its **Leaf** cell, so its status record renders under *Leaf* and the preserved note behind it renders under *Status*. `T-276` is this shape with the live verdict and the superseded one exchanged, and there the register read a live HIGH row CLOSED"
+      },
+      "T-276": {
+        "verdict": "TRUE",
+        "reason": "the five-column science table is headed `| ID | Task | Acceptance | Leaf | Status |` and this row omits its **Leaf** cell, so its status record renders under *Leaf* and the preserved note behind it renders under *Status*. `T-276` is this shape with the live verdict and the superseded one exchanged, and there the register read a live HIGH row CLOSED"
+      }
+    },
+    "howEachRepairedRowWasRepaired": {
+      "P-12": "the acceptance cell was folded away, leaving `| P-12 | Task | **DONE** (iteration 4) | notes |` -- the verdict under *Status*, which is what the header says",
+      "P-20": "the acceptance was merged into the TASK cell (`**title** -- acceptance`), which moved the verdict one column left into *Status*",
+      "T-276": "iteration 43, by hand and by a reader rather than by a gate: the record was moved into the status cell with its superseded verdict struck, and the register went 65 open rows to 66"
+    },
+    "whyTheRepairsAreTheMeasurement": "three of the 24 distinct rows no longer fire and all three were repaired in the direction this predicate prescribes, by three hands in three iterations, with no rule written down anywhere -- the corpus's own practice is the false-positive measurement"
+  },
+  "theInstanceItWasWrittenFor": {
+    "ref": "9620d3e",
+    "whatItIs": "P-30's own commit, and the queue state the register read T-276 CLOSED at",
+    "columnRuleFires": [
+      [
+        "T-276",
+        700,
+        "DONE",
+        "leaf",
+        "status"
+      ]
+    ],
+    "registerReadsTheRow": "CLOSED",
+    "theRowWasLiveAndHIGH": true,
+    "existingArmsOfTheGateOnThatRow": {
+      "undeclared": [],
+      "rowDisagreements": [],
+      "residue": []
+    }
+  },
+  "againstC0178": {
+    "ref": "3e71284d5fe2bd05bf3b96ccb32cc20d6ba79ddd",
+    "rowsC0178ReadsAsThePreservedPriorityIdiom": [
+      "T-263",
+      "T-265",
+      "T-266",
+      "T-267",
+      "T-270",
+      "T-271",
+      "T-274",
+      "T-275",
+      "T-276"
+    ],
+    "howManyOfThemAreMiscolumnedAtThatRef": 9,
+    "totalRowsFiringAtThatRef": [
+      "P-11",
+      "P-21",
+      "P-22",
+      "P-25",
+      "P-26",
+      "P-27",
+      "P-28",
+      "P-29",
+      "T-263",
+      "T-265",
+      "T-266",
+      "T-267",
+      "T-268",
+      "T-270",
+      "T-271",
+      "T-272",
+      "T-274",
+      "T-275",
+      "T-276",
+      "T-9"
+    ],
+    "whatThisMeans": "C-0178's *leftmost verdict wins* rule is upheld and its stated GROUND is not: the nine rows it reads as `strike, never delete applied to a whole column` are nine rows that dropped their Leaf cell, and on the tenth row of the same shape -- T-276 -- the leftmost cell held the SUPERSEDED verdict and the register read a live HIGH row CLOSED"
+  },
+  "verdict": {
+    "gated": false,
+    "whyNot": "the predicate reads 21 genuine verdicts on the queue it lands on and the repair is 21 queue rows, which is a queue edit and not a tooling one -- C-0083's *a gate that cannot come clean is not a gate*, and CLAUDE.md's *print an ungated residue beside a gated arm rather than narrowing the predicate until the tree is clean*",
+    "whereItIsPrinted": "inside tools/check-queue-vocabulary.py, which tools/verify.sh already runs -- so NOTHING new is wired and what grew is the coverage of what is wired",
+    "gateReadingAtTheCommitThisLandsOn": {
+      "toolsCheckQueueVocabularyDefects": 0,
+      "miscolumnedAdvisory": 21,
+      "whyBothAreRecorded": "C-0158: a claim that lands a gate records the gate's actual reading, and a suite count is not a gate reading"
+    },
+    "promotionCondition": "when the advisory count reaches 0 the arm becomes a gate by deleting a word; the repair is queued as a row of its own"
+  },
+  "mutation": {
+    "mutations": 16,
+    "survivors": 0,
+    "survivorNames": [],
+    "headline": "16 mutation(s), 0 survivor(s)",
+    "everyMutationReplacesItsRuleWholesale": true,
+    "survivedTheFirstRunAndWhy": {
+      "a wholly STRUCK verdict in the wrong column": "the fixture was not discriminating: `_LEADING_BOLD` refuses a cell opening `~~` whether or not anything is blanked, so it held the struck-span rule open nowhere. Replaced by a verdict BEHIND a struck prefix, which is the shape C-0071's *strike, never delete* actually produces",
+      "WIDEN the row filter to any first cell": "the fixture put its verdict in the STATUS column, where widening the row filter changes nothing. Moved to a cell that is not the status cell",
+      "a header no longer has to be followed by a SEPARATOR": "no fixture carried a pipe line that is not a header, so dropping the separator requirement changed no reading. Replaced by a stray pipe line in front of a real header, where the mutation reads the row against the wrong schema and names the wrong column"
+    }
+  },
+  "namedTests": {
+    "callSitesInCheckQueueVocabulary": 81,
+    "selfTestsRun": 91,
+    "whyTheTwoDiffer": "eleven of the run tests are generated from a literal table in a loop and three are the historical demonstration, which is skipped where git cannot supply the committed past"
+  }
+}
