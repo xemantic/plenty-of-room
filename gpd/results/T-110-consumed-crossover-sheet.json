@@ -3210,19 +3210,19 @@
         "inventory": 56.0,
         "connectivityCeiling": 42.0,
         "connectivityCeilingWorstPhase": 35.0,
-        "hingeStiffness": 13.5294118,
+        "hingeStiffness": 13.529411764705882,
         "interhelicalDistance": 2.69,
         "crossoverSpacing": 10.88,
         "edgeX": 40.0,
         "edgeY": 40.35,
-        "interiorPressure": 0.0619578686,
+        "interiorPressure": 0.061957868649318466,
         "foundationSecant": 0.012625625,
         "foundationAtWorkingPoint": 0.033335625,
-        "mandate": 33.3333333,
-        "freeTileStroke": 4.90731102,
+        "mandate": 33.333333333333336,
+        "freeTileStroke": 4.907311016232346,
         "solvedTaperDepth": -0.302887367,
         "solvedTaperWidth": 8.93928311,
         "solvedRimDepth": -0.593889278,
-        "farAnchorage": 78.2352941
+        "farAnchorage": 78.23529411764706
     }
 }

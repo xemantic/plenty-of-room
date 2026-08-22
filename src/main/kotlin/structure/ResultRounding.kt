@@ -159,6 +159,39 @@ val DEPARTURE_SPELLINGS: Set<String> = setOf(
 )
 
 /**
+ * The record types whose whole subtree is an **input**, and is therefore emitted unrounded.
+ *
+ * `T-268`, closing [`CH-0207`](../../../../../../gpd/challenges/CH-0207-a-parameter-block-cannot-re-run-its-own-study.md).
+ * The rule is **round outputs, never inputs**, and it exists because
+ * [JsonElement.roundedForResult] dispatches on the JSON **type**: a parameter emitted as a
+ * `Double` was rounded to the file's own *output* precision along with every result beside it,
+ * which breaks `gpd/README.md`'s `results/` contract — *"every parameter of the run is in the
+ * file, so the result is reproducible from it alone"*.
+ *
+ * `CH-0207` measured it on `T-3a`: a wall charge committed as `−0.398665238` against the
+ * `−0.3986652379247042` the study solved with, `1.9e−10` relative — and feeding the committed
+ * literal back misses that file's own 2 V force **by one unit in the last emitted place**. Seven
+ * call sites in `src/main/kotlin` read a parameter block back as an input rather than as
+ * documentation, so the channel is **live**, not latent (`CH-0205`'s classification of the
+ * *string* route, which this is the numeric twin of).
+ *
+ * **The set is a census, not a pattern.** These three spellings are every parameter block the 148
+ * committed result files carry — `parameters` 95, `citedInputs` 41, `runParameters` 19, all of
+ * them at top level. The singular `parameter` occurs 180 times and is deliberately **excluded**:
+ * it is a swept axis coordinate (152 strings and 28 `Double`s), so widening the set to every key
+ * whose name contains *parameter* would silently stop rounding 28 **outputs**. `CLAUDE.md`'s
+ * *"every spelling the corpus uses is a census that stops"* read in the other direction — a named
+ * set may be extended by census and never by pattern, and both directions are named tests in
+ * `ParameterBlockRoundingTest`.
+ *
+ * The exemption beats every precision rule beneath it, [DEPARTURE_DIGITS_BY_KEY] included: those
+ * are statements about how well a quantity this study *computed* is determined, and a number the
+ * study was *handed* is not that quantity at all. It also suppresses `roundIntegralNumbers`, so
+ * the exemption cannot move a rendering it is not about.
+ */
+val PARAMETER_RECORDS: Set<String> = setOf("parameters", "runParameters", "citedInputs")
+
+/**
  * The departure rule, as `record/spelling` keys for [roundedForResult]'s `digitsByKey`.
  *
  * Pass it — merged with any per-study precisions, which are unqualified and therefore lose to it
@@ -289,9 +322,11 @@ fun JsonElement.roundedForResult(
     digits: Int = RESULT_SIGNIFICANT_DIGITS,
     digitsByKey: Map<String, Int> = emptyMap(),
     floor: Double = RESULT_ABSOLUTE_FLOOR,
-    roundIntegralNumbers: Boolean = false
+    roundIntegralNumbers: Boolean = false,
+    parameterRecords: Set<String> = PARAMETER_RECORDS
 ): JsonElement = roundedForResult(
-    digits, DEPARTURE_DIGITS_BY_KEY + digitsByKey, floor, roundIntegralNumbers, record = null
+    digits, DEPARTURE_DIGITS_BY_KEY + digitsByKey, floor, roundIntegralNumbers,
+    parameterRecords, record = null, insideParameters = false
 )
 
 /**
@@ -305,7 +340,9 @@ private fun JsonElement.roundedForResult(
     digitsByKey: Map<String, Int>,
     floor: Double,
     roundIntegralNumbers: Boolean,
-    record: String?
+    parameterRecords: Set<String>,
+    record: String?,
+    insideParameters: Boolean
 ): JsonElement = when (this) {
     is JsonObject -> JsonObject(
         mapValues { (key, value) ->
@@ -314,15 +351,27 @@ private fun JsonElement.roundedForResult(
             val qualified = record?.let { digitsByKey["$it/$key"] }
             value.roundedForResult(
                 qualified ?: digitsByKey[key] ?: digits,
-                digitsByKey, floor, roundIntegralNumbers, record = key
+                digitsByKey, floor, roundIntegralNumbers, parameterRecords, record = key,
+                // Sticky, and it has to be: a parameter block is a record TYPE, so everything
+                // below it is input. The `record` qualifier above carries only the NEAREST
+                // enclosing key, which under `parameters/buffer/debyeLength` is `buffer`.
+                insideParameters = insideParameters || key in parameterRecords
             )
         }
     )
     is JsonArray -> JsonArray(
-        map { it.roundedForResult(digits, digitsByKey, floor, roundIntegralNumbers, record) }
+        map {
+            it.roundedForResult(
+                digits, digitsByKey, floor, roundIntegralNumbers, parameterRecords, record,
+                insideParameters
+            )
+        }
     )
     is JsonPrimitive -> when {
         isString -> this
+        // An input is not a result (`CH-0207`). Emitted exactly as the study was handed it, at
+        // `Double.toString()`'s shortest round-trip decimal, so the file can re-run its own study.
+        insideParameters -> this
         !roundIntegralNumbers && content.none { it == '.' || it == 'e' || it == 'E' } -> this
         else -> doubleOrNull?.let { JsonPrimitive(roundForResult(it, digits, floor)) } ?: this
     }

@@ -49,7 +49,7 @@
         "basePairPhases": 32,
         "risePerBasePair": 0.34,
         "targetForce": 100.0,
-        "targetPressure": 0.0619578686,
+        "targetPressure": 0.061957868649318466,
         "subdivisions": 2,
         "plateBasisDegree": 12,
         "registrationAlongSteps": 32,
@@ -71,7 +71,7 @@
             0.6,
             1.0,
             1.2,
-            25.5607302
+            25.560730227608797
         ],
         "duplexUnzipAllowableLower": 10.0,
         "duplexUnzipAllowableUpper": 15.0,
@@ -23715,7 +23715,7 @@
                     "columns": 7,
                     "crossovers": 49,
                     "centredAnchorPeakCrossover": 9.66394699,
-                    "centredAnchorPeakCrossoverStiffAnchor": 12.0023305,
+                    "centredAnchorPeakCrossoverStiffAnchor": 12.0023304,
                     "centredLeverPeakCrossover": 44.6423344,
                     "centredLeverPeakDuplexShear": 30.1677998,
                     "thermalDishingRms": 0.0,

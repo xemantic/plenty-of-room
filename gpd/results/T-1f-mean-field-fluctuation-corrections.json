@@ -23,19 +23,19 @@
         "tileArea": 1600.0,
         "targetForce": 100.0,
         "targetStroke": 3.0,
-        "reducedSecondVirialCoefficient": 0.202911,
-        "monomerExcludedVolume": 0.0122457,
-        "kuhnExcludedVolume": 0.118433,
+        "reducedSecondVirialCoefficient": 0.20291078787878786,
+        "monomerExcludedVolume": 0.012245701600306,
+        "kuhnExcludedVolume": 0.11843329945678654,
         "kuhnLength": 1.1,
-        "monomersPerKuhnSegment": 3.10989,
-        "monomerVolume": 0.0603502,
-        "kuhnSegmentVolume": 0.187682,
-        "ginzburgVolumeFraction": 0.0152554,
+        "monomersPerKuhnSegment": 3.1098903593398863,
+        "monomerVolume": 0.06035017520912281,
+        "kuhnSegmentVolume": 0.18768242806732402,
+        "ginzburgVolumeFraction": 0.01525537302785171,
         "restingLoad": 1.0,
         "nodeSpacing": 0.2,
         "contourStepsPerMonomer": 2.0,
-        "measuredInteractionSensitivityExponent": 0.0647484,
-        "desCloizeauxSensitivityExponentOfC0003": 0.307692
+        "measuredInteractionSensitivityExponent": 0.06474841406052544,
+        "desCloizeauxSensitivityExponentOfC0003": 0.3076923076923077
     },
     "ginzburg": [
         {

@@ -9,7 +9,7 @@ and it is run as described in [`../SESSION-PROMPT.md`](../SESSION-PROMPT.md).
 | Directory | What is in it |
 |---|---|
 | `tasks/` | One file per task, carrying all four stages: the numeric target and acceptance predicate, the method and its cost justification, what would falsify the approach, the run, and the five verification gates. |
-| `results/` | Machine-readable run output. Every parameter of the run is in the file, so the result is reproducible from it alone. Deterministic filenames — a re-run that changes nothing produces no diff. |
+| `results/` | Machine-readable run output. Every parameter of the run is in the file, so the result is reproducible from it alone. Deterministic filenames — a re-run that changes nothing produces no diff. **Round outputs, never inputs**: results are rounded to the precision they are determined to, and a `parameters` / `runParameters` / `citedInputs` block is emitted exactly as the study was handed it, so the file can re-run its own study ([`C-0162`](claims/C-0162-round-outputs-never-inputs.md), closing [`CH-0207`](challenges/CH-0207-a-parameter-block-cannot-re-run-its-own-study.md)). |
 | `claims/` | A verified result, with provenance, validity range, acceptance verdict, and an explicit list of the numbers that are *cited* rather than derived. |
 | `challenges/` | A result that contradicts a standing claim is raised here, with methodological grounds. Claims are never silently overwritten. |
 | `data/` | Survey material a claim rests on but does not compute — a literature survey with its query strings, read flags and verbatim passages, or a structural database extraction. A negative existence claim is only falsifiable if its queries are written down. |

@@ -499,12 +499,12 @@
         "fieldsCompared": 1042.0,
         "fieldsVarying": 27.0,
         "fieldsIdentical": 1015.0,
-        "rangeValueWidth": 0.00261967754,
-        "rangePointWidth": 0.00595215275,
-        "rangeAmplification": 2.27209367,
-        "worstSubsetValueWidth": 0.00457447964,
+        "rangeValueWidth": 0.002619677538673022,
+        "rangePointWidth": 0.005952152753626676,
+        "rangeAmplification": 2.2720936702162566,
+        "worstSubsetValueWidth": 0.00457447964297965,
         "degeneracyPaths": 45.0,
-        "nearOptimalPointWidth": 0.0206432638,
-        "mandate": 33.3333333
+        "nearOptimalPointWidth": 0.020643263827369324,
+        "mandate": 33.333333333333336
     }
 }

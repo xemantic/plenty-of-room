@@ -20,9 +20,9 @@
     "parameters": {
         "bendingRigidity": 230.0,
         "stretchModulus": 1100.0,
-        "baseRotationalStiffness": 261.167941,
+        "baseRotationalStiffness": 261.16794117647055,
         "pathCount": 45.0,
-        "mandateStiffness": 33.3333333,
+        "mandateStiffness": 33.333333333333336,
         "complianceCeiling": 40.0,
         "acceptableStroke": 3.0,
         "desiredStroke": 10.0,
@@ -32,8 +32,8 @@
         "contactDistance": 2.69,
         "duplexDiameter": 2.0,
         "risePerBasePair": 0.34,
-        "adverseStandoffLengthForCompliance": 13.1578947,
-        "favourableStandoffLengthForCompliance": 3.48421053
+        "adverseStandoffLengthForCompliance": 13.157894736842104,
+        "favourableStandoffLengthForCompliance": 3.484210526315789
     },
     "cheapBound": {
         "deflectionRateTileUp": -1.0,

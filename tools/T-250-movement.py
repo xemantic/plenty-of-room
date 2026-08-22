@@ -122,6 +122,26 @@ def is_departure_pointer(pointer):
     return parent and leaf in hygiene.DEPARTURE_KEYS
 
 
+#: The parameter-block spellings, mirroring `structure/ResultRounding.kt`'s `PARAMETER_RECORDS`
+#: (`T-268`, closing `CH-0207`).  Kept as a literal rather than parsed out of the Kotlin because
+#: this tool must be able to disagree with the layer -- a census that reads its own subject's
+#: declaration cannot report a drift between them.
+PARAMETER_RECORDS = ("parameters", "runParameters", "citedInputs")
+
+
+def is_parameter_pointer(pointer):
+    """Does this pointer pass through a parameter block, at any depth?
+
+    A parameter block is a record TYPE, so everything below it is an INPUT -- which is why the
+    test is on the whole path and not on the nearest enclosing key.  Without this kind, `T-268`'s
+    whole sweep reports as `numeric`, which `T-250` defines as *a finding*: the classifier would
+    have said that a thousand deliberate, provable movements were each an unexplained change of
+    physics.  Naming the kind is what lets `numeric` keep meaning what it meant.
+    """
+    return any(f"/{name}/" in pointer or f"/{name}[" in pointer
+               for name in PARAMETER_RECORDS)
+
+
 def explains(old_literal, new_literal):
     """Is `new_literal` exactly the rounding of `old_literal` at one declared precision?
 
@@ -159,7 +179,8 @@ def compare(path, ref="HEAD"):
         return dict(file=os.path.basename(path), notCommitted=True)
     now = json.load(open(path, encoding="utf-8"))
     before, after = flatten(head), flatten(now)
-    kinds = dict(prose=0, wording=0, departure=0, numeric=0, boolean=0, added=0, removed=0)
+    kinds = dict(prose=0, wording=0, departure=0, parameter=0, numeric=0, boolean=0,
+                 added=0, removed=0)
     explained, unexplained, tokens, below_census = 0, [], 0, 0
     token_count_changed = 0
     wording_examples, numeric_examples = [], []
@@ -201,7 +222,11 @@ def compare(path, ref="HEAD"):
                 else:
                     explained += 1
             continue
-        if is_departure_pointer(pointer):
+        if is_parameter_pointer(pointer):
+            # The exemption beats the departure rule, exactly as it does in the emission layer:
+            # a departure record nested inside a parameter block is still an input.
+            kinds["parameter"] += 1
+        elif is_departure_pointer(pointer):
             kinds["departure"] += 1
         else:
             kinds["numeric"] += 1
@@ -240,6 +265,16 @@ def self_test():
     check("the skeleton hides digits", skeleton("is 0.123456") == skeleton("is 0.1"))
     check("the skeleton exposes wording",
           skeleton("REFUSED at 0.1") != skeleton("ADMITTED at 0.1"))
+    check("a parameter pointer is recognised at the top level",
+          is_parameter_pointer("/runParameters/nominalTileChargeDensity"))
+    check("a parameter pointer is recognised at depth",
+          is_parameter_pointer("/parameters/buffer/debyeLength"))
+    check("a parameter pointer is recognised inside an array",
+          is_parameter_pointer("/citedInputs[2]/value"))
+    check("a result pointer is NOT a parameter pointer",
+          not is_parameter_pointer("/forces[0]/nominalTileChargeDensity"))
+    check("the singular 'parameter' leaf is a swept coordinate, not a block",
+          not is_parameter_pointer("/sweep[0]/parameter"))
     check("a departure pointer is recognised",
           is_departure_pointer("/reproductions[3]/departure"))
     check("a volts departure outside the two records is not",
@@ -294,7 +329,8 @@ def main(argv):
             print(f"  {row['file']}: " + ", ".join(
                 f"{k}={v}" for k, v in row.items() if isinstance(v, int) and v))
     print(f"-- {len(rows)} file(s) --")
-    for key in ("prose", "wording", "departure", "numeric", "boolean", "added", "removed",
+    for key in ("prose", "wording", "departure", "parameter", "numeric", "boolean",
+                "added", "removed",
                 "movedTokens", "tokensExplained", "tokensUnexplained",
                 "tokensBelowTheCensus", "tokenCountChanged"):
         print(f"   {key:20s} {totals.get(key, 0)}")

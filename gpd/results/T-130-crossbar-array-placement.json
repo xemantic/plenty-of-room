@@ -2262,8 +2262,8 @@
     "edgeX": 40.0,
     "lengthY": 40.35,
     "footprint": 1614.0,
-    "freeStroke": 4.90731102,
-    "mandate": 33.3333333,
+    "freeStroke": 4.907311016232346,
+    "mandate": 33.333333333333336,
     "eastSiteBasePairs": 24.0,
     "registerStep": 0.17,
     "closingPositions": 17.0,
@@ -2273,10 +2273,10 @@
     "triosPlacingRepresentable": 24.0,
     "triosSurvivingEveryClause": 17.0,
     "bestSeparationBasePairs": 9.0,
-    "registeredDishing": 0.0780175595,
+    "registeredDishing": 0.07801755949403161,
     "bestPlacedCount": 34.0,
-    "flexureSpan34": 27.4119472,
-    "flexureAreaFraction": 1.93867701,
-    "blockAreaFraction": 0.385333333
+    "flexureSpan34": 27.41194718201713,
+    "flexureAreaFraction": 1.9386770069809707,
+    "blockAreaFraction": 0.3853333333333333
   }
 }

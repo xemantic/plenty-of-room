@@ -4456,7 +4456,7 @@
     "phase": 24.0,
     "legEnvelopeFirst": 12.0,
     "legEnvelopeLast": 26.0,
-    "chordSampleSpacingDegrees": 22.4367385,
+    "chordSampleSpacingDegrees": 22.436738519212785,
     "registerStep": 0.17,
     "junctionSolves": 255.0,
     "designsEvaluated": 225.0,
@@ -4468,9 +4468,9 @@
     "bestSeparationBasePairs": 9.0,
     "bestLegSteps": 12.0,
     "bestLegLength": 4.08,
-    "bestMarginCanDo": 2.44282872,
-    "bestMarginFields": 1.83643612,
+    "bestMarginCanDo": 2.442828722308216,
+    "bestMarginFields": 1.8364361205898496,
     "sharedLengthIsFree": 1.0,
-    "perInstanceHeightSpread": 4.76
+    "perInstanceHeightSpread": 4.760000000000001
   }
 }

@@ -35,17 +35,17 @@
         "tileEdge": 40.0,
         "tileThickness": 10.0,
         "tileFootprintArea": 1600.0,
-        "manningSurvivingFraction": 0.119029846,
-        "nominalTileChargeDensity": -0.398665238,
+        "manningSurvivingFraction": 0.11902984614507801,
+        "nominalTileChargeDensity": -0.3986652379247042,
         "sternCapacitance": 20.0,
-        "sternChargeDensityPerVolt": 1.24830181,
+        "sternChargeDensityPerVolt": 1.2483018148921528,
         "meshNodes": 4000.0,
         "meshGrading": 10.0,
         "biasSearchNodes": 800.0,
         "stiffnessDifferencingStep": 0.02,
         "hydratedMagnesiumRadius": 0.428,
         "hydratedChlorideRadius": 0.332,
-        "pegFibreRadius": 0.233045396
+        "pegFibreRadius": 0.23304539611767291
     },
     "citedInputs": [
         "eps_r(water, 300 K) = 78 — CITED, as in C-0005. l_B goes as 1/eps and every force here goes roughly as l_B, so the 3% literature spread is ~3% on F_es.",

@@ -44,7 +44,7 @@
         "tileFootprint": "40.0 x 40.35 nm",
         "tileArea": 1614.0,
         "targetForce": 100.0,
-        "targetPressure": 0.0619578686,
+        "targetPressure": 0.061957868649318466,
         "acceptableStroke": 3.0,
         "desiredStroke": 10.0,
         "debyeLength": 4.0,
@@ -65,7 +65,7 @@
             0.6,
             1.0,
             1.2,
-            25.5607302
+            25.560730227608797
         ],
         "duplexShearAllowable": 48.0,
         "duplexUnzipAllowable": 10.0,

@@ -44,7 +44,7 @@
         "risePerBasePair": 0.34,
         "stretchModulus": 1100.0,
         "bendingRigidity": 230.0,
-        "crossoverInPlaneStiffness": 64.7058824,
+        "crossoverInPlaneStiffness": 64.70588235294117,
         "connectorArm": 1.345,
         "regularisation": 1.0E-4,
         "subdivisions": 2,

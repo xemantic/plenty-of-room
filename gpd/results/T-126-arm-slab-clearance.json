@@ -1241,7 +1241,7 @@
         "armLength": 8.16439083,
         "armCount": 34.0,
         "rootPitch": 10.88,
-        "tipGap": 2.71560917,
+        "tipGap": 2.7156091700000005,
         "duplexWidth": 2.69,
         "edgeX": 40.0,
         "lengthY": 40.35,
@@ -1250,11 +1250,11 @@
         "standoffLength": 8.0,
         "acceptableStroke": 3.0,
         "desiredStroke": 10.0,
-        "mandate": 33.3333333,
-        "freeStroke": 4.90731102,
+        "mandate": 33.333333333333336,
+        "freeStroke": 4.907311016232346,
         "flatnessTolerance": 0.1,
         "eastInventory": 53.0,
         "freeTieCapacity": 108.0,
-        "maximumDisplacement": 4.33166667
+        "maximumDisplacement": 4.331666666666667
     }
 }

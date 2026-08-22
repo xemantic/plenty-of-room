@@ -24,6 +24,7 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 import kotlin.test.Test
 
 /**
@@ -38,6 +39,28 @@ import kotlin.test.Test
  * rule by any edit at their own emission sites.
  */
 class ActuatorResultRoundingTest {
+
+    @Test
+    fun `gate 3 conservation - CH-0207's parameter-block exemption should be inherited, not passed`() {
+        // `T-268`. The rule "round outputs, never inputs" is a DEFAULT of
+        // `structure/ResultRounding.kt`, so this entry point obeys it with no edit of its own and
+        // no argument at its call sites — which is the whole of `C-0138`'s lesson, five
+        // per-call-site repairs of the departure rule before it moved into the one place every
+        // study goes through. The files on this path (`T-3`, `T-4`, `T-60`, `T-76`, `T-149`, `T-157`) are covered by construction.
+        val exact = -0.3986652379247042
+        val document = Json.parseToJsonElement(
+            """{"runParameters":{"wallCharge":$exact},"forces":{"wallCharge":$exact}}"""
+        )
+        val rounded = document.roundedForActuatorResult().jsonObject
+        assert(
+            rounded.getValue("runParameters").jsonObject.getValue("wallCharge")
+                .jsonPrimitive.content.toDouble() == exact
+        )
+        assert(
+            rounded.getValue("forces").jsonObject.getValue("wallCharge")
+                .jsonPrimitive.content.toDouble() == -0.398665238
+        )
+    }
 
     @Test
     fun `gate 1 dimensional consistency - the actuator constants should be the tree's constants`() {

@@ -956,7 +956,7 @@
         "The coupled answer: the 30-path arm is 7.77049 nm and the lattice carries 45 of them, so 30 place self-consistently and the mandate is met exactly. Its margin on the best 30-root placement is 1.7645 nm — 5.19 rises, and 1.31x C-0072's 1.3495 nm, which was read on that claim's own plan-rule reduction rather than on the ceiling-optimal placement."
     ],
     "parameters": {
-        "mandate": 33.3333333,
+        "mandate": 33.333333333333336,
         "duplexes": 15.0,
         "phase": 24.0,
         "edgeX": 40.0,
@@ -967,16 +967,16 @@
         "hingeStiffness": 13.5294,
         "tipCouple": 78.2353,
         "bendingRigidity": 230.0,
-        "rowOfThreeCeiling": 8.19,
-        "armAt30": 7.77048807,
-        "latticeCeilingAt30": 9.535,
-        "planMarginAt30": 1.76451193,
-        "c0072MarginAt30": 1.34951193,
+        "rowOfThreeCeiling": 8.190000000000001,
+        "armAt30": 7.770488073221348,
+        "latticeCeilingAt30": 9.535000000229612,
+        "planMarginAt30": 1.7645119270082636,
+        "c0072MarginAt30": 1.3495119276389174,
         "t136EqualSpringPhase": 24.0,
-        "t136EqualSpringMargin": 0.419511928,
+        "t136EqualSpringMargin": 0.4195119276710484,
         "t136RecommendedPhase": 8.0,
-        "t136RecommendedCeiling": 9.535,
-        "t136RecommendedMargin": 1.76451193,
-        "t136RecommendedMinimax": 0.0682200897
+        "t136RecommendedCeiling": 9.535000000301412,
+        "t136RecommendedMargin": 1.764511927080064,
+        "t136RecommendedMinimax": 0.06822008970269246
     }
 }

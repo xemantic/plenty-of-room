@@ -14,8 +14,8 @@
         "orientation sweep": "over [0, 2pi) for a rooted arm and [0, pi) for `C-0041`'s centred beam"
     },
     "parameters": {
-        "armLength": 9.1311565,
-        "armBasePairs": 26.8563427,
+        "armLength": 9.131156503091512,
+        "armBasePairs": 26.856342656151504,
         "pathCount": 45.0,
         "hingeCount": 1.0,
         "edgeX": 40.0,
@@ -25,10 +25,10 @@
         "interhelicalDistance": 2.69,
         "risePerBasePair": 0.34,
         "crossoverSpacingBasePairs": 32.0,
-        "hingeStiffness": 13.5294118,
-        "anchorageStiffness": 78.2352941,
+        "hingeStiffness": 13.529411764705882,
+        "anchorageStiffness": 78.23529411764706,
         "bendingRigidity": 230.0,
-        "mandate": 33.3333333,
+        "mandate": 33.333333333333336,
         "acceptableStroke": 3.0,
         "unzipAllowable": 10.0
     },
