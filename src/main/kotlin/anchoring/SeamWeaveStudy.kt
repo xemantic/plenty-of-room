@@ -16,12 +16,15 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -156,7 +159,7 @@ private fun boundingInterfaces(row: Int): Pair<Int, Int> =
 fun main() {
     val profile = WeaveProfile(phaseBasePairs = T140_PHASE, duplexes = T140_DUPLEXES)
     val measuredGirth = DuplexSteric.MEASURED_DIAMETER
-    val rows = t140Stations(File("gpd/results/T-125-upward-root-placement.json"))
+    val rows = t140Stations(ResultInputs.T_125.file())
     check(rows.sumOf { it.second.size } == C0055_ARM_COUNT) {
         "C-0063's placement must carry $C0055_ARM_COUNT stations"
     }
@@ -558,7 +561,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         )
     )
     println("T-140 — wrote ${file.path}")

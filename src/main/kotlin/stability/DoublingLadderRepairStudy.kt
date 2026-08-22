@@ -17,7 +17,10 @@
 package com.xemantic.nano.plentyofroom.stability
 
 import com.xemantic.nano.plentyofroom.actuator.roundedForActuatorResult
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -99,14 +102,14 @@ private data class T159Result(
 private val t159Reader = Json { ignoreUnknownKeys = true }
 
 private fun t159PublishedRows(): List<PublishedFoldRow> {
-    val file = File("gpd/results/T-149-recommended-element-fold.json")
+    val file = ResultInputs.T_149.file()
     require(file.exists()) { "T-149's result file is this task's own input and is missing" }
     return t159Reader.parseToJsonElement(file.readText()).jsonObject["folds"]!!.jsonArray
         .map { t159Reader.decodeFromJsonElement<PublishedFoldRow>(it) }
 }
 
 private fun t159ElementCeilingSafety(): Double {
-    val file = File("gpd/results/T-149-recommended-element-fold.json")
+    val file = ResultInputs.T_149.file()
     return t159Reader.parseToJsonElement(file.readText())
         .jsonObject["runParameters"]!!.jsonObject["elementCeilingSafety"]!!
         .jsonPrimitive.content.toDouble()
@@ -114,7 +117,7 @@ private fun t159ElementCeilingSafety(): Double {
 
 /** `C-0033`'s own measured `d ln μ/dh` records and the lowest gap it measured one at. */
 private fun t159CollarGradients(): Pair<List<Double>, Double> {
-    val file = File("gpd/results/T-60-collar-on-the-equilibrium-path.json")
+    val file = ResultInputs.T_60.file()
     require(file.exists()) { "C-0033's result file is this task's own input and is missing" }
     val rows = t159Reader.parseToJsonElement(file.readText()).jsonObject["gradients"]!!.jsonArray
         .map { t159Reader.decodeFromJsonElement<T159CollarGradient>(it) }
@@ -544,7 +547,7 @@ fun main() {
 
     val output = File("gpd/results/T-159-doubling-ladder-repair.json")
     output.writeText(
-        json.encodeToString(json.encodeToJsonElement(finished).roundedForActuatorResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(finished).roundedForActuatorResult().withEmissionHeader(LatticeTag.SQUARE, null)) + "\n"
     )
     println()
     finished.findings.forEach { (key, value) -> println("  $key:\n    $value\n") }

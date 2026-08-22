@@ -16,9 +16,12 @@
 
 package com.xemantic.nano.plentyofroom.electrostatics
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_SIGNIFICANT_DIGITS
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
@@ -504,7 +507,7 @@ fun main(arguments: Array<String>) {
 
     // ---- what the wall choice is worth downstream ------------------------------------------
 
-    val t50 = File(resultsDirectory, "T-50-beyond-mean-field-gap.json")
+    val t50 = ResultInputs.T_50.file(resultsDirectory)
     val boundaryMarginRatios = json.parseToJsonElement(t50.readText())
         .jsonObject["memberEffects"]!!.jsonArray
         .filter { it.jsonObject["channel"]!!.toString().trim('"') == "boundary condition" }
@@ -1122,6 +1125,7 @@ fun main(arguments: Array<String>) {
                         findings = findings, validity = validity, openQuestions = openQuestions
                     )
                 ).roundedForResult(floor = 1.0e-14)
+                    .withEmissionHeader(LatticeTag.NONE, null)
             ) + "\n"
         )
         throw exception
@@ -1141,7 +1145,7 @@ fun main(arguments: Array<String>) {
                     "logResidualAtRoot" to DEPARTURE_SIGNIFICANT_DIGITS
                 ),
                 floor = 1.0e-14
-            )
+            ).withEmissionHeader(LatticeTag.NONE, null)
         ) + "\n"
     )
     println("wrote ${output.path}")

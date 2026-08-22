@@ -16,10 +16,12 @@
 
 package com.xemantic.nano.plentyofroom.tile
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.HONEYCOMB_BOND_OFFSETS
 import com.xemantic.nano.plentyofroom.structure.HoneycombSublattice
 import com.xemantic.nano.plentyofroom.structure.honeycombAzimuthDegrees
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -440,7 +442,7 @@ fun main() {
     output.writeText(
         json.encodeToString(
             JsonObject.serializer(),
-            (json.encodeToJsonElement(result).roundedForResult(digits = 9) as JsonObject)
+            (json.encodeToJsonElement(result).roundedForResult(digits = 9).withEmissionHeader(LatticeTag.HONEYCOMB, null) as JsonObject)
         ) + "\n"
     )
     println("T-244 - wrote " + output.path)

@@ -19,14 +19,17 @@ package com.xemantic.nano.plentyofroom.tile
 import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
 import com.xemantic.nano.plentyofroom.coupling.winklerBendingLength
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -200,7 +203,7 @@ private class T196FreeTile(
 
 @Suppress("LongMethod")
 fun main() {
-    val profile = t196Profile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val profile = t196Profile(ResultInputs.T_3B.file())
     val tile = T196FreeTile(profile)
 
     // ---------------------------------------------------------------- the cheap bound, first
@@ -500,7 +503,7 @@ fun main() {
             (json.encodeToJsonElement(result).roundedForResult(
                 digits = 9,
                 digitsByKey = mapOf("departure" to 2)
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         ) + "\n"
     )
     println("T-196 — wrote ${output.path}")

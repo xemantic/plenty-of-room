@@ -16,9 +16,11 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
@@ -965,7 +967,7 @@ fun main() {
     file.writeText(
         json.encodeToString(json.encodeToJsonElement(result).roundedForResult(
             digitsByKey = DEPARTURE_DIGITS_BY_KEY
-        )) + "\n"
+        ).withEmissionHeader(LatticeTag.SQUARE, null)) + "\n"
     )
 
     println("T-117 — do three 90 degree junctions close on one crossbar duplex?")

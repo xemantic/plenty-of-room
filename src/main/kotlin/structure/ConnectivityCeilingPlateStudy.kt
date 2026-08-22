@@ -20,6 +20,8 @@ import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.attachmentGrid
 import com.xemantic.nano.plentyofroom.coupling.couplingSupports
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -291,7 +293,7 @@ fun main() {
     )
 
     println("T-120 — reading C-0022's solved edge profile ...")
-    val (smooth, rim) = solvedProfile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val (smooth, rim) = solvedProfile(ResultInputs.T_3B.file())
     val solvedField = edgeCollarPressure(
         interiorPressure, Gen1Tile.EDGE_X, lengthY, listOf(smooth, rim)
     )
@@ -1048,7 +1050,7 @@ fun main() {
     val json = Json { prettyPrint = true }
     output.writeText(
         json.encodeToString(
-            (json.encodeToJsonElement(result) as JsonObject).roundedForResult()
+            (json.encodeToJsonElement(result) as JsonObject).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)
         )
     )
     t120Report(result, output, started)

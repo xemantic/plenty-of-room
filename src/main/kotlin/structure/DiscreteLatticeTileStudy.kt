@@ -17,6 +17,8 @@
 package com.xemantic.nano.plentyofroom.structure
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import org.jetbrains.bio.viktor.F64Array
@@ -541,7 +543,7 @@ fun main() {
     val json = Json { prettyPrint = true }
     val output = File("gpd/results/T-10-discrete-lattice-tile.json")
     output.parentFile.mkdirs()
-    output.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n")
+    output.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)) + "\n")
     report(result, output)
 }
 

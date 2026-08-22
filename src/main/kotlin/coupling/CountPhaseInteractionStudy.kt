@@ -18,6 +18,7 @@ package com.xemantic.nano.plentyofroom.coupling
 
 import com.xemantic.nano.plentyofroom.anchoring.UpwardRootInfluenceBank
 import com.xemantic.nano.plentyofroom.anchoring.upwardRootLattice
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
@@ -25,11 +26,13 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundForResult
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -395,7 +398,7 @@ fun main() {
     val interiorPressure = Gen1Tile.TARGET_FORCE / (T178_EDGE_X * lengthY)
 
     println("T-178 — reading C-0022's solved load and the standing placements ...")
-    val loadFile = File("gpd/results/T-3b-tile-edge-load-profile.json")
+    val loadFile = ResultInputs.T_3B.file()
     val designProfile = t178Profile(loadFile, Triple(2.0, 10.0, 0.192))
     val designField = designProfile.field(interiorPressure, lengthY)
 
@@ -404,15 +407,15 @@ fun main() {
     ).solve(uniformPressure(interiorPressure)).meanDeflection
 
     val anchorRows = t178PlacementRows(
-        File("gpd/results/T-125-upward-root-placement.json"), "bestPlacement"
+        ResultInputs.T_125.file(), "bestPlacement"
     )
     check(anchorRows.sumOf { it.size } == 34) { "C-0063's placement must carry 34 roots" }
     val roots30Rows = t178PlacementRows(
-        File("gpd/results/T-136-two-per-row-placement.json"), "recommendedPlacement"
+        ResultInputs.T_136.file(), "recommendedPlacement"
     )
     check(roots30Rows.sumOf { it.size } == 30) { "C-0074's placement must carry 30 roots" }
     val publishedArray = t178PublishedArrayPhases(
-        File("gpd/results/T-165-shared-body-placement.json")
+        ResultInputs.T_165.file()
     )
     check(publishedArray.size >= 6) { "C-0098's six graded array phases must be readable" }
 
@@ -1155,7 +1158,7 @@ fun main() {
                 digits = T178_DECISION_DIGITS + 3,
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY,
                 floor = T178_DECISION_FLOOR
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         ) + "\n"
     )
 

@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "both",
+        "regime": null
+    },
     "task": "T-267",
     "leaf": "none — step 5 of ARCHITECTURE.md",
     "title": "Mechanics on an imported design: OrigamiGrillage and HoneycombGrillage constructible from a scadnano file, or from a lattice plus a cross-section",
@@ -76,7 +80,7 @@
             "bitIdentical": true,
             "bitIdentityExpected": true,
             "columnPositionDepartureNm": 0.0,
-            "degreesOfFreedom": 4080,
+            "degreesOfFreedom": 4320,
             "solvedFieldRelativeDeparture": 0.0,
             "solvedFieldTolerance": 1.0E-10,
             "note": "the cross-section is read from the helices' own grid positions, which is the one place a scadnano file states it; C-0151's pair of integers in a study literal is now a file"

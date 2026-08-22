@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "none",
+        "regime": null
+    },
     "task": "T-13",
     "leaf": "A1.2 (read at zero bias), with A1.1 as its bound table and A8.2 for the coupling",
     "title": "Where the Gen-1 tile sits at zero bias, and what holds it there — six candidate mechanisms, each with its sign and its magnitude, and the equilibrium they do or do not produce",

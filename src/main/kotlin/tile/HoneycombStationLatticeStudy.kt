@@ -24,13 +24,16 @@ import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
 import com.xemantic.nano.plentyofroom.coupling.latticeInfluenceSurrogate
 import com.xemantic.nano.plentyofroom.coupling.measuredDepthIncorporation
 import com.xemantic.nano.plentyofroom.coupling.summariseDropoutDishing
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -148,7 +151,7 @@ private fun snappedGrid(
 
 @Suppress("LongMethod")
 fun main() {
-    val profile = t203Profile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val profile = t203Profile(ResultInputs.T_3B.file())
     val ladder = HoneycombLattice.SAME_PAIR_PERIOD_BP * Gen1Tile.RISE_PER_BASE_PAIR
 
     println("T-203 — the square lattice does not transfer, and here is what does")
@@ -344,7 +347,7 @@ fun main() {
     output.writeText(
         json.encodeToString(
             JsonObject.serializer(),
-            (json.encodeToJsonElement(result).roundedForResult(digits = 9) as JsonObject)
+            (json.encodeToJsonElement(result).roundedForResult(digits = 9).withEmissionHeader(LatticeTag.BOTH, null) as JsonObject)
         ) + "\n"
     )
     println("T-203 — wrote ${output.path}")

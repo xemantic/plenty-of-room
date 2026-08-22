@@ -16,9 +16,12 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -379,12 +382,12 @@ private fun freeRotationBest(
 fun main() {
     val started = System.currentTimeMillis()
     val rise = Gen1Tile.RISE_PER_BASE_PAIR
-    val stations = c0063Stations(File("gpd/results/T-125-upward-root-placement.json"))
-    val trios = c0062Trios(File("gpd/results/T-127-crossbar-trio-existence.json"))
-    val floors = c0062Floors(File("gpd/results/T-127-crossbar-trio-existence.json"))
-    val baseFloors = c0059BaseFloors(File("gpd/results/T-124-torsion-feasible-routing.json"))
-    val published = c0065Register(File("gpd/results/T-130-crossbar-array-placement.json"))
-    val flat = c0065Flatness(File("gpd/results/T-130-crossbar-array-placement.json"))
+    val stations = c0063Stations(ResultInputs.T_125.file())
+    val trios = c0062Trios(ResultInputs.T_127.file())
+    val floors = c0062Floors(ResultInputs.T_127.file())
+    val baseFloors = c0059BaseFloors(ResultInputs.T_124.file())
+    val published = c0065Register(ResultInputs.T_130.file())
+    val flat = c0065Flatness(ResultInputs.T_130.file())
     require(stations.size == ARM_COUNT) { "expected $ARM_COUNT stations, got ${stations.size}" }
 
     // ------------------------------------------------------------------ the register
@@ -1041,7 +1044,7 @@ fun main() {
         json.encodeToString(
             (json.encodeToJsonElement(result) as JsonObject).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY
-            )
+            ).withEmissionHeader(LatticeTag.SQUARE, null)
         )
     )
     println("T-132 — wrote ${file.path} in ${(System.currentTimeMillis() - started) / 1000} s")

@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "none",
+        "regime": null
+    },
     "task": "T-1e",
     "leaf": "A2.1",
     "title": "The chain length inverted on the first-moment thickness as well as on the force-onset height, and the exact split of CH-0010's chain-length gap",

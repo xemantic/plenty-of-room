@@ -27,6 +27,7 @@ import com.xemantic.nano.plentyofroom.coupling.normalisedStiffnesses
 import com.xemantic.nano.plentyofroom.coupling.perPathStiffnessCeiling
 import com.xemantic.nano.plentyofroom.coupling.perPathThermalForces
 import com.xemantic.nano.plentyofroom.coupling.rimStiffenedWeights
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
@@ -36,10 +37,12 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundForResult
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -444,12 +447,12 @@ fun main() {
     )
 
     println("T-129 — reading C-0022's solved loads, C-0063's placement and C-0050's stroke ...")
-    val solved = t129SolvedProfiles(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val solved = t129SolvedProfiles(ResultInputs.T_3B.file())
     fun profileAt(key: Triple<Double, Double, Double>): T129Profile = solved.firstOrNull {
         it.concentration == key.first && it.gapHeight == key.second && it.appliedBias == key.third
     } ?: error("no C-0022 profile at ${key.first} mM, ${key.second} nm, ${key.third} V")
 
-    val placement = c0063Placement(File("gpd/results/T-125-upward-root-placement.json"))
+    val placement = c0063Placement(ResultInputs.T_125.file())
     require(placement.count == count) {
         "C-0063's placement must carry $count roots, carried ${placement.count}"
     }
@@ -464,7 +467,7 @@ fun main() {
     require(placement.isCentroSymmetric(DUPLEXES)) {
         "C-0063's placement is reported centro-symmetric and this one is not"
     }
-    val reachFile = File("gpd/results/T-108-desired-stroke-reach.json")
+    val reachFile = ResultInputs.T_108.file()
     // The permissive reading — the largest anywhere at a 10 nm layer, over every model and every
     // grafting density C-0027's window contains.
     val deadLoadStrokeAtTen = c0050DeadLoadStroke(reachFile, 10.0)
@@ -1244,7 +1247,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         )
     )
 

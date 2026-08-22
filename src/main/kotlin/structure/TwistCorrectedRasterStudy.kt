@@ -25,6 +25,8 @@ import com.xemantic.nano.plentyofroom.anchoring.rasterColumnLayout
 import com.xemantic.nano.plentyofroom.anchoring.rasterUpwardSites
 import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -450,13 +452,13 @@ fun main() {
     val hinge = Gen1Tile.crossoverHingeStiffness()
 
     println("T-189 — reading C-0022's collar, C-0090's placement and C-0104's threshold ...")
-    val (smooth, rim) = t189SolvedProfile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val (smooth, rim) = t189SolvedProfile(ResultInputs.T_3B.file())
     val (publishedDishing, publishedKey) =
-        t189C0090Reading(File("gpd/results/T-153-buildable-raster-width.json"), PHASE)
+        t189C0090Reading(ResultInputs.T_153.file(), PHASE)
     val c0104Threshold = t189C0104Bound(
-        File("gpd/results/T-172-row-end-prestrain.json"), "the prestrain at which C-0090"
+        ResultInputs.T_172.file(), "the prestrain at which C-0090"
     )
-    val c0107Graded = t189C0107Graded(File("gpd/results/T-182-row-end-prestrain-value.json"))
+    val c0107Graded = t189C0107Graded(ResultInputs.T_182.file())
 
     // ------------------------------------------------- Deliverable 1: the cheap bound, in full
     println("T-189 — the closed-form enumeration, BEFORE any solve ...")
@@ -1166,7 +1168,7 @@ fun main() {
 
     val json = Json { prettyPrint = true }
     val out = File("gpd/results/T-189-twist-corrected-raster.json")
-    out.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult()))
+    out.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)))
     println("T-189 — wrote ${out.path}")
     findings.forEach { println("  * $it") }
 }

@@ -17,8 +17,10 @@
 package com.xemantic.nano.plentyofroom.anchoring
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -1045,7 +1047,7 @@ fun main() {
     val json = Json { prettyPrint = true }
     val output = File("gpd/results/T-12-lateral-confinement.json")
     output.parentFile.mkdirs()
-    output.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n")
+    output.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.NONE, null)) + "\n")
 
     println("=".repeat(120))
     println("T-12 — lateral confinement of the Gen-1 tile")

@@ -19,6 +19,7 @@ package com.xemantic.nano.plentyofroom.anchoring
 import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.InfluenceSurrogate
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
 import com.xemantic.nano.plentyofroom.structure.C0099_UNRESOLVED_PENALTY_FRACTION
@@ -35,6 +36,7 @@ import com.xemantic.nano.plentyofroom.structure.PressureField
 import com.xemantic.nano.plentyofroom.structure.RAMP_FRACTION_THRESHOLD
 import com.xemantic.nano.plentyofroom.structure.REGISTRATION_FORCE_THRESHOLD
 import com.xemantic.nano.plentyofroom.structure.ROW_END_UNKNOWN_MARGIN
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.VerticalComplianceVerdict
 import com.xemantic.nano.plentyofroom.structure.crossoverVerticalStiffness
 import com.xemantic.nano.plentyofroom.structure.crossoverVerticalStiffnessSweep
@@ -46,6 +48,7 @@ import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
 import com.xemantic.nano.plentyofroom.structure.verticalComplianceVerdict
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -363,7 +366,7 @@ fun main() {
     println("T-9b — cheap bound 0: can C-0157's trajectory answer the vertical question? ...")
 
     val buildOxdna = File("build-oxdna")
-    val resultFile = File("gpd/results/T-9-crossover-hinge-constant.json")
+    val resultFile = ResultInputs.T_9.file()
     val retained = if (resultFile.exists())
         Json.parseToJsonElement(resultFile.readText()).jsonObject else JsonObject(emptyMap())
     val retainedKeys = retained.keys.sorted()
@@ -517,9 +520,9 @@ fun main() {
 
     // ------------------------------------------------------------------------------ the sweep
     println("T-9b — reading C-0022's solved load and C-0090's published reading ...")
-    val (smooth, rim) = t9bSolvedProfile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val (smooth, rim) = t9bSolvedProfile(ResultInputs.T_3B.file())
     val (c0090Published, c0090Key) =
-        t9bC0090Reading(File("gpd/results/T-153-buildable-raster-width.json"), "RECOMMENDED", T9B_PHASE)
+        t9bC0090Reading(ResultInputs.T_153.file(), "RECOMMENDED", T9B_PHASE)
 
     val host = T9bHost(sheet, edgeX, arm, smooth, rim)
     check(host.columns.size == 8) { "phase $T9B_PHASE must carry 8 columns" }
@@ -860,7 +863,7 @@ fun main() {
     val encoded = json.encodeToJsonElement(result)
     val out = File("gpd/results/T-9b-crossover-vertical-compliance.json")
     out.parentFile.mkdirs()
-    out.writeText(json.encodeToString(encoded.roundedForResult()))
+    out.writeText(json.encodeToString(encoded.roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)))
     println("T-9b — written to ${out.path}")
     println("T-9b — verdict: binary reading right = ${verdict.binaryReadingIsRight} " +
             "(as first written: ${verdict.binaryReadingIsRightAsFirstWritten}), " +

@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "none",
+        "regime": null
+    },
     "task": "T-12",
     "leaf": "A1.2 (the 3.0 nm bound), with A1.1 as its bound table and A8.2 for the joint budget",
     "title": "Lateral confinement of the Gen-1 tile: which anchoring topology can supply k_lat >= 0.4602 pN/nm without spending the stroke",

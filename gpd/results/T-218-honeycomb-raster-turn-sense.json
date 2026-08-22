@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "both",
+        "regime": null
+    },
     "task": "T-218",
     "leaf": "A8.2",
     "question": "Which turn sense does a caDNAno 15 x 4 honeycomb x-raster carry, and does C-0119's 112 bp row survive it?",

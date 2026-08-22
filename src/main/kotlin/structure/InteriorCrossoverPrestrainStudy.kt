@@ -23,6 +23,8 @@ import com.xemantic.nano.plentyofroom.anchoring.rasterColumnLayout
 import com.xemantic.nano.plentyofroom.anchoring.rowEndCrossoverSites
 import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -363,15 +365,15 @@ fun main() {
     val hinge = Gen1Tile.crossoverHingeStiffness()
 
     println("T-190 — reading C-0022's collar, C-0090's key, C-0104's threshold, C-0107's states ...")
-    val (smooth, rim) = t190SolvedProfile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val (smooth, rim) = t190SolvedProfile(ResultInputs.T_3B.file())
     val (publishedDishing, publishedKey) =
-        t190C0090Reading(File("gpd/results/T-153-buildable-raster-width.json"), "RECOMMENDED", PHASE)
-    val c0104File = File("gpd/results/T-172-row-end-prestrain.json")
+        t190C0090Reading(ResultInputs.T_153.file(), "RECOMMENDED", PHASE)
+    val c0104File = ResultInputs.T_172.file()
     val c0104Threshold = t190C0104Bound(c0104File, "the prestrain at which C-0090")
     check(abs(c0104Threshold - T190_C0104_THRESHOLD_DEGREES) < 1e-6) {
         "C-0104's threshold moved: $c0104Threshold"
     }
-    val c0107File = File("gpd/results/T-182-row-end-prestrain-value.json")
+    val c0107File = ResultInputs.T_182.file()
 
     val host = T190Host(sheet, edgeX, smooth, rim)
     check(host.columns.size == 8) { "phase $PHASE must carry 8 columns" }
@@ -970,7 +972,7 @@ fun main() {
     // the truth. Every dimensionless departure here is pre-rounded to two significant digits by
     // [t190TwoSignificant], which is what makes an unfloored emission reproducible.
     out.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForResult(floor = 0.0))
+        json.encodeToString(json.encodeToJsonElement(result).roundedForResult(floor = 0.0).withEmissionHeader(LatticeTag.SQUARE, null))
     )
     println("T-190 — wrote ${out.path}")
     findings.forEach { println("  * $it") }

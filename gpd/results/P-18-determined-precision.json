@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "none",
+        "regime": null
+    },
     "task": "P-18",
     "leaf": "none - numerics infrastructure under A2.1, consumed by every leaf",
     "units": {

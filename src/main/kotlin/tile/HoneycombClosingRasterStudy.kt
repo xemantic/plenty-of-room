@@ -28,14 +28,17 @@ import com.xemantic.nano.plentyofroom.coupling.summariseDropoutDishing
 import com.xemantic.nano.plentyofroom.coupling.winklerBendingLength
 import com.xemantic.nano.plentyofroom.coupling.worstSinglePathRemoval
 import com.xemantic.nano.plentyofroom.electrostatics.BluntEndStacking
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundForResult
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -550,10 +553,10 @@ fun main() {
     val rowPitch = HoneycombCrossSectionGeometry.rowPitch(d)
     val columnPitch = HoneycombCrossSectionGeometry.columnPitch(d)
     val ladderPitch = Gen1Tile.CROSSOVER_SPACING_HONEYCOMB_BP * rise / 2.0
-    val profile = t245Profile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
-    val t244 = File("gpd/results/T-244-face-bond-class-residues.json")
-    val t218 = File("gpd/results/T-218-honeycomb-raster-turn-sense.json")
-    val t235 = File("gpd/results/T-235-coupled-cells-at-the-two-length-raster.json")
+    val profile = t245Profile(ResultInputs.T_3B.file())
+    val t244 = ResultInputs.T_244.file()
+    val t218 = ResultInputs.T_218.file()
+    val t235 = ResultInputs.T_235.file()
 
     // ============================================== Deliverable 1 -- the cheap bound, exhaustive
     println("T-245 - the cheap bound, before any Monte Carlo")
@@ -1584,7 +1587,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digits = 9, floor = 1e-12
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.BOTH, null) as JsonObject)
         ) + "\n"
     )
     println("T-245 - wrote " + output.path)

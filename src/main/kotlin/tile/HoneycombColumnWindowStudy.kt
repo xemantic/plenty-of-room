@@ -18,13 +18,16 @@ package com.xemantic.nano.plentyofroom.tile
 
 import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -223,7 +226,7 @@ fun main() {
     val pitch = Gen1Tile.CROSSOVER_SPACING_HONEYCOMB_BP * rise / 2.0
     val margins = listOf(0.05, 0.17, 0.34)
     val marginNames = listOf("the standing numerical guard", "half a base-pair rise", "one base-pair rise")
-    val profile = t243Profile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val profile = t243Profile(ResultInputs.T_3B.file())
     val pairs = listOf(112 to 108, 102 to 109)
     val sections = listOf("10 x 6" to (10 to 6), "15 x 4" to (15 to 4))
 
@@ -292,7 +295,7 @@ fun main() {
     // number like any other, and this study's whole contribution is SELECTING among these three
     // columns, so getting them from the file that owns them is the difference between a
     // selection and an assertion.
-    val c0146 = File("gpd/results/T-235-coupled-cells-at-the-two-length-raster.json")
+    val c0146 = ResultInputs.T_235.file()
     require(c0146.exists()) { "C-0146's result file is missing: " + c0146.path }
     val c0146Cells = Json.parseToJsonElement(c0146.readText())
         .jsonObject.getValue("cells").jsonArray.map { it.jsonObject }
@@ -543,7 +546,7 @@ fun main() {
     output.writeText(
         json.encodeToString(
             JsonObject.serializer(),
-            (json.encodeToJsonElement(result).roundedForResult(digits = 9) as JsonObject)
+            (json.encodeToJsonElement(result).roundedForResult(digits = 9).withEmissionHeader(LatticeTag.BOTH, null) as JsonObject)
         ) + "\n"
     )
     println("T-243 - wrote " + output.path)

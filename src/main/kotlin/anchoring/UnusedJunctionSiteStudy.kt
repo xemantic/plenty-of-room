@@ -16,9 +16,11 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
@@ -625,7 +627,7 @@ fun main() {
     val json = Json { prettyPrint = true }
     val output = File("gpd/results/T-119-unused-junction-site.json")
     output.parentFile.mkdirs()
-    output.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n")
+    output.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)) + "\n")
 
     println("=== T-119 — a junction site the single-layer sheet does not use ".padEnd(110, '='))
     println()

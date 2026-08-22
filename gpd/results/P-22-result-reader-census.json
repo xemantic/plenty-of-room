@@ -1,13 +1,17 @@
 {
+  "emission": {
+    "lattice": "none",
+    "regime": null
+  },
   "task": "P-22",
   "claim": "C-0082",
   "what": "The reader graph over gpd/results/, derived from the Kotlin sources rather than grepped. A read is a result-file string literal in the argument list of a File(...) construction, propagated along top-level references; comments and prose strings are not reads. See tools/result-reader-census.py and CH-0092.",
-  "studyCount": 121,
+  "studyCount": 130,
   "helperCount": 3,
-  "resultFileCount": 141,
+  "resultFileCount": 152,
   "declaringStudyCount": 13,
   "transitiveEdgeCount": 27,
-  "directEdgeCount": 121,
+  "directEdgeCount": 138,
   "studies": {
     "HelloWorldApp.kt": {
       "reads": [],
@@ -45,9 +49,13 @@
         "electrostatics/PoissonBoltzmannEdge.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
         "electrostatics/TileEdgeFringing.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -73,9 +81,13 @@
         "electrostatics/DnaOrigamiTile.kt",
         "electrostatics/Electrolyte.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -102,9 +114,13 @@
         "electrostatics/Electrolyte.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
         "electrostatics/PolymerLayerPartitioning.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -132,9 +148,13 @@
         "electrostatics/DnaOrigamiTile.kt",
         "electrostatics/Electrolyte.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -163,6 +183,9 @@
         "anchoring/UpwardRootPlacement.kt",
         "coupling/CouplingElement.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -173,6 +196,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -186,13 +211,18 @@
       "declaredSources": null,
       "reaches": [],
       "reachesFiles": [
+        "Physics.kt",
         "anchoring/AnchorElement.kt",
         "anchoring/BackboneTorsion.kt",
         "anchoring/CrossbarJunctionTrio.kt",
         "anchoring/MeasuredBackbone.kt",
         "anchoring/PairedPerpendicularJunction.kt",
         "anchoring/PerpendicularJunction.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -227,6 +257,9 @@
         "coupling/NonUniformCoupling.kt",
         "coupling/SharedBodyCoupling.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -237,6 +270,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -274,10 +309,15 @@
         "anchoring/UpwardRootPlacement.kt",
         "electrostatics/DuplexPairSeparation.kt",
         "electrostatics/Electrolyte.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/CrossoverLayout.kt",
         "structure/Gen1Tile.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -298,7 +338,11 @@
         "anchoring/FlexureEndJoint.kt",
         "anchoring/StandoffBaseJoint.kt",
         "anchoring/TwoSidedCoupling.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -346,6 +390,9 @@
         "anchoring/UnusedJunctionSite.kt",
         "anchoring/UpwardRootPlacement.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -356,6 +403,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -381,7 +430,11 @@
         "anchoring/TriangulatedStandoff.kt",
         "anchoring/TrussCap.kt",
         "anchoring/TwoSidedCoupling.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -416,7 +469,12 @@
         "anchoring/TrussCap.kt",
         "anchoring/TwoSidedCoupling.kt",
         "anchoring/UnusedJunctionSite.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -450,6 +508,9 @@
         "coupling/NonUniformCoupling.kt",
         "coupling/SharedBodyCoupling.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -460,6 +521,58 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
+        "structure/ResultRounding.kt",
+        "structure/StackedArmSheet.kt",
+        "structure/TilePositionalVarianceStudy.kt"
+      ]
+    },
+    "anchoring/CrossoverVerticalComplianceStudy.kt": {
+      "reads": [
+        "T-153-buildable-raster-width.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-9-crossover-hinge-constant.json"
+      ],
+      "directReads": [
+        "T-153-buildable-raster-width.json",
+        "T-3b-tile-edge-load-profile.json",
+        "T-9-crossover-hinge-constant.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-9b-crossover-vertical-compliance.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/BuildableRasterWidth.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/HingeArmArrayPacking.kt",
+        "anchoring/HingeLineCensus.kt",
+        "anchoring/RowEndCrossover.kt",
+        "anchoring/RowEndCrossoverStiffness.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/SharedBodyCoupling.kt",
+        "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/CrossoverVerticalCompliance.kt",
+        "structure/Gen1Tile.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -482,7 +595,11 @@
         "anchoring/StandoffBaseJoint.kt",
         "anchoring/TwoSidedCoupling.kt",
         "coupling/CouplingElement.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -504,7 +621,11 @@
         "anchoring/PerpendicularJunction.kt",
         "anchoring/TwoSidedCoupling.kt",
         "anchoring/TwoSpringElastica.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -522,8 +643,12 @@
         "anchoring/FlexureEndJoint.kt",
         "anchoring/OutputElementPlacement.kt",
         "anchoring/TwoSidedCoupling.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
         "structure/JointAllowable.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -544,7 +669,11 @@
         "anchoring/FlexureMountingSense.kt",
         "anchoring/StandoffBaseJoint.kt",
         "anchoring/TwoSidedCoupling.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -566,6 +695,10 @@
         "electrostatics/Electrolyte.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
         "electrostatics/PolymerLayerPartitioning.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -587,8 +720,12 @@
         "anchoring/PerpendicularJunction.kt",
         "anchoring/StandoffBaseJoint.kt",
         "anchoring/TwoSidedCoupling.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
         "structure/JointAllowable.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -615,10 +752,14 @@
         "anchoring/TwoSidedCoupling.kt",
         "anchoring/TwoSpringElastica.kt",
         "coupling/CouplingElement.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/CrossoverLayout.kt",
         "structure/Gen1Tile.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -631,16 +772,21 @@
       "declaredSources": null,
       "reaches": [],
       "reachesFiles": [
+        "Physics.kt",
         "anchoring/FlexureMountingSense.kt",
         "anchoring/GuidedArmAnchorage.kt",
         "anchoring/HingeLineCensus.kt",
         "anchoring/PerpendicularJunction.kt",
         "anchoring/PlanTolerance.kt",
         "anchoring/TwoSidedCoupling.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/CrossoverLayout.kt",
         "structure/Gen1Tile.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -660,6 +806,10 @@
         "anchoring/LateralConfinementBudget.kt",
         "anchoring/LayerCorrugation.kt",
         "anchoring/StandoffBaseJoint.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -698,7 +848,12 @@
         "anchoring/TwoSpringElastica.kt",
         "anchoring/UpwardRootPlacement.kt",
         "coupling/CouplingRequirement.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -723,7 +878,11 @@
         "anchoring/TriangulatedStandoff.kt",
         "anchoring/TwoSidedCoupling.kt",
         "anchoring/UnusedJunctionSite.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -742,6 +901,7 @@
       "declaredSources": null,
       "reaches": [],
       "reachesFiles": [
+        "Physics.kt",
         "anchoring/CrossbarArrayPlacement.kt",
         "anchoring/FlexureArrayPacking.kt",
         "anchoring/FlexureMountingSense.kt",
@@ -755,10 +915,15 @@
         "anchoring/TwoSpringElastica.kt",
         "anchoring/UnusedJunctionSite.kt",
         "anchoring/UpwardRootPlacement.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/CrossoverLayout.kt",
         "structure/Gen1Tile.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -782,7 +947,11 @@
         "anchoring/StandoffBaseJoint.kt",
         "anchoring/TwoSidedCoupling.kt",
         "anchoring/UnusedJunctionSite.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -825,7 +994,12 @@
         "anchoring/TrussCap.kt",
         "anchoring/TwoSidedCoupling.kt",
         "anchoring/UpwardRootPlacement.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -875,6 +1049,9 @@
         "anchoring/UnusedJunctionSite.kt",
         "anchoring/UpwardRootPlacement.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -885,6 +1062,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -918,6 +1097,9 @@
         "coupling/NonUniformCoupling.kt",
         "coupling/RobustDistribution.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -928,6 +1110,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -960,6 +1144,9 @@
         "coupling/NonUniformCoupling.kt",
         "coupling/SharedBodyCoupling.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -970,6 +1157,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -987,14 +1176,20 @@
       "declaredSources": null,
       "reaches": [],
       "reachesFiles": [
+        "Physics.kt",
         "anchoring/BuildableRasterWidth.kt",
         "anchoring/RowEndCrossover.kt",
         "anchoring/ScaffoldRouting.kt",
         "anchoring/UnusedJunctionSite.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/CrossoverLayout.kt",
         "structure/Gen1Tile.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1011,12 +1206,18 @@
       "declaredSources": null,
       "reaches": [],
       "reachesFiles": [
+        "Physics.kt",
         "anchoring/AnchorElement.kt",
         "anchoring/ScaffoldRouting.kt",
         "anchoring/SeamWeave.kt",
         "anchoring/UnusedJunctionSite.kt",
         "anchoring/WeaveExclusionWidth.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1033,13 +1234,19 @@
       "declaredSources": null,
       "reaches": [],
       "reachesFiles": [
+        "Physics.kt",
         "anchoring/FlexureMountingSense.kt",
         "anchoring/MeasuredBackbone.kt",
         "anchoring/PerpendicularJunction.kt",
         "anchoring/SeamWeave.kt",
         "anchoring/UnusedJunctionSite.kt",
         "anchoring/WeaveExclusionWidth.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -1058,8 +1265,12 @@
         "anchoring/FlexureEndJoint.kt",
         "anchoring/StandoffBaseJoint.kt",
         "anchoring/TwoSidedCoupling.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
         "structure/JointAllowable.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1089,7 +1300,11 @@
         "anchoring/TrussCap.kt",
         "anchoring/TwoSidedCoupling.kt",
         "anchoring/UnusedJunctionSite.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1114,7 +1329,11 @@
         "anchoring/TriangulatedStandoff.kt",
         "anchoring/TwoSidedCoupling.kt",
         "anchoring/UnusedJunctionSite.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1139,7 +1358,11 @@
         "anchoring/TriangulatedStandoff.kt",
         "anchoring/TrussCap.kt",
         "anchoring/TwoSidedCoupling.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1175,6 +1398,9 @@
         "coupling/NonUniformCoupling.kt",
         "coupling/RobustDistribution.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -1185,6 +1411,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -1216,6 +1444,9 @@
         "electrostatics/DnaOrigamiTile.kt",
         "electrostatics/Electrolyte.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
@@ -1224,6 +1455,7 @@
         "poroelastic/LayerPermeability.kt",
         "poroelastic/Water.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1249,8 +1481,12 @@
         "anchoring/TwoSidedCoupling.kt",
         "anchoring/TwoSpringElastica.kt",
         "coupling/CouplingRequirement.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
         "structure/JointAllowable.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "synthesis/CouplingCeiling.kt"
@@ -1276,10 +1512,14 @@
         "anchoring/TwoSidedCoupling.kt",
         "anchoring/TwoSpringElastica.kt",
         "anchoring/UnusedJunctionSite.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/CrossoverLayout.kt",
         "structure/Gen1Tile.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1310,6 +1550,9 @@
         "coupling/NonUniformCoupling.kt",
         "coupling/SharedBodyCoupling.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -1320,6 +1563,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVariance.kt",
@@ -1338,6 +1583,7 @@
       "declaredSources": null,
       "reaches": [],
       "reachesFiles": [
+        "Physics.kt",
         "anchoring/CrossbarArrayPlacement.kt",
         "anchoring/FlexureArrayPacking.kt",
         "anchoring/FlexureMountingSense.kt",
@@ -1349,10 +1595,15 @@
         "anchoring/UnusedJunctionSite.kt",
         "anchoring/UpwardRootPlacement.kt",
         "anchoring/WeaveExclusionWidth.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/CrossoverLayout.kt",
         "structure/Gen1Tile.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -1385,6 +1636,9 @@
         "electrostatics/DnaOrigamiTile.kt",
         "electrostatics/Electrolyte.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
@@ -1392,6 +1646,7 @@
         "poroelastic/DrainageResponse.kt",
         "poroelastic/LayerPermeability.kt",
         "poroelastic/Water.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -1409,8 +1664,12 @@
         "brush/InteractionFreeEnergy.kt",
         "brush/LayerDesignPoint.kt",
         "brush/PolymerBrush.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
-        "material/OsmoticEquationOfState.kt"
+        "material/OsmoticEquationOfState.kt",
+        "structure/ResultEmission.kt"
       ]
     },
     "brush/CrossoverLayerStudy.kt": {
@@ -1428,9 +1687,14 @@
         "brush/GraftedLayer.kt",
         "brush/InteractionFreeEnergy.kt",
         "brush/PolymerBrush.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
-        "material/PegWater.kt"
+        "material/PegWater.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultRounding.kt"
       ]
     },
     "brush/DeterminedPrecisionStudy.kt": {
@@ -1447,9 +1711,13 @@
         "brush/InteractionFreeEnergy.kt",
         "brush/PolymerBrush.kt",
         "brush/SelfConsistentField.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -1469,9 +1737,13 @@
         "brush/InteractionFreeEnergy.kt",
         "brush/PolymerBrush.kt",
         "brush/SelfConsistentField.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -1491,9 +1763,13 @@
         "brush/InteractionFreeEnergy.kt",
         "brush/PolymerBrush.kt",
         "brush/SelfConsistentField.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -1512,9 +1788,13 @@
         "brush/InteractionFreeEnergy.kt",
         "brush/PolymerBrush.kt",
         "brush/SelfConsistentField.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -1550,6 +1830,9 @@
         "coupling/NonUniformCoupling.kt",
         "coupling/SharedBodyCoupling.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -1560,6 +1843,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "synthesis/CouplingCeiling.kt"
@@ -1594,6 +1879,9 @@
         "coupling/SharedBodyCoupling.kt",
         "coupling/StapleDropout.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -1604,6 +1892,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1638,6 +1928,9 @@
         "coupling/SharedBodyCoupling.kt",
         "coupling/StapleDropout.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -1648,6 +1941,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1666,6 +1961,9 @@
         "coupling/NonUniformCoupling.kt",
         "coupling/RobustDistribution.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -1676,6 +1974,7 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1707,6 +2006,9 @@
         "coupling/SingleColumnFlatness.kt",
         "coupling/StapleDropout.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -1717,6 +2019,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1741,6 +2045,9 @@
         "coupling/RobustDistribution.kt",
         "coupling/SharedBodyCoupling.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -1751,6 +2058,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1771,6 +2080,9 @@
         "coupling/CouplingElement.kt",
         "coupling/CouplingResultRounding.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -1782,6 +2094,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1816,9 +2130,14 @@
         "electrostatics/DnaOrigamiTile.kt",
         "electrostatics/Electrolyte.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -1858,6 +2177,9 @@
         "coupling/SingleColumnFlatness.kt",
         "coupling/StapleDropout.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -1868,6 +2190,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1892,6 +2216,9 @@
         "coupling/RobustDistribution.kt",
         "coupling/SharedBodyCoupling.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -1902,6 +2229,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1929,6 +2258,9 @@
         "coupling/SharedBodyCoupling.kt",
         "coupling/StapleDropout.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -1939,6 +2271,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -1971,6 +2305,9 @@
         "coupling/SharedBodyPlacement.kt",
         "coupling/StapleDropout.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -1981,6 +2318,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -2002,6 +2341,9 @@
         "coupling/CouplingResultRounding.kt",
         "coupling/SingleColumnFlatness.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -2012,6 +2354,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -2041,6 +2385,9 @@
         "coupling/SharedBodyCoupling.kt",
         "coupling/StapleDropout.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -2051,6 +2398,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -2083,11 +2432,123 @@
         "electrostatics/DnaOrigamiTile.kt",
         "electrostatics/Electrolyte.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
         "material/SolventQuality.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt"
+      ]
+    },
+    "design/DesignEmission.kt": {
+      "reads": [],
+      "directReads": [],
+      "transitiveReads": [],
+      "writes": null,
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "design/DesignLatticeRules.kt",
+        "design/HoneycombBlockDesign.kt",
+        "design/ScadnanoDesign.kt",
+        "design/ScadnanoWriter.kt",
+        "lattice/CrossoverLattice.kt",
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombClosingFamily.kt",
+        "tile/HoneycombStationLattice.kt"
+      ]
+    },
+    "design/ScaffoldSeamStudy.kt": {
+      "reads": [
+        "T-219-honeycomb-station-lattice-and-placement.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-219-honeycomb-station-lattice-and-placement.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-274-recommended-block-seam.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "coupling/UniformityBudget.kt",
+        "design/HoneycombBlockDesign.kt",
+        "design/ScadnanoDesign.kt",
+        "design/ScadnanoWriter.kt",
+        "design/ScaffoldSeamParity.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombFaceLattice.kt",
+        "tile/HoneycombStationLattice.kt"
+      ]
+    },
+    "design/SimulatedTileCensusStudy.kt": {
+      "reads": [
+        "T-267-mechanics-on-imported-design.json"
+      ],
+      "directReads": [
+        "T-267-mechanics-on-imported-design.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-275-simulated-tile-census.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/BuildableRasterWidth.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "design/DesignEmission.kt",
+        "design/HoneycombBlockDesign.kt",
+        "design/ScadnanoDesign.kt",
+        "design/ScadnanoWriter.kt",
+        "design/SimulatedTileCensus.kt",
+        "lattice/CrossoverLattice.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/DesignedGrillage.kt",
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultInputs.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombStationLattice.kt"
       ]
     },
     "electrostatics/BeyondMeanFieldGapStudy.kt": {
@@ -2111,6 +2572,11 @@
         "electrostatics/Electrolyte.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
         "electrostatics/PolymerLayerPartitioning.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -2132,11 +2598,15 @@
         "electrostatics/PoissonBoltzmannEdge.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
         "electrostatics/TileEdgeFringing.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/Gen1Tile.kt",
         "structure/Legendre.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -2165,7 +2635,12 @@
         "brush/GraftedLayer.kt",
         "electrostatics/DuplexPairSeparation.kt",
         "electrostatics/Electrolyte.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -2203,6 +2678,9 @@
         "electrostatics/PoissonBoltzmannEdge.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
         "electrostatics/TileEdgeFringing.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -2213,6 +2691,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -2232,9 +2712,13 @@
         "electrostatics/DnaOrigamiTile.kt",
         "electrostatics/Electrolyte.kt",
         "electrostatics/PolymerLayerPartitioning.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
-        "material/PegWater.kt"
+        "material/PegWater.kt",
+        "structure/ResultEmission.kt"
       ]
     },
     "electrostatics/NonlinearPbProfileStudy.kt": {
@@ -2252,9 +2736,13 @@
         "electrostatics/Electrolyte.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
         "electrostatics/PolymerLayerPartitioning.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -2276,6 +2764,11 @@
         "electrostatics/DnaOrigamiTile.kt",
         "electrostatics/Electrolyte.kt",
         "electrostatics/PlanarCouplingWall.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -2301,6 +2794,11 @@
         "electrostatics/PoissonBoltzmannGap.kt",
         "electrostatics/ScaffoldRemainder.kt",
         "electrostatics/TileEdgeFringing.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt"
       ]
     },
@@ -2320,11 +2818,15 @@
         "electrostatics/PoissonBoltzmannEdge.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
         "electrostatics/TileEdgeFringing.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/Gen1Tile.kt",
         "structure/Legendre.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -2338,11 +2840,15 @@
       "reaches": [],
       "reachesFiles": [
         "Physics.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/GraftedChi.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
-        "material/SolventQuality.kt"
+        "material/SolventQuality.kt",
+        "structure/ResultEmission.kt"
       ]
     },
     "material/PegMaterialStudy.kt": {
@@ -2358,9 +2864,13 @@
         "brush/GraftedLayer.kt",
         "brush/InteractionFreeEnergy.kt",
         "brush/PolymerBrush.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
-        "material/PegWater.kt"
+        "material/PegWater.kt",
+        "structure/ResultEmission.kt"
       ]
     },
     "material/SolventQualitySaltStudy.kt": {
@@ -2372,10 +2882,14 @@
       "reaches": [],
       "reachesFiles": [
         "Physics.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
-        "material/SolventQuality.kt"
+        "material/SolventQuality.kt",
+        "structure/ResultEmission.kt"
       ]
     },
     "poroelastic/PoroelasticDrainageStudy.kt": {
@@ -2391,13 +2905,17 @@
         "brush/GraftedLayer.kt",
         "brush/InteractionFreeEnergy.kt",
         "brush/PolymerBrush.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
         "poroelastic/DrainageGeometry.kt",
         "poroelastic/DrainageResponse.kt",
         "poroelastic/LayerPermeability.kt",
-        "poroelastic/Water.kt"
+        "poroelastic/Water.kt",
+        "structure/ResultEmission.kt"
       ]
     },
     "stability/DoublingLadderRepairStudy.kt": {
@@ -2422,10 +2940,15 @@
         "anchoring/PerpendicularJunction.kt",
         "anchoring/TwoSidedCoupling.kt",
         "anchoring/TwoSpringElastica.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "stability/DoublingLadderRepair.kt",
         "stability/RecommendedElementFold.kt",
         "stability/SofteningCouplingStability.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -2462,6 +2985,9 @@
         "electrostatics/DnaOrigamiTile.kt",
         "electrostatics/Electrolyte.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
@@ -2469,6 +2995,8 @@
         "stability/RecommendedElementFold.kt",
         "stability/SofteningCouplingStability.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -2501,12 +3029,16 @@
         "electrostatics/DnaOrigamiTile.kt",
         "electrostatics/Electrolyte.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
         "stability/RecommendedElementFold.kt",
         "stability/SofteningCouplingStability.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -2538,11 +3070,15 @@
         "electrostatics/DnaOrigamiTile.kt",
         "electrostatics/Electrolyte.kt",
         "electrostatics/PoissonBoltzmannGap.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
         "stability/SofteningCouplingStability.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -2562,6 +3098,9 @@
         "Physics.kt",
         "coupling/CouplingElement.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConnectivityCeilingPlate.kt",
         "structure/ConsumedCrossoverSheet.kt",
@@ -2574,6 +3113,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVariance.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -2602,6 +3143,9 @@
         "anchoring/TwoSpringElastica.kt",
         "coupling/CouplingElement.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -2613,6 +3157,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVariance.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -2627,6 +3173,9 @@
       "reaches": [],
       "reachesFiles": [
         "Physics.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -2637,6 +3186,7 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -2650,6 +3200,9 @@
       "reaches": [],
       "reachesFiles": [
         "Physics.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -2661,6 +3214,7 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TileLoadDistributionStudy.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -2696,6 +3250,9 @@
         "anchoring/UnusedJunctionSite.kt",
         "anchoring/UpwardRootPlacement.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -2707,6 +3264,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -2721,6 +3280,9 @@
       "reaches": [],
       "reachesFiles": [
         "Physics.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/CrossoverLayout.kt",
         "structure/Gen1Tile.kt",
@@ -2728,6 +3290,7 @@
         "structure/OrigamiMembrane.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/ShearLag.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -2750,9 +3313,15 @@
       ],
       "reaches": [],
       "reachesFiles": [
+        "Physics.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
         "structure/HoneycombRasterTurnSense.kt",
         "structure/LatticePhaseCensus.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "structure/TwistCorrectedRaster.kt"
@@ -2772,8 +3341,13 @@
       "reachesFiles": [
         "Physics.kt",
         "anchoring/MeasuredBackbone.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
         "structure/HoneycombTurnLoop.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -2792,11 +3366,64 @@
       ],
       "reaches": [],
       "reachesFiles": [
+        "Physics.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
         "structure/LatticePhaseCensus.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "structure/TwistCorrectedRaster.kt"
+      ]
+    },
+    "structure/ImportedDesignMechanicsStudy.kt": {
+      "reads": [
+        "T-10-discrete-lattice-tile.json"
+      ],
+      "directReads": [
+        "T-10-discrete-lattice-tile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-267-mechanics-on-imported-design.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/BuildableRasterWidth.kt",
+        "anchoring/UnusedJunctionSite.kt",
+        "design/DesignEmission.kt",
+        "design/HoneycombBlockDesign.kt",
+        "design/ScadnanoDesign.kt",
+        "design/ScadnanoWriter.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/BandedCholesky.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/DesignedGrillage.kt",
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/HoneycombTurnLoop.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/DesignedHoneycombGrillage.kt",
+        "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombFaceLattice.kt",
+        "tile/HoneycombGrillage.kt",
+        "tile/HoneycombStationLattice.kt"
       ]
     },
     "structure/InPlaneLoadPathStudy.kt": {
@@ -2807,12 +3434,17 @@
       "declaredSources": null,
       "reaches": [],
       "reachesFiles": [
+        "Physics.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/CrossoverLayout.kt",
         "structure/Gen1Tile.kt",
         "structure/OrigamiMembrane.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/ShearLag.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -2850,6 +3482,9 @@
         "anchoring/UnusedJunctionSite.kt",
         "anchoring/UpwardRootPlacement.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -2863,6 +3498,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -2898,6 +3535,9 @@
         "coupling/NonUniformCoupling.kt",
         "coupling/SharedBodyCoupling.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -2910,6 +3550,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt",
@@ -2936,12 +3578,17 @@
         "coupling/SingleColumnFlatness.kt",
         "electrostatics/Electrolyte.kt",
         "electrostatics/TileEdgeFringing.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
         "structure/HoneycombRasterTurnSense.kt",
         "structure/HoneycombTurnLoop.kt",
         "structure/LatticePhaseCensus.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "structure/TwistCorrectedRaster.kt",
@@ -2975,6 +3622,9 @@
         "coupling/NonUniformCoupling.kt",
         "coupling/SharedBodyCoupling.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -2986,6 +3636,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -3011,6 +3663,9 @@
         "coupling/CouplingElement.kt",
         "coupling/NonUniformCoupling.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -3021,6 +3676,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVariance.kt",
@@ -3036,11 +3693,15 @@
       "reaches": [],
       "reachesFiles": [
         "Physics.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/Gen1Tile.kt",
         "structure/Legendre.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TileLoadDistributionStudy.kt",
         "structure/TilePositionalVarianceStudy.kt"
@@ -3055,12 +3716,16 @@
       "reaches": [],
       "reachesFiles": [
         "Physics.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/Gen1Tile.kt",
         "structure/Legendre.kt",
         "structure/LoadPaths.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt"
       ]
@@ -3078,6 +3743,9 @@
         "brush/GraftedLayer.kt",
         "brush/InteractionFreeEnergy.kt",
         "brush/PolymerBrush.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
@@ -3090,6 +3758,7 @@
         "structure/Legendre.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TileLoadDistributionStudy.kt",
         "structure/TilePositionalVariance.kt"
@@ -3130,6 +3799,9 @@
         "coupling/NonUniformCoupling.kt",
         "coupling/SharedBodyCoupling.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -3141,6 +3813,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt",
@@ -3175,6 +3849,11 @@
       "reachesFiles": [
         "Physics.kt",
         "coupling/CouplingRequirement.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "synthesis/BufferRouteCensus.kt",
         "synthesis/BufferRouteCensusInputs.kt",
@@ -3206,6 +3885,9 @@
         "brush/PolymerBrush.kt",
         "coupling/CouplingElement.kt",
         "coupling/CouplingRequirement.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
@@ -3213,6 +3895,7 @@
         "structure/Gen1Tile.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "synthesis/CouplingCeiling.kt",
@@ -3240,7 +3923,11 @@
         "anchoring/TwoSpringElastica.kt",
         "anchoring/UpwardRootPlacement.kt",
         "coupling/CouplingRequirement.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/StackedArmSheet.kt",
         "structure/TilePositionalVarianceStudy.kt",
@@ -3259,7 +3946,13 @@
       "declaredSources": null,
       "reaches": [],
       "reachesFiles": [
+        "Physics.kt",
         "coupling/CouplingRequirement.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "synthesis/CouplingCeiling.kt"
       ]
@@ -3284,6 +3977,9 @@
         "coupling/SharedBodyCoupling.kt",
         "coupling/StapleDropout.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -3294,6 +3990,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CoupledFourLayer.kt",
@@ -3316,6 +4014,9 @@
         "Physics.kt",
         "coupling/SingleColumnFlatness.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -3326,6 +4027,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CompositeFractionThreshold.kt",
@@ -3353,6 +4056,9 @@
         "coupling/SingleColumnFlatness.kt",
         "coupling/StapleDropout.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -3363,6 +4069,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CoupledFourLayer.kt",
@@ -3384,6 +4092,9 @@
         "Physics.kt",
         "coupling/SingleColumnFlatness.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -3394,10 +4105,40 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CompositeFractionThreshold.kt",
         "tile/FourLayerTile.kt"
+      ]
+    },
+    "tile/ForcedCrossoverPriceStudy.kt": {
+      "reads": [
+        "T-139-duplex-pair-separation.json"
+      ],
+      "directReads": [
+        "T-139-duplex-pair-separation.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-246-forced-scaffold-crossover-price.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/HoneycombTurnLoop.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/ForcedCrossoverPrice.kt",
+        "tile/HoneycombBondClassResidues.kt"
       ]
     },
     "tile/FourLayerTileStudy.kt": {
@@ -3422,6 +4163,9 @@
         "coupling/SingleColumnFlatness.kt",
         "coupling/StapleDropout.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -3432,6 +4176,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/FourLayerTile.kt"
@@ -3445,11 +4191,78 @@
       "declaredSources": null,
       "reaches": [],
       "reachesFiles": [
+        "Physics.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
         "structure/HoneycombRasterTurnSense.kt",
+        "structure/ResultEmission.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombStationLattice.kt",
+        "tile/HoneycombTwoLengthRaster.kt"
+      ]
+    },
+    "tile/HoneycombClosingRasterStudy.kt": {
+      "reads": [
+        "T-218-honeycomb-raster-turn-sense.json",
+        "T-235-coupled-cells-at-the-two-length-raster.json",
+        "T-244-face-bond-class-residues.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-218-honeycomb-raster-turn-sense.json",
+        "T-235-coupled-cells-at-the-two-length-raster.json",
+        "T-244-face-bond-class-residues.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-245-closing-raster-selection.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/FlexureArrayPacking.kt",
+        "anchoring/FlexureMountingSense.kt",
+        "anchoring/OutputElementPlacement.kt",
+        "anchoring/TwoPerRowPlacement.kt",
+        "anchoring/UpwardRootPlacement.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/DropoutRobustPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/SharedBodyCoupling.kt",
+        "coupling/SingleColumnFlatness.kt",
+        "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "electrostatics/DuplexPairSeparation.kt",
+        "electrostatics/Electrolyte.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/CoupledFourLayer.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombClosingFamily.kt",
+        "tile/HoneycombCoupledTile.kt",
+        "tile/HoneycombFaceLattice.kt",
         "tile/HoneycombStationLattice.kt",
         "tile/HoneycombTwoLengthRaster.kt"
       ]
@@ -3473,6 +4286,9 @@
       "reachesFiles": [
         "Physics.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -3484,6 +4300,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/FourLayerTile.kt",
@@ -3514,6 +4332,9 @@
         "coupling/SingleColumnFlatness.kt",
         "coupling/StapleDropout.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -3524,6 +4345,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CoupledFourLayer.kt",
@@ -3531,6 +4354,95 @@
         "tile/HoneycombCoupledTile.kt",
         "tile/HoneycombFaceLattice.kt",
         "tile/HoneycombStationLattice.kt"
+      ]
+    },
+    "tile/HoneycombGrillageRegradeStudy.kt": {
+      "reads": [
+        "T-245-closing-raster-selection.json",
+        "T-253-honeycomb-grillage.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-245-closing-raster-selection.json",
+        "T-253-honeycomb-grillage.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-263-honeycomb-grillage-regrade.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/DropoutRobustPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/SharedBodyCoupling.kt",
+        "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/BandedCholesky.kt",
+        "structure/Cholesky.kt",
+        "structure/ConsumedCrossoverSheet.kt",
+        "structure/CrossoverLayout.kt",
+        "structure/CrossoverPrestrain.kt",
+        "structure/CrossoverSoftening.kt",
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiGrillage.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/CoupledFourLayer.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombCoupledLattice.kt",
+        "tile/HoneycombCoupledTile.kt",
+        "tile/HoneycombFaceLattice.kt",
+        "tile/HoneycombGrillage.kt",
+        "tile/HoneycombStationLattice.kt",
+        "tile/HoneycombTwoLengthRaster.kt"
+      ]
+    },
+    "tile/HoneycombGrillageStudy.kt": {
+      "reads": [
+        "T-246-forced-scaffold-crossover-price.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-246-forced-scaffold-crossover-price.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-253-honeycomb-grillage.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/BandedCholesky.kt",
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombFaceLattice.kt",
+        "tile/HoneycombGrillage.kt"
       ]
     },
     "tile/HoneycombPlacementStudy.kt": {
@@ -3555,6 +4467,9 @@
         "anchoring/UnusedJunctionSite.kt",
         "anchoring/UpwardRootPlacement.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -3565,6 +4480,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "structure/TwistCorrectedRaster.kt",
@@ -3594,6 +4511,9 @@
         "coupling/SharedBodyCoupling.kt",
         "coupling/StapleDropout.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -3604,6 +4524,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CoupledFourLayer.kt",
@@ -3634,6 +4556,9 @@
         "coupling/SingleColumnFlatness.kt",
         "coupling/StapleDropout.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -3645,6 +4570,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CoupledFourLayer.kt",
@@ -3675,6 +4602,9 @@
         "coupling/SharedBodyCoupling.kt",
         "coupling/StapleDropout.kt",
         "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Cholesky.kt",
         "structure/ConsumedCrossoverSheet.kt",
         "structure/CrossoverLayout.kt",
@@ -3685,6 +4615,8 @@
         "structure/OrigamiGrillage.kt",
         "structure/OrigamiSheet.kt",
         "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CoupledFourLayer.kt",
@@ -3716,6 +4648,9 @@
         "Physics.kt",
         "electrostatics/Electrolyte.kt",
         "electrostatics/PolymerLayerPartitioning.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "material/MolecularGeometry.kt",
         "material/OsmoticEquationOfState.kt",
         "material/PegWater.kt",
@@ -3723,6 +4658,8 @@
         "poroelastic/DrainageResponse.kt",
         "poroelastic/LayerPermeability.kt",
         "poroelastic/Water.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "window/ConstraintInterval.kt",
         "window/UpstreamResults.kt",
@@ -3773,7 +4710,12 @@
         "anchoring/FlexureEndJoint.kt",
         "anchoring/StandoffBaseJoint.kt",
         "anchoring/TwoSidedCoupling.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "window/ConstraintInterval.kt",
@@ -3824,6 +4766,11 @@
       ],
       "reachesFiles": [
         "Physics.kt",
+        "environment/Regime.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "window/ConstraintInterval.kt",
         "window/DesignWindowStudy.kt",
@@ -3862,6 +4809,7 @@
       "reachesFiles": [
         "Physics.kt",
         "coupling/CouplingRequirement.kt",
+        "structure/ResultInputs.kt",
         "synthesis/BufferRouteCensus.kt",
         "synthesis/CouplingCeiling.kt"
       ]
@@ -3892,6 +4840,7 @@
       "declaredSources": null,
       "reaches": [],
       "reachesFiles": [
+        "structure/ResultInputs.kt",
         "window/UpstreamResults.kt",
         "window/WindowPhysics.kt",
         "window/WindowResultRounding.kt"
@@ -3941,6 +4890,7 @@
         "anchoring/StandoffBaseJoint.kt",
         "anchoring/TwoSidedCoupling.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultInputs.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "window/ConstraintInterval.kt",
         "window/ResynthesisInputs.kt",
@@ -4133,6 +5083,7 @@
       "reachesFiles": [
         "Physics.kt",
         "coupling/CouplingRequirement.kt",
+        "structure/ResultInputs.kt",
         "synthesis/BufferRouteCensus.kt",
         "synthesis/BufferRouteCensusInputs.kt",
         "synthesis/CouplingCeiling.kt"
@@ -4166,6 +5117,7 @@
         "window/ResynthesisInputs.kt"
       ],
       "reachesFiles": [
+        "structure/ResultInputs.kt",
         "window/ConstraintInterval.kt",
         "window/ResynthesisInputs.kt",
         "window/ResynthesisPhysics.kt",
@@ -4218,6 +5170,7 @@
         "anchoring/StandoffBaseJoint.kt",
         "anchoring/TwoSidedCoupling.kt",
         "structure/Gen1Tile.kt",
+        "structure/ResultInputs.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "window/ConstraintInterval.kt",
         "window/ResynthesisInputs.kt",
@@ -4261,6 +5214,9 @@
     }
   },
   "readersOf": {
+    "T-10-discrete-lattice-tile.json": [
+      "structure/ImportedDesignMechanicsStudy.kt"
+    ],
     "T-108-desired-stroke-reach.json": [
       "anchoring/RangeRobustPlacementStudy.kt",
       "window/SecondResynthesisStudy.kt"
@@ -4321,6 +5277,9 @@
       "coupling/DropoutRobustPlacementStudy.kt",
       "coupling/PathCountFixedGeometryStudy.kt"
     ],
+    "T-139-duplex-pair-separation.json": [
+      "tile/ForcedCrossoverPriceStudy.kt"
+    ],
     "T-14-crossover-phase-and-registration.json": [
       "window/DesignWindowStudy.kt",
       "window/SecondResynthesisStudy.kt",
@@ -4333,6 +5292,7 @@
     ],
     "T-153-buildable-raster-width.json": [
       "anchoring/CrossoverPhaseSelectionStudy.kt",
+      "anchoring/CrossoverVerticalComplianceStudy.kt",
       "anchoring/RowEndCrossoverStiffnessStudy.kt",
       "anchoring/RowEndCrossoverStudy.kt",
       "coupling/BuildableWidthCountPhaseStudy.kt",
@@ -4398,20 +5358,38 @@
     ],
     "T-218-honeycomb-raster-turn-sense.json": [
       "structure/HoneycombTurnLoopStudy.kt",
-      "structure/RaggedFaceCostStudy.kt"
+      "structure/RaggedFaceCostStudy.kt",
+      "tile/HoneycombClosingRasterStudy.kt"
     ],
     "T-219-honeycomb-station-lattice-and-placement.json": [
+      "design/ScaffoldSeamStudy.kt",
       "structure/RaggedFaceCostStudy.kt"
     ],
     "T-232-coupled-cells-at-the-honeycomb-cross-section.json": [
       "structure/RaggedFaceCostStudy.kt"
     ],
     "T-235-coupled-cells-at-the-two-length-raster.json": [
+      "tile/HoneycombClosingRasterStudy.kt",
       "tile/HoneycombColumnWindowStudy.kt"
+    ],
+    "T-244-face-bond-class-residues.json": [
+      "tile/HoneycombClosingRasterStudy.kt"
+    ],
+    "T-245-closing-raster-selection.json": [
+      "tile/HoneycombGrillageRegradeStudy.kt"
+    ],
+    "T-246-forced-scaffold-crossover-price.json": [
+      "tile/HoneycombGrillageStudy.kt"
     ],
     "T-25-window-resynthesis.json": [
       "synthesis/BufferRouteCensusStudy.kt",
       "window/SecondResynthesisStudy.kt"
+    ],
+    "T-253-honeycomb-grillage.json": [
+      "tile/HoneycombGrillageRegradeStudy.kt"
+    ],
+    "T-267-mechanics-on-imported-design.json": [
+      "design/SimulatedTileCensusStudy.kt"
     ],
     "T-3-stroke-and-blocking-force.json": [
       "coupling/OutputCouplingStudy.kt",
@@ -4423,6 +5401,7 @@
       "anchoring/BuildableRasterWidthStudy.kt",
       "anchoring/CrossbarArrayPlacementStudy.kt",
       "anchoring/CrossoverPhaseSelectionStudy.kt",
+      "anchoring/CrossoverVerticalComplianceStudy.kt",
       "anchoring/PlanToleranceStudy.kt",
       "anchoring/RangeRobustPlacementStudy.kt",
       "anchoring/RowEndCrossoverStiffnessStudy.kt",
@@ -4440,6 +5419,7 @@
       "coupling/SharedBodyPlacementStudy.kt",
       "coupling/SingleColumnFlatnessStudy.kt",
       "coupling/StapleDropoutStudy.kt",
+      "design/ScaffoldSeamStudy.kt",
       "electrostatics/EdgeWidthDependenceStudy.kt",
       "electrostatics/ScaffoldRemainderStudy.kt",
       "structure/ConnectivityCeilingPlateStudy.kt",
@@ -4455,8 +5435,11 @@
       "tile/CoupledFourLayerStudy.kt",
       "tile/CrossSectionComparisonStudy.kt",
       "tile/FourLayerTileStudy.kt",
+      "tile/HoneycombClosingRasterStudy.kt",
       "tile/HoneycombColumnWindowStudy.kt",
       "tile/HoneycombCoupledStudy.kt",
+      "tile/HoneycombGrillageRegradeStudy.kt",
+      "tile/HoneycombGrillageStudy.kt",
       "tile/HoneycombPlacementStudy.kt",
       "tile/HoneycombStationLatticeStudy.kt",
       "tile/HoneycombTwoLengthStudy.kt",
@@ -4485,6 +5468,9 @@
     ],
     "T-79-two-spring-elastica.json": [
       "synthesis/WithdrawnCeilingNoteStudy.kt"
+    ],
+    "T-9-crossover-hinge-constant.json": [
+      "anchoring/CrossoverVerticalComplianceStudy.kt"
     ],
     "T-96-flexure-array-packing.json": [
       "window/SecondResynthesisStudy.kt"
@@ -4851,8 +5837,29 @@
     "T-244-face-bond-class-residues.json": [
       "tile/HoneycombBondClassStudy.kt"
     ],
+    "T-245-closing-raster-selection.json": [
+      "tile/HoneycombClosingRasterStudy.kt"
+    ],
+    "T-246-forced-scaffold-crossover-price.json": [
+      "tile/ForcedCrossoverPriceStudy.kt"
+    ],
     "T-25-window-resynthesis.json": [
       "window/WindowResynthesisStudy.kt"
+    ],
+    "T-253-honeycomb-grillage.json": [
+      "tile/HoneycombGrillageStudy.kt"
+    ],
+    "T-263-honeycomb-grillage-regrade.json": [
+      "tile/HoneycombGrillageRegradeStudy.kt"
+    ],
+    "T-267-mechanics-on-imported-design.json": [
+      "structure/ImportedDesignMechanicsStudy.kt"
+    ],
+    "T-274-recommended-block-seam.json": [
+      "design/ScaffoldSeamStudy.kt"
+    ],
+    "T-275-simulated-tile-census.json": [
+      "design/SimulatedTileCensusStudy.kt"
     ],
     "T-3-stroke-and-blocking-force.json": [
       "actuator/StrokeAndBlockingForceStudy.kt"
@@ -4928,6 +5935,9 @@
     ],
     "T-99-flexure-count-hinge-trade.json": [
       "anchoring/FlexureCountHingeTradeStudy.kt"
+    ],
+    "T-9b-crossover-vertical-compliance.json": [
+      "anchoring/CrossoverVerticalComplianceStudy.kt"
     ]
   },
   "resultFiles": [
@@ -5046,7 +6056,16 @@
     "T-235-coupled-cells-at-the-two-length-raster.json",
     "T-243-columns-from-row-spans.json",
     "T-244-face-bond-class-residues.json",
+    "T-245-closing-raster-selection.json",
+    "T-246-forced-scaffold-crossover-price.json",
+    "T-249-unrounded-prose-interpolations.json",
     "T-25-window-resynthesis.json",
+    "T-250-prose-interpolation-sweep.json",
+    "T-253-honeycomb-grillage.json",
+    "T-263-honeycomb-grillage-regrade.json",
+    "T-267-mechanics-on-imported-design.json",
+    "T-274-recommended-block-seam.json",
+    "T-275-simulated-tile-census.json",
     "T-3-stroke-and-blocking-force.json",
     "T-30-flexure-end-joint.json",
     "T-3a-nonlinear-pb-profile.json",
@@ -5069,9 +6088,11 @@
     "T-79-two-spring-elastica.json",
     "T-8-tile-positional-variance.json",
     "T-81-hinge-line-census.json",
+    "T-9-crossover-hinge-constant.json",
     "T-96-flexure-array-packing.json",
     "T-97-paired-perpendicular-junction.json",
-    "T-99-flexure-count-hinge-trade.json"
+    "T-99-flexure-count-hinge-trade.json",
+    "T-9b-crossover-vertical-compliance.json"
   ],
   "unwrittenResultFiles": [
     "P-22-result-reader-census.json",
@@ -5094,7 +6115,10 @@
     "T-220-level-not-a-stiffness-error-bar.json",
     "T-225-departure-spelling-set.json",
     "T-226-nonuniform-coupling-manifold.json",
-    "T-234-honeycomb-correction-supersession.json"
+    "T-234-honeycomb-correction-supersession.json",
+    "T-249-unrounded-prose-interpolations.json",
+    "T-250-prose-interpolation-sweep.json",
+    "T-9-crossover-hinge-constant.json"
   ],
   "missingResultFiles": [],
   "roundingSites": [
@@ -5187,6 +6211,7 @@
         "anchoring/CrossbarJunctionTrioStudy.kt",
         "anchoring/CrossbarTrioExistenceStudy.kt",
         "anchoring/CrossoverPhaseSelectionStudy.kt",
+        "anchoring/CrossoverVerticalComplianceStudy.kt",
         "anchoring/FlexureArrayPackingStudy.kt",
         "anchoring/FlexureCountHingeTradeStudy.kt",
         "anchoring/FlexureEndJointStudy.kt",
@@ -5218,6 +6243,7 @@
         "anchoring/UpwardRootPlacementStudy.kt",
         "anchoring/WeaveExclusionWidthStudy.kt",
         "anchoring/ZeroBiasRestingPositionStudy.kt",
+        "brush/CrossoverLayerStudy.kt",
         "brush/DeterminedPrecisionStudy.kt",
         "brush/FirstMomentConventionStudy.kt",
         "brush/FluctuationCorrectionStudy.kt",
@@ -5237,6 +6263,8 @@
         "coupling/SingleColumnFlatnessStudy.kt",
         "coupling/StapleDropoutStudy.kt",
         "crossover/ConcentratedCrossoverStudy.kt",
+        "design/ScaffoldSeamStudy.kt",
+        "design/SimulatedTileCensusStudy.kt",
         "electrostatics/BeyondMeanFieldGapStudy.kt",
         "electrostatics/CutRimChargeStudy.kt",
         "electrostatics/DuplexPairSeparationStudy.kt",
@@ -5258,6 +6286,7 @@
         "structure/HoneycombRasterTurnSenseStudy.kt",
         "structure/HoneycombTurnLoopStudy.kt",
         "structure/HoneycombTwistCorrectionStudy.kt",
+        "structure/ImportedDesignMechanicsStudy.kt",
         "structure/InPlaneLoadPathStudy.kt",
         "structure/InteriorCrossoverPrestrainStudy.kt",
         "structure/MixedDomainPhaseLatticeStudy.kt",
@@ -5276,10 +6305,14 @@
         "tile/CompositeFractionThresholdStudy.kt",
         "tile/CoupledFourLayerStudy.kt",
         "tile/CrossSectionComparisonStudy.kt",
+        "tile/ForcedCrossoverPriceStudy.kt",
         "tile/FourLayerTileStudy.kt",
         "tile/HoneycombBondClassStudy.kt",
+        "tile/HoneycombClosingRasterStudy.kt",
         "tile/HoneycombColumnWindowStudy.kt",
         "tile/HoneycombCoupledStudy.kt",
+        "tile/HoneycombGrillageRegradeStudy.kt",
+        "tile/HoneycombGrillageStudy.kt",
         "tile/HoneycombPlacementStudy.kt",
         "tile/HoneycombStationLatticeStudy.kt",
         "tile/HoneycombTwoLengthStudy.kt",
@@ -5357,6 +6390,7 @@
         "T-196-composite-fraction-threshold.json",
         "T-197-coupled-four-layer.json",
         "T-199-cross-section-comparison.json",
+        "T-1c-crossover-valid-layer-response.json",
         "T-1d-scf-density-profile.json",
         "T-1e-first-moment-convention.json",
         "T-1f-mean-field-fluctuation-corrections.json",
@@ -5378,7 +6412,14 @@
         "T-235-coupled-cells-at-the-two-length-raster.json",
         "T-243-columns-from-row-spans.json",
         "T-244-face-bond-class-residues.json",
+        "T-245-closing-raster-selection.json",
+        "T-246-forced-scaffold-crossover-price.json",
         "T-25-window-resynthesis.json",
+        "T-253-honeycomb-grillage.json",
+        "T-263-honeycomb-grillage-regrade.json",
+        "T-267-mechanics-on-imported-design.json",
+        "T-274-recommended-block-seam.json",
+        "T-275-simulated-tile-census.json",
         "T-3-stroke-and-blocking-force.json",
         "T-30-flexure-end-joint.json",
         "T-3a-nonlinear-pb-profile.json",
@@ -5401,7 +6442,8 @@
         "T-81-hinge-line-census.json",
         "T-96-flexure-array-packing.json",
         "T-97-paired-perpendicular-junction.json",
-        "T-99-flexure-count-hinge-trade.json"
+        "T-99-flexure-count-hinge-trade.json",
+        "T-9b-crossover-vertical-compliance.json"
       ],
       "downstreamResultFiles": [],
       "testsReadingThem": [

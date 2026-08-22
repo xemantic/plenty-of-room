@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-10",
     "leaves": [
         "A8.2",

@@ -19,9 +19,11 @@ package com.xemantic.nano.plentyofroom.brush
 import com.xemantic.nano.plentyofroom.ELECTRON_VOLT
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.equipartitionRms
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.material.ScalingEquationOfState
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -29,6 +31,7 @@ import kotlinx.serialization.json.Json
 import java.io.File
 import kotlin.math.ln
 import kotlin.math.pow
+import kotlinx.serialization.json.encodeToJsonElement
 
 /**
  * Task `T-1c` / leaf `A2.1` — the layer response re-derived from a **crossover-valid free energy**
@@ -460,7 +463,11 @@ fun main() {
     val json = Json { prettyPrint = true }
     val output = File("gpd/results/T-1c-crossover-valid-layer-response.json")
     output.parentFile.mkdirs()
-    output.writeText(json.encodeToString(result) + "\n")
+    output.writeText(
+        json.encodeToString(
+            json.encodeToJsonElement(result).withEmissionHeader(LatticeTag.NONE, null)
+        ) + "\n"
+    )
     report(result, output)
 }
 

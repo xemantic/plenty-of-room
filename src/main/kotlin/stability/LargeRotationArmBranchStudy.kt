@@ -46,8 +46,11 @@ import com.xemantic.nano.plentyofroom.electrostatics.bjerrumLength
 import com.xemantic.nano.plentyofroom.electrostatics.sternChargeDensityPerVolt
 import com.xemantic.nano.plentyofroom.electrostatics.thermalVoltage
 import com.xemantic.nano.plentyofroom.electrostatics.uniformMedium
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -552,7 +555,7 @@ fun main() {
     )
     output.parentFile.mkdirs()
     output.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForActuatorResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(result).roundedForActuatorResult().withEmissionHeader(LatticeTag.SQUARE, null)) + "\n"
     )
     println()
     result.findings.forEach { (key, value) -> println("  $key:\n    $value\n") }
@@ -565,7 +568,7 @@ fun main() {
 
 /** `C-0084`'s own bias margins at the recommended device, read from its result file. */
 private fun c0084Margins(): Map<String, Double> {
-    val file = File("gpd/results/T-149-recommended-element-fold.json")
+    val file = ResultInputs.T_149.file()
     if (!file.exists()) return emptyMap()
     val reader = Json { ignoreUnknownKeys = true }
     val rows = reader.parseToJsonElement(file.readText()).jsonObject["folds"]!!.jsonArray

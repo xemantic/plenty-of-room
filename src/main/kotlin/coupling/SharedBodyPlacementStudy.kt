@@ -16,6 +16,7 @@
 
 package com.xemantic.nano.plentyofroom.coupling
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
@@ -23,10 +24,12 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundForResult
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -423,15 +426,15 @@ fun main() {
 
     println("T-165 — reading C-0022's solved load, C-0063's placement and C-0093's density ...")
     val designProfile = t165Profile(
-        File("gpd/results/T-3b-tile-edge-load-profile.json"), Triple(2.0, 10.0, 0.192)
+        ResultInputs.T_3B.file(), Triple(2.0, 10.0, 0.192)
     )
     val designField = designProfile.field(interiorPressure, lengthY)
     val roots34 = t165Placement(
-        File("gpd/results/T-125-upward-root-placement.json"), sheet.interhelicalDistance
+        ResultInputs.T_125.file(), sheet.interhelicalDistance
     )
     check(roots34.size == 34) { "C-0063's placement must carry 34 roots" }
     val sharedDensity = t165SharedBodyDensity(
-        File("gpd/results/T-162-shared-body-coupling.json")
+        ResultInputs.T_162.file()
     )
 
     val freeStroke = PlateOnFoundation(
@@ -1313,7 +1316,7 @@ fun main() {
                 digits = T165_DECISION_DIGITS + 3,
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY,
                 floor = T165_DECISION_FLOOR
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         ) + "\n"
     )
     println("T-165 — wrote ${output.path}")

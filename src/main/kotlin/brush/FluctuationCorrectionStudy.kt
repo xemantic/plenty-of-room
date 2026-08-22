@@ -16,9 +16,11 @@
 
 package com.xemantic.nano.plentyofroom.brush
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.structure.SOLVED_HEIGHT_SIGNIFICANT_DIGITS
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -685,7 +687,7 @@ fun main() {
     output.parentFile.mkdirs()
     val json = Json { prettyPrint = true; encodeDefaults = true }
     output.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForFluctuationResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(result).roundedForFluctuationResult().withEmissionHeader(LatticeTag.NONE, null)) + "\n"
     )
     report(result, output)
 }

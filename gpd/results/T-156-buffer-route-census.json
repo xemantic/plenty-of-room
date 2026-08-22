@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-156",
     "leaf": "A2.2",
     "title": "How many of the six 0.5 mM routes are read on WITHDRAWN objects? A census over C-0012, C-0016, C-0017, C-0018, C-0027 and C-0032, re-read on the element C-0071 recommends",

@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "none",
+        "regime": null
+    },
     "task": "T-50",
     "leaf": "A7.4",
     "title": "Beyond mean field at the actuated tile-electrode gap: the correction reaches C-0017's margin only through d ln mu/dh, the threshold is 0.038 nm^-1, and every member of the family this repository can measure is far below it",

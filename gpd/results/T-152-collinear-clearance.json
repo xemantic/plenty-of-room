@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-152",
     "leaf": "A8.2",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm, 0.34 nm rise, crossover phase 24; C-0063's 34 upward roots at a 32 bp = 10.88 nm pitch; C-0017's 33.3333 pN/nm as a SUM, so 0.980392 pN/nm per path at 3 nm; EI = 230 pN nm^2, S = 1100 pN, k_theta = 13.5294 pN nm/rad, A2 = 78.2353; the blunt-end stack -2.63 kcal/mol per helix at 1xTAE + 12.5 mM Mg2+, 22 C (Woo & Rothemund), TRANSFERRED to 2 mM and 300 K and NOT re-measured",

@@ -18,12 +18,15 @@ package com.xemantic.nano.plentyofroom.electrostatics
 
 import com.xemantic.nano.plentyofroom.anchoring.DuplexSteric
 import com.xemantic.nano.plentyofroom.anchoring.armDirections
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -244,7 +247,7 @@ fun main() {
     val shortRange = state.shortRange
     val threshold = C0076_PLACEMENT_THRESHOLD
     val floor = T71_STERIC_FLOOR
-    val rows = t139Stations(File("gpd/results/T-125-upward-root-placement.json"))
+    val rows = t139Stations(ResultInputs.T_125.file())
     check(rows.sumOf { it.second.size } == C0055_ARM_COUNT) {
         "C-0063's placement must carry $C0055_ARM_COUNT roots"
     }
@@ -977,7 +980,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY, floor = 1e-12
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         ) + "\n"
     )
     println("wrote ${output.path}")

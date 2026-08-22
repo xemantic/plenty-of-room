@@ -17,8 +17,10 @@
 package com.xemantic.nano.plentyofroom.anchoring
 
 import com.xemantic.nano.plentyofroom.coupling.attachmentGrid
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
@@ -899,7 +901,7 @@ fun main() {
     val output = File("gpd/results/T-116-hinge-arm-array-packing.json")
     output.parentFile.mkdirs()
     output.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)) + "\n"
     )
 
     println()

@@ -58,6 +58,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from emission_header import with_emission_header  # noqa: E402
+
 # A result file is `T-<id>-<slug>.json` or `P-<id>-<slug>.json`, optionally prefixed by the
 # directory.  A `*` cannot appear, which is what keeps `gpd/results/T-130-*.json` out.
 RESULT_DIRECTORY = "gpd/results"
@@ -259,9 +262,44 @@ def written_literals(text):
     return written
 
 
-def read_literals(text):
-    """Result-file basenames this source READS -- every reference that is not its own output."""
-    return set(file_literals(text)) - written_literals(text)
+#: `{property: result file name}` of `structure/ResultInputs.kt`, the TYPED INPUT HANDLES of
+#: `T-272`'s `P2`.  A study that declares `ResultInputs.T_3B` reads `T-3b-…json`, and this is the
+#: derivation reading that declaration.  It is deliberately NOT recomputed from the file name: the
+#: registry owns the collision rule (`T-119` names two files), and a second implementation of it
+#: here would drift from the first at the next collision.
+HANDLE_REGISTRY = "structure/ResultInputs.kt"
+
+_HANDLE = re.compile(r'val ([A-Z0-9_]+): ResultInput = ResultInput\("[^"]+", "([^"]+)"\)')
+
+_HANDLE_REFERENCE = re.compile(r"(?<![A-Za-z0-9_.])ResultInputs\.([A-Z][A-Z0-9_]*)")
+
+
+def handle_table(sources):
+    """`{property: result file name}` read out of the registry among `sources`, or `{}`."""
+    for path, text in sources.items():
+        if _relative(path) == HANDLE_REGISTRY:
+            return {prop: name for prop, name in _HANDLE.findall(strip_comments(text))}
+    return {}
+
+
+def handle_literals(text, handles):
+    """Result-file basenames this source reads through a typed handle."""
+    stripped = code_only(strip_comments(text))
+    return {handles[prop] for prop in _HANDLE_REFERENCE.findall(stripped) if prop in handles}
+
+
+def read_literals(text, handles=None):
+    """Result-file basenames this source READS -- every reference that is not its own output.
+
+    Two shapes, and `T-272` added the second: a `File(...)` literal, and a typed
+    `ResultInputs.T_3B` handle.  Both are subtracted against the source's own writes, because a
+    study that reads its own output back would otherwise constrain the topological sort against
+    itself.
+    """
+    literals = set(file_literals(text))
+    if handles:
+        literals |= handle_literals(text, handles)
+    return literals - written_literals(text)
 
 
 def has_main(text):
@@ -403,8 +441,13 @@ def build_census(sources):
     """
     files = {}
     blocks = []
+    handles = handle_table(sources)
     for path, text in sorted(sources.items()):
         key = _relative(path)
+        # The REGISTRY is not a reader.  Its own `all` list names every handle, so resolving them
+        # there would make every study that so much as mentions `ResultInputs` inherit all 151
+        # reads -- the exact over-inclusion this census's declaration granularity exists to avoid.
+        block_handles = {} if key == HANDLE_REGISTRY else handles
         is_test = "/test/" in path.replace(os.sep, "/")
         own = []
         for name, body in declaration_blocks(text):
@@ -413,7 +456,7 @@ def build_census(sources):
                 {
                     "file": key,
                     "name": name,
-                    "reads": read_literals(body),
+                    "reads": read_literals(body, block_handles),
                     "writes": written_literals(body),
                     "identifiers": identifiers(body),
                     "isPrivate": _PRIVATE.match(body) is not None,
@@ -740,7 +783,10 @@ def _emit(root, graph):
     }
     path = os.path.join(root, CENSUS_FILE)
     with open(path, "w", encoding="utf-8") as handle:
-        json.dump(payload, handle, indent=2, sort_keys=False)
+        # `T-272`'s `P3`/`P4`. This census is about the corpus and not about a device, so it is on
+        # no crossover lattice and in no regime -- and both are written out, because an omission
+        # and a statement of absence read alike in a file and are not the same fact.
+        json.dump(with_emission_header(payload, "none"), handle, indent=2, sort_keys=False)
         handle.write("\n")
     return path
 

@@ -27,14 +27,17 @@ import com.xemantic.nano.plentyofroom.coupling.latticeInfluenceSurrogate
 import com.xemantic.nano.plentyofroom.coupling.measuredDepthIncorporation
 import com.xemantic.nano.plentyofroom.coupling.summariseDropoutDishing
 import com.xemantic.nano.plentyofroom.coupling.worstSinglePathRemoval
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundForResult
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -475,9 +478,9 @@ private fun t263Placements(
 
 @Suppress("LongMethod", "ComplexMethod", "NestedBlockDepth")
 fun main() {
-    val profile = t263Profile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
-    val t245 = File("gpd/results/T-245-closing-raster-selection.json")
-    val t253 = File("gpd/results/T-253-honeycomb-grillage.json")
+    val profile = t263Profile(ResultInputs.T_3B.file())
+    val t245 = ResultInputs.T_245.file()
+    val t253 = ResultInputs.T_253.file()
     val shared = T263Shared(10, 6, T263_BLOCK_EXTENT_BP, profile)
     val fractions = listOf(0.30, 0.26)
 
@@ -1088,7 +1091,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digits = 9, floor = 1e-12
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.BOTH, null) as JsonObject)
         ) + "\n"
     )
     println("T-263 - wrote " + output.path)

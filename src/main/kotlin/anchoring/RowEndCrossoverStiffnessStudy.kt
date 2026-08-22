@@ -19,6 +19,7 @@ package com.xemantic.nano.plentyofroom.anchoring
 import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.InfluenceSurrogate
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
@@ -31,10 +32,12 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -351,8 +354,8 @@ fun main() {
     val arm = quantisedToRise(C0055_ARM_LENGTH)
 
     println("T-164 — reading C-0022's solved load and C-0090's published readings ...")
-    val (smooth, rim) = solvedProfile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
-    val c0090File = File("gpd/results/T-153-buildable-raster-width.json")
+    val (smooth, rim) = solvedProfile(ResultInputs.T_3B.file())
+    val c0090File = ResultInputs.T_153.file()
     val (admittedPublished, admittedKey) = c0090Reading(c0090File, "RECOMMENDED", PHASE)
     val (refusedPublished, refusedKey) = c0090Reading(c0090File, "BRACKET", PHASE)
 
@@ -860,7 +863,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         )
     )
 

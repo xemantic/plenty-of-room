@@ -16,11 +16,13 @@
 
 package com.xemantic.nano.plentyofroom.brush
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.structure.RESULT_SIGNIFICANT_DIGITS
 import com.xemantic.nano.plentyofroom.structure.SOLVED_HEIGHT_SIGNIFICANT_DIGITS
 import com.xemantic.nano.plentyofroom.structure.determinedDigits
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -633,7 +635,7 @@ fun main() {
                 digits = SOLVED_HEIGHT_SIGNIFICANT_DIGITS,
                 digitsByKey = MOVEMENT_KEY_DIGITS,
                 floor = DIMENSIONLESS_FLOOR
-            )
+            ).withEmissionHeader(LatticeTag.NONE, null)
         ) + "\n"
     )
     println()

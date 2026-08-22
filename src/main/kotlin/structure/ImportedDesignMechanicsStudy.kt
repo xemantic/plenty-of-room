@@ -20,7 +20,9 @@ import com.xemantic.nano.plentyofroom.anchoring.rasterColumnLayout
 import com.xemantic.nano.plentyofroom.design.HONEYCOMB_BLOCK_DESIGN
 import com.xemantic.nano.plentyofroom.design.SQUARE_SHEET_DESIGN
 import com.xemantic.nano.plentyofroom.design.ScadnanoDesign
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.lattice.SquareCrossoverLattice
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.tile.HoneycombBlock
 import com.xemantic.nano.plentyofroom.tile.HoneycombGrillage
 import com.xemantic.nano.plentyofroom.tile.honeycombBlockImport
@@ -182,7 +184,7 @@ private fun t267RelativeDeparture(here: Double, there: Double): Double =
 
 /** The committed `T-10` lattice peak dishing at the nominal foundation and the 50 % edge taper. */
 private fun t267CommittedEdgeTaperPeak(): Double {
-    val file = File("gpd/results/T-10-discrete-lattice-tile.json")
+    val file = ResultInputs.T_10.file()
     require(file.exists()) { "upstream result file is missing: ${file.path}" }
     val cases = Json.parseToJsonElement(file.readText()).jsonObject.getValue("cases").jsonArray
     val nominal = cases.map { it.jsonObject }
@@ -811,7 +813,7 @@ fun main() {
                     "parityPairs/relativeDifference" to DEPARTURE_SIGNIFICANT_DIGITS
                 ),
                 floor = 1e-15
-            )
+            ).withEmissionHeader(LatticeTag.BOTH, null)
         )
     )
     println("T-267 — wrote " + out.path)

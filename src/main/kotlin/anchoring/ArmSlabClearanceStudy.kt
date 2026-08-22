@@ -20,6 +20,7 @@ import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.attachmentGrid
 import com.xemantic.nano.plentyofroom.coupling.couplingSupports
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
@@ -29,10 +30,12 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PointSupport
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -255,11 +258,11 @@ fun main() {
     val standoff = 8.0
 
     println("T-126 — reading C-0063's placement and C-0022's solved load ...")
-    val rowRoots = c0063Placement(File("gpd/results/T-125-upward-root-placement.json"))
+    val rowRoots = c0063Placement(ResultInputs.T_125.file())
     check(rowRoots.sumOf { it.size } == C0055_ARM_COUNT) {
         "C-0063's placement must carry $C0055_ARM_COUNT arms"
     }
-    val (smooth, rim) = solvedProfile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val (smooth, rim) = solvedProfile(ResultInputs.T_3B.file())
     val interiorPressure = Gen1Tile.TARGET_FORCE / area
     val solvedField = edgeCollarPressure(interiorPressure, edgeX, lengthY, listOf(smooth, rim))
     val uniformField = uniformPressure(interiorPressure)
@@ -681,7 +684,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         )
     )
     println("T-126 — wrote ${file.path}")

@@ -26,13 +26,16 @@ import com.xemantic.nano.plentyofroom.coupling.measuredDepthIncorporation
 import com.xemantic.nano.plentyofroom.coupling.summariseDropoutDishing
 import com.xemantic.nano.plentyofroom.coupling.winklerBendingLength
 import com.xemantic.nano.plentyofroom.coupling.worstSinglePathRemoval
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -203,7 +206,7 @@ private class T197Tile(val rasterRows: Int, val layers: Int, private val profile
 
 @Suppress("LongMethod", "ComplexMethod")
 fun main() {
-    val profile = t197Profile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val profile = t197Profile(ResultInputs.T_3B.file())
     val tiles = listOf(T197Tile(15, 4, profile), T197Tile(10, 6, profile))
 
     println("T-197 — the framing, before any coupled cell is graded")
@@ -473,7 +476,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digits = 9, digitsByKey = mapOf("departure" to 2)
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         ) + "\n"
     )
     println("T-197 — wrote ${output.path}")

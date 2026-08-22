@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-19",
     "leaf": "A8.2",
     "title": "The attachment's entry topology: what a tether actually bonds to",

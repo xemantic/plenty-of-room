@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "P-14",
     "leaf": "A7.4",
     "title": "The charge presented by the cut rim of a DNA-origami sheet",

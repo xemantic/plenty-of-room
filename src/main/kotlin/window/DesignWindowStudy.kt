@@ -17,9 +17,12 @@
 package com.xemantic.nano.plentyofroom.window
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.poroelastic.RectangularFootprint
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -290,9 +293,9 @@ data class DesignWindowResult(
 @Suppress("LongMethod", "CyclomaticComplexMethod")
 fun main() {
     val peg = PegWater()
-    val scf = readScfResults(File("gpd/results/T-1d-scf-density-profile.json"))
-    val actuator = readActuatorResults(File("gpd/results/T-3-stroke-and-blocking-force.json"))
-    val layout = readLayoutResults(File("gpd/results/T-14-crossover-phase-and-registration.json"))
+    val scf = readScfResults(ResultInputs.T_1D.file())
+    val actuator = readActuatorResults(ResultInputs.T_3.file())
+    val layout = readLayoutResults(ResultInputs.T_14.file())
 
     val referenceStiffness = layout.referenceLayerStiffness
     val unzipAllowable = layout.unzipAllowableLower
@@ -767,7 +770,7 @@ fun main() {
     val output = File("gpd/results/T-2-design-window.json")
     output.parentFile.mkdirs()
     output.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForWindowResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(result).roundedForWindowResult().withEmissionHeader(LatticeTag.SQUARE, null)) + "\n"
     )
 
     report(result)

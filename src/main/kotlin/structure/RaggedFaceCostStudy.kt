@@ -19,6 +19,8 @@ package com.xemantic.nano.plentyofroom.structure
 import com.xemantic.nano.plentyofroom.coupling.winklerBendingLength
 import com.xemantic.nano.plentyofroom.electrostatics.MagnesiumChlorideBuffer
 import com.xemantic.nano.plentyofroom.electrostatics.transverseDecayRateBound
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.tile.HoneycombCrossSectionGeometry
 import com.xemantic.nano.plentyofroom.tile.LayerCoupling
 import com.xemantic.nano.plentyofroom.tile.multiLayerRigidities
@@ -269,7 +271,7 @@ fun main() {
 
     // ------------------------------------------------------ Deliverable 3: the flatness bound
     val tightest = t231TightestFlatCell(
-        File("gpd/results/T-232-coupled-cells-at-the-honeycomb-cross-section.json")
+        ResultInputs.T_232.file()
     )
     val threshold = (T231_FLATNESS_THRESHOLD - tightest) / tightest
     val edgeX = 112 * rise
@@ -341,7 +343,7 @@ fun main() {
     }
 
     // ---------------------------------------------------------- Deliverable 5: the plan budget
-    val t219 = File("gpd/results/T-219-honeycomb-station-lattice-and-placement.json")
+    val t219 = ResultInputs.T_219.file()
     val plan = designs.flatMap { (name, _, _) ->
         t231Ceilings(t219, name).map { (paths, ceiling) ->
             T231PlanRecord(
@@ -401,7 +403,7 @@ fun main() {
     }
 
     // ----------------------------------------------------------------- upstream reproductions
-    val t218 = File("gpd/results/T-218-honeycomb-raster-turn-sense.json")
+    val t218 = ResultInputs.T_218.file()
     val t218Extent = Json.parseToJsonElement(t218.readText()).jsonObject
         .getValue("parameters").jsonObject
         .getValue("recommendedAxialExtentBasePairs").jsonPrimitive.content.toDouble()
@@ -748,7 +750,7 @@ fun main() {
     val json = Json { prettyPrint = true }
     val out = File("gpd/results/T-231-ragged-face-cost.json")
     out.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForResult(floor = 1e-15))
+        json.encodeToString(json.encodeToJsonElement(result).roundedForResult(floor = 1e-15).withEmissionHeader(LatticeTag.BOTH, null))
     )
     println("T-231 — wrote ${out.path}")
     findings.forEach { println("  * $it") }

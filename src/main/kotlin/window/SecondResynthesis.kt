@@ -22,6 +22,7 @@ import com.xemantic.nano.plentyofroom.anchoring.StandoffBase
 import com.xemantic.nano.plentyofroom.anchoring.coupledFlexureSpan
 import com.xemantic.nano.plentyofroom.anchoring.standoffTipFlexibility
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonArray
@@ -624,9 +625,9 @@ class SecondResynthesisInputs(
     companion object {
 
         fun read(directory: File): SecondResynthesisInputs {
-            val windows = File(directory, "T-25-window-resynthesis.json").array("windows")
+            val windows = ResultInputs.T_25.file(directory).array("windows")
                 .map { reader.decodeFromJsonElement(PublishedWindow.serializer(), it) }
-            val collar = File(directory, "T-60-collar-on-the-equilibrium-path.json")
+            val collar = ResultInputs.T_60.file(directory)
             val decompositions = collar.array("decomposition")
                 .map { reader.decodeFromJsonElement(CollarDecomposition.serializer(), it) }
             val folds = collar.array("folds")
@@ -634,14 +635,14 @@ class SecondResynthesisInputs(
                     it.jsonObject["pullInStroke"]?.toString()?.trim('"') !in listOf(null, "null")
                 }
                 .map { reader.decodeFromJsonElement(BaselineFold.serializer(), it) }
-            val reachFile = File(directory, "T-108-desired-stroke-reach.json")
+            val reachFile = ResultInputs.T_108.file(directory)
             val reach = reachFile.array("reach")
                 .map { reader.decodeFromJsonElement(ReachRecord.serializer(), it) }
             val bounds = reachFile.array("reachBounds")
                 .map { reader.decodeFromJsonElement(ReachBound.serializer(), it) }
             // C-0041's buildable path count, read from its own design table rather than
             // transcribed: the largest count whose plan view actually fits the Gen-1 tile
-            val packing = File(directory, "T-96-flexure-array-packing.json").array("designs")
+            val packing = ResultInputs.T_96.file(directory).array("designs")
                 .map { it.jsonObject }
                 .filter { it.getValue("packsOnGen1Tile").toString().trim('"').toBoolean() }
                 .maxOf { it.getValue("pathCount").toString().trim('"').toDouble() }

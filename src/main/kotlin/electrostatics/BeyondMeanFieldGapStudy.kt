@@ -17,9 +17,12 @@
 package com.xemantic.nano.plentyofroom.electrostatics
 
 import com.xemantic.nano.plentyofroom.brush.bracketedRoot
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_SIGNIFICANT_DIGITS
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
@@ -790,7 +793,7 @@ fun main() {
     val ions = IonModel(buffer.magnesiumNumberDensity)
 
     val requirements = readCouplingRequirements(
-        File("gpd/results/T-16-output-coupling-stiffness.json")
+        ResultInputs.T_16.file()
     )
     val thresholdRecords = thresholds(requirements)
     val withFloor = thresholdRecords.filter { it.hasFloor }
@@ -1584,7 +1587,7 @@ fun main() {
                     "gradientOverThreshold" to DEPARTURE_GRADIENT_DIGITS
                 ),
                 floor = 1.0e-12
-            )
+            ).withEmissionHeader(LatticeTag.NONE, null)
         ) + "\n"
     )
     println("wrote ${output.path}")

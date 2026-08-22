@@ -34,6 +34,7 @@ import com.xemantic.nano.plentyofroom.brush.reducedThirdVirialCoefficient
 import com.xemantic.nano.plentyofroom.brush.stiffness
 import com.xemantic.nano.plentyofroom.brush.threeBodyInteraction
 import com.xemantic.nano.plentyofroom.brush.twoBodyInteraction
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.poroelastic.FiberArrayPermeability
 import com.xemantic.nano.plentyofroom.poroelastic.FreeDrainingSegments
@@ -42,6 +43,7 @@ import com.xemantic.nano.plentyofroom.poroelastic.brinkmanTransmissivity
 import com.xemantic.nano.plentyofroom.poroelastic.squeezeDragCoefficient
 import com.xemantic.nano.plentyofroom.poroelastic.tileStokesDrag
 import com.xemantic.nano.plentyofroom.poroelastic.waterViscosity
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -624,7 +626,7 @@ fun main() {
     val json = Json { prettyPrint = true }
     val output = File("gpd/results/T-8-tile-positional-variance.json")
     output.parentFile.mkdirs()
-    output.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n")
+    output.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)) + "\n")
     report(result, nominal.chain.monomersPerChain, output)
 }
 

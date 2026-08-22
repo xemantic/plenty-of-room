@@ -68,7 +68,10 @@ class ParameterBlockRoundingTest {
     fun `gate 3 conservation - every parameter-block spelling the corpus uses should pass through`() {
         // The census (`T-268`): `parameters` 95, `citedInputs` 41, `runParameters` 19 occurrences
         // in the 148 committed result files, every one of them at top level.
-        assert(PARAMETER_RECORDS == setOf("parameters", "runParameters", "citedInputs"))
+        assert(
+            PARAMETER_RECORDS
+                    == setOf("parameters", "runParameters", "citedInputs", "emission")
+        )
         PARAMETER_RECORDS.forEach { record ->
             val out = round("""{"$record":{"x":$wallCharge}}""")
             assert(

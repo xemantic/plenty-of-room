@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-138 — C-0069's path-count sensitivity re-sizes the element but not the array",
     "leaf": "A8.2",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at 2.69 nm, 0.34 nm rise, crossover phase 24; C-0017's 33.3333 pN/nm as a SUM at S3's acceptable 3 nm; C-0039's exact elastica on a one-crossover root (k_theta = 13.5294 pN nm/rad) and C-0034's A2 tip (78.2353); EI = 230.0 pN nm^2; C-0053's footprint convention",
@@ -977,6 +981,6 @@
         "t136RecommendedPhase": 8.0,
         "t136RecommendedCeiling": 9.535000000301412,
         "t136RecommendedMargin": 1.764511927080064,
-        "t136RecommendedMinimax": 0.06822008970269246
+        "t136RecommendedMinimax": 0.06822008970269242
     }
 }

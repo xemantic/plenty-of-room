@@ -328,6 +328,28 @@ def main(argv):
         return 1 if self_test() else 0
     if self_test():
         return 1
+    # AN UNRECOGNISED OPTION MUST NOT EMIT (`T-272`). Every flag here was matched by `in argv`
+    # and anything else fell through to a full re-emission, so `tools/T-250-emit-result.py --help`
+    # rewrote this task's own committed result file -- 241 pointers removed and 34 numeric fields
+    # moved -- while printing a usage-looking wall of text. Same family as the shadow directory
+    # `P-28` found as `./--check/` and this task found again as `./--help/`: an argument nobody
+    # validated, doing something nobody asked for.
+    known = {"--self-test", "--check", "--baseline"}
+    index = 0
+    unknown = []
+    while index < len(argv):
+        argument = argv[index]
+        if argument == "--baseline":
+            index += 2
+            continue
+        if argument not in known:
+            unknown.append(argument)
+        index += 1
+    if unknown:
+        print(__doc__ or "usage: tools/T-250-emit-result.py [--check] [--baseline <ref>]",
+              file=sys.stderr)
+        print("unrecognised argument(s): %s" % ", ".join(unknown), file=sys.stderr)
+        return 2
     check_only = "--check" in argv
     baseline = "HEAD"
     if "--baseline" in argv:

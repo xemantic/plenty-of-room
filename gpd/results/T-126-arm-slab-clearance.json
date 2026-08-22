@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-126 — does the arm slab clear C-0035's tie-down path?",
     "leaf": "A8.2",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS-measured 2.69 nm; C-0063's phase-24 placement of C-0055's 34 arms at C-0039's 8.164 nm; C-0035's Su mounting at a standoff of 8.0 nm; SS3's acceptable 3 nm stroke; C-0022's solved profile at 2 mM, a 10 nm gap and 0.192 V",

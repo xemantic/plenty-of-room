@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-161",
     "leaf": "A8.2",
     "question": "can a crossover be drawn at the LAST base pair of a duplex?",

@@ -26,13 +26,16 @@ import com.xemantic.nano.plentyofroom.coupling.measuredDepthIncorporation
 import com.xemantic.nano.plentyofroom.coupling.summariseDropoutDishing
 import com.xemantic.nano.plentyofroom.coupling.winklerBendingLength
 import com.xemantic.nano.plentyofroom.coupling.worstSinglePathRemoval
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -475,7 +478,7 @@ fun main() {
     val rise = Gen1Tile.RISE_PER_BASE_PAIR
     val rowPitch = HoneycombCrossSectionGeometry.rowPitch(d)
     val columnPitch = HoneycombCrossSectionGeometry.columnPitch(d)
-    val profile = t235Profile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val profile = t235Profile(ResultInputs.T_3B.file())
     val ladderPitch = Gen1Tile.CROSSOVER_SPACING_HONEYCOMB_BP * rise / 2.0
 
     // ------------------------------------------------------- the cheap bound, exact arithmetic
@@ -1372,7 +1375,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digits = 9, floor = 1e-12
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.BOTH, null) as JsonObject)
         ) + "\n"
     )
     println("T-235 - wrote " + output.path)

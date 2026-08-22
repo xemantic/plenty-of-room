@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-129 — is C-0063's flat 34-root placement flat over a RANGE?",
     "leaf": "A8.2",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous MgCl2 at 0.5 / 2 / 10 mM; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at 2.69 nm, phase 24 carrying its OWN eight crossover columns; C-0055's 34 upward roots at C-0063's swept placement; C-0017's 33.3333 pN/nm mandate as a SUM; C-0022's SOLVED edge profiles keyed on (concentration, gap, bias); C-0001's foundation secant; free-tile stroke 4.90731 nm",
@@ -675,7 +679,7 @@
             "containsTwoNanometreState": false,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.0706145537,
-            "minimaxWorstOverStroke": 0.0244330085,
+            "minimaxWorstOverStroke": 0.0243353718,
             "flatWithEqualSprings": true,
             "flatWithADistribution": true
         },
@@ -687,7 +691,7 @@
             "containsTwoNanometreState": false,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.079771469,
-            "minimaxWorstOverStroke": 0.0242562307,
+            "minimaxWorstOverStroke": 0.0242718332,
             "flatWithEqualSprings": true,
             "flatWithADistribution": true
         },
@@ -752,7 +756,7 @@
             "containsTwoNanometreState": false,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.11043016,
-            "minimaxWorstOverStroke": 0.0545202803,
+            "minimaxWorstOverStroke": 0.0545157715,
             "flatWithEqualSprings": false,
             "flatWithADistribution": true
         },
@@ -765,7 +769,7 @@
             "containsTwoNanometreState": false,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.11043016,
-            "minimaxWorstOverStroke": 0.0501892845,
+            "minimaxWorstOverStroke": 0.0501749062,
             "flatWithEqualSprings": false,
             "flatWithADistribution": true
         },
@@ -779,7 +783,7 @@
             "containsTwoNanometreState": false,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.11043016,
-            "minimaxWorstOverStroke": 0.0552227717,
+            "minimaxWorstOverStroke": 0.0552302795,
             "flatWithEqualSprings": false,
             "flatWithADistribution": true
         },
@@ -820,7 +824,7 @@
             "containsTwoNanometreState": false,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.11043016,
-            "minimaxWorstOverStroke": 0.0670876866,
+            "minimaxWorstOverStroke": 0.0670975863,
             "flatWithEqualSprings": false,
             "flatWithADistribution": true
         },
@@ -900,7 +904,7 @@
             "containsTwoNanometreState": true,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.199989871,
-            "minimaxWorstOverStroke": 0.110704784,
+            "minimaxWorstOverStroke": 0.110704661,
             "flatWithEqualSprings": false,
             "flatWithADistribution": false
         },
@@ -928,7 +932,7 @@
             "containsTwoNanometreState": true,
             "containsTenNanometreState": true,
             "equalSpringWorstOverStroke": 0.199989871,
-            "minimaxWorstOverStroke": 0.112790742,
+            "minimaxWorstOverStroke": 0.112790903,
             "flatWithEqualSprings": false,
             "flatWithADistribution": false
         },
@@ -1413,8 +1417,8 @@
         "s3GraftingDensityAtFive": 0.092,
         "singleStateDishingOverStroke": 0.07061455367969466,
         "designRangeEqualSpringOverStroke": 0.07885001627502447,
-        "designRangeMinimaxOverStroke": 0.029141966295651342,
-        "designRangeFloorOverStroke": 0.0031213253012380426,
+        "designRangeMinimaxOverStroke": 0.02914196629565134,
+        "designRangeFloorOverStroke": 0.0031213253012380413,
         "fiveStateEqualSpringOverStroke": 0.1999898710941603,
         "fiveStateMinimaxOverStroke": 0.11243522020694384,
         "placementsEnumerated": 723168.0,

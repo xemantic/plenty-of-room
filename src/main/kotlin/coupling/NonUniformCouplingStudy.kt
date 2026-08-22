@@ -17,6 +17,7 @@
 package com.xemantic.nano.plentyofroom.coupling
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.GrillageDeflection
@@ -25,9 +26,11 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PointSupport
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -409,7 +412,7 @@ fun main() {
 
     println("T-113 — reading C-0022's solved edge profile ...")
     val uniformProfile = T113Profile("uniform", null, null, null, 0.0, 1.0, 0.0)
-    val solved = t113SolvedProfiles(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val solved = t113SolvedProfiles(ResultInputs.T_3B.file())
     val headline = T113_HEADLINE_STATES.map { (concentration, gap, bias) ->
         solved.firstOrNull {
             it.concentration == concentration && it.gapHeight == gap && it.appliedBias == bias
@@ -1311,7 +1314,7 @@ fun main() {
     output.writeText(
         json.encodeToString(
             JsonObject.serializer(),
-            json.encodeToJsonElement(result).jsonObject.roundedForCouplingResult().jsonObject
+            json.encodeToJsonElement(result).jsonObject.roundedForCouplingResult().withEmissionHeader(LatticeTag.SQUARE, null).jsonObject
         )
     )
     t113Report(result, output, started)

@@ -18,6 +18,8 @@ package com.xemantic.nano.plentyofroom.structure
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.anchoring.MeasuredBackbone
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -341,7 +343,7 @@ fun main() {
     }
 
     // --------------------------------------------------------------- Deliverable 5: upstream
-    val t218 = File("gpd/results/T-218-honeycomb-raster-turn-sense.json")
+    val t218 = ResultInputs.T_218.file()
     val thereM13 = t230Field(t218, "parameters", "maximumPairedRowLengthOnM13").toDouble()
     val thereP8064 = t230Field(t218, "parameters", "maximumPairedRowLengthOnP8064").toDouble()
     val thereLoop = t230Field(t218, "parameters", "loopNucleotidesPerSixtyHelixTile").toDouble()
@@ -670,7 +672,7 @@ fun main() {
     val json = Json { prettyPrint = true }
     val out = File("gpd/results/T-230-honeycomb-turn-loop-slack.json")
     out.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForResult(floor = 1e-15))
+        json.encodeToString(json.encodeToJsonElement(result).roundedForResult(floor = 1e-15).withEmissionHeader(LatticeTag.BOTH, null))
     )
     println("T-230 — wrote ${out.path}")
     findings.forEach { println("  * $it") }

@@ -16,6 +16,8 @@
 
 package com.xemantic.nano.plentyofroom.structure
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
@@ -296,7 +298,7 @@ fun main() {
     }
 
     // ------------------------------------------------------------------ the reproduction gates
-    val t198 = File("gpd/results/T-198-honeycomb-raster-width.json")
+    val t198 = ResultInputs.T_198.file()
     val publishedOffsets = t217ScaffoldOffsetsOn112(t198)
     val hereOffsets = (0..111)
         .filter { Math.floorMod(it, honeycomb.azimuthPeriodBasePairs) in
@@ -573,7 +575,7 @@ fun main() {
     val out = File("gpd/results/T-217-honeycomb-twist-correction.json")
     out.writeText(
         json.encodeToString(
-            json.encodeToJsonElement(result).roundedForResult(floor = 1e-15)
+            json.encodeToJsonElement(result).roundedForResult(floor = 1e-15).withEmissionHeader(LatticeTag.SQUARE, null)
         )
     )
     println("T-217 — wrote ${out.path}")

@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "none",
+        "regime": null
+    },
     "task": "T-16",
     "leaf": "A8.2",
     "title": "The minimum output-coupling stiffness of the Gen-1 actuator, read at the bias that delivers §3's own targets, and what a DNA-origami lever can deliver against it",

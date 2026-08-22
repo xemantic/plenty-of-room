@@ -18,6 +18,7 @@ package com.xemantic.nano.plentyofroom.coupling
 
 import com.xemantic.nano.plentyofroom.anchoring.UpwardRootInfluenceBank
 import com.xemantic.nano.plentyofroom.anchoring.upwardRootLattice
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
@@ -25,10 +26,12 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundForResult
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -383,7 +386,7 @@ fun main() {
     val interiorPressure = Gen1Tile.TARGET_FORCE / (T163_EDGE_X * lengthY)
 
     println("T-163 — reading C-0022's solved load, the standing placements and C-0075's plan ...")
-    val loadFile = File("gpd/results/T-3b-tile-edge-load-profile.json")
+    val loadFile = ResultInputs.T_3B.file()
     val designProfile = t163Profile(loadFile, Triple(2.0, 10.0, 0.192))
     val heldProfile = t163Profile(loadFile, Triple(2.0, 7.0, 0.192))
     val designField = designProfile.field(interiorPressure, lengthY)
@@ -394,16 +397,16 @@ fun main() {
     ).solve(uniformPressure(interiorPressure)).meanDeflection
 
     val anchorRows = t163PlacementRows(
-        File("gpd/results/T-125-upward-root-placement.json"), "bestPlacement"
+        ResultInputs.T_125.file(), "bestPlacement"
     )
     check(anchorRows.sumOf { it.size } == 34) { "C-0063's placement must carry 34 roots" }
     val roots30Rows = t163PlacementRows(
-        File("gpd/results/T-136-two-per-row-placement.json"), "recommendedPlacement"
+        ResultInputs.T_136.file(), "recommendedPlacement"
     )
     check(roots30Rows.sumOf { it.size } == 30) { "C-0074's placement must carry 30 roots" }
-    val plan = t163PlanTable(File("gpd/results/T-138-path-count-consistency.json"))
+    val plan = t163PlanTable(ResultInputs.T_138.file())
     val abstractCurve = t163AbstractDensityCurve(
-        File("gpd/results/T-155-dropout-robust-placement.json")
+        ResultInputs.T_155.file()
     )
     check(abstractCurve.size >= 5) { "C-0089's density curve must carry its six grid rows" }
 
@@ -1208,7 +1211,7 @@ fun main() {
                 digits = T163_DECISION_DIGITS + 3,
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY,
                 floor = T163_DECISION_FLOOR
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         ) + "\n"
     )
 

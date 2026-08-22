@@ -19,11 +19,13 @@ package com.xemantic.nano.plentyofroom.brush
 import com.xemantic.nano.plentyofroom.ELECTRON_VOLT
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.equipartitionRms
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.structure.SOLVED_HEIGHT_SIGNIFICANT_DIGITS
 import com.xemantic.nano.plentyofroom.structure.roundForResult as roundToSignificantDigits
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -495,7 +497,7 @@ fun main() {
     output.parentFile.mkdirs()
     output.writeText(
         json.encodeToString(
-            json.parseToJsonElement(json.encodeToString(result)).roundedForScfResult()
+            json.parseToJsonElement(json.encodeToString(result)).roundedForScfResult().withEmissionHeader(LatticeTag.NONE, null)
         ) + "\n"
     )
     report(result, output, elapsed)

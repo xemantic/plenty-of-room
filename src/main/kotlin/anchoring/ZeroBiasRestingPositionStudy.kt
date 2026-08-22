@@ -46,6 +46,7 @@ import com.xemantic.nano.plentyofroom.electrostatics.diffusePotentialOfAppliedBi
 import com.xemantic.nano.plentyofroom.electrostatics.sternChargeDensityPerVolt
 import com.xemantic.nano.plentyofroom.electrostatics.thermalVoltage
 import com.xemantic.nano.plentyofroom.electrostatics.uniformMedium
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.poroelastic.FiberArrayPermeability
 import com.xemantic.nano.plentyofroom.poroelastic.RectangularFootprint
@@ -55,6 +56,7 @@ import com.xemantic.nano.plentyofroom.poroelastic.tileStokesDrag
 import com.xemantic.nano.plentyofroom.poroelastic.waterViscosity
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -1050,7 +1052,7 @@ fun main() {
     val file = File("gpd/results/T-13-zero-bias-resting-position.json")
     file.parentFile.mkdirs()
     val json = Json { prettyPrint = true; encodeDefaults = true }
-    file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n")
+    file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.NONE, null)) + "\n")
     println("wrote ${file.path}")
     report(result)
 }

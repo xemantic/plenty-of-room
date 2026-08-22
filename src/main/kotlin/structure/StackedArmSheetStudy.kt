@@ -22,7 +22,9 @@ import com.xemantic.nano.plentyofroom.coupling.couplingSupports
 import com.xemantic.nano.plentyofroom.coupling.admissibleStiffnessRatio
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
 import com.xemantic.nano.plentyofroom.coupling.rimStiffenedWeights
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -344,18 +346,18 @@ fun main() {
 
     println("T-121 — reading C-0055's placement, C-0022's solved load and C-0004's drag ...")
     val arms = c0055Arms(
-        File("gpd/results/T-119-unused-junction-site.json"), C0055_ARM_LENGTH
+        ResultInputs.T_119_UNUSED_JUNCTION_SITE.file(), C0055_ARM_LENGTH
     )
     check(arms.size == C0055_ARM_COUNT) {
         "C-0055's placement must carry $C0055_ARM_COUNT arms, carried ${arms.size}"
     }
-    val (smooth, rim) = solvedProfile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val (smooth, rim) = solvedProfile(ResultInputs.T_3B.file())
     val solvedField = edgeCollarPressure(
         interiorPressure, Gen1Tile.EDGE_X, lengthY, listOf(smooth, rim)
     )
     val uniformField = uniformPressure(interiorPressure)
     val (nominalDrainage, worstDrainage) = drainagePoints(
-        File("gpd/results/T-7-poroelastic-drainage.json")
+        ResultInputs.T_7.file()
     )
 
     // ------------------------------------------------------------------ the cheap bounds
@@ -1012,7 +1014,7 @@ fun main() {
         json.encodeToString(
             (json.encodeToJsonElement(result) as JsonObject).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY
-            )
+            ).withEmissionHeader(LatticeTag.SQUARE, null)
         )
     )
     t121Report(result, output, started)

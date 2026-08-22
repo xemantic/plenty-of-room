@@ -16,6 +16,8 @@
 
 package com.xemantic.nano.plentyofroom.structure
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -1339,7 +1341,7 @@ fun main() {
     val output = File("gpd/results/T-19-attachment-entry-topology.json")
     output.parentFile.mkdirs()
     output.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)) + "\n"
     )
 
     // ---------------------------------------------------------------- console

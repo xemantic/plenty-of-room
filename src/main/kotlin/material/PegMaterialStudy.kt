@@ -22,12 +22,15 @@ import com.xemantic.nano.plentyofroom.brush.DeGennesScaling
 import com.xemantic.nano.plentyofroom.brush.alexanderDeGennesMatchedExcludedVolume
 import com.xemantic.nano.plentyofroom.brush.brushOfHeight
 import com.xemantic.nano.plentyofroom.brush.heightUnderLoad
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import java.io.File
 import kotlin.math.pow
+import kotlinx.serialization.json.encodeToJsonElement
 
 /**
  * Task `P-3` — the PEG/water material parameter sheet, and the placement of the `T-1`
@@ -205,7 +208,11 @@ fun main() {
     val json = Json { prettyPrint = true }
     val output = File("gpd/results/P-3-peg-material-parameters.json")
     output.parentFile.mkdirs()
-    output.writeText(json.encodeToString(result) + "\n")
+    output.writeText(
+        json.encodeToString(
+            json.encodeToJsonElement(result).withEmissionHeader(LatticeTag.NONE, null)
+        ) + "\n"
+    )
     report(result, peg, output)
 }
 

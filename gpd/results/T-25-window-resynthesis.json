@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-25",
     "leaf": "A2.1, re-checking the acceptance strings of A2.2, A1.1, A1.2, A8.2 and A7.4",
     "title": "The Gen-1 design window and the output-coupling verdict, re-run against iteration 4",

@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "honeycomb",
+        "regime": null
+    },
     "task": "T-244 - the honeycomb face's crossover bond-class residues, and the inter-row ladder offset",
     "leaf": "A8.2",
     "units": {

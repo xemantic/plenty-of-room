@@ -19,6 +19,7 @@ package com.xemantic.nano.plentyofroom.anchoring
 import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.couplingSupports
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
@@ -29,10 +30,12 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PointSupport
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -327,12 +330,12 @@ fun main() {
     val sheet = sheet()
 
     println("T-134 — reading C-0063's stations and C-0022's solved load ...")
-    val stations = c0063Stations(File("gpd/results/T-125-upward-root-placement.json"))
+    val stations = c0063Stations(ResultInputs.T_125.file())
     check(stations.size == C0055_ARM_COUNT) {
         "C-0063's placement must carry $C0055_ARM_COUNT stations, carried ${stations.size}"
     }
     val rows = stationRows(stations)
-    val (smooth, rim) = solvedProfile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val (smooth, rim) = solvedProfile(ResultInputs.T_3B.file())
     val interiorPressure = Gen1Tile.TARGET_FORCE / area
     val solvedField = edgeCollarPressure(interiorPressure, edgeX, lengthY, listOf(smooth, rim))
     val freeStroke = PlateOnFoundation(
@@ -582,7 +585,7 @@ fun main() {
 
     // ------------------------------------------------------------ deliverable 5: the seat sweep
     println("T-134 — C-0070's lateral seat, swept ...")
-    val floors = c0062Floors(File("gpd/results/T-127-crossbar-trio-existence.json"))
+    val floors = c0062Floors(ResultInputs.T_127.file())
     val referenceRow = 9
     val (capFloor, flexureFloor) = floors[referenceRow]
         ?: error("C-0062 has no floors at the $referenceRow bp row")
@@ -1301,7 +1304,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         )
     )
     println("T-134 — wrote ${file.path}")

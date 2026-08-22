@@ -16,9 +16,11 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.ShearJointAllowable
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.synthesis.clauseCeilingReading
 import com.xemantic.nano.plentyofroom.synthesis.declaredComplianceCeiling
 import com.xemantic.nano.plentyofroom.synthesis.pastClauseCeilingNote
@@ -866,7 +868,7 @@ fun main() {
     val json = Json { prettyPrint = true }
     val file = File("gpd/results/T-79-two-spring-elastica.json")
     file.parentFile.mkdirs()
-    file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult()))
+    file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)))
 
     println("T-79 — a large-rotation two-spring elastica for E5's arm")
     println()

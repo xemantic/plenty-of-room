@@ -17,12 +17,15 @@
 package com.xemantic.nano.plentyofroom.material
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import java.io.File
 import kotlin.math.abs
+import kotlinx.serialization.json.encodeToJsonElement
 
 /**
  * Task `P-6` — how far PEG/water's solvent quality moves between the Gen-1 buffers,
@@ -421,7 +424,11 @@ fun main() {
     val json = Json { prettyPrint = true }
     val output = File("gpd/results/P-6-solvent-quality-vs-salt.json")
     output.parentFile.mkdirs()
-    output.writeText(json.encodeToString(result) + "\n")
+    output.writeText(
+        json.encodeToString(
+            json.encodeToJsonElement(result).withEmissionHeader(LatticeTag.NONE, null)
+        ) + "\n"
+    )
 
     println("=== P-6 — solvent quality of PEG/water against salt ".padEnd(96, '='))
     println()

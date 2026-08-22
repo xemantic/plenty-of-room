@@ -18,6 +18,8 @@ package com.xemantic.nano.plentyofroom.brush
 
 import com.xemantic.nano.plentyofroom.ELECTRON_VOLT
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -25,6 +27,7 @@ import kotlinx.serialization.encodeToString
 import java.io.File
 import kotlin.math.ln
 import kotlin.math.exp
+import kotlinx.serialization.json.encodeToJsonElement
 
 /**
  * Task `T-1` / leaf `A2.1` — the stiffness of the polymer layer under the tile,
@@ -162,7 +165,11 @@ fun main() {
     val json = Json { prettyPrint = true }
     val output = File("gpd/results/T-1-layer-stiffness.json")
     output.parentFile.mkdirs()
-    output.writeText(json.encodeToString(result) + "\n")
+    output.writeText(
+        json.encodeToString(
+            json.encodeToJsonElement(result).withEmissionHeader(LatticeTag.NONE, null)
+        ) + "\n"
+    )
     report(result, output)
 }
 

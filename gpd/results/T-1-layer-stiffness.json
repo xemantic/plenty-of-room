@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "none",
+        "regime": null
+    },
     "task": "T-1",
     "leaf": "A2.1",
     "title": "Stiffness of the grafted polymer layer under the Gen-1 tile",

@@ -16,8 +16,10 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
@@ -985,7 +987,7 @@ fun main() {
     val file = File("gpd/results/T-106-truss-cap.json")
     file.parentFile?.mkdirs()
     file.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)) + "\n"
     )
 
     println("T-106 — the truss cap as a solved body")

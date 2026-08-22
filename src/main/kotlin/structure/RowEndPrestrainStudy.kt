@@ -28,6 +28,8 @@ import com.xemantic.nano.plentyofroom.anchoring.rasterUpwardSites
 import com.xemantic.nano.plentyofroom.anchoring.rowEndCrossoverSites
 import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
@@ -462,9 +464,9 @@ fun main() {
     val hinge = Gen1Tile.crossoverHingeStiffness()
 
     println("T-172 — reading C-0022's solved load and C-0090's published reading ...")
-    val (smooth, rim) = solvedProfile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val (smooth, rim) = solvedProfile(ResultInputs.T_3B.file())
     val (publishedDishing, publishedKey) =
-        c0090Reading(File("gpd/results/T-153-buildable-raster-width.json"), "RECOMMENDED", PHASE)
+        c0090Reading(ResultInputs.T_153.file(), "RECOMMENDED", PHASE)
 
     val host = T172Host(sheet, edgeX, arm, smooth, rim)
     check(host.columns.size == 8) { "phase $PHASE must carry 8 columns" }
@@ -1042,7 +1044,7 @@ fun main() {
     val json = Json { prettyPrint = true }
     val file = File("gpd/results/T-172-row-end-prestrain.json")
     file.parentFile.mkdirs()
-    file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult()))
+    file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)))
 
     println()
     println("T-172 — the row-end crossover's prestrain")

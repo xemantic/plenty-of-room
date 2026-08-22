@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "both",
+        "regime": null
+    },
     "task": "T-274",
     "leaf": "A8.2",
     "title": "Does the recommended 10 x 6 honeycomb block need a scaffold seam, and is the committed design drawn without one?",

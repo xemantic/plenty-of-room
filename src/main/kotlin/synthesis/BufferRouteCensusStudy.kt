@@ -16,9 +16,11 @@
 
 package com.xemantic.nano.plentyofroom.synthesis
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_SIGNIFICANT_DIGITS
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -243,7 +245,7 @@ fun main() {
     )
     output.parentFile.mkdirs()
     output.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)) + "\n"
     )
     report(result, output)
 }

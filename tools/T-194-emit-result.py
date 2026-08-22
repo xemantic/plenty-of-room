@@ -27,6 +27,8 @@
 import json
 import os
 import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from emission_header import with_emission_header  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RESULTS = os.path.join(ROOT, "gpd", "results")
@@ -182,7 +184,7 @@ def main():
     }
     destination = os.path.join(RESULTS, "T-194-one-reserve.json")
     with open(destination, "w", encoding="utf-8") as handle:
-        json.dump(result, handle, indent=2, ensure_ascii=False)
+        json.dump(with_emission_header(result, "none"), handle, indent=2, ensure_ascii=False)
         handle.write("\n")
     print("wrote {}".format(destination))
     return 0

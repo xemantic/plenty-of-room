@@ -16,10 +16,13 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -145,7 +148,7 @@ private fun t151Rows(file: File): List<List<Double>> {
 @Suppress("LongMethod")
 fun main() {
     val profile = WeaveProfile(phaseBasePairs = T151_PHASE, duplexes = T151_DUPLEXES)
-    val roots = t151Rows(File("gpd/results/T-125-upward-root-placement.json"))
+    val roots = t151Rows(ResultInputs.T_125.file())
     check(roots.sumOf { it.size } == 34) { "C-0063's placement must carry 34 stations" }
     val stationPlanes = roots.map { row -> row.map { weavePlaneIndex(profile, it) } }
     val seamPlanes = seamPlanesWithin(profile, T151_EDGE_X)
@@ -460,7 +463,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         )
     )
     println("T-151 — wrote ${file.path}")

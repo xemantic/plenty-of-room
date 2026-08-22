@@ -80,3 +80,27 @@ before `T-149`, and it left a consumer stale for six iterations at the cost of a
   than a bug in either.
 - **A `regime` block cannot be stated for some record.** Then that record is a result whose solved range
   nobody can name, which is a finding about the study and not about the schema.
+
+---
+
+## 3. Execute — what was built, and the falsifiers declared before the sweep
+
+### The emission layer
+
+| | |
+|---|---|
+| `lattice/LatticeTag.kt` | `SQUARE` / `HONEYCOMB` / `BOTH` / `NONE`, with `includes(lattice)` so *"which results are single-layer square-lattice"* **admits** a comparison file |
+| `structure/ResultEmission.kt` | `JsonElement.withEmissionHeader(lattice, regime)` — one namespaced `emission` block in front of the record, carrying both, refusing to overwrite |
+| `structure/ResultRounding.kt` | `emission` added to `PARAMETER_RECORDS` **by census**, so a regime bound cannot be rounded whichever order the two calls are made in |
+| `structure/ResultInputs.kt` | generated: one `ResultInput` handle per committed result file, `file()` and `file(directory)` |
+| `tools/result-reader-census.py` | resolves `ResultInputs.T_3B` as a read, with the registry itself excluded from resolution |
+
+### The falsifiers, declared before any study ran
+
+| | |
+|---|---|
+| **F1** | **The sweep's signature is `added = 2` per changed file and every other kind `0`.** The header is additive and nothing else in this change can reach a study's own numbers; a `numeric`, `prose`, `wording`, `boolean`, `departure` or `removed` movement is therefore either a defect of this change or a pre-existing irreproducibility, and must be controlled against `HEAD` before it is called either |
+| **F2** | **The typed handles and the derived census agree.** Converting 166 reads from a path literal to a handle must leave the reader graph **identical**, edge for edge — the handles are the declaration and the census the derivation, and a disagreement is a real edge one of them cannot see |
+| **F3** | **The order is trusted only after its constraint count is asserted non-zero** (`C-0153` found `tools/reemission-order.py` silently reporting `0` on a path argument) |
+| **F4** | **A study may not declare a header its committed file does not carry, silently.** `tools/T-272-header-census.py` reports the four states and `--check` fails on the *regression* one |
+| **F5** | **The header's key may not collide with a key the corpus already emits.** Declared late and **fired**: `gpd/results/T-152-collinear-clearance.json` carries a top-level `lattice` of its own, `lattice` names 101 numeric result leaves elsewhere and `regime` a string leaf in five files, so the block is namespaced under `emission` — 0 occurrences in 152 files. Twenty-three files had already been emitted with the flat form and were reverted |

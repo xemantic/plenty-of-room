@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-195",
     "leaf": "A7.4",
     "title": "The unpaired scaffold remainder as a default body beside the actuated gap",

@@ -17,7 +17,9 @@
 package com.xemantic.nano.plentyofroom.window
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -385,7 +387,7 @@ fun main() {
     val output = File("gpd/results/T-25-window-resynthesis.json")
     output.parentFile.mkdirs()
     output.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForWindowResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(result).roundedForWindowResult().withEmissionHeader(LatticeTag.SQUARE, null)) + "\n"
     )
     report(result)
     println("written: ${output.path}")

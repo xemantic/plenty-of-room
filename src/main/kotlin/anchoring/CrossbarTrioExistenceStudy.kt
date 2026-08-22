@@ -16,10 +16,13 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
@@ -486,7 +489,7 @@ fun main() {
     // ---- the mechanics, at the alignment the FOUND trio delivers
     val pairFloors = (6..12).associateWith { separation ->
         upstream(
-            File("gpd/results/T-124-torsion-feasible-routing.json"), "pairs", separation - 6,
+            ResultInputs.T_124.file(), "pairs", separation - 6,
             "worstMisalignmentDegrees"
         )
     }
@@ -640,7 +643,7 @@ fun main() {
         refinements = SEARCH_REFINEMENTS
     )
     val legacyOutcome = legacy.best(solveCap = 24)
-    val t124 = File("gpd/results/T-124-torsion-feasible-routing.json")
+    val t124 = ResultInputs.T_124.file()
     val reproductions = listOf(
         T127ReproductionRecord(
             "C-0059's reach-feasible lattices at 13 bp", "T-124 trios[0].feasibleLattices",
@@ -826,6 +829,6 @@ fun main() {
     file.parentFile?.mkdirs()
     file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult(
         digitsByKey = DEPARTURE_DIGITS_BY_KEY
-    )) + "\n")
+    ).withEmissionHeader(LatticeTag.SQUARE, null)) + "\n")
     println("wrote ${file.path}")
 }

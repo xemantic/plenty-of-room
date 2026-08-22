@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-199",
     "leaf": "A8.2",
     "title": "Is 10 x 6 a better tile than 15 x 4? The cross-section its own source recommends",
@@ -131,7 +135,7 @@
             "reachAcross": 55.3304401,
             "reachAlongOverSpan": 3.02851231,
             "reachAcrossOverSpan": 7.27266562,
-            "freeTileDishingOverStroke": 2.62401211E-5,
+            "freeTileDishingOverStroke": 2.6240121E-5,
             "flat": true,
             "thresholdFraction": null,
             "marginAtMeasuredBandLowEnd": null,

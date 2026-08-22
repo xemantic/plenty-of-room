@@ -16,11 +16,13 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -700,7 +702,7 @@ fun main() {
     output.writeText(
         json.encodeToString(json.encodeToJsonElement(result).roundedForResult(
             digitsByKey = DEPARTURE_DIGITS_BY_KEY
-        )) + "\n"
+        ).withEmissionHeader(LatticeTag.SQUARE, null)) + "\n"
     )
 
     // ---------------------------------------------------------------- console

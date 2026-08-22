@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "both",
+        "regime": null
+    },
     "task": "T-232",
     "leaf": "A8.2",
     "title": "C-0118's sixteen coupled cells, re-graded at the corrected honeycomb cross-section",

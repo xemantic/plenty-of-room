@@ -16,6 +16,7 @@
 
 package com.xemantic.nano.plentyofroom.synthesis
 
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
@@ -183,23 +184,23 @@ class BufferRouteInputs(
         /** Reads every input from [directory], failing loudly if a file or a section is missing. */
         fun read(directory: File = File(GEN1_RESULTS_DIRECTORY)): BufferRouteInputs =
             BufferRouteInputs(
-                blockingThresholds = File(directory, "T-3-stroke-and-blocking-force.json")
+                blockingThresholds = ResultInputs.T_3.file(directory)
                     .rows("thresholds"),
-                windowBiasClauses = File(directory, "T-2-design-window.json")
+                windowBiasClauses = ResultInputs.T_2.file(directory)
                     .rows("biasClauses"),
-                windowStabilityClauses = File(directory, "T-2-design-window.json")
+                windowStabilityClauses = ResultInputs.T_2.file(directory)
                     .rows("stabilityClauses"),
-                couplingRequirements = File(directory, "T-16-output-coupling-stiffness.json")
+                couplingRequirements = ResultInputs.T_16.file(directory)
                     .rows("requirements"),
-                usableBiasCeilings = File(directory, "T-4-maximum-usable-bias.json")
+                usableBiasCeilings = ResultInputs.T_4.file(directory)
                     .rows("ceilings"),
-                bufferComparisons = File(directory, "T-25-window-resynthesis.json")
+                bufferComparisons = ResultInputs.T_25.file(directory)
                     .rows("bufferComparison"),
-                softeningFolds = File(directory, "T-76-softening-coupling-stability.json")
+                softeningFolds = ResultInputs.T_76.file(directory)
                     .rows("folds"),
-                recommendedCouplings = File(directory, "T-149-recommended-element-fold.json")
+                recommendedCouplings = ResultInputs.T_149.file(directory)
                     .rows("couplings"),
-                recommendedDevices = File(directory, "T-149-recommended-element-fold.json")
+                recommendedDevices = ResultInputs.T_149.file(directory)
                     .rows("devices")
             )
     }

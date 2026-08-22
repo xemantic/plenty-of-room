@@ -21,6 +21,7 @@ import com.xemantic.nano.plentyofroom.coupling.InfluenceSurrogate
 import com.xemantic.nano.plentyofroom.coupling.couplingSupports
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
 import com.xemantic.nano.plentyofroom.coupling.perPathThermalForces
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
@@ -30,11 +31,13 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PointSupport
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformCurvatureRigidity
 import com.xemantic.nano.plentyofroom.structure.uniformMomentRigidity
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -401,11 +404,11 @@ fun main() {
     val hinge = sheet.crossoverHingeStiffness
 
     println("T-171 — reading C-0022's solved load and the two published optima ...")
-    val (smooth, rim) = solvedProfile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val (smooth, rim) = solvedProfile(ResultInputs.T_3B.file())
     val (c0063Published, c0063Key) =
-        c0063Optimum(File("gpd/results/T-125-upward-root-placement.json"), 24)
+        c0063Optimum(ResultInputs.T_125.file(), 24)
     val (c0090Published, c0090Key) =
-        c0090Optimum(File("gpd/results/T-153-buildable-raster-width.json"), "RECOMMENDED", 8)
+        c0090Optimum(ResultInputs.T_153.file(), "RECOMMENDED", 8)
 
     // ---------------------------------------------------- the cheap bound: the census, no solve
     println("T-171 — the census over one integer, at both widths, with no solve at all ...")
@@ -1161,7 +1164,7 @@ fun main() {
     output.writeText(
         json.encodeToString(
             JsonObject.serializer(),
-            (json.encodeToJsonElement(result).roundedForResult() as JsonObject)
+            (json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         )
     )
 

@@ -16,6 +16,7 @@
 
 package com.xemantic.nano.plentyofroom.window
 
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -492,23 +493,21 @@ class ResynthesisInputs(
 
         /** Reads every iteration-4 result file `T-25` consumes out of [directory]. */
         fun read(directory: File): ResynthesisInputs {
-            val scf = readScfResults(File(directory, "T-1d-scf-density-profile.json"))
+            val scf = readScfResults(ResultInputs.T_1D.file(directory))
             val layout = readLayoutResults(
-                File(directory, "T-14-crossover-phase-and-registration.json")
+                ResultInputs.T_14.file(directory)
             )
-            val edge = File(directory, "T-3b-tile-edge-load-profile.json").array("profiles")
+            val edge = ResultInputs.T_3B.file(directory).array("profiles")
                 .map { reader.decodeFromJsonElement(EdgeProfileRecord.serializer(), it) }
-            val fluctuation = File(
-                directory, "T-1f-mean-field-fluctuation-corrections.json"
-            ).array("propagation")
+            val fluctuation = ResultInputs.T_1F.file(directory).array("propagation")
                 .map { reader.decodeFromJsonElement(FluctuationPropagation.serializer(), it) }
-            val resting = File(directory, "T-13-zero-bias-resting-position.json")
+            val resting = ResultInputs.T_13.file(directory)
                 .array("equilibria")
                 .map { reader.decodeFromJsonElement(RestingEquilibrium.serializer(), it) }
-            val coupling = File(directory, "T-16-output-coupling-stiffness.json")
+            val coupling = ResultInputs.T_16.file(directory)
                 .array("requirements")
                 .map { reader.decodeFromJsonElement(CouplingRequirement.serializer(), it) }
-            val ceilings = File(directory, "T-4-maximum-usable-bias.json").array("ceilings")
+            val ceilings = ResultInputs.T_4.file(directory).array("ceilings")
                 .map { reader.decodeFromJsonElement(UsableBiasCeiling.serializer(), it) }
             return ResynthesisInputs(
                 scf = scf,
@@ -520,7 +519,7 @@ class ResynthesisInputs(
                 couplingRequirements = coupling,
                 usableBiasCeilings = ceilings,
                 flatnessSaturation = flatnessSaturationOf(
-                    File(directory, "T-17-one-row-per-duplex.json")
+                    ResultInputs.T_17.file(directory)
                 )
             )
         }

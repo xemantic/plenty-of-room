@@ -17,6 +17,7 @@
 package com.xemantic.nano.plentyofroom.coupling
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
@@ -24,10 +25,12 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PointLoad
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.ShearJointAllowable
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -454,7 +457,7 @@ fun main() {
         "uniform", "the load case C-0015's exact zero is written on", null, null, null,
         CollarTerm(0.0, 1.0), CollarTerm(0.0, RIM_STANDOFF)
     )
-    val solved = solvedProfiles(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val solved = solvedProfiles(ResultInputs.T_3B.file())
     val headline = HEADLINE_STATES.map { (concentration, gap, bias) ->
         solved.firstOrNull {
             it.concentration == concentration && it.gapHeight == gap && it.appliedBias == bias
@@ -1039,7 +1042,7 @@ fun main() {
     val json = Json { prettyPrint = true }
     output.writeText(
         json.encodeToString(
-            (json.encodeToJsonElement(result) as JsonObject).roundedForCouplingResult()
+            (json.encodeToJsonElement(result) as JsonObject).roundedForCouplingResult().withEmissionHeader(LatticeTag.SQUARE, null)
         )
     )
     report(result, output, started)

@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "both",
+        "regime": null
+    },
     "task": "T-235",
     "leaf": "A8.2",
     "title": "C-0142's corrected 10 x 6 coupled cells, re-read at C-0140's two-length raster",

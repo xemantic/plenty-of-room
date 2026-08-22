@@ -21,6 +21,8 @@ import com.xemantic.nano.plentyofroom.anchoring.rasterColumnLayout
 import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.InfluenceSurrogate
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -404,9 +406,9 @@ fun main() {
     val rise = Gen1Tile.RISE_PER_BASE_PAIR
     val hinge = Gen1Tile.crossoverHingeStiffness()
     val sheet = origamiSheet(Gen1Tile.INTERHELICAL_SHEET, Gen1Tile.CROSSOVER_SPACING_SHEET_BP)
-    val (smooth, rim) = t216SolvedProfile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
-    val t153 = File("gpd/results/T-153-buildable-raster-width.json")
-    val t189 = File("gpd/results/T-189-twist-corrected-raster.json")
+    val (smooth, rim) = t216SolvedProfile(ResultInputs.T_3B.file())
+    val t153 = ResultInputs.T_153.file()
+    val t189 = ResultInputs.T_189.file()
 
     val uniformDomains = List(T216_DOMAIN_COUNT) { 16 }
     val correctedDomains = listOf(16, 15, 16, 16, 16, 15, 16)
@@ -967,7 +969,7 @@ fun main() {
     val json = Json { prettyPrint = true }
     val out = File("gpd/results/T-216-mixed-domain-phase-lattice.json")
     out.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForResult(floor = 1e-15))
+        json.encodeToString(json.encodeToJsonElement(result).roundedForResult(floor = 1e-15).withEmissionHeader(LatticeTag.SQUARE, null))
     )
     println("T-216 — wrote ${out.path}")
     findings.forEach { println("  * $it") }

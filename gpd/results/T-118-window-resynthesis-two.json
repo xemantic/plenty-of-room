@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-118",
     "leaf": "A2.1, re-checking the acceptance strings of A2.2, A1.1, A8.2 and A7.4",
     "title": "The Gen-1 design window and the standing findings, re-run against iterations 5-7 (C-0031-C-0050, CH-0043-CH-0062)",

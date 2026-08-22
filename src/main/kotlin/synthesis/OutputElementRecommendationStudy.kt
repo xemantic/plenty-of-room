@@ -34,10 +34,12 @@ import com.xemantic.nano.plentyofroom.anchoring.perPathStiffness
 import com.xemantic.nano.plentyofroom.anchoring.rowOfThreeLengthCeiling
 import com.xemantic.nano.plentyofroom.anchoring.standoffTipFlexibility
 import com.xemantic.nano.plentyofroom.coupling.mandatedCouplingStiffness
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -540,7 +542,7 @@ fun main() {
     output.writeText(
         json.encodeToString(json.encodeToJsonElement(result).roundedForResult(
             digitsByKey = DEPARTURE_DIGITS_BY_KEY
-        )) + "\n"
+        ).withEmissionHeader(LatticeTag.SQUARE, null)) + "\n"
     )
     report(result, worst, output)
 }

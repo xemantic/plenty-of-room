@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "both",
+        "regime": null
+    },
     "task": "T-243 - the crossover-column count from the row spans, not from a bounding-box edgeX",
     "leaf": "A8.2",
     "units": {

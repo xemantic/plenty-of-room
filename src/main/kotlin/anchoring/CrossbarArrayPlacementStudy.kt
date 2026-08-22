@@ -19,6 +19,7 @@ package com.xemantic.nano.plentyofroom.anchoring
 import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.couplingSupports
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
@@ -26,9 +27,11 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PointSupport
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -336,14 +339,14 @@ fun main() {
     val width = OrigamiDuplex.INTERHELICAL
 
     println("T-130 — reading C-0062's trios, C-0063's stations and C-0022's solved load ...")
-    val stations = c0063Stations(File("gpd/results/T-125-upward-root-placement.json"))
+    val stations = c0063Stations(ResultInputs.T_125.file())
     check(stations.size == ARM_COUNT) {
         "C-0063's placement must carry $ARM_COUNT stations, carried ${stations.size}"
     }
-    val trios = c0062Trios(File("gpd/results/T-127-crossbar-trio-existence.json"))
-    val closingLattices = c0062ClosingLattices(File("gpd/results/T-127-crossbar-trio-existence.json"))
-    val baseFloors = c0059BaseFloors(File("gpd/results/T-124-torsion-feasible-routing.json"))
-    val (smooth, rim) = solvedProfile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val trios = c0062Trios(ResultInputs.T_127.file())
+    val closingLattices = c0062ClosingLattices(ResultInputs.T_127.file())
+    val baseFloors = c0059BaseFloors(ResultInputs.T_124.file())
+    val (smooth, rim) = solvedProfile(ResultInputs.T_3B.file())
     val interiorPressure = Gen1Tile.TARGET_FORCE / footprint
     val solvedField = edgeCollarPressure(interiorPressure, edgeX, lengthY, listOf(smooth, rim))
     val uniformField = uniformPressure(interiorPressure)
@@ -1033,7 +1036,7 @@ fun main() {
         json.encodeToString(
             (json.encodeToJsonElement(result) as JsonObject).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY
-            )
+            ).withEmissionHeader(LatticeTag.SQUARE, null)
         )
     )
     println("T-130 — wrote ${file.path} in ${(System.currentTimeMillis() - started) / 1000} s")

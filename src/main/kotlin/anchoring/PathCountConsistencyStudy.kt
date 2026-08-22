@@ -16,10 +16,13 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -206,12 +209,12 @@ fun main() {
     val rigidity = Gen1Tile.DUPLEX_BENDING_RIGIDITY
 
     println("T-138 — reading C-0063's stations and T-136's swept placement ...")
-    val rows = t138Rows(File("gpd/results/T-125-upward-root-placement.json"), interhelical)
+    val rows = t138Rows(ResultInputs.T_125.file(), interhelical)
     require(rows.sumOf { it.count } == C0055_ARM_COUNT) {
         "C-0063's placement must carry $C0055_ARM_COUNT roots"
     }
     val lattice = upwardRootLattice(T138_PHASE, edgeX, T138_DUPLEXES)
-    val winner = t136Reading(File("gpd/results/T-136-two-per-row-placement.json"))
+    val winner = t136Reading(ResultInputs.T_136.file())
 
     val armCache = HashMap<Triple<Int, Double, Double>, Double>()
     fun armFor(count: Int, hinge: Double, bending: Double, steps: Int = 400): Double =
@@ -640,7 +643,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         )
     )
 

@@ -17,12 +17,15 @@
 package com.xemantic.nano.plentyofroom.material
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import java.io.File
 import kotlin.math.abs
+import kotlinx.serialization.json.encodeToJsonElement
 
 /**
  * Task `P-9` — is the effective `χ` of a *grafted* PEG layer the bulk one?
@@ -373,7 +376,11 @@ fun main() {
     val json = Json { prettyPrint = true }
     val output = File("gpd/results/P-9-grafted-chi.json")
     output.parentFile.mkdirs()
-    output.writeText(json.encodeToString(result) + "\n")
+    output.writeText(
+        json.encodeToString(
+            json.encodeToJsonElement(result).withEmissionHeader(LatticeTag.NONE, null)
+        ) + "\n"
+    )
 
     println("=== P-9 — the effective chi of a GRAFTED PEG layer ".padEnd(100, '='))
     println()

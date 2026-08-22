@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-215",
     "leaf": "none — a process task about the reproducibility of an emitted artifact",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; the ensemble is 10 independent emissions of gpd/results/T-129-range-robust-placement.json, three read out of git and the rest fresh runs of anchoring.RangeRobustPlacementStudyKt at HEAD; the degeneracy measurement is a 45-path multi-state minimax on C-0022's solved collars at C-0017's 33.3333 pN/nm mandate",

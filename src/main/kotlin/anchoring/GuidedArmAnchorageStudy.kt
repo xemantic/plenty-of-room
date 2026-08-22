@@ -16,9 +16,11 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.ShearJointAllowable
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
@@ -769,7 +771,7 @@ fun main() {
     val json = Json { prettyPrint = true }
     val file = File("gpd/results/T-70-guided-arm-anchorage.json")
     file.parentFile.mkdirs()
-    file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult()))
+    file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)))
 
     println("T-70 — what holds E5g16's guided arm")
     println()

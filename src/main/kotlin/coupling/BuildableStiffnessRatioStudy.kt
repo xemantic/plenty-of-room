@@ -35,6 +35,7 @@ import com.xemantic.nano.plentyofroom.anchoring.packingLimitedElementCount
 import com.xemantic.nano.plentyofroom.anchoring.packingLimitedPathCount
 import com.xemantic.nano.plentyofroom.anchoring.placeHingeArms
 import com.xemantic.nano.plentyofroom.anchoring.standoffTipFlexibility
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.GrillageDeflection
@@ -43,9 +44,11 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PointSupport
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.synthesis.perPathSecantCeiling
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
@@ -571,7 +574,7 @@ fun main() {
     val mask = rimMask(grid, T122_EDGE_X, lengthY, T122_COLLAR)
 
     println("T-122 — reading C-0022's solved edge profile ...")
-    val profile = t122DesignProfile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val profile = t122DesignProfile(ResultInputs.T_3B.file())
     val field = profile.field(interiorPressure, lengthY)
 
     val stroke = PlateOnFoundation(plateModel, Gen1Tile.FOUNDATION_SECANT, emptyList(), 12)
@@ -1418,7 +1421,7 @@ fun main() {
     output.writeText(
         json.encodeToString(
             JsonObject.serializer(),
-            json.encodeToJsonElement(result).jsonObject.roundedForCouplingResult().jsonObject
+            json.encodeToJsonElement(result).jsonObject.roundedForCouplingResult().withEmissionHeader(LatticeTag.SQUARE, null).jsonObject
         )
     )
     t122Report(result, output, started)

@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-160",
     "leaf": "A2.2",
     "title": "C-0022's edge load, re-solved at the buildable 38.08 nm along-helix width",

@@ -401,7 +401,20 @@ def main(argv):
         return 1 if self_test() else 0
     if self_test():
         return 1
-    scratch = argv[0] if argv else os.path.join(
+    # An OPTION IS NOT A DIRECTORY. This positional used to accept anything, so
+    # `tools/T-249-emit-result.py --help` -- the first thing a cold session types -- created a
+    # directory literally named `--help` beside the repository root and filled it with 151 copies
+    # of `gpd/results/`. That is `P-28`'s own `./--check/` finding, reproduced: a shadow corpus
+    # built by a mis-parsed argument, which nothing reads and which `CLAUDE.md` records the cost
+    # of. Refuse rather than guess (`T-272`).
+    positional = [argument for argument in argv if not argument.startswith("-")]
+    unknown = [argument for argument in argv
+               if argument.startswith("-") and argument != "--self-test"]
+    if unknown or len(positional) > 1:
+        print(__doc__ or "usage: tools/T-249-emit-result.py [<baseline directory>]",
+              file=sys.stderr)
+        return 2
+    scratch = positional[0] if positional else os.path.join(
         os.environ.get("TMPDIR", "/tmp"), "T-249-head-baseline")
     head_baseline(scratch)
 

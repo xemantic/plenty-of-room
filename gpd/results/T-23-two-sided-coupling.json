@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-23",
     "leaf": "A8.2, with A1.1/A1.2 for the positional bound and A2.2 for the operating point",
     "title": "A two-sided compliant DNA coupling: three exist, the cheapest is a crossover hinge on a 4 nm arm, and two-sidedness changes the hold-down requirement from a force into a stiffness",

@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-107, T-108",
     "leaf": "A8.2",
     "question": "Which stroke is C-0023's 40 pN/nm compliance ceiling owed at, and is §3's desired ~10 nm stroke reachable by any coupling this programme has?",

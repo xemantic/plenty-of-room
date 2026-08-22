@@ -29,6 +29,7 @@ import com.xemantic.nano.plentyofroom.structure.DEPARTURE_SIGNIFICANT_DIGITS
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.lattice.SquareCrossoverLattice
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
@@ -73,7 +74,7 @@ private fun departure(here: Double, there: Double): Double =
 
 /** `C-0161`'s committed peak dishing for the imported design, read out of its own result file. */
 private fun t267DesignPeak(): Double {
-    val file = File("gpd/results/T-267-mechanics-on-imported-design.json")
+    val file = ResultInputs.T_267.file()
     require(file.exists()) { "upstream result file is missing: ${file.path}" }
     val root = Json.parseToJsonElement(file.readText()).jsonObject
     val row = root.getValue("parityPairs").jsonArray.first().jsonObject

@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-204",
     "leaf": "A7.4",
     "title": "Does C-0022's collar transfer to the 10 x 6 aspect ratio?",

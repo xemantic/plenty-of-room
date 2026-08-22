@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-135",
     "leaf": "A8.2",
     "question": "Which output element does the Gen-1 programme recommend, and on what premises?",

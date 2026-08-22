@@ -18,14 +18,17 @@ package com.xemantic.nano.plentyofroom.design
 
 import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.honeycombXRasterPath
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import com.xemantic.nano.plentyofroom.tile.HoneycombBlock
 import com.xemantic.nano.plentyofroom.tile.HoneycombCrossSectionGeometry
@@ -464,7 +467,7 @@ fun main() {
     }
 
     // ------------------------------------------------------------------- the seamed counterfactual
-    val profile = t274Profile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val profile = t274Profile(ResultInputs.T_3B.file())
     val tile = T274Tile(T274_ROWS, T274_PER_ROW, profile)
     val alternating = CrossoverLayout.centred(tile.alternatingColumns, tile.columnPitch)
     val seamed = seamedLayout(alternating)
@@ -518,7 +521,7 @@ fun main() {
 
     // --------------------------------------------------------------------------- the reproductions
     val published = Json.parseToJsonElement(
-        File("gpd/results/T-219-honeycomb-station-lattice-and-placement.json").readText()
+        ResultInputs.T_219.file().readText()
     ).jsonObject.getValue("dishing").jsonArray.map { it.jsonObject }
         .first {
             it.getValue("name").jsonPrimitive.content == "10 x 6" &&
@@ -838,7 +841,7 @@ fun main() {
     output.writeText(
         json.encodeToString(
             JsonObject.serializer(),
-            (json.encodeToJsonElement(result).roundedForResult(digits = 9) as JsonObject)
+            (json.encodeToJsonElement(result).roundedForResult(digits = 9).withEmissionHeader(LatticeTag.BOTH, null) as JsonObject)
         ) + "\n"
     )
     println("T-274 - wrote " + output.path)

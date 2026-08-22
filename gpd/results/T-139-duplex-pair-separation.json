@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-139",
     "leaf": "A8.2 (plan model) with A7.4 (electrostatics) and A1.2 (the anchoring array)",
     "parameters": {

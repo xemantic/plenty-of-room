@@ -17,6 +17,7 @@
 package com.xemantic.nano.plentyofroom.coupling
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
@@ -24,8 +25,10 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PointSupport
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -367,7 +370,7 @@ fun main() {
     val uniform = T101Profile(
         "uniform", null, null, null, 0.0, 1.0, 0.0
     )
-    val solved = t101SolvedProfiles(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val solved = t101SolvedProfiles(ResultInputs.T_3B.file())
     val headline = T101_HEADLINE_STATES.map { (concentration, gap, bias) ->
         solved.firstOrNull {
             it.concentration == concentration && it.gapHeight == gap && it.appliedBias == bias
@@ -813,7 +816,7 @@ fun main() {
     val json = Json { prettyPrint = true }
     output.writeText(
         json.encodeToString(
-            (json.encodeToJsonElement(result) as JsonObject).roundedForCouplingResult()
+            (json.encodeToJsonElement(result) as JsonObject).roundedForCouplingResult().withEmissionHeader(LatticeTag.SQUARE, null)
         )
     )
     t101Report(result, output, started)

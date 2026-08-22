@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "none",
+        "regime": null
+    },
     "task": "T-21",
     "leaf": "A2.1 (premise), consumed by A2.2",
     "title": "The semidilute-to-concentrated crossover derived for the Gen-1 PEG layer: a one-parameter family phi_c(n) = (v_K/b^3) n^(-1/2) whose member is chosen by naming how many Kuhn segments the correlation blob must keep, the finding that the des Cloizeaux window is EMPTY for every Gen-1 chain, and C-0018's 162 bias ceilings re-read at each candidate",

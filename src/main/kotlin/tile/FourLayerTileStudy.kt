@@ -36,6 +36,7 @@ import com.xemantic.nano.plentyofroom.coupling.summariseDropoutDishing
 import com.xemantic.nano.plentyofroom.coupling.uniformIncorporation
 import com.xemantic.nano.plentyofroom.coupling.winklerBendingLength
 import com.xemantic.nano.plentyofroom.coupling.worstSinglePathRemoval
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
@@ -43,9 +44,11 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -434,7 +437,7 @@ fun main() {
     /** The tiles the dropout grading is run on — the band ends and the mixed state are not. */
     val gradedNames = tiles.take(5).map { it.name }.toSet()
 
-    val loadFile = File("gpd/results/T-3b-tile-edge-load-profile.json")
+    val loadFile = ResultInputs.T_3B.file()
     val designProfile = t191Profile(loadFile, Triple(2.0, 10.0, 0.192))
 
     // ------------------------------------------------------------------ per-tile fields
@@ -1121,7 +1124,7 @@ fun main() {
                 digits = T191_DECISION_DIGITS + 3,
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY,
                 floor = T191_DECISION_FLOOR
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         ) + "\n"
     )
     println("T-191 — wrote ${output.path}")

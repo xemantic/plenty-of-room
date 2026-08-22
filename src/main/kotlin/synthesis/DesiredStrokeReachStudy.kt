@@ -47,10 +47,12 @@ import com.xemantic.nano.plentyofroom.brush.reducedThirdVirialCoefficient
 import com.xemantic.nano.plentyofroom.brush.threeBodyInteraction
 import com.xemantic.nano.plentyofroom.brush.twoBodyInteraction
 import com.xemantic.nano.plentyofroom.coupling.mandatedCouplingStiffness
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -718,7 +720,7 @@ fun main() {
     val output = File("gpd/results/T-108-desired-stroke-reach.json")
     output.parentFile.mkdirs()
     output.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)) + "\n"
     )
     report(result, output)
 }

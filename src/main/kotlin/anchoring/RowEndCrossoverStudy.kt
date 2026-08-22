@@ -16,11 +16,14 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -346,7 +349,7 @@ fun main() {
     val stationsUnchanged = inventory.all { it.upwardStationsAdmitted == it.upwardStationsRefused }
 
     // ------------------------------------------------------------------ C-0090's readings
-    val resultFile = File("gpd/results/T-153-buildable-raster-width.json")
+    val resultFile = ResultInputs.T_153.file()
     val readings = c0090RowEndReadings(resultFile)
     check(readings.size >= 4) {
         "C-0090 carries both conventions at both phases; read ${readings.size} rows"
@@ -633,7 +636,7 @@ fun main() {
     file.writeText(
         json.encodeToString(
             JsonObject.serializer(),
-            (json.encodeToJsonElement(result).roundedForResult() as JsonObject)
+            (json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         )
     )
     println("T-161 — wrote ${file.path}")

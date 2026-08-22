@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-151",
     "leaf": "A8.2",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; 40.0 x 40.35 nm single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm, 0.34 nm rise, 32/3 bp per turn, crossover phase 24; C-0063's 34 upward roots read from gpd/results/T-125-upward-root-placement.json; ssDNA 0.57 nm per nucleotide and a 2.10 nm zero-force Kuhn length",

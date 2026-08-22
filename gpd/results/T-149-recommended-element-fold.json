@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-149",
     "leaf": "A2.2",
     "title": "The pull-in fold of the output element C-0071 actually recommends: C-0018's equilibrium path re-run with C-0039's exact elastica arm as the load line, with the fold's own STROKE and the bias MARGIN read on the axes each is controlled on",

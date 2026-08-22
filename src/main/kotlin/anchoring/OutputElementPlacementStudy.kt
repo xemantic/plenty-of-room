@@ -17,9 +17,12 @@
 package com.xemantic.nano.plentyofroom.anchoring
 
 import com.xemantic.nano.plentyofroom.coupling.EntropicCoupling
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -257,13 +260,13 @@ fun main() {
     val hinge = Gen1Tile.crossoverHingeStiffness()
 
     println("T-133 — reading C-0063's stations and C-0065's flexure reading ...")
-    val stations = c0063Stations(File("gpd/results/T-125-upward-root-placement.json"))
+    val stations = c0063Stations(ResultInputs.T_125.file())
     check(stations.size == ARM_COUNT) {
         "C-0063's placement must carry $ARM_COUNT stations, carried ${stations.size}"
     }
     val rows = stationRows(stations)
     val (publishedSpan, publishedPlaced, publishedLevels) =
-        c0065Flexure(File("gpd/results/T-130-crossbar-array-placement.json"))
+        c0065Flexure(ResultInputs.T_130.file())
 
     // ------------------------------------------------------------------ the cheap bounds
     println("T-133 — the five cheap bounds, which run before any element is solved ...")
@@ -1088,7 +1091,7 @@ fun main() {
         json.encodeToString(
             (json.encodeToJsonElement(result) as JsonObject).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY
-            )
+            ).withEmissionHeader(LatticeTag.SQUARE, null)
         )
     )
     println("T-133 — wrote ${file.path} in ${(System.currentTimeMillis() - started) / 1000} s")

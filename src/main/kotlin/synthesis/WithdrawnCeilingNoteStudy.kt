@@ -16,7 +16,10 @@
 
 package com.xemantic.nano.plentyofroom.synthesis
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
@@ -105,7 +108,7 @@ private data class T169Result(
 )
 
 fun main() {
-    val file = File("gpd/results/T-79-two-spring-elastica.json")
+    val file = ResultInputs.T_79.file()
     require(file.exists()) { "T-79's result file is missing: ${file.path}" }
     val emitted = Json.parseToJsonElement(file.readText()).jsonObject
     val placements = emitted.getValue("placements").jsonArray.map { it.jsonObject }
@@ -279,7 +282,7 @@ fun main() {
     val json = Json { prettyPrint = true }
     val out = File("gpd/results/T-169-withdrawn-ceiling-note.json")
     out.parentFile.mkdirs()
-    out.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult()))
+    out.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)))
 
     println("T-169 — the withdrawn ceiling in an emitted note")
     ceilings.forEach {

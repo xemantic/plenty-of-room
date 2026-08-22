@@ -18,10 +18,13 @@ package com.xemantic.nano.plentyofroom.anchoring
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.electrostatics.BluntEndStacking
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -208,7 +211,7 @@ fun main() {
     val rigidity = state.bendingRigidity
     val hinge = Gen1Tile.crossoverHingeStiffness()
     val tipCouple = ArmAnchorage.twoTerminus().rotationalStiffness
-    val rows = t152Rows(File("gpd/results/T-125-upward-root-placement.json"))
+    val rows = t152Rows(ResultInputs.T_125.file())
     check(rows.sumOf { it.count } == T152_PATHS) {
         "C-0063's placement must carry $T152_PATHS stations"
     }
@@ -686,7 +689,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         )
     )
     println("T-152 — wrote ${file.path}")

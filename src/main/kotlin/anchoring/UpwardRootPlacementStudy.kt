@@ -28,6 +28,7 @@ import com.xemantic.nano.plentyofroom.coupling.optimiseStiffnessDistribution
 import com.xemantic.nano.plentyofroom.coupling.perPathStiffnessCeiling
 import com.xemantic.nano.plentyofroom.coupling.perPathThermalForces
 import com.xemantic.nano.plentyofroom.coupling.rimStiffenedWeights
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
@@ -38,11 +39,13 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PointSupport
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.StackedArm
 import com.xemantic.nano.plentyofroom.structure.StackedArmGrillage
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -272,10 +275,10 @@ fun main() {
     val pitch = Gen1Tile.CROSSOVER_SPACING_SHEET_BP * Gen1Tile.RISE_PER_BASE_PAIR
 
     println("T-125 — reading C-0022's solved load and C-0055's own placement ...")
-    val (smooth, rim) = solvedProfile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val (smooth, rim) = solvedProfile(ResultInputs.T_3B.file())
     val solvedField = edgeCollarPressure(interiorPressure, edgeX, lengthY, listOf(smooth, rim))
     val uniformField = uniformPressure(interiorPressure)
-    val publishedRoots = c0055Roots(File("gpd/results/T-119-unused-junction-site.json"))
+    val publishedRoots = c0055Roots(ResultInputs.T_119_UNUSED_JUNCTION_SITE.file())
     check(publishedRoots.size == count) {
         "C-0055's placement must carry $count roots, carried ${publishedRoots.size}"
     }
@@ -994,7 +997,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         )
     )
 

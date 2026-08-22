@@ -23,6 +23,7 @@ import com.xemantic.nano.plentyofroom.coupling.couplingSupports
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
 import com.xemantic.nano.plentyofroom.coupling.perPathStiffnessCeiling
 import com.xemantic.nano.plentyofroom.coupling.perPathThermalForces
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_LENGTH
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
@@ -33,9 +34,11 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PointSupport
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -349,8 +352,8 @@ fun main() {
     val duplex = OrigamiDuplex.INTERHELICAL
 
     println("T-153 — reading C-0022's solved load and C-0063's published optima ...")
-    val (smooth, rim) = solvedProfile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
-    val published = c0063SymmetricOptima(File("gpd/results/T-125-upward-root-placement.json"))
+    val (smooth, rim) = solvedProfile(ResultInputs.T_3B.file())
+    val published = c0063SymmetricOptima(ResultInputs.T_125.file())
 
     // ------------------------------------------------------- the cheap bounds, before any solve
     println("T-153 — the cheap bounds, which run before any solve ...")
@@ -1319,7 +1322,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         )
     )
 

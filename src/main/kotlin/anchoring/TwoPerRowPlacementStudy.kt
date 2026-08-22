@@ -24,6 +24,7 @@ import com.xemantic.nano.plentyofroom.coupling.normalisedStiffnesses
 import com.xemantic.nano.plentyofroom.coupling.perPathStiffnessCeiling
 import com.xemantic.nano.plentyofroom.coupling.perPathThermalForces
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
@@ -32,10 +33,12 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundForResult
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -378,7 +381,7 @@ fun main() {
     val rise = Gen1Tile.RISE_PER_BASE_PAIR
 
     println("T-136 — reading C-0022's solved loads and C-0063's placement ...")
-    val loadFile = File("gpd/results/T-3b-tile-edge-load-profile.json")
+    val loadFile = ResultInputs.T_3B.file()
     val designProfile = t136Profile(loadFile, Triple(2.0, 10.0, 0.192))
     val heldProfile = t136Profile(loadFile, Triple(2.0, 7.0, 0.192))
     val uniformProfile = T136Profile("uniform load (the falsifier case)", 0.0, 0.0, 0.0, 0.0, 1.0, 0.0)
@@ -387,7 +390,7 @@ fun main() {
     val designState = 0
     val heldState = 1
 
-    val c0063 = t136C0063Placement(File("gpd/results/T-125-upward-root-placement.json"))
+    val c0063 = t136C0063Placement(ResultInputs.T_125.file())
     require(c0063.count == C0055_ARM_COUNT) {
         "C-0063's placement must carry $C0055_ARM_COUNT roots, carried ${c0063.count}"
     }
@@ -1384,7 +1387,7 @@ fun main() {
             // `DEPARTURE_DIGITS_BY_KEY` rather than as a `2` at an emission site.
             (json.encodeToJsonElement(result).roundedForResult(
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         )
     )
 

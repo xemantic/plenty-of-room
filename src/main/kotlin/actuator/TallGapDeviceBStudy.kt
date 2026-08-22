@@ -32,8 +32,10 @@ import com.xemantic.nano.plentyofroom.electrostatics.diffusePotentialOfAppliedBi
 import com.xemantic.nano.plentyofroom.electrostatics.sternChargeDensityPerVolt
 import com.xemantic.nano.plentyofroom.electrostatics.thermalVoltage
 import com.xemantic.nano.plentyofroom.electrostatics.uniformMedium
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -558,7 +560,7 @@ fun main() {
     val output = File("gpd/results/T-192-device-b-tall-gap.json")
     output.parentFile.mkdirs()
     output.writeText(
-        json.encodeToString(json.encodeToJsonElement(complete).roundedForActuatorResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(complete).roundedForActuatorResult().withEmissionHeader(LatticeTag.NONE, null)) + "\n"
     )
     println("T-192 — wrote " + output.path)
     complete.findings.forEach { (key, value) -> println("  " + key + ": " + value) }

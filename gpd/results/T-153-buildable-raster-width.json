@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-153 — the Gen-1 tile at the buildable raster width, 112 bp = 38.08 nm",
     "leaf": "A8.2",
     "conditions": "T = 300 K, k_BT = 4.141947 pN nm; aqueous 2 mM MgCl2; single-layer square-lattice Rothemund sheet, 15 duplexes at the SAXS 2.69 nm (40.35 nm across the helices, UNCHANGED), 0.34 nm rise, 32/3 bp per turn, 16 bp crossover spacing; the along-helix width 40.00 nm (§3) against 38.08 nm (C-0086's nearest admissible seamless raster row, 112 bp); C-0039's arm at C-0055's 34 paths, 8.16439083 nm, and its buildable quantisation 8.16 nm (24 rises); C-0017's 33.3333 pN/nm mandate; C-0022's solved profile at 2 mM, a 10 nm gap and 0.192 V, its collar terms CARRIED UNCHANGED to the narrower tile; C-0001's foundation secant",

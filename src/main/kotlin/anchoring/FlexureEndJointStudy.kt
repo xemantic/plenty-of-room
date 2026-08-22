@@ -17,11 +17,13 @@
 package com.xemantic.nano.plentyofroom.anchoring
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.ShearJointAllowable
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -873,7 +875,7 @@ fun main() {
     file.parentFile.mkdirs()
     file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult(
         digitsByKey = DEPARTURE_DIGITS_BY_KEY
-    )) + "\n")
+    ).withEmissionHeader(LatticeTag.SQUARE, null)) + "\n")
     report(result, file)
 }
 

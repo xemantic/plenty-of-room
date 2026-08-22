@@ -16,6 +16,8 @@
 
 package com.xemantic.nano.plentyofroom.window
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -320,7 +322,7 @@ fun main() {
     val output = File("gpd/results/T-118-window-resynthesis-two.json")
     output.parentFile.mkdirs()
     output.writeText(
-        json.encodeToString(json.encodeToJsonElement(result).roundedForWindowResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(result).roundedForWindowResult().withEmissionHeader(LatticeTag.SQUARE, null)) + "\n"
     )
     report(result)
     println("written: ${output.path}")

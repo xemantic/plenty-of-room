@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "both",
+        "regime": null
+    },
     "task": "T-203",
     "leaf": "A8.2",
     "title": "What attachment lattice does a honeycomb block's top face offer?",

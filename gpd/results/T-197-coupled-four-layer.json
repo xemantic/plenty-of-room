@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-197",
     "leaf": "A8.2",
     "title": "Is a coupled four-layer tile flat under the measured staple dropout?",

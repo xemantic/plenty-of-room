@@ -18,10 +18,13 @@ package com.xemantic.nano.plentyofroom.tile
 
 import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -276,9 +279,9 @@ private fun realisedEnhancement(helicesPerRow: Int): Double = multiLayerRigiditi
 
 @Suppress("LongMethod", "ComplexMethod")
 fun main() {
-    val collar = readCollar(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val collar = readCollar(ResultInputs.T_3B.file())
     val forcedDeparture =
-        readForcedDeparture(File("gpd/results/T-246-forced-scaffold-crossover-price.json"))
+        readForcedDeparture(ResultInputs.T_246.file())
     val forcedRadians = Math.toRadians(forcedDeparture)
 
     println("T-253 - the cheap bound, before any solver")
@@ -1106,7 +1109,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(complete).roundedForResult(
                 digits = 9, floor = 1e-12
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.BOTH, null) as JsonObject)
         ) + "\n"
     )
     println("T-253 - wrote " + output.path)

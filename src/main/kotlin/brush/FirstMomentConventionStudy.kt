@@ -17,11 +17,13 @@
 package com.xemantic.nano.plentyofroom.brush
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.structure.SOLVED_HEIGHT_SIGNIFICANT_DIGITS
 import com.xemantic.nano.plentyofroom.structure.roundForResult
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -493,7 +495,7 @@ fun main() {
     File("gpd/results/T-1e-first-moment-convention.json").writeText(
         json.encodeToString(
             json.parseToJsonElement(json.encodeToString(result))
-                .roundedForResult(digits = SOLVED_HEIGHT_SIGNIFICANT_DIGITS)
+                .roundedForResult(digits = SOLVED_HEIGHT_SIGNIFICANT_DIGITS).withEmissionHeader(LatticeTag.NONE, null)
         ) + "\n"
     )
     println(

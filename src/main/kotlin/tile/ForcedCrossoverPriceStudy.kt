@@ -17,9 +17,12 @@
 package com.xemantic.nano.plentyofroom.tile
 
 import com.xemantic.nano.plentyofroom.anchoring.MeasuredBackbone
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -634,7 +637,7 @@ fun main() {
 
     // --------------------------------------------------------------- reproductions and gates
     val publishedColumn = t246Field(
-        File("gpd/results/T-139-duplex-pair-separation.json"), "calibration", 4, "value"
+        ResultInputs.T_139.file(), "calibration", 4, "value"
     )
     val alignedSpan = forcedCrossoverSpan(d, rP, 0.0)
     val opposedSpan = forcedCrossoverSpan(d, rP, 180.0)
@@ -910,7 +913,7 @@ fun main() {
         output.writeText(
             json.encodeToString(
                 JsonObject.serializer(),
-                (json.encodeToJsonElement(result).roundedForResult(digits = 9) as JsonObject)
+                (json.encodeToJsonElement(result).roundedForResult(digits = 9).withEmissionHeader(LatticeTag.BOTH, null) as JsonObject)
             ) + "\n"
         )
     }

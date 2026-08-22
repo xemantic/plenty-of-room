@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "none",
+        "regime": null
+    },
     "task": "T-193",
     "leaf": "A1.2 (the 3.0 nm positional bound, read at zero bias), inheriting C-0021",
     "title": "Template-stripped gold: the hold-down at the answered material, and where its potential of zero charge sits",

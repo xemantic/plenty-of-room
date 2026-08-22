@@ -21,6 +21,7 @@ import com.xemantic.nano.plentyofroom.anchoring.UpwardRootInfluenceBank
 import com.xemantic.nano.plentyofroom.anchoring.endOfRowColumnPhases
 import com.xemantic.nano.plentyofroom.anchoring.rasterColumnLayout
 import com.xemantic.nano.plentyofroom.anchoring.rasterUpwardSites
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
@@ -28,11 +29,13 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundForResult
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -444,11 +447,11 @@ private fun t188Stratum(
 fun main() {
     val sheet = origamiSheet(Gen1Tile.INTERHELICAL_SHEET, Gen1Tile.CROSSOVER_SPACING_SHEET_BP)
     val buildable = BUILDABLE_RASTER_WIDTH
-    val collar = t188Collar(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val collar = t188Collar(ResultInputs.T_3B.file())
 
-    val nominalCells = t188NominalCells(File("gpd/results/T-178-count-phase-interaction.json"))
-    val nominalFit = t188NominalInteraction(File("gpd/results/T-178-count-phase-interaction.json"))
-    val descentFile = File("gpd/results/T-153-buildable-raster-width.json")
+    val nominalCells = t188NominalCells(ResultInputs.T_178.file())
+    val nominalFit = t188NominalInteraction(ResultInputs.T_178.file())
+    val descentFile = ResultInputs.T_153.file()
     val publishedDescent = t188BuildableDescent(descentFile)
     val publishedFreeStroke = t188BuildableFreeStroke(descentFile)
 
@@ -1239,7 +1242,7 @@ fun main() {
                 digits = T188_DECISION_DIGITS + 3,
                 digitsByKey = DEPARTURE_DIGITS_BY_KEY,
                 floor = T188_DECISION_FLOOR
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         ) + "\n"
     )
 

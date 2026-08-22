@@ -52,8 +52,11 @@ import com.xemantic.nano.plentyofroom.electrostatics.diffusePotentialOfAppliedBi
 import com.xemantic.nano.plentyofroom.electrostatics.sternChargeDensityPerVolt
 import com.xemantic.nano.plentyofroom.electrostatics.thermalVoltage
 import com.xemantic.nano.plentyofroom.electrostatics.uniformMedium
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -389,7 +392,7 @@ fun main() {
     val mandated = mandatedCouplingStiffness(TARGET_FORCE, TARGET_STROKE)
     val grid = attachmentGrid(FLATNESS_COLUMNS, FLATNESS_ROWS, TILE_EDGE_X, TILE_EDGE_Y)
     val upstreamThresholds = readCoupledThresholds(
-        File("gpd/results/T-3-stroke-and-blocking-force.json")
+        ResultInputs.T_3.file()
     )
 
     println("T-16 — locating the bias that delivers ${TARGET_FORCE} pN at a ${TARGET_STROKE} nm stroke ...")
@@ -539,7 +542,7 @@ fun main() {
     val output = File("gpd/results/T-16-output-coupling-stiffness.json")
     output.parentFile.mkdirs()
     output.writeText(
-        json.encodeToString(json.encodeToJsonElement(complete).roundedForCouplingResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(complete).roundedForCouplingResult().withEmissionHeader(LatticeTag.NONE, null)) + "\n"
     )
     report(complete, output, mandated)
 }
@@ -959,7 +962,7 @@ private fun reproduce(
     lb: Double
 ): List<UpstreamReproductionRecord> {
     val published = readCoupledOperatingPoints(
-        File("gpd/results/T-3-stroke-and-blocking-force.json")
+        ResultInputs.T_3.file()
     ).filter { it.medium == "free bulk buffer" && it.concentration == 2.0 }
     val field = sampler(2.0, tileCharge, lb)
     val curves = listOf(0.10, 0.25).associateWith { field.curve(it) }

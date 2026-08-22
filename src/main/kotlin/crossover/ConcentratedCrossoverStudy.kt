@@ -47,12 +47,15 @@ import com.xemantic.nano.plentyofroom.electrostatics.bjerrumLength
 import com.xemantic.nano.plentyofroom.electrostatics.sternChargeDensityPerVolt
 import com.xemantic.nano.plentyofroom.electrostatics.thermalVoltage
 import com.xemantic.nano.plentyofroom.electrostatics.uniformMedium
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.material.ReciprocalTemperatureChi
 import com.xemantic.nano.plentyofroom.material.WATER_MASS_DENSITY_AT_300K
 import com.xemantic.nano.plentyofroom.material.monomerExcludedVolume
 import com.xemantic.nano.plentyofroom.material.waterMoleculeVolume
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -283,7 +286,7 @@ private const val EQUATION_OF_STATE_FIT_WEIGHT_FRACTION = 0.675
  */
 private const val EQUATION_OF_STATE_FIT_WEIGHT_FRACTION_AT_GEN1_CHAIN = 0.54
 
-private val UPSTREAM = File("gpd/results/T-4-maximum-usable-bias.json")
+private val UPSTREAM = ResultInputs.T_4.file()
 
 // ---------------------------------------------------------------------------------------------
 
@@ -622,7 +625,7 @@ fun main() {
     val output = File("gpd/results/T-21-concentrated-crossover.json")
     output.parentFile.mkdirs()
     output.writeText(
-        json.encodeToString(json.encodeToJsonElement(complete).roundedForActuatorResult()) + "\n"
+        json.encodeToString(json.encodeToJsonElement(complete).roundedForActuatorResult().withEmissionHeader(LatticeTag.NONE, null)) + "\n"
     )
     report(complete, output)
 }

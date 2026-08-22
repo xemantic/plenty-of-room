@@ -161,6 +161,23 @@ if [ "$checks" = "yes" ]; then
     tools/check-entry-points.py --selftest > /dev/null
     tools/check-entry-points.py
     echo
+    echo "--- every committed result file has a typed input handle (T-272) ---"
+    tools/T-272-emit-result-inputs.py --selftest > /dev/null
+    tools/T-272-emit-result-inputs.py --check
+    echo
+    # A GATE ON THE REGRESSION STATE ONLY, and that is the whole design. `T-272`'s sweep is a
+    # measured seven hours, so a partial delivery is expected and DECLARED-NOT-EMITTED is a
+    # residue rather than a defect -- the plain run prints all four states and their counts.
+    # What must never be silent is the other one-sided state: a result file carrying a header its
+    # study no longer declares is a source that was reverted under a committed artifact, which is
+    # `C-0101`'s `T-157` staleness with the arrow reversed.
+    echo "--- no result file carries an emission header its study no longer declares (T-272) ---"
+    tools/T-272-header-census.py --selftest > /dev/null
+    tools/T-272-header-census.py --check
+    echo
+    echo "--- no main source reads a result file by path rather than by handle (T-272) ---"
+    tools/T-272-header-census.py --reads
+    echo
     echo "--- every challenge is in its own index (P-26) ---"
     tools/check-challenge-index.py --selftest > /dev/null
     tools/check-challenge-index.py

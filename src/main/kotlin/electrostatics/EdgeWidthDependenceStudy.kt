@@ -22,14 +22,17 @@ import com.xemantic.nano.plentyofroom.anchoring.rasterColumnLayout
 import com.xemantic.nano.plentyofroom.anchoring.rasterUpwardSites
 import com.xemantic.nano.plentyofroom.coupling.CollarTerm
 import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.C0055_ARM_COUNT
 import com.xemantic.nano.plentyofroom.structure.DEPARTURE_DIGITS_BY_KEY
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -462,7 +465,7 @@ fun main() {
     val started = System.currentTimeMillis()
     val charge = t160TileCharge()
     val design = T160_STATES.first()
-    val published = t160PublishedCollar(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val published = t160PublishedCollar(ResultInputs.T_3B.file())
 
     // ------------------------------------------------------------------ the gate, before anything
     println("T-160 — the gate: C-0022's own half-width, refinement $T160_SWEEP_REFINEMENT ...")
@@ -593,7 +596,7 @@ fun main() {
     // --------------------------------------------------------------- what it does to C-0090's flatness
     println("T-160 — C-0090's own placement, re-evaluated under the re-solved collar ...")
     val (bestKey, publishedFlatness) = t160PublishedPlacement(
-        File("gpd/results/T-153-buildable-raster-width.json")
+        ResultInputs.T_153.file()
     )
     val carried = CollarTerm(published.getValue("taperDepth"), published.getValue("taperWidth")) to
             CollarTerm(published.getValue("rimResidualDepth"), DEFAULT_RIM_STANDOFF)
@@ -1007,7 +1010,7 @@ fun main() {
                 // RESULT_ABSOLUTE_FLOOR is a magnitude in the LOCKED UNITS and does not travel
                 // to them (CLAUDE.md, P-18).
                 floor = 1e-18
-            )
+            ).withEmissionHeader(LatticeTag.SQUARE, null)
         ) + "\n"
     )
     t160Report(complete, output)

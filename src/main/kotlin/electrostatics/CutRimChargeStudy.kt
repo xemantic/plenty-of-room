@@ -18,6 +18,7 @@ package com.xemantic.nano.plentyofroom.electrostatics
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.anchoring.MeasuredBackbone
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrthotropicPlate
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
@@ -25,6 +26,7 @@ import com.xemantic.nano.plentyofroom.structure.edgeTaperedPressure
 import com.xemantic.nano.plentyofroom.structure.gen1SheetVariants
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -846,7 +848,7 @@ fun main() {
                 // units, so the default absolute floor — a claim about piconewtons — does not
                 // travel here (CLAUDE.md).
                 floor = 0.0
-            )
+            ).withEmissionHeader(LatticeTag.SQUARE, null)
         ) + "\n"
     )
     println("P-14 — wrote ${output.path}")

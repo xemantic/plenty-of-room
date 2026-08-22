@@ -16,6 +16,8 @@
 
 package com.xemantic.nano.plentyofroom.structure
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
@@ -317,8 +319,8 @@ fun main() {
     }
 
     // ------------------------------------------------------------------ the reproduction gates
-    val t217 = File("gpd/results/T-217-honeycomb-twist-correction.json")
-    val t198 = File("gpd/results/T-198-honeycomb-raster-width.json")
+    val t217 = ResultInputs.T_217.file()
+    val t198 = ResultInputs.T_198.file()
     val publishedOne = t218Field(t217, "parameters", "honeycombResiduesDelta1")
     val publishedTwo = t218Field(t217, "parameters", "honeycombResiduesDelta2")
     val publishedStep = t218Field(t198, "honeycombRules", "stapleCrossoverStepBasePairs")
@@ -597,7 +599,7 @@ fun main() {
     val out = File("gpd/results/T-218-honeycomb-raster-turn-sense.json")
     out.writeText(
         json.encodeToString(
-            json.encodeToJsonElement(result).roundedForResult(floor = 1e-15)
+            json.encodeToJsonElement(result).roundedForResult(floor = 1e-15).withEmissionHeader(LatticeTag.BOTH, null)
         )
     )
     println("T-218 — wrote ${out.path}")

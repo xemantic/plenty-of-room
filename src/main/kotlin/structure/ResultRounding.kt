@@ -189,7 +189,21 @@ val DEPARTURE_SPELLINGS: Set<String> = setOf(
  * study was *handed* is not that quantity at all. It also suppresses `roundIntegralNumbers`, so
  * the exemption cannot move a rendering it is not about.
  */
-val PARAMETER_RECORDS: Set<String> = setOf("parameters", "runParameters", "citedInputs")
+val PARAMETER_RECORDS: Set<String> = setOf(
+    "parameters", "runParameters", "citedInputs",
+    // `T-272`. The fourth spelling, and the corpus coins it in the same commit that adds it here:
+    // `structure/ResultEmission.kt`'s emission header writes an `emission` block carrying a
+    // lattice tag and a regime, whose every number is a bound the study was HANDED — a buffer
+    // molarity, the ends of a solved height range, an applied bias, a band. Rounding one is
+    // `CH-0207` one key along. Extending the set is what this KDoc says the rule requires, and the
+    // extension is BY CENSUS: `emission` occurs nowhere in the 152 committed result files at this
+    // commit, at any depth, so the widening can move nothing that exists — a proof rather than a
+    // re-run. The header's own sub-keys are deliberately NOT in this set: `lattice` names 101
+    // numeric result leaves in the corpus and `regime` a string leaf in five files, so a set
+    // keyed on either would stop rounding an output, which is the very thing the `parameter`
+    // exclusion above exists to prevent.
+    "emission"
+)
 
 /**
  * The departure rule, as `record/spelling` keys for [roundedForResult]'s `digitsByKey`.

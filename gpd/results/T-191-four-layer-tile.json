@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-191",
     "leaf": "A8.2",
     "title": "The tile §3 actually specifies: a four-layer, ~10 nm body, and what it does to the flatness negative",

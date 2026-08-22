@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-116",
     "leaf": "A8.2",
     "temperatureKelvin": 300.0,

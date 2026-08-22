@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "both",
+        "regime": null
+    },
     "task": "T-219",
     "leaf": "A8.2",
     "title": "The honeycomb's own station lattice, plan ceiling and placement family",

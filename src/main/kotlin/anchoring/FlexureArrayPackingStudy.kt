@@ -16,8 +16,10 @@
 
 package com.xemantic.nano.plentyofroom.anchoring
 
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
@@ -749,7 +751,7 @@ fun main() {
     val output = File("gpd/results/T-96-flexure-array-packing.json")
     output.parentFile.mkdirs()
     val json = Json { prettyPrint = true; encodeDefaults = true }
-    output.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult()) + "\n")
+    output.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)) + "\n")
 
     println("T-96 — does the surviving mounting survive T-31's array packing?")
     println()

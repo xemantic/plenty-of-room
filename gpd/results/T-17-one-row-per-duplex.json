@@ -1,4 +1,8 @@
 {
+    "emission": {
+        "lattice": "square",
+        "regime": null
+    },
     "task": "T-17",
     "leaf": "A8.2",
     "title": "\"One attachment row per duplex\" as an output-coupling scheme: the exact zero costed against the load non-uniformity T-3b actually solved, against attachment scatter, against thermal excitation, and against the other two duties the same attachments carry",

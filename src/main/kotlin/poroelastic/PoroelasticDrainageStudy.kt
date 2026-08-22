@@ -21,7 +21,9 @@ import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
 import com.xemantic.nano.plentyofroom.brush.DeGennesScaling
 import com.xemantic.nano.plentyofroom.brush.brushOfHeight
 import com.xemantic.nano.plentyofroom.brush.stiffness
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -30,6 +32,7 @@ import java.io.File
 import kotlin.math.exp
 import kotlin.math.ln
 import kotlin.math.pow
+import kotlinx.serialization.json.encodeToJsonElement
 
 /**
  * Task `T-7` — the poroelastic drainage time of the grafted layer, its scaling with
@@ -357,7 +360,11 @@ fun main() {
     val json = Json { prettyPrint = true }
     val output = File("gpd/results/T-7-poroelastic-drainage.json")
     output.parentFile.mkdirs()
-    output.writeText(json.encodeToString(result) + "\n")
+    output.writeText(
+        json.encodeToString(
+            json.encodeToJsonElement(result).withEmissionHeader(LatticeTag.NONE, null)
+        ) + "\n"
+    )
     report(result, output)
 }
 

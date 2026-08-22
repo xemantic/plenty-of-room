@@ -30,8 +30,10 @@ import com.xemantic.nano.plentyofroom.electrostatics.stericSaturationPotential
 import com.xemantic.nano.plentyofroom.electrostatics.sternChargeDensityPerVolt
 import com.xemantic.nano.plentyofroom.electrostatics.thermalVoltage
 import com.xemantic.nano.plentyofroom.electrostatics.uniformMedium
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.roundForResult
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -649,7 +651,7 @@ fun main() {
     val json = Json { prettyPrint = true; encodeDefaults = true }
     file.writeText(
         json.encodeToString(
-            json.encodeToJsonElement(result.copy(findings = findings)).roundedForResult()
+            json.encodeToJsonElement(result.copy(findings = findings)).roundedForResult().withEmissionHeader(LatticeTag.NONE, null)
         ) + "\n"
     )
     println("wrote ${file.path}")

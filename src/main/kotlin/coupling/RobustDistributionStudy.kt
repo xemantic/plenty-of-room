@@ -17,6 +17,7 @@
 package com.xemantic.nano.plentyofroom.coupling
 
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
@@ -24,9 +25,11 @@ import com.xemantic.nano.plentyofroom.structure.OrigamiSheet
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PointSupport
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.roundedForProse
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import com.xemantic.nano.plentyofroom.thermalEnergy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -457,7 +460,7 @@ fun main() {
     val paths = grid.size
 
     println("T-123 — reading C-0022's solved edge profiles ...")
-    val solved = t123SolvedProfiles(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val solved = t123SolvedProfiles(ResultInputs.T_3B.file())
     fun profileAt(key: Triple<Double, Double, Double>): T123Profile = solved.firstOrNull {
         it.concentration == key.first && it.gapHeight == key.second && it.appliedBias == key.third
     } ?: error("no C-0022 profile at ${key.first} mM, ${key.second} nm, ${key.third} V")
@@ -1420,7 +1423,7 @@ fun main() {
     output.writeText(
         json.encodeToString(
             JsonObject.serializer(),
-            json.encodeToJsonElement(result).jsonObject.roundedForCouplingResult().jsonObject
+            json.encodeToJsonElement(result).jsonObject.roundedForCouplingResult().withEmissionHeader(LatticeTag.SQUARE, null).jsonObject
         )
     )
     t123Report(result, output, started)

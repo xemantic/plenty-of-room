@@ -24,13 +24,16 @@ import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
 import com.xemantic.nano.plentyofroom.coupling.latticeInfluenceSurrogate
 import com.xemantic.nano.plentyofroom.coupling.measuredDepthIncorporation
 import com.xemantic.nano.plentyofroom.coupling.summariseDropoutDishing
+import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.CrossoverLayout
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.OrigamiGrillage
 import com.xemantic.nano.plentyofroom.structure.PlateOnFoundation
 import com.xemantic.nano.plentyofroom.structure.PressureField
+import com.xemantic.nano.plentyofroom.structure.ResultInputs
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
+import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -412,7 +415,7 @@ fun main() {
     }
 
     // --- the re-grading -------------------------------------------------------------------------
-    val profile = t206Profile(File("gpd/results/T-3b-tile-edge-load-profile.json"))
+    val profile = t206Profile(ResultInputs.T_3B.file())
     val tile = T206Tile(T206_ROWS, T206_LAYERS, profile)
     val lattice = tile.lattice()
     val cells = ArrayList<T206Cell>()
@@ -808,7 +811,7 @@ fun main() {
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
                 digits = 9, digitsByKey = mapOf("departure" to 2)
-            ) as JsonObject)
+            ).withEmissionHeader(LatticeTag.SQUARE, null) as JsonObject)
         ) + "\n"
     )
     println("T-206 — wrote ${output.path}")
