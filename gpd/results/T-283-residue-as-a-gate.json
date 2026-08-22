@@ -1,0 +1,108 @@
+{
+  "task": "T-283",
+  "title": "the queue's residue line becomes a gate: an inline code span is a token quoted as DATA, and blanking it clears the standing counter-example",
+  "raisedBy": "C-0178 section 5",
+  "baselineRef": "9620d3ef3f21aa4038055a5752cd637f49e62954",
+  "baselineRefRequested": "HEAD",
+  "parameters": {
+    "corpus": "TASKS.md, every revision reachable from the baselineRef",
+    "predicate": "a row whose leading verdict's SENSE differs from a whole-row scan for an unqualified closing word, with struck spans and inline code spans blanked",
+    "blankedSpans": "single- and double-backticked inline code, on one line",
+    "note": "no wall-clock timing and no step counter is emitted; the only non-integer is the false-positive rate, an exact quotient rendered at nine significant digits"
+  },
+  "measurement": {
+    "revisions": 139,
+    "rowInstancesUnblanked": 118,
+    "rowInstancesBlanked": 115,
+    "distinctRowsUnblanked": [
+      "T-111",
+      "T-183",
+      "T-231",
+      "T-256",
+      "T-261",
+      "T-268",
+      "T-272",
+      "T-280"
+    ],
+    "distinctRowsBlanked": [
+      "T-111",
+      "T-183",
+      "T-231",
+      "T-261",
+      "T-268",
+      "T-272",
+      "T-280"
+    ],
+    "rowsTheBlankingRemoves": [
+      "T-256",
+      "T-261"
+    ],
+    "truePositives": [
+      "T-111",
+      "T-183",
+      "T-231",
+      "T-261",
+      "T-268",
+      "T-272",
+      "T-280"
+    ],
+    "falsePositives": [],
+    "falsePositiveRate": 0.0,
+    "classification": {
+      "T-111": {
+        "verdict": "TRUE",
+        "reason": "`**ANSWERED by C-0053**` in mid-cell prose while the row leads with `TODO`; the row was later rewritten and the clause is gone"
+      },
+      "T-183": {
+        "verdict": "TRUE",
+        "reason": "*RESOLVED* in ITALICS, quoting what another document said, while the row led with `TODO`; backticking it is the corpus's own idiom for a quoted token and falsifies nothing"
+      },
+      "T-231": {
+        "verdict": "TRUE",
+        "reason": "*the honeycomb station lattice was ANSWERED by C-0141* -- the shape `CLAUDE.md` records verbatim, whose prescribed repair is to lower-case the word"
+      },
+      "T-261": {
+        "verdict": "TRUE",
+        "reason": "its own TITLE read *a challenge the corpus has since ANSWERED*; lower-cased in the `P-30` document repair, and its three quoted status words are backticked and therefore blanked"
+      },
+      "T-268": {
+        "verdict": "TRUE",
+        "reason": "*`CH-0207` **CLOSED and REPAIRED*** (a challenge) and *`P1` was found ALREADY DISCHARGED* (a deliverable), both lower-cased in the `P-30` document repair"
+      },
+      "T-272": {
+        "verdict": "TRUE",
+        "reason": "*`P2` is DISCHARGED over the whole corpus* (a deliverable), lower-cased in the `P-30` document repair"
+      },
+      "T-280": {
+        "verdict": "TRUE",
+        "reason": "*Candidate 1 ... is **DONE*** (a candidate of a remedy), lower-cased in the `P-30` document repair"
+      }
+    },
+    "removalsAndWhyEachIsATrueNegative": {
+      "T-256": "the whole firing is a verbatim quotation of a tool's own output line, `line 965 STALE-OPEN CH-0187 CLOSED`, inside backticks -- quoted data, and the removal is a TRUE negative",
+      "T-261": "its acceptance criterion quotes `ANSWERED`, `UPHELD` and `RESOLVED` as DATA; this is the standing counter-example `P-30` left the line advisory for, and the removal is what makes the gate buyable"
+    }
+  },
+  "verdict": {
+    "residueAtTheBaselineRef": [],
+    "residueOnTheWorkingTree": [],
+    "gated": true,
+    "whereItIsWired": "inside tools/check-queue-vocabulary.py, which tools/verify.sh already runs -- so NOTHING new is wired and what grew is the coverage of what is wired (C-0178's own shape)",
+    "bothReadingsBecauseThisRowIsInsideItsOwnScope": "this task's row and its measurement live in TASKS.md, which is the corpus the residue measures; the reading at the baselineRef is the file BEFORE this iteration's edits and the working-tree reading is AFTER them"
+  },
+  "mutation": {
+    "mutations": 12,
+    "survivors": 0,
+    "survivorNames": [],
+    "mutationsFailingNothing": 0,
+    "survivorsOnTheFirstRun": 2,
+    "whatTheFirstRunFound": [
+      "the blanking applied to the VERDICT as well as the scan failed nothing, because no fixture had a code span in FRONT of a verdict -- and that is the UNSAFE direction: blanking a leading code span lets the bold run behind it become the cell's leading run, MANUFACTURING a closing verdict in a cell that has none, so an open row would read closed",
+      "the refusal's own words were asserted nowhere, so a message stripped to `RESIDUE T-1 'TODO' CLOSED` failed nothing -- and this predicate has TWO repairs, lower-casing and backticking, of which only the second serves T-261"
+    ],
+    "andAThirdDefectInTheHARNESS": "the first harness copied tools/ FLAT, so the gate resolved its queue as /tmp/TASKS.md and every corpus test failed identically -- 12 mutations, 12 survivors. The layout is now <tmp>/tools/*.py beside <tmp>/TASKS.md, and the baseline failures of an UNMUTATED copy are measured and subtracted"
+  },
+  "namedTests": {
+    "check-queue-vocabulary.py": 55
+  }
+}

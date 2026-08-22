@@ -18,6 +18,7 @@ package com.xemantic.nano.plentyofroom.brush
 
 import com.xemantic.nano.plentyofroom.ELECTRON_VOLT
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.environment.Regime
 import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
 import com.xemantic.nano.plentyofroom.structure.withEmissionHeader
@@ -180,7 +181,24 @@ fun main() {
                 // `heightAtPressure` at all, so `SOLVED_HEIGHT_SIGNIFICANT_DIGITS` is a rule
                 // about a solver this study does not use.
                 .roundedForResult()
-                .withEmissionHeader(LatticeTag.NONE, null)
+                // `T-286`, answering `CH-0224`: this study's regime is STATED and its buffer is
+                // `null`, which is `Regime.neutralLayer`'s documented physical claim — ideal
+                // mobile salt contributes `f = k_BT n_s phi`, strictly linear in `phi`, and
+                // `Pi = phi f' - f` annihilates a linear term. That is a THIRD value, distinct
+                // both from a `null` regime (the study has not said) and from the empty set (no
+                // environment coordinate enters this result at all). The height range is derived
+                // from the points the study actually solved: `LAYER_HEIGHTS` at the top, and the
+                // most compressed wall position under the 100 pN target at the bottom.
+                .withEmissionHeader(
+                    LatticeTag.NONE,
+                    Regime.neutralLayer(
+                        name = "the grafted PEG layer under the Gen-1 tile",
+                        lowestHeightNm = designPoints
+                            .flatMap { it.responses }
+                            .minOf { it.heightUnderTargetForce },
+                        highestHeightNm = LAYER_HEIGHTS.max()
+                    )
+                )
         ) + "\n"
     )
     report(result, output)

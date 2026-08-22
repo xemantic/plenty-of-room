@@ -1,7 +1,20 @@
 {
     "emission": {
         "lattice": "none",
-        "regime": null
+        "regime": [
+            {
+                "name": "the grafted PEG layer under the Gen-1 tile",
+                "bufferMillimolar": null,
+                "electrolyte": "none — an ideal mobile salt cancels out of a neutral layer exactly",
+                "counterionValency": 2,
+                "temperatureKelvin": 300.0,
+                "lowestHeightNm": 0.38478379807447505,
+                "highestHeightNm": 10.0,
+                "lowestBiasVolts": 0.0,
+                "highestBiasVolts": 0.0,
+                "bandwidthHz": null
+            }
+        ]
     },
     "task": "T-1",
     "leaf": "A2.1",

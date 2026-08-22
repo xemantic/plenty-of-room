@@ -52,9 +52,11 @@
 
 import argparse
 import inspect
+import io
 import os
 import re
 import sys
+import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -189,18 +191,27 @@ def row_disagreements(queue_text):
 def residue(queue_text):
     """[(id, phrase, whole-row reading)] where the row's PROSE contradicts its verdict.
 
-    UNGATED, and deliberately.  This is the residue `P-30` was raised about -- a closing word in a
-    row that is not about the task -- and it CANNOT be made clean: `T-261`'s acceptance criterion
-    quotes `ANSWERED`, `UPHELD` and `RESOLVED` as DATA, and lower-casing them would falsify the
-    quotation.  `CLAUDE.md`'s rule for exactly this shape is to wire the gate on what can be made
-    clean and print the residue beside it, with the count and the per-row list.
+    GATED since `T-283`, and it was advisory before.  `P-30` left it advisory on the ground that it
+    *cannot be made clean* -- `T-261`'s acceptance criterion quotes `ANSWERED`, `UPHELD` and
+    `RESOLVED` as DATA, and lower-casing them would falsify the quotation.  That ground was right
+    about the PREDICATE it had and not about the question: those three words are already
+    BACKTICKED in the row as committed, and blanking inline code spans before the scan clears them
+    without touching anything the row asserts.
+
+    Measured over all 139 revisions of `TASKS.md`, the blanked predicate fires on 115 row-instances
+    across SEVEN distinct rows and every one of the seven is a genuine idiom violation with a
+    repair that falsifies nothing -- 0 false positives -- and it reads 0 rows on the queue this
+    landed on.  `C-0083`: a gate that cannot come clean is not a gate; this one now can.
+
+    The blanking touches the SCAN and never the VERDICT: `row_verdicts` reads the UNBLANKED body,
+    so a backticked verdict is still a verdict and blanking cannot turn a closed row open.
     """
     out = []
     for line in queue_text.splitlines():
         match = _ROW.match(line.strip())
         if not match:
             continue
-        body = _verdicts.blank_struck(match.group(2))
+        body = _verdicts.blank_code_spans(_verdicts.blank_struck(match.group(2)))
         verdicts = _verdicts.row_verdicts(match.group(2))
         if not verdicts:
             continue
@@ -330,6 +341,43 @@ def _selftest():
         == "OPEN",
     )
 
+    # --- P-31: every DECLARED CLASSIFICATION is held open by a named test of its own ---
+    # The whole-set mutation above (`undeclared` stubbed to `return []`) is killed by two named
+    # tests, so the vocabulary was load-bearing as a SET.  Not one of its ELEVEN members was:
+    # deleting `"DONE"` from `CLOSING_VERDICTS` failed nothing at all, and so did eight of the
+    # other ten.  `T-225`'s per-name standard and `C-0176`'s -- *every classification, in BOTH
+    # directions, must fail a named test when changed on its own* -- reached on this vocabulary.
+    #
+    # The phrases below are LITERALS and are deliberately not derived from the two sets: a test
+    # generated from the set under test disappears together with the member it was meant to hold
+    # open, which is the tautology `C-0178` already had to remove from the coverage scanner.  The
+    # completeness check is what keeps the literal table honest in the other direction -- a phrase
+    # declared without a fixture fails it, on the day it is declared.
+    DECLARED_ROWS = (
+        ("DONE", "CLOSED"),
+        ("KILLED", "CLOSED"),
+        ("CLOSED", "CLOSED"),
+        ("ANSWERED", "CLOSED"),
+        ("RESOLVED", "CLOSED"),
+        ("DISCHARGED", "CLOSED"),
+        ("ANSWERED BY IMPLICATION", "CLOSED"),
+        ("ANSWERED in its specification half", "CLOSED"),
+        ("PARTIALLY DONE", "OPEN"),
+        ("PARTLY DONE", "OPEN"),
+        ("TODO", "OPEN"),
+    )
+    check(
+        "P-31 every declared phrase carries a literal fixture row of its own",
+        {phrase for phrase, _ in DECLARED_ROWS}
+        == CLOSING_VERDICTS | NOT_CLOSING_VERDICTS,
+    )
+    for _phrase, _sense in DECLARED_ROWS:
+        _row = "| T-1 | a | b | c | **{}** (iteration 0) |".format(_phrase)
+        check(
+            "P-31 declared {!r} is accepted by the gate and reads {}".format(_phrase, _sense),
+            undeclared(_row) == [] and first_verdicts(_row) == [("T-1", _phrase, _sense)],
+        )
+
     # --- P-30: which verdict WINS, measured over the queue's own practice ---
     check(
         "the LEFTMOST verdict is the live one, not the last",
@@ -388,15 +436,153 @@ def _selftest():
         row_disagreements("| T-1 | a | **DONE** (iteration 40) | TODO — **MEDIUM-HIGH** |") == [],
     )
 
-    # --- P-30: the residue, reported and never gated ---
+    # --- P-30 / T-283: the residue, now a GATE, and the blanking that made it one ---
     check(
         "a closing word in prose beside a TODO verdict is residue",
-        residue("| T-1 | a | b | c | TODO — high, and `CH-1` is now RESOLVED |")
+        residue("| T-1 | a | b | c | TODO — high, and CH-1 is now RESOLVED |")
         == [("T-1", "TODO", "CLOSED")],
     )
     check(
         "a row whose prose agrees with its verdict is not residue",
-        residue("| T-1 | a | b | c | TODO — high, and `CH-1` is now resolved |") == [],
+        residue("| T-1 | a | b | c | TODO — high, and CH-1 is now resolved |") == [],
+    )
+    # `T-283`.  A status word QUOTED AS DATA is not an assertion about the row, and backticks are
+    # already this corpus's idiom for quoting a token.  `T-261`'s acceptance criterion quotes
+    # three of `gpd/challenges/README.md`'s own status words, and lower-casing them would falsify
+    # the quotation -- so the escape is two characters and it falsifies nothing.
+    check(
+        "T-283 a closing word inside a CODE SPAN is quoted data, not residue",
+        residue("| T-1 | a | flags a challenge whose status is `ANSWERED` | c | TODO — **LOW** |")
+        == [],
+    )
+    check(
+        "T-283 a closing word OUTSIDE a code span beside one inside it is still residue",
+        residue("| T-1 | a | status `ANSWERED`, and CH-1 is now RESOLVED | TODO — **LOW** |")
+        == [("T-1", "TODO", "CLOSED")],
+    )
+    check(
+        "T-283 a double-backticked span is blanked too",
+        residue("| T-1 | a | the word ``ANSWERED`` as data | c | TODO — **LOW** |") == [],
+    )
+    check(
+        "T-283 the blanking touches the SCAN and never the VERDICT — a backticked verdict is "
+        "still read, so blanking can never turn a closed row open",
+        first_verdicts("| T-1 | a | **DONE** (iteration 3) — see `CH-1`, `ANSWERED` |")
+        == [("T-1", "DONE", "CLOSED")],
+    )
+    # The mutation test found this one by SURVIVING: no fixture had a code span in front of a
+    # verdict, so *"blanking touches the scan and never the verdict"* was asserted nowhere in the
+    # direction that matters.  Blanking a leading code span does not merely hide a word — it lets
+    # the bold run BEHIND it become the cell's leading run, MANUFACTURING a closing verdict in a
+    # cell that has none.  That is the UNSAFE direction: an open row would read closed.
+    check(
+        "T-283 blanking must not reach the VERDICT: a cell opening with a code span has no "
+        "leading verdict, and blanking it would MANUFACTURE one",
+        _verdicts.cell_verdict(" `note` **DONE** (iteration 3) ") is None
+        and _verdicts.cell_verdict(
+            _verdicts.blank_code_spans(" `note` **DONE** (iteration 3) ")
+        ) == ("DONE", "CLOSED"),
+    )
+    check(
+        "T-283 and the row reader does NOT blank, so such a row keeps its real verdict",
+        _verdicts.row_verdicts(" `note` **DONE** (iteration 3) | TODO — **LOW** ")
+        == [("TODO", "OPEN")],
+    )
+    check(
+        "T-283 blanking a code span preserves length, so offsets stay usable",
+        len(_verdicts.blank_code_spans("ab`cd`ef")) == len("ab`cd`ef"),
+    )
+    check(
+        "T-283 blanking a code span removes what is inside it",
+        "DONE" not in _verdicts.blank_code_spans("x `DONE` y"),
+    )
+    check(
+        "T-283 blanking leaves text outside the span alone",
+        _verdicts.blank_code_spans("keep `DONE` keep").startswith("keep ")
+        and _verdicts.blank_code_spans("keep `DONE` keep").endswith(" keep"),
+    )
+    check(
+        "T-283 two code spans do not MERGE — the text between them stays visible",
+        residue("| T-1 | a | `CH-1` is now RESOLVED per `C-1` | c | TODO — **LOW** |")
+        == [("T-1", "TODO", "CLOSED")],
+    )
+    check(
+        "T-283 an UNCLOSED backtick is not a span — the rest of the row stays visible",
+        residue("| T-1 | a | a stray ` and then RESOLVED | c | TODO — **LOW** |")
+        == [("T-1", "TODO", "CLOSED")],
+    )
+    check(
+        "T-283 the residue is now a GATE and the real queue reads zero",
+        residue(open(QUEUE, encoding="utf-8").read()) == [],
+    )
+    # The blanking is the GATE's scan and not the READER's.  A row carrying no leading verdict
+    # falls back to a whole-row scan in `trace-answers.queue_status`, and that scan is deliberately
+    # NOT blanked — changing it would move the register, which is `P-30`'s territory and not this
+    # task's.  Measured over the committed queue, blanking it would move NOTHING, and this test is
+    # that measurement rather than an argument.
+    check(
+        "T-283 blanking the reader's own fallback would move no row of the committed queue",
+        [
+            identifier
+            for identifier, body in _verdicts.task_rows(
+                open(QUEUE, encoding="utf-8").read()
+            )
+            if not _verdicts.row_verdicts(body)
+            and bool(_trace._CLOSED.search(_verdicts.blank_struck(body)))
+            != bool(
+                _trace._CLOSED.search(
+                    _verdicts.blank_code_spans(_verdicts.blank_struck(body))
+                )
+            )
+        ]
+        == [],
+    )
+
+    # --- T-283: the gate END TO END, because promoting the residue is a change to `main` and a
+    # structural assertion about `main` is not the same thing as running it ---
+    def _gate_on(text):
+        handle, path = tempfile.mkstemp(prefix="check-queue-vocabulary.", suffix=".md")
+        try:
+            os.write(handle, text.encode("utf-8"))
+            os.close(handle)
+            captured = io.StringIO()
+            stdout, sys.stdout = sys.stdout, captured
+            try:
+                code = main(["--queue", path])
+            finally:
+                sys.stdout = stdout
+            return code, captured.getvalue()
+        finally:
+            os.unlink(path)
+
+    check(
+        "T-283 the gate EXITS 1 on a residue row",
+        _gate_on("| T-1 | a | b | c | TODO — high, and CH-1 is now RESOLVED |\n")[0] == 1,
+    )
+    check(
+        "T-283 the gate EXITS 0 when the same word is backticked as data",
+        _gate_on("| T-1 | a | b | c | TODO — high, and CH-1 is now `RESOLVED` |\n")[0] == 0,
+    )
+    check(
+        "T-283 the gate EXITS 0 when the same word is lower-cased",
+        _gate_on("| T-1 | a | b | c | TODO — high, and CH-1 is now resolved |\n")[0] == 0,
+    )
+
+    # Also found by a SURVIVING mutation: the refusal's own words were asserted nowhere, so a
+    # message stripped to `RESIDUE T-1 'TODO' CLOSED` failed nothing.  A refusal that does not say
+    # what to do is a traceback with a nicer name, and this predicate has TWO repairs.
+    _residue_message = _gate_on("| T-1 | a | b | c | TODO — high, and CH-1 is now RESOLVED |\n")[1]
+    check(
+        "T-283 the refusal names the LOWER-CASING repair",
+        "lower-case" in _residue_message,
+    )
+    check(
+        "T-283 the refusal names the BACKTICKING repair, which is the one `T-261` needs",
+        "backticks" in _residue_message,
+    )
+    check(
+        "T-283 the refusal names the row and what the whole-row scan read",
+        "T-1" in _residue_message and "CLOSED" in _residue_message,
     )
 
     # --- MUTATION: narrowing or widening the predicate must fail a NAMED test ---
@@ -477,6 +663,20 @@ def main(argv):
         )
         defects += 1
 
+    # GATED since `T-283`, on a measured false-positive rate of 0 over 139 revisions — see
+    # `residue()`.  The repair is one of two, and both are in the message because a refusal that
+    # does not say what to do is a traceback with a nicer name.
+    for identifier, phrase, scanned in residue(text):
+        print(
+            "RESIDUE     {}  leads with {!r} and its PROSE carries a closing word: a whole-row\n"
+            "            scan reads {}. The queue writes verdicts in bold UPPER CASE and prose in\n"
+            "            lower, so either lower-case the word, or — if it is a status token quoted\n"
+            "            as DATA — put it in `backticks`, which this scan blanks".format(
+                identifier, phrase, scanned
+            )
+        )
+        defects += 1
+
     total = len(leading_verdicts(text))
     rows = len(_verdicts.task_rows(text))
     print(
@@ -484,15 +684,12 @@ def main(argv):
             defects, total, rows, os.path.relpath(args.queue, ROOT)
         )
     )
-
-    # UNGATED, and deliberately — see `residue()`.
-    trailing = residue(text)
     print(
-        "# residue (reported, NOT gated): {} row(s) whose prose carries a closing word that is "
-        "not their verdict".format(len(trailing))
+        "# residue (GATED since T-283, at a measured false-positive rate of 0 over 139 revisions):"
+        " {} row(s) whose prose carries a closing word that is not their verdict".format(
+            len(residue(text))
+        )
     )
-    for identifier, phrase, scanned in trailing:
-        print("#   {}  verdict {!r}, whole-row scan reads {}".format(identifier, phrase, scanned))
 
     return 1 if defects else 0
 

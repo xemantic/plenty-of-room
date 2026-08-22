@@ -5,7 +5,7 @@
 | **Against** | [`C-0154`](../claims/C-0154-honeycomb-grillage.md) (`T-253`) — [`tile/HoneycombGrillage.kt`](../../src/main/kotlin/tile/HoneycombGrillage.kt)'s bond list, and every free-tile dishing built on it; and through it [`C-0167`](../claims/C-0167-coupled-cells-on-the-honeycomb-grillage.md) (`T-263`), whose uncoupled references and 64 re-graded cells are read on the same object |
 | **Raised by** | [`T-254`](../tasks/T-254-raster-turn-prestrain.md) / [`C-0175`](../claims/C-0175-drawable-raster-rim.md) |
 | **Grounds** | **logical** (a census of what the scaffold covalently ties against what the lattice assembles) **+ in-silico** (the same lattice with the ties added, on the same load, the same grid and the same stroke) |
-| **Status** | **RAISED.** The omission is real, its sign is favourable, and its size is `1.12×` at the recommended cross-section and `1.017×` at the control. No verdict of `C-0154` or `C-0167` reverses; what moves is every uncoupled reference, and they move toward flat |
+| **Status** | **RAISED; §6 DISCHARGED by [`C-0180`](../claims/C-0180-tied-honeycomb-coupled-regrade.md) (`T-279`).** The omission is real, its sign is favourable, and its size is `1.12×` at the recommended cross-section and `1.017×` at the control. ~~No verdict of `C-0154` or `C-0167` reverses~~ — **that was a FREE-TILE statement and it is false at the coupled level: `C-0167`'s *"`0` of `64`"* is **`2` of `64`** on the tied lattice, which is [`CH-0234`](CH-0234-no-verdict-reverses-was-a-free-tile-statement.md). No verdict of `C-0154` reverses, and every FREE-tile reading below reproduces at `≤ 1.5e−9`.** What moves is every uncoupled reference, and they move toward flat |
 
 ---
 
@@ -59,8 +59,11 @@ are spread over a stiffer in-plane direction and buy 1.7 %.
 
 ## 5. What it does and does not change
 
-- **No verdict reverses.** The recommended `10 × 6` block is flat with and without the ties;
-  `15 × 4` fails with and without.
+- ~~**No verdict reverses.**~~ **No FREE-TILE verdict reverses** (`CH-0234`): the recommended
+  `10 × 6` block is flat with and without the ties and `15 × 4` fails with and without — but
+  **two of `C-0167`'s 64 COUPLED cells do reverse**, `0.106041029 → 0.0995744767` and
+  `0.101931622 → 0.0998791032`, because a favourable move is exactly what reverses a cell sitting
+  1.93 % over the tolerance (`C-0180`, `T-279`).
 - **Every uncoupled reference in `C-0154` and `C-0167` is 1.12× too soft** at the recommended
   cross-section. `C-0167`'s headline — *"the uncoupled four-layer honeycomb tile is flat at
   0.0501417315 and 0.0522223659"* — is a **conservative** reading, which is the safe direction, and
@@ -68,7 +71,9 @@ are spread over a stiffer in-plane direction and buy 1.7 %.
 - **The coupled re-grade is owed on the tied lattice**, and this challenge does not run it: a
   coupling changes the load path, and `CLAUDE.md` records that a factor measured on a free tile
   does not transfer to a coupled one (`C-0154`'s own `f` reads 0.2468 on the rigidity and 0.9405 on
-  the dishing).
+  the dishing). **RUN (`C-0180`, `T-279`): the coupled median per-realisation ratio is
+  `0.902845544–0.988116016` against this free tile's `0.890395426`, so the `1.12×` here
+  OVER-states the coupled benefit at every one of the 64 cells.**
 - **The ties are a stiffness AND a load.** They are the only elements of the block that carry a
   built-in prestrain (`C-0152` §5), which is [`CH-0228`](CH-0228-every-allowed-scaffold-crossover-is-a-prestrain.md).
 
@@ -77,6 +82,9 @@ are spread over a stiffer in-plane direction and buy 1.7 %.
 Re-run `T-263`'s 64 coupled cells on the tied lattice. It is one argument to
 `HoneycombGrillage`'s constructor and the surrogate is model-agnostic, so the cost is a re-run and
 not a model.
+
+**DONE (`C-0180`, `T-279`), and the cost estimate held**: two functions, no shared source edited,
+and the untied half reproduces all 128 of `C-0167`'s committed values at `4.2e−9`.
 
 ## 7. What this challenge does NOT claim
 

@@ -1,0 +1,429 @@
+{
+  "emission": {
+    "lattice": "none",
+    "regime": []
+  },
+  "task": "T-286",
+  "claim": "C-0181",
+  "leaf": "A8.2",
+  "title": "A regime is a SET of solved states, and the two absences are different values",
+  "verificationType": "logical (a design claim about this repository's schema) + in-silico (the census is derived from the committed tree at a named ref)",
+  "acceptance": "The census that decides the design, and the consumer-side measurement that says what a file-granular regime gate can and cannot reach.",
+  "maturity": "TRL 1-3. This claim is about SOFTWARE STRUCTURE and PROVENANCE, not about the device. No physics is asserted and no object is measured.",
+  "units": {
+    "concentration": "mM",
+    "length": "nm",
+    "bias": "V",
+    "bandwidth": "Hz",
+    "count": "dimensionless"
+  },
+  "conventions": [
+    "a READ EDGE is one (study, result file) pair of tools/result-reader-census.py, derived at baselineRef and not from the working tree",
+    "an ELECTROLYTE STUDY is one whose source names MagnesiumChlorideBuffer",
+    "SWEEPS means the study solves every state at more than one molarity"
+  ],
+  "parameters": {
+    "baselineRef": "9620d3ef3f21aa4038055a5752cd637f49e62954",
+    "refArgument": "HEAD",
+    "censusTool": "tools/result-reader-census.py",
+    "declaredElectrolyteStudies": 22
+  },
+  "committedCorpus": {
+    "resultFiles": 159,
+    "withHeader": 135,
+    "regimeNotStated": 135,
+    "regimeEmptySet": 0,
+    "regimeStated": 0,
+    "withoutHeader": 24
+  },
+  "committedStatedFiles": [],
+  "workingTreeCorpus": {
+    "resultFiles": 163,
+    "withHeader": 137,
+    "regimeNotStated": 133,
+    "regimeEmptySet": 1,
+    "regimeStated": 3,
+    "withoutHeader": 26
+  },
+  "workingTreeStatedFiles": [
+    {
+      "file": "T-1-layer-stiffness.json",
+      "states": 1
+    },
+    {
+      "file": "T-23-two-sided-coupling.json",
+      "states": 1
+    },
+    {
+      "file": "T-6-mean-field-screening-validity.json",
+      "states": 3
+    }
+  ],
+  "electrolyteStudies": [
+    {
+      "study": "actuator/CollarEquilibriumPathStudy.kt",
+      "emits": [
+        "T-60-collar-on-the-equilibrium-path.json"
+      ],
+      "buffersMillimolar": [
+        2.0,
+        10.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "two collar states, `concentration = 2.0` and `concentration = 10.0`",
+      "studyReadEdges": 2,
+      "testReadEdges": 1
+    },
+    {
+      "study": "actuator/MaximumUsableBiasStudy.kt",
+      "emits": [
+        "T-4-maximum-usable-bias.json"
+      ],
+      "buffersMillimolar": [
+        0.5,
+        2.0,
+        10.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "`listOf(0.5, 2.0, 10.0)`",
+      "studyReadEdges": 4,
+      "testReadEdges": 3
+    },
+    {
+      "study": "actuator/StrokeAndBlockingForceStudy.kt",
+      "emits": [
+        "T-3-stroke-and-blocking-force.json"
+      ],
+      "buffersMillimolar": [
+        0.5,
+        1.0,
+        2.0,
+        5.0,
+        10.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "`listOf(0.5, 1.0, 2.0, 5.0, 10.0)`",
+      "studyReadEdges": 3,
+      "testReadEdges": 3
+    },
+    {
+      "study": "actuator/TallGapDeviceBStudy.kt",
+      "emits": [
+        "T-192-device-b-tall-gap.json"
+      ],
+      "buffersMillimolar": [
+        0.5,
+        1.0,
+        2.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "TWO lists: `TALL_GAP_REACH_BUFFERS = listOf(0.5, 1.0, 2.0)` over the tall heights and `TALL_GAP_BUFFERS = listOf(0.5, 2.0)` over the fold heights",
+      "studyReadEdges": 0,
+      "testReadEdges": 0
+    },
+    {
+      "study": "anchoring/GoldElectrodePzcStudy.kt",
+      "emits": [
+        "T-193-gold-electrode-pzc.json"
+      ],
+      "buffersMillimolar": [
+        2.0
+      ],
+      "sweepsTheBuffer": false,
+      "evidence": "`T193_BUFFER = 2.0`; its `listOf(2.0, 10.0)` is `T193_TILE_THICKNESSES`, in nm",
+      "studyReadEdges": 0,
+      "testReadEdges": 0
+    },
+    {
+      "study": "anchoring/TwoSidedCouplingStudy.kt",
+      "emits": [
+        "T-23-two-sided-coupling.json"
+      ],
+      "buffersMillimolar": [
+        2.0
+      ],
+      "sweepsTheBuffer": false,
+      "evidence": "`BUFFER = 2.0`",
+      "studyReadEdges": 0,
+      "testReadEdges": 0
+    },
+    {
+      "study": "anchoring/ZeroBiasRestingPositionStudy.kt",
+      "emits": [
+        "T-13-zero-bias-resting-position.json"
+      ],
+      "buffersMillimolar": [
+        2.0
+      ],
+      "sweepsTheBuffer": false,
+      "evidence": "`BUFFER = 2.0`",
+      "studyReadEdges": 2,
+      "testReadEdges": 2
+    },
+    {
+      "study": "coupling/OutputCouplingStudy.kt",
+      "emits": [
+        "T-16-output-coupling-stiffness.json"
+      ],
+      "buffersMillimolar": [
+        0.5,
+        1.0,
+        2.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "`listOf(0.5, 1.0, 2.0)`",
+      "studyReadEdges": 4,
+      "testReadEdges": 3
+    },
+    {
+      "study": "crossover/ConcentratedCrossoverStudy.kt",
+      "emits": [
+        "T-21-concentrated-crossover.json"
+      ],
+      "buffersMillimolar": [
+        0.5,
+        2.0,
+        10.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "`listOf(0.5, 2.0, 10.0)`",
+      "studyReadEdges": 0,
+      "testReadEdges": 0
+    },
+    {
+      "study": "electrostatics/BeyondMeanFieldGapStudy.kt",
+      "emits": [
+        "T-50-beyond-mean-field-gap.json"
+      ],
+      "buffersMillimolar": [
+        0.5,
+        1.0,
+        2.0,
+        10.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "`listOf(0.5, 1.0, 2.0, 10.0)`",
+      "studyReadEdges": 1,
+      "testReadEdges": 0
+    },
+    {
+      "study": "electrostatics/CutRimChargeStudy.kt",
+      "emits": [
+        "P-14-cut-rim-charge.json"
+      ],
+      "buffersMillimolar": [
+        0.5,
+        2.0,
+        10.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "`listOf(0.5, 2.0, 10.0)`",
+      "studyReadEdges": 0,
+      "testReadEdges": 0
+    },
+    {
+      "study": "electrostatics/EdgeWidthDependenceStudy.kt",
+      "emits": [
+        "T-160-edge-width-dependence.json"
+      ],
+      "buffersMillimolar": [
+        2.0
+      ],
+      "sweepsTheBuffer": false,
+      "evidence": "selects `value(\"concentration\") == 2.0` out of `T-3b`",
+      "studyReadEdges": 0,
+      "testReadEdges": 1
+    },
+    {
+      "study": "electrostatics/MeanFieldValidityStudy.kt",
+      "emits": [
+        "T-6-mean-field-screening-validity.json"
+      ],
+      "buffersMillimolar": [
+        2.0,
+        5.0,
+        10.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "`BUFFERS = listOf(2.0, 5.0, 10.0)`",
+      "studyReadEdges": 0,
+      "testReadEdges": 0
+    },
+    {
+      "study": "electrostatics/NonlinearPbProfileStudy.kt",
+      "emits": [
+        "T-3a-nonlinear-pb-profile.json"
+      ],
+      "buffersMillimolar": [
+        2.0,
+        5.0,
+        10.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "`BUFFERS = listOf(2.0, 5.0, 10.0)`; its `listOf(5.0, 10.0)` is a height pair",
+      "studyReadEdges": 0,
+      "testReadEdges": 0
+    },
+    {
+      "study": "electrostatics/PlanarCouplingWallStudy.kt",
+      "emits": [
+        "T-221-planar-coupling-wall.json"
+      ],
+      "buffersMillimolar": [
+        2.0
+      ],
+      "sweepsTheBuffer": false,
+      "evidence": "`OPERATING_BUFFER = 2.0`",
+      "studyReadEdges": 0,
+      "testReadEdges": 0
+    },
+    {
+      "study": "electrostatics/ScaffoldRemainderStudy.kt",
+      "emits": [
+        "T-195-scaffold-remainder.json"
+      ],
+      "buffersMillimolar": [
+        0.5,
+        2.0,
+        10.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "`listOf(0.5, 2.0, 10.0)`",
+      "studyReadEdges": 0,
+      "testReadEdges": 1
+    },
+    {
+      "study": "electrostatics/TileEdgeLoadProfileStudy.kt",
+      "emits": [
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "buffersMillimolar": [
+        0.5,
+        2.0,
+        10.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "`listOf(0.5, 2.0, 10.0)`",
+      "studyReadEdges": 50,
+      "testReadEdges": 3
+    },
+    {
+      "study": "stability/LargeRotationArmBranchStudy.kt",
+      "emits": [
+        "T-157-large-rotation-arm-branch.json"
+      ],
+      "buffersMillimolar": [
+        0.5,
+        2.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "`listOf(0.5, 2.0)`",
+      "studyReadEdges": 0,
+      "testReadEdges": 0
+    },
+    {
+      "study": "stability/RecommendedElementFoldStudy.kt",
+      "emits": [
+        "T-149-recommended-element-fold.json"
+      ],
+      "buffersMillimolar": [
+        0.5,
+        2.0,
+        10.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "`listOf(0.5, 2.0, 10.0)`",
+      "studyReadEdges": 3,
+      "testReadEdges": 2
+    },
+    {
+      "study": "stability/SofteningCouplingStabilityStudy.kt",
+      "emits": [
+        "T-76-softening-coupling-stability.json"
+      ],
+      "buffersMillimolar": [
+        0.5,
+        2.0,
+        10.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "`listOf(0.5, 2.0, 10.0)`",
+      "studyReadEdges": 1,
+      "testReadEdges": 1
+    },
+    {
+      "study": "structure/DrawableRaggedFaceStudy.kt",
+      "emits": [
+        "T-258-drawable-ragged-face.json"
+      ],
+      "buffersMillimolar": [
+        0.5,
+        1.0,
+        2.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "`listOf(0.5, 1.0, 2.0)`",
+      "studyReadEdges": 0,
+      "testReadEdges": 0
+    },
+    {
+      "study": "structure/RaggedFaceCostStudy.kt",
+      "emits": [
+        "T-231-ragged-face-cost.json"
+      ],
+      "buffersMillimolar": [
+        0.5,
+        1.0,
+        2.0
+      ],
+      "sweepsTheBuffer": true,
+      "evidence": "`listOf(0.5, 1.0, 2.0)`",
+      "studyReadEdges": 1,
+      "testReadEdges": 0
+    }
+  ],
+  "consumerSide": {
+    "totalStudyReadEdges": 170,
+    "totalTestReadEdges": 38,
+    "edgesOntoElectrolyteFiles": 71,
+    "edgesOntoSweptFiles": 69,
+    "edgesOntoSingleStateFiles": 2,
+    "busiestElectrolyteFile": [
+      "T-3b-tile-edge-load-profile.json"
+    ],
+    "busiestElectrolyteFileEdges": 50,
+    "sweepingStudies": 17,
+    "singleStateStudies": 5
+  },
+  "demonstration": [
+    {
+      "study": "brush/BrushStiffnessStudy.kt",
+      "emits": "T-1-layer-stiffness.json",
+      "state": "STATED, buffer null",
+      "declares": "Regime.neutralLayer -- the documented physical claim that ideal mobile salt cancels out of a neutral grafted layer exactly, and a THIRD value distinct from both absences"
+    },
+    {
+      "study": "electrostatics/MeanFieldValidityStudy.kt",
+      "emits": "T-6-mean-field-screening-validity.json",
+      "state": "STATED, three members",
+      "declares": "one Regime per molarity of BUFFERS = {2.0, 5.0, 10.0}, over GAP_HEIGHTS = [5, 10] nm at zero applied bias"
+    },
+    {
+      "study": "anchoring/TwoSidedCouplingStudy.kt",
+      "emits": "T-23-two-sided-coupling.json",
+      "state": "STATED, one member",
+      "declares": "BUFFER = 2.0 mM over fieldGaps = [3, 10] nm, bias [0, 1] V, band 1000 Hz"
+    }
+  ],
+  "findings": {
+    "theBlockIsNullOnEveryHeadedFile": "At baselineRef the emission header is carried by 135 of 159 committed result files and its regime is null on 135 of them, stated on 0. That is CH-0224's own assertion, re-derived: the key exists everywhere and refuses nothing anywhere.",
+    "theArityIsTheDefect": "17 of the 22 studies naming MagnesiumChlorideBuffer solve every state at more than one molarity and 5 fix one. A block that holds one molarity is therefore null on the majority of the studies whose results a gate exists to refuse -- and CH-0224's own falsifier partly fires: five single-buffer studies exist, all at 2.0 mM, and each is a row rather than a type.",
+    "theConsumerSideIsDominatedByOneSweptFile": "71 of the corpus's 170 study read edges land on an electrolyte study's result file, and 69 of those 71 land on a file whose buffer is a SET. T-3b-tile-edge-load-profile.json alone carries 50. So the coordinate the block could not express is the coordinate almost every gateable read edge is in.",
+    "whatTheGateCannotDo": "A file-granular set is a NECESSARY condition and not a sufficient one. It refuses a consumer asking a file for a state no record of it carries; it cannot refuse a consumer that picks the WRONG RECORD inside a file whose set contains the state -- which is the defect CLAUDE.md already records against the busiest file in this corpus: T-3b carries two solved profiles per (concentration, gap), one per operating bias, so firstOrNull { c && h } silently takes whichever is listed first. Only a regime on the RECORD closes that, and it is T-272's sweep with a wider edit.",
+    "whyNotAWiderField": "actuator/TallGapDeviceBStudy solves {0.5, 1.0, 2.0} mM over its tall heights and {0.5, 2.0} mM over its fold heights. A single Regime with a set-valued buffer would carry the UNION of both height ranges and would then admit 1.0 mM at a fold height, which no record of that file carries. A set of two regimes does not. That is CH-0224's repair 2 falsified by the corpus, at the cost of one grep."
+  },
+  "openQuestions": [
+    "The 132 call sites that pass null keep passing null, and their JSON does not move. What moves is the MEANING: null is now `the study has not stated`, which is a residue to be counted, where the KDoc previously read it as `no solved range`. Closing the residue is T-272's sweep and is priced there.",
+    "Regime.reasonToRefuse compares buffers by EQUALITY and refuses a neutral-layer source against an electrolyte consumer. That is C-0159's claim and this task does not touch it; whether a layer pressure and a gap force are `consumed` in one another's regime, or merely summed, is a question about the coupled model."
+  ]
+}

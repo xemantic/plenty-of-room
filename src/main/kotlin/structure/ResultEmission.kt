@@ -17,8 +17,10 @@
 package com.xemantic.nano.plentyofroom.structure
 
 import com.xemantic.nano.plentyofroom.environment.Regime
+import com.xemantic.nano.plentyofroom.environment.RegimeSet
 import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonNull
 import kotlinx.serialization.json.JsonObject
@@ -78,22 +80,33 @@ private val headerJson = Json { encodeDefaults = true }
  *    read on a block this task adds: a regime bound rounded to nine significant digits is the same
  *    defect `CH-0207` was filed on, one key along.
  *
- * ## Why a `null` regime is written out
+ * ## Why the regime is a SET, and why a `null` one is written out
  *
- * A study whose result has no solved range in the environment coordinates — a lattice census, a
- * junction closure search, a plan packing — passes `null`, and the key is emitted as an explicit
- * JSON `null` rather than omitted. `Regime` makes the same move with a `null` buffer and says why:
- * an omission and a statement of absence read alike in a file and are not the same fact. It also
- * makes the residue **countable**, which is what the falsifier in `T-272`'s plan asks for — a
- * record whose solved range nobody can name is a finding about the study, not about the schema.
+ * **`T-286`, answering [`CH-0224`](../../../../../../../gpd/challenges/CH-0224-a-regime-cannot-name-a-swept-buffer.md).**
+ * A [Regime] describes a **solve** and a result file is a **bag of solves**: of the 22 studies
+ * naming `MagnesiumChlorideBuffer`, **17 declare a list of two to five molarities and solve every
+ * state at each**, so a block that can hold one molarity was `null` on exactly the results a `P4`
+ * gate exists to refuse — 136 of 136 headed files, measured. The block is therefore a
+ * [RegimeSet], serialised as a JSON **array**, and the two absences are two values:
+ *
+ *  * **JSON `null`** — the study has not stated what it was solved at. The residue, countable,
+ *    and read as `RegimeVerdict.NOT_STATED` rather than as an admission. This is what all 132
+ *    existing call sites pass and it is what they mean;
+ *  * **`[]`**, from [RegimeSet.noEnvironment] — a claim that no environment coordinate enters this
+ *    result at all: a lattice census, a junction closure search, a plan packing.
+ *
+ * `CLAUDE.md`: *a `null` that means "no requirement" and a `null` that means "not stated" are
+ * different values.* A third remains distinct from both — a **stated** regime whose buffer is
+ * `null`, which is `Regime.neutralLayer`'s documented physical claim and serialises as a
+ * one-member array.
  *
  * @param lattice which crossover lattice the numbers in this file are on.
- * @param regime the tuple a downstream consumer is refused on, or `null` where the result has no
- *          solved range in those coordinates and that is a claim.
+ * @param regime the environment states some record of this result was solved at, or `null` where
+ *          the study has not stated them.
  * @throws IllegalArgumentException if the receiver is not a JSON object, or already carries
  *          an [EMISSION_KEY].
  */
-fun JsonElement.withEmissionHeader(lattice: LatticeTag, regime: Regime?): JsonElement {
+fun JsonElement.withEmissionHeader(lattice: LatticeTag, regime: RegimeSet?): JsonElement {
     require(this is JsonObject) {
         "a result record must be a JSON object to carry an emission header, was: " +
             this::class.simpleName
@@ -106,10 +119,25 @@ fun JsonElement.withEmissionHeader(lattice: LatticeTag, regime: Regime?): JsonEl
         EMISSION_KEY to JsonObject(
             mapOf(
                 LATTICE_KEY to JsonPrimitive(lattice.tag),
-                REGIME_KEY to (regime?.let { headerJson.encodeToJsonElement(it) } ?: JsonNull)
+                REGIME_KEY to (
+                    regime?.let { set ->
+                        JsonArray(set.states.map { headerJson.encodeToJsonElement(it) })
+                    } ?: JsonNull
+                )
             )
         )
     )
     header.putAll(this)
     return JsonObject(header)
 }
+
+/**
+ * [withEmissionHeader] for a study solved at exactly **one** environment state.
+ *
+ * A convenience rather than a second rule: it is `RegimeSet.of(regime)` and nothing else, so a
+ * single-state study reads as one and the file still carries an array. Deliberately **non-null**,
+ * which is what keeps `withEmissionHeader(tag, null)` unambiguous — `null` is the study not having
+ * stated, and it binds to the [RegimeSet] overload alone.
+ */
+fun JsonElement.withEmissionHeader(lattice: LatticeTag, regime: Regime): JsonElement =
+    withEmissionHeader(lattice, RegimeSet.of(regime))

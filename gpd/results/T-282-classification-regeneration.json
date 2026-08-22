@@ -1,0 +1,103 @@
+{
+  "task": "T-282",
+  "title": "the T-234 classification regenerated at a quiet tree, with every reclassification read and two readings the rules got wrong repaired rather than laundered",
+  "raisedBy": "C-0179 (T-280), which verified the defects were pre-existing and did not regenerate",
+  "baselineRef": "9620d3ef3f21aa4038055a5752cd637f49e62954",
+  "baselineRefRequested": "HEAD",
+  "parameters": {
+    "orderingIsTheWholePoint": "T-285 blanks a filename before matching, which removes occurrences and moves every index below them; the regeneration must run after it or the table it writes is keyed on indices the next run of the census will not produce",
+    "quietTree": "git status read before the regeneration: four uncommitted claims, every one complete (headline, metadata table, eight or nine numbered sections), and no half-written markdown in the census's scope. C-0176 section 1b is the ground"
+  },
+  "measurement": {
+    "gateBefore": 21,
+    "gateBeforeItemised": [
+      "wrong discharge: TASKS.md#58 is DISCHARGED on family ROW_SPAN, which belongs to no discharge at all",
+      "wrong discharge: TASKS.md#69 is RESTATED on family WIDTH, which this census gates",
+      "wrong discharge: TASKS.md#73 is MOVED on family ROW_SPAN, which belongs to no discharge at all",
+      "wrong discharge: TASKS.md#74 is MOVED on family ROW_SPAN, which belongs to no discharge at all",
+      "wrong discharge: TASKS.md#75 is MOVED on family ROW_SPAN, which belongs to no discharge at all",
+      "wrong discharge: TASKS.md#76 is MOVED on family GRILLAGE, which belongs to C-0154/C-0167",
+      "unclassified: TASKS.md#78 line 1347 [FOOTPRINT] '38.08 × 25.36'",
+      "unclassified: TASKS.md#79 line 1352 [FOOTPRINT] 'third of the footprint'",
+      "unclassified: TASKS.md#80 line 1362 [FOOTPRINT] '0.0788618807'",
+      "unclassified: TASKS.md#81 line 1370 [SCAFFOLD] 'p8064'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#0 line 1 [ROW_SPAN] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#1 line 1 [ROW_SPAN] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#2 line 5 [WIDTH] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#3 line 10 [WIDTH] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#4 line 10 [WIDTH] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#5 line 11 [ROW_SPAN] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#6 line 12 [ROW_SPAN] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#7 line 13 [WIDTH] 'drawable'",
+      "unclassified: gpd/claims/C-0180-tied-honeycomb-coupled-regrade.md#0 line 12 [ROW_SPAN] 'drawable'",
+      "unclassified: gpd/claims/C-0182-name-the-discharge.md#0 line 69 [WIDTH] 'drawable'",
+      "unclassified: gpd/claims/C-0182-name-the-discharge.md#1 line 69 [WIDTH] 'drawable'"
+    ],
+    "gateAtTheBaselineRefWithItsOwnTools": 18,
+    "gateAtTheBaselineRefItemised": [
+      "wrong discharge: TASKS.md#58 is DISCHARGED on family ROW_SPAN, which belongs to no discharge at all",
+      "wrong discharge: TASKS.md#69 is RESTATED on family WIDTH, which this census gates",
+      "wrong discharge: TASKS.md#73 is MOVED on family ROW_SPAN, which belongs to no discharge at all",
+      "wrong discharge: TASKS.md#74 is MOVED on family ROW_SPAN, which belongs to no discharge at all",
+      "wrong discharge: TASKS.md#75 is MOVED on family ROW_SPAN, which belongs to no discharge at all",
+      "wrong discharge: TASKS.md#76 is MOVED on family GRILLAGE, which belongs to C-0154/C-0167",
+      "unclassified: TASKS.md#78 line 1342 [FOOTPRINT] '38.08 × 25.36'",
+      "unclassified: TASKS.md#79 line 1347 [FOOTPRINT] 'third of the footprint'",
+      "unclassified: TASKS.md#80 line 1357 [FOOTPRINT] '0.0788618807'",
+      "unclassified: TASKS.md#81 line 1365 [SCAFFOLD] 'p8064'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#0 line 1 [ROW_SPAN] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#1 line 1 [ROW_SPAN] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#2 line 5 [WIDTH] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#3 line 10 [WIDTH] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#4 line 10 [WIDTH] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#5 line 11 [ROW_SPAN] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#6 line 12 [ROW_SPAN] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#7 line 13 [WIDTH] 'drawable'"
+    ],
+    "gateAfter": 0,
+    "gateAfterItemised": [],
+    "gateDefectsRemovedByTheT285Predicate": 5,
+    "gateDefectsRemovedByTheT285PredicateItemised": [
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#2 line 5 [WIDTH] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#3 line 10 [WIDTH] 'drawable'",
+      "unclassified: gpd/claims/C-0175-drawable-raster-rim.md#4 line 10 [WIDTH] 'drawable'",
+      "unclassified: gpd/claims/C-0180-tied-honeycomb-coupled-regrade.md#0 line 12 [ROW_SPAN] 'drawable'",
+      "unclassified: gpd/claims/C-0182-name-the-discharge.md#0 line 69 [WIDTH] 'drawable'"
+    ],
+    "gateDefectsRemovedByTheRegeneration": 16,
+    "handOverridesBefore": 6,
+    "handOverridesAfter": 7,
+    "handOverridesDropped": 0,
+    "handOverrideKeyCollisions": 0,
+    "filesInTheTableBefore": 39,
+    "filesInTheTableAfter": 41,
+    "entriesBefore": 379,
+    "entriesAfter": 386,
+    "regenerationIsAFixedPoint": true,
+    "gateWithThePredicateAloneOnTheWorkingTree": 9,
+    "gateWithThePredicateAloneAtTheBaselineRef": 8,
+    "andNeitherOfThoseTwoIsADefectCount": "both are today's predicate read against a classification table keyed on the OLD indices. Removing an occurrence moves every index below it, so a stale table lines up against different occurrences and its count falls for a reason that is not a repair. They are published so that *this reading measures nothing* is reproducible rather than asserted, and they are why T-285 could not be filed without T-282"
+  },
+  "readingsTheRulesGotWrongAndHowEachWasRepaired": [
+    {
+      "occurrence": "gpd/claims/C-0175-drawable-raster-rim.md, the Constrains row",
+      "ruleSaid": "MOVED on family WIDTH -- asserts a premise C-0140/C-0141 withdrew",
+      "whyThatIsWrong": "the sentence upholds C-0147's verdict at the RELIEF of C-0151's drawable raster; it asserts no uniform honeycomb tile width. The governing-noun rule put it on WIDTH because no row noun and no raster stands within the refinement window",
+      "repair": "a hand override to OUT_OF_SCOPE, keyed on the occurrence's own neighbourhood",
+      "whyNotAPredicateChange": "measured: adding the phrase to the drawable-raster test reclassifies exactly ONE occurrence in the whole corpus -- this one -- which is a hand override wearing a predicate's clothes (C-0176: measure the cure before writing it)",
+      "howItWasFound": "the gate itself, as its only remaining UNPOINTED report"
+    },
+    {
+      "occurrence": "gpd/claims/C-0182-name-the-discharge.md, its account of the gate",
+      "ruleSaid": "MOVED on family WIDTH",
+      "whyThatIsWrong": "C-0182's subject IS this census; the token is quoted as DATA in a sentence reporting an unclassified occurrence, which is C-0144's own #20 exactly -- a document about the tool, not a design premise",
+      "repair": "registered in the emitter's CORRECTING set, on C-0176's stated ground",
+      "howItWasFound": "NOT by the gate: the claim carries both a forward pointer and a headline pointer, so a wrong MOVED there is silent. It was found by reading every entry the regeneration added, which is what F4 asks for"
+    }
+  ],
+  "debtLine": {
+    "before": "24 of 88",
+    "after": "24 of 88",
+    "note": "the two deliverables are not edited by this task and hold none of the removed occurrences, so the line is unmoved -- which is the check, not a coincidence"
+  }
+}

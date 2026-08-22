@@ -178,7 +178,7 @@ MUTATIONS = [
 
 
 def _apply(directory, filename, old, new):
-    path = os.path.join(directory, filename)
+    path = os.path.join(directory, "tools", filename)
     with open(path, encoding="utf-8") as handle:
         text = handle.read()
     occurrences = text.count(old)
@@ -207,17 +207,65 @@ def _failures(directory, argv):
     return lines
 
 
+def _populate(directory):
+    """`<tmp>/tools/*.py` beside `<tmp>/TASKS.md`.
+
+    `T-283`/`CH-0237`.  The layout is a PREMISE of the measurement, not a convenience.  This
+    harness used to copy `tools/` FLAT, and the gate resolves its queue as
+    `dirname(dirname(__file__))/TASKS.md` -- harmless while no self-test read the queue, and the
+    moment `T-283` added self-tests that do, every mutation was `killed` by one and the same
+    `FileNotFoundError: /tmp/TASKS.md`.  A table that reads *24 mutations, 0 survivors* and kills
+    every row for a reason that is not about the row is exactly `C-0177`'s trap -- full and empty
+    -- reached from the SUBJECT's side rather than from the table's.
+    """
+    tools = os.path.join(directory, "tools")
+    os.makedirs(tools)
+    for source in os.listdir(TOOLS):
+        if source.endswith(".py"):
+            shutil.copy2(os.path.join(TOOLS, source), tools)
+    shutil.copy2(os.path.join(ROOT, "TASKS.md"), os.path.join(directory, "TASKS.md"))
+
+
+def _baseline():
+    """Named tests that fail in an UNMUTATED copy, subtracted from every killer count below.
+
+    Without the subtraction a harness defect is indistinguishable from a kill, which is the
+    failure this file exists to avoid one level down.
+    """
+    directory = tempfile.mkdtemp(prefix="P-30-baseline.")
+    try:
+        _populate(directory)
+        return set(_failures(directory, ["tools/test-trace-answers.py"])) | set(
+            _failures(directory, ["tools/check-queue-vocabulary.py", "--selftest"])
+        )
+    finally:
+        shutil.rmtree(directory, ignore_errors=True)
+
+
 def main():
+    base = _baseline()
+    print(
+        "# baseline in an unmutated copy: %d pre-existing failure(s), SUBTRACTED from every "
+        "killer count below" % len(base)
+    )
+    for line in sorted(base):
+        print("#   %s" % line[:110])
     survivors = []
     for name, filename, old, new in MUTATIONS:
         directory = tempfile.mkdtemp(prefix="P-30-mutation.")
         try:
-            for source in os.listdir(TOOLS):
-                if source.endswith(".py"):
-                    shutil.copy2(os.path.join(TOOLS, source), directory)
+            _populate(directory)
             _apply(directory, filename, old, new)
-            killers = _failures(directory, ["test-trace-answers.py"])
-            gate = _failures(directory, ["check-queue-vocabulary.py", "--selftest"])
+            killers = [
+                f for f in _failures(directory, ["tools/test-trace-answers.py"])
+                if f not in base
+            ]
+            gate = [
+                f for f in _failures(
+                    directory, ["tools/check-queue-vocabulary.py", "--selftest"]
+                )
+                if f not in base
+            ]
         finally:
             shutil.rmtree(directory, ignore_errors=True)
         if killers or gate:

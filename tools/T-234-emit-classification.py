@@ -107,6 +107,15 @@ CORRECTING = {
     # SURVIVING) across 6 other files, which would excuse a deliverable that quotes a withdrawn
     # sentence as its own assertion. Measure the cure before writing it.
     "gpd/claims/C-0176-partial-discharge-and-restatement-predicates.md",
+    # Iteration 43, and CH-0182 for the EIGHTH consecutive iteration. `C-0182`'s subject is this
+    # census's own discharge registry, and its account of what the gate read while it was being
+    # written quotes a family token as DATA -- *"an unclassified `drawable` in a concurrent agent's
+    # C-0180"*. That is `C-0144`'s #20 exactly (*"`112 bp` needs a honeycomb context"*): a document
+    # about the TOOL, not a design premise. Left unregistered the occurrence reads MOVED, i.e. that
+    # `C-0182` asserts a honeycomb tile width it never mentions -- and it reads MOVED SILENTLY,
+    # because the claim carries both a forward pointer and a headline pointer, so the gate cannot
+    # see it. A wrong reading a gate cannot see is the one this set exists for.
+    "gpd/claims/C-0182-name-the-discharge.md",
 }
 
 #: How much of an occurrence's own NEIGHBOURHOOD takes part in a hand override's key -- the census's
@@ -308,7 +317,14 @@ def self_test():
     )
     ok(
         "every family the census does not gate has a coercion",
-        {f for f in census.FAMILY_DISCHARGE} == set(FAMILY_CLASS),
+        # `T-281`.  This used to read `set(census.FAMILY_DISCHARGE) == set(FAMILY_CLASS)`, which
+        # was the test's own NAME only while that map was PARTIAL — it held the non-gated families
+        # and nothing else, because a gated family was answered by a default.  Completing the map
+        # (a family must NAME its discharge) made the proxy false while the name stayed true, so
+        # the expression is now the sentence: `CLAUDE.md`'s *assert the premise a derivation rests
+        # on, never a proxy for it*.
+        {f for f in census.FAMILY_DISCHARGE if census.discharge_of(f) != census.SUBJECT}
+        == set(FAMILY_CLASS),
     )
     ok("SURVIVING has a reason", "SURVIVING" in WHY and len(WHY["SURVIVING"]) > 40)
     ok("RESTATED has a reason", "RESTATED" in WHY and len(WHY["RESTATED"]) > 40)

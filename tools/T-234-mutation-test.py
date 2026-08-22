@@ -35,6 +35,7 @@ decoration, so each row is also asked whether *some* mutation flips it.
     tools/T-234-mutation-test.py
 """
 
+import ast
 import importlib.util
 import io
 import os
@@ -73,8 +74,37 @@ def _run_self_test(source, path, name):
 
 
 def _named_tests(source):
-    """Every `ok("...")` name in a self-test, in source order."""
-    return re.findall(r'ok\(\s*\n?\s*"((?:[^"\\]|\\.)*)"', source)
+    """Every `ok("...")` name in a self-test, in source order.
+
+    Parsed rather than matched.  `T-285`: the regular expression this replaces captured only the
+    FIRST string literal of a name, so every test whose name is written as adjacent literals across
+    two source lines was recorded TRUNCATED -- while `_run_self_test` reports the whole,
+    concatenated name.  The two then never compare equal, and the `UNREACHED` report below duly
+    listed as unreached seven tests that a mutation had demonstrably killed.  `ast` folds implicit
+    concatenation into one constant, which is the same thing the interpreter does at the call.
+    """
+    tree = ast.parse(source)
+    found = []
+    for node in ast.walk(tree):
+        if (isinstance(node, ast.Call) and isinstance(node.func, ast.Name)
+                and node.func.id == "ok" and node.args
+                and isinstance(node.args[0], ast.Constant)
+                and isinstance(node.args[0].value, str)):
+            found.append((node.lineno, node.args[0].value))
+    return [name for _line, name in sorted(found)]
+
+
+def _self_check():
+    """The name extractor is itself a predicate, and this is the case it used to get wrong."""
+    sample = 'def f():\n    ok(\n        "a name split "\n        "across two lines",\n        True,\n    )\n'
+    recovered = _named_tests(sample)
+    if recovered != ["a name split across two lines"]:
+        print("SELF-CHECK FAILED: _named_tests recovered %r" % (recovered,))
+        return 1
+    if _named_tests('def f():\n    ok("one", True)\n') != ["one"]:
+        print("SELF-CHECK FAILED: _named_tests lost a single-literal name")
+        return 1
+    return 0
 
 
 #: `(kind, name, path, substitutions)`.  A substitution that does not apply is a defect in this
@@ -105,16 +135,43 @@ def mutations():
     r"102 . 109|drawable(?:\\s+\\S+){0,3}\\s+raster|drawable one|drawable pair|closing raster"
     r"|closes", re.I
 )'''
+    # `T-281` completed this map -- a family must NAME its discharge, so the five subject families
+    # are declared rather than defaulted.  The mutation's MEANING is unchanged: put every family
+    # back on one global pointer set.  Restoring the old three-entry anchor would now be a
+    # different mutation (every subject family UNDECLARED), and the anchor would not match either.
     discharge_map = '''FAMILY_DISCHARGE = {
+    "FOOTPRINT": SUBJECT,
+    "WIDTH": SUBJECT,
+    "AZIMUTH": SUBJECT,
+    "SCAFFOLD": SUBJECT,
+    "PLACEMENT": SUBJECT,
     "GRILLAGE": "C-0154/C-0167",
     "SQUARE": None,
     "ROW_SPAN": None,
+}'''
+    one_global_pointer_set = '''FAMILY_DISCHARGE = {
+    "FOOTPRINT": SUBJECT,
+    "WIDTH": SUBJECT,
+    "AZIMUTH": SUBJECT,
+    "SCAFFOLD": SUBJECT,
+    "PLACEMENT": SUBJECT,
+    "GRILLAGE": SUBJECT,
+    "SQUARE": SUBJECT,
+    "ROW_SPAN": SUBJECT,
 }'''
     family_class = '''FAMILY_CLASS = {
     "GRILLAGE": "SURVIVING",
     "ROW_SPAN": "RESTATED",
     "SQUARE": "OUT_OF_SCOPE",
 }'''
+    _SLUG_ANCHOR = (
+        'SLUG_FILENAME = re.compile('
+        'r"\\b(?:CH|C|P|T|S)-\\d{1,4}[a-z]?-[A-Za-z0-9-]+\\.[A-Za-z0-9]{1,5}\\b")'
+    )
+    _ORDER_ANCHOR = '''_ID_PATTERNS = [
+    SLUG_FILENAME,
+    re.compile(r"\\b(?:CH|C|P|T|S)-\\d{1,4}[a-z]?\\b"),
+]'''
     return [
         # ------------------------------------------------------------------ T-260, narrowing
         ("NARROW", "the PLACEMENT refinement removed (the iteration-34 predicate)", CENSUS,
@@ -124,7 +181,7 @@ def mutations():
         ("NARROW", "the attributive test never fires -- no SQUARE reading", CENSUS,
          [(attributive, "_ATTRIBUTIVE = re.compile(" + NEVER + ")")]),
         ("NARROW", "one global pointer set again -- no per-family discharge", CENSUS,
-         [(discharge_map, "FAMILY_DISCHARGE = {}")]),
+         [(discharge_map, one_global_pointer_set)]),
         ("NARROW", "the refinement window shrunk to nothing", CENSUS,
          [("REFINE_WINDOW = 300", "REFINE_WINDOW = 0")]),
         # ------------------------------------------------------------------ T-260, widening
@@ -198,9 +255,14 @@ def mutations():
            '    "GRILLAGE": SUBJECT,\n    "SQUARE": SUBJECT,\n    "ROW_SPAN": SUBJECT,')]),
         ("NARROW", "the two discharges merged into one pointer set", CENSUS,
          [('    "C-0140", "C-0141", "CH-0172",', '    "C-0140", "C-0141", "C-0154", "CH-0172",')]),
-        ("WIDEN", "a family with no entry belongs to NO discharge", CENSUS,
-         [("return FAMILY_DISCHARGE.get(family, SUBJECT)",
-           "return FAMILY_DISCHARGE.get(family)")]),
+        # `T-281` replaced `FAMILY_DISCHARGE.get(family, SUBJECT)` by a registry that REFUSES an
+        # undeclared family, so the old anchor no longer exists -- there is no default left to
+        # change.  The mutation's intent survives as *swallow the refusal*, which is the same
+        # widening expressed against the new rule.
+        ("WIDEN", "a family with no entry belongs to NO discharge -- the refusal swallowed", CENSUS,
+         [("    return REGISTRY.discharge_of(family)",
+           "    try:\n        return REGISTRY.discharge_of(family)\n"
+           "    except Exception:\n        return None")]),
         ("NARROW", "the WIDTH family loses its honeycomb line context", CENSUS,
          [("_HONEYCOMB, refine_width)", "None, refine_width)")]),
         ("NARROW", "the subject side of the two-layer agreement removed", CENSUS,
@@ -227,10 +289,64 @@ def mutations():
            'CORRECTING = {\n    "unused.md",')]),
         ("NARROW", "the override key shortened below one occurrence's neighbourhood", EMITTER,
          [("OVERRIDE_KEY_CHARS = 100", "OVERRIDE_KEY_CHARS = 4")]),
+        # ------------------------------------------------------- T-285, narrowing: the defect back
+        # The rule is a WIDENING of an exclusion -- a file NAMED by an identifier is blanked before
+        # the families are matched -- so its two directions are: take the widening away, and take
+        # it too far.  A silencer is the worse failure of the two.
+        ("NARROW", "the filename rule removed -- the pre-T-285 predicate, and a slug fires again",
+         CENSUS, [(_ORDER_ANCHOR, _ORDER_ANCHOR.replace("    SLUG_FILENAME,\n", ""))]),
+        ("NARROW", "the filename rule runs AFTER the bare identifier, which eats its own prefix "
+                   "and leaves the slug behind", CENSUS,
+         [(_ORDER_ANCHOR, '''_ID_PATTERNS = [
+    re.compile(r"\\b(?:CH|C|P|T|S)-\\d{1,4}[a-z]?\\b"),
+    SLUG_FILENAME,
+]''')]),
+        ("NARROW", "the extension is `.md` alone -- a RESULT filename's token survives", CENSUS,
+         [(_SLUG_ANCHOR, _SLUG_ANCHOR.replace(r"\.[A-Za-z0-9]{1,5}", r"\.md"))]),
+        ("NARROW", "the slug charset drops the hyphen -- a multi-word slug is not a filename",
+         CENSUS, [(_SLUG_ANCHOR, _SLUG_ANCHOR.replace("[A-Za-z0-9-]+", "[A-Za-z0-9]+"))]),
+        ("NARROW", "the sub-letter is dropped -- a `T-1d` file is not a filename", CENSUS,
+         [(_SLUG_ANCHOR, _SLUG_ANCHOR.replace(r"\d{1,4}[a-z]?-", r"\d{1,4}-"))]),
+        ("NARROW", "the blanking stops preserving length -- every offset below a span is wrong",
+         CENSUS,
+         [('        out = pattern.sub(lambda m: " " * (m.end() - m.start()), out)',
+           '        out = pattern.sub("", out)')]),
+        # ------------------------------------------------------ T-285, widening: a silencer, not a
+        # blanking.  `CLAUDE.md`: a drift checker's false positives cost more than its true ones.
+        ("WIDEN", "the extension is not required -- every hyphenated identifier phrase is blanked",
+         CENSUS, [(_SLUG_ANCHOR, _SLUG_ANCHOR.replace(r"\.[A-Za-z0-9]{1,5}", ""))]),
+        ("WIDEN", "the slug admits whitespace -- the blanking runs from one filename to a LATER "
+                  "full stop and swallows the prose between", CENSUS,
+         [(_SLUG_ANCHOR, _SLUG_ANCHOR.replace("[A-Za-z0-9-]+", "[A-Za-z0-9 -]+"))]),
+        ("WIDEN", "the slug admits whitespace AND the full stop -- one filename then reaches "
+                  "the next decimal point in the sentence behind it", CENSUS,
+         [(_SLUG_ANCHOR, _SLUG_ANCHOR.replace("[A-Za-z0-9-]+", "[A-Za-z0-9 .-]+"))]),
+        ("WIDEN", "the identifier prefix is not required -- any dotted token is a filename, "
+                  "a decimal number included", CENSUS,
+         [(_SLUG_ANCHOR,
+           'SLUG_FILENAME = re.compile(r"\\b[A-Za-z0-9-]+\\.[A-Za-z0-9]{1,5}\\b")')]),
+        ("NARROW", "the BARE identifier rule removed -- the filename rule alone, so `T-132` is a "
+                   "132-station census again", CENSUS,
+         [(_ORDER_ANCHOR, """_ID_PATTERNS = [
+    SLUG_FILENAME,
+]""")]),
+        ("WIDEN", "the rule decays into a CATCH-ALL: an identifier and everything hyphenated, "
+                  "spaced or dotted behind it -- C-0150's judgement-becomes-a-pattern", CENSUS,
+         [(_SLUG_ANCHOR,
+           'SLUG_FILENAME = re.compile(r"\\b(?:CH|C|P|T|S)-\\d{1,4}[a-z]?[- .A-Za-z0-9]+")')]),
+        ("WIDEN", "the blanking is applied to the line CONTEXT as well as the match, so a filename "
+                  "stops supplying its family's context -- T-285's stated scope, reversed", CENSUS,
+         [("            if context and not re.search(context, lines[line_index], re.I):",
+           "            if context and not re.search(\n"
+           "                context, blank_identifiers(lines[line_index]), re.I\n"
+           "            ):")]),
     ]
 
 
+
 def main():
+    if _self_check():
+        return 1
     sources = {path: open(path, encoding="utf-8").read() for path in (CENSUS, EMITTER)}
     names = {path: _named_tests(source) for path, source in sources.items()}
     baseline = {

@@ -56,15 +56,21 @@ Verified by `--self-test`.
 from __future__ import annotations
 
 import argparse
+import inspect
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
+import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 CLASSIFICATION = os.path.join(HERE, "T-234-classification.json")
+
+sys.path.insert(0, HERE)
+import census_discharges as _discharges
 
 #: The claims and challenges that withdrew the premises.  A pointer to any of them, within
 #: POINTER_WINDOW characters after the occurrence, discharges it.
@@ -117,7 +123,33 @@ DELIVERABLES = ("ANSWERS.md", "DECISIONS-FOR-NDI.md")
 #: Identifiers that look numeric and are not quantities.  Blanked before matching, so that
 #: `T-132` cannot be read as `CH-0151`'s 132-station census.  Length-preserving, or every
 #: reported offset below the first identifier would be wrong.
+#: `T-285`.  A file NAMED by an identifier, `<ID>-<slug>.<ext>`.  Blanking the identifier and not
+#: the file it names left the slug behind, so a family token fired inside a LINK TARGET -- a name,
+#: which asserts nothing about a row length or a tile width and reaches the gate as an occurrence
+#: with nothing to read.  Measured before it was written: **8 of 394** in-scope occurrences, in
+#: four files, one token; `C-0182`'s own **5 of 40** is the count of the CLAIM slug alone, and the
+#: other three are a task file and a result file named inside `C-0175` itself -- which is why the
+#: shape is `<ID>-<slug>.<ext>` and not `C-NNNN-<slug>.md`.
+#:
+#: The extension is generic rather than enumerated.  Behind an identifier this corpus uses `md`,
+#: `json`, `py`, `txt` and `sh`, and **nothing else** at any reading taken -- so a list costs the
+#: same today and silently reintroduces the defect on the first `.csv`.
+#:
+#: FALSE POSITIVES, measured exhaustively rather than sampled (`CH-0204`: a rate is not a
+#: completeness argument): every span blanked over the in-scope corpus is resolved against
+#: `git ls-files`, the untracked listing, and every basename that has ever existed in the history.
+#: At the reading the rule was written on, **4 102** spans and **4 099** resolutions; the totals
+#: are a reading of a MOVING corpus and `tools/T-285-emit-result.py` re-derives them.  What does
+#: not move is the answer: the only spans that do NOT resolve are two claims quoting a BROKEN
+#: filename in order to say it is broken, so **every** span is a filename and the false-positive
+#: count is **0**.
+SLUG_FILENAME = re.compile(r"\b(?:CH|C|P|T|S)-\d{1,4}[a-z]?-[A-Za-z0-9-]+\.[A-Za-z0-9]{1,5}\b")
+
+#: ORDER IS LOAD-BEARING and is asserted by a named test rather than by this comment.  The bare
+#: identifier must be blanked LAST: run first it eats `C-0175` out of `C-0175-drawable-raster-rim.md`
+#: and leaves the slug, after which `SLUG_FILENAME` can no longer match its own prefix.
 _ID_PATTERNS = [
+    SLUG_FILENAME,
     re.compile(r"\b(?:CH|C|P|T|S)-\d{1,4}[a-z]?\b"),
 ]
 
@@ -245,23 +277,64 @@ FAMILIES = (
     ),
 )
 
-#: Which discharge each family belongs to.  A family absent from this map belongs to `SUBJECT`.
+#: `T-281`.  Which discharge each family belongs to -- EVERY family this census can emit, the
+#: subject ones included.  It used to be a partial map read through `.get(family, SUBJECT)`, so a
+#: family nobody had thought about silently became a debt of this census's own subject: AN ABSENCE
+#: WAS READ AS AN ANSWER.  Eight names were emitted and three were declared, and the two that later
+#: needed a split -- `PLACEMENT` and `WIDTH` -- were among the five defaulted ones for eight
+#: iterations.  `tools/census_discharges.py` now REFUSES an undeclared family rather than
+#: answering for it, which is `CH-0229`'s *"name the claim that discharges each family, one family
+#: at a time, and refuse a family whose discharge you cannot name"*.
 FAMILY_DISCHARGE = {
+    "FOOTPRINT": SUBJECT,
+    "WIDTH": SUBJECT,
+    "AZIMUTH": SUBJECT,
+    "SCAFFOLD": SUBJECT,
+    "PLACEMENT": SUBJECT,
     "GRILLAGE": "C-0154/C-0167",
     "SQUARE": None,
     "ROW_SPAN": None,
 }
 
+#: The rule, as an object that cannot be constructed with a discharge naming no claim and cannot be
+#: asked about a family naming no discharge.
+REGISTRY = _discharges.DischargeRegistry(
+    subject=SUBJECT, discharges=DISCHARGES, families=FAMILY_DISCHARGE
+)
+
 
 def discharge_of(family: str):
-    """The discharge a family belongs to, or `None` where the family is not a debt at all."""
-    return FAMILY_DISCHARGE.get(family, SUBJECT)
+    """The discharge a family belongs to, or `None` where the family is not a debt at all.
+
+    **REFUSES** a family this census has not declared (`T-281`).  A getter must refuse; the
+    REPORT below is what must not, and it carries the third verdict state instead.
+    """
+    return REGISTRY.discharge_of(family)
 
 
 def gated_families() -> set:
     """Every family this census GATES -- exactly those belonging to its own subject discharge."""
-    families = {f[0] for f in FAMILIES} | set(FAMILY_DISCHARGE)
-    return {f for f in families if discharge_of(f) == SUBJECT}
+    return set(REGISTRY.gated())
+
+
+def emitted_families(root: str) -> dict:
+    """{family: occurrence count} over the in-scope corpus, WITHOUT asking for a discharge.
+
+    The report has to run before the census does: `census()` calls `discharge_of`, which refuses,
+    and a traceback is not a report.  `CLAUDE.md`: a getter must refuse and a report must not.
+    """
+    counts = {}
+    for path in corpus_files(root):
+        if not in_scope(path):
+            continue
+        try:
+            with open(os.path.join(root, path), encoding="utf-8") as handle:
+                text = handle.read()
+        except OSError:
+            continue
+        for family, _line, _offset, _token, _distance in occurrences(text):
+            counts[family] = counts.get(family, 0) + 1
+    return counts
 
 
 #: How much of an occurrence's own NEIGHBOURHOOD identifies it.  A `TASKS.md` row is a paragraph on
@@ -567,6 +640,16 @@ def debt_report(debt):
 
 
 def check(root: str) -> int:
+    # `T-281`.  The family report runs FIRST, because `census()` asks for a discharge and the
+    # getter refuses.  An undeclared family is a gate defect and is named here rather than raised.
+    family_rows = REGISTRY.report(emitted_families(root))
+    print("families declared by this census ({}):".format(SUBJECT))
+    for line in _discharges.render_report(family_rows):
+        print(line)
+    refused = [row.family for row in family_rows if row.verdict == _discharges.UNDECLARED]
+    if refused:
+        print("GATE {} undeclared famil(y/ies): {}".format(len(refused), ", ".join(refused)))
+        return 1
     records = census(root)
     records, problems = classify(records, load_classification())
     unpointed = [
@@ -655,6 +738,17 @@ def main(argv) -> int:
 
 
 # --------------------------------------------------------------------------- self-tests
+
+def _raises(exception, call) -> bool:
+    """Did `call` refuse with `exception`?  `T-281`'s tests are written in BOTH directions."""
+    try:
+        call()
+    except exception:
+        return True
+    except Exception:
+        return False
+    return False
+
 
 def self_test() -> int:
     failures = []
@@ -878,6 +972,77 @@ def self_test() -> int:
                                                                     "AZIMUTH", "SCAFFOLD",
                                                                     "PLACEMENT"})
 
+    # -------------------------------------------------- T-281: the discharge must be NAMED, not defaulted
+    # The registry's own 45 tests run here, so the rule is covered by the Gradle task that already
+    # exists (`censusSelfTest`) and nothing new has to be wired.
+    if _discharges.self_test():
+        failures.append("T-281 the discharge registry's own self-tests")
+
+    emittable = {f[0] for f in FAMILIES} | {
+        # every name the refinement functions can return, listed here so that adding a refinement
+        # branch without declaring its discharge fails a NAMED test rather than defaulting
+        refine_placement("every coupled cell here is single-layer square-lattice", 25, 51),
+        refine_placement("a single-layer square-lattice sheet, 15 duplexes", 2, 28),
+        refine_placement("every placement here is single-layer square-lattice", 22, 48),
+        refine_width("honeycomb rows of 112 bp", 17, 23),
+        refine_width("the honeycomb tile is 15 rows x 4 layers x 112 bp", 41, 47),
+    }
+    ok("T-281 every family the census can emit is DECLARED", emittable <= REGISTRY.declared)
+    ok("T-281 the map declares no family the census cannot emit", REGISTRY.declared == emittable)
+    ok("T-281 the map is complete: eight names", len(REGISTRY.declared) == 8)
+    ok(
+        "T-281 an undeclared family is REFUSED rather than defaulted to the subject",
+        _raises(_discharges.UndeclaredFamily, lambda: discharge_of("NEW_FAMILY")),
+    )
+    ok(
+        "T-281 a PARTIAL map refuses instead of answering -- the defect this replaces",
+        _raises(
+            _discharges.UndeclaredFamily,
+            lambda: _discharges.DischargeRegistry(
+                SUBJECT, DISCHARGES, {"GRILLAGE": "C-0154/C-0167"}
+            ).discharge_of("FOOTPRINT"),
+        ),
+    )
+    ok(
+        "T-281 the census's own discharges each name at least one claim",
+        all(DISCHARGES[name] for name in DISCHARGES if name is not None),
+    )
+    ok("T-281 the report is what does NOT refuse",
+       [r.verdict for r in REGISTRY.report({"NEW_FAMILY": 1}) if r.family == "NEW_FAMILY"]
+       == [_discharges.UNDECLARED])
+    ok("T-281 a declared family the corpus holds nothing of reads VACUOUS, not UNDECLARED",
+       [r.verdict for r in REGISTRY.report({}) if r.family == "SCAFFOLD"]
+       == [_discharges.VACUOUS])
+
+    scratch = tempfile.mkdtemp(prefix="T-234-census.")
+    try:
+        os.makedirs(os.path.join(scratch, "gpd", "claims"))
+        with open(os.path.join(scratch, "gpd", "claims", "C-0001-x.md"), "w",
+                  encoding="utf-8") as handle:
+            handle.write("folded from p8064 and the honeycomb tile is 15 rows x 4 x 112 bp\n")
+        with open(os.path.join(scratch, "gpd", "tasks-not-in-scope.md"), "w",
+                  encoding="utf-8") as handle:
+            handle.write("folded from p8064\n")
+        counts = emitted_families(scratch)
+        ok("T-281 emitted_families counts the corpus without asking for a discharge",
+           counts == {"SCAFFOLD": 1, "WIDTH": 1})
+        ok("T-281 emitted_families respects scope -- an out-of-scope file contributes nothing",
+           counts.get("SCAFFOLD") == 1)
+    finally:
+        shutil.rmtree(scratch, ignore_errors=True)
+
+    source = inspect.getsource(check)
+    ok(
+        "T-281 check() reports the families BEFORE it builds the census, because census() asks "
+        "for a discharge and the getter refuses -- a traceback is not a report",
+        "REGISTRY.report(" in source
+        and source.index("REGISTRY.report(") < source.index("census(root)"),
+    )
+    ok(
+        "T-281 check() treats an undeclared family as a GATE defect rather than raising",
+        "UNDECLARED" in source,
+    )
+
     # ----------------------------------------------------------------- T-262: a RESTATEMENT
     # `C-0140` withdrew a honeycomb row length asserted as a UNIFORM TILE WIDTH.  `C-0146` restored
     # the same token as a ROW SPAN, and `C-0151` restored `drawable` as the drawable RASTER.
@@ -1093,6 +1258,106 @@ def self_test() -> int:
     ok("T-280 the ratio is rendered at nine significant digits",
        ratio_text(24.0 / 88.0) == "0.272727273")
     ok("T-280 a null ratio renders as `null`, not as a number", ratio_text(None) == "null")
+
+    # ------------------------------------------------- T-285: a FILENAME is a name, not a statement
+    # `blank_identifiers` blanked the identifier and not the file the identifier names, so a family
+    # token fired inside a LINK TARGET -- which asserts nothing about anything and reaches the gate
+    # as an occurrence with nothing to read.  Each rule is asserted in BOTH directions: the span it
+    # must blank, and the prose it must not.
+
+    ok(
+        "T-285 a family token inside a claim's own slug does not fire",
+        sub("the honeycomb block: see gpd/claims/C-0175-drawable-raster-rim.md") == [],
+    )
+    ok(
+        "T-285 a TASK filename is blanked too, not only a claim's",
+        sub("the honeycomb raster, in ../tasks/T-258-drawable-ragged-face.md") == [],
+    )
+    ok(
+        "T-285 a RESULT filename is blanked too, so the extension is not `.md` alone",
+        sub("the honeycomb raster, in ../results/T-258-drawable-ragged-face.json") == [],
+    )
+    ok(
+        "T-285 the same token OUTSIDE a filename still fires",
+        sub("the four-layer honeycomb tile is drawable at a uniform width") == ["WIDTH"],
+    )
+    ok(
+        "T-285 a statement beside a link keeps its OWN occurrence and loses only the link's",
+        sub("the four-layer honeycomb tile is drawable at a uniform width, see"
+            " gpd/claims/C-0175-drawable-raster-rim.md") == ["WIDTH"],
+    )
+    ok(
+        "T-285 the filename rule runs BEFORE the bare-identifier rule, which would otherwise eat"
+        " its own prefix and leave the slug",
+        "drawable" not in blank_identifiers("C-0175-drawable-raster-rim.md"),
+    )
+    ok(
+        "T-285 the filename rule is the FIRST of the blanking rules",
+        "\\." in _ID_PATTERNS[0].pattern,
+    )
+    ok(
+        "T-285 blanking a filename preserves length, which every offset depends on",
+        len(blank_identifiers("x C-0175-drawable-raster-rim.md y"))
+        == len("x C-0175-drawable-raster-rim.md y"),
+    )
+    ok(
+        "T-285 the blanking stops at the extension and does not run into the prose behind it",
+        "drawable" in blank_identifiers("C-0175-a-rim.md and the tile is drawable"),
+    )
+    ok(
+        "T-285 a hyphenated ADJECTIVAL use of an identifier is not a filename and is not blanked",
+        "drawable" in blank_identifiers("the C-0151-selected drawable raster"),
+    )
+    ok(
+        "T-285 an identifier followed by a full stop and a SPACE is not a filename",
+        "drawable" in blank_identifiers("as C-0151-selected. the drawable raster"),
+    )
+    ok(
+        "T-285 an ADJECTIVAL identifier phrase does not reach a LATER decimal point -- the slug "
+        "charset admits no whitespace, and this is the sentence that says so",
+        "drawable"
+        in blank_identifiers("the C-0151-selected raster is drawable at 38.08 nm"),
+    )
+    ok(
+        # Measured: 59 occurrences of 19 extension-less identifier phrases are in scope, every one
+        # a source DIRECTORY (`gpd/data/T-151-sources/`) or a result-file STEM used as a table key
+        # (`T-2-design-window`), and NONE of them carries a family token.  So the extension is what
+        # distinguishes a file reference from prose, and requiring it costs nothing.
+        "T-285 a slug WITHOUT an extension is a stem or a directory, not a file reference",
+        "drawable" in blank_identifiers("C-0175-drawable-raster-rim, the claim's own stem"),
+    )
+    ok(
+        "T-285 a bare identifier with no slug is still blanked -- the old rule survives",
+        "T-132" not in blank_identifiers("T-132 and CH-0151"),
+    )
+    ok(
+        "T-285 a SUB-LETTERED identifier's filename is blanked too",
+        sub("the four-layer honeycomb block: gpd/results/T-1d-drawable-thing.json") == [],
+    )
+    ok(
+        "T-285 the blanking does not run from a filename to a LATER full stop, swallowing the "
+        "prose between them",
+        "drawable"
+        in blank_identifiers("C-0175-a-rim.md and the honeycomb tile is drawable at 38.08 nm"),
+    )
+    ok(
+        # `T-285` deliberately does NOT touch the context test, which reads the ORIGINAL line: a
+        # filename can therefore still supply its family's line context.  That runs the OPPOSITE
+        # way (it admits matches rather than removing them) and is its own row; the behaviour is
+        # asserted here so that a silent change to it fails a named test.
+        "T-285 the line CONTEXT is read from the original line, so a filename still supplies it",
+        sub("see C-0140-honeycomb-raster-turn-sense.md - the tile is 15 rows x 4 layers x 112 bp")
+        == ["WIDTH"],
+    )
+    ok(
+        "T-285 a surviving occurrence's offset still indexes the ORIGINAL text",
+        all(
+            body[o: o + len(tok)] == tok
+            for body in ["see gpd/claims/C-0175-drawable-raster-rim.md, and the four-layer"
+                         " honeycomb tile is drawable at a uniform width"]
+            for _f, _l, o, tok, _d in occurrences(body)
+        ),
+    )
 
     for failure in failures:
         print("FAIL  " + failure)

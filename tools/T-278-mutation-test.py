@@ -118,7 +118,29 @@ def _ignore_declarations(census, simulation):
     census.declared_precision = lambda text: None
 
 
+def _baseline():
+    """The named self-tests an UNMUTATED pair of modules fails (`CH-0237`).
+
+    A mutation table's killer counts are evidence only if the unmutated subject passes, and
+    nothing here was asserting that.  Two modules, so two readings.
+    """
+    failures = []
+    for label, path in (("simulation", "T-278-rounding-simulation.py"),
+                        ("census", "T-278-emitter-rounding-census.py")):
+        passed, output = _run_selftest(_module("t278_base_" + label, path))
+        if not passed:
+            failures += ["%s: %s" % (label, line.strip())
+                         for line in output.splitlines() if line.startswith("FAIL")]
+    return failures
+
+
 def main():
+    baseline = _baseline()
+    print("# baseline: %d pre-existing named failure(s) in an unmutated pair" % len(baseline))
+    if baseline:
+        for line in baseline:
+            print("  BASELINE FAILS  %s" % line)
+        return 1
     survivors = []
     for name, mutate in MUTATIONS:
         simulation = _module("t278_sim_mut", "T-278-rounding-simulation.py")

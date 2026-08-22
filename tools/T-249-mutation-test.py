@@ -123,11 +123,29 @@ def mutations(module):
     ]
 
 
+def _baseline(module, tests):
+    """The named tests the SHIPPED predicate fails (`CH-0237`).
+
+    A mutation table's killer counts are evidence only if the unmutated subject passes.  This
+    harness re-implements its mutants, so its baseline is the shipped `unrounded_numbers_in`
+    itself, measured against the same rows every mutant is measured against.
+    """
+    return [description for text, expected, description in tests
+            if (module.unrounded_numbers_in(text) if isinstance(expected, list)
+                else len(module.unrounded_numbers_in(text))) != expected]
+
+
 def main():
     module = _module()
     tests = ([(text, count, description) for text, count, description in module.PROSE_TESTS]
              + [(text, tokens, description) for text, tokens, description
                 in module.PROSE_TOKEN_TESTS])
+    baseline = _baseline(module, tests)
+    print(f"# baseline: the shipped predicate fails {len(baseline)} of {len(tests)} named test(s)")
+    if baseline:
+        for description in baseline:
+            print(f"  BASELINE FAILS  {description}")
+        return 1
     rows = mutations(module)
     print(f"-- T-249 mutation coverage of --prose, over {len(tests)} named tests "
           f"({len(module.PROSE_TESTS)} count rows + {len(module.PROSE_TOKEN_TESTS)} token rows) --")

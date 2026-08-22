@@ -102,10 +102,30 @@ def allowlist_mutations(module):
     ]
 
 
+def _baseline(module):
+    """The named tests the SHIPPED policy and allowlist fail (`CH-0237`).
+
+    A mutation table's killer counts are evidence only if the unmutated subject passes.
+    """
+    failed = [description for found, census, expected, description in module.PROSE_EXIT_TESTS
+              if module.prose_exit_code(found, census) != expected]
+    failed += [description
+               for basename, literal, admitted, description in module.PROSE_ALLOWLIST_TESTS
+               if module.prose_allowlisted(
+                   os.path.join(module.RESULTS, basename), literal) != admitted]
+    return failed
+
+
 def main():
     module = _module()
     exit_tests = module.PROSE_EXIT_TESTS
     allow_tests = module.PROSE_ALLOWLIST_TESTS
+    baseline = _baseline(module)
+    print(f"# baseline: the shipped policy fails {len(baseline)} named test(s)")
+    if baseline:
+        for description in baseline:
+            print(f"  BASELINE FAILS  {description}")
+        return 1
     total_tests = len(exit_tests) + len(allow_tests)
     print(f"-- T-250 mutation coverage of the --prose GATE, over {total_tests} named tests "
           f"({len(exit_tests)} exit-policy rows + {len(allow_tests)} allowlist rows) --")

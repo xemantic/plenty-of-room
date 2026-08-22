@@ -11032,3 +11032,198 @@ programme recommends while the 10 do not. No verdict reverses — `0.0764244991`
   redundant `^` beside a `.match()` call site that made a mutation of *either* anchor inert.
 - **A claim about a census is inside that census's own scope** — writing `C-0176` added 13
   occurrences to the census it measures — so both readings have to be published.
+
+## Iteration 43 — 2026-08-22: an uncommitted iteration, four rows outside the register, and a verdict that reversed at the coupled level
+
+The iteration opened on a **process blocker of the plainest kind**: iteration 42's whole body —
+121 files, five tasks, four claims and six challenges — was **staged and never committed**, and the
+remote was ten commits behind. `tools/verify.sh` on that exact tree came back **BUILD SUCCESSFUL in
+23m 10s** with every document gate clean, so the work was finished and simply unlanded. It is
+committed as `3e71284` and pushed. `SESSION-PROMPT.md`'s *"never leave an iteration uncommitted"* is
+the rule; what this instance adds is that **a finished iteration can look exactly like an unfinished
+one** from the outside, and the only thing that separates them is running the gate.
+
+### Four open rows were outside the register, and one of them was HIGH VALUE
+
+`P-29` had left the tree with **a reader and a gate that disagree by construction**:
+`tools/trace-answers.py`'s `queue_status` scans the **whole row** for a closing word, while
+`tools/check-queue-vocabulary.py` gates a **leading, short, bold** run — a restriction it justifies by
+measurement. Nobody had looked at the residue between the two predicates, and it held four **open**
+rows reading CLOSED off a word that is not about the task: `T-261` (its own **title**, and a criterion
+quoting `ANSWERED`/`UPHELD`/`RESOLVED` **as data**), `T-268` (a challenge and a deliverable), `T-272`
+(a deliverable) and `T-280` (a **candidate of a remedy**). `T-268` is a **HIGH VALUE** row, and the
+loop picks its next task from this register.
+
+`P-30`/`C-0178` also found a second defect nobody suspected. `_QUEUE_ROW` required a **trailing pipe**,
+which GFM does not, so `tools/check-markdown-tables.py` was clean and the assumption was asserted
+nowhere: over **138** revisions of `TASKS.md`, **81 carried an invisible row** — 116 row-instances,
+5 distinct rows — and **`T-97` and `T-98` were OPEN while invisible, across 17 revisions**.
+
+The combination rule is a **measurement, not a preference**: 12 rows carry a leading `TODO` and **9**
+are legitimately closed, so *any TODO opens* and *last verdict wins* are each 9 false positives, while
+**first** verdict reproduces the old reader on **262 of 262** rows carrying one and the other 10 fall
+back and agree 10 of 10. Rows seen **271 → 273**, open **62 → 66**, exactly 5 readings move, and
+`stale_statuses` is **0 before and 0 after** for both deliverables — which is what makes the repair
+contained. 24 mutations, 0 survivors; **0 false positives over 138 revisions**.
+
+Seven of those mutations survived the first run and every survivor was informative — including a
+**double anchor** (`^` beside a `.match()` call), which is `P-29`'s own recorded trap reproduced one
+file away.
+
+### The verdict that reversed: `C-0167`'s *"0 of 64"* is 2 of 64
+
+`T-279`/`C-0180` re-graded `C-0167`'s 64 coupled cells on the **tied** honeycomb lattice — 435 staple
+bonds **plus the raster's own 59 turn ties** — paired **per realisation** on one shared 4 000-draw
+stream. The ties recover **two** cells, `0.106041029 → 0.0995744767` and
+`0.101931622 → 0.0998791032`, and the tightest clears `T-5b` by **0.426 %**. So `CH-0227`'s
+*"no verdict of `C-0154` or `C-0167` reverses"* is **false at the coupled level**, and the challenge's
+own author could not have known it: the free tile is not even an **order statistic** of the answer.
+
+The per-realisation median ratio runs **0.902845544–0.988116016** against the free tile's
+**0.890395426**, so the `1.12×` **over-states the coupled benefit at every one of the 64 cells**. And
+the tail runs the other way: the ratio's own 90th percentile is **above one at 27 of 64** cells, a
+single realisation reaches **1.15725406**, and the ties are adverse at up to **27.45 %** of the
+ensemble. `CH-0228`'s allowed `8.57142857°` prestrain then moves a cell by at most
+**0.00242194151** of the stroke — **5.7×** the winning margin — and **exactly 1 of 64 is flat at each
+sign, a different one**. The recovery therefore rests on a sign nothing in this corpus fixes
+(`T-284`). The untied half reproduces all **128** of `C-0167`'s committed values at **`4.2e−9`**.
+
+### A regime describes a solve; a result file is a bag of solves
+
+`CH-0224` is **RESOLVED**. `T-286`/`C-0181` finds the defect is the block's **arity**, not its fields:
+`emission.regime` was `null` on **135 of 135** headed result files, and **17 of the 22** studies naming
+`MagnesiumChlorideBuffer` sweep the molarity. `Regime`'s own asymmetry is the argument — gap and bias
+are *arguments* of a solve and carry intervals, the molarity is a **constructor** argument and
+identifies *which* environment — so a sweeping study instantiates several environments rather than
+widening one. The block is now a `RegimeSet` with **three** emitted values where there was one:
+`null` = *not stated* (a residue to be counted), `[]` = *no environment coordinate at all* (a claim),
+`[…]` = the states solved, with `Regime.neutralLayer`'s documented `null` **buffer** surviving as a
+distinct fourth fact inside a stated member.
+
+Widening `Regime.bufferMillimolar` to a set instead is **falsified by the corpus**:
+`TallGapDeviceBStudy` solves `{0.5, 1.0, 2.0} mM` over its tall heights and `{0.5, 2.0} mM` over its
+fold heights, so one widened regime carries the union and admits a state no record holds.
+
+And the consumer side is reported honestly: **71 of 170** study read edges land on an electrolyte
+file, **69 of 71** on a swept one, **50 on `T-3b` alone** — and a **file**-granular set refuses none of
+them today, because every consumer selects a state its file carries. It cannot refuse the one mistake
+`CLAUDE.md` has actually recorded. Only a **per-record** regime closes that, and it is named as the
+residue and left to `T-272`.
+
+### Three censuses learned to refuse, and a debt line learned to fall
+
+`T-281`/`C-0182`: `tools/T-234-census.py` emitted **8** family names and declared **3** — the other
+five answered by a `FAMILY_DISCHARGE.get(family, SUBJECT)` default nobody wrote down, and the two that
+later needed a split were among them **for eight iterations**. **An absence had been read as an
+answer.** The mechanism is a registry that cannot be *constructed* with a discharge naming no claim
+and cannot be *asked* about a family naming no discharge; the report carries a **third** verdict state
+and a declared family with no occurrence reads `VACUOUS` rather than unanswerable. Retrospectively it
+fires **15** family-revision refusals — **2 genuine, 13 one-line prompts, 0 false positives** — and at
+the census's first revision **25 of 264** occurrences were already misdated.
+
+`T-283`/`C-0183`: *"it cannot be made clean"* was a statement about the **predicate**, not about the
+question. All three of `T-261`'s quoted status words are **backticked**, so blanking inline code spans
+before the whole-row scan clears the residue in one line. Over **139** revisions the blanked predicate
+fires **115** row-instances on **7** rows against the unblanked **118** on **8**, every one a genuine
+idiom violation, so the false-positive rate is **0** and the line is now a **gate** reading 0.
+
+`T-280`/`C-0179`: the advisory debt line prints **24 of 88 = 0.272727273** with its denominator named
+in the same output — and **`CH-0230`'s own statement of its own remedy does not work.** Over the last
+40 revisions the count rose at 11, of which 7 are saturated; of the remaining 4 the adopted ratio
+**fell at 3 and rose at 1**, while the reading the challenge names — over all occurrences of the
+*same* families — **fell at 0 and rose at 4**, because a correcting sentence lands in numerator and
+denominator at once. Candidate 3 is **priced and declined**: counting lines compresses
+**1.7254902×** and rose at **11 of 11**, and **7 of 51** deliverable lines carry more than one class,
+which is exactly what `C-0176`'s data structure exists to keep apart.
+
+`T-285`/`T-282`/`C-0184`: a census token firing inside a **filename** is a **link target**, and a link
+target asserts nothing — **8 of 394** in-scope occurrences in 4 files, its false-positive count
+**0 of 4 102** spans, exhaustively rather than sampled. The repair had to land **with** the
+regeneration, because blanking a span moves every index below it and the classification is keyed on
+indices. The advisory gate reads **0** where it read 21.
+
+### What surprised us
+
+- **A finished iteration and an abandoned one look identical from outside the gate.** 121 staged
+  files, a written journal, and no commit; the only way to tell was to run `tools/verify.sh`.
+- **A gate and the reader it guards can measure different things and both be right.** `P-29`'s
+  leading-bold predicate is correctly justified and `queue_status`'s whole-row scan is correctly
+  permissive; the defect lived in **neither**, it lived in the **residue between them** — which is a
+  place no single tool's false-positive rate can describe.
+- **A row can be invisible to the register for a reason a Markdown checker is right to permit.** GFM
+  does not require a trailing pipe; the reader did; and two OPEN rows spent 17 revisions outside the
+  register with every gate green.
+- **The free tile is not an order statistic of the coupled answer**, and the direction that looked
+  conservative was: `1.12×` over-states the benefit at **all 64** cells, while the *tail* is adverse
+  at 27 of them. A ratio quoted between two summaries would have said the opposite of the paired
+  reading — `CLAUDE.md`'s own rule, met a fourth time.
+- **`CH-0230` specified its own remedy and the specification was wrong**, arithmetically: a ratio
+  below one that gains equally in numerator and denominator goes **up**. Candidate 2 works only
+  because `T-260` split the families first, so it is **not independent** of the task that preceded it.
+- **A mutation harness's fixture layout is a premise of its own measurement** (`CH-0237`). `P-30`'s
+  harness copied `tools/` flat, so once a self-test read `TASKS.md` all 24 rows read *killed* off one
+  `FileNotFoundError` — headline unchanged, no test failing. A measured, subtracted baseline is what
+  makes a mutation table mean anything.
+
+### And the iteration's own gate was red, for a reason two of its authors each attributed to the other
+
+The first `tools/verify.sh` on the assembled tree came back **BUILD FAILED** on
+`testQueueVocabularyMutations`: **6 mutations, 6 survivors**. `P-31`/`C-0185` traced it by
+`git archive` to **`9620d3e` — `P-30`'s own commit**: lifting the verdict predicate into
+`tools/queue_verdicts.py` **orphaned five of the harness's six anchors**, because *a mutation anchor
+is a reference into somebody else's source*. Both agents that met the red excluded the task on the
+ground that it was *"a concurrent agent's in-flight file"*, and each was looking at the other.
+
+The sixth row's `SURVIVES` was **not a survivor** either: the harness copied `tools/` flat and copied
+one of the two modules its subject imports, so the mutant never started, and *non-zero exit with no
+named failure* was read as survival — `CH-0237` in the **quiet** direction. Under a
+layout-reproducing fixture two named tests kill it.
+
+**The corrected fixture then found the real gap**: the vocabulary was load-bearing as a **set**, and
+**9 of its 11 members** were held open by no named test at all — dropping `"DONE"` from
+`CLOSING_VERDICTS` failed nothing. Eleven per-classification mutations **derived from the gate's own
+sets** and twelve named tests carrying their phrases as **literals** take the self-tests **55 → 67**.
+
+The generalisation is the larger half. An orphaned anchor is **silent in principle** — this one
+shouted only because it happens to assert its anchor count — so `tools/P-31-harness-census.py`
+resolves every anchor and every subject symbol of every mutation harness and fails the build:
+**0 unresolved of 155 anchors and 33 symbols over 10 harnesses**, wired **3 of 8 → 10 of 10**, with
+**204 mutations and 0 survivors** across all ten.
+
+A **second** red gate of exactly the same shape surfaced while closing the first:
+`tools/T-272-emit-result-inputs.py --check` was red at `HEAD` on its own, because two tasks emitted
+committed result files and neither re-ran the generator. It needs the **index** — `CLAUDE.md`'s own
+rule, *`git add` the artifact before running any generator that reads the index* — so the coordinator
+closed it after staging: **159 → 166 handles**, check clean.
+
+### The reversal carried into the deliverables the same day, and the count was the least of it
+
+`T-288`/`C-0186`: both customer-facing documents still asserted `C-0167`'s *"`0` of `64`"* — five
+occurrences in `ANSWERS.md`, three in `DECISIONS-FOR-NDI.md`, **all eight annotated**, plus **three**
+absolute *"no coupled cell is flat"* sentences which the tied re-grade makes **false** rather than
+superseded and which are therefore **struck**. **Not one retained checker could have found it**: the
+number *is* in a claim, so `tools/trace-answers.py` reads it `CITED`, and the passages carry no status
+word and no broken link.
+
+What the pass carried besides the count is the point — the recovered cells and their margin, that the
+free tile is a **ceiling nobody reaches**, that the ensemble's **tail** runs the other way, and that
+`CH-0228`'s allowed prestrain moves a cell by more than the deciding margin, so `2 of 64` must not be
+read as settled. The twelfth synthesis (`T-276`) is **not** done and its residue is **named**, not
+estimated.
+
+### One more open row was outside the register, and a reader found it
+
+`T-276` itself — the twelfth synthesis, a **HIGH** row — read `CLOSED`. Its iteration-41 record had
+been written into the **Leaf** cell, ending `A8.2`, so the row carried a leading `**DONE**` in
+column 4 and its live `**TODO — HIGH**` in column 5, and the register takes the row's **first**
+leading verdict. `tools/check-queue-vocabulary.py` reads **0 defects** on it, because both readings
+agree with *a* verdict that is really there: **the agreement check cannot see a verdict in the wrong
+COLUMN**. Repaired by moving the record into the status cell with its superseded verdict **struck** —
+the queue had no idiom for a re-opened row, 0 occurrences of that form before this one — and the
+register went **66 → 67** open rows over the iteration's three separate repairs. The header-aware
+predicate is `T-289`, with the cheap census recorded as *not* the predicate: *first verdict is not in
+the last cell* fires on **46** rows, because the two tables have different column counts.
+
+And the residue gate `T-283` landed **caught the coordinator writing that very row** — an unbackticked
+status word in its prose — and the repair was its own suggested idiom. **Four consecutive iterations
+in which a retained check caught the mistake of the person using it.**

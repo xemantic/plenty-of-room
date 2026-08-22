@@ -1,7 +1,20 @@
 {
     "emission": {
         "lattice": "square",
-        "regime": null
+        "regime": [
+            {
+                "name": "the tile-electrode gap at 2.0 mM, T-23's two-sided coupling",
+                "bufferMillimolar": 2.0,
+                "electrolyte": "MgCl2 (2:1)",
+                "counterionValency": 2,
+                "temperatureKelvin": 300.0,
+                "lowestHeightNm": 3.0,
+                "highestHeightNm": 10.0,
+                "lowestBiasVolts": 0.0,
+                "highestBiasVolts": 1.0,
+                "bandwidthHz": 1000.0
+            }
+        ]
     },
     "task": "T-23",
     "leaf": "A8.2, with A1.1/A1.2 for the positional bound and A2.2 for the operating point",

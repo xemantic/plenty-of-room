@@ -216,6 +216,14 @@ cross-section against a convergence departure of `3.1e−8`. That is
 [`CH-0227`](../challenges/CH-0227-the-honeycomb-lattice-omits-the-rasters-own-turn-ties.md), and it
 is `C-0099`'s square-lattice `56 = 42 + 14` read on the honeycomb, where the split is `435 + 59`.
 
+**ANNOTATED (`C-0180`, `T-279`, [`CH-0234`](../challenges/CH-0234-no-verdict-reverses-was-a-free-tile-statement.md)).**
+Every number in this table reproduces at `≤ 1.5e−9`, and the sentence `CH-0227`'s Status field
+built on it does not: *"no verdict of `C-0154` or `C-0167` reverses"* is a **free-tile** statement,
+and at the coupled level **two of `C-0167`'s 64 cells reverse** — `0.106041029 → 0.0995744767` and
+`0.101931622 → 0.0998791032`. The `1.12×` is also a **ceiling** rather than a transfer: the coupled
+median per-realisation ratio is `0.902845544–0.988116016`, so it over-states the benefit at every
+one of the 64 cells.
+
 ---
 
 ## 10. The five verification gates

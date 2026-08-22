@@ -74,6 +74,8 @@ object ResultInputs {
     val P_18: ResultInput = ResultInput("P-18", "P-18-determined-precision.json")
     val P_22: ResultInput = ResultInput("P-22", "P-22-result-reader-census.json")
     val P_3: ResultInput = ResultInput("P-3", "P-3-peg-material-parameters.json")
+    val P_30: ResultInput = ResultInput("P-30", "P-30-queue-row-coverage.json")
+    val P_31: ResultInput = ResultInput("P-31", "P-31-mutation-harness-census.json")
     val P_6: ResultInput = ResultInput("P-6", "P-6-solvent-quality-vs-salt.json")
     val P_9: ResultInput = ResultInput("P-9", "P-9-grafted-chi.json")
     val T_1: ResultInput = ResultInput("T-1", "T-1-layer-stiffness.json")
@@ -200,6 +202,13 @@ object ResultInputs {
     val T_274: ResultInput = ResultInput("T-274", "T-274-recommended-block-seam.json")
     val T_275: ResultInput = ResultInput("T-275", "T-275-simulated-tile-census.json")
     val T_278: ResultInput = ResultInput("T-278", "T-278-emission-header-residue.json")
+    val T_279: ResultInput = ResultInput("T-279", "T-279-tied-honeycomb-regrade.json")
+    val T_280: ResultInput = ResultInput("T-280", "T-280-debt-line-as-a-ratio.json")
+    val T_281: ResultInput = ResultInput("T-281", "T-281-name-the-discharge.json")
+    val T_282: ResultInput = ResultInput("T-282", "T-282-classification-regeneration.json")
+    val T_283: ResultInput = ResultInput("T-283", "T-283-residue-as-a-gate.json")
+    val T_285: ResultInput = ResultInput("T-285", "T-285-a-slug-is-not-a-statement.json")
+    val T_286: ResultInput = ResultInput("T-286", "T-286-a-regime-is-a-set.json")
     val T_3: ResultInput = ResultInput("T-3", "T-3-stroke-and-blocking-force.json")
     val T_30: ResultInput = ResultInput("T-30", "T-30-flexure-end-joint.json")
     val T_3A: ResultInput = ResultInput("T-3a", "T-3a-nonlinear-pb-profile.json")
@@ -230,18 +239,19 @@ object ResultInputs {
 
     /** Every handle, in the order the files sort. */
     val all: List<ResultInput> = listOf(
-        P_14, P_18, P_22, P_3, P_6, P_9, T_1, T_10, T_101, T_106, T_108, T_110, T_113, T_116, T_117,
-        T_118, T_119_LITERATURE_QUERIES, T_119_UNUSED_JUNCTION_SITE, T_12, T_120, T_121, T_122,
-        T_123, T_124, T_125, T_126, T_127, T_129, T_13, T_130, T_132, T_133, T_134, T_135, T_136,
-        T_137, T_138, T_139, T_14, T_140, T_147, T_148, T_149, T_15, T_151, T_152, T_153, T_155,
-        T_156, T_157, T_159, T_16, T_160, T_161, T_162, T_163, T_164, T_165, T_169, T_17, T_171,
-        T_172, T_175, T_178, T_182, T_183, T_184, T_188, T_189, T_19, T_190, T_191, T_192, T_193,
-        T_194, T_195, T_196, T_197, T_198, T_199, T_1C, T_1D, T_1E, T_1F, T_2, T_200, T_201, T_202,
-        T_203, T_204, T_205, T_206, T_207, T_208, T_21, T_211, T_212, T_214, T_215, T_216, T_217,
-        T_218, T_219, T_220, T_221, T_225, T_226, T_23, T_230, T_231, T_232, T_234, T_235, T_243,
-        T_244, T_245, T_246, T_249, T_25, T_250, T_253, T_254, T_258, T_260, T_262, T_263, T_267,
-        T_274, T_275, T_278, T_3, T_30, T_3A, T_3B, T_4, T_40, T_5, T_50, T_5B, T_6, T_60, T_65,
-        T_67, T_7, T_70, T_71, T_72, T_75, T_76, T_79, T_8, T_81, T_9, T_96, T_97, T_99, T_9B
+        P_14, P_18, P_22, P_3, P_30, P_31, P_6, P_9, T_1, T_10, T_101, T_106, T_108, T_110, T_113,
+        T_116, T_117, T_118, T_119_LITERATURE_QUERIES, T_119_UNUSED_JUNCTION_SITE, T_12, T_120,
+        T_121, T_122, T_123, T_124, T_125, T_126, T_127, T_129, T_13, T_130, T_132, T_133, T_134,
+        T_135, T_136, T_137, T_138, T_139, T_14, T_140, T_147, T_148, T_149, T_15, T_151, T_152,
+        T_153, T_155, T_156, T_157, T_159, T_16, T_160, T_161, T_162, T_163, T_164, T_165, T_169,
+        T_17, T_171, T_172, T_175, T_178, T_182, T_183, T_184, T_188, T_189, T_19, T_190, T_191,
+        T_192, T_193, T_194, T_195, T_196, T_197, T_198, T_199, T_1C, T_1D, T_1E, T_1F, T_2, T_200,
+        T_201, T_202, T_203, T_204, T_205, T_206, T_207, T_208, T_21, T_211, T_212, T_214, T_215,
+        T_216, T_217, T_218, T_219, T_220, T_221, T_225, T_226, T_23, T_230, T_231, T_232, T_234,
+        T_235, T_243, T_244, T_245, T_246, T_249, T_25, T_250, T_253, T_254, T_258, T_260, T_262,
+        T_263, T_267, T_274, T_275, T_278, T_279, T_280, T_281, T_282, T_283, T_285, T_286, T_3,
+        T_30, T_3A, T_3B, T_4, T_40, T_5, T_50, T_5B, T_6, T_60, T_65, T_67, T_7, T_70, T_71, T_72,
+        T_75, T_76, T_79, T_8, T_81, T_9, T_96, T_97, T_99, T_9B
     )
 
     /** The handle a task id names, or `null` where a task id names two files. */

@@ -24,9 +24,17 @@
 # `tools/T-250-movement.py` mirrors `PARAMETER_RECORDS`.
 #
 # The tag vocabulary is `lattice/LatticeTag.kt`'s and the regime shape is
-# `environment/Regime.kt`'s. A Python emitter that computes no lattice and solves no environment
-# passes `"none"` and `None`, which is a CLAIM and not an omission -- which is why the key is
-# written out rather than left off.
+# `environment/RegimeSet.kt`'s -- a LIST of `environment/Regime.kt` blocks, one per environment
+# state some record of the file was solved at. `T-286` / `CH-0224`: a `Regime` describes a SOLVE
+# and a result file is a BAG of solves, and 17 of the 22 studies naming `MagnesiumChlorideBuffer`
+# sweep the molarity, so a block that can hold one was `null` on 136 of 136 headed files.
+#
+# The three values, and they are three because `CLAUDE.md` requires it -- *a `null` that means "no
+# requirement" and a `null` that means "not stated" are different values*:
+#
+#   None   the emitter has not stated what it was solved at -- the residue, to be COUNTED
+#   []     a claim that no environment coordinate enters this result at all
+#   [...]  the states it was solved at, one dict per state
 LATTICE_TAGS = ("square", "honeycomb", "both", "none")
 
 
@@ -50,6 +58,13 @@ def with_emission_header(document, lattice, regime=None):
             'this record already carries an "emission" key; an emission header may not overwrite '
             "what the emitter emitted"
         )
+    if regime is not None and not isinstance(regime, list):
+        raise TypeError(
+            "a regime block is a LIST of solved environment states, or None where the emitter has "
+            "not stated one; an empty list is the claim that no environment coordinate enters "
+            "this result, and it is not the same value as None (T-286, CH-0224). Was: %s"
+            % type(regime).__name__
+        )
     headed = {"emission": {"lattice": lattice, "regime": regime}}
     headed.update(document)
     return headed
@@ -65,7 +80,21 @@ def _selftest():
     out = with_emission_header({"answer": 1}, "square")
     check("the header is first", list(out), ["emission", "answer"])
     check("the tag is the word", out["emission"]["lattice"], "square")
-    check("an absent regime is an explicit null", out["emission"]["regime"], None)
+    check("an unstated regime is an explicit null", out["emission"]["regime"], None)
+    empty = with_emission_header({"answer": 1}, "none", regime=[])
+    check("no environment coordinate is an empty list", empty["emission"]["regime"], [])
+    check(
+        "and an empty list is not the same value as None",
+        empty["emission"]["regime"] is None,
+        False,
+    )
+    solved = with_emission_header({"answer": 1}, "none", regime=[{"bufferMillimolar": 2.0}])
+    check("a solved state is a member", solved["emission"]["regime"][0]["bufferMillimolar"], 2.0)
+    try:
+        with_emission_header({}, "none", regime={"bufferMillimolar": 2.0})
+        failures.append("a bare regime dict: expected a refusal")
+    except TypeError:
+        pass
     check("the body survives", out["answer"], 1)
     kept = with_emission_header({"lattice": ["T-152 tabulates its own"]}, "square")
     check("a body's own top-level lattice survives", kept["lattice"], ["T-152 tabulates its own"])

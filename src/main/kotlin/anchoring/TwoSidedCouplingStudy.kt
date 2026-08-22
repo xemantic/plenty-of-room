@@ -48,6 +48,7 @@ import com.xemantic.nano.plentyofroom.electrostatics.diffusePotentialOfAppliedBi
 import com.xemantic.nano.plentyofroom.electrostatics.sternChargeDensityPerVolt
 import com.xemantic.nano.plentyofroom.electrostatics.thermalVoltage
 import com.xemantic.nano.plentyofroom.electrostatics.uniformMedium
+import com.xemantic.nano.plentyofroom.environment.Regime
 import com.xemantic.nano.plentyofroom.equipartitionStiffness
 import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
@@ -1173,7 +1174,21 @@ fun main() {
     val file = File("gpd/results/T-23-two-sided-coupling.json")
     file.parentFile.mkdirs()
     val json = Json { prettyPrint = true; encodeDefaults = true }
-    file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, null)) + "\n")
+    // `T-286`, answering `CH-0224`: this study FIXES one molarity, so its regime is a set of one
+    // and reads exactly as a `Regime` does. The height range is the one the gap field is solved
+    // over (`fieldGaps`; outside it the study clamps), the bias range is the bracket the `V*`
+    // bisection runs on, and `BANDWIDTH` is the band the fluctuation statistics here are quoted
+    // in — `CLAUDE.md`'s *quote a variance with its bandwidth*, as data.
+    val regime = Regime.magnesiumChloride(
+        name = "the tile-electrode gap at $BUFFER mM, T-23's two-sided coupling",
+        concentrationMillimolar = BUFFER,
+        lowestHeightNm = fieldGaps.first(),
+        highestHeightNm = fieldGaps.last(),
+        lowestBiasVolts = 0.0,
+        highestBiasVolts = 1.0,
+        bandwidthHz = BANDWIDTH
+    )
+    file.writeText(json.encodeToString(json.encodeToJsonElement(result).roundedForResult().withEmissionHeader(LatticeTag.SQUARE, regime)) + "\n")
     println("wrote ${file.path}")
     report(result)
 }

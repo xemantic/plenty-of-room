@@ -18,6 +18,8 @@ package com.xemantic.nano.plentyofroom.electrostatics
 
 import com.xemantic.nano.plentyofroom.ELECTRON_VOLT
 import com.xemantic.nano.plentyofroom.ROOM_TEMPERATURE
+import com.xemantic.nano.plentyofroom.environment.Regime
+import com.xemantic.nano.plentyofroom.environment.RegimeSet
 import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import com.xemantic.nano.plentyofroom.material.PegWater
 import com.xemantic.nano.plentyofroom.structure.roundedForResult
@@ -346,7 +348,25 @@ fun main() {
                 // decades above `RESULT_ABSOLUTE_FLOOR`, so the default floor is inert here and
                 // measured to be (`tools/T-278-rounding-simulation.py`: 0 fields flattened).
                 .roundedForResult()
-                .withEmissionHeader(LatticeTag.NONE, null)
+                // `T-286`, answering `CH-0224`: this study SWEEPS the buffer, so its regime is
+                // a SET with one member per molarity. `BUFFERS` and `GAP_HEIGHTS` are the axes it
+                // actually solved; the bias range is [0, 0] because every criterion here is read
+                // at zero applied bias.
+                .withEmissionHeader(
+                    LatticeTag.NONE,
+                    RegimeSet(
+                        BUFFERS.map { molarity ->
+                            Regime.magnesiumChloride(
+                                name = "the tile-electrode gap at $molarity mM",
+                                concentrationMillimolar = molarity,
+                                lowestHeightNm = GAP_HEIGHTS.min(),
+                                highestHeightNm = GAP_HEIGHTS.max(),
+                                lowestBiasVolts = 0.0,
+                                highestBiasVolts = 0.0
+                            )
+                        }
+                    )
+                )
         ) + "\n"
     )
     report(result, output)

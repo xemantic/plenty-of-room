@@ -1,7 +1,44 @@
 {
     "emission": {
         "lattice": "none",
-        "regime": null
+        "regime": [
+            {
+                "name": "the tile-electrode gap at 2.0 mM",
+                "bufferMillimolar": 2.0,
+                "electrolyte": "MgCl2 (2:1)",
+                "counterionValency": 2,
+                "temperatureKelvin": 300.0,
+                "lowestHeightNm": 5.0,
+                "highestHeightNm": 10.0,
+                "lowestBiasVolts": 0.0,
+                "highestBiasVolts": 0.0,
+                "bandwidthHz": null
+            },
+            {
+                "name": "the tile-electrode gap at 5.0 mM",
+                "bufferMillimolar": 5.0,
+                "electrolyte": "MgCl2 (2:1)",
+                "counterionValency": 2,
+                "temperatureKelvin": 300.0,
+                "lowestHeightNm": 5.0,
+                "highestHeightNm": 10.0,
+                "lowestBiasVolts": 0.0,
+                "highestBiasVolts": 0.0,
+                "bandwidthHz": null
+            },
+            {
+                "name": "the tile-electrode gap at 10.0 mM",
+                "bufferMillimolar": 10.0,
+                "electrolyte": "MgCl2 (2:1)",
+                "counterionValency": 2,
+                "temperatureKelvin": 300.0,
+                "lowestHeightNm": 5.0,
+                "highestHeightNm": 10.0,
+                "lowestBiasVolts": 0.0,
+                "highestBiasVolts": 0.0,
+                "bandwidthHz": null
+            }
+        ]
     },
     "task": "T-6",
     "leaf": "A7.4",

@@ -42,7 +42,7 @@ of the broken `T-9` row start `TODO`, and over the whole queue the predicate is 
 |---|---|---|
 | (a) | `T-9`'s status restored to `**PARTIALLY DONE** — second deliverable answered, iteration 41` | the established vocabulary, and it carries strictly more than the coinage: the row is *not closed* **and** which deliverable closed |
 | (b) | `main` returns `1 if failures else 0` | six end-to-end tests in `tools/test-trace-answers.py`, one per check plus the truncation |
-| (c) | `tools/check-queue-vocabulary.py`, gated, with `tools/test-check-queue-vocabulary.py` | 16 self-tests; **6 mutations, 0 survivors** |
+| (c) | `tools/check-queue-vocabulary.py`, gated, with `tools/test-check-queue-vocabulary.py` | 16 self-tests; **6 mutations, 0 survivors** — the reading at this commit, superseded by [`C-0185`](C-0185-orphaned-mutation-anchors.md) (`P-31`) at **17 mutations, 0 survivors**: `P-30` orphaned five of the six anchors and the vocabulary's eleven members proved to be held open by no named test |
 | (d) | `tools/check-cold-start-note.py`, gated | 9 self-tests; fires at every commit carrying the drift and reads 0 at `HEAD` |
 
 **The exit code is a boolean and not the count, deliberately.** `sys.exit(n)` truncates modulo 256
@@ -130,7 +130,7 @@ no-op. One anchor, one place.
 ## 5. Provenance
 
 Derived here; nothing inherited. `tools/check-queue-vocabulary.py` (16 self-tests),
-`tools/test-check-queue-vocabulary.py` (6 mutations), and the six added end-to-end tests in
+`tools/test-check-queue-vocabulary.py` (6 mutations; **17 since [`C-0185`](C-0185-orphaned-mutation-anchors.md)**), and the six added end-to-end tests in
 `tools/test-trace-answers.py`. Both gates are wired into `tools/verify.sh`; both self-tests into
 `./gradlew test`.
 

@@ -18,8 +18,10 @@ package com.xemantic.nano.plentyofroom.structure
 
 import com.xemantic.kotlin.test.assert
 import com.xemantic.nano.plentyofroom.environment.Regime
+import com.xemantic.nano.plentyofroom.environment.RegimeSet
 import com.xemantic.nano.plentyofroom.lattice.LatticeTag
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonNull
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
@@ -98,11 +100,76 @@ class ResultEmissionTest {
     @Test
     fun `a stated regime carries the tuple a consumer is refused on`() {
         val tagged = body.withEmissionHeader(LatticeTag.NONE, gap) as JsonObject
-        val regime = (tagged["emission"] as JsonObject)["regime"] as JsonObject
+        val states = (tagged["emission"] as JsonObject)["regime"] as JsonArray
+        assert(states.size == 1)
+        val regime = states.single() as JsonObject
         assert(regime["bufferMillimolar"] == JsonPrimitive(2.0))
         assert(regime["counterionValency"] == JsonPrimitive(2))
         assert(regime["highestHeightNm"] == JsonPrimitive(30.0))
         assert(regime["bandwidthHz"] == JsonNull)
+    }
+
+    // --- gate 2b: T-286/CH-0224, a FILE is a bag of solves, so the block is a SET ---------------
+
+    /**
+     * `CH-0224`: 17 of the 22 studies naming `MagnesiumChlorideBuffer` declare a **list** of
+     * molarities and solve every state at each, so a block that can hold one molarity is `null`
+     * on exactly the results a `P4` gate exists to refuse. The block is therefore an array.
+     */
+    @Test
+    fun `a swept study emits every molarity it solved`() {
+        val swept = RegimeSet.of(
+            gap,
+            Regime.magnesiumChloride(
+                name = "the same gap at NDI's reserve",
+                concentrationMillimolar = 0.5,
+                lowestHeightNm = 3.0,
+                highestHeightNm = 30.0,
+                lowestBiasVolts = 0.0,
+                highestBiasVolts = 2.0
+            )
+        )
+        val states = ((body.withEmissionHeader(LatticeTag.NONE, swept) as JsonObject)["emission"]
+                as JsonObject)["regime"] as JsonArray
+        assert(states.size == 2)
+        assert((states[0] as JsonObject)["bufferMillimolar"] == JsonPrimitive(2.0))
+        assert((states[1] as JsonObject)["bufferMillimolar"] == JsonPrimitive(0.5))
+    }
+
+    /**
+     * `CLAUDE.md`: *a `null` that means "no requirement" and a `null` that means "not stated" are
+     * different values.* An empty array is the study saying **no environment coordinate enters
+     * this result**; a JSON `null` is the study not having said. Today's corpus carries `null` on
+     * all 136 headed files and means the first by KDoc and the second in fact.
+     */
+    @Test
+    fun `an empty set and a null regime are different JSON`() {
+        val declared = ((body.withEmissionHeader(LatticeTag.NONE, RegimeSet.noEnvironment)
+                as JsonObject)["emission"] as JsonObject)["regime"]
+        val notStated = ((body.withEmissionHeader(LatticeTag.NONE, regime = null)
+                as JsonObject)["emission"] as JsonObject)["regime"]
+        assert(declared == JsonArray(emptyList()))
+        assert(notStated == JsonNull)
+        assert(declared != notStated)
+    }
+
+    /**
+     * And the third value: a **stated** regime whose buffer is `null`, which `Regime`'s own KDoc
+     * documents as a claim — ideal mobile salt cancels out of a neutral grafted layer exactly.
+     */
+    @Test
+    fun `a stated regime with no electrolyte is a third value, not the empty set`() {
+        val layer = RegimeSet.of(
+            Regime.neutralLayer(
+                name = "the grafted PEG layer",
+                lowestHeightNm = 1.0,
+                highestHeightNm = 10.0
+            )
+        )
+        val states = ((body.withEmissionHeader(LatticeTag.NONE, layer) as JsonObject)["emission"]
+                as JsonObject)["regime"] as JsonArray
+        assert(states.size == 1)
+        assert((states.single() as JsonObject)["bufferMillimolar"] == JsonNull)
     }
 
     // --- gate 3: it cannot overwrite, and it cannot be applied twice ----------------------------
@@ -151,7 +218,8 @@ class ResultEmissionTest {
         val headerFirst = body.withEmissionHeader(LatticeTag.SQUARE, awkward).roundedForResult()
         val roundedFirst = body.roundedForResult().withEmissionHeader(LatticeTag.SQUARE, awkward)
         assert(headerFirst == roundedFirst)
-        val regime = ((headerFirst as JsonObject)["emission"] as JsonObject)["regime"] as JsonObject
+        val states = ((headerFirst as JsonObject)["emission"] as JsonObject)["regime"] as JsonArray
+        val regime = states.single() as JsonObject
         assert(regime["bufferMillimolar"].toString() == "0.5000000004999999")
     }
 

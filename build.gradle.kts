@@ -301,6 +301,85 @@ tasks.register<Exec>("testHoneycombCensusMutations") {
     commandLine("$projectDir/tools/T-234-mutation-test.py")
 }
 
+/*
+ * `P-31`.  A MUTATION HARNESS IS A REFERENCE INTO SOMEBODY ELSE'S SOURCE, and a refactor orphans
+ * it.  `P-30` lifted the queue's verdict predicate into `tools/queue_verdicts.py`; five of
+ * `tools/test-check-queue-vocabulary.py`'s six anchors then pointed at text that had moved one
+ * file across, and `testQueueVocabularyMutations` went red at `9620d3e` — `P-30`'s own commit.
+ * It stayed red for a whole iteration because two claims each EXCLUDED the task, one of them
+ * having verified the red in a `git archive HEAD` tree and still attributed it to *"a concurrent
+ * agent's in-flight file"*.
+ *
+ * `tools/P-31-harness-census.py --check` resolves every anchor and every subject symbol of every
+ * mutation harness in `tools/`, at once, and fails the build on any that does not resolve. Run
+ * against `git archive 9620d3e` it reports exactly the five the harness itself printed — asserted
+ * as one of its own named tests, so the instrument is checked against the instance it was written
+ * for. It reads only `tools/`, `build.gradle.kts` and `tools/verify.sh`, so it wires in here.
+ *
+ * AND THE HARNESSES THEMSELVES ARE WIRED, all of them.  Before `P-31`, 3 of 10 ran in the build
+ * and the other 7 ran only when somebody remembered — which `CLAUDE.md` records five times as *a
+ * convention is not a mechanism*. Together they add about 35 s to a suite that takes twenty
+ * minutes.
+ */
+tasks.register<Exec>("testMutationAnchorSelfTests") {
+    group = "verification"
+    description = "Runs tools/P-31-harness-census.py --self-test, the tests for the harness census"
+    commandLine("$projectDir/tools/P-31-harness-census.py", "--self-test")
+}
+
+tasks.register<Exec>("testMutationAnchors") {
+    group = "verification"
+    description = "Runs tools/P-31-harness-census.py --check: no mutation harness may be orphaned"
+    commandLine("$projectDir/tools/P-31-harness-census.py", "--check")
+}
+
+tasks.register<Exec>("testLeadingVerdictMutations") {
+    group = "verification"
+    description = "Runs tools/P-30-mutation-test.py, the mutation test for the verdict predicate"
+    commandLine("$projectDir/tools/P-30-mutation-test.py")
+}
+
+tasks.register<Exec>("testDebtLineMutations") {
+    group = "verification"
+    description = "Runs tools/T-280-mutation-test.py, the mutation test for the debt-line ratio"
+    commandLine("$projectDir/tools/T-280-mutation-test.py")
+}
+
+tasks.register<Exec>("testDischargeCensusMutations") {
+    group = "verification"
+    description = "Runs tools/T-281-mutation-test.py, the mutation test for the discharge census"
+    commandLine("$projectDir/tools/T-281-mutation-test.py")
+}
+
+tasks.register<Exec>("testQueueResidueMutations") {
+    group = "verification"
+    description = "Runs tools/T-283-mutation-test.py, the mutation test for the residue gate"
+    commandLine("$projectDir/tools/T-283-mutation-test.py")
+}
+
+/*
+ * `tools/T-225-mutation-test.py` needs `--check` to be a gate at all: without it, an UNPROTECTED
+ * classification is printed and the exit code is 0. That default was right while nothing ran it;
+ * it is the wrong default for a wired task.
+ */
+tasks.register<Exec>("testDepartureKeyMutations") {
+    group = "verification"
+    description = "Runs tools/T-225-mutation-test.py --check, the per-name departure mutations"
+    commandLine("$projectDir/tools/T-225-mutation-test.py", "--check")
+}
+
+tasks.register<Exec>("testProsePredicateMutations") {
+    group = "verification"
+    description = "Runs tools/T-249-mutation-test.py, the mutation test for the prose predicate"
+    commandLine("$projectDir/tools/T-249-mutation-test.py")
+}
+
+tasks.register<Exec>("testProseGateMutations") {
+    group = "verification"
+    description = "Runs tools/T-250-mutation-test.py, the mutation test for the prose gate policy"
+    commandLine("$projectDir/tools/T-250-mutation-test.py")
+}
+
 tasks.named("test") {
     dependsOn(
         "testHarness", "testDeliverableTracer", "testMarkdownTables", "testCorpusLinks",
@@ -308,7 +387,13 @@ tasks.named("test") {
         "testQueueVocabulary", "testQueueVocabularyMutations",
         "testHoneycombCensus", "testHoneycombCensusClassification",
         "testHoneycombCensusMutations", "testEmitterRounding", "testEmitterRoundingMutations",
-        "testRoundingSimulation", "testSolverProvenance", "testColdStartNote"
+        "testRoundingSimulation", "testSolverProvenance", "testColdStartNote",
+        // `P-31` -- the harness census, and the seven harnesses that ran only when somebody
+        // remembered.  3 of 10 were wired before this line; all 10 are now.
+        "testMutationAnchorSelfTests", "testMutationAnchors",
+        "testLeadingVerdictMutations", "testDebtLineMutations", "testDischargeCensusMutations",
+        "testQueueResidueMutations", "testDepartureKeyMutations",
+        "testProsePredicateMutations", "testProseGateMutations"
     )
 }
 

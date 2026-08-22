@@ -88,6 +88,27 @@ def blank_struck(text):
     return re.sub(r"~~.*?~~", lambda m: " " * len(m.group(0)), text, flags=re.DOTALL)
 
 
+# `T-283`.  An inline code span, single- or double-backticked, on ONE line -- a queue row is one
+# physical line (`C-0083`), and an unclosed backtick is therefore not a span but a stray character.
+# The double form is listed FIRST because alternation is ordered: ``ANSWERED`` must be taken whole.
+_CODE_SPAN = re.compile(r"``[^\n]*?``|`[^`\n]*`")
+
+
+def blank_code_spans(text):
+    """Replace every `inline code span` by spaces of the same length.
+
+    `T-283`.  A status word inside backticks is a token QUOTED AS DATA, not an assertion about the
+    row it stands in -- `T-261`'s acceptance criterion quotes three of `gpd/challenges/README.md`'s
+    own status words, and lower-casing them would falsify the quotation.  Backticking is already
+    this corpus's idiom for quoting a token, so the escape costs two characters and falsifies
+    nothing, which is what lets the residue become a gate instead of a permanent one-defect line.
+
+    Used ONLY by the whole-row scan.  A row's VERDICT is read from the unblanked body, so blanking
+    can never turn a closed row open -- asserted by a named test.
+    """
+    return _CODE_SPAN.sub(lambda m: " " * len(m.group(0)), text)
+
+
 def cell_verdict(cell):
     """(phrase, sense) for the verdict that OPENS this cell, or None.
 

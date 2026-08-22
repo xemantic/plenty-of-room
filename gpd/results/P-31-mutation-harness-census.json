@@ -1,0 +1,238 @@
+{
+  "task": "P-31",
+  "title": "a mutation anchor is a reference into somebody else's source, and a refactor orphans it: the harness census, and the wired gate that was red for an iteration",
+  "baselineRef": "9620d3ef3f21aa4038055a5752cd637f49e62954",
+  "baselineRefRequested": "HEAD",
+  "parameters": {
+    "corpus": "every mutation harness in tools/, and the sources each one mutates",
+    "anchorResolves": "the anchor's text occurs EXACTLY once in its target file; zero and two are both defects",
+    "symbolResolves": "the named attribute is a top-level assignment, def or class of the subject",
+    "wired": "the harness's basename occurs in build.gradle.kts or tools/verify.sh",
+    "note": "counts only. No wall-clock timing and no step counter is emitted"
+  },
+  "harnesses": [
+    {
+      "harness": "test-check-queue-vocabulary.py",
+      "kind": "TEXT-ANCHOR",
+      "subjects": "check-queue-vocabulary.py + queue_verdicts.py",
+      "anchorsDeclared": 17,
+      "anchorsUnresolved": 0,
+      "symbolsDeclared": 0,
+      "symbolsUnresolved": 0,
+      "assertsAnchorCount": true,
+      "measuresBaseline": true,
+      "wiredIn": [
+        "build.gradle.kts"
+      ],
+      "mutations": 17,
+      "survivors": 0,
+      "exitCode": 0
+    },
+    {
+      "harness": "P-30-mutation-test.py",
+      "kind": "TEXT-ANCHOR",
+      "subjects": "queue_verdicts.py + trace-answers.py + check-queue-vocabulary.py",
+      "anchorsDeclared": 24,
+      "anchorsUnresolved": 0,
+      "symbolsDeclared": 0,
+      "symbolsUnresolved": 0,
+      "assertsAnchorCount": true,
+      "measuresBaseline": true,
+      "wiredIn": [
+        "build.gradle.kts"
+      ],
+      "mutations": 24,
+      "survivors": 0,
+      "exitCode": 0
+    },
+    {
+      "harness": "T-281-mutation-test.py",
+      "kind": "TEXT-ANCHOR",
+      "subjects": "census_discharges.py + T-234-census.py",
+      "anchorsDeclared": 24,
+      "anchorsUnresolved": 0,
+      "symbolsDeclared": 0,
+      "symbolsUnresolved": 0,
+      "assertsAnchorCount": true,
+      "measuresBaseline": true,
+      "wiredIn": [
+        "build.gradle.kts"
+      ],
+      "mutations": 24,
+      "survivors": 0,
+      "exitCode": 0
+    },
+    {
+      "harness": "T-283-mutation-test.py",
+      "kind": "TEXT-ANCHOR",
+      "subjects": "queue_verdicts.py + check-queue-vocabulary.py",
+      "anchorsDeclared": 12,
+      "anchorsUnresolved": 0,
+      "symbolsDeclared": 0,
+      "symbolsUnresolved": 0,
+      "assertsAnchorCount": true,
+      "measuresBaseline": true,
+      "wiredIn": [
+        "build.gradle.kts"
+      ],
+      "mutations": 12,
+      "survivors": 0,
+      "exitCode": 0
+    },
+    {
+      "harness": "T-234-mutation-test.py",
+      "kind": "TEXT-ANCHOR",
+      "subjects": "T-234-census.py + T-234-emit-classification.py",
+      "anchorsDeclared": 55,
+      "anchorsUnresolved": 0,
+      "symbolsDeclared": 0,
+      "symbolsUnresolved": 0,
+      "assertsAnchorCount": true,
+      "measuresBaseline": true,
+      "wiredIn": [
+        "build.gradle.kts"
+      ],
+      "mutations": 55,
+      "survivors": 0,
+      "exitCode": 0
+    },
+    {
+      "harness": "T-280-mutation-test.py",
+      "kind": "TEXT-ANCHOR",
+      "subjects": "T-234-census.py",
+      "anchorsDeclared": 23,
+      "anchorsUnresolved": 0,
+      "symbolsDeclared": 0,
+      "symbolsUnresolved": 0,
+      "assertsAnchorCount": true,
+      "measuresBaseline": true,
+      "wiredIn": [
+        "build.gradle.kts"
+      ],
+      "mutations": 23,
+      "survivors": 0,
+      "exitCode": 0
+    },
+    {
+      "harness": "T-278-mutation-test.py",
+      "kind": "ATTRIBUTE",
+      "subjects": "T-278-emitter-rounding-census.py + T-278-rounding-simulation.py",
+      "anchorsDeclared": 0,
+      "anchorsUnresolved": 0,
+      "symbolsDeclared": 9,
+      "symbolsUnresolved": 0,
+      "assertsAnchorCount": false,
+      "measuresBaseline": true,
+      "wiredIn": [
+        "build.gradle.kts"
+      ],
+      "mutations": 8,
+      "survivors": 0,
+      "exitCode": 0
+    },
+    {
+      "harness": "T-225-mutation-test.py",
+      "kind": "ATTRIBUTE",
+      "subjects": "check-result-file-hygiene.py",
+      "anchorsDeclared": 0,
+      "anchorsUnresolved": 0,
+      "symbolsDeclared": 11,
+      "symbolsUnresolved": 0,
+      "assertsAnchorCount": false,
+      "measuresBaseline": true,
+      "wiredIn": [
+        "build.gradle.kts"
+      ],
+      "mutations": 22,
+      "survivors": 0,
+      "exitCode": 0
+    },
+    {
+      "harness": "T-249-mutation-test.py",
+      "kind": "REIMPLEMENTATION",
+      "subjects": "check-result-file-hygiene.py",
+      "anchorsDeclared": 0,
+      "anchorsUnresolved": 0,
+      "symbolsDeclared": 6,
+      "symbolsUnresolved": 0,
+      "assertsAnchorCount": false,
+      "measuresBaseline": true,
+      "wiredIn": [
+        "build.gradle.kts"
+      ],
+      "mutations": 11,
+      "survivors": 0,
+      "exitCode": 0
+    },
+    {
+      "harness": "T-250-mutation-test.py",
+      "kind": "REIMPLEMENTATION",
+      "subjects": "check-result-file-hygiene.py",
+      "anchorsDeclared": 0,
+      "anchorsUnresolved": 0,
+      "symbolsDeclared": 7,
+      "symbolsUnresolved": 0,
+      "assertsAnchorCount": false,
+      "measuresBaseline": true,
+      "wiredIn": [
+        "build.gradle.kts"
+      ],
+      "mutations": 8,
+      "survivors": 0,
+      "exitCode": 0
+    }
+  ],
+  "totals": {
+    "harnesses": 10,
+    "anchorsDeclared": 155,
+    "anchorsUnresolved": 0,
+    "symbolsDeclared": 33,
+    "symbolsUnresolved": 0,
+    "assertAnchorCount": 6,
+    "declareAnchors": 6,
+    "measureBaseline": 10,
+    "wired": 10,
+    "harnessesExitingNonZero": 0,
+    "mutationsOverAllHarnesses": 204,
+    "survivorsOverAllHarnesses": 0
+  },
+  "atBaselineRef": {
+    "harnessesPresent": 8,
+    "anchorsDeclared": 95,
+    "anchorsUnresolved": 5,
+    "symbolsDeclared": 31,
+    "symbolsUnresolved": 0,
+    "wired": 3,
+    "assertAnchorCount": 4,
+    "declareAnchors": 4,
+    "measureBaseline": 4,
+    "orphanedHarnesses": [
+      "test-check-queue-vocabulary.py"
+    ],
+    "unwiredHarnesses": [
+      "P-30-mutation-test.py",
+      "T-225-mutation-test.py",
+      "T-249-mutation-test.py",
+      "T-250-mutation-test.py",
+      "T-280-mutation-test.py"
+    ]
+  },
+  "queueVocabularyHarness": {
+    "baseMutations": 6,
+    "reAnchored": 5,
+    "retired": 0,
+    "anchorsUnresolvedAtBaselineRef": 5,
+    "perClassificationMutations": 11,
+    "classificationSurvivorsBefore": 9,
+    "classificationSurvivorsAfter": 0,
+    "totalSurvivorsBefore": 9,
+    "totalSurvivorsAfter": 0
+  },
+  "findings": [
+    "The wired Gradle task testQueueVocabularyMutations went red at 9620d3e, which is P-30's own commit, and not at any sibling's in-flight file: git archive of that commit reproduces the reading, and the census run against the same archive reports the same five orphaned anchors the harness itself printed.",
+    "Five of the six anchors were orphaned by the refactor and are re-anchored with their meanings preserved; none is retired, because every one of the six meanings still exists in the code.",
+    "The sixth row's SURVIVES was not a survivor. The harness copied tools/ FLAT and copied only one of the two modules the subject imports, so the mutant could not start; under a fixture that reproduces the tree's layout the same mutation is killed by two named tests. That is CH-0237 in the quiet direction.",
+    "The vocabulary was load-bearing as a SET and not as its members: dropping any one of nine of its eleven declared phrases failed no named test at all.",
+    "Before this task, 3 of 10 mutation harnesses ran in the build and 7 ran only when somebody remembered; 3 of 10 measured no baseline. All 10 are now wired and all 10 measure one."
+  ]
+}

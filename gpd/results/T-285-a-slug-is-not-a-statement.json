@@ -1,0 +1,527 @@
+{
+  "task": "T-285",
+  "title": "a census token that fires inside a filename is a LINK TARGET, not a statement: the identifier was blanked and the file it names was not",
+  "raisedBy": "C-0182 (T-281), while measuring its own footprint",
+  "baselineRef": "9620d3ef3f21aa4038055a5752cd637f49e62954",
+  "baselineRefRequested": "HEAD",
+  "parameters": {
+    "corpus": "gpd/claims/*.md, TASKS.md, ANSWERS.md, DECISIONS-FOR-NDI.md",
+    "rule": "a file NAMED by an identifier -- an identifier, a hyphenated slug and an extension -- is blanked before the premise families are matched, length-preservingly, and BEFORE the bare-identifier rule, which would otherwise eat its own prefix and leave the slug",
+    "whatItDoesNotTouch": "the line CONTEXT test, the refinements and the snippet all read the ORIGINAL text, so the whole effect is the removal of the in-filename occurrences and the index shift behind them; a filename can therefore still supply its family's line context, which runs the OPPOSITE way and is its own row (T-287)"
+  },
+  "measurement": {
+    "inScopeFilesScanned": 182,
+    "filesCarryingAtLeastOneOccurrence": 41,
+    "occurrencesBefore": 394,
+    "occurrencesAfter": 386,
+    "occurrencesRemoved": 8,
+    "occurrencesAppeared": 0,
+    "survivingOccurrencesThatChangedIdentity": 0,
+    "removed": [
+      {
+        "file": "TASKS.md",
+        "index": 57,
+        "family": "WIDTH",
+        "token": "drawable",
+        "snippet": "2) — claim [`C-0175`](gpd/claims/C-0175-drawable-raster-rim.md), challenges [`CH-0227`]("
+      },
+      {
+        "file": "TASKS.md",
+        "index": 59,
+        "family": "WIDTH",
+        "token": "drawable",
+        "snippet": "2) — claim [`C-0175`](gpd/claims/C-0175-drawable-raster-rim.md), no challenge on this ha"
+      },
+      {
+        "file": "TASKS.md",
+        "index": 64,
+        "family": "WIDTH",
+        "token": "drawable",
+        "snippet": "es.md) §6 ([`C-0175`](gpd/claims/C-0175-drawable-raster-rim.md), `T-254`). **Every uncou"
+      },
+      {
+        "file": "gpd/claims/C-0175-drawable-raster-rim.md",
+        "index": 2,
+        "family": "WIDTH",
+        "token": "drawable",
+        "snippet": "| | **Task** | [`T-258`](../tasks/T-258-drawable-ragged-face.md) (raised by [`C-0151`](C"
+      },
+      {
+        "file": "gpd/claims/C-0175-drawable-raster-rim.md",
+        "index": 3,
+        "family": "WIDTH",
+        "token": "drawable",
+        "snippet": "| **Provenance** | [`gpd/results/T-258-drawable-ragged-face.json`](../results/T-258-dra"
+      },
+      {
+        "file": "gpd/claims/C-0175-drawable-raster-rim.md",
+        "index": 4,
+        "family": "WIDTH",
+        "token": "drawable",
+        "snippet": "ble-ragged-face.json`](../results/T-258-drawable-ragged-face.json) (`structure.DrawableR"
+      },
+      {
+        "file": "gpd/claims/C-0180-tied-honeycomb-coupled-regrade.md",
+        "index": 0,
+        "family": "ROW_SPAN",
+        "token": "drawable",
+        "snippet": "ile and reproduced**; [`C-0175`](C-0175-drawable-raster-rim.md) (`T-254`) — the tie set,"
+      },
+      {
+        "file": "gpd/claims/C-0182-name-the-discharge.md",
+        "index": 0,
+        "family": "WIDTH",
+        "token": "drawable",
+        "snippet": "sified occurrences in [`C-0175`](C-0175-drawable-raster-rim.md), six wrong-discharge rep"
+      }
+    ],
+    "removedThatAreTheCLAIMSlugAlone": 5,
+    "removedThatAreATaskOrResultFilename": 3,
+    "whyTheRaisingClaimSaysFive": "C-0182 measured the CLAIM slug and this rule is about the shape <ID>-<slug>.<ext>, which a task file and a result file have too; its 5 is a strict lower bound on its own scope",
+    "falsePositives": {
+      "spansBlanked": 4149,
+      "spansResolvingToAFileThatExistsOrExisted": 4146,
+      "spansNotResolving": 3,
+      "spansNotResolvingAndWhyEachIsStillAFilename": {
+        "C-0022-tile-edge-load.md": {
+          "occurrences": 2,
+          "firstSeenIn": "TASKS.md",
+          "context": "was 30 links.** Verifying `C-0122`'s own cross-references turned up `C-0022-tile-edge-load.md` for what is actually `C-0022"
+        },
+        "CH-0210-the-census-is-not-reproducible-at-its-own-commit.md": {
+          "occurrences": 1,
+          "firstSeenIn": "gpd/claims/C-0165-eleventh-answers-synthesis.md",
+          "context": "y somebody else mid-pass.** The two broken links were `gpd/challenges/CH-0210-the-census-is-not-reproducible-at-its-own-commit.md` — the writer reconstructing"
+        }
+      },
+      "falsePositiveCount": 0,
+      "extensionsBehindAnIdentifier": {
+        "md": 3264,
+        "json": 594,
+        "py": 273,
+        "txt": 13,
+        "sh": 5
+      },
+      "method": "exhaustive, not sampled: every span is resolved against git ls-files, the untracked listing, and every basename that has ever existed in the history"
+    },
+    "whatRequiringAnExtensionCosts": {
+      "extensionlessIdentifierPhrases": 19,
+      "extensionlessOccurrences": 59,
+      "carryingAFamilyToken": 0,
+      "note": "every one is a source DIRECTORY or a result-file STEM used as a table key, and none carries a family token, so the extension is what distinguishes a file reference from prose and requiring it costs nothing"
+    },
+    "gateDefectsBeforeOnTheWorkingTree": 21,
+    "gateDefectsAfterOnTheWorkingTree": 0,
+    "gateDefectsAtTheBaselineRefWithItsOwnTools": 18
+  },
+  "verdict": {
+    "thePredicateRepairAloneIsNotAReading": "with the rule in and the classification table still keyed on the OLD indices the gate reads 9, and that number measures nothing: removing an occurrence moves every index below it, so a stale table lines up against different occurrences. It is the reason T-285 is a rider on T-282 and not a task of its own",
+    "noLegitimateStatementIsLost": "every removed occurrence is a token inside a filename in a link; the sentence around each is untouched, and where a file is BOTH linked and discussed the statement keeps its own occurrence -- asserted as a named test"
+  },
+  "mutation": {
+    "mutations": 55,
+    "survivors": 0,
+    "mutationsFailingNothing": 0,
+    "survivorNames": [],
+    "narrowMutations": 33,
+    "widenMutations": 22,
+    "t285NamedTests": 18,
+    "t285NamedTestsReachedByAMutation": 18,
+    "mutationsThatKillAtLeastOneT285Test": 14,
+    "t285Mutations": 13,
+    "t285NarrowMutations": 7,
+    "t285WidenMutations": 6,
+    "table": [
+      {
+        "direction": "NARROW",
+        "mutation": "the PLACEMENT refinement removed (the iteration-34 predicate)",
+        "namedTestsFailed": 7,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the structural-model test never fires -- no GRILLAGE half",
+        "namedTestsFailed": 7,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the attributive test never fires -- no SQUARE reading",
+        "namedTestsFailed": 6,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "one global pointer set again -- no per-family discharge",
+        "namedTestsFailed": 11,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the refinement window shrunk to nothing",
+        "namedTestsFailed": 10,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "the structural-model test fires on anything",
+        "namedTestsFailed": 12,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "the attributive test fires on the bare token",
+        "namedTestsFailed": 6,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "the refinement window swallows the whole document",
+        "namedTestsFailed": 1,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "the structural-model test gets the WIDE window back -- a sentence away counts",
+        "namedTestsFailed": 2,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the structural-model test sees only the token itself",
+        "namedTestsFailed": 6,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the WIDTH refinement removed (the iteration-34 predicate)",
+        "namedTestsFailed": 5,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the drawable-raster test never fires -- every `drawable` is a width",
+        "namedTestsFailed": 4,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "row nouns never match -- every row length reads as a tile width",
+        "namedTestsFailed": 4,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "nothing is ever remote -- the line context is trusted at any distance",
+        "namedTestsFailed": 2,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "row nouns match anything -- every match is a restored row span",
+        "namedTestsFailed": 7,
+        "t285TestsFailed": 1,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "width nouns match anything -- every match is a withdrawn tile width",
+        "namedTestsFailed": 6,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "the drawable-raster test fires on anything",
+        "namedTestsFailed": 6,
+        "t285TestsFailed": 2,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "everything is remote -- the line context is never trusted",
+        "namedTestsFailed": 2,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "a snippet is the whole line again -- an occurrence loses its identity",
+        "namedTestsFailed": 3,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "a snippet is empty -- an occurrence has no identity at all",
+        "namedTestsFailed": 2,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the class coercion removed -- the two-way MOVED/DISCHARGED default",
+        "namedTestsFailed": 5,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "hand overrides are not read back -- the docstring's standing promise",
+        "namedTestsFailed": 3,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "`C-0152` and `C-0154` registered as CORRECTING again",
+        "namedTestsFailed": 2,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the two-file OUT_OF_SCOPE set restored",
+        "namedTestsFailed": 1,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "the coercion sweeps the gated families in too",
+        "namedTestsFailed": 4,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "a hand override is keyed on its FILE alone",
+        "namedTestsFailed": 2,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "ADDRESSED gains the two new classes -- the split gated after all",
+        "namedTestsFailed": 5,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "CLASSES without SURVIVING and RESTATED -- the old vocabulary",
+        "namedTestsFailed": 5,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "NON_SUBJECT_CLASSES back to the three old ones",
+        "namedTestsFailed": 1,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "every family belongs to this census's own discharge",
+        "namedTestsFailed": 11,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the two discharges merged into one pointer set",
+        "namedTestsFailed": 1,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "a family with no entry belongs to NO discharge -- the refusal swallowed",
+        "namedTestsFailed": 1,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the WIDTH family loses its honeycomb line context",
+        "namedTestsFailed": 2,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the subject side of the two-layer agreement removed",
+        "namedTestsFailed": 1,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "a snippet is a LINE PREFIX again, not a window on the token",
+        "namedTestsFailed": 3,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "every previous entry is treated as a hand override",
+        "namedTestsFailed": 1,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "a hand override is keyed on its family and token, not its file",
+        "namedTestsFailed": 1,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "the coercion applies to every class, not only the gated ones",
+        "namedTestsFailed": 2,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "WHY loses the two new reasons",
+        "namedTestsFailed": 2,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "a hand override is keyed WITHOUT the occurrence's neighbourhood",
+        "namedTestsFailed": 2,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "CORRECTING emptied",
+        "namedTestsFailed": 1,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the override key shortened below one occurrence's neighbourhood",
+        "namedTestsFailed": 1,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": false
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the filename rule removed -- the pre-T-285 predicate, and a slug fires again",
+        "namedTestsFailed": 9,
+        "t285TestsFailed": 7,
+        "mutatesTheT285Rule": true
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the filename rule runs AFTER the bare identifier, which eats its own prefix and leaves the slug behind",
+        "namedTestsFailed": 7,
+        "t285TestsFailed": 7,
+        "mutatesTheT285Rule": true
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the extension is `.md` alone -- a RESULT filename's token survives",
+        "namedTestsFailed": 2,
+        "t285TestsFailed": 2,
+        "mutatesTheT285Rule": true
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the slug charset drops the hyphen -- a multi-word slug is not a filename",
+        "namedTestsFailed": 6,
+        "t285TestsFailed": 6,
+        "mutatesTheT285Rule": true
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the sub-letter is dropped -- a `T-1d` file is not a filename",
+        "namedTestsFailed": 1,
+        "t285TestsFailed": 1,
+        "mutatesTheT285Rule": true
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the blanking stops preserving length -- every offset below a span is wrong",
+        "namedTestsFailed": 4,
+        "t285TestsFailed": 3,
+        "mutatesTheT285Rule": true
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "the extension is not required -- every hyphenated identifier phrase is blanked",
+        "namedTestsFailed": 2,
+        "t285TestsFailed": 2,
+        "mutatesTheT285Rule": true
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "the slug admits whitespace -- the blanking runs from one filename to a LATER full stop and swallows the prose between",
+        "namedTestsFailed": 1,
+        "t285TestsFailed": 1,
+        "mutatesTheT285Rule": true
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "the slug admits whitespace AND the full stop -- one filename then reaches the next decimal point in the sentence behind it",
+        "namedTestsFailed": 2,
+        "t285TestsFailed": 2,
+        "mutatesTheT285Rule": true
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "the identifier prefix is not required -- any dotted token is a filename, a decimal number included",
+        "namedTestsFailed": 2,
+        "t285TestsFailed": 0,
+        "mutatesTheT285Rule": true
+      },
+      {
+        "direction": "NARROW",
+        "mutation": "the BARE identifier rule removed -- the filename rule alone, so `T-132` is a 132-station census again",
+        "namedTestsFailed": 7,
+        "t285TestsFailed": 1,
+        "mutatesTheT285Rule": true
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "the rule decays into a CATCH-ALL: an identifier and everything hyphenated, spaced or dotted behind it -- C-0150's judgement-becomes-a-pattern",
+        "namedTestsFailed": 9,
+        "t285TestsFailed": 8,
+        "mutatesTheT285Rule": true
+      },
+      {
+        "direction": "WIDEN",
+        "mutation": "the blanking is applied to the line CONTEXT as well as the match, so a filename stops supplying its family's context -- T-285's stated scope, reversed",
+        "namedTestsFailed": 1,
+        "t285TestsFailed": 1,
+        "mutatesTheT285Rule": true
+      }
+    ],
+    "aDefectFoundInTheHARNESSItself": "tools/T-234-mutation-test.py recovered a named test with a regular expression that captured only the FIRST string literal of the name, so every test whose name is written as adjacent literals across source lines was recorded TRUNCATED while the self-test reports the whole concatenated name. The two never compared equal, and the UNREACHED report listed as unreached seven tests a mutation had demonstrably killed. It is parsed with ast now, which is what the interpreter does at the call, and the extractor carries its own self-check"
+  },
+  "namedTests": {
+    "T-234-census.py": 153,
+    "T-234-census.py, added by T-285": 18
+  }
+}

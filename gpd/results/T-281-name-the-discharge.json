@@ -1,0 +1,272 @@
+{
+  "task": "T-281",
+  "title": "a census must NAME the claim that discharges each family, and refuse a family whose discharge it cannot name",
+  "raisedBy": "CH-0229",
+  "baselineRef": "9620d3ef3f21aa4038055a5752cd637f49e62954",
+  "baselineRefRequested": "HEAD",
+  "parameters": {
+    "subjectDischarge": "C-0140/C-0141",
+    "censusUnderTest": "tools/T-234-census.py",
+    "ruleModule": "tools/census_discharges.py",
+    "verdicts": [
+      "DECLARED",
+      "VACUOUS",
+      "UNDECLARED"
+    ],
+    "note": "no wall-clock timing and no step counter is emitted; every value in this file is an integer count or a name, so there is nothing to round"
+  },
+  "theRule": {
+    "getterRefuses": true,
+    "reportDoesNotRefuse": true,
+    "reportVerdicts": [
+      "DECLARED",
+      "VACUOUS",
+      "UNDECLARED"
+    ],
+    "thirdState": "UNDECLARED",
+    "emptyDomainIs": "VACUOUS",
+    "emptyDomainIsNotWithheld": "a rule with an EMPTY DOMAIN is vacuous, not withheld -- a declared family the census finds nothing of is CLEAN, and reporting it as unanswerable would make a correct declaration look like a defect",
+    "aDischargeMustNameAClaim": true,
+    "undeclaredDischargeIsRefusedAtConstruction": true
+  },
+  "familyReport": [
+    {
+      "family": "AZIMUTH",
+      "verdict": "DECLARED",
+      "discharge": "C-0140/C-0141",
+      "occurrences": 39
+    },
+    {
+      "family": "FOOTPRINT",
+      "verdict": "DECLARED",
+      "discharge": "C-0140/C-0141",
+      "occurrences": 135
+    },
+    {
+      "family": "GRILLAGE",
+      "verdict": "DECLARED",
+      "discharge": "C-0154/C-0167",
+      "occurrences": 21
+    },
+    {
+      "family": "PLACEMENT",
+      "verdict": "DECLARED",
+      "discharge": "C-0140/C-0141",
+      "occurrences": 13
+    },
+    {
+      "family": "ROW_SPAN",
+      "verdict": "DECLARED",
+      "discharge": null,
+      "occurrences": 66
+    },
+    {
+      "family": "SCAFFOLD",
+      "verdict": "DECLARED",
+      "discharge": "C-0140/C-0141",
+      "occurrences": 51
+    },
+    {
+      "family": "SQUARE",
+      "verdict": "DECLARED",
+      "discharge": null,
+      "occurrences": 11
+    },
+    {
+      "family": "WIDTH",
+      "verdict": "DECLARED",
+      "discharge": "C-0140/C-0141",
+      "occurrences": 58
+    }
+  ],
+  "beforeAndAfter": {
+    "familiesEmitted": 8,
+    "familiesDeclaredBefore": 3,
+    "familiesDeclaredAfter": 8,
+    "familiesAnsweredByADefaultNobodyWroteDownBefore": 5,
+    "whichWere": [
+      "AZIMUTH",
+      "FOOTPRINT",
+      "PLACEMENT",
+      "SCAFFOLD",
+      "WIDTH"
+    ]
+  },
+  "retrospective": {
+    "revisions": 3,
+    "familyRevisionRefusals": 15,
+    "genuineRefusals": 2,
+    "promptRefusals": 13,
+    "falsePositives": 0,
+    "whyFalsePositivesAreZero": "the rule reads a DECLARATION, so it cannot mistake a declared family for an undeclared one; every refusal is on a family that really names no discharge",
+    "distinctFamiliesRefused": [
+      "AZIMUTH",
+      "FOOTPRINT",
+      "PLACEMENT",
+      "SCAFFOLD",
+      "WIDTH"
+    ],
+    "distinctFamiliesGenuine": [
+      "PLACEMENT",
+      "WIDTH"
+    ],
+    "occurrencesAtTheFirstRevision": 264,
+    "misdatedOccurrencesAtTheFirstRevision": 25,
+    "perRevision": [
+      {
+        "commit": "9620d3e",
+        "date": "2026-08-22",
+        "subject": "P-30/C-0178 and T-280/C-0179: the register reads a row's LEADING verdict, and a count becomes a debt only under the right denominator",
+        "emitted": [
+          "AZIMUTH",
+          "FOOTPRINT",
+          "GRILLAGE",
+          "PLACEMENT",
+          "ROW_SPAN",
+          "SCAFFOLD",
+          "SQUARE",
+          "WIDTH"
+        ],
+        "declared": [
+          "GRILLAGE",
+          "ROW_SPAN",
+          "SQUARE"
+        ],
+        "refused": [
+          "AZIMUTH",
+          "FOOTPRINT",
+          "PLACEMENT",
+          "SCAFFOLD",
+          "WIDTH"
+        ],
+        "verdicts": {
+          "AZIMUTH": "PROMPT",
+          "FOOTPRINT": "PROMPT",
+          "PLACEMENT": "PROMPT",
+          "SCAFFOLD": "PROMPT",
+          "WIDTH": "PROMPT"
+        },
+        "occurrences": 391,
+        "misdatedOccurrences": 0,
+        "misdatedBySplit": {},
+        "occurrencesTodaysPredicateFinds": 391
+      },
+      {
+        "commit": "3e71284",
+        "date": "2026-08-22",
+        "subject": "Iteration 42: the emission rule reaches every writer, the raster's own ties, and a partial discharge as a data structure",
+        "emitted": [
+          "AZIMUTH",
+          "FOOTPRINT",
+          "GRILLAGE",
+          "PLACEMENT",
+          "ROW_SPAN",
+          "SCAFFOLD",
+          "SQUARE",
+          "WIDTH"
+        ],
+        "declared": [
+          "GRILLAGE",
+          "ROW_SPAN",
+          "SQUARE"
+        ],
+        "refused": [
+          "AZIMUTH",
+          "FOOTPRINT",
+          "PLACEMENT",
+          "SCAFFOLD",
+          "WIDTH"
+        ],
+        "verdicts": {
+          "AZIMUTH": "PROMPT",
+          "FOOTPRINT": "PROMPT",
+          "PLACEMENT": "PROMPT",
+          "SCAFFOLD": "PROMPT",
+          "WIDTH": "PROMPT"
+        },
+        "occurrences": 391,
+        "misdatedOccurrences": 0,
+        "misdatedBySplit": {},
+        "occurrencesTodaysPredicateFinds": 391
+      },
+      {
+        "commit": "eade1a6",
+        "date": "2026-08-19",
+        "subject": "Iteration 34: the coupled tile is still flat, on half the cells and one cross-section",
+        "emitted": [
+          "AZIMUTH",
+          "FOOTPRINT",
+          "PLACEMENT",
+          "SCAFFOLD",
+          "WIDTH"
+        ],
+        "declared": [],
+        "refused": [
+          "AZIMUTH",
+          "FOOTPRINT",
+          "PLACEMENT",
+          "SCAFFOLD",
+          "WIDTH"
+        ],
+        "verdicts": {
+          "AZIMUTH": "PROMPT",
+          "FOOTPRINT": "PROMPT",
+          "PLACEMENT": "GENUINE",
+          "SCAFFOLD": "PROMPT",
+          "WIDTH": "GENUINE"
+        },
+        "occurrences": 264,
+        "misdatedOccurrences": 25,
+        "misdatedBySplit": {
+          "ROW_SPAN": 20,
+          "GRILLAGE": 1,
+          "SQUARE": 4
+        },
+        "occurrencesTodaysPredicateFinds": 264
+      }
+    ]
+  },
+  "mutation": {
+    "mutations": 24,
+    "survivors": 0,
+    "survivorNames": [],
+    "mutationsFailingNothing": 0,
+    "everyMutationReplacesTheRuleWholesale": true,
+    "why": "a mutation that WIDENS a rule to `original|mutant` is a no-op -- C-0177 measured that trap at 9 of 22 rows of C-0176's first table -- so every mutation here is a wholesale text replacement in a throwaway copy of tools/, and the baseline failures of an UNMUTATED copy are measured and subtracted so that a killer count means something"
+  },
+  "namedTests": {
+    "census_discharges.py": 45,
+    "T-234-census.py": 135
+  },
+  "gate": {
+    "tool": "python3 tools/T-234-census.py --check",
+    "isAGate": false,
+    "why": "deliberately outside tools/verify.sh and therefore advisory; the rule's own self-tests ARE gated, through the censusSelfTest Gradle task that already runs tools/T-234-census.py --self-test, which now runs the registry's 45 tests too",
+    "preExistingDefectsBeforeOnTheWorkingTree": 21,
+    "preExistingDefectsAfterOnTheWorkingTree": 21,
+    "preExistingDefectsAtTheBaselineRefsOwnCorpus": 18,
+    "controlIsOneCorpusAndTwoTools": "the before/after pair is HEAD's own census tool and this task's, run against the SAME working tree -- because a concurrent agent's new claim enters the tree during an iteration and would otherwise be charged to this task",
+    "whoseTheyAre": "T-282's: four unclassified TASKS.md rows, eight unclassified occurrences in C-0175, and six wrong-discharge reports on rows written before C-0176 split the families. NOT repaired here -- a regeneration mid-iteration sweeps in whatever is in flight (C-0176 1b)"
+  },
+  "insideItsOwnScope": {
+    "occurrencesThisTasksOwnClaimsAdd": 2,
+    "detail": [
+      {
+        "file": "gpd/claims/C-0182-name-the-discharge.md",
+        "index": 0,
+        "family": "WIDTH",
+        "token": "drawable",
+        "snippet": "sified occurrences in [`C-0175`](C-0175-drawable-raster-rim.md), six wrong-discharge rep"
+      },
+      {
+        "file": "gpd/claims/C-0182-name-the-discharge.md",
+        "index": 1,
+        "family": "WIDTH",
+        "token": "drawable",
+        "snippet": "during this iteration, an unclassified `drawable` in a concurrent agent's [`C-0180`](C-0"
+      }
+    ],
+    "howManyAreALINKTARGET": 1,
+    "note": "the census's `drawable` token fires inside C-0175's own FILENAME SLUG, `C-0175-drawable-raster-rim.md` -- `blank_identifiers` blanks the identifier and not the file it names -- so any in-scope claim that LINKS to that claim acquires an occurrence that is a link target and not a statement. 5 of the corpus's 40 `drawable` occurrences are that shape, including a concurrent agent's C-0180 and one of this claim's two. Filed as T-285; NOT repaired here, because the predicate's records and indices are what T-282 must regenerate against"
+  }
+}
