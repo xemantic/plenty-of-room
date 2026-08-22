@@ -313,6 +313,37 @@ Two gates were red before any restructure work started, and only one of them is 
 It re-emits the corpus, and the three additive steps change the emitters it would be re-emitting from —
 which is `C-0101`'s consumer-before-producer error at the schema layer.
 
+## Number reservations — iteration 40 (2026-08-22)
+
+Three agents, which is this box's measured ceiling, and the pass is **science again**: iteration 39's
+restructure is complete, `tools/verify.sh --committed` is green end to end, and the three rows below are
+independent of each other and of `T-272`.
+
+| Agent | Task | Claims | Challenges |
+|---|---|---|---|
+| A | `T-263` re-grade the coupled honeycomb cells on the honeycomb GRILLAGE, not on a smeared sheet | `C-0167` | `CH-0213`, `CH-0214` |
+| B | `T-274` does the recommended `10 × 6` block need a scaffold SEAM, and is it drawn without one? | `C-0168` | `CH-0215`, `CH-0216` |
+| C | `T-9`'s **vertical/axial compliance** half, from the run that already exists | `C-0169` | `CH-0217`, `CH-0218` |
+
+**Reserved and not yet taken**: `C-0167`, `C-0168`, `C-0169`, `CH-0213`, `CH-0214`, `CH-0215`, `CH-0216`,
+`CH-0217`, `CH-0218`. Anything still unused when the iteration closes must be **released by name here** —
+[`C-0166`](gpd/claims/C-0166-dangling-identifiers.md) found thirteen reservations released by nobody at all,
+and that a release note written as a **range** does not release the numbers inside it. This line exists so
+that [`tools/check-corpus-identifiers.py`](tools/check-corpus-identifiers.py) can see the reservation, which
+is the point: **a number reserved and never named again is exactly the defect that gate was built for.**
+
+**`T-272` is deliberately NOT in this block.** Its cost is measured — **≥ 7 h** for one pass over 148 files and
+**≥ 14 h** with the by-kind control — and its own row says to schedule it as its own pass. Running it beside
+three studies would put four heavy Gradle runs on a box whose ceiling is three.
+
+**Why `T-9`'s vertical half and not its `k_s` half.** `C-0157` measured what the remaining deliverables cost:
+the three plate rigidities need 100 independent samples per mode and got **20.5–24.2**, at **12–55 h per
+replica**. The vertical/axial compliance is the half the row's own title says comes *"at no extra cost"* — the
+trajectory that measured the roll is on disk. **Measure that claim before spending anything**; if the existing
+run cannot answer it, say so and price the run that can, rather than shrinking the question.
+
+The highest numbers in use at the time of writing are `T-274`, `P-28`, `C-0166`, `CH-0212`.
+
 ## Process blockers
 
 | ID | Task | Status | Notes |
