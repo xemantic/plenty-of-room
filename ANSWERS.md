@@ -440,6 +440,22 @@ the richest set richest and does not make it flatter.
    one of them is correct about a **drawable** design that has not been demonstrated, and the untied readings
    (`C-0167`) are not the alternative either, because route B is a **tether** and no lattice in this repository
    carries one. That re-grade is `T-299`. **Read `C-0193` before quoting any coupled honeycomb number.**
+   **AND THE *"NOBODY HAS FOLDED IT"* HALF IS DISPUTED IN THE SAME ITERATION, BY THE SAME AUTHORS' OWN
+   DEPOSITED FILES** ([`CH-0251`](gpd/challenges/CH-0251-the-deposited-block-has-no-loops.md), from
+   [`C-0199`](gpd/claims/C-0199-the-gallery-opened.md), `T-255`).
+   The caDNAno paper names its gallery as its own record; opened, its three archives yield the **seven design
+   files for those seven cross-sections**, and they say `126` scaffold bases per helix — **agreeing with the
+   Methods sentence exactly** — with **`0`** of them unpaired. The `10 × 6` block is deposited **twice**, by
+   both papers, **bit-identical**, and its helix 0 turns to helix 1 by a **direct covalent step** with zero
+   intervening unpaired nucleotides: **`C-0193`'s own route A, drawn**, closing the `±5 bp` residue condition
+   at **`0` forced scaffold crossings of 118** while paying nothing.
+   **Two primary artifacts of the same authors disagree, and only one was consulted.** Not disputed: the
+   quotation, the reach bound, the FJC tether pricing, the scaffold budget, and the loops' stated purpose
+   (aggregation). Disputed: whether route A is undemonstrated. **The decisive experiment is named and cheap** —
+   the SI staple **length** column, because a design with 28 unpaired bases per helix orders
+   `60 × 98 = 5 880` staple nucleotides for this block and the deposited file draws **7 560**.
+   **So the condition above is itself conditional**, and if the files are right `C-0175` §9's `1.12×`,
+   `C-0180` §4's `2 of 64` and `C-0190`'s twist all **stand** rather than being withdrawn.
    **One structural unknown does remain, and it was found by looking for a negative** (`C-0104`, `T-172`).
    A crossover **prestrain** is an *initial stress*, so it leaves the stiffness matrix untouched and enters
    the lattice as a **load vector** — which makes the whole axis one solve, and puts `T-5b`'s 0.10 at

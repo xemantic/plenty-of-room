@@ -192,7 +192,9 @@ end**. Nothing covalent, lattice-legal or tool-side refuses the zero-loop turn �
 published design uses it**, at `0` of `186` unique records over `30` queries and `7 of 7` built cross-sections
 doing the other thing. So the tied readings are correct about a **drawable, undemonstrated** design and the untied
 ones are not the alternative either, because the built turn is a **tether** and no lattice here carries one.
-**Neither verdict of this row moves**: the uncoupled block is flat at both readings and at both ends of the band. ~~It costs **a third of the footprint**.~~
+**Neither verdict of this row moves**: the uncoupled block is flat at both readings and at both ends of the band.
+**And the *"nobody has folded it"* half is itself disputed** — see
+[`CH-0251`](gpd/challenges/CH-0251-the-deposited-block-has-no-loops.md) below. ~~It costs **a third of the footprint**.~~
 **WITHDRAWN, iteration 35** (`C-0141`, `C-0144`): **it costs no footprint at all.**
 Corrected to the honeycomb's own two pitches, `10 × 6` is **38.08 × 37.504 nm — 0.929467162 of §3's 40.35 nm** and
 `15 × 4` is **38.08 × 56.524 nm — 1.40084263×** it, so the ordering **reverses**: the tile §7 offered as the *cost*
@@ -936,6 +938,14 @@ The zero-loop turn is reachable, drawable and lattice-legal (`d − 2r_P = 0.718
 measured phosphodiester step) and is reported by **`0` of `186`** unique records over **`30`** queries.
 So every count in this section is correct **about a design that has not been demonstrated**, and the tether
 re-grade it implies is not yet done (`T-299`).
+**AND THAT LAST CLAUSE IS DISPUTED IN THE SAME ITERATION**
+([`CH-0251`](gpd/challenges/CH-0251-the-deposited-block-has-no-loops.md), from
+[`C-0199`](gpd/claims/C-0199-the-gallery-opened.md)): the caDNAno paper's own gallery deposits the **seven
+design files** for those seven cross-sections, and they carry **`0`** unpaired scaffold bases — the `10 × 6`
+block, deposited **twice** and bit-identical, turning helix to helix by a **direct covalent step**. That is
+route A **drawn**, closing the `±5 bp` rule at `0` forced scaffold crossings of 118. **Two primary artifacts
+of the same authors disagree**; the decisive reading is the SI staple **length** column and it is named rather
+than run. If the files are right, the tied numbers **stand** rather than being conditional.
 Re-graded with the ties present, on the same 64 cells, the same extent, the same stations, the same mandate, the
 same normalising stroke and the **same 4 000-realisation dropout stream** — the untied half reproducing **all 128**
 of the published values at **`4.2e−9`** — **2 of 64** cells clear `T-5b`'s 0.10 at the 90th percentile.
