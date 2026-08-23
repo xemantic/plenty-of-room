@@ -82,6 +82,76 @@ data class HoneycombTurnElement(
     val z: Double
 )
 
+/**
+ * `T-299` — a raster turn carried as a freely-jointed **tether** rather than as a covalent tie.
+ *
+ * `C-0193` reads the built `10 × 6` block's own strand diagram: the covalent phosphodiester link
+ * sits `14 bp = 4.76 nm` **outboard** of the duplex end on each of the two helices a turn joins,
+ * so what stands between the two rim nodes is `28` nucleotides of single-stranded scaffold. A
+ * freely-jointed chain transmits a **force** and no **moment**, so this element carries **no**
+ * dihedral spring and **no** covalent slip spring — only the two stiffnesses a taut central-force
+ * element has, and its own preload.
+ *
+ * @param secantStiffness `f/x` in pN/nm — the **transverse** stiffness of a taut chain.
+ * @param tangentStiffness `df/dx` in pN/nm — the stiffness along the chain's own line.
+ * @param tension `f` in pN. A chain held at any `x > 0` pulls, so this is a **load**: it changes
+ *   no entry of the stiffness matrix, and `withoutPrestrain` drops it exactly as it drops a tie's
+ *   prestrain.
+ */
+data class HoneycombScaffoldTurnTether(
+    val lowerBeam: Int,
+    val upperBeam: Int,
+    val node: Int,
+    val secantStiffness: Double,
+    val tangentStiffness: Double,
+    val tension: Double = 0.0
+) {
+
+    init {
+        require(lowerBeam >= 0) { "lowerBeam must not be negative, was: $lowerBeam" }
+        require(upperBeam > lowerBeam) { "upperBeam must exceed lowerBeam, was: $upperBeam" }
+        require(node >= 0) { "node must not be negative, was: $node" }
+        require(secantStiffness >= 0.0 && secantStiffness.isFinite()) {
+            "secantStiffness must be finite and not negative, was: $secantStiffness"
+        }
+        require(tangentStiffness >= 0.0 && tangentStiffness.isFinite()) {
+            "tangentStiffness must be finite and not negative, was: $tangentStiffness"
+        }
+        require(tension >= 0.0 && tension.isFinite()) {
+            "tension must be finite and not negative, was: $tension"
+        }
+    }
+
+}
+
+/**
+ * A scaffold turn **tether** of the assembled lattice, as geometry.
+ *
+ * The chain's own decomposition, `K = (df/dx)n̂n̂ᵀ + (f/x)(I − n̂n̂ᵀ)` with
+ * `n̂ = (unitY, unitZ, 0)` and no in-plane transverse coordinate in the model, gives exactly two
+ * scalars on the grillage's two existing gradients — [normalStiffness] on the link residual and
+ * [axialStiffness] on the slip residual.
+ */
+data class HoneycombTetherElement(
+    val tether: HoneycombScaffoldTurnTether,
+    val node: Int,
+    val s: Double,
+    val inPlane: Boolean,
+    val unitY: Double,
+    val unitZ: Double,
+    val y: Double,
+    val z: Double
+) {
+
+    /** The stiffness in pN/nm on the **link** residual: `(df/dx)·unitZ² + (f/x)·unitY²`. */
+    val normalStiffness: Double =
+        tether.tangentStiffness * unitZ * unitZ + tether.secantStiffness * unitY * unitY
+
+    /** The stiffness in pN/nm on the **slip** residual — purely transverse, so the secant. */
+    val axialStiffness: Double = tether.secantStiffness
+
+}
+
 /** A bond of the assembled lattice, as geometry. */
 data class HoneycombLatticeBond(
     val site: HoneycombBondSite,
@@ -281,7 +351,8 @@ class HoneycombGrillage(
     val faceColumn: Int = 0,
     val axialPinBeam: Int = 0,
     val bondPrestrains: Map<HoneycombBondSite, Double> = emptyMap(),
-    val scaffoldTurnTies: List<HoneycombScaffoldTurnTie> = emptyList()
+    val scaffoldTurnTies: List<HoneycombScaffoldTurnTie> = emptyList(),
+    val scaffoldTurnTethers: List<HoneycombScaffoldTurnTether> = emptyList()
 ) {
 
     init {
@@ -462,14 +533,55 @@ class HoneycombGrillage(
         )
     }
 
-    /** The same lattice with no prestrain — the object every influence function must be taken on. */
+    /**
+     * `T-299`'s scaffold turn tethers, as assembled geometry.
+     *
+     * Empty by default, so every lattice `C-0154`, `C-0167` and `C-0175` measured is
+     * **bit-identical** — asserted as a test rather than claimed.
+     */
+    val tetherElements: List<HoneycombTetherElement> = scaffoldTurnTethers.map { tether ->
+        require(tether.upperBeam < beamCount) {
+            "a tether must join two beams of the block, was: " +
+                    "${tether.lowerBeam}, ${tether.upperBeam}"
+        }
+        require(tether.node in nodeS.indices) {
+            "a tether's node must be one of the beam's own, was: ${tether.node}"
+        }
+        val dy = beamY[tether.upperBeam] - beamY[tether.lowerBeam]
+        val dz = beamZ[tether.upperBeam] - beamZ[tether.lowerBeam]
+        val length = sqrt(dy * dy + dz * dz)
+        require(abs(length - block.bondLength) < 1e-8) {
+            "a tether must join two beams exactly one lattice constant apart, was: $length"
+        }
+        HoneycombTetherElement(
+            tether = tether,
+            node = tether.node,
+            s = nodeS[tether.node],
+            inPlane = abs(dz) < 1e-9,
+            unitY = dy / length,
+            unitZ = dz / length,
+            y = (beamY[tether.lowerBeam] + beamY[tether.upperBeam]) / 2.0,
+            z = (beamZ[tether.lowerBeam] + beamZ[tether.upperBeam]) / 2.0
+        )
+    }
+
+    /**
+     * The same lattice with no prestrain — the object every influence function must be taken on.
+     *
+     * A tether's **tension** is a prestrain in exactly `C-0104`'s sense, so it is dropped here
+     * with the ties' roll prestrain: an influence taken on a preloaded lattice is that influence
+     * *plus* the preload's own response, and the Woodbury matrix then stops being a compliance.
+     */
     val withoutPrestrain: HoneycombGrillage by lazy {
-        if (bondPrestrains.isEmpty() && scaffoldTurnTies.none { it.prestrainRadians != 0.0 }) {
+        if (bondPrestrains.isEmpty() && scaffoldTurnTies.none { it.prestrainRadians != 0.0 } &&
+            scaffoldTurnTethers.none { it.tension != 0.0 }
+        ) {
             this
         } else HoneycombGrillage(
             block, rowBasePairs, foundationStiffness, hingeStiffness, hingeStiffnessEnhancement,
             slipStiffness, duplex, subdivisions, linkStiffness, faceColumn, axialPinBeam,
-            emptyMap(), scaffoldTurnTies.map { it.copy(prestrainRadians = 0.0) }
+            emptyMap(), scaffoldTurnTies.map { it.copy(prestrainRadians = 0.0) },
+            scaffoldTurnTethers.map { it.copy(tension = 0.0) }
         )
     }
 
@@ -571,6 +683,26 @@ class HoneycombGrillage(
             scatter(
                 intArrayOf(dof(node, a, U), dof(node, a, THETA), dof(node, b, U), dof(node, b, THETA)),
                 Array(4) { i -> DoubleArray(4) { j -> slipStiffness * slipGradient[i] * slipGradient[j] } }
+            )
+        }
+        tetherElements.forEach { element ->
+            val a = element.tether.lowerBeam
+            val b = element.tether.upperBeam
+            val node = element.node
+            // A freely-jointed chain carries no moment, so there is NO dihedral spring here.
+            val armY = half * element.unitY
+            val linkGradient = doubleArrayOf(1.0, armY, -1.0, armY)
+            val normal = element.normalStiffness
+            scatter(
+                intArrayOf(dof(node, a, W), dof(node, a, PHI), dof(node, b, W), dof(node, b, PHI)),
+                Array(4) { i -> DoubleArray(4) { j -> normal * linkGradient[i] * linkGradient[j] } }
+            )
+            val armZ = half * element.unitZ
+            val slipGradient = doubleArrayOf(1.0, -armZ, -1.0, -armZ)
+            val axial = element.axialStiffness
+            scatter(
+                intArrayOf(dof(node, a, U), dof(node, a, THETA), dof(node, b, U), dof(node, b, THETA)),
+                Array(4) { i -> DoubleArray(4) { j -> axial * slipGradient[i] * slipGradient[j] } }
             )
         }
         if (foundation != 0.0) {
@@ -833,6 +965,46 @@ class HoneycombGrillage(
     fun slipEnergy(field: F64Array): Double = 0.5 * slipStiffness *
             bonds.sumOf { val slip = bondSlip(field, it); slip * slip }
 
+    /** The **link** residual in nm of scaffold turn tether [element] in [field]. */
+    fun tetherLinkResidual(field: F64Array, element: HoneycombTetherElement): Double {
+        val arm = block.bondLength / 2.0 * element.unitY
+        return field[dof(element.node, element.tether.lowerBeam, W)] +
+                arm * field[dof(element.node, element.tether.lowerBeam, PHI)] -
+                field[dof(element.node, element.tether.upperBeam, W)] +
+                arm * field[dof(element.node, element.tether.upperBeam, PHI)]
+    }
+
+    /** The **slip** residual in nm across scaffold turn tether [element] in [field]. */
+    fun tetherSlip(field: F64Array, element: HoneycombTetherElement): Double {
+        val arm = block.bondLength / 2.0 * element.unitZ
+        return field[dof(element.node, element.tether.lowerBeam, U)] -
+                arm * field[dof(element.node, element.tether.lowerBeam, THETA)] -
+                field[dof(element.node, element.tether.upperBeam, U)] -
+                arm * field[dof(element.node, element.tether.upperBeam, THETA)]
+    }
+
+    /**
+     * The change in nm of the chain's own end-to-end distance at [element] in [field].
+     *
+     * `δ|Δ| = n̂·δ⃗ = −unitZ ·` [tetherLinkResidual], because the model carries no in-plane
+     * transverse coordinate — so it is identically zero at an **in-plane** turn, whatever the
+     * field. Negative means the chain has **shortened**, which is what its own preload does.
+     */
+    fun tetherChainExtension(field: F64Array, element: HoneycombTetherElement): Double =
+        -element.unitZ * tetherLinkResidual(field, element)
+
+    /**
+     * The energy in pN·nm the tethers' linearised stiffness stores in [field], preload excluded.
+     *
+     * The preload is a **load** and its work is not part of this; what is asserted on it instead
+     * is that a rigid roll does zero work against [tetherPreloadLoad].
+     */
+    fun tetherEnergy(field: F64Array): Double = 0.5 * tetherElements.sumOf {
+        val residual = tetherLinkResidual(field, it)
+        val slip = tetherSlip(field, it)
+        it.normalStiffness * residual * residual + it.axialStiffness * slip * slip
+    }
+
     // ------------------------------------------------------------------ evaluation
 
     private fun faceBeamOf(y: Double): Int =
@@ -1006,6 +1178,41 @@ class HoneycombGrillage(
             load[dof(element.node, element.tie.upperBeam, PHI)] += couple
             load[dof(element.node, element.tie.lowerBeam, PHI)] -= couple
         }
+        addTetherPreload(load)
+    }
+
+    /**
+     * `T-299`'s tether preload: a freely-jointed chain held at any `x > 0` is in **tension**, and
+     * that tension is a self-equilibrated internal load between the turn's two rim nodes.
+     *
+     * The chain's own length changes by `δ|Δ| = n̂·δ⃗`, and with `δ_y ≡ 0` (the model has no
+     * in-plane transverse coordinate) that is `−unitZ` times the link residual — so the energy
+     * `f·δ|Δ|` contributes `+f·unitZ` times the link gradient to the load vector. The **in-plane**
+     * turns therefore contribute exactly **zero**: their pull is entirely along `y`, a direction
+     * this lattice has no coordinate for, and that is a statement about the model rather than
+     * about the chain.
+     */
+    private fun addTetherPreload(load: F64Array) {
+        val half = block.bondLength / 2.0
+        tetherElements.forEach { element ->
+            val magnitude = element.tether.tension * element.unitZ
+            if (magnitude == 0.0) return@forEach
+            val a = element.tether.lowerBeam
+            val b = element.tether.upperBeam
+            val armY = half * element.unitY
+            load[dof(element.node, a, W)] += magnitude
+            load[dof(element.node, a, PHI)] += magnitude * armY
+            load[dof(element.node, b, W)] -= magnitude
+            load[dof(element.node, b, PHI)] += magnitude * armY
+        }
+    }
+
+    /** The preload of every tether alone, with the axial rigid mode's pin honoured. */
+    fun tetherPreloadLoad(): F64Array {
+        val load = F64Array(degreesOfFreedom)
+        addTetherPreload(load)
+        load[pinnedDof] = 0.0
+        return load
     }
 
     /**

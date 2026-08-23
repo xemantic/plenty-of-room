@@ -222,8 +222,12 @@ object ResultInputs {
     val T_295: ResultInput = ResultInput("T-295", "T-295-mutation-input-census.json")
     val T_296: ResultInput = ResultInput("T-296", "T-296-zero-loop-raster-turn.json")
     val T_297: ResultInput = ResultInput("T-297", "T-297-the-common-mode-is-the-link.json")
+    val T_298: ResultInput = ResultInput("T-298", "T-298-a-challenges-status-row-is-the-authority.json")
+    val T_299: ResultInput = ResultInput("T-299", "T-299-tethered-raster-turn-regrade.json")
     val T_3: ResultInput = ResultInput("T-3", "T-3-stroke-and-blocking-force.json")
     val T_30: ResultInput = ResultInput("T-30", "T-30-flexure-end-joint.json")
+    val T_300: ResultInput = ResultInput("T-300", "T-300-a-length-is-not-a-provenance.json")
+    val T_302: ResultInput = ResultInput("T-302", "T-302-si-staple-order.json")
     val T_3A: ResultInput = ResultInput("T-3a", "T-3a-nonlinear-pb-profile.json")
     val T_3B: ResultInput = ResultInput("T-3b", "T-3b-tile-edge-load-profile.json")
     val T_4: ResultInput = ResultInput("T-4", "T-4-maximum-usable-bias.json")
@@ -263,9 +267,9 @@ object ResultInputs {
         T_216, T_217, T_218, T_219, T_220, T_221, T_225, T_226, T_23, T_230, T_231, T_232, T_234,
         T_235, T_243, T_244, T_245, T_246, T_249, T_25, T_250, T_252, T_253, T_254, T_255, T_258,
         T_260, T_261, T_262, T_263, T_267, T_274, T_275, T_276, T_278, T_279, T_280, T_281, T_282,
-        T_283, T_284, T_285, T_286, T_287, T_289, T_291, T_292, T_293, T_295, T_296, T_297, T_3,
-        T_30, T_3A, T_3B, T_4, T_40, T_5, T_50, T_5B, T_6, T_60, T_65, T_67, T_7, T_70, T_71, T_72,
-        T_75, T_76, T_79, T_8, T_81, T_9, T_96, T_97, T_99, T_9B
+        T_283, T_284, T_285, T_286, T_287, T_289, T_291, T_292, T_293, T_295, T_296, T_297, T_298,
+        T_299, T_3, T_30, T_300, T_302, T_3A, T_3B, T_4, T_40, T_5, T_50, T_5B, T_6, T_60, T_65,
+        T_67, T_7, T_70, T_71, T_72, T_75, T_76, T_79, T_8, T_81, T_9, T_96, T_97, T_99, T_9B
     )
 
     /** The handle a task id names, or `null` where a task id names two files. */

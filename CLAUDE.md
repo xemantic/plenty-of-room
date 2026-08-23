@@ -168,6 +168,14 @@ which is one of the reasons this project is a plain Kotlin/JVM application rathe
 - **Two links lie on a chord, so a two-link joint restrains ONE axis and the orthogonal one keeps only the bonds' own hinges.** That is not a choice between a favourable and an unfavourable orientation — both are simultaneously true of the same joint — and **a column buckles about its softest axis**, so the free one governs.
 - **The phosphate radius in B-DNA is 10 Å, which IS the duplex's steric radius** — the 2 nm diameter is the phosphate backbone, not a shell outside it. The 8.9–9.4 Å fibre numbers are the other end of a bracket, not a correction. **But that 10 Å is a cited round number and this repository MEASURED it: 0.9086 ± 0.0665 nm** (`T-71`, 13 084 crystallographic linkages, in `MeasuredBackbone`), so steric contact is **1.817 nm** and the round 2.0 nm is 9.1 % high. Use the measured value wherever a *margin* depends on it — and note what it buys: the origami weave's measured 18.5 Å minimum clears backbone contact by **0.35 σ**, so **the weave minimum IS the steric floor** and no groove interdigitation has to be invoked.
 - **The intrastrand phosphodiester step is a WINDOW, 0.60–0.70 nm (C3′-endo to C2′-endo), not a reach.** A phosphate pair too *close* cannot be bonded either. Minimising a bare distance in a junction-closure search parks the optimum on the van der Waals floor and reports a clash as a link.
+- **A STANDOFF IN UNPAIRED SCAFFOLD IS A CONTOUR, NOT A RISE, AND THE TWO ARE DIFFERENT KINDS OF
+  NUMBER.** *"`14 bp = 4.76 nm` outboard"* is `14 × 0.34 nm/bp` — the **duplex** rise applied to a
+  single-stranded region. ssDNA has a contour, `0.65–0.70 nm/nt`, so the same 14 nt is `9.1–9.8 nm`
+  (`1.91176471–2.05882353×`) with a root-mean-square end-to-end of `4.37–5.28 nm`; a rise is a
+  fixed lattice step and a contour is an upper bound on an extension a coil never reaches. **And a
+  standoff is not a parameter of a freely-jointed element at all**: the chain joins the two
+  **duplex** ends and integrates over where its own covalent link sits along it. What fixes the
+  element is the **nucleotide count** and the **anchor-to-anchor span**.
 - **And that window has NO primary source — its chain ends at two textbooks — while the measurement is 0.607 / 0.664 nm.** Measured here on 13 084 crystallographic linkages: the ordering and the pucker coupling hold, but the C2′-endo end is **5.1 % shorter** than the 0.70 in circulation. Every closure search in this repository has been searching a window wider at the top than the backbone is.
 - **A phosphate-distance criterion is not merely incomplete, it is ANTI-correlated with torsion feasibility.** Minimising a *window residual* is satisfied anywhere inside the window, so a shortest-gap tie-break drives the optimum to the **edge** — and the edge is exactly where no populated backbone exists. Of 3 546 placements that close on distance, **47.7 % close at no torsion whatever**, and the feasible ones sit in the window's *interior*. Search on the torsion criterion; do not filter by it afterwards.
 - **The cheap torsion bound is a REACH interval and it is a proof, not a search.** With ideal bonds and the two intervening angles, the chain `O3′–P–O5′–C5′` spans `[0.269, 0.385] nm` (`[0.223, 0.409]` at three measured σ), a closed form in the single torsion `α`. A link whose donor `O3′` and acceptor `C5′` fall outside it closes at **no torsion**, in microseconds — which is why an oxDNA or all-atom minimisation is the wrong *first* spend: a minimiser reports a local minimum where a reach bound reports an impossibility.
@@ -365,6 +373,23 @@ which is one of the reasons this project is a plain Kotlin/JVM application rathe
 - **An anchor's orientation decides everything and its material almost nothing.** For any flexible link crossing the layer, `k_lat/k_norm` is the *secant over the tangent* of its force-extension law, which convexity bounds at **1** — so a through-layer path costs at least as much normal stiffness as it buys laterally. A rigid rod is not covered by that bound and does 40–160× worse (`cEI/(SL²)` = 0.006–0.025), while the same duplex laid *in* the surface has the ratio the other way up by four orders of magnitude.
 - **A strut standing under the tile is destabilised by the load it exists to resist** — it carries the actuation force in compression, buckles at 5.7–22.7 pN against a 25–100 pN duty, and a column at its Euler load has *exactly zero* lateral stiffness: `k(P) = k₀(1 − P/P_c)`.
 - **An ssDNA tether is not "nothing at zero tension".** The geometry stretches it to the layer height whether or not it is taut, and there `F/L` *equals* the chain's own entropic constant — 0.124 pN/nm at a 10 nm gap, 27 % of the whole `A1.1` bound from one tether. The design rule is a contour **ceiling**, `L_c b ≤ 3N k_BT/k_req` (81 nt for four tethers), not "short and stiff".
+- **AN ENTROPIC TETHER IS A LOAD BEFORE IT IS A SPRING, AND A CHEAP BOUND ON ITS STIFFNESS IS NOT
+  CONSERVATIVE — IT IS SILENT.** A freely-jointed chain held at any `x > 0` is in **tension**, so a
+  raster turn made of ssDNA carries a self-equilibrated internal preload as well as a linearised
+  stiffness. On the honeycomb block the stiffness is `0.22377084–0.919840405 pN/nm` — at most
+  `0.109313066` of `k_θ` on the rim node's own `d/2` arm and `9.19840405E−5` of the link penalty the
+  lattice uses — and with the preload removed it moves the free tile `0.0501417315 → 0.0496660245`,
+  **`0.95 %` and toward flatness**. With the preload it moves it to `0.11296458`, **past `T-5b`**.
+  So route A's covalent tie is a dishing **sink** and route B's tether is a dishing **source**: the
+  two routings differ in the **sign** of what the turn does. Three upstream statements
+  (`C-0193` §11, `CH-0247`, the `T-299` queue row) price the element by its stiffness alone, and
+  the tension they need was already published in `C-0193` §8 as a stored **energy** (`CH-0254`).
+- **A MODEL WITH NO COORDINATE FOR A DIRECTION MAKES A LOAD ALONG IT EXACTLY ZERO, AND THAT IS A
+  STATEMENT ABOUT THE MODEL.** `HoneycombGrillage` has no in-plane transverse coordinate, so a
+  tether's pull decomposes as `(df/dx)unitZ² + (f/x)unitY²` on the link residual and `f/x` on the
+  slip residual, with `δ_y ≡ 0` **by construction rather than by neglect** — and the nine in-plane
+  raster turns of a `10 × 6` block therefore contribute **exactly zero** preload while the fifty
+  through-thickness ones carry it. Say which of the two it is; the zero is not physics.
 - **The ssDNA Kuhn length is a 2× method-systematic bracket, not a number** — 1.34–1.41 nm from 10–40 pN force spectroscopy against 2.10–2.84 nm from zero-force scattering. A ~1 pN tether needs the zero-force end. The contour per nucleotide travels with the elastic model too (0.57 nm/nt extensible, 0.65–0.70 inextensible); mixing them double-counts the extension.
 - **Yaw and translation are the same condition for anchors on the budget radius, exactly** — margins stand as `(r_anchor/r_budget)²`, so anchors *inside* the point the budget is written at make yaw binding, and one central anchor leaves yaw entirely free. Rotating in-plane tethers from radial to tangential is worth 638–2551× in yaw at no cost.
 - **Over-stiffening an anchor is not free**: the per-anchor thermal force is `√(k_BT k)/N`, so a 120×-margin scheme puts 29 pN on a load path where the minimum design puts 2.6 pN.
@@ -663,6 +688,16 @@ which is one of the reasons this project is a plain Kotlin/JVM application rathe
 - **A packing verdict is a proof only when a CONSTRUCTION meets an independent upper bound.** Report both: a greedy placement alone is a lower bound and a per-row maximum ignoring the sharing constraint is an upper one, and where they coincide — 43 here — no better placement exists and no cleverer packer need be written.
 - **A "weak spring" regularisation of a mechanism is a spring to GROUND, so it breaks the very symmetry the falsifier tests.** An armed tile under a *uniform* load must dish exactly zero and dishes `O(ε)` instead, because the `ε`-springs act as vanishingly weak anchors. The cure is not a smaller `ε` but to assert the **rate**: linear convergence over four decades is the numerical signature of an exact zero, where a genuine added stiffness would converge to a non-zero limit.
 - **A private DOF layout can be reconstructed from a class's PUBLIC API and asserted against its own basis vector**, which is how to extend a shared main source without editing it when other agents are in the tree. `basisAt` at a node returns exactly `1.0` at that node's own `w` — nothing forces the reconstruction to be right, and that one line is what makes it falsifiable.
+- **A CACHE KEYED ON A LABEL RATHER THAN ON THE IDENTITY OF THE THING CACHED IS A DEFECT WAITING
+  FOR A SECOND CALLER.** A surrogate bank keyed `"grid|81"` was shared by two deciding cells with
+  different station counts; the second read the first's surrogate and died `expected 30
+  stiffnesses, was: 50` — **eight minutes into a nine-minute study**, and only because the path
+  counts happened to differ. Key on the grid itself (`Pair<List<…>, Int>`); Kotlin's structural
+  equality makes it free.
+- **`P-31-harness-census.py` REFUSES AN UNDECLARED `tools/*mutation-test.py`, so a mutation harness
+  written by an agent who may not touch that registry belongs in `gpd/data/<task>/`** — retained,
+  reproducible, and not silently invisible to the census. Moving it into `tools/` is one tuple in
+  `HARNESSES` and it is a queue item, never a deletion.
 - **A strict `>` between two quantities that can be EQUAL BY CONSTRUCTION reports a floating-point tie as a finding.** Two independently computed misalignment floors coincided at exactly 24° at one row pitch and the bare comparison emitted `true`; the fix is an absolute tolerance at the decision point, not rounding at the serialisation boundary — the same family as *"comparing two quantities that are both meant to be zero relatively compares their noise"*, and it survives rounding because a boolean is not a rounded double.
 - **A scaling exponent fitted through PER-POINT OPTIMA is not an exponent in the swept variable, and the two can differ by a sign.** A search's slack varies with what is being swept, so a sequence of upper bounds carries no slope: on one lattice, one phase, one topology and one ensemble, `C-0103`'s redundancy exponent is **−0.740** through a family **nested by construction** and **+0.061** through placement-**searched** subsets of the same 53 sites. Fit a scaling law through a nested family, or measure the slack (an oracle floor over the found value) at every point before reading a slope through it — `CH-0119`.
 - **A difference of two nearby cells must be read on a PAIRED sample, and a stochastic sweep should share one stream restricted per cell rather than draw one per cell.** `C-0089` draws a Bernoulli dropout ensemble per station set, so a 34-vs-30 comparison mixes a design difference with two independent samples' noise; `C-0103` draws one stream over the whole 53-site inventory and restricts it, and the 34 → 30 difference then sits **32×** above its own convergence departure. Common random numbers cost one function and are what make a 13 % effect readable at all.
@@ -774,6 +809,19 @@ which is one of the reasons this project is a plain Kotlin/JVM application rathe
 - **A bisection on an `LDLᵀ` pivot sign has its own noise floor and it is above the discretisation error.** Exiting on a `1e-14` relative bracket leaves ~`1e-10` of scatter in the reported load, so a mesh refinement 32 → 64 can move the answer *upwards*. Assert monotonicity only while the discretisation error is above that floor, and assert settling below it.
 - **Finite-element mesh monotonicity holds only on *nested* refinements.** Subdividing a beam 1 → 2 → 4 softens monotonically as the theorem says; a subdivision of 3 moves a point load from a node to mid-element and the deflection drops. Sweep 1/2/4, never 1/2/3/4.
 - **A uniform load on a uniform Winkler foundation produces no dishing at all** — a free plate translates exactly, whatever its flexural rigidity, because `w = q/k_f` has zero fourth derivative and satisfies the free-edge conditions identically. If a plate-on-foundation solve reports dishing under a uniform load, the solver is wrong, not the physics. It makes an excellent falsifier; wire it in as a test.
+- **A CONSERVATION TEST TAKEN ON A SUM CANNOT SEE A PER-ELEMENT DEFECT THE LATTICE'S OWN SYMMETRY
+  CANCELS.** The honeycomb's two through-thickness azimuths carry opposite `unitY`, so flipping the
+  sign of one roll arm in a preload's element load leaves the **whole-lattice** rigid-roll work at
+  exactly zero — and a mutation of precisely that sign survived a frame-indifference falsifier
+  written on the sum. Take such a falsifier **per element** (a lattice carrying one element), and
+  keep the sum beside it. `CLAUDE.md`'s own *compose the symmetries before choosing a
+  distribution*, met on a **gate** instead of on a design.
+- **THE UNIFORM-LOAD FALSIFIER MUST BE TAKEN ON A WELL-CONDITIONED LOAD CASE WHEN IT IS USED AS AN
+  IDENTITY BETWEEN TWO LATTICES.** A free tile's peak dishing under a *bare* uniform pressure is
+  `~7e−12` — its own conditioning noise — so `|d_a − d_b| < 1e−10 · d_a` compares two noises and
+  fires on a correct addition. `CLAUDE.md` already records this for *bit-identity*; it applies just
+  as much to a **relative** departure. Use a unit **point load** at the face centre, which is what
+  the coupling surrogate asks the lattice for anyway.
 - **The plate-on-foundation ripple transfer function `1/(1+(2πℓ/λ)⁴)` does not apply at a free edge** — it attenuated a rim perturbation 50× more than the finite-plate solve, because a free edge has no material beyond it to bend against. Interior non-uniformity only.
 - **`Double` results are not reproducible across runs of the same JVM.** The JIT compiles a hot reduction part-way through a run, changing summation order and moving the last one or two ulp, so `gpd/results/*.json` differs on a re-run that changed nothing. Round the whole tree at the *serialisation boundary*, not at each construction site, so nothing can be emitted unrounded by omission.
 - Comparing two quantities that are both meant to be zero **relatively** compares their noise — compare absolutely. (An odd Gauss-Legendre rule has a node at the origin, which is where this bites.)
