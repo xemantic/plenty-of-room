@@ -5,7 +5,7 @@
 | **Against** | [`C-0118`](../claims/C-0118-coupled-four-layer.md) §2: *"More paths are monotonically **worse** there (0.0278431488 → 0.0541089284 → 0.0461988976 → 0.0408747025 as columns go 1 → 2 → 3 → 5)"* |
 | **Raised by** | [`C-0142`](../claims/C-0142-coupled-cells-at-the-honeycomb-cross-section.md) / [`T-232`](../tasks/T-232-coupled-cells-at-the-honeycomb-cross-section.md), result [`gpd/results/T-232-coupled-cells-at-the-honeycomb-cross-section.json`](../results/T-232-coupled-cells-at-the-honeycomb-cross-section.json) |
 | **Grounds** | **logical, and internal.** The sequence quoted is not monotone, on the claim's own printed values and at the claim's own geometry. No new computation is needed to see it; the re-grading is what made anybody read the four numbers rather than the sentence around them |
-| **Status** | **raised.** `C-0118`'s *value* — that the sparsest coupling is the best one tested — is upheld at both geometries; only the *monotonicity* is withdrawn |
+| **Status** | ~~**raised.**~~ **UPHELD**, and recorded by its target: [`C-0118`](../claims/C-0118-coupled-four-layer.md) (`T-197`) carries a banner reading *"§2's 'More paths are monotonically worse' is separately withdrawn by `CH-0177`"*. Filed by [`C-0142`](../claims/C-0142-coupled-cells-at-the-honeycomb-cross-section.md) (`T-232`). `C-0118`'s *value* — that the sparsest coupling is the best one tested — is upheld at both geometries; only the *monotonicity* is withdrawn |
 
 ---
 

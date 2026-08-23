@@ -5,7 +5,7 @@
 | **Challenges** | [`C-0001`](../claims/C-0001-layer-stiffness.md), its use of the Alexander-de Gennes height relation and the `Σ ≥ 5` brush-onset criterion that sets its window's lower edge |
 | **Raised by** | [`C-0004`](../claims/C-0004-poroelastic-drainage.md), task [`T-7`](../tasks/T-7-poroelastic-drainage.md) |
 | **Raised** | 2026-08-12, iteration 3 |
-| **Status** | **OPEN** — for `T-1c` to resolve. `C-0001` is not withdrawn and its numbers are not disputed here. |
+| **Status** | ~~**OPEN** — for `T-1c` to resolve.~~ **RESOLVED** by [`C-0003`](../claims/C-0003-crossover-valid-layer-response.md) (`T-1c`), which is what the index has recorded since: the height relation is replaced, and the chains carry 0.06 thermal blobs — there is no blob structure to stack. `C-0001` is not withdrawn and its numbers are not disputed here |
 
 ---
 

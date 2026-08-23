@@ -109,6 +109,7 @@ HARNESSES = (
      "check-result-file-hygiene.py"),
     ("T-297-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
      "src/main/kotlin/tile/CrossoverCommonMode.kt + src/main/kotlin/tile/HoneycombGrillage.kt"),
+    ("T-298-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new", "trace-answers.py"),
 )
 
 # Which module file each ATTRIBUTE receiver in a harness stands for.  A receiver not named here is

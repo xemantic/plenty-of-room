@@ -5,7 +5,7 @@
 | **Challenges** | [`C-0005`](../claims/C-0005-mean-field-screening-validity.md), its statement *"Point-ion PB fails above ≈ 0.197 V of diffuse-layer drop at 2 mM … The §3 target is **≤ 2 V — a factor of 10 above**"*, and the standing finding `TASKS.md` carries from it: *"Point-ion PB at the electrode dies above ~0.197 V of diffuse-layer drop — 10× below the §3 ≤ 2 V target."* |
 | **Raised by** | [`C-0008`](../claims/C-0008-electrostatic-force-and-decay-length.md), task [`T-3a`](../tasks/T-3a-nonlinear-pb-profile.md) |
 | **Raised** | 2026-08-12, iteration 4 |
-| **Status** | **OPEN** — filed against a comparison, not against a computed number. The 0.197 V itself is reproduced and upheld. |
+| **Status** | ~~**OPEN** — filed against a comparison, not against a computed number.~~ **UPHELD** by the run reported in this file and recorded in the index — the error was in the queue, not in [`C-0005`](../claims/C-0005-mean-field-screening-validity.md): §3's 2 V ceiling is **1.20×** past the point-ion boundary, not 10×. The 0.197 V itself is reproduced and upheld |
 
 ---
 

@@ -6,6 +6,7 @@
 | **Raised by** | [`C-0042`](../claims/C-0042-paired-perpendicular-junction.md), task [`T-97`](../tasks/T-97-paired-perpendicular-junction.md) |
 | **Grounds** | **a bound evaluated on the wrong body** |
 | **Effect on numbers** | **NONE, in either claim.** Both were conservative: `C-0029` says *"the phase is cheap; the ceiling is what binds"* and never applies the projection, and `C-0037` says explicitly *"that projection is **not** applied here, so the restrained-axis numbers are the best-phase ones"*. **What changes is not an arithmetic but a design obligation**: the 8.4 % is not a debt a designer has to check for, and the "best-phase" reading is not an optimistic assumption but the only one available. |
+| **Status** | **UPHELD, at the level it was written**, by [`C-0042`](../claims/C-0042-paired-perpendicular-junction.md) (`T-97`) — *"the search achieves 0.00° for both junctions"*, so the 8.4 % is not a debt — and **completed rather than contradicted** by [`C-0052`](../claims/C-0052-crossbar-junction-trio.md) (`T-117`), which finds the quantum on the **relative** azimuth of a body carrying **two** junctions, and by [`C-0059`](../claims/C-0059-torsion-feasible-routing.md) (`T-124`), where the chord is at 90.0° to the last digit. **What is NOT upheld is any transfer of that freedom to a multi-junction assembly**: the chord's azimuth is continuous and the *torsion-feasible subset* of it is not, which is [`CH-0072`](CH-0072-the-alignment-is-not-free-on-the-torsion-feasible-set.md). **No number in `C-0029` or `C-0037` moves** |
 
 ---
 

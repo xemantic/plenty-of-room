@@ -5,7 +5,7 @@
 | **Against** | [`C-0144`](../claims/C-0144-honeycomb-correction-supersession.md) §9 and the tool it retains, [`tools/T-234-census.py`](../../tools/T-234-census.py): five premise families, **one** `POINTERS` tuple, and a gate that demands a pointer from that one tuple for every `MOVED` or `DISCHARGED` occurrence |
 | **Raised by** | [`C-0176`](../claims/C-0176-partial-discharge-and-restatement-predicates.md) / [`T-260`](../tasks/T-260-partial-discharge-predicate.md) |
 | **Kind** | **methodological — a data structure that cannot express a fact the corpus contains.** No entry of `C-0144`'s census is wrong and no number of it moves; what it could not represent is that a premise can be withdrawn in parts, by different claims, on different dates |
-| **Status** | **raised and repaired in the same claim.** The repair is `DISCHARGES` plus a per-family discharge; what stays open is the general question below, which is about every census this repository writes and not only this one |
+| **Status** | **ANSWERED.** Filed and repaired in the same claim by [`C-0176`](../claims/C-0176-partial-discharge-and-restatement-predicates.md) (`T-260`) — the repair is `DISCHARGES` plus a per-family discharge — and ~~what stays open is the general question below, which is about every census this repository writes and not only this one~~ **the general question too is ANSWERED** by [`C-0182`](../claims/C-0182-name-the-discharge.md) (`T-281`), which makes the declaration a **registry whose getter refuses** an undeclared family and gives the report a third state, and measures the requirement over the census's own revision history |
 
 ---
 

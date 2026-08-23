@@ -5,7 +5,7 @@
 | **Challenges** | [`C-0003`](../claims/C-0003-crossover-valid-layer-response.md) — its height relation `L₀ = 0.1867 N σ^(5/13)`, the `N(L₀)` bracket that follows from it, and the placement of the layer at `φ/φ# = 1.40–3.51`; and the `L₀/R₀ ≥ 1` brush criterion `P-5` adopted on `T-1c`'s recommendation |
 | **Raised by** | [`C-0011`](../claims/C-0011-scf-density-profile.md), task [`T-1d`](../tasks/T-1d-scf-density-profile.md) |
 | **Raised** | 2026-08-13, iteration 4 |
-| **Status** | **Upheld in substance, and split.** `C-0003` is not withdrawn: its *response* numbers — stroke and secant stiffness — survive inside their own brackets. What is challenged is the height relation, the chain length, the volume fraction, and the criterion. |
+| **Status** | **UPHELD IN PART, and quantified** by [`C-0077`](../claims/C-0077-first-moment-chain-length.md) (`T-1e`), which measures this challenge's own word *"most"* at **62–68 %** of the chain-length gap on a logarithmic scale and leaves a physical residue of `1.64–1.95×`; the height relation itself is struck inside [`C-0003`](../claims/C-0003-crossover-valid-layer-response.md) (`T-1c`). **Upheld in substance, and split.** `C-0003` is not withdrawn: its *response* numbers — stroke and secant stiffness — survive inside their own brackets. What is challenged is the height relation, the chain length, the volume fraction, and the criterion. |
 
 ---
 

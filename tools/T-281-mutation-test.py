@@ -44,6 +44,20 @@ TOOLS = os.path.join(ROOT, "tools")
 MODULE = "census_discharges.py"
 CENSUS = "T-234-census.py"
 
+
+def _live_block(basename, opening, closing="\n}"):
+    """The block of `tools/<basename>` from `opening` to the next `closing`, verbatim.
+
+    `T-300`/`C-0202` recorded the trap and repaired two anchors in its OWN harness; this is the
+    third, in a harness that also transcribes `FAMILY_DISCHARGE` and which the ninth family
+    (`FORWARD_BUDGET`) duly orphaned — `P-31` caught it as `ORPHAN ... occurs 0 times`.  Quoting
+    the block from the file keeps the mutation's MEANING (replace this rule wholesale) while
+    letting the map grow, and `main`'s exactly-once assertion still holds it honest.
+    """
+    source = open(os.path.join(TOOLS, basename), encoding="utf-8").read()
+    start = source.index(opening)
+    return source[start: source.index(closing, start) + len(closing)]
+
 # (name, file, text replaced, text it is replaced BY).  The `old` text must occur EXACTLY once,
 # which is asserted -- a mutation that silently fails to apply is a survivor for the wrong reason
 # and is `CLAUDE.md`'s *a scripted edit that asserts an anchor can no-op*.
@@ -220,16 +234,7 @@ MUTATIONS = [
     (
         "the census's family map goes back to the PARTIAL one `C-0176` left",
         CENSUS,
-        '''FAMILY_DISCHARGE = {
-    "FOOTPRINT": SUBJECT,
-    "WIDTH": SUBJECT,
-    "AZIMUTH": SUBJECT,
-    "SCAFFOLD": SUBJECT,
-    "PLACEMENT": SUBJECT,
-    "GRILLAGE": "C-0154/C-0167",
-    "SQUARE": None,
-    "ROW_SPAN": None,
-}''',
+        _live_block(CENSUS, "FAMILY_DISCHARGE = {"),
         '''FAMILY_DISCHARGE = {
     "GRILLAGE": "C-0154/C-0167",
     "SQUARE": None,

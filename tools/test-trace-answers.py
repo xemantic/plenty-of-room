@@ -815,6 +815,119 @@ check(
     trace_answers.adjudications_in_claim("C-0x.md", "`CH-0157`. The bracket has to be withdrawn"),
     [],
 )
+
+# --- T-298: the two exclusions, each with a named test in BOTH directions ----------------------
+#
+# `T-261` measured 17 unrecorded adjudications and named ONE false positive without tuning it
+# away, on `C-0176`'s ground that a guard narrowed to one observed case is a test written to the
+# shape of the change.  `T-298` read all 17 and found TWO that are not adjudications, and repaired
+# both with the false negatives MEASURED FIRST over the whole claims corpus: 46 pattern-1 sites
+# before, 43 after, and the three lost are exactly the three sites of the two exclusions.
+check(
+    "a CONDITIONAL is not an adjudication -- it says the verdict is not in",
+    trace_answers.adjudications_in_claim(
+        "C-0056.md", "If `CH-0068` is upheld, the design point is `N_ret = 56`"
+    ),
+    [],
+)
+check(
+    "and the same sentence WITHOUT the conditional still is one",
+    trace_answers.adjudications_in_claim(
+        "C-0056.md", "`CH-0068` is upheld, so the design point is `N_ret = 56`"
+    ),
+    [("CH-0068", "C-0056.md")],
+)
+check(
+    "a comma and a coordinating conjunction start a new clause with its own subject",
+    trace_answers.adjudications_in_claim(
+        "C-0132.md", "That is `CH-0157`, and it is why the bracket has to be withdrawn"
+    ),
+    [],
+)
+check(
+    "and the same words WITHOUT the conjunction are an adjudication of the challenge",
+    trace_answers.adjudications_in_claim("C-0132.md", "That is why `CH-0157` is withdrawn"),
+    [("CH-0157", "C-0132.md")],
+)
+check(
+    "a relative `, which` is NOT a clause break -- it keeps the challenge as the subject",
+    trace_answers.adjudications_in_claim(
+        "C-0182.md", "`CH-0229`, which raised this task, is **ANSWERED** in the half it left"
+    ),
+    [("CH-0229", "C-0182.md")],
+)
+
+# --- T-298: a Status row is read with its struck spans blanked ---------------------------------
+#
+# `C-0071`'s *strike, never delete* is how an adjudication that supersedes a filing status is
+# written here, and without the blanking the discipline and the reader contradict each other:
+# `CH-0224`'s cell reads `~~**OPEN.** ...~~ **RESOLVED, iteration 43**` and was reported OPEN.
+check(
+    "a struck OPEN with a live RESOLVED beside it is CLOSED",
+    trace_answers.challenge_status_of(
+        "| **Status** | ~~**OPEN.** the key is null on all of them~~ **RESOLVED** by `C-0181` |\n"
+    ),
+    "CLOSED",
+)
+check(
+    "a live RAISED with a struck clause beside it is still OPEN",
+    trace_answers.challenge_status_of(
+        "| **Status** | **RAISED.** ~~no verdict of `C-0154` reverses~~ -- it does |\n"
+    ),
+    "OPEN",
+)
+check(
+    "a struck adjudication word does not make a challenge adjudicated",
+    trace_answers.challenge_adjudicated(
+        "| **Status** | ~~**UPHELD**~~ **RAISED** -- the verdict was withdrawn |\n"
+    ),
+    False,
+)
+check(
+    "a struck cell with nothing live left declares nothing, and is not guessed at",
+    trace_answers.challenge_status_of("| **Status** | ~~**RAISED**~~ |\n"),
+    "UNKNOWN",
+)
+check(
+    "but only the CELL is blanked: a struck block around the row must not delete the row",
+    trace_answers.challenge_status_of(
+        "~~an earlier note\n| **Status** | **UPHELD** by `C-0190` |\nand its tail~~\n"
+    ),
+    "CLOSED",
+)
+
+# --- T-298: the cancellations are read on a WIDER window than the assertion --------------------
+#
+# `_OPEN_WINDOW = 24` binds an open word to its reference; a cancellation is bound to nothing, and
+# reading it through the same 24 characters truncates the sentence that performs it.  The live
+# case is `ANSWERS.md`'s *"(`CH-0083`, raised open in iteration 16 and **RESOLVED in iteration
+# 17**, below)"*, which annotating `CH-0083` as the corpus says it is would have flagged.
+check(
+    "a challenge's own history plus its closure, further than 24 characters away, is not stale",
+    trace_answers.stale_challenge_statuses(
+        "**QUALIFIED, iteration 16** (`CH-0083`, raised open in iteration 16 and "
+        "**RESOLVED in iteration 17**, below).\n",
+        {"CH-0083": "CLOSED"},
+    ),
+    [],
+)
+check(
+    "and a bare RAISED with no cancellation anywhere in the wider window still is",
+    trace_answers.stale_challenge_statuses(
+        "the coordinate is disputed (`CH-0083`, raised)\n", {"CH-0083": "CLOSED"}
+    ),
+    [(1, "CH-0083", "CLOSED")],
+)
+check(
+    "and a cancellation about a DIFFERENT subject, past 80 characters, does not reach it",
+    trace_answers.stale_challenge_statuses(
+        "`T-9` is answered and the whole of the flatness question is settled, which is a "
+        "statement about a task and about nothing else at all in this row -- the coordinate "
+        "is disputed (`CH-0083`, raised)\n",
+        {"CH-0083": "CLOSED"},
+    ),
+    [(1, "CH-0083", "CLOSED")],
+)
 # --- arm 2: a deliverable prices a number on an adjudicated challenge and names no claim
 check(
     "a number attributed to an adjudicated challenge with no claim named is flagged",
@@ -1100,8 +1213,22 @@ def _run_tool(answers, queue):
         queue_path = os.path.join(directory, "TASKS.md")
         open(answers_path, "w", encoding="utf-8").write(answers)
         open(queue_path, "w", encoding="utf-8").write(queue)
+        # `T-298`.  The claims and challenges directories are pointed at EMPTY ones, so this
+        # helper's exit code is a statement about the synthetic document and nothing else.  With
+        # the defaults it read the live corpus, and once `T-298` counted the
+        # UNRECORDED-ADJUDICATION residue into the exit code that made a hermetic test depend on
+        # a mutable artifact -- `CLAUDE.md`'s own *a self-test that reads a mutable artifact
+        # expires the moment the corpus moves*, met from the other side: here the corpus moving
+        # made a PASSING test fail while nothing it asserts had changed.
+        empty_claims = os.path.join(directory, "claims")
+        empty_challenges = os.path.join(directory, "challenges")
+        os.mkdir(empty_claims)
+        os.mkdir(empty_challenges)
         run = subprocess.run(
-            [sys.executable, _TOOL, "--answers", answers_path, "--queue", queue_path],
+            [
+                sys.executable, _TOOL, "--answers", answers_path, "--queue", queue_path,
+                "--claims", empty_claims, "--challenges", empty_challenges,
+            ],
             capture_output=True,
             text=True,
         )
@@ -1130,6 +1257,48 @@ check(
     "STALE-OPEN\tT-9\tCLOSED" in _CONTRADICTS[1],
     True,
 )
+
+def _run_corpus(claim, challenge_status):
+    """(exit code, stdout) over a synthetic one-claim, one-challenge corpus.  `T-298`."""
+    directory = tempfile.mkdtemp(prefix="trace-answers-corpus.")
+    try:
+        claims = os.path.join(directory, "claims")
+        challenges = os.path.join(directory, "challenges")
+        os.mkdir(claims)
+        os.mkdir(challenges)
+        open(os.path.join(claims, "C-0001-x.md"), "w", encoding="utf-8").write(claim)
+        open(os.path.join(challenges, "CH-0001-x.md"), "w", encoding="utf-8").write(
+            "| **Status** | {} |\n".format(challenge_status)
+        )
+        answers = os.path.join(directory, "ANSWERS.md")
+        queue = os.path.join(directory, "TASKS.md")
+        open(answers, "w", encoding="utf-8").write("nothing to trace here.\n")
+        open(queue, "w", encoding="utf-8").write("")
+        run = subprocess.run(
+            [
+                sys.executable, _TOOL, "--answers", answers, "--queue", queue,
+                "--claims", claims, "--challenges", challenges,
+            ],
+            capture_output=True,
+            text=True,
+        )
+        return run.returncode, run.stdout
+    finally:
+        shutil.rmtree(directory, ignore_errors=True)
+
+
+# `T-298` promoted `T-261`'s second residue to a gate.  `C-0173`/`P-29`'s lesson is that a gate is
+# a claim about a corpus and is discharged by RUNNING it, so the exit code gets its own test in
+# both directions -- and `C-0177`'s, that a gate which cannot fail is not a gate.
+_UNRECORDED = _run_corpus("**`CH-0001` is ANSWERED** by this claim.\n", "**RAISED**")
+check("an UNRECORDED adjudication exits non-zero", _UNRECORDED[0] > 0, True)
+check(
+    "and it names the challenge and the claim",
+    "UNRECORDED-ADJUDICATION\tCH-0001\tC-0001-x.md" in _UNRECORDED[1],
+    True,
+)
+_RECORDED = _run_corpus("**`CH-0001` is ANSWERED** by this claim.\n", "**ANSWERED** by `C-0001`")
+check("and the same corpus with the annotation present exits 0", _RECORDED[0], 0)
 
 check(
     "an ABSENT number exits non-zero too -- all four checks reach the code",

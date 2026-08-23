@@ -404,6 +404,12 @@ tasks.register<Exec>("testColumnRepairMutations") {
     commandLine("$projectDir/tools/T-292-mutation-test.py")
 }
 
+tasks.register<Exec>("testChallengeStatusMutations") {
+    group = "verification"
+    description = "Runs tools/T-298-mutation-test.py, the mutation test for the challenge-status gate"
+    commandLine("$projectDir/tools/T-298-mutation-test.py")
+}
+
 tasks.register<Exec>("testMutationInputCensusMutations") {
     group = "verification"
     description = "Runs tools/T-295-mutation-test.py, the mutation test for the fixture-vs-corpus census"
@@ -435,7 +441,7 @@ tasks.named("test") {
         // did.  An argument is a wiring decision, and that harness stays deliberately by-hand,
         // as its own header states.  Its basename is NOT spelled here, because `P-31`'s
         // `wired_in` is a substring test and would read the mention as a use (`T-301`).
-        "testMutationInputCensusMutations"
+        "testMutationInputCensusMutations", "testChallengeStatusMutations"
     )
 }
 

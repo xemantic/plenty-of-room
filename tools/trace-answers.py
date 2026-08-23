@@ -574,6 +574,16 @@ _CHALLENGE_OPEN = re.compile(r"\b(open|raised)\b", re.IGNORECASE)
 def challenge_status_of(text):
     """OPEN | CLOSED | UNKNOWN for one challenge file's text.
 
+    `T-298`.  The CELL is read with its struck spans blanked, because `C-0071`'s *strike, never
+    delete* is how this corpus records an adjudication that supersedes a filing status -- and
+    without the blanking the two are in direct conflict: a row reading
+    `~~**OPEN.** ...~~ **RESOLVED, iteration 43**` is a RESOLVED challenge that this function
+    reported OPEN, which is `CH-0185`'s own defect one level down.  `CH-0224` was the live
+    instance at iteration 46 and nothing else in the corpus moves.  Only the cell is blanked,
+    never the whole file: blanking first would erase a wholly struck row's `**Status**` label
+    and turn a declared status into an UNKNOWN one, which is the direction this checker must
+    not guess in.
+
     OPEN wins a tie, because a challenge cell routinely records both -- *"raised.  No number in
     `C-0023` moves"* is a RAISED status whose sentence also reports what was adjudicated -- and
     reporting a live challenge as closed is the failure that loses a withdrawn reading.
@@ -581,7 +591,7 @@ def challenge_status_of(text):
     match = _CHALLENGE_STATUS_ROW.search(text)
     if not match:
         return "UNKNOWN"
-    cell = match.group(1)
+    cell = strip_struck(match.group(1))
     if _CHALLENGE_OPEN.search(cell):
         return "OPEN"
     if _CHALLENGE_CLOSED.search(cell):
@@ -623,7 +633,21 @@ def stale_challenge_statuses(answers_text, statuses):
             window = line[start:end]
             if not _CHALLENGE_OPEN_ASSERTION.search(window):
                 continue
-            if _HISTORICAL.search(window) or _ANSWERING.search(window):
+            # `T-298`.  The two CANCELLATIONS are read on a wider window than the assertion.
+            # `_OPEN_WINDOW = 24` exists to BIND an open word to its reference; a cancellation is
+            # not bound to anything and reading it through the same 24 characters truncates the
+            # sentence that performs it.  `ANSWERS.md` writes *"(`CH-0083`, raised open in
+            # iteration 16 and **RESOLVED in iteration 17**, below)"* -- a duration and its own
+            # closure, both of which `_HISTORICAL` and `_ANSWERING` already know and neither of
+            # which fits in 24 characters.  Annotating `CH-0083` as the corpus says it is would
+            # otherwise have fired a build-failing gate on a sentence that is entirely correct.
+            # A cancellation can only ever REMOVE a hit, so a wider window is strictly a
+            # narrowing; 80 is `_VERDICT_WINDOW`, measured on this same document by `T-183`.
+            guard = line[
+                max(0, reference.start() - _VERDICT_WINDOW):
+                reference.end() + _VERDICT_WINDOW
+            ]
+            if _HISTORICAL.search(guard) or _ANSWERING.search(guard):
                 continue
             if statuses.get(identifier, "UNKNOWN") == "CLOSED":
                 stale.append((number, identifier, "CLOSED"))
@@ -659,7 +683,7 @@ def challenge_adjudicated(text):
     cell is one line of free text in which both occur.
     """
     match = _CHALLENGE_STATUS_ROW.search(text)
-    return bool(match and _ADJUDICATED.search(match.group(1)))
+    return bool(match and _ADJUDICATED.search(strip_struck(match.group(1))))
 
 
 def challenge_adjudications(directory):
@@ -682,9 +706,27 @@ _CHALLENGE_LINK = re.compile(r"\[(`CH-\d{1,4}`)\]\([^)]*\)")
 #: The adjudication must be BOUND to the reference, not merely near it.  Measured, proximity alone
 #: gives 21 sites of which 6 are a verdict about some *other* challenge in the same list.  The
 #: clause guard `[^.;|]` is what stops it crossing a sentence or a table cell.
+#: `T-298`, narrowing 1 -- a CONDITIONAL is the opposite of an adjudication.  `C-0056` writes
+#: *"**If** `CH-0068` is upheld, the design point is `N_ret = 56` … If `CH-0068` is refused, the
+#: thresholds bind"*, which says in as many words that the verdict is not in.  Measured over the
+#: whole claims corpus before it was written: it removes **1** of 46 pattern-1 sites and that one
+#: is the false positive.
+_CONDITIONAL = r"(?<!\bif )(?<!\bIf )(?<!\bunless )(?<!\bUnless )(?<!\bwhether )(?<!\bWhether )"
+#: `T-298`, narrowing 2 -- the clause guard `[^.;|]` stops at a sentence and a table cell and does
+#: NOT stop at a comma followed by a coordinating conjunction, which starts a new clause with its
+#: own subject.  `C-0132` writes *"That is `CH-0157`**, and** it is why the bracket has to be
+#: withdrawn"*: the thing withdrawn is the **bracket**, and `C-0197` §5 reported this as the one
+#: false positive of 17 and declined to tune it away on `C-0176`'s ground.  It is repaired here
+#: with the false negatives MEASURED first, which is what `C-0176` actually asks for: over the
+#: whole claims corpus the guard removes **2** of 46 sites and both are this same sentence, once
+#: in `C-0132` and once where `C-0197` quotes it.  A relative `, which` is deliberately NOT in the
+#: list -- it continues the same subject, and `C-0182`'s *"`CH-0229`, which raised this task, is
+#: **ANSWERED**"* is a genuine adjudication that an over-wide guard would have lost.
+_CLAUSE = r"(?:(?!,\s+(?:and|but|so|yet|or)\b)[^.;|])"
 _ADJUDICATES = (
     re.compile(
-        r"`(CH-\d{1,4})`[^.;|]{0,40}?\b(?:is|are|was|were)\b[^.;|]{0,40}?\*{0,2}(?:"
+        _CONDITIONAL + r"`(CH-\d{1,4})`" + _CLAUSE + r"{0,40}?\b(?:is|are|was|were)\b"
+        + _CLAUSE + r"{0,40}?\*{0,2}(?:"
         + _ADJUDICATION_WORD + r"|resolved|upheld|answered|withdrawn|discharged)"
     ),
     re.compile(
@@ -809,11 +851,18 @@ def main(argv=None):
     # A BOOLEAN and not the count, deliberately.  `sys.exit(n)` truncates modulo 256, and
     # `counts["ABSENT"]` is unbounded -- exactly 256 absent tokens would exit 0 and read as clean.
     # The counts are printed; the exit code only has to say whether the corpus is clean.
-    # `T-261`'s second residue line, and it is a statement about the CORPUS rather than about a
-    # document, so it is printed once.  A challenge a claim has adjudicated whose own `**Status**`
-    # row does not say so is read OPEN by `challenge_statuses` above, which is the authority
-    # `T-183` chose -- so the arm that DOES gate is blind for as long as the annotation is
-    # missing.  Not counted: closing it means editing challenge files, which is its own task.
+    # `T-261`'s second residue, PROMOTED TO A GATE by `T-298`.  A challenge a claim has
+    # adjudicated whose own `**Status**` row does not say so is read OPEN by `challenge_statuses`
+    # above, which is the authority `T-183` chose -- so the arm that DOES gate is blind for as
+    # long as the annotation is missing, and `DECISIONS-FOR-NDI` decision 8 duly went to a
+    # customer priced on `CH-0185` in the same iteration `C-0148` withdrew that price.
+    #
+    # `C-0129`'s policy is *gate what can be made clean*: `T-261` measured 17 challenges over 22
+    # sites and could not, so it printed.  `T-298` read all 17 against the claim that adjudicates
+    # each, annotated 15 and excluded 2 -- `CH-0068` (a CONDITIONAL) and `CH-0157` (a clause
+    # crossing), both by a narrowing whose false negatives were measured over the whole claims
+    # corpus first -- after which it reads 0 and gates.  It is a statement about the CORPUS rather
+    # than about a document, so it is computed once and added to the exit code once.
     adjudicated = challenge_adjudications(arguments.challenges)
     unrecorded = unrecorded_adjudications(arguments.claims, adjudicated)
     for identifier, claim in unrecorded:
@@ -821,12 +870,12 @@ def main(argv=None):
     sys.stdout.flush()
     print(
         "# {}: {} challenge(s) a claim adjudicates whose own Status row does not say so "
-        "(RESIDUE, not gated)".format(
+        "(GATED since T-298)".format(
             arguments.challenges, len({identifier for identifier, _ in unrecorded})
         ),
         file=sys.stderr,
     )
-    return 1 if failures else 0
+    return 1 if failures or unrecorded else 0
 
 
 def check_document(document, arguments, sources):

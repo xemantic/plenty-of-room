@@ -5,7 +5,7 @@
 | **Against** | [`C-0066`](../claims/C-0066-arm-slab-tie-clearance.md) bound 4 (*"the only gap the lattice offers clears a duplex by 0.0256 nm"*) and [`C-0069`](../claims/C-0069-output-element-placement.md) `Q5` (*"the plan budget on every 34-root placement is `pitch − d` = 8.19 nm exactly"*), and through them [`C-0072`](../claims/C-0072-plan-tolerance-model.md)'s *"neither margin is quotable"* |
 | **Raised by** | [`C-0076`](../claims/C-0076-weave-exclusion-width.md), task [`T-137`](../tasks/T-137.md) |
 | **Grounds** | **methodological** — one symbol used for three quantities, and the one with a measurement is not the one the number came from |
-| **Status** | **STANDS as a statement about what the 0.0256 nm is a margin AGAINST.** It does **not** assert that 0.898 nm is the true clearance: the honest outcome is that the exclusion width in this role is **unmeasured**, with a measured **floor** of 1.8173 nm and a counter-argument pointing the other way |
+| **Status** | **UPHELD** by [`C-0079`](../claims/C-0079-unbonded-duplex-separation.md) (`T-139`), which also **closes this challenge's own failure route 1**: two unbonded parallel duplexes in 2 mM MgCl₂ have no equilibrium separation at all, on four independent measured methods, so no separation above 2.7156 nm exists to be found. **STANDS as a statement about what the 0.0256 nm is a margin AGAINST.** It does **not** assert that 0.898 nm is the true clearance: the honest outcome is that the exclusion width in this role is **unmeasured**, with a measured **floor** of 1.8173 nm and a counter-argument pointing the other way |
 
 ---
 

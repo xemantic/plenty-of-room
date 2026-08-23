@@ -5,7 +5,7 @@
 | **Against** | [`C-0141`](../claims/C-0141-honeycomb-station-lattice-and-placement.md) §9: *"The inter-row ladder offset is 7 or 14 bp and this repository cannot yet say which. Both are carried and **no answer here depends on the choice**."* |
 | **Raised by** | [`C-0146`](../claims/C-0146-coupled-cells-at-the-two-length-raster.md) / [`T-235`](../tasks/T-235-coupled-cells-at-the-two-length-raster.md), result [`gpd/results/T-235-coupled-cells-at-the-two-length-raster.json`](../results/T-235-coupled-cells-at-the-two-length-raster.json), section `stationCensus` |
 | **Grounds** | **logical.** An exact integer census over 21 ladder phases × 2 offsets × 2 cross-sections, on the row windows `C-0140`'s own level walk produces. No solve |
-| **Status** | **raised.** `C-0141`'s own numbers are upheld at the uniform row length it was read at; what is withdrawn is the **scope** of the sentence, which quantifies over answers the claim could not yet see |
+| **Status** | ~~**raised.**~~ **ANSWERED** by [`C-0148`](../claims/C-0148-face-bond-class-residues-and-row-span-columns.md) (`T-244`) — the inter-row ladder offset is **14 bp** at 32 of 32 proper readings, being a difference of two bond classes rather than a convention, and **this challenge's saturating pair is withdrawn as unbuildable**: phase 11 at the 14 bp offset does give 60 of 60, reproduced at departure `0.0`, and it lives at 112 / 108, which does not close under caDNAno's `±5 bp` rule. `C-0141`'s own numbers are upheld at the uniform row length it was read at; what is withdrawn is the **scope** of the sentence, which quantifies over answers the claim could not yet see |
 
 ---
 

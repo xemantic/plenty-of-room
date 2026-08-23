@@ -7,7 +7,7 @@
 | **Date** | 2026-08-13 |
 | **Grounds** | methodological — **three quantities of different kinds put in one list**, and a **concentration factor applied to a force that never crosses the interface it concentrates on** |
 | **Direction** | **favourable throughout.** The load non-uniformity is real and restores 0.15–0.33 pN; the scatter is real and restores 0.88 pN per unit relative amplitude; the thermal term is not a member of the family at all; and `C-0017`'s route to 5.1–16.9 pN cannot occur |
-| **Status** | raised. **No verdict, number or table of `C-0015` or `C-0017` moves.** What moves is the *status* of one sentence in each |
+| **Status** | ~~raised.~~ **UPHELD**, and recorded as such by both targets: [`C-0017`](../claims/C-0017-output-coupling-stiffness.md) (`T-16`) carries a banner withdrawing its **failure route 2** on this challenge's ground, and [`C-0015`](../claims/C-0015-crossover-phase-and-registration.md) (`T-14`) carries one correcting its validity clause. **No verdict, number or table of `C-0015` or `C-0017` moves.** What moves is the *status* of one sentence in each |
 
 ---
 

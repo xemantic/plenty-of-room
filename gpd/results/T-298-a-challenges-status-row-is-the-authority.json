@@ -1,0 +1,491 @@
+{
+  "emission": {
+    "lattice": "none",
+    "regime": []
+  },
+  "task": "T-298",
+  "title": "a challenge a claim has adjudicated whose own **Status** row does not say so -- 17 read, 15 annotated, 2 excluded, and the residue promoted to a gate",
+  "subject": "gpd/challenges against gpd/claims, and gpd/challenges/README.md against the challenge files; a corpus-subject result file, so the ref is an argument and the resolved SHA is recorded (CH-0246)",
+  "baselineRef": "a16d0766531f974af3f845e56c79cadc87d386df",
+  "baselineRefRequested": "HEAD",
+  "units": "none; every value is an integer count, a challenge identifier, a claim filename or a verdict word. No physics is computed and no physical number moves",
+  "parameters": {
+    "authority": "a challenge's own file, per T-183 -- unchanged by this task. gpd/challenges/README.md's Status cell is free prose and no gate reads it",
+    "whatWasChangedInTheTool": "(1) challenge_status_of and challenge_adjudicated read the Status CELL with its struck spans blanked, because C-0071's strike-never-delete is how an adjudication superseding a filing status is written here; (2) the claim-side adjudication pattern gains a conditional guard and a comma-plus-coordinating- conjunction clause guard, both measured before being written; (3) the _HISTORICAL and _ANSWERING cancellations in stale_challenge_statuses are read on _VERDICT_WINDOW rather than on _OPEN_WINDOW, which can only remove hits; (4) the UNRECORDED-ADJUDICATION residue is counted into the exit code",
+    "unchanged": "the task half's _OPEN_WORD_ASSERTION and stale_statuses, _OPEN_WINDOW itself, _CHALLENGE_OPEN, _CHALLENGE_CLOSED, _ADJUDICATION_WORD, the numeric arm, and the prices_on_adjudicated residue, which stays ungated",
+    "note": "no wall-clock timing and no step counter is emitted"
+  },
+  "residue": {
+    "before": {
+      "sites": [
+        {
+          "challenge": "CH-0010",
+          "claim": "C-0003-crossover-valid-layer-response.md"
+        },
+        {
+          "challenge": "CH-0004",
+          "claim": "C-0008-electrostatic-force-and-decay-length.md"
+        },
+        {
+          "challenge": "CH-0033",
+          "claim": "C-0017-output-coupling-stiffness.md"
+        },
+        {
+          "challenge": "CH-0056",
+          "claim": "C-0042-paired-perpendicular-junction.md"
+        },
+        {
+          "challenge": "CH-0056",
+          "claim": "C-0052-crossbar-junction-trio.md"
+        },
+        {
+          "challenge": "CH-0068",
+          "claim": "C-0056-connectivity-ceiling-plate.md"
+        },
+        {
+          "challenge": "CH-0056",
+          "claim": "C-0059-torsion-feasible-routing.md"
+        },
+        {
+          "challenge": "CH-0078",
+          "claim": "C-0070-pinned-leg-budget.md"
+        },
+        {
+          "challenge": "CH-0010",
+          "claim": "C-0077-first-moment-chain-length.md"
+        },
+        {
+          "challenge": "CH-0089",
+          "claim": "C-0079-unbonded-duplex-separation.md"
+        },
+        {
+          "challenge": "CH-0083",
+          "claim": "C-0084-recommended-element-pull-in-fold.md"
+        },
+        {
+          "challenge": "CH-0093",
+          "claim": "C-0085-collinear-stacking-clearance.md"
+        },
+        {
+          "challenge": "CH-0101",
+          "claim": "C-0090-buildable-raster-width.md"
+        },
+        {
+          "challenge": "CH-0103",
+          "claim": "C-0103-path-count-at-fixed-geometry.md"
+        },
+        {
+          "challenge": "CH-0083",
+          "claim": "C-0113-challenge-status-self-consistency.md"
+        },
+        {
+          "challenge": "CH-0177",
+          "claim": "C-0118-coupled-four-layer.md"
+        },
+        {
+          "challenge": "CH-0151",
+          "claim": "C-0122-honeycomb-station-lattice.md"
+        },
+        {
+          "challenge": "CH-0157",
+          "claim": "C-0132-cut-rim-charge.md"
+        },
+        {
+          "challenge": "CH-0184",
+          "claim": "C-0148-face-bond-class-residues-and-row-span-columns.md"
+        },
+        {
+          "challenge": "CH-0185",
+          "claim": "C-0148-face-bond-class-residues-and-row-span-columns.md"
+        },
+        {
+          "challenge": "CH-0185",
+          "claim": "C-0177-queue-status-vocabulary.md"
+        },
+        {
+          "challenge": "CH-0229",
+          "claim": "C-0182-name-the-discharge.md"
+        },
+        {
+          "challenge": "CH-0157",
+          "claim": "C-0197-the-challenge-halfs-own-open-word.md"
+        },
+        {
+          "challenge": "CH-0185",
+          "claim": "C-0197-the-challenge-halfs-own-open-word.md"
+        }
+      ],
+      "distinctChallenges": [
+        "CH-0004",
+        "CH-0010",
+        "CH-0033",
+        "CH-0056",
+        "CH-0068",
+        "CH-0078",
+        "CH-0083",
+        "CH-0089",
+        "CH-0093",
+        "CH-0101",
+        "CH-0103",
+        "CH-0151",
+        "CH-0157",
+        "CH-0177",
+        "CH-0184",
+        "CH-0185",
+        "CH-0229"
+      ],
+      "siteCount": 24,
+      "challengeCount": 17,
+      "howItWasRead": "the ref's own tools/trace-answers.py over the ref's own gpd/claims and gpd/challenges, so the count is the one the committed gate could not see"
+    },
+    "after": {
+      "sites": [],
+      "siteCount": 0,
+      "challengeCount": 0,
+      "amongTheSeventeenThisTaskRead": [],
+      "note": "the SEVENTEEN this task read read 0. Any site listed here is a challenge a claim landed DURING iteration 47 and whose file has not been annotated -- the gate firing on fresh work, which is what it is for. CH-0182 met on this task's own census: the corpus moved while the claim reporting it was being written, and the count is dated"
+    },
+    "isNowAGate": true,
+    "whatMakesItGateable": "C-0129's policy is gate what can be made clean. T-261 measured 17 and could not, so it printed. Every one of the 17 was read against the claim that adjudicates it: 15 are adjudications and are annotated, 2 are not and are excluded by a narrowing whose false negatives were counted over the whole claims corpus first"
+  },
+  "dispositions": [
+    {
+      "challenge": "CH-0004",
+      "adjudicatingClaim": "C-0008-electrostatic-force-and-decay-length.md",
+      "verdictWritten": "RESOLVED",
+      "fullOrPartial": "partial",
+      "whatWasAdjudicatedAndWhatWasNot": "upheld in its consequence and refuted in its magnitude; its own escape clause fired, and the task that decided it was T-3a rather than the T-4 the cell predicted"
+    },
+    {
+      "challenge": "CH-0010",
+      "adjudicatingClaim": "C-0077-first-moment-chain-length.md",
+      "verdictWritten": "UPHELD IN PART",
+      "fullOrPartial": "partial",
+      "whatWasAdjudicatedAndWhatWasNot": "upheld in substance and split; C-0077 quantifies the challenge's own word `most` at 62-68 % of the chain-length gap and leaves a physical residue of 1.64-1.95x"
+    },
+    {
+      "challenge": "CH-0033",
+      "adjudicatingClaim": "C-0017-output-coupling-stiffness.md",
+      "verdictWritten": "UPHELD",
+      "fullOrPartial": "full",
+      "whatWasAdjudicatedAndWhatWasNot": "recorded by BOTH targets: C-0017 withdraws its failure route 2 and C-0015 corrects its validity clause; no verdict, number or table of either moves"
+    },
+    {
+      "challenge": "CH-0056",
+      "adjudicatingClaim": "C-0042-paired-perpendicular-junction.md",
+      "verdictWritten": "UPHELD",
+      "fullOrPartial": "partial",
+      "whatWasAdjudicatedAndWhatWasNot": "upheld at the level it was written and completed by C-0052 and C-0059; the transfer of the freedom to a multi-junction assembly is refused separately, by CH-0072"
+    },
+    {
+      "challenge": "CH-0078",
+      "adjudicatingClaim": "C-0070-pinned-leg-budget.md",
+      "verdictWritten": "UPHELD",
+      "fullOrPartial": "full",
+      "whatWasAdjudicatedAndWhatWasNot": "nothing softens it, and the challenge's own `what would settle it` item 2 is discharged"
+    },
+    {
+      "challenge": "CH-0083",
+      "adjudicatingClaim": "C-0084-recommended-element-pull-in-fold.md",
+      "verdictWritten": "RESOLVED",
+      "fullOrPartial": "full",
+      "whatWasAdjudicatedAndWhatWasNot": "the third load line is searched and no fold exists at 2 mM at 6 of 6 layer models; every number in C-0018 and C-0032 still stands"
+    },
+    {
+      "challenge": "CH-0089",
+      "adjudicatingClaim": "C-0079-unbonded-duplex-separation.md",
+      "verdictWritten": "UPHELD",
+      "fullOrPartial": "full",
+      "whatWasAdjudicatedAndWhatWasNot": "and the challenge's own failure route 1 is closed: no equilibrium separation exists at all"
+    },
+    {
+      "challenge": "CH-0093",
+      "adjudicatingClaim": "C-0085-collinear-stacking-clearance.md",
+      "verdictWritten": "UPHELD",
+      "fullOrPartial": "full",
+      "whatWasAdjudicatedAndWhatWasNot": "upheld and closed; the answer lands above the challenge's own generous end"
+    },
+    {
+      "challenge": "CH-0101",
+      "adjudicatingClaim": "C-0090-buildable-raster-width.md",
+      "verdictWritten": "DISCHARGED",
+      "fullOrPartial": "partial",
+      "whatWasAdjudicatedAndWhatWasNot": "discharged in the ONE item it left unevaluated, and its sign guess corrected; the width statement itself is not adjudicated by that claim and still STANDS"
+    },
+    {
+      "challenge": "CH-0103",
+      "adjudicatingClaim": "C-0103-path-count-at-fixed-geometry.md",
+      "verdictWritten": "UPHELD",
+      "fullOrPartial": "partial",
+      "whatWasAdjudicatedAndWhatWasNot": "upheld as a bookkeeping correction while the recommendation it challenges STANDS; the challenge's own instrument is separately withdrawn by CH-0119"
+    },
+    {
+      "challenge": "CH-0151",
+      "adjudicatingClaim": "C-0141-honeycomb-station-lattice-and-placement.md",
+      "verdictWritten": "OVERTURNED",
+      "fullOrPartial": "full",
+      "whatWasAdjudicatedAndWhatWasNot": "its 132 and 90 do not hold; C-0122's 90 and 60 are restored at departure 0.0 while every reason C-0122 gave for them is withdrawn in the same claim"
+    },
+    {
+      "challenge": "CH-0177",
+      "adjudicatingClaim": "C-0118-coupled-four-layer.md",
+      "verdictWritten": "UPHELD",
+      "fullOrPartial": "full",
+      "whatWasAdjudicatedAndWhatWasNot": "recorded in C-0118's own banner; the value survives and only the monotonicity is withdrawn"
+    },
+    {
+      "challenge": "CH-0184",
+      "adjudicatingClaim": "C-0148-face-bond-class-residues-and-row-span-columns.md",
+      "verdictWritten": "ANSWERED",
+      "fullOrPartial": "full",
+      "whatWasAdjudicatedAndWhatWasNot": "the inter-row offset is 14 bp at 32 of 32 proper readings and the saturating pair the challenge found is withdrawn as unbuildable"
+    },
+    {
+      "challenge": "CH-0185",
+      "adjudicatingClaim": "C-0148-face-bond-class-residues-and-row-span-columns.md",
+      "verdictWritten": "ANSWERED",
+      "fullOrPartial": "full",
+      "whatWasAdjudicatedAndWhatWasNot": "the twelfth column is a bounding-box artefact; the price DECISIONS-FOR-NDI decision 8 rested on is withdrawn, and the challenge's GROUNDS still stand"
+    },
+    {
+      "challenge": "CH-0229",
+      "adjudicatingClaim": "C-0182-name-the-discharge.md",
+      "verdictWritten": "ANSWERED",
+      "fullOrPartial": "full",
+      "whatWasAdjudicatedAndWhatWasNot": "raised and repaired in C-0176, and the general question it left standing is answered by C-0182's registry"
+    }
+  ],
+  "exclusions": [
+    {
+      "challenge": "CH-0068",
+      "claim": "C-0056-connectivity-ceiling-plate.md",
+      "shape": "conditional",
+      "sentence": "`If `CH-0068` is upheld, the design point is `N_ret = 56` ... If `CH-0068` is refused, the thresholds bind` -- a claim that says in as many words that the verdict is not in",
+      "namedTest": "a CONDITIONAL is not an adjudication -- it says the verdict is not in"
+    },
+    {
+      "challenge": "CH-0157",
+      "claim": "C-0132-cut-rim-charge.md",
+      "shape": "clause crossing",
+      "sentence": "`That is `CH-0157`, and it is why the bracket has to be withdrawn` -- the thing withdrawn is the BRACKET; the clause guard [^.;|] does not stop a comma-and-conjunction",
+      "namedTest": "a comma and a coordinating conjunction start a new clause with its own subject"
+    }
+  ],
+  "narrowingCost": {
+    "measuredBefore": true,
+    "patternOneSitesOverTheWholeClaimsCorpusBefore": 46,
+    "patternOneSitesAfter": 43,
+    "sitesLost": 3,
+    "sitesLostThatAreGenuineAdjudications": 0,
+    "whyRelativeWhichIsNotInTheConjunctionList": "a relative clause keeps the challenge as its subject, and C-0182's `CH-0229, which raised this task, is ANSWERED` is a genuine adjudication that an over-wide guard loses. Measured: including `which` costs 1 true positive"
+  },
+  "cheapBoundRunFirst": {
+    "what": "before any file was edited, every candidate status was set to CLOSED in memory and stale_challenge_statuses was run over both deliverables",
+    "predicted": 1,
+    "thePassage": "ANSWERS.md line 964: `(`CH-0083`, raised open in iteration 16 and **RESOLVED in iteration 17**, below)` -- correct as written. Both cancellations _HISTORICAL and _ANSWERING are present and both sit outside _OPEN_WINDOW = 24",
+    "resolution": "the sentence is right and the checker's window was wrong, which is C-0115's discipline read the other way round. A cancellation can only REMOVE a hit, so reading it on the wider _VERDICT_WINDOW = 80 is strictly a narrowing",
+    "staleAfterEverything": {
+      "ANSWERS.md": [],
+      "DECISIONS-FOR-NDI.md": []
+    }
+  },
+  "strikeAwareness": {
+    "finding": "C-0071's strike-never-delete and challenge_status_of were in direct conflict: a Status row reading `~~**OPEN.** ...~~ **RESOLVED, iteration 43**` was reported OPEN, so the corpus's own repair idiom left the gate exactly where it was",
+    "preExistingLiveInstance": "CH-0224",
+    "corpusRowsCarryingAStruckSpanInTheirStatusCell": 4,
+    "rowsWhoseReadingTheBlankingMoves": [
+      "CH-0224"
+    ],
+    "exposureOfThatMove": "CH-0224 is referenced in neither deliverable, so the flip creates no STALE-OPEN",
+    "onlyTheCellIsBlanked": "blanking the whole file first would let a struck block around the row delete the row, turning a declared status into an UNKNOWN one -- the direction this checker must not guess in"
+  },
+  "statusCellVocabularyTrap": {
+    "finding": "_CHALLENGE_OPEN is `open|raised` case-INSENSITIVE, so a Status cell that uses either word in ORDINARY PROSE reopens its own challenge. Three cells written in this task did exactly that -- `DISCHARGED in its open item`, `Raised by C-0142`, `raised and repaired in the same claim` -- and each was rephrased",
+    "cellsRephrased": [
+      "CH-0101",
+      "CH-0177",
+      "CH-0229"
+    ],
+    "sameFamilyAs": "queue_status matching DONE inside `Left undone`, which the corpus solves with case sensitivity; the challenge half cannot, because its cell is a declaration written in mixed case"
+  },
+  "indexVersusFiles": {
+    "before": {
+      "indexedRows": 218,
+      "challengeFiles": 220,
+      "withNoIndexRowOfTheirOwn": [
+        "CH-0053",
+        "CH-0252"
+      ],
+      "withNoIndexRowOfTheirOwnCount": 2,
+      "statusDisagreements": [
+        "CH-0003",
+        "CH-0004",
+        "CH-0005",
+        "CH-0007",
+        "CH-0008",
+        "CH-0012",
+        "CH-0016",
+        "CH-0056",
+        "CH-0066",
+        "CH-0067",
+        "CH-0072",
+        "CH-0078",
+        "CH-0081",
+        "CH-0082",
+        "CH-0084",
+        "CH-0090",
+        "CH-0091",
+        "CH-0160",
+        "CH-0161",
+        "CH-0187",
+        "CH-0188",
+        "CH-0189",
+        "CH-0192",
+        "CH-0193",
+        "CH-0199",
+        "CH-0206",
+        "CH-0224",
+        "CH-0240",
+        "CH-0242",
+        "CH-0251"
+      ],
+      "statusDisagreementCount": 30,
+      "indexRecordsAnAdjudicationTheFileDoesNot": [
+        "CH-0003",
+        "CH-0004",
+        "CH-0007",
+        "CH-0010",
+        "CH-0016",
+        "CH-0160",
+        "CH-0202",
+        "CH-0251"
+      ],
+      "indexRecordsAnAdjudicationTheFileDoesNotCount": 8,
+      "fileRecordsAnAdjudicationTheIndexDoesNot": [
+        "CH-0006",
+        "CH-0008",
+        "CH-0047",
+        "CH-0199",
+        "CH-0204",
+        "CH-0227",
+        "CH-0228",
+        "CH-0242"
+      ],
+      "fileRecordsAnAdjudicationTheIndexDoesNotCount": 8
+    },
+    "after": {
+      "indexedRows": 222,
+      "challengeFiles": 222,
+      "withNoIndexRowOfTheirOwn": [],
+      "withNoIndexRowOfTheirOwnCount": 0,
+      "statusDisagreements": [
+        "CH-0005",
+        "CH-0008",
+        "CH-0012",
+        "CH-0053",
+        "CH-0066",
+        "CH-0067",
+        "CH-0072",
+        "CH-0081",
+        "CH-0082",
+        "CH-0084",
+        "CH-0090",
+        "CH-0091",
+        "CH-0161",
+        "CH-0187",
+        "CH-0188",
+        "CH-0189",
+        "CH-0192",
+        "CH-0193",
+        "CH-0199",
+        "CH-0206",
+        "CH-0240",
+        "CH-0242",
+        "CH-0251",
+        "CH-0253"
+      ],
+      "statusDisagreementCount": 24,
+      "indexRecordsAnAdjudicationTheFileDoesNot": [
+        "CH-0202"
+      ],
+      "indexRecordsAnAdjudicationTheFileDoesNotCount": 1,
+      "fileRecordsAnAdjudicationTheIndexDoesNot": [
+        "CH-0006",
+        "CH-0008",
+        "CH-0047",
+        "CH-0199",
+        "CH-0204",
+        "CH-0227",
+        "CH-0228",
+        "CH-0242"
+      ],
+      "fileRecordsAnAdjudicationTheIndexDoesNotCount": 8
+    },
+    "reconciled": {
+      "indexRowsUpdatedToMatchTheFile": [
+        "CH-0033",
+        "CH-0056",
+        "CH-0078",
+        "CH-0083",
+        "CH-0089",
+        "CH-0093",
+        "CH-0101",
+        "CH-0103",
+        "CH-0151",
+        "CH-0177",
+        "CH-0184",
+        "CH-0185",
+        "CH-0229"
+      ],
+      "filesUpdatedToMatchTheIndex": [
+        "CH-0003",
+        "CH-0007",
+        "CH-0016",
+        "CH-0160"
+      ],
+      "missingIndexRowAdded": [
+        "CH-0053"
+      ],
+      "reconciledRowCount": 18,
+      "howCH0053WasInvisible": "tools/check-challenge-index.py's row pattern is unanchored and applied over the whole file, so CH-0062's row LINKING to CH-0053 counted as CH-0053 being indexed. Measured over the index's own history, CH-0053 is linked-but-rowless in 38 revisions of gpd/challenges/README.md, oldest 5ea5c137 (2026-08-14), and the gate reported `0 unindexed` on every one. Raised as CH-0255"
+    },
+    "notReconciledAndWhy": {
+      "CH-0202": "the index's UPHELD is about C-0151's VERDICT being upheld, not about the challenge being adjudicated; the file is right and the index's word is the loose one. Reported, not changed",
+      "CH-0251": "owned by another agent this iteration; not touched",
+      "fileSaysIndexDoesNot": "8 rows remain in that direction, all pre-existing and none created here; they are listed under `after` and are a separate delta"
+    },
+    "aCensusIsDatedByItsPredicate": "T-298's row names SIX in the index-says direction -- CH-0003, CH-0004, CH-0007, CH-0010, CH-0016, CH-0202. Re-derived at the ref, the ADJUDICATION-WORD predicate gives EIGHT: those six plus CH-0160 and CH-0251, both of which the row's reading predates. The STATUS predicate gives a different set again -- CH-0003, CH-0004, CH-0005, CH-0007, CH-0012, CH-0016 -- because challenge_status_of is case-INSENSITIVE and challenge_adjudicated is not, so CH-0010's `Upheld in substance` is CLOSED to one and unadjudicated to the other. Neither number is wrong; both are reported, with the predicate that produced them named. Sixth consecutive iteration of CH-0182"
+  },
+  "mutationCoverage": {
+    "harness": "tools/T-298-mutation-test.py",
+    "mutations": 10,
+    "survivors": 0,
+    "directions": {
+      "the status reader ignores strikes": "revert",
+      "the adjudication reader ignores strikes": "revert",
+      "the status reader blanks the whole file instead of the cell": "over-correct",
+      "the conditional guard is dropped": "revert",
+      "the conditional guard is widened until it refuses every site": "over-correct",
+      "the clause guard goes back to [^.;|]": "revert",
+      "the clause guard is widened to break on a relative `, which`": "over-correct",
+      "the cancellations are read on the assertion window": "revert",
+      "the cancellations are read on the whole line": "over-correct",
+      "the residue is printed but not gated": "revert"
+    },
+    "baselineIsAsserted": "the UNMUTATED copy is run first and its named failures printed; C-0185/CH-0237, without which a fixture defect reads as 0 survivors or as all-killed and the headline column means nothing either way",
+    "anchorCountIsAsserted": true,
+    "notYetDeclaredInP31": "tools/P-31-harness-census.py's HARNESSES table does not carry a row for this harness and T-298 does not own tools/P-31-*. The row it wants is (\"T-298-mutation-test.py\", \"TEXT-ANCHOR\", \"name_file_old_new\", (\"trace-answers.py\",)). Reported to the coordinator"
+  },
+  "namedTests": {
+    "atTheRef": 151,
+    "now": 167,
+    "added": 16,
+    "howCounted": "`tools/test-trace-answers.py | grep -c '^ok'`, run at the ref out of `git archive <ref> tools` and again in the working tree"
+  },
+  "gateReadings": {
+    "toolsTraceAnswersExitCode": 0,
+    "unrecordedAdjudicationBefore": 24,
+    "unrecordedAdjudicationAfter": 0
+  },
+  "maturity": "TRL 1-3 process artifact. NO PHYSICS CHANGED: every edit is a status word, a pointer, a regular-expression guard or a test"
+}
