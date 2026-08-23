@@ -11536,6 +11536,48 @@ re-runs to `removed` **10 → 0**, because `T-287` removed them. Restored unmove
 alone"* now carries the exception.
 
 
+### `T-255`/`C-0199`: the gallery was opened, and it challenged this iteration's own headline
+
+Agent D was spawned mid-iteration on idle capacity, for a **LOW** row nobody expected much from:
+*does any cadnano.org gallery design carry a forced crossover, and with what yield?*
+`C-0152` §6 had read the gallery **page** and had not opened the `.zip` files.
+
+Opened, all three `bit.ly` shorteners still resolve — to live Dropbox files, in 2026 — and unpack
+into **26 caDNAno legacy designs**. **The category is not empty**: `15 of 26` force a crossover, and
+the forcing splits into three mechanisms of which only one is `C-0152`'s object — **425** connections
+between different base indices, **323** between non-adjacent sites, and **28** that are aligned,
+adjacent and simply off-register.
+
+**And every one of those 28 is displaced by ONE base pair.** Not one by the ten or eleven `C-0152`
+*proves* is the cheapest, so the field — forcing a crossover 28 times — pays `1.05268401 k_BT`
+against `0.350894669`, **4× the energy the lattice offers, every time.** That is `C-0152`'s own
+*no count of base pairs can see the azimuth* observed in the record rather than derived.
+
+The yield half is answered as a **partition**: the caDNAno paper publishes **per-design** gel and TEM
+yields (`3.2–25.2 %`, `2.0–53.8 %`) for its seven blocks, **all seven of which force nothing**,
+while the Nature paper pools `7 %–44 %` over a set that mixes both with no map anywhere. **`0 of
+15`**, one-sided 95 % upper limit `0.181036273` — the exact Clopper-Pearson form, because a symmetric
+standard error at a saturated proportion is a function of the estimate alone.
+
+**Then it turned on `C-0193`.** The same archives deposit the **seven design files for the seven
+cross-sections** `C-0193` reasons about, and they say `126` scaffold bases per helix — **agreeing
+with the Methods sentence exactly** — with **`0`** of them unpaired. The `10 × 6` block is deposited
+**twice**, by both papers, **bit-identical in every `vstrand`**, and helix 0 turns to helix 1 by a
+**direct covalent step** with zero intervening unpaired nucleotides: **`C-0193`'s own route A,
+drawn**, closing the `±5 bp` residue condition at `0` forced scaffold crossings of 118 *while paying
+nothing*.
+
+`CH-0251` states it exactly: **two primary artifacts of the same authors disagree, and only one was
+consulted.** It challenges three points and explicitly protects the rest — the quotation, the reach
+bound, the FJC pricing, the scaffold budget and the loops' stated purpose all survive. And it names
+the decisive experiment instead of running it: the SI staple **length** column, because 28 unpaired
+bases per helix means `60 × 98 = 5 880` staple nucleotides for that block and the deposited file
+draws **7 560**.
+
+**Both deliverables were annotated in the same iteration that carried the condition into them.**
+`CLAUDE.md`'s *check `gpd/data/` before fetching anything* has a twin, and this is it: **before
+resting a verdict on a paper's prose, ask whether the same authors deposited the object.**
+
 ### Three things about running four agents on one checkout
 
 **A gate wired mid-iteration goes red on in-flight work, and that is it working.**
