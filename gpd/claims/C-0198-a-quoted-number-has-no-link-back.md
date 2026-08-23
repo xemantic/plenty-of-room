@@ -101,7 +101,15 @@ rather than asserted (`C-0158`):
 `C-0101` re-emits, `C-0117` sorts the sweep — and it leaves every claim that named the old path
 pointing at nothing, silently.
 The gate read **1** within minutes of existing, on a queue row naming a study's output before the
-study had run, which is exactly the transient it exists to make visible at commit time.
+study had run.
+
+**And that transient tells you where the gate belongs.** On a shared checkout with parallel agents,
+the commit that *names* an artifact and the commit that *adds* it are routinely different commits —
+so this gate is red at `HEAD` for as long as the gap lasts, and `tools/verify.sh --committed`, which
+archives `HEAD`, reads that redness faithfully. It is therefore a **pre-push** gate rather than a
+per-commit one, and it is wired where `tools/verify.sh` runs its other corpus checks rather than in
+`build.gradle.kts`. The redness is the gate working: an artifact named and never added is exactly
+the defect, and the only thing that distinguishes it from an in-flight one is time.
 
 ## 5. The census cannot carry its own subject, and a build-failing gate said so
 
