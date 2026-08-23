@@ -437,7 +437,12 @@ def occurrences(text: str):
             line_index = text.count("\n", 0, match.start())
             if context and not re.search(context, lines[line_index], re.I):
                 continue
-            name = refine(text, match.start(), match.end()) if refine else family
+            # `T-293`.  The REFINEMENT window is read from the SAME blanked text, and this is the
+            # third and last of the three signs -- `T-285` repaired the match and `T-287` the line
+            # context.  A governing word inside a neighbouring FILENAME is a NAME: it asserts
+            # nothing about which discharge the token takes, and unblanked it decided one.
+            # Blanking is length-preserving, so `match.start()` still indexes the file on disk.
+            name = refine(hunted, match.start(), match.end()) if refine else family
             distance = context_distance(text, match.start(), context) if context else None
             found.append((match.start(), name, line_index + 1, match.group(0), distance))
     found.sort()
@@ -1389,6 +1394,45 @@ def self_test() -> int:
             "x\nsee C-0140-raster.md - the honeycomb tile is 4 layers x 112 bp\n"
         )[0][1:3]
         == (2, len("x\nsee C-0140-raster.md - the honeycomb tile is 4 layers x ")),
+    )
+    # --- T-293: the REFINEMENT window is read from the same blanked text too
+    #
+    # The third and last of the three signs.  `T-285` repaired the MATCH, `T-287` the LINE
+    # CONTEXT, and `refine(text, ...)` was still handed the ORIGINAL text -- so a governing word
+    # sitting inside a neighbouring FILENAME could decide which of two discharges a token takes.
+    # Measured over every tracked markdown file of the corpus, the change moves exactly ONE
+    # occurrence, in `gpd/challenges/CH-0229-...md`, which this census does not read: 0 in scope.
+    # The zero is NOT because the corpus's slugs lack the governing words -- they carry 81 of them
+    # (`grillage` 19, row-words 31, width-words 30, `closes` 1, attributive 0) -- it is because the
+    # coincidence of a family token with such a slug inside one refinement window is rare.  So the
+    # fixture below is the CORPUS'S OWN instance rather than a shape invented for the change.
+    ok(
+        "T-293 a structural-model word inside a FILENAME does not refine PLACEMENT to GRILLAGE",
+        sub("The census's single-layer square-lattice family, until"
+            " ../claims/C-0154-honeycomb-grillage.md built one") == ["PLACEMENT"],
+    )
+    ok(
+        "T-293 and the same word in the line's own PROSE still refines it",
+        sub("The census's single-layer square-lattice family, until the"
+            " grillage was built") == ["GRILLAGE"],
+    )
+    ok(
+        "T-293 a row word inside a FILENAME does not refine WIDTH to ROW_SPAN",
+        sub("the honeycomb block is 112 bp, see ../claims/C-0146-the-row-span.md") == ["WIDTH"],
+    )
+    ok(
+        "T-293 and the same word in the line's own PROSE still refines it",
+        sub("the honeycomb block is 112 bp, and the span of each row is that") == ["ROW_SPAN"],
+    )
+    ok(
+        "T-293 the refinement is taken on blanked text, which is length-preserving, so the "
+        "occurrence's offset still indexes the ORIGINAL text",
+        all(
+            body[o: o + len(tok)] == tok
+            for body in ["The census's single-layer square-lattice family, until"
+                         " ../claims/C-0154-honeycomb-grillage.md built one"]
+            for _f, _l, o, tok, _d in occurrences(body)
+        ),
     )
     ok(
         "T-285 a surviving occurrence's offset still indexes the ORIGINAL text",

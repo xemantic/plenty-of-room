@@ -214,6 +214,11 @@ def mutations():
          [("    return _nearest(re.compile(context, re.I), blank_identifiers(line), "
            "start - line_start)",
            "    return _nearest(re.compile(context, re.I), line, start - line_start)")]),
+        # ------------------------------------------------------------------ T-293
+        ("NARROW", "the REFINEMENT window is read from the ORIGINAL text -- a filename decides "
+                   "which of two discharges a token takes again", CENSUS,
+         [("            name = refine(hunted, match.start(), match.end()) if refine else family",
+           "            name = refine(text, match.start(), match.end()) if refine else family")]),
         # ------------------------------------------------------------------ T-262, widening
         ("WIDEN", "row nouns match anything -- every match is a restored row span", CENSUS,
          [(row_words, "_ROW_WORDS = re.compile(" + ALWAYS + ")")]),

@@ -1,0 +1,176 @@
+{
+  "emission": {
+    "lattice": "none",
+    "regime": []
+  },
+  "task": "T-293",
+  "title": "a name cannot govern a token either -- the refinement window, the third sign",
+  "subject": "every tracked path of the repository for the slug census, and every tracked markdown file for the refinement delta; a corpus-subject result file, so the ref is an argument and the resolved SHA is recorded",
+  "baselineRef": "1c598f845cf4328f724e2217dc7d458880983ee8",
+  "baselineRefRequested": "HEAD",
+  "units": "none; every value is an integer count or a name",
+  "parameters": {
+    "corpus": "the repository's tracked files at the working tree, against the census and classification committed at the baselineRef",
+    "predicate": "refine(hunted, ...) -- the refinement window is read from the SAME blanked text the family match and the line context are",
+    "unchanged": "the family patterns, REFINE_WINDOW, STRUCTURAL_WINDOW, CONTEXT_REMOTE, SNIPPET_CHARS, the discharge registry and the hand overrides",
+    "note": "no wall-clock timing and no step counter is emitted; every value is an integer count or a name"
+  },
+  "cheapBound": {
+    "question": "is the in-scope effect zero because the defect is rare, or because the refinement's governing words happen not to occur in this corpus's slugs? T-293's own stated first move, and it needs no change to be landed",
+    "method": "one pass over every tracked BASENAME against the five governing-word patterns a refinement consults",
+    "trackedPathsAtTheRef": 1727,
+    "pathsScanned": 1742,
+    "perPattern": {
+      "_STRUCTURAL_MODEL": {
+        "hits": 19,
+        "files": 19,
+        "examples": [
+          {
+            "file": "gpd/challenges/CH-0213-the-recommended-coupled-design-does-not-survive-the-honeycomb-grillage.md",
+            "word": "grillage"
+          },
+          {
+            "file": "gpd/claims/C-0154-honeycomb-grillage.md",
+            "word": "grillage"
+          },
+          {
+            "file": "gpd/claims/C-0167-coupled-cells-on-the-honeycomb-grillage.md",
+            "word": "grillage"
+          },
+          {
+            "file": "gpd/results/T-253-honeycomb-grillage.json",
+            "word": "grillage"
+          },
+          {
+            "file": "gpd/results/T-263-honeycomb-grillage-regrade.json",
+            "word": "grillage"
+          },
+          {
+            "file": "gpd/tasks/T-253-honeycomb-grillage.md",
+            "word": "grillage"
+          }
+        ]
+      },
+      "_ATTRIBUTIVE": {
+        "hits": 0,
+        "files": 0,
+        "examples": []
+      },
+      "_ROW_WORDS": {
+        "hits": 31,
+        "files": 28,
+        "examples": [
+          {
+            "file": "gpd/challenges/CH-0087-a-sensitivity-row-that-does-not-meet-the-mandate.md",
+            "word": "row"
+          },
+          {
+            "file": "gpd/challenges/CH-0111-the-row-end-crossover-is-admitted-with-an-interior-crossover-s-stiffness.md",
+            "word": "row"
+          },
+          {
+            "file": "gpd/challenges/CH-0115-the-row-end-bracket-is-a-constraint-not-a-stiffness.md",
+            "word": "row"
+          },
+          {
+            "file": "gpd/challenges/CH-0118-the-row-end-crossover-is-a-station-at-two-phases.md",
+            "word": "row"
+          },
+          {
+            "file": "gpd/challenges/CH-0164-a-seamless-row-has-a-parity-not-a-phase.md",
+            "word": "row"
+          },
+          {
+            "file": "gpd/challenges/CH-0172-a-honeycomb-x-raster-carries-both-turn-senses.md",
+            "word": "x-raster"
+          }
+        ]
+      },
+      "_WIDTH_WORDS": {
+        "hits": 30,
+        "files": 27,
+        "examples": [
+          {
+            "file": "gpd/challenges/CH-0026-forces-are-footprint-integrated-one-dimensional-pressures.md",
+            "word": "footprint"
+          },
+          {
+            "file": "gpd/challenges/CH-0094-a-hard-body-width-is-a-threshold-and-no-plan-claim-states-one.md",
+            "word": "width"
+          },
+          {
+            "file": "gpd/challenges/CH-0101-the-nominal-tile-width-is-not-a-buildable-raster-width.md",
+            "word": "nominal"
+          },
+          {
+            "file": "gpd/challenges/CH-0101-the-nominal-tile-width-is-not-a-buildable-raster-width.md",
+            "word": "width"
+          },
+          {
+            "file": "gpd/challenges/CH-0101-the-nominal-tile-width-is-not-a-buildable-raster-width.md",
+            "word": "width"
+          },
+          {
+            "file": "gpd/challenges/CH-0105-the-plan-budget-is-two-bounds-and-only-one-carries-the-tile-width.md",
+            "word": "width"
+          }
+        ]
+      },
+      "_DRAWABLE_RASTER": {
+        "hits": 1,
+        "files": 1,
+        "examples": [
+          {
+            "file": "gpd/challenges/CH-0218-a-pruned-trajectory-forecloses-every-question-nobody-asked-it.md",
+            "word": "closes"
+          }
+        ]
+      }
+    },
+    "totalSlugHits": 81,
+    "answer": "the governing words are richly present in the corpus's own filenames, so the zero is a coincidence of PLACEMENT -- a family token rarely stands within one refinement window of such a slug -- and not a property of how this corpus names its files. The change is therefore warranted on the same ground T-285 and T-287 were, and a future file name can make it bite at any time"
+  },
+  "delta": {
+    "occurrencesBefore": 380,
+    "occurrencesAfter": 380,
+    "removed": 0,
+    "added": 0,
+    "familyChanged": [],
+    "whyRemovedAndAddedMustBothBeZero": "the refinement runs AFTER the family match and the line-context test, so it can rename an occurrence and can neither create nor destroy one. A non-zero count here would mean the change reached a rule it was not about",
+    "refinementDeltaOverTheWholeMarkdownCorpus": [
+      {
+        "file": "gpd/challenges/CH-0229-a-census-assumes-a-premise-is-withdrawn-once.md",
+        "line": 19,
+        "token": "single-layer square-lattice",
+        "onTheOriginalText": "GRILLAGE",
+        "onTheBlankedText": "PLACEMENT",
+        "inScope": false
+      }
+    ],
+    "inScopeEffect": 0
+  },
+  "namedTests": {
+    "howTheChangeIsHeldOpen": "T-293's row records that no named test over any file this census READS could hold the change open, because the in-scope effect is zero, and that a synthetic fixture is what C-0176 warns about. The escape is that the corpus's own single instance is a real string: gpd/challenges/CH-0229 line 19, where the only structural-model word within STRUCTURAL_WINDOW is inside two filenames. The two fixtures below are that shape, not a shape invented for the change",
+    "tests": [
+      "T-293 a structural-model word inside a FILENAME does not refine PLACEMENT to GRILLAGE",
+      "T-293 and the same word in the line's own PROSE still refines it",
+      "T-293 a row word inside a FILENAME does not refine WIDTH to ROW_SPAN",
+      "T-293 and the same word in the line's own PROSE still refines it",
+      "T-293 the refinement is taken on blanked text, which is length-preserving, so the occurrence's offset still indexes the ORIGINAL text"
+    ],
+    "mutation": "tools/T-234-mutation-test.py carries one NARROWING that restores the original-text reading; it fails the two FILENAME tests above and nothing else, and the harness reports 0 mutations failing nothing"
+  },
+  "gate": {
+    "toolsT234CensusCheckBefore": 0,
+    "toolsT234CensusCheckAfter": 0,
+    "whyBothAreRecorded": "C-0158: a claim that lands a change to a gated tool records the gate's actual reading, at the commit it lands on, rather than the fact that it wired one",
+    "classificationRegenerated": false,
+    "whyNot": "the table is keyed on the occurrence INDEX and no occurrence is removed or added, so no index moves; and no IN-SCOPE occurrence changes family, so no entry's class is stale. C-0184's intermediate-reading trap does not arise"
+  },
+  "residue": {
+    "unanchoredClosesAlternative": "_DRAWABLE_RASTER's `closes` alternative carries no word boundary, so it matches inside `closest` (67 whole-corpus occurrences) and `forecloses` (5). Measured here at zero bites -- no `drawable` token's refinement window is decided by such a substring at this ref -- so it is recorded rather than repaired, one delta at a time",
+    "closesSubstringOnlyOccurrences": 74,
+    "closesWholeWordOccurrences": 523,
+    "bitesAtThisRef": 0
+  }
+}

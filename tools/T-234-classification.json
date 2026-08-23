@@ -2729,5 +2729,28 @@
    "token": "112 bp",
    "why": "inside a correcting claim or an iteration-34 annotation, or stating the corrected value"
   }
+ },
+ "gpd/claims/C-0196-a-name-cannot-govern-a-token.md": {
+  "0": {
+   "class": "RECORD",
+   "family": "GRILLAGE",
+   "line": 105,
+   "token": "single-layer square-lattice",
+   "why": "T-293, by hand: this claim's own worked example. Both occurrences quote the token as DATA -- one is a table cell reporting which string the census matched at CH-0229 line 19, the other a verbatim quotation of that file's own sentence -- so neither asserts anything about a structural model. CH-0182: a claim about a census is inside that census's own scope, and writing it moves the number it reports"
+  },
+  "1": {
+   "class": "RECORD",
+   "family": "GRILLAGE",
+   "line": 107,
+   "token": "single-layer\nsquare-lattice",
+   "why": "T-293, by hand: this claim's own worked example. Both occurrences quote the token as DATA -- one is a table cell reporting which string the census matched at CH-0229 line 19, the other a verbatim quotation of that file's own sentence -- so neither asserts anything about a structural model. CH-0182: a claim about a census is inside that census's own scope, and writing it moves the number it reports"
+  },
+  "2": {
+   "class": "RECORD",
+   "family": "PLACEMENT",
+   "line": 183,
+   "token": "single-layer square-lattice",
+   "why": "T-293, by hand: this claim's own worked example. Both occurrences quote the token as DATA -- one is a table cell reporting which string the census matched at CH-0229 line 19, the other a verbatim quotation of that file's own sentence -- so neither asserts anything about a structural model. CH-0182: a claim about a census is inside that census's own scope, and writing it moves the number it reports -- and this third one is the census's own gate message, quoted verbatim in section 7"
+  }
  }
 }
