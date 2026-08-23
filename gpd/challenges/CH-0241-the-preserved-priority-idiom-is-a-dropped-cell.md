@@ -5,6 +5,7 @@
 | **Against** | [`C-0178`](../claims/C-0178-leading-verdict-and-row-coverage.md) §2, *"which verdict WINS"* — and the same sentence in [`tools/queue_verdicts.py`](../../tools/queue_verdicts.py)'s own header comment |
 | **Raised by** | [`C-0188`](../claims/C-0188-a-verdict-in-the-wrong-column.md) / [`T-289`](../tasks/T-289-a-verdict-in-the-wrong-column.md), while measuring a header-aware column predicate against `C-0178`'s own baseline ref |
 | **Kind** | **methodological — a correct rule justified by a reading of the corpus that the corpus does not support, where the reading is what says when the rule fails** |
+| **Corrected by** | [`CH-0245`](CH-0245-the-leaf-cell-was-never-dropped.md) / [`C-0192`](../claims/C-0192-the-column-repair.md), iteration 45 — the *dropped cell* is withdrawn, including from this challenge's title; the argument against `C-0178` stands unchanged |
 | **Status** | **RAISED and ANNOTATED in the same iteration.** The rule is **UPHELD** and its stated ground is **withdrawn**: `C-0178` §2's clause is struck in place with the correction beside it, and the same sentence in [`tools/queue_verdicts.py`](../../tools/queue_verdicts.py)'s header comment is replaced. The correction is a sentence, not a predicate — **nothing computed by `C-0178` moves** — and the arm that makes the residue visible is landed by [`C-0188`](../claims/C-0188-a-verdict-in-the-wrong-column.md) as an ungated advisory |
 
 ---
@@ -27,9 +28,17 @@ with a predicate that locates each table's status column from that table's own h
 **20 rows carry a verdict outside their status column, and all nine of the nine are among them.**
 
 There is no *"whole column"* for *strike, never delete* to have been applied to.
-The science table is headed `| ID | Task | Acceptance (abridged …) | Leaf | Status |` and **those nine rows carry four cells after the identifier, not four plus a leaf**:
-they have **dropped the `Leaf` cell**.
+The science table is headed `| ID | Task | Acceptance (abridged …) | Leaf | Status |` and ~~**those nine rows carry four cells after the identifier, not four plus a leaf**:~~
+~~they have **dropped the `Leaf` cell**.~~
 So the status record renders under **Leaf**, and the preserved priority note — which really is *strike, never delete* — lands in the **Status** cell behind it.
+
+**CORRECTED, iteration 45 ([`CH-0245`](CH-0245-the-leaf-cell-was-never-dropped.md), [`C-0192`](../claims/C-0192-the-column-repair.md)), and the title above is corrected with it.**
+No cell was dropped.
+Every one of the eleven Leaf cells **ends in its own leaf token**, and each agrees with the newest revision in which that cell was a bare leaf — **11 of 11**.
+The record was written **in front of** a leaf that is still standing behind it,
+which is why moving the record out of `T-276`'s cell left `A8.2` in it.
+**This challenge's argument is untouched**: the rows really do render their verdict under the wrong heading, and *leftmost wins* really is right by luck on them.
+What changes is the price of the repair — **zero** leaf values supplied and **not one token** moved, rather than eleven values found from outside the row.
 
 `tools/check-markdown-tables.py` is clean on every one of them, because their cell **count** matches the header.
 Only the **meaning** of the columns is wrong, and no tool in this repository read a column at all.

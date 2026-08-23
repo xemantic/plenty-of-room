@@ -5,9 +5,15 @@
 | **Against** | [`C-0152`](../claims/C-0152-forced-scaffold-crossover-price.md) (`T-246`) §7 and §11, which name the flatness channel as a question about the **ten forced** crossovers; and [`C-0154`](../claims/C-0154-honeycomb-grillage.md) (`T-253`) §5, whose ceiling is *"over every choice of **ten** sites"* — a subset bound that does not cover the load every raster carries |
 | **Raised by** | [`T-254`](../tasks/T-254-raster-turn-prestrain.md) / [`C-0175`](../claims/C-0175-drawable-raster-rim.md) |
 | **Grounds** | **logical** (the challenged claim's own §5 calibration, read as a load instead of as a calibration) **+ in-silico** (a linear prestrain influence bank over all 59 turns) |
-| **Status** | **RAISED.** Neither claim is wrong; both are incomplete in the direction that **understates** the load, and the state at which they are incomplete is the one this programme **recommends** |
+| **Status** | **RAISED**, and its **COORDINATE is withdrawn** while its thesis is strengthened ([`CH-0240`](CH-0240-the-allowed-departure-is-common-mode.md) **UPHELD** by [`C-0190`](../claims/C-0190-the-departure-is-common-mode-and-what-replaces-it.md), `T-291`, iteration 45). Neither challenged claim is wrong; both are incomplete in the direction that **understates** the load, and the state at which they are incomplete is the one this programme **recommends**. What this challenge got wrong is *which channel*: its load is *"a built-in **relative** roll"* at every turn, and a level displacement rotates **both** backbones the same way, so that coefficient is **exactly zero**. The demand is a **common-mode** roll, which the alternation converts into `17.1428571°` of **twist** per interior helix — and on that channel the free tile reads **0.296735462** of the stroke against this challenge's own **0.0764244991** ceiling, so the understatement is **larger** than the challenge claimed, not smaller |
 
 ---
+
+> **ANNOTATION, iteration 45.** Read *"a built-in relative roll"* everywhere below as
+> *"a built-in **common-mode** roll"*, and the load it implies as the per-beam **twist** that
+> follows from the alternation. No number of this challenge moves — every one of them is a correct
+> reading of the relative-roll channel — and the channel is the wrong one (`CH-0240`, `C-0190`).
+> *Strike, never delete*: the sentences stand, the coordinate does not.
 
 ## 1. The claim's own §5, read the other way round
 

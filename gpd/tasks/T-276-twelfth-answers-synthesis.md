@@ -142,3 +142,102 @@ this task's job is to carry what it found, not to re-measure it.
 | **`P4`** | every self-describing count in either document is **derived** in this pass and corrected by striking if it moved, including the checker census's three separate predicates |
 | **`P5`** | `C-0169`'s conversion of `T-9`'s second deliverable is carried into both documents' *"what we cannot answer"* passages, distinguishing **bounded** from **measured** |
 | **`P6`** | no number is changed except beside its struck predecessor, and every number quoted is `grep`ed out of the claim that owns it |
+
+---
+
+# T-276, second pass — the THIRTEENTH synthesis, over the residue `T-288` named
+
+`C-0186` (`T-288`) carried **one** drift class — `C-0180`'s tied re-grade — and named what it did not
+do, by name rather than by estimate. That residue is this pass, and it is reproduced here verbatim from
+the `T-276` row so that the predicates below can be checked against it:
+
+> no section of either document was re-read end to end; no self-describing count was re-derived; the
+> *"what we cannot answer, and why"* list was **not** reconciled against the queue; the checker set was
+> **not** re-enumerated; `DECISIONS-FOR-NDI.md`'s eight decisions were **not** re-priced against the
+> challenges they rest on; and **one `15 × 4` comparison passage** is deliberately left.
+
+## 1. Formulate
+
+### What makes this pass different from the twelve before it
+
+The twelfth pass carried a **verdict that flipped** and `T-288` carried its **supersession**. This pass
+carries neither: it is owed over a corpus that has settled, and its subject is the six items of the
+residue rather than any one result. That changes what can go wrong. A pass with a headline number to
+carry is protected by the number — a reader checks it. A pass whose subject is *"everything that was
+not re-read"* has no such anchor, so every one of its findings has to be **derived at the moment of the
+pass** and quoted with the command that derived it.
+
+Three drift classes are in scope and **none of them is reachable by any retained checker**, which is
+why they are the residue:
+
+1. **A superseded value or ratio reads `CITED`**, because its owner still states it. Iterations 42–44
+   landed `C-0174`–`C-0189` and `CH-0223`–`CH-0241`; `C-0186` swept `C-0176`–`C-0184` and found the
+   sweep empty, and the three claims it did **not** sweep — `C-0175`, `C-0187` and the challenge
+   `CH-0240` — are exactly the ones that touch numbers the deliverables carry.
+2. **A self-describing count** — how many claims, how many challenges, how many checkers — belongs to
+   no claim, so a numeric tracer reads it `ELSEWHERE` or `ABSENT` and asks nothing further. Two of the
+   three have been stale at nearly every pass that touched them.
+3. **A scope correction**, where the passage exists, is correct, traces clean and is *about* the wrong
+   object.
+
+### The hypothesis this pass exists to falsify
+
+*"The residue `T-288` named is a list of six chores, and working through it is bookkeeping."*
+
+It is not, if any one of the six turns out to carry a **live** defect in a customer-facing sentence
+rather than a stale annotation. The cheapest test of that is the checker census and the
+challenge-and-claim census, both of which are two commands and neither of which needs a document read.
+
+## 2. Plan
+
+### Order, and why this order
+
+**The cheap bound is two `ls` commands and one `grep`, and it runs before any document is opened.**
+
+1. **Run every retained checker, enumerated at the moment of running**, on both documents, and record
+   the reading **before** any edit — including `tools/T-234-census.py --check`, whose scope this pass's
+   own edits fall inside, and against `git archive HEAD` so the *before* is not a moving corpus.
+2. **Derive the three self-describing counts** — claims, challenges, checkers — and, for the third,
+   derive its **predicate** as well as its number, because `CH-0222` found the predicate wrong once
+   already and a predicate keyed on a filename cannot be repaired by re-running it.
+3. **Sweep `C-0174`–`C-0189` and `CH-0223`–`CH-0241` against both documents by `grep`**, subtracting
+   what `C-0186` already swept, and read every hit.
+4. **Read §5 of `ANSWERS.md` against `TASKS.md`'s own verdicts**, mechanically for the task IDs it
+   names and by eye for the phrasings `tools/trace-answers.py`'s fixed vocabulary cannot see.
+5. **Re-price the eight decisions** by re-reading the **status** of every challenge each rests a number
+   on, `CLAUDE.md`'s *the prices live in the challenges*.
+6. Edit by annotation only, striking rather than deleting, and re-run every checker.
+
+### Method justification against cost
+
+`grep`, `ls`, `python3 tools/*.py` and text editing. No study, no Gradle, no result file moved. The
+expensive alternative — re-running the studies whose numbers the deliverables quote — is refused on
+`C-0110`'s ground: the studies have already been re-run by the claims this pass carries, and this
+task's job is to carry what they found.
+
+### What would falsify this approach
+
+- **`F1`** — a checker clean before the pass is red after it, and the cause is this pass's own edit
+  rather than a defect it exposed.
+- **`F2`** — a number written into either deliverable that `grep` cannot find in the claim cited beside
+  it, at the precision written.
+- **`F3`** — the sweep of `C-0174`–`C-0189` / `CH-0223`–`CH-0241` comes back **empty**, in which case
+  the residue is bookkeeping after all and this pass's headline is only the counts.
+- **`F4`** — `tools/T-234-census.py --check` reports occurrences **added** by this pass's own
+  annotations, in which case the drafting has created debt in the act of repairing it and the
+  classification table would have to be regenerated by an agent who owns it.
+- **`F5`** — the *"what we cannot answer"* list turns out to contain an entry the programme has
+  **answered**, which would make the twelfth pass's clean status reading a false negative rather than a
+  true one.
+
+### Acceptance predicates
+
+| | predicate |
+|---|---|
+| **`P1`** | every retained checker, **enumerated at the moment of running** rather than inherited, is clean on both documents after the pass, and its before reading is recorded |
+| **`P2`** | all three self-describing counts are **derived in this pass**, quoted with the command that derived them and the tree they were read in, and corrected by striking if they moved |
+| **`P3`** | every passage carrying a number `C-0175`, `C-0187` or `CH-0240` moves is annotated beside its struck predecessor, and every ratio is quoted with its construction |
+| **`P4`** | the *"what we cannot answer, and why"* list is read entry by entry against `TASKS.md`, and every entry naming a task the queue has closed either says so or is struck |
+| **`P5`** | the eight decisions are re-read against the **status** of every challenge they rest a number on, and any stale price is struck |
+| **`P6`** | the `15 × 4` passage `C-0186` left is either acted on or **left with its reason stated in the document**, and the work that would close it is a queue row |
+| **`P7`** | this pass's census is emitted as a machine-readable result recording passages read and passages moved **by kind**, taking a `--ref` and recording the resolved SHA, with no wall-clock timing and no step counter |

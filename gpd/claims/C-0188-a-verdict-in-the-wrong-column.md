@@ -11,6 +11,8 @@
 | **Conditions** | Documents and tools only — `TASKS.md`, five Python files in `tools/` and one Gradle task registration. No Kotlin source is touched, no result file other than this task's own is emitted, and **no physical number in the corpus moves** |
 | **Consumes** | [`C-0178`](C-0178-leading-verdict-and-row-coverage.md) (`P-30`, the leftmost-verdict rule and the shared predicate module), [`C-0177`](C-0177-queue-status-vocabulary.md) (`P-29`, the vocabulary gate and its measured predicate), [`C-0183`](C-0183-residue-as-a-gate.md) (`T-283`, the residue's own history walk, which this one is written to), [`C-0185`](C-0185-orphaned-mutation-anchors.md) (`P-31`, the harness census this task's harness is registered in), [`C-0083`](C-0083-markdown-tables-that-do-not-render.md) (*a gate that cannot come clean is not a gate*, and the escaped-pipe rule), [`C-0158`](C-0158-prose-gate-red.md) (a claim landing a gate records the gate's own reading) |
 | **Constrains** | every future reading of a `TASKS.md` row by `tools/trace-answers.py`, and therefore every *"is this task open"* statement in `ANSWERS.md` and `DECISIONS-FOR-NDI.md` |
+| **Corrected by** | [`CH-0245`](../challenges/CH-0245-the-leaf-cell-was-never-dropped.md) / [`C-0192`](C-0192-the-column-repair.md), iteration 45 — the eleven science rows did **not** drop their `Leaf` cell; the record was written in **front** of a leaf that is still there, 11 of 11. Nothing computed here moves; §4 and §9 are struck and corrected in place |
+| **Repaired by** | [`C-0192`](C-0192-the-column-repair.md) / [`T-292`](../tasks/T-292-the-column-repair.md), iteration 45 — all 21 rows repaired, the arm reads **0** and is now **GATED** |
 | **Raises** | [`CH-0241`](../challenges/CH-0241-the-preserved-priority-idiom-is-a-dropped-cell.md), against [`C-0178`](C-0178-leading-verdict-and-row-coverage.md) — its *leftmost verdict wins* rule is upheld and the **ground** it is stated on is not |
 
 ---
@@ -101,9 +103,17 @@ So the row renders an acceptance criterion under **Status** and its verdict unde
 The science table's row count includes the **two** rows this task adds and a concurrent claim's, all of which are written in the queue's own idiom and none of which fire —
 `CH-0182`, on a claim whose subject is the file it stands in.
 
-**Shape two, eleven rows.** The five-column science table's rows omit their **Leaf** cell,
-so the status record renders under **Leaf** and whatever follows it — usually the preserved priority note — renders under **Status**.
+**Shape two, eleven rows.** ~~The five-column science table's rows omit their **Leaf** cell,~~
+~~so the status record renders under **Leaf** and whatever follows it — usually the preserved priority note — renders under **Status**.~~
 That is the `T-276` shape exactly, with the live verdict and the superseded one exchanged.
+
+**CORRECTED, iteration 45 ([`CH-0245`](../challenges/CH-0245-the-leaf-cell-was-never-dropped.md), [`C-0192`](C-0192-the-column-repair.md)): the cell was never dropped.**
+Every one of the eleven Leaf cells **ends in its own leaf token** — `A8.2` on seven, `new` on two, `—` on two —
+and each agrees with the newest revision of `TASKS.md` in which that cell was a bare leaf, **11 of 11**.
+The record was written **in front of** a leaf that is still standing behind it.
+The finding is unchanged and its price is not: on the withdrawn reading eleven leaf values have to be supplied from outside the row,
+and on the true one the repair supplies **none** and moves **not one token**.
+This claim's own `TASKS.md` row says it correctly — *"written into the **Leaf** cell, **ending `A8.2`**"* — and this sentence did not.
 
 **The register is right on all 21 today, and by luck.**
 Nine of the eleven carry the live verdict in the leftmost cell, which is what `queue_status` takes.
@@ -200,7 +210,8 @@ twelve rows carry a leading `TODO` and nine of them are legitimately closed, bec
 
 At `C-0178`'s **own** baseline ref, **9 of those 9 rows are miscolumned**, and 20 rows fire in all.
 There is no *"whole column"* to apply anything to:
-the nine rows have **dropped a cell**, so the record renders under the wrong heading and the note lands in the status cell behind it.
+~~the nine rows have **dropped a cell**, so~~ the record renders under the wrong heading and the note lands in the status cell behind it.
+(**Corrected, iteration 45, [`CH-0245`](../challenges/CH-0245-the-leaf-cell-was-never-dropped.md)**: the record was written **in front of** the leaf, which is still in the cell — no cell was dropped.)
 
 **The rule is upheld and its ground is withdrawn.**
 Taking the leftmost verdict is still right — it is right on 9 of the 9 — and it is right for a reason nobody stated:

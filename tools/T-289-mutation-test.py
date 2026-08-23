@@ -130,11 +130,19 @@ MUTATIONS = [
         "            while row_index < len(lines):",
     ),
     (
-        "the arm becomes a GATE, which it cannot be while the queue carries 21 genuine rows",
+        # RE-ANCHORED by `T-292`, which repaired the 21 rows and promoted the arm.  The mutation
+        # is INVERTED with it: the rule under test used to be *this arm does not gate* and is now
+        # *this arm gates*, so the mutation that has to fail a named test is the one that puts it
+        # back.  A mutation table whose rows outlive the rule they mutate measures nothing.
+        "the arm reverts to ADVISORY, so a verdict in the wrong column stops failing the build",
         GATE,
-        """    miscolumned = _verdicts.miscolumned_verdicts(text)""",
-        """    miscolumned = _verdicts.miscolumned_verdicts(text)
-    defects += len(miscolumned)""",
+        """                identifier, line, phrase, heading, status_heading
+            )
+        )
+        defects += 1""",
+        """                identifier, line, phrase, heading, status_heading
+            )
+        )""",
     ),
     (
         "the advisory stops naming the repair, so a refusal says nothing about what to do",
@@ -159,9 +167,9 @@ MUTATIONS = [
         "the count line is dropped, so a residue that reads zero cannot be seen to",
         GATE,
         """    print(
-        "# miscolumned verdicts (T-289, ADVISORY -- 0 false positives over 140 revisions and it"
-        " cannot come clean without a queue edit): {} verdict(s) rendering under a heading that is"
-        " not their table's status column".format(len(miscolumned))
+        "# miscolumned verdicts (GATED since T-292, at a measured false-positive rate of 0 over"
+        " 140 revisions): {} verdict(s) rendering under a heading that is not their table's"
+        " status column".format(len(miscolumned))
     )""",
         "    pass",
     ),

@@ -1,0 +1,675 @@
+{
+  "task": "T-292",
+  "title": "the column repair -- twenty-one queue verdicts moved into their own table's status cell, proved content-preserving token by token",
+  "subject": "TASKS.md before and after the repair -- a corpus-subject result file, so the ref is an argument and the resolved SHA is recorded",
+  "baselineRef": "7f7957d8adf0821922775b6565297831fbd43cc4",
+  "baselineRefRequested": "HEAD",
+  "units": "none; every value is an integer count or a name",
+  "parameters": {
+    "corpus": "TASKS.md",
+    "predicate": "queue_verdicts.miscolumned_verdicts -- the gate's OWN predicate, so the repair cannot be about a different set of rows than the gate prints",
+    "shapeIsDerived": "from the column the verdict stands in relative to the status column, not from a list of identifiers",
+    "cellSplit": "unescaped pipes only, via tools/check-markdown-tables.py's own reader",
+    "blankedSpans": "struck spans, length-preservingly, before the row is split",
+    "tokenKey": "non-whitespace runs of the row's cell contents, strike markers removed on both sides because they are the repair's own deliberate addition",
+    "note": "no wall-clock timing and no step counter is emitted"
+  },
+  "cheapBound": {
+    "rule": "read the last whitespace-delimited token of each of the eleven Leaf cells",
+    "cost": "one split() per row; no history walk and no claim read",
+    "whatItSettled": "C-0188 §4 and CH-0241 both describe the science-table shape as a row that has DROPPED its Leaf cell, which would mean eleven leaf values had to be found from outside the row before one row could be repaired. The cheap bound says otherwise: the leaf is still there, at the END of the cell, and the record was written in FRONT of it",
+    "leafTokensFoundInTheRowItself": 11,
+    "leafValuesThatHadToBeSuppliedFromOutsideTheRow": 0,
+    "corroboratedAgainstHistory": 11
+  },
+  "reading": {
+    "atTheBaselineRef": [
+      [
+        "P-11",
+        493,
+        "TODO",
+        "notes",
+        "status"
+      ],
+      [
+        "P-21",
+        502,
+        "DONE",
+        "notes",
+        "status"
+      ],
+      [
+        "P-22",
+        503,
+        "DONE",
+        "notes",
+        "status"
+      ],
+      [
+        "P-25",
+        506,
+        "DONE",
+        "notes",
+        "status"
+      ],
+      [
+        "P-26",
+        507,
+        "DONE",
+        "notes",
+        "status"
+      ],
+      [
+        "P-27",
+        508,
+        "DONE",
+        "notes",
+        "status"
+      ],
+      [
+        "P-28",
+        509,
+        "DONE",
+        "notes",
+        "status"
+      ],
+      [
+        "P-29",
+        510,
+        "DONE",
+        "notes",
+        "status"
+      ],
+      [
+        "P-30",
+        511,
+        "DONE",
+        "notes",
+        "status"
+      ],
+      [
+        "P-31",
+        512,
+        "DONE",
+        "notes",
+        "status"
+      ],
+      [
+        "T-9",
+        530,
+        "PARTIALLY DONE",
+        "leaf",
+        "status"
+      ],
+      [
+        "T-263",
+        732,
+        "DONE",
+        "leaf",
+        "status"
+      ],
+      [
+        "T-265",
+        734,
+        "DONE",
+        "leaf",
+        "status"
+      ],
+      [
+        "T-266",
+        735,
+        "DONE",
+        "leaf",
+        "status"
+      ],
+      [
+        "T-267",
+        736,
+        "DONE",
+        "leaf",
+        "status"
+      ],
+      [
+        "T-268",
+        737,
+        "PARTIALLY DONE",
+        "leaf",
+        "status"
+      ],
+      [
+        "T-270",
+        739,
+        "DONE",
+        "leaf",
+        "status"
+      ],
+      [
+        "T-271",
+        740,
+        "DONE",
+        "leaf",
+        "status"
+      ],
+      [
+        "T-272",
+        741,
+        "PARTIALLY DONE",
+        "leaf",
+        "status"
+      ],
+      [
+        "T-274",
+        759,
+        "DONE",
+        "leaf",
+        "status"
+      ],
+      [
+        "T-275",
+        760,
+        "DONE",
+        "leaf",
+        "status"
+      ]
+    ],
+    "onTheWorkingTreeAfterTheRepair": [],
+    "miscolumnedBefore": 21,
+    "miscolumnedAfter": 0
+  },
+  "shapes": {
+    "recordWrittenInFrontOfTheLeaf": 11,
+    "acceptanceShiftedIntoTheStatusColumn": 10,
+    "unrepairable": 0
+  },
+  "rows": [
+    {
+      "row": "P-11",
+      "line": 493,
+      "repaired": true,
+      "shape": "acceptance shifted into the status column",
+      "verdictStoodUnder": "notes",
+      "nowStandsUnder": "status",
+      "leaf": null,
+      "tokensBefore": 62,
+      "tokensAfter": 63,
+      "tokensAdded": [
+        "—"
+      ],
+      "tokensRemoved": [],
+      "cellsBefore": 4,
+      "cellsAfter": 4
+    },
+    {
+      "row": "P-21",
+      "line": 502,
+      "repaired": true,
+      "shape": "acceptance shifted into the status column",
+      "verdictStoodUnder": "notes",
+      "nowStandsUnder": "status",
+      "leaf": null,
+      "tokensBefore": 238,
+      "tokensAfter": 239,
+      "tokensAdded": [
+        "—"
+      ],
+      "tokensRemoved": [],
+      "cellsBefore": 4,
+      "cellsAfter": 4
+    },
+    {
+      "row": "P-22",
+      "line": 503,
+      "repaired": true,
+      "shape": "acceptance shifted into the status column",
+      "verdictStoodUnder": "notes",
+      "nowStandsUnder": "status",
+      "leaf": null,
+      "tokensBefore": 329,
+      "tokensAfter": 330,
+      "tokensAdded": [
+        "—"
+      ],
+      "tokensRemoved": [],
+      "cellsBefore": 4,
+      "cellsAfter": 4
+    },
+    {
+      "row": "P-25",
+      "line": 506,
+      "repaired": true,
+      "shape": "acceptance shifted into the status column",
+      "verdictStoodUnder": "notes",
+      "nowStandsUnder": "status",
+      "leaf": null,
+      "tokensBefore": 256,
+      "tokensAfter": 257,
+      "tokensAdded": [
+        "—"
+      ],
+      "tokensRemoved": [],
+      "cellsBefore": 4,
+      "cellsAfter": 4
+    },
+    {
+      "row": "P-26",
+      "line": 507,
+      "repaired": true,
+      "shape": "acceptance shifted into the status column",
+      "verdictStoodUnder": "notes",
+      "nowStandsUnder": "status",
+      "leaf": null,
+      "tokensBefore": 239,
+      "tokensAfter": 240,
+      "tokensAdded": [
+        "—"
+      ],
+      "tokensRemoved": [],
+      "cellsBefore": 4,
+      "cellsAfter": 4
+    },
+    {
+      "row": "P-27",
+      "line": 508,
+      "repaired": true,
+      "shape": "acceptance shifted into the status column",
+      "verdictStoodUnder": "notes",
+      "nowStandsUnder": "status",
+      "leaf": null,
+      "tokensBefore": 578,
+      "tokensAfter": 579,
+      "tokensAdded": [
+        "—"
+      ],
+      "tokensRemoved": [],
+      "cellsBefore": 4,
+      "cellsAfter": 4
+    },
+    {
+      "row": "P-28",
+      "line": 509,
+      "repaired": true,
+      "shape": "acceptance shifted into the status column",
+      "verdictStoodUnder": "notes",
+      "nowStandsUnder": "status",
+      "leaf": null,
+      "tokensBefore": 485,
+      "tokensAfter": 486,
+      "tokensAdded": [
+        "—"
+      ],
+      "tokensRemoved": [],
+      "cellsBefore": 4,
+      "cellsAfter": 4
+    },
+    {
+      "row": "P-29",
+      "line": 510,
+      "repaired": true,
+      "shape": "acceptance shifted into the status column",
+      "verdictStoodUnder": "notes",
+      "nowStandsUnder": "status",
+      "leaf": null,
+      "tokensBefore": 431,
+      "tokensAfter": 432,
+      "tokensAdded": [
+        "—"
+      ],
+      "tokensRemoved": [],
+      "cellsBefore": 4,
+      "cellsAfter": 4
+    },
+    {
+      "row": "P-30",
+      "line": 511,
+      "repaired": true,
+      "shape": "acceptance shifted into the status column",
+      "verdictStoodUnder": "notes",
+      "nowStandsUnder": "status",
+      "leaf": null,
+      "tokensBefore": 400,
+      "tokensAfter": 401,
+      "tokensAdded": [
+        "—"
+      ],
+      "tokensRemoved": [],
+      "cellsBefore": 4,
+      "cellsAfter": 4
+    },
+    {
+      "row": "P-31",
+      "line": 512,
+      "repaired": true,
+      "shape": "acceptance shifted into the status column",
+      "verdictStoodUnder": "notes",
+      "nowStandsUnder": "status",
+      "leaf": null,
+      "tokensBefore": 439,
+      "tokensAfter": 440,
+      "tokensAdded": [
+        "—"
+      ],
+      "tokensRemoved": [],
+      "cellsBefore": 4,
+      "cellsAfter": 4
+    },
+    {
+      "row": "T-9",
+      "line": 530,
+      "repaired": true,
+      "shape": "record written in front of the leaf",
+      "verdictStoodUnder": "leaf",
+      "nowStandsUnder": "status",
+      "leaf": "new",
+      "tokensBefore": 867,
+      "tokensAfter": 867,
+      "tokensAdded": [],
+      "tokensRemoved": [],
+      "cellsBefore": 5,
+      "cellsAfter": 5,
+      "leafDerivedFrom": "the last whitespace-delimited token of the row's own Leaf cell",
+      "leafCorroboratedBy": "the newest revision of TASKS.md in which that cell was a bare leaf",
+      "leafInThatRevision": "new",
+      "thatRevision": "9e3585373d28bea072fe6962391ed2bc8cc70527",
+      "leafAgrees": true
+    },
+    {
+      "row": "T-263",
+      "line": 732,
+      "repaired": true,
+      "shape": "record written in front of the leaf",
+      "verdictStoodUnder": "leaf",
+      "nowStandsUnder": "status",
+      "leaf": "A8.2",
+      "tokensBefore": 371,
+      "tokensAfter": 371,
+      "tokensAdded": [],
+      "tokensRemoved": [],
+      "cellsBefore": 5,
+      "cellsAfter": 5,
+      "leafDerivedFrom": "the last whitespace-delimited token of the row's own Leaf cell",
+      "leafCorroboratedBy": "the newest revision of TASKS.md in which that cell was a bare leaf",
+      "leafInThatRevision": "A8.2",
+      "thatRevision": "23f68ab3ba579c7d2a94b461c4967556039e91e1",
+      "leafAgrees": true
+    },
+    {
+      "row": "T-265",
+      "line": 734,
+      "repaired": true,
+      "shape": "record written in front of the leaf",
+      "verdictStoodUnder": "leaf",
+      "nowStandsUnder": "status",
+      "leaf": "—",
+      "tokensBefore": 386,
+      "tokensAfter": 386,
+      "tokensAdded": [],
+      "tokensRemoved": [],
+      "cellsBefore": 5,
+      "cellsAfter": 5,
+      "leafDerivedFrom": "the last whitespace-delimited token of the row's own Leaf cell",
+      "leafCorroboratedBy": "the newest revision of TASKS.md in which that cell was a bare leaf",
+      "leafInThatRevision": "—",
+      "thatRevision": "344c78b5caebac8016ea2a61ef655ef96c276d3f",
+      "leafAgrees": true
+    },
+    {
+      "row": "T-266",
+      "line": 735,
+      "repaired": true,
+      "shape": "record written in front of the leaf",
+      "verdictStoodUnder": "leaf",
+      "nowStandsUnder": "status",
+      "leaf": "—",
+      "tokensBefore": 411,
+      "tokensAfter": 411,
+      "tokensAdded": [],
+      "tokensRemoved": [],
+      "cellsBefore": 5,
+      "cellsAfter": 5,
+      "leafDerivedFrom": "the last whitespace-delimited token of the row's own Leaf cell",
+      "leafCorroboratedBy": "the newest revision of TASKS.md in which that cell was a bare leaf",
+      "leafInThatRevision": "—",
+      "thatRevision": "344c78b5caebac8016ea2a61ef655ef96c276d3f",
+      "leafAgrees": true
+    },
+    {
+      "row": "T-267",
+      "line": 736,
+      "repaired": true,
+      "shape": "record written in front of the leaf",
+      "verdictStoodUnder": "leaf",
+      "nowStandsUnder": "status",
+      "leaf": "—",
+      "tokensBefore": 385,
+      "tokensAfter": 385,
+      "tokensAdded": [],
+      "tokensRemoved": [],
+      "cellsBefore": 5,
+      "cellsAfter": 5,
+      "leafDerivedFrom": "the last whitespace-delimited token of the row's own Leaf cell",
+      "leafCorroboratedBy": "the newest revision of TASKS.md in which that cell was a bare leaf",
+      "leafInThatRevision": "—",
+      "thatRevision": "ee5cf1aa3493a50775522664984617bea0822c8c",
+      "leafAgrees": true
+    },
+    {
+      "row": "T-268",
+      "line": 737,
+      "repaired": true,
+      "shape": "record written in front of the leaf",
+      "verdictStoodUnder": "leaf",
+      "nowStandsUnder": "status",
+      "leaf": "—",
+      "tokensBefore": 595,
+      "tokensAfter": 595,
+      "tokensAdded": [],
+      "tokensRemoved": [],
+      "cellsBefore": 5,
+      "cellsAfter": 5,
+      "leafDerivedFrom": "the last whitespace-delimited token of the row's own Leaf cell",
+      "leafCorroboratedBy": "the newest revision of TASKS.md in which that cell was a bare leaf",
+      "leafInThatRevision": "—",
+      "thatRevision": "344c78b5caebac8016ea2a61ef655ef96c276d3f",
+      "leafAgrees": true
+    },
+    {
+      "row": "T-270",
+      "line": 739,
+      "repaired": true,
+      "shape": "record written in front of the leaf",
+      "verdictStoodUnder": "leaf",
+      "nowStandsUnder": "status",
+      "leaf": "A8.2",
+      "tokensBefore": 515,
+      "tokensAfter": 515,
+      "tokensAdded": [],
+      "tokensRemoved": [],
+      "cellsBefore": 5,
+      "cellsAfter": 5,
+      "leafDerivedFrom": "the last whitespace-delimited token of the row's own Leaf cell",
+      "leafCorroboratedBy": "the newest revision of TASKS.md in which that cell was a bare leaf",
+      "leafInThatRevision": "A8.2",
+      "thatRevision": "6e945fd4866904a05d72fcfb5eb5430a8347f722",
+      "leafAgrees": true
+    },
+    {
+      "row": "T-271",
+      "line": 740,
+      "repaired": true,
+      "shape": "record written in front of the leaf",
+      "verdictStoodUnder": "leaf",
+      "nowStandsUnder": "status",
+      "leaf": "A8.2",
+      "tokensBefore": 473,
+      "tokensAfter": 473,
+      "tokensAdded": [],
+      "tokensRemoved": [],
+      "cellsBefore": 5,
+      "cellsAfter": 5,
+      "leafDerivedFrom": "the last whitespace-delimited token of the row's own Leaf cell",
+      "leafCorroboratedBy": "the newest revision of TASKS.md in which that cell was a bare leaf",
+      "leafInThatRevision": "A8.2",
+      "thatRevision": "dab6b82ca532f99a8f1296268adc37d409fe2031",
+      "leafAgrees": true
+    },
+    {
+      "row": "T-272",
+      "line": 741,
+      "repaired": true,
+      "shape": "record written in front of the leaf",
+      "verdictStoodUnder": "leaf",
+      "nowStandsUnder": "status",
+      "leaf": "A8.2",
+      "tokensBefore": 454,
+      "tokensAfter": 454,
+      "tokensAdded": [],
+      "tokensRemoved": [],
+      "cellsBefore": 5,
+      "cellsAfter": 5,
+      "leafDerivedFrom": "the last whitespace-delimited token of the row's own Leaf cell",
+      "leafCorroboratedBy": "the newest revision of TASKS.md in which that cell was a bare leaf",
+      "leafInThatRevision": "A8.2",
+      "thatRevision": "5a46a08febec6b1561aef5e26259d85191d4a4c9",
+      "leafAgrees": true
+    },
+    {
+      "row": "T-274",
+      "line": 759,
+      "repaired": true,
+      "shape": "record written in front of the leaf",
+      "verdictStoodUnder": "leaf",
+      "nowStandsUnder": "status",
+      "leaf": "A8.2",
+      "tokensBefore": 495,
+      "tokensAfter": 495,
+      "tokensAdded": [],
+      "tokensRemoved": [],
+      "cellsBefore": 5,
+      "cellsAfter": 5,
+      "leafDerivedFrom": "the last whitespace-delimited token of the row's own Leaf cell",
+      "leafCorroboratedBy": "the newest revision of TASKS.md in which that cell was a bare leaf",
+      "leafInThatRevision": "A8.2",
+      "thatRevision": "14e40c88f55b45146fc3e8766967bf28ed79b459",
+      "leafAgrees": true
+    },
+    {
+      "row": "T-275",
+      "line": 760,
+      "repaired": true,
+      "shape": "record written in front of the leaf",
+      "verdictStoodUnder": "leaf",
+      "nowStandsUnder": "status",
+      "leaf": "new",
+      "tokensBefore": 476,
+      "tokensAfter": 476,
+      "tokensAdded": [],
+      "tokensRemoved": [],
+      "cellsBefore": 5,
+      "cellsAfter": 5,
+      "leafDerivedFrom": "the last whitespace-delimited token of the row's own Leaf cell",
+      "leafCorroboratedBy": "the newest revision of TASKS.md in which that cell was a bare leaf",
+      "leafInThatRevision": "new",
+      "thatRevision": "7368986453c719b33eda9980130c51cb14518804",
+      "leafAgrees": true
+    }
+  ],
+  "tokenPreservation": {
+    "rule": "for each row the multiset of non-whitespace tokens of the row's cell contents is compared before and after; a row that loses a token refuses the write",
+    "rowsWithNoTokenAddedAndNoneRemoved": 11,
+    "rowsThatLostAToken": 0,
+    "tokensAddedInTotal": [
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    "whatTheAdditionsAre": "one em dash per four-column row, joining the task headline to the acceptance clause the repair folds into the same cell -- P-20's own repair. The eleven five-column rows add and remove nothing at all",
+    "strikeMarkersAreNormalisedAway": "on BOTH sides, and they are enumerated separately: the repair strikes the leading verdict run of each superseded note, which is the queue's own majority idiom",
+    "cellCountsUnchanged": true
+  },
+  "theFourColumnChoice": {
+    "question": "move the ten rows, or retitle the header the ten rows do not follow",
+    "measurement": [
+      {
+        "header": "ID | Task | Status | Notes",
+        "statusColumn": 2,
+        "taskRows": 31,
+        "rowsFollowingTheHeader": 19,
+        "rowsWithNoVerdict": 2,
+        "rowsWithAVerdictSomewhereElse": 10
+      },
+      {
+        "header": "ID | Task | Acceptance (abridged — full text in `gpd/tasks/`) | Leaf | Status",
+        "statusColumn": 4,
+        "taskRows": 255,
+        "rowsFollowingTheHeader": 236,
+        "rowsWithNoVerdict": 8,
+        "rowsWithAVerdictSomewhereElse": 11
+      }
+    ],
+    "whatItSays": "of the four-column table's 31 task rows, 19 follow its header, 2 carry no verdict and 10 do not follow it -- so retitling the header would put 19 rows outside it against the 10 that are outside it now, and the rows are repaired",
+    "precedentsInThisVeryTable": {
+      "P-12": "its acceptance cell was folded away, leaving the verdict in the status cell",
+      "P-20": "its acceptance was merged into the TASK cell, which moved the verdict one column left -- the repair this task applies to all ten"
+    }
+  },
+  "register": {
+    "rowsReadBefore": 286,
+    "rowsReadAfter": 288,
+    "measuredOnTheRepairAlone": {
+      "whatIsCompared": "the ref's own file against the ref's own file with the twenty-one rows moved -- nothing else differs, so this is the repair's own effect and F4 is read here",
+      "rowsRead": 286,
+      "rowsWhoseReadingMoved": [],
+      "openBefore": 68,
+      "openAfter": 68,
+      "liveVerdictsBefore": 287,
+      "liveVerdictsAfter": 276,
+      "whyTheLiveVerdictCountFalls": "the eleven superseded notes are now struck, and none of them was ever its row's LEFTMOST verdict -- which is why no reading moves"
+    },
+    "rowsSharedByBothReadings": 286,
+    "rowsWhoseReadingMoved": [
+      "T-276",
+      "T-292"
+    ],
+    "rowsAddedSinceTheRef": [
+      "T-294",
+      "T-295"
+    ],
+    "rowsRemovedSinceTheRef": [],
+    "whyTheWorkingTreeReadingDiffers": "T-292 is this task's own row and is deliberately closed by it; T-276 is a concurrent agent's row, which this task does not own and does not touch. Neither movement is the column repair's, and the repair-alone reading above is 0 of 286",
+    "whatTheAddedRowsAre": "rows written after the ref -- this task's own T-292 record and T-295, and any a concurrent agent landed. A row that did not exist at the ref has not had its reading moved by anything, so it is reported here rather than as a movement",
+    "openBefore": 68,
+    "openAfter": 68,
+    "whyNothingMoves": "the register takes a row's LEFTMOST live verdict and the repair moves a verdict between cells of the same row without changing which one comes first -- which is exactly CH-0241's point, that the rule was right by luck on these rows"
+  },
+  "gate": {
+    "armBefore": "ADVISORY (T-289/C-0188), on a reading of 21",
+    "armAfter": "GATED (T-292), on a reading of 0",
+    "promotionCondition": "C-0188 §6: when the advisory count reaches 0 the arm becomes a gate by deleting a word",
+    "gateReadingOnTheTreeThisLandsOn": {
+      "tool": "tools/check-queue-vocabulary.py",
+      "defects": 0,
+      "miscolumnedVerdicts": 0,
+      "exitCode": 0
+    },
+    "harnessCensus": "tools/P-31-harness-census.py --check: 0 unresolved over 12 harnesses, wired 12 of 12"
+  },
+  "mutation": {
+    "mutations": 21,
+    "survivors": 0,
+    "survivorNames": [],
+    "baselineSubtracted": 0,
+    "headline": "21 mutation(s), 0 survivor(s)"
+  },
+  "namedTests": {
+    "columnRepairSelfTests": 28,
+    "queueVocabularySelfTestCallSites": 80,
+    "bothDirectionsOfThePromotion": "a miscolumned verdict must FAIL the gate and a clean queue must PASS it; the T-289 mutation table's 'the arm becomes a GATE' row is INVERTED to 'the arm reverts to ADVISORY', because a mutation row that outlives the rule it mutates measures nothing"
+  }
+}

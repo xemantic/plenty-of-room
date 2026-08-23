@@ -152,6 +152,24 @@ crossover already sits **`8.57142857°`** off the line of centres — at **every
 
 ## 8. `T-254` Deliverable 4 — the coefficient, as a distribution and as a ceiling
 
+> **THE COORDINATE OF THIS SECTION IS WITHDRAWN AND NOT ONE OF ITS NUMBERS IS**
+> ([`CH-0240`](../challenges/CH-0240-the-allowed-departure-is-common-mode.md) **UPHELD** by
+> [`C-0190`](C-0190-the-departure-is-common-mode-and-what-replaces-it.md), `T-291`, iteration 45).
+> Every figure below is right about the object it was taken on — the unit responses, the medians,
+> the `1.66×`, the triangle-inequality ceilings and the three swept assignments all reproduce —
+> and that object is **not the load the lattice demands**.
+> A level displacement rotates **both** backbones the same way, so the departure is **common-mode**
+> and its coefficient on the relative roll `Φ_upper − Φ_lower`, which is the coordinate the
+> dihedral spring and the unit-response bank are written on, is **exactly zero**:
+> the applied load's projection on the demanded kinematics is `0.0` at all 59 ties.
+> What the raster actually demands is `17.1428571°` of **twist** on each of 58 interior helices,
+> and on that channel the free tile at `f = 0.30` reads **0.296735462** against the
+> **0.0457993778** in the table below — the term the corpus applies is not a small version of the
+> right one, it is a different one.
+> ~~The sign of each turn's departure is fixed by no source in this repository, so it is swept:~~
+> superseded by `C-0187` (58 of 59 binaries derived) and now by `C-0190` (the twist assignment is
+> **uniform**, and one global phase remains).
+
 At `10 × 6` and the calibrated coupling, unit responses over all 59 turns, taken on
 `withoutPrestrain` (**`F4` did not fire**):
 

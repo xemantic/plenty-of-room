@@ -1088,6 +1088,46 @@ class HoneycombGrillage(
         return HoneycombDeflection(this, factorisation.solve(load), uniformPressure(0.0))
     }
 
+    /**
+     * `T-291` — the face field of a per-beam **torsional eigenstrain**: a built-in twist of
+     * `twistRadians[beam]` distributed uniformly over that beam's whole length, and exactly zero
+     * on any beam the map does not name.
+     *
+     * This is the coordinate a **common-mode** azimuthal demand actually loads. `CH-0240` shows
+     * that displacing a scaffold crossover rotates **both** backbones the same way, so the demand
+     * is a roll of each duplex about its **own** axis and has coefficient exactly zero on the
+     * relative roll `Φ_upper − Φ_lower` the tie prestrain is the work conjugate of. Where the
+     * demands at a beam's two ends differ — which the derived alternation of `C-0187` makes them
+     * do at every interior helix — what is left is a twist of that beam, and this is its load.
+     *
+     * The element torsion spring is `½ (GJ/L_e)(ΔΦ_e − θ_e)²`, so an eigenstrain contributes a
+     * fixed couple `∓ GJ θ_e / L_e` at the element's two roll coordinates. A **uniform twist
+     * rate** puts `θ_e = θ₀ L_e / L`, which makes `GJ θ_e / L_e = GJ θ₀ / L` the same at every
+     * element — so the interior contributions **telescope away** and the whole load is one couple
+     * pair at the beam's two **end** nodes, at any node spacing and any [subdivisions]. That is
+     * asserted as a test rather than argued.
+     *
+     * Like every prestrain here it is a **load**: no entry of the stiffness matrix moves, the
+     * field is exactly linear in [twistRadians], and one solve fixes the whole axis.
+     */
+    fun beamTwistResponse(twistRadians: Map<Int, Double>): HoneycombDeflection {
+        twistRadians.forEach { (beam, twist) ->
+            require(beam in 0 until beamCount) {
+                "a twist must name a beam of the block, was: $beam"
+            }
+            require(twist.isFinite()) { "the twist at beam $beam must be finite, was: $twist" }
+        }
+        val span = nodeS.last() - nodeS.first()
+        val load = F64Array(degreesOfFreedom)
+        twistRadians.forEach { (beam, twist) ->
+            val couple = duplex.torsionalRigidity * twist / span
+            load[dof(nodeS.size - 1, beam, PHI)] += couple
+            load[dof(0, beam, PHI)] -= couple
+        }
+        load[pinnedDof] = 0.0
+        return HoneycombDeflection(this, factorisation.solve(load), uniformPressure(0.0))
+    }
+
     /** The relative roll in radians across the turn tie [element] in [field]. */
     fun turnRotation(field: F64Array, element: HoneycombTurnElement): Double =
         field[dof(element.node, element.tie.upperBeam, PHI)] -

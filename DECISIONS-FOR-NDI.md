@@ -223,7 +223,7 @@ model-consistent and traceable to a claim, never empirically demonstrated.
 | 4 | Which device does §3's *desired* clause ask for? | `T-112` | Every desired-stroke number in the corpus has to be quoted twice | **One device, placed at the acceptable clause** | **TWO DEVICES.** Device B is placed at 10 pN/nm and its binding constraint becomes `C-0017`'s stability floor |
 | 5 | What is the scaffold — linear or circular, M13 or synthetic, and how long? | `T-154` | A seam costs 6–12 of 34 arm stations, and §3's 40.0 nm is not a buildable seamless width | **A purpose-length scaffold**; the choice is a fabrication decision, not a modelling one | **CIRCULAR M13, ~7–8 k nt** — so the remainder is the DEFAULT — and the remedy for the excess is *"just make the tile thicker"* |
 | 6 | Does §3 admit a **two-layer** tile, or is single-layer a requirement? | `T-166` | The only coupling topology that narrows the flatness negative is multilayer, and it is the one motif here with a published precedent | **A yes/no is enough**; a *no* closes the last open recovery route | **YES, BY IMPLICATION**, and volunteered rather than granted. Reopens the body axis (`T-191`), not the coupling axis |
-| **7** | ~~**NEW — is a 38 × 25 nm tile acceptable, in exchange for removing the last unmeasured dependency?**~~ **SUPERSEDED AS POSED, iteration 35** (`C-0144` §4, on `C-0141`) — **RE-POSED as two questions: confirm `10 × 6`, and name the scaffold** (§7) | item 12 of the queue's questions for Kazik — the only row here whose owner column names a decision rather than a task, its analysis having closed in iteration 25 (§7) | ~~Carrying the interlayer-coupling calibration as a live dependency on the flatness verdict, and the coupled result at 1 of 8 cells rather than 8 of 8~~ — **the cost of deferring has REVERSED SIGN**: the tile this question offered as its *default*, `15 × 4`, is **1.40084263×** §3's footprint, **fails** `T-5b` at the measured band's adverse end (**0.101759944**) and is **0 of 8** coupled cells at both ends of that band. **RE-READ against iteration 40 (`C-0167`, `C-0154`, `CH-0213`): the coupled-cell halves of this row are SMEARED single-layer square-lattice solves and on the honeycomb GRILLAGE ~~no coupled cell of either cross-section is flat~~ — RESTATED, iteration 43 (`C-0180`, `CH-0234`): with the raster's own 59 turn ties present **two** of `10 × 6`'s 64 cells are, and `15 × 4` was not re-graded coupled at all — but the ordering STRENGTHENS, because `15 × 4`'s FREE tile is outside `T-5b` at every enhancement read on that lattice (0.312237799 / 0.227177955 / 0.220064299) where `10 × 6`'s is inside it (0.0501417315 / 0.0522223659). This row now stands on the UNCOUPLED tile alone** | ~~**`10 × 6` on both flatness and published folding yield — but the footprint is a specification and only NDI holds that column**~~ **`10 × 6` on all THREE criteria this programme can rank — flatness, published folding yield and now footprint, which is 0.929467162 of §3's. There is no trade left to weigh** — **and since iteration 39 the block is a committed scadnano FILE that the reference implementation loads with zero warnings and that reads `ADMISSIBLE` at ZERO forced crossovers** (`C-0160`, `C-0164`), so a *yes* is now given against an object rather than against a pair of integers. It carries **no staple set** and `ADMISSIBLE` is a statement about this repository's rules, not about foldability — **and since iteration 40 a fourth stated omission: the file does not declare its scaffold TOPOLOGY, so it reads as LINEAR by default where the budget it was drawn to is M13's CIRCLE** ([`CH-0215`](gpd/challenges/CH-0215-the-artifact-does-not-state-its-scaffold-topology.md), open; no number and no verdict moves, `C-0168`) | *raised iteration 26; **superseded as posed and re-posed iteration 35**; **updated iteration 39**; awaiting* |
+| **7** | ~~**NEW — is a 38 × 25 nm tile acceptable, in exchange for removing the last unmeasured dependency?**~~ **SUPERSEDED AS POSED, iteration 35** (`C-0144` §4, on `C-0141`) — **RE-POSED as two questions: confirm `10 × 6`, and name the scaffold** (§7) | item 12 of the queue's questions for Kazik — the only row here whose owner column names a decision rather than a task, its analysis having closed in iteration 25 (§7) | ~~Carrying the interlayer-coupling calibration as a live dependency on the flatness verdict, and the coupled result at 1 of 8 cells rather than 8 of 8~~ — **the cost of deferring has REVERSED SIGN**: the tile this question offered as its *default*, `15 × 4`, is **1.40084263×** §3's footprint, **fails** `T-5b` at the measured band's adverse end (**0.101759944**) and is **0 of 8** coupled cells at both ends of that band. **RE-READ against iteration 40 (`C-0167`, `C-0154`, `CH-0213`): the coupled-cell halves of this row are SMEARED single-layer square-lattice solves and on the honeycomb GRILLAGE ~~no coupled cell of either cross-section is flat~~ — RESTATED, iteration 43 (`C-0180`, `CH-0234`): with the raster's own 59 turn ties present **two** of `10 × 6`'s 64 cells are — a ZERO-PRESTRAIN count, and iteration 45 ([`C-0187`](gpd/claims/C-0187-the-turn-prestrain-sign-is-derived.md)) derives the turn departure's sign and leaves one **global phase**, at which `1` of `64` is flat at each phase and **`0` of `64` at both** — and `15 × 4` was not re-graded coupled at all — but the ordering STRENGTHENS, because `15 × 4`'s FREE tile is outside `T-5b` at every enhancement read on that lattice (0.312237799 / 0.227177955 / 0.220064299) where `10 × 6`'s is inside it (0.0501417315 / 0.0522223659). This row now stands on the UNCOUPLED tile alone**. **AND THE TWO SIDES OF THIS CELL ARE DELIBERATELY READ IN THE SAME STATE, iteration 45.** Both cross-sections' figures here are **untied** — `C-0180` re-grades `10 × 6` only, so giving this side its tied numbers (0.0446459684 / 0.0467367262) while `15 × 4` cannot be given any would make the row read as a measured ordering across two lattice states when only one side moved. It is left in the untied state on purpose; the tied `15 × 4` re-grade that would close it is **`T-294`**, and until it runs the ordering is quoted like for like | ~~**`10 × 6` on both flatness and published folding yield — but the footprint is a specification and only NDI holds that column**~~ **`10 × 6` on all THREE criteria this programme can rank — flatness, published folding yield and now footprint, which is 0.929467162 of §3's. There is no trade left to weigh** — **and since iteration 39 the block is a committed scadnano FILE that the reference implementation loads with zero warnings and that reads `ADMISSIBLE` at ZERO forced crossovers** (`C-0160`, `C-0164`), so a *yes* is now given against an object rather than against a pair of integers. It carries **no staple set** and `ADMISSIBLE` is a statement about this repository's rules, not about foldability — **and since iteration 40 a fourth stated omission: the file does not declare its scaffold TOPOLOGY, so it reads as LINEAR by default where the budget it was drawn to is M13's CIRCLE** ([`CH-0215`](gpd/challenges/CH-0215-the-artifact-does-not-state-its-scaffold-topology.md), open; no number and no verdict moves, `C-0168`) | *raised iteration 26; **superseded as posed and re-posed iteration 35**; **updated iteration 39**; awaiting* |
 | **8** | **NEW — which width reading is the Gen-1 tile SPECIFIED to: the ~~112 bp = 38.08 nm~~ **`109 bp`** span every one of its rows has, or the 116 bp = 39.44 nm box the folded block occupies?** (§8) | `T-242`, and item 13 of the queue's questions for Kazik | ~~The two readings are **3.57 %** apart and the difference is a **stagger**, not a length. Deferring means a four-layer flatness verdict decided by a **0.07 nm** slack against a numerical guard — **6 flat cells of 8 against 3** (`C-0146`, `CH-0185`)~~ **RESTATED, iteration 38 (`C-0151`, `CH-0195`): the difference is the `7 bp = 2.38 nm` stagger of the DRAWABLE `102 / 109` raster, and the flatness threshold is WITHDRAWN — the eleventh and twelfth columns both belonged to a raster that does not close, and the drawable one reads 10 columns at every guard convention.** What deferring costs is now the drafting ambiguity alone — every plan margin in the corpus quoted at whichever width its author happened to take | **None. This programme cannot rank them**, because no model here has a per-row row length and both readings are true of the same object. What it can do is say what each costs, and ask **what a ~~`1.36 nm`~~ `2.38 nm` stagger costs NDI**. **RE-READ against iteration 39 (`C-0160`, `C-0164`): nothing moves it** — the block is now a file and **both** readings are re-derived on that same file, so drawing the object did not choose between them | *raised iteration 36; **re-read iteration 39**; awaiting* |
 
 ---
@@ -932,10 +932,34 @@ a factor of **9.3**.
 And the tail runs the other way: the median ratio is below one at **64 of 64** cells while the **90th percentile of
 that same ratio is above one at 27** of them, the worst single realisation reads **1.15725406**, and the ties are
 adverse at between **0.2 %** and **27.45 %** of the ensemble depending on the cell.
-**(3) The recovery rests on a sign nothing in this repository fixes.** Every *allowed* honeycomb scaffold crossover
+~~**(3) The recovery rests on a sign nothing in this repository fixes.** Every *allowed* honeycomb scaffold crossover
 already carries **8.57142857°** of built-in relative roll, and a prestrain is a **load**: at that departure each
 cell moves by up to **0.00242194151** of the stroke — **5.7×** the deciding margin — so exactly **1 of 64** is flat
-at each sign, and it is a **different** cell. That is [`T-284`](TASKS.md), open.
+at each sign, and it is a **different** cell. That is [`T-284`](TASKS.md), open.~~
+**(3) RESTATED, iteration 45 — THE SIGN IS DERIVED, AND THE RECOVERY IS PHASE-CONTINGENT RATHER THAN UNSETTLED**
+([`C-0187`](gpd/claims/C-0187-the-turn-prestrain-sign-is-derived.md), `T-284`;
+[`CH-0240`](gpd/challenges/CH-0240-the-allowed-departure-is-common-mode.md)).
+caDNAno's `±5 bp` is an integer approximation to a `5.25 bp` half turn, so which side of its own staple position a
+crossover sits on fixes the sign, and `C-0148`'s closure condition pins **58 of the 59** binaries — strictly
+alternating, **30** turns at the high rim and **29** at the low.
+The two *uniform* readings struck above are therefore both off-lattice.
+What survives is one **global phase**: graded on the same 64 cells, **`1` of `64`** is flat at each phase,
+**`0` of `64` at both**, and **`2` of `64`** are phase-contingent — a cell escaping only with a zero-prestrain
+90th percentile below **`0.0979624378`**, against a corpus best of **`0.0995744767`**, at which **0 of 64 qualify**.
+**And the coordinate this load is applied through is itself disputed** (`CH-0240`, raised): a level displacement
+rotates **both** backbones the same way, so the allowed departure has coefficient **exactly zero** on a relative
+roll. No number of `C-0175` or `C-0180` is disputed; what would replace the term is a per-beam torsional
+eigenstrain nothing has priced, and that is `T-291`.
+**AND `CH-0240` IS NOW UPHELD, IN THE SAME ITERATION**
+([`C-0190`](gpd/claims/C-0190-the-departure-is-common-mode-and-what-replaces-it.md), `T-291`), on three checks
+and no solve: the two backbones are **antipodal at every one of the 43 level displacements** of the period, and
+the tie prestrain load's projection on the demanded common-mode roll is **exactly `0.0` at all 59 ties**.
+The replacement is **priced and it is not small** — `17.1428571°` of **twist** on each of **58** interior
+helices, ceiling **`8.31368089 k_BT`** over the block, which is **`1.03924948`** of one crossover column of the
+host sheet, and the host sheet folds. Graded on the same 64 cells it gives **`0 of 64`** flat at **either**
+sign. **So the two recovered cells do not survive the corrected coordinate**, and what the magnitude really
+turns on is the tie's **common-mode** stiffness, which the lattice does not carry at all
+([`CH-0242`](gpd/challenges/CH-0242-the-tie-carries-no-common-mode-stiffness.md)).
 **What does NOT change**: 62 of 64 coupled cells still fail, the recommended one-column cell among them; every
 coupled cell is still worse than the uncoupled tile, at **64 of 64**; and the uncoupled block is still what is
 flat, moving the favourable way to **0.0446459684** and **0.0467367262** with the ties, against 0.0501417315 and
@@ -1076,8 +1100,20 @@ helix **ends**, which is a coordinate in the tile plane at right angles to the g
 are the tile's RIM, the coefficient of the raggedness on the normal-direction flatness field is exactly zero,
 and `T-5b`'s convention cannot read it at all.** The residual channel — a 2-row rim modulation at **7.608 nm**
 against across-helix bending lengths of **17.2310927** (`15 × 4`) and **23.2114857 nm** (`10 × 6`) — is bounded
-at **5.54399427e−05** and **1.68371917e−05** of the stroke, against the **0.0274976866** of headroom the
-tightest flat coupled cell has: a margin of **496×**, consuming at most **0.2016 %** of it.
+at **5.54399427e−05** and **1.68371917e−05** of the stroke, ~~against the **0.0274976866** of headroom the
+tightest flat coupled cell has: a margin of **496×**, consuming at most **0.2016 %** of it.~~
+**RESTATED, iteration 45 — BOTH THE BOUND AND ITS COMPARAND HAVE MOVED**
+([`C-0175`](gpd/claims/C-0175-drawable-raster-rim.md), `T-258`).
+At the recommended `102 / 109` raster the relief is `7 / 14 bp` and the bound is **`9.96901722e−05`** of the
+stroke — `1.79816514×`, which decomposes into **two** factors, `7/4` in the relief and `112/109` in the row span,
+and not the one a reader would predict.
+And that headroom was `C-0142`'s tightest coupled cell, a state
+[`C-0167`](gpd/claims/C-0167-coupled-cells-on-the-honeycomb-grillage.md) has withdrawn — so `496×`
+(`275.831468×` on `C-0175`'s own arithmetic) has no live comparand, and the margins against what still exists
+are **`262.520141×`** at the tightest cell flat with no defects and **`9177.31736×`** at the uncoupled
+four-layer tile.
+**Nothing NDI has to decide moves**: the coefficient on the gap-facing flatness field is **exactly zero at any
+relief**, a statement that carries no magnitude, so this verdict never rested on the margin.
 **What the raggedness does cost is plan budget**, and there it is not small: a 4 bp short row has **1.36 nm**
 less axial extent outboard of a fixed root plane, against a `C-0141` outboard ceiling that **saturates at
 2.380 nm** at 90 demanded paths — **0.571 of it**, and 0.036 at 10–15 paths.
@@ -1158,7 +1194,7 @@ rows of six helices, which is ~~**38.08 × 25.36 nm**~~ **38.08 × 37.504 nm, 0.
 |---|---|---|
 | footprint | ~~38.08 × 38.04 nm~~ **38.08 × 56.524 nm — 1.40084263× §3's** | ~~**38.08 × 25.36 nm — 0.667 of it**~~ **38.08 × 37.504 nm — 0.929467162 of §3's** |
 | folding, measured by Douglas et al. | sharp monomer band, 1 of 3 of seven | **the greatest fraction of defect-free objects** |
-| free tile, uncoupled | ~~0.0577199433 of the stroke~~ **0.0978155002** | ~~**0.00874363524 — 6.6× flatter**~~ **0.0240648102 — 4.06× flatter, which is the ratio of the two cells of this row and is stated by no claim** |
+| free tile, uncoupled | ~~0.0577199433 of the stroke~~ **0.0978155002** | ~~**0.00874363524 — 6.6× flatter**~~ ~~**0.0240648102 — 4.06× flatter, which is the ratio of the two cells of this row and is stated by no claim**~~ **BOTH ARGUMENTS MOVED, iteration 45** ([`C-0154`](gpd/claims/C-0154-honeycomb-grillage.md), [`C-0167`](gpd/claims/C-0167-coupled-cells-on-the-honeycomb-grillage.md)): both are smeared-sheet free tiles, and on the honeycomb **grillage** `15 × 4` reads **0.312237799 / 0.227177955 / 0.220064299** against `10 × 6`'s **0.127358454** at no enhancement and **0.0449400126 / 0.0477844467** at the calibrated ones. The two enhancement ladders are **different**, so there is no matched pair to divide and **no multiple is restated**; what survives is the ordering, and it is stronger |
 | flatness threshold in the interlayer coupling | ~~`f` = 0.0788618807, cleared **3.29690337×**~~ **`f` = 0.276970522 — INSIDE the measured 0.26–0.33 band, and it FAILS at 0.26** | ~~**none — flat at every `f` including 0**~~ **RESTATED, iteration 40 (`C-0167`, `C-0154`): a threshold DOES exist on the honeycomb grillage — enhancement-free the block dishes 0.132443428 / 0.127358454, neither flat — and the measured band clears it at 0.0501417315 / 0.0522223659** **TIED, iteration 43 (`C-0180`): with the raster's own 59 turn ties the same block dishes 0.0446459684 / 0.0467367262, and enhancement-free 0.12738041 — still not flat.** |
 | coupled, under the measured staple dropout | ~~1 of 8 cells flat at the 90th percentile~~ **0 of 8, at both ends of the band** | ~~**8 of 8**, best 0.0278431488~~ ~~**4 of 8**, best **0.0680677948**~~ **REVERSED, iteration 40 (`C-0167`, `CH-0213`): those were smeared-sheet solves; on the honeycomb grillage `0` of `64` cells clear `T-5b` against `15` of `64` smeared, and the recommended cell is `0.145086839`. The UNCOUPLED block stays flat, and the recommended cell is flat at zero defects, `0.0626407003`** **RESTATED, iteration 43 (`C-0180`, `CH-0234`): that lattice omits the raster's own 59 turn ties, and with them present the count is `2` of `64` — the recommended cell still not flat, and the recovery resting on a prestrain sign nothing here fixes (`CH-0228`, `T-284`) **RESTATED, iteration 44 ([`C-0187`](gpd/claims/C-0187-the-turn-prestrain-sign-is-derived.md), `T-284`): the sign IS fixed. caDNAno's `±5 bp` is an integer approximation to a `5.25 bp` half turn, so a crossover's side of its own staple position sets the sign, and `C-0148`'s closure condition pins **58 of the 59** binaries — strictly alternating, equivalently set by the axial rim, and reproducing `C-0175` §8's *by the rim* free tile at `8.9e−10`. What is left is one **global phase**, which is a sign convention of a coordinate whose true eigenstrain is zero ([`CH-0240`](gpd/challenges/CH-0240-the-allowed-departure-is-common-mode.md)), and at it `1` of `64` is flat at each phase and **`0` of `64` at both** — so the recovery is still phase-contingent and a cell needs a zero-prestrain `p90` below `0.0979624378` to escape, against a corpus best of `0.0995744767`.**** |
 | attachment stations its top face supplies | 90 | 60 |
@@ -1446,13 +1482,31 @@ way.
 ~~`ANSWERS.md` had four retained checkers on it — numbers, task statuses, challenge statuses and self-consistency
 — and `DECISIONS-FOR-NDI.md`, which is the document NDI actually reads, had none.~~
 ~~**UPDATED, iteration 39 — there are now SEVEN, and every one of them reads this file.**~~
-**CORRECTED, iteration 41 — the count was right and the two claims around it were not, and all three are DERIVED
+~~**CORRECTED, iteration 41 — the count was right and the two claims around it were not, and all three are DERIVED
 here rather than written.** `ls tools/check-*.py tools/trace-answers.py` returns **eight** retained checkers;
 `grep` of [`tools/verify.sh`](tools/verify.sh) shows **seven** of the eight wired into it — every one **except**
 `trace-answers.py`, which is the one that reads this document *by name* and is run by hand each synthesis (only its
 self-test is wired, in `build.gradle.kts`); and of the eight, **four** read this file at all — `trace-answers.py`,
 `check-corpus-links.py`, `check-markdown-tables.py` and `check-corpus-identifiers.py`. The other four read `src/`,
-`TASKS.md`, `gpd/challenges/` and `gpd/results/`.
+`TASKS.md`, `gpd/challenges/` and `gpd/results/`.~~
+**RE-DERIVED, iteration 45 — the count moved AGAIN, the wiring clause is now false in the OTHER direction, and the
+predicate under all three is a FILENAME PREFIX rather than a census of gates**
+([`CH-0243`](gpd/challenges/CH-0243-a-checker-census-keyed-on-a-filename-prefix.md)).
+`ls tools/check-*.py tools/trace-answers.py` returns **ten**, not eight — `check-cold-start-note.py` and
+`check-queue-vocabulary.py` were added in iteration 42 — and **all ten are wired** into
+[`tools/verify.sh`](tools/verify.sh), because `trace-answers.py` was wired by `T-277`
+([`C-0173`](gpd/claims/C-0173-trace-answers-wired.md)) in the *same* iteration the struck sentence was written,
+which is why *"the one whose absence a synthesis has to remember"* no longer names anything.
+Of the ten, **four** still read this file at all — `trace-answers.py`, `check-corpus-links.py`,
+`check-markdown-tables.py` and `check-corpus-identifiers.py` — derived by importing each tool and asking it for its
+own file list, rather than by reading its name.
+**And the predicate undercounts the gates by four.** Under `set -euo pipefail`, `tools/verify.sh` also runs
+`tools/result-reader-census.py --check`, `tools/T-278-emitter-rounding-census.py --check`,
+`tools/T-272-emit-result-inputs.py --check` and `tools/T-272-header-census.py --check`, every one of which fails the
+build — so the number of distinct tools wired as build-failing gates is **fourteen**, and `ls tools/check-*.py`
+cannot see the other four because they are not named `check-`.
+**All three counts are therefore quoted with the command that produced them and the tree they were read in**, which
+is the only form in which a self-describing number can be checked.
 **A self-describing count can be right in its NUMBER and wrong in its PREDICATE**, and this sentence bundled three
 different counts under one of them. What follows is the enumeration, which is correct as a list: numbers, task
 statuses, challenge statuses and self-consistency ([`tools/trace-answers.py`](tools/trace-answers.py), which
@@ -1470,8 +1524,12 @@ could see one
 [`C-0166`](gpd/claims/C-0166-dangling-identifiers.md)); and, reading `src/` rather than this file,
 Kotlin format-string balance ([`tools/check-kotlin-format-strings.py`](tools/check-kotlin-format-strings.py)),
 which the previous count omitted.
-~~All seven are wired into [`tools/verify.sh`](tools/verify.sh).~~ **Seven of the eight are; `trace-answers.py` is
-not, and that is the one whose absence a synthesis has to remember.**
+~~All seven are wired into [`tools/verify.sh`](tools/verify.sh).~~ ~~**Seven of the eight are; `trace-answers.py` is
+not, and that is the one whose absence a synthesis has to remember.**~~
+**ALL TEN ARE, iteration 45** — `trace-answers.py` was wired by `T-277`
+([`C-0173`](gpd/claims/C-0173-trace-answers-wired.md)), on both documents, and the two checkers added since are
+wired too. What a synthesis has to remember instead is that **four further gates are not named `check-`** and are
+invisible to the command this paragraph quotes ([`CH-0243`](gpd/challenges/CH-0243-a-checker-census-keyed-on-a-filename-prefix.md)).
 **A count of checkers is itself a self-describing number and this one was stale**, which is the same class
 the paragraph above it records.
 `T-184` ([`C-0124`](gpd/claims/C-0124-decision-file-drift.md)) enumerated **36** of its assertions and found

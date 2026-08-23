@@ -530,6 +530,26 @@ def _selftest():
         "T-283 the residue is now a GATE and the real queue reads zero",
         residue(open(QUEUE, encoding="utf-8").read()) == [],
     )
+    # `T-292`.  The residue reads the row's LEFTMOST verdict, and until the column repair the
+    # committed queue was itself the fixture that held that rule open: twenty-one rows carried a
+    # second, unstruck verdict in another cell.  The repair struck them, every row of a
+    # gate-clean queue now carries exactly ONE verdict, and `verdicts[0]` and `verdicts[-1]` are
+    # the same object on the real file -- so a mutation between them survived, on a correct
+    # predicate, for want of a discriminating input.  The rule is unchanged and the fixture is
+    # now CONSTRUCTED (`C-0161`: the cure for a mutation that fails nothing is to construct the
+    # state, and `CLAUDE.md`'s *a self-test that reads a mutable artifact expires the moment the
+    # defect it asserts is repaired*).  The row below is the shape the column gate now refuses,
+    # which is exactly why it can no longer be found in the file.
+    check(
+        "T-292 the residue reads a row's LEFTMOST verdict, on a CONSTRUCTED two-verdict row",
+        residue("| T-1 | t | a | **DONE** (iteration 3) | TODO — **HIGH** |") == [],
+    )
+    check(
+        "T-292 and reading the LAST verdict of that same row would report a residue that is not "
+        "there — which is what makes the leftmost rule observable at all",
+        _verdicts.row_verdicts(" t | a | **DONE** (iteration 3) | TODO — **HIGH** |")
+        == [("DONE", "CLOSED"), ("TODO", "OPEN")],
+    )
     # The blanking is the GATE's scan and not the READER's.  A row carrying no leading verdict
     # falls back to a whole-row scan in `trace-answers.queue_status`, and that scan is deliberately
     # NOT blanked — changing it would move the register, which is `P-30`'s territory and not this
@@ -738,17 +758,27 @@ def _selftest():
             and [r for r in residue(_broken) if r[0] == "T-276"] == [],
         )
 
-    # --- T-289: the arm is ADVISORY, and that is a decision with a measurement behind it ---
+    # --- T-292: the arm is a GATE, and that is a decision with a measurement behind it ---
+    # `T-289` left it advisory on a reading of 21; `T-292` repaired all twenty-one rows and the
+    # arm reads 0, which is the promotion condition `C-0188` §6 states.  Both senses are named
+    # tests: a miscolumned verdict must FAIL the gate, and a clean queue must PASS it, because a
+    # gate asserted in one direction only is `C-0177`'s measured trap one level up.
     _leaf_row = (
         "| ID | Task | Acceptance | Leaf | Status |\n|---|---|---|---|---|\n"
         "| T-1 | t | a | **DONE** (iteration 3) | **TODO — HIGH** |\n"
     )
     _leaf_code, _leaf_message = _gate_on(_leaf_row)
     check(
-        "T-289 a miscolumned verdict does NOT fail the gate — the arm is advisory, because the"
-        " predicate reads 21 genuine rows of the queue it lands on and a gate that cannot come"
-        " clean is not a gate",
-        _leaf_code == 0,
+        "T-292 a miscolumned verdict FAILS the gate — the arm was promoted when the queue repair"
+        " took its reading to 0, which is the condition C-0188 §6 wrote down",
+        _leaf_code == 1,
+    )
+    check(
+        "T-292 and a queue whose verdicts all stand in their own status column PASSES it",
+        _gate_on(
+            "| ID | Task | Acceptance | Leaf | Status |\n|---|---|---|---|---|\n"
+            "| T-1 | t | a | A8.2 | **DONE** (iteration 3) |\n"
+        )[0] == 0,
     )
     check(
         "T-289 and it is REPORTED rather than silently tolerated",
@@ -863,13 +893,11 @@ def main(argv):
         )
         defects += 1
 
-    # `T-289`.  ADVISORY, and it says why in its own output: the predicate reads 21 rows of the
-    # queue it lands on and every one of them is genuine, so gating it would be a build failure
-    # nobody could clear without editing 21 rows -- `C-0083`'s *a gate that cannot come clean is
-    # not a gate*, and `CLAUDE.md`'s *print an ungated residue beside a gated arm rather than
-    # narrowing the predicate until the tree is clean*.  The repair is a queue edit and it is
-    # queued as a row of its own; when the count reaches 0 this arm becomes a gate by deleting a
-    # word.
+    # `T-289` measured this arm and left it ADVISORY, because it read 21 genuine rows and
+    # `C-0083`'s rule is that *a gate that cannot come clean is not a gate*.  `T-292` repaired all
+    # twenty-one -- a COLUMN repair, proved content-preserving token by token -- so the arm reads
+    # 0 and is GATED here.  The promotion is the whole of the condition `C-0188` §6 wrote down:
+    # *when the advisory count reaches 0 the arm becomes a gate by deleting a word*.
     miscolumned = _verdicts.miscolumned_verdicts(text)
     for identifier, line, phrase, heading, status_heading in miscolumned:
         print(
@@ -877,6 +905,7 @@ def main(argv):
                 identifier, line, phrase, heading, status_heading
             )
         )
+        defects += 1
     if miscolumned:
         print(
             "            move the record into the status cell, striking any verdict it supersedes.\n"
@@ -899,9 +928,9 @@ def main(argv):
         )
     )
     print(
-        "# miscolumned verdicts (T-289, ADVISORY -- 0 false positives over 140 revisions and it"
-        " cannot come clean without a queue edit): {} verdict(s) rendering under a heading that is"
-        " not their table's status column".format(len(miscolumned))
+        "# miscolumned verdicts (GATED since T-292, at a measured false-positive rate of 0 over"
+        " 140 revisions): {} verdict(s) rendering under a heading that is not their table's"
+        " status column".format(len(miscolumned))
     )
 
     return 1 if defects else 0

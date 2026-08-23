@@ -1,0 +1,270 @@
+{
+  "task": "T-276",
+  "title": "the thirteenth ANSWERS.md synthesis - the residue T-288 named, read and closed",
+  "baselineRef": "7f7957d8adf0821922775b6565297831fbd43cc4",
+  "baselineRefRequested": "HEAD",
+  "parameters": {
+    "documents": [
+      "ANSWERS.md",
+      "DECISIONS-FOR-NDI.md"
+    ],
+    "kindsDeclared": [
+      "SUPERSEDED_VALUE",
+      "SUPERSEDED_RATIO",
+      "STALE_STATUS",
+      "SCOPE",
+      "SELF_DESCRIBING_COUNT",
+      "STALE_PRICE",
+      "OTHER"
+    ],
+    "whatIsDerived": "every count in this file is derived at baselineRef or from the working tree; only the passage CLASSIFICATION is declared, and each declared row's two anchors are asserted against both trees before the file is written",
+    "noTiming": "no wall-clock field and no step counter, per CLAUDE.md: a timing is less reproducible than a step count and one such field makes a file un-diffable"
+  },
+  "selfDescribingCounts": {
+    "claims": {
+      "atRef": 184,
+      "command": "ls gpd/claims/C-*.md | wc -l"
+    },
+    "challenges": {
+      "atRef": 211,
+      "command": "ls gpd/challenges/CH-*.md | wc -l"
+    },
+    "claimsAndChallenges": {
+      "atRef": 395,
+      "command": "tools/check-corpus-identifiers.py prints the sum on every run"
+    },
+    "asWrittenBeforeThisPass": {
+      "challenges": 190,
+      "claims": 164
+    },
+    "staleAgain": true,
+    "filedByThisTask": {
+      "claims": 1,
+      "challenges": 1
+    },
+    "theCensusDestroysItself": "this pass files one claim and one challenge, so its own working tree reads one more of each than the ref does; a census over a corpus that contains the census is not repeatable without the ref, which is why only atRef is emitted"
+  },
+  "checkerCensus": {
+    "atRef": {
+      "namingPredicate": "ls tools/check-*.py tools/trace-answers.py",
+      "underTheNamingPredicate": [
+        "tools/check-challenge-index.py",
+        "tools/check-cold-start-note.py",
+        "tools/check-corpus-identifiers.py",
+        "tools/check-corpus-links.py",
+        "tools/check-entry-points.py",
+        "tools/check-kotlin-format-strings.py",
+        "tools/check-markdown-tables.py",
+        "tools/check-queue-vocabulary.py",
+        "tools/check-result-file-hygiene.py",
+        "tools/trace-answers.py"
+      ],
+      "underTheNamingPredicateCount": 10,
+      "wiredOfThose": [
+        "tools/check-challenge-index.py",
+        "tools/check-cold-start-note.py",
+        "tools/check-corpus-identifiers.py",
+        "tools/check-corpus-links.py",
+        "tools/check-entry-points.py",
+        "tools/check-kotlin-format-strings.py",
+        "tools/check-markdown-tables.py",
+        "tools/check-queue-vocabulary.py",
+        "tools/check-result-file-hygiene.py",
+        "tools/trace-answers.py"
+      ],
+      "gatePredicate": "every tools/*.py tools/verify.sh invokes, excluding its own test- fixtures",
+      "underTheGatePredicate": [
+        "tools/T-272-emit-result-inputs.py",
+        "tools/T-272-header-census.py",
+        "tools/T-278-emitter-rounding-census.py",
+        "tools/check-challenge-index.py",
+        "tools/check-cold-start-note.py",
+        "tools/check-corpus-identifiers.py",
+        "tools/check-corpus-links.py",
+        "tools/check-entry-points.py",
+        "tools/check-kotlin-format-strings.py",
+        "tools/check-markdown-tables.py",
+        "tools/check-queue-vocabulary.py",
+        "tools/check-result-file-hygiene.py",
+        "tools/result-reader-census.py",
+        "tools/trace-answers.py"
+      ],
+      "underTheGatePredicateCount": 14,
+      "invisibleToTheNamingPredicate": [
+        "tools/T-272-emit-result-inputs.py",
+        "tools/T-272-header-census.py",
+        "tools/T-278-emitter-rounding-census.py",
+        "tools/result-reader-census.py"
+      ]
+    },
+    "readTheDeliverables": [
+      "tools/check-corpus-identifiers.py",
+      "tools/check-corpus-links.py",
+      "tools/check-markdown-tables.py",
+      "tools/trace-answers.py"
+    ],
+    "asWrittenBeforeThisPass": {
+      "exist": 8,
+      "wired": 7,
+      "readTheDeliverables": 4,
+      "clause": "every one except trace-answers.py"
+    }
+  },
+  "supersessionSweep": {
+    "range": "C-0174..C-0189 and CH-0223..CH-0241",
+    "identifiersSwept": 35,
+    "mentionedInEitherDocument": [
+      "C-0175",
+      "C-0180",
+      "C-0187",
+      "CH-0227",
+      "CH-0228",
+      "CH-0234",
+      "CH-0240"
+    ],
+    "mentionedCount": 7,
+    "alreadySweptByC0186": [
+      "C-0176",
+      "C-0177",
+      "C-0178",
+      "C-0179",
+      "C-0181",
+      "C-0182",
+      "C-0183",
+      "C-0184",
+      "CH-0224",
+      "CH-0229",
+      "CH-0230",
+      "CH-0231",
+      "CH-0232"
+    ]
+  },
+  "cannotAnswerList": {
+    "topLevelBulletsAtRef": 25,
+    "entriesNamingAClosedTask": 1,
+    "entriesTheProgrammeHasSinceAnswered": 0
+  },
+  "decisions": {
+    "count": 8,
+    "distinctChallengeIdentifiersCitedAtRef": 31,
+    "prosecutedForAStalePrice": 8,
+    "stalePricesFound": 0,
+    "note": "every challenge either deliverable rests a number on was re-read against its own Status row; none had moved since the twelfth pass, so the STALE_PRICE class is empty and is declared empty rather than dropped"
+  },
+  "passages": {
+    "moved": 19,
+    "byKind": {
+      "SUPERSEDED_VALUE": 5,
+      "SUPERSEDED_RATIO": 5,
+      "STALE_STATUS": 1,
+      "SCOPE": 3,
+      "SELF_DESCRIBING_COUNT": 4,
+      "STALE_PRICE": 0,
+      "OTHER": 1
+    },
+    "rows": [
+      {
+        "kind": "SUPERSEDED_VALUE",
+        "document": "ANSWERS.md",
+        "passage": "the iteration-43 restatement's sign paragraph, superseded by C-0187 and disputed by CH-0240"
+      },
+      {
+        "kind": "SUPERSEDED_VALUE",
+        "document": "ANSWERS.md",
+        "passage": "the tail of the row (g) restatement block"
+      },
+      {
+        "kind": "SUPERSEDED_VALUE",
+        "document": "ANSWERS.md",
+        "passage": "row (g) of section 3, inline"
+      },
+      {
+        "kind": "SUPERSEDED_VALUE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "decision 7's third qualification on the tied re-grade"
+      },
+      {
+        "kind": "SUPERSEDED_VALUE",
+        "document": "ANSWERS.md",
+        "passage": "the preserved-verbatim block's banner, whose third supersession said no cell clears T-5b"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "ANSWERS.md",
+        "passage": "row 5b of the section 2 table"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "the at-a-glance decision 7 cost-of-deferring cell"
+      },
+      {
+        "kind": "SUPERSEDED_RATIO",
+        "document": "ANSWERS.md",
+        "passage": "the cross-section flatness multiple in section 1"
+      },
+      {
+        "kind": "SUPERSEDED_RATIO",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "the same multiple in the 7a comparison table"
+      },
+      {
+        "kind": "SUPERSEDED_RATIO",
+        "document": "ANSWERS.md",
+        "passage": "the rim-modulation bound in section 1"
+      },
+      {
+        "kind": "SUPERSEDED_RATIO",
+        "document": "ANSWERS.md",
+        "passage": "the same bound in row (g)"
+      },
+      {
+        "kind": "SUPERSEDED_RATIO",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "the same bound in the ragged-face section"
+      },
+      {
+        "kind": "SELF_DESCRIBING_COUNT",
+        "document": "ANSWERS.md",
+        "passage": "the challenge-and-claim census of section 4"
+      },
+      {
+        "kind": "SELF_DESCRIBING_COUNT",
+        "document": "ANSWERS.md",
+        "passage": "the same row's own staleness count"
+      },
+      {
+        "kind": "SELF_DESCRIBING_COUNT",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "the checker census: how many exist, how many wired, how many read the file"
+      },
+      {
+        "kind": "SELF_DESCRIBING_COUNT",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "the same census's wiring clause, restated once more below the enumeration"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "ANSWERS.md",
+        "passage": "the per-site incorporation entry of the cannot-answer list"
+      },
+      {
+        "kind": "STALE_STATUS",
+        "document": "ANSWERS.md",
+        "passage": "the staple-extension stiffness-spread entry, which names a task the queue has closed"
+      },
+      {
+        "kind": "OTHER",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "the one 15x4 comparison C-0186 left: the leave is now stated in the document and queued as T-294"
+      }
+    ]
+  },
+  "findings": [
+    "The residue was not bookkeeping: 19 passages moved, over 6 of the seven declared kinds, and 7 of them are in the document NDI reads.",
+    "The challenge-and-claim census moved 190 -> 211 and 164 -> 184 at the baseline ref, so the row has now been stale in six of its seven passes; two wired gates print the numbers on every run and what was missing was the COMPARISON, not the number.",
+    "The checker census moved 8 -> 10 and its wiring clause is false in the FAVOURABLE direction - all 10 are wired now, trace-answers.py having been wired by T-277 in the same iteration the sentence was written. And the predicate is a filename prefix: tools/verify.sh runs 14 distinct tools as build-failing gates, 4 of which the command cannot see (CH-0243).",
+    "The STALE_PRICE class is EMPTY and is reported empty: all eight decisions were re-read against the Status row of every challenge they rest a number on, and none had moved. An empty class is a result.",
+    "The cannot-answer list carries no entry the programme has answered - the twelfth pass's clean status reading is a TRUE negative - but one entry names a task the queue has closed under a phrasing (\"still not found\") that tools/trace-answers.py's fixed vocabulary cannot see."
+  ]
+}

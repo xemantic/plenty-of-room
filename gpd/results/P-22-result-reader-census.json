@@ -6,12 +6,12 @@
   "task": "P-22",
   "claim": "C-0082",
   "what": "The reader graph over gpd/results/, derived from the Kotlin sources rather than grepped. A read is a result-file string literal in the argument list of a File(...) construction, propagated along top-level references; comments and prose strings are not reads. See tools/result-reader-census.py and CH-0092.",
-  "studyCount": 134,
+  "studyCount": 135,
   "helperCount": 3,
-  "resultFileCount": 169,
+  "resultFileCount": 172,
   "declaringStudyCount": 13,
   "transitiveEdgeCount": 27,
-  "directEdgeCount": 148,
+  "directEdgeCount": 151,
   "studies": {
     "HelloWorldApp.kt": {
       "reads": [],
@@ -4935,6 +4935,61 @@
         "tile/HoneycombRasterTurnTies.kt"
       ]
     },
+    "tile/RasterTurnTwistPriceStudy.kt": {
+      "reads": [
+        "T-254-raster-turn-prestrain.json",
+        "T-284-turn-prestrain-sign.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-254-raster-turn-prestrain.json",
+        "T-284-turn-prestrain-sign.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-291-common-mode-departure-and-beam-twist.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/DropoutRobustPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/SharedBodyCoupling.kt",
+        "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "environment/RegimeSet.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/BandedCholesky.kt",
+        "structure/Cholesky.kt",
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/HoneycombTurnLoop.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/CoupledFourLayer.kt",
+        "tile/ForcedCrossoverPrice.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombFaceLattice.kt",
+        "tile/HoneycombGrillage.kt",
+        "tile/HoneycombRasterTurnTies.kt",
+        "tile/HoneycombStationLattice.kt",
+        "tile/HoneycombTiedRegrade.kt",
+        "tile/HoneycombTwoLengthRaster.kt",
+        "tile/RasterTurnPrestrainSign.kt",
+        "tile/RasterTurnTwistEigenstrain.kt"
+      ]
+    },
     "window/DesignWindowStudy.kt": {
       "reads": [
         "T-14-crossover-phase-and-registration.json",
@@ -5707,7 +5762,8 @@
       "tile/HoneycombGrillageRegradeStudy.kt"
     ],
     "T-254-raster-turn-prestrain.json": [
-      "tile/RasterTurnPrestrainSignStudy.kt"
+      "tile/RasterTurnPrestrainSignStudy.kt",
+      "tile/RasterTurnTwistPriceStudy.kt"
     ],
     "T-263-honeycomb-grillage-regrade.json": [
       "structure/DrawableRaggedFaceStudy.kt",
@@ -5718,6 +5774,9 @@
     ],
     "T-279-tied-honeycomb-regrade.json": [
       "tile/RasterTurnPrestrainSignStudy.kt"
+    ],
+    "T-284-turn-prestrain-sign.json": [
+      "tile/RasterTurnTwistPriceStudy.kt"
     ],
     "T-3-stroke-and-blocking-force.json": [
       "coupling/OutputCouplingStudy.kt",
@@ -5775,6 +5834,7 @@
       "tile/ObliqueRootStudy.kt",
       "tile/RasterTurnPrestrainSignStudy.kt",
       "tile/RasterTurnPrestrainStudy.kt",
+      "tile/RasterTurnTwistPriceStudy.kt",
       "window/SecondResynthesisStudy.kt",
       "window/WindowResynthesisStudy.kt"
     ],
@@ -6204,6 +6264,9 @@
     "T-284-turn-prestrain-sign.json": [
       "tile/RasterTurnPrestrainSignStudy.kt"
     ],
+    "T-291-common-mode-departure-and-beam-twist.json": [
+      "tile/RasterTurnTwistPriceStudy.kt"
+    ],
     "T-3-stroke-and-blocking-force.json": [
       "actuator/StrokeAndBlockingForceStudy.kt"
     ],
@@ -6415,6 +6478,7 @@
     "T-267-mechanics-on-imported-design.json",
     "T-274-recommended-block-seam.json",
     "T-275-simulated-tile-census.json",
+    "T-276-thirteenth-answers-synthesis.json",
     "T-278-emission-header-residue.json",
     "T-279-tied-honeycomb-regrade.json",
     "T-280-debt-line-as-a-ratio.json",
@@ -6426,6 +6490,8 @@
     "T-286-a-regime-is-a-set.json",
     "T-287-a-filename-cannot-supply-a-context.json",
     "T-289-a-verdict-in-the-wrong-column.json",
+    "T-291-common-mode-departure-and-beam-twist.json",
+    "T-292-the-column-repair.json",
     "T-3-stroke-and-blocking-force.json",
     "T-30-flexure-end-joint.json",
     "T-3a-nonlinear-pb-profile.json",
@@ -6482,6 +6548,7 @@
     "T-250-prose-interpolation-sweep.json",
     "T-260-partial-discharge-predicate.json",
     "T-262-width-restatement-predicate.json",
+    "T-276-thirteenth-answers-synthesis.json",
     "T-278-emission-header-residue.json",
     "T-280-debt-line-as-a-ratio.json",
     "T-281-name-the-discharge.json",
@@ -6491,6 +6558,7 @@
     "T-286-a-regime-is-a-set.json",
     "T-287-a-filename-cannot-supply-a-context.json",
     "T-289-a-verdict-in-the-wrong-column.json",
+    "T-292-the-column-repair.json",
     "T-9-crossover-hinge-constant.json"
   ],
   "missingResultFiles": [],
@@ -6700,6 +6768,7 @@
         "tile/ObliqueRootStudy.kt",
         "tile/RasterTurnPrestrainSignStudy.kt",
         "tile/RasterTurnPrestrainStudy.kt",
+        "tile/RasterTurnTwistPriceStudy.kt",
         "window/DesignWindowStudy.kt",
         "window/SecondResynthesisStudy.kt",
         "window/WindowResynthesisStudy.kt"
@@ -6811,6 +6880,7 @@
         "T-275-simulated-tile-census.json",
         "T-279-tied-honeycomb-regrade.json",
         "T-284-turn-prestrain-sign.json",
+        "T-291-common-mode-departure-and-beam-twist.json",
         "T-3-stroke-and-blocking-force.json",
         "T-30-flexure-end-joint.json",
         "T-3a-nonlinear-pb-profile.json",

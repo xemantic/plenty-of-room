@@ -386,6 +386,24 @@ tasks.register<Exec>("testProseGateMutations") {
     commandLine("$projectDir/tools/T-250-mutation-test.py")
 }
 
+/*
+ * `T-292` -- the COLUMN REPAIR that took `T-289`'s advisory arm to a reading of 0 and let it be
+ * gated. TWO tasks, for the same reason the vocabulary gate has two: the repair carries its own
+ * named self-tests (the leaf derivation, the two per-shape rules, the token-preservation proof)
+ * and a mutation table over them.
+ */
+tasks.register<Exec>("testColumnRepair") {
+    group = "verification"
+    description = "Runs tools/T-292-column-repair.py --self-test, the tests for the column repair"
+    commandLine("$projectDir/tools/T-292-column-repair.py", "--self-test")
+}
+
+tasks.register<Exec>("testColumnRepairMutations") {
+    group = "verification"
+    description = "Runs tools/T-292-mutation-test.py, the mutation test for the column repair"
+    commandLine("$projectDir/tools/T-292-mutation-test.py")
+}
+
 tasks.named("test") {
     dependsOn(
         "testHarness", "testDeliverableTracer", "testMarkdownTables", "testCorpusLinks",
@@ -399,7 +417,9 @@ tasks.named("test") {
         "testMutationAnchorSelfTests", "testMutationAnchors",
         "testLeadingVerdictMutations", "testDebtLineMutations", "testDischargeCensusMutations",
         "testQueueResidueMutations", "testQueueColumnMutations", "testDepartureKeyMutations",
-        "testProsePredicateMutations", "testProseGateMutations"
+        "testProsePredicateMutations", "testProseGateMutations",
+        // `T-292` -- the column repair, and the mutation table over its own rules.
+        "testColumnRepair", "testColumnRepairMutations"
     )
 }
 

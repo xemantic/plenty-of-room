@@ -90,6 +90,19 @@ median of the ratio and the 90th percentile of the same ratio.)*
 
 ## 4. `CH-0228` at the coupled level — the ties' own load decides which cell is recovered
 
+> **THE COORDINATE OF THIS SECTION IS WITHDRAWN AND NOT ONE OF ITS NUMBERS IS**
+> ([`CH-0240`](../challenges/CH-0240-the-allowed-departure-is-common-mode.md) **UPHELD** by
+> [`C-0190`](C-0190-the-departure-is-common-mode-and-what-replaces-it.md), `T-291`, iteration 45).
+> The four prestrained readings below, the `0.00242194151` and the `0.000540689993` all reproduce,
+> and every one of them is the response to a **relative** roll — a coordinate on which an allowed
+> scaffold crossover's departure has coefficient **exactly zero**, because a level displacement
+> rotates both backbones the same way.
+> **§3's zero-prestrain headline `2 of 64` is untouched**: it carries no prestrain at all, and the
+> ties' **stiffness** deliverable is a property of the elements' presence.
+> On the channel the raster actually demands — `17.1428571°` of twist on each of 58 interior
+> helices — **0 of 64** cells are flat at either sign, so this section's *"which cell is
+> recovered"* is a question about a load that is not applied.
+
 The 59 ties are not only a stiffness. `C-0152` §5 establishes that caDNAno's `±5 bp` is an integer
 approximation to a `5.25 bp` half turn, so **every allowed** honeycomb scaffold crossover already
 sits **8.57142857°** off the line of centres — at every raster turn, forced or not, and the

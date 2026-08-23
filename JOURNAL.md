@@ -11309,3 +11309,89 @@ reported it as the run's only row failing nothing.
 - **A cell-count check and a column-semantics check are different questions**, and eleven rows have
   been passing the first while failing the second — one of them a HIGH row that spent an iteration
   outside the register.
+
+## Iteration 45 — 2026-08-23: a coordinate withdrawn, the thirteenth synthesis, and a column repair that overturned its own premise
+
+### `CH-0240` is UPHELD, and the recovered cells do not survive it
+
+`T-291`/`C-0190` settled `CH-0240` on **three checks and no solve**. The two backbones of a honeycomb
+scaffold crossover are **antipodal at every one of the 43 level displacements** of the period — worst
+departure from `180°` is **`0.0`** — and the tie prestrain load's projection on the demanded
+common-mode roll is **exactly `0.0` at all 59 ties**, on a load that is not itself zero.
+
+The third check goes **further than the challenge**: `u* = d cos δ / (2 r_P) =` **`1.37990892`** lies
+outside the reachable `cos r`, so the minimum over the whole relative channel is the **built** state
+and any relative roll makes the span **worse**. `CH-0240`'s own concession that a relative roll merely
+relieves the departure *less efficiently* is **withdrawn in the direction that strengthens it**.
+
+What replaces the term is **`17.1428571°` of twist on each of 58 interior helices — UNIFORM in sign
+where the roll assignment ALTERNATES** — the two raster termini carrying none, because a single-ended
+roll demand is a rigid roll. Its ceiling is **`8.31368089 k_BT`** over the block, **`1.03924948`** of
+**one** crossover column of the host sheet — and the host sheet folds. Graded on `C-0180`'s own 64
+cells it gives **`0 of 64` flat at either sign** against the roll reading's `1 / 1 / 0 / 2`, and per
+realisation on the shared stream it moves a cell **`226.780027×`** what the relative roll moves it at
+the median. **So the two cells `C-0180` recovered do not survive the corrected coordinate** — and no
+number of `C-0175`, `C-0180` or `CH-0228` is disputed; only what they multiply.
+
+And the magnitude is a **threshold, not a value**: it scales with the tie's **common-mode** stiffness,
+which the lattice does not carry at all. The tighter recovered cell survives `0.005` of the derived
+eigenstrain and the other is out at `0.002`, i.e. `k_common < 0.11663286 pN·nm/rad` = **0.862 % of
+`k_θ`**, where `CH-0242` puts the physical one at `3.52810239 × k_θ`.
+
+The residual **global phase is not derivable, and the reason is stated rather than shrugged at**:
+`HoneycombGrillage` carries **no handedness at all** — nothing ties its `s` to the raster's axial
+datum — so both signs are graded and the verdict is quoted at the worse.
+
+### The thirteenth synthesis, and both self-describing counts stale again
+
+`T-276`/`C-0191` moved **19 passages over 6 of 7 declared kinds** — 12 in `ANSWERS.md`, 7 in
+`DECISIONS-FOR-NDI.md`. The emitter **refuses to build** unless each declared passage's *before*
+anchor occurs exactly once at the ref and its *after* anchor exactly once in the working tree and not
+at all at the ref, so the count cannot drift from the edits.
+
+`STALE_PRICE` came back **empty, prosecuted at all eight decisions against 31 challenge IDs, and is
+reported empty** — an empty class is a result.
+
+**Both self-describing counts were stale again.** The challenge/claim census read `190 / 164` against
+a derived **`211 / 184`** — wrong in **six of its seven** passes — while two wired gates print those
+numbers on every run, so what was missing was never the number but the **comparison**. The checker
+census was wrong in **both** directions: there are **ten**, not eight, and **all ten are wired**.
+`CH-0243` names the cause: the predicate is a **filename prefix**, and `tools/verify.sh` runs **14**
+distinct build-failing gates, **4** of which `ls tools/check-*.py` can never see.
+
+Two ratios moved and **neither was replaced by an invented number**: `4.06×`'s two arguments are
+smeared-sheet free tiles whose enhancement ladders do not match, so the **cells** are quoted instead;
+and `496×`'s comparand had been **withdrawn**, so it is restated against what still exists.
+
+### The column repair overturned the premise it was given
+
+`T-292`/`C-0192` repaired all **21** miscolumned rows and **wired the gate at 0**. The repair is
+proved content-preserving token by token: **11 rows `+0/−0`, 10 rows `+1` em dash, 0 rows lost a
+token**, and **no row's OPEN/CLOSED reading moved** (286 rows, 68 open before and after).
+
+But the cheap bound **overturned the task's own premise**. `C-0188` and `CH-0241` both say the eleven
+science rows **dropped** their `Leaf` cell — under which eleven leaf values would have to be supplied
+from outside the row. One `rsplit` says every one of those cells **ends in its own leaf token**: the
+record was written *in front of* a leaf that never moved. **11 of 11, zero supplied from outside**,
+and that is `CH-0245`.
+
+The header-versus-rows question was decided **by measurement rather than taste**: of that table's 31
+task rows **19 follow the header** and 10 do not, so retitling would put 19 outside it against 10 —
+and both precedents in that very table moved the row.
+
+### What surprised us
+
+- **Sequencing the synthesis after an iteration is not enough; it has to be sequenced after the
+  iteration it runs BESIDE.** `T-276` was deliberately held to the end for exactly this reason and was
+  still stale on `CH-0240` within the hour, because `T-291` ran in parallel with it. The coordinator
+  carried the four passages by hand. **A synthesis is dated by the corpus at the moment it FINISHES,
+  and a parallel science task moves that corpus underneath it.**
+- **A challenge can be upheld in the direction that strengthens it**, and then the concession inside
+  the challenge is the thing that gets withdrawn.
+- **A gate's repair can break a sibling gate by removing its fixture**: `T-283`'s mutation harness went
+  0 → 1 survivor because *the committed queue was its discriminating fixture*, and a gate-clean queue
+  no longer discriminates. The cure is to construct the fixture, not to weaken the mutation — the
+  third time in three iterations that a row failing nothing was the finding.
+- **A mistyped `cp` put a copy of a model inside the test source set**, where Kotlin binds to it with
+  no redeclaration error and six mutations survive in one file. The harness said so; nothing else could
+  have.

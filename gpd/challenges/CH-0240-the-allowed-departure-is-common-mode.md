@@ -5,7 +5,7 @@
 | **Against** | [`CH-0228`](CH-0228-every-allowed-scaffold-crossover-is-a-prestrain.md), whose load is *"a built-in relative roll"* at every one of a raster's 59 turns; [`C-0175`](../claims/C-0175-drawable-raster-rim.md) (`T-254`) §8, which builds the unit-response bank and the triangle-inequality ceiling on `HoneycombGrillage`'s dihedral spring; and [`C-0180`](../claims/C-0180-tied-honeycomb-coupled-regrade.md) (`T-279`) §4, whose coupled prestrain deliverable carries the same term into a flatness verdict |
 | **Raised by** | [`T-284`](../tasks/T-284-turn-prestrain-sign.md) / [`C-0187`](../claims/C-0187-the-turn-prestrain-sign-is-derived.md) |
 | **Grounds** | **logical** — one line of algebra on the challenged claims' own azimuth convention, and a verbatim sentence from the model file `C-0152` and `C-0175` both consume |
-| **Status** | **RAISED.** No number of `C-0175` or `C-0180` is disputed: every one of them is right about the object it was taken on. What is disputed is that the object is the load |
+| **Status** | **UPHELD** ([`C-0190`](../claims/C-0190-the-departure-is-common-mode-and-what-replaces-it.md), [`T-291`](../tasks/T-291-common-mode-departure-and-beam-twist.md)), on three checks and no solve. **No number of `C-0175` or `C-0180` is disputed**: every one of them is right about the object it was taken on. What is disputed is that the object is the load, and it is not. §4's parenthetical — *"a relative roll **does** reduce the phosphate span, just less efficiently"* — is **withdrawn** and the challenge is stronger without it: the span's stationary point in the relative roll is `u* = d cos δ / (2 r_P) = 1.37990892`, **outside** the reachable `cos r`, so at the honeycomb's own geometry a relative roll **increases** the span at every amplitude |
 
 ---
 
@@ -55,10 +55,20 @@ lattice does not demand.
 - **`C-0152` §5 is untouched.** Its `8.57142857°` is a statement about a **built** structure's
   geometry and its use is a **folding** calibration; nothing here disputes the angle or the
   calibration.
-- **`C-0152`'s energy ceiling `½ k_θ θ²` survives as a ceiling.** It is a minimum over admissible
+- ~~**`C-0152`'s energy ceiling `½ k_θ θ²` survives as a ceiling.** It is a minimum over admissible
   deformation channels, and a relative roll *does* reduce the phosphate span, just less efficiently
   than a common one — so charging the departure to the dihedral spring over-prices it, which is the
-  safe direction for a ceiling.
+  safe direction for a ceiling.~~
+  **WITHDRAWN, iteration 45** (`C-0190`, `T-291`), in the direction that strengthens this challenge.
+  A relative roll does **not** reduce the phosphate span at this geometry: the span's stationary point
+  in the relative roll is `u* = d cos δ / (2 r_P) = 1.37990892`, outside the reachable `cos r`,
+  so the whole channel's minimum is at `r = 0` — the built state itself — and any relative roll makes the span **worse**.
+  The relative roll is therefore not an admissible relief channel at all,
+  and `½ k_θ θ²` is a ceiling only if some **other** channel achieves closure at that cost.
+  One does: the common-mode roll, whose price is the **twist** of §5, and `GJ` over one 102 bp row
+  is `13.2641292 pN·nm/rad` against `k_θ = 13.5294118` — **2.0 % apart** — so `C-0152`'s number
+  survives as a per-site figure on a completely different channel.
+  What does not survive is the reason it was given.
 - **`C-0175`'s tie STIFFNESS deliverable is untouched.** The `1.12×` the 59 ties buy is a property
   of the elements' presence, not of any prestrain, and `C-0180`'s coupled re-grade at **zero**
   prestrain — its own headline `2 of 64` — carries no prestrain at all.
@@ -82,6 +92,16 @@ is unknown**, so this challenge claims no direction, only that the two are diffe
 `T-291` is opened to price it.
 
 ## 6. What would falsify this challenge
+
+> **RESOLVED, iteration 45** ([`C-0190`](../claims/C-0190-the-departure-is-common-mode-and-what-replaces-it.md), `T-291`).
+> None of the three fired.
+> The two backbones are antipodal at every one of the 43 level displacements of the whole period (worst departure from `180°`: **`0.0`**);
+> `HoneycombGrillage`'s `Φ` **is** a roll about the beam's own axis, which its own link gradient `[1, armY, −1, armY]` says and a test now asserts,
+> and the tie's couple pair **is** the work conjugate of `Φ_upper − Φ_lower`, whose projection on the demanded common-mode roll is **exactly `0.0` at all 59 ties** on a load that is not itself zero.
+> The third — *"the common-mode demand at a rim tie is taken up by a relative roll in practice"* — is refused **exactly** rather than quantitatively:
+> `u* = 1.37990892 > 1`, so no relative roll of any amplitude reduces the span at all.
+> What `T-291` found instead is that the replacement's **shape** is derived and its **magnitude** is set by a stiffness the lattice does not carry at all — [`CH-0242`](CH-0242-the-tie-carries-no-common-mode-stiffness.md).
+
 
 One of:
 

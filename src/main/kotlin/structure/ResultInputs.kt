@@ -201,6 +201,7 @@ object ResultInputs {
     val T_267: ResultInput = ResultInput("T-267", "T-267-mechanics-on-imported-design.json")
     val T_274: ResultInput = ResultInput("T-274", "T-274-recommended-block-seam.json")
     val T_275: ResultInput = ResultInput("T-275", "T-275-simulated-tile-census.json")
+    val T_276: ResultInput = ResultInput("T-276", "T-276-thirteenth-answers-synthesis.json")
     val T_278: ResultInput = ResultInput("T-278", "T-278-emission-header-residue.json")
     val T_279: ResultInput = ResultInput("T-279", "T-279-tied-honeycomb-regrade.json")
     val T_280: ResultInput = ResultInput("T-280", "T-280-debt-line-as-a-ratio.json")
@@ -212,6 +213,8 @@ object ResultInputs {
     val T_286: ResultInput = ResultInput("T-286", "T-286-a-regime-is-a-set.json")
     val T_287: ResultInput = ResultInput("T-287", "T-287-a-filename-cannot-supply-a-context.json")
     val T_289: ResultInput = ResultInput("T-289", "T-289-a-verdict-in-the-wrong-column.json")
+    val T_291: ResultInput = ResultInput("T-291", "T-291-common-mode-departure-and-beam-twist.json")
+    val T_292: ResultInput = ResultInput("T-292", "T-292-the-column-repair.json")
     val T_3: ResultInput = ResultInput("T-3", "T-3-stroke-and-blocking-force.json")
     val T_30: ResultInput = ResultInput("T-30", "T-30-flexure-end-joint.json")
     val T_3A: ResultInput = ResultInput("T-3a", "T-3a-nonlinear-pb-profile.json")
@@ -252,9 +255,10 @@ object ResultInputs {
         T_201, T_202, T_203, T_204, T_205, T_206, T_207, T_208, T_21, T_211, T_212, T_214, T_215,
         T_216, T_217, T_218, T_219, T_220, T_221, T_225, T_226, T_23, T_230, T_231, T_232, T_234,
         T_235, T_243, T_244, T_245, T_246, T_249, T_25, T_250, T_253, T_254, T_258, T_260, T_262,
-        T_263, T_267, T_274, T_275, T_278, T_279, T_280, T_281, T_282, T_283, T_284, T_285, T_286,
-        T_287, T_289, T_3, T_30, T_3A, T_3B, T_4, T_40, T_5, T_50, T_5B, T_6, T_60, T_65, T_67, T_7,
-        T_70, T_71, T_72, T_75, T_76, T_79, T_8, T_81, T_9, T_96, T_97, T_99, T_9B
+        T_263, T_267, T_274, T_275, T_276, T_278, T_279, T_280, T_281, T_282, T_283, T_284, T_285,
+        T_286, T_287, T_289, T_291, T_292, T_3, T_30, T_3A, T_3B, T_4, T_40, T_5, T_50, T_5B, T_6,
+        T_60, T_65, T_67, T_7, T_70, T_71, T_72, T_75, T_76, T_79, T_8, T_81, T_9, T_96, T_97, T_99,
+        T_9B
     )
 
     /** The handle a task id names, or `null` where a task id names two files. */
