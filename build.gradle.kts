@@ -404,6 +404,18 @@ tasks.register<Exec>("testColumnRepairMutations") {
     commandLine("$projectDir/tools/T-292-mutation-test.py")
 }
 
+tasks.register<Exec>("testMutationInputCensusMutations") {
+    group = "verification"
+    description = "Runs tools/T-295-mutation-test.py, the mutation test for the fixture-vs-corpus census"
+    commandLine("$projectDir/tools/T-295-mutation-test.py")
+}
+
+tasks.register<Exec>("testCommonModeLinkMutations") {
+    group = "verification"
+    description = "Runs tools/T-297-mutation-test.py, the mutation test for the common-mode link probe"
+    commandLine("$projectDir/tools/T-297-mutation-test.py")
+}
+
 tasks.named("test") {
     dependsOn(
         "testHarness", "testDeliverableTracer", "testMarkdownTables", "testCorpusLinks",
@@ -419,7 +431,11 @@ tasks.named("test") {
         "testQueueResidueMutations", "testQueueColumnMutations", "testDepartureKeyMutations",
         "testProsePredicateMutations", "testProseGateMutations",
         // `T-292` -- the column repair, and the mutation table over its own rules.
-        "testColumnRepair", "testColumnRepairMutations"
+        "testColumnRepair", "testColumnRepairMutations",
+        // Iteration 46 -- both harnesses landed UNWIRED, which `P-31` read as `wired: 12 of 14`.
+        // `C-0185`'s whole finding is that a harness nobody remembers to run is a harness that
+        // decays silently, so the wiring belongs in the same iteration as the harness.
+        "testMutationInputCensusMutations", "testCommonModeLinkMutations"
     )
 }
 

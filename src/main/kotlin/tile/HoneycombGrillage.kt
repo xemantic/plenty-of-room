@@ -221,7 +221,14 @@ class HoneycombDeflection internal constructor(
  *   term, unchanged, and the reason this class exists;
  * - a **normal link**, the covalent constraint tying the two duplex surfaces together, carried by
  *   the same penalty `OrigamiGrillage` uses and with the same `d/2` arm resolved onto the bond's
- *   own direction;
+ *   own direction. **Its residual `ΔW + (d/2)·unitY·(Φ_a + Φ_b)` is a function of the SUM of the
+ *   two rolls, so it IS the crossover's COMMON azimuthal mode** — `T-297`/`C-0194`, against
+ *   `CH-0242`'s reading that this class carries only the relative one. `d/2` is not a choice: it
+ *   is the only arm annihilating the linearised rigid roll `Φ ≡ α`, `W = α y`, which leaves
+ *   `α·unitY·(2a − d)` at an arm `a`. Read as `½ k (Φ_a + Φ_b)²` the model's common-mode
+ *   stiffness is `k_link (d·unitY)²/4`, which at [RIGID_LINK_STIFFNESS] is `336.800449×` the
+ *   span law's own value in plane — the lattice sits at the RIGID end of that mode, not at the
+ *   free one. See `tile/CrossoverCommonMode.kt` and [turnLinkOffsetResponse];
  * - an **axial slip** spring `k_s`, Chen et al.'s own softened-bond construction
  *   ([Gen1Tile.crossoverInPlaneStiffness]), which is what makes the interlayer coupling an
  *   **output** of the lattice rather than the `NONE`/`RIGID` binary `OrigamiSheet` carries.
@@ -1132,6 +1139,74 @@ class HoneycombGrillage(
     fun turnRotation(field: F64Array, element: HoneycombTurnElement): Double =
         field[dof(element.node, element.tie.upperBeam, PHI)] -
                 field[dof(element.node, element.tie.lowerBeam, PHI)]
+
+    /**
+     * The extension in nm of the turn tie [element]'s normal link in [field].
+     *
+     * [linkExtension] read on a raster turn rather than on a lattice bond — the same gradient
+     * `(1, armY, −1, armY)` over `(W_lower, Φ_lower, W_upper, Φ_upper)`, and therefore the same
+     * **common-mode** azimuthal coordinate, `ΔW + (d/2)·unitY·(Φ_lower + Φ_upper)` (`T-297`).
+     *
+     * `linkEnergy` and `slipEnergy` sum over [bonds] only and are left exactly as they were, so
+     * nothing that reads them can move; this is a reader, not a change to either.
+     */
+    fun turnLinkExtension(field: F64Array, element: HoneycombTurnElement): Double {
+        val arm = block.bondLength / 2.0 * element.unitY
+        return field[dof(element.node, element.tie.lowerBeam, W)] +
+                arm * field[dof(element.node, element.tie.lowerBeam, PHI)] -
+                field[dof(element.node, element.tie.upperBeam, W)] +
+                arm * field[dof(element.node, element.tie.upperBeam, PHI)]
+    }
+
+    /**
+     * The load in pN and pN·nm a set of raster-turn **link offsets** applies — the departure on
+     * the coordinate it actually lives on (`T-297`, `CH-0242`).
+     *
+     * A crossover built with **both** backbones rolled by `ρ` off the line of centres is relaxed
+     * at the link residual `R₀ = d·unitY·ρ` (`turnLinkOffset`), not at zero. The link element is
+     * then `½ k_link (R − R₀)²`, whose quadratic part is unchanged — so this is a **load**, no
+     * entry of the stiffness matrix moves, the field is exactly linear in the offsets, and
+     * `C-0104`'s influence-bank trap does not arise.
+     *
+     * The load is `k_link·R₀` times the link's own gradient. Its magnitude therefore scales with
+     * the penalty, and the **field** converges as the penalty stiffens, because an offset in a
+     * constraint has a well-posed constrained limit — which is asserted rather than argued.
+     *
+     * @param offsetsByTurnIndex the link offset in nm, keyed on the index of the tie in
+     *   [turnElements]. Absent ties carry none.
+     */
+    fun turnLinkOffsetLoad(offsetsByTurnIndex: Map<Int, Double>): F64Array {
+        offsetsByTurnIndex.forEach { (index, offset) ->
+            require(index in turnElements.indices) {
+                "a link offset must name a raster turn of the lattice, was: $index"
+            }
+            require(offset.isFinite()) {
+                "the link offset at turn $index must be finite, was: $offset"
+            }
+        }
+        val load = F64Array(degreesOfFreedom)
+        val half = block.bondLength / 2.0
+        offsetsByTurnIndex.forEach { (index, offset) ->
+            val element = turnElements[index]
+            val a = element.tie.lowerBeam
+            val b = element.tie.upperBeam
+            val node = element.node
+            val armY = half * element.unitY
+            val magnitude = linkStiffness * offset
+            load[dof(node, a, W)] += magnitude
+            load[dof(node, a, PHI)] += magnitude * armY
+            load[dof(node, b, W)] -= magnitude
+            load[dof(node, b, PHI)] += magnitude * armY
+        }
+        return load
+    }
+
+    /** The field [turnLinkOffsetLoad] produces, with the axial rigid mode's pin honoured. */
+    fun turnLinkOffsetResponse(offsetsByTurnIndex: Map<Int, Double>): HoneycombDeflection {
+        val load = turnLinkOffsetLoad(offsetsByTurnIndex)
+        load[pinnedDof] = 0.0
+        return HoneycombDeflection(this, factorisation.solve(load), uniformPressure(0.0))
+    }
 
     companion object {
 

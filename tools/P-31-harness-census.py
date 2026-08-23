@@ -107,6 +107,8 @@ HARNESSES = (
      "check-result-file-hygiene.py"),
     ("T-250-mutation-test.py", "REIMPLEMENTATION", "attributes",
      "check-result-file-hygiene.py"),
+    ("T-297-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
+     "src/main/kotlin/tile/CrossoverCommonMode.kt + src/main/kotlin/tile/HoneycombGrillage.kt"),
 )
 
 # Which module file each ATTRIBUTE receiver in a harness stands for.  A receiver not named here is
@@ -338,7 +340,11 @@ def _adapt(shape, module, harness):
                 filename = LEGACY_IMPLICIT_TARGET[harness]
             else:
                 name, filename, old, _new = row
-            rows.append((harness, name, os.path.basename(filename), old))
+            # A subject need not be a Python module in `tools/`: `T-297-mutation-test.py` mutates
+            # Kotlin under `src/`.  A declared path keeps its path and is resolved from the tree
+            # root; a bare basename keeps the historical `tools/` reading.
+            rows.append((harness, name,
+                         filename if "/" in filename else os.path.basename(filename), old))
     elif shape == "kind_name_path_subs":
         for _kind, name, path, subs in module.mutations():
             for old, _new in subs:
@@ -372,6 +378,9 @@ def census(tree=ROOT, strict=True):
     def read(basename):
         if basename not in cache:
             path = os.path.join(tools, basename)
+            if not os.path.exists(path):
+                # a subject outside `tools/`, declared with its path from the tree root
+                path = os.path.join(tree, basename)
             cache[basename] = (open(path, encoding="utf-8").read()
                                if os.path.exists(path) else None)
         return cache[basename]

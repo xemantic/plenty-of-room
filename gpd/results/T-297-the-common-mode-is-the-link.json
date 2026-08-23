@@ -1,0 +1,1445 @@
+{
+  "emission": {
+    "lattice": "honeycomb",
+    "regime": null
+  },
+  "task": "T-297",
+  "leaf": "A8.2",
+  "title": "A crossover's COMMON azimuthal mode is the vertical LINK, so the lattice sits at the RIGID end of it rather than missing it -- and what is wrong is the penalty's magnitude, 241.348295x the span law's own T/g",
+  "verificationType": "logical (the element decomposition, the frame-indifference theorem that fixes the connector arm at d/2, and the exact identity d^2/(2 g r_P) - d/(2 r_P) = d/g, all algebra on the corpus's own turnPhosphateSpan and on the committed source of HoneycombGrillage.assemble) + in-silico (the assembled stiffness matrix probed directly through the lattice's own energy accessors, the free tile swept over the link stiffness, and the departure carried as a link eigenstrain and graded through C-0058's exact Woodbury surrogate on C-0167's stations, C-0087's measured incorporation and 4000 realisations of one common stream)",
+  "maturity": "TRL 1-3. Model-consistent and traceable. NOT empirically demonstrated. The bond tension T = 2 k_theta / r_P is an ATTRIBUTION, not a measurement: it assumes, with CH-0242, that both eigenmodes of the span form are one mechanism, and k_theta is Chen et al.'s fitted dihedral constant with nothing in it resolved into stacking, backbone and junction geometry. Every number here is conditional on the raster's turns carrying ZERO unpaired nucleotides (C-0175's modelling choice, T-296).",
+  "units": {
+    "length": "nm",
+    "force": "pN",
+    "energy": "pN*nm, and k_BT = 4.141947 pN*nm at 300 K",
+    "angle": "degrees at every API, radians only where a lattice is loaded",
+    "rotationalStiffness": "pN*nm/rad",
+    "translationalStiffness": "pN/nm",
+    "dishing": "dimensionless, as a fraction of the closed-form free stroke"
+  },
+  "conventions": {
+    "s": "along the helices, origin at the face centre",
+    "y": "across the helices in the plane of the face, origin at the face centre",
+    "z": "along the block's thickness",
+    "W": "positive DOWNWARD, toward the electrode (C-0006)",
+    "Phi": "the roll about a beam's own axis, positive so that a point at +y offset moves by +Phi*y in W",
+    "theta_u, theta_l": "the two backbone azimuths off the line of centres in the SAME rotational sense, ForcedCrossoverPrice's (theta, 180 + theta)",
+    "R": "the link residual dW + (d/2) unitY (Phi_a + Phi_b), which IS the common mode",
+    "g": "d - 2 r_P, the phosphate span at zero departure"
+  },
+  "parameters": {
+    "interhelicalDistance": "2.536 nm (SAXS, honeycomb)",
+    "phosphateRadius": "0.908637858 nm (T-71, measured on 13 084 linkages)",
+    "spanFloor": "0.718724283 nm",
+    "hingeStiffness": "13.5294118 pN*nm/rad (Gen1Tile, alpha = 1)",
+    "slipStiffness": "64.7058824 pN/nm",
+    "linkStiffnessLadder": "41.4338953, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0 pN/nm",
+    "spanDerivedLinkStiffness": "41.4338953 pN/nm",
+    "standingPenalty": "10000.0 pN/nm (RIGID_LINK_STIFFNESS)",
+    "rowBasePairs": "116 bp = 39.44 nm",
+    "crossSections": "10 x 6 and 15 x 4, 60 helices each",
+    "raster": "102 / 109 bp (C-0151, drawable)",
+    "allowedDeparture": "8.57142857 degrees",
+    "foundation": "C-0001's secant, on the gap-facing face only",
+    "collar": "C-0022's solved profile at 2 mM / 10 nm / 0.192 V",
+    "targetForce": "100.0 pN over the face",
+    "tolerance": "0.1 (T-5b)",
+    "samples": "81 x 81",
+    "realisations": "4000",
+    "seed": "197197",
+    "distribution": "rim-graded 5:1 at a 6.7 nm band, C-0058's own",
+    "mandate": "C-0017's 33.3333 pN/nm on the SUM"
+  },
+  "sources": [
+    "gpd/results/T-3b-tile-edge-load-profile.json",
+    "gpd/results/T-254-raster-turn-prestrain.json",
+    "gpd/results/T-291-common-mode-departure-and-beam-twist.json"
+  ],
+  "citedInputs": [
+    "CH-0242's ratio, re-derived here rather than inherited: the circulating 3.52810239 is 0.0105 % below the correct 3.52847408",
+    "k_theta = 13.5294118 pN*nm/rad is Chen et al.'s fitted SQUARE-lattice dihedral constant; no honeycomb measurement of it exists here",
+    "RIGID_LINK_STIFFNESS = 10000.0 pN/nm is OrigamiGrillage's own penalty, priced in its KDoc against the duplex stretch modulus",
+    "r_P = 0.908637858 nm and the C2'-endo step 0.66448058 nm are T-71's measurements"
+  ],
+  "cheapBound": [
+    {
+      "question": "which coordinate of the lattice does a crossover's COMMON azimuthal mode live on?",
+      "answer": "the vertical LINK. HoneycombGrillage assembles it with the gradient (1, armY, -1, armY) over (W_a, Phi_a, W_b, Phi_b), armY = (d/2) unitY, so its residual is a function of the SUM of the two rolls.",
+      "consequence": "CH-0242's premise -- that the bond and tie carry the relative roll and nothing else on the azimuthal coordinates -- is false, and the question changes from 'add a spring' to 'measure what the penalty costs'."
+    },
+    {
+      "question": "is the lattice above or below the physical common-mode stiffness?",
+      "answer": "ABOVE, by 336.800449x in plane and 84.2001122x through the thickness.",
+      "consequence": "the lattice sits at the RIGID end of the common mode, not at the free one, so the challenge's direction is reversed and C-0175's and C-0180's tie deliverables are not lower bounds for the reason it gives."
+    },
+    {
+      "question": "what does the expensive half then cost?",
+      "answer": "a sweep of an EXISTING constructor argument. linkStiffness is already a HoneycombGrillage parameter, so the error the approximation carries is 6 solves of a lattice that exists.",
+      "consequence": "no new element, no new stiffness matrix, and every influence bank in the corpus stands."
+    }
+  ],
+  "channel": [
+    {
+      "statement": "CH-0242's ratio, re-derived rather than inherited: the common mode's span excess over the relative one's at FIXED axes is 1 + 2 r_P/(d - 2 r_P), which is d/(d - 2 r_P)",
+      "quantity": "the ratio, dimensionless",
+      "value": 3.52847408,
+      "reference": 3.52810239,
+      "ratio": 1.00010535,
+      "holds": true,
+      "note": "the value in circulation -- CH-0242's headline and section 1, C-0190's headline and section 6, the challenges index and two prose strings of T-291's own result file -- is 3.52810239, and T-291's openQuestions block emitted 3.52847408 from this same expression. No verdict moves: the 409x it is quoted in is 409x either way"
+    },
+    {
+      "statement": "the frame-indifferent element a LINEAR lattice may carry reads the same configuration at d^2/(2 g r_P), and the difference from CH-0242's expansion is exactly d/(2 r_P) -- the prestress geometric term linearisation excludes",
+      "quantity": "d^2/(2 g r_P) - d/(2 r_P), which must equal d/g",
+      "value": 3.52847408,
+      "reference": 3.52847408,
+      "ratio": 1.0,
+      "holds": true,
+      "note": "an identity, asserted rather than fitted: 4.92396953 - 1.39549545 = 3.52847408"
+    },
+    {
+      "statement": "the lattice's link residual dW + (d/2) unitY (Phi_a + Phi_b) IS the common mode, so the model's own common-mode azimuthal stiffness at fixed axes is k_link d^2 unitY^2 / 4 -- and it EXCEEDS the physical one",
+      "quantity": "the in-plane bond's common-mode stiffness in pN*nm/rad",
+      "value": 16078.24,
+      "reference": 47.7381787,
+      "ratio": 336.800449,
+      "holds": true,
+      "note": "the interlayer bond reads 4019.56 pN*nm/rad, 84.2001122x the physical one. CH-0242 section 3's 'and nothing else on the azimuthal coordinates' is false"
+    },
+    {
+      "statement": "and d/2 is the ONLY connector arm that annihilates the linearised rigid roll Phi = alpha, W = alpha y: the residual an arm a leaves is alpha unitY (2a - d)",
+      "quantity": "the residual in nm at a = r_P and a 1 mrad rigid roll, in-plane bond",
+      "value": 7.18724283E-4,
+      "reference": 0.0,
+      "ratio": 0.0,
+      "holds": true,
+      "note": "so the geometry's own arm r_P is not admissible in a linear element and the model's d/2 is a theorem, not a fitted parameter (CLAUDE.md's own frame-indifference entry, met on the honeycomb)"
+    },
+    {
+      "statement": "matching the SAME bond tension that fixes k_theta -- CH-0242's own premise, that both eigenmodes are one span mechanism -- gives T = 2 k_theta / r_P and a link stiffness k_R = T/g",
+      "quantity": "k_R in pN/nm",
+      "value": 41.4338953,
+      "reference": 10000.0,
+      "ratio": 241.348295,
+      "holds": true,
+      "note": "the implied bond tension is 29.7795467 pN, which over the built span's excess above T-71's measured C2'-endo step implies an effective step stiffness of 548.995 pN/nm"
+    }
+  ],
+  "probe": [
+    {
+      "state": "a COMMON roll of 1 mrad at every beam, axes at nominal",
+      "linkStiffness": 10000.0,
+      "hingeEnergy": 0.0,
+      "linkEnergy": 6.7528608,
+      "slipEnergy": 0.0,
+      "closedFormLinkEnergy": 6.7528608,
+      "departure": 0.0,
+      "note": "the hinge stores exactly zero and the link stores the closed form, which is what makes the link the common-mode coordinate"
+    },
+    {
+      "state": "a RIGID roll of 1 mrad: Phi = alpha at every beam and W = alpha y",
+      "linkStiffness": 10000.0,
+      "hingeEnergy": 0.0,
+      "linkEnergy": 0.0,
+      "slipEnergy": 0.0,
+      "closedFormLinkEnergy": 0.0,
+      "departure": 0.0,
+      "note": "every element stores zero, which is frame indifference measured rather than argued; the departure column is the worst turn tie's own link extension in nm"
+    },
+    {
+      "state": "consecutive x-raster rows counter-rolled by 1 mrad, so every IN-PLANE bond carries the pure RELATIVE eigenmode",
+      "linkStiffness": 10000.0,
+      "hingeEnergy": 0.00389647059,
+      "linkEnergy": 2.411736,
+      "slipEnergy": 0.0,
+      "closedFormLinkEnergy": 0.00389647059,
+      "departure": null,
+      "note": "the closed-form column is the in-plane JOINTS' own hinge energy, k_theta (2 theta)^2 / 2 at each of the 144 bonds and ties that join two adjacent rows; the interlayer ones join two helices of the SAME row and therefore see the common mode instead, which is why both springs read non-zero -- they are one residual and one hinge, not two azimuthal springs"
+    }
+  ],
+  "sweep": [
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 1.0,
+      "linkStiffness": 41.4338953,
+      "linkStiffnessOverSpanDerived": 1.0,
+      "freeDishingWithoutTies": 0.133888815,
+      "freeDishingWithTies": 0.129121422,
+      "tieRatio": 0.964392897,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 1.0,
+      "linkStiffness": 100.0,
+      "linkStiffnessOverSpanDerived": 2.41348295,
+      "freeDishingWithoutTies": 0.133072555,
+      "freeDishingWithTies": 0.128224345,
+      "tieRatio": 0.963567166,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 1.0,
+      "linkStiffness": 1000.0,
+      "linkStiffnessOverSpanDerived": 24.1348295,
+      "freeDishingWithoutTies": 0.132502634,
+      "freeDishingWithTies": 0.127472464,
+      "tieRatio": 0.962037207,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 1.0,
+      "linkStiffness": 10000.0,
+      "linkStiffnessOverSpanDerived": 241.348295,
+      "freeDishingWithoutTies": 0.132443428,
+      "freeDishingWithTies": 0.12738041,
+      "tieRatio": 0.961772226,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 1.0,
+      "linkStiffness": 100000.0,
+      "linkStiffnessOverSpanDerived": 2413.48295,
+      "freeDishingWithoutTies": 0.132437485,
+      "freeDishingWithTies": 0.127370931,
+      "tieRatio": 0.961743802,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 1.0,
+      "linkStiffness": 1000000.0,
+      "linkStiffnessOverSpanDerived": 24134.8295,
+      "freeDishingWithoutTies": 0.132436891,
+      "freeDishingWithTies": 0.12736998,
+      "tieRatio": 0.961740939,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 18.4938242,
+      "linkStiffness": 41.4338953,
+      "linkStiffnessOverSpanDerived": 1.0,
+      "freeDishingWithoutTies": 0.0544729023,
+      "freeDishingWithTies": 0.0483935864,
+      "tieRatio": 0.888397429,
+      "insideTolerance": true
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 18.4938242,
+      "linkStiffness": 100.0,
+      "linkStiffnessOverSpanDerived": 2.41348295,
+      "freeDishingWithoutTies": 0.0532224515,
+      "freeDishingWithTies": 0.0474650715,
+      "tieRatio": 0.891824224,
+      "insideTolerance": true
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 18.4938242,
+      "linkStiffness": 1000.0,
+      "linkStiffnessOverSpanDerived": 24.1348295,
+      "freeDishingWithoutTies": 0.0523193876,
+      "freeDishingWithTies": 0.0468083385,
+      "tieRatio": 0.89466526,
+      "insideTolerance": true
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 18.4938242,
+      "linkStiffness": 10000.0,
+      "linkStiffnessOverSpanDerived": 241.348295,
+      "freeDishingWithoutTies": 0.0522223659,
+      "freeDishingWithTies": 0.0467367262,
+      "tieRatio": 0.894956124,
+      "insideTolerance": true
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 18.4938242,
+      "linkStiffness": 100000.0,
+      "linkStiffnessOverSpanDerived": 2413.48295,
+      "freeDishingWithoutTies": 0.0522125804,
+      "freeDishingWithTies": 0.0467294648,
+      "tieRatio": 0.894984781,
+      "insideTolerance": true
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 18.4938242,
+      "linkStiffness": 1000000.0,
+      "linkStiffnessOverSpanDerived": 24134.8295,
+      "freeDishingWithoutTies": 0.0522116008,
+      "freeDishingWithTies": 0.0467287379,
+      "tieRatio": 0.894987649,
+      "insideTolerance": true
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 21.1851817,
+      "linkStiffness": 41.4338953,
+      "linkStiffnessOverSpanDerived": 1.0,
+      "freeDishingWithoutTies": 0.0524339812,
+      "freeDishingWithTies": 0.0463364958,
+      "tieRatio": 0.883711189,
+      "insideTolerance": true
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 21.1851817,
+      "linkStiffness": 100.0,
+      "linkStiffnessOverSpanDerived": 2.41348295,
+      "freeDishingWithoutTies": 0.0511598261,
+      "freeDishingWithTies": 0.0453880363,
+      "tieRatio": 0.887181207,
+      "insideTolerance": true
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 21.1851817,
+      "linkStiffness": 1000.0,
+      "linkStiffnessOverSpanDerived": 24.1348295,
+      "freeDishingWithoutTies": 0.0502404971,
+      "freeDishingWithTies": 0.0447188595,
+      "tieRatio": 0.89009588,
+      "insideTolerance": true
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 21.1851817,
+      "linkStiffness": 10000.0,
+      "linkStiffnessOverSpanDerived": 241.348295,
+      "freeDishingWithoutTies": 0.0501417316,
+      "freeDishingWithTies": 0.0446459684,
+      "tieRatio": 0.890395426,
+      "insideTolerance": true
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 21.1851817,
+      "linkStiffness": 100000.0,
+      "linkStiffnessOverSpanDerived": 2413.48295,
+      "freeDishingWithoutTies": 0.0501317698,
+      "freeDishingWithTies": 0.044638578,
+      "tieRatio": 0.890424937,
+      "insideTolerance": true
+    },
+    {
+      "crossSection": "10 x 6",
+      "hingeStiffnessEnhancement": 21.1851817,
+      "linkStiffness": 1000000.0,
+      "linkStiffnessOverSpanDerived": 24134.8295,
+      "freeDishingWithoutTies": 0.0501307726,
+      "freeDishingWithTies": 0.0446378379,
+      "tieRatio": 0.890427885,
+      "insideTolerance": true
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 1.0,
+      "linkStiffness": 41.4338953,
+      "linkStiffnessOverSpanDerived": 1.0,
+      "freeDishingWithoutTies": 0.31764797,
+      "freeDishingWithTies": 0.311607643,
+      "tieRatio": 0.980984212,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 1.0,
+      "linkStiffness": 100.0,
+      "linkStiffnessOverSpanDerived": 2.41348295,
+      "freeDishingWithoutTies": 0.316956159,
+      "freeDishingWithTies": 0.311395226,
+      "tieRatio": 0.9824552,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 1.0,
+      "linkStiffness": 1000.0,
+      "linkStiffnessOverSpanDerived": 24.1348295,
+      "freeDishingWithoutTies": 0.316461156,
+      "freeDishingWithTies": 0.311190905,
+      "tieRatio": 0.983346296,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 1.0,
+      "linkStiffness": 10000.0,
+      "linkStiffnessOverSpanDerived": 241.348295,
+      "freeDishingWithoutTies": 0.316408058,
+      "freeDishingWithTies": 0.31116115,
+      "tieRatio": 0.983417274,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 1.0,
+      "linkStiffness": 100000.0,
+      "linkStiffnessOverSpanDerived": 2413.48295,
+      "freeDishingWithoutTies": 0.316402703,
+      "freeDishingWithTies": 0.311158008,
+      "tieRatio": 0.983423988,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 1.0,
+      "linkStiffness": 1000000.0,
+      "linkStiffnessOverSpanDerived": 24134.8295,
+      "freeDishingWithoutTies": 0.316402166,
+      "freeDishingWithTies": 0.311157692,
+      "tieRatio": 0.983424658,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 9.65079217,
+      "linkStiffness": 41.4338953,
+      "linkStiffnessOverSpanDerived": 1.0,
+      "freeDishingWithoutTies": 0.232956571,
+      "freeDishingWithTies": 0.227923841,
+      "tieRatio": 0.978396272,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 9.65079217,
+      "linkStiffness": 100.0,
+      "linkStiffnessOverSpanDerived": 2.41348295,
+      "freeDishingWithoutTies": 0.231835908,
+      "freeDishingWithTies": 0.227371792,
+      "tieRatio": 0.980744502,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 9.65079217,
+      "linkStiffness": 1000.0,
+      "linkStiffnessOverSpanDerived": 24.1348295,
+      "freeDishingWithoutTies": 0.231059891,
+      "freeDishingWithTies": 0.227110189,
+      "tieRatio": 0.982906155,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 9.65079217,
+      "linkStiffness": 10000.0,
+      "linkStiffnessOverSpanDerived": 241.348295,
+      "freeDishingWithoutTies": 0.23097815,
+      "freeDishingWithTies": 0.227094793,
+      "tieRatio": 0.983187342,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 9.65079217,
+      "linkStiffness": 100000.0,
+      "linkStiffnessOverSpanDerived": 2413.48295,
+      "freeDishingWithoutTies": 0.230969924,
+      "freeDishingWithTies": 0.227093441,
+      "tieRatio": 0.983216503,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 9.65079217,
+      "linkStiffness": 1000000.0,
+      "linkStiffnessOverSpanDerived": 24134.8295,
+      "freeDishingWithoutTies": 0.230969101,
+      "freeDishingWithTies": 0.227093308,
+      "tieRatio": 0.983219432,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 12.7228458,
+      "linkStiffness": 41.4338953,
+      "linkStiffnessOverSpanDerived": 1.0,
+      "freeDishingWithoutTies": 0.225938164,
+      "freeDishingWithTies": 0.220950854,
+      "tieRatio": 0.977926216,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 12.7228458,
+      "linkStiffness": 100.0,
+      "linkStiffnessOverSpanDerived": 2.41348295,
+      "freeDishingWithoutTies": 0.224781574,
+      "freeDishingWithTies": 0.220377816,
+      "tieRatio": 0.98040872,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 12.7228458,
+      "linkStiffness": 1000.0,
+      "linkStiffnessOverSpanDerived": 24.1348295,
+      "freeDishingWithoutTies": 0.223982754,
+      "freeDishingWithTies": 0.220103469,
+      "tieRatio": 0.98268043,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 12.7228458,
+      "linkStiffness": 10000.0,
+      "linkStiffnessOverSpanDerived": 241.348295,
+      "freeDishingWithoutTies": 0.22389874,
+      "freeDishingWithTies": 0.220086801,
+      "tieRatio": 0.982974723,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 12.7228458,
+      "linkStiffness": 100000.0,
+      "linkStiffnessOverSpanDerived": 2413.48295,
+      "freeDishingWithoutTies": 0.223890287,
+      "freeDishingWithTies": 0.220085322,
+      "tieRatio": 0.983005226,
+      "insideTolerance": false
+    },
+    {
+      "crossSection": "15 x 4",
+      "hingeStiffnessEnhancement": 12.7228458,
+      "linkStiffness": 1000000.0,
+      "linkStiffnessOverSpanDerived": 24134.8295,
+      "freeDishingWithoutTies": 0.223889441,
+      "freeDishingWithTies": 0.220085176,
+      "tieRatio": 0.983008289,
+      "insideTolerance": false
+    }
+  ],
+  "eigenstrain": [
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 41.4338953,
+      "phase": 0,
+      "hingeStiffnessEnhancement": 1.0,
+      "peakDishingOverStroke": 0.129121422,
+      "insideTolerance": false,
+      "note": "the tied free tile, which is C-0175 section 9's own reading at k_link = 1e4"
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 41.4338953,
+      "phase": 1,
+      "hingeStiffnessEnhancement": 1.0,
+      "peakDishingOverStroke": 0.164904131,
+      "insideTolerance": false,
+      "note": "each turn relaxed at R0 = d unitY rho with rho = 8.57142857 degrees, C-0187's derived assignment"
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 41.4338953,
+      "phase": -1,
+      "hingeStiffnessEnhancement": 1.0,
+      "peakDishingOverStroke": 0.149167457,
+      "insideTolerance": false,
+      "note": "each turn relaxed at R0 = d unitY rho with rho = 8.57142857 degrees, C-0187's derived assignment"
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 41.4338953,
+      "phase": 0,
+      "hingeStiffnessEnhancement": 18.4938242,
+      "peakDishingOverStroke": 0.0483935864,
+      "insideTolerance": true,
+      "note": "the tied free tile, which is C-0175 section 9's own reading at k_link = 1e4"
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 41.4338953,
+      "phase": 1,
+      "hingeStiffnessEnhancement": 18.4938242,
+      "peakDishingOverStroke": 0.0834675453,
+      "insideTolerance": true,
+      "note": "each turn relaxed at R0 = d unitY rho with rho = 8.57142857 degrees, C-0187's derived assignment"
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 41.4338953,
+      "phase": -1,
+      "hingeStiffnessEnhancement": 18.4938242,
+      "peakDishingOverStroke": 0.068271115,
+      "insideTolerance": true,
+      "note": "each turn relaxed at R0 = d unitY rho with rho = 8.57142857 degrees, C-0187's derived assignment"
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 41.4338953,
+      "phase": 0,
+      "hingeStiffnessEnhancement": 21.1851817,
+      "peakDishingOverStroke": 0.0463364958,
+      "insideTolerance": true,
+      "note": "the tied free tile, which is C-0175 section 9's own reading at k_link = 1e4"
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 41.4338953,
+      "phase": 1,
+      "hingeStiffnessEnhancement": 21.1851817,
+      "peakDishingOverStroke": 0.0813628214,
+      "insideTolerance": true,
+      "note": "each turn relaxed at R0 = d unitY rho with rho = 8.57142857 degrees, C-0187's derived assignment"
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 41.4338953,
+      "phase": -1,
+      "hingeStiffnessEnhancement": 21.1851817,
+      "peakDishingOverStroke": 0.0661826442,
+      "insideTolerance": true,
+      "note": "each turn relaxed at R0 = d unitY rho with rho = 8.57142857 degrees, C-0187's derived assignment"
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 10000.0,
+      "phase": 0,
+      "hingeStiffnessEnhancement": 1.0,
+      "peakDishingOverStroke": 0.12738041,
+      "insideTolerance": false,
+      "note": "the tied free tile, which is C-0175 section 9's own reading at k_link = 1e4"
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 10000.0,
+      "phase": 1,
+      "hingeStiffnessEnhancement": 1.0,
+      "peakDishingOverStroke": 0.175404773,
+      "insideTolerance": false,
+      "note": "each turn relaxed at R0 = d unitY rho with rho = 8.57142857 degrees, C-0187's derived assignment"
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 10000.0,
+      "phase": -1,
+      "hingeStiffnessEnhancement": 1.0,
+      "peakDishingOverStroke": 0.148248798,
+      "insideTolerance": false,
+      "note": "each turn relaxed at R0 = d unitY rho with rho = 8.57142857 degrees, C-0187's derived assignment"
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 10000.0,
+      "phase": 0,
+      "hingeStiffnessEnhancement": 18.4938242,
+      "peakDishingOverStroke": 0.0467367262,
+      "insideTolerance": true,
+      "note": "the tied free tile, which is C-0175 section 9's own reading at k_link = 1e4"
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 10000.0,
+      "phase": 1,
+      "hingeStiffnessEnhancement": 18.4938242,
+      "peakDishingOverStroke": 0.0952881886,
+      "insideTolerance": true,
+      "note": "each turn relaxed at R0 = d unitY rho with rho = 8.57142857 degrees, C-0187's derived assignment"
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 10000.0,
+      "phase": -1,
+      "hingeStiffnessEnhancement": 18.4938242,
+      "peakDishingOverStroke": 0.0687126148,
+      "insideTolerance": true,
+      "note": "each turn relaxed at R0 = d unitY rho with rho = 8.57142857 degrees, C-0187's derived assignment"
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 10000.0,
+      "phase": 0,
+      "hingeStiffnessEnhancement": 21.1851817,
+      "peakDishingOverStroke": 0.0446459684,
+      "insideTolerance": true,
+      "note": "the tied free tile, which is C-0175 section 9's own reading at k_link = 1e4"
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 10000.0,
+      "phase": 1,
+      "hingeStiffnessEnhancement": 21.1851817,
+      "peakDishingOverStroke": 0.0931890716,
+      "insideTolerance": true,
+      "note": "each turn relaxed at R0 = d unitY rho with rho = 8.57142857 degrees, C-0187's derived assignment"
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 10000.0,
+      "phase": -1,
+      "hingeStiffnessEnhancement": 21.1851817,
+      "peakDishingOverStroke": 0.0667312375,
+      "insideTolerance": true,
+      "note": "each turn relaxed at R0 = d unitY rho with rho = 8.57142857 degrees, C-0187's derived assignment"
+    }
+  ],
+  "cells": [
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 41.4338953,
+      "phase": 0,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.022922214,
+      "p90OverStroke": 0.107701645,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.107701645,
+      "movementFromZeroTerm": 0.0
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 41.4338953,
+      "phase": 1,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0468326423,
+      "p90OverStroke": 0.124347289,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.107701645,
+      "movementFromZeroTerm": 0.0166456442
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 41.4338953,
+      "phase": -1,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0446385904,
+      "p90OverStroke": 0.12226202,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.107701645,
+      "movementFromZeroTerm": 0.014560375
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 41.4338953,
+      "phase": 0,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0595053819,
+      "p90OverStroke": 0.103971919,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.103971919,
+      "movementFromZeroTerm": 0.0
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 41.4338953,
+      "phase": 1,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0725163279,
+      "p90OverStroke": 0.117779018,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.103971919,
+      "movementFromZeroTerm": 0.0138070996
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 41.4338953,
+      "phase": -1,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0899343051,
+      "p90OverStroke": 0.126033436,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.103971919,
+      "movementFromZeroTerm": 0.0220615175
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 100.0,
+      "phase": 0,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.022230027,
+      "p90OverStroke": 0.10306316,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.10306316,
+      "movementFromZeroTerm": 0.0
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 100.0,
+      "phase": 1,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0488138931,
+      "p90OverStroke": 0.123845039,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.10306316,
+      "movementFromZeroTerm": 0.0207818797
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 100.0,
+      "phase": -1,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0488563703,
+      "p90OverStroke": 0.119761318,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.10306316,
+      "movementFromZeroTerm": 0.0166981585
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 100.0,
+      "phase": 0,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0588382162,
+      "p90OverStroke": 0.101678429,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.101678429,
+      "movementFromZeroTerm": 0.0
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 100.0,
+      "phase": 1,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0710756722,
+      "p90OverStroke": 0.11492924,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.101678429,
+      "movementFromZeroTerm": 0.0132508115
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 100.0,
+      "phase": -1,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0958290465,
+      "p90OverStroke": 0.128816794,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.101678429,
+      "movementFromZeroTerm": 0.027138365
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 1000.0,
+      "phase": 0,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0216139353,
+      "p90OverStroke": 0.0999026162,
+      "flatAtP90": true,
+      "zeroTermP90OverStroke": 0.0999026162,
+      "movementFromZeroTerm": 0.0
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 1000.0,
+      "phase": 1,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0533129487,
+      "p90OverStroke": 0.123659712,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0999026162,
+      "movementFromZeroTerm": 0.0237570963
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 1000.0,
+      "phase": -1,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0564399521,
+      "p90OverStroke": 0.118282522,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0999026162,
+      "movementFromZeroTerm": 0.018379906
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 1000.0,
+      "phase": 0,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0586502287,
+      "p90OverStroke": 0.0999353736,
+      "flatAtP90": true,
+      "zeroTermP90OverStroke": 0.0999353736,
+      "movementFromZeroTerm": 0.0
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 1000.0,
+      "phase": 1,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0719985035,
+      "p90OverStroke": 0.112717044,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0999353736,
+      "movementFromZeroTerm": 0.0127816706
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 1000.0,
+      "phase": -1,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.101593643,
+      "p90OverStroke": 0.132251126,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0999353736,
+      "movementFromZeroTerm": 0.0323157527
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 10000.0,
+      "phase": 0,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0215415726,
+      "p90OverStroke": 0.0995744768,
+      "flatAtP90": true,
+      "zeroTermP90OverStroke": 0.0995744768,
+      "movementFromZeroTerm": 0.0
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 10000.0,
+      "phase": 1,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0542395428,
+      "p90OverStroke": 0.124123744,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0995744768,
+      "movementFromZeroTerm": 0.0245492669
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 10000.0,
+      "phase": -1,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0582374242,
+      "p90OverStroke": 0.118598536,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0995744768,
+      "movementFromZeroTerm": 0.0190240589
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 10000.0,
+      "phase": 0,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0586348964,
+      "p90OverStroke": 0.0998791032,
+      "flatAtP90": true,
+      "zeroTermP90OverStroke": 0.0998791032,
+      "movementFromZeroTerm": 0.0
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 10000.0,
+      "phase": 1,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0727533223,
+      "p90OverStroke": 0.112133506,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0998791032,
+      "movementFromZeroTerm": 0.0122544025
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 10000.0,
+      "phase": -1,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.102309533,
+      "p90OverStroke": 0.132802852,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0998791032,
+      "movementFromZeroTerm": 0.032923749
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 100000.0,
+      "phase": 0,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0215342191,
+      "p90OverStroke": 0.0995426168,
+      "flatAtP90": true,
+      "zeroTermP90OverStroke": 0.0995426168,
+      "movementFromZeroTerm": 0.0
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 100000.0,
+      "phase": 1,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0543392007,
+      "p90OverStroke": 0.124154465,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0995426168,
+      "movementFromZeroTerm": 0.0246118478
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 100000.0,
+      "phase": -1,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0584295216,
+      "p90OverStroke": 0.118572702,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0995426168,
+      "movementFromZeroTerm": 0.0190300853
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 100000.0,
+      "phase": 0,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0586334208,
+      "p90OverStroke": 0.0998756402,
+      "flatAtP90": true,
+      "zeroTermP90OverStroke": 0.0998756402,
+      "movementFromZeroTerm": 0.0
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 100000.0,
+      "phase": 1,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0728332159,
+      "p90OverStroke": 0.112180421,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0998756402,
+      "movementFromZeroTerm": 0.0123047807
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 100000.0,
+      "phase": -1,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.102382721,
+      "p90OverStroke": 0.132875472,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0998756402,
+      "movementFromZeroTerm": 0.0329998318
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 1000000.0,
+      "phase": 0,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0215334826,
+      "p90OverStroke": 0.0995369555,
+      "flatAtP90": true,
+      "zeroTermP90OverStroke": 0.0995369555,
+      "movementFromZeroTerm": 0.0
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 1000000.0,
+      "phase": 1,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0543492422,
+      "p90OverStroke": 0.124147314,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0995369555,
+      "movementFromZeroTerm": 0.0246103589
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 1000000.0,
+      "phase": -1,
+      "placement": "abstract grid",
+      "columns": 3,
+      "pathCount": 30,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0584488648,
+      "p90OverStroke": 0.118560097,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0995369555,
+      "movementFromZeroTerm": 0.0190231417
+    },
+    {
+      "term": "no eigenstrain",
+      "linkStiffness": 1000000.0,
+      "phase": 0,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0586332739,
+      "p90OverStroke": 0.0998752932,
+      "flatAtP90": true,
+      "zeroTermP90OverStroke": 0.0998752932,
+      "movementFromZeroTerm": 0.0
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase +1",
+      "linkStiffness": 1000000.0,
+      "phase": 1,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.0728412527,
+      "p90OverStroke": 0.112185141,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0998752932,
+      "movementFromZeroTerm": 0.0123098478
+    },
+    {
+      "term": "the derived departure as a LINK offset, phase -1",
+      "linkStiffness": 1000000.0,
+      "phase": -1,
+      "placement": "abstract grid on the rooting helices",
+      "columns": 5,
+      "pathCount": 50,
+      "distribution": "rim-graded 5:1",
+      "compositeFraction": 0.3,
+      "nominalOverStroke": 0.102390055,
+      "p90OverStroke": 0.132873735,
+      "flatAtP90": false,
+      "zeroTermP90OverStroke": 0.0998752932,
+      "movementFromZeroTerm": 0.0329984417
+    }
+  ],
+  "convergence": [
+    {
+      "axis": "beam subdivisions 1 -> 2, at abstract grid on the rooting helices 5 col, phase 1, k_link 10000.0",
+      "quantity": "the ensemble's p90 over the stroke",
+      "coarse": 0.112133506,
+      "fine": 0.112135577,
+      "departure": 2.1E-6,
+      "verdictSurvives": true
+    },
+    {
+      "axis": "dishing sample grid 81 -> 161, at the same cell",
+      "quantity": "the ensemble's p90 over the stroke",
+      "coarse": 0.112133506,
+      "fine": 0.112539723,
+      "departure": 4.1E-4,
+      "verdictSurvives": true
+    },
+    {
+      "axis": "the link PENALTY, 1e4 -> 1e5 -> 1e6, on the eigenstrain field alone",
+      "quantity": "the peak dishing over the stroke of the link eigenstrain's own response",
+      "coarse": 0.0597196721,
+      "fine": 0.0597395661,
+      "departure": 2.0E-5,
+      "verdictSurvives": true
+    }
+  ],
+  "reproductions": [
+    {
+      "quantity": "C-0175 section 9, 10 x 6 at enhancement 1.0: freeDishingWithoutTies",
+      "published": 0.132443428,
+      "derived": 0.132443428,
+      "departure": 2.1E-9,
+      "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
+    },
+    {
+      "quantity": "C-0175 section 9, 10 x 6 at enhancement 1.0: freeDishingWithTies",
+      "published": 0.12738041,
+      "derived": 0.12738041,
+      "departure": 2.5E-9,
+      "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
+    },
+    {
+      "quantity": "C-0175 section 9, 10 x 6 at enhancement 18.4938242: freeDishingWithoutTies",
+      "published": 0.0522223659,
+      "derived": 0.0522223659,
+      "departure": 5.6E-10,
+      "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
+    },
+    {
+      "quantity": "C-0175 section 9, 10 x 6 at enhancement 18.4938242: freeDishingWithTies",
+      "published": 0.0467367262,
+      "derived": 0.0467367262,
+      "departure": 9.8E-10,
+      "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
+    },
+    {
+      "quantity": "C-0175 section 9, 10 x 6 at enhancement 21.1851817: freeDishingWithoutTies",
+      "published": 0.0501417316,
+      "derived": 0.0501417316,
+      "departure": 9.7E-10,
+      "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
+    },
+    {
+      "quantity": "C-0175 section 9, 10 x 6 at enhancement 21.1851817: freeDishingWithTies",
+      "published": 0.0446459684,
+      "derived": 0.0446459684,
+      "departure": 4.4E-10,
+      "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
+    },
+    {
+      "quantity": "C-0175 section 9, 15 x 4 at enhancement 1.0: freeDishingWithoutTies",
+      "published": 0.316408058,
+      "derived": 0.316408058,
+      "departure": 2.8E-10,
+      "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
+    },
+    {
+      "quantity": "C-0175 section 9, 15 x 4 at enhancement 1.0: freeDishingWithTies",
+      "published": 0.31116115,
+      "derived": 0.31116115,
+      "departure": 5.9E-10,
+      "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
+    },
+    {
+      "quantity": "C-0175 section 9, 15 x 4 at enhancement 9.65079217: freeDishingWithoutTies",
+      "published": 0.23097815,
+      "derived": 0.23097815,
+      "departure": 2.0E-9,
+      "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
+    },
+    {
+      "quantity": "C-0175 section 9, 15 x 4 at enhancement 9.65079217: freeDishingWithTies",
+      "published": 0.227094793,
+      "derived": 0.227094793,
+      "departure": 2.4E-10,
+      "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
+    },
+    {
+      "quantity": "C-0175 section 9, 15 x 4 at enhancement 12.7228458: freeDishingWithoutTies",
+      "published": 0.22389874,
+      "derived": 0.22389874,
+      "departure": 2.2E-9,
+      "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
+    },
+    {
+      "quantity": "C-0175 section 9, 15 x 4 at enhancement 12.7228458: freeDishingWithTies",
+      "published": 0.220086801,
+      "derived": 0.220086801,
+      "departure": 2.1E-9,
+      "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
+    },
+    {
+      "quantity": "C-0190 section 6's zero-eigenstrain p90 at abstract grid 3 col",
+      "published": 0.0995744767,
+      "derived": 0.0995744768,
+      "departure": 6.6E-10,
+      "source": "gpd/results/T-291-common-mode-departure-and-beam-twist.json, scale record"
+    },
+    {
+      "quantity": "C-0190 section 6's zero-eigenstrain p90 at abstract grid on the rooting helices 5 col",
+      "published": 0.0998791032,
+      "derived": 0.0998791032,
+      "departure": 7.4E-11,
+      "source": "gpd/results/T-291-common-mode-departure-and-beam-twist.json, scale record"
+    }
+  ],
+  "falsifiers": [
+    {
+      "id": "F1",
+      "statement": "the link's residual does NOT carry the sum of the two rolls, so the common mode really is absent from the element set",
+      "fired": false,
+      "outcome": "a common roll of 1 mrad at every beam stores 0.0 pN*nm in the hinges and 6.7528608 in the links, matching the closed form to 0.0"
+    },
+    {
+      "id": "F2",
+      "statement": "the lattice's own common-mode stiffness is BELOW CH-0242's physical one, so the challenge stands in direction as well as in kind",
+      "fired": false,
+      "outcome": "it is 336.800449x above it in plane and 84.2001122x through the thickness"
+    },
+    {
+      "id": "F3",
+      "statement": "some arm other than d/2 also annihilates the linearised rigid roll, so the link's arm is a fitted parameter rather than a theorem",
+      "fired": false,
+      "outcome": "the arm r_P leaves 7.2E-4 nm at 1 mrad where d/2 leaves exactly zero, and a rigid roll of the assembled lattice stores 0.0 pN*nm in total"
+    },
+    {
+      "id": "F4",
+      "statement": "a uniform pressure on the free tied lattice dishes anything but zero, at either end of the link ladder",
+      "fired": false,
+      "outcome": "the worst reading over both ends is 0.0 nm"
+    },
+    {
+      "id": "F5",
+      "statement": "DECLARED OPEN -- the free tile's flatness verdict moves across T-5b's 0.10 between the two ends of the link ladder",
+      "fired": false,
+      "outcome": "0 of 6 (cross-section, coupling) pairs move a verdict over the whole ladder; the worst relative spread in the tied free tile is 0.0380542"
+    },
+    {
+      "id": "F6",
+      "statement": "the link eigenstrain's field does not converge as the penalty stiffens",
+      "fired": false,
+      "outcome": "the ladder reads 0.0595221732, 0.0597196721, 0.0597395661 of the stroke at 1e4, 1e5 and 1e6 pN/nm"
+    },
+    {
+      "id": "F7",
+      "statement": "the link eigenstrain has a nonzero projection on the RELATIVE roll, which would make it the same load the corpus already carries",
+      "fired": false,
+      "outcome": "the worst projection over both link ends and all 59 ties is 0.0 pN*nm, on a load that is not itself zero"
+    },
+    {
+      "id": "F8",
+      "statement": "C-0175 section 9's six free-tile readings are not reproduced at the standing link stiffness",
+      "fired": false,
+      "outcome": "14 reproductions, worst departure 2.5E-9"
+    },
+    {
+      "id": "F9",
+      "statement": "DECLARED OPEN -- the two coupled cells C-0180 recovered survive the derived departure once it is carried on the coordinate it lives on",
+      "fired": false,
+      "outcome": "0 of 24 loaded readings are flat at the 90th percentile"
+    },
+    {
+      "id": "F10",
+      "statement": "DECLARED OPEN -- the COUPLED cells' verdict is as insensitive to the link stiffness as the free tile's is",
+      "fired": true,
+      "outcome": "the zero-eigenstrain p90 of the two recovered cells over the ladder: 3 col at k_link 41.4339 -> 0.107701645 NOT flat; 3 col at k_link 100.0 -> 0.10306316 NOT flat; 3 col at k_link 1000.0 -> 0.0999026162 flat; 3 col at k_link 10000.0 -> 0.0995744768 flat; 3 col at k_link 100000.0 -> 0.0995426168 flat; 3 col at k_link 1000000.0 -> 0.0995369555 flat; 5 col at k_link 41.4339 -> 0.103971919 NOT flat; 5 col at k_link 100.0 -> 0.101678429 NOT flat; 5 col at k_link 1000.0 -> 0.0999353736 flat; 5 col at k_link 10000.0 -> 0.0998791032 flat; 5 col at k_link 100000.0 -> 0.0998756402 flat; 5 col at k_link 1000000.0 -> 0.0998752932 flat"
+    }
+  ],
+  "findings": [
+    "CH-0242 is UPHELD IN PART and REFUTED in its direction. The premise -- that HoneycombGrillage's bond and tie carry the relative roll 'and nothing else on the azimuthal coordinates' -- is false: the vertical LINK's residual is dW + (d/2) unitY (Phi_a + Phi_b), a function of the SUM, and it is the common mode itself. Measured on the assembled lattice, a common roll of 1 mrad at every beam stores 0.0 pN*nm in the hinges and 6.7528608 pN*nm in the links.",
+    "And the direction reverses. The model's own common-mode azimuthal stiffness at fixed axes is k_link d^2 unitY^2 / 4 = 16078.24 pN*nm/rad in plane and 4019.56 through the thickness, against CH-0242's physical 3.52847408x k_theta = 47.7381787 pN*nm/rad. The lattice is 336.800449x and 84.2001122x too STIFF, not missing the spring: it sits at the RIGID end of the mode.",
+    "d/2 is a theorem and r_P is not admissible. The linearised rigid roll is Phi = alpha, W = alpha y, and the residual an arm a leaves under it is alpha unitY (2a - d) -- zero at every bond direction iff a = d/2. The span's own arm r_P leaves 7.2E-4 nm at 1 mrad, so a linear element may not use it, and the difference is exactly the prestress geometric term: d^2/(2 g r_P) - d/(2 r_P) = d/g, i.e. 4.92396953 - 1.39549545 = 3.52847408.",
+    "What IS wrong is a MAGNITUDE, and it is the penalty's. Attributing all of k_theta to the span mechanism -- CH-0242's own premise -- gives a bond tension of 29.7795467 pN and a link stiffness k_R = T/g = 41.4338953 pN/nm, against RIGID_LINK_STIFFNESS = 10000.0 pN/nm: 241.348295x. The tension cross-checks: over the built span's 0.0542437 nm excess above T-71's measured C2'-endo step it implies an effective step stiffness of 548.995 pN/nm.",
+    "The error that carries is measured rather than bracketed, because linkStiffness is an EXISTING constructor argument. Over the whole ladder 0 of 6 (cross-section, coupling) pairs move a flatness verdict and the worst relative spread in the tied free tile is 0.0380542. At the recommended 10 x 6 and f = 0.30 the tied free tile reads 0.0463364958 at k_R against 0.0446459684 at the penalty.",
+    "And the departure's MAGNITUDE stops being a threshold. Because the common mode is the link, the departure is an OFFSET in the link's own residual, R0 = d unitY rho -- a load, so no entry of the stiffness matrix moves and C-0104's trap does not arise. Its projection on the relative roll is 0.0 pN*nm at every one of the 59 ties, which is the exact mirror of C-0190's F2. The free tile at 10 x 6, f = 0.30 reads 0.0813628214 at k_R and 0.0931890716 at the penalty, against C-0190's per-beam twist reading of the same tile.",
+    "But the FREE tile's insensitivity to the penalty does not transfer to the COUPLED cells, and F10 fired. The two cells C-0180 recovered are flat at the standing penalty and NOT flat at the span law's own k_R: 3 col at k_link 41.4339 -> 0.107701645 NOT flat; 3 col at k_link 100.0 -> 0.10306316 NOT flat; 3 col at k_link 1000.0 -> 0.0999026162 flat; 3 col at k_link 10000.0 -> 0.0995744768 flat; 3 col at k_link 100000.0 -> 0.0995426168 flat; 3 col at k_link 1000000.0 -> 0.0995369555 flat; 5 col at k_link 41.4339 -> 0.103971919 NOT flat; 5 col at k_link 100.0 -> 0.101678429 NOT flat; 5 col at k_link 1000.0 -> 0.0999353736 flat; 5 col at k_link 10000.0 -> 0.0998791032 flat; 5 col at k_link 100000.0 -> 0.0998756402 flat; 5 col at k_link 1000000.0 -> 0.0998752932 flat. So the corpus's coupled recovery rests on a link stiffness the span law alone does not supply, and k_R is a pure-tension LOWER bound on it -- the connector's own bending and the junction's stacking are not in it.",
+    "Graded on the two cells C-0190 quoted its threshold on, 0 of 24 loaded readings are flat at the 90th percentile. Convergence: 3 of 3 axes leave the verdict standing, worst departure 4.1E-4. Reproductions: 14, worst departure 2.5E-9.",
+    "One number in circulation is wrong and no verdict of any claim turns on it. 1 + 2 r_P/(d - 2 r_P) = d/(d - 2 r_P) = 3.52847408, where CH-0242's headline and section 1, C-0190's headline and section 6, the challenges index and two prose strings of T-291's own result file all carry 3.52810239 -- 0.0105 % low. T-291's openQuestions block emitted the right one from the same expression, so the artifact carried the correction the prose did not."
+  ],
+  "validity": [
+    "TRL 1-3, model-consistent and traceable, not empirically demonstrated.",
+    "T = 2 k_theta / r_P is an ATTRIBUTION of the whole of k_theta to the span mechanism. It is CH-0242's own premise -- without it the challenge's own ratio does not follow either -- but if k_theta is largely stacking or backbone bending rather than connector tension, T is smaller and the span-derived link stiffness is smaller with it. The direction of that error is known: it makes the penalty MORE wrong, never less.",
+    "The link's arm d/2 is forced by frame indifference WITHIN this kinematics. A model carrying an in-plane transverse coordinate could use the geometry's own r_P and would then also carry the prestress geometric term this one excludes; the lattice has no such coordinate (C-0154 section 9).",
+    "The model's common-mode stiffness is unitY-dependent -- four times larger at an in-plane bond than at an interlayer one -- where the span form has no such anisotropy. That is the same missing coordinate, seen from the side.",
+    "Every number is conditional on the raster's turns carrying ZERO unpaired nucleotides. Douglas et al. allot 28 nt per helix as front and rear loops, and a turn with 28 unpaired nucleotides demands no azimuth at all (T-296).",
+    "The lattice carries no across-helix parallel-axis term, so its D_perp is the independent one and a lower bound; Kirchhoff is not safe at these thicknesses, so every D_parallel is an upper bound.",
+    "The dropout statistics are measured on a single-layer Rothemund rectangle and only the profile transfers, in nm; the ensemble perturbs the COUPLING and never the block's own crossovers or its ties.",
+    "Nothing here re-opens the placement search, the distribution rule, the raster, the cross-section or the departure's magnitude in degrees.",
+    "The two cells graded are the two C-0190 section 6 quotes its threshold on and not the whole 64-cell census; a full re-grade at a moved link stiffness is not run here."
+  ],
+  "openQuestions": [
+    "What the crossover connector's force-extension law actually is. The ratio between the two azimuthal springs is convention-free; the absolute link stiffness is T/g and T is attributed rather than measured.",
+    "Whether the whole 64-cell census of C-0167 moves at the span-derived link stiffness. Only the two recovered cells are graded here.",
+    "What an in-plane transverse coordinate would buy. It would make the link's arm the geometry's r_P rather than d/2, remove the unitY anisotropy, and let the prestress geometric term be carried honestly rather than excluded.",
+    "Whether C-0190's per-beam twist and this study's link eigenstrain are the same load in the limit of a rigid link. They load different coordinates of the same demand, and the corpus now carries both."
+  ],
+  "proseFailure": "none"
+}
