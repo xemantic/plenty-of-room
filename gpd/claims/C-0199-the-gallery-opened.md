@@ -5,7 +5,7 @@
 | **Task** | [`T-255`](../tasks/T-255-cadnano-gallery-forced-crossovers.md), raised by [`C-0152`](C-0152-forced-scaffold-crossover-price.md) (`T-246`) §6 |
 | **Leaf** | **`A8.2`** |
 | **Verification type** | **in-silico** (parsing 26 **foreign** design files with three independent tests built on caDNAno's own published rule, 37 self-tests written first) **+ literature** (the gallery, its archives and the three papers it cites, every number flagged for how it was read; one bar chart digitised at 600 dpi with the paper's own ordinal statements as cross-checks) |
-| **Verdict** | **PASS on all six predicates.** Of the seven declared falsifiers, **`F3` FIRED** — the category is not empty — and `F1`, `F2`, `F5`, `F6` did not; `F4` did not fire and its not firing **is** the answer; `F7` fired and is reported. Raises [`CH-0251`](../challenges/CH-0251-the-deposited-block-has-no-loops.md) against [`C-0193`](C-0193-the-built-turn-is-a-tether.md) §3/§4 |
+| **Verdict** | **PASS on all six predicates.** Of the seven declared falsifiers **three FIRED**: `F3` (the category is not empty), `F5` (the honeycomb designs' raster turns **are** bound by the `±5 bp` condition — which is what raises the challenge) and `F7` (the conjunction's expected yield is below one). `F1`, `F2` and `F6` did not fire; **`F4` did not fire and its not firing IS the answer**. Raises [`CH-0251`](../challenges/CH-0251-the-deposited-block-has-no-loops.md) against [`C-0193`](C-0193-the-built-turn-is-a-tether.md) §3/§4 |
 | **Maturity** | **TRL 1–3. Model-consistent and traceable. NOTHING HERE IS MEASURED IN THIS PROJECT.** Every yield quoted is a published measurement of somebody else's folding experiment, read directly and flagged. The forced-crossover census is a statement about **design files**, not about folded objects |
 | **Provenance** | [`gpd/results/T-255-cadnano-gallery-forced-crossovers.json`](../results/T-255-cadnano-gallery-forced-crossovers.json), written by [`tools/T-255-emit-result.py`](../../tools/T-255-emit-result.py) (**new**, no Kotlin source touched), **byte-identical across two independent runs**, `--selftest` **13 checks, 0 failed**. Parser, classifier, digitiser, retrieval driver, full HTTP log and the three archives **unmodified** at [`gpd/data/T-255-sources/`](../data/T-255-sources/MANIFEST.md); `forced_census.py` carries **37 named assertions** |
 | **Conditions** | Honeycomb, 21 bp crossover period, 3 azimuth classes at 7 bp, caDNAno scaffold offset `±5 bp`, 10.5 bp/turn so `240/7 = 34.2857143°` per base pair; rise 0.34 nm/bp. **All four lattice constants are PARSED out of [`tile/HoneycombBondClassResidues.kt`](../../src/main/kotlin/tile/HoneycombBondClassResidues.kt)**, not transcribed. The square-lattice comparison period (32 bp, 8 bp step) is `CLAUDE.md`'s own, cited in the source. Counts are dimensionless; a yield is a **percentage of a stated denominator and the denominator travels with it**. No buffer, temperature or environment coordinate enters, so the result file's `regime` is `[]`. Retrieved **2026-08-23**; nothing installed but `poppler-utils`, already present |
@@ -39,10 +39,13 @@ flanked by unpaired scaffold** — and the built honeycomb blocks are recorded a
 bases per helix. If that held of the gallery designs, the category would be empty by construction
 and no census would be worth running.
 
-**It narrowed the target correctly and it did not empty the category.** Measured on the deposited
-files, `10` of the 26 designs carry **zero** unpaired scaffold — including all seven caDNAno
-blocks and the Nature monolith — so the exemption does not apply to them at all, and the other
-sixteen carry forcings that are not raster turns. See §6 and `CH-0251`.
+**It narrowed the target correctly and it did not empty the category — and `F5` fired.** Measured
+on the deposited files, `10` of the 26 designs carry **zero** unpaired scaffold — including all
+seven caDNAno blocks and the Nature monolith — so the exemption does not apply to them at all, and
+their raster turns sit on the `±5` lattice exactly, at `0` forced of 118 (or 126). The other
+sixteen carry forcings that are not raster turns. **A cheap bound that turns out to be false is
+still the right thing to run first**: it cost one census column, it was declared before the fetch,
+and it is what makes `CH-0251` a measurement rather than a suspicion.
 
 The second cheap bound also held: conjunct 4 cost **nothing new**, because all three cited papers
 were already in `gpd/data/`, and the third — *check `gpd/data/` first* — paid for the **fifth**
@@ -88,9 +91,15 @@ same doubling in the field's own generator — and a staple nicked at one half, 
 helix end, leaves exactly one crossing behind. Which half a lone crossing is, is a convention;
 whether its residue is in the two-wide window is not.
 
-**`F6` did not fire.** On the caDNAno paper's own `10 × 6` block the classifier returns
-**77 of 77** staple bonds fitting one window, three site residues **`[6, 13, 20]`** exactly seven
-apart, and **zero** forced crossovers of any kind.
+**`F6` did not fire, on a SUBSTITUTED calibration and the substitution is the stronger one.**
+`T-255`'s plan named this repository's own committed `102 / 109` honeycomb design as the
+calibration; that design is a **scadnano** file and this is a **caDNAno legacy** reader, so the
+two do not meet and no conversion exists here. What the classifier was calibrated against instead
+is the **tool author's own** `10 × 6` block, on which it returns **77 of 77** staple bonds fitting
+one window, three site residues **`[6, 13, 20]`** exactly seven apart, and **zero** forced
+crossovers of any kind. `CLAUDE.md`: *the field's own generator is the right calibration for a
+generalised rule* — a design deposited by the people who wrote the rule is a stronger test of the
+rule than a design this repository drew to obey it.
 
 ## 4. The census — `F3` FIRED
 

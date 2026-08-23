@@ -54,6 +54,25 @@
   "C_alignment": "an antiparallel crossover joins two helices at the SAME base index; a strand connection between different base indices is a manual connection and its axial offset is a number the file states",
   "B_blindSpot": "a LONE crossing displaced by exactly +1 bp lands inside the window, so test B is a LOWER bound on the forced count"
  },
+ "azimuthOfADeparture": {
+  "why": "C-0152's map from a residue departure to an azimuth, evaluated at the departures the gallery actually uses. The two k_BT figures are C-0152's own rigid-duplex ceiling: 0.350894669 per crossover at its cheapest rung, and its 10.5268401 block ceiling for a 1 bp displacement divided by the ten crossovers that ceiling is written on. Their ratio is NOT the 4 a reader gets by squaring the azimuth -- C-0152 reaches the angle through its span and roll mapping.",
+  "degreesPerBasePair": 34.2857143,
+  "cheapestRung": {
+   "displacementBp": [
+    10,
+    11
+   ],
+   "azimuthDegrees": 17.1428571,
+   "cadnanoCeilingPerCrossoverKbT": 0.350894669
+  },
+  "whatTheGalleryUses": {
+   "displacementBp": 1,
+   "azimuthDegrees": 34.2857143,
+   "cadnanoCeilingPerCrossoverKbT": 1.05268401,
+   "instances": 28
+  },
+  "ratioOfTheTwoCeilings": 3.00000001
+ },
  "totals": {
   "stapleCrossings": 17837,
   "scaffoldCrossings": 4069,
@@ -965,6 +984,29 @@
   "crossChecks": {
    "paperSaysGreatestGelYieldIsI": true,
    "paperSaysMostRobustAfterPurificationIsII": true
+  },
+  "digitisationProvenance": {
+   "gelYieldPercentProvenance": {
+    "zeroRuleRow": 4615,
+    "ruleSpacingPx": 107,
+    "rulesFoundRows": [
+     4181,
+     4397,
+     4508,
+     4615
+    ],
+    "percentPerPixel": 0.140187
+   },
+   "temYieldAfterPurificationPercentProvenance": {
+    "zeroRuleRow": 5282,
+    "ruleSpacingPx": 107,
+    "rulesFoundRows": [
+     4850,
+     5175,
+     5282
+    ],
+    "percentPerPixel": 0.140187
+   }
   },
   "rows": [
    {

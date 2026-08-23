@@ -274,6 +274,23 @@ def build():
             "B_blindSpot": ("a LONE crossing displaced by exactly +1 bp lands inside the window, "
                             "so test B is a LOWER bound on the forced count"),
         },
+        "azimuthOfADeparture": {
+            "why": ("C-0152's map from a residue departure to an azimuth, evaluated at the "
+                    "departures the gallery actually uses. The two k_BT figures are C-0152's own "
+                    "rigid-duplex ceiling: 0.350894669 per crossover at its cheapest rung, and "
+                    "its 10.5268401 block ceiling for a 1 bp displacement divided by the ten "
+                    "crossovers that ceiling is written on. Their ratio is NOT the 4 a reader "
+                    "gets by squaring the azimuth -- C-0152 reaches the angle through its span "
+                    "and roll mapping."),
+            "degreesPerBasePair": 240.0 / 7.0,
+            "cheapestRung": {"displacementBp": [10, 11], "azimuthDegrees": 240.0 / 7.0 / 2.0,
+                             "cadnanoCeilingPerCrossoverKbT": 0.350894669},
+            "whatTheGalleryUses": {
+                "displacementBp": 1, "azimuthDegrees": 240.0 / 7.0,
+                "cadnanoCeilingPerCrossoverKbT": 10.5268401 / 10.0,
+                "instances": 28},
+            "ratioOfTheTwoCeilings": (10.5268401 / 10.0) / 0.350894669,
+        },
         "totals": {
             "stapleCrossings": sum(d["stapleCrossings"] for d in designs),
             "scaffoldCrossings": sum(d["scaffoldCrossings"] for d in designs),
@@ -304,6 +321,8 @@ def build():
                                                      "particles per shape"),
             },
             "crossChecks": fig2["crossChecks"],
+            "digitisationProvenance": {
+                k: fig2[k] for k in fig2 if k.endswith("Provenance")},
             "rows": withYield,
         },
         "pooledYieldsForTheShapesThatDOCarryForcedCrossovers": {
@@ -374,6 +393,18 @@ def _selftest():
     check("the 10x6 block and the monolith are the SAME design, measured rather than asserted",
           document["zeroLoopTurns"]["monolithAndTenBySixAreBitIdentical"] is True and
           len(set(document["zeroLoopTurns"]["bitIdentityDigests"].values())) == 1)
+    a2 = document["azimuthOfADeparture"]
+    check("one base pair is 240/7 degrees at caDNAno's 10.5 bp per turn",
+          abs(a2["degreesPerBasePair"] - 34.285714285714285) < 1e-12)
+    check("the cheapest rung is half a base-pair step",
+          abs(a2["cheapestRung"]["azimuthDegrees"] * 2 - a2["degreesPerBasePair"]) < 1e-12)
+    check("the two ceilings are C-0152's own and their ratio is three, not four",
+          abs(a2["ratioOfTheTwoCeilings"] - 3.0) < 1e-7 and
+          abs(a2["ratioOfTheTwoCeilings"] - 4.0) > 0.9)
+    check("all 28 register-forced crossings are accounted for by the azimuth block",
+          a2["whatTheGalleryUses"]["instances"] ==
+          document["totals"]["forcedStapleCrossings"] +
+          document["totals"]["forcedScaffoldCrossings"])
     check("every retrieval carries an HTTP status",
           all("httpStatus" in r for r in document["retrieval"]))
     check("no retrieval record carries a percent-encoded string, which the hygiene gate reads as "
