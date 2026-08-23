@@ -1,0 +1,563 @@
+{
+  "emission": {
+    "lattice": "none",
+    "regime": []
+  },
+  "task": "T-252",
+  "title": "a number quoted in a claim has no link back to its result file -- and every detectable instance of the class is DELIBERATE",
+  "subject": "every markdown document of gpd/claims, gpd/challenges, gpd/tasks and the five root-level documents, against the concatenated text of every committed result file; a corpus-subject result file, so the ref is an argument and the resolved SHA is recorded",
+  "baselineRef": "05562eadbdf0168339545676c096a3256efd5226",
+  "baselineRefRequested": "HEAD",
+  "units": "none; every value is an integer count, a line number or a name",
+  "parameters": {
+    "population": "a decimal carrying MORE than nine significant digits, which is the one token class in which CH-0199 is detectable at all: a correctly rounded result file cannot contain one, so an unfindable token is either historical or stale",
+    "struck": "struck spans are blanked first -- a withdrawn number is not a quotation",
+    "resultFilesScanned": 176,
+    "documentsScanned": 612,
+    "note": "no wall-clock timing and no step counter is emitted; every value is an integer count, a line number or a name"
+  },
+  "census": {
+    "tokensAboveNineSignificantDigits": 115,
+    "findable": 46,
+    "unfindable": 69,
+    "unfindableFiles": 24,
+    "unfindableByFile": {
+      "CLAUDE.md": 3,
+      "JOURNAL.md": 3,
+      "gpd/challenges/CH-0092-the-propagation-did-not-close.md": 1,
+      "gpd/challenges/CH-0112-a-lost-branch-is-recorded-as-a-fold-and-as-a-ceiling.md": 5,
+      "gpd/challenges/CH-0178-a-criterion-with-no-root-returned-its-own-bracket-floor.md": 4,
+      "gpd/challenges/CH-0199-a-quoted-number-has-no-link-back-to-its-file.md": 8,
+      "gpd/challenges/CH-0206-the-gate-was-red-at-the-commit-that-promoted-it.md": 1,
+      "gpd/challenges/CH-0207-a-parameter-block-cannot-re-run-its-own-study.md": 4,
+      "gpd/challenges/README.md": 1,
+      "gpd/claims/C-0073-determined-precision-of-a-result-file.md": 1,
+      "gpd/claims/C-0092-large-rotation-arm-branch.md": 1,
+      "gpd/claims/C-0096-doubling-ladder-repair.md": 7,
+      "gpd/claims/C-0101-re-emitting-what-the-repair-moved.md": 4,
+      "gpd/claims/C-0110-device-b-tall-gap.md": 2,
+      "gpd/claims/C-0150-departure-spelling-set-and-the-wall-clock.md": 1,
+      "gpd/claims/C-0153-unrounded-prose-interpolations.md": 2,
+      "gpd/claims/C-0156-prose-interpolation-sweep.md": 2,
+      "gpd/claims/C-0158-prose-gate-red.md": 1,
+      "gpd/claims/C-0159-environment-interface.md": 6,
+      "gpd/claims/C-0162-round-outputs-never-inputs.md": 2,
+      "gpd/claims/C-0172-typed-handles-and-the-emission-header.md": 1,
+      "gpd/claims/C-0174-emission-header-residue-and-the-seven-unrounded-emitters.md": 2,
+      "gpd/claims/C-0180-tied-honeycomb-coupled-regrade.md": 2,
+      "gpd/claims/C-0198-a-quoted-number-has-no-link-back.md": 5
+    },
+    "unfindableTokens": [
+      {
+        "file": "gpd/claims/C-0073-determined-precision-of-a-result-file.md",
+        "line": 362,
+        "tokenRedacted": "1.10…",
+        "significantDigits": 10,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0092-large-rotation-arm-branch.md",
+        "line": 54,
+        "tokenRedacted": "8.16…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0096-doubling-ladder-repair.md",
+        "line": 107,
+        "tokenRedacted": "7.90…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0096-doubling-ladder-repair.md",
+        "line": 111,
+        "tokenRedacted": "8.16…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0096-doubling-ladder-repair.md",
+        "line": 215,
+        "tokenRedacted": "0.67…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0096-doubling-ladder-repair.md",
+        "line": 221,
+        "tokenRedacted": "7.91…",
+        "significantDigits": 17,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0096-doubling-ladder-repair.md",
+        "line": 221,
+        "tokenRedacted": "7.91…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0096-doubling-ladder-repair.md",
+        "line": 337,
+        "tokenRedacted": "7.90…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0096-doubling-ladder-repair.md",
+        "line": 339,
+        "tokenRedacted": "8.16…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0101-re-emitting-what-the-repair-moved.md",
+        "line": 47,
+        "tokenRedacted": "108.…",
+        "significantDigits": 17,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0101-re-emitting-what-the-repair-moved.md",
+        "line": 54,
+        "tokenRedacted": "9.98…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0101-re-emitting-what-the-repair-moved.md",
+        "line": 59,
+        "tokenRedacted": "9.09…",
+        "significantDigits": 14,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0101-re-emitting-what-the-repair-moved.md",
+        "line": 59,
+        "tokenRedacted": "284.…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0110-device-b-tall-gap.md",
+        "line": 199,
+        "tokenRedacted": "25.1…",
+        "significantDigits": 17,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0110-device-b-tall-gap.md",
+        "line": 199,
+        "tokenRedacted": "25.1…",
+        "significantDigits": 17,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0150-departure-spelling-set-and-the-wall-clock.md",
+        "line": 157,
+        "tokenRedacted": "0.16…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0153-unrounded-prose-interpolations.md",
+        "line": 113,
+        "tokenRedacted": "0.16…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0153-unrounded-prose-interpolations.md",
+        "line": 182,
+        "tokenRedacted": "0.16…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0156-prose-interpolation-sweep.md",
+        "line": 80,
+        "tokenRedacted": "6.70…",
+        "significantDigits": 10,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0156-prose-interpolation-sweep.md",
+        "line": 80,
+        "tokenRedacted": "8.16…",
+        "significantDigits": 10,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0158-prose-gate-red.md",
+        "line": 175,
+        "tokenRedacted": "7.90…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0159-environment-interface.md",
+        "line": 105,
+        "tokenRedacted": "0.22…",
+        "significantDigits": 12,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0159-environment-interface.md",
+        "line": 106,
+        "tokenRedacted": "0.22…",
+        "significantDigits": 12,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0159-environment-interface.md",
+        "line": 131,
+        "tokenRedacted": "938.…",
+        "significantDigits": 15,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0159-environment-interface.md",
+        "line": 132,
+        "tokenRedacted": "938.…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0159-environment-interface.md",
+        "line": 133,
+        "tokenRedacted": "0.52…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0159-environment-interface.md",
+        "line": 134,
+        "tokenRedacted": "0.52…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0162-round-outputs-never-inputs.md",
+        "line": 215,
+        "tokenRedacted": "12.0…",
+        "significantDigits": 10,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0162-round-outputs-never-inputs.md",
+        "line": 228,
+        "tokenRedacted": "0.06…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0172-typed-handles-and-the-emission-header.md",
+        "line": 205,
+        "tokenRedacted": "0.06…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0174-emission-header-residue-and-the-seven-unrounded-emitters.md",
+        "line": 175,
+        "tokenRedacted": "13.5…",
+        "significantDigits": 17,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0174-emission-header-residue-and-the-seven-unrounded-emitters.md",
+        "line": 176,
+        "tokenRedacted": "7.00…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0180-tied-honeycomb-coupled-regrade.md",
+        "line": 204,
+        "tokenRedacted": "1.58…",
+        "significantDigits": 17,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0180-tied-honeycomb-coupled-regrade.md",
+        "line": 205,
+        "tokenRedacted": "1.58…",
+        "significantDigits": 17,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0198-a-quoted-number-has-no-link-back.md",
+        "line": 56,
+        "tokenRedacted": "0.92…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0198-a-quoted-number-has-no-link-back.md",
+        "line": 57,
+        "tokenRedacted": "938.…",
+        "significantDigits": 15,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0198-a-quoted-number-has-no-link-back.md",
+        "line": 57,
+        "tokenRedacted": "938.…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0198-a-quoted-number-has-no-link-back.md",
+        "line": 58,
+        "tokenRedacted": "8.16…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/claims/C-0198-a-quoted-number-has-no-link-back.md",
+        "line": 58,
+        "tokenRedacted": "0.50…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0092-the-propagation-did-not-close.md",
+        "line": 59,
+        "tokenRedacted": "1.10…",
+        "significantDigits": 10,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0112-a-lost-branch-is-recorded-as-a-fold-and-as-a-ceiling.md",
+        "line": 50,
+        "tokenRedacted": "7.90…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0112-a-lost-branch-is-recorded-as-a-fold-and-as-a-ceiling.md",
+        "line": 50,
+        "tokenRedacted": "8.13…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0112-a-lost-branch-is-recorded-as-a-fold-and-as-a-ceiling.md",
+        "line": 61,
+        "tokenRedacted": "9.98…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0112-a-lost-branch-is-recorded-as-a-fold-and-as-a-ceiling.md",
+        "line": 62,
+        "tokenRedacted": "9.09…",
+        "significantDigits": 14,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0112-a-lost-branch-is-recorded-as-a-fold-and-as-a-ceiling.md",
+        "line": 62,
+        "tokenRedacted": "284.…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0178-a-criterion-with-no-root-returned-its-own-bracket-floor.md",
+        "line": 5,
+        "tokenRedacted": "0.92…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0178-a-criterion-with-no-root-returned-its-own-bracket-floor.md",
+        "line": 8,
+        "tokenRedacted": "0.92…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0178-a-criterion-with-no-root-returned-its-own-bracket-floor.md",
+        "line": 18,
+        "tokenRedacted": "0.92…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0178-a-criterion-with-no-root-returned-its-own-bracket-floor.md",
+        "line": 46,
+        "tokenRedacted": "0.92…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0199-a-quoted-number-has-no-link-back-to-its-file.md",
+        "line": 37,
+        "tokenRedacted": "1.10…",
+        "significantDigits": 10,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0199-a-quoted-number-has-no-link-back-to-its-file.md",
+        "line": 38,
+        "tokenRedacted": "0.92…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0199-a-quoted-number-has-no-link-back-to-its-file.md",
+        "line": 39,
+        "tokenRedacted": "0.67…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0199-a-quoted-number-has-no-link-back-to-its-file.md",
+        "line": 39,
+        "tokenRedacted": "7.91…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0199-a-quoted-number-has-no-link-back-to-its-file.md",
+        "line": 40,
+        "tokenRedacted": "25.1…",
+        "significantDigits": 17,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0199-a-quoted-number-has-no-link-back-to-its-file.md",
+        "line": 41,
+        "tokenRedacted": "108.…",
+        "significantDigits": 17,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0199-a-quoted-number-has-no-link-back-to-its-file.md",
+        "line": 42,
+        "tokenRedacted": "0.50…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0199-a-quoted-number-has-no-link-back-to-its-file.md",
+        "line": 49,
+        "tokenRedacted": "0.50…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0206-the-gate-was-red-at-the-commit-that-promoted-it.md",
+        "line": 92,
+        "tokenRedacted": "7.90…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0207-a-parameter-block-cannot-re-run-its-own-study.md",
+        "line": 30,
+        "tokenRedacted": "938.…",
+        "significantDigits": 15,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0207-a-parameter-block-cannot-re-run-its-own-study.md",
+        "line": 31,
+        "tokenRedacted": "938.…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0207-a-parameter-block-cannot-re-run-its-own-study.md",
+        "line": 32,
+        "tokenRedacted": "0.52…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/CH-0207-a-parameter-block-cannot-re-run-its-own-study.md",
+        "line": 33,
+        "tokenRedacted": "0.52…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "gpd/challenges/README.md",
+        "line": 179,
+        "tokenRedacted": "0.92…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "CLAUDE.md",
+        "line": 570,
+        "tokenRedacted": "0.22…",
+        "significantDigits": 17,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "CLAUDE.md",
+        "line": 643,
+        "tokenRedacted": "25.1…",
+        "significantDigits": 17,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "CLAUDE.md",
+        "line": 669,
+        "tokenRedacted": "0.50…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "JOURNAL.md",
+        "line": 6286,
+        "tokenRedacted": "7.00…",
+        "significantDigits": 16,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "JOURNAL.md",
+        "line": 7717,
+        "tokenRedacted": "25.1…",
+        "significantDigits": 17,
+        "findableInACommittedResultFile": false
+      },
+      {
+        "file": "JOURNAL.md",
+        "line": 7717,
+        "tokenRedacted": "25.1…",
+        "significantDigits": 17,
+        "findableInACommittedResultFile": false
+      }
+    ]
+  },
+  "theDecision": {
+    "verdict": "the class stays MANUAL -- T-252's second acceptance branch -- and the ground is a measurement rather than a preference",
+    "deliberateOnInspection": 69,
+    "staleOnInspection": 0,
+    "howItWasRead": "every unfindable token read in its own line's context. Each falls in one of three sub-classes, all legitimate: (1) a defect's own output, quoted so the defect stays measurable; (2) a before/after pair from a precision repair; (3) a value derived in the claim itself and never emitted to any result file. None is a stale quotation",
+    "whyAConventionWouldCostMoreThanItBuys": "a convention marking a historical number makes an unmarked unfindable token a defect by construction, which is the acceptance's first branch. Applied today it would have to be written onto every one of the unfindable tokens above, all of which are correct, and its first output would be that many non-defects",
+    "andTheCorpusManufacturesTheClass": "C-0092's rule is that a repair must leave the defect MEASURABLE, so a claim repairing a numeric defect is REQUIRED to quote the defective value at full precision. The population therefore grows every time this loop works correctly -- CH-0230's mechanism, met on a third predicate in one iteration, after T-234's debt line and C-0197's priced-on-an-adjudicated-challenge residue"
+  },
+  "theGateableHalf": {
+    "what": "a claim's Provenance row names its result file as a BARE PATH, so tools/check-corpus-links.py cannot see it -- that tool resolves [label](target) and nothing else. Whether the named file EXISTS is a different question from whether a quoted number is still in it, and it is decidable",
+    "claims": 192,
+    "claimsNamingAResultFile": 175,
+    "claimsNamingNone": 17,
+    "namedFilesThatDoNotExist": 1,
+    "missing": [
+      {
+        "claim": "C-0198-a-quoted-number-has-no-link-back.md",
+        "namedFile": "T-252-a-quoted-number-has-no-link-back.json"
+      }
+    ],
+    "whyItIsNotVacuous": "renaming or removing a result file is a normal act of this loop -- C-0101 re-emits and C-0117 sorts the sweep -- and it leaves every claim that named the old path pointing at nothing, silently. The gate read 1 within minutes of existing, on a queue row naming a study's output before the study had run",
+    "gate": "tools/check-result-path-references.py, 8 self-tests"
+  },
+  "whatThisDoesNotClaim": {
+    "theUndetectableMajority": "the population is decimals above nine significant digits, because a rounded result file cannot contain one. A number quoted at NINE digits or fewer is indistinguishable from a live one whether or not it is stale, and this census says nothing about it",
+    "andCH0199StandsOnItsOtherHalf": "the challenge's finding -- that C-0101's rule is executed by hand and has no instrument -- is untouched. What is decided here is only that the instrument it asks for cannot be built on this population without a convention whose cost falls entirely on correct claims"
+  }
+}
