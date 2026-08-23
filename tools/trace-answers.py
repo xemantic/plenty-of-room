@@ -299,6 +299,27 @@ _OPEN_WORD_ASSERTION = re.compile(
     r"|not\s+yet\s+answered|not\s+determined|TODO)\b",
     re.IGNORECASE,
 )
+#: `T-261`.  The CHALLENGE half's own open word, and it is NOT in the task list above.
+#
+# `_OPEN_WORD_ASSERTION` was written for a TASK's status vocabulary -- `open`, `unmeasured`,
+# `TODO` -- and `stale_challenge_statuses` inherited it wholesale.  A challenge's own open state
+# is **RAISED**, which appears in neither list, so a deliverable calling an UPHELD challenge
+# *raised* was invisible to a wired gate: four such passages stood in the two documents at
+# iteration 46 while the tool reported `0 open assertion(s) contradicted`.
+#
+# A SEPARATE object rather than a widening of the shared one, for the reason `T-183` already
+# pinned about `_OPEN_WORD_ASSERTION` and `_OPEN_WORD_VERDICT`: `raised by` is how this corpus
+# states a challenge's PROVENANCE and `TASKS.md` is full of it, so widening the shared list would
+# put a provenance idiom into the task half and manufacture false positives there.
+#
+# The guard is the provenance idiom itself.  Measured over the two deliverables, `raised` near a
+# reference to a CLOSED challenge fires four times and the guard removes none of them -- it is
+# precautionary, and it is what keeps the predicate honest as the corpus grows.
+_CHALLENGE_RAISED = r"\braised\b(?!\s+(?:by|in|as|at|and|against))"
+_CHALLENGE_OPEN_ASSERTION = re.compile(
+    "(?:" + _OPEN_WORD_ASSERTION.pattern + ")|(?:" + _CHALLENGE_RAISED + ")",
+    re.IGNORECASE,
+)
 _TASK_REFERENCE = re.compile(r"`(T-\d{1,4}[a-z]?|P-\d{1,4})`")
 
 # `T-183`.  The self-consistency check needs to reach CHALLENGE identifiers too: `C-0088` scoped
@@ -600,13 +621,145 @@ def stale_challenge_statuses(answers_text, statuses):
             start = max(0, reference.start() - _OPEN_WINDOW)
             end = min(len(line), reference.end() + _OPEN_WINDOW)
             window = line[start:end]
-            if not _OPEN_WORD_ASSERTION.search(window):
+            if not _CHALLENGE_OPEN_ASSERTION.search(window):
                 continue
             if _HISTORICAL.search(window) or _ANSWERING.search(window):
                 continue
             if statuses.get(identifier, "UNKNOWN") == "CLOSED":
                 stale.append((number, identifier, "CLOSED"))
     return stale
+
+
+# --- `T-261`: the two AUDIT arms ---------------------------------------------------------------
+#
+# `T-261` asks for an arm flagging a deliverable passage that cites a challenge as the SOURCE of a
+# number where that challenge has been adjudicated.  Both arms below are RESIDUE lines: printed
+# unconditionally, counted in no exit code.  `C-0129`'s policy -- gate what can be made clean and
+# print the rest beside it -- because the predicate cannot come clean, for a reason that is
+# `CH-0230`'s and is structural rather than fixable: **a correcting sentence has to NAME the
+# challenge in order to withdraw it**, so the corrections land in the census they would be gated
+# by.  Measured at iteration 46: the naive form reads 34 and is almost entirely corrections; the
+# tightest form below reads 7, of which 3 are corrections and 2 are cross-references.
+#
+# THE WORD `RAISED` IS NOT AN ADJUDICATION and `WITHDRAWN` is, which is what separates the two
+# states this corpus's Status cells actually carry.  A cell reading *"RAISED and REPAIRED in the
+# same iteration"* -- the commonest adjudicated form here -- is adjudicated.
+_ADJUDICATION_WORD = (
+    r"UPHELD|RESOLVED|ANSWERED|REFUTED|WITHDRAWN|OVERTURNED|DISCHARGED|SUPERSEDED|CLOSED"
+    r"|REPAIRED|ANNOTATED|STRUCK"
+)
+_ADJUDICATED = re.compile(r"\b(?:" + _ADJUDICATION_WORD + r")\b")
+
+
+def challenge_adjudicated(text):
+    """Does this challenge file's own `**Status**` row record an adjudication?
+
+    Case-SENSITIVE, unlike `challenge_status_of`: this corpus writes a verdict in upper case and
+    the same words in lower case as ordinary prose (*"the bracket has to be withdrawn"*), and the
+    cell is one line of free text in which both occur.
+    """
+    match = _CHALLENGE_STATUS_ROW.search(text)
+    return bool(match and _ADJUDICATED.search(match.group(1)))
+
+
+def challenge_adjudications(directory):
+    """{challenge ID: bool} -- whether each challenge's own file records an adjudication."""
+    found = {}
+    if not os.path.isdir(directory):
+        return found
+    for name in sorted(os.listdir(directory)):
+        identifier = re.match(r"(CH-\d{1,4})", name)
+        if not identifier or not name.endswith(".md"):
+            continue
+        with open(os.path.join(directory, name), encoding="utf-8") as handle:
+            found[identifier.group(1)] = challenge_adjudicated(handle.read())
+    return found
+
+
+#: A link's target carries the challenge's own slug, which is prose to every pattern below, so
+#: links are flattened to their label before either form is matched.
+_CHALLENGE_LINK = re.compile(r"\[(`CH-\d{1,4}`)\]\([^)]*\)")
+#: The adjudication must be BOUND to the reference, not merely near it.  Measured, proximity alone
+#: gives 21 sites of which 6 are a verdict about some *other* challenge in the same list.  The
+#: clause guard `[^.;|]` is what stops it crossing a sentence or a table cell.
+_ADJUDICATES = (
+    re.compile(
+        r"`(CH-\d{1,4})`[^.;|]{0,40}?\b(?:is|are|was|were)\b[^.;|]{0,40}?\*{0,2}(?:"
+        + _ADJUDICATION_WORD + r"|resolved|upheld|answered|withdrawn|discharged)"
+    ),
+    re.compile(
+        r"(?:" + _ADJUDICATION_WORD + r"|resolved|upheld|answered|withdrawn|discharged)"
+        r"\*{0,2}\s+by\s+`(CH-\d{1,4})`"
+    ),
+)
+
+
+def adjudications_in_claim(name, text):
+    """[(challenge, claim file)] for every challenge this claim's text adjudicates."""
+    flattened = _CHALLENGE_LINK.sub(r"\1", strip_struck(text))
+    found = []
+    for pattern in _ADJUDICATES:
+        for match in pattern.finditer(flattened):
+            pair = (match.group(1), name)
+            if pair not in found:
+                found.append(pair)
+    return sorted(found)
+
+
+def unrecorded_adjudications(claims_directory, adjudicated):
+    """[(challenge, claim file)] a claim adjudicates whose own Status row does not say so.
+
+    The INPUT defect behind `T-261`: `stale_challenge_statuses` reads a challenge's own file as
+    the authority (`T-183`), so a challenge answered by a later claim and never annotated is
+    reported OPEN by this tool and a deliverable may rest a price on it indefinitely.  The row's
+    own live instance, `CH-0185`, is exactly that: `C-0148` says *"`CH-0185` is ANSWERED"* and the
+    challenge file still says *raised*.
+    """
+    found = []
+    if not os.path.isdir(claims_directory):
+        return found
+    for name in sorted(os.listdir(claims_directory)):
+        if not name.endswith(".md"):
+            continue
+        with open(os.path.join(claims_directory, name), encoding="utf-8") as handle:
+            text = handle.read()
+        for identifier, source in adjudications_in_claim(name, text):
+            if not adjudicated.get(identifier, False):
+                found.append((identifier, source))
+    return found
+
+
+#: How far either side of a challenge reference a number and a claim citation are looked for.
+_PRICE_WINDOW = 200
+
+
+def prices_on_adjudicated(answers_text, adjudicated):
+    """[(line, challenge)] where a number is attributed to an adjudicated challenge, unpointed.
+
+    *Unpointed* is the whole narrowing: naming ANY claim inside the window clears the passage,
+    because that is how this corpus writes a correction, and a correction is the very sentence a
+    naive predicate flags.  It leaves the shape `CH-0203` describes -- a **price** attributed to a
+    challenge with no pointer to whatever adjudicated it -- which is what decision 8 was.
+    """
+    found = []
+    for number, line in enumerate(strip_struck(answers_text).splitlines(), start=1):
+        for reference in _CHALLENGE_REFERENCE.finditer(line):
+            identifier = reference.group(1)
+            if not adjudicated.get(identifier, False):
+                continue
+            window = line[
+                max(0, reference.start() - _PRICE_WINDOW):
+                reference.end() + _PRICE_WINDOW
+            ]
+            if not tokens(window):
+                continue
+            if _CITATION_CLAIM.search(window):
+                continue
+            found.append((number, identifier))
+    return found
+
+
+_CITATION_CLAIM = re.compile(r"\bC-\d{4}\b")
 
 
 def trace(answers_text, sources, min_digits=2):
@@ -656,6 +809,23 @@ def main(argv=None):
     # A BOOLEAN and not the count, deliberately.  `sys.exit(n)` truncates modulo 256, and
     # `counts["ABSENT"]` is unbounded -- exactly 256 absent tokens would exit 0 and read as clean.
     # The counts are printed; the exit code only has to say whether the corpus is clean.
+    # `T-261`'s second residue line, and it is a statement about the CORPUS rather than about a
+    # document, so it is printed once.  A challenge a claim has adjudicated whose own `**Status**`
+    # row does not say so is read OPEN by `challenge_statuses` above, which is the authority
+    # `T-183` chose -- so the arm that DOES gate is blind for as long as the annotation is
+    # missing.  Not counted: closing it means editing challenge files, which is its own task.
+    adjudicated = challenge_adjudications(arguments.challenges)
+    unrecorded = unrecorded_adjudications(arguments.claims, adjudicated)
+    for identifier, claim in unrecorded:
+        print("{}\tUNRECORDED-ADJUDICATION\t{}\t{}".format(arguments.challenges, identifier, claim))
+    sys.stdout.flush()
+    print(
+        "# {}: {} challenge(s) a claim adjudicates whose own Status row does not say so "
+        "(RESIDUE, not gated)".format(
+            arguments.challenges, len({identifier for identifier, _ in unrecorded})
+        ),
+        file=sys.stderr,
+    )
     return 1 if failures else 0
 
 
@@ -723,6 +893,21 @@ def check_document(document, arguments, sources):
         "# {}: {} challenge(s), {} with a declared status, {} open assertion(s) contradicted".format(
             tag, len(statuses), declared, len(stale_challenges)
         ),
+        file=sys.stderr,
+    )
+
+    # `T-261`'s residue line.  Printed, NOT counted -- `C-0129`'s policy, because the predicate
+    # cannot come clean: a correcting sentence has to NAME the challenge it withdraws, so every
+    # repair lands in the census the gate would fire on (`CH-0230`).  What is left after the
+    # narrowing is a number attributed to an ADJUDICATED challenge with no claim named beside it.
+    adjudicated = challenge_adjudications(arguments.challenges)
+    priced = prices_on_adjudicated(answers_text, adjudicated)
+    for line, identifier in priced:
+        print("{}\t{}\tPRICED-ON-ADJUDICATED\t{}\t-".format(tag, line, identifier))
+    sys.stdout.flush()
+    print(
+        "# {}: {} number(s) priced on an adjudicated challenge with no claim named "
+        "(RESIDUE, not gated)".format(tag, len(priced)),
         file=sys.stderr,
     )
 

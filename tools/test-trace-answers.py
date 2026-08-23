@@ -709,6 +709,148 @@ check(
     [],
 )
 
+# --- T-261: the CHALLENGE half's own open word ------------------------------------------------
+#
+# `_OPEN_WORD_ASSERTION` was written for TASK status -- `open`, `unmeasured`, `TODO` -- and
+# `stale_challenge_statuses` inherited it.  A challenge's own open word is `raised`, which is in
+# neither list, so a deliverable calling an UPHELD challenge *raised* was invisible: four such
+# passages stood in the two documents while `tools/trace-answers.py` reported 0 defects.
+#
+# It needs its OWN pattern rather than a widening of the shared one, for the reason the tests
+# below already pin about `_OPEN_WORD_ASSERTION` and `_OPEN_WORD_VERDICT`: `raised by` is how
+# this corpus states PROVENANCE, and `TASKS.md` is full of it, so widening the shared list would
+# put a provenance idiom into the task half.
+check(
+    "'raised' is an open assertion about a CHALLENGE",
+    trace_answers.stale_challenge_statuses(
+        "the coordinate is disputed (`CH-0240`, raised)\n", {"CH-0240": "CLOSED"}
+    ),
+    [(1, "CH-0240", "CLOSED")],
+)
+check(
+    "'raised by' is PROVENANCE, not a status assertion",
+    trace_answers.stale_challenge_statuses(
+        "`CH-0240`, raised by `C-0187`, moved the coordinate\n", {"CH-0240": "CLOSED"}
+    ),
+    [],
+)
+check(
+    "'raised in' and 'raised against' are provenance too",
+    trace_answers.stale_challenge_statuses(
+        "`CH-0240`, raised in iteration 44, and `CH-0242`, raised against `C-0154`\n",
+        {"CH-0240": "CLOSED", "CH-0242": "CLOSED"},
+    ),
+    [],
+)
+check(
+    "'raised' against an OPEN challenge is fine, as for every other open word",
+    trace_answers.stale_challenge_statuses(
+        "the coordinate is disputed (`CH-0242`, raised)\n", {"CH-0242": "OPEN"}
+    ),
+    [],
+)
+check(
+    "the challenge half's word list is a SEPARATE object from the task half's",
+    trace_answers._CHALLENGE_OPEN_ASSERTION.pattern
+    == trace_answers._OPEN_WORD_ASSERTION.pattern,
+    False,
+)
+check(
+    "and the task half does NOT gain 'raised', because TASKS.md states provenance with it",
+    [(line, task) for line, task, _ in trace_answers.open_assertions(
+        "`T-296` raised by `C-0190`\n"
+    )],
+    [],
+)
+
+# --- T-261: the two AUDIT arms, and why neither can be a gate ---------------------------------
+#
+# The row asks for an arm that flags a deliverable passage citing a challenge as the SOURCE of a
+# number where that challenge is adjudicated.  Measured, the naive form is ~100 % false positive
+# for `CH-0230`'s reason -- a correcting sentence has to NAME the challenge in order to withdraw
+# it -- so both arms ship as RESIDUE LINES, printed unconditionally and NOT counted into the exit
+# code, which is `C-0129`'s policy: gate what can be made clean and print the rest beside it.
+check(
+    "a challenge whose Status row records an adjudication is ADJUDICATED",
+    trace_answers.challenge_adjudicated("| **Status** | **UPHELD** by `C-0190` |\n"),
+    True,
+)
+check(
+    "a challenge whose Status row says only RAISED is not",
+    trace_answers.challenge_adjudicated("| **Status** | **RAISED** |\n"),
+    False,
+)
+check(
+    "a Status row that says RAISED and REPAIRED IS adjudicated -- the corpus's commonest form",
+    trace_answers.challenge_adjudicated(
+        "| **Status** | **RAISED and REPAIRED in the same iteration** |\n"
+    ),
+    True,
+)
+check(
+    "a file with no Status row is not adjudicated, and is not guessed at either",
+    trace_answers.challenge_adjudicated("# CH-0025\n\nprose only\n"),
+    False,
+)
+# --- arm 1: a claim adjudicates a challenge whose own file does not say so
+check(
+    "a claim binding an adjudication word to a challenge reference is an adjudication",
+    trace_answers.adjudications_in_claim("C-0148.md", "**`CH-0185` is ANSWERED** -- the twelfth"),
+    [("CH-0185", "C-0148.md")],
+)
+check(
+    "and the passive form, which is how a WITHDRAWN statement is written here",
+    trace_answers.adjudications_in_claim("C-0003.md", "**WITHDRAWN by `CH-0010`.** On a solved"),
+    [("CH-0010", "C-0003.md")],
+)
+check(
+    "a bare mention is not an adjudication, however close an adjudication word stands",
+    trace_answers.adjudications_in_claim(
+        "C-0027.md", "the axis is **WITHDRAWN**, and separately `CH-0021` exists"
+    ),
+    [],
+)
+check(
+    "the adjudication must not cross a sentence boundary",
+    trace_answers.adjudications_in_claim("C-0x.md", "`CH-0157`. The bracket has to be withdrawn"),
+    [],
+)
+# --- arm 2: a deliverable prices a number on an adjudicated challenge and names no claim
+check(
+    "a number attributed to an adjudicated challenge with no claim named is flagged",
+    trace_answers.prices_on_adjudicated(
+        "worth six cells of eight against three, decided by a 0.07 nm slack (`CH-0185`)\n",
+        {"CH-0185": True},
+    ),
+    [(1, "CH-0185")],
+)
+check(
+    "naming any claim in the window clears it -- a correcting sentence names its claim",
+    trace_answers.prices_on_adjudicated(
+        "0.07 nm (`CH-0185`) -- **RESTATED** by `C-0148`\n", {"CH-0185": True}
+    ),
+    [],
+)
+check(
+    "a passage with no number at all is not a price",
+    trace_answers.prices_on_adjudicated("see `CH-0185` below\n", {"CH-0185": True}),
+    [],
+)
+check(
+    "an unadjudicated challenge is not flagged, however priced",
+    trace_answers.prices_on_adjudicated(
+        "worth 0.07 nm (`CH-0242`)\n", {"CH-0242": False}
+    ),
+    [],
+)
+check(
+    "struck text is blanked first, as in every other arm",
+    trace_answers.prices_on_adjudicated(
+        "~~worth 0.07 nm (`CH-0185`)~~\n", {"CH-0185": True}
+    ),
+    [],
+)
+
 # --- the two guards the real deliverable forced (T-183) ---------------------------------------
 #
 # Both were written after running the extension against the committed `ANSWERS.md`, which fired

@@ -946,7 +946,7 @@ The two *uniform* readings struck above are therefore both off-lattice.
 What survives is one **global phase**: graded on the same 64 cells, **`1` of `64`** is flat at each phase,
 **`0` of `64` at both**, and **`2` of `64`** are phase-contingent — a cell escaping only with a zero-prestrain
 90th percentile below **`0.0979624378`**, against a corpus best of **`0.0995744767`**, at which **0 of 64 qualify**.
-**And the coordinate this load is applied through is itself disputed** (`CH-0240`, raised): a level displacement
+**And the coordinate this load is applied through is itself disputed** (~~`CH-0240`, raised~~ [`CH-0240`](gpd/challenges/CH-0240-the-allowed-departure-is-common-mode.md) is **UPHELD**, iteration 45 ([`C-0190`](gpd/claims/C-0190-the-departure-is-common-mode-and-what-replaces-it.md), `T-291`)): a level displacement
 rotates **both** backbones the same way, so the allowed departure has coefficient **exactly zero** on a relative
 roll. No number of `C-0175` or `C-0180` is disputed; what would replace the term is a per-beam torsional
 eigenstrain nothing has priced, and that is `T-291`.

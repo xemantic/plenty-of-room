@@ -1,0 +1,214 @@
+{
+  "emission": {
+    "lattice": "none",
+    "regime": []
+  },
+  "task": "T-261",
+  "title": "a synthesis rests a number on a challenge the corpus has since answered -- the arm already existed and was blind to the challenge vocabulary's own open word",
+  "subject": "ANSWERS.md and DECISIONS-FOR-NDI.md against gpd/challenges and gpd/claims; a corpus-subject result file, so the ref is an argument and the resolved SHA is recorded",
+  "baselineRef": "2ce8ca2e5b2b5d12c5101e0bc3d2bd8c6fa711d8",
+  "baselineRefRequested": "HEAD",
+  "units": "none; every value is an integer count, a line number or a name",
+  "parameters": {
+    "authority": "a challenge's own file, per T-183 -- gpd/challenges/README.md's Status cell is free prose and this tool has never read it",
+    "predicateChange": "stale_challenge_statuses reads _CHALLENGE_OPEN_ASSERTION, which is _OPEN_WORD_ASSERTION plus the challenge vocabulary's own open word `raised`, guarded against the provenance idioms `raised by|in|as|at|and|against`",
+    "unchanged": "the task half's _OPEN_WORD_ASSERTION, the _HISTORICAL and _ANSWERING guards, _OPEN_WINDOW, challenge_status_of and the numeric arm",
+    "note": "no wall-clock timing and no step counter is emitted; every value is an integer count, a line number or a name"
+  },
+  "theArmAlreadyExisted": {
+    "finding": "T-261 asks for an arm that flags a deliverable passage citing a challenge as the source of a number where that challenge is adjudicated. The arm exists -- stale_challenge_statuses, T-183 -- and it inherited _OPEN_WORD_ASSERTION, which was written for a TASK's status vocabulary: open, unmeasured, unanswered, TODO. A challenge's own open state is RAISED, which is in neither list, so a deliverable calling an UPHELD challenge *raised* was invisible to a WIRED gate",
+    "whyASeparatePatternAndNotAWidening": "`raised by` is how this corpus states a challenge's PROVENANCE and TASKS.md is full of it, so widening the shared list would put a provenance idiom into the task half. T-183 already pinned the same separation for _OPEN_WORD_ASSERTION against _OPEN_WORD_VERDICT",
+    "blindnessAtTheRef": {
+      "ANSWERS.md": {
+        "committedPredicate": [],
+        "repairedPredicate": [
+          {
+            "line": 350,
+            "challenge": "CH-0240",
+            "corpusStatus": "CLOSED"
+          },
+          {
+            "line": 1018,
+            "challenge": "CH-0240",
+            "corpusStatus": "CLOSED"
+          },
+          {
+            "line": 1477,
+            "challenge": "CH-0240",
+            "corpusStatus": "CLOSED"
+          }
+        ]
+      },
+      "DECISIONS-FOR-NDI.md": {
+        "committedPredicate": [],
+        "repairedPredicate": [
+          {
+            "line": 949,
+            "challenge": "CH-0240",
+            "corpusStatus": "CLOSED"
+          }
+        ]
+      }
+    },
+    "afterTheRepairInTheWorkingTree": {
+      "ANSWERS.md": [],
+      "DECISIONS-FOR-NDI.md": []
+    },
+    "falsePositivesOnTheRepairedPredicate": 0,
+    "howTheFalsePositiveRateWasMeasured": "every hit read by hand: all four are the identical string `(`CH-0240`, raised)`, and CH-0240's own Status row reads **UPHELD** (C-0190, T-291, iteration 45). The `raised by` guard removes none of the four and is precautionary"
+  },
+  "residueOne": {
+    "what": "a number attributed to an ADJUDICATED challenge with no claim named inside a 200-character window -- the shape CH-0203 describes, and what decision 8 was",
+    "perDocument": {
+      "ANSWERS.md": [
+        {
+          "line": 328,
+          "challenge": "CH-0227"
+        },
+        {
+          "line": 473,
+          "challenge": "CH-0043"
+        },
+        {
+          "line": 676,
+          "challenge": "CH-0240"
+        },
+        {
+          "line": 1018,
+          "challenge": "CH-0187"
+        },
+        {
+          "line": 1018,
+          "challenge": "CH-0212"
+        },
+        {
+          "line": 1353,
+          "challenge": "CH-0042"
+        }
+      ],
+      "DECISIONS-FOR-NDI.md": []
+    },
+    "whyItIsNotAGate": "CH-0230's mechanism, and it is structural rather than fixable: a correcting sentence has to NAME the challenge in order to withdraw it, so the corrections land in the census the gate would fire on. The naive form -- any number near any adjudicated challenge -- reads 34 over the two documents and is almost entirely corrections; requiring that no claim be named in the window takes it to the count above, of which the hand reading finds 3 corrections and 2 cross-references",
+    "policy": "C-0129: gate what can be made clean and print the rest beside it, ungated. The line is printed unconditionally and counted in no exit code"
+  },
+  "residueTwo": {
+    "what": "a challenge a CLAIM adjudicates whose own **Status** row does not say so -- the INPUT defect, because stale_challenge_statuses reads that row as the authority",
+    "challenges": [
+      "CH-0004",
+      "CH-0010",
+      "CH-0033",
+      "CH-0056",
+      "CH-0068",
+      "CH-0078",
+      "CH-0083",
+      "CH-0089",
+      "CH-0093",
+      "CH-0101",
+      "CH-0103",
+      "CH-0151",
+      "CH-0157",
+      "CH-0177",
+      "CH-0184",
+      "CH-0185",
+      "CH-0229"
+    ],
+    "sites": [
+      {
+        "challenge": "CH-0010",
+        "claim": "C-0003-crossover-valid-layer-response.md"
+      },
+      {
+        "challenge": "CH-0004",
+        "claim": "C-0008-electrostatic-force-and-decay-length.md"
+      },
+      {
+        "challenge": "CH-0033",
+        "claim": "C-0017-output-coupling-stiffness.md"
+      },
+      {
+        "challenge": "CH-0056",
+        "claim": "C-0042-paired-perpendicular-junction.md"
+      },
+      {
+        "challenge": "CH-0056",
+        "claim": "C-0052-crossbar-junction-trio.md"
+      },
+      {
+        "challenge": "CH-0068",
+        "claim": "C-0056-connectivity-ceiling-plate.md"
+      },
+      {
+        "challenge": "CH-0056",
+        "claim": "C-0059-torsion-feasible-routing.md"
+      },
+      {
+        "challenge": "CH-0078",
+        "claim": "C-0070-pinned-leg-budget.md"
+      },
+      {
+        "challenge": "CH-0010",
+        "claim": "C-0077-first-moment-chain-length.md"
+      },
+      {
+        "challenge": "CH-0089",
+        "claim": "C-0079-unbonded-duplex-separation.md"
+      },
+      {
+        "challenge": "CH-0083",
+        "claim": "C-0084-recommended-element-pull-in-fold.md"
+      },
+      {
+        "challenge": "CH-0093",
+        "claim": "C-0085-collinear-stacking-clearance.md"
+      },
+      {
+        "challenge": "CH-0101",
+        "claim": "C-0090-buildable-raster-width.md"
+      },
+      {
+        "challenge": "CH-0103",
+        "claim": "C-0103-path-count-at-fixed-geometry.md"
+      },
+      {
+        "challenge": "CH-0083",
+        "claim": "C-0113-challenge-status-self-consistency.md"
+      },
+      {
+        "challenge": "CH-0177",
+        "claim": "C-0118-coupled-four-layer.md"
+      },
+      {
+        "challenge": "CH-0151",
+        "claim": "C-0122-honeycomb-station-lattice.md"
+      },
+      {
+        "challenge": "CH-0157",
+        "claim": "C-0132-cut-rim-charge.md"
+      },
+      {
+        "challenge": "CH-0184",
+        "claim": "C-0148-face-bond-class-residues-and-row-span-columns.md"
+      },
+      {
+        "challenge": "CH-0185",
+        "claim": "C-0148-face-bond-class-residues-and-row-span-columns.md"
+      },
+      {
+        "challenge": "CH-0185",
+        "claim": "C-0177-queue-status-vocabulary.md"
+      },
+      {
+        "challenge": "CH-0229",
+        "claim": "C-0182-name-the-discharge.md"
+      }
+    ],
+    "theRowsOwnLiveInstance": "CH-0185. C-0148 says `CH-0185` is ANSWERED -- the twelfth column is a box artefact -- and the challenge file still reads **raised**, so this tool reports it OPEN and a deliverable may rest a price on it indefinitely. That is why nothing caught decision 8, and it is a defect of the AUTHORITY rather than of the predicate",
+    "falsePositives": 1,
+    "falsePositiveDetail": "CH-0157 in C-0132: *`CH-0157`, and it is why the bracket has to be withdrawn* -- the BRACKET is withdrawn, not the challenge. The clause guard [^.;|] does not stop a comma-and-conjunction, and it is reported rather than tuned away, because a guard narrowed to one observed case is a test written to the shape of the change (C-0176)",
+    "whyItIsNotAGate": "closing it means editing challenge files -- one Status row per challenge, each needing the adjudicating claim read -- which is its own task and its own delta"
+  },
+  "whatThisDoesNotClaim": {
+    "theDeliverableArmIsNotDelivered": "T-261's acceptance names a gate on a deliverable passage. It is REFUSED as a gate, with the measurement, and shipped as the audit the same acceptance permits",
+    "theWordPriceIsStillInvisible": "decision 8's own price was written *six flat cells of eight against three*, and tokens() has min_digits=2, so the words carry no token at all. Only the 0.07 nm in the same sentence is a token. A price written in words is invisible to every numeric arm of this tool, and no arm added here changes that"
+  }
+}
