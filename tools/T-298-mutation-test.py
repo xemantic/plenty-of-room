@@ -165,10 +165,20 @@ def main():
             open(target, "w", encoding="utf-8").write(source.replace(old, new, 1))
             code, named = _run(work)
             open(target, "w", encoding="utf-8").write(source)
-            verdict = "killed" if code != 0 else "SURVIVES"
             if code == 0:
                 survivors += 1
-            print("%-8s %-58s %s" % (verdict, name, "; ".join(named[:3]) or "-"))
+            # `T-301`/`T-306`.  The COUNT of named tests is printed, not only their names, because
+            # `tools/T-295-mutation-input-census.py` runs every harness in `tools/` in two arms and
+            # reads each one's own per-mutation rows -- and it can only classify a row it can read a
+            # count from.  A harness's output is an INTERFACE the census depends on, and a shape it
+            # does not know makes it REFUSE (by design: *a harness that changes its output must make
+            # the census refuse, not silently drop rows*).  `killed by N named test(s)  NAME` is the
+            # shape `T-278` and `test-check-queue-vocabulary` already use.
+            if code == 0:
+                print("%-8s %-58s %s" % ("SURVIVES", name, "no named test failed"))
+            else:
+                print("killed by %d named test(s)  %-46s %s"
+                      % (len(named), name, "; ".join(named[:3]) or "-"))
         print("# %d mutation(s), %d survivor(s)" % (len(MUTATIONS), survivors))
         return 1 if survivors else 0
     finally:
