@@ -9,7 +9,7 @@ Status vocabulary: `TODO` · `IN PROGRESS` · `BLOCKED` · `DONE` · `KILLED` (b
 IDs: `T*` are the eight tasks of the problem definition §6, `P*` are process tasks we raised ourselves.
 The `Leaf` column is the NDI `simulation-task-map` ID the work traces to.
 
-## Start here — the state after iteration 46
+## Start here — the state after iteration 47
 
 > **RETITLED AGAIN, iteration 42 (2026-08-22), and this time by a GATE rather than by a reader.**
 > `P-28` retitled this note in iteration 39 and recorded that a mis-titled note is worse than a stale
@@ -154,6 +154,41 @@ The `Leaf` column is the NDI `simulation-task-map` ID the work traces to.
 > what `C-0193` conditions everything on), `T-300` (the `SCAFFOLD` family's missing refinement, whose
 > cost is **measured** at twelve hand overrides and four points of the published debt ratio),
 > `T-298` (the 17 challenge Status rows that make `stale_challenge_statuses` blind), and `T-294`.
+>
+> **ITERATION 47 CLOSED ALL FOUR OF THOSE AND THE ANSWER TO §3 ROW (g) MOVED.**
+> `T-302`/[`C-0200`](gpd/claims/C-0200-the-file-draws-and-the-table-orders.md) settled `CH-0251` by
+> counting one column: the 2009 supplement **orders `5 880`** staple nucleotides for the `10 × 6`
+> block — `60 × 98` exactly, in **`144`** strands — where the deposited file **draws `214` strands
+> and `7 560`**, the `70` it draws and the order omits totalling **exactly `1 680 = 60 × 28`**, lying
+> entirely in the helix **end regions**, and carrying caDNAno's **default colour** while not one
+> ordered strand does. **A design file is a DRAWING and a staple table is a PURCHASE.** `CH-0251`
+> **REFUTED**, `C-0193` strengthened, and the conditionality on every honeycomb tie number **stands**.
+>
+> **THEN `T-299`/[`C-0201`](gpd/claims/C-0201-the-tether-is-a-load-not-a-spring.md) GRADED THE ARM
+> THE BUILT OBJECT OCCUPIES, AND THE COUPLED HALF FAILS ON BOTH ROUTINGS.** Route B's turn is a
+> **LOAD, not a spring**: its own stiffness moves the free tile `0.95 %` **toward** flatness, and what
+> moves the tile is the chain's **tension** — nine in-plane turns contributing **exactly zero**,
+> fifty through-thickness ones carrying it. Free tile **`0.11296458`**, past `T-5b`; **`0 of 64`**
+> coupled cells flat at every tethered state against the tied lattice's `2 of 64`; a dishing
+> **source** at `64 of 64`; no verdict moving over four decades of `k_link`. **Route A's tie is a
+> SINK and route B's tether a SOURCE — the two differ in the SIGN of what the turn does.**
+>
+> **AND THE LARGEST FINDING OF THE TWO ITERATIONS IS A WIDTH.** At the built allowance a **uniform**
+> honeycomb row is **`92 bp = 31.28 nm`** on M13mp18 and **`106 bp = 36.04 nm`** on p8064 against §3's
+> `40 nm` — and all three are **flat uncoupled**. **The tile is not too floppy; it is too small**,
+> which is a **specification** question for NDI rather than a modelling one.
+>
+> **The process layer closed two residues and found two interactions.** `T-298`/`C-0203` read all 17
+> challenge status rows (**15 adjudications, 2 not**) and found that **`strike, never delete` was
+> invisible to the reader that decides the status** — `~~OPEN~~ RESOLVED` had been reported OPEN ever
+> since; residue **24 → 0**, gated. `T-300`/`C-0202` split the ninth census family (**70 → 50 + 20,
+> zero false positives at all twelve radii**, and the radius's minimality a **theorem**) and found a
+> **duplicate `T-300` queue row the coordinator created**, where two rows under one identifier
+> collapse to one verdict and **no gate here can see it** (`CH-0252`).
+>
+> **What is open and cheap after iteration 47**: `T-304` (**HIGH** — the free tile straddles `T-5b`
+> on an azimuth convention nobody has measured, and the azimuth is **lattice arithmetic**),
+> `T-303`, `T-305`, and `T-294`.
 >
 > **AND ITERATION 46 ENDED BY CHALLENGING ITS OWN HEADLINE.** `T-255`/[`C-0199`](gpd/claims/C-0199-the-gallery-opened.md)
 > opened the cadnano.org gallery — three archives `C-0152` §6 read the *page* of and never unzipped — and found
@@ -568,16 +603,18 @@ touched it; agent C touched only `tools/`; agents A and D wrote no shared Kotlin
 deliberately **not** taken — it re-grades on the same grillage agent B was editing, which is `C-0101`'s
 consumer-before-producer error with two authors.
 
-**ITERATION 47 (2026-08-23) reservations.** `C-0200` (`T-302`, agent A), `C-0201` (`T-299`, agent B),
-`C-0202` (`T-300`, agent C), `C-0203` (`T-298`, agent D); challenges `CH-0252`–`CH-0255` unassigned.
-Anything unused when the iteration closes is **released by name here**, never by range.
-**Taken in flight**: `CH-0252` (agent C), `CH-0253` (agent A), `CH-0255` (agent D / `T-298`) — agent D reached for `CH-0253`, found agent A had taken it between the reservation and the write, and **moved PAST the next free number** as `CLAUDE.md` requires; `CH-0254` is thereby **reserved and unused**, and is **RELEASED UNUSED, by name**, rather than left to a reader to infer from a range.
-**Source ownership**: agent B owns [`src/main/kotlin/tile/HoneycombGrillage.kt`](src/main/kotlin/tile/HoneycombGrillage.kt)
-and everything under `src/main/kotlin/tile/`; agent C owns [`tools/T-234-census.py`](tools/T-234-census.py) and
-[`tools/T-234-classification.json`](tools/T-234-classification.json); agent D owns `gpd/challenges/*.md` **status rows only**;
-agent A writes no shared source. No two agents share a file.
+**ITERATION 47 (2026-08-23) — CLOSE-OUT.** Taken: `C-0200` (`T-302`, agent A), `C-0201` (`T-299`, agent B),
+`C-0202` (`T-300`, agent C), `C-0203` (`T-298`, agent D). Challenges taken: `CH-0252` (`T-300`), `CH-0253` (`T-302`),
+`CH-0254` (`T-299`), `CH-0255` (`T-298`). **Nothing is released unused** — all four reserved claim numbers and all
+four reserved challenge numbers were taken, and agent D moved **past** `CH-0254` after `CH-0253` collided with
+agent A mid-flight, which is the rule.
+New rows opened during the iteration by the work itself: `T-303` (the renumbered duplicate, `CH-0252`),
+`T-304` and `T-305` (`C-0201`). **Ownership held**: agent B owned `src/main/kotlin/tile/`, agent C
+`tools/T-234-*`, agent D `gpd/challenges/*.md` status rows, agent A no shared source — and the only two
+cross-agent collisions were a challenge **number** taken mid-flight and an **anchor** one agent's change
+orphaned in another's harness, both repaired by the coordinator at the assembled `HEAD`.
 
-**The highest numbers in use at the time of writing are `T-302`, `P-31`, `C-0203`, `CH-0255`.**
+**The highest numbers in use at the time of writing are `T-305`, `P-31`, `C-0203`, `CH-0255`.**
 `T-297` and `T-298` were opened DURING iteration 46, by `CH-0242` and `C-0197`, and are unreserved.
 `T-279`, `T-280` and `T-281` were opened DURING the iteration, by `CH-0227`–`CH-0230`, and are unreserved:
 a task number costs nothing and a claim number does, so a row is opened when the work is named and a claim

@@ -11642,3 +11642,116 @@ the published debt ratio**, and that measurement is what `T-300` is for.
 is the row that matters. Beside it: `T-300` (the `SCAFFOLD` family's missing refinement, whose cost
 is **measured** at twelve hand overrides and four points of the published debt ratio), `T-298` (the
 17 challenge Status rows that make `stale_challenge_statuses` blind), and `T-301`.
+
+## Iteration 47 — 2026-08-23: a fork closed by one column, and the tile turns out to be too small
+
+Four agents on disjoint scopes. `T-302` (agent A), `T-299` (agent B), `T-300` (agent C), `T-298`
+(agent D). Every one closed, and two of them changed what §3 row (g) says.
+
+### `T-302`/`C-0200`: a design file is a DRAWING and a staple table is a PURCHASE
+
+`CH-0251` named the one column that separates two primary artifacts of the same authors — the
+caDNAno paper's Methods sentence (`126` allotted, `98` paired, **28 unpaired**) against the seven
+deposited design files (`126` allotted, **`0`** unpaired) — and deliberately did not run it.
+
+Counted, the 2009 supplement **orders `5 880`** staple nucleotides for the `10 × 6` block, in
+**`144`** strands: `60 × 98` **exactly**. The deposited file **draws `214` strands and `7 560`**.
+The **`70`** the file draws and the order omits total **exactly `1 680 = 60 × 28`**, lie entirely
+in the helix **end regions**, and carry caDNAno's **default colour** while **not one** of the 144
+ordered strands does.
+
+**So the Methods sentence describes the object that was bought and the file is a drawing of it.**
+`CH-0251` is **refuted on its central point**, `C-0193` stands and is strengthened, and the
+conditionality iteration 46 added to every honeycomb tie number **stands** — on the arm the built
+object does **not** occupy.
+
+Certified four ways and none assumed: `Length` equals its own sequence's length at **2 005 of
+2 005** rows over twelve tables; every row matchable against a deposited design resolves to a
+strand of it at the same length **and** carrying that file's own stored staple colour, at **1 492
+of 1 492**; and the `10 × 6` and the monolith are bit-identical.
+
+Two readings of `C-0193` are corrected in the favourable direction — the 28 unpaired bases split
+**`12 / 16`**, not the `14 / 14` a rendered figure suggested, and the duplex is in **perfect
+register**, `98` bp on all sixty helices over the *identical* window — and one census is withdrawn
+as a census of a drawing (`CH-0253`): **`60` of the block's `118` scaffold crossings sit in unpaired
+scaffold**.
+
+**And the trap the queue row budgeted for did not apply.** `T-296` recorded that SI as having no
+usable text layer; that is true of its **11 figure pages** and false of its **12 table pages**. One
+`pdftotext -bbox -f 12 -l 26` turned a 26-page raster transcription into a geometric read.
+
+### `T-299`/`C-0201`: the turn is a LOAD, and the tile is too small
+
+**The cheap bound the task specified was run and it answered the wrong question.** The tether's own
+stiffness is at most `0.109313066` of `k_θ`, and with its preload removed it moves the free tile
+**`0.95 %` — toward flatness**.
+
+What moves the tile is the chain's own **tension**: a self-equilibrated internal load in `C-0104`'s
+exact sense, so no entry of the stiffness matrix moves and the field is **linear** in it. Its
+projection is `f·unitZ` on the link gradient, so the **nine in-plane turns contribute exactly zero**
+and the **fifty through-thickness ones** carry it. With the preload the free tile reads
+**`0.11296458`**, past `T-5b`.
+
+Graded on the same 64 coupled cells and the same 4 000-realisation stream: **all four tethered
+states `0 of 64`** flat against the tied lattice's `2 of 64`, a dishing **source** at `64 of 64` at
+the built allowance, and **no verdict moving over four decades of `k_link`**. So route A's covalent
+tie is a dishing **sink** and route B's tether a **source** — **the two routings differ in the sign
+of what the turn does**, and the coupled half of §3 row (g) fails on both.
+
+**The larger finding is a width.** At the built allowance a **uniform** honeycomb row is
+**`92 bp = 31.28 nm`** on M13mp18 and **`106 bp = 36.04 nm`** on p8064 against §3's `40 nm` — and
+all three are **flat uncoupled**. **The tile is not too floppy; it is too small.** That is a
+specification question for NDI, not a modelling one.
+
+And the free tile **straddles the tolerance on an azimuth convention nobody has measured** —
+`0.0569815008` to `0.166312182`, `24 of 36` bracket corners flat — which is `T-304`, and the azimuth
+is **lattice arithmetic** rather than a measurement.
+
+**The coordinator's own unit error travelled into the specification and was caught by a sibling.**
+*"`14 bp = 4.76 nm` outboard"* is a **duplex rise applied to ssDNA** — `CLAUDE.md`'s own
+`28 nt = 9.52 nm` trap, in the prompt that commissioned the work — out by `1.91–2.06×` and the wrong
+**kind** of number. It enters the element **nowhere**: a freely-jointed chain is fixed by its
+nucleotide count and its anchor-to-anchor span.
+
+### `T-298`/`C-0203`: `strike, never delete` was invisible to the reader that decides the status
+
+Seventeen challenges were adjudicated in a claim's own words while their own `**Status**` row did
+not say so. Each was read against the claim that adjudicates it: **15 are adjudications and 2 are
+not**, and the residue goes **24 sites / 17 challenges → 0**, now counted into the tracer's exit
+code. Four of the fifteen had **no `**Status**` row at all**.
+
+The blocker nobody had found is that `challenge_status_of` read the **raw** cell, so a row saying
+`~~OPEN~~ RESOLVED` — written exactly as *strike, never delete* requires — **has been reported OPEN
+ever since**. Both Status readers now blank struck spans **in the cell**, never in the file: a
+struck block *around* the row would delete the row and turn a declared status into `UNKNOWN`, the
+one direction a checker must not guess in.
+
+And **a status cell cannot use its own open word in prose**: `_CHALLENGE_OPEN` is `open|raised`
+case-**insensitively**, so *"DISCHARGED in its **open** item"* reopens the challenge it closes.
+
+### `T-300`/`C-0202`: the ninth family, and a duplicate row nobody could see
+
+`SCAFFOLD` was a bare pattern with no refinement, so every occurrence was `MOVED` by rule and the
+only remedy was a hand override. Split: **70 occurrences, 50 provenance / 20 forward budget, zero
+false positives at all twelve radii** from 60 to 1200, against a hand reading recorded **before** the
+rule. And the minimality of the radius is a **theorem**, not a plateau — nearest-wins is monotone,
+so widening can only move tokens off the default and never back.
+
+Hand overrides on the family fall **16 → 3**, all sixteen having been typed in one iteration; the
+debt line goes `24 → 23` of 93 as committed and `30 → 25` unmanaged.
+
+It also found a **duplicate `T-300` queue row that the coordinator created**, opening a row from one
+agent's report while another agent's report opened the same number. `queue_status` returns one
+verdict per identifier, so a closing verdict on either row is read against both — **and no gate here
+can see it** (`CH-0252`).
+
+### What the two iterations cost each other, and what only the assembled tree could show
+
+Iteration 46's last defect and iteration 47's first were both **interactions**. Agent B's first
+Kotlin-subject mutation harness takes a snapshot argument; agent C's census runs every harness bare.
+Each correct alone, each green alone, and composed a build-failing gate at 1 defect. And `T-300`'s
+ninth family orphaned an anchor in `T-281`'s harness — the **third** instance of `C-0202`'s own
+lesson, in a harness it did not own.
+
+**No agent's own green run can show either.** That is the argument for the coordinator's final sweep
+at the assembled `HEAD`, and both were found there.
