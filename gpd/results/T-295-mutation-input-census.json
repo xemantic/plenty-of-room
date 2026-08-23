@@ -1,0 +1,1942 @@
+{
+  "emission": {
+    "lattice": "none",
+    "regime": []
+  },
+  "task": "T-295",
+  "title": "a mutation's discriminating input can be the committed corpus, and repairing the corpus expires it silently: every mutation of every harness in tools/, classified fixture or committed artifact",
+  "baselineRef": "ff11e57b539cd270b1cce36d1271292bd7cfe402",
+  "refRequested": "HEAD",
+  "question": "P-31 asks whether a mutation harness's reference INTO ITS SUBJECT still resolves. This asks the other half: whether the input that KILLS a mutation is a fixture the test constructs or a committed artifact it reads. The second kind expires when the corpus is repaired, on a correct predicate, and no anchor resolution can see it.",
+  "method": {
+    "design": "a paired experiment: every harness runs unmodified in a faithful copy of the tree and in a copy whose committed artifacts are emptied, and its own printed per-mutation row is read in both arms",
+    "whyNotStatic": "the complete killer set is not in any harness's output (several print only the first two killers, truncated), a cross-module static closure over eight tools is noise rather than a conservative approximation, and `does this test read TASKS.md` is not the question -- `does it NEED one` is",
+    "whyEmptying": "emptying is the maximal perturbation, so a mutation still killed under it is killed by something that is not the corpus; the residual risk is a false NEGATIVE and it is bounded by the reconstruction",
+    "corpusFilesEmptied": 1620,
+    "keptInBothArms": [
+      "tools/",
+      "gradle/",
+      "build.gradle.kts",
+      "settings.gradle.kts",
+      "gradle.properties",
+      "gradlew",
+      "gradlew.bat"
+    ],
+    "excludedFromBothArms": [
+      ".git",
+      "build",
+      "build-*",
+      ".gradle",
+      ".idea",
+      ".kotlin",
+      "__pycache__"
+    ],
+    "baselineSubtraction": "every harness here already subtracts the named failures of an unmutated copy (CH-0237), so a test that cannot run against an emptied corpus is subtracted in the treatment arm rather than counted"
+  },
+  "census": {
+    "harnesses": [
+      {
+        "harness": "test-check-queue-vocabulary.py",
+        "statedMutations": 17,
+        "mutationsRead": 17,
+        "fixtureBacked": 17,
+        "corpusDependent": 0,
+        "survivors": 0,
+        "revived": 0,
+        "refusals": [],
+        "mutations": [
+          {
+            "label": "predicate WIDENED: a bold run anywhere in the cell counts as a verdict",
+            "controlKillers": 4,
+            "treatmentKillers": 4,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "predicate WIDENED: no word bound, so a bold prose sentence is a verdict",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "predicate NARROWED: a verdict must be the whole cell",
+            "controlKillers": 29,
+            "treatmentKillers": 29,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "strike-through no longer blanked, so a WITHDRAWN verdict is read as live",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the vocabulary is opened, so an undeclared coinage passes",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "THE LIST EDIT: the coinage declared NOT CLOSING, which the reader contradicts",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "CLASSIFICATION dropped from CLOSING_VERDICTS: 'ANSWERED'",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "CLASSIFICATION dropped from CLOSING_VERDICTS: 'ANSWERED BY IMPLICATION'",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "CLASSIFICATION dropped from CLOSING_VERDICTS: 'ANSWERED in its specification half'",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "CLASSIFICATION dropped from CLOSING_VERDICTS: 'CLOSED'",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "CLASSIFICATION dropped from CLOSING_VERDICTS: 'DISCHARGED'",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "CLASSIFICATION dropped from CLOSING_VERDICTS: 'DONE'",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "CLASSIFICATION dropped from CLOSING_VERDICTS: 'KILLED'",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "CLASSIFICATION dropped from CLOSING_VERDICTS: 'RESOLVED'",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "CLASSIFICATION dropped from NOT_CLOSING_VERDICTS: 'PARTIALLY DONE'",
+            "controlKillers": 4,
+            "treatmentKillers": 4,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "CLASSIFICATION dropped from NOT_CLOSING_VERDICTS: 'PARTLY DONE'",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "CLASSIFICATION dropped from NOT_CLOSING_VERDICTS: 'TODO'",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          }
+        ]
+      },
+      {
+        "harness": "P-30-mutation-test.py",
+        "statedMutations": 24,
+        "mutationsRead": 24,
+        "fixtureBacked": 24,
+        "corpusDependent": 0,
+        "survivors": 0,
+        "revived": 0,
+        "refusals": [],
+        "mutations": [
+          {
+            "label": "MAX_WORDS is widened, so a bold PROSE sentence becomes a verdict",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "MAX_WORDS is narrowed to one word, so a two-word qualifier stops being a verdict",
+            "controlKillers": 9,
+            "treatmentKillers": 9,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the closing-word set is narrowed to the two words SESSION-PROMPT.md declares",
+            "controlKillers": 24,
+            "treatmentKillers": 24,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the closing-word match loses its word boundaries, so ABANDONED contains DONE",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the PARTIALLY/PARTLY qualifier is dropped, so a qualified row closes",
+            "controlKillers": 14,
+            "treatmentKillers": 14,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "TASK_ROW requires a trailing pipe again — the `T-182` defect restored",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "TASK_ROW loses its tolerance of a backticked or bold identifier",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the row match is widened from `.match` to `.search`, so a mid-line table starts a row",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a leading TODO stops being a verdict — `P-29`'s predicate restored",
+            "controlKillers": 17,
+            "treatmentKillers": 17,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the leading-TODO test loses its word boundary, so TODOISH opens a row",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the leading-TODO test is widened from `.match` to `.search`, so a TODO anywhere opens",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the bold-run test is widened from `.match` to `.search`, so a bold run anywhere leads",
+            "controlKillers": 4,
+            "treatmentKillers": 4,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the bold run stops having to carry a closing word",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "struck spans are no longer blanked, so a withdrawn verdict counts",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "blanking a struck span stops preserving its length",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "`task_rows` shares the reader's own pattern, so coverage becomes tautological",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "`task_rows` accepts any first cell, so every table row is a task row",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the reader takes the LAST verdict instead of the leftmost one",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the reader ignores the verdict and scans the whole row — the `P-30` defect restored",
+            "controlKillers": 6,
+            "treatmentKillers": 6,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the reader loses its fallback, so a row with no verdict is always open",
+            "controlKillers": 4,
+            "treatmentKillers": 4,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the vocabulary loses `TODO`, so every open row is an undeclared coinage",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the per-row agreement check reads EVERY verdict rather than the leftmost",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the per-row agreement check compares against the wrong sense",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the residue is computed on the verdict PHRASE rather than on its sense",
+            "controlKillers": 7,
+            "treatmentKillers": 7,
+            "verdict": "FIXTURE"
+          }
+        ]
+      },
+      {
+        "harness": "T-281-mutation-test.py",
+        "statedMutations": 24,
+        "mutationsRead": 24,
+        "fixtureBacked": 24,
+        "corpusDependent": 0,
+        "survivors": 0,
+        "revived": 0,
+        "refusals": [],
+        "mutations": [
+          {
+            "label": "the getter DEFAULTS an undeclared family to the subject -- the `CH-0229` defect restored",
+            "controlKillers": 11,
+            "treatmentKillers": 11,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the getter refuses a DECLARED family too, so the rule refuses correct work",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a family declared `None` is refused, so `not a debt at all` stops being sayable",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a discharge naming NO claim is accepted, so a date can stand with no claim behind it",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the `None` discharge is allowed to name a claim, so `no discharge` and `this discharge` stop being distinguishable",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a family may name a discharge the registry does not define",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the subject need not be a defined discharge, so the census's own date names no claim",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the report RAISES on an undeclared family, so a report becomes a getter",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "an UNDECLARED row's discharge slot becomes `None`, colliding with `not a debt at all`",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "an EMPTY DOMAIN is reported as UNDECLARED -- vacuous confused with withheld",
+            "controlKillers": 16,
+            "treatmentKillers": 16,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a declared family with occurrences is reported VACUOUS regardless of the count",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the report covers only the EMITTED families, so an empty domain is invisible rather than vacuous",
+            "controlKillers": 14,
+            "treatmentKillers": 14,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the report is emitted in reverse order, so its output is not stable",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "`undeclared()` lists every family rather than the undeclared ones",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "`gated()` returns every family, so another census's discharge is gated by this one",
+            "controlKillers": 8,
+            "treatmentKillers": 8,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "an iterable of names stops being accepted, so a caller with no counts cannot report",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the refusal stops asking `CH-0229`'s question, so the DISCOVERY half is dropped",
+            "controlKillers": 7,
+            "treatmentKillers": 7,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the rendered VACUOUS line drops its explanation, so a clean reading looks like evidence",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the rendered UNDECLARED line drops the repair, so a refusal says only that it refused",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the rendered line drops the discharge, so a report cannot be read for the date",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the census's family map goes back to the PARTIAL one `C-0176` left",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the census bypasses the registry and defaults again",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "`emitted_families` stops respecting scope, so out-of-scope files enter the report",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the census builds its records BEFORE reporting the families, so an undeclared family is a traceback instead of a defect",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          }
+        ]
+      },
+      {
+        "harness": "T-283-mutation-test.py",
+        "statedMutations": 12,
+        "mutationsRead": 12,
+        "fixtureBacked": 12,
+        "corpusDependent": 0,
+        "survivors": 0,
+        "revived": 0,
+        "refusals": [],
+        "mutations": [
+          {
+            "label": "the blanking is a no-op — the pre-`T-283` predicate restored, and `T-261` fires again",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the residue scans the UNBLANKED body, so the blanking exists and is not used",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the blanking stops preserving length, so offsets below a span are wrong",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the DOUBLE-backtick form is dropped, so ``ANSWERED`` survives the blanking",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the alternation is REORDERED, so the single form eats the double one's opening backticks",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the span is allowed to contain backticks, so two spans MERGE and swallow the prose between them",
+            "controlKillers": 2,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "an UNCLOSED backtick blanks the rest of the row",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the blanking is applied to the VERDICT as well as the scan, so a backticked verdict stops being one",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the residue stops counting as a defect — advisory again",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the residue's message drops both repairs, so a refusal says only that it refused",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the residue compares the scan against the verdict PHRASE rather than its SENSE",
+            "controlKillers": 7,
+            "treatmentKillers": 7,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the residue reads EVERY verdict of a row rather than the leftmost, so the queue's preserved-priority column fires",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          }
+        ]
+      },
+      {
+        "harness": "T-289-mutation-test.py",
+        "statedMutations": 16,
+        "mutationsRead": 16,
+        "fixtureBacked": 16,
+        "corpusDependent": 0,
+        "survivors": 0,
+        "revived": 0,
+        "refusals": [],
+        "mutations": [
+          {
+            "label": "NARROW the status column back to the LAST cell — the cheap census restored",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the status column to a fixed THIRD cell — positional, and right about one schema",
+            "controlKillers": 11,
+            "treatmentKillers": 11,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the heading comparison stops stripping emphasis, so `**Status**` is not a status column",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the heading comparison stops folding case, so `STATUS` is not a status column",
+            "controlKillers": 12,
+            "treatmentKillers": 12,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the status heading becomes `leaf`, which inverts the whole rule",
+            "controlKillers": 11,
+            "treatmentKillers": 11,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN: a table with no status column is checked anyway, against its last cell",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "cells are split naively, so an escaped pipe opens a column — `C-0083`'s defect restored",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "struck spans are no longer blanked, so a WITHDRAWN verdict is miscolumned",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the row filter to any first cell, so every table row is a task row",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW to verdicts LEFT of the status column, so a row's NOTES cell may carry one",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a header no longer has to be followed by a SEPARATOR, so any pipe line opens a table",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a table no longer ENDS at the first non-pipe line, so rows join the wrong header",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the arm reverts to ADVISORY, so a verdict in the wrong column stops failing the build",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the advisory stops naming the repair, so a refusal says nothing about what to do",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the advisory names neither heading, so the reader cannot see which column is wrong",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the count line is dropped, so a residue that reads zero cannot be seen to",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          }
+        ]
+      },
+      {
+        "harness": "T-292-mutation-test.py",
+        "statedMutations": 21,
+        "mutationsRead": 21,
+        "fixtureBacked": 21,
+        "corpusDependent": 0,
+        "survivors": 0,
+        "revived": 0,
+        "refusals": [],
+        "mutations": [
+          {
+            "label": "NARROW the leaf grammar to an NDI leaf ID, so the queue's own `new` and `—` are refused",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the leaf grammar to any word, so the last word of a record becomes a leaf",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the leaf is read off the FRONT of the cell, where the record is, not off its end",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a cell with no leaf token is repaired anyway, with an empty leaf invented for it",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the strike WIDENS to the whole preserved note, which blanks prose no verdict supersedes",
+            "controlKillers": 4,
+            "treatmentKillers": 4,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "nothing is struck, so a superseded verdict stands live beside the record that closed it",
+            "controlKillers": 4,
+            "treatmentKillers": 4,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the strike stops taking `(iteration N)` with it, so half a superseded record reads live",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the strike stops recognising a bare `TODO —` opening, so that idiom is left unstruck",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the sentence boundary WIDENS to any period, so a `.md)` link target splits the cell",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the whole cell becomes the status cell and the notes cell is emptied",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a cell with no sentence boundary is split at its end rather than refused",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the NOTES shape SWAPS its two cells, so an acceptance renders under `Notes` instead",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the NOTES shape DROPS the acceptance instead of folding it into the task cell",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the LEAF shape drops the leaf and leaves the cell empty",
+            "controlKillers": 4,
+            "treatmentKillers": 4,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the LEAF shape leaves the superseded note ahead of the record, so the register would read the row off the wrong verdict",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a row in an uncovered shape is half repaired instead of reported",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the token key stops distinguishing anything, so the preservation proof proves nothing",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the token key blanks punctuation too, so a lost bracket or dash reads as preserved",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the repair looks only RIGHT of the status column, so the eleven leaf rows are not found",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "struck spans are no longer blanked when the rows are located, so a repaired row fires again and the repair is no longer idempotent",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the gate stops reading the queue's own file, so the repair is proved against nothing",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          }
+        ]
+      },
+      {
+        "harness": "T-295-mutation-test.py",
+        "statedMutations": 33,
+        "mutationsRead": 33,
+        "fixtureBacked": 33,
+        "corpusDependent": 0,
+        "survivors": 0,
+        "revived": 0,
+        "refusals": [],
+        "mutations": [
+          {
+            "label": "CORPUS is never returned — killed in the control is enough, which is the pre-T-295 reading and the whole defect",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a SURVIVOR is classified as FIXTURE, so a mutation nothing holds open reads clean",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a REVIVED row is classified as FIXTURE, so the treatment arm need not be a subset",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the SUBJECT is emptied too — tools/ treated as a committed artifact",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "gpd/ is carved out of the corpus, so the treatment arm keeps the artifacts",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the build files are treated as corpus, so a neutralised tree cannot start a Gradle run",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a JSON artifact is emptied to nothing, so its reader raises and the whole suite fails identically in the treatment arm — which the baseline subtraction would then hide",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "build output is copied into the arms, so a harness could tell them apart by it",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the `killed by N` shape demands exactly one space, so one harness's rows vanish",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the two-suite shape reads only the FIRST count, so a mutation killed only by the second suite reads as a survivor",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the SURVIVED shape is dropped, so a survivor is not a row at all",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the SURVIVES shape is dropped",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the NARROW/WIDEN direction is dropped from the label, so two rows of one table can collide",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the `N of M fail` shape is read count-first, so its label and its count swap",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the `N of M fail` shape loses its indentation guard, so a summary line becomes a row",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a RETIRED row is not subtracted from the stated count, so a harness that retires one is refused for a reason that is not there",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a harness that states no count reads ZERO rather than None, so every such harness is refused",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the stated-count cross-check is dropped, so a harness that changes its output silently loses rows instead of refusing",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "row labels are not compared, so two different tables are paired by position",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "an empty control reading is not a refusal, so a harness this census cannot read at all reports a clean table of nothing",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "an undeclared CORPUS row stops being a defect — the gate that cannot fail",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a STALE declaration is not reported, so an exemption outlives what it exempted",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a SURVIVOR is not a defect of this census either, so an unclassifiable row is silent",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a REFUSAL is not a defect, so a harness that could not be read passes the gate",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "--check reports and never gates: the exit code is 0 whatever was found",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the exit code is the defect COUNT, which sys.exit truncates modulo 256",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the harness list is a hand-written copy that has fallen one behind P-31's",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the census reads the TREE for undeclared harnesses as well, so a sibling's in-flight harness makes this census refuse a file P-31 has already refused",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the fixture excision no longer asserts its anchors, so it can silently no-op",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the historical check reads HEAD instead of a PINNED commit, so it expires the moment the defect it asserts is repaired",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the PRE-REPAIR queue fixture carries ONE verdict, so the reconstruction's third state has nothing to discriminate on and the demonstration is vacuous",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the REPAIRED queue fixture carries TWO verdicts, so the first two states stop being about a repaired queue at all",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the reconstruction driver does not restrict the harness's table, so it runs every mutation and the one under study is not isolated",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          }
+        ]
+      },
+      {
+        "harness": "T-234-mutation-test.py",
+        "statedMutations": 57,
+        "mutationsRead": 57,
+        "fixtureBacked": 57,
+        "corpusDependent": 0,
+        "survivors": 0,
+        "revived": 0,
+        "refusals": [],
+        "mutations": [
+          {
+            "label": "NARROW the PLACEMENT refinement removed (the iteration-34 predicate)",
+            "controlKillers": 8,
+            "treatmentKillers": 8,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the structural-model test never fires -- no GRILLAGE half",
+            "controlKillers": 8,
+            "treatmentKillers": 8,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the attributive test never fires -- no SQUARE reading",
+            "controlKillers": 6,
+            "treatmentKillers": 6,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW one global pointer set again -- no per-family discharge",
+            "controlKillers": 11,
+            "treatmentKillers": 11,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the refinement window shrunk to nothing",
+            "controlKillers": 11,
+            "treatmentKillers": 11,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the structural-model test fires on anything",
+            "controlKillers": 13,
+            "treatmentKillers": 13,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the attributive test fires on the bare token",
+            "controlKillers": 7,
+            "treatmentKillers": 7,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the refinement window swallows the whole document",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the structural-model test gets the WIDE window back -- a sentence",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the structural-model test sees only the token itself",
+            "controlKillers": 7,
+            "treatmentKillers": 7,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the WIDTH refinement removed (the iteration-34 predicate)",
+            "controlKillers": 6,
+            "treatmentKillers": 6,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the drawable-raster test never fires -- every `drawable` is a widt",
+            "controlKillers": 4,
+            "treatmentKillers": 4,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW row nouns never match -- every row length reads as a tile width",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW nothing is ever remote -- the line context is trusted at any dista",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the line context is read from the ORIGINAL line -- a filename supp",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the context DISTANCE is measured on the unblanked line, so the dia",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the REFINEMENT window is read from the ORIGINAL text -- a filename",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN row nouns match anything -- every match is a restored row span",
+            "controlKillers": 8,
+            "treatmentKillers": 8,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN width nouns match anything -- every match is a withdrawn tile widt",
+            "controlKillers": 7,
+            "treatmentKillers": 7,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the drawable-raster test fires on anything",
+            "controlKillers": 6,
+            "treatmentKillers": 6,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN everything is remote -- the line context is never trusted",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN a snippet is the whole line again -- an occurrence loses its ident",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW a snippet is empty -- an occurrence has no identity at all",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the class coercion removed -- the two-way MOVED/DISCHARGED default",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW hand overrides are not read back -- the docstring's standing promi",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW `C-0152` and `C-0154` registered as CORRECTING again",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the two-file OUT_OF_SCOPE set restored",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the coercion sweeps the gated families in too",
+            "controlKillers": 4,
+            "treatmentKillers": 4,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN a hand override is keyed on its FILE alone",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN ADDRESSED gains the two new classes -- the split gated after all",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW CLASSES without SURVIVING and RESTATED -- the old vocabulary",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW NON_SUBJECT_CLASSES back to the three old ones",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN every family belongs to this census's own discharge",
+            "controlKillers": 11,
+            "treatmentKillers": 11,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the two discharges merged into one pointer set",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN a family with no entry belongs to NO discharge -- the refusal swal",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the WIDTH family loses its honeycomb line context",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the subject side of the two-layer agreement removed",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW a snippet is a LINE PREFIX again, not a window on the token",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN every previous entry is treated as a hand override",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW a hand override is keyed on its family and token, not its file",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the coercion applies to every class, not only the gated ones",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW WHY loses the two new reasons",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW a hand override is keyed WITHOUT the occurrence's neighbourhood",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW CORRECTING emptied",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the override key shortened below one occurrence's neighbourhood",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the filename rule removed -- the pre-T-285 predicate, and a slug f",
+            "controlKillers": 13,
+            "treatmentKillers": 13,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the filename rule runs AFTER the bare identifier, which eats its o",
+            "controlKillers": 11,
+            "treatmentKillers": 11,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the extension is `.md` alone -- a RESULT filename's token survives",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the slug charset drops the hyphen -- a multi-word slug is not a fi",
+            "controlKillers": 10,
+            "treatmentKillers": 10,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the sub-letter is dropped -- a `T-1d` file is not a filename",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the blanking stops preserving length -- every offset below a span",
+            "controlKillers": 4,
+            "treatmentKillers": 4,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the extension is not required -- every hyphenated identifier phras",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the slug admits whitespace -- the blanking runs from one filename",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the slug admits whitespace AND the full stop -- one filename then",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the identifier prefix is not required -- any dotted token is a fil",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the BARE identifier rule removed -- the filename rule alone, so `T",
+            "controlKillers": 7,
+            "treatmentKillers": 7,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the rule decays into a CATCH-ALL: an identifier and everything hyp",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          }
+        ]
+      },
+      {
+        "harness": "T-280-mutation-test.py",
+        "statedMutations": 23,
+        "mutationsRead": 23,
+        "fixtureBacked": 23,
+        "corpusDependent": 0,
+        "survivors": 0,
+        "revived": 0,
+        "refusals": [],
+        "mutations": [
+          {
+            "label": "WIDEN the numerator counts every class, not only the two this census gates",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the numerator counts a POINTED occurrence, so a repair never leaves it",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the numerator counts a STRUCK occurrence",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the numerator ignores a HEADLINE pointer",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the numerator counts a family belonging to ANOTHER discharge",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the all-family denominator is narrowed to CH-0230's same-family one",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the same-family denominator is widened to every family, so the two coi",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the denominator drops the struck and pointed occurrences, so it IS the",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN the denominator leaves the two deliverables and counts the whole corpu",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW an empty denominator is a zero ratio rather than an absent one",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the report drops the denominator's name, leaving the number unattribut",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the report drops CH-0230's own reading, so only the flattering one is",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the report drops the count and prints the ratio alone",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the report drops the standing sentence that the count is not a debt me",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN an empty census reports a ratio anyway, dividing by nothing",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the ratio is rendered at TWO significant digits, not nine",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN an absent ratio renders as a number rather than as `null`",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the numerator demands a pointer instead of refusing one",
+            "controlKillers": 7,
+            "treatmentKillers": 7,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the denominator counts only the classes this census gates, so a RECORD",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the same-family denominator keeps only the pointed occurrences, so the",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "WIDEN a claim file joins the deliverables, so a claim's own worked examples",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the two denominators are given ONE name, so the reading being quoted c",
+            "controlKillers": 4,
+            "treatmentKillers": 4,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "NARROW the denominator name no longer says EVERY family",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          }
+        ]
+      },
+      {
+        "harness": "T-278-mutation-test.py",
+        "statedMutations": 8,
+        "mutationsRead": 8,
+        "fixtureBacked": 8,
+        "corpusDependent": 0,
+        "survivors": 0,
+        "revived": 0,
+        "refusals": [],
+        "mutations": [
+          {
+            "label": "the rounding-call set is widened to count a PROSE rendering",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the rounding-call set is narrowed to the boundary call alone",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "comments are not blanked, so a KDoc naming the call counts as one",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the parameter-record exemption is dropped, so an INPUT is rounded",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the departure map is keyed on the LEAF name, losing the record qualifier",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the absolute floor is dropped, so a value below it is not flattened",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "half-even rounding replaces the JVM's half-up on the magnitude",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a per-key declaration in the source is ignored",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          }
+        ]
+      },
+      {
+        "harness": "T-225-mutation-test.py",
+        "statedMutations": null,
+        "mutationsRead": 22,
+        "fixtureBacked": 22,
+        "corpusDependent": 0,
+        "survivors": 0,
+        "revived": 0,
+        "refusals": [],
+        "mutations": [
+          {
+            "label": "narrowed back to T-214's four spellings",
+            "controlKillers": 9,
+            "treatmentKillers": 9,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "narrowed back to C-0129's leaf name",
+            "controlKillers": 15,
+            "treatmentKillers": 15,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the six EXCLUDED names swept in by pattern",
+            "controlKillers": 6,
+            "treatmentKillers": 6,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the record qualifier dropped",
+            "controlKillers": 7,
+            "treatmentKillers": 7,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "drop     departure",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "drop     relativeDeparture",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "drop     departureFromFinest",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "drop     relativeDepartureInStroke",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "drop     relativeError",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "drop     relativeSpread",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "drop     relativeMovement",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "drop     multiplierDeparture",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "drop     gradientDeparture",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "drop     firstIntegralRelativeSpread",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "drop     firstIntegralCoreSpread",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "drop     centrelineRouteSpread",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "sweep in residualExponent",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "sweep in coverageErrorExponent",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "sweep in observedOrder",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "sweep in worstResidual",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "sweep in residual",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "sweep in coverageError",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          }
+        ]
+      },
+      {
+        "harness": "T-249-mutation-test.py",
+        "statedMutations": null,
+        "mutationsRead": 11,
+        "fixtureBacked": 11,
+        "corpusDependent": 0,
+        "survivors": 0,
+        "revived": 0,
+        "refusals": [],
+        "mutations": [
+          {
+            "label": "threshold widened to six digits",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "threshold narrowed to seventeen digits",
+            "controlKillers": 20,
+            "treatmentKillers": 20,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the leading lookaround dropped",
+            "controlKillers": 6,
+            "treatmentKillers": 6,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the trailing word guard dropped",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the dotted-token guard dropped",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the symmetric trailing guard of the FIRST DRAFT restored",
+            "controlKillers": 6,
+            "treatmentKillers": 6,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "T-249's own `(?!\\w)` trailing guard restored",
+            "controlKillers": 4,
+            "treatmentKillers": 4,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "bare integers matched as well",
+            "controlKillers": 5,
+            "treatmentKillers": 5,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "no digit threshold at all",
+            "controlKillers": 8,
+            "treatmentKillers": 8,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a naive digit-run pattern, no guards and no threshold",
+            "controlKillers": 24,
+            "treatmentKillers": 24,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "character count instead of significant digits",
+            "controlKillers": 3,
+            "treatmentKillers": 3,
+            "verdict": "FIXTURE"
+          }
+        ]
+      },
+      {
+        "harness": "T-250-mutation-test.py",
+        "statedMutations": null,
+        "mutationsRead": 8,
+        "fixtureBacked": 8,
+        "corpusDependent": 0,
+        "survivors": 0,
+        "revived": 0,
+        "refusals": [],
+        "mutations": [
+          {
+            "label": "the AUDIT-ONLY exit policy of T-249 restored (narrowing)",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the gate applied under --census as well (widening)",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "any run fails, defects or not (widening)",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a single defect treated as noise (narrowing)",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "a per-FILE allowlist, the shape --conversions uses (widening)",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the token exempted in any file (widening)",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "no allowlist at all (narrowing)",
+            "controlKillers": 2,
+            "treatmentKillers": 2,
+            "verdict": "FIXTURE"
+          },
+          {
+            "label": "the conversions allowlist reused for prose (widening)",
+            "controlKillers": 1,
+            "treatmentKillers": 1,
+            "verdict": "FIXTURE"
+          }
+        ]
+      }
+    ],
+    "totals": {
+      "harnesses": 13,
+      "mutations": 276,
+      "fixtureBacked": 276,
+      "corpusDependent": 0,
+      "survivors": 0,
+      "revived": 0
+    },
+    "declaredCorpusDependentByDesign": [],
+    "defects": []
+  },
+  "reconstruction": {
+    "what": "C-0192 section 8's own instance, run rather than remembered: T-283's twelfth mutation flips the residue arm from a row's LEFTMOST verdict to its LAST, and the census must give a different verdict at each of three states",
+    "constructedStates": {
+      "fixtureKeptQueueAfterRepair": "FIXTURE",
+      "fixtureRemovedQueueAfterRepair": "SURVIVOR",
+      "fixtureRemovedQueueBeforeRepair": "CORPUS"
+    },
+    "expected": {
+      "fixtureKeptQueueAfterRepair": "FIXTURE",
+      "fixtureRemovedQueueAfterRepair": "SURVIVOR",
+      "fixtureRemovedQueueBeforeRepair": "CORPUS"
+    },
+    "historicalRef": "7f7957d",
+    "historicalVerdict": "CORPUS",
+    "historicalIsPinned": true
+  },
+  "instrument": {
+    "namedTests": 53,
+    "namedTestFailures": 0,
+    "historicalCheckSkipped": false,
+    "mutations": 33,
+    "mutationSurvivors": 0,
+    "mutationSummaryLine": "# 33 mutation(s), 0 survivor(s)",
+    "declaredInP31": true,
+    "wiredIn": [
+      "tools/verify.sh"
+    ],
+    "isAGate": true,
+    "gateReading": 0
+  },
+  "acceptance": [
+    {
+      "predicate": "F1",
+      "statement": "every mutation is classified, and the classification is measured by running",
+      "verdict": "PASS",
+      "evidence": "276 mutations over 13 harnesses, 0 refusals"
+    },
+    {
+      "predicate": "F2",
+      "statement": "the harness list is P-31's own table, imported",
+      "verdict": "PASS",
+      "evidence": "harness_names() equals P-31's HARNESSES, asserted as a named test, and harness_names does not read the tree"
+    },
+    {
+      "predicate": "F3",
+      "statement": "the census refuses rather than under-counting",
+      "verdict": "PASS",
+      "evidence": "the stated mutation count, the two arms' row counts and the row labels are all cross-checked; each is a named test and each is mutated"
+    },
+    {
+      "predicate": "F4",
+      "statement": "the instrument is checked against the instance it was written for",
+      "verdict": "PASS",
+      "evidence": "three constructed states, three verdicts; and the same reading on the real pre-repair queue at the pinned ref"
+    },
+    {
+      "predicate": "F5",
+      "statement": "the gate reads zero, or the residue is named",
+      "verdict": "PASS",
+      "evidence": "0 defect(s); 0 declared exemption(s)"
+    },
+    {
+      "predicate": "F6",
+      "statement": "every mutation of the census fails a named test",
+      "verdict": "PASS",
+      "evidence": "# 33 mutation(s), 0 survivor(s)"
+    },
+    {
+      "predicate": "F7",
+      "statement": "the new harness is declared in P-31 and the census is wired",
+      "verdict": "PASS",
+      "evidence": "T-295-mutation-test.py is a row of P-31's HARNESSES; the census runs from tools/verify.sh with --self-test and --check"
+    },
+    {
+      "predicate": "F8",
+      "statement": "the result file is dated",
+      "verdict": "PASS",
+      "evidence": "baselineRef records the resolved sha of the ref"
+    }
+  ]
+}

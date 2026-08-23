@@ -265,4 +265,22 @@ if [ "$checks" = "yes" ]; then
     # file.
     echo "--- no result file in this snapshot carries an unrounded number inside PROSE (T-250) ---"
     tools/check-result-file-hygiene.py --prose
+    echo
+    # `T-295` -- `P-31`'s question asked about FIXTURES rather than about anchors. `P-31` resolves
+    # every reference a mutation harness makes INTO its subject; this asks what input makes each
+    # mutation observable at all, because a mutation whose only discriminator is committed corpus
+    # state expires when that state is repaired -- silently, on a correct predicate. `C-0192` §8
+    # is the instance: repairing 21 queue rows took `tools/T-283-mutation-test.py` from 0
+    # survivors to 1, and `P-31` reported 0 unresolved anchors throughout, correctly.
+    #
+    # It wires HERE rather than in `build.gradle.kts`, by `P-31`'s own criterion: `P-31` reads
+    # only `tools/`, `build.gradle.kts` and this file, and so belongs in the build; this census
+    # makes two copies of the WHOLE tree and runs every harness in both, so it belongs with the
+    # corpus gates. It costs about four minutes.
+    #
+    # A snapshot carries no `.git`, so the census's pinned HISTORICAL check prints a visible skip
+    # here and the three CONSTRUCTED states carry the demonstration in this run.
+    echo "--- every mutation is held open by a FIXTURE, not by committed corpus state (T-295) ---"
+    tools/T-295-mutation-input-census.py --self-test > /dev/null
+    tools/T-295-mutation-input-census.py --check
 fi
