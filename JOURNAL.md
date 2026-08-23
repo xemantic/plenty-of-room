@@ -11491,6 +11491,16 @@ against the per-beam twist's `0.296735462` — **inside** `T-5b` where the twist
 `0 of 24` coupled readings are flat either way, so `C-0190`'s **coupled** conclusion is upheld on the
 corrected channel. And one number in circulation was wrong in four documents:
 `1 + 2r_P/(d − 2r_P) = d/(d − 2r_P)` is **`3.52847408`**, not `3.52810239`. No verdict turns on it.
+**And the study that raised it had already emitted the right one**: `3.52810239` stood in `CH-0242`'s
+headline and §1, `C-0190`'s headline and §6, the challenges index and two prose strings of `T-291`'s own
+result file — while that file's `openQuestions` block computed the same expression and emitted
+`3.52847408`. **Grep a headline number out of the artifact even when the artifact is the one that raised
+it.** Second instance this iteration, after `C-0152`'s `4×` rung ratio.
+
+**Verification**: suite **3 367 tests in 194 classes, 0 failures**, `tools/verify.sh` **BUILD SUCCESSFUL in
+25m 10s**; 13 mutations, 0 survivors over a subtracted baseline of 0; and all four nearest consumers —
+`T-253`, `T-254`, `T-267`, `T-279`, re-run in `tools/reemission-order.py`'s own topological order —
+**byte-identical**.
 
 ### The coordinator's three, and the pattern they turned out to share
 
