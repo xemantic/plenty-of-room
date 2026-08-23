@@ -540,15 +540,21 @@ remedies all re-emit files agent A is holding, and running it beside `T-278` is 
 consumer-before-producer error with two authors instead of one. Agents B and C were chosen because **neither
 writes a file that exists yet** — B emits two new studies, C touches only `tools/` and its own retained data.
 
-**ITERATION 46 (2026-08-23) reservations.** `C-0193` (`T-296`, agent A), `C-0194` (`T-297`, agent B, **taken**),
-`C-0195` (`T-295`, agent C), `C-0196` (`T-293`, coordinator, **taken**), `C-0197` (`T-261`, coordinator, **taken**), `C-0198` (`T-252`, coordinator, **taken**); challenges `CH-0246` **taken** (`T-293`, coordinator), `CH-0247` (agent A), `CH-0248` **taken** (`T-297`, agent B)/`CH-0250` (agent C);
-`C-0199` reserved for **agent D** (`T-255`, spawned mid-iteration on idle capacity), `CH-0251`+ free. Anything unused when the
-iteration closes is **released by name here**, never by range. **Source ownership this iteration**: agent B owns
-[`src/main/kotlin/tile/HoneycombGrillage.kt`](src/main/kotlin/tile/HoneycombGrillage.kt) and no other agent edits it;
-agent C touches only `tools/`; agent A writes no shared Kotlin main source. `T-294` is deliberately **not** taken —
-it re-grades on the same grillage agent B is editing, which is `C-0101`'s consumer-before-producer error with two authors.
+**ITERATION 46 (2026-08-23) — CLOSE-OUT.** Taken: `C-0193` (`T-296`, agent A), `C-0194` (`T-297`, agent B),
+`C-0195` (`T-295`, agent C), `C-0196` (`T-293`), `C-0197` (`T-261`), `C-0198` (`T-252`) — the last three the
+coordinator's, in the main context between waves — and `C-0199` reserved for agent D (`T-255`, spawned
+mid-iteration on idle capacity). Challenges taken: `CH-0246` (`T-293`), `CH-0247` (`T-296`), `CH-0248` (`T-297`),
+`CH-0250` (`T-295`). **`CH-0249` was reserved and is RELEASED UNUSED, by name** — agent C found `CH-0247` and
+`CH-0248` both taken between its reservation and its write and moved **past** the next free number, which is the
+rule; the number it skipped is released here rather than left to a reader to infer from a range.
+New rows opened during the iteration by the work itself: `T-297` (`CH-0242`), `T-298` (`C-0197`), `T-299` and
+`T-300` (`C-0193`), `T-301` (the wiring predicate). **Source ownership held**: agent B owned
+[`src/main/kotlin/tile/HoneycombGrillage.kt`](src/main/kotlin/tile/HoneycombGrillage.kt) and no other agent
+touched it; agent C touched only `tools/`; agents A and D wrote no shared Kotlin main source. `T-294` was
+deliberately **not** taken — it re-grades on the same grillage agent B was editing, which is `C-0101`'s
+consumer-before-producer error with two authors.
 
-**The highest numbers in use at the time of writing are `T-300`, `P-31`, `C-0198`, `CH-0250`.**
+**The highest numbers in use at the time of writing are `T-301`, `P-31`, `C-0199`, `CH-0250`.**
 `T-297` and `T-298` were opened DURING iteration 46, by `CH-0242` and `C-0197`, and are unreserved.
 `T-279`, `T-280` and `T-281` were opened DURING the iteration, by `CH-0227`–`CH-0230`, and are unreserved:
 a task number costs nothing and a claim number does, so a row is opened when the work is named and a claim
