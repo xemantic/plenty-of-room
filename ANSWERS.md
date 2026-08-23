@@ -456,6 +456,31 @@ the richest set richest and does not make it flatter.
    `60 × 98 = 5 880` staple nucleotides for this block and the deposited file draws **7 560**.
    **So the condition above is itself conditional**, and if the files are right `C-0175` §9's `1.12×`,
    `C-0180` §4's `2 of 64` and `C-0190`'s twist all **stand** rather than being withdrawn.
+   **AND `CH-0251` IS REFUTED, iteration 47 — THE DISPUTE IS SETTLED AND `C-0193` IS STRENGTHENED**
+   ([`C-0200`](gpd/claims/C-0200-the-file-draws-and-the-table-orders.md), `T-302`;
+   [`CH-0253`](gpd/challenges/CH-0253-a-register-census-of-a-drawing.md)).
+   The 2009 supplement's own staple table **orders `5 880` staple nucleotides** for the `10 × 6` block, in
+   **`144`** strands — `60 × 98` **exactly** — where the deposited file **draws `214` strands and `7 560`**.
+   The **`70`** the file draws and the order omits total **exactly `1 680 = 60 × 28`**, lie entirely in the
+   helix **end regions**, and carry caDNAno's **default colour** while **not one** ordered strand does.
+   **A design file is a DRAWING and a staple table is a PURCHASE, and only one of the two can fold.**
+   Certified four ways and none assumed: `Length` equals its own sequence's length at **2 005 of 2 005** rows
+   over twelve tables; every row matchable against a deposited design resolves to a strand of it at the same
+   length **and** carrying that file's own stored staple colour, at **1 492 of 1 492**; and the `10 × 6` and
+   the monolith are bit-identical.
+   **So the conditionality above STANDS**, and it is now a conditionality on the arm the built object does
+   **not** occupy: `C-0175` §9's `1.12×`, `C-0180` §4's `2 of 64` and `C-0190`'s twist are correct about a
+   design nobody has folded, and the **tether** re-grade (`T-299`) is the live one.
+   **Two readings of `C-0193` are corrected in the favourable direction**: the 28 unpaired bases split
+   **`12 / 16`**, not the `14 / 14` a rendered figure suggested — so a raster turn joins two duplex ends
+   **`24` nt apart at thirty turns and `32` at thirty**, mean `28.0` exactly — and the duplex is in **perfect
+   register**, `98` bp on all sixty helices over the *identical* window `28..125`, the file's 4 bp stagger
+   being entirely single-stranded.
+   **And one census is withdrawn as a census of a drawing** (`CH-0253`): **`60` of the block's `118` scaffold
+   crossings sit in unpaired scaffold** in the object that was ordered.
+   **Not settled, and recorded**: the other six cross-sections, whose tables were not obtained — and the
+   obvious shortcut is **refused on measurement**, the default-colour signature being exact on 2 of the 5
+   designs where it can be tested and wrong on 3.
    **One structural unknown does remain, and it was found by looking for a negative** (`C-0104`, `T-172`).
    A crossover **prestrain** is an *initial stress*, so it leaves the stiffness matrix untouched and enters
    the lattice as a **load vector** — which makes the whole axis one solve, and puts `T-5b`'s 0.10 at

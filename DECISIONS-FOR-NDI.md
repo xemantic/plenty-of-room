@@ -194,7 +194,11 @@ doing the other thing. So the tied readings are correct about a **drawable, unde
 ones are not the alternative either, because the built turn is a **tether** and no lattice here carries one.
 **Neither verdict of this row moves**: the uncoupled block is flat at both readings and at both ends of the band.
 **And the *"nobody has folded it"* half is itself disputed** — see
-[`CH-0251`](gpd/challenges/CH-0251-the-deposited-block-has-no-loops.md) below. ~~It costs **a third of the footprint**.~~
+[`CH-0251`](gpd/challenges/CH-0251-the-deposited-block-has-no-loops.md) below.
+**SETTLED, iteration 47** ([`C-0200`](gpd/claims/C-0200-the-file-draws-and-the-table-orders.md)):
+`CH-0251` is **REFUTED** and the half stands. The 2009 supplement **orders** `5 880` staple nucleotides for
+this block, `60 × 98` exactly, where the deposited file **draws** `7 560` — **a design file is a drawing and
+a staple table is a purchase**. ~~It costs **a third of the footprint**.~~
 **WITHDRAWN, iteration 35** (`C-0141`, `C-0144`): **it costs no footprint at all.**
 Corrected to the honeycomb's own two pitches, `10 × 6` is **38.08 × 37.504 nm — 0.929467162 of §3's 40.35 nm** and
 `15 × 4` is **38.08 × 56.524 nm — 1.40084263×** it, so the ordering **reverses**: the tile §7 offered as the *cost*
@@ -946,6 +950,13 @@ block, deposited **twice** and bit-identical, turning helix to helix by a **dire
 route A **drawn**, closing the `±5 bp` rule at `0` forced scaffold crossings of 118. **Two primary artifacts
 of the same authors disagree**; the decisive reading is the SI staple **length** column and it is named rather
 than run. If the files are right, the tied numbers **stand** rather than being conditional.
+**RUN, iteration 47, and the files are NOT right**
+([`C-0200`](gpd/claims/C-0200-the-file-draws-and-the-table-orders.md), `T-302`): the supplement orders
+**`5 880`** staple nucleotides in **`144`** strands and the file draws **`214`** strands and **`7 560`**;
+the **`70`** the file draws and the order omits total **exactly `1 680 = 60 × 28`**, lie entirely in the
+helix **end regions**, and carry caDNAno's **default colour** while not one ordered strand does.
+**So the conditionality above STANDS**: every count in this section is correct about a design that has not
+been demonstrated, and the **tether** re-grade (`T-299`) is the live one.
 Re-graded with the ties present, on the same 64 cells, the same extent, the same stations, the same mandate, the
 same normalising stroke and the **same 4 000-realisation dropout stream** — the untied half reproducing **all 128**
 of the published values at **`4.2e−9`** — **2 of 64** cells clear `T-5b`'s 0.10 at the 90th percentile.
