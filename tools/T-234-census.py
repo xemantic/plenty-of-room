@@ -212,6 +212,32 @@ _DRAWABLE_RASTER = re.compile(
     r"|closes", re.I
 )
 
+#: `T-300`.  What the scaffold token GOVERNS -- and the two readings are about two different
+#: OBJECTS, which is why a name could not settle it.
+#:
+#: PROVENANCE: *which scaffold a 2009 caDNAno block was folded from*, the premise `C-0140`/`CH-0173`
+#: withdrew when they settled design (i) at `60 x 126 = 7 560`.  The words are the ways this corpus
+#: names that question: the act of folding, the paper's two contradicting passages, the design
+#: index, and the cross-section itself.
+_SCAFFOLD_PROVENANCE = re.compile(
+    r"folded from|folds? every|is actually folded|designs? \(i\)|designs i,|\bi: |Methods list"
+    r"|main.text rule|main text|scaffold pairing|15 . 4|cross-section|scaffold vectors"
+    r"|scaffold identity|which scaffold",
+    re.I,
+)
+#: FORWARD BUDGET: *a scaffold LENGTH this programme is budgeting for its own unbuilt tile*, on
+#: `C-0151`'s drawable raster -- an object that did not exist in 2009, so no reading of it can
+#: assert the withdrawn premise.  `C-0193` states the split in its own prose: *"a statement about a
+#: Gen-1 tile nobody has folded, and not about which scaffold any 2009 block was folded from"*.
+#: Two kinds of governing word, and BOTH were measured before either was written (`C-0176`): the
+#: budget's own verbs and nouns, and the Gen-1 tile's own coordinates.  The second half is not a
+#: decoration -- without it four occurrences fall back to the default and stay hand overrides.
+_SCAFFOLD_BUDGET = re.compile(
+    r"\baffords?\b|\baffording\b|\baffordance\b|\bspare\b|\bshort\b|per turn"
+    r"|removes the question|built allowance|recommended raster|102 . 109",
+    re.I,
+)
+
 
 def plain(text: str) -> str:
     """Markdown emphasis removed, length NOT preserved.  Used only inside a refinement window."""
@@ -248,6 +274,32 @@ def refine_width(text: str, start: int, end: int) -> str:
     return "ROW_SPAN" if row < width else "WIDTH"
 
 
+def refine_scaffold(text: str, start: int, end: int, radius: int = REFINE_WINDOW) -> str:
+    """`SCAFFOLD` | `FORWARD_BUDGET` -- the withdrawn provenance, or a length in a forward budget.
+
+    Nearest wins, and the DEFAULT is the debt.  The asymmetry is deliberate and is the whole safety
+    argument: reading a budget as a debt costs a hand override, which is the state this task
+    replaces, while reading a debt as a budget removes an occurrence from the gate SILENTLY.  So a
+    budget word has to be strictly nearer than any provenance word, and a token with no governing
+    word at all stays a debt.  Measured over the corpus at twelve radii from 60 to 1200, the rule
+    has **zero** false positives in that unsafe direction (`C-0202`).
+
+    The radius is `REFINE_WINDOW`, the corpus's own refinement radius, and not a new constant.  It
+    is the SMALLEST radius at which the split is complete against a hand reading of every
+    occurrence taken before the rule was written, and that minimality is what makes it the safest:
+    the refinement is MONOTONE in its radius -- a match found at radius `R` sits at distance at most
+    `R`, so enlarging `R` can only add candidates further away and can only change an occurrence for
+    which NEITHER class matched.  A wider window therefore moves tokens off the default and never
+    back onto it, and at 500 it reaches into a NEIGHBOURING queue row, which is
+    `STRUCTURAL_WINDOW`'s own failure mode.
+    """
+    window = _window(text, start, end, radius)
+    at = len(plain(text[max(0, start - radius): start]))
+    budget = _nearest(_SCAFFOLD_BUDGET, window, at)
+    provenance = _nearest(_SCAFFOLD_PROVENANCE, window, at)
+    return "FORWARD_BUDGET" if budget < provenance else "SCAFFOLD"
+
+
 #: name, pattern, line context, refinement, discharge.  The refinement may rename the family, and
 #: the RENAMED family carries its own discharge -- which is how a partial discharge is represented.
 FAMILIES = (
@@ -267,7 +319,7 @@ FAMILIES = (
         _AZIMUTH_CTX,
         None,
     ),
-    ("SCAFFOLD", r"p8064", None, None),
+    ("SCAFFOLD", r"p8064", None, refine_scaffold),
     (
         "PLACEMENT",
         r"single-layer square-lattice|single-layer\n\s*square-lattice"
@@ -294,6 +346,7 @@ FAMILY_DISCHARGE = {
     "GRILLAGE": "C-0154/C-0167",
     "SQUARE": None,
     "ROW_SPAN": None,
+    "FORWARD_BUDGET": None,
 }
 
 #: The rule, as an object that cannot be constructed with a discharge naming no claim and cannot be
@@ -690,7 +743,7 @@ def check(root: str) -> int:
     for family in sorted({f[0] for f in FAMILIES} | set(FAMILY_DISCHARGE)):
         owner = discharge_of(family)
         print(
-            "  {:<12} {:<4} {}".format(
+            "  {:<15} {:<4} {}".format(
                 family,
                 sum(1 for r in records if r["family"] == family),
                 "gated by this census ({})".format(SUBJECT)
@@ -1003,10 +1056,12 @@ def self_test() -> int:
         refine_placement("every placement here is single-layer square-lattice", 22, 48),
         refine_width("honeycomb rows of 112 bp", 17, 23),
         refine_width("the honeycomb tile is 15 rows x 4 layers x 112 bp", 41, 47),
+        refine_scaffold("the tile is folded from p8064", 24, 29),
+        refine_scaffold("p8064 affords 22 nt", 0, 5),
     }
     ok("T-281 every family the census can emit is DECLARED", emittable <= REGISTRY.declared)
     ok("T-281 the map declares no family the census cannot emit", REGISTRY.declared == emittable)
-    ok("T-281 the map is complete: eight names", len(REGISTRY.declared) == 8)
+    ok("T-281 the map is complete: nine names", len(REGISTRY.declared) == 9)
     ok(
         "T-281 an undeclared family is REFUSED rather than defaulted to the subject",
         _raises(_discharges.UndeclaredFamily, lambda: discharge_of("NEW_FAMILY")),
@@ -1276,6 +1331,147 @@ def self_test() -> int:
        ratio_text(24.0 / 88.0) == "0.272727273")
     ok("T-280 a null ratio renders as `null`, not as a number", ratio_text(None) == "null")
 
+    # ------------------------------------------- T-300: a LENGTH is not a PROVENANCE
+    # The scaffold token carried two statements about two different objects: WHICH SCAFFOLD a 2009
+    # caDNAno block was folded from (the premise `C-0140`/`CH-0173` withdrew), and a scaffold
+    # LENGTH in a forward budget for a Gen-1 tile nobody has folded.  `C-0193` states the split in
+    # its own prose.  Each rule is asserted in BOTH directions, and the DEFAULT is the debt,
+    # because reading a debt as a budget silently removes it from the gate.
+
+    ok(
+        "T-300 `folded from` is the withdrawn provenance",
+        sub("the four-layer tile is folded from p8064 and one of only three") == ["SCAFFOLD"],
+    )
+    ok(
+        "T-300 the paper's Methods list is the withdrawn provenance",
+        sub("the caDNAno paper's Methods list says p8064") == ["SCAFFOLD"],
+    )
+    ok(
+        "T-300 the paper's main-text rule is the withdrawn provenance",
+        sub("its own main-text rule -- 60 helices take p7560, 64 take p8064") == ["SCAFFOLD"],
+    )
+    ok(
+        "T-300 `design (i)` is the withdrawn provenance",
+        sub("under the Methods reading design (i) is a p8064 design") == ["SCAFFOLD"],
+    )
+    ok(
+        "T-300 the paper's own scaffold-pairing sentence is the withdrawn provenance",
+        sub('the scaffold pairings are as follows: i: p8064, ii: p7560') == ["SCAFFOLD"],
+    )
+    ok(
+        "T-300 the cross-section a block was folded from is the withdrawn provenance",
+        sub("this cross-section is actually folded from p8064 = 8 064 nt") == ["SCAFFOLD"],
+    )
+    ok(
+        "T-300 a bare token with NO governing word defaults to the debt, which is the safe "
+        "direction: reading a debt as a budget removes it from the gate silently",
+        sub("| tile | p8064 | 6 384 | 1.9 |") == ["SCAFFOLD"],
+    )
+
+    ok(
+        "T-300 `affords` makes the token a forward budget",
+        sub("p8064 affords 22 nt and removes the question") == ["FORWARD_BUDGET"],
+    )
+    ok(
+        "T-300 `spare` makes the token a forward budget",
+        sub("the raster needs 8 010 nt and p8064 has 54 spare") == ["FORWARD_BUDGET"],
+    )
+    ok(
+        "T-300 `short` makes the token a forward budget",
+        sub("p8064, 8 064 nt | 336 short | 106 bp = 36.04 nm") == ["FORWARD_BUDGET"],
+    )
+    ok(
+        "T-300 `per turn` makes the token a forward budget",
+        sub("M13 affords 15 nt per turn, p7560 20, and p8064 exactly the built 28")
+        == ["FORWARD_BUDGET"],
+    )
+    ok(
+        "T-300 `removes the question` makes the token a forward budget",
+        sub("p8064 removes the question, inside the one-kBT band") == ["FORWARD_BUDGET"],
+    )
+    ok(
+        "T-300 the Gen-1 tile's own `built allowance` makes the token a forward budget",
+        sub("at the built allowance a uniform honeycomb row is 36.04 nm on p8064 against 40 nm")
+        == ["FORWARD_BUDGET"],
+    )
+    ok(
+        "T-300 the Gen-1 tile's own `recommended raster` makes the token a forward budget",
+        sub("the recommended raster is a p8064 design, not an M13 one") == ["FORWARD_BUDGET"],
+    )
+    ok(
+        "T-300 the drawable raster's own coordinates make the token a forward budget",
+        sub("on the drawable 102 / 109 raster p8064 is the one that closes") == ["FORWARD_BUDGET"],
+    )
+
+    ok(
+        "T-300 nearest wins: a provenance word nearer than a budget word keeps the debt",
+        sub("p8064 has 54 spare" + " y" * 60 + " folded from p8064") == ["FORWARD_BUDGET",
+                                                                        "SCAFFOLD"],
+    )
+    ok(
+        "T-300 a governing word BEYOND the refinement window is not seen at all",
+        sub("p8064" + " y" * (REFINE_WINDOW // 2 + 200) + " affords 22 nt") == ["SCAFFOLD"],
+    )
+    ok(
+        "T-300 the refinement radius is the corpus's own REFINE_WINDOW, not a new constant",
+        refine_scaffold.__defaults__ == (REFINE_WINDOW,) and REFINE_WINDOW == 300,
+    )
+
+    # --- `C-0196`'s three signs: the refinement window reads BLANKED text, so a governing word
+    # inside a FILENAME is a NAME and governs nothing.  This rule INHERITS that and must not undo it.
+    ok(
+        "T-300 a budget word inside a FILENAME does not refine the family",
+        sub("the tile is folded from p8064, see ../claims/C-0193-the-turn-affords-a-tether.md")
+        == ["SCAFFOLD"],
+    )
+    ok(
+        "T-300 a budget word inside a filename does not fire on its OWN, either",
+        sub("p8064, see ../claims/C-0193-spare-turn-allowance.md") == ["SCAFFOLD"],
+    )
+    ok(
+        "T-300 and the same word in the line's own PROSE still refines it",
+        sub("p8064, and the turn affords 22 nt of spare") == ["FORWARD_BUDGET"],
+    )
+    ok(
+        "T-300 a PROVENANCE word inside a filename does not govern either",
+        sub("p8064 affords 22 nt, see ../claims/C-0125-which-scaffold-design-i.md")
+        == ["FORWARD_BUDGET"],
+    )
+
+    # --- the sweep's SHAPE is a theorem, not a measurement: a match found at radius R sits at
+    # distance <= R, so enlarging R can only add candidates further away and can only change an
+    # occurrence for which NEITHER class matched.  So the refinement is monotone off the default,
+    # which is what makes "the plateau" well defined and the smallest sufficient radius the safest.
+    _monotone = [
+        "p8064" + " y" * 40 + " affords 22 nt",
+        "p8064" + " y" * 40 + " folded from the paper",
+        "folded from p8064" + " y" * 40 + " which affords 22 nt",
+        "p8064 has 54 spare",
+        "| tile | p8064 | 6 384 |",
+    ]
+    ok(
+        "T-300 the refinement is MONOTONE in its radius: a wider window can move a token OFF the "
+        "default and never back onto it",
+        all(
+            not (refine_scaffold(body, body.index("p8064"), body.index("p8064") + 5, small)
+                 == "FORWARD_BUDGET"
+                 and refine_scaffold(body, body.index("p8064"), body.index("p8064") + 5, large)
+                 == "SCAFFOLD")
+            for body in _monotone
+            for small, large in ((60, 120), (120, 300), (300, 1200))
+        ),
+    )
+
+    ok("T-300 SCAFFOLD is still this census's own subject", discharge_of("SCAFFOLD") == SUBJECT)
+    ok(
+        "T-300 FORWARD_BUDGET is no discharge at all -- it is a token collision, not a debt",
+        discharge_of("FORWARD_BUDGET") is None,
+    )
+    ok(
+        "T-300 FORWARD_BUDGET is not gated by this census",
+        "FORWARD_BUDGET" not in gated_families(),
+    )
+
     # ------------------------------------------------- T-285: a FILENAME is a name, not a statement
     # `blank_identifiers` blanked the identifier and not the file the identifier names, so a family
     # token fired inside a LINK TARGET -- which asserts nothing about anything and reaches the gate
@@ -1390,9 +1586,13 @@ def self_test() -> int:
     ok(
         "T-287 blanking the line is length-preserving, so a surviving occurrence's offset and "
         "line number are unmoved",
-        occurrences(
+        # `[:1] or [...]` rather than `[0]`: a mutation that empties the result list must fail
+        # this test BY NAME, and an IndexError inside a self-test is a crash rather than a named
+        # failure -- `CH-0237`'s *a mutation killed by an exception is a fixture defect, not a
+        # measurement*, found by `T-300`'s own run of the harness.
+        (occurrences(
             "x\nsee C-0140-raster.md - the honeycomb tile is 4 layers x 112 bp\n"
-        )[0][1:3]
+        )[:1] or [(None, None, None)])[0][1:3]
         == (2, len("x\nsee C-0140-raster.md - the honeycomb tile is 4 layers x ")),
     )
     # --- T-293: the REFINEMENT window is read from the same blanked text too

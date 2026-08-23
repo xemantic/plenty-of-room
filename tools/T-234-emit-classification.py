@@ -132,6 +132,11 @@ FAMILY_CLASS = {
     "GRILLAGE": "SURVIVING",
     "ROW_SPAN": "RESTATED",
     "SQUARE": "OUT_OF_SCOPE",
+    # `T-300`.  A scaffold LENGTH in a forward budget for a Gen-1 tile nobody has folded is a token
+    # COLLISION, not a restatement: it is not the withdrawn premise read correctly, it is a
+    # different object wearing the same string.  So it takes `SQUARE`'s class and not `ROW_SPAN`'s
+    # -- which is also, to the word, what all sixteen of the hand overrides it replaces said.
+    "FORWARD_BUDGET": "OUT_OF_SCOPE",
 }
 #: Synthesis claims: an occurrence there records what a past deliverable pass carried in.
 SYNTHESIS = {
@@ -325,6 +330,32 @@ def self_test():
         # on, never a proxy for it*.
         {f for f in census.FAMILY_DISCHARGE if census.discharge_of(f) != census.SUBJECT}
         == set(FAMILY_CLASS),
+    )
+    # --- `T-300`: the scaffold family's own split, in both directions
+    ok(
+        "T-300 coerce FORWARD_BUDGET off MOVED -- a length in a forward budget is not the debt",
+        coerce("MOVED", "FORWARD_BUDGET") == "OUT_OF_SCOPE",
+    )
+    ok(
+        "T-300 coerce FORWARD_BUDGET off DISCHARGED",
+        coerce("DISCHARGED", "FORWARD_BUDGET") == "OUT_OF_SCOPE",
+    )
+    ok("T-300 coerce leaves SCAFFOLD alone", coerce("MOVED", "SCAFFOLD") == "MOVED")
+    ok(
+        "T-300 coerce keeps a RECORD reading on FORWARD_BUDGET -- a verbatim quotation stays one",
+        coerce("RECORD", "FORWARD_BUDGET") == "RECORD",
+    )
+    ok(
+        "T-300 coerce keeps a CORRECT reading on FORWARD_BUDGET",
+        coerce("CORRECT", "FORWARD_BUDGET") == "CORRECT",
+    )
+    ok(
+        "T-300 FORWARD_BUDGET takes a token COLLISION's class, not a RESTATEMENT's: it is a "
+        "different object wearing the same string, not the withdrawn premise read correctly",
+        # `.get`, not `[...]`: a mutation that DELETES the entry must fail this test by name,
+        # and a KeyError inside a self-test is a crash rather than a named failure (`CH-0237`).
+        FAMILY_CLASS.get("FORWARD_BUDGET") == FAMILY_CLASS.get("SQUARE")
+        != FAMILY_CLASS.get("ROW_SPAN"),
     )
     ok("SURVIVING has a reason", "SURVIVING" in WHY and len(WHY["SURVIVING"]) > 40)
     ok("RESTATED has a reason", "RESTATED" in WHY and len(WHY["RESTATED"]) > 40)

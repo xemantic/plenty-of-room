@@ -50,6 +50,34 @@ EMITTER = os.path.join(HERE, "T-234-emit-classification.py")
 NEVER = 'r"(?!x)x"'
 ALWAYS = 'r""'
 
+#: `T-300`'s two word classes, quoted from `tools/T-234-census.py` so that a mutation of either
+#: replaces the rule WHOLESALE.  Every anchor is asserted to occur exactly once by `main`.
+PROVENANCE_WORDS = r"""_SCAFFOLD_PROVENANCE = re.compile(
+    r"folded from|folds? every|is actually folded|designs? \(i\)|designs i,|\bi: |Methods list"
+    r"|main.text rule|main text|scaffold pairing|15 . 4|cross-section|scaffold vectors"
+    r"|scaffold identity|which scaffold",
+    re.I,
+)"""
+BUDGET_WORDS = r"""_SCAFFOLD_BUDGET = re.compile(
+    r"\baffords?\b|\baffording\b|\baffordance\b|\bspare\b|\bshort\b|per turn"
+    r"|removes the question|built allowance|recommended raster|102 . 109",
+    re.I,
+)"""
+
+
+def _live_block(path, opening, closing="\n}"):
+    """The block of `path` that starts at `opening` and ends at the next `closing`, verbatim.
+
+    `T-300`.  A mutation anchor is a reference into somebody else's source, and a table that
+    TRANSCRIBES the block goes stale the moment a family is added -- which is `CLAUDE.md`'s own
+    *a mutation anchor is a reference into somebody else's source, and a refactor orphans it*.
+    Quoting the block from the file keeps the mutation's MEANING (replace this rule wholesale)
+    while letting the rule grow; `main`'s `source.count(old) == 1` still holds it honest.
+    """
+    source = open(path, encoding="utf-8").read()
+    start = source.index(opening)
+    return source[start: source.index(closing, start) + len(closing)]
+
 
 def _run_self_test(source, path, name):
     """Exec `source` as if it were `path`, run its `self_test`, return the NAMED failures."""
@@ -148,6 +176,7 @@ def mutations():
     "GRILLAGE": "C-0154/C-0167",
     "SQUARE": None,
     "ROW_SPAN": None,
+    "FORWARD_BUDGET": None,
 }'''
     one_global_pointer_set = '''FAMILY_DISCHARGE = {
     "FOOTPRINT": SUBJECT,
@@ -158,12 +187,9 @@ def mutations():
     "GRILLAGE": SUBJECT,
     "SQUARE": SUBJECT,
     "ROW_SPAN": SUBJECT,
+    "FORWARD_BUDGET": SUBJECT,
 }'''
-    family_class = '''FAMILY_CLASS = {
-    "GRILLAGE": "SURVIVING",
-    "ROW_SPAN": "RESTATED",
-    "SQUARE": "OUT_OF_SCOPE",
-}'''
+    family_class = _live_block(EMITTER, "FAMILY_CLASS = {")
     _SLUG_ANCHOR = (
         'SLUG_FILENAME = re.compile('
         'r"\\b(?:CH|C|P|T|S)-\\d{1,4}[a-z]?-[A-Za-z0-9-]+\\.[A-Za-z0-9]{1,5}\\b")'
@@ -248,8 +274,8 @@ def mutations():
            'OUT_OF_SCOPE_FILES = {"gpd/claims/C-0081-seam-weave-congruence.md",\n'
            '                      "gpd/claims/C-0127-format-string-repair.md"}')]),
         ("WIDEN", "the coercion sweeps the gated families in too", EMITTER,
-         [(family_class, family_class[:-1]
-           + '    "WIDTH": "RESTATED",\n    "PLACEMENT": "SURVIVING",\n}')]),
+         [(family_class, family_class.rstrip()[:-1]
+           + '    "WIDTH": "RESTATED",\n    "PLACEMENT": "SURVIVING",\n}\n')]),
         ("WIDEN", "a hand override is keyed on its FILE alone", EMITTER,
          [('        entry_or_record.get("family"),\n        entry_or_record.get("token"),',
            '        None,\n        None,')]),
@@ -265,8 +291,10 @@ def mutations():
          [('NON_SUBJECT_CLASSES = ("SURVIVING", "RESTATED", "RECORD", "CORRECT", "OUT_OF_SCOPE")',
            'NON_SUBJECT_CLASSES = ("RECORD", "CORRECT", "OUT_OF_SCOPE")')]),
         ("WIDEN", "every family belongs to this census's own discharge", CENSUS,
-         [('    "GRILLAGE": "C-0154/C-0167",\n    "SQUARE": None,\n    "ROW_SPAN": None,',
-           '    "GRILLAGE": SUBJECT,\n    "SQUARE": SUBJECT,\n    "ROW_SPAN": SUBJECT,')]),
+         [('    "GRILLAGE": "C-0154/C-0167",\n    "SQUARE": None,\n    "ROW_SPAN": None,\n'
+           '    "FORWARD_BUDGET": None,',
+           '    "GRILLAGE": SUBJECT,\n    "SQUARE": SUBJECT,\n    "ROW_SPAN": SUBJECT,\n'
+           '    "FORWARD_BUDGET": SUBJECT,')]),
         ("NARROW", "the two discharges merged into one pointer set", CENSUS,
          [('    "C-0140", "C-0141", "CH-0172",', '    "C-0140", "C-0141", "C-0154", "CH-0172",')]),
         # `T-281` replaced `FAMILY_DISCHARGE.get(family, SUBJECT)` by a registry that REFUSES an
@@ -348,6 +376,48 @@ def mutations():
                   "spaced or dotted behind it -- C-0150's judgement-becomes-a-pattern", CENSUS,
          [(_SLUG_ANCHOR,
            'SLUG_FILENAME = re.compile(r"\\b(?:CH|C|P|T|S)-\\d{1,4}[a-z]?[- .A-Za-z0-9]+")')]),
+        # ---------------------------------------------- T-300: a LENGTH is not a PROVENANCE
+        # The scaffold family was a bare token with NO refinement, so every occurrence read as the
+        # debt and a reader had to hand-override sixteen of them.  Its two directions are the two
+        # word classes -- and the row that matters most is the DEFAULT: reading a budget as a debt
+        # costs an override, reading a debt as a budget removes it from the gate silently.
+        ("NARROW", "the SCAFFOLD refinement removed (the pre-T-300 predicate)", CENSUS,
+         [('    ("SCAFFOLD", r"p8064", None, refine_scaffold),',
+           '    ("SCAFFOLD", r"p8064", None, None),')]),
+        ("NARROW", "budget words never match -- every scaffold length reads as a provenance",
+         CENSUS, [(BUDGET_WORDS, "_SCAFFOLD_BUDGET = re.compile(" + NEVER + ")")]),
+        ("NARROW", "provenance words never match -- the default is all that is left", CENSUS,
+         [(PROVENANCE_WORDS, "_SCAFFOLD_PROVENANCE = re.compile(" + NEVER + ")")]),
+        ("NARROW", "the Gen-1 tile's own coordinates dropped from the budget words -- the verbs "
+                   "alone, which leaves four occurrences on the default", CENSUS,
+         [(BUDGET_WORDS, BUDGET_WORDS.replace(
+             r"|built allowance|recommended raster|102 . 109", ""))]),
+        ("NARROW", "the scaffold refinement sees only the token itself", CENSUS,
+         [("def refine_scaffold(text: str, start: int, end: int, radius: int = REFINE_WINDOW)",
+           "def refine_scaffold(text: str, start: int, end: int, radius: int = 0)")]),
+        ("NARROW", "FORWARD_BUDGET declared a debt of this census after all", CENSUS,
+         [('    "FORWARD_BUDGET": None,', '    "FORWARD_BUDGET": SUBJECT,')]),
+        ("WIDEN", "budget words match anything -- every scaffold token is a forward budget",
+         CENSUS, [(BUDGET_WORDS, "_SCAFFOLD_BUDGET = re.compile(" + ALWAYS + ")")]),
+        ("WIDEN", "provenance words match anything -- every scaffold token is the debt", CENSUS,
+         [(PROVENANCE_WORDS, "_SCAFFOLD_PROVENANCE = re.compile(" + ALWAYS + ")")]),
+        ("WIDEN", "the scaffold refinement window swallows the whole document", CENSUS,
+         [("def refine_scaffold(text: str, start: int, end: int, radius: int = REFINE_WINDOW)",
+           "def refine_scaffold(text: str, start: int, end: int, radius: int = 10 ** 6)")]),
+        ("WIDEN", "the DEFAULT flipped: a token with NO governing word leaves the gate, which is "
+                  "the one direction a split of a gated family may not have", CENSUS,
+         [('    return "FORWARD_BUDGET" if budget < provenance else "SCAFFOLD"',
+           '    return "FORWARD_BUDGET" if budget <= provenance else "SCAFFOLD"')]),
+        ("NARROW", "the split taken too far: the WHOLE scaffold family declared not a debt, so "
+                   "the withdrawn premise leaves the gate with the budget", CENSUS,
+         [('    "SCAFFOLD": SUBJECT,', '    "SCAFFOLD": None,')]),
+        ("WIDEN", "the coercion sweeps the family the budget was split OFF from, too", EMITTER,
+         [(family_class, family_class.rstrip()[:-1] + '    "SCAFFOLD": "OUT_OF_SCOPE",\n}\n')]),
+        ("NARROW", "FORWARD_BUDGET loses its coercion -- the two-way MOVED default again", EMITTER,
+         [('    "FORWARD_BUDGET": "OUT_OF_SCOPE",\n', "")]),
+        ("WIDEN", "FORWARD_BUDGET coerced to RESTATED -- a token COLLISION read as a restatement "
+                  "of the withdrawn premise", EMITTER,
+         [('    "FORWARD_BUDGET": "OUT_OF_SCOPE",', '    "FORWARD_BUDGET": "RESTATED",')]),
         # `T-285` carried this WIDENING here -- *the blanking applied to the line context as
         # well as the match* -- as the boundary of its own stated scope.  `T-287` took that
         # widening, so it is now the BEHAVIOUR and a mutation of it is a no-op; the harness said
@@ -394,11 +464,12 @@ def main():
     # emitter had none before) and the census tests these two tasks named.  The census's other 60
     # assertions cover rules no mutation here touches, so listing them as "unreached" would be a
     # measurement of the wrong table -- `CLAUDE.md`'s *ask what a percentage is a percentage OF*.
-    scoped = [n for n in names[CENSUS] if n.startswith(("T-260 ", "T-262 "))] + names[EMITTER]
+    scoped = ([n for n in names[CENSUS] if n.startswith(("T-260 ", "T-262 ", "T-300 "))]
+              + names[EMITTER])
     unreached = [n for n in scoped if n not in reached]
     others = [n for group in names.values() for n in group if n not in scoped]
     print()
-    print("named tests added by T-260/T-262: {}; reached by at least one mutation: {}"
+    print("named tests added by T-260/T-262/T-300: {}; reached by at least one mutation: {}"
           .format(len(scoped), len(scoped) - len(unreached)))
     print("named tests this table does not target (other rules of the same tools): {}"
           .format(len(others)))

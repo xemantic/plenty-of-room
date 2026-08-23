@@ -1,0 +1,1124 @@
+{
+ "emission": {
+  "lattice": "honeycomb",
+  "regime": []
+ },
+ "task": "T-300",
+ "title": "a scaffold LENGTH is not a scaffold PROVENANCE: one census family carried two statements about two different objects",
+ "raisedBy": "C-0193 (T-296), after its own seven occurrences forced a hand override each",
+ "baselineRef": "b04a675bffbf4991e0f92750d16f49dd728776f2",
+ "baselineRefRequested": "HEAD",
+ "parameters": {
+  "corpus": "gpd/claims/*.md, TASKS.md, ANSWERS.md, DECISIONS-FOR-NDI.md",
+  "familySplit": "SCAFFOLD -- the premise C-0140/CH-0173 withdrew, WHICH SCAFFOLD a 2009 caDNAno block was folded from -- against FORWARD_BUDGET, a scaffold LENGTH budgeted for a Gen-1 tile nobody has folded, on C-0151's drawable raster. FORWARD_BUDGET is declared NO discharge at all: it is a token collision, not a restatement",
+  "rule": "nearest wins between two word classes, DEFAULTING to the debt. The asymmetry is the whole safety argument: reading a budget as a debt costs a hand override, reading a debt as a budget removes it from the gate SILENTLY",
+  "radius": 300,
+  "radiusIsNotANewConstant": "REFINE_WINDOW, the corpus's own refinement radius, already used by refine_width",
+  "handReadingTakenBeforeTheRule": true,
+  "handReadingOccurrences": 70
+ },
+ "windowSweep": {
+  "radii": [
+   60,
+   80,
+   100,
+   120,
+   150,
+   200,
+   250,
+   300,
+   400,
+   500,
+   800,
+   1200
+  ],
+  "monotone": "a THEOREM, not a measurement: a match found at radius R sits at distance at most R, so enlarging R can only add candidates further away and can only change an occurrence for which NEITHER class matched. The sweep can move a token OFF the default and never back, which is what makes `the plateau` well defined and the SMALLEST sufficient radius the safest",
+  "rows": [
+   {
+    "radius": 60,
+    "flipsFromThePreviousRadius": [],
+    "forwardBudget": 15,
+    "provenance": 55,
+    "falsePositives": 0,
+    "falsePositiveOccurrences": [],
+    "falseNegatives": 5,
+    "falseNegativeOccurrences": [
+     "ANSWERS.md#16",
+     "TASKS.md#64",
+     "gpd/claims/C-0193-the-built-turn-is-a-tether.md#4",
+     "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6",
+     "gpd/claims/C-0193-the-built-turn-is-a-tether.md#7"
+    ]
+   },
+   {
+    "radius": 80,
+    "flipsFromThePreviousRadius": [
+     "ANSWERS.md#16: D -> B",
+     "gpd/claims/C-0193-the-built-turn-is-a-tether.md#4: D -> B"
+    ],
+    "forwardBudget": 17,
+    "provenance": 53,
+    "falsePositives": 0,
+    "falsePositiveOccurrences": [],
+    "falseNegatives": 3,
+    "falseNegativeOccurrences": [
+     "TASKS.md#64",
+     "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6",
+     "gpd/claims/C-0193-the-built-turn-is-a-tether.md#7"
+    ]
+   },
+   {
+    "radius": 100,
+    "flipsFromThePreviousRadius": [
+     "TASKS.md#64: D -> B",
+     "gpd/claims/C-0193-the-built-turn-is-a-tether.md#7: D -> B"
+    ],
+    "forwardBudget": 19,
+    "provenance": 51,
+    "falsePositives": 0,
+    "falsePositiveOccurrences": [],
+    "falseNegatives": 1,
+    "falseNegativeOccurrences": [
+     "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6"
+    ]
+   },
+   {
+    "radius": 120,
+    "flipsFromThePreviousRadius": [],
+    "forwardBudget": 19,
+    "provenance": 51,
+    "falsePositives": 0,
+    "falsePositiveOccurrences": [],
+    "falseNegatives": 1,
+    "falseNegativeOccurrences": [
+     "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6"
+    ]
+   },
+   {
+    "radius": 150,
+    "flipsFromThePreviousRadius": [],
+    "forwardBudget": 19,
+    "provenance": 51,
+    "falsePositives": 0,
+    "falsePositiveOccurrences": [],
+    "falseNegatives": 1,
+    "falseNegativeOccurrences": [
+     "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6"
+    ]
+   },
+   {
+    "radius": 200,
+    "flipsFromThePreviousRadius": [],
+    "forwardBudget": 19,
+    "provenance": 51,
+    "falsePositives": 0,
+    "falsePositiveOccurrences": [],
+    "falseNegatives": 1,
+    "falseNegativeOccurrences": [
+     "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6"
+    ]
+   },
+   {
+    "radius": 250,
+    "flipsFromThePreviousRadius": [],
+    "forwardBudget": 19,
+    "provenance": 51,
+    "falsePositives": 0,
+    "falsePositiveOccurrences": [],
+    "falseNegatives": 1,
+    "falseNegativeOccurrences": [
+     "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6"
+    ]
+   },
+   {
+    "radius": 300,
+    "flipsFromThePreviousRadius": [
+     "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6: D -> B"
+    ],
+    "forwardBudget": 20,
+    "provenance": 50,
+    "falsePositives": 0,
+    "falsePositiveOccurrences": [],
+    "falseNegatives": 0,
+    "falseNegativeOccurrences": []
+   },
+   {
+    "radius": 400,
+    "flipsFromThePreviousRadius": [],
+    "forwardBudget": 20,
+    "provenance": 50,
+    "falsePositives": 0,
+    "falsePositiveOccurrences": [],
+    "falseNegatives": 0,
+    "falseNegativeOccurrences": []
+   },
+   {
+    "radius": 500,
+    "flipsFromThePreviousRadius": [
+     "TASKS.md#66: D -> B"
+    ],
+    "forwardBudget": 21,
+    "provenance": 49,
+    "falsePositives": 0,
+    "falsePositiveOccurrences": [],
+    "falseNegatives": 0,
+    "falseNegativeOccurrences": []
+   },
+   {
+    "radius": 800,
+    "flipsFromThePreviousRadius": [],
+    "forwardBudget": 21,
+    "provenance": 49,
+    "falsePositives": 0,
+    "falsePositiveOccurrences": [],
+    "falseNegatives": 0,
+    "falseNegativeOccurrences": []
+   },
+   {
+    "radius": 1200,
+    "flipsFromThePreviousRadius": [],
+    "forwardBudget": 21,
+    "provenance": 49,
+    "falsePositives": 0,
+    "falsePositiveOccurrences": [],
+    "falseNegatives": 0,
+    "falseNegativeOccurrences": []
+   }
+  ],
+  "occurrencesAtTheBaselineRef": 70
+ },
+ "ablations": {
+  "why": "C-0176: measure the obvious widenings BEFORE writing them. A widening's cost is its false positives; a narrowing's is its false negatives",
+  "rows": [
+   {
+    "budgetWords": "budget verbs alone (the starter set the queue row named)",
+    "at120": {
+     "forwardBudget": 13,
+     "provenance": 57,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 7,
+     "falseNegativeOccurrences": [
+      "ANSWERS.md#16",
+      "TASKS.md#64",
+      "gpd/claims/C-0140-honeycomb-raster-turn-sense.md#3",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#4",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#5",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#7"
+     ]
+    },
+    "at300": {
+     "forwardBudget": 16,
+     "provenance": 54,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 4,
+     "falseNegativeOccurrences": [
+      "TASKS.md#64",
+      "gpd/claims/C-0140-honeycomb-raster-turn-sense.md#3",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#5",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#7"
+     ]
+    },
+    "at1200": {
+     "forwardBudget": 19,
+     "provenance": 51,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 2,
+     "falseNegativeOccurrences": [
+      "TASKS.md#64",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#5"
+     ]
+    }
+   },
+   {
+    "budgetWords": "+ a bare `short`",
+    "at120": {
+     "forwardBudget": 14,
+     "provenance": 56,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 6,
+     "falseNegativeOccurrences": [
+      "ANSWERS.md#16",
+      "TASKS.md#64",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#4",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#5",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#7"
+     ]
+    },
+    "at300": {
+     "forwardBudget": 17,
+     "provenance": 53,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 3,
+     "falseNegativeOccurrences": [
+      "TASKS.md#64",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#5",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#7"
+     ]
+    },
+    "at1200": {
+     "forwardBudget": 19,
+     "provenance": 51,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 2,
+     "falseNegativeOccurrences": [
+      "TASKS.md#64",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#5"
+     ]
+    }
+   },
+   {
+    "budgetWords": "+ `built allowance`",
+    "at120": {
+     "forwardBudget": 18,
+     "provenance": 52,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 2,
+     "falseNegativeOccurrences": [
+      "gpd/claims/C-0140-honeycomb-raster-turn-sense.md#3",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6"
+     ]
+    },
+    "at300": {
+     "forwardBudget": 19,
+     "provenance": 51,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 1,
+     "falseNegativeOccurrences": [
+      "gpd/claims/C-0140-honeycomb-raster-turn-sense.md#3"
+     ]
+    },
+    "at1200": {
+     "forwardBudget": 21,
+     "provenance": 49,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 0,
+     "falseNegativeOccurrences": []
+    }
+   },
+   {
+    "budgetWords": "+ `recommended raster`",
+    "at120": {
+     "forwardBudget": 14,
+     "provenance": 56,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 6,
+     "falseNegativeOccurrences": [
+      "ANSWERS.md#16",
+      "TASKS.md#64",
+      "gpd/claims/C-0140-honeycomb-raster-turn-sense.md#3",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#4",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#7"
+     ]
+    },
+    "at300": {
+     "forwardBudget": 17,
+     "provenance": 53,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 3,
+     "falseNegativeOccurrences": [
+      "TASKS.md#64",
+      "gpd/claims/C-0140-honeycomb-raster-turn-sense.md#3",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#7"
+     ]
+    },
+    "at1200": {
+     "forwardBudget": 20,
+     "provenance": 50,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 1,
+     "falseNegativeOccurrences": [
+      "TASKS.md#64"
+     ]
+    }
+   },
+   {
+    "budgetWords": "+ the Gen-1 tile's own coordinates",
+    "at120": {
+     "forwardBudget": 18,
+     "provenance": 52,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 2,
+     "falseNegativeOccurrences": [
+      "gpd/claims/C-0140-honeycomb-raster-turn-sense.md#3",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6"
+     ]
+    },
+    "at300": {
+     "forwardBudget": 19,
+     "provenance": 51,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 1,
+     "falseNegativeOccurrences": [
+      "gpd/claims/C-0140-honeycomb-raster-turn-sense.md#3"
+     ]
+    },
+    "at1200": {
+     "forwardBudget": 21,
+     "provenance": 49,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 0,
+     "falseNegativeOccurrences": []
+    }
+   },
+   {
+    "budgetWords": "+ the coordinates AND a bare `short` (adopted)",
+    "at120": {
+     "forwardBudget": 19,
+     "provenance": 51,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 1,
+     "falseNegativeOccurrences": [
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6"
+     ]
+    },
+    "at300": {
+     "forwardBudget": 20,
+     "provenance": 50,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 0,
+     "falseNegativeOccurrences": []
+    },
+    "at1200": {
+     "forwardBudget": 21,
+     "provenance": 49,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 0,
+     "falseNegativeOccurrences": []
+    }
+   },
+   {
+    "budgetWords": "+ the word `budget` (REJECTED: the 2009 block has a scaffold budget too)",
+    "at120": {
+     "forwardBudget": 13,
+     "provenance": 57,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 7,
+     "falseNegativeOccurrences": [
+      "ANSWERS.md#16",
+      "TASKS.md#64",
+      "gpd/claims/C-0140-honeycomb-raster-turn-sense.md#3",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#4",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#5",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#7"
+     ]
+    },
+    "at300": {
+     "forwardBudget": 16,
+     "provenance": 54,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 4,
+     "falseNegativeOccurrences": [
+      "TASKS.md#64",
+      "gpd/claims/C-0140-honeycomb-raster-turn-sense.md#3",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#5",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#7"
+     ]
+    },
+    "at1200": {
+     "forwardBudget": 19,
+     "provenance": 51,
+     "falsePositives": 0,
+     "falsePositiveOccurrences": [],
+     "falseNegatives": 2,
+     "falseNegativeOccurrences": [
+      "TASKS.md#64",
+      "gpd/claims/C-0193-the-built-turn-is-a-tether.md#5"
+     ]
+    }
+   }
+  ]
+ },
+ "perOccurrenceReading": [
+  {
+   "occurrence": "ANSWERS.md#13",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 13,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "ANSWERS.md#14",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 24,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "ANSWERS.md#15",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 24,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "ANSWERS.md#16",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 54,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "ANSWERS.md#38",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 12
+  },
+  {
+   "occurrence": "ANSWERS.md#47",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 6,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "ANSWERS.md#58",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 18
+  },
+  {
+   "occurrence": "DECISIONS-FOR-NDI.md#0",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 16
+  },
+  {
+   "occurrence": "DECISIONS-FOR-NDI.md#1",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 16
+  },
+  {
+   "occurrence": "DECISIONS-FOR-NDI.md#2",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 18
+  },
+  {
+   "occurrence": "DECISIONS-FOR-NDI.md#3",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 50
+  },
+  {
+   "occurrence": "DECISIONS-FOR-NDI.md#16",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 3
+  },
+  {
+   "occurrence": "DECISIONS-FOR-NDI.md#17",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 14
+  },
+  {
+   "occurrence": "DECISIONS-FOR-NDI.md#18",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 14
+  },
+  {
+   "occurrence": "DECISIONS-FOR-NDI.md#19",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 6,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "DECISIONS-FOR-NDI.md#29",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 13,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "TASKS.md#5",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 11
+  },
+  {
+   "occurrence": "TASKS.md#6",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 18
+  },
+  {
+   "occurrence": "TASKS.md#21",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 37
+  },
+  {
+   "occurrence": "TASKS.md#22",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 6
+  },
+  {
+   "occurrence": "TASKS.md#25",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 12
+  },
+  {
+   "occurrence": "TASKS.md#27",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 24
+  },
+  {
+   "occurrence": "TASKS.md#62",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 13,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "TASKS.md#63",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 20,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "TASKS.md#64",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 79,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "TASKS.md#66",
+   "handReading": "borderline",
+   "rule": "SCAFFOLD",
+   "agrees": false,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "TASKS.md#67",
+   "handReading": "borderline",
+   "rule": "SCAFFOLD",
+   "agrees": false,
+   "nearestBudgetWord": 188,
+   "nearestProvenanceWord": 109
+  },
+  {
+   "occurrence": "TASKS.md#84",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 18
+  },
+  {
+   "occurrence": "gpd/claims/C-0119-honeycomb-raster-width.md#0",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 12
+  },
+  {
+   "occurrence": "gpd/claims/C-0119-honeycomb-raster-width.md#1",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 8
+  },
+  {
+   "occurrence": "gpd/claims/C-0119-honeycomb-raster-width.md#5",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 12
+  },
+  {
+   "occurrence": "gpd/claims/C-0119-honeycomb-raster-width.md#6",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 43
+  },
+  {
+   "occurrence": "gpd/claims/C-0119-honeycomb-raster-width.md#7",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 8
+  },
+  {
+   "occurrence": "gpd/claims/C-0119-honeycomb-raster-width.md#8",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 46
+  },
+  {
+   "occurrence": "gpd/claims/C-0119-honeycomb-raster-width.md#9",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 16
+  },
+  {
+   "occurrence": "gpd/claims/C-0125-scaffold-remainder.md#0",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 8
+  },
+  {
+   "occurrence": "gpd/claims/C-0125-scaffold-remainder.md#1",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 168
+  },
+  {
+   "occurrence": "gpd/claims/C-0125-scaffold-remainder.md#2",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 3
+  },
+  {
+   "occurrence": "gpd/claims/C-0125-scaffold-remainder.md#3",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 26
+  },
+  {
+   "occurrence": "gpd/claims/C-0125-scaffold-remainder.md#4",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 47
+  },
+  {
+   "occurrence": "gpd/claims/C-0125-scaffold-remainder.md#5",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 31
+  },
+  {
+   "occurrence": "gpd/claims/C-0125-scaffold-remainder.md#6",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 6
+  },
+  {
+   "occurrence": "gpd/claims/C-0125-scaffold-remainder.md#7",
+   "handReading": "borderline",
+   "rule": "SCAFFOLD",
+   "agrees": false,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "gpd/claims/C-0125-scaffold-remainder.md#8",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "gpd/claims/C-0125-scaffold-remainder.md#9",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "gpd/claims/C-0140-honeycomb-raster-turn-sense.md#3",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 22,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "gpd/claims/C-0144-honeycomb-correction-supersession.md#10",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 3
+  },
+  {
+   "occurrence": "gpd/claims/C-0144-honeycomb-correction-supersession.md#11",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 9
+  },
+  {
+   "occurrence": "gpd/claims/C-0144-honeycomb-correction-supersession.md#12",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 29
+  },
+  {
+   "occurrence": "gpd/claims/C-0144-honeycomb-correction-supersession.md#13",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 104
+  },
+  {
+   "occurrence": "gpd/claims/C-0144-honeycomb-correction-supersession.md#14",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 112
+  },
+  {
+   "occurrence": "gpd/claims/C-0144-honeycomb-correction-supersession.md#15",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 187
+  },
+  {
+   "occurrence": "gpd/claims/C-0144-honeycomb-correction-supersession.md#16",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 195
+  },
+  {
+   "occurrence": "gpd/claims/C-0145-eighth-answers-synthesis.md#0",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "gpd/claims/C-0145-eighth-answers-synthesis.md#9",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 18
+  },
+  {
+   "occurrence": "gpd/claims/C-0145-eighth-answers-synthesis.md#12",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "gpd/claims/C-0147-honeycomb-turn-slack-and-ragged-face.md#0",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 17,
+   "nearestProvenanceWord": 216
+  },
+  {
+   "occurrence": "gpd/claims/C-0147-honeycomb-turn-slack-and-ragged-face.md#1",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": 202,
+   "nearestProvenanceWord": 14
+  },
+  {
+   "occurrence": "gpd/claims/C-0147-honeycomb-turn-slack-and-ragged-face.md#2",
+   "handReading": "borderline",
+   "rule": "SCAFFOLD",
+   "agrees": false,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "gpd/claims/C-0149-ninth-answers-synthesis.md#0",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 38,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "gpd/claims/C-0193-the-built-turn-is-a-tether.md#1",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 13,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "gpd/claims/C-0193-the-built-turn-is-a-tether.md#2",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 24,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "gpd/claims/C-0193-the-built-turn-is-a-tether.md#4",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 49,
+   "nearestProvenanceWord": 230
+  },
+  {
+   "occurrence": "gpd/claims/C-0193-the-built-turn-is-a-tether.md#5",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 24,
+   "nearestProvenanceWord": 98
+  },
+  {
+   "occurrence": "gpd/claims/C-0193-the-built-turn-is-a-tether.md#6",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 256,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "gpd/claims/C-0193-the-built-turn-is-a-tether.md#7",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 81,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "gpd/claims/C-0193-the-built-turn-is-a-tether.md#8",
+   "handReading": "a length in a forward budget",
+   "rule": "FORWARD_BUDGET",
+   "agrees": true,
+   "nearestBudgetWord": 37,
+   "nearestProvenanceWord": null
+  },
+  {
+   "occurrence": "gpd/claims/C-0199-the-gallery-opened.md#0",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 3
+  },
+  {
+   "occurrence": "gpd/claims/C-0199-the-gallery-opened.md#1",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 26
+  },
+  {
+   "occurrence": "gpd/claims/C-0199-the-gallery-opened.md#2",
+   "handReading": "the withdrawn premise",
+   "rule": "SCAFFOLD",
+   "agrees": true,
+   "nearestBudgetWord": null,
+   "nearestProvenanceWord": 47
+  }
+ ],
+ "borderline": {
+  "TASKS.md#66": "the queue row that ASKS for this split, quoting the family's own pattern -- a statement about the tool, not a design premise. Removed from the corpus by this task, which rewrote the row without spelling the token (CH-0182)",
+  "TASKS.md#67": "the same row's explanation of the two readings. Removed by the same rewrite",
+  "gpd/claims/C-0125-scaffold-remainder.md#7": "a table cell pairing a Gen-1 SINGLE-LAYER tile with a 2009 scaffold: a forward budget on a premise the same table also uses as provenance. No governing word of either class is in range, so the safe default carries it",
+  "gpd/claims/C-0147-honeycomb-turn-slack-and-ragged-face.md#2": "a reproduction row citing the upstream claim's row-width CEILINGS, which are a forward budget quoted as a check. Inside a correcting claim, so the class is CORRECT either way"
+ },
+ "debtLine": {
+  "before": {
+   "managed": {
+    "unpointed": 24,
+    "allFamilyOccurrences": 93,
+    "ratioOverAllFamilies": 0.258064516,
+    "sameFamilyOccurrences": 68,
+    "ratioOverTheSameFamilies": 0.352941176
+   },
+   "unmanaged": {
+    "unpointed": 30,
+    "allFamilyOccurrences": 93,
+    "ratioOverAllFamilies": 0.322580645,
+    "sameFamilyOccurrences": 68,
+    "ratioOverTheSameFamilies": 0.441176471
+   }
+  },
+  "after": {
+   "managed": {
+    "unpointed": 23,
+    "allFamilyOccurrences": 93,
+    "ratioOverAllFamilies": 0.247311828,
+    "sameFamilyOccurrences": 61,
+    "ratioOverTheSameFamilies": 0.37704918
+   },
+   "unmanaged": {
+    "unpointed": 25,
+    "allFamilyOccurrences": 93,
+    "ratioOverAllFamilies": 0.268817204,
+    "sameFamilyOccurrences": 61,
+    "ratioOverTheSameFamilies": 0.409836066
+   }
+  },
+  "whatMoved": "the all-family ratio FALLS on the one deliverable occurrence nobody had overridden, and CH-0230's own narrow denominator RISES, because a correct restatement leaves the numerator and the narrow denominator together -- C-0179's measurement, met on a third family. What the split really buys is the UNMANAGED reading: the gap a reader's typing was carrying falls from 6 to 2",
+  "unmanagedMeans": "the gate's verdict with NO hand override at all -- every entry taken from the emitter's stated rules"
+ },
+ "handOverrides": {
+  "onTheFamilyBefore": 16,
+  "droppedLinesPrintedByTheRegeneration": 14,
+  "whyFourteenNotSixteen": "three overrides stored with `snippet: null` key as (file, family, token, \"\") and collapse onto ONE key. `hand_overrides` reports a collision only where the colliding entries DISAGREE about the class, and these three agreed -- so a missing snippet does not merely break an override, it makes three indistinguishable AND silences the check that would say so",
+  "allTypedInOneIteration": "MEASURED, not recalled: the classification committed at 1c598f8, the last commit of iteration 45, carries ZERO hand overrides on this family -- of six in the whole table -- so all sixteen were typed in iteration 46, by three hands. The queue row raising this task says FIFTEEN; the sixteenth is the row's own, typed by its author to stop the row asking for the split from being counted as a debt",
+  "onTheFamilyAtTheEndOfIteration45": 0,
+  "inTheWholeTableAtTheEndOfIteration45": 6,
+  "onTheFamilyAfter": 3,
+  "removed": 13,
+  "whatRemains": "three RECORD calls on one claim's verbatim quotation of the paper's own scaffold-pairing sentence. That is a CLASS call, not a family call, and it survives because the emitter's quotation rule reads the line's OPENING and the sentence is quoted mid-line",
+  "alreadyBroken": "all three of those were stored with `snippet: null`, so `override_key` read them as (file, family, token, \"\") and ANY regeneration would have dropped them for the wrong stated reason -- CLAUDE.md's own recorded trap, live in the corpus. They are restored here WITH their snippets"
+ },
+ "families": {
+  "withThisClaim": {
+   "FOOTPRINT": 135,
+   "GRILLAGE": 23,
+   "AZIMUTH": 39,
+   "ROW_SPAN": 67,
+   "WIDTH": 47,
+   "FORWARD_BUDGET": 20,
+   "PLACEMENT": 14,
+   "SCAFFOLD": 48,
+   "SQUARE": 11
+  },
+  "withoutThisClaim": {
+   "FOOTPRINT": 135,
+   "GRILLAGE": 23,
+   "AZIMUTH": 39,
+   "ROW_SPAN": 67,
+   "WIDTH": 47,
+   "FORWARD_BUDGET": 20,
+   "PLACEMENT": 14,
+   "SCAFFOLD": 48,
+   "SQUARE": 11
+  },
+  "note": "CH-0182, ninth consecutive iteration: a claim explaining a family has to quote that family's own worked examples, so writing it moves the number it reports. The queue row was rewritten WITHOUT spelling the token, which is why it is two occurrences shorter than the one it replaces"
+ },
+ "ch0182": {
+  "debtWithThisClaim": {
+   "unpointed": 23,
+   "allFamilyOccurrences": 93,
+   "ratioOverAllFamilies": 0.247311828,
+   "sameFamilyOccurrences": 61,
+   "ratioOverTheSameFamilies": 0.37704918
+  },
+  "debtWithoutThisClaim": {
+   "unpointed": 23,
+   "allFamilyOccurrences": 93,
+   "ratioOverAllFamilies": 0.247311828,
+   "sameFamilyOccurrences": 61,
+   "ratioOverTheSameFamilies": 0.37704918
+  },
+  "theyCoincide": "the debt line counts only the two DELIVERABLES, which this task does not edit, so a claim's own worked examples cannot enter it. The two readings differ only in the family census above"
+ },
+ "gate": {
+  "classifyProblems": 0,
+  "problems": []
+ },
+ "falsifiers": {
+  "F1 a false positive at any radius": "DID NOT FIRE",
+  "F2 no plateau": "DID NOT FIRE",
+  "F3 the hand-override count does not fall": "DID NOT FIRE",
+  "F4 the gate stops coming clean": "DID NOT FIRE",
+  "F5 a mutation failing nothing": "DID NOT FIRE"
+ }
+}
