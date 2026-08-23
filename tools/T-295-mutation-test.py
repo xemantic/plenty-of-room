@@ -43,6 +43,27 @@ TOOLS = os.path.join(ROOT, "tools")
 CENSUS = "T-295-mutation-input-census.py"
 
 MUTATIONS = [
+    # --- T-301: the THIRD state, in both directions ---
+    (
+        "the by-hand state removed — a harness that takes an argument reads as a REFUSAL again, "
+        "which is a defect a gate cannot come clean on",
+        CENSUS,
+        'BY_HAND_USAGE = re.compile(r"^usage:", re.MULTILINE)',
+        'BY_HAND_USAGE = re.compile(r"(?!x)x")',
+    ),
+    (
+        "the by-hand state fires on ANY output — every harness reads as by-hand and the census "
+        "censuses nothing at all, which is the widening direction",
+        CENSUS,
+        'BY_HAND_USAGE = re.compile(r"^usage:", re.MULTILINE)',
+        'BY_HAND_USAGE = re.compile(r"")',
+    ),
+    (
+        "the usage line need not OPEN a line, so prose mentioning usage excuses a harness",
+        CENSUS,
+        'BY_HAND_USAGE = re.compile(r"^usage:", re.MULTILINE)',
+        'BY_HAND_USAGE = re.compile(r"usage:")',
+    ),
     # --- the classification: the four verdicts, one at a time ---
     (
         "CORPUS is never returned — killed in the control is enough, which is the pre-T-295 "

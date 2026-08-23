@@ -162,6 +162,25 @@ def declared_count(output):
     return total - (int(retired.group(1)) if retired else 0)
 
 
+#: A harness that REFUSES to run without an argument prints its usage and exits non-zero.  That is
+#: a THIRD state, and it has to be one: this census's two states can only report such a harness as
+#: a defect, which is `C-0182`'s finding — *a report needs a third state, and confusing `VACUOUS`
+#: with `UNDECLARED` hands somebody a verdict they were never given*.
+#:
+#: DERIVED and not declared, deliberately.  A declared list of by-hand harnesses is a dated object
+#: (`C-0176`); the harness's **own** usage line cannot go stale, and it is already in the control
+#: arm's output because the census ran it.  `tools/T-297-mutation-test.py` is the first such
+#: harness in this corpus: it mutates **Kotlin** sources, so it takes a snapshot directory rather
+#: than editing a shared checkout, and `T-301` carries the same question asked of `P-31`'s
+#: `wired_in`.
+BY_HAND_USAGE = re.compile(r"^usage:", re.MULTILINE)
+
+
+def takes_an_argument(control_output):
+    """Did the harness decline to run at all, by printing its own usage line?"""
+    return bool(BY_HAND_USAGE.search(control_output))
+
+
 def reconcile(control_rows, treatment_rows, stated):
     """([mutation record], [refusal]) for one harness's two arms.
 
@@ -315,8 +334,20 @@ def census(tree=ROOT, only=None, progress=None):
             control_output = run_harness(control, basename)
             treatment_output = run_harness(treatment, basename)
             stated = declared_count(control_output)
+            control_rows = parse_rows(control_output)
+            if not control_rows and takes_an_argument(control_output):
+                # The third state.  Not a refusal and not a reading: the harness declined to run.
+                rows.append({
+                    "harness": basename,
+                    "statedMutations": stated,
+                    "mutations": [],
+                    "refusals": [],
+                    "byHand": ("the harness takes an argument and printed its own usage line, so it "
+                               "is run by hand and this census has nothing to reconcile"),
+                })
+                continue
             mutations, refusals = reconcile(
-                parse_rows(control_output), parse_rows(treatment_output), stated)
+                control_rows, parse_rows(treatment_output), stated)
             rows.append({
                 "harness": basename,
                 "statedMutations": stated,
@@ -735,6 +766,37 @@ def _selftest(fast=False, repository=ROOT):
         "T-295 a harness this census cannot READ is a REFUSAL, never a clean row",
         [d[0] for d in defects(reading("FIXTURE", refusals=("printed no row",)))] == ["REFUSED"],
     )
+
+    # --- T-301: the THIRD state, for a harness that takes an argument -------------------------
+    #
+    # `tools/T-297-mutation-test.py` mutates KOTLIN sources, so it takes a snapshot directory
+    # rather than editing a shared checkout, and it prints its usage when run bare.  With two
+    # states this census can only call that a REFUSAL, which is a defect, and a gate that cannot
+    # come clean is not a gate (`C-0083`).  DERIVED from the harness's own usage line rather than
+    # declared, because a declared list is a dated object (`C-0176`).
+    check(
+        "T-301 a control run that printed a usage line means the harness takes an argument",
+        takes_an_argument("usage: tools/T-297-mutation-test.py <snapshot-dir>\n"),
+    )
+    check(
+        "T-301 and a control run that printed rows but no usage line does NOT",
+        not takes_an_argument("NARROW  something  fails  2  a test; another\n"),
+    )
+    check(
+        "T-301 the usage line must OPEN a line -- prose mentioning usage is not a refusal to run",
+        not takes_an_argument("this harness documents its usage: run it by hand\n"),
+    )
+    check(
+        "T-301 an EMPTY control with no usage line is still a REFUSAL, which is the direction that "
+        "must not be widened away",
+        [d[0] for d in defects(reading("FIXTURE", refusals=("printed no row",)))] == ["REFUSED"],
+    )
+    check(
+        "T-301 a by-hand harness is not a defect",
+        defects({"harnesses": [{"harness": "H.py", "statedMutations": 0, "refusals": [],
+                                "mutations": [], "byHand": "takes an argument"}],
+                 "corpusFilesEmptied": 0}) == [],
+    )
     saved = dict(CORPUS_DEPENDENT_BY_DESIGN)
     try:
         CORPUS_DEPENDENT_BY_DESIGN.clear()
@@ -895,6 +957,11 @@ def main(argv):
         print("{:<34} {:>9} {:>8} {:>7} {:>8}".format(
             row["harness"], len(row["mutations"]), counts["FIXTURE"], counts["CORPUS"],
             counts["SURVIVOR"] + counts["REVIVED"]))
+    by_hand = [row["harness"] for row in reading["harnesses"] if row.get("byHand")]
+    if by_hand:
+        print("# BY HAND, not censused and NOT a defect: {} — each printed its own usage line, so "
+              "it takes an argument and this census has nothing to reconcile (T-301)".format(
+                  ", ".join(by_hand)))
 
     undeclared = _p31().undeclared_harnesses(args.tree)
     if undeclared:
@@ -909,7 +976,7 @@ def main(argv):
     print("# {} mutation(s) over {} harness(es); {} fixture-backed, {} corpus-dependent, "
           "{} survivor(s), {} revived".format(
               sum(len(row["mutations"]) for row in reading["harnesses"]),
-              len(reading["harnesses"]), total["FIXTURE"], total["CORPUS"],
+              len(reading["harnesses"]) - len(by_hand), total["FIXTURE"], total["CORPUS"],
               total["SURVIVOR"], total["REVIVED"]))
     print("# {} committed artifact(s) emptied in the treatment arm; {} defect(s)".format(
         reading["corpusFilesEmptied"], len(found)))

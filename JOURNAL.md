@@ -11607,6 +11607,15 @@ reason made `P-31` read the harness as **wired**, because `wired_in` is a substr
 went `13 of 14` → `14 of 14` → `13 of 14` on the wording of one comment, with nothing wired or
 unwired. Queued as `T-301`.
 
+**And the two agents' work interacted in a way neither could see.** Agent B added the corpus's first
+**Kotlin-subject** mutation harness — which takes a snapshot directory, because it mutates Kotlin sources —
+and agent C wired a census that runs **every** harness bare in two copies of the tree. Each was correct alone
+and each ran its own gates green; composed, the census could call the usage line nothing but a **REFUSAL**, and
+a build-failing gate stood at **1 defect** at the final `HEAD`. The repair is `C-0182`'s: a **third state**,
+`BY HAND`, **derived** from the harness's own `usage:` line rather than declared — 5 named tests in both
+directions, 3 mutation rows, and the harness at **36 mutations, 0 survivors**. **No agent's own green run could
+have shown this**, which is the argument for the coordinator's final pre-push sweep at the assembled `HEAD`.
+
 **A hand override written without its `snippet` is dropped for the wrong stated reason.**
 `override_key` is `(file, family, token, snippet[:N])`, so an override typed with everything a reader
 would think it needs — class, family, line, token, `why` — keys on an **empty** snippet and the
