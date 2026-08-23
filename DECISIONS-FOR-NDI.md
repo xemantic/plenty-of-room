@@ -957,6 +957,18 @@ the **`70`** the file draws and the order omits total **exactly `1 680 = 60 × 2
 helix **end regions**, and carry caDNAno's **default colour** while not one ordered strand does.
 **So the conditionality above STANDS**: every count in this section is correct about a design that has not
 been demonstrated, and the **tether** re-grade (`T-299`) is the live one.
+**AND IT IS RUN, iteration 47** ([`C-0201`](gpd/claims/C-0201-the-tether-is-a-load-not-a-spring.md)):
+route B's turn is a **load, not a spring** — its own stiffness moves the free tile `0.95 %` **toward**
+flatness, and what moves the tile is the chain's **tension**, a self-equilibrated internal load whose nine
+in-plane turns contribute **exactly zero** while the fifty through-thickness ones carry it. Free tile
+**`0.11296458`**, past `T-5b`; **all four tethered states `0 of 64`** coupled cells flat against the tied
+lattice's `2 of 64`, a dishing **source** at `64 of 64` at the built allowance, and no verdict moving over
+four decades of link stiffness. **So the coupled half fails on BOTH routings, and the two differ in the sign
+of what the turn does.**
+**And the larger finding is a WIDTH**: at the built allowance a **uniform** honeycomb row is
+**`92 bp = 31.28 nm`** on M13mp18 and **`106 bp = 36.04 nm`** on p8064 against §3's `40 nm`, all three
+**flat uncoupled**. **The tile is not too floppy; it is too small** — which is a specification question for
+NDI, not a modelling one.
 Re-graded with the ties present, on the same 64 cells, the same extent, the same stations, the same mandate, the
 same normalising stroke and the **same 4 000-realisation dropout stream** — the untied half reproducing **all 128**
 of the published values at **`4.2e−9`** — **2 of 64** cells clear `T-5b`'s 0.10 at the 90th percentile.

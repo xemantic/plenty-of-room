@@ -494,6 +494,31 @@ the richest set richest and does not make it flatter.
    **conditioned by `C-0087`, `CH-0084`, `CH-0102`**;
    closed on topology and phase by `C-0093`, `C-0098`, `C-0102`, `C-0103`;
    challenged on the slope by `CH-0119` and on the oracle floor by `CH-0104`.)
+   **AND THE ARM THE BUILT OBJECT OCCUPIES IS NOW GRADED, iteration 47 — ROUTE B'S TURN IS A LOAD, NOT A
+   SPRING, AND A DISHING *SOURCE* WHERE ROUTE A'S TIE IS A *SINK***
+   ([`C-0201`](gpd/claims/C-0201-the-tether-is-a-load-not-a-spring.md), `T-299`;
+   [`CH-0254`](gpd/challenges/CH-0254-the-tether-was-priced-as-a-stiffness.md)).
+   The tether's own **stiffness** is `0.22377084–0.919840405 pN/nm` over the whole Kuhn/contour/azimuth
+   bracket — at most **`0.109313066`** of `k_θ` on the rim node's `d/2` arm — and with its preload removed
+   it moves the free tile `0.0501417315 → 0.0496660245`, **`0.95 %` and TOWARD flatness**.
+   **What moves the tile is the chain's own TENSION**, `0.160569993–3.03288672 pN`: a self-equilibrated
+   internal load in `C-0104`'s exact sense, so no entry of the stiffness matrix moves and the field is
+   **linear** in it. Its projection is `f·unitZ` on the link gradient, so the **nine in-plane turns
+   contribute exactly zero** and the **fifty through-thickness ones** carry it. With the preload the free
+   tile reads **`0.11296458`**, past `T-5b`'s `0.10`.
+   Graded on `C-0167`'s own 64 coupled cells, the same stations, distributions and 4 000-realisation stream:
+   **all four tethered states read `0 of 64` flat** at the 90th percentile against `C-0180`'s tied `2 of 64`;
+   the tether is a dishing **source** at **`64 of 64`** cells at the built allowance and **`248 of 256`** over
+   all four; and **the verdict does not move over four decades of `k_link`**.
+   **So the coupled half of this row's answer does not survive on either routing**, and the two differ in the
+   **sign** of what the turn does.
+   **The free tile straddles the tolerance on an AZIMUTH CONVENTION NOBODY HAS MEASURED** —
+   `0.0569815008` at the aligned azimuth and the softest chain against `0.166312182` at the worst and the
+   stiffest, **`24 of 36`** bracket corners flat — which is `T-304`, and the azimuth is **lattice arithmetic**
+   rather than a measurement.
+   **AND THE LARGER FINDING IS A WIDTH.** At the built allowance a **uniform** honeycomb row is
+   **`92 bp = 31.28 nm`** on M13mp18 and **`106 bp = 36.04 nm`** on p8064 against §3's `40 nm` — and all
+   three are **flat uncoupled**. **The tile is not too floppy; it is too small.**
 2. **The polymer layer confines the tile in one direction only.** Its lateral restoring stiffness is *exactly*
    zero by symmetry — not small — so an untethered tile diffuses 63 nm in one 1 kHz period, 21× the positional
    predicate. It also exerts no upward force above `L₀`, so at zero bias the tile is unconfined in **both**

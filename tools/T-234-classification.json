@@ -66,24 +66,24 @@
    "why": "the token matched and the statement is about something else"
   },
   "17": {
-   "class": "MOVED",
-   "family": "FOOTPRINT",
-   "line": 780,
-   "token": "0.0577199433",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+   "class": "OUT_OF_SCOPE",
+   "family": "FORWARD_BUDGET",
+   "line": 520,
+   "token": "p8064",
+   "why": "the token matched and the statement is about something else"
   },
   "18": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 780,
-   "token": "0.0788618807",
+   "line": 805,
+   "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "19": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 780,
-   "token": "3.29690337",
+   "line": 805,
+   "token": "0.0788618807",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "2": {
@@ -94,74 +94,74 @@
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "20": {
-   "class": "SURVIVING",
-   "family": "GRILLAGE",
-   "line": 780,
-   "token": "single-layer square-lattice",
-   "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
+   "class": "MOVED",
+   "family": "FOOTPRINT",
+   "line": 805,
+   "token": "3.29690337",
+   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "21": {
-   "class": "MOVED",
-   "family": "WIDTH",
-   "line": 1122,
-   "token": "112 bp",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+   "class": "SURVIVING",
+   "family": "GRILLAGE",
+   "line": 805,
+   "token": "single-layer square-lattice",
+   "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
   },
   "22": {
    "class": "MOVED",
    "family": "WIDTH",
-   "line": 1122,
-   "token": "drawable",
+   "line": 1147,
+   "token": "112 bp",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "23": {
    "class": "MOVED",
    "family": "WIDTH",
-   "line": 1122,
-   "token": "112 bp",
+   "line": 1147,
+   "token": "drawable",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "24": {
    "class": "MOVED",
-   "family": "AZIMUTH",
-   "line": 1122,
-   "token": "perpendicular root",
+   "family": "WIDTH",
+   "line": 1147,
+   "token": "112 bp",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "25": {
-   "class": "RESTATED",
-   "family": "ROW_SPAN",
-   "line": 1122,
-   "token": "drawable",
-   "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
+   "class": "MOVED",
+   "family": "AZIMUTH",
+   "line": 1147,
+   "token": "perpendicular root",
+   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "26": {
    "class": "RESTATED",
    "family": "ROW_SPAN",
-   "line": 1122,
+   "line": 1147,
    "token": "drawable",
    "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "27": {
    "class": "RESTATED",
    "family": "ROW_SPAN",
-   "line": 1122,
-   "token": "112 bp",
+   "line": 1147,
+   "token": "drawable",
    "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "28": {
-   "class": "SURVIVING",
-   "family": "GRILLAGE",
-   "line": 1139,
-   "token": "single-layer\nsquare-lattice",
-   "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
+   "class": "RESTATED",
+   "family": "ROW_SPAN",
+   "line": 1147,
+   "token": "112 bp",
+   "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "29": {
-   "class": "MOVED",
-   "family": "FOOTPRINT",
-   "line": 1149,
-   "token": "0.0577199433",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+   "class": "SURVIVING",
+   "family": "GRILLAGE",
+   "line": 1164,
+   "token": "single-layer\nsquare-lattice",
+   "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
   },
   "3": {
    "class": "SURVIVING",
@@ -173,71 +173,71 @@
   "30": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1149,
-   "token": "3.29690337",
+   "line": 1174,
+   "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "31": {
    "class": "MOVED",
-   "family": "AZIMUTH",
-   "line": 1149,
-   "token": "132",
+   "family": "FOOTPRINT",
+   "line": 1174,
+   "token": "3.29690337",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "32": {
    "class": "MOVED",
-   "family": "FOOTPRINT",
-   "line": 1164,
-   "token": "0.0577199433",
+   "family": "AZIMUTH",
+   "line": 1174,
+   "token": "132",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "33": {
    "class": "MOVED",
-   "family": "WIDTH",
-   "line": 1164,
-   "token": "112 bp",
+   "family": "FOOTPRINT",
+   "line": 1189,
+   "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "34": {
    "class": "MOVED",
-   "family": "FOOTPRINT",
-   "line": 1164,
-   "token": "0.0788618807",
+   "family": "WIDTH",
+   "line": 1189,
+   "token": "112 bp",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "35": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1164,
-   "token": "3.29690337",
+   "line": 1189,
+   "token": "0.0788618807",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "36": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1164,
-   "token": "0.0577199433",
+   "line": 1189,
+   "token": "3.29690337",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "37": {
+   "class": "MOVED",
+   "family": "FOOTPRINT",
+   "line": 1189,
+   "token": "0.0577199433",
+   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+  },
+  "38": {
    "class": "DISCHARGED",
    "family": "PLACEMENT",
-   "line": 1164,
+   "line": 1189,
    "token": "single-layer square-lattice",
    "why": "asserts the ABSENCE of a honeycomb station lattice, plan ceiling or placement family, which C-0141 supplies"
   },
-  "38": {
-   "class": "MOVED",
-   "family": "SCAFFOLD",
-   "line": 1164,
-   "token": "p8064",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
-  },
   "39": {
    "class": "MOVED",
-   "family": "FOOTPRINT",
-   "line": 1164,
-   "token": "0.00874363524",
+   "family": "SCAFFOLD",
+   "line": 1189,
+   "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "4": {
@@ -250,70 +250,70 @@
   "40": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1164,
-   "token": "0.0577199433",
+   "line": 1189,
+   "token": "0.00874363524",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "41": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1164,
-   "token": "38.08 × 25.36",
+   "line": 1189,
+   "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "42": {
-   "class": "OUT_OF_SCOPE",
-   "family": "SQUARE",
-   "line": 1291,
-   "token": "single-layer square-lattice",
-   "why": "the token matched and the statement is about something else"
+   "class": "MOVED",
+   "family": "FOOTPRINT",
+   "line": 1189,
+   "token": "38.08 × 25.36",
+   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "43": {
-   "class": "MOVED",
-   "family": "AZIMUTH",
-   "line": 1300,
-   "token": "132",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+   "class": "OUT_OF_SCOPE",
+   "family": "SQUARE",
+   "line": 1316,
+   "token": "single-layer square-lattice",
+   "why": "the token matched and the statement is about something else"
   },
   "44": {
    "class": "MOVED",
    "family": "AZIMUTH",
-   "line": 1310,
-   "token": "perpendicular root",
+   "line": 1325,
+   "token": "132",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "45": {
    "class": "MOVED",
-   "family": "WIDTH",
-   "line": 1326,
-   "token": "drawable",
+   "family": "AZIMUTH",
+   "line": 1335,
+   "token": "perpendicular root",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "46": {
+   "class": "MOVED",
+   "family": "WIDTH",
+   "line": 1351,
+   "token": "drawable",
+   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+  },
+  "47": {
    "class": "DISCHARGED",
    "family": "PLACEMENT",
-   "line": 1329,
+   "line": 1354,
    "token": "single-layer square-lattice",
    "why": "asserts the ABSENCE of a honeycomb station lattice, plan ceiling or placement family, which C-0141 supplies"
   },
-  "47": {
+  "48": {
    "class": "OUT_OF_SCOPE",
    "family": "FORWARD_BUDGET",
-   "line": 1345,
+   "line": 1370,
    "token": "p8064",
    "why": "the token matched and the statement is about something else"
-  },
-  "48": {
-   "class": "MOVED",
-   "family": "WIDTH",
-   "line": 1520,
-   "token": "112 bp",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "49": {
    "class": "MOVED",
    "family": "WIDTH",
-   "line": 1520,
+   "line": 1545,
    "token": "112 bp",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
@@ -326,73 +326,73 @@
   },
   "50": {
    "class": "MOVED",
-   "family": "FOOTPRINT",
-   "line": 1554,
-   "token": "0.0577199433",
+   "family": "WIDTH",
+   "line": 1545,
+   "token": "112 bp",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "51": {
-   "class": "SURVIVING",
-   "family": "GRILLAGE",
-   "line": 1567,
-   "token": "single-layer square-lattice",
-   "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
-  },
-  "52": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1593,
+   "line": 1579,
    "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
-  "53": {
-   "class": "RESTATED",
-   "family": "ROW_SPAN",
-   "line": 1593,
-   "token": "112 bp",
-   "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
+  "52": {
+   "class": "SURVIVING",
+   "family": "GRILLAGE",
+   "line": 1592,
+   "token": "single-layer square-lattice",
+   "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
   },
-  "54": {
+  "53": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1594,
-   "token": "38 × 25 nm",
+   "line": 1618,
+   "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+  },
+  "54": {
+   "class": "RESTATED",
+   "family": "ROW_SPAN",
+   "line": 1618,
+   "token": "112 bp",
+   "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "55": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1594,
-   "token": "38.08 × 38.04",
+   "line": 1619,
+   "token": "38 × 25 nm",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "56": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1594,
-   "token": "38.08 × 25.36",
+   "line": 1619,
+   "token": "38.08 × 38.04",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "57": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1594,
-   "token": "third of the footprint",
+   "line": 1619,
+   "token": "38.08 × 25.36",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "58": {
    "class": "MOVED",
-   "family": "SCAFFOLD",
-   "line": 1594,
-   "token": "p8064",
+   "family": "FOOTPRINT",
+   "line": 1619,
+   "token": "third of the footprint",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "59": {
-   "class": "RESTATED",
-   "family": "ROW_SPAN",
-   "line": 1595,
-   "token": "112 bp",
-   "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
+   "class": "MOVED",
+   "family": "SCAFFOLD",
+   "line": 1619,
+   "token": "p8064",
+   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "6": {
    "class": "RESTATED",
@@ -404,22 +404,29 @@
   "60": {
    "class": "RESTATED",
    "family": "ROW_SPAN",
-   "line": 1595,
-   "token": "drawable",
+   "line": 1620,
+   "token": "112 bp",
    "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "61": {
    "class": "RESTATED",
    "family": "ROW_SPAN",
-   "line": 1595,
+   "line": 1620,
    "token": "drawable",
    "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "62": {
+   "class": "RESTATED",
+   "family": "ROW_SPAN",
+   "line": 1620,
+   "token": "drawable",
+   "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
+  },
+  "63": {
    "byHand": true,
    "class": "OUT_OF_SCOPE",
    "family": "WIDTH",
-   "line": 1617,
+   "line": 1642,
    "snippet": "d `10 × 6` block and this corpus's 15 × 112 bp sheet as scadnano `.sc` files, each of",
    "token": "112 bp",
    "why": "T-260/T-262, by hand: `15 × 112 bp` and `15 duplexes, 112 bp` are this corpus's SQUARE-lattice sheet (C-0086/C-0157/C-0160), not a honeycomb row length. The line-scoped honeycomb context admits them because the same sentence discusses the honeycomb block beside them, and the token's own neighbourhood says square lattice. The refinement's governing-noun rule cannot reach this: it is a LATTICE question, not a width/row one."
@@ -476,60 +483,60 @@
    "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "12": {
+   "class": "OUT_OF_SCOPE",
+   "family": "FORWARD_BUDGET",
+   "line": 969,
+   "token": "p8064",
+   "why": "the token matched and the statement is about something else"
+  },
+  "13": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1012,
+   "line": 1024,
    "token": "38 × 25 nm",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
-  "13": {
+  "14": {
    "class": "RESTATED",
    "family": "ROW_SPAN",
-   "line": 1034,
+   "line": 1046,
    "token": "drawable",
    "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
-  "14": {
+  "15": {
    "class": "MOVED",
    "family": "WIDTH",
-   "line": 1037,
+   "line": 1049,
    "token": "112 bp",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
-  "15": {
+  "16": {
    "class": "SURVIVING",
    "family": "GRILLAGE",
-   "line": 1039,
+   "line": 1051,
    "token": "single-layer square-lattice",
    "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
-  },
-  "16": {
-   "class": "MOVED",
-   "family": "SCAFFOLD",
-   "line": 1068,
-   "token": "p8064",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "17": {
    "class": "MOVED",
    "family": "SCAFFOLD",
-   "line": 1069,
+   "line": 1080,
    "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "18": {
    "class": "MOVED",
    "family": "SCAFFOLD",
-   "line": 1076,
+   "line": 1081,
    "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "19": {
-   "class": "OUT_OF_SCOPE",
-   "family": "FORWARD_BUDGET",
-   "line": 1099,
+   "class": "MOVED",
+   "family": "SCAFFOLD",
+   "line": 1088,
    "token": "p8064",
-   "why": "the token matched and the statement is about something else"
+   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "2": {
    "class": "MOVED",
@@ -539,74 +546,74 @@
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "20": {
-   "class": "MOVED",
-   "family": "FOOTPRINT",
-   "line": 1227,
-   "token": "38.08 × 38.04",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+   "class": "OUT_OF_SCOPE",
+   "family": "FORWARD_BUDGET",
+   "line": 1111,
+   "token": "p8064",
+   "why": "the token matched and the statement is about something else"
   },
   "21": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1230,
-   "token": "38.08 × 25.36",
+   "line": 1239,
+   "token": "38.08 × 38.04",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "22": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1236,
-   "token": "38.08 × 38.04",
+   "line": 1242,
+   "token": "38.08 × 25.36",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "23": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1236,
-   "token": "38.08 × 25.36",
+   "line": 1248,
+   "token": "38.08 × 38.04",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "24": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1238,
-   "token": "0.0577199433",
+   "line": 1248,
+   "token": "38.08 × 25.36",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "25": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1238,
-   "token": "0.00874363524",
+   "line": 1250,
+   "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "26": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1239,
-   "token": "0.0788618807",
+   "line": 1250,
+   "token": "0.00874363524",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "27": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1239,
-   "token": "3.29690337",
+   "line": 1251,
+   "token": "0.0788618807",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "28": {
-   "class": "SURVIVING",
-   "family": "GRILLAGE",
-   "line": 1364,
-   "token": "single-layer square-lattice",
-   "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
+   "class": "MOVED",
+   "family": "FOOTPRINT",
+   "line": 1251,
+   "token": "3.29690337",
+   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "29": {
-   "class": "OUT_OF_SCOPE",
-   "family": "FORWARD_BUDGET",
-   "line": 1391,
-   "token": "p8064",
-   "why": "the token matched and the statement is about something else"
+   "class": "SURVIVING",
+   "family": "GRILLAGE",
+   "line": 1376,
+   "token": "single-layer square-lattice",
+   "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
   },
   "3": {
    "class": "MOVED",
@@ -614,6 +621,13 @@
    "line": 35,
    "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+  },
+  "30": {
+   "class": "OUT_OF_SCOPE",
+   "family": "FORWARD_BUDGET",
+   "line": 1403,
+   "token": "p8064",
+   "why": "the token matched and the statement is about something else"
   },
   "4": {
    "class": "MOVED",
