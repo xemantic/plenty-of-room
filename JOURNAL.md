@@ -11550,7 +11550,10 @@ adjacent and simply off-register.
 
 **And every one of those 28 is displaced by ONE base pair.** Not one by the ten or eleven `C-0152`
 *proves* is the cheapest, so the field — forcing a crossover 28 times — pays `1.05268401 k_BT`
-against `0.350894669`, **4× the energy the lattice offers, every time.** That is `C-0152`'s own
+against `0.350894669` — **`3.00000001×` the energy the lattice offers, every time.**
+(**Corrected**: this entry first said `4×`, which is what squaring the doubled angle predicts and is **not** what
+`C-0152`'s own committed figures give — its ceiling reaches the azimuth through a span and a roll mapping, and
+`CLAUDE.md` had carried the `4×` as a standing statement since `T-246`. Agent D's report caught it.) That is `C-0152`'s own
 *no count of base pairs can see the azimuth* observed in the record rather than derived.
 
 The yield half is answered as a **partition**: the caDNAno paper publishes **per-design** gel and TEM
