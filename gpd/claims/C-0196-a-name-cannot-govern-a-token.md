@@ -217,6 +217,8 @@ occurrences a filename admitted* and which re-runs to `removed` **10 → 0** —
 removed them.
 The seven were **restored unmoved**, and the class is raised as
 [`CH-0246`](../challenges/CH-0246-a-corpus-subject-result-file-cannot-be-re-run-as-a-control.md).
+[`gpd/README.md`](../README.md)'s *"reproducible from it alone"* now carries the exception in the same commit
+as the challenge, because a contract that is false for a whole class of file is worse than a missing one.
 
 What replaces the run here is a **containment** argument about the consumers' **inputs**:
 
