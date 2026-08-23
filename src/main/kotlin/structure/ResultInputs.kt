@@ -195,6 +195,7 @@ object ResultInputs {
     val T_252: ResultInput = ResultInput("T-252", "T-252-a-quoted-number-has-no-link-back.json")
     val T_253: ResultInput = ResultInput("T-253", "T-253-honeycomb-grillage.json")
     val T_254: ResultInput = ResultInput("T-254", "T-254-raster-turn-prestrain.json")
+    val T_255: ResultInput = ResultInput("T-255", "T-255-cadnano-gallery-forced-crossovers.json")
     val T_258: ResultInput = ResultInput("T-258", "T-258-drawable-ragged-face.json")
     val T_260: ResultInput = ResultInput("T-260", "T-260-partial-discharge-predicate.json")
     val T_261: ResultInput = ResultInput("T-261", "T-261-a-price-on-an-adjudicated-challenge.json")
@@ -260,11 +261,11 @@ object ResultInputs {
         T_192, T_193, T_194, T_195, T_196, T_197, T_198, T_199, T_1C, T_1D, T_1E, T_1F, T_2, T_200,
         T_201, T_202, T_203, T_204, T_205, T_206, T_207, T_208, T_21, T_211, T_212, T_214, T_215,
         T_216, T_217, T_218, T_219, T_220, T_221, T_225, T_226, T_23, T_230, T_231, T_232, T_234,
-        T_235, T_243, T_244, T_245, T_246, T_249, T_25, T_250, T_252, T_253, T_254, T_258, T_260,
-        T_261, T_262, T_263, T_267, T_274, T_275, T_276, T_278, T_279, T_280, T_281, T_282, T_283,
-        T_284, T_285, T_286, T_287, T_289, T_291, T_292, T_293, T_295, T_296, T_297, T_3, T_30,
-        T_3A, T_3B, T_4, T_40, T_5, T_50, T_5B, T_6, T_60, T_65, T_67, T_7, T_70, T_71, T_72, T_75,
-        T_76, T_79, T_8, T_81, T_9, T_96, T_97, T_99, T_9B
+        T_235, T_243, T_244, T_245, T_246, T_249, T_25, T_250, T_252, T_253, T_254, T_255, T_258,
+        T_260, T_261, T_262, T_263, T_267, T_274, T_275, T_276, T_278, T_279, T_280, T_281, T_282,
+        T_283, T_284, T_285, T_286, T_287, T_289, T_291, T_292, T_293, T_295, T_296, T_297, T_3,
+        T_30, T_3A, T_3B, T_4, T_40, T_5, T_50, T_5B, T_6, T_60, T_65, T_67, T_7, T_70, T_71, T_72,
+        T_75, T_76, T_79, T_8, T_81, T_9, T_96, T_97, T_99, T_9B
     )
 
     /** The handle a task id names, or `null` where a task id names two files. */
