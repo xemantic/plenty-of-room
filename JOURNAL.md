@@ -11462,6 +11462,36 @@ additional defect, because exit codes saturate**. So the corpus-only state `C-01
 existed at **no committed state of this repository**; `T-292` made it itself. Everything `C-0192`
 computed is upheld.
 
+### `T-297`/`C-0194`: `CH-0242` is upheld in its algebra and reversed in its direction
+
+The challenge said `HoneycombGrillage` misses the larger of a bond's two azimuthal springs. It does
+not. `assemble` builds the normal link with the gradient `(1, armY, −1, armY)` over
+`(W_a, Φ_a, W_b, Φ_b)` and `armY = (d/2)·unitY`, so its residual is a function of the **sum** of the
+two rolls — probed on the recommended `10 × 6` lattice, a common roll of 1 mrad at every beam stores
+**`0.0` pN·nm** in the hinges and **`6.7528608`** in the links, and a **rigid** roll stores `0.0` in
+all three element families.
+
+**`d/2` is a theorem rather than a fitted arm**: it is the only arm annihilating the linearised rigid
+roll, whose residual at an arm `a` is `α·unitY·(2a − d)` — which is why the span's own `r_P` is
+inadmissible in a linear element, and why the difference is an exact identity,
+`d²/(2 g r_P) − d/(2 r_P) = d/g`. So the lattice sits at the **rigid end** of that mode at
+**`336.800449×`** the physical value rather than missing it, and what is wrong is the **penalty's
+magnitude**: `k_R = T/g =` **`41.4338953 pN/nm`** against `RIGID_LINK_STIFFNESS = 10000`,
+**`241.348295×`**.
+
+The error is **measured, not bracketed**, because `linkStiffness` is an existing constructor
+argument: over six decades **`0 of 6`** (cross-section, coupling) pairs move a free-tile flatness
+verdict. **But `F10` fired, and it is the finding a coupled verdict turns on** — the free tile's
+insensitivity does **not** transfer: `C-0180`'s two recovered cells are flat at `k_link ≥ 1000` and
+**not** at `100` or at the span law's own value. **The coupled recovery rests on a link stiffness the
+span law alone does not supply.**
+
+`C-0190` §6's threshold accordingly becomes a **value**: the free tile reads **`0.0931890716`**
+against the per-beam twist's `0.296735462` — **inside** `T-5b` where the twist is outside — while
+`0 of 24` coupled readings are flat either way, so `C-0190`'s **coupled** conclusion is upheld on the
+corrected channel. And one number in circulation was wrong in four documents:
+`1 + 2r_P/(d − 2r_P) = d/(d − 2r_P)` is **`3.52847408`**, not `3.52810239`. No verdict turns on it.
+
 ### The coordinator's three, and the pattern they turned out to share
 
 `T-293`/`C-0196` closed the third and last sign of *a name asserts nothing*: the census's
@@ -11504,3 +11534,33 @@ Sharpest at `T-287`'s own file, whose subject is *the ten occurrences a filename
 re-runs to `removed` **10 → 0**, because `T-287` removed them. Restored unmoved; replaced by a
 **containment** argument about the consumers' **inputs**. `gpd/README.md`'s *"reproducible from it
 alone"* now carries the exception.
+
+
+### Three things about running four agents on one checkout
+
+**A gate wired mid-iteration goes red on in-flight work, and that is it working.**
+`tools/check-result-path-references.py` read **1** within minutes of existing — a queue row naming a
+study's output before the study had run. On a shared checkout the commit that *names* an artifact and
+the commit that *adds* it are routinely different commits, so it is a **pre-push** gate, not a
+per-commit one.
+
+**An argument is a wiring decision.** Both new mutation harnesses landed unwired, which `P-31` reads
+as a defect; wiring them was the obvious repair and it **broke `tools/verify.sh` on its first run**,
+because the `T-297` harness takes a **snapshot directory** — it mutates *Kotlin* sources and must not
+do that in a shared checkout. Unwired again, with the reason stated. And the comment stating the
+reason made `P-31` read the harness as **wired**, because `wired_in` is a substring test: the census
+went `13 of 14` → `14 of 14` → `13 of 14` on the wording of one comment, with nothing wired or
+unwired. Queued as `T-301`.
+
+**A hand override written without its `snippet` is dropped for the wrong stated reason.**
+`override_key` is `(file, family, token, snippet[:N])`, so an override typed with everything a reader
+would think it needs — class, family, line, token, `why` — keys on an **empty** snippet and the
+regeneration reports *"no longer matches any occurrence"*, which reads as *the line has since been
+rewritten* when the line is untouched. Build the override from the census's own record.
+
+### What is open next
+
+`T-299` — the tether re-grade, which is what `C-0193` now conditions every honeycomb tie number on —
+is the row that matters. Beside it: `T-300` (the `SCAFFOLD` family's missing refinement, whose cost
+is **measured** at twelve hand overrides and four points of the published debt ratio), `T-298` (the
+17 challenge Status rows that make `stale_challenge_statuses` blind), and `T-301`.
