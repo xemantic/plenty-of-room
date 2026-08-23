@@ -1,0 +1,185 @@
+[query] "DNA origami" AND "scaffold crossover" AND "helix end"
+    hitCount=0  returned=0
+[query] "DNA origami" AND "scaffold crossover" AND honeycomb
+    hitCount=13  returned=13
+      - 2024 'Cooperative control of a DNA origami force sensor.' pmcid=PMC10876929
+      - 2021 'Design Approaches and Computational Tools for DNA Nanostructures.' pmcid=PMC9232119
+      - 2019 'Automated sequence design of 2D wireframe DNA origami with honeycomb edges.' pmcid=PMC6882874
+      - 2019 'Automated Sequence Design of 3D Polyhedral Wireframe DNA Origami with Honeycomb Edges.' pmcid=PMC6679942
+      - 2020 'Increasing Complexity in Wireframe DNA Nanostructures.' pmcid=PMC7221932
+[query] "DNA origami" AND "scaffold crossover" AND "raster"
+    hitCount=4  returned=4
+      - 2023 'Reverse engineering DNA origami nanostructure designs from raw scaffold and staple sequence lists.' pmcid=PMC10371787
+      - 2021 'Design Approaches and Computational Tools for DNA Nanostructures.' pmcid=PMC9232119
+      - 2019 'Design and synthesis of pleated DNA origami nanotubes with adjustable diameters.' pmcid=PMC7145641
+      - 2009 'Rapid prototyping of 3D DNA-origami shapes with caDNAno.' pmcid=PMC2731887
+[query] "scaffold crossover" AND "unpaired" AND origami
+    hitCount=12  returned=12
+      - 2026 'Complex cooperativity in DNA origami revealed via design-dependent defectivity.' pmcid=PMC12907558
+      - 2025 'Unraveling the Folding Dynamics of DNA Origami Structures.' pmcid=PMC12696799
+      - 2023 '3D RNA-scaffolded wireframe origami.' pmcid=PMC9872083
+      - 2023 'Reverse engineering DNA origami nanostructure designs from raw scaffold and staple sequence lists.' pmcid=PMC10371787
+      - 2021 'Design Approaches and Computational Tools for DNA Nanostructures.' pmcid=PMC9232119
+[query] "unpaired scaffold" AND "DNA origami"
+    hitCount=25  returned=25
+      - 2026 'Mechanical Flexibility Enables DNA Origami to Overcome Steric Confinement in Mucus' pmcid=None
+      - 2025 'Unraveling the Folding Dynamics of DNA Origami Structures.' pmcid=PMC12696799
+      - 2025 'Chiral Plasmonic Crystals Self-Assembled by DNA Origami.' pmcid=PMC11913018
+      - 2022 'A label-free light-scattering method to resolve assembly and disassembly of DNA nanostructures.' pmcid=PMC9811603
+      - 2020 'Bottom-Up Self-Assembly Based on DNA Nanotechnology.' pmcid=PMC7603033
+[query] "scaffold loop" AND "DNA origami" AND helix
+    hitCount=20  returned=20
+      - 2026 'Single-Molecule Detection Concepts Enabled by DNA Origami.' pmcid=PMC13304469
+      - 2026 'Buoyancy-driven sorting of synthetic cells for nanopore activity' pmcid=None
+      - 2025 'Linked data storage using DNA origami nanostructures.' pmcid=PMC12749718
+      - 2024 'Design principles for accurate folding of DNA origami.' pmcid=PMC11621765
+      - 2025 'Unraveling the Folding Dynamics of DNA Origami Structures.' pmcid=PMC12696799
+[query] "unpaired loop" AND "DNA origami"
+    hitCount=6  returned=6
+      - 2016 'Design and construction of a DNA origami drug delivery system based on MPT64 antibody aptamer for tuberculosis treatment.' pmcid=PMC4821297
+      - 2011 'Organizing DNA origami tiles into larger structures using preformed scaffold frames.' pmcid=PMC3319874
+      - 2010 'Molecular behavior of DNA origami in higher-order self-assembly.' pmcid=PMC3071357
+      - 2009 'Multilayer DNA origami packed on a square lattice.' pmcid=PMC2821935
+      - 2009 'Rapid prototyping of 3D DNA-origami shapes with caDNAno.' pmcid=PMC2731887
+[query] "single-stranded loop" AND "DNA origami" AND "helix end"
+    hitCount=0  returned=0
+[query] "blunt-end stacking" AND "DNA origami"
+    hitCount=77  returned=25
+      - 2026 'Uncovering Design and Assembly Rules for mRNA-DNA Origami.' pmcid=PMC12947688
+      - 2026 'Visualizing and Quantifying microRNA-Induced DNA Origami Separation at the Nanoscale.' pmcid=PMC13098309
+      - 2026 'Blunt-force assembly of programmable DNA architectures using π-π stacking.' pmcid=PMC13043697
+      - 2026 'DNA Origami and Its Applications in Synthetic Biology.' pmcid=PMC12786304
+      - 2025 'Crystalline Assemblies of DNA Nanostructures and Their Functional Properties.' pmcid=PMC11735872
+[query] "blunt end" AND "DNA origami" AND aggregation
+    hitCount=43  returned=25
+      - 2026 'Uncovering Design and Assembly Rules for mRNA-DNA Origami.' pmcid=PMC12947688
+      - 2026 'Visualizing and Quantifying microRNA-Induced DNA Origami Separation at the Nanoscale.' pmcid=PMC13098309
+      - 2025 'Controlling Assembly of Hybrid DNA Nanostructures into Higher-Order Structures via Hydrophobicity.' pmcid=PMC12363646
+      - 2025 'Crystalline Assemblies of DNA Nanostructures and Their Functional Properties.' pmcid=PMC11735872
+      - 2025 'Advances in programmable DNA nanostructures enabling stimuli-responsive drug delivery and multimodal biosensing.' pmcid=PMC12203123
+[query] "DNA origami" AND multimerization AND "unpaired"
+    hitCount=13  returned=13
+      - 2025 'Chiral Plasmonic Crystals Self-Assembled by DNA Origami.' pmcid=PMC11913018
+      - 2024 'Rationally designed multimeric nanovaccines using icosahedral DNA origami for display of SARS-CoV-2 receptor binding domain.' pmcid=PMC11542012
+      - 2023 'Computer-Aided Design of A-Trail Routed Wireframe DNA Nanostructures with Square Lattice Edges.' pmcid=PMC10100577
+      - 2024 'Modulating the DNA/Lipid Interface through Multivalent Hydrophobicity.' pmcid=PMC11403765
+      - 2022 'A label-free light-scattering method to resolve assembly and disassembly of DNA nanostructures.' pmcid=PMC9811603
+[query] "poly-T" AND "DNA origami" AND passivation
+    hitCount=14  returned=14
+      - 2025 'DNA Origami Barcodes for Immunostaining.' pmcid=PMC12208347
+      - 2025 'Macroscale-area patterning of three-dimensional DNA-programmable frameworks.' pmcid=PMC11971251
+      - 2025 'DNA-Guided Self-Assembly of Carbon Nanotubes and Quantum Dots.' pmcid=PMC11959590
+      - 2026 'Addressing the Challenges of Solid-State Nanopores: Strategies for Performance Enhancement.' pmcid=PMC13026678
+      - 2023 'Site-directed placement of three-dimensional DNA origami.' pmcid=PMC7616159
+[query] "DNA origami" AND "polyT" AND "helix end"
+    hitCount=0  returned=0
+[query] "honeycomb lattice" AND "DNA origami" AND "design rules"
+    hitCount=20  returned=20
+      - 2026 'Tools For Building Artificial Biological Nanostructures.' pmcid=PMC13255533
+      - 2024 'Design principles for accurate folding of DNA origami.' pmcid=PMC11621765
+      - 2024 'DNA nanomachine tutorial.' pmcid=PMC11998105
+      - 2023 'Triple-Stranded DNA As a Structural Element in DNA Origami.' pmcid=PMC10210531
+      - 2021 'Obtaining Precise Molecular Information via DNA Nanotechnology.' pmcid=PMC8466356
+[query] caDNAno AND honeycomb AND scaffold AND routing
+    hitCount=44  returned=25
+      - 2026 'Tools For Building Artificial Biological Nanostructures.' pmcid=PMC13255533
+      - 2024 'Design principles for accurate folding of DNA origami.' pmcid=PMC11621765
+      - 2026 'Single-Molecule Detection Concepts Enabled by DNA Origami.' pmcid=PMC13304469
+      - 2025 'Fully addressable designer superstructures assembled from one single modular DNA origami.' pmcid=PMC11814417
+      - 2026 'DNA Origami and Their Application in Biosensors.' pmcid=PMC13204131
+[query] "honeycomb-pleated" AND origami
+    hitCount=10  returned=10
+      - 2026 'DNA Nanostructure-Assembled Metallic Nanoparticles for Biosensing Applications.' pmcid=PMC12899497
+      - 2023 'Folding Double-Stranded DNA into Designed Shapes with Triplex-Forming Oligonucleotides.' pmcid=None
+      - 2021 'Obtaining Precise Molecular Information via DNA Nanotechnology.' pmcid=PMC8466356
+      - 2022 'Prospects and challenges of dynamic DNA nanostructures in biomedical applications.' pmcid=PMC9125017
+      - 2021 'Application of Nucleic Acid Frameworks in the Construction of Nanostructures and Cascade Biocatalysts: Recent Progress and Perspective.' pmcid=PMC8777461
+[query] "multilayer DNA origami" AND scaffold AND routing
+    hitCount=14  returned=14
+      - 2024 'Designing Rigid DNA Origami Templates for Molecular Visualization Using Cryo-EM.' pmcid=PMC11057029
+      - 2024 'Design principles for accurate folding of DNA origami.' pmcid=PMC11621765
+      - 2023 'Triple-Stranded DNA As a Structural Element in DNA Origami.' pmcid=PMC10210531
+      - 2020 '<i>In silico</i> modelling of DNA nanostructures.' pmcid=PMC7276390
+      - 2021 'Unified Nanotechnology Format: One Way to Store Them All.' pmcid=PMC8746876
+[query] "DNA origami" AND "folding yield" AND "scaffold routing"
+    hitCount=11  returned=11
+      - 2025 'Unraveling the Folding Dynamics of DNA Origami Structures.' pmcid=PMC12696799
+      - 2024 'Design principles for accurate folding of DNA origami.' pmcid=PMC11621765
+      - 2023 'Computer-Aided Design of A-Trail Routed Wireframe DNA Nanostructures with Square Lattice Edges.' pmcid=PMC10100577
+      - 2020 'Increasing Complexity in Wireframe DNA Nanostructures.' pmcid=PMC7221932
+      - 2023 'Recent Advances in DNA Origami-Engineered Nanomaterials and Applications.' pmcid=PMC10103138
+[query] "DNA origami" AND yield AND "scaffold loop"
+    hitCount=20  returned=20
+      - 2026 'Single-Molecule Detection Concepts Enabled by DNA Origami.' pmcid=PMC13304469
+      - 2025 'Unraveling the Folding Dynamics of DNA Origami Structures.' pmcid=PMC12696799
+      - 2024 'Design principles for accurate folding of DNA origami.' pmcid=PMC11621765
+      - 2025 'Fully addressable designer superstructures assembled from one single modular DNA origami.' pmcid=PMC11814417
+      - 2024 'Controlled mechanochemical coupling of anti-junctions in DNA origami arrays.' pmcid=PMC11387415
+[query] "DNA origami" AND "folding yield" AND honeycomb
+    hitCount=16  returned=16
+      - 2024 'Design principles for accurate folding of DNA origami.' pmcid=PMC11621765
+      - 2024 'Formation of Linear Plasmonic Heterotrimers Using Nanoparticle Docking to DNA Origami Cages.' pmcid=PMC11264316
+      - 2023 'Triple-Stranded DNA As a Structural Element in DNA Origami.' pmcid=PMC10210531
+      - 2023 'Recent Advances in DNA Origami-Engineered Nanomaterials and Applications.' pmcid=PMC10103138
+      - 2020 'Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution.' pmcid=PMC7718922
+[query] "DNA origami" AND seam AND "circular scaffold"
+    hitCount=5  returned=5
+      - 2025 'Folding Competition and Dynamic Transformation in DNA Origami: Parallel Versus Antiparallel Crossovers.' pmcid=PMC12182888
+      - 2024 'Mechanism of DNA origami folding elucidated by mesoscopic simulations.' pmcid=PMC11001925
+      - 2022 'Strategies for Controlling the Spatial Orientation of Single Molecules Tethered on DNA Origami Templates Physisorbed on Glass Substrates: Intercalation and Stretching.' pmcid=PMC9323263
+      - 2021 'DNA Origami Design: A How-To Tutorial.' pmcid=PMC11419732
+      - 2019 'Design and synthesis of pleated DNA origami nanotubes with adjustable diameters.' pmcid=PMC7145641
+[query] "DNA origami" AND "scaffold crossover" AND seam AND multilayer
+    hitCount=0  returned=0
+[query] scadnano AND "DNA origami"
+    hitCount=14  returned=14
+      - 2026 'Single-Molecule Detection Concepts Enabled by DNA Origami.' pmcid=PMC13304469
+      - 2026 'DNA Origami and Their Application in Biosensors.' pmcid=PMC13204131
+      - 2026 'Self-assembled cell-scale containers made from DNA origami membranes.' pmcid=PMC12960257
+      - 2026 'A computational framework for designing micron-scale crisscross DNA megastructures' pmcid=None
+      - 2025 'How We Simulate DNA Origami.' pmcid=PMC12182891
+[query] "DNA origami" AND "scaffold path" AND automated AND design
+    hitCount=7  returned=7
+      - 2024 'DNAforge: a design tool for nucleic acid wireframe nanostructures.' pmcid=PMC11223811
+      - 2020 'Increasing Complexity in Wireframe DNA Nanostructures.' pmcid=PMC7221932
+      - 2019 'Automated sequence design of 2D wireframe DNA origami with honeycomb edges.' pmcid=PMC6882874
+      - 2016 'Computer-Aided Production of Scaffolded DNA Nanostructures from Flat Sheet Meshes.' pmcid=PMC6680348
+      - 2021 'Molecular goniometers for single-particle cryo-electron microscopy of DNA-binding proteins.' pmcid=PMC7956247
+[query] "DNA origami" AND "routing algorithm" AND scaffold AND lattice
+    hitCount=4  returned=4
+      - 2024 'Design principles for accurate folding of DNA origami.' pmcid=PMC11621765
+      - 2023 'Versatile computer-aided design of free-form DNA nanostructures and assemblies.' pmcid=PMC10371015
+      - 2020 '<i>In silico</i> modelling of DNA nanostructures.' pmcid=PMC7276390
+      - 2020 'Increasing Complexity in Wireframe DNA Nanostructures.' pmcid=PMC7221932
+[query] "DNA origami" AND "reverse engineering" AND scaffold AND staple
+    hitCount=5  returned=5
+      - 2023 'Reverse engineering DNA origami nanostructure designs from raw scaffold and staple sequence lists.' pmcid=PMC10371787
+      - 2023 'Reverse Engineering DNA Origami Nanostructure Designs from Raw Scaffold and Staple Sequence Lists' pmcid=None
+      - 2024 'Dominant Analytical Techniques in DNA Nanotechnology for Various Applications.' pmcid=PMC11261746
+      - 2018 'Functional protein nanostructures: a chemical toolbox.' pmcid=PMC6289173
+      - 2025 'Fabrication of Soft Robotics by Additive Manufacturing: From Materials to Applications.' pmcid=PMC12395417
+[query] "DNA origami" AND database AND designs AND scaffold
+    hitCount=63  returned=25
+      - 2026 'Tools For Building Artificial Biological Nanostructures.' pmcid=PMC13255533
+      - 2026 'Mechanical Flexibility Enables DNA Origami to Overcome Steric Confinement in Mucus' pmcid=None
+      - 2025 'Spring-loaded DNA origami arrays as energy-supplied hardware for modular nanorobots.' pmcid=PMC12955726
+      - 2025 'Modulating transformation of DNA origami nanoarray via sequence design.' pmcid=PMC12215181
+      - 2025 'Linked data storage using DNA origami nanostructures.' pmcid=PMC12749718
+[query] "Self-assembly of DNA into nanoscale three-dimensional shapes"
+    hitCount=3  returned=3
+      - 2022 'Nanoschalen aus DNA fangen und neutralisieren Viren.' pmcid=PMC8960677
+      - 2020 'DNA nanotechnology assisted nanopore-based analysis.' pmcid=PMC7102975
+      - 2009 'Self-assembly of DNA into nanoscale three-dimensional shapes.' pmcid=PMC2688462
+[query] "Rapid prototyping of 3D DNA-origami shapes"
+    hitCount=2  returned=2
+      - 2025 'How We Simulate DNA Origami.' pmcid=PMC12182891
+      - 2009 'Rapid prototyping of 3D DNA-origami shapes with caDNAno.' pmcid=PMC2731887
+[query] "twist density" AND "DNA origami" AND honeycomb
+    hitCount=10  returned=10
+      - 2020 'Revealing the structures of megadalton-scale DNA complexes with nucleotide resolution.' pmcid=PMC7718922
+      - 2023 'Recent Advances in DNA Origami-Engineered Nanomaterials and Applications.' pmcid=PMC10103138
+      - 2020 'Bottom-Up Self-Assembly Based on DNA Nanotechnology.' pmcid=PMC7603033
+      - 2021 'Cryo-Electron Microscopy and Mass Analysis of Oligolysine-Coated DNA Nanostructures.' pmcid=PMC8223477
+      - 2020 'Building machines with DNA molecules.' pmcid=PMC6976304
+
+wrote /home/claude/git/plenty-of-room/gpd/data/T-296-sources/europepmc-queries.json

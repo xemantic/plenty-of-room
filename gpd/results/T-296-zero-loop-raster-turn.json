@@ -1,0 +1,690 @@
+{
+ "emission": {
+  "lattice": "honeycomb",
+  "regime": []
+ },
+ "task": "T-296",
+ "leaf": "A8.2",
+ "title": "Whether a honeycomb raster turn is BUILT with zero unpaired nucleotides, and what the tie set is conditional on if it is not",
+ "verificationType": "literature (the built precedent's own scaffold accounting and the loops' own stated purpose, both READ DIRECTLY from primary sources already in gpd/data/, plus a recorded existence sweep) + logical (a covalent reach bound on the MEASURED backbone, exact integer scaffold arithmetic and an exact freely-jointed-chain law) + in-silico (parsing this repository's own committed .sc designs and the field's own reference generator)",
+ "maturity": "TRL 1-3 -- model-consistent and traceable, NOTHING HERE IS MEASURED except the constants and the published designs. The verdict on drawability is a DESIGN statement; the verdict on folding is an EXISTENCE statement about the literature, and no folding experiment is reported here or anywhere for this motif on this lattice",
+ "units": {
+  "length": "nm",
+  "force": "pN",
+  "energy": "pN*nm and k_BT",
+  "count": "nucleotides, base pairs, designs, queries"
+ },
+ "conventions": [
+  "rise 0.34 nm/bp; k_BT = 4.141947 pN*nm at 300 K",
+  "a turn joins the END of one helix to the END of the next along the raster path; a helix carries a front and a rear unpaired fragment of L/2, so a TURN's slack is the PER-HELIX allotment L -- which is how the built blocks' own accounting is written",
+  "route A = every turn a scaffold crossover, zero unpaired slack; route B = every turn an unpaired loop (C-0140's and C-0147's names, kept)",
+  "the ssDNA Kuhn length is the ZERO-FORCE end of CLAUDE.md's 2x method-systematic bracket, 2.10-2.84 nm, and the contour per nucleotide that travels with it is the INEXTENSIBLE 0.65-0.70 nm/nt; the force-spectroscopy Kuhn and the extensible contour are never mixed with them"
+ ],
+ "parameters": {
+  "interhelicalDistanceNm": 2.536,
+  "phosphateRadiusNm": 0.9086378584708424,
+  "measuredStepSouthNm": 0.6644805804152175,
+  "measuredStepSouthSdNm": 0.03616298498847594,
+  "measuredStepSouthP99Nm": 0.7567447527195827,
+  "measuredStepNorthNm": 0.6072335868104746,
+  "helices": 60,
+  "crossSection": "10 x 6",
+  "raster": "102 / 109 (C-0151, drawable)",
+  "builtLoopNucleotidesPerHelix": 28,
+  "nominalWidthNm": 40.0,
+  "hostSheetCrossoverColumnThermal": 7.99969697,
+  "routeATwistCeilingThermal": 8.31368089,
+  "ssdnaContourAtTheBuiltAllowanceNm": "18.2 to 19.6",
+  "selfTestFieldsComparedAgainstT230": 252,
+  "constantsParsedFrom": [
+   "src/main/kotlin/structure/Gen1Tile.kt",
+   "src/main/kotlin/anchoring/MeasuredBackbone.kt"
+  ]
+ },
+ "sources": [
+  {
+   "what": "the honeycomb blocks' per-helix scaffold accounting, its SCOPE over all seven cross-sections, and the two scaffolds",
+   "citation": "Douglas, Marblestone, Teerapittayanon, Vazquez, Church & Shih, Nucleic Acids Research 37:5001-5006 (2009) -- the caDNAno paper",
+   "path": "gpd/data/T-151-sources/PMC2731887-fullTextXML.xml",
+   "readAs": "read directly"
+  },
+  {
+   "what": "the unpaired loops' own STATED PURPOSE, and the alternative to them",
+   "citation": "Ke, Douglas, Liu, Sharma, Cheng, Liu, Yan & Shih, J. Am. Chem. Soc. 131:15903 (2009) -- multilayer DNA origami on a square lattice",
+   "path": "gpd/data/T-246-sources/PMC2821935.txt",
+   "readAs": "read directly"
+  },
+  {
+   "what": "the field's CURRENT anti-stacking remedy, and that it is on the STAPLES",
+   "citation": "DNA Origami Design: A How-To Tutorial (2024)",
+   "path": "gpd/data/T-151-sources/PMC11419732-fullTextXML.xml",
+   "readAs": "read directly"
+  },
+  {
+   "what": "the 28 nt allowance recurring on a second, later honeycomb object",
+   "citation": "Ke, Bellot, Voigt, Fradkov & Shih, Chem. Sci. 3:2587 (2012)",
+   "path": "gpd/data/T-246-sources/PMC3957201.txt",
+   "readAs": "read directly"
+  },
+  {
+   "what": "the honeycomb design rule itself -- the +-5 bp scaffold-crossover rule, the loops' own stated purpose, and that the loops link HELIX ENDS",
+   "citation": "Douglas, Dietz, Liedl, Hogberg, Graf & Shih, Nature 459:414-418 (2009) -- the honeycomb block paper",
+   "path": "gpd/data/T-296-sources/PMC2688462-douglas2009.txt",
+   "readAs": "read directly (main text and Methods; the strand diagrams are in Supplementary Note S2)"
+  },
+  {
+   "what": "the built 10 x 6 block's OWN strand diagram -- where the scaffold turns, where the staples stop, and therefore where the duplex ends",
+   "citation": "Douglas et al., Nature 459:414 (2009), Supplementary Figure S4, `monolith design schematic` -- whose cross-section inset is 10 rows of 6 helices, i.e. THE cross-section this programme recommends, and which the caDNAno paper names as `10 x 6 (analyzed independently in ref. 14)`",
+   "path": "gpd/data/T-296-sources/douglas2009-SI.pdf (page 4); rendered at gpd/data/T-296-sources/T-296-douglas-figS4-left-rim.png and T-296-douglas-figS4-right-rim.png",
+   "readAs": "read directly (rendered from the PDF and read off the axis ticks; the PDF has no usable text layer, so the numbers are read from the figure)"
+  },
+  {
+   "what": "the existence sweep, 30 queries in 9 named families",
+   "citation": "EuropePMC REST search",
+   "path": "gpd/data/T-296-sources/europepmc-queries.json",
+   "readAs": "read directly (titles and abstracts); no full text fetched"
+  }
+ ],
+ "quotations": {
+  "the allotment, and its scope over all seven cross-sections": "The shapes were folded either from a 7560-base scaffold into 60 parallel helices or from an 8064-base scaffold into 64 parallel helices to create number-of-rows versus number-of-helices-per-x-raster-row combinations of 15 x 4, 10 x 6, 8 x 8, 6 x 10, 4 x 16, 3 x 20, 2 x 30. Each helix was allotted 126 bases of scaffold. Of those 126 bases, 98 were paired with complementary staples, and the remaining 28 bases were divided into front and rear unpaired loop fragments at the ends of each helix.",
+  "the loops' own stated PURPOSE": "Unpaired scaffold bases often are introduced at the ends of helices (as unpaired loops) to minimize undesired multimerization.",
+  "and the alternative the same paragraph names": "Alternatively, if a seam composed of scaffold crossovers is implemented on the inside of the structure, then a circular scaffold path can be accommodated without the need for the long unpaired loop.",
+  "how much loop a multilayer origami actually spends": "Target structures were designed so that 90-97% of the scaffold strand should be paired with staple strands. The remaining scaffold material was designed as unpaired loops at the ends of the helices.",
+  "the honeycomb paper's own sentence, and it says OFTEN": "Sometimes staple crossovers are removed at the edges of the shapes to allow adjustment of staple lengths to preferred values. Unpaired scaffold bases often are introduced at the ends of helices to minimize undesired multimerization, or else to accommodate later addition of connecting staple strands that mediate desired multimerization.",
+  "what the built blocks put at a raster turn": "Cylinders represent double helices, with loops of unpaired scaffold strand linking the ends of adjacent helices.",
+  "and the rule that permits the alternative": "Crossovers between adjacent scaffold helices are permitted at positions displaced upstream or downstream of the corresponding staple-crossover points by 5 base pairs or a half-turn. The first steps in the design process are carving away duplex segments from the block to define the target shape, and then introducing scaffold crossovers at a subset of allowed positions so as to create a singular scaffold path that visits all remaining duplex segments.",
+  "the field's current remedy, and it is on the STAPLES": "the exposed cylinder ends at the edges of DNA nanostructures are prone to reversible, low-energy stacking ... it may lead to uncontrolled agglomeration. A tried-and-tested of way to prevent stacking is to place a 4+ base poly-T loop on the staples when they jump between helices at the cylinder ends."
+ },
+ "cheapBound": {
+  "statement": "a turn of n unpaired nucleotides reaches (n + 1) x step, so a turn of ZERO reaches exactly one step -- and the zero-loop turn IS a scaffold crossover, whose span is d - 2 r_P",
+  "alignedSpanNm": 0.718724283,
+  "measuredStepNm": 0.66448058,
+  "sigmaFromTheMeasuredStep": 1.49997857,
+  "insideTheNinetyNinthPercentile": true,
+  "worstAzimuthSpanNm": 4.35327572,
+  "reachBoundAtTheWorstAzimuth": 6,
+  "verdict": "the zero-loop turn is REACHABLE on measured constants alone, at +1.5 sigma of a 13 084-linkage crystallographic survey and inside its 99th percentile -- so nothing covalent refuses it, and the question is entirely one of precedent"
+ },
+ "designs": [
+  {
+   "path": "gpd/designs/gen1-block-honeycomb-10x6-102-109.sc",
+   "grid": "honeycomb",
+   "helices": 60,
+   "strands": 1,
+   "scaffoldStrands": 1,
+   "scaffoldDomains": 60,
+   "scaffoldLoopouts": 0
+  },
+  {
+   "path": "gpd/designs/gen1-sheet-square-15x112.sc",
+   "grid": "square",
+   "helices": 15,
+   "strands": 65,
+   "scaffoldStrands": 1,
+   "scaffoldDomains": 15,
+   "scaffoldLoopouts": 0
+  },
+  {
+   "path": "gpd/designs/third-party/scadnano-origami-rectangle-16x8.sc",
+   "grid": "square",
+   "helices": 16,
+   "strands": 65,
+   "scaffoldStrands": 1,
+   "scaffoldDomains": 31,
+   "scaffoldLoopouts": 0
+  }
+ ],
+ "referenceGenerator": {
+  "available": true,
+  "generator": "scadnano.origami_rectangle.create(num_helices=8, num_cols=16)",
+  "scaffoldStrands": 1,
+  "scaffoldDomains": 15,
+  "scaffoldLoopouts": 0
+ },
+ "builtPrecedent": {
+  "lattice": "honeycomb",
+  "designs": 7,
+  "crossSections": "15 x 4, 10 x 6, 8 x 8, 6 x 10, 4 x 16, 3 x 20, 2 x 30",
+  "allotmentPerHelix": 126,
+  "pairedPerHelix": 98,
+  "unpairedPerHelix": 28,
+  "pairedFraction": 0.777777778,
+  "scopeIsAllSeven": true,
+  "scopeEvidence": "ONE sentence covers all seven -- the list of combinations and the allotment are the same sentence pair, and 60 x 126 = 7560 and 64 x 126 = 8064 are both exact, so the allotment IS the scaffold divided by the helix count",
+  "designsWithZeroLoopRasterTurns": 0,
+  "comparisonPairedFractionSquareLatticeMultilayer": "0.90 to 0.97",
+  "comparisonNote": "the same laboratory, the same year, on the square lattice, built multilayer cuboids at 90-97 % paired -- so the honeycomb blocks' 77.8 % is the SLACK EXTREME of the built multilayer family, not its centre"
+ },
+ "builtGeometry": {
+  "source": "Douglas et al. 2009, Supplementary Figure S4, the monolith = the 10 x 6 block",
+  "readAs": "read directly off the figure's own base-pair axis",
+  "scaffoldOccupies": "14 to 140",
+  "scaffoldNucleotidesPerHelix": 126,
+  "stapledDuplexOccupies": "28 to 126",
+  "duplexBasePairs": 98,
+  "unpairedFlankPerHelixEnd": 14,
+  "unpairedBetweenTwoDUPLEXEnds": 28,
+  "duplexSpanNm": 33.32,
+  "unpairedFlankNm": 4.76,
+  "whereTheCOVALENTLINKSITS": "at base 14 and base 140 -- the ENDS OF THE SCAFFOLD's occupancy, which is 14 bp OUTBOARD of the duplex end at each of the two helices it joins",
+  "whyThisIsNotACOVALENTTIE": "the corpus's tie is a covalent element between two DUPLEX ends at s = +-L/2. In the built block the scaffold does turn without a topological loopout, and the two DUPLEXES it joins are 28 unpaired nucleotides apart -- 14 on each side -- so what stands between the two rim nodes is ssDNA, not a bond. C-0147's 28 nt tether is the right object and the figure confirms where it sits",
+  "andWhyTheBLOCKCANBEUNIFORM": "an unpaired base has no azimuth, so the +-5 bp residue condition cannot bind a turn flanked by 14 unpaired nucleotides -- which is exactly how a block whose turn sense alternates is folded with all sixty helices at ONE length. The built design BUYS freedom from the residue condition and PAYS 28 nt of scaffold for it; route A pays no scaffold and must satisfy the condition, which is why C-0151's raster is two-length",
+  "reproducesThePapersAccounting": true
+ },
+ "motifCensus": [
+  {
+   "statement": "the covalent link a zero-loop turn needs is REACHABLE",
+   "lattice": "honeycomb",
+   "status": "DERIVED, on measured constants alone",
+   "evidence": "d - 2 r_P = 0.718724283 nm against T-71's measured C2'-endo phosphodiester step, +1.5 sigma and inside the 99th percentile of 13 084 crystallographic linkages"
+  },
+  {
+   "statement": "a scaffold crossover at a HELIX END, i.e. a raster turn with zero unpaired scaffold",
+   "lattice": "square, single layer",
+   "status": "DEMONSTRATED, and it is the field's reference default",
+   "evidence": "scadnano's own origami_rectangle generator emits Rothemund's rectangle with 15 scaffold domains and ZERO loopouts, and Rothemund's rectangles are the most-folded objects in the field"
+  },
+  {
+   "statement": "a scaffold crossover between two adjacent HONEYCOMB helices",
+   "lattice": "honeycomb",
+   "status": "DEMONSTRATED, at INTERIOR positions",
+   "evidence": "the +-5 bp rule is the honeycomb design method's own primitive for stepping the scaffold path between helices -- READ DIRECTLY from Douglas et al. 2009 -- and the six shapes built by it fold"
+  },
+  {
+   "statement": "a scaffold turn at a rim with NO topological loopout, on the honeycomb",
+   "lattice": "honeycomb",
+   "status": "DEMONSTRATED -- and it does NOT make a covalent tie",
+   "evidence": "the built 10 x 6 block's own strand diagram turns the scaffold at base 14 and base 140 with no loopout drawn; what makes it a tether rather than a tie is that the 14 bases nearest the turn on each helix carry no staple, so the two DUPLEX ends are 28 nt apart"
+  },
+  {
+   "statement": "the CONJUNCTION: a scaffold crossover at a DUPLEX end on the honeycomb lattice, i.e. a zero-loop raster turn",
+   "lattice": "honeycomb",
+   "status": "NOT FOUND",
+   "evidence": "30 queries in 9 named families return 186 unique records, 7 of which name the honeycomb lattice and none of which reports one; the seven built honeycomb blocks all leave 14 unpaired bases at every helix end, and their own paper says so in as many words AND draws it"
+  }
+ ],
+ "scaffoldBudget": [
+  {
+   "scaffold": "M13mp18",
+   "nucleotides": 7249,
+   "raster": "102 / 109 (C-0151, the drawable two-length raster)",
+   "pairedNucleotides": 6330,
+   "atTheBuiltAllowanceRequired": 8010,
+   "atTheBuiltAllowanceSpare": -761,
+   "atTheBuiltAllowanceFits": false,
+   "largestAffordableLoopPerTurn": 15
+  },
+  {
+   "scaffold": "p7560 -- the 60-helix designs, including (i) 15 x 4 and (ii) 10 x 6",
+   "nucleotides": 7560,
+   "raster": "102 / 109 (C-0151, the drawable two-length raster)",
+   "pairedNucleotides": 6330,
+   "atTheBuiltAllowanceRequired": 8010,
+   "atTheBuiltAllowanceSpare": -450,
+   "atTheBuiltAllowanceFits": false,
+   "largestAffordableLoopPerTurn": 20
+  },
+  {
+   "scaffold": "p8064 -- the 64-helix designs",
+   "nucleotides": 8064,
+   "raster": "102 / 109 (C-0151, the drawable two-length raster)",
+   "pairedNucleotides": 6330,
+   "atTheBuiltAllowanceRequired": 8010,
+   "atTheBuiltAllowanceSpare": 54,
+   "atTheBuiltAllowanceFits": true,
+   "largestAffordableLoopPerTurn": 28
+  }
+ ],
+ "routeB": [
+  {
+   "scaffold": "M13mp18",
+   "nucleotides": 7249,
+   "loopPerTurn": 28,
+   "loopProvenance": "the caDNAno blocks' own 126 = 98 + 28 allotment, READ DIRECTLY",
+   "maximumUniformRowBasePairs": 92,
+   "rowSpanNm": 31.28,
+   "departureFromNominalPercent": -21.8
+  },
+  {
+   "scaffold": "M13mp18",
+   "nucleotides": 7249,
+   "loopPerTurn": 6,
+   "loopProvenance": "this task's re-derived reach bound at the worst azimuth",
+   "maximumUniformRowBasePairs": 114,
+   "rowSpanNm": 38.76,
+   "departureFromNominalPercent": -3.1
+  },
+  {
+   "scaffold": "p7560 -- the 60-helix designs, including (i) 15 x 4 and (ii) 10 x 6",
+   "nucleotides": 7560,
+   "loopPerTurn": 28,
+   "loopProvenance": "the caDNAno blocks' own 126 = 98 + 28 allotment, READ DIRECTLY",
+   "maximumUniformRowBasePairs": 98,
+   "rowSpanNm": 33.32,
+   "departureFromNominalPercent": -16.7
+  },
+  {
+   "scaffold": "p7560 -- the 60-helix designs, including (i) 15 x 4 and (ii) 10 x 6",
+   "nucleotides": 7560,
+   "loopPerTurn": 6,
+   "loopProvenance": "this task's re-derived reach bound at the worst azimuth",
+   "maximumUniformRowBasePairs": 120,
+   "rowSpanNm": 40.8,
+   "departureFromNominalPercent": 2.0
+  },
+  {
+   "scaffold": "p8064 -- the 64-helix designs",
+   "nucleotides": 8064,
+   "loopPerTurn": 28,
+   "loopProvenance": "the caDNAno blocks' own 126 = 98 + 28 allotment, READ DIRECTLY",
+   "maximumUniformRowBasePairs": 106,
+   "rowSpanNm": 36.04,
+   "departureFromNominalPercent": -9.9
+  },
+  {
+   "scaffold": "p8064 -- the 64-helix designs",
+   "nucleotides": 8064,
+   "loopPerTurn": 6,
+   "loopProvenance": "this task's re-derived reach bound at the worst azimuth",
+   "maximumUniformRowBasePairs": 128,
+   "rowSpanNm": 43.52,
+   "departureFromNominalPercent": 8.8
+  }
+ ],
+ "loops": [
+  {
+   "unpairedNucleotidesPerTurn": 15,
+   "kuhnLength": 2.1,
+   "contourPerNucleotide": 0.65,
+   "spanNm": 4.35327572,
+   "contourLength": 9.75,
+   "extensionRatio": 0.446489817,
+   "tensionPicoNewton": 3.03288672,
+   "freeEnergyThermal": 1.48373364,
+   "spanCase": "worst azimuth"
+  },
+  {
+   "unpairedNucleotidesPerTurn": 15,
+   "kuhnLength": 2.1,
+   "contourPerNucleotide": 0.7,
+   "spanNm": 4.35327572,
+   "contourLength": 10.5,
+   "extensionRatio": 0.414597687,
+   "tensionPicoNewton": 2.75615821,
+   "freeEnergyThermal": 1.3639726,
+   "spanCase": "worst azimuth"
+  },
+  {
+   "unpairedNucleotidesPerTurn": 15,
+   "kuhnLength": 2.84,
+   "contourPerNucleotide": 0.65,
+   "spanNm": 4.35327572,
+   "contourLength": 9.75,
+   "extensionRatio": 0.446489817,
+   "tensionPicoNewton": 2.24262751,
+   "freeEnergyThermal": 1.09712698,
+   "spanCase": "worst azimuth"
+  },
+  {
+   "unpairedNucleotidesPerTurn": 15,
+   "kuhnLength": 2.84,
+   "contourPerNucleotide": 0.7,
+   "spanNm": 4.35327572,
+   "contourLength": 10.5,
+   "extensionRatio": 0.414597687,
+   "tensionPicoNewton": 2.03800431,
+   "freeEnergyThermal": 1.00857129,
+   "spanCase": "worst azimuth"
+  },
+  {
+   "unpairedNucleotidesPerTurn": 20,
+   "kuhnLength": 2.1,
+   "contourPerNucleotide": 0.65,
+   "spanNm": 4.35327572,
+   "contourLength": 13.0,
+   "extensionRatio": 0.334867363,
+   "tensionPicoNewton": 2.13070196,
+   "freeEnergyThermal": 1.07900034,
+   "spanCase": "worst azimuth"
+  },
+  {
+   "unpairedNucleotidesPerTurn": 20,
+   "kuhnLength": 2.1,
+   "contourPerNucleotide": 0.7,
+   "spanNm": 4.35327572,
+   "contourLength": 14.0,
+   "extensionRatio": 0.310948265,
+   "tensionPicoNewton": 1.95745816,
+   "freeEnergyThermal": 0.996778595,
+   "spanCase": "worst azimuth"
+  },
+  {
+   "unpairedNucleotidesPerTurn": 20,
+   "kuhnLength": 2.84,
+   "contourPerNucleotide": 0.65,
+   "spanNm": 4.35327572,
+   "contourLength": 13.0,
+   "extensionRatio": 0.334867363,
+   "tensionPicoNewton": 1.57551905,
+   "freeEnergyThermal": 0.797852361,
+   "spanCase": "worst azimuth"
+  },
+  {
+   "unpairedNucleotidesPerTurn": 20,
+   "kuhnLength": 2.84,
+   "contourPerNucleotide": 0.7,
+   "spanNm": 4.35327572,
+   "contourLength": 14.0,
+   "extensionRatio": 0.310948265,
+   "tensionPicoNewton": 1.44741624,
+   "freeEnergyThermal": 0.737054595,
+   "spanCase": "worst azimuth"
+  },
+  {
+   "unpairedNucleotidesPerTurn": 28,
+   "kuhnLength": 2.1,
+   "contourPerNucleotide": 0.65,
+   "spanNm": 4.35327572,
+   "contourLength": 18.2,
+   "extensionRatio": 0.239190973,
+   "tensionPicoNewton": 1.46667915,
+   "freeEnergyThermal": 0.7570064,
+   "spanCase": "worst azimuth"
+  },
+  {
+   "unpairedNucleotidesPerTurn": 28,
+   "kuhnLength": 2.1,
+   "contourPerNucleotide": 0.7,
+   "spanNm": 4.35327572,
+   "contourLength": 19.6,
+   "extensionRatio": 0.222105904,
+   "tensionPicoNewton": 1.35502141,
+   "freeEnergyThermal": 0.701184986,
+   "spanCase": "worst azimuth"
+  },
+  {
+   "unpairedNucleotidesPerTurn": 28,
+   "kuhnLength": 2.84,
+   "contourPerNucleotide": 0.65,
+   "spanNm": 4.35327572,
+   "contourLength": 18.2,
+   "extensionRatio": 0.239190973,
+   "tensionPicoNewton": 1.08451627,
+   "freeEnergyThermal": 0.559758253,
+   "spanCase": "worst azimuth"
+  },
+  {
+   "unpairedNucleotidesPerTurn": 28,
+   "kuhnLength": 2.84,
+   "contourPerNucleotide": 0.7,
+   "spanNm": 4.35327572,
+   "contourLength": 19.6,
+   "extensionRatio": 0.222105904,
+   "tensionPicoNewton": 1.00195245,
+   "freeEnergyThermal": 0.518481856,
+   "spanCase": "worst azimuth"
+  }
+ ],
+ "blockEnergy": [
+  {
+   "unpairedNucleotidesPerTurn": 15,
+   "turns": 59,
+   "perTurnThermalLow": 1.00857129,
+   "perTurnThermalHigh": 1.48373364,
+   "overTheBlockThermalLow": 59.5057061,
+   "overTheBlockThermalHigh": 87.5402845,
+   "againstTheTwistCeilingLow": 7.15756436,
+   "againstTheTwistCeilingHigh": 10.5296662,
+   "inHostSheetCrossoverColumnsLow": 7.43849502,
+   "inHostSheetCrossoverColumnsHigh": 10.9429501,
+   "tensionPicoNewtonLow": 2.03800431,
+   "tensionPicoNewtonHigh": 3.03288672
+  },
+  {
+   "unpairedNucleotidesPerTurn": 20,
+   "turns": 59,
+   "perTurnThermalLow": 0.737054595,
+   "perTurnThermalHigh": 1.07900034,
+   "overTheBlockThermalLow": 43.4862211,
+   "overTheBlockThermalHigh": 63.6610198,
+   "againstTheTwistCeilingLow": 5.23068201,
+   "againstTheTwistCeilingHigh": 7.65738072,
+   "inHostSheetCrossoverColumnsLow": 5.43598355,
+   "inHostSheetCrossoverColumnsHigh": 7.95792891,
+   "tensionPicoNewtonLow": 1.44741624,
+   "tensionPicoNewtonHigh": 2.13070196
+  },
+  {
+   "unpairedNucleotidesPerTurn": 28,
+   "turns": 59,
+   "perTurnThermalLow": 0.518481856,
+   "perTurnThermalHigh": 0.7570064,
+   "overTheBlockThermalLow": 30.5904295,
+   "overTheBlockThermalHigh": 44.6633776,
+   "againstTheTwistCeilingLow": 3.67952895,
+   "againstTheTwistCeilingHigh": 5.37227471,
+   "inHostSheetCrossoverColumnsLow": 3.82394853,
+   "inHostSheetCrossoverColumnsHigh": 5.58313368,
+   "tensionPicoNewtonLow": 1.00195245,
+   "tensionPicoNewtonHigh": 1.46667915
+  }
+ ],
+ "conditional": [
+  {
+   "claim": "C-0175 section 9 -- the 59 turn ties",
+   "onRouteA": "the recommended block dishes 0.0446459684 of the stroke with the ties against 0.0501417316 without them, a ratio of 0.890395426",
+   "onRouteB": "there are no ties: the free tile is 0.0501417316, which is C-0167's own untied reference",
+   "whatSurvives": "the untied column, which is C-0167's own and was never in doubt",
+   "whatDoesNot": "the 1.12x, the 435 + 59 element split, and every number taken on it"
+  },
+  {
+   "claim": "C-0175 section 8 / CH-0228 -- the allowed 8.57142857 degree prestrain",
+   "onRouteA": "a triangle-inequality ceiling of 0.0764244991 of the stroke over all 59 turns",
+   "onRouteB": "no covalent tie carries an azimuth, so the load does not exist",
+   "whatSurvives": "nothing of the load; the free tile stands at the untied value",
+   "whatDoesNot": "the ceiling, the 59-site census and the three swept sign assignments"
+  },
+  {
+   "claim": "C-0180 section 4 -- the coupled recovery",
+   "onRouteA": "2 of 64 flat at the 90th percentile",
+   "onRouteB": "0 of 64 -- C-0167's own 0 of 64, reproduced",
+   "whatSurvives": "C-0167's 0 of 64, which is what the untied lattice already said",
+   "whatDoesNot": "the two recovered cells, The tightest tied cell is 0.0995744767 at abstract grid, 3 x 10 = 30 paths, rim-graded 5:1, f = 0.3. and 0.902845544 to 0.988116016"
+  },
+  {
+   "claim": "C-0190 -- the per-beam twist that replaces the roll",
+   "onRouteA": "0 of 64; free tile 0.296735462 of the stroke at f = 0.30, phase +1",
+   "onRouteB": "a tether demands NO azimuth at either end, so there is no roll to be common-mode and no twist to replace it",
+   "whatSurvives": "the geometry -- CH-0240's antipodality and the u* = 1.37990892 stationary point",
+   "whatDoesNot": "the 17.1428571 degree demand, the 8.31368089 kT ceiling and the 0 of 64 grading"
+  },
+  {
+   "claim": "C-0151 / C-0148 -- the drawable raster and its b0",
+   "onRouteA": "102 / 109 is selected BECAUSE it closes on caDNAno's +-5 bp rule",
+   "onRouteB": "a turn through unpaired scaffold is not a crossover, so no residue condition binds it and every row length is admissible",
+   "whatSurvives": "the closure arithmetic, as a statement about route A",
+   "whatDoesNot": "its status as a SELECTION -- on route B there is nothing to select against"
+  }
+ ],
+ "verdict": {
+  "isTheZeroLoopTurnREACHABLE": true,
+  "isItDRAWABLE": true,
+  "drawableEvidence": "this repository's own committed gen1-block-honeycomb-10x6-102-109.sc carries one scaffold strand, 60 domains and ZERO loopouts, and C-0151 shows the 102 / 109 raster closes on caDNAno's +-5 bp rule with zero forced crossovers",
+  "isItBUILTOnTheHoneycombLattice": false,
+  "publishedHoneycombDesignsWithZeroLoopRasterTurns": 0,
+  "yieldEvidenceOnTheHoneycombLattice": "none, in either direction",
+  "yieldEvidenceOnAnotherLattice": "the single-layer square lattice, where the raster turn IS this motif: the field's own reference generator emits it with zero loopouts, and Rothemund's rectangles are the most-folded objects in the field",
+  "theLoopsStatedPurpose": "to minimize undesired multimerization -- NOT turn closure",
+  "canRouteADischargeThatPurpose": "yes, and on the staples: the field's current tutorial calls a 4+ base poly-T loop on the staples at the cylinder ends tried-and-tested, which costs zero scaffold",
+  "theTwoDesignsAreSeparatedByTheSCAFFOLD": true,
+  "atTheBuiltAllowanceTheDrawableRasterNeeds": "p8064 -- the 64-helix designs",
+  "atTheBuiltAllowanceM13Shortfall": 761,
+  "atTheBuiltAllowanceP8064Spare": 54,
+  "largestLoopM13AffordsOnTheDrawableRaster": 15,
+  "answer": "route A is reachable, drawable and lattice-legal, and it is NOT built: no published honeycomb origami turns its raster with zero unpaired scaffold, and the seven that exist all spend 28 nt per helix for a stated reason that is aggregation and not closure. So C-0175 section 9, C-0180 section 4 and C-0190 are claims about a DRAWABLE design that nobody has folded, and each is conditional on exactly the numbers listed under `conditional`"
+ },
+ "existenceSweep": {
+  "available": true,
+  "queries": 30,
+  "families": 9,
+  "totalHitsReturned": 348,
+  "queryStringsRetainedAt": "gpd/data/T-296-sources/query.py",
+  "recordsRetainedAt": "gpd/data/T-296-sources/europepmc-queries.json"
+ },
+ "reproductions": [
+  {
+   "what": "C-0147's aligned turn span, the n = 0 case that IS a scaffold crossover",
+   "here": 0.718724283,
+   "there": 0.718724283,
+   "relativeDeparture": 8.1e-11,
+   "source": "gpd/results/T-230-honeycomb-turn-loop-slack.json"
+  },
+  {
+   "what": "its distance from the MEASURED C2'-endo phosphodiester step, in sigma",
+   "here": 1.49997857,
+   "there": 1.49997857,
+   "relativeDeparture": 2.5e-09,
+   "source": "gpd/results/T-230-honeycomb-turn-loop-slack.json"
+  },
+  {
+   "what": "the worst-azimuth span, d + 2 r_P",
+   "here": 4.35327572,
+   "there": 4.35327572,
+   "relativeDeparture": 7e-10,
+   "source": "gpd/results/T-230-honeycomb-turn-loop-slack.json"
+  },
+  {
+   "what": "the reach bound at the worst azimuth, in nucleotides",
+   "here": 6.0,
+   "there": 6.0,
+   "relativeDeparture": 0.0,
+   "source": "gpd/results/T-230-honeycomb-turn-loop-slack.json"
+  },
+  {
+   "what": "the drawable raster's paired scaffold on 10 x 6",
+   "here": 6330.0,
+   "there": 6330.0,
+   "relativeDeparture": 0.0,
+   "source": "gpd/results/T-245-closing-raster-selection.json"
+  },
+  {
+   "what": "its spare on M13mp18",
+   "here": 919.0,
+   "there": 919.0,
+   "relativeDeparture": 0.0,
+   "source": "gpd/results/T-245-closing-raster-selection.json"
+  },
+  {
+   "what": "C-0151's own 15 nt per helix afforded by M13 at 102 / 109",
+   "here": 15.0,
+   "there": 15.0,
+   "relativeDeparture": 0.0,
+   "source": "gpd/results/T-245-closing-raster-selection.json, findings/THE_BUDGETS"
+  },
+  {
+   "what": "C-0140's widest uniform row on M13 at the built allowance",
+   "here": 92.0,
+   "there": 92.0,
+   "relativeDeparture": 0.0,
+   "source": "gpd/results/T-230-honeycomb-turn-loop-slack.json"
+  },
+  {
+   "what": "the built turn's tension at the worst azimuth, the tight end of the bracket",
+   "here": 1.46667915,
+   "there": 1.46667915,
+   "relativeDeparture": 3.4e-10,
+   "source": "gpd/results/T-230-honeycomb-turn-loop-slack.json, loops"
+  },
+  {
+   "what": "the built turn's stored free energy, the loose end of the bracket",
+   "here": 0.518481856,
+   "there": 0.518481856,
+   "relativeDeparture": 2e-10,
+   "source": "gpd/results/T-230-honeycomb-turn-loop-slack.json, loops"
+  },
+  {
+   "what": "the caDNAno blocks' own accounting, 98 + 28 against 126",
+   "here": 126.0,
+   "there": 126.0,
+   "relativeDeparture": 0.0,
+   "source": "gpd/data/T-151-sources/PMC2731887-fullTextXML.xml"
+  },
+  {
+   "what": "60 helices at that allotment against p7560, and 64 against p8064",
+   "here": 7560.0,
+   "there": 7560.0,
+   "relativeDeparture": 0.0,
+   "source": "gpd/data/T-151-sources/PMC2731887-fullTextXML.xml"
+  }
+ ],
+ "falsifiers": [
+  {
+   "id": "F1",
+   "statement": "the n = 0 span falls OUTSIDE the measured step's 99th percentile, so the zero-loop turn is not reachable and the answer is `they cannot`",
+   "fired": false,
+   "evidence": "d - 2 r_P = 0.718724283 nm against a measured C2'-endo step of 0.66448058 +- 0.036162985 and a 99th percentile of 0.756744753: +1.5 sigma and inside"
+  },
+  {
+   "id": "F2",
+   "statement": "the committed honeycomb .sc carries a loopout, so the corpus's own artifact is not the design it claims",
+   "fired": false,
+   "evidence": "one scaffold strand, 60 domains, 0 loopouts"
+  },
+  {
+   "id": "F3",
+   "statement": "the 126 = 98 + 28 allotment is design-specific rather than covering all seven cross-sections",
+   "fired": false,
+   "evidence": "ONE sentence names all seven combinations and the allotment; 60 x 126 = 7560 and 64 x 126 = 8064 are both exact, so the allotment IS the scaffold divided by the helix count, and Figure S4 draws it"
+  },
+  {
+   "id": "F4",
+   "statement": "a published honeycomb origami with zero-loop raster turns is found, so the answer is `they can, with yield evidence`",
+   "declared": "OPEN",
+   "fired": false,
+   "evidence": "30 queries in 9 named families, 186 unique records, 7 naming the honeycomb lattice, 0 reporting a honeycomb raster turn between two DUPLEX ends; and the one design whose strand diagram was read puts 14 unpaired bases at every helix end"
+  },
+  {
+   "id": "F5",
+   "statement": "the primary source names turn CLOSURE as the loops' purpose, so the loops are load-bearing and the answer is `they cannot`",
+   "fired": false,
+   "evidence": "Douglas et al. 2009 verbatim: `Unpaired scaffold bases OFTEN are introduced at the ends of helices TO MINIMIZE UNDESIRED MULTIMERIZATION, or else to accommodate later addition of connecting staple strands that mediate desired multimerization` -- an aggregation remedy and an assembly handle, and the word is `often`"
+  },
+  {
+   "id": "F6",
+   "statement": "at the built 28 nt allowance the drawable 102 / 109 raster fits M13mp18, so the two designs are not separated by the scaffold",
+   "declared": "OPEN",
+   "fired": false,
+   "evidence": "it needs 8010 nt and M13mp18 has 7249: short by 761. p7560 is short by 450 and p8064 has 54 spare"
+  },
+  {
+   "id": "F7",
+   "statement": "removing the 59 ties reverses a flatness verdict at the FREE-TILE level, so the conditionality is not merely quantitative",
+   "declared": "OPEN",
+   "fired": false,
+   "evidence": "0.0501417316 untied against 0.0446459684 tied, both inside T-5b's 0.10. At the COUPLED level the verdict does move, and that is C-0180's own 2 of 64 against 0 of 64 -- C-0167's own 0 of 64, reproduced read backwards"
+  }
+ ],
+ "findings": {
+  "THE_CHEAP_BOUND_DOES_NOT_REFUSE": "d - 2 r_P = 0.718724283 nm sits at +1.5 sigma of T-71's MEASURED C2'-endo phosphodiester step and inside its 99th percentile, so nothing covalent forbids a honeycomb raster turn with zero unpaired nucleotides. The question was never geometry.",
+  "AND_NEITHER_DOES_THE_TOOL": "this repository's own committed gen1-block-honeycomb-10x6-102-109.sc carries one scaffold strand, 60 domains and ZERO loopouts, and the field's own reference generator emits Rothemund's rectangle the same way. The motif is the reference default on the square lattice.",
+  "WHAT_THE_BUILT_BLOCK_ACTUALLY_DOES": "read off Figure S4 of the paper that built the 10 x 6 block: the scaffold occupies bases 14 to 140 of each helix -- 126, exactly the allotment -- and the staples occupy 28 to 126, exactly the 98. So the scaffold TURNS at the rim with no topological loopout, and the two DUPLEX ends it joins are 28 unpaired nucleotides apart, 14 on each side. The tether is real and the figure says where it sits: the covalent link is 14 bp = 4.76 nm OUTBOARD of the duplex end.",
+  "AND_WHY_THAT_IS_A_PURCHASE_RATHER_THAN_A_NECESSITY": "an unpaired base has no azimuth, so caDNAno's +-5 bp residue condition cannot bind a turn flanked by unpaired scaffold. The built block BUYS a uniform 98 bp row on a lattice that carries both turn senses, and PAYS 28 nt per helix for it. Route A pays no scaffold and must close the residue condition instead, which is exactly why C-0151's raster is two-length.",
+  "THE_LOOPS_STATED_PURPOSE_IS_NOT_CLOSURE": "Douglas et al. 2009 and Ke et al. 2009 carry the same sentence: unpaired scaffold bases OFTEN are introduced at the ends of helices TO MINIMIZE UNDESIRED MULTIMERIZATION. That is an aggregation remedy, and the field's current tutorial calls a 4+ base poly-T loop ON THE STAPLES at the cylinder ends tried-and-tested -- a remedy that costs zero scaffold. So route A does not have to leave the purpose undischarged.",
+  "AND_28_nt_IS_THE_SLACK_EXTREME_OF_THE_BUILT_FAMILY": "the honeycomb blocks are 98/126 = 77.8 %% paired; the same laboratory in the same year built multilayer square-lattice cuboids at 90-97 %% paired. 28 nt is not the centre of the built multilayer practice, it is its slack end.",
+  "THE_TWO_DESIGNS_ARE_SEPARATED_BY_THE_SCAFFOLD": "on C-0151's drawable 102 / 109 raster the paired total is 6330 nt. At the built 28 nt allowance the block needs 8010 and M13mp18 is short by 761, p7560 by 450, and p8064 has 54 spare -- so the built allowance on the recommended raster is a p8064 design and not an M13 one. Inverted, M13 affords 15 nt per turn, p7560 20 and p8064 exactly the built 28.",
+  "AND_A_TETHER_IS_NOT_FREE_EITHER": "at M13's 15 nt affordance the turn carries 2.03800431-3.03288672 pN and stores 1.00857129-1.48373364 k_BT, so the 59 turns store 59.5057061-87.5402845 k_BT over the block -- 7.15756436 to 10.5296662 times C-0190's whole rigid-duplex twist ceiling for route A, and 7.43849502 to 10.9429501 crossover columns of the host sheet C-0079 measures. Route B's turn set is the more expensive of the two in stored energy, on this scaffold.",
+  "THE_ANSWER": "route A is reachable, drawable and lattice-legal, and NOBODY HAS FOLDED IT ON THE HONEYCOMB. The built precedent is unanimous the other way at 7 of 7 cross-sections, for a stated reason that is aggregation and not closure. So C-0175 section 9, C-0180 section 4 and C-0190 are correct about a design that has not been demonstrated, and each is conditional on exactly what `conditional` lists."
+ },
+ "validity": [
+  "TRL 1-3. The drawability verdict is a statement about a DESIGN FILE and a LATTICE RULE; the folding verdict is a statement about the LITERATURE. Neither is a folding experiment, and this repository cannot run one.",
+  "A negative existence result is only as strong as its query set. The 30 query strings are retained in gpd/data/T-296-sources/query.py and one paper naming a honeycomb-lattice origami whose raster turns carry no unpaired scaffold refutes it.",
+  "The reach bound reads the crossover span as d - 2 r_P, the two backbones antipodal on the line of centres. That is C-0147's convention and it is a BRACKET END: the measured interhelical distance is a Bragg lattice constant, and CLAUDE.md records that the LOCAL separation at a crossover is smaller. Reading it the other way makes the span shorter and the turn easier, so the verdict has a known sign.",
+  "The scaffold budget assumes the loop is spent UNIFORMLY, L/2 at each helix end, which is how the built blocks spend theirs. A design that pays only at the turns that need it would afford more.",
+  "Nothing here re-opens the raster, the cross-section, the placement search, the distribution rule or any number of C-0175, C-0180 or C-0190 -- every one of those is correct about route A. What is established is which design they are about."
+ ],
+ "openQuestions": [
+  "Whether route B's tile is gradable at all at section 3's footprint. At the built allowance a uniform honeycomb row is 92 bp = 31.28 nm on M13mp18 and 106 bp = 36.04 nm on p8064, so route B and the 40 nm nominal are in tension before any mechanics is run.",
+  "What a 15 nt tether turn does to the block MECHANICALLY. It is not a tie and it is not nothing: it is a one-sided entropic element between two helix ends, and no lattice in this repository carries one.",
+  "Whether a staple-side poly-T at the rim is available at every rim helix end of the recommended block, given that CLAUDE.md records an anti-stacking remedy and a duplex-end JOINT competing for the same two strand termini."
+ ]
+}
