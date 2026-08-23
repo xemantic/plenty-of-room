@@ -11558,6 +11558,20 @@ would think it needs — class, family, line, token, `why` — keys on an **empt
 regeneration reports *"no longer matches any occurrence"*, which reads as *the line has since been
 rewritten* when the line is untouched. Build the override from the census's own record.
 
+### The debt line behaved the way `C-0179` says a repair pass should
+
+`T-234`'s advisory line opened the iteration at **24 of 88 = 0.272727273** and closed it at
+**24 of 93 = 0.258064516**: the count held while the denominator grew, so the **ratio fell**. That is
+the reading `C-0179` says does not fall when the documents are merely corrected, and it fell — which
+is the argument for publishing the ratio beside the count rather than instead of it.
+
+It took work to keep it there. The iteration-46 restatement carrying `C-0193` into `ANSWERS.md`
+introduced **four** `p8064` occurrences, every one a scaffold **length in a forward budget** for an
+**unbuilt** tile, and the census classified all four `MOVED` — because `SCAFFOLD` is a bare pattern
+with **no line context and no refinement**, unlike `WIDTH` and `PLACEMENT`. Unmanaged the pass would
+have read **28 of 93 = 0.301075269**. So the family's missing refinement is worth **four points of
+the published debt ratio**, and that measurement is what `T-300` is for.
+
 ### What is open next
 
 `T-299` — the tether re-grade, which is what `C-0193` now conditions every honeycomb tie number on —
