@@ -11395,3 +11395,112 @@ and both precedents in that very table moved the row.
 - **A mistyped `cp` put a copy of a model inside the test source set**, where Kotlin binds to it with
   no redeclaration error and six mutations survive in one file. The harness said so; nothing else could
   have.
+
+## Iteration 46 — 2026-08-23: the built turn is a third object, a gate blind to one word, and three populations that grow when the loop works
+
+Four agents in parallel plus three coordinator tasks. Agent A took `T-296` (**HIGH**), agent B
+`T-297` (`CH-0242`), agent C `T-295`, and agent D was spawned mid-iteration on idle capacity for
+`T-255`. The coordinator took `T-293`, `T-261` and `T-252` in the main context between waves, and
+owned every commit.
+
+### `T-296`/`C-0193`: the built honeycomb turn is neither of the two designs the corpus had graded
+
+`C-0175` models a raster turn as *"a turn carrying **zero** unpaired nucleotides"*, which **is** a
+scaffold crossover, and that is what makes it a covalent tie at `s = ±L/2` — the whole `435 + 59`
+element split, the `1.12×` stiffness, `CH-0228`'s prestrain and `C-0190`'s twist all follow from it.
+`CLAUDE.md` already recorded the other reading: the built honeycomb blocks allot **126 nt per helix,
+98 paired and 28 as front and rear unpaired loops**. The task was framed as a fork.
+
+**It is a trichotomy, and the third answer was read off a rendered figure.** Douglas et al.'s
+Supplementary Fig. S4 is the monolith, whose cross-section inset **is** the `10 × 6`. Off its own
+base-pair axis the **scaffold** occupies `14 → 140` of every helix — **126**, the allotment — and the
+**staples** `28 → 126` — **98**, the paired count. So the scaffold **does** turn at the rim with no
+topological loopout, and the two **duplex** ends it joins are 28 nt apart, **14 on each side**: the
+built covalent link sits **`14 bp = 4.76 nm` outboard of the duplex end, on both helices**.
+**The distinction is the STAPLES, not the scaffold** — and neither `C-0175`'s tie nor a flexible loop
+between two duplex ends is that object.
+
+Nothing refuses the zero-loop turn: `d − 2r_P = 0.718724283 nm` at **`+1.49997857 σ`** of `T-71`'s
+measured C2′-endo step, inside its 99th percentile; the `102 / 109` raster closes on caDNAno's own
+`±5 bp` rule; the tool draws it. What refuses it is that **nobody has folded it** — `0` of `186`
+unique records over `30` queries in `9` families, and `7 of 7` built cross-sections do the other
+thing. The loops' own stated purpose is *"to minimize undesired multimerization"*, not closure.
+
+What the 28 nt **buys** is lattice freedom, because **an unpaired base has no azimuth**: no residue
+condition binds a turn flanked by unpaired scaffold, which is how the built block folds at **one**
+uniform row length where the drawable zero-loop raster must be **two-length**. And the two routes are
+separated by the **scaffold**: the built allowance needs **8 010 nt**, so M13mp18 is short by 761,
+p7560 by 450, and **p8064 has 54 spare**. A tether is not free either — at M13's 15 nt the 59 turns
+store `59.5057061–87.5402845 k_BT`, **`7.15756436–10.5296662×`** `C-0190`'s whole ceiling.
+
+**So no number moves and a CONDITION does.** `C-0175`, `C-0180` and `C-0190` are correct about a
+**drawable, undemonstrated** design; the untied readings are not the alternative either, because
+route B is a **tether** and no lattice here carries one. `CH-0247` raised, `T-299` opened.
+
+Three of its five sources were already in `gpd/data/` and were not fetched at all — the fourth time
+*check `gpd/data/` first* has paid.
+
+### `T-295`/`C-0195`: 276 mutations, 276 fixture-backed — and the state that raised the task never existed
+
+`C-0192` §8 found that repairing 21 queue rows took a mutation harness from 0 survivors to 1 on a
+**correct** predicate, because the committed queue was the only input on which *leftmost verdict* and
+*last verdict* differ. The instrument built for it is a **paired experiment**, not a reading: every
+harness runs unmodified in a faithful copy of the tree and in one with every committed artifact
+outside `tools/` emptied (**1 672** files). Killed in both is a **fixture**; killed only in the
+faithful copy is the **corpus**. **276 mutations over 13 harnesses, 276 fixture-backed, 0
+corpus-dependent**, wired in `tools/verify.sh`, about four minutes.
+
+The **static** route — read each harness's own printed killer list — was priced first and **refused
+on a measurement**: several harnesses print only the first two killers per row, truncated at 110
+characters, so the complete killer set the question needs is in no harness's output.
+
+And `CH-0250` is the sharper half. Run against `git archive 7f7957d`, `C-0192`'s survivor reads
+**FIXTURE**: two killers faithful, one with the corpus emptied, and the extra killer is a
+**constructed** two-verdict row asserted to exit **0**. `T-292` promoted that arm, which required
+**inverting** the assertion to *exits 1* — and **an assertion that an exit code is 1 cannot detect an
+additional defect, because exit codes saturate**. So the corpus-only state `C-0192` §8 describes
+existed at **no committed state of this repository**; `T-292` made it itself. Everything `C-0192`
+computed is upheld.
+
+### The coordinator's three, and the pattern they turned out to share
+
+`T-293`/`C-0196` closed the third and last sign of *a name asserts nothing*: the census's
+**refinement window** now reads the same blanked text the match (`T-285`) and the line context
+(`T-287`) do. The row was awkward because its in-scope effect is **zero**, and the discriminator is
+its own cheap bound: over the **1 727** basenames tracked at the recorded ref the five governing-word
+patterns score **81** slug hits, because **a corpus names its files after exactly the concepts its
+predicates read for**. So the zero is *rare*, not *structural*. The named-test objection dissolved
+the same way — the corpus's own single instance is a real string.
+
+`T-261`/`C-0197`: the arm `T-261` asks for **already existed and was blind to one word**.
+`stale_challenge_statuses` inherited `_OPEN_WORD_ASSERTION`, which is a **task**'s vocabulary, and a
+challenge's open state is **`RAISED`**. Four passages of the two deliverables read
+`` (`CH-0240`, raised) `` while that challenge's own Status row says **UPHELD** — and a **wired**
+gate reported `0 open assertion(s) contradicted`. Committed predicate **0**, repaired predicate
+**4**, after the repair **0**, with **0 false positives**. The gate the acceptance actually names is
+**refused** and shipped as the audit the acceptance permits, and the live instance's real cause is
+the **authority**: **17 challenges over 22 sites** are adjudicated in a claim's own words while their
+own Status row does not say so — `CH-0185` among them, which is why decision 8 could be put to a
+customer priced on a threshold `C-0148` had already withdrawn.
+
+`T-252`/`C-0198`: `CH-0199`'s class is **69 of 69 deliberate and 0 stale**, so the convention it asks
+for would be written onto 69 correct quotations. And the corpus **manufactures** the class, by
+`C-0092`'s own rule that *a repair must leave the defect measurable*. What is gated instead is the
+neighbouring question nobody had asked — a `Provenance` row names its result file as a **bare path**,
+which `check-corpus-links.py` cannot see — **192 claims, 175 naming a file, 0 broken**.
+
+**Three populations that grow when the loop works correctly, on three unrelated predicates, in one
+iteration**: `T-234`'s advisory debt line (`CH-0230`), `C-0197`'s priced-on-an-adjudicated-challenge
+residue, and `CH-0199`'s unfindable numbers. In each the mechanism is the same — **a correcting
+sentence has to NAME the thing it corrects.**
+
+### `CH-0246`: obeying `C-0110` destroyed seven records
+
+`C-0110`'s rule is unambiguous — *a proof that a shared-source change is invisible is not a
+substitute for running the consumers*. Obeyed on a one-expression change, **all seven** committed
+files of the census's emitting importers moved, and **not one movement was the change under test**:
+each names a `baselineRef` older than `HEAD` and each emitter's `--ref` **defaults to `HEAD`**.
+Sharpest at `T-287`'s own file, whose subject is *the ten occurrences a filename admitted* and which
+re-runs to `removed` **10 → 0**, because `T-287` removed them. Restored unmoved; replaced by a
+**containment** argument about the consumers' **inputs**. `gpd/README.md`'s *"reproducible from it
+alone"* now carries the exception.
