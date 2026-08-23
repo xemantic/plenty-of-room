@@ -1,0 +1,1249 @@
+{
+ "emission": {
+  "lattice": "honeycomb",
+  "regime": []
+ },
+ "task": "T-255",
+ "question": "does any cadnano.org gallery design carry a forced crossover, and with what yield",
+ "leaf": "A8.2",
+ "retrievedOn": "2026-08-23",
+ "latticeConstantsParsedFrom": "src/main/kotlin/tile/HoneycombBondClassResidues.kt",
+ "latticeConstants": {
+  "classStepBp": 7,
+  "samePairPeriodBp": 21,
+  "scaffoldOffsetBp": 5,
+  "classes": 3
+ },
+ "answer": {
+  "archivesObtained": 3,
+  "archivesLinkedByTheGallery": 3,
+  "designsParsed": 26,
+  "designsCarryingAForcedCrossover": 15,
+  "designsWithAPerDesignPublishedYield": 7,
+  "designsWithBOTHAForcedCrossoverANDAPerDesignPublishedYield": 0,
+  "verdict": "the category is NOT empty and the conjunction still fails: 15 of 26 gallery designs carry a forced crossover, and the only per-design yields published for any gallery design belong to the seven blocks that carry NONE"
+ },
+ "conjunction": [
+  {
+   "step": "an archive is obtainable in 2026",
+   "observed": "3 of 3",
+   "marginalRate": 1.0
+  },
+  {
+   "step": "an archive contains machine-readable design files",
+   "observed": "26 designs in 3 of 3 archives",
+   "marginalRate": 1.0
+  },
+  {
+   "step": "a design carries a forced crossover",
+   "observed": "15 of 26",
+   "marginalRate": 0.576923077
+  },
+  {
+   "step": "a per-design folding yield is published for a design carrying one",
+   "observed": "0 of 15",
+   "marginalRate": 0.0,
+   "oneSidedUpperLimitAt95Percent": 0.181036273,
+   "why": "a symmetric standard error at a saturated proportion is a function of the estimate alone; the exact Clopper-Pearson limit at zero of n is 1 - 0.05^(1/n)"
+  }
+ ],
+ "expectedYieldOfTheWholeSearch": 0.0,
+ "tests": {
+  "A_adjacency": "caDNAno's rule allows crossovers between ADJACENT helices; a crossover between two sites that are not nearest neighbours on the design's own lattice is forced by construction",
+  "B_register": "a crossover SITE occupies two consecutive bases, so a crossing at base i lies on an allowed site iff i mod 21 is in {r, r+1} for the bond's own site residue r; the scaffold window is that window shifted both ways by five",
+  "C_alignment": "an antiparallel crossover joins two helices at the SAME base index; a strand connection between different base indices is a manual connection and its axial offset is a number the file states",
+  "B_blindSpot": "a LONE crossing displaced by exactly +1 bp lands inside the window, so test B is a LOWER bound on the forced count"
+ },
+ "totals": {
+  "stapleCrossings": 17837,
+  "scaffoldCrossings": 4069,
+  "misalignedConnections": 425,
+  "forcedByAdjacency": 323,
+  "forcedStapleCrossings": 1,
+  "forcedScaffoldCrossings": 27,
+  "unscorableScaffoldCrossings": 59,
+  "designsByMechanism": {
+   "misaligned": 13,
+   "nonAdjacent": 14,
+   "offRegister": 4
+  }
+ },
+ "designs": [
+  {
+   "design": "i_16x4",
+   "archive": "NAR09",
+   "helices": 64,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 8064,
+   "stapleBases": 8192,
+   "unpairedScaffoldBases": 0,
+   "insertions": 0,
+   "deletions": 0,
+   "stapleCrossings": 735,
+   "scaffoldCrossings": 126,
+   "misalignedConnections": 0,
+   "forcedByAdjacency": 0,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": false,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": []
+  },
+  {
+   "design": "ii_10x6",
+   "archive": "NAR09",
+   "helices": 60,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 7560,
+   "stapleBases": 7560,
+   "unpairedScaffoldBases": 0,
+   "insertions": 0,
+   "deletions": 0,
+   "stapleCrossings": 712,
+   "scaffoldCrossings": 118,
+   "misalignedConnections": 0,
+   "forcedByAdjacency": 0,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": false,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": []
+  },
+  {
+   "design": "iii_8x8",
+   "archive": "NAR09",
+   "helices": 64,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 8064,
+   "stapleBases": 8064,
+   "unpairedScaffoldBases": 0,
+   "insertions": 0,
+   "deletions": 0,
+   "stapleCrossings": 826,
+   "scaffoldCrossings": 126,
+   "misalignedConnections": 0,
+   "forcedByAdjacency": 0,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": false,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": []
+  },
+  {
+   "design": "iv_6x10",
+   "archive": "NAR09",
+   "helices": 60,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 7560,
+   "stapleBases": 7560,
+   "unpairedScaffoldBases": 0,
+   "insertions": 0,
+   "deletions": 0,
+   "stapleCrossings": 780,
+   "scaffoldCrossings": 118,
+   "misalignedConnections": 0,
+   "forcedByAdjacency": 0,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": false,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": []
+  },
+  {
+   "design": "v_4x16",
+   "archive": "NAR09",
+   "helices": 64,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 8064,
+   "stapleBases": 8064,
+   "unpairedScaffoldBases": 0,
+   "insertions": 0,
+   "deletions": 0,
+   "stapleCrossings": 834,
+   "scaffoldCrossings": 126,
+   "misalignedConnections": 0,
+   "forcedByAdjacency": 0,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": false,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": []
+  },
+  {
+   "design": "vi_3x20",
+   "archive": "NAR09",
+   "helices": 60,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 7560,
+   "stapleBases": 7560,
+   "unpairedScaffoldBases": 0,
+   "insertions": 0,
+   "deletions": 0,
+   "stapleCrossings": 766,
+   "scaffoldCrossings": 118,
+   "misalignedConnections": 0,
+   "forcedByAdjacency": 0,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": false,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": []
+  },
+  {
+   "design": "vii_2x30",
+   "archive": "NAR09",
+   "helices": 60,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 7560,
+   "stapleBases": 7560,
+   "unpairedScaffoldBases": 0,
+   "insertions": 0,
+   "deletions": 0,
+   "stapleCrossings": 728,
+   "scaffoldCrossings": 118,
+   "misalignedConnections": 0,
+   "forcedByAdjacency": 0,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": false,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": []
+  },
+  {
+   "design": "beachball",
+   "archive": "Science09",
+   "helices": 26,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 6936,
+   "stapleBases": 6936,
+   "unpairedScaffoldBases": 0,
+   "insertions": 168,
+   "deletions": 180,
+   "stapleCrossings": 271,
+   "scaffoldCrossings": 386,
+   "misalignedConnections": 24,
+   "forcedByAdjacency": 24,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": true,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": [
+    97,
+    113,
+    307,
+    323
+   ]
+  },
+  {
+   "design": "gear180",
+   "archive": "Science09",
+   "helices": 36,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 6804,
+   "stapleBases": 6577,
+   "unpairedScaffoldBases": 274,
+   "insertions": 237,
+   "deletions": 237,
+   "stapleCrossings": 683,
+   "scaffoldCrossings": 142,
+   "misalignedConnections": 15,
+   "forcedByAdjacency": 6,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 18,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": true,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": [
+    24,
+    38,
+    44
+   ]
+  },
+  {
+   "design": "gear90",
+   "archive": "Science09",
+   "helices": 36,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 6804,
+   "stapleBases": 6577,
+   "unpairedScaffoldBases": 274,
+   "insertions": 111,
+   "deletions": 111,
+   "stapleCrossings": 683,
+   "scaffoldCrossings": 142,
+   "misalignedConnections": 15,
+   "forcedByAdjacency": 6,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 18,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": true,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": [
+    24,
+    38,
+    44
+   ]
+  },
+  {
+   "design": "monolight_left_twist",
+   "archive": "Science09",
+   "helices": 60,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 7560,
+   "stapleBases": 7559,
+   "unpairedScaffoldBases": 1,
+   "insertions": 1,
+   "deletions": 360,
+   "stapleCrossings": 734,
+   "scaffoldCrossings": 118,
+   "misalignedConnections": 0,
+   "forcedByAdjacency": 0,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": false,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": []
+  },
+  {
+   "design": "monolith_right_twist",
+   "archive": "Science09",
+   "helices": 60,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 7560,
+   "stapleBases": 7559,
+   "unpairedScaffoldBases": 1,
+   "insertions": 361,
+   "deletions": 0,
+   "stapleCrossings": 734,
+   "scaffoldCrossings": 118,
+   "misalignedConnections": 0,
+   "forcedByAdjacency": 0,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": false,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": []
+  },
+  {
+   "design": "protractor_0_v3",
+   "archive": "Science09",
+   "helices": 19,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 7704,
+   "stapleBases": 7658,
+   "unpairedScaffoldBases": 46,
+   "insertions": 0,
+   "deletions": 0,
+   "stapleCrossings": 718,
+   "scaffoldCrossings": 102,
+   "misalignedConnections": 4,
+   "forcedByAdjacency": 4,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": true,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": [
+    6,
+    10,
+    74,
+    84
+   ]
+  },
+  {
+   "design": "protractor_120_98_v3",
+   "archive": "Science09",
+   "helices": 19,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 7704,
+   "stapleBases": 7658,
+   "unpairedScaffoldBases": 46,
+   "insertions": 154,
+   "deletions": 180,
+   "stapleCrossings": 718,
+   "scaffoldCrossings": 102,
+   "misalignedConnections": 4,
+   "forcedByAdjacency": 4,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": true,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": [
+    6,
+    10,
+    74,
+    84
+   ]
+  },
+  {
+   "design": "protractor_150_98_v3",
+   "archive": "Science09",
+   "helices": 19,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 7704,
+   "stapleBases": 7658,
+   "unpairedScaffoldBases": 46,
+   "insertions": 193,
+   "deletions": 223,
+   "stapleCrossings": 718,
+   "scaffoldCrossings": 102,
+   "misalignedConnections": 4,
+   "forcedByAdjacency": 4,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": true,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": [
+    6,
+    10,
+    74,
+    84
+   ]
+  },
+  {
+   "design": "protractor_180_98_v3",
+   "archive": "Science09",
+   "helices": 19,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 7662,
+   "stapleBases": 7658,
+   "unpairedScaffoldBases": 46,
+   "insertions": 244,
+   "deletions": 219,
+   "stapleCrossings": 718,
+   "scaffoldCrossings": 102,
+   "misalignedConnections": 4,
+   "forcedByAdjacency": 4,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": true,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": [
+    6,
+    10,
+    74,
+    84
+   ]
+  },
+  {
+   "design": "protractor_30_98_v4",
+   "archive": "Science09",
+   "helices": 19,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 7704,
+   "stapleBases": 7609,
+   "unpairedScaffoldBases": 95,
+   "insertions": 31,
+   "deletions": 36,
+   "stapleCrossings": 718,
+   "scaffoldCrossings": 102,
+   "misalignedConnections": 4,
+   "forcedByAdjacency": 4,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": true,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": [
+    6,
+    10,
+    74,
+    84
+   ]
+  },
+  {
+   "design": "protractor_60_98_v4",
+   "archive": "Science09",
+   "helices": 19,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 7704,
+   "stapleBases": 7609,
+   "unpairedScaffoldBases": 95,
+   "insertions": 70,
+   "deletions": 81,
+   "stapleCrossings": 718,
+   "scaffoldCrossings": 102,
+   "misalignedConnections": 4,
+   "forcedByAdjacency": 4,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": true,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": [
+    6,
+    10,
+    74,
+    84
+   ]
+  },
+  {
+   "design": "protractor_90_98_v3",
+   "archive": "Science09",
+   "helices": 19,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 7704,
+   "stapleBases": 7658,
+   "unpairedScaffoldBases": 46,
+   "insertions": 118,
+   "deletions": 132,
+   "stapleCrossings": 718,
+   "scaffoldCrossings": 102,
+   "misalignedConnections": 4,
+   "forcedByAdjacency": 4,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": true,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": [
+    6,
+    10,
+    74,
+    84
+   ]
+  },
+  {
+   "design": "doublegear",
+   "archive": "Nature09",
+   "helices": 54,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0416666667,
+   "scaffoldBases": 4662,
+   "stapleBases": 3975,
+   "unpairedScaffoldBases": 713,
+   "insertions": 1,
+   "deletions": 0,
+   "stapleCrossings": 303,
+   "scaffoldCrossings": 146,
+   "misalignedConnections": 0,
+   "forcedByAdjacency": 0,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 1,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    12,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": true,
+   "forcedScaffoldDeparturesBp": [
+    1
+   ],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": []
+  },
+  {
+   "design": "icosahedron",
+   "archive": "Nature09",
+   "helices": 180,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 0.615384615,
+   "squarePeriodFit": 0.230769231,
+   "scaffoldBases": 24300,
+   "stapleBases": 23796,
+   "unpairedScaffoldBases": 1620,
+   "insertions": 0,
+   "deletions": 0,
+   "stapleCrossings": 1224,
+   "scaffoldCrossings": 342,
+   "misalignedConnections": 324,
+   "forcedByAdjacency": 234,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": true,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": [
+    3,
+    4,
+    9,
+    12,
+    128,
+    129
+   ]
+  },
+  {
+   "design": "monolith",
+   "archive": "Nature09",
+   "helices": 60,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 7560,
+   "stapleBases": 7560,
+   "unpairedScaffoldBases": 0,
+   "insertions": 0,
+   "deletions": 0,
+   "stapleCrossings": 712,
+   "scaffoldCrossings": 118,
+   "misalignedConnections": 0,
+   "forcedByAdjacency": 0,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": false,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": []
+  },
+  {
+   "design": "railedbridge",
+   "archive": "Nature09",
+   "helices": 46,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 0.923076923,
+   "squarePeriodFit": 0.0923076923,
+   "scaffoldBases": 7625,
+   "stapleBases": 7824,
+   "unpairedScaffoldBases": 98,
+   "insertions": 2,
+   "deletions": 0,
+   "stapleCrossings": 498,
+   "scaffoldCrossings": 291,
+   "misalignedConnections": 10,
+   "forcedByAdjacency": 13,
+   "offRegisterStapleBonds": 1,
+   "forcedStapleCrossings": 1,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 11,
+   "siteResiduesFitted": [
+    6,
+    13,
+    18,
+    20
+   ],
+   "carriesForcedCrossover": true,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [
+    5
+   ],
+   "misalignedAxialOffsetsBp": [
+    3,
+    6,
+    8
+   ]
+  },
+  {
+   "design": "slottedcross",
+   "archive": "Nature09",
+   "helices": 142,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.235849057,
+   "scaffoldBases": 8634,
+   "stapleBases": 6786,
+   "unpairedScaffoldBases": 1874,
+   "insertions": 0,
+   "deletions": 0,
+   "stapleCrossings": 512,
+   "scaffoldCrossings": 330,
+   "misalignedConnections": 0,
+   "forcedByAdjacency": 4,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 23,
+   "unscorableScaffoldCrossings": 12,
+   "siteResiduesFitted": [
+    0,
+    5,
+    6,
+    12,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": true,
+   "forcedScaffoldDeparturesBp": [
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": []
+  },
+  {
+   "design": "squarenut",
+   "archive": "Nature09",
+   "helices": 60,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 1.0,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 7560,
+   "stapleBases": 7560,
+   "unpairedScaffoldBases": 0,
+   "insertions": 0,
+   "deletions": 0,
+   "stapleCrossings": 542,
+   "scaffoldCrossings": 118,
+   "misalignedConnections": 0,
+   "forcedByAdjacency": 0,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 0,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    6,
+    13,
+    20
+   ],
+   "carriesForcedCrossover": false,
+   "forcedScaffoldDeparturesBp": [],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": []
+  },
+  {
+   "design": "stackedcross",
+   "archive": "Nature09",
+   "helices": 74,
+   "lattice": "honeycomb",
+   "honeycombPeriodFit": 0.988888889,
+   "squarePeriodFit": 0.0,
+   "scaffoldBases": 8064,
+   "stapleBases": 8017,
+   "unpairedScaffoldBases": 47,
+   "insertions": 0,
+   "deletions": 0,
+   "stapleCrossings": 534,
+   "scaffoldCrossings": 254,
+   "misalignedConnections": 9,
+   "forcedByAdjacency": 8,
+   "offRegisterStapleBonds": 0,
+   "forcedStapleCrossings": 0,
+   "forcedScaffoldCrossings": 3,
+   "unscorableScaffoldCrossings": 0,
+   "siteResiduesFitted": [
+    5,
+    6,
+    13,
+    19,
+    20
+   ],
+   "carriesForcedCrossover": true,
+   "forcedScaffoldDeparturesBp": [
+    1,
+    1,
+    1
+   ],
+   "offRegisterStapleDeparturesBp": [],
+   "misalignedAxialOffsetsBp": [
+    2,
+    3,
+    5,
+    14,
+    16,
+    28,
+    47
+   ]
+  }
+ ],
+ "perDesignPublishedYields": {
+  "source": "Douglas, Marblestone, Teerapittayanon, Vazquez, Church & Shih, Nucleic Acids Res. 37:5001, Figure 2d and 2e, READ DIRECTLY; the bar chart digitised from the publisher PDF at 600 dpi",
+  "denominators": {
+   "gelYieldPercent": "fraction of scaffold incorporated into the fastest-migrating monomeric species, by ethidium-bromide-fluorescence intensity",
+   "temYieldAfterPurificationPercent": "fraction of well-folded species after gel purification, by TEM over 100 random particles per shape"
+  },
+  "crossChecks": {
+   "paperSaysGreatestGelYieldIsI": true,
+   "paperSaysMostRobustAfterPurificationIsII": true
+  },
+  "rows": [
+   {
+    "design": "i_16x4",
+    "paperLabel": "i",
+    "paperScaffoldBases": 8064,
+    "fileScaffoldBases": 8064,
+    "scaffoldMatchesPaper": true,
+    "gelYieldPercent": 25.2,
+    "temYieldAfterPurificationPercent": 11.2,
+    "carriesForcedCrossover": false
+   },
+   {
+    "design": "ii_10x6",
+    "paperLabel": "ii",
+    "paperScaffoldBases": 7560,
+    "fileScaffoldBases": 7560,
+    "scaffoldMatchesPaper": true,
+    "gelYieldPercent": 12.9,
+    "temYieldAfterPurificationPercent": 53.8,
+    "carriesForcedCrossover": false
+   },
+   {
+    "design": "iii_8x8",
+    "paperLabel": "iii",
+    "paperScaffoldBases": 8064,
+    "fileScaffoldBases": 8064,
+    "scaffoldMatchesPaper": true,
+    "gelYieldPercent": 5.0,
+    "temYieldAfterPurificationPercent": 15.3,
+    "carriesForcedCrossover": false
+   },
+   {
+    "design": "iv_6x10",
+    "paperLabel": "iv",
+    "paperScaffoldBases": 7560,
+    "fileScaffoldBases": 7560,
+    "scaffoldMatchesPaper": true,
+    "gelYieldPercent": 3.2,
+    "temYieldAfterPurificationPercent": 9.1,
+    "carriesForcedCrossover": false
+   },
+   {
+    "design": "v_4x16",
+    "paperLabel": "v",
+    "paperScaffoldBases": 8064,
+    "fileScaffoldBases": 8064,
+    "scaffoldMatchesPaper": true,
+    "gelYieldPercent": 6.2,
+    "temYieldAfterPurificationPercent": 2.9,
+    "carriesForcedCrossover": false
+   },
+   {
+    "design": "vi_3x20",
+    "paperLabel": "vi",
+    "paperScaffoldBases": 7560,
+    "fileScaffoldBases": 7560,
+    "scaffoldMatchesPaper": true,
+    "gelYieldPercent": 3.2,
+    "temYieldAfterPurificationPercent": 2.0,
+    "carriesForcedCrossover": false
+   },
+   {
+    "design": "vii_2x30",
+    "paperLabel": "vii",
+    "paperScaffoldBases": 7560,
+    "fileScaffoldBases": 7560,
+    "scaffoldMatchesPaper": true,
+    "gelYieldPercent": 8.3,
+    "temYieldAfterPurificationPercent": 16.3,
+    "carriesForcedCrossover": false
+   }
+  ]
+ },
+ "pooledYieldsForTheShapesThatDOCarryForcedCrossovers": {
+  "source": "Douglas, Dietz, Liedl, Hoegberg, Graf & Shih, Nature 459:414 (2009), READ DIRECTLY",
+  "quotation": "The fraction of scaffold strands that were incorporated into monomeric species after folding varied from 7% to 44% for these targets as estimated by ethidium-bromide fluorescence intensity.",
+  "lowPercent": 7.0,
+  "highPercent": 44.0,
+  "isAField": false,
+  "why": "a pooled range over the shape set of Figure 2, with no per-shape breakdown in the paper or its Supplementary Information; the shape set mixes designs that carry forced crossovers with designs that do not"
+ },
+ "zeroLoopTurns": {
+  "why": "C-0193 section 4 holds that 28 unpaired scaffold nucleotides at every raster turn buy freedom from caDNAno's +-5 residue condition, because an unpaired base has no azimuth. The deposited design files were measured against that.",
+  "designsWithZeroUnpairedScaffold": [
+   "beachball",
+   "i_16x4",
+   "ii_10x6",
+   "iii_8x8",
+   "iv_6x10",
+   "monolith",
+   "squarenut",
+   "v_4x16",
+   "vi_3x20",
+   "vii_2x30"
+  ],
+  "theSevenCadnanoBlocks": {
+   "i_16x4": {
+    "unpairedScaffoldBases": 0,
+    "scaffoldCrossings": 126,
+    "forcedScaffoldCrossings": 0
+   },
+   "ii_10x6": {
+    "unpairedScaffoldBases": 0,
+    "scaffoldCrossings": 118,
+    "forcedScaffoldCrossings": 0
+   },
+   "iii_8x8": {
+    "unpairedScaffoldBases": 0,
+    "scaffoldCrossings": 126,
+    "forcedScaffoldCrossings": 0
+   },
+   "iv_6x10": {
+    "unpairedScaffoldBases": 0,
+    "scaffoldCrossings": 118,
+    "forcedScaffoldCrossings": 0
+   },
+   "v_4x16": {
+    "unpairedScaffoldBases": 0,
+    "scaffoldCrossings": 126,
+    "forcedScaffoldCrossings": 0
+   },
+   "vi_3x20": {
+    "unpairedScaffoldBases": 0,
+    "scaffoldCrossings": 118,
+    "forcedScaffoldCrossings": 0
+   },
+   "vii_2x30": {
+    "unpairedScaffoldBases": 0,
+    "scaffoldCrossings": 118,
+    "forcedScaffoldCrossings": 0
+   }
+  },
+  "monolithAndTenBySixAreBitIdentical": true,
+  "bitIdentityDigests": {
+   "NAR09/ii_10x6": "ac46b69a04813ee0cc15eddd5fc33265f56a8072bfda3063924b3c5034317053",
+   "Nature09/monolith": "ac46b69a04813ee0cc15eddd5fc33265f56a8072bfda3063924b3c5034317053"
+  }
+ },
+ "retrieval": [
+  {
+   "httpStatus": 200,
+   "endpoint": "http://bit.ly/U1CwqS",
+   "query": null,
+   "finalEndpoint": "https://www.dropbox.com/scl/fi/9lhrzf8r2svfkyten4izb/Science09.zip",
+   "bytes": 195531,
+   "contentType": "text/html; charset=utf-8",
+   "savedAs": "bitly-U1CwqS.bin",
+   "error": null
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "http://bit.ly/XJvTOI",
+   "query": null,
+   "finalEndpoint": "https://www.dropbox.com/scl/fi/j0s0zxzctf8nzc77l28xj/NAR09.zip",
+   "bytes": 195049,
+   "contentType": "text/html; charset=utf-8",
+   "savedAs": "bitly-XJvTOI.bin",
+   "error": null
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "http://bit.ly/WJPCI1",
+   "query": null,
+   "finalEndpoint": "https://www.dropbox.com/scl/fi/swn5n0yij823rmtrs242p/Nature09.zip",
+   "bytes": 194932,
+   "contentType": "text/html; charset=utf-8",
+   "savedAs": "bitly-WJPCI1.bin",
+   "error": null
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "https://cadnano.org/gallery.html",
+   "query": null,
+   "bytes": 12231,
+   "contentType": "text/html; charset=utf-8",
+   "savedAs": "cadnano-org-gallery-2026.html",
+   "error": null
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "https://www.dropbox.com/scl/fi/9lhrzf8r2svfkyten4izb/Science09.zip",
+   "query": {
+    "rlkey": "n257w8pbudlwn9964ygwma4l2",
+    "dl": "1"
+   },
+   "finalEndpoint": "https://uc68797f6cf8a52c974dde5ebab2.dl.dropboxusercontent.com/cd/0/get/DGyf7l1H-xTWpgjnvv0qp8s9uqQfnjnE4r2HIbvnmP0BOrrV_63MjQIQpu3kkM7wM1NRzffs2Og-F-63mA6Wx0MsyNFl99bnAyW1Ey3I_MDR49nukNeaHffncSMbaTy6_zI/file",
+   "bytes": 777635,
+   "contentType": "application/binary",
+   "savedAs": "Science09.zip",
+   "error": null
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "https://www.dropbox.com/scl/fi/j0s0zxzctf8nzc77l28xj/NAR09.zip",
+   "query": {
+    "rlkey": "dwezs6wgre4lzvcinh0u4ij1a",
+    "dl": "1"
+   },
+   "finalEndpoint": "https://uc1866ec4235e642c4086e16b95a.dl.dropboxusercontent.com/cd/0/get/DGx-2FyZW2tUqhALPe4bwRxeoDesYLFvWrLjEsYIjnto8HIlb3FALXlIyYaNNCi-nOUc0WPozWTJHJtrgIZl6Ro1mO2raM6R1OEjgXTrpoCrj9Phtfy1XPdI07z_171cpfo/file",
+   "bytes": 444985,
+   "contentType": "application/binary",
+   "savedAs": "NAR09.zip",
+   "error": null
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "https://www.dropbox.com/scl/fi/swn5n0yij823rmtrs242p/Nature09.zip",
+   "query": {
+    "rlkey": "wf4rgxmyu6r5i3t1x8so04lk1",
+    "dl": "1"
+   },
+   "finalEndpoint": "https://uccda27d00fee16906df52b95281.dl.dropboxusercontent.com/cd/0/get/DGx-l6qCequPscefriDoOllB23mVJmgTHfeh80CQcoiSFBTGjHRlm88vI0nt1tjoKS6XuRqcn3Ei4E5Sgdivc3WBMfOWtz2v2-gjyNK3QKFWeWD-rvSHDBEP0ntyK-FgYQ8/file",
+   "bytes": 3589234,
+   "contentType": "application/binary",
+   "savedAs": "Nature09.zip",
+   "error": null
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/1fbe/2731887/3132da3bc609/gkp436f2.jpg",
+   "query": null,
+   "bytes": 315359,
+   "contentType": "image/jpeg",
+   "savedAs": "cadnano-NAR-fig2.jpg",
+   "error": null
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "https://europepmc.org/api/get/articleApi",
+   "query": {
+    "query": "TITLE:\"Folding DNA into twisted and curved nanoscale shapes\"",
+    "format": "json"
+   },
+   "bytes": 1089,
+   "contentType": "application/json;charset=UTF-8",
+   "savedAs": "epmc-dietz2009.json",
+   "error": null
+  },
+  {
+   "httpStatus": 404,
+   "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2737683/fullTextXML",
+   "query": null,
+   "bytes": 0,
+   "contentType": null,
+   "savedAs": "PMC2737683-fullTextXML.xml",
+   "error": "HTTP Error 404: Not Found"
+  },
+  {
+   "httpStatus": 500,
+   "endpoint": "https://europepmc.org/articles/PMC2737683",
+   "query": {
+    "pdf": "render"
+   },
+   "finalEndpoint": "https://europepmc.org/api/getPdf",
+   "bytes": 0,
+   "contentType": null,
+   "savedAs": "PMC2737683-dietz2009.pdf",
+   "error": "HTTP Error 500: "
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2737683/",
+   "query": null,
+   "bytes": 151204,
+   "contentType": "text/html",
+   "savedAs": "PMC2737683-dietz2009-articlepage.html",
+   "error": null,
+   "note": "Dietz 2009, READ DIRECTLY; T-246 got a reCAPTCHA page for the same PMCID, so the gate is intermittent -- retry before recording a source as unreachable"
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2731887/pdf/gkp436.pdf",
+   "query": null,
+   "bytes": 4274175,
+   "contentType": "application/pdf",
+   "savedAs": "cadnano-NAR-gkp436.pdf",
+   "error": null,
+   "note": "through PMC's SHA-256 proof-of-work cookie, solved by pmc_pow.py"
+  }
+ ]
+}

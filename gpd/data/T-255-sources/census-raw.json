@@ -1,0 +1,7942 @@
+[
+ {
+  "helices": 64,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 576,
+   "1,0": 285
+  },
+  "stapleCrossings": 735,
+  "scaffoldCrossings": 126,
+  "forcedByAdjacency": [],
+  "nForcedByAdjacency": 0,
+  "misalignedConnections": [],
+  "nMisalignedConnections": 0,
+  "stapleBonds": 78,
+  "scaffoldBonds": 63,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": false,
+  "design": "i_16x4",
+  "archive": "NAR09",
+  "path": "NAR09.zip!NAR09/i_16x4.json",
+  "insertions": 0,
+  "deletions": 0,
+  "scaffoldBases": 8064,
+  "stapleBases": 8192,
+  "unpairedScaffoldBases": 0
+ },
+ {
+  "helices": 60,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 560,
+   "1,0": 270
+  },
+  "stapleCrossings": 712,
+  "scaffoldCrossings": 118,
+  "forcedByAdjacency": [],
+  "nForcedByAdjacency": 0,
+  "misalignedConnections": [],
+  "nMisalignedConnections": 0,
+  "stapleBonds": 77,
+  "scaffoldBonds": 59,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": false,
+  "design": "ii_10x6",
+  "archive": "NAR09",
+  "path": "NAR09.zip!NAR09/ii_10x6.json",
+  "insertions": 0,
+  "deletions": 0,
+  "scaffoldBases": 7560,
+  "stapleBases": 7560,
+  "unpairedScaffoldBases": 0
+ },
+ {
+  "helices": 64,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 672,
+   "1,0": 280
+  },
+  "stapleCrossings": 826,
+  "scaffoldCrossings": 126,
+  "forcedByAdjacency": [],
+  "nForcedByAdjacency": 0,
+  "misalignedConnections": [],
+  "nMisalignedConnections": 0,
+  "stapleBonds": 84,
+  "scaffoldBonds": 63,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": false,
+  "design": "iii_8x8",
+  "archive": "NAR09",
+  "path": "NAR09.zip!NAR09/iii_8x8.json",
+  "insertions": 0,
+  "deletions": 0,
+  "scaffoldBases": 8064,
+  "stapleBases": 8064,
+  "unpairedScaffoldBases": 0
+ },
+ {
+  "helices": 60,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 648,
+   "1,0": 250
+  },
+  "stapleCrossings": 780,
+  "scaffoldCrossings": 118,
+  "forcedByAdjacency": [],
+  "nForcedByAdjacency": 0,
+  "misalignedConnections": [],
+  "nMisalignedConnections": 0,
+  "stapleBonds": 79,
+  "scaffoldBonds": 59,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": false,
+  "design": "iv_6x10",
+  "archive": "NAR09",
+  "path": "NAR09.zip!NAR09/iv_6x10.json",
+  "insertions": 0,
+  "deletions": 0,
+  "scaffoldBases": 7560,
+  "stapleBases": 7560,
+  "unpairedScaffoldBases": 0
+ },
+ {
+  "helices": 64,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 720,
+   "1,0": 240
+  },
+  "stapleCrossings": 834,
+  "scaffoldCrossings": 126,
+  "forcedByAdjacency": [],
+  "nForcedByAdjacency": 0,
+  "misalignedConnections": [],
+  "nMisalignedConnections": 0,
+  "stapleBonds": 84,
+  "scaffoldBonds": 63,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": false,
+  "design": "v_4x16",
+  "archive": "NAR09",
+  "path": "NAR09.zip!NAR09/v_4x16.json",
+  "insertions": 0,
+  "deletions": 0,
+  "scaffoldBases": 8064,
+  "stapleBases": 8064,
+  "unpairedScaffoldBases": 0
+ },
+ {
+  "helices": 60,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 684,
+   "1,0": 200
+  },
+  "stapleCrossings": 766,
+  "scaffoldCrossings": 118,
+  "forcedByAdjacency": [],
+  "nForcedByAdjacency": 0,
+  "misalignedConnections": [],
+  "nMisalignedConnections": 0,
+  "stapleBonds": 77,
+  "scaffoldBonds": 59,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": false,
+  "design": "vi_3x20",
+  "archive": "NAR09",
+  "path": "NAR09.zip!NAR09/vi_3x20.json",
+  "insertions": 0,
+  "deletions": 0,
+  "scaffoldBases": 7560,
+  "stapleBases": 7560,
+  "unpairedScaffoldBases": 0
+ },
+ {
+  "helices": 60,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 696,
+   "1,0": 150
+  },
+  "stapleCrossings": 728,
+  "scaffoldCrossings": 118,
+  "forcedByAdjacency": [],
+  "nForcedByAdjacency": 0,
+  "misalignedConnections": [],
+  "nMisalignedConnections": 0,
+  "stapleBonds": 73,
+  "scaffoldBonds": 59,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": false,
+  "design": "vii_2x30",
+  "archive": "NAR09",
+  "path": "NAR09.zip!NAR09/vii_2x30.json",
+  "insertions": 0,
+  "deletions": 0,
+  "scaffoldBases": 7560,
+  "stapleBases": 7560,
+  "unpairedScaffoldBases": 0
+ },
+ {
+  "helices": 26,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 420,
+   "0,5": 16,
+   "0,7": 8,
+   "1,0": 213
+  },
+  "stapleCrossings": 271,
+  "scaffoldCrossings": 386,
+  "forcedByAdjacency": [
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 12,
+    "base": 58,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 12,
+    "base": 59,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 12,
+    "base": 262,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 12,
+    "base": 263,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 2,
+    "helixB": 21,
+    "base": 165,
+    "displacement": "0,7",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 2,
+    "helixB": 21,
+    "base": 166,
+    "displacement": "0,7",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 2,
+    "helixB": 21,
+    "base": 365,
+    "displacement": "0,7",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 2,
+    "helixB": 21,
+    "base": 366,
+    "displacement": "0,7",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 3,
+    "helixB": 24,
+    "base": 155,
+    "displacement": "0,7",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 3,
+    "helixB": 24,
+    "base": 156,
+    "displacement": "0,7",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 3,
+    "helixB": 24,
+    "base": 375,
+    "displacement": "0,7",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 3,
+    "helixB": 24,
+    "base": 376,
+    "displacement": "0,7",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 4,
+    "helixB": 13,
+    "base": 52,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 4,
+    "helixB": 13,
+    "base": 53,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 4,
+    "helixB": 13,
+    "base": 268,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 4,
+    "helixB": 13,
+    "base": 269,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 11,
+    "helixB": 22,
+    "base": 58,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 11,
+    "helixB": 22,
+    "base": 59,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 11,
+    "helixB": 22,
+    "base": 262,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 11,
+    "helixB": 22,
+    "base": 263,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 14,
+    "helixB": 23,
+    "base": 52,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 14,
+    "helixB": 23,
+    "base": 53,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 14,
+    "helixB": 23,
+    "base": 268,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 14,
+    "helixB": 23,
+    "base": 269,
+    "displacement": "0,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   }
+  ],
+  "nForcedByAdjacency": 24,
+  "misalignedConnections": [
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 12,
+    "baseA": 58,
+    "baseB": 155,
+    "axialOffsetBp": 97
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 12,
+    "baseA": 59,
+    "baseB": 156,
+    "axialOffsetBp": 97
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 12,
+    "baseA": 262,
+    "baseB": 375,
+    "axialOffsetBp": 113
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 12,
+    "baseA": 263,
+    "baseB": 376,
+    "axialOffsetBp": 113
+   },
+   {
+    "role": "scaf",
+    "helixA": 2,
+    "helixB": 21,
+    "baseA": 165,
+    "baseB": 262,
+    "axialOffsetBp": 97
+   },
+   {
+    "role": "scaf",
+    "helixA": 2,
+    "helixB": 21,
+    "baseA": 166,
+    "baseB": 263,
+    "axialOffsetBp": 97
+   },
+   {
+    "role": "scaf",
+    "helixA": 2,
+    "helixB": 21,
+    "baseA": 365,
+    "baseB": 58,
+    "axialOffsetBp": -307
+   },
+   {
+    "role": "scaf",
+    "helixA": 2,
+    "helixB": 21,
+    "baseA": 366,
+    "baseB": 59,
+    "axialOffsetBp": -307
+   },
+   {
+    "role": "scaf",
+    "helixA": 3,
+    "helixB": 24,
+    "baseA": 155,
+    "baseB": 268,
+    "axialOffsetBp": 113
+   },
+   {
+    "role": "scaf",
+    "helixA": 3,
+    "helixB": 24,
+    "baseA": 156,
+    "baseB": 269,
+    "axialOffsetBp": 113
+   },
+   {
+    "role": "scaf",
+    "helixA": 3,
+    "helixB": 24,
+    "baseA": 375,
+    "baseB": 52,
+    "axialOffsetBp": -323
+   },
+   {
+    "role": "scaf",
+    "helixA": 3,
+    "helixB": 24,
+    "baseA": 376,
+    "baseB": 53,
+    "axialOffsetBp": -323
+   },
+   {
+    "role": "scaf",
+    "helixA": 4,
+    "helixB": 13,
+    "baseA": 52,
+    "baseB": 165,
+    "axialOffsetBp": 113
+   },
+   {
+    "role": "scaf",
+    "helixA": 4,
+    "helixB": 13,
+    "baseA": 53,
+    "baseB": 166,
+    "axialOffsetBp": 113
+   },
+   {
+    "role": "scaf",
+    "helixA": 4,
+    "helixB": 13,
+    "baseA": 268,
+    "baseB": 365,
+    "axialOffsetBp": 97
+   },
+   {
+    "role": "scaf",
+    "helixA": 4,
+    "helixB": 13,
+    "baseA": 269,
+    "baseB": 366,
+    "axialOffsetBp": 97
+   },
+   {
+    "role": "scaf",
+    "helixA": 11,
+    "helixB": 22,
+    "baseA": 58,
+    "baseB": 155,
+    "axialOffsetBp": 97
+   },
+   {
+    "role": "scaf",
+    "helixA": 11,
+    "helixB": 22,
+    "baseA": 59,
+    "baseB": 156,
+    "axialOffsetBp": 97
+   },
+   {
+    "role": "scaf",
+    "helixA": 11,
+    "helixB": 22,
+    "baseA": 262,
+    "baseB": 375,
+    "axialOffsetBp": 113
+   },
+   {
+    "role": "scaf",
+    "helixA": 11,
+    "helixB": 22,
+    "baseA": 263,
+    "baseB": 376,
+    "axialOffsetBp": 113
+   },
+   {
+    "role": "scaf",
+    "helixA": 14,
+    "helixB": 23,
+    "baseA": 52,
+    "baseB": 165,
+    "axialOffsetBp": 113
+   },
+   {
+    "role": "scaf",
+    "helixA": 14,
+    "helixB": 23,
+    "baseA": 53,
+    "baseB": 166,
+    "axialOffsetBp": 113
+   },
+   {
+    "role": "scaf",
+    "helixA": 14,
+    "helixB": 23,
+    "baseA": 268,
+    "baseB": 365,
+    "axialOffsetBp": 97
+   },
+   {
+    "role": "scaf",
+    "helixA": 14,
+    "helixB": 23,
+    "baseA": 269,
+    "baseB": 366,
+    "axialOffsetBp": 97
+   }
+  ],
+  "nMisalignedConnections": 24,
+  "stapleBonds": 18,
+  "scaffoldBonds": 15,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": true,
+  "design": "beachball",
+  "archive": "Science09",
+  "path": "Science09.zip!Science09/beachball.json",
+  "insertions": 168,
+  "deletions": 180,
+  "scaffoldBases": 6936,
+  "stapleBases": 6936,
+  "unpairedScaffoldBases": 0
+ },
+ {
+  "helices": 36,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 543,
+   "1,0": 276,
+   "1,1": 2,
+   "1,3": 2,
+   "1,5": 2
+  },
+  "stapleCrossings": 683,
+  "scaffoldCrossings": 142,
+  "forcedByAdjacency": [
+   {
+    "role": "stap",
+    "helixA": 24,
+    "helixB": 30,
+    "base": 26,
+    "displacement": "1,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 24,
+    "helixB": 30,
+    "base": 67,
+    "displacement": "1,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 26,
+    "helixB": 32,
+    "base": 26,
+    "displacement": "1,1",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 26,
+    "helixB": 32,
+    "base": 67,
+    "displacement": "1,1",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 28,
+    "helixB": 34,
+    "base": 26,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 28,
+    "helixB": 34,
+    "base": 67,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   }
+  ],
+  "nForcedByAdjacency": 6,
+  "misalignedConnections": [
+   {
+    "role": "stap",
+    "helixA": 13,
+    "helixB": 22,
+    "baseA": 55,
+    "baseB": 79,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 13,
+    "helixB": 22,
+    "baseA": 139,
+    "baseB": 163,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 13,
+    "helixB": 22,
+    "baseA": 223,
+    "baseB": 247,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 15,
+    "helixB": 20,
+    "baseA": 55,
+    "baseB": 79,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 15,
+    "helixB": 20,
+    "baseA": 139,
+    "baseB": 163,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 15,
+    "helixB": 20,
+    "baseA": 223,
+    "baseB": 247,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 17,
+    "helixB": 18,
+    "baseA": 55,
+    "baseB": 79,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 17,
+    "helixB": 18,
+    "baseA": 139,
+    "baseB": 163,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 17,
+    "helixB": 18,
+    "baseA": 223,
+    "baseB": 247,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 24,
+    "helixB": 30,
+    "baseA": 26,
+    "baseB": 64,
+    "axialOffsetBp": 38
+   },
+   {
+    "role": "stap",
+    "helixA": 24,
+    "helixB": 30,
+    "baseA": 67,
+    "baseB": 23,
+    "axialOffsetBp": -44
+   },
+   {
+    "role": "stap",
+    "helixA": 26,
+    "helixB": 32,
+    "baseA": 26,
+    "baseB": 64,
+    "axialOffsetBp": 38
+   },
+   {
+    "role": "stap",
+    "helixA": 26,
+    "helixB": 32,
+    "baseA": 67,
+    "baseB": 23,
+    "axialOffsetBp": -44
+   },
+   {
+    "role": "stap",
+    "helixA": 28,
+    "helixB": 34,
+    "baseA": 26,
+    "baseB": 64,
+    "axialOffsetBp": 38
+   },
+   {
+    "role": "stap",
+    "helixA": 28,
+    "helixB": 34,
+    "baseA": 67,
+    "baseB": 23,
+    "axialOffsetBp": -44
+   }
+  ],
+  "nMisalignedConnections": 15,
+  "stapleBonds": 42,
+  "scaffoldBonds": 35,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [
+   {
+    "helixA": 13,
+    "helixB": 22,
+    "base": 39,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 13,
+    "helixB": 22,
+    "base": 40,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 13,
+    "helixB": 22,
+    "base": 123,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 13,
+    "helixB": 22,
+    "base": 124,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 13,
+    "helixB": 22,
+    "base": 207,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 13,
+    "helixB": 22,
+    "base": 208,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 15,
+    "helixB": 20,
+    "base": 39,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 15,
+    "helixB": 20,
+    "base": 40,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 15,
+    "helixB": 20,
+    "base": 123,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 15,
+    "helixB": 20,
+    "base": 124,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 15,
+    "helixB": 20,
+    "base": 207,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 15,
+    "helixB": 20,
+    "base": 208,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 17,
+    "helixB": 18,
+    "base": 39,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 17,
+    "helixB": 18,
+    "base": 40,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 17,
+    "helixB": 18,
+    "base": 123,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 17,
+    "helixB": 18,
+    "base": 124,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 17,
+    "helixB": 18,
+    "base": 207,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 17,
+    "helixB": 18,
+    "base": 208,
+    "why": "no staple crossover on this bond"
+   }
+  ],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 18,
+  "carriesForcedCrossover": true,
+  "design": "gear180",
+  "archive": "Science09",
+  "path": "Science09.zip!Science09/gear180.json",
+  "insertions": 237,
+  "deletions": 237,
+  "scaffoldBases": 6804,
+  "stapleBases": 6577,
+  "unpairedScaffoldBases": 274
+ },
+ {
+  "helices": 36,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 543,
+   "1,0": 276,
+   "1,1": 2,
+   "1,3": 2,
+   "1,5": 2
+  },
+  "stapleCrossings": 683,
+  "scaffoldCrossings": 142,
+  "forcedByAdjacency": [
+   {
+    "role": "stap",
+    "helixA": 24,
+    "helixB": 30,
+    "base": 26,
+    "displacement": "1,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 24,
+    "helixB": 30,
+    "base": 67,
+    "displacement": "1,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 26,
+    "helixB": 32,
+    "base": 26,
+    "displacement": "1,1",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 26,
+    "helixB": 32,
+    "base": 67,
+    "displacement": "1,1",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 28,
+    "helixB": 34,
+    "base": 26,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 28,
+    "helixB": 34,
+    "base": 67,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   }
+  ],
+  "nForcedByAdjacency": 6,
+  "misalignedConnections": [
+   {
+    "role": "stap",
+    "helixA": 13,
+    "helixB": 22,
+    "baseA": 55,
+    "baseB": 79,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 13,
+    "helixB": 22,
+    "baseA": 139,
+    "baseB": 163,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 13,
+    "helixB": 22,
+    "baseA": 223,
+    "baseB": 247,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 15,
+    "helixB": 20,
+    "baseA": 55,
+    "baseB": 79,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 15,
+    "helixB": 20,
+    "baseA": 139,
+    "baseB": 163,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 15,
+    "helixB": 20,
+    "baseA": 223,
+    "baseB": 247,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 17,
+    "helixB": 18,
+    "baseA": 55,
+    "baseB": 79,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 17,
+    "helixB": 18,
+    "baseA": 139,
+    "baseB": 163,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 17,
+    "helixB": 18,
+    "baseA": 223,
+    "baseB": 247,
+    "axialOffsetBp": 24
+   },
+   {
+    "role": "stap",
+    "helixA": 24,
+    "helixB": 30,
+    "baseA": 26,
+    "baseB": 64,
+    "axialOffsetBp": 38
+   },
+   {
+    "role": "stap",
+    "helixA": 24,
+    "helixB": 30,
+    "baseA": 67,
+    "baseB": 23,
+    "axialOffsetBp": -44
+   },
+   {
+    "role": "stap",
+    "helixA": 26,
+    "helixB": 32,
+    "baseA": 26,
+    "baseB": 64,
+    "axialOffsetBp": 38
+   },
+   {
+    "role": "stap",
+    "helixA": 26,
+    "helixB": 32,
+    "baseA": 67,
+    "baseB": 23,
+    "axialOffsetBp": -44
+   },
+   {
+    "role": "stap",
+    "helixA": 28,
+    "helixB": 34,
+    "baseA": 26,
+    "baseB": 64,
+    "axialOffsetBp": 38
+   },
+   {
+    "role": "stap",
+    "helixA": 28,
+    "helixB": 34,
+    "baseA": 67,
+    "baseB": 23,
+    "axialOffsetBp": -44
+   }
+  ],
+  "nMisalignedConnections": 15,
+  "stapleBonds": 42,
+  "scaffoldBonds": 35,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [
+   {
+    "helixA": 13,
+    "helixB": 22,
+    "base": 39,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 13,
+    "helixB": 22,
+    "base": 40,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 13,
+    "helixB": 22,
+    "base": 123,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 13,
+    "helixB": 22,
+    "base": 124,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 13,
+    "helixB": 22,
+    "base": 207,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 13,
+    "helixB": 22,
+    "base": 208,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 15,
+    "helixB": 20,
+    "base": 39,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 15,
+    "helixB": 20,
+    "base": 40,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 15,
+    "helixB": 20,
+    "base": 123,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 15,
+    "helixB": 20,
+    "base": 124,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 15,
+    "helixB": 20,
+    "base": 207,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 15,
+    "helixB": 20,
+    "base": 208,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 17,
+    "helixB": 18,
+    "base": 39,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 17,
+    "helixB": 18,
+    "base": 40,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 17,
+    "helixB": 18,
+    "base": 123,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 17,
+    "helixB": 18,
+    "base": 124,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 17,
+    "helixB": 18,
+    "base": 207,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 17,
+    "helixB": 18,
+    "base": 208,
+    "why": "no staple crossover on this bond"
+   }
+  ],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 18,
+  "carriesForcedCrossover": true,
+  "design": "gear90",
+  "archive": "Science09",
+  "path": "Science09.zip!Science09/gear90.json",
+  "insertions": 111,
+  "deletions": 111,
+  "scaffoldBases": 6804,
+  "stapleBases": 6577,
+  "unpairedScaffoldBases": 274
+ },
+ {
+  "helices": 60,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 582,
+   "1,0": 270
+  },
+  "stapleCrossings": 734,
+  "scaffoldCrossings": 118,
+  "forcedByAdjacency": [],
+  "nForcedByAdjacency": 0,
+  "misalignedConnections": [],
+  "nMisalignedConnections": 0,
+  "stapleBonds": 77,
+  "scaffoldBonds": 59,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": false,
+  "design": "monolight_left_twist",
+  "archive": "Science09",
+  "path": "Science09.zip!Science09/monolight_left_twist.json",
+  "insertions": 1,
+  "deletions": 360,
+  "scaffoldBases": 7560,
+  "stapleBases": 7559,
+  "unpairedScaffoldBases": 1
+ },
+ {
+  "helices": 60,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 582,
+   "1,0": 270
+  },
+  "stapleCrossings": 734,
+  "scaffoldCrossings": 118,
+  "forcedByAdjacency": [],
+  "nForcedByAdjacency": 0,
+  "misalignedConnections": [],
+  "nMisalignedConnections": 0,
+  "stapleBonds": 77,
+  "scaffoldBonds": 59,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": false,
+  "design": "monolith_right_twist",
+  "archive": "Science09",
+  "path": "Science09.zip!Science09/monolith_right_twist.json",
+  "insertions": 361,
+  "deletions": 0,
+  "scaffoldBases": 7560,
+  "stapleBases": 7559,
+  "unpairedScaffoldBases": 1
+ },
+ {
+  "helices": 19,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 588,
+   "1,0": 228,
+   "1,2": 2,
+   "1,3": 2
+  },
+  "stapleCrossings": 718,
+  "scaffoldCrossings": 102,
+  "forcedByAdjacency": [
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "base": 172,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "base": 173,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "base": 172,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "base": 173,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   }
+  ],
+  "nForcedByAdjacency": 4,
+  "misalignedConnections": [
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "baseA": 172,
+    "baseB": 256,
+    "axialOffsetBp": 84
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "baseA": 173,
+    "baseB": 179,
+    "axialOffsetBp": 6
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "baseA": 172,
+    "baseB": 98,
+    "axialOffsetBp": -74
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "baseA": 173,
+    "baseB": 163,
+    "axialOffsetBp": -10
+   }
+  ],
+  "nMisalignedConnections": 4,
+  "stapleBonds": 21,
+  "scaffoldBonds": 17,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": true,
+  "design": "protractor_0_v3",
+  "archive": "Science09",
+  "path": "Science09.zip!Science09/protractor_0_v3.json",
+  "insertions": 0,
+  "deletions": 0,
+  "scaffoldBases": 7704,
+  "stapleBases": 7658,
+  "unpairedScaffoldBases": 46
+ },
+ {
+  "helices": 19,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 588,
+   "1,0": 228,
+   "1,2": 2,
+   "1,3": 2
+  },
+  "stapleCrossings": 718,
+  "scaffoldCrossings": 102,
+  "forcedByAdjacency": [
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "base": 172,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "base": 173,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "base": 172,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "base": 173,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   }
+  ],
+  "nForcedByAdjacency": 4,
+  "misalignedConnections": [
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "baseA": 172,
+    "baseB": 256,
+    "axialOffsetBp": 84
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "baseA": 173,
+    "baseB": 179,
+    "axialOffsetBp": 6
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "baseA": 172,
+    "baseB": 98,
+    "axialOffsetBp": -74
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "baseA": 173,
+    "baseB": 163,
+    "axialOffsetBp": -10
+   }
+  ],
+  "nMisalignedConnections": 4,
+  "stapleBonds": 21,
+  "scaffoldBonds": 17,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": true,
+  "design": "protractor_120_98_v3",
+  "archive": "Science09",
+  "path": "Science09.zip!Science09/protractor_120_98_v3.json",
+  "insertions": 154,
+  "deletions": 180,
+  "scaffoldBases": 7704,
+  "stapleBases": 7658,
+  "unpairedScaffoldBases": 46
+ },
+ {
+  "helices": 19,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 588,
+   "1,0": 228,
+   "1,2": 2,
+   "1,3": 2
+  },
+  "stapleCrossings": 718,
+  "scaffoldCrossings": 102,
+  "forcedByAdjacency": [
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "base": 172,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "base": 173,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "base": 172,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "base": 173,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   }
+  ],
+  "nForcedByAdjacency": 4,
+  "misalignedConnections": [
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "baseA": 172,
+    "baseB": 256,
+    "axialOffsetBp": 84
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "baseA": 173,
+    "baseB": 179,
+    "axialOffsetBp": 6
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "baseA": 172,
+    "baseB": 98,
+    "axialOffsetBp": -74
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "baseA": 173,
+    "baseB": 163,
+    "axialOffsetBp": -10
+   }
+  ],
+  "nMisalignedConnections": 4,
+  "stapleBonds": 21,
+  "scaffoldBonds": 17,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": true,
+  "design": "protractor_150_98_v3",
+  "archive": "Science09",
+  "path": "Science09.zip!Science09/protractor_150_98_v3.json",
+  "insertions": 193,
+  "deletions": 223,
+  "scaffoldBases": 7704,
+  "stapleBases": 7658,
+  "unpairedScaffoldBases": 46
+ },
+ {
+  "helices": 19,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 588,
+   "1,0": 228,
+   "1,2": 2,
+   "1,3": 2
+  },
+  "stapleCrossings": 718,
+  "scaffoldCrossings": 102,
+  "forcedByAdjacency": [
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "base": 172,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "base": 173,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "base": 172,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "base": 173,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   }
+  ],
+  "nForcedByAdjacency": 4,
+  "misalignedConnections": [
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "baseA": 172,
+    "baseB": 256,
+    "axialOffsetBp": 84
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "baseA": 173,
+    "baseB": 179,
+    "axialOffsetBp": 6
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "baseA": 172,
+    "baseB": 98,
+    "axialOffsetBp": -74
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "baseA": 173,
+    "baseB": 163,
+    "axialOffsetBp": -10
+   }
+  ],
+  "nMisalignedConnections": 4,
+  "stapleBonds": 21,
+  "scaffoldBonds": 17,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": true,
+  "design": "protractor_180_98_v3",
+  "archive": "Science09",
+  "path": "Science09.zip!Science09/protractor_180_98_v3.json",
+  "insertions": 244,
+  "deletions": 219,
+  "scaffoldBases": 7662,
+  "stapleBases": 7658,
+  "unpairedScaffoldBases": 46
+ },
+ {
+  "helices": 19,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 588,
+   "1,0": 228,
+   "1,2": 2,
+   "1,3": 2
+  },
+  "stapleCrossings": 718,
+  "scaffoldCrossings": 102,
+  "forcedByAdjacency": [
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "base": 172,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "base": 173,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "base": 172,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "base": 173,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   }
+  ],
+  "nForcedByAdjacency": 4,
+  "misalignedConnections": [
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "baseA": 172,
+    "baseB": 256,
+    "axialOffsetBp": 84
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "baseA": 173,
+    "baseB": 179,
+    "axialOffsetBp": 6
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "baseA": 172,
+    "baseB": 98,
+    "axialOffsetBp": -74
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "baseA": 173,
+    "baseB": 163,
+    "axialOffsetBp": -10
+   }
+  ],
+  "nMisalignedConnections": 4,
+  "stapleBonds": 21,
+  "scaffoldBonds": 17,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": true,
+  "design": "protractor_30_98_v4",
+  "archive": "Science09",
+  "path": "Science09.zip!Science09/protractor_30_98_v4.json",
+  "insertions": 31,
+  "deletions": 36,
+  "scaffoldBases": 7704,
+  "stapleBases": 7609,
+  "unpairedScaffoldBases": 95
+ },
+ {
+  "helices": 19,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 588,
+   "1,0": 228,
+   "1,2": 2,
+   "1,3": 2
+  },
+  "stapleCrossings": 718,
+  "scaffoldCrossings": 102,
+  "forcedByAdjacency": [
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "base": 172,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "base": 173,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "base": 172,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "base": 173,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   }
+  ],
+  "nForcedByAdjacency": 4,
+  "misalignedConnections": [
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "baseA": 172,
+    "baseB": 256,
+    "axialOffsetBp": 84
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "baseA": 173,
+    "baseB": 179,
+    "axialOffsetBp": 6
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "baseA": 172,
+    "baseB": 98,
+    "axialOffsetBp": -74
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "baseA": 173,
+    "baseB": 163,
+    "axialOffsetBp": -10
+   }
+  ],
+  "nMisalignedConnections": 4,
+  "stapleBonds": 21,
+  "scaffoldBonds": 17,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": true,
+  "design": "protractor_60_98_v4",
+  "archive": "Science09",
+  "path": "Science09.zip!Science09/protractor_60_98_v4.json",
+  "insertions": 70,
+  "deletions": 81,
+  "scaffoldBases": 7704,
+  "stapleBases": 7609,
+  "unpairedScaffoldBases": 95
+ },
+ {
+  "helices": 19,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 588,
+   "1,0": 228,
+   "1,2": 2,
+   "1,3": 2
+  },
+  "stapleCrossings": 718,
+  "scaffoldCrossings": 102,
+  "forcedByAdjacency": [
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "base": 172,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "base": 173,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "base": 172,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "base": 173,
+    "displacement": "1,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   }
+  ],
+  "nForcedByAdjacency": 4,
+  "misalignedConnections": [
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "baseA": 172,
+    "baseB": 256,
+    "axialOffsetBp": 84
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 19,
+    "baseA": 173,
+    "baseB": 179,
+    "axialOffsetBp": 6
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "baseA": 172,
+    "baseB": 98,
+    "axialOffsetBp": -74
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 19,
+    "baseA": 173,
+    "baseB": 163,
+    "axialOffsetBp": -10
+   }
+  ],
+  "nMisalignedConnections": 4,
+  "stapleBonds": 21,
+  "scaffoldBonds": 17,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": true,
+  "design": "protractor_90_98_v3",
+  "archive": "Science09",
+  "path": "Science09.zip!Science09/protractor_90_98_v3.json",
+  "insertions": 118,
+  "deletions": 132,
+  "scaffoldBases": 7704,
+  "stapleBases": 7658,
+  "unpairedScaffoldBases": 46
+ },
+ {
+  "helices": 54,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.041666666666666664,
+  "displacements": {
+   "0,1": 298,
+   "1,0": 151
+  },
+  "stapleCrossings": 303,
+  "scaffoldCrossings": 146,
+  "forcedByAdjacency": [],
+  "nForcedByAdjacency": 0,
+  "misalignedConnections": [],
+  "nMisalignedConnections": 0,
+  "stapleBonds": 72,
+  "scaffoldBonds": 55,
+  "siteResiduesFitted": [
+   6,
+   12,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": false,
+  "forcedStaple": [],
+  "forcedScaffold": [
+   {
+    "helixA": 23,
+    "helixB": 24,
+    "base": 82,
+    "residue": 19,
+    "siteResidue": 12,
+    "allowedResidues": [
+     7,
+     8,
+     17,
+     18
+    ],
+    "departureBp": 1
+   }
+  ],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 1,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": true,
+  "design": "doublegear",
+  "archive": "Nature09",
+  "path": "Nature09.zip!Nature09/06-doublegear/doublegear.json",
+  "insertions": 1,
+  "deletions": 0,
+  "scaffoldBases": 4662,
+  "stapleBases": 3975,
+  "unpairedScaffoldBases": 713
+ },
+ {
+  "helices": 180,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 0.6153846153846154,
+  "squarePeriodFit": 0.23076923076923078,
+  "displacements": {
+   "0,1": 900,
+   "0,4": 46,
+   "0,8": 12,
+   "0,16": 2,
+   "1,0": 432,
+   "1,2": 120,
+   "2,1": 2,
+   "2,2": 8,
+   "2,5": 1,
+   "2,6": 4,
+   "3,2": 4,
+   "3,6": 2,
+   "4,11": 1,
+   "4,15": 2,
+   "5,1": 2,
+   "5,5": 2,
+   "5,15": 2,
+   "5,17": 2,
+   "6,1": 2,
+   "6,3": 2,
+   "6,5": 1,
+   "6,7": 1,
+   "7,1": 2,
+   "7,13": 2,
+   "7,15": 2,
+   "7,19": 2,
+   "8,10": 2,
+   "8,14": 2,
+   "10,0": 2,
+   "10,4": 2
+  },
+  "stapleCrossings": 1224,
+  "scaffoldCrossings": 342,
+  "forcedByAdjacency": [
+   {
+    "role": "stap",
+    "helixA": 4,
+    "helixB": 16,
+    "base": 15,
+    "displacement": "0,8",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 4,
+    "helixB": 10,
+    "base": 144,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 5,
+    "helixB": 119,
+    "base": 19,
+    "displacement": "7,13",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 5,
+    "helixB": 35,
+    "base": 148,
+    "displacement": "2,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 10,
+    "helixB": 16,
+    "base": 144,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 11,
+    "helixB": 46,
+    "base": 19,
+    "displacement": "3,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 17,
+    "helixB": 29,
+    "base": 19,
+    "displacement": "0,8",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 17,
+    "helixB": 23,
+    "base": 148,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 22,
+    "helixB": 113,
+    "base": 15,
+    "displacement": "6,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 23,
+    "helixB": 29,
+    "base": 148,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 28,
+    "helixB": 94,
+    "base": 15,
+    "displacement": "7,19",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 28,
+    "helixB": 58,
+    "base": 144,
+    "displacement": "2,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 34,
+    "helixB": 40,
+    "base": 15,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 35,
+    "helixB": 119,
+    "base": 148,
+    "displacement": "5,15",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 40,
+    "helixB": 71,
+    "base": 15,
+    "displacement": "2,1",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 41,
+    "helixB": 161,
+    "base": 19,
+    "displacement": "10,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 41,
+    "helixB": 47,
+    "base": 148,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 46,
+    "helixB": 52,
+    "base": 144,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 47,
+    "helixB": 161,
+    "base": 148,
+    "displacement": "10,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 53,
+    "helixB": 125,
+    "base": 19,
+    "displacement": "8,10",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 53,
+    "helixB": 59,
+    "base": 148,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 58,
+    "helixB": 94,
+    "base": 144,
+    "displacement": "5,17",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 59,
+    "helixB": 125,
+    "base": 148,
+    "displacement": "8,14",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 64,
+    "helixB": 76,
+    "base": 15,
+    "displacement": "0,8",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 64,
+    "helixB": 70,
+    "base": 144,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 65,
+    "helixB": 179,
+    "base": 19,
+    "displacement": "7,15",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 65,
+    "helixB": 155,
+    "base": 148,
+    "displacement": "7,1",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 70,
+    "helixB": 76,
+    "base": 144,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 77,
+    "helixB": 89,
+    "base": 19,
+    "displacement": "0,8",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 77,
+    "helixB": 83,
+    "base": 148,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 82,
+    "helixB": 173,
+    "base": 15,
+    "displacement": "6,1",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 83,
+    "helixB": 89,
+    "base": 148,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 88,
+    "helixB": 112,
+    "base": 15,
+    "displacement": "2,6",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 88,
+    "helixB": 118,
+    "base": 144,
+    "displacement": "2,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 95,
+    "helixB": 142,
+    "base": 19,
+    "displacement": "4,15",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 95,
+    "helixB": 101,
+    "base": 148,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 100,
+    "helixB": 106,
+    "base": 15,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 100,
+    "helixB": 166,
+    "base": 144,
+    "displacement": "5,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 106,
+    "helixB": 166,
+    "base": 15,
+    "displacement": "5,1",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 107,
+    "helixB": 113,
+    "base": 19,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 112,
+    "helixB": 118,
+    "base": 15,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 124,
+    "helixB": 136,
+    "base": 15,
+    "displacement": "0,8",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 124,
+    "helixB": 130,
+    "base": 144,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 130,
+    "helixB": 136,
+    "base": 144,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 131,
+    "helixB": 160,
+    "base": 19,
+    "displacement": "3,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 137,
+    "helixB": 149,
+    "base": 19,
+    "displacement": "0,8",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 137,
+    "helixB": 143,
+    "base": 148,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 143,
+    "helixB": 149,
+    "base": 148,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 148,
+    "helixB": 172,
+    "base": 15,
+    "displacement": "2,6",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 148,
+    "helixB": 178,
+    "base": 144,
+    "displacement": "2,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 154,
+    "helixB": 160,
+    "base": 15,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 155,
+    "helixB": 179,
+    "base": 148,
+    "displacement": "0,16",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 167,
+    "helixB": 173,
+    "base": 19,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 172,
+    "helixB": 178,
+    "base": 15,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 114,
+    "base": 19,
+    "displacement": "7,13",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 30,
+    "base": 147,
+    "displacement": "2,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 4,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 4,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 2,
+    "helixB": 5,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 2,
+    "helixB": 5,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 3,
+    "helixB": 15,
+    "base": 16,
+    "displacement": "0,8",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 3,
+    "helixB": 9,
+    "base": 144,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 6,
+    "helixB": 45,
+    "base": 19,
+    "displacement": "3,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 6,
+    "helixB": 51,
+    "base": 147,
+    "displacement": "3,6",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 7,
+    "helixB": 10,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 7,
+    "helixB": 10,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 8,
+    "helixB": 11,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 8,
+    "helixB": 11,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 9,
+    "helixB": 15,
+    "base": 144,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 12,
+    "helixB": 24,
+    "base": 19,
+    "displacement": "0,8",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 12,
+    "helixB": 18,
+    "base": 147,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 13,
+    "helixB": 16,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 13,
+    "helixB": 16,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 14,
+    "helixB": 17,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 14,
+    "helixB": 17,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 18,
+    "helixB": 24,
+    "base": 147,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 19,
+    "helixB": 22,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 19,
+    "helixB": 22,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 20,
+    "helixB": 23,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 20,
+    "helixB": 23,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 21,
+    "helixB": 108,
+    "base": 16,
+    "displacement": "6,3",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 21,
+    "helixB": 102,
+    "base": 144,
+    "displacement": "6,7",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 25,
+    "helixB": 28,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 25,
+    "helixB": 28,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 26,
+    "helixB": 29,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 26,
+    "helixB": 29,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 27,
+    "helixB": 93,
+    "base": 16,
+    "displacement": "7,19",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 27,
+    "helixB": 57,
+    "base": 144,
+    "displacement": "2,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 30,
+    "helixB": 114,
+    "base": 147,
+    "displacement": "5,15",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 31,
+    "helixB": 34,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 31,
+    "helixB": 34,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 32,
+    "helixB": 35,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 32,
+    "helixB": 35,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 33,
+    "helixB": 39,
+    "base": 16,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 33,
+    "helixB": 66,
+    "base": 144,
+    "displacement": "2,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 36,
+    "helixB": 156,
+    "base": 19,
+    "displacement": "10,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 36,
+    "helixB": 42,
+    "base": 147,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 37,
+    "helixB": 40,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 37,
+    "helixB": 40,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 38,
+    "helixB": 41,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 38,
+    "helixB": 41,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 39,
+    "helixB": 66,
+    "base": 16,
+    "displacement": "2,1",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 42,
+    "helixB": 156,
+    "base": 147,
+    "displacement": "10,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 43,
+    "helixB": 46,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 43,
+    "helixB": 46,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 44,
+    "helixB": 47,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 44,
+    "helixB": 47,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 45,
+    "helixB": 51,
+    "base": 144,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 48,
+    "helixB": 120,
+    "base": 19,
+    "displacement": "8,10",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 48,
+    "helixB": 54,
+    "base": 147,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 49,
+    "helixB": 52,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 49,
+    "helixB": 52,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 50,
+    "helixB": 53,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 50,
+    "helixB": 53,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 54,
+    "helixB": 120,
+    "base": 147,
+    "displacement": "8,14",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 55,
+    "helixB": 58,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 55,
+    "helixB": 58,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 56,
+    "helixB": 59,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 56,
+    "helixB": 59,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 57,
+    "helixB": 93,
+    "base": 144,
+    "displacement": "5,17",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 60,
+    "helixB": 174,
+    "base": 19,
+    "displacement": "7,15",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 60,
+    "helixB": 150,
+    "base": 147,
+    "displacement": "7,1",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 61,
+    "helixB": 64,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 61,
+    "helixB": 64,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 62,
+    "helixB": 65,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 62,
+    "helixB": 65,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 63,
+    "helixB": 75,
+    "base": 16,
+    "displacement": "0,8",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 63,
+    "helixB": 69,
+    "base": 144,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 67,
+    "helixB": 70,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 67,
+    "helixB": 70,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 68,
+    "helixB": 71,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 68,
+    "helixB": 71,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 69,
+    "helixB": 75,
+    "base": 144,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 72,
+    "helixB": 84,
+    "base": 19,
+    "displacement": "0,8",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 72,
+    "helixB": 78,
+    "base": 147,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 73,
+    "helixB": 76,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 73,
+    "helixB": 76,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 74,
+    "helixB": 77,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 74,
+    "helixB": 77,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 78,
+    "helixB": 84,
+    "base": 147,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 79,
+    "helixB": 82,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 79,
+    "helixB": 82,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 80,
+    "helixB": 83,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 80,
+    "helixB": 83,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 81,
+    "helixB": 168,
+    "base": 16,
+    "displacement": "6,1",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 81,
+    "helixB": 162,
+    "base": 144,
+    "displacement": "6,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 85,
+    "helixB": 88,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 85,
+    "helixB": 88,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 86,
+    "helixB": 89,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 86,
+    "helixB": 89,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 87,
+    "helixB": 111,
+    "base": 16,
+    "displacement": "2,6",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 87,
+    "helixB": 117,
+    "base": 144,
+    "displacement": "2,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 90,
+    "helixB": 141,
+    "base": 19,
+    "displacement": "4,15",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 90,
+    "helixB": 96,
+    "base": 147,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 91,
+    "helixB": 94,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 91,
+    "helixB": 94,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 92,
+    "helixB": 95,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 92,
+    "helixB": 95,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 96,
+    "helixB": 141,
+    "base": 147,
+    "displacement": "4,11",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 97,
+    "helixB": 100,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 97,
+    "helixB": 100,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 98,
+    "helixB": 101,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 98,
+    "helixB": 101,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 99,
+    "helixB": 105,
+    "base": 16,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 99,
+    "helixB": 165,
+    "base": 144,
+    "displacement": "5,5",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 102,
+    "helixB": 108,
+    "base": 19,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 103,
+    "helixB": 106,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 103,
+    "helixB": 106,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 104,
+    "helixB": 107,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 104,
+    "helixB": 107,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 105,
+    "helixB": 165,
+    "base": 16,
+    "displacement": "5,1",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 109,
+    "helixB": 112,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 109,
+    "helixB": 112,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 110,
+    "helixB": 113,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 110,
+    "helixB": 113,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 111,
+    "helixB": 117,
+    "base": 16,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 115,
+    "helixB": 118,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 115,
+    "helixB": 118,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 116,
+    "helixB": 119,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 116,
+    "helixB": 119,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 121,
+    "helixB": 124,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 121,
+    "helixB": 124,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 122,
+    "helixB": 125,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 122,
+    "helixB": 125,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 123,
+    "helixB": 135,
+    "base": 16,
+    "displacement": "0,8",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 123,
+    "helixB": 129,
+    "base": 144,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 126,
+    "helixB": 159,
+    "base": 19,
+    "displacement": "3,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 126,
+    "helixB": 153,
+    "base": 147,
+    "displacement": "3,6",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 127,
+    "helixB": 130,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 127,
+    "helixB": 130,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 128,
+    "helixB": 131,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 128,
+    "helixB": 131,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 129,
+    "helixB": 135,
+    "base": 144,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 132,
+    "helixB": 144,
+    "base": 19,
+    "displacement": "0,8",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 132,
+    "helixB": 138,
+    "base": 147,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 133,
+    "helixB": 136,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 133,
+    "helixB": 136,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 134,
+    "helixB": 137,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 134,
+    "helixB": 137,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 138,
+    "helixB": 144,
+    "base": 147,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 139,
+    "helixB": 142,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 139,
+    "helixB": 142,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 140,
+    "helixB": 143,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 140,
+    "helixB": 143,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 145,
+    "helixB": 148,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 145,
+    "helixB": 148,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 146,
+    "helixB": 149,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 146,
+    "helixB": 149,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 147,
+    "helixB": 171,
+    "base": 16,
+    "displacement": "2,6",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 147,
+    "helixB": 177,
+    "base": 144,
+    "displacement": "2,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 150,
+    "helixB": 174,
+    "base": 147,
+    "displacement": "0,16",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 151,
+    "helixB": 154,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 151,
+    "helixB": 154,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 152,
+    "helixB": 155,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 152,
+    "helixB": 155,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 153,
+    "helixB": 159,
+    "base": 16,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 157,
+    "helixB": 160,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 157,
+    "helixB": 160,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 158,
+    "helixB": 161,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 158,
+    "helixB": 161,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 162,
+    "helixB": 168,
+    "base": 19,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 163,
+    "helixB": 166,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 163,
+    "helixB": 166,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 164,
+    "helixB": 167,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 164,
+    "helixB": 167,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 169,
+    "helixB": 172,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 169,
+    "helixB": 172,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 170,
+    "helixB": 173,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 170,
+    "helixB": 173,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 171,
+    "helixB": 177,
+    "base": 16,
+    "displacement": "0,4",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 175,
+    "helixB": 178,
+    "base": 7,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 175,
+    "helixB": 178,
+    "base": 144,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 176,
+    "helixB": 179,
+    "base": 19,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 176,
+    "helixB": 179,
+    "base": 156,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   }
+  ],
+  "nForcedByAdjacency": 234,
+  "misalignedConnections": [
+   {
+    "role": "stap",
+    "helixA": 0,
+    "helixB": 1,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 1,
+    "helixB": 2,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 2,
+    "helixB": 3,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 4,
+    "helixB": 16,
+    "baseA": 15,
+    "baseB": 144,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 4,
+    "helixB": 10,
+    "baseA": 144,
+    "baseB": 15,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 5,
+    "helixB": 119,
+    "baseA": 19,
+    "baseB": 148,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 5,
+    "helixB": 35,
+    "baseA": 148,
+    "baseB": 19,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 6,
+    "helixB": 7,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 7,
+    "helixB": 8,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 8,
+    "helixB": 9,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 10,
+    "helixB": 16,
+    "baseA": 144,
+    "baseB": 15,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 11,
+    "helixB": 46,
+    "baseA": 19,
+    "baseB": 15,
+    "axialOffsetBp": -4
+   },
+   {
+    "role": "stap",
+    "helixA": 12,
+    "helixB": 13,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 13,
+    "helixB": 14,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 14,
+    "helixB": 15,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 17,
+    "helixB": 29,
+    "baseA": 19,
+    "baseB": 148,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 17,
+    "helixB": 23,
+    "baseA": 148,
+    "baseB": 19,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 18,
+    "helixB": 19,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 19,
+    "helixB": 20,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 20,
+    "helixB": 21,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 22,
+    "helixB": 113,
+    "baseA": 15,
+    "baseB": 19,
+    "axialOffsetBp": 4
+   },
+   {
+    "role": "stap",
+    "helixA": 23,
+    "helixB": 29,
+    "baseA": 148,
+    "baseB": 19,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 24,
+    "helixB": 25,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 25,
+    "helixB": 26,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 26,
+    "helixB": 27,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 28,
+    "helixB": 94,
+    "baseA": 15,
+    "baseB": 144,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 28,
+    "helixB": 58,
+    "baseA": 144,
+    "baseB": 15,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 30,
+    "helixB": 31,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 31,
+    "helixB": 32,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 32,
+    "helixB": 33,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 34,
+    "helixB": 40,
+    "baseA": 15,
+    "baseB": 144,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 35,
+    "helixB": 119,
+    "baseA": 148,
+    "baseB": 19,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 36,
+    "helixB": 37,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 37,
+    "helixB": 38,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 38,
+    "helixB": 39,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 40,
+    "helixB": 71,
+    "baseA": 15,
+    "baseB": 19,
+    "axialOffsetBp": 4
+   },
+   {
+    "role": "stap",
+    "helixA": 41,
+    "helixB": 161,
+    "baseA": 19,
+    "baseB": 148,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 41,
+    "helixB": 47,
+    "baseA": 148,
+    "baseB": 19,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 42,
+    "helixB": 43,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 43,
+    "helixB": 44,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 44,
+    "helixB": 45,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 46,
+    "helixB": 52,
+    "baseA": 144,
+    "baseB": 15,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 47,
+    "helixB": 161,
+    "baseA": 148,
+    "baseB": 19,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 48,
+    "helixB": 49,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 49,
+    "helixB": 50,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 50,
+    "helixB": 51,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 53,
+    "helixB": 125,
+    "baseA": 19,
+    "baseB": 148,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 53,
+    "helixB": 59,
+    "baseA": 148,
+    "baseB": 19,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 54,
+    "helixB": 55,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 55,
+    "helixB": 56,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 56,
+    "helixB": 57,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 58,
+    "helixB": 94,
+    "baseA": 144,
+    "baseB": 15,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 59,
+    "helixB": 125,
+    "baseA": 148,
+    "baseB": 19,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 60,
+    "helixB": 61,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 61,
+    "helixB": 62,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 62,
+    "helixB": 63,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 64,
+    "helixB": 76,
+    "baseA": 15,
+    "baseB": 144,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 64,
+    "helixB": 70,
+    "baseA": 144,
+    "baseB": 15,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 65,
+    "helixB": 179,
+    "baseA": 19,
+    "baseB": 148,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 65,
+    "helixB": 155,
+    "baseA": 148,
+    "baseB": 19,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 66,
+    "helixB": 67,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 67,
+    "helixB": 68,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 68,
+    "helixB": 69,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 70,
+    "helixB": 76,
+    "baseA": 144,
+    "baseB": 15,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 72,
+    "helixB": 73,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 73,
+    "helixB": 74,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 74,
+    "helixB": 75,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 77,
+    "helixB": 89,
+    "baseA": 19,
+    "baseB": 148,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 77,
+    "helixB": 83,
+    "baseA": 148,
+    "baseB": 19,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 78,
+    "helixB": 79,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 79,
+    "helixB": 80,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 80,
+    "helixB": 81,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 82,
+    "helixB": 173,
+    "baseA": 15,
+    "baseB": 19,
+    "axialOffsetBp": 4
+   },
+   {
+    "role": "stap",
+    "helixA": 83,
+    "helixB": 89,
+    "baseA": 148,
+    "baseB": 19,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 84,
+    "helixB": 85,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 85,
+    "helixB": 86,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 86,
+    "helixB": 87,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 88,
+    "helixB": 112,
+    "baseA": 15,
+    "baseB": 144,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 88,
+    "helixB": 118,
+    "baseA": 144,
+    "baseB": 15,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 90,
+    "helixB": 91,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 91,
+    "helixB": 92,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 92,
+    "helixB": 93,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 95,
+    "helixB": 142,
+    "baseA": 19,
+    "baseB": 15,
+    "axialOffsetBp": -4
+   },
+   {
+    "role": "stap",
+    "helixA": 95,
+    "helixB": 101,
+    "baseA": 148,
+    "baseB": 19,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 96,
+    "helixB": 97,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 97,
+    "helixB": 98,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 98,
+    "helixB": 99,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 100,
+    "helixB": 106,
+    "baseA": 15,
+    "baseB": 144,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 100,
+    "helixB": 166,
+    "baseA": 144,
+    "baseB": 15,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 102,
+    "helixB": 103,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 103,
+    "helixB": 104,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 104,
+    "helixB": 105,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 106,
+    "helixB": 166,
+    "baseA": 15,
+    "baseB": 144,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 107,
+    "helixB": 113,
+    "baseA": 19,
+    "baseB": 148,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 108,
+    "helixB": 109,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 109,
+    "helixB": 110,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 110,
+    "helixB": 111,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 112,
+    "helixB": 118,
+    "baseA": 15,
+    "baseB": 144,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 114,
+    "helixB": 115,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 115,
+    "helixB": 116,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 116,
+    "helixB": 117,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 120,
+    "helixB": 121,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 121,
+    "helixB": 122,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 122,
+    "helixB": 123,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 124,
+    "helixB": 136,
+    "baseA": 15,
+    "baseB": 144,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 124,
+    "helixB": 130,
+    "baseA": 144,
+    "baseB": 15,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 126,
+    "helixB": 127,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 127,
+    "helixB": 128,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 128,
+    "helixB": 129,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 130,
+    "helixB": 136,
+    "baseA": 144,
+    "baseB": 15,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 131,
+    "helixB": 160,
+    "baseA": 19,
+    "baseB": 15,
+    "axialOffsetBp": -4
+   },
+   {
+    "role": "stap",
+    "helixA": 132,
+    "helixB": 133,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 133,
+    "helixB": 134,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 134,
+    "helixB": 135,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 137,
+    "helixB": 149,
+    "baseA": 19,
+    "baseB": 148,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 137,
+    "helixB": 143,
+    "baseA": 148,
+    "baseB": 19,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 138,
+    "helixB": 139,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 139,
+    "helixB": 140,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 140,
+    "helixB": 141,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 143,
+    "helixB": 149,
+    "baseA": 148,
+    "baseB": 19,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 144,
+    "helixB": 145,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 145,
+    "helixB": 146,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 146,
+    "helixB": 147,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 148,
+    "helixB": 172,
+    "baseA": 15,
+    "baseB": 144,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 148,
+    "helixB": 178,
+    "baseA": 144,
+    "baseB": 15,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 150,
+    "helixB": 151,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 151,
+    "helixB": 152,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 152,
+    "helixB": 153,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 154,
+    "helixB": 160,
+    "baseA": 15,
+    "baseB": 144,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 155,
+    "helixB": 179,
+    "baseA": 148,
+    "baseB": 19,
+    "axialOffsetBp": -129
+   },
+   {
+    "role": "stap",
+    "helixA": 156,
+    "helixB": 157,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 157,
+    "helixB": 158,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 158,
+    "helixB": 159,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 162,
+    "helixB": 163,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 163,
+    "helixB": 164,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 164,
+    "helixB": 165,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 167,
+    "helixB": 173,
+    "baseA": 19,
+    "baseB": 148,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 168,
+    "helixB": 169,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 169,
+    "helixB": 170,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 170,
+    "helixB": 171,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 172,
+    "helixB": 178,
+    "baseA": 15,
+    "baseB": 144,
+    "axialOffsetBp": 129
+   },
+   {
+    "role": "stap",
+    "helixA": 174,
+    "helixB": 175,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "stap",
+    "helixA": 175,
+    "helixB": 176,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "stap",
+    "helixA": 176,
+    "helixB": 177,
+    "baseA": 144,
+    "baseB": 153,
+    "axialOffsetBp": 9
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 114,
+    "baseA": 19,
+    "baseB": 147,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 30,
+    "baseA": 147,
+    "baseB": 19,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 4,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 1,
+    "helixB": 4,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 2,
+    "helixB": 5,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 2,
+    "helixB": 5,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 3,
+    "helixB": 15,
+    "baseA": 16,
+    "baseB": 144,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 3,
+    "helixB": 9,
+    "baseA": 144,
+    "baseB": 16,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 6,
+    "helixB": 45,
+    "baseA": 19,
+    "baseB": 16,
+    "axialOffsetBp": -3
+   },
+   {
+    "role": "scaf",
+    "helixA": 6,
+    "helixB": 51,
+    "baseA": 147,
+    "baseB": 144,
+    "axialOffsetBp": -3
+   },
+   {
+    "role": "scaf",
+    "helixA": 7,
+    "helixB": 10,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 7,
+    "helixB": 10,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 8,
+    "helixB": 11,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 8,
+    "helixB": 11,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 9,
+    "helixB": 15,
+    "baseA": 144,
+    "baseB": 16,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 12,
+    "helixB": 24,
+    "baseA": 19,
+    "baseB": 147,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 12,
+    "helixB": 18,
+    "baseA": 147,
+    "baseB": 19,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 13,
+    "helixB": 16,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 13,
+    "helixB": 16,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 14,
+    "helixB": 17,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 14,
+    "helixB": 17,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 18,
+    "helixB": 24,
+    "baseA": 147,
+    "baseB": 19,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 19,
+    "helixB": 22,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 19,
+    "helixB": 22,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 20,
+    "helixB": 23,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 20,
+    "helixB": 23,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 21,
+    "helixB": 108,
+    "baseA": 16,
+    "baseB": 19,
+    "axialOffsetBp": 3
+   },
+   {
+    "role": "scaf",
+    "helixA": 21,
+    "helixB": 102,
+    "baseA": 144,
+    "baseB": 147,
+    "axialOffsetBp": 3
+   },
+   {
+    "role": "scaf",
+    "helixA": 25,
+    "helixB": 28,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 25,
+    "helixB": 28,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 26,
+    "helixB": 29,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 26,
+    "helixB": 29,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 27,
+    "helixB": 93,
+    "baseA": 16,
+    "baseB": 144,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 27,
+    "helixB": 57,
+    "baseA": 144,
+    "baseB": 16,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 30,
+    "helixB": 114,
+    "baseA": 147,
+    "baseB": 19,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 31,
+    "helixB": 34,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 31,
+    "helixB": 34,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 32,
+    "helixB": 35,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 32,
+    "helixB": 35,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 33,
+    "helixB": 39,
+    "baseA": 16,
+    "baseB": 144,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 33,
+    "helixB": 66,
+    "baseA": 144,
+    "baseB": 147,
+    "axialOffsetBp": 3
+   },
+   {
+    "role": "scaf",
+    "helixA": 36,
+    "helixB": 156,
+    "baseA": 19,
+    "baseB": 147,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 36,
+    "helixB": 42,
+    "baseA": 147,
+    "baseB": 19,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 37,
+    "helixB": 40,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 37,
+    "helixB": 40,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 38,
+    "helixB": 41,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 38,
+    "helixB": 41,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 39,
+    "helixB": 66,
+    "baseA": 16,
+    "baseB": 19,
+    "axialOffsetBp": 3
+   },
+   {
+    "role": "scaf",
+    "helixA": 42,
+    "helixB": 156,
+    "baseA": 147,
+    "baseB": 19,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 43,
+    "helixB": 46,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 43,
+    "helixB": 46,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 44,
+    "helixB": 47,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 44,
+    "helixB": 47,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 45,
+    "helixB": 51,
+    "baseA": 144,
+    "baseB": 16,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 48,
+    "helixB": 120,
+    "baseA": 19,
+    "baseB": 147,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 48,
+    "helixB": 54,
+    "baseA": 147,
+    "baseB": 19,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 49,
+    "helixB": 52,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 49,
+    "helixB": 52,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 50,
+    "helixB": 53,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 50,
+    "helixB": 53,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 54,
+    "helixB": 120,
+    "baseA": 147,
+    "baseB": 19,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 55,
+    "helixB": 58,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 55,
+    "helixB": 58,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 56,
+    "helixB": 59,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 56,
+    "helixB": 59,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 57,
+    "helixB": 93,
+    "baseA": 144,
+    "baseB": 16,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 60,
+    "helixB": 174,
+    "baseA": 19,
+    "baseB": 147,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 60,
+    "helixB": 150,
+    "baseA": 147,
+    "baseB": 19,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 61,
+    "helixB": 64,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 61,
+    "helixB": 64,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 62,
+    "helixB": 65,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 62,
+    "helixB": 65,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 63,
+    "helixB": 75,
+    "baseA": 16,
+    "baseB": 144,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 63,
+    "helixB": 69,
+    "baseA": 144,
+    "baseB": 16,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 67,
+    "helixB": 70,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 67,
+    "helixB": 70,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 68,
+    "helixB": 71,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 68,
+    "helixB": 71,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 69,
+    "helixB": 75,
+    "baseA": 144,
+    "baseB": 16,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 72,
+    "helixB": 84,
+    "baseA": 19,
+    "baseB": 147,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 72,
+    "helixB": 78,
+    "baseA": 147,
+    "baseB": 19,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 73,
+    "helixB": 76,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 73,
+    "helixB": 76,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 74,
+    "helixB": 77,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 74,
+    "helixB": 77,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 78,
+    "helixB": 84,
+    "baseA": 147,
+    "baseB": 19,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 79,
+    "helixB": 82,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 79,
+    "helixB": 82,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 80,
+    "helixB": 83,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 80,
+    "helixB": 83,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 81,
+    "helixB": 168,
+    "baseA": 16,
+    "baseB": 19,
+    "axialOffsetBp": 3
+   },
+   {
+    "role": "scaf",
+    "helixA": 81,
+    "helixB": 162,
+    "baseA": 144,
+    "baseB": 147,
+    "axialOffsetBp": 3
+   },
+   {
+    "role": "scaf",
+    "helixA": 85,
+    "helixB": 88,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 85,
+    "helixB": 88,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 86,
+    "helixB": 89,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 86,
+    "helixB": 89,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 87,
+    "helixB": 111,
+    "baseA": 16,
+    "baseB": 144,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 87,
+    "helixB": 117,
+    "baseA": 144,
+    "baseB": 16,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 90,
+    "helixB": 141,
+    "baseA": 19,
+    "baseB": 16,
+    "axialOffsetBp": -3
+   },
+   {
+    "role": "scaf",
+    "helixA": 90,
+    "helixB": 96,
+    "baseA": 147,
+    "baseB": 19,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 91,
+    "helixB": 94,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 91,
+    "helixB": 94,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 92,
+    "helixB": 95,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 92,
+    "helixB": 95,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 96,
+    "helixB": 141,
+    "baseA": 147,
+    "baseB": 144,
+    "axialOffsetBp": -3
+   },
+   {
+    "role": "scaf",
+    "helixA": 97,
+    "helixB": 100,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 97,
+    "helixB": 100,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 98,
+    "helixB": 101,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 98,
+    "helixB": 101,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 99,
+    "helixB": 105,
+    "baseA": 16,
+    "baseB": 144,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 99,
+    "helixB": 165,
+    "baseA": 144,
+    "baseB": 16,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 102,
+    "helixB": 108,
+    "baseA": 19,
+    "baseB": 147,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 103,
+    "helixB": 106,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 103,
+    "helixB": 106,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 104,
+    "helixB": 107,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 104,
+    "helixB": 107,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 105,
+    "helixB": 165,
+    "baseA": 16,
+    "baseB": 144,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 109,
+    "helixB": 112,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 109,
+    "helixB": 112,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 110,
+    "helixB": 113,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 110,
+    "helixB": 113,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 111,
+    "helixB": 117,
+    "baseA": 16,
+    "baseB": 144,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 115,
+    "helixB": 118,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 115,
+    "helixB": 118,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 116,
+    "helixB": 119,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 116,
+    "helixB": 119,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 121,
+    "helixB": 124,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 121,
+    "helixB": 124,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 122,
+    "helixB": 125,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 122,
+    "helixB": 125,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 123,
+    "helixB": 135,
+    "baseA": 16,
+    "baseB": 144,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 123,
+    "helixB": 129,
+    "baseA": 144,
+    "baseB": 16,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 126,
+    "helixB": 159,
+    "baseA": 19,
+    "baseB": 16,
+    "axialOffsetBp": -3
+   },
+   {
+    "role": "scaf",
+    "helixA": 126,
+    "helixB": 153,
+    "baseA": 147,
+    "baseB": 144,
+    "axialOffsetBp": -3
+   },
+   {
+    "role": "scaf",
+    "helixA": 127,
+    "helixB": 130,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 127,
+    "helixB": 130,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 128,
+    "helixB": 131,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 128,
+    "helixB": 131,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 129,
+    "helixB": 135,
+    "baseA": 144,
+    "baseB": 16,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 132,
+    "helixB": 144,
+    "baseA": 19,
+    "baseB": 147,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 132,
+    "helixB": 138,
+    "baseA": 147,
+    "baseB": 19,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 133,
+    "helixB": 136,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 133,
+    "helixB": 136,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 134,
+    "helixB": 137,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 134,
+    "helixB": 137,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 138,
+    "helixB": 144,
+    "baseA": 147,
+    "baseB": 19,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 139,
+    "helixB": 142,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 139,
+    "helixB": 142,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 140,
+    "helixB": 143,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 140,
+    "helixB": 143,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 145,
+    "helixB": 148,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 145,
+    "helixB": 148,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 146,
+    "helixB": 149,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 146,
+    "helixB": 149,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 147,
+    "helixB": 171,
+    "baseA": 16,
+    "baseB": 144,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 147,
+    "helixB": 177,
+    "baseA": 144,
+    "baseB": 16,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 150,
+    "helixB": 174,
+    "baseA": 147,
+    "baseB": 19,
+    "axialOffsetBp": -128
+   },
+   {
+    "role": "scaf",
+    "helixA": 151,
+    "helixB": 154,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 151,
+    "helixB": 154,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 152,
+    "helixB": 155,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 152,
+    "helixB": 155,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 153,
+    "helixB": 159,
+    "baseA": 16,
+    "baseB": 144,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 157,
+    "helixB": 160,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 157,
+    "helixB": 160,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 158,
+    "helixB": 161,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 158,
+    "helixB": 161,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 162,
+    "helixB": 168,
+    "baseA": 19,
+    "baseB": 147,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 163,
+    "helixB": 166,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 163,
+    "helixB": 166,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 164,
+    "helixB": 167,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 164,
+    "helixB": 167,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 169,
+    "helixB": 172,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 169,
+    "helixB": 172,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 170,
+    "helixB": 173,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 170,
+    "helixB": 173,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 171,
+    "helixB": 177,
+    "baseA": 16,
+    "baseB": 144,
+    "axialOffsetBp": 128
+   },
+   {
+    "role": "scaf",
+    "helixA": 175,
+    "helixB": 178,
+    "baseA": 7,
+    "baseB": 19,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 175,
+    "helixB": 178,
+    "baseA": 144,
+    "baseB": 156,
+    "axialOffsetBp": 12
+   },
+   {
+    "role": "scaf",
+    "helixA": 176,
+    "helixB": 179,
+    "baseA": 19,
+    "baseB": 7,
+    "axialOffsetBp": -12
+   },
+   {
+    "role": "scaf",
+    "helixA": 176,
+    "helixB": 179,
+    "baseA": 156,
+    "baseB": 144,
+    "axialOffsetBp": -12
+   }
+  ],
+  "nMisalignedConnections": 324,
+  "stapleBonds": 180,
+  "scaffoldBonds": 81,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": true,
+  "design": "icosahedron",
+  "archive": "Nature09",
+  "path": "Nature09.zip!Nature09/07-icosahedron/icosahedron.json",
+  "insertions": 0,
+  "deletions": 0,
+  "scaffoldBases": 24300,
+  "stapleBases": 23796,
+  "unpairedScaffoldBases": 1620
+ },
+ {
+  "helices": 60,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 560,
+   "1,0": 270
+  },
+  "stapleCrossings": 712,
+  "scaffoldCrossings": 118,
+  "forcedByAdjacency": [],
+  "nForcedByAdjacency": 0,
+  "misalignedConnections": [],
+  "nMisalignedConnections": 0,
+  "stapleBonds": 77,
+  "scaffoldBonds": 59,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": false,
+  "design": "monolith",
+  "archive": "Nature09",
+  "path": "Nature09.zip!Nature09/01-monolith/monolith.json",
+  "insertions": 0,
+  "deletions": 0,
+  "scaffoldBases": 7560,
+  "stapleBases": 7560,
+  "unpairedScaffoldBases": 0
+ },
+ {
+  "helices": 46,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "mixed-parity",
+  "honeycombPeriodFit": 0.9230769230769231,
+  "squarePeriodFit": 0.09230769230769231,
+  "displacements": {
+   "0,1": 524,
+   "1,0": 254,
+   "3,0": 4,
+   "5,0": 7
+  },
+  "stapleCrossings": 498,
+  "scaffoldCrossings": 291,
+  "forcedByAdjacency": [
+   {
+    "role": "stap",
+    "helixA": 0,
+    "helixB": 11,
+    "base": 15,
+    "displacement": "5,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 0,
+    "helixB": 11,
+    "base": 291,
+    "displacement": "5,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 1,
+    "helixB": 10,
+    "base": 15,
+    "displacement": "5,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 1,
+    "helixB": 10,
+    "base": 291,
+    "displacement": "5,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 2,
+    "helixB": 9,
+    "base": 15,
+    "displacement": "3,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 3,
+    "helixB": 8,
+    "base": 15,
+    "displacement": "3,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 4,
+    "helixB": 7,
+    "base": 23,
+    "displacement": "1,0",
+    "why": "a vertical pair at the minority honeycomb parity is next-nearest, not adjacent"
+   },
+   {
+    "role": "stap",
+    "helixA": 12,
+    "helixB": 21,
+    "base": 19,
+    "displacement": "5,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 12,
+    "helixB": 21,
+    "base": 294,
+    "displacement": "5,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 13,
+    "helixB": 20,
+    "base": 19,
+    "displacement": "3,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 14,
+    "helixB": 19,
+    "base": 19,
+    "displacement": "3,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "stap",
+    "helixA": 15,
+    "helixB": 18,
+    "base": 19,
+    "displacement": "1,0",
+    "why": "a vertical pair at the minority honeycomb parity is next-nearest, not adjacent"
+   },
+   {
+    "role": "scaf",
+    "helixA": 0,
+    "helixB": 11,
+    "base": 291,
+    "displacement": "5,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   }
+  ],
+  "nForcedByAdjacency": 13,
+  "misalignedConnections": [
+   {
+    "role": "stap",
+    "helixA": 0,
+    "helixB": 11,
+    "baseA": 15,
+    "baseB": 23,
+    "axialOffsetBp": 8
+   },
+   {
+    "role": "stap",
+    "helixA": 0,
+    "helixB": 11,
+    "baseA": 291,
+    "baseB": 294,
+    "axialOffsetBp": 3
+   },
+   {
+    "role": "stap",
+    "helixA": 1,
+    "helixB": 10,
+    "baseA": 15,
+    "baseB": 23,
+    "axialOffsetBp": 8
+   },
+   {
+    "role": "stap",
+    "helixA": 1,
+    "helixB": 10,
+    "baseA": 291,
+    "baseB": 294,
+    "axialOffsetBp": 3
+   },
+   {
+    "role": "stap",
+    "helixA": 2,
+    "helixB": 9,
+    "baseA": 15,
+    "baseB": 23,
+    "axialOffsetBp": 8
+   },
+   {
+    "role": "stap",
+    "helixA": 3,
+    "helixB": 8,
+    "baseA": 15,
+    "baseB": 23,
+    "axialOffsetBp": 8
+   },
+   {
+    "role": "stap",
+    "helixA": 4,
+    "helixB": 7,
+    "baseA": 23,
+    "baseB": 15,
+    "axialOffsetBp": -8
+   },
+   {
+    "role": "stap",
+    "helixA": 5,
+    "helixB": 6,
+    "baseA": 23,
+    "baseB": 15,
+    "axialOffsetBp": -8
+   },
+   {
+    "role": "stap",
+    "helixA": 12,
+    "helixB": 21,
+    "baseA": 294,
+    "baseB": 291,
+    "axialOffsetBp": -3
+   },
+   {
+    "role": "scaf",
+    "helixA": 5,
+    "helixB": 6,
+    "baseA": 306,
+    "baseB": 300,
+    "axialOffsetBp": -6
+   }
+  ],
+  "nMisalignedConnections": 10,
+  "stapleBonds": 60,
+  "scaffoldBonds": 46,
+  "siteResiduesFitted": [
+   6,
+   13,
+   18,
+   20
+  ],
+  "bondsWithNoFittingWindow": 1,
+  "siteResidueClassesConsistent": false,
+  "forcedStaple": [
+   {
+    "bestWindow": [
+     13,
+     14
+    ],
+    "outlierResidues": [
+     19
+    ],
+    "departuresBp": [
+     5
+    ],
+    "helixA": 16,
+    "helixB": 17,
+    "crossings": 11,
+    "residues": [
+     13,
+     14,
+     19
+    ],
+    "minimumForcedCrossings": 1,
+    "bases": [
+     19,
+     55,
+     56,
+     97,
+     98,
+     181,
+     182,
+     223,
+     224,
+     265,
+     266
+    ]
+   }
+  ],
+  "forcedScaffold": [],
+  "unscorableScaffold": [
+   {
+    "helixA": 0,
+    "helixB": 11,
+    "base": 291,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 16,
+    "helixB": 17,
+    "base": 19,
+    "why": "the bond's own staple register is itself off-rule"
+   },
+   {
+    "helixA": 16,
+    "helixB": 17,
+    "base": 81,
+    "why": "the bond's own staple register is itself off-rule"
+   },
+   {
+    "helixA": 16,
+    "helixB": 17,
+    "base": 82,
+    "why": "the bond's own staple register is itself off-rule"
+   },
+   {
+    "helixA": 16,
+    "helixB": 17,
+    "base": 123,
+    "why": "the bond's own staple register is itself off-rule"
+   },
+   {
+    "helixA": 16,
+    "helixB": 17,
+    "base": 166,
+    "why": "the bond's own staple register is itself off-rule"
+   },
+   {
+    "helixA": 16,
+    "helixB": 17,
+    "base": 207,
+    "why": "the bond's own staple register is itself off-rule"
+   },
+   {
+    "helixA": 16,
+    "helixB": 17,
+    "base": 208,
+    "why": "the bond's own staple register is itself off-rule"
+   },
+   {
+    "helixA": 16,
+    "helixB": 17,
+    "base": 249,
+    "why": "the bond's own staple register is itself off-rule"
+   },
+   {
+    "helixA": 16,
+    "helixB": 17,
+    "base": 250,
+    "why": "the bond's own staple register is itself off-rule"
+   },
+   {
+    "helixA": 16,
+    "helixB": 17,
+    "base": 291,
+    "why": "the bond's own staple register is itself off-rule"
+   }
+  ],
+  "nOffRegisterStapleBonds": 1,
+  "nForcedStapleCrossings": 1,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 11,
+  "carriesForcedCrossover": true,
+  "design": "railedbridge",
+  "archive": "Nature09",
+  "path": "Nature09.zip!Nature09/03-railedbridge/railedbridge.json",
+  "insertions": 2,
+  "deletions": 0,
+  "scaffoldBases": 7625,
+  "stapleBases": 7824,
+  "unpairedScaffoldBases": 98
+ },
+ {
+  "helices": 142,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.2358490566037736,
+  "displacements": {
+   "0,1": 581,
+   "1,0": 257,
+   "11,0": 2,
+   "13,0": 2
+  },
+  "stapleCrossings": 512,
+  "scaffoldCrossings": 330,
+  "forcedByAdjacency": [
+   {
+    "role": "scaf",
+    "helixA": 19,
+    "helixB": 46,
+    "base": 71,
+    "displacement": "11,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 19,
+    "helixB": 46,
+    "base": 72,
+    "displacement": "11,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 26,
+    "helixB": 79,
+    "base": 71,
+    "displacement": "13,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 26,
+    "helixB": 79,
+    "base": 72,
+    "displacement": "13,0",
+    "why": "not a nearest-neighbour pair on any lattice"
+   }
+  ],
+  "nForcedByAdjacency": 4,
+  "misalignedConnections": [],
+  "nMisalignedConnections": 0,
+  "stapleBonds": 106,
+  "scaffoldBonds": 84,
+  "siteResiduesFitted": [
+   0,
+   5,
+   6,
+   12,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": false,
+  "forcedStaple": [],
+  "forcedScaffold": [
+   {
+    "helixA": 4,
+    "helixB": 5,
+    "base": 46,
+    "residue": 4,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 4,
+    "helixB": 5,
+    "base": 130,
+    "residue": 4,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 12,
+    "helixB": 13,
+    "base": 46,
+    "residue": 4,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 12,
+    "helixB": 13,
+    "base": 130,
+    "residue": 4,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 30,
+    "helixB": 31,
+    "base": 46,
+    "residue": 4,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 30,
+    "helixB": 31,
+    "base": 99,
+    "residue": 15,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 30,
+    "helixB": 31,
+    "base": 130,
+    "residue": 4,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 31,
+    "helixB": 32,
+    "base": 33,
+    "residue": 12,
+    "siteResidue": 5,
+    "allowedResidues": [
+     0,
+     1,
+     10,
+     11
+    ],
+    "departureBp": 1
+   },
+   {
+    "helixA": 31,
+    "helixB": 32,
+    "base": 117,
+    "residue": 12,
+    "siteResidue": 5,
+    "allowedResidues": [
+     0,
+     1,
+     10,
+     11
+    ],
+    "departureBp": 1
+   },
+   {
+    "helixA": 34,
+    "helixB": 35,
+    "base": 46,
+    "residue": 4,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 34,
+    "helixB": 35,
+    "base": 99,
+    "residue": 15,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 34,
+    "helixB": 35,
+    "base": 130,
+    "residue": 4,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 38,
+    "helixB": 39,
+    "base": 46,
+    "residue": 4,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 38,
+    "helixB": 39,
+    "base": 99,
+    "residue": 15,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 38,
+    "helixB": 39,
+    "base": 130,
+    "residue": 4,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 52,
+    "helixB": 59,
+    "base": 40,
+    "residue": 19,
+    "siteResidue": 12,
+    "allowedResidues": [
+     7,
+     8,
+     17,
+     18
+    ],
+    "departureBp": 1
+   },
+   {
+    "helixA": 52,
+    "helixB": 59,
+    "base": 103,
+    "residue": 19,
+    "siteResidue": 12,
+    "allowedResidues": [
+     7,
+     8,
+     17,
+     18
+    ],
+    "departureBp": 1
+   },
+   {
+    "helixA": 60,
+    "helixB": 61,
+    "base": 46,
+    "residue": 4,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 60,
+    "helixB": 61,
+    "base": 99,
+    "residue": 15,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 60,
+    "helixB": 61,
+    "base": 130,
+    "residue": 4,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 66,
+    "helixB": 67,
+    "base": 46,
+    "residue": 4,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 66,
+    "helixB": 67,
+    "base": 99,
+    "residue": 15,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   },
+   {
+    "helixA": 66,
+    "helixB": 67,
+    "base": 130,
+    "residue": 4,
+    "siteResidue": 0,
+    "allowedResidues": [
+     5,
+     6,
+     16,
+     17
+    ],
+    "departureBp": -1
+   }
+  ],
+  "unscorableScaffold": [
+   {
+    "helixA": 10,
+    "helixB": 17,
+    "base": 39,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 10,
+    "helixB": 17,
+    "base": 40,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 10,
+    "helixB": 17,
+    "base": 102,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 10,
+    "helixB": 17,
+    "base": 103,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 19,
+    "helixB": 46,
+    "base": 71,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 19,
+    "helixB": 46,
+    "base": 72,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 26,
+    "helixB": 79,
+    "base": 71,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 26,
+    "helixB": 79,
+    "base": 72,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 61,
+    "helixB": 62,
+    "base": 32,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 61,
+    "helixB": 62,
+    "base": 33,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 61,
+    "helixB": 62,
+    "base": 116,
+    "why": "no staple crossover on this bond"
+   },
+   {
+    "helixA": 61,
+    "helixB": 62,
+    "base": 117,
+    "why": "no staple crossover on this bond"
+   }
+  ],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 23,
+  "nUnscorableScaffold": 12,
+  "carriesForcedCrossover": true,
+  "design": "slottedcross",
+  "archive": "Nature09",
+  "path": "Nature09.zip!Nature09/04-slottedcross/slottedcross.json",
+  "insertions": 0,
+  "deletions": 0,
+  "scaffoldBases": 8634,
+  "stapleBases": 6786,
+  "unpairedScaffoldBases": 1874
+ },
+ {
+  "helices": 60,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 1.0,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 469,
+   "1,0": 191
+  },
+  "stapleCrossings": 542,
+  "scaffoldCrossings": 118,
+  "forcedByAdjacency": [],
+  "nForcedByAdjacency": 0,
+  "misalignedConnections": [],
+  "nMisalignedConnections": 0,
+  "stapleBonds": 76,
+  "scaffoldBonds": 59,
+  "siteResiduesFitted": [
+   6,
+   13,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": true,
+  "forcedStaple": [],
+  "forcedScaffold": [],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 0,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": false,
+  "design": "squarenut",
+  "archive": "Nature09",
+  "path": "Nature09.zip!Nature09/02-squarenut/squarenut.json",
+  "insertions": 0,
+  "deletions": 0,
+  "scaffoldBases": 7560,
+  "stapleBases": 7560,
+  "unpairedScaffoldBases": 0
+ },
+ {
+  "helices": 74,
+  "lattice": "honeycomb",
+  "latticeByGridParity": "honeycomb",
+  "honeycombPeriodFit": 0.9888888888888889,
+  "squarePeriodFit": 0.0,
+  "displacements": {
+   "0,1": 524,
+   "1,0": 256,
+   "1,2": 4,
+   "4,2": 4
+  },
+  "stapleCrossings": 534,
+  "scaffoldCrossings": 254,
+  "forcedByAdjacency": [
+   {
+    "role": "scaf",
+    "helixA": 26,
+    "helixB": 71,
+    "base": 56,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 26,
+    "helixB": 71,
+    "base": 57,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 26,
+    "helixB": 30,
+    "base": 98,
+    "displacement": "4,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 26,
+    "helixB": 30,
+    "base": 99,
+    "displacement": "4,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 30,
+    "helixB": 77,
+    "base": 69,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 30,
+    "helixB": 77,
+    "base": 70,
+    "displacement": "1,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 71,
+    "helixB": 77,
+    "base": 70,
+    "displacement": "4,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   },
+   {
+    "role": "scaf",
+    "helixA": 71,
+    "helixB": 77,
+    "base": 71,
+    "displacement": "4,2",
+    "why": "not a nearest-neighbour pair on any lattice"
+   }
+  ],
+  "nForcedByAdjacency": 8,
+  "misalignedConnections": [
+   {
+    "role": "stap",
+    "helixA": 5,
+    "helixB": 6,
+    "baseA": 60,
+    "baseB": 62,
+    "axialOffsetBp": 2
+   },
+   {
+    "role": "scaf",
+    "helixA": 26,
+    "helixB": 71,
+    "baseA": 56,
+    "baseB": 103,
+    "axialOffsetBp": 47
+   },
+   {
+    "role": "scaf",
+    "helixA": 26,
+    "helixB": 71,
+    "baseA": 57,
+    "baseB": 104,
+    "axialOffsetBp": 47
+   },
+   {
+    "role": "scaf",
+    "helixA": 26,
+    "helixB": 30,
+    "baseA": 98,
+    "baseB": 103,
+    "axialOffsetBp": 5
+   },
+   {
+    "role": "scaf",
+    "helixA": 26,
+    "helixB": 30,
+    "baseA": 99,
+    "baseB": 102,
+    "axialOffsetBp": 3
+   },
+   {
+    "role": "scaf",
+    "helixA": 30,
+    "helixB": 77,
+    "baseA": 69,
+    "baseB": 97,
+    "axialOffsetBp": 28
+   },
+   {
+    "role": "scaf",
+    "helixA": 30,
+    "helixB": 77,
+    "baseA": 70,
+    "baseB": 98,
+    "axialOffsetBp": 28
+   },
+   {
+    "role": "scaf",
+    "helixA": 71,
+    "helixB": 77,
+    "baseA": 70,
+    "baseB": 56,
+    "axialOffsetBp": -14
+   },
+   {
+    "role": "scaf",
+    "helixA": 71,
+    "helixB": 77,
+    "baseA": 71,
+    "baseB": 55,
+    "axialOffsetBp": -16
+   }
+  ],
+  "nMisalignedConnections": 9,
+  "stapleBonds": 90,
+  "scaffoldBonds": 71,
+  "siteResiduesFitted": [
+   5,
+   6,
+   13,
+   19,
+   20
+  ],
+  "bondsWithNoFittingWindow": 0,
+  "siteResidueClassesConsistent": false,
+  "forcedStaple": [],
+  "forcedScaffold": [
+   {
+    "helixA": 1,
+    "helixB": 2,
+    "base": 33,
+    "residue": 12,
+    "siteResidue": 5,
+    "allowedResidues": [
+     0,
+     1,
+     10,
+     11
+    ],
+    "departureBp": 1
+   },
+   {
+    "helixA": 1,
+    "helixB": 2,
+    "base": 107,
+    "residue": 2,
+    "siteResidue": 5,
+    "allowedResidues": [
+     0,
+     1,
+     10,
+     11
+    ],
+    "departureBp": 1
+   },
+   {
+    "helixA": 30,
+    "helixB": 31,
+    "base": 37,
+    "residue": 16,
+    "siteResidue": 19,
+    "allowedResidues": [
+     3,
+     4,
+     14,
+     15
+    ],
+    "departureBp": 1
+   }
+  ],
+  "unscorableScaffold": [],
+  "nOffRegisterStapleBonds": 0,
+  "nForcedStapleCrossings": 0,
+  "nForcedScaffoldCrossings": 3,
+  "nUnscorableScaffold": 0,
+  "carriesForcedCrossover": true,
+  "design": "stackedcross",
+  "archive": "Nature09",
+  "path": "Nature09.zip!Nature09/05-stackedcross/stackedcross.json",
+  "insertions": 0,
+  "deletions": 0,
+  "scaffoldBases": 8064,
+  "stapleBases": 8017,
+  "unpairedScaffoldBases": 47
+ }
+]

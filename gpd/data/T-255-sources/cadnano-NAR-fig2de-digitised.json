@@ -1,0 +1,45 @@
+{
+ "gelYieldPercent": {
+  "i": 25.2,
+  "ii": 12.9,
+  "iii": 5.0,
+  "iv": 3.2,
+  "v": 6.2,
+  "vi": 3.2,
+  "vii": 8.3
+ },
+ "gelYieldPercentProvenance": {
+  "zeroRuleRow": 4615,
+  "ruleSpacingPx": 107,
+  "rulesFoundRows": [
+   4181,
+   4397,
+   4508,
+   4615
+  ],
+  "percentPerPixel": 0.140187
+ },
+ "temYieldAfterPurificationPercent": {
+  "i": 11.2,
+  "ii": 53.8,
+  "iii": 15.3,
+  "iv": 9.1,
+  "v": 2.9,
+  "vi": 2.0,
+  "vii": 16.3
+ },
+ "temYieldAfterPurificationPercentProvenance": {
+  "zeroRuleRow": 5282,
+  "ruleSpacingPx": 107,
+  "rulesFoundRows": [
+   4850,
+   5175,
+   5282
+  ],
+  "percentPerPixel": 0.140187
+ },
+ "crossChecks": {
+  "paperSaysGreatestGelYieldIsI": true,
+  "paperSaysMostRobustAfterPurificationIsII": true
+ }
+}

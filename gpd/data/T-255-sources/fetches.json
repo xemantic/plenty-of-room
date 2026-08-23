@@ -1,0 +1,101 @@
+[
+ {
+  "url": "http://bit.ly/U1CwqS",
+  "status": 200,
+  "finalUrl": "https://www.dropbox.com/scl/fi/9lhrzf8r2svfkyten4izb/Science09.zip?rlkey=n257w8pbudlwn9964ygwma4l2",
+  "bytes": 195531,
+  "contentType": "text/html; charset=utf-8",
+  "savedAs": "bitly-U1CwqS.bin",
+  "error": null
+ },
+ {
+  "url": "http://bit.ly/XJvTOI",
+  "status": 200,
+  "finalUrl": "https://www.dropbox.com/scl/fi/j0s0zxzctf8nzc77l28xj/NAR09.zip?rlkey=dwezs6wgre4lzvcinh0u4ij1a",
+  "bytes": 195049,
+  "contentType": "text/html; charset=utf-8",
+  "savedAs": "bitly-XJvTOI.bin",
+  "error": null
+ },
+ {
+  "url": "http://bit.ly/WJPCI1",
+  "status": 200,
+  "finalUrl": "https://www.dropbox.com/scl/fi/swn5n0yij823rmtrs242p/Nature09.zip?rlkey=wf4rgxmyu6r5i3t1x8so04lk1",
+  "bytes": 194932,
+  "contentType": "text/html; charset=utf-8",
+  "savedAs": "bitly-WJPCI1.bin",
+  "error": null
+ },
+ {
+  "url": "https://cadnano.org/gallery.html",
+  "status": 200,
+  "finalUrl": "https://cadnano.org/gallery.html",
+  "bytes": 12231,
+  "contentType": "text/html; charset=utf-8",
+  "savedAs": "cadnano-org-gallery-2026.html",
+  "error": null
+ },
+ {
+  "url": "https://www.dropbox.com/scl/fi/9lhrzf8r2svfkyten4izb/Science09.zip?rlkey=n257w8pbudlwn9964ygwma4l2&dl=1",
+  "status": 200,
+  "finalUrl": "https://uc68797f6cf8a52c974dde5ebab2.dl.dropboxusercontent.com/cd/0/get/DGyf7l1H-xTWpgjnvv0qp8s9uqQfnjnE4r2HIbvnmP0BOrrV_63MjQIQpu3kkM7wM1NRzffs2Og-F-63mA6Wx0MsyNFl99bnAyW1Ey3I_MDR49nukNeaHffncSMbaTy6_zI/file?dl=1",
+  "bytes": 777635,
+  "contentType": "application/binary",
+  "savedAs": "Science09.zip",
+  "error": null
+ },
+ {
+  "url": "https://www.dropbox.com/scl/fi/j0s0zxzctf8nzc77l28xj/NAR09.zip?rlkey=dwezs6wgre4lzvcinh0u4ij1a&dl=1",
+  "status": 200,
+  "finalUrl": "https://uc1866ec4235e642c4086e16b95a.dl.dropboxusercontent.com/cd/0/get/DGx-2FyZW2tUqhALPe4bwRxeoDesYLFvWrLjEsYIjnto8HIlb3FALXlIyYaNNCi-nOUc0WPozWTJHJtrgIZl6Ro1mO2raM6R1OEjgXTrpoCrj9Phtfy1XPdI07z_171cpfo/file?dl=1",
+  "bytes": 444985,
+  "contentType": "application/binary",
+  "savedAs": "NAR09.zip",
+  "error": null
+ },
+ {
+  "url": "https://www.dropbox.com/scl/fi/swn5n0yij823rmtrs242p/Nature09.zip?rlkey=wf4rgxmyu6r5i3t1x8so04lk1&dl=1",
+  "status": 200,
+  "finalUrl": "https://uccda27d00fee16906df52b95281.dl.dropboxusercontent.com/cd/0/get/DGx-l6qCequPscefriDoOllB23mVJmgTHfeh80CQcoiSFBTGjHRlm88vI0nt1tjoKS6XuRqcn3Ei4E5Sgdivc3WBMfOWtz2v2-gjyNK3QKFWeWD-rvSHDBEP0ntyK-FgYQ8/file?dl=1",
+  "bytes": 3589234,
+  "contentType": "application/binary",
+  "savedAs": "Nature09.zip",
+  "error": null
+ },
+ {
+  "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/1fbe/2731887/3132da3bc609/gkp436f2.jpg",
+  "status": 200,
+  "finalUrl": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/1fbe/2731887/3132da3bc609/gkp436f2.jpg",
+  "bytes": 315359,
+  "contentType": "image/jpeg",
+  "savedAs": "cadnano-NAR-fig2.jpg",
+  "error": null
+ },
+ {
+  "url": "https://europepmc.org/api/get/articleApi?query=TITLE%3A%22Folding%20DNA%20into%20twisted%20and%20curved%20nanoscale%20shapes%22&format=json",
+  "status": 200,
+  "finalUrl": "https://europepmc.org/api/get/articleApi?query=TITLE%3A%22Folding%20DNA%20into%20twisted%20and%20curved%20nanoscale%20shapes%22&format=json",
+  "bytes": 1089,
+  "contentType": "application/json;charset=UTF-8",
+  "savedAs": "epmc-dietz2009.json",
+  "error": null
+ },
+ {
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2737683/fullTextXML",
+  "status": 404,
+  "finalUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2737683/fullTextXML",
+  "bytes": 0,
+  "contentType": null,
+  "savedAs": "PMC2737683-fullTextXML.xml",
+  "error": "HTTP Error 404: Not Found"
+ },
+ {
+  "url": "https://europepmc.org/articles/PMC2737683?pdf=render",
+  "status": 500,
+  "finalUrl": "https://europepmc.org/api/getPdf?pmcid=PMC2737683",
+  "bytes": 0,
+  "contentType": null,
+  "savedAs": "PMC2737683-dietz2009.pdf",
+  "error": "HTTP Error 500: "
+ }
+]

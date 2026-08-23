@@ -1,0 +1,285 @@
+Published online 16 June 2009                                                Nucleic Acids Research, 2009, Vol. 37, No. 15 5001–5006
+                                                                                                                doi:10.1093/nar/gkp436
+
+
+Rapid prototyping of 3D DNA-origami shapes
+with caDNAno
+Shawn M. Douglas1,2,3,4, Adam H. Marblestone1,5, Surat Teerapittayanon3,
+Alejandro Vazquez3, George M. Church3,4 and William M. Shih1,2,4,*
+1
+ Department of Cancer Biology, Dana-Farber Cancer Institute, 2Department of Biological Chemistry and
+Molecular Pharmacology, 3Department of Genetics, Harvard Medical School, Boston, MA 02115, 4Wyss Institute
+for Biologically Inspired Engineering, Harvard University, Cambridge, MA 02138 and 5Department of Physics,
+Yale University, New Haven, CT 06520, USA
+
+Received February 22, 2009; Revised May 7, 2009; Accepted May 11, 2009
+
+
+
+ABSTRACT                                                                        patterns with dimensions of 100 nm in diameter and
+                                                                                6 nm spatial resolution (9). The method uses hundreds of
+DNA nanotechnology exploits the programmable                                    short oligonucleotide ‘staple’ strands to direct the folding
+specificity afforded by base-pairing to produce                                 of a long, single ‘scaﬀold’ strand of DNA into a pro-
+self-assembling     macromolecular       objects    of                          grammed arrangement.
+custom shape. For building megadalton-scale DNA                                    Since its introduction, DNA origami has been used for
+nanostructures, a long ‘scaffold’ strand can be                                 applications such as label-free RNA-hybridization probes
+employed to template the assembly of hundreds                                   (10), seeds for algorithmic assembly (11,12), and liquid-
+of oligonucleotide ‘staple’ strands into a planar anti-                         crystalline alignment media for NMR structure determi-
+parallel array of cross-linked helices. We recently                             nation of membrane proteins (13). Toward increasing the
+adapted this ‘scaffolded DNA origami’ method to                                 size of DNA-origami design space, we recently extended
+producing 3D shapes formed as pleated layers                                    DNA origami to construction of 3D shapes (14). While
+of double helices constrained to a honeycomb lat-                               implementing DNA-origami shapes, we found it useful to
+                                                                                develop computer-aided design (CAD) software to mini-
+tice. However, completing the required design
+                                                                                mize tedious and error-prone tasks; similar eﬀorts have
+steps can be cumbersome and time-consuming.                                     been reported previously for oligonucleotide-based DNA
+Here we present caDNAno, an open-source soft-                                   nanostructures (15) or for planar DNA origami similar to
+ware package with a graphical user interface that                               Rothemund’s original designs (16).
+aids in the design of DNA sequences for folding 3D                                 Here we describe our open-source software package,
+honeycomb-pleated shapes A series of rectangular-                               caDNAno, for use in the design of 3D DNA-origami
+block motifs were designed, assembled, and ana-                                 shapes constrained to a honeycomb framework (14). We
+lyzed to identify a well-behaved motif that could                               have used caDNAno to generate seven DNA-origami
+serve as a building block for future studies. The                               designs of 3D rectangular blocks of varying cross-section
+use of caDNAno significantly reduces the effort                                 dimensions. Analysis of the folded blocks by agarose-gel
+required to design 3D DNA-origami structures. The                               electrophoresis and negative-stain transmission electron
+software is available at http://cadnano.org/, along                             microscopy revealed that a block design specifying six-
+                                                                                helices-per-x-raster row yields the greatest fraction of
+with example designs and video tutorials demon-
+                                                                                defect-free objects.
+strating their construction. The source code is
+released under the MIT license.
+                                                                                METHODS
+INTRODUCTION                                                                    Folding and purification of DNA-origami shapes
+In 1982, Nadrian Seeman laid the theoretical framework                          Each sample was prepared by combining 20 nM scaﬀold
+for the use of DNA as a nanoscale building material (1,2).                      (p7560 or p8064, derived from M13mp18), 100 nM of each
+Subsequently, DNA has been used in the construction                             staple oligonucleotide, buﬀer and salts including 5 mM
+of increasingly complex shapes and lattices (3–8). In                           Tris, 1 mM EDTA (pH 7.9 at 208C), and 22 mM MgCl2,
+2006, Paul Rothemund introduced DNA origami, a ver-                             except for the 30-helix-per-x-raster block, which was
+satile method for constructing arbitrary 2D shapes and                          folded with 15 mM MgCl2. Folding was carried out by
+
+*To whom correspondence should be addressed. Tel: +1 617 632 5143; Fax: +1 617 632 4393; Email: william_shih@dfci.harvard.edu
+
+ß 2009 The Author(s)
+This is an Open Access article distributed under the terms of the Creative Commons Attribution Non-Commercial License (http://creativecommons.org/licenses/
+by-nc/2.0/uk/) which permits unrestricted non-commercial use, distribution, and reproduction in any medium, provided the original work is properly cited.
+5002 Nucleic Acids Research, 2009, Vol. 37, No. 15
+
+
+rapid heat denaturation followed by slow cooling from 80           given staple helix, potential staple-crossover positions
+to 618C over 80 min, then 60 to 248C over 173 h. Samples           occur every seven base pairs, or two-thirds of a turn.
+were electrophoresed on 2% agarose gels (0.5 TBE,                 Our default rules allow antiparallel crossovers between
+11 mM MgCl2, 0.5 mg/ml ethidium bromide) at 70 V for               adjacent scaﬀold helices to occur ﬁve base pairs, or half
+4 h in an ice-water bath. Leading monomer bands were               a turn, upstream or downstream of allowed crossover
+visualized with ultraviolet light, physically excised,             positions for the associated staple helices. However,
+crushed with a pestle (17) and ﬁltered through a cellu-            caDNAno permits the user to force crossovers between
+lose-acetate spin column for 3 min at 15 000  g, 48C.             any two staple bases or between any two scaﬀold bases.
+                                                                   Users should take care when forcing crossovers, as depar-
+Negative stain electron microscopy                                 ture from the default rules may lead to folding failure if
+Puriﬁed samples were adsorbed for 5 min onto glow-                 too much deviation from canonical DNA geometry is
+discharged formvar- and carbon-coated copper grids,                implied.
+stained for 1 min with 2% uranyl formate, 25 mM                       The design process has four main steps. First, a target
+NaOH, and visualized at 68 000 magniﬁcation with an               shape is approximated by selecting a raster-style scaﬀold
+FEI Tecnai T12 BioTWIN operating at 120 kV.                        path that passes between neighboring helices along anti-
+                                                                   parallel crossovers at allowed positions. Second, staple
+Chemicals and supplies                                             paths complementary to scaﬀold are assigned. By default,
+                                                                   all permitted staple crossovers are included, except for
+Sigma: EDTA, 2xYT Microbial Medium. Fisher                         those that would be ﬁve base pairs away from a scaﬀold
+Scientiﬁc: magnesium chloride, polyethylene glycol 8000            crossover between the same two helices. Third, the staple
+(PEG8000), sodium chloride (NaCl), Tris base, sodium               paths are broken into shorter segments 18 to 49 bases
+hydroxide, potassium acetate, lauryl sulfate, glacial              long, usually with a mean length of 30 to 35 bases.
+acetic acid. BD: LB broth, Bacto agar. Molecular                   Finally, the scaﬀold path is populated with the DNA
+BioProducts: 8-well PCR strip tubes. Invitrogen: agarose.          sequence of the desired template (e.g. 7–8 kb M13-
+Bio-Rad: Freeze ‘N Squeeze DNA gel-extraction spin col-            genome-based vector), and the complementary staple
+umns. Kimble-Chase: pellet pestles. SPI: carbon/formvar            sequences are determined.
+copper grids, uranyl formate. Bioneer: RPC-puriﬁed                    This design pipeline is integrated from start to ﬁnish in
+deoxyribonucleotides.                                              the caDNAno three-panel interface (Figure 1a). The z-axis
+                                                                   is deﬁned as parallel to the helical axes. The Slice panel
+Recombinant M13 filamentous bacteriophage construction             (orange border) provides an x–y cross-section view of the
+Recombinant phages were prepared by replacement of the             honeycomb helix lattice for any z-depth, with helices
+BamHI-XbaI segment of M13mp18 by a PCR ampliﬁca-                   represented as circles. When the user clicks on an empty
+tion fragment from a previously generated random                   circle, that helix position is made available for routing of
+sequence (18). Double-stranded (replicative form) bacter-          scaﬀold and staple strands by adding a schematic side
+iophage M13 DNA bearing inserts were prepared as                   view of the same helix to the Path panel (blue border).
+described (13). The inserts were veriﬁed by a double-              The Path panel is used for nucleotide-level editing of
+restriction digest with BamHI and XbaI, followed by                scaﬀold- and staple-path connectivity, assigning DNA
+sequencing. The design: scaﬀold pairings are as follows:           sequences to scaﬀold paths, and reading out of staple
+i: p8064, ii: p7560, iii: p8064, iv: p7560, v: p8064, vi: p7560,   DNA sequences. The Render panel (grey border) provides
+vii: p7560.                                                        a real-time, 3D cylinder model for visualizing the shape
+                                                                   as it is constructed. In each panel, pan and zoom tool
+Gel-based yield estimation                                         buttons allow the user to view or edit the shape at diﬀerent
+                                                                   positions and magniﬁcations. The Slice and Path panels
+ImageJ (http://rsb.info.nih.gov/ij/) was used for gel-image        have specialized tools for making additions, edits, rearran-
+analysis. The percentage of scaﬀold that partitioned as            gements or deletions to a design (detailed descriptions of
+a monomeric species was estimated as the background-               the tool buttons are found in the Supplementary Note 1).
+subtracted integrated intensity value of a selection box           Completion of the design pipeline results in a list of staple
+enclosing the leading band of each lane divided by the             DNA sequences corresponding to the schematics shown
+background-subtracted integrated intensity value of a              in each panel; the result also can be represented as a
+selection box enclosing the material from the well, down           detailed SVG schematic (Figure 1b).
+to the bottom of the leading band.                                    The process of approximating a 3D shape with a scaf-
+                                                                   fold path begins with selection of helices in the Slice panel
+                                                                   to approximate a 2D projection of that shape. When a
+RESULTS AND DISCUSSION                                             helix is added to the design in the Slice panel, the same
+In a fully occupied honeycomb lattice, each staple helix           helix also is made active in the Path panel and is populated
+has three nearest neighbors (e.g. helices 1, 3, 7, 8, 9, 10, 14,   with a three-base-long scaﬀold path by default. Thus,
+16 in Figure 1). Our default rules allow antiparallel              once the desired helices are added to the design via the
+crossovers between adjacent staple helices only where              Slice panel (Figure 1a, orange panel), several short, dis-
+the strand backbones arrive at points of closest pro-              connected scaﬀold paths are visible in the Path panel
+ximity, which repeat every 21 base pairs if the helical            (Figure 1c). The Path-panel editing tools are used to
+twist is ﬁxed at 10.5 base pairs per turn. Thus for a              extend the scaﬀold paths in the z-direction and to connect
+                                                                                       Nucleic Acids Research, 2009, Vol. 37, No. 15 5003
+
+
+
+
+Figure 1. caDNAno Interface and design pipeline. (a) Screenshot of caDNAno interface. Left, Slice panel displays a cross-sectional view of the
+honeycomb lattice where helices can be added to the design. Middle, Path panel provides an interface to edit an unrolled 2D schematic of the scaﬀold
+and staple paths. Right, Render panel provides a real-time 3D model of the design. (b) Exported SVG schematic of example design from a, with
+scaﬀold (blue) and staple (multi-color) sequences. (c) Path panel snapshot during ﬁrst step of the design process. Short stretches of scaﬀold are
+inserted into the Path panel as helices are added via the Slice panel. (d) The Path panel editing tools are used to stitch together a continuous scaﬀold
+path. (e) The auto-staple button is used to generate a default set of continuous staple paths, including crossovers. The breakpoint tool is subsequently
+used to split the staple paths into lengths between 18 and 49 bases. Finally, the scaﬀold sequence is applied to generate the list of staple sequences.
+(f) Exported X3D model from the Render panel.
+
+neighboring helices with Holliday-junction crossovers.                        row), creating a simple scaﬀold-path trajectory that
+The goal is to complete a continuous raster-style traversal                   followed the same approximate path through each struc-
+of the target shape using a scaﬀold path (Figure 1d).                         ture: as viewed down the helical axes, close-packing rows
+   Once the scaﬀold path is complete, complementary                           of helices were arrayed within the honeycomb framework
+staple paths are assigned by clicking the ‘Auto-staple’                       in an x-raster pattern (i.e. left to right, then down, then
+tool button beneath the Path panel. Staple paths are                          right to left, then down, etc.); the connectivity of neigh-
+created wherever scaﬀold is present, according to an                          boring scaﬀold helices is more apparent in partially folded
+algorithm that follows the aforementioned rules for cross-                    cylinder models (Figure 2b, top row). The x-raster rows
+over spacing (Figure 1e). Staple paths that fall outside the                  within the honeycomb framework are corrugated;
+preferred length range (18–49 bases) are highlighted, and                     they stagger up and down and encompass helices that
+the user is responsible for using the editing tools to break                  are actually at two diﬀerent y-positions. Similarly, virtual
+the staple paths into shorter segments. After all staples are                 y-oriented layers can be deﬁned that stagger left and right
+edited into a satisfactory arrangement, the scaﬀold path is                   and encompass helices that are at two diﬀerent x-posi-
+populated with a DNA sequence using the ‘Add Sequence’                        tions. The shapes were folded either from a 7560-base
+tool. Several default sequences are provided, or the user                     scaﬀold into 60 parallel helices or from an 8064-base scaf-
+can input his or her own. Additionally, a 3D model can be                     fold into 64 parallel helices to create number-of-rows
+exported in X3D format, with double helices represented                       versus number-of-helices-per-x-raster-row combinations
+as cylinders of 2 nm diameter and 0.34 nm per base-pair                       of 15  4, 10  6 (analyzed independently in ref. 14),
+length (Figure 1f).                                                           8  8, 6  10, 4  16, 3  20, 2  30. Each helix was allot-
+   We used caDNAno to design seven diﬀerent honey-                            ted 126 bases of scaﬀold. Of those 126 bases, 98 were
+comb-pleated-origami rectangular blocks (Figure 2a, top                       paired with complementary staples, and the remaining
+5004 Nucleic Acids Research, 2009, Vol. 37, No. 15
+
+
+
+
+Figure 2. Transmission electron microscopy (TEM) and agarose-gel analysis of DNA-origami blocks. The nomenclature of the designs is m  n,
+where m is the number of x-raster rows, and n is the number of helices per x-raster row. (i), 15  4 motif; (ii) 10  6 motif; (iii) 8  8 motif; (iv) 6  10
+motif; (v) 4  16 motif; (vi) 3  20 motif; (vii) 2  30 motif. (a) Cylinder-model projections and transmission-electron micrographs for rectangular-
+block designs. (b) Partially folded models, which do not represent the actual folding pathway, are displayed above fully folded models. Scaﬀold
+crossovers only occur between helices that are neighbors in the partially folded models. Thus, these models capture an important feature of the
+design: the path of the scaﬀold stays within a 2D surface. (c) Agarose-gel analysis of folding of blocks. Marker is a 1 kb ladder. Red boxes indicate
+the region of each lane that was counted as the fastest-migrating monomeric species for yield estimates in option d and that was physically extracted
+from the gel during puriﬁcation before TEM imaging. The 6  10 design displays the fastest gel mobility. (d) Fraction of scaﬀold incorporated into
+fastest-migrating monomeric species, as estimated by ethidium-bromide-ﬂuorescence intensity. (e) Fraction of well-folded species after gel puriﬁca-
+tion, as estimated by image analysis of 100 randomly selected particles for each shape. Scale bars: 25 nm.
+                                                                       Nucleic Acids Research, 2009, Vol. 37, No. 15 5005
+
+
+28 bases were divided into front and rear unpaired loop         might be suitable for some applications if a staining arti-
+fragments at the ends of each helix (detailed schematics        fact is the cause of the observed deformations. Further
+and staple lists are included in Supplementary Notes 2          studies will be necessary for optimizing design parameters
+and 3, respectively).                                           that might aﬀect folding yield, such as staple-break-point
+   Each of the shapes was folded in separate chambers by        distribution, scaﬀold routing, and scaﬀold- versus staple-
+heat denaturation followed by cooling for renaturation,         crossover densities (19).
+and analyzed by agarose-gel electrophoresis (Figure 2c).           The construction of complex, 3D DNA nanostructures
+The seven shapes varied signiﬁcantly in leading band yield,     will increase the range of applications that can be
+mobility, and sharpness, as well as amount of undesired         addressed, but also will add complexity to the design pro-
+formation of higher-order aggregates. We estimated fold-        cess. By restricting design space to the honeycomb-lattice
+ing yields as integrated intensity of material that migrated    framework, we reduce the number of choices that need to
+as a leading band divided by total intensity of material in     be made when implementing a 3D DNA-origami shape
+the lane up to and including the well (Figure 2d). Material     while retaining a signiﬁcant amount of ﬂexibility. Our
+in each of the leading bands was isolated by physical           caDNAno software package relieves the user from com-
+extraction and analyzed by negative-stain transmission          pleting the tedious conversion of a creative design to oligo-
+electron microscopy (Figure 2a). For each shape, 100 ran-       nucleotide sequences. We have found that caDNAno
+domly selected individual-particle images were collected,       performs favorably when compared to ad hoc methods
+and folding yields were estimated (Figure 2e). A particle       for generating staple sequences for a new shape design,
+was judged to be well-folded if its outline could be aligned    typically reducing the time required for monotonous
+with a semi-transparent projection model of the corre-          sequence assignment from days or weeks down to a few
+sponding design and it exhibited no obvious defects             hours.
+such as missing, broken, disrupted, or smeared out sec-            In addition to supporting the design of basic shapes
+tions more than 3 nm away from the unpaired scaﬀold             such as rectangular blocks, caDNAno provides tools to
+loops at the front and rear interfaces. For example, of         introduce deviations from the basic honeycomb architec-
+the ﬁve particle images shown for the 4  16 design in
+                                                                ture, such as forced crossovers, to create very complicated
+Figure 2a(v), only the topmost particle was counted as
+                                                                designs. Additional software development will be required
+well-folded.
+                                                                to make designs of these non-standard motifs more nat-
+   Only folding with three of the seven designs—four-
+                                                                ural, for example for caDNAno to predict the structural
+helix-per-x-raster or 15  4 (two y-layers), six-helix-
+per-x-raster or 10  6 (three y-layers), thirty-helix-per-      consequences of these changes. More work is also needed
+x-raster or 2  30 (two x-layers)—produced sharp leading        to see what design rules lead to stable structures; for
+monomer bands by agarose-gel electrophoresis                    examples of designs that folded successfully, although
+(Figure 2c). Thus designs with a smaller number of              with varying yields, see the gallery section at http://
+x-layers or y-layers may have a folding advantage due to        cadnano.org/.
+fewer numbers of highly embedded helices, which may be
+more diﬃcult to assemble, and perhaps also due to the
+lower crossover densities. Consistent with this trend,          SUPPLEMENTARY DATA
+single-layer shapes fold much faster and to higher yield
+(9). Folding with the six-helix-per-x-raster (10  6)           Supplementary Data are available at NAR Online.
+design produced the leading band with the greatest mobi-
+lity, while folding with the four-helix-per-x-raster (15  4)
+design produced the leading band with the greatest inten-
+                                                                ACKNOWLEDGEMENTS
+sity, indicating the best yield. Our previous results sug-
+gested that faster gel mobility of the same design under        We thank Hendrik Dietz, Tim Liedl, Björn Högberg,
+diﬀerent folding conditions correlates with fewer defects       Katrina Galkina, Andrew Leifer and Nathan Derr for fea-
+(14), although it is more diﬃcult to interpret mobility dif-    ture suggestions and beta-testing. We thank Xingping Su
+ferences across designs with inherently diﬀerent shapes.        for cloning the p7560 and p8064 scaﬀold vectors. We thank
+   The six-helix-per-x-raster (10  6) shape appeared the       Alexander Wait for providing server support. This work
+most robust of the seven designs in terms of yielding par-      was supported by Claudia Adams Barr Program Investiga-
+ticles that are intact after folding, staining, and drying      tor and NIH New Investigator awards to W.M.S.
+(Figure 2e). We also have found that this six-helix-x-
+raster design performs well when used to construct
+shapes with as few as three x-raster rows (i.e. 18 helices
+total) and longer lengths of helices (data not shown).          FUNDING
+Interestingly, the 15  4 and 2  30 designs produced par-      National Institutes of Health [grant number
+ticles that appeared bent when adhering to the grid surface     1DP2OD004641-01]; the Claudia Adams Barr Program
+with a perpendicular orientation of the helical axes; it is     in Innovative Cancer Research. Funding for open
+possible that the positively charged stain is deforming         access charge: National Institutes of Health Grant
+these particles, but that the other designs produce particles   1DP2OD004641-01.
+that are suﬃciently thick to resist such deformation.
+Thinner objects such as the 15  4 and 2  30 designs           Conﬂict of interest statement. None declared.
+5006 Nucleic Acids Research, 2009, Vol. 37, No. 15
+
+
+REFERENCES                                                                    tiles: a ﬁxed-width cellular automaton pattern. Nano Lett., 8,
+                                                                              1791–1797.
+ 1. Seeman,N.C. (1982) Nucleic acid junctions and lattices. J. Theor.     12. Barish,R.D., Schulman,R., Rothemund,P.W.K. and Winfree,E.
+    Biol., 99, 237–247.                                                       (2009) An information-bearing seed for nucleating algorithmic
+ 2. Seeman,N.C. (2003) DNA in a material world. Nature, 421,                  self-assembly. Proc. Natl Acad. Sci. USA, 106, 6054–6059.
+    427–431.                                                              13. Douglas,S.M., Chou,J.J. and Shih,W.M. (2007) DNA-nanotube-
+ 3. Chen,J.H. and Seeman,N.C. (1991) Synthesis from DNA of a                  induced alignment of membrane proteins for NMR structure
+    molecule with the connectivity of a cube. Nature, 350, 631–633.           determination. Proc. Natl Acad. Sci. USA, 104, 6644–6648.
+ 4. Fu,T.J. and Seeman,N.C. (1993) DNA double-crossover molecules.        14. Douglas,S.M., Dietz,H., Liedl,T., Högberg,B., Graf,F. and
+    Biochemistry, 32, 3211–3220.                                              Shih,W.M. (2009) Self-assembly of DNA into nanoscale three
+ 5. Li,X.J., Yang,X.P., Qi,J. and Seeman,N.C. (1996) Antiparallel             dimensional shapes. Nature, 459, 414–418.
+    DNA double crossover molecules as components for nanocon-             15. Birac,J.J., Sherman,W.B., Kopatsch,J., Constantinou,P.E. and
+    struction. J. Am. Chem. Soc., 118, 6131–6140.                             Seeman,N.C. (2006) Architecture with GIDEON, a program for
+ 6. Winfree,E., Liu,F., Wenzler,L.A. and Seeman,N.C. (1998) Design            design in structural DNA nanotechnology. J. Mol. Graph. Model.,
+    and self-assembly of two-dimensional DNA crystals. Nature, 394,           25, 470–480.
+    539–544.                                                              16. Andersen,E.S., Dong,M., Nielsen,M.M., Jahn,K., Lind-
+ 7. Shih,W. M., Quispe,J. D. and Joyce,G. F. (2004) A 1.7-kilobase            Thomsen,A., Mamdouh,W., Gothelf,K.V., Besenbacher,F. and
+    single-stranded DNA that folds into a nanoscale octahedron.               Kjems,J. (2008) DNA origami design of dolphin-shaped structures
+    Nature, 427, 618–621.                                                     with ﬂexible tails. ACS Nano, 2, 1213–1218.
+ 8. He,Y., Ye,T., Su,M., Zhang,C., Ribbe,A.E., Jiang,W. and Mao,C.        17. Kurien,B.T., Kaufman,K.M., Harley,J.B. and Scoﬁeld,R.H. (2001)
+    (2008) Hierarchical self-assembly of DNA into symmetric                   Pellet pestle homogenization of agarose gel slices at 458C for
+    supramolecular polyhedra. Nature, 452, 198–201.                           deoxyribonucleic acid extraction. Anal. Biochem., 296, 162–166.
+ 9. Rothemund,P.W. (2006) Folding DNA to create nanoscale shapes          18. Sambrook,J. and Russell,D. (2001) Molecular Cloning: A
+    and patterns. Nature, 440, 297–302.
+                                                                              Laboratory Manual, 3rd edn. Cold Spring Harbor Laboratory Press,
+10. Ke,Y., Lindsay,S., Chang,Y., Liu,Y. and Yan,H. (2008) Self-
+                                                                              Cold Spring Harbor.
+    assembled water-soluble nucleic acid probe tiles for label-free RNA
+                                                                          19. Jungmann,R., Liedl,T., Sobey,T.L., Shih,W. and Simmel,F.C.
+    hybridization assays. Science, 319, 180–183.
+                                                                              (2008) Isothermal assembly of DNA origami structures using
+11. Fujibayashi,K., Hariadi,R., Park,S.H., Winfree,E. and Murata,S.
+                                                                              denaturing agents. J. Am. Chem. Soc., 130, 10062–10063.
+    (2008) Toward reliable algorithmic self-assembly of DNA
+

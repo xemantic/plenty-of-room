@@ -1,0 +1,275 @@
+{
+ "version": "6.9",
+ "hitCount": 1,
+ "request": {
+  "queryString": "TITLE:\"Folding DNA into twisted and curved nanoscale shapes\"",
+  "resultType": "core",
+  "cursorMark": "*",
+  "pageSize": 25,
+  "sort": "",
+  "synonym": false
+ },
+ "resultList": {
+  "result": [
+   {
+    "id": "19661424",
+    "source": "MED",
+    "pmid": "19661424",
+    "pmcid": "PMC2737683",
+    "fullTextIdList": {
+     "fullTextId": [
+      "PMC2737683"
+     ]
+    },
+    "doi": "10.1126/science.1174251",
+    "title": "Folding DNA into twisted and curved nanoscale shapes.",
+    "authorString": "Dietz H, Douglas SM, Shih WM.",
+    "authorList": {
+     "author": [
+      {
+       "fullName": "Dietz H",
+       "firstName": "Hendrik",
+       "lastName": "Dietz",
+       "initials": "H",
+       "authorId": {
+        "type": "ORCID",
+        "value": "0000-0003-1270-3662"
+       },
+       "authorAffiliationDetailsList": {
+        "authorAffiliation": [
+         {
+          "affiliation": "Department of Cancer Biology, Dana-Farber Cancer Institute, Boston, MA 02115, USA."
+         }
+        ]
+       }
+      },
+      {
+       "fullName": "Douglas SM",
+       "firstName": "Shawn M",
+       "lastName": "Douglas",
+       "initials": "SM",
+       "authorId": {
+        "type": "ORCID",
+        "value": "0000-0001-5398-9041"
+       }
+      },
+      {
+       "fullName": "Shih WM",
+       "firstName": "William M",
+       "lastName": "Shih",
+       "initials": "WM"
+      }
+     ]
+    },
+    "authorIdList": {
+     "authorId": [
+      {
+       "type": "ORCID",
+       "value": "0000-0001-5398-9041"
+      },
+      {
+       "type": "ORCID",
+       "value": "0000-0003-1270-3662"
+      }
+     ]
+    },
+    "dataLinksTagsList": {
+     "dataLinkstag": [
+      "altmetrics",
+      "recommended_reviews"
+     ]
+    },
+    "journalInfo": {
+     "issue": "5941",
+     "volume": "325",
+     "journalIssueId": 1642125,
+     "dateOfPublication": "2009 Aug",
+     "monthOfPublication": 8,
+     "yearOfPublication": 2009,
+     "printPublicationDate": "2009-08-01",
+     "journal": {
+      "title": "Science (New York, N.Y.)",
+      "medlineAbbreviation": "Science",
+      "issn": "0036-8075",
+      "essn": "1095-9203",
+      "isoabbreviation": "Science",
+      "nlmid": "0404511"
+     }
+    },
+    "pubYear": "2009",
+    "pageInfo": "725-730",
+    "abstractText": "We demonstrate the ability to engineer complex shapes that twist and curve at the nanoscale from DNA. Through programmable self-assembly, strands of DNA are directed to form a custom-shaped bundle of tightly cross-linked double helices, arrayed in parallel to their helical axes. Targeted insertions and deletions of base pairs cause the DNA bundles to develop twist of either handedness or to curve. The degree of curvature could be quantitatively controlled, and a radius of curvature as tight as 6 nanometers was achieved. We also combined multiple curved elements to build several different types of intricate nanostructures, such as a wireframe beach ball or square-toothed gears.",
+    "affiliation": "Department of Cancer Biology, Dana-Farber Cancer Institute, Boston, MA 02115, USA.",
+    "publicationStatus": "ppublish",
+    "language": "eng",
+    "pubModel": "Print",
+    "pubTypeList": {
+     "pubType": [
+      "Research Support, Non-U.S. Gov't",
+      "research-article",
+      "Journal Article",
+      "Research Support, N.I.H., Extramural"
+     ]
+    },
+    "grantsList": {
+     "grant": [
+      {
+       "grantId": "1DP2OD004641-01",
+       "agency": "NIH HHS",
+       "acronym": "OD",
+       "orderIn": 0
+      },
+      {
+       "grantId": "DP2 OD004641",
+       "agency": "NIH HHS",
+       "acronym": "OD",
+       "orderIn": 0
+      }
+     ]
+    },
+    "meshHeadingList": {
+     "meshHeading": [
+      {
+       "majorTopic_YN": "N",
+       "descriptorName": "DNA",
+       "meshQualifierList": {
+        "meshQualifier": [
+         {
+          "abbreviation": "UL",
+          "qualifierName": "ultrastructure",
+          "majorTopic_YN": "N"
+         },
+         {
+          "abbreviation": "CH",
+          "qualifierName": "chemistry",
+          "majorTopic_YN": "Y"
+         }
+        ]
+       }
+      },
+      {
+       "majorTopic_YN": "Y",
+       "descriptorName": "Nucleic Acid Conformation"
+      },
+      {
+       "majorTopic_YN": "N",
+       "descriptorName": "Base Pairing"
+      },
+      {
+       "majorTopic_YN": "N",
+       "descriptorName": "Nanotechnology"
+      },
+      {
+       "majorTopic_YN": "Y",
+       "descriptorName": "Nanostructures"
+      }
+     ]
+    },
+    "chemicalList": {
+     "chemical": [
+      {
+       "name": "DNA",
+       "registryNumber": "9007-49-2"
+      }
+     ]
+    },
+    "subsetList": {
+     "subset": [
+      {
+       "code": "IM",
+       "name": "Index Medicus"
+      }
+     ]
+    },
+    "fullTextUrlList": {
+     "fullTextUrl": [
+      {
+       "availability": "Subscription required",
+       "availabilityCode": "S",
+       "documentStyle": "html",
+       "site": "www.sciencemag.org",
+       "url": "http://www.sciencemag.org/cgi/content/full/325/5941/725"
+      },
+      {
+       "availability": "Free",
+       "availabilityCode": "F",
+       "documentStyle": "abs",
+       "site": "www.sciencemag.org",
+       "url": "http://www.sciencemag.org/cgi/content/abstract/325/5941/725"
+      },
+      {
+       "availability": "Subscription required",
+       "availabilityCode": "S",
+       "documentStyle": "pdf",
+       "site": "www.sciencemag.org",
+       "url": "http://www.sciencemag.org/cgi/reprint/325/5941/725.pdf"
+      },
+      {
+       "availability": "Subscription required",
+       "availabilityCode": "S",
+       "documentStyle": "doi",
+       "site": "DOI",
+       "url": "https://doi.org/10.1126/science.1174251"
+      },
+      {
+       "availability": "Free",
+       "availabilityCode": "F",
+       "documentStyle": "html",
+       "site": "Europe_PMC",
+       "url": "https://europepmc.org/articles/PMC2737683"
+      },
+      {
+       "availability": "Free",
+       "availabilityCode": "F",
+       "documentStyle": "pdf",
+       "site": "Europe_PMC",
+       "url": "https://europepmc.org/articles/PMC2737683?pdf=render"
+      },
+      {
+       "availability": "Free",
+       "availabilityCode": "F",
+       "documentStyle": "doi",
+       "site": "DOI",
+       "url": "https://doi.org/10.1126/science.1174251"
+      }
+     ]
+    },
+    "commentCorrectionList": {
+     "commentCorrection": [
+      {
+       "id": "19661408",
+       "source": "MED",
+       "reference": "Science. 2009 Aug 7;325(5941):685-6. doi: 10.1126/science.1178328.",
+       "type": "Comment in",
+       "orderIn": 1
+      }
+     ]
+    },
+    "isOpenAccess": "N",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "Y",
+    "citedByCount": 877,
+    "hasData": "Y",
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasLabsLinks": "Y",
+    "hasEvaluations": "N",
+    "authMan": "Y",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "Y",
+    "manuscriptId": "NIHMS140913",
+    "hasTMAccessionNumbers": "N",
+    "dateOfCompletion": "2009-08-20",
+    "dateOfCreation": "2009-08-08",
+    "firstIndexDate": "2010-09-28",
+    "fullTextReceivedDate": "2025-02-05",
+    "dateOfRevision": "2025-05-29",
+    "firstPublicationDate": "2009-08-01"
+   }
+  ]
+ }
+}

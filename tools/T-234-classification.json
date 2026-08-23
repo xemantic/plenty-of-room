@@ -2945,25 +2945,28 @@
  },
  "gpd/claims/C-0199-the-gallery-opened.md": {
   "0": {
-   "class": "MOVED",
+   "byHand": true,
+   "class": "RECORD",
    "family": "SCAFFOLD",
    "line": 174,
    "token": "p8064",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+   "why": "verbatim source quotation: the caDNAno paper's own scaffold-pairing sentence for the seven GALLERY blocks (i..vii), reproduced against those files' own scaffold occupancy as the identification check that the archive's designs ARE the paper's designs (7 of 7). It asserts nothing about this programme's Gen-1 raster, whose scaffold C-0140/C-0151 moved -- it states somebody else's p8064/p7560 split rather than adopting one. Classified by hand because tools/T-234-emit-classification.py, re-run by a sibling mid-iteration, had defaulted all three to MOVED"
   },
   "1": {
-   "class": "MOVED",
+   "byHand": true,
+   "class": "RECORD",
    "family": "SCAFFOLD",
    "line": 175,
    "token": "p8064",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+   "why": "verbatim source quotation: the caDNAno paper's own scaffold-pairing sentence for the seven GALLERY blocks (i..vii), reproduced against those files' own scaffold occupancy as the identification check that the archive's designs ARE the paper's designs (7 of 7). It asserts nothing about this programme's Gen-1 raster, whose scaffold C-0140/C-0151 moved -- it states somebody else's p8064/p7560 split rather than adopting one. Classified by hand because tools/T-234-emit-classification.py, re-run by a sibling mid-iteration, had defaulted all three to MOVED"
   },
   "2": {
-   "class": "MOVED",
+   "byHand": true,
+   "class": "RECORD",
    "family": "SCAFFOLD",
    "line": 175,
    "token": "p8064",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+   "why": "verbatim source quotation: the caDNAno paper's own scaffold-pairing sentence for the seven GALLERY blocks (i..vii), reproduced against those files' own scaffold occupancy as the identification check that the archive's designs ARE the paper's designs (7 of 7). It asserts nothing about this programme's Gen-1 raster, whose scaffold C-0140/C-0151 moved -- it states somebody else's p8064/p7560 split rather than adopting one. Classified by hand because tools/T-234-emit-classification.py, re-run by a sibling mid-iteration, had defaulted all three to MOVED"
   }
  }
 }
