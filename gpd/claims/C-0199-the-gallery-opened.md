@@ -5,12 +5,14 @@
 | **Task** | [`T-255`](../tasks/T-255-cadnano-gallery-forced-crossovers.md), raised by [`C-0152`](C-0152-forced-scaffold-crossover-price.md) (`T-246`) §6 |
 | **Leaf** | **`A8.2`** |
 | **Verification type** | **in-silico** (parsing 26 **foreign** design files with three independent tests built on caDNAno's own published rule, 37 self-tests written first) **+ literature** (the gallery, its archives and the three papers it cites, every number flagged for how it was read; one bar chart digitised at 600 dpi with the paper's own ordinal statements as cross-checks) |
-| **Verdict** | **PASS on all six predicates.** Of the seven declared falsifiers **three FIRED**: `F3` (the category is not empty), `F5` (the honeycomb designs' raster turns **are** bound by the `±5 bp` condition — which is what raises the challenge) and `F7` (the conjunction's expected yield is below one). `F1`, `F2` and `F6` did not fire; **`F4` did not fire and its not firing IS the answer**. Raises [`CH-0251`](../challenges/CH-0251-the-deposited-block-has-no-loops.md) against [`C-0193`](C-0193-the-built-turn-is-a-tether.md) §3/§4 |
+| **Verdict** | **PASS on all six predicates.** Of the seven declared falsifiers **three FIRED**: `F3` (the category is not empty), `F5` (the honeycomb designs' raster turns **are** bound by the `±5 bp` condition — which is what raises the challenge; **read on a DRAWING**, `C-0200`/`T-302`: under the staple order `60` of the `10 × 6`'s `118` scaffold crossings sit in unpaired scaffold) and `F7` (the conjunction's expected yield is below one). `F1`, `F2` and `F6` did not fire; **`F4` did not fire and its not firing IS the answer**. Raises [`CH-0251`](../challenges/CH-0251-the-deposited-block-has-no-loops.md) against [`C-0193`](C-0193-the-built-turn-is-a-tether.md) §3/§4 |
 | **Maturity** | **TRL 1–3. Model-consistent and traceable. NOTHING HERE IS MEASURED IN THIS PROJECT.** Every yield quoted is a published measurement of somebody else's folding experiment, read directly and flagged. The forced-crossover census is a statement about **design files**, not about folded objects |
 | **Provenance** | [`gpd/results/T-255-cadnano-gallery-forced-crossovers.json`](../results/T-255-cadnano-gallery-forced-crossovers.json), written by [`tools/T-255-emit-result.py`](../../tools/T-255-emit-result.py) (**new**, no Kotlin source touched), **byte-identical across two independent runs**, `--selftest` **13 checks, 0 failed**. Parser, classifier, digitiser, retrieval driver, full HTTP log and the three archives **unmodified** at [`gpd/data/T-255-sources/`](../data/T-255-sources/MANIFEST.md); `forced_census.py` carries **37 named assertions** |
 | **Conditions** | Honeycomb, 21 bp crossover period, 3 azimuth classes at 7 bp, caDNAno scaffold offset `±5 bp`, 10.5 bp/turn so `240/7 = 34.2857143°` per base pair; rise 0.34 nm/bp. **All four lattice constants are PARSED out of [`tile/HoneycombBondClassResidues.kt`](../../src/main/kotlin/tile/HoneycombBondClassResidues.kt)**, not transcribed. The square-lattice comparison period (32 bp, 8 bp step) is `CLAUDE.md`'s own, cited in the source. Counts are dimensionless; a yield is a **percentage of a stated denominator and the denominator travels with it**. No buffer, temperature or environment coordinate enters, so the result file's `regime` is `[]`. Retrieved **2026-08-23**; nothing installed but `poppler-utils`, already present |
 | **Consumes** | [`C-0152`](C-0152-forced-scaffold-crossover-price.md)/`T-246` (the question, the azimuth ladder, and the retained gallery captures), [`C-0148`](C-0148-face-bond-class-residues-and-row-span-columns.md)/`T-244` (the `±5` closure rule, re-derived per bond), [`C-0193`](C-0193-the-built-turn-is-a-tether.md)/`T-296` (the conditionality this task was told to re-price) |
 | **Raises** | [`CH-0251`](../challenges/CH-0251-the-deposited-block-has-no-loops.md) |
+
+> **ANNOTATED (`C-0200`, `T-302`, iteration 47).** [`CH-0251`](../challenges/CH-0251-the-deposited-block-has-no-loops.md), which this claim raises, is **REFUTED on its central point**, and one inference of this claim goes with it. The Nature paper's own **`monolith staple sequences`** table orders **`5 880`** staple nucleotides in **`144`** strands where the deposited file draws **`214`** and **`7 560`**; the **`70`** it omits total exactly **`1 680 = 60 × 28`** and lie in the helix ends. **Nothing this claim MEASURED moves** — the retrieval, the 26-design census, the three tests, the `28` one-base-pair departures, the digitised yields, the `0 of 15` conjunction and the bit-identity finding all stand, and `C-0200` rests on two of them. What moves is §1's inference that the exemption does not apply to these designs at all — struck in place below — and the artifact class its `F5` was read on: under the ORDER, **`60` of the `10 × 6` block's `118` scaffold crossings sit in single-stranded scaffold**. See [`CH-0253`](../challenges/CH-0253-a-register-census-of-a-drawing.md).
 
 ---
 
@@ -41,7 +43,7 @@ and no census would be worth running.
 
 **It narrowed the target correctly and it did not empty the category — and `F5` fired.** Measured
 on the deposited files, `10` of the 26 designs carry **zero** unpaired scaffold — including all
-seven caDNAno blocks and the Nature monolith — so the exemption does not apply to them at all, and
+seven caDNAno blocks and the Nature monolith — ~~so the exemption does not apply to them at all~~ **(WITHDRAWN, `C-0200`/`T-302`: it applies to `60` of the `118` scaffold crossings, which the staple ORDER leaves unpaired)**, and
 their raster turns sit on the `±5` lattice exactly, at `0` forced of 118 (or 126). The other
 sixteen carry forcings that are not raster turns. **A cheap bound that turns out to be false is
 still the right thing to run first**: it cost one census column, it was declared before the fetch,
@@ -272,6 +274,9 @@ are the ones demonstrating shapes, and they pool.
 
 - **This is a census of DESIGN FILES.** Whether a folded object matched its file is not settled
   here and cannot be. `CH-0251` is exactly that gap, on one specific block.
+  **`CH-0251` is now CLOSED on that block** (`C-0200`, `T-302`): the staple order settles it and the
+  answer is that the file is a drawing. **This validity range is the one §1 did not carry**, which is
+  the whole of [`CH-0253`](../challenges/CH-0253-a-register-census-of-a-drawing.md).
 - **Test B is a lower bound** on the forced count, by the declared blind spot in §3.
 - **The three archives are what the gallery links today.** A design that folded and was never
   deposited is invisible to this, and so is any archive the gallery once linked and no longer does;

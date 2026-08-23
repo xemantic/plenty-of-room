@@ -1,4 +1,4 @@
-# C-0193 — **THE ZERO-LOOP TURN IS REACHABLE, DRAWABLE AND LATTICE-LEGAL, AND NOBODY HAS FOLDED IT ON THE HONEYCOMB — AND THE FIGURE THAT SAYS SO ALSO SAYS WHERE THE BUILT COVALENT LINK ACTUALLY SITS: `14 bp = 4.76 nm` OUTBOARD OF THE DUPLEX END, ON BOTH HELICES.** Read off the built `10 × 6` block's own strand diagram, the scaffold occupies bases **14 → 140** of every helix — **126**, the paper's own allotment — and the staples occupy **28 → 126** — **98**, the paper's own paired count. So the scaffold **does** turn at the rim with no topological loopout, and the two **DUPLEX** ends it joins are **28** unpaired nucleotides apart, 14 on each side. `C-0175`'s tie is a covalent element between two duplex ends at `s = ±L/2`; the built one is not that object. **The loops' own stated purpose is aggregation, not closure** — *"Unpaired scaffold bases **often** are introduced at the ends of helices **to minimize undesired multimerization**"*, in the honeycomb paper and again in its square-lattice sibling — and the field's current tutorial calls a `4+` base poly-T loop **on the staples** *"tried-and-tested"*, which costs **zero scaffold**. What the 28 nt actually **buys** is freedom from caDNAno's `±5 bp` residue condition, because **an unpaired base has no azimuth**: that is how a lattice carrying both turn senses is folded at **one** uniform row length, and it is exactly why `C-0151`'s zero-loop raster has to be **two-length**. **The two designs are separated by the SCAFFOLD**: on the drawable `102 / 109` raster the built allowance needs `8 010 nt`, so M13mp18 is short by **761**, p7560 by **450**, and p8064 has **54** spare — inverted, M13 affords **15 nt** per turn, p7560 **20**, and p8064 **exactly the built 28**. **And a tether is not free either**: at M13's 15 nt the turn carries `2.03800431–3.03288672 pN` and stores `1.00857129–1.48373364 k_BT`, so 59 of them store `59.5057061–87.5402845 k_BT` — **`7.15756436–10.5296662×`** `C-0190`'s whole rigid-duplex ceiling for route A. **Verdict: `C-0175` §9, `C-0180` §4 and `C-0190` are correct about a DRAWABLE design that has not been demonstrated**, `0` of `186` unique records over `30` queries in `9` families reports the motif on this lattice, and `7 of 7` built cross-sections do the other thing
+# C-0193 — **THE ZERO-LOOP TURN IS REACHABLE, DRAWABLE AND LATTICE-LEGAL, AND NOBODY HAS FOLDED IT ON THE HONEYCOMB — AND THE FIGURE THAT SAYS SO ALSO SAYS WHERE THE BUILT COVALENT LINK ACTUALLY SITS: ~~`14 bp = 4.76 nm`~~ **`12` OR `16` UNPAIRED NUCLEOTIDES** OUTBOARD OF THE DUPLEX END, ON BOTH HELICES** (corrected by [`C-0200`](C-0200-the-file-draws-and-the-table-orders.md), `T-302`). Read off the built `10 × 6` block's own strand diagram, the scaffold occupies bases **14 → 140** of every helix — **126**, the paper's own allotment — and the staples occupy **28 → 126** — **98**, the paper's own paired count. So the scaffold **does** turn at the rim with no topological loopout, and the two **DUPLEX** ends it joins are **28** unpaired nucleotides apart ~~, 14 on each side~~ — `C-0200` measures the per-turn values as **`24`** and **`32`**, thirty each, whose mean is `28` exactly. `C-0175`'s tie is a covalent element between two duplex ends at `s = ±L/2`; the built one is not that object. **The loops' own stated purpose is aggregation, not closure** — *"Unpaired scaffold bases **often** are introduced at the ends of helices **to minimize undesired multimerization**"*, in the honeycomb paper and again in its square-lattice sibling — and the field's current tutorial calls a `4+` base poly-T loop **on the staples** *"tried-and-tested"*, which costs **zero scaffold**. What the 28 nt actually **buys** is freedom from caDNAno's `±5 bp` residue condition, because **an unpaired base has no azimuth**: that is how a lattice carrying both turn senses is folded at **one** uniform row length, and it is exactly why `C-0151`'s zero-loop raster has to be **two-length**. **The two designs are separated by the SCAFFOLD**: on the drawable `102 / 109` raster the built allowance needs `8 010 nt`, so M13mp18 is short by **761**, p7560 by **450**, and p8064 has **54** spare — inverted, M13 affords **15 nt** per turn, p7560 **20**, and p8064 **exactly the built 28**. **And a tether is not free either**: at M13's 15 nt the turn carries `2.03800431–3.03288672 pN` and stores `1.00857129–1.48373364 k_BT`, so 59 of them store `59.5057061–87.5402845 k_BT` — **`7.15756436–10.5296662×`** `C-0190`'s whole rigid-duplex ceiling for route A. **Verdict: `C-0175` §9, `C-0180` §4 and `C-0190` are correct about a DRAWABLE design that has not been demonstrated**, `0` of `186` unique records over `30` queries in `9` families reports the motif on this lattice, and `7 of 7` built cross-sections do the other thing
 
 | | |
 |---|---|
@@ -12,6 +12,8 @@
 | **Consumes** | [`C-0147`](C-0147-honeycomb-turn-slack-and-ragged-face.md)/`T-230` (the reach bound and the FJC law, **re-derived and reproduced**), [`C-0151`](C-0151-closing-raster-selection.md)/`T-245` (the drawable raster's `6 330 / 919 / 15`, **read from its result file**), [`C-0175`](C-0175-drawable-raster-rim.md)/`T-254`, [`C-0180`](C-0180-tied-honeycomb-coupled-regrade.md)/`T-279`, [`C-0190`](C-0190-the-departure-is-common-mode-and-what-replaces-it.md)/`T-291` (the conditionality table, **read from their result files**), `Gen1Tile`, `MeasuredBackbone` |
 | **Raises** | [`CH-0247`](../challenges/CH-0247-the-tie-set-is-a-route-not-a-lattice.md) |
 
+> **UPHELD AND STRENGTHENED (`C-0200`, `T-302`, iteration 47), and three numbers of §3 are refined.** [`CH-0251`](../challenges/CH-0251-the-deposited-block-has-no-loops.md) offered the seven deposited caDNAno design files against §3 and §4 and is **REFUTED on its central point**: the Nature paper's own **`monolith staple sequences`** table orders **`5 880`** staple nucleotides in **`144`** strands — `60 × 98` exactly — where the deposited file draws **`214`** strands and **`7 560`**, and the **`70`** it omits total exactly **`1 680 = 60 × 28`** and lie entirely in the helix end regions. **A design file is a drawing and a staple table is a purchase.** Refined: the per-helix split is **`12 / 16`**, not `14 / 14`; the two duplex ends a turn joins are **`24`** nucleotides apart at thirty turns and **`32`** at thirty, whose **mean** is this claim's `28` exactly; and *`14 bp = 4.76 nm`* is a duplex rise applied to single-stranded scaffold. Nothing else moves — the verdict, the fork, the scaffold budget of §8 and the conditionality of §7 all stand.
+
 ---
 
 ## The claim, in three lines
@@ -19,7 +21,7 @@
 Nothing covalent, nothing in the lattice rule and nothing in the design tool refuses a honeycomb
 raster turn with zero unpaired nucleotides.
 
-Nobody has folded one, and the seven blocks that exist leave **14** unpaired bases at **every**
+Nobody has folded one, and the seven blocks that exist leave ~~**14**~~ **`12` or `16`** unpaired bases at **every**
 helix end — for a reason their own papers state, and it is aggregation, not closure.
 
 So the tie set is a property of a **route**, the route is **drawable and undemonstrated**, and
@@ -88,12 +90,25 @@ to 140, and rendered at 300 dpi on both rims it reads:
 | the **scaffold** occupies | **14 → 140** | **126** — the allotment, exactly |
 | the **staples** occupy | **28 → 126** | **98** — the paired count, exactly |
 | the scaffold **turns** at | base **14** and base **140** | with **no topological loopout** |
-| so each helix end carries | **14** unstapled bases | `4.76 nm` |
-| and two **DUPLEX** ends are | **28** unpaired nucleotides apart | `18.2–19.6 nm` of ssDNA contour |
+| ~~so each helix end carries~~ | ~~**14** unstapled bases~~ | ~~`4.76 nm`~~ |
+| ~~and two **DUPLEX** ends are~~ | ~~**28** unpaired nucleotides apart~~ | ~~`18.2–19.6 nm` of ssDNA contour~~ |
+| **CORRECTED** (`C-0200`, `T-302`): each helix end carries | **`12`** at one end and **`16`** at the other | `7.8–8.4` and `10.4–11.2 nm` of ssDNA contour |
+| **CORRECTED**: two **DUPLEX** ends are | **`24`** nt apart at thirty turns, **`32`** at thirty, mean **`28.0`** | `15.6–16.8` and `20.8–22.4 nm` |
 
 `98 + 28 = 126`. **The scaffold does turn without a loopout, and it is still not a covalent tie
-between two duplex ends** — the link sits **14 bp = 4.76 nm outboard** of the duplex end on each
-of the two helices it joins, and what stands between the two rim nodes is **ssDNA**.
+between two duplex ends** — the link sits ~~**14 bp = 4.76 nm outboard**~~ **`12` or `16` unpaired
+nucleotides outboard** of the duplex end on each of the two helices it joins, and what stands
+between the two rim nodes is **ssDNA**.
+
+> **ANNOTATED (`C-0200`, `T-302`, iteration 47).** The staple **order** confirms this section's two
+> headline numbers on a second, independent artifact — every helix pairs **`98`** bases and leaves
+> **`28`** — and corrects two readings the rendered figure could not resolve. The split is `12 / 16`
+> and the per-turn ssDNA is `24` or `32`, whose mean is `28.0`. And **`4.76 nm` is the B-DNA rise
+> applied to single-stranded scaffold**, which is the unit trap `CLAUDE.md` records as
+> `28 nt = 9.52 nm` and which the row below this one avoids correctly. **`T-299` inherits both
+> corrections**, because its element is specified between two duplex ends *"`4.76 nm` outboard on
+> each helix"* and the built object has **two** turn populations.
+
 `C-0147`'s 28 nt tether is the right object; the figure says where it sits.
 
 ## 4. And the 28 nt is a PURCHASE, not a necessity — and what it buys is the residue condition
@@ -105,6 +120,15 @@ folded with all sixty helices at **one** length, and it is exactly why `C-0151`'
 has to be **two-length**.
 
 **The built design buys freedom from the residue condition and pays 28 nt of scaffold for it.**
+
+> **CONFIRMED on the challenger's own designs (`C-0200`, `T-302`, iteration 47).** Under the staple
+> order the `10 × 6` block's `118` scaffold crossings divide **`58`** inside a duplex window and
+> **`60`** in unpaired scaffold, so the residue condition cannot bind those sixty at all —
+> [`CH-0251`](../challenges/CH-0251-the-deposited-block-has-no-loops.md)'s point 2, that the blocks
+> *"close the residue condition exactly while paying nothing"*, is refuted in both halves. What is
+> confirmed is the **mechanical consequence**; the **purpose** attribution is what §5 quotes the
+> papers saying, and it is aggregation.
+
 Route A pays no scaffold and closes the condition instead. Neither is free and the currencies are
 different, which is the whole reason this is a fork and not a tolerance.
 
@@ -273,7 +297,7 @@ file being reproduced.**
 ## 11. Still open — named, not answered
 
 - **What a 28 nt tether does to the block mechanically.** It is not a tie and it is not nothing:
-  it is a one-sided entropic element between two duplex ends, `4.76 nm` outboard on each helix,
+  it is a one-sided entropic element between two duplex ends, ~~`4.76 nm`~~ **`12` or `16` unpaired nucleotides** outboard on each helix,
   and **no lattice in this repository carries one**. That is `T-299`, and until it is run the
   corpus has graded **one** of two designs.
 - **Whether route B's tile is gradable at §3's footprint at all.** At the built allowance a

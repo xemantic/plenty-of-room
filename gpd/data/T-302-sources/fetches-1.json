@@ -1,0 +1,98 @@
+[
+ {
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2731887/",
+  "status": 200,
+  "bytes": 141375,
+  "final": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2731887/"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=nar.oxfordjournals.org/cgi/content/full/gkp436/DC1",
+  "status": 200,
+  "bytes": 87,
+  "final": "https://archive.org/wayback/available?url=nar.oxfordjournals.org/cgi/content/full/gkp436/DC1"
+ },
+ {
+  "url": "http://archive.org/wayback/available?url=nar.oxfordjournals.org%2Fcgi%2Fcontent%2Ffull%2Fgkp436%2FDC1",
+  "status": 200,
+  "bytes": 87,
+  "final": "http://archive.org/wayback/available?url=nar.oxfordjournals.org%2Fcgi%2Fcontent%2Ffull%2Fgkp436%2FDC1"
+ },
+ {
+  "url": "https://academic.oup.com/nar/article/37/15/5001/2409718",
+  "status": 403,
+  "bytes": 0,
+  "final": "https://academic.oup.com/nar/article/37/15/5001/2409718"
+ },
+ {
+  "url": "https://academic.oup.com/nar/article-lookup/doi/10.1093/nar/gkp436",
+  "status": 403,
+  "bytes": 0,
+  "final": "https://academic.oup.com/nar/article-lookup/doi/10.1093/nar/gkp436"
+ },
+ {
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2731887/supplementaryFiles",
+  "status": 200,
+  "bytes": 511599,
+  "final": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2731887/supplementaryFiles"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=nar.oxfordjournals.org*&filter=urlkey:.*gkp436.*&limit=40&output=json",
+  "status": 504,
+  "bytes": 0,
+  "final": "http://web.archive.org/cdx/search/cdx?url=nar.oxfordjournals.org*&filter=urlkey:.*gkp436.*&limit=40&output=json"
+ },
+ {
+  "url": "https://web.archive.org/web/2010/http://nar.oxfordjournals.org/cgi/content/full/gkp436/DC1",
+  "status": 200,
+  "bytes": 150665,
+  "final": "https://web.archive.org/web/20150922014232/http://nar.oxfordjournals.org/cgi/content/full/gkp436/DC1"
+ },
+ {
+  "url": "https://web.archive.org/web/2013/http://nar.oxfordjournals.org/content/37/15/5001/suppl/DC1",
+  "status": 404,
+  "bytes": 0,
+  "final": "https://web.archive.org/web/2013/http://nar.oxfordjournals.org/content/37/15/5001/suppl/DC1"
+ },
+ {
+  "url": "http://nar.oxfordjournals.org/cgi/content/full/gkp436/DC1",
+  "status": 200,
+  "bytes": 1455,
+  "final": "https://nar.oxfordjournals.org/cgi/content/full/gkp436/DC1"
+ },
+ {
+  "url": "https://academic.oup.com/nar/article/37/15/5001/2409718#supplementary-data",
+  "status": 403,
+  "bytes": 0,
+  "final": "https://academic.oup.com/nar/article/37/15/5001/2409718#supplementary-data"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=nar.oxfordjournals.org/cgi/content/full/gkp436/DC1&output=json",
+  "status": 200,
+  "bytes": 657,
+  "final": "https://web.archive.org/cdx/search/cdx?url=nar.oxfordjournals.org/cgi/content/full/gkp436/DC1&output=json"
+ },
+ {
+  "url": "https://web.archive.org/web/20150922014232/http://nar.oxfordjournals.org/cgi/content/full/gkp436/DC1",
+  "status": 200,
+  "bytes": 150665,
+  "final": "https://web.archive.org/web/20150922014232/http://nar.oxfordjournals.org/cgi/content/full/gkp436/DC1"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=nar.oxfordjournals.org/content/37/15/5001&matchType=prefix&limit=60&output=json",
+  "status": 200,
+  "bytes": 6454,
+  "final": "https://web.archive.org/cdx/search/cdx?url=nar.oxfordjournals.org/content/37/15/5001&matchType=prefix&limit=60&output=json"
+ },
+ {
+  "url": "https://web.archive.org/web/20160518225945/http://nar.oxfordjournals.org/content/37/15/5001",
+  "status": 200,
+  "bytes": 88425,
+  "final": "https://web.archive.org/web/20160518225945/http://nar.oxfordjournals.org/content/37/15/5001"
+ },
+ {
+  "url": "https://web.archive.org/web/20160518225945/http://nar.oxfordjournals.org/content/37/15/5001/suppl/DC1",
+  "status": 404,
+  "bytes": 0,
+  "final": "https://web.archive.org/web/20160518225945/http://nar.oxfordjournals.org/content/37/15/5001/suppl/DC1"
+ }
+]

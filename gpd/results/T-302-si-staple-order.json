@@ -1,0 +1,774 @@
+{
+ "emission": {
+  "lattice": "honeycomb",
+  "regime": []
+ },
+ "task": "T-302",
+ "question": "do the 2009 supplementary staple sequence tables order 5880 staple nucleotides for the 10 x 6 honeycomb block, or 7560",
+ "leaf": "A8.2",
+ "readOn": "2026-08-23",
+ "settles": "CH-0251",
+ "answer": {
+  "sumOfTheLengthColumn": 5880,
+  "tableRows": 144,
+  "theDepositedFileDraws": 7560,
+  "inStrands": 214,
+  "theSentenceReading": 5880,
+  "theFileReading": 7560,
+  "theOrderIsTheSentence": true,
+  "nucleotidesDrawnButNotOrdered": 1680,
+  "strandsDrawnButNotOrdered": 70,
+  "unpairedScaffoldBasesPerHelixUnderTheOrder": 28,
+  "verdict": "the 2009 supplementary information orders 5880 staple nucleotides in 144 strands for the 10 x 6 block, which is exactly 60 x 98; the deposited caDNAno file draws 214 strands and 7560 nucleotides, and the 70 it draws and the order omits total exactly 1680 = 60 x 28 and lie entirely in the helix end regions. The Methods sentence describes the object that was bought and the design file is a DRAWING of it",
+  "challengeVerdict": "CH-0251 REFUTED on its central point"
+ },
+ "theDiscriminator": {
+  "why": "stated in CH-0251 before anything was read: a design leaving 28 unpaired scaffold bases per helix orders 60 x 98 staple nucleotides for this block and the deposited file draws 60 x 126",
+  "candidates": [
+   5880,
+   7560
+  ],
+  "observed": 5880,
+  "matchesTheSentence": true,
+  "matchesTheFile": false
+ },
+ "theMonolithTable": {
+  "source": "Douglas, Dietz, Liedl, Hoegberg, Graf & Shih, Nature 459:414 (2009), Supplementary Information, the table headed 'monolith staple sequences', READ DIRECTLY from the retained PDF's own text layer",
+  "page": 12,
+  "columns": [
+   "Start",
+   "End",
+   "monolith staple sequences",
+   "Length",
+   "Color"
+  ],
+  "textLayerIsClean": true,
+  "whyTheTextLayerIsClean": "T-296 recorded this PDF's text layer as garbled by font subsetting past the front matter, and that is true of the FIGURE pages, whose subsetted TrueType fonts carry no ToUnicode map and no post table. The TABLE pages are typeset normally and extract verbatim. The check is one pdftotext invocation and it turned a 26-page raster transcription into a geometric read",
+  "match": {
+   "tableRows": 144,
+   "tableRowsUnparsed": 0,
+   "sumOfLengthColumn": 5880,
+   "sumOfSequenceCharacters": 5880,
+   "rowsWhereStatedLengthIsTheSequenceLength": 144,
+   "fileStrands": 214,
+   "fileStapleNucleotides": 7560,
+   "rowsResolvingToAFileStrand": 144,
+   "rowsWhereTheLengthAlsoAgrees": 144,
+   "rowsResolvingToNoFileStrand": 0,
+   "strandsDrawnButNotTabulated": 70,
+   "nucleotidesDrawnButNotTabulated": 1680,
+   "rowsWhereTheColourAgrees": 144,
+   "drawnOnlyLengthHistogram": {
+    "12": 20,
+    "24": 20,
+    "32": 30
+   },
+   "drawnOnlyColourHistogram": {
+    "#cc0000": 70
+   },
+   "tabulatedColourHistogram": {
+    "#007200": 23,
+    "#57bb00": 18,
+    "#b8056c": 17,
+    "#aaaa00": 14,
+    "#1700de": 13,
+    "#333333": 12,
+    "#f74308": 12,
+    "#f7931e": 12,
+    "#7300de": 12,
+    "#03b6a2": 11
+   }
+  }
+ },
+ "perHelixUnderTheOrder": {
+  "why": "the Methods sentence says 98 of 126 bases are paired on EVERY helix; that is a per-helix statement and is emitted at per-helix granularity",
+  "helices": 60,
+  "basesPairedByAnOrderedStapleHistogram": {
+   "98": 60
+  },
+  "orderedStapleWindowHistogram": {
+   "28..125": 60
+  },
+  "unpairedEndSplitHistogram": {
+   "12 low, 16 high": 30,
+   "16 low, 12 high": 30
+  },
+  "everyHelixCarriesTheSentencesNinetyEight": true,
+  "theSplitIsNotFourteenAndFourteen": true,
+  "note": "the DUPLEX is in perfect register -- all sixty helices are paired over bases 28..125 -- and the 4 bp axial stagger the file draws lives entirely in the single-stranded ends"
+ },
+ "theScaffold": {
+  "basesInTheScaffoldPath": 7560,
+  "basesInsideAnOrderedDuplexWindow": 5880,
+  "basesOutside": 1680,
+  "ssDnaGapsBetweenConsecutiveDuplexEnds": 60,
+  "gapSizeHistogramInNucleotides": {
+   "24": 30,
+   "32": 30
+  },
+  "meanGapInNucleotides": 28.0,
+  "totalUnpairedNucleotides": 1680,
+  "scaffoldCrossings": 118,
+  "scaffoldCrossingsAtARimInsideTheUnpairedRegion": 60,
+  "scaffoldCrossingsInsideADuplexWindow": 58,
+  "whatThisCorrects": "C-0193 section 3 reads the strand diagram as 28 unpaired nucleotides between two duplex ends, 14 on each side. The 28 is exact as a MEAN and the per-turn values are 24 at thirty turns and 32 at the other thirty, because the stagger puts two 12-base ends together at one rim and two 16-base ends together at the other",
+  "ssDnaContourNanometresPerNucleotide": [
+   0.65,
+   0.7
+  ],
+  "contourOfATwentyFourNucleotideTurnNanometres": [
+   15.6,
+   16.8
+  ],
+  "contourOfAThirtyTwoNucleotideTurnNanometres": [
+   20.8,
+   22.4
+  ],
+  "contourOfATwelveNucleotideHelixEndNanometres": [
+   7.8,
+   8.4
+  ],
+  "contourOfASixteenNucleotideHelixEndNanometres": [
+   10.4,
+   11.2
+  ],
+  "whyThoseAreNotADuplexRise": "C-0193 section 3 quotes the outboard offset of the covalent link as 14 bp = 4.76 nm, which is the B-DNA rise applied to SINGLE-STRANDED scaffold -- the unit trap CLAUDE.md records as 28 nt = 9.52 nm, and which T-296 caught in the row below and left standing in the row above. The count is 12 or 16, not 14, and an unpaired base has no duplex axial extent at all"
+ },
+ "crossChecks": {
+  "everyRowsStatedLengthIsItsOwnSequenceLength": true,
+  "everyRowResolvesToAStrandOfTheDepositedFile": true,
+  "andAtTheSameLength": true,
+  "everyRowsColourIsTheFilesOwnStoredStapleColour": true,
+  "theTenBySixAndTheMonolithAreBitIdentical": true,
+  "bitIdentityDigests": {
+   "Nature09/01-monolith/monolith.json": "ac46b69a04813ee0cc15eddd5fc33265f56a8072bfda3063924b3c5034317053",
+   "NAR09/ii_10x6.json": "ac46b69a04813ee0cc15eddd5fc33265f56a8072bfda3063924b3c5034317053"
+  },
+  "rowsCheckedAcrossAllTables": 2005,
+  "rowsWhereStatedLengthIsItsSequenceLengthAcrossAllTables": 2005,
+  "rowsMatchableAgainstADepositedFile": 1492,
+  "rowsResolvingToADepositedStrandAtTheSameLength": 1492,
+  "rowsWhoseColourIsTheDepositedFilesOwn": 1492,
+  "whyTheIcosahedronTablesLeaveALargeResidue": "the icosahedron is deposited as ONE file carrying all three monomers, and each of the three tables orders one of them: 192 matched and 384 left over is 192 x 3 = 576, so that residue is the other two monomers and not an omission at all"
+ },
+ "everyTableInTheSupplement": [
+  {
+   "page": 12,
+   "title": "monolith staple sequences",
+   "rows": 144,
+   "sumOfLengthColumn": 5880,
+   "rowsWhereStatedLengthIsTheSequenceLength": 144,
+   "deposited": {
+    "tableRows": 144,
+    "tableRowsUnparsed": 0,
+    "sumOfLengthColumn": 5880,
+    "sumOfSequenceCharacters": 5880,
+    "rowsWhereStatedLengthIsTheSequenceLength": 144,
+    "fileStrands": 214,
+    "fileStapleNucleotides": 7560,
+    "rowsResolvingToAFileStrand": 144,
+    "rowsWhereTheLengthAlsoAgrees": 144,
+    "rowsResolvingToNoFileStrand": 0,
+    "strandsDrawnButNotTabulated": 70,
+    "nucleotidesDrawnButNotTabulated": 1680,
+    "rowsWhereTheColourAgrees": 144,
+    "drawnOnlyLengthHistogram": {
+     "12": 20,
+     "24": 20,
+     "32": 30
+    },
+    "drawnOnlyColourHistogram": {
+     "#cc0000": 70
+    },
+    "tabulatedColourHistogram": {
+     "#007200": 23,
+     "#57bb00": 18,
+     "#b8056c": 17,
+     "#aaaa00": 14,
+     "#1700de": 13,
+     "#333333": 12,
+     "#f74308": 12,
+     "#f7931e": 12,
+     "#7300de": 12,
+     "#03b6a2": 11
+    },
+    "file": "Nature09/01-monolith/monolith.json"
+   }
+  },
+  {
+   "page": 13,
+   "title": "square nut staple sequences",
+   "rows": 148,
+   "sumOfLengthColumn": 4977,
+   "rowsWhereStatedLengthIsTheSequenceLength": 148,
+   "deposited": {
+    "tableRows": 148,
+    "tableRowsUnparsed": 0,
+    "sumOfLengthColumn": 4977,
+    "sumOfSequenceCharacters": 4977,
+    "rowsWhereStatedLengthIsTheSequenceLength": 148,
+    "fileStrands": 269,
+    "fileStapleNucleotides": 7560,
+    "rowsResolvingToAFileStrand": 148,
+    "rowsWhereTheLengthAlsoAgrees": 148,
+    "rowsResolvingToNoFileStrand": 0,
+    "strandsDrawnButNotTabulated": 121,
+    "nucleotidesDrawnButNotTabulated": 2583,
+    "rowsWhereTheColourAgrees": 148,
+    "drawnOnlyLengthHistogram": {
+     "17": 29,
+     "18": 1,
+     "21": 56,
+     "24": 1,
+     "25": 30,
+     "28": 3,
+     "38": 1
+    },
+    "drawnOnlyColourHistogram": {
+     "#cc0000": 121
+    },
+    "tabulatedColourHistogram": {
+     "#007200": 37,
+     "#1700de": 22,
+     "#b8056c": 14,
+     "#03b6a2": 14,
+     "#aaaa00": 13,
+     "#7300de": 12,
+     "#333333": 11,
+     "#f74308": 10,
+     "#57bb00": 8,
+     "#f7931e": 7
+    },
+    "file": "Nature09/02-squarenut/squarenut.json"
+   }
+  },
+  {
+   "page": 14,
+   "title": "railed bridge staple sequences",
+   "rows": 197,
+   "sumOfLengthColumn": 7289,
+   "rowsWhereStatedLengthIsTheSequenceLength": 197,
+   "deposited": {
+    "tableRows": 197,
+    "tableRowsUnparsed": 0,
+    "sumOfLengthColumn": 7289,
+    "sumOfSequenceCharacters": 7289,
+    "rowsWhereStatedLengthIsTheSequenceLength": 197,
+    "fileStrands": 211,
+    "fileStapleNucleotides": 7824,
+    "rowsResolvingToAFileStrand": 197,
+    "rowsWhereTheLengthAlsoAgrees": 197,
+    "rowsResolvingToNoFileStrand": 0,
+    "strandsDrawnButNotTabulated": 14,
+    "nucleotidesDrawnButNotTabulated": 535,
+    "rowsWhereTheColourAgrees": 197,
+    "drawnOnlyLengthHistogram": {
+     "26": 1,
+     "27": 4,
+     "41": 1,
+     "42": 3,
+     "46": 2,
+     "47": 2,
+     "48": 1
+    },
+    "drawnOnlyColourHistogram": {
+     "#b8056c": 3,
+     "#007200": 3,
+     "#333333": 2,
+     "#7300de": 2,
+     "#57bb00": 1,
+     "#03b6a2": 1,
+     "#f7931e": 1,
+     "#f74308": 1
+    },
+    "tabulatedColourHistogram": {
+     "#333333": 48,
+     "#f7931e": 25,
+     "#aaaa00": 21,
+     "#b8056c": 19,
+     "#1700de": 18,
+     "#03b6a2": 15,
+     "#57bb00": 15,
+     "#007200": 13,
+     "#7300de": 13,
+     "#f74308": 9,
+     "#888888": 1
+    },
+    "file": "Nature09/03-railedbridge/railedbridge.json"
+   }
+  },
+  {
+   "page": 15,
+   "title": "slotted cross staple sequences",
+   "rows": 186,
+   "sumOfLengthColumn": 6786,
+   "rowsWhereStatedLengthIsTheSequenceLength": 186,
+   "deposited": {
+    "tableRows": 186,
+    "tableRowsUnparsed": 0,
+    "sumOfLengthColumn": 6786,
+    "sumOfSequenceCharacters": 6786,
+    "rowsWhereStatedLengthIsTheSequenceLength": 186,
+    "fileStrands": 186,
+    "fileStapleNucleotides": 6786,
+    "rowsResolvingToAFileStrand": 186,
+    "rowsWhereTheLengthAlsoAgrees": 186,
+    "rowsResolvingToNoFileStrand": 0,
+    "strandsDrawnButNotTabulated": 0,
+    "nucleotidesDrawnButNotTabulated": 0,
+    "rowsWhereTheColourAgrees": 186,
+    "drawnOnlyLengthHistogram": {},
+    "drawnOnlyColourHistogram": {},
+    "tabulatedColourHistogram": {
+     "#cc0000": 36,
+     "#f74308": 31,
+     "#57bb00": 20,
+     "#1700de": 18,
+     "#aaaa00": 16,
+     "#007200": 15,
+     "#f7931e": 15,
+     "#03b6a2": 15,
+     "#b8056c": 9,
+     "#333333": 8,
+     "#7300de": 3
+    },
+    "file": "Nature09/04-slottedcross/slottedcross.json"
+   }
+  },
+  {
+   "page": 16,
+   "title": "stacked cross core staple sequences",
+   "rows": 241,
+   "sumOfLengthColumn": 8017,
+   "rowsWhereStatedLengthIsTheSequenceLength": 241,
+   "deposited": {
+    "tableRows": 241,
+    "tableRowsUnparsed": 0,
+    "sumOfLengthColumn": 8017,
+    "sumOfSequenceCharacters": 8017,
+    "rowsWhereStatedLengthIsTheSequenceLength": 241,
+    "fileStrands": 241,
+    "fileStapleNucleotides": 8017,
+    "rowsResolvingToAFileStrand": 241,
+    "rowsWhereTheLengthAlsoAgrees": 241,
+    "rowsResolvingToNoFileStrand": 0,
+    "strandsDrawnButNotTabulated": 0,
+    "nucleotidesDrawnButNotTabulated": 0,
+    "rowsWhereTheColourAgrees": 241,
+    "drawnOnlyLengthHistogram": {},
+    "drawnOnlyColourHistogram": {},
+    "tabulatedColourHistogram": {
+     "#1700de": 40,
+     "#cc0000": 34,
+     "#f74308": 31,
+     "#333333": 31,
+     "#7300de": 18,
+     "#f7931e": 17,
+     "#b8056c": 17,
+     "#03b6a2": 16,
+     "#aaaa00": 14,
+     "#007200": 12,
+     "#57bb00": 11
+    },
+    "file": "Nature09/05-stackedcross/stackedcross.json"
+   }
+  },
+  {
+   "page": 17,
+   "title": "genie bottle sequences (pEGFP scaffold)",
+   "rows": 121,
+   "sumOfLengthColumn": 3975,
+   "rowsWhereStatedLengthIsTheSequenceLength": 121,
+   "deposited": null
+  },
+  {
+   "page": 18,
+   "title": "genie bottle sequences (p7308 scaffold)",
+   "rows": 120,
+   "sumOfLengthColumn": 3976,
+   "rowsWhereStatedLengthIsTheSequenceLength": 120,
+   "deposited": null
+  },
+  {
+   "page": 19,
+   "title": "six-helix bundle sequences (p7560)",
+   "rows": 172,
+   "sumOfLengthColumn": 7224,
+   "rowsWhereStatedLengthIsTheSequenceLength": 172,
+   "deposited": null
+  },
+  {
+   "page": 20,
+   "title": "six-helix bundle staple sequences (pEGFP)",
+   "rows": 100,
+   "sumOfLengthColumn": 6300,
+   "rowsWhereStatedLengthIsTheSequenceLength": 100,
+   "deposited": null
+  },
+  {
+   "page": 21,
+   "title": "icosahedron monomer A core sequences",
+   "rows": 192,
+   "sumOfLengthColumn": 7932,
+   "rowsWhereStatedLengthIsTheSequenceLength": 192,
+   "deposited": {
+    "tableRows": 192,
+    "tableRowsUnparsed": 0,
+    "sumOfLengthColumn": 7932,
+    "sumOfSequenceCharacters": 7932,
+    "rowsWhereStatedLengthIsTheSequenceLength": 192,
+    "fileStrands": 576,
+    "fileStapleNucleotides": 23796,
+    "rowsResolvingToAFileStrand": 192,
+    "rowsWhereTheLengthAlsoAgrees": 192,
+    "rowsResolvingToNoFileStrand": 0,
+    "strandsDrawnButNotTabulated": 384,
+    "nucleotidesDrawnButNotTabulated": 15864,
+    "rowsWhereTheColourAgrees": 192,
+    "drawnOnlyLengthHistogram": {
+     "30": 4,
+     "32": 4,
+     "35": 80,
+     "38": 4,
+     "42": 240,
+     "46": 20,
+     "52": 32
+    },
+    "drawnOnlyColourHistogram": {
+     "#cc0000": 264,
+     "#007200": 60,
+     "#1700de": 60
+    },
+    "tabulatedColourHistogram": {
+     "#cc0000": 132,
+     "#1700de": 30,
+     "#007200": 30
+    },
+    "file": "Nature09/07-icosahedron/icosahedron.json"
+   }
+  },
+  {
+   "page": 22,
+   "title": "icosahedron monomer B core sequences",
+   "rows": 192,
+   "sumOfLengthColumn": 7932,
+   "rowsWhereStatedLengthIsTheSequenceLength": 192,
+   "deposited": {
+    "tableRows": 192,
+    "tableRowsUnparsed": 0,
+    "sumOfLengthColumn": 7932,
+    "sumOfSequenceCharacters": 7932,
+    "rowsWhereStatedLengthIsTheSequenceLength": 192,
+    "fileStrands": 576,
+    "fileStapleNucleotides": 23796,
+    "rowsResolvingToAFileStrand": 192,
+    "rowsWhereTheLengthAlsoAgrees": 192,
+    "rowsResolvingToNoFileStrand": 0,
+    "strandsDrawnButNotTabulated": 384,
+    "nucleotidesDrawnButNotTabulated": 15864,
+    "rowsWhereTheColourAgrees": 192,
+    "drawnOnlyLengthHistogram": {
+     "30": 4,
+     "32": 4,
+     "35": 80,
+     "38": 4,
+     "42": 240,
+     "46": 20,
+     "52": 32
+    },
+    "drawnOnlyColourHistogram": {
+     "#cc0000": 264,
+     "#007200": 60,
+     "#1700de": 60
+    },
+    "tabulatedColourHistogram": {
+     "#cc0000": 132,
+     "#1700de": 30,
+     "#007200": 30
+    },
+    "file": "Nature09/07-icosahedron/icosahedron.json"
+   }
+  },
+  {
+   "page": 23,
+   "title": "icosahedron monomer C core sequences",
+   "rows": 192,
+   "sumOfLengthColumn": 7932,
+   "rowsWhereStatedLengthIsTheSequenceLength": 192,
+   "deposited": {
+    "tableRows": 192,
+    "tableRowsUnparsed": 0,
+    "sumOfLengthColumn": 7932,
+    "sumOfSequenceCharacters": 7932,
+    "rowsWhereStatedLengthIsTheSequenceLength": 192,
+    "fileStrands": 576,
+    "fileStapleNucleotides": 23796,
+    "rowsResolvingToAFileStrand": 192,
+    "rowsWhereTheLengthAlsoAgrees": 192,
+    "rowsResolvingToNoFileStrand": 0,
+    "strandsDrawnButNotTabulated": 384,
+    "nucleotidesDrawnButNotTabulated": 15864,
+    "rowsWhereTheColourAgrees": 192,
+    "drawnOnlyLengthHistogram": {
+     "30": 4,
+     "32": 4,
+     "35": 80,
+     "38": 4,
+     "42": 240,
+     "46": 20,
+     "52": 32
+    },
+    "drawnOnlyColourHistogram": {
+     "#cc0000": 264,
+     "#007200": 60,
+     "#1700de": 60
+    },
+    "tabulatedColourHistogram": {
+     "#cc0000": 132,
+     "#1700de": 30,
+     "#007200": 30
+    },
+    "file": "Nature09/07-icosahedron/icosahedron.json"
+   }
+  }
+ ],
+ "theColourProxyIsREFUSED": {
+  "why": "on the monolith every strand the table omits carries caDNAno's default red and no ordered strand does, which looks like a rule that could be carried to the six blocks whose tables were not obtained. It is tested on every design where a table EXISTS before being carried anywhere",
+  "rows": [
+   {
+    "design": "Nature09/01-monolith/monolith.json",
+    "strandsTheTableOmits": 70,
+    "strandsCarryingCadnanoDefaultRed": 70,
+    "strandsCarryingItThatWereORDERED": 0,
+    "proxyIsExact": true
+   },
+   {
+    "design": "Nature09/02-squarenut/squarenut.json",
+    "strandsTheTableOmits": 121,
+    "strandsCarryingCadnanoDefaultRed": 121,
+    "strandsCarryingItThatWereORDERED": 0,
+    "proxyIsExact": true
+   },
+   {
+    "design": "Nature09/03-railedbridge/railedbridge.json",
+    "strandsTheTableOmits": 14,
+    "strandsCarryingCadnanoDefaultRed": 0,
+    "strandsCarryingItThatWereORDERED": 0,
+    "proxyIsExact": false
+   },
+   {
+    "design": "Nature09/04-slottedcross/slottedcross.json",
+    "strandsTheTableOmits": 0,
+    "strandsCarryingCadnanoDefaultRed": 36,
+    "strandsCarryingItThatWereORDERED": 36,
+    "proxyIsExact": false
+   },
+   {
+    "design": "Nature09/05-stackedcross/stackedcross.json",
+    "strandsTheTableOmits": 0,
+    "strandsCarryingCadnanoDefaultRed": 34,
+    "strandsCarryingItThatWereORDERED": 34,
+    "proxyIsExact": false
+   }
+  ],
+  "exactOn": 2,
+  "testedOn": 5,
+  "carriedToTheUntabulatedBlocks": false,
+  "verdict": "the proxy is exact on the monolith and the square nut and WRONG on the railed bridge, the slotted cross and the stacked cross, so it says nothing about the six cross-sections whose tables were not obtained"
+ },
+ "theOtherSixCrossSections": {
+  "status": "NOT SETTLED",
+  "why": "the caDNAno paper states its own staple lists are in Supplementary Note 3 -- 'detailed schematics and staple lists are included in Supplementary Notes 2 and 3, respectively' -- and that supplement was NOT OBTAINED. PMC does not host it, EuropePMC's supplementaryFiles endpoint returns the two figures only, the publisher refuses the article page, and the Internet Archive has no capture of the DC1 page's content",
+  "whatWouldSettleIt": "the caDNAno paper's Supplementary Note 3, or any staple order for designs i, iii, iv, v, vi or vii",
+  "whatIsKnownWithoutIt": "the Methods sentence's own scope is all seven cross-sections, and the one block where the sentence can be checked against an order reproduces it exactly"
+ },
+ "whatThisDoesNotSettle": [
+  "whether the object folded as ordered; a staple order is a purchase, not a micrograph. What is settled is what was BOUGHT",
+  "the other six cross-sections, whose staple lists were not obtained",
+  "why the design file carries end staples that were never ordered; the file is the record of a drawing and the order is the record of a purchase, and nothing here says which came first",
+  "any energy, stiffness or flatness number; this result is a count"
+ ],
+ "falsifiers": [
+  {
+   "id": "F1",
+   "firesIf": "fewer than every row of the monolith table resolves to a strand of the deposited file, at the same length",
+   "fired": false
+  },
+  {
+   "id": "F2",
+   "firesIf": "the sum of the Length column is neither 5880 nor 7560",
+   "fired": false
+  },
+  {
+   "id": "F3",
+   "firesIf": "the strands the table omits do not total exactly 60 x 28",
+   "fired": false
+  },
+  {
+   "id": "F4",
+   "firesIf": "the ordered staple set does not leave exactly 98 paired bases on every one of the sixty helices",
+   "fired": false
+  },
+  {
+   "id": "F5",
+   "firesIf": "any row's Color disagrees with the design file's own stored staple colour, which would make the table and the file two generations of one design",
+   "fired": false
+  },
+  {
+   "id": "F6",
+   "firesIf": "the colour proxy is exact on every design where a table exists, which would license carrying it to the six untabulated blocks",
+   "fired": false
+  }
+ ],
+ "inputs": [
+  {
+   "path": "gpd/data/T-296-sources/douglas2009-SI.pdf",
+   "what": "Douglas et al., Nature 459:414 (2009) Supplementary Information",
+   "retainedBy": "T-296",
+   "sha256": "6b73f7c2f0227d7f6127fd82365e03d3cc18bc22875008d60d0d3963903d9081"
+  },
+  {
+   "path": "gpd/data/T-255-sources/Nature09.zip",
+   "what": "the cadnano.org gallery's Nature 2009 archive",
+   "retainedBy": "T-255",
+   "sha256": "c722544c1da967820fa17d41984c4778c1e3abc1e1cb3eeda050d95e6670f94d"
+  },
+  {
+   "path": "gpd/data/T-255-sources/NAR09.zip",
+   "what": "the cadnano.org gallery's NAR 2009 archive",
+   "retainedBy": "T-255",
+   "sha256": "e7459abf5224ecb9dcb3a90acb74d894785a73d30f49b078d0d725dcf660c18c"
+  }
+ ],
+ "retrieval": [
+  {
+   "httpStatus": 200,
+   "endpoint": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2731887/",
+   "query": null,
+   "bytes": 141375,
+   "note": "the caDNAno paper on PMC; its only supplementary pointer is the dead OUP legacy URL"
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "https://archive.org/wayback/available",
+   "query": {
+    "url": "nar.oxfordjournals.org/cgi/content/full/gkp436/DC1"
+   },
+   "bytes": 87,
+   "note": null
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "http://archive.org/wayback/available",
+   "query": {
+    "url": "nar.oxfordjournals.org/cgi/content/full/gkp436/DC1"
+   },
+   "bytes": 87,
+   "note": null
+  },
+  {
+   "httpStatus": 403,
+   "endpoint": "https://academic.oup.com/nar/article/37/15/5001/2409718",
+   "query": null,
+   "bytes": 0,
+   "note": null
+  },
+  {
+   "httpStatus": 403,
+   "endpoint": "https://academic.oup.com/nar/article-lookup/doi/10.1093/nar/gkp436",
+   "query": null,
+   "bytes": 0,
+   "note": null
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2731887/supplementaryFiles",
+   "query": null,
+   "bytes": 511599,
+   "note": "a real endpoint and it answers, but the archive holds the two FIGURES only"
+  },
+  {
+   "httpStatus": 504,
+   "endpoint": "http://web.archive.org/cdx/search/cdx",
+   "query": {
+    "url": "nar.oxfordjournals.org*",
+    "filter": "urlkey:.*gkp436.*",
+    "limit": "40",
+    "output": "json"
+   },
+   "bytes": 0,
+   "note": null
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "https://web.archive.org/web/2010/http://nar.oxfordjournals.org/cgi/content/full/gkp436/DC1",
+   "query": null,
+   "bytes": 150665,
+   "note": null
+  },
+  {
+   "httpStatus": 404,
+   "endpoint": "https://web.archive.org/web/2013/http://nar.oxfordjournals.org/content/37/15/5001/suppl/DC1",
+   "query": null,
+   "bytes": 0,
+   "note": null
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "http://nar.oxfordjournals.org/cgi/content/full/gkp436/DC1",
+   "query": null,
+   "bytes": 1455,
+   "note": null
+  },
+  {
+   "httpStatus": 403,
+   "endpoint": "https://academic.oup.com/nar/article/37/15/5001/2409718#supplementary-data",
+   "query": null,
+   "bytes": 0,
+   "note": null
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "https://web.archive.org/cdx/search/cdx",
+   "query": {
+    "url": "nar.oxfordjournals.org/cgi/content/full/gkp436/DC1",
+    "output": "json"
+   },
+   "bytes": 657,
+   "note": null
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "https://web.archive.org/web/20150922014232/http://nar.oxfordjournals.org/cgi/content/full/gkp436/DC1",
+   "query": null,
+   "bytes": 150665,
+   "note": "the Internet Archive's only capture of the supplementary page is a 301 redirect"
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "https://web.archive.org/cdx/search/cdx",
+   "query": {
+    "url": "nar.oxfordjournals.org/content/37/15/5001",
+    "matchType": "prefix",
+    "limit": "60",
+    "output": "json"
+   },
+   "bytes": 6454,
+   "note": null
+  },
+  {
+   "httpStatus": 200,
+   "endpoint": "https://web.archive.org/web/20160518225945/http://nar.oxfordjournals.org/content/37/15/5001",
+   "query": null,
+   "bytes": 88425,
+   "note": null
+  },
+  {
+   "httpStatus": 404,
+   "endpoint": "https://web.archive.org/web/20160518225945/http://nar.oxfordjournals.org/content/37/15/5001/suppl/DC1",
+   "query": null,
+   "bytes": 0,
+   "note": "the archived article page LINKS the supplementary page and the Archive never captured its content"
+  }
+ ]
+}
