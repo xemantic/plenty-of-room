@@ -410,12 +410,6 @@ tasks.register<Exec>("testMutationInputCensusMutations") {
     commandLine("$projectDir/tools/T-295-mutation-test.py")
 }
 
-tasks.register<Exec>("testCommonModeLinkMutations") {
-    group = "verification"
-    description = "Runs tools/T-297-mutation-test.py, the mutation test for the common-mode link probe"
-    commandLine("$projectDir/tools/T-297-mutation-test.py")
-}
-
 tasks.named("test") {
     dependsOn(
         "testHarness", "testDeliverableTracer", "testMarkdownTables", "testCorpusLinks",
@@ -432,10 +426,16 @@ tasks.named("test") {
         "testProsePredicateMutations", "testProseGateMutations",
         // `T-292` -- the column repair, and the mutation table over its own rules.
         "testColumnRepair", "testColumnRepairMutations",
-        // Iteration 46 -- both harnesses landed UNWIRED, which `P-31` read as `wired: 12 of 14`.
-        // `C-0185`'s whole finding is that a harness nobody remembers to run is a harness that
-        // decays silently, so the wiring belongs in the same iteration as the harness.
-        "testMutationInputCensusMutations", "testCommonModeLinkMutations"
+        // Iteration 46 -- two harnesses landed UNWIRED, which `P-31` read as `wired: 12 of 14`.
+        // `C-0185`'s whole finding is that a harness nobody remembers to run decays silently, so
+        // the wiring belongs in the same iteration as the harness.  Only ONE of the two is
+        // wirable: the `T-297` harness takes a SNAPSHOT DIRECTORY as an argument, because it
+        // mutates Kotlin sources and must not do that in the checkout, so a bare `Exec` task
+        // prints its usage and fails the build -- which is what the first attempt at this line
+        // did.  An argument is a wiring decision, and that harness stays deliberately by-hand,
+        // as its own header states.  Its basename is NOT spelled here, because `P-31`'s
+        // `wired_in` is a substring test and would read the mention as a use (`T-301`).
+        "testMutationInputCensusMutations"
     )
 }
 
