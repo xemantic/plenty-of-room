@@ -1,11 +1,11 @@
-# CH-0242 — **The lattice's crossover carries only the SMALLER of a bond's two azimuthal springs. Expanded on the corpus's OWN phosphate span, the common-mode stiffness is `3.52810239×` the relative one — so the element set is missing the larger of the two at every one of the 435 bonds and all 59 ties, and it is the one a scaffold crossover's departure loads.**
+# CH-0242 — ~~**The lattice's crossover carries only the SMALLER of a bond's two azimuthal springs.**~~ **UPHELD IN PART and REFUTED IN ITS DIRECTION** ([`C-0194`](../claims/C-0194-the-common-mode-is-the-link.md), `T-297`): the lattice carries BOTH, the common one as the vertical link's own residual at `336.800449×` the physical value, and the ratio is `3.52847408`. The original headline follows. **The lattice's crossover carries only the SMALLER of a bond's two azimuthal springs. Expanded on the corpus's OWN phosphate span, the common-mode stiffness is `3.52810239×` the relative one — so the element set is missing the larger of the two at every one of the 435 bonds and all 59 ties, and it is the one a scaffold crossover's departure loads.**
 
 | | |
 |---|---|
 | **Against** | [`C-0154`](../claims/C-0154-honeycomb-grillage.md) (`T-253`) — `HoneycombGrillage`'s element set, whose bond carries *"a dihedral spring `k_θ` on the **relative** roll"* and nothing else on the azimuthal coordinates; and, through it, [`C-0175`](../claims/C-0175-drawable-raster-rim.md) §8, [`C-0180`](../claims/C-0180-tied-honeycomb-coupled-regrade.md) §4, [`C-0187`](../claims/C-0187-the-turn-prestrain-sign-is-derived.md) and [`C-0190`](../claims/C-0190-the-departure-is-common-mode-and-what-replaces-it.md) itself |
 | **Raised by** | [`T-291`](../tasks/T-291-common-mode-departure-and-beam-twist.md) / [`C-0190`](../claims/C-0190-the-departure-is-common-mode-and-what-replaces-it.md) |
 | **Grounds** | **logical** — a second-order expansion of `turnPhosphateSpan`, which is `C-0147`'s model and this corpus's own definition of what a crossover's geometry costs, about the line of centres. The resulting quadratic form in the two backbone azimuths is **not** rank one, and the mode the model keeps is the **cheaper** of its two |
-| **Status** | **RAISED.** No number of `C-0154`, `C-0175`, `C-0180`, `C-0187` or `C-0190` is disputed. What is disputed is the **element set**: a spring the lattice does not have, which is where the magnitude of `C-0190`'s answer lives |
+| **Status** | **UPHELD IN PART, and REFUTED in its direction** ([`C-0194`](../claims/C-0194-the-common-mode-is-the-link.md), [`T-297`](../tasks/T-297-the-common-mode-is-the-link.md)). §1's expansion stands and its ratio's **form** stands; its arithmetic does not — `1 + 2r_P/(d − 2r_P) = d/(d − 2r_P) = ` **`3.52847408`**, not `3.52810239`, and `T-291`'s own `openQuestions` block emitted the right one from the same expression. **§3's premise is false**: `HoneycombGrillage`'s normal link is assembled with the gradient `(1, armY, −1, armY)` over `(W_a, Φ_a, W_b, Φ_b)`, `armY = (d/2)·unitY`, so its residual `ΔW + (d/2)·unitY·(Φ_a + Φ_b)` is a function of the **sum** — the common mode itself — and `d/2` is the **only** arm annihilating the linearised rigid roll, so no other is admissible in a linear element. Probed on the recommended `10 × 6` lattice, a common roll of 1 mrad at every beam stores **`0.0`** pN·nm in the hinges and **`6.7528608`** in the links. **So the lattice does not miss the larger spring; it carries it as a CONSTRAINT at `336.800449×` the physical value in plane and `84.2001122×` through the thickness.** What is wrong is the **penalty's magnitude** — `241.348295×` the span law's own `T/g = 41.4338953 pN/nm` — and measured over six decades that is worth `0.0380542` of the free tile's dishing and **`0 of 6`** flatness verdicts, while the two cells `C-0180` recovered are flat at `k_link ≥ 1000` and **not** at `100` or at `T/g`. The magnitude of `C-0190`'s answer is **derivable** rather than unpinned, and on the coordinate the demand lives on the free tile reads `0.0931890716` against the per-beam twist's `0.296735462` — **inside** `T-5b` where the twist is outside. **No number of `C-0154`, `C-0175`, `C-0180`, `C-0187` or `C-0190` moves.** [`CH-0248`](CH-0248-the-common-mode-is-the-link.md) carries the part of this that is a contradiction of `C-0190` §6 rather than of this challenge |
 
 ---
 
@@ -32,10 +32,18 @@ pays is a quadratic form of rank **two**, not one, and its two eigenmodes cost d
 At the honeycomb's own `d = 2.536 nm` and `T-71`'s measured `r_P = 0.908637858 nm`, `d − 2r_P` is
 `0.718724283 nm` and the ratio is
 
-&nbsp;&nbsp;&nbsp;&nbsp;`1 + 2r_P/(d − 2r_P) = 3.52810239`.
+&nbsp;&nbsp;&nbsp;&nbsp;~~`1 + 2r_P/(d − 2r_P) = 3.52810239`~~ **`= 3.52847408`**.
 
-**The common mode is the stiffer of the two, by three and a half times**, and it is the one the
-model does not have at all.
+> **ARITHMETIC CORRECTED** ([`C-0194`](../claims/C-0194-the-common-mode-is-the-link.md), `T-297`).
+> `1 + 2 r_P/(d − 2 r_P) = d/(d − 2 r_P)`, which at the stated constants is **`3.52847408`** —
+> the value in circulation is 0.0105 % low, and it stands here, in `C-0190`'s headline and §6, in
+> the challenges index row for this challenge, and in two prose strings of `T-291`'s own result
+> file. `T-291`'s `openQuestions` block computes the same expression and **emitted the right
+> one**. No verdict turns on it: `C-0190`'s `409×` is `409×` either way.
+
+**The common mode is the stiffer of the two, by three and a half times**, and ~~it is the one the
+model does not have at all~~ **the model carries it as a CONSTRAINT rather than as a spring — see
+§3's annotation**.
 
 ## 2. The exact statement, which needs no expansion
 
@@ -51,6 +59,21 @@ state itself: **a relative roll of any amplitude makes a honeycomb crossover's s
 departure's own span excess.
 
 ## 3. What the model carries instead
+
+> **THIS SECTION'S PREMISE IS WITHDRAWN AND NOT ONE NUMBER OF THE CLAIMS IT NAMES IS**
+> ([`C-0194`](../claims/C-0194-the-common-mode-is-the-link.md), `T-297`;
+> [`CH-0248`](CH-0248-the-common-mode-is-the-link.md) carries the half of it that contradicts
+> `C-0190` §6). The bond and tie carry the dihedral spring **and a normal link**, and the link's
+> gradient is `(1, armY, −1, armY)` over `(W_a, Φ_a, W_b, Φ_b)` with `armY = (d/2)·unitY` — so its
+> residual `ΔW + (d/2)·unitY·(Φ_a + Φ_b)` is a function of the **SUM**, which is the common mode
+> itself. Measured on the recommended `10 × 6` lattice, a common roll of 1 mrad at every beam
+> stores **`0.0` pN·nm** in the hinges and **`6.7528608`** in the links, matching the closed form
+> `½ k_link (d·unitY·θ)²` at a departure of `0.0`. **The lattice is therefore `336.800449×` too
+> STIFF on the common mode in plane and `84.2001122×` through the thickness, not missing it**, and
+> all three bullets below are withdrawn with the premise: a common-mode demand reaches the
+> structure through the **tie**; `C-0175`'s and `C-0180`'s tie deliverables are not lower bounds
+> for this reason; and `C-0190`'s magnitude is **derivable**. What survives is a magnitude, and it
+> is the penalty's — `241.348295×` the span law's own `T/g`.
 
 `HoneycombGrillage`'s bond and tie carry, on the roll coordinates, exactly
 

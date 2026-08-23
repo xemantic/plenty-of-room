@@ -5,7 +5,7 @@
 | **Against** | [`C-0101`](../claims/C-0101-re-emitting-what-the-repair-moved.md) (`T-167`) — *"re-emit the downstream file and amend the claim … amend the claim only where it **quotes** a moved number"* — and every claim that has since followed it |
 | **Raised by** | [`T-249`](../tasks/T-249-unrounded-prose-interpolations.md) / [`C-0153`](../claims/C-0153-unrounded-prose-interpolations.md) |
 | **Grounds** | **methodological** — a discipline stated as a rule, applied by hand, with no instrument, measured over the corpus |
-| **Status** | OPEN |
+| **Status** | **ANSWERED, iteration 46** ([`C-0198`](../claims/C-0198-a-quoted-number-has-no-link-back.md), [`T-252`](../tasks/T-252-a-quoted-number-has-no-link-back.md)), **on the second of the two branches the task offered and on a measurement**. The finding stands: `C-0101`'s rule is executed by hand and has no instrument. What is decided is that the instrument cannot be built on this population — the detectable class (a decimal above nine significant digits, which a rounded result file cannot contain) is **69 of 69 deliberate and 0 stale**, in three sub-classes that are all legitimate, so the convention would be written onto 69 correct quotations. And the corpus **manufactures** the class, by `C-0092`'s own rule that *a repair must leave the defect measurable*. **What is gated instead is the neighbouring question**: a `Provenance` row names its result file as a **bare path**, which `tools/check-corpus-links.py` cannot see — `tools/check-result-path-references.py`, 8 self-tests, wired, **192 claims, 175 naming a file, 0 broken** |
 
 ---
 
