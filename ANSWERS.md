@@ -367,6 +367,37 @@ the richest set richest and does not make it flatter.
    **So the two recovered cells do not survive the corrected coordinate**, and the magnitude is a **threshold rather
    than a value**: it scales with the tie's **common-mode** stiffness, which the lattice does not carry at all
    ([`CH-0242`](gpd/challenges/CH-0242-the-tie-carries-no-common-mode-stiffness.md)).
+   **AND THAT THRESHOLD IS A VALUE, iteration 46 — THE LATTICE DOES CARRY THE COMMON MODE, AS THE
+   VERTICAL LINK, AND `CH-0242`'s DIRECTION REVERSES**
+   ([`C-0194`](gpd/claims/C-0194-the-common-mode-is-the-link.md), `T-297`;
+   [`CH-0248`](gpd/challenges/CH-0248-the-common-mode-is-the-link.md)).
+   `HoneycombGrillage.assemble` builds the normal link with the gradient `(1, armY, −1, armY)` over
+   `(W_a, Φ_a, W_b, Φ_b)` and `armY = (d/2)·unitY`, so its residual is a function of the **SUM** of the two
+   rolls: probed on the recommended `10 × 6` lattice a common roll of 1 mrad at every beam stores **`0.0`**
+   pN·nm in the hinges and **`6.7528608`** in the links, and a **rigid** roll stores `0.0` in all three
+   element families. **`d/2` is a theorem rather than a fitted arm** — the only arm annihilating the
+   linearised rigid roll, whose residual at an arm `a` is `α·unitY·(2a − d)` — so the span's own `r_P` is
+   inadmissible in a linear element, and the difference is an exact identity,
+   `d²/(2 g r_P) − d/(2 r_P) = d/g`.
+   **So the lattice does not MISS the larger spring; it carries it as a CONSTRAINT** at **`336.800449×`**
+   the physical value in plane and `84.2001122×` through the thickness. What is wrong is the **penalty's
+   magnitude**: `T = 2k_θ/r_P = 29.7795467 pN` gives `k_R = T/g =` **`41.4338953 pN/nm`** against
+   `RIGID_LINK_STIFFNESS = 10000`, **`241.348295×`**.
+   **The error is MEASURED, not bracketed**, because `linkStiffness` is an existing constructor argument:
+   over six decades **`0 of 6`** (cross-section, coupling) pairs move a free-tile flatness verdict, worst
+   relative spread **`0.0380542`**, and `C-0175` §9's six readings reproduce at the standing value at
+   exactly **`0.0`**.
+   **But the free tile's insensitivity does NOT transfer to the coupled cells**: `C-0180`'s two recovered
+   cells are flat at `k_link ≥ 1000` and **not** at `100` or at `k_R` (**0.107701645** and
+   **0.103971919**) — **so the coupled recovery rests on a link stiffness the span law alone does not
+   supply.**
+   And `C-0190` §6's threshold becomes a **value**: the departure is an offset in the link's own residual,
+   `R₀ = d·unitY·ρ`, a load whose projection on the relative roll is exactly `0.0` at all 59 ties, and the
+   free tile reads **`0.0931890716`** against the per-beam twist's **0.296735462** — **inside** `T-5b`
+   where the twist is outside — while **`0 of 24`** coupled readings are flat either way, so `C-0190`'s
+   **coupled** conclusion is upheld on the corrected channel.
+   **One number in circulation was wrong and no verdict turns on it**: `1 + 2r_P/(d − 2r_P) = d/(d − 2r_P)`
+   is **`3.52847408`**, not `3.52810239`, in four documents.
    **What the ties do NOT change**: every **uncoupled** verdict, which moves the favourable way and stays flat — the
    block dishes **0.0446459684** and **0.0467367262** with the 59 ties against 0.0501417315 and 0.0522223659 without
    them, and the enhancement-free block **0.12738041** against 0.132443428, still not flat; `C-0109`'s *"every coupled
