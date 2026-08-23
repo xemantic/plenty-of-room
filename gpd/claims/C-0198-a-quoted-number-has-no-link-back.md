@@ -86,7 +86,9 @@ still in it*, and it is decidable.
 It is also not covered: a `Provenance` row names its file as a **bare path**, and
 `tools/check-corpus-links.py` resolves `[label](target)` and nothing else.
 
-`tools/check-result-path-references.py` — 8 self-tests, `--self-test`, exit 1 on any defect:
+`tools/check-result-path-references.py` — 8 self-tests, `--self-test`, exit 1 on any defect, and **wired into
+[`tools/verify.sh`](../../tools/verify.sh)** under `set -euo pipefail` in the same commit, its reading recorded here
+rather than asserted (`C-0158`):
 
 | | |
 |---|---|

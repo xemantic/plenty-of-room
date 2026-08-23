@@ -211,6 +211,15 @@ if [ "$checks" = "yes" ]; then
     tools/check-corpus-identifiers.py --selftest > /dev/null
     tools/check-corpus-identifiers.py
     echo
+    # `T-252`.  `check-corpus-links.py` resolves `[label](target)` and nothing else, and a claim's
+    # `Provenance` row names its result file as a BARE PATH -- so a renamed or removed result file
+    # leaves every claim that named it pointing at nothing, silently.  Clean at 0 today over 192
+    # claims, and it read 1 within minutes of existing, on a queue row naming a study's output
+    # before the study had run.
+    echo "--- every result-file PATH named in the corpus exists (T-252) ---"
+    tools/check-result-path-references.py --self-test > /dev/null
+    tools/check-result-path-references.py
+    echo
     echo "--- every study that writes a committed result file has an Entry points row (P-28) ---"
     tools/check-entry-points.py --selftest > /dev/null
     tools/check-entry-points.py

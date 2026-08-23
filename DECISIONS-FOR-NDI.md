@@ -181,7 +181,18 @@ band) rather than being absent from it.
 ([`C-0180`](gpd/claims/C-0180-tied-honeycomb-coupled-regrade.md)): with the raster's own **59 covalent turn ties**
 present the enhancement-free block dishes **0.12738041**, still not flat, and the measured band clears it at
 **0.0446459684** and **0.0467367262**. **It bounds the dependency; it does not remove it** — and it is what the
-caDNAno paper's own folding measurements recommend. ~~It costs **a third of the footprint**.~~
+caDNAno paper's own folding measurements recommend.
+**CONDITIONED, iteration 46 — THOSE TIES BELONG TO A DESIGN NOBODY HAS FOLDED**
+([`C-0193`](gpd/claims/C-0193-the-built-turn-is-a-tether.md),
+[`CH-0247`](gpd/challenges/CH-0247-the-tie-set-is-a-route-not-a-lattice.md)).
+The 59 turn ties exist only if the raster turns carry **zero** unpaired nucleotides, and the only folded instance
+of this cross-section does not: read off its own strand diagram the scaffold occupies bases `14 → 140` of every
+helix and the staples `28 → 126`, so the built covalent link sits **`14 bp` = 4.76 nm outboard of the duplex
+end**. Nothing covalent, lattice-legal or tool-side refuses the zero-loop turn — what refuses it is that **no
+published design uses it**, at `0` of `186` unique records over `30` queries and `7 of 7` built cross-sections
+doing the other thing. So the tied readings are correct about a **drawable, undemonstrated** design and the untied
+ones are not the alternative either, because the built turn is a **tether** and no lattice here carries one.
+**Neither verdict of this row moves**: the uncoupled block is flat at both readings and at both ends of the band. ~~It costs **a third of the footprint**.~~
 **WITHDRAWN, iteration 35** (`C-0141`, `C-0144`): **it costs no footprint at all.**
 Corrected to the honeycomb's own two pitches, `10 × 6` is **38.08 × 37.504 nm — 0.929467162 of §3's 40.35 nm** and
 `15 × 4` is **38.08 × 56.524 nm — 1.40084263×** it, so the ordering **reverses**: the tile §7 offered as the *cost*
@@ -916,6 +927,15 @@ UNSETTLED** ([`C-0180`](gpd/claims/C-0180-tied-honeycomb-coupled-regrade.md),
 The lattice every cell above was solved on carries the block's **435 staple crossovers** and not the raster's own
 **59 turn ties** — a raster turn with no unpaired nucleotides *is* a scaffold crossover, joining two duplexes at
 their **ends**, and there are `H − 1` = 59 of them on a 60-helix block.
+**AND THAT PREMISE IS CONDITIONAL, iteration 46** ([`C-0193`](gpd/claims/C-0193-the-built-turn-is-a-tether.md),
+[`CH-0247`](gpd/challenges/CH-0247-the-tie-set-is-a-route-not-a-lattice.md)): *a raster turn with no unpaired
+nucleotides* is a **route**, not a property of the lattice, and it is **not what anybody has folded**. On the built
+`10 × 6` block the scaffold occupies bases `14 → 140` of every helix and the staples `28 → 126`, so the covalent
+link sits **`14 bp` = 4.76 nm outboard of the duplex end** — a third object, and the distinction is the **staples**.
+The zero-loop turn is reachable, drawable and lattice-legal (`d − 2r_P = 0.718724283 nm`, `+1.49997857 σ` of the
+measured phosphodiester step) and is reported by **`0` of `186`** unique records over **`30`** queries.
+So every count in this section is correct **about a design that has not been demonstrated**, and the tether
+re-grade it implies is not yet done (`T-299`).
 Re-graded with the ties present, on the same 64 cells, the same extent, the same stations, the same mandate, the
 same normalising stroke and the **same 4 000-realisation dropout stream** — the untied half reproducing **all 128**
 of the published values at **`4.2e−9`** — **2 of 64** cells clear `T-5b`'s 0.10 at the 90th percentile.
@@ -1507,6 +1527,19 @@ build — so the number of distinct tools wired as build-failing gates is **four
 cannot see the other four because they are not named `check-`.
 **All three counts are therefore quoted with the command that produced them and the tree they were read in**, which
 is the only form in which a self-describing number can be checked.
+**RE-DERIVED AGAIN, iteration 46, and this is the fourth pass at which the number moved**
+([`C-0198`](gpd/claims/C-0198-a-quoted-number-has-no-link-back.md) `T-252`,
+[`C-0195`](gpd/claims/C-0195-the-discriminating-input.md) `T-295`).
+`ls tools/check-*.py tools/trace-answers.py` now returns **eleven** — `check-result-path-references.py`, which
+gates that every `gpd/results/*.json` path **named** in the corpus exists, a question no other tool asks because a
+`Provenance` row names its file as a **bare path** and `check-corpus-links.py` resolves `[label](target)` and
+nothing else. Under `set -euo pipefail`, `tools/verify.sh` invokes **sixteen** distinct tools without a
+`--self-test` guard, every one of which fails the build — the fourteen above plus that gate and
+`tools/T-295-mutation-input-census.py`, which asserts that every mutation of every harness in `tools/` is held
+open by a **fixture** rather than by committed corpus state (276 of 276 today). **Five** of the eleven read this
+file, the new gate being the fifth. **The number has now moved at four consecutive passes that touched it, which
+is the argument for the derivation rather than for the number**: `ls tools/check-*.py tools/trace-answers.py`,
+and a count of tool invocations in `tools/verify.sh` that carry no `--self-test` flag.
 **A self-describing count can be right in its NUMBER and wrong in its PREDICATE**, and this sentence bundled three
 different counts under one of them. What follows is the enumeration, which is correct as a list: numbers, task
 statuses, challenge statuses and self-consistency ([`tools/trace-answers.py`](tools/trace-answers.py), which
