@@ -12211,3 +12211,91 @@ Opened as `T-319`, a new row, and the note now says why it is a new row rather t
 The general form is `C-0182`'s *a report needs a third state* met on a **schedule** rather than on a status:
 a task that recurs needs a fresh row per occurrence, and the way to notice is that its last row is `DONE`
 while three documents call it open.
+
+### Agent G — `T-319`, `C-0210`: the fourteenth synthesis, over a headline that moved twice in one iteration
+
+**The cheap bound ran first and it was a `grep`.**
+Ten identifiers came out of iteration 48; three were already carried into both deliverables by a sibling
+and six were in neither, so the first act of the pass was a census of *what is already there* —
+`CH-0182`'s *a census is dated by its premise set*, met on a **sibling's edit** rather than on a claim.
+
+**The finding is a class that was empty and is not.**
+`C-0191` prosecuted `STALE_PRICE` at all eight decisions in iteration 45, found it **0**,
+and reported it empty on the stated ground that *a kind dropped because it came back empty
+cannot later be told apart from a kind nobody looked for*.
+It is **7** here — three of them **cost-of-deferring cells of the decision tables NDI reads** —
+and it is only visible because the empty class had been declared rather than dropped.
+The price in all three is one number: `C-0180`'s coupled `2 of 64`, which `C-0205` and `C-0208`
+reduce to a reading at `RIGID_LINK_STIFFNESS = 1e4 pN/nm` against a connector ceiling of `254.808095 pN/nm`.
+
+**And a strike would have been the wrong repair.**
+`C-0201`'s free-tile alarm `0.11296458` was **relocated** by `C-0204` — the tether span is *determined*
+at `0.787091706 nm`, not a bracket, `16 of 16` corners flat — and then **withdrawn** by `C-0207`,
+which graded the relocation and found `756 of 756` cells flat.
+A document that struck the alarm and wrote the relocation would have been wrong by one iteration,
+so both deliverables now carry the two steps **in order**, with `CH-0265` — raised against the
+replacement count, on the same penalty ground — beside them.
+
+**Decision 9 is posed, and the judgement was the deliverable rather than the posing.**
+*"The tile is not too floppy; it is too small"* had sat since iteration 47 inside §6,
+which asks whether §3 admits a **two-layer** tile — a question about **thickness**.
+On the only demonstrated turn topology the widest uniform row is `31.28 nm` on NDI's own M13mp18 default
+and `36.04 nm` on p8064, against §3's `40 nm` stated with no tolerance;
+all three scaffold rows are flat, uncoupled and with their own tethers.
+NDI's own answer to decision 5 already puts p8064 inside its stated `~7–8K` band, so the `−9.9 %` row
+needs nothing new — which is what makes the question sharp rather than a complaint.
+**The price line is left explicitly open**, because `CLAUDE.md` records that when the first six were
+offered as yes/no, all three with a cost dimension came back in a shape the document had not offered.
+
+**Two self-describing counts, and they failed differently.**
+The challenge-and-claim census is stale for the **seventh time in eight passes** (`211 / 184` against
+a derived `231 / 204`), and two wired gates print `435` on every run without being asked —
+so what is missing has never been the number and is still not: it is the **comparison**.
+The **checker** census is the first here whose **number held and whose predicate moved**:
+`11` and `16` are both still right, and `tools/verify.sh` runs `./gradlew test` first,
+so the twenty tools `build.gradle.kts` invokes without a self-test flag fail the same run —
+**37** distinct tools can fail it. `CH-0243` found a predicate that was a *filename prefix*;
+its replacement, *invocations in one file*, is a predicate about a **file** where the question is about a **run**.
+
+**The *"what we cannot answer"* list carries no entry the programme has answered**, for the second pass running —
+the sign-carrying class is genuinely empty — but one bullet is stale **against a row of the same document**,
+calling `CH-0240`/`T-291` unpriced where row (g) records `C-0190` pricing it in iteration 45.
+It carries no status word and both identifiers resolve, so no retained checker reaches it.
+
+#### Two surprises, both about tools, both repaired
+
+**`--help` emitted.** Typing `tools/T-234-emit-classification.py --help`, to find out what the tool does,
+regenerated the classification registry a wired census reads — 248 insertions, 177 deletions —
+inside a pass whose whole discipline is not to touch it.
+`CLAUDE.md` records this trap twice and states the remedy in five words, and `T-272` had already applied it
+at **two** call sites with the reason written above them.
+Measured over a `git archive HEAD` tree: **five** tools write on `--help`, overwriting **four tracked artifacts**
+and building a `./--help/` shadow corpus.
+The probe **under-reports** — it compares checksums, so a tool re-emitting its own file byte-for-byte is invisible —
+and statically **eleven** could not refuse, `tools/T-272-emit-result-inputs.py` among them, which on `--help`
+rewrites a **Kotlin main source**. All eleven guarded; the probe re-run on the repaired tree writes **0** files.
+*A cure is a property of a call site, not of a repository*, on the very entry that records the trap.
+
+**And the guard found the class one level out, in a gate.**
+It went red on the authoritative `tools/verify.sh` run at `:testEmitterRounding`:
+`build.gradle.kts` and `tools/verify.sh` both invoke `tools/T-278-emitter-rounding-census.py` with `--self-test`
+where the tool dispatches on `--selftest`, so before the guard it matched neither branch, printed nothing
+and **returned 0** — that wired *self-test* task has run **nothing** and been green for as long as both
+wirings have existed. Its sibling `tools/T-278-rounding-simulation.py` is wired the same way and there the
+unrecognised flag was worse than inert: it fell through to the **full census**, which also exits 0.
+Censused over all **69** wired invocations in the two files: **3** mismatches over **2** tools.
+`CLAUDE.md`'s own *a gate can be wired and still be unable to fail*, found by a guard written for a different
+reason — and the argument for refusing an unrecognised flag even where the tool writes nothing.
+
+**A link target is not a verdict.** `tools/trace-answers.py` reported a self-contradiction about `T-320`
+on this pass's first draft, and the whole verdict was the word `answers` inside the path
+`C-0210-fourteenth-answers-synthesis.md`. Measured, **33** corpus filenames carry a settled word and **2** an open one,
+and **twelve of the thirty-three are the `*-answers-synthesis.md` family** —
+so the passage certain to trip it is a synthesis citing its predecessors beside the tasks it calls open.
+`C-0196`'s *a name cannot govern a token* is the same rule and `T-285`/`T-287` applied it to the `T-234` census;
+nothing carried it here. Repaired in the two **verdict** arms only, with seven named tests pinning both directions.
+
+**One gate is left red and named rather than skipped.** `tools/T-234-census.py --check` exits 1 on 11 defects,
+every one an occurrence added by iteration 48's four physics claims and two queue rows.
+Regenerating its classification is exactly what a document pass must not do —
+the overrides are index-keyed, so adding occurrences re-points every hand judgement.

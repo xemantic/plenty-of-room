@@ -223,7 +223,10 @@ def _selftest():
 
 
 def main(argv):
-    if "--selftest" in argv:
+    # `CH-0268`: this tool is WIRED as `--self-test` in both `build.gradle.kts` and
+    # `tools/verify.sh` and dispatched on `--selftest`, so for as long as both have existed the
+    # wired "self-test" task ran the CENSUS and exited 0. Accept both spellings.
+    if "--selftest" in argv or "--self-test" in argv:
         return _selftest()
     wants_sources = "--sources" in argv or "--check" in argv or len(argv) == 0
     wants_artifacts = "--artifacts" in argv or "--check" in argv or len(argv) == 0
@@ -268,5 +271,5 @@ _spec.loader.exec_module(_cli_guard)
 if __name__ == "__main__":
     _cli_guard.refuse_unknown_arguments(
         "tools/T-278-emitter-rounding-census.py [--selftest | --sources | --artifacts | --check]",
-        ("--selftest", "--sources", "--artifacts", "--check"))
+        ("--selftest", "--self-test", "--sources", "--artifacts", "--check"))
     sys.exit(main(sys.argv[1:]))

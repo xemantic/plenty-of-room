@@ -1,0 +1,303 @@
+{
+  "task": "T-319",
+  "title": "the fourteenth ANSWERS.md synthesis - a headline that moved twice in one iteration",
+  "baselineRef": "71d126e6dfd7fa874ccd83b76f756c1e7b58da33",
+  "baselineRefRequested": "71d126e",
+  "parameters": {
+    "documents": [
+      "ANSWERS.md",
+      "DECISIONS-FOR-NDI.md"
+    ],
+    "kindsDeclared": [
+      "SUPERSEDED_VALUE",
+      "SUPERSEDED_RATIO",
+      "STALE_STATUS",
+      "SCOPE",
+      "SELF_DESCRIBING_COUNT",
+      "STALE_PRICE",
+      "OTHER"
+    ],
+    "whatIsDerived": "every count in this file is derived at baselineRef or from the working tree; only the passage CLASSIFICATION is declared, and each declared row's two anchors are asserted against both trees before the file is written",
+    "noTiming": "no wall-clock field and no step counter, per CLAUDE.md: a timing is less reproducible than a step count and one such field makes a file un-diffable",
+    "reRunHazard": "CH-0246: this file's subject is the corpus, so re-running it as a control on a later change re-bases the measurement and OVERWRITES the record rather than checking it; re-emit only deliberately, at a named ref"
+  },
+  "selfDescribingCounts": {
+    "claims": {
+      "atRef": 204,
+      "command": "ls gpd/claims/C-*.md | wc -l"
+    },
+    "challenges": {
+      "atRef": 231,
+      "command": "ls gpd/challenges/CH-*.md | wc -l"
+    },
+    "claimsAndChallenges": {
+      "atRef": 435,
+      "command": "tools/check-corpus-identifiers.py prints the sum on every run"
+    },
+    "asWrittenBeforeThisPass": {
+      "challenges": 211,
+      "claims": 184
+    },
+    "staleAgain": true,
+    "stalePassesOfTotal": {
+      "stale": 7,
+      "passes": 8
+    },
+    "theCensusDestroysItself": "this pass files one claim and two challenges, so its own working tree reads more of each than the ref does; only atRef is emitted, and the deliverable quotes the ref rather than the tree"
+  },
+  "checkerCensus": {
+    "namingPredicate": {
+      "command": "ls tools/check-*.py tools/trace-answers.py",
+      "count": 11,
+      "names": [
+        "tools/check-challenge-index.py",
+        "tools/check-cold-start-note.py",
+        "tools/check-corpus-identifiers.py",
+        "tools/check-corpus-links.py",
+        "tools/check-entry-points.py",
+        "tools/check-kotlin-format-strings.py",
+        "tools/check-markdown-tables.py",
+        "tools/check-queue-vocabulary.py",
+        "tools/check-result-file-hygiene.py",
+        "tools/check-result-path-references.py",
+        "tools/trace-answers.py"
+      ],
+      "movedThisPass": false
+    },
+    "verifyShOwnInvocations": {
+      "predicate": "tools/*.{py,sh} tools/verify.sh invokes with no --self-test flag",
+      "count": 17,
+      "gatesExcludingItsOwnFixtures": 16,
+      "names": [
+        "tools/T-272-emit-result-inputs.py",
+        "tools/T-272-header-census.py",
+        "tools/T-278-emitter-rounding-census.py",
+        "tools/T-295-mutation-input-census.py",
+        "tools/check-challenge-index.py",
+        "tools/check-cold-start-note.py",
+        "tools/check-corpus-identifiers.py",
+        "tools/check-corpus-links.py",
+        "tools/check-entry-points.py",
+        "tools/check-kotlin-format-strings.py",
+        "tools/check-markdown-tables.py",
+        "tools/check-queue-vocabulary.py",
+        "tools/check-result-file-hygiene.py",
+        "tools/check-result-path-references.py",
+        "tools/result-reader-census.py",
+        "tools/test-result-reader-census.py",
+        "tools/trace-answers.py"
+      ],
+      "movedThisPass": false
+    },
+    "throughGradle": {
+      "predicate": "commandLine(\"$projectDir/tools/...\") in build.gradle.kts with no --self-test flag; tools/verify.sh runs ./gradlew test first, so every one of these fails the same run",
+      "count": 20,
+      "names": [
+        "tools/P-30-mutation-test.py",
+        "tools/P-31-harness-census.py",
+        "tools/T-225-mutation-test.py",
+        "tools/T-234-mutation-test.py",
+        "tools/T-249-mutation-test.py",
+        "tools/T-250-mutation-test.py",
+        "tools/T-278-mutation-test.py",
+        "tools/T-280-mutation-test.py",
+        "tools/T-281-mutation-test.py",
+        "tools/T-283-mutation-test.py",
+        "tools/T-289-mutation-test.py",
+        "tools/T-292-mutation-test.py",
+        "tools/T-295-mutation-test.py",
+        "tools/T-298-mutation-test.py",
+        "tools/T-306-mutation-test.py",
+        "tools/T-313-mutation-test.py",
+        "tools/test-check-markdown-tables.py",
+        "tools/test-check-queue-vocabulary.py",
+        "tools/test-snapshot.sh",
+        "tools/test-trace-answers.py"
+      ]
+    },
+    "overlapBetweenTheTwoInvocationSets": [],
+    "distinctToolsThatCanFailVerifySh": 37,
+    "asWrittenBeforeThisPass": {
+      "exist": 11,
+      "wiredInVerifySh": 16
+    },
+    "theFinding": "the NUMBER did not move at either predicate and the PREDICATE did: a count of invocations in one file cannot answer a question about a RUN. CH-0243 one level out"
+  },
+  "supersessionSweep": {
+    "range": "C-0190..C-0209 and CH-0242..CH-0266",
+    "identifiersSwept": 45,
+    "mentionedInEitherDocumentAtRef": [
+      "C-0190",
+      "C-0193",
+      "C-0194",
+      "C-0195",
+      "C-0196",
+      "C-0198",
+      "C-0199",
+      "C-0200",
+      "C-0201",
+      "C-0205",
+      "C-0208",
+      "CH-0242",
+      "CH-0243",
+      "CH-0247",
+      "CH-0248",
+      "CH-0251",
+      "CH-0253",
+      "CH-0254",
+      "CH-0258"
+    ],
+    "mentionedCount": 19
+  },
+  "cannotAnswerList": {
+    "topLevelBulletsAtRef": 25,
+    "entriesTheProgrammeHasSinceAnswered": 0,
+    "entriesCarryingAStalePREMISE": 1,
+    "entriesWhoseGROUNDMoved": 1,
+    "note": "no entry names something the programme has answered, so the sign-carrying drift class is again empty; ONE entry calls CH-0240/T-291 unpriced, which C-0190 priced in iteration 45 -- a bullet stale against a ROW OF THE SAME DOCUMENT, carrying no status word and two identifiers that both resolve, so no retained checker reaches it; and ONE (the crossover's vertical compliance) has its ground moved by C-0208"
+  },
+  "decisions": {
+    "countBefore": 8,
+    "countAfter": 9,
+    "prosecutedForAStalePrice": 8,
+    "stalePricesFound": 3,
+    "stalePriceNote": "C-0191 prosecuted this class at all eight decisions in iteration 45 and found it EMPTY. It is not empty now: three cells -- the at-a-glance decision 7 cost-of-deferring cell and decision 7's and decision 8's own coupled comparison rows -- price deferral on a coupled count (2 of 64, then 1 of 64 phase-contingent) that C-0205 and C-0208 reduce to a reading at a numerical penalty",
+    "distinctChallengeIdentifiersCitedAtRef": 36
+  },
+  "passages": {
+    "moved": 23,
+    "byKind": {
+      "SUPERSEDED_VALUE": 3,
+      "SUPERSEDED_RATIO": 0,
+      "STALE_STATUS": 1,
+      "SCOPE": 4,
+      "SELF_DESCRIBING_COUNT": 4,
+      "STALE_PRICE": 7,
+      "OTHER": 4
+    },
+    "rows": [
+      {
+        "kind": "SUPERSEDED_VALUE",
+        "document": "ANSWERS.md",
+        "passage": "section 1 item 1: C-0201's free-tile alarm, relocated by C-0204 and withdrawn by C-0207"
+      },
+      {
+        "kind": "SUPERSEDED_VALUE",
+        "document": "ANSWERS.md",
+        "passage": "section 1 item 1: the azimuth bracket, which T-304 determined rather than measured"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "ANSWERS.md",
+        "passage": "row 5b of the section 2 table"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "ANSWERS.md",
+        "passage": "row (g) of section 3"
+      },
+      {
+        "kind": "SELF_DESCRIBING_COUNT",
+        "document": "ANSWERS.md",
+        "passage": "the challenge-and-claim census of section 4"
+      },
+      {
+        "kind": "SELF_DESCRIBING_COUNT",
+        "document": "ANSWERS.md",
+        "passage": "the same row's own staleness count"
+      },
+      {
+        "kind": "STALE_STATUS",
+        "document": "ANSWERS.md",
+        "passage": "the cannot-answer list: CH-0240/T-291 called unpriced, which C-0190 priced in iteration 45"
+      },
+      {
+        "kind": "OTHER",
+        "document": "ANSWERS.md",
+        "passage": "the cannot-answer list: C-0208's measured pair term on the radial axis"
+      },
+      {
+        "kind": "STALE_PRICE",
+        "document": "ANSWERS.md",
+        "passage": "section 1: the phase-contingent recovery, whose whole ladder is read at the penalty"
+      },
+      {
+        "kind": "STALE_PRICE",
+        "document": "ANSWERS.md",
+        "passage": "the preserved-verbatim block's banner, whose fourth supersession is itself now a penalty reading"
+      },
+      {
+        "kind": "STALE_PRICE",
+        "document": "ANSWERS.md",
+        "passage": "section 5's restatement above the questions table"
+      },
+      {
+        "kind": "STALE_PRICE",
+        "document": "ANSWERS.md",
+        "passage": "row 6 of the questions-for-NDI table"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "ANSWERS.md",
+        "passage": "the questions-for-NDI header: the ninth decision, separated out of decision 6"
+      },
+      {
+        "kind": "OTHER",
+        "document": "ANSWERS.md",
+        "passage": "section 1 item 1: the width finding now points at its own decision"
+      },
+      {
+        "kind": "SUPERSEDED_VALUE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "section 6: the same alarm, in the document NDI reads"
+      },
+      {
+        "kind": "SELF_DESCRIBING_COUNT",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "the checker census: the number held and the predicate moved"
+      },
+      {
+        "kind": "SELF_DESCRIBING_COUNT",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "the document's own count of decisions"
+      },
+      {
+        "kind": "STALE_PRICE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "at-a-glance decision 7, cost-of-deferring cell"
+      },
+      {
+        "kind": "STALE_PRICE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "decision 7's own coupled comparison row"
+      },
+      {
+        "kind": "STALE_PRICE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "decision 8's own coupled comparison row"
+      },
+      {
+        "kind": "OTHER",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "decision 9, posed for the first time"
+      },
+      {
+        "kind": "OTHER",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "decision 9's at-a-glance row"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "section 6: the width finding now points out of the thickness question it sat in"
+      }
+    ]
+  },
+  "findings": [
+    "23 passages moved over 6 of the seven declared kinds, 9 of them in the document NDI reads.",
+    "The STALE_PRICE class, EMPTY at the thirteenth pass, is 3 at the fourteenth -- and all three are the same coupled count, priced as a cost of deferring in the document NDI reads.",
+    "The challenge-and-claim census moved 211 -> 231 and 184 -> 204 at the baseline ref, so the row has now been stale in SEVEN of its EIGHT passes; two wired gates print the numbers on every run and what is missing is still the COMPARISON.",
+    "The checker census is the first self-describing count here whose NUMBER held and whose PREDICATE moved: 11 under the naming predicate and 17 invocations of verify.sh's own, both unchanged -- while build.gradle.kts invokes 20 further tools without a --self-test flag, and verify.sh runs ./gradlew test first, so 37 distinct tools can fail it.",
+    "One bullet of the cannot-answer list is stale against a ROW OF THE SAME DOCUMENT: it calls CH-0240/T-291 unpriced where row (g) records C-0190 pricing it in iteration 45. It carries no status word and both identifiers resolve, so no retained checker reaches it."
+  ]
+}

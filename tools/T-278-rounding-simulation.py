@@ -234,7 +234,9 @@ def _selftest():
 
 
 def main(argv):
-    if "--selftest" in argv:
+    # `CH-0268`: wired as `--self-test` in `build.gradle.kts` and dispatched on `--selftest`, so
+    # the wired "self-test" task ran the FULL CENSUS instead and exited 0 either way.
+    if "--selftest" in argv or "--self-test" in argv:
         return _selftest()
     names = sorted(os.listdir(RESULTS)) if "--all" in argv else sorted(SEVEN)
     verbose = "--verbose" in argv
