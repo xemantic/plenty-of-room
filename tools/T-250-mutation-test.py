@@ -160,6 +160,10 @@ def main():
             print(f"          {description}")
 
     silent = [key for key, count in reached.items() if count == 0]
+    # `T-306`: the row count, for `tools/T-295-mutation-input-census.py`, which cannot see a
+    # partial shape change in a harness that states none.
+    print(f"# {len(exit_mutations(module)) + len(allowlist_mutations(module))} mutation(s), "
+          f"{survivors} survivor(s)")
     print(f"-- {total_tests - len(silent)} of {total_tests} rows are reached by some mutation --")
     for kind, index in silent:
         table = exit_tests if kind == "exit" else allow_tests

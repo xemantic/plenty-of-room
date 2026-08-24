@@ -416,6 +416,55 @@ tasks.register<Exec>("testMutationInputCensusMutations") {
     commandLine("$projectDir/tools/T-295-mutation-test.py")
 }
 
+/*
+ * `T-306`.  A MUTATION HARNESS'S PRINTED OUTPUT IS AN INTERFACE, and nothing declared it: three
+ * collisions in two iterations, each between a harness and `tools/T-295-mutation-input-census.py`,
+ * each written by a different hand and each green alone.  The shapes are now declared per harness
+ * in `tools/P-31-harness-census.py`'s own table and the census parses each harness with its own,
+ * so a changed output REFUSES instead of being read under another harness's semantics.  This
+ * harness mutates both halves of that contract and runs both suites for every row.
+ */
+tasks.register<Exec>("testHarnessOutputContractMutations") {
+    group = "verification"
+    description = "Runs tools/T-306-mutation-test.py, the mutation test for the harness-output contract"
+    commandLine("$projectDir/tools/T-306-mutation-test.py")
+}
+
+/*
+ * THE TWO KOTLIN HARNESSES, WHICH TAKE A SNAPSHOT DIRECTORY AND ARE DELIBERATELY OUT OF `:test`.
+ *
+ * `tools/T-297-mutation-test.py` and `tools/T-299-mutation-test.py` mutate Kotlin sources, so one
+ * mutation is one Gradle `test` run -- minutes each, against the 0.7 s a Python harness takes --
+ * and they must not edit a shared checkout.  An ARGUMENT is a wiring decision (`T-301`): a bare
+ * `Exec` task prints the harness's usage and fails the build, which is what the first attempt at
+ * wiring `T-297` did in iteration 46.  Registered here with the snapshot as a project property,
+ * so they are runnable by name and NOT reachable from `:test`:
+ *
+ *     ./gradlew testRasterTurnTetherMutations -PmutationSnapshot=/tmp/my-snapshot
+ *
+ * Take the snapshot with `tools/snapshot.sh`; the harnesses refuse a directory holding a `.git`.
+ * Both are declared `BY-HAND` in `P-31`'s table and `tools/T-295-mutation-input-census.py`
+ * cross-checks that declaration against each harness's own printed usage line, in both directions.
+ */
+fun mutationSnapshotArguments(harness: String): List<String> {
+    val snapshot = findProperty("mutationSnapshot") as String?
+    return listOf("$projectDir/tools/$harness") + (snapshot?.let { listOf(it) } ?: emptyList())
+}
+
+tasks.register<Exec>("testCommonModeMutations") {
+    group = "verification"
+    description = "Runs tools/T-297-mutation-test.py <snapshot>, the Kotlin mutation test for the " +
+        "crossover common mode. Needs -PmutationSnapshot=<dir>; not in :test"
+    commandLine(mutationSnapshotArguments("T-297-mutation-test.py"))
+}
+
+tasks.register<Exec>("testRasterTurnTetherMutations") {
+    group = "verification"
+    description = "Runs tools/T-299-mutation-test.py <snapshot>, the Kotlin mutation test for the " +
+        "raster-turn tether element. Needs -PmutationSnapshot=<dir>; not in :test"
+    commandLine(mutationSnapshotArguments("T-299-mutation-test.py"))
+}
+
 tasks.named("test") {
     dependsOn(
         "testHarness", "testDeliverableTracer", "testMarkdownTables", "testCorpusLinks",
@@ -434,14 +483,14 @@ tasks.named("test") {
         "testColumnRepair", "testColumnRepairMutations",
         // Iteration 46 -- two harnesses landed UNWIRED, which `P-31` read as `wired: 12 of 14`.
         // `C-0185`'s whole finding is that a harness nobody remembers to run decays silently, so
-        // the wiring belongs in the same iteration as the harness.  Only ONE of the two is
-        // wirable: the `T-297` harness takes a SNAPSHOT DIRECTORY as an argument, because it
-        // mutates Kotlin sources and must not do that in the checkout, so a bare `Exec` task
-        // prints its usage and fails the build -- which is what the first attempt at this line
-        // did.  An argument is a wiring decision, and that harness stays deliberately by-hand,
-        // as its own header states.  Its basename is NOT spelled here, because `P-31`'s
-        // `wired_in` is a substring test and would read the mention as a use (`T-301`).
-        "testMutationInputCensusMutations", "testChallengeStatusMutations"
+        // the wiring belongs in the same iteration as the harness.  The two KOTLIN harnesses,
+        // `tools/T-297-mutation-test.py` and `tools/T-299-mutation-test.py`, are registered above
+        // and are deliberately NOT here: one mutation is one Gradle `test` run.  Their basenames
+        // can now be spelled in a comment, because `T-306` made `P-31`'s `wired_in` a USE and not
+        // a MENTION -- before that, explaining why a harness was unwired made it read as wired.
+        "testMutationInputCensusMutations", "testChallengeStatusMutations",
+        // `T-306` -- the harness-output contract, declared per harness and cross-checked.
+        "testHarnessOutputContractMutations"
     )
 }
 

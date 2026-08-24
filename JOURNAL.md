@@ -11755,3 +11755,104 @@ lesson, in a harness it did not own.
 
 **No agent's own green run can show either.** That is the argument for the coordinator's final sweep
 at the assembled `HEAD`, and both were found there.
+
+## Iteration 48 — 2026-08-24: a harness's printed output is an interface, and the third repair had already made the fourth collision
+
+### Agent C — `T-306`, `T-305`, `T-301`: the output format, declared
+
+The queue offered two deliverable shapes and asked for a measurement first, so the measurement came first.
+Run at `342d7ad` — iteration 47's assembled `HEAD` — over the fifteen declared harnesses:
+**six distinct printed row shapes** across the fourteen that run bare,
+eight declared patterns of which six fire (the two survivor shapes fire on nothing, because the corpus has no survivors),
+three summary patterns all load-bearing,
+and **three harnesses stating no row count at all**.
+
+That last number is what decided the shape of the work.
+A declaration alone closes *cross-shape acceptance* — a harness quietly changing to another harness's shape —
+and it does **not** close the hole at those three: with no stated count,
+a partial shape change drops the same rows from both arms, the lengths agree, and nothing refuses.
+`reconcile(rows[:-1], rows[:-1], None)` returned `[]` at that commit.
+
+So: a `rows` field per harness in `P-31`'s table, each harness parsed with **its own shapes alone**,
+the count **mandatory**, and the `BY HAND` state declared as well as derived with a disagreement either way a defect.
+The `C-0176` objection — *a declared list is a dated object* — is already discharged for that particular table,
+because `P-31.discovers_harnesses` fails the build on an undeclared harness:
+a harness written tomorrow cannot exist without a row, and the row must now name its shape.
+
+### And the coordinator found the fourth collision at the assembled `HEAD`
+
+`tools/verify.sh --committed` at `342d7ad` was red with exactly one defect, and it was in the census.
+Iteration 47 had repaired the **third** collision by moving `T-298`'s harness onto the `killed-by` shape —
+the right direction, on the right ground.
+That shape captures everything after the count, and the row prints its killers **after the name on the same line**,
+so the parsed label was `name + padding + killers`;
+the killers differ once the census empties the corpus, the two arms disagreed, the harness was refused,
+and its **ten mutations printed as a clean row of zeros**.
+The refusal message truncated both labels to forty characters, and they are identical for their first forty —
+a report that prints two strings that look the same and says they differ.
+
+**The third repair made the fourth, in the same act**, and it went out green in its author's own run,
+because no agent's own run is `verify.sh --committed` at the assembled `HEAD`.
+That is the strongest argument available for the declared shape over a wider parser,
+and the repair had to catch the class at **authoring time** rather than fix this instance:
+a parsed label must be a **prefix** of one of the harness's own mutation names —
+which `P-31`'s adapter already reads out of that harness's table —
+which admits padding and column truncation and refuses anything printed after the name,
+and which runs on the **control arm alone**, with no drift needed.
+Measured over the roster, four of the eleven checkable harnesses failed it:
+two by truncation, which a prefix admits, and two by appending their killers, which it does not.
+
+### What surprised us
+
+- **The kind prefix is ambiguous with a name.** Four of `T-289`'s own mutations are *named* `NARROW the status column back to …`, so stripping a `NARROW `/`WIDEN ` prefix unconditionally refused that whole harness on the new check's first real run. Both readings are now tried. A necessary condition on a label is not a parse of it.
+- **A crash is not a named test.** A mutation that makes a suite stop exits 1 with a traceback, indistinguishable from a clean run by exit code. One row of this task's own table was `killed` off exactly that until the harness started requiring each suite's own completion line.
+- **A collateral killer can make a whole table read full and empty at once.** Both subjects of the new harness are themselves the subjects of other harnesses' anchors, so *any* text change orphans one and `P-31`'s resolution test fires. Unsubtracted, the first run read 19 killed — and **five of those rows were killed by that and by nothing else**. Subtracted, the same run read five survivors, every one a finding.
+- **The third state did not compose.** `T-299`'s harness refused with `sys.exit(__doc__)`, whose docstring says `Usage:`, and the census's derived by-hand state keys on `^usage:` **case-sensitively**. Dropped into `tools/` unchanged it would have read as a defect for a reason that is a capital letter. Repaired in the harness — widening the census to `(?i)` would let any harness whose prose says *usage:* excuse itself from being censused.
+- **`base: NO` on `T-298` was a false reading, not a gap.** That harness measures a baseline and refuses outright on a red one, which is stronger than subtracting; it simply named no identifier carrying the word. The harness moved, not the derivation — for the third time in this task.
+- **Making the count mandatory gave `reconcile` two guards for one constraint**, and a sibling harness said so within the hour: `C-0179`'s no-op mutation, introduced and caught in the same iteration.
+
+### Agent A — `T-304`: the tether's span was never a bracket
+
+`C-0201` closed iteration 47 with a straddle: route B's raster turn is a load rather than a spring,
+and how big that load is depends on a **span** carried as an azimuth bracket,
+`0.0569815008` of the stroke at one end against `0.166312182` at the other,
+`24 of 36` corners flat and the headline corner past `T-5b`.
+Its own §9 said why the bracket is the wrong instrument —
+`C-0147` and `C-0193` bracket the span because they were bounding **reach** —
+and named determining it as the highest-value follow-up.
+
+It is a lattice arithmetic and it needs no solver.
+A chain leaves a helix at the phosphate of its **last paired base**,
+and a phosphate's azimuth is fixed by its base-pair index and the lattice's own phase:
+`θ(ρ, b₀) = fold((ρ − b₀ − 21/4)·240/7°)`, with the reference `5.25` and not `5`,
+because caDNAno's rule is *"five base pairs, **or half a turn**"* (`C-0152` §5, `CH-0197`).
+On the drawable `102 / 109` raster `C-0187` pins `b₀ = 5` with residues `[0, 10]`,
+so **every** turn anchors at an *allowed* scaffold crossover:
+`±8.57142857°`, span **`0.787091706 nm`**, one value at all 59 turns.
+It is `C-0152`'s own allowed-crossover span, read out of `T-246`'s committed result file
+at a departure of `4.2e−10` — two constructions from two claims answering different questions,
+agreeing unprompted.
+
+Collapsed onto it, `C-0201`'s 36 corners become 16 and **`16 of 16` are flat**:
+`0.0569497052–0.0689014279` of the stroke, tension `0.175872271–0.479548487 pN`
+against the bracket's `0.160569993–3.03288672`, and the steric margin widens from `1.31×` to `6.43×`.
+The **coupled** verdict was predicted not to move and was graded anyway, on `C-0167`'s own 64 cells
+at 4 000 realisations: `0 of 192` flat, `0 of 192` paired comparisons move a verdict,
+and the untied re-grade reproduces **all 128** of `C-0167`'s committed values at `1e−8` —
+which is the control that makes the duplicated machinery admissible rather than merely similar.
+
+The finding that keeps `C-0201`'s alarm alive is `F7`, declared open, which **fired**.
+Route B does not *need* caDNAno's residue condition, and that freedom is exactly what costs it the span:
+at the built allowance its own uniform rows (`92 / 98 / 106 bp`) close at **no** lattice phase,
+so over all 21 phases of all three the 59 turns take 2–5 distinct spans
+whose worst member is `3.93454333–4.35327572 nm` — **reaching `C-0201`'s worst corner exactly** at some of them.
+The flat answer belongs to the **drawable** raster and is bought by drawability. That is `T-307`.
+
+### What surprised us
+
+- **The two rims cancel by a theorem, and it survives every offset.** The derived departure alternates with the rim and an anchor offset moves inboard at *both* rims, so the two rims' azimuths are exact negatives; the span goes as `cos θ`, which is even. `F1` was declared open expecting a possible two-population answer and the span is single-valued at every offset from 0 to 20 bp, not only at zero.
+- **And that theorem makes the inboard DIRECTION unobservable.** The mutation that flips it changes no span anywhere — it merely **exchanges** the two rims — and it is caught only by an assertion on the anchor *level*. A conservation a symmetry annihilates needs a test on a coordinate the symmetry does not touch, which is `C-0201` §8's own third survivor met on a different symmetry.
+- **The lattice contains the bracket's own worst endpoint as one of its rungs.** A design that carved the loop out of the paired row instead of adding it outboard would put the anchor `16 bp` inboard, and `16 − 0.25 = 15.75 bp` is exactly `540°` — one and a half turns — so the span is exactly `d + 2r_P`, `C-0201`'s worst corner to the last digit. Which rung a design takes is a statement about where its unpaired scaffold sits, not an uncertainty.
+- **The `pgrep`/mtime trap fired, as recorded.** Copying the snapshot's result file while run B was still in flight returned run A's own output and `cmp` said *byte-identical* — the perfect reproduction for the worst possible reason. Waiting on the log's `EXIT=` line and then re-copying gave the real byte-identity.
+- **A one-ended guard is a guard no mutation can reach.** The harness's single first-run survivor widened `require(classZeroResidue in 0 until PERIOD)` at the **lower** bound, and every test of that guard passed a value above the period. The repair is the fixture, not the rule.
+- **`ResultInputs.kt` reads *stale* until the result file is `git add`ed**, exactly as `CLAUDE.md` records — and the residual staleness after that was a sibling's, whose handle exists and whose file is not yet staged. Running the generator would have deleted it.

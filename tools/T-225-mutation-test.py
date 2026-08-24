@@ -128,13 +128,19 @@ def main(argv):
         if not failed:
             unprotected.append(("OUT", name))
 
+    # `T-306`.  The COUNT of rows is printed because `tools/T-295-mutation-input-census.py` runs
+    # every harness in two arms and reads its rows: without a stated count a PARTIAL shape change
+    # drops the same rows from both arms, the two lengths agree, and nothing can see it.  This
+    # harness was one of three that stated none.
+    printed = len(rows) + len(hygiene.DEPARTURE_KEYS) + len(hygiene.EXCLUDED_DEPARTURE_KEYS)
+    print(f"\n# {printed} mutation(s), {len(unprotected)} survivor(s)")
     if unprotected:
         print()
         for verdict, name in unprotected:
             print(f"UNPROTECTED {verdict} classification: {name!r} — "
                   f"no GATE_TESTS row fails when it is changed")
         return 1 if check else 0
-    print(f"\nevery one of {len(hygiene.DEPARTURE_KEYS)} IN and "
+    print(f"every one of {len(hygiene.DEPARTURE_KEYS)} IN and "
           f"{len(hygiene.EXCLUDED_DEPARTURE_KEYS)} OUT classifications is held open "
           f"by at least one named test")
     return 0

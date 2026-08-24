@@ -15,15 +15,19 @@ Two further checks this harness owes and makes:
   * every mutation's anchor must occur **exactly once** in its subject, so a refactor that moves
     the text orphans the row loudly instead of silently (`C-0185`).
 
-WHY THIS LIVES IN `gpd/data/` AND NOT IN `tools/`.
+MOVED INTO `tools/` BY `T-305`, from `gpd/data/T-299-mutation/mutate.py`.
 `tools/P-31-harness-census.py` discovers any `tools/*mutation-test.py` and **fails the build** on
 one that is not declared in its own `HARNESSES` table — which is exactly the mechanism that keeps
-that registry from being a census that stopped. Declaring this harness there is one tuple, and
-`tools/P-31-*` was owned by another agent in the iteration this was written. Moving this file into
-`tools/` and adding its row is a queue item, not a deletion.
+that registry from being a census that stopped, and it is why this file waited outside `tools/`
+for an iteration in which somebody owned that table. Its row declares the fifth adapter shape
+(`id_file_old_new_what`, five fields where the Python harnesses have three or four) and the
+`BY-HAND` sentinel, because this harness takes a snapshot directory: it mutates **Kotlin**, so one
+mutation is one Gradle `test` run — about a minute against the 0.7 s a Python harness takes — and
+it must not edit a shared checkout. It is wired on its own Gradle task and is deliberately NOT in
+`:test`'s dependency chain.
 
 Usage:
-    gpd/data/T-299-mutation/mutate.py <snapshot-dir>
+    tools/T-299-mutation-test.py <snapshot-dir>
 
 It edits files inside <snapshot-dir> and restores them afterwards. Give it a snapshot, never the
 checkout.
@@ -136,6 +140,11 @@ def run(tree):
 
 def main():
     if len(sys.argv) != 2:
+        # LOWER CASE and at the start of a line, because `tools/T-295-mutation-input-census.py`
+        # DERIVES its `BY HAND` third state from `^usage:` -- the docstring's own capitalised
+        # `Usage:` does not match it, and the census would have read this harness as a REFUSAL.
+        # `T-306`'s third collision, met before it could happen: the harness moves, not the parser.
+        print("usage: tools/T-299-mutation-test.py <snapshot-dir>", file=sys.stderr)
         sys.exit(__doc__)
     tree = sys.argv[1]
     if os.path.exists(os.path.join(tree, ".git")):
@@ -156,10 +165,13 @@ def main():
         if text.count(anchor) != 1:
             sys.exit("%s: anchor occurs %d times in %s" % (ident, text.count(anchor), source))
 
-    code, base_failures, compiled = run(tree)
+    # `T-306`: the local is NAMED `baseline_failures` because `tools/P-31-harness-census.py`
+    # derives `measuresBaseline` from a harness's own identifiers, and `base_failures` did not
+    # carry the word -- so the census read `base: NO` about a harness that does measure one.
+    code, baseline_failures, compiled = run(tree)
     print("\nBASELINE  exit=%d  compiled=%s  named failures: %s"
-          % (code, compiled, sorted(base_failures) or "none"))
-    if base_failures or not compiled:
+          % (code, compiled, sorted(baseline_failures) or "none"))
+    if baseline_failures or not compiled:
         sys.exit("the UNMUTATED copy does not pass: nothing below is a measurement")
 
     rows = []
@@ -170,7 +182,7 @@ def main():
         open(path, "w", encoding="utf-8").write(text.replace(anchor, new, 1))
         code, failures, compiled = run(tree)
         shutil.move(path + ".orig", path)
-        killers = sorted(failures - base_failures)
+        killers = sorted(failures - baseline_failures)
         verdict = "killed by %d" % len(killers) if killers else (
             "BUILD BROKEN" if not compiled else "SURVIVES")
         rows.append((ident, verdict, what, killers))

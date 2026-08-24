@@ -80,36 +80,57 @@ ROOT = os.path.dirname(HERE)
 #                    subject are the names it imports from it, which are ATTRIBUTE references too
 #
 # `shape` names the adapter that reads the harness's own mutation table.
+#
+# `rows` is what the harness PRINTS, one shape name per row kind, and it is the interface
+# `tools/T-295-mutation-input-census.py` reads: that census runs every harness in two arms and
+# classifies each mutation from the harness's own per-mutation rows.  It used to try all of its
+# patterns against every line, first match wins -- so a harness that changed to ANOTHER harness's
+# shape was read silently with different semantics, and three collisions in two iterations each
+# came of the format being guessed rather than declared (`T-306`).  The names are the census's
+# own; `BY_HAND` is the sentinel for a harness that does not run bare at all.
+BY_HAND = "BY-HAND"
 HARNESSES = (
     ("test-check-queue-vocabulary.py", "TEXT-ANCHOR", "name_file_old_new",
-     "check-queue-vocabulary.py + queue_verdicts.py"),
+     "check-queue-vocabulary.py + queue_verdicts.py", ("killed-by", "survives")),
     ("P-30-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
-     "queue_verdicts.py + trace-answers.py + check-queue-vocabulary.py"),
+     "queue_verdicts.py + trace-answers.py + check-queue-vocabulary.py",
+     ("killed-pair", "survived")),
     ("T-281-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
-     "census_discharges.py + T-234-census.py"),
+     "census_discharges.py + T-234-census.py", ("killed-pair", "survived")),
     ("T-283-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
-     "queue_verdicts.py + check-queue-vocabulary.py"),
+     "queue_verdicts.py + check-queue-vocabulary.py", ("killed-pair", "survived")),
     ("T-289-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
-     "queue_verdicts.py + check-queue-vocabulary.py"),
+     "queue_verdicts.py + check-queue-vocabulary.py", ("killed-pair", "survived")),
     ("T-292-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
-     "T-292-column-repair.py + check-queue-vocabulary.py"),
+     "T-292-column-repair.py + check-queue-vocabulary.py", ("killed-n", "survived")),
     ("T-295-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
-     "T-295-mutation-input-census.py"),
+     "T-295-mutation-input-census.py", ("killed-by", "survived")),
     ("T-234-mutation-test.py", "TEXT-ANCHOR", "kind_name_path_subs",
-     "T-234-census.py + T-234-emit-classification.py"),
+     "T-234-census.py + T-234-emit-classification.py", ("kind-row",)),
     ("T-280-mutation-test.py", "TEXT-ANCHOR", "kind_name_subs",
-     "T-234-census.py"),
+     "T-234-census.py", ("kind-row",)),
     ("T-278-mutation-test.py", "ATTRIBUTE", "attributes",
-     "T-278-emitter-rounding-census.py + T-278-rounding-simulation.py"),
+     "T-278-emitter-rounding-census.py + T-278-rounding-simulation.py",
+     ("killed-by", "survived")),
     ("T-225-mutation-test.py", "ATTRIBUTE", "attributes",
-     "check-result-file-hygiene.py"),
+     "check-result-file-hygiene.py", ("of-row",)),
     ("T-249-mutation-test.py", "REIMPLEMENTATION", "attributes",
-     "check-result-file-hygiene.py"),
+     "check-result-file-hygiene.py", ("arrow",)),
     ("T-250-mutation-test.py", "REIMPLEMENTATION", "attributes",
-     "check-result-file-hygiene.py"),
+     "check-result-file-hygiene.py", ("arrow",)),
     ("T-297-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
-     "src/main/kotlin/tile/CrossoverCommonMode.kt + src/main/kotlin/tile/HoneycombGrillage.kt"),
-    ("T-298-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new", "trace-answers.py"),
+     "src/main/kotlin/tile/CrossoverCommonMode.kt + src/main/kotlin/tile/HoneycombGrillage.kt",
+     (BY_HAND,)),
+    ("T-298-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new", "trace-answers.py",
+     ("killed-by", "survives")),
+    ("T-306-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
+     "P-31-harness-census.py + T-295-mutation-input-census.py", ("killed-by", "survived")),
+    # The corpus's SECOND harness over a Kotlin subject, moved into `tools/` by `T-305`.  Five
+    # fields per row where the Python harnesses have three or four, hence its own adapter; and
+    # `BY_HAND`, because one mutation is one Gradle `test` run and it takes a snapshot directory.
+    ("T-299-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
+     "src/main/kotlin/tile/HoneycombRasterTurnTethers.kt + "
+     "src/main/kotlin/tile/HoneycombGrillage.kt", (BY_HAND,)),
 )
 
 # Which module file each ATTRIBUTE receiver in a harness stands for.  A receiver not named here is
@@ -284,12 +305,144 @@ def discovers_harnesses(sources):
     return found
 
 
+def declared_row_shapes(basename):
+    """The printed row shapes a harness declares, from `HARNESSES`.
+
+    A mutation harness's printed OUTPUT is an interface: `tools/T-295-mutation-input-census.py`
+    runs every harness in two arms and classifies each mutation from the harness's own rows.  It
+    read them by trying every one of its eight patterns against every line, first match wins --
+    so a harness that changed to ANOTHER harness's shape was read silently with different
+    semantics, and three collisions in two iterations each came of the format being guessed.
+    """
+    for row in HARNESSES:
+        if row[0] == basename:
+            return tuple(row[4])
+    return ()
+
+
+def census_row_shape_names():
+    """The row-shape names `T-295`'s census knows, LOADED from it rather than copied.
+
+    A duplicated rule is invisible to a mutation test of either copy (`CLAUDE.md`), and this is
+    the one place the two tools have to agree about a vocabulary.  Loaded lazily and by file spec,
+    so there is no module-level cycle: the census loads this table the same way.
+    """
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "p31census", os.path.join(HERE, "T-295-mutation-input-census.py"))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return {name for name, _pattern, _shape in module.ROW_SHAPES}
+
+
+def strip_kotlin_comments(text):
+    """`text` with `//` and `/* */` comments blanked, length-preservingly.
+
+    Length-preserving because the spans below are found by index and a shortened source would
+    move every one of them -- `CLAUDE.md`'s own note about blanking a census's matches.
+    """
+    out, i, n = [], 0, len(text)
+    while i < n:
+        two = text[i:i + 2]
+        if two == "//":
+            end = text.find("\n", i)
+            end = n if end < 0 else end
+            out.append(" " * (end - i))
+            i = end
+        elif two == "/*":
+            end = text.find("*/", i + 2)
+            end = n if end < 0 else end + 2
+            out.append("".join(c if c == "\n" else " " for c in text[i:end]))
+            i = end
+        elif text[i] == '"':
+            end = i + 1
+            while end < n and text[end] != '"':
+                end += 2 if text[end] == "\\" else 1
+            end = min(end + 1, n)
+            out.append(text[i:end])
+            i = end
+        else:
+            out.append(text[i])
+            i += 1
+    return "".join(out)
+
+
+def command_line_spans(build_text):
+    """The argument text of every `commandLine(...)` call, comments already blanked.
+
+    A DESCRIPTION is prose on an executable line, so comment-stripping alone does not reach it:
+    `description = "Runs tools/h.py, ..."` names a harness and runs nothing.  What makes an
+    occurrence a USE is the call it sits in, and the span is balanced rather than line-based
+    because a `commandLine` may be written over several lines.
+    """
+    text = strip_kotlin_comments(build_text)
+    spans, start = [], text.find("commandLine(")
+    while start >= 0:
+        i, depth, quoted, n = start + len("commandLine("), 1, False, len(text)
+        while i < n and depth:
+            character = text[i]
+            if quoted:
+                if character == "\\":
+                    i += 1
+                elif character == '"':
+                    quoted = False
+            elif character == '"':
+                quoted = True
+            elif character == "(":
+                depth += 1
+            elif character == ")":
+                depth -= 1
+            i += 1
+        spans.append(text[start:i])
+        start = text.find("commandLine(", i)
+    return spans
+
+
+def strip_shell_comments(line):
+    """One shell line with an unquoted `#` and everything after it removed."""
+    quote = None
+    for index, character in enumerate(line):
+        if quote:
+            if character == quote:
+                quote = None
+        elif character in "'\"":
+            quote = character
+        elif character == "#":
+            return line[:index]
+    return line
+
+
+def shell_command_words(verify_text):
+    """The first word of every comment-stripped line of a shell script.
+
+    Only the command word counts.  `echo "skip with: tools/h.py"` names a harness in an ARGUMENT,
+    and `tools/verify.sh`'s own header names half the checkers in prose; neither runs anything.
+    """
+    words = []
+    for line in verify_text.splitlines():
+        stripped = strip_shell_comments(line).strip()
+        if not stripped:
+            continue
+        word = stripped.split()[0].strip("\"'")
+        if word:
+            words.append(word)
+    return words
+
+
 def wired_in(basename, build_text, verify_text):
-    """Where a harness is run from, of `build.gradle.kts` and `tools/verify.sh`."""
+    """Where a harness is RUN from, of `build.gradle.kts` and `tools/verify.sh`.
+
+    A USE, never a MENTION (`T-301`).  The predicate was `basename in build_text or basename in
+    verify_text`, and the census went `13 of 14` -> `14 of 14` -> `13 of 14` on the wording of one
+    comment with no wiring changed -- so a harness could be reported wired because somebody
+    explained why it is not, and `build.gradle.kts` duly carried a note saying that a basename was
+    being withheld from a comment for that reason.  A predicate that forces the prose around it to
+    be written defensively is measuring the prose.
+    """
     places = []
-    if basename in build_text:
+    if any(basename in span for span in command_line_spans(build_text)):
         places.append("build.gradle.kts")
-    if basename in verify_text:
+    if any(word.endswith(basename) for word in shell_command_words(verify_text)):
         places.append("tools/verify.sh")
     return places
 
@@ -346,6 +499,13 @@ def _adapt(shape, module, harness):
             # root; a bare basename keeps the historical `tools/` reading.
             rows.append((harness, name,
                          filename if "/" in filename else os.path.basename(filename), old))
+    elif shape == "id_file_old_new_what":
+        # `(id, file, anchor, replacement, what it breaks)`.  A Kotlin harness names what each
+        # mutation BREAKS as a fifth field, because its rows cannot be read off a Python
+        # predicate's own vocabulary the way `name_file_old_new`'s can.
+        for ident, filename, old, _new, _what in module.MUTATIONS:
+            rows.append((harness, ident,
+                         filename if "/" in filename else os.path.basename(filename), old))
     elif shape == "kind_name_path_subs":
         for _kind, name, path, subs in module.mutations():
             for old, _new in subs:
@@ -392,7 +552,7 @@ def census(tree=ROOT, strict=True):
     sys.path.insert(0, tools)
     rows = []
 
-    for basename, kind, shape, subjects in HARNESSES:
+    for basename, kind, shape, subjects, _rows in HARNESSES:
         source = read(basename)
         if source is None:
             if strict:
@@ -412,6 +572,7 @@ def census(tree=ROOT, strict=True):
             "symbolsUnresolved": len(unresolved_symbols(symbols, read)),
             "assertsAnchorCount": asserts_anchor_count(source),
             "measuresBaseline": measures_baseline(source),
+            "rowShapes": list(declared_row_shapes(basename)),
             "wiredIn": wired_in(basename, build_text, verify_text),
             "_anchorDefects": unresolved_anchors(anchors, read),
             "_symbolDefects": unresolved_symbols(symbols, read),
@@ -545,7 +706,15 @@ def _selftest():
         not measures_baseline('DOC = "measures a baseline"\n'),
     )
 
-    # --- wiring ---
+    # --- wiring: a USE, never a MENTION (`T-301`) ---
+    #
+    # `wired_in` was `basename in build_text or basename in verify_text`, and the census duly went
+    # `13 of 14` -> `14 of 14` -> `13 of 14` on the WORDING OF ONE COMMENT with no wiring changed.
+    # Live at the commit this repairs: `tools/T-283-mutation-test.py` was reported wired in
+    # `tools/verify.sh` off a sentence in a comment there, and `build.gradle.kts` carried a note
+    # explaining that `T-297`'s basename is deliberately NOT spelled, because the substring test
+    # would read the explanation as the wiring.  A checker whose predicate forces the prose around
+    # it to be written defensively is not a checker.
     check(
         "P-31 a harness named in build.gradle.kts is wired there",
         wired_in("h.py", 'commandLine("$projectDir/tools/h.py")', "") == ["build.gradle.kts"],
@@ -553,6 +722,142 @@ def _selftest():
     check(
         "P-31 a harness named in neither file is wired nowhere",
         wired_in("h.py", "", "") == [],
+    )
+    check(
+        "P-31 a harness named only in a `//` COMMENT of the build script is NOT wired — the "
+        "instance this predicate was repaired for",
+        wired_in("h.py", "        // the h.py harness takes an argument and stays by hand\n", "")
+        == [],
+    )
+    # CONSTRUCTED (`C-0161`), and it is what makes the blanking load-bearing: without a
+    # `commandLine(` INSIDE the comment there is no span to find, so a predicate that never
+    # blanked a comment would pass the row above.  A commented-out wiring is exactly the shape a
+    # build script accumulates -- the wiring that was tried, failed and was left in place.
+    check(
+        "P-31 a COMMENTED-OUT commandLine is not a wiring: the `//` blanking is what makes the "
+        "span search see a comment at all",
+        wired_in("h.py", '        // commandLine("$projectDir/tools/h.py")\n', "") == [],
+    )
+    check(
+        "P-31 a harness named only in a `/* */` block comment is not wired either",
+        wired_in("h.py", "/*\n * h.py runs by hand.\n */\n", "") == [],
+    )
+    check(
+        "P-31 and a commandLine inside a `/* */` BLOCK comment — a whole wiring block left in "
+        "the file — is not a wiring either",
+        wired_in("h.py", '/*\n * commandLine("$projectDir/tools/h.py")\n */\n', "") == [],
+    )
+    check(
+        "P-31 a harness named only in a DESCRIPTION string is not wired: a description is prose "
+        "on an executable line, which comment-stripping alone cannot reach",
+        wired_in("h.py", '    description = "Runs tools/h.py, the mutation test"\n', "") == [],
+    )
+    check(
+        "P-31 a `commandLine` carrying an ARGUMENT after the path is still a use",
+        wired_in("h.py", 'commandLine("$projectDir/tools/h.py", snapshot)', "")
+        == ["build.gradle.kts"],
+    )
+    check(
+        "P-31 a commandLine SPANNING lines is a use — the span is balanced, not line-based",
+        wired_in("h.py", 'commandLine(\n    "$projectDir/tools/h.py",\n    "--check",\n)', "")
+        == ["build.gradle.kts"],
+    )
+    check(
+        "P-31 a shell line whose COMMAND WORD is the harness is a use",
+        wired_in("h.py", "", "    tools/h.py --check\n") == ["tools/verify.sh"],
+    )
+    check(
+        "P-31 a shell command word carrying a `$root` prefix and quotes is a use too",
+        wired_in("h.py", "", '    "$root/tools/h.py" --self-test\n') == ["tools/verify.sh"],
+    )
+    check(
+        "P-31 a harness named in a `#` COMMENT of the shell script is not wired",
+        wired_in("h.py", "", "# repairing the queue took tools/h.py from 0 survivors to 1\n")
+        == [],
+    )
+    # CONSTRUCTED: a comment whose `#` abuts the path, so the command word IS the path unless the
+    # comment is stripped.  The row above passes at any stripping, because `#` is then the first
+    # word; this one is the only shape the stripping is load-bearing on -- and it is the shape a
+    # commented-out invocation actually takes.
+    check(
+        "P-31 a COMMENTED-OUT shell invocation whose `#` abuts the path is not wired: the "
+        "comment stripping is what the command word rule rests on",
+        wired_in("h.py", "", "    #tools/h.py --check\n") == [],
+    )
+    check(
+        "P-31 a harness named in an ECHO rather than run is not wired — the argument position "
+        "is prose, and only the command word is a use",
+        wired_in("h.py", "", '    echo "skip with: tools/h.py --no-checks"\n') == [],
+    )
+    check(
+        "P-31 wiring in BOTH files is reported as both",
+        wired_in("h.py", 'commandLine("tools/h.py")', "    tools/h.py\n")
+        == ["build.gradle.kts", "tools/verify.sh"],
+    )
+    # The corpus's own reading, asserted rather than described: at the commit this lands on,
+    # `tools/verify.sh` mentions exactly one harness and runs none of them.
+    check(
+        "P-31 in THIS tree no mutation harness is run from tools/verify.sh, though one is "
+        "named in a comment there — which the old substring predicate read as wiring",
+        [row["harness"] for row in census() if "tools/verify.sh" in row["wiredIn"]] == [],
+    )
+    # THE INSTANCE THIS PREDICATE WAS REPAIRED FOR, against the COMMITTED past rather than a
+    # fixture.  `342d7ad` is iteration 47's assembled HEAD, where `tools/verify.sh` names
+    # `T-283-mutation-test.py` in a comment explaining a defect and runs no harness at all -- so
+    # the substring predicate reported it wired there.  Pinned, because a self-test that reads a
+    # mutable artifact expires the moment the defect it asserts is repaired (`CLAUDE.md`), and
+    # skipped visibly where git cannot supply the file.
+    _old_verify = subprocess.run(
+        ["git", "-C", ROOT, "show", "342d7ad:tools/verify.sh"], capture_output=True, text=True)
+    if _old_verify.returncode == 0 and _old_verify.stdout:
+        check(
+            "P-31 HISTORICAL: at 342d7ad tools/verify.sh NAMES T-283-mutation-test.py and RUNS "
+            "no harness, so the substring predicate reported a comment as a wiring and this one "
+            "does not",
+            "T-283-mutation-test.py" in _old_verify.stdout
+            and wired_in("T-283-mutation-test.py", "", _old_verify.stdout) == [],
+        )
+    else:
+        print("# the historical wiring check at 342d7ad was SKIPPED: no git repository at {}"
+              .format(ROOT), file=sys.stderr)
+
+    # --- the declared PRINTED ROW SHAPE, which is the interface a sibling census reads ---
+    check(
+        "P-31 every declared harness declares the printed row shape(s) it emits, because a "
+        "census that GUESSES a harness's output format reads a changed one silently",
+        [row[0] for row in HARNESSES if not declared_row_shapes(row[0])] == [],
+    )
+    check(
+        "P-31 every declared row shape is a name T-295's census knows, LOADED from it rather "
+        "than copied — a duplicated vocabulary is invisible to a mutation test of either copy",
+        [(row[0], name) for row in HARNESSES for name in declared_row_shapes(row[0])
+         if name != BY_HAND and name not in census_row_shape_names()] == [],
+    )
+    check(
+        "P-31 BY-HAND is a SENTINEL and not a row shape: a harness that declares it declares "
+        "nothing else, because it prints no row this census can pair",
+        [row[0] for row in HARNESSES
+         if BY_HAND in declared_row_shapes(row[0]) and len(declared_row_shapes(row[0])) != 1]
+        == [],
+    )
+    check(
+        "P-31 a harness's declared shapes are reported on its census row, so the JSON carries "
+        "the contract the other census reads",
+        all(tuple(row["rowShapes"]) == declared_row_shapes(row["harness"]) for row in census()),
+    )
+    # The row above compares the census against the LOOKUP, so it passes even if the lookup
+    # answers every question with the first row of the table.  This one compares the lookup
+    # against the TABLE, which is the premise the derivation rests on (`CLAUDE.md`: assert the
+    # premise, never the derivation's own output).
+    check(
+        "P-31 declared_row_shapes answers for the harness it is ASKED about, row by row against "
+        "the table itself",
+        all(declared_row_shapes(row[0]) == tuple(row[4]) for row in HARNESSES),
+    )
+    check(
+        "P-31 and two harnesses declaring different shapes get different answers, so a lookup "
+        "that ignored its argument could not pass",
+        len({declared_row_shapes(row[0]) for row in HARNESSES}) > 1,
     )
 
     # --- the declared table is not allowed to become a census that stopped ---
@@ -579,7 +884,7 @@ def _selftest():
     # kind nothing was checking.
     check(
         "P-31 every declared harness is executable, because the build execs its path directly",
-        [basename for basename, _kind, _shape, _subjects in HARNESSES
+        [basename for basename, _kind, _shape, _subjects, _rows in HARNESSES
          if not os.access(os.path.join(HERE, basename), os.X_OK)] == [],
     )
 
@@ -675,6 +980,16 @@ def main(argv):
         print("UNDECLARED  {}  is a mutation harness and is in no row of HARNESSES: declare it, "
               "with its adapter shape, or the census cannot see it".format(basename))
         defects += 1
+
+    # The THIRD state (`T-301`, `C-0182`): a harness that takes a snapshot directory because it
+    # mutates Kotlin.  It is wired -- on its own Gradle task, by name -- and it is deliberately
+    # out of `:test`, because one of its mutations is one Gradle `test` run.  A report with two
+    # states could only call that a defect.
+    by_hand = [row["harness"] for row in rows if BY_HAND in row["rowShapes"]]
+    if by_hand:
+        print("# BY HAND, and not a defect: {} — each takes a snapshot directory and is kept out "
+              "of `:test`; run it by name with -PmutationSnapshot=<dir>".format(
+                  ", ".join(by_hand)))
 
     unwired = [row["harness"] for row in rows if not row["wiredIn"]]
     print("# {} harness(es); {} anchor(s) and {} symbol(s) into their subjects; {} unresolved"

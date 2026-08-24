@@ -126,11 +126,30 @@ SUMMARY_COVERAGE = re.compile(r"coverage[^\n]*?, (\d+) mutations", re.MULTILINE)
 SUMMARY_RETIRED = re.compile(r"(\d+) retired")
 
 
-def parse_rows(output):
-    """[(label, named tests failed)] for every per-mutation row a harness printed."""
+#: The shapes that print ONLY for a survivor.  Derived from `ROW_SHAPES`'s own third field rather
+#: than listed, because a second list is invisible to a mutation test of either copy.  A survivor
+#: shape is CONTINGENT: a harness declares it and prints it only when something survives, and this
+#: corpus has none -- so its absence is not a stale declaration and must not be gated as one.
+SURVIVOR_ONLY_SHAPES = {name for name, _pattern, kind in ROW_SHAPES if kind == "zero"}
+
+#: `P-31`'s sentinel for a harness that does not run bare at all.  Spelled here so that this
+#: census can recognise it in a declaration; the declaration itself lives in `P-31`'s table.
+BY_HAND = "BY-HAND"
+
+
+def parse_rows(output, shapes=None):
+    """[(label, named tests failed)] for every per-mutation row a harness printed.
+
+    `shapes` is the harness's OWN declared row shapes, from `P-31`'s table.  Given, only those are
+    tried -- so a harness that changes to ANOTHER harness's shape reads as nothing and refuses,
+    rather than being read silently under different semantics (`T-306`).  Omitted, every shape is
+    tried, which is what the self-tests of the individual shapes want.
+    """
     rows = []
     for line in output.splitlines():
         for _name, pattern, shape in ROW_SHAPES:
+            if shapes is not None and _name not in shapes:
+                continue
             match = pattern.match(line)
             if not match:
                 continue
@@ -148,6 +167,142 @@ def parse_rows(output):
                 rows.append((match.group(1).strip(), 0))
             break
     return rows
+
+
+def matched_shapes(output, shapes=None):
+    """The set of row-shape names that matched at least one line of `output`."""
+    found = set()
+    for line in output.splitlines():
+        for name, pattern, _kind in ROW_SHAPES:
+            if shapes is not None and name not in shapes:
+                continue
+            if pattern.match(line):
+                found.add(name)
+                break
+    return found
+
+
+def undeclared_shape_rows(output, shapes):
+    """How many lines this census CAN read but the harness did not declare a shape for."""
+    return len(parse_rows(output)) - len(parse_rows(output, shapes))
+
+
+def shape_refusals(output, shapes):
+    """[refusal] for a harness whose printed output disagrees with its declared row shapes.
+
+    Both directions, which is the whole point of a declaration.  A row in an UNDECLARED shape is
+    the collision this task exists for; a DECLARED shape that never prints is a stale declaration
+    -- except a survivor shape, which is contingent by construction and derived as such.
+    """
+    if BY_HAND in shapes:
+        return []
+    refusals = []
+    undeclared = undeclared_shape_rows(output, shapes)
+    if undeclared:
+        refusals.append(
+            "printed %d row(s) in a shape it does not declare: %s. A harness's printed output is "
+            "an interface (T-306); declare the shape in P-31's HARNESSES table, or print a "
+            "declared one" % (undeclared,
+                              ", ".join(sorted(matched_shapes(output) - set(shapes))) or "?"))
+    for name in sorted(set(shapes) - matched_shapes(output, shapes)):
+        if name in SURVIVOR_ONLY_SHAPES:
+            continue
+        refusals.append(
+            "declares the row shape %r and printed none: a declaration that has stopped being "
+            "true is how a registry rots (C-0182)" % name)
+    return refusals
+
+
+def treat_as_by_hand(declared, derived):
+    """True when a harness is BY HAND and there is nothing for this census to reconcile.
+
+    A conjunction, deliberately.  Either half alone would let the census skip a harness it should
+    be reading: the DECLARATION alone would skip one whose table has gone stale, and the
+    DERIVATION alone would skip one that printed a usage line for some other reason.  Pulled out
+    of `census` so that a mutation of it fails a named test -- `census` itself runs every harness
+    in two arms and cannot be a fixture.
+    """
+    return declared and derived
+
+
+#: A kind prefix a harness prepends to its own mutation name.  `C-0176`'s NARROW/WIDEN direction
+#: is part of the ROW and not part of the name, so it comes off before the comparison below.
+KIND_PREFIXES = ("NARROW ", "WIDEN ")
+
+
+def label_refusals(labels, names):
+    """[refusal] for a parsed row label that is not one of the harness's own mutation names.
+
+    THE FOURTH COLLISION (`T-306`).  `tools/T-298-mutation-test.py` printed its killers on the
+    same line as the name, and the `killed-by` shape captures everything after the count -- so the
+    label was `name + padding + killers`, the killers differ once the corpus is emptied, and the
+    census reported *row labels drift* and refused the harness.  That row format was iteration
+    47's own repair of the THIRD collision: a harness moved to a declared shape, and the move
+    introduced this.
+
+    The comparison is a PREFIX, not an equality, because a harness pads its name into a column and
+    may truncate it there; what a prefix cannot tolerate is anything printed AFTER the name, which
+    is exactly the defect.  It runs on the CONTROL ARM ALONE, so it catches the class at authoring
+    time rather than when two arms happen to disagree -- and the names come from `P-31`'s own
+    adapter, which already reads every harness's mutation table.  A harness whose adapter supplies
+    no names (an `attributes` shape, a `BY-HAND` one) is not checked.
+    """
+    if not names:
+        return []
+    bad = []
+    for label in labels:
+        # BOTH readings, because a kind prefix is ambiguous with a name that opens with the same
+        # word: four of `T-289`'s own mutations are called *"NARROW the status column back to
+        # …"*, so stripping unconditionally would refuse a harness for naming its rows after the
+        # direction they go in.  Either reading matching is enough -- the check is a necessary
+        # condition on the label, not a parse of it.
+        candidates = [label]
+        for prefix in KIND_PREFIXES:
+            if label.startswith(prefix):
+                candidates.append(label[len(prefix):])
+        if not any(text and any(name.startswith(text) for name in names)
+                   for text in candidates):
+            bad.append(label)
+    if not bad:
+        return []
+    return ["%d row label(s) are not one of this harness's own mutation names, the first being "
+            "%r: a row must carry its name and nothing after it, or the label picks up whatever "
+            "else the line holds and drifts between the two arms (T-306)"
+            % (len(bad), bad[0][:120])]
+
+
+def drift_refusal(control_label, treatment_label):
+    """The refusal for two arms whose row labels disagree, SHOWING where they disagree.
+
+    The message used to print both labels truncated to 40 characters, and the one instance the
+    corpus has produced was identical for the first 40 -- so the report printed two strings that
+    look the same and said they differ.  A report whose truncation hides the thing it is
+    reporting is `C-0177`'s *a gate that cannot fail*, read on the OUTPUT instead of the exit code.
+    """
+    position = 0
+    while (position < len(control_label) and position < len(treatment_label)
+           and control_label[position] == treatment_label[position]):
+        position += 1
+    return ("row labels differ at character %d: control %r against treatment %r"
+            % (position + 1, control_label[position:position + 60],
+               treatment_label[position:position + 60]))
+
+
+def by_hand_refusals(declared, derived):
+    """[refusal] where `P-31`'s BY-HAND declaration and this census's derivation disagree.
+
+    `C-0182`'s registry, checked in both directions.  The DERIVED reading (`T-301`) is the
+    harness's own usage line, which cannot go stale; the DECLARED one is `P-31`'s table, which
+    can.  Keeping both and asserting they agree is what makes the staleness loud instead of
+    turning the derivation off.
+    """
+    if declared and not derived:
+        return ["is declared BY-HAND in P-31's table and RAN: the declaration is stale, or the "
+                "harness has stopped taking an argument"]
+    if derived and not declared:
+        return ["printed its own usage line, so it takes an argument, and P-31's table does not "
+                "declare it BY-HAND"]
+    return []
 
 
 def declared_count(output):
@@ -195,7 +350,15 @@ def reconcile(control_rows, treatment_rows, stated):
     if len(control_rows) != len(treatment_rows):
         refusals.append("control printed %d rows and treatment %d"
                         % (len(control_rows), len(treatment_rows)))
-    if stated is not None and stated != len(control_rows):
+    if stated is None:
+        # `T-306`.  Without a stated count a PARTIAL shape change drops the same rows from both
+        # arms, the two lengths agree, and nothing above can see it -- measured live at three of
+        # the fourteen harnesses that run bare.  The count is the only cross-check that is not a
+        # comparison of the census with itself.
+        refusals.append("the harness states no count of its own, so a partial shape change would "
+                        "drop the same rows from both arms silently: print a "
+                        "`# N mutation(s), M survivor(s)` summary line")
+    elif stated != len(control_rows):
         refusals.append("the harness states %d mutations and this census read %d rows"
                         % (stated, len(control_rows)))
     if refusals:
@@ -203,8 +366,7 @@ def reconcile(control_rows, treatment_rows, stated):
     mutations = []
     for (label, control_kills), (other, treatment_kills) in zip(control_rows, treatment_rows):
         if label != other:
-            return [], ["row labels drift between the two arms: %r against %r"
-                        % (label[:40], other[:40])]
+            return [], [drift_refusal(label, other)]
         mutations.append({
             "label": label,
             "controlKillers": control_kills,
@@ -318,6 +480,26 @@ def harness_names(tree=ROOT):
     return [row[0] for row in _p31().HARNESSES]
 
 
+def harness_row_shapes(basename):
+    """The row shapes `P-31`'s table declares for one harness, imported rather than copied."""
+    return _p31().declared_row_shapes(basename)
+
+
+def harness_mutation_names(basename, tree=ROOT):
+    """The mutation names `P-31`'s adapter reads out of one harness's own table, or ().
+
+    Empty for an `attributes` shape (the harness mutates by reassigning a name, so there is no
+    table of rows to read) and for a `BY-HAND` one (this census never reads its rows).  Those are
+    the harnesses `label_refusals` cannot check, and it says so by checking nothing.
+    """
+    p31 = _p31()
+    row = next((r for r in p31.HARNESSES if r[0] == basename), None)
+    if row is None or row[2] == "attributes" or p31.BY_HAND in row[4]:
+        return ()
+    tools = os.path.join(tree, "tools")
+    return tuple({r[1] for r in p31._adapt(row[2], p31._import(tools, basename), basename)})
+
+
 def census(tree=ROOT, only=None, progress=None):
     """One row per mutation of every harness, with its control and treatment readings."""
     control = tempfile.mkdtemp(prefix="T-295-control.")
@@ -331,14 +513,21 @@ def census(tree=ROOT, only=None, progress=None):
                 continue
             if progress:
                 progress(basename)
+            shapes = harness_row_shapes(basename)
             control_output = run_harness(control, basename)
             treatment_output = run_harness(treatment, basename)
             stated = declared_count(control_output)
-            control_rows = parse_rows(control_output)
-            if not control_rows and takes_an_argument(control_output):
-                # The third state.  Not a refusal and not a reading: the harness declined to run.
+            # The third state, DERIVED from the harness's own usage line (`T-301`) and
+            # CROSS-CHECKED against `P-31`'s declaration (`T-306`): the derivation cannot go
+            # stale and the declaration can, so keeping both and asserting they agree is what
+            # makes a stale declaration loud rather than turning the derivation off.
+            derived = takes_an_argument(control_output) and not parse_rows(control_output)
+            declared = BY_HAND in shapes
+            hand = by_hand_refusals(declared, derived)
+            if treat_as_by_hand(declared, derived) and not hand:
                 rows.append({
                     "harness": basename,
+                    "rowShapes": list(shapes),
                     "statedMutations": stated,
                     "mutations": [],
                     "refusals": [],
@@ -346,13 +535,18 @@ def census(tree=ROOT, only=None, progress=None):
                                "is run by hand and this census has nothing to reconcile"),
                 })
                 continue
+            control_rows = parse_rows(control_output, shapes)
             mutations, refusals = reconcile(
-                control_rows, parse_rows(treatment_output), stated)
+                control_rows, parse_rows(treatment_output, shapes), stated)
             rows.append({
                 "harness": basename,
+                "rowShapes": list(shapes),
                 "statedMutations": stated,
                 "mutations": mutations,
-                "refusals": refusals,
+                "refusals": (hand + shape_refusals(control_output, shapes)
+                             + label_refusals([label for label, _ in control_rows],
+                                              harness_mutation_names(basename, tree))
+                             + refusals),
             })
         return {"harnesses": rows, "corpusFilesEmptied": emptied}
     finally:
@@ -609,6 +803,115 @@ def _selftest(fast=False, repository=ROOT):
         == [],
     )
 
+    # --- T-306: the shapes are DECLARED per harness, not guessed over all of them -----------
+    #
+    # `parse_rows` tried all eight patterns against every line, first match wins, so a harness
+    # that changed to ANOTHER harness's shape was read silently with different semantics.  Three
+    # collisions in two iterations came of the format being guessed; the declaration lives in
+    # `P-31`'s own table, which is already gated against becoming a census that stopped.
+    check(
+        "T-306 a harness parsed with its OWN declared shape reads its rows",
+        parse_rows("killed   3   the leaf derivation removed", ("killed-n",))
+        == [("the leaf derivation removed", 3)],
+    )
+    check(
+        "T-306 and the SAME line parsed under a different harness's declared shape reads NOTHING "
+        "— which is what makes a changed output a refusal instead of a silent reading",
+        parse_rows("killed   3   the leaf derivation removed", ("killed-by",)) == [],
+    )
+    check(
+        "T-306 an undeclared shape is COUNTED, so the refusal can name what happened rather "
+        "than saying the harness printed no row",
+        undeclared_shape_rows("killed   3   a row\nkilled by 1 named test(s)  another",
+                              ("killed-n",)) == 1,
+    )
+    check(
+        "T-306 a harness printing only its declared shapes has no undeclared rows",
+        undeclared_shape_rows("killed   3   a row", ("killed-n",)) == 0,
+    )
+    check(
+        "T-306 a row in an undeclared shape is a REFUSAL",
+        shape_refusals("killed by 1 named test(s)  a row", ("killed-n",)) != [],
+    )
+    check(
+        "T-306 a DECLARED shape that the harness never printed is a refusal too — a declaration "
+        "that has stopped being true is how a registry rots (C-0182)",
+        shape_refusals("killed   3   a row", ("killed-n", "kind-row")) != [],
+    )
+    check(
+        "T-306 but a SURVIVOR shape is CONTINGENT and its absence is not a defect: it prints "
+        "only when a mutation survives, and this corpus has none",
+        shape_refusals("killed   3   a row", ("killed-n", "survived")) == [],
+    )
+    check(
+        "T-306 the survivor shapes are DERIVED from the census's own table — the `zero` kind — "
+        "and not a second list that could fall behind it",
+        SURVIVOR_ONLY_SHAPES == {"survived", "survives"},
+    )
+    check(
+        "T-306 a BY-HAND declaration is not a row shape and asks nothing of the output",
+        shape_refusals("usage: tools/h.py <snapshot-dir>", (BY_HAND,)) == [],
+    )
+
+    # --- T-306, the FOURTH collision: the label a row carries must be the MUTATION'S NAME -----
+    #
+    # `tools/T-298-mutation-test.py` printed `killed by N named test(s)  <name padded>  <killers>`
+    # and the `killed-by` shape captures everything after the count -- so the label was the name
+    # PLUS the names of the tests that failed, which differ between the two arms.  The census duly
+    # reported *row labels drift*, refused the harness, and printed `0` in a count column, which
+    # reads exactly like a harness with nothing to measure.  That row format was iteration 47's
+    # own repair of collision (3): the harness was moved to a declared shape and the move
+    # introduced this.  The check below would have caught it in the CONTROL ARM ALONE, at
+    # authoring time, with no drift needed -- the label is compared against the harness's own
+    # mutation table, which `P-31`'s adapter already reads.
+    check(
+        "T-306 a label that IS the mutation's own name is clean",
+        label_refusals(["the rule removed"], ("the rule removed", "another")) == [],
+    )
+    check(
+        "T-306 a TRUNCATED label is clean, because a harness pads its name into a column",
+        label_refusals(["the rule remo"], ("the rule removed",)) == [],
+    )
+    check(
+        "T-306 a NARROW/WIDEN kind prefix is not part of the name and is stripped before the "
+        "comparison",
+        label_refusals(["WIDEN the rule removed"], ("the rule removed",)) == [],
+    )
+    check(
+        "T-306 a mutation NAME that itself opens with NARROW is not mangled by the kind-prefix "
+        "stripping — four of T-289's own rows are named for the direction they go in, and the "
+        "census refused that whole harness on its first real run",
+        label_refusals(["NARROW the status column back to the LAST cell"],
+                       ("NARROW the status column back to the LAST cell",)) == [],
+    )
+    check(
+        "T-306 a label carrying the KILLERS after the name is refused — the fourth collision, "
+        "caught in the control arm alone with no drift needed",
+        label_refusals(["the rule removed        trace-answers a; trace-answers b"],
+                       ("the rule removed",)) != [],
+    )
+    check(
+        "T-306 an EMPTY label is refused rather than matching every name by prefix",
+        label_refusals([""], ("the rule removed",)) != [],
+    )
+    check(
+        "T-306 a harness whose shape supplies no mutation names is not checked, because there "
+        "is nothing to check it against",
+        label_refusals(["anything at all"], ()) == [],
+    )
+
+    # --- T-306: a drift report must SHOW the difference it is reporting -----------------------
+    check(
+        "T-306 a drift refusal names the position the two labels first differ at, because both "
+        "were truncated to 40 characters and printed identical",
+        "differ at character 41" in drift_refusal("a" * 40 + "X", "a" * 40 + "Y"),
+    )
+    check(
+        "T-306 and it carries the two TAILS from that position, not the two identical heads",
+        "'X'" in drift_refusal("a" * 40 + "X", "a" * 40 + "Y")
+        and "'Y'" in drift_refusal("a" * 40 + "X", "a" * 40 + "Y"),
+    )
+
     # --- the harness's own count, parsed rather than transcribed ---
     check(
         "T-295 a `# N mutation(s)` summary states the count",
@@ -718,11 +1021,45 @@ def _selftest(fast=False, repository=ROOT):
         "T-295 row labels that DRIFT between the arms are refused: the two readings would "
         "otherwise be paired by position across two different tables",
         reconcile([("a", 1)], [("b", 0)], 1) == ([], [
-            "row labels drift between the two arms: 'a' against 'b'"]),
+            "row labels differ at character 1: control 'a' against treatment 'b'"]),
     )
     check(
-        "T-295 a harness that printed nothing this census can read is refused",
-        reconcile([], [], None)[1] != [],
+        "T-295 a harness that printed nothing this census can read is refused — read with a "
+        "STATED count of zero, so that only the empty-rows guard can be what refuses it",
+        reconcile([], [], 0)[1] != [],
+    )
+    check(
+        "T-306 a harness that states NO count of its own is refused, because a partial shape "
+        "change then drops the same rows from both arms and nothing can see it",
+        reconcile([("a", 1)], [("a", 1)], None)[1] != [],
+    )
+    check(
+        "T-306 and the hole is real rather than hypothetical: two SHORT arms of equal length "
+        "with no stated count reconciled CLEANLY before this",
+        reconcile([("a", 1), ("b", 1)], [("a", 1), ("b", 1)], 2)[1] == [],
+    )
+    check(
+        "T-306 a BY-HAND declaration and a harness that RAN disagree, and the declaration is "
+        "the stale one",
+        by_hand_refusals(declared=True, derived=False) != [],
+    )
+    check(
+        "T-306 a harness that printed a usage line and is NOT declared BY-HAND is a defect in "
+        "the other direction — derived and declared are cross-checked, C-0182's registry",
+        by_hand_refusals(declared=False, derived=True) != [],
+    )
+    check(
+        "T-306 the by-hand short circuit needs BOTH the declaration and the derivation: either "
+        "half alone would let this census skip a harness it should be reading",
+        treat_as_by_hand(True, True)
+        and not treat_as_by_hand(True, False)
+        and not treat_as_by_hand(False, True)
+        and not treat_as_by_hand(False, False),
+    )
+    check(
+        "T-306 and the two agreeing, either way, is clean",
+        by_hand_refusals(declared=True, derived=True) == []
+        and by_hand_refusals(declared=False, derived=False) == [],
     )
 
     # --- the exit code, which is the wiring ---
@@ -954,9 +1291,15 @@ def main(argv):
         for mutation in row["mutations"]:
             counts[mutation["verdict"]] += 1
             total[mutation["verdict"]] += 1
+        # A REFUSED harness has no readings, and `0` in a COUNT column reads exactly like a
+        # harness with nothing to measure -- which is how `T-298`'s ten uncensused mutations
+        # printed as a clean row of zeros.  `C-0182`'s third state, met in a table.
         print("{:<34} {:>9} {:>8} {:>7} {:>8}".format(
-            row["harness"], len(row["mutations"]), counts["FIXTURE"], counts["CORPUS"],
-            counts["SURVIVOR"] + counts["REVIVED"]))
+            row["harness"],
+            "REFUSED" if row["refusals"] else len(row["mutations"]),
+            "-" if row["refusals"] else counts["FIXTURE"],
+            "-" if row["refusals"] else counts["CORPUS"],
+            "-" if row["refusals"] else counts["SURVIVOR"] + counts["REVIVED"]))
     by_hand = [row["harness"] for row in reading["harnesses"] if row.get("byHand")]
     if by_hand:
         print("# BY HAND, not censused and NOT a defect: {} — each printed its own usage line, so "

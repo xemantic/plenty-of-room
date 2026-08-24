@@ -165,6 +165,9 @@ def main():
         for description in failed:
             print(f"          {description}")
     silent = [tests[index][2] for index, count in failures_by_test.items() if count == 0]
+    # `T-306`: the row count, for `tools/T-295-mutation-input-census.py`, which cannot see a
+    # partial shape change in a harness that states none.
+    print(f"# {len(rows)} mutation(s), {total_bad} survivor(s)")
     print(f"-- {len(tests) - len(silent)} of {len(tests)} rows are reached by some mutation --")
     for description in silent:
         print(f"     UNREACHED: {description}")

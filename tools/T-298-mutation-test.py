@@ -142,10 +142,16 @@ def main():
     work = tempfile.mkdtemp(prefix="T-298-mutation.")
     try:
         shutil.copytree(os.path.join(ROOT, "tools"), os.path.join(work, "tools"))
-        code, named = _run(work)
-        if code != 0:
+        # `T-306`.  The local is NAMED for what it is because `tools/P-31-harness-census.py`
+        # DERIVES `measuresBaseline` from a harness's own identifiers -- a comment or a string
+        # saying *baseline* is exactly the thing that is not a measurement.  This harness measured
+        # one and named nothing, so the census read `base: NO` about a harness that refuses
+        # outright on a red baseline, which is stronger than subtracting.  The harness moved, not
+        # the derivation: the same choice `T-306`'s third collision records.
+        baseline_code, baseline_failures = _run(work)
+        if baseline_code != 0:
             print("BASELINE IS NOT GREEN -- nothing below is a measurement")
-            for name in named:
+            for name in baseline_failures:
                 print("   baseline failure:", name)
             return 2
         print("baseline: green, 0 named failures")
@@ -177,8 +183,14 @@ def main():
             if code == 0:
                 print("%-8s %-58s %s" % ("SURVIVES", name, "no named test failed"))
             else:
-                print("killed by %d named test(s)  %-46s %s"
-                      % (len(named), name, "; ".join(named[:3]) or "-"))
+                # `T-306`, the FOURTH collision.  The killers go on their OWN lines: printed
+                # after the name on the row, they are captured as part of the LABEL by the
+                # `killed-by` shape, they differ once the corpus is emptied, and
+                # `tools/T-295-mutation-input-census.py` refuses the whole harness for *row
+                # labels drift*.  A row carries its name and nothing after it.
+                print("killed by %d named test(s)  %s" % (len(named), name))
+                for failing in named[:3]:
+                    print("        FAIL: %s" % failing)
         print("# %d mutation(s), %d survivor(s)" % (len(MUTATIONS), survivors))
         return 1 if survivors else 0
     finally:

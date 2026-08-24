@@ -189,21 +189,26 @@ MUTATIONS = [
         "the stated-count cross-check is dropped, so a harness that changes its output silently "
         "loses rows instead of refusing",
         CENSUS,
-        "    if stated is not None and stated != len(control_rows):\n"
+        # Re-anchored by `T-306`, which made the stated count MANDATORY: the `if stated is
+        # not None` head became `elif stated !=`, so the text this row replaced moved.  The
+        # mutation is unchanged -- the cross-check is made unreachable and the row must still
+        # fail a named test.
+        "    elif stated != len(control_rows):\n"
         '        refusals.append("the harness states %d mutations and this census read %d rows"\n'
         "                        % (stated, len(control_rows)))",
-        "    if stated is not None and stated == -1:\n"
+        "    elif stated == -1:\n"
         '        refusals.append("unreachable")',
     ),
     (
         "row labels are not compared, so two different tables are paired by position",
         CENSUS,
+        # Re-anchored by `T-306`, which extracted the message into `drift_refusal` so that a
+        # report could stop truncating away the difference it reports.  The mutation is
+        # unchanged: the comparison is disabled and the row must still fail a named test.
         "        if label != other:\n"
-        '            return [], ["row labels drift between the two arms: %r against %r"\n'
-        "                        % (label[:40], other[:40])]",
+        "            return [], [drift_refusal(label, other)]",
         "        if False:\n"
-        '            return [], ["row labels drift between the two arms: %r against %r"\n'
-        "                        % (label[:40], other[:40])]",
+        "            return [], [drift_refusal(label, other)]",
     ),
     (
         "an empty control reading is not a refusal, so a harness this census cannot read at all "
