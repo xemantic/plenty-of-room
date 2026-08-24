@@ -6,12 +6,12 @@
   "task": "P-22",
   "claim": "C-0082",
   "what": "The reader graph over gpd/results/, derived from the Kotlin sources rather than grepped. A read is a result-file string literal in the argument list of a File(...) construction, propagated along top-level references; comments and prose strings are not reads. See tools/result-reader-census.py and CH-0092.",
-  "studyCount": 136,
+  "studyCount": 140,
   "helperCount": 3,
-  "resultFileCount": 178,
+  "resultFileCount": 186,
   "declaringStudyCount": 13,
   "transitiveEdgeCount": 27,
-  "directEdgeCount": 154,
+  "directEdgeCount": 164,
   "studies": {
     "HelloWorldApp.kt": {
       "reads": [],
@@ -4754,6 +4754,58 @@
         "tile/HoneycombStationLattice.kt"
       ]
     },
+    "tile/HoneycombTetheredRegradeStudy.kt": {
+      "reads": [
+        "T-263-honeycomb-grillage-regrade.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-263-honeycomb-grillage-regrade.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-299-tethered-raster-turn-regrade.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/DropoutRobustPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/SharedBodyCoupling.kt",
+        "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "environment/RegimeSet.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/BandedCholesky.kt",
+        "structure/Cholesky.kt",
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/HoneycombTurnLoop.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/CoupledFourLayer.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombCoupledTile.kt",
+        "tile/HoneycombFaceLattice.kt",
+        "tile/HoneycombGrillage.kt",
+        "tile/HoneycombRasterTurnTethers.kt",
+        "tile/HoneycombRasterTurnTies.kt",
+        "tile/HoneycombStationLattice.kt",
+        "tile/HoneycombTiedRegrade.kt",
+        "tile/HoneycombTwoLengthRaster.kt"
+      ]
+    },
     "tile/HoneycombTiedRegradeStudy.kt": {
       "reads": [
         "T-263-honeycomb-grillage-regrade.json",
@@ -4853,6 +4905,60 @@
         "tile/HoneycombTwoLengthRaster.kt"
       ]
     },
+    "tile/LinkStiffnessThresholdStudy.kt": {
+      "reads": [
+        "T-297-the-common-mode-is-the-link.json",
+        "T-299-tethered-raster-turn-regrade.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-297-the-common-mode-is-the-link.json",
+        "T-299-tethered-raster-turn-regrade.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-303-what-link-stiffness-the-recovery-needs.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/AnchorElement.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/DropoutRobustPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/SharedBodyCoupling.kt",
+        "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "environment/RegimeSet.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/BandedCholesky.kt",
+        "structure/Cholesky.kt",
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/CoupledFourLayer.kt",
+        "tile/CrossoverCommonMode.kt",
+        "tile/CrossoverLinkStiffness.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombFaceLattice.kt",
+        "tile/HoneycombGrillage.kt",
+        "tile/HoneycombRasterTurnTies.kt",
+        "tile/HoneycombStationLattice.kt",
+        "tile/HoneycombTiedRegrade.kt",
+        "tile/HoneycombTwoLengthRaster.kt"
+      ]
+    },
     "tile/ObliqueRootStudy.kt": {
       "reads": [
         "T-3b-tile-edge-load-profile.json"
@@ -4895,6 +5001,63 @@
         "tile/FourLayerTile.kt",
         "tile/HoneycombStationLattice.kt",
         "tile/ObliqueRoot.kt"
+      ]
+    },
+    "tile/RasterTurnAnchorAzimuthStudy.kt": {
+      "reads": [
+        "T-246-forced-scaffold-crossover-price.json",
+        "T-263-honeycomb-grillage-regrade.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-246-forced-scaffold-crossover-price.json",
+        "T-263-honeycomb-grillage-regrade.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-304-raster-turn-anchor-azimuth.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/DropoutRobustPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/SharedBodyCoupling.kt",
+        "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "environment/RegimeSet.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/BandedCholesky.kt",
+        "structure/Cholesky.kt",
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/HoneycombTurnLoop.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/CoupledFourLayer.kt",
+        "tile/ForcedCrossoverPrice.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombCoupledTile.kt",
+        "tile/HoneycombFaceLattice.kt",
+        "tile/HoneycombGrillage.kt",
+        "tile/HoneycombRasterTurnTethers.kt",
+        "tile/HoneycombRasterTurnTies.kt",
+        "tile/HoneycombStationLattice.kt",
+        "tile/HoneycombTiedRegrade.kt",
+        "tile/HoneycombTwoLengthRaster.kt",
+        "tile/RasterTurnAnchorAzimuth.kt",
+        "tile/RasterTurnPrestrainSign.kt"
       ]
     },
     "tile/RasterTurnPrestrainSignStudy.kt": {
@@ -5039,6 +5202,50 @@
         "tile/HoneycombTwoLengthRaster.kt",
         "tile/RasterTurnPrestrainSign.kt",
         "tile/RasterTurnTwistEigenstrain.kt"
+      ]
+    },
+    "tile/UniformRasterTetherStudy.kt": {
+      "reads": [
+        "T-304-raster-turn-anchor-azimuth.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-304-raster-turn-anchor-azimuth.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-307-uniform-raster-tether-spans.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "coupling/UniformityBudget.kt",
+        "environment/Regime.kt",
+        "environment/RegimeSet.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/BandedCholesky.kt",
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/HoneycombTurnLoop.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/ForcedCrossoverPrice.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombFaceLattice.kt",
+        "tile/HoneycombGrillage.kt",
+        "tile/HoneycombRasterTurnTethers.kt",
+        "tile/HoneycombRasterTurnTies.kt",
+        "tile/RasterTurnAnchorAzimuth.kt",
+        "tile/RasterTurnPrestrainSign.kt",
+        "tile/UniformRasterTetherSpans.kt"
       ]
     },
     "window/DesignWindowStudy.kt": {
@@ -5803,6 +6010,7 @@
     ],
     "T-246-forced-scaffold-crossover-price.json": [
       "tile/HoneycombGrillageStudy.kt",
+      "tile/RasterTurnAnchorAzimuthStudy.kt",
       "tile/RasterTurnPrestrainStudy.kt"
     ],
     "T-25-window-resynthesis.json": [
@@ -5819,7 +6027,9 @@
     ],
     "T-263-honeycomb-grillage-regrade.json": [
       "structure/DrawableRaggedFaceStudy.kt",
-      "tile/HoneycombTiedRegradeStudy.kt"
+      "tile/HoneycombTetheredRegradeStudy.kt",
+      "tile/HoneycombTiedRegradeStudy.kt",
+      "tile/RasterTurnAnchorAzimuthStudy.kt"
     ],
     "T-267-mechanics-on-imported-design.json": [
       "design/SimulatedTileCensusStudy.kt"
@@ -5833,10 +6043,19 @@
     "T-291-common-mode-departure-and-beam-twist.json": [
       "tile/CommonModeLinkStudy.kt"
     ],
+    "T-297-the-common-mode-is-the-link.json": [
+      "tile/LinkStiffnessThresholdStudy.kt"
+    ],
+    "T-299-tethered-raster-turn-regrade.json": [
+      "tile/LinkStiffnessThresholdStudy.kt"
+    ],
     "T-3-stroke-and-blocking-force.json": [
       "coupling/OutputCouplingStudy.kt",
       "synthesis/BufferRouteCensusStudy.kt",
       "window/DesignWindowStudy.kt"
+    ],
+    "T-304-raster-turn-anchor-azimuth.json": [
+      "tile/UniformRasterTetherStudy.kt"
     ],
     "T-3b-tile-edge-load-profile.json": [
       "anchoring/ArmSlabClearanceStudy.kt",
@@ -5885,12 +6104,16 @@
       "tile/HoneycombGrillageStudy.kt",
       "tile/HoneycombPlacementStudy.kt",
       "tile/HoneycombStationLatticeStudy.kt",
+      "tile/HoneycombTetheredRegradeStudy.kt",
       "tile/HoneycombTiedRegradeStudy.kt",
       "tile/HoneycombTwoLengthStudy.kt",
+      "tile/LinkStiffnessThresholdStudy.kt",
       "tile/ObliqueRootStudy.kt",
+      "tile/RasterTurnAnchorAzimuthStudy.kt",
       "tile/RasterTurnPrestrainSignStudy.kt",
       "tile/RasterTurnPrestrainStudy.kt",
       "tile/RasterTurnTwistPriceStudy.kt",
+      "tile/UniformRasterTetherStudy.kt",
       "window/SecondResynthesisStudy.kt",
       "window/WindowResynthesisStudy.kt"
     ],
@@ -6326,11 +6549,23 @@
     "T-297-the-common-mode-is-the-link.json": [
       "tile/CommonModeLinkStudy.kt"
     ],
+    "T-299-tethered-raster-turn-regrade.json": [
+      "tile/HoneycombTetheredRegradeStudy.kt"
+    ],
     "T-3-stroke-and-blocking-force.json": [
       "actuator/StrokeAndBlockingForceStudy.kt"
     ],
     "T-30-flexure-end-joint.json": [
       "anchoring/FlexureEndJointStudy.kt"
+    ],
+    "T-303-what-link-stiffness-the-recovery-needs.json": [
+      "tile/LinkStiffnessThresholdStudy.kt"
+    ],
+    "T-304-raster-turn-anchor-azimuth.json": [
+      "tile/RasterTurnAnchorAzimuthStudy.kt"
+    ],
+    "T-307-uniform-raster-tether-spans.json": [
+      "tile/UniformRasterTetherStudy.kt"
     ],
     "T-3a-nonlinear-pb-profile.json": [
       "electrostatics/NonlinearPbProfileStudy.kt"
@@ -6531,6 +6766,7 @@
     "T-252-a-quoted-number-has-no-link-back.json",
     "T-253-honeycomb-grillage.json",
     "T-254-raster-turn-prestrain.json",
+    "T-255-cadnano-gallery-forced-crossovers.json",
     "T-258-drawable-ragged-face.json",
     "T-260-partial-discharge-predicate.json",
     "T-261-a-price-on-an-adjudicated-challenge.json",
@@ -6557,8 +6793,15 @@
     "T-295-mutation-input-census.json",
     "T-296-zero-loop-raster-turn.json",
     "T-297-the-common-mode-is-the-link.json",
+    "T-298-a-challenges-status-row-is-the-authority.json",
+    "T-299-tethered-raster-turn-regrade.json",
     "T-3-stroke-and-blocking-force.json",
     "T-30-flexure-end-joint.json",
+    "T-300-a-length-is-not-a-provenance.json",
+    "T-302-si-staple-order.json",
+    "T-303-what-link-stiffness-the-recovery-needs.json",
+    "T-304-raster-turn-anchor-azimuth.json",
+    "T-307-uniform-raster-tether-spans.json",
     "T-3a-nonlinear-pb-profile.json",
     "T-3b-tile-edge-load-profile.json",
     "T-4-maximum-usable-bias.json",
@@ -6612,6 +6855,7 @@
     "T-249-unrounded-prose-interpolations.json",
     "T-250-prose-interpolation-sweep.json",
     "T-252-a-quoted-number-has-no-link-back.json",
+    "T-255-cadnano-gallery-forced-crossovers.json",
     "T-260-partial-discharge-predicate.json",
     "T-261-a-price-on-an-adjudicated-challenge.json",
     "T-262-width-restatement-predicate.json",
@@ -6629,6 +6873,9 @@
     "T-293-a-name-cannot-govern-a-token.json",
     "T-295-mutation-input-census.json",
     "T-296-zero-loop-raster-turn.json",
+    "T-298-a-challenges-status-row-is-the-authority.json",
+    "T-300-a-length-is-not-a-provenance.json",
+    "T-302-si-staple-order.json",
     "T-9-crossover-hinge-constant.json"
   ],
   "missingResultFiles": [],
@@ -6834,12 +7081,16 @@
         "tile/HoneycombGrillageStudy.kt",
         "tile/HoneycombPlacementStudy.kt",
         "tile/HoneycombStationLatticeStudy.kt",
+        "tile/HoneycombTetheredRegradeStudy.kt",
         "tile/HoneycombTiedRegradeStudy.kt",
         "tile/HoneycombTwoLengthStudy.kt",
+        "tile/LinkStiffnessThresholdStudy.kt",
         "tile/ObliqueRootStudy.kt",
+        "tile/RasterTurnAnchorAzimuthStudy.kt",
         "tile/RasterTurnPrestrainSignStudy.kt",
         "tile/RasterTurnPrestrainStudy.kt",
         "tile/RasterTurnTwistPriceStudy.kt",
+        "tile/UniformRasterTetherStudy.kt",
         "window/DesignWindowStudy.kt",
         "window/SecondResynthesisStudy.kt",
         "window/WindowResynthesisStudy.kt"
@@ -6953,8 +7204,12 @@
         "T-284-turn-prestrain-sign.json",
         "T-291-common-mode-departure-and-beam-twist.json",
         "T-297-the-common-mode-is-the-link.json",
+        "T-299-tethered-raster-turn-regrade.json",
         "T-3-stroke-and-blocking-force.json",
         "T-30-flexure-end-joint.json",
+        "T-303-what-link-stiffness-the-recovery-needs.json",
+        "T-304-raster-turn-anchor-azimuth.json",
+        "T-307-uniform-raster-tether-spans.json",
         "T-3a-nonlinear-pb-profile.json",
         "T-3b-tile-edge-load-profile.json",
         "T-4-maximum-usable-bias.json",
