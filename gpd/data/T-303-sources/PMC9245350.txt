@@ -1,0 +1,952 @@
+                                                                                                                                                            Article
+www.acsnano.org
+
+
+
+Probing the Mechanical Properties of DNA
+Nanostructures with Metadynamics
+Will T. Kaufhold,* Wolfgang Pfeifer, Carlos E. Castro, and Lorenzo Di Michele*
+      Cite This: ACS Nano 2022, 16, 8784−8797                                      Read Online
+
+
+ACCESS                       Metrics & More                            Article Recommendations               *
+                                                                                                             sı Supporting Information
+
+
+ABSTRACT: Molecular dynamics simulations are often used to
+provide feedback in the design workﬂow of DNA nanostruc-
+tures. However, even with coarse-grained models, the
+convergence of distributions from unbiased simulation is
+slow, limiting applications to equilibrium structural properties.
+Given the increasing interest in dynamic, reconﬁgurable, and
+deformable devices, methods that enable eﬃcient quantiﬁcation
+of large ranges of motion, conformational transitions, and
+mechanical deformation are critically needed. Metadynamics is
+an automated biasing technique that enables the rapid
+acquisition of molecular conformational distributions by
+ﬂattening free energy landscapes. Here we leveraged this
+approach to sample the free energy landscapes of DNA
+nanostructures whose unbiased dynamics are nonergodic, including bistable Holliday junctions and part of a bistable DNA
+origami structure. Taking a DNA origami-compliant joint as a case study, we further demonstrate that metadynamics can
+predict the mechanical response of a full DNA origami device to an applied force, showing good agreement with experiments.
+Our results exemplify the eﬃcient computation of free energy landscapes and force response in DNA nanodevices, which
+could be applied for rapid feedback in iterative design workﬂows and generally facilitate the integration of simulation and
+experiments. Metadynamics will be particularly useful to guide the design of dynamic devices for nanorobotics, biosensing, or
+nanomanufacturing applications.
+KEYWORDS: Metadynamics, Molecular simulation, Molecular dynamics, DNA nanotechnology, DNA origami
+
+
+INTRODUCTION                                                                  probes,19,23,24 drug delivery vectors,25 and nanoreactors.26
+In structural DNA nanotechnology, a collection of DNA                         The motion of origami nanomachines can be constrained to
+                                                                              occur along given axes, and conﬁgurational distributions can
+sequences is chosen to form a desired structure via molecular
+                                                                              feature multiple stable states separated by energy barriers.12,27
+self-assembly.1,2 Such DNA constructs often have a single well-
+                                                                                 Molecular modeling has become a key element in the design
+deﬁned free energy minimum, corresponding to geometries
+                                                                              workﬂow of DNA nanostructures, with the two most common
+like ribbons,3 tiles,4 square, or honeycomb arrangements of
+                                                                              approaches being ﬁnite-element modeling and Molecular
+helices,5,6 or brick-like voxel arrays of short DNA oligonucleo-
+                                                                              Dynamics (MD). Finite-element frameworks, such as
+tides.7 These unimodal structures (i.e., having one primary
+                                                                              Cando28 and SNUPI,29 describe DNA helices as elastic rods
+conﬁguration in space) have been translated to applications
+                                                                              and apply continuum mechanics to predict the equilibrium
+where structural rigidity is importantin ﬁducials for super-
+                                                                              structure and its deformation modes. The latter are, however,
+resolution microscopy,8 as scaﬀolds to visualize biomolecular
+                                                                              only accurate in describing small deformations, and they
+processes,9 or as nanopores for single-molecule detection.10                  become poor approximations when the structure deforms
+   With the DNA origami technique, a bacteriophage genome                     signiﬁcantly or has multiple stable states. Additionally, these
+and synthetic oligonucleotides coassemble to create near-
+arbitrary shapes.4−6,11 DNA origami has emerged as a
+dominant approach in nanoscale structural design, and it                      Received: October 12, 2021
+unlocked the manufacture of nanostructures programmed to                      Accepted: April 25, 2022
+perform complex motion,12−14 for example, hinges,15 pistons,16                Published: May 17, 2022
+interlocked axles and sliders,16,17 and rotors.18−20 These
+deformable elements have formed the basis of stimuli-
+responsive materials, 2 1 sensors, 2 2 single-molecule
+                                    © 2022 The Authors. Published by
+                                          American Chemical Society                                               https://doi.org/10.1021/acsnano.1c08999
+                                                                       8784                                                ACS Nano 2022, 16, 8784−8797
+ACS Nano                                                     www.acsnano.org                                                                  Article
+
+continuum approaches lack the resolution to describe                        sampled states. This process encourages iteratively wider
+molecular processes such as formation and dissociation of                   exploration of the state space, eventually enabling transitions
+base pairing and stacking bonds, which may be critical for the              over the free energy barriers separating local minima. Even for
+behavior of dynamic devices.                                                systems with a single free energy minimum, MetaD enables
+   Conversely, MD infers mechanical properties by an explicit               sampling of high free energy states, an ability that would be
+simulation of the system’s Newtonian dynamics. Atomistic                    particularly useful to probe force-response in DNA nano-
+simulations of DNA nanostructures may take weeks to                         machines and mechanical sensors.12,49−51 MetaD simulations
+complete,30 motivating the development of coarse-grained                    can beneﬁt from graphics processing unit (GPU) acceleration
+models such as the multiresolution DNA (MrDNA) frame-                       and a natural parallelization route through multiwalker
+work31 and oxDNA.32                                                         metadynamics.52 The well-tempered variant of MetaD53 limits
+   Thanks to its ability to accurately represent nucleotide                 the maximum correction to the free energy landscape,
+stacking and base pairing, the oxDNA force ﬁeld32,33 has                    preventing irreversible disassembly. Finally, there is no need
+succeeded in replicating various phenomena, including kinking               to run simulations with multiple thermodynamic windows, as
+in duplexes34,35 and force-induced unravelling of origami,36                in umbrella sampling, simplifying execution and postprocessing
+and has been applied to predict conformational distributions of             and eliminating some concerns about hysteresis.54
+origami mechanical elements.37,38 As a result, oxDNA is now                    Here we introduce an implementation of well-tempered
+frequently used as part of iterative nanostructure design                   MetaD in the oxDNA simulation framework, which oﬀers a
+workﬂows.13,39                                                              viable route for the rapid assessment of conformation free
+   However, even coarse-grained simulations can be impracti-                energy landscapes in DNA nanotechnology. To demonstrate
+cally slow,38 and without ad hoc biasing techniques they can                the validity of the technique we applied it to four case studies
+only sample conﬁgurations with free energy within a few kBT                 where conventional MD would be unable to probe the relevant
+away from the minima. Additionally, trajectories can become                 landscapes: (i) the compression-induced buckling in duplex
+trapped in local minima, hindering complete sampling. As a                  DNA, (ii) conformer transitions in bistable Holliday
+result, coarse-grained simulations are often performed merely               junctions55 and (iii) switchable tiles,27 and (iv) force response
+to check for mechanical strain or undesired deformations,                   in an origami-compliant joint, where conformation is
+instead of quantitatively assessing the range of motion or the              prescribed by balancing competing forces.49 For systems (ii)
+forces required for actuation.                                              and (iv) we compared simulation outcomes with experimental
+   Various biasing techniques can be used to ﬂatten free energy             observations, ﬁnding quantitative agreement. Overall, we
+landscapes and accelerate sampling.40 These approaches use                  demonstrated that MetaD, as applied to oxDNA, can
+ﬁctitious forces along collective variables, which are low-                 eﬀectively sample transitions between multistable systems
+dimensional representations of conformational states. One                   and facilitate the computational characterization of highly
+such method, previously integrated with oxDNA,41 combines                   deformable designs, all in an automated fashion that requires
+steered MD with the use of the Jarzynski equality42 to                      limited system-speciﬁc user input. This tool could therefore be
+reconstruct free energy landscapes along a one-dimensional                  highly valuable in computer-assisted design and assessment
+(1D) reaction coordinate. This method is, however, unsuitable               pipelines for reconﬁgurable DNA nanostructures.
+for acquiring multidimensional landscapes, and its estimates
+are dominated by unlikely low-work trajectories, resulting in               RESULTS AND DISCUSSION
+diﬃcult-to-assess uncertainties.43                                             Principles of Metadynamics. Here, we give a brief
+   Shi et al.44 and, more recently, Wong et al.45 have                      overview of the principles and implementation of MetaD. A
+demonstrated that the integration of umbrella sampling with                 complete theoretical description can be found in Bussi et al.48
+oxDNA can enable the exploration of 1D and two-dimensional                  The objective of MetaD is to map a free energy landscape from
+(2D) free energy landscapes associated with the deformation                 a molecular simulation. As landscapes typically have high
+of origami, while this technique had been previously applied to             dimensionality, for human interpretation the free energy is
+exploring deformations in smaller nanostructures, including                 projected onto a set of lower-dimensional coordinates or
+duplex bending35 and junction ﬂexibility.46 Umbrella sampling               collective variables (s⃗), deﬁned as functions of the coordinates of
+relies on deﬁning multiple (partially) overlapping windows                  the simulated system (q⃗).
+across the space of the relevant collective variables, in order to             In principle, long trajectories sampled from Monte Carlo
+limit the scale of the free energy features that the system needs           (MC) or MD can be used to infer free energy landscapes from
+to thermally explore. A full free energy surface is then                    state-occupancy histograms. The projection of the free energy
+reconstructed by stitching together samples from the individual             onto a discretized coordinate s⃗0 can then be estimated as
+windows. While successful, this approach requires a system-                 ΔG(s⃗0) ≃ −kBT logN(s⃗0) + c, where c is an immaterial
+speciﬁc deﬁnition of the thermodynamic windows and                          constant, kB is the Boltzmann constant, T is the temperature,
+laborious postprocessing, making it challenging for nonexperts.             and N(s⃗0) is the number of samples in the histogram bin
+   Alternatively, a single biasing potential can be designed to             centered at s⃗0.56 However, convergence of this unbiased
+globally counteract the free energy proﬁle. However, that ideal             approach is practically unfeasible for many macromolecular
+bias is unknown at the outset; it must be initially set using               and DNA nanosystems owing to the presence of thermally
+intuition and then iteratively reﬁned in subsequent simulations.            inaccessible conﬁgurations that frequently separate multiple
+The fast-iteration limit of reﬁnement is an on-the-ﬂy update,               metastable minima.
+where an optimal bias is progressively learned in a single                     MetaD generates a history-dependent bias that progressively
+simulation rather than optimized through separate runsthis                 ﬂattens the free energy landscape, thus rendering high free
+is the idea behind metadynamics (MetaD).47,48                               energy regions accessible and enabling eﬃcient sampling.
+   In MetaD, a bias is constructed from the history of observed                A MetaD simulation proceeds as follows. The system is
+conﬁgurations, which discourages the revisiting of previously               initialized and simulated (with either MD or MC algorithms)
+                                                                     8785                                         https://doi.org/10.1021/acsnano.1c08999
+                                                                                                                           ACS Nano 2022, 16, 8784−8797
+ACS Nano                                                          www.acsnano.org                                                                  Article
+
+
+
+
+Figure 1. MetaD enables automated sampling of dsDNA buckling. (a) Snapshots of unbuckled (left, A) and buckled (right, B) conﬁgurations
+of a DNA duplex from a MetaD simulation. The buckled state features disrupted stacking roughly in the center of the duplex. The distance x
+between the centers of mass of the two collections of six cyan beads was used as the collective variable. (b) The time dependence of the bias
+Bt for a system with ΔT = 8T. Also plotted is ΔG, the unbiased potential experienced by the system (black dashed line). Bt is initially ﬂat, and
+then it builds up according the history of visited conﬁgurations (eq 1). (c) The simulation experiences a potential equal to ΔG + Bt − the
+uncorrected potential. As illustrated, the initial uncorrected potential is sharply varying, but then it progressively ﬂattens as the bias grows,
+enabling access to a wider x-range. Diﬀerent colors mark diﬀerent numbers of MD time steps, as indicated in the (b, c) legend. (d) Implied
+free energy from the asymptotic Bt, for varying ΔT (eq 3). ΔG(x) is plotted as a black dashed line. (e) Trajectories of the collective variable
+x for ΔT = 0 (ordinary MD), ΔT = 8T, and ΔT = 32T. (f) 2D free-energy landscape acquired from biased MD simulation. The y-axis
+indicates Ufourth least stack, which rises to 0 only if at least four nonterminal nucleotides lack stacksi.e., a buckled state. Locations marked as A
+and B correspond to the snapshots in (a).
+
+using a potential deﬁned as Ut(q⃗) = U(q⃗) + Bt(s⃗(q⃗)), where                  allowed to accumulate, with ΔT → ∞ approaching conven-
+U(q⃗) is the unbiased potential and Bt(s⃗(q⃗)) is the time-                     tional MetaD (constant w). Conversely, low values of ΔT
+dependent bias. The index t indicates the number of MetaD                       correspond to systems that quickly taper their bias, with the
+iterations performed, each iteration consisting of τ (MD orMC)                  ΔT → 0 limit corresponding to unbiased sampling. The value
+time steps. The bias is initialized as Bt=0(s⃗(q⃗)) = 0 and is                  of A controls the initial bias-height increment. ΔT and A are
+updated after each iteration to counteract the projection of the                set at the start of the simulation, alongside the other
+free energy onto s⃗. To calculate the updated bias, the                         parameters (σ and τ) and the collective variables. With well-
+instantaneous value of s⃗ is evaluated, termed s⃗t. The bias is                 tempererd MetaD, at long times, the value of Bt(s⃗) provably
+then updated through the addition of a Gaussian potential                       converges to a fraction of the projection of the free energy
+centered at s⃗t, which discourages the system from revisiting its               onto the collective variable (up to an immaterial constant, c).57
+
+                                     ij ( s ⃗ − s ⃗)2 yz
+current state.
+
+   Bt + 1( s ⃗) = Bt ( s ⃗) + w expjjj− t 2 zzz
+                                                                                                        ΔT
+                                      j                z
+                                                                                   lim Bt ( s ⃗) = −          ΔG( s ⃗) + c
+                                      k                {
+                                                                                   t →∞                ΔT + T                                            (3)
+                                             2σ                    (1)
+                                                                                An estimate of ΔG(s⃗) can therefore be acquired from the
+   In eq 1, σ is the width of the deposited Gaussian, while the
+                                                                                converged bias.58 Additionally, this equation illustrates the
+parameter w controls the rate at which the free energy wells are
+ﬁlled. In the earliest version of MetaD, also known as direct                   physical interpretation of ΔT. After convergence, the residual
+MetaD, w was set to a constant value,47 resulting in a Bt that                  (i.e., uncorrected) free energy felt by the system is Bt + ΔG=
+                                                                                   T
+oscillates rather than converging.48 Alternatively, convergence                 T + ΔT
+                                                                                       ΔG, implying that T + ΔT can be interpreted as the
+of Bt can be guaranteed by reducing w in areas that are already                                                                        48
+                                                                                eﬀective temperature experienced along a collective variable.
+strongly biased, an approach known as well-tempered                                While eq 3 enables one to estimate ΔG, a preferred route is
+metadynamics,53 which we adopt throughout this work. In                         that of directly extracting the sought free energy from
+well-tempered MetaD, the time-dependent amplitude of the
+                                                                                conﬁguration histograms of simulation runs biased with the
+
+               ij B ( s ⃗ ) yz
+Gaussian, wt, is given by
+
+   wt = A expjjj− t t zzz
+                                                                                asymptotic Bt. This approach will be used to derive free energy
+
+                j kBΔT z
+                                                                                landscapes in the remainder of this article, unless speciﬁed
+                k            {
+                                                                                otherwise.
+                                                                   (2)
+                                                                                   Supporting Information, Note 1 and Figure S1, demonstrate
+  In eq 2, ΔT is an additional hyperparameter with units of                     the implementation of MetaD with a basic one-dimensional
+temperature, which controls the strength of tempering. High                     example, while, in the reminder of this paper, we illustrate its
+values of ΔT correspond to weak tempering, where forces are                     applications to mapping deformation free energy landscapes
+                                                                         8786                                          https://doi.org/10.1021/acsnano.1c08999
+                                                                                                                                ACS Nano 2022, 16, 8784−8797
+ACS Nano                                                        www.acsnano.org                                                               Article
+
+
+
+
+Figure 2. MetaD enables sampling of the isomerization free energy landscape of bistable Holliday junctions. (a) A Holliday junction consists
+of two quasicontinuous duplexes joined by a crossover, as illustrated in the snapshot. There are two dominant conformers, one where the
+gray and red strands are fully stacked (left, isoI) and another where the orange and blue strands are fully stacked (right, isoII). An unstacked
+structure is believed to be the intermediate (center). (b) For MetaD simulations we used a two-dimensional collective variable, (x1, x2),
+where x1 is the distance between the centers of mass of the orange and blue sets of beads, while x2 is the distance between centers of mass of
+the red and gray beads. (c) A 5 × 107 time-step trajectory simulated under unbiased MD (left) and one of the same duration collected with
+MetaD (center), both overlaid with the (x1, x2) free energy proﬁle. Simulating over 10 times this period in MetaD results in many transitions
+between conformers, enabling accurate sampling of the free energy landscape (right). Dots of diﬀerent colors indicate sampled
+conﬁgurations. (d) Free energy surfaces corresponding to (i) the sequence-averaged model at 500 mM ionic strength and the sequence-
+speciﬁc model68 at (ii) 500 and (iii) 100 mM ionic strength. See Figure S3 for data on the sequence-speciﬁc model at 200 mM ionic strength.
+In each case, there are two minima, corresponding to the two stacked-X conformers, and a saddle-point region associated with the
+intermediate. (e) (top) Probabilities for the isoI and isoII states for the four studied systems (bars), compared with experimental values
+(dashed (isoI) and solid (isoII) black lines).69 (bottom) Free energies of the isoI, isoII (color-coded as in (d)) and intermediate states
+(black). The free energy of the intermediate falls by ∼7 kBT between the systems with 500 and 100 mM ionic strength, consistently the
+experimentally observed phenomenon of faster isomerization at low salt concentrations. Error bars are the standard error based on six
+replicas (too small to see for isoI and isoII).
+
+for increasingly complex DNA nanosystems, simulated with                       Bending and Buckling Free Energy of a DNA Duplex.
+MD and the coarse-grained oxDNA force ﬁeld.                                 In this section we demonstrate the application of MetaD to
+  Information on the implementation of MetaD in oxDNA                       coarse-grained oxDNA simulations using a simple case study:
+and speciﬁc simulation details for all case studies can be found            the response of double-stranded (ds) DNA under strong
+in the Methods section and Tables S1 and S2.                                bending. A similarly simple application is discussed in ref 61,
+  While the convergence of (well-tempered) MetaD is very                    which explores bubble formation in a basic bead-and-spring
+robust, the free parameters σ, A, and τ, alongside system-                  model of a DNA duplex.
+dependent features such as physical size, intrinsic diﬀusion                  dsDNA is often thought of as a Worm-Like Chain (WLC)
+times, and collective-variable dimensionality, have been shown              an elastic beam whose bending energy is quadratic in local
+to inﬂuence errors in free energy estimates and convergence                 curvature, much like a macroscopic beam. If the ends of such a
+time scales.59,60 In the Methods we discuss these factors and               duplex are compressed together, then the WLC model predicts
+other practical considerations that guided our parameter                    that the curvature will increase everywhere. However,
+choice.                                                                     experimental evidence indicates that, under a suﬃcient
+                                                                     8787                                         https://doi.org/10.1021/acsnano.1c08999
+                                                                                                                           ACS Nano 2022, 16, 8784−8797
+ACS Nano                                                         www.acsnano.org                                                                 Article
+
+compressive load, a short dsDNA duplex will not bend                            centered at smaller x and with U fourth least stack = 0,
+continuously. Instead it will buckle, and in this buckled state                 corresponding to the buckled duplex. Transitions between
+there will be a single point of high curvaturea kink.62                        the two minima are not eﬀortless even with ΔT = 32T, but
+Experimental observations of force-induced kinking have been                    good sampling is possible with many replicas that are run
+identiﬁed for a DNA-based molecular vice in ﬂuorimetry                          simultaneously, sharing and contributing to the same bias (see
+experiments,63 in the vulnerability of dsDNA minicircles to                     Methods).
+single-stranded (ss) DNA-speciﬁc enzymatic degradation,64                          ΔT can be used to control which parts of the free energy
+and also via atomic force microscopy (AFM) of said                              landscape should be explored and the trade-oﬀ between
+minicircles.65 Similarly, kink formation under conditions of                    sampling a large region of collective variable sparsely or a small
+end-to-end compression has also been observed in an atomistic                   region well. It can also be used to eliminate the sampling of
+simulation66 and with the oxDNA force ﬁeld.34,35 Both                           states that may be undesirable. For example, a low value of ΔT
+atomistic and coarse-grained simulations indicate that the                      could be used to prevent sampling of a kink formation if the
+origin of kinking is a local break in the continuity of coaxial                 objective were to identify only bending close to the free energy
+stacking in the helix34,35,66 and may be also associated with the               minimum.
+loss of a Watson−Crick bond. Here we have used sampling of                         Two-Dimensional Isomerization Landscape of Bista-
+DNA kinking as a simple test application of MetaD in oxDNA.                     ble Motifs. While in our ﬁrst case study a single collective
+   We wish to apply MetaD to calculate how free energy varies                   variable was suﬃcient to bias the simulation and extract the
+with the end-to-end distance of a short duplex DNA, which,                      sought information, it is often the case for (relatively) more
+due to the complex buckling transition, is impossible to                        complex DNA architectures that multidimentional free energy
+calculate analytically. Figure 1a shows snapshots of the                        landscapes need to be explored. To this end, Holliday junction
+unbuckled (left, A), and buckled (right, B) conﬁgurations of                    isomerization provides a useful case study. The immobile
+the duplex. The distance x between the centers of mass of the                   Holliday junction was the ﬁrst nontrivial DNA motif to be
+two collections of six cyan beads was used as a collective                      intentionally constructed,67 and it consists of four helices
+variable onto which the free energy is projected and the MetaD                  joined at a central four-way junction. Its conﬁguration in the
+bias Bt applied. In Figure 1b, the time evolution of Bt(x) was                  presence of divalent or high concentrations of monovalent
+plotted, along with reference free energy ΔG(x)the true                        cations is that of two quasi-continuous helices joined at a
+energetic cost to bend the duplex. The uncorrected potential                    strand crossover location. This is referred to as the stacked-X
+Bt(x) + ΔG(x), that is, the residual potential felt by the system,              conﬁguration55 and is shown in Figure 2a (left, right). In the
+progressively ﬂattens as Bt(x) evolves according to eqs 1 and 2                 absence of such cations, the construct acquires an unstacked
+to counteract ΔG(x) (Figure 1c).                                                planar conﬁguration, where each of the four arms can move
+   In the examples given in Figure 1b,c, the tempering                          ﬂexibly about the central junction (Figure 2a, center).55
+parameter ΔT (eq 2) was set to 8T, so that the bias converges                      Stacked-X Holliday junctions can exist in two conformers,
+     8                                                                          distinguished based on which of the four helices are stacked at
+to − 9 ΔG (eq 3); that is, the asymptotic uncorrected potential
+                                                                                the junction (Figure 2a, left and right). These conformers,
+is 1 of the true value. Figure 1d shows free energy implied                     previously referred to as isoI and isoII,55 are structurally
+   9
+according to eq 3 for diﬀerent values of ΔT, compared with the                  equivalent if the base sequence is ignored, while asymmetry of
+reference free energy (see Figure S2 for proof of convergence                   base pairs at the junction results in one conformer being
+of the biases). As expected, larger ΔT values produce accurate                  favored. In the presence of MgCl2, each conformer is long-
+estimates of ΔG away from the minimum.                                          livedsingle-molecule Förster Resonance Energy Transfer
+   In Figure 1e, the time-varying values of x are given for three               (FRET) experiments indicate lifetimes of milliseconds to
+diﬀerent values of ΔT. Under conventional MD (ΔT = 0,                           seconds.69 Consequently, sampling transitions between the
+blue), only the unbuckled state is sampled. When metady-                        two conformers is intractable with typical molecular-simulation
+namics is turned on (ΔT = 8T or 32T, yellow and green,                          approaches. For alternative representations of DNA, transition
+respectively), the bias repels the system from previously visited               sampling has required running the simulations at a vastly
+conﬁgurations, resulting in a wider exploration in the                          increased temperature70 or using a coarse-grained force ﬁeld
+unbuckled free energy minimum. From ∼5 × 107 MD time                            that overestimates the stability of the transition state.71 The
+steps, both biased systems begin exploring the buckled state at                 properties of the oxDNA representation of a Holliday junction
+smaller x-values, only brieﬂy for ΔT = 8T and more                              have been explored previously.46 However, transitions and
+persistently for ΔT = 32T. The latter simulation then                           sequence-dependent conformer probability have remained
+experiences frequent transitions between buckled and un-                        unexplored due to the nonergodicity of this system under
+buckled states.                                                                 conventional MD sampling. Here we show that, using a two-
+   In the one-dimensional free energy proﬁle projected along x,                 dimensional reaction coordinate, MetaD can successfully
+the conﬁgurations corresponding to the buckled and                              sample conformer transitions and determine the relative
+unbuckled states do not appear separated by a free-energy                       conformer stability.
+barrier. However, such a potential barrier exists and can be                       The particular structure investigated here is similar to the J3
+visualized along alternative coordinates, as shown with the two-                junction, previously characterized experimentally,69 with the
+dimensional free energy landscape in Figure 1f. Here, we                        only diﬀerence being that the dsDNA “arms” have been
+introduce a second collective variable, Ufourth least stack, deﬁned as          truncated to 11 base pairs (bp) to enable faster simulations
+the value of the fourth weakest stacking interaction, which we                  (see Table S3 for sequences). To favor the formation of an
+expect to increase as the duplex buckles and a kink forms.                      unstacked intermediate state, thus enabling transitions between
+Indeed, in Figure 1f we observe two distinct states: a broad                    conformers, we used a two-dimensional collective variable,
+minimum at large x and ﬁnite (negative) Ufourth least stack,                    corresponding to the two diagonal distances across the
+associated with the unbuckled duplex, and a second minimum                      Holliday junction (x1 and x2 in Figure 2b). In the stacked-X
+                                                                         8788                                        https://doi.org/10.1021/acsnano.1c08999
+                                                                                                                              ACS Nano 2022, 16, 8784−8797
+ACS Nano                                                       www.acsnano.org                                                              Article
+
+
+
+
+Figure 3. Metadynamics enables sampling of mechanically stressed states in DNA origami. (a) A mechanically compliant DNA origami joint,
+truncated here from its experimental realization.49 The cross section of the 18-helix bundle is also shown. The yellow beads were used as
+references in the bending angle ϕ (Figure 4). The collective variable x is deﬁned from the distance between the centers of mass of the top
+collection of six cyan particles and the six at the bottom. Individual staples and scaﬀold, whose routing is depicted in Figure S7, are color-
+coded in the right-hand-side image. (b) MD simulation (top) only samples around the free energy minimum of the compliant joint, yielding
+little information about the force required to actuate it. MetaD simulation (bottom) learns to sample a wider range of conﬁgurations. The
+illustrated trajectories correspond to approximately half the total time sampled in MetaD simulations. Diﬀerent colors indicate parallel
+replicas that, for MetaD, contribute to, and experience, the same bias potential. (c) Snapshots are illustrated from MD simulation (top) and
+MetaD simulation (bottom). (d) Time evolution of the MetaD bias Bt (solid lines). Letters refer to biases at simulation times corresponding
+to those illustrated in (b). The long time limit bias (ﬁnal) is also shown. The true free energy ΔG is shown as a dashed gray line with black
+1σ error bars (often too small to see). (e) The sum of ΔG and Btthe uncorrected potentialis plotted for diﬀerent simulation times. (f)
+Free energy proﬁles (continuous lines) as implied from Bt are plotted alongside ΔG (gray dashed, 1 σ error bars), demonstrating
+convergence. The thicker red curve in the bottom-right subpanel represents the free energy proﬁle as determined from direct sampling of
+unbiased trajectories in (b) (top).
+
+state, one of these distances takes a high value, corresponding            bias from MetaD. Illustrations of the similarity between the
+to the width of the junction, while the other takes a low value,           converged MetaD bias and the free energy from biased MD
+corresponding approximately to the axial rise of two base pairs.           simulation are given in Figure S3. Two diﬀerent constructs
+Meanwhile, the planar transition state corresponds to high                 were tested, one which ignores the base identity by using
+values of both collective variables.                                       sequence-averaged parameters and one utilizing the sequence-
+   To demonstrate the enhanced sampling made possible in                   dependent force ﬁeld.68 The former construct was simulated at
+MetaD versus conventional MD, in Figure 2c we plotted small                500 mM ionic strength, while the latter was simulated at three
+sections of trajectories for both techniques. While a trajectory           diﬀerent ionic strengths (500, 200, and 100 mM). As expected,
+simulated under MD remains stuck in a single minimum                       while the sequence-averaged calculations produce a symmetric
+(Figure 2c, left), using MetaD it is able to escape and sample             landscape, sequence dependence results in asymmetry, with
+several transitions (Figure 2c, center and right).                         one conformer being favored over the other. Additionally, we
+   Free energies projected onto the collective variables are               observe that the intermediate region between the two
+plotted in Figure 2d, as acquired from MD using an asymptotic              conformer minima ﬂattens at lower ionic strengths. This
+                                                                    8789                                        https://doi.org/10.1021/acsnano.1c08999
+                                                                                                                         ACS Nano 2022, 16, 8784−8797
+ACS Nano                                                     www.acsnano.org                                                               Article
+
+
+
+
+Figure 4. Metadynamics allows one to predict the mechanical response of a DNA origami to an external force. (a) Deﬁnition of the angle ϕ.
+Straight lines deﬁning the angle are those passing through the centers of mass of the groups of yellow beads nearest and furthest from the
+joint. See further details in the Methods. (b) The bending free energy proﬁle against ϕ as estimated with MD using the converged MetaD
+bias. (c) Renders of the ssDNA connections across the joint, as implemented experimentally.49 There are three short ssDNA sections
+(yellow) and three long sections (blue). (d) Free energy proﬁles of WLCs for each of the ssDNA distributions under study. (e) Predictions
+of mean compliant joint angle ⟨ϕ⟩ compared to those from TEM experiments.49 (f) Predictions of the standard deviation of angle width
+σ(ϕ) compared to those from TEM. Data points are color-coded as for the corresponding WLC free energy curves in (b). All error bars
+represent the standard errors evaluated from diﬀerent replicas, as discussed in the Methods; those in (e) are smaller than the symbols.
+
+region corresponds to the unstacked intermediate, which thus                  An association can be made between the stabilization of the
+appears to be favored by a reduction in salt concentration.                intermediate at lower ionic strengths and the increase in
+   Experiments indicate that, in conditions of 50 mM MgCl2                 conformer interconversion rate, deﬁned as sum of the rates of
+(ionic strength 150 mM), the J3 junction will display the isoII            isoI → isoII and isoII → isoI transitions.69 The latter, as
+conformer 77.4% of the time.69 In Figure 2e we show the                    determined experimentally for a junction of slightly diﬀerent
+simulated conformer probability for the four studied systems.              sequence, rises from 20 s−1 at 2 M Na+ to 800 s−1 at 400 mM
+For the sequence-speciﬁc model we ﬁnd that conformer                       Na+. A similar increase is observed in systems with magnesium
+probability is independent of ionic strength and in quantitative           counterions if their concentration is dropped from 100 mM
+agreement with experimental observations. This agreement                   (interconversion rate 10 s−1) to 7 mM (interconversion rate
+with experimental results is intriguing, as stacking interactions          500 s−1). By assuming a direct proportionality between the
+in oxDNA have not been parametrized to reproduce Holliday                  interconversion rate and the probability of the unstacked
+junction conformer prevalence but, instead, the melting                    intermediate, oxDNA would predict that reducing the ionic
+transitions of duplexes and hairpins based on the Santa-Lucia              strength from 500 to 200 mM would result in a sevenfold
+                                                                           increase in the isomerization rate, while reducing the ionic
+parameters.32,72 The reproduction of conformer probability is
+                                                                           strength further, to 100 mM, would accelerate isomerization by
+further validation of the oxDNA model of stacking. Deﬁnitions
+                                                                           a factor of 1000. However, we note that these considerations
+of the stacked and transition states are discussed in the
+                                                                           are purely qualitative and that rare-event sampling techniques,
+Methods.                                                                   which do not create ﬁctitious dynamics73 are typically required
+   Figure 2e (bottom) shows how the free energies of the two               to make deﬁnite claims about transition rates and paths.
+conformers, as well as the unstacked intermediate state,                      As an additional example, in Supporting Information Note 2
+depend on ionic strength. While the values for the stacked-X               and Figures S4−S6 we test MetaD on a second bistable unit
+conﬁgurations remain constant, ion concentration is critical in            where the transition between two conformers requires a
+controlling the free energy of the unstacked intermediate, as              breaking of stacking interactions. This tile has been utilized as
+previously noted. Indeed, as ionic strength falls from 500 to              the elementary unit of reconﬁgurable origami that can spatially
+100 mM, the relative free energy of the intermediate decreases             relay information through the propagation of conformational
+by ∼7kBT, making it ∼3 orders of magnitude more likely. This               transitions along an array of units.27 Similar to the case of the
+eﬀect is due to increased electrostatic repulsion associated with          Holliday junction, we are able to eﬃciently reconstruct the
+a less-concentrated electrolyte; the stacked Holliday junction             transition free-energy landscape utilizing both one- and two-
+has a high density of negative charge and is therefore                     dimensional collective variables for biasing, which would not
+disfavored when electrostatic screening is reduced.                        be feasible with unbiased MD. We are also able to gather
+                                                                    8790                                       https://doi.org/10.1021/acsnano.1c08999
+                                                                                                                        ACS Nano 2022, 16, 8784−8797
+ACS Nano                                                      www.acsnano.org                                                                Article
+
+information on the transition pathway between conformers;                    high free energy states associated with extreme bending, with
+however, this needs to be interpreted with care owing to                     free energies reaching ∼60 kBT above the ground state.
+potential artifacts introduced by the biasing potential.                        In experiments, controlled bending of the joint has been
+   Bending Free Energy of a Compliant Origami Joint.                         induced through the addition of ssDNA segments, bridging the
+The principle of compliant mechanism design is to control                    18-helix bundles across the ﬂexible section of the joint at the
+mobility and mechanical properties via local thinning of                     locations illustrated in Figure 4c. Three strands join yellow
+material, rather than through rigid body linkages.74 This is a               beads (each containing Nshort nucleotides), and another three,
+popular approach when designing DNA origami with an                          with possibly diﬀerent lengths, join blue beads (each with Nlong
+intended pattern of motion, where the number of helices is                   nucleotides). The segments act as entropic springs, bending
+reduced in regions of the structure where compliance is                      the six-helix bundle and determining the conﬁguration (and
+desired.12,49 Here, we consider a DNA origami-compliant joint                ﬂexibility) of the joint. The bending state can thus be
+as a useful case study for the mechanical predictions of the                 controlled by changing the length and number of the springs.49
+MetaD approach. The joint has been previously characterized                     Besides assessing the ﬂexibility of the unconﬁned joint, a
+experimentally49 and computationally with oxDNA using                        useful role for simulations would be that of predicting the
+unbiased MD.37 The latter study demonstrates that oxDNA                      mean bending angle that results from a given set of ssDNA
+can accurately capture the shape of compliant DNA structures,                springs, so to inform experimental design. To this end, one
+although it underpredicts the width of conformational                        approach would be to perform separate simulations for many
+distributions.37 We simulated a truncated version of the                     possible lengths of ssDNA springs37 and then manufacture the
+experimentally realized joint, illustrated in Figure 3a, where               system whose behavior is closest to the desired outcome.
+truncation improves computational eﬃciency. The joint is                     While this is computationally costly, it is the only possible
+composed of two 18-helix bundles, connected by a thinner 6-                  approach when states far from the location of minimum free
+helix layer. Consequently, bending will preferentially occur in a            energy cannot be sampled.
+plane, localized to the thinned layer. See Figure S7 for the                    MetaD, instead, enables a much more eﬃcient approach
+caDNAno routing of the device.                                               thanks to its ability to sample with a single simulation the
+   Through MetaD simulations, we can explore the bending                     entire distribution of angles, as we have shown. Once this free
+free energy of the joint, sampling highly deformed conﬁg-                    energy proﬁle is known in the absence of any ssDNA, one can
+urations inaccessible to conventional MD. We bias the                        indeed analytically account for the constraints imposed by
+simulations using the collective variable x, deﬁned as the                   ssDNA springs. Speciﬁcally we can predict the bending angle
+average distance between the centers of mass of top and                      distribution, by reweighting the distributions from biased MD
+bottom collections of cyan beads, illustrated in Figure 3a. As               to account for the energetic contribution of the springs, as
+demonstrated in Figure 3b (top), MD explores states only                     described in the Methods. Each ssDNA section is modeled as a
+close to the free energy minimum, physically corresponding to                separate WLC between attachment points, and free energies
+an unstressed six-helix section. Snapshots corresponding to                  from each contribute to the reweighting. Figure 4d illustrates
+these trajectories are illustrated in Figure 3c (top). By contrast,          the free energy contribution for each combination of long and
+MetaD initially explores the free-energy minimum and then is                 short chains used here, as a function of extension. This strategy
+pushed by the bias to explore other regions of conﬁguration                  oﬀers an eﬃcient alternative to determine the bending-angle
+space (Figure 3b, bottom). Trajectories in MetaD widen with                  distribution of the joint for any choice of ssDNA springs,
+time, not just because of diﬀusion but because the free energy               ensuring that the inverse problem of designing ssDNA sections
+landscape felt by the system is progressively ﬂattened.                      to produce a given angle is approachable. Similarly, it oﬀers a
+Snapshots illustrated in Figure 3c (bottom) indicate the                     way to estimate the ﬂexibility of the joint under applied force,
+sampling of high free energy states that would never have been               useful if it were later used in a load-bearing application.
+reached in unbiased MD.                                                         Figure 4e compares our predictions for the mean bending
+   The time dependency of the bias is illustrated in Figure 3d,              angle ⟨ϕ⟩ with experimental data of the corresponding
+with letters corresponding to the times marked in Figure 3b.                 systems, ﬁnding good agreement. Good correspondence is
+Notice the shape similarity of the reference free energy to the              also observed between simulated and experimental standard
+ﬁnal bias reached by the simulation. Similarly, Figure 3e shows              deviation σ(ϕ). It is feasible that the small discrepancies
+the time evolution of the uncorrected potential, Bt(x) +                     between simulation and experiments emerge from inaccuracies
+ΔG(x), which progressively ﬂattens as previously noted in                    in the WLC model of the springs. Indeed, such a model may be
+Figure 1, while Figure 3f shows how the implied potential                    inappropriate for some of the shorter sections used here (down
+converges to the reference curve. In Figure 3f (bottom right)                to 11 nucleotides), especially given that sequence has been
+we also show the free energy as determined from a direct                     ignored. Additionally, the use of WLC springs neglects possible
+sampling of unbiased MD simulations (panel (b), top), which                  stacking eﬀects at the attachment points of the ssDNA springs
+expectedly are only able to reconstruct the proﬁle for thermally             with the 16 helix bundles, on either side of the joint.
+accessible conﬁgurations.                                                    Nevertheless, despite small discrepancies, the automated
+   Experimental investigations of the compliant joint have                   reconstruction of accurate proﬁles of mean bending angle (to
+relied on a bending angle, rather than a distance, to classify the           within 10°) conﬁrms the applicability of this method to the
+deformation state of the nanomachines. For a direct                          rapid prediction of the mechanical and structural properties of
+comparison and, thus, to demonstrate the predictive power                    DNA origami before manufacture.
+of the oxDNA MetaD approach, we deﬁned the bending angle
+ϕ as illustrated in Figure 4a, closely matching the deﬁnition                CONCLUSIONS
+used in Transmission Electron Microscopy (TEM) experi-                       Molecular simulation is essential in the design and
+ments.49 The associated bending free energy proﬁle is plotted                interpretation of systems that use DNA to build mechanical
+in Figure 4bnote once more how MetaD enables sampling                       structures. However, unbiased MD simulation gives little
+                                                                      8791                                       https://doi.org/10.1021/acsnano.1c08999
+                                                                                                                          ACS Nano 2022, 16, 8784−8797
+ACS Nano                                                    www.acsnano.org                                                                     Article
+
+information about the mechanical response of these structures              could be also applied to free energy landscapes associated with
+to an applied force. Additionally, for multistable systems with            hybridization/dehybridization by deﬁning suitable collective
+nonergodic dynamics, unbiased simulation may entirely miss                 variables, for example, in terms of the number of hydrogen-
+certain states, which may be critical to the function of the               bonded nucleotides in the system.78,79 In general, our approach
+construct. To address these limitations, here we have                      will enable a faster and more detailed acquisition of
+combined well-tempered metadynamics and the popular                        information related to the mechanical behavior of nanostruc-
+oxDNA force ﬁeld, thus introducing a tool for the fast and                 tures, improving the feasibility of simulation-informed design
+automated reconstruction of one- and two-dimensional free                  and facilitating a direct comparison of molecular modeling to
+energy landscapes of deformable DNA nanostructures,                        experimental measurements.
+including a sampling of multiple minima and transition states
+in multistable devices.                                                    METHODS
+   To exemplify the utility of our metadynamics implementa-
+                                                                              oxDNA Implementation. The oxDNA stand-alone executable
+tion in DNA nanotechnology, we have applied it to four case
+                                                                           was extended to enable support for tabulated potentials and
+studies, associated with systems of diﬀerent scales and                    corresponding forces between the centers of mass of collections of
+conformational complexity. First, we have demonstrated                     particles on a one- or two-dimensional grid (CPU implementation) or
+automated sampling of the reversible kinking of a short                    a one-dimensional grid (CUDA implementation).80 The source code
+DNA duplex under compression, replicating experimental and                 was otherwise unchanged.
+computational observations on the process.34,35,63−66 We have                 A Python interface was then used to launch multiple MD oxDNA
+then reconstructed the free energy landscape of bistable DNA               simulations (replicas) in parallel, analyze distributions of collective
+systems whose dynamics would be nonergodic under conven-                   variables, and update the bias. Each of the N replicas was initialized
+tional MD, even using coarse-grained models. In particular, we             from a diﬀerent location in collective variable space and simulated
+                                                                           under the eﬀect of the time-evolving bias Bt, shared between all
+have analyzed a bistable Holliday junction exhibiting two
+                                                                           replicas. After each MetaD cycle, corresponding to τ MD time steps,
+possible conformers and found quantitative agreement                       the bias was updated with N Gaussians placed at the instantaneous
+between simulated and experimental conformer occupancy.69                  locations of each of the replicas in conﬁguration space, as discussed
+The obtained free energy proﬁles also helped to quantify the               above. The parallel replicas therefore share their history to construct
+eﬀect of ionic strength on the accessibility of the transition             an optimal potential, which leads to a more eﬃcient exploration of the
+state, which qualitatively correlates with experimental trends in          conﬁgurational space and to an N-fold speed up in bias
+switching rates.69 Additionally, we have reconstructed the free            convergence.52 We also note that, at early times, the replicas repel
+energy landscape of a bistable motif previously used for                   each other, encouraging them to search diﬀerent regions. However,
+information relaying in DNA origami,27 for which we have                   this eﬀect diminishes at later times. Parallel simulations were run on
+                                                                           CPUs for dsDNA buckling, Holliday junction isomerization, and
+identiﬁed plausible reaction intermediatesa useful insight for
+                                                                           bistable unit isomerization, while GPUs were used for the origami-
+integrating these units into signal transduction architectures.            compliant joint. The number of replicas used in each case study is
+   To demonstrate the applicability of our oxDNA MetaD                     reported in Table S2.
+implementation to larger constructs, we have predicted the                    Following convention,48 the bias was deﬁned on a grid, necessary
+mechanical response of a compliant DNA origami joint to                    to avoid a slowdown as the number of forces involved increases. The
+varying force. We have further shown how, thanks to its ability            grid spacing δx has a value chosen to be at maximum one-ﬁfth of the
+to map out thermally unaccessible conformational landscapes,               MetaD σvalues are given in Table S1. Our implementation is
+MetaD provides an eﬃcient route for the computer-assisted                  compatible both with Monte Carlo, where the potential felt by the
+design of joints with prescribed equilibrium angles and                    particle is calculated from a bilinear interpolation of the gridded bias,
+                                                                           and MD, where the force is calculated from the numerical derivative.
+stiﬀness, which we have benchmarked against experimental
+                                                                              Simulations for the compliant origami joint required 36 h over four
+data.49                                                                    GPUs (total 144 GPU-hours, Nvidia P100 GPU 16GiB), while the
+   By combining oxDNA with metadynamics, we have enabled                   other three case studies required between 36 and 60 h over 32 CPUs
+faster prediction of free energy proﬁles without compromising              (total 1152−1920 CUP-hours, 2× Intel Xeon Skylake 6142
+the detail of the underlying DNA model. The process of                     processors, 2.6 GHz 16-core). These time scales represent substantial
+landscape acquisition can be fully automated, as it does not               improvements from unbiased simulations, which may require tens of
+require a manual tuning of biasing weights and uses a single               thousands of GPU hours for characterizing the mechanical behavior
+thermodynamic window, contrary to umbrella sampling, and it                of origami nanomachines.38
+can therefore be accessed by users lacking advanced computa-                  Choice of MetaD Parameters. The analysis by Laio et al.59 and
+                                                                           Bussi et al.60 highlighted the inﬂuence of MetaD free parameters σ, A,
+tional expertise. Furthermore, our approach eﬃciently exploits
+                                                                           and τ on the errors of inferred free energies and convergence time
+parallelization between multiple CPUs or GPUs.                             scales. These studies recommend optimal choices for the Gaussian
+   Our simulation strategy oﬀers a much-needed design and                  width σ at a fraction of the system’s size in the collective variable
+characterization tool for the growing community interested in              space.59 Because in this work we extract free energy surfaces from
+applying DNA nanotechnology to engineer dynamic, reconﬁg-                  conﬁguration sampling of simulations biased with the asymptotic Bt,
+urable devices27,75 and nanorobots,13 both of which would                  rather than directly from the bias, we only followed the heuristic
+beneﬁt from a rapid in silico prediction of free energy                    consideration that σ should be smaller than the length scale of the free
+landscapes. This is especially the case for large origami                  energy features one wished to map, to prevent overbiasing. The ratio
+structures, composed of multiple DNA scaﬀolds,13 where                     A/τ determines the (initial) rate of growth of the bias and, therefore,
+conventional MD simulation is even more costly. Our                        the convergence time, with larger A/τ implying faster convergence.59
+                                                                           For well-tempered MetaD, A/τ is not critically important, as the
+technique would also be particularly suited for the better and             amplitude of corrections decays exponentially. Using small values of τ
+faster calibration of nanoscopic mechanical probes,24,51,76                (while appropriately rescaling A) reduces “discreteness” in potential
+especially in cases where simple analytical models may yield               deposition and errors in free energy estimates.59 Because in our
+inaccurate results.77 Finally, MetaD is not only relevant when             implementation the MetaD bias is computed and updated by a
+exploring deformation in fully hydrogen-bonded motifs but                  Python script, which then relaunches the stand-alone oxDNA
+
+                                                                    8792                                            https://doi.org/10.1021/acsnano.1c08999
+                                                                                                                             ACS Nano 2022, 16, 8784−8797
+ACS Nano                                                               www.acsnano.org                                                                       Article
+
+executable after each cycle, computational ineﬃciencies emerge when                   buckled state breaks two internal base-pair stacking interactions
+reducing τ. These were considered in our choices of τ. The MetaD                      (where each is between a pair of nucleotides), this value rises to 0 if
+parameters for each of the systems simulated are summarized in Table                  the duplex is buckled.
+S1.                                                                                       To illustrate the two distinct buckled and unbuckled states we
+   Choice of Collective Variables. The choice of collective                           plotted a kernel density estimator (KDE) with bandwidth 0.05
+variables in MetaD should follow key criteria, detailed in Bussi et                   unitseither nanometers or kBT in Figure 1f. This should not be
+al.48 First, the collective variables should be designed to force the                 overinterpreted other than to imply bistability when x is constrained
+system to explore the high free energy transition states one wishes to                to a value below ∼6 nm. For example, the buckled state has
+sample, which is done by ensuring that these states correspond to                     Ufourth least stacked exactly zero, so the density here is very high, and the
+unique values of the collective variables, which are not accessible                   exact free energy values will depend strongly on the KDE bandwidth.
+when the system occupies low free energy conﬁgurations. The                               Holliday Junction Isomerization. Holliday junctions were based
+application of this criterion is well-exempliﬁed by the deﬁnitions of                 on the J3 junction, as previously studied using single-molecule FRET
+the two-dimensional collective variables for our Holliday junction and                measurements,69 and an alternative coarse-grained force ﬁeld.71 Here,
+bistable unit case studies, where the two isomers are clearly separated               the junction is truncated so that arms are each 12 bps or ∼4 nm long,
+from the intermediate transition states in the (x1,x2) planes. Second,                slightly over four D lengths for 100 mM ionic strength; sequences are
+and critical when mapping deformation free energy of large DNA                        given in Table S3. Truncation was necessary for faster simulation, and
+nanostructures, one must ensure that the collective variables are                     it is unlikely that nucleotides so far from the junction contribute to
+properly coupled to the deformation modes one wishes to                               conﬁguration probabilities. Structures were initialized using the
+characterize. For example, if one would like to study bending of                      MrDNA31 software, then subsequently reﬁned in the oxDNA-viewer
+helices or bundles, the collective variables should be deﬁned based on                software.81 Four sets of simulations were run: either with a sequence-
+the coordinates of multiple nucleotides on diﬀerent strands, to avoid                 averaged force ﬁeld at 500 mM ionic strength or with a sequence-
+that bias buildup leads to rupture of hydrogen bonds and                              speciﬁc force68 ﬁeld at either 500, 200, or 100 mM ionic strength. In
+nanostructure disassembly rather than bending.                                        each case, the counterion is modeled implicitly through control of the
+   Case Studies. Unless otherwise stated, simulations used the                        Debye length over which electrostatic screening operates. As
+oxDNA2 force ﬁeld with 0.5 M ionic strength. The sequence-averaged                    simulations at reduced electrostatic screening are slower, runs at
+version of the force ﬁeld was used in all cases except when mapping                   100 mM ionic strength necessarily have fewer steps.
+the free energy landscape of Holliday junction isomerization, where                       A two-dimensional collective variable was used in MetaD
+the sequence-dependent force ﬁeld was instead adopted.68 Molecular                    simulation, (x1, x2), as illustrated in Figure 2a. These variables were
+dynamics was used to sample conﬁgurations. A time step of 0.004                       designed to clearly distinguish the two stacked isomers, where x1/2
+simulation units was used for the bucking dsDNA and Holliday                          takes small values and x2/1 takes large values, from the unstacked
+junction case studies, while a time step of 0.005 simulation units was                transition state where x1 and x2 both have high values, incompatible
+used for the compliant origami joint and bistable tile. To maintain a                 with the stacked isomers. Simulations were performed with the
+temperature of T = 300 K, an Andersen-like thermostat was used                       parameters from Table S1. After MetaD runs, a biased MD simulation
+time evolution is Newtonian, but every 103 time steps, a fraction of                  was initialized from the terminal states of each of the six
+particles has their velocities drawn from a Maxwell−Boltzmann                         metadynamics walkers, each in eight replicas. The ﬁrst 1 × 107
+distribution. The fraction of particles subject to velocity changes                   steps were discarded to allow for decorrelation. Contour plots in
+correspond to a diﬀusion coeﬃcient of 2.5 oxDNA units for all                         Figure 2c are acquired from histograms of biased MD. Convergence
+examples except the DNA origami joint, where the diﬀusion constant                    of the free energy implied by the MetaD bias and comparison to that
+was set to 5 oxDNA units. Conﬁgurations were saved every 1 × 105                      acquired by histograms of biased MD is illustrated in Figure S3.
+time steps for all systems except the origami, where they were saved                      For identiﬁcation of the states isoI, isoII, and the intermediate, the
+every 1 × 103 time steps. Well-tempered metadynamics simulations                      following criteria were used. For both the stacked-X conformers and
+were run with multiple walkers with parameters listed in Tables S1                    the intermediate we required that all hydrogen bonds in the eight
+and S2. Subsequently, the converged bias from those simulations was                   nucleotides adjacent to the junction were formed (internal energy <
+used in MD to verify correct convergence. Details concerning replicas                 −1 kBT). For the stacked-X conformers, we further required that
+and time scales are given in Table S2.                                                stacks were formed between pairs of neighboring arms at the junction,
+   Kink-Induced Buckling in dsDNA. A DNA duplex of length 30,                         with a stack being said to occur if its internal energy is less than −5
+with sequence 5′-ATG CAC AGA TTA GGA CCA ACC AGG ATA                                  kBT. We thus identiﬁed the isoI and isoII conformers based on which
+GTA-3′, was initialized using the generate-sa.py script in the oxDNA                  stacks were formed. As expected, stacked-X states, with two formed
+software package. MetaD was run with a bias on the collective variable                and two unformed stacks as illustrated in Figure 2a, are dominant in
+x, the distance between virtual particles at the centers of mass of the               all explored conditions. The intermediate was deﬁned as the state with
+six nucleotides on one end of the duplex and the corresponding six at                 no stacks formed but all hydrogen bonds present. The aforemen-
+the other end. This choice was made to guarantee that the applied                     tioned state deﬁnitions were used to acquire the probabilities and free
+bias induces duplex bending, rather than dehybridization. Details of                  energies in Figure 2f. The isoI and isoII states for the sequence-
+simulations are given in Tables S1 and S2.                                            averaged force ﬁeld should be equal by symmetry, so the ∼3%
+   To evaluate a reference free energyΔG(x)the bias from the                        diﬀerence in state probability is a reasonable indication of simulation
+ΔT = 16T system was used in biased MD to acquire a large number of                    convergence. Errors of estimates are given as one standard error, using
+states (Table S2). Convergence of the free energy implied by the bias                 six repeats initialized from diﬀerent positions in the collective variable
+to the reference free energy is demonstrated in Figure S2. Here, an                   space.
+equilibration period of 1 × 108 time steps was used to decorrelate                        Bistable Unit Isomerization. The bistable unit studied in the
+initial states. To demonstrate convergence, the ΔG(x) values were                     Supporting Information, Discussion 2, was designed in caDNAno.11
+constructed from either the ﬁrst half or the second half of the                       The strand routing is given in Figure S4. A two-dimensional order
+simulation, see Figure S2a. Diﬀerences between the two are                            parameter was used to bias MetaD, based on distances x1 and x2 as
+substantially smaller that the width of lines used to make the plot.                  illustrated in Figure S5a. These distances were deﬁned between
+   Figure 1f features a two-dimensional free energy landscape. The                    groups of four nucleotides adjacent to each of the four nicks in the
+quantity on the y-axis, Ufourth least stacked, was chosen to distinguish the          structure, making sure that the two isomers are clearly separated form
+buckled from the unbuckled state. This energy is deﬁned by ﬁrst                       the intermediate transition state on the (x1,x2) plane, as was done for
+acquiring the 5′ and 3′ stacking energies associated with each                        the case of the Holliday junction.
+nonterminal nucleotide. Subsequently, the lesser of these two values                      Parameters for simulations are listed in Table S1 with durations
+was stored for each nucleotide. The fourth greatest (i.e., least                      listed in Table S2. Convergence is illustrated by the plots in Figure S6.
+negative) value in the list then deﬁned Ufourth least stacked. Since the              The terminal states of six walkers were then used as initial states in
+
+                                                                               8793                                              https://doi.org/10.1021/acsnano.1c08999
+                                                                                                                                          ACS Nano 2022, 16, 8784−8797
+ACS Nano                                                                www.acsnano.org                                                                              Article
+
+MD simulations, biased with the converged Bt from MetaD. The                           was acquired. This takes a value that is negative if ϕ is less than 180°
+                                                                                       and positive otherwise. Hence ϕ was acquired as
+                                                                                            l
+biased MD simulations were used to construct the free energy
+                                                                                            o
+                                                                                            o
+                                                                                            o
+distribution in Figure S5b (left) (3 × 107 steps discarded prior to
+                                                                                            o
+                                                                                            o
+                                                                                          ϕ=m
+                                                                                              ϕ(0,180)         if (v ⃗ bottom ∧ v ⃗ top)·vortho
+                                                                                            o
+collection for decorrelation).                                                                                                             ⃗    <0
+                                                                                            o
+                                                                                            o
+                                                                                            o
+                                                                                            o
+   Additionally, MetaD was run with a 1D collective variable,
+
+                                                                                            n 360 − ϕ
+        x
+arctan x2 . To use this order parameter, analytical derivatives with                                   (0,180)
+                                                                                                               otherwise
+        1                                                                                                                                                                  (6)
+respect to position were calculated. After convergence of the 1D bias,
+multiple MD simulations were then run with said bias. These biased                        To evaluate the eﬀect of ssDNA springs on the bending angle, the
+MD runs were used to reconstruct the 2D free energy landscape given                    following approximations were used. There are two sets of three
+in Figure S5b (right).                                                                 ssDNA that bridge the compliant DNA origami joint gap in the
+    DNA Origami Compliant Joint Bending. The DNA origami                               experimental system. These correspond to one set of three ssDNA
+compliant joint studied here was based on an experimentally realized                   segments that bridge the short gap, and one set that bridges the long
+structure.49 However, for reasons of speed, it was truncated, reducing                 gap (where the short and long gaps are illustrated in Figure 4c). The
+the length of the helix bundles on the two sides of the joint. The                     set of three ssDNA sections that bridge the short gap each have Nshort
+experimental structure had six ssDNA scaﬀold sections routed across                    ssDNA nucleotides; the others have Nlong ssDNA nucleotides.
+the compliant joint to apply a bending moment, whose magnitude                            We then evaluated the free energy contribution from each of the
+could be controlled by the ssDNA length. Here we have removed                          ssDNA springs, ΔGNWLCnts
+                                                                                                                (L), using an analytical approximation for the
+                                                                                       free energy of a WLC.82
+                                                                                                                             ij
+these sections, relying instead on the MetaD bias to bend the joint.
+
+                                                                                                                 ∫0 dxjjjjjj 14 (1 − Lx′ )−2 − 14 + Lx′
+The caDNAno routing is given in Figure S7.
+                                                                                                          kBT        L
+    A collective variable was deﬁned as detailed in Figure 3a and
+                                                                                                                             k
+                                                                                             Nnts
+                                                                                          ΔG WLC  (L) =
+discussed in the main text. After they were designed in caDNAno, the                                       Lp
+                                                                                                                            2.15y
+                                                                                                                 ij x′ yz
+                                                                                                                                           0                   0
+
+                                                                                                                                  zz
+structures were relaxed via a gradient descent to prevent large forces.
+
+                                                                                                          − 0.8jjj zzz             zz
+                                                                                                                  j L0 z            zz
+Simulations were then run with the GPU-accelerated version of
+
+                                                                                                                  k {                z
+                                                                                                                                     {
+oxDNA.80 For metadynamics, four walkers were run in parallel on
+separate GPUs associated with the same compute node. MetaD                                                                                                                 (7)
+parameters were used as detailed in Table S1.
+    To establish a reference free energy (ΔG) to validate the                          Here Lp is the persistence length of ssDNA, which we took as 2 nm,83
+convergence of MetaD predictions and later evaluate the ϕ                              while L0 is the contour length. This was acquired from assuming that
+distribution, the MetaD bias was frozen, and biased MD simulations                     the contour length of ssDNA was 0.676 nm/nt.84 One subtlety is that
+were run. As detailed in Table S2, four diﬀerent initial x                             the number of nucleotides Nnts refers to is 1 greater than the number
+conﬁgurations were used to generate samples, with six replicas run                     in the actual chain. This may seem surprising, but consider the case
+from each of those four initial conﬁgurations. These were run for 4×                   where there are 0 nucleotides in the ssDNA spring; there would still
+106 steps to decorrelate replicas, followed by a production run (see                   be one nucleotide of separation between the two sides of the joint. To
+Table S2 for details). To evaluate uncertainties for all estimates, the                evaluate the total free energy, we summed the contributions from the
+standard error from simulation runs initialized from diﬀerent initial                  six chains, three of which contain Nshort nucleotides and three of
+conﬁgurations was used.                                                                which contain Nlong nucleotides.
+    To evaluate the distribution of ϕ, the reference beads illustrated in                 There are six springs in total, so the total statistical weight used to
+Figure 3a (yellow beads) were used. The top and bottom sections of                     compute averages is
+the bundle each have 12 reference nucleotides selected. These are                                            2                                  5
+                                                                                                              (Nshort + 1)                            (N   + 1)
+composed of two groups of six, one further and one nearer to the                          exp(β(Bt (x) − ∑ ΔG WLC         (Li) − ∑ ΔG WLC
+                                                                                                                                       long
+                                                                                                                                                               (Li)))
+joint. Each of those groups of six corresponds to three base pairs,                                        i=0                                 i=3
+chosen to be adjacent to crossovers, guaranteeing that the applied bias                                                                                                    (8)
+does not induce unwanted structure disassembly. The distance along
+the bundle between the near six and far six was chosen to be 21                        Here Bt(x) is the MetaD bias; i ∈ {0,1,2} indexes short springs, while
+nucleotides (two helical turns), so that base pairs used as references                 i ∈ {3,4,5} indexes long springs. For each, Li is the separation distance
+have the same orientation. The center of mass of each of the four                      measured in simulation between attachment points. This weighted
+groups was acquired. For convenience, we use the notation x⃗top        top             distribution was used to acquire both ⟨ϕ⟩ and σ(ϕ), as plotted in
+                                                                near, x⃗far ,
+  bottom      bottom
+x⃗near , and x⃗far to denote these centers of mass. Every 20 000 steps,                Figure 4e,f. Uncertainties here were acquired from the standard error
+the locations of the centers of mass were saved. Subsequently, two                     over repeating this procedure for simulations run with four diﬀerent
+vectors were deﬁned.                                                                   initial conditions uniformly spaced in the range of x studied.
+
+               top
+   v ⃗ top = xfar  ⃗
+                     top
+              ⃗ − xnear                                                  (4)           ASSOCIATED CONTENT
+                                                                                       *
+                                                                                       sı Supporting Information
+                                                                                       The Supporting Information is available free of charge at
+   v ⃗ bottom = xfar
+                 ⃗
+                   bottom
+                             ⃗
+                               bottom
+                          − xnear                                        (5)           https://pubs.acs.org/doi/10.1021/acsnano.1c08999.
+   The angle between these two vectors was used to deﬁne ϕ(0,180).                           MetaD applied to a simple 1D walker and associated
+This angle is not the ϕ that is then used in free energy calculations. It                    data; note relative to bistable tile case study, associated
+is important to then consider a deﬁnition of ϕ on (0°,360°), rather                          data, demonstration of convergence and caDNAno
+than (0°,180°) (so that, in Figure 3c, location E corresponds to a ϕ >                       routing; demonstration of convergence and DNA
+180°, while Figure 3, location F corresponds to a ϕ < 180°).                                 sequences relative to Holliday junction case study;
+Therefore, an additional vector was deﬁned, corresponding to the                             caDNAno routing relative to complaint DNA origami
+direction into the page in Figure 3a (far left). We label this vortho
+                                                                 ⃗    and                    case study; MetaD simulation parameters (PDF)
+deﬁne it using the two sets of beads furthest from the location of the
+junction. Looking at Figure 3a (far left), v⃗ortho corresponds to the
+average vector from the center of mass of the yellow beads nearest the                 AUTHOR INFORMATION
+reader to those into the page. Subsequently, the value of                              Corresponding Authors
+                                                                                          Will T. Kaufhold − Department of Physics, University of
+   sign((v ⃗ bottom ∧ v ⃗ top)·vortho
+                                 ⃗ )                                                       Cambridge, Cambridge CB3 0HE, U.K.; Department of
+                                                                                8794                                                     https://doi.org/10.1021/acsnano.1c08999
+                                                                                                                                                  ACS Nano 2022, 16, 8784−8797
+ACS Nano                                                          www.acsnano.org                                                                     Article
+
+    Chemistry and fabriCELL, Molecular Sciences Research Hub,                      (9) Rajendran, A.; Endo, M.; Sugiyama, H. State-of-the-art high-
+    Imperial College London, London W12 0BZ, U.K.;                               speed atomic force microscopy for investigation of single-molecular
+    Email: willtkaufhold@gmail.com                                               dynamics of proteins. Chem. Rev. 2014, 114, 1493−1520.
+  Lorenzo Di Michele − Department of Chemistry and                                 (10) Bell, N. A. W.; Engst, C. R.; Ablay, M.; Divitini, G.; Ducati, C.;
+    fabriCELL, Molecular Sciences Research Hub, Imperial                         Liedl, T.; Keyser, U. F. DNA Origami Nanopores. Nano Lett. 2012,
+                                                                                 12, 512−517.
+    College London, London W12 0BZ, U.K.; Department of
+                                                                                   (11) Douglas, S. M.; Marblestone, A. H.; Teerapittayanon, S.;
+    Physics, University of Cambridge, Cambridge CB3 0HE,                         Vazquez, A.; Church, G. M.; Shih, W. M. Rapid prototyping of 3D
+    U.K.; orcid.org/0000-0002-1458-9747; Email: l.di-                            DNA-origami shapes with caDNAno. Nucleic Acids Res. 2009, 37,
+    michele@imperial.ac.uk                                                       5001−5006.
+                                                                                   (12) Zhou, L.; Marras, A. E.; Su, H. J.; Castro, C. E. Direct design of
+Authors                                                                          an energy landscape with bistable DNA origami mechanisms. Nano
+   Wolfgang Pfeifer − Department of Mechanical and Aerospace                     Lett. 2015, 15, 1815−1821.
+     Engineering, The Ohio State University, Columbus 43210                        (13) Huang, C.-M.; Kucinic, A.; Johnson, J. A.; Su, H.-J.; Castro, C.
+     Ohio, United States; orcid.org/0000-0002-5589-8415                          E. Integrated computer-aided engineering and design for DNA
+   Carlos E. Castro − Department of Mechanical and Aerospace                     assemblies. Nat. Mater. 2021, 20, 1264−1271.
+     Engineering, The Ohio State University, Columbus 43210                        (14) Ijäs, H.; Nummelin, S.; Shen, B.; Kostiainen, M. A.; Linko, V.
+     Ohio, United States; orcid.org/0000-0001-7023-6105                          Dynamic DNA Origami Devices: from Strand-Displacement Reac-
+                                                                                 tions to External-Stimuli Responsive Systems. International Journal of
+Complete contact information is available at:                                    Molcular Science 2018, 19, 2114.
+https://pubs.acs.org/10.1021/acsnano.1c08999                                       (15) Castro, C. E.; Su, H. J.; Marras, A. E.; Zhou, L.; Johnson, J.
+                                                                                 Mechanical design of DNA nanostructures. Nanoscale 2015, 7, 5913−
+Notes                                                                            5921.
+The authors declare no competing ﬁnancial interest.                                (16) Marras, A. E.; Zhou, L.; Su, H.-J. J.; Castro, C. E.
+A preprint version of this work has been uploaded on arXiv.85                    Programmable motion of DNA origami mechanisms. Proc. Natl.
+The developed simulation code is available at 10.5281/zenodo.                    Acad. Sci. U.S.A. 2015, 112, 713−718.
+6326800, along with examples based on the case studies                             (17) List, J.; Falgenhauer, E.; Kopperger, E.; Pardatscher, G.;
+presented here.                                                                  Simmel, F. C. Long-range movement of large mechanically
+                                                                                 interlocked DNA nanostructures. Nat. Commun. 2016, 7, 12414−
+                                                                                 12414.
+ACKNOWLEDGMENTS                                                                    (18) Ketterer, P.; Willner, E. M.; Dietz, H. Nanoscale rotary
+L.D.M. acknowledges support from a Royal Society University                      apparatus formed from tight-fitting 3D DNA components. Sci. Adv.
+Research Fellowship (UF160152) and from the European                             2016, 2, No. e1501209.
+Research Council (ERC) under the Horizon 2020 Research                             (19) Kosuri, P.; Altheimer, B. D.; Dai, M.; Yin, P.; Zhuang, X.
+and Innovation Programme (ERC-STG No. 851667-NANO-                               Rotation tracking of genome-processing enzymes using DNA origami
+CELL). W.T.K. acknowledges funding from an EPSRC DTP                             rotors. Nature 2019, 572, 136−140.
+                                                                                   (20) Kopperger, E.; List, J.; Madhira, S.; Rothfischer, F.; Lamb, D.
+studentship. This work was performed using resources
+                                                                                 C.; Simmel, F. C. A self-assembled nanoscale robotic arm controlled
+provided by CSD3 operated by the University of Cambridge                         by electric fields. Science 2018, 359, 296−301.
+Research Computing Service (www.csd3.cam.ac.uk), provided                          (21) Gerling, T.; Wagenbauer, K. F.; Neuner, A. M.; Dietz, H.
+by Dell EMC and Intel using Tier-2 funding from the EPSRC                        Dynamic DNA devices and assemblies formed by shape-comple-
+(capital Grant No. EP/P020259/1), and DiRAC funding from                         mentary, non-base pairing 3D components. Science 2015, 347, 1446−
+STFC (www.dirac.ac.uk).                                                          1452.
+                                                                                   (22) Kuzyk, A.; Schreiber, R.; Zhang, H.; Govorov, A. O.; Liedl, T.;
+REFERENCES                                                                       Liu, N. Reconfigurable 3D plasmonic metamolecules. Nat. Mater.
+                                                                                 2014, 13, 862−866.
+ (1) Seeman, N. C. In NanoBiotechnology Protocols; Rosenthal, S. J.,
+                                                                                   (23) Le, J. V.; Luo, Y.; Darcy, M. A.; Lucas, C. R.; Goodwin, M. F.;
+Wright, D. W., Eds.; Humana Press: Totowa, NJ, 2005; pp 143−166.
+                                                                                 Poirier, M. G.; Castro, C. E. Probing Nucleosome Stability with a
+ (2) Ke, Y.; Castro, C.; Choi, J. H. Structural DNA Nanotechnology:
+Artificial Nanostructures for Biomedical Research. Annu. Rev. Biomed.            DNA Origami Nanocaliper. ACS Nano 2016, 10, 7073−7084.
+Eng. 2018, 20, 375−401.                                                            (24) Stephanopoulos, N.; Š ulc, P. DNA nanodevices as mechanical
+ (3) Winfree, E.; Liu, F.; Wenzler, L. A.; Seeman, N. C. Design and              probes of protein structure and function. Applied Sciences (Switzer-
+self-assembly of two-dimensional DNA crystals. Nature 1998, 394,                 land) 2021, 11, 2802.
+539−544.                                                                           (25) Douglas, S. M.; Bachelet, I.; Church, G. M. A Logic-Gated
+ (4) Rothemund, P. W. Folding DNA to create nanoscale shapes and                 Nanorobot for Targeted Transport of Molecular Payloads. Science
+patterns. Nature 2006, 440, 297−302.                                             2012, 335, 831−834.
+ (5) Ke, Y.; Douglas, S. M.; Liu, M.; Sharma, J.; Cheng, A.; Leung, A.;            (26) Grossi, G.; Dalgaard Ebbesen Jepsen, M.; Kjems, J.; Andersen,
+Liu, Y.; Shih, W. M.; Yan, H. Multilayer DNA origami packed on a                 E. S. Control of enzyme reactions by a reconfigurable DNA nanovault.
+square lattice. J. Am. Chem. Soc. 2009, 131, 15903−15908.                        Nat. Commun. 2017, 8, 992.
+ (6) Douglas, S. M.; Dietz, H.; Liedl, T.; Högberg, B.; Graf, F.; Shih,            (27) Song, J.; Li, Z.; Wang, P.; Meyer, T.; Mao, C.; Ke, Y.
+W. M. Self-assembly of DNA into nanoscale three-dimensional                      Reconﬁguration of DNA molecular arrays driven by information relay.
+shapes. Nature 2009, 459, 414−418.                                               Science 2017, 357. DOI: 10.1126/science.aan3377
+ (7) Ke, Y.; Ong, L. L.; Shih, W. M.; Yin, P. Three-dimensional                    (28) Castro, C. E.; Kilchherr, F.; Kim, D. N.; Shiao, E. L.; Wauer, T.;
+structures self-assembled from DNA bricks. Science 2012, 338, 1177−              Wortmann, P.; Bathe, M.; Dietz, H. A primer to scaffolded DNA
+1183.                                                                            origami. Nat. Methods 2011, 8, 221−229.
+ (8) Raab, M.; Jusuk, I.; Molle, J.; Buhr, E.; Bodermann, B.;                      (29) Lee, J. Y.; Lee, J. G.; Yun, G.; Lee, C.; Kim, Y.-J.; Kim, K. S.;
+Bergmann, D.; Bosse, H.; Tinnefeld, P. Using DNA origami                         Kim, T. H.; Kim, D.-N. Rapid Computational Analysis of DNA
+nanorulers as traceable distance measurement standards and nano-                 Origami Assemblies at Near-Atomic Resolution. ACS Nano 2021, 15,
+scopic benchmark structures. Sci. Rep. 2018, 8, 1−11.                            1002−1015.
+
+                                                                          8795                                            https://doi.org/10.1021/acsnano.1c08999
+                                                                                                                                   ACS Nano 2022, 16, 8784−8797
+ACS Nano                                                            www.acsnano.org                                                                      Article
+
+  (30) Yoo, J.; Aksimentiev, A. In situ structure and dynamics of DNA              DNA-Origami Tension Probes for Reporting Cellular Traction
+origami determined through molecular dynamics simulations. Proc.                   Forces. Nano Lett. 2018, 18, 4803−4811.
+Natl. Acad. Sci. U.S.A. 2013, 110, 20099−20104.                                      (52) Raiteri, P.; Laio, A.; Gervasio, F. L.; Micheletti, C.; Parrinello,
+  (31) Maffeo, C.; Aksimentiev, A. MrDNA: A multi-resolution model                 M. Efficient reconstruction of complex free energy landscapes by
+for predicting the structure and dynamics of DNA systems. Nucleic                  multiple walkers metadynamics. J. Phys. Chem. B 2006, 110, 3533−
+Acids Res. 2020, 48, 5135−5146.                                                    3539.
+  (32) Snodin, B. E. K.; Randisi, F.; Mosayebi, M.; Sulc, P.; Schreck, J.            (53) Barducci, A.; Bussi, G.; Parrinello, M. Well-tempered
+S.; Romano, F.; Ouldridge, T. E.; Tsukanov, R.; Nir, E.; Louis, A. A.;             metadynamics: A smoothly converging and tunable free-energy
+Doye, J. P. K. Introducing improved structural properties and salt                 method. Phys. Rev. Lett. 2008, 100, 1−4.
+dependence into a coarse-grained model of DNA. J. Chem. Phys. 2015,                  (54) Zhu, F.; Hummer, G. Convergence and error estimation in free
+142, 234901.                                                                       energy calculations using the weighted histogram analysis method. J.
+  (33) Ouldridge, T. E.; Louis, A. A.; Doye, J. P. K. Structural,                  Comput. Chem. 2012, 33, 453−465.
+mechanical, and thermodynamic properties of a coarse-grained DNA                     (55) Lilley, D. M. Structures of helical junctions in nucleic acids. Q.
+model. J. Chem. Phys. 2011, 134, No. 085101.                                       Rev. Biophys. 2000, 33, 109−159.
+  (34) Harrison, R. M.; Romano, F.; Ouldridge, T. E.; Louis, A. A.;                  (56) Frenkel, D.; Smit, B. Understanding Molecular Simulation, 2nd
+Doye, J. P. K. Coarse-grained modelling of strong DNA bending II:                  ed.; Academic Press: San Diego, CA, 2002.
+Cyclization. arXiv, 2015. DOI: 10.48550/arXiv.1506.09008 (accessed                   (57) Dama, J. F.; Parrinello, M.; Voth, G. A. Well-tempered
+2022-04-20).                                                                       metadynamics converges asymptotically. Phys. Rev. Lett. 2014, 112,
+  (35) Harrison, R. M.; Romano, F.; Ouldridge, T. E.; Louis, A. A.;                1−6.
+Doye, J. P. K. Coarse-grained modelling of strong DNA bending I:                     (58) Bonomi, M.; Barducci, A.; Parrinello, M. Reconstructing the
+Thermodynamics and comparison to an experimental “molecular                        equilibrium Boltzmann distribution from well-tempered metadynam-
+vice”. arXiv, 2015. DOI: 10.48550/arXiv.1506.09005 (accessed 2022-                 ics. J. Comput. Chem. 2009, 30, 1615−1621.
+04-20).                                                                              (59) Laio, A.; Rodriguez-Fortea, A.; Gervasio, F. L.; Ceccarelli, M.;
+  (36) Engel, M. C.; Smith, D. M.; Jobst, M. A.; Sajfutdinow, M.;                  Parrinello, M. Assessing the Accuracy of Metadynamics. J. Phys. Chem.
+Liedl, T.; Romano, F.; Rovigatti, L.; Louis, A. A.; Doye, J. P. Force-             B 2005, 109, 6714−6721.
+Induced Unravelling of DNA Origami. ACS Nano 2018, 12, 6734−                         (60) Bussi, G.; Laio, A.; Parrinello, M. Equilibrium Free Energies
+6747.                                                                              from Nonequilibrium Metadynamics. Phys. Rev. Lett. 2006, 96,
+  (37) Shi, Z.; Castro, C. E.; Arya, G. Conformational Dynamics of                 No. 090601.
+Mechanically Compliant DNA Nanostructures from Coarse-Grained                        (61) Sicard, F.; Destainville, N.; Manghi, M. DNA denaturation
+Molecular Dynamics Simulations. ACS Nano 2017, 11, 4617−4630.                      bubbles: Free-energy landscape and nucleation/closure rates. J. Chem.
+  (38) Sharma, R.; Schreck, J. S.; Romano, F.; Louis, A. A.; Doye, J. P.           Phys. 2015, 142, No. 034903.
+Characterizing the Motion of Jointed DNA Nanostructures Using a                      (62) Vologodskii, A.; Frank-Kamenetskii, M. D. Strong bending of
+Coarse-Grained Model. ACS Nano 2017, 11, 12426−12435.                              the DNA double helix. Nucleic Acids Res. 2013, 41, 6785−6792.
+  (39) Benson, E.; Lolaico, M.; Tarasov, Y.; GÅdin, A.; Högberg, B.                  (63) Fields, A. P.; Meyer, E. A.; Cohen, A. E. Euler buckling and
+Evolutionary Refinement of DNA Nanostructures Using Coarse-                        nonlinear kinking of double-stranded DNA. Nucleic Acids Res. 2013,
+Grained Molecular Dynamics Simulations. ACS Nano 2019, 13,                         41, 9881−9890.
+12591−12598.                                                                         (64) Du, Q.; Kotlyar, A.; Vologodskii, A. Kinking the double helix by
+  (40) Pietrucci, F. Strategies for the exploration of free energy                 bending deformation. Nucleic Acids Res. 2008, 36, 1120−1128.
+landscapes: Unity in diversity and challenges ahead. Reviews in Physics              (65) Pyne, A. L.; Noy, A.; Main, K. H.; Velasco-Berrelleza, V.;
+2017, 2, 32−45.                                                                    Piperakis, M. M.; Mitchenall, L. A.; Cugliandolo, F. M.; Beton, J. G.;
+  (41) Engel, M. C. DNA Systems Under Internal and External Forcing;               Stevenson, C. E.; Hoogenboom, B. W.; Bates, A. D.; Maxwell, A.;
+Springer Theses; Springer International Publishing: Cham, Switzer-                 Harris, S. A. Base-pair resolution analysis of the effect of supercoiling
+land, 2019.                                                                        on DNA flexibility and major groove recognition by triplex-forming
+  (42) Jarzynski, C. Nonequilibrium equality for free energy                       oligonucleotides. Nat. Commun. 2021, 12, 1−12.
+differences. Phys. Rev. Lett. 1997, 78, 2690−2693.                                   (66) Lankaš, F.; Lavery, R.; Maddocks, J. H. Kinking Occurs during
+  (43) Gore, J.; Ritort, F.; Bustamante, C. Bias and error in estimates            Molecular Dynamics Simulations of Small DNA Minicircles. Structure
+of equilibrium free-energy differences from nonequilibrium measure-                2006, 14, 1527−1534.
+ments. Proc. Natl. Acad. Sci. U.S.A. 2003, 100, 12564−12569.                         (67) Kallenbach, N. R.; Ma, R. I.; Seeman, N. C. An immobile
+  (44) Shi, Z.; Arya, G. Free energy landscape of salt-actuated                    nucleic acid junction constructed from oligonucleotides. Nature 1983,
+reconfigurable DNA nanodevices. Nucleic Acids Res. 2020, 48, 548−                  305, 829−831.
+560.                                                                                 (68) Š ulc, P.; Romano, F.; Ouldridge, T. E.; Rovigatti, L.; Doye, J.
+  (45) Wong, C. K.; Tang, C.; Schreck, J. S.; Doye, J. P. K.                       P.; Louis, A. A. Sequence-dependent thermodynamics of a coarse-
+Characterizing the free-energy landscapes of DNA origamis. Nanoscale               grained DNA model. J. Chem. Phys. 2012, 137, 135101.
+2022, 14, 2638−2648.                                                                 (69) Joo, C.; McKinney, S. A.; Lilley, D. M.; Ha, T. Exploring rare
+  (46) Snodin, B. E.; Schreck, J. S.; Romano, F.; Louis, A. A.; Doye, J.           conformational species and ionic effects in DNA Holliday junctions
+P. Coarse-grained modelling of the structural properties of DNA                    using single-molecule spectroscopy. J. Mol. Biol. 2004, 341, 739−751.
+origami. Nucleic Acids Res. 2019, 47, 1585−1597.                                     (70) Yu, J.; Ha, T.; Schulten, K. Conformational model of the
+  (47) Laio, A.; Parrinello, M. Escaping free-energy minima. Proc. Natl.           Holliday junction transition deduced from molecular dynamics
+Acad. Sci. U.S.A. 2002, 99, 12562−12566.                                           simulations. Nucleic Acids Res. 2004, 32, 6683−6695.
+  (48) Bussi, G.; Laio, A. Using metadynamics to explore complex                     (71) Wang, W.; Nocka, L. M.; Wiemann, B. Z.; Hinckley, D. M.;
+free-energy landscapes. Nature Reviews Physics 2020, 2, 200−212.                   Mukerji, I.; Starr, F. W. Holliday Junction Thermodynamics and
+  (49) Zhou, L.; Marras, A. E.; Su, H. J.; Castro, C. E. DNA origami               Structure: Coarse-Grained Simulations and Experiments. Sci. Rep.
+compliant nanostructures with tunable mechanical properties. ACS                   2016, 6, 1−13.
+Nano 2014, 8, 27−34.                                                                 (72) SantaLucia, J. A unified view of polymer, dumbbell, and
+  (50) Hudoba, M. W.; Luo, Y.; Zacharias, A.; Poirier, M. G.; Castro,              oligonucleotide DNA nearest-neighbor thermodynamics. Proc. Natl.
+C. E. Dynamic DNA Origami Device for Measuring Compressive                         Acad. Sci. U.S.A. 1998, 95, 1460−1465.
+Depletion Forces. ACS Nano 2017, 11, 6566−6573.                                      (73) Allen, R. J.; Valeriani, C.; Rein Ten Wolde, P. Forward flux
+  (51) Dutta, P. K.; Zhang, Y.; Blanchard, A. T.; Ge, C.; Rushdi, M.;              sampling for rare event simulations. J. Phys.: Condens. Matter 2009, 21,
+Weiss, K.; Zhu, C.; Ke, Y.; Salaita, K. Programmable Multivalent                   463102.
+
+                                                                            8796                                             https://doi.org/10.1021/acsnano.1c08999
+                                                                                                                                      ACS Nano 2022, 16, 8784−8797
+ACS Nano                                                              www.acsnano.org                               Article
+
+  (74) Howell, L. L.; Magleby, S. P.; Olsen, B. M. In Handbook of
+Compliant Mechanisms; Howell, L. L., Magleby, S. P., Olsen, B. M.,
+Eds.; Wiley: United Kingdom, 2013.
+  (75) Li, R.; Chen, H.; Choi, J. H. Auxetic Two-Dimensional
+Nanostructures from DNA**. Angewandte Chemie - International
+Edition 2021, 60, 7165−7173.
+  (76) Nickels, P. C.; Wünsch, B.; Holzmeister, P.; Bae, W.; Kneer, L.
+M.; Grohmann, D.; Tinnefeld, P.; Liedl, T. Molecular force
+spectroscopy with a DNA origami-based nanoscopic force clamp.
+Science 2016, 354, 305−307.
+  (77) Engel, M. C.; Romano, F.; Louis, A. A.; Doye, J. P. K.
+Measuring Internal Forces in Single-Stranded DNA: Application to a
+DNA Force Clamp. J. Chem. Theory Comput. 2020, 16, 7764−7775.
+  (78) Srinivas, N.; Ouldridge, T. E.; Š ulc, P.; Schaeffer, J. M.; Yurke,
+B.; Louis, A. A.; Doye, J. P. K.; Winfree, E. On the biophysics and
+kinetics of toehold-mediated DNA strand displacement. Nucleic Acids
+Res. 2013, 41, 10641−10658.
+  (79) Clowsley, A. H.; Kaufhold, W. T.; Lutz, T.; Meletiou, A.; Di
+Michele, L.; Soeller, C. Detecting Nanoscale Distribution of Protein
+Pairs by Proximity-Dependent Super-resolution Microscopy. J. Am.
+Chem. Soc. 2020, 142, 12069−12078.
+  (80) Rovigatti, L.; Š ulc, P.; Reguly, I. Z.; Romano, F. A comparison
+between parallelization approaches in molecular dynamics simulations
+on GPUs. J. Comput. Chem. 2015, 36, 1−8.
+  (81) Poppleton, E.; Bohlin, J.; Matthies, M.; Sharma, S.; Zhang, F.;
+Š ulc, P. Design, optimization and analysis of large DNA and RNA
+nanostructures through interactive visualization, editing and molec-
+ular simulation. Nucleic Acids Res. 2020, 48, E72−E72.
+  (82) Petrosyan, R. Improved approximations for some polymer
+extension models. Rheol. Acta 2017, 56, 21−26.
+  (83) Roth, E.; Glick Azaria, A.; Girshevitz, O.; Bitler, A.; Garini, Y.
+Measuring the Conformation and Persistence Length of Single-
+Stranded DNA Using a DNA Origami Structure. Nano Lett. 2018, 18,
+6703−6709.
+  (84) Chi, Q.; Wang, G.; Jiang, J. The persistence length and length
+per base of single-stranded DNA obtained from fluorescence
+correlation spectroscopy measurements using mean field theory.
+Physica A: Statistical Mechanics and its Applications 2013, 392, 1072−
+1079.
+  (85) Kaufhold, W. T.; Pfeifer, W.; Castro, C. E.; Di Michele, L.
+Probing the mechanical properties of DNA nanostructures with
+metadynamics. arXiv, 2021. DOI: 10.48550/arXiv.2110.01477
+(accessed 2022-04-20).
+
+
+
+
+                                                                              8797      https://doi.org/10.1021/acsnano.1c08999
+                                                                                                 ACS Nano 2022, 16, 8784−8797
+

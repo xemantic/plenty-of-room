@@ -1,0 +1,806 @@
+Published online 22 December 2021                                                     Nucleic Acids Research, 2022, Vol. 50, No. 2 717–730
+                                                                                                       https://doi.org/10.1093/nar/gkab1246
+
+
+Computational investigation of the impact of core
+sequence on immobile DNA four-way junction
+structure and dynamics
+Matthew R. Adendorff1 , Guo Qing Tang2 , David P. Millar                                        3
+                                                                                                    , Mark Bathe          1,*
+                                                                                                                                and
+William P. Bricker 1,4,*
+1
+ Department of Biological Engineering, Massachusetts Institute of Technology, Cambridge, MA 02139, USA,
+2
+ Department of Molecular Biology, Scripps Research Institute, La Jolla, CA 92037, USA, 3 Department of Integrative
+Structural and Computational Biology, Scripps Research Institute, La Jolla, CA 92037, USA and 4 Department of
+Chemical and Biological Engineering, University of New Mexico, Albuquerque, NM 87131, USA
+
+Received January 10, 2021; Revised November 28, 2021; Editorial Decision December 01, 2021; Accepted December 06, 2021
+
+
+
+ABSTRACT                                                                        have been used in a variety of applications, including
+                                                                                biomimicry (17), programmed energy transfer and photon-
+Immobile four-way junctions (4WJs) are core struc-                              ics (18–22), drug delivery (23,24), actuated nanoreactor de-
+tural motifs employed in the design of programmed                               sign (25) and molecular sensing (26). While the ability to
+DNA assemblies. Understanding the impact of se-                                 program nucleic acid sequence from the bottom-up offers
+quence on their equilibrium structure and flexibil-                             the opportunity to rationally control DNA nanostructure
+ity is important to informing the design of complex                             shape and dynamics, our understanding of the structure and
+DNA architectures. While core junction sequence is                              conformational dynamics of elemental building blocks of
+known to impact the preferences for the two pos-                                nucleic acid nanostructures remains limited. For example,
+sible isomeric states that junctions reside in, previ-                          the relative roles of 4WJ isomeric state preferences (27–29),
+ous investigations have not quantified these prefer-                            single- versus double-crossover (30–32), and nicks (33–35)
+ences based on molecular-level interactions. Here,                              on DNA construct equilibrium structure and dynamics, to-
+                                                                                gether with their sequence-dependence, remain poorly un-
+we use all-atom molecular dynamics simulations to
+                                                                                derstood.
+investigate base-pair level structure and dynamics                                 The immobile 4WJ is the core structural component of
+of four-way junctions, using the canonical Seeman                               DNA nanotechnology based on Seeman’s foundational
+J1 junction as a reference. Comparison of J1 with                               work (1,36). The three-dimensional structure of these DNA
+equivalent single-crossover topologies and isolated                             junctions in isolation has been extensively studied experi-
+nicked duplexes reveal conformational impact of the                             mentally (37–39). In isolation the 4WJ exists in one of three
+double-crossover motif. We additionally contrast J1                             global conformations, including two stacked antiparallel
+with a second junction core sequence termed J24,                                junction isomers and an unstacked open-X conformation,
+with equal thermodynamic preference for each iso-                               depending on ionic conditions (Figure 1A). These stacked
+meric configuration. Analyses of the base-pair de-                              forms are adopted in the presence of polyvalent ions or
+grees of freedom for each system, free energy calcu-                            in a high monovalent salt environment (40–42) due to the
+                                                                                screening of phosphate charges at the junction center, which
+lations, and reduced-coordinate sampling of the 4WJ
+                                                                                renders the stacked-X conformation unstable with respect
+isomers reveal the significant impact base sequence                             to the open-X form when not in an ionic environment
+has on local structure, isomer bias, and global junc-                           (43). The stacked-X conformation of a specific asymmetric
+tion dynamics.                                                                  junction has been shown to have a right-handed Jtwist
+                                                                                angle of close to 60◦ , compared to a shallower Jtwist angle
+INTRODUCTION                                                                    seen in symmetric junctions (44). In addition, the relative
+                                                                                populations of these stacked conformational isomers have
+Nucleic acid nanotechnology offers a powerful synthetic                         been shown to be sensitive to Mg2 + concentration (45) and
+approach to program static (1–13) and dynamic (14–16)                           to the base-pair sequence at the site of strand crossover
+molecular constructs via self-assembly. These assemblies                        (40,46,47), as well as at the first (27,48) and second
+* To whom correspondence should be addressed. Tel: +1 505 277 6392; Email: wbricker@unm.edu
+Correspondence may also be addressed to Mark Bathe. Tel: +1 617 324 5685; Email: mark.bathe@mit.edu
+Present address: Guo Qing Tang, Ra Pharmaceuticals, Cambridge, MA 02140, USA.
+
+
+C The Author(s) 2021. Published by Oxford University Press on behalf of Nucleic Acids Research.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/), which
+permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.
+718 Nucleic Acids Research, 2022, Vol. 50, No. 2
+
+
+
+
+Figure 1. Modeling DNA 4WJ isomers. (A) The three major isomers of DNA 4WJs. Switching between the Iso I and Iso II junction forms alters the
+base stacking at the site of strand crossover, with the X3/X8 and X7/X4 pairs being replaced with X5/X2 and X1/X6. (B) The base-pair sequence of the
+junction systems used in this study, shown in the Open-X configuration. Core base-pair sequences, denoted X1−8 , are assigned to sequences of J1 (top)
+and J24 (bottom), which are canonical Seeman 4WJ designs.
+
+
+nearest-neighbour base-pairs (28,29). The conformational                     the structure of stacked isomers (62), the ionic environ-
+heterogeneity of the junction has also been shown to be                      ment around these systems (67), protein-junction inter-
+sequence dependent through characterization of differ-                       actions (68), and suggesting reaction coordinates for the
+ent junction core arrangements by NMR spectroscopy                           isomerization process in terms of simple collective vari-
+and time-resolved Förster resonance energy transfer                         ables (69,70). These investigations focused on junctions
+(tr-FRET) (27).                                                              containing inverted repeat sequences, mismatched bases,
+   While the primary topological difference between these                    or mobile junction core sequences, however; and no ded-
+isomers is a change in base-pair stacking at the junction                    icated analysis of sequence-level structure and energetics
+core, differences in duplex stacking energies (34,35,39) are                 in isolated asymmetrical and immobile junction isomers
+insufficient to fully account for the experimentally ob-                     has been performed. In addition, a recent paper details
+served isomer ratios (38,39). A contribution of the geo-                     some of the difficulty with characterizing precise interac-
+metric constraints imposed at the junction core, in the                      tions in closely-packed DNA structures, including an over-
+stacked isomeric forms, to the isomerization free energy                     estimation of binding affinities of cationic species to phos-
+difference has also been considered (37); and the effect                     phate groups and inter-strand interactions that are too
+of a sequence-dependent electrostatic potential on junc-                     strong (71).
+tion stacking preferences has been suggested by selective                       In this work, we use all-atom MD to simulate multiple
+base-charge neutralization (49). However, a detailed un-                     replicates of both stacked isomers for the Seeman J1 se-
+derstanding of the topological and energetic contributions                   quence and for a variant sequence, J24 (Figure 1B), which
+to junction isomerization bias is still lacking. Further, the                possesses the same GC content as J1 but differs in its core
+impact of these contributions on junction flexibility re-                    base stacking arrangement. Calculations of the base-pair
+mains unknown. Understanding the sequence-level origins                      level structure are performed on the resulting trajectories
+of these features may offer generalizable design principles                  using established helical parameter analysis methods and
+that may eventually be used to inform DNA nanostructure                      the distributions of these parameters, as well as their in-
+design.                                                                      herent flexibilities, are compared to reference B-form du-
+   The application of all-atom molecular dynamics (MD)                       plex, nicked-duplex and single crossover topological vari-
+to nucleic acids has offered fundamental insights into the                   ants of the J1 and J24 junctions. The per-base free ener-
+sequence-dependent structure and deformability of canon-                     gies of isomerization are then determined from structural
+ical B-form duplexes (50–58), Watson-Crick base-pairing                      ensembles of each junction sequence using end-state free
+energies (59), solvent effects on the stabilities of A-form and              energy calculations. Free energies of isomerization from
+B-form duplexes (60), the free-energies of base-pair mis-                    the simulated MD ensembles are additionally compared
+matches (61), and the conformational dynamics of larger-                     to experimental isomer ratios from tr-FRET measure-
+scale origami objects (11,12,62–65). In addition, coarse-                    ments. Finally, the essential dynamics of 4WJs are derived
+grained MD (66) is often utilized for simulation of larger-                  from meta-ensemble principal component analysis (PCA)
+scale nucleic acid nanostructures, and accurate sequence-                    of the junction trajectories and the potentials of mean
+level conformational data is of particular importance to                     force (PMFs) along the principal junction twist coordi-
+parameterize these methods. All-atom MD has also been                        nate are calculated using enhanced sampling with a biasing
+used to investigate several junction systems, illustrating                   potential.
+                                                                                Nucleic Acids Research, 2022, Vol. 50, No. 2 719
+
+
+MATERIALS AND METHODS                                                 tioned experimental conditions. The duplex, nicked-duplex
+                                                                      and single crossover (B-strand and D-strand) equivalents of
+Junction nomenclature
+                                                                      the J1 and J24 junction isomers were generated from the
+A shorthand notation is introduced in this work for refer-            initial full junction structures using Discovery Studio Visu-
+encing junction core sequence, isomeric state, helical arm            alizer (Version 4.5; Dassault Systémes) and then were sol-
+and base-pair step identities. A particular base-pair step            vated and ionized in the same manner as the junction sys-
+(Figure 2A), defined between two adjacent base-pairs, is de-          tems.
+noted using the form xn i(h,b) , where x is the junction topol-
+ogy (J: junction, B: SXB, D: SXD, N: nicked-duplex, and               Molecular dynamics simulations
+d: duplex), n is the core sequence, i.e. 1 or 24 in this work,
+i is the isomer number (1 or 2), h is the helix number for            All simulations were performed using the program
+the pseudo-duplexes (1 or 2) and b is the base-pair step in-          NAMD2 (76) with the CHARMM27 force field (77,78)
+dex (1 to 9, leaving out the terminal three base-pair steps).         and Allnér Mg2 + (79) parameters. This procedure as
+The helices are defined such that helix 1 includes strand I in        follows has been successfully utilized in several previous
+isomer 1 and strand II in isomer 2; helix 2 includes strand           studies of DNA origami nanostructures (80,81). An inte-
+III in isomer 1 and strand IV in isomer 2. The base-pair              gration time step of 2 fs and periodic boundary conditions
+step sequence and numbering follows the 5 to 3 sequence             were applied in an orthogonal simulation cell. Van der
+of strand I in isomer 1 helix 1, strand III in isomer 1 helix 2,      Waals energies were calculated using a 1.2 nm cut-off with a
+strand II in isomer 2 helix 1, and strand IV in isomer 2 helix        switching function applied from 1.0 to 1.2 nm and the pair
+2. The terminal three base-pair steps on either end of the            list distance at 1.4 nm. The Particle Mesh Ewald (PME)
+helical arms are not included in helical parameter analyses           method (65) was used to calculate full electrostatics with a
+and so the numbering starts at the fourth base-pair step in           maximum grid point spacing of 0.1 nm. Full electrostatic
+the helix and runs up to and includes the twelfth step. These         forces were computed every two time steps (every 4 fs) and
+terminal base-pair steps are excluded due to the common               non-bonded forces were calculated at each time step (2 fs).
+occurrence of fraying effects at terminal base-pairs. Several         Simulations were performed in the NpT ensemble using the
+topological variants of the J1 and J24 junction systems are           Nosé-Hoover Langevin piston method (82,83) for pressure
+also investigated in this work. The first two of these variants       control with an oscillation period of 200 fs and a damping
+are the single-crossovers, motifs that only have one cross-           time of 100 fs. Langevin forces (84) were applied to all
+ing strand at the junction site. When the crossing occurs on          heavy atoms for temperature control (298 K) with coupling
+the left-hand side of the junction frame shown in Figure 3,           coefficients of 5 ps−1 . All hydrogens were constrained to
+the variant is termed the SXB construct and if the crossing           their equilibrium lengths during the simulation and system
+occurs on the right it is termed the SXD construct, for a             configurations were recorded every 1 ps for downstream
+given isomer. The junction nomenclature used for indexing             analysis of coordinates. Energy minimization was always
+is as previously noted, e.g. the single-crossover equivalent          performed on the orthogonal simulation cell prior to
+of J11 , with strand II performing the crossing action, is de-        dynamics using the conjugate-gradient and line search
+noted B11 ; and the equivalent of J12 , with strand I perform-        minimizer implemented in NAMD2, first on the solvent
+ing the crossing action, is D12 . The second type of variant is       and ions alone for 10,000 steps with all nucleic acid atoms
+the nicked-duplex, which is a B-form duplex with the same             spatially constrained, followed by an additional 10,000
+base-pair sequence as a junction arm pseudo-duplex but                steps with all atoms unconstrained. All parameters for the
+with a phosphate backbone break at the junction crossover             minimization were identical to those used for dynamics.
+site, e.g. between X3 and X8 in J11(1) . As noted above, the          The system was then slowly heated (1 K per 10 ps) to 298 K
+                                                                      and the pressure was allowed to equilibrate to 1 atm prior
+nicked-duplex equivalent of J12(1) is written as N12(1) . The last
+                                                                      to the production run MD. All simulated systems (whole
+variant is the duplex, identical to the nicked-duplex without         junction and duplex, nicked-duplex, and single crossover
+the phosphate backbone break. The duplex equivalent of                equivalents) were run for 300 ns, in triplicate (900 ns
+J12(1) is written as d12(1) (note the lower-case d to differentiate   total production time per system). The first 60 ns of each
+from the SXD construct).                                              simulation was considered as equilibration time and was
+                                                                      not used for subsequent analysis. It should be noted that a
+                                                                      recent study details several issues with MD simulations of
+Construction of all-atom systems
+                                                                      Holliday junctions undergoing unexpected conformational
+The junction strand sequences used were identical to previ-           transitions, although the present study utilizes a different
+ous experimental systems used for J1 (36) and J2 (27), up             force field, Holliday junction sequences, and conditions to
+to and including the fifth neighbour from the junction core.          this paper (71).
+All-atom PDB files for J11 , J12 , J241 and J242 were gener-
+ated using the atomic structure generator in the lattice-free
+                                                                      Base-pair parameter analysis
+implementation of CanDo (32,65), with a starting Jtwist (74)
+value of 60◦ (right-handed junction). The system was im-              DNA base-pair parameters were calculated at 10 ps inter-
+mersed in TIP3P water (75), then explicit Na+ , Mg2 + and             vals for all trajectories using the 3DNA program (72,73)
+Cl− ions were added to neutralize DNA backbone charges                with the MDAnalysis x3DNA interface (85). The stiffness
+and to set the simulation cell Na+ , Mg2 + ion concentrations         matrix in base-pair step helicoidal space (rise, shift, slide,
+to 50 and 5 mM, respectively; consistent with the aforemen-           roll, tilt, twist) was calculated from the simulation-obtained
+720 Nucleic Acids Research, 2022, Vol. 50, No. 2
+
+
+
+
+Figure 2. The DNA pseudo-duplexes within 4WJs can deviate significantly from canonical B-form structure. (A) Six helical step parameters (72,73) are
+calculated for each base-pair step comprising the two junction helix arms (h1 and h2). Using the J1 4WJ as an example (top, left), the notation, xn i(h,b) ,
+used throughout this paper denotes the topology, core sequence, isomer, helix, and base-step (top, right). An atomic representation is shown (middle, left)
+with step 5 of both helices shown in purple. Deviations in mean parameter values from reference B-form simulations (duplex) for each step are shown as
+wedges in a hexagon (representative plot at lower left). The inner gray line represents a deviation of 0.5 Å for translational parameters (shift, slide, and
+rise) and a deviation of 5◦ for rotational parameters (tilt, roll, and twist); the outer black line represents deviations of 1.0 Å and 10◦ respectively. Negative
+deviations are coloured red, positive deviations are coloured blue, and the absence of a wedge indicates a deviation of less than 0.2 Å or 2◦ . Within the
+base-pair step coordinate frame, the x-axis points away from the minor groove edge of a base-pair, the y-axis points towards the complementary base, and
+the z-axis points in the direction of helical rise (72,73). (B) Deviations in step parameter mean values for the J1 junction systems (right) and their topologies
+(left). Isomer 1 is shown on top (first two helices) with isomer 2 below (third and fourth helices) for all systems. Base-pair step sequences are shown for
+strands I and III (red, orange) for isomer 1; and strands II and IV (blue, green) for isomer 2; the 5 to 3 step sequence is read right to left for helix 1 and
+left to right for helix 2 for all systems. (C) Deviations in step parameter mean values for the J24 junction systems (right) and their topologies (left).
+
+
+helicoidal covariance matrix, Ch , as:                                              where Egas is the gas phase energy of a molecule’s conforma-
+                                                                                    tion as described by the mechanical force field, Gsolvation
+                            Ch = kB TF−1
+                                      h                                   (1)       is the solvation free energy, T is the temperature, and
+where Fh is the helicoidal stiffness matrix, F−1
+                                              h is its inverse,
+                                                                                    Ssolute is the solute entropy. Egas comprises the internal en-
+kB is Boltzmann’s constant and T is the temperature. The                            ergy (Einternal ), i.e. contributions from bond, angle, and di-
+determinant of Ch (analogous, in this case, to the product                          hedral energies, and energies due to non-bonded electro-
+of the eigenvalues of the matrix) was used to calculate the                         static (Eelectrostatic ) and van der Waal’s (EvdW ) interactions.
+conformational volume of a base-pair step which takes into                          Gsolvation comprises the polar solvation (GPB ) and the
+account the off-diagonal stiffness terms in a general descrip-                      non-polar solvation (GSA ) free energies.
+tion of base-pair step flexibility (50,51).                                            The MMPBSA.py module (86) of AmberTools14 (87)
+                                                                                    was used to run all calculations with CHAMBER-
+                                                                                    generated topologies (88). 24,000 frames (10 ps between
+MM-PBSA free energy analysis                                                        frames) were used from each trajectory to generate the en-
+The end-state MM-PBSA method (60) was used to estimate                              ergy averages with 72 000 frames analysed per isomer (three
+the free energy of the J1 and J24 isomer systems using the                          total trajectories per isomer). Gas phase energies (Egas ) were
+following equations:                                                                calculated from the CHARMM27 force field with 1–4 non-
+                                                                                    bonded interaction energies summed into their correspond-
+          G solvated = Egas + G solvati on − TSsolute                   (2)       ing van der Waal’s and electrostatic terms.
+                                                                                       Both solvation terms (GPB and GSA ) were calculated
+             Egas = Ei nter nal + Eelectr ostati c + EvdW                 (3)       using the pbsa module in sander, both included in Amber-
+                                                                                    Tools14. The electrostatic field, including the solvent reac-
+                  G solvati on = G P B + G SA                          (4)       tion field and the Coulombic field, was described with the
+                                                                                         Nucleic Acids Research, 2022, Vol. 50, No. 2 721
+
+
+Poisson-Boltzmann equation (PBE) (89,90):                                      tory frames. Initially, all frames were superposed onto the
+                                                                              first trajectory frame, followed by calculation of the mean
+        ∇ · (ε(r )∇φ(r )) = −4πρ(r ) − 4π λ(r )                  zi ci         coordinates and the setting of these as the new reference set.
+                                                             i                 This process was repeated until the total RMSD was lower
+                                                                             than 0.0001 Å. Once all frames had been aligned to the av-
+                                             −zi φ(r )
+                            × exp                                        (5)   erage structure, the covariance matrix C was constructed:
+                                              kB T
+where ε(r) is the dielectric constant, ␾(r) is the electrostatic                             C = (x(t) − x)(x(t) − x)T                          (8)
+potential, ␳ (r) is the solute charge, ␭(r) is the ion exclusion               where  ·  denotes the ensemble average and C is a symmet-
+or Stern layer masking function describing ion accessibility                   ric matrix. Diagonalization of C was then performed by an
+of position r, zi is the charge of ion type i, ci is the bulk num-             orthogonal transformation T:
+ber density of ion type i far from the solute, kB is the Boltz-
+mann constant, and T is the temperature; the summation is                                               C = TTT                                      (9)
+over all ion types. The non-linear PBE (91) was solved on a                    where  is the eigenvalue matrix and T contains the eigen-
+0.5 Å spacing finite difference grid with 5000 iterations per                 vectors of C. The eigenvalues (␭) relate to the mean square
+frame. The solute and solvent dielectric constants were set                    fluctuations (in Å2 ) along the eigenvector coordinates and
+to 1.0 and 80.0, respectively, with the weighted harmonic av-                  represent the contribution of each component to the total
+erage level set function being used for boundary grid edges.                   system fluctuation. The six zero eigenvalues, corresponding
+The solvent excluded surface (92) was used to define the di-                   to global rotation and translation (removed through the su-
+electric boundary and was generated using a 1.4 Å solvent                     perposition step), and their eigenvectors were discarded and
+probe radius and CHARMM atomic radii. Per-base decom-                          the remaining vectors were sorted in descending order by
+position was performed in AmberTools to obtain the inter-                      their eigenvalues (Supplementary Figure S43).
+action energies of each base with all other bases. Decom-                         The original molecular configurations were projected
+position of the per-base surface area contributions was per-                   onto the first three principal components to yield their prin-
+formed using the Linear Combination of Pairwise Overlaps                       cipal coordinates pi (t):
+(LCPO) method (93). Full molecule surface area contribu-
+tions were calculated within the pbsa framework.                                                  pi (t) = νi · (x(t) − x)                         (10)
+   The solute entropy was approximated from the covari-                        where ␯ i is the ith eigenvector of C and  pi2  = λi . For vi-
+ance matrix obtained in each simulation using Schlitter’s                     sualization purposes, projections along eigenvectors were
+method (94), where the mass-weighted covariance matrix C                       transformed back to Cartesian coordinates with:
+is determined from the covariance matrix C and the mass
+matrix M:                                                                                         xi∗ (t) = pi (t) · νi + x                        (11)
+                                        
+                      C =M     1/2
+                                     CM      1/2
+                                                                         (6)   All essential mode analyses were performed with the ProDy
+                                                                               package (97).
+The matrix M contains the atomic masses along the diag-
+onal and is zero elsewhere. Diagonalization of C by an or-
+thogonal transformation returns the classical variances of                     Enhanced sampling with the adaptive biasing force method
+the new coordinates qi whose fluctuations are linearly un-
+                                                                               The free energy profile, A(␰), along the slowest essential
+correlated. The entropy is then estimated as a sum of the
+                                                                               mode of the junction backbone meta-ensemble was cal-
+contributions (Si ) from all individual coordinate compo-
+                                                                               culated as a function of the collective variable (colvar) ␰,
+nents:
+                                                                               here representing Jtwist ; defined as the projection of a junc-
+                    1                                                     tion system’s backbone atom deviations from the meta-
+         S < S = k       ln 1 + kTe2 /2 qi2        (7)
+                    2                                                          ensemble’s average structure coordinates onto a vector in
+                                                                              R3n , where n is the number of atoms. The computed quan-
+where the calculated estimate S is an upper bound for the
+                                                                               tity is:
+real entropy S.
+                                                                                                        ref
+                                                                                                                  
+                                                                                                                  n
+                                                                                          p {xi (t)}, {xi } =            νi
+Essential dynamics analysis
+                                                                                                                  i =1
+An ensemble of junction coordinates obtained from MD                                                                          ref
+simulation was subjected to principal component analysis                                     × U(xi (t) − xcog (t) − (xi            − xcog
+                                                                                                                                       ref
+                                                                                                                                           )         (12)
+to extract the essential modes (54,95), the coordinate fluc-
+                                                                                                                                               ref
+tuations responsible for most of the variance observed in                      where U is the optimal rotation matrix, xcog (t) and xcog are
+the system. A meta-ensemble (96) was generated from the                        the centers of geometry of the current and reference posi-
+backbone atoms of all four isomer simulation sets compris-                     tions and ␯ i are the per-atom components of the vector (98).
+ing 2.88 ␮s of total dynamics time. The terminal three base-                   A(␰) was obtained using the NAMD2.10 implementation of
+pairs at both the 5 and 3 ends of the junction arm pseudo-                   the Adaptive Biasing Force (ABF) method of thermal in-
+duplexes were excluded from this ensemble to avoid the in-                     tegration (99,100). The algorithm comprises two steps: (1)
+fluence of end-effects including fraying.                                      the thermodynamic force acting along ␰ is extracted from
+   The average structural coordinate set for a given ensemble                  the unbiased simulation and (2) the position-dependent av-
+was generated through iterative superposition of all trajec-                   erage force is then subtracted from the instantaneous force,
+722 Nucleic Acids Research, 2022, Vol. 50, No. 2
+
+
+adapting over sampling time. After sufficient sampling the          by time-correlated single photon counting. The donor in-
+energy surface along ␰ is effectively flattened, removing en-       tensity decay was fitted with an expression incorporating
+ergy barriers along the colvar, and the system will diffuse as      two Gaussian distributions of D-A distances, one for each
+a result of the random fluctuating force acting on it along         crossover isomer, and was weighted according to the equi-
+the other degrees of freedom. Free energy changes are then          librium fractions of each. The expression also included the
+calculated by integrating the average forces along ␰. Free en-      intrinsic decay times of the donor, which were determined
+ergy calculations on the junction systems were divided into         independently using a sample that lacked the tetramethyl-
+five windows, sampling from -5 Å to 10 Å RMSD (−90◦ to            rhodamine acceptor. During the analysis, the equilibrium
++90◦ ) along ␰. The windows covered the intervals [−5, −1],         fraction of Iso I (frIsoI ) was optimized for best fit (note that
+[−2, −3], [1, 6], [4, 8] and [6, 10], and each window was           frIsoII = 1 − frIsoI ). Additional details of this analysis are
+subdivided into 15 bins for the force calculations; generat-        described in Miick et al. (27).
+ing the PMF at 46 discrete points. Harmonic wall restraints
+were applied at the edges of the windows to keep the solute
+                                                                    RESULTS AND DISCUSSION
+within the desired region. Initial ABF simulations of 100 ns
+per window were performed for each of the four junction             Immobile 4WJs deviate from canonical B-form structure
+systems, followed by additional runs in under-sampled bins
+                                                                    The six base-pair step helical parameters (shift, slide, rise,
+to ensure a minimum per-bin sampling of 5 ns. Blocking
+                                                                    tilt, roll and twist) provide a useful, widely-adopted coarse-
+analysis, using the method of Flyvbjerg and Petersen (101),
+                                                                    grained description of DNA (58). As sequence has known
+was performed on projections of the unbiased MD 4WJ tra-
+                                                                    effects on DNA structure, we sought to extend these six he-
+jectories onto the second slowest essential mode (Jroll ) to
+                                                                    lical parameters to the 4WJ motif to highlight regions of in-
+obtain a decorrelation time of ∼4 ns, thus the minimum
+                                                                    terest. The deviations from reference canonical B-form du-
+sampling was set to 5 ns (Supplementary Figures S44 and
+                                                                    plex simulations of the junction pseudo-duplex arms were
+S45). The average sampling times per bin were 10.2 ns (J11 ),
+                                                                    calculated for both isomers of J1 as well as for several topo-
+10.4 ns (J12 ), 10.1 ns (J241 ), and 10.6 ns (J242 ). In addi-
+                                                                    logical variants of the J1 sequence, as detailed in Methods.
+tion, an identical blocking analysis was performed on the
+                                                                    A hexagonal plot representation (Figure 2A) is used to show
+slowest essential mode (Jtwist ), where a decorrelation time
+                                                                    the deviations in all six parameters for each given step in a
+of ∼32 ns was found, confirming the choice of using 60 ns
+                                                                    particular junction/variant system. Two sets of scale bars
+of each trajectory for system equilibration (Supplementary
+                                                                    are shown as rings within each plot, the inner represent-
+Figures S46–S47). An upper limit for the standard error in
+                                                                    ing a deviation of 0.5 Å for translational parameters (shift,
+the ABF calculations, SD[AABF ] (88), for a free energy dif-
+                                                                    slide, and rise) and a deviation of 5◦ for rotational param-
+ference, AABF , between points ␰ a and ␰ b along the colvar,
+                                                                    eters (tilt, roll, and twist); the outer representing deviations
+␰, was estimated as:
+                                                                    of 1.0 Å and 10◦ , respectively.
+                                     σ                                 The J1 system exhibits pronounced negative mean pa-
+          SD[AABF ] ≈ (ξb − ξa ) 1/2 (1 + 2τ )1/2        (13)
+                                   K                                rameter changes at the core step (step 5) and smaller devia-
+where ␴ 2 is the variance of the force along ␰, K is the total      tions are present up to two neighbouring steps away (Figure
+number of force evaluations and ␶ is the correlation length         2B). Negative shift is observed in all core steps along with
+for the calculated force.                                           large untwisting (negative twist) of the pseudo-duplexes on
+                                                                    one helix per isomer at step 5. Notably, the untwisting ef-
+                                                                    fect is localized on the CT base-step in isomer 1 and the TG
+Experimental determination of immobile junction isomer dis-         base-step in isomer 2. Rupturing one crossover link removes
+tributions                                                          most of these deviations with the SXB (Supplementary Fig-
+                                                                    ure S1) and SXD (Supplementary Figure S2) systems show-
+The distribution of crossover isomers in J1 has been re-
+                                                                    ing only slight relative changes compared to the full junc-
+ported previously (27), and the same method was used to
+                                                                    tion, and the nicked-duplex systems (Supplementary Fig-
+determine the isomer distribution in J24. Briefly, strands
+                                                                    ure S3) behave almost exactly like B-form DNA in terms of
+1 and 4 were labeled at their 5 ends with fluorescein and
+                                                                    mean step parameter values. Line plots of all the absolute
+tetramethylrhodamine, respectively. The distance between
+                                                                    mean values for the J1 systems are included in the Supple-
+fluorescein (donor) and tetramethylrhodamine (acceptor)
+                                                                    mentary information (Supplementary Figures S7–S10).
+was probed by time-resolved Förster resonance energy
+                                                                       Similarly, the core steps of the J24 junction system (Fig-
+transfer (tr-FRET). When the Iso I structure is adopted,
+                                                                    ure 2C) show significant untwisting at step 5 (J241(1,5) ,
+the dyes are expected to be relatively close in space (Figure
+1A), giving rise to a relatively fast rate of energy transfer. In   J242(1,5) and J242(2,5) ). In isomer 1, the untwisting effect is lo-
+contrast, if the Iso II structure is adopted, the dyes will be      calized on the CA base-step, and in isomer 2, the untwisting
+located at opposite ends of a duplex stacking domain (Fig-          effect occurs on both the TA and GG base-steps. A major
+ure 1A), resulting in a relatively long donor–acceptor (D–A)        difference between the J1 and J24 systems is seen when rup-
+distance and a slower rate of energy transfer. Additionally, if     turing one crossover link to form the SXB (Supplementary
+both isomers are coexistent, then two sub-populations with          Figure S4), SXD (Supplementary Figure S5), and nicked-
+distinct energy transfer rates will be present. To resolve this     duplex (Supplementary Figure S6) systems. Unlike the J1
+potential heterogeneity, the fluorescein donor was excited          system, the J24 SXB variant maintains the large untwisting
+with a short laser pulse at 514 nm and the resulting de-            effect at step 5, and in isomer 2 it is now localized on the GG
+cay of donor emission (at 540 nm) was recorded over time            base-step only. Conversely, the SXD and nicked-duplex sys-
+                                                                                                Nucleic Acids Research, 2022, Vol. 50, No. 2 723
+
+
+
+
+Figure 3. The effect of junction topology on base-pair step flexibility. (A) Deviations in the helical step parameter stiffness constants from those of canonical
+B-form DNA are shown for the J1 junction systems (left), the nicked duplex systems (top right), the SXB junction systems (middle right), and the SXD
+junction systems (bottom right). Base-pair step sequences are shown for strands A (red in isomer 1, blue in isomer 2) and C (orange in isomer 1, green in
+isomer 2); the 5 to 3 sequence runs right to left for helix 1 and left to right for helix 2 for both isomers. Topology schematics for J11 and J12 are shown
+top left and bottom left respectively. Complementary schematics for the nick, SXB and SXD systems are shown top right, middle right, and bottom right
+respectively. (B) In comparison, deviations in the helical step parameter stiffness constants from those of canonical B-form DNA are shown for the J24
+junction systems (left), the nicked duplex systems (top right), the SXB junction systems (middle right), and the SXD junction systems (bottom right).
+(center inset) The inner gray line in each hexagon represents a deviation of 1 kcal/Å for the translational parameters (shift, slide and rise) and of 0.005
+kcal/deg for the rotational parameters (tilt, roll and twist); the outer black line represents deviations of 2 kcal/Å and 0.01 kcal/deg respectively.
+724 Nucleic Acids Research, 2022, Vol. 50, No. 2
+
+
+tems for J24 show only slight changes from B-form DNA.             supporting information (Supplementary Figures S23–S30),
+Line plots of all absolute mean values for J24 systems are in-     as well as a comparison of the B-form (duplex) simulation-
+cluded in the supporting information (Supplementary Fig-           obtained values in this work with literature values (Supple-
+ures S11–S14).                                                     mentary Figures S31–S38).
+   The results presented here indicate a local-sequence ef-
+fect is present as deviations are occurring at base-pair steps     Base-pair step deformability is a consequence of both topol-
+of known high flexibility, i.e. untwisting of the pyrimidine-      ogy and local sequence
+purine TG steps at J11(1,6) and J12(2,5) and the TA step at
+                                                                   In order to obtain a full description of base-pair step de-
+J242(1,5) . Changes in mean values are also apparent at the
+                                                                   formability, the off-diagonal coupling terms of the stiffness
+comparatively stable CT and GG steps at J11(1,5) and J242(2,5)     matrix need to be considered (51). The configurational vol-
+respectively, indicating a global topological effect. Step 5 in    ume metric, calculated as the product of the eigenvalues of
+isomer 1, helix 1 and isomer 2, helix 2 in both junction sys-      the covariance matric in helical parameter space, has been
+tems is deformed, irrespective of relative flexibility, suggest-   used to characterize both X-ray crystallography and MD
+ing that the geometric constraints of the 4WJ motif are con-       data (50,51) and is used here to summarize the relative de-
+tributing as well as the local sequence effects. In both the J1    formabilities of each of the analyzed systems. A modifica-
+and J24 systems, these results seem to indicate that the for-      tion of the hexagonal plots in Figures 2 and 3 is used to com-
+mation of the 4WJ introduces tension that is relieved pri-         pare the per-step configurational volumes of the different
+marily in the shift and twist base-step parameters. It should      topological (duplex, nicked-duplex, and single-crossovers)
+be noted that as J24 has some local sequence differences           and sequence variants (J1, J24) in Figure 4. The two log10
+to J1 around the core, reference B-form values were taken          scale bar rings represent volumes of 10 and 100 Å3 ·deg3 ,
+from literature simulations (56) for these steps. A compari-       respectively.
+son of the B-form simulation-obtained values in this work             The sequence-level heterogeneity in step flexibility is im-
+with these literature values (Supplementary Figures S15–           mediately apparent, i.e. the flexible TA step at step 8 in iso-
+S22) shows that the slight differences in solvent and temper-      mer 1, helix 2 compared to the rigid AT step at step 8 in
+ature conditions between the two sets of CHARMM simu-              isomer 2, helix 2 in all systems. The effect of changes in lo-
+lations has a negligible effect on the mean values and hence       cal sequence can be seen in how the TG step at J11(1,6) is sig-
+the comparisons are reasonable.                                    nificantly more flexible in this location than when moved
+                                                                   to J12(2,4) where both have the same proximity to the junc-
+Flexibility of base-pair step parameters                           tion. The increased flexibility at J11(1,6) compared to other
+                                                                   topological variants also indicates the significance of topol-
+In addition to comparing the relative values of base-pair          ogy on local DNA structure. The J11(1−2,5) steps have no-
+step parameters for topological variants of the J1 and J24
+                                                                   tably lower flexibilities, by approximately an order of mag-
+4WJ motif, it is useful to compare the deviations in stiff-
+                                                                   nitude, than their J12(1−2,5) equivalents with the same relative
+ness constants between topological variants for the base-
+pair step parameters. The effect of junction topology upon         relationship present between their N11(1−2,5) and N12(1−2,5)
+base-pair step parameter flexibility is shown in Figure 3          counterparts, though at slightly lower volume values. As the
+for the J1 and J24 variants. Unsurprisingly, in all variants,      J11 isomer is known to be significantly favoured over J12 ,
+the stiffness constants are less than those in B-form DNA,         this result is significant as it suggests a relative energetic
+meaning they exhibit greater flexibility due to the presence       stability at the core in J11 and this will be further investi-
+of the junction. In addition, where base-pair step absolute        gated in the following section. Also, as the nicked-duplex
+deviations (Figure 2) are primarily found on step 5, devia-        systems show a similar pattern to the J1 isomers, this ef-
+tions in flexibility are exhibited throughout the junction (al-    fect is likely due to both the local sequence at the junction
+though mostly on steps 4 through 6). The major untwisting          core and the geometric constraints applied by the 4WJ mo-
+effect is shown as greater flexibility of twisting in all base-    tif. The SX systems exhibit generally smaller deformabilities
+pair steps in the junctions.                                       at the core than their junction and nicked-duplex equiva-
+   The flexibility of the topological variants offer some in-      lents, except at step 5 in isomer 2, helix 2 where they are
+sight into the deviations between the J1 and J24 systems.          as flexible as their counterparts. The two systems do show
+Both single-crossover variants of J1 show minimal devia-           distinct deformability distributions, however, in agreement
+tions in twist flexibility from B-form DNA, but the SXB            with their mean value deviations and this suggests that their
+variant of J24 exhibits a similar increase in twist flexibility    topology has an effect on local structure. The relative sta-
+as the 4WJ, which is not shown in the SXD variant. These           bility of single-crossovers, at least in isolation, is in agree-
+observations match with those seen when comparing abso-            ment with their extensive and successful use in tile-based
+lute base-pair step deviations, as the SXD variant exhibits        applications (8).
+greater stability than SXD in the J24 system. Interestingly,          The J24 sequence shows increased deformability in both
+in both J1 and J24, the nicked variants show an increase in        isomers at the junction core, with less propagation to neigh-
+twist flexibility not necessarily seen in the single-crossover     bouring steps, in contrast to J1 which exhibits increased de-
+variants, showing that one crossover in some cases is more         formability up to two neighbours from the core. In addition,
+stable than the four-way junction. Line plots of the stiff-        the deformability at the core of both J24 isomers is simi-
+ness constants for the J1 and J24 variants are found in the        lar, unlike in J1 where isomer 2 is more flexible than isomer
+                                                                                              Nucleic Acids Research, 2022, Vol. 50, No. 2 725
+
+
+
+
+Figure 4. Junction base sequences confer unique base-pair step deformability. (A, B) The configurational volumes for all six topological variants of J1 and
+J24 are shown as wedges in a hexagonal plot (left). The inner gray line in each hexagon represents a volume of 10 Å3 ·deg3 ; the outer black line represents
+deviations of 100 Å3 ·deg3 . Topologies of the J1 and J24 junction systems are shown to the left and right of the dotted line. Isomer 1 is shown on the top
+and isomer 2 on the bottom for both core sequences. Base-pair step sequences are shown for strands A (red in isomer 1, blue in isomer 2) and C (orange
+in isomer 1, green in isomer 2); the 5 to 3 sequence runs right to left for helix 1 and left to right for helix 2 for both isomers.
+
+
+1. This result suggests a similar energetic stability of both                    the more deformable systems in Figure 4A and B. The plots
+J24 isomers. The effect of local sequence can also be seen                       of ETOT in Supplementary Figure S41B show that strands
+in the major reduction in configurational volume when the                        I, III, and IV are all more stable in isomer 1 at the core
+TG step J11(1,6) is changed to an AG step in J241(1,6) . In most                 bases, with only strand II favouring isomer 2 at bases 7 and
+cases, the TA and CG base-pair steps show the greatest flexi-                    8. These two bases, along with the non-core base 6, corre-
+bility even far from the junction core. Line plots of the con-                   spond to the region of high deformability at J11(1,5−7) around
+figurational volume values are included in Supplementary                         the flexible TG step in Figure 4A. The largest energy dif-
+Figures S39 and S40.                                                             ferences occur at the core bases (indices 7-10) where bases
+                                                                                 are being changed from a linear configuration (chains I +
+                                                                                 III in isomer 1, II + IV in isomer 2) into a ‘bent’ config-
+Free energies of isomerization                                                   uration (II + IV in isomer 1, I + III in isomer 2) though
+The significant differences in configurational volumes be-                       energy changes are also seen at neighbouring bases. In the
+tween the isomers of J1 and the comparable values for those                      J24 system the isomers are energetically similar, with J241
+of J24 suggest that unique atomic-level interactions are oc-                     being favoured in the EVDW , ENP and EP terms and
+curring at or near the 4WJ cores. To unpack the various con-                     J242 in EINT and EELE for a total energy difference of
+tributions to the junction energy of isomerization, Eiso                       0.4 kcal/mol. Looking at the ETOT plots for J24, strands
+= EIso1 − EIso2 , the MM-PBSA end-state free energy                            I + III favour isomer 1 at the core, while II + IV favour iso-
+analysis method was applied to structural ensembles of each                      mer 2. The J24 energy changes are more focused at the core
+isomer. Supplementary Figure S41 shows plots of the vari-                        than J1, consistent with the reduced deformability of non-
+ous per-base energy contributions to the total isomerization                     core bases in Figure 4A relative to their J1 counterparts. The
+energy for each chain in J1 and J24, respectively. J11 is more                   data confirms that stacking energies alone, represented by
+stable than J12 in all energy terms (EINT , EVDW , ENP ,                      the EVDW term, are not the only interactions that change
+EP ) except gas-phase electrostatics (EELE ), though this                      upon isomerization as both geometric (EINT ) and electro-
+is offset by the large polar-solvation energy difference to                      static (EELE + EP ) factors contribute to the total en-
+give a total energy difference of -8.2 kcal/mol. It should                       ergy difference. Furthermore, the presence of electrostatic
+be noted that all energy totals presented here do not in-                        interactions is in agreement with the previously suggested
+clude the solute entropy contribution as the quasiharmonic                       hypothesis of a sequence-dependent electrostatic potential
+approximation has not converged (Supplementary Figure                            contributing to the isomerization energy (37,49) and is con-
+S42), though these contributions would most likely favour                        sistent with the results of Mg2 + pulsing experiments (45).
+726 Nucleic Acids Research, 2022, Vol. 50, No. 2
+
+
+Table 1. Conformer ratios of the J1 and J24 immobile Holliday junctions     ies (32,74) and their contributions to the total variance are
+            Stacking partner            Mean ratio (%)a       G◦, b
+                                                                            shown in Supplementary Figure S43. While J12 , J241 and
+                                                                            J242 all show predominant motion along Jtwist , J11 shows
+       I/II+IV/III     II/III+I/IV       I/II      I/IV      (kcal/mol)     predominant motion along Jroll . In addition, projections of
+J1c    A/G+T/C         G/T+C/A        ≥95 ± 5     ≤5 ± 5      ≤−1.71        the unbiased trajectories onto the two principal modes re-
+J24    T/G+G/A         T/A+C/C         49 ± 5     51 ± 5       0.02         veal all junctions except J11 show movement to left-handed
+a These columns show the conformer ratios (%) of the Holliday junctions.
+                                                                            configurations (negative twist) during the various simula-
+                                                                            tion replicates (Figure 5C). We speculate that the large-scale
+Each value is an average of several independent tr-FRET measurements.
+b The free energy differences of stacked conformer I/II to I/IV were cal-   motions involved in the Jtwist mode are responsible for con-
+culated from their conformer ratios according to Equation (14). Negative    figurational switching from isomer 1 to isomer 2 and vice
+values indicate that the I/II+IV/III conformer is thermodynamically fa-     versa. As J11 is the most stable isomer in this study, it is
+vored. c Data previously determined both from tr-FRET and NMR (27).         perhaps not surprising that Jtwist is less predominant for
+                                                                            this isomer only. This sequence-dependent configurational
+Experimental conformer ratios of J1 and J24 immobile junc-                  heterogeneity is consistent with previous NMR studies per-
+tions                                                                       formed on various permutations of junction core sequence
+                                                                            (27). Enhanced sampling along the Jtwist eigenvector, ob-
+The free energies of isomerization from molecular dynam-                    tained from PCA, was performed using the ABF algorithm
+ics ensemble measurements can be directly compared to the                   to determine the PMFs along this reduced coordinate in the
+conformer ratios of J1 and J24 from tr-FRET and NMR                         antiparallel regime [-90◦ , +90◦ ] (37) in a new set of biased
+experiments. The distribution of crossover isomers in J1 has                simulations. A minimum sampling of 5 ns was performed
+been previously reported where the fraction of isomer 1 was                 in each bin as this ensures that the unbiased degrees of free-
+≥0.95 ± 0.05 and the fraction of isomer 2 was ≤0.05 ± 0.05,                 dom have de-correlated, where the slowest relaxation time,
+for an isomer ratio of ≥19:1 (I/II:I/IV) (27). The conformer                that of Jroll , is ∼4 ns (Supplementary Figures S44 and S45).
+ratios and free energies of isomerization of the J1 and J24                 The PMFs show that each junction has a unique flexibility
+immobile junctions are compared in Table 1 below. Here the                  and handedness along Jtwist where J11 prefers to be right-
+resulting isomer ratios for the J24 junction are a fraction of              handed, and J12 shows equal preference for right- and left-
+isomer 1 of 0.49 ± 0.05 and a fraction of isomer 2 of 0.51                  handedness (Figure 5D). The J1 isomers have very different
+± 0.05, for an isomer ratio of 1:1 (I/II:I/IV). The free en-                average rolls along the Jtwist coordinate, while the J24 iso-
+ergy differences between isomers 1 and 2 can be determined                  mers have fairly similar roll profiles. This result is significant
+according to their isomer ratios by using Equation (14), re-                as even in the presence of equal energy isomers (J24), there
+sulting in a value of ≤–7.2 kJ/mol ( ≤–1.71 kcal/mol) for                   can be unique sequence-dependent global dynamics.
+J1 and 0.10 kJ/mol (0.02 kcal/mol) for J24.
+               G = −RTln( f r IsoI / f r IsoI I )                 (14)    CONCLUSIONS
+In the previous section, the free energies of isomerization                 Analyses of explicit solvent MD simulations of a reference
+of the J1 and J24 junctions were calculated using the MM-                   J1 and J24 junction sequence, as well as duplex, nicked-
+PBSA free energy analysis method on the structural config-                  duplex, single-crossover, and junction-core sequence ana-
+urations from MD simulations. From these simulations, the                   logues, were used to demonstrate that asymmetric immo-
+free energies of isomerization were Eiso = −8.2 kcal/mol                  bile 4WJs deviate from canonical B-form DNA, both in
+for J1 and Eiso = 0.4 kcal/mol for J24, comparable to                     structure and, to a larger degree, flexibility. In particular,
+the trend seen in the experimental ratios where isomer 1 is                 the sequence differences between the J1 and J24 manifest
+strongly favored in J1 and both isomers are favored equally                 as distinct isomerization preferences. The chemical topol-
+in J24. The differences in the absolute values of free en-                  ogy and local base-pair sequence were shown to contribute
+ergy of isomerization from simulation to experiment can be                  to these structural changes both in the 4WJ motif and in
+potentially attributed to the solute entropic energies from                 its topological variants. Free energy analyses showed that
+the simulation remaining unconverged after 300 ns (Supple-                  stacking, geometric, and electrostatic factors all contribute
+mentary Figure S42), leading to higher absolute magnitudes                  to the energy difference between stacked junction isomers
+of the free energies of isomerization.                                      and that these contributions can come from both core and
+                                                                            non-core bases. The distinct free energies of isomerization
+                                                                            for J1 and J24 are confirmed using isomeric ratio analysis
+Core sequences exhibit unique junction dynamics
+                                                                            from tr-FRET measurements. Finally, enhanced sampling
+As DNA nanostructures are often comprised of arrays of                      MD revealed that junction core base stacking sequences ex-
+interconnected 4WJs, knowledge of sequence effects on                       hibit unique and significant global junction dynamics that
+global dynamics is necessary to exert a fine control over                   are independent of isomerization energy differences.
+a nanodevice. PCA was performed on the Cartesian coor-                         Tentative sequence design guidance for larger DNA as-
+dinates of all the equilibrated junction data, 2.9 ␮s in to-                semblies can be garnered from the results contained here.
+tal, to obtain the essential dynamical modes of an averaged                 First, the natural deformabilities of the various B-form
+4WJ. The highest variance modes were found to be the in-                    base-pair steps are exacerbated at or near crossover struc-
+plane scissor-like motion, Jtwist (Figure 5A), and the rolling              tural motifs, making this relevant in DNA nanotechnology
+of the junction arms, Jroll (Figure 5B). Definitions of these               design. If rigidity of a nanostructure is desired, the flanking
+motions have both been reported in crystallographic stud-                   sequences of these motifs should be selected from the more
+                                                                                            Nucleic Acids Research, 2022, Vol. 50, No. 2 727
+
+
+
+
+Figure 5. Junction stacking interactions confer unique global system dynamics. (A) The eigenvector components of the highest variance mode (Mode 1)
+are shown as gray arrows on a rendering of the average meta-ensemble backbone structure, coloured for isomer 1 (top) and isomer 2 (bottom). (B) The
+eigenvector components of the second highest variance mode (Mode 2) are shown as gray arrows on a rendering of the average meta-ensemble backbone
+structure, coloured for isomer 1 (top) and isomer 2 (bottom). (C) Projections of the unbiased simulations onto these eigenvectors are shown for J1 (top
+row) and J24 (bottom row). For each system projection isomer 1 is shown on the left and isomer 2 is shown on the right. Contours are shaded according
+to free energy values calculated relative to the most populated bin for each system; bin areas are 0.04 Å2 each. Corresponding Jtwist values are shown in
+orange for Mode 1. (D) Potentials of mean force, from independent ABF simulations to (C), calculated along Mode 1 for isomer 1 (black) and isomer 2
+(orange) are shown for J1 (top, left) and for J24 (bottom, left); the shaded regions represent the error calculated with Equation (13). The average value
+of Mode 2 in each sampling bin for isomer 1 (black) and isomer 2 (orange) are shown for J1 (top, right) and for J24 (bottom, right); the shaded regions
+represent the per-bin standard deviations.
+
+
+rigid purine–pyrimidine tetranucleotide sequences. On the                      specific role of the junction in the overall assembly. Future
+other hand, should flexibility be desired, the pyrimidine–                     work may additionally investigate any cumulative effects of
+purine tetranucleotide sequences might be preferable. At the                   sequential and parallel junction topologies on larger-scale
+core, certain base-pair steps appear to be more deformed                       nanostructures. In particular, future large-scale MD stud-
+as a consequence of geometry, irrespective of sequence, and                    ies, including coarse-grained MD, will likely benefit from
+so energetically it may be best to select bases with flexibili-                accurate conformational and energetic data at the junction-
+ties along specific degrees of freedom (e.g., twist and slide)                 level.
+for these locations, with rigid bases at the other core loca-
+tions. In future work, these hypotheses could be tested, ide-
+                                                                               DATA AVAILABILITY
+ally with free energy perturbation (FEP) methodologies.
+   In this study, the J1 and J24 junctions were chosen due                     All data is available upon request from the corresponding
+to their isomerization tendencies, where J1 has an energetic                   authors.
+preference towards isomer 1 and J24 has a roughly equal
+energetic preference for both isomers. At this time, no de-
+                                                                               SUPPLEMENTARY DATA
+tailed structural information is available from experiment
+for the J1 or J24 junctions, so a base-pair level comparison                   Supplementary Data are available at NAR Online.
+of structure and dynamics is not possible. Future work may
+investigate the sequence effect on isomerization of a broader
+                                                                               FUNDING
+range of junctions, including those with detailed structural
+data from experiment (44). Knowledge of the energetic pref-                    Army Research Office [MURI W911NF-12-1-0420 to
+erence of isomerization of different junctions could play an                   M.R.A., W.P.B, M.B]; Office of Naval Research [ONR
+important role in the design of nanostructures, particularly                   N00014-12-1-0621, N00014-13-1-0664, and N00014-21-1-
+when only several junctions are present, compared with the                     4013 to M.R.A., W.P.B., M.B]; National Science Foun-
+many dozens present in scaffolded DNA origami. In ef-                          dation [MCB-9604568 to G.Q.T. and D.P.M. and CCF-
+fect, the sequence of the junction could be designed for the                   1956054 to M.B.]. Funding for open access charge: Will
+728 Nucleic Acids Research, 2022, Vol. 50, No. 2
+
+
+Bricker - UNM Startup/Mark Bathe - ONR N00014-21-                           23. Mohri,K., Nishikawa,M., Takahashi,N., Shiomi,T., Matsuoka,N.,
+1-4013 and NSF CCF-1956054.                                                     Ogawa,K., Endo,M., Hidaka,K., Sugiyama,H., Takahashi,Y. et al.
+                                                                                (2012) Design and development of nanosized DNA assemblies in
+Conflict of interest statement. None declared.                                  polypod-like structures as efficient vehicles for immunostimulatory
+                                                                                CpG motifs to immune cells. ACS Nano, 6, 5931–5940.
+                                                                            24. Davis,M., Chen,Z. and Shin,D. (2008) Nanoparticle therapeutics:
+REFERENCES                                                                      An emerging treatment modality for cancer. Nat. Rev. Drug Discov.,
+ 1. Seeman,N.C. (1982) Nucleic acid junctions and lattices. J. Theor.           7, 771–782.
+    Biol., 99, 237–247.                                                     25. Liu,M., Fu,J., Hejesen,C., Yang,Y., Woodbury,N., Gothelf,K.,
+ 2. Rothemund,P. (2006) Folding DNA to create nanoscale shapes and              Liu,Y. and Yan,H. (2013) A DNA tweezer-actuated enzyme
+    patterns. Nature, 440, 297–302.                                             nanoreactor. Nat. Commun., 4, 2127.
+ 3. Douglas,S., Dietz,H., Liedl,T., Hoegberg,B., Graf,F. and Shih,W.        26. Modi,S., M.G.,S., Goswami,D., Gupta,G., Mayor,S. and
+    (2009) Self-assembly of DNA into nanoscale three-dimensional                Krishnan,Y. (2009) A DNA nanomachine that maps spatial and
+    shapes and patterns. Nature, 459, 414–418.                                  temporal pH changes inside living cells. Nat. Nanotech., 4, 325–330.
+ 4. Dietz,H., Douglas,S. and Shih,W. (2009) Folding DNA into twisted        27. Miick,S., Fee,R., Millar,D. and Chazin,W. (1997) Crossover isomer
+    and curved nanoscale shapes. Science, 325, 725–730.                         bias is the primary sequence-dependent property of immobilized
+ 5. Han,D., Pal,S., Nangreave,J., Deng,Z., Liu,Y. and Yan,H. (2011)             Holliday junctions. Proc. Natl. Acad. Sci. U.S.A., 94, 9080–9084.
+    DNA origami with complex curvatures in three-dimensional space.         28. Overmars,F. and Altona,C. (1997) NMR study of the exchange rate
+    Science, 332, 342–346.                                                      between two stacked conformers of a model Holliday junction. J.
+ 6. Zhang,F., Jiang,S., Wu,S., Li,Y., Mao,C., Liu,Y. and Yan,H. (2015)          Mol. Biol., 273, 519–524.
+    Complex wireframe DNA origami nanostructures with multi-arm             29. Grainger,R., Murchie,A. and Lilley,D. (1998) Exchange between
+    junction vertices. Nat. Nanotech., 10, 779–784.                             stacking conformers in a four-way DNA junction. Biochemistry, 37,
+ 7. Geary,C., Rothemund,P. and Anderson,E. (2014) A single-stranded             23–32.
+    architecture for cotranscriptional folding of RNA nanostructures.       30. Wei,B., Dai,M. and Yin,P. (2012) Complex shapes self-assembled
+    Science, 345, 799–804.                                                      from single-stranded DNA tiles. Nature, 485, 623–626.
+ 8. Ke,Y., Ong,L., Sun,W., Song,J., Dong,M., Shih,W. and Yin,P. (2014)      31. Altona,C. (1996) Classification of nucleic acid junctions. J. Mol.
+    DNA brick crystals with prescribed depths. Nat. Chem., 6,                   Biol., 263, 568–581.
+    994–1002.                                                               32. Pan,K., Kim,D.-N., Zhang,F., Adendorff,M., Yan,H. and Bathe,M.
+ 9. Veneziano,R., Ratanalert,S., Zhang,K., Zhang,F., Yan,H., Chiu,W.            (2014) Lattice-free prediction of three-dimensional structure of
+    and Bathe,M. (2016) Designer nanoscale DNA assemblies                       programmed DNA assemblies. Nat. Commun., 5, 5578.
+    programmed from the top down. Science, 352, 1534.                       33. Greene,D., Keum,J.-W. and Bermudez,H. (2012) The role of defects
+10. Jun,H., Zhang,F., Shepherd,T., Ratanalert,S., Qi,X., Yan,H. and             on the assembly and stability of DNA nanostructures. Small, 8,
+    Bathe,M. (2019) Autonomously designed free-form 2D DNA                      1320–1325.
+    origami. Sci. Adv., 5, eaav0655.                                        34. Protozanova,E., Yakovchuk,P. and Frank-Kamenetskii,M. (2004)
+11. Jun,H., Shepherd,T., Zhang,K., Bricker,W., Li,S., Chiu,W. and               Stacked-unstacked equilibrium at the nick site of DNA. J. Mol.
+    Bathe,M. (2019) Automated sequence design of 3D polyhedral                  Biol., 342, 775–785.
+    wireframe DNA origami with honeycomb edges. ACS Nano, 13,               35. Yakovchuk,P., Protozanova,E. and Frank-Kamenetskii,M. (2006)
+    2083–2093.                                                                  Base-stacking and base-pairing contributions into thermal stability
+12. Jun,H., Wang,X., Bricker,W. and Bathe,M. (2019) Automated                   of the DNA double helix. Nucleic Acids Res., 34, 564–574.
+    sequence design of 2D wireframe DNA origami with honeycomb              36. Seeman,N. and Kallenbach,N. (1983) Design of immobile
+    edges. Nat. Commun., 10, 5419.                                              nucleic-acid junctions. Biophys. J., 44, 201–209.
+13. Jun,H., Wang,X., Parsons,M.F., Bricker,W.P., John,T., Li,S.,            37. Lilley,D. and Clegg,R. (1993) The structure of the 4-way junction in
+    Jackson,S., Chiu,W. and Bathe,M. (2021) Rapid prototyping of                DNA. Annu. Rev. Biophys. Biomol. Struct., 440, 297–302.
+    arbitrary 2D and 3D wireframe DNA origami. Nucleic Acids Res.,          38. Lilley,D. (2000) Structures of helical junctions in nucleic acids. Q.
+    49, 10265–10274.                                                            Rev. Biophys., 33, 109–159.
+14. Lund,K., Manzo,A., Dabby,N., Michelotti,N., Johnson-Buck,A.,            39. Lilley,D. (2009) Four-way helical junctions in DNA molecules. In:
+    Nangreave,J., Taylor,S., Pei,R., Stojanovic,M., Walter,N. et al.            Benham,C., Harvey,S., Olson,W., Sumners,D. and Swigon,D. (eds).
+    (2010) Molecular robots guided by prescriptive landscapes. Nature,          The IMA Volumes in Mathematics and its Applications: Mathematics
+    465, 206–210.                                                               of DNA Structure, Function and Interactions. Springer, NY, Vol. 150,
+15. Bath,J. and Turberfield,A. (2007) DNA nanomachines. Nat.                    pp. 213–224.
+    Nanotech., 2, 275–284.                                                  40. Duckett,D., Murchie,A., Diekmann,S., Vonkitzing,E., Kemper,B.
+16. Zhang,D., Turberfield,A., Yurke,B. and Winfree,E. (2007)                    and Lilley,D. (1988) The structure of the Holliday junction, and its
+    Engineering entropy-driven reactions and networks catalyzed by              resolution. Cell, 55, 79–89.
+    DNA. Science, 318, 1121–1125.                                           41. Churchill,M., Tullius,T., Kallenbach,N. and Seeman,N. (1988) A
+17. Delebecque,C., Lindner,A., Silver,P. and Aldaye,F. (2011)                   Holliday recombination intermediate is twofold symmetric. Proc.
+    Organization of intracellular reactions with rationally designed            Natl. Acad. Sci. U.S.A., 85, 4653–4656.
+    RNA assemblies. Science, 333, 470–474.                                  42. Cooper,J. and Hagerman,P. (1989) Geometry of a branched
+18. Dutta,P., Varghese,R., Nangreave,J., Lin,S., Yan,H. and Liu,Y.              DNA-structure in solution. Proc. Natl. Acad. Sci. U.S.A., 86,
+    (2011) DNA-directed artificial light-harvesting antenna. J. Am.             7336–7340.
+    Chem. Soc., 133, 11985–11993.                                           43. Clegg,R., Murchie,A. and Lilley,D. (1994) The solution structure of
+19. Pan,K., Boulais,E., Yang,L. and Bathe,M. (2014) Structure-based             the 4-way DNA junction at low-salt conditions – a fluorescence
+    model for light-harvesting properties of nucleic acid nanostructures.       resonance energy-transfer analysis. Biophys. J., 66, 99–109.
+    Nucleic Acids Res., 42, 2159–2170.                                      44. Khuu,P. and Shing Ho,P. (2009) A rare nucleotide base tautomer in
+20. Boulais,E., Sawaya,N., Veneziano,R., Andreoni,A., Banal,J.,                 the structure of an asymmetric DNA junction. Biochemistry, 48,
+    Kondo,T., Mandal,S., Lin,S., Schlau-Cohen,G., Woodbury,N. et al.            7824–7832.
+    (2017) Programmed coherent coupling in a synthetic DNA-based            45. Hyeon,C., Lee,J., Yoon,J., Hohng,S. and Thirumalai,D. (2012)
+    excitonic circuit. Nat. Mater., 17, 159–166.                                Hidden complexity in the isomerization dynamics of Holliday
+21. Banal,J., Kondo,T., Veneziano,R., Bathe,M. and Schlau-Cohen,G.              junctions. Nat. Chem., 4, 907–914.
+    (2017) Photophysics of J-aggregate-mediated energy transfer on          46. Murchie,A., Clegg,R., Vonkitzing,E., Duckett,D., Diekmann,S. and
+    DNA. J. Phys. Chem. Lett., 8, 5827–5833.                                    Lilley,D. (1989) Fluorescence energy-transfer shows that the 4-way
+22. Cunningham,P., Bricker,W., Dı́az,S., Medintz,I., Bathe,M. and               DNA junction is a right-handed cross of antiparallel molecules.
+    Melinger,J. (2017) Optical determination of the electronic coupling         Nature, 341, 763–766.
+    and intercalation geometry of thiazole orange homodimer in DNA.         47. Clegg,R., Murchie,A., Zechel,A., Carlberg,C., Diekmann,S. and
+    J. Chem. Phys., 147, 055101.                                                Lilley,D. (1992) Fluorescence resonance energy-transfer analysis of
+                                                                                         Nucleic Acids Research, 2022, Vol. 50, No. 2 729
+
+
+    the structure of the 4-way DNA junction. Biochemistry, 31,                68. Wheatley,E., Pieniazek,S., Vitoc,I., Mukerji,I. and Beveridge,D.
+    4846–4856.                                                                    (2012) Molecular dynamics structure prediction of a novel
+48. Carlstrom,G. and Chazin,W. (1996) Sequence dependence and direct              protein-DNA complex: Two HU proteins with a DNA four-way
+    measurement of crossover isomer distribution in model Holliday                junction. In: Schlick,T. (ed). Innovations in Biomolecular Modeling
+    junctions using NMR spectroscopy. Biochemistry, 35, 3534–3544.                and Simulations. The Royal Society of Chemistry, Vol. 2, pp.
+49. Duckett,D., Murchie,A. and Lilley,D. (1990) The role of metal-ions            111–128.
+    in the conformation of the 4-way DNA junction. EMBO J., 9,                69. Yu,J., Ha,T. and Schulten,K. (2004) Conformational model of the
+    583–590.                                                                      Holliday junction transition deduced from molecular dynamics
+50. Olson,W., Gorin,A., Lu,X., Hock,L. and Zhurkin,V. (1998) DNA                  simulations. Nucleic Acids Res., 32, 6683–6695.
+    sequence-dependent deformability deduced from protein-DNA                 70. Wheatley,E., Pieniazek,S., Mukerji,I. and Beveridge,D. (2012)
+    crystal complexes. Proc. Natl. Acad. Sci. U.S.A., 95, 11163–11168.            Molecular dynamics of a DNA Holliday junction: The inverted
+51. Lankas,F., Sponer,J., Langowski,J. and Cheatham,T. (2003) DNA                 repeat sequence d(CCGGTACCGG)4 . Biophys. J., 102, 552–560.
+    basepair step deformability inferred from molecular dynamics              71. Yoo,J. and Aksimentiev,A. (2018) New tricks for old dogs:
+    simulations. Biophys. J., 85, 2872–2883.                                      Improving the accuracy of biomolecular force fields by pair-specific
+52. Beveridge,D., Barreiro,G., Byun,K., Case,D., Cheatham,T., Dixit,S.,           corrections to non-bonded interactions. Phys. Chem. Chem. Phys.,
+    Giudice,E., Lankas,F., Lavery,R., Maddocks,J. et al. (2004)                   20, 8432–8449.
+    Molecular dynamics simulations of the 136 unique tetranucleotide          72. Lu,X.-J. and Olson,W. (2003) 3DNA: A software package for the
+    sequences of DNA oligonucleotides. I. Research design and results             analysis, rebuilding and visualization of three-dimensional nucleic
+    on d(Cp G) steps. Biophys. J., 87, 3799–3813.                                 acid structures. Nucleic Acid Res., 31, 5108–5121.
+53. Dixit,S., Beveridge,D., Case,D., Cheatham,T., Giudice,E.,                 73. Lu,X.-J. and Olson,W. (2008) 3DNA: A versatile, integrated
+    Lankas,F., Lavery,R., Maddocks,J., Osman,R., Sklenar,H. et al.                software system for the analysis, rebuilding and visualization of
+    (2005) Molecular dynamics simulations of the 136 unique                       three-dimensional nucleic-acid structures. Nat. Protoc., 3,
+    tetranucleotide sequences of DNA oligonucleotides. II. Sequence               1213–1227.
+    context effects on the dynamical structures of the 10 unique              74. Watson,J., Hays,F. and Ho,P. (2004) Definitions and analysis of
+    dinucleotide steps. Biophys. J., 89, 3721–3740.                               DNA Holliday junction geometry. Nucleic Acids Res., 32,
+54. Pérez,A., Blas,J., Rueda,M., Lopez-Bes,J., de la Cruz,X. and                 3017–3027.
+    Orozco,M. (2005) Exploring the essential dynamics of B-DNA. J.            75. Jorgensen,W., Chandrasekhar,J., Madura,J., Impey,R. and Klein,M.
+    Chem. Theory Comput., 1, 790–800.                                             (1983) Comparison of simple potential functions for simulating
+55. Pérez,A., Lankas,F., Luque,F. and Orozco,M. (2008) Towards a                 liquid water. J. Chem. Phys., 79, 926–935.
+    molecular dynamics consensus view of B-DNA flexibility. Nucleic           76. Phillips,J., Braun,R., Wang,W., Gumbart,J., Tajkhorshid,E.,
+    Acids Res., 36, 2379–2394.                                                    Villa,E., Chipot,C., Skeel,R., Kalé,L. and Schulten,K. (2005)
+56. Dans,P., Pérez,A., Faustino,I., Lavery,R. and Orozco,M. (2012)               Scalable molecular dynamics with NAMD. J. Comput. Chem., 26,
+    Exploring polymorphisms in B-DNA helical conformations. Nucleic               1781–1802.
+    Acids Res., 40, 10668–10678.                                              77. Foloppe,N. and MacKerell,A. (2000) All-atom empirical force field
+57. Meyer,S., Jost,D., Theodorakopoulos,N., Peryard,M., Lavery,R.                 for nucleic acids: I. Parameter optimization based on small molecule
+    and Everaers,R. (2013) Temperature dependence of the DNA                      and condensed phase macromolecular target data. J. Comput.
+    double helix at the nanoscale: Structure, elasticity, and fluctuations.       Chem., 21, 86–104.
+    Biophys. J., 105, 1904–1914.                                              78. MacKerell,A. and Banavali,N. (2000) All-atom empirical force field
+58. Pasi,M., Maddocks,J., Beveridge,D., Bishop,T., Case,D., Cheatham              for nucleic acids: II. Application to molecular dynamics simulations
+    III,T., Dans,P., Jayaram,B., Lankas,F., Laughton,C. et al. (2014)             of DNA and RNA in solution. J. Comput. Chem., 21, 105–120.
+    ␮ABC: a systematic microsecond molecular dynamics study of                79. Allnér,O., Nilsson,L. and Villa,A. (2012) Magnesium ion-water
+    tetranucleotide sequence effects in B-DNA. Nucleic Acids Res., 42,            coordination and exchange in biomolecular simulations. J. Chem.
+    12272–12283.                                                                  Theory Comput., 8, 1493–1502.
+59. Stofer,E., Chipot,C. and Lavery,R. (1999) Free energy calculations        80. Sedeh,R., Pan,K., Adendorff,M., Hallatschek,O., Bathe,K.-J. and
+    of Watson-Crick base pairing in aqueous solution. J. Am. Chem.                Bathe,M. (2016) Computing nonequilibrium conformational
+    Soc., 121, 9503–9508.                                                         dynamics of structured nucleic acid assemblies. J. Chem. Theor.
+60. Srinivasan,J., Cheatham,T., Cieplak,P., Kollman,P. and Case,D.                Comput., 12, 261–273.
+    (1998) Continuum solvent studies of the stability of DNA, RNA,            81. Dhakal,S., Adendorff,M., Liu,M., Yan,H., Bathe,M. and Walter,N.
+    and phosphoramidate-DNA helices. J. Am. Chem. Soc., 120,                      (2016) Rational design of DNA-actuated enzyme nanoreactors
+    9401–9409.                                                                    guided by single molecule analysis. Nanoscale, 8, 3125–3137.
+61. Florian,J., Goodman,M. and Warshel,A. (2000) Free-energy                  82. Martyna,G., Tobias,D. and Klein,M. (1994) Constant pressure
+    perturbation calculations of DNA destabilization by base                      molecular dynamics algorithms. J. Chem. Phys., 101, 4177–4189.
+    substitutions: The effect of neutral guanine thymine, adenine             83. Feller,S., Zhang,Y., Pastor,R. and Brooks,B. (1995)
+    cytosine and adenine difluorotoluene mismatches. J. Phys. Chem. B,            Constant-pressure molecular-dynamics simulation – The Langevin
+    104, 10092–10099.                                                             piston method. J. Chem. Phys., 103, 4613–4621.
+62. Vonkitzing,E., Lilley,D. and Diekmann,S. (1990) The                       84. Brünger,A. (1993) In: X-PLOR Version 3.1: A System for X-ray
+    stereochemistry of a 4-way DNA junction – A theoretical study.                Crystallography and NMR. Yale University Press, New Haven, CT.
+    Nucleic Acids Res., 18, 2671–2683.                                        85. Michaud-Agrawal,N., Denning,E., Woolf,T. and Beckstein,O.
+63. Yoo,J. and Aksimentiev,A. (2013) In situ structure and dynamics of            (2011) Software News and Updates. MDAnalysis: a toolkit for the
+    DNA origami determined through molecular dynamics simulations.                analysis of molecular dynamics simulations. J. Comput. Chem., 32,
+    Proc. Natl. Acad. Sci. U.S.A., 110, 20099–20104.                              2319–2327.
+64. Maffeo,C., Yoo,J. and Aksimentiev,A. (2016) De novo                       86. Miller III,B., McGee,T. Jr, Swails,J., Homeyer,N., Gohlke,H. and
+    reconstruction of DNA origami structures through atomistic                    Roitberg,A. (2012) MMPBSA.py: an efficient program for end-state
+    molecular dynamics simulations. Nucleic Acids Res., 44, 3013–3019.            free energy calculations. J. Chem. Theory Comput., 8, 3314–3321.
+65. Pan,K., Bricker,W., Ratanalert,S. and Bathe,M. (2017) Structure           87. Case,D., Ben-Shalom,I., Brozell,S., Cerutti,D., Cheatham,T. III,
+    and conformational dynamics of scaffolded DNA origami                         Cruzeiro,V., Darden,T., Duke,R., Ghoreishi,D., Gilson,M. et al.
+    nanoparticles. Nucleic Acids Res., 45, 6284–6298.                             (2018) In: AMBER 2018. University of California, San Francisco.
+66. Snodin,B., Randisi,F., Mosayebi,M., Šulc,P., Schreck,J., Romano,F.,      88. Crowley,M., Williamson,M. and Walker,R. (2009) CHAMBER:
+    Ouldridge,T., Tsukanov,R., Louis,A. and Doye,J. (2015)                        comprehensive support for CHARMM force fields within the
+    Introducing improved structural properties and salt dependence into           AMBER software. Int. J. Quant. Chem., 109, 3767–3772.
+    a coarse-grained model of DNA. J. Chem. Phys., 142, 234091.               89. Warwicker,J. and Watson,H. (1982) Calculation of the
+67. Varnai,P. and Timsit,Y. (2010) Differential stability of DNA                  electric-potential in the active-site cleft due to ␣-helix dipoles. J.
+    crossovers in solution mediated by divalent cations. Nucleic Acids            Mol. Biol., 157, 671–679.
+    Res., 38, 4163–4172.
+730 Nucleic Acids Research, 2022, Vol. 50, No. 2
+
+
+90. Klapper,I., Hagstrom,R., Fine,R., Sharp,K. and Honig,B. (1986)          96. Hayward,S. and de Groot,B. (2008) Normal modes and essential
+    Focusing of electric fields in the active site of Cu-Zn superoxide          dynamics. In: Kukol,A. (ed). Molecular Modeling of Proteins.
+    dismutase: effects of ionic strength and amino-acid modification.           Methods Molecular Biology. Humana Press Clifton, NJ, Vol. 443,
+    Proteins, 1, 47–59.                                                         pp. 89–106.
+91. Cai,Q., Hsieh,M.-J., Wang,J. and Luo,R. (2010) Performance of           97. Bakan,A., Meireles,L. and Bahar,I. (2011) ProDy: protein dynamics
+    nonlinear finite-difference Poisson-Boltzmann solvers. J. Chem.             inferred from theory and experiments. Bioinformatics, 27,
+    Theory Comput., 6, 203–211.                                                 1575–1577.
+92. Tan,C., Tan,Y.-H. and Luo,R. (2007) Implicit nonpolar solvent           98. Fiorin,G., Klein,M. and Henin,J. (2013) Using collective variables to
+    models. J. Phys. Chem. B, 111, 12263–12274.                                 drive molecular dynamics simulations. Mol. Phys., 111, 3345–3362.
+93. Weiser,J., Shenkin,P. and Still,W. (1999) Approximate atomic            99. Darve,E., Rodriguez-Gomez,D. and Pohorille,A. (2008) Adaptive
+    surfaces from linear combinations of pairwise overlaps (LCPO). J.           biasing force method for scalar and vector free energy calculations.
+    Comput. Chem., 20, 217–230.                                                 J. Chem. Phys., 128, 144120.
+94. Schlitter,J. (1993) Estimation of absolute and relative entropies of   100. Henin,J., Fiorin,G., Chipot,C. and Klein,M. (2010) Exploring
+    macromolecules using the covariance-matrix. Chem. Phys. Lett.,              multidimensional free energy landscapes using time-dependent
+    215, 617–621.                                                               biases on collective variables. J. Chem. Theory Comput., 6, 35–47.
+95. Amadei,A., Linssen,A. and Berendsen,H. (1993) Essential dynamics       101. Flyvbjerg,H. and Petersen,H. (1989) Error-estimates on averages of
+    of proteins. Proteins: Struct., Funct., Genet., 17, 412–425.                correlated data. J. Chem. Phys., 91, 461–466.
+
