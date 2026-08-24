@@ -733,7 +733,23 @@ repair made it.** At the assembled `HEAD` two generated artifacts were owed by n
 `CLAUDE.md` tells an agent to hand-add a handle and the generator formats it differently) and
 `gpd/results/P-22-result-reader-census.json` (four studies, one of them iteration 47's).
 
-**The highest numbers in use at the time of writing are ~~`T-316`, `P-31`, `C-0208`, `CH-0265`~~ `T-317`, `P-31`, `C-0209`, `CH-0266`** — the register was written before agent D's `T-313` opened `T-317` and before `C-0209`/`CH-0266` were filed against it, which is `CLAUDE.md`'s own *a self-describing count is the one number a numeric tracer cannot own*, met inside one iteration.
+## Number reservations — iteration 49 (2026-08-24)
+
+| Agent | Task | Claims | Challenges |
+|---|---|---|---|
+| H | `T-315` route B's three uniform widths re-graded at the **resolved per-bond** link, discharging `CH-0265` | `C-0211` | `CH-0270`, `CH-0271` |
+| J | `T-316` a distribution **searched** at the resolved link, against the `0.198 %` the tightest cell misses by | `C-0212` | `CH-0272`, `CH-0273` |
+
+**Reserved and not yet taken**: `C-0211`, `C-0212`, `CH-0270`, `CH-0271`, `CH-0272`, `CH-0273`.
+Anything unused when the iteration closes is **released by name here**, never by range. New rows take
+`T-322`/`T-323` (agent H) and `T-324`/`T-325` (agent J), so a row opened mid-flight cannot collide.
+
+**Neither agent may edit [`src/main/kotlin/tile/HoneycombGrillage.kt`](src/main/kotlin/tile/HoneycombGrillage.kt).**
+`C-0208` gave it the per-bond resolution both tasks need, so both are **re-grades on an existing lattice**
+and each writes only its own new study — which is what makes them safe to run together. Neither re-emits an
+existing result file, and neither is a placement search of the other's object.
+
+**The highest numbers in use are ~~`T-316`, `P-31`, `C-0208`, `CH-0265`~~ ~~`T-317`, `P-31`, `C-0209`, `CH-0266`~~ `T-321`, `P-31`, `C-0210`, `CH-0269`, reserved to `T-325`, `C-0212`, `CH-0273`** — **DERIVED at the close of iteration 48, not asserted**, by `max` over `^| T-` and `^| P-` in this file and over the filenames in `gpd/claims/` and `gpd/challenges/`. It went stale **twice inside one iteration**: once before agent D's `T-313` opened `T-317` and `C-0209`/`CH-0266` were filed against it, and again before `T-319` filed `C-0210`, `CH-0268`, `CH-0269` and opened `T-320`/`T-321`. That is `CLAUDE.md`'s *a self-describing count is the one number a numeric tracer cannot own* — **and the fix is not care, it is the four-line derivation**, because the register is a function of the tree and any hand-written copy of it is a snapshot of a moving object.
 `T-297` and `T-298` were opened DURING iteration 46, by `CH-0242` and `C-0197`, and are unreserved.
 `T-279`, `T-280` and `T-281` were opened DURING the iteration, by `CH-0227`–`CH-0230`, and are unreserved:
 a task number costs nothing and a claim number does, so a row is opened when the work is named and a claim
