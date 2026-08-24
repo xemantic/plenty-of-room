@@ -205,6 +205,62 @@ The `Leaf` column is the NDI `simulation-task-map` ID the work traces to.
 > swings back.
 
 
+> **ITERATION 48 CLOSED ALL FOUR OF THOSE, AND THE ONE TO READ FIRST IS
+> [`C-0204`](gpd/claims/C-0204-the-anchor-azimuth-is-determined.md), BECAUSE IT REPLACES A BRACKET
+> WITH A DERIVATION AND THE DERIVATION LANDS ON A NUMBER THE CORPUS ALREADY HELD.** `T-304`: a chain
+> leaves a helix at the phosphate of its **last paired base**, so the anchor azimuth is
+> `θ(ρ, b₀) = fold((ρ − b₀ − 21/4)·240/7°)` — referenced to the **exact** `5.25 bp` half turn, not
+> caDNAno's integer `5`. On the drawable `102 / 109` raster that puts **every one of the 59 turns at
+> an ALLOWED scaffold crossover**: one span, **`0.787091706 nm`**, at all 59, at all eight readings of
+> the axial datum and at every anchor offset — which is `C-0152`'s own allowed-crossover span,
+> reproduced out of `T-246`'s committed result file at **`4.2e−10`**. `C-0201`'s 36 bracket corners
+> become 16 and **`16 of 16` are flat** (`0.0569497052–0.0689014279` against `0.0569815008–0.166312182`),
+> the steric margin going `1.31× → 6.43×`. **A bracket was the right instrument for a REACH and the
+> wrong one for an ELEMENT**, and [`CH-0256`](gpd/challenges/CH-0256-the-azimuth-is-not-a-convention.md) says so.
+>
+> **THEN ITS OWN FALSIFIER FIRED, AND THE FOLLOW-ON WITHDREW THE ALARM ANYWAY.** `F7`: route B does not
+> need caDNAno's residue condition at all — an unpaired base has no azimuth — so its **uniform** rows
+> `92 / 98 / 106 bp` close at **no** lattice phase and their turns take a span *distribution* reaching
+> `4.35327572 nm`, `C-0201`'s worst corner exactly. Graded (`T-307`/[`C-0207`](gpd/claims/C-0207-the-uniform-raster-is-flat-with-its-tethers.md))
+> they are flat at **`756 of 756`** cells, `0.0483790868–0.0946863482` of the stroke. **The span is a
+> LEVEL and the dishing is a FIELD, and three artifacts made the step between them without ever taking
+> it** ([`CH-0262`](gpd/challenges/CH-0262-the-alarm-did-not-survive-its-relocation.md)) — the 59
+> contributions are **signed** and only 50 have a coordinate at all. The lattice phase is a real design
+> variable worth **`1.82364566×`**, and `C-0204`'s own ranking criterion is the dishing optimum at
+> **none** of the three widths.
+>
+> **THE COUPLED HALF WENT THE OTHER WAY, AND THEN ITS OWN CHALLENGE PUT IT BACK IN PLAY.**
+> `T-303`/[`C-0205`](gpd/claims/C-0205-what-link-stiffness-the-recovery-needs.md): the two cells
+> `C-0180` recovered cross `T-5b` at **`834.060958`** and **`607.396049 pN/nm`** of link, and the
+> connector's shear mechanism supplies at most **`254.808095`** on three closed-form routes and no
+> solver — so the 64-cell census is **`0 / 0 / 0 / 2 / 2`** across the ladder and `C-0180`'s `2 of 64`
+> exists **at the numerical penalty and nowhere the connector can reach**. Then
+> [`CH-0259`](gpd/challenges/CH-0259-one-scalar-for-two-mechanisms.md): `HoneycombGrillage` applies
+> **one scalar to a bond with two mechanisms** — 135 in-plane bonds where the shear ceiling is exact,
+> and 300 through-thickness ones where three quarters of a relative `W` is a change of interhelical
+> **separation**, resisted **axially**. Resolved at the corpus's own two axial candidates that link is
+> `475.448622–1211.56918 pN/nm` and **straddles both thresholds**. **That is `T-310`, and it is where
+> the whole *does the coupled recovery survive* question now sits.**
+>
+> **THE PROCESS LAYER GAINED A DECLARED INTERFACE AND LOST AN INHERITED RED GATE.**
+> `T-306`/[`C-0206`](gpd/claims/C-0206-a-harness-output-format-is-an-interface.md): a mutation
+> harness's printed output is an interface eight regular expressions were inferring; measured, the
+> fifteen harnesses print **6 distinct row shapes**, 6 of the 8 patterns fire, and **3 state no row
+> count at all**. Declared per harness, with a mandatory count and a label that must be a **prefix of
+> the harness's own mutation name**, so the defect is caught at authoring time. **The coordinator's
+> baseline `verify.sh --committed` at the previous `HEAD` was RED at 1 defect and this was it**:
+> `T-298`'s ten mutations were **uncensused**, because iteration 47's own repair to that harness
+> introduced a label mis-parse in the same act
+> ([`CH-0260`](gpd/challenges/CH-0260-the-third-repair-made-the-fourth-collision.md)) — **the third
+> repair made the fourth collision**. Census now **330 mutations over 15 harnesses, 0 defects**;
+> `P-31` **19 harnesses, wired 19 of 19**.
+>
+> **What is open and cheap after iteration 48**: `T-310` (**HIGH**, in flight as this was written —
+> read `C-0205` §5 and `CH-0259` before quoting any coupled honeycomb number), `T-309`, `T-313`,
+> `T-294`, and `T-276` — the fourteenth `ANSWERS.md` synthesis, still owed at the **END** of an
+> iteration because a census is dated by the corpus it was taken over, and this iteration moved
+> `C-0201`'s headline twice.
+
 Written for whoever picks the loop up next. The queue below is the authority; this is only the reading order.
 ~~**Superseding the iteration-24 note, which four iterations have overtaken — and the four-layer line has
 reversed this programme's largest standing negative.**~~
@@ -637,7 +693,33 @@ agent C touches only `tools/`, `build.gradle.kts` and its own retained data. **N
 existing result file** — both write new ones — so the emission cluster is not shared and
 `C-0101`'s consumer-before-producer error is not reachable this iteration.
 
-**The highest numbers in use at the time of writing are `T-305`, `P-31`, `C-0203`, `CH-0255`.**
+**ITERATION 48 (2026-08-24) — CLOSE-OUT.** Taken: `C-0204` (`T-304`, agent A), `C-0205` (`T-303`, agent B),
+`C-0206` (`T-306`/`T-305`/`T-301`, agent C), `C-0207` (`T-307`/`T-308`, agent D, spawned mid-iteration on freed
+capacity), `C-0208` (`T-310`, agent E, spawned after the other four landed). Challenges taken: `CH-0256` (`T-304`),
+`CH-0258` and `CH-0259` (`T-303`), `CH-0260` (`T-306`), `CH-0262` (`T-307`).
+**Released unused, by name and never by range: `CH-0257`, `CH-0261`, `CH-0263`, `T-311`, `T-312`, `T-314`.**
+New rows opened during the iteration by the work itself: `T-307` and `T-308` (`C-0204`), `T-309` and `T-310`
+(`C-0205`), `T-313` (`C-0207`).
+
+**Ownership held on the science side and leaked on the plumbing side.** Agent A owned
+`structure/HoneycombTurnLoop.kt`, agent B `tile/LinkStiffnessThresholdStudy.kt`, agent C `tools/` and
+`build.gradle.kts`, agent D its own new study plus `tools/P-31-harness-census.py` once C had finished with it,
+and agent E `tile/HoneycombGrillage.kt` once the other four had landed — **no two agents edited one source**.
+What did collide was the **index**: `git add <paths>` followed by a **bare** `git commit` commits the whole
+index, so `65d6b26` swept agent C's `git mv` and `7ba2a26` swept agent A's, and between `49d25f3` and `95f93eb`
+`HEAD` was transiently link-broken because one agent's document edits landed before its artifacts existed.
+Nothing was lost; the cure (`git commit -- <paths>`) is now a `CLAUDE.md` entry.
+
+**The coordinator's baseline run paid for itself and the final sweep found two more.** `tools/verify.sh
+--committed` at `342d7ad` — before any agent commit — was **RED at 1 defect**, in `tools/T-295-mutation-input-census.py`:
+`T-298`'s ten mutations were **uncensused** because iteration 47's own repair to that harness's printed format
+introduced a label mis-parse in the same act. **That is the fourth collision of `T-306`'s class and the third
+repair made it.** At the assembled `HEAD` two generated artifacts were owed by nobody in particular —
+`structure/ResultInputs.kt` (stale only in its **line wrapping**, the 186 handles being identical, because
+`CLAUDE.md` tells an agent to hand-add a handle and the generator formats it differently) and
+`gpd/results/P-22-result-reader-census.json` (four studies, one of them iteration 47's).
+
+**The highest numbers in use at the time of writing are `T-316`, `P-31`, `C-0208`, `CH-0265`.**
 `T-297` and `T-298` were opened DURING iteration 46, by `CH-0242` and `C-0197`, and are unreserved.
 `T-279`, `T-280` and `T-281` were opened DURING the iteration, by `CH-0227`–`CH-0230`, and are unreserved:
 a task number costs nothing and a claim number does, so a row is opened when the work is named and a claim
