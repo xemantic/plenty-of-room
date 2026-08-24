@@ -327,6 +327,14 @@ class HoneycombDeflection internal constructor(
  *          **independent** one and therefore a lower bound. `1.0` is that lower bound and
  *          `MultiLayerRigidities.realisedEnhancement` is the calibrated upper one.
  * @param slipStiffness `k_s` in `pN/nm`, the crossover's resistance to axial slip.
+ * @param radialLinkStiffness the crossover's resistance in `pN/nm` to a change of the
+ *          **interhelical separation**, `null` unless resolved (`T-310`). `W` is the deflection
+ *          normal to the face, so a relative `W` displacement is a pure transverse **shear** of
+ *          the connector only where the bond lies **in plane**; through the thickness
+ *          `unitZ² = 0.75` and three quarters of it is radial. Set, the link becomes
+ *          [linkStiffnessAt] and [linkStiffness] is read as the **transverse** constant; unset,
+ *          the single scalar applies at every direction, which is what `C-0154`, `C-0167`,
+ *          `C-0175`, `C-0180`, `C-0194`, `C-0201`, `C-0205` and `C-0207` all measured.
  * @param axialPinBeam which beam's first node has its `U` pinned. The axial subsystem has exactly
  *          one rigid mode — a uniform `U` — because the bond graph is connected; pinning it is
  *          exact, and that the choice does not matter is asserted rather than argued.
@@ -348,6 +356,7 @@ class HoneycombGrillage(
     ),
     val subdivisions: Int = 1,
     val linkStiffness: Double = RIGID_LINK_STIFFNESS,
+    val radialLinkStiffness: Double? = null,
     val faceColumn: Int = 0,
     val axialPinBeam: Int = 0,
     val bondPrestrains: Map<HoneycombBondSite, Double> = emptyMap(),
@@ -367,6 +376,11 @@ class HoneycombGrillage(
         require(slipStiffness > 0.0) { "slipStiffness must be positive, was: $slipStiffness" }
         require(subdivisions >= 1) { "subdivisions must be at least 1, was: $subdivisions" }
         require(linkStiffness > 0.0) { "linkStiffness must be positive, was: $linkStiffness" }
+        if (radialLinkStiffness != null) {
+            require(radialLinkStiffness > 0.0 && radialLinkStiffness.isFinite()) {
+                "radialLinkStiffness must be positive and finite, was: $radialLinkStiffness"
+            }
+        }
         require(faceColumn in 0 until block.helicesPerRow) {
             "faceColumn must be a column of the block, was: $faceColumn"
         }
@@ -578,15 +592,52 @@ class HoneycombGrillage(
         ) {
             this
         } else HoneycombGrillage(
-            block, rowBasePairs, foundationStiffness, hingeStiffness, hingeStiffnessEnhancement,
-            slipStiffness, duplex, subdivisions, linkStiffness, faceColumn, axialPinBeam,
-            emptyMap(), scaffoldTurnTies.map { it.copy(prestrainRadians = 0.0) },
-            scaffoldTurnTethers.map { it.copy(tension = 0.0) }
+            block = block,
+            rowBasePairs = rowBasePairs,
+            foundationStiffness = foundationStiffness,
+            hingeStiffness = hingeStiffness,
+            hingeStiffnessEnhancement = hingeStiffnessEnhancement,
+            slipStiffness = slipStiffness,
+            duplex = duplex,
+            subdivisions = subdivisions,
+            linkStiffness = linkStiffness,
+            radialLinkStiffness = radialLinkStiffness,
+            faceColumn = faceColumn,
+            axialPinBeam = axialPinBeam,
+            bondPrestrains = emptyMap(),
+            scaffoldTurnTies = scaffoldTurnTies.map { it.copy(prestrainRadians = 0.0) },
+            scaffoldTurnTethers = scaffoldTurnTethers.map { it.copy(tension = 0.0) }
         )
     }
 
     /** The initial relative roll in radians [bond] is built at — zero unless named. */
     fun prestrainOf(bond: HoneycombLatticeBond): Double = bondPrestrains[bond.site] ?: 0.0
+
+    /**
+     * The normal-link stiffness in pN/nm at a crossover whose unit line of centres is
+     * `(unitY, unitZ)` — `T-310`.
+     *
+     * With [radialLinkStiffness] unset this returns [linkStiffness] **by identity rather than by
+     * arithmetic**, so the assembled matrix of a default lattice is bit-identical to the object
+     * every claim before `C-0208` measured, and not merely equal to it: `unitY² + unitZ²` is not
+     * exactly one in floating point.
+     *
+     * With it set the link is resolved the way `HoneycombTetherElement.normalStiffness` already
+     * resolves a chain's — the central-force decomposition projected onto the link's own gradient
+     * direction, which is `z`. At an in-plane bond `unitZ = 0` and the answer is the transverse
+     * constant; through the thickness `unitZ² = 0.75`.
+     */
+    fun linkStiffnessAt(unitY: Double, unitZ: Double): Double =
+        if (radialLinkStiffness == null) linkStiffness
+        else resolvedLinkStiffness(radialLinkStiffness, linkStiffness, unitY, unitZ)
+
+    /** The normal-link stiffness in pN/nm of [bond]. */
+    fun linkStiffnessOf(bond: HoneycombLatticeBond): Double =
+        linkStiffnessAt(bond.unitY, bond.unitZ)
+
+    /** The normal-link stiffness in pN/nm of raster turn tie [element]. */
+    fun linkStiffnessOf(element: HoneycombTurnElement): Double =
+        linkStiffnessAt(element.unitY, element.unitZ)
 
     private fun dof(node: Int, beam: Int, component: Int): Int =
         (node * beamCount + beam) * DOF_PER_NODE + component
@@ -652,9 +703,10 @@ class HoneycombGrillage(
             )
             val armY = half * bond.unitY
             val linkGradient = doubleArrayOf(1.0, armY, -1.0, armY)
+            val link = linkStiffnessOf(bond)
             scatter(
                 intArrayOf(dof(node, a, W), dof(node, a, PHI), dof(node, b, W), dof(node, b, PHI)),
-                Array(4) { i -> DoubleArray(4) { j -> linkStiffness * linkGradient[i] * linkGradient[j] } }
+                Array(4) { i -> DoubleArray(4) { j -> link * linkGradient[i] * linkGradient[j] } }
             )
             val armZ = half * bond.unitZ
             val slipGradient = doubleArrayOf(1.0, -armZ, -1.0, -armZ)
@@ -674,9 +726,10 @@ class HoneycombGrillage(
             )
             val armY = half * element.unitY
             val linkGradient = doubleArrayOf(1.0, armY, -1.0, armY)
+            val link = linkStiffnessOf(element)
             scatter(
                 intArrayOf(dof(node, a, W), dof(node, a, PHI), dof(node, b, W), dof(node, b, PHI)),
-                Array(4) { i -> DoubleArray(4) { j -> linkStiffness * linkGradient[i] * linkGradient[j] } }
+                Array(4) { i -> DoubleArray(4) { j -> link * linkGradient[i] * linkGradient[j] } }
             )
             val armZ = half * element.unitZ
             val slipGradient = doubleArrayOf(1.0, -armZ, -1.0, -armZ)
@@ -957,9 +1010,20 @@ class HoneycombGrillage(
                 rotation * rotation
             })
 
-    /** The penalty residual in pN·nm of the normal links in [field]. */
-    fun linkEnergy(field: F64Array): Double = 0.5 * linkStiffness *
-            bonds.sumOf { val gap = linkExtension(field, it); gap * gap }
+    /**
+     * The penalty residual in pN·nm of the normal links in [field].
+     *
+     * Branched on [radialLinkStiffness] deliberately: `0.5·k·Σx²` and `0.5·Σ k x²` are not the
+     * same floating-point number, and `C-0194` §2 quotes `6.7528608` out of this accessor.
+     */
+    fun linkEnergy(field: F64Array): Double = if (radialLinkStiffness == null) {
+        0.5 * linkStiffness * bonds.sumOf { val gap = linkExtension(field, it); gap * gap }
+    } else {
+        0.5 * bonds.sumOf {
+            val gap = linkExtension(field, it)
+            linkStiffnessOf(it) * gap * gap
+        }
+    }
 
     /** The energy in pN·nm the axial slip springs store in [field]. */
     fun slipEnergy(field: F64Array): Double = 0.5 * slipStiffness *
@@ -1399,7 +1463,7 @@ class HoneycombGrillage(
             val b = element.tie.upperBeam
             val node = element.node
             val armY = half * element.unitY
-            val magnitude = linkStiffness * offset
+            val magnitude = linkStiffnessOf(element) * offset
             load[dof(node, a, W)] += magnitude
             load[dof(node, a, PHI)] += magnitude * armY
             load[dof(node, b, W)] -= magnitude

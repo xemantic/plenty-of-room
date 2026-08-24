@@ -102,7 +102,9 @@ MUTATIONS = [
     ),
     (
         "M11 the link offset load drops the penalty, so the field cannot converge", GRILLAGE,
-        "            val magnitude = linkStiffness * offset",
+        # `T-310` resolved the link by the bond's own direction, so this anchor now reads
+        # `linkStiffnessOf(element)` where it read `linkStiffness`; the mutation is unchanged.
+        "            val magnitude = linkStiffnessOf(element) * offset",
         "            val magnitude = offset",
     ),
     (

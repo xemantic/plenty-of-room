@@ -492,6 +492,14 @@ tasks.register<Exec>("testUniformRasterTetherMutations") {
     commandLine(mutationSnapshotArguments("T-307-mutation-test.py"))
 }
 
+tasks.register<Exec>("testRadialLinkResolutionMutations") {
+    group = "verification"
+    description = "Runs tools/T-310-mutation-test.py <snapshot>, the Kotlin mutation test for " +
+        "the per-bond resolution of a crossover's normal link. Needs -PmutationSnapshot=<dir>; " +
+        "not in :test"
+    commandLine(mutationSnapshotArguments("T-310-mutation-test.py"))
+}
+
 tasks.named("test") {
     dependsOn(
         "testHarness", "testDeliverableTracer", "testMarkdownTables", "testCorpusLinks",

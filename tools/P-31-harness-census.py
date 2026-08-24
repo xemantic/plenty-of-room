@@ -141,6 +141,11 @@ HARNESSES = (
     # cost an iteration each for want of.
     ("T-307-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
      "src/main/kotlin/tile/UniformRasterTetherSpans.kt", (BY_HAND,)),
+    # `T-310`.  Two Kotlin subjects, and the second is the SHARED lattice: a mutation of
+    # `HoneycombGrillage`'s new per-bond branch is the only evidence that its `null` default is
+    # still the object four claims measured.
+    ("T-310-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
+     "src/main/kotlin/tile/CrossoverLinkResolution.kt", (BY_HAND,)),
     # `T-313`.  A Python subject with an INLINE `--selftest`, so the harness runs the subject
     # itself rather than a sibling test file -- and its fixture is bigger than a `tools/`-only
     # copy, because eleven of that self-test's assertions read the corpus.

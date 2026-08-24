@@ -471,6 +471,18 @@ the richest set richest and does not make it flatter.
    **So the conditionality above STANDS**, and it is now a conditionality on the arm the built object does
    **not** occupy: `C-0175` §9's `1.12×`, `C-0180` §4's `2 of 64` and `C-0190`'s twist are correct about a
    design nobody has folded, and the **tether** re-grade (`T-299`) is the live one.
+   **AND `2 of 64` IS A READING AT A NUMERICAL PENALTY, iteration 48 — AT EVERY LINK STIFFNESS A CROSSOVER
+   CONNECTOR CAN SUPPLY IT IS `0 of 64`** ([`C-0205`](gpd/claims/C-0205-what-link-stiffness-the-recovery-needs.md),
+   `T-303`, [`CH-0258`](gpd/challenges/CH-0258-two-of-sixty-four-is-a-reading-at-a-penalty.md);
+   [`C-0208`](gpd/claims/C-0208-a-bond-link-is-two-mechanisms.md), `T-310`).
+   `2 of 64` is read at `RIGID_LINK_STIFFNESS = 1e4 pN/nm`, a **penalty** whose value the answer must not
+   depend on, and the largest a connector's own mechanisms supply is **`254.808095 pN/nm`**, `39.2452209×`
+   below it (`10000 / 254.808095`); the two recovered cells cross `T-5b` at **`834.060958`** and
+   **`607.396049`**. Resolving the link by the **bond's own direction** — the shear ceiling exactly at the
+   135 in-plane bonds and `629.20588`–`1365.32644` at the 300 through the thickness — leaves the count at
+   **`0 of 64` at every rung of that bracket**, with the tightest cell in the corpus missing `T-5b` by
+   **`0.198 %`**. **Both routes now agree on the count**, route B at `0 of 16` over four decades of link
+   stiffness.
    **Two readings of `C-0193` are corrected in the favourable direction**: the 28 unpaired bases split
    **`12 / 16`**, not the `14 / 14` a rendered figure suggested — so a raster turn joins two duplex ends
    **`24` nt apart at thirty turns and `32` at thirty**, mean `28.0` exactly — and the duplex is in **perfect

@@ -6,12 +6,12 @@
   "task": "P-22",
   "claim": "C-0082",
   "what": "The reader graph over gpd/results/, derived from the Kotlin sources rather than grepped. A read is a result-file string literal in the argument list of a File(...) construction, propagated along top-level references; comments and prose strings are not reads. See tools/result-reader-census.py and CH-0092.",
-  "studyCount": 140,
+  "studyCount": 141,
   "helperCount": 3,
-  "resultFileCount": 186,
+  "resultFileCount": 187,
   "declaringStudyCount": 13,
   "transitiveEdgeCount": 27,
-  "directEdgeCount": 164,
+  "directEdgeCount": 167,
   "studies": {
     "HelloWorldApp.kt": {
       "reads": [],
@@ -3561,6 +3561,7 @@
         "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
+        "tile/CrossoverLinkResolution.kt",
         "tile/DesignedHoneycombGrillage.kt",
         "tile/HoneycombBondClassResidues.kt",
         "tile/HoneycombFaceLattice.kt",
@@ -4198,6 +4199,7 @@
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CoupledFourLayer.kt",
         "tile/CrossoverCommonMode.kt",
+        "tile/CrossoverLinkResolution.kt",
         "tile/ForcedCrossoverPrice.kt",
         "tile/HoneycombBondClassResidues.kt",
         "tile/HoneycombFaceLattice.kt",
@@ -4618,6 +4620,7 @@
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CoupledFourLayer.kt",
+        "tile/CrossoverLinkResolution.kt",
         "tile/FourLayerTile.kt",
         "tile/HoneycombBondClassResidues.kt",
         "tile/HoneycombCoupledLattice.kt",
@@ -4658,6 +4661,7 @@
         "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
+        "tile/CrossoverLinkResolution.kt",
         "tile/FourLayerTile.kt",
         "tile/HoneycombBondClassResidues.kt",
         "tile/HoneycombFaceLattice.kt",
@@ -4794,6 +4798,7 @@
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CoupledFourLayer.kt",
+        "tile/CrossoverLinkResolution.kt",
         "tile/FourLayerTile.kt",
         "tile/HoneycombBondClassResidues.kt",
         "tile/HoneycombCoupledTile.kt",
@@ -4844,6 +4849,7 @@
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CoupledFourLayer.kt",
+        "tile/CrossoverLinkResolution.kt",
         "tile/FourLayerTile.kt",
         "tile/HoneycombBondClassResidues.kt",
         "tile/HoneycombCoupledTile.kt",
@@ -4948,6 +4954,7 @@
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CoupledFourLayer.kt",
         "tile/CrossoverCommonMode.kt",
+        "tile/CrossoverLinkResolution.kt",
         "tile/CrossoverLinkStiffness.kt",
         "tile/FourLayerTile.kt",
         "tile/HoneycombBondClassResidues.kt",
@@ -5003,6 +5010,61 @@
         "tile/ObliqueRoot.kt"
       ]
     },
+    "tile/RadialLinkResolutionStudy.kt": {
+      "reads": [
+        "T-299-tethered-raster-turn-regrade.json",
+        "T-303-what-link-stiffness-the-recovery-needs.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "directReads": [
+        "T-299-tethered-raster-turn-regrade.json",
+        "T-303-what-link-stiffness-the-recovery-needs.json",
+        "T-3b-tile-edge-load-profile.json"
+      ],
+      "transitiveReads": [],
+      "writes": "T-310-a-bond-link-is-two-mechanisms.json",
+      "declaredSources": null,
+      "reaches": [],
+      "reachesFiles": [
+        "Physics.kt",
+        "anchoring/MeasuredBackbone.kt",
+        "coupling/CouplingElement.kt",
+        "coupling/CouplingRequirement.kt",
+        "coupling/DropoutRobustPlacement.kt",
+        "coupling/NonUniformCoupling.kt",
+        "coupling/SharedBodyCoupling.kt",
+        "coupling/StapleDropout.kt",
+        "coupling/UniformityBudget.kt",
+        "electrostatics/DuplexPairSeparation.kt",
+        "environment/Regime.kt",
+        "environment/RegimeSet.kt",
+        "lattice/CrossoverLattice.kt",
+        "lattice/LatticeTag.kt",
+        "structure/BandedCholesky.kt",
+        "structure/Cholesky.kt",
+        "structure/Gen1Tile.kt",
+        "structure/HoneycombRasterTurnSense.kt",
+        "structure/Legendre.kt",
+        "structure/OrigamiSheet.kt",
+        "structure/PlateOnFoundation.kt",
+        "structure/ResultEmission.kt",
+        "structure/ResultInputs.kt",
+        "structure/ResultRounding.kt",
+        "structure/TilePositionalVarianceStudy.kt",
+        "tile/CoupledFourLayer.kt",
+        "tile/CrossoverCommonMode.kt",
+        "tile/CrossoverLinkResolution.kt",
+        "tile/CrossoverLinkStiffness.kt",
+        "tile/FourLayerTile.kt",
+        "tile/HoneycombBondClassResidues.kt",
+        "tile/HoneycombFaceLattice.kt",
+        "tile/HoneycombGrillage.kt",
+        "tile/HoneycombRasterTurnTies.kt",
+        "tile/HoneycombStationLattice.kt",
+        "tile/HoneycombTiedRegrade.kt",
+        "tile/HoneycombTwoLengthRaster.kt"
+      ]
+    },
     "tile/RasterTurnAnchorAzimuthStudy.kt": {
       "reads": [
         "T-246-forced-scaffold-crossover-price.json",
@@ -5045,6 +5107,7 @@
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CoupledFourLayer.kt",
+        "tile/CrossoverLinkResolution.kt",
         "tile/ForcedCrossoverPrice.kt",
         "tile/FourLayerTile.kt",
         "tile/HoneycombBondClassResidues.kt",
@@ -5100,6 +5163,7 @@
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CoupledFourLayer.kt",
+        "tile/CrossoverLinkResolution.kt",
         "tile/ForcedCrossoverPrice.kt",
         "tile/FourLayerTile.kt",
         "tile/HoneycombBondClassResidues.kt",
@@ -5143,6 +5207,7 @@
         "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
+        "tile/CrossoverLinkResolution.kt",
         "tile/HoneycombBondClassResidues.kt",
         "tile/HoneycombFaceLattice.kt",
         "tile/HoneycombGrillage.kt",
@@ -5191,6 +5256,7 @@
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
         "tile/CoupledFourLayer.kt",
+        "tile/CrossoverLinkResolution.kt",
         "tile/ForcedCrossoverPrice.kt",
         "tile/FourLayerTile.kt",
         "tile/HoneycombBondClassResidues.kt",
@@ -5236,6 +5302,7 @@
         "structure/ResultInputs.kt",
         "structure/ResultRounding.kt",
         "structure/TilePositionalVarianceStudy.kt",
+        "tile/CrossoverLinkResolution.kt",
         "tile/ForcedCrossoverPrice.kt",
         "tile/FourLayerTile.kt",
         "tile/HoneycombBondClassResidues.kt",
@@ -6047,12 +6114,16 @@
       "tile/LinkStiffnessThresholdStudy.kt"
     ],
     "T-299-tethered-raster-turn-regrade.json": [
-      "tile/LinkStiffnessThresholdStudy.kt"
+      "tile/LinkStiffnessThresholdStudy.kt",
+      "tile/RadialLinkResolutionStudy.kt"
     ],
     "T-3-stroke-and-blocking-force.json": [
       "coupling/OutputCouplingStudy.kt",
       "synthesis/BufferRouteCensusStudy.kt",
       "window/DesignWindowStudy.kt"
+    ],
+    "T-303-what-link-stiffness-the-recovery-needs.json": [
+      "tile/RadialLinkResolutionStudy.kt"
     ],
     "T-304-raster-turn-anchor-azimuth.json": [
       "tile/UniformRasterTetherStudy.kt"
@@ -6109,6 +6180,7 @@
       "tile/HoneycombTwoLengthStudy.kt",
       "tile/LinkStiffnessThresholdStudy.kt",
       "tile/ObliqueRootStudy.kt",
+      "tile/RadialLinkResolutionStudy.kt",
       "tile/RasterTurnAnchorAzimuthStudy.kt",
       "tile/RasterTurnPrestrainSignStudy.kt",
       "tile/RasterTurnPrestrainStudy.kt",
@@ -6567,6 +6639,9 @@
     "T-307-uniform-raster-tether-spans.json": [
       "tile/UniformRasterTetherStudy.kt"
     ],
+    "T-310-a-bond-link-is-two-mechanisms.json": [
+      "tile/RadialLinkResolutionStudy.kt"
+    ],
     "T-3a-nonlinear-pb-profile.json": [
       "electrostatics/NonlinearPbProfileStudy.kt"
     ],
@@ -6802,6 +6877,7 @@
     "T-303-what-link-stiffness-the-recovery-needs.json",
     "T-304-raster-turn-anchor-azimuth.json",
     "T-307-uniform-raster-tether-spans.json",
+    "T-310-a-bond-link-is-two-mechanisms.json",
     "T-3a-nonlinear-pb-profile.json",
     "T-3b-tile-edge-load-profile.json",
     "T-4-maximum-usable-bias.json",
@@ -7086,6 +7162,7 @@
         "tile/HoneycombTwoLengthStudy.kt",
         "tile/LinkStiffnessThresholdStudy.kt",
         "tile/ObliqueRootStudy.kt",
+        "tile/RadialLinkResolutionStudy.kt",
         "tile/RasterTurnAnchorAzimuthStudy.kt",
         "tile/RasterTurnPrestrainSignStudy.kt",
         "tile/RasterTurnPrestrainStudy.kt",
@@ -7210,6 +7287,7 @@
         "T-303-what-link-stiffness-the-recovery-needs.json",
         "T-304-raster-turn-anchor-azimuth.json",
         "T-307-uniform-raster-tether-spans.json",
+        "T-310-a-bond-link-is-two-mechanisms.json",
         "T-3a-nonlinear-pb-profile.json",
         "T-3b-tile-edge-load-profile.json",
         "T-4-maximum-usable-bias.json",

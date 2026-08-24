@@ -12097,3 +12097,72 @@ Two of those 22 exist only because the scope line is **output** and no return va
 **And the gate caught its author within minutes of being widened**: the first draft of `C-0209` cited `C-0122-corpus-link-gate.md`,
 which is not that claim's slug — `C-0122-honeycomb-station-lattice.md` is, the link gate having been a side deliverable of it.
 `C-0083`'s own finding, on the claim widening the checker that finds it.
+
+### Agent E — `T-310` / `C-0208`: a bond's normal link is two mechanisms, and the census does not move
+
+**The queue row said this was where the whole *does the coupled recovery survive* question now sits, and it was — but not the way the challenge that raised it said.**
+`CH-0259` observed that `HoneycombGrillage` resolves a **tether**'s two mechanisms onto the link residual by the bond's own direction
+(`HoneycombTetherElement.normalStiffness` is `tangent·unitZ² + secant·unitY²`) and applies **one scalar** to a **bond**'s,
+and that at the 300 of 435 bonds running through a `10 × 6` block's thickness `unitZ² = 0.75`,
+so three quarters of a relative `W` displacement is a change of the interhelical **separation** rather than a shear.
+Resolved at the corpus's two candidates that link is `475.448622`–`1211.56918 pN/nm`,
+and `C-0205`'s two thresholds `834.060958` and `607.396049` both fall **inside** it.
+
+**Built, the census does not move: `0 of 64` at every rung of the resolved bracket, which is `C-0205`'s own count unchanged.**
+And the reason it does not move is the half of the resolution `CH-0259` called *"exact here"* and therefore not the deciding one.
+With the transverse constant pinned at `C-0205`'s own ceiling, the **radial** threshold at cell A is **`4581.61268 pN/nm`** — `2.63993935×` the bracket ceiling —
+and at cell B there is **none at any radial stiffness at all**: at `1e6 pN/nm` its residual is still `+2.2e−4`, and its `p90` has an interior *minimum* of `0.100198485`.
+**The 135 in-plane bonds, pinned at the shear ceiling because `unitZ = 0` there, forbid the recovery by themselves.**
+
+**The straddle was never evidence, and that is `CH-0264`.**
+`C-0205`'s thresholds are bisected on a **uniform** `k_link`: at `834.060958` all 435 bonds sit there.
+The resolved lattice at the bracket floor puts 300 bonds at `629.20588` and 135 at `254.808095`, which is a much softer object —
+so a per-bond through-thickness value landing between two uniform thresholds says nothing about which side of them the **lattice** is on.
+Measured, the radial threshold is `5.49313888×` cell A's uniform one (`4581.61268 / 834.060958`, a quotient stated in neither file).
+The resolution that produced the first number is exactly what makes the comparison inadmissible.
+
+**What surprised us is that the radial axis has a MEASURED term and the transverse one has none, and it was sitting in the tree.**
+`C-0205` §1b carried the *transverse* eigenvalue of the duplex pair's central-force tensor, `V′(d)/d`, for its **sign** — negative wherever the pair repels — and quoted it *per unit of repulsive force per unit length*, i.e. **it never evaluated it**.
+The **radial** eigenvalue of the same tensor is `V″(d)`, positive for a repulsive decaying law, and `MengMagnesium` has been in `electrostatics/DuplexPairSeparation.kt` since `T-139`:
+`Π_R = 201.8e3 pN/nm²`, `λ = 0.24 nm`, data down to `2.45 nm`, and the honeycomb's own `d = 2.536 nm` is **above** that floor.
+One derivative of a function already in the tree gives **`205.009678 pN/nm`** over the 21 bp of interface one crossover owns — the first measured term either axis of this problem has had.
+Evaluated, the *transverse* one is **`−21.429583 pN/nm`**, `9.56666667×` smaller and of the other sign, and adding it would lower `C-0205`'s own ceiling by `1.09182329×`.
+
+**And it supplied a cross-check nobody asked for.**
+The pair pushes **`54.3454226 pN`** apart per crossover; `C-0194`'s implied bond tension `T = 2k_θ/r_P` pulls **`29.7795467 pN`** together — a ratio of **`1.82492444`**.
+A 2020 osmotic-stress measurement and a 2014 fitted dihedral spring read through `CH-0242`'s attribution share no fitted constant and agree within a factor of two
+about the force that holds a honeycomb crossover at its built separation. `F8` was declared open on exactly that and did not fire.
+
+**The literature is the same answer on a different coordinate.**
+`T-303` searched for a crossover's stiffness against a relative *normal displacement* and found none; the coordinate `CH-0259` needs is the one it set aside as *"the line of centres"*, and the field **does** measure the mean of that.
+Eight further EuropePMC queries on the separation, and Yoo & Aksimentiev (*PNAS* **110**:20101, `PMC3864285`) read directly:
+the elastic constants it fits are the **bundle**'s bending and twist moduli, and the inter-duplex distance appears only as a distribution running `18–30 Å` —
+which is the **deterministic weave**, so `k_BT/σ²` on it would measure the sawtooth and not the junction.
+Snodin et al. measure the right coordinate at the right place and report it in words. So: a bracket and a threshold again, with one term of it now measured.
+
+**Three of sixteen mutations survived the first run and every one was a real gap** (`C-0161`'s standard):
+the bracket's composition (`floor = connector + pair`) was asserted nowhere, the resolved lattice **builder** was asserted only at its `null` default,
+and the assembled **tie** link was asserted by nothing at all — the point-load tests all run on lattices whose ties share a node with a bond.
+The third needed a **constructed** state: a tie whose `(node, beam pair)` no bond shares, where the `(W_a, W_b)` entry of the assembled matrix is exactly minus that tie's own link.
+Second run: **16 mutations, 0 survivors** over a subtracted baseline of 0. Seven of the sixteen mutate `HoneycombGrillage` itself, which is the point — a shared lattice's new branch is load-bearing only if a mutation of it fails a named test.
+
+**One test failed on its first real run and it was the author.** `F4`'s bond census was written at `rowBasePairs = 102`, the **raster**'s row length,
+where every study of this block builds it at the block extent `116 bp`; at 102 the lattice carries 385 bonds and not 435, because `nodeS` steps the crossover planes with the row.
+A census asserted on the wrong tile. `CLAUDE.md`'s *quote it with the state it is read at*, met on a constructor argument.
+
+**And one headline ratio was wrong until it was computed.** `5.49313888` was written `5.49193` from memory in three documents;
+the arguments are committed and the quotient is in neither file, which is `C-0199`'s own trap — a hand-computed ratio between two published numbers.
+Both derived ratios now travel with their construction.
+
+**And the synthesis was owed something neither of the two claims that raised it had delivered.**
+`CH-0258` — agent B's, filed this same iteration against `C-0180`'s `2 of 64` — appeared **nowhere** in either
+deliverable, and both still carried that count as a live one.
+`C-0208` makes it decisive rather than merely challenged: the count is `0 of 64` at every physical link stiffness,
+uniform **and** resolved, and both routes now agree.
+Annotated in `ANSWERS.md` §*the built turn* and in `DECISIONS-FOR-NDI.md` immediately before the three caveats
+that were being carried on it — *a discharge is invisible to whoever files the removal*, and the last agent of an
+iteration is the one placed to see it.
+
+Two shared sources were edited and both edits are additive: `HoneycombGrillage` gains `radialLinkStiffness` (nullable, defaulting to the standing object **by identity** rather than by arithmetic, because `unitY² + unitZ²` is `0.9999999999999996` at an in-plane bond)
+and `ResultInputs` gains a handle. `withoutPrestrain`'s constructor call went from positional to **named** because it gained a parameter — which orphaned two anchors in *other tasks'* mutation harnesses (`T-297`'s `M11`, `T-299`'s `M12`), repaired in the same commit.
+`P-31` reports 0 unresolved of 368 anchors and 33 symbols over 21 harnesses, 21 of 21 wired, and `T-295`'s census reads all 352 mutations fixture-backed. Result file byte-identical across two independent runs; the four nearest consumers cannot have moved, because the default lattice is bit-identical over every band entry of the recommended block's 4 320-degree-of-freedom matrix and every reproduction closes at `2.6e−9` or better.

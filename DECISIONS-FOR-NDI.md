@@ -974,6 +974,23 @@ same normalising stroke and the **same 4 000-realisation dropout stream** — th
 of the published values at **`4.2e−9`** — **2 of 64** cells clear `T-5b`'s 0.10 at the 90th percentile.
 Both are at the band's favourable end, `f = 0.30`, and both **rim-graded 5:1**: **0.106041029 → 0.0995744767** at
 30 paths and **0.101931622 → 0.0998791032** at 50.
+**AND THAT `2 of 64` IS A READING AT A NUMERICAL PENALTY, iteration 48 — AT EVERY LINK STIFFNESS A CROSSOVER
+CONNECTOR CAN SUPPLY IT IS `0 of 64`**
+([`C-0205`](gpd/claims/C-0205-what-link-stiffness-the-recovery-needs.md), `T-303`;
+[`CH-0258`](gpd/challenges/CH-0258-two-of-sixty-four-is-a-reading-at-a-penalty.md);
+[`C-0208`](gpd/claims/C-0208-a-bond-link-is-two-mechanisms.md), `T-310`).
+The count is read at `RIGID_LINK_STIFFNESS = 1e4 pN/nm`, which is a **penalty** — a value the answer must not
+depend on — and the largest a crossover connector's own mechanisms supply is **`254.808095 pN/nm`**,
+`39.2452209×` below it (`10000 / 254.808095`), on three closed-form routes of which two carry no `k_θ` at all.
+Bisected, the two cells above cross `T-5b` at **`834.060958`** and **`607.396049 pN/nm`**.
+Resolving the link by the **bond's own direction** — the shear ceiling **exactly** at the 135 in-plane bonds and
+`629.20588`–`1365.32644 pN/nm` at the 300 that run through the thickness — leaves the count at **`0 of 64` at
+every rung of that bracket**, and the tightest cell in the corpus then misses `T-5b` by **`0.198 %`**
+(`0.100198485`). At one recovered cell the **radial** constant the recovery needs is **`4581.61268 pN/nm`**,
+`2.63993935×` the bracket ceiling; at the other **no radial constant recovers it at all**, because the in-plane
+bonds forbid it by themselves. **Both routes now agree on the count**: route B is `0 of 16` over four decades.
+**So the three caveats below are carried on a count that is itself a reading at a penalty.**
+
 **Three things a reader must carry with that count.**
 **(1) The margin is 0.426 % of the tolerance** — 0.000425523 of the stroke at the tighter cell — and it is
 converged exactly there: **0 of 6** deciding-cell convergence steps move it, at a worst departure of **`4.57e−4`**,

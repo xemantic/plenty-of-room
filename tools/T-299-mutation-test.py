@@ -98,11 +98,12 @@ MUTATIONS = [
      """            load[dof(element.node, b, W)] -= magnitude
             load[dof(element.node, b, PHI)] -= magnitude * armY""",
      "the preload's second roll arm changes sign, breaking frame indifference"),
+    # `T-310` rewrote `withoutPrestrain`'s constructor call from positional to NAMED arguments,
+    # because it gained a parameter and CLAUDE.md records what a positional list of same-typed
+    # arguments costs. The anchor moves with it; the mutation is unchanged.
     ("M12", GRILLAGE,
-     "            emptyMap(), scaffoldTurnTies.map { it.copy(prestrainRadians = 0.0) },\n"
-     "            scaffoldTurnTethers.map { it.copy(tension = 0.0) }",
-     "            emptyMap(), scaffoldTurnTies.map { it.copy(prestrainRadians = 0.0) },\n"
-     "            scaffoldTurnTethers",
+     "            scaffoldTurnTethers = scaffoldTurnTethers.map { it.copy(tension = 0.0) }",
+     "            scaffoldTurnTethers = scaffoldTurnTethers",
      "withoutPrestrain keeps the tether preload"),
     ("M13", GRILLAGE,
      "        -element.unitZ * tetherLinkResidual(field, element)",
