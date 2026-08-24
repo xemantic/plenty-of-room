@@ -12166,3 +12166,28 @@ iteration is the one placed to see it.
 Two shared sources were edited and both edits are additive: `HoneycombGrillage` gains `radialLinkStiffness` (nullable, defaulting to the standing object **by identity** rather than by arithmetic, because `unitY² + unitZ²` is `0.9999999999999996` at an in-plane bond)
 and `ResultInputs` gains a handle. `withoutPrestrain`'s constructor call went from positional to **named** because it gained a parameter — which orphaned two anchors in *other tasks'* mutation harnesses (`T-297`'s `M11`, `T-299`'s `M12`), repaired in the same commit.
 `P-31` reports 0 unresolved of 368 anchors and 33 symbols over 21 harnesses, 21 of 21 wired, and `T-295`'s census reads all 352 mutations fixture-backed. Result file byte-identical across two independent runs; the four nearest consumers cannot have moved, because the default lattice is bit-identical over every band entry of the recommended block's 4 320-degree-of-freedom matrix and every reproduction closes at `2.6e−9` or better.
+
+### `T-309` — the last retained harness, and the new link gate catching its own author
+
+`gpd/data/T-303-mutation/mutate.py` was the sixth and last mutation harness `P-31` could not see.
+Moved to `tools/T-303-mutation-test.py`, declared
+(`TEXT-ANCHOR` / `id_file_old_new_what` / `src/main/kotlin/tile/CrossoverLinkStiffness.kt` / `BY_HAND`)
+and wired as `testLinkStiffnessRouteMutations`, **out of `:test`** because one mutation is one Gradle `test` run.
+`P-31 --check` reads **22 harnesses, 383 anchors, 0 unresolved, wired 22 of 22**,
+and its fifteen anchors resolving into the moved subject is the check that the move orphaned nothing —
+which is the same check that caught two orphans in *other* agents' harnesses earlier today.
+The registry refused the file the moment it arrived and before it was declared, which is the mechanism working.
+
+**And the move dangled two links, which `C-0209`'s widened gate caught within the minute.**
+Both targets are `.py`, so both were invisible to that checker until agent F widened it hours earlier —
+and this is the **third** harness move in one iteration to leave a dangling link,
+after `T-305`'s and `T-308`'s, which `C-0207` had to find by hand.
+A gate written in the morning caught its own author's commit in the afternoon,
+which is the shortest interval between a checker and its first true positive this programme has recorded.
+
+**One self-inflicted lesson worth the entry.** The repair was a blanket replacement of the old path string,
+and it rewrote the queue row's **acceptance** cell too — a sentence whose meaning depended on the old path,
+so it came out as *"`tools/T-303-mutation-test.py` moved to `tools/T-303-mutation-test.py`"*.
+The link check passed, because the link was fine; the sentence was nonsense.
+**A path rename is safe on a link target and unsafe on prose about the rename**,
+and the two live in the same line of the same file.

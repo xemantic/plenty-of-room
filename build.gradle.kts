@@ -492,6 +492,14 @@ tasks.register<Exec>("testUniformRasterTetherMutations") {
     commandLine(mutationSnapshotArguments("T-307-mutation-test.py"))
 }
 
+tasks.register<Exec>("testLinkStiffnessRouteMutations") {
+    group = "verification"
+    description = "Runs tools/T-303-mutation-test.py <snapshot>, the Kotlin mutation test for the " +
+        "crossover link-stiffness routes and the threshold bisector. Needs " +
+        "-PmutationSnapshot=<dir>; not in :test"
+    commandLine(mutationSnapshotArguments("T-303-mutation-test.py"))
+}
+
 tasks.register<Exec>("testRadialLinkResolutionMutations") {
     group = "verification"
     description = "Runs tools/T-310-mutation-test.py <snapshot>, the Kotlin mutation test for " +

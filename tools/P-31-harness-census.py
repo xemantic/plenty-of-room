@@ -146,6 +146,12 @@ HARNESSES = (
     # still the object four claims measured.
     ("T-310-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
      "src/main/kotlin/tile/CrossoverLinkResolution.kt", (BY_HAND,)),
+    # `T-309`.  Written during `T-303` and declared two rows later than its number suggests: the
+    # registry belonged to another agent that iteration, so the harness was retained in
+    # `gpd/data/` and moved here by the queue item the move was owed to.  The ordinals in the
+    # comments above count DECLARATION order, which is why this one is last and not third.
+    ("T-303-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
+     "src/main/kotlin/tile/CrossoverLinkStiffness.kt", (BY_HAND,)),
     # `T-313`.  A Python subject with an INLINE `--selftest`, so the harness runs the subject
     # itself rather than a sibling test file -- and its fixture is bigger than a `tools/`-only
     # copy, because eleven of that self-test's assertions read the corpus.
