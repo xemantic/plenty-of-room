@@ -982,10 +982,16 @@ stroke — `756 of 756` cells flat**, at 21 lattice phases, three widths and twe
 **A span is a LEVEL and a dishing is a FIELD**, and the transfer between them was never made: the 59
 contributions are **signed** and only 50 have a coordinate at all, so the worst corner costs at most
 `0.0502869583` of the stroke. **The lattice phase is worth `1.82364566×`** and is a real design variable.
-**That count is itself challenged in the same iteration**
-([`CH-0265`](gpd/challenges/CH-0265-756-of-756-is-a-reading-at-the-penalty.md), **RAISED**): `756 of 756` is
-read at `k_link = 1e4 pN/nm`, `39.2452209×` above every rung a crossover connector can supply, and route B's
-own 90th percentile **rises** as the link softens.
+**That count was itself challenged in the same iteration and the challenge is now settled**
+([`CH-0265`](gpd/challenges/CH-0265-756-of-756-is-a-reading-at-the-penalty.md), **UPHELD IN ITS PREMISE and
+REFUTED IN ITS CONSEQUENCE**, iteration 49): `756 of 756` was read at `k_link = 1e4 pN/nm`, `39.2452209×` above
+every rung a crossover connector can supply, and route B's own 90th percentile **rises** as the link softens.
+**Re-graded at `C-0208`'s resolved per-bond link the count does not move**
+([`C-0211`](gpd/claims/C-0211-the-uniform-raster-at-the-resolved-link.md), `T-315`): `254.808095 pN/nm` in plane
+and `629.20588`–`1365.32644` through the thickness give **`0.048606444`–`0.0960647281`** of the stroke,
+**`756 of 756` flat at every one of three resolved rungs**, the link being worth
+**`1.00100801`–`1.02460822×`** of the reading. The adverse direction is measured on a **coupled `p90`** and this
+is the **free tile**, which is why it transfers in sign and not in size.
 **So NOTHING in this section now rests on a free tile past the tolerance — and the coupled half still fails.**
 **And the larger finding is a WIDTH**: at the built allowance a **uniform** honeycomb row is
 **`92 bp = 31.28 nm`** on M13mp18 and **`106 bp = 36.04 nm`** on p8064 against §3's `40 nm`, all three
@@ -1015,6 +1021,38 @@ every rung of that bracket**, and the tightest cell in the corpus then misses `T
 `2.63993935×` the bracket ceiling; at the other **no radial constant recovers it at all**, because the in-plane
 bonds forbid it by themselves. **Both routes now agree on the count**: route B is `0 of 16` over four decades.
 **So the three caveats below are carried on a count that is itself a reading at a penalty.**
+
+**AND THAT `0 of 64` IS A READING ON TWO *TRANSFERRED* DISTRIBUTIONS — SEARCHED, IT IS `22 of 32`, iteration 49**
+([`C-0212`](gpd/claims/C-0212-a-searched-distribution-at-the-resolved-link.md), `T-316`).
+The 64 readings are **32 cells × 2 distributions** — `C-0058`'s equal springs and its rim-graded 5:1, both
+*rules transferred onto* the lattice and neither an *optimum of* it — and no coupled census in this corpus has
+ever graded on anything else. Composing `C-0135`'s smoothed minimax with a multi-start descent on the **true**
+training percentile, graded **out of sample** on `C-0208`'s own 4 000-realisation stream (which it reproduces at
+**`4.0E-9`** over all 64 published readings), the same 32 cells read **`22 of 32` flat** at the 90th percentile,
+tightest **`0.0647024141`** against the transferred `0.100198485` — **`1.45251772×`** at that very cell.
+**`C-0208` is not withdrawn**; it is exact on the two rules it grades.
+**Three things must travel with that count, and a bare *"22 of 32 flat"* would be the most misleading sentence
+this programme could put in front of NDI.**
+**(1) No cell of the sweep is flat and inside BOTH per-path thresholds the study reads** — `12 of 32` on the
+max/min ratio, `3 of 32` on the peak, **`0 of 32`** on both — **and one of those two is not the threshold it is
+named after.** `C-0060`'s `3.5 ≤ R ≤ 20` is its own **flat** ratio window, measured on `C-0058`'s square-lattice
+45-station design; `C-0060` puts **no ceiling on `R` at all**
+([`CH-0273`](gpd/challenges/CH-0273-the-buildable-ratio-window-is-a-flatness-window.md)). Read on the one
+**physical** per-path threshold — `C-0023`'s 10 pN unzip allowable over §3's *acceptable* 3 nm stroke —
+**`3 of 32`** cells are flat and admissible, all three on the rooting helices.
+**(2) `0 of 32` searched cells beat the UNCOUPLED tile at the 90th percentile** (`0.0448134881` /
+`0.0469005226` against a best searched `0.0647024141`), while **`16 of 32`** beat it at **zero defects** (best
+`0.0298112409`): the cost is `C-0087`'s **measured** staple dropout and not the coupling
+([`CH-0272`](gpd/challenges/CH-0272-a-flat-count-is-not-an-admissible-design.md)). **This is not an argument for
+removing the coupling** — `C-0017`'s mandate is a **placement and stability** requirement, and the stroke and
+the lateral confinement want ties for reasons that are not flatness. It says only that **flatness is not what
+the coupling buys**.
+**(3) Buildability is established at NO cell, and the real obstruction is `C-0060`'s own *"what fails is the
+ARRAY"***: **placing** a 50-path distribution spanning `191.010656` in stiffness — `5.75907232`–`13.8206605×`
+in member length on `C-0060`'s own exponents, against `1.70997595`–`2.23606798×` at `R = 5`, where six of seven
+catalogue elements already fail to lay 45 stations out — is **unpriced anywhere in this corpus**.
+The verdict itself is robust: flat at **all five** of `C-0208`'s radial rungs, `0.0606641028`–`0.0705668742`,
+and `0 of 7` convergence axes move it.
 
 **Three things a reader must carry with that count.**
 **(1) The margin is 0.426 % of the tolerance** — 0.000425523 of the stroke at the tighter cell — and it is
@@ -1511,7 +1549,9 @@ buys `perHelix − 28` paired bases, so the row length — and therefore the til
 **All three are FLAT, and they stay flat when their own tethers are graded**
 ([`C-0207`](gpd/claims/C-0207-the-uniform-raster-is-flat-with-its-tethers.md), `T-307`):
 `0.0483790868`–`0.0946863482` of the stroke, **`756 of 756`** cells inside `T-5b`'s `0.10` at every lattice
-phase and every chain corner. **The tile is not too floppy; it is too small.**
+phase and every chain corner — **and they stay flat at the resolved per-bond link too**, `756 of 756` again at
+`0.048606444`–`0.0960647281` ([`C-0211`](gpd/claims/C-0211-the-uniform-raster-at-the-resolved-link.md),
+`T-315`). **The tile is not too floppy; it is too small.**
 
 ### Why decision 5 does not already answer it
 

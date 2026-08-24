@@ -152,11 +152,31 @@ HARNESSES = (
     # comments above count DECLARATION order, which is why this one is last and not third.
     ("T-303-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
      "src/main/kotlin/tile/CrossoverLinkStiffness.kt", (BY_HAND,)),
+    # `T-315`.  The subject is the ONE builder and the ONE census `T-315` adds; the per-bond
+    # link itself is `T-310`'s subject and is mutation-tested there, so this row holds open the
+    # two things a re-grade owns -- that its defaults are the standing lattice's bit for bit,
+    # and that the `116 bp` block's own bond census does not transfer to a shorter row.
+    ("T-315-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
+     "src/main/kotlin/tile/ResolvedLinkUniformRaster.kt", (BY_HAND,)),
     # `T-313`.  A Python subject with an INLINE `--selftest`, so the harness runs the subject
     # itself rather than a sibling test file -- and its fixture is bigger than a `tools/`-only
     # copy, because eleven of that self-test's assertions read the corpus.
     ("T-313-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new", "check-corpus-links.py",
      ("killed-by", "survives")),
+    # `T-316`.  One subject and no shared source: the task edits none, and the per-bond link its
+    # census is read at is `T-310`'s subject and is mutation-tested there.  What these rows hold
+    # open is that the smoothed search's bank is the same object the grading reads, that the
+    # percentile objective is the order statistic it says it is and is rounded at the decision
+    # precision, and that the record's fields report the quantities they are named for.
+    ("T-316-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
+     "src/main/kotlin/tile/SearchedDistribution.kt", (BY_HAND,)),
+    # `T-321`.  A Python subject with an INLINE `--self-test`, like `T-313`'s, so the harness runs
+    # the subject itself rather than a sibling test file.  Its fixture is a `tools/`-only copy and
+    # that is a DECLARATION rather than a convenience: the probe's self-tests read `tools/` and
+    # their own `TemporaryDirectory` and nothing else, which is why they stay green in
+    # `T-295`'s emptied arm.
+    ("T-321-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
+     "T-321-dynamic-guard-probe.py", ("killed-by", "survives")),
 )
 
 # Which module file each ATTRIBUTE receiver in a harness stands for.  A receiver not named here is

@@ -1,8 +1,8 @@
-# CH-0268 — **`CLAUDE.md` RECORDS THIS TRAP TWICE, `T-272` REPAIRED IT AT TWO CALL SITES WITH THE REASON WRITTEN BESIDE THEM, AND ELEVEN OTHER WRITERS NEVER GOT IT: HANDED `--help`, FIVE TOOLS OF THIS REPOSITORY OVERWRITE FOUR TRACKED ARTIFACTS AND BUILD A THREE-FILE SHADOW CORPUS IN `./--help/`.** Measured by running every `tools/*.py` with `--help` inside a `git archive HEAD` tree and diffing: `T-183-emit-result.py`, `T-200-emit-result.py` and `T-205-emit-result.py` rewrite their own committed result files, `T-234-emit-classification.py` rewrites `tools/T-234-classification.json` — the classification registry a wired census reads — and `T-161-fetch-sources.py` creates `./--help/` and fills it with three query JSONs. **And the probe UNDER-reports**: it compares checksums, so a tool that re-emits its own file byte-for-byte is invisible to it. Statically, **eleven** writers ignored `sys.argv` or fell through to a write, `tools/T-272-emit-result-inputs.py` among them — which on `--help` **rewrites a Kotlin main source**, `structure/ResultInputs.kt`
+# CH-0268 — **`CLAUDE.md` RECORDS THIS TRAP TWICE, `T-272` REPAIRED IT AT TWO CALL SITES WITH THE REASON WRITTEN BESIDE THEM, AND ~~ELEVEN~~ SIXTEEN OTHER WRITERS NEVER GOT IT (`CH-0275`): HANDED `--help`, FIVE TOOLS OF THIS REPOSITORY OVERWRITE FOUR TRACKED ARTIFACTS AND BUILD A THREE-FILE SHADOW CORPUS IN `./--help/`.** Measured by running every `tools/*.py` with `--help` inside a `git archive HEAD` tree and diffing: `T-183-emit-result.py`, `T-200-emit-result.py` and `T-205-emit-result.py` rewrite their own committed result files, `T-234-emit-classification.py` rewrites `tools/T-234-classification.json` — the classification registry a wired census reads — and `T-161-fetch-sources.py` creates `./--help/` and fills it with three query JSONs. **And the probe UNDER-reports**: it compares checksums, so a tool that re-emits its own file byte-for-byte is invisible to it. Statically, ~~**eleven**~~ **sixteen** writers ignored `sys.argv` or fell through to a write (`CH-0275`; the repair commit's own `--stat` guards sixteen and the shipped predicate reads 16 of 44 at its parent), `tools/T-272-emit-result-inputs.py` among them — which on `--help` **rewrites a Kotlin main source**, `structure/ResultInputs.kt`
 
 | | |
 |---|---|
-| **Status** | **RAISED and REPAIRED in the same iteration, and it found a SECOND instance in a WIRED gate (§4b)** ([`C-0210`](../claims/C-0210-fourteenth-answers-synthesis.md), `T-319`). All eleven are guarded through a new shared [`tools/cli_guard.py`](../../tools/cli_guard.py) (**18 self-tests**); the dynamic probe re-run on the repaired tree writes **0** files, and `tools/cli_guard.py --check` reads **45 writers, 45 refusing, 0 not** and is wired |
+| **Status** | **RAISED and REPAIRED in the same iteration, and it found a SECOND instance in a WIRED gate (§4b)** ([`C-0210`](../claims/C-0210-fourteenth-answers-synthesis.md), `T-319`). ~~All eleven~~ All sixteen are guarded through a new shared [`tools/cli_guard.py`](../../tools/cli_guard.py) (**18 self-tests**); the dynamic probe re-run on the repaired tree writes **0** files, and `tools/cli_guard.py --check` reads **45 writers, 45 refusing, 0 not** and is wired. **CORRECTED, iteration 49 ([`CH-0275`](CH-0275-the-repair-commit-guards-sixteen.md), [`C-0214`](../claims/C-0214-the-dynamic-arm-of-the-argument-guard.md), `T-321`): the static count is ~~eleven~~ SIXTEEN, and the nine-and-two decomposition is 10 and 6. Everything this challenge DID stands — sixteen were guarded, `HEAD` reads 45/45/0, and the dynamic five reproduce by name** |
 | **Against** | no standing numeric claim — this is against a **rule** `CLAUDE.md` already states (*"Parse the flag or refuse the argument"*) and against the assumption that stating it repaired it |
 | **From** | [`T-319`](../tasks/T-319-fourteenth-answers-synthesis.md), which hit it live: a `--help` typed at `tools/T-234-emit-classification.py`, to find out what the tool does, regenerated the classification registry — 248 insertions and 177 deletions — inside a pass whose whole discipline is not to touch it |
 | **Kind** | **a cure is a property of a CALL SITE, not of a repository**, and the second half is `C-0083`'s: a rule with no mechanism is a sentence |
@@ -23,7 +23,7 @@ And the cure is **already in the tree, twice**. `tools/T-249-emit-result.py` and
 `tools/T-250-emit-result.py` each carry a hand-rolled refusal with the finding written above it —
 *"An OPTION IS NOT A DIRECTORY"*, *"AN UNRECOGNISED OPTION MUST NOT EMIT (`T-272`)"*.
 
-**Neither the entry nor the two repairs reached the other eleven writers.** That is `CLAUDE.md`'s own
+**Neither the entry nor the two repairs reached the other ~~eleven~~ sixteen writers** (`CH-0275`). That is `CLAUDE.md`'s own
 *a cure is a property of a call site, not of a repository — grep for the call sites, not for the fix*,
 on the very entry that records the trap.
 
@@ -53,7 +53,10 @@ changes nothing and is invisible. `tools/T-272-emit-result-inputs.py` is exactly
 the probe reports nothing.
 
 Statically, a writer that cannot refuse is one that uses no `argparse`, calls no shared guard, and
-carries no hand-rolled refusal. **Eleven**, against the probe's five.
+carries no hand-rolled refusal. ~~**Eleven**~~ **Sixteen** (`CH-0275`), against the probe's five —
+and `T-321` measures a **seven** between them, because a checksum is not the only observation
+available: `st_mtime_ns` moves whether or not the bytes do, and it finds `T-272` exactly as this
+section predicts, plus one more this section does not name (`tools/T-194-emit-result.py`).
 
 ## 4. What was done
 
@@ -61,8 +64,9 @@ carries no hand-rolled refusal. **Eleven**, against the probe's five.
   **18 self-tests**, including both directions of the classification: a writer that names `unknown`
   but never exits `2` does **not** count as refusing, and one that exits `2` but never names
   `unknown` does not either.
-- All eleven writers guarded. Nine had ignored `sys.argv` entirely; two matched flags with `in argv`
-  and fell through.
+- ~~All eleven writers guarded. Nine had ignored `sys.argv` entirely; two matched flags with `in argv`
+  and fell through.~~ **All SIXTEEN writers guarded; ten had ignored `sys.argv` entirely and six
+  matched flags and fell through (`CH-0275`).** The action was right and all three numbers were not.
 - `tools/cli_guard.py --check` — **45 writers in `tools/`, 45 refusing, 0 not** — wired as a gate.
 - The dynamic probe re-run on the repaired tree: **0 files written**.
 

@@ -214,3 +214,51 @@ distributions and is exact on them.
 > **narrative and not by diff**, and `C-0092`'s discipline is met in spirit and not in form. The
 > state is recorded here, in [`C-0212`](../claims/C-0212-a-searched-distribution-at-the-resolved-link.md) §12
 > and in the post-run note below, rather than repaired into looking like something it was not.
+
+---
+
+## Post-run note — iteration 49, filed as [`C-0212`](../claims/C-0212-a-searched-distribution-at-the-resolved-link.md)
+
+**Result:** `gpd/results/T-316-a-searched-distribution-at-the-resolved-link.json`.
+`P1`–`P6` are discharged; the claim discharges each by name in its §11.
+
+**Four of the fourteen falsifiers fired, and all four had been declared OPEN** —
+`F1` (`22 of 32` cells flat on a searched rule against `0 of 32` on either transferred one,
+tightest `0.0647024141` against `0.100198485`),
+`F2` (16 of the 22 outside `C-0060`'s `3.5 ≤ R ≤ 20`),
+`F11` (favourably: `0 of 22` lose the verdict to one missing path),
+and `F14` (19 of the 22 demand more than `3.33333333 pN/nm` on one path).
+`F3` and `F13` were declared open and did not fire; the eight closed falsifiers did not fire.
+
+**Two readings the study's own `verdict` and `findings` blocks do not state, both derived from its
+own `cells[*]` records, and both filed as challenges.**
+**(1)** No cell of the sweep is inside both per-path flags —
+`ratioInsideBuildableWindow` `12 of 32`, `peakInsideUnzipCeiling` `3 of 32`, both `0 of 32` —
+and `beatsUncoupledAtP90` is false at `32 of 32`
+([`CH-0272`](../challenges/CH-0272-a-flat-count-is-not-an-admissible-design.md)).
+**(2)** One of those two flags is not the threshold it is named after: `C-0060`'s `[3.5, 20]` is
+its **flat** ratio window, measured on `C-0058`'s square-lattice 45-station design, and `C-0060`
+places no ceiling on `R` at all
+([`CH-0273`](../challenges/CH-0273-the-buildable-ratio-window-is-a-flatness-window.md)).
+Read on the one physical per-path threshold, **3 of 32** cells are flat and admissible.
+
+**`F2`'s declaration is retained as written and is not struck**, per `CLAUDE.md`'s
+*a pre-registered criterion can still be arithmetically wrong, so publish both readings rather than
+picking one*: the criterion fired on the quantity it names, and what `CH-0273` challenges is the
+**noun** attached to `C-0060`'s number, not this task's arithmetic.
+
+**One declared parameter moved between the plan and the run, and it is named rather than glossed.**
+The *Units and conventions* section above declares a **200**-realisation training ensemble and the
+run used **120** (`parameters/trainingRealisations`). The declaration is not struck — `C-0071`'s
+rule — and the departure is **priced by the study's own convergence axis**, which brackets 120 with
+**60** and **240**: departures `0.11` and `0.057` on the searched `p90`, with the verdict moving at
+neither and the worst reading any axis produces, `0.0718612653`, still inside `T-5b`. So 200 lies
+inside the bracketed range and the answer at it is bounded by two measured points; what is not
+available is a reading **at** 200.
+
+**`F14`'s pre-registration is by narrative and not by diff.** `F1`–`F13` are committed at
+`646b29e`, one commit before the run. The `F14` row and the note above it were written before the
+run — the study source carried them and the run's **own output** states `F14` — but the task-file
+hunk lands in the **same** commit as the result, so `C-0092`'s *commit the pre-registration one
+commit BEFORE the result* is met for thirteen of the fourteen. Recorded rather than glossed; see
+`C-0212` §12.

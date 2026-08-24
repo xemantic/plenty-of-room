@@ -236,15 +236,170 @@ def unscanned_markdown(root=ROOT):
     return sorted(found)
 
 
+# --- the file set (`T-317`) ---------------------------------------------------------------------
+#
+# `T-313` closed the LINK-KIND axis of this gate and left the FILE-SET axis open: `tracked_markdown`
+# is `gpd/**/*.md` plus the root documents, so Markdown anywhere else was checked by nothing. The
+# reason that was not merely an oversight to sweep up is `tools/C-0156-claim-template.md`, a claim
+# BODY that `tools/T-250-emit-result.py` renders into `gpd/claims/`: **a relative link's
+# correctness is a property of the file the text will END UP IN**, and resolving in place asks the
+# wrong question about a file that is copied.
+#
+# THE ROW ASKED FOR A DECLARATION AND THE MEASUREMENT SAYS ONE IS NOT NEEDED. Of this tree's 70
+# directories, EXACTLY ONE -- `gpd/claims` -- resolves all 23 of that template's links. So the
+# destination is DERIVED, and `C-0176`'s *a declared list is a dated object* is avoided rather than
+# paid. Replayed over every commit reachable from `HEAD` (`--history --relocatable`):
+#
+#     resolved IN PLACE   20 distinct (file, link) pairs over 130 commits, ALL TWENTY FALSE
+#     resolved DERIVED     0 distinct pairs over 273 commits
+#
+# A 100 % false-positive rate over 130 commits is exactly the rate at which a build-failing gate
+# gets switched off, so the naive widening is refused ON A MEASUREMENT and the derived one ships.
+# It catches nothing that has ever existed, which is stated rather than hidden: what it buys is
+# that the blind spot is now a number on every run instead of a file count.
+#
+# `third-party/` holds the problem definition AS RECEIVED and must not be edited -- a standing
+# invariant of this repository -- so it is EXCLUDED rather than scanned, the treatment
+# `tools/check-markdown-tables.py` already gives it. Measured, it carries 0 relative links, so the
+# exemption suppresses nothing today; if that ever stops being true the scope line says so.
+_EXCLUDED_ROOTS = ("third-party",)
+
+
+def excluded_markdown(root=ROOT):
+    """Markdown under a root this repository must not edit. Counted and named, never scanned."""
+    return [relative for relative in unscanned_markdown(root)
+            if relative.split(os.sep)[0] in _EXCLUDED_ROOTS]
+
+
+def relocatable_markdown(root=ROOT):
+    """Markdown outside the corpus set whose links are judged where the file is READ.
+
+    Together with `excluded_markdown` this PARTITIONS `unscanned_markdown`, which is asserted
+    rather than assumed: a file that falls out of both halves would be checked by nothing again,
+    which is the defect this whole task is about.
+    """
+    return [relative for relative in unscanned_markdown(root)
+            if relative.split(os.sep)[0] not in _EXCLUDED_ROOTS]
+
+
+def tree_directories(root=ROOT):
+    """Every directory of the repository, as a candidate place a file's text could be read from."""
+    found = [""]
+    for base, directories, _files in os.walk(root):
+        directories[:] = [name for name in directories
+                          if name not in _NOT_A_CORPUS and not name.startswith("build")]
+        for name in directories:
+            found.append(os.path.relpath(os.path.join(base, name), root))
+    return sorted(found)
+
+
+def resolving_directories(links, directories, present):
+    """Every directory in `directories` against which EVERY one of `links` resolves.
+
+    Reported as a SET rather than as a first hit, so that an ambiguous destination is visible: a
+    one-link file naming `README.md` resolves from seven directories of this tree and a 23-link
+    claim template from exactly one.
+    """
+    return [directory for directory in directories
+            if all(present(os.path.normpath(os.path.join(directory, link))) for link in links)]
+
+
+def destination_of(links, own_directory, directories, present):
+    """Where this file's links are read from, or `None` if no directory resolves them all.
+
+    The file's OWN directory wins wherever it works -- a README is read where it sits, and
+    preferring it keeps a one-link file from acquiring a spurious destination. Only a file whose
+    links do NOT resolve in place is given a derived one, which today is exactly the claim
+    template.
+    """
+    if not links:
+        return own_directory
+    resolving = resolving_directories(links, directories, present)
+    if own_directory in resolving:
+        return own_directory
+    return resolving[0] if resolving else None
+
+
+def relocatable_defects(files, exists, directories, in_place=False):
+    """[(path, link)] for every relocatable file that no directory resolves in full.
+
+    Pure, so the false-positive rate can be measured over the history without touching a working
+    tree. `in_place=True` is the NAIVE reading the measurement refuses -- it judges each file where
+    it sits -- and it is retained because a refusal that cannot be re-run is an assertion.
+    """
+    def present(path):
+        return path in exists
+
+    found = []
+    for path in sorted(files):
+        links = relative_links_in(files[path])
+        own = os.path.dirname(path)
+        candidates = [own] if in_place else directories
+        # The file is read from the candidate that resolves MOST of its links, and only what
+        # fails THERE is a defect -- so a file that HAS a destination reports nothing and needs
+        # no separate test for having one. A mistyped slug in the 23-link template prints one
+        # line, not twenty-three. Ties go to the file's own directory, so the diagnostic names a
+        # place the file might actually be read from rather than the alphabetically first.
+        ordered = ([own] if own in candidates else []) + [d for d in sorted(candidates) if d != own]
+        best = max(ordered,
+                   key=lambda directory: sum(
+                       1 for link in links
+                       if present(os.path.normpath(os.path.join(directory, link)))))
+        for link in links:
+            if not present(os.path.normpath(os.path.join(best, link))):
+                found.append((path, link))
+    return found
+
+
+class _TreeMembership(object):
+    """`path in tree` against a live checkout, so the pure functions above serve both callers."""
+
+    def __init__(self, root):
+        self._root = root
+
+    def __contains__(self, path):
+        return os.path.exists(os.path.join(self._root, path))
+
+
+def relocatable_census(root=ROOT):
+    """[(path, link count, destination)] for every relocatable Markdown file. `None` is a defect."""
+    directories = tree_directories(root)
+    tree = _TreeMembership(root)
+
+    def present(path):
+        return path in tree
+
+    found = []
+    for relative in relocatable_markdown(root):
+        try:
+            with open(os.path.join(root, relative), encoding="utf-8") as handle:
+                text = handle.read()
+        except OSError:
+            continue
+        links = relative_links_in(text)
+        found.append((relative, len(links),
+                      destination_of(links, os.path.dirname(relative), directories, present)))
+    return found
+
+
 def scope_note(root=ROOT, shapes=None, non_markdown=None):
     """One line saying what a clean run is clean ABOUT. Derived, never declared."""
     unscanned = unscanned_markdown(root)
     directories = sorted({relative.split(os.sep)[0] for relative in unscanned}) or ["none"]
     shapes = shapes or {"titled": 0, "angleBracket": 0, "referenceStyle": 0}
-    return ("# scope: ANY relative target kind{}; NOT scanned: {} .md outside gpd/ and the root "
-            "({}); NOT matched: {} titled, {} angle-bracket, {} reference-style link(s)".format(
+    # `T-317`. The residue is quantified in LINKS and not only in files, because "4 .md outside
+    # the corpus set" could be four links or four thousand and a reader of a clean run cannot
+    # tell. Everything here is derived on the run; nothing is declared.
+    census = relocatable_census(root)
+    excluded = excluded_markdown(root)
+    return ("# scope: ANY relative target kind{}; {} relocatable file(s) carrying {} link(s), "
+            "resolved where the file is READ; {} .md outside the corpus set "
+            "({}); NOT scanned: {} excluded ({}); "
+            "NOT matched: {} titled, {} angle-bracket, {} reference-style link(s)".format(
                 "" if non_markdown is None else " ({} non-.md today)".format(non_markdown),
+                len(census), sum(links for _path, links, _where in census),
                 len(unscanned), ", ".join(directories),
+                len(excluded), ", ".join(_EXCLUDED_ROOTS),
                 shapes["titled"], shapes["angleBracket"], shapes["referenceStyle"]))
 
 
@@ -289,8 +444,20 @@ def _in_scanned_scope(path):
     return path.endswith(".md") and ("/" not in path or path.startswith("gpd/"))
 
 
-def history(root=ROOT, revision="HEAD", only_non_markdown=True):
+def _in_relocatable_scope(path):
+    """The scope `relocatable_markdown` would give this path -- Markdown outside both sets."""
+    return (path.endswith(".md") and not _in_scanned_scope(path)
+            and path.split("/")[0] not in _EXCLUDED_ROOTS)
+
+
+def history(root=ROOT, revision="HEAD", only_non_markdown=True, relocatable=False,
+            in_place=False):
     """Replay the predicate over every commit reachable from `revision`.
+
+    `relocatable=True` sweeps `T-317`'s set instead of the corpus set, and `in_place=True` is the
+    NAIVE resolution the measurement refuses. Both readings are retained because a refusal that
+    cannot be re-run is an assertion: over this repository's history the naive reading is 20
+    distinct pairs over 130 commits and every one of them false, and the derived reading is 0.
 
     Returns `(commits swept, commits with at least one hit, {(path, link): (n commits, first)})`.
     """
@@ -317,14 +484,18 @@ def history(root=ROOT, revision="HEAD", only_non_markdown=True):
                 exists.add("/".join(parts[:depth]))
         files = {}
         for path, sha in entries.items():
-            if not _in_scanned_scope(path):
+            if not (_in_relocatable_scope(path) if relocatable else _in_scanned_scope(path)):
                 continue
             if sha not in blobs:
                 blobs[sha] = subprocess.run(["git", "cat-file", "blob", sha], cwd=root,
                                             capture_output=True, check=True
                                             ).stdout.decode("utf-8", "replace")
             files[path] = blobs[sha]
-        hits = tree_defects(files, exists, only_non_markdown)
+        if relocatable:
+            hits = relocatable_defects(files, exists, sorted(exists - set(entries)) + [""],
+                                       in_place=in_place)
+        else:
+            hits = tree_defects(files, exists, only_non_markdown)
         if hits:
             fired += 1
         for pair in hits:
@@ -508,6 +679,155 @@ def _selftest():
         check("a dangling NON-`.md` target exits 1", code, 1)
         check("and it is named on stdout with what it resolved to",
               "tools/T-9999-mutation-test.py" in out.getvalue(), True)
+    # --- `T-317`: THE FILE SET -----------------------------------------------------------------
+    # A relative link's correctness is a property of the file the text will END UP IN. For the
+    # corpus set that is where the file sits; for a file that is COPIED somewhere -- a claim
+    # TEMPLATE -- it is not, and resolving in place asks the wrong question about it. Measured
+    # over the whole history, the naive widening is 20 distinct pairs over 130 commits and every
+    # one of them false; with the destination DERIVED it is 0 over 273. The destination is not
+    # declared, because it does not have to be: of this tree's 70 directories exactly ONE
+    # resolves all 23 of the template's links.
+    def _present(names):
+        return lambda path: path in names
+
+    check("a file read where it SITS resolves in place",
+          destination_of(["b.md"], "tools/oxdna", ["", "tools", "tools/oxdna"],
+                         _present({"tools/oxdna/b.md"})),
+          "tools/oxdna")
+    check("a file COPIED elsewhere resolves against the directory it is copied TO",
+          destination_of(["C-0001-x.md"], "tools", ["", "tools", "gpd/claims"],
+                         _present({"gpd/claims/C-0001-x.md"})),
+          "gpd/claims")
+    check("a link that resolves against NO directory leaves the file without a destination",
+          destination_of(["C-9999-nope.md"], "tools", ["", "tools", "gpd/claims"],
+                         _present({"gpd/claims/C-0001-x.md"})),
+          None)
+    check("ONE dangling link is enough to remove the destination of a file whose others resolve",
+          destination_of(["C-0001-x.md", "C-9999-nope.md"], "tools", ["", "tools", "gpd/claims"],
+                         _present({"gpd/claims/C-0001-x.md"})),
+          None)
+    check("a file carrying no links keeps its own directory and is not a defect",
+          destination_of([], "tools/oxdna", ["", "tools/oxdna"], _present(set())), "tools/oxdna")
+    # And it keeps it even where its own directory is not among the candidates -- which is the
+    # only state in which that guard is observable, because an empty link set resolves VACUOUSLY
+    # against every candidate and the own-directory preference then answers for it. `C-0161`:
+    # construct the state, rather than delete a guard a mutation could not reach.
+    check("and it keeps it even when its own directory is not a candidate",
+          destination_of([], "tools/oxdna", [""], _present(set())), "tools/oxdna")
+    check("the file's OWN directory wins when both would resolve",
+          destination_of(["README.md"], "tools/oxdna", ["", "gpd", "tools/oxdna"],
+                         _present({"README.md", "gpd/README.md", "tools/oxdna/README.md"})),
+          "tools/oxdna")
+    check("and the ambiguity is VISIBLE, because the resolving set is reported rather than the first of it",
+          len(resolving_directories(["README.md"], ["", "gpd", "tools/oxdna"],
+                                    _present({"README.md", "gpd/README.md",
+                                              "tools/oxdna/README.md"}))),
+          3)
+    # The history reading, pure so that the rate can be measured without git.
+    check("a relocatable file with a derivable destination is NOT a defect",
+          relocatable_defects({"tools/t.md": "[`x`](C-0001-x.md)"},
+                              {"gpd/claims/C-0001-x.md"}, ["", "tools", "gpd/claims"]), [])
+    check("a relocatable file whose link resolves nowhere IS a defect, and the link is named",
+          relocatable_defects({"tools/t.md": "[`x`](C-9999-nope.md)"},
+                              {"gpd/claims/C-0001-x.md"}, ["", "tools", "gpd/claims"]),
+          [("tools/t.md", "C-9999-nope.md")])
+    check("and only the links that fail at the file's best directory are named",
+          relocatable_defects({"tools/t.md": "[`a`](C-0001-x.md)[`b`](C-9999-nope.md)"},
+                              {"gpd/claims/C-0001-x.md"}, ["", "tools", "gpd/claims"]),
+          [("tools/t.md", "C-9999-nope.md")])
+    check("on a tie the diagnostic names the file's OWN directory, not the alphabetically first",
+          relocatable_defects({"tools/t.md": "[`a`](one.md)[`b`](two.md)"},
+                              {"tools/one.md", "aaa/two.md"}, ["", "aaa", "tools"]),
+          [("tools/t.md", "two.md")])
+    check("the NAIVE in-place reading is what the measurement refuses: it reports all 2",
+          sorted(link for _p, link in relocatable_defects(
+              {"tools/t.md": "[`a`](C-0001-x.md)[`b`](C-9999-nope.md)"},
+              {"gpd/claims/C-0001-x.md"}, ["", "tools", "gpd/claims"], in_place=True)),
+          ["C-0001-x.md", "C-9999-nope.md"])
+    check("and the RELOCATABLE history scope is the complement of both other sets",
+          [_in_relocatable_scope(path) for path in
+           ["TASKS.md", "gpd/claims/C-0001-x.md", "tools/C-0156-claim-template.md",
+            "third-party/x.md", "tools/T-250-body.json"]],
+          [False, False, True, False, False])
+    with tempfile.TemporaryDirectory() as fake:
+        os.makedirs(os.path.join(fake, "gpd", "claims"))
+        os.makedirs(os.path.join(fake, "tools"))
+        os.makedirs(os.path.join(fake, "third-party"))
+        os.makedirs(os.path.join(fake, ".git", "objects"))
+        os.makedirs(os.path.join(fake, "build-agent", "classes"))
+        check("the candidate directories exclude version control and build output",
+              [name for name in tree_directories(root=fake)
+               if name.startswith(".git") or name.startswith("build")], [])
+        check("and they carry the repository root, which is where a root document is read",
+              "" in tree_directories(root=fake), True)
+        for name in ["ANSWERS.md", "DECISIONS-FOR-NDI.md", "TOOLING-NOVELTY.md",
+                     os.path.join("gpd", "claims", "C-0001-x.md")]:
+            open(os.path.join(fake, name), "w").close()
+        # The problem definition as received must not be edited, so it is EXEMPT and not merely
+        # unscanned -- the treatment `tools/check-markdown-tables.py` already gives it. Measured:
+        # it carries 0 relative links, so the exemption suppresses nothing today.
+        with open(os.path.join(fake, "third-party", "y.md"), "w") as handle:
+            handle.write("[`x`](nope.md)\n")
+        # A template: its links are correct at `gpd/claims`, where it is copied, and wrong at
+        # `tools/`, where it sits.
+        with open(os.path.join(fake, "tools", "t.md"), "w") as handle:
+            handle.write("[`x`](C-0001-x.md)\n")
+        check("the unscanned set PARTITIONS into relocatable and excluded",
+              sorted(relocatable_markdown(root=fake) + excluded_markdown(root=fake)),
+              unscanned_markdown(root=fake))
+        check("and the two halves are disjoint",
+              sorted(set(relocatable_markdown(root=fake)) & set(excluded_markdown(root=fake))), [])
+        check("the problem definition as received is EXCLUDED, not relocatable",
+              excluded_markdown(root=fake), [os.path.join("third-party", "y.md")])
+        check("a template under tools/ is RELOCATABLE",
+              relocatable_markdown(root=fake), [os.path.join("tools", "t.md")])
+        check("and a broken link in an excluded root is not reported",
+              [path for path, _link, _where in relocatable_census(root=fake)
+               if path.startswith("third-party")], [])
+        check("the template's destination is DERIVED, not declared",
+              [where for path, _links, where in relocatable_census(root=fake)
+               if path.endswith("t.md")],
+              [os.path.join("gpd", "claims")])
+        check("the scope note carries the relocatable link count, not only the file count",
+              "1 relocatable file(s) carrying 1 link(s)" in scope_note(root=fake), True)
+        check("and it names the excluded root separately",
+              "1 excluded" in scope_note(root=fake), True)
+        captured = _io.StringIO()
+        with _contextlib.redirect_stderr(captured):
+            code = main([], root=fake)
+        check("a corpus clean in all three sets exits 0", code, 0)
+        # Now break the template the way a mistyped slug breaks it.
+        with open(os.path.join(fake, "tools", "t.md"), "w") as handle:
+            handle.write("[`x`](C-0001-x.md)\n[`y`](C-9999-nope.md)\n")
+        out = _io.StringIO()
+        err = _io.StringIO()
+        with _contextlib.redirect_stdout(out), _contextlib.redirect_stderr(err):
+            code = main([], root=fake)
+        check("a dangling link in a RELOCATABLE file exits 1", code, 1)
+        check("and it is named on stdout as a relocatable defect",
+              "C-9999-nope.md" in out.getvalue(), True)
+        check("while the link that DOES resolve at the derived destination is not named",
+              "C-0001-x.md\t" in out.getvalue(), False)
+        # `--unscanned` is the retained CENSUS: `CH-0266`'s own remedy, so the next agent to
+        # touch the file set re-derives the rate in one command instead of writing a scanner.
+        listing = _io.StringIO()
+        with _contextlib.redirect_stdout(listing), _contextlib.redirect_stderr(_io.StringIO()):
+            code = main(["--unscanned"], root=fake)
+        check("the census mode exits 0 -- it reports, it does not gate", code, 0)
+        check("and it prints every relocatable file with where its links resolve from",
+              "tools/t.md" in listing.getvalue().replace(os.sep, "/"), True)
+
+    # `CH-0268` §4b: refuse an unrecognised flag EVEN WHERE THE TOOL WRITES NOTHING. This one is
+    # wired twice -- `build.gradle.kts` passes `--selftest` and `tools/verify.sh` passes
+    # `--selftest` and then nothing -- and a mistyped `--self-test` would have run the corpus
+    # check and exited 0, which is the wired-and-inert shape verbatim.
+    quiet = _io.StringIO()
+    with _contextlib.redirect_stdout(quiet), _contextlib.redirect_stderr(quiet):
+        refused = main(["--self-test"], root=ROOT)
+        recognised = main(["--unscanned"], root=ROOT)
+    check("an unrecognised flag is REFUSED rather than treated as data", refused, 2)
+    check("and the recognised ones are not", recognised in (0, 1), True)
+
     # A root document's links resolve against the ROOT, not against `gpd/` -- the same one-resolver
     # rule the manifest defects taught, at the other end of the tree.
     check("a root-relative link from a root document resolves",
@@ -523,10 +843,44 @@ def _selftest():
     return 0
 
 
+#: Every flag this tool answers to. `CH-0268` §4b -- *refuse an unrecognised flag EVEN WHERE THE
+#: TOOL WRITES NOTHING* -- because a wired call that passes a flag the tool does not recognise is
+#: green and inert, and this tool is wired twice. `--self-test` for `--selftest` is the recorded
+#: instance of exactly that mistake, in this repository, on a wired task.
+_FLAGS = ("--selftest", "--unscanned", "--history", "--relocatable", "--in-place")
+
+
 def main(argv, root=ROOT):
+    unrecognised = [argument for argument in argv if argument not in _FLAGS]
+    if unrecognised:
+        print("unrecognised argument(s): {}\nusage: check-corpus-links.py [{}]".format(
+            " ".join(unrecognised), " | ".join(_FLAGS)), file=sys.stderr)
+        return 2
     if "--selftest" in argv:
         return _selftest()
+    if "--unscanned" in argv:
+        # `T-317`, and it is `CH-0266`'s own remedy: the MEASUREMENT is a mode of the checker, so
+        # the next agent to touch the file set re-derives it in one command instead of writing a
+        # scanner whose predicate nobody can date. It reports; it does not gate.
+        for relative, links, where in relocatable_census(root):
+            print("{}\tRELOCATABLE\t{} link(s)\t-> {}".format(
+                relative, links, "resolves NOWHERE" if where is None
+                else "in place" if where == os.path.dirname(relative)
+                else "read from " + where))
+        for relative in excluded_markdown(root):
+            print("{}\tEXCLUDED\t-\t-> the problem definition as received".format(relative))
+        return 0
     if "--history" in argv:
+        if "--relocatable" in argv:
+            swept, fired, pairs = history(root, relocatable=True,
+                                          in_place="--in-place" in argv)
+            for (path, link), (count, first) in sorted(pairs.items(), key=lambda kv: -kv[1][0]):
+                print("{:>4} commit(s)\t{}\t{}\tfirst {}".format(count, path, link, first[:9]))
+            print("# {} commit(s) swept, {} with at least one hit, {} distinct (file, link) "
+                  "pair(s) over the RELOCATABLE set, resolved {}".format(
+                      swept, fired, len(pairs), "IN PLACE" if "--in-place" in argv else "DERIVED"),
+                  file=sys.stderr)
+            return 0
         swept, fired, pairs = history(root)
         for (path, link), (count, first) in sorted(pairs.items(), key=lambda kv: -kv[1][0]):
             print("{:>4} commit(s)\t{}\t{}\tfirst {}".format(count, path, link, first[:9]))
@@ -550,6 +904,22 @@ def main(argv, root=ROOT):
         for link, resolved in broken_links_in(text, os.path.dirname(relative), root):
             print("{}\tBROKEN-LINK\t{}\t-> {}".format(relative, link, resolved))
             defects += 1
+    # `T-317`. The relocatable set -- Markdown outside the corpus set and outside an excluded
+    # root -- is judged against the directory the WHOLE file resolves from, because a file that is
+    # copied is not read where it sits. The gate is the one unambiguous failure: no directory of
+    # the repository resolves all of this file's links. Measured at 0 firings over 273 commits.
+    relocatable = {}
+    for relative in relocatable_markdown(root):
+        try:
+            with open(os.path.join(root, relative), encoding="utf-8") as handle:
+                relocatable[relative] = handle.read()
+        except OSError:
+            continue
+    for relative, link in relocatable_defects(relocatable, _TreeMembership(root),
+                                              tree_directories(root)):
+        print("{}\tBROKEN-LINK\t{}\t-> resolves against no directory of the repository"
+              .format(relative, link))
+        defects += 1
     sys.stdout.flush()
     print("# {} broken link(s) in {} file(s)".format(defects, len(files)), file=sys.stderr)
     # `T-313`, branch 2. The scope line runs on every invocation, beside the count, because a

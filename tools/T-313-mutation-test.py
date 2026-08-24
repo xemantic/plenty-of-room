@@ -20,7 +20,8 @@
 #
 # `C-0176`'s standard, in BOTH directions: every rule must fail a NAMED test when it is reverted
 # AND when it is over-widened.  A table that only ever narrows becomes a pattern, which is what a
-# per-rule judgement refuses.  Ten of the rows below revert a rule and eight over-correct it.
+# per-rule judgement refuses.  Ten of the rows below revert a rule and eight over-correct it; `T-317` adds twenty-two
+# more over the FILE SET, the derived destination and the argument guard, in the same two directions.
 #
 # `C-0185`/`CH-0237`'s baseline runs FIRST and refuses on a red one: without it a fixture defect
 # reads as `0 survivors` (the quiet direction) or as `N of N` (the loud one), and the headline
@@ -36,7 +37,7 @@
 # `src/`, `gpd/data/`'s 91 MB of sources and the build tree are not read by any named test.  Those
 # eleven assertions survive `tools/T-295-mutation-input-census.py`'s TREATMENT arm, which EMPTIES
 # a corpus file rather than removing it, so an existence check still holds there.
-"""Mutation coverage for T-313's widening of tools/check-corpus-links.py."""
+"""Mutation coverage for T-313's widening and T-317's file set, in check-corpus-links.py."""
 
 import os
 import shutil
@@ -188,6 +189,152 @@ MUTATIONS = (
         SUBJECT,
         "    return 1 if defects else 0",
         "    return 0",
+    ),
+    # --- `T-317`: THE FILE SET, and the DERIVED destination that makes it cheap -----------------
+    # Every rule below is mutated in BOTH directions. The row that matters most is the last pair:
+    # the destination rule is the whole reason the widening is not a 100 % false-positive gate,
+    # and a mutation that removes it must not pass silently.
+    (
+        "the excluded root stops being excluded, so the problem definition is scanned",
+        SUBJECT,
+        '_EXCLUDED_ROOTS = ("third-party",)',
+        '_EXCLUDED_ROOTS = ()',
+    ),
+    (
+        "the excluded roots are widened until nothing is relocatable",
+        SUBJECT,
+        '_EXCLUDED_ROOTS = ("third-party",)',
+        '_EXCLUDED_ROOTS = ("third-party", "tools")',
+    ),
+    (
+        "the partition of the unscanned set is inverted",
+        SUBJECT,
+        "            if relative.split(os.sep)[0] not in _EXCLUDED_ROOTS]",
+        "            if relative.split(os.sep)[0] in _EXCLUDED_ROOTS]",
+    ),
+    (
+        "the candidate directories collapse to the repository root",
+        SUBJECT,
+        "    found = [\"\"]\n    for base, directories, _files in os.walk(root):",
+        "    found = [\"\"]\n    for base, directories, _files in []:",
+    ),
+    (
+        "the candidate directories are widened to version control and build output",
+        SUBJECT,
+        "        directories[:] = [name for name in directories\n"
+        "                          if name not in _NOT_A_CORPUS and not name.startswith(\"build\")]\n"
+        "        for name in directories:\n"
+        "            found.append(os.path.relpath(os.path.join(base, name), root))",
+        "        for name in directories:\n"
+        "            found.append(os.path.relpath(os.path.join(base, name), root))",
+    ),
+    (
+        "a destination need only resolve SOME of the file's links, not all of them",
+        SUBJECT,
+        "            if all(present(os.path.normpath(os.path.join(directory, link))) for link in links)]",
+        "            if any(present(os.path.normpath(os.path.join(directory, link))) for link in links)]",
+    ),
+    (
+        "a file carrying no links stops keeping its own directory",
+        SUBJECT,
+        "    if not links:\n        return own_directory\n    resolving = resolving_directories(links, directories, present)",
+        "    resolving = resolving_directories(links, directories, present)",
+    ),
+    (
+        "the file's OWN directory stops winning over a derived one",
+        SUBJECT,
+        "    if own_directory in resolving:\n        return own_directory\n",
+        "",
+    ),
+    (
+        "a link resolving NOWHERE stops removing the file's destination",
+        SUBJECT,
+        "    return resolving[0] if resolving else None",
+        "    return resolving[0] if resolving else own_directory",
+    ),
+    (
+        "the diagnostic's tie-break stops preferring the file's own directory",
+        SUBJECT,
+        "        ordered = ([own] if own in candidates else []) + [d for d in sorted(candidates) if d != own]",
+        "        ordered = sorted(candidates)",
+    ),
+    (
+        "the in-place reading the measurement REFUSES becomes the only reading",
+        SUBJECT,
+        "        candidates = [own] if in_place else directories",
+        "        candidates = [own]",
+    ),
+    (
+        "the in-place reading becomes unreachable, so the refusal cannot be re-run",
+        SUBJECT,
+        "        candidates = [own] if in_place else directories",
+        "        candidates = directories",
+    ),
+    (
+        "a failing file names every link instead of only those failing at its best directory",
+        SUBJECT,
+        "        best = max(ordered,",
+        "        best = min(ordered,",
+    ),
+    (
+        "the scope line stops carrying the relocatable link count",
+        SUBJECT,
+        "                len(census), sum(links for _path, links, _where in census),",
+        "                0, 0,",
+    ),
+    (
+        "the scope line stops naming the excluded root",
+        SUBJECT,
+        '                len(excluded), ", ".join(_EXCLUDED_ROOTS),',
+        '                0, ", ".join(_EXCLUDED_ROOTS),',
+    ),
+    (
+        "the history's relocatable scope stops excluding the problem definition",
+        SUBJECT,
+        '    return (path.endswith(".md") and not _in_scanned_scope(path)\n'
+        '            and path.split("/")[0] not in _EXCLUDED_ROOTS)',
+        '    return path.endswith(".md") and not _in_scanned_scope(path)',
+    ),
+    (
+        "the history's relocatable scope is widened to the corpus set as well",
+        SUBJECT,
+        '    return (path.endswith(".md") and not _in_scanned_scope(path)\n'
+        '            and path.split("/")[0] not in _EXCLUDED_ROOTS)',
+        '    return path.endswith(".md")',
+    ),
+    (
+        "a dangling link in a relocatable file stops failing the run",
+        SUBJECT,
+        '        print("{}\\tBROKEN-LINK\\t{}\\t-> resolves against no directory of the repository"\n'
+        '              .format(relative, link))\n        defects += 1',
+        '        print("{}\\tBROKEN-LINK\\t{}\\t-> resolves against no directory of the repository"\n'
+        '              .format(relative, link))',
+    ),
+    (
+        "the retained census stops reporting the relocatable files",
+        SUBJECT,
+        '        for relative, links, where in relocatable_census(root):',
+        '        for relative, links, where in []:',
+    ),
+    (
+        "an unrecognised argument stops being refused, so a wired call can be green and inert",
+        SUBJECT,
+        "    unrecognised = [argument for argument in argv if argument not in _FLAGS]",
+        "    unrecognised = []",
+    ),
+    (
+        "the refusal is widened until anything that merely LOOKS like a flag is accepted",
+        SUBJECT,
+        "    unrecognised = [argument for argument in argv if argument not in _FLAGS]",
+        '    unrecognised = [argument for argument in argv if not argument.startswith("--")]',
+    ),
+    (
+        "the retained census starts GATING, which is the one thing an audit must not do",
+        SUBJECT,
+        '            print("{}\\tEXCLUDED\\t-\\t-> the problem definition as received".format(relative))\n'
+        '        return 0',
+        '            print("{}\\tEXCLUDED\\t-\\t-> the problem definition as received".format(relative))\n'
+        '        return 1',
     ),
 )
 

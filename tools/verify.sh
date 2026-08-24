@@ -294,12 +294,14 @@ if [ "$checks" = "yes" ]; then
     tools/T-295-mutation-input-census.py --check
 
     # `tools/cli_guard.py` (`CH-0268`, `T-319`) is the last, and it exists because `CLAUDE.md` has
-    # recorded this trap twice and `T-272` repaired it at two call sites, while ELEVEN other
-    # writers went on emitting when handed `--help` -- four tracked artifacts overwritten and a
-    # three-file shadow corpus built in `./--help/`. It reads `tools/` and nothing else, so it
-    # could have gone in the build; it is here with the other censuses because it is a statement
-    # about a DIRECTORY rather than about a source file, and because the number it reports (45
-    # writers) is one a reader of this log should see.
+    # recorded this trap twice and `T-272` repaired it at two call sites, while ~~ELEVEN~~
+    # SIXTEEN other writers went on emitting when handed `--help` -- four tracked artifacts
+    # overwritten and a shadow corpus built in `./--help/`. The `eleven` was refuted by the repair
+    # commit's own file list and by this checker's own predicate at that commit's parent
+    # (`CH-0275`, `T-321`, `C-0214`); `git show --stat cfbeff3 -- tools/` guards sixteen. It reads
+    # `tools/` and nothing else, so it could have gone in the build; it is here with the other
+    # censuses because it is a statement about a DIRECTORY rather than about a source file, and
+    # because the number it reports (45 writers) is one a reader of this log should see.
     echo "--- every tool that WRITES refuses an argument it does not recognise (CH-0268) ---"
     tools/cli_guard.py --self-test > /dev/null
     tools/cli_guard.py --check

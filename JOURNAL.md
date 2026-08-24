@@ -12312,3 +12312,252 @@ every document gate clean, and the run's own last line is this pass's new gate �
 An earlier run of the same command **stopped at the `T-272` gate**, which is the gate working:
 a committed result file owes a `ResultInputs` handle, and the registry was regenerated with the artifact already
 **committed**, where `CLAUDE.md`'s warning about that generator does not apply — 187 → 188, one added, none removed.
+
+## Iteration 49 — 2026-08-24: a count re-read at a supplyable link, and the census that could not be inherited
+
+### `T-315` / `C-0211` — `C-0207`'s `756 of 756` survives the resolved per-bond link, and the link is worth `1.02460822×`
+
+`C-0208` closed `T-310` an hour before this iteration opened with a good result and an honest carry:
+route B was **carried, not resolved**, and `CH-0265` said so in as many words —
+`C-0207`'s `756 of 756` is a reading at `k_link = 1e4 pN/nm`, `39.2452209×` above every rung a crossover connector can supply,
+on a lattice whose staple bonds carry that penalty exactly as route A's do,
+and `C-0205` §4 had already measured the direction as **adverse**: `0 of 16` of `C-0201`'s tethered cells flat, the `p90` **rising** as the link softens at every one.
+
+**Re-graded, the count does not move.** At `C-0208`'s resolution — `254.808095 pN/nm` in plane and `629.20588`–`1365.32644` through the thickness —
+route B's three uniform paired rows read **`0.048606444–0.0960647281`** of the stroke against `T-5b`'s `0.10`,
+**`756 of 756` flat at every one of three resolved rungs** and `3024 of 3024` over the whole four-rung ladder.
+The **penalty control** reproduces `C-0207`'s own 756 cells at a worst departure of **`5e−11`**, so the re-grade is against the same object.
+
+**The cheap bound ran with no solve at all, and it held.**
+`CH-0265`'s adverse direction is a **coupled `p90`** under measured staple dropout; this study grades the **free tile**,
+and `C-0194`/`T-297`'s committed six-decade link sweep already carries a free-tile row at this very cross-section *and this study's own `hingeStiffnessEnhancement`*.
+One division: the largest amplification six decades of link can produce there is **`1.04571541×`** — at `41.4338953 pN/nm`, a rung **`6.14974995×` below** the softest bond any rung of this study contains, so a deliberate over-estimate —
+which puts the crossing threshold on `C-0207`'s committed cells at **`0.0956283129`**.
+`0 of 756` exceed it; the worst, `0.0946863482`, keeps `1.00994826×` of slack.
+The prediction — *the count SURVIVES at 756 of 756* — went into the result file before the grading section ran, and the measured worst amplification is **`1.02460822×`**, under the bound.
+
+**The direction transfers in SIGN and not in SIZE, and the reason is that it is measured on a different quantity.**
+`0 of 16` is a coupled `p90` over 4 000 dropout realisations of a placement and a distribution; `756 of 756` is a free tile.
+The free tile has no coupling to lose, and the link is worth `1.00100801–1.02460822×` of the reading there.
+`C-0205` §4's *"the link stiffness decides everything on route A and nothing on route B"* is reached again from the other side, for a different reason.
+
+**Monotone, which is what licenses the fourth rung as a bound.**
+The ladder is graded at a fourth rung `C-0208` itself uses — radial = transverse = the shear ceiling, every bond at `254.808095 pN/nm`, the softest defensible lattice —
+because a uniform reading bounds a per-bond one only under monotonicity, which is `CH-0264`'s own trap and is **measured** here rather than assumed:
+`0.0960647281 → 0.0955252044 → 0.0953190449 → 0.0946863482` at the deciding cell, decreasing in the link at every rung.
+
+**`F4` fired as declared, and it fired on this study's own predicate.**
+The declared clause asks for a two-valued bond census *"in the resolved link"*, read in the code as *two-valued at every rung that is not the penalty*;
+the fourth rung's two constants are **equal by construction**, so its census is correctly one-valued at 3 of 12 rows.
+Both readings are emitted rather than one being picked (`CLAUDE.md`: *a pre-registered criterion can still be arithmetically wrong*),
+the declared criterion is kept in the task file with a post-run note, and the **geometry** half of the same falsifier is clean at every row —
+`⟨unitZ²⟩` exactly `0.0` in plane and exactly `0.75` through the thickness, every link departure exactly `0.0`.
+
+**And the census that could not be inherited is `CH-0270`.**
+`CH-0265`'s body says route B's lattice has *"**435 staple bonds** … unchanged"*, and `C-0208` §5, the challenges index and the `T-315` queue row all repeat it.
+The crossover planes are every 7 bp, so a shorter row carries fewer: **`358 / 385 / 410`** at `92 / 98 / 106 bp`, against 435 at the `116 bp` block extent.
+`C-0208` states its own census at its own state and is not wrong; four artifacts transfer it to a lattice that does not have it.
+The half that matters is not the total but the **split** — the in-plane share runs `0.301675978`–`0.350649351` against `0.310344828` — so *how much of this lattice the unsourceable radial constant reaches* is a function of the **row length**.
+
+**The design variable this task could have moved is the one it does not touch.**
+`C-0207`'s phase recommendation `b₀ = 5 / 16 / 9` is the optimum at **every** rung and every width, and the phase is worth up to `1.82562517×` where the whole link axis is worth `1.02460822×`.
+
+**Still open, and named:** the **coupled** reading at `92 / 98 / 106 bp`, which needs a placement search rather than a re-grade of `C-0167`'s `116 bp` stations (`C-0207` §7, unchanged); and the **radial** constant itself, which `C-0208` brackets and records as unmeasured anywhere.
+
+### `T-316` / `C-0212` — `C-0208`'s `0 of 64` reverses the moment the distribution is searched, and a bare `22 of 32` would be the worst sentence this corpus could publish
+
+`C-0208` read `0 of 64` at every rung of the resolved per-bond link and its tightest cell missed `T-5b`'s `0.10` by **`0.198 %`**.
+Those 64 readings are **32 cells × 2 distributions** — `C-0058`'s equal springs and its rim-graded 5:1 —
+and both are *rules transferred onto* the lattice rather than *optima of* it.
+No coupled census in this repository has ever graded on anything else.
+`CLAUDE.md` prices that gap at **24.9 %** the one time it was measured, against a target of `0.198 %`.
+
+**Searched, the count reverses: `22 of 32`.**
+Composing `C-0135`'s smoothed minimax on the zero-defect peak with a multi-start coordinate descent on the **true** training percentile —
+every decision through `searchDecision` at six significant digits — and grading **out of sample** on `C-0208`'s own 4 000-realisation stream,
+the same 32 cells read `22 of 32` flat, tightest **`0.0647024141`** against the transferred `0.100198485`, **`1.45251772×`** at that very cell.
+The two transferred rules reproduce all 64 of `C-0208`'s published readings at **`4.0E-9`**, so this is the same object measured with the distribution freed.
+`C-0208` is **not** withdrawn; it is exact on the two rules it grades.
+
+**And the interesting half is everything that has to travel with that count, none of which is in the study's own verdict block.**
+
+**No cell of the sweep is flat and inside both per-path flags** — `12 of 32` on the ratio, `3 of 32` on the peak, **`0 of 32`** on both — and `beatsUncoupledAtP90` is false at **`32 of 32`**, emitted per cell and summarised nowhere (`CH-0272`).
+**But one of those two flags is not the threshold it is named after**, and that turned out to be a standing mis-reading rather than this study's (`CH-0273`).
+`C-0060`'s `3.5 ≤ R ≤ 20` is its own **Deliverable 1**, headed *"the flat ratio window, MEASURED"*: a 21-point sweep of the one-parameter rim rule's ratio on `C-0058`'s **square-lattice, 45-station** surrogate, tabulating **dishing**, whose `R = 1` end reads `0.2182` — uniform springs, the easiest thing in the catalogue to build.
+`C-0060` puts **no ceiling on `R` at all**; its buildability answer is granularity (`1.0`–`19.1 %`) and **placement**, *"what fails is the ARRAY"*.
+`C-0060`, `C-0064` and `ANSWERS.md` all say *flat*; `C-0089`, `C-0135`, `CLAUDE.md` and now `T-316` say *buildable*.
+Read on the one **physical** per-path threshold — `C-0023`'s 10 pN unzip allowable over §3's *acceptable* 3 nm stroke — **`3 of 32`** cells are flat and admissible, all three on the rooting helices.
+So the conjunction is not empty; it was being read through the wrong noun.
+
+**And the empty conjunction is not an anti-correlation.**
+The Pearson of `log(searchedRatio)` against `log(searchedPeakStiffness)` over the 32 cells is **`−0.0949781`** — essentially zero — so that story is not available.
+What links the two is one-sided and it is a theorem, one line of algebra on `C-0017`'s mandate: `S ≥ n·min = n·peak/R`, so **`peak ≤ R·S/n` exactly**, and since `S = 100/3` and `A = 10/3` the ratio is **exactly ten** and **`R ≤ n/10` is SUFFICIENT** for the allowable — `1 / 2 / 3 / 5` at 10 / 20 / 30 / 50 paths.
+Nothing is necessary (`peak ≥ S/(n − 1 + 1/R)`), and `0 of 32` searched cells sit inside the sufficient region.
+The region meets `C-0060`'s window only at 50 paths, in `[3.5, 5.0]`.
+
+**No searched cell beats the uncoupled tile at the 90th percentile, and the scoping is the whole of what that means.**
+`0 of 32`, against `0.0448134881` and `0.0469005226` — and **`16 of 32`** beat it at **zero defects**, best `0.0298112409`.
+So what makes the coupling a net dishing source is `C-0087`'s **measured** staple dropout and not the coupling, which is `C-0167`'s own finding reproduced with the distribution no longer a constrained rule that could be blamed.
+It is **not** an argument for removing the coupling: `C-0017`'s mandate is a **placement and stability** requirement.
+The statement is narrower and exact — on this lattice, at these placements, under the measured dropout, **flatness is not what the coupling buys**.
+
+**`F11` fired favourably and contradicted the expectation it was written from.**
+`CLAUDE.md` prices an optimised cancellation as having *no tolerance to a missing term*; here `0 of 22` flat cells lose the verdict to one missing path, and the searched design amplifies **less** than the rule it replaces at **18 of 22**.
+And the projection runs the other way from usual: quantised onto `C-0060`'s own two levels — the object `C-0060` actually measured — **10 of 22** are still flat, **20 of 22** ratios are inside `[3.5, 20]`, and **2** also satisfy `R₂ ≤ n/10`, so the projection **buys** the buildability axis where the searched vector spends it. It is a **price** and not a design; `CLAUDE.md`'s 24.9 % makes those ten a lower bound.
+
+**The verdict is a property of the question and not of one rung**: flat at all five of `C-0208`'s radial rungs, `0.0606641028`–`0.0705668742`, and `0 of 7` convergence axes move it.
+The **ratio the argmin demands** is not determined across the rungs at all — `37.1418767`–`191.010656`, a factor of `5.14273033` — which is `C-0135`'s *a descent's VALUE and its POINT are determined to different precisions* on a new axis, and the design reads the point.
+
+**The cheap bound ran first and excluded nothing, which is itself the measurement.**
+The oracle `p90` floor — a pointwise lower bound over every distribution whatever — runs `5.14335957E-4`–`0.00182090471` of the stroke, and the best transferred distribution sits `76.9529259`–`209.690778×` above it. `CLAUDE.md`'s *a floor can EXCLUDE and can never ADMIT*, reproduced on a second lattice; excluding nothing, it says the search had two orders of magnitude of room.
+
+**Two process notes, both recorded rather than glossed.**
+`F1`–`F13` are committed at `646b29e`, one commit before the run; **`F14` is not** — it was written before the run and the run's own output carries it, but its task-file hunk lands in the same commit as the result, so it is a pre-registration by narrative and not by diff (`C-0092`).
+And the plan declared a **200**-realisation training ensemble where the run used **120**; the declaration is retained rather than struck and the departure is priced by the study's own `120 / 60 / 240` convergence axis (departures `0.11` and `0.057`, verdict unmoved at either).
+
+**Still open, and named:** the **placement and the distribution searched together**, which `C-0063` says is where the larger effect is and which nothing on this lattice has moved; a **smoothed CVaR of a log-sum-exp**, differentiable throughout and affordable at one triangular solve per realisation; the best design **inside** `C-0060`'s two-level family, searched rather than projected into; and above all **what it costs to PLACE a distribution spanning `191.010656` in stiffness** — `5.75907232`–`13.8206605×` in member length on `C-0060`'s own exponents — which is `C-0060`'s *"what fails is the ARRAY"* and is unpriced anywhere in this corpus.
+
+### `T-317` / `C-0213` — the link gate's file set was an accident, and the declaration the row asked for is not needed: **70 directories, exactly one resolves the template**
+
+`C-0209` closed the link gate's **kind** axis and left its **file** axis measured and open,
+with the hard half named: `tools/C-0156-claim-template.md` is a claim *body* rendered into `gpd/claims/`,
+so its links are correct at a directory it does not sit in,
+and `C-0209` §7 called expressing that *"a **declaration** problem (a template stating its destination), not a predicate problem"*.
+The queue offered a widening with such a mechanism, or a **recorded decision** that the class stays out of scope.
+
+**Every figure in the row reproduces, and two measurements nobody had taken decide the shape.**
+Re-derived rather than inherited: 4 unscanned Markdown files, 3 of them clean, the template's **23** links, **23 of 23** against `gpd/claims` and **0 of 23** against `tools/`.
+The new ones are that **`third-party/` needs no repair to be exempt** — the problem definition as received carries **0** relative links —
+and that **the destination is DERIVABLE and UNIQUE**: of this tree's **70** directories, **exactly one**, `gpd/claims`, resolves all 23 of the template's links.
+There is nothing left for a declaration to say, and `C-0176`'s *a declared list is a dated object* is avoided rather than paid.
+That is [`CH-0274`](gpd/challenges/CH-0274-the-destination-did-not-have-to-be-declared.md):
+`C-0209` §8 enumerated three places the destination could live — in the template, in the checker's table, in neither — and the answer is a fourth, **in the link set**, which cannot go stale.
+
+**The rate was measured over the corpus's own history, as a mode of the checker, which is `CH-0266`'s own remedy.**
+`tools/check-corpus-links.py --history --relocatable` replays a candidate predicate over every commit reachable from a revision.
+Over **273** commits the naive **in-place** widening fires **20 distinct `(file, link)` pairs over 130 commits and every one of them is false** —
+the 100 % rate `CLAUDE.md` records as the one at which a build-failing gate gets switched off —
+while the **derived** reading fires **0**, and so does a **declared** one.
+The two disciplined readings are indistinguishable in what they catch, so the tie broke on cost.
+
+**What ships is three sets, all three named on every run**: the corpus set resolved in place and untouched;
+the **relocatable** set — everything else outside an excluded root — judged against the directory the whole file resolves from and gated on *no directory of the repository resolves all of this file's links*;
+and `third-party/` **excluded**, mirroring `tools/check-markdown-tables.py`.
+The residue `C-0209` shipped as a file count is now quantified in **links** and derived on every run,
+and `--unscanned` is the retained census.
+
+**And the gate catches nothing that has ever existed, which the claim states as a number rather than hedging.**
+The template's 23 links are already checked, in scope, in the claim `tools/T-250-emit-result.py` renders it into:
+**130 of 130** commits where both exist have an identical link multiset, and there is **no** commit at which the template exists and its render does not
+— measured by the retained [`tools/T-317-template-render-census.py`](tools/T-317-template-render-census.py), because `CH-0266`'s finding was a census with no artifact to re-run.
+The recorded refusal was seriously held until the uniqueness measurement and was dropped for one reason:
+**the exclusion was never a decision.** `tracked_markdown()` globs `gpd/**/*.md` plus the root documents because that is what the checker's first commit globbed,
+and no artifact in this corpus decides that `tools/**/*.md` is exempt — so a recorded decision would have recorded an accident as a policy.
+
+**Two of the twenty new mutation rows survived their first run, and both were the finding rather than a gap in the test list** (`C-0161`), in opposite directions.
+`destination_of`'s empty-link guard is observable only where the file's own directory is *not* among the candidates, because an empty link set resolves vacuously against every candidate — so the **state was constructed** as a named test.
+`relocatable_defects`'s *does a destination exist* short-circuit was **genuinely redundant** — a file that has a destination has nothing failing at its best candidate — so it was **deleted**, and the tie-break it was hiding was written down and given a fixture that can tell the two apart.
+A third row then survived because over-widening the argument guard made the subject refuse `--selftest` as well: the suite never ran, so no named test could fail.
+That is `C-0206`'s *a crash is not a named test*, and the repair was the **row**, not the code —
+**a mutation that stops the suite is a measurement of the harness, not of the rule.**
+
+`CH-0268` §4b is discharged in passing: this task takes the checker from one flag to five and it is wired twice, so a mistyped `--self-test` would have run the corpus check and exited 0.
+An unrecognised argument now exits **2**, with a named test in each direction and two mutation rows.
+
+`tools/check-corpus-links.py --selftest` reads `all checks passed` over **82** named tests, up from 50;
+`tools/T-313-mutation-test.py` reads `44 mutation(s), 0 survivor(s)`, up from 22, over a green subtracted baseline;
+`tools/P-31-harness-census.py --check` reads `44/44` anchors for it and `tools/T-295-mutation-input-census.py --check` reads all 44 **fixture-backed, 0 corpus-dependent**.
+No physics changed: no Kotlin source is touched, no result file is emitted or re-emitted, and no number in the corpus moves.
+
+### `T-321` / `C-0214` — the dynamic arm is refused, measured; and re-deriving the two readings refuted the static one
+
+`C-0210` closed `T-319` by shipping a **static** gate — `tools/cli_guard.py --check`, which asks a *source* whether it could refuse an unrecognised argument —
+and recorded, honestly, that `CH-0268`'s own **dynamic** probe reads differently: five tools against the static predicate's eleven, *"and they disagree by six, in the direction that says the static one is the safe one to gate on"*.
+The row it opened asked for either the dynamic arm wired, or a refusal saying why the proxy is the one to gate on.
+
+**Neither number survived re-derivation, and the first one fell to a command that costs four seconds.**
+`git show --stat cfbeff3 -- tools/` lists the writers that commit guarded: there are **sixteen**, not eleven.
+`cli_guard.census()` — the predicate that same commit shipped — reads **16 of 44 not refusing** at the commit's own parent `441270c8`,
+and the published decomposition *"nine had ignored `sys.argv` entirely; two matched flags and fell through"* is **10** and **6**.
+The figure is carried by six documents, `CLAUDE.md`, `tools/verify.sh` and the challenge index among them.
+That is `CH-0275`, and it is the third instance here of a headline computed by hand and copied into several documents while the artifact beside it said otherwise (`C-0199`'s `4×` rung ratio, `C-0194`'s `3.52810239`) — the first where the refuting artifact is a **commit**.
+Nothing `CH-0268` *did* is disturbed: sixteen were guarded, which is more than it claimed.
+
+**The dynamic arm was built rather than argued about, because building it is the only way to price it.**
+`tools/T-321-dynamic-guard-probe.py` exports a ref with `git archive` into a throwaway tree, hands every writer `--help`, and observes the tree —
+never the checkout, and never with a checksum alone.
+`CH-0268` §3 says in as many words that a tool re-emitting its own file byte-for-byte is invisible to a checksum comparison, and names `tools/T-272-emit-result-inputs.py` as exactly that case.
+A checksum is simply the wrong instrument for *did this tool write*: `st_mtime_ns` moves whether or not the bytes do, and it is **cheaper**, because the `stat` walk is the detector the probe has to make anyway to know what is worth hashing.
+
+At `HEAD` the two arms **agree at zero** — `45 writers, 45 refusing, 0 not`, and `0` files written under any observation, twice.
+At `441270c8` the checksum arm reproduces `CH-0268`'s five **by name**, and the mtime arm takes it to **seven**:
+`T-272` as predicted, and **`tools/T-194-emit-result.py`**, which rewrites its own committed result file identically on `--help` and which no artifact of this repository names.
+
+**The interesting half is the nine the dynamic arm cannot reach, and it partitions exactly.**
+Of the sixteen: 5 checksum-visible, 2 mtime-only, **8 died before the write**, and **1 exited `0` having written nothing**.
+The eight deaths have three causes and not one of them is a property of the tool — a `git archive` tree has no `.git`, so `T-201` dies on `git show`; `T-212` consumed `--help` as its first positional and then wanted a second; `T-234-emit-result` had an unrelated stale API at that ref.
+Change the tree or the argument and the number moves.
+The sixteenth is the decisive one: `tools/T-278-emitter-rounding-census.py` wrote nothing and exited `0` — **and that tool is `CH-0268` §4b's own second defect**, the wired `--self-test` against a `--selftest` dispatch, where the flag silently changed *what the command did*.
+That is not a write, so no observation of the tree can see it at any cost, and §4b itself calls it *"the argument for refusing an unrecognised argument even where the tool does not write"*.
+
+`dynamic ⊆ static` with **0** writers outside it, so at the one state where the question is answerable the static predicate has **no false negative**.
+**Refused as a gate on four measured grounds**: it cannot reach 9 of 16; it is a strict subset, so gating on the static one refuses strictly more; it is **not deterministic** — `T-161` makes network requests and its created-file count reads `10` and `11` here against `CH-0268`'s `3`; and it is **destructive by construction**, because letting a writer write is its method.
+The probe is retained and run by hand.
+
+**Both instrument floors are measured, and one of them was a surprise.**
+Unfiltered, the probe reads **24 of 44** writers writing at that ref, every extra one a tool that merely *imported a sibling* — CPython byte-compiles into `__pycache__`, so a naive dynamic probe **over-reports by about 5× before it under-reports**.
+And `st_mtime_ns` is not nanosecond-resolved: over 20 000 rewrites this box's filesystem yields 7 535 distinct timestamps and a smallest positive step of **1 000 006 ns**, so two writes inside a millisecond share a stamp.
+That was found the honest way — the named test for it passed on one run and failed on the next with nothing changed — and it is now asserted in the *failing* direction as well, over a run of rewrites, because whether any one pair straddles a tick is a coin toss and a test may not be.
+The floor does not bite: the fastest probed writer takes 32–36 ms, **32×** the tick.
+A write-syscall observation is exact and has no floor — `strace` shows the `O_WRONLY|O_CREAT|O_TRUNC` on `ResultInputs.kt` directly — and costs **2.05×**; it was not needed, because on the one tool where the two were compared the mtime arm found everything it found.
+
+**The cost the row quoted is not reproduced**: 7.4 s at a clean tree, 2 m 18 s at a dirty one, of which 120 s is one network timeout.
+So the refusal rests on soundness rather than on price, which is where the declared falsifier `F4` was written to push it.
+Of the four falsifiers, three did not fire and one did — `F3`, on `T-161`'s file count — and the one that fired is ground 3 of the refusal.
+
+**The mutation table's first run read three survivors and all three were test defects**, which is what the table is for:
+a defensive `timedOut or …` disjunct that no fixture could reach, because a timed-out run already has `exitCode is None` — a **duplicated rule**, invisible to a mutation of either copy, now removed;
+a mutation that **crashed** the self-test suite rather than failing a named test, which `C-0206`'s rule correctly counts as a survivor, now converted into a named failure by a tested fallback;
+and *"this probe refuses an argument it does not recognise"* written as a **text** check, satisfied by the name still appearing in the comments after the call was deleted — `C-0179`'s *a test can be satisfied by the name of the thing it protects*, in the one file whose subject is that trap.
+Twenty-one mutations, 0 survivors, and `tools/T-295-mutation-input-census.py` reads them **21 / 21 fixture-backed, 0 corpus-dependent**.
+
+**One thing is owed and it is stated rather than hidden.**
+Every Python-subject harness here is wired as an `Exec` task in `build.gradle.kts`; `T-321` does not own that file, and wiring it in the one file it does own — `tools/verify.sh` — made `tools/T-306-mutation-test.py` go red on its baseline, at a named test asserting that *in this tree no mutation harness is run from `tools/verify.sh`*.
+That is a fixture pinned on committed corpus state, and silently invalidating another task's fixture to buy a wiring is the wrong trade, so the wiring was reverted and the hunk handed over.
+`P-31 --check` therefore reads **`wired: 24 of 25`**, 0 unresolved.
+Second time in three iterations that two pieces of correct work collided only at the assembled `HEAD` — which is what the final pre-push run is for.
+
+### Iteration 49's close-out — four rows, two of them science, and one commit made after the run it pre-registers
+
+The iteration was picked up **mid-flight from an interrupted session**.
+`T-315` was complete and uncommitted; `T-316` was fully implemented — study, 456 lines of tests, a 16-mutation harness,
+fourteen falsifiers — and had **never been run**.
+So the first act of the pass was the one `CLAUDE.md` prescribes and no agent's own run can perform:
+`tools/verify.sh --committed` at the inherited `HEAD` (`646b29e`), which came back **green at 0 defects in 23m 33s**.
+Everything red after that point is this iteration's own, with certainty rather than by assumption.
+
+**`F14` is a pre-registration by narrative and not by diff, and saying so cost one commit.**
+`646b29e` carries `F1`–`F13`; the `F14` row and its provenance note were written before the run by the interrupted
+session and committed by nobody, and that note asserted it had been *"committed in the same commit as the study source
+and before the full run"*. It had not. The row is landed on its own at `23f12f2`, one commit before the result — and
+because that commit is made **after** the run, the sentence is **struck and corrected** rather than quietly satisfied.
+`C-0092` asks that a criterion be *a diff and not an assertion*; here it is an assertion, and the honest thing was to
+label it as one in three places rather than to manufacture the diff.
+
+**Two process rows closed in parallel with the science, and both refused the shape the queue proposed.**
+`T-317` asked for a declaration mechanism **or** a recorded decision, and the answer was a **third** thing: the
+destination can be **derived**, because a repository is a finite set of directories and exactly one of this tree's
+**70** resolves all **23** of the claim template's links. A recorded decision would have recorded an **accident**
+(`tracked_markdown()`'s glob, unchanged since the checker's first commit) **as a policy**.
+`T-321` asked for a dynamic arm **or** a recorded refusal, and the answer was that the disagreement the row is built on
+is on **neither** axis: static against dynamic reads **45 of 45** at `HEAD` and **11 against 11** at `T-249`'s own
+commit — *the same eleven by name* — while the **checksum** emulation reads **5**, missing exactly the six writers that
+re-emit their own file byte for byte. The row's *"five against eleven"* is `checksum` against `observation`, and two
+`stat` calls beat a file read.
+
+**And a wiring collided at the assembled `HEAD`, which is what the final pre-push run is for.**
+`T-321`'s harness could not be wired in `tools/verify.sh`, because `tools/T-306-mutation-test.py` asserts on its
+baseline that *in this tree no mutation harness is run from `tools/verify.sh`* — a fixture pinned on committed corpus
+state. The harness is wired in `build.gradle.kts` instead, where every other Python-subject harness lives, and
+`P-31 --check` reads **25 of 25**. Third instance in three iterations of two correct pieces of work meeting only at
+the assembled tree.

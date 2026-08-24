@@ -456,6 +456,13 @@ tasks.register<Exec>("testCorpusLinkMutations") {
     commandLine("$projectDir/tools/T-313-mutation-test.py")
 }
 
+tasks.register<Exec>("testDynamicGuardProbeMutations") {
+    group = "verification"
+    description = "Runs tools/T-321-mutation-test.py, the mutation test for the dynamic arm of the " +
+        "argument guard"
+    commandLine("$projectDir/tools/T-321-mutation-test.py")
+}
+
 /*
  * THE FOUR KOTLIN HARNESSES, WHICH TAKE A SNAPSHOT DIRECTORY AND ARE DELIBERATELY OUT OF `:test`.
  *
@@ -521,6 +528,22 @@ tasks.register<Exec>("testRadialLinkResolutionMutations") {
     commandLine(mutationSnapshotArguments("T-310-mutation-test.py"))
 }
 
+tasks.register<Exec>("testResolvedLinkUniformRasterMutations") {
+    group = "verification"
+    description = "Runs tools/T-315-mutation-test.py <snapshot>, the Kotlin mutation test for " +
+        "route B's uniform raster at the resolved per-bond link. Needs " +
+        "-PmutationSnapshot=<dir>; not in :test"
+    commandLine(mutationSnapshotArguments("T-315-mutation-test.py"))
+}
+
+tasks.register<Exec>("testSearchedDistributionMutations") {
+    group = "verification"
+    description = "Runs tools/T-316-mutation-test.py <snapshot>, the Kotlin mutation test for a " +
+        "distribution SEARCHED at the resolved per-bond link. Needs -PmutationSnapshot=<dir>; " +
+        "not in :test"
+    commandLine(mutationSnapshotArguments("T-316-mutation-test.py"))
+}
+
 tasks.named("test") {
     dependsOn(
         "testHarness", "testDeliverableTracer", "testMarkdownTables", "testCorpusLinks",
@@ -550,7 +573,9 @@ tasks.named("test") {
         // `T-313` -- the widened link predicate, its three guards and its scope line.
         "testCorpusLinkMutations",
         // `CH-0268` -- an emitter that ignores its arguments emits.
-        "testCliGuard"
+        "testCliGuard",
+        // `T-321` -- the dynamic arm of that guard, which OBSERVES rather than compares.
+        "testDynamicGuardProbeMutations"
     )
 }
 

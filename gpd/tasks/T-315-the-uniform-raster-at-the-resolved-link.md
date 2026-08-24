@@ -150,3 +150,22 @@ Declared **before** the study was run, in the commit before the result.
   of this cross-section does (`C-0193`, `C-0200`), and that route A is drawable and undemonstrated.
 - The **radial** constant remains unsourceable (`C-0208` §6); it is carried as a bracket and the
   answer is stated at both ends of it.
+
+---
+
+## Post-run note on `F4` — the declared criterion was wrong about one rung, and both readings are published
+
+`F4` as declared above asks for a **two-valued** bond census *"in the resolved link"*, and the
+study read that as *two-valued at every rung that is not the penalty*. The fourth rung sets the
+radial constant **equal** to the transverse one, so its two readings are **one number by
+construction** and its census is correctly one-valued — at 3 of 12 `(width, rung)` rows, every one
+of them that rung.
+
+The declared criterion is **kept as written**, and the result file emits **both** verdicts:
+`F4 as declared` (**FIRED**) and `F4 corrected` — *one-valued where a rung's two readings agree at
+the census's own `1e-9` quantisation and two-valued where they do not* — which does not fire.
+The geometry half of the same falsifier is clean at every row: `⟨unitZ²⟩` is exactly `0` in plane
+and exactly `0.75` through the thickness, and every link departure is exactly `0.0`.
+
+`CLAUDE.md`: *a pre-registered criterion can still be arithmetically wrong, so publish both
+readings rather than picking one.*
