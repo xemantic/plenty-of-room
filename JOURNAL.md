@@ -12306,3 +12306,9 @@ the eighth because writing the paragraph that reports the repair added an occurr
 which is `CH-0182` met by a claim on itself.
 The regeneration was only safe because `C-0196` had re-keyed overrides on the occurrence's **neighbourhood**
 rather than on its index: **21 of 21 carried over**, the thirteen that existed and the eight added.
+
+`tools/verify.sh --committed` at `b6ecb09`: **`BUILD SUCCESSFUL in 24m 41s`**, no failed task,
+every document gate clean, and the run's own last line is this pass's new gate — *45 writers, 45 refusing, 0 not*.
+An earlier run of the same command **stopped at the `T-272` gate**, which is the gate working:
+a committed result file owes a `ResultInputs` handle, and the registry was regenerated with the artifact already
+**committed**, where `CLAUDE.md`'s warning about that generator does not apply — 187 → 188, one added, none removed.
