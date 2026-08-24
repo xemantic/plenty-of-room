@@ -12044,3 +12044,56 @@ It is a faithful rounding and misleads no one, and it is exactly the case the ru
 *grep the number out of the claim before a commit message quotes it* —
 because a **rounded** headline is the one that never matches.
 Recorded rather than rewritten: the history is shared and a force-push costs more than the defect.
+
+### `T-313` — a link target is a filename whatever it names, and the 86 % that framed the question belonged to the census
+
+Agent F, iteration 48.
+`tools/check-corpus-links.py`'s `_LINK` pattern ended `\.md`,
+so a relative link to a `.py`, `.kt`, `.json`, `.sh` or directory was invisible —
+to that checker and therefore to **every** gate in the tree,
+since `tools/check-result-path-references.py` reads a claim's `Provenance` row, which is a **bare** path rather than a link.
+Two agents relocated a mutation harness out from under a Markdown link in this same iteration and neither noticed.
+
+**The cheap bound moved the answer, which is why the queue asked for it.**
+The row offered two branches — widen the predicate, or state a scope line —
+and framed the widening as expensive on `C-0207`'s census: 14 broken, 12 of them false positives, an **86 %** rate on a build-failing gate.
+Re-derived against the **checker's own file set** and the **checker's own code-blanking**, which is the only scope a shipped predicate has,
+the placeholder class is **6 raw occurrences and 0 surviving `_without_code`** — this checker has blanked inline code since it was written, for exactly that reason —
+and `tools/C-0156-claim-template.md` is **not scanned at all**.
+So the widened gate reports **0**, the two branches are not exclusive, and **both ship**.
+That is `CH-0266`, and its second limb is sharper than its first:
+`C-0207` contains **zero** occurrences of the census three artifacts credit it with,
+so there was no method statement and no scanner to re-run — the only way to check it was to measure the whole thing again.
+The numeric tracer cannot see that, because `7 359` is a token five other claims cite for unrelated quantities.
+
+**The rate is measured over the repository's own history, not at `HEAD`.**
+A rate read at `HEAD` measures a corpus somebody has just repaired.
+`--history` is now a mode of the checker: it replays the shipped predicate over every commit reachable from a revision,
+each commit's own tree supplying the existence set, blobs cached by SHA, a minute for 259 commits.
+**259 swept, 19 with at least one hit, 6 distinct `(file, link)` pairs, and all six are genuine dangling references.**
+Two are the defects `C-0207` reports, found at exactly the commits it says they stood at.
+**Four are new** — a harness named in `TASKS.md` eleven commits before it was added, an emitter named in `C-0203` two commits before,
+and the two claim-side halves of the same harness moves — and nothing in this tree had ever seen them.
+
+**The other half is `C-0083`'s converse.**
+*A gate that cannot come clean is not a gate*; the honest inverse is that a gate that **can** come clean must say what it does not reach,
+or the clean run is read as a statement about the whole corpus.
+The scope line is therefore **derived and printed on every run** rather than declared once,
+because a declared residue is a dated object and this one would be dated by the first titled link anybody writes:
+`NOT scanned: 4 .md outside gpd/ and the root (third-party, tools); NOT matched: 0 titled, 0 angle-bracket, 0 reference-style link(s)`.
+
+**What surprised us** is the one class the widening does *not* close, and it is a declaration problem rather than a predicate problem.
+`tools/C-0156-claim-template.md` carries **23** relative links, of which **23 of 23 resolve against `gpd/claims`** —
+the directory a claim written from it is copied **to** — and **0 of 23** against `tools/`, where the file sits.
+A relative link's correctness is a property of the file the text will **end up in**, and no predicate reading the file in place can know that.
+It is the corpus's only instance, which is why the honest shape may be a recorded decision rather than a mechanism; filed as `T-317`, measurement done.
+
+50 named self-tests, up from 23.
+`tools/T-313-mutation-test.py`: **22 mutations, 0 survivors** over a measured and subtracted green baseline,
+ten reverting a rule and twelve over-widening it, declared in `P-31`'s table and wired as `testCorpusLinkMutations`;
+`tools/T-295-mutation-input-census.py` reads all 22 **fixture-backed, 0 corpus-dependent**, in a census of 352 mutations over 16 harnesses with 0 defects.
+Two of those 22 exist only because the scope line is **output** and no return value holds it open — `C-0161`'s *a mutation that fails nothing is the finding*, met before the fact.
+
+**And the gate caught its author within minutes of being widened**: the first draft of `C-0209` cited `C-0122-corpus-link-gate.md`,
+which is not that claim's slug — `C-0122-honeycomb-station-lattice.md` is, the link gate having been a side deliverable of it.
+`C-0083`'s own finding, on the claim widening the checker that finds it.
