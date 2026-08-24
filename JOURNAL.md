@@ -11997,3 +11997,50 @@ so re-grading them at these widths is a placement search and not a re-grade, and
 Whether a route-B design should trade paired row length against span — these three widths are the **maximum** each scaffold affords,
 and a shorter row with a longer loop is a different point of the same budget nobody has swept.
 `CH-0263`, `T-314` reserved and released unused.
+
+### Coordination — what only the assembled `HEAD` could show, for the second iteration running
+
+Five agents, four in a first wave and one spawned when the first wave freed capacity.
+Ownership on the **science** side held completely: agent A owned `structure/HoneycombTurnLoop.kt`,
+agent B `tile/LinkStiffnessThresholdStudy.kt`, agent C `tools/` and `build.gradle.kts`,
+agent D its own new study plus `tools/P-31-harness-census.py` once C had finished with it,
+and agent E `tile/HoneycombGrillage.kt` once the other four had landed.
+**No two agents edited one source.**
+
+What collided was the **index**, three times.
+`git add <paths>` followed by a **bare** `git commit` commits the whole index, not the paths —
+so `65d6b26` carried agent C's staged `git mv`, `7ba2a26` carried agent A's,
+and between `49d25f3` and `95f93eb` `HEAD` was transiently link-broken
+because one agent's document edits landed one commit before the artifacts they point at.
+Nothing was lost and every agent noticed and reported it, which is why nothing was lost.
+The cure is one word — `git commit -- <paths>` — and it is now a `CLAUDE.md` entry.
+This is the same family as the `git add -A` rule already in that file,
+reached through the *staging* half rather than the *wildcard* half.
+
+**The baseline run is the coordinator's highest-value single action and it paid for itself before any agent committed.**
+`tools/verify.sh --committed` was launched at the reservation commit, against a `HEAD` no agent had touched,
+purely to separate inherited breakage from this iteration's.
+It came back red at exactly one defect — and that defect was the **fourth** instance of the very class
+`T-306` had been queued to close, created by iteration 47's repair of the **third**.
+Handing it to agent C with the cause already traced out of the two sources
+turned it from a bug report into the claim's own worked example,
+and it changed the deliverable: the repair had to be one that would have caught the defect at *authoring* time,
+not one that merely fixed it.
+
+**And the final sweep found two generated artifacts owed by nobody in particular.**
+`structure/ResultInputs.kt` read stale — and the staleness was **purely line wrapping**,
+all 186 handles identical, because `CLAUDE.md` tells an agent to hand-add a handle
+(the generator reads the git index and deletes handles for files not yet staged)
+and the generator then formats it differently.
+So a hand-added handle is *necessarily* stale against its own generator until somebody regenerates it once,
+at the end, when every result file is committed.
+That is a standing tension between the rule and the gate rather than a defect in either, and it is worth knowing before the next agent hand-adds one.
+`gpd/results/P-22-result-reader-census.json` was owed for four studies — three of this iteration's and **one of iteration 47's**,
+which is the reader-census equivalent of the same thing: an artifact no single agent owns is an artifact no single agent emits.
+
+**One number slipped the grep rule.** Commit `7ba2a26`'s message says the connector supplies **255**;
+`C-0205` says `254.808095` and `255` appears nowhere in it.
+It is a faithful rounding and misleads no one, and it is exactly the case the rule exists for —
+*grep the number out of the claim before a commit message quotes it* —
+because a **rounded** headline is the one that never matches.
+Recorded rather than rewritten: the history is shared and a force-push costs more than the defect.
