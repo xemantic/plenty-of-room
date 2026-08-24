@@ -195,3 +195,22 @@ distributions and is exact on them.
 | `F11` | **OPEN.** A cell that clears at the 90th percentile still clears when its worst **single** path is removed — `CLAUDE.md`'s *an optimised placement is a cancellation, and a cancellation has no tolerance to a missing term* | either answer is the result |
 | `F12` | two independent runs of the study do not produce a byte-identical result file | must not fire |
 | `F13` | **OPEN.** The verdict at the tightest cell moves across `C-0208`'s five radial rungs | either answer is the result |
+| `F14` | **OPEN.** A cell that clears `T-5b` does so with a **single-path** stiffness above `C-0023`'s 10 pN unzip allowable read over §3's acceptable 3 nm stroke — a **third** threshold the moving quantity feeds, and one a mandate on a SUM does not constrain | either answer is the result |
+
+> **`F14` was added after the plumbing pass and before the run, and this note is the provenance.**
+> `CLAUDE.md` requires a falsifier on **every** threshold the moving quantity feeds, and the smoke
+> pass — 150 grading and 40 training realisations, a plumbing check whose numbers are not a result —
+> made it plain that a free distribution meeting an equality on a **sum** can put almost all of it
+> on a few paths. `F2` reads the max/min **ratio** and `F14` reads the **peak**, and they are not
+> the same threshold: a ratio inside `C-0060`'s window says nothing about the absolute force a
+> path carries. ~~The declaration is committed in the same commit as the study source and before the
+> full run, which is the discipline `C-0092` asks for.~~
+>
+> **CORRECTED at the close of iteration 49, before the commit that carries the result.** That last
+> sentence describes an intention and not a commit: the session that wrote this row was interrupted
+> and committed nothing, so `646b29e` carries `F1`–`F13` only and the study source was still
+> uncommitted when the full run started. **This row is therefore landed on its own, one commit
+> before the result** — but that commit is made *after* the run, so the pre-registration is by
+> **narrative and not by diff**, and `C-0092`'s discipline is met in spirit and not in form. The
+> state is recorded here, in [`C-0212`](../claims/C-0212-a-searched-distribution-at-the-resolved-link.md) §12
+> and in the post-run note below, rather than repaired into looking like something it was not.
