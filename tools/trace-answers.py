@@ -377,10 +377,34 @@ def strip_struck(text):
     return _STRUCK.sub(blank, text)
 
 
+#: `CH-0269`.  A LINK TARGET IS A FILENAME, AND A FILENAME ASSERTS NOTHING.  This corpus names a
+#: claim after its subject, so **33** of its filenames carry a settled word and **2** an open one --
+#: twelve of the thirty-three are this very family, `*-answers-synthesis.md`.  Reading a target as
+#: prose therefore makes CITING A SYNTHESIS CLAIM beside an open task a self-contradiction, which
+#: is precisely what a synthesis pass writes.  `C-0196` states the rule for the `T-234` census
+#: (*a name cannot govern a token*) and `T-285`/`T-287` blanked filenames there; nothing did it
+#: here.  Blank the TARGET and keep the LABEL, which is prose and does assert.
+_LINK_TARGET = re.compile(r"\]\(([^()\s]*)\)")
+
+
+def blank_link_targets(text):
+    """Blank the `(target)` half of every inline link, preserving length and line breaks."""
+
+    def blank(match):
+        return "](" + " " * len(match.group(1)) + ")"
+
+    return _LINK_TARGET.sub(blank, text)
+
+
+def _for_verdicts(text):
+    """The text a verdict scan may read: struck spans gone, link targets gone."""
+    return blank_link_targets(strip_struck(text))
+
+
 def open_assertions(answers_text):
     """[(line, task, phrase)] for every place the text asserts a task is open."""
     found = []
-    for number, line in enumerate(strip_struck(answers_text).splitlines(), start=1):
+    for number, line in enumerate(_for_verdicts(answers_text).splitlines(), start=1):
         for reference in _TASK_REFERENCE.finditer(line):
             task = reference.group(1)
             start = max(0, reference.start() - _OPEN_WINDOW)
@@ -533,7 +557,7 @@ def self_contradictions(answers_text):
     DIFFERENT tasks is common in this deliverable and is not a contradiction.
     """
     by_task = {}
-    for number, line in enumerate(strip_struck(answers_text).splitlines(), start=1):
+    for number, line in enumerate(_for_verdicts(answers_text).splitlines(), start=1):
         for sentence in re.split(r"(?<=[.!?])\s+|\n", line):
             for reference in _SUBJECT_REFERENCE.finditer(sentence):
                 task = reference.group(1)

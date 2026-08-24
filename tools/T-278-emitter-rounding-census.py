@@ -255,5 +255,18 @@ def main(argv):
     return 0
 
 
+# `CH-0268` -- this tool WRITES and matched every flag with `in argv`, so an unrecognised option
+# fell through to a full emission.  `T-249` and `T-250` already carry this repair with the reason
+# beside it; the other eleven writers never got it.
+import importlib.util as _importlib_util
+_spec = _importlib_util.spec_from_file_location(
+    "cli_guard", os.path.join(os.path.dirname(os.path.abspath(__file__)), "cli_guard.py"))
+_cli_guard = _importlib_util.module_from_spec(_spec)
+_spec.loader.exec_module(_cli_guard)
+
+
 if __name__ == "__main__":
+    _cli_guard.refuse_unknown_arguments(
+        "tools/T-278-emitter-rounding-census.py [--selftest | --sources | --artifacts | --check]",
+        ("--selftest", "--sources", "--artifacts", "--check"))
     sys.exit(main(sys.argv[1:]))

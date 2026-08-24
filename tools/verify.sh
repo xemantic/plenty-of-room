@@ -292,4 +292,15 @@ if [ "$checks" = "yes" ]; then
     echo "--- every mutation is held open by a FIXTURE, not by committed corpus state (T-295) ---"
     tools/T-295-mutation-input-census.py --self-test > /dev/null
     tools/T-295-mutation-input-census.py --check
+
+    # `tools/cli_guard.py` (`CH-0268`, `T-319`) is the last, and it exists because `CLAUDE.md` has
+    # recorded this trap twice and `T-272` repaired it at two call sites, while ELEVEN other
+    # writers went on emitting when handed `--help` -- four tracked artifacts overwritten and a
+    # three-file shadow corpus built in `./--help/`. It reads `tools/` and nothing else, so it
+    # could have gone in the build; it is here with the other censuses because it is a statement
+    # about a DIRECTORY rather than about a source file, and because the number it reports (45
+    # writers) is one a reader of this log should see.
+    echo "--- every tool that WRITES refuses an argument it does not recognise (CH-0268) ---"
+    tools/cli_guard.py --self-test > /dev/null
+    tools/cli_guard.py --check
 fi

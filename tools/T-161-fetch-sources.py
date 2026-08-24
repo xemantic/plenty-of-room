@@ -124,5 +124,15 @@ def main():
         f.write("\n".join(rows) + "\n")
 
 
+# `CH-0268` -- this tool WRITES into a directory taken from its own arguments, so `--help` built a
+# three-file shadow corpus in `./--help/`.  Parse the flag or refuse the argument.
+import importlib.util as _importlib_util, os as _os
+_spec = _importlib_util.spec_from_file_location(
+    "cli_guard", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "cli_guard.py"))
+_cli_guard = _importlib_util.module_from_spec(_spec)
+_spec.loader.exec_module(_cli_guard)
+
+
 if __name__ == "__main__":
+    _cli_guard.refuse_unknown_arguments("tools/T-161-fetch-sources.py  (no arguments)")
     main()

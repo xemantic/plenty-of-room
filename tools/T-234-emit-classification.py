@@ -432,8 +432,19 @@ def self_test():
     return 1 if failures else 0
 
 
+# `CH-0268` -- this tool REGENERATES `tools/T-234-classification.json`, which a wired gate reads,
+# and it used to accept `--self-test` and silently EMIT on anything else, `--help` included.
+import importlib.util as _importlib_util
+_spec = _importlib_util.spec_from_file_location(
+    "cli_guard", os.path.join(os.path.dirname(os.path.abspath(__file__)), "cli_guard.py"))
+_cli_guard = _importlib_util.module_from_spec(_spec)
+_spec.loader.exec_module(_cli_guard)
+
+
 if __name__ == "__main__":
     import sys
+    _cli_guard.refuse_unknown_arguments(
+        "tools/T-234-emit-classification.py [--self-test]", ("--self-test",))
     if "--self-test" in sys.argv[1:]:
         raise SystemExit(self_test())
     raise SystemExit(main())

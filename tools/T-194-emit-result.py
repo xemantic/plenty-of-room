@@ -190,5 +190,15 @@ def main():
     return 0
 
 
+
+# `CH-0268` -- this tool WRITES a committed artifact and used to ignore `sys.argv`
+# entirely, so `--help` emitted.  Parse the flag or refuse the argument.
+import importlib.util as _importlib_util, os as _os
+_spec = _importlib_util.spec_from_file_location(
+    "cli_guard", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "cli_guard.py"))
+_cli_guard = _importlib_util.module_from_spec(_spec)
+_spec.loader.exec_module(_cli_guard)
+
 if __name__ == "__main__":
+    _cli_guard.refuse_unknown_arguments("tools/T-194-emit-result.py  (no arguments)")
     sys.exit(main())

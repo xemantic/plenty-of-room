@@ -1324,6 +1324,65 @@ _MANY = _run_tool(
 check("300 defects still exit non-zero (256 would truncate to 0)", _MANY[0] > 0, True)
 check("and the exit code is exactly 1, not the count", _MANY[0], 1)
 
+# --- `CH-0269`: a link TARGET is a filename, and a filename asserts nothing ------------------
+#
+# This corpus names a claim after its subject, so 33 of its filenames carry a settled word --
+# twelve of them the `*-answers-synthesis.md` family -- and 2 an open one.  Reading a target as
+# prose made CITING a synthesis claim beside an open task a self-contradiction, which is exactly
+# what a synthesis pass writes.  Both directions are pinned: the target must not assert, and the
+# LABEL and surrounding prose must still assert.
+
+check(
+    "a settled word inside a LINK TARGET is not a verdict",
+    trace_answers.self_contradictions(
+        "See ([`C-0191`](gpd/claims/C-0191-thirteenth-answers-synthesis.md), `T-999`) "
+        "and its price line is left open.\n"
+    ),
+    [],
+)
+
+check(
+    "an open word inside a LINK TARGET is not an assertion either",
+    trace_answers.open_assertions(
+        "`T-999` is answered by [`C-0197`](gpd/claims/C-0197-the-challenge-halfs-own-open-word.md).\n"
+    ),
+    [],
+)
+
+check(
+    "a settled word in PROSE still contradicts an open one",
+    [c.task for c in trace_answers.self_contradictions(
+        "`T-999` is answered, and its price line is left open.\n"
+    )],
+    ["T-999"],
+)
+
+check(
+    "a settled word in a link LABEL still asserts, because a label is prose",
+    [c.task for c in trace_answers.self_contradictions(
+        "`T-999` is [answered](gpd/claims/C-0001-x.md), and it is left open.\n"
+    )],
+    ["T-999"],
+)
+
+check(
+    "blanking a link target preserves length, so reported line and column do not move",
+    len(trace_answers.blank_link_targets("a [b](c/d-e.md) f")),
+    len("a [b](c/d-e.md) f"),
+)
+
+check(
+    "blanking a link target preserves line breaks",
+    trace_answers.blank_link_targets("a [b](c.md)\nx [y](z.md)\n").count("\n"),
+    2,
+)
+
+check(
+    "a bare parenthesis that is not a link target is untouched",
+    trace_answers.blank_link_targets("the answer (see below) is open"),
+    "the answer (see below) is open",
+)
+
 # --- summary -------------------------------------------------------------------------------
 if _failures:
     print("\n{} check(s) FAILED".format(len(_failures)))

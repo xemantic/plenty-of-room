@@ -231,6 +231,19 @@ tasks.register<Exec>("testQueueVocabularyMutations") {
 }
 
 /*
+ * `tools/cli_guard.py` (`CH-0268`, `T-319`) is the ninth retained document/tool checker, and it
+ * exists because `CLAUDE.md` has recorded its trap twice and `T-272` repaired it at two call
+ * sites while eleven other writers went on emitting when handed `--help`.  Same split as the
+ * others: the SELF-TEST is wired here, and the census over `tools/` lives in `tools/verify.sh`,
+ * because it reads a directory rather than a source file.
+ */
+tasks.register<Exec>("testCliGuard") {
+    group = "verification"
+    description = "Runs tools/cli_guard.py --self-test, the tests for the argument guard"
+    commandLine("$projectDir/tools/cli_guard.py", "--self-test")
+}
+
+/*
  * `tools/T-234-census.py` and its emitter (`T-260`/`T-262`, `C-0176`) are the seventh and eighth.
  * Their self-tests read only in-memory fixtures, so they wire in here beside the others.
  *
@@ -535,7 +548,9 @@ tasks.named("test") {
         // `T-306` -- the harness-output contract, declared per harness and cross-checked.
         "testHarnessOutputContractMutations",
         // `T-313` -- the widened link predicate, its three guards and its scope line.
-        "testCorpusLinkMutations"
+        "testCorpusLinkMutations",
+        // `CH-0268` -- an emitter that ignores its arguments emits.
+        "testCliGuard"
     )
 }
 
