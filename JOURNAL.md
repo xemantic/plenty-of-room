@@ -12191,3 +12191,23 @@ so it came out as *"`tools/T-303-mutation-test.py` moved to `tools/T-303-mutatio
 The link check passed, because the link was fine; the sentence was nonsense.
 **A path rename is safe on a link target and unsafe on prose about the rename**,
 and the two live in the same line of the same file.
+
+### A recurring obligation pointed at a closed row, for three iterations
+
+The cold-start note of iterations 46, 47 and 48 each listed `T-276` — *the `ANSWERS.md` synthesis* — among
+what is *"open and cheap"*, and `T-276` has been `DONE` since iteration 45.
+Nothing is wrong with the row: it recorded the **thirteenth** synthesis and it discharged it correctly.
+What is wrong is the shape of the reference.
+**A synthesis is a recurring obligation and a queue row is a discharge**,
+so pointing at the row that recorded the last one sends a cold session to a closed task.
+
+No gate here can see it, and the reason is worth writing down:
+`tools/trace-answers.py` compares a document's assertion about a task against `queue_status`,
+and this is a note asserting that a **closed** row is open — which is exactly the class it checks —
+except that the note lives in `TASKS.md` itself, and the checker's two invocations read `ANSWERS.md`
+and `DECISIONS-FOR-NDI.md`. **The register and the reading order are the same file and only one of them is checked.**
+
+Opened as `T-319`, a new row, and the note now says why it is a new row rather than a reference.
+The general form is `C-0182`'s *a report needs a third state* met on a **schedule** rather than on a status:
+a task that recurs needs a fresh row per occurrence, and the way to notice is that its last row is `DONE`
+while three documents call it open.
