@@ -11856,3 +11856,66 @@ The flat answer belongs to the **drawable** raster and is bought by drawability.
 - **The `pgrep`/mtime trap fired, as recorded.** Copying the snapshot's result file while run B was still in flight returned run A's own output and `cmp` said *byte-identical* — the perfect reproduction for the worst possible reason. Waiting on the log's `EXIT=` line and then re-copying gave the real byte-identity.
 - **A one-ended guard is a guard no mutation can reach.** The harness's single first-run survivor widened `require(classZeroResidue in 0 until PERIOD)` at the **lower** bound, and every test of that guard passed a value above the period. The repair is the fixture, not the rule.
 - **`ResultInputs.kt` reads *stale* until the result file is `git add`ed**, exactly as `CLAUDE.md` records — and the residual staleness after that was a sibling's, whose handle exists and whose file is not yet staged. Running the generator would have deleted it.
+
+### Agent B — `T-303`: the link stiffness the coupled recovery needs, and what a connector can supply
+
+`C-0194` §6 declared `F10` open and it fired:
+the **free** honeycomb tile is penalty-independent over six decades of `linkStiffness` and the two **coupled** cells `C-0180` recovered are not —
+flat at `1 000 pN/nm` and not flat at `100` or at the span law's own `41.4338953`.
+So the corpus's only coupled recovery was quoted with no link stiffness attached at all.
+
+**The cheap half is arithmetic and it found a second route nobody had taken.**
+`CLAUDE.md` already records the comparison — `RIGID_LINK_STIFFNESS`'s KDoc prices `1e4 pN/nm` against the duplex stretch modulus
+and never against `Gen1Tile.crossoverInPlaneStiffness = 64.7058824 pN/nm`, *"the same two phosphate bonds on the orthogonal axis"* —
+and nobody had made it. Read on the **displacement** axis, Chen et al.'s own softened-bond construction gives `64.7058824 pN/nm`,
+carries **no `k_θ` at all** (it substitutes the stretch modulus where the hinge substitutes the bending rigidity),
+and agrees with `C-0194`'s `k_R` within **`1.56166544×`**.
+A third route, the connector's own bending on a continuum `c(ρ) = 12ρ/(6+ρ)` derived here for a relative end displacement,
+adds `89.6961146`–`190.102213` at **clamped** ends and exactly zero at pinned ones — a bracket that needs no `k_r`, because both limits are exact.
+The ceiling is **`254.808095 pN/nm`**, `39.2452474×` below the penalty.
+A fourth term is carried for its **sign** only: the duplex pair interaction is **central**,
+so its contribution to a coordinate perpendicular to the line of centres is `V′(d)/d` — negative wherever the pair repels, which this one does everywhere.
+
+**The expensive half is a bisection on an argument that already existed.**
+`p90` is monotone in `k_link` at both deciding cells over the whole ladder — asserted before anything was bisected,
+because `CLAUDE.md` records that a verdict that is not monotone in a swept variable has no threshold.
+The thresholds are **`834.060958`** and **`607.396049 pN/nm`**, so the ceiling is short by **`3.27329066×`** and **`2.38373921×`**,
+and the whole 64-cell census reads **`0 / 0 / 0 / 2 / 2`** across the ladder —
+`C-0167`'s own `0 of 64` given back at every rung the shear mechanism supplies.
+Route B agrees by another road and needs no threshold at all: `0 of 16` of `C-0201`'s tethered readings are flat over four decades.
+
+**And then the answer moved, in the last hour, onto a coordinate the same source file already knows about.**
+`HoneycombTetherElement.normalStiffness` is `tangent·unitZ² + secant·unitY²` —
+the file resolves a *chain's* two mechanisms onto the link residual by the bond's own direction — and a **bond**'s link is one scalar.
+`W` is the deflection normal to the face, so an in-plane bond's link is a pure transverse **shear** and the ceiling is exact there,
+while at the **300 of 435** bonds that run through the thickness `unitZ² = 0.75`
+and three quarters of a relative `W` displacement is a change of the interhelical **separation**, resisted **axially**.
+Resolved at the two axial candidates the corpus owns, that link is `475.448622`–`1211.56918 pN/nm`,
+and both thresholds lie **inside** it.
+So the question is not settled, it has **moved**: from a shear mechanism two claims have spent themselves on
+to an axial one nobody has priced, on two thirds of the bonds. `CH-0259`, and `T-310`.
+
+**What was surprising.** Three things.
+The two independent routes agreeing within a factor of 1.56 is the strongest thing in the claim
+and it cost one multiplication — a construction from 2014 fitted on a *rotation*, and a construction from `CH-0242` fitted on a *span*,
+landing on the same order for a coordinate neither was written for.
+`F8` fired and the *value* is what moved, not the verdict: beam subdivision `1 → 2` moves the bisected threshold **21 %**
+while the ceiling stays below both readings, which is `CLAUDE.md`'s *convergence is a property of the quantity* met on a threshold.
+And the one test that failed on its first real run was the author's:
+the lattice identity was taken on a bare uniform pressure whose peak dishing is its own conditioning noise at `1.97e-14` —
+a trap this file already records, walked into anyway, and repaired by taking it on a unit point load.
+
+**A floor that does not travel, again.** The `F3` note first rendered a `4.4e-10` reproduction departure as `0.0`,
+because `roundedForProse`'s default absolute floor is `1e-9` **pN** and a departure between two dimensionless `p90`s is not a force.
+`P-18`'s entry, met inside a falsifier's own prose. The study now carries an `emittedDimensionless` with the floor removed.
+
+**One mutation survived, and it was the fixture.** `M12` replaces the bisector's midpoint with a bracket **endpoint**,
+and neither existing test could see it: at 60 iterations both readings are the root to fifteen digits,
+and the 12-iteration test asserts only that the answer is *inside* the bracket, which an endpoint is.
+`C-0161`'s cure is to **construct** the state — one iteration over `[1, 100]` leaves the bracket `[10¹, 10²]`,
+whose geometric centre is exactly `10^1.5`, so putting the root there makes the midpoint exact and an endpoint out by half a decade.
+The eighteenth test does that, and it kills `M12`.
+
+**Left undone.** The per-bond link `CH-0259` needs is a change to `HoneycombGrillage`, which this agent did not own (`T-310`).
+The mutation harness lives at `gpd/data/T-303-mutation/mutate.py` and not in `tools/`,
+because `P-31`'s registry belongs to whoever owns that table (`T-309`).

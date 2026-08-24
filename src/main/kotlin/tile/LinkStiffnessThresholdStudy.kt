@@ -29,6 +29,7 @@ import com.xemantic.nano.plentyofroom.coupling.edgeCollarPressure
 import com.xemantic.nano.plentyofroom.coupling.measuredDepthIncorporation
 import com.xemantic.nano.plentyofroom.coupling.summariseDropoutDishing
 import com.xemantic.nano.plentyofroom.lattice.LatticeTag
+import com.xemantic.nano.plentyofroom.structure.DEPARTURE_SIGNIFICANT_DIGITS
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
 import com.xemantic.nano.plentyofroom.structure.PressureField
 import com.xemantic.nano.plentyofroom.structure.ResultInputs
@@ -92,6 +93,16 @@ private val t303Realisations: Int =
     if (System.getenv("T303_SMOKE") == "1") 150 else 4000
 
 private fun Double.emitted(digits: Int = 9): String = roundedForProse(digits).toString()
+
+/**
+ * The same, with the absolute floor removed.
+ *
+ * `RESULT_ABSOLUTE_FLOOR` is a claim about the **locked units** — `1e-9 pN` — and `P-18` records
+ * that it does not travel: a dimensionless departure of `4.4e-10` between two `p90`s is not a
+ * force, and rendering it as `0.0` states an exactness the study did not measure.
+ */
+private fun Double.emittedDimensionless(digits: Int = 2): String =
+    roundedForProse(digits, floor = 0.0).toString()
 
 // ------------------------------------------------------------------------------ the records
 
@@ -181,6 +192,20 @@ private class T303MonotonicityRow(
 )
 
 @Serializable
+private class T303ResolutionRow(
+    val bondDirection: String,
+    val bonds: Int,
+    val meanAbsUnitY: Double,
+    val meanUnitZSquared: Double,
+    val shearShare: Double,
+    val axialShare: Double,
+    val resolvedAtImpliedStepStiffness: Double,
+    val resolvedAtDuplexStretchOverSpan: Double,
+    val straddlesTheThresholds: Boolean,
+    val note: String
+)
+
+@Serializable
 private class T303RouteBRow(
     val cell: String,
     val linkStiffness: Double,
@@ -240,6 +265,7 @@ private class T303Result(
     val thresholds: List<T303Threshold>,
     val census: List<T303CensusRow>,
     val cells: List<T303Cell>,
+    val resolution: List<T303ResolutionRow>,
     val routeB: List<T303RouteBRow>,
     val verdict: Map<String, String>,
     val convergence: List<T303Convergence>,
@@ -703,15 +729,83 @@ fun main() {
             }
         }
     }
-    val monotonicity = listOf(
-        T303MonotonicityRow(
-            cell = "every cell of the census, over every consecutive pair of the ladder",
-            cellsChecked = keyed.size,
-            risesWithLinkStiffness = rises,
-            worstRise = worstRise,
-            monotone = rises == 0
-        )
+    val monotonicity = ArrayList<T303MonotonicityRow>()
+    monotonicity += T303MonotonicityRow(
+        cell = "every cell of the census, over every consecutive pair of the ladder",
+        cellsChecked = keyed.size,
+        risesWithLinkStiffness = rises,
+        worstRise = worstRise,
+        monotone = rises == 0
     )
+    // and separately at the two cells the BISECTION is taken on, because that is where
+    // monotonicity is load-bearing: a bisection on a non-monotone residual is a fiction.
+    recovered.forEach { r ->
+        val here = ladder.filter { it.columns == r.columns }.sortedBy { it.linkStiffness }
+        var cellRises = 0
+        var cellWorst = 0.0
+        here.zipWithNext().forEach { (soft, stiff) ->
+            val rise = stiff.p90OverStroke - soft.p90OverStroke
+            if (rise > 1e-9) {
+                cellRises += 1
+                cellWorst = maxOf(cellWorst, rise)
+            }
+        }
+        monotonicity += T303MonotonicityRow(
+            cell = r.label + ", the cell the bisection is taken on",
+            cellsChecked = 1,
+            risesWithLinkStiffness = cellRises,
+            worstRise = cellWorst,
+            monotone = cellRises == 0
+        )
+    }
+
+    // ================ the resolution the BOND link does not carry, and the TETHER does
+    // HoneycombTetherElement.normalStiffness is `tangent*unitZ^2 + secant*unitY^2`: the same
+    // source file already resolves a chain's two mechanisms onto the link residual by the bond's
+    // own direction. The BOND's link is one scalar, so the shear ceiling above is exact for the
+    // in-plane bonds and is not the whole story for the through-thickness ones, where most of a
+    // relative W displacement is a change of the interhelical SEPARATION. Closed form, no solve.
+    println("T-303 - the resolution the bond link does not carry")
+    val impliedStep = impliedCrossoverBondTension(kTheta, rP) /
+            (g - MeasuredBackbone.STEP_SOUTH)
+    val duplexOverSpan = Gen1Tile.DUPLEX_STRETCH_MODULUS / g
+    val allBonds = probe.lattice.bonds
+    val resolution = listOf(true, false).map { inPlane ->
+        val here = allBonds.filter { it.inPlane == inPlane }
+        val meanY = here.map { abs(it.unitY) }.average()
+        val meanZ2 = here.map { it.unitZ * it.unitZ }.average()
+        val meanY2 = here.map { it.unitY * it.unitY }.average()
+        val atStep = meanZ2 * impliedStep + meanY2 * bracket.ceiling
+        val atDuplex = meanZ2 * duplexOverSpan + meanY2 * bracket.ceiling
+        T303ResolutionRow(
+            bondDirection = if (inPlane) "in plane" else "through the thickness",
+            bonds = here.size,
+            meanAbsUnitY = meanY,
+            meanUnitZSquared = meanZ2,
+            shearShare = meanY2,
+            axialShare = meanZ2,
+            resolvedAtImpliedStepStiffness = atStep,
+            resolvedAtDuplexStretchOverSpan = atDuplex,
+            straddlesTheThresholds = crossing.any {
+                it.thresholdLinkStiffness!! in minOf(atStep, atDuplex)..maxOf(atStep, atDuplex)
+            },
+            note = if (inPlane)
+                "unitZ is zero, so the whole of a relative W displacement is a transverse SHEAR " +
+                        "of the connector and this study's ceiling is exact here"
+            else "unitZ^2 carries most of it, and there the resisting mechanism is the " +
+                    "connector's own AXIAL stiffness, which neither CH-0242 nor C-0194 nor this " +
+                    "study prices -- the two candidates bracketing it are C-0194's implied " +
+                    "phosphodiester-step stiffness " + impliedStep.emitted(9) + " pN/nm and the " +
+                    "duplex stretch modulus over the span " + duplexOverSpan.emitted(9) + " pN/nm"
+        )
+    }
+    resolution.forEach {
+        println("  " + it.bondDirection + "  " + it.bonds + " bonds, unitZ^2 = " +
+                it.meanUnitZSquared.emitted(9) + " -> resolved " +
+                it.resolvedAtImpliedStepStiffness.emitted(9) + " to " +
+                it.resolvedAtDuplexStretchOverSpan.emitted(9) + " pN/nm" +
+                (if (it.straddlesTheThresholds) "  STRADDLES the thresholds" else ""))
+    }
 
     // ================ Deliverable 4 -- route B, read out of C-0201's own committed artifact
     println("T-303 - route B, read out of C-0201's own linkStiffness block")
@@ -853,8 +947,8 @@ fun main() {
                     "both ends of the link ladder",
             fired = uniformDishing.any { it > T303_IDENTITY },
             note = "peak dishing over the mean deflection: " +
-                    uniformDishing.joinToString(", ") { it.emitted(2) } +
-                    ", against a threshold of " + T303_IDENTITY.emitted(2)
+                    uniformDishing.joinToString(", ") { it.emittedDimensionless() } +
+                    ", against a threshold of " + T303_IDENTITY.emittedDimensionless()
         ),
         T303Falsifier(
             name = "F2",
@@ -870,7 +964,8 @@ fun main() {
                     "readings over the shared rungs",
             fired = reproductions.filter { it.quantity.contains("zero-eigenstrain") }
                 .any { !it.closes },
-            note = "worst departure over the eight shared rungs " + worstReproduction.emitted(2)
+            note = "worst departure over the eight shared rungs " +
+                    worstReproduction.emittedDimensionless()
         ),
         T303Falsifier(
             name = "F4",
@@ -878,8 +973,11 @@ fun main() {
                     "graded cell, without which a bisection is a fiction",
             fired = rises > 0,
             note = rises.toString() + " of " + keyed.values.sumOf { it.size - 1 } +
-                    " consecutive pairs rise, worst rise " + worstRise.emitted(2) +
-                    ", over " + keyed.size + " cells"
+                    " consecutive pairs rise, worst rise " +
+                    worstRise.emittedDimensionless() +
+                    ", over " + keyed.size + " cells; at the two cells the BISECTION is taken " +
+                    "on, " + monotonicity.drop(1).count { it.monotone } + " of " +
+                    monotonicity.drop(1).size + " are monotone over the whole ladder"
         ),
         T303Falsifier(
             name = "F5",
@@ -918,7 +1016,7 @@ fun main() {
                     "subdivision and the dishing grid",
             fired = convergence.any { it.relativeDeparture > 0.05 },
             note = "worst relative departure " +
-                    convergence.maxOf { it.relativeDeparture }.emitted(2) +
+                    convergence.maxOf { it.relativeDeparture }.emittedDimensionless() +
                     ", and the ceiling verdict survives at " +
                     convergence.count { it.verdictSurvives } + " of " + convergence.size +
                     " refinements"
@@ -1030,6 +1128,7 @@ fun main() {
         thresholds = thresholds,
         census = census,
         cells = cells,
+        resolution = resolution,
         routeB = routeB,
         verdict = mapOf(
             "the ceiling on the link" to bracket.ceiling.emitted(9) + " pN/nm",
@@ -1067,7 +1166,7 @@ fun main() {
             "The threshold the coupled recovery needs is " +
                     crossing.joinToString(" and ") {
                         it.thresholdLinkStiffness!!.emitted(9)
-                    } + " pN/nm, bisected to a bracket " + bracketDecades.emitted(2) +
+                    } + " pN/nm, bisected to a bracket " + bracketDecades.emittedDimensionless() +
                     " decades wide, and the ceiling reaches " +
                     (if (thresholds.any { it.ceilingReachesThreshold }) "at least one of them"
                     else "NEITHER") + ": it is short by " +
@@ -1087,7 +1186,19 @@ fun main() {
                     "route B.",
             "The direct duplex-duplex interaction is CENTRAL, so its contribution to this " +
                     "coordinate is V'(d)/d and therefore NEGATIVE wherever the pair repels. It " +
-                    "lowers the ceiling and is reported for its sign, not added."
+                    "lowers the ceiling and is reported for its sign, not added.",
+            "And the ceiling is exact for the IN-PLANE bonds only. " +
+                    "HoneycombTetherElement.normalStiffness is tangent*unitZ^2 + " +
+                    "secant*unitY^2 -- the same source file already resolves a chain's two " +
+                    "mechanisms onto the link residual by the bond's own direction -- while a " +
+                    "BOND's link is one scalar. Through the thickness unitZ^2 is " +
+                    resolution.last().meanUnitZSquared.emitted(9) + " of it, so most of a " +
+                    "relative W displacement is a change of the interhelical SEPARATION, " +
+                    "resisted AXIALLY. Resolved, the through-thickness link is " +
+                    resolution.last().resolvedAtImpliedStepStiffness.emitted(9) + " to " +
+                    resolution.last().resolvedAtDuplexStretchOverSpan.emitted(9) + " pN/nm, " +
+                    "which STRADDLES both thresholds -- so what decides the recovery is an " +
+                    "axial mechanism nobody has priced, on two thirds of the bonds. CH-0259.",
         ),
         validity = listOf(
             "Every route is a construction and none is a measurement. Route 2's transfer -- " +
@@ -1133,7 +1244,19 @@ fun main() {
         json.encodeToString(
             JsonObject.serializer(),
             (json.encodeToJsonElement(result).roundedForResult(
-                digits = 9, floor = 1e-12
+                digits = 9,
+                // A residual at a bisected root is a DIFFERENCE OF TWO NEARLY EQUAL numbers, so
+                // it carries no nine digits: two runs of this study agreed on every other field
+                // of a 225 kB file and disagreed in the ninth of exactly these two, because the
+                // root itself moves by an ulp when a `Double` comparison flips. CLAUDE.md's own
+                // departure rule, met on a record type the shared baseline does not cover.
+                digitsByKey = mapOf(
+                    "thresholds/residualAtThreshold" to DEPARTURE_SIGNIFICANT_DIGITS,
+                    "thresholds/residualAtLowEnd" to DEPARTURE_SIGNIFICANT_DIGITS,
+                    "thresholds/residualAtHighEnd" to DEPARTURE_SIGNIFICANT_DIGITS,
+                    "monotonicity/worstRise" to DEPARTURE_SIGNIFICANT_DIGITS
+                ),
+                floor = 1e-12
             ).withEmissionHeader(LatticeTag.HONEYCOMB, null) as JsonObject)
         ) + "\n"
     )

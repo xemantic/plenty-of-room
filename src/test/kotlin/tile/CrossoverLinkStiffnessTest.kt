@@ -246,6 +246,19 @@ class CrossoverLinkStiffnessTest {
     }
 
     @Test
+    fun `P2 -- the bisector returns the MIDPOINT of its final bracket and not an endpoint`() {
+        // C-0161: a mutation that fails nothing is usually a FIXTURE that could not
+        // discriminate. Returning `lo` instead of the midpoint survives any test whose root
+        // is generic, because after enough iterations the bracket is narrower than the
+        // tolerance. So the state is CONSTRUCTED: one iteration over [1, 100] leaves the
+        // bracket [10^1, 10^2], whose geometric centre is exactly 10^1.5 — and the root is
+        // put there, so the midpoint is exact and an endpoint is out by half a decade.
+        val exact = Math.pow(10.0, 1.5)
+        val root = bisectLogLinkStiffnessThreshold(1.0, 100.0, 1) { 1.0 / it - 1.0 / exact }
+        assert(abs(root - exact) < 1e-9 * exact)
+    }
+
+    @Test
     fun `P2 -- the bisector's bracket width in decades falls as two to the minus iteration count`() {
         val iterations = 12
         val root = bisectLogLinkStiffnessThreshold(10.0, 1e4, iterations) {
