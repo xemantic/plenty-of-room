@@ -11916,6 +11916,84 @@ and the 12-iteration test asserts only that the answer is *inside* the bracket, 
 whose geometric centre is exactly `10^1.5`, so putting the root there makes the midpoint exact and an endpoint out by half a decade.
 The eighteenth test does that, and it kills `M12`.
 
+**And one field made a 225 kB file un-diffable.** Two runs agreed on every number but two —
+the `residualAtThreshold` of the two bisected cells, in the ninth digit,
+because a residual at a bisected root is a difference of two nearly equal numbers and the root moves by an ulp when a `Double` comparison flips.
+`DEPARTURE_DIGITS_BY_KEY` is keyed on `reproductions`/`convergence` records and cannot see a `thresholds` one,
+so the two digits this file already asks for had to be asked for by name. Re-emitted, byte-identical.
+
 **Left undone.** The per-bond link `CH-0259` needs is a change to `HoneycombGrillage`, which this agent did not own (`T-310`).
 The mutation harness lives at `gpd/data/T-303-mutation/mutate.py` and not in `tools/`,
 because `P-31`'s registry belongs to whoever owns that table (`T-309`).
+
+### `T-307` / `C-0207` — `C-0201`'s alarm does not survive its own relocation: route B's uniform raster is flat with its tethers, `756 of 756`
+
+`C-0204` closed `T-304` an hour earlier with a good result and an honest caveat.
+The tether's span is **determined** at `0.787091706 nm` on the drawable `102 / 109` raster and the free tile is flat at `16 of 16` corners —
+but that answer is *bought by drawability*, and route B does not need caDNAno's residue condition at all.
+At the built `28 nt` allowance its own **uniform** rows (`92 / 98 / 106 bp`) close at no lattice phase,
+so their 59 turns take a span **distribution** whose worst member reaches `3.93454333–4.35327572 nm` — `C-0201`'s own worst corner.
+Three artifacts then concluded, in the same words, that *"`C-0201`'s alarm is not withdrawn, it is **relocated**"*.
+
+**Graded, it is flat.** `756 of 756` cells — 21 lattice phases × 3 widths × 12 chain corners — read
+`0.0483790868–0.0946863482` of the stroke against `T-5b`'s `0.10`,
+where `C-0201` §7's untied readings of the same three widths reproduce here at a worst `8.6e−10`.
+The span census is **upheld** and reproduced against `T-304`'s own `uniformRasters` at all **63** `(width, phase)` rows at `4.8e−9` nm.
+What is withdrawn is the step between them, and `CH-0262` names it: **a span is a LEVEL and a dishing is a FIELD**.
+Three measurable things separate them — the tile is smaller (`92 / 98 / 106 bp` against the 116 bp block `C-0201`'s `0.11296458` is read on),
+the distribution is not its own worst member (mean tension `3.14109619–4.49761906×` the determined raster's where the worst turn is `6.64777142×`),
+and the 59 contributions are **signed**, with `27 of 177` bank columns exactly zero because the nine in-plane turns of each width have no coordinate at all.
+
+**The cheap bound ran in two stages and was wrong in the favourable direction, which is worth recording as loudly as a hit.**
+Stage 1 is arithmetic and no solve: the tension distribution, and its ratio to `C-0204`'s determined-span tension.
+On `C-0204`'s own measured preload movement it predicted a **straddle** of `T-5b`, and it said so in the result file before the grading section ran.
+Stage 2 is `C-0104`'s linearity read as a **bank**: a tether's tension changes no entry of the stiffness matrix,
+so `59` unit-tension solves per width give a rigorous triangle-inequality ceiling at every phase and every corner with no further solve.
+Honoured at `756 of 756` cells and **loose by `1.949–5.438×`** — precisely because the sum is signed.
+The bank is retained as the control on the exact solve rather than substituted for it,
+and the difference between them **measures** what the tether's stiffness is worth: up to `0.00678987143` of the stroke,
+`0.135022512` of the largest preload movement and `0.0678987143` of the whole tolerance.
+`C-0201`'s *load, not a spring* is upheld in its **ordering** and softened in its size:
+a stiffness that is arithmetically absent against a `1e4 pN/nm` penalty constant is not arithmetically absent against a tolerance.
+
+**`F6` fired, and it is a finding about the criterion.**
+`C-0204` §6 ranks the 21 phases on `turnsInsideTheAlignedHalf`, and names phase **7** best at all three widths (`40 / 49 / 40` of 59).
+On the dishing the optimum is phase `5 / 16 / 9`, and phase 7 is the optimum at **none** of them, costing `1.053–1.354×`.
+Both criteria are read off the same 59 spans; the alignment count is a **census of a level** and the dishing a **weighted signed sum of a field**,
+and a turn matters only in proportion to its own influence — `0.0–0.0450809211` of the stroke per pN across the bank.
+So the lattice phase is a real design variable, worth **`1.82364566×`**, and the recommendation (`b₀ = 5 / 16 / 9`) is stated on the objective the design is built to.
+
+**The `nodeS` precondition did not bite, and it was checked first.**
+`CLAUDE.md` records `HoneycombGrillage.nodeS` having carried an unstated precondition — `(0..rowBasePairs step 7)` —
+found by the standing uniform-load falsifier; two of this study's three rows are exactly that case (`92 mod 7 = 1`, `106 mod 7 = 1`).
+The free-overhang branch added for `C-0151`'s 116 bp block covers it: `F1` reads **exactly `0.0`** at all three, and two named tests assert it independently.
+This is the cheapest possible outcome of a check that had to be run, and it is the reason it was run before anything was graded.
+
+**`T-308` — the `T-304` harness moved into `tools/`, and a second gate gap it exposed.**
+`gpd/data/T-304-mutation/mutate.py` → `tools/T-304-mutation-test.py`, declared in `P-31`'s table with the `id_file_old_new_what` shape
+and the `BY-HAND` sentinel, wired as `testAnchorAzimuthMutations` and deliberately out of `:test`; re-run after the move, **10 mutations, 0 survivors**.
+Two things had to move with it, both from `T-305`'s and `T-306`'s experience in this same iteration:
+the refusal now prints a **lower-case** `usage:` line (`T-295` derives its `BY HAND` third state from `^usage:` case-sensitively),
+and its killers moved to **continuation lines** (`T-306`'s fourth collision was a row whose parsed label picked up whatever else the line held).
+`T-307`'s own harness was written, declared and wired in the same iteration — twelve mutations, zero survivors — which is what `T-305`, `T-308` and `T-309` each cost an iteration for want of.
+`P-31 --check` now reads **19 harnesses, 330 anchors, 0 unresolved, wired 19 of 19**.
+
+**And the move left a link nothing checks.** `tools/check-corpus-links.py` resolves only `.md` targets,
+so moving a `.py` file out from under a Markdown link is invisible to every gate in the tree.
+Censused: **7 359** relative links, **600** non-`.md`, **14** broken — of which 6 are illustrative placeholders inside checker documentation,
+6 are `tools/C-0156-claim-template.md`'s links, correct at the destination the template is copied to,
+and **2 were live defects, both created in iteration 48 by two different agents' harness moves, neither noticed by its author.**
+Both are repaired; the gap is `T-313`.
+
+**One mutation survived, and it was the fixture again.**
+Widening `require(classZeroResidue in 0 until 21)` failed nothing, because `HoneycombRasterTurnAnchors` carries **the same guard**
+and every test of it went through `.spans`, which builds that census.
+A guard whose only observable behaviour is duplicated downstream is a guard no mutation of it can reach.
+The repair is a test that constructs the object and never touches `.spans` — which is what this class's guard is actually **for**:
+refuse at construction, where the mistake is. `C-0204` §8's *a guard tested at one end only*, one step out.
+
+**Left undone.** The **coupled** reading at `92 / 98 / 106 bp`: `C-0167`'s placements and station lattices are derived at the 116 bp extent,
+so re-grading them at these widths is a placement search and not a re-grade, and this study says so rather than approximating it.
+Whether a route-B design should trade paired row length against span — these three widths are the **maximum** each scaffold affords,
+and a shorter row with a longer loop is a different point of the same budget nobody has swept.
+`CH-0263`, `T-314` reserved and released unused.
