@@ -141,6 +141,11 @@ HARNESSES = (
     # cost an iteration each for want of.
     ("T-307-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
      "src/main/kotlin/tile/UniformRasterTetherSpans.kt", (BY_HAND,)),
+    # `T-313`.  A Python subject with an INLINE `--selftest`, so the harness runs the subject
+    # itself rather than a sibling test file -- and its fixture is bigger than a `tools/`-only
+    # copy, because eleven of that self-test's assertions read the corpus.
+    ("T-313-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new", "check-corpus-links.py",
+     ("killed-by", "survives")),
 )
 
 # Which module file each ATTRIBUTE receiver in a harness stands for.  A receiver not named here is

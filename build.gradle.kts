@@ -431,6 +431,19 @@ tasks.register<Exec>("testHarnessOutputContractMutations") {
 }
 
 /*
+ * `T-313`.  The link gate's predicate was `.md`-only, so a relative link to a `.py`, `.kt`,
+ * `.json`, `.sh` or directory target was invisible to every gate in this tree -- and two agents
+ * relocated a mutation harness out from under a Markdown link in ONE iteration, neither noticing.
+ * This harness mutates the widened predicate, the three guards it rests on, the scope line the
+ * widening leaves owed, and the history sweep that measures the false-positive rate.
+ */
+tasks.register<Exec>("testCorpusLinkMutations") {
+    group = "verification"
+    description = "Runs tools/T-313-mutation-test.py, the mutation test for the widened link gate"
+    commandLine("$projectDir/tools/T-313-mutation-test.py")
+}
+
+/*
  * THE FOUR KOTLIN HARNESSES, WHICH TAKE A SNAPSHOT DIRECTORY AND ARE DELIBERATELY OUT OF `:test`.
  *
  * The Kotlin-subject harnesses mutate Kotlin sources, so one mutation is one Gradle `test` run --
@@ -504,7 +517,9 @@ tasks.named("test") {
         // a MENTION -- before that, explaining why a harness was unwired made it read as wired.
         "testMutationInputCensusMutations", "testChallengeStatusMutations",
         // `T-306` -- the harness-output contract, declared per harness and cross-checked.
-        "testHarnessOutputContractMutations"
+        "testHarnessOutputContractMutations",
+        // `T-313` -- the widened link predicate, its three guards and its scope line.
+        "testCorpusLinkMutations"
     )
 }
 
