@@ -64,8 +64,15 @@ Route B does **not need** the residue condition, and that freedom is what costs 
 span. At the built allowance its own uniform rows (`92 / 98 / 106 bp`) close at **no** lattice
 phase, so their 59 turns take a **distribution** of azimuths whose worst member is
 `3.93454333–4.35327572 nm` at **all 21** phases of all three — **reaching, at some of them, the
-very corner** this challenge removes from the drawable raster. **`C-0201`'s alarm is relocated, not withdrawn**,
+very corner** this challenge removes from the drawable raster. ~~**`C-0201`'s alarm is relocated, not withdrawn**~~,
 and `C-0201` §7 graded those three widths **untied**. That is `T-307`.
+
+> **CORRECTED, iteration 48 ([`C-0207`](../claims/C-0207-the-uniform-raster-is-flat-with-its-tethers.md)
+> / `T-307`, [`CH-0262`](CH-0262-the-alarm-did-not-survive-its-relocation.md)): the relocation
+> does not survive the grading.** With their tethers the uniform rows read
+> `0.0483790868–0.0946863482` of the stroke, `756 of 756` cells flat. The span statement above is
+> reproduced at all 63 `(width, phase)` rows; the *"relocated, not withdrawn"* is withdrawn.
+> Everything else this challenge says about the **drawable** raster stands.
 
 ## What would settle it
 

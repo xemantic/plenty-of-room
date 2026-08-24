@@ -431,11 +431,11 @@ tasks.register<Exec>("testHarnessOutputContractMutations") {
 }
 
 /*
- * THE TWO KOTLIN HARNESSES, WHICH TAKE A SNAPSHOT DIRECTORY AND ARE DELIBERATELY OUT OF `:test`.
+ * THE FOUR KOTLIN HARNESSES, WHICH TAKE A SNAPSHOT DIRECTORY AND ARE DELIBERATELY OUT OF `:test`.
  *
- * `tools/T-297-mutation-test.py` and `tools/T-299-mutation-test.py` mutate Kotlin sources, so one
- * mutation is one Gradle `test` run -- minutes each, against the 0.7 s a Python harness takes --
- * and they must not edit a shared checkout.  An ARGUMENT is a wiring decision (`T-301`): a bare
+ * The Kotlin-subject harnesses mutate Kotlin sources, so one mutation is one Gradle `test` run --
+ * minutes each, against the 0.7 s a Python harness takes -- and they must not edit a shared
+ * checkout.  An ARGUMENT is a wiring decision (`T-301`): a bare
  * `Exec` task prints the harness's usage and fails the build, which is what the first attempt at
  * wiring `T-297` did in iteration 46.  Registered here with the snapshot as a project property,
  * so they are runnable by name and NOT reachable from `:test`:
@@ -443,7 +443,7 @@ tasks.register<Exec>("testHarnessOutputContractMutations") {
  *     ./gradlew testRasterTurnTetherMutations -PmutationSnapshot=/tmp/my-snapshot
  *
  * Take the snapshot with `tools/snapshot.sh`; the harnesses refuse a directory holding a `.git`.
- * Both are declared `BY-HAND` in `P-31`'s table and `tools/T-295-mutation-input-census.py`
+ * All four are declared `BY-HAND` in `P-31`'s table and `tools/T-295-mutation-input-census.py`
  * cross-checks that declaration against each harness's own printed usage line, in both directions.
  */
 fun mutationSnapshotArguments(harness: String): List<String> {
@@ -463,6 +463,20 @@ tasks.register<Exec>("testRasterTurnTetherMutations") {
     description = "Runs tools/T-299-mutation-test.py <snapshot>, the Kotlin mutation test for the " +
         "raster-turn tether element. Needs -PmutationSnapshot=<dir>; not in :test"
     commandLine(mutationSnapshotArguments("T-299-mutation-test.py"))
+}
+
+tasks.register<Exec>("testAnchorAzimuthMutations") {
+    group = "verification"
+    description = "Runs tools/T-304-mutation-test.py <snapshot>, the Kotlin mutation test for the " +
+        "raster-turn anchor azimuth derivation. Needs -PmutationSnapshot=<dir>; not in :test"
+    commandLine(mutationSnapshotArguments("T-304-mutation-test.py"))
+}
+
+tasks.register<Exec>("testUniformRasterTetherMutations") {
+    group = "verification"
+    description = "Runs tools/T-307-mutation-test.py <snapshot>, the Kotlin mutation test for " +
+        "route B's per-turn tether census. Needs -PmutationSnapshot=<dir>; not in :test"
+    commandLine(mutationSnapshotArguments("T-307-mutation-test.py"))
 }
 
 tasks.named("test") {

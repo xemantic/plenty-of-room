@@ -15,16 +15,22 @@ Two further checks this harness owes and makes:
   * every mutation's anchor must occur **exactly once** in its subject, so a refactor that moves
     the text orphans the row loudly instead of silently (`C-0185`).
 
-WHY IT LIVES HERE AND NOT IN `tools/`. `tools/P-31-harness-census.py` discovers any
-`tools/*mutation-test.py` and **fails the build** on one that is not declared in its own
-`HARNESSES` table; the agent that wrote this harness did not own that table in the iteration it
-was written (`CLAUDE.md`). Moving it into `tools/` and declaring it is one tuple and a queue row.
+MOVED INTO `tools/` BY `T-308`, from `gpd/data/T-304-mutation/mutate.py`.
+`tools/P-31-harness-census.py` discovers any `tools/*mutation-test.py` and **fails the build** on
+one that is not declared in its own `HARNESSES` table — which is the mechanism that keeps that
+registry from being a census that stopped, and it is why this file waited outside `tools/` for an
+iteration in which somebody owned that table. Its row declares the `id_file_old_new_what` adapter
+shape (five fields where the Python harnesses have three or four) and the `BY-HAND` sentinel,
+because this harness takes a snapshot directory: it mutates **Kotlin**, so one mutation is one
+Gradle `test` run — about a minute against the 0.7 s a Python harness takes — and it must not edit
+a shared checkout. It is wired on its own Gradle task and is deliberately NOT in `:test`'s
+dependency chain.
 
 The `-x` flags are DERIVED from `build.gradle.kts`'s own `dependsOn` block rather than listed, so
 a document gate added tomorrow is excluded by construction (`C-0194`, `T-297`).
 
 Usage:
-    gpd/data/T-304-mutation/mutate.py <snapshot-dir>
+    tools/T-304-mutation-test.py <snapshot-dir>
 
 It edits files inside <snapshot-dir> and restores them afterwards. Give it a snapshot, never the
 checkout.
@@ -127,6 +133,11 @@ def run(root):
 
 def main():
     if len(sys.argv) != 2:
+        # LOWER CASE and at the start of a line, because `tools/T-295-mutation-input-census.py`
+        # DERIVES its `BY HAND` third state from `^usage:` -- the docstring's own capitalised
+        # `Usage:` does not match it, and the census would read this harness as a REFUSAL
+        # (`T-305`, `T-306`: the harness moves, not the parser).
+        print("usage: tools/T-304-mutation-test.py <snapshot-dir>", file=sys.stderr)
         print(__doc__)
         return 2
     root = os.path.abspath(sys.argv[1])
@@ -169,16 +180,21 @@ def main():
             code, failures = run(path and root)
             killers = sorted(failures - baseline)
             if killers:
-                print(identifier + "  killed by " + str(len(killers)) + " named test(s): " +
-                      "; ".join(k[:110] for k in killers[:2]) + "   [" + what + "]")
+                # The killers go on CONTINUATION lines and never after the name: `T-306`'s fourth
+                # collision was a row whose label picked up whatever else the line held.
+                print(identifier + "  killed by " + str(len(killers)) + " named test(s)")
+                for killer in killers[:2]:
+                    print("      " + killer[:110])
+                print("      [" + what + "]")
             else:
                 survivors.append(identifier)
-                print(identifier + "  SURVIVED (exit " + str(code) + ")   [" + what + "]")
+                print(identifier + "  SURVIVED (exit " + str(code) + ")")
+                print("      [" + what + "]")
         finally:
             shutil.move(path + ".orig", path)
 
-    print(str(len(MUTATIONS)) + " mutations, " + str(len(survivors)) + " survivor(s) " +
-          str(survivors))
+    print("# " + str(len(MUTATIONS)) + " mutation(s), " + str(len(survivors)) +
+          " survivor(s) " + str(survivors))
     return 1 if survivors else 0
 
 

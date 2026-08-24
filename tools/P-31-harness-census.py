@@ -131,6 +131,16 @@ HARNESSES = (
     ("T-299-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
      "src/main/kotlin/tile/HoneycombRasterTurnTethers.kt + "
      "src/main/kotlin/tile/HoneycombGrillage.kt", (BY_HAND,)),
+    # The THIRD Kotlin-subject harness, moved into `tools/` by `T-308`.  Same five-field row
+    # shape and the same `BY_HAND` sentinel as `T-299`'s, and for the same two reasons: one
+    # mutation is one Gradle `test` run, and it takes a snapshot directory because it mutates a
+    # source a shared checkout must not have edited under it.
+    ("T-304-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
+     "src/main/kotlin/tile/RasterTurnAnchorAzimuth.kt", (BY_HAND,)),
+    # The FOURTH, written in the iteration it is declared in -- which is what `T-305` and `T-308`
+    # cost an iteration each for want of.
+    ("T-307-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
+     "src/main/kotlin/tile/UniformRasterTetherSpans.kt", (BY_HAND,)),
 )
 
 # Which module file each ATTRIBUTE receiver in a harness stands for.  A receiver not named here is
