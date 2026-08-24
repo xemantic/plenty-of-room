@@ -614,6 +614,26 @@ New rows opened during the iteration by the work itself: `T-303` (the renumbered
 cross-agent collisions were a challenge **number** taken mid-flight and an **anchor** one agent's change
 orphaned in another's harness, both repaired by the coordinator at the assembled `HEAD`.
 
+## Number reservations — iteration 48 (2026-08-24)
+
+| Agent | Task | Claims | Challenges |
+|---|---|---|---|
+| A | `T-304` the tether span is a DETERMINED azimuth, and `C-0201`'s 36-corner bracket collapsed onto it | `C-0204` | `CH-0256`, `CH-0257` |
+| B | `T-303` the coupled recovery's link stiffness — bound it below beyond pure tension, and bisect the threshold | `C-0205` | `CH-0258`, `CH-0259` |
+| C | `T-306` + `T-305` + `T-301` a mutation harness's output format is an interface, and the two census predicates that read it | `C-0206` | `CH-0260`, `CH-0261` |
+
+**Reserved and not yet taken**: `C-0204`, `C-0205`, `C-0206`, `CH-0256`, `CH-0257`, `CH-0258`, `CH-0259`,
+`CH-0260`, `CH-0261`. Anything unused when the iteration closes is **released by name here**, never by range.
+New task rows opened by the work itself take `T-307` and up; agent A owns `T-307`/`T-308`, agent B
+`T-309`/`T-310`, agent C `T-311`/`T-312`, so a row opened mid-flight cannot collide.
+
+**Source ownership.** Agent A owns [`src/main/kotlin/structure/HoneycombTurnLoop.kt`](src/main/kotlin/structure/HoneycombTurnLoop.kt)
+and writes a new study; agent B owns nothing shared and writes a new study, reading
+[`src/main/kotlin/tile/HoneycombGrillage.kt`](src/main/kotlin/tile/HoneycombGrillage.kt) without editing it;
+agent C touches only `tools/`, `build.gradle.kts` and its own retained data. **Neither A nor B re-emits an
+existing result file** — both write new ones — so the emission cluster is not shared and
+`C-0101`'s consumer-before-producer error is not reachable this iteration.
+
 **The highest numbers in use at the time of writing are `T-305`, `P-31`, `C-0203`, `CH-0255`.**
 `T-297` and `T-298` were opened DURING iteration 46, by `CH-0242` and `C-0197`, and are unreserved.
 `T-279`, `T-280` and `T-281` were opened DURING the iteration, by `CH-0227`–`CH-0230`, and are unreserved:
