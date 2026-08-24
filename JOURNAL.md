@@ -12295,7 +12295,14 @@ so the passage certain to trip it is a synthesis citing its predecessors beside 
 `C-0196`'s *a name cannot govern a token* is the same rule and `T-285`/`T-287` applied it to the `T-234` census;
 nothing carried it here. Repaired in the two **verdict** arms only, with seven named tests pinning both directions.
 
-**One gate is left red and named rather than skipped.** `tools/T-234-census.py --check` exits 1 on 11 defects,
-every one an occurrence added by iteration 48's four physics claims and two queue rows.
-Regenerating its classification is exactly what a document pass must not do —
-the overrides are index-keyed, so adding occurrences re-points every hand judgement.
+**And the iteration's own census closed, by the route `CH-0230` predicts.**
+`tools/T-234-census.py --check` was red at **11** on arrival — iteration 48's four physics claims and two queue rows —
+and this pass's own corrections took it to **38**, which is `CH-0230` verbatim:
+*a correcting sentence has to name the withdrawn premise in order to withdraw it*, so a synthesis **grows** this census.
+Regenerating the classification took it to **7**, all `UNPOINTED [MOVED SCAFFOLD]`, every one a **forward budget** —
+what a route-B *uniform* raster costs on p8064 — and none about which scaffold design (i) is folded from.
+**Eight** hand overrides, each built from `census(root)`'s own record rather than typed (`C-0202`), took it to **0** —
+the eighth because writing the paragraph that reports the repair added an occurrence of the token it reports on,
+which is `CH-0182` met by a claim on itself.
+The regeneration was only safe because `C-0196` had re-keyed overrides on the occurrence's **neighbourhood**
+rather than on its index: **21 of 21 carried over**, the thirteen that existed and the eight added.

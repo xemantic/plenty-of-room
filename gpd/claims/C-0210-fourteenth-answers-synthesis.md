@@ -212,16 +212,23 @@ ref for the two deliverables and against the checkout for the corpus-wide tools.
 | `T-272-emit-result-inputs.py --check` | current, 187 handles | **current** — and this pass **repaired** it: on `--help` it used to rewrite `structure/ResultInputs.kt` |
 | `T-295-mutation-input-census.py --check` | clean | **clean** |
 | `P-31-harness-census.py --check` | 22 harnesses, 383 anchors, 0 unresolved, wired 22 of 22 | **unchanged** |
-| `T-234-census.py --check` | **GATE 11 defects**, 422 occurrences in 49 files, debt `23 of 95` | **NOT REPAIRED HERE, and named rather than skipped** — all 11 are iteration 48's own four physics claims and two `TASKS.md` rows, and the classification is index-keyed (`C-0196`), so a document pass that adds occurrences must not regenerate it. Queued as this iteration's own census re-run |
+| `T-234-census.py --check` | **GATE 11 defects**, 422 occurrences in 49 files, debt `23 of 95` | **GATE 0** — repaired here, as the iteration's close-out. This pass's own corrections took it to **38** first, which is `CH-0230`'s mechanism exactly (*a correcting sentence has to NAME the withdrawn premise*); regenerating the classification took it to **7**, all `UNPOINTED [MOVED SCAFFOLD]`, and eight hand overrides took it to **0** — the eighth because reporting the repair added an occurrence of the token it reports on. The regeneration is safe **because `C-0196` re-keyed overrides on the occurrence's own neighbourhood** rather than on its index — **21 of 21 carried over**, the 13 that existed and the 8 added — and each override is built from `census(root)`'s own record rather than typed, which is `C-0202`'s rule about the `snippet` field |
 | `cli_guard.py --check` (**new**) | — | **45 writers, 45 refusing, 0 not** |
 | `test-trace-answers.py` | 167 checks | **174** checks, 7 of them new |
 | `T-319-emit-result.py --self-test` | — | **18 self-tests, 0 failures** |
 
-**One gate was red before this pass and is red after it, and it is named rather than silently
-skipped**: `tools/T-234-census.py --check` exits 1 on 11 defects, every one of them an occurrence
-added by iteration 48's four physics claims and two queue rows. It is not wired into
-`tools/verify.sh`, and regenerating its classification is exactly what this pass must not do — the
-overrides are index-keyed, and a document pass that adds occurrences re-points every hand judgement.
+**One gate was red before this pass and is clean after it, and the route there is the finding.**
+`tools/T-234-census.py --check` exited 1 on **11** defects at the ref, every one an occurrence added
+by iteration 48's four physics claims and two queue rows. This pass's own corrections took it to
+**38** — `CH-0230`'s mechanism verbatim, *a correcting sentence has to name the withdrawn premise in
+order to withdraw it*, so a synthesis **grows** this census by construction. Regenerating the
+classification took it to **7**, all of them `UNPOINTED [MOVED SCAFFOLD]`; every one is a **forward
+budget** — what a route-B *uniform* raster costs on p8064 at the built `28 nt` allowance — and none
+says anything about which scaffold design (i) is folded from, which is what the family is about.
+**Eight** hand overrides, each built from `census(root)`'s own record rather than typed (`C-0202`), take
+it to **0** — the eighth because writing *this paragraph* added an occurrence of the very token it is
+about, which is `CH-0182` met by a claim on itself. **The regeneration is safe only because `C-0196` re-keyed overrides on the occurrence's
+own neighbourhood instead of its index**: 21 of 21 carried over, the 13 that existed and the 8 added.
 
 **And one red gate was caused by this pass and repaired by it**: `trace-answers.py` reported a
 self-contradiction about `T-320` on the first draft, which is `CH-0269`.
@@ -267,7 +274,5 @@ self-contradiction about `T-320` on the first draft, which is `CH-0269`.
   `0.198 %`.
 - **`T-294`** — the coupled `15 × 4` block on the tied lattice, still the one comparison decision 7
   cannot quote like for like.
-- **The iteration's own `T-234` census re-run**, which this pass names and does not perform, on the
-  stated ground that its classification is index-keyed.
 - **The fifteenth synthesis**, whose cheapest first act is written down: run
   `tools/T-319-emit-result.py --ref <this pass's commit>` and read what the counts did.
