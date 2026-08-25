@@ -870,6 +870,27 @@ Agent L took `C-0216`, `CH-0278` and `CH-0279` and opened **both** of its rows, 
 `F23` fired and named two repairs with their call sites. At the close of this iteration the following are
 **unused and unreserved**, and the next iteration takes them in order: `C-0217`, `CH-0280`, `T-326`.
 
+### Iteration 51 — numbers reserved before the agents start
+
+| agent | row | claim | challenges | new rows |
+|---|---|---|---|---|
+| M | `T-328` + `T-329`, the two repairs `F23` named, in that order — the repair, then its re-emission | `C-0217` | `CH-0280`, `CH-0281` | `T-326`, `T-327` |
+| N | `T-294` the `15 × 4` block graded coupled on the TIED lattice, so the two cross-sections compare like for like | `C-0218` | `CH-0282`, `CH-0283` | `T-330`, `T-331` |
+
+**Reserved and not yet taken**: `C-0217`, `C-0218`, `CH-0280`, `CH-0281`, `CH-0282`, `CH-0283`.
+
+**Agent M owns [`src/main/kotlin/tile/JointPlacementDistribution.kt`](src/main/kotlin/tile/JointPlacementDistribution.kt),
+its study and `gpd/results/T-323-*.json`; agent N may read them and must not write them.**
+**Neither may edit [`src/main/kotlin/tile/HoneycombGrillage.kt`](src/main/kotlin/tile/HoneycombGrillage.kt)** —
+`T-264` is the row that changes it and is deliberately not scheduled beside a re-emission, because a lattice
+change under a re-emission would make the re-emitted artifact a different object.
+
+**Ordering matters this iteration and it is stated rather than hoped for.** `T-328` is a **repair followed by a
+re-emission**, so `C-0216`'s numbers move again; the fifteenth `ANSWERS.md` synthesis is therefore **not**
+scheduled here and is owed at the end of the iteration *after* this one, on numbers that have stopped moving.
+`gpd/data/T-323-reproducibility/run-a.json` is retained so the before state stays measurable (`C-0092`), and
+agent M must keep it that way rather than replacing it.
+
 
 **Neither agent may edit [`src/main/kotlin/tile/HoneycombGrillage.kt`](src/main/kotlin/tile/HoneycombGrillage.kt),
 [`src/main/kotlin/tile/SearchedDistribution.kt`](src/main/kotlin/tile/SearchedDistribution.kt) or
