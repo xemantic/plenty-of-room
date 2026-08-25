@@ -1,0 +1,14 @@
+verdict-bearing readings in [0.09, 0.11]: 1146
+tightest five:
+  rel=1.0200e-05  0.100001020  T-294/cells/92/nominalCorrectedOverStroke
+  rel=2.9341e-04  0.100029341  T-304/cells/97/medianOverStroke
+  rel=6.4626e-04  0.099935374  T-297/cells/15/p90OverStroke
+  rel=6.4626e-04  0.099935374  T-297/cells/15/zeroTermP90OverStroke
+  rel=6.4626e-04  0.099935374  T-297/cells/16/zeroTermP90OverStroke
+counts by channel:
+  within 1e-05       the tightest reading itself                                                0
+  within 0.0005      CH-0284's collar channel                                                   2
+  within 0.0042724   the movement that would flip C-0180's tightest recovered cell             96
+  within 0.00457     C-0180's own beam-subdivision convergence departure, 4.57E-4 of the stroke    99
+  within 0.0067      CH-0284's bond-prestrain channel                                         126
+  within 0.0402      the prestrain channel at convention C's 6x                               484

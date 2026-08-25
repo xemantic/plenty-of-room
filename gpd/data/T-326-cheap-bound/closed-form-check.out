@@ -1,0 +1,46 @@
+closed form against the direct quadrature difference B - A
+  m= 3 col=0 bonds=1  worst so far 6.156e-16
+  m= 3 col=1 bonds=1  worst so far 6.156e-16
+  m= 4 col=0 bonds=2  worst so far 8.060e-16
+  m= 4 col=1 bonds=1  worst so far 8.060e-16
+  m= 5 col=0 bonds=2  worst so far 1.078e-15
+  m= 5 col=1 bonds=2  worst so far 1.796e-15
+  m= 6 col=0 bonds=3  worst so far 1.796e-15
+  m= 6 col=1 bonds=2  worst so far 1.796e-15
+  m=10 col=0 bonds=5  worst so far 8.897e-15
+  m=10 col=1 bonds=4  worst so far 8.897e-15
+  m=11 col=0 bonds=5  worst so far 1.085e-14
+  m=11 col=1 bonds=5  worst so far 1.085e-14
+  m=14 col=0 bonds=7  worst so far 2.899e-14
+  m=14 col=1 bonds=6  worst so far 2.899e-14
+  m=15 col=0 bonds=7  worst so far 2.899e-14
+  m=15 col=1 bonds=7  worst so far 2.899e-14
+  m=16 col=0 bonds=8  worst so far 8.384e-14
+  m=16 col=1 bonds=7  worst so far 8.384e-14
+worst scaled departure over all readings: 8.384e-14
+
+limiting cases (a pure piston and a pure y must give exactly zero)
+  m=10 piston mode=1  gap +0.000e+00
+  m=10 piston mode=y  gap +0.000e+00
+  m=10 tiltY  mode=1  gap +0.000e+00
+  m=10 tiltY  mode=y  gap +1.819e-12
+  m=15 piston mode=1  gap -1.421e-14
+  m=15 piston mode=y  gap -5.684e-14
+  m=15 tiltY  mode=1  gap -5.684e-14
+  m=15 tiltY  mode=y  gap +0.000e+00
+
+the class's own 6-point Gauss rule against the exact piecewise integral
+(the integrand is DISCONTINUOUS at every nearest-beam boundary)
+  gauss6 / exact on the piston gap: 0.819694 to 0.819694 over 20 readings
+
+piston collinearity (C - A) / (B - A), expected exactly 6 at even m, faceColumn 0
+  m= 4 col=0  ratio 6.000000
+  m= 4 col=1  ratio 12.117551
+  m= 6 col=0  ratio 6.000000
+  m= 6 col=1  ratio 9.645696
+  m=10 col=0  ratio 6.000000
+  m=10 col=1  ratio 2.625054
+  m=14 col=0  ratio 6.000000
+  m=14 col=1  ratio 5.839423
+  m=16 col=0  ratio 6.000000
+  m=16 col=1  ratio -0.123503
